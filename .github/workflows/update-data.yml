@@ -10,11 +10,10 @@ env:
   PYTHONUNBUFFERED: "1"
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-24.04
-    permissions:
-      contents: write
-
+    outputs:
+      has-changes: ${{ steps.check.outputs.has-changes }}
     steps:
       - name: Checkout Scripts
         uses: actions/checkout@v4
@@ -46,7 +45,6 @@ jobs:
       - name: Process and Split Reports
         working-directory: scripts-repo
         run: |
-          # Targeting the 'reports' subfolder directly for speed and accuracy
           uv run python scripts/split_reports.py \
             ../official-data/reports \
             /tmp/protondb-output \
@@ -55,30 +53,79 @@ jobs:
       - name: Sync processed data to scripts-repo
         run: |
           mkdir -p scripts-repo/data
-          # Output is /tmp/protondb-output/data/{appId}/{year}.json
-          # Copy the nested data/ contents into scripts-repo/data/
           cp -rv /tmp/protondb-output/data/. scripts-repo/data/
           cp /tmp/protondb-output/index.html scripts-repo/index.html
 
-      - name: Commit and Push changes
+      - name: Check for changes
+        id: check
         working-directory: scripts-repo
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
           git add data/ index.html
-          # Only push if there are actual updates to the JSON data
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Auto-update: ProtonDB split reports $(date +%F)"
-            git pull --rebase origin main
-            git push
+            echo "has-changes=true" >> "$GITHUB_OUTPUT"
           else
-            echo "No new data changes detected. Skipping push."
+            echo "has-changes=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Deploy to gh-pages
-        working-directory: scripts-repo
+      - name: Upload build artifact
+        if: steps.check.outputs.has-changes == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-content
+          path: |
+            scripts-repo/data/
+            scripts-repo/index.html
+          retention-days: 1
+
+  report-build-status:
+    needs: build
+    runs-on: ubuntu-24.04
+    if: always()
+    steps:
+      - name: Build status
         run: |
-          # Create orphan gh-pages branch with only the servable content
+          echo "### Build Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ needs.build.result }}" = "success" ]; then
+            echo "✅ Build succeeded" >> "$GITHUB_STEP_SUMMARY"
+            echo "Changes detected: **${{ needs.build.outputs.has-changes }}**" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "❌ Build failed" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Fail if build failed
+        if: needs.build.result != 'success'
+        run: exit 1
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.has-changes == 'true'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site-content
+          path: artifact
+
+      - name: Commit to main
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          cp -rv artifact/scripts-repo/data/. data/
+          cp artifact/scripts-repo/index.html index.html
+          git add data/ index.html
+          git commit -m "Auto-update: ProtonDB split reports $(date +%F)"
+          git pull --rebase origin main
+          git push
+
+      - name: Deploy to gh-pages
+        run: |
           git checkout --orphan gh-pages-tmp
           git rm -rf .
           git checkout main -- data/ index.html
