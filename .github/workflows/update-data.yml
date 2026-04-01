@@ -1,66 +1,76 @@
 name: Update ProtonDB Data
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 3 * * *'
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  PYTHONUNBUFFERED: "1"
 
 jobs:
   update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
-    
+
     steps:
-      - name: Checkout scripts repo
+      - name: Checkout Scripts
         uses: actions/checkout@v4
         with:
           path: scripts-repo
-          repository: mdeguzis/proton-pulse-data
-          fetch-depth: 1
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Checkout official ProtonDB data
+      - name: Checkout Official ProtonDB Data
         uses: actions/checkout@v4
         with:
           repository: bdefore/protondb-data
           path: official-data
           fetch-depth: 1
 
-      - name: Setup Python 3.12
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: pip install ijson
 
-      - name: Process and Split Reports
-        env:
-          PYTHONUNBUFFERED: "1"
+      # This step tries to find a previous run's output to avoid starting from zero
+      - name: Restore Data Cache
+        uses: actions/cache@v4
+        with:
+          path: /tmp/protondb-output
+          key: protondb-data-${{ github.run_id }}
+          restore-keys: |
+            protondb-data-
+
+      - name: Run Incremental Processing
         run: |
           mkdir -p /tmp/protondb-output
-          # Targeting the 'reports' subfolder directly for speed and accuracy
           python3 scripts-repo/scripts/split_reports.py \
-            official-data/reports \
+            official-data \
             /tmp/protondb-output
 
-      - name: Sync processed data to scripts-repo
+      - name: Deploy to GitHub Pages
         run: |
-          mkdir -p scripts-repo/data
-          # Copying only the new split files into the repo structure
-          cp -rv /tmp/protondb-output/* scripts-repo/data/
-
-      - name: Commit and Push changes
-        working-directory: scripts-repo
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add data/
-          # Only push if there are actual updates to the JSON data
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Auto-update: ProtonDB split reports $(date +%F)"
-            git push
-          else
-            echo "No new data changes detected. Skipping push."
+          cd /tmp/protondb-output
+          
+          if [ ! -d "data" ] || [ -z "$(ls -A data)" ]; then
+            echo "Error: No data files found to deploy."
+            exit 1
           fi
+
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan gh-pages
+          
+          # Use fallback values if manifest isn't readable for the HTML
+          touch .nojekyll
+          echo "<h1>Proton Pulse Sync</h1><p>Updated: $(date -u)</p>" > index.html
+
+          git add -A
+          git commit -m "chore: incremental sync $(date -u +%Y-%m-%d)"
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push --force origin gh-pages
