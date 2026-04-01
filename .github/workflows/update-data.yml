@@ -10,15 +10,14 @@ env:
   PYTHONUNBUFFERED: "1"
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-24.04
-    outputs:
-      has-changes: ${{ steps.check.outputs.has-changes }}
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout Scripts
         uses: actions/checkout@v4
-        with:
-          path: scripts-repo
 
       - name: Checkout Official ProtonDB Data
         uses: actions/checkout@v4
@@ -32,105 +31,24 @@ jobs:
         with:
           version: "latest"
 
+      - name: Install dependencies
+        run: uv sync
+
       - name: Process and Split Reports
-        working-directory: scripts-repo
         run: |
           mkdir -p /tmp/protondb-output
           uv run python scripts/split_reports.py \
-            ../official-data/reports \
+            official-data/reports \
             /tmp/protondb-output
 
-      - name: Sync processed data
-        run: |
-          mkdir -p scripts-repo/data
-          cp -rv /tmp/protondb-output/data/. scripts-repo/data/
-          cp /tmp/protondb-output/index.html scripts-repo/index.html
-
-      - name: Check for changes
-        id: check
-        working-directory: scripts-repo
-        run: |
-          git add data/ index.html
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "has-changes=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "has-changes=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Upload build artifact
-        if: steps.check.outputs.has-changes == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: site-content
-          path: |
-            scripts-repo/data
-            scripts-repo/index.html
-
-  report-build-status:
-    needs: [build, commit, deploy-pages]
-    runs-on: ubuntu-24.04
-    if: always()
-    steps:
-      - name: Summary
-        run: |
-          echo "### Update ProtonDB Data" >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "| Job | Status |" >> "$GITHUB_STEP_SUMMARY"
-          echo "|-----|--------|" >> "$GITHUB_STEP_SUMMARY"
-          echo "| Build | ${{ needs.build.result }} |" >> "$GITHUB_STEP_SUMMARY"
-          echo "| Commit | ${{ needs.commit.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
-          echo "| Deploy Pages | ${{ needs.deploy-pages.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
-          echo "| Changes detected | ${{ needs.build.outputs.has-changes }} |" >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Fail if any job failed
-        if: contains(needs.*.result, 'failure')
-        run: exit 1
-
-  commit:
-    needs: build
-    if: needs.build.outputs.has-changes == 'true'
-    runs-on: ubuntu-24.04
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: site-content
-          path: artifact
-
-      - name: Commit and push to main
+      - name: Deploy to gh-pages (orphan — no history)
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          cp -rv artifact/data/. data/
-          cp artifact/index.html index.html
-          git add data/ index.html
-          git commit -m "Auto-update: ProtonDB split reports $(date +%F)"
-          git pull --rebase origin main
-          git push
-
-  deploy-pages:
-    needs: commit
-    runs-on: ubuntu-24.04
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        with:
-          ref: main
-
-      - name: Deploy to gh-pages
-        run: |
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          git checkout --orphan gh-pages-tmp
+          git checkout --orphan gh-pages-new
           git rm -rf .
-          git checkout main -- data/ index.html
+          cp -r /tmp/protondb-output/data .
+          cp /tmp/protondb-output/index.html .
           git add data/ index.html
           git commit -m "Deploy: $(date +%F)"
-          git push origin gh-pages-tmp:gh-pages --force
+          git push origin gh-pages-new:gh-pages --force
