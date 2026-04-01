@@ -1,3 +1,5 @@
+[![Update ProtonDB Data](https://github.com/mdeguzis/proton-pulse-data/actions/workflows/update-data.yml/badge.svg)](https://github.com/mdeguzis/proton-pulse-data/actions/workflows/update-data.yml)
+
 # proton-pulse-data
 
 Monthly-updated GitHub Pages CDN for ProtonDB per-game community reports.
