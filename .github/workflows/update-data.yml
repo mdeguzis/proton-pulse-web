@@ -2,14 +2,14 @@ name: Update ProtonDB Data
 
 on:
   schedule:
-    # Run on the 2nd of each month to ensure the previous month's dump is ready
+    # Run on the 2nd of each month
     - cron: '0 6 2 * *'
   workflow_dispatch:
     inputs:
       dump_url:
-        description: 'Override dump URL (default is official static reports)'
+        description: 'Override dump URL (Leave blank for default)'
         required: false
-        default: 'https://raw.githubusercontent.com/ProtonDB/static/master/reports.json.gz'
+        default: ''
 
 jobs:
   update:
@@ -36,10 +36,10 @@ jobs:
       - name: Prepare Download URL
         id: detect
         run: |
-          # Use manual input if provided, otherwise use the reliable static mirror
           URL="${{ github.event.inputs.dump_url }}"
+          # Default to the bdefore historical dump if input is empty
           if [ -z "$URL" ]; then
-            URL="https://raw.githubusercontent.com/ProtonDB/static/master/reports.json.gz"
+            URL="https://github.com/bdefore/protondb-data/raw/master/reports/reports_piiremoved.json.gz"
           fi
           echo "url=$URL" >> "$GITHUB_OUTPUT"
           echo "Selected dump URL: $URL"
@@ -54,42 +54,19 @@ jobs:
       - name: Split reports by game
         run: |
           mkdir -p /tmp/protondb-output
-          # The split_reports.py script handles the .json.gz streaming
           python3 scripts-repo/scripts/split_reports.py \
             /tmp/protondb-dump.json.gz \
             /tmp/protondb-output
 
-      - name: Show output stats
-        run: |
-          echo "=== index.json ==="
-          [ -f /tmp/protondb-output/index.json ] && cat /tmp/protondb-output/index.json || echo "index.json missing"
-          echo -e "\n=== data/ file count ==="
-          ls /tmp/protondb-output/data/ 2>/dev/null | wc -l || echo "0"
-          echo -e "\n=== total data/ size ==="
-          du -sh /tmp/protondb-output/data/ 2>/dev/null || echo "No data directory"
-
-      - name: Publish to gh-pages (orphan branch)
+      - name: Publish to gh-pages
         run: |
           cd /tmp/protondb-output
-
           git init
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Use an orphan branch to keep the repo size from ballooning with history
           git checkout --orphan gh-pages
-
-          # Ensure GitHub Pages serves the raw JSON files without Jekyll processing
           touch .nojekyll
-
           git add -A
           git commit -m "chore: update ProtonDB data $(date -u +%Y-%m-%d)"
-
-          # Push to the current repository's gh-pages branch
-          git remote add origin \
-            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
-
-          # Force-push is intentional here to keep the repo thin
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
           git push --force origin gh-pages
-
-          echo "Successfully published to https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
