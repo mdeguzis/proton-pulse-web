@@ -14,24 +14,25 @@ def process_reports(input_path, output_dir):
         print(f"!! ERROR: Path does not exist: {abs_input}", flush=True)
         return
 
-    # Check if we are looking at the root or the reports subdir
     search_path = os.path.join(abs_input, 'reports') if os.path.isdir(os.path.join(abs_input, 'reports')) else abs_input
     
     game_reports = defaultdict(list)
     total_reports = 0
     
-    # Get a list of tarballs
     try:
+        # Sort them so they process in a predictable order (e.g., chronological-ish)
         tarballs = sorted([f for f in os.listdir(search_path) if f.endswith('.tar.gz')])
     except FileNotFoundError:
         print(f"!! ERROR: Could not list directory: {search_path}", flush=True)
         return
 
-    print(f"--> Found {len(tarballs)} archives to process.", flush=True)
+    num_files = len(tarballs)
+    print(f"--> Found {num_files} archives to process.", flush=True)
 
-    for file in tarballs:
+    for index, file in enumerate(tarballs, 1):
         file_path = os.path.join(search_path, file)
-        print(f"--> Processing {file}...", flush=True)
+        # Added the 1/88 counter here
+        print(f"[{index}/{num_files}] Processing {file}...", flush=True)
         
         file_count = 0
         try:
@@ -40,10 +41,8 @@ def process_reports(input_path, output_dir):
                     if member.name.endswith('.json'):
                         f = tar.extractfile(member)
                         if f:
-                            # AppID is usually the filename (e.g., 12345.json)
                             app_id = os.path.splitext(os.path.basename(member.name))[0]
                             try:
-                                # ijson.items helps process large JSON arrays without loading all into RAM
                                 parser = ijson.items(f, 'item')
                                 for report in parser:
                                     simplified = {
@@ -55,9 +54,8 @@ def process_reports(input_path, output_dir):
                                     total_reports += 1
                                     file_count += 1
                             except Exception:
-                                # Skip malformed individual JSON files within the tar
                                 continue
-            print(f"    Done. ({file_count} reports extracted)", flush=True)
+            print(f"    Done. ({file_count} reports found)", flush=True)
         except Exception as e:
             print(f"!! Failed to open {file}: {e}", flush=True)
 
@@ -66,30 +64,27 @@ def process_reports(input_path, output_dir):
     os.makedirs(data_dir, exist_ok=True)
 
     for app_id, reports in game_reports.items():
-        # FIX: Force timestamp 't' to string to avoid TypeError: '<' between str and int
-        # This sorts by date/time descending
+        # Defensive sorting for mixed types (str vs int)
         reports.sort(key=lambda x: str(x.get('t', '')), reverse=True)
         
         with open(os.path.join(data_dir, f"{app_id}.json"), 'w') as f:
             json.dump(reports, f)
 
-    # Create a manifest for the frontend/hosting
     manifest = {
         "last_updated": datetime.now().isoformat(),
         "total_games": len(game_reports),
-        "total_reports": total_reports
+        "total_reports": total_reports,
+        "total_archives_scanned": num_files
     }
     
     with open(os.path.join(output_dir, 'manifest.json'), 'w') as f:
         json.dump(manifest, f, indent=2)
 
     print(f"--- FINISH ---", flush=True)
-    print(f"Processed {total_reports} reports for {len(game_reports)} games.", flush=True)
+    print(f"Total: {total_reports} reports for {len(game_reports)} games.", flush=True)
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
         print("Usage: python3 split_reports.py <input_dir> <output_dir>")
         sys.exit(1)
-    
-    # Run the processor
     process_reports(sys.argv[1], sys.argv[2])
