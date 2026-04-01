@@ -1,1 +1,89 @@
-import os\nimport tarfile\nimport json\nimport logging\nfrom datetime import datetime\n\n# Constants\nMAX_REPORTS_PER_FILE = 5000\nINPUT_DIR = 'path/to/input/directory'  # Specify input directory\nDATA_DIR = 'data'  # Directory for organized reports\n\n# Set up logging\nlogging.basicConfig(level=logging.INFO, filename='process.log', format='%(asctime)s - %(levelname)s - %(message)s')\nconsole = logging.StreamHandler()\nconsole.setlevel(logging.INFO)\nlogging.getLogger().addHandler(console)\n\ndef process_tar_gz(file_path):\n    reports = []\n    with tarfile.open(file_path, 'r:gz') as tar:\n        for index, member in enumerate(tar.getmembers()):\n            if member.isfile():\n                file = tar.extractfile(member)\n                data = json.load(file)  # Assuming each file contains a JSON array of reports\n                for report in data:\n                    if len(reports) < MAX_REPORTS_PER_FILE:\n                        appId = report.get('appId')\n                        rating = report.get('rating')\n                        protonVersion = report.get('protonVersion')\n                        timestamp = report.get('timestamp')\n                        report_data = {\n                            'v': rating,  # Mapping rating to v\n                            'p': protonVersion,  # Mapping protonVersion to p\n                            't': timestamp,  # Mapping timestamp to t\n                        }\n                        reports.append(report_data)\n                        logging.info(f'Processed report: {report_data}, Progress: [{index+1}/{len(data)}]')\n                log_reports(appId, reports)\n            else:\n                logging.warning(f'Skipped non-JSON file: {member.name}')\n\ndef log_reports(appId, reports):\n    report_file_path = os.path.join(DATA_DIR, f'{appId}.json')\n    with open(report_file_path, 'w') as report_file:\n        json.dump(reports, report_file)\n    logging.info(f'Generated report file: {report_file_path}')\n\ndef process_files():\n    # Read input files and process\n    processed_files = []\n    for file_name in os.listdir(INPUT_DIR):\n        if file_name.endswith('.tar.gz'):  # Only process tar.gz archives\n            file_path = os.path.join(INPUT_DIR, file_name)\n            process_tar_gz(file_path)\n            processed_files.append(file_name)\n    # Save manifest of processed files\n    with open('manifest.json', 'w') as manifest_file:\n        json.dump(processed_files, manifest_file)\n    logging.info('Processed files manifest saved.')\n\nif __name__ == '__main__':\n    process_files()
+import os
+import sys
+import tarfile
+import json
+import logging
+from datetime import datetime
+
+# Constants
+MAX_REPORTS_PER_FILE = 5000
+
+# Check for command-line arguments
+if len(sys.argv) != 3:
+    print("Usage: python split_reports.py <input_directory> <output_directory>")
+    sys.exit(1)
+
+INPUT_DIR = sys.argv[1]
+DATA_DIR = sys.argv[2]
+
+# Ensure the input directory exists
+if not os.path.exists(INPUT_DIR):
+    print(f"Input directory '{INPUT_DIR}' does not exist.")
+    sys.exit(1)
+
+# Create output directory if it doesn't exist
+if not os.path.exists(DATA_DIR):
+    os.makedirs(DATA_DIR)
+
+# Set up logging
+logging.basicConfig(level=logging.INFO, filename='process.log', format='%(asctime)s - %(levelname)s - %(message)s')
+console = logging.StreamHandler()
+console.setLevel(logging.INFO)
+logging.getLogger().addHandler(console)
+
+def process_tar_gz(file_path):
+    reports = []
+    with tarfile.open(file_path, 'r:gz') as tar:
+        for index, member in enumerate(tar.getmembers()):
+            if member.isfile():
+                file = tar.extractfile(member)
+                data = json.load(file)  # Assuming each file contains a JSON array of reports
+                for report in data:
+                    if len(reports) < MAX_REPORTS_PER_FILE:
+                        appId = report.get('appId')
+                        rating = report.get('rating')
+                        protonVersion = report.get('protonVersion')
+                        timestamp = report.get('timestamp')
+                        report_data = {
+                            'v': rating,  # Mapping rating to v
+                            'p': protonVersion,  # Mapping protonVersion to p
+                            't': timestamp,  # Mapping timestamp to t
+                        }
+                        reports.append(report_data)
+                        logging.info(f'Processed report: {report_data}, Progress: [{index+1}/{len(data)}]')
+                log_reports(appId, reports)
+            else:
+                logging.warning(f'Skipped non-JSON file: {member.name}')
+
+def log_reports(appId, reports):
+    report_file_path = os.path.join(DATA_DIR, f'{appId}.json')
+    with open(report_file_path, 'w') as report_file:
+        json.dump(reports, report_file)
+    logging.info(f'Generated report file: {report_file_path}')
+
+def process_reports(input_file):
+    reports = []
+    input_file_path = os.path.join(INPUT_DIR, input_file)
+    
+    if not os.path.exists(input_file_path):
+        logging.error(f'Input file {input_file_path} not found.')
+        return
+    
+    with open(input_file_path, 'r') as f:
+        data = json.load(f)
+        for report in data:
+            appId = report.get('appId')
+            rating = report.get('rating')
+            protonVersion = report.get('protonVersion')
+            timestamp = report.get('timestamp')
+            report_data = {
+                'v': rating,  # Mapping rating to v
+                'p': protonVersion,  # Mapping protonVersion to p
+                't': timestamp,  # Mapping timestamp to t
+            }
+            reports.append(report_data)
+            logging.info(f'Processed report: {report_data}')
+    log_reports(appId, reports)
+
+if __name__ == '__main__':
+    process_reports('input_reports.json')
