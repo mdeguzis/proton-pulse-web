@@ -106,20 +106,8 @@ jobs:
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          echo "=== Artifact contents ==="
-          find artifact -type f | head -20
-          # Handle both possible artifact structures
-          if [ -d "artifact/data" ]; then
-            cp -rv artifact/data/. data/
-            cp artifact/index.html index.html
-          elif [ -d "artifact/scripts-repo/data" ]; then
-            cp -rv artifact/scripts-repo/data/. data/
-            cp artifact/scripts-repo/index.html index.html
-          else
-            echo "!! ERROR: Unexpected artifact structure"
-            find artifact -type f
-            exit 1
-          fi
+          cp -rv artifact/data/. data/
+          cp artifact/index.html index.html
           git add data/ index.html
           git commit -m "Auto-update: ProtonDB split reports $(date +%F)"
           git pull --rebase origin main

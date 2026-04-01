@@ -208,6 +208,26 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     for app_id in sorted_app_ids:
         app_years[app_id] = sorted(app_years[app_id], key=lambda y: (0, int(y)) if y.isdigit() else (1, y))
 
+    # Well-known Steam app IDs for quick reference
+    SAMPLE_APPS = {
+        "730": "Counter-Strike 2",
+        "570": "Dota 2",
+        "440": "Team Fortress 2",
+        "292030": "The Witcher 3",
+        "1245620": "Elden Ring",
+        "1091500": "Cyberpunk 2077",
+        "1174180": "Red Dead Redemption 2",
+        "413150": "Stardew Valley",
+        "814380": "Sekiro",
+        "1086940": "Baldur's Gate 3",
+    }
+
+    # Build sample links for apps that exist in the dataset
+    sample_entries = []
+    for app_id, name in SAMPLE_APPS.items():
+        if app_id in app_years:
+            sample_entries.append(f'<a href="data/{app_id}/">{name}</a> ({app_id})')
+
     lines = [
         "<!DOCTYPE html>",
         '<html lang="en">',
@@ -217,6 +237,16 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
         "</head>",
         "<body>",
         "<h1>proton-pulse-data index</h1>",
+        "<p>Monthly-updated ProtonDB per-game community reports. "
+        f"<strong>{len(sorted_app_ids)}</strong> games tracked.</p>",
+    ]
+
+    if sample_entries:
+        lines.append("<h2>Popular titles</h2>")
+        lines.append("<p>" + " &middot; ".join(sample_entries) + "</p>")
+
+    lines += [
+        "<h2>All games (by app ID)</h2>",
         "<ul>",
     ]
 
