@@ -48,13 +48,14 @@ jobs:
           # Output is /tmp/protondb-output/data/{appId}/{year}.json
           # Copy the nested data/ contents into scripts-repo/data/
           cp -rv /tmp/protondb-output/data/. scripts-repo/data/
+          cp /tmp/protondb-output/index.html scripts-repo/index.html
 
       - name: Commit and Push changes
         working-directory: scripts-repo
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add data/
+          git add data/ index.html
           # Only push if there are actual updates to the JSON data
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Auto-update: ProtonDB split reports $(date +%F)"
