@@ -37,19 +37,18 @@ jobs:
 
       - name: Process and Split Reports
         env:
-          # Ensuring output is flushed immediately to show status counts
           PYTHONUNBUFFERED: "1"
         run: |
           mkdir -p /tmp/protondb-output
-          # Run the script with the 'reports' subdirectory
+          # Targeting the 'reports' subfolder directly for speed and accuracy
           python3 scripts-repo/scripts/split_reports.py \
             official-data/reports \
             /tmp/protondb-output
 
-      - name: Sync processed data
+      - name: Sync processed data to scripts-repo
         run: |
           mkdir -p scripts-repo/data
-          # Use rsync or cp to move files into the repo structure
+          # Copying only the new split files into the repo structure
           cp -rv /tmp/protondb-output/* scripts-repo/data/
 
       - name: Commit and Push changes
@@ -58,9 +57,10 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add data/
+          # Only push if there are actual updates to the JSON data
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Auto-update: ProtonDB split reports $(date +%F)"
             git push
           else
-            echo "No changes to commit"
+            echo "No new data changes detected. Skipping push."
           fi
