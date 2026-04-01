@@ -63,9 +63,8 @@ jobs:
         with:
           name: site-content
           path: |
-            scripts-repo/data/
+            scripts-repo/data
             scripts-repo/index.html
-          retention-days: 1
 
   report-build-status:
     needs: [build, commit, deploy-pages]
@@ -107,8 +106,20 @@ jobs:
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          cp -rv artifact/scripts-repo/data/. data/
-          cp artifact/scripts-repo/index.html index.html
+          echo "=== Artifact contents ==="
+          find artifact -type f | head -20
+          # Handle both possible artifact structures
+          if [ -d "artifact/data" ]; then
+            cp -rv artifact/data/. data/
+            cp artifact/index.html index.html
+          elif [ -d "artifact/scripts-repo/data" ]; then
+            cp -rv artifact/scripts-repo/data/. data/
+            cp artifact/scripts-repo/index.html index.html
+          else
+            echo "!! ERROR: Unexpected artifact structure"
+            find artifact -type f
+            exit 1
+          fi
           git add data/ index.html
           git commit -m "Auto-update: ProtonDB split reports $(date +%F)"
           git pull --rebase origin main
