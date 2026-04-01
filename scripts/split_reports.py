@@ -195,8 +195,6 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     as a collapsible tree using native <details>/<summary> elements.
     index_keys is a set of (appId, year) tuples.
     """
-    from datetime import datetime, timezone
-
     # Collect {appId: [year, ...]} sorted numerically
     app_years: dict[str, list[str]] = {}
     for (app_id, year) in index_keys:
