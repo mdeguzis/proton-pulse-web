@@ -113,6 +113,7 @@ def process_data(input_dir, output_dir):
 
     log("Done!")
     generate_latest_files(data_output_path)
+    generate_app_indexes(index_keys, data_output_path)
     generate_index_html(index_keys, output_path)
 
 
@@ -213,6 +214,24 @@ def generate_latest_files(data_output_path: Path) -> None:
         latest_dst.write_bytes(latest_src.read_bytes())
         count += 1
     log(f"[latest] Generated {count} latest.json files", debug=True)
+
+
+def generate_app_indexes(index_keys: set, data_output_path: Path) -> None:
+    """
+    Write data/{appId}/index.json for each app — a sorted list of available years.
+    The plugin fetches this to discover which year files to merge for a game.
+    """
+    app_years: dict[str, list[str]] = {}
+    for (app_id, year) in index_keys:
+        app_years.setdefault(app_id, []).append(year)
+
+    for app_id, years in app_years.items():
+        sorted_years = sorted(years, key=lambda y: (0, int(y)) if y.isdigit() else (1, y))
+        app_dir = data_output_path / app_id
+        app_dir.mkdir(parents=True, exist_ok=True)
+        index_file = app_dir / "index.json"
+        index_file.write_text(json.dumps(sorted_years))
+        log(f"[app-index] {app_id}/index.json -> {sorted_years}")
 
 
 def generate_index_html(index_keys: set, output_path: Path) -> None:

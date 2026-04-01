@@ -6,26 +6,47 @@ data/
 # Python
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
 *.egg-info/
 dist/
 build/
+.eggs/
+*.egg-link
+pip-wheel-metadata/
+
+# Virtual environments
 .venv/
 venv/
+env/
+.env/
+.env.local
+
+# uv
+.python-version
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Type checkers
+.mypy_cache/
+.ruff_cache/
 
 # OS
 .DS_Store
 Thumbs.db
 
 # Editor / IDE
+.idea/
+.vscode/
 *.swp
 *.swo
 *~
-.vscode/
-.idea/
 
 # Logs
 *.log
-
-# Environment
-.env
-.env.local
