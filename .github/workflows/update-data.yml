@@ -10,11 +10,8 @@ env:
   PYTHONUNBUFFERED: "1"
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-24.04
-    permissions:
-      contents: write
-
     steps:
       - name: Checkout Scripts
         uses: actions/checkout@v4
@@ -41,6 +38,29 @@ jobs:
             official-data/reports \
             /tmp/protondb-output
 
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-content
+          path: |
+            /tmp/protondb-output/data
+            /tmp/protondb-output/index.html
+
+  deploy-pages:
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site-content
+          path: /tmp/protondb-output
+
       - name: Deploy to gh-pages (orphan — no history)
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -52,3 +72,21 @@ jobs:
           git add data/ index.html
           git commit -m "Deploy: $(date +%F)"
           git push origin gh-pages-new:gh-pages --force
+
+  report-build-status:
+    needs: [build, deploy-pages]
+    runs-on: ubuntu-24.04
+    if: always()
+    steps:
+      - name: Summary
+        run: |
+          echo "### Update ProtonDB Data" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Job | Status |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-----|--------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Build | ${{ needs.build.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Deploy Pages | ${{ needs.deploy-pages.result }} |" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Fail if any job failed
+        if: contains(needs.*.result, 'failure')
+        run: exit 1
