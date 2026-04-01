@@ -59,6 +59,7 @@ jobs:
           # Only push if there are actual updates to the JSON data
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Auto-update: ProtonDB split reports $(date +%F)"
+            git pull --rebase origin main
             git push
           else
             echo "No new data changes detected. Skipping push."

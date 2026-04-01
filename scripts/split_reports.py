@@ -12,13 +12,18 @@ from datetime import datetime, timezone
 from collections import defaultdict
 
 
-def log(msg):
-    """Flush-safe print for CI environments."""
+DEBUG = False
+
+
+def log(msg, debug=False):
+    """Flush-safe print for CI environments. Skipped if debug=True and DEBUG is off."""
+    if debug and not DEBUG:
+        return
     print(msg, flush=True)
 
 
 def clone_repo(url, target_dir):
-    log(f"[clone] Cloning {url} -> {target_dir}")
+    log(f"[clone] Cloning {url} -> {target_dir}", debug=True)
     result = subprocess.run(
         ["git", "clone", "--depth=1", url, target_dir],
         capture_output=True, text=True
@@ -26,7 +31,7 @@ def clone_repo(url, target_dir):
     if result.returncode != 0:
         log(f"!! git clone failed:\n{result.stderr}")
         sys.exit(1)
-    log(f"[clone] Clone complete.")
+    log(f"[clone] Clone complete.", debug=True)
 
 
 def process_data(input_dir, output_dir):
@@ -35,20 +40,20 @@ def process_data(input_dir, output_dir):
     data_output_path = output_path / "data"
     data_output_path.mkdir(parents=True, exist_ok=True)
 
-    log(f"[init] Input dir : {input_path.resolve()}")
-    log(f"[init] Output dir: {data_output_path.resolve()}")
+    log(f"[init] Input dir : {input_path.resolve()}", debug=True)
+    log(f"[init] Output dir: {data_output_path.resolve()}", debug=True)
 
     if not input_path.exists():
         log(f"!! ERROR: Input directory does not exist: {input_path}")
         sys.exit(1)
 
     all_files = list(input_path.iterdir())
-    log(f"[init] Files found in input dir: {len(all_files)}")
+    log(f"[init] Files found in input dir: {len(all_files)}", debug=True)
     for f in sorted(all_files)[:20]:
         size = f.stat().st_size if f.is_file() else 0
-        log(f"  {f.name}  ({size:,} bytes)")
+        log(f"  {f.name}  ({size:,} bytes)", debug=True)
     if len(all_files) > 20:
-        log(f"  ... and {len(all_files) - 20} more")
+        log(f"  ... and {len(all_files) - 20} more", debug=True)
 
     parsed_count = 0
     index_keys: set[tuple] = set()
@@ -56,41 +61,41 @@ def process_data(input_dir, output_dir):
 
     # 1. Handle Raw JSON files
     json_files = sorted(input_path.glob("*.json"))
-    log(f"\n[json] Found {len(json_files)} raw JSON file(s)")
+    log(f"\n[json] Found {len(json_files)} raw JSON file(s)", debug=True)
     for json_file in json_files:
         size = json_file.stat().st_size
-        log(f"[json] Parsing: {json_file.name} ({size:,} bytes)")
+        log(f"[json] Parsing: {json_file.name} ({size:,} bytes)", debug=True)
         t0 = time.time()
         with open(json_file, 'r') as f:
             count, src_keys = parse_and_split(f, data_output_path, source_label=json_file.name)
         elapsed = time.time() - t0
-        log(f"[json] Done: {count:,} reports in {elapsed:.1f}s")
+        log(f"[json] Done: {count:,} reports in {elapsed:.1f}s", debug=True)
         parsed_count += count
         index_keys.update(src_keys)
 
     # 2. Handle Tarballs (backwards compatibility)
     tar_files = sorted(input_path.glob("*.tar.gz"))
-    log(f"\n[tar] Found {len(tar_files)} tarball(s)")
+    log(f"\n[tar] Found {len(tar_files)} tarball(s)", debug=True)
     for tar_file in tar_files:
         size = tar_file.stat().st_size
-        log(f"[tar] Extracting: {tar_file.name} ({size:,} bytes)")
+        log(f"[tar] Extracting: {tar_file.name} ({size:,} bytes)", debug=True)
         t0 = time.time()
         try:
             with tarfile.open(tar_file, "r:gz") as tar:
                 members = [m for m in tar.getmembers() if m.name.endswith(".json")]
-                log(f"[tar]   JSON members inside archive: {len(members)}")
+                log(f"[tar]   JSON members inside archive: {len(members)}", debug=True)
                 for member in members:
-                    log(f"[tar]   -> {member.name} ({member.size:,} bytes)")
+                    log(f"[tar]   -> {member.name} ({member.size:,} bytes)", debug=True)
                     f = tar.extractfile(member)
                     if f:
                         count, src_keys = parse_and_split(f, data_output_path, source_label=member.name)
-                        log(f"[tar]      {count:,} reports parsed")
+                        log(f"[tar]      {count:,} reports parsed", debug=True)
                         parsed_count += count
                         index_keys.update(src_keys)
         except Exception as e:
             log(f"!! Failed to process {tar_file.name}: {e}")
         elapsed = time.time() - t0
-        log(f"[tar] Done: {elapsed:.1f}s")
+        log(f"[tar] Done: {elapsed:.1f}s", debug=True)
 
     total_elapsed = time.time() - pipeline_start
     unique_apps = sum(1 for p in data_output_path.iterdir() if p.is_dir())
@@ -144,9 +149,9 @@ def parse_and_split(file_handle, data_output_path, source_label="?"):
         count += 1
 
         if count % 10000 == 0:
-            log(f"  [parse] {source_label}: {count:,} reports buffered...")
+            log(f"  [parse] {source_label}: {count:,} reports buffered...", debug=True)
 
-    log(f"  [parse] {source_label}: flushing {len(buffer)} app/year buckets to disk...")
+    log(f"  [parse] {source_label}: flushing {len(buffer)} app/year buckets to disk...", debug=True)
     flush_start = time.time()
 
     for (app_id, year), new_reports in buffer.items():
@@ -175,16 +180,16 @@ def parse_and_split(file_handle, data_output_path, source_label="?"):
 
         if added < len(new_reports):
             dupes = len(new_reports) - added
-            log(f"  [dedup] appId={app_id} year={year}: skipped {dupes} duplicate(s)")
+            log(f"  [dedup] appId={app_id} year={year}: skipped {dupes} duplicate(s)", debug=True)
 
         with open(year_file, "w") as yf:
             json.dump(existing, yf, indent=2)
 
     flush_elapsed = time.time() - flush_start
-    log(f"  [parse] {source_label}: flush done in {flush_elapsed:.1f}s")
+    log(f"  [parse] {source_label}: flush done in {flush_elapsed:.1f}s", debug=True)
 
     if skipped:
-        log(f"  [parse] {source_label}: skipped {skipped} records missing appId")
+        log(f"  [parse] {source_label}: skipped {skipped} records missing appId", debug=True)
 
     return count, set(buffer.keys())
 
@@ -238,7 +243,7 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
 
     index_file = output_path / "index.html"
     index_file.write_text("\n".join(lines) + "\n")
-    log(f"[index] Written: {index_file}")
+    log(f"[index] Written: {index_file}", debug=True)
 
 
 def main():
@@ -265,7 +270,14 @@ def main():
         "--output", dest="output_dir_flag",
         help="Output directory (alternative to positional arg)"
     )
+    parser.add_argument(
+        "--debug", action="store_true",
+        help="Enable verbose debug logging"
+    )
     args = parser.parse_args()
+
+    global DEBUG
+    DEBUG = args.debug
 
     output_dir = args.output_dir or args.output_dir_flag
     if not output_dir:
@@ -277,7 +289,7 @@ def main():
         tmp_dir = tempfile.mkdtemp(prefix="protondb-clone-")
         clone_repo(args.url, tmp_dir)
         input_dir = os.path.join(tmp_dir, args.subfolder)
-        log(f"[init] Using cloned subfolder: {input_dir}")
+        log(f"[init] Using cloned subfolder: {input_dir}", debug=True)
     elif args.input_dir:
         input_dir = args.input_dir
     else:
