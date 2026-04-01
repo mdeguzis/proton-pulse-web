@@ -35,20 +35,12 @@ jobs:
       - name: Prepare output directory
         run: mkdir -p /tmp/protondb-output
 
-      - name: Restore app names cache
-        uses: actions/cache@v5
-        with:
-          path: /tmp/protondb-output/app-names-cache.json
-          key: app-names-${{ github.run_id }}
-          restore-keys: app-names-
-
       - name: Process and Split Reports
         working-directory: scripts-repo
         run: |
           uv run python scripts/split_reports.py \
             ../official-data/reports \
-            /tmp/protondb-output \
-            --app-names-cache /tmp/protondb-output/app-names-cache.json
+            /tmp/protondb-output
 
       - name: Sync processed data to scripts-repo
         run: |

@@ -1,7 +1,6 @@
 import os
 import sys
 import json
-import re
 import tarfile
 import ijson
 import argparse
@@ -11,8 +10,6 @@ import time
 from pathlib import Path
 from datetime import datetime, timezone
 from collections import defaultdict
-from urllib.request import urlopen, Request
-from urllib.error import URLError
 
 DEBUG = False
 
@@ -22,90 +19,6 @@ def log(msg, debug=False):
     if debug and not DEBUG:
         return
     print(msg, flush=True)
-
-
-def _fetch_name_protondb(app_id: str) -> str | None:
-    """Try ProtonDB's Steam proxy."""
-    url = f"https://www.protondb.com/proxy/steam/api/appdetails/?appids={app_id}"
-    try:
-        req = Request(url, headers={"User-Agent": "proton-pulse-data/1.0"})
-        with urlopen(req, timeout=10) as resp:
-            data = json.loads(resp.read())
-        return data.get(app_id, {}).get("data", {}).get("name")
-    except Exception:
-        return None
-
-
-def _fetch_name_steamspy(app_id: str) -> str | None:
-    """Fallback to SteamSpy."""
-    url = f"https://steamspy.com/api.php?request=appdetails&appid={app_id}"
-    try:
-        req = Request(url, headers={"User-Agent": "proton-pulse-data/1.0"})
-        with urlopen(req, timeout=10) as resp:
-            data = json.loads(resp.read())
-        name = data.get("name")
-        return name if name and name != "ValveTestApp" else None
-    except Exception:
-        return None
-
-
-def fetch_app_names(app_ids: set[str], cache_path: str | None = None) -> dict[str, str]:
-    """
-    Resolve app IDs to game names via ProtonDB proxy, then SteamSpy fallback.
-    Loads/saves a JSON cache file to avoid redundant lookups across runs.
-    """
-    cache: dict[str, str] = {}
-    if cache_path:
-        try:
-            with open(cache_path, "r") as f:
-                cache = json.load(f)
-            log(f"[names] Loaded {len(cache)} cached names from {cache_path}")
-        except FileNotFoundError:
-            log(f"[names] No cache file found at {cache_path}, starting fresh")
-        except Exception as e:
-            log(f"!! WARNING: Could not read name cache: {e}")
-
-    missing = app_ids - cache.keys()
-    if not missing:
-        log(f"[names] All {len(app_ids)} names cached, nothing to fetch")
-        return cache
-
-    log(f"[names] Resolving {len(missing)} app names ({len(cache)} cached)...")
-    resolved = 0
-    failed = 0
-    for i, app_id in enumerate(sorted(missing), 1):
-        name = _fetch_name_protondb(app_id)
-        if not name:
-            name = _fetch_name_steamspy(app_id)
-        if name:
-            cache[app_id] = name
-            resolved += 1
-        else:
-            failed += 1
-        if i % 100 == 0:
-            log(f"[names]   {i}/{len(missing)} looked up ({resolved} resolved, {failed} failed)...", debug=True)
-        # Light rate-limit to be polite
-        time.sleep(0.25)
-
-    log(f"[names] Resolved {resolved} new names, {failed} unresolved")
-
-    if cache_path:
-        try:
-            Path(cache_path).parent.mkdir(parents=True, exist_ok=True)
-            with open(cache_path, "w") as f:
-                json.dump(cache, f, indent=2)
-            log(f"[names] Cache saved ({len(cache)} entries) to {cache_path}")
-        except Exception as e:
-            log(f"!! WARNING: Could not write name cache: {e}")
-
-    return cache
-
-
-def slugify(name: str) -> str:
-    """Normalize a game name to lowercase-dashes."""
-    name = name.lower()
-    name = re.sub(r"[^a-z0-9]+", "-", name)
-    return name.strip("-")
 
 
 def clone_repo(url, target_dir):
@@ -120,7 +33,7 @@ def clone_repo(url, target_dir):
     log(f"[clone] Clone complete.", debug=True)
 
 
-def process_data(input_dir, output_dir, app_names_cache=None):
+def process_data(input_dir, output_dir):
     input_path = Path(input_dir)
     output_path = Path(output_dir)
     data_output_path = output_path / "data"
@@ -199,9 +112,7 @@ def process_data(input_dir, output_dir, app_names_cache=None):
         sys.exit(1)
 
     log("Done!")
-    app_ids = {app_id for (app_id, _) in index_keys}
-    app_names = fetch_app_names(app_ids, cache_path=app_names_cache)
-    generate_index_html(index_keys, output_path, app_names=app_names)
+    generate_index_html(index_keys, output_path)
 
 
 def parse_and_split(file_handle, data_output_path, source_label="?"):
@@ -282,15 +193,12 @@ def parse_and_split(file_handle, data_output_path, source_label="?"):
     return count, set(buffer.keys())
 
 
-def generate_index_html(index_keys: set, output_path: Path, app_names: dict[str, str] = None) -> None:
+def generate_index_html(index_keys: set, output_path: Path) -> None:
     """
     Write index.html to output_path listing all data/{appId}/{year}.json files
     as a collapsible tree using native <details>/<summary> elements.
     index_keys is a set of (appId, year) tuples.
     """
-    if app_names is None:
-        app_names = {}
-
     # Collect {appId: [year, ...]} sorted numerically
     app_years: dict[str, list[str]] = {}
     for (app_id, year) in index_keys:
@@ -313,14 +221,9 @@ def generate_index_html(index_keys: set, output_path: Path, app_names: dict[str,
     ]
 
     for app_id in sorted_app_ids:
-        name = app_names.get(app_id)
-        if name:
-            label = f"{slugify(name)}_{app_id}"
-        else:
-            label = app_id
         lines.append("  <li>")
         lines.append("    <details>")
-        lines.append(f"      <summary>{label}/</summary>")
+        lines.append(f"      <summary>{app_id}/</summary>")
         lines.append("      <ul>")
         for year in app_years[app_id]:
             href = f"data/{app_id}/{year}.json"
@@ -370,10 +273,6 @@ def main():
         "--debug", action="store_true",
         help="Enable verbose debug logging"
     )
-    parser.add_argument(
-        "--app-names-cache",
-        help="Path to JSON cache file for app name lookups"
-    )
     args = parser.parse_args()
 
     global DEBUG
@@ -397,7 +296,7 @@ def main():
         parser.print_help()
         sys.exit(1)
 
-    process_data(input_dir, output_dir, app_names_cache=args.app_names_cache)
+    process_data(input_dir, output_dir)
 
 
 if __name__ == "__main__":
