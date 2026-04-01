@@ -7,6 +7,7 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  PYTHONUNBUFFERED: "1" # This forces Python to print to the log immediately
 
 jobs:
   update:
@@ -38,7 +39,7 @@ jobs:
       - name: Run Processing Script
         run: |
           mkdir -p /tmp/protondb-output
-          # The script now handles the .tar.gz files found in official-data/reports
+          # Now running with unbuffered logs
           python3 scripts-repo/scripts/split_reports.py \
             official-data \
             /tmp/protondb-output
@@ -48,7 +49,7 @@ jobs:
           cd /tmp/protondb-output
           
           if [ ! -d "data" ] || [ -z "$(ls -A data)" ]; then
-            echo "Error: No data files generated. Check script logs above."
+            echo "Error: No data files generated."
             exit 1
           fi
 
