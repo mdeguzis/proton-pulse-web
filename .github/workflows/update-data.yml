@@ -1,9 +1,8 @@
-name: update
+name: Update ProtonDB Data
 
 on:
   workflow_dispatch:
   schedule:
-    # Runs at 03:00 UTC every day
     - cron: '0 3 * * *'
 
 jobs:
@@ -11,15 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    env:
-      PYTHONUNBUFFERED: 1
-
+    
     steps:
       - name: Checkout scripts repo
         uses: actions/checkout@v4
         with:
           path: scripts-repo
-          # Using your specific data repository
           repository: mdeguzis/proton-pulse-data
           fetch-depth: 1
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -39,27 +35,22 @@ jobs:
       - name: Install dependencies
         run: pip install ijson
 
-      - name: Cache ProtonDB Output
-        uses: actions/cache@v4
-        with:
-          path: /tmp/protondb-output
-          key: protondb-data-${{ github.run_id }}
-          restore-keys: |
-            protondb-data-
-
       - name: Process and Split Reports
+        env:
+          # Ensuring output is flushed immediately to show status counts
+          PYTHONUNBUFFERED: "1"
         run: |
           mkdir -p /tmp/protondb-output
-          # We point to official-data/reports where the JSON/Tarballs live
+          # Run the script with the 'reports' subdirectory
           python3 scripts-repo/scripts/split_reports.py \
             official-data/reports \
             /tmp/protondb-output
 
-      - name: Copy processed data to repository
+      - name: Sync processed data
         run: |
-          # Assuming you want the split data in a folder named 'data'
           mkdir -p scripts-repo/data
-          cp -r /tmp/protondb-output/* scripts-repo/data/
+          # Use rsync or cp to move files into the repo structure
+          cp -rv /tmp/protondb-output/* scripts-repo/data/
 
       - name: Commit and Push changes
         working-directory: scripts-repo
@@ -67,5 +58,9 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add data/
-          # Only commit if there are actual changes to avoid workflow errors
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: ProtonDB split reports $(date +%F)" && git push)
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Auto-update: ProtonDB split reports $(date +%F)"
+            git push
+          else
+            echo "No changes to commit"
+          fi
