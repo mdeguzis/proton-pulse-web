@@ -51,6 +51,7 @@ def process_data(input_dir, output_dir):
         log(f"  ... and {len(all_files) - 20} more")
 
     parsed_count = 0
+    index_keys: set[tuple] = set()
     pipeline_start = time.time()
 
     # 1. Handle Raw JSON files
@@ -61,10 +62,11 @@ def process_data(input_dir, output_dir):
         log(f"[json] Parsing: {json_file.name} ({size:,} bytes)")
         t0 = time.time()
         with open(json_file, 'r') as f:
-            count = parse_and_split(f, data_output_path, source_label=json_file.name)
+            count, src_keys = parse_and_split(f, data_output_path, source_label=json_file.name)
         elapsed = time.time() - t0
         log(f"[json] Done: {count:,} reports in {elapsed:.1f}s")
         parsed_count += count
+        index_keys.update(src_keys)
 
     # 2. Handle Tarballs (backwards compatibility)
     tar_files = sorted(input_path.glob("*.tar.gz"))
@@ -81,9 +83,10 @@ def process_data(input_dir, output_dir):
                     log(f"[tar]   -> {member.name} ({member.size:,} bytes)")
                     f = tar.extractfile(member)
                     if f:
-                        count = parse_and_split(f, data_output_path, source_label=member.name)
+                        count, src_keys = parse_and_split(f, data_output_path, source_label=member.name)
                         log(f"[tar]      {count:,} reports parsed")
                         parsed_count += count
+                        index_keys.update(src_keys)
         except Exception as e:
             log(f"!! Failed to process {tar_file.name}: {e}")
         elapsed = time.time() - t0
@@ -105,6 +108,7 @@ def process_data(input_dir, output_dir):
         sys.exit(1)
 
     log("Done!")
+    generate_index_html(index_keys, output_path)
 
 
 def parse_and_split(file_handle, data_output_path, source_label="?"):
@@ -182,7 +186,61 @@ def parse_and_split(file_handle, data_output_path, source_label="?"):
     if skipped:
         log(f"  [parse] {source_label}: skipped {skipped} records missing appId")
 
-    return count
+    return count, set(buffer.keys())
+
+
+def generate_index_html(index_keys: set, output_path: Path) -> None:
+    """
+    Write index.html to output_path listing all data/{appId}/{year}.json files
+    as a collapsible tree using native <details>/<summary> elements.
+    index_keys is a set of (appId, year) tuples.
+    """
+    from datetime import datetime, timezone
+
+    # Collect {appId: [year, ...]} sorted numerically
+    app_years: dict[str, list[str]] = {}
+    for (app_id, year) in index_keys:
+        app_years.setdefault(app_id, []).append(year)
+
+    sorted_app_ids = sorted(app_years.keys(), key=int)
+    for app_id in sorted_app_ids:
+        app_years[app_id] = sorted(app_years[app_id], key=lambda y: int(y) if y.isdigit() else y)
+
+    lines = [
+        "<!DOCTYPE html>",
+        '<html lang="en">',
+        "<head>",
+        '  <meta charset="utf-8">',
+        "  <title>proton-pulse-data index</title>",
+        "</head>",
+        "<body>",
+        "<h1>proton-pulse-data index</h1>",
+        "<ul>",
+    ]
+
+    for app_id in sorted_app_ids:
+        lines.append("  <li>")
+        lines.append("    <details>")
+        lines.append(f"      <summary>{app_id}/</summary>")
+        lines.append("      <ul>")
+        for year in app_years[app_id]:
+            href = f"data/{app_id}/{year}.json"
+            lines.append(f'        <li><a href="{href}">{year}.json</a></li>')
+        lines.append("      </ul>")
+        lines.append("    </details>")
+        lines.append("  </li>")
+
+    now = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    lines += [
+        "</ul>",
+        f"<p>Generated: {now}</p>",
+        "</body>",
+        "</html>",
+    ]
+
+    index_file = output_path / "index.html"
+    index_file.write_text("\n".join(lines) + "\n")
+    log(f"[index] Written: {index_file}")
 
 
 def main():
