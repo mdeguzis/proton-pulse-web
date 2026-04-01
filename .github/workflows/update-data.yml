@@ -40,7 +40,8 @@ jobs:
           # Targeting the 'reports' subfolder directly for speed and accuracy
           uv run python scripts/split_reports.py \
             ../official-data/reports \
-            /tmp/protondb-output
+            /tmp/protondb-output \
+            --app-names-cache /tmp/protondb-output/app-names-cache.json
 
       - name: Sync processed data to scripts-repo
         run: |
