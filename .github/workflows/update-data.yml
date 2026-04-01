@@ -30,14 +30,12 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install ijson
+        run: pip install ijson
 
       - name: Process and Split Reports
         run: |
           mkdir -p /tmp/protondb-output
-          # We pass 'official-data/reports' as the source for the walker
+          # Run the script against the official-data/reports directory
           python3 scripts-repo/scripts/split_reports.py \
             official-data/reports \
             /tmp/protondb-output
@@ -45,57 +43,56 @@ jobs:
       - name: Publish to gh-pages
         run: |
           cd /tmp/protondb-output
+          
+          # Check if any data was actually created
+          if [ ! -d "data" ] || [ -z "$(ls -A data)" ]; then
+            echo "Error: No data files generated in /tmp/protondb-output/data"
+            exit 1
+          fi
+
           git init
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout --orphan gh-pages
 
-          # Extract counts for the health check using jq
           GAMES_COUNT=$(jq '.total_games' manifest.json)
           REPORTS_COUNT=$(jq '.total_reports' manifest.json)
 
-          # Create the dynamic index.html
           cat <<EOF > index.html
           <!DOCTYPE html>
           <html>
           <head>
               <title>Proton Pulse Data Mirror</title>
               <style>
-                  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.6; padding: 2rem; background: #0d1117; color: #c9d1d9; max-width: 800px; margin: auto; }
+                  body { font-family: -apple-system, sans-serif; line-height: 1.6; padding: 2rem; background: #0d1117; color: #c9d1d9; max-width: 800px; margin: auto; }
                   .card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 1.5rem; margin-top: 1rem; }
                   .stat { font-size: 1.2rem; color: #58a6ff; font-weight: bold; }
-                  code { background: #30363d; padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.9rem; }
+                  code { background: #30363d; padding: 0.2rem 0.4rem; border-radius: 4px; }
                   a { color: #58a6ff; text-decoration: none; }
-                  a:hover { text-decoration: underline; }
                   .status-pill { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.8rem; background: #238636; color: white; }
               </style>
           </head>
           <body>
               <h1>Proton Pulse Data Mirror</h1>
               <div class="status-pill">System Healthy</div>
-              
               <div class="card">
                   <h3>Health Check</h3>
                   <p>Latest Sync: <strong>$(date -u)</strong></p>
-                  <p>Games Processed: <span class="stat">\${GAMES_COUNT}</span></p>
-                  <p>Total Reports: <span class="stat">\${REPORTS_COUNT}</span></p>
+                  <p>Games Processed: <span class="stat">${GAMES_COUNT}</span></p>
+                  <p>Total Reports: <span class="stat">${REPORTS_COUNT}</span></p>
               </div>
-
               <div class="card">
                   <h3>Usage</h3>
                   <p>Endpoint: <code>/data/{app_id}.json</code></p>
-                  <p>Example: <a href="data/730.json">Counter-Strike 2 (730)</a></p>
+                  <p>Example: <a href="data/730.json">CS2 (730)</a></p>
               </div>
-              
-              <p style="font-size: 0.8rem; color: #8b949e; margin-top: 2rem;">
-                  Powered by <code>bdefore/protondb-data</code>. Refreshed daily.
-              </p>
           </body>
           </html>
           EOF
 
           touch .nojekyll
           git add -A
-          git commit -m "chore: active data sync $(date -u +%Y-%m-%d) [\${GAMES_COUNT} games]"
-          git remote add origin "https://x-access-token:\${{ secrets.GITHUB_TOKEN }}@github.com/\${{ github.repository }}.git"
+          git commit -m "chore: active data sync $(date -u +%Y-%m-%d) [${GAMES_COUNT} games]"
+          # FIXED URL: Removed backslash before mdeguzis
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/mdeguzis/proton-pulse-data.git"
           git push --force origin gh-pages
