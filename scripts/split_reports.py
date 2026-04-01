@@ -1,105 +1,236 @@
 import os
 import sys
-import tarfile
 import json
-import logging
+import tarfile
+import ijson
+import argparse
+import subprocess
+import tempfile
+import time
+from pathlib import Path
+from datetime import datetime, timezone
 from collections import defaultdict
 
-# Constants
-MAX_REPORTS_PER_FILE = 5000
 
-# Check for command-line arguments
-if len(sys.argv) != 3:
-    print("Usage: python split_reports.py <input_directory> <output_directory>")
-    sys.exit(1)
+def log(msg):
+    """Flush-safe print for CI environments."""
+    print(msg, flush=True)
 
-INPUT_DIR = sys.argv[1]
-DATA_DIR = sys.argv[2]
 
-# Ensure the input directory exists
-if not os.path.exists(INPUT_DIR):
-    print(f"Input directory '{INPUT_DIR}' does not exist.")
-    sys.exit(1)
+def clone_repo(url, target_dir):
+    log(f"[clone] Cloning {url} -> {target_dir}")
+    result = subprocess.run(
+        ["git", "clone", "--depth=1", url, target_dir],
+        capture_output=True, text=True
+    )
+    if result.returncode != 0:
+        log(f"!! git clone failed:\n{result.stderr}")
+        sys.exit(1)
+    log(f"[clone] Clone complete.")
 
-# Create output directory if it doesn't exist
-if not os.path.exists(DATA_DIR):
-    os.makedirs(DATA_DIR)
 
-# Set up logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
+def process_data(input_dir, output_dir):
+    input_path = Path(input_dir)
+    output_path = Path(output_dir)
+    data_output_path = output_path / "data"
+    data_output_path.mkdir(parents=True, exist_ok=True)
 
-def process_tar_gz(file_path):
-    """Process a tar.gz file and extract reports grouped by appId"""
-    app_reports = defaultdict(list)
-    
-    try:
-        with tarfile.open(file_path, 'r:gz') as tar:
-            for member in tar.getmembers():
-                if member.isfile() and member.name.endswith('.json'):
-                    try:
-                        file_obj = tar.extractfile(member)
-                        data = json.load(file_obj)
-                        
-                        # Handle both single report and array of reports
-                        reports = data if isinstance(data, list) else [data]
-                        
-                        for report in reports:
-                            appId = report.get('appId')
-                            if appId:
-                                report_data = {
-                                    'v': report.get('rating'),
-                                    'p': report.get('protonVersion'),
-                                    't': report.get('timestamp'),
-                                }
-                                app_reports[appId].append(report_data)
-                                logger.info(f'Processed report for appId {appId}')
-                    except Exception as e:
-                        logger.error(f'Error processing {member.name}: {e}')
-    except Exception as e:
-        logger.error(f'Error processing tar file {file_path}: {e}')
-    
-    return app_reports
+    log(f"[init] Input dir : {input_path.resolve()}")
+    log(f"[init] Output dir: {data_output_path.resolve()}")
 
-def save_reports(app_reports):
-    """Save aggregated reports by appId"""
-    for appId, reports in app_reports.items():
-        if reports:
-            # Limit to MAX_REPORTS_PER_FILE
-            limited_reports = reports[:MAX_REPORTS_PER_FILE]
-            report_file_path = os.path.join(DATA_DIR, f'{appId}.json')
-            
+    if not input_path.exists():
+        log(f"!! ERROR: Input directory does not exist: {input_path}")
+        sys.exit(1)
+
+    all_files = list(input_path.iterdir())
+    log(f"[init] Files found in input dir: {len(all_files)}")
+    for f in sorted(all_files)[:20]:
+        size = f.stat().st_size if f.is_file() else 0
+        log(f"  {f.name}  ({size:,} bytes)")
+    if len(all_files) > 20:
+        log(f"  ... and {len(all_files) - 20} more")
+
+    parsed_count = 0
+    pipeline_start = time.time()
+
+    # 1. Handle Raw JSON files
+    json_files = sorted(input_path.glob("*.json"))
+    log(f"\n[json] Found {len(json_files)} raw JSON file(s)")
+    for json_file in json_files:
+        size = json_file.stat().st_size
+        log(f"[json] Parsing: {json_file.name} ({size:,} bytes)")
+        t0 = time.time()
+        with open(json_file, 'r') as f:
+            count = parse_and_split(f, data_output_path, source_label=json_file.name)
+        elapsed = time.time() - t0
+        log(f"[json] Done: {count:,} reports in {elapsed:.1f}s")
+        parsed_count += count
+
+    # 2. Handle Tarballs (backwards compatibility)
+    tar_files = sorted(input_path.glob("*.tar.gz"))
+    log(f"\n[tar] Found {len(tar_files)} tarball(s)")
+    for tar_file in tar_files:
+        size = tar_file.stat().st_size
+        log(f"[tar] Extracting: {tar_file.name} ({size:,} bytes)")
+        t0 = time.time()
+        try:
+            with tarfile.open(tar_file, "r:gz") as tar:
+                members = [m for m in tar.getmembers() if m.name.endswith(".json")]
+                log(f"[tar]   JSON members inside archive: {len(members)}")
+                for member in members:
+                    log(f"[tar]   -> {member.name} ({member.size:,} bytes)")
+                    f = tar.extractfile(member)
+                    if f:
+                        count = parse_and_split(f, data_output_path, source_label=member.name)
+                        log(f"[tar]      {count:,} reports parsed")
+                        parsed_count += count
+        except Exception as e:
+            log(f"!! Failed to process {tar_file.name}: {e}")
+        elapsed = time.time() - t0
+        log(f"[tar] Done: {elapsed:.1f}s")
+
+    total_elapsed = time.time() - pipeline_start
+    unique_apps = sum(1 for p in data_output_path.iterdir() if p.is_dir())
+    total_year_files = sum(1 for p in data_output_path.rglob("*.json"))
+
+    log(f"\n[summary] Total reports parsed    : {parsed_count:,}")
+    log(f"[summary] Unique app directories  : {unique_apps:,}")
+    log(f"[summary] Total year bucket files : {total_year_files:,}")
+    log(f"[summary] Total time              : {total_elapsed:.1f}s")
+    log(f"[summary] Output dir              : {data_output_path.resolve()}")
+
+    if parsed_count == 0:
+        log(f"!! ERROR: No reports were parsed from {input_dir}.")
+        log(f"!! Found {len(json_files)} JSONs and {len(tar_files)} tarballs.")
+        sys.exit(1)
+
+    log("Done!")
+
+
+def parse_and_split(file_handle, data_output_path, source_label="?"):
+    """
+    Stream-parse a report array and write output as:
+        data/{appId}/{year}.json
+    Each year file is a JSON array of all reports for that app in that year.
+    Appends to existing year files so multiple source archives merge correctly.
+    Deduplicates by timestamp to guard against the same archive appearing both
+    as a loose .json and inside a .tar.gz in the same reports/ folder.
+    """
+    count = 0
+    skipped = 0
+
+    # Buffer in-memory per (appId, year) to minimize file open/close churn
+    buffer: dict[tuple, list] = defaultdict(list)
+
+    parser = ijson.items(file_handle, 'item')
+
+    for report in parser:
+        app_id = report.get("appId")
+        if not app_id:
+            skipped += 1
+            continue
+
+        ts = report.get("timestamp")
+        try:
+            year = str(datetime.fromtimestamp(int(ts), tz=timezone.utc).year) if ts else "unknown"
+        except (ValueError, OSError):
+            year = "unknown"
+
+        buffer[(str(app_id), year)].append(report)
+        count += 1
+
+        if count % 10000 == 0:
+            log(f"  [parse] {source_label}: {count:,} reports buffered...")
+
+    log(f"  [parse] {source_label}: flushing {len(buffer)} app/year buckets to disk...")
+    flush_start = time.time()
+
+    for (app_id, year), new_reports in buffer.items():
+        app_dir = data_output_path / app_id
+        app_dir.mkdir(exist_ok=True)
+        year_file = app_dir / f"{year}.json"
+
+        existing = []
+        if year_file.exists():
             try:
-                with open(report_file_path, 'w') as report_file:
-                    json.dump(limited_reports, report_file)
-                logger.info(f'Generated report file: {report_file_path} with {len(limited_reports)} reports')
-            except Exception as e:
-                logger.error(f'Error writing {report_file_path}: {e}')
+                with open(year_file, "r") as yf:
+                    existing = json.load(yf)
+            except Exception:
+                existing = []
 
-def process_directory(input_dir):
-    """Process all tar.gz files in input directory"""
-    all_app_reports = defaultdict(list)
-    
-    for root, dirs, files in os.walk(input_dir):
-        for filename in files:
-            if filename.endswith('.tar.gz'):
-                file_path = os.path.join(root, filename)
-                logger.info(f'Processing {file_path}')
-                
-                app_reports = process_tar_gz(file_path)
-                
-                # Merge reports by appId
-                for appId, reports in app_reports.items():
-                    all_app_reports[appId].extend(reports)
-    
-    return all_app_reports
+        # Deduplicate by timestamp — guards against the same archive appearing
+        # both as a loose .json and inside a .tar.gz in the same reports/ folder.
+        seen_timestamps = {r.get("timestamp") for r in existing}
+        added = 0
+        for r in new_reports:
+            ts = r.get("timestamp")
+            if ts not in seen_timestamps:
+                existing.append(r)
+                seen_timestamps.add(ts)
+                added += 1
 
-if __name__ == '__main__':
-    logger.info(f'Starting processing of {INPUT_DIR}')
-    all_reports = process_directory(INPUT_DIR)
-    
-    if all_reports:
-        save_reports(all_reports)
-        logger.info('Processing completed successfully')
+        if added < len(new_reports):
+            dupes = len(new_reports) - added
+            log(f"  [dedup] appId={app_id} year={year}: skipped {dupes} duplicate(s)")
+
+        with open(year_file, "w") as yf:
+            json.dump(existing, yf, indent=2)
+
+    flush_elapsed = time.time() - flush_start
+    log(f"  [parse] {source_label}: flush done in {flush_elapsed:.1f}s")
+
+    if skipped:
+        log(f"  [parse] {source_label}: skipped {skipped} records missing appId")
+
+    return count
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Split ProtonDB reports into data/{appId}/{year}.json buckets"
+    )
+    parser.add_argument(
+        "input_dir", nargs="?",
+        help="Local directory containing JSON/tar.gz report files"
+    )
+    parser.add_argument(
+        "output_dir", nargs="?",
+        help="Output directory root (split files go under <output_dir>/data/)"
+    )
+    parser.add_argument(
+        "--url",
+        help="Git repo URL to clone as data source (e.g. https://github.com/bdefore/protondb-data)"
+    )
+    parser.add_argument(
+        "--subfolder", default="reports",
+        help="Subfolder within the cloned repo to use as input (default: reports)"
+    )
+    parser.add_argument(
+        "--output", dest="output_dir_flag",
+        help="Output directory (alternative to positional arg)"
+    )
+    args = parser.parse_args()
+
+    output_dir = args.output_dir or args.output_dir_flag
+    if not output_dir:
+        log("!! ERROR: output_dir is required (positional or --output)")
+        parser.print_help()
+        sys.exit(1)
+
+    if args.url:
+        tmp_dir = tempfile.mkdtemp(prefix="protondb-clone-")
+        clone_repo(args.url, tmp_dir)
+        input_dir = os.path.join(tmp_dir, args.subfolder)
+        log(f"[init] Using cloned subfolder: {input_dir}")
+    elif args.input_dir:
+        input_dir = args.input_dir
     else:
-        logger.warning('No reports found to process')
+        log("!! ERROR: provide input_dir or --url")
+        parser.print_help()
+        sys.exit(1)
+
+    process_data(input_dir, output_dir)
+
+
+if __name__ == "__main__":
+    main()
