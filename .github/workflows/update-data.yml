@@ -37,7 +37,7 @@ jobs:
           mkdir -p /tmp/protondb-output
           # Run the script against the official-data/reports directory
           python3 scripts-repo/scripts/split_reports.py \
-            official-data/reports \
+            official-data \
             /tmp/protondb-output
 
       - name: Publish to gh-pages
