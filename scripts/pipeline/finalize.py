@@ -276,7 +276,7 @@ function apply(){{
   const q=document.getElementById("filter").value.toLowerCase();
   const all=activeSrc.has("all");
   filtered=DATA.filter(r=>{{
-    if(!all&&![...activeSrc].some(s=>r[4].includes(s)))return false;
+    if(!all&&![...activeSrc].some(s=>r[4].split(" ").includes(s)))return false;
     if(q&&!(r[0]+" "+r[1]).toLowerCase().includes(q))return false;
     return true;
   }});
