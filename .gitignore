@@ -48,5 +48,8 @@ Thumbs.db
 *.swo
 *~
 
+# Local planning / scratch docs
+docs/superpowers/specs/
+
 # Logs
 *.log
