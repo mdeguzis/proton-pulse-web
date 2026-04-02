@@ -38,9 +38,15 @@ def clone_repo(url, target_dir):
     log("[clone] Clone complete.", debug=True)
 
 
-def fetch_json(url: str):
-    with request.urlopen(url) as response:
-        return json.load(response)
+def fetch_json(url: str, retries: int = 3):
+    for attempt in range(retries):
+        try:
+            with request.urlopen(url) as response:
+                data = response.read()
+                return json.loads(data)
+        except Exception:
+            if attempt == retries - 1:
+                raise
 
 
 def normalize_whitespace(value):
