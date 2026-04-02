@@ -195,11 +195,11 @@ a {{ color: #06c; }}
 <p>{len(rows)} apps &middot; {official_count} official &middot; {backfill_count} backfill &middot; Generated: {now}</p>
 <div class="filters">
 <input id="filter" placeholder="Filter by App ID or title\u2026" oninput="applyFilters()">
-<button class="toggle active" data-src="all" onclick="setSource('all')">All</button>
-<button class="toggle" data-src="official" onclick="setSource('official')">Official only</button>
-<button class="toggle" data-src="backfill" onclick="setSource('backfill')">Backfill only</button>
-<button class="toggle" data-src="missing-title" onclick="setSource('missing-title')">Missing title</button>
-<button class="toggle" data-src="bad-appid" onclick="setSource('bad-appid')">Bad App ID</button>
+<button class="toggle active" data-src="all" onclick="toggleSrc('all')">All</button>
+<button class="toggle" data-src="official" onclick="toggleSrc('official')">Official only</button>
+<button class="toggle" data-src="backfill" onclick="toggleSrc('backfill')">Backfill only</button>
+<button class="toggle" data-src="missing-title" onclick="toggleSrc('missing-title')">Missing title</button>
+<button class="toggle" data-src="bad-appid" onclick="toggleSrc('bad-appid')">Bad App ID</button>
 </div>
 <table id="coverage">
 <thead><tr>
@@ -224,25 +224,38 @@ a {{ color: #06c; }}
             flags.append("missing-title")
         if not app_id.isdigit():
             flags.append("bad-appid")
-        html += f'<tr data-src="{" ".join(flags)}"><td>{app_id}</td><td>{title}</td><td>{o}</td><td>{b}</td>'
+        html += f'<tr data-src="{" ".join(flags)}">'
+        steam_url = f"https://store.steampowered.com/app/{app_id}" if app_id.isdigit() else ""
+        protondb_url = f"https://www.protondb.com/app/{app_id}" if app_id.isdigit() else ""
+        app_cell = f'<a href="{steam_url}">{app_id}</a>' if steam_url else app_id
+        title_cell = f'<a href="{protondb_url}">{title}</a>' if protondb_url and title else (title or "")
+        html += f'<td>{app_cell}</td><td>{title_cell}</td><td>{o}</td><td>{b}</td>'
         html += f'<td><a href="{link}">latest.json</a></td></tr>\n'
 
     html += """</tbody></table>
 <script>
-let currentSource = "all";
+let activeSrc = new Set(["all"]);
 let sortDir = [1,1,1,1];
 
-function setSource(src) {
-  currentSource = src;
-  document.querySelectorAll(".toggle").forEach(b => b.classList.toggle("active", b.dataset.src === src));
+function toggleSrc(src) {
+  if (src === "all") {
+    activeSrc.clear();
+    activeSrc.add("all");
+  } else {
+    activeSrc.delete("all");
+    if (activeSrc.has(src)) activeSrc.delete(src); else activeSrc.add(src);
+    if (activeSrc.size === 0) activeSrc.add("all");
+  }
+  document.querySelectorAll(".toggle").forEach(b => b.classList.toggle("active", activeSrc.has(b.dataset.src)));
   applyFilters();
 }
 
 function applyFilters() {
   const q = document.getElementById("filter").value.toLowerCase();
+  const all = activeSrc.has("all");
   document.querySelectorAll("#coverage tbody tr").forEach(r => {
     const src = r.dataset.src;
-    const srcOk = currentSource === "all" || src.includes(currentSource);
+    const srcOk = all || [...activeSrc].some(s => src.includes(s));
     const textOk = !q || (r.cells[0].textContent + " " + r.cells[1].textContent).toLowerCase().includes(q);
     r.style.display = srcOk && textOk ? "" : "none";
   });
