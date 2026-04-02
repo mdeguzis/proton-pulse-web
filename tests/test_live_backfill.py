@@ -1,14 +1,18 @@
 import json
 
+import scripts.pipeline.backfill as backfill_module
 from scripts.pipeline.backfill import (
     backfill_missing_apps,
     compute_live_report_hash,
     load_backfill_app_ids,
+    run_backfill,
 )
 from scripts.pipeline.finalize import (
+    finalize_output,
     generate_app_indexes,
     generate_index_html,
 )
+from scripts.pipeline.state import write_pipeline_state
 
 
 def test_load_backfill_app_ids_returns_sorted_unique_ids(tmp_path):
@@ -133,3 +137,57 @@ def test_backfilled_keys_flow_into_app_index_and_main_index(tmp_path):
     html = (tmp_path / "index.html").read_text()
     assert "<summary>2561580/</summary>" in html
     assert 'href="data/2561580/2025.json"' in html
+
+
+def test_run_backfill_and_finalize_include_backfilled_apps_in_indexes(tmp_path, monkeypatch):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    manifest = tmp_path / "live_backfill_app_ids.json"
+    manifest.write_text(json.dumps(["2561580"]))
+
+    write_pipeline_state(tmp_path, parsed_count=1, index_keys={("730", "2024")})
+    (data_dir / "730").mkdir()
+    (data_dir / "730" / "2024.json").write_text(json.dumps([{"appId": "730", "timestamp": 1704067200}]))
+
+    counts_payload = {"reports": 415099, "timestamp": 1775051127}
+    expected_hash = compute_live_report_hash(2561580, counts_payload["reports"], counts_payload["timestamp"], "all")
+    expected_url = f"https://www.protondb.com/data/reports/all-devices/app/{expected_hash}.json"
+
+    live_payload = {
+        "reports": [
+            {
+                "timestamp": 1763251200,
+                "responses": {"verdict": "yes", "triedOob": "yes", "protonVersion": "10.0-3"},
+                "device": {"inferred": {"steam": {}}},
+                "contributor": {"steam": {"playtimeLinux": 1200}},
+            }
+        ]
+    }
+
+    def fake_fetch(url: str):
+        if url == "https://www.protondb.com/data/counts.json":
+            return counts_payload
+        if url == expected_url:
+            return live_payload
+        raise AssertionError(f"Unexpected URL fetched: {url}")
+
+    monkeypatch.setattr(backfill_module, "BACKFILL_MANIFEST_PATH", manifest)
+    monkeypatch.setattr(
+        backfill_module,
+        "backfill_missing_apps",
+        lambda data_output_path, fetch_json_impl=backfill_module.fetch_json, manifest_path=backfill_module.BACKFILL_MANIFEST_PATH: backfill_missing_apps(
+            data_output_path,
+            fetch_json_impl=fake_fetch,
+            manifest_path=manifest,
+        ),
+    )
+
+    run_backfill(tmp_path)
+    finalize_output(tmp_path)
+
+    assert json.loads((data_dir / "2561580" / "index.json").read_text()) == ["2025"]
+    html = (tmp_path / "index.html").read_text()
+    assert "<summary>730/</summary>" in html
+    assert "<summary>2561580/</summary>" in html
+    assert 'href="data/2561580/2025.json"' in html
+    assert 'href="data/2561580/latest.json"' in html
