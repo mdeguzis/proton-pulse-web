@@ -12,6 +12,7 @@ from .common import (
     LIVE_REPORTS_URL,
     LIVE_REPORT_DEVICE,
     fetch_json,
+    fetch_steam_title,
     infer_duration,
     log,
     normalize_whitespace,
@@ -186,7 +187,7 @@ def infer_live_rating(responses: dict | None) -> str:
     return "gold"
 
 
-def normalize_live_detailed_reports(app_id: str, raw_reports: list[dict]) -> list[dict]:
+def normalize_live_detailed_reports(app_id: str, raw_reports: list[dict], title: str = "") -> list[dict]:
     normalized = []
     for report in raw_reports:
         responses = report.get("responses") or {}
@@ -215,7 +216,7 @@ def normalize_live_detailed_reports(app_id: str, raw_reports: list[dict]) -> lis
             "ram": normalize_whitespace(steam.get("ram")),
             "rating": infer_live_rating(responses),
             "timestamp": timestamp,
-            "title": "",
+            "title": title,
         })
 
     return normalized
@@ -282,7 +283,8 @@ def backfill_missing_apps(
             log(f"[backfill] Skipping {target.app_id}: no live detailed report candidate succeeded")
             continue
 
-        reports = normalize_live_detailed_reports(target.app_id, payload.get("reports") or [])
+        title = fetch_steam_title(target.app_id)
+        reports = normalize_live_detailed_reports(target.app_id, payload.get("reports") or [], title=title)
         if not reports:
             log(f"[backfill] Skipping {target.app_id}: live detailed payload had no usable reports")
             continue

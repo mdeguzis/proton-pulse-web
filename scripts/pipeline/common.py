@@ -10,6 +10,7 @@ LIVE_COUNTS_URL = "https://www.protondb.com/data/counts.json"
 LIVE_REPORTS_URL = "https://www.protondb.com/data/reports/{device}/app/{hash}.json"
 LIVE_REPORT_DEVICE = "all-devices"
 LIVE_REPORT_HASH_DEVICE = "any"
+STEAM_APP_DETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={app_id}"
 BACKFILL_MANIFEST_PATH = Path(__file__).resolve().parents[2] / "config" / "live_backfill_app_ids.json"
 
 
@@ -47,6 +48,17 @@ def fetch_json(url: str, retries: int = 3):
         except Exception:
             if attempt == retries - 1:
                 raise
+
+
+def fetch_steam_title(app_id: str) -> str:
+    try:
+        data = fetch_json(STEAM_APP_DETAILS_URL.format(app_id=app_id))
+        app_data = (data or {}).get(str(app_id), {})
+        if app_data.get("success"):
+            return app_data.get("data", {}).get("name", "")
+    except Exception:
+        pass
+    return ""
 
 
 def normalize_whitespace(value):
