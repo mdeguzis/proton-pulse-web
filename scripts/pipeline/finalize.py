@@ -309,7 +309,7 @@ function render(){{
   const h=[];
   for(const r of slice){{
     const id=r[0],t=r[1],o=r[2],b=r[3];
-    const isNum=/^\\d+$/.test(id);
+    const isNum=id.length>0&&[...id].every(c=>c>='0'&&c<='9');
     const ac=isNum?`<a href="https://store.steampowered.com/app/${{id}}">${{id}}</a>`:id;
     const tc=isNum&&t?`<a href="https://www.protondb.com/app/${{id}}">${{t}}</a>`:(t||"");
     const oc=o?'<span class="yes">yes</span>':'<span class="no">no</span>';
