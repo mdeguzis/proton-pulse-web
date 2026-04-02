@@ -1,12 +1,13 @@
 import json
-from pathlib import Path
 
-from scripts.split_reports import (
+from scripts.pipeline.backfill import (
     backfill_missing_apps,
     compute_live_report_hash,
+    load_backfill_app_ids,
+)
+from scripts.pipeline.finalize import (
     generate_app_indexes,
     generate_index_html,
-    load_backfill_app_ids,
 )
 
 

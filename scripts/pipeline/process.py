@@ -1,0 +1,149 @@
+import json
+import tarfile
+import time
+from collections import defaultdict
+from datetime import datetime, timezone
+from pathlib import Path
+
+import ijson
+
+from .common import log
+from .state import pipeline_state_path, write_pipeline_state
+
+
+def parse_and_split(file_handle, data_output_path, source_label="?"):
+    """
+    Stream-parse a report array and write output as:
+        data/{appId}/{year}.json
+    Each year file is a JSON array of all reports for that app in that year.
+    Appends to existing year files so multiple source archives merge correctly.
+    Deduplicates by timestamp to guard against the same archive appearing both
+    as a loose .json and inside a .tar.gz in the same reports/ folder.
+    """
+    count = 0
+    skipped = 0
+    buffer: dict[tuple, list] = defaultdict(list)
+    parser = ijson.items(file_handle, "item")
+
+    for report in parser:
+        app_id = report.get("appId")
+        if not app_id:
+            skipped += 1
+            continue
+
+        ts = report.get("timestamp")
+        try:
+            year = str(datetime.fromtimestamp(int(ts), tz=timezone.utc).year) if ts else "unknown"
+        except (ValueError, OSError):
+            year = "unknown"
+
+        buffer[(str(app_id), year)].append(report)
+        count += 1
+
+        if count % 10000 == 0:
+            log(f"  [parse] {source_label}: {count:,} reports buffered...", debug=True)
+
+    log(f"  [parse] {source_label}: flushing {len(buffer)} app/year buckets to disk...", debug=True)
+    flush_start = time.time()
+
+    for (app_id, year), new_reports in buffer.items():
+        app_dir = data_output_path / app_id
+        app_dir.mkdir(exist_ok=True)
+        year_file = app_dir / f"{year}.json"
+
+        existing = []
+        if year_file.exists():
+            try:
+                existing = json.loads(year_file.read_text())
+            except Exception:
+                existing = []
+
+        seen_timestamps = {r.get("timestamp") for r in existing}
+        added = 0
+        for report in new_reports:
+            ts = report.get("timestamp")
+            if ts not in seen_timestamps:
+                existing.append(report)
+                seen_timestamps.add(ts)
+                added += 1
+
+        if added < len(new_reports):
+            dupes = len(new_reports) - added
+            log(f"  [dedup] appId={app_id} year={year}: skipped {dupes} duplicate(s)", debug=True)
+
+        year_file.write_text(json.dumps(existing, indent=2))
+
+    flush_elapsed = time.time() - flush_start
+    log(f"  [parse] {source_label}: flush done in {flush_elapsed:.1f}s", debug=True)
+
+    if skipped:
+        log(f"  [parse] {source_label}: skipped {skipped} records missing appId", debug=True)
+
+    return count, set(buffer.keys())
+
+
+def process_reports(input_dir, output_dir):
+    input_path = Path(input_dir)
+    output_path = Path(output_dir)
+    data_output_path = output_path / "data"
+    data_output_path.mkdir(parents=True, exist_ok=True)
+
+    log(f"[init] Input dir : {input_path.resolve()}")
+    log(f"[init] Output dir: {data_output_path.resolve()}")
+
+    if not input_path.exists():
+        raise SystemExit(f"!! ERROR: Input directory does not exist: {input_path}")
+
+    all_files = list(input_path.iterdir())
+    log(f"[init] Files found in input dir: {len(all_files)}", debug=True)
+    for file_path in sorted(all_files)[:20]:
+        size = file_path.stat().st_size if file_path.is_file() else 0
+        log(f"  {file_path.name}  ({size:,} bytes)", debug=True)
+    if len(all_files) > 20:
+        log(f"  ... and {len(all_files) - 20} more", debug=True)
+
+    parsed_count = 0
+    index_keys: set[tuple] = set()
+
+    json_files = sorted(input_path.glob("*.json"))
+    log(f"\n[json] Found {len(json_files)} raw JSON file(s)")
+    for index, json_file in enumerate(json_files, start=1):
+        size = json_file.stat().st_size
+        log(f"[json] Processing {index}/{len(json_files)}: {json_file.name} ({size:,} bytes)")
+        t0 = time.time()
+        with json_file.open("r") as handle:
+            count, src_keys = parse_and_split(handle, data_output_path, source_label=json_file.name)
+        parsed_count += count
+        index_keys.update(src_keys)
+        log(f"[json] Done: {count:,} reports in {time.time() - t0:.1f}s")
+
+    tar_files = sorted(input_path.glob("*.tar.gz"))
+    log(f"\n[tar] Found {len(tar_files)} tarball(s)")
+    for index, tar_file in enumerate(tar_files, start=1):
+        size = tar_file.stat().st_size
+        log(f"[tar] Processing {index}/{len(tar_files)}: {tar_file.name} ({size:,} bytes)")
+        t0 = time.time()
+        try:
+            with tarfile.open(tar_file, "r:gz") as tar:
+                members = [m for m in tar.getmembers() if m.name.endswith(".json")]
+                log(f"[tar]   Streaming {len(members)} JSON member(s) from archive", debug=True)
+                for member in members:
+                    log(f"[tar]   -> {member.name} ({member.size:,} bytes)", debug=True)
+                    extracted = tar.extractfile(member)
+                    if extracted:
+                        count, src_keys = parse_and_split(extracted, data_output_path, source_label=member.name)
+                        log(f"[tar]      {count:,} reports parsed")
+                        parsed_count += count
+                        index_keys.update(src_keys)
+        except Exception as exc:
+            log(f"!! Failed to process {tar_file.name}: {exc}")
+        log(f"[tar] Done: {time.time() - t0:.1f}s")
+
+    if parsed_count == 0:
+        log(f"!! ERROR: No reports were parsed from {input_dir}.")
+        log(f"!! Found {len(json_files)} JSONs and {len(tar_files)} tarballs.")
+        raise SystemExit(1)
+
+    write_pipeline_state(output_path, parsed_count, index_keys)
+    log(f"[state] Wrote pipeline state: {pipeline_state_path(output_path)}")
+    log("Done processing official reports.")

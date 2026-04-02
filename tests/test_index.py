@@ -1,7 +1,7 @@
 from pathlib import Path
 import json
 
-from scripts.split_reports import generate_index_html, generate_app_indexes
+from scripts.pipeline.finalize import generate_index_html, generate_app_indexes
 
 
 def test_index_html_created(tmp_path):
