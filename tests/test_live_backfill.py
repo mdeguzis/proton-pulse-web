@@ -1,6 +1,7 @@
 import json
 
 import scripts.pipeline.backfill as backfill_module
+import scripts.pipeline.finalize as finalize_module
 from scripts.pipeline.backfill import (
     backfill_missing_apps,
     build_live_report_candidate_urls,
@@ -308,6 +309,9 @@ def test_run_backfill_and_finalize_include_backfilled_apps_in_indexes(tmp_path, 
             manifest_path=manifest,
         ),
     )
+    monkeypatch.setattr(finalize_module, "fetch_json", lambda url: counts_payload)
+    monkeypatch.setattr(finalize_module, "load_protondb_signal_catalog", lambda **kw: {})
+    monkeypatch.setattr(finalize_module, "get_steam_api_key", lambda env: None)
 
     run_backfill(tmp_path)
     finalize_output(tmp_path)

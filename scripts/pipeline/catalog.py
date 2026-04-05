@@ -1,5 +1,6 @@
 import importlib.util
 import os
+import random
 import time
 import json
 from functools import wraps
@@ -15,7 +16,7 @@ STEAM_APP_LIST_URL = "https://api.steampowered.com/IStoreService/GetAppList/v1/"
 STEAM_APP_LIST_PAGE_SIZE = 50_000
 STEAM_CATALOG_CACHE_MAX_AGE_SECONDS = 24 * 60 * 60
 PROTONDB_SIGNAL_CACHE_MAX_AGE_SECONDS = 24 * 60 * 60
-PROTONDB_PROBE_CACHE_MAX_AGE_SECONDS = 7 * 24 * 60 * 60
+PROTONDB_PROBE_CACHE_MAX_AGE_SECONDS = 30 * 24 * 60 * 60
 PROTONDB_COMPATIBILITY_REPORT_URL = "https://www.protondb.com/data/compatibility_report_with_games.json"
 PROTONDB_SUMMARY_URL = "https://www.protondb.com/api/v1/reports/summaries/{app_id}.json"
 PROTONDB_PROBE_LIMIT_ENV = "PROTONDB_PROBE_LIMIT"
@@ -63,7 +64,7 @@ def get_steam_api_key(env: dict[str, str] | None = None) -> str | None:
     return value or None
 
 
-def get_protondb_probe_limit(env: dict[str, str] | None = None, default: int = 5_000) -> int:
+def get_protondb_probe_limit(env: dict[str, str] | None = None, default: int = 0) -> int:
     merged_env = {}
     merged_env.update(load_dotenv())
     merged_env.update(env if env is not None else os.environ)
@@ -75,7 +76,7 @@ def get_protondb_probe_limit(env: dict[str, str] | None = None, default: int = 5
     return max(0, value)
 
 
-def get_protondb_probe_backfill_limit(env: dict[str, str] | None = None, default: int = 100) -> int:
+def get_protondb_probe_backfill_limit(env: dict[str, str] | None = None, default: int = 0) -> int:
     merged_env = {}
     merged_env.update(load_dotenv())
     merged_env.update(env if env is not None else os.environ)
@@ -99,7 +100,7 @@ def get_protondb_probe_log_every(env: dict[str, str] | None = None, default: int
     return max(1, value)
 
 
-def retry_http(attempts: int = 3, base_delay_seconds: float = 1.0):
+def retry_http(attempts: int = 5, base_delay_seconds: float = 1.0, max_delay_seconds: float = 60.0):
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
@@ -111,16 +112,32 @@ def retry_http(attempts: int = 3, base_delay_seconds: float = 1.0):
                     if exc.code in {404}:
                         raise
                     last_exc = exc
+                    if exc.code == 429:
+                        retry_after = None
+                        try:
+                            retry_after = float(exc.headers.get("Retry-After", ""))
+                        except (TypeError, ValueError):
+                            pass
+                        if retry_after and retry_after > 0:
+                            delay = min(retry_after + random.uniform(0, 1), max_delay_seconds)
+                            log(
+                                f"[retry] HTTP 429 on attempt {attempt}/{attempts}; "
+                                f"Retry-After={retry_after:.0f}s, sleeping {delay:.1f}s"
+                            )
+                            time.sleep(delay)
+                            continue
                 except URLError as exc:
                     last_exc = exc
 
                 if attempt < attempts:
-                    delay = base_delay_seconds * (2 ** (attempt - 1))
+                    delay = min(base_delay_seconds * (2 ** (attempt - 1)), max_delay_seconds)
+                    jitter = random.uniform(0, delay * 0.5)
+                    total_delay = delay + jitter
                     log(
-                        f"[protondb-probe] transient error on attempt {attempt}/{attempts}; "
-                        f"retrying in {delay:.1f}s: {last_exc}"
+                        f"[retry] transient error on attempt {attempt}/{attempts}; "
+                        f"retrying in {total_delay:.1f}s: {last_exc}"
                     )
-                    time.sleep(delay)
+                    time.sleep(total_delay)
 
             if last_exc is not None:
                 raise last_exc
@@ -412,7 +429,7 @@ def probe_protondb_app_ids(
     candidate_app_ids: list[str],
     existing_cache: dict[str, dict] | None = None,
     fetch_json_impl=fetch_json,
-    limit: int = 5_000,
+    limit: int = 0,
     log_every: int = PROTONDB_PROBE_LOG_EVERY,
 ) -> tuple[dict[str, dict], dict[str, str]]:
     cache = dict(existing_cache or {})

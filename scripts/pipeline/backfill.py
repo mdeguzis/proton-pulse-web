@@ -302,7 +302,7 @@ def backfill_missing_apps(
 def backfill_probe_discoveries(
     data_output_path: Path,
     probe_catalog: dict[str, str],
-    limit: int = 100,
+    limit: int = 0,
     fetch_json_impl=fetch_json,
 ) -> set[tuple]:
     """Backfill apps discovered by the ProtonDB probe that have summaries but no local data."""

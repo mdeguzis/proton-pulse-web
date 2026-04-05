@@ -1,5 +1,7 @@
 from pathlib import Path
 import json
+from http.client import HTTPResponse
+from io import BytesIO
 from urllib.error import HTTPError
 
 from scripts.pipeline.finalize import generate_coverage_report, generate_index_html, generate_app_indexes
@@ -20,6 +22,7 @@ from scripts.pipeline.catalog import (
     read_protondb_probe_cache,
     read_cached_protondb_signal_catalog,
     read_cached_steam_game_catalog,
+    retry_http,
     write_protondb_probe_cache,
     write_cached_protondb_signal_catalog,
     write_cached_steam_game_catalog,
@@ -116,7 +119,7 @@ def test_get_steam_api_key_reads_env_value():
 
 def test_get_protondb_probe_limit_reads_env_value():
     assert get_protondb_probe_limit({"PROTONDB_PROBE_LIMIT": "250"}) == 250
-    assert get_protondb_probe_limit({"PROTONDB_PROBE_LIMIT": "bad"}) == 5000
+    assert get_protondb_probe_limit({"PROTONDB_PROBE_LIMIT": "bad"}) == 0
 
 
 def test_get_steam_api_key_returns_none_when_no_env_or_dotenv(tmp_path, monkeypatch):
@@ -354,7 +357,7 @@ def test_protondb_probe_cache_round_trip(tmp_path):
     assert loaded["10"]["tracked"] is True
 
 
-def test_generate_coverage_report_filters_steam_catalog_with_protondb_signals(tmp_path):
+def test_generate_coverage_report_includes_all_steam_game_app_ids(tmp_path):
     data_dir = tmp_path / "data"
     data_dir.mkdir()
 
@@ -369,4 +372,108 @@ def test_generate_coverage_report_filters_steam_catalog_with_protondb_signals(tm
 
     html = (tmp_path / "coverage.html").read_text()
     assert "730" in html
-    assert "999" not in html
+    # All Steam game app IDs must appear in coverage, even without ProtonDB data
+    assert "999" in html
+    assert "Noise Game" in html
+
+
+def test_generate_coverage_report_shows_protondb_counts(tmp_path):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+
+    generate_coverage_report(
+        index_keys={("730", "2024")},
+        backfilled_keys=set(),
+        data_output_path=data_dir,
+        output_path=tmp_path,
+        steam_catalog={"730": "Counter-Strike 2", "999": "Noise Game"},
+        protondb_signal_catalog={"730": "Counter-Strike 2"},
+        protondb_counts={"uniqueGames": 37720, "reports": 415861, "timestamp": 1775339147},
+    )
+
+    html = (tmp_path / "coverage.html").read_text()
+    assert "37,720" in html
+    assert "415,861" in html
+    assert "ProtonDB Total" in html
+
+
+def test_retry_http_retries_on_transient_error(monkeypatch):
+    monkeypatch.setattr("scripts.pipeline.catalog.time.sleep", lambda _: None)
+    call_count = 0
+
+    @retry_http(attempts=3, base_delay_seconds=0.01)
+    def flaky():
+        nonlocal call_count
+        call_count += 1
+        if call_count < 3:
+            raise HTTPError("http://example.com", 500, "error", {}, None)
+        return "ok"
+
+    assert flaky() == "ok"
+    assert call_count == 3
+
+
+def test_retry_http_raises_404_immediately(monkeypatch):
+    monkeypatch.setattr("scripts.pipeline.catalog.time.sleep", lambda _: None)
+    call_count = 0
+
+    @retry_http(attempts=5, base_delay_seconds=0.01)
+    def not_found():
+        nonlocal call_count
+        call_count += 1
+        raise HTTPError("http://example.com", 404, "not found", {}, None)
+
+    try:
+        not_found()
+        assert False, "Should have raised"
+    except HTTPError as exc:
+        assert exc.code == 404
+    assert call_count == 1
+
+
+def test_retry_http_handles_429_with_retry_after(monkeypatch):
+    slept_durations = []
+    monkeypatch.setattr("scripts.pipeline.catalog.time.sleep", lambda d: slept_durations.append(d))
+    monkeypatch.setattr("scripts.pipeline.catalog.random.uniform", lambda a, b: 0.5)
+    call_count = 0
+
+    class FakeHeaders:
+        def get(self, key, default=""):
+            return "2" if key == "Retry-After" else default
+
+    @retry_http(attempts=3, base_delay_seconds=0.01)
+    def rate_limited():
+        nonlocal call_count
+        call_count += 1
+        if call_count == 1:
+            exc = HTTPError("http://example.com", 429, "too many", FakeHeaders(), None)
+            raise exc
+        return "ok"
+
+    assert rate_limited() == "ok"
+    assert call_count == 2
+    # Should have respected Retry-After=2 + jitter=0.5
+    assert len(slept_durations) == 1
+    assert slept_durations[0] == 2.5
+
+
+def test_probe_protondb_app_ids_unlimited_when_limit_zero():
+    call_count = 0
+
+    def fake_fetch(url):
+        nonlocal call_count
+        call_count += 1
+        raise HTTPError(url, 404, "not found", {}, None)
+
+    candidates = [str(i) for i in range(10)]
+    cache, catalog = probe_protondb_app_ids(
+        candidates, fetch_json_impl=fake_fetch, limit=0, log_every=100,
+    )
+    # All 10 should have been probed (404 = no summary, not tracked)
+    assert len(cache) == 10
+    assert call_count == 10
+    assert len(catalog) == 0
+
+
+def test_probe_limit_default_is_zero():
+    assert get_protondb_probe_limit(env={}) == 0

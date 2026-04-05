@@ -15,7 +15,7 @@ from .catalog import (
     read_protondb_probe_cache,
     write_protondb_probe_cache,
 )
-from .common import count_year_bucket_files, log
+from .common import LIVE_COUNTS_URL, count_year_bucket_files, fetch_json, log
 from .state import read_pipeline_state
 
 
@@ -182,6 +182,7 @@ def generate_coverage_report(
     output_path: Path,
     steam_catalog: dict[str, str] | None = None,
     protondb_signal_catalog: dict[str, str] | None = None,
+    protondb_counts: dict | None = None,
 ) -> None:
     indexed_app_ids = {app_id for app_id, _ in index_keys}
     all_app_ids = set(indexed_app_ids)
@@ -192,10 +193,7 @@ def generate_coverage_report(
     steam_protondb_overlap = steam_catalog_app_ids & protondb_signal_app_ids
 
     if steam_catalog:
-        if protondb_signal_catalog:
-            all_app_ids.update(steam_protondb_overlap)
-        else:
-            all_app_ids.update(steam_catalog.keys())
+        all_app_ids.update(steam_catalog.keys())
     all_app_ids.update(protondb_signal_app_ids)
     all_app_ids.update(backfill_app_ids)
 
@@ -225,6 +223,13 @@ def generate_coverage_report(
     now = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     official_count = sum(1 for _, _, o, _, _ in rows if o)
     backfill_count = sum(1 for _, _, _, b, _ in rows if b)
+    indexed_count = len(indexed_app_ids)
+    steam_count = len(steam_catalog_app_ids) if steam_catalog else 0
+    protondb_unique_games = (protondb_counts or {}).get("uniqueGames", 0) if protondb_counts else 0
+    protondb_total_reports = (protondb_counts or {}).get("reports", 0) if protondb_counts else 0
+    pct_of_protondb_total = (indexed_count / protondb_unique_games * 100) if protondb_unique_games else 0
+    pct_of_steam = (indexed_count / steam_count * 100) if steam_count else 0
+    protondb_pct_of_steam = (protondb_unique_games / steam_count * 100) if (steam_count and protondb_unique_games) else 0
 
     # Build JS data array instead of HTML rows
     # Format: [appId, title, official(0/1), backfill(0/1), "flags", indexed(0/1)]
@@ -259,6 +264,12 @@ tr:nth-child(odd) {{ background: #1a1a2e; }}
 .yes {{ color: #4caf50; font-weight: bold; }}
 .no {{ color: #666; }}
 a {{ color: #5dade2; }}
+.stats {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 1.5em; }}
+.stat-card {{ background: #16213e; border: 1px solid #333; border-radius: 8px; padding: 14px 18px; }}
+.stat-card .label {{ font-size: 0.8em; color: #7a9bb5; text-transform: uppercase; letter-spacing: 0.05em; }}
+.stat-card .value {{ font-size: 1.6em; font-weight: bold; color: #5dade2; margin: 4px 0; }}
+.stat-card .detail {{ font-size: 0.8em; color: #999; }}
+.pct {{ color: #4caf50; }}
 .filters {{ margin-bottom: 1em; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }}
 #filter {{ padding: 6px; width: 300px; background: #16213e; color: #e0e0e0; border: 1px solid #333; border-radius: 4px; }}
 .toggle {{ padding: 6px 14px; border: 2px solid #5dade2; border-radius: 4px; background: transparent; color: #5dade2; cursor: pointer; font-weight: bold; }}
@@ -270,7 +281,39 @@ a {{ color: #5dade2; }}
 </head>
 <body>
 <h1>Coverage Report</h1>
-<p>{len(rows)} apps &middot; {official_count} official &middot; {backfill_count} backfill &middot; Generated: {now}</p>
+<p style="color:#7a9bb5;margin-bottom:1em;">Generated: {now}</p>
+<div class="stats">
+<div class="stat-card">
+  <div class="label">Steam Games</div>
+  <div class="value">{steam_count:,}</div>
+  <div class="detail">All game-type app IDs from Steam API</div>
+</div>
+<div class="stat-card">
+  <div class="label">ProtonDB Total</div>
+  <div class="value">{protondb_unique_games:,}</div>
+  <div class="detail">{protondb_total_reports:,} reports &middot; <span class="pct">{protondb_pct_of_steam:.1f}%</span> of Steam</div>
+</div>
+<div class="stat-card">
+  <div class="label">Indexed (with data)</div>
+  <div class="value">{indexed_count:,}</div>
+  <div class="detail"><span class="pct">{pct_of_protondb_total:.1f}%</span> of ProtonDB &middot; <span class="pct">{pct_of_steam:.1f}%</span> of Steam</div>
+</div>
+<div class="stat-card">
+  <div class="label">Official Dump</div>
+  <div class="value">{official_count:,}</div>
+  <div class="detail">From bdefore/protondb-data archive</div>
+</div>
+<div class="stat-card">
+  <div class="label">Backfilled</div>
+  <div class="value">{backfill_count:,}</div>
+  <div class="detail">Live ProtonDB detailed reports</div>
+</div>
+<div class="stat-card">
+  <div class="label">Coverage Universe</div>
+  <div class="value">{len(rows):,}</div>
+  <div class="detail">Total apps tracked in this report</div>
+</div>
+</div>
 <div class="filters">
 <input id="filter" placeholder="Filter by App ID or title\u2026" oninput="onFilter()">
 <button class="toggle active" data-src="all" onclick="toggleSrc('all')">All</button>
@@ -434,6 +477,19 @@ def finalize_output(output_dir):
             log(f"[protondb-probe] Failed to probe ProtonDB summaries: {exc}")
     else:
         log("[steam-catalog] STEAM_API_KEY not set; coverage report will use local output only", debug=True)
+    protondb_counts = None
+    try:
+        protondb_counts = fetch_json(LIVE_COUNTS_URL)
+        if isinstance(protondb_counts, dict):
+            unique = protondb_counts.get("uniqueGames")
+            reports = protondb_counts.get("reports")
+            log(f"[protondb-counts] uniqueGames={unique:,}, reports={reports:,}" if isinstance(unique, int) and isinstance(reports, int) else f"[protondb-counts] payload={protondb_counts}")
+        else:
+            log("[protondb-counts] Unexpected payload shape; skipping counts integration")
+            protondb_counts = None
+    except Exception as exc:
+        log(f"[protondb-counts] Failed to fetch counts.json: {exc}")
+
     generate_latest_files(data_output_path)
     generate_app_indexes(state["index_keys"], data_output_path)
     generate_index_html(state["index_keys"], output_path)
@@ -447,6 +503,7 @@ def finalize_output(output_dir):
             **(protondb_signal_catalog or {}),
             **(protondb_probe_catalog or {}),
         },
+        protondb_counts=protondb_counts,
     )
     log_summary(state["parsed_count"], data_output_path, output_path, pipeline_start, state["backfilled_keys"])
     log("Done finalizing output.")
