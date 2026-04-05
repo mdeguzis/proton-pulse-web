@@ -2,8 +2,10 @@ import argparse
 import os
 import sys
 import tempfile
+from urllib.error import URLError
 
 from .backfill import run_backfill
+from .catalog import get_steam_api_key, load_steam_game_catalog
 from .common import clone_repo, log, set_debug
 from .finalize import finalize_output
 from .process import process_reports
@@ -38,6 +40,8 @@ def build_parser():
 
     finalize_parser = subparsers.add_parser("finalize", help="Generate latest/index files and print final summary")
     add_shared_output_arg(finalize_parser)
+
+    subparsers.add_parser("steam-catalog", help="Fetch and cache the Steam game catalog using STEAM_API_KEY")
 
     run_parser = subparsers.add_parser("run", help="Run process, backfill, and finalize in sequence")
     run_parser.add_argument("input_dir", nargs="?", help="Local directory containing JSON/tar.gz report files")
@@ -81,6 +85,20 @@ def main():
 
     if command == "finalize":
         finalize_output(args.output_dir)
+        return
+
+    if command == "steam-catalog":
+        steam_api_key = get_steam_api_key(os.environ)
+        if not steam_api_key:
+            log("!! ERROR: STEAM_API_KEY not found in environment or .env")
+            raise SystemExit(1)
+        try:
+            catalog = load_steam_game_catalog(steam_api_key)
+        except URLError as exc:
+            log(f"!! ERROR: Failed to reach Steam app list endpoint: {exc}")
+            log("!! Check network/DNS connectivity and confirm the Steam API host is reachable.")
+            raise SystemExit(1) from exc
+        log(f"[steam-catalog] Ready with {len(catalog):,} app IDs")
         return
 
     parser.print_help()

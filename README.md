@@ -58,6 +58,34 @@ detailed report data exists. Those games can be added to
 
 Go to **Actions → Update ProtonDB Data → Run workflow**.
 
+## Steam catalog coverage
+
+The coverage report can optionally expand to the full Steam game catalog when
+`STEAM_API_KEY` is available. For local runs, place the key in a local `.env`
+file at the repo root:
+
+```env
+STEAM_API_KEY=your_key_here
+```
+
+That file is ignored by git. In GitHub Actions, the workflow writes the secret
+into the same `.env` shape during the build so local and CI behavior stay
+consistent.
+
+The Steam app ID pull is backed by the vendored
+`vendor/Steam-Games-Scraper` git submodule while that project remains active.
+After cloning this repo, initialize submodules before running local commands:
+
+```bash
+make setup
+```
+
+or:
+
+```bash
+git submodule update --init --recursive
+```
+
 ## Storage strategy
 
 The `gh-pages` branch is an orphan with a single commit — it is force-pushed

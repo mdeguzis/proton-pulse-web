@@ -1,0 +1,3 @@
+[submodule "vendor/Steam-Games-Scraper"]
+	path = vendor/Steam-Games-Scraper
+	url = https://github.com/FronkonGames/Steam-Games-Scraper.git

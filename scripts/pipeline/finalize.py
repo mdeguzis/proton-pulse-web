@@ -1,8 +1,10 @@
 import json
+import os
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+from .catalog import get_steam_api_key, load_protondb_signal_catalog, load_steam_game_catalog
 from .common import count_year_bucket_files, log
 from .state import read_pipeline_state
 
@@ -163,14 +165,35 @@ def _extract_title(app_dir: Path) -> str:
     return ""
 
 
-def generate_coverage_report(index_keys: set, backfilled_keys: set, data_output_path: Path, output_path: Path) -> None:
-    all_app_ids = {app_id for app_id, _ in index_keys}
+def generate_coverage_report(
+    index_keys: set,
+    backfilled_keys: set,
+    data_output_path: Path,
+    output_path: Path,
+    steam_catalog: dict[str, str] | None = None,
+    protondb_signal_catalog: dict[str, str] | None = None,
+) -> None:
+    indexed_app_ids = {app_id for app_id, _ in index_keys}
+    all_app_ids = set(indexed_app_ids)
     backfill_app_ids = {app_id for app_id, _ in backfilled_keys}
-    official_app_ids = all_app_ids - backfill_app_ids
+    official_app_ids = indexed_app_ids - backfill_app_ids
+    protondb_signal_app_ids = set((protondb_signal_catalog or {}).keys())
+
+    if steam_catalog:
+        if protondb_signal_catalog:
+            all_app_ids.update(app_id for app_id in steam_catalog.keys() if app_id in protondb_signal_app_ids)
+        else:
+            all_app_ids.update(steam_catalog.keys())
+    all_app_ids.update(protondb_signal_app_ids)
+    all_app_ids.update(backfill_app_ids)
 
     rows = []
     for app_id in sorted(all_app_ids, key=lambda a: (0, int(a)) if a.isdigit() else (1, a)):
-        title = _extract_title(data_output_path / app_id)
+        title = (
+            _extract_title(data_output_path / app_id)
+            or (protondb_signal_catalog or {}).get(app_id, "")
+            or (steam_catalog or {}).get(app_id, "")
+        )
         rows.append((
             app_id,
             title,
@@ -332,9 +355,30 @@ def finalize_output(output_dir):
     data_output_path = output_path / "data"
     state = read_pipeline_state(output_path)
     pipeline_start = time.time()
+    steam_catalog = None
+    protondb_signal_catalog = None
+    steam_api_key = get_steam_api_key(os.environ)
+    try:
+        protondb_signal_catalog = load_protondb_signal_catalog()
+    except Exception as exc:
+        log(f"[protondb-signal] Failed to load ProtonDB signal catalog: {exc}")
+    if steam_api_key:
+        try:
+            steam_catalog = load_steam_game_catalog(steam_api_key)
+        except Exception as exc:
+            log(f"[steam-catalog] Failed to load Steam app catalog: {exc}")
+    else:
+        log("[steam-catalog] STEAM_API_KEY not set; coverage report will use local output only", debug=True)
     generate_latest_files(data_output_path)
     generate_app_indexes(state["index_keys"], data_output_path)
     generate_index_html(state["index_keys"], output_path)
-    generate_coverage_report(state["index_keys"], state["backfilled_keys"], data_output_path, output_path)
+    generate_coverage_report(
+        state["index_keys"],
+        state["backfilled_keys"],
+        data_output_path,
+        output_path,
+        steam_catalog=steam_catalog,
+        protondb_signal_catalog=protondb_signal_catalog,
+    )
     log_summary(state["parsed_count"], data_output_path, output_path, pipeline_start, state["backfilled_keys"])
     log("Done finalizing output.")

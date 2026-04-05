@@ -21,6 +21,10 @@ pip-wheel-metadata/
 .venv/
 venv/
 env/
+.cache/
+
+# NEVER ADD
+.env
 .env/
 .env.local
 
