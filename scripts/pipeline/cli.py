@@ -4,7 +4,7 @@ import sys
 import tempfile
 from urllib.error import URLError
 
-from .backfill import run_backfill
+from .backfill import run_backfill, run_probe_backfill
 from .catalog import get_steam_api_key, load_steam_game_catalog
 from .common import clone_repo, log, set_debug
 from .finalize import finalize_output
@@ -15,6 +15,7 @@ def process_data(input_dir, output_dir):
     process_reports(input_dir, output_dir)
     run_backfill(output_dir)
     finalize_output(output_dir)
+    run_probe_backfill(output_dir)
 
 
 def build_parser():
@@ -40,6 +41,9 @@ def build_parser():
 
     finalize_parser = subparsers.add_parser("finalize", help="Generate latest/index files and print final summary")
     add_shared_output_arg(finalize_parser)
+
+    probe_backfill_parser = subparsers.add_parser("probe-backfill", help="Backfill data for apps discovered by the ProtonDB probe")
+    add_shared_output_arg(probe_backfill_parser)
 
     subparsers.add_parser("steam-catalog", help="Fetch and cache the Steam game catalog using STEAM_API_KEY")
 
@@ -85,6 +89,10 @@ def main():
 
     if command == "finalize":
         finalize_output(args.output_dir)
+        return
+
+    if command == "probe-backfill":
+        run_probe_backfill(args.output_dir)
         return
 
     if command == "steam-catalog":

@@ -9,6 +9,7 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   PYTHONUNBUFFERED: "1"
   PROTONDB_PROBE_LIMIT: "5000"
+  PROTONDB_PROBE_BACKFILL_LIMIT: "100"
   PROTONDB_PROBE_LOG_EVERY: "100"
 
 jobs:
@@ -64,7 +65,17 @@ jobs:
           uv run python scripts/split_reports.py backfill \
             /tmp/protondb-output
 
-      - name: Finalize Indexes and Summary
+      - name: Finalize (Probe + Indexes + Coverage)
+        run: |
+          uv run python scripts/split_reports.py finalize \
+            /tmp/protondb-output
+
+      - name: Backfill Probe Discoveries
+        run: |
+          uv run python scripts/split_reports.py probe-backfill \
+            /tmp/protondb-output
+
+      - name: Re-Finalize (Update Indexes + Coverage)
         run: |
           uv run python scripts/split_reports.py finalize \
             /tmp/protondb-output

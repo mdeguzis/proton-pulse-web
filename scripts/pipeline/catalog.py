@@ -19,6 +19,7 @@ PROTONDB_PROBE_CACHE_MAX_AGE_SECONDS = 7 * 24 * 60 * 60
 PROTONDB_COMPATIBILITY_REPORT_URL = "https://www.protondb.com/data/compatibility_report_with_games.json"
 PROTONDB_SUMMARY_URL = "https://www.protondb.com/api/v1/reports/summaries/{app_id}.json"
 PROTONDB_PROBE_LIMIT_ENV = "PROTONDB_PROBE_LIMIT"
+PROTONDB_PROBE_BACKFILL_LIMIT_ENV = "PROTONDB_PROBE_BACKFILL_LIMIT"
 PROTONDB_PROBE_LOG_EVERY = 250
 PROTONDB_PROBE_LOG_EVERY_ENV = "PROTONDB_PROBE_LOG_EVERY"
 DEFAULT_ENV_PATH = Path(__file__).resolve().parents[2] / ".env"
@@ -67,6 +68,18 @@ def get_protondb_probe_limit(env: dict[str, str] | None = None, default: int = 5
     merged_env.update(load_dotenv())
     merged_env.update(env if env is not None else os.environ)
     raw = str(merged_env.get(PROTONDB_PROBE_LIMIT_ENV, default)).strip()
+    try:
+        value = int(raw)
+    except ValueError:
+        return default
+    return max(0, value)
+
+
+def get_protondb_probe_backfill_limit(env: dict[str, str] | None = None, default: int = 100) -> int:
+    merged_env = {}
+    merged_env.update(load_dotenv())
+    merged_env.update(env if env is not None else os.environ)
+    raw = str(merged_env.get(PROTONDB_PROBE_BACKFILL_LIMIT_ENV, default)).strip()
     try:
         value = int(raw)
     except ValueError:

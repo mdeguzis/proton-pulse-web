@@ -219,15 +219,17 @@ def generate_coverage_report(
             title,
             app_id in official_app_ids,
             app_id in backfill_app_ids,
+            app_id in indexed_app_ids,
         ))
 
     now = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    official_count = sum(1 for _, _, o, _ in rows if o)
-    backfill_count = sum(1 for _, _, _, b in rows if b)
+    official_count = sum(1 for _, _, o, _, _ in rows if o)
+    backfill_count = sum(1 for _, _, _, b, _ in rows if b)
 
     # Build JS data array instead of HTML rows
+    # Format: [appId, title, official(0/1), backfill(0/1), "flags", indexed(0/1)]
     js_rows = []
-    for app_id, title, official, backfill in rows:
+    for app_id, title, official, backfill, indexed in rows:
         flags = []
         if official:
             flags.append("official")
@@ -239,7 +241,7 @@ def generate_coverage_report(
             flags.append("bad-appid")
         # Escape for JS string
         safe_title = title.replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ")
-        js_rows.append(f'["{app_id}","{safe_title}",{1 if official else 0},{1 if backfill else 0},"{" ".join(flags)}"]')
+        js_rows.append(f'["{app_id}","{safe_title}",{1 if official else 0},{1 if backfill else 0},"{" ".join(flags)}",{1 if indexed else 0}]')
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -351,13 +353,14 @@ function render(){{
   document.getElementById("pageInfo2").textContent=info;
   const h=[];
   for(const r of slice){{
-    const id=r[0],t=r[1],o=r[2],b=r[3];
+    const id=r[0],t=r[1],o=r[2],b=r[3],ix=r[5];
     const isNum=id.length>0&&[...id].every(c=>c>='0'&&c<='9');
     const ac=isNum?`<a href="https://store.steampowered.com/app/${{id}}">${{id}}</a>`:id;
     const tc=isNum&&t?`<a href="https://www.protondb.com/app/${{id}}">${{t}}</a>`:(t||"");
     const oc=o?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const bc=b?'<span class="yes">yes</span>':'<span class="no">no</span>';
-    h.push(`<tr><td>${{ac}}</td><td>${{tc}}</td><td>${{oc}}</td><td>${{bc}}</td><td><a href="data/${{id}}/">index</a></td></tr>`);
+    const ixc=ix?`<a href="data/${{id}}/">index</a>`:'<span class="no">\u2014</span>';
+    h.push(`<tr><td>${{ac}}</td><td>${{tc}}</td><td>${{oc}}</td><td>${{bc}}</td><td>${{ixc}}</td></tr>`);
   }}
   tb.innerHTML=h.join("");
 }}

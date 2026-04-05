@@ -299,6 +299,110 @@ def backfill_missing_apps(
     return written_keys
 
 
+def backfill_probe_discoveries(
+    data_output_path: Path,
+    probe_catalog: dict[str, str],
+    limit: int = 100,
+    fetch_json_impl=fetch_json,
+) -> set[tuple]:
+    """Backfill apps discovered by the ProtonDB probe that have summaries but no local data."""
+    existing_app_ids = {path.name for path in data_output_path.iterdir() if path.is_dir()}
+    missing_app_ids = sorted(
+        [app_id for app_id in probe_catalog if app_id not in existing_app_ids],
+        key=lambda a: int(a),
+    )
+
+    if not missing_app_ids:
+        log("[probe-backfill] No probe-discovered apps require backfill")
+        return set()
+
+    total_missing = len(missing_app_ids)
+    if limit > 0 and total_missing > limit:
+        missing_app_ids = missing_app_ids[:limit]
+        log(f"[probe-backfill] {total_missing:,} probe-discovered apps missing data; backfilling first {limit:,}")
+    else:
+        log(f"[probe-backfill] Backfilling {total_missing:,} probe-discovered app(s)")
+
+    counts = fetch_json_impl(LIVE_COUNTS_URL)
+    if not isinstance(counts, dict):
+        raise ValueError("Live ProtonDB counts payload was not a JSON object")
+
+    report_count = counts.get("reports")
+    timestamp = counts.get("timestamp")
+    if not isinstance(report_count, int) or not isinstance(timestamp, int) or report_count <= 0 or timestamp <= 0:
+        raise ValueError("Live ProtonDB counts payload did not contain usable report/timestamp seeds")
+
+    written_keys: set[tuple] = set()
+    succeeded = 0
+    skipped = 0
+    for app_id in missing_app_ids:
+        candidate_urls = build_live_report_candidate_urls(app_id, report_count, timestamp)
+        payload, resolved_url = fetch_live_reports_payload(app_id, candidate_urls, fetch_json_impl=fetch_json_impl)
+        if payload is None:
+            log(f"[probe-backfill] Skipping {app_id}: no live detailed report candidate succeeded")
+            skipped += 1
+            continue
+
+        title = probe_catalog.get(app_id, "") or fetch_steam_title(app_id)
+        reports = normalize_live_detailed_reports(app_id, payload.get("reports") or [], title=title)
+        if not reports:
+            log(f"[probe-backfill] Skipping {app_id}: live detailed payload had no usable reports")
+            skipped += 1
+            continue
+
+        year_buckets = bucket_reports_by_year(reports)
+        written_keys.update(write_bucketed_reports(data_output_path, app_id, year_buckets))
+        succeeded += 1
+        log(
+            f"[probe-backfill] Wrote {sum(len(rows) for rows in year_buckets.values())} reports across "
+            f"{len(year_buckets)} year file(s) for {app_id} using {resolved_url}"
+        )
+
+    log(
+        f"[probe-backfill] Complete: {succeeded:,} apps backfilled, "
+        f"{skipped:,} skipped, {len(written_keys):,} year bucket(s) written"
+    )
+    return written_keys
+
+
+def run_probe_backfill(output_dir):
+    """CLI entry point: read probe cache, backfill discovered apps, update state."""
+    from .catalog import (
+        get_protondb_probe_backfill_limit,
+        read_protondb_probe_cache,
+    )
+
+    output_path = Path(output_dir)
+    data_output_path = output_path / "data"
+    state = read_pipeline_state(output_path)
+
+    probe_cache = read_protondb_probe_cache()
+    probe_catalog = {
+        app_id: entry.get("title", "")
+        for app_id, entry in probe_cache.items()
+        if entry.get("tracked")
+    }
+
+    if not probe_catalog:
+        log("[probe-backfill] No tracked apps in probe cache; nothing to backfill")
+        return
+
+    limit = get_protondb_probe_backfill_limit()
+    log(f"[probe-backfill] Probe cache has {len(probe_catalog):,} tracked apps; limit {limit:,} per run")
+
+    backfilled_keys = backfill_probe_discoveries(data_output_path, probe_catalog, limit=limit)
+
+    if backfilled_keys:
+        merged_index_keys = set(state["index_keys"])
+        merged_index_keys.update(backfilled_keys)
+        merged_backfilled_keys = set(state["backfilled_keys"])
+        merged_backfilled_keys.update(backfilled_keys)
+        write_pipeline_state(output_path, state["parsed_count"], merged_index_keys, merged_backfilled_keys)
+        log(f"[probe-backfill] Updated pipeline state with {len(backfilled_keys):,} new keys")
+
+    log("Done backfilling probe discoveries.")
+
+
 def run_backfill(output_dir):
     output_path = Path(output_dir)
     data_output_path = output_path / "data"
