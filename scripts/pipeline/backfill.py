@@ -435,3 +435,68 @@ def run_backfill(output_dir, target_app_ids: list[str] | None = None):
     )
     log(f"[state] Updated pipeline state after backfill: {pipeline_state_path(output_path)}")
     log("Done backfilling missing apps.")
+
+
+def _find_no_title_app_ids(data_output_path: Path) -> list[str]:
+    """Find indexed apps whose latest reports all have empty titles."""
+    app_ids = []
+    for app_dir in sorted(data_output_path.iterdir(), key=lambda p: p.name):
+        if not app_dir.is_dir() or not app_dir.name.isdigit():
+            continue
+        latest = app_dir / "latest.json"
+        if not latest.exists():
+            continue
+        try:
+            reports = json.loads(latest.read_text())
+            if isinstance(reports, list) and reports:
+                title = (reports[0].get("title") or "").strip()
+                if not title:
+                    app_ids.append(app_dir.name)
+        except Exception:
+            app_ids.append(app_dir.name)
+    return app_ids
+
+
+def _find_bad_app_id_entries(data_output_path: Path) -> list[str]:
+    """Find app directories with non-numeric names."""
+    return sorted(
+        p.name for p in data_output_path.iterdir()
+        if p.is_dir() and not p.name.isdigit()
+    )
+
+
+def _find_no_protondb_data_app_ids(data_output_path: Path) -> list[str]:
+    """Find apps in the no_data_app_ids set from pipeline state."""
+    state = read_pipeline_state(data_output_path.parent)
+    return sorted(state.get("no_data_app_ids", set()), key=lambda a: int(a) if a.isdigit() else 0)
+
+
+def run_coverage_backfill(output_dir: str, issue_type: str, limit: int = 0) -> None:
+    output_path = Path(output_dir)
+    data_output_path = output_path / "data"
+
+    if issue_type == "no-titles":
+        app_ids = _find_no_title_app_ids(data_output_path)
+        log(f"[coverage-backfill] Found {len(app_ids)} app(s) with missing titles")
+    elif issue_type == "bad-app-id":
+        app_ids = _find_bad_app_id_entries(data_output_path)
+        log(f"[coverage-backfill] Found {len(app_ids)} app(s) with non-numeric IDs: {app_ids}")
+        log("[coverage-backfill] Bad app IDs cannot be backfilled; listing only")
+        return
+    elif issue_type == "no-protondb-data":
+        app_ids = _find_no_protondb_data_app_ids(data_output_path)
+        log(f"[coverage-backfill] Found {len(app_ids)} app(s) with no ProtonDB data")
+    else:
+        log(f"!! ERROR: Unknown issue type: {issue_type}")
+        return
+
+    if not app_ids:
+        log("[coverage-backfill] Nothing to backfill")
+        return
+
+    if limit > 0:
+        app_ids = app_ids[:limit]
+        log(f"[coverage-backfill] Limited to {limit} app(s)")
+
+    run_backfill(output_dir, target_app_ids=app_ids)
+    log(f"[coverage-backfill] Done ({issue_type})")

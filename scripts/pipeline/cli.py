@@ -5,7 +5,7 @@ import sys
 import tempfile
 from urllib.error import URLError
 
-from .backfill import run_backfill, run_probe_backfill
+from .backfill import run_backfill, run_coverage_backfill, run_probe_backfill
 from .catalog import get_steam_api_key, load_steam_game_catalog
 from .common import clone_repo, log, set_debug
 from .finalize import build_probe_chunk_plan, finalize_output, reindex_apps, update_protondb_probe_cache
@@ -68,6 +68,24 @@ def build_parser():
 
     probe_backfill_parser = subparsers.add_parser("probe-backfill", help="Backfill data for apps discovered by the ProtonDB probe")
     add_shared_output_arg(probe_backfill_parser)
+
+    coverage_backfill_parser = subparsers.add_parser(
+        "coverage-backfill",
+        help="Backfill apps matching a coverage issue type",
+    )
+    coverage_backfill_parser.add_argument(
+        "--issue-type",
+        required=True,
+        choices=["no-titles", "bad-app-id", "no-protondb-data"],
+        help="Coverage issue type to backfill",
+    )
+    coverage_backfill_parser.add_argument(
+        "--limit",
+        type=int,
+        default=0,
+        help="Max apps to backfill (0 = unlimited)",
+    )
+    add_shared_output_arg(coverage_backfill_parser)
 
     reindex_parser = subparsers.add_parser("reindex", help="Rebuild index.json for specific app IDs only")
     reindex_parser.add_argument(
@@ -142,6 +160,14 @@ def main():
             log("!! ERROR: --app-ids is required for reindex")
             sys.exit(1)
         reindex_apps(args.output_dir, target_ids)
+        return
+
+    if command == "coverage-backfill":
+        run_coverage_backfill(
+            args.output_dir,
+            issue_type=args.issue_type,
+            limit=getattr(args, "limit", 0),
+        )
         return
 
     if command == "steam-catalog":

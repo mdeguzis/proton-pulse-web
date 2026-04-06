@@ -12,6 +12,9 @@ import ijson  # pylint: disable=import-error
 from .common import log
 from .state import pipeline_state_path, write_pipeline_state
 
+TARBALL_CACHE_FILENAME = "processed-tarballs.json"
+DEFAULT_TARBALL_CACHE_PATH = Path(__file__).resolve().parents[2] / ".cache" / TARBALL_CACHE_FILENAME
+
 
 def parse_and_split(file_handle, data_output_path, source_label="?"):
     """
@@ -97,6 +100,24 @@ def parse_and_split(file_handle, data_output_path, source_label="?"):
     return count, set(buffer.keys())
 
 
+def _tarball_key(file_path: Path) -> str:
+    return f"{file_path.name}:{file_path.stat().st_size}"
+
+
+def _read_tarball_cache() -> set[str]:
+    if not DEFAULT_TARBALL_CACHE_PATH.exists():
+        return set()
+    try:
+        return set(json.loads(DEFAULT_TARBALL_CACHE_PATH.read_text()))
+    except Exception:
+        return set()
+
+
+def _write_tarball_cache(processed: set[str]) -> None:
+    DEFAULT_TARBALL_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    DEFAULT_TARBALL_CACHE_PATH.write_text(json.dumps(sorted(processed), indent=2) + "\n")
+
+
 def process_reports(input_dir, output_dir):
     """Walk input_dir for JSON/tarball report files, parse and split into per-app year buckets"""
     input_path = Path(input_dir)
@@ -117,6 +138,10 @@ def process_reports(input_dir, output_dir):
         log(f"  {file_path.name}  ({size:,} bytes)", debug=True)
     if len(all_files) > 20:
         log(f"  ... and {len(all_files) - 20} more", debug=True)
+
+    tarball_cache = _read_tarball_cache()
+    if tarball_cache:
+        log(f"[cache] Loaded {len(tarball_cache)} previously processed tarball(s)")
 
     parsed_count = 0
     index_keys: set[tuple] = set()
@@ -139,7 +164,14 @@ def process_reports(input_dir, output_dir):
 
     tar_files = sorted(input_path.glob("*.tar.gz"))
     log(f"\n[tar] Found {len(tar_files)} tarball(s)")
+    skipped_count = 0
     for index, tar_file in enumerate(tar_files, start=1):
+        key = _tarball_key(tar_file)
+        if key in tarball_cache:
+            skipped_count += 1
+            log(f"[tar] Skipping {index}/{len(tar_files)}: {tar_file.name} (cached)")
+            continue
+
         size = tar_file.stat().st_size
         log(
             f"[tar] Processing {index}/{len(tar_files)}: {tar_file.name} ({size:,} bytes)"
@@ -162,11 +194,18 @@ def process_reports(input_dir, output_dir):
                         log(f"[tar]      {count:,} reports parsed")
                         parsed_count += count
                         index_keys.update(src_keys)
+            tarball_cache.add(key)
         except (tarfile.TarError, OSError) as exc:
             log(f"!! Failed to process {tar_file.name}: {exc}")
         log(f"[tar] Done: {time.time() - t0:.1f}s")
 
-    if parsed_count == 0:
+    if skipped_count:
+        log(f"[cache] Skipped {skipped_count}/{len(tar_files)} already-processed tarball(s)")
+
+    _write_tarball_cache(tarball_cache)
+    log(f"[cache] Saved tarball cache: {DEFAULT_TARBALL_CACHE_PATH}")
+
+    if parsed_count == 0 and not tarball_cache:
         log(f"!! ERROR: No reports were parsed from {input_dir}.")
         log(f"!! Found {len(json_files)} JSONs and {len(tar_files)} tarballs.")
         raise SystemExit(1)

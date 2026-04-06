@@ -9,6 +9,20 @@ on:
         description: "Comma-separated Steam app IDs to backfill and publish (skips full pipeline)"
         required: false
         default: ""
+      coverage_backfill_issue_type:
+        description: "Coverage issue type to backfill (no-titles, bad-app-id, no-protondb-data)"
+        required: false
+        default: ""
+        type: choice
+        options:
+          - ""
+          - "no-titles"
+          - "bad-app-id"
+          - "no-protondb-data"
+      coverage_backfill_limit:
+        description: "Max apps to backfill for coverage-backfill (0 = unlimited)"
+        required: false
+        default: "0"
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -21,7 +35,7 @@ jobs:
 
   # ── Stage 1: process reports, backfill, compute probe plan ─────────
   build:
-    if: inputs.backfill_app_ids == ''
+    if: inputs.backfill_app_ids == '' && inputs.coverage_backfill_issue_type == ''
     runs-on: ubuntu-24.04
     outputs:
       chunk_count: ${{ steps.plan.outputs.chunk_count }}
@@ -169,6 +183,7 @@ jobs:
     if: |
       always() &&
       inputs.backfill_app_ids == '' &&
+      inputs.coverage_backfill_issue_type == '' &&
       needs.build.result == 'success' &&
       (needs.probe-chunks.result == 'success' || needs.probe-chunks.result == 'skipped')
     runs-on: ubuntu-24.04
@@ -352,9 +367,142 @@ jobs:
           git commit -m "Targeted backfill: ${{ inputs.backfill_app_ids }}"
           git push origin gh-pages-new:gh-pages --force
 
+  # ── Coverage-based backfill: fix missing titles, no-data apps, etc ──
+  coverage-backfill:
+    if: inputs.coverage_backfill_issue_type != ''
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          ref: gh-pages
+          path: gh-pages-data
+
+      - name: Checkout scripts
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          path: repo
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "latest"
+
+      - name: Install dependencies
+        working-directory: repo
+        run: uv sync
+
+      - name: Restore pipeline cache
+        uses: actions/cache/restore@v4
+        with:
+          path: repo/.cache
+          key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-coverage
+          restore-keys: |
+            pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-
+
+      - name: Prepare output from existing gh-pages data
+        run: |
+          mkdir -p /tmp/protondb-output
+          if [ -d gh-pages-data/data ]; then
+            cp -r gh-pages-data/data /tmp/protondb-output/data
+          else
+            mkdir -p /tmp/protondb-output/data
+          fi
+
+      - name: Initialize pipeline state
+        working-directory: repo
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          output = Path("/tmp/protondb-output")
+          state_file = output / "pipeline-state.json"
+          data_dir = output / "data"
+
+          index_keys = []
+          if data_dir.is_dir():
+              for app_dir in sorted(data_dir.iterdir()):
+                  if not app_dir.is_dir():
+                      continue
+                  for json_file in app_dir.glob("*.json"):
+                      if json_file.stem in ("index", "latest", "votes"):
+                          continue
+                      index_keys.append([app_dir.name, json_file.stem])
+
+          state = {
+              "parsed_count": 0,
+              "index_keys": index_keys,
+              "backfilled_keys": [],
+              "no_data_app_ids": [],
+          }
+          state_file.write_text(json.dumps(state))
+          print(f"[coverage-backfill] Initialized state with {len(index_keys)} existing index keys")
+          PY
+
+      - name: Run coverage backfill
+        working-directory: repo
+        run: |
+          echo "[coverage-backfill] Issue type: ${{ inputs.coverage_backfill_issue_type }}"
+          echo "[coverage-backfill] Limit: ${{ inputs.coverage_backfill_limit }}"
+          LIMIT_ARG=""
+          if [ "${{ inputs.coverage_backfill_limit }}" != "0" ]; then
+            LIMIT_ARG="--limit ${{ inputs.coverage_backfill_limit }}"
+          fi
+          uv run python scripts/split_reports.py coverage-backfill \
+            --issue-type "${{ inputs.coverage_backfill_issue_type }}" \
+            $LIMIT_ARG \
+            /tmp/protondb-output
+
+      - name: Reindex affected apps
+        working-directory: repo
+        run: |
+          python - <<'PY'
+          import json, subprocess, sys
+          from pathlib import Path
+
+          state = json.loads(Path("/tmp/protondb-output/pipeline-state.json").read_text())
+          backfilled = state.get("backfilled_keys", [])
+          app_ids = sorted(set(k[0] for k in backfilled if len(k) == 2))
+          if not app_ids:
+              print("[coverage-backfill] No apps were backfilled; skipping reindex")
+              sys.exit(0)
+          ids_str = ",".join(app_ids)
+          print(f"[coverage-backfill] Reindexing {len(app_ids)} app(s): {ids_str[:200]}")
+          subprocess.run(
+              ["uv", "run", "python", "scripts/split_reports.py", "reindex", "--app-ids", ids_str, "/tmp/protondb-output"],
+              check=True,
+          )
+          PY
+
+      - name: Save pipeline cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: repo/.cache
+          key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-coverage
+
+      - name: Deploy to gh-pages (orphan, no history)
+        working-directory: repo
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git checkout --orphan gh-pages-new
+          git rm -rf .
+          cp -r /tmp/protondb-output/data .
+          cp ../gh-pages-data/index.html . 2>/dev/null || true
+          cp ../gh-pages-data/coverage.html . 2>/dev/null || true
+          git add data/ index.html coverage.html
+          git commit -m "Coverage backfill: ${{ inputs.coverage_backfill_issue_type }}"
+          git push origin gh-pages-new:gh-pages --force
+
   # ── Status report (runs even on failure) ───────────────────────────
   report-build-status:
-    needs: [build, probe-chunks, finalize, targeted-backfill]
+    needs: [build, probe-chunks, finalize, targeted-backfill, coverage-backfill]
     runs-on: ubuntu-24.04
     if: always()
     steps:
@@ -362,7 +510,15 @@ jobs:
         run: |
           echo "### Update ProtonDB Data" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          if [ -n "${{ inputs.backfill_app_ids }}" ]; then
+          if [ -n "${{ inputs.coverage_backfill_issue_type }}" ]; then
+            echo "**Mode:** Coverage backfill" >> "$GITHUB_STEP_SUMMARY"
+            echo "**Issue type:** ${{ inputs.coverage_backfill_issue_type }}" >> "$GITHUB_STEP_SUMMARY"
+            echo "**Limit:** ${{ inputs.coverage_backfill_limit }}" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "| Job | Status |" >> "$GITHUB_STEP_SUMMARY"
+            echo "|-----|--------|" >> "$GITHUB_STEP_SUMMARY"
+            echo "| Coverage backfill | ${{ needs.coverage-backfill.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          elif [ -n "${{ inputs.backfill_app_ids }}" ]; then
             echo "**Mode:** Targeted backfill" >> "$GITHUB_STEP_SUMMARY"
             echo "**App IDs:** ${{ inputs.backfill_app_ids }}" >> "$GITHUB_STEP_SUMMARY"
             echo "" >> "$GITHUB_STEP_SUMMARY"
