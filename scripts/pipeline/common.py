@@ -11,6 +11,8 @@ LIVE_REPORTS_URL = "https://www.protondb.com/data/reports/{device}/app/{hash}.js
 LIVE_REPORT_DEVICE = "all-devices"
 LIVE_REPORT_HASH_DEVICE = "any"
 STEAM_APP_DETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={app_id}"
+STEAM_STORE_PAGE_URL = "https://store.steampowered.com/app/{app_id}"
+STEAM_INVALID_TITLES = {"eemmmpty"}
 BACKFILL_MANIFEST_PATH = Path(__file__).resolve().parents[2] / "config" / "live_backfill_app_ids.json"
 
 
@@ -56,6 +58,27 @@ def fetch_steam_title(app_id: str) -> str:
     return title
 
 
+def _scrape_steam_store_title(app_id: str) -> str:
+    """Scrape the Steam store page for the app name when the API returns empty."""
+    import re
+
+    try:
+        req = request.Request(
+            STEAM_STORE_PAGE_URL.format(app_id=app_id),
+            headers={"Cookie": "birthtime=0; wants_mature_content=1"},
+        )
+        with request.urlopen(req, timeout=10) as resp:
+            html = resp.read().decode("utf-8", errors="replace")
+        match = re.search(r'class="apphub_AppName"[^>]*>([^<]+)<', html)
+        if match:
+            title = match.group(1).strip()
+            if title and title.lower() not in STEAM_INVALID_TITLES:
+                return title
+    except Exception:
+        pass
+    return ""
+
+
 def fetch_steam_title_with_source(app_id: str) -> tuple[str, str]:
     try:
         data = fetch_json(STEAM_APP_DETAILS_URL.format(app_id=app_id))
@@ -64,6 +87,10 @@ def fetch_steam_title_with_source(app_id: str) -> tuple[str, str]:
             title = app_data.get("data", {}).get("name", "")
             if isinstance(title, str) and title.strip():
                 return title.strip(), "steam-store"
+            # API returned empty name — try scraping the store page
+            scraped = _scrape_steam_store_title(app_id)
+            if scraped:
+                return scraped, "steam-store-scrape"
             return "", "steam-store-empty-name"
         return "", "steam-store-unsuccessful"
     except Exception:
