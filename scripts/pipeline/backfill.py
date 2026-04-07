@@ -507,6 +507,17 @@ def _require_bounded_coverage_backfill(issue_type: str, limit: int, allow_unboun
     )
 
 
+def _log_app_id_batches(prefix: str, app_ids: list[str], batch_size: int = 100) -> None:
+    total = len(app_ids)
+    if total == 0:
+        log(f"{prefix}: none")
+        return
+    for start in range(0, total, batch_size):
+        end = min(start + batch_size, total)
+        batch = ",".join(app_ids[start:end])
+        log(f"{prefix} ({start + 1}-{end}/{total}): {batch}")
+
+
 def run_coverage_backfill(output_dir: str, issue_type: str, limit: int = 0, allow_unbounded: bool = False) -> None:
     output_path = Path(output_dir)
     data_output_path = output_path / "data"
@@ -532,9 +543,13 @@ def run_coverage_backfill(output_dir: str, issue_type: str, limit: int = 0, allo
         log("[coverage-backfill] Nothing to backfill")
         return
 
+    _log_app_id_batches("[coverage-backfill] Candidate app IDs", app_ids)
+
     if limit > 0:
         app_ids = app_ids[:limit]
         log(f"[coverage-backfill] Limited to {limit} app(s)")
+
+    _log_app_id_batches("[coverage-backfill] Selected app IDs", app_ids)
 
     # no-titles needs force=True because these apps already have data dirs,
     # they just need re-fetching to pick up Steam titles

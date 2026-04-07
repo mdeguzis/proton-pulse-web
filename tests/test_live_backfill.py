@@ -408,6 +408,25 @@ def test_run_coverage_backfill_no_titles_does_not_crash_when_targets_already_exi
     assert calls == [(tmp_path, ["2561580"], True)]
 
 
+def test_run_coverage_backfill_logs_candidate_and_selected_app_ids(tmp_path, monkeypatch):
+    data_dir = tmp_path / "data"
+    for app_id in ("2561580", "730", "570"):
+        app_dir = data_dir / app_id
+        app_dir.mkdir(parents=True)
+        (app_dir / "latest.json").write_text(json.dumps([{"title": "", "timestamp": 1763251200}]))
+    write_pipeline_state(tmp_path, parsed_count=0, index_keys=set())
+
+    logs = []
+
+    monkeypatch.setattr(backfill_module, "log", lambda msg, debug=False: logs.append(msg))
+    monkeypatch.setattr(backfill_module, "run_backfill", lambda output_dir, target_app_ids=None, force=False: None)
+
+    run_coverage_backfill(tmp_path, issue_type="no-titles", limit=2)
+
+    assert any(msg == "[coverage-backfill] Candidate app IDs (1-3/3): 2561580,570,730" for msg in logs)
+    assert any(msg == "[coverage-backfill] Selected app IDs (1-2/2): 2561580,570" for msg in logs)
+
+
 def test_run_coverage_backfill_requires_positive_limit_by_default(tmp_path):
     data_dir = tmp_path / "data"
     app_dir = data_dir / "2561580"
