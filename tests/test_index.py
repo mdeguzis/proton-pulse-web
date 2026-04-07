@@ -28,6 +28,7 @@ from scripts.pipeline.catalog import (
     write_cached_protondb_signal_catalog,
     write_cached_steam_game_catalog,
 )
+from scripts.pipeline.metadata import update_app_metadata
 
 
 def test_index_html_created(tmp_path):
@@ -451,6 +452,67 @@ def test_generate_coverage_report_shows_protondb_counts(tmp_path):
     assert "37,720" in html
     assert "415,861" in html
     assert "ProtonDB Total" in html
+
+
+def test_generate_coverage_report_shows_title_and_catalog_source_columns(tmp_path):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+
+    generate_coverage_report(
+        index_keys={("730", "2024")},
+        backfilled_keys={("730", "2024")},
+        data_output_path=data_dir,
+        output_path=tmp_path,
+        steam_catalog={"730": "Counter-Strike 2", "999": "Noise Game"},
+        protondb_signal_catalog={"730": "Counter-Strike 2", "999": "Noise Game"},
+    )
+
+    html = (tmp_path / "coverage.html").read_text()
+    assert "Title Source" in html
+    assert "ProtonDB Signal" in html
+    assert "Steam Catalog" in html
+    assert "protondb-signal" in html or "protondb signal" in html
+
+
+def test_generate_coverage_report_numeric_filter_uses_exact_app_id_match(tmp_path):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+
+    generate_coverage_report(
+        index_keys={("396420", "2024"), ("3396420", "2024")},
+        backfilled_keys=set(),
+        data_output_path=data_dir,
+        output_path=tmp_path,
+        steam_catalog={"396420": "Exact", "3396420": "Contains"},
+        protondb_signal_catalog={"396420": "Exact", "3396420": "Contains"},
+    )
+
+    html = (tmp_path / "coverage.html").read_text()
+    assert 'if(r[0]!==q)return false;' in html
+
+
+def test_generate_coverage_report_uses_persisted_metadata_for_provenance(tmp_path):
+    data_dir = tmp_path / "data"
+    app_dir = data_dir / "730"
+    app_dir.mkdir(parents=True)
+    (app_dir / "2024.json").write_text(json.dumps([{"title": "Counter-Strike 2", "timestamp": 1704067200}]))
+    (app_dir / "latest.json").write_text(json.dumps([{"title": "Counter-Strike 2", "timestamp": 1704067200}]))
+    update_app_metadata(data_dir, "730", official_dump=True, protondb_live=True)
+
+    generate_coverage_report(
+        index_keys={("730", "2024")},
+        backfilled_keys=set(),
+        data_output_path=data_dir,
+        output_path=tmp_path,
+        steam_catalog={"730": "Counter-Strike 2"},
+        protondb_signal_catalog={"730": "Counter-Strike 2"},
+    )
+
+    html = (tmp_path / "coverage.html").read_text()
+    assert "Official Dump" in html
+    assert "Backfilled" in html
+    assert '<div class="value">1</div>' in html
+    assert '"indexed-data",1,1,1,1,"official backfill protondb-signal steam-catalog",1' in html
 
 
 def test_retry_http_retries_on_transient_error(monkeypatch):

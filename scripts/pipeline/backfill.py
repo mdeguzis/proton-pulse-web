@@ -17,6 +17,7 @@ from .common import (
     log,
     normalize_whitespace,
 )
+from .metadata import update_app_metadata
 from .state import pipeline_state_path, read_pipeline_state, write_pipeline_state
 
 
@@ -318,6 +319,7 @@ def backfill_missing_apps(
 
         year_buckets = bucket_reports_by_year(reports)
         written_keys.update(write_bucketed_reports(data_output_path, target.app_id, year_buckets))
+        update_app_metadata(data_output_path, target.app_id, protondb_live=True)
         log(
             f"[backfill] Wrote {sum(len(rows) for rows in year_buckets.values())} reports across "
             f"{len(year_buckets)} year file(s) for {target.app_id} using {resolved_url}"
@@ -386,6 +388,7 @@ def backfill_probe_discoveries(
 
         year_buckets = bucket_reports_by_year(reports)
         written_keys.update(write_bucketed_reports(data_output_path, app_id, year_buckets))
+        update_app_metadata(data_output_path, app_id, protondb_live=True)
         succeeded += 1
         log(
             f"[probe-backfill] Wrote {sum(len(rows) for rows in year_buckets.values())} reports across "
@@ -576,7 +579,7 @@ def _patch_titles_on_disk(data_output_path: Path, app_ids: list[str]) -> set[tup
         log(f"[no-titles] {app_id}: {title!r} via {source}")
         app_dir = data_output_path / app_id
         for year_file in app_dir.glob("*.json"):
-            if year_file.stem in ("index", "latest", "votes"):
+            if year_file.stem in ("index", "latest", "votes", "metadata"):
                 continue
             try:
                 reports = json.loads(year_file.read_text())

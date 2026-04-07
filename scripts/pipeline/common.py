@@ -119,7 +119,7 @@ def count_year_bucket_files(data_output_path: Path) -> int:
         if not app_dir.is_dir():
             continue
         for json_file in app_dir.glob("*.json"):
-            if json_file.stem in {"index", "latest", "votes"}:
+            if json_file.stem in {"index", "latest", "votes", "metadata"}:
                 continue
             count += 1
     return count

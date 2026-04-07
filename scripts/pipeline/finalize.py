@@ -18,6 +18,7 @@ from .catalog import (
     write_protondb_probe_cache,
 )
 from .common import LIVE_COUNTS_URL, count_year_bucket_files, fetch_json, log
+from .metadata import read_app_metadata
 from .state import read_pipeline_state
 
 
@@ -50,7 +51,7 @@ def generate_latest_files(data_output_path: Path) -> None:
         if not app_dir.is_dir():
             continue
         year_files = sorted(app_dir.glob("*.json"), key=lambda p: p.stem)
-        year_files = [f for f in year_files if f.stem != "latest"]
+        year_files = [f for f in year_files if f.stem not in {"latest", "index", "votes", "metadata"}]
         if not year_files:
             continue
         latest_src = year_files[-1]
@@ -70,7 +71,7 @@ def reindex_apps(output_dir: str, app_ids: list[str]) -> None:
             log(f"[reindex] Skipping {app_id}: no data directory")
             continue
         for json_file in app_dir.glob("*.json"):
-            if json_file.stem in ("index", "latest", "votes"):
+            if json_file.stem in ("index", "latest", "votes", "metadata"):
                 continue
             index_keys.add((app_id, json_file.stem))
     if index_keys:
@@ -256,6 +257,27 @@ def _extract_title(app_dir: Path) -> str:
     return ""
 
 
+def _resolve_coverage_title(
+    app_id: str,
+    data_output_path: Path,
+    protondb_signal_catalog: dict[str, str] | None = None,
+    steam_catalog: dict[str, str] | None = None,
+) -> tuple[str, str]:
+    local_title = _extract_title(data_output_path / app_id)
+    if local_title:
+        return local_title, "indexed-data"
+
+    signal_title = (protondb_signal_catalog or {}).get(app_id, "")
+    if signal_title:
+        return signal_title, "protondb-signal"
+
+    steam_title = (steam_catalog or {}).get(app_id, "")
+    if steam_title:
+        return steam_title, "steam-catalog"
+
+    return "", "none"
+
+
 def generate_coverage_report(
     index_keys: set,
     backfilled_keys: set,
@@ -267,8 +289,7 @@ def generate_coverage_report(
 ) -> None:
     indexed_app_ids = {app_id for app_id, _ in index_keys}
     all_app_ids = set(indexed_app_ids)
-    backfill_app_ids = {app_id for app_id, _ in backfilled_keys}
-    official_app_ids = indexed_app_ids - backfill_app_ids
+    state_backfill_app_ids = {app_id for app_id, _ in backfilled_keys}
     protondb_signal_app_ids = set((protondb_signal_catalog or {}).keys())
     steam_catalog_app_ids = set((steam_catalog or {}).keys())
     steam_protondb_overlap = steam_catalog_app_ids & protondb_signal_app_ids
@@ -276,10 +297,10 @@ def generate_coverage_report(
     if steam_catalog:
         all_app_ids.update(steam_catalog.keys())
     all_app_ids.update(protondb_signal_app_ids)
-    all_app_ids.update(backfill_app_ids)
+    all_app_ids.update(state_backfill_app_ids)
 
     log(f"[coverage] Indexed app IDs           : {len(indexed_app_ids):,}")
-    log(f"[coverage] Backfill app IDs          : {len(backfill_app_ids):,}")
+    log(f"[coverage] Backfill app IDs          : {len(state_backfill_app_ids):,}")
     log(f"[coverage] ProtonDB signal app IDs   : {len(protondb_signal_app_ids):,}")
     if steam_catalog:
         log(f"[coverage] Steam catalog app IDs     : {len(steam_catalog_app_ids):,}")
@@ -288,22 +309,32 @@ def generate_coverage_report(
 
     rows = []
     for app_id in sorted(all_app_ids, key=lambda a: (0, int(a)) if a.isdigit() else (1, a)):
-        title = (
-            _extract_title(data_output_path / app_id)
-            or (protondb_signal_catalog or {}).get(app_id, "")
-            or (steam_catalog or {}).get(app_id, "")
+        metadata = read_app_metadata(data_output_path, app_id)
+        official = metadata.get("official_dump", False)
+        protondb_live = metadata.get("protondb_live", False) or app_id in state_backfill_app_ids
+        if not metadata and app_id in indexed_app_ids and app_id not in state_backfill_app_ids:
+            official = True
+
+        title, title_source = _resolve_coverage_title(
+            app_id,
+            data_output_path,
+            protondb_signal_catalog=protondb_signal_catalog,
+            steam_catalog=steam_catalog,
         )
         rows.append((
             app_id,
             title,
-            app_id in official_app_ids,
-            app_id in backfill_app_ids,
+            title_source,
+            official,
+            protondb_live,
+            app_id in protondb_signal_app_ids,
+            app_id in steam_catalog_app_ids,
             app_id in indexed_app_ids,
         ))
 
     now = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    official_count = sum(1 for _, _, o, _, _ in rows if o)
-    backfill_count = sum(1 for _, _, _, b, _ in rows if b)
+    official_count = sum(1 for row in rows if row[3])
+    backfill_count = sum(1 for row in rows if row[4])
     indexed_count = len(indexed_app_ids)
     steam_count = len(steam_catalog_app_ids) if steam_catalog else 0
     protondb_unique_games = (protondb_counts or {}).get("uniqueGames", 0) if protondb_counts else 0
@@ -313,21 +344,31 @@ def generate_coverage_report(
     protondb_pct_of_steam = (protondb_unique_games / steam_count * 100) if (steam_count and protondb_unique_games) else 0
 
     # Build JS data array instead of HTML rows
-    # Format: [appId, title, official(0/1), backfill(0/1), "flags", indexed(0/1)]
+    # Format:
+    # [appId, title, titleSource, official, backfill, protondbSignal, steamCatalog, "flags", indexed]
     js_rows = []
-    for app_id, title, official, backfill, indexed in rows:
+    for app_id, title, title_source, official, backfill, protondb_signal, steam_catalog_hit, indexed in rows:
         flags = []
         if official:
             flags.append("official")
         if backfill:
             flags.append("backfill")
+        if protondb_signal:
+            flags.append("protondb-signal")
+        if steam_catalog_hit:
+            flags.append("steam-catalog")
         if not title:
             flags.append("missing-title")
         if not app_id.isdigit():
             flags.append("bad-appid")
         # Escape for JS string
         safe_title = title.replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ")
-        js_rows.append(f'["{app_id}","{safe_title}",{1 if official else 0},{1 if backfill else 0},"{" ".join(flags)}",{1 if indexed else 0}]')
+        safe_title_source = title_source.replace("\\", "\\\\").replace('"', '\\"')
+        js_rows.append(
+            f'["{app_id}","{safe_title}","{safe_title_source}",'
+            f'{1 if official else 0},{1 if backfill else 0},{1 if protondb_signal else 0},'
+            f'{1 if steam_catalog_hit else 0},"{" ".join(flags)}",{1 if indexed else 0}]'
+        )
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -412,8 +453,11 @@ a {{ color: #5dade2; }}
 <thead><tr>
 <th onclick="doSort(0)">App ID</th>
 <th onclick="doSort(1)">Title (ProtonDB)</th>
-<th onclick="doSort(2)">Official</th>
-<th onclick="doSort(3)">Backfill</th>
+<th onclick="doSort(2)">Title Source</th>
+<th onclick="doSort(3)">Official Dump</th>
+<th onclick="doSort(4)">ProtonDB Live</th>
+<th onclick="doSort(5)">ProtonDB Signal</th>
+<th onclick="doSort(6)">Steam Catalog</th>
 <th>Index</th>
 </tr></thead>
 <tbody id="tbody"></tbody>
@@ -445,8 +489,14 @@ function apply(){{
   const q=document.getElementById("filter").value.toLowerCase();
   const all=activeSrc.has("all");
   filtered=DATA.filter(r=>{{
-    if(!all&&![...activeSrc].some(s=>r[4].split(" ").includes(s)))return false;
-    if(q&&!(r[0]+" "+r[1]).toLowerCase().includes(q))return false;
+    if(!all&&![...activeSrc].some(s=>r[7].split(" ").includes(s)))return false;
+    if(q){{
+      const queryIsNumeric=/^\\d+$/.test(q);
+      const haystack=(r[0]+" "+r[1]).toLowerCase();
+      if(queryIsNumeric){{
+        if(r[0]!==q)return false;
+      }} else if(!haystack.includes(q)) return false;
+    }}
     return true;
   }});
   if(sortCol>=0)doSortFiltered();
@@ -460,7 +510,7 @@ function doSortFiltered(){{
   const c=sortCol,d=sortAsc;
   filtered.sort((a,b)=>{{
     if(c===0)return d*(parseInt(a[0]||"0")-parseInt(b[0]||"0"));
-    if(c===2||c===3)return d*(b[c]-a[c]);
+    if(c>=3&&c<=6)return d*(b[c]-a[c]);
     return d*String(a[c]).localeCompare(String(b[c]));
   }});
 }}
@@ -477,14 +527,17 @@ function render(){{
   document.getElementById("pageInfo2").textContent=info;
   const h=[];
   for(const r of slice){{
-    const id=r[0],t=r[1],o=r[2],b=r[3],ix=r[5];
+    const id=r[0],t=r[1],ts=r[2],o=r[3],b=r[4],ps=r[5],sc=r[6],ix=r[8];
     const isNum=id.length>0&&[...id].every(c=>c>='0'&&c<='9');
     const ac=isNum?`<a href="https://store.steampowered.com/app/${{id}}">${{id}}</a>`:id;
     const tc=isNum&&t?`<a href="https://www.protondb.com/app/${{id}}">${{t}}</a>`:(t||"");
     const oc=o?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const bc=b?'<span class="yes">yes</span>':'<span class="no">no</span>';
+    const psc=ps?'<span class="yes">yes</span>':'<span class="no">no</span>';
+    const scc=sc?'<span class="yes">yes</span>':'<span class="no">no</span>';
+    const tsc=ts?ts.replace(/-/g,' '):'<span class="no">none</span>';
     const ixc=ix?`<a href="data/${{id}}/">index</a>`:'<span class="no">\u2014</span>';
-    h.push(`<tr><td>${{ac}}</td><td>${{tc}}</td><td>${{oc}}</td><td>${{bc}}</td><td>${{ixc}}</td></tr>`);
+    h.push(`<tr><td>${{ac}}</td><td>${{tc}}</td><td>${{tsc}}</td><td>${{oc}}</td><td>${{bc}}</td><td>${{psc}}</td><td>${{scc}}</td><td>${{ixc}}</td></tr>`);
   }}
   tb.innerHTML=h.join("");
 }}

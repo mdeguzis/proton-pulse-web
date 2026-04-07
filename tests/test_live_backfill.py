@@ -21,6 +21,7 @@ from scripts.pipeline.finalize import (
     generate_app_indexes,
     generate_index_html,
 )
+from scripts.pipeline.metadata import read_app_metadata, update_app_metadata
 from scripts.pipeline.state import write_pipeline_state
 
 
@@ -174,6 +175,10 @@ def test_backfill_missing_apps_logs_unresolved_title_source(tmp_path, monkeypatc
 
     assert written_keys == {("2561580", "2025")}
     assert no_data_ids == set()
+    assert read_app_metadata(data_dir, "2561580") == {
+        "official_dump": False,
+        "protondb_live": True,
+    }
     assert any(msg == "[backfill] Title unresolved for 2561580: source=steam-store-unsuccessful" for msg in logs)
 
 
@@ -388,6 +393,17 @@ def test_run_backfill_and_finalize_include_backfilled_apps_in_indexes(tmp_path, 
     assert "<summary>2561580/</summary>" in html
     assert 'href="data/2561580/2025.json"' in html
     assert 'href="data/2561580/latest.json"' in html
+
+
+def test_update_app_metadata_preserves_multiple_provenance_flags(tmp_path):
+    data_dir = tmp_path / "data"
+    update_app_metadata(data_dir, "730", official_dump=True)
+    update_app_metadata(data_dir, "730", protondb_live=True)
+
+    assert read_app_metadata(data_dir, "730") == {
+        "official_dump": True,
+        "protondb_live": True,
+    }
 
 
 def _mock_empty_catalogs(monkeypatch):

@@ -10,6 +10,7 @@ from pathlib import Path
 import ijson  # pylint: disable=import-error
 
 from .common import log
+from .metadata import update_app_metadata
 from .state import pipeline_state_path, write_pipeline_state
 
 TARBALL_CACHE_FILENAME = "processed-tarballs.json"
@@ -87,6 +88,7 @@ def parse_and_split(file_handle, data_output_path, source_label="?"):
             )
 
         year_file.write_text(json.dumps(existing, indent=2))
+        update_app_metadata(data_output_path, app_id, official_dump=True)
 
     flush_elapsed = time.time() - flush_start
     log(f"  [parse] {source_label}: flush done in {flush_elapsed:.1f}s", debug=True)
