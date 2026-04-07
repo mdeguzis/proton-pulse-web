@@ -409,6 +409,16 @@ jobs:
           restore-keys: |
             pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-
 
+      - name: Write local .env from secret
+        working-directory: repo
+        run: |
+          if [ -n "${{ secrets.STEAM_API_KEY }}" ]; then
+            printf 'STEAM_API_KEY=%s\n' "${{ secrets.STEAM_API_KEY }}" > .env
+            echo "[steam-catalog] .env written from GitHub secret"
+          else
+            echo "[steam-catalog] STEAM_API_KEY secret not available"
+          fi
+
       - name: Prepare output from existing gh-pages data
         run: |
           mkdir -p /tmp/protondb-output
