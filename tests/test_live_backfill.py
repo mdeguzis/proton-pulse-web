@@ -1,5 +1,7 @@
 import json
 
+import pytest
+
 import scripts.pipeline.backfill as backfill_module
 import scripts.pipeline.finalize as finalize_module
 from scripts.pipeline.backfill import (
@@ -10,6 +12,7 @@ from scripts.pipeline.backfill import (
     load_backfill_app_ids,
     load_backfill_targets,
     run_backfill,
+    run_coverage_backfill,
 )
 from scripts.pipeline.finalize import (
     finalize_output,
@@ -338,11 +341,50 @@ def test_run_backfill_and_finalize_include_backfilled_apps_in_indexes(tmp_path, 
     assert 'href="data/2561580/latest.json"' in html
 
 
-def test_run_coverage_backfill_no_titles_does_not_crash_when_targets_already_exist(tmp_path):
+def test_run_coverage_backfill_no_titles_does_not_crash_when_targets_already_exist(tmp_path, monkeypatch):
     data_dir = tmp_path / "data"
     app_dir = data_dir / "2561580"
     app_dir.mkdir(parents=True)
     (app_dir / "latest.json").write_text(json.dumps([{"title": "", "timestamp": 1763251200}]))
     write_pipeline_state(tmp_path, parsed_count=0, index_keys=set())
 
-    run_backfill(tmp_path, target_app_ids=["2561580"])
+    calls = []
+
+    def fake_run_backfill(output_dir, target_app_ids=None, force=False):
+        calls.append((output_dir, target_app_ids, force))
+
+    monkeypatch.setattr(backfill_module, "run_backfill", fake_run_backfill)
+
+    run_coverage_backfill(tmp_path, issue_type="no-titles", limit=1)
+
+    assert calls == [(tmp_path, ["2561580"], True)]
+
+
+def test_run_coverage_backfill_requires_positive_limit_by_default(tmp_path):
+    data_dir = tmp_path / "data"
+    app_dir = data_dir / "2561580"
+    app_dir.mkdir(parents=True)
+    (app_dir / "latest.json").write_text(json.dumps([{"title": "", "timestamp": 1763251200}]))
+    write_pipeline_state(tmp_path, parsed_count=0, index_keys=set())
+
+    with pytest.raises(ValueError, match="Coverage backfill requires --limit > 0 by default"):
+        run_coverage_backfill(tmp_path, issue_type="no-titles", limit=0)
+
+
+def test_run_coverage_backfill_can_explicitly_allow_unbounded(tmp_path, monkeypatch):
+    data_dir = tmp_path / "data"
+    app_dir = data_dir / "2561580"
+    app_dir.mkdir(parents=True)
+    (app_dir / "latest.json").write_text(json.dumps([{"title": "", "timestamp": 1763251200}]))
+    write_pipeline_state(tmp_path, parsed_count=0, index_keys=set())
+
+    calls = []
+
+    def fake_run_backfill(output_dir, target_app_ids=None, force=False):
+        calls.append((output_dir, target_app_ids, force))
+
+    monkeypatch.setattr(backfill_module, "run_backfill", fake_run_backfill)
+
+    run_coverage_backfill(tmp_path, issue_type="no-titles", limit=0, allow_unbounded=True)
+
+    assert calls == [(tmp_path, ["2561580"], True)]

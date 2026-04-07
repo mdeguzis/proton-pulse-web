@@ -478,9 +478,25 @@ def _find_no_protondb_data_app_ids(data_output_path: Path) -> list[str]:
     return sorted(state.get("no_data_app_ids", set()), key=lambda a: int(a) if a.isdigit() else 0)
 
 
-def run_coverage_backfill(output_dir: str, issue_type: str, limit: int = 0) -> None:
+def _require_bounded_coverage_backfill(issue_type: str, limit: int, allow_unbounded: bool) -> None:
+    if issue_type == "bad-app-id":
+        return
+    if limit > 0:
+        return
+    if allow_unbounded:
+        log(f"[coverage-backfill] Unbounded run explicitly allowed for issue type: {issue_type}")
+        return
+    raise ValueError(
+        "Coverage backfill requires --limit > 0 by default. "
+        "Pass --allow-unbounded to override explicitly."
+    )
+
+
+def run_coverage_backfill(output_dir: str, issue_type: str, limit: int = 0, allow_unbounded: bool = False) -> None:
     output_path = Path(output_dir)
     data_output_path = output_path / "data"
+
+    _require_bounded_coverage_backfill(issue_type, limit, allow_unbounded)
 
     if issue_type == "no-titles":
         app_ids = _find_no_title_app_ids(data_output_path)

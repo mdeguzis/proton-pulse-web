@@ -83,7 +83,12 @@ def build_parser():
         "--limit",
         type=int,
         default=0,
-        help="Max apps to backfill (0 = unlimited)",
+        help="Max apps to backfill (required unless --allow-unbounded is set)",
+    )
+    coverage_backfill_parser.add_argument(
+        "--allow-unbounded",
+        action="store_true",
+        help="Explicitly allow unbounded coverage backfill runs",
     )
     add_shared_output_arg(coverage_backfill_parser)
 
@@ -167,6 +172,7 @@ def main():
             args.output_dir,
             issue_type=args.issue_type,
             limit=getattr(args, "limit", 0),
+            allow_unbounded=getattr(args, "allow_unbounded", False),
         )
         return
 

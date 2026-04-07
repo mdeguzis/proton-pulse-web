@@ -20,9 +20,14 @@ on:
           - "bad-app-id"
           - "no-protondb-data"
       coverage_backfill_limit:
-        description: "Max apps to backfill for coverage-backfill (0 = unlimited)"
+        description: "Max apps to backfill for coverage-backfill. Keep this bounded for safety."
         required: false
-        default: "0"
+        default: "25"
+      coverage_backfill_allow_unbounded:
+        description: "Allow an unbounded coverage-backfill run. Dangerous; use only intentionally."
+        required: false
+        default: false
+        type: boolean
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -449,13 +454,22 @@ jobs:
         run: |
           echo "[coverage-backfill] Issue type: ${{ inputs.coverage_backfill_issue_type }}"
           echo "[coverage-backfill] Limit: ${{ inputs.coverage_backfill_limit }}"
+          echo "[coverage-backfill] Allow unbounded: ${{ inputs.coverage_backfill_allow_unbounded }}"
           LIMIT_ARG=""
           if [ "${{ inputs.coverage_backfill_limit }}" != "0" ]; then
             LIMIT_ARG="--limit ${{ inputs.coverage_backfill_limit }}"
+          elif [ "${{ inputs.coverage_backfill_allow_unbounded }}" != "true" ]; then
+            echo "::error::coverage_backfill_limit must be > 0 unless coverage_backfill_allow_unbounded is true"
+            exit 1
+          fi
+          ALLOW_UNBOUNDED_ARG=""
+          if [ "${{ inputs.coverage_backfill_allow_unbounded }}" = "true" ]; then
+            ALLOW_UNBOUNDED_ARG="--allow-unbounded"
           fi
           uv run python scripts/split_reports.py coverage-backfill \
             --issue-type "${{ inputs.coverage_backfill_issue_type }}" \
             $LIMIT_ARG \
+            $ALLOW_UNBOUNDED_ARG \
             /tmp/protondb-output
 
       - name: Reindex affected apps
@@ -514,6 +528,7 @@ jobs:
             echo "**Mode:** Coverage backfill" >> "$GITHUB_STEP_SUMMARY"
             echo "**Issue type:** ${{ inputs.coverage_backfill_issue_type }}" >> "$GITHUB_STEP_SUMMARY"
             echo "**Limit:** ${{ inputs.coverage_backfill_limit }}" >> "$GITHUB_STEP_SUMMARY"
+            echo "**Allow unbounded:** ${{ inputs.coverage_backfill_allow_unbounded }}" >> "$GITHUB_STEP_SUMMARY"
             echo "" >> "$GITHUB_STEP_SUMMARY"
             echo "| Job | Status |" >> "$GITHUB_STEP_SUMMARY"
             echo "|-----|--------|" >> "$GITHUB_STEP_SUMMARY"
