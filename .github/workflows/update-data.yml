@@ -287,6 +287,13 @@ jobs:
         working-directory: repo
         run: uv sync
 
+      - name: Write local .env from secret
+        working-directory: repo
+        run: |
+          if [ -n "${{ secrets.STEAM_API_KEY }}" ]; then
+            printf 'STEAM_API_KEY=%s\n' "${{ secrets.STEAM_API_KEY }}" > .env
+          fi
+
       - name: Restore pipeline cache
         uses: actions/cache/restore@v4
         with:
@@ -350,6 +357,12 @@ jobs:
             --app-ids "${{ inputs.backfill_app_ids }}" \
             /tmp/protondb-output
 
+      - name: Regenerate indexes and coverage report
+        working-directory: repo
+        run: |
+          uv run python scripts/split_reports.py finalize --skip-probe \
+            /tmp/protondb-output
+
       - name: Save pipeline cache
         if: always()
         uses: actions/cache/save@v4
@@ -365,9 +378,8 @@ jobs:
           git checkout --orphan gh-pages-new
           git rm -rf .
           cp -r /tmp/protondb-output/data .
-          # keep existing index.html and coverage.html from gh-pages
-          cp ../gh-pages-data/index.html . 2>/dev/null || true
-          cp ../gh-pages-data/coverage.html . 2>/dev/null || true
+          cp /tmp/protondb-output/index.html .
+          cp /tmp/protondb-output/coverage.html .
           git add data/ index.html coverage.html
           git commit -m "Targeted backfill: ${{ inputs.backfill_app_ids }}"
           git push origin gh-pages-new:gh-pages --force
@@ -503,6 +515,12 @@ jobs:
           )
           PY
 
+      - name: Regenerate indexes and coverage report
+        working-directory: repo
+        run: |
+          uv run python scripts/split_reports.py finalize --skip-probe \
+            /tmp/protondb-output
+
       - name: Save pipeline cache
         if: always()
         uses: actions/cache/save@v4
@@ -518,8 +536,8 @@ jobs:
           git checkout --orphan gh-pages-new
           git rm -rf .
           cp -r /tmp/protondb-output/data .
-          cp ../gh-pages-data/index.html . 2>/dev/null || true
-          cp ../gh-pages-data/coverage.html . 2>/dev/null || true
+          cp /tmp/protondb-output/index.html .
+          cp /tmp/protondb-output/coverage.html .
           git add data/ index.html coverage.html
           git commit -m "Coverage backfill: ${{ inputs.coverage_backfill_issue_type }}"
           git push origin gh-pages-new:gh-pages --force
