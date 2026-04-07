@@ -12,7 +12,7 @@ from .common import (
     LIVE_REPORTS_URL,
     LIVE_REPORT_DEVICE,
     fetch_json,
-    fetch_steam_title,
+    fetch_steam_title_with_source,
     infer_duration,
     log,
     normalize_whitespace,
@@ -247,6 +247,13 @@ def write_bucketed_reports(data_output_path: Path, app_id: str, year_buckets: di
     return written_keys
 
 
+def resolve_backfill_title(app_id: str, preferred_title: str = "") -> tuple[str, str]:
+    normalized_preferred = normalize_whitespace(preferred_title)
+    if normalized_preferred:
+        return normalized_preferred, "provided-catalog"
+    return fetch_steam_title_with_source(app_id)
+
+
 def backfill_missing_apps(
     data_output_path: Path,
     fetch_json_impl=fetch_json,
@@ -298,7 +305,11 @@ def backfill_missing_apps(
             no_data_app_ids.add(target.app_id)
             continue
 
-        title = fetch_steam_title(target.app_id)
+        title, title_source = resolve_backfill_title(target.app_id)
+        if title:
+            log(f"[backfill] Title for {target.app_id}: {title!r} via {title_source}")
+        else:
+            log(f"[backfill] Title unresolved for {target.app_id}: source={title_source}")
         reports = normalize_live_detailed_reports(target.app_id, payload.get("reports") or [], title=title)
         if not reports:
             log(f"[backfill] Skipping {target.app_id}: live detailed payload had no usable reports")
@@ -362,7 +373,11 @@ def backfill_probe_discoveries(
             skipped += 1
             continue
 
-        title = probe_catalog.get(app_id, "") or fetch_steam_title(app_id)
+        title, title_source = resolve_backfill_title(app_id, preferred_title=probe_catalog.get(app_id, ""))
+        if title:
+            log(f"[probe-backfill] Title for {app_id}: {title!r} via {title_source}")
+        else:
+            log(f"[probe-backfill] Title unresolved for {app_id}: source={title_source}")
         reports = normalize_live_detailed_reports(app_id, payload.get("reports") or [], title=title)
         if not reports:
             log(f"[probe-backfill] Skipping {app_id}: live detailed payload had no usable reports")

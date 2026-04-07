@@ -80,6 +80,14 @@ def test_generated_timestamp_present(tmp_path):
     assert "Generated:" in html
 
 
+def test_index_html_includes_dark_mode_support(tmp_path):
+    keys = {("730", "2020")}
+    generate_index_html(keys, tmp_path)
+    html = (tmp_path / "index.html").read_text()
+    assert 'meta name="color-scheme" content="light dark"' in html
+    assert "@media (prefers-color-scheme: dark)" in html
+
+
 # ─── generate_app_indexes ─────────────────────────────────────────────────────
 
 def test_app_index_created(tmp_path):

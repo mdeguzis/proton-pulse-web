@@ -11,6 +11,7 @@ from scripts.pipeline.backfill import (
     compute_live_report_hash_legacy,
     load_backfill_app_ids,
     load_backfill_targets,
+    resolve_backfill_title,
     run_backfill,
     run_coverage_backfill,
 )
@@ -126,6 +127,53 @@ def test_backfill_missing_apps_writes_year_files_for_manifest_app(tmp_path):
     assert reports[0]["protonVersion"] == "10.0-3"
     assert reports[0]["rating"] == "platinum"
     assert reports[0]["notes"] == "Runs great."
+
+
+def test_resolve_backfill_title_prefers_provided_catalog_title():
+    title, source = resolve_backfill_title("2561580", preferred_title="Example Title")
+    assert title == "Example Title"
+    assert source == "provided-catalog"
+
+
+def test_backfill_missing_apps_logs_unresolved_title_source(tmp_path, monkeypatch):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    manifest = tmp_path / "live_backfill_app_ids.json"
+    manifest.write_text(json.dumps(["2561580"]))
+
+    counts_payload = {"reports": 415099, "timestamp": 1775051127}
+    expected_hash = compute_live_report_hash(2561580, counts_payload["reports"], counts_payload["timestamp"], "any")
+    expected_url = f"https://www.protondb.com/data/reports/all-devices/app/{expected_hash}.json"
+    live_payload = {
+        "reports": [
+            {
+                "timestamp": 1763251200,
+                "responses": {"verdict": "yes", "protonVersion": "10.0-3"},
+                "device": {"inferred": {"steam": {}}},
+                "contributor": {"steam": {"playtimeLinux": 1200}},
+            }
+        ]
+    }
+
+    logs = []
+
+    def fake_fetch(url: str):
+        if url == "https://www.protondb.com/data/counts.json":
+            return counts_payload
+        if url == expected_url:
+            return live_payload
+        raise AssertionError(f"Unexpected URL fetched: {url}")
+
+    monkeypatch.setattr(backfill_module, "fetch_steam_title_with_source", lambda app_id: ("", "steam-store-unsuccessful"))
+    monkeypatch.setattr(backfill_module, "log", lambda msg, debug=False: logs.append(msg))
+
+    written_keys, no_data_ids = backfill_missing_apps(
+        data_dir, fetch_json_impl=fake_fetch, manifest_path=manifest
+    )
+
+    assert written_keys == {("2561580", "2025")}
+    assert no_data_ids == set()
+    assert any(msg == "[backfill] Title unresolved for 2561580: source=steam-store-unsuccessful" for msg in logs)
 
 
 def test_backfill_missing_apps_falls_back_to_legacy_candidate_url(tmp_path):

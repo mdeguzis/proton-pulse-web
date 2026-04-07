@@ -52,14 +52,22 @@ def fetch_json(url: str, retries: int = 3):
 
 
 def fetch_steam_title(app_id: str) -> str:
+    title, _source = fetch_steam_title_with_source(app_id)
+    return title
+
+
+def fetch_steam_title_with_source(app_id: str) -> tuple[str, str]:
     try:
         data = fetch_json(STEAM_APP_DETAILS_URL.format(app_id=app_id))
         app_data = (data or {}).get(str(app_id), {})
         if app_data.get("success"):
-            return app_data.get("data", {}).get("name", "")
+            title = app_data.get("data", {}).get("name", "")
+            if isinstance(title, str) and title.strip():
+                return title.strip(), "steam-store"
+            return "", "steam-store-empty-name"
+        return "", "steam-store-unsuccessful"
     except Exception:
-        pass
-    return ""
+        return "", "steam-store-error"
 
 
 def normalize_whitespace(value):
