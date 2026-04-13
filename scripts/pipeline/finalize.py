@@ -40,7 +40,7 @@ def log_summary(
     log(f"[summary] Total year bucket files : {total_year_files:,}")
     log(f"[summary] Backfilled app IDs      : {backfilled_apps:,}")
     log(f"[summary] Backfilled year buckets : {backfilled_year_files:,}")
-    log(f"[summary] Main index file         : {(output_path / 'index.html').resolve()}")
+    log(f"[summary] Main index file         : {(output_path / 'data-index.html').resolve()}")
     log(f"[summary] Total time              : {total_elapsed:.1f}s")
     log(f"[summary] Output dir              : {data_output_path.resolve()}")
 
@@ -216,8 +216,9 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
         "<h1>proton-pulse-data index</h1>",
         "<p>Monthly-updated ProtonDB per-game community reports. "
         f"<strong>{len(sorted_app_ids)}</strong> games tracked. "
-        '<a href="coverage.html">Coverage Report</a> · '
-        '<a href="app.html">Game Search</a></p>',
+        '<a href="index.html">Home</a> · '
+        '<a href="app.html">Game Search</a> · '
+        '<a href="coverage.html">Coverage Report</a></p>',
     ]
 
     if sample_entries:
@@ -296,7 +297,7 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
         "</html>",
     ]
 
-    index_file = output_path / "index.html"
+    index_file = output_path / "data-index.html"
     index_file.write_text("\n".join(lines) + "\n")
     log(f"[index] Written: {index_file}", debug=True)
 

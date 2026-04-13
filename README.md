@@ -12,22 +12,28 @@ GET https://mdeguzis.github.io/proton-pulse-data/data/{appId}/index.json
 GET https://mdeguzis.github.io/proton-pulse-data/data/{appId}/{year}.json
 GET https://mdeguzis.github.io/proton-pulse-data/data/{appId}/latest.json
 GET https://mdeguzis.github.io/proton-pulse-data/
-GET https://mdeguzis.github.io/proton-pulse-data/index.html
+GET https://mdeguzis.github.io/proton-pulse-data/data-index.html
 GET https://mdeguzis.github.io/proton-pulse-data/app.html?appid={appId}
 ```
 
 ## Web app
 
-Two static pages are deployed to GitHub Pages alongside the data files:
+Static pages deployed to GitHub Pages alongside the data files:
 
-**`index.html` — Coverage dashboard**
-Lists all games with ProtonDB data available in this mirror, along with Steam catalog coverage stats. Includes a Game Search bar to jump directly to a game's page.
+**[Home](https://mdeguzis.github.io/proton-pulse-data/) (`index.html`) — Splash/landing page**
+Project landing page with links to all tools and repos.
 
-**`app.html` — Game page**
+**[Game Search App](https://mdeguzis.github.io/proton-pulse-data/app.html) (`app.html`) — Game page**
 Per-game report viewer. Pass an `appid` query parameter (e.g. `app.html?appid=730`) to load community reports for that game. Features include:
 - Report cards with extended fields (CPU, GPU, kernel, Proton version, OS, RAM, notes)
 - Hardware filters to narrow results by GPU driver, kernel, or Proton version
 - Compatibility trend chart showing rating distribution over time
+
+**[Data Index](https://mdeguzis.github.io/proton-pulse-data/data-index.html) (`data-index.html`) — Coverage dashboard**
+Lists all games with ProtonDB data available in this mirror, along with Steam catalog coverage stats.
+
+**[Coverage Report](https://mdeguzis.github.io/proton-pulse-data/coverage.html) (`coverage.html`)**
+Steam catalog coverage statistics.
 
 ## Data format
 
