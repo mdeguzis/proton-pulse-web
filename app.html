@@ -164,6 +164,8 @@ async function fetchSupabase(appId) {
       timestamp: Math.floor(new Date(c.created_at).getTime() / 1000),
       duration: c.duration, title: c.title, launchOptions: c.launch_options,
       source: 'proton-pulse',
+      vramMb: c.vram_mb, cpuCores: c.cpu_cores,
+      displayResolution: c.display_resolution, steamDeckModel: c.steam_deck_model,
     }));
   } catch { return []; }
 }
@@ -299,6 +301,10 @@ function renderCard(r, i, votes) {
       <div class="row"><span class="label">Proton</span><span>${esc(r.protonVersion||'-')}</span></div>
       <div class="row"><span class="label">Duration</span><span>${esc(r.duration||'-')}</span></div>
       ${r.launchOptions ? `<div class="row"><span class="label">Launch Options</span><span>${esc(r.launchOptions)}</span></div>` : ''}
+      ${r.vramMb ? `<div class="row"><span class="label">VRAM</span><span>${r.vramMb >= 1024 ? (r.vramMb/1024).toFixed(1)+' GB' : r.vramMb+' MB'}</span></div>` : ''}
+      ${r.cpuCores ? `<div class="row"><span class="label">CPU Cores</span><span>${r.cpuCores}</span></div>` : ''}
+      ${r.displayResolution ? `<div class="row"><span class="label">Resolution</span><span>${esc(r.displayResolution)}</span></div>` : ''}
+      ${r.steamDeckModel ? `<div class="row"><span class="label">Steam Deck</span><span>${esc(r.steamDeckModel.toUpperCase())}</span></div>` : ''}
       ${r.notes ? `<div class="notes-full">${esc(r.notes)}</div>` : ''}
     </div>`;
 }
