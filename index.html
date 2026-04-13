@@ -40,17 +40,11 @@ a:hover { text-decoration: underline; }
   margin-bottom: 48px;
 }
 .logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 96px; height: 96px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 40% 35%, #2a6abf, #0a2040);
-  border: 2px solid rgba(124, 199, 255, 0.35);
-  box-shadow: 0 0 40px rgba(100, 180, 255, 0.25), 0 0 0 8px rgba(100, 180, 255, 0.06);
+  display: inline-block;
   margin-bottom: 24px;
+  filter: drop-shadow(0 0 28px rgba(100, 180, 255, 0.35));
 }
-.logo svg { width: 48px; height: 48px; }
+.logo img { width: 96px; height: 96px; object-fit: contain; display: block; }
 h1 {
   font-size: 2.6rem;
   font-weight: 800;
@@ -110,15 +104,7 @@ footer a { color: #5a8ab0; }
 
 <div class="hero">
   <div class="logo">
-    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="bolt" x1="18" y1="4" x2="30" y2="44" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#a8d8ff"/>
-          <stop offset="100%" stop-color="#4a9fe0"/>
-        </linearGradient>
-      </defs>
-      <polygon points="28,4 14,26 22,26 20,44 34,22 26,22" fill="url(#bolt)" stroke="rgba(180,220,255,0.3)" stroke-width="0.8"/>
-    </svg>
+    <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="Proton Pulse logo">
   </div>
   <h1>Proton Pulse</h1>
   <p class="tagline">ProtonDB community compatibility reports for Steam games — searchable, filterable, and updated daily.</p>
