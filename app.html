@@ -7,130 +7,454 @@
 <meta name="color-scheme" content="dark">
 <style>
 :root {
-  --bg: #0b1220; --bg2: #111a2b; --border: #24334d; --text: #e6eef8;
-  --muted: #9ab0c9; --link: #7cc7ff; --strong: #fff;
+  --bg: #07101e;
+  --bg2: #10203a;
+  --panel: rgba(10, 18, 33, 0.94);
+  --panel-strong: rgba(13, 24, 43, 0.98);
+  --border: #24334d;
+  --text: #e6eef8;
+  --muted: #9ab0c9;
+  --link: #7cc7ff;
+  --strong: #fff;
+  --accent: #78c7ff;
+  --accent-soft: rgba(120, 199, 255, 0.12);
+  --shadow: 0 22px 60px rgba(0, 0, 0, 0.34);
 }
 * { box-sizing: border-box; margin: 0; }
 body {
-  background: linear-gradient(180deg, var(--bg2), var(--bg));
-  color: var(--text); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(45, 104, 190, 0.20), transparent 28%),
+    radial-gradient(circle at top right, rgba(61, 151, 255, 0.12), transparent 24%),
+    linear-gradient(180deg, var(--bg2), var(--bg));
+  color: var(--text);
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   min-height: 100vh;
 }
 a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
-
-/* layout */
-.wrap { max-width: 900px; margin: 0 auto; padding: 24px 16px 48px; }
-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-header h1 { font-size: 1.4rem; color: var(--strong); }
-header a { font-size: .85rem; color: var(--muted); }
-
-/* search */
-.search-box { position: relative; margin-bottom: 24px; }
-.search-box input {
-  width: 100%; padding: 10px 14px; background: rgba(13,27,42,.9);
-  border: 1px solid var(--border); border-radius: 8px; color: var(--text);
-  font-size: 14px; outline: none;
+code {
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  color: #dff0ff;
+  font-size: 0.92em;
 }
-.search-box input:focus { border-color: var(--link); }
+
+.app-shell {
+  width: min(1380px, calc(100vw - 32px));
+  margin: 24px auto;
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.sidebar {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid rgba(120, 199, 255, 0.14);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(16, 29, 49, 0.96), rgba(8, 16, 29, 0.96));
+  box-shadow: var(--shadow);
+}
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.brand-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, rgba(33, 55, 87, 0.95), rgba(11, 22, 39, 0.98));
+  border: 1px solid rgba(120, 199, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+  font-size: 1.5rem;
+}
+.brand-copy h1 {
+  font-size: 1.5rem;
+  line-height: 1.05;
+  color: var(--strong);
+  letter-spacing: -0.03em;
+}
+.brand-copy p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.sidebar-card {
+  border: 1px solid rgba(120, 199, 255, 0.10);
+  border-radius: 18px;
+  background: rgba(10, 20, 36, 0.76);
+  padding: 16px;
+}
+.sidebar-card h2 {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8eb2d0;
+  margin-bottom: 10px;
+}
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sidebar-links a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: var(--text);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid transparent;
+  transition: background .16s, border-color .16s, transform .16s;
+}
+.sidebar-links a:hover {
+  text-decoration: none;
+  background: rgba(120, 199, 255, 0.08);
+  border-color: rgba(120, 199, 255, 0.16);
+  transform: translateX(2px);
+}
+.sidebar-note {
+  font-size: 0.93rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.sidebar-note strong { color: var(--strong); }
+
+.content {
+  min-width: 0;
+  padding: 10px 0 48px;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+.eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #8eb2d0;
+  margin-bottom: 6px;
+}
+.content-title {
+  font-size: 2.55rem;
+  line-height: 1.02;
+  color: var(--strong);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+.content-subtitle {
+  max-width: 760px;
+  font-size: 1rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.surface {
+  border: 1px solid rgba(120, 199, 255, 0.12);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(14, 25, 42, 0.96), rgba(8, 15, 27, 0.98));
+  box-shadow: var(--shadow);
+  padding: 26px;
+}
+
+.search-box { position: relative; }
+.search-box input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(13,27,42,.9);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+}
+.search-box input:focus {
+  border-color: var(--link);
+  box-shadow: 0 0 0 4px rgba(124, 199, 255, 0.10);
+}
 .search-results {
-  position: absolute; top: 100%; left: 0; right: 0; z-index: 10;
-  background: #0d1b2a; border: 1px solid var(--border); border-radius: 0 0 8px 8px;
-  max-height: 320px; overflow-y: auto; display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: #0d1b2a;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  max-height: 320px;
+  overflow-y: auto;
+  display: none;
+  box-shadow: var(--shadow);
 }
 .search-results.open { display: block; }
 .search-results a {
-  display: flex; align-items: center; gap: 10px; padding: 8px 12px;
-  color: var(--text); border-bottom: 1px solid rgba(255,255,255,.04);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  color: var(--text);
+  border-bottom: 1px solid rgba(255,255,255,.04);
 }
 .search-results a:hover { background: rgba(255,255,255,.05); text-decoration: none; }
 .search-results img { width: 120px; height: 45px; object-fit: cover; border-radius: 3px; }
 
-/* game header */
-.game-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
-.game-header img { height: 68px; border-radius: 4px; object-fit: cover; }
+.game-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.game-header img { height: 72px; border-radius: 6px; object-fit: cover; }
 .game-header .info { flex: 1; min-width: 0; }
-.game-header .title { font-size: 1.3rem; font-weight: 700; color: var(--strong); }
-.game-header .meta { font-size: .8rem; color: var(--muted); margin-top: 2px; }
+.game-header .title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--strong);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+.game-header .meta { font-size: .9rem; color: var(--muted); margin-top: 6px; }
+.game-hub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 18px;
+}
+.hub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(120, 199, 255, 0.16);
+  background: rgba(120, 199, 255, 0.06);
+  color: #dff1ff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background .16s, border-color .16s, transform .16s;
+}
+.hub-link:hover {
+  text-decoration: none;
+  background: rgba(120, 199, 255, 0.11);
+  border-color: rgba(120, 199, 255, 0.26);
+  transform: translateY(-1px);
+}
 .tier-badge {
-  display: inline-block; padding: 3px 12px; border-radius: 999px;
-  font-weight: 700; font-size: .7rem; text-transform: uppercase; color: #111;
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: .72rem;
+  text-transform: uppercase;
+  color: #111;
+  letter-spacing: 0.08em;
 }
 
-/* report cards */
 .cards { display: flex; flex-direction: column; gap: 10px; }
 .card {
-  border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
   background: linear-gradient(180deg, rgba(26,36,49,.92), rgba(13,19,28,.96));
-  display: flex; gap: 14px; cursor: pointer; transition: border-color .15s;
+  display: flex;
+  gap: 14px;
+  cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
 }
-.card:hover { border-color: rgba(255,255,255,.3); }
+.card:hover {
+  border-color: rgba(124, 199, 255, 0.26);
+  box-shadow: 0 0 0 1px rgba(124, 199, 255, 0.05);
+}
 .card .left { flex: 1; min-width: 0; }
-.card .proton { font-size: 14px; font-weight: 700; color: #f4fbff; margin-bottom: 3px; }
-.card .hw { font-size: 11px; color: #8fb4d5; margin-bottom: 6px; }
-.card .age { font-size: 10px; color: #9cb3c7; margin-bottom: 6px; }
-.card .notes { font-size: 11px; color: #cad7e4; line-height: 1.4; }
-.card .right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; min-width: 80px; }
-.card .rating {
-  padding: 2px 9px; border-radius: 999px; font-weight: 700; font-size: 10px;
-  text-transform: uppercase; color: #111;
+.card .proton { font-size: 15px; font-weight: 800; color: #f4fbff; margin-bottom: 4px; }
+.card .hw { font-size: 11px; color: #8fb4d5; margin-bottom: 8px; }
+.card .age {
+  font-size: 10px;
+  color: #9cb3c7;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
-.card .gpu-tier { font-size: 11px; color: #d9e8f4; }
+.card .notes { font-size: 12px; color: #cad7e4; line-height: 1.45; }
+.card .right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; min-width: 88px; }
+.card .rating {
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #111;
+}
 .card .score { font-size: 12px; font-weight: 700; }
-.card .source-badge {
-  font-size: 9px; padding: 1px 6px; border-radius: 999px;
-  background: rgba(124,199,255,.15); color: var(--link); border: 1px solid rgba(124,199,255,.25);
+.source-badge {
+  font-size: 9px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(124,199,255,.15);
+  color: var(--link);
+  border: 1px solid rgba(124,199,255,.25);
 }
 
-/* detail overlay */
-.detail { display: none; margin-top: -1px; border: 1px solid var(--border); border-radius: 0 0 8px 8px;
-  background: rgba(13,19,28,.98); padding: 14px; font-size: 12px; color: #cad7e4; }
+.detail {
+  display: none;
+  margin-top: -1px;
+  border: 1px solid var(--border);
+  border-radius: 0 0 14px 14px;
+  background: rgba(13,19,28,.98);
+  padding: 14px;
+  font-size: 12px;
+  color: #cad7e4;
+}
 .detail.open { display: block; }
-.detail .row { display: flex; justify-content: space-between; padding: 4px 0;
-  border-bottom: 1px solid rgba(255,255,255,.04); }
+.detail .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+}
 .detail .label { color: var(--muted); }
 .detail .notes-full { margin-top: 10px; white-space: pre-wrap; line-height: 1.5; }
 
-/* loading / empty */
-.loading, .empty { text-align: center; padding: 40px; color: var(--muted); }
+.loading,
+.empty {
+  text-align: center;
+  padding: 56px 28px;
+  color: var(--muted);
+  border: 1px dashed rgba(120, 199, 255, 0.12);
+  border-radius: 20px;
+  background: rgba(9, 17, 30, 0.55);
+}
 .sort-bar { display: flex; gap: 8px; margin-bottom: 12px; font-size: 12px; }
 .sort-bar button {
-  background: none; border: 1px solid var(--border); border-radius: 6px;
-  color: var(--muted); padding: 4px 10px; cursor: pointer; font-size: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(120, 199, 255, 0.10);
+  border-radius: 999px;
+  color: var(--muted);
+  padding: 7px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
 }
-.sort-bar button.active { color: var(--link); border-color: var(--link); }
-
-/* filter bar */
-.filter-bar { display: flex; gap: 8px; margin-bottom: 12px; align-items: center; flex-wrap: wrap; }
-.filter-bar label { font-size: 11px; color: var(--muted); }
+.sort-bar button.active { color: var(--link); border-color: var(--link); background: rgba(124, 199, 255, 0.08); }
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 12px;
+  border: 1px solid rgba(120, 199, 255, 0.10);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.02);
+}
+.filter-bar label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
 .filter-bar select {
-  background: rgba(13,27,42,.9); border: 1px solid var(--border); border-radius: 6px;
-  color: var(--text); padding: 4px 8px; font-size: 12px; outline: none;
+  background: rgba(13,27,42,.9);
+  border: 1px solid rgba(120, 199, 255, 0.10);
+  border-radius: 999px;
+  color: var(--text);
+  padding: 6px 11px;
+  font-size: 12px;
+  outline: none;
 }
 .filter-bar select:focus { border-color: var(--link); }
+.trend {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  background: rgba(13,19,28,.5);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
 
-/* trend */
-.trend { font-size: 12px; color: var(--muted); margin-bottom: 14px; padding: 8px 10px;
-  background: rgba(13,19,28,.5); border: 1px solid var(--border); border-radius: 6px; }
+@media (max-width: 980px) {
+  .app-shell {
+    width: min(100vw - 24px, 1380px);
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .sidebar { position: static; }
+  .content { padding-top: 0; }
+  .content-title { font-size: 2rem; }
+}
+
+@media (max-width: 640px) {
+  .app-shell { width: calc(100vw - 16px); margin: 12px auto; }
+  .sidebar,
+  .surface { padding: 18px; border-radius: 18px; }
+  .topbar { flex-direction: column; align-items: stretch; }
+  .content-title { font-size: 1.7rem; }
+  .game-header { align-items: flex-start; flex-direction: column; }
+  .game-header img { width: 132px; height: auto; }
+  .card { flex-direction: column; }
+  .card .right { align-items: flex-start; min-width: 0; }
+  .detail .row { flex-direction: column; gap: 4px; }
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>⚡ Proton Pulse</h1>
-    <a href="index.html">Home</a>
-    <a href="data-index.html">Data Index</a>
-    <a href="https://github.com/mdeguzis/decky-proton-pulse">Plugin</a>
-  </header>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-badge">⚡</div>
+      <div class="brand-copy">
+        <h1>Proton Pulse</h1>
+        <p>User-submitted compatibility reports, live votes, and merged ProtonDB data.</p>
+      </div>
+    </div>
 
-  <div class="search-box">
-    <input id="search" type="text" placeholder="Search games by name or app ID..." autocomplete="off">
-    <div id="search-results" class="search-results"></div>
-  </div>
+    <div class="sidebar-card">
+      <h2>Search</h2>
+      <div class="search-box">
+        <input id="search" type="text" placeholder="Search games by name or app ID..." autocomplete="off">
+        <div id="search-results" class="search-results"></div>
+      </div>
+    </div>
 
-  <div id="content">
-    <div class="empty">Search for a game or navigate to <code>#/app/{appId}</code></div>
-  </div>
+    <div class="sidebar-card">
+      <h2>Navigate</h2>
+      <nav class="sidebar-links">
+        <a href="index.html">Home</a>
+        <a href="data-index.html">Data Index</a>
+        <a href="coverage.html">Coverage Report</a>
+        <a href="https://github.com/mdeguzis/decky-proton-pulse">Decky Plugin</a>
+      </nav>
+    </div>
+
+    <div class="sidebar-card">
+      <h2>About This View</h2>
+      <p class="sidebar-note">
+        This page blends the static ProtonDB mirror with <strong>Proton Pulse</strong> user-submitted reports and live voting data from Supabase.
+      </p>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="topbar">
+      <div>
+        <div class="eyebrow">Community Compatibility Browser</div>
+        <div class="content-title">Game Reports</div>
+        <div class="content-subtitle">
+          Search a Steam app on the left to explore combined ProtonDB and Proton Pulse community reports in one place.
+        </div>
+      </div>
+    </div>
+
+    <div id="content" class="surface">
+      <div class="empty">Search for a game or navigate to <code>#/app/{appId}</code></div>
+    </div>
+  </main>
 </div>
 
 <script>
@@ -140,7 +464,6 @@ const SB_KEY = 'sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V';
 const STEAM_IMG = id => `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`;
 const RATING_COLORS = { platinum:'#b4c7dc', gold:'#cfb53b', silver:'#a6a6a6', bronze:'#cd7f32', borked:'#ff4444', pending:'#888' };
 
-// ── routing ──
 function getRoute() {
   const h = location.hash.replace(/^#\/?/, '');
   const m = h.match(/^app\/(\d+)/);
@@ -156,7 +479,6 @@ async function route() {
   else document.getElementById('content').innerHTML = '<div class="empty">Search for a game or navigate to <code>#/app/{appId}</code></div>';
 }
 
-// ── data fetching ──
 async function fetchCdn(appId) {
   try {
     const r = await fetch(`${CDN}/${appId}/latest.json`);
@@ -234,7 +556,6 @@ function confColor(s) {
 
 function truncate(s, n) { return s && s.length > n ? s.slice(0, n) + '…' : s; }
 
-// ── game page ──
 async function renderGamePage(appId) {
   const el = document.getElementById('content');
   el.innerHTML = '<div class="loading">Loading reports…</div>';
@@ -251,7 +572,6 @@ async function renderGamePage(appId) {
   const tier = tierFromReports(reports);
   document.title = `${title} — Proton Pulse`;
 
-  // sort by timestamp desc initially
   let sortMode = 'recent';
   let filterGpu = '';
   let filterOs = '';
@@ -315,6 +635,12 @@ async function renderGamePage(appId) {
         </div>
         <span class="tier-badge" style="background:${RATING_COLORS[tier]}">${tier}</span>
       </div>
+      <div class="game-hub-links">
+        <a class="hub-link" href="https://store.steampowered.com/app/${appId}" target="_blank" rel="noopener">Steam</a>
+        <a class="hub-link" href="https://steamdb.info/app/${appId}/" target="_blank" rel="noopener">SteamDB</a>
+        <a class="hub-link" href="https://www.pcgamingwiki.com/w/index.php?search=${encodeURIComponent(title)}" target="_blank" rel="noopener">PCGamingWiki</a>
+        <a class="hub-link" href="data-index.html#app-${appId}">Data Files</a>
+      </div>
       ${trendSummary(reports)}
       <div class="sort-bar">
         <button class="${sortMode==='recent'?'active':''}" data-sort="recent">Recent</button>
@@ -363,7 +689,7 @@ function renderCard(r, i, votes) {
         <div class="proton">${esc(r.protonVersion || 'Unknown')}</div>
         <div class="hw">${esc([r.gpu, r.os].filter(Boolean).join(' · ') || 'Hardware unavailable')}</div>
         <div class="age">${daysAgo(r.timestamp)}</div>
-        ${r.notes ? `<div class="notes">${esc(truncate(r.notes, 120))}</div>` : ''}
+        ${r.notes ? `<div class="notes">${esc(truncate(r.notes, 140))}</div>` : ''}
       </div>
       <div class="right">
         <span class="rating" style="background:${RATING_COLORS[r.rating]||'#888'}">${r.rating||'?'}</span>
@@ -400,7 +726,6 @@ function estimateScore(r) {
 
 function esc(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
 
-// ── search ──
 let searchTimer = null;
 const searchInput = document.getElementById('search');
 const searchResults = document.getElementById('search-results');
@@ -430,12 +755,15 @@ document.addEventListener('click', e => {
 
 async function searchSteam(q) {
   try {
-    // Use Steam store search suggestions endpoint
     const r = await fetch(`https://store.steampowered.com/api/storesearch/?term=${encodeURIComponent(q)}&l=english&cc=US`);
     if (!r.ok) return;
     const data = await r.json();
     const items = (data.items || []).slice(0, 8);
-    if (!items.length) { searchResults.innerHTML = '<div style="padding:12px;color:var(--muted)">No results</div>'; searchResults.classList.add('open'); return; }
+    if (!items.length) {
+      searchResults.innerHTML = '<div style="padding:12px;color:var(--muted)">No results</div>';
+      searchResults.classList.add('open');
+      return;
+    }
     searchResults.innerHTML = items.map(g => `
       <a href="#/app/${g.id}">
         <img src="${STEAM_IMG(g.id)}" onerror="this.style.display='none'">
