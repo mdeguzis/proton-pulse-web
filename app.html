@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proton Pulse</title>
+<meta name="color-scheme" content="dark">
+<style>
+:root {
+  --bg: #0b1220; --bg2: #111a2b; --border: #24334d; --text: #e6eef8;
+  --muted: #9ab0c9; --link: #7cc7ff; --strong: #fff;
+}
+* { box-sizing: border-box; margin: 0; }
+body {
+  background: linear-gradient(180deg, var(--bg2), var(--bg));
+  color: var(--text); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* layout */
+.wrap { max-width: 900px; margin: 0 auto; padding: 24px 16px 48px; }
+header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+header h1 { font-size: 1.4rem; color: var(--strong); }
+header a { font-size: .85rem; color: var(--muted); }
+
+/* search */
+.search-box { position: relative; margin-bottom: 24px; }
+.search-box input {
+  width: 100%; padding: 10px 14px; background: rgba(13,27,42,.9);
+  border: 1px solid var(--border); border-radius: 8px; color: var(--text);
+  font-size: 14px; outline: none;
+}
+.search-box input:focus { border-color: var(--link); }
+.search-results {
+  position: absolute; top: 100%; left: 0; right: 0; z-index: 10;
+  background: #0d1b2a; border: 1px solid var(--border); border-radius: 0 0 8px 8px;
+  max-height: 320px; overflow-y: auto; display: none;
+}
+.search-results.open { display: block; }
+.search-results a {
+  display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+  color: var(--text); border-bottom: 1px solid rgba(255,255,255,.04);
+}
+.search-results a:hover { background: rgba(255,255,255,.05); text-decoration: none; }
+.search-results img { width: 120px; height: 45px; object-fit: cover; border-radius: 3px; }
+
+/* game header */
+.game-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.game-header img { height: 68px; border-radius: 4px; object-fit: cover; }
+.game-header .info { flex: 1; min-width: 0; }
+.game-header .title { font-size: 1.3rem; font-weight: 700; color: var(--strong); }
+.game-header .meta { font-size: .8rem; color: var(--muted); margin-top: 2px; }
+.tier-badge {
+  display: inline-block; padding: 3px 12px; border-radius: 999px;
+  font-weight: 700; font-size: .7rem; text-transform: uppercase; color: #111;
+}
+
+/* report cards */
+.cards { display: flex; flex-direction: column; gap: 10px; }
+.card {
+  border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px;
+  background: linear-gradient(180deg, rgba(26,36,49,.92), rgba(13,19,28,.96));
+  display: flex; gap: 14px; cursor: pointer; transition: border-color .15s;
+}
+.card:hover { border-color: rgba(255,255,255,.3); }
+.card .left { flex: 1; min-width: 0; }
+.card .proton { font-size: 14px; font-weight: 700; color: #f4fbff; margin-bottom: 3px; }
+.card .hw { font-size: 11px; color: #8fb4d5; margin-bottom: 6px; }
+.card .age { font-size: 10px; color: #9cb3c7; margin-bottom: 6px; }
+.card .notes { font-size: 11px; color: #cad7e4; line-height: 1.4; }
+.card .right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; min-width: 80px; }
+.card .rating {
+  padding: 2px 9px; border-radius: 999px; font-weight: 700; font-size: 10px;
+  text-transform: uppercase; color: #111;
+}
+.card .gpu-tier { font-size: 11px; color: #d9e8f4; }
+.card .score { font-size: 12px; font-weight: 700; }
+.card .source-badge {
+  font-size: 9px; padding: 1px 6px; border-radius: 999px;
+  background: rgba(124,199,255,.15); color: var(--link); border: 1px solid rgba(124,199,255,.25);
+}
+
+/* detail overlay */
+.detail { display: none; margin-top: -1px; border: 1px solid var(--border); border-radius: 0 0 8px 8px;
+  background: rgba(13,19,28,.98); padding: 14px; font-size: 12px; color: #cad7e4; }
+.detail.open { display: block; }
+.detail .row { display: flex; justify-content: space-between; padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,.04); }
+.detail .label { color: var(--muted); }
+.detail .notes-full { margin-top: 10px; white-space: pre-wrap; line-height: 1.5; }
+
+/* loading / empty */
+.loading, .empty { text-align: center; padding: 40px; color: var(--muted); }
+.sort-bar { display: flex; gap: 8px; margin-bottom: 12px; font-size: 12px; }
+.sort-bar button {
+  background: none; border: 1px solid var(--border); border-radius: 6px;
+  color: var(--muted); padding: 4px 10px; cursor: pointer; font-size: 12px;
+}
+.sort-bar button.active { color: var(--link); border-color: var(--link); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>⚡ Proton Pulse</h1>
+    <a href="index.html">Data Index</a>
+    <a href="https://github.com/mdeguzis/decky-proton-pulse">Plugin</a>
+  </header>
+
+  <div class="search-box">
+    <input id="search" type="text" placeholder="Search games by name or app ID..." autocomplete="off">
+    <div id="search-results" class="search-results"></div>
+  </div>
+
+  <div id="content">
+    <div class="empty">Search for a game or navigate to <code>#/app/{appId}</code></div>
+  </div>
+</div>
+
+<script>
+const CDN = 'https://mdeguzis.github.io/proton-pulse-data/data';
+const SB_URL = 'https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1';
+const SB_KEY = 'sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V';
+const STEAM_IMG = id => `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`;
+const RATING_COLORS = { platinum:'#b4c7dc', gold:'#cfb53b', silver:'#a6a6a6', bronze:'#cd7f32', borked:'#ff4444', pending:'#888' };
+
+// ── routing ──
+function getRoute() {
+  const h = location.hash.replace(/^#\/?/, '');
+  const m = h.match(/^app\/(\d+)/);
+  return m ? { page: 'app', appId: m[1] } : { page: 'home' };
+}
+
+window.addEventListener('hashchange', () => route());
+route();
+
+async function route() {
+  const r = getRoute();
+  if (r.page === 'app') await renderGamePage(r.appId);
+  else document.getElementById('content').innerHTML = '<div class="empty">Search for a game or navigate to <code>#/app/{appId}</code></div>';
+}
+
+// ── data fetching ──
+async function fetchCdn(appId) {
+  try {
+    const r = await fetch(`${CDN}/${appId}/latest.json`);
+    if (!r.ok) return [];
+    return await r.json();
+  } catch { return []; }
+}
+
+async function fetchSupabase(appId) {
+  try {
+    const r = await fetch(`${SB_URL}/user_configs?app_id=eq.${appId}&select=*`, {
+      headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` }
+    });
+    if (!r.ok) return [];
+    return (await r.json()).map(c => ({
+      appId: c.app_id, cpu: c.cpu, gpu: c.gpu, gpuDriver: c.gpu_driver,
+      os: c.os, kernel: c.kernel, protonVersion: c.proton_version,
+      ram: c.ram, rating: c.rating, notes: c.notes || '',
+      timestamp: Math.floor(new Date(c.created_at).getTime() / 1000),
+      duration: c.duration, title: c.title, launchOptions: c.launch_options,
+      source: 'proton-pulse',
+    }));
+  } catch { return []; }
+}
+
+async function fetchVotes(appId) {
+  try {
+    const r = await fetch(`${SB_URL}/votes?app_id=eq.${appId}&select=report_key,vote`, {
+      headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` }
+    });
+    if (!r.ok) return {};
+    const rows = await r.json();
+    const totals = {};
+    for (const v of rows) {
+      if (!totals[v.report_key]) totals[v.report_key] = { up: 0, down: 0 };
+      if (v.vote > 0) totals[v.report_key].up++;
+      else totals[v.report_key].down++;
+    }
+    return totals;
+  } catch { return {}; }
+}
+
+function reportKey(r) { return `${r.timestamp}:${(r.gpu||'').slice(0,20)}:${(r.protonVersion||'').slice(0,15)}`; }
+
+function mergeReports(cdn, sb) {
+  const seen = new Set();
+  const all = [];
+  for (const r of sb) { const k = reportKey(r); seen.add(k); all.push(r); }
+  for (const r of cdn) { const k = reportKey(r); if (!seen.has(k)) { seen.add(k); all.push({ ...r, source: 'protondb' }); } }
+  return all;
+}
+
+function tierFromReports(reports) {
+  const order = ['platinum','gold','silver','bronze','borked'];
+  const counts = {};
+  for (const r of reports) counts[r.rating] = (counts[r.rating] || 0) + 1;
+  let best = 'pending';
+  for (const t of order) { if (counts[t]) { best = t; break; } }
+  return best;
+}
+
+function daysAgo(ts) {
+  const d = Math.round((Date.now() / 1000 - ts) / 86400);
+  return d < 1 ? 'today' : d === 1 ? '1 day ago' : `${d} days ago`;
+}
+
+function confColor(s) {
+  if (s >= 8) return '#4caf50';
+  if (s >= 6) return '#ffeb3b';
+  if (s >= 4) return '#ff9800';
+  return '#f44336';
+}
+
+function truncate(s, n) { return s && s.length > n ? s.slice(0, n) + '…' : s; }
+
+// ── game page ──
+async function renderGamePage(appId) {
+  const el = document.getElementById('content');
+  el.innerHTML = '<div class="loading">Loading reports…</div>';
+
+  const [cdn, sb, votes] = await Promise.all([fetchCdn(appId), fetchSupabase(appId), fetchVotes(appId)]);
+  const reports = mergeReports(cdn, sb);
+
+  if (!reports.length) {
+    el.innerHTML = `<div class="empty">No reports found for app ${appId}</div>`;
+    return;
+  }
+
+  const title = reports[0].title || `App ${appId}`;
+  const tier = tierFromReports(reports);
+  document.title = `${title} — Proton Pulse`;
+
+  // sort by timestamp desc initially
+  let sortMode = 'recent';
+  const sorted = () => {
+    const arr = [...reports];
+    if (sortMode === 'recent') arr.sort((a, b) => b.timestamp - a.timestamp);
+    else if (sortMode === 'votes') arr.sort((a, b) => ((votes[reportKey(b)]?.up||0) - (votes[reportKey(b)]?.down||0)) - ((votes[reportKey(a)]?.up||0) - (votes[reportKey(a)]?.down||0)));
+    return arr;
+  };
+
+  function render() {
+    const reps = sorted();
+    el.innerHTML = `
+      <div class="game-header">
+        <img src="${STEAM_IMG(appId)}" onerror="this.style.display='none'">
+        <div class="info">
+          <div class="title">${esc(title)}</div>
+          <div class="meta">App ${appId} · ${reports.length} report${reports.length !== 1 ? 's' : ''}</div>
+        </div>
+        <span class="tier-badge" style="background:${RATING_COLORS[tier]}">${tier}</span>
+      </div>
+      <div class="sort-bar">
+        <button class="${sortMode==='recent'?'active':''}" data-sort="recent">Recent</button>
+        <button class="${sortMode==='votes'?'active':''}" data-sort="votes">Top Voted</button>
+      </div>
+      <div class="cards">${reps.map((r, i) => renderCard(r, i, votes)).join('')}</div>
+    `;
+    el.querySelectorAll('.sort-bar button').forEach(b => b.onclick = () => { sortMode = b.dataset.sort; render(); });
+    el.querySelectorAll('.card').forEach(c => c.onclick = () => {
+      const d = c.nextElementSibling;
+      if (d && d.classList.contains('detail')) d.classList.toggle('open');
+    });
+  }
+  render();
+}
+
+function renderCard(r, i, votes) {
+  const v = votes[reportKey(r)] || { up: 0, down: 0 };
+  const score = Math.min(10, Math.max(0, (r.score || estimateScore(r)) / 10)).toFixed(1);
+  const isPP = r.source === 'proton-pulse';
+  return `
+    <div class="card">
+      <div class="left">
+        <div class="proton">${esc(r.protonVersion || 'Unknown')}</div>
+        <div class="hw">${esc([r.gpu, r.os].filter(Boolean).join(' · ') || 'Hardware unavailable')}</div>
+        <div class="age">${daysAgo(r.timestamp)}</div>
+        ${r.notes ? `<div class="notes">${esc(truncate(r.notes, 120))}</div>` : ''}
+      </div>
+      <div class="right">
+        <span class="rating" style="background:${RATING_COLORS[r.rating]||'#888'}">${r.rating||'?'}</span>
+        ${isPP ? '<span class="source-badge">Pulse</span>' : ''}
+        <span class="score" style="color:${confColor(parseFloat(score))}">${score}/10</span>
+        <span style="font-size:10px;color:var(--muted)">▲${v.up} ▼${v.down}</span>
+      </div>
+    </div>
+    <div class="detail">
+      <div class="row"><span class="label">GPU</span><span>${esc(r.gpu||'-')}</span></div>
+      <div class="row"><span class="label">Driver</span><span>${esc(r.gpuDriver||'-')}</span></div>
+      <div class="row"><span class="label">CPU</span><span>${esc(r.cpu||'-')}</span></div>
+      <div class="row"><span class="label">OS</span><span>${esc(r.os||'-')}</span></div>
+      <div class="row"><span class="label">Kernel</span><span>${esc(r.kernel||'-')}</span></div>
+      <div class="row"><span class="label">RAM</span><span>${esc(r.ram||'-')}</span></div>
+      <div class="row"><span class="label">Proton</span><span>${esc(r.protonVersion||'-')}</span></div>
+      <div class="row"><span class="label">Duration</span><span>${esc(r.duration||'-')}</span></div>
+      ${r.launchOptions ? `<div class="row"><span class="label">Launch Options</span><span>${esc(r.launchOptions)}</span></div>` : ''}
+      ${r.notes ? `<div class="notes-full">${esc(r.notes)}</div>` : ''}
+    </div>`;
+}
+
+function estimateScore(r) {
+  const ratingScores = { platinum: 60, gold: 48, silver: 36, bronze: 24, borked: 0 };
+  const base = ratingScores[r.rating] || 30;
+  const days = Math.round((Date.now() / 1000 - r.timestamp) / 86400);
+  const recency = days < 90 ? 15 : days < 365 ? 5 : -5;
+  return Math.max(0, base + recency);
+}
+
+function esc(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+
+// ── search ──
+let searchTimer = null;
+const searchInput = document.getElementById('search');
+const searchResults = document.getElementById('search-results');
+
+searchInput.addEventListener('input', () => {
+  clearTimeout(searchTimer);
+  const q = searchInput.value.trim();
+  if (!q) { searchResults.classList.remove('open'); return; }
+  if (/^\d+$/.test(q) && q.length >= 3) {
+    searchResults.innerHTML = `<a href="#/app/${q}"><span>Go to App ${q}</span></a>`;
+    searchResults.classList.add('open');
+    return;
+  }
+  searchTimer = setTimeout(() => searchSteam(q), 350);
+});
+
+searchInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    const first = searchResults.querySelector('a');
+    if (first) { first.click(); searchResults.classList.remove('open'); searchInput.blur(); }
+  }
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.search-box')) searchResults.classList.remove('open');
+});
+
+async function searchSteam(q) {
+  try {
+    // Use Steam store search suggestions endpoint
+    const r = await fetch(`https://store.steampowered.com/api/storesearch/?term=${encodeURIComponent(q)}&l=english&cc=US`);
+    if (!r.ok) return;
+    const data = await r.json();
+    const items = (data.items || []).slice(0, 8);
+    if (!items.length) { searchResults.innerHTML = '<div style="padding:12px;color:var(--muted)">No results</div>'; searchResults.classList.add('open'); return; }
+    searchResults.innerHTML = items.map(g => `
+      <a href="#/app/${g.id}">
+        <img src="${STEAM_IMG(g.id)}" onerror="this.style.display='none'">
+        <span>${esc(g.name)}</span>
+      </a>
+    `).join('');
+    searchResults.classList.add('open');
+  } catch {}
+}
+</script>
+</body>
+</html>
