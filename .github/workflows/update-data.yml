@@ -254,7 +254,8 @@ jobs:
           cp -r /tmp/protondb-output/data .
           cp /tmp/protondb-output/index.html .
           cp /tmp/protondb-output/coverage.html .
-          git add data/ index.html coverage.html
+          git show main:app.html > app.html 2>/dev/null || true
+          git add data/ index.html coverage.html app.html
           git commit -m "Deploy: $(date +%F)"
           git push origin gh-pages-new:gh-pages --force
 
@@ -394,7 +395,8 @@ jobs:
           cp -r /tmp/protondb-output/data .
           cp /tmp/protondb-output/index.html .
           cp /tmp/protondb-output/coverage.html .
-          git add data/ index.html coverage.html
+          git show main:app.html > app.html 2>/dev/null || true
+          git add data/ index.html coverage.html app.html
           git commit -m "Targeted backfill: ${{ inputs.backfill_app_ids }}"
           git push origin gh-pages-new:gh-pages --force
 
@@ -563,7 +565,8 @@ jobs:
           cp -r /tmp/protondb-output/data .
           cp /tmp/protondb-output/index.html .
           cp /tmp/protondb-output/coverage.html .
-          git add data/ index.html coverage.html
+          git show main:app.html > app.html 2>/dev/null || true
+          git add data/ index.html coverage.html app.html
           git commit -m "Coverage backfill: ${{ inputs.coverage_backfill_issue_type }}"
           git push origin gh-pages-new:gh-pages --force
 
