@@ -286,9 +286,9 @@ jobs:
 
       - name: Republish GitHub Pages shell files
         run: |
+          cd gh-pages-data
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          cd gh-pages-data
           cp ../repo/app.html ./app.html
           cp ../repo/index.html ./index.html
           git add app.html index.html
