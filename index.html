@@ -144,10 +144,8 @@
 .search-wrap input:focus { border-color: var(--accent); }
 .search-wrap input::placeholder { color: var(--muted); }
 .search-results {
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0; right: 0;
-  z-index: 200;
+  position: fixed;
+  z-index: 9999;
   background: var(--s1);
   border: 1px solid var(--border2);
   max-height: 300px;
@@ -360,12 +358,20 @@
   var searchInput   = document.getElementById('search');
   var searchResults = document.getElementById('search-results');
 
+  function positionDropdown() {
+    var rect = searchInput.getBoundingClientRect();
+    searchResults.style.top = (rect.bottom + 4) + 'px';
+    searchResults.style.left = rect.left + 'px';
+    searchResults.style.width = rect.width + 'px';
+  }
+
   searchInput.addEventListener('input', function() {
     clearTimeout(searchTimer);
     var q = searchInput.value.trim();
     if (!q) { searchResults.classList.remove('open'); return; }
     if (/^\d+$/.test(q) && q.length >= 3) {
       searchResults.innerHTML = '<a href="app.html#/app/' + q + '">Go to App ' + q + '</a>';
+      positionDropdown();
       searchResults.classList.add('open');
       return;
     }
@@ -391,6 +397,7 @@
         var items = (data.items || []).slice(0, 8);
         if (!items.length) {
           searchResults.innerHTML = '<div class="search-no-results">No results</div>';
+          positionDropdown();
           searchResults.classList.add('open');
           return;
         }
@@ -399,6 +406,7 @@
             '<img src="' + STEAM_IMG(g.id) + '" onerror="this.style.display=\'none\'" alt="">' +
             '<span>' + esc(g.name) + '</span></a>';
         }).join('');
+        positionDropdown();
         searchResults.classList.add('open');
       })
       .catch(function() {});

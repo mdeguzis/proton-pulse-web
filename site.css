@@ -148,6 +148,7 @@ code {
 .sidebar-section {
   padding: 14px 16px;
   border-bottom: 1px solid var(--border);
+  position: relative;
 }
 .sidebar-section:last-child { border-bottom: none; }
 
