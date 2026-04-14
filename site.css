@@ -142,7 +142,7 @@ code {
 .tier-borked   { background: #c85050; color: #fff; }
 .tier-pending  { background: #3a4a5a; color: var(--muted); }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .topnav-toggle { display: flex; align-items: center; }
   .topnav-links {
     display: none;
@@ -150,7 +150,7 @@ code {
     position: fixed;
     top: 50px;
     left: 0;
-    width: 220px;
+    width: 240px;
     bottom: 0;
     background: var(--s1);
     border-right: 2px solid var(--border);
@@ -176,4 +176,7 @@ code {
     background: rgba(0,0,0,0.45);
   }
   .nav-overlay.open { display: block; }
+  /* hide sidebar nav/about blocks that duplicate the hamburger menu */
+  .sidebar-nav-block { display: none; }
+  .sidebar-about-block { display: none; }
 }
