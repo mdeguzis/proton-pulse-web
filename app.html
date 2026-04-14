@@ -439,25 +439,23 @@ a.card:hover { text-decoration: none; }
 .source-badge img { width: 10px; height: 10px; object-fit: contain; }
 
 /* detail expand */
-.detail {
-  display: none;
-  padding: 12px 14px;
+.card-summary {
+  padding: 10px 14px;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
   font-size: 0.76rem;
   color: var(--text);
 }
-.detail.open { display: block; }
-.detail .row {
+.card-summary .row {
   display: flex;
   justify-content: space-between;
   gap: 12px;
   padding: 4px 0;
   border-bottom: 1px solid var(--border);
 }
-.detail .row:last-child { border-bottom: none; }
-.detail .label { color: var(--muted); min-width: 100px; }
-.detail .notes-full { margin-top: 10px; white-space: pre-wrap; line-height: 1.5; color: #a0b4c4; }
+.card-summary .row:last-child { border-bottom: none; }
+.card-summary .label { color: var(--muted); min-width: 100px; }
+.card-summary .notes-full { margin-top: 10px; white-space: pre-wrap; line-height: 1.5; color: #a0b4c4; }
 .all-details-btn {
   margin-top: 8px;
   background: none;
@@ -508,7 +506,7 @@ a.card:hover { text-decoration: none; }
   .game-header img { height: auto; width: 100%; max-width: 240px; }
   .card { flex-direction: column; }
   .card .right { flex-direction: row; align-items: center; min-width: 0; }
-  .detail .row { flex-direction: column; gap: 2px; }
+  .card-summary .row { flex-direction: column; gap: 2px; }
   .reports-section-head { flex-direction: column; align-items: flex-start; gap: 8px; }
   .filter-bar { gap: 6px; }
   .hub-links { gap: 4px; }
@@ -877,13 +875,13 @@ function renderCard(r, votes) {
   const isPP  = r.source === 'proton-pulse';
   const rc    = RATING_COLORS[r.rating] || '#3a4a5a';
   const rt    = RATING_TEXT[r.rating]   || '#c8d4e0';
+  const na = s => s || '<span style="color:#4a5f70;font-style:italic">Not available</span>';
   return `
     <div class="card">
       <div class="left">
         <div class="proton">${esc(r.protonVersion || 'Unknown')}</div>
         <div class="hw">${esc([r.gpu, r.os].filter(Boolean).join(' / ') || 'Hardware unavailable')}</div>
         <div class="age">${daysAgo(r.timestamp)}</div>
-        ${r.notes ? `<div class="notes">${esc(truncate(r.notes, 140))}</div>` : ''}
       </div>
       <div class="right">
         <span class="rating" style="background:${rc};color:${rt}">${r.rating || '?'}</span>
@@ -892,19 +890,19 @@ function renderCard(r, votes) {
         <span class="votes">+${v.up} -${v.down}</span>
       </div>
     </div>
-    <div class="detail">
-      <div class="row"><span class="label">GPU</span><span>${esc(r.gpu||'-')}</span></div>
-      <div class="row"><span class="label">CPU</span><span>${esc(r.cpu||'-')}</span></div>
-      <div class="row"><span class="label">OS</span><span>${esc(r.os||'-')}</span></div>
-      <div class="row"><span class="label">Proton</span><span>${esc(r.protonVersion||'-')}</span></div>
+    <div class="card-summary">
+      <div class="row"><span class="label">GPU</span><span>${na(esc(r.gpu))}</span></div>
+      <div class="row"><span class="label">CPU</span><span>${na(esc(r.cpu))}</span></div>
+      <div class="row"><span class="label">OS</span><span>${na(esc(r.os))}</span></div>
+      <div class="row"><span class="label">Proton</span><span>${na(esc(r.protonVersion))}</span></div>
       ${r.notes ? `<div class="notes-full">${esc(r.notes)}</div>` : ''}
       <button class="all-details-btn" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'Hide Details':'All Details'">All Details</button>
       <div class="all-details-panel">
-        <div class="row"><span class="label">RAM</span><span>${esc(r.ram||'-')}</span></div>
+        <div class="row"><span class="label">RAM</span><span>${na(esc(r.ram))}</span></div>
         ${r.vramMb ? `<div class="row"><span class="label">VRAM</span><span>${r.vramMb >= 1024 ? (r.vramMb/1024).toFixed(1)+' GB' : r.vramMb+' MB'}</span></div>` : ''}
-        <div class="row"><span class="label">GPU Driver</span><span>${esc(r.gpuDriver||'-')}</span></div>
-        <div class="row"><span class="label">Kernel</span><span>${esc(r.kernel||'-')}</span></div>
-        <div class="row"><span class="label">Duration</span><span>${esc(r.duration||'-')}</span></div>
+        <div class="row"><span class="label">GPU Driver</span><span>${na(esc(r.gpuDriver))}</span></div>
+        <div class="row"><span class="label">Kernel</span><span>${na(esc(r.kernel))}</span></div>
+        <div class="row"><span class="label">Duration</span><span>${na(esc(r.duration))}</span></div>
         ${r.cpuCores ? `<div class="row"><span class="label">CPU Cores</span><span>${r.cpuCores}</span></div>` : ''}
         ${r.displayResolution ? `<div class="row"><span class="label">Resolution</span><span>${esc(r.displayResolution)}</span></div>` : ''}
         ${r.steamDeckModel ? `<div class="row"><span class="label">Steam Deck</span><span>${esc(r.steamDeckModel.toUpperCase())}</span></div>` : ''}
@@ -1109,10 +1107,6 @@ async function renderGamePage(appId) {
     el.querySelector('#fRating').onchange = e => { filterRating = e.target.value; render(); };
     el.querySelector('#fCfgProton')?.addEventListener('change', e => { filterCfgProton = e.target.value; render(); });
     el.querySelector('#fCfgSource')?.addEventListener('change', e => { filterCfgSource = e.target.value; render(); });
-    el.querySelectorAll('.card').forEach(c => c.onclick = () => {
-      const d = c.nextElementSibling;
-      if (d && d.classList.contains('detail')) d.classList.toggle('open');
-    });
   }
 
   render();
