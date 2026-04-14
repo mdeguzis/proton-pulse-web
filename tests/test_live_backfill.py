@@ -648,3 +648,60 @@ def test_run_coverage_backfill_can_explicitly_allow_unbounded(tmp_path, monkeypa
 
     patched = json.loads((app_dir / "2024.json").read_text())
     assert patched[0]["title"] == "Test Game"
+
+
+def test_run_probe_backfill_includes_signal_catalog_apps_not_in_probe_cache(tmp_path, monkeypatch):
+    """Signal-catalog apps excluded from the probe should still be backfilled.
+
+    The probe deliberately skips apps already in the ProtonDB signal catalog, so
+    those apps never land in the probe cache.  Without the merge in
+    run_probe_backfill they would never be auto-backfilled during a normal pipeline
+    run even though ProtonDB clearly has data for them.
+    """
+    from scripts.pipeline.backfill import run_probe_backfill
+
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    write_pipeline_state(tmp_path, parsed_count=0, index_keys=set(), backfilled_keys=set())
+
+    # Probe cache is empty — simulates the situation where the app was excluded
+    # from probe candidates because it was already in the signal catalog.
+    monkeypatch.setattr(backfill_module, "read_protondb_probe_cache", lambda: {})
+
+    # Signal catalog contains the app that was never probed.
+    monkeypatch.setattr(
+        backfill_module,
+        "load_protondb_signal_catalog",
+        lambda: {"976730": "Halo: The Master Chief Collection"},
+    )
+
+    counts_payload = {"reports": 415099, "timestamp": 1775051127}
+    live_payload = {
+        "reports": [
+            {
+                "timestamp": 1763251200,
+                "responses": {"verdict": "yes", "triedOob": "yes", "protonVersion": "10.0-3"},
+                "device": {"inferred": {"steam": {}}},
+                "contributor": {"steam": {"playtimeLinux": 600}},
+            }
+        ]
+    }
+
+    def fake_fetch(url: str):
+        if "counts" in url:
+            return counts_payload
+        return live_payload
+
+    monkeypatch.setattr(backfill_module, "fetch_json", fake_fetch)
+    monkeypatch.setattr(
+        backfill_module,
+        "resolve_backfill_title",
+        lambda app_id, preferred_title="": ("Halo: The Master Chief Collection", "protondb-signal"),
+    )
+    monkeypatch.setattr(backfill_module, "flush_steam_title_cache", lambda: None)
+
+    run_probe_backfill(str(tmp_path))
+
+    assert (data_dir / "976730").is_dir(), "Expected data directory for 976730 to be created"
+    year_files = [f for f in (data_dir / "976730").iterdir() if f.suffix == ".json" and f.stem not in ("index", "latest", "votes", "metadata")]
+    assert year_files, "Expected at least one year file written for 976730"

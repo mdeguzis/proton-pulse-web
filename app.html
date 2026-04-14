@@ -112,9 +112,37 @@
   transition: background .1s;
 }
 .search-results a:last-child { border-bottom: none; }
-.search-results a:hover { background: var(--s2); text-decoration: none; }
-.search-results img { width: 108px; height: 40px; object-fit: cover; }
+.search-results a:hover, .search-results a.focused { background: var(--s2); text-decoration: none; }
+.search-results img { width: 108px; height: 40px; object-fit: cover; flex-shrink: 0; }
 .search-no-results { padding: 12px 10px; font-size: 13px; color: var(--muted); }
+.search-result-info { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.search-result-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; }
+.search-result-badges { display: flex; gap: 4px; flex-wrap: wrap; }
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.badge-reports  { background: #1a3a5c; color: #5dade2; border: 1px solid #2a5a8c; }
+.badge-pulse    { background: #1a3a1a; color: #4caf50; border: 1px solid #2a5a2a; }
+.search-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: var(--s2);
+  text-decoration: none;
+  transition: background .1s;
+}
+.search-footer:hover { background: var(--border); color: var(--text); text-decoration: none; }
 
 /* sidebar nav */
 .sidebar-nav { display: flex; flex-direction: column; }
@@ -1139,18 +1167,112 @@ async function renderGamePage(appId) {
 
 // -- Search --------------------------------------------
 
-const searchInput = document.getElementById('search');
-// Search: Enter to navigate (avoids CORS issues with Steam storesearch API)
+const searchInput   = document.getElementById('search');
+const searchResults = document.getElementById('search-results');
+let searchIndex     = null;   // [[appId, title], ...]
+let searchFocusIdx  = -1;
+
+async function loadSearchIndex() {
+  if (searchIndex !== null) return;
+  try {
+    const r = await fetch('search-index.json');
+    searchIndex = r.ok ? await r.json() : [];
+  } catch { searchIndex = []; }
+}
+
+function closeSearch() {
+  searchResults.classList.remove('open');
+  searchResults.innerHTML = '';
+  searchFocusIdx = -1;
+}
+
+function renderSearchResults(q) {
+  const items = searchResults.querySelectorAll('a.search-item');
+  searchFocusIdx = Math.max(-1, Math.min(searchFocusIdx, items.length - 1));
+  items.forEach((a, i) => a.classList.toggle('focused', i === searchFocusIdx));
+}
+
+async function onSearchInput() {
+  const q = searchInput.value.trim();
+  if (!q) { closeSearch(); return; }
+  await loadSearchIndex();
+
+  const ql = q.toLowerCase();
+  const isNum = /^\d+$/.test(q);
+  const MAX = 8;
+
+  // Filter: numeric queries match only on app ID prefix; text matches title or ID
+  const matches = (searchIndex || []).filter(([id, title]) =>
+    isNum ? id.startsWith(q) : (title.toLowerCase().includes(ql) || id.startsWith(q))
+  ).slice(0, MAX);
+
+  if (!matches.length) {
+    searchResults.innerHTML = `<div class="search-no-results">No indexed results — <a href="data-index.html?q=${encodeURIComponent(q)}" style="color:var(--accent)">search coverage report</a></div>`;
+    searchResults.classList.add('open');
+    searchFocusIdx = -1;
+    return;
+  }
+
+  const rows = matches.map(([id, title]) => {
+    const img = STEAM_IMG(id);
+    return `<a class="search-item" href="#/app/${id}" data-id="${id}">
+      <img src="${img}" onerror="this.style.display='none'" alt="" loading="lazy">
+      <div class="search-result-info">
+        <div class="search-result-title">${esc(title)}</div>
+        <div class="search-result-badges">
+          <span class="badge badge-reports">Reports</span>
+          <span class="badge badge-pulse">Pulse</span>
+        </div>
+      </div>
+    </a>`;
+  }).join('');
+
+  const footer = `<a class="search-footer" href="data-index.html?q=${encodeURIComponent(q)}">View all results in data index →</a>`;
+  searchResults.innerHTML = rows + footer;
+  searchResults.classList.add('open');
+  searchFocusIdx = -1;
+
+  // Close when a result is clicked
+  searchResults.querySelectorAll('a.search-item').forEach(a => {
+    a.addEventListener('click', () => { closeSearch(); searchInput.value = ''; });
+  });
+}
+
+searchInput.addEventListener('input', onSearchInput);
+
 searchInput.addEventListener('keydown', e => {
+  const items = [...searchResults.querySelectorAll('a.search-item')];
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    searchFocusIdx = Math.min(searchFocusIdx + 1, items.length - 1);
+    renderSearchResults(searchInput.value.trim());
+    return;
+  }
+  if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    searchFocusIdx = Math.max(searchFocusIdx - 1, -1);
+    renderSearchResults(searchInput.value.trim());
+    return;
+  }
+  if (e.key === 'Escape') { closeSearch(); return; }
   if (e.key === 'Enter') {
+    const focused = items[searchFocusIdx];
+    if (focused) { focused.click(); return; }
     const q = searchInput.value.trim();
     if (!q) return;
+    closeSearch();
+    searchInput.value = '';
     if (/^\d+$/.test(q)) {
       location.hash = '#/app/' + q;
     } else {
       window.location.href = 'data-index.html?q=' + encodeURIComponent(q);
     }
   }
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', e => {
+  if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) closeSearch();
 });
 </script>
 </body>

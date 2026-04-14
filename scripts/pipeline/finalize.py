@@ -356,6 +356,22 @@ def _resolve_coverage_title(
     return "", "none"
 
 
+def generate_search_index(index_keys: set, data_output_path: Path, output_path: Path) -> None:
+    """Generate search-index.json: compact [[appId, title], ...] list for client-side search."""
+    app_ids = sorted(
+        {app_id for app_id, _ in index_keys},
+        key=lambda a: (0, int(a)) if a.isdigit() else (1, a),
+    )
+    entries = []
+    for app_id in app_ids:
+        title = _extract_title(data_output_path / app_id)
+        if title:
+            entries.append([app_id, title])
+    index_file = output_path / "search-index.json"
+    index_file.write_text(json.dumps(entries, separators=(",", ":")))
+    log(f"[search-index] Written {len(entries):,} entries to {index_file}")
+
+
 def generate_coverage_report(
     index_keys: set,
     backfilled_keys: set,
@@ -855,6 +871,7 @@ def finalize_output(output_dir, skip_probe: bool = False):
         )
     generate_app_indexes(state["index_keys"], data_output_path)
     generate_index_html(state["index_keys"], output_path)
+    generate_search_index(state["index_keys"], data_output_path, output_path)
     generate_coverage_report(
         state["index_keys"],
         state["backfilled_keys"],

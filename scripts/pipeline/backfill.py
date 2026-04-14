@@ -634,6 +634,30 @@ def run_probe_backfill(output_dir):
         if entry.get("tracked")
     }
 
+    # Also include signal catalog apps not yet indexed or backfilled.
+    # The probe deliberately skips apps already in the signal catalog, so without
+    # this merge those apps (e.g. titles present on ProtonDB but absent from the
+    # official bdefore/protondb-data dump) would never be auto-backfilled.
+    indexed_app_ids = {app_id for app_id, _ in state["index_keys"]}
+    backfill_app_ids = {app_id for app_id, _ in state["backfilled_keys"]}
+    try:
+        signal_catalog = load_protondb_signal_catalog()
+        signal_only = {
+            app_id: title
+            for app_id, title in signal_catalog.items()
+            if app_id not in probe_catalog
+            and app_id not in indexed_app_ids
+            and app_id not in backfill_app_ids
+        }
+        if signal_only:
+            log(
+                f"[probe-backfill] Merging {len(signal_only):,} signal-catalog app(s) "
+                f"not yet indexed into backfill candidates"
+            )
+            probe_catalog.update(signal_only)
+    except Exception as exc:
+        log(f"[probe-backfill] Could not load ProtonDB signal catalog: {exc}")
+
     if not probe_catalog:
         log("[probe-backfill] No tracked apps in probe cache; nothing to backfill")
         return

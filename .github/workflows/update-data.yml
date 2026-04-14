@@ -255,10 +255,11 @@ jobs:
           cp -r /tmp/protondb-output/data .
           cp /tmp/protondb-output/data-index.html .
           cp /tmp/protondb-output/coverage.html .
+          cp /tmp/protondb-output/search-index.json . 2>/dev/null || true
           git show main:app.html > app.html 2>/dev/null || true
           git show main:index.html > index.html 2>/dev/null || true
           git show main:site.css > site.css 2>/dev/null || true
-          git add data/ data-index.html coverage.html app.html index.html site.css
+          git add data/ data-index.html coverage.html search-index.json app.html index.html site.css
           git commit -m "Deploy: $(date +%F)"
           git push origin gh-pages-new:gh-pages --force
 
@@ -432,10 +433,11 @@ jobs:
           cp -r /tmp/protondb-output/data .
           cp /tmp/protondb-output/data-index.html .
           cp /tmp/protondb-output/coverage.html .
+          cp /tmp/protondb-output/search-index.json . 2>/dev/null || true
           git show main:app.html > app.html 2>/dev/null || true
           git show main:index.html > index.html 2>/dev/null || true
           git show main:site.css > site.css 2>/dev/null || true
-          git add data/ data-index.html coverage.html app.html index.html site.css
+          git add data/ data-index.html coverage.html search-index.json app.html index.html site.css
           git commit -m "Targeted backfill: ${{ inputs.backfill_app_ids }}"
           git push origin gh-pages-new:gh-pages --force
 
@@ -604,10 +606,11 @@ jobs:
           cp -r /tmp/protondb-output/data .
           cp /tmp/protondb-output/data-index.html .
           cp /tmp/protondb-output/coverage.html .
+          cp /tmp/protondb-output/search-index.json . 2>/dev/null || true
           git show main:app.html > app.html 2>/dev/null || true
           git show main:index.html > index.html 2>/dev/null || true
           git show main:site.css > site.css 2>/dev/null || true
-          git add data/ data-index.html coverage.html app.html index.html site.css
+          git add data/ data-index.html coverage.html search-index.json app.html index.html site.css
           git commit -m "Coverage backfill: ${{ inputs.coverage_backfill_issue_type }}"
           git push origin gh-pages-new:gh-pages --force
 
