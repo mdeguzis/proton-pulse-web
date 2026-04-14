@@ -110,6 +110,48 @@
 .info-block strong { color: var(--text); font-weight: 600; }
 .info-block a { color: var(--accent); }
 
+/* search (reuse app.html styles) */
+.search-wrap { position: relative; }
+.search-wrap input {
+  width: 100%;
+  padding: 9px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .12s;
+}
+.search-wrap input:focus { border-color: var(--accent); }
+.search-wrap input::placeholder { color: var(--muted); }
+.search-results {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0; right: 0;
+  z-index: 200;
+  background: var(--s1);
+  border: 1px solid var(--border2);
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+}
+.search-results.open { display: block; }
+.search-results a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  transition: background .1s;
+}
+.search-results a:last-child { border-bottom: none; }
+.search-results a:hover { background: var(--s2); text-decoration: none; }
+.search-results img { width: 108px; height: 40px; object-fit: cover; }
+.search-no-results { padding: 12px 10px; font-size: 13px; color: var(--muted); }
+
 /* responsive */
 @media (max-width: 600px) {
   .welcome-title { font-size: 1.3rem; }
@@ -141,6 +183,14 @@
     <div class="sidebar-brand-copy">
       <h2>Proton Pulse</h2>
       <p>Community compatibility data</p>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Search</div>
+    <div class="search-wrap">
+      <input id="search" type="text" placeholder="Game name or app ID..." autocomplete="off">
+      <div id="search-results" class="search-results"></div>
     </div>
   </div>
 
@@ -272,6 +322,60 @@
   sidebar.querySelectorAll('a').forEach(function(a) {
     a.addEventListener('click', closeSidebar);
   });
+
+  // -- Search (same as app.html) --
+  var STEAM_IMG = function(id) {
+    return 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/' + id + '/header.jpg';
+  };
+  function esc(s) { var d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+
+  var searchTimer = null;
+  var searchInput   = document.getElementById('search');
+  var searchResults = document.getElementById('search-results');
+
+  searchInput.addEventListener('input', function() {
+    clearTimeout(searchTimer);
+    var q = searchInput.value.trim();
+    if (!q) { searchResults.classList.remove('open'); return; }
+    if (/^\d+$/.test(q) && q.length >= 3) {
+      searchResults.innerHTML = '<a href="app.html#/app/' + q + '">Go to App ' + q + '</a>';
+      searchResults.classList.add('open');
+      return;
+    }
+    searchTimer = setTimeout(function() { searchSteam(q); }, 350);
+  });
+
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      var first = searchResults.querySelector('a');
+      if (first) { first.click(); searchResults.classList.remove('open'); searchInput.blur(); }
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.search-wrap')) searchResults.classList.remove('open');
+  });
+
+  function searchSteam(q) {
+    fetch('https://store.steampowered.com/api/storesearch/?term=' + encodeURIComponent(q) + '&l=english&cc=US')
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(data) {
+        if (!data) return;
+        var items = (data.items || []).slice(0, 8);
+        if (!items.length) {
+          searchResults.innerHTML = '<div class="search-no-results">No results</div>';
+          searchResults.classList.add('open');
+          return;
+        }
+        searchResults.innerHTML = items.map(function(g) {
+          return '<a href="app.html#/app/' + g.id + '">' +
+            '<img src="' + STEAM_IMG(g.id) + '" onerror="this.style.display=\'none\'" alt="">' +
+            '<span>' + esc(g.name) + '</span></a>';
+        }).join('');
+        searchResults.classList.add('open');
+      })
+      .catch(function() {});
+  }
 })();
 </script>
 </body>

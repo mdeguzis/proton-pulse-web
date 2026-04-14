@@ -94,11 +94,22 @@ def generate_app_indexes(index_keys: set, data_output_path: Path) -> None:
         links = ['<li><a href="latest.json"><strong>latest.json</strong></a></li>']
         for year in sorted_years:
             links.append(f'<li><a href="{year}.json">{year}.json</a></li>')
+        title = _extract_title(app_dir)
+        display_name = f"{title} ({app_id})" if title else app_id
         html = (
-            f"<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\">"
-            f"<title>{app_id} - proton-pulse-data</title></head><body>"
-            f"<h1>{app_id}</h1><ul>{''.join(links)}</ul>"
-            f"<p><a href=\"../../coverage.html\">&larr; Coverage Report</a></p>"
+            f'<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">'
+            f'<meta name="color-scheme" content="dark">'
+            f"<title>{display_name} - proton-pulse-data</title>"
+            f"<style>"
+            f"body {{ background: #101418; color: #d0dae6; font: 15px/1.6 system-ui, sans-serif; margin: 2rem; }}"
+            f"a {{ color: #4a9fd0; }} h1 {{ color: #f0f4f8; }}"
+            f"ul {{ padding-left: 1.25rem; }} li {{ margin: 0.3rem 0; }}"
+            f"</style>"
+            f"</head><body>"
+            f"<h1>{display_name}</h1><ul>{''.join(links)}</ul>"
+            f'<p><a href="../../app.html#/app/{app_id}">View reports</a>'
+            f' | <a href="../../data-index.html">Data Index</a>'
+            f' | <a href="../../coverage.html">Coverage Report</a></p>'
             f"</body></html>"
         )
         (app_dir / "index.html").write_text(html)
@@ -114,6 +125,13 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     sorted_app_ids = sorted(app_years.keys(), key=lambda a: (0, int(a)) if a.isdigit() else (1, a))
     for app_id in sorted_app_ids:
         app_years[app_id] = sorted(app_years[app_id], key=lambda y: (0, int(y)) if y.isdigit() else (1, y))
+
+    # Build a title lookup for all apps
+    data_path = output_path / "data"
+    app_titles: dict[str, str] = {}
+    for app_id in sorted_app_ids:
+        title = _extract_title(data_path / app_id)
+        app_titles[app_id] = title
 
     sample_apps = {
         "730": "Counter-Strike 2",
@@ -235,9 +253,11 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     ]
 
     for app_id in sorted_app_ids:
+        title = app_titles.get(app_id, "")
+        display = f"{title} ({app_id})" if title else app_id
         lines.append("  <li>")
         lines.append("    <details>")
-        lines.append(f"      <summary>{app_id}/</summary>")
+        lines.append(f"      <summary>{display}</summary>")
         lines.append("      <ul>")
         latest_href = f"data/{app_id}/latest.json"
         lines.append(f'        <li><a href="{latest_href}"><strong>latest.json</strong></a></li>')

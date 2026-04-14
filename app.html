@@ -1041,7 +1041,7 @@ async function renderGamePage(appId) {
         <a class="hub-link" href="https://store.steampowered.com/app/${appId}" target="_blank" rel="noopener">Steam ></a>
         <a class="hub-link" href="https://steamdb.info/app/${appId}/" target="_blank" rel="noopener">SteamDB ></a>
         <a class="hub-link" href="https://www.pcgamingwiki.com/w/index.php?search=${encodeURIComponent(title)}" target="_blank" rel="noopener">PCGamingWiki ></a>
-        <a class="hub-link" href="data-index.html#app-${appId}">Data Files ></a>
+        <a class="hub-link" href="data/${appId}/">Data Files ></a>
       </div>
 
       ${trendSummary(reports)}
