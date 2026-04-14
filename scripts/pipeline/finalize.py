@@ -249,38 +249,35 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
         '  <input id="index-filter" type="search" placeholder="Jump to an App ID or title…" autocomplete="off">',
         '  <p id="index-filter-help">Type to narrow the list. The filter is saved in the URL.</p>',
         "</div>",
-        "<ul>",
+        '<div class="pager">',
+        '  <button id="index-prev" type="button">Previous</button>',
+        '  <span id="index-page-info">Loading…</span>',
+        '  <button id="index-next" type="button">Next</button>',
+        "</div>",
+        '<ul id="index-results"></ul>',
     ]
 
+    js_entries = []
     for app_id in sorted_app_ids:
         title = app_titles.get(app_id, "")
-        display = f"{title} ({app_id})" if title else app_id
-        lines.append("  <li>")
-        lines.append("    <details>")
-        lines.append(f"      <summary>{display}</summary>")
-        lines.append("      <ul>")
-        latest_href = f"data/{app_id}/latest.json"
-        lines.append(f'        <li><a href="{latest_href}"><strong>latest.json</strong></a></li>')
-        for year in app_years[app_id]:
-            href = f"data/{app_id}/{year}.json"
-            lines.append(f'        <li><a href="{href}">{year}.json</a></li>')
-        lines.append("      </ul>")
-        lines.append("    </details>")
-        lines.append("  </li>")
+        display = f"{title} ({app_id})" if title else f"{app_id}/"
+        years = sorted(app_years[app_id], key=lambda year: int(year) if str(year).isdigit() else str(year))
+        js_entries.append(json.dumps([app_id, title, display, years], separators=(",", ":")))
 
     now = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     lines += [
-        "</ul>",
+        f"<script>const indexEntries=[{','.join(js_entries)}];</script>",
         f"<p>Generated: {now}</p>",
         "<script>",
         "const indexFilter=document.getElementById('index-filter');",
         "const indexFilterHelp=document.getElementById('index-filter-help');",
-        "const indexEntries=[...document.querySelectorAll('details')].map((details)=>({",
-        "  details,",
-        "  item: details.closest('li'),",
-        "  summary: details.querySelector('summary'),",
-        "  text: (details.textContent||'').toLowerCase()",
-        "}));",
+        "const indexResults=document.getElementById('index-results');",
+        "const indexPrev=document.getElementById('index-prev');",
+        "const indexNext=document.getElementById('index-next');",
+        "const indexPageInfo=document.getElementById('index-page-info');",
+        "const PAGE_SIZE=200;",
+        "let filteredEntries=indexEntries;",
+        "let currentPage=0;",
         "function readIndexFilter(){",
         "  const params=new URLSearchParams(window.location.search);",
         "  return params.get('q')||'';",
@@ -292,24 +289,42 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
         "  const next=window.location.pathname+(query?`?${query}`:'');",
         "  window.history.replaceState(null,'',next);",
         "}",
+        "function renderIndexPage(){",
+        "  const totalPages=Math.max(1, Math.ceil(filteredEntries.length / PAGE_SIZE));",
+        "  currentPage=Math.min(Math.max(0, currentPage), totalPages - 1);",
+        "  const start=currentPage * PAGE_SIZE;",
+        "  const slice=filteredEntries.slice(start, start + PAGE_SIZE);",
+        "  indexResults.innerHTML=slice.map(([appId, title, display, years])=>{",
+        "    const latestHref=`data/${appId}/latest.json`;",
+        "    const yearRows=years.map((year)=>`<li><a href=\"data/${appId}/${year}.json\">${year}.json</a></li>`).join('');",
+        "    return `<li><details><summary>${display}</summary><ul><li><a href=\"${latestHref}\"><strong>latest.json</strong></a></li>${yearRows}</ul></details></li>`;",
+        "  }).join('');",
+        "  indexPageInfo.textContent=filteredEntries.length",
+        "    ? `Showing ${start + 1}–${Math.min(start + slice.length, filteredEntries.length)} of ${filteredEntries.length}`",
+        "    : 'No matching apps';",
+        "  indexPrev.disabled=currentPage===0;",
+        "  indexNext.disabled=currentPage>=totalPages - 1 || filteredEntries.length===0;",
+        "}",
         "function applyIndexFilter(){",
         "  const raw=indexFilter.value.trim();",
         "  const query=raw.toLowerCase();",
-        "  let visible=0;",
-        "  for(const entry of indexEntries){",
-        "    const match=!query||entry.text.includes(query);",
-        "    entry.item.classList.toggle('is-hidden', !match);",
-        "    if(match) visible+=1;",
-        "    if(query && match) entry.details.open=true;",
-        "    if(!query) entry.details.open=false;",
-        "  }",
+        "  filteredEntries=!query",
+        "    ? indexEntries",
+        "    : indexEntries.filter(([appId, title, display])=>{",
+        "        const haystack=`${appId} ${title} ${display}`.toLowerCase();",
+        "        return haystack.includes(query);",
+        "      });",
+        "  currentPage=0;",
         "  indexFilterHelp.textContent=query",
-        "    ? `${visible} matching app${visible===1?'':'s'}`",
+        "    ? `${filteredEntries.length} matching app${filteredEntries.length===1?'':'s'}`",
         "    : 'Type to narrow the list. The filter is saved in the URL.';",
         "  writeIndexFilter(raw);",
+        "  renderIndexPage();",
         "}",
         "indexFilter.value=readIndexFilter();",
         "indexFilter.addEventListener('input', applyIndexFilter);",
+        "indexPrev.addEventListener('click', ()=>{ if(currentPage>0){ currentPage-=1; renderIndexPage(); } });",
+        "indexNext.addEventListener('click', ()=>{ const totalPages=Math.max(1, Math.ceil(filteredEntries.length / PAGE_SIZE)); if(currentPage<totalPages-1){ currentPage+=1; renderIndexPage(); } });",
         "applyIndexFilter();",
         "</script>",
         "</main>",

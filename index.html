@@ -364,11 +364,11 @@
     if (e.key === 'Enter') {
       var q = searchInput.value.trim();
       if (!q) return;
-      // Numeric = go directly to game page; text = filter data index
+      // Numeric = go directly to game page; text = grouped search results
       if (/^\d+$/.test(q)) {
         window.location.href = 'app.html#/app/' + q;
       } else {
-        window.location.href = 'data-index.html?q=' + encodeURIComponent(q);
+        window.location.href = 'app.html?q=' + encodeURIComponent(q);
       }
     }
   });

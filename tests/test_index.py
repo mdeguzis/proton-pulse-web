@@ -42,66 +42,70 @@ def build_http_error(url: str, code: int, message: str, headers: dict[str, str] 
 def test_index_html_created(tmp_path):
     keys = {("730", "2020"), ("730", "2019")}
     generate_index_html(keys, tmp_path)
-    assert (tmp_path / "index.html").exists()
+    assert (tmp_path / "data-index.html").exists()
 
 
 def test_appids_sorted_numerically(tmp_path):
     # "4000" must come after "730" numerically, not before it lexicographically
-    # Search within the <summary> tags to avoid hits in the popular-titles section
+    # Search within the embedded indexEntries data to avoid hits in the prose/header.
     keys = {("4000", "2021"), ("570", "2022"), ("730", "2020")}
     generate_index_html(keys, tmp_path)
-    html = (tmp_path / "index.html").read_text()
-    pos_570 = html.index("<summary>570/</summary>")
-    pos_730 = html.index("<summary>730/</summary>")
-    pos_4000 = html.index("<summary>4000/</summary>")
+    html = (tmp_path / "data-index.html").read_text()
+    pos_570 = html.index('["570","","570/",["2022"]]')
+    pos_730 = html.index('["730","","730/",["2020"]]')
+    pos_4000 = html.index('["4000","","4000/",["2021"]]')
     assert pos_570 < pos_730 < pos_4000
 
 
 def test_years_sorted_ascending(tmp_path):
     keys = {("730", "2022"), ("730", "2019"), ("730", "2021")}
     generate_index_html(keys, tmp_path)
-    html = (tmp_path / "index.html").read_text()
-    pos_2019 = html.index("2019.json")
-    pos_2021 = html.index("2021.json")
-    pos_2022 = html.index("2022.json")
+    html = (tmp_path / "data-index.html").read_text()
+    pos_2019 = html.index('"2019"')
+    pos_2021 = html.index('"2021"')
+    pos_2022 = html.index('"2022"')
     assert pos_2019 < pos_2021 < pos_2022
 
 
 def test_year_links_correct_href(tmp_path):
     keys = {("730", "2020")}
     generate_index_html(keys, tmp_path)
-    html = (tmp_path / "index.html").read_text()
-    assert 'href="data/730/2020.json"' in html
+    html = (tmp_path / "data-index.html").read_text()
+    assert '["730","","730/",["2020"]]' in html
+    assert 'const latestHref=`data/${appId}/latest.json`;' in html
+    assert 'data/${appId}/${year}.json' in html
 
 
 def test_details_summary_structure(tmp_path):
     keys = {("730", "2020")}
     generate_index_html(keys, tmp_path)
-    html = (tmp_path / "index.html").read_text()
+    html = (tmp_path / "data-index.html").read_text()
     assert "<details>" in html
-    assert "<summary>730/</summary>" in html
+    assert '["730","","730/",["2020"]]' in html
 
 
 def test_generated_timestamp_present(tmp_path):
     keys = {("730", "2020")}
     generate_index_html(keys, tmp_path)
-    html = (tmp_path / "index.html").read_text()
+    html = (tmp_path / "data-index.html").read_text()
     assert "Generated:" in html
 
 
 def test_index_html_includes_jump_filter_with_url_state(tmp_path):
     keys = {("730", "2020")}
     generate_index_html(keys, tmp_path)
-    html = (tmp_path / "index.html").read_text()
+    html = (tmp_path / "data-index.html").read_text()
     assert 'id="index-filter"' in html
     assert "params.get('q')" in html
     assert "window.history.replaceState(null,'',next);" in html
+    assert "const PAGE_SIZE=200;" in html
+    assert "renderIndexPage();" in html
 
 
 def test_index_html_includes_dark_mode_support(tmp_path):
     keys = {("730", "2020")}
     generate_index_html(keys, tmp_path)
-    html = (tmp_path / "index.html").read_text()
+    html = (tmp_path / "data-index.html").read_text()
     assert 'meta name="color-scheme" content="light dark"' in html
     assert "@media (prefers-color-scheme: dark)" in html
 

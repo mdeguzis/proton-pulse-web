@@ -9,70 +9,6 @@
 <style>
 /* -- App page styles -- */
 
-.app-shell {
-  width: min(1380px, calc(100vw - 32px));
-  margin: 24px auto 64px;
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 20px;
-  align-items: start;
-}
-
-/* -- Sidebar -- */
-
-.sidebar {
-  position: sticky;
-  top: 74px;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  border: 1px solid var(--border);
-  background: var(--border);
-  overflow: visible;
-}
-.sidebar-block {
-  background: var(--s1);
-  padding: 16px 18px;
-}
-.sidebar-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 18px;
-  background: var(--s1);
-  border-left: 3px solid var(--accent);
-}
-.sidebar-brand-img {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  background: var(--s2);
-  border: 1px solid var(--border2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.sidebar-brand-img img { width: 28px; height: 28px; object-fit: contain; }
-.sidebar-brand-copy h2 {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--strong);
-  letter-spacing: -0.01em;
-}
-.sidebar-brand-copy p {
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin-top: 2px;
-  line-height: 1.4;
-}
-.sidebar-block h3 {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--muted);
-  margin-bottom: 10px;
-}
-
 /* search */
 .search-wrap { position: relative; }
 .search-wrap input {
@@ -89,11 +25,8 @@
 .search-wrap input:focus { border-color: var(--accent); }
 .search-wrap input::placeholder { color: var(--muted); }
 .search-results {
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
-  right: 0;
-  z-index: 200;
+  position: fixed;
+  z-index: 9999;
   background: var(--s1);
   border: 1px solid var(--border2);
   max-height: 300px;
@@ -144,33 +77,6 @@
 }
 .search-footer:hover { background: var(--border); color: var(--text); text-decoration: none; }
 
-/* sidebar nav */
-.sidebar-nav { display: flex; flex-direction: column; }
-.sidebar-nav a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 9px 2px;
-  font-size: 0.82rem;
-  color: var(--muted);
-  border-bottom: 1px solid var(--border);
-  transition: color .1s;
-}
-.sidebar-nav a:last-child { border-bottom: none; }
-.sidebar-nav a:hover { color: var(--text); text-decoration: none; }
-.sidebar-nav a span { font-size: 0.75rem; color: var(--border2); }
-
-.sidebar-note {
-  font-size: 0.78rem;
-  color: var(--muted);
-  line-height: 1.55;
-}
-.sidebar-note strong { color: var(--text); font-weight: 600; }
-
-/* -- Main content -- */
-
-.content { min-width: 0; }
-
 .page-header {
   padding-bottom: 20px;
   margin-bottom: 20px;
@@ -189,6 +95,114 @@
   font-size: 0.88rem;
   color: var(--muted);
   line-height: 1.5;
+}
+
+.search-summary {
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.search-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.search-group {
+  border: 1px solid var(--border);
+  background: var(--s1);
+}
+
+.search-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--s2);
+  border-bottom: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+}
+
+.search-group-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.search-group-count {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+
+.search-group-empty {
+  padding: 14px 16px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.search-result-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-result-card {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  color: inherit;
+}
+
+.search-result-card:last-child {
+  border-bottom: none;
+}
+
+.search-result-card:hover {
+  background: var(--s2);
+  text-decoration: none;
+}
+
+.search-result-card img {
+  width: 120px;
+  height: 45px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.search-result-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-result-main-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--strong);
+  margin-bottom: 4px;
+}
+
+.search-result-main-meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.search-result-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  min-width: 90px;
 }
 
 /* game page */
@@ -536,12 +550,9 @@ a.card:hover { text-decoration: none; }
 
 /* responsive */
 @media (max-width: 980px) {
-  .app-shell { grid-template-columns: 1fr; }
-  .sidebar { position: static; }
   .page-title { font-size: 1.5rem; }
 }
 @media (max-width: 640px) {
-  .app-shell { width: calc(100vw - 16px); margin: 12px auto 48px; }
   .game-header { flex-direction: column; }
   .game-header img { height: auto; width: 100%; max-width: 240px; }
   .card { flex-direction: column; }
@@ -553,68 +564,74 @@ a.card:hover { text-decoration: none; }
   .hub-link { font-size: 0.72rem; padding: 4px 8px; }
   .config-row { flex-direction: column; gap: 2px; }
   .config-lbl { width: auto; }
+  .search-result-card { flex-direction: column; }
+  .search-result-side { align-items: flex-start; min-width: 0; }
 }
 </style>
 </head>
 <body>
 
-<nav class="topnav">
-  <button class="topnav-toggle" aria-label="Toggle navigation" onclick="document.getElementById('topnav-links').classList.toggle('open');document.getElementById('nav-overlay').classList.toggle('open')">&#9776;</button>
-  <a class="topnav-brand" href="index.html">
+<header class="topbar">
+  <button class="topbar-toggle" id="sidebar-toggle" aria-label="Toggle menu"><span class="hamburger"></span></button>
+  <a class="topbar-brand" href="index.html">
     <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">
-    <span class="topnav-brand-text">Proton Pulse</span>
+    Proton Pulse
   </a>
-  <div class="topnav-links" id="topnav-links">
-    <a href="index.html">Home</a>
-    <a href="app.html" class="active">Game Search</a>
-    <a href="data-index.html">Data Index</a>
-    <a href="coverage.html">Coverage</a>
-    <a href="https://github.com/mdeguzis/decky-proton-pulse">Decky Plugin</a>
-    <a href="https://github.com/mdeguzis/proton-pulse-data">GitHub</a>
+  <div class="topbar-spacer"></div>
+  <a class="topbar-link topbar-desktop-only" href="https://github.com/mdeguzis/proton-pulse-data" target="_blank" rel="noopener">GitHub</a>
+</header>
+
+<nav class="sidebar-nav" id="sidebar">
+  <div class="sidebar-brand-block">
+    <div class="sidebar-brand-icon">
+      <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">
+    </div>
+    <div class="sidebar-brand-copy">
+      <h2>Proton Pulse</h2>
+      <p>Community compatibility browser</p>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Search</div>
+    <div class="search-wrap">
+      <input id="search" type="text" placeholder="Game name or app ID..." autocomplete="off">
+      <div id="search-results" class="search-results"></div>
+      <div style="font-size:0.68rem;color:var(--muted);margin-top:4px">Press Enter to search</div>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Navigate</div>
+    <div class="sidebar-links">
+      <a href="index.html"><span class="nav-icon">/</span> Home</a>
+      <a href="app.html" class="active"><span class="nav-icon">S</span> Game Search</a>
+      <a href="data-index.html"><span class="nav-icon">D</span> Data Index</a>
+      <a href="coverage.html"><span class="nav-icon">C</span> Coverage</a>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">External</div>
+    <div class="sidebar-links">
+      <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><span class="nav-icon">P</span> Decky Plugin</a>
+      <a href="https://github.com/mdeguzis/proton-pulse-data" target="_blank" rel="noopener"><span class="nav-icon">G</span> GitHub</a>
+      <a href="https://www.protondb.com/" target="_blank" rel="noopener"><span class="nav-icon">W</span> ProtonDB</a>
+    </div>
+  </div>
+
+  <div class="sidebar-section" style="margin-top:auto">
+    <div class="sidebar-label">About</div>
+    <p class="sidebar-note">
+      Browse merged <strong>ProtonDB</strong> reports and <strong>Proton Pulse</strong> user configs in one place, with live voting data from Supabase.
+    </p>
   </div>
 </nav>
-<div id="nav-overlay" class="nav-overlay" onclick="document.getElementById('topnav-links').classList.remove('open');this.classList.remove('open')"></div>
 
-<div class="app-shell">
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
 
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <div class="sidebar-brand-img">
-        <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">
-      </div>
-      <div class="sidebar-brand-copy">
-        <h2>Game Search</h2>
-        <p>Community reports, user configs, and live votes.</p>
-      </div>
-    </div>
-
-    <div class="sidebar-block">
-      <h3>Search</h3>
-      <div class="search-wrap">
-        <input id="search" type="text" placeholder="Game name or app ID..." autocomplete="off">
-        <div id="search-results" class="search-results"></div>
-      </div>
-    </div>
-
-    <div class="sidebar-block sidebar-nav-block">
-      <h3>Navigate</h3>
-      <nav class="sidebar-nav">
-        <a href="index.html">Home <span>></span></a>
-        <a href="data-index.html">Data Index <span>></span></a>
-        <a href="coverage.html">Coverage Report <span>></span></a>
-        <a href="https://github.com/mdeguzis/decky-proton-pulse">Decky Plugin <span>></span></a>
-      </nav>
-    </div>
-
-    <div class="sidebar-block sidebar-about-block">
-      <h3>About</h3>
-      <p class="sidebar-note">
-        Merges the static ProtonDB mirror with <strong>Proton Pulse</strong> user configs and live voting data from Supabase.
-      </p>
-    </div>
-  </aside>
-
-  <main class="content">
+<div class="main-content">
+  <div class="main-inner">
     <div class="page-header">
       <div class="eyebrow">Community Compatibility Browser</div>
       <div class="page-title">Game Reports</div>
@@ -623,15 +640,14 @@ a.card:hover { text-decoration: none; }
     <div id="content">
       <div class="state-box">Search for a game or navigate to <code>#/app/{appId}</code></div>
     </div>
-  </main>
+  </div>
 
-</div>
-
-<footer class="sitefooter" style="max-width: calc(1380px + 32px); margin: 0 auto;">
+  <footer class="sitefooter">
   Built on <a href="https://www.protondb.com/" target="_blank" rel="noopener">ProtonDB</a> community data |
   <a href="https://github.com/mdeguzis/proton-pulse-data" target="_blank" rel="noopener">GitHub</a> |
   Updated daily via GitHub Actions
 </footer>
+</div>
 
 <script>
 const CDN    = 'https://mdeguzis.github.io/proton-pulse-data/data';
@@ -653,15 +669,24 @@ const RATING_TEXT = {
 function getRoute() {
   const h = location.hash.replace(/^#\/?/, '');
   const m = h.match(/^app\/(\d+)/);
-  return m ? { page: 'app', appId: m[1] } : { page: 'home' };
+  const q = new URLSearchParams(location.search).get('q')?.trim() || '';
+  if (m) return { page: 'app', appId: m[1], query: q };
+  if (q) return { page: 'search', query: q };
+  return { page: 'home', query: '' };
 }
 
 window.addEventListener('hashchange', () => route());
+window.addEventListener('popstate', () => route());
 route();
 
 async function route() {
   const r = getRoute();
+  const routeSearchInput = document.getElementById('search');
+  if (routeSearchInput) {
+    routeSearchInput.value = r.page === 'search' ? r.query : '';
+  }
   if (r.page === 'app') await renderGamePage(r.appId);
+  else if (r.page === 'search') await renderSearchPage(r.query);
   else await renderHomePage();
 }
 
@@ -711,6 +736,50 @@ async function renderHomePage() {
       </div>`;
   } catch {
     el.innerHTML = '<div class="state-box">Search for a game above or navigate to <code>#/app/{appId}</code></div>';
+  }
+}
+
+function latestPerApp(rows) {
+  const seen = new Map();
+  for (const row of rows) {
+    const key = String(row.app_id || row.appId || '');
+    if (!key) continue;
+    const existing = seen.get(key);
+    if (!existing || row.updated_at > existing.updated_at) seen.set(key, row);
+  }
+  return [...seen.values()];
+}
+
+async function fetchMatchingPulseConfigs(query) {
+  const q = query.trim();
+  if (!q) return [];
+  try {
+    const url = new URL(`${SB_URL}/user_proton_configs`);
+    url.searchParams.set('select', 'voter_id,app_id,app_name,config,updated_at');
+    url.searchParams.set('order', 'updated_at.desc');
+    url.searchParams.set('limit', '60');
+    if (/^\d+$/.test(q)) {
+      url.searchParams.set('or', `(app_id.eq.${q},app_name.ilike.*${q}*)`);
+    } else {
+      url.searchParams.set('app_name', `ilike.*${q}*`);
+    }
+    const r = await fetch(url.toString(), {
+      headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` },
+    });
+    if (!r.ok) return [];
+    return latestPerApp(await r.json()).map((row) => {
+      const cfg = row.config || {};
+      return {
+        appId: row.app_id,
+        appName: row.app_name || cfg.appName || `App ${row.app_id}`,
+        profileName: cfg.profileName || 'Unnamed Config',
+        protonVersion: cfg.protonVersion || '',
+        updatedAt: row.updated_at,
+        source: cfg.source || 'proton-pulse',
+      };
+    });
+  } catch {
+    return [];
   }
 }
 
@@ -844,11 +913,92 @@ function truncate(s, n) { return s && s.length > n ? s.slice(0, n) + '...' : s; 
 
 function esc(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
 
+function searchIndexMatches(query, limit) {
+  const q = query.trim();
+  const ql = q.toLowerCase();
+  const isNum = /^\d+$/.test(q);
+  return (searchIndex || []).filter(([id, title]) =>
+    isNum ? String(id).startsWith(q) : (String(title).toLowerCase().includes(ql) || String(id).startsWith(q))
+  ).slice(0, limit);
+}
+
 function estimateScore(r) {
   const base = { platinum: 60, gold: 48, silver: 36, bronze: 24, borked: 0 }[r.rating] || 30;
   const days = Math.round((Date.now() / 1000 - r.timestamp) / 86400);
   const recency = days < 90 ? 15 : days < 365 ? 5 : -5;
   return Math.max(0, base + recency);
+}
+
+function renderPulseSearchResult(row) {
+  const age = daysAgo(Math.floor(new Date(row.updatedAt).getTime() / 1000));
+  return `
+    <a class="search-result-card" href="#/app/${row.appId}">
+      <img src="${STEAM_IMG(row.appId)}" onerror="this.style.display='none'" alt="">
+      <div class="search-result-main">
+        <div class="search-result-main-title">${esc(row.appName)}</div>
+        <div class="search-result-main-meta">
+          Latest config: ${esc(row.profileName)}${row.protonVersion ? ` · ${esc(row.protonVersion)}` : ''}<br>
+          Updated ${age}
+        </div>
+      </div>
+      <div class="search-result-side">
+        <span class="source-badge"><img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse</span>
+      </div>
+    </a>`;
+}
+
+function renderIndexSearchResult([appId, title]) {
+  return `
+    <a class="search-result-card" href="#/app/${appId}">
+      <img src="${STEAM_IMG(appId)}" onerror="this.style.display='none'" alt="">
+      <div class="search-result-main">
+        <div class="search-result-main-title">${esc(title)}</div>
+        <div class="search-result-main-meta">
+          Static ProtonDB mirror data indexed for app ${esc(appId)}.
+        </div>
+      </div>
+      <div class="search-result-side">
+        <span class="badge badge-reports">Index</span>
+      </div>
+    </a>`;
+}
+
+async function renderSearchPage(query) {
+  const el = document.getElementById('content');
+  const q = query.trim();
+  el.innerHTML = '<div class="state-box">Searching Proton Pulse and index data...</div>';
+  await loadSearchIndex();
+  const [pulseResults] = await Promise.all([
+    fetchMatchingPulseConfigs(q),
+  ]);
+  const indexResults = searchIndexMatches(q, 24);
+  const total = pulseResults.length + indexResults.length;
+
+  el.innerHTML = `
+    <div class="search-summary">
+      Search results for <strong>${esc(q)}</strong> · ${total} grouped hit${total === 1 ? '' : 's'}
+    </div>
+    <div class="search-groups">
+      <section class="search-group">
+        <div class="search-group-head">
+          <span class="search-group-title">User Configs</span>
+          <span class="search-group-count">${pulseResults.length} app${pulseResults.length === 1 ? '' : 's'}</span>
+        </div>
+        ${pulseResults.length
+          ? `<div class="search-result-list">${pulseResults.map(renderPulseSearchResult).join('')}</div>`
+          : '<div class="search-group-empty">No Proton Pulse user configs matched this query.</div>'}
+      </section>
+
+      <section class="search-group">
+        <div class="search-group-head">
+          <span class="search-group-title">Index Data Hits</span>
+          <span class="search-group-count">${indexResults.length} app${indexResults.length === 1 ? '' : 's'}</span>
+        </div>
+        ${indexResults.length
+          ? `<div class="search-result-list">${indexResults.map(renderIndexSearchResult).join('')}</div>`
+          : '<div class="search-group-empty">No static index entries matched this query.</div>'}
+      </section>
+    </div>`;
 }
 
 // -- Render: Proton Pulse Configs section ------------
@@ -1186,6 +1336,13 @@ function closeSearch() {
   searchFocusIdx = -1;
 }
 
+function positionSearchResults() {
+  const rect = searchInput.getBoundingClientRect();
+  searchResults.style.top = `${Math.round(rect.bottom + 4)}px`;
+  searchResults.style.left = `${Math.round(rect.left)}px`;
+  searchResults.style.width = `${Math.round(rect.width)}px`;
+}
+
 function renderSearchResults(q) {
   const items = searchResults.querySelectorAll('a.search-item');
   searchFocusIdx = Math.max(-1, Math.min(searchFocusIdx, items.length - 1));
@@ -1196,18 +1353,14 @@ async function onSearchInput() {
   const q = searchInput.value.trim();
   if (!q) { closeSearch(); return; }
   await loadSearchIndex();
-
-  const ql = q.toLowerCase();
-  const isNum = /^\d+$/.test(q);
+  positionSearchResults();
   const MAX = 8;
 
   // Filter: numeric queries match only on app ID prefix; text matches title or ID
-  const matches = (searchIndex || []).filter(([id, title]) =>
-    isNum ? id.startsWith(q) : (title.toLowerCase().includes(ql) || id.startsWith(q))
-  ).slice(0, MAX);
+  const matches = searchIndexMatches(q, MAX);
 
   if (!matches.length) {
-    searchResults.innerHTML = `<div class="search-no-results">No indexed results — <a href="data-index.html?q=${encodeURIComponent(q)}" style="color:var(--accent)">search coverage report</a></div>`;
+    searchResults.innerHTML = `<div class="search-no-results">No quick matches — press Enter to open grouped search results.</div>`;
     searchResults.classList.add('open');
     searchFocusIdx = -1;
     return;
@@ -1227,7 +1380,7 @@ async function onSearchInput() {
     </a>`;
   }).join('');
 
-  const footer = `<a class="search-footer" href="data-index.html?q=${encodeURIComponent(q)}">View all results in data index →</a>`;
+  const footer = `<a class="search-footer" href="app.html?q=${encodeURIComponent(q)}">Open grouped search results →</a>`;
   searchResults.innerHTML = rows + footer;
   searchResults.classList.add('open');
   searchFocusIdx = -1;
@@ -1265,7 +1418,7 @@ searchInput.addEventListener('keydown', e => {
     if (/^\d+$/.test(q)) {
       location.hash = '#/app/' + q;
     } else {
-      window.location.href = 'data-index.html?q=' + encodeURIComponent(q);
+      window.location.href = 'app.html?q=' + encodeURIComponent(q);
     }
   }
 });
@@ -1274,6 +1427,31 @@ searchInput.addEventListener('keydown', e => {
 document.addEventListener('click', e => {
   if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) closeSearch();
 });
+
+window.addEventListener('resize', () => {
+  if (searchResults.classList.contains('open')) positionSearchResults();
+});
+
+(function(){
+  var toggle  = document.getElementById('sidebar-toggle');
+  var sidebar = document.getElementById('sidebar');
+  var overlay = document.getElementById('sidebar-overlay');
+
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('open');
+  }
+
+  toggle.addEventListener('click', function() {
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('open');
+  });
+
+  overlay.addEventListener('click', closeSidebar);
+  sidebar.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', closeSidebar);
+  });
+})();
 </script>
 </body>
 </html>
