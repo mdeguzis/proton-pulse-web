@@ -618,10 +618,10 @@ async function renderHomePage() {
   el.innerHTML = '<div class="state-box">Loading Proton Pulse configs...</div>';
   try {
     const r = await fetch(
-      `${SB_URL}/user_proton_configs?select=app_id,app_name,config,updated_at&order=updated_at.desc`,
+      `${SB_URL}/user_proton_configs?select=voter_id,app_id,app_name,config,updated_at&order=updated_at.desc`,
       { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
     );
-    const rows = r.ok ? await r.json() : [];
+    const rows = r.ok ? latestPerClient(await r.json()) : [];
     if (!rows.length) {
       el.innerHTML = `
         <div class="state-box">
@@ -672,16 +672,27 @@ async function fetchCdn(appId) {
   } catch { return []; }
 }
 
+/** Deduplicate rows by voter_id, keeping only the most recent per unique client. */
+function latestPerClient(rows) {
+  const seen = new Map();
+  for (const row of rows) {
+    const key = row.voter_id || row.config?.clientId || Math.random();
+    const existing = seen.get(key);
+    if (!existing || row.updated_at > existing.updated_at) seen.set(key, row);
+  }
+  return [...seen.values()];
+}
+
 async function fetchSupabase(appId) {
   try {
     const r = await fetch(
-      `${SB_URL}/user_proton_configs?app_id=eq.${appId}&select=app_id,app_name,config,updated_at`,
+      `${SB_URL}/user_proton_configs?app_id=eq.${appId}&select=voter_id,app_id,app_name,config,updated_at&order=updated_at.desc`,
       { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
     );
-    if (!r.ok) return { reports: [], configs: [] };
-    const rows = await r.json();
+    if (!r.ok) return [];
+    const rows = latestPerClient(await r.json());
 
-    const configs = rows.map(row => {
+    return rows.map(row => {
       const cfg = row.config || {};
       return {
         profileName:   cfg.profileName   || 'Unnamed Config',
@@ -693,24 +704,7 @@ async function fetchSupabase(appId) {
         source:        cfg.source || 'proton-pulse',
       };
     });
-
-    const reports = rows.map(row => {
-      const cfg = row.config || {};
-      return {
-        appId:         row.app_id,
-        title:         row.app_name || cfg.appName || `App ${row.app_id}`,
-        protonVersion: cfg.protonVersion || '',
-        launchOptions: cfg.launchOptions || '',
-        notes:         cfg.profileName ? `Proton Pulse config: ${cfg.profileName}` : 'Proton Pulse config',
-        timestamp:     Math.floor(new Date(row.updated_at).getTime() / 1000),
-        rating:        cfg.protonVersion ? 'gold' : 'silver',
-        source:        'proton-pulse',
-        enabledVars:   cfg.enabledVars || {},
-      };
-    });
-
-    return { reports, configs };
-  } catch { return { reports: [], configs: [] }; }
+  } catch { return []; }
 }
 
 async function fetchVotes(appId) {
@@ -735,13 +729,6 @@ function reportKey(r) {
   return `${r.timestamp}:${(r.gpu||'').slice(0,20)}:${(r.protonVersion||'').slice(0,15)}`;
 }
 
-function mergeReports(cdn, sbReports) {
-  const seen = new Set();
-  const all = [];
-  for (const r of sbReports) { const k = reportKey(r); seen.add(k); all.push(r); }
-  for (const r of cdn) { const k = reportKey(r); if (!seen.has(k)) all.push({ ...r, source: 'protondb' }); }
-  return all;
-}
 
 function tierFromReports(reports) {
   const order = ['platinum','gold','silver','bronze','borked'];
@@ -878,21 +865,20 @@ async function renderGamePage(appId) {
   const el = document.getElementById('content');
   el.innerHTML = '<div class="state-box">Loading reports...</div>';
 
-  const [cdn, sbData, votes] = await Promise.all([
+  const [cdn, configs, votes] = await Promise.all([
     fetchCdn(appId),
     fetchSupabase(appId),
     fetchVotes(appId)
   ]);
 
-  const { reports: sbReports, configs } = sbData;
-  const reports = mergeReports(cdn, sbReports);
+  const reports = cdn.map(r => ({ ...r, source: 'protondb' }));
 
   if (!reports.length && !configs.length) {
     el.innerHTML = `<div class="state-box">No reports found for app ${appId}</div>`;
     return;
   }
 
-  const title = (reports[0] || configs[0])?.title || (configs[0]?.appName) || `App ${appId}`;
+  const title = reports[0]?.title || configs[0]?.appName || `App ${appId}`;
   const tier  = tierFromReports(reports);
   document.title = `${title} - Proton Pulse`;
 
