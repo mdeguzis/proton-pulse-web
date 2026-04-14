@@ -17,7 +17,7 @@ from .catalog import (
     read_protondb_probe_cache,
     write_protondb_probe_cache,
 )
-from .common import LIVE_COUNTS_URL, count_year_bucket_files, fetch_json, log
+from .common import LIVE_COUNTS_URL, count_year_bucket_files, fetch_json, flush_steam_title_cache, log
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
 from .state import read_pipeline_state
 
@@ -868,4 +868,5 @@ def finalize_output(output_dir, skip_probe: bool = False):
         protondb_counts=protondb_counts,
     )
     log_summary(state["parsed_count"], data_output_path, output_path, pipeline_start, state["backfilled_keys"])
+    flush_steam_title_cache()
     log("Done finalizing output.")

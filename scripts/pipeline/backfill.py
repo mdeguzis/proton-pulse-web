@@ -23,6 +23,7 @@ from .common import (
     LIVE_REPORTS_URL,
     fetch_json,
     fetch_steam_title_with_source,
+    flush_steam_title_cache,
     infer_duration,
     log,
     normalize_whitespace,
@@ -661,6 +662,7 @@ def run_probe_backfill(output_dir):
             f"[probe-backfill] Updated pipeline state with {len(backfilled_keys):,} new keys"
         )
 
+    flush_steam_title_cache()
     log("Done backfilling probe discoveries.")
 
 
@@ -692,6 +694,7 @@ def run_backfill(
     log(
         f"[state] Updated pipeline state after backfill: {pipeline_state_path(output_path)}"
     )
+    flush_steam_title_cache()
     log("Done backfilling missing apps.")
 
 
