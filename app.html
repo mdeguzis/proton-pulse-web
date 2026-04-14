@@ -74,7 +74,14 @@ code {
   background: linear-gradient(145deg, rgba(33, 55, 87, 0.95), rgba(11, 22, 39, 0.98));
   border: 1px solid rgba(120, 199, 255, 0.18);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
-  font-size: 1.5rem;
+  overflow: hidden;
+}
+.brand-badge img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 14px rgba(120, 199, 255, 0.28));
 }
 .brand-copy h1 {
   font-size: 1.5rem;
@@ -303,6 +310,19 @@ code {
   color: var(--link);
   border: 1px solid rgba(124,199,255,.25);
 }
+.source-badge.pulse {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(120, 199, 255, 0.10);
+  color: #dff1ff;
+}
+.source-badge.pulse img {
+  width: 11px;
+  height: 11px;
+  object-fit: contain;
+  display: block;
+}
 
 .detail {
   display: none;
@@ -407,7 +427,9 @@ code {
 <div class="app-shell">
   <aside class="sidebar">
     <div class="brand">
-      <div class="brand-badge">⚡</div>
+      <div class="brand-badge">
+        <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="Proton Pulse logo">
+      </div>
       <div class="brand-copy">
         <h1>Proton Pulse</h1>
         <p>User-submitted compatibility reports, live votes, and merged ProtonDB data.</p>
@@ -489,35 +511,43 @@ async function fetchCdn(appId) {
 
 async function fetchSupabase(appId) {
   try {
-    const r = await fetch(`${SB_URL}/user_configs?app_id=eq.${appId}&select=*`, {
+    const r = await fetch(`${SB_URL}/user_proton_configs?app_id=eq.${appId}&select=app_id,app_name,config,updated_at`, {
       headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` }
     });
     if (!r.ok) return [];
-    return (await r.json()).map(c => ({
-      appId: c.app_id, cpu: c.cpu, gpu: c.gpu, gpuDriver: c.gpu_driver,
-      os: c.os, kernel: c.kernel, protonVersion: c.proton_version,
-      ram: c.ram, rating: c.rating, notes: c.notes || '',
-      timestamp: Math.floor(new Date(c.created_at).getTime() / 1000),
-      duration: c.duration, title: c.title, launchOptions: c.launch_options,
-      source: 'proton-pulse',
-      vramMb: c.vram_mb, cpuCores: c.cpu_cores,
-      displayResolution: c.display_resolution, steamDeckModel: c.steam_deck_model,
-    }));
+    return (await r.json()).map(row => {
+      const config = row.config || {};
+      const protonVersion = config.protonVersion || '';
+      const launchOptions = config.launchOptions || '';
+      const enabledVars = config.enabledVars || {};
+      return {
+        appId: row.app_id,
+        title: row.app_name || config.appName || `App ${row.app_id}`,
+        protonVersion,
+        launchOptions,
+        notes: config.profileName ? `Saved Proton Pulse config: ${config.profileName}` : 'Saved Proton Pulse config',
+        timestamp: Math.floor(new Date(row.updated_at).getTime() / 1000),
+        rating: protonVersion ? 'gold' : 'silver',
+        source: config.source || 'proton-pulse',
+        enabledVars,
+      };
+    });
   } catch { return []; }
 }
 
 async function fetchVotes(appId) {
   try {
-    const r = await fetch(`${SB_URL}/votes?app_id=eq.${appId}&select=report_key,vote`, {
+    const r = await fetch(`${SB_URL}/report_vote_totals?app_id=eq.${appId}&select=report_key,upvotes,downvotes`, {
       headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` }
     });
     if (!r.ok) return {};
     const rows = await r.json();
     const totals = {};
     for (const v of rows) {
-      if (!totals[v.report_key]) totals[v.report_key] = { up: 0, down: 0 };
-      if (v.vote > 0) totals[v.report_key].up++;
-      else totals[v.report_key].down++;
+      totals[v.report_key] = {
+        up: Number(v.upvotes || 0),
+        down: Number(v.downvotes || 0),
+      };
     }
     return totals;
   } catch { return {}; }
@@ -562,6 +592,7 @@ async function renderGamePage(appId) {
 
   const [cdn, sb, votes] = await Promise.all([fetchCdn(appId), fetchSupabase(appId), fetchVotes(appId)]);
   const reports = mergeReports(cdn, sb);
+  const pulseReports = reports.filter(r => r.source === 'proton-pulse' || r.source === 'user').length;
 
   if (!reports.length) {
     el.innerHTML = `<div class="empty">No reports found for app ${appId}</div>`;
@@ -631,7 +662,7 @@ async function renderGamePage(appId) {
         <img src="${STEAM_IMG(appId)}" onerror="this.style.display='none'">
         <div class="info">
           <div class="title">${esc(title)}</div>
-          <div class="meta">App ${appId} · ${reports.length} report${reports.length !== 1 ? 's' : ''}</div>
+          <div class="meta">App ${appId} · ${reports.length} report${reports.length !== 1 ? 's' : ''} · ${pulseReports} Proton Pulse config${pulseReports !== 1 ? 's' : ''}</div>
         </div>
         <span class="tier-badge" style="background:${RATING_COLORS[tier]}">${tier}</span>
       </div>
@@ -693,7 +724,7 @@ function renderCard(r, i, votes) {
       </div>
       <div class="right">
         <span class="rating" style="background:${RATING_COLORS[r.rating]||'#888'}">${r.rating||'?'}</span>
-        ${isPP ? '<span class="source-badge">Pulse</span>' : ''}
+        ${isPP ? '<span class="source-badge pulse"><img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse</span>' : ''}
         <span class="score" style="color:${confColor(parseFloat(score))}">${score}/10</span>
         <span style="font-size:10px;color:var(--muted)">▲${v.up} ▼${v.down}</span>
       </div>

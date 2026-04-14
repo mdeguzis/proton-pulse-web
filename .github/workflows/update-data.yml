@@ -28,11 +28,6 @@ on:
         description: "Max matching apps to process for coverage-backfill. Use 0 for no limit."
         required: false
         default: "0"
-      coverage_backfill_allow_unbounded:
-        description: "Deprecated compatibility toggle. Coverage backfill is unbounded by default when limit is 0."
-        required: false
-        default: false
-        type: boolean
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
