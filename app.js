@@ -761,22 +761,15 @@ async function renderGamePage(appId) {
     if (/\bintel\b|iris|arc\b/.test(l)) return 'intel';
     return '';
   };
-  const osFamily = o => {
+  const osBase = o => {
     if (!o) return '';
-    const l = o.toLowerCase();
-    if (/steamos|holoisos/.test(l)) return 'steamos';
-    if (/arch|cachyos|manjaro|garuda|endeavour/.test(l)) return 'arch';
-    if (/fedora|bazzite|nobara/.test(l)) return 'fedora';
-    if (/ubuntu|pop|mint|elementary/.test(l)) return 'ubuntu';
-    if (/debian/.test(l)) return 'debian';
-    if (/nixos/.test(l)) return 'nixos';
-    return '';
+    return o.trim().split(/\s+/)[0];
   };
 
   const filtered = () => {
     let arr = [...reports];
     if (filterGpu)    arr = arr.filter(r => gpuVendor(r.gpu) === filterGpu);
-    if (filterOs)     arr = arr.filter(r => osFamily(r.os) === filterOs);
+    if (filterOs)     arr = arr.filter(r => osBase(r.os) === filterOs);
     if (filterRating) arr = arr.filter(r => r.rating === filterRating);
     if (filterSource) arr = arr.filter(r => (r.source || 'protondb') === filterSource);
     return arr;
@@ -887,8 +880,7 @@ async function renderGamePage(appId) {
           const RATING_ORDER = ['platinum','gold','silver','bronze','borked'];
 
           const availGpus    = [...new Set(reports.map(r => gpuVendor(r.gpu)).filter(Boolean))];
-          const OS_LABEL  = { steamos: 'SteamOS', arch: 'Arch', fedora: 'Fedora', ubuntu: 'Ubuntu', debian: 'Debian', nixos: 'NixOS' };
-          const availOs      = [...new Set(reports.map(r => osFamily(r.os)).filter(Boolean))].sort();
+          const availOs      = [...new Set(reports.map(r => osBase(r.os)).filter(Boolean))].sort();
           const availRatings = RATING_ORDER.filter(rt => reports.some(r => r.rating === rt));
           const availSrcs    = [...new Set(reports.map(r => r.source || 'protondb').filter(Boolean))];
 
@@ -902,7 +894,7 @@ async function renderGamePage(appId) {
             <label>OS</label>
             <select id="fOs">
               <option value="">Any</option>
-              ${availOs.map(v => `<option value="${esc(v)}" ${filterOs===v?'selected':''}>${OS_LABEL[v]||esc(v)}</option>`).join('')}
+              ${availOs.map(v => `<option value="${esc(v)}" ${filterOs===v?'selected':''}>${esc(v)}</option>`).join('')}
             </select>` : '';
           const ratingSel = availRatings.length > 0 ? `
             <label>Rating</label>
