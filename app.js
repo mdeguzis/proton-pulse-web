@@ -115,7 +115,7 @@ async function populateSubmitForm(el) {
   const opts = (arr, cap) => arr.map(v => `<option value="${esc(v)}">${cap ? v[0].toUpperCase()+v.slice(1) : esc(v)}</option>`).join('');
   container.innerHTML = `
     <h3 style="margin:0 0 12px">Submit a Pulse Report</h3>
-    <form id="submit-report-form" autocomplete="off">
+    <form id="submit-report-form" autocomplete="on">
       <div class="sf-row"><label>Rating *</label><select name="rating" required>${opts(ratings,true)}</select></div>
       <div class="sf-row"><label>Proton Version *</label>
         <input name="protonVersion" list="proton-versions" required placeholder="e.g. Proton 9.0-4 or GE-Proton9-7">
