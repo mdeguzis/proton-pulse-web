@@ -218,6 +218,7 @@
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 .game-header img {
   height: 64px;
@@ -246,6 +247,30 @@
   flex-shrink: 0;
   margin-top: 2px;
 }
+.info-btn {
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  font-size: 0.68rem;
+  padding: 2px 6px;
+  cursor: pointer;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.info-btn:hover { color: var(--accent); border-color: var(--accent); }
+.info-tooltip {
+  display: none;
+  background: var(--s2);
+  border: 1px solid var(--border2);
+  padding: 14px 16px;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--text);
+  margin-top: 10px;
+  width: 100%;
+}
+.info-tooltip.open { display: block; }
 
 /* hub links */
 .hub-links {
@@ -377,7 +402,22 @@
   color: var(--muted);
   border-top: 1px solid var(--border);
   padding-top: 7px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
+.cfg-dl-btn {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  font-size: 0.66rem;
+  padding: 2px 7px;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-weight: 600;
+}
+.cfg-dl-btn:hover { color: var(--accent); border-color: var(--accent); }
 
 /* -- Reports section -- */
 
@@ -538,15 +578,16 @@ a.card:hover { text-decoration: none; }
 .card-summary .notes-full { margin-top: 10px; white-space: pre-wrap; line-height: 1.5; color: #a0b4c4; }
 .all-details-btn {
   margin-top: 8px;
-  background: none;
-  border: 1px solid var(--border2);
-  color: var(--muted);
+  background: var(--s1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
   font-size: 0.72rem;
-  padding: 3px 10px;
+  padding: 4px 12px;
   cursor: pointer;
   border-radius: 3px;
+  font-weight: 600;
 }
-.all-details-btn:hover { color: var(--text); border-color: var(--accent); }
+.all-details-btn:hover { background: rgba(74,159,208,0.12); color: var(--text); }
 .all-details-panel { display: none; margin-top: 6px; }
 .all-details-panel.open { display: block; }
 

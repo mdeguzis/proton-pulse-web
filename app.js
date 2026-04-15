@@ -71,17 +71,18 @@ async function renderHomePage() {
         ${rows.map(row => {
           const cfg = row.config || {};
           const name = row.app_name || cfg.appName || `App ${row.app_id}`;
-          const proton = cfg.protonVersion || '-';
+          const proton = cfg.protonVersion || '';
           const profile = cfg.profileName || '';
           const d = Math.round((Date.now() / 1000 - new Date(row.updated_at).getTime() / 1000) / 86400);
           const age = d < 1 ? 'today' : d === 1 ? '1 day ago' : `${d} days ago`;
+          const hwParts = [proton, profile].filter(Boolean);
           return `
             <a class="card" href="#/app/${row.app_id}" style="text-decoration:none">
               <img src="${STEAM_IMG(row.app_id)}" onerror="this.style.display='none'" alt=""
                    style="width:108px;height:40px;object-fit:cover;flex-shrink:0;border:1px solid var(--border)">
               <div class="left">
                 <div class="proton">${esc(name)}</div>
-                <div class="hw">${esc(proton)}${profile ? ' | ' + esc(profile) : ''}</div>
+                <div class="hw">${hwParts.length ? hwParts.map(esc).join(' | ') : ''}</div>
                 <div class="age">${age}</div>
               </div>
               <div class="right">
@@ -183,6 +184,7 @@ async function fetchSupabase(appId) {
     return rows.map(row => {
       const cfg = row.config || {};
       return {
+        clientId:      row.voter_id || cfg.clientId || '',
         profileName:   cfg.profileName   || 'Unnamed Config',
         protonVersion: cfg.protonVersion || '',
         launchOptions: cfg.launchOptions || '',
@@ -274,6 +276,11 @@ function tierFromReports(reports) {
 function daysAgo(ts) {
   const d = Math.round((Date.now() / 1000 - ts) / 86400);
   return d < 1 ? 'today' : d === 1 ? '1 day ago' : `${d} days ago`;
+}
+
+function utcStamp(ts) {
+  const d = new Date(ts * 1000);
+  return d.toISOString().replace('T', ' ').replace(/\.\d+Z$/, ' UTC');
 }
 
 function confColor(s) {
@@ -384,7 +391,16 @@ async function renderSearchPage(query) {
 const NA_SPAN = '<span style="color:#4a5f70;font-style:italic">Not available</span>';
 function cfgNa(s) { return s || NA_SPAN; }
 
-function renderConfigCard(c) {
+function downloadConfigJson(c) {
+  const blob = new Blob([JSON.stringify(c, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `pulse-config-${c.profileName || 'unnamed'}.json`.replace(/[^a-zA-Z0-9._-]/g, '_');
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function renderConfigCard(c, idx) {
   const vars = Object.entries(c.enabledVars || {}).filter(([, v]) => v);
   const isProtonDb = (c.source || '').toLowerCase() === 'protondb';
   const sourceLabel = isProtonDb ? 'ProtonDB' : 'Proton Pulse';
@@ -396,6 +412,7 @@ function renderConfigCard(c) {
           <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse
         </span>
       </div>
+      ${c.clientId ? `<div class="config-row"><span class="config-lbl">Client ID</span><span class="config-val">${esc(c.clientId)}</span></div>` : ''}
       <div class="config-row">
         <span class="config-lbl">Proton</span>
         <span class="config-val">${cfgNa(esc(c.protonVersion))}</span>
@@ -418,7 +435,10 @@ function renderConfigCard(c) {
         <div class="config-row"><span class="config-lbl">OS</span><span>${cfgNa(esc(c.os))}</span></div>
         <div class="config-row"><span class="config-lbl">Kernel</span><span>${cfgNa(esc(c.kernel))}</span></div>
       </div>
-      <div class="config-meta">Updated ${daysAgo(c.timestamp)} | Source: ${sourceLabel}</div>
+      <div class="config-meta">
+        ${utcStamp(c.timestamp)} | Source: ${sourceLabel}
+        <button class="cfg-dl-btn" data-cfg-idx="${idx}" title="Download as JSON">JSON</button>
+      </div>
     </div>`;
 }
 
@@ -431,7 +451,7 @@ function renderConfigsSection(configs) {
         <span class="configs-section-count">${configs.length} saved</span>
       </div>
       <div class="configs-list">
-        ${configs.map(renderConfigCard).join('')}
+        ${configs.map((c, i) => renderConfigCard(c, i)).join('')}
       </div>
     </div>`;
 }
@@ -489,7 +509,7 @@ function renderCard(r, votes) {
       <div class="row"><span class="label">OS</span><span>${na(esc(r.os))}</span></div>
       <div class="row"><span class="label">Proton</span><span>${na(esc(r.protonVersion))}</span></div>
       ${r.notes ? `<div class="notes-full">${esc(r.notes)}</div>` : ''}
-      <button class="all-details-btn" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'Hide Details':'All Details'">All Details</button>
+      <button class="all-details-btn" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'Hide Hardware Details':'All Hardware Details'">All Hardware Details</button>
       <div class="all-details-panel">
         <div class="row"><span class="label">RAM</span><span>${na(esc(r.ram))}</span></div>
         ${r.vramMb ? `<div class="row"><span class="label">VRAM</span><span>${r.vramMb >= 1024 ? (r.vramMb/1024).toFixed(1)+' GB' : r.vramMb+' MB'}</span></div>` : ''}
@@ -606,6 +626,24 @@ async function renderGamePage(appId) {
           </div>
         </div>
         <span class="tier-badge" style="background:${rc};color:${rt}">${tier}</span>
+        <button class="info-btn" id="rating-info-btn" title="What does this rating mean?">(i)</button>
+        <div class="info-tooltip" id="rating-info-tip">
+          <strong>ProtonDB Ratings</strong><br>
+          <span style="color:#b4c7dc">Platinum</span> - Runs perfectly out of the box<br>
+          <span style="color:#c8a050">Gold</span> - Runs after tweaks<br>
+          <span style="color:#8fa0b0">Silver</span> - Runs with minor issues<br>
+          <span style="color:#b07040">Bronze</span> - Runs but with significant issues<br>
+          <span style="color:#c85050">Borked</span> - Does not run or is unplayable<br><br>
+          The tier shown is the most common rating across all reports for this game.<br><br>
+          <strong>Confidence Score (0-10)</strong><br>
+          Each report gets a score based on:<br>
+          &bull; <strong>Rating weight</strong> - Platinum=60, Gold=48, Silver=36, Bronze=24, Borked=0<br>
+          &bull; <strong>Recency</strong> - +15 if &lt;90 days, +5 if &lt;1 year, -5 if older<br>
+          &bull; <strong>GPU match</strong> - 1.0x if same vendor, 0.5x if different<br>
+          &bull; <strong>Custom Proton</strong> - +10 for GE/CachyOS/TKG builds<br>
+          &bull; <strong>OS/Kernel match</strong> - small bonuses for matching your system<br><br>
+          Higher score = more relevant to your hardware. The score shown on this page is an estimate without local system info.
+        </div>
       </div>
 
       <div class="hub-links">
@@ -641,7 +679,7 @@ async function renderGamePage(appId) {
           </div>
           <div class="configs-list" style="border:1px solid var(--border)">
             ${visibleCfgs.length
-              ? visibleCfgs.map(renderConfigCard).join('')
+              ? visibleCfgs.map((c, i) => renderConfigCard(c, i)).join('')
               : '<div class="state-box" style="border:none;padding:20px">No configs match filters</div>'}
           </div>`;
       })() : `
@@ -712,12 +750,18 @@ async function renderGamePage(appId) {
     el.querySelectorAll('.sort-bar button').forEach(b =>
       b.onclick = () => { sortMode = b.dataset.sort; render(); }
     );
+    el.querySelector('#rating-info-btn')?.addEventListener('click', () => {
+      el.querySelector('#rating-info-tip')?.classList.toggle('open');
+    });
     el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; render(); });
     el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; render(); });
     el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; render(); });
     el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; render(); });
     el.querySelector('#fCfgProton')?.addEventListener('change', e => { filterCfgProton = e.target.value; render(); });
     el.querySelector('#fCfgSource')?.addEventListener('change', e => { filterCfgSource = e.target.value; render(); });
+    el.querySelectorAll('.cfg-dl-btn').forEach(b => {
+      b.addEventListener('click', e => { e.stopPropagation(); downloadConfigJson(filteredConfigs()[Number(b.dataset.cfgIdx)]); });
+    });
   }
 
   render();
