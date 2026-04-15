@@ -1183,14 +1183,13 @@ window.addEventListener('resize', () => {
   const dropdown  = document.getElementById('google-dropdown');
   const logoutBtn = document.getElementById('google-logout-btn');
 
-  // ── Auth state → UI ──────────────────────────────────────────────────────
-
   SupaAuth.onStateChange(({ user }) => {
     if (user) {
-      loginBtn.hidden = true;
-      userMenu.hidden = false;
-      avatarEl.src    = user.user_metadata?.avatar_url || '';
-      avatarEl.alt    = user.user_metadata?.name || user.email || '';
+      loginBtn.hidden    = false; // keep hidden by setting display via hidden attr
+      loginBtn.hidden    = true;
+      userMenu.hidden    = false;
+      avatarEl.src       = user.user_metadata?.avatar_url || '';
+      avatarEl.alt       = user.user_metadata?.name || user.email || '';
       nameEl.textContent = user.user_metadata?.name || user.email || '';
     } else {
       loginBtn.hidden = false;
@@ -1199,16 +1198,12 @@ window.addEventListener('resize', () => {
     }
   });
 
-  // ── Login / logout ────────────────────────────────────────────────────────
-
   loginBtn.addEventListener('click', () => SupaAuth.loginWithGoogle());
 
   logoutBtn?.addEventListener('click', () => {
     dropdown.hidden = true;
     SupaAuth.logout();
   });
-
-  // ── User menu dropdown ────────────────────────────────────────────────────
 
   menuBtn?.addEventListener('click', e => {
     e.stopPropagation();

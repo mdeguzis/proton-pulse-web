@@ -1,0 +1,192 @@
+/* -- Profile page styles -- */
+
+.page-header {
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.page-header .eyebrow {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.page-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--strong);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+/* not signed in */
+.profile-unsigned {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 32px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.profile-google-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  background: rgba(74,159,208,0.1);
+  border: 1px solid rgba(74,159,208,0.35);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .12s, border-color .12s;
+}
+.profile-google-btn:hover { background: rgba(74,159,208,0.2); border-color: var(--accent); }
+
+/* avatar card */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  margin-bottom: 20px;
+}
+.profile-avatar {
+  border-radius: 50%;
+  border: 2px solid var(--border2);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.profile-display-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--strong);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.profile-user-email {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* detail sections */
+.profile-section {
+  background: var(--s1);
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+.profile-section-title {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-weight: 700;
+  padding: 9px 16px;
+  background: var(--s2);
+  border-bottom: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+}
+
+.profile-field {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.profile-field:last-child { border-bottom: none; }
+.profile-field-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.profile-field-value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: var(--text);
+  flex-wrap: wrap;
+}
+.profile-field-hint {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.profile-uid {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  background: rgba(74,159,208,0.07);
+  border: 1px solid rgba(74,159,208,0.2);
+  padding: 3px 8px;
+  word-break: break-all;
+}
+
+.profile-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-family: inherit;
+  padding: 3px 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color .1s, border-color .1s;
+}
+.profile-copy:hover { color: var(--accent); border-color: var(--accent); }
+.profile-copy.copied { color: var(--green); border-color: var(--green); }
+
+.profile-provider-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  background: rgba(66,133,244,0.1);
+  border: 1px solid rgba(66,133,244,0.3);
+  color: #7ab3f7;
+}
+
+/* danger zone */
+.profile-section-danger .profile-section-title {
+  color: #c85050;
+  border-left-color: #c85050;
+}
+.profile-danger-note {
+  padding: 12px 16px 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.profile-signout-btn {
+  margin: 8px 16px 16px;
+  padding: 8px 20px;
+  background: none;
+  border: 1px solid rgba(200,80,80,0.4);
+  color: #c85050;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .1s, border-color .1s, color .1s;
+}
+.profile-signout-btn:hover { background: rgba(200,80,80,0.1); border-color: #c85050; color: #e07070; }
+
+@media (max-width: 640px) {
+  .profile-card { flex-direction: column; align-items: flex-start; }
+  .profile-uid { word-break: break-all; }
+}
