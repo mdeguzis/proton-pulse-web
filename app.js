@@ -190,6 +190,13 @@ async function fetchSupabase(appId) {
         appName:       row.app_name || cfg.appName || `App ${row.app_id}`,
         timestamp:     Math.floor(new Date(row.updated_at).getTime() / 1000),
         source:        cfg.source || 'proton-pulse',
+        cpu:           cfg.cpu   || null,
+        gpu:           cfg.gpu   || null,
+        gpuVendor:     cfg.gpuVendor || null,
+        gpuDriver:     cfg.gpuDriver || null,
+        ram:           cfg.ram   || null,
+        os:            cfg.os    || null,
+        kernel:        cfg.kernel || null,
       };
     });
   } catch { return []; }
@@ -404,12 +411,12 @@ function renderConfigCard(c) {
         <span class="config-vars">${vars.map(([k]) => `<span class="var-tag">${esc(k)}</span>`).join('')}</span>
       </div>` : ''}
       <div class="config-hw">
-        <div class="config-hw-label">Hardware (not captured by configs)</div>
-        <div class="config-row"><span class="config-lbl">GPU</span><span>${NA_SPAN}</span></div>
-        <div class="config-row"><span class="config-lbl">CPU</span><span>${NA_SPAN}</span></div>
-        <div class="config-row"><span class="config-lbl">RAM</span><span>${NA_SPAN}</span></div>
-        <div class="config-row"><span class="config-lbl">OS</span><span>${NA_SPAN}</span></div>
-        <div class="config-row"><span class="config-lbl">Kernel</span><span>${NA_SPAN}</span></div>
+        <div class="config-hw-label">Hardware</div>
+        <div class="config-row"><span class="config-lbl">GPU</span><span>${cfgNa(esc(c.gpu))}</span></div>
+        <div class="config-row"><span class="config-lbl">CPU</span><span>${cfgNa(esc(c.cpu))}</span></div>
+        <div class="config-row"><span class="config-lbl">RAM</span><span>${cfgNa(esc(c.ram))}</span></div>
+        <div class="config-row"><span class="config-lbl">OS</span><span>${cfgNa(esc(c.os))}</span></div>
+        <div class="config-row"><span class="config-lbl">Kernel</span><span>${cfgNa(esc(c.kernel))}</span></div>
       </div>
       <div class="config-meta">Updated ${daysAgo(c.timestamp)} | Source: ${sourceLabel}</div>
     </div>`;
