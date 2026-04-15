@@ -248,30 +248,42 @@
   margin-top: 2px;
 }
 .info-btn {
-  background: rgba(74,159,208,0.12);
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  font-size: 0.72rem;
-  padding: 3px 8px;
+  background: none;
+  border: none;
   cursor: pointer;
-  font-weight: 700;
   flex-shrink: 0;
   margin-top: 2px;
-  border-radius: 50%;
+  padding: 2px;
+  line-height: 0;
+  opacity: 0.85;
+  transition: opacity .15s;
 }
-.info-btn:hover { background: rgba(74,159,208,0.25); }
+.info-btn:hover { opacity: 1; }
+.info-btn svg { display: block; }
 .info-tooltip {
   display: none;
   background: var(--s2);
   border: 1px solid var(--border2);
-  padding: 14px 16px;
-  font-size: 0.76rem;
-  line-height: 1.55;
-  color: var(--text);
   margin-top: 10px;
   width: 100%;
 }
 .info-tooltip.open { display: block; }
+.info-tooltip-inner {
+  padding: 16px 18px;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--text);
+  max-height: 420px;
+  overflow-y: auto;
+}
+.info-tooltip-inner h3 { font-size: 0.88rem; color: var(--strong); }
+.info-tooltip-inner h4 { font-size: 0.78rem; color: var(--accent); }
+.info-tooltip-inner code {
+  font-size: 0.72rem;
+  background: var(--bg);
+  padding: 1px 5px;
+  border: 1px solid var(--border);
+}
 
 /* hub links */
 .hub-links {

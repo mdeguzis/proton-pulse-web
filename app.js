@@ -584,7 +584,7 @@ async function renderGamePage(appId) {
   const filtered = () => {
     let arr = [...reports];
     if (filterGpu)    arr = arr.filter(r => gpuVendor(r.gpu) === filterGpu);
-    if (filterOs)     arr = arr.filter(r => osFamily(r.os)   === filterOs);
+    if (filterOs)     arr = arr.filter(r => (r.os || '').trim() === filterOs);
     if (filterRating) arr = arr.filter(r => r.rating === filterRating);
     if (filterSource) arr = arr.filter(r => (r.source || 'protondb') === filterSource);
     return arr;
@@ -626,23 +626,58 @@ async function renderGamePage(appId) {
           </div>
         </div>
         <span class="tier-badge" style="background:${rc};color:${rt}">${tier}</span>
-        <button class="info-btn" id="rating-info-btn" title="What does this rating mean?">(i)</button>
+        <button class="info-btn" id="rating-info-btn" title="What does this rating mean?"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="#3b82f6"/><text x="12" y="17" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="serif">i</text></svg></button>
         <div class="info-tooltip" id="rating-info-tip">
-          <strong>ProtonDB Ratings</strong><br>
+          <div class="info-tooltip-inner">
+          <h3 style="margin:0 0 10px">ProtonDB Ratings</h3>
           <span style="color:#b4c7dc">Platinum</span> - Runs perfectly out of the box<br>
           <span style="color:#c8a050">Gold</span> - Runs after tweaks<br>
           <span style="color:#8fa0b0">Silver</span> - Runs with minor issues<br>
           <span style="color:#b07040">Bronze</span> - Runs but with significant issues<br>
           <span style="color:#c85050">Borked</span> - Does not run or is unplayable<br><br>
           The tier shown is the most common rating across all reports for this game.<br><br>
-          <strong>Confidence Score (0-10)</strong><br>
-          Each report gets a score based on:<br>
-          &bull; <strong>Rating weight</strong> - Platinum=60, Gold=48, Silver=36, Bronze=24, Borked=0<br>
-          &bull; <strong>Recency</strong> - +15 if &lt;90 days, +5 if &lt;1 year, -5 if older<br>
-          &bull; <strong>GPU match</strong> - 1.0x if same vendor, 0.5x if different<br>
-          &bull; <strong>Custom Proton</strong> - +10 for GE/CachyOS/TKG builds<br>
-          &bull; <strong>OS/Kernel match</strong> - small bonuses for matching your system<br><br>
-          Higher score = more relevant to your hardware. The score shown on this page is an estimate without local system info.
+
+          <h3 style="margin:0 0 10px">Confidence Scoring</h3>
+          Each report gets a relevance score (0-100) based on how closely it matches <em>your</em> hardware when viewed in the Decky plugin. On this website, an estimate is shown without local system info.<br><br>
+
+          <h4 style="margin:0 0 6px">1. Base Rating (0-60 pts)</h4>
+          <code>Platinum=60, Gold=48, Silver=36, Bronze=24, Borked=0</code><br>
+          Borked reports older than 365 days are treated as Bronze (games get fixed over time).<br><br>
+
+          <h4 style="margin:0 0 6px">2. Recency Bonus</h4>
+          <code>&lt;90 days: +15 | 90-365 days: +5 | &gt;1 year: -5</code><br><br>
+
+          <h4 style="margin:0 0 6px">3. Custom Proton Bonus (+10)</h4>
+          Reports using GE-Proton, CachyOS, TKG, or ProtonPlus builds get +10.<br><br>
+
+          <h4 style="margin:0 0 6px">4. Proton Version Match</h4>
+          <code>Same major version: +8 | Adjacent: +4</code><br><br>
+
+          <h4 style="margin:0 0 6px">5. GPU Multiplier</h4>
+          <code>Same vendor: 1.0x | Different: 0.5x | Unknown: 0.75x</code><br>
+          Same vendor + same driver major: 1.3x | Close driver: 1.1x<br><br>
+
+          <h4 style="margin:0 0 6px">6. OS Multiplier</h4>
+          <code>Exact match: 1.08x | Same family: 1.04x</code><br>
+          OS families: SteamOS/Arch, Bazzite/Nobara/Fedora, Ubuntu/Pop/Mint/Debian, NixOS<br><br>
+
+          <h4 style="margin:0 0 6px">7. Kernel Multiplier</h4>
+          <code>Exact: 1.12x | Same minor: 1.08x | Same major: 1.04x</code><br>
+          Valve/SteamOS kernels compare build numbers instead of upstream versions.<br><br>
+
+          <h4 style="margin:0 0 6px">8. Notes Sentiment (-10 to +10)</h4>
+          Keywords like "crash", "broken", "freeze" reduce score (-3 each).<br>
+          Keywords like "perfect", "flawless", "no issues" boost score (+2 each).<br>
+          Negation-aware: "no crash" does NOT count as negative.<br><br>
+
+          <h4 style="margin:0 0 6px">Final Formula</h4>
+          <code>score = (rating + recency + customProton + protonMatch) * gpuMult * osMult * kernelMult + notesSentiment</code><br><br>
+
+          <h4 style="margin:0 0 6px">Score-to-Tier Mapping</h4>
+          <code>&gt;=80: Platinum | &gt;=60: Gold | &gt;=40: Silver | &gt;=20: Bronze | &lt;20: Borked</code><br><br>
+
+          <a href="https://github.com/mdeguzis/decky-proton-pulse/blob/main/src/lib/scoring.ts" target="_blank" rel="noopener" style="color:var(--accent)">View full scoring source code on GitHub</a>
+          </div>
         </div>
       </div>
 
@@ -700,13 +735,12 @@ async function renderGamePage(appId) {
       <div class="filter-bar">
         ${(() => {
           const GPU_LABEL = { nvidia: 'NVIDIA', amd: 'AMD', intel: 'Intel' };
-          const OS_LABEL  = { steamos: 'SteamOS', arch: 'Arch', fedora: 'Fedora', ubuntu: 'Ubuntu', debian: 'Debian', nixos: 'NixOS' };
           const SRC_LABEL = { 'protondb': 'ProtonDB', 'proton-pulse': 'Pulse' };
           const RATING_LABEL = { platinum: 'Platinum', gold: 'Gold', silver: 'Silver', bronze: 'Bronze', borked: 'Borked' };
           const RATING_ORDER = ['platinum','gold','silver','bronze','borked'];
 
           const availGpus    = [...new Set(reports.map(r => gpuVendor(r.gpu)).filter(Boolean))];
-          const availOs      = [...new Set(reports.map(r => osFamily(r.os)).filter(Boolean))];
+          const availOs      = [...new Set(reports.map(r => (r.os || '').trim()).filter(Boolean))].sort();
           const availRatings = RATING_ORDER.filter(rt => reports.some(r => r.rating === rt));
           const availSrcs    = [...new Set(reports.map(r => r.source || 'protondb').filter(Boolean))];
 
@@ -720,7 +754,7 @@ async function renderGamePage(appId) {
             <label>OS</label>
             <select id="fOs">
               <option value="">Any</option>
-              ${availOs.map(v => `<option value="${v}" ${filterOs===v?'selected':''}>${OS_LABEL[v]||v}</option>`).join('')}
+              ${availOs.map(v => `<option value="${esc(v)}" ${filterOs===v?'selected':''}>${esc(v)}</option>`).join('')}
             </select>` : '';
           const ratingSel = availRatings.length > 0 ? `
             <label>Rating</label>
