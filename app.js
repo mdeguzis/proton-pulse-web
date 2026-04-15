@@ -1172,225 +1172,49 @@ window.addEventListener('resize', () => {
   });
 })();
 
-// ── GitHub Auth + Gist integration ────────────────────────────────────────
+// ── Google Auth (Supabase) ────────────────────────────────────────────────
 
-(function initGhAuth() {
-  const loginBtn     = document.getElementById('gh-login-btn');
-  const loginLabel   = document.getElementById('gh-login-label');
-  const userMenu     = document.getElementById('gh-user-menu');
-  const avatarEl     = document.getElementById('gh-avatar');
-  const usernameEl   = document.getElementById('gh-username');
-  const menuBtn      = document.getElementById('gh-user-menu-btn');
-  const dropdown     = document.getElementById('gh-dropdown');
-  const profileLink  = document.getElementById('gh-profile-link');
-  const backupBtn    = document.getElementById('gh-backup-btn');
-  const logoutBtn    = document.getElementById('gh-logout-btn');
-  const modal        = document.getElementById('gh-auth-modal');
-  const modalBody    = document.getElementById('gh-modal-body');
-  const modalClose   = document.getElementById('gh-modal-close');
+(function initGoogleAuth() {
+  const loginBtn  = document.getElementById('google-login-btn');
+  const userMenu  = document.getElementById('google-user-menu');
+  const avatarEl  = document.getElementById('google-avatar');
+  const nameEl    = document.getElementById('google-username');
+  const menuBtn   = document.getElementById('google-menu-btn');
+  const dropdown  = document.getElementById('google-dropdown');
+  const logoutBtn = document.getElementById('google-logout-btn');
 
   // ── Auth state → UI ──────────────────────────────────────────────────────
 
-  GhAuth.onStateChange(({ loggedIn, user }) => {
-    if (loggedIn && user) {
-      loginBtn.hidden  = true;
-      userMenu.hidden  = false;
-      avatarEl.src     = user.avatar_url || '';
-      avatarEl.alt     = user.login || '';
-      usernameEl.textContent = user.login || '';
-      if (profileLink) profileLink.href = user.html_url || '#';
+  SupaAuth.onStateChange(({ user }) => {
+    if (user) {
+      loginBtn.hidden = true;
+      userMenu.hidden = false;
+      avatarEl.src    = user.user_metadata?.avatar_url || '';
+      avatarEl.alt    = user.user_metadata?.name || user.email || '';
+      nameEl.textContent = user.user_metadata?.name || user.email || '';
     } else {
-      loginBtn.hidden  = false;
-      userMenu.hidden  = true;
-      dropdown.hidden  = true;
+      loginBtn.hidden = false;
+      userMenu.hidden = true;
+      dropdown.hidden = true;
     }
   });
 
-  // ── Login button ─────────────────────────────────────────────────────────
+  // ── Login / logout ────────────────────────────────────────────────────────
 
-  loginBtn.addEventListener('click', () => openLoginModal());
+  loginBtn.addEventListener('click', () => SupaAuth.loginWithGoogle());
 
-  // ── User menu dropdown ───────────────────────────────────────────────────
+  logoutBtn?.addEventListener('click', () => {
+    dropdown.hidden = true;
+    SupaAuth.logout();
+  });
 
-  menuBtn.addEventListener('click', e => {
+  // ── User menu dropdown ────────────────────────────────────────────────────
+
+  menuBtn?.addEventListener('click', e => {
     e.stopPropagation();
     dropdown.hidden = !dropdown.hidden;
   });
 
-  document.addEventListener('click', () => { dropdown.hidden = true; });
-  dropdown.addEventListener('click', e => e.stopPropagation());
-
-  if (logoutBtn) {
-    logoutBtn.addEventListener('click', () => {
-      dropdown.hidden = true;
-      GhAuth.logout();
-    });
-  }
-
-  if (backupBtn) {
-    backupBtn.addEventListener('click', () => {
-      dropdown.hidden = true;
-      globalGistBackup();
-    });
-  }
-
-  // ── Modal helpers ─────────────────────────────────────────────────────────
-
-  function openModal()  { modal.hidden = false; }
-  function closeModal() { modal.hidden = true; GhAuth.cancelLogin(); }
-
-  modalClose.addEventListener('click', closeModal);
-  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
-
-  function openLoginModal() {
-    modalBody.innerHTML = `<div class="gh-device-step"><p>Connecting to GitHub…</p></div>`;
-    openModal();
-
-    GhAuth.login(({ step, userCode, verificationUri }) => {
-      if (step === 'code') {
-        modalBody.innerHTML = `
-          <div class="gh-device-step">
-            <p>Open the link below and enter the code to authorize Proton Pulse to access your Gists.</p>
-            <div class="gh-user-code" id="gh-code-display" title="Click to copy">${esc(userCode)}</div>
-            <p class="gh-copy-hint">Click the code to copy it</p>
-            <a class="gh-open-link" href="${esc(verificationUri)}" target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              Open github.com/login/device
-            </a>
-            <div class="gh-polling">
-              <div class="gh-spinner"></div>
-              <span>Waiting for authorization…</span>
-            </div>
-            <button class="gh-modal-cancel" id="gh-cancel-btn">Cancel</button>
-          </div>`;
-
-        document.getElementById('gh-code-display')?.addEventListener('click', () => {
-          navigator.clipboard?.writeText(userCode).catch(() => {});
-        });
-        document.getElementById('gh-cancel-btn')?.addEventListener('click', closeModal);
-
-      } else if (step === 'authorized') {
-        const user = GhAuth.getUser();
-        modalBody.innerHTML = `
-          <div class="gh-modal-success">
-            <div class="gh-check">&#10003;</div>
-            <strong>Connected as ${esc(user?.login || 'you')}</strong>
-            <p style="color:var(--muted);font-size:0.78rem">You can now save and load Proton Pulse configs to a private GitHub Gist.</p>
-          </div>`;
-        setTimeout(closeModal, 1800);
-      }
-    }).catch(err => {
-      modalBody.innerHTML = `
-        <div class="gh-device-step">
-          <div class="gh-modal-err">${esc(err.message)}</div>
-          <button class="gh-modal-cancel" id="gh-retry-btn">Try again</button>
-        </div>`;
-      document.getElementById('gh-retry-btn')?.addEventListener('click', () => openLoginModal());
-    });
-  }
-
-  // ── Per-page Gist save/load (delegated — configs section re-renders) ──────
-
-  document.addEventListener('click', async e => {
-    const saveBtn = e.target.closest('#gist-save-btn');
-    const loadBtn = e.target.closest('#gist-load-btn');
-
-    if (saveBtn) {
-      const statusEl = document.getElementById('gist-status');
-      const token = GhAuth.getToken();
-      if (!token) return;
-
-      // Collect configs currently shown on the page
-      const cfgCards = document.querySelectorAll('[data-cfg-idx]');
-      if (!cfgCards.length) return;
-
-      saveBtn.disabled = true;
-      if (statusEl) statusEl.textContent = 'Saving…';
-
-      try {
-        // Pull raw config objects from the download buttons' data attributes
-        const configs = [...document.querySelectorAll('[data-report-json]')]
-          .map(el => { try { return JSON.parse(el.dataset.reportJson); } catch { return null; } })
-          .filter(Boolean);
-
-        // If no report-json buttons found, collect visible config cards
-        const fallbackConfigs = configs.length ? configs : _collectVisibleConfigs();
-
-        const gist = await GhGist.save(token, fallbackConfigs);
-        if (statusEl) {
-          statusEl.className = 'gist-status ok';
-          statusEl.innerHTML = `Saved &mdash; <a href="${esc(gist.html_url)}" target="_blank" rel="noopener">view Gist</a>`;
-        }
-      } catch (err) {
-        if (statusEl) {
-          statusEl.className = 'gist-status err';
-          statusEl.textContent = err.message;
-        }
-      } finally {
-        saveBtn.disabled = false;
-      }
-    }
-
-    if (loadBtn) {
-      const statusEl = document.getElementById('gist-status');
-      const token = GhAuth.getToken();
-      if (!token) return;
-
-      loadBtn.disabled = true;
-      if (statusEl) { statusEl.className = 'gist-status'; statusEl.textContent = 'Loading…'; }
-
-      try {
-        const backup = await GhGist.load(token);
-        if (!backup) {
-          if (statusEl) { statusEl.className = 'gist-status err'; statusEl.textContent = 'No backup Gist found.'; }
-          return;
-        }
-        const count = backup.configs?.length ?? 0;
-        const saved = backup.savedAt ? new Date(backup.savedAt).toLocaleDateString() : '?';
-        if (statusEl) {
-          statusEl.className = 'gist-status ok';
-          statusEl.textContent = `Loaded ${count} config${count !== 1 ? 's' : ''} (saved ${saved})`;
-        }
-      } catch (err) {
-        if (statusEl) { statusEl.className = 'gist-status err'; statusEl.textContent = err.message; }
-      } finally {
-        loadBtn.disabled = false;
-      }
-    }
-  });
-
-  // ── Global Gist backup (all configs via Supabase voter_id) ───────────────
-
-  async function globalGistBackup() {
-    const token = GhAuth.getToken();
-    if (!token) return;
-
-    const clientId = getWebClientId();
-    if (!clientId) {
-      alert('No local client ID found — open the app from the Decky plugin first.');
-      return;
-    }
-
-    try {
-      // Fetch all configs for this client across all apps
-      const r = await fetch(
-        `${SB_URL}/user_proton_configs?voter_id=eq.${encodeURIComponent(clientId)}&select=app_id,app_name,config,updated_at&order=updated_at.desc`,
-        { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
-      );
-      if (!r.ok) throw new Error(`Supabase error: ${r.status}`);
-      const rows = await r.json();
-      const gist = await GhGist.save(token, rows);
-      alert(`Backup saved to Gist:\n${gist.html_url}`);
-    } catch (err) {
-      alert(`Backup failed: ${err.message}`);
-    }
-  }
-
-  function _collectVisibleConfigs() {
-    return [...document.querySelectorAll('.config-card')].map(card => {
-      const name = card.querySelector('.config-name')?.textContent?.trim() || '';
-      return { profileName: name };
-    });
-  }
+  document.addEventListener('click', () => { if (dropdown) dropdown.hidden = true; });
+  dropdown?.addEventListener('click', e => e.stopPropagation());
 })();
