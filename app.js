@@ -141,8 +141,20 @@ async function populateSubmitForm(el) {
       </div>
     </form>`;
   container.dataset.loaded = '1';
+  // Populate proton datalist: schema defaults + live GE-Proton releases from GitHub
+  const dl = container.querySelector('#proton-versions');
+  if (dl) {
+    try {
+      const r = await fetch('https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases?per_page=20');
+      if (r.ok) {
+        const geTags = (await r.json()).map(rel => rel.tag_name);
+        const known = new Set(schema.knownProtonVersions || []);
+        for (const tag of geTags) known.add(tag);
+        dl.innerHTML = [...known].map(v => '<option value="'+esc(v)+'">').join('');
+      }
+    } catch { /* keep schema defaults */ }
+  }
 }
-
 // -- Routing ------------------------------------------
 
 async function populateScoringTooltip(el) {
