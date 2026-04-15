@@ -480,11 +480,11 @@ async function renderSearchPage(query) {
 const NA_SPAN = '<span style="color:#4a5f70;font-style:italic">Not available</span>';
 function cfgNa(s) { return s || NA_SPAN; }
 
-function downloadConfigJson(c) {
-  const blob = new Blob([JSON.stringify(c, null, 2)], { type: 'application/json' });
+function downloadJson(obj, prefix) {
+  const blob = new Blob([JSON.stringify(obj, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = `pulse-config-${c.profileName || 'unnamed'}.json`.replace(/[^a-zA-Z0-9._-]/g, '_');
+  a.download = `${prefix}.json`.replace(/[^a-zA-Z0-9._-]/g, '_');
   a.click();
   URL.revokeObjectURL(a.href);
 }
@@ -615,6 +615,7 @@ function renderCard(r, votes) {
         ${r.steamDeckModel ? `<div class="row"><span class="label">Steam Deck</span><span>${esc(r.steamDeckModel.toUpperCase())}</span></div>` : ''}
         ${r.launchOptions ? `<div class="row"><span class="label">Launch Options</span><span>${esc(r.launchOptions)}</span></div>` : ''}
       </div>
+      <div class="card-footer"><button class="cfg-dl-btn" data-report-json='${JSON.stringify(r).replace(/'/g,"&#39;")}' title="Download as JSON">JSON</button></div>
     </div>`;
 }
 
@@ -847,7 +848,11 @@ async function renderGamePage(appId) {
     el.querySelector('#fCfgProton')?.addEventListener('change', e => { filterCfgProton = e.target.value; render(); });
     el.querySelector('#fCfgSource')?.addEventListener('change', e => { filterCfgSource = e.target.value; render(); });
     el.querySelectorAll('.cfg-dl-btn').forEach(b => {
-      b.addEventListener('click', e => { e.stopPropagation(); downloadConfigJson(filteredConfigs()[Number(b.dataset.cfgIdx)]); });
+      b.addEventListener('click', e => {
+        e.stopPropagation();
+        if (b.dataset.cfgIdx != null) downloadJson(filteredConfigs()[Number(b.dataset.cfgIdx)], 'pulse-config');
+        else if (b.dataset.reportJson) downloadJson(JSON.parse(b.dataset.reportJson), 'report');
+      });
     });
   }
 
