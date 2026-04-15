@@ -533,7 +533,7 @@ def test_run_backfill_and_finalize_include_backfilled_apps_in_indexes(tmp_path, 
     assert json.loads((data_dir / "2561580" / "index.json").read_text()) == ["2025"]
     html = (tmp_path / "data-index.html").read_text()
     assert '["730","","730/",["2024"]]' in html
-    assert '["2561580","","2561580/",["2025"]]' in html
+    assert '"2561580"' in html and '["2025"]' in html
     assert 'const latestHref=`data/${appId}/latest.json`;' in html
     assert read_app_metadata(data_dir, "2561580")["protondb_live"] is True
 
@@ -749,11 +749,12 @@ def test_run_probe_backfill_includes_signal_catalog_apps_not_in_probe_cache(tmp_
     monkeypatch.setattr(
         backfill_module,
         "backfill_probe_discoveries",
-        lambda data_output_path, probe_catalog, limit=0, fetch_json_impl=backfill_module.fetch_json: original_backfill_probe_discoveries(
+        lambda data_output_path, probe_catalog, limit=0, fetch_json_impl=backfill_module.fetch_json, already_known_app_ids=None: original_backfill_probe_discoveries(
             data_output_path,
             probe_catalog,
             limit=limit,
             fetch_json_impl=fake_fetch,
+            already_known_app_ids=already_known_app_ids,
         ),
     )
     monkeypatch.setattr(

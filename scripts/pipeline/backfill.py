@@ -530,11 +530,14 @@ def backfill_probe_discoveries(
     probe_catalog: dict[str, str],
     limit: int = 0,
     fetch_json_impl=fetch_json,
+    already_known_app_ids: set[str] | None = None,
 ) -> set[tuple]:
     """Backfill apps discovered by the ProtonDB probe that have summaries but no local data."""
     existing_app_ids = {
         path.name for path in data_output_path.iterdir() if path.is_dir()
     }
+    if already_known_app_ids:
+        existing_app_ids.update(already_known_app_ids)
     missing_app_ids = sorted(
         [app_id for app_id in probe_catalog if app_id not in existing_app_ids],
         key=_string_app_id_sort_key,
@@ -680,7 +683,8 @@ def run_probe_backfill(output_dir):
     )
 
     backfilled_keys = backfill_probe_discoveries(
-        data_output_path, probe_catalog, limit=limit
+        data_output_path, probe_catalog, limit=limit,
+        already_known_app_ids=indexed_app_ids | backfill_app_ids,
     )
 
     if backfilled_keys:
