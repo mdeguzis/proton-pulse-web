@@ -903,22 +903,34 @@ async function onSearchInput() {
 
   // Filter: numeric queries match only on app ID prefix; text matches title or ID
   const matches = searchIndexMatches(q, MAX);
+  // Check which matched apps also have Pulse configs
+  const pulseResults = await withTimeout(fetchMatchingPulseConfigs(q), 1500, []);
+  const pulseAppIds = new Set(pulseResults.map(r => String(r.appId)));
 
-  if (!matches.length) {
+  if (!matches.length && !pulseAppIds.size) {
     searchResults.innerHTML = `<div class="search-no-results">No quick matches — press Enter to open grouped search results.</div>`;
     searchResults.classList.add('open');
     searchFocusIdx = -1;
     return;
   }
 
-  const rows = matches.map(([id, title]) => {
+  // Merge: index matches + pulse-only apps not in index
+  const seenIds = new Set(matches.map(([id]) => String(id)));
+  const pulseOnly = pulseResults.filter(r => !seenIds.has(String(r.appId))).slice(0, MAX - matches.length);
+  const allItems = [
+    ...matches.map(([id, title]) => ({ id, title, hasIndex: true, hasPulse: pulseAppIds.has(String(id)) })),
+    ...pulseOnly.map(r => ({ id: r.appId, title: r.appName, hasIndex: false, hasPulse: true })),
+  ];
+
+  const rows = allItems.map(({ id, title, hasIndex, hasPulse }) => {
     const img = STEAM_IMG(id);
     return `<a class="search-item" href="#/app/${id}" data-id="${id}">
       <img src="${img}" onerror="this.style.display='none'" alt="" loading="lazy">
       <div class="search-result-info">
         <div class="search-result-title">${esc(title)}</div>
         <div class="search-result-badges">
-          <span class="badge badge-reports">ProtonDB</span>
+          ${hasIndex ? '<span class="badge badge-reports">ProtonDB</span>' : ''}
+          ${hasPulse ? '<span class="badge badge-pulse">Pulse</span>' : ''}
         </div>
       </div>
     </a>`;
