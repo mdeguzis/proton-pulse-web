@@ -609,6 +609,16 @@ a.card:hover { text-decoration: none; }
 .source-badge.pulse {
   background: rgba(74,159,208,0.14);
 }
+.source-badge.steam-game {
+  background: rgba(23,126,196,0.12);
+  border-color: rgba(23,126,196,0.30);
+  color: #5ab4e5;
+}
+.source-badge.non-steam-game {
+  background: rgba(180,110,40,0.12);
+  border-color: rgba(180,110,40,0.30);
+  color: #d4894a;
+}
 
 /* detail expand */
 .card-summary {

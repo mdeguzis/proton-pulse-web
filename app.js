@@ -275,6 +275,7 @@ async function renderHomePage() {
           const d = Math.round((Date.now() / 1000 - new Date(row.updated_at).getTime() / 1000) / 86400);
           const age = d < 1 ? 'today' : d === 1 ? '1 day ago' : `${d} days ago`;
           const hwParts = [proton, profile].filter(Boolean);
+          const isNonSteam = cfg.isNonSteam === true;
           return `
             <a class="card" href="#/app/${row.app_id}" style="text-decoration:none">
               <img src="${STEAM_IMG(row.app_id)}" onerror="this.style.display='none'" alt=""
@@ -284,10 +285,13 @@ async function renderHomePage() {
                 <div class="hw">${hwParts.length ? hwParts.map(esc).join(' | ') : ''}</div>
                 <div class="age">${age}</div>
               </div>
-              <div class="right">
-                <span class="source-badge">
+              <div class="right" style="display:flex;flex-direction:column;gap:4px;align-items:flex-end">
+                <span class="source-badge pulse">
                   <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse
                 </span>
+                ${isNonSteam
+                  ? '<span class="source-badge non-steam-game">Non-Steam</span>'
+                  : '<span class="source-badge steam-game">Steam</span>'}
               </div>
             </a>`;
         }).join('')}
@@ -398,6 +402,7 @@ async function fetchSupabase(appId) {
         ram:           cfg.ram   || null,
         os:            cfg.os    || null,
         kernel:        cfg.kernel || null,
+        isNonSteam:    cfg.isNonSteam === true,
       };
     });
   } catch { return []; }
@@ -605,9 +610,14 @@ function renderConfigCard(c, idx) {
     <div class="config-card">
       <div class="config-head">
         <div class="config-name">${esc(c.profileName)}</div>
-        <span class="source-badge pulse">
-          <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse
-        </span>
+        <div style="display:flex;gap:4px;align-items:center;flex-wrap:wrap">
+          <span class="source-badge pulse">
+            <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse
+          </span>
+          ${c.isNonSteam
+            ? '<span class="source-badge non-steam-game">Non-Steam</span>'
+            : '<span class="source-badge steam-game">Steam</span>'}
+        </div>
       </div>
       ${c.clientId ? `<div class="config-row"><span class="config-lbl">Client ID</span><span class="config-val">${esc(c.clientId)}</span></div>` : ''}
       <div class="config-row">
