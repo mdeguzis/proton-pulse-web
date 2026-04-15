@@ -82,7 +82,7 @@ async function submitReport(appId, title, form) {
     launch_options: form.launchOptions.value,
     enabled_vars: {},
     confidence_score: null,
-    source: 'user',
+    source: 'web',
     vram_mb: form.vramMb.value ? Number(form.vramMb.value) : null,
   };
   const r = await fetch(`${SB_URL}/user_configs?on_conflict=client_id,app_id`, {
