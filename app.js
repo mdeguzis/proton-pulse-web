@@ -120,12 +120,7 @@ async function populateSubmitForm(el) {
       <div class="sf-row"><label>Proton Version *</label>
         <input name="protonVersion" list="proton-versions" required placeholder="e.g. Proton 9.0-4 or GE-Proton9-7">
         <datalist id="proton-versions">
-          ${['Proton 9.0-4','Proton 9.0-3','Proton 9.0-2','Proton 9.0-1',
-             'Proton 8.0-5','Proton 8.0-4','Proton 8.0-3','Proton 8.0-2',
-             'Proton 7.0-6','Proton Experimental',
-             'GE-Proton9-7','GE-Proton9-6','GE-Proton9-5','GE-Proton9-4',
-             'GE-Proton8-25','GE-Proton8-24',
-             'Proton-9.0-4'].map(v => '<option value="'+v+'">').join('')}
+          ${(schema.knownProtonVersions || []).map(v => '<option value="'+esc(v)+'">').join('')}
         </datalist>
         <span class="sf-hint" id="proton-hint" style="display:none;color:#c87840;font-size:0.7rem;white-space:nowrap">Format: Proton X.Y-Z or GE-ProtonX-Y</span>
       </div>
