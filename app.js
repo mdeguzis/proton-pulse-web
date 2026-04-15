@@ -45,6 +45,63 @@ function normalizeOs(raw) {
   return s.trim();
 }
 
+function getWebClientId() {
+  const key = 'proton-pulse:web-client-id';
+  let id = localStorage.getItem(key);
+  if (!id) { id = crypto.randomUUID(); localStorage.setItem(key, id); }
+  return id;
+}
+
+const VALID_RATINGS_LIST = ['platinum','gold','silver','bronze','borked'];
+const VALID_OS_LIST = [
+  'SteamOS 3.0','SteamOS 3.5','SteamOS 3.6',
+  'Ubuntu 22.04','Ubuntu 24.04',
+  'Fedora 40','Fedora 41',
+  'Arch Linux','Linux Mint 22',
+  'Nobara 40','Nobara 41',
+  'Pop!_OS 22.04','Manjaro','openSUSE Tumbleweed',
+  'Debian 12','ChimeraOS','Bazzite',
+];
+const VALID_GPU_VENDORS = ['nvidia','amd','intel','other'];
+
+async function submitReport(appId, title, form) {
+  const body = {
+    client_id: getWebClientId(),
+    app_id: appId,
+    title: title,
+    cpu: form.cpu.value,
+    gpu: form.gpu.value,
+    gpu_driver: form.gpuDriver.value,
+    gpu_vendor: form.gpuVendor.value,
+    ram: form.ram.value,
+    os: form.os.value,
+    kernel: form.kernel.value,
+    proton_version: form.protonVersion.value,
+    duration: form.duration.value || 'unreported',
+    rating: form.rating.value,
+    notes: form.notes.value,
+    launch_options: form.launchOptions.value,
+    enabled_vars: {},
+    confidence_score: null,
+    source: 'user',
+    vram_mb: form.vramMb.value ? Number(form.vramMb.value) : null,
+    cpu_cores: form.cpuCores.value ? Number(form.cpuCores.value) : null,
+    display_resolution: form.displayRes.value || null,
+    steam_deck_model: form.deckModel.value || null,
+  };
+  const r = await fetch(`${SB_URL}/user_configs?on_conflict=client_id,app_id`, {
+    method: 'POST',
+    headers: {
+      apikey: SB_KEY,
+      Authorization: `Bearer ${SB_KEY}`,
+      'Content-Type': 'application/json',
+      Prefer: 'resolution=merge-duplicates,return=minimal',
+    },
+    body: JSON.stringify(body),
+  });
+  return r.ok;
+}
+
 // -- Routing ------------------------------------------
 
 async function populateScoringTooltip(el) {
@@ -722,8 +779,36 @@ async function renderGamePage(appId) {
         </div>
         <span class="tier-badge" style="background:${rc};color:${rt}">${tier}</span>
         <button class="info-btn" id="rating-info-btn" title="What does this rating mean?"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="#3b82f6"/><text x="12" y="17" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="serif">i</text></svg></button>
+        <button class="submit-report-btn" id="submit-report-btn">Submit Report</button>
         <div class="info-tooltip" id="rating-info-tip">
           <div class="info-tooltip-inner" id="rating-info-content">Loading...</div>
+        </div>
+        <div class="info-tooltip" id="submit-form-panel">
+          <div class="info-tooltip-inner">
+            <h3 style="margin:0 0 12px">Submit a Pulse Report</h3>
+            <form id="submit-report-form" autocomplete="off">
+              <div class="sf-row"><label>Rating *</label><select name="rating" required>${VALID_RATINGS_LIST.map(r=>`<option value="${r}">${r[0].toUpperCase()+r.slice(1)}</option>`).join('')}</select></div>
+              <div class="sf-row"><label>Proton Version *</label><input name="protonVersion" required placeholder="e.g. Proton 9.0-4 or GE-Proton9-7"></div>
+              <div class="sf-row"><label>GPU *</label><input name="gpu" required placeholder="e.g. NVIDIA GeForce RTX 4070"></div>
+              <div class="sf-row"><label>GPU Vendor *</label><select name="gpuVendor" required>${VALID_GPU_VENDORS.map(v=>`<option value="${v}">${v[0].toUpperCase()+v.slice(1)}</option>`).join('')}</select></div>
+              <div class="sf-row"><label>GPU Driver</label><input name="gpuDriver" placeholder="e.g. Mesa 24.1.0 or 555.42.02"></div>
+              <div class="sf-row"><label>CPU *</label><input name="cpu" required placeholder="e.g. AMD Ryzen 7 5800X3D"></div>
+              <div class="sf-row"><label>CPU Cores</label><input name="cpuCores" type="number" placeholder="e.g. 8"></div>
+              <div class="sf-row"><label>RAM *</label><input name="ram" required placeholder="e.g. 16 GB" pattern="\\d+ GB"></div>
+              <div class="sf-row"><label>VRAM (MB)</label><input name="vramMb" type="number" placeholder="e.g. 8192"></div>
+              <div class="sf-row"><label>OS *</label><select name="os" required>${VALID_OS_LIST.map(o=>`<option value="${o}">${o}</option>`).join('')}</select></div>
+              <div class="sf-row"><label>Kernel</label><input name="kernel" placeholder="e.g. 6.8.0"></div>
+              <div class="sf-row"><label>Duration</label><input name="duration" placeholder="e.g. severalHours"></div>
+              <div class="sf-row"><label>Display Resolution</label><input name="displayRes" placeholder="e.g. 1920x1080"></div>
+              <div class="sf-row"><label>Steam Deck Model</label><input name="deckModel" placeholder="e.g. lcd or oled"></div>
+              <div class="sf-row"><label>Launch Options</label><input name="launchOptions" placeholder="e.g. PROTON_USE_WINED3D=1 %command%"></div>
+              <div class="sf-row"><label>Notes</label><textarea name="notes" rows="3" placeholder="How did it run?"></textarea></div>
+              <div class="sf-row" style="justify-content:flex-end;gap:8px">
+                <span id="submit-status" style="font-size:0.76rem;color:var(--muted)"></span>
+                <button type="submit" class="submit-report-btn">Submit</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
 
@@ -840,6 +925,18 @@ async function renderGamePage(appId) {
       const tip = el.querySelector('#rating-info-tip');
       tip?.classList.toggle('open');
       if (tip?.classList.contains('open')) await populateScoringTooltip(el);
+    });
+    el.querySelector('#submit-report-btn')?.addEventListener('click', () => {
+      el.querySelector('#submit-form-panel')?.classList.toggle('open');
+    });
+    el.querySelector('#submit-report-form')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = el.querySelector('#submit-status');
+      status.textContent = 'Submitting...';
+      const ok = await submitReport(appId, title, e.target);
+      status.textContent = ok ? 'Submitted!' : 'Error - try again';
+      status.style.color = ok ? 'var(--green)' : 'var(--red)';
+      if (ok) setTimeout(() => { el.querySelector('#submit-form-panel')?.classList.remove('open'); render(); }, 1500);
     });
     el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; render(); });
     el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; render(); });

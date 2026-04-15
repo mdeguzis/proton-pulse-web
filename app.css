@@ -286,6 +286,46 @@
 }
 
 /* hub links */
+
+.submit-report-btn {
+  background: rgba(76,175,80,0.12);
+  border: 1px solid #4caf50;
+  color: #4caf50;
+  font-size: 0.72rem;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-family: inherit;
+}
+.submit-report-btn:hover { background: rgba(76,175,80,0.25); }
+.sf-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 0.78rem;
+}
+.sf-row label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--muted);
+  padding-top: 5px;
+  font-size: 0.72rem;
+}
+.sf-row input, .sf-row select, .sf-row textarea {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 5px 8px;
+  font-size: 0.76rem;
+  font-family: inherit;
+  outline: none;
+}
+.sf-row input:focus, .sf-row select:focus, .sf-row textarea:focus { border-color: var(--accent); }
+.sf-row textarea { resize: vertical; }
 .hub-links {
   display: flex;
   flex-wrap: wrap;
