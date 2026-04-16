@@ -268,9 +268,11 @@ jobs:
           git show main:profile.css > profile.css 2>/dev/null || true
           git show main:supabase-client.js > supabase-client.js 2>/dev/null || true
           git show main:gh-gist.js > gh-gist.js 2>/dev/null || true
+          git show main:privacy.html > privacy.html 2>/dev/null || true
+          git show main:terms.html > terms.html 2>/dev/null || true
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
-          git add data/ data-index.html coverage.html search-index.json app.html app.js app.css index.html index.js index.css site.css profile.html profile.js profile.css supabase-client.js gh-gist.js scoring-info.json form-schema.json
+          git add data/ data-index.html coverage.html search-index.json app.html app.js app.css index.html index.js index.css site.css profile.html profile.js profile.css supabase-client.js gh-gist.js privacy.html terms.html scoring-info.json form-schema.json
           git commit -m "Deploy: $(date +%F)"
           git push origin gh-pages-new:gh-pages --force
 
@@ -309,9 +311,11 @@ jobs:
           cp ../repo/profile.css ./profile.css
           cp ../repo/supabase-client.js ./supabase-client.js
           cp ../repo/gh-gist.js ./gh-gist.js
+          cp ../repo/privacy.html ./privacy.html
+          cp ../repo/terms.html ./terms.html
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o ./scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o ./form-schema.json
-          git add app.html app.js app.css index.html index.js index.css site.css profile.html profile.js profile.css supabase-client.js gh-gist.js scoring-info.json form-schema.json
+          git add app.html app.js app.css index.html index.js index.css site.css profile.html profile.js profile.css supabase-client.js gh-gist.js privacy.html terms.html scoring-info.json form-schema.json
           if git diff --cached --quiet; then
             echo "No shell changes to publish."
             exit 0
@@ -468,9 +472,11 @@ jobs:
           git show main:profile.css > profile.css 2>/dev/null || true
           git show main:supabase-client.js > supabase-client.js 2>/dev/null || true
           git show main:gh-gist.js > gh-gist.js 2>/dev/null || true
+          git show main:privacy.html > privacy.html 2>/dev/null || true
+          git show main:terms.html > terms.html 2>/dev/null || true
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
-          git add data/ data-index.html coverage.html search-index.json app.html app.js app.css index.html index.js index.css site.css profile.html profile.js profile.css supabase-client.js gh-gist.js scoring-info.json form-schema.json
+          git add data/ data-index.html coverage.html search-index.json app.html app.js app.css index.html index.js index.css site.css profile.html profile.js profile.css supabase-client.js gh-gist.js privacy.html terms.html scoring-info.json form-schema.json
           git commit -m "Targeted backfill: ${{ inputs.backfill_app_ids }}"
           git push origin gh-pages-new:gh-pages --force
 
@@ -652,9 +658,11 @@ jobs:
           git show main:profile.css > profile.css 2>/dev/null || true
           git show main:supabase-client.js > supabase-client.js 2>/dev/null || true
           git show main:gh-gist.js > gh-gist.js 2>/dev/null || true
+          git show main:privacy.html > privacy.html 2>/dev/null || true
+          git show main:terms.html > terms.html 2>/dev/null || true
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
-          git add data/ data-index.html coverage.html search-index.json app.html app.js app.css index.html index.js index.css site.css profile.html profile.js profile.css supabase-client.js gh-gist.js scoring-info.json form-schema.json
+          git add data/ data-index.html coverage.html search-index.json app.html app.js app.css index.html index.js index.css site.css profile.html profile.js profile.css supabase-client.js gh-gist.js privacy.html terms.html scoring-info.json form-schema.json
           git commit -m "Coverage backfill: ${{ inputs.coverage_backfill_issue_type }}"
           git push origin gh-pages-new:gh-pages --force
 
