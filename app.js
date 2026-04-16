@@ -1193,24 +1193,24 @@ window.addEventListener('resize', () => {
     } else {
       loginBtn.hidden = false;
       userMenu.hidden = true;
-      dropdown.hidden = true;
+      dropdown.classList.remove('open');
     }
   });
 
   loginBtn.addEventListener('click', () => SupaAuth.loginWithGoogle());
 
   logoutBtn?.addEventListener('click', () => {
-    dropdown.hidden = true;
+    dropdown.classList.remove('open');
     SupaAuth.logout();
   });
 
   menuBtn?.addEventListener('click', () => {
-    dropdown.hidden = !dropdown.hidden;
+    dropdown.classList.toggle('open');
   });
 
   const chip = document.getElementById('gh-auth-chip');
   document.addEventListener('click', e => {
     if (chip && chip.contains(e.target)) return;
-    if (dropdown) dropdown.hidden = true;
+    if (dropdown) dropdown.classList.remove('open');
   });
 })();
