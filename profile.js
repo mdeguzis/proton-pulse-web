@@ -47,7 +47,7 @@
   });
 
   // ── Actions ───────────────────────────────────────────────────────────────
-  loginBtn?.addEventListener('click', () => SupaAuth.loginWithGoogle());
+  loginBtn?.addEventListener('click', () => SupaAuth.loginWithSteam());
 
   signoutBtn?.addEventListener('click', async () => {
     await SupaAuth.logout();
@@ -91,7 +91,7 @@
       }
     });
 
-    loginBtn?.addEventListener('click', () => SupaAuth.loginWithGoogle());
+    loginBtn?.addEventListener('click', () => SupaAuth.loginWithSteam());
     logoutBtn?.addEventListener('click', () => { dropdown.classList.remove('open'); SupaAuth.logout(); });
     userMenu?.addEventListener('click', e => {
       if (dropdown.contains(e.target)) return;

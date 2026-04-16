@@ -1197,7 +1197,7 @@ window.addEventListener('resize', () => {
     }
   });
 
-  loginBtn.addEventListener('click', () => SupaAuth.loginWithGoogle());
+  loginBtn.addEventListener('click', () => SupaAuth.loginWithSteam());
 
   logoutBtn?.addEventListener('click', () => {
     dropdown.classList.remove('open');
