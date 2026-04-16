@@ -1,3 +1,5 @@
+// ── Sidebar + search ─────────────────────────────────────────────────────
+(function() {
   var toggle  = document.getElementById('sidebar-toggle');
   var sidebar = document.getElementById('sidebar');
   var overlay = document.getElementById('sidebar-overlay');
@@ -56,6 +58,7 @@
   const logoutBtn = document.getElementById('google-logout-btn');
 
   SupaAuth.onStateChange(({ user }) => {
+    console.log('[google-auth] state change, user:', user ? user.email : null);
     if (user) {
       loginBtn.hidden    = true;
       userMenu.hidden    = false;
@@ -69,7 +72,10 @@
     }
   });
 
-  loginBtn?.addEventListener('click', () => SupaAuth.loginWithGoogle());
+  loginBtn?.addEventListener('click', () => {
+    console.log('[google-auth] sign-in clicked');
+    SupaAuth.loginWithGoogle().catch(err => console.error('[google-auth] login error:', err));
+  });
   logoutBtn?.addEventListener('click', () => { dropdown.classList.remove('open'); SupaAuth.logout(); });
   userMenu?.addEventListener('click', e => {
     if (dropdown.contains(e.target)) return;
