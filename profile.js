@@ -1,5 +1,15 @@
 // profile.js — My Account page logic
 
+const SHOW_USERNAME_KEY = 'proton-pulse:show-username-on-reports';
+
+function getShowUsername() {
+  return localStorage.getItem(SHOW_USERNAME_KEY) !== 'false';
+}
+
+function setShowUsername(val) {
+  localStorage.setItem(SHOW_USERNAME_KEY, val ? 'true' : 'false');
+}
+
 (async function () {
   const signedIn  = document.getElementById('profile-signed-in');
   const signedOut = document.getElementById('profile-signed-out');
@@ -7,6 +17,8 @@
   const signoutBtn = document.getElementById('profile-signout-btn');
   const copyBtn   = document.getElementById('copy-uid-btn');
   const copyLabel = document.getElementById('copy-uid-label');
+  const usernameToggle = document.getElementById('show-username-toggle');
+  const usernameStatus = document.getElementById('show-username-status');
 
   function showUser(user) {
     const name    = user.user_metadata?.full_name || user.user_metadata?.name || '';
@@ -24,6 +36,10 @@
     document.getElementById('profile-email-detail').textContent = email;
     document.getElementById('profile-last-signin').textContent  = lastAt;
     document.getElementById('profile-steam-username').textContent = name || '—';
+    if (usernameToggle) {
+      usernameToggle.checked = getShowUsername();
+      usernameStatus.textContent = usernameToggle.checked ? 'Shown on reports' : 'Anonymous';
+    }
 
     signedOut.hidden = true;
     signedIn.hidden  = false;
@@ -68,6 +84,11 @@
         if (copyLabel) copyLabel.textContent = 'Copy';
       }, 1500);
     }).catch(() => {});
+  });
+
+  usernameToggle?.addEventListener('change', () => {
+    setShowUsername(usernameToggle.checked);
+    if (usernameStatus) usernameStatus.textContent = usernameToggle.checked ? 'Shown on reports' : 'Anonymous';
   });
 
   // ── Topbar auth chip ──────────────────────────────────────────────────────

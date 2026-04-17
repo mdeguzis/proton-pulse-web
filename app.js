@@ -275,7 +275,7 @@ async function renderHomePage() {
   el.innerHTML = '<div class="state-box">Loading Proton Pulse configs...</div>';
   try {
     const r = await fetch(
-      `${SB_URL}/user_proton_configs?select=voter_id,app_id,app_name,config,updated_at&order=updated_at.desc`,
+      `${SB_URL}/user_proton_configs?select=id,voter_id,app_id,app_name,config,updated_at&order=updated_at.desc`,
       { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
     );
     const rows = r.ok
@@ -342,7 +342,7 @@ async function fetchMatchingPulseConfigs(query) {
   if (!q) return [];
   try {
     const url = new URL(`${SB_URL}/user_proton_configs`);
-    url.searchParams.set('select', 'voter_id,app_id,app_name,config,updated_at');
+    url.searchParams.set('select', 'id,voter_id,app_id,app_name,config,updated_at');
     url.searchParams.set('order', 'updated_at.desc');
     url.searchParams.set('limit', '60');
     if (/^\d+$/.test(q)) {
@@ -403,7 +403,7 @@ function latestPerClient(rows) {
 async function fetchSupabase(appId) {
   try {
     const r = await fetch(
-      `${SB_URL}/user_proton_configs?app_id=eq.${appId}&select=voter_id,app_id,app_name,config,updated_at&order=updated_at.desc`,
+      `${SB_URL}/user_proton_configs?app_id=eq.${appId}&select=id,voter_id,app_id,app_name,config,updated_at&order=updated_at.desc`,
       { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
     );
     if (!r.ok) return [];
@@ -413,6 +413,7 @@ async function fetchSupabase(appId) {
       const cfg = row.config || {};
       return {
         appId:         row.app_id,
+        configId:      row.id ?? null,
         clientId:      row.voter_id || cfg.clientId || '',
         profileName:   cfg.profileName || '',
         protonVersion: cfg.protonVersion || '',
@@ -636,7 +637,7 @@ function renderConfigCard(c, idx) {
   const isPlugin = !isProtonDb && (c.source || '').toLowerCase() !== 'web' && !(c.source || '').startsWith('web-');
   const sourceLabel = isProtonDb ? 'ProtonDB' : isPlugin ? 'Decky Plugin' : 'Web';
   const unnamed = !c.profileName;
-  const configId = c.clientId ? c.clientId.slice(0, 12) : null;
+  const configId = c.configId != null ? `#${c.configId}` : (c.clientId ? `#${c.clientId.slice(0, 8)}…` : null);
   return `
     <div class="config-card">
       <div class="config-head">
@@ -650,7 +651,7 @@ function renderConfigCard(c, idx) {
             : '<span class="source-badge steam-game">Steam</span>'}
         </div>
       </div>
-      ${configId ? `<div class="config-row"><span class="config-lbl">Config ID</span><span class="config-val" style="font-family:monospace;font-size:0.8em;color:var(--muted)" title="${esc(c.clientId)}">#${esc(configId)}&hellip;</span></div>` : ''}
+      ${configId ? `<div class="config-row"><span class="config-lbl">Config ID</span><span class="config-val" style="font-family:monospace;font-size:0.8em;color:var(--muted)" title="${esc(c.clientId)}">${esc(configId)}</span></div>` : ''}
       ${isPlugin && c.pluginVersion ? `<div class="config-row"><span class="config-lbl">Plugin Version</span><span class="config-val">${esc(c.pluginVersion)}</span></div>` : ''}
       <div class="config-row">
         <span class="config-lbl">Proton</span>

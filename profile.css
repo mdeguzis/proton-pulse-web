@@ -176,6 +176,34 @@
 }
 .profile-signout-btn:hover { background: rgba(200,80,80,0.1); border-color: #c85050; color: #e07070; }
 
+.profile-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.profile-toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
+.profile-toggle-track {
+  width: 36px;
+  height: 20px;
+  background: var(--border2);
+  border-radius: 999px;
+  transition: background .15s;
+  position: relative;
+}
+.profile-toggle-track::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 14px; height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform .15s;
+}
+.profile-toggle input:checked + .profile-toggle-track { background: var(--accent); }
+.profile-toggle input:checked + .profile-toggle-track::after { transform: translateX(16px); }
+
 @media (max-width: 640px) {
   .profile-card { flex-direction: column; align-items: flex-start; }
   .profile-uid { word-break: break-all; }
