@@ -454,6 +454,7 @@ async function fetchNativeReports(appId) {
     }
     return [...seen.values()].map(row => ({
       reportId:          row.id ?? null,
+      appId:             row.app_id,
       clientId:          row.client_id || '',
       title:             row.title || `App ${row.app_id}`,
       cpu:               row.cpu || '',
@@ -514,6 +515,8 @@ async function castVote(appId, rKey, vote, upBtn, dnBtn) {
   const dnCount = dnBtn.querySelector('.vote-count');
   const up = parseInt(upCount.textContent) || 0;
   const dn = parseInt(dnCount.textContent) || 0;
+
+  if ((vote === 1 && wasUp) || (vote === -1 && wasDn)) return;
 
   upBtn.classList.remove('active');
   dnBtn.classList.remove('active');
