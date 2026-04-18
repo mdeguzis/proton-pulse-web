@@ -36,18 +36,23 @@
   });
 })();
 
-// Pulse report count
+// Pulse report count. Uses HEAD + Content-Range so we don't care whether
+// PostgREST returns the aggregate in the body; the header is always there
+// when Prefer: count=exact is set. Range: 0-0 keeps the response tiny.
 (async function loadPulseStats() {
   const SB = 'https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1';
   const KEY = 'sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V';
   try {
-    const resp = await fetch(`${SB}/user_configs?select=count`, {
-      headers: { apikey: KEY, Prefer: 'count=exact' }
+    const resp = await fetch(`${SB}/user_configs?select=id`, {
+      method: 'HEAD',
+      headers: { apikey: KEY, Prefer: 'count=exact', Range: '0-0' },
     });
-    const data = await resp.json();
-    const count = data[0]?.count ?? 0;
+    // content-range looks like "0-0/1234" or "*/1234"
+    const range = resp.headers.get('content-range') || '';
+    const total = parseInt(range.split('/')[1], 10);
+    const count = Number.isFinite(total) ? total : 0;
     const el = document.getElementById('pulse-report-count');
-    if (el) el.textContent = Number(count).toLocaleString();
+    if (el) el.textContent = count.toLocaleString();
   } catch (_) {}
 })();
 
