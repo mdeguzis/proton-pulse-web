@@ -690,7 +690,14 @@ function downloadJson(obj, prefix) {
   URL.revokeObjectURL(a.href);
 }
 
-function renderConfigCard(c, idx) {
+function configKey(c) {
+  return `cfg:${c.configId != null ? c.configId : (c.clientId || '')}`;
+}
+
+function renderConfigCard(c, idx, votes = {}, userVotes = {}) {
+  const ck = configKey(c);
+  const cv = votes[ck] || { up: 0, down: 0 };
+  const userVote = userVotes[ck] || 0;
   const vars = Object.entries(c.enabledVars || {}).filter(([, v]) => v);
   const isProtonDb = (c.source || '').toLowerCase() === 'protondb';
   const isPlugin = !isProtonDb && (c.source || '').toLowerCase() !== 'web' && !(c.source || '').startsWith('web-');
@@ -706,13 +713,19 @@ function renderConfigCard(c, idx) {
           <div class="config-name${unnamed ? ' config-name--unnamed' : ''}">${unnamed ? 'Unnamed Config' : esc(c.profileName)}</div>
           ${configId ? `<div class="config-id-line" title="${esc(c.clientId)}">${esc(configId)}</div>` : ''}
         </div>
-        <div style="display:flex;gap:4px;align-items:center;flex-wrap:wrap">
-          <span class="source-badge pulse">
-            <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse
-          </span>
-          ${(c.isNonSteam || isNonSteamAppId(c.appId))
-            ? '<span class="source-badge non-steam-game">Non-Steam</span>'
-            : '<span class="source-badge steam-game">Steam</span>'}
+        <div style="display:flex;flex-direction:column;gap:5px;align-items:flex-end">
+          <div style="display:flex;gap:4px;align-items:center;flex-wrap:wrap">
+            <span class="source-badge pulse">
+              <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse
+            </span>
+            ${(c.isNonSteam || isNonSteamAppId(c.appId))
+              ? '<span class="source-badge non-steam-game">Non-Steam</span>'
+              : '<span class="source-badge steam-game">Steam</span>'}
+          </div>
+          <div class="vote-btns">
+            <button class="vote-btn vote-up${userVote === 1 ? ' active' : ''}" data-vote="1" data-rkey="${esc(ck)}" data-appid="${c.appId}" title="Helpful"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg><span class="vote-count">${cv.up}</span></button>
+            <button class="vote-btn vote-dn${userVote === -1 ? ' active' : ''}" data-vote="-1" data-rkey="${esc(ck)}" data-appid="${c.appId}" title="Not helpful"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="transform:scaleY(-1)"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg><span class="vote-count">${cv.down}</span></button>
+          </div>
         </div>
       </div>
       ${isPlugin && c.pluginVersion ? `<div class="config-row"><span class="config-lbl">Plugin Version</span><span class="config-val">${esc(c.pluginVersion)}</span></div>` : ''}
@@ -818,12 +831,12 @@ function renderCard(r, votes, userVotes = {}) {
       <div class="left">
         <div class="card-head">
           <div class="proton">${esc(r.protonVersion || 'Unknown')}</div>
-          ${sourceBadge}
         </div>
         <div class="hw">${esc([r.gpu, r.os].filter(Boolean).join(' / ') || 'Hardware unavailable')}</div>
         <div class="age">${daysAgo(r.timestamp)}</div>
       </div>
       <div class="right">
+        ${sourceBadge}
         <span class="rating" style="background:${rc};color:${rt}">${r.rating || '?'}</span>
         <span class="score" style="color:${confColor(parseFloat(score))}">${score}/10</span>
         <div class="vote-btns">
@@ -992,7 +1005,7 @@ async function renderGamePage(appId) {
           </div>
           <div class="configs-list" style="border:1px solid var(--border)">
             ${visibleCfgs.length
-              ? visibleCfgs.map((c, i) => renderConfigCard(c, i)).join('')
+              ? visibleCfgs.map((c, i) => renderConfigCard(c, i, votes, userVotes)).join('')
               : '<div class="state-box" style="border:none;padding:20px">No configs match filters</div>'}
           </div>`;
       })() : `
