@@ -1,6 +1,8 @@
 // profile.js — My Account page logic
 
 const SHOW_USERNAME_KEY = 'proton-pulse:show-username-on-reports';
+const HW_GPU_KEY = 'proton-pulse:hw-gpu-vendor';
+const HW_OS_KEY  = 'proton-pulse:hw-os';
 
 function getShowUsername() {
   return localStorage.getItem(SHOW_USERNAME_KEY) === 'true';
@@ -19,6 +21,8 @@ function setShowUsername(val) {
   const copyLabel = document.getElementById('copy-uid-label');
   const usernameToggle = document.getElementById('show-username-toggle');
   const usernameStatus = document.getElementById('show-username-status');
+  const hwGpuSelect    = document.getElementById('hw-gpu-vendor');
+  const hwOsInput      = document.getElementById('hw-os');
 
   function showUser(user) {
     const name    = user.user_metadata?.full_name || user.user_metadata?.name || '';
@@ -40,6 +44,8 @@ function setShowUsername(val) {
       usernameToggle.checked = getShowUsername();
       usernameStatus.textContent = usernameToggle.checked ? 'Shown on reports' : 'Anonymous';
     }
+    if (hwGpuSelect) hwGpuSelect.value = localStorage.getItem(HW_GPU_KEY) || '';
+    if (hwOsInput)   hwOsInput.value   = localStorage.getItem(HW_OS_KEY)  || '';
 
     signedOut.hidden = true;
     signedIn.hidden  = false;
@@ -89,6 +95,14 @@ function setShowUsername(val) {
   usernameToggle?.addEventListener('change', () => {
     setShowUsername(usernameToggle.checked);
     if (usernameStatus) usernameStatus.textContent = usernameToggle.checked ? 'Shown on reports' : 'Anonymous';
+  });
+
+  hwGpuSelect?.addEventListener('change', () => {
+    localStorage.setItem(HW_GPU_KEY, hwGpuSelect.value);
+  });
+
+  hwOsInput?.addEventListener('change', () => {
+    localStorage.setItem(HW_OS_KEY, hwOsInput.value.trim());
   });
 
   // ── Topbar auth chip ──────────────────────────────────────────────────────

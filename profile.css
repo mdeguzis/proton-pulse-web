@@ -111,6 +111,16 @@
   margin-top: 6px;
   line-height: 1.5;
 }
+.profile-select {
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 0.82rem;
+  padding: 5px 10px;
+  min-width: 180px;
+}
+.profile-select:focus { outline: none; border-color: var(--accent); }
 
 .profile-uid {
   font-family: var(--mono);

@@ -161,6 +161,29 @@
         </div>
       </div>
 
+      <div class="profile-section">
+        <div class="profile-section-title">My hardware</div>
+        <div class="profile-field">
+          <div class="profile-field-label">GPU vendor</div>
+          <div class="profile-field-value">
+            <select id="hw-gpu-vendor" class="profile-select">
+              <option value="">Any (no preference)</option>
+              <option value="nvidia">NVIDIA</option>
+              <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+            </select>
+          </div>
+          <div class="profile-field-hint">Pre-selects the GPU filter on report pages to match your hardware.</div>
+        </div>
+        <div class="profile-field">
+          <div class="profile-field-label">OS</div>
+          <div class="profile-field-value">
+            <input type="text" id="hw-os" class="profile-select" placeholder="e.g. Arch, Ubuntu, Nobara" maxlength="40">
+          </div>
+          <div class="profile-field-hint">Pre-selects the OS filter. Use the first word of your distro name.</div>
+        </div>
+      </div>
+
       <div class="profile-section profile-section-danger">
         <div class="profile-section-title">Session</div>
         <p class="profile-danger-note">Signing out will clear your session from this browser. Your data remains stored.</p>

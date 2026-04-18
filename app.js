@@ -927,8 +927,8 @@ async function renderGamePage(appId) {
   document.title = `${title} - Proton Pulse`;
 
   let sortMode = 'recent';
-  let filterGpu    = '';
-  let filterOs     = '';
+  let filterGpu    = localStorage.getItem('proton-pulse:hw-gpu-vendor') || '';
+  let filterOs     = localStorage.getItem('proton-pulse:hw-os') || '';
   let filterRating = '';
   let filterSource = '';
 
