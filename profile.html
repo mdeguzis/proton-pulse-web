@@ -162,7 +162,7 @@
       </div>
 
       <div class="profile-section">
-        <div class="profile-section-title">My hardware</div>
+        <div class="profile-section-title">Report filter preferences</div>
         <div class="profile-field">
           <div class="profile-field-label">GPU vendor</div>
           <div class="profile-field-value">
@@ -181,6 +181,89 @@
             <input type="text" id="hw-os" class="profile-select" placeholder="e.g. Arch, Ubuntu, Nobara" maxlength="40">
           </div>
           <div class="profile-field-hint">Pre-selects the OS filter. Use the first word of your distro name.</div>
+        </div>
+      </div>
+
+      <!-- Actual hardware spec, used to auto-fill the submit-a-report form on the web app -->
+      <div class="profile-section">
+        <div class="profile-section-title">My hardware</div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">Paste Steam system information</div>
+          <div class="profile-field-value" style="flex-direction:column;align-items:stretch;gap:8px">
+            <textarea id="myhw-paste" class="profile-textarea" rows="6"
+              placeholder="Open Steam → Help → System Information, copy the whole thing, paste it here. Same format ProtonDB accepts."></textarea>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+              <button type="button" class="profile-parse-btn" id="myhw-parse-btn">Parse and fill</button>
+              <button type="button" class="profile-clear-btn" id="myhw-clear-btn">Clear all</button>
+              <span id="myhw-parse-status" style="font-size:0.76rem;color:var(--muted)"></span>
+            </div>
+          </div>
+          <div class="profile-field-hint">
+            Pasting is optional, you can also just fill the boxes below. These values pre-fill the submit-a-report form when using the web app.
+          </div>
+        </div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">CPU</div>
+          <div class="profile-field-value">
+            <input type="text" id="myhw-cpu" class="profile-select" placeholder="e.g. AMD Ryzen 7 5800X3D" maxlength="120">
+          </div>
+        </div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">GPU</div>
+          <div class="profile-field-value">
+            <input type="text" id="myhw-gpu" class="profile-select" placeholder="e.g. NVIDIA GeForce RTX 4070" maxlength="120">
+          </div>
+        </div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">GPU vendor</div>
+          <div class="profile-field-value">
+            <select id="myhw-gpu-vendor" class="profile-select">
+              <option value="">--</option>
+              <option value="nvidia">NVIDIA</option>
+              <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">GPU driver</div>
+          <div class="profile-field-value">
+            <input type="text" id="myhw-gpu-driver" class="profile-select" placeholder="e.g. Mesa 24.1.0 or 555.42.02" maxlength="80">
+          </div>
+        </div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">RAM</div>
+          <div class="profile-field-value">
+            <input type="text" id="myhw-ram" class="profile-select" placeholder="e.g. 32 GB" maxlength="20">
+          </div>
+        </div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">VRAM (MB)</div>
+          <div class="profile-field-value">
+            <input type="number" id="myhw-vram-mb" class="profile-select" placeholder="e.g. 8192" min="0" max="262144">
+          </div>
+        </div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">OS</div>
+          <div class="profile-field-value">
+            <input type="text" id="myhw-os" class="profile-select" placeholder="e.g. Arch Linux" maxlength="60">
+            <input type="text" id="myhw-os-version" class="profile-select" placeholder="Version (e.g. 24.04)" style="max-width:140px" maxlength="30">
+          </div>
+        </div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">Kernel</div>
+          <div class="profile-field-value">
+            <input type="text" id="myhw-kernel" class="profile-select" placeholder="e.g. 6.8.0" maxlength="60">
+          </div>
         </div>
       </div>
 

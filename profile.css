@@ -122,6 +122,36 @@
 }
 .profile-select:focus { outline: none; border-color: var(--accent); }
 
+.profile-textarea {
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-family: var(--mono);
+  padding: 8px 10px;
+  resize: vertical;
+  line-height: 1.45;
+}
+.profile-textarea:focus { outline: none; border-color: var(--accent); }
+
+.profile-parse-btn,
+.profile-clear-btn {
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: inherit;
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--text);
+  cursor: pointer;
+  transition: background .1s, border-color .1s, color .1s;
+}
+.profile-parse-btn { border-color: var(--accent); color: var(--accent); }
+.profile-parse-btn:hover { background: rgba(74,159,208,0.12); }
+.profile-clear-btn:hover { color: #e07070; border-color: #c85050; }
+
 .profile-uid {
   font-family: var(--mono);
   font-size: 0.8rem;

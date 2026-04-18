@@ -119,6 +119,39 @@ async function submitReport(appId, title, form) {
   }
 }
 
+// Map of submit-form input name -> localStorage key (set on the profile page).
+// Kept here so the submit form can stay self-contained without importing profile.js
+const MYHW_FORM_MAP = {
+  cpu:        'proton-pulse:myhw:cpu',
+  gpu:        'proton-pulse:myhw:gpu',
+  gpuVendor:  'proton-pulse:myhw:gpu-vendor',
+  gpuDriver:  'proton-pulse:myhw:gpu-driver',
+  ram:        'proton-pulse:myhw:ram',
+  vramMb:     'proton-pulse:myhw:vram-mb',
+  os:         'proton-pulse:myhw:os',
+  osVersion:  'proton-pulse:myhw:os-version',
+  kernel:     'proton-pulse:myhw:kernel',
+};
+
+// Pre-fill the submit-a-report form with the user's saved My-hardware values.
+// Only fills empty fields, so a half-written draft isn't clobbered.
+//
+// TODO(you): implement this. ~8 lines.
+// Steps:
+//   1. Grab the <form id="submit-report-form"> inside el
+//   2. For each [name, storageKey] in MYHW_FORM_MAP:
+//       - find the matching form element by name
+//       - if it exists and its current value is empty, set it from localStorage
+//   3. Watch out: the gpuVendor <select> will ignore values that aren't one of
+//      its options, so that'll fail gracefully on its own.
+//
+// You may want to think about whether to dispatch an 'input' event after
+// setting — right now no listeners care, but it's a cheap habit that avoids
+// surprises later.
+function prefillSubmitFormFromMyHardware(el) {
+  // your code here
+}
+
 async function populateSubmitForm(el) {
   const container = el.querySelector('#submit-form-content');
   if (!container || container.dataset.loaded) return;
@@ -1134,6 +1167,7 @@ async function renderGamePage(appId) {
       panel?.classList.toggle('open');
       if (panel?.classList.contains('open')) {
         await populateSubmitForm(el);
+        prefillSubmitFormFromMyHardware(el);
         const protonInput = el.querySelector('input[name="protonVersion"]');
         const protonHint = el.querySelector('#proton-hint');
         if (protonInput && protonHint) {
