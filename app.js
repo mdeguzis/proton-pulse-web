@@ -490,6 +490,61 @@ async function fetchVotes(appId) {
   } catch { return {}; }
 }
 
+async function fetchUserVotes(appId) {
+  try {
+    const voterId = getWebClientId();
+    if (!voterId) return {};
+    const r = await fetch(
+      `${SB_URL}/report_votes?voter_id=eq.${voterId}&app_id=eq.${appId}&select=report_key,vote`,
+      { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
+    );
+    if (!r.ok) return {};
+    const rows = await r.json();
+    const result = {};
+    for (const row of rows) result[row.report_key] = row.vote;
+    return result;
+  } catch { return {}; }
+}
+
+async function castVote(appId, rKey, vote, upBtn, dnBtn) {
+  const voterId = getWebClientId();
+  const wasUp = upBtn.classList.contains('active');
+  const wasDn = dnBtn.classList.contains('active');
+  const upCount = upBtn.querySelector('.vote-count');
+  const dnCount = dnBtn.querySelector('.vote-count');
+  const up = parseInt(upCount.textContent) || 0;
+  const dn = parseInt(dnCount.textContent) || 0;
+
+  upBtn.classList.remove('active');
+  dnBtn.classList.remove('active');
+  if (vote === 1) {
+    upBtn.classList.add('active');
+    upCount.textContent = up + 1;
+    if (wasDn) dnCount.textContent = Math.max(0, dn - 1);
+  } else {
+    dnBtn.classList.add('active');
+    dnCount.textContent = dn + 1;
+    if (wasUp) upCount.textContent = Math.max(0, up - 1);
+  }
+
+  try {
+    const existing = wasUp ? 1 : wasDn ? -1 : null;
+    if (existing === null) {
+      await fetch(`${SB_URL}/report_votes?on_conflict=voter_id,app_id,report_key`, {
+        method: 'POST',
+        headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates,return=minimal' },
+        body: JSON.stringify({ voter_id: voterId, app_id: String(appId), report_key: rKey, vote }),
+      });
+    } else {
+      await fetch(`${SB_URL}/report_votes?voter_id=eq.${voterId}&app_id=eq.${String(appId)}&report_key=eq.${encodeURIComponent(rKey)}`, {
+        method: 'PATCH',
+        headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+        body: JSON.stringify({ vote }),
+      });
+    }
+  } catch { /* silently fail */ }
+}
+
 // -- Helpers ------------------------------------------
 
 function reportKey(r) {
@@ -738,8 +793,10 @@ function trendSummary(reps) {
 
 // -- Render: report card ------------------------------
 
-function renderCard(r, votes) {
+function renderCard(r, votes, userVotes = {}) {
   const v     = votes[reportKey(r)] || { up: 0, down: 0 };
+  const rKey  = reportKey(r);
+  const userVote = userVotes[rKey] || 0;
   const score = Math.min(10, Math.max(0, (r.score || estimateScore(r)) / 10)).toFixed(1);
   const src = (r.source || '').toLowerCase();
   const isPP  = src === 'proton-pulse';
@@ -766,7 +823,10 @@ function renderCard(r, votes) {
       <div class="right">
         <span class="rating" style="background:${rc};color:${rt}">${r.rating || '?'}</span>
         <span class="score" style="color:${confColor(parseFloat(score))}">${score}/10</span>
-        <span class="votes">+${v.up} -${v.down}</span>
+        <div class="vote-btns">
+          <button class="vote-btn vote-up${userVote === 1 ? ' active' : ''}" data-vote="1" data-rkey="${esc(rKey)}" data-appid="${r.appId}" title="Helpful"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg><span class="vote-count">${v.up}</span></button>
+          <button class="vote-btn vote-dn${userVote === -1 ? ' active' : ''}" data-vote="-1" data-rkey="${esc(rKey)}" data-appid="${r.appId}" title="Not helpful"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="transform:scaleY(-1)"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg><span class="vote-count">${v.down}</span></button>
+        </div>
       </div>
     </div>
     <div class="card-summary">
@@ -795,11 +855,12 @@ async function renderGamePage(appId) {
   const el = document.getElementById('content');
   el.innerHTML = '<div class="state-box">Loading reports...</div>';
 
-  const [cdn, configs, nativeReports, votes] = await Promise.all([
+  const [cdn, configs, nativeReports, votes, userVotes] = await Promise.all([
     fetchCdn(appId),
     fetchSupabase(appId),
     fetchNativeReports(appId),
-    fetchVotes(appId)
+    fetchVotes(appId),
+    fetchUserVotes(appId),
   ]);
 
   const reports = [
@@ -990,7 +1051,7 @@ async function renderGamePage(appId) {
 
       <div class="cards">
         ${reps.length
-          ? reps.map(r => renderCard(r, votes)).join('')
+          ? reps.map(r => renderCard(r, votes, userVotes)).join('')
           : '<div class="state-box" style="border:none">No reports match filters</div>'}
       </div>
     `;
@@ -1050,6 +1111,17 @@ async function renderGamePage(appId) {
         else if (b.dataset.reportJson) downloadJson(JSON.parse(b.dataset.reportJson), 'report');
       });
     });
+    el.querySelectorAll('.vote-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const vote  = parseInt(btn.dataset.vote);
+        const rKey  = btn.dataset.rkey;
+        const aId   = btn.dataset.appid;
+        const btns  = btn.closest('.vote-btns');
+        castVote(aId, rKey, vote, btns.querySelector('.vote-up'), btns.querySelector('.vote-dn'));
+      });
+    });
+
     el.querySelectorAll('.delete-report-btn').forEach(b => {
       b.addEventListener('click', async e => {
         e.stopPropagation();
