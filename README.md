@@ -83,26 +83,35 @@ Go to **Actions -> Update ProtonDB Data -> Run workflow**.
 
 ## Supabase backups
 
-This repo includes a helper for creating downloadable logical Supabase backups
-with the Supabase CLI, following the documented `db dump` flow for `roles`,
-`schema`, and `data` exports.
+This repo includes a helper for creating logical Supabase backups (`roles`,
+`schema`, `data`) using `pg_dump` directly — no Supabase CLI or Docker required.
 
-The default `make` target uses an already-linked local Supabase CLI project, so
-you do not have to put your database URL or password into shell history:
+`pg_dump` is installed automatically by `make setup` (via `pkg` on Termux or
+`apt-get` on Debian/Ubuntu). To install it standalone:
 
 ```bash
-cd proton-pulse-data
-npx --yes supabase link
+make install-pg
+```
+
+Set your database URL in a `.env` file at the repo root:
+
+```bash
+SUPABASE_DB_URL='postgresql://postgres.[ref]:[password]@aws-0-us-east-1.pooler.supabase.com:6543/postgres'
+```
+
+The connection string is in the Supabase dashboard under
+**Settings → Database → Connection string → URI** (use Session mode, port 5432).
+
+Then run:
+
+```bash
 make backup-supabase
 ```
 
-If you prefer a non-interactive or CI-style flow, the script still supports an
-explicit database URL:
+Or pass the URL directly:
 
 ```bash
-cd proton-pulse-data
-SUPABASE_DB_URL='postgresql://postgres.[ref]:[password]@aws-0-us-east-1.pooler.supabase.com:6543/postgres' \
-  bash scripts/backup_supabase.sh
+SUPABASE_DB_URL='postgresql://...' bash scripts/backup_supabase.sh
 ```
 
 Outputs are written to `data/supabase/<timestamp>/` plus a matching
