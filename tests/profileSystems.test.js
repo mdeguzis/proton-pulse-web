@@ -33,6 +33,7 @@ ctx.__deleteSystem          = deleteSystem;
 ctx.__getSteamIdFromSession = getSteamIdFromSession;
 ctx.__escapeHtml            = escapeHtml;
 ctx.__formatSystemUpdated   = formatSystemUpdated;
+ctx.__fetchMyUserConfigs    = fetchMyUserConfigs;
 `;
 
 // Baseline fetch result so the init IIFE inside profile.js doesn't blow up
@@ -385,5 +386,30 @@ describe('formatSystemUpdated', () => {
     // Date('not-a-date') -> Invalid Date; helper should return the raw value
     // so the user sees what came back from the DB, not "Invalid Date"
     expect(ctx.__formatSystemUpdated('not-a-date')).toBe('not-a-date');
+  });
+});
+
+// -- My uploaded reports helpers -------------------------------------------
+// Powers the "My uploaded reports" section on the profile page. Each row on
+// user_configs is a public compatibility report, keyed by client_id
+
+const clientId = '11111111-2222-3333-4444-555555555555';
+
+describe('fetchMyUserConfigs', () => {
+  test('GETs user_configs filtered by client_id and ordered by created_at desc', async () => {
+    const { ctx, fetchMock } = makeCtx({ access_token: 'tok' });
+    await flush();
+    fetchMock.mockClear();
+    fetchMock.mockResolvedValue({ ok: true, status: 200, json: async () => [] });
+
+    await ctx.__fetchMyUserConfigs(clientId, { access_token: 'tok' });
+
+    const [url] = fetchMock.mock.calls[0];
+    expect(url).toBe(
+      `${SUPABASE_URL}/rest/v1/user_configs`
+      + `?client_id=eq.${encodeURIComponent(clientId)}`
+      + `&select=id,app_id,title,proton_version,rating,created_at`
+      + `&order=created_at.desc`,
+    );
   });
 });

@@ -237,6 +237,41 @@
 }
 .game-meta { font-size: 0.8rem; color: var(--muted); }
 .game-meta strong { color: var(--text); }
+
+/* "Your report" chip, shown on the game page when the signed-in
+   client id matches a row in user_configs (a published compatibility report) */
+.my-config-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 5px 10px;
+  border: 1px solid var(--border2);
+  font-size: 0.72rem;
+  line-height: 1;
+}
+.my-config-banner-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.my-config-banner-label {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.66rem;
+}
+.my-config-banner-status {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.my-config-banner--published {
+  border-color: rgba(126, 196, 138, 0.45);
+  background: rgba(100, 180, 120, 0.08);
+}
+.my-config-banner--published .my-config-banner-dot { background: #7ec48a; }
+.my-config-banner--published .my-config-banner-status { color: #7ec48a; }
 .tier-badge {
   display: inline-block;
   padding: 4px 10px;

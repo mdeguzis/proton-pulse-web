@@ -2,6 +2,8 @@
 
 # proton-pulse-data
 
+> Website: **<https://www.proton-pulse.com/>** — the site and JSON data are now served from this custom domain. Old `mdeguzis.github.io/proton-pulse-data/*` URLs still redirect, but please update bookmarks and any automation to the new host.
+
 Monthly GitHub Pages mirror for ProtonDB per-game community reports.
 It is used by the [decky-proton-pulse](https://github.com/mdeguzis/decky-proton-pulse) plugin.
 

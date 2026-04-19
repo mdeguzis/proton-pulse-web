@@ -126,12 +126,18 @@ function parseSteamSystemInfo(text) {
   const cpu = text.match(/CPU Brand:\s*(.+)/i);
   if (cpu) out.cpu = cpu[1].trim();
 
-  // OS is the quoted line right under "Operating System Version:"
-  // e.g.   "Arch Linux" (64 bit)
-  const os = text.match(/Operating System Version:[\s\S]{0,80}?"([^"]+)"/i);
+  // "Operating System Version:" is a header. The actual value sits on
+  // the next line. Windows Steam quotes it ("Arch Linux"), the Linux
+  // plugin writes it unquoted with some indent. \s*\n\s* eats the
+  // newline and indentation so (.+) captures just the value line.
+  const os = text.match(/Operating System Version:\s*\n\s*(.+)/i);
   if (os) {
-    // strip "(64 bit)" or build numbers left in the version label
-    out.os = os[1].replace(/\s*\(.*?\)\s*/g, '').trim();
+    // strip the "(64 bit)" tail first so any wrapping quotes end up
+    // at the real end of the string, then peel those off
+    out.os = os[1].trim()
+      .replace(/\s*\(.*?\)\s*/g, '')
+      .replace(/^"(.*)"$/, '$1')
+      .trim();
   }
 
   // Kernel name+version as one blob (matches Linux and SteamOS layouts)
@@ -139,12 +145,16 @@ function parseSteamSystemInfo(text) {
   if (kVer) out.kernel = kVer[1].trim();
 
   // Video card: Steam prints "Driver:  NVIDIA Corporation NVIDIA GeForce RTX 4070"
-  // We want just the model string. Drop the leading vendor-corp noise when we can.
+  // On the Deck in game mode the plugin may fall back to lspci (no X11),
+  // but if even that probe fails the line will literally say "Driver:  Unknown".
+  // Treat that as no data so we don't trap a useless string in the form.
   const gpu = text.match(/(?:^|\n)\s*Driver:\s*(.+)/i);
   if (gpu) {
     let g = gpu[1].trim();
-    g = g.replace(/^(NVIDIA Corporation|Advanced Micro Devices.*?Inc\.|AMD|Intel Corporation|Intel)\s+/i, '');
-    out.gpu = g;
+    if (!/^unknown$/i.test(g)) {
+      g = g.replace(/^(NVIDIA Corporation|Advanced Micro Devices.*?Inc\.|AMD|Intel Corporation|Intel)\s+/i, '');
+      out.gpu = g;
+    }
   }
 
   // GPU driver version line shows up separately
@@ -207,6 +217,40 @@ function formatSystemUpdated(ts) {
   } catch {
     return ts;
   }
+}
+
+// -- My uploaded configs helpers --
+//
+// The site has two related tables:
+//   user_configs = public compatibility reports visible on app.html
+//                  (column client_id)
+//
+// The web client id is a localStorage UUID (proton-pulse:web-client-id) that
+// lets us list just the reports this user has submitted, without needing a
+// full Supabase auth uid for read-only lookups.
+
+// Same key app.js uses. Duplicated here because app.js isn't loaded on the
+// profile page and I didn't want a third file just for one function
+const WEB_CLIENT_ID_KEY = 'proton-pulse:web-client-id';
+
+function getWebClientIdProfile() {
+  let id = localStorage.getItem(WEB_CLIENT_ID_KEY);
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem(WEB_CLIENT_ID_KEY, id);
+  }
+  return id;
+}
+
+async function fetchMyUserConfigs(clientId, session) {
+  // Your submitted reports, the ones that show up on public game pages
+  const url = `${SUPABASE_URL}/rest/v1/user_configs`
+    + `?client_id=eq.${encodeURIComponent(clientId)}`
+    + `&select=id,app_id,title,proton_version,rating,created_at`
+    + `&order=created_at.desc`;
+  const r = await fetch(url, { headers: supabaseHeaders(session) });
+  if (!r.ok) throw new Error(`Lookup failed: HTTP ${r.status}`);
+  return await r.json();
 }
 
 (async function () {
@@ -552,6 +596,75 @@ function formatSystemUpdated(ts) {
   }
 
   void autoFillFromDefaultIfEmpty();
+
+  // ── My uploaded reports ───────────────────────────────────────────────────
+  // List the user's submitted reports from user_configs. Uploading from the
+  // plugin publishes directly, so there's no draft vs. published split to
+  // represent here, just a flat list of what you've put out there
+  const myConfigsTable    = document.getElementById('my-configs-table');
+  const myConfigsTbody    = document.getElementById('my-configs-tbody');
+  const myConfigsEmpty    = document.getElementById('my-configs-empty');
+  const myConfigsLoading  = document.getElementById('my-configs-loading');
+  const myConfigsStatus   = document.getElementById('my-configs-status');
+  const myConfigsRefresh  = document.getElementById('my-configs-refresh-btn');
+
+  function showMyConfigsStatus(msg, ok) {
+    if (!myConfigsStatus) return;
+    myConfigsStatus.textContent = msg;
+    myConfigsStatus.style.color = ok ? 'var(--green)' : 'var(--red)';
+    setTimeout(() => { myConfigsStatus.textContent = ''; }, 3000);
+  }
+
+  function renderMyConfigs(rows) {
+    myConfigsLoading.hidden = true;
+    if (!rows || rows.length === 0) {
+      myConfigsTable.hidden = true;
+      myConfigsEmpty.hidden = false;
+      return;
+    }
+    myConfigsEmpty.hidden = true;
+    myConfigsTable.hidden = false;
+
+    myConfigsTbody.innerHTML = rows.map(row => {
+      const appLink = `app.html#/app/${encodeURIComponent(row.app_id)}`;
+      const name = row.title || `App ${row.app_id}`;
+      return `
+        <tr data-app-id="${escapeHtml(String(row.app_id))}">
+          <td>
+            <a href="${escapeHtml(appLink)}" class="profile-configs-game-link">${escapeHtml(name)}</a>
+            <div class="profile-configs-appid">App ${escapeHtml(String(row.app_id))}</div>
+          </td>
+          <td>${escapeHtml(row.rating || '')}</td>
+          <td>${escapeHtml(formatSystemUpdated(row.created_at))}</td>
+          <td class="col-action"><a class="profile-configs-view-link" href="${escapeHtml(appLink)}">View</a></td>
+        </tr>`;
+    }).join('');
+  }
+
+  async function refreshMyConfigs() {
+    const s = await SupaAuth.getSession();
+    if (!s?.user) {
+      myConfigsLoading.hidden = true;
+      myConfigsTable.hidden   = true;
+      myConfigsEmpty.hidden   = false;
+      myConfigsEmpty.textContent = 'Sign in with Steam to see your uploaded reports.';
+      return;
+    }
+    myConfigsLoading.hidden = false;
+    myConfigsEmpty.hidden   = true;
+    try {
+      const cid  = getWebClientIdProfile();
+      const rows = await fetchMyUserConfigs(cid, s);
+      renderMyConfigs(rows);
+    } catch (e) {
+      myConfigsLoading.hidden = true;
+      showMyConfigsStatus(e.message || 'Failed to load', false);
+    }
+  }
+
+  myConfigsRefresh?.addEventListener('click', () => { void refreshMyConfigs(); });
+
+  void refreshMyConfigs();
 
   // ── Topbar auth chip ──────────────────────────────────────────────────────
   (function() {

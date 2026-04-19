@@ -313,3 +313,52 @@
 }
 .profile-systems-star.active { color: #d4a843; }
 .profile-systems-trash:hover { color: #c85050; }
+
+/* -- My uploaded configs table -- */
+
+.profile-configs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+.profile-configs-table th,
+.profile-configs-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.profile-configs-table th {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.profile-configs-table tbody tr:last-child td { border-bottom: none; }
+.profile-configs-table td.col-action,
+.profile-configs-table th.col-action {
+  text-align: right;
+  width: 110px;
+}
+.profile-configs-game-link {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+.profile-configs-game-link:hover { color: var(--accent); text-decoration: underline; }
+.profile-configs-appid {
+  font-size: 0.68rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.profile-configs-view-link {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-decoration: none;
+  border: 1px solid var(--border2);
+  padding: 3px 10px;
+  display: inline-block;
+}
+.profile-configs-view-link:hover { color: var(--accent); border-color: var(--accent); }
+

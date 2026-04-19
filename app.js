@@ -1019,6 +1019,17 @@ async function renderGamePage(appId) {
     const rc   = RATING_COLORS[tier] || '#3a4a5a';
     const rt   = RATING_TEXT[tier]   || '#c8d4e0';
 
+    // Show a banner if the signed-in client already has a public report on this
+    // game (matched via client id on user_configs). No draft concept: upload means publish.
+    const myCid = getWebClientId();
+    const myPublished = nativeReports.find(r => r.clientId && r.clientId === myCid);
+    const myStatusBadge = myPublished ? `
+      <div class="my-config-banner my-config-banner--published" title="Your report for this game">
+        <span class="my-config-banner-dot"></span>
+        <span class="my-config-banner-label">Your report:</span>
+        <span class="my-config-banner-status">Published</span>
+      </div>` : '';
+
     el.innerHTML = `
       <div class="game-header">
         <img src="${STEAM_IMG(appId)}" onerror="this.style.display='none'" alt="">
@@ -1030,6 +1041,7 @@ async function renderGamePage(appId) {
             ${nativeReports.length ? `&nbsp;/&nbsp; <strong>${nativeReports.length}</strong> Pulse report${nativeReports.length !== 1 ? 's' : ''}` : ''}
             &nbsp;/&nbsp; <strong>${configs.length}</strong> Pulse config${configs.length !== 1 ? 's' : ''}
           </div>
+          ${myStatusBadge}
         </div>
         <button class="info-btn" id="rating-info-btn" title="What does this rating mean?"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="#3b82f6"/><text x="12" y="17" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="serif">i</text></svg></button>
         ${pulseTier.count > 0 ? `

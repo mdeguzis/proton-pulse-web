@@ -210,6 +210,32 @@
         </div>
       </div>
 
+      <!-- Public reports submitted to user_configs from either the plugin or the web form -->
+      <div class="profile-section">
+        <div class="profile-section-title" style="display:flex;justify-content:space-between;align-items:center">
+          <span>My uploaded reports</span>
+          <button type="button" class="profile-refresh-btn" id="my-configs-refresh-btn">Refresh</button>
+        </div>
+        <div class="profile-field">
+          <div id="my-configs-empty" class="profile-field-hint" hidden>
+            Nothing uploaded yet. Open a game in the Decky plugin and press <strong>Upload to Pulse</strong>, or submit a report from a game page.
+          </div>
+          <div id="my-configs-loading" class="profile-field-hint">Loading your reports...</div>
+          <table class="profile-configs-table" id="my-configs-table" hidden>
+            <thead>
+              <tr>
+                <th>Game</th>
+                <th>Rating</th>
+                <th>Updated</th>
+                <th class="col-action"></th>
+              </tr>
+            </thead>
+            <tbody id="my-configs-tbody"></tbody>
+          </table>
+          <div id="my-configs-status" class="profile-field-hint" style="margin-top:6px"></div>
+        </div>
+      </div>
+
       <!-- Actual hardware spec, used to auto-fill the submit-a-report form on the web app -->
       <div class="profile-section">
         <div class="profile-section-title">My hardware</div>
