@@ -408,6 +408,32 @@ async function fetchMatchingPulseConfigs(query) {
   }
 }
 
+// Return distinct app_ids from user_configs (Pulse compatibility reports) that
+// match the query. Used to tag search results with the Pulse badge even when
+// the game has no saved launch profile yet
+async function fetchMatchingPulseReportAppIds(query) {
+  const q = query.trim();
+  if (!q) return new Set();
+  try {
+    const url = new URL(`${SB_URL}/user_configs`);
+    url.searchParams.set('select', 'app_id');
+    url.searchParams.set('limit', '100');
+    if (/^\d+$/.test(q)) {
+      url.searchParams.set('or', `(app_id.eq.${q},title.ilike.*${q}*)`);
+    } else {
+      url.searchParams.set('title', `ilike.*${q}*`);
+    }
+    const r = await fetch(url.toString(), {
+      headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` },
+    });
+    if (!r.ok) return new Set();
+    const rows = await r.json();
+    return new Set(rows.map((row) => String(row.app_id)));
+  } catch {
+    return new Set();
+  }
+}
+
 function withTimeout(promise, ms, fallback) {
   return Promise.race([
     promise,
@@ -834,7 +860,7 @@ function renderConfigCard(c, idx, votes = {}, userVotes = {}) {
       </div>
       <div class="config-meta">
         ${utcStamp(c.timestamp)} | Source: ${sourceLabel}
-        <button class="cfg-dl-btn" data-cfg-idx="${idx}" title="Download as JSON">JSON</button>
+        <button class="cfg-dl-btn" data-cfg-json='${JSON.stringify(c).replace(/'/g,"&#39;")}' title="Download as JSON">JSON</button>
         ${c.clientId && c.clientId === getWebClientId()
           ? `<button class="cfg-dl-btn delete-cfg-btn" data-voter-id="${esc(c.clientId)}" data-app-id="${c.appId}" style="color:#c85050;border-color:#c85050" title="Delete your config">Delete</button>`
           : ''}
@@ -891,17 +917,20 @@ function renderCard(r, votes, userVotes = {}) {
   const userVote = userVotes[rKey] || 0;
   const score = Math.min(10, Math.max(0, (r.score || estimateScore(r)) / 10)).toFixed(1);
   const src = (r.source || '').toLowerCase();
-  const isPP  = src === 'proton-pulse';
+  // Pulse-submitted reports land in user_configs with source='user' (plugin) or
+  // 'proton-pulse' (legacy). ProtonDB mirror rows are tagged 'protondb'.
+  // Anything starting with 'web' is the web submit flow, which is a Pulse path too
+  const isProtonDb = src === 'protondb';
   const isWeb = src.startsWith('web');
   const WEB_LABELS = { 'web-steamdeck': 'Steam Deck', 'web-linux': 'Linux', 'web-windows': 'Windows', 'web-macos': 'macOS', 'web': 'Web' };
   const rc    = RATING_COLORS[r.rating] || '#3a4a5a';
   const rt    = RATING_TEXT[r.rating]   || '#c8d4e0';
   const na = s => s || '<span style="color:#4a5f70;font-style:italic">Not available</span>';
-  const sourceBadge = isPP
-    ? '<span class="source-badge pulse"><img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse</span>'
+  const sourceBadge = isProtonDb
+    ? '<span class="source-badge protondb">ProtonDB</span>'
     : isWeb
       ? `<span class="source-badge web">${WEB_LABELS[src] || 'Web'}</span>`
-      : '<span class="source-badge protondb">ProtonDB</span>';
+      : '<span class="source-badge pulse"><img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse</span>';
   return `
     <div class="card">
       <div class="left">
@@ -974,11 +1003,9 @@ async function renderGamePage(appId) {
   let filterGpu    = localStorage.getItem('proton-pulse:hw-gpu-vendor') || '';
   let filterOs     = localStorage.getItem('proton-pulse:hw-os') || '';
   let filterRating = '';
+  // Unified source filter across configs + reports: 'pulse-config', 'pulse-report',
+  // 'protondb', or '' for any
   let filterSource = '';
-
-  // Pulse config filters
-  let filterCfgProton = '';
-  let filterCfgSource = '';
 
   const gpuVendor = g => {
     if (!g) return '';
@@ -993,28 +1020,36 @@ async function renderGamePage(appId) {
     return o.trim().split(/\s+/)[0];
   };
 
+  // Tag each incoming item with the bucket it belongs to so we can render + filter
+  // from one unified list. 'pulse-report' covers both plugin and web submissions,
+  // 'protondb' is the upstream mirror, 'pulse-config' is a saved launch profile
+  const taggedReports = reports.map((r) => {
+    const src = (r.source || '').toLowerCase();
+    const bucket = src === 'protondb' ? 'protondb' : 'pulse-report';
+    return { ...r, _kind: 'report', _bucket: bucket };
+  });
+  const taggedConfigs = configs.map((c) => ({ ...c, _kind: 'config', _bucket: 'pulse-config' }));
+  const combined = [...taggedConfigs, ...taggedReports];
+
   const filtered = () => {
-    let arr = [...reports];
+    let arr = [...combined];
     if (filterGpu)    arr = arr.filter(r => gpuVendor(r.gpu) === filterGpu);
     if (filterOs)     arr = arr.filter(r => osBase(r.os) === filterOs);
-    if (filterRating) arr = arr.filter(r => r.rating === filterRating);
-    if (filterSource) arr = arr.filter(r => (r.source || 'protondb') === filterSource);
-    return arr;
-  };
-
-  const filteredConfigs = () => {
-    let arr = [...configs];
-    if (filterCfgProton) arr = arr.filter(c => c.protonVersion === filterCfgProton);
-    if (filterCfgSource) arr = arr.filter(c => (c.source || 'proton-pulse') === filterCfgSource);
+    // Rating filter only makes sense for reports. Configs don't carry a rating,
+    // so drop them when the user explicitly narrows by rating
+    if (filterRating) arr = arr.filter(r => r._kind === 'report' && r.rating === filterRating);
+    if (filterSource) arr = arr.filter(r => r._bucket === filterSource);
     return arr;
   };
 
   const sorted = () => {
     const arr = filtered();
-    if (sortMode === 'recent') arr.sort((a, b) => b.timestamp - a.timestamp);
+    if (sortMode === 'recent') arr.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
     else if (sortMode === 'votes') arr.sort((a, b) => {
-      const va = votes[reportKey(a)] || { up:0, down:0 };
-      const vb = votes[reportKey(b)] || { up:0, down:0 };
+      const aKey = a._kind === 'config' ? configKey(a) : reportKey(a);
+      const bKey = b._kind === 'config' ? configKey(b) : reportKey(b);
+      const va = votes[aKey] || { up:0, down:0 };
+      const vb = votes[bKey] || { up:0, down:0 };
       return (vb.up - vb.down) - (va.up - va.down);
     });
     return arr;
@@ -1107,43 +1142,11 @@ async function renderGamePage(appId) {
       </div>
 
       ${trendSummary(reports)}
-      ${configs.length ? (() => {
-        const cfgVersions = [...new Set(configs.map(c => c.protonVersion).filter(Boolean))].sort();
-        const cfgSources  = [...new Set(configs.map(c => c.source || 'proton-pulse'))].sort();
-        const visibleCfgs = filteredConfigs();
-        return `
-          <div class="configs-section-head" id="pulse-summary" style="border:1px solid var(--border);border-bottom:none;padding:8px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-            <span class="configs-section-title">Community Pulse Configs</span>
-            <span class="configs-section-count">${configs.length} shared by Proton Pulse users</span>
-            <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-              ${cfgVersions.length > 1 ? `
-              <select id="fCfgProton" style="background:var(--bg);border:1px solid var(--border2);color:var(--text);padding:3px 7px;font-size:0.72rem;font-family:inherit">
-                <option value="">Any Proton</option>
-                ${cfgVersions.map(v => `<option value="${esc(v)}" ${filterCfgProton===v?'selected':''}>${esc(v)}</option>`).join('')}
-              </select>` : ''}
-              ${cfgSources.length > 1 ? `
-              <select id="fCfgSource" style="background:var(--bg);border:1px solid var(--border2);color:var(--text);padding:3px 7px;font-size:0.72rem;font-family:inherit">
-                <option value="">Any Source</option>
-                ${cfgSources.map(s => `<option value="${esc(s)}" ${filterCfgSource===s?'selected':''}>${esc(s)}</option>`).join('')}
-              </select>` : ''}
-              ${(filterCfgProton || filterCfgSource) ? `<span style="font-size:0.72rem;color:var(--muted)">${visibleCfgs.length} of ${configs.length}</span>` : ''}
-            </div>
-          </div>
-          <div class="configs-list" style="border:1px solid var(--border)">
-            ${visibleCfgs.length
-              ? visibleCfgs.map((c, i) => renderConfigCard(c, i, votes, userVotes)).join('')
-              : '<div class="state-box" style="border:none;padding:20px">No configs match filters</div>'}
-          </div>`;
-      })() : `
-        <div class="configs-empty">
-          No Proton Pulse configs for this game yet —
-          submit a report above or <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener">add one via the Decky Plugin</a>.
-        </div>`}
 
-      <div class="reports-section-head" id="reports-summary">
+      <div class="reports-section-head" id="pulse-summary">
         <div class="reports-section-copy">
-          <span class="reports-section-title">Community Reports</span>
-          <span class="reports-section-subtitle">Combined compatibility reports from ProtonDB and Proton Pulse contributors</span>
+          <span class="reports-section-title">Community Pulse Configs &amp; Reports</span>
+          <span class="reports-section-subtitle">Saved Pulse configs and compatibility reports from ProtonDB and Proton Pulse contributors, listed together and labeled by source.</span>
         </div>
         <div class="sort-bar">
           <button class="${sortMode==='recent'?'active':''}" data-sort="recent">Recent</button>
@@ -1154,14 +1157,15 @@ async function renderGamePage(appId) {
       <div class="filter-bar">
         ${(() => {
           const GPU_LABEL = { nvidia: 'NVIDIA', amd: 'AMD', intel: 'Intel' };
-          const SRC_LABEL = { 'protondb': 'ProtonDB', 'proton-pulse': 'Pulse' };
+          const SRC_LABEL = { 'pulse-config': 'Pulse Config', 'pulse-report': 'Pulse Report', 'protondb': 'ProtonDB' };
+          const SRC_ORDER = ['pulse-config', 'pulse-report', 'protondb'];
           const RATING_LABEL = { platinum: 'Platinum', gold: 'Gold', silver: 'Silver', bronze: 'Bronze', borked: 'Borked' };
           const RATING_ORDER = ['platinum','gold','silver','bronze','borked'];
 
-          const availGpus    = [...new Set(reports.map(r => gpuVendor(r.gpu)).filter(Boolean))];
-          const availOs      = [...new Set(reports.map(r => osBase(r.os)).filter(Boolean))].sort();
-          const availRatings = RATING_ORDER.filter(rt => reports.some(r => r.rating === rt));
-          const availSrcs    = [...new Set(reports.map(r => r.source || 'protondb').filter(Boolean))];
+          const availGpus    = [...new Set(combined.map(r => gpuVendor(r.gpu)).filter(Boolean))];
+          const availOs      = [...new Set(combined.map(r => osBase(r.os)).filter(Boolean))].sort();
+          const availRatings = RATING_ORDER.filter(rt => taggedReports.some(r => r.rating === rt));
+          const availSrcs    = SRC_ORDER.filter(b => combined.some(r => r._bucket === b));
 
           const gpuSel    = availGpus.length > 0 ? `
             <label>GPU</label>
@@ -1181,23 +1185,26 @@ async function renderGamePage(appId) {
               <option value="">Any</option>
               ${availRatings.map(v => `<option value="${v}" ${filterRating===v?'selected':''}>${RATING_LABEL[v]||v}</option>`).join('')}
             </select>` : '';
-          const srcSel    = `
+          const srcSel    = availSrcs.length > 1 ? `
             <label>Source</label>
             <select id="fSource">
               <option value="">Any</option>
               ${availSrcs.map(v => `<option value="${v}" ${filterSource===v?'selected':''}>${SRC_LABEL[v]||v}</option>`).join('')}
-            </select>`;
+            </select>` : '';
 
           const anyActive = filterGpu || filterOs || filterRating || filterSource;
           return gpuSel + osSel + ratingSel + srcSel +
-            (anyActive ? `<span class="filter-count">${reps.length} of ${reports.length}</span>` : '');
+            (anyActive ? `<span class="filter-count">${reps.length} of ${combined.length}</span>` : '');
         })()}
       </div>
 
       <div class="cards">
         ${reps.length
-          ? reps.map(r => renderCard(r, votes, userVotes)).join('')
-          : '<div class="state-box" style="border:none">No reports match filters</div>'}
+          ? reps.map((r, i) => r._kind === 'config'
+              ? renderConfigCard(r, i, votes, userVotes)
+              : renderCard(r, votes, userVotes)
+            ).join('')
+          : '<div class="state-box" style="border:none">No configs or reports match filters</div>'}
       </div>
     `;
 
@@ -1255,12 +1262,13 @@ async function renderGamePage(appId) {
     el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; render(); });
     el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; render(); });
     el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; render(); });
-    el.querySelector('#fCfgProton')?.addEventListener('change', e => { filterCfgProton = e.target.value; render(); });
-    el.querySelector('#fCfgSource')?.addEventListener('change', e => { filterCfgSource = e.target.value; render(); });
     el.querySelectorAll('.cfg-dl-btn').forEach(b => {
       b.addEventListener('click', e => {
         e.stopPropagation();
-        if (b.dataset.cfgIdx != null) downloadJson(filteredConfigs()[Number(b.dataset.cfgIdx)], 'pulse-config');
+        // Cards embed their full payload in data-cfg-json or data-report-json.
+        // Falling back to an index lookup broke after configs and reports were
+        // merged into one list, so both kinds now carry the JSON inline
+        if (b.dataset.cfgJson) downloadJson(JSON.parse(b.dataset.cfgJson), 'pulse-config');
         else if (b.dataset.reportJson) downloadJson(JSON.parse(b.dataset.reportJson), 'report');
       });
     });
@@ -1354,9 +1362,16 @@ async function onSearchInput() {
 
   // Filter: numeric queries match only on app ID prefix; text matches title or ID
   const matches = searchIndexMatches(q, MAX);
-  // Check which matched apps also have Pulse configs
-  const pulseResults = await withTimeout(fetchMatchingPulseConfigs(q), 1500, []);
-  const pulseAppIds = new Set(pulseResults.map(r => String(r.appId)));
+  // Check which matched apps have Pulse configs AND/OR Pulse reports. Either
+  // one is enough to earn the Pulse badge in the dropdown
+  const [pulseResults, pulseReportAppIds] = await Promise.all([
+    withTimeout(fetchMatchingPulseConfigs(q), 1500, []),
+    withTimeout(fetchMatchingPulseReportAppIds(q), 1500, new Set()),
+  ]);
+  const pulseAppIds = new Set([
+    ...pulseResults.map(r => String(r.appId)),
+    ...pulseReportAppIds,
+  ]);
 
   if (!matches.length && !pulseAppIds.size) {
     searchResults.innerHTML = `<div class="search-no-results">No quick matches — press Enter to open grouped search results.</div>`;
