@@ -143,7 +143,7 @@ gh-run-watch: gh-check
 		echo "$$(date '+%Y-%m-%d %H:%M:%S')"; \
 		echo ""; \
 		ACTIVE_RUNS="$$(gh run list $$WORKFLOW_ARGS --limit 20 --json databaseId,workflowName,status,displayTitle,headBranch,event,startedAt --jq '.[] | select(.status != "completed") | "#\(.databaseId) | \(.workflowName // "-")\nstatus: \(.status) | event: \(.event) | branch: \(.headBranch // "-")\nstarted: \(.startedAt // "-")\ntitle: \(.displayTitle)\n"')"; \
-		COMPLETED_RUNS="$$(gh run list $$WORKFLOW_ARGS --limit 3 --json databaseId,workflowName,status,conclusion,displayTitle,headBranch,event,updatedAt --jq '.[] | select(.status == "completed") | "#\(.databaseId) | \(.workflowName // "-")\nresult: \(.conclusion // "-") | event: \(.event) | branch: \(.headBranch // "-")\nupdated: \(.updatedAt // "-")\ntitle: \(.displayTitle)\n"')"; \
+		COMPLETED_RUNS="$$(gh run list $$WORKFLOW_ARGS --limit 3 --json databaseId,workflowName,status,conclusion,displayTitle,headBranch,event,updatedAt --jq '[.[] | select(.status == "completed")] | reverse[] | "#\(.databaseId) | \(.workflowName // "-")\nresult: \(.conclusion // "-") | event: \(.event) | branch: \(.headBranch // "-")\nupdated: \(.updatedAt // "-")\ntitle: \(.displayTitle)\n"')"; \
 		echo "========================================"; \
 		echo "Last 3 Completed Runs"; \
 		echo "========================================"; \
