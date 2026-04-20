@@ -199,6 +199,34 @@
   margin-top: 6px;
 }
 
+.link-panel--diagnostics {
+  margin-top: 18px;
+  border-left: 4px solid #d56a6a;
+  background:
+    linear-gradient(180deg, rgba(213, 106, 106, 0.12), rgba(213, 106, 106, 0.04)),
+    rgba(25, 31, 40, 0.92);
+}
+
+.link-diagnostics-copy {
+  color: #d9c1c1;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.link-diagnostics-log {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: #ffd5d5;
+  background: rgba(15, 8, 8, 0.4);
+  border: 1px solid rgba(213, 106, 106, 0.25);
+  padding: 12px 14px;
+}
+
 @media (max-width: 860px) {
   .link-grid {
     grid-template-columns: 1fr;

@@ -1,4 +1,38 @@
 (function initPluginLinkPage() {
+  const diagnosticsPanel = document.getElementById('link-diagnostics');
+  const diagnosticsCopy = document.getElementById('link-diagnostics-copy');
+  const diagnosticsLog = document.getElementById('link-diagnostics-log');
+
+  function showDiagnostic(headline, details) {
+    if (diagnosticsPanel) diagnosticsPanel.hidden = false;
+    if (diagnosticsCopy) diagnosticsCopy.textContent = headline;
+    if (diagnosticsLog) diagnosticsLog.textContent = details || '';
+  }
+
+  function formatErrorDetails(error) {
+    if (!error) return 'Unknown error';
+    if (error instanceof Error) {
+      return [error.message, error.stack].filter(Boolean).join('\n\n');
+    }
+    return String(error);
+  }
+
+  if (typeof window.addEventListener === 'function') {
+    window.addEventListener('error', (event) => {
+      showDiagnostic(
+        'A browser error interrupted the Decky linking page.',
+        formatErrorDetails(event.error || event.message),
+      );
+    });
+
+    window.addEventListener('unhandledrejection', (event) => {
+      showDiagnostic(
+        'A background promise failed on the Decky linking page.',
+        formatErrorDetails(event.reason),
+      );
+    });
+  }
+
   function pluginFunctionUrl(name) {
     return `${SUPABASE_URL}/functions/v1/${name}`;
   }
@@ -109,6 +143,7 @@
       console.error('[plugin-link] login error:', error);
       loginBtn.disabled = false;
       setStatus('error', 'Login failed', 'Could not start Steam sign-in.', 'Please try again.');
+      showDiagnostic('Steam sign-in could not be started from the linking page.', formatErrorDetails(error));
     }
   });
 
@@ -140,6 +175,7 @@
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       setStatus('error', 'Link failed', 'Proton Pulse could not complete the Decky link.', message);
+      showDiagnostic('The signed-in link completion step failed.', formatErrorDetails(error));
     }
   })();
 })();
