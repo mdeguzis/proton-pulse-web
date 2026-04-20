@@ -19,6 +19,7 @@ var history = { replaceState: function(){} };
 ${APP_SRC}
 ctx.__submitReport = submitReport;
 ctx.__getWebClientId = getWebClientId;
+ctx.__getProtonPulseUserIdFromSession = getProtonPulseUserIdFromSession;
 `;
 
 const SAFE_FETCH = { ok: false, status: 500, json: async () => [] };
@@ -107,7 +108,7 @@ describe('submitReport — auth gating', () => {
   });
 
   test('uses session access_token in Authorization header when signed in', async () => {
-    const { ctx, fetchMock } = makeCtx({ access_token: 'tok_abc123' });
+    const { ctx, fetchMock } = makeCtx({ access_token: 'tok_abc123', user: { id: 'pp-user-1' } });
     await flush();
     fetchMock.mockClear();
     fetchMock.mockResolvedValue({ ok: true });
@@ -118,7 +119,7 @@ describe('submitReport — auth gating', () => {
   });
 
   test('does not use anon SB_KEY as bearer when session present', async () => {
-    const { ctx, fetchMock } = makeCtx({ access_token: 'user_token_xyz' });
+    const { ctx, fetchMock } = makeCtx({ access_token: 'user_token_xyz', user: { id: 'pp-user-1' } });
     await flush();
     fetchMock.mockClear();
     fetchMock.mockResolvedValue({ ok: true });
@@ -128,7 +129,7 @@ describe('submitReport — auth gating', () => {
   });
 
   test('returns server error message on failed fetch', async () => {
-    const { ctx, fetchMock } = makeCtx({ access_token: 'tok' });
+    const { ctx, fetchMock } = makeCtx({ access_token: 'tok', user: { id: 'pp-user-1' } });
     await flush();
     fetchMock.mockClear();
     fetchMock.mockResolvedValue({
@@ -140,7 +141,7 @@ describe('submitReport — auth gating', () => {
   });
 
   test('falls back to HTTP status on non-JSON error response', async () => {
-    const { ctx, fetchMock } = makeCtx({ access_token: 'tok' });
+    const { ctx, fetchMock } = makeCtx({ access_token: 'tok', user: { id: 'pp-user-1' } });
     await flush();
     fetchMock.mockClear();
     fetchMock.mockResolvedValue({
@@ -152,7 +153,7 @@ describe('submitReport — auth gating', () => {
   });
 
   test('sets source field to "web"', async () => {
-    const { ctx, fetchMock } = makeCtx({ access_token: 'tok' });
+    const { ctx, fetchMock } = makeCtx({ access_token: 'tok', user: { id: 'pp-user-1' } });
     await flush();
     fetchMock.mockClear();
     fetchMock.mockResolvedValue({ ok: true });
@@ -162,7 +163,7 @@ describe('submitReport — auth gating', () => {
   });
 
   test('concatenates os and osVersion in body', async () => {
-    const { ctx, fetchMock } = makeCtx({ access_token: 'tok' });
+    const { ctx, fetchMock } = makeCtx({ access_token: 'tok', user: { id: 'pp-user-1' } });
     await flush();
     fetchMock.mockClear();
     fetchMock.mockResolvedValue({ ok: true });
@@ -172,12 +173,22 @@ describe('submitReport — auth gating', () => {
   });
 
   test('defaults duration to "unreported" when blank', async () => {
-    const { ctx, fetchMock } = makeCtx({ access_token: 'tok' });
+    const { ctx, fetchMock } = makeCtx({ access_token: 'tok', user: { id: 'pp-user-1' } });
     await flush();
     fetchMock.mockClear();
     fetchMock.mockResolvedValue({ ok: true });
     await ctx.__submitReport('730', 'HL2', makeForm({ duration: '' }));
     const [, init] = fetchMock.mock.calls[0];
     expect(JSON.parse(init.body).duration).toBe('unreported');
+  });
+
+  test('sends proton_pulse_user_id from the signed-in session', async () => {
+    const { ctx, fetchMock } = makeCtx({ access_token: 'tok', user: { id: 'pp-user-42' } });
+    await flush();
+    fetchMock.mockClear();
+    fetchMock.mockResolvedValue({ ok: true });
+    await ctx.__submitReport('730', 'HL2', makeForm());
+    const [, init] = fetchMock.mock.calls[0];
+    expect(JSON.parse(init.body).proton_pulse_user_id).toBe('pp-user-42');
   });
 });

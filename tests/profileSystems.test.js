@@ -32,6 +32,7 @@ ctx.__clearDefaultSystem    = clearDefaultSystem;
 ctx.__updateSystemLabel     = updateSystemLabel;
 ctx.__deleteSystem          = deleteSystem;
 ctx.__getSteamIdFromSession = getSteamIdFromSession;
+ctx.__getProtonPulseUserIdFromSession = getProtonPulseUserIdFromSession;
 ctx.__escapeHtml            = escapeHtml;
 ctx.__formatSystemUpdated   = formatSystemUpdated;
 ctx.__fetchMyUserConfigs    = fetchMyUserConfigs;
@@ -633,26 +634,41 @@ describe('inferGpuVendor', () => {
 });
 
 // -- My uploaded reports helpers -------------------------------------------
-// Powers the "My uploaded reports" section on the profile page. Each row on
-// user_configs is a public compatibility report, keyed by client_id
+// Powers the "My uploaded reports" section on the profile page. Prefer the
+// signed-in Proton Pulse user id and keep client_id as a legacy fallback.
 
 const clientId = '11111111-2222-3333-4444-555555555555';
+const protonPulseUserId = 'pp-user-123';
 
 describe('fetchMyUserConfigs', () => {
-  test('GETs user_configs filtered by client_id and ordered by created_at desc', async () => {
+  test('GETs user_configs filtered by proton_pulse_user_id with client_id fallback', async () => {
     const { ctx, fetchMock } = makeCtx({ access_token: 'tok' });
     await flush();
     fetchMock.mockClear();
     fetchMock.mockResolvedValue({ ok: true, status: 200, json: async () => [] });
 
-    await ctx.__fetchMyUserConfigs(clientId, { access_token: 'tok' });
+    await ctx.__fetchMyUserConfigs(protonPulseUserId, clientId, { access_token: 'tok' });
 
     const [url] = fetchMock.mock.calls[0];
     expect(url).toBe(
       `${SUPABASE_URL}/rest/v1/user_configs`
-      + `?client_id=eq.${encodeURIComponent(clientId)}`
+      + `?or=(proton_pulse_user_id.eq.${encodeURIComponent(protonPulseUserId)},client_id.eq.${encodeURIComponent(clientId)})`
       + `&select=id,app_id,title,proton_version,rating,created_at`
       + `&order=created_at.desc`,
     );
+  });
+});
+
+describe('getProtonPulseUserIdFromSession', () => {
+  test('returns the signed-in auth user id', async () => {
+    const { ctx } = makeCtx(null);
+    await flush();
+    expect(ctx.__getProtonPulseUserIdFromSession({ user: { id: 'pp-user-9' } })).toBe('pp-user-9');
+  });
+
+  test('returns null when no auth user is present', async () => {
+    const { ctx } = makeCtx(null);
+    await flush();
+    expect(ctx.__getProtonPulseUserIdFromSession(null)).toBeNull();
   });
 });

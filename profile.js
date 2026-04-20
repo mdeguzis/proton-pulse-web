@@ -5,6 +5,7 @@ const SHOW_USERNAME_KEY = 'proton-pulse:show-username-on-reports';
 // Filter preferences (used by the View Reports pages)
 const HW_GPU_KEY = 'proton-pulse:hw-gpu-vendor';
 const HW_OS_KEY  = 'proton-pulse:hw-os';
+const CONFIG_TYPE_KEY = 'proton-pulse:config-type';
 
 // Actual hardware spec (auto-fills the web submit-a-report form).
 // Keep these prefixed separately so they don't clobber the filter prefs above.
@@ -130,6 +131,10 @@ function getSteamIdFromSession(session) {
   // provider_id depending on flow. Check both.
   const meta = session?.user?.user_metadata || {};
   return meta.steam_id || meta.provider_id || meta.sub || null;
+}
+
+function getProtonPulseUserIdFromSession(session) {
+  return session?.user?.id || null;
 }
 
 function getShowUsername() {
@@ -376,13 +381,9 @@ function formatSystemUpdated(ts) {
 
 // -- My uploaded configs helpers --
 //
-// The site has two related tables:
-//   user_configs = public compatibility reports visible on app.html
-//                  (column client_id)
-//
-// The web client id is a localStorage UUID (proton-pulse:web-client-id) that
-// lets us list just the reports this user has submitted, without needing a
-// full Supabase auth uid for read-only lookups.
+// Proton Pulse account ownership should come from the authenticated auth user
+// id. Keep the legacy browser-local client_id as a compatibility fallback so
+// older submissions still show up until the data is migrated.
 
 // Same key app.js uses. Duplicated here because app.js isn't loaded on the
 // profile page and I didn't want a third file just for one function
@@ -397,10 +398,18 @@ function getWebClientIdProfile() {
   return id;
 }
 
-async function fetchMyUserConfigs(clientId, session) {
+async function fetchMyUserConfigs(protonPulseUserId, clientId, session) {
   // Your submitted reports, the ones that show up on public game pages
+  const filters = [];
+  if (protonPulseUserId) {
+    filters.push(`proton_pulse_user_id.eq.${encodeURIComponent(protonPulseUserId)}`);
+  }
+  if (clientId) {
+    filters.push(`client_id.eq.${encodeURIComponent(clientId)}`);
+  }
+  if (!filters.length) return [];
   const url = `${SUPABASE_URL}/rest/v1/user_configs`
-    + `?client_id=eq.${encodeURIComponent(clientId)}`
+    + `?or=(${filters.join(',')})`
     + `&select=id,app_id,title,proton_version,rating,created_at`
     + `&order=created_at.desc`;
   const r = await fetch(url, { headers: supabaseHeaders(session) });
@@ -466,6 +475,7 @@ async function fetchMyUserConfigsMulti(clientIds, session) {
   const usernameStatus = document.getElementById('show-username-status');
   const hwGpuSelect    = document.getElementById('hw-gpu-vendor');
   const hwOsInput      = document.getElementById('hw-os');
+  const configTypeSelect = document.getElementById('config-type');
 
   // My hardware (spec used to pre-fill the web submit form)
   const myhwInputs = {
@@ -640,6 +650,7 @@ async function fetchMyUserConfigsMulti(clientIds, session) {
     }
     if (hwGpuSelect) hwGpuSelect.value = localStorage.getItem(HW_GPU_KEY) || '';
     if (hwOsInput)   hwOsInput.value   = localStorage.getItem(HW_OS_KEY)  || '';
+    if (configTypeSelect) configTypeSelect.value = localStorage.getItem(CONFIG_TYPE_KEY) || '';
     loadMyHardware();
     renderMyHwSource();
     renderMyHwFieldOrigins();
@@ -700,6 +711,12 @@ async function fetchMyUserConfigsMulti(clientIds, session) {
 
   hwOsInput?.addEventListener('change', () => {
     localStorage.setItem(HW_OS_KEY, hwOsInput.value.trim());
+  });
+
+  configTypeSelect?.addEventListener('change', () => {
+    const value = configTypeSelect.value || '';
+    if (value) localStorage.setItem(CONFIG_TYPE_KEY, value);
+    else localStorage.removeItem(CONFIG_TYPE_KEY);
   });
 
   // Save each My-hardware field as it changes, and flag it as manually edited
@@ -1070,17 +1087,9 @@ async function fetchMyUserConfigsMulti(clientIds, session) {
     myConfigsLoading.hidden = false;
     myConfigsEmpty.hidden   = true;
     try {
-      const webCid = getWebClientIdProfile();
-      const steamId = getSteamIdFromSession(s);
-      let linkedCids = [];
-      if (steamId) {
-        try {
-          const linked = await fetchLinkedDevices(steamId, s);
-          linkedCids = linked.map(r => r.client_id);
-        } catch { /* non-fatal */ }
-      }
-      const allCids = [webCid, ...linkedCids];
-      const rows = await fetchMyUserConfigsMulti(allCids, s);
+      const protonPulseUserId = getProtonPulseUserIdFromSession(s);
+      const cid  = getWebClientIdProfile();
+      const rows = await fetchMyUserConfigs(protonPulseUserId, cid, s);
       renderMyConfigs(rows);
     } catch (e) {
       myConfigsLoading.hidden = true;

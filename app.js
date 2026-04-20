@@ -61,6 +61,10 @@ function getWebClientId() {
   return id;
 }
 
+function getProtonPulseUserIdFromSession(session) {
+  return session?.user?.id || null;
+}
+
 function getWebSource() {
   const ua = navigator.userAgent || '';
   if (/SteamGamepad|SteamDeck/.test(ua) || (/Linux/.test(ua) && /Valve/.test(ua))) return 'web-steamdeck';
@@ -84,8 +88,10 @@ async function loadFormSchema() {
 async function submitReport(appId, title, form) {
   const session = await SupaAuth.getSession();
   if (!session) return { ok: false, error: 'Sign in with Steam to submit a report.' };
+  const protonPulseUserId = getProtonPulseUserIdFromSession(session);
   const body = {
     client_id: getWebClientId(),
+    proton_pulse_user_id: protonPulseUserId,
     app_id: appId,
     title: title,
     cpu: form.cpu.value,
@@ -1015,7 +1021,7 @@ async function renderGamePage(appId) {
   let filterRating = '';
   // Unified source filter across configs + reports: 'pulse-config', 'pulse-report',
   // 'protondb', or '' for any
-  let filterSource = '';
+  let filterSource = localStorage.getItem('proton-pulse:config-type') || '';
 
   const gpuVendor = g => {
     if (!g) return '';
@@ -1038,7 +1044,13 @@ async function renderGamePage(appId) {
     const bucket = src === 'protondb' ? 'protondb' : 'pulse-report';
     return { ...r, _kind: 'report', _bucket: bucket };
   });
-  const taggedConfigs = configs.map((c) => ({ ...c, _kind: 'config', _bucket: 'pulse-config' }));
+  const taggedConfigs = configs.map((c) => {
+    const src = (c.source || '').toLowerCase();
+    const bucket = src === 'protondb'
+      ? (c.isEdited ? 'protondb-edited' : 'protondb')
+      : 'pulse-config';
+    return { ...c, _kind: 'config', _bucket: bucket };
+  });
   const combined = [...taggedConfigs, ...taggedReports];
 
   const filtered = () => {
@@ -1167,8 +1179,13 @@ async function renderGamePage(appId) {
       <div class="filter-bar">
         ${(() => {
           const GPU_LABEL = { nvidia: 'NVIDIA', amd: 'AMD', intel: 'Intel' };
-          const SRC_LABEL = { 'pulse-config': 'Pulse Config', 'pulse-report': 'Pulse Report', 'protondb': 'ProtonDB' };
-          const SRC_ORDER = ['pulse-config', 'pulse-report', 'protondb'];
+          const SRC_LABEL = {
+            'pulse-config': 'Pulse',
+            'pulse-report': 'Pulse Report',
+            'protondb': 'ProtonDB',
+            'protondb-edited': 'ProtonDB (edited)',
+          };
+          const SRC_ORDER = ['pulse-config', 'pulse-report', 'protondb', 'protondb-edited'];
           const RATING_LABEL = { platinum: 'Platinum', gold: 'Gold', silver: 'Silver', bronze: 'Bronze', borked: 'Borked' };
           const RATING_ORDER = ['platinum','gold','silver','bronze','borked'];
 
