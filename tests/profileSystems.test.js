@@ -28,6 +28,7 @@ var SUPABASE_ANON_KEY = ${JSON.stringify(SUPABASE_ANON_KEY)};
 ${PROFILE_SRC}
 ctx.__listUserSystems       = listUserSystems;
 ctx.__setDefaultSystem      = setDefaultSystem;
+ctx.__clearDefaultSystem    = clearDefaultSystem;
 ctx.__updateSystemLabel     = updateSystemLabel;
 ctx.__deleteSystem          = deleteSystem;
 ctx.__getSteamIdFromSession = getSteamIdFromSession;
@@ -222,6 +223,39 @@ describe('setDefaultSystem', () => {
 
     // second PATCH should never fire if the first one blew up
     expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('clearDefaultSystem', () => {
+  // Used when the user flips the default toggle OFF on the only checked row -
+  // the expected end state is "no default at all", not "a different default"
+  test('PATCHes is_default=false across all of the users rows, no second call', async () => {
+    const { ctx, fetchMock } = makeCtx({ access_token: 'tok' });
+    await flush();
+    fetchMock.mockClear();
+    fetchMock.mockResolvedValue({ ok: true, status: 204 });
+
+    await ctx.__clearDefaultSystem(steamId, { access_token: 'tok' });
+
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const [url, init] = fetchMock.mock.calls[0];
+    expect(url).toBe(
+      `${SUPABASE_URL}/rest/v1/user_systems?steam_id=eq.${encodeURIComponent(steamId)}`,
+    );
+    expect(init.method).toBe('PATCH');
+    expect(init.headers.Prefer).toBe('return=minimal');
+    expect(JSON.parse(init.body)).toEqual({ is_default: false });
+  });
+
+  test('throws on non-ok response', async () => {
+    const { ctx, fetchMock } = makeCtx({ access_token: 'tok' });
+    await flush();
+    fetchMock.mockClear();
+    fetchMock.mockResolvedValue({ ok: false, status: 500 });
+
+    await expect(
+      ctx.__clearDefaultSystem(steamId, { access_token: 'tok' })
+    ).rejects.toThrow('Clear default failed: HTTP 500');
   });
 });
 

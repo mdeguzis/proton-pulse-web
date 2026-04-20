@@ -88,6 +88,19 @@ async function setDefaultSystem(steamId, deviceId, session) {
   if (!r2.ok) throw new Error(`Set default failed: HTTP ${r2.status}`);
 }
 
+// Turn OFF the default flag across every row for this user. We don't target a
+// single device here because "no default" is the desired end state and going
+// row-by-row would risk a brief window where two rows are default at once
+async function clearDefaultSystem(steamId, session) {
+  const base = supabaseUserSystemsUrl(`steam_id=eq.${encodeURIComponent(steamId)}`);
+  const r = await fetch(base, {
+    method: 'PATCH',
+    headers: supabaseHeaders(session, { Prefer: 'return=minimal' }),
+    body: JSON.stringify({ is_default: false }),
+  });
+  if (!r.ok) throw new Error(`Clear default failed: HTTP ${r.status}`);
+}
+
 async function updateSystemLabel(steamId, deviceId, label, session) {
   const url = supabaseUserSystemsUrl(
     `steam_id=eq.${encodeURIComponent(steamId)}&device_id=eq.${encodeURIComponent(deviceId)}`,
@@ -853,11 +866,20 @@ async function fetchMyUserConfigs(clientId, session) {
 
     try {
       if (defToggle) {
-        await setDefaultSystem(steamId, deviceId, s);
-        await refreshSystems();
-        const row = systemsCache.find(r => r.device_id === deviceId);
-        if (row) askReplaceLocalFrom(row);
-        setMyHardwarePane('local');
+        // defToggle.checked is the state AFTER the click. true = user is
+        // turning the default ON for this system; false = they flipped OFF
+        // the only checked toggle and want no default at all
+        if (defToggle.checked) {
+          await setDefaultSystem(steamId, deviceId, s);
+          await refreshSystems();
+          const row = systemsCache.find(r => r.device_id === deviceId);
+          if (row) askReplaceLocalFrom(row);
+          setMyHardwarePane('local');
+        } else {
+          await clearDefaultSystem(steamId, s);
+          await refreshSystems();
+          flashStatus('Default cleared', true);
+        }
         return;
       }
       if (btn.dataset.role === 'toggle-details') {
