@@ -256,33 +256,13 @@ jobs:
           cp /tmp/protondb-output/data-index.html .
           cp /tmp/protondb-output/coverage.html .
           cp /tmp/protondb-output/search-index.json . 2>/dev/null || true
-          git show main:app.html > app.html 2>/dev/null || true
-          git show main:app.js > app.js 2>/dev/null || true
-          git show main:app.css > app.css 2>/dev/null || true
-          git show main:index.html > index.html 2>/dev/null || true
-          git show main:index.js > index.js 2>/dev/null || true
-          git show main:index.css > index.css 2>/dev/null || true
-          git show main:site.css > site.css 2>/dev/null || true
-          git show main:auth.html > auth.html 2>/dev/null || true
-          git show main:auth.js > auth.js 2>/dev/null || true
-          git show main:auth.css > auth.css 2>/dev/null || true
-          git show main:plugin-link.html > plugin-link.html 2>/dev/null || true
-          git show main:plugin-link.js > plugin-link.js 2>/dev/null || true
-          git show main:plugin-link.css > plugin-link.css 2>/dev/null || true
-          git show main:profile.html > profile.html 2>/dev/null || true
-          git show main:profile.js > profile.js 2>/dev/null || true
-          git show main:profile.css > profile.css 2>/dev/null || true
-          git show main:supabase-client.js > supabase-client.js 2>/dev/null || true
-          git show main:gh-gist.js > gh-gist.js 2>/dev/null || true
-          mkdir -p assets
-          git show main:assets/steam-logo.png > assets/steam-logo.png 2>/dev/null || true
-          git show main:assets/steam-logo-glyph.png > assets/steam-logo-glyph.png 2>/dev/null || true
-          git show main:assets/steam-login-button-preview.html > assets/steam-login-button-preview.html 2>/dev/null || true
-          git show main:privacy.html > privacy.html 2>/dev/null || true
-          git show main:terms.html > terms.html 2>/dev/null || true
-          git show main:googled7b1eda3148e723a.html > googled7b1eda3148e723a.html 2>/dev/null || true
-          git show main:CNAME > CNAME
-          git show main:.nojekyll > .nojekyll 2>/dev/null || touch .nojekyll
+          git show main:gh-pages-manifest.txt > gh-pages-manifest.txt
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            case "$path" in \#*) continue ;; esac
+            mkdir -p "$(dirname "$path")"
+            git show main:"$path" > "$path" 2>/dev/null || true
+          done < gh-pages-manifest.txt
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
           mkdir -p badges
@@ -292,7 +272,12 @@ jobs:
             "https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1/user_configs?select=count" \
             | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['count'])" 2>/dev/null || echo "0")
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
-          git add data/ data-index.html coverage.html search-index.json app.html app.js app.css index.html index.js index.css site.css auth.html auth.js auth.css plugin-link.html plugin-link.js plugin-link.css profile.html profile.js profile.css supabase-client.js gh-gist.js assets/ privacy.html terms.html googled7b1eda3148e723a.html scoring-info.json form-schema.json badges/ CNAME .nojekyll
+          git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            case "$path" in \#*) continue ;; esac
+            git add "$path"
+          done < gh-pages-manifest.txt
           git commit -m "Deploy: $(date +%F)"
           git push origin gh-pages-new:gh-pages --force
 
@@ -319,33 +304,13 @@ jobs:
           cd gh-pages-data
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          cp ../repo/app.html ./app.html
-          cp ../repo/app.js ./app.js
-          cp ../repo/app.css ./app.css
-          cp ../repo/index.html ./index.html
-          cp ../repo/index.js ./index.js
-          cp ../repo/index.css ./index.css
-          cp ../repo/site.css ./site.css
-          cp ../repo/auth.html ./auth.html
-          cp ../repo/auth.js ./auth.js
-          cp ../repo/auth.css ./auth.css
-          cp ../repo/plugin-link.html ./plugin-link.html
-          cp ../repo/plugin-link.js ./plugin-link.js
-          cp ../repo/plugin-link.css ./plugin-link.css
-          cp ../repo/profile.html ./profile.html
-          cp ../repo/profile.js ./profile.js
-          cp ../repo/profile.css ./profile.css
-          cp ../repo/supabase-client.js ./supabase-client.js
-          cp ../repo/gh-gist.js ./gh-gist.js
-          mkdir -p ./assets
-          cp ../repo/assets/steam-logo.png ./assets/steam-logo.png
-          cp ../repo/assets/steam-logo-glyph.png ./assets/steam-logo-glyph.png
-          cp ../repo/assets/steam-login-button-preview.html ./assets/steam-login-button-preview.html
-          cp ../repo/privacy.html ./privacy.html
-          cp ../repo/terms.html ./terms.html
-          cp ../repo/googled7b1eda3148e723a.html ./googled7b1eda3148e723a.html
-          cp ../repo/CNAME ./CNAME
-          cp ../repo/.nojekyll ./.nojekyll 2>/dev/null || touch ./.nojekyll
+          cp ../repo/gh-pages-manifest.txt ./gh-pages-manifest.txt
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            case "$path" in \#*) continue ;; esac
+            mkdir -p "$(dirname "$path")"
+            cp "../repo/$path" "./$path"
+          done < gh-pages-manifest.txt
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o ./scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o ./form-schema.json
           mkdir -p ./badges
@@ -355,7 +320,12 @@ jobs:
             "https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1/user_configs?select=count" \
             | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['count'])" 2>/dev/null || echo "0")
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > ./badges/pulse-reports.json
-          git add app.html app.js app.css index.html index.js index.css site.css auth.html auth.js auth.css plugin-link.html plugin-link.js plugin-link.css profile.html profile.js profile.css supabase-client.js gh-gist.js assets/ privacy.html terms.html googled7b1eda3148e723a.html scoring-info.json form-schema.json badges/ CNAME .nojekyll
+          git add scoring-info.json form-schema.json badges/
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            case "$path" in \#*) continue ;; esac
+            git add "$path"
+          done < gh-pages-manifest.txt
           if git diff --cached --quiet; then
             echo "No shell changes to publish."
             exit 0
@@ -500,33 +470,13 @@ jobs:
           cp /tmp/protondb-output/data-index.html .
           cp /tmp/protondb-output/coverage.html .
           cp /tmp/protondb-output/search-index.json . 2>/dev/null || true
-          git show main:app.html > app.html 2>/dev/null || true
-          git show main:app.js > app.js 2>/dev/null || true
-          git show main:app.css > app.css 2>/dev/null || true
-          git show main:index.html > index.html 2>/dev/null || true
-          git show main:index.js > index.js 2>/dev/null || true
-          git show main:index.css > index.css 2>/dev/null || true
-          git show main:site.css > site.css 2>/dev/null || true
-          git show main:auth.html > auth.html 2>/dev/null || true
-          git show main:auth.js > auth.js 2>/dev/null || true
-          git show main:auth.css > auth.css 2>/dev/null || true
-          git show main:plugin-link.html > plugin-link.html 2>/dev/null || true
-          git show main:plugin-link.js > plugin-link.js 2>/dev/null || true
-          git show main:plugin-link.css > plugin-link.css 2>/dev/null || true
-          git show main:profile.html > profile.html 2>/dev/null || true
-          git show main:profile.js > profile.js 2>/dev/null || true
-          git show main:profile.css > profile.css 2>/dev/null || true
-          git show main:supabase-client.js > supabase-client.js 2>/dev/null || true
-          git show main:gh-gist.js > gh-gist.js 2>/dev/null || true
-          mkdir -p assets
-          git show main:assets/steam-logo.png > assets/steam-logo.png 2>/dev/null || true
-          git show main:assets/steam-logo-glyph.png > assets/steam-logo-glyph.png 2>/dev/null || true
-          git show main:assets/steam-login-button-preview.html > assets/steam-login-button-preview.html 2>/dev/null || true
-          git show main:privacy.html > privacy.html 2>/dev/null || true
-          git show main:terms.html > terms.html 2>/dev/null || true
-          git show main:googled7b1eda3148e723a.html > googled7b1eda3148e723a.html 2>/dev/null || true
-          git show main:CNAME > CNAME
-          git show main:.nojekyll > .nojekyll 2>/dev/null || touch .nojekyll
+          git show main:gh-pages-manifest.txt > gh-pages-manifest.txt
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            case "$path" in \#*) continue ;; esac
+            mkdir -p "$(dirname "$path")"
+            git show main:"$path" > "$path" 2>/dev/null || true
+          done < gh-pages-manifest.txt
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
           mkdir -p badges
@@ -536,7 +486,12 @@ jobs:
             "https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1/user_configs?select=count" \
             | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['count'])" 2>/dev/null || echo "0")
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
-          git add data/ data-index.html coverage.html search-index.json app.html app.js app.css index.html index.js index.css site.css auth.html auth.js auth.css plugin-link.html plugin-link.js plugin-link.css profile.html profile.js profile.css supabase-client.js gh-gist.js assets/ privacy.html terms.html googled7b1eda3148e723a.html scoring-info.json form-schema.json badges/ CNAME .nojekyll
+          git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            case "$path" in \#*) continue ;; esac
+            git add "$path"
+          done < gh-pages-manifest.txt
           git commit -m "Targeted backfill: ${{ inputs.backfill_app_ids }}"
           git push origin gh-pages-new:gh-pages --force
 
@@ -706,33 +661,13 @@ jobs:
           cp /tmp/protondb-output/data-index.html .
           cp /tmp/protondb-output/coverage.html .
           cp /tmp/protondb-output/search-index.json . 2>/dev/null || true
-          git show main:app.html > app.html 2>/dev/null || true
-          git show main:app.js > app.js 2>/dev/null || true
-          git show main:app.css > app.css 2>/dev/null || true
-          git show main:index.html > index.html 2>/dev/null || true
-          git show main:index.js > index.js 2>/dev/null || true
-          git show main:index.css > index.css 2>/dev/null || true
-          git show main:site.css > site.css 2>/dev/null || true
-          git show main:auth.html > auth.html 2>/dev/null || true
-          git show main:auth.js > auth.js 2>/dev/null || true
-          git show main:auth.css > auth.css 2>/dev/null || true
-          git show main:plugin-link.html > plugin-link.html 2>/dev/null || true
-          git show main:plugin-link.js > plugin-link.js 2>/dev/null || true
-          git show main:plugin-link.css > plugin-link.css 2>/dev/null || true
-          git show main:profile.html > profile.html 2>/dev/null || true
-          git show main:profile.js > profile.js 2>/dev/null || true
-          git show main:profile.css > profile.css 2>/dev/null || true
-          git show main:supabase-client.js > supabase-client.js 2>/dev/null || true
-          git show main:gh-gist.js > gh-gist.js 2>/dev/null || true
-          mkdir -p assets
-          git show main:assets/steam-logo.png > assets/steam-logo.png 2>/dev/null || true
-          git show main:assets/steam-logo-glyph.png > assets/steam-logo-glyph.png 2>/dev/null || true
-          git show main:assets/steam-login-button-preview.html > assets/steam-login-button-preview.html 2>/dev/null || true
-          git show main:privacy.html > privacy.html 2>/dev/null || true
-          git show main:terms.html > terms.html 2>/dev/null || true
-          git show main:googled7b1eda3148e723a.html > googled7b1eda3148e723a.html 2>/dev/null || true
-          git show main:CNAME > CNAME
-          git show main:.nojekyll > .nojekyll 2>/dev/null || touch .nojekyll
+          git show main:gh-pages-manifest.txt > gh-pages-manifest.txt
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            case "$path" in \#*) continue ;; esac
+            mkdir -p "$(dirname "$path")"
+            git show main:"$path" > "$path" 2>/dev/null || true
+          done < gh-pages-manifest.txt
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
           mkdir -p badges
@@ -742,7 +677,12 @@ jobs:
             "https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1/user_configs?select=count" \
             | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['count'])" 2>/dev/null || echo "0")
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
-          git add data/ data-index.html coverage.html search-index.json app.html app.js app.css index.html index.js index.css site.css auth.html auth.js auth.css plugin-link.html plugin-link.js plugin-link.css profile.html profile.js profile.css supabase-client.js gh-gist.js assets/ privacy.html terms.html googled7b1eda3148e723a.html scoring-info.json form-schema.json badges/ CNAME .nojekyll
+          git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            case "$path" in \#*) continue ;; esac
+            git add "$path"
+          done < gh-pages-manifest.txt
           git commit -m "Coverage backfill: ${{ inputs.coverage_backfill_issue_type }}"
           git push origin gh-pages-new:gh-pages --force
 

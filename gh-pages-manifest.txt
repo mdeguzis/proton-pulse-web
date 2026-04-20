@@ -1,0 +1,30 @@
+# Static shell files copied from main to gh-pages.
+# For intentionally excluded files, see gh-pages-exclude-manifest.txt.
+app.html
+app.js
+app.css
+index.html
+index.js
+index.css
+site.css
+auth.html
+auth.js
+auth.css
+plugin-link.html
+plugin-link.js
+plugin-link.css
+profile.html
+profile.js
+profile.css
+supabase-client.js
+gh-gist.js
+assets/steam-logo.png
+assets/steam-logo-glyph.png
+assets/steam-login-button-preview.html
+privacy.html
+terms.html
+googled7b1eda3148e723a.html
+CNAME
+.nojekyll
+gh-pages-manifest.txt
+gh-pages-exclude-manifest.txt
