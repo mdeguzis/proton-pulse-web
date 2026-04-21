@@ -316,35 +316,38 @@ async function route() {
 
 async function renderHomePage() {
   const el = document.getElementById('content');
-  el.innerHTML = '<div class="state-box">Loading Proton Pulse configs...</div>';
+  el.innerHTML = '<div class="state-box">Loading Proton Pulse reports...</div>';
   try {
     // Kick off the search index load in parallel so we can mark cards that
     // also have ProtonDB data without blocking on the configs fetch
-    const [r] = await Promise.all([
+    const [r, pulseReports] = await Promise.all([
       fetch(
         `${SB_URL}/user_proton_configs?is_published=eq.true&select=id,voter_id,app_id,app_name,config,updated_at,is_published&order=updated_at.desc`,
         { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
       ),
+      fetchRecentPulseReports(),
       loadSearchIndex(),
     ]);
-    const rows = r.ok
+    const configRows = r.ok
       ? latestPerApp(await r.json()).sort((a, b) => String(b.updated_at || '').localeCompare(String(a.updated_at || '')))
       : [];
-    if (!rows.length) {
-      el.innerHTML = `
-        <div class="state-box">
-          No Proton Pulse configs yet.<br>
-          Search for a game above, or <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener">install the Decky Plugin</a> to submit configs.
-        </div>`;
+    if (!configRows.length && !pulseReports.length) {
+      el.innerHTML = await renderHomeFallback();
       return;
     }
     // Build a quick lookup of app IDs that also appear in the ProtonDB search
     // index so we can tag those cards with both badges
     const protonDbAppIds = new Set((searchIndex || []).map(([id]) => String(id)));
     el.innerHTML = `
-      <p class="section-label" style="margin-bottom:10px">Recent Proton Pulse Configs</p>
-      <div class="cards" style="border:1px solid var(--border)">
-        ${rows.map(row => {
+      ${pulseReports.length ? `
+        <p class="section-label" style="margin-bottom:10px">Recent Proton Pulse Reports</p>
+        <div class="cards" style="border:1px solid var(--border);margin-bottom:16px">
+          ${renderPulseReportCards(pulseReports)}
+        </div>` : ''}
+      ${configRows.length ? `
+        <p class="section-label" style="margin-bottom:10px">Recent Proton Pulse Configs</p>
+        <div class="cards" style="border:1px solid var(--border)">
+          ${configRows.map(row => {
           const cfg = row.config || {};
           const name = row.app_name || cfg.appName || `App ${row.app_id}`;
           const proton = cfg.protonVersion || '';
@@ -373,10 +376,74 @@ async function renderHomePage() {
                   : '<span class="source-badge steam-game">Steam</span>'}
               </div>
             </a>`;
-        }).join('')}
-      </div>`;
+          }).join('')}
+        </div>` : ''}`;
   } catch {
     el.innerHTML = '<div class="state-box">Search for a game above or navigate to <code>#/app/{appId}</code></div>';
+  }
+}
+
+async function renderHomeFallback() {
+  const [pulseReports] = await Promise.all([
+    fetchRecentPulseReports(),
+    loadSearchIndex(),
+  ]);
+  const popularIds = ['730', '570', '440', '292030', '1245620', '1091500', '1174180', '413150'];
+  const titleById = new Map((searchIndex || []).map(([id, title]) => [String(id), title]));
+  const popularCards = popularIds
+    .map((appId) => ({ appId, title: titleById.get(appId) || `App ${appId}` }))
+    .filter((row) => row.title)
+    .map((row) => `
+      <a class="card" href="#/app/${row.appId}" style="text-decoration:none">
+        <img src="${STEAM_IMG(row.appId)}" onerror="this.style.display='none'" alt=""
+             style="width:108px;height:40px;object-fit:cover;flex-shrink:0;border:1px solid var(--border)">
+        <div class="left">
+          <div class="proton">${esc(row.title)}</div>
+          <div class="hw">Open ProtonDB and Proton Pulse reports</div>
+        </div>
+        <div class="right"><span class="source-badge protondb">ProtonDB</span></div>
+      </a>`)
+    .join('');
+
+  const pulseCards = renderPulseReportCards(pulseReports);
+
+  return `
+    ${pulseCards ? `
+      <p class="section-label" style="margin-bottom:10px">Recent Proton Pulse Reports</p>
+      <div class="cards" style="border:1px solid var(--border);margin-bottom:16px">
+        ${pulseCards}
+      </div>` : ''}
+    <p class="section-label" style="margin-bottom:10px">Popular ProtonDB Reports</p>
+    <div class="cards" style="border:1px solid var(--border)">
+      ${popularCards}
+    </div>`;
+}
+
+function renderPulseReportCards(rows) {
+  return rows.map((row) => `
+    <a class="card" href="#/app/${row.app_id}" style="text-decoration:none">
+      <img src="${STEAM_IMG(row.app_id)}" onerror="this.style.display='none'" alt=""
+           style="width:108px;height:40px;object-fit:cover;flex-shrink:0;border:1px solid var(--border)">
+      <div class="left">
+        <div class="proton">${esc(row.title || `App ${row.app_id}`)}</div>
+        <div class="hw">${esc([row.rating, row.proton_version].filter(Boolean).join(' | '))}</div>
+        <div class="age">${daysAgo(Math.floor(new Date(row.created_at).getTime() / 1000))}</div>
+      </div>
+      <div class="right"><span class="source-badge pulse"><img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse</span></div>
+    </a>`)
+    .join('');
+}
+
+async function fetchRecentPulseReports() {
+  try {
+    const r = await fetch(
+      `${SB_URL}/user_configs?select=id,app_id,title,rating,proton_version,created_at,source&order=created_at.desc&limit=8`,
+      { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
+    );
+    if (!r.ok) return [];
+    return latestPerApp(await r.json()).sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
+  } catch {
+    return [];
   }
 }
 
@@ -386,7 +453,9 @@ function latestPerApp(rows) {
     const key = String(row.app_id || row.appId || '');
     if (!key) continue;
     const existing = seen.get(key);
-    if (!existing || row.updated_at > existing.updated_at) seen.set(key, row);
+    const rowTime = row.updated_at || row.created_at || '';
+    const existingTime = existing?.updated_at || existing?.created_at || '';
+    if (!existing || rowTime > existingTime) seen.set(key, row);
   }
   return [...seen.values()];
 }
