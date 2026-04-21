@@ -1,3 +1,6 @@
+[functions.steam-callback]
+verify_jwt = false
+
 [functions.plugin-link-start]
 verify_jwt = false
 
@@ -5,6 +8,15 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.plugin-link-unlink]
+verify_jwt = false
+
+[functions.plugin-link-complete]
+verify_jwt = false
+
+[functions.plugin-link-remove]
+verify_jwt = false
+
+[functions.plugin-links-list]
 verify_jwt = false
 
 [functions.user-system-upload]
