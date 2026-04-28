@@ -1086,8 +1086,8 @@ async function renderGamePage(appId) {
   document.title = `${title} - Proton Pulse`;
 
   let sortMode = 'recent';
-  let filterGpu    = localStorage.getItem('proton-pulse:hw-gpu-vendor') || '';
-  let filterOs     = localStorage.getItem('proton-pulse:hw-os') || '';
+  let filterGpu    = '';
+  let filterOs     = '';
   let filterRating = '';
   // Unified source filter across configs + reports: 'pulse-config', 'pulse-report',
   // 'protondb', or '' for any
