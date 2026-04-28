@@ -525,10 +525,7 @@ function mergeMyReportRows(publishedRows, cloudRows) {
 
   for (const row of merged.values()) {
     row.published = row.published || row.cloud_published;
-    row.unpublished = row.cloud && !row.cloud_published && (!row.published || (
-      row.cloud_updated_at
-      && (!row.published_at || new Date(row.cloud_updated_at).getTime() > new Date(row.published_at).getTime())
-    ));
+    row.unpublished = row.cloud && !row.cloud_published && !row.published;
   }
 
   return Array.from(merged.values()).sort((a, b) => {
