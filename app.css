@@ -817,7 +817,7 @@ a.card:hover { text-decoration: none; }
 .card-summary .row:last-child { border-bottom: none; }
 .card-summary .label { color: var(--muted); min-width: 100px; }
 .card-summary .notes-full { margin-top: 10px; white-space: pre-wrap; line-height: 1.5; color: #a0b4c4; }
-.details-btn-row { display: flex; gap: 8px; margin-top: 8px; justify-content: flex-end; }
+.details-btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; justify-content: flex-end; }
 .all-details-btn {
   background: var(--s1);
   border: 1px solid var(--accent);
