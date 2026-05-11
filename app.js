@@ -1115,6 +1115,7 @@ function renderCard(r, votes, userVotes = {}) {
         <div class="row"><span class="label">Duration</span><span>${na(esc(r.duration))}</span></div>
         ${r.launchOptions ? `<div class="row"><span class="label">Launch Options</span><span>${esc(r.launchOptions)}</span></div>` : ''}
       </div>
+      ${renderFormResponses(r)}
       ${r.reportId != null ? `<div class="row"><span class="label">Report ID</span><span style="font-family:monospace;font-size:0.8em;color:var(--muted)">#${r.reportId}</span></div>` : ''}
       <div class="card-footer">${r.clientId && r.clientId === getWebClientId() ? `<button class="cfg-dl-btn delete-report-btn" data-app-id="${r.appId || ''}" style="color:#c85050;border-color:#c85050" title="Delete your report">Delete</button>` : ''}<button class="cfg-dl-btn" data-report-json='${JSON.stringify(r).replace(/'/g,"&#39;")}' title="Download as JSON">JSON</button></div>
     </div>`;
