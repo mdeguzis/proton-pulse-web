@@ -604,7 +604,7 @@ async function fetchSupabase(appId) {
 async function fetchNativeReports(appId) {
   try {
     const r = await fetch(
-      `${SB_URL}/user_configs?app_id=eq.${appId}&select=id,client_id,app_id,title,cpu,gpu,gpu_driver,gpu_vendor,ram,os,kernel,proton_version,rating,duration,notes,vram_mb,created_at,source&order=created_at.desc`,
+      `${SB_URL}/user_configs?app_id=eq.${appId}&select=id,client_id,app_id,title,cpu,gpu,gpu_driver,gpu_vendor,ram,os,kernel,proton_version,rating,duration,notes,vram_mb,form_responses,created_at,source&order=created_at.desc`,
       { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
     );
     if (!r.ok) return [];
@@ -633,6 +633,7 @@ async function fetchNativeReports(appId) {
       duration:          row.duration || '',
       notes:             row.notes || '',
       vramMb:            row.vram_mb ?? null,
+      formResponses:     row.form_responses ?? null,
       timestamp:         Math.floor(new Date(row.created_at).getTime() / 1000),
       source:            row.source || 'proton-pulse',
     }));
