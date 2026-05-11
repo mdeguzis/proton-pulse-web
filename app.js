@@ -915,9 +915,9 @@ const FORM_RESPONSE_LABELS = {
   verdictOob:        'Works out of the box without tweaks?',
 };
 
-function renderFormResponses(c) {
+function buildFormRows(c) {
   const r = c.formResponses;
-  if (!r || typeof r !== 'object') return '';
+  if (!r || typeof r !== 'object') return null;
   const rows = Object.entries(FORM_RESPONSE_LABELS)
     .map(([key, label]) => {
       const val = r[key];
@@ -928,21 +928,14 @@ function renderFormResponses(c) {
         : v === 'no'
           ? '<span class="fr-badge fr-no">No</span>'
           : `<span class="fr-badge">${esc(String(val))}</span>`;
-      return `<div class="config-row fr-row"><span class="config-lbl fr-lbl">${esc(label)}</span>${badge}</div>`;
+      return `<div class="fr-row"><span class="fr-lbl">${esc(label)}</span>${badge}</div>`;
     })
     .filter(Boolean);
-  if (!rows.length) return '';
+  if (!rows.length) return null;
   const tinker = Array.isArray(r.tinkeringMethods) && r.tinkeringMethods.length
-    ? `<div class="config-row fr-row"><span class="config-lbl fr-lbl">Tinkering methods</span><span>${r.tinkeringMethods.map(m => `<span class="var-tag">${esc(m)}</span>`).join(' ')}</span></div>`
+    ? `<div class="fr-row"><span class="fr-lbl">Tinkering methods</span><span>${r.tinkeringMethods.map(m => `<span class="var-tag">${esc(m)}</span>`).join(' ')}</span></div>`
     : '';
-  return `
-    <div class="fr-section">
-      <button class="all-details-btn" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'Hide Q&amp;A Responses':'Show Q&amp;A Responses'">Hide Q&amp;A Responses</button>
-      <div class="all-details-panel open">
-        ${rows.join('')}
-        ${tinker}
-      </div>
-    </div>`;
+  return rows.join('') + tinker;
 }
 
 function renderConfigCard(c, idx, votes = {}, userVotes = {}) {
@@ -1106,8 +1099,11 @@ function renderCard(r, votes, userVotes = {}) {
       <div class="row"><span class="label">OS</span><span>${na(esc(r.os))}</span></div>
       <div class="row"><span class="label">Proton</span><span>${na(esc(r.protonVersion))}</span></div>
       ${r.notes ? `<div class="notes-full">${esc(r.notes)}</div>` : ''}
-      <button class="all-details-btn" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'Hide Hardware Details':'All Hardware Details'">All Hardware Details</button>
-      <div class="all-details-panel">
+      <div class="details-btn-row">
+        <button class="all-details-btn" onclick="this.closest('.card-summary').querySelector('.hw-details-panel').classList.toggle('open');this.textContent=this.closest('.card-summary').querySelector('.hw-details-panel').classList.contains('open')?'Hide Hardware Details':'All Hardware Details'">All Hardware Details</button>
+        ${(() => { const fr = buildFormRows(r); return fr ? `<button class="all-details-btn" onclick="const p=this.closest('.card-summary').querySelector('.fr-panel');p.classList.toggle('open');this.textContent=p.classList.contains('open')?'Hide Q&amp;A Responses':'Show Q&amp;A Responses'">Hide Q&amp;A Responses</button>` : ''; })()}
+      </div>
+      <div class="all-details-panel hw-details-panel">
         <div class="row"><span class="label">RAM</span><span>${na(esc(r.ram))}</span></div>
         ${r.vramMb ? `<div class="row"><span class="label">VRAM</span><span>${r.vramMb >= 1024 ? (r.vramMb/1024).toFixed(1)+' GB' : r.vramMb+' MB'}</span></div>` : ''}
         <div class="row"><span class="label">GPU Driver</span><span>${na(esc(r.gpuDriver))}</span></div>
@@ -1115,7 +1111,7 @@ function renderCard(r, votes, userVotes = {}) {
         <div class="row"><span class="label">Duration</span><span>${na(esc(r.duration))}</span></div>
         ${r.launchOptions ? `<div class="row"><span class="label">Launch Options</span><span>${esc(r.launchOptions)}</span></div>` : ''}
       </div>
-      ${renderFormResponses(r)}
+      ${(() => { const fr = buildFormRows(r); return fr ? `<div class="all-details-panel fr-panel open"><div class="fr-section">${fr}</div></div>` : ''; })()}
       ${r.reportId != null ? `<div class="row"><span class="label">Report ID</span><span style="font-family:monospace;font-size:0.8em;color:var(--muted)">#${r.reportId}</span></div>` : ''}
       <div class="card-footer">${r.clientId && r.clientId === getWebClientId() ? `<button class="cfg-dl-btn delete-report-btn" data-app-id="${r.appId || ''}" style="color:#c85050;border-color:#c85050" title="Delete your report">Delete</button>` : ''}<button class="cfg-dl-btn" data-report-json='${JSON.stringify(r).replace(/'/g,"&#39;")}' title="Download as JSON">JSON</button></div>
     </div>`;
