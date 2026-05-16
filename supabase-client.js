@@ -58,6 +58,19 @@ const SupaAuth = (() => {
     } else {
       console.log('[SupaAuth] Steam session set successfully');
     }
+
+    // Redirect to the page the user was on before login, if stored
+    const returnTo = sessionStorage.getItem('pp:returnTo');
+    sessionStorage.removeItem('pp:returnTo');
+    if (returnTo) {
+      try {
+        const parsed = new URL(returnTo, window.location.href);
+        if (parsed.origin === window.location.origin) {
+          window.location.replace(parsed.toString());
+          return;
+        }
+      } catch (_) { /* fall through */ }
+    }
     // Clean the tokens out of the URL without a page reload
     history.replaceState(null, '', window.location.pathname + window.location.search);
   }
@@ -78,6 +91,8 @@ const SupaAuth = (() => {
    */
   function loginWithSteam(redirectTo) {
     console.log('[SupaAuth] Redirecting to Steam OpenID');
+    const dest = normalizeReturnTo(redirectTo || window.location.href);
+    sessionStorage.setItem('pp:returnTo', dest);
     const callbackUrl = new URL(STEAM_CALLBACK_URL);
     callbackUrl.searchParams.set('returnTo', normalizeReturnTo(redirectTo || window.location.href));
     const params = new URLSearchParams({
