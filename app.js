@@ -1129,15 +1129,19 @@ function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) {
   // Anything starting with 'web' is the web submit flow, which is a Pulse path too
   const isProtonDb = src === 'protondb';
   const isWeb = src.startsWith('web');
-  const WEB_LABELS = { 'web-steamdeck': 'Steam Deck', 'web-linux': 'Linux', 'web-windows': 'Windows', 'web-macos': 'macOS', 'web': 'Web' };
+  // When running a Windows game via Proton on Linux, label as Steam Play rather than Linux
+  const webPlatformLabel = (src === 'web-linux' && r.protonVersion)
+    ? 'Steam Play'
+    : { 'web-steamdeck': 'Steam Deck', 'web-linux': 'Linux', 'web-windows': 'Windows', 'web-macos': 'macOS', 'web': 'Web' }[src] || 'Web';
   const rc    = RATING_COLORS[r.rating] || '#3a4a5a';
   const rt    = RATING_TEXT[r.rating]   || '#c8d4e0';
   const na = s => s || '<span style="color:#4a5f70;font-style:italic">Not available</span>';
+  const pulseBadge = '<span class="source-badge pulse"><img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse</span>';
   const sourceBadge = isProtonDb
     ? '<span class="source-badge protondb">ProtonDB</span>'
     : isWeb
-      ? `<span class="source-badge web">${WEB_LABELS[src] || 'Web'}</span>`
-      : '<span class="source-badge pulse"><img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse</span>';
+      ? `${pulseBadge}<span class="source-badge web">${webPlatformLabel}</span>`
+      : pulseBadge;
   const ownerBadge = r.gameOwned ? '<span class="source-badge owned-game" title="Reporter confirmed they own this game on Steam">Owns Game</span>' : '';
   return `
     <div class="card">
