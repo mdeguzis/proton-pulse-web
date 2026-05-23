@@ -388,6 +388,54 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
       });
   }
 
+  // ---- Pulse fetcher (cached per app for the session) ----
+  // ProtonDB reports live in /data/{appId}/{year}.json; Pulse Reports live in
+  // Supabase. We fetch both and merge into one cohesive list for the JSON view.
+  const SB_URL = 'https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1';
+  const SB_KEY = 'sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V';
+  const pulseCache = new Map();
+
+  function fetchPulse(appId) {
+    if (pulseCache.has(appId)) return pulseCache.get(appId);
+    const url = SB_URL + '/user_configs?app_id=eq.' + encodeURIComponent(appId) + '&select=*&order=created_at.desc';
+    const p = fetch(url, { headers: { apikey: SB_KEY } })
+      .then(r => r.ok ? r.json() : [])
+      .catch(() => [])
+      .then(rows => Array.isArray(rows) ? rows : []);
+    pulseCache.set(appId, p);
+    return p;
+  }
+
+  // Map Pulse snake_case to camelCase, preserve Pulse-only fields. Tag source:"pulse";
+  // keep granular Supabase source value as submissionSource (user / web-linux / etc).
+  function normalizePulse(row) {
+    const ts = Math.floor(new Date(row.created_at).getTime() / 1000) || 0;
+    return {
+      appId: String(row.app_id),
+      title: row.title || '',
+      cpu: row.cpu || '',
+      gpu: row.gpu || '',
+      gpuDriver: row.gpu_driver || '',
+      gpuVendor: row.gpu_vendor || '',
+      ram: row.ram || '',
+      vramMb: row.vram_mb || null,
+      os: row.os || '',
+      kernel: row.kernel || '',
+      protonVersion: row.proton_version || '',
+      rating: row.rating || '',
+      duration: row.duration || '',
+      durationMinutes: row.duration_minutes || null,
+      notes: row.notes || '',
+      launchOptions: row.launch_options || '',
+      formResponses: row.form_responses || null,
+      configKey: row.config_key || null,
+      gameOwned: row.game_owned == null ? null : row.game_owned,
+      timestamp: ts,
+      submissionSource: row.source || null,
+      source: 'pulse',
+    };
+  }
+
   let activeFetch = null;
   function loadYear(appId, file) {
     pathEl.textContent = '/data/' + appId + '/' + file;
@@ -396,17 +444,37 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     const url = 'data/' + appId + '/' + file;
     const token = Symbol();
     activeFetch = token;
-    fetch(url).then(r => r.ok ? r.json() : Promise.reject(r.status))
-      .then(data => {
-        if (activeFetch !== token) return; // a newer click superseded us
-        statusEl.textContent = 'ok';
-        contentEl.innerHTML = jsonHtml(data);
-      })
-      .catch(err => {
-        if (activeFetch !== token) return;
-        statusEl.textContent = 'error';
-        contentEl.textContent = 'Failed to load ' + url + ' (' + err + ')';
+
+    // year from filename: "2025.json" -> "2025", "latest.json" -> null (all years)
+    const yMatch = file.match(/^(\\d{4})\\.json$/);
+    const targetYear = yMatch ? yMatch[1] : null;
+
+    Promise.all([
+      fetch(url).then(r => r.ok ? r.json() : []).catch(() => []),
+      fetchPulse(appId),
+    ]).then(([protondbRaw, pulseRaw]) => {
+      if (activeFetch !== token) return;
+      const protondb = (Array.isArray(protondbRaw) ? protondbRaw : []).map(r => {
+        return (r && typeof r === 'object') ? Object.assign({}, r, { source: r.source || 'protondb' }) : r;
       });
+      const pulseInYear = pulseRaw
+        .map(normalizePulse)
+        .filter(r => {
+          if (!targetYear) return true;
+          if (!r.timestamp) return false;
+          return String(new Date(r.timestamp * 1000).getUTCFullYear()) === targetYear;
+        });
+      const merged = protondb.concat(pulseInYear)
+        .sort((a, b) => ((b && b.timestamp) || 0) - ((a && a.timestamp) || 0));
+      statusEl.textContent = pulseInYear.length
+        ? protondb.length + ' ProtonDB · ' + pulseInYear.length + ' Pulse'
+        : protondb.length + ' reports';
+      contentEl.innerHTML = jsonHtml(merged);
+    }).catch(err => {
+      if (activeFetch !== token) return;
+      statusEl.textContent = 'error';
+      contentEl.textContent = 'Failed to load ' + url + ' (' + err + ')';
+    });
   }
 
   function openDetail(appId, year) {
