@@ -326,6 +326,11 @@ def write_bucketed_reports(
     written_keys: set[tuple] = set()
 
     for year, reports in year_buckets.items():
+        # Tag every report with its origin. Backfill always sources from ProtonDB
+        # (live or archive); Pulse Reports have their own path via Supabase
+        for report in reports:
+            if isinstance(report, dict):
+                report.setdefault("source", "protondb")
         year_file = app_dir / f"{year}.json"
         year_file.write_text(json.dumps(reports, indent=2))
         written_keys.add((app_id, year))
@@ -897,6 +902,10 @@ def _patch_titles_on_disk(
             for report in reports:
                 if not (report.get("title") or "").strip():
                     report["title"] = title
+                    changed = True
+                # backfill source on any legacy untagged report we touch
+                if "source" not in report:
+                    report["source"] = "protondb"
                     changed = True
             if changed:
                 year_file.write_text(json.dumps(reports, indent=2))

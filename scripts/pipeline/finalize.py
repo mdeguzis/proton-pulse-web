@@ -188,13 +188,20 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     .detail-appid { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); letter-spacing: 0.06em; }
     .detail-spacer { flex: 1; }
     .detail-split { display: grid; grid-template-columns: 200px 1fr; gap: 16px; align-items: stretch; min-height: 500px; }
-    @media (max-width: 760px) { .detail-split { grid-template-columns: 1fr; } }
+    @media (max-width: 760px) { .detail-split { grid-template-columns: 1fr; min-height: 0; } }
     .year-list { display: flex; flex-direction: column; gap: 4px; padding: 12px; background: rgba(11,17,22,0.4); border: 1px solid var(--border); }
     .year-list .label { font-family: var(--mono); font-size: 0.66rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: 6px; }
     .year-list button { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: transparent; border: 1px solid transparent; border-left: 2px solid var(--border2); color: var(--muted); font-family: var(--mono); font-size: 0.86rem; text-align: left; cursor: pointer; }
     .year-list button:hover { color: var(--text); background: rgba(102,192,244,0.05); border-left-color: var(--accent-soft); }
     .year-list button.is-active { color: var(--accent-hi); background: var(--accent-soft); border-left-color: var(--accent); box-shadow: inset 2px 0 8px -2px var(--accent-glow); }
     .year-list button .badge { margin-left: auto; font-family: var(--mono); font-size: 0.62rem; color: var(--green-hi); letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; }
+    /* mobile: year-list becomes a horizontal scroll strip so it never eats vertical space */
+    @media (max-width: 760px) {
+      .year-list { flex-direction: row; overflow-x: auto; overflow-y: hidden; gap: 6px; padding: 8px 10px; align-items: stretch; scroll-snap-type: x proximity; scrollbar-width: thin; }
+      .year-list .label { flex-shrink: 0; align-self: center; margin-bottom: 0; margin-right: 4px; }
+      .year-list button { flex-shrink: 0; border-left: none !important; border-bottom: 2px solid var(--border2); padding: 6px 10px; scroll-snap-align: start; }
+      .year-list button.is-active { border-bottom-color: var(--accent) !important; box-shadow: none !important; }
+    }
     .json-pane { display: flex; flex-direction: column; background: rgba(11,17,22,0.55); border: 1px solid var(--border); overflow: hidden; }
     .json-pane-head { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-bottom: 1px solid var(--border); background: var(--s1); font-family: var(--mono); font-size: 0.78rem; }
     .json-pane-head .path { color: var(--accent); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

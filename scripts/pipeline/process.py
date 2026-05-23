@@ -49,6 +49,12 @@ def parse_and_split(file_handle, data_output_path, source_label="?"):
         except (ValueError, OSError):
             year = "unknown"
 
+        # Tag every parsed report with its origin. ProtonDB feeds this writer;
+        # Pulse Reports come from Supabase and get their own source="pulse" tag
+        # in app.js at render time. Don't overwrite an existing source field --
+        # future archives may already carry one (e.g. partner imports).
+        report.setdefault("source", "protondb")
+
         buffer[(str(app_id), year)].append(report)
         count += 1
 
@@ -72,6 +78,11 @@ def parse_and_split(file_handle, data_output_path, source_label="?"):
                 existing = json.loads(year_file.read_text())
             except (json.JSONDecodeError, OSError):
                 existing = []
+
+        # Backfill source on legacy reports written before the field existed.
+        # These came from ProtonDB archives originally, so the default is safe
+        for report in existing:
+            report.setdefault("source", "protondb")
 
         seen_timestamps = {r.get("timestamp") for r in existing}
         added = 0
