@@ -27,31 +27,53 @@ from .common import log
 # so we collapse them down to a handful of stable tokens for filtering. Order
 # matters: longer / more specific patterns first.
 
+# Use \b word-boundary so "RTX 4080" matches at the start of a string and
+# "GTX1080" (no space) still matches. Substring matching missed both.
+_NVIDIA_RE = re.compile(
+    r"\b(nvidia|geforce|quadro|tesla|titan|rtx|gtx)", re.IGNORECASE
+)
+_AMD_RE = re.compile(
+    r"\b(amd|radeon|vega|navi|polaris|rdna|vangogh|gfx\d{2,}|ati\b)",
+    re.IGNORECASE,
+)
+_INTEL_RE = re.compile(
+    r"\b(intel|iris|arc(?:\s|$)|xe\s+graphics|uhd\s+graphics|hd\s+graphics)",
+    re.IGNORECASE,
+)
+
+
 def normalize_gpu_vendor(report: dict) -> str:
     # Pulse rows carry an explicit gpu_vendor (or gpuVendor after camelCasing);
-    # ProtonDB rows don't, so fall back to substring match on the GPU string.
+    # ProtonDB rows don't, so fall back to product-name pattern matching.
     explicit = (report.get("gpuVendor") or report.get("gpu_vendor") or "").lower().strip()
     if explicit in ("amd", "nvidia", "intel"):
         return explicit
-    gpu = (report.get("gpu") or "").lower()
+    gpu = report.get("gpu") or ""
     if not gpu:
         return "unknown"
-    if "nvidia" in gpu or "geforce" in gpu or " rtx " in gpu or "gtx " in gpu:
+    if _NVIDIA_RE.search(gpu):
         return "nvidia"
-    if "amd" in gpu or "radeon" in gpu or "vega" in gpu or "ati " in gpu or "vangogh" in gpu:
+    if _AMD_RE.search(gpu):
         return "amd"
-    if "intel" in gpu or "arc " in gpu or "iris" in gpu or "xe graphics" in gpu:
+    if _INTEL_RE.search(gpu):
         return "intel"
     return "other"
 
 
+_CPU_AMD_RE = re.compile(r"\b(amd|ryzen|threadripper|athlon|epyc|radeon)", re.IGNORECASE)
+_CPU_INTEL_RE = re.compile(
+    r"\b(intel|xeon|celeron|pentium|core\s+i[3579])\b|\bi[3579]-\d",
+    re.IGNORECASE,
+)
+
+
 def normalize_cpu_brand(report: dict) -> str:
-    cpu = (report.get("cpu") or "").lower()
+    cpu = report.get("cpu") or ""
     if not cpu:
         return "unknown"
-    if "amd" in cpu or "ryzen" in cpu or "threadripper" in cpu or "athlon" in cpu or "epyc" in cpu:
+    if _CPU_AMD_RE.search(cpu):
         return "amd"
-    if "intel" in cpu or re.search(r"\b(i[3579])-\d", cpu) or "xeon" in cpu or "celeron" in cpu or "pentium" in cpu:
+    if _CPU_INTEL_RE.search(cpu):
         return "intel"
     return "other"
 
