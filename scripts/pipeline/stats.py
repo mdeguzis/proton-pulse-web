@@ -185,6 +185,28 @@ def normalize_rating(report: dict) -> str:
     return r if r in ("platinum", "gold", "silver", "bronze", "borked", "pending") else "unknown"
 
 
+# ── Scoring helpers (duplicated from finalize.py to avoid circular import) ──
+
+# Per-rating score on a 0..1 scale. Mirrors scoring-info.json:ratingScores
+# and finalize.py:_RATING_SCORES. Kept here for the stale-borked computation
+# which needs to derive per-game overall tier inline with the aggregation walk.
+_RATING_SCORES = {
+    "platinum": 1.0,
+    "gold": 0.8,
+    "silver": 0.6,
+    "bronze": 0.4,
+    "borked": 0.0,
+}
+
+
+def _score_to_tier(score_pct: float) -> str:
+    if score_pct >= 80: return "platinum"
+    if score_pct >= 60: return "gold"
+    if score_pct >= 40: return "silver"
+    if score_pct >= 20: return "bronze"
+    return "borked"
+
+
 # ── Walker ─────────────────────────────────────────────────────────────────
 
 def _iter_year_files(data_output_path: Path):
@@ -232,8 +254,13 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
     by_rating_x_os: dict[str, Counter] = defaultdict(Counter)
     by_rating_x_source: dict[str, Counter] = defaultdict(Counter)
     by_rating_x_device: dict[str, Counter] = defaultdict(Counter)
+    # Year x rating: enables the "ratings shift over time" chart (% borked dropping, etc.)
+    # shape: { "2025": Counter(rating -> count), ... }
+    by_year_rating: dict[str, Counter] = defaultdict(Counter)
 
-    # Per-app counts for the "top games" leaderboard
+    # Per-app accumulator. Tracks newest_year so we can identify games that
+    # have not been re-tested recently -- the "worth re-testing" leaderboard
+    # uses this to surface borked games whose latest report is years old.
     per_game: dict[str, dict[str, Any]] = {}
 
     games_with_any_report: set[str] = set()
@@ -243,8 +270,22 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
         if not reports:
             continue
         games_with_any_report.add(app_id)
-        # cache the first non-empty title we see for this app
-        per_game.setdefault(app_id, {"title": "", "count": 0})
+        # cache the first non-empty title we see for this app + accumulators for
+        # newest report year (used for stale-borked detection later) and tallies
+        # by rating (so we can identify the game's dominant rating without a
+        # second pass through year files)
+        per_game.setdefault(
+            app_id,
+            {
+                "title": "",
+                "count": 0,
+                "newest_year": 0,
+                "ratings": Counter(),
+            },
+        )
+        year_int = int(year) if year.isdigit() else 0
+        if year_int > per_game[app_id]["newest_year"]:
+            per_game[app_id]["newest_year"] = year_int
 
         for r in reports:
             if not isinstance(r, dict):
@@ -269,6 +310,7 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
             if year.isdigit():
                 by_year[year] += 1
                 by_year_source[year][src] += 1
+                by_year_rating[year][rating] += 1
 
             by_rating_x_gpu[gpu][rating] += 1
             by_rating_x_cpu[cpu][rating] += 1
@@ -285,6 +327,7 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
                 if title:
                     per_game[app_id]["title"] = title
             per_game[app_id]["count"] += 1
+            per_game[app_id]["ratings"][rating] += 1
 
     # Top 50 games by report volume
     top_games = sorted(
@@ -292,6 +335,36 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
         key=lambda t: t[2],
         reverse=True,
     )[:50]
+
+    # Stale-borked detection. A game is "worth re-testing" if its overall
+    # tier (computed the same way as the search-index summary) is "borked"
+    # AND its newest report is at least 2 years old. The narrative: Proton
+    # has improved a lot, so old borked verdicts may no longer hold.
+    current_year = datetime.now(tz=timezone.utc).year
+    stale_cutoff = current_year - 2  # newest_year <= this -> stale
+    stale_borked = []
+    stale_borked_count = 0
+    for app_id, info in per_game.items():
+        # Compute overall tier from the same scoring map used elsewhere
+        score_sum = 0.0
+        rated = 0
+        for tier, cnt in info["ratings"].items():
+            if tier in _RATING_SCORES:
+                score_sum += _RATING_SCORES[tier] * cnt
+                rated += cnt
+        if rated == 0:
+            continue
+        overall_tier = _score_to_tier((score_sum / rated) * 100)
+        if overall_tier != "borked":
+            continue
+        if info["newest_year"] == 0 or info["newest_year"] > stale_cutoff:
+            continue
+        stale_borked_count += 1
+        stale_borked.append((app_id, info["title"], info["count"], info["newest_year"]))
+
+    # Top 30 stale-borked by report count (highest-impact candidates to re-test)
+    stale_borked.sort(key=lambda t: t[2], reverse=True)
+    worth_retesting = stale_borked[:30]
 
     # Convert nested counters to plain dicts for JSON serialization
     def flatten_cross(cross: dict[str, Counter]) -> dict[str, dict[str, int]]:
@@ -318,6 +391,19 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
         "by_rating_x_os_family": flatten_cross(by_rating_x_os),
         "by_rating_x_source": flatten_cross(by_rating_x_source),
         "by_rating_x_device_family": flatten_cross(by_rating_x_device),
+        # Rating shift over time: { "2025": { "platinum": N, "gold": N, ... }, ... }
+        # Powers the trend chart that shows compatibility improving year-over-year
+        "by_year_rating": flatten_cross(by_year_rating),
+        # Stale-borked detection: games whose overall verdict is "borked" but the
+        # newest report is from 2+ years ago. Proton has improved enough that
+        # those verdicts may no longer hold -- surface them so users can re-test.
+        "stale_borked_count": stale_borked_count,
+        "stale_borked_cutoff_year": stale_cutoff,
+        # Top 30 stale-borked games by report volume
+        "worth_retesting": [
+            [app_id, title, count, newest_year]
+            for app_id, title, count, newest_year in worth_retesting
+        ],
         # Leaderboard
         "top_games": [[app_id, title, count] for app_id, title, count in top_games],
     }

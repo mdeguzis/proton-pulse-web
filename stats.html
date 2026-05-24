@@ -405,6 +405,70 @@ h2 {
   color: var(--muted);
   letter-spacing: 0.06em;
 }
+
+/* ── re-test callout: highlights stale-borked count above the leaderboard ── */
+.retest-callout {
+  margin: 2em 0 0.5em;
+  padding: 18px 22px;
+  background: linear-gradient(180deg, rgba(255,200,61,0.08), rgba(11,17,22,0.4));
+  border: 1px solid var(--gold);
+  border-left: 3px solid var(--gold);
+}
+.retest-callout .retest-headline {
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.retest-callout .retest-headline strong { color: var(--accent-hi); }
+.retest-callout .retest-borked {
+  display: inline-block;
+  padding: 1px 8px;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.retest-callout .retest-sub {
+  margin-top: 8px;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+/* ── trend chart legend ── */
+.trend-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 8px 10px 4px;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--text);
+}
+.trend-legend .legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.trend-legend .legend-swatch {
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(0,0,0,0.4);
+}
+
+/* ── extra "last seen YYYY" label inside topgames items (worth-retesting) ── */
+.topgames .newest {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--red);
+  letter-spacing: 0.04em;
+  padding: 1px 7px;
+  border: 1px solid rgba(200,80,80,0.3);
+  background: rgba(200,80,80,0.08);
+}
 </style>
 </head>
 <body>
@@ -674,6 +738,30 @@ h2 {
         <div class="axis" id="sparkline-axis"></div>
       </div>
 
+      <h2>How ratings have shifted over time</h2>
+      <p class="meta">// % of reports per year by rating. Newer Proton versions tend to lift more games into Gold and Platinum.</p>
+      <div class="chart-card sparkline-card" id="ratings-trend-card">
+        <div class="sparkline-wrap" id="ratings-trend-wrap">
+          <svg id="ratings-trend" viewBox="0 0 500 200" preserveAspectRatio="xMidYMid meet"></svg>
+          <div class="sparkline-tooltip" id="ratings-trend-tooltip"></div>
+        </div>
+        <div class="axis" id="ratings-trend-axis"></div>
+        <div class="trend-legend" id="ratings-trend-legend"></div>
+      </div>
+
+      ${stats.stale_borked_count > 0 ? `
+      <div class="retest-callout">
+        <div class="retest-headline">
+          <strong>${fmt(stats.stale_borked_count)}</strong> games are rated <span class="retest-borked">borked</span>
+          but haven't been re-tested since <strong>${stats.stale_borked_cutoff_year || '—'}</strong> or earlier
+        </div>
+        <div class="retest-sub">Proton has come a long way. Many of these probably work now -- if you own one, a fresh report would help.</div>
+      </div>
+      <h2>Worth re-testing</h2>
+      <p class="meta">// Top borked games by report volume whose newest report is from ${stats.stale_borked_cutoff_year || '—'} or earlier.</p>
+      <div class="topgames" id="retesting"></div>
+      ` : ''}
+
       <h2>Top games by report volume</h2>
       <div class="topgames" id="topgames"></div>
     `;
@@ -706,15 +794,22 @@ h2 {
       let resizeTimer;
       window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(
-          () => stats && renderSparkline(stats.by_year || {}, stats.by_year_source || {}),
-          150,
-        );
+        resizeTimer = setTimeout(() => {
+          if (!stats) return;
+          renderSparkline(stats.by_year || {}, stats.by_year_source || {});
+          renderRatingsTrend(stats.by_year_rating || {});
+        }, 150);
       });
     }
 
     // Top games (unfiltered)
     renderTopGames(stats.top_games || []);
+    // Render the new "worth re-testing" leaderboard (only if there are any).
+    // Uses the same renderer as topgames but linked to data-index detail view.
+    if (stats.stale_borked_count > 0) {
+      renderTopGames(stats.worth_retesting || [], document.getElementById('retesting'));
+    }
+    renderRatingsTrend(stats.by_year_rating || {});
 
     // Update meta line with filter context
     const status = document.getElementById('filter-status');
@@ -936,17 +1031,158 @@ h2 {
     return String(Math.round(n));
   }
 
-  function renderTopGames(topGames) {
-    const list = document.getElementById('topgames');
+  function renderTopGames(topGames, container) {
+    const list = container || document.getElementById('topgames');
     if (!list) return;
-    list.innerHTML = topGames.slice(0, 30).map(([appId, title, count], i) => `
-      <a href="data-index.html#/${appId}">
+    list.innerHTML = topGames.slice(0, 30).map((entry, i) => {
+      // entry can be [appId, title, count] or [appId, title, count, newestYear]
+      const [appId, title, count, newestYear] = entry;
+      const safeTitle = (title || appId).replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
+      const yearStr = newestYear ? `<span class="newest">last seen ${newestYear}</span>` : '';
+      return `<a href="data-index.html#/${appId}">
         <span class="rank">#${i + 1}</span>
-        <span class="title">${(title || appId).replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]))}</span>
+        <span class="title">${safeTitle}</span>
         <span class="appid">${appId}</span>
+        ${yearStr}
         <span class="count">${fmt(count)} reports</span>
-      </a>
-    `).join('');
+      </a>`;
+    }).join('');
+  }
+
+  // ── Rating trend chart: 5 lines (one per rating) showing % per year ──
+  // Tells the story of compatibility improving (or not) over time. Borked %
+  // dropping + Platinum % rising = "Proton has gotten better".
+  const TIER_COLORS = {
+    platinum: '#b4c7dc',
+    gold:     '#c8a050',
+    silver:   '#8fa0b0',
+    bronze:   '#b07040',
+    borked:   '#c85050',
+  };
+
+  function renderRatingsTrend(byYearRating) {
+    const wrap = document.getElementById('ratings-trend-wrap');
+    const svg = document.getElementById('ratings-trend');
+    const axis = document.getElementById('ratings-trend-axis');
+    const legend = document.getElementById('ratings-trend-legend');
+    const tooltip = document.getElementById('ratings-trend-tooltip');
+    if (!svg || !wrap) return;
+
+    const years = Object.keys(byYearRating).filter(y => /^\d{4}$/.test(y)).sort();
+    if (years.length < 2) {
+      svg.innerHTML = '<text x="50%" y="50%" text-anchor="middle" fill="var(--muted)" font-family="var(--mono)" font-size="12">not enough year data</text>';
+      return;
+    }
+
+    // Pre-compute total per year + per-tier percent so the chart is normalized.
+    // We deliberately render % rather than raw counts so the story shows the
+    // shifting MIX rather than the growing volume.
+    const tiers = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
+    const pctByYear = {};
+    years.forEach(y => {
+      const buckets = byYearRating[y] || {};
+      const total = tiers.reduce((s, t) => s + (buckets[t] || 0), 0);
+      pctByYear[y] = {};
+      tiers.forEach(t => {
+        pctByYear[y][t] = total ? (buckets[t] || 0) / total * 100 : 0;
+      });
+    });
+
+    const containerW = (wrap && wrap.clientWidth) || 720;
+    const W = Math.max(400, Math.floor(containerW));
+    const H = 220;
+    const padL = 50, padR = 12, padT = 14, padB = 30;
+    const chartW = W - padL - padR;
+    const chartH = H - padT - padB;
+    const xStep = chartW / (years.length - 1);
+
+    function getX(i) { return padL + i * xStep; }
+    function getY(pct) { return padT + chartH * (1 - pct / 100); }
+
+    // Y axis: 0%, 25%, 50%, 75%, 100%
+    const gridLines = [0, 25, 50, 75, 100].map(p => {
+      const yPos = getY(p);
+      return `
+        <line class="gridline" x1="${padL}" y1="${yPos}" x2="${W - padR}" y2="${yPos}"/>
+        <text class="yaxis-label" x="${padL - 6}" y="${yPos + 3}">${p}%</text>
+      `;
+    }).join('');
+
+    // One path per tier
+    const tierPaths = tiers.map(t => {
+      const d = years.map((y, i) => `${i === 0 ? 'M' : 'L'} ${getX(i).toFixed(1)} ${getY(pctByYear[y][t]).toFixed(1)}`).join(' ');
+      return `<path d="${d}" stroke="${TIER_COLORS[t]}" stroke-width="1.6" fill="none" data-tier="${t}"/>`;
+    }).join('');
+
+    // Hover targets: invisible vertical rects per year
+    const hoverTargets = years.map((y, i) => {
+      const x = getX(i);
+      const halfStep = xStep / 2;
+      return `<rect class="hover-target" x="${x - halfStep}" y="${padT}" width="${xStep}" height="${chartH}" fill="transparent" data-year="${y}" data-idx="${i}"/>`;
+    }).join('');
+
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.style.height = H + 'px';
+    svg.innerHTML = `
+      ${gridLines}
+      ${tierPaths}
+      <line class="hover-guide" id="trend-hover-guide" x1="0" y1="${padT}" x2="0" y2="${H - padB}"/>
+      ${tiers.map(t => `<circle class="hover-dot" id="trend-dot-${t}" r="3.5" fill="${TIER_COLORS[t]}"/>`).join('')}
+      ${hoverTargets}
+    `;
+
+    if (axis) axis.innerHTML = years.map(y => `<span>${y}</span>`).join('');
+
+    // Legend with click-to-toggle would be nice but skip for now -- always show all 5
+    if (legend) {
+      legend.innerHTML = tiers.map(t => `
+        <span class="legend-item">
+          <span class="legend-swatch" style="background:${TIER_COLORS[t]}"></span>
+          ${t}
+        </span>
+      `).join('');
+    }
+
+    const card = document.getElementById('ratings-trend-card');
+    const guide = document.getElementById('trend-hover-guide');
+    svg.querySelectorAll('.hover-target').forEach(rect => {
+      rect.addEventListener('mouseenter', () => {
+        const y = rect.getAttribute('data-year');
+        const i = parseInt(rect.getAttribute('data-idx'), 10);
+        const x = getX(i);
+        guide.setAttribute('x1', x);
+        guide.setAttribute('x2', x);
+        tiers.forEach(t => {
+          const dot = document.getElementById('trend-dot-' + t);
+          dot.setAttribute('cx', x);
+          dot.setAttribute('cy', getY(pctByYear[y][t]));
+        });
+        card.classList.add('is-hovered');
+
+        // Tooltip
+        const wrapRect = wrap.getBoundingClientRect();
+        const svgX = (x / W) * wrapRect.width;
+        const half = tooltip.offsetWidth / 2 || 100;
+        let leftPx = svgX - half;
+        if (leftPx < 4) leftPx = 4;
+        if (leftPx + half * 2 > wrapRect.width - 4) leftPx = wrapRect.width - half * 2 - 4;
+        tooltip.style.left = leftPx + 'px';
+        tooltip.innerHTML = `
+          <div class="year">${y}</div>
+          ${tiers.map(t => `
+            <div class="row">
+              <span class="swatch" style="background:${TIER_COLORS[t]}"></span>
+              ${t} <span class="val">${pctByYear[y][t].toFixed(1)}%</span>
+            </div>
+          `).join('')}
+        `;
+        tooltip.classList.add('is-visible');
+      });
+    });
+    svg.addEventListener('mouseleave', () => {
+      card.classList.remove('is-hovered');
+      tooltip.classList.remove('is-visible');
+    });
   }
 
   // Restore filter from query string on load
