@@ -536,6 +536,34 @@ def _resolve_coverage_title(
     return "", "none"
 
 
+def derive_index_keys_from_disk(data_output_path: Path) -> set[tuple[str, str]]:
+    """Walk data/ on disk and return every (app_id, year) tuple present.
+
+    state["index_keys"] only contains apps PROCESSED in the current run. After
+    the gh-pages merge step brings in 21k+ historical apps that this run
+    didn't reprocess, those apps live on disk but aren't in pipeline-state.
+    The data-index and search-index generators iterate index_keys, so without
+    this disk-derived merge, they emit only the current-run set -- which is
+    how a scheduled run that picked up a single dump update wiped data-index
+    down to one entry on prod.
+    """
+    keys: set[tuple[str, str]] = set()
+    if not data_output_path.exists():
+        return keys
+    for app_dir in data_output_path.iterdir():
+        if not app_dir.is_dir():
+            continue
+        app_id = app_dir.name
+        if not app_id.isdigit():
+            continue
+        for year_file in app_dir.glob("*.json"):
+            stem = year_file.stem
+            if stem in ("index", "latest", "votes", "metadata"):
+                continue
+            keys.add((app_id, stem))
+    return keys
+
+
 def generate_search_index(index_keys: set, data_output_path: Path, output_path: Path) -> None:
     """Generate search-index.json: compact [[appId, title], ...] list for client-side search."""
     app_ids = sorted(
@@ -1095,11 +1123,25 @@ def finalize_output(output_dir, skip_probe: bool = False):
             f"[metadata] Bootstrapped app provenance for {len(bootstrapped_metadata):,} app(s): "
             f"{official_bootstrapped:,} official, {live_bootstrapped:,} live"
         )
-    generate_app_indexes(state["index_keys"], data_output_path)
-    generate_index_html(state["index_keys"], output_path)
-    generate_search_index(state["index_keys"], data_output_path, output_path)
+    # Rebuild index_keys from disk so generators see the FULL post-merge set
+    # (artifact + gh-pages historical apps), not just this run's processed
+    # delta. Without this, a scheduled run that touched 1 new app produces
+    # a data-index.html with 1 entry. See derive_index_keys_from_disk doc.
+    disk_index_keys = derive_index_keys_from_disk(data_output_path)
+    full_index_keys = set(state["index_keys"]) | disk_index_keys
+    state_app_count = len({k[0] for k in state["index_keys"]})
+    disk_app_count = len({k[0] for k in disk_index_keys})
+    log(
+        f"[finalize] index_keys: {state_app_count:,} from state, "
+        f"{disk_app_count:,} from disk, "
+        f"{len({k[0] for k in full_index_keys}):,} merged"
+    )
+
+    generate_app_indexes(full_index_keys, data_output_path)
+    generate_index_html(full_index_keys, output_path)
+    generate_search_index(full_index_keys, data_output_path, output_path)
     generate_coverage_report(
-        state["index_keys"],
+        full_index_keys,
         state["backfilled_keys"],
         data_output_path,
         output_path,
