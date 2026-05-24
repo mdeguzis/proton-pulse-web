@@ -175,9 +175,10 @@ h2 {
 .bars { display: flex; flex-direction: column; gap: 6px; }
 .bar-row {
   display: grid;
-  /* min 140 fits "ARCH / DERIV..." most of the time, grows to max-content
-     when there's room. ellipsis + native title tooltip handles overflow */
-  grid-template-columns: minmax(140px, max-content) 1fr 60px;
+  /* fixed-width label column so bars line up at the SAME x position across
+     every chart card, not just within a single card. Ellipsis + native title
+     tooltip handles labels that don't fit (e.g. "ARCH / DERIVATIVES") */
+  grid-template-columns: 160px 1fr 60px;
   align-items: center;
   gap: 10px;
   font-size: 0.82rem;
@@ -191,7 +192,10 @@ h2 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 240px;
+}
+@media (max-width: 600px) {
+  /* tighter on small screens */
+  .bar-row { grid-template-columns: 110px 1fr 50px; gap: 8px; }
 }
 .bar-row .track {
   position: relative;

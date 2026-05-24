@@ -291,6 +291,8 @@ jobs:
           cp /tmp/protondb-output/data-index.html .
           cp /tmp/protondb-output/coverage.html .
           cp /tmp/protondb-output/search-index.json . 2>/dev/null || true
+          cp /tmp/protondb-output/coverage-summary.json . 2>/dev/null || true
+          cp /tmp/protondb-output/stats.json . 2>/dev/null || true
           git show main:gh-pages-manifest.txt > gh-pages-manifest.txt
           while IFS= read -r path; do
             [ -z "$path" ] && continue
@@ -308,6 +310,11 @@ jobs:
             | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['count'])" 2>/dev/null || echo "0")
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
+          # add optional pipeline outputs (skip silently if a fresh checkout
+          # didn't have them yet, e.g. first run after introducing the file)
+          for f in coverage-summary.json stats.json; do
+            [ -f "$f" ] && git add "$f"
+          done
           while IFS= read -r path; do
             [ -z "$path" ] && continue
             case "$path" in \#*) continue ;; esac
@@ -505,6 +512,8 @@ jobs:
           cp /tmp/protondb-output/data-index.html .
           cp /tmp/protondb-output/coverage.html .
           cp /tmp/protondb-output/search-index.json . 2>/dev/null || true
+          cp /tmp/protondb-output/coverage-summary.json . 2>/dev/null || true
+          cp /tmp/protondb-output/stats.json . 2>/dev/null || true
           git show main:gh-pages-manifest.txt > gh-pages-manifest.txt
           while IFS= read -r path; do
             [ -z "$path" ] && continue
@@ -522,6 +531,11 @@ jobs:
             | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['count'])" 2>/dev/null || echo "0")
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
+          # add optional pipeline outputs (skip silently if a fresh checkout
+          # didn't have them yet, e.g. first run after introducing the file)
+          for f in coverage-summary.json stats.json; do
+            [ -f "$f" ] && git add "$f"
+          done
           while IFS= read -r path; do
             [ -z "$path" ] && continue
             case "$path" in \#*) continue ;; esac
@@ -696,6 +710,8 @@ jobs:
           cp /tmp/protondb-output/data-index.html .
           cp /tmp/protondb-output/coverage.html .
           cp /tmp/protondb-output/search-index.json . 2>/dev/null || true
+          cp /tmp/protondb-output/coverage-summary.json . 2>/dev/null || true
+          cp /tmp/protondb-output/stats.json . 2>/dev/null || true
           git show main:gh-pages-manifest.txt > gh-pages-manifest.txt
           while IFS= read -r path; do
             [ -z "$path" ] && continue
@@ -713,6 +729,11 @@ jobs:
             | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['count'])" 2>/dev/null || echo "0")
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
+          # add optional pipeline outputs (skip silently if a fresh checkout
+          # didn't have them yet, e.g. first run after introducing the file)
+          for f in coverage-summary.json stats.json; do
+            [ -f "$f" ] && git add "$f"
+          done
           while IFS= read -r path; do
             [ -z "$path" ] && continue
             case "$path" in \#*) continue ;; esac
