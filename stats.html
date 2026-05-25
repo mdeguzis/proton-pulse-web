@@ -77,7 +77,7 @@ h2 {
   color: var(--muted);
 }
 
-/* ── filter chips row ───────────────────────────────────────────────── */
+/* ── filter dropdowns row ───────────────────────────────────────────── */
 .filter-row {
   display: flex;
   flex-wrap: wrap;
@@ -93,7 +93,14 @@ h2 {
   letter-spacing: 0.14em;
   margin-right: 4px;
 }
-.chip {
+
+/* Grouped dropdown: button toggles a checkbox panel below. position:relative
+   so the absolutely-positioned panel anchors to the button */
+.filter-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.filter-button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -106,20 +113,120 @@ h2 {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   cursor: pointer;
-  font-family: inherit;
   transition: color .12s, border-color .12s, background .12s, box-shadow .12s;
 }
-.chip:hover { color: var(--text); border-color: var(--accent); }
-.chip.is-active {
+.filter-button:hover { color: var(--text); border-color: var(--accent); }
+.filter-button.is-active {
   color: var(--accent-hi);
   background: var(--accent-soft);
   border-color: var(--accent);
   box-shadow: 0 0 16px -6px var(--accent-glow);
 }
-.chip .count {
+.filter-btn-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 16px;
+  padding: 0 4px;
+  background: var(--accent);
+  color: var(--bg);
   font-size: 0.66rem;
-  opacity: 0.7;
+  border-radius: 2px;
 }
+.filter-caret {
+  font-size: 0.6rem;
+  color: var(--muted);
+  margin-left: 2px;
+}
+.filter-button.is-active .filter-caret { color: var(--accent-hi); }
+
+/* The panel: hidden by default, revealed when parent has .is-open. Sits above
+   the chart-grid via z-index. Width fits widest option, capped so a SteamOS-style
+   long label doesn't blow it out */
+.filter-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 20;
+  min-width: 200px;
+  max-width: 320px;
+  background: var(--bg-bot, #0a0f14);
+  border: 1px solid var(--accent);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  padding: 8px 4px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+.filter-dropdown.is-open .filter-panel { display: block; }
+
+.filter-panel-summary {
+  padding: 4px 12px 8px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  border-bottom: 1px dashed var(--border);
+  margin-bottom: 4px;
+}
+.filter-panel-summary a {
+  color: var(--accent);
+  margin-left: 4px;
+  text-decoration: none;
+}
+.filter-panel-summary a:hover { text-decoration: underline; }
+
+.filter-check {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text);
+  transition: background .1s, color .1s;
+}
+.filter-check:hover { background: rgba(102,192,244,0.06); color: var(--accent-hi); }
+.filter-check.is-checked { color: var(--accent-hi); }
+.filter-check input[type="checkbox"] {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--border2);
+  background: rgba(11,17,22,0.6);
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+}
+.filter-check input[type="checkbox"]:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.filter-check input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: -1px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--bg);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.filter-check-label {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.filter-check-count {
+  font-size: 0.66rem;
+  color: var(--muted);
+}
+
 .filter-status {
   margin-left: auto;
   font-family: var(--mono);
@@ -385,7 +492,20 @@ h2 {
   color: var(--muted);
   min-width: 28px;
 }
-.topgames .title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.topgames .title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+/* Worth-retesting + framegen rows show the title as the primary signal, so
+   give it more breathing room. Drop the 360px min on those grids too so a
+   3-col row at 1400px gets ~460px per card and titles fit without ellipsis */
+#retesting.topgames,
+#fg-topgames.topgames {
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+}
+#retesting.topgames .title,
+#fg-topgames.topgames .title {
+  white-space: normal;
+  text-overflow: clip;
+  line-height: 1.3;
+}
 .topgames .appid {
   font-family: var(--mono);
   font-size: 0.72rem;
@@ -457,6 +577,117 @@ h2 {
   width: 10px;
   height: 10px;
   border: 1px solid rgba(0,0,0,0.4);
+}
+.trend-legend .legend-clickable {
+  cursor: pointer;
+  padding: 3px 8px;
+  border: 1px solid transparent;
+  transition: border-color .12s, color .12s, background .12s;
+}
+.trend-legend .legend-clickable:hover {
+  color: var(--accent-hi);
+  border-color: var(--border2);
+}
+.trend-legend .legend-clickable.is-active {
+  color: var(--accent-hi);
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+/* ── framegen section: headline tile + yes/no bars + leaderboard ── */
+.framegen-headline {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding: 18px 22px;
+  background: linear-gradient(180deg, rgba(102,192,244,0.06), rgba(11,17,22,0.4));
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  margin-bottom: 18px;
+}
+.fg-rate-value {
+  font-family: var(--mono);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--accent-hi);
+  text-shadow: 0 0 14px var(--accent-glow);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.fg-pct {
+  font-size: 0.55em;
+  color: var(--muted);
+  font-weight: 500;
+  margin-left: 4px;
+}
+.fg-rate-caption {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin-top: 6px;
+  max-width: 360px;
+}
+.fg-sub {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--text);
+  margin-left: auto;
+  letter-spacing: 0.04em;
+}
+.fg-sub strong { color: var(--accent-hi); }
+
+/* the yes/no question is binary, so the bar fill (yes%) becomes the visual
+   - amber-leaning gradient since "needing framegen" isn't bad, just notable */
+.bar-row.fg-bar .fg-fill {
+  background: linear-gradient(90deg, #a07d36, #ffc83d);
+}
+.bar-row.fg-bar .fg-count {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 4px;
+  white-space: nowrap;
+}
+/* widen the count column in framegen bars - the "(N)" total takes extra room */
+#fg-by-device .bar-row,
+#fg-by-gpu .bar-row,
+#fg-by-vram .bar-row,
+#fg-by-rating .bar-row {
+  grid-template-columns: 160px 1fr 110px;
+}
+@media (max-width: 600px) {
+  #fg-by-device .bar-row,
+  #fg-by-gpu .bar-row,
+  #fg-by-vram .bar-row,
+  #fg-by-rating .bar-row {
+    grid-template-columns: 110px 1fr 90px;
+  }
+}
+.fg-count-pct { font-size: 0.7em; color: var(--muted); margin-left: 1px; }
+.fg-count-n   { font-size: 0.7em; color: var(--muted); margin-left: 4px; }
+.fg-card-hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: -4px 0 8px;
+  line-height: 1.4;
+}
+.fg-sub-h {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin: 1.6em 0 0.4em;
+  color: var(--text);
+}
+.fg-pct-badge {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--accent-hi);
+  background: rgba(255,200,61,0.12);
+  border: 1px solid rgba(255,200,61,0.35);
+  padding: 1px 8px;
+  letter-spacing: 0.04em;
+  margin-right: 6px;
 }
 
 /* ── extra "last seen YYYY" label inside topgames items (worth-retesting) ── */
