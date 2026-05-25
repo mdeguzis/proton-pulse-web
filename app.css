@@ -387,49 +387,48 @@
 }
 .conf-link:hover { filter: brightness(1.12); text-decoration: none; }
 
-/* Rating distribution bar - five-color stack showing the spread of tiers
-   across all reports. Sits under the tier badge so visitors see the
-   distribution at a glance, not just the aggregate */
+/* Rating distribution as a 5-chip grid showing each tier with its count.
+   Always shows all 5 tiers (even zero) so users see the full spread at a
+   glance and 0-count tiers don't visually disappear. Empty tiers fade out
+   via .dist-empty so populated ones still pop */
 .source-summary-distribution {
-  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  width: 100%;
+}
+.dist-chip {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-}
-.dist-bar {
-  display: flex;
-  height: 8px;
-  border: 1px solid var(--border);
-  background: rgba(11,17,22,0.5);
-  overflow: hidden;
-}
-.dist-seg { display: block; height: 100%; }
-.dist-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 4px;
+  border-radius: 3px;
   font-family: var(--mono);
   font-size: 0.66rem;
-  color: var(--muted);
   letter-spacing: 0.04em;
+  min-width: 0;
 }
-.dist-legend-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+.dist-chip-label {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.6rem;
+  opacity: 0.85;
 }
-.dist-swatch {
-  width: 8px;
-  height: 8px;
-  border: 1px solid rgba(0,0,0,0.4);
-  flex-shrink: 0;
+.dist-chip-count {
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.1;
+  margin-top: 1px;
 }
+/* Empty tiers fade out so the populated counts visually dominate */
+.dist-chip.dist-empty { opacity: 0.35; }
 /* Per-tier colors - same palette the cards / stats page already use */
-.dist-platinum { background: #b4c7dc; }
-.dist-gold     { background: #c8a050; }
-.dist-silver   { background: #8fa0b0; }
-.dist-bronze   { background: #b07040; }
-.dist-borked   { background: #c85050; }
+.dist-chip.dist-platinum { background: #b4c7dc; color: #111; }
+.dist-chip.dist-gold     { background: #c8a050; color: #111; }
+.dist-chip.dist-silver   { background: #8fa0b0; color: #111; }
+.dist-chip.dist-bronze   { background: #b07040; color: #fff; }
+.dist-chip.dist-borked   { background: #c85050; color: #fff; }
 
 /* Newest-report freshness line - terse "data is fresh / stale" signal */
 .source-summary-freshness {
