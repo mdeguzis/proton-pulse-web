@@ -568,6 +568,7 @@ const FORM_RESPONSE_LABELS = {
   localMultiplayer:  'Local multiplayer tested?',
   verdict:           'Overall: would you recommend this to others?',
   verdictOob:        'Works out of the box without tweaks?',
+  requiresFramegen:  'Required framegen (FSR/LSFG/DLSS-G) for smooth play?',
 };
 
 function buildFormRows(c) {

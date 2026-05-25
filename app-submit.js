@@ -64,6 +64,8 @@ async function submitReport(appId, title, form) {
     localMultiplayer:  state.localMultiplayer  || null,
     verdict:    installFailed ? 'no' : (state.verdict || null),
     verdictOob: installFailed ? null : (state.verdictOob || null),
+    // framegen is informational only, never read by scoring (app-scoring.js)
+    requiresFramegen: installFailed ? null : (state.requiresFramegen || null),
     summary:    null,
   };
   const body = {
@@ -248,6 +250,12 @@ async function populateSubmitForm(el) {
         ${ynBtns('verdictOob')}
       </div>
 
+      <div class="sf-question sf-hidden" id="q-framegen">
+        <div class="sf-q-label">Did this game require framegen (FSR, LSFG, DLSS-G, etc.) to hit smooth gameplay / 60 FPS?</div>
+        <div class="sf-q-hint">Optional. Helps separate games that work natively from those leaning on upscalers.</div>
+        ${ynBtns('requiresFramegen')}
+      </div>
+
       <div class="sf-row sf-hidden" id="derived-rating-row">
         <label>Rating (auto-derived)</label>
         <span id="derived-rating-badge" style="font-weight:700;padding:2px 10px;border-radius:3px">--</span>
@@ -282,6 +290,7 @@ async function populateSubmitForm(el) {
   const state = {
     canInstall: null, canStart: null, canPlay: null,
     verdict: null, verdictOob: null,
+    requiresFramegen: null,
     faults: Object.fromEntries(FAULT_KEYS_WEB.map(k => [k, null])),
     tinkeringMethods: new Set(),
     onlineMultiplayer: null, localMultiplayer: null,
@@ -309,10 +318,18 @@ async function populateSubmitForm(el) {
     // Out-of-box only if verdict=yes and 0 faults
     if (showOob) show('q-oob'); else { hide('q-oob'); state.verdictOob = null; clearRadios('verdictOob'); }
 
+    // Framegen reveals whenever the game is reported as playable (verdict=yes
+    // means it works, just maybe with help). Optional, so we don't reset on
+    // verdict=no -- but we DO clear it on install failure since the question
+    // would be meaningless
+    const showFramegen = allInstallYes && state.verdict === 'yes';
+    if (showFramegen) show('q-framegen');
+    else { hide('q-framegen'); state.requiresFramegen = null; clearRadios('requiresFramegen'); }
+
     // Reset downstream state when install fails
     if (installFailed) {
-      state.verdict = null; state.verdictOob = null;
-      clearRadios('verdict'); clearRadios('verdictOob');
+      state.verdict = null; state.verdictOob = null; state.requiresFramegen = null;
+      clearRadios('verdict'); clearRadios('verdictOob'); clearRadios('requiresFramegen');
     }
 
     // Derived rating badge

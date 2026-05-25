@@ -185,6 +185,36 @@ def normalize_rating(report: dict) -> str:
     return r if r in ("platinum", "gold", "silver", "bronze", "borked", "pending") else "unknown"
 
 
+# VRAM buckets are the best proxy for "low-end vs high-end hardware" we've got.
+# Steam Deck LCD = 1GB (shared), OLED = 1GB (shared, same memory layout), low-end
+# discrete = 2-4GB, mid = 6-8GB, high = 12GB+. Treat 0/missing as unknown.
+def bucket_vram(report: dict) -> str:
+    raw = report.get("vramMb") or report.get("vram_mb")
+    try:
+        mb = int(raw) if raw is not None else 0
+    except (TypeError, ValueError):
+        return "unknown"
+    if mb <= 0:
+        return "unknown"
+    if mb < 4096:        return "low"      # <4 GB
+    if mb < 8192:        return "mid"      # 4-8 GB
+    return "high"                          # 8 GB+
+
+
+# Framegen response normalizer. The submit form writes 'yes'/'no'/null into
+# form_responses.requiresFramegen, but legacy ProtonDB rows never had it, so
+# the vast majority will be null. Only counts rows that explicitly answered.
+def extract_framegen(report: dict) -> str | None:
+    fr = report.get("formResponses") or {}
+    if not isinstance(fr, dict):
+        return None
+    v = fr.get("requiresFramegen")
+    if v is None:
+        return None
+    s = str(v).lower().strip()
+    return s if s in ("yes", "no") else None
+
+
 # ── Scoring helpers (duplicated from finalize.py to avoid circular import) ──
 
 # Per-rating score on a 0..1 scale. Mirrors scoring-info.json:ratingScores
@@ -258,6 +288,17 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
     # shape: { "2025": Counter(rating -> count), ... }
     by_year_rating: dict[str, Counter] = defaultdict(Counter)
 
+    # Framegen tracking. Only counts reports with an explicit yes/no answer
+    # (mostly Pulse submissions, since ProtonDB has no such field).
+    framegen_total = 0
+    framegen_yes = 0
+    by_device_x_framegen: dict[str, Counter] = defaultdict(Counter)
+    by_gpu_x_framegen: dict[str, Counter] = defaultdict(Counter)
+    by_vram_x_framegen: dict[str, Counter] = defaultdict(Counter)
+    by_rating_x_framegen: dict[str, Counter] = defaultdict(Counter)
+    # Per-game framegen tallies for the "top games needing framegen" leaderboard
+    per_game_framegen: dict[str, dict[str, int]] = {}
+
     # Per-app accumulator. Tracks newest_year so we can identify games that
     # have not been re-tested recently - the "worth re-testing" leaderboard
     # uses this to surface borked games whose latest report is years old.
@@ -318,6 +359,23 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
             by_rating_x_source[src][rating] += 1
             by_rating_x_device[device][rating] += 1
 
+            # Framegen: count the response across the relevant cross-tabs. Skip
+            # entirely when the answer is null (which is the case for legacy
+            # ProtonDB rows that never had this field). The vram bucket gives
+            # us a "low-end vs high-end" axis the other dims don't.
+            fg = extract_framegen(r)
+            if fg is not None:
+                framegen_total += 1
+                if fg == "yes":
+                    framegen_yes += 1
+                vram = bucket_vram(r)
+                by_device_x_framegen[device][fg] += 1
+                by_gpu_x_framegen[gpu][fg] += 1
+                by_vram_x_framegen[vram][fg] += 1
+                by_rating_x_framegen[rating][fg] += 1
+                pg = per_game_framegen.setdefault(app_id, {"yes": 0, "no": 0})
+                pg[fg] += 1
+
             if src == "pulse":
                 games_with_pulse.add(app_id)
 
@@ -366,6 +424,23 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
     stale_borked.sort(key=lambda t: t[2], reverse=True)
     worth_retesting = stale_borked[:30]
 
+    # Top games needing framegen. Require at least 3 framegen responses to
+    # avoid noise from games with a single "yes" answer. Sort by yes%, tiebreak
+    # by total responses so well-tested games rank higher
+    FRAMEGEN_MIN_RESPONSES = 3
+    framegen_games = []
+    for app_id, tallies in per_game_framegen.items():
+        total_resp = tallies["yes"] + tallies["no"]
+        if total_resp < FRAMEGEN_MIN_RESPONSES:
+            continue
+        yes_pct = tallies["yes"] / total_resp * 100
+        if yes_pct <= 0:
+            continue
+        title = per_game.get(app_id, {}).get("title", "")
+        framegen_games.append((app_id, title, tallies["yes"], total_resp, yes_pct))
+    framegen_games.sort(key=lambda t: (t[4], t[3]), reverse=True)
+    top_framegen_games = framegen_games[:30]
+
     # Convert nested counters to plain dicts for JSON serialization
     def flatten_cross(cross: dict[str, Counter]) -> dict[str, dict[str, int]]:
         return {k: dict(v) for k, v in cross.items()}
@@ -406,6 +481,21 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
         ],
         # Leaderboard
         "top_games": [[app_id, title, count] for app_id, title, count in top_games],
+        # Framegen aggregates. framegen_total counts only reports with an
+        # explicit yes/no answer (null answers from legacy ProtonDB rows are
+        # excluded). yes_rate_pct is rounded to 1 decimal.
+        "framegen_total_responses": framegen_total,
+        "framegen_yes_count": framegen_yes,
+        "framegen_yes_rate_pct": round(framegen_yes / framegen_total * 100, 1) if framegen_total else 0.0,
+        "by_device_x_framegen": flatten_cross(by_device_x_framegen),
+        "by_gpu_x_framegen": flatten_cross(by_gpu_x_framegen),
+        "by_vram_x_framegen": flatten_cross(by_vram_x_framegen),
+        "by_rating_x_framegen": flatten_cross(by_rating_x_framegen),
+        # Per-game leaderboard: [app_id, title, yes_count, total_responses, yes_pct]
+        "top_games_needing_framegen": [
+            [app_id, title, yes_n, total_n, round(yes_pct, 1)]
+            for app_id, title, yes_n, total_n, yes_pct in top_framegen_games
+        ],
     }
 
 
