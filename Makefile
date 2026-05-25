@@ -21,6 +21,11 @@ build:
 	else \
 		cp app.js "$$NEWFILE"; \
 		sed -i "s|$$OLD|$$NEWFILE|g" app.html; \
+		# clean up old hashed copies and stale manifest entries \
+		if [ -n "$$OLD" ] && [ "$$OLD" != "$$NEWFILE" ]; then \
+			rm -f "$$OLD"; \
+			sed -i "/^$${OLD}$$/d" gh-pages-manifest.txt; \
+		fi; \
 		if ! grep -qxF "$$NEWFILE" gh-pages-manifest.txt; then \
 			echo "$$NEWFILE" >> gh-pages-manifest.txt; \
 		fi; \

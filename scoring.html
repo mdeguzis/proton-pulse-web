@@ -48,7 +48,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
 .lede a { color: var(--accent); }
 
 .card {
-  background: linear-gradient(180deg, rgba(27,40,56,0.55), rgba(11,17,22,0.45));
+  background: linear-gradient(180deg, var(--s2), var(--s1));
   border: 1px solid var(--border);
   padding: 16px 18px;
   margin-bottom: 14px;
@@ -70,7 +70,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
 .card .body code, code.inline {
   font-family: var(--mono);
   font-size: 0.85em;
-  background: rgba(11,17,22,0.6);
+  background: var(--s1);
   border: 1px solid var(--border);
   padding: 1px 6px;
   color: var(--accent-hi);
@@ -112,7 +112,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
 }
 @media (max-width: 760px) { .weights { grid-template-columns: 1fr; } }
 .weight-group {
-  background: rgba(11,17,22,0.4);
+  background: var(--s1);
   border: 1px solid var(--border);
   padding: 14px 16px;
 }
@@ -133,7 +133,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
 
 /* quick reference */
 .quickref { display: flex; flex-direction: column; gap: 6px; font-family: var(--mono); font-size: 0.86rem; }
-.quickref code { background: rgba(11,17,22,0.6); border: 1px solid var(--border); padding: 6px 12px; color: var(--text); }
+.quickref code { background: var(--s1); border: 1px solid var(--border); padding: 6px 12px; color: var(--text); }
 
 /* keyword chips */
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -142,7 +142,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
   font-size: 0.74rem;
   padding: 4px 10px;
   border: 1px solid var(--border2);
-  background: rgba(11,17,22,0.5);
+  background: var(--s1);
   color: var(--text);
   letter-spacing: 0.02em;
 }
@@ -151,7 +151,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
 
 /* OS family list */
 .os-families { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
-.os-fam { background: rgba(11,17,22,0.4); border: 1px solid var(--border); padding: 10px 14px; font-family: var(--mono); font-size: 0.82rem; }
+.os-fam { background: var(--s1); border: 1px solid var(--border); padding: 10px 14px; font-family: var(--mono); font-size: 0.82rem; }
 .os-fam .family-name { color: var(--accent-hi); font-weight: 600; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.74rem; }
 .os-fam .distros { color: var(--text); }
 
@@ -161,7 +161,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
   font-size: 0.85rem;
   color: var(--text);
   line-height: 1.75;
-  background: rgba(11,17,22,0.55);
+  background: var(--s1);
   border: 1px solid var(--border);
   padding: 16px 20px;
   white-space: pre-wrap;
@@ -179,7 +179,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
 .transparency-note {
   margin-top: 2.4em;
   padding: 14px 18px;
-  background: linear-gradient(180deg, rgba(102,192,244,0.06), rgba(11,17,22,0.4));
+  background: linear-gradient(180deg, rgba(102,192,244,0.06), var(--s1));
   border: 1px solid var(--accent);
   border-left: 3px solid var(--accent);
   font-size: 0.86rem;
@@ -240,7 +240,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
-  background: rgba(11,17,22,0.4);
+  background: var(--s1);
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -250,7 +250,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
 .matrix-cell {
   display: block;
   padding: 14px 16px;
-  background: linear-gradient(180deg, rgba(27,40,56,0.55), rgba(11,17,22,0.45));
+  background: linear-gradient(180deg, var(--s2), var(--s1));
   border: 1px solid var(--border);
   color: var(--text);
   font-size: 0.88rem;
@@ -260,7 +260,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
 }
 .matrix-cell:hover {
   border-color: var(--accent);
-  background: linear-gradient(180deg, rgba(102,192,244,0.08), rgba(11,17,22,0.5));
+  background: linear-gradient(180deg, var(--s3), var(--s2));
   text-decoration: none;
 }
 .matrix-cell strong {
@@ -283,7 +283,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
 }
 @media (max-width: 760px) { .scenario-grid { grid-template-columns: 1fr; } }
 .scenario-card {
-  background: linear-gradient(180deg, rgba(27,40,56,0.55), rgba(11,17,22,0.45));
+  background: linear-gradient(180deg, var(--s2), var(--s1));
   border: 1px solid var(--border);
   padding: 16px 18px;
   display: flex;
@@ -292,7 +292,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
 }
 .scenario-card.scenario-callout {
   border-left: 3px solid var(--gold);
-  background: linear-gradient(180deg, rgba(255,200,61,0.05), rgba(11,17,22,0.45));
+  background: linear-gradient(180deg, rgba(255,200,61,0.05), var(--s1));
 }
 .scenario-game {
   display: flex;
@@ -344,11 +344,14 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
   letter-spacing: 0.04em;
   padding: 5px 12px;
   border: 1px solid;
-  background: rgba(11,17,22,0.6);
+  border-radius: 3px;
+  background: var(--s1);
 }
-.confidence-high { color: var(--green-hi);   border-color: rgba(190,238,17,0.5); }
-.confidence-mid  { color: var(--gold);       border-color: rgba(255,200,61,0.5); }
-.confidence-low  { color: var(--red);        border-color: rgba(200,80,80,0.5); }
+/* cyan-graded confidence, same palette as app.js confColor() so
+   confidence never collides with the tier badge next to it */
+.confidence-high { color: #0a1a24; background: #66c0f4; border-color: #66c0f4; }
+.confidence-mid  { color: #e8f4ff; background: #3a6680; border-color: #4a90b8; }
+.confidence-low  { color: #e8f4ff; background: #4a5a6a; border-color: #5a6a7a; }
 .scenario-why {
   font-size: 0.88rem;
   color: var(--text);
@@ -358,7 +361,7 @@ h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05e
   font-family: var(--mono);
   font-size: 0.74rem;
   color: var(--muted);
-  background: rgba(11,17,22,0.45);
+  background: var(--s1);
   border-left: 2px solid var(--accent);
   padding: 8px 12px;
   line-height: 1.55;
@@ -402,7 +405,7 @@ h2 small {
 .model-card {
   padding: 18px 22px;
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(27,40,56,0.55), rgba(11,17,22,0.45));
+  background: linear-gradient(180deg, var(--s2), var(--s1));
 }
 .model-card.model-rating     { border-left: 3px solid var(--accent); }
 .model-card.model-confidence { border-left: 3px solid var(--green-hi); }
@@ -435,7 +438,7 @@ h2 small {
 .example-lines code {
   font-family: var(--mono);
   font-size: 0.92rem;
-  background: rgba(11,17,22,0.6);
+  background: var(--s1);
   border: 1px solid var(--border);
   border-left: 3px solid var(--green-hi);
   padding: 10px 14px;
@@ -451,7 +454,7 @@ h2 small {
 }
 @media (max-width: 760px) { .confidence-groups { grid-template-columns: 1fr; } }
 .confidence-group {
-  background: rgba(11,17,22,0.4);
+  background: var(--s1);
   border: 1px solid var(--border);
   padding: 14px 16px;
 }
