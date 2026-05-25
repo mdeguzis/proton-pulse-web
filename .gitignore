@@ -12,6 +12,10 @@ data-index.html
 data-index.js
 search-index.json
 stats.json
+# Pulled from decky-proton-pulse repo by the gh-pages deploy workflow. Never
+# committed to main, but needed locally so scoring.html renders for dev preview
+scoring-info.json
+form-schema.json
 
 # Python
 __pycache__/

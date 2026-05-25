@@ -351,6 +351,84 @@ code {
   flex-shrink: 0;
 }
 
+/* Overflow "More" menu - shown by JS when nav items don't fit */
+.nav-overflow {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  margin-left: auto; /* push to right end of nav, like before-the-search */
+}
+.nav-overflow[hidden] { display: none; }
+.nav-overflow-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color .12s, border-color .12s, background .12s;
+}
+.nav-overflow-toggle:hover {
+  color: var(--text);
+  background: rgba(102, 192, 244, 0.05);
+}
+.nav-overflow.is-open .nav-overflow-toggle {
+  color: var(--accent-hi);
+  background: var(--accent-soft);
+  border-bottom-color: var(--accent);
+}
+.nav-overflow-toggle .nav-icon { width: 16px; height: 16px; flex-shrink: 0; }
+
+.nav-overflow-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 30;
+  min-width: 200px;
+  background: var(--bg-bot, #0a0f14);
+  border: 1px solid var(--accent);
+  border-top: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  padding: 4px 0;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.nav-overflow.is-open .nav-overflow-panel { display: block; }
+.nav-overflow-panel > a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: color .12s, background .12s, border-color .12s;
+}
+.nav-overflow-panel > a:hover {
+  color: var(--text);
+  background: rgba(102, 192, 244, 0.06);
+  text-decoration: none;
+}
+.nav-overflow-panel > a.active {
+  color: var(--accent-hi);
+  background: var(--accent-soft);
+  border-left-color: var(--accent);
+}
+.nav-overflow-panel .nav-icon { width: 16px; height: 16px; flex-shrink: 0; }
+
 /* search pill in the nav row */
 .topbar-search-wrap {
   position: relative;
@@ -763,15 +841,22 @@ code {
    RESPONSIVE - horizontal nav collapses to mobile drawer
    ============================================================ */
 
-/* tablet: drop the brand tagline + tighten gaps */
+/* tablet: drop the brand tagline. Search box sizing is overridden by the
+   mobile block below (which also fires at <=1024px). Keeping this rule for
+   the tagline only since that change is unrelated to the nav collapse */
 @media (max-width: 1024px) {
   .topbar-brand-tag { display: none; }
-  .topbar-search-wrap { flex: 0 1 240px; min-width: 160px; }
 }
 
-/* mobile: collapse the nav row, show hamburger, drawer takes over */
-@media (max-width: 760px) {
-  :root { --banner-h: 52px; --nav-h: 0px; }
+/* mobile: collapse the nav LINKS, show hamburger, drawer takes over.
+   Breakpoint is 1024px - same threshold where the search box was already
+   shrinking. Above 1024 the nav uses the overflow MORE button to gracefully
+   collapse items; at/below 1024 the hamburger takes over so the search box
+   can't dominate the nav row and leave it empty. The search input itself
+   stays visible at all widths (mobile drawer has no search input, so we keep
+   the nav row alive just to host the search). */
+@media (max-width: 1024px) {
+  :root { --banner-h: 52px; }
 
   .topbar-banner {
     padding: 0 16px;
@@ -779,8 +864,10 @@ code {
   }
   .topbar-brand-text { font-size: 1rem; }
 
-  /* hide the desktop nav row entirely on mobile */
-  .topbar-nav { display: none; }
+  /* hide just the nav links; keep .topbar-nav row alive for the search box */
+  .topnav-links { display: none; }
+  .topbar-nav { justify-content: flex-end; padding: 10px var(--content-pad); }
+  .topbar-search-wrap { flex: 1 1 auto; max-width: 100%; min-width: 0; }
 
   /* show the hamburger */
   .topbar-mobile-toggle { display: inline-flex; }

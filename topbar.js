@@ -191,6 +191,16 @@
         <svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg>
         <span>Contact</span>
       </a>
+      <!-- Overflow "More" button. Hidden by default; topbar resize observer
+           reveals it and migrates trailing items into the panel when the nav
+           gets squeezed (typical between 760 and ~1280px) -->
+      <div class="nav-overflow" id="nav-overflow" hidden>
+        <button class="nav-overflow-toggle" id="nav-overflow-toggle" aria-haspopup="true" aria-expanded="false" type="button">
+          <svg class="nav-icon" aria-hidden="true"><use href="#icon-menu"/></svg>
+          <span>More</span>
+        </button>
+        <div class="nav-overflow-panel" id="nav-overflow-panel"></div>
+      </div>
     </nav>
 
     <div class="topbar-search-wrap">
@@ -223,6 +233,7 @@
     wireMobileDrawer();
     wireSearchDropdown();
     wireAuthIndicator();
+    wireNavOverflow();
   }
 
   // ---- 3. Active link based on current page ----------------------------
@@ -234,6 +245,108 @@
     document.querySelectorAll('[data-page]').forEach(function (a) {
       if (a.getAttribute('data-page') === page) a.classList.add('active');
     });
+  }
+
+  // ---- 4a. Overflow "More" menu (priority+ pattern) -------------------
+  //
+  // When the nav row runs out of room (typically between 760 and ~1280px),
+  // trailing items collapse into a "More" dropdown. ResizeObserver re-checks
+  // the fit whenever the nav width changes. The "More" button itself takes
+  // ~80px so leave a buffer when measuring.
+
+  function wireNavOverflow() {
+    const nav = document.getElementById('primary-nav');
+    const wrap = document.getElementById('nav-overflow');
+    const toggle = document.getElementById('nav-overflow-toggle');
+    const panel = document.getElementById('nav-overflow-panel');
+    if (!nav || !wrap || !toggle || !panel) return;
+
+    // Snapshot every nav <a> in its original order so we can move things
+    // freely without losing the layout. The More button (`wrap`) stays at
+    // the end of the nav always
+    const originalItems = Array.from(nav.querySelectorAll(':scope > a'));
+    if (!originalItems.length) return;
+
+    let openOverflow = false;
+
+    function setOpen(open) {
+      openOverflow = open;
+      wrap.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(!openOverflow);
+    });
+
+    // Click outside the panel closes it. Use capture phase so dropdown
+    // internal clicks (handled below) still go through first
+    document.addEventListener('click', function (e) {
+      if (!openOverflow) return;
+      if (!wrap.contains(e.target)) setOpen(false);
+    });
+
+    // Selecting an item in the panel closes the dropdown and navigates
+    panel.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+
+    // Returns the count of items that fit before the More button starts to
+    // overflow. Uses the nav's natural scroll width as the metric: if
+    // scrollWidth > clientWidth then the More button itself is being
+    // pushed off-screen, so we need to move items into the panel.
+    function fitItems() {
+      // First put every item back in the nav (in original order) and let
+      // layout settle, so we can re-measure naturally on every resize
+      originalItems.forEach(function (a) {
+        if (a.parentElement !== nav) nav.insertBefore(a, wrap);
+      });
+      panel.innerHTML = '';
+      wrap.hidden = true;
+
+      // Only run overflow logic when the nav is actually visible (above
+      // the mobile breakpoint where the hamburger takes over)
+      const navStyle = getComputedStyle(nav.parentElement || nav);
+      if (navStyle.display === 'none') return;
+
+      // If everything fits, we're done
+      if (nav.scrollWidth <= nav.clientWidth + 1) return;
+
+      // Reveal the More button, then move items from the end into the panel
+      // one by one until things fit. Cap iterations as a safety guard
+      wrap.hidden = false;
+      let guard = originalItems.length;
+      while (nav.scrollWidth > nav.clientWidth + 1 && guard-- > 0) {
+        // Find the LAST original-order item still in the nav and move it
+        for (let i = originalItems.length - 1; i >= 0; i--) {
+          const a = originalItems[i];
+          if (a.parentElement === nav) {
+            // Clone for the overflow panel (so the original keeps any data-page
+            // wiring and active state). Re-mark active on the clone too.
+            const cloned = a.cloneNode(true);
+            // Insert in reverse so panel order matches original left-to-right
+            panel.insertBefore(cloned, panel.firstChild);
+            // Hide original instead of removing - this keeps the layout
+            // measurement stable when we re-run the fit calculation
+            a.remove();
+            break;
+          }
+        }
+      }
+      // Re-apply active class to overflow clones
+      const activeKey = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'index';
+      panel.querySelectorAll('[data-page="' + activeKey + '"]').forEach(function (a) { a.classList.add('active'); });
+    }
+
+    // Run once on insertion, then debounce on resize
+    fitItems();
+    let raf = null;
+    const ro = new ResizeObserver(function () {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(fitItems);
+    });
+    ro.observe(nav.parentElement || nav);
   }
 
   // ---- 4. Mobile drawer toggle ----------------------------------------

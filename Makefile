@@ -33,6 +33,7 @@ help:
 	@echo "  build               Hash app.js, copy to versioned file, update app.html"
 	@echo "  install             Install node deps (vite + jest) via pnpm"
 	@echo "  serve               Run vite dev server with CSS HMR (http://localhost:5173)"
+	@echo "  sync-runtime        Pull scoring-info.json and form-schema.json from plugin repo"
 	@echo "  setup               Bootstrap local dev tools and Python dependencies"
 	@echo "  install-pg          Install pg_dump (postgresql) via pkg (Termux/Debian)"
 	@echo "  init-submodules     Initialize and update git submodules"
@@ -62,6 +63,23 @@ init-submodules:
 install:
 	@command -v pnpm >/dev/null 2>&1 || { echo "error: pnpm not found, install node + pnpm first" >&2; exit 1; }
 	pnpm install
+
+# Pull scoring-info.json and form-schema.json from the decky-proton-pulse repo
+# so scoring.html and the submit form can render locally. These files live in
+# the plugin repo and are normally pulled by the gh-pages deploy workflow; for
+# local dev we grab them from a sibling checkout if present, else from GitHub.
+PLUGIN_REPO ?= ../decky-proton-pulse
+sync-runtime:
+	@if [ -d "$(PLUGIN_REPO)/src/data" ]; then \
+		echo "Copying runtime data from $(PLUGIN_REPO)/src/data..."; \
+		cp "$(PLUGIN_REPO)/src/data/scoring-info.json" ./scoring-info.json; \
+		cp "$(PLUGIN_REPO)/src/data/form-schema.json" ./form-schema.json; \
+	else \
+		echo "Plugin repo not found at $(PLUGIN_REPO), pulling from GitHub..."; \
+		curl -sfL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o ./scoring-info.json; \
+		curl -sfL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o ./form-schema.json; \
+	fi
+	@echo "Synced: scoring-info.json, form-schema.json"
 
 # live preview of the static site with CSS hot-module reload
 # vite picks up every .html in the repo root as its own page route
