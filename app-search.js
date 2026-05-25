@@ -116,7 +116,12 @@ async function renderSearchPage(query) {
 async function loadSearchIndex() {
   if (searchIndex !== null) return;
   try {
-    const r = await fetch('search-index.json');
+    // On localhost the search-index is gitignored + missing; pull it from
+    // production so dev preview can search any game without running the pipeline
+    const SEARCH_URL = ['localhost', '127.0.0.1', '0.0.0.0'].includes(window.location.hostname)
+      ? 'https://www.proton-pulse.com/search-index.json'
+      : 'search-index.json';
+    const r = await fetch(SEARCH_URL);
     searchIndex = r.ok ? await r.json() : [];
   } catch { searchIndex = []; }
 }
