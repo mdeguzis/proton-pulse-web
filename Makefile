@@ -13,29 +13,12 @@ WATCH_ALL_WORKFLOWS ?= true
 	build serve
 
 build:
-	@HASH=$$(md5sum app.js | cut -c1-9); \
-	NEWFILE="app-$${HASH}.js"; \
-	OLD=$$(grep -o 'app-[a-f0-9]*\.js' app.html | head -1); \
-	if [ "$$NEWFILE" = "$$OLD" ]; then \
-		echo "app.html already references $$NEWFILE -- nothing to do."; \
-	else \
-		cp app.js "$$NEWFILE"; \
-		sed -i "s|$$OLD|$$NEWFILE|g" app.html; \
-		# clean up old hashed copies and stale manifest entries \
-		if [ -n "$$OLD" ] && [ "$$OLD" != "$$NEWFILE" ]; then \
-			rm -f "$$OLD"; \
-			sed -i "/^$${OLD}$$/d" gh-pages-manifest.txt; \
-		fi; \
-		if ! grep -qxF "$$NEWFILE" gh-pages-manifest.txt; then \
-			echo "$$NEWFILE" >> gh-pages-manifest.txt; \
-		fi; \
-		echo "Built $$NEWFILE, updated app.html and gh-pages-manifest.txt (was $$OLD)."; \
-	fi
+	@bash scripts/cache-bust.sh
 
 help:
 	@echo "Usage: make <target>"
 	@echo ""
-	@echo "  build               Hash app.js, copy to versioned file, update app.html"
+	@echo "  build               Update app.html cache buster (?v=hash) to match app.js"
 	@echo "  install             Install node deps (vite + jest) via pnpm"
 	@echo "  serve               Run vite dev server with CSS HMR (http://localhost:5173)"
 	@echo "  sync-runtime        Pull scoring-info.json and form-schema.json from plugin repo"

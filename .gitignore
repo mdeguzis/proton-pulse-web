@@ -4,6 +4,11 @@ backups/
 *.tar.gz
 *.zip
 
+# Old-style hashed app copies (cache busting now uses ?v= query params)
+# The real module files (app-scoring.js, app-search.js, app-submit.js) are
+# tracked normally since their names don't contain hex hashes
+app-[0-9a-f]*.js
+
 # Pipeline-generated pages and data. Real versions ship via the production pipeline.
 # Local dev stubs go in their place for vite preview - never commit either.
 coverage.html
