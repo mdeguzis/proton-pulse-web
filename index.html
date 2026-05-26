@@ -112,12 +112,13 @@
               fill="none" stroke="url(#pulseGrad)" stroke-width="1.5" stroke-linejoin="round"/>
       </svg>
 
-      <div class="eyebrow">Open Compatibility Platform</div>
+      <div class="eyebrow">Open-Source Compatibility Platform</div>
       <h1 class="welcome-title">Proton <span class="pulse-word">Pulse</span></h1>
       <p class="welcome-sub">
-        Live community compatibility data for Steam on Linux. Real hardware
-        reports, voted configs, and an open data pipeline. Built by the community,
-        free forever.
+        100% open-source compatibility data for Steam on Linux. Real hardware
+        reports, voted configs, and a fully transparent data pipeline. Every
+        line of code, every report, every dataset is public. Built by the
+        community, free forever.
       </p>
     </div>
 
@@ -166,32 +167,38 @@
     </div>
 
     <!-- About -->
-    <div class="section-label">About this project</div>
+    <div class="section-label">Fully open source</div>
     <div class="prose">
       <p>
-        Proton Pulse is an <strong>open, community-owned</strong> compatibility platform for
-        Steam on Linux. Everything - the data pipeline, hardware reports, voting system, and
-        this site - lives on GitHub. Fork it. Self-host it. Contribute.
+        Proton Pulse is an <strong>open-source, community-owned</strong> compatibility platform
+        for Steam on Linux, licensed under <strong>GPL-3.0</strong>. Everything lives on GitHub:
+        the data pipeline, hardware reports, voting system, scoring algorithm, and this site.
+        Fork it. Self-host it. Audit it. Contribute.
+      </p>
+      <p>
+        There is no private API, no proprietary backend, no data you can't see. Every Pulse Report
+        ships as static JSON under <code>/data/{appId}/</code>. The scoring algorithm is
+        <a href="scoring.html">fully documented</a> and runs client-side so you can verify it
+        yourself. Upvotes and downvotes surface the most helpful configs.
       </p>
       <p>
         Pulse Reports come from the
         <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener">Decky Loader plugin</a>
         and capture real hardware specs, Proton versions, launch options, and outcomes from actual
-        gameplay sessions. Reports merge with other open compatibility datasets and ship as static
-        JSON under <code>/data/{appId}/</code>, so they're easy to consume from any tool, script,
-        or frontend. Upvotes and downvotes surface the most helpful configs.
+        gameplay sessions. Reports merge with other open compatibility datasets so the picture
+        keeps getting sharper.
       </p>
       <p>
         <strong>Repositories:</strong><br>
-        <a href="https://github.com/mdeguzis/proton-pulse-data">proton-pulse-data</a> - the data pipeline, static site, and API.<br>
-        <a href="https://github.com/mdeguzis/decky-proton-pulse">decky-proton-pulse</a> - the Decky Loader plugin for Steam Deck.
+        <a href="https://github.com/mdeguzis/proton-pulse-data">proton-pulse-data</a> - data pipeline, static site, and JSON API<br>
+        <a href="https://github.com/mdeguzis/decky-proton-pulse">decky-proton-pulse</a> - Decky Loader plugin for Steam Deck
       </p>
     </div>
 
   </div>
 
   <footer class="sitefooter">
-    Open source - built on <a href="https://www.protondb.com/" target="_blank" rel="noopener">ProtonDB</a> community data |
+    GPL-3.0 open source - built on <a href="https://www.protondb.com/" target="_blank" rel="noopener">ProtonDB</a> community data |
     <a href="https://github.com/mdeguzis/proton-pulse-data" target="_blank" rel="noopener">Data repo</a> |
     <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener">Decky plugin repo</a> |
     Updated daily via GitHub Actions |
