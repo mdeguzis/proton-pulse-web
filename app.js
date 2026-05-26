@@ -1739,3 +1739,4 @@ window.addEventListener('resize', () => {
 });
 
 // Sidebar toggle + auth chip wiring moved to topbar.js (shared across all pages).
+
