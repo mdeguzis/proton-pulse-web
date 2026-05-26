@@ -19,14 +19,14 @@
 <div class="main-content">
   <div class="main-inner" style="max-width:860px">
 
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
-      <a id="back-link" href="app.html" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:0.78rem;color:var(--muted);border:1px solid var(--border2);padding:5px 12px;text-decoration:none;text-transform:uppercase;letter-spacing:0.06em">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    <div style="display:flex;align-items:flex-start;gap:18px;margin-bottom:24px;flex-wrap:wrap">
+      <a id="back-link" href="app.html" class="hub-link" style="flex-shrink:0;margin-top:4px">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="vertical-align:-2px"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
         Back to game
       </a>
       <div>
         <div class="eyebrow">Submit a Report</div>
-        <h1 id="game-title" style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--strong);letter-spacing:-0.02em;margin:0">Loading...</h1>
+        <h1 id="game-title" style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--strong);letter-spacing:-0.02em;margin:0;line-height:1.2">Loading...</h1>
       </div>
     </div>
 
@@ -58,11 +58,9 @@
     return;
   }
 
-  // set up the back link
   const backLink = document.getElementById('back-link');
   backLink.href = `app.html#/app/${appId}`;
 
-  // resolve the game title from the CDN data or query param
   let title = titleParam;
   if (!title) {
     try {
@@ -75,16 +73,6 @@
         title = data?.title || data?.name || '';
       }
     } catch {}
-    // fallback: try Steam store API
-    if (!title) {
-      try {
-        const r = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appId}`);
-        if (r.ok) {
-          const d = await r.json();
-          title = d?.[appId]?.data?.name || '';
-        }
-      } catch {}
-    }
     if (!title) title = `App ${appId}`;
   }
 
@@ -102,16 +90,21 @@
     return;
   }
 
-  // populate the form
+  // populate the form with error visibility
   const el = document.querySelector('.main-inner');
-  await populateSubmitForm(el);
+  try {
+    await populateSubmitForm(el);
+  } catch (err) {
+    console.error('[submit] populateSubmitForm failed:', err);
+    document.getElementById('submit-form-content').innerHTML =
+      `<div style="padding:24px;color:var(--red)">Failed to load form: ${err.message || err}</div>`;
+    return;
+  }
   prefillSubmitFormFromMyHardware(el);
 
-  // prefill the game title
   const titleInput = el.querySelector('input[name="gameTitle"]');
   if (titleInput && !titleInput.value) titleInput.value = title;
 
-  // override the form submit to use our submitReport and redirect back
   const form = el.querySelector('#submit-report-form');
   if (form) {
     form.addEventListener('submit', async (e) => {
@@ -121,20 +114,27 @@
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Submitting...'; }
       if (statusEl) { statusEl.textContent = 'Submitting...'; statusEl.style.color = 'var(--accent)'; }
 
-      const result = await submitReport(appId, title, form);
-      if (result.ok) {
-        if (statusEl) { statusEl.textContent = 'Report submitted!'; statusEl.style.color = 'var(--green)'; }
-        // redirect back to the game page after a short pause
-        setTimeout(() => {
-          window.location.href = `app.html#/app/${appId}`;
-        }, 1200);
-      } else {
-        if (statusEl) { statusEl.textContent = result.error || 'Submit failed'; statusEl.style.color = 'var(--red)'; }
+      try {
+        const result = await submitReport(appId, title, form);
+        if (result.ok) {
+          if (statusEl) { statusEl.textContent = 'Report submitted! Redirecting...'; statusEl.style.color = 'var(--green)'; }
+          setTimeout(() => { window.location.href = `app.html#/app/${appId}`; }, 1200);
+        } else {
+          if (statusEl) { statusEl.textContent = result.error || 'Submit failed'; statusEl.style.color = 'var(--red)'; }
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit'; }
+        }
+      } catch (err) {
+        console.error('[submit] submitReport failed:', err);
+        if (statusEl) { statusEl.textContent = err.message || 'Submit failed'; statusEl.style.color = 'var(--red)'; }
         if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit'; }
       }
     });
   }
-})();
+})().catch(err => {
+  console.error('[submit] page init failed:', err);
+  const fc = document.getElementById('submit-form-content');
+  if (fc) fc.innerHTML = `<div style="padding:24px;color:var(--red)">Page error: ${err.message || err}</div>`;
+});
 </script>
 </body>
 </html>
