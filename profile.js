@@ -1297,17 +1297,21 @@ const MOCK_REPORTS = [
   const addSysSubmit = document.getElementById('add-sys-submit');
   const addSysCancel = document.getElementById('add-sys-cancel');
   const addSysStatus = document.getElementById('add-sys-status');
+  console.log('[profile] add-system wiring:', { btn: !!addSysBtn, form: !!addSysForm, submit: !!addSysSubmit });
 
-  addSysBtn?.addEventListener('click', () => {
-    addSysForm.hidden = !addSysForm.hidden;
-    if (!addSysForm.hidden) addSysBtn.textContent = '- Cancel';
-    else addSysBtn.textContent = '+ Add system';
-  });
+  if (addSysBtn && addSysForm) {
+    addSysBtn.addEventListener('click', () => {
+      addSysForm.hidden = !addSysForm.hidden;
+      addSysBtn.textContent = addSysForm.hidden ? '+ Add system' : '- Cancel';
+    });
+  }
 
-  addSysCancel?.addEventListener('click', () => {
-    addSysForm.hidden = true;
-    addSysBtn.textContent = '+ Add system';
-  });
+  if (addSysCancel && addSysForm && addSysBtn) {
+    addSysCancel.addEventListener('click', () => {
+      addSysForm.hidden = true;
+      addSysBtn.textContent = '+ Add system';
+    });
+  }
 
   addSysSubmit?.addEventListener('click', async () => {
     const label = document.getElementById('add-sys-label')?.value?.trim() || 'Manual system';
