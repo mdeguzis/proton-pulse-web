@@ -6,9 +6,13 @@
 // available when app.js runs. Depends on FAULT_KEYS_WEB +
 // deriveRatingFromState + inferProtonType from app-scoring.js.
 
-// html escaper - app.js defines this too but submit.html loads without app.js
+// globals that app.js normally defines but submit.html loads without app.js
 if (typeof esc === 'undefined') {
   var esc = function(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; };
+}
+if (typeof SB_URL === 'undefined') {
+  var SB_URL = SUPABASE_URL + '/rest/v1';
+  var SB_KEY = SUPABASE_ANON_KEY;
 }
 
 // lightweight sysinfo parser for the system picker. profile.js has the
@@ -20,10 +24,12 @@ function parseSteamSystemInfo(text) {
   const m = (pat) => { const r = text.match(pat); return r ? r[1].trim() : ''; };
   const cpu = m(/CPU Brand:\s*(.+)/i);
   if (cpu) out.cpu = cpu;
-  const gpu = m(/Video Card:\s*(.+)/i) || m(/Driver:\s*(.+)/i);
-  if (gpu && !/^unknown$/i.test(gpu)) out.gpu = gpu.replace(/^(NVIDIA Corporation|AMD|Intel Corporation)\s+/i, '').replace(/^NVIDIA\s+/i, '');
+  // Steam puts GPU info under "Video Card:" header, actual card is on the
+  // "Driver:" line below it. match both patterns
+  const gpu = m(/Video Card:\s*\n\s*Driver:\s*(.+)/i) || m(/Video Card:\s*(.+)/i) || m(/(?:^|\n)\s*Driver:\s*(.+)/i);
+  if (gpu && !/^unknown$/i.test(gpu)) out.gpu = gpu.replace(/^(NVIDIA Corporation|Advanced Micro Devices.*?Inc\.\s*\[AMD\/ATI\]|AMD|Intel Corporation)\s*/i, '').replace(/^NVIDIA\s+/i, '').trim();
   const drv = m(/Driver Version:\s*(.+)/i);
-  if (drv) out.gpuDriver = drv;
+  if (drv && !/^unknown$/i.test(drv)) out.gpuDriver = drv;
   const ram = text.match(/RAM:\s*(\d+)\s*Mb/i);
   if (ram) { const gb = Math.round(Number(ram[1]) / 1024); if (gb > 0) out.ram = `${gb} GB`; }
   const vram = text.match(/VRAM:\s*(\d+)\s*Mb/i);
