@@ -6,6 +6,11 @@
 // available when app.js runs. Depends on FAULT_KEYS_WEB +
 // deriveRatingFromState + inferProtonType from app-scoring.js.
 
+// html escaper - app.js defines this too but submit.html loads without app.js
+if (typeof esc === 'undefined') {
+  var esc = function(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; };
+}
+
 // lightweight sysinfo parser for the system picker. profile.js has the
 // full version, but that file only loads on profile.html. keep this
 // self-contained so the submit form works on app.html without it
