@@ -1446,13 +1446,8 @@ async function renderGamePage(appId) {
             <a class="info-btn" href="scoring.html" id="rating-info-btn" title="How scoring works (opens the canonical scoring page)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="#3b82f6"/><text x="12" y="17" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="serif">i</text></svg></a>
             <button class="info-btn info-btn-labeled" id="min-reqs-btn" title="Minimum system requirements (from Steam Store, served by pipeline)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="1"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="20" x2="15" y2="20"/></svg><span>Min. Requirements</span></button>
             ${renderDeckStatusButton(appId)}
-            <button class="submit-report-btn" id="submit-report-btn">Submit Report</button>
+            <a class="submit-report-btn" href="submit.html?app=${appId}&title=${encodeURIComponent(title)}">Submit Report</a>
           </div>
-        </div>
-        <!-- rating-info popup removed - i button now navigates directly to
-             scoring.html, which is the canonical scoring data source -->
-        <div class="info-tooltip" id="submit-form-panel">
-          <div class="info-tooltip-inner" id="submit-form-content">Loading form...</div>
         </div>
         <div class="info-tooltip" id="min-reqs-tip">
           <div class="info-tooltip-inner" id="min-reqs-content">
@@ -1615,40 +1610,6 @@ async function renderGamePage(appId) {
       const tip = el.querySelector('#rating-info-tip');
       tip?.classList.toggle('open');
       if (tip?.classList.contains('open')) await populateScoringTooltip(el);
-    });
-    el.querySelector('#submit-report-btn')?.addEventListener('click', async () => {
-      const session = await SupaAuth.getSession();
-      if (!session) {
-        window.location.href = SupaAuth.buildLoginPageUrl(window.location.href);
-        return;
-      }
-      const panel = el.querySelector('#submit-form-panel');
-      panel?.classList.toggle('open');
-      if (panel?.classList.contains('open')) {
-        await populateSubmitForm(el);
-        prefillSubmitFormFromMyHardware(el);
-        // Prefill the title input with whatever we resolved for the game
-        // page header so users only have to confirm/correct it, not type it
-        const titleInput = el.querySelector('input[name="gameTitle"]');
-        if (titleInput && !titleInput.value) titleInput.value = title;
-        const protonInput = el.querySelector('input[name="protonVersion"]');
-        const protonHint = el.querySelector('#proton-hint');
-        if (protonInput && protonHint) {
-          protonInput.addEventListener('input', () => {
-            const v = protonInput.value;
-            protonHint.style.display = v && !/^(Proton |GE-Proton|Proton-)\d/.test(v) ? '' : 'none';
-          });
-        }
-        el.querySelector('#submit-report-form')?.addEventListener('submit', async (e) => {
-          e.preventDefault();
-          const status = el.querySelector('#submit-status');
-          status.textContent = 'Submitting...';
-          const result = await submitReport(appId, title, e.target);
-          status.textContent = result.ok ? 'Submitted!' : (result.error || 'Unknown error');
-          status.style.color = result.ok ? 'var(--green)' : 'var(--red)';
-          if (result.ok) setTimeout(() => { panel.classList.remove('open'); render(); }, 1500);
-        });
-      }
     });
     el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; saveFiltersIfEnabled(); render(); });
     el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; saveFiltersIfEnabled(); render(); });
