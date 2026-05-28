@@ -155,10 +155,11 @@ function pulseTierFromReports(nativeReports, protonDbCount = 0) {
   const count = nativeReports.length;
   const weightedEvidence = count + (protonDbCount * 0.2);
   const confidence = weightedEvidence >= 6 ? 'high' : weightedEvidence >= 3 ? 'medium' : 'low';
-  // Numeric per-game confidence on a 0-100 scale, log-curve over sample size.
-  // Mirrors the plugin's confidencePercentFromCount(n) helper so plugin and
-  // webui surface comparable numbers under the same overall tier badge.
-  const confidencePct = Math.min(95, Math.round(30 + Math.log2(Math.max(1, count)) * 18));
+  // Numeric per-game confidence on a 0-100 scale, log-curve over total evidence.
+  // ProtonDB reports count at 0.4x Pulse weight (less structured data) so the
+  // combined pool drives confidence up without over-inflating it.
+  const totalForPct = count + Math.round(protonDbCount * 0.4);
+  const confidencePct = Math.min(95, Math.round(30 + Math.log2(Math.max(1, totalForPct)) * 18));
   // Note phrases confidence in terms of TOTAL reports - the system is meant
   // to read as one homogeneous community view (Pulse + ProtonDB combined),
   // so we don't attribute "low confidence" to a thin Pulse count when the

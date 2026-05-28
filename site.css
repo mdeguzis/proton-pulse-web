@@ -1149,6 +1149,10 @@ code {
   /* tighten the login button area on small screens */
   .gh-login-btn__label { display: none; }
   .gh-login-btn { padding: 4px 8px 4px 6px; }
+  /* hide auth username text so the auth avatar doesn't push the hamburger off screen */
+  .auth-username { display: none; }
+  /* ensure hamburger never shrinks or disappears due to overflow */
+  .topbar-mobile-toggle { flex-shrink: 0; }
 
   .topbar-desktop-only { display: none !important; }
 

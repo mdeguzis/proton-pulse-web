@@ -203,6 +203,99 @@ h1 {
     return String(s == null ? '' : s).replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
   }
 
+  // Load the user's saved hardware from localStorage (written by profile.js).
+  // Returns null if nothing is saved yet.
+  function loadMyHardware() {
+    try {
+      const HW = {
+        cpu:       localStorage.getItem('proton-pulse:myhw:cpu')       || '',
+        gpu:       localStorage.getItem('proton-pulse:myhw:gpu')       || '',
+        gpuVendor: localStorage.getItem('proton-pulse:myhw:gpu-vendor') || '',
+        os:        localStorage.getItem('proton-pulse:myhw:os')        || '',
+        kernel:    localStorage.getItem('proton-pulse:myhw:kernel')    || '',
+      };
+      return (HW.gpu || HW.os) ? HW : null;
+    } catch { return null; }
+  }
+
+  // Compute hardware match multipliers between the viewer's saved hw and a report.
+  // w = weights object from scoring-info.json.
+  function computeHwFactors(myHw, report, w, osFamilies) {
+    const factors = [];
+
+    // GPU vendor match
+    const myVendor  = (myHw.gpuVendor || '').toLowerCase();
+    const repVendor = (report.gpuVendor || '').toLowerCase();
+    if (myVendor && repVendor) {
+      const match = myVendor === repVendor;
+      const mult = match ? w.GPU_MATCH : w.GPU_MISMATCH;
+      factors.push({
+        label: 'GPU vendor match',
+        detail: `Your ${myHw.gpuVendor || 'unknown'} vs report ${report.gpuVendor || 'unknown'}`,
+        multiplier: mult,
+        matched: match,
+        note: match ? 'Same GPU vendor -- report is more likely to reflect your experience.' : 'Different GPU vendor -- report may behave differently on your hardware.',
+      });
+    } else {
+      factors.push({
+        label: 'GPU vendor match',
+        detail: `Your ${myHw.gpuVendor || 'unknown'} vs report ${report.gpuVendor || 'unknown'}`,
+        multiplier: w.GPU_UNKNOWN,
+        matched: null,
+        note: 'GPU vendor unknown for one or both sides -- using neutral weight.',
+      });
+    }
+
+    // OS family match
+    if (myHw.os && report.os) {
+      const myOsLow  = myHw.os.toLowerCase();
+      const repOsLow = (report.os || '').toLowerCase();
+      const exact    = myOsLow === repOsLow;
+      let familyMatch = false;
+      if (!exact && osFamilies) {
+        for (const kids of Object.values(osFamilies)) {
+          const kl = kids.map(k => k.toLowerCase());
+          if (kl.some(k => myOsLow.includes(k)) && kl.some(k => repOsLow.includes(k))) {
+            familyMatch = true; break;
+          }
+        }
+      }
+      const mult = exact ? w.OS_EXACT : (familyMatch ? w.OS_FAMILY_MATCH : 1.0);
+      factors.push({
+        label: 'OS match',
+        detail: `Your ${myHw.os} vs report ${report.os}`,
+        multiplier: mult,
+        matched: exact || familyMatch,
+        note: exact ? 'Exact OS match -- maximum relevance.' : familyMatch ? 'Same OS family -- partial match.' : 'Different OS -- report may have different environment quirks.',
+      });
+    }
+
+    // Kernel match (parse major.minor)
+    if (myHw.kernel && report.kernel) {
+      const parseVer = v => (v || '').split('.').map(Number).filter(n => !isNaN(n));
+      const mv = parseVer(myHw.kernel);
+      const rv = parseVer(report.kernel);
+      let mult = 1.0, matchLabel = 'no match';
+      if (mv[0] === rv[0] && mv[1] === rv[1] && mv[2] === rv[2]) { mult = w.KERNEL_EXACT; matchLabel = 'exact'; }
+      else if (mv[0] === rv[0] && mv[1] === rv[1]) { mult = w.KERNEL_PATCH_CLOSE; matchLabel = 'same minor'; }
+      else if (mv[0] === rv[0]) { mult = w.KERNEL_MINOR_CLOSE; matchLabel = 'same major'; }
+      factors.push({
+        label: 'Kernel match',
+        detail: `Your ${myHw.kernel} vs report ${report.kernel} (${matchLabel})`,
+        multiplier: mult,
+        matched: mult > 1.0,
+        note: `Kernel ${matchLabel} -- ${mult > 1.0 ? 'closer kernel versions improve report relevance' : 'different kernel major -- environment may differ significantly'}.`,
+      });
+    }
+
+    return factors;
+  }
+
+  // Apply hw factors to a base score and return the adjusted total.
+  function applyHwFactors(baseScore, hwFactors) {
+    return hwFactors.reduce((s, f) => s * f.multiplier, baseScore);
+  }
+
   function valueClass(v) {
     return v > 0 ? 'cb-positive' : v < 0 ? 'cb-negative' : 'cb-neutral';
   }
@@ -345,14 +438,15 @@ h1 {
     </div>`;
   }
 
-  // Per-report breakdown. Shows the two factors the webui computes (rating
-  // baseline + recency) and contextual info about the report so users
-  // understand what shaped the number. The plugin computes additional
-  // hardware-match factors that the webui can't (no viewer hardware info),
-  // so we note which factors are absent and why.
-  function renderReportBreakdown(report, gameTitle, appId) {
+  // Per-report breakdown. Shows scoring factors including hardware match when
+  // the viewer has saved hardware in their profile (localStorage).
+  function renderReportBreakdown(report, gameTitle, appId, myHw, scoringData) {
     const bd = estimateScoreBreakdown(report);
-    const total = bd.total;
+    const w = scoringData?.weights || {};
+    const osFamilies = scoringData?.osFamilies || null;
+    const hwFactors = (myHw && Object.keys(w).length) ? computeHwFactors(myHw, report, w, osFamilies) : [];
+    const adjustedTotal = hwFactors.length ? Math.min(100, Math.round(applyHwFactors(bd.total, hwFactors))) : bd.total;
+    const total = adjustedTotal;
     const totalBg = confColorAt(total);
     const totalFg = confTextAt(total);
     const days = bd.meta?.days ?? 0;
@@ -394,23 +488,39 @@ h1 {
       </div>
 
       <div class="cb-formula">
-        <strong>${base} + ${days < 90 ? 15 : days < 365 ? 5 : -5} = ${bd.meta?.raw ?? total}</strong>
+        <strong>${base} + ${days < 90 ? 15 : days < 365 ? 5 : -5} = ${bd.meta?.raw ?? bd.total}</strong>
         ${bd.meta?.cappedAtZero ? '(clamped to 0, confidence cannot go negative)' : ''}
-        &rarr; <strong>Confidence: ${total}%</strong>
+        ${hwFactors.length ? `&times; hardware multipliers &rarr; <strong>Adjusted: ${adjustedTotal}%</strong>` : `&rarr; <strong>Confidence: ${bd.total}%</strong>`}
       </div>
 
+      ${hwFactors.length ? `
+        <h3 class="cb-section-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Your hardware match</h3>
+        <p style="font-size:0.82rem;color:var(--muted);margin:0 0 10px">Loaded from your saved profile. These multipliers adjust relevance based on how closely the reporter's setup matches yours.</p>
+        <div class="cb-factors">
+          ${hwFactors.map(f => `
+            <div class="cb-factor">
+              <div>
+                <div class="cb-factor-label">${esc(f.label)}</div>
+                <div class="cb-factor-detail">${esc(f.detail)}</div>
+                <div class="cb-factor-detail" style="color:var(--text);margin-top:3px">${f.note}</div>
+              </div>
+              <div class="cb-factor-value ${f.matched === true ? 'cb-positive' : f.matched === false ? 'cb-negative' : 'cb-neutral'}">${f.multiplier.toFixed(2)}x</div>
+            </div>`).join('')}
+        </div>
+        <div class="cb-formula">
+          Base score ${bd.total}% &times; ${hwFactors.map(f => f.multiplier.toFixed(2)).join(' &times; ')} &rarr; <strong>${adjustedTotal}%</strong>
+        </div>` : `
+        <div class="cb-disclaimer">
+          <strong>Hardware match factors not shown.</strong> Save your hardware on the <a href="profile.html" style="color:var(--accent-hi)">Profile page</a> to see GPU, OS, and kernel match scores personalized to your system. The Decky plugin computes these automatically from your Steam Deck specs.
+        </div>`}
+
       <h3 class="cb-section-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg>Report context</h3>
-      <p style="font-size:0.82rem;color:var(--muted);margin:0 0 10px">Additional details about this report. When viewed on the Decky plugin, these would contribute their own weighting factors.</p>
+      <p style="font-size:0.82rem;color:var(--muted);margin:0 0 10px">Additional details about this report.</p>
       <div class="cb-factors">
         <div class="cb-factor"><div><div class="cb-factor-label">Hardware</div><div class="cb-factor-detail">${esc(report.gpu || 'Unknown GPU')} / ${esc(report.os || 'Unknown OS')}</div></div><div class="cb-factor-value cb-neutral">${isDeck ? 'Steam Deck' : 'Desktop'}</div></div>
         <div class="cb-factor"><div><div class="cb-factor-label">Proton version</div><div class="cb-factor-detail">${esc(report.protonVersion || 'Not specified')}</div></div><div class="cb-factor-value cb-neutral">context</div></div>
         <div class="cb-factor"><div><div class="cb-factor-label">Playtime</div><div class="cb-factor-detail">${hasDuration ? esc(report.duration) : 'Not reported'}</div></div><div class="cb-factor-value ${hasDuration ? 'cb-positive' : 'cb-neutral'}">${hasDuration ? 'reported' : 'absent'}</div></div>
         <div class="cb-factor"><div><div class="cb-factor-label">Notes</div><div class="cb-factor-detail">${hasNotes ? (report.notes.length > 80 ? esc(report.notes.slice(0, 80)) + '...' : esc(report.notes)) : 'None provided'}</div></div><div class="cb-factor-value ${hasNotes ? 'cb-positive' : 'cb-neutral'}">${hasNotes ? report.notes.length + ' chars' : 'absent'}</div></div>
-      </div>
-
-      <div class="cb-disclaimer">
-        <strong>Why not more factors?</strong> The webui doesn't know your hardware, so GPU-match, OS-match, kernel-match, and Proton-version-match can't run here. The Decky plugin computes all of these in real time since it has your system specs. The
-        <a href="scoring.html" style="color:var(--accent-hi)">scoring page</a> documents every factor in the full algorithm.
       </div>
 
       <a class="cb-back" href="app.html#/app/${esc(appId)}">&larr; Back to ${esc(gameTitle)}</a>
@@ -549,14 +659,20 @@ h1 {
       return;
     }
 
-    const [reports, searchIndex] = await Promise.all([loadGame(appId), loadSearchIndexLocal()]);
+    const myHw = loadMyHardware();
+    const [reports, searchIndex, scoringData] = await Promise.all([
+      loadGame(appId),
+      loadSearchIndexLocal(),
+      wantsPerReport ? loadScoringInfo() : Promise.resolve(null),
+    ]);
     const indexHit = (searchIndex || []).find(row => String(row[0]) === String(appId));
     const gameTitle = reports[0]?.title || indexHit?.[1] || `App ${appId}`;
 
-    metaEl.textContent = `// Computed from ${reports.length} report${reports.length === 1 ? '' : 's'} on ${appId}`;
+    metaEl.textContent = myHw
+      ? `// Computed from ${reports.length} report${reports.length === 1 ? '' : 's'} on ${appId} -- hardware match active (${myHw.gpuVendor || myHw.gpu || 'unknown GPU'})`
+      : `// Computed from ${reports.length} report${reports.length === 1 ? '' : 's'} on ${appId}`;
 
     if (wantsPerReport) {
-      // Find the target report by reportId first, then fall back to timestamp
       const target = reportId
         ? reports.find(r => String(r.reportId) === String(reportId))
         : reports.find(r => String(r.timestamp) === String(reportTs));
@@ -567,7 +683,7 @@ h1 {
         </div>`;
         return;
       }
-      root.innerHTML = renderReportBreakdown(target, gameTitle, appId);
+      root.innerHTML = renderReportBreakdown(target, gameTitle, appId, myHw, scoringData);
     } else {
       root.innerHTML = renderGameBreakdown(reports, gameTitle, appId);
     }
