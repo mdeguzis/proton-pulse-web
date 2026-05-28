@@ -304,34 +304,220 @@ async function fetchCdn(appId) {
   } catch { return []; }
 }
 
-// Live fallback: when CDN has no data for a game, attempt a direct fetch from
-// the ProtonDB public API so games not yet in our mirror still show tier data.
+// Session cache for user-triggered live ProtonDB checks. Keyed by appId so
+// repeat visits within the session skip the network hit without auto-fetching.
+const _protonDbLiveCache = new Map();
+
+// User-triggered live check: fetches ProtonDB public API for a single game.
+// NOT called automatically -- must be triggered by the user clicking the
+// "Check ProtonDB Live" button to avoid hammering their API on every page load.
 async function fetchProtonDbLive(appId) {
+  const key = String(appId);
+  if (_protonDbLiveCache.has(key)) return _protonDbLiveCache.get(key);
   try {
     const r = await fetch(
       `https://www.protondb.com/api/v1/reports/summaries/${appId}.json`,
       { headers: { Accept: 'application/json' } }
     );
-    if (!r.ok) return [];
+    if (!r.ok) { _protonDbLiveCache.set(key, []); return []; }
     const data = await r.json();
-    // Normalise into the same shape our CDN rows use so the rest of the
-    // pipeline treats live results identically to cached ones.
-    if (!data || !data.tier) return [];
-    console.log(`[proton-pulse] CDN miss for ${appId} -- resolved live from ProtonDB API | tier=${data.tier} total=${data.total}`);
-    // Return a synthetic summary row so the tier badge and report count render.
-    return [{
+    if (!data || !data.tier) { _protonDbLiveCache.set(key, []); return []; }
+    console.log(`[proton-pulse] live check for ${appId} | tier=${data.tier} total=${data.total} source=protondb-api`);
+    const result = [{
       appId,
-      tier:          data.tier,
-      total:         data.total || 0,
-      trendingTier:  data.trendingTier || data.tier,
-      score:         data.score || 0,
-      source:        'protondb-live',
-      _liveOnly:     true,
+      tier:         data.tier,
+      total:        data.total || 0,
+      trendingTier: data.trendingTier || data.tier,
+      score:        data.score || 0,
+      source:       'protondb-live',
+      _liveOnly:    true,
     }];
+    _protonDbLiveCache.set(key, result);
+    return result;
   } catch (e) {
-    console.debug(`[proton-pulse] ProtonDB live fallback failed for ${appId}:`, e);
+    console.debug(`[proton-pulse] ProtonDB live check failed | appId=${appId} error=${e.message}`);
+    _protonDbLiveCache.set(key, []);
     return [];
   }
+}
+
+// Compute aggregate per-game stats from all available reports and configs.
+// allReports: combined cdn + nativeReports (each has .rating, .protonVersion, .timestamp)
+// configs: pulse configs (each may have .launchOptions, .protonVersion)
+// Returns an object with confidence, trend, versionStats, launchFlags, ratingCounts.
+function computeGameStats(allReports, configs) {
+  const now = Date.now() / 1000;
+  const RATING_VAL = { platinum: 5, gold: 4, silver: 3, bronze: 2, borked: 1 };
+  const RATING_SCORE = { platinum: 1.0, gold: 0.8, silver: 0.6, bronze: 0.4, borked: 0.0 };
+  const TIERS = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
+
+  // --- Rating distribution ---
+  const ratingCounts = { platinum: 0, gold: 0, silver: 0, bronze: 0, borked: 0 };
+  for (const r of allReports) {
+    if (ratingCounts[r.rating] != null) ratingCounts[r.rating]++;
+  }
+
+  // --- Confidence: sample size + tier consistency + freshness ---
+  const n = allReports.length;
+  const sampleFactor = n > 0 ? Math.min(1.0, Math.log2(Math.max(1, n)) / Math.log2(50)) : 0;
+
+  // tier consistency: std deviation of numeric ratings, normalized 0-1 (1=all same tier)
+  let consistencyFactor = 0;
+  if (n > 0) {
+    const vals = allReports.map(r => RATING_VAL[r.rating] || 3);
+    const mean = vals.reduce((s, v) => s + v, 0) / vals.length;
+    const variance = vals.reduce((s, v) => s + (v - mean) ** 2, 0) / vals.length;
+    const stdDev = Math.sqrt(variance);
+    consistencyFactor = Math.max(0, 1 - stdDev / 2);
+  }
+
+  // freshness: weighted recency of reports
+  let freshnessSum = 0, freshnessTotal = 0;
+  for (const r of allReports) {
+    const days = (now - (r.timestamp || 0)) / 86400;
+    const w = days < 90 ? 1.0 : days < 365 ? 0.6 : 0.2;
+    freshnessSum += w;
+    freshnessTotal++;
+  }
+  const freshnessFactor = freshnessTotal > 0 ? freshnessSum / freshnessTotal : 0;
+
+  // composite: 45% sample size, 35% tier consistency, 20% freshness; scale to 0-100
+  const rawConf = n > 0 ? (sampleFactor * 0.45 + consistencyFactor * 0.35 + freshnessFactor * 0.20) : 0;
+  const confidencePct = Math.min(95, Math.round(rawConf * 100));
+  const confFactors = [
+    { label: 'Sample size', value: Math.round(sampleFactor * 100), detail: `${n} report${n !== 1 ? 's' : ''} (log curve, 45% weight)` },
+    { label: 'Tier consistency', value: Math.round(consistencyFactor * 100), detail: 'How tightly clustered ratings are (35% weight)' },
+    { label: 'Data freshness', value: Math.round(freshnessFactor * 100), detail: 'Recency-weighted freshness (20% weight)' },
+  ];
+
+  // --- Trend: compare recent 90d avg vs prior 91-270d avg ---
+  const recentReps = allReports.filter(r => r.timestamp && now - r.timestamp < 90 * 86400);
+  const priorReps  = allReports.filter(r => r.timestamp && now - r.timestamp >= 90 * 86400 && now - r.timestamp < 270 * 86400);
+  let trendDir = 'stable', trendDiff = 0;
+  if (recentReps.length >= 2 && priorReps.length >= 2) {
+    const avg = arr => arr.reduce((s, r) => s + (RATING_VAL[r.rating] || 3), 0) / arr.length;
+    trendDiff = avg(recentReps) - avg(priorReps);
+    if (trendDiff > 0.3) trendDir = 'improving';
+    else if (trendDiff < -0.3) trendDir = 'declining';
+  } else if (recentReps.length < 2 && priorReps.length < 2) {
+    trendDir = 'insufficient';
+  }
+
+  // --- Per-Proton-version success % (positive = platinum/gold/silver) ---
+  const versionMap = {};
+  for (const r of allReports) {
+    const ver = r.protonVersion || r.proton_version || 'Unknown';
+    if (!versionMap[ver]) versionMap[ver] = { total: 0, positive: 0 };
+    versionMap[ver].total++;
+    if (['platinum', 'gold', 'silver'].includes(r.rating)) versionMap[ver].positive++;
+  }
+  const versionStats = Object.entries(versionMap)
+    .map(([ver, s]) => ({ ver, total: s.total, pct: Math.round((s.positive / s.total) * 100) }))
+    .sort((a, b) => b.total - a.total)
+    .slice(0, 8);
+
+  // --- Launch option flag frequency (from all configs that have launchOptions) ---
+  const flagMap = {};
+  const allSources = [...configs, ...allReports];
+  for (const item of allSources) {
+    const lo = item.launchOptions || item.launch_options || '';
+    if (!lo) continue;
+    // tokenize on spaces; keep flags starting with % or - and env vars (KEY=val), skip bare values
+    const tokens = lo.split(/\s+/).filter(t => t.startsWith('%') || t.startsWith('-') || /^[A-Z_]+=/.test(t));
+    for (const tok of tokens) {
+      flagMap[tok] = (flagMap[tok] || 0) + 1;
+    }
+  }
+  const totalSources = allSources.filter(item => (item.launchOptions || item.launch_options)).length;
+  const launchFlags = Object.entries(flagMap)
+    .map(([flag, cnt]) => ({ flag, cnt, pct: totalSources > 0 ? Math.round((cnt / totalSources) * 100) : 0 }))
+    .sort((a, b) => b.cnt - a.cnt)
+    .slice(0, 10);
+
+  return { confidencePct, confFactors, trendDir, trendDiff, recentCount: recentReps.length, priorCount: priorReps.length, versionStats, launchFlags, ratingCounts, totalReports: n };
+}
+
+function renderStatsPanel(stats, appId) {
+  const { confidencePct, confFactors, trendDir, trendDiff, recentCount, priorCount, versionStats, launchFlags, ratingCounts, totalReports } = stats;
+  const TIER_LABELS = { platinum: 'Plat', gold: 'Gold', silver: 'Silv', bronze: 'Bron', borked: 'Bork' };
+  const TREND_LABEL = { improving: '<strong style="color:var(--green)">Improving</strong>', declining: '<strong style="color:var(--red)">Declining</strong>', stable: '<strong>Stable</strong>', insufficient: '<span style="color:var(--muted)">Not enough data</span>' };
+  const confBarColor = confidencePct >= 75 ? 'var(--green)' : confidencePct >= 45 ? '#e0a030' : 'var(--red)';
+
+  const factorRows = confFactors.map(f => `
+    <div style="display:flex;align-items:center;gap:8px;margin:4px 0">
+      <span style="width:120px;color:var(--muted)">${f.label}</span>
+      <div style="flex:1;background:var(--bg);border-radius:2px;height:6px;overflow:hidden">
+        <div style="width:${f.value}%;height:100%;background:${f.value >= 70 ? 'var(--green)' : f.value >= 40 ? '#e0a030' : 'var(--red)'}"></div>
+      </div>
+      <span style="width:36px;text-align:right;font-weight:700">${f.value}%</span>
+      <span style="color:var(--muted);font-size:0.7rem;flex:2">${f.detail}</span>
+    </div>`).join('');
+
+  const distCells = Object.entries(ratingCounts).map(([tier, n]) => `
+    <div style="text-align:center;flex:1">
+      <div style="background:${RATING_COLORS[tier]};color:${RATING_TEXT[tier]};font-weight:700;font-size:0.8rem;padding:3px 6px;border-radius:3px">${TIER_LABELS[tier]}</div>
+      <div style="font-size:0.9rem;font-weight:700;margin-top:3px">${n}</div>
+      <div style="font-size:0.7rem;color:var(--muted)">${totalReports > 0 ? Math.round(n / totalReports * 100) : 0}%</div>
+    </div>`).join('');
+
+  const verRows = versionStats.length
+    ? versionStats.map(v => `
+      <div style="display:flex;align-items:center;gap:8px;margin:3px 0">
+        <span style="min-width:140px;font-size:0.75rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(v.ver)}">${esc(v.ver)}</span>
+        <div style="flex:1;background:var(--bg);border-radius:2px;height:6px">
+          <div style="width:${v.pct}%;height:100%;background:${v.pct >= 70 ? 'var(--green)' : v.pct >= 40 ? '#e0a030' : 'var(--red)'}"></div>
+        </div>
+        <span style="width:36px;text-align:right;font-weight:700">${v.pct}%</span>
+        <span style="width:30px;text-align:right;color:var(--muted)">${v.total}r</span>
+      </div>`).join('')
+    : '<div style="color:var(--muted);font-size:0.78rem">No version data available</div>';
+
+  const flagRows = launchFlags.length
+    ? launchFlags.map(f => `
+      <div style="display:flex;align-items:center;gap:8px;margin:3px 0">
+        <code style="min-width:160px;font-size:0.72rem">${esc(f.flag)}</code>
+        <div style="flex:1;background:var(--bg);border-radius:2px;height:6px">
+          <div style="width:${Math.min(100, f.pct)}%;height:100%;background:var(--accent)"></div>
+        </div>
+        <span style="width:36px;text-align:right;font-weight:700">${f.pct}%</span>
+        <span style="width:24px;text-align:right;color:var(--muted)">${f.cnt}x</span>
+      </div>`).join('')
+    : '<div style="color:var(--muted);font-size:0.78rem">No launch option data</div>';
+
+  return `
+    <div style="display:grid;gap:16px">
+      <div>
+        <h3 style="margin:0 0 8px">Confidence Score</h3>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+          <div style="font-size:2rem;font-weight:800;color:${confBarColor}">${confidencePct}%</div>
+          <div style="flex:1">
+            <div style="background:var(--bg);border-radius:4px;height:10px;overflow:hidden">
+              <div style="width:${confidencePct}%;height:100%;background:${confBarColor};transition:width 0.3s"></div>
+            </div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:4px">Based on ${totalReports} total report${totalReports !== 1 ? 's' : ''} &mdash; <a href="confidence.html?app=${appId}" style="color:var(--accent)">full breakdown</a></div>
+          </div>
+        </div>
+        ${factorRows}
+      </div>
+      <div>
+        <h3 style="margin:0 0 8px">Compatibility Trend</h3>
+        <div>${TREND_LABEL[trendDir] || TREND_LABEL.stable}${trendDir !== 'insufficient' ? ` <span style="color:var(--muted);font-size:0.78rem">(${recentCount} reports in last 90d vs ${priorCount} in prior 90-270d window)</span>` : ''}</div>
+      </div>
+      <div>
+        <h3 style="margin:0 0 8px">Rating Distribution</h3>
+        <div style="display:flex;gap:6px">${distCells}</div>
+      </div>
+      <div>
+        <h3 style="margin:0 0 6px">Per-Proton-Version Success Rate</h3>
+        <div style="font-size:0.72rem;color:var(--muted);margin-bottom:6px">% of reports rated silver or better</div>
+        ${verRows}
+      </div>
+      <div>
+        <h3 style="margin:0 0 6px">Common Launch Option Flags</h3>
+        <div style="font-size:0.72rem;color:var(--muted);margin-bottom:6px">Frequency across all configs and reports with launch options</div>
+        ${flagRows}
+      </div>
+    </div>`;
 }
 
 /** Deduplicate rows by voter_id, keeping only the most recent per unique client. */
@@ -1245,21 +1431,43 @@ async function renderGamePage(appId) {
     fetchConfigPlaytimeTotals(appId),
   ]);
 
-  // If CDN returned nothing, attempt a live fetch from ProtonDB so games not
-  // yet in our mirror still show tier data rather than a hard "no results".
-  let liveFallback = [];
-  if (!cdn.length) {
-    liveFallback = await fetchProtonDbLive(appId);
-  }
+  // If CDN was empty but the user already clicked "Check ProtonDB Live" this
+  // session, use the cached live result so the page re-renders correctly.
+  const liveCached = !cdn.length ? (_protonDbLiveCache.get(String(appId)) || []) : [];
+  const cdnMiss = !cdn.length && !liveCached.length;
 
   const reports = [
     ...cdn.map(r => ({ ...r, source: 'protondb' })),
-    ...liveFallback.map(r => ({ ...r, source: 'protondb' })),
+    ...liveCached.map(r => ({ ...r, source: 'protondb' })),
     ...nativeReports,
   ];
 
+  // Hard miss: nothing in cache, nothing native, nothing from Pulse.
+  // Show a "not in our mirror" state with a user-triggered live check button
+  // rather than auto-fetching so we don't hammer the ProtonDB API.
   if (!reports.length && !configs.length) {
-    el.innerHTML = `<div class="state-box">No reports found for app ${appId}</div>`;
+    el.innerHTML = `
+      <div class="state-box">
+        <p style="margin:0 0 10px">This game (<strong>${esc(String(appId))}</strong>) is not in our cached ProtonDB mirror.</p>
+        <p style="margin:0 0 14px;color:var(--muted);font-size:0.88rem">Our mirror updates periodically. You can check ProtonDB live, but please use this sparingly to avoid overloading their API.</p>
+        <button id="live-check-btn" class="submit-report-btn" style="margin:0">Check ProtonDB Live</button>
+        <span id="live-check-status" style="margin-left:10px;font-size:0.85rem;color:var(--muted)"></span>
+      </div>`;
+    el.querySelector('#live-check-btn')?.addEventListener('click', async (e) => {
+      const btn = e.currentTarget;
+      const status = el.querySelector('#live-check-status');
+      btn.disabled = true;
+      btn.textContent = 'Checking...';
+      if (status) status.textContent = '';
+      const live = await fetchProtonDbLive(appId);
+      if (live.length) {
+        await renderGamePage(appId);
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Check ProtonDB Live';
+        if (status) status.textContent = 'Not found on ProtonDB either.';
+      }
+    });
     return;
   }
 
@@ -1520,6 +1728,7 @@ async function renderGamePage(appId) {
           ${sourceTiles}
           <div class="game-header-actions">
             <a class="info-btn" href="scoring.html" id="rating-info-btn" title="How scoring works (opens the canonical scoring page)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="#3b82f6"/><text x="12" y="17" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="serif">i</text></svg></a>
+            <button class="info-btn info-btn-labeled" id="stats-btn" title="Per-game compatibility stats: confidence factors, trend, Proton version success rates, launch option frequency"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="18" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="12" width="4" height="9" rx="1"/></svg><span>Stats</span></button>
             <button class="info-btn info-btn-labeled" id="min-reqs-btn" title="Minimum system requirements (from Steam Store, served by pipeline)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="1"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="20" x2="15" y2="20"/></svg><span>Min. Requirements</span></button>
             ${renderDeckStatusButton(appId)}
             <a class="submit-report-btn" href="submit.html?app=${appId}&title=${encodeURIComponent(title)}">Submit Report</a>
@@ -1534,6 +1743,12 @@ async function renderGamePage(appId) {
         </div>
         <div class="info-tooltip" id="deck-status-tip">
           <div class="info-tooltip-inner" id="deck-status-content">${renderDeckStatusModalContent(appId)}</div>
+        </div>
+        <div class="info-tooltip" id="stats-tip">
+          <div class="info-tooltip-inner" id="stats-content">
+            <h3 style="margin:0 0 8px;font-size:0.95rem;color:var(--strong)">Compatibility Stats</h3>
+            <p style="color:var(--muted);font-size:0.84rem;margin:0">Loading stats...</p>
+          </div>
         </div>
 
         <!-- External link footer lives inside the game-header banner so it
@@ -1665,6 +1880,20 @@ async function renderGamePage(appId) {
     // rating-info-btn is now a plain <a href> to scoring.html - no JS needed.
     // populateScoringTooltip / #rating-info-tip kept around in case anything
     // else still references them (search/etc); safe to delete in a cleanup pass
+    el.querySelector('#stats-btn')?.addEventListener('click', () => {
+      const tip = el.querySelector('#stats-tip');
+      if (!tip) return;
+      const isOpen = tip.classList.toggle('open');
+      if (isOpen) {
+        const content = el.querySelector('#stats-content');
+        if (content) {
+          const allReports = [...cdn, ...nativeReports];
+          const stats = computeGameStats(allReports, configs);
+          console.debug(`[proton-pulse] computeGameStats | appId=${appId} reports=${allReports.length} configs=${configs.length} confidence=${stats.confidencePct}% trend=${stats.trendDir}`);
+          content.innerHTML = renderStatsPanel(stats, appId);
+        }
+      }
+    });
     el.querySelector('#min-reqs-btn')?.addEventListener('click', () => {
       // Min-reqs panel reuses the same .info-tooltip styling. Content is a
       // placeholder until task #37 publishes per-game sysreqs from the pipeline
