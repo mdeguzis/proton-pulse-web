@@ -150,7 +150,7 @@
       <div class="gh-auth-chip" id="gh-auth-chip">
         <a class="auth-link" id="auth-signedout" href="profile.html" title="Sign in or manage account">
           <svg class="nav-icon" aria-hidden="true"><use href="#icon-user"/></svg>
-          <span>My Account</span>
+          <span>Login</span>
         </a>
         <a class="auth-link auth-link--signedin" id="auth-signedin" href="profile.html" title="Manage account" hidden>
           <img class="auth-avatar" id="google-avatar" src="" alt="" width="22" height="22">
