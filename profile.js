@@ -140,6 +140,9 @@ function getProtonPulseUserIdFromSession(session) {
   return session?.user?.id || null;
 }
 
+// localStorage is the fast local read; Supabase user_metadata is the
+// authoritative cross-device source. getShowUsername reads local only;
+// showUser() syncs the authoritative value down on sign-in.
 function getShowUsername() {
   return localStorage.getItem(SHOW_USERNAME_KEY) === 'true';
 }
@@ -804,8 +807,14 @@ const MOCK_REPORTS = [
     document.getElementById('profile-last-signin').textContent  = lastAt;
     document.getElementById('profile-steam-username').textContent = name || '—';
     if (usernameToggle) {
-      usernameToggle.checked = getShowUsername();
-      usernameStatus.textContent = usernameToggle.checked ? 'Shown on reports' : 'Anonymous';
+      // Use Supabase user_metadata as authoritative source; fall back to localStorage
+      // for users who set the preference before this sync was added.
+      const meta = user.user_metadata ?? {};
+      const fromMeta = typeof meta.show_username === 'boolean' ? meta.show_username : null;
+      const val = fromMeta !== null ? fromMeta : getShowUsername();
+      if (fromMeta !== null) setShowUsername(val); // keep localStorage in sync
+      usernameToggle.checked = val;
+      usernameStatus.textContent = val ? 'Shown on reports' : 'Anonymous';
     }
     if (hwGpuSelect) hwGpuSelect.value = localStorage.getItem(HW_GPU_KEY) || '';
     if (hwOsInput)   hwOsInput.value   = localStorage.getItem(HW_OS_KEY)  || '';
@@ -953,8 +962,13 @@ const MOCK_REPORTS = [
   });
 
   usernameToggle?.addEventListener('change', () => {
-    setShowUsername(usernameToggle.checked);
-    if (usernameStatus) usernameStatus.textContent = usernameToggle.checked ? 'Shown on reports' : 'Anonymous';
+    const val = usernameToggle.checked;
+    setShowUsername(val);
+    if (usernameStatus) usernameStatus.textContent = val ? 'Shown on reports' : 'Anonymous';
+    // persist to Supabase so the preference follows the account across devices
+    SupaAuth.updateUserMeta({ show_username: val }).catch((e) => {
+      console.warn('[profile] failed to persist show_username to Supabase user_metadata:', e);
+    });
   });
 
   hwGpuSelect?.addEventListener('change', () => {

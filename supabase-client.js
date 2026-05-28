@@ -136,5 +136,11 @@ const SupaAuth = (() => {
     };
   }
 
-  return { buildLoginPageUrl, getSession, loginWithSteam, logout, onStateChange, authHeaders };
+  async function updateUserMeta(meta) {
+    await _sessionReady;
+    const { error } = await _sb.auth.updateUser({ data: meta });
+    if (error) throw error;
+  }
+
+  return { buildLoginPageUrl, getSession, loginWithSteam, logout, onStateChange, authHeaders, updateUserMeta };
 })();
