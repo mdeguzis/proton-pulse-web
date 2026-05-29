@@ -260,6 +260,12 @@
   min-width: 0;
   justify-content: center;
 }
+/* Stats has a short label so let it shrink to content width. That frees up
+   horizontal space for the longer "Min. Requirements" label so it doesn't
+   wrap to two lines at the typical hero card width */
+.game-header-actions #stats-btn {
+  flex: 0 0 auto;
+}
 /* Submit Report goes full-width on its own row below the icon buttons */
 .game-header-actions .submit-report-btn {
   flex: 1 1 100%;
