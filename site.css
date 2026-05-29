@@ -1215,11 +1215,17 @@ code {
   border: 1px solid var(--border2);
 }
 .auth-username {
+  /* Cap at 110px on narrow viewports so the username doesn't crowd the
+     hamburger toggle. On wide screens (where there's room) let it grow
+     to a sensible 220px so common Steam usernames fit without ellipsis */
   max-width: 110px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: 500;
+}
+@media (min-width: 1100px) {
+  .auth-username { max-width: 220px; }
 }
 
 .gh-login-btn {
