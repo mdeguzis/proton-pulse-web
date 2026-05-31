@@ -1763,13 +1763,25 @@ const MOCK_REPORTS = [
         viewHref
           ? `<a class="profile-configs-view-link" href="${escapeHtml(viewHref)}">View</a>`
           : `<span class="profile-configs-view-link profile-configs-view-disabled" title="Not published">View</span>`,
+        // Publish on an unpublished cloud row -> open submit.html in
+        // "complete from cloud" mode. A config without form responses is
+        // effectively an incomplete draft; the user must answer the
+        // can-install/start/play/verdict + fault questions before it can
+        // be published as a real report. submit.html prefills what we
+        // already have (proton version, launch options, hardware) and
+        // validation enforces the rest before save
         row.cloud && row.unpublished
-          ? `<button type="button" class="profile-configs-action profile-configs-publish-btn" data-app-id="${escapeHtml(String(row.app_id))}">Publish</button>`
+          ? `<a class="profile-configs-action profile-configs-publish-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1" target="_blank" rel="noopener">Publish</a>`
           : '',
+        // Edit: published rows go to submit.html in edit mode (full form
+        // pre-fill from user_configs). Cloud-only rows ALSO go to
+        // submit.html in "complete from cloud" mode -- there's no real
+        // difference between editing a draft and publishing it, both
+        // require filling out the report responses
         row.published_id
           ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&edit=${escapeHtml(String(row.published_id))}" target="_blank" rel="noopener">Edit</a>`
           : row.cloud
-            ? `<button type="button" class="profile-configs-action profile-configs-edit-btn" data-cloud-app-id="${escapeHtml(String(row.app_id))}">Edit</button>`
+            ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1" target="_blank" rel="noopener">Edit</a>`
             : '',
         `<button type="button" class="profile-configs-action profile-configs-delete-btn" data-app-id="${escapeHtml(String(row.app_id))}">Delete</button>`,
       ].filter(Boolean).join('');
@@ -1844,14 +1856,14 @@ const MOCK_REPORTS = [
       const appId = action.dataset.appId;
       if (!appId) return;
 
-      if (action.classList.contains('profile-configs-publish-btn')) {
-        action.textContent = 'Publishing...';
-        await publishMyCloudConfig(protonPulseUserId, appId, s);
-        showMyConfigsStatus('Published', true);
-        await refreshMyConfigs();
-        return;
-      }
-
+      // Publish + Edit are now <a> links that navigate to submit.html,
+      // so the only inline action left is Delete. The browser handles
+      // the anchor click without firing this handler for them (no
+      // data-app-id on the new anchors either since we matched the
+      // selector above already, but the dataset.appId guard above
+      // covers it -- only delete-btn carries data-app-id in this
+      // updated markup)
+      if (!action.classList.contains('profile-configs-delete-btn')) return;
       if (!window.confirm('Delete this report/config from Proton Pulse?')) return;
       action.textContent = 'Deleting...';
       await deleteMyReportsEverywhere(protonPulseUserId, cid, appId, s);

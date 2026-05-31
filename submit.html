@@ -52,6 +52,13 @@
   const editReportId = params.get('edit') || null;
   const titleParam = params.get('title') || '';
   const isEdit = !!editReportId;
+  // fromCloud=1 -> user is publishing a cloud-saved config that doesnt
+  // have report responses yet. Prefill what the cloud config carries
+  // (proton version, launch options, hardware) and the user fills in the
+  // can-install/start/play/verdict/faults answers to turn it into a real
+  // report. Save goes through the normal new-report path (writes to
+  // user_configs with form_responses)
+  const fromCloud = !isEdit && params.get('fromCloud') === '1';
 
   if (!appId) {
     document.getElementById('game-title').textContent = 'No app ID provided';
@@ -78,9 +85,14 @@
     if (!title) title = `App ${appId}`;
   }
 
-  document.getElementById('game-title').textContent = isEdit ? `Edit Report: ${title}` : title;
-  document.title = `${isEdit ? 'Edit' : 'Submit'} Report: ${title} — Proton Pulse`;
-  document.querySelector('.eyebrow').textContent = isEdit ? 'Edit a Report' : 'Submit a Report';
+  const titlePrefix = isEdit ? 'Edit Report' : fromCloud ? 'Publish Report' : title;
+  document.getElementById('game-title').textContent = isEdit
+    ? `Edit Report: ${title}`
+    : fromCloud ? `Publish Report: ${title}` : title;
+  document.title = `${isEdit ? 'Edit' : fromCloud ? 'Publish' : 'Submit'} Report: ${title} — Proton Pulse`;
+  document.querySelector('.eyebrow').textContent = isEdit
+    ? 'Edit a Report'
+    : fromCloud ? 'Publish a Report' : 'Submit a Report';
 
   // auth check
   const session = await SupaAuth.getSession();
@@ -172,6 +184,53 @@
     // change submit button label
     const submitBtn = el.querySelector('button[type="submit"]');
     if (submitBtn) submitBtn.textContent = 'Save Changes';
+  } else if (fromCloud) {
+    // Pull the user's cloud config for this app so the proton version
+    // + launch options + any saved hardware/profile fields are already
+    // filled in. The user still has to answer the question flow, but
+    // they don't re-type the data the cloud already knows about
+    try {
+      const r = await fetch(
+        `${SUPABASE_URL}/rest/v1/user_proton_configs?app_id=eq.${encodeURIComponent(appId)}&voter_id=eq.${encodeURIComponent(session.user.id)}&select=app_name,config,updated_at&order=updated_at.desc&limit=1`,
+        { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}` } }
+      );
+      const rows = r.ok ? await r.json() : [];
+      const rec = rows[0];
+      if (rec) {
+        const cfg = rec.config || {};
+        const form = el.querySelector('#submit-report-form');
+        const set = (name, val) => { if (form?.elements[name] && val != null) form.elements[name].value = val; };
+        if (rec.app_name) set('gameTitle', rec.app_name);
+        if (cfg.protonVersion) set('protonVersion', cfg.protonVersion);
+        if (cfg.launchOptions) set('launchOptions', cfg.launchOptions);
+        // Some cloud configs carry hardware snapshots from when the user
+        // saved them; pull those in if present so the user doesnt re-type
+        if (cfg.hardware) {
+          const hw = cfg.hardware;
+          set('cpu', hw.cpu);
+          set('gpu', hw.gpu);
+          set('gpuDriver', hw.gpuDriver);
+          set('gpuVendor', hw.gpuVendor);
+          set('ram', hw.ram);
+          set('kernel', hw.kernel);
+          if (hw.os) {
+            const osParts = String(hw.os).split(' ');
+            set('os', osParts[0]);
+            if (osParts.length > 1) set('osVersion', osParts.slice(1).join(' '));
+          }
+        }
+        console.debug('[submit] fromCloud: prefilled from cloud config', { appId });
+      } else {
+        // No cloud config found (race condition / row missing) -- fall
+        // back to saved-hardware prefill so the form isnt totally empty
+        prefillSubmitFormFromMyHardware(el);
+      }
+    } catch (err) {
+      console.warn('[submit] fromCloud prefill failed:', err);
+      prefillSubmitFormFromMyHardware(el);
+    }
+    const submitBtn = el.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.textContent = 'Publish';
   } else {
     prefillSubmitFormFromMyHardware(el);
   }
@@ -205,9 +264,19 @@
         const q = el.querySelector('#' + id);
         if (q) q.classList.add('sf-needs-answer');
       }
+      // Block submission if any required question is unanswered. The UI
+      // already highlights the missing rows via .sf-needs-answer; bail
+      // before the network call so users dont publish half-empty reports.
+      // This is critical for the Publish-from-cloud flow where the form
+      // arrives with hardware prefilled but every response is blank
       if (needsAnswer.length > 0) {
         const first = el.querySelector('#' + needsAnswer[0]);
         first?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (statusEl) {
+          statusEl.textContent = `Please answer ${needsAnswer.length} required question${needsAnswer.length === 1 ? '' : 's'} before publishing.`;
+          statusEl.style.color = 'var(--red)';
+        }
+        return;
       }
 
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = savingText; }

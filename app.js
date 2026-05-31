@@ -103,46 +103,28 @@ async function renderHomePage() {
     // Build a quick lookup of app IDs that also appear in the ProtonDB search
     // index so we can tag those cards with both badges
     const protonDbAppIds = new Set((searchIndex || []).map(([id]) => String(id)));
-    el.innerHTML = `
-      ${pulseReports.length ? `
-        <p class="section-label" style="margin-bottom:10px">Recent Proton Pulse Reports</p>
-        <div class="cards" style="border:1px solid var(--border);margin-bottom:16px">
-          ${renderPulseReportCards(pulseReports)}
-        </div>` : ''}
-      ${configRows.length ? `
-        <p class="section-label" style="margin-bottom:10px">Recent Proton Pulse Configs</p>
-        <div class="cards" style="border:1px solid var(--border)">
-          ${configRows.map(row => {
-          const cfg = row.config || {};
-          const name = row.app_name || cfg.appName || `App ${row.app_id}`;
-          const proton = cfg.protonVersion || '';
-          const profile = cfg.profileName || '';
-          const d = Math.round((Date.now() / 1000 - new Date(row.updated_at).getTime() / 1000) / 86400);
-          const age = d < 1 ? 'today' : d === 1 ? '1 day ago' : `${d} days ago`;
-          const hwParts = [proton, profile].filter(Boolean);
-          const isNonSteam = cfg.isNonSteam === true || isNonSteamAppId(row.app_id);
-          const hasProtonDb = !isNonSteam && protonDbAppIds.has(String(row.app_id));
-          return `
-            <a class="card" href="#/app/${row.app_id}" style="text-decoration:none">
-              <img src="${STEAM_IMG(row.app_id)}" onerror="this.style.display='none'" alt=""
-                   style="width:108px;height:40px;object-fit:cover;flex-shrink:0;border:1px solid var(--border)">
-              <div class="left">
-                <div class="proton">${esc(name)}</div>
-                <div class="hw">${hwParts.length ? hwParts.map(esc).join(' | ') : ''}</div>
-                <div class="age">${age}</div>
-              </div>
-              <div class="right" style="display:flex;flex-direction:column;gap:4px;align-items:flex-end">
-                <span class="source-badge pulse">
-                  <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse
-                </span>
-                ${hasProtonDb ? '<span class="source-badge protondb">ProtonDB</span>' : ''}
-                ${isNonSteam
-                  ? '<span class="source-badge non-steam-game">Non-Steam</span>'
-                  : '<span class="source-badge steam-game">Steam</span>'}
-              </div>
-            </a>`;
-          }).join('')}
-        </div>` : ''}`;
+
+    // Merge reports + configs into one Recent Activity feed sorted by
+    // timestamp. They were two separate sections before but the visual
+    // distinction was unclear, so we use a small REPORT/CONFIG kind badge
+    // on the right side of each card instead. Activity items carry a
+    // unix-second `ts` so they can be sorted across both sources
+    const activity = [];
+    for (const row of pulseReports) {
+      const ts = Math.floor(new Date(row.created_at).getTime() / 1000);
+      activity.push({ kind: 'report', ts, row });
+    }
+    for (const row of configRows) {
+      const ts = Math.floor(new Date(row.updated_at).getTime() / 1000);
+      activity.push({ kind: 'config', ts, row });
+    }
+    activity.sort((a, b) => b.ts - a.ts);
+
+    el.innerHTML = activity.length ? `
+      <p class="section-label" style="margin-bottom:10px">Recent Reports</p>
+      <div class="cards" style="border:1px solid var(--border)">
+        ${activity.map(({ kind, row }) => renderActivityCard(kind, row, protonDbAppIds)).join('')}
+      </div>` : '';
   } catch {
     el.innerHTML = '<div class="state-box">Search for a game above or navigate to <code>#/app/{appId}</code></div>';
   }
@@ -182,6 +164,55 @@ async function renderHomeFallback() {
     <div class="cards" style="border:1px solid var(--border)">
       ${popularCards}
     </div>`;
+}
+
+// Unified activity card used by the merged "Recent Activity" feed on the
+// home page. `kind` drives the small REPORT/CONFIG pill on the right plus
+// which fields show in the body. Single renderer means both kinds share
+// the same hover/click target shape, so the layout is consistent down
+// the list instead of two visually separate sections
+function renderActivityCard(kind, row, protonDbAppIds) {
+  const isReport = kind === 'report';
+  const appId = row.app_id;
+  let title, hwLine, age, isNonSteam = false;
+  if (isReport) {
+    title = row.title || `App ${appId}`;
+    hwLine = [row.rating, row.proton_version].filter(Boolean).join(' | ');
+    age = daysAgo(Math.floor(new Date(row.created_at).getTime() / 1000));
+    isNonSteam = isNonSteamAppId(appId);
+  } else {
+    const cfg = row.config || {};
+    title = row.app_name || cfg.appName || `App ${appId}`;
+    hwLine = [cfg.protonVersion || '', cfg.profileName || ''].filter(Boolean).join(' | ');
+    const d = Math.round((Date.now() / 1000 - new Date(row.updated_at).getTime() / 1000) / 86400);
+    age = d < 1 ? 'today' : d === 1 ? '1 day ago' : `${d} days ago`;
+    isNonSteam = cfg.isNonSteam === true || isNonSteamAppId(appId);
+  }
+  const hasProtonDb = !isNonSteam && protonDbAppIds && protonDbAppIds.has(String(appId));
+  // Per design discussion: there's no real distinction between a "config"
+  // and a "report" -- a report is just a config that has form responses
+  // attached. Both render identically here; the Publish flow on My
+  // Reports is what enforces filling out responses before a row goes
+  // public-visible. No REPORT/CONFIG badge needed on the home feed
+  return `
+    <a class="card" href="#/app/${appId}" style="text-decoration:none">
+      <img src="${STEAM_IMG(appId)}" onerror="this.style.display='none'" alt=""
+           style="width:108px;height:40px;object-fit:cover;flex-shrink:0;border:1px solid var(--border)">
+      <div class="left">
+        <div class="proton">${esc(title)}</div>
+        <div class="hw">${esc(hwLine)}</div>
+        <div class="age">${age}</div>
+      </div>
+      <div class="right" style="display:flex;flex-direction:column;gap:4px;align-items:flex-end">
+        <span class="source-badge pulse">
+          <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse
+        </span>
+        ${hasProtonDb ? '<span class="source-badge protondb">ProtonDB</span>' : ''}
+        ${isNonSteam
+          ? '<span class="source-badge non-steam-game">Non-Steam</span>'
+          : '<span class="source-badge steam-game">Steam</span>'}
+      </div>
+    </a>`;
 }
 
 function renderPulseReportCards(rows) {
