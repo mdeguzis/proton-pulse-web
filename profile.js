@@ -1754,7 +1754,7 @@ const MOCK_REPORTS = [
     myConfigsTbody.innerHTML = rows.map(row => {
       const appLink = `app.html#/app/${encodeURIComponent(row.app_id)}`;
       const reportAnchor = row.published_id ? `${appLink}#report-r${row.published_id}` : null;
-      const viewHref = reportAnchor || (row.published ? appLink : null);
+      const viewHref = reportAnchor || appLink;
       const name = row.title || `App ${row.app_id}`;
       const badges = getMyReportBadges(row).map((badge) => (
         `<span class="profile-configs-badge profile-configs-badge--${escapeHtml(badge.tone)}">${escapeHtml(badge.label)}</span>`
@@ -1766,7 +1766,7 @@ const MOCK_REPORTS = [
         row.cloud && row.unpublished
           ? `<button type="button" class="profile-configs-action profile-configs-publish-btn" data-app-id="${escapeHtml(String(row.app_id))}">Publish</button>`
           : '',
-        row.published && row.published_id
+        row.published_id
           ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&edit=${escapeHtml(String(row.published_id))}" target="_blank" rel="noopener">Edit</a>`
           : row.cloud
             ? `<button type="button" class="profile-configs-action profile-configs-edit-btn" data-cloud-app-id="${escapeHtml(String(row.app_id))}">Edit</button>`
