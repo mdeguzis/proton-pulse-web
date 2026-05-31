@@ -49,7 +49,9 @@
 (async function() {
   const params = new URLSearchParams(window.location.search);
   const appId = params.get('app');
+  const editReportId = params.get('edit') || null;
   const titleParam = params.get('title') || '';
+  const isEdit = !!editReportId;
 
   if (!appId) {
     document.getElementById('game-title').textContent = 'No app ID provided';
@@ -76,8 +78,9 @@
     if (!title) title = `App ${appId}`;
   }
 
-  document.getElementById('game-title').textContent = title;
-  document.title = `Submit Report: ${title} — Proton Pulse`;
+  document.getElementById('game-title').textContent = isEdit ? `Edit Report: ${title}` : title;
+  document.title = `${isEdit ? 'Edit' : 'Submit'} Report: ${title} — Proton Pulse`;
+  document.querySelector('.eyebrow').textContent = isEdit ? 'Edit a Report' : 'Submit a Report';
 
   // auth check
   const session = await SupaAuth.getSession();
@@ -90,7 +93,6 @@
     return;
   }
 
-  // populate the form with error visibility
   const el = document.querySelector('.main-inner');
   try {
     await populateSubmitForm(el);
@@ -100,7 +102,79 @@
       `<div style="padding:24px;color:var(--red)">Failed to load form: ${err.message || err}</div>`;
     return;
   }
-  prefillSubmitFormFromMyHardware(el);
+
+  // In edit mode, pre-fill from existing report; otherwise fall back to saved hardware
+  if (isEdit) {
+    try {
+      const r = await fetch(
+        `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${encodeURIComponent(editReportId)}&select=*&limit=1`,
+        { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}` } }
+      );
+      const rows = r.ok ? await r.json() : [];
+      const rec = rows[0];
+      if (rec) {
+        const form = el.querySelector('#submit-report-form');
+        const set = (name, val) => { if (form?.elements[name] && val != null) form.elements[name].value = val; };
+        set('gameTitle',    rec.title);
+        set('cpu',          rec.cpu);
+        set('gpu',          rec.gpu);
+        set('gpuDriver',    rec.gpu_driver);
+        set('gpuVendor',    rec.gpu_vendor);
+        set('ram',          rec.ram);
+        set('kernel',       rec.kernel);
+        set('protonVersion',rec.proton_version);
+        set('notes',        rec.notes);
+        set('launchOptions',rec.launch_options || rec.config_key);
+        set('duration',     rec.duration);
+        // parse OS field -- stored as "SteamOS 3.6" or similar
+        if (rec.os) {
+          const osParts = rec.os.split(' ');
+          set('os', osParts[0]);
+          if (osParts.length > 1) set('osVersion', osParts.slice(1).join(' '));
+        }
+        // restore form_responses into radio/checkbox state
+        const fr = rec.form_responses || {};
+        const state = form._formState || {};
+        const setRadio = (name, val) => {
+          if (!val) return;
+          state[name] = val;
+          const radio = form.querySelector(`input[name="${name}"][value="${val}"]`);
+          if (radio) { radio.checked = true; radio.dispatchEvent(new Event('change', { bubbles: true })); }
+        };
+        setRadio('canInstall', fr.canInstall);
+        setRadio('canStart',   fr.canStart);
+        setRadio('canPlay',    fr.canPlay);
+        setRadio('verdict',    fr.verdict === 'no' ? null : fr.verdict);
+        // fault questions
+        const FAULT_KEYS = ['performanceFaults','graphicalFaults','windowingFaults','audioFaults',
+          'inputFaults','stabilityFaults','saveGameFaults','significantBugs'];
+        for (const k of FAULT_KEYS) {
+          if (fr[k]) setRadio(k, fr[k]);
+          if (fr[k + 'Notes']) set(k + 'Notes', fr[k + 'Notes']);
+        }
+        setRadio('onlineMultiplayer', fr.onlineMultiplayer);
+        setRadio('localMultiplayer',  fr.localMultiplayer);
+        setRadio('requiresFramegen',  fr.requiresFramegen);
+        // tinkering checkboxes
+        if (fr.tinkeringMethods?.length) {
+          state.tinkeringMethods = new Set(fr.tinkeringMethods);
+          for (const m of fr.tinkeringMethods) {
+            const cb = form.querySelector(`input[name="tinkeringMethod"][value="${CSS.escape(m)}"]`);
+            if (cb) cb.checked = true;
+          }
+        }
+        form._formState = state;
+        console.debug('[submit] edit mode: prefilled from report', { editReportId, appId });
+      }
+    } catch (err) {
+      console.warn('[submit] edit prefill failed:', err);
+    }
+    // change submit button label
+    const submitBtn = el.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.textContent = 'Save Changes';
+  } else {
+    prefillSubmitFormFromMyHardware(el);
+  }
 
   const titleInput = el.querySelector('input[name="gameTitle"]');
   if (titleInput && !titleInput.value) titleInput.value = title;
@@ -111,8 +185,9 @@
       e.preventDefault();
       const statusEl = el.querySelector('#submit-status');
       const submitBtn = form.querySelector('button[type="submit"]');
+      const savingText = isEdit ? 'Saving...' : 'Submitting...';
+      const savedText  = isEdit ? 'Saved! Redirecting...' : 'Report submitted! Redirecting...';
 
-      // highlight unanswered required questions
       el.querySelectorAll('.sf-question.sf-needs-answer').forEach(q => q.classList.remove('sf-needs-answer'));
       const state = form._formState || {};
       const needsAnswer = [];
@@ -135,22 +210,27 @@
         first?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
 
-      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Submitting...'; }
-      if (statusEl) { statusEl.textContent = 'Submitting...'; statusEl.style.color = 'var(--accent)'; }
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = savingText; }
+      if (statusEl) { statusEl.textContent = savingText; statusEl.style.color = 'var(--accent)'; }
 
       try {
-        const result = await submitReport(appId, title, form);
+        let result;
+        if (isEdit) {
+          result = await submitReport(appId, title, form, editReportId);
+        } else {
+          result = await submitReport(appId, title, form);
+        }
         if (result.ok) {
-          if (statusEl) { statusEl.textContent = 'Report submitted! Redirecting...'; statusEl.style.color = 'var(--green)'; }
+          if (statusEl) { statusEl.textContent = savedText; statusEl.style.color = 'var(--green)'; }
           setTimeout(() => { window.location.href = `app.html#/app/${appId}`; }, 1200);
         } else {
-          if (statusEl) { statusEl.textContent = result.error || 'Submit failed'; statusEl.style.color = 'var(--red)'; }
-          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit'; }
+          if (statusEl) { statusEl.textContent = result.error || 'Failed'; statusEl.style.color = 'var(--red)'; }
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = isEdit ? 'Save Changes' : 'Submit'; }
         }
       } catch (err) {
-        console.error('[submit] submitReport failed:', err);
-        if (statusEl) { statusEl.textContent = err.message || 'Submit failed'; statusEl.style.color = 'var(--red)'; }
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit'; }
+        console.error('[submit] save failed:', err);
+        if (statusEl) { statusEl.textContent = err.message || 'Failed'; statusEl.style.color = 'var(--red)'; }
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = isEdit ? 'Save Changes' : 'Submit'; }
       }
     });
   }

@@ -1767,7 +1767,7 @@ const MOCK_REPORTS = [
           ? `<button type="button" class="profile-configs-action profile-configs-publish-btn" data-app-id="${escapeHtml(String(row.app_id))}">Publish</button>`
           : '',
         row.published && row.published_id
-          ? `<button type="button" class="profile-configs-action profile-configs-edit-btn" data-report-id="${escapeHtml(String(row.published_id))}">Edit</button>`
+          ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&edit=${escapeHtml(String(row.published_id))}" target="_blank" rel="noopener">Edit</a>`
           : row.cloud
             ? `<button type="button" class="profile-configs-action profile-configs-edit-btn" data-cloud-app-id="${escapeHtml(String(row.app_id))}">Edit</button>`
             : '',

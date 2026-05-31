@@ -92,7 +92,7 @@ function normalizeRam(raw) {
 
 
 
-async function submitReport(appId, title, form) {
+async function submitReport(appId, title, form, editReportId = null) {
   const session = await SupaAuth.getSession();
   if (!session) return { ok: false, error: 'Sign in with Steam to submit a report.' };
   const protonPulseUserId = getProtonPulseUserIdFromSession(session);
@@ -160,14 +160,18 @@ async function submitReport(appId, title, form) {
     game_owned: true,  // authenticated web users own the game by definition
     form_responses: formResponses,
   };
-  const r = await fetch(`${SB_URL}/user_configs?on_conflict=client_id,app_id`, {
-    method: 'POST',
+  const isEdit = !!editReportId;
+  const fetchUrl = isEdit
+    ? `${SB_URL}/user_configs?id=eq.${encodeURIComponent(editReportId)}`
+    : `${SB_URL}/user_configs?on_conflict=client_id,app_id`;
+  const r = await fetch(fetchUrl, {
+    method: isEdit ? 'PATCH' : 'POST',
     headers: {
       apikey: SB_KEY,
       Authorization: `Bearer ${session.access_token}`,
       'Content-Type': 'application/json',
       'x-client-id': body.client_id,
-      Prefer: 'resolution=merge-duplicates,return=minimal',
+      Prefer: isEdit ? 'return=minimal' : 'resolution=merge-duplicates,return=minimal',
     },
     body: JSON.stringify(body),
   });
