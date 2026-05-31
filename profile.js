@@ -1754,14 +1754,15 @@ const MOCK_REPORTS = [
     myConfigsTbody.innerHTML = rows.map(row => {
       const appLink = `app.html#/app/${encodeURIComponent(row.app_id)}`;
       const reportAnchor = row.published_id ? `${appLink}#report-r${row.published_id}` : null;
+      const viewHref = reportAnchor || (row.published ? appLink : null);
       const name = row.title || `App ${row.app_id}`;
       const badges = getMyReportBadges(row).map((badge) => (
         `<span class="profile-configs-badge profile-configs-badge--${escapeHtml(badge.tone)}">${escapeHtml(badge.label)}</span>`
       )).join('');
       const actions = [
-        reportAnchor
-          ? `<a class="profile-configs-view-link" href="${escapeHtml(reportAnchor)}">View</a>`
-          : `<span class="profile-configs-view-link profile-configs-view-disabled" title="No published report">View</span>`,
+        viewHref
+          ? `<a class="profile-configs-view-link" href="${escapeHtml(viewHref)}">View</a>`
+          : `<span class="profile-configs-view-link profile-configs-view-disabled" title="Not published">View</span>`,
         row.cloud && row.unpublished
           ? `<button type="button" class="profile-configs-action profile-configs-publish-btn" data-app-id="${escapeHtml(String(row.app_id))}">Publish</button>`
           : '',

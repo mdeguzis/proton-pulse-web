@@ -765,13 +765,14 @@
     text-align: left;
   }
   .profile-configs-actions {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: nowrap;
     width: 100%;
   }
   .profile-configs-view-link,
   .profile-configs-action {
     text-align: center;
-    padding: 6px 8px;
+    padding: 5px 4px;
+    font-size: 0.65rem;
   }
 }
