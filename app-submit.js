@@ -133,11 +133,34 @@ async function submitReport(appId, title, form, editReportId = null) {
     // optional notes per fault section, only captured when user answered Yes
     ...Object.fromEntries(FAULT_KEYS_WEB.map(k => [k + 'Notes', (form[k + 'Notes']?.value || '').trim() || null])),
     onlineMultiplayer: state.onlineMultiplayer || null,
+    onlineMultiplayerNotes: state.onlineMultiplayer === 'yes'
+      ? (form.onlineMultiplayerNotes?.value || '').trim() || null
+      : null,
     localMultiplayer:  state.localMultiplayer  || null,
+    localMultiplayerNotes: state.localMultiplayer === 'yes'
+      ? (form.localMultiplayerNotes?.value || '').trim() || null
+      : null,
+    // Optional: does the game work without an internet connection at all?
+    // Not used by scoring -- captured for future stats on always-online titles
+    offlineCompat: installFailed ? null : (state.offlineCompat || null),
     verdict:    installFailed ? 'no' : (state.verdict || null),
-    verdictOob: installFailed ? null : (state.verdictOob || null),
-    // framegen is informational only, never read by scoring (app-scoring.js)
+    // verdictOob is now inferred from whether any tinkering methods were
+    // checked: empty = "yes, works out of box". Old reports still carry an
+    // explicit value, so legacy viewing code can read either. Stored here
+    // for cross-version compatibility with the plugin's submission shape.
+    verdictOob: installFailed ? null : (state.verdict === 'yes'
+      ? (state.tinkeringMethods && state.tinkeringMethods.size > 0 ? 'no' : 'yes')
+      : null),
+    // framegen is informational only, never read by scoring (app-scoring.js).
+    // When the user answered Yes we also capture which framegen tech they
+    // used + free-form notes; stats can break down by type (task #31).
     requiresFramegen: installFailed ? null : (state.requiresFramegen || null),
+    framegenType: state.requiresFramegen === 'yes'
+      ? (form.framegenType?.value || '').trim() || null
+      : null,
+    framegenNotes: state.requiresFramegen === 'yes'
+      ? (form.framegenNotes?.value || '').trim() || null
+      : null,
     summary:    null,
   };
   const body = {
@@ -345,28 +368,54 @@ async function populateSubmitForm(el) {
         <div class="sf-q-label">Did you test online multiplayer? <span style="font-weight:400;color:var(--muted)">(optional)</span></div>
         <div class="sf-q-hint">Only answer if the game has online multiplayer and you tried it.</div>
         ${ynBtns('onlineMultiplayer')}
+        <div class="sf-fault-notes sf-hidden" id="q-onlineMultiplayer-notes">
+          <textarea name="onlineMultiplayerNotes" rows="2" placeholder="How did online multiplayer work? Any issues with matchmaking, voice chat, anti-cheat? (optional)"></textarea>
+        </div>
       </div>
 
       <div class="sf-question sf-hidden" id="q-multiplayer-local">
         <div class="sf-q-label">Did you test local / couch multiplayer? <span style="font-weight:400;color:var(--muted)">(optional)</span></div>
         <div class="sf-q-hint">Only answer if the game has local multiplayer and you tried it.</div>
         ${ynBtns('localMultiplayer')}
+        <div class="sf-fault-notes sf-hidden" id="q-localMultiplayer-notes">
+          <textarea name="localMultiplayerNotes" rows="2" placeholder="How did local multiplayer work? Any issues with controllers, splitscreen, second player input? (optional)"></textarea>
+        </div>
+      </div>
+
+      <div class="sf-question sf-hidden" id="q-offline-compat">
+        <div class="sf-q-label">Did the game work offline? <span style="font-weight:400;color:var(--muted)">(optional)</span></div>
+        <div class="sf-q-hint">Only relevant if the game is supposed to play offline. Some titles require an always-on internet connection even for single-player.</div>
+        ${ynBtns('offlineCompat')}
+        <div class="sf-fault-notes sf-hidden" id="q-offlineCompat-notes">
+          <textarea name="offlineCompatNotes" rows="2" placeholder="Which parts worked offline? e.g. main campaign yes, multiplayer no, save sync requires login... (optional)"></textarea>
+        </div>
       </div>
 
       <div class="sf-question sf-hidden" id="q-verdict">
         <div class="sf-q-label">Overall, did the game work? *</div>
+        <div class="sf-q-hint">"Yes" with no tinkering checked above = platinum. "Yes" + at least one tinkering method = gold.</div>
         ${ynBtns('verdict')}
       </div>
 
-      <div class="sf-question sf-hidden" id="q-oob">
-        <div class="sf-q-label">Did it work out of the box (no tinkering needed)? *</div>
-        ${ynBtns('verdictOob')}
-      </div>
-
       <div class="sf-question sf-hidden" id="q-framegen">
-        <div class="sf-q-label">Did this game require framegen (FSR, LSFG, DLSS-G, etc.) to hit smooth gameplay / 60 FPS?</div>
+        <div class="sf-q-label">Did this game require framegen to hit smooth gameplay / 60 FPS?</div>
         <div class="sf-q-hint">Optional. Helps separate games that work natively from those leaning on upscalers.</div>
         ${ynBtns('requiresFramegen')}
+        <div class="sf-fault-notes sf-hidden" id="q-framegen-followup">
+          <div class="sf-row" style="margin-top:8px">
+            <label>Framegen type</label>
+            <select name="framegenType">
+              <option value="">-- choose one --</option>
+              <option value="fsr">FSR (AMD)</option>
+              <option value="lsfg">LSFG (Lossless Scaling)</option>
+              <option value="dlss-g">DLSS-G (NVIDIA)</option>
+              <option value="afmf">AFMF (AMD driver)</option>
+              <option value="xess-fg">XeSS Frame Gen (Intel)</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <textarea name="framegenNotes" rows="2" placeholder="Which framegen settings worked? Any quality / latency tradeoffs? (optional)" style="margin-top:6px"></textarea>
+        </div>
       </div>
 
       <div class="sf-row sf-hidden" id="derived-rating-row">
@@ -403,6 +452,7 @@ async function populateSubmitForm(el) {
     faults: Object.fromEntries(FAULT_KEYS_WEB.map(k => [k, null])),
     tinkeringMethods: new Set(),
     onlineMultiplayer: null, localMultiplayer: null,
+    offlineCompat: null,
   };
   form._formState = state;
 
@@ -420,19 +470,28 @@ async function populateSubmitForm(el) {
     if (state.canInstall !== null) show('q-canStart'); else hide('q-canStart');
     if (state.canInstall === 'yes' && state.canStart !== null) show('q-canPlay'); else hide('q-canPlay');
 
-    // Tinkering + faults + multiplayer + verdict only when all install steps pass
+    // Tinkering + faults + multiplayer + offline + verdict only when all
+    // install steps pass
     if (allInstallYes) {
       show('q-tinkering'); show('q-faults');
       show('q-multiplayer-online'); show('q-multiplayer-local');
+      show('q-offline-compat');
       show('q-verdict');
     } else {
       hide('q-tinkering'); hide('q-faults');
       hide('q-multiplayer-online'); hide('q-multiplayer-local');
+      hide('q-offline-compat');
       hide('q-verdict');
     }
 
-    // Out-of-box only if verdict=yes and 0 faults
-    if (showOob) show('q-oob'); else { hide('q-oob'); state.verdictOob = null; clearRadios('verdictOob'); }
+    // Multiplayer / framegen notes follow-ups reveal only when the parent
+    // question is answered Yes. Same UX as fault notes
+    if (state.onlineMultiplayer === 'yes') show('q-onlineMultiplayer-notes');
+    else hide('q-onlineMultiplayer-notes');
+    if (state.localMultiplayer === 'yes') show('q-localMultiplayer-notes');
+    else hide('q-localMultiplayer-notes');
+    if (state.offlineCompat === 'yes') show('q-offlineCompat-notes');
+    else hide('q-offlineCompat-notes');
 
     // Framegen reveals whenever the game is reported as playable (verdict=yes
     // means it works, just maybe with help). Optional, so we don't reset on
@@ -441,6 +500,9 @@ async function populateSubmitForm(el) {
     const showFramegen = allInstallYes && state.verdict === 'yes';
     if (showFramegen) show('q-framegen');
     else { hide('q-framegen'); state.requiresFramegen = null; clearRadios('requiresFramegen'); }
+    // Follow-up panel (framegen type + notes) only when framegen=Yes
+    if (state.requiresFramegen === 'yes') show('q-framegen-followup');
+    else hide('q-framegen-followup');
 
     // Reset downstream state when install fails
     if (installFailed) {
@@ -462,11 +524,12 @@ async function populateSubmitForm(el) {
     }
   }
 
-  // Wire yes/no radio buttons. Multiplayer + framegen are optional but the
-  // state still needs to update on change so the submitted form_responses
-  // captures the answer.
-  ['canInstall','canStart','canPlay','verdict','verdictOob',
-   'onlineMultiplayer','localMultiplayer','requiresFramegen'].forEach(name => {
+  // Wire yes/no radio buttons. Multiplayer + framegen + offline are optional
+  // but the state still needs to update on change so the submitted
+  // form_responses captures the answer. updateFormUI() also re-runs which
+  // reveals the matching follow-up notes / type panels on Yes.
+  ['canInstall','canStart','canPlay','verdict',
+   'onlineMultiplayer','localMultiplayer','requiresFramegen','offlineCompat'].forEach(name => {
     form.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
       radio.addEventListener('change', () => {
         state[name] = radio.value;

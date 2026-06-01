@@ -35,6 +35,13 @@ function deriveRatingFromState(s) {
   if (faultCount >= 3) return 'bronze';
   if (faultCount === 2) return 'silver';
   if (faultCount === 1) return 'gold';
+  // Out-of-box = no tinkering methods selected. Used to be a separate yes/no
+  // question but it was redundant with the tinkering checkboxes (any method
+  // checked == not OOB). Legacy form_responses might still carry an explicit
+  // verdictOob='yes' from older clients, so honor that as a fallback
+  const tinkered = (s.tinkeringMethods && s.tinkeringMethods.size > 0)
+    || (Array.isArray(s.tinkeringMethods) && s.tinkeringMethods.length > 0);
+  if (!tinkered) return 'platinum';
   if (s.verdictOob === 'yes') return 'platinum';
   return 'gold';
 }

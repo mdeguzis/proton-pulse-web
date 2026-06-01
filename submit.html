@@ -114,15 +114,23 @@
     ? 'Edit a Report'
     : fromCloud ? 'Publish a Report' : 'Submit a Report';
 
-  // auth check
+  // auth check. On localhost the Steam OAuth redirect is configured for the
+  // production domain, so signing in locally just bounces back to prod -- you
+  // can't actually finish auth in dev. Skip the gate when the host is local
+  // so the form can be visually previewed and the question flow tested,
+  // even though submission will still fail without a real session.
+  const isLocalDev = /^(localhost|127\.0\.0\.1|0\.0\.0\.0)$/.test(location.hostname);
   const session = await SupaAuth.getSession();
-  if (!session?.user) {
+  if (!session?.user && !isLocalDev) {
     document.getElementById('auth-gate').hidden = false;
     document.getElementById('submit-form-content').hidden = true;
     document.getElementById('login-btn')?.addEventListener('click', () => {
       window.location.href = SupaAuth.buildLoginPageUrl(window.location.href);
     });
     return;
+  }
+  if (isLocalDev && !session?.user) {
+    console.warn('[submit] localhost dev mode: bypassing auth gate. Submission will not work without a real session.');
   }
 
   const el = document.querySelector('.main-inner');
@@ -136,7 +144,7 @@
   }
 
   // In edit mode, pre-fill from existing report; otherwise fall back to saved hardware
-  if (isEdit) {
+  if (isEdit && session) {
     try {
       const r = await fetch(
         `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${encodeURIComponent(editReportId)}&select=*&limit=1`,
@@ -185,8 +193,13 @@
           if (fr[k + 'Notes']) set(k + 'Notes', fr[k + 'Notes']);
         }
         setRadio('onlineMultiplayer', fr.onlineMultiplayer);
+        if (fr.onlineMultiplayerNotes) set('onlineMultiplayerNotes', fr.onlineMultiplayerNotes);
         setRadio('localMultiplayer',  fr.localMultiplayer);
+        if (fr.localMultiplayerNotes) set('localMultiplayerNotes', fr.localMultiplayerNotes);
+        setRadio('offlineCompat', fr.offlineCompat);
         setRadio('requiresFramegen',  fr.requiresFramegen);
+        if (fr.framegenType) set('framegenType', fr.framegenType);
+        if (fr.framegenNotes) set('framegenNotes', fr.framegenNotes);
         // tinkering checkboxes
         if (fr.tinkeringMethods?.length) {
           state.tinkeringMethods = new Set(fr.tinkeringMethods);
@@ -204,7 +217,7 @@
     // change submit button label
     const submitBtn = el.querySelector('button[type="submit"]');
     if (submitBtn) submitBtn.textContent = 'Save Changes';
-  } else if (fromCloud) {
+  } else if (fromCloud && session) {
     // Pull the user's cloud config for this app so the proton version
     // + launch options + any saved hardware/profile fields are already
     // filled in. The user still has to answer the question flow, but
@@ -251,6 +264,12 @@
     }
     const submitBtn = el.querySelector('button[type="submit"]');
     if (submitBtn) submitBtn.textContent = 'Publish';
+  } else if (fromCloud && !session) {
+    // localhost dev preview without auth: can't fetch cloud config, just
+    // prefill from saved hardware so the form is at least populated
+    prefillSubmitFormFromMyHardware(el);
+    const submitBtn = el.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.textContent = 'Publish (dev preview)';
   } else {
     prefillSubmitFormFromMyHardware(el);
   }
