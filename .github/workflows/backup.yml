@@ -1,0 +1,71 @@
+name: Backup
+
+on:
+  schedule:
+    # Weekly, Sunday at 04:00 UTC.
+    - cron: "0 4 * * 0"
+  workflow_dispatch:
+    inputs:
+      type:
+        description: "What to back up"
+        required: false
+        default: "all"
+        type: choice
+        options:
+          - all
+          - schema
+          - user_configs
+          - author_avatars
+          - site
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  backup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Checkout gh-pages (for site backup)
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages-site
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Set backup date
+        id: date
+        run: echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+
+      - name: Run backup script
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          BACKUP_HMAC_SECRET: ${{ secrets.BACKUP_HMAC_SECRET }}
+          BACKUP_DATE: ${{ steps.date.outputs.date }}
+          BACKUP_TYPE: ${{ inputs.type || 'all' }}
+          SITE_DIR: gh-pages-site
+          OUT_DIR: backup-out
+        run: node .github/scripts/backup.mjs
+
+      - name: Commit tarballs to backup repo
+        env:
+          BACKUP_REPO_TOKEN: ${{ secrets.BACKUP_REPO_TOKEN }}
+          DATE: ${{ steps.date.outputs.date }}
+        run: |
+          git clone https://x-access-token:${BACKUP_REPO_TOKEN}@github.com/mdeguzis/proton-pulse-data-backup.git backup-repo
+          cp backup-out/*.tar.gz backup-repo/
+          cd backup-repo
+          git config user.name "mdeguzis"
+          git config user.email "mdeguzis@gmail.com"
+          git add *.tar.gz
+          git commit -m "backup: ${DATE}"
+          git push
