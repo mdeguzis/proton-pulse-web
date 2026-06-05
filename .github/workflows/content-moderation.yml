@@ -1,0 +1,45 @@
+name: Content Moderation
+
+on:
+  schedule:
+    # Daily at 02:00 UTC, after the data pipeline finishes.
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+    inputs:
+      lookback_hours:
+        description: "Scan rows updated within this many hours (default: 25)"
+        required: false
+        default: "25"
+      app_id:
+        description: "Restrict scan to a single Steam app ID (leave blank for all)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Log matches without writing back to Supabase"
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  moderate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run moderation scan
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LOOKBACK_HOURS: ${{ inputs.lookback_hours || '25' }}
+          APP_ID: ${{ inputs.app_id || '' }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/moderate-content.mjs
