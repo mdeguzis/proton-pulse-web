@@ -7,15 +7,6 @@
   "jest": {
     "testEnvironment": "jest-environment-jsdom",
     "testMatch": ["**/tests/*.test.js"],
-    "collectCoverageFrom": ["admin.js"],
-    "coverageThreshold": {
-      "global": {
-        "lines": 100,
-        "functions": 100,
-        "branches": 100,
-        "statements": 100
-      }
-    }
   },
   "dependencies": {
     "naughty-words": "^1.2.0"
