@@ -686,7 +686,7 @@
         if (nameEl)    nameEl.textContent = rawName.length > 10 ? rawName.slice(0, 10) + '\u2026' : rawName;
 
         // Show admin chip next to the signed-in username if the user is an admin.
-        checkIsAdmin(state).then(function (admin) {
+        checkIsAdmin(state.session).then(function (admin) {
           var existing = document.getElementById('topbar-admin-link');
           if (admin && !existing) {
             var link = document.createElement('a');

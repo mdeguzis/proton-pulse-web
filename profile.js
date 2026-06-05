@@ -1128,7 +1128,7 @@ const MOCK_REPORTS = [
     renderMyHwFieldOrigins();
   }
 
-  function showUser(user) {
+  function showUser(user, session) {
     const name    = user.user_metadata?.full_name || user.user_metadata?.name || '';
     const email   = user.email || '';
     const uid     = user.id || '';
@@ -1285,9 +1285,9 @@ const MOCK_REPORTS = [
     }
 
     // ── Stay in sync (e.g. sign-out in another tab) ─────────────────────────
-    SupaAuth.onStateChange(({ user }) => {
+    SupaAuth.onStateChange(({ user, session }) => {
       if (user) {
-        showUser(user);
+        showUser(user, session);
         void refreshLinkedPlugins();
       } else {
         showSignedOut();
