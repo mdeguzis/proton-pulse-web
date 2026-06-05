@@ -95,9 +95,14 @@ function makeCtx(fetchImpl) {
     ctx.__fetchFlaggedReports = fetchFlaggedReports;
     ctx.__fetchBannedUsers    = fetchBannedUsers;
     ctx.__fetchAdmins         = fetchAdmins;
+    ctx.__addAdmin            = addAdmin;
+    ctx.__removeAdmin         = removeAdmin;
+    ctx.__updateAdminRole     = updateAdminRole;
+    ctx.__fetchAllUsers       = fetchAllUsers;
     ctx.__renderFlagged       = renderFlagged;
     ctx.__renderBanned        = renderBanned;
     ctx.__renderAdmins        = renderAdmins;
+    ctx.__renderUsers         = renderUsers;
   `;
   vm.createContext(ctx);
   vm.runInContext(shim, ctx);
@@ -741,9 +746,281 @@ describe('renderAdmins', () => {
     expect(els['admins-table'].hidden).toBe(true);
   });
 
-  test('populates tbody when rows present', () => {
+  test('populates tbody with role and remove button when rows present', () => {
     const { ctx, els } = makeDocCtx(okFetch());
-    ctx.__renderAdmins([{ proton_pulse_user_id: ADMIN_USER_ID, steam_username: 'ProfessorKaos64', added_at: '2026-06-05' }]);
+    ctx.__renderAdmins([{ proton_pulse_user_id: ADMIN_USER_ID, steam_username: 'ProfessorKaos64', role: 'super_admin', added_at: '2026-06-05' }]);
     expect(els['admins-table'].hidden).toBe(false);
+    expect(els['admins-tbody'].innerHTML).toContain('ProfessorKaos64');
+    expect(els['admins-tbody'].innerHTML).toContain('super_admin');
+    expect(els['admins-tbody'].innerHTML).toContain('remove-admin');
+  });
+
+  test('escapes username in output', () => {
+    const { ctx, els } = makeDocCtx(okFetch());
+    ctx.__renderAdmins([{ proton_pulse_user_id: ADMIN_USER_ID, steam_username: '<script>xss</script>', role: 'moderator', added_at: '2026-06-05' }]);
+    expect(els['admins-tbody'].innerHTML).not.toContain('<script>');
+    expect(els['admins-tbody'].innerHTML).toContain('&lt;script&gt;');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// addAdmin
+// ---------------------------------------------------------------------------
+
+describe('addAdmin', () => {
+  const session = { access_token: 'tok' };
+
+  test('POSTs to /admins with correct payload', async () => {
+    const ctx = makeCtx(okFetch());
+    await ctx.__addAdmin(session, { uuid: OTHER_USER_ID, username: 'newmod', role: 'moderator' });
+    const call = ctx.fetch.mock.calls[0];
+    expect(call[0]).toContain('/rest/v1/admins');
+    expect(call[1].method).toBe('POST');
+    const body = JSON.parse(call[1].body);
+    expect(body.proton_pulse_user_id).toBe(OTHER_USER_ID);
+    expect(body.steam_username).toBe('newmod');
+    expect(body.role).toBe('moderator');
+  });
+
+  test('throws on non-ok response', async () => {
+    const ctx = makeCtx(failFetch(403));
+    await expect(ctx.__addAdmin(session, { uuid: OTHER_USER_ID, username: 'x', role: 'moderator' }))
+      .rejects.toThrow('Add admin failed: 403');
+  });
+
+  test('includes Authorization header', async () => {
+    const ctx = makeCtx(okFetch());
+    await ctx.__addAdmin(session, { uuid: OTHER_USER_ID, username: 'x', role: 'moderator' });
+    expect(ctx.fetch.mock.calls[0][1].headers.Authorization).toBe('Bearer tok');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// removeAdmin
+// ---------------------------------------------------------------------------
+
+describe('removeAdmin', () => {
+  const session = { access_token: 'tok' };
+
+  test('DELETEs the correct admin by UUID', async () => {
+    const ctx = makeCtx(okFetch());
+    await ctx.__removeAdmin(session, OTHER_USER_ID);
+    const call = ctx.fetch.mock.calls[0];
+    expect(call[0]).toContain(`proton_pulse_user_id=eq.${OTHER_USER_ID}`);
+    expect(call[1].method).toBe('DELETE');
+  });
+
+  test('throws on non-ok response', async () => {
+    const ctx = makeCtx(failFetch(403));
+    await expect(ctx.__removeAdmin(session, OTHER_USER_ID))
+      .rejects.toThrow('Remove admin failed: 403');
+  });
+
+  test('includes Authorization header', async () => {
+    const ctx = makeCtx(okFetch());
+    await ctx.__removeAdmin(session, OTHER_USER_ID);
+    expect(ctx.fetch.mock.calls[0][1].headers.Authorization).toBe('Bearer tok');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// updateAdminRole
+// ---------------------------------------------------------------------------
+
+describe('updateAdminRole', () => {
+  const session = { access_token: 'tok' };
+
+  test('PATCHes role on correct admin UUID', async () => {
+    const ctx = makeCtx(okFetch());
+    await ctx.__updateAdminRole(session, OTHER_USER_ID, 'super_admin');
+    const call = ctx.fetch.mock.calls[0];
+    expect(call[0]).toContain(`proton_pulse_user_id=eq.${OTHER_USER_ID}`);
+    expect(call[1].method).toBe('PATCH');
+    expect(JSON.parse(call[1].body).role).toBe('super_admin');
+  });
+
+  test('PATCHes to moderator role', async () => {
+    const ctx = makeCtx(okFetch());
+    await ctx.__updateAdminRole(session, OTHER_USER_ID, 'moderator');
+    expect(JSON.parse(ctx.fetch.mock.calls[0][1].body).role).toBe('moderator');
+  });
+
+  test('throws on non-ok response', async () => {
+    const ctx = makeCtx(failFetch(403));
+    await expect(ctx.__updateAdminRole(session, OTHER_USER_ID, 'moderator'))
+      .rejects.toThrow('Update role failed: 403');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// fetchAllUsers
+// ---------------------------------------------------------------------------
+
+describe('fetchAllUsers', () => {
+  const session = { access_token: 'tok' };
+  const configRow = { proton_pulse_user_id: ADMIN_USER_ID, client_id: 'cid-1', updated_at: '2026-06-01T00:00:00Z' };
+  const protonRow = { proton_pulse_user_id: ADMIN_USER_ID, installation_id: 'inst-1', updated_at: '2026-06-02T00:00:00Z' };
+  const anonRow   = { proton_pulse_user_id: null, client_id: 'anon-client', updated_at: '2026-05-01T00:00:00Z' };
+
+  test('fetches from user_configs and user_proton_configs', async () => {
+    const ctx = makeCtx(mockFetch([
+      { url: /user_configs[^_]/, body: [configRow] },
+      { url: /user_proton_configs/, body: [protonRow] },
+      { url: /author_avatars/, body: [] },
+      { url: /admins/, body: [] },
+    ]));
+    const rows = await ctx.__fetchAllUsers(session);
+    const urls = ctx.fetch.mock.calls.map(c => c[0]);
+    expect(urls.some(u => u.includes('user_configs'))).toBe(true);
+    expect(urls.some(u => u.includes('user_proton_configs'))).toBe(true);
+  });
+
+  test('merges configs and proton_configs under same user', async () => {
+    const ctx = makeCtx(mockFetch([
+      { url: /user_configs[^_]/, body: [configRow] },
+      { url: /user_proton_configs/, body: [protonRow] },
+      { url: /author_avatars/, body: [] },
+      { url: /admins/, body: [] },
+    ]));
+    const rows = await ctx.__fetchAllUsers(session);
+    expect(rows).toHaveLength(1);
+    expect(rows[0].report_count).toBe(1); // only user_configs rows count as reports
+  });
+
+  test('anonymous client_id-only rows are included', async () => {
+    const ctx = makeCtx(mockFetch([
+      { url: /user_configs[^_]/, body: [anonRow] },
+      { url: /user_proton_configs/, body: [] },
+      { url: /author_avatars/, body: [] },
+      { url: /admins/, body: [] },
+    ]));
+    const rows = await ctx.__fetchAllUsers(session);
+    expect(rows).toHaveLength(1);
+    expect(rows[0].client_id).toBe('anon-client');
+    expect(rows[0].proton_pulse_user_id).toBeNull();
+  });
+
+  test('enriches display_name from author_avatars', async () => {
+    const ctx = makeCtx(mockFetch([
+      { url: /user_configs[^_]/, body: [configRow] },
+      { url: /user_proton_configs/, body: [] },
+      { url: /author_avatars/, body: [{ proton_pulse_user_id: ADMIN_USER_ID, display_name: 'ProfessorKaos64' }] },
+      { url: /admins/, body: [] },
+    ]));
+    const rows = await ctx.__fetchAllUsers(session);
+    expect(rows[0].display_name).toBe('ProfessorKaos64');
+  });
+
+  test('falls back to admins table for display name when not in author_avatars', async () => {
+    const ctx = makeCtx(mockFetch([
+      { url: /user_configs[^_]/, body: [configRow] },
+      { url: /user_proton_configs/, body: [] },
+      { url: /author_avatars/, body: [] },
+      { url: /admins/, body: [{ proton_pulse_user_id: ADMIN_USER_ID, steam_username: 'ProfessorKaos64' }] },
+    ]));
+    const rows = await ctx.__fetchAllUsers(session);
+    expect(rows[0].display_name).toBe('ProfessorKaos64');
+  });
+
+  test('search filters by display_name', async () => {
+    const ctx = makeCtx(mockFetch([
+      { url: /user_configs[^_]/, body: [configRow] },
+      { url: /user_proton_configs/, body: [] },
+      { url: /author_avatars/, body: [{ proton_pulse_user_id: ADMIN_USER_ID, display_name: 'ProfessorKaos64' }] },
+      { url: /admins/, body: [] },
+    ]));
+    const rows = await ctx.__fetchAllUsers(session, { search: 'professor' });
+    expect(rows).toHaveLength(1);
+    const none = await ctx.__fetchAllUsers(session, { search: 'zzznomatch' });
+    expect(none).toHaveLength(0);
+  });
+
+  test('search filters by client_id', async () => {
+    const ctx = makeCtx(mockFetch([
+      { url: /user_configs[^_]/, body: [anonRow] },
+      { url: /user_proton_configs/, body: [] },
+      { url: /author_avatars/, body: [] },
+      { url: /admins/, body: [] },
+    ]));
+    const rows = await ctx.__fetchAllUsers(session, { search: 'anon-client' });
+    expect(rows).toHaveLength(1);
+  });
+
+  test('throws when user_configs fetch fails', async () => {
+    const ctx = makeCtx(mockFetch([
+      { url: /user_configs[^_]/, status: 500, body: [] },
+      { url: /user_proton_configs/, body: [] },
+    ]));
+    await expect(ctx.__fetchAllUsers(session)).rejects.toThrow('Fetch user_configs failed');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// renderUsers
+// ---------------------------------------------------------------------------
+
+describe('renderUsers', () => {
+  function makeDocCtx() {
+    const ctx = makeCtx(okFetch());
+    const els = {};
+    ctx.document.getElementById = jest.fn((id) => {
+      if (!els[id]) els[id] = makeEl();
+      return els[id];
+    });
+    return { ctx, els };
+  }
+
+  test('shows empty state when rows is empty', () => {
+    const { ctx, els } = makeDocCtx();
+    ctx.__renderUsers([]);
+    expect(els['users-empty'].hidden).toBe(false);
+    expect(els['users-table'].hidden).toBe(true);
+  });
+
+  test('populates tbody with user data', () => {
+    const { ctx, els } = makeDocCtx();
+    ctx.__renderUsers([{
+      proton_pulse_user_id: ADMIN_USER_ID,
+      client_id: 'cid-1',
+      display_name: 'ProfessorKaos64',
+      report_count: 3,
+      last_active: '2026-06-05T00:00:00Z',
+    }]);
+    expect(els['users-table'].hidden).toBe(false);
+    expect(els['users-tbody'].innerHTML).toContain('ProfessorKaos64');
+    expect(els['users-tbody'].innerHTML).toContain('3');
+    expect(els['users-tbody'].innerHTML).toContain('ban-user');
+  });
+
+  test('shows dash when proton_pulse_user_id is null', () => {
+    const { ctx, els } = makeDocCtx();
+    ctx.__renderUsers([{
+      proton_pulse_user_id: null,
+      client_id: 'anon-client',
+      display_name: null,
+      report_count: 1,
+      last_active: '2026-06-01T00:00:00Z',
+    }]);
+    expect(els['users-tbody'].innerHTML).toContain('(anonymous)');
+    expect(els['users-tbody'].innerHTML).toContain('anon-client');
+  });
+
+  test('escapes display_name to prevent XSS', () => {
+    const { ctx, els } = makeDocCtx();
+    ctx.__renderUsers([{
+      proton_pulse_user_id: ADMIN_USER_ID,
+      client_id: null,
+      display_name: '<img src=x onerror=alert(1)>',
+      report_count: 0,
+      last_active: null,
+    }]);
+    expect(els['users-tbody'].innerHTML).not.toContain('<img');
+    expect(els['users-tbody'].innerHTML).toContain('&lt;img');
+  });
+
+  test('hides error element on successful render', () => {
+    const { ctx, els } = makeDocCtx();
+    ctx.__renderUsers([]);
+    expect(els['users-error'].hidden).toBe(true);
   });
 });
