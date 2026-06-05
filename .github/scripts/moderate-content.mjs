@@ -75,28 +75,40 @@ async function buildWordlistFilter() {
 
 const OPENAI_MOD_URL = 'https://api.openai.com/v1/moderations';
 
-async function moderateWithOpenAI(text) {
-  const res = await fetch(OPENAI_MOD_URL, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${OPENAI_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ input: text }),
-  });
+async function moderateWithOpenAI(text, retries = 3) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    const res = await fetch(OPENAI_MOD_URL, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${OPENAI_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ input: text }),
+    });
 
-  if (!res.ok) throw new Error(`OpenAI moderation failed: ${res.status} ${await res.text()}`);
+    if (res.status === 429) {
+      // Respect Retry-After if present, otherwise exponential backoff.
+      const retryAfter = parseInt(res.headers.get('retry-after') ?? '0', 10);
+      const wait = retryAfter > 0 ? retryAfter * 1000 : Math.min(2 ** attempt * 2000, 30000);
+      console.warn(`OpenAI 429 rate limit (attempt ${attempt}/${retries}), waiting ${wait}ms...`);
+      if (attempt === retries) throw new Error(`OpenAI moderation rate-limited after ${retries} attempts`);
+      await new Promise(r => setTimeout(r, wait));
+      continue;
+    }
 
-  const data = await res.json();
-  const result = data.results?.[0];
-  if (!result) throw new Error('Unexpected OpenAI moderation response shape');
+    if (!res.ok) throw new Error(`OpenAI moderation failed: ${res.status} ${await res.text()}`);
 
-  return {
-    flagged: result.flagged,
-    categories: Object.entries(result.categories ?? {})
-      .filter(([, v]) => v)
-      .map(([k]) => k),
-  };
+    const data = await res.json();
+    const result = data.results?.[0];
+    if (!result) throw new Error('Unexpected OpenAI moderation response shape');
+
+    return {
+      flagged: result.flagged,
+      categories: Object.entries(result.categories ?? {})
+        .filter(([, v]) => v)
+        .map(([k]) => k),
+    };
+  }
 }
 
 // ---------------------------------------------------------------------------
