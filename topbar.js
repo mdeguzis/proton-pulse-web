@@ -642,6 +642,32 @@
 
   // ---- 6. Auth indicator: swap signed-out link <-> signed-in chip -----
 
+  async function checkIsAdmin(session) {
+    if (!session || !session.access_token) return false;
+    // SUPABASE_URL and SUPABASE_ANON_KEY are declared in supabase-client.js
+    // which loads before topbar.js on every page.
+    var sbUrl = (typeof SUPABASE_URL !== 'undefined') ? SUPABASE_URL : '';
+    var sbKey = (typeof SUPABASE_ANON_KEY !== 'undefined') ? SUPABASE_ANON_KEY : '';
+    if (!sbUrl) return false;
+    try {
+      const res = await fetch(
+        sbUrl + '/rest/v1/admins?select=proton_pulse_user_id&limit=1',
+        {
+          headers: {
+            apikey: sbKey,
+            Authorization: 'Bearer ' + session.access_token,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      if (!res.ok) return false;
+      const rows = await res.json();
+      return Array.isArray(rows) && rows.length > 0;
+    } catch (_) {
+      return false;
+    }
+  }
+
   function wireAuthIndicator() {
     const signedOut = document.getElementById('auth-signedout');
     const signedIn  = document.getElementById('auth-signedin');
@@ -658,9 +684,27 @@
         if (avatarEl)  avatarEl.alt = (user.user_metadata && user.user_metadata.name) || user.email || '';
         const rawName = (user.user_metadata && user.user_metadata.name) || user.email || '';
         if (nameEl)    nameEl.textContent = rawName.length > 10 ? rawName.slice(0, 10) + '\u2026' : rawName;
+
+        // Show admin nav link if the signed-in user is an admin.
+        checkIsAdmin(state).then(function (admin) {
+          var existing = document.getElementById('topbar-admin-link');
+          if (admin && !existing) {
+            var link = document.createElement('a');
+            link.id = 'topbar-admin-link';
+            link.href = 'admin.html';
+            link.className = 'topnav-link';
+            link.textContent = 'Admin';
+            var nav = document.getElementById('primary-nav');
+            if (nav) nav.appendChild(link);
+          } else if (!admin && existing) {
+            existing.remove();
+          }
+        });
       } else {
         if (signedOut) signedOut.hidden = false;
         if (signedIn)  signedIn.hidden  = true;
+        var adminLink = document.getElementById('topbar-admin-link');
+        if (adminLink) adminLink.remove();
       }
     });
   }
