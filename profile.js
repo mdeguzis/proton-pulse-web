@@ -422,7 +422,7 @@ async function fetchMyUserConfigs(protonPulseUserId, clientId, session) {
   if (!filters.length) return [];
   const url = `${SUPABASE_URL}/rest/v1/user_configs`
     + `?or=(${filters.join(',')})`
-    + `&select=id,app_id,title,proton_version,rating,created_at,updated_at`
+    + `&select=id,app_id,title,proton_version,rating,created_at,updated_at,is_flagged,is_hidden,flagged_reason`
     + `&order=created_at.desc`;
   const r = await fetch(url, { headers: supabaseHeaders(session) });
   if (!r.ok) throw new Error(`Lookup failed: HTTP ${r.status}`);
@@ -778,6 +778,7 @@ function getMyReportBadges(row) {
   if (row.cloud) badges.push({ label: 'Cloud', tone: 'cloud' });
   if (row.published) badges.push({ label: 'Published', tone: 'published' });
   if (row.unpublished) badges.push({ label: 'Unpublished', tone: 'unpublished' });
+  if (row.flagged) badges.push({ label: 'Flagged', tone: 'flagged', title: row.flagged_reason || 'Flagged for review' });
   return badges;
 }
 
@@ -799,6 +800,8 @@ function mergeMyReportRows(publishedRows, cloudRows) {
         cloud: false,
         published: false,
         unpublished: false,
+        flagged: false,
+        flagged_reason: null,
       });
     }
     return merged.get(appId);
@@ -809,6 +812,8 @@ function mergeMyReportRows(publishedRows, cloudRows) {
     mergedRow.title = row.title || mergedRow.title;
     mergedRow.rating = row.rating || mergedRow.rating;
     mergedRow.published = true;
+    mergedRow.flagged = mergedRow.flagged || Boolean(row.is_flagged);
+    mergedRow.flagged_reason = mergedRow.flagged_reason || row.flagged_reason || null;
     mergedRow.published_at = row.created_at || mergedRow.published_at;
     mergedRow.published_id = mergedRow.published_id || row.id || null;
     mergedRow.created_at = mergedRow.created_at || row.created_at || '';
@@ -1763,7 +1768,7 @@ const MOCK_REPORTS = [
       const viewHref = reportAnchor || appLink;
       const name = row.title || `App ${row.app_id}`;
       const badges = getMyReportBadges(row).map((badge) => (
-        `<span class="profile-configs-badge profile-configs-badge--${escapeHtml(badge.tone)}">${escapeHtml(badge.label)}</span>`
+        `<span class="profile-configs-badge profile-configs-badge--${escapeHtml(badge.tone)}"${badge.title ? ` title="${escapeHtml(badge.title)}"` : ''}>${escapeHtml(badge.label)}</span>`
       )).join('');
       const actions = [
         viewHref

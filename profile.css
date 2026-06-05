@@ -593,6 +593,12 @@
   border-color: rgba(212,168,67,0.4);
   background: rgba(212,168,67,0.1);
 }
+.profile-configs-badge--flagged {
+  color: #e88a8a;
+  border-color: rgba(220,80,80,0.4);
+  background: rgba(220,80,80,0.1);
+  cursor: help;
+}
 .profile-configs-actions {
   display: flex;
   gap: 5px;
