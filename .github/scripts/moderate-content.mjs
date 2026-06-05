@@ -39,16 +39,48 @@ const SUPABASE_HEADERS = {
 };
 
 // ---------------------------------------------------------------------------
+// Logging helpers
+// ---------------------------------------------------------------------------
+
+function log(msg, data) {
+  if (data !== undefined) {
+    console.log(`[${ts()}] ${msg}`, JSON.stringify(data, null, 2));
+  } else {
+    console.log(`[${ts()}] ${msg}`);
+  }
+}
+
+function warn(msg, data) {
+  if (data !== undefined) {
+    console.warn(`[${ts()}] WARN ${msg}`, JSON.stringify(data, null, 2));
+  } else {
+    console.warn(`[${ts()}] WARN ${msg}`);
+  }
+}
+
+function err(msg, data) {
+  if (data !== undefined) {
+    console.error(`[${ts()}] ERROR ${msg}`, JSON.stringify(data, null, 2));
+  } else {
+    console.error(`[${ts()}] ERROR ${msg}`);
+  }
+}
+
+function ts() {
+  return new Date().toISOString();
+}
+
+// ---------------------------------------------------------------------------
 // Layer 1: naughty-words wordlist (multilingual, offline)
 // ---------------------------------------------------------------------------
 
 let wordlistFilter = null;
 
 async function buildWordlistFilter() {
+  log('Loading naughty-words wordlist...');
   const mod = await import('naughty-words');
   const naughtyWords = mod.default ?? mod;
 
-  // Flatten all language arrays into a single Set of lowercase terms.
   const terms = new Set();
   for (const lang of Object.values(naughtyWords)) {
     if (Array.isArray(lang)) {
@@ -56,11 +88,12 @@ async function buildWordlistFilter() {
     }
   }
 
+  log(`Wordlist ready.`, { termCount: terms.size });
+
   return {
     check(text) {
       const lower = text.toLowerCase();
       for (const term of terms) {
-        // Whole-word match to reduce false positives on substrings.
         const re = new RegExp(`(?<![a-z0-9])${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![a-z0-9])`, 'i');
         if (re.test(lower)) return { flagged: true, term };
       }
@@ -75,8 +108,10 @@ async function buildWordlistFilter() {
 
 const OPENAI_MOD_URL = 'https://api.openai.com/v1/moderations';
 
-async function moderateWithOpenAI(text, retries = 3) {
+async function moderateWithOpenAI(text, rowId, retries = 3) {
   for (let attempt = 1; attempt <= retries; attempt++) {
+    log(`OpenAI request`, { rowId, attempt, url: OPENAI_MOD_URL, inputLength: text.length });
+
     const res = await fetch(OPENAI_MOD_URL, {
       method: 'POST',
       headers: {
@@ -86,28 +121,38 @@ async function moderateWithOpenAI(text, retries = 3) {
       body: JSON.stringify({ input: text }),
     });
 
+    log(`OpenAI response`, { rowId, attempt, status: res.status, headers: Object.fromEntries(res.headers) });
+
     if (res.status === 429) {
-      // Respect Retry-After if present, otherwise exponential backoff.
       const retryAfter = parseInt(res.headers.get('retry-after') ?? '0', 10);
       const wait = retryAfter > 0 ? retryAfter * 1000 : Math.min(2 ** attempt * 2000, 30000);
-      console.warn(`OpenAI 429 rate limit (attempt ${attempt}/${retries}), waiting ${wait}ms...`);
+      warn(`Rate limited by OpenAI`, { rowId, attempt, retries, waitMs: wait });
       if (attempt === retries) throw new Error(`OpenAI moderation rate-limited after ${retries} attempts`);
       await new Promise(r => setTimeout(r, wait));
       continue;
     }
 
-    if (!res.ok) throw new Error(`OpenAI moderation failed: ${res.status} ${await res.text()}`);
+    if (!res.ok) {
+      const body = await res.text();
+      throw new Error(`OpenAI moderation failed: ${res.status} ${body}`);
+    }
 
     const data = await res.json();
     const result = data.results?.[0];
     if (!result) throw new Error('Unexpected OpenAI moderation response shape');
 
-    return {
+    const flaggedCategories = Object.entries(result.categories ?? {})
+      .filter(([, v]) => v)
+      .map(([k]) => k);
+
+    log(`OpenAI result`, {
+      rowId,
       flagged: result.flagged,
-      categories: Object.entries(result.categories ?? {})
-        .filter(([, v]) => v)
-        .map(([k]) => k),
-    };
+      categories: flaggedCategories,
+      scores: result.category_scores,
+    });
+
+    return { flagged: result.flagged, categories: flaggedCategories };
   }
 }
 
@@ -117,32 +162,48 @@ async function moderateWithOpenAI(text, retries = 3) {
 
 async function fetchRecentRows() {
   const since = new Date(Date.now() - LOOKBACK_H * 3600 * 1000).toISOString();
-  let url = `${SUPABASE_URL}/rest/v1/user_configs`
+  const url = `${SUPABASE_URL}/rest/v1/user_configs`
     + `?select=id,notes,title,launch_options,form_responses,proton_pulse_user_id,client_id`
     + `&or=(created_at.gte.${since},updated_at.gte.${since})`
     + `&is_hidden=eq.false`
-    + `&order=id.asc`;
+    + `&order=id.asc`
+    + (APP_ID ? `&app_id=eq.${APP_ID}` : '');
 
-  if (APP_ID) url += `&app_id=eq.${APP_ID}`;
+  log(`Supabase fetch request`, { url: url.replace(SUPABASE_URL, '<SUPABASE_URL>'), since });
 
   const res = await fetch(url, { headers: SUPABASE_HEADERS });
+  log(`Supabase fetch response`, { status: res.status });
+
   if (!res.ok) throw new Error(`Supabase fetch failed: ${res.status} ${await res.text()}`);
-  return res.json();
+
+  const rows = await res.json();
+  log(`Supabase rows returned`, { count: rows.length, ids: rows.map(r => r.id) });
+  return rows;
 }
 
 async function flagRow(id, reason) {
-  if (DRY_RUN) {
-    console.log(`[DRY RUN] would flag row ${id}: ${reason}`);
-    return;
-  }
-  const url = `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${id}`;
-  const body = JSON.stringify({
+  const payload = {
     is_flagged: true,
     is_hidden: true,
     flagged_reason: reason,
     flagged_at: new Date().toISOString(),
+  };
+
+  if (DRY_RUN) {
+    log(`[DRY RUN] would PATCH row`, { id, payload });
+    return;
+  }
+
+  const url = `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${id}`;
+  log(`Supabase PATCH request`, { id, url: url.replace(SUPABASE_URL, '<SUPABASE_URL>'), payload });
+
+  const res = await fetch(url, {
+    method: 'PATCH',
+    headers: SUPABASE_HEADERS,
+    body: JSON.stringify(payload),
   });
-  const res = await fetch(url, { method: 'PATCH', headers: SUPABASE_HEADERS, body });
+
+  log(`Supabase PATCH response`, { id, status: res.status });
   if (!res.ok) throw new Error(`Supabase PATCH failed for id=${id}: ${res.status} ${await res.text()}`);
 }
 
@@ -171,13 +232,16 @@ function extractTextFields(row) {
 // ---------------------------------------------------------------------------
 
 async function main() {
-  console.log(`Moderation scan started. lookback=${LOOKBACK_H}h app_id=${APP_ID || 'all'} dry_run=${DRY_RUN} openai=${!!OPENAI_KEY}`);
+  log(`Moderation scan starting`, {
+    lookbackHours: LOOKBACK_H,
+    appId: APP_ID || 'all',
+    dryRun: DRY_RUN,
+    openai: !!OPENAI_KEY,
+  });
 
   wordlistFilter = await buildWordlistFilter();
-  console.log('Wordlist filter ready.');
 
   const rows = await fetchRecentRows();
-  console.log(`Fetched ${rows.length} rows to scan.`);
 
   let scanned = 0;
   let flaggedCount = 0;
@@ -185,14 +249,21 @@ async function main() {
 
   for (const row of rows) {
     const fields = extractTextFields(row);
-    if (fields.length === 0) { scanned++; continue; }
+    log(`Scanning row`, { id: row.id, fields: fields.map(f => ({ field: f.field, length: f.text.length })) });
+
+    if (fields.length === 0) {
+      log(`Row ${row.id}: no text fields, skipping.`);
+      scanned++;
+      continue;
+    }
 
     let hitReason = null;
     let hitLayer = null;
 
-    // Layer 1: wordlist (fast, offline, no rate limits)
+    // Layer 1: wordlist
     for (const { field, text } of fields) {
       const hit = wordlistFilter.check(text);
+      log(`Wordlist check`, { id: row.id, field, flagged: hit.flagged, ...(hit.term ? { term: hit.term } : {}) });
       if (hit.flagged) {
         hitReason = `wordlist:${hit.term} in ${field}`;
         hitLayer = 'wordlist';
@@ -200,34 +271,34 @@ async function main() {
       }
     }
 
-    // Layer 2: OpenAI semantic check (only if wordlist passed and key is available)
+    // Layer 2: OpenAI (only if wordlist passed and key is set)
     if (!hitReason && OPENAI_KEY) {
       const combined = fields.map(f => f.text).join('\n');
       try {
-        const result = await moderateWithOpenAI(combined);
+        const result = await moderateWithOpenAI(combined, row.id);
         if (result.flagged) {
           hitReason = `openai:${result.categories.join(',')}`;
           hitLayer = 'openai';
         }
-      } catch (err) {
-        console.error(`ERROR calling OpenAI for row ${row.id}: ${err.message}`);
+      } catch (e) {
+        err(`OpenAI call failed for row ${row.id}`, { message: e.message });
       }
-      // Respect OpenAI free-tier: ~60 req/min
       await new Promise(r => setTimeout(r, 1050));
     }
 
     scanned++;
 
     if (hitReason) {
-      console.log(`FLAGGED row ${row.id} via ${hitLayer}: ${hitReason}`);
+      log(`FLAGGED row ${row.id}`, { layer: hitLayer, reason: hitReason });
       await flagRow(row.id, hitReason);
       flaggedIds.push(row.id);
       flaggedCount++;
+    } else {
+      log(`Row ${row.id}: clean.`);
     }
   }
 
-  console.log(`\nScan complete. scanned=${scanned} flagged=${flaggedCount}`);
-  if (flaggedIds.length) console.log(`Flagged IDs: ${flaggedIds.join(', ')}`);
+  log(`Scan complete`, { scanned, flagged: flaggedCount, flaggedIds });
 
   const summary = process.env.GITHUB_STEP_SUMMARY;
   if (summary) {
@@ -248,4 +319,4 @@ async function main() {
   }
 }
 
-main().catch(err => { console.error(err); process.exit(1); });
+main().catch(e => { err('Fatal error', { message: e.message, stack: e.stack }); process.exit(1); });
