@@ -6,7 +6,7 @@
   },
   "jest": {
     "testEnvironment": "jest-environment-jsdom",
-    "testMatch": ["**/tests/*.test.js"],
+    "testMatch": ["**/tests/*.test.js"]
   },
   "dependencies": {
     "naughty-words": "^1.2.0"
