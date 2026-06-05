@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — Proton Pulse</title>
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="main-content">
+  <div class="main-inner">
+
+    <div class="page-header">
+      <div class="eyebrow">Administration</div>
+      <div class="page-title">Admin Panel</div>
+    </div>
+
+    <div id="admin-not-authorized" hidden>
+      <p class="admin-error">You are not authorized to view this page.</p>
+    </div>
+
+    <div id="admin-signed-out" hidden>
+      <p class="admin-error">Sign in with Steam to access the admin panel.</p>
+    </div>
+
+    <div id="admin-panel" hidden>
+
+      <div class="admin-tabs" role="tablist">
+        <button class="admin-tab admin-tab--active" data-tab="flagged" role="tab">Flagged Reports</button>
+        <button class="admin-tab" data-tab="banned" role="tab">Banned Users</button>
+        <button class="admin-tab" data-tab="admins" role="tab">Admins</button>
+      </div>
+
+      <!-- Flagged Reports -->
+      <section id="tab-flagged" class="admin-section">
+        <div class="admin-filters">
+          <input type="text" id="flagged-search" class="admin-input" placeholder="Search game or user...">
+          <select id="flagged-type" class="admin-select">
+            <option value="">All types</option>
+            <option value="wordlist">Wordlist</option>
+            <option value="openai">OpenAI</option>
+          </select>
+          <label class="admin-label">From <input type="date" id="flagged-date-from" class="admin-input admin-input--date"></label>
+          <label class="admin-label">To <input type="date" id="flagged-date-to" class="admin-input admin-input--date"></label>
+          <button class="admin-btn" id="flagged-refresh-btn">Refresh</button>
+        </div>
+
+        <div class="admin-sort-row">
+          <span class="admin-sort-label">Sort by:</span>
+          <button class="admin-sort-btn admin-sort-btn--active" data-sort="flagged_at" data-dir="desc">Date flagged</button>
+          <button class="admin-sort-btn" data-sort="title" data-dir="asc">Game</button>
+          <button class="admin-sort-btn" data-sort="flagged_reason" data-dir="asc">Reason</button>
+        </div>
+
+        <div id="flagged-loading" class="admin-loading">Loading...</div>
+        <div id="flagged-empty" class="admin-empty" hidden>No flagged reports found.</div>
+        <div id="flagged-error" class="admin-error" hidden></div>
+
+        <table class="admin-table" id="flagged-table" hidden>
+          <thead>
+            <tr>
+              <th>Game</th>
+              <th>User</th>
+              <th>Reason</th>
+              <th>Flagged</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="flagged-tbody"></tbody>
+        </table>
+      </section>
+
+      <!-- Banned Users -->
+      <section id="tab-banned" class="admin-section" hidden>
+        <div class="admin-filters">
+          <input type="text" id="banned-search" class="admin-input" placeholder="Search username...">
+          <button class="admin-btn" id="banned-refresh-btn">Refresh</button>
+        </div>
+
+        <div id="banned-loading" class="admin-loading">Loading...</div>
+        <div id="banned-empty" class="admin-empty" hidden>No banned users.</div>
+        <div id="banned-error" class="admin-error" hidden></div>
+
+        <table class="admin-table" id="banned-table" hidden>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Reason</th>
+              <th>Banned</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="banned-tbody"></tbody>
+        </table>
+      </section>
+
+      <!-- Admins -->
+      <section id="tab-admins" class="admin-section" hidden>
+        <div id="admins-loading" class="admin-loading">Loading...</div>
+        <div id="admins-empty" class="admin-empty" hidden>No admins found.</div>
+
+        <table class="admin-table" id="admins-table" hidden>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Added</th>
+            </tr>
+          </thead>
+          <tbody id="admins-tbody"></tbody>
+        </table>
+      </section>
+
+    </div><!-- /admin-panel -->
+
+    <!-- Ban reason modal -->
+    <div id="ban-modal" class="admin-modal-backdrop" hidden>
+      <div class="admin-modal">
+        <div class="admin-modal-title">Ban User</div>
+        <p id="ban-modal-user" class="admin-modal-sub"></p>
+        <label class="admin-label">Reason
+          <input type="text" id="ban-reason-input" class="admin-input" placeholder="e.g. repeated abuse, spam">
+        </label>
+        <div class="admin-modal-actions">
+          <button class="admin-btn admin-btn--danger" id="ban-confirm-btn">Ban</button>
+          <button class="admin-btn admin-btn--ghost" id="ban-cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-client.js"></script>
+<script src="topbar.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
