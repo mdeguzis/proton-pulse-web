@@ -159,22 +159,36 @@ function switchTab(tabName) {
   });
 }
 
+// Maps each tab to its data loader so tab clicks and ?tab= restore share one path.
+const TAB_LOADERS = {
+  flagged: loadFlagged,
+  banned: loadBanned,
+  users: loadUsers,
+  admins: loadAdmins,
+  phrases: loadPhrases,
+};
+
+// Activate a tab, load its data, and reflect it in the URL as ?tab=<name> so a
+// refresh restores the same tab. Unknown names fall back to 'flagged'.
+function activateTab(tabName, { updateUrl = true } = {}) {
+  if (!TAB_LOADERS[tabName]) tabName = 'flagged';
+  switchTab(tabName);
+  if (updateUrl) {
+    const url = new URL(window.location.href);
+    url.searchParams.set('tab', tabName);
+    history.replaceState(null, '', url);
+  }
+  TAB_LOADERS[tabName]();
+}
+
 // ---------------------------------------------------------------------------
 // Event delegation
 // ---------------------------------------------------------------------------
 
 function wireEvents() {
-  // Tab buttons
+  // Tab buttons -- activateTab updates ?tab= so the choice survives a refresh
   document.querySelectorAll('.admin-tab').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tab = btn.dataset.tab;
-      switchTab(tab);
-      if (tab === 'flagged') loadFlagged();
-      else if (tab === 'banned') loadBanned();
-      else if (tab === 'users') loadUsers();
-      else if (tab === 'admins') loadAdmins();
-      else if (tab === 'phrases') loadPhrases();
-    });
+    btn.addEventListener('click', () => activateTab(btn.dataset.tab));
   });
 
   // Sort buttons
@@ -472,7 +486,9 @@ async function init() {
 
   panel.hidden = false;
   wireEvents();
-  loadFlagged();
+  // Restore the tab from ?tab= (written by activateTab) so a refresh keeps your place.
+  const requestedTab = new URLSearchParams(window.location.search).get('tab');
+  activateTab(TAB_LOADERS[requestedTab] ? requestedTab : 'flagged', { updateUrl: false });
 }
 
 document.addEventListener('DOMContentLoaded', init);

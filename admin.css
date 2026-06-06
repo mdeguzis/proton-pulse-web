@@ -292,7 +292,8 @@
   font-size: 0.7rem;
   color: var(--muted);
   word-break: break-all;
-  max-width: 180px;
+  /* 38ch fits a 36-char UUID on one line; longer 64-char hash IDs still wrap */
+  max-width: 38ch;
   display: inline-block;
 }
 
