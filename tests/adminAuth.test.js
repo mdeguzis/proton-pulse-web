@@ -103,6 +103,11 @@ function makeCtx(fetchImpl) {
     ctx.__renderBanned        = renderBanned;
     ctx.__renderAdmins        = renderAdmins;
     ctx.__renderUsers         = renderUsers;
+    ctx.__fetchBannedPhrases  = fetchBannedPhrases;
+    ctx.__addBannedPhrase     = addBannedPhrase;
+    ctx.__removeBannedPhrase  = removeBannedPhrase;
+    ctx.__toggleBannedPhrase  = toggleBannedPhrase;
+    ctx.__renderPhrases       = renderPhrases;
   `;
   vm.createContext(ctx);
   vm.runInContext(shim, ctx);
@@ -1022,5 +1027,181 @@ describe('renderUsers', () => {
     const { ctx, els } = makeDocCtx();
     ctx.__renderUsers([]);
     expect(els['users-error'].hidden).toBe(true);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// fetchBannedPhrases
+// ---------------------------------------------------------------------------
+
+describe('fetchBannedPhrases', () => {
+  const session = { access_token: 'tok', user: { id: ADMIN_USER_ID } };
+
+  test('GETs /banned_phrases ordered by created_at desc', async () => {
+    const fetch = mockFetch([{ url: /banned_phrases/, body: [] }]);
+    const ctx = makeCtx(fetch);
+    await ctx.__fetchBannedPhrases(session);
+    expect(fetch.mock.calls[0][0]).toContain('/banned_phrases');
+    expect(fetch.mock.calls[0][0]).toContain('order=created_at.desc');
+  });
+
+  test('returns rows on success', async () => {
+    const rows = [{ id: 'abc', pattern: 'spam', is_regex: false, enabled: true }];
+    const ctx = makeCtx(mockFetch([{ url: /banned_phrases/, body: rows }]));
+    const result = await ctx.__fetchBannedPhrases(session);
+    expect(result).toEqual(rows);
+  });
+
+  test('throws on HTTP error', async () => {
+    const ctx = makeCtx(failFetch(403));
+    await expect(ctx.__fetchBannedPhrases(session)).rejects.toThrow('403');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// addBannedPhrase
+// ---------------------------------------------------------------------------
+
+describe('addBannedPhrase', () => {
+  const session = { access_token: 'tok', user: { id: ADMIN_USER_ID } };
+
+  test('POSTs literal phrase with correct payload', async () => {
+    const fetch = okFetch();
+    const ctx = makeCtx(fetch);
+    await ctx.__addBannedPhrase(session, { pattern: 'badword', is_regex: false, description: 'test' });
+    const body = JSON.parse(fetch.mock.calls[0][1].body);
+    expect(body.pattern).toBe('badword');
+    expect(body.is_regex).toBe(false);
+    expect(body.description).toBe('test');
+    expect(body.created_by).toBe(ADMIN_USER_ID);
+  });
+
+  test('POSTs regex phrase with is_regex true', async () => {
+    const fetch = okFetch();
+    const ctx = makeCtx(fetch);
+    await ctx.__addBannedPhrase(session, { pattern: '\\bspam\\b', is_regex: true, description: null });
+    const body = JSON.parse(fetch.mock.calls[0][1].body);
+    expect(body.is_regex).toBe(true);
+    expect(body.description).toBeNull();
+  });
+
+  test('uses POST method', async () => {
+    const fetch = okFetch();
+    const ctx = makeCtx(fetch);
+    await ctx.__addBannedPhrase(session, { pattern: 'x', is_regex: false, description: null });
+    expect(fetch.mock.calls[0][1].method).toBe('POST');
+  });
+
+  test('throws on HTTP error', async () => {
+    const ctx = makeCtx(failFetch(403));
+    await expect(ctx.__addBannedPhrase(session, { pattern: 'x', is_regex: false, description: null })).rejects.toThrow('403');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// removeBannedPhrase
+// ---------------------------------------------------------------------------
+
+describe('removeBannedPhrase', () => {
+  const session = { access_token: 'tok', user: { id: ADMIN_USER_ID } };
+
+  test('DELETEs the phrase by id', async () => {
+    const fetch = okFetch();
+    const ctx = makeCtx(fetch);
+    await ctx.__removeBannedPhrase(session, 'phrase-uuid-1');
+    expect(fetch.mock.calls[0][0]).toContain('id=eq.phrase-uuid-1');
+    expect(fetch.mock.calls[0][1].method).toBe('DELETE');
+  });
+
+  test('throws on HTTP error', async () => {
+    const ctx = makeCtx(failFetch(403));
+    await expect(ctx.__removeBannedPhrase(session, 'x')).rejects.toThrow('403');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// toggleBannedPhrase
+// ---------------------------------------------------------------------------
+
+describe('toggleBannedPhrase', () => {
+  const session = { access_token: 'tok', user: { id: ADMIN_USER_ID } };
+
+  test('PATCHes enabled=true to enable a phrase', async () => {
+    const fetch = okFetch();
+    const ctx = makeCtx(fetch);
+    await ctx.__toggleBannedPhrase(session, 'phrase-id', true);
+    expect(fetch.mock.calls[0][1].method).toBe('PATCH');
+    expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual({ enabled: true });
+  });
+
+  test('PATCHes enabled=false to disable a phrase', async () => {
+    const fetch = okFetch();
+    const ctx = makeCtx(fetch);
+    await ctx.__toggleBannedPhrase(session, 'phrase-id', false);
+    expect(JSON.parse(fetch.mock.calls[0][1].body)).toEqual({ enabled: false });
+  });
+
+  test('includes phrase id in URL filter', async () => {
+    const fetch = okFetch();
+    const ctx = makeCtx(fetch);
+    await ctx.__toggleBannedPhrase(session, 'my-phrase-id', true);
+    expect(fetch.mock.calls[0][0]).toContain('id=eq.my-phrase-id');
+  });
+
+  test('throws on HTTP error', async () => {
+    const ctx = makeCtx(failFetch(403));
+    await expect(ctx.__toggleBannedPhrase(session, 'x', true)).rejects.toThrow('403');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// renderPhrases
+// ---------------------------------------------------------------------------
+
+describe('renderPhrases', () => {
+  function makeDocCtx() {
+    const ctx = makeCtx(okFetch());
+    const els = {};
+    ctx.document.getElementById = jest.fn((id) => {
+      if (!els[id]) els[id] = makeEl();
+      return els[id];
+    });
+    return { ctx, els };
+  }
+
+  test('shows empty state when rows is empty', () => {
+    const { ctx, els } = makeDocCtx();
+    ctx.__renderPhrases([]);
+    expect(els['phrases-empty'].hidden).toBe(false);
+    expect(els['phrases-table'].hidden).toBe(true);
+  });
+
+  test('renders a literal phrase with Literal badge', () => {
+    const { ctx, els } = makeDocCtx();
+    ctx.__renderPhrases([{ id: 'a1', pattern: 'badword', is_regex: false, description: 'test', enabled: true, created_at: '2026-06-01' }]);
+    expect(els['phrases-table'].hidden).toBe(false);
+    expect(els['phrases-tbody'].innerHTML).toContain('badword');
+    expect(els['phrases-tbody'].innerHTML).toContain('Literal');
+  });
+
+  test('renders a regex phrase with Regex badge', () => {
+    const { ctx, els } = makeDocCtx();
+    ctx.__renderPhrases([{ id: 'a2', pattern: '\\bspam\\b', is_regex: true, description: null, enabled: true, created_at: '2026-06-01' }]);
+    expect(els['phrases-tbody'].innerHTML).toContain('Regex');
+    expect(els['phrases-tbody'].innerHTML).toContain('admin-badge--regex');
+  });
+
+  test('disabled phrase has admin-row--disabled class and Enable button', () => {
+    const { ctx, els } = makeDocCtx();
+    ctx.__renderPhrases([{ id: 'a3', pattern: 'x', is_regex: false, description: null, enabled: false, created_at: '2026-06-01' }]);
+    expect(els['phrases-tbody'].innerHTML).toContain('admin-row--disabled');
+    expect(els['phrases-tbody'].innerHTML).toContain('Enable');
+  });
+
+  test('escapes pattern to prevent XSS', () => {
+    const { ctx, els } = makeDocCtx();
+    ctx.__renderPhrases([{ id: 'a4', pattern: '<script>xss()</script>', is_regex: false, description: null, enabled: true, created_at: null }]);
+    expect(els['phrases-tbody'].innerHTML).not.toContain('<script>');
+    expect(els['phrases-tbody'].innerHTML).toContain('&lt;script&gt;');
   });
 });

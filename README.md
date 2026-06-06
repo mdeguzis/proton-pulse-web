@@ -48,19 +48,7 @@ Restricted to admins (Steam auth required). Provides:
 
 ## Content moderation
 
-User-submitted report text is scanned automatically on two layers:
-
-1. **Wordlist** (`naughty-words`) - offline multilingual filter, runs first on every row
-2. **OpenAI Moderation API** - semantic fallback for anything the wordlist misses (requires `OPENAI_API_KEY` secret; falls back to wordlist-only if absent)
-
-The scan runs every 4 hours via GitHub Actions (`content-moderation.yml`) with a 5-hour lookback window, and does a full 25-hour sweep daily at 02:00 UTC. Flagged reports are hidden from public views automatically. Report authors see a "Flagged" badge on their profile page with a plain-language explanation and a link to the Discord server for disputes.
-
-To trigger a manual scan:
-
-```bash
-gh workflow run content-moderation.yml --repo mdeguzis/proton-pulse-data \
-  -f dry_run=true -f lookback_hours=720
-```
+See [Content Moderation](https://github.com/mdeguzis/decky-proton-pulse/wiki/Content-Moderation) in the wiki.
 
 ## Admin access
 
@@ -118,99 +106,8 @@ detailed report data exists. Add those games to
 
 Go to **Actions -> Update ProtonDB Data -> Run workflow**.
 
-## Supabase backups
-
-This repo includes a helper for creating logical Supabase backups (`roles`,
-`schema`, `data`) using `pg_dump` directly — no Supabase CLI or Docker required.
-
-`pg_dump` is installed automatically by `make setup` (via `pkg` on Termux or
-`apt-get` on Debian/Ubuntu). To install it standalone:
-
-```bash
-make install-pg
-```
-
-Set your database URL in a `.env` file at the repo root:
-
-```bash
-SUPABASE_DB_URL='postgresql://postgres.[ref]:[password]@aws-0-us-east-1.pooler.supabase.com:6543/postgres'
-```
-
-The connection string is in the Supabase dashboard under
-**Settings → Database → Connection string → URI** (use Session mode, port 5432).
-
-Then run:
-
-```bash
-make backup-supabase
-```
-
-Or pass the URL directly:
-
-```bash
-SUPABASE_DB_URL='postgresql://...' bash scripts/backup_supabase.sh
-```
-
-Outputs are written to `data/supabase/<timestamp>/` plus a matching
-`.tar.gz` archive, and are ignored by git. You can override the location or
-name with:
-
-```bash
-SUPABASE_BACKUP_DIR=artifacts/supabase
-SUPABASE_BACKUP_LABEL=nightly
-```
-
-This should also be easy to move into GitHub Actions later by supplying
-`SUPABASE_DB_URL` from repository secrets and uploading the generated archive
-as a workflow artifact.
-
-## Steam catalog coverage
-
-The coverage report can expand to the full Steam game catalog when
-`STEAM_API_KEY` is available. For local runs, place the key in a local `.env`
-file at the repo root:
-
-```env
-STEAM_API_KEY=your_key_here
-```
-
-That file is ignored by git. In GitHub Actions, the workflow writes the secret
-into the same `.env` shape during the build so local and CI behavior stay
-consistent.
-
-The Steam app ID pull currently relies on the vendored
-`vendor/Steam-Games-Scraper` git submodule while that project remains active.
-After cloning this repo, initialize submodules before running local commands:
+## Local development
 
 ```bash
 make setup
 ```
-
-or:
-
-```bash
-git submodule update --init --recursive
-```
-
-The GitHub Actions probe pass is split into resumable cache-backed checkpoints.
-Each chunk saves `.cache/protondb-summary-probe-cache.json` under a fresh cache key
-so an interrupted multi-hour run can resume from the latest completed chunk instead
-of restarting the whole probe sweep.
-
-## Local development setup
-
-Bootstrap the local toolchain with:
-
-```bash
-make setup
-```
-
-That setup flow:
-- initializes git submodules
-- installs `shellcheck` with `sudo apt install -y shellcheck` when missing
-- installs the Python dev environment with `uv`
-
-## Storage strategy
-
-The `gh-pages` branch is an orphan with a single commit. It is force-pushed
-on each run so history does not pile up. Repo size stays close to the current dataset.

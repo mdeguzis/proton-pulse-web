@@ -33,6 +33,7 @@
         <button class="admin-tab" data-tab="banned" role="tab">Banned Users</button>
         <button class="admin-tab" data-tab="users" role="tab">All Users</button>
         <button class="admin-tab" data-tab="admins" role="tab">Admins</button>
+        <button class="admin-tab" data-tab="phrases" role="tab">Banned Phrases</button>
       </div>
 
       <!-- Flagged Reports -->
@@ -151,6 +152,36 @@
             </tr>
           </thead>
           <tbody id="admins-tbody"></tbody>
+        </table>
+      </section>
+
+      <!-- Banned Phrases -->
+      <section id="tab-phrases" class="admin-section" hidden>
+        <div class="admin-filters" id="add-phrase-form">
+          <input type="text" id="new-phrase-pattern" class="admin-input" placeholder="Literal text or regex pattern">
+          <label class="admin-label admin-label--inline">
+            <input type="checkbox" id="new-phrase-is-regex"> Regex
+          </label>
+          <input type="text" id="new-phrase-description" class="admin-input" placeholder="Description (optional)">
+          <button class="admin-btn" id="add-phrase-btn">Add Phrase</button>
+        </div>
+        <div id="add-phrase-status" class="admin-field-hint" style="margin-bottom:8px"></div>
+
+        <div id="phrases-loading" class="admin-loading">Loading...</div>
+        <div id="phrases-empty" class="admin-empty" hidden>No banned phrases.</div>
+        <div id="phrases-error" class="admin-error" hidden></div>
+
+        <table class="admin-table" id="phrases-table" hidden>
+          <thead>
+            <tr>
+              <th>Pattern</th>
+              <th>Type</th>
+              <th>Description</th>
+              <th>Added</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="phrases-tbody"></tbody>
         </table>
       </section>
 
