@@ -857,6 +857,26 @@ function wireEvents() {
     }
   });
 
+  // Regex checkbox: show/hide Validate button
+  document.getElementById('new-phrase-is-regex').addEventListener('change', e => {
+    document.getElementById('validate-regex-btn').hidden = !e.target.checked;
+  });
+
+  // Validate regex button
+  document.getElementById('validate-regex-btn').addEventListener('click', () => {
+    const pattern = document.getElementById('new-phrase-pattern').value.trim();
+    const status  = document.getElementById('add-phrase-status');
+    if (!pattern) { status.textContent = 'Enter a pattern to validate.'; status.style.color = 'var(--red)'; return; }
+    try {
+      new RegExp(pattern);
+      status.textContent = `Valid regex: ${pattern}`;
+      status.style.color = 'var(--green)';
+    } catch (e) {
+      status.textContent = `Invalid regex: ${e.message}`;
+      status.style.color = 'var(--red)';
+    }
+  });
+
   // Add banned phrase
   document.getElementById('add-phrase-btn').addEventListener('click', async () => {
     const pattern     = document.getElementById('new-phrase-pattern').value.trim();
