@@ -96,16 +96,28 @@ describe('computeFreshness', () => {
     expect(f.is_stale).toBe(false);
   });
 
-  test('stale beyond a year', () => {
-    const r = [rpt('gold', 400)];
-    const f = computeFreshness(r, NOW);
-    expect(f.label).toBe('Stale');
-    expect(f.is_stale).toBe(true);
+  test('fresh band (30-90 days)', () => {
+    const f = computeFreshness([rpt('gold', 50)], NOW);
+    expect(f.label).toBe('Fresh');
+    expect(f.is_stale).toBe(false);
   });
 
   test('aging band', () => {
     const f = computeFreshness([rpt('gold', 120)], NOW);
     expect(f.label).toBe('Aging');
+  });
+
+  test('old band (180-365 days)', () => {
+    const f = computeFreshness([rpt('gold', 250)], NOW);
+    expect(f.label).toBe('Old');
+    expect(f.is_stale).toBe(false);
+  });
+
+  test('stale beyond a year', () => {
+    const r = [rpt('gold', 400)];
+    const f = computeFreshness(r, NOW);
+    expect(f.label).toBe('Stale');
+    expect(f.is_stale).toBe(true);
   });
 
   test('no data', () => {
@@ -137,6 +149,17 @@ describe('computeMonthlyReports', () => {
   test('skips reports without timestamps', () => {
     const monthly = computeMonthlyReports([{ rating: 'gold' }]);
     expect(monthly).toEqual([]);
+  });
+
+  test('neutral/unknown rating counts in bucket but not positive or negative', () => {
+    const t1 = Math.floor(new Date('2025-03-10').getTime() / 1000);
+    const monthly = computeMonthlyReports([
+      { rating: 'gold', timestamp: t1 },
+      { rating: 'unknown', timestamp: t1 },
+    ]);
+    expect(monthly).toHaveLength(1);
+    expect(monthly[0].positive).toBe(1);
+    expect(monthly[0].negative).toBe(0);
   });
 });
 
@@ -206,5 +229,26 @@ describe('computeGameStats end-to-end', () => {
     ];
     const stats = computeGameStats(reports, []);
     expect(stats.trendDir).toBe('declining');
+  });
+
+  test('trend: improving when recent better than prior', () => {
+    const reports = [
+      // prior window (90-270d): all borked
+      ...Array.from({ length: 5 }, (_, i) => rpt('borked', 100 + i * 10)),
+      // recent window (<90d): all platinum
+      ...Array.from({ length: 5 }, (_, i) => rpt('platinum', 10 + i * 10)),
+    ];
+    const stats = computeGameStats(reports, []);
+    expect(stats.trendDir).toBe('improving');
+  });
+
+  test('unknown rating in ratingCounts is ignored gracefully', () => {
+    const reports = [
+      rpt('gold', 10),
+      { rating: 'unknown', timestamp: NOW - 5 * 86400 },
+    ];
+    const stats = computeGameStats(reports, []);
+    expect(stats.ratingCounts.gold).toBe(1);
+    expect(stats.totalReports).toBe(2);
   });
 });
