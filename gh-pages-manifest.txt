@@ -63,9 +63,9 @@ scoring.html
 confidence.html
 game-stats.html
 submit.html
-supabase-client.js
-topbar.js
-gh-gist.js
+js/lib/supabase-client.js
+js/lib/topbar.js
+js/lib/gh-gist.js
 assets/steam-logo.png
 assets/steam-logo-glyph.png
 favicon.svg

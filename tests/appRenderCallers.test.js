@@ -105,8 +105,8 @@ function makeContext() {
 // import/export, so we strip those lines and concatenate everything into one vm
 // scope (same approach as adminAuth.test.js).
 const CLASSIC_FILES = [
-  'supabase-client.js',
-  'gh-gist.js',
+  'js/lib/supabase-client.js',
+  'js/lib/gh-gist.js',
 ];
 const APP_MODULE_FILES = [
   'js/shared/config.js', 'js/shared/scoring.js', 'js/shared/submit.js',
