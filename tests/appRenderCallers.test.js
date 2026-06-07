@@ -100,21 +100,43 @@ function makeContext() {
   return ctx;
 }
 
-// Order matches the <script> tags in app.html so cross-file globals resolve.
-const BUNDLE_FILES = [
+// app.js was split into js/app/ ES modules. The scoring/submit companions are
+// still classic global scripts; the js/app modules use import/export, so we
+// strip those lines and concatenate everything into one vm scope (same approach
+// as adminAuth.test.js). Classic files load first so the config bridge captures
+// their globals via window.
+const CLASSIC_FILES = [
   'supabase-client.js',
   'gh-gist.js',
   'app-scoring.js',
-  'app-search.js',
   'app-submit.js',
-  'app.js',
 ];
+const APP_MODULE_FILES = [
+  'js/app/config.js', 'js/app/utils.js', 'js/app/data.js', 'js/app/votes.js',
+  'js/app/signals.js', 'js/app/deck-status.js', 'js/app/author.js',
+  'js/app/config-cards.js', 'js/app/report-card.js', 'js/app/home.js',
+  'js/app/search.js', 'js/app/game-page.js', 'js/app/router.js',
+];
+
+function stripModuleSyntax(src) {
+  return src
+    .replace(/^(import|export\s+\{[^}]*\}\s+from|export\s+default)\s.*$/gm, '')
+    .replace(/^export\s+(async\s+)?(function|class|const|let|var)\s/gm, '$1$2 ')
+    // Drop the config.js window bridge (const X = window.X): in the flattened vm
+    // scope the classic scoring/submit scripts already declare those globals, so
+    // re-declaring them throws "already declared". Real module scopes don't collide.
+    .replace(/^(?:const|let|var)\s+(\w+)\s*=\s*window\.\1\s*;?\s*$/gm, '');
+}
 
 function loadBundle() {
   const ctx = makeContext();
+  ctx.window = ctx; // window.X resolves to globals (config bridge + window.location)
   vm.createContext(ctx);
-  for (const f of BUNDLE_FILES) {
-    const src = fs.readFileSync(path.join(ROOT, f), 'utf8');
+  const files = [
+    ...CLASSIC_FILES.map(f => [f, fs.readFileSync(path.join(ROOT, f), 'utf8')]),
+    ...APP_MODULE_FILES.map(f => [f, stripModuleSyntax(fs.readFileSync(path.join(ROOT, f), 'utf8'))]),
+  ];
+  for (const [f, src] of files) {
     try {
       vm.runInContext(src, ctx, { filename: f });
     } catch (e) {

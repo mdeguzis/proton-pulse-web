@@ -1,3 +1,10 @@
+// search module for the app page. Relocated from app.js/app-search.js.
+
+import { STEAM_IMG } from './config.js';
+import { renderGamePage } from './game-page.js';
+import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from './home.js';
+import { daysAgo, esc, withTimeout } from './utils.js';
+
 // Search index + results UX -- factored out of app.js.
 // Loaded as a classic script BEFORE app.js so its globals
 // (searchIndex, searchFocusIdx, loadSearchIndex, searchIndexMatches,
@@ -6,11 +13,11 @@
 // estimateScore (not currently called from here but available).
 
 // --- search index state vars ---
-let searchIndex     = null;   // [[appId, title], ...]
-let searchFocusIdx  = -1;
+export let searchIndex     = null;   // [[appId, title], ...]
+export let searchFocusIdx  = -1;
 
 // --- searchIndexMatches ---
-function searchIndexMatches(query, limit) {
+export function searchIndexMatches(query, limit) {
   const q = query.trim();
   const ql = q.toLowerCase();
   const isNum = /^\d+$/.test(q);
@@ -20,7 +27,7 @@ function searchIndexMatches(query, limit) {
 }
 
 // --- renderPulseSearchResult ---
-function renderPulseSearchResult(row) {
+export function renderPulseSearchResult(row) {
   const age = daysAgo(Math.floor(new Date(row.updatedAt).getTime() / 1000));
   const isProtonDb = (row.source || '').toLowerCase() === 'protondb';
   const alsoInIndex = !isProtonDb && (searchIndex || []).some(([id]) => String(id) === String(row.appId));
@@ -45,7 +52,7 @@ function renderPulseSearchResult(row) {
 }
 
 // --- renderIndexSearchResult ---
-function renderIndexSearchResult(entry) {
+export function renderIndexSearchResult(entry) {
   // search-index entries may be the legacy 2-tuple [appId, title] or the
   // extended 5-tuple [appId, title, tier, protondbCount, pulseCount].
   // Destructure defensively so older deploys keep rendering
@@ -76,7 +83,7 @@ function renderIndexSearchResult(entry) {
 }
 
 // --- renderSearchPage ---
-async function renderSearchPage(query) {
+export async function renderSearchPage(query) {
   const el = document.getElementById('content');
   const q = query.trim();
   el.innerHTML = '<div class="state-box">Searching Proton Pulse and index data...</div>';
@@ -113,7 +120,7 @@ async function renderSearchPage(query) {
 }
 
 // --- loadSearchIndex ---
-async function loadSearchIndex() {
+export async function loadSearchIndex() {
   if (searchIndex !== null) return;
   try {
     // On localhost the search-index is gitignored + missing; pull it from
@@ -127,14 +134,14 @@ async function loadSearchIndex() {
 }
 
 // --- closeSearch ---
-function closeSearch() {
+export function closeSearch() {
   searchResults.classList.remove('open');
   searchResults.innerHTML = '';
   searchFocusIdx = -1;
 }
 
 // --- positionSearchResults ---
-function positionSearchResults() {
+export function positionSearchResults() {
   const rect = searchInput.getBoundingClientRect();
   const desiredWidth = Math.max(rect.width, 620);
   const maxWidth = Math.min(desiredWidth, window.innerWidth - 24);
@@ -145,14 +152,14 @@ function positionSearchResults() {
 }
 
 // --- renderSearchResults ---
-function renderSearchResults(q) {
+export function renderSearchResults(q) {
   const items = searchResults.querySelectorAll('a.search-item');
   searchFocusIdx = Math.max(-1, Math.min(searchFocusIdx, items.length - 1));
   items.forEach((a, i) => a.classList.toggle('focused', i === searchFocusIdx));
 }
 
 // --- onSearchInput ---
-async function onSearchInput() {
+export async function onSearchInput() {
   const q = searchInput.value.trim();
   if (!q) { closeSearch(); return; }
   await loadSearchIndex();
@@ -212,3 +219,59 @@ async function onSearchInput() {
   });
 }
 
+
+
+// topbar.js injects #search at DOMContentLoaded, so these can be null at
+// script-load time. Defer wiring until the DOM is ready so we don't throw
+// "addEventListener of null" and break renderGamePage.
+
+export let searchInput   = document.getElementById('search');
+export let searchResults = document.getElementById('search-results');
+
+export function wireSearch() {
+  searchInput   = searchInput   || document.getElementById('search');
+  searchResults = searchResults || document.getElementById('search-results');
+  if (!searchInput) return;
+
+
+searchInput.addEventListener('input', onSearchInput);
+
+searchInput.addEventListener('keydown', e => {
+  const items = [...searchResults.querySelectorAll('a.search-item')];
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    searchFocusIdx = Math.min(searchFocusIdx + 1, items.length - 1);
+    renderSearchResults(searchInput.value.trim());
+    return;
+  }
+  if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    searchFocusIdx = Math.max(searchFocusIdx - 1, -1);
+    renderSearchResults(searchInput.value.trim());
+    return;
+  }
+  if (e.key === 'Escape') { closeSearch(); return; }
+  if (e.key === 'Enter') {
+    const focused = items[searchFocusIdx];
+    if (focused) { focused.click(); return; }
+    const q = searchInput.value.trim();
+    if (!q) return;
+    closeSearch();
+    searchInput.value = '';
+    if (/^\d+$/.test(q)) {
+      location.hash = '#/app/' + q;
+    } else {
+      window.location.href = 'app.html?q=' + encodeURIComponent(q);
+    }
+  }
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', e => {
+  if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) closeSearch();
+});
+
+window.addEventListener('resize', () => {
+  if (searchResults && searchResults.classList.contains('open')) positionSearchResults();
+});
+} // end wireSearch

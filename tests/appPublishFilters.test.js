@@ -1,7 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 
-const APP_SRC = fs.readFileSync(path.join(__dirname, '..', 'app.js'), 'utf8');
+// app.js was split into js/app/ ES modules; the publish-filter query strings now
+// live across those modules. Concatenate them so the source assertions still hold.
+const APP_DIR = path.join(__dirname, '..', 'js', 'app');
+const APP_SRC = fs.readdirSync(APP_DIR)
+  .filter(f => f.endsWith('.js'))
+  .map(f => fs.readFileSync(path.join(APP_DIR, f), 'utf8'))
+  .join('\n');
 
 describe('public Proton Pulse config queries', () => {
   test('public app surfaces only request explicitly published cloud configs', () => {
