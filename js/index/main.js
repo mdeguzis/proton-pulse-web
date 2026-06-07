@@ -1,3 +1,5 @@
+// Entry module for index.html (homepage). Migrated from index.js.
+
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
 // search dropdown, auth indicator) lives in topbar.js.
 
