@@ -1,3 +1,5 @@
+// wordlist (api) for the admin page.
+
 // Cached flat Set of naughty-words terms (all languages, lowercase).
 export let _wordlistCache = null;
 

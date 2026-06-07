@@ -28,3 +28,7 @@ export function friendlyReason(raw) {
   if (raw.startsWith('admin:')) return raw.replace('admin:', 'Admin: ');
   return raw;
 }
+
+// Role display labels, shared by the users api (search filter) and component (render).
+export const ROLE_LABELS = { super_admin: 'Super Admin', moderator: 'Moderator' };
+export function roleLabel(role) { return ROLE_LABELS[role] || 'User'; }

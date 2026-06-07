@@ -1,11 +1,16 @@
 import { SupaAuth, SUPABASE_URL } from './config.js';
 import { supabaseHeaders } from './utils.js';
-import { fetchFlaggedReports, renderFlagged, reinstateReport, deleteReport } from './flagged.js';
-import { fetchBannedUsers, renderBanned, banUser, unbanUser } from './banned.js';
-import { fetchAllUsers, renderUsers } from './users.js';
-import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole, renderAdmins } from './admins.js';
-import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase, renderPhrases } from './phrases.js';
-import { loadWordlist, checkAgainstWordlist } from './wordlist.js';
+import { fetchFlaggedReports, reinstateReport, deleteReport } from './api/flagged.js';
+import { renderFlagged } from './components/flagged.js';
+import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js';
+import { renderBanned } from './components/banned.js';
+import { fetchAllUsers } from './api/users.js';
+import { renderUsers } from './components/users.js';
+import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js';
+import { renderAdmins } from './components/admins.js';
+import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js';
+import { renderPhrases } from './components/phrases.js';
+import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js';
 
 // ---------------------------------------------------------------------------
 // State

@@ -24,12 +24,17 @@ const path = require('path');
 const ADMIN_MODULE_FILES = [
   'js/admin/config.js',
   'js/admin/utils.js',
-  'js/admin/wordlist.js',
-  'js/admin/flagged.js',
-  'js/admin/banned.js',
-  'js/admin/users.js',
-  'js/admin/admins.js',
-  'js/admin/phrases.js',
+  'js/admin/api/wordlist.js',
+  'js/admin/api/flagged.js',
+  'js/admin/api/banned.js',
+  'js/admin/api/users.js',
+  'js/admin/api/admins.js',
+  'js/admin/api/phrases.js',
+  'js/admin/components/flagged.js',
+  'js/admin/components/banned.js',
+  'js/admin/components/users.js',
+  'js/admin/components/admins.js',
+  'js/admin/components/phrases.js',
   'js/admin/main.js',
 ];
 
