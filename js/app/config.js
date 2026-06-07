@@ -41,10 +41,11 @@ export const RATING_TEXT = {
 // ---------------------------------------------------------------------------
 // TEMPORARY Phase-A bridge: re-export symbols defined in the classic-script
 // siblings (app-scoring.js, app-submit.js) that app.js calls as bare globals.
-// These window.X assignments exist because those siblings are loaded as plain
-// <script> tags before the ES module entry point, so the functions land on
-// window. Remove this entire block in Phase B when those files are converted
-// to ES modules and can be imported directly.
+// These re-exports work because the siblings are loaded as plain <script> tags
+// (not type="module") before the ES module entry, so the browser attaches their
+// top-level function declarations to window automatically. Remove this entire
+// block in Phase B when those files are converted to ES modules and imported
+// directly.
 // ---------------------------------------------------------------------------
 export const estimateScore           = window.estimateScore;
 export const getWebClientId          = window.getWebClientId;
