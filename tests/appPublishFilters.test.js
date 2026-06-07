@@ -1,13 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 
-// app.js was split into js/app/ ES modules; the publish-filter query strings now
-// live across those modules. Concatenate them so the source assertions still hold.
+// app.js was split into layered js/app/ ES modules (api/, components/, root);
+// the publish-filter query strings now live across those modules. Walk the tree
+// and concatenate every .js so the source assertions still hold.
 const APP_DIR = path.join(__dirname, '..', 'js', 'app');
-const APP_SRC = fs.readdirSync(APP_DIR)
-  .filter(f => f.endsWith('.js'))
-  .map(f => fs.readFileSync(path.join(APP_DIR, f), 'utf8'))
-  .join('\n');
+function walkJs(dir) {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(d => {
+    const p = path.join(dir, d.name);
+    return d.isDirectory() ? walkJs(p) : (d.name.endsWith('.js') ? [p] : []);
+  });
+}
+const APP_SRC = walkJs(APP_DIR).map(f => fs.readFileSync(f, 'utf8')).join('\n');
 
 describe('public Proton Pulse config queries', () => {
   test('public app surfaces only request explicitly published cloud configs', () => {

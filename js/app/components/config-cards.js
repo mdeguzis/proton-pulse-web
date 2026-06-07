@@ -1,7 +1,7 @@
-// config-cards module for the app page. Relocated from app.js.
+// config-cards (components) for the app page. Relocated from app.js.
 
-import { isNonSteamAppId } from './config.js';
-import { cfgNa, configKey, esc, utcStamp } from './utils.js';
+import { isNonSteamAppId } from '../config.js';
+import { cfgNa, configKey, esc, utcStamp } from '../utils.js';
 
 export const FORM_RESPONSE_LABELS = {
   canInstall:        'Were you able to install the game?',

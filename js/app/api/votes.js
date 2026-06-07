@@ -1,6 +1,6 @@
-// votes module for the app page. Relocated from app.js.
+// votes (api) for the app page. Relocated from app.js.
 
-import { SB_KEY, SB_URL } from './config.js';
+import { SB_KEY, SB_URL } from '../config.js';
 
 export async function fetchVotes(appId) {
   try {

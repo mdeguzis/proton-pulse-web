@@ -1,14 +1,16 @@
-// game-page module for the app page. Relocated from app.js.
+// game-page (components) for the app page. Relocated from app.js.
 
+import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.js';
+import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js';
+import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase } from '../api/supabase.js';
+import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js';
 import { enhanceAuthorBlocks } from './author.js';
-import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, STEAM_IMG, dataFilesHref } from './config.js';
 import { renderConfigCard } from './config-cards.js';
-import { _protonDbLiveCache, fetchCdn, fetchConfigPlaytimeTotals, fetchNativeReports, fetchProtonDbLive, fetchSupabase } from './data.js';
-import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, fetchDeckStatusForApp, fetchMinRequirements, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js';
+import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js';
 import { renderCard } from './report-card.js';
 import { loadSearchIndex, searchIndex } from './search.js';
-import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from './utils.js';
-import { castVote, fetchUserVotes, fetchVotes } from './votes.js';
+import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, STEAM_IMG, dataFilesHref } from '../config.js';
+import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js';
 
 export function trendSummary(reps) {
   if (reps.length < 2) return '';

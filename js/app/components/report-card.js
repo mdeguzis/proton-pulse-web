@@ -1,10 +1,10 @@
-// report-card module for the app page. Relocated from app.js.
+// report-card (components) for the app page. Relocated from app.js.
 
 import { renderAuthorBlock } from './author.js';
-import { RATING_COLORS, RATING_TEXT } from './config.js';
 import { buildFormRows } from './config-cards.js';
 import { renderSignalStrip } from './signals.js';
-import { confColor, confTextColor, configKey, daysAgo, esc, fmtDuration, fmtMinutes, hashReportKey, reportKey } from './utils.js';
+import { RATING_COLORS, RATING_TEXT } from '../config.js';
+import { confColor, confTextColor, configKey, daysAgo, esc, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js';
 
 export function renderPermalink(r) {
   let id = r.reportId != null ? `r${r.reportId}` : (r.clientId ? `c${r.clientId.slice(0, 8)}` : '');

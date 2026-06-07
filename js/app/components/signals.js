@@ -1,4 +1,4 @@
-// signals module for the app page. Relocated from app.js.
+// signals (components) for the app page. Relocated from app.js.
 
 import { isSteamDeckHardware } from './deck-status.js';
 

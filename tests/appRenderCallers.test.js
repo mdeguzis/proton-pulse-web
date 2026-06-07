@@ -112,10 +112,14 @@ const CLASSIC_FILES = [
   'app-submit.js',
 ];
 const APP_MODULE_FILES = [
-  'js/app/config.js', 'js/app/utils.js', 'js/app/data.js', 'js/app/votes.js',
-  'js/app/signals.js', 'js/app/deck-status.js', 'js/app/author.js',
-  'js/app/config-cards.js', 'js/app/report-card.js', 'js/app/home.js',
-  'js/app/search.js', 'js/app/game-page.js', 'js/app/router.js',
+  'js/app/config.js', 'js/app/utils.js',
+  'js/app/api/supabase.js', 'js/app/api/protondb.js', 'js/app/api/votes.js',
+  'js/app/api/reports.js', 'js/app/api/deck-status.js', 'js/app/api/author.js',
+  'js/app/components/signals.js', 'js/app/components/config-cards.js',
+  'js/app/components/report-card.js', 'js/app/components/deck-status.js',
+  'js/app/components/author.js', 'js/app/components/home.js',
+  'js/app/components/game-page.js', 'js/app/components/search.js',
+  'js/app/router.js',
 ];
 
 function stripModuleSyntax(src) {
