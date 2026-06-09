@@ -78,7 +78,16 @@ export async function fetchAllUsers(session, { search } = {}) {
     }
   }
 
-  let rows = [...byUser.values()].sort((a, b) => (b.last_active || '') > (a.last_active || '') ? 1 : -1);
+  // Counts over the full set, independent of the search filter. A user with a
+  // proton_pulse_user_id signed in via Steam; client_id-only users are anonymous.
+  const everyone = [...byUser.values()];
+  const counts = {
+    total: everyone.length,
+    steam: everyone.filter(u => u.proton_pulse_user_id).length,
+    anon: everyone.filter(u => !u.proton_pulse_user_id).length,
+  };
+
+  let rows = everyone.sort((a, b) => (b.last_active || '') > (a.last_active || '') ? 1 : -1);
 
   if (search) {
     const q = search.toLowerCase();
@@ -90,5 +99,5 @@ export async function fetchAllUsers(session, { search } = {}) {
     );
   }
 
-  return rows;
+  return { rows, counts };
 }

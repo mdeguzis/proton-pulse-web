@@ -2,15 +2,25 @@
 
 import { escapeHtml, fmtDate, ROLE_LABELS, roleLabel } from '../utils.js';
 
-export function renderUsers(rows, { currentUserId } = {}) {
+export function renderUsers(rows, { currentUserId, counts } = {}) {
   const loading = document.getElementById('users-loading');
   const empty   = document.getElementById('users-empty');
   const table   = document.getElementById('users-table');
   const tbody   = document.getElementById('users-tbody');
   const err     = document.getElementById('users-error');
+  const countsEl = document.getElementById('users-counts');
 
   loading.hidden = true;
   err.hidden = true;
+
+  // Counts reflect the full user set, independent of the current search filter.
+  if (countsEl && counts) {
+    countsEl.innerHTML =
+      `<span class="admin-count"><strong>${counts.total.toLocaleString()}</strong> total</span>` +
+      `<span class="admin-count"><strong>${counts.steam.toLocaleString()}</strong> Steam</span>` +
+      `<span class="admin-count"><strong>${counts.anon.toLocaleString()}</strong> anonymous</span>`;
+    countsEl.hidden = false;
+  }
 
   if (!rows.length) {
     empty.hidden = false;

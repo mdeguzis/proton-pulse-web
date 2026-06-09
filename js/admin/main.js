@@ -97,8 +97,8 @@ async function loadUsers() {
   loading.hidden = false;
   err.hidden = true;
   try {
-    const rows = await fetchAllUsers(currentSession, { search });
-    renderUsers(rows, { currentUserId: currentSession?.user?.id });
+    const { rows, counts } = await fetchAllUsers(currentSession, { search });
+    renderUsers(rows, { currentUserId: currentSession?.user?.id, counts });
   } catch (e) {
     loading.hidden = true;
     err.textContent = e.message;
@@ -174,9 +174,10 @@ const TAB_LOADERS = {
 };
 
 // Activate a tab, load its data, and reflect it in the URL as ?tab=<name> so a
-// refresh restores the same tab. Unknown names fall back to 'flagged'.
+// refresh restores the same tab. Unknown names fall back to 'users' (the
+// default landing tab).
 function activateTab(tabName, { updateUrl = true } = {}) {
-  if (!TAB_LOADERS[tabName]) tabName = 'flagged';
+  if (!TAB_LOADERS[tabName]) tabName = 'users';
   switchTab(tabName);
   if (updateUrl) {
     const url = new URL(window.location.href);
@@ -493,7 +494,7 @@ async function init() {
   wireEvents();
   // Restore the tab from ?tab= (written by activateTab) so a refresh keeps your place.
   const requestedTab = new URLSearchParams(window.location.search).get('tab');
-  activateTab(TAB_LOADERS[requestedTab] ? requestedTab : 'flagged', { updateUrl: false });
+  activateTab(TAB_LOADERS[requestedTab] ? requestedTab : 'users', { updateUrl: false });
 }
 
 document.addEventListener('DOMContentLoaded', init);

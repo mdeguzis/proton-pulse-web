@@ -893,7 +893,7 @@ describe('fetchAllUsers', () => {
       { url: /author_avatars/, body: [] },
       { url: /admins/, body: [] },
     ]));
-    const rows = await ctx.__fetchAllUsers(session);
+    const { rows } = await ctx.__fetchAllUsers(session);
     const urls = ctx.fetch.mock.calls.map(c => c[0]);
     expect(urls.some(u => u.includes('user_configs'))).toBe(true);
     expect(urls.some(u => u.includes('user_proton_configs'))).toBe(true);
@@ -906,7 +906,7 @@ describe('fetchAllUsers', () => {
       { url: /author_avatars/, body: [] },
       { url: /admins/, body: [] },
     ]));
-    const rows = await ctx.__fetchAllUsers(session);
+    const { rows } = await ctx.__fetchAllUsers(session);
     expect(rows).toHaveLength(1);
     expect(rows[0].report_count).toBe(1); // only user_configs rows count as reports
   });
@@ -918,10 +918,21 @@ describe('fetchAllUsers', () => {
       { url: /author_avatars/, body: [] },
       { url: /admins/, body: [] },
     ]));
-    const rows = await ctx.__fetchAllUsers(session);
+    const { rows } = await ctx.__fetchAllUsers(session);
     expect(rows).toHaveLength(1);
     expect(rows[0].client_id).toBe('anon-client');
     expect(rows[0].proton_pulse_user_id).toBeNull();
+  });
+
+  test('returns counts of total / Steam / anonymous users', async () => {
+    const ctx = makeCtx(mockFetch([
+      { url: /user_configs[^_]/, body: [configRow, anonRow] },
+      { url: /user_proton_configs/, body: [] },
+      { url: /author_avatars/, body: [] },
+      { url: /admins/, body: [] },
+    ]));
+    const { counts } = await ctx.__fetchAllUsers(session);
+    expect(counts).toEqual({ total: 2, steam: 1, anon: 1 });
   });
 
   test('enriches display_name from author_avatars', async () => {
@@ -931,7 +942,7 @@ describe('fetchAllUsers', () => {
       { url: /author_avatars/, body: [{ proton_pulse_user_id: ADMIN_USER_ID, display_name: 'ProfessorKaos64' }] },
       { url: /admins/, body: [] },
     ]));
-    const rows = await ctx.__fetchAllUsers(session);
+    const { rows } = await ctx.__fetchAllUsers(session);
     expect(rows[0].display_name).toBe('ProfessorKaos64');
   });
 
@@ -942,7 +953,7 @@ describe('fetchAllUsers', () => {
       { url: /author_avatars/, body: [] },
       { url: /admins/, body: [{ proton_pulse_user_id: ADMIN_USER_ID, steam_username: 'ProfessorKaos64' }] },
     ]));
-    const rows = await ctx.__fetchAllUsers(session);
+    const { rows } = await ctx.__fetchAllUsers(session);
     expect(rows[0].display_name).toBe('ProfessorKaos64');
   });
 
@@ -953,9 +964,9 @@ describe('fetchAllUsers', () => {
       { url: /author_avatars/, body: [{ proton_pulse_user_id: ADMIN_USER_ID, display_name: 'ProfessorKaos64' }] },
       { url: /admins/, body: [] },
     ]));
-    const rows = await ctx.__fetchAllUsers(session, { search: 'professor' });
+    const { rows } = await ctx.__fetchAllUsers(session, { search: 'professor' });
     expect(rows).toHaveLength(1);
-    const none = await ctx.__fetchAllUsers(session, { search: 'zzznomatch' });
+    const { rows: none } = await ctx.__fetchAllUsers(session, { search: 'zzznomatch' });
     expect(none).toHaveLength(0);
   });
 
@@ -966,7 +977,7 @@ describe('fetchAllUsers', () => {
       { url: /author_avatars/, body: [] },
       { url: /admins/, body: [] },
     ]));
-    const rows = await ctx.__fetchAllUsers(session, { search: 'anon-client' });
+    const { rows } = await ctx.__fetchAllUsers(session, { search: 'anon-client' });
     expect(rows).toHaveLength(1);
   });
 

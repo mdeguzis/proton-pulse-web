@@ -6,7 +6,7 @@
 <title>Admin — Proton Pulse</title>
 <meta name="color-scheme" content="dark">
 <link rel="stylesheet" href="css/shared/site.css?v=92a38bb3">
-<link rel="stylesheet" href="css/admin/admin.css?v=64ed5fc7">
+<link rel="stylesheet" href="css/admin/admin.css?v=bd0e990b">
 </head>
 <body>
 
@@ -29,9 +29,9 @@
     <div id="admin-panel" hidden>
 
       <div class="admin-tabs" role="tablist">
-        <button class="admin-tab admin-tab--active" data-tab="flagged" role="tab">Flagged Reports</button>
+        <button class="admin-tab admin-tab--active" data-tab="users" role="tab">All Users</button>
+        <button class="admin-tab" data-tab="flagged" role="tab">Flagged Reports</button>
         <button class="admin-tab" data-tab="banned" role="tab">Banned Users</button>
-        <button class="admin-tab" data-tab="users" role="tab">All Users</button>
         <button class="admin-tab" data-tab="admins" role="tab">Admins</button>
         <button class="admin-tab" data-tab="phrases" role="tab">Banned Phrases</button>
       </div>
@@ -105,6 +105,8 @@
           <input type="text" id="users-search" class="admin-input" placeholder="Search username or client ID...">
           <button class="admin-btn" id="users-refresh-btn">Refresh</button>
         </div>
+
+        <div id="users-counts" class="admin-counts" hidden></div>
 
         <div id="users-loading" class="admin-loading">Loading...</div>
         <div id="users-empty" class="admin-empty" hidden>No users found.</div>
@@ -210,6 +212,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/lib/supabase-client.js?v=07e4ec76"></script>
 <script src="js/lib/topbar.js?v=c1bf6c72"></script>
-<script type="module" src="js/admin/main.js?v=3748eb4b"></script>
+<script type="module" src="js/admin/main.js?v=04c58694"></script>
 </body>
 </html>

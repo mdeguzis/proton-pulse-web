@@ -324,3 +324,19 @@
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
+
+/* User-count summary above the All Users table (total / Steam / anonymous) */
+.admin-counts {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 0 0 14px;
+  font-size: 0.82rem;
+  color: var(--muted, #8b98a5);
+}
+.admin-count strong {
+  color: var(--strong, #fff);
+  font-family: var(--mono, monospace);
+  font-size: 1rem;
+  margin-right: 4px;
+}
