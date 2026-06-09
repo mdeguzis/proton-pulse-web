@@ -2,7 +2,12 @@ const vm = require('vm');
 const fs = require('fs');
 const path = require('path');
 
-const SRC = fs.readFileSync(path.join(__dirname, '..', 'plugin-link.js'), 'utf8');
+// Source moved to the layered module js/plugin-link/main.js. Jest has no ESM
+// transform here, so strip the `import` line and run the IIFE body in a vm.
+// The SupaAuth import resolves to the stub on ctx (var window = ctx in SHIM).
+const SRC = fs
+  .readFileSync(path.join(__dirname, '..', 'js', 'plugin-link', 'main.js'), 'utf8')
+  .replace(/^import\s.*$/gm, '');
 
 const SHIM = `
 var window = ctx;

@@ -1,3 +1,5 @@
+// Entry module for stats.html. Migrated from the page's classic stats.js
+// script. Self-contained: no cross-module imports, all helpers are local.
 (function () {
   const root = document.getElementById('stats-root');
   const metaEl = document.getElementById('stats-meta');

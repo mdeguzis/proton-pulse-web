@@ -32,7 +32,7 @@ const MGMT_QUERY_URL = PROJECT_REF
 
 const ANON_KEY = 'sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V';
 
-// User-facing tables: queried by authenticated regular users via profile.js / app.js.
+// User-facing tables: queried by authenticated regular users via the profile + app pages.
 // Their SELECT/ALL policies must not contain cross-table subqueries because nested
 // RLS chains cause HTTP 500 for authenticated users (anon bypasses via null auth.uid()).
 //
@@ -150,7 +150,7 @@ describeIfCreds('Supabase admin table RLS smoke', () => {
 });
 
 describeIfCreds('Supabase live endpoint smoke', () => {
-  // Verify the queries profile.js makes return 200 for anon and authenticated users.
+  // Verify the queries the profile page makes return 200 for anon and authenticated users.
   // For authenticated we simulate via a Management API transaction that sets
   // request.jwt.claims and role before running the SELECT.
 

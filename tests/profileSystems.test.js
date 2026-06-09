@@ -1,17 +1,42 @@
 /**
- * Tests for the user_systems REST helpers in profile.js.
+ * Tests for the profile page helpers, now split into the js/profile/ layered
+ * modules (config + utils + api/* + components/* + main).
  *
- * profile.js is a browser script — no module exports. Same trick as
- * submitReport.test.js: read the source, stub the browser globals it touches,
- * and run it in a Node vm context. The helpers we care about sit at the top
- * (lines ~23-105) as plain `function` declarations so they end up on the ctx.
+ * Jest here has no ESM transform, so we use the same trick as adminAuth.test.js:
+ * read each module file in dependency order, strip the import/export syntax and
+ * the `const X = window.X` config bridge lines, concatenate, then run the whole
+ * bundle in a Node vm context with browser stubs. The helpers are plain
+ * top-level declarations once stripped, so they land on the ctx; main.js (the
+ * page-init IIFE) runs last, exactly like loading the real page.
  */
 
 const vm = require('vm');
 const fs = require('fs');
 const path = require('path');
 
-const PROFILE_SRC = fs.readFileSync(path.join(__dirname, '..', 'profile.js'), 'utf8');
+const PROFILE_MODULE_FILES = [
+  'js/profile/config.js',
+  'js/profile/utils.js',
+  'js/profile/api/supabase.js',
+  'js/profile/api/systems.js',
+  'js/profile/api/configs.js',
+  'js/profile/api/plugin-links.js',
+  'js/profile/components/edit-modals.js',
+  'js/profile/main.js',
+];
+
+const PROFILE_SRC = PROFILE_MODULE_FILES
+  .map(f => fs.readFileSync(path.join(__dirname, '..', f), 'utf8'))
+  .map(src => src
+    // Strip import statements, including multi-line `import { ... } from '...';`
+    // blocks. Lazy match to the first semicolon that ends a line.
+    .replace(/^import\b[\s\S]*?;[ \t]*$/gm, '')
+    .replace(/^export\s+(async\s+)?(function|class|const|let|var)\s/gm, '$1$2 ')
+    // Drop the config bridge lines (const X = window.X): the SHIM declares
+    // SUPABASE_URL / SUPABASE_ANON_KEY / SupaAuth as globals already, so
+    // re-declaring them in vm scope would throw "already declared".
+    .replace(/^(?:const|let|var)\s+(\w+)\s*=\s*window\.\1\s*;?\s*$/gm, ''))
+  .join('\n');
 
 const SUPABASE_URL = 'https://ilsgdshkaocrmibwdezk.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_testkey';
