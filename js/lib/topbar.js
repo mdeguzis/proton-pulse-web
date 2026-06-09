@@ -197,11 +197,6 @@
           </a>
         </div>
       </div>
-      <!-- About: top-level so it's visible without opening a dropdown -->
-      <a href="about.html" data-page="about" title="What Proton Pulse is and how it compares to ProtonDB">
-        <svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg>
-        <span>About</span>
-      </a>
       <!-- Resources dropdown: scoring docs and the decky plugin live here -->
       <div class="nav-dropdown" data-group="resources">
         <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
@@ -220,6 +215,11 @@
           </a>
         </div>
       </div>
+      <!-- About: top-level, placed after the dropdowns (dropdowns come first) -->
+      <a href="about.html" data-page="about" title="What Proton Pulse is and how it compares to ProtonDB">
+        <svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg>
+        <span>About</span>
+      </a>
       <!-- GitHub issue chooser - shows Game Report / Missing ProtonDB / Plugin Issue / Blank etc. -->
       <a href="https://github.com/mdeguzis/decky-proton-pulse/issues/new/choose" target="_blank" rel="noopener" title="Report a bug, file a Game Report, or contact the maintainer">
         <svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg>
