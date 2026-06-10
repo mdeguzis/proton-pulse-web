@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=3333b0d8';
-import { loadSearchIndex, searchIndex } from './search.js?v=5e2d7623';
+import { loadSearchIndex, searchIndex } from './search.js?v=2c2138d4';
 import { RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, STEAM_IMG, isNonSteamAppId } from '../config.js?v=f75c43ba';
 import { daysAgo, esc, latestPerApp } from '../utils.js?v=d4fea298';
 

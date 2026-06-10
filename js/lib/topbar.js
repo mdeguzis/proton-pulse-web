@@ -327,16 +327,24 @@
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
   function pauseSmilAnimations() {
-    document.querySelectorAll('svg').forEach(function (svg) {
+    const svgs = document.querySelectorAll('svg');
+    let paused = 0;
+    svgs.forEach(function (svg) {
       if (typeof svg.pauseAnimations === 'function') {
-        try { svg.pauseAnimations(); } catch (e) { /* ignore */ }
+        try { svg.pauseAnimations(); paused++; } catch (e) { /* ignore */ }
       }
     });
+    console.log('[topbar] pauseSmilAnimations: paused', paused, 'of', svgs.length, 'SVGs');
   }
   function initMotion() {
-    if (motionDisabled()) {
+    const stored = localStorage.getItem('proton-pulse:motion');
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const disabled = motionDisabled();
+    console.log('[topbar] initMotion: stored=' + stored + ' prefersReduced=' + prefersReduced + ' => disabled=' + disabled);
+    if (disabled) {
       document.documentElement.setAttribute('data-motion', 'off');
       pauseSmilAnimations();
+      console.log('[topbar] initMotion: set data-motion=off, html attr now:', document.documentElement.getAttribute('data-motion'));
     }
   }
 
@@ -358,8 +366,16 @@
     if (document.querySelector('.topbar')) return; // page already has it (e.g. inlined for SSR)
     // sprite first so the <use href="#..."> refs in the banner resolve immediately
     document.body.insertAdjacentHTML('afterbegin', SPRITE + BANNER_AND_NAV);
+    const disabled = motionDisabled();
+    const htmlMotion = document.documentElement.getAttribute('data-motion');
+    const atoms = document.querySelector('.banner-atoms');
+    console.log('[topbar] inject: motionDisabled=' + disabled + ' data-motion=' + htmlMotion + ' .banner-atoms found=' + !!atoms);
+    if (atoms) {
+      const computed = getComputedStyle(atoms).display;
+      console.log('[topbar] inject: .banner-atoms computed display=' + computed);
+    }
     // pauseSmilAnimations() in initMotion() runs before the SVG exists; re-apply now
-    if (motionDisabled()) pauseSmilAnimations();
+    if (disabled) pauseSmilAnimations();
     markActive();
     wireMobileDrawer();
     wireSearchDropdown();
