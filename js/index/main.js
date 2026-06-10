@@ -103,7 +103,7 @@
       const rLabel = RATING_LABEL[rating] || 'Unrated';
       return `
         <a class="pg-card" href="app.html#/app/${encodeURIComponent(g.appId)}">
-          <img class="pg-thumb" src="${img}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+          <img class="pg-thumb" src="${img}" alt="" loading="lazy" onerror="this.style.display='none'">
           <div class="pg-info">
             <div class="pg-title">${esc(g.title)}</div>
             ${peak ? `<div class="pg-sub">${peak} peak players</div>` : ''}

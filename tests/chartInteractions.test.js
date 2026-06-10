@@ -1,4 +1,6 @@
 /**
+ * @jest-environment jest-environment-jsdom
+ *
  * Tests for app-chart-interactions.js -- attachClickToFilter, dispatchFilter,
  * onFilterChange, and attachChartHover's continuous-tracking path.
  *

@@ -1159,6 +1159,7 @@ a.card:hover { text-decoration: none; }
 }
 .card .card-head .proton { margin-bottom: 0; }
 .card .hw { font-size: 0.75rem; color: var(--muted); margin-bottom: 6px; }
+.arch-badge { display: inline-block; font-size: 0.65rem; font-weight: 600; padding: 1px 6px; border-radius: 999px; background: rgba(100,160,220,0.15); border: 1px solid rgba(100,160,220,0.3); color: var(--accent-light, #8fc4ee); vertical-align: middle; margin-left: 4px; }
 .card .age {
   font-size: 0.68rem;
   color: var(--muted);

@@ -5,7 +5,7 @@
     "build": "vite build"
   },
   "jest": {
-    "testEnvironment": "jest-environment-jsdom",
+    "testEnvironment": "node",
     "testMatch": ["**/tests/*.test.js"]
   },
   "dependencies": {

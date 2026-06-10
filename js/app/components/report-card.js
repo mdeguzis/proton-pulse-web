@@ -2,6 +2,7 @@
 
 import { estimateScore } from '../../shared/scoring.js';
 import { getWebClientId } from '../../shared/submit.js';
+import { detectGpuArch } from '../../lib/gpu-arch-detector.js';
 import { renderAuthorBlock } from './author.js';
 import { buildFormRows } from './config-cards.js';
 import { renderSignalStrip } from './signals.js';
@@ -44,6 +45,7 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
   const rc    = RATING_COLORS[r.rating] || '#3a4a5a';
   const rt    = RATING_TEXT[r.rating]   || '#c8d4e0';
   const na = s => s || '<span style="color:#4a5f70;font-style:italic">Not available</span>';
+  const arch = r.gpuArchitecture || detectGpuArch(r.gpu) || '';
   // Source badge used to render top-right of each card (Pulse / ProtonDB).
   // Removed - the same info already appears in the "Source" row at the bottom
   // of the card, so two pills said the same thing and crowded the right column.
@@ -52,7 +54,7 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
       ${renderAuthorBlock(r)}
       <div class="card-body">
         <div class="proton">${esc(r.protonVersion || 'Unknown')}</div>
-        <div class="hw">${esc([r.gpu, r.os].filter(Boolean).join(' / ') || 'Hardware unavailable')}</div>
+        <div class="hw">${esc([r.gpu, r.os].filter(Boolean).join(' / ') || 'Hardware unavailable')}${arch ? ` <span class="arch-badge">${esc(arch)}</span>` : ''}</div>
         <div class="age">
           ${daysAgo(r.timestamp)}
           ${(r.durationMinutes != null || fmtDuration(r.duration)) ? `<span class="hours-inline" title="Steam playtime when the reporter submitted this report">  &middot;  ${r.durationMinutes != null ? fmtMinutes(r.durationMinutes) : fmtDuration(r.duration)} played</span>` : ''}
@@ -81,6 +83,7 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
       <div class="all-details-panel hw-details-panel">
         <div class="row"><span class="label">RAM</span><span>${na(esc(r.ram))}</span></div>
         ${r.vramMb ? `<div class="row"><span class="label">VRAM</span><span>${r.vramMb >= 1024 ? (r.vramMb/1024).toFixed(1)+' GB' : r.vramMb+' MB'}</span></div>` : ''}
+        ${arch ? `<div class="row"><span class="label">GPU Architecture</span><span>${esc(arch)}</span></div>` : ''}
         <div class="row"><span class="label">GPU Driver</span><span>${na(esc(r.gpuDriver))}</span></div>
         <div class="row"><span class="label">Kernel</span><span>${na(esc(r.kernel))}</span></div>
         ${r.launchOptions ? `<div class="row"><span class="label">Launch Options</span><span>${esc(r.launchOptions)}</span></div>` : ''}
