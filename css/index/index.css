@@ -172,41 +172,63 @@
    (browse reports, get the plugin) plus a learn-more link to about.html */
 .welcome-cta {
   display: flex;
-  gap: 10px;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 8px;
   margin-bottom: 16px;
 }
-.cta-btn {
-  display: inline-flex;
+.cta-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 14px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.1s;
+}
+.cta-card:hover { background: var(--s2); text-decoration: none; }
+.cta-card-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1 1 0;
-  min-width: 0;
-  padding: 8px 12px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 600;
+}
+.cta-card-icon svg { width: 24px; height: 24px; }
+.cta-icon-browse { background: rgba(56,189,137,0.15); color: var(--accent-hi); }
+.cta-icon-plugin { background: rgba(100,160,255,0.13); color: #7eb8f7; }
+.cta-card-body { flex: 1; min-width: 0; }
+.cta-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--strong);
+  margin-bottom: 2px;
+}
+.cta-card-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.cta-card-badge {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--s2);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.cta-badge-primary {
+  background: var(--accent-hi);
   color: #0b1622;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background: linear-gradient(90deg, var(--accent), var(--accent-hi) 92%);
-  text-decoration: none;
-  transition: filter 0.15s, transform 0.05s, box-shadow 0.15s;
-  text-align: center;
+  border-color: transparent;
 }
-.cta-btn:hover {
-  filter: brightness(1.08);
-  box-shadow: 0 0 16px var(--accent-glow);
-}
-.cta-btn:active { transform: translateY(1px); }
-/* primary CTA: green gradient + glow so it stays the dominant action */
-.cta-primary {
-  background: linear-gradient(90deg, var(--accent-hi), var(--green-hi) 80%);
-  box-shadow: 0 0 20px var(--accent-glow);
-}
-.cta-primary:hover { filter: brightness(1.06); }
 .welcome-learn-more {
   font-size: 0.85rem;
   color: var(--muted);
