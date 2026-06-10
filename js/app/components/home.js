@@ -2,7 +2,7 @@
 
 import { fetchRecentPulseReports } from '../api/reports.js';
 import { loadSearchIndex, searchIndex } from './search.js';
-import { SB_KEY, SB_URL, STEAM_IMG, isNonSteamAppId } from '../config.js';
+import { RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, STEAM_IMG, isNonSteamAppId } from '../config.js';
 import { daysAgo, esc, latestPerApp } from '../utils.js';
 
 export async function renderHomePage() {
@@ -69,10 +69,9 @@ export async function renderHomeFallback() {
     .map((row) => `
       <a class="card activity-card" href="#/app/${row.appId}" style="text-decoration:none">
         <img src="${STEAM_IMG(row.appId)}" onerror="this.style.display='none'" alt="" class="activity-thumb">
-        <div class="left">
-          <div class="proton">${esc(row.title)}</div>
-          <div class="hw">Open ProtonDB and Proton Pulse reports</div>
-          <div class="activity-badges"><span class="source-badge protondb">ProtonDB</span></div>
+        <div class="activity-info">
+          <div class="activity-title">${esc(row.title)}</div>
+          <div class="activity-sub">ProtonDB data available</div>
         </div>
       </a>`)
     .join('');
@@ -119,38 +118,37 @@ export function renderActivityCard(kind, row, protonDbAppIds) {
   // attached. Both render identically here; the Publish flow on My
   // Reports is what enforces filling out responses before a row goes
   // public-visible. No REPORT/CONFIG badge needed on the home feed
+  const rating = isReport ? String(row.rating || '').toLowerCase() : '';
+  const rc = RATING_COLORS[rating] || '';
+  const rt = RATING_TEXT[rating] || '';
+  const badgeHtml = rating && rc
+    ? `<span class="activity-badge" style="background:${rc};color:${rt}">${rating.toUpperCase()}</span>`
+    : '';
   return `
     <a class="card activity-card" href="#/app/${appId}" style="text-decoration:none">
       <img src="${STEAM_IMG(appId)}" onerror="this.style.display='none'" alt="" class="activity-thumb">
-      <div class="left">
-        <div class="proton">${esc(title)}</div>
-        <div class="hw">${esc(hwLine)}</div>
-        <div class="age">${age}</div>
-        <div class="activity-badges">
-          <span class="source-badge pulse">
-            <img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse
-          </span>
-          ${hasProtonDb ? '<span class="source-badge protondb">ProtonDB</span>' : ''}
-          ${isNonSteam
-            ? '<span class="source-badge non-steam-game">Non-Steam</span>'
-            : '<span class="source-badge steam-game">Steam</span>'}
-        </div>
+      <div class="activity-info">
+        <div class="activity-title">${esc(title)}</div>
+        <div class="activity-sub">${esc(hwLine)}${hwLine && age ? ' &middot; ' : ''}${age}</div>
       </div>
+      ${badgeHtml}
     </a>`;
 }
 
 export function renderPulseReportCards(rows) {
-  return rows.map((row) => `
+  return rows.map((row) => {
+    const rating = String(row.rating || '').toLowerCase();
+    const rc = RATING_COLORS[rating] || '';
+    const rt = RATING_TEXT[rating] || '';
+    const sub = [row.proton_version, daysAgo(Math.floor(new Date(row.created_at).getTime() / 1000))].filter(Boolean).join(' &middot; ');
+    return `
     <a class="card activity-card" href="#/app/${row.app_id}" style="text-decoration:none">
       <img src="${STEAM_IMG(row.app_id)}" onerror="this.style.display='none'" alt="" class="activity-thumb">
-      <div class="left">
-        <div class="proton">${esc(row.title || `App ${row.app_id}`)}</div>
-        <div class="hw">${esc([row.rating, row.proton_version].filter(Boolean).join(' | '))}</div>
-        <div class="age">${daysAgo(Math.floor(new Date(row.created_at).getTime() / 1000))}</div>
-        <div class="activity-badges">
-          <span class="source-badge pulse"><img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse</span>
-        </div>
+      <div class="activity-info">
+        <div class="activity-title">${esc(row.title || `App ${row.app_id}`)}</div>
+        <div class="activity-sub">${sub}</div>
       </div>
-    </a>`)
-    .join('');
+      ${rc ? `<span class="activity-badge" style="background:${rc};color:${rt}">${rating.toUpperCase()}</span>` : ''}
+    </a>`;
+  }).join('');
 }
