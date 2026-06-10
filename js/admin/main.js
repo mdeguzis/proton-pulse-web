@@ -1,15 +1,15 @@
 import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
-import { supabaseHeaders } from './utils.js?v=bd5a67c2';
-import { fetchFlaggedReports, reinstateReport, deleteReport } from './api/flagged.js?v=76d857c8';
-import { renderFlagged } from './components/flagged.js?v=12523644';
-import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=871265c3';
-import { renderBanned } from './components/banned.js?v=c6f3f525';
-import { fetchAllUsers } from './api/users.js?v=a007083a';
-import { renderUsers } from './components/users.js?v=a1fc68c7';
-import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=7d33f5ed';
-import { renderAdmins } from './components/admins.js?v=c44dd7fa';
-import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=e0c4f405';
-import { renderPhrases } from './components/phrases.js?v=facfca04';
+import { supabaseHeaders } from './utils.js?v=86489fcb';
+import { fetchFlaggedReports, reinstateReport, deleteReport } from './api/flagged.js?v=55433ab8';
+import { renderFlagged } from './components/flagged.js?v=b9c9f230';
+import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
+import { renderBanned } from './components/banned.js?v=45d01d17';
+import { fetchAllUsers } from './api/users.js?v=b1e9a610';
+import { renderUsers } from './components/users.js?v=e8804ac3';
+import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=637a90b4';
+import { renderAdmins } from './components/admins.js?v=0956f8c4';
+import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ca024bd3';
+import { renderPhrases } from './components/phrases.js?v=79051c31';
 import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965';
 
 // ---------------------------------------------------------------------------

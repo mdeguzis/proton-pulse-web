@@ -13,7 +13,7 @@ import {
   setMyHwFieldOrigins, setMyHwFieldOrigin, escapeHtml, formatSystemUpdated,
   getWebClientIdProfile, getMyReportBadges, flaggedMessageHtml,
   mergeMyReportRows, getPluginLinkCodeFromLocation,
-} from './utils.js?v=be377407';
+} from './utils.js?v=4b20b7e4';
 import { supabaseHeaders } from './api/supabase.js?v=bdf4b262';
 import {
   supabaseUserSystemsUrl, listUserSystems, setDefaultSystem,
@@ -21,11 +21,11 @@ import {
 } from './api/systems.js?v=fcfc95e6';
 import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
-} from './api/configs.js?v=44b3fa74';
+} from './api/configs.js?v=709d8dfa';
 import {
   listLinkedPlugins, completePluginLink, removePluginLink,
-} from './api/plugin-links.js?v=97ff39a5';
-import { showEditCloudConfigModal, showEditReportModal } from './components/edit-modals.js?v=de87a971';
+} from './api/plugin-links.js?v=59c9f51e';
+import { showEditCloudConfigModal, showEditReportModal } from './components/edit-modals.js?v=120ecdc1';
 
 (async function () {
   const signedIn  = document.getElementById('profile-signed-in');

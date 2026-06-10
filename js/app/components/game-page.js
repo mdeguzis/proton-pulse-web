@@ -2,16 +2,16 @@
 
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=2787ec1d';
-import { getWebClientId } from '../../shared/submit.js?v=a89baf55';
+import { getWebClientId } from '../../shared/submit.js?v=4543b1fc';
 import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.js?v=50bed91c';
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=012cb784';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase } from '../api/supabase.js?v=d454880e';
-import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=01fc2893';
-import { enhanceAuthorBlocks } from './author.js?v=3d81374f';
-import { renderConfigCard } from './config-cards.js?v=71f20328';
+import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=002877e1';
+import { enhanceAuthorBlocks } from './author.js?v=6f9c57cb';
+import { renderConfigCard } from './config-cards.js?v=61795487';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=15100cc6';
-import { renderCard } from './report-card.js?v=73ef170b';
-import { loadSearchIndex, searchIndex } from './search.js?v=053fc014';
+import { renderCard } from './report-card.js?v=597188f6';
+import { loadSearchIndex, searchIndex } from './search.js?v=96e3874b';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, STEAM_IMG, dataFilesHref } from '../config.js?v=f75c43ba';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=d4fea298';
 
