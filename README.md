@@ -48,7 +48,7 @@ Restricted to admins (Steam auth required). Provides:
 
 ## Content moderation
 
-See [Content Moderation](https://github.com/mdeguzis/decky-proton-pulse/wiki/Content-Moderation) in the wiki.
+See [Content Moderation](https://github.com/mdeguzis/proton-pulse-web/wiki/Content-Moderation) in the wiki.
 
 ## Admin access
 
@@ -111,3 +111,16 @@ Go to **Actions -> Update ProtonDB Data -> Run workflow**.
 ```bash
 make setup
 ```
+
+## Documentation
+
+Full docs live in the [wiki](https://github.com/mdeguzis/proton-pulse-web/wiki):
+
+- [System Design](https://github.com/mdeguzis/proton-pulse-web/wiki/System-Design)
+- [Architecture](https://github.com/mdeguzis/proton-pulse-web/wiki/Architecture)
+- [Data Pipeline](https://github.com/mdeguzis/proton-pulse-web/wiki/Data-Pipeline)
+- [API Reference](https://github.com/mdeguzis/proton-pulse-web/wiki/API-Reference)
+- [Supabase Voting](https://github.com/mdeguzis/proton-pulse-web/wiki/Supabase-Voting)
+- [Steam Auth Flow](https://github.com/mdeguzis/proton-pulse-web/wiki/Steam-Auth-Flow)
+- [Content Moderation](https://github.com/mdeguzis/proton-pulse-web/wiki/Content-Moderation)
+- [Design Palette](https://github.com/mdeguzis/proton-pulse-web/wiki/Design-Palette)
