@@ -825,11 +825,13 @@ jobs:
         with:
           ref: gh-pages
           path: gh-pages-data
+          persist-credentials: false
 
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           path: repo
+          persist-credentials: false
 
       - name: Build staging copy
         run: |
@@ -857,6 +859,5 @@ jobs:
       - name: Push to staging
         run: |
           cd gh-pages-data
-          git config --local credential.helper ''
           git remote add staging https://x-access-token:${{ secrets.STAGING_DEPLOY_TOKEN }}@github.com/mdeguzis/proton-pulse-web-staging.git
           git push staging HEAD:gh-pages --force
