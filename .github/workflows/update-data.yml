@@ -333,8 +333,9 @@ jobs:
         env:
           STAGING_DEPLOY_TOKEN: ${{ secrets.STAGING_DEPLOY_TOKEN }}
         run: |
+          git config --local --unset-all http.https://github.com/.extraheader || true
           git remote add staging https://x-access-token:${{ secrets.STAGING_DEPLOY_TOKEN }}@github.com/mdeguzis/proton-pulse-web-staging.git
-          git -c credential.helper= push staging gh-pages-new:gh-pages --force
+          git push staging gh-pages-new:gh-pages --force
 
   # ── Pages-only redeploy: refresh app/index shell files on gh-pages ─────────
   pages-only:
@@ -399,8 +400,9 @@ jobs:
           STAGING_DEPLOY_TOKEN: ${{ secrets.STAGING_DEPLOY_TOKEN }}
         run: |
           cd gh-pages-data
+          git config --local --unset-all http.https://github.com/.extraheader || true
           git remote add staging https://x-access-token:${{ secrets.STAGING_DEPLOY_TOKEN }}@github.com/mdeguzis/proton-pulse-web-staging.git
-          git -c credential.helper= push staging HEAD:gh-pages --force
+          git push staging HEAD:gh-pages --force
 
   # ── Targeted backfill: just backfill specific IDs and publish ──────
   targeted-backfill:
