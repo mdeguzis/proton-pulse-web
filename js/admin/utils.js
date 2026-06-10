@@ -1,4 +1,4 @@
-import { SUPABASE_ANON_KEY } from './config.js';
+import { SUPABASE_ANON_KEY } from './config.js?v=ffed3d84';
 
 export function supabaseHeaders(session, extra = {}) {
   const h = { apikey: SUPABASE_ANON_KEY, 'Content-Type': 'application/json', ...extra };

@@ -4,7 +4,7 @@
 import {
   SHOW_USERNAME_KEY, MYHW_SOURCE_META_KEY, MYHW_FIELD_ORIGINS_KEY,
   WEB_CLIENT_ID_KEY, FIELD_LABELS,
-} from './config.js';
+} from './config.js?v=87cd0f3d';
 
 export function getSteamIdFromSession(session) {
   // Steam openid sub is like "https://steamcommunity.com/openid/id/76561198000000000".

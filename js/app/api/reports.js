@@ -1,7 +1,7 @@
 // reports (api) for the app page. Relocated from app.js.
 
-import { SB_KEY, SB_URL } from '../config.js';
-import { latestPerApp } from '../utils.js';
+import { SB_KEY, SB_URL } from '../config.js?v=f75c43ba';
+import { latestPerApp } from '../utils.js?v=d4fea298';
 
 export async function fetchRecentPulseReports() {
   try {

@@ -1,5 +1,5 @@
 // Shared Supabase REST header builder for the profile page api layer.
-import { SUPABASE_ANON_KEY } from '../config.js';
+import { SUPABASE_ANON_KEY } from '../config.js?v=87cd0f3d';
 
 export function supabaseHeaders(session, extra) {
   const h = {

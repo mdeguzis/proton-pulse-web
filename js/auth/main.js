@@ -1,5 +1,5 @@
 // Entry module for auth.html. Migrated from auth.js.
-import { SupaAuth } from '../shared/config.js';
+import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 
 (function initAuthInterstitial() {
   const continueBtn = document.getElementById('continue-login-btn');

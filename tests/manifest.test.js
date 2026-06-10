@@ -36,7 +36,9 @@ function collectImports(filePath) {
     const specifier = m[1];
     // skip external URLs (shouldn't appear but guard anyway)
     if (specifier.startsWith('http')) continue;
-    const abs = path.resolve(path.dirname(filePath), specifier);
+    // strip cache-bust query string before resolving path
+    const cleanSpecifier = specifier.replace(/\?v=[a-f0-9]+$/, '');
+    const abs = path.resolve(path.dirname(filePath), cleanSpecifier);
     const rel = path.relative(ROOT, abs);
     imports.push({ specifier, rel });
   }

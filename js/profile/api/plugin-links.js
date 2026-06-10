@@ -1,6 +1,6 @@
 // Plugin-link edge-function helpers: list/complete/remove linked plugins.
-import { SUPABASE_URL } from '../config.js';
-import { supabaseHeaders } from './supabase.js';
+import { SUPABASE_URL } from '../config.js?v=87cd0f3d';
+import { supabaseHeaders } from './supabase.js?v=4889c5e6';
 
 export function pluginFunctionUrl(name) {
   return `${SUPABASE_URL}/functions/v1/${name}`;

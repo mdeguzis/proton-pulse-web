@@ -1,6 +1,6 @@
 // admins (components) for the admin page.
 
-import { escapeHtml, fmtDate } from '../utils.js';
+import { escapeHtml, fmtDate } from '../utils.js?v=bd5a67c2';
 
 export function renderAdmins(rows) {
   const loading = document.getElementById('admins-loading');

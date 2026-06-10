@@ -4,7 +4,7 @@
 import {
   IS_LOCAL_DEV, MOCK_USER, HW_GPU_KEY, HW_OS_KEY, CONFIG_TYPE_KEY,
   MYHW_KEYS, MYHW_ORIGIN_LABELS, SUPABASE_URL, SUPABASE_ANON_KEY, SupaAuth,
-} from './config.js';
+} from './config.js?v=87cd0f3d';
 import {
   getProtonPulseUserIdFromSession, getShowUsername, setShowUsername,
   parseSteamSystemInfo, inferGpuVendor, parseUploadedSystem,
@@ -13,19 +13,19 @@ import {
   setMyHwFieldOrigins, setMyHwFieldOrigin, escapeHtml, formatSystemUpdated,
   getWebClientIdProfile, getMyReportBadges, flaggedMessageHtml,
   mergeMyReportRows, getPluginLinkCodeFromLocation,
-} from './utils.js';
-import { supabaseHeaders } from './api/supabase.js';
+} from './utils.js?v=be377407';
+import { supabaseHeaders } from './api/supabase.js?v=bdf4b262';
 import {
   supabaseUserSystemsUrl, listUserSystems, setDefaultSystem,
   clearDefaultSystem, updateSystemLabel, deleteSystem,
-} from './api/systems.js';
+} from './api/systems.js?v=fcfc95e6';
 import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
-} from './api/configs.js';
+} from './api/configs.js?v=44b3fa74';
 import {
   listLinkedPlugins, completePluginLink, removePluginLink,
-} from './api/plugin-links.js';
-import { showEditCloudConfigModal, showEditReportModal } from './components/edit-modals.js';
+} from './api/plugin-links.js?v=97ff39a5';
+import { showEditCloudConfigModal, showEditReportModal } from './components/edit-modals.js?v=de87a971';
 
 (async function () {
   const signedIn  = document.getElementById('profile-signed-in');

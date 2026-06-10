@@ -1,7 +1,7 @@
 // banned (api) for the admin page.
 
-import { SUPABASE_URL } from '../config.js';
-import { supabaseHeaders } from '../utils.js';
+import { SUPABASE_URL } from '../config.js?v=ffed3d84';
+import { supabaseHeaders } from '../utils.js?v=bd5a67c2';
 
 export async function fetchBannedUsers(session, { search } = {}) {
   const url = `${SUPABASE_URL}/rest/v1/banned_users?select=id,proton_pulse_user_id,client_id,steam_username,banned_reason,banned_at&order=banned_at.desc`;

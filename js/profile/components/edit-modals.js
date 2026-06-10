@@ -3,11 +3,11 @@
 // api layer; takes no closure state from main.
 import {
   escapeHtml, formatSystemUpdated, enabledVarsToText, textToEnabledVars,
-} from '../utils.js';
+} from '../utils.js?v=be377407';
 import {
   fetchCloudConfig, patchCloudConfig, fetchFullUserConfig,
   fetchReportHistory, patchUserConfig,
-} from '../api/configs.js';
+} from '../api/configs.js?v=44b3fa74';
 
 export let _cloudEditModal = null;
 export function getCloudEditModal() {

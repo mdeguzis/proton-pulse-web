@@ -1,6 +1,6 @@
 // user_systems REST helpers: list, set/clear default, rename, delete.
-import { SUPABASE_URL } from '../config.js';
-import { supabaseHeaders } from './supabase.js';
+import { SUPABASE_URL } from '../config.js?v=87cd0f3d';
+import { supabaseHeaders } from './supabase.js?v=bdf4b262';
 
 export function supabaseUserSystemsUrl(query) {
   return `${SUPABASE_URL}/rest/v1/user_systems${query ? '?' + query : ''}`;

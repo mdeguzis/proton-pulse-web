@@ -1,9 +1,9 @@
 // author (components) for the app page. Relocated from app.js.
 
-import { fetchAuthorAvatar, fetchAuthorStats, getAuthorIdentity } from '../api/author.js';
-import { CDN } from '../config.js';
-import { route } from '../router.js';
-import { esc } from '../utils.js';
+import { fetchAuthorAvatar, fetchAuthorStats, getAuthorIdentity } from '../api/author.js?v=0d33fd7b';
+import { CDN } from '../config.js?v=f75c43ba';
+import { route } from '../router.js?v=8ea4ce5a';
+import { esc } from '../utils.js?v=d4fea298';
 
 export const ATOM_ICON_SVG = `
   <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">

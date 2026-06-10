@@ -1,6 +1,6 @@
 // flagged (components) for the admin page.
 
-import { escapeHtml, fmtDateTime, friendlyReason } from '../utils.js';
+import { escapeHtml, fmtDateTime, friendlyReason } from '../utils.js?v=bd5a67c2';
 
 export function renderFlagged(rows) {
   const loading = document.getElementById('flagged-loading');

@@ -1,5 +1,5 @@
 // Entry module for plugin-link.html. Migrated from plugin-link.js.
-import { SupaAuth } from '../shared/config.js';
+import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 
 (function initPluginLinkPage() {
   const diagnosticsPanel = document.getElementById('link-diagnostics');

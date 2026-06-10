@@ -1,7 +1,7 @@
 // flagged (api) for the admin page.
 
-import { SUPABASE_URL } from '../config.js';
-import { supabaseHeaders } from '../utils.js';
+import { SUPABASE_URL } from '../config.js?v=ffed3d84';
+import { supabaseHeaders } from '../utils.js?v=bd5a67c2';
 
 export async function fetchFlaggedReports(session, { search, type, dateFrom, dateTo, sortField, sortDir } = {}) {
   let url = `${SUPABASE_URL}/rest/v1/user_configs`

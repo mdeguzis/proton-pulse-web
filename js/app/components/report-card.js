@@ -1,13 +1,13 @@
 // report-card (components) for the app page. Relocated from app.js.
 
-import { estimateScore } from '../../shared/scoring.js';
-import { getWebClientId } from '../../shared/submit.js';
-import { detectGpuArch } from '../../lib/gpu-arch-detector.js';
-import { renderAuthorBlock } from './author.js';
-import { buildFormRows } from './config-cards.js';
-import { renderSignalStrip } from './signals.js';
-import { RATING_COLORS, RATING_TEXT } from '../config.js';
-import { confColor, confTextColor, configKey, daysAgo, esc, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js';
+import { estimateScore } from '../../shared/scoring.js?v=2787ec1d';
+import { getWebClientId } from '../../shared/submit.js?v=a89baf55';
+import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
+import { renderAuthorBlock } from './author.js?v=3d81374f';
+import { buildFormRows } from './config-cards.js?v=71f20328';
+import { renderSignalStrip } from './signals.js?v=5077a2e5';
+import { RATING_COLORS, RATING_TEXT } from '../config.js?v=f75c43ba';
+import { confColor, confTextColor, configKey, daysAgo, esc, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js?v=d4fea298';
 
 export function renderPermalink(r) {
   let id = r.reportId != null ? `r${r.reportId}` : (r.clientId ? `c${r.clientId.slice(0, 8)}` : '');
