@@ -388,11 +388,18 @@ jobs:
           VERSION=$(cat ../repo/package.json | python3 -c "import json,sys; print(json.load(sys.stdin).get('version','0.0.0'))")
           SHA=$(cd ../repo && git rev-parse --short HEAD)
           printf '{"version":"%s","sha":"%s","deployed_at":"%s","repo":"mdeguzis/proton-pulse-web"}\n' "$VERSION" "$SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > version.json
-          git checkout --orphan gh-pages-new
-          git add -A
+          git add scoring-info.json form-schema.json badges/ version.json
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            case "$path" in \#*) continue ;; esac
+            git add "$path"
+          done < gh-pages-manifest.txt
+          if git diff --cached --quiet; then
+            echo "No shell changes to publish."
+            exit 0
+          fi
           git commit -m "Pages shell refresh: $(date +%F)"
-          git push origin gh-pages-new:gh-pages --force
-          git branch -D gh-pages-new 2>/dev/null || true
+          git push origin gh-pages
 
       - name: Sync to staging
         if: env.STAGING_DEPLOY_TOKEN != ''
