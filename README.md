@@ -116,8 +116,6 @@ make setup
 
 Full docs live in the [wiki](https://github.com/mdeguzis/proton-pulse-web/wiki):
 
-- [System Design](https://github.com/mdeguzis/proton-pulse-web/wiki/System-Design)
-- [Architecture](https://github.com/mdeguzis/proton-pulse-web/wiki/Architecture)
 - [Data Pipeline](https://github.com/mdeguzis/proton-pulse-web/wiki/Data-Pipeline)
 - [API Reference](https://github.com/mdeguzis/proton-pulse-web/wiki/API-Reference)
 - [Supabase Voting](https://github.com/mdeguzis/proton-pulse-web/wiki/Supabase-Voting)
