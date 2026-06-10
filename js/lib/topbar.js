@@ -7,6 +7,8 @@
 // each page's own JS. This file is the single source of truth for chrome.
 
 (function () {
+  var _reflowOverflow = null; // set by wireNavOverflow, called after auth resolves
+
   // ---- 1. Markup -------------------------------------------------------
 
   const SPRITE = `
@@ -265,6 +267,7 @@
   <a href="https://github.com/mdeguzis/decky-proton-pulse/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
   <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> Decky Plugin</a>
   <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-github"/></svg> GitHub</a>
+  <a href="admin.html" id="mobile-admin-link" data-page="admin" hidden><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Admin</a>
 </div>`;
 
   // ---- 2. Insert markup at body start (skip if already present) --------
@@ -506,6 +509,8 @@
       panel.querySelectorAll('[data-page="' + activeKey + '"]').forEach(function (a) { a.classList.add('active'); });
     }
 
+    _reflowOverflow = fitItems;
+
     // Run once on insertion, then debounce on resize
     fitItems();
     let raf = null;
@@ -731,13 +736,18 @@
         // Show/hide the pre-rendered admin nav link based on admin status.
         checkIsAdmin(state.session).then(function (admin) {
           var link = document.getElementById('topbar-admin-link');
+          var mobileLink = document.getElementById('mobile-admin-link');
           if (link) link.hidden = !admin;
+          if (mobileLink) mobileLink.hidden = !admin;
+          if (admin && _reflowOverflow) _reflowOverflow();
         });
       } else {
         if (signedOut) signedOut.hidden = false;
         if (signedIn)  signedIn.hidden  = true;
         var adminLink = document.getElementById('topbar-admin-link');
         if (adminLink) adminLink.hidden = true;
+        var mobileAdminLink = document.getElementById('mobile-admin-link');
+        if (mobileAdminLink) mobileAdminLink.hidden = true;
       }
     });
   }
