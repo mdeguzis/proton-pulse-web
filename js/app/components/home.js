@@ -1,18 +1,38 @@
 // home (components) for the app page. Relocated from app.js.
 
-import { fetchRecentPulseReports } from '../api/reports.js?v=7c5d0e92';
-import { loadSearchIndex, searchIndex } from './search.js?v=9485c060';
+import { fetchRecentPulseReports } from '../api/reports.js?v=8d32e6b7';
+import { loadSearchIndex, searchIndex } from './search.js?v=00f17960';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=f75c43ba';
 import { daysAgo, latestPerApp } from '../utils.js?v=d4fea298';
 import { renderGameCard } from '../lib/card.js?v=9b7180ee';
 
-const LIMIT = 25;
+const PAGE_SIZE = 10;
 
 function _popularSub(g) {
   const total = (g.protondbCount || 0) + (g.pulseCount || 0);
   const countPart = total > 0 ? `${total.toLocaleString()} report${total === 1 ? '' : 's'}` : '';
   const datePart = g.lastReportDate ? `latest: ${g.lastReportDate}` : '';
   return [countPart, datePart].filter(Boolean).join(' \u00b7 ');
+}
+
+function _loadMoreBtn(sectionId) {
+  return `<button class="load-more-btn" data-section="${sectionId}">Load more</button>`;
+}
+
+function _appendCards(sectionId, queue, countsByApp) {
+  const cardsEl = document.getElementById(`cards-${sectionId}`);
+  const btnEl = document.getElementById(`load-more-${sectionId}`);
+  if (!cardsEl || !queue.length) { if (btnEl) btnEl.remove(); return; }
+  const batch = queue.splice(0, PAGE_SIZE);
+  const html = sectionId === 'pulse'
+    ? batch.map(row => renderActivityCard('report', row, countsByApp.get(String(row.app_id)) || {})).join('')
+    : batch.map(g => renderGameCard({
+        href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
+        title: g.title, sub: _popularSub(g),
+        tier: String(g.rating || '').toLowerCase() || undefined, sourceLabel: 'Steam',
+      })).join('');
+  cardsEl.insertAdjacentHTML('beforeend', html);
+  if (!queue.length && btnEl) btnEl.remove();
 }
 
 export async function renderHomePage() {
@@ -26,33 +46,37 @@ export async function renderHomePage() {
     ]);
 
     pulseReports.sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
-
     const countsByApp = new Map((searchIndex || []).map(r => [String(r[0]), { protondbCount: r[3] || 0, pulseCount: r[4] || 0 }]));
 
-    // Pad up to LIMIT with popular Steam games so the page is never sparse
-    const seenIds = new Set(pulseReports.map(r => String(r.app_id)));
-    const popularCards = [];
-    if (pulseReports.length < LIMIT && mostPlayedResp && mostPlayedResp.ok) {
-      const mostPlayed = await mostPlayedResp.json().catch(() => []);
-      for (const g of (Array.isArray(mostPlayed) ? mostPlayed : [])) {
-        if (pulseReports.length + popularCards.length >= LIMIT) break;
-        if (seenIds.has(String(g.appId))) continue;
-        popularCards.push(renderGameCard({
-          href: `#/app/${g.appId}`,
-          appId: g.appId,
-          imgUrl: g.headerImage || undefined,
-          title: g.title,
-          sub: _popularSub(g),
-          tier: String(g.rating || '').toLowerCase() || undefined,
-          sourceLabel: 'Steam',
-        }));
-      }
-    }
+    const pulseQueue = pulseReports.slice(PAGE_SIZE);
+    const pulseInitial = pulseReports.slice(0, PAGE_SIZE);
+    const pulseHtml = pulseInitial.map(row => renderActivityCard('report', row, countsByApp.get(String(row.app_id)) || {})).join('');
 
-    const pulseHtml = pulseReports.map(row => renderActivityCard('report', row, countsByApp.get(String(row.app_id)) || {})).join('');
+    const seenIds = new Set(pulseReports.map(r => String(r.app_id)));
+    let mostPlayed = [];
+    if (mostPlayedResp && mostPlayedResp.ok) {
+      mostPlayed = (await mostPlayedResp.json().catch(() => [])).filter(g => !seenIds.has(String(g.appId)));
+    }
+    const popularQueue = mostPlayed.slice(PAGE_SIZE);
+    const popularInitial = mostPlayed.slice(0, PAGE_SIZE);
+    const popularHtml = popularInitial.map(g => renderGameCard({
+      href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
+      title: g.title, sub: _popularSub(g),
+      tier: String(g.rating || '').toLowerCase() || undefined, sourceLabel: 'Steam',
+    })).join('');
+
     el.innerHTML = `
       <p class="section-label" style="margin-bottom:10px">Recent Reports</p>
-      <div class="cards">${pulseHtml}${popularCards.join('')}</div>`;
+      <div class="cards" id="cards-pulse">${pulseHtml}</div>
+      ${pulseQueue.length ? `<div id="load-more-pulse">${_loadMoreBtn('pulse')}</div>` : ''}
+      <p class="section-label" style="margin-top:24px;margin-bottom:10px">Popular on Steam</p>
+      <div class="cards" id="cards-popular">${popularHtml}</div>
+      ${popularQueue.length ? `<div id="load-more-popular">${_loadMoreBtn('popular')}</div>` : ''}`;
+
+    document.getElementById('load-more-pulse')?.querySelector('button')
+      ?.addEventListener('click', () => _appendCards('pulse', pulseQueue, countsByApp));
+    document.getElementById('load-more-popular')?.querySelector('button')
+      ?.addEventListener('click', () => _appendCards('popular', popularQueue, countsByApp));
   } catch {
     el.innerHTML = '<div class="state-box">Search for a game above or navigate to <code>#/app/{appId}</code></div>';
   }

@@ -83,7 +83,7 @@ def _last_report_date(data_dir: Path, app_id: str) -> str | None:
         return None
 
 
-def build_most_played(output_dir, limit: int = 15, ranks: list[dict] | None = None) -> list[dict]:
+def build_most_played(output_dir, limit: int = 100, ranks: list[dict] | None = None) -> list[dict]:
     """Write <output_dir>/most_played.json and return the rows written.
 
     Takes Steam's most-played list (rank order), keeps the games we have a real

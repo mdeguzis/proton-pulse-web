@@ -6,7 +6,7 @@ import { latestPerApp } from '../utils.js?v=d4fea298';
 export async function fetchRecentPulseReports() {
   try {
     const r = await fetch(
-      `${SB_URL}/user_configs?select=id,app_id,title,rating,proton_version,created_at,source&order=created_at.desc&limit=25`,
+      `${SB_URL}/user_configs?select=id,app_id,title,rating,proton_version,created_at,source&order=created_at.desc&limit=200`,
       { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
     );
     if (!r.ok) return [];
