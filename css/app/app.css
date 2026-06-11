@@ -992,13 +992,15 @@ a.card:hover { text-decoration: none; }
 .card {
   display: flex;
   gap: 14px;
-  padding: 13px 14px;
+  padding: 8px 14px 8px 8px;
   background: var(--s1);
   border: 1px solid var(--border);
+  border-radius: 10px;
   cursor: pointer;
-  transition: background .1s;
+  transition: border-color 0.15s, background 0.15s, transform 0.05s;
 }
-.card:hover { background: var(--s2); }
+.card:hover { border-color: var(--accent); }
+.card:active { transform: translateY(1px); }
 .card .left { flex: 1; min-width: 0; }
 /* card-body replaces .left for the new layout - middle column with proton +
    hw + age + signal-strip. Same flex behavior as .left so existing rules still
@@ -1187,7 +1189,7 @@ a.card:hover { text-decoration: none; }
 }
 /* Home feed activity cards: always-row pg-card-style layout */
 .activity-card { flex-direction: row !important; align-items: center !important; padding: 8px 14px 8px 8px; gap: 12px; }
-.activity-thumb { width: 92px; height: 43px; object-fit: cover; flex-shrink: 0; border-radius: 6px; border: 1px solid var(--border); }
+.activity-thumb { width: 92px; height: 43px; object-fit: cover; flex-shrink: 0; border-radius: 6px; }
 .activity-info { flex: 1 1 auto; min-width: 0; }
 .activity-title { font-size: 0.95rem; font-weight: 600; color: var(--strong); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .activity-sub { font-size: 0.78rem; color: var(--muted); margin-top: 2px; font-family: var(--mono); }

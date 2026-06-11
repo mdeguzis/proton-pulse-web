@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=3333b0d8';
-import { loadSearchIndex, searchIndex } from './search.js?v=853517ea';
+import { loadSearchIndex, searchIndex } from './search.js?v=2bcec534';
 import { RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, STEAM_IMG, isNonSteamAppId } from '../config.js?v=f75c43ba';
 import { daysAgo, esc, latestPerApp } from '../utils.js?v=d4fea298';
 
@@ -48,7 +48,7 @@ export async function renderHomePage() {
 
     el.innerHTML = activity.length ? `
       <p class="section-label" style="margin-bottom:10px">Recent Reports</p>
-      <div class="cards" style="border:1px solid var(--border)">
+      <div class="cards">
         ${activity.map(({ kind, row }) => renderActivityCard(kind, row, protonDbAppIds)).join('')}
       </div>` : '';
   } catch {
@@ -81,11 +81,11 @@ export async function renderHomeFallback() {
   return `
     ${pulseCards ? `
       <p class="section-label" style="margin-bottom:10px">Recent Proton Pulse Reports</p>
-      <div class="cards" style="border:1px solid var(--border);margin-bottom:16px">
+      <div class="cards" style="margin-bottom:16px">
         ${pulseCards}
       </div>` : ''}
     <p class="section-label" style="margin-bottom:10px">Popular ProtonDB Reports</p>
-    <div class="cards" style="border:1px solid var(--border)">
+    <div class="cards">
       ${popularCards}
     </div>`;
 }
@@ -133,7 +133,6 @@ export function renderActivityCard(kind, row, protonDbAppIds) {
       <div class="activity-info">
         <div class="activity-title">${esc(title)}</div>
         <div class="activity-sub">${esc(hwLine)}${hwLine && age ? ' &middot; ' : ''}${age}</div>
-        <div class="activity-sources">${pulseBadge}${protonDbBadge}${sourceBadge}</div>
       </div>
       ${ratingBadge}
     </a>`;
@@ -151,7 +150,6 @@ export function renderPulseReportCards(rows) {
       <div class="activity-info">
         <div class="activity-title">${esc(row.title || `App ${row.app_id}`)}</div>
         <div class="activity-sub">${sub}</div>
-        <div class="activity-sources"><span class="source-badge pulse"><img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse</span></div>
       </div>
       ${rc ? `<span class="activity-badge" style="background:${rc};color:${rt}">${rating.toUpperCase()}</span>` : ''}
     </a>`;
