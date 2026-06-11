@@ -1626,6 +1626,17 @@ html[data-motion="off"] .banner-atoms {
   background: var(--s2);
   flex-shrink: 0;
 }
+.game-card-thumb--missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
 .game-card-body { flex: 1; min-width: 0; }
 .game-card-title {
   font-size: 0.95rem;

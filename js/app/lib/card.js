@@ -3,7 +3,6 @@
 import { STEAM_IMG } from '../config.js?v=f75c43ba';
 import { esc } from '../utils.js?v=d4fea298';
 
-const FALLBACK_IMG = 'https://cdn.cloudflare.steamstatic.com/steam/apps/70/capsule_231x87.jpg';
 const STEAM_IMG_CDN2 = id => `https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/header.jpg`;
 
 const TIER_COLORS = {
@@ -20,8 +19,8 @@ const TIER_COLORS = {
 export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor }) {
   const img = appId ? STEAM_IMG(appId) : '';
   const thumbHtml = img
-    ? `<img class="game-card-thumb" src="${img}" alt="" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='${STEAM_IMG_CDN2(appId)}'}else{this.onerror=null;this.src='${FALLBACK_IMG}'}">`
-    : `<div class="game-card-thumb"></div>`;
+    ? `<img class="game-card-thumb" src="${img}" alt="" loading="lazy" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='${STEAM_IMG_CDN2(appId)}'}else{this.onerror=null;this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'game-card-thumb game-card-thumb--missing\\'>Box art missing</div>')}">`
+    : `<div class="game-card-thumb game-card-thumb--missing">Box art missing</div>`;
 
   const label = tier ? tier.toUpperCase() : (badge || '');
   let badgeStyle = '';
