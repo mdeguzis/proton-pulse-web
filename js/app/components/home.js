@@ -1,12 +1,20 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=7c5d0e92';
-import { loadSearchIndex, searchIndex } from './search.js?v=6d6d3ff2';
+import { loadSearchIndex, searchIndex } from './search.js?v=5c8b29f2';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=f75c43ba';
 import { daysAgo, latestPerApp } from '../utils.js?v=d4fea298';
 import { renderGameCard } from '../lib/card.js?v=fb41e0a7';
 
 const LIMIT = 25;
+
+function _popularSub(g) {
+  const total = (g.protondbCount || 0) + (g.pulseCount || 0);
+  const parts = [];
+  if (total > 0) parts.push(`${total.toLocaleString()} report${total === 1 ? '' : 's'}`);
+  if (g.peak) parts.push(`${g.peak.toLocaleString()} peak players`);
+  return parts.join(' \u00b7 ') || 'Popular on Steam';
+}
 
 export async function renderHomePage() {
   const el = document.getElementById('content');
@@ -32,7 +40,7 @@ export async function renderHomePage() {
           appId: g.appId,
           imgUrl: g.headerImage || undefined,
           title: g.title,
-          sub: g.peak ? `${g.peak.toLocaleString()} peak players` : 'Popular on Steam',
+          sub: _popularSub(g),
           tier: String(g.rating || '').toLowerCase() || undefined,
         }));
       }

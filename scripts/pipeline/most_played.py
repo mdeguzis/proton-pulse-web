@@ -39,21 +39,23 @@ def fetch_most_played(timeout: int = 30) -> list[dict]:
     return payload.get("response", {}).get("ranks", [])
 
 
-def load_search_index(output_dir: Path) -> dict[str, tuple[str, str]]:
-    """Map app_id (str) -> (title, tier) from search-index.json.
+def load_search_index(output_dir: Path) -> dict[str, tuple[str, str, int, int]]:
+    """Map app_id (str) -> (title, tier, protondb_count, pulse_count) from search-index.json.
 
     Rows are [app_id, title, tier, protondb_count, pulse_count].
     """
     path = Path(output_dir) / "search-index.json"
     rows = json.loads(path.read_text(encoding="utf-8"))
-    index: dict[str, tuple[str, str]] = {}
+    index: dict[str, tuple[str, str, int, int]] = {}
     for row in rows:
         if not isinstance(row, list) or len(row) < 3:
             continue
         app_id = str(row[0])
         title = row[1] or ""
         tier = (row[2] or "").lower()
-        index[app_id] = (title, tier)
+        protondb_count = int(row[3]) if len(row) > 3 and isinstance(row[3], int) else 0
+        pulse_count = int(row[4]) if len(row) > 4 and isinstance(row[4], int) else 0
+        index[app_id] = (title, tier, protondb_count, pulse_count)
     return index
 
 
@@ -75,7 +77,7 @@ def build_most_played(output_dir, limit: int = 15, ranks: list[dict] | None = No
         match = index.get(app_id)
         if not match:
             continue  # no compatibility data for this game
-        title, tier = match
+        title, tier, protondb_count, pulse_count = match
         if tier not in KNOWN_TIERS:
             continue  # skip untested / unknown so every row has a real badge
         peak = entry.get("peak_in_game")
@@ -84,6 +86,8 @@ def build_most_played(output_dir, limit: int = 15, ranks: list[dict] | None = No
             "title": title,
             "peak": int(peak) if isinstance(peak, int) else None,
             "rating": tier,
+            "protondbCount": protondb_count,
+            "pulseCount": pulse_count,
             "headerImage": None,  # filled in by game_images.build_game_images after this step
         })
         if len(result) >= limit:
