@@ -15,8 +15,9 @@ const APP_SRC = walkJs(APP_DIR).map(f => fs.readFileSync(f, 'utf8')).join('\n');
 
 describe('public Proton Pulse config queries', () => {
   test('public app surfaces only request explicitly published cloud configs', () => {
-    expect(APP_SRC).toContain('user_proton_configs?is_published=eq.true');
-    expect(APP_SRC).toContain("url.searchParams.set('is_published', 'eq.true')");
+    // supabase.js fetches configs filtered by published + app_id
     expect(APP_SRC).toContain('user_proton_configs?app_id=eq.${appId}&is_published=eq.true');
+    // reports.js search query sets is_published filter via URLSearchParams
+    expect(APP_SRC).toContain("url.searchParams.set('is_published', 'eq.true')");
   });
 });

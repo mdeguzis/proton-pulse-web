@@ -84,6 +84,7 @@ def build_most_played(output_dir, limit: int = 15, ranks: list[dict] | None = No
             "title": title,
             "peak": int(peak) if isinstance(peak, int) else None,
             "rating": tier,
+            "headerImage": None,  # filled in by game_images.build_game_images after this step
         })
         if len(result) >= limit:
             break

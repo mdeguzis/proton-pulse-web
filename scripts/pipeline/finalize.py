@@ -19,6 +19,7 @@ from .catalog import (
 )
 from .common import LIVE_COUNTS_URL, count_year_bucket_files, fetch_json, flush_steam_title_cache, log
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
+from .game_images import build_game_images
 from .pulse import merge_pulse_into_data_dir
 from .state import read_pipeline_state
 from .stats import write_stats_json
@@ -1230,6 +1231,7 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # /stats.html page. Tiny output regardless of dataset size since everything
     # is pre-aggregated. See scripts/pipeline/stats.py
     write_stats_json(data_output_path, output_path)
+    build_game_images(output_path)
     log_summary(state["parsed_count"], data_output_path, output_path, pipeline_start, state["backfilled_keys"])
     flush_steam_title_cache()
     log("Done finalizing output.")

@@ -9,6 +9,7 @@ from .backfill import run_backfill, run_coverage_backfill, run_probe_backfill
 from .catalog import get_steam_api_key, load_steam_game_catalog
 from .common import clone_repo, log, set_debug
 from .finalize import build_probe_chunk_plan, finalize_output, reindex_apps, update_protondb_probe_cache
+from .game_images import build_game_images
 from .most_played import build_most_played
 from .process import process_reports, seed_official_dump_metadata
 
@@ -174,6 +175,7 @@ def main():
 
     if command == "most-played":
         build_most_played(args.output_dir, limit=getattr(args, "limit", 15))
+        build_game_images(args.output_dir)
         return
 
     if command == "probe-plan":

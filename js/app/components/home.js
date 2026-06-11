@@ -1,49 +1,36 @@
 // home (components) for the app page. Relocated from app.js.
 
-import { fetchRecentPulseReports } from '../api/reports.js?v=3333b0d8';
-import { loadSearchIndex, searchIndex } from './search.js?v=b0a814a9';
+import { fetchRecentPulseReports } from '../api/reports.js?v=7c5d0e92';
+import { loadSearchIndex, searchIndex } from './search.js?v=982352b0';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=f75c43ba';
 import { daysAgo, latestPerApp } from '../utils.js?v=d4fea298';
-import { renderGameCard } from '../lib/card.js?v=813f8ae9';
+import { renderGameCard } from '../lib/card.js?v=2dbba4ef';
 
-const LIMIT = 20;
+const LIMIT = 25;
 
 export async function renderHomePage() {
   const el = document.getElementById('content');
   el.innerHTML = '<div class="state-box">Loading recent reports...</div>';
   try {
-    const [r, pulseReports, mostPlayedResp] = await Promise.all([
-      fetch(
-        `${SB_URL}/user_proton_configs?is_published=eq.true&select=id,voter_id,app_id,app_name,config,updated_at,is_published&order=updated_at.desc`,
-        { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
-      ),
+    const [pulseReports, mostPlayedResp] = await Promise.all([
       fetchRecentPulseReports(),
       fetch('most_played.json').catch(() => null),
     ]);
-    const configRows = r.ok
-      ? latestPerApp(await r.json()).sort((a, b) => String(b.updated_at || '').localeCompare(String(a.updated_at || '')))
-      : [];
 
-    const activity = [];
-    for (const row of pulseReports) {
-      activity.push({ kind: 'report', ts: Math.floor(new Date(row.created_at).getTime() / 1000), row });
-    }
-    for (const row of configRows) {
-      activity.push({ kind: 'config', ts: Math.floor(new Date(row.updated_at).getTime() / 1000), row });
-    }
-    activity.sort((a, b) => b.ts - a.ts);
+    pulseReports.sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
 
     // Pad up to LIMIT with popular Steam games so the page is never sparse
-    const seenIds = new Set(activity.map(({ row }) => String(row.app_id)));
+    const seenIds = new Set(pulseReports.map(r => String(r.app_id)));
     const popularCards = [];
-    if (activity.length < LIMIT && mostPlayedResp && mostPlayedResp.ok) {
+    if (pulseReports.length < LIMIT && mostPlayedResp && mostPlayedResp.ok) {
       const mostPlayed = await mostPlayedResp.json().catch(() => []);
       for (const g of (Array.isArray(mostPlayed) ? mostPlayed : [])) {
-        if (activity.length + popularCards.length >= LIMIT) break;
+        if (pulseReports.length + popularCards.length >= LIMIT) break;
         if (seenIds.has(String(g.appId))) continue;
         popularCards.push(renderGameCard({
           href: `#/app/${g.appId}`,
           appId: g.appId,
+          imgUrl: g.headerImage || undefined,
           title: g.title,
           sub: g.peak ? `${g.peak.toLocaleString()} peak players` : 'Popular on Steam',
           tier: String(g.rating || '').toLowerCase() || undefined,
@@ -51,7 +38,7 @@ export async function renderHomePage() {
       }
     }
 
-    const pulseHtml = activity.map(({ kind, row }) => renderActivityCard(kind, row)).join('');
+    const pulseHtml = pulseReports.map(row => renderActivityCard('report', row)).join('');
     el.innerHTML = `
       <p class="section-label" style="margin-bottom:10px">Recent Reports</p>
       <div class="cards">${pulseHtml}${popularCards.join('')}</div>`;
