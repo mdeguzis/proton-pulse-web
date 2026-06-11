@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=7c5d0e92';
-import { loadSearchIndex, searchIndex } from './search.js?v=dfa4984f';
+import { loadSearchIndex, searchIndex } from './search.js?v=520cdf43';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=f75c43ba';
 import { daysAgo, latestPerApp } from '../utils.js?v=d4fea298';
 import { renderGameCard } from '../lib/card.js?v=9b7180ee';
@@ -22,9 +22,12 @@ export async function renderHomePage() {
     const [pulseReports, mostPlayedResp] = await Promise.all([
       fetchRecentPulseReports(),
       fetch('most_played.json').catch(() => null),
+      loadSearchIndex(),
     ]);
 
     pulseReports.sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
+
+    const countsByApp = new Map((searchIndex || []).map(r => [String(r[0]), { protondbCount: r[3] || 0, pulseCount: r[4] || 0 }]));
 
     // Pad up to LIMIT with popular Steam games so the page is never sparse
     const seenIds = new Set(pulseReports.map(r => String(r.app_id)));
@@ -46,7 +49,7 @@ export async function renderHomePage() {
       }
     }
 
-    const pulseHtml = pulseReports.map(row => renderActivityCard('report', row)).join('');
+    const pulseHtml = pulseReports.map(row => renderActivityCard('report', row, countsByApp.get(String(row.app_id)) || {})).join('');
     el.innerHTML = `
       <p class="section-label" style="margin-bottom:10px">Recent Reports</p>
       <div class="cards">${pulseHtml}${popularCards.join('')}</div>`;
@@ -87,21 +90,25 @@ export async function renderHomeFallback() {
 // which fields show in the body. Single renderer means both kinds share
 // the same hover/click target shape, so the layout is consistent down
 // the list instead of two visually separate sections
-export function renderActivityCard(kind, row) {
+export function renderActivityCard(kind, row, counts = {}) {
   const isReport = kind === 'report';
   const appId = row.app_id;
-  let title, hwLine, age, isNonSteam = false;
+  let title, sub, isNonSteam = false;
   if (isReport) {
     title = row.title || `App ${appId}`;
-    hwLine = row.proton_version || '';
-    age = daysAgo(Math.floor(new Date(row.created_at).getTime() / 1000));
     isNonSteam = isNonSteamAppId(appId);
+    const total = (counts.protondbCount || 0) + (counts.pulseCount || 0);
+    const countPart = total > 0 ? `${total.toLocaleString()} report${total === 1 ? '' : 's'}` : '';
+    const date = row.created_at ? String(row.created_at).slice(0, 10) : '';
+    const datePart = date ? `latest: ${date}` : '';
+    sub = [countPart, datePart].filter(Boolean).join(' \u00b7 ');
   } else {
     const cfg = row.config || {};
     title = row.app_name || cfg.appName || `App ${appId}`;
-    hwLine = [cfg.protonVersion || '', cfg.profileName || ''].filter(Boolean).join(' | ');
+    const hwLine = [cfg.protonVersion || '', cfg.profileName || ''].filter(Boolean).join(' | ');
     const d = Math.round((Date.now() / 1000 - new Date(row.updated_at).getTime() / 1000) / 86400);
-    age = d < 1 ? 'today' : d === 1 ? '1 day ago' : `${d} days ago`;
+    const age = d < 1 ? 'today' : d === 1 ? '1 day ago' : `${d} days ago`;
+    sub = `${hwLine}${hwLine && age ? ' \u00b7 ' : ''}${age}`;
     isNonSteam = cfg.isNonSteam === true || isNonSteamAppId(appId);
   }
   const rating = isReport ? String(row.rating || '').toLowerCase() : '';
@@ -109,7 +116,7 @@ export function renderActivityCard(kind, row) {
     href: `#/app/${appId}`,
     appId,
     title,
-    sub: `${hwLine}${hwLine && age ? ' \u00b7 ' : ''}${age}`,
+    sub,
     tier: rating || undefined,
     sourceLabel: isNonSteam ? 'Non-Steam' : 'Steam',
   });
