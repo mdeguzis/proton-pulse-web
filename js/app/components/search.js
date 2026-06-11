@@ -2,9 +2,10 @@
 
 import { estimateScore } from '../../shared/scoring.js?v=2787ec1d';
 import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=3333b0d8';
-import { renderGamePage } from './game-page.js?v=79c6edd4';
+import { renderGamePage } from './game-page.js?v=68895588';
 import { STEAM_IMG } from '../config.js?v=f75c43ba';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=d4fea298';
+import { renderGameCard } from '../lib/card.js?v=e84d9849';
 
 // Search index + results UX -- factored out of app.js.
 // Loaded as a classic script BEFORE app.js so its globals
@@ -30,26 +31,8 @@ export function searchIndexMatches(query, limit) {
 // --- renderPulseSearchResult ---
 export function renderPulseSearchResult(row) {
   const age = daysAgo(Math.floor(new Date(row.updatedAt).getTime() / 1000));
-  const isProtonDb = (row.source || '').toLowerCase() === 'protondb';
-  const alsoInIndex = !isProtonDb && (searchIndex || []).some(([id]) => String(id) === String(row.appId));
-  const sourceBadge = isProtonDb
-    ? '<span class="source-badge protondb">ProtonDB</span>'
-    : '<span class="source-badge pulse"><img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse</span>'
-      + (alsoInIndex ? ' <span class="source-badge protondb">ProtonDB</span>' : '');
-  return `
-    <a class="search-result-card" href="#/app/${row.appId}">
-      <img src="${STEAM_IMG(row.appId)}" onerror="this.style.display='none'" alt="">
-      <div class="search-result-main">
-        <div class="search-result-main-title">${esc(row.appName)}</div>
-        <div class="search-result-main-meta">
-          Latest config: ${esc(row.profileName)}${row.protonVersion ? ` - ${esc(row.protonVersion)}` : ''}<br>
-          Updated ${age}
-        </div>
-      </div>
-      <div class="search-result-side">
-        ${sourceBadge}
-      </div>
-    </a>`;
+  const sub = `${row.profileName ? esc(row.profileName) : ''}${row.protonVersion ? ' \u00b7 ' + esc(row.protonVersion) : ''} \u00b7 ${age}`;
+  return renderGameCard({ href: `#/app/${row.appId}`, appId: row.appId, title: row.appName, sub, badge: 'Pulse' });
 }
 
 // --- renderIndexSearchResult ---
@@ -65,22 +48,7 @@ export function renderIndexSearchResult(entry) {
   const meta = counts.length
     ? counts.join(' + ') + ' report' + ((protondbCount + pulseCount) === 1 ? '' : 's')
     : `ProtonDB data indexed for app ${esc(appId)}.`;
-  const tierBadge = tier
-    ? `<span class="tier-badge tier-${esc(tier)}">${esc(tier)}</span>`
-    : '';
-  return `
-    <a class="search-result-card" href="#/app/${appId}">
-      <img src="${STEAM_IMG(appId)}" onerror="this.style.display='none'" alt="">
-      <div class="search-result-main">
-        <div class="search-result-main-title">${esc(title)}</div>
-        <div class="search-result-main-meta">${meta}</div>
-      </div>
-      <div class="search-result-side">
-        ${tierBadge}
-        ${pulseCount ? '<span class="source-badge pulse"><img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse</span>' : ''}
-        <span class="source-badge protondb">ProtonDB</span>
-      </div>
-    </a>`;
+  return renderGameCard({ href: `#/app/${appId}`, appId, title, sub: meta, tier: tier || undefined });
 }
 
 // --- renderSearchPage ---

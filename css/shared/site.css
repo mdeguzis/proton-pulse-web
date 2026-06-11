@@ -1598,3 +1598,66 @@ html[data-motion="off"] .banner-atoms {
   .sidebar-nav-block { display: none; }
   .sidebar-about-block { display: none; }
 }
+
+/* ── Unified game card ─────────────────────────────────────────────────────
+   Single source of truth for any card that shows: thumbnail | title + sub | badge.
+   Use renderGameCard() in js/app/lib/card.js to generate the HTML.
+   Mobile: thumbnail shrinks to 60x28, title stays bold, sub truncates.        */
+.game-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px 8px 8px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.05s;
+}
+.game-card:hover { border-color: var(--accent); text-decoration: none; }
+.game-card:active { transform: translateY(1px); }
+.game-card-thumb {
+  width: 92px;
+  height: 43px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--s2);
+  flex-shrink: 0;
+}
+.game-card-body { flex: 1; min-width: 0; }
+.game-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--strong);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.game-card-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 2px;
+  font-family: var(--mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.game-card-badge {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: var(--s2);
+  color: var(--muted);
+}
+@media (max-width: 480px) {
+  .game-card-thumb { width: 60px; height: 28px; }
+  .game-card-title { font-size: 0.88rem; }
+  .game-card-sub   { font-size: 0.72rem; }
+}

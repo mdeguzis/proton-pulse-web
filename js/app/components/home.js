@@ -1,9 +1,10 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=3333b0d8';
-import { loadSearchIndex, searchIndex } from './search.js?v=1a4e33cf';
-import { RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, STEAM_IMG, isNonSteamAppId } from '../config.js?v=f75c43ba';
-import { daysAgo, esc, latestPerApp } from '../utils.js?v=d4fea298';
+import { loadSearchIndex, searchIndex } from './search.js?v=069664f8';
+import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=f75c43ba';
+import { daysAgo, latestPerApp } from '../utils.js?v=d4fea298';
+import { renderGameCard } from '../lib/card.js?v=e84d9849';
 
 export async function renderHomePage() {
   const el = document.getElementById('content');
@@ -66,14 +67,7 @@ export async function renderHomeFallback() {
   const popularCards = popularIds
     .map((appId) => ({ appId, title: titleById.get(appId) || `App ${appId}` }))
     .filter((row) => row.title)
-    .map((row) => `
-      <a class="card activity-card" href="#/app/${row.appId}" style="text-decoration:none">
-        <img src="${STEAM_IMG(row.appId)}" onerror="this.style.visibility='hidden'" alt="" class="activity-thumb">
-        <div class="activity-info">
-          <div class="activity-title">${esc(row.title)}</div>
-          <div class="activity-sub">ProtonDB data available</div>
-        </div>
-      </a>`)
+    .map((row) => renderGameCard({ href: `#/app/${row.appId}`, appId: row.appId, title: row.title, sub: 'ProtonDB data available' }))
     .join('');
 
   const pulseCards = renderPulseReportCards(pulseReports);
@@ -119,39 +113,25 @@ export function renderActivityCard(kind, row, protonDbAppIds) {
   // Reports is what enforces filling out responses before a row goes
   // public-visible. No REPORT/CONFIG badge needed on the home feed
   const rating = isReport ? String(row.rating || '').toLowerCase() : '';
-  const rc = RATING_COLORS[rating] || '';
-  const rt = RATING_TEXT[rating] || '';
-  const ratingBadge = rating && rc
-    ? `<span class="activity-badge" style="background:${rc};color:${rt}">${rating.toUpperCase()}</span>`
-    : '';
-  const pulseBadge = `<span class="source-badge pulse"><img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="">Pulse</span>`;
-  const protonDbBadge = hasProtonDb ? '<span class="source-badge protondb">ProtonDB</span>' : '';
-  const sourceBadge = isNonSteam ? '<span class="source-badge non-steam-game">Non-Steam</span>' : '<span class="source-badge steam-game">Steam</span>';
-  return `
-    <a class="card activity-card" href="#/app/${appId}" style="text-decoration:none">
-      <img src="${STEAM_IMG(appId)}" onerror="this.style.visibility='hidden'" alt="" class="activity-thumb">
-      <div class="activity-info">
-        <div class="activity-title">${esc(title)}</div>
-        <div class="activity-sub">${esc(hwLine)}${hwLine && age ? ' &middot; ' : ''}${age}</div>
-      </div>
-      ${ratingBadge}
-    </a>`;
+  return renderGameCard({
+    href: `#/app/${appId}`,
+    appId,
+    title,
+    sub: `${hwLine}${hwLine && age ? ' \u00b7 ' : ''}${age}`,
+    tier: rating || undefined,
+  });
 }
 
 export function renderPulseReportCards(rows) {
   return rows.map((row) => {
     const rating = String(row.rating || '').toLowerCase();
-    const rc = RATING_COLORS[rating] || '';
-    const rt = RATING_TEXT[rating] || '';
-    const sub = [row.proton_version, daysAgo(Math.floor(new Date(row.created_at).getTime() / 1000))].filter(Boolean).join(' &middot; ');
-    return `
-    <a class="card activity-card" href="#/app/${row.app_id}" style="text-decoration:none">
-      <img src="${STEAM_IMG(row.app_id)}" onerror="this.style.visibility='hidden'" alt="" class="activity-thumb">
-      <div class="activity-info">
-        <div class="activity-title">${esc(row.title || `App ${row.app_id}`)}</div>
-        <div class="activity-sub">${sub}</div>
-      </div>
-      ${rc ? `<span class="activity-badge" style="background:${rc};color:${rt}">${rating.toUpperCase()}</span>` : ''}
-    </a>`;
+    const sub = [row.proton_version, daysAgo(Math.floor(new Date(row.created_at).getTime() / 1000))].filter(Boolean).join(' \u00b7 ');
+    return renderGameCard({
+      href: `#/app/${row.app_id}`,
+      appId: row.app_id,
+      title: row.title || `App ${row.app_id}`,
+      sub,
+      tier: rating || undefined,
+    });
   }).join('');
 }
