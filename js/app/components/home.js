@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=7c5d0e92';
-import { loadSearchIndex, searchIndex } from './search.js?v=952fab6b';
+import { loadSearchIndex, searchIndex } from './search.js?v=dfa4984f';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=f75c43ba';
 import { daysAgo, latestPerApp } from '../utils.js?v=d4fea298';
 import { renderGameCard } from '../lib/card.js?v=9b7180ee';
@@ -10,7 +10,9 @@ const LIMIT = 25;
 
 function _popularSub(g) {
   const total = (g.protondbCount || 0) + (g.pulseCount || 0);
-  return total > 0 ? `${total.toLocaleString()} compatibility report${total === 1 ? '' : 's'}` : '';
+  const countPart = total > 0 ? `${total.toLocaleString()} report${total === 1 ? '' : 's'}` : '';
+  const datePart = g.lastReportDate ? `latest: ${g.lastReportDate}` : '';
+  return [countPart, datePart].filter(Boolean).join(' \u00b7 ');
 }
 
 export async function renderHomePage() {

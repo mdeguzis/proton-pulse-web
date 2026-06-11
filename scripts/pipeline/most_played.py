@@ -59,14 +59,40 @@ def load_search_index(output_dir: Path) -> dict[str, tuple[str, str, int, int]]:
     return index
 
 
+def _last_report_date(data_dir: Path, app_id: str) -> str | None:
+    """Return ISO date (YYYY-MM-DD) of the most recent report for app_id, or None."""
+    from datetime import datetime, timezone
+    app_dir = data_dir / app_id
+    if not app_dir.is_dir():
+        return None
+    year_files = sorted(
+        (f for f in app_dir.glob("*.json") if f.stem not in {"latest", "index", "votes", "metadata"}),
+        key=lambda p: p.stem,
+    )
+    if not year_files:
+        return None
+    try:
+        rows = json.loads(year_files[-1].read_text(encoding="utf-8"))
+        if not isinstance(rows, list):
+            return None
+        latest_ts = max((int(r.get("timestamp", 0)) for r in rows if r.get("timestamp")), default=0)
+        if not latest_ts:
+            return None
+        return datetime.fromtimestamp(latest_ts, tz=timezone.utc).strftime("%Y-%m-%d")
+    except Exception:
+        return None
+
+
 def build_most_played(output_dir, limit: int = 15, ranks: list[dict] | None = None) -> list[dict]:
     """Write <output_dir>/most_played.json and return the rows written.
 
     Takes Steam's most-played list (rank order), keeps the games we have a real
     compatibility tier for, and emits the top ``limit`` as
-    [{appId, title, peak, rating}]. ``ranks`` can be injected for testing.
+    [{appId, title, peak, rating, protondbCount, pulseCount, lastReportDate, headerImage}].
+    ``ranks`` can be injected for testing.
     """
     output_dir = Path(output_dir)
+    data_dir = output_dir / "data"
     index = load_search_index(output_dir)
     if ranks is None:
         ranks = fetch_most_played()
@@ -88,6 +114,7 @@ def build_most_played(output_dir, limit: int = 15, ranks: list[dict] | None = No
             "rating": tier,
             "protondbCount": protondb_count,
             "pulseCount": pulse_count,
+            "lastReportDate": _last_report_date(data_dir, app_id),
             "headerImage": None,  # filled in by game_images.build_game_images after this step
         })
         if len(result) >= limit:
