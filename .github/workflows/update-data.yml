@@ -400,16 +400,7 @@ jobs:
           fi
           git commit -m "Pages shell refresh: $(date +%F)"
           git push origin gh-pages
-
-      - name: Sync to staging
-        if: env.STAGING_DEPLOY_TOKEN != ''
-        env:
-          STAGING_DEPLOY_TOKEN: ${{ secrets.STAGING_DEPLOY_TOKEN }}
-        run: |
-          cd gh-pages-data
-          git config --local --unset-all http.https://github.com/.extraheader || true
-          git remote add staging https://x-access-token:${{ secrets.STAGING_DEPLOY_TOKEN }}@github.com/mdeguzis/proton-pulse-web-staging.git
-          git push staging HEAD:gh-pages --force
+          echo "Production updated. Staging is NOT touched -- run make gh-staging to update staging separately."
 
   # ── Targeted backfill: just backfill specific IDs and publish ──────
   targeted-backfill:

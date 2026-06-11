@@ -41,11 +41,12 @@ window.__steamImgLookup = async (el, appId) => {
   }
 };
 
-// opts: { href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl }
+// opts: { href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, chips }
 // imgUrl: pre-resolved Steam image URL (bypasses CDN guessing entirely)
 // tier: one of platinum/gold/silver/bronze/borked - auto-colours the badge
 // badge: raw label string - used when tier is not applicable
-export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl }) {
+// chips: array of pre-built HTML strings rendered below the sub line (source badges etc.)
+export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, chips }) {
   const primarySrc = imgUrl || (appId ? STEAM_IMG(appId) : '');
   const cdn2Src = appId ? STEAM_IMG_CDN2(appId) : '';
   // appId is always numeric - use bare number to avoid double-quote injection into onerror=""
@@ -65,6 +66,9 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const badgeHtml = label
     ? `<span class="game-card-badge" ${badgeStyle}>${esc(label)}</span>`
     : '';
+  const chipsHtml = chips && chips.length
+    ? `<div class="activity-sources">${chips.join('')}</div>`
+    : '';
 
-  return `<a class="game-card" href="${href}">${thumbHtml}<div class="game-card-body"><div class="game-card-title">${esc(title)}</div><div class="game-card-sub">${sub}</div></div>${badgeHtml}</a>`;
+  return `<a class="game-card" href="${href}">${thumbHtml}<div class="game-card-body"><div class="game-card-title">${esc(title)}</div><div class="game-card-sub">${sub}</div>${chipsHtml}</div>${badgeHtml}</a>`;
 }

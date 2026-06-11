@@ -1,10 +1,10 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=7c5d0e92';
-import { loadSearchIndex, searchIndex } from './search.js?v=5c8b29f2';
+import { loadSearchIndex, searchIndex } from './search.js?v=0f61dcdb';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=f75c43ba';
 import { daysAgo, latestPerApp } from '../utils.js?v=d4fea298';
-import { renderGameCard } from '../lib/card.js?v=fb41e0a7';
+import { renderGameCard } from '../lib/card.js?v=47333258';
 
 const LIMIT = 25;
 
@@ -27,6 +27,9 @@ export async function renderHomePage() {
 
     pulseReports.sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
 
+    await loadSearchIndex();
+    const protonDbAppIds = new Set((searchIndex || []).map(([id]) => String(id)));
+
     // Pad up to LIMIT with popular Steam games so the page is never sparse
     const seenIds = new Set(pulseReports.map(r => String(r.app_id)));
     const popularCards = [];
@@ -46,7 +49,7 @@ export async function renderHomePage() {
       }
     }
 
-    const pulseHtml = pulseReports.map(row => renderActivityCard('report', row)).join('');
+    const pulseHtml = pulseReports.map(row => renderActivityCard('report', row, protonDbAppIds)).join('');
     el.innerHTML = `
       <p class="section-label" style="margin-bottom:10px">Recent Reports</p>
       <div class="cards">${pulseHtml}${popularCards.join('')}</div>`;
@@ -87,7 +90,7 @@ export async function renderHomeFallback() {
 // which fields show in the body. Single renderer means both kinds share
 // the same hover/click target shape, so the layout is consistent down
 // the list instead of two visually separate sections
-export function renderActivityCard(kind, row) {
+export function renderActivityCard(kind, row, protonDbAppIds) {
   const isReport = kind === 'report';
   const appId = row.app_id;
   let title, hwLine, age, isNonSteam = false;
@@ -104,13 +107,18 @@ export function renderActivityCard(kind, row) {
     age = d < 1 ? 'today' : d === 1 ? '1 day ago' : `${d} days ago`;
     isNonSteam = cfg.isNonSteam === true || isNonSteamAppId(appId);
   }
+  const hasProtonDb = !isNonSteam && protonDbAppIds && protonDbAppIds.has(String(appId));
   const rating = isReport ? String(row.rating || '').toLowerCase() : '';
+  const pulseBadge = '<span class="source-badge pulse"><img src="https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/assets/logo.png" alt="" loading="lazy">Pulse</span>';
+  const protonDbBadge = hasProtonDb ? '<span class="source-badge protondb">ProtonDB</span>' : '';
+  const sourceBadge = isNonSteam ? '<span class="source-badge non-steam-game">Non-Steam</span>' : '<span class="source-badge steam-game">Steam</span>';
   return renderGameCard({
     href: `#/app/${appId}`,
     appId,
     title,
     sub: `${hwLine}${hwLine && age ? ' \u00b7 ' : ''}${age}`,
     tier: rating || undefined,
+    chips: [pulseBadge, protonDbBadge, sourceBadge].filter(Boolean),
   });
 }
 
