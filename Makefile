@@ -7,9 +7,11 @@ COVERAGE_BACKFILL_ISSUE_TYPE ?=
 COVERAGE_BACKFILL_LIMIT ?= 0
 WATCH_INTERVAL ?= 10
 WATCH_ALL_WORKFLOWS ?= true
+STAGING_VERSION_URL ?= https://mdeguzis.github.io/proton-pulse-web-staging/version.json
+FORCE_DEPLOY ?=
 
 .PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker \
-	gh-run gh-pages-only gh-staging gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check \
+	gh-run gh-pages-only gh-staging gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
 	build serve smoke smoke-live pre-push
 
 build:
@@ -60,8 +62,9 @@ help:
 	@echo "  backup-supabase     Dump Supabase DB via pg_dump (requires SUPABASE_DB_URL)"
 	@echo "  install-docker      Install Docker Engine via the local helper script"
 	@echo "  gh-check            Verify gh is installed and authenticated"
+	@echo "  check-staging-sync  Verify staging SHA matches HEAD before a prod deploy (auto-runs)"
 	@echo "  gh-run              Trigger the full GitHub Actions update-data workflow via gh"
-	@echo "  gh-pages-only       Trigger the Pages-only publish workflow path via gh"
+	@echo "  gh-pages-only       Promote current main to production (requires staging to be in sync)"
 	@echo "  gh-staging          Deploy shell files to staging only (no prod deploy) for preview"
 	@echo "  gh-backfill-apps    Trigger targeted app backfill"
 	@echo "                      Usage: make gh-backfill-apps BACKFILL_APP_IDS=1145350,2358720"
@@ -158,11 +161,33 @@ gh-check:
 	}
 	gh auth status
 
-gh-run: gh-check
+check-staging-sync:
+	@if [ -n "$(FORCE_DEPLOY)" ]; then \
+		echo "FORCE_DEPLOY set -- skipping staging sync check."; \
+	else \
+		echo "Checking staging is in sync with HEAD before prod deploy..."; \
+		staging_sha=$$(curl -sf '$(STAGING_VERSION_URL)' \
+			| python3 -c 'import json,sys; print(json.load(sys.stdin).get("sha","")[:7])' 2>/dev/null || true); \
+		head_sha=$$(git rev-parse --short=7 HEAD); \
+		if [ -z "$$staging_sha" ]; then \
+			echo "error: could not read $(STAGING_VERSION_URL)" >&2; \
+			echo "Run 'make gh-staging' and verify before promoting to prod." >&2; \
+			exit 1; \
+		fi; \
+		if [ "$$staging_sha" != "$$head_sha" ]; then \
+			echo "error: staging is at $$staging_sha but HEAD is $$head_sha" >&2; \
+			echo "Run 'make gh-staging', verify the fix, then re-run this target." >&2; \
+			echo "To skip this check (emergencies only): FORCE_DEPLOY=1 make $@" >&2; \
+			exit 1; \
+		fi; \
+		echo "Staging matches HEAD ($$staging_sha). OK to promote."; \
+	fi
+
+gh-run: gh-check check-staging-sync
 	gh workflow run $(GITHUB_WORKFLOW)
 	@echo "Triggered $(GITHUB_WORKFLOW)"
 
-gh-pages-only: gh-check
+gh-pages-only: gh-check check-staging-sync
 	gh workflow run $(GITHUB_WORKFLOW) --field pages_only=true
 	@echo "Triggered $(GITHUB_WORKFLOW) with pages_only=true"
 
