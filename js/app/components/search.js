@@ -2,10 +2,10 @@
 
 import { estimateScore } from '../../shared/scoring.js?v=2787ec1d';
 import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=9052e252';
-import { renderGamePage } from './game-page.js?v=11f51aaf';
+import { renderGamePage } from './game-page.js?v=4acaebae';
 import { STEAM_IMG } from '../config.js?v=9970759a';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=d4fea298';
-import { renderGameCard } from '../lib/card.js?v=abc955ba';
+import { renderGameCard } from '../lib/card.js?v=1b522924';
 
 // Search index + results UX -- factored out of app.js.
 // Loaded as a classic script BEFORE app.js so its globals
@@ -166,7 +166,7 @@ export async function onSearchInput() {
   const rows = allItems.map(({ id, title, hasIndex, hasPulse }) => {
     const img = STEAM_IMG(id);
     return `<a class="search-item" href="#/app/${id}" data-id="${id}">
-      <img src="${img}" onerror="this.style.display='none'" alt="" loading="lazy">
+      <img src="${img}" data-appid="${id}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">
       <div class="search-result-info">
         <div class="search-result-title">${esc(title)}</div>
         <div class="search-result-badges">

@@ -2,6 +2,7 @@
 import { computeGameStats } from '../lib/scoring/gameStats.js?v=057f878a';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner } from '../shared/hardware.js?v=92d72bad';
 import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange } from '../shared/chart-interactions.js?v=6b608095';
+import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=85cf4195';
 
 // Per-game stats page (game-stats.html). Reads ?app=APPID from the URL,
 // pulls the same CDN data the main app page uses, then renders a thoughtful
@@ -82,7 +83,7 @@ import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange }
     return `
       <div class="gs-header">
         <a class="gs-header-link" href="${gameUrl}" title="Back to ${esc(title || `App ${appId}`)}">
-          <img src="${headerImg}" alt="" onerror="this.style.display='none'">
+          <img src="${headerImg}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
           <div class="gs-header-info">
             <div class="name">${esc(title || `App ${appId}`)}</div>
             <div class="sub">App ${esc(appId)}</div>

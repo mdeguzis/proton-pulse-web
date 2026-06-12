@@ -1,4 +1,5 @@
 // Entry module for index.html (homepage). Migrated from index.js.
+import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=85cf4195';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
 // search dropdown, auth indicator) lives in topbar.js.
@@ -103,7 +104,7 @@
       const rLabel = RATING_LABEL[rating] || 'Unrated';
       return `
         <a class="pg-card" href="app.html#/app/${encodeURIComponent(g.appId)}">
-          <img class="pg-thumb" src="${img}" alt="" loading="lazy" onerror="this.style.display='none'">
+          <img class="pg-thumb" src="${img}" data-appid="${g.appId}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">
           <div class="pg-info">
             <div class="pg-title">${esc(g.title)}</div>
             ${peak ? `<div class="pg-sub">${peak} peak players</div>` : ''}

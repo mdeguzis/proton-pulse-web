@@ -1,0 +1,72 @@
+// Single loader for all Steam header images.
+// All pages and components must route through loadSteamImg / window.__steamImgLoad.
+// Fallback chain: akamai (primary, set as img src) -> cloudflare CDN -> game-images.json hash URL -> hidden placeholder.
+
+const _CDN2 = id => `https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/header.jpg`;
+
+const _USES_PROD_DATA = ['localhost', '127.0.0.1', '0.0.0.0'].includes(window.location.hostname)
+  || (window.location.hostname || '').endsWith('.github.io');
+
+const _GAME_IMAGES_URL = _USES_PROD_DATA
+  ? 'https://www.proton-pulse.com/game-images.json'
+  : 'game-images.json';
+
+let _gameImagesPromise = null;
+function _loadGameImages() {
+  if (!_gameImagesPromise) {
+    _gameImagesPromise = fetch(_GAME_IMAGES_URL)
+      .then(r => r.ok ? r.json() : {})
+      .catch(() => ({}));
+  }
+  return _gameImagesPromise;
+}
+
+function _tryUrl(url) {
+  return new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => resolve(null);
+    img.src = url;
+  });
+}
+
+function _swap(el, loaded) {
+  loaded.className = el.className;
+  loaded.alt = el.alt || '';
+  el.parentNode?.replaceChild(loaded, el);
+}
+
+// Called after the primary akamai src fails (onerror).
+// Tries cloudflare, then game-images.json, then hides the slot.
+export async function loadSteamImg(el, appId) {
+  const id = String(appId);
+
+  const cdn2 = await _tryUrl(_CDN2(id));
+  if (cdn2) {
+    console.log(`[steam-img] appId=${id} route=cloudflare`);
+    _swap(el, cdn2);
+    return;
+  }
+
+  const map = await _loadGameImages();
+  const url = map[id];
+  if (url) {
+    const loaded = await _tryUrl(url);
+    if (loaded) {
+      console.log(`[steam-img] appId=${id} route=game-images-json`);
+      _swap(el, loaded);
+      return;
+    }
+  }
+
+  console.warn(`[steam-img] appId=${id} all CDN paths exhausted`);
+  el.style.visibility = 'hidden';
+}
+
+// Global bridge for inline onerror="window.__steamImgLoad(this)".
+// img elements must carry data-appid="${appId}".
+window.__steamImgLoad = el => {
+  const appId = el.dataset.appid;
+  if (appId) loadSteamImg(el, appId);
+  else el.style.visibility = 'hidden';
+};
