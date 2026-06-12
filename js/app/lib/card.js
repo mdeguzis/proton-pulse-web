@@ -35,8 +35,11 @@ window.__steamImgLookup = async (el, appId) => {
   const url = map[String(appId)];
   if (url) {
     console.log(`[steam-img] appId=${appId} route=game-images-json`);
-    el.loading = 'eager';
-    el.src = url;
+    const fresh = new Image();
+    fresh.className = el.className;
+    fresh.alt = '';
+    fresh.src = url;
+    el.parentNode?.replaceChild(fresh, el);
   } else {
     console.warn(`[steam-img] appId=${appId} route=missing all CDN paths exhausted`);
     el.onerror = null;
