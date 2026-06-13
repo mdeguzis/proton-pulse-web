@@ -2,7 +2,7 @@
 
 import { fetchAuthorAvatar, fetchAuthorStats, getAuthorIdentity } from '../api/author.js?v=0d33fd7b';
 import { CDN } from '../config.js?v=9970759a';
-import { route } from '../router.js?v=00d09969';
+import { route } from '../router.js?v=eef1a583';
 import { esc } from '../utils.js?v=d4fea298';
 
 export const ATOM_ICON_SVG = `

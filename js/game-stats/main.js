@@ -18,7 +18,8 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=85cf419
     const parts = location.pathname.split('/').filter(Boolean);
     return parts[0] === 'proton-pulse-web' ? '/proton-pulse-web' : '';
   })();
-  const IS_LOCAL_DEV = ['localhost', '127.0.0.1', '0.0.0.0'].includes(location.hostname);
+  const IS_LOCAL_DEV = ['localhost', '127.0.0.1', '0.0.0.0'].includes(location.hostname)
+    || (location.hostname || '').endsWith('.github.io');
   const CDN_BASE = IS_LOCAL_DEV
     ? 'https://www.proton-pulse.com/data'
     : `${location.origin}${SITE_BASE}/data`;
@@ -41,7 +42,7 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=85cf419
     try {
       const url = IS_LOCAL_DEV
         ? 'https://www.proton-pulse.com/search-index.json'
-        : 'search-index.json';
+        : `${location.origin}${SITE_BASE}/search-index.json`;
       const r = await fetch(url);
       return r.ok ? await r.json() : [];
     } catch { return []; }
