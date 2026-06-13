@@ -780,9 +780,9 @@ import { attachChartHover } from '../shared/chart-interactions.js?v=6b608095';
 
   async function loadSearchIndexLocal() {
     try {
-      const url = IS_LOCAL_DEV
+      const url = _usesProdData
         ? 'https://www.proton-pulse.com/search-index.json'
-        : 'search-index.json';
+        : `${location.origin}${SITE_BASE}/search-index.json`;
       const r = await fetch(url);
       return r.ok ? await r.json() : [];
     } catch { return []; }
