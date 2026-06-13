@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "709670",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.40.0, 5.11.15-zen1-2-zen, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.2",
+    "kernel": "5.11.15-zen1-2-zen",
+    "notes": "Starts, but after first dialog throws an error and crashes",
+    "os": "Garuda Linux",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1618786614,
+    "title": "Clarent Saga: Tactics",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1352540",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "crashes on launch",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1616880909,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2083900",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R9 380 (tonga, LLVM 15.0.7, DRM 3.42, 5.15.0-88-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1 - kisak-mesa PPA",
+    "kernel": "5.15.0-88-generic",
+    "notes": "Functions essentially flawlessly. Proton version shouldn't matter much, I just haven't bothered to update it.",
+    "os": "Zorin OS 16.3",
+    "protonVersion": "7.0-6",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1699476894,
+    "title": "",
+    "source": "protondb"
+  }
+]

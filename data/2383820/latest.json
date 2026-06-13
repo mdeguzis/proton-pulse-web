@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2383820",
+    "cpu": "AMD Ryzen 5 5600X3D 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.59, 6.13.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.1-arch1-1",
+    "notes": "Takes a while to boot for the first time (like a full 2 minutes here with no real output). Works great otherwise, subsequent boots quick.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1755050872,
+    "title": "",
+    "source": "protondb"
+  }
+]

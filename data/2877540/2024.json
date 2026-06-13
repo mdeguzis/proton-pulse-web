@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2877540",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.6-76060506-generic",
+    "notes": "Works almost faultless, the game cursor changes colour on linux but it isn't significant enough to be a detriment.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1720464252,
+    "title": "Heretical",
+    "source": "protondb"
+  }
+]

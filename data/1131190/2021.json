@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1131190",
+    "cpu": "Intel Core i7-8850H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA Quadro P2000",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.9-300.fc34.x86_64",
+    "notes": "Works oob",
+    "os": "Fedora release 34 (Thirty Four)",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1623260937,
+    "title": "",
+    "source": "protondb"
+  }
+]

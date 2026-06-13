@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2082510",
+    "cpu": "Intel Core i5-1035G1 @ 1.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (ICL GT1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.5.9-arch2-1",
+    "notes": "it worked as expected , given my hardware there were some minor or barely noticable lags",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1698850271,
+    "title": "",
+    "source": "protondb"
+  }
+]

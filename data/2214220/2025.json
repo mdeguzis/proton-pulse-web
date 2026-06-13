@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2214220",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.57, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 25.0~git2501180600.0a4584~oibaf~n (git-0a4584a 2025-01-18 noble-oi",
+    "kernel": "6.8.0-51-generic",
+    "notes": "This report is for the Play Test version of the game which was released today April 19th.  Free to play for now.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1745071997,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2214220",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.10-76061203-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "bronze",
+    "timestamp": 1746110153,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2214220",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "The game luckily opens into the menu but with the game does not work with the steam deck buttons and I attempted to change the controller layout but still did not work...",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1746620737,
+    "title": "",
+    "source": "protondb"
+  }
+]

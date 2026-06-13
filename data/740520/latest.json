@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "740520",
+    "cpu": "AMD Ryzen 5 4600H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.10.2-2-MANJARO",
+    "notes": "Schwarzer Bildschirm",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1610891490,
+    "title": "",
+    "source": "protondb"
+  }
+]

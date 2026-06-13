@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1233800",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 380 (tonga, LLVM 15.0.7, DRM 3.49, 6.1.44-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.5",
+    "kernel": "6.1.44-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1692885815,
+    "title": "",
+    "source": "protondb"
+  }
+]

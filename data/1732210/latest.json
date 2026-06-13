@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1732210",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 16.0.6, DRM 3.56, 6.7.0-arch3-1)",
+    "gpuDriver": "4.6 Mesa 23.3.3-arch1.1",
+    "kernel": "6.7.0-arch3-1",
+    "notes": "Works out of the box, If your mouse doesn't appear to work - This happens on windows too, just up the sensitivity to 1k or higher depending",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1705360938,
+    "title": "",
+    "source": "protondb"
+  }
+]

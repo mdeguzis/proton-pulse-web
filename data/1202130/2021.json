@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1202130",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.14.7-2-MANJARO",
+    "notes": "Demo runs good with Proton-6.18-GE-1",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1633216450,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "442210",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 (navi21, LLVM 15.0.7, DRM 3.52, 6.3.5-200.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.1 (git-fa55e3c026)",
+    "kernel": "6.3.5-200.fc38.x86_64",
+    "notes": "",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1686039236,
+    "title": "",
+    "source": "protondb"
+  }
+]

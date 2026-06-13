@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "999860",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.2.2",
+    "kernel": "5.3.0-28-generic",
+    "notes": "It works, and works smoothly.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1587687390,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "999860",
+    "cpu": "AMD A10-7800 Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.33-3-MANJARO",
+    "notes": "Game works perfectly out of the box.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1588981858,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "999860",
+    "cpu": "AMD A6-9225 RADEON R4, 5 COMPUTE CORES 2C+3G",
+    "duration": "unreported",
+    "gpu": "AMD STONEY",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.0-53-generic",
+    "notes": "Crash box thing pops up",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1591328737,
+    "title": "",
+    "source": "protondb"
+  }
+]

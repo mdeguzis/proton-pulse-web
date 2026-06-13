@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1517150",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (dimgrey_cavefish, LLVM 14.0.6, DRM 3.47, 5.19.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.12-arch1-1",
+    "notes": "Had to go to properties -> compatability and face force the use of proton to make it work",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1664688380,
+    "title": "",
+    "source": "protondb"
+  }
+]

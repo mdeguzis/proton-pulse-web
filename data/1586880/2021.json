@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1586880",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Excluding the videos, everything works perfect.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1631124026,
+    "title": "",
+    "source": "protondb"
+  }
+]

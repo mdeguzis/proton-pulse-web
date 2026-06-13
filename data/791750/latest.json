@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "791750",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.42.0, 5.15.46, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.8 (git-813ee839be)",
+    "kernel": "5.15.46",
+    "notes": "Works on Proton 3.16-9, not latest",
+    "os": "Freedesktop.org 21.08.13 (Flatpak runtime)",
+    "protonVersion": "3.16-9",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1655334503,
+    "title": "",
+    "source": "protondb"
+  }
+]

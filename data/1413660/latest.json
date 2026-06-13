@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1413660",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1721452222,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1413660",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 18.1.8, DRM 3.57, 6.10.6-amd64)",
+    "gpuDriver": "4.6 Mesa 24.2.2-1",
+    "kernel": "6.10.6-amd64",
+    "notes": "works flawlessly",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1726496001,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1413660",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1728250376,
+    "title": "",
+    "source": "protondb"
+  }
+]

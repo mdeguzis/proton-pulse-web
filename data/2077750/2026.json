@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2077750",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, ACO, DRM 3.64, 6.17.0-14-generic)",
+    "gpuDriver": "4.6 Mesa 26.0.0~rc3+git2602061547.2538e974cae~n~mesarc2",
+    "kernel": "6.17.0-14-generic",
+    "notes": "I have multiple types of controllers, ps4, xbox, etc. Even though the game mentions that it does support controllers it doesn't work at all",
+    "os": "Zorin OS 18",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771502230,
+    "title": "",
+    "source": "protondb"
+  }
+]

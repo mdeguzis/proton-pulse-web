@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "276870",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "4.15.0-126-generic",
+    "notes": "Boots to a launcher, but then gives a sound/runtime error and does not proceed",
+    "os": "elementary OS 5.1.7 Hera",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1611683036,
+    "title": "",
+    "source": "protondb"
+  }
+]

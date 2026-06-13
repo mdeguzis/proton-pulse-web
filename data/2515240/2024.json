@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2515240",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.5.13-4-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1705540799,
+    "title": "Welcome to Kowloon",
+    "source": "protondb"
+  },
+  {
+    "appId": "2515240",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "6.0.6-76060006-generic",
+    "notes": "Plays As If It's Native",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1706987927,
+    "title": "Welcome to Kowloon",
+    "source": "protondb"
+  },
+  {
+    "appId": "2515240",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 (radeonsi, navi22, LLVM 17.0.6, DRM 3.49, 6.1.104_1)",
+    "gpuDriver": "4.6 Mesa 24.2.3 (git-b235da6781)",
+    "kernel": "6.1.104_1",
+    "notes": "great game, runs smoothly at 170fps, no tinkering required",
+    "os": "Void Linux",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1727668029,
+    "title": "Welcome to Kowloon",
+    "source": "protondb"
+  }
+]

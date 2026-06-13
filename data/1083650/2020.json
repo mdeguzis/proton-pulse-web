@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1083650",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Works after installing wmp11 using protontricks",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1598252248,
+    "title": "",
+    "source": "protondb"
+  }
+]

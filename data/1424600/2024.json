@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1424600",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 23.3.2 (git-527d45230f)",
+    "kernel": "6.5.0-14-generic",
+    "notes": "Plays like native.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1719695039,
+    "title": "",
+    "source": "protondb"
+  }
+]

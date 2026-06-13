@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "376480",
+    "cpu": "Intel Core i7-10510U @ 1.80GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.0-7-amd64",
+    "notes": "If you're comfortable using your shell and installing nodejs packages you'll have no problem, no glitches once it's running",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1625732180,
+    "title": "",
+    "source": "protondb"
+  }
+]

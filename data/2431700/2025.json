@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2431700",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.9.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.1-arch1.1",
+    "kernel": "6.9.4-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1766391392,
+    "title": "",
+    "source": "protondb"
+  }
+]

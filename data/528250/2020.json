@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "528250",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.4.0-37-generic",
+    "notes": "Game reboot my OS when native version has been used :(. When changed to proton nothing shows on the screen (But OS works at least).",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1604146083,
+    "title": "Patchwork",
+    "source": "protondb"
+  }
+]

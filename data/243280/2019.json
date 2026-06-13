@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "243280",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.2.2",
+    "kernel": "5.3.8-3-MANJARO",
+    "notes": "Don't work",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "4.11-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1574886694,
+    "title": "",
+    "source": "protondb"
+  }
+]

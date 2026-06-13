@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1924010",
+    "cpu": "AMD A6-4400M APU with Radeon HD Graphics",
+    "duration": "unreported",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "4.5 Mesa 22.3.6",
+    "kernel": "6.1.0-16-amd64",
+    "notes": "If you desperately want to play the game, you can, but it's very slow and laggy.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-5",
+    "ram": "5 GB",
+    "rating": "borked",
+    "timestamp": 1710054677,
+    "title": "Shapebreaker - Tower Defense Deckbuilder",
+    "source": "protondb"
+  }
+]

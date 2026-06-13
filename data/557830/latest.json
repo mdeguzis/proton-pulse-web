@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "557830",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 8 (raven, LLVM 13.0.1, DRM 3.42, 5.15.0-56-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Works perfectly on my machine.",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-6",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1678993127,
+    "title": "",
+    "source": "protondb"
+  }
+]

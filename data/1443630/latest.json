@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1443630",
+    "cpu": "AMD Ryzen 9 7900X3D 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 21.1.6, DRM 3.64, 6.18.5-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.5",
+    "kernel": "6.18.5-2-cachyos",
+    "notes": "Parfait",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1768775458,
+    "title": "",
+    "source": "protondb"
+  }
+]

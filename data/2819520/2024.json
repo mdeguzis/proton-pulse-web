@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2819520",
+    "cpu": "12th Gen Intel Core i7-1255U",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.1 - kisak-mesa PPA",
+    "kernel": "6.9.4-x64v3-xanmod1",
+    "notes": "I used both the experimental and stable versions of proton but the game isn't launching. I don't know if that's the issue with Easy Anticheat.",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1718615398,
+    "title": "",
+    "source": "protondb"
+  }
+]

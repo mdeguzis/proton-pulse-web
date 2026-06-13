@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1537080",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650 Ti",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.5.5-200.fsync.fc38.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 38 (Thirty Eight)",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1710967703,
+    "title": "Return",
+    "source": "protondb"
+  }
+]

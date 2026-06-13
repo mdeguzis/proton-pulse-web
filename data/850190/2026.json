@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "850190",
+    "cpu": "AMD Ryzen 5 7235HS",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.17.9-76061709-generic",
+    "notes": "basically, \"it's not a bug, it's a feature\"",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "bronze",
+    "timestamp": 1769192353,
+    "title": "",
+    "source": "protondb"
+  }
+]

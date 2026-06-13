@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "224860",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "(no matter what i do to the control scheme)",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1654545919,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "224860",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "There error screen is showing:\n\nAn unexpected error has occurred.\nPlease check your installation and internet connection.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1667939098,
+    "title": "",
+    "source": "protondb"
+  }
+]

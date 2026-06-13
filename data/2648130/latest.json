@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2648130",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD GFX1200 (gfx1200, LLVM 16.0.7, DRM 3.49, 6.2.0-39-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "6.2.0-39-generic",
+    "notes": "amateur work, with basic settings, NOTHING works.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "916 GB",
+    "rating": "borked",
+    "timestamp": 1703784628,
+    "title": "",
+    "source": "protondb"
+  }
+]

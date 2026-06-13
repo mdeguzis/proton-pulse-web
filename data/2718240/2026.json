@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2718240",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, ACO, DRM 3.64, 6.17.7-ba25.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.1",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Works perfectly out of the box",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773285105,
+    "title": "PolyPine",
+    "source": "protondb"
+  }
+]

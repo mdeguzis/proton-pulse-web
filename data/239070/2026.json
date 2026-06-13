@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "239070",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 20.1.8, DRM 3.64, 6.17.0-6-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.3-1ubuntu1",
+    "kernel": "6.17.0-6-generic",
+    "notes": "Native broken, works great with Proton",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1767720366,
+    "title": "Hammerwatch",
+    "source": "protondb"
+  }
+]

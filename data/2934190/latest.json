@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2934190",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "The game runs as intended.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1739122178,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2934190",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.8.0-60-generic",
+    "notes": "Freezes all the time with no discernable pattern. Maybe worked for a half hour max for me.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1747859824,
+    "title": "",
+    "source": "protondb"
+  }
+]

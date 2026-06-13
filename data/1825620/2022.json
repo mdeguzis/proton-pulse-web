@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1825620",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.16.2-1-MANJARO",
+    "notes": "The game worked fine with Proton and I finished it without a crash.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1643664708,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1825620",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.44.0, 5.17.1-desktop-2omv4050, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.6 (git-fef2cdb0a5)",
+    "kernel": "5.17.1-desktop-2omv4050",
+    "notes": "Works just fine, just as on Windows. Not a single issue here!",
+    "os": "Freedesktop.org 21.08.14 (Flatpak runtime)",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1657061001,
+    "title": "",
+    "source": "protondb"
+  }
+]

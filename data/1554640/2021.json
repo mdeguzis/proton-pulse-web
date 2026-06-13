@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1554640",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.0-25-generic",
+    "notes": "There is occasional hitching when needing to load new environments, but it clears up relatively quickly and is consistently good.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1629168469,
+    "title": "Super Sami Roll",
+    "source": "protondb"
+  }
+]

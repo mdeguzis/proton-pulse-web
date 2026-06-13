@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "726980",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6.13581 Compatibility Profile Context",
+    "kernel": "5.6.0-050600rc1-generic",
+    "notes": "Crashing on launch..",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1624133072,
+    "title": "",
+    "source": "protondb"
+  }
+]

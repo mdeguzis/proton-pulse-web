@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1235110",
+    "cpu": "Intel Xeon E3-1240 V2 @ 3.40GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.10.0-1-amd64",
+    "notes": "Need to find the right version of Proton for you - mine was GE 5.09",
+    "os": "Freedesktop.org 20.08.3 (Flatpak runtime)",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1612747630,
+    "title": "",
+    "source": "protondb"
+  }
+]

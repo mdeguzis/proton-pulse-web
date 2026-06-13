@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "361110",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 (radeonsi, navi10, LLVM 18.1.8, DRM 3.57, 6.10.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.3-arch1.1",
+    "kernel": "6.10.10-arch1-1",
+    "notes": "Needs work",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1727021175,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1094030",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX Vega (radeonsi, vega10, LLVM 17.0.6, DRM 3.57, 6.8.8-x64v2-xanmod1-1-edge)",
+    "gpuDriver": "4.6 Mesa 24.0.6 (git-c659c7e660)",
+    "kernel": "6.8.8-x64v2-xanmod1-1-edge",
+    "notes": "It works out of the box with a performance penalty if AMD FidelityFX Super Resolution 1.0 is not used",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1714864784,
+    "title": "",
+    "source": "protondb"
+  }
+]

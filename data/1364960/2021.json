@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1364960",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce MX150",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.11.0-25-generic",
+    "notes": "Sometimes when you open it up you will have the mouse not locked just minimize the window and then maximize it again and then it should work",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1635542484,
+    "title": "",
+    "source": "protondb"
+  }
+]

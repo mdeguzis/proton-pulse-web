@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1075200",
+    "cpu": "12th Gen Intel Core i3-1215U",
+    "duration": "unreported",
+    "gpu": "Mesa virgl (Mesa Intel (ADL GT2))",
+    "gpuDriver": "4.6 Mesa 23.3.0-devel (git-c2e3986326)",
+    "kernel": "6.1.39-05064-g06df88df4b91",
+    "notes": "Exellent throwback puzzler, works great on ChromeOS",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1691080956,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1075200",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "6.2.0-33-generic",
+    "notes": "",
+    "os": "Linux Mint 21.2 (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1697972919,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1075200",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "6.2.0-34-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1698101978,
+    "title": "",
+    "source": "protondb"
+  }
+]

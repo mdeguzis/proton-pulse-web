@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1209490",
+    "cpu": "AMD Ryzen 7 3750H with Radeon Vega Mobile Gfx",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon Vega 10 (RAVEN, DRM 3.42.0, 5.14.10-300.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.14.10-300.fc35.x86_64",
+    "notes": "IT works pretty well :D",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-8",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1640567919,
+    "title": "Exit the Gungeon",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "839920",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "not enjoying",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1597778626,
+    "title": "",
+    "source": "protondb"
+  }
+]

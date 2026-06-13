@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1286880",
+    "cpu": "AMD Ryzen Threadripper PRO 3975WX 32-Cores",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.42.0, 5.15.5-1-rt22-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.5-1-rt22-MANJARO",
+    "notes": "Game ran flawlessly",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1640490903,
+    "title": "Ship Graveyard Simulator",
+    "source": "protondb"
+  }
+]

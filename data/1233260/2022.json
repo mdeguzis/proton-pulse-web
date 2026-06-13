@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1233260",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.44.0, 5.16.4-1-default, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.4-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1644367926,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1233260",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Takes up to 2 minutes to launch initially. The resolution is wrong and has to be changed to 720p. You may have to do that in desktop mode.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1657936015,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1233260",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Use GE to get cutscenes to play with audio issues to have game keep playing and not lock up.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1657937648,
+    "title": "",
+    "source": "protondb"
+  }
+]

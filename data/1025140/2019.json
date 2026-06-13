@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1025140",
+    "cpu": "Intel Core i5-2540M @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.3.1",
+    "kernel": "5.4.6-arch1-1",
+    "notes": "The game works but like most visual novels under proton, the title is unable to play any cutscenes out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-11",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1577161654,
+    "title": "",
+    "source": "protondb"
+  }
+]

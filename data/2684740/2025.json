@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2684740",
+    "cpu": "Intel Core i5-8500 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Pro WX 2100 (radeonsi, polaris12, ACO, DRM 3.61, 6.14.4-arch1-2)",
+    "gpuDriver": "4.6 Mesa 25.0.5-arch1.1",
+    "kernel": "6.14.4-arch1-2",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1746427521,
+    "title": "",
+    "source": "protondb"
+  }
+]

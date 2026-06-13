@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1556200",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "anti cheat kick you off the network. you can only mess with the options, but you cant play the game",
+    "os": "Pop os 20.08.13",
+    "protonVersion": "6.3-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1624496650,
+    "title": "Predator: Hunting Grounds",
+    "source": "protondb"
+  },
+  {
+    "appId": "1556200",
+    "cpu": "Unknown",
+    "duration": "unreported",
+    "gpu": "Ubuntu 20.04.3 LTS (64 bit)",
+    "gpuDriver": "Linux",
+    "kernel": "0x6",
+    "notes": "Not worth it to Linux users!!",
+    "os": "GenuineIntel",
+    "protonVersion": "6.3-8",
+    "ram": "Nvidia GPU 80 HDMI/DP",
+    "rating": "borked",
+    "timestamp": 1638191763,
+    "title": "Predator: Hunting Grounds",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1205960",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 18.1.8, DRM 3.57, 6.10.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.3-arch1.1",
+    "kernel": "6.10.10-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1728230114,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1205960",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 18.1.8, DRM 3.57, 6.10.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.3-arch1.1",
+    "kernel": "6.10.10-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1729032066,
+    "title": "",
+    "source": "protondb"
+  }
+]

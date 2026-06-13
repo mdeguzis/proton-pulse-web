@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1342340",
+    "cpu": "AMD FX-7600P Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon R9 M270X (bonaire, LLVM 14.0.0, DRM 3.42, 5.15.10-229-tkg-pds)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-268fc8e5c1)",
+    "kernel": "5.15.10-229-tkg-pds",
+    "notes": "The game is very interesting, please do not run it with the help of Proton_GE.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1640123996,
+    "title": "",
+    "source": "protondb"
+  }
+]

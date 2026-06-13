@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2871010",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.7, DRM 3.61, 6.14.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.5-arch1.1",
+    "kernel": "6.14.6-arch1-1",
+    "notes": "Demo report. Works without issues.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1751045447,
+    "title": "VanySlash",
+    "source": "protondb"
+  }
+]

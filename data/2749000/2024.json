@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2749000",
+    "cpu": "12th Gen Intel Core i5-12500H",
+    "duration": "oneToFourHours",
+    "gpu": "Nvidia RTX3050 Mobile",
+    "gpuDriver": "560.35 DRM",
+    "kernel": "6.10.6-arch1-1",
+    "notes": "It works perfectly for me.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1724873206,
+    "title": "Inn Tycoon",
+    "source": "protondb"
+  },
+  {
+    "appId": "2749000",
+    "cpu": "Intel Core i7-7740X @ 4.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "5.15.0-86-generic",
+    "notes": "Use Proton Experimental for ease of use, Works great",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1725533301,
+    "title": "Inn Tycoon",
+    "source": "protondb"
+  },
+  {
+    "appId": "2749000",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works as expected. Better control settings recommended.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1730565759,
+    "title": "Inn Tycoon",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "810670",
+    "cpu": "Intel Core i5-2310 @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.44.0, 5.16.10-arch1-1, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.6",
+    "kernel": "5.16.10-arch1-1",
+    "notes": "It's fun to play. The game is bad anyway, so the lags just make it funnier",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1645272686,
+    "title": "NALOGI",
+    "source": "protondb"
+  }
+]

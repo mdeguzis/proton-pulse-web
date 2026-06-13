@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1138660",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD BONAIRE",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.0-59-generic",
+    "notes": "The games runs smoothly out of the box. It only drops some frames between scenarios.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1592397005,
+    "title": "",
+    "source": "protondb"
+  }
+]

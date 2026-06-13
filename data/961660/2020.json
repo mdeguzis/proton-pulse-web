@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "961660",
+    "cpu": "Intel Core i5-9600KF @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.3.0-64-generic",
+    "notes": "Crashes on launch",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1604365624,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "961660",
+    "cpu": "Intel Core i5-4210U @ 1.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce 840M",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.9.8-arch1-1",
+    "notes": "Errors out when starting",
+    "os": "ArchLabs Linux",
+    "protonVersion": "5.13-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1606808013,
+    "title": "",
+    "source": "protondb"
+  }
+]

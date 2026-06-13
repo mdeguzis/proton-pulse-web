@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1480560",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX Vega (radeonsi, vega10, ACO, DRM 3.64, 6.18.7-76061807-generic)",
+    "gpuDriver": "4.6 Mesa 25.1.5-1pop0~1753463422~24.04~8af185e",
+    "kernel": "6.18.7-76061807-generic",
+    "notes": "Installed via Heroic (purchased on Epic). Numerous prefixes applied, launching both via Heroic and Steam. Tried Proton 6.3-8, Experimental, Hotfix, Sniper, ProtonGE 9-27, ProtonGE 7-16, and others. Not even a hint of a loading screen.",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1770982479,
+    "title": "Lawn Mowing Simulator",
+    "source": "protondb"
+  }
+]

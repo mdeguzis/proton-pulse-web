@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2765600",
+    "cpu": "AMD Ryzen 5 PRO 2500U w/ Radeon Vega Mobile Gfx",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, ACO, DRM 3.61, 6.14.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.3-arch1.1",
+    "kernel": "6.14.1-arch1-1",
+    "notes": "JOGO DELICINHA!! e roda perfeitamente no linux, deve rodar bem num steam deck tamb\u00e9m",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1744944847,
+    "title": "",
+    "source": "protondb"
+  }
+]

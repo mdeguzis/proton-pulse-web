@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1460490",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.15.19-2-rt29-MANJARO",
+    "notes": "Works perfectly except for the movies which never show on screen",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1645550206,
+    "title": "Majikoi! Love Me Seriously!",
+    "source": "protondb"
+  },
+  {
+    "appId": "1460490",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Runs great on Steam Deck on default settings.  The only minor gripe is that the game itself has a 4:3 resolution so it's not fullscreen",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1652215021,
+    "title": "Majikoi! Love Me Seriously!",
+    "source": "protondb"
+  },
+  {
+    "appId": "1460490",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works out of the box",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1670284011,
+    "title": "Majikoi! Love Me Seriously!",
+    "source": "protondb"
+  }
+]

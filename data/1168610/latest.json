@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1168610",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 (NAVI10, DRM 3.43.0, 5.11.0-41-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.0-devel",
+    "kernel": "5.11.0-41-generic",
+    "notes": "Works out of the box",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1639082715,
+    "title": "",
+    "source": "protondb"
+  }
+]

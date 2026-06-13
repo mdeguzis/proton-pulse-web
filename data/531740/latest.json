@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "531740",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.35.0, 5.4.0-58-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1 - kisak-mesa PPA",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Works out of the box if I recall correctly.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1608482176,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1329880",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 18.1.8, DRM 3.57, 6.10.5-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 24.2.0-arch1.2",
+    "kernel": "6.10.5-2-cachyos",
+    "notes": "Spiel st\u00fctzt nach dem Ladevorgang ab.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1724445662,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1329880",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 18.1.8, DRM 3.57, 6.10.5-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 24.2.0-arch1.2",
+    "kernel": "6.10.5-2-cachyos",
+    "notes": "Spiel st\u00fcrtzt nach dem Laden ab.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1724449356,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1329880",
+    "cpu": "Intel Xeon E5-2690 v2 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 15.0.6, DRM 3.49, 6.1.0-23-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-23-amd64",
+    "notes": "",
+    "os": "LMDE 6 (faye)",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1725024749,
+    "title": "",
+    "source": "protondb"
+  }
+]

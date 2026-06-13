@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1743580",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.8, DRM 3.64, 6.18.12-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.5",
+    "kernel": "6.18.12-200.fc43.x86_64",
+    "notes": "1280x720 resolution max support as is, may require changing display size to get full-screen like",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1772355710,
+    "title": "",
+    "source": "protondb"
+  }
+]

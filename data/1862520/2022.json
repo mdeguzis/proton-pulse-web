@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1862520",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (sienna_cichlid, LLVM 14.0.6, DRM 3.46, 5.18.12-1-default)",
+    "gpuDriver": "4.6 Mesa 22.1.4",
+    "kernel": "5.18.12-1-default",
+    "notes": "Played a quick tutorial on release to check it works, works exactly as expected.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1660096738,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1862520",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1660220975,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1862520",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.4.85-xanmod1",
+    "notes": "Best Go client that you can play so far and its playable on Linux!",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1661589375,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1216710",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "5.15.0-107-generic",
+    "notes": "blackscreen after the introsequence plays only music playing in the background but no screen",
+    "os": "Ubuntu 20.04.6 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1716361414,
+    "title": "Cyber Manhunt",
+    "source": "protondb"
+  }
+]

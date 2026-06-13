@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1610900",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 23.3.4-arch1.2",
+    "kernel": "6.7.1-arch1-1",
+    "notes": "it works just as it does on windows, except for a couple of linux exclusive client-side bugs",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1706788954,
+    "title": "The Genesis Project",
+    "source": "protondb"
+  }
+]

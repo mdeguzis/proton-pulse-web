@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1111390",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.16.0-9.1-liquorix-amd64",
+    "notes": "Playable, but with some crashes, and limited visual fidelity.",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1647473003,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "487040",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.14.2-xanmod1-cacule-1",
+    "notes": "Both native and proton worked perfectly at 144 locked FPS 7ms frame time.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1631383439,
+    "title": "",
+    "source": "protondb"
+  }
+]

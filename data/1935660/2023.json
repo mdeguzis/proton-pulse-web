@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1935660",
+    "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "5.15.85-1-MANJARO",
+    "notes": "No problem, runs very well.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1673403927,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1935660",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Small red text in-between missions is tough to read on deck but not that important so squint or ignore it.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1679074831,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1935660",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 535.98",
+    "kernel": "6.4.12-200.fc38.x86_64",
+    "notes": "Works great out of the box",
+    "os": "Fedora Linux 38 (Workstation Edition)",
+    "protonVersion": "8.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1693565588,
+    "title": "",
+    "source": "protondb"
+  }
+]

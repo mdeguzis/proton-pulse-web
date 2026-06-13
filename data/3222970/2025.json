@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3222970",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "5.15.0-133-generic",
+    "notes": "Works perfectly.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "128 GB",
+    "rating": "platinum",
+    "timestamp": 1743360323,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3222970",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "ran great no issues, although seems to use too much power for the fps",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1749020471,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3222970",
+    "cpu": "AMD Ryzen Threadripper 3960X 24-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.12.16-1-lts",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1763083092,
+    "title": "",
+    "source": "protondb"
+  }
+]

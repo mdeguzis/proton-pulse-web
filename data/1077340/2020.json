@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1077340",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.48.02",
+    "kernel": "5.3.0-28-generic",
+    "notes": "Works as expected. Only hangs when trying to quit the game.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1581016253,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1859910",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u756b\u9762\u6703\u986f\u793a\u64cd\u4f5c\u4e0a\u5c0d\u61c9\u7684\u6309\u9375\uff0c\u6c92\u6709\u9047\u5230\u7576\u6a5f\u6216BUG",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1756781441,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1859910",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 20.1.6, DRM 3.63, 6.15.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.5-arch1.1",
+    "kernel": "6.15.5-arch1-1",
+    "notes": "\ubcc4 \ubb38\uc81c \uc5c6\uc774 \uc798 \uc791\ub3d9\ud568",
+    "os": "Arch Linux(64\ube44\ud2b8)",
+    "protonVersion": "9.0-4",
+    "ram": "15839Mb",
+    "rating": "gold",
+    "timestamp": 1757338989,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1859910",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1757358707,
+    "title": "",
+    "source": "protondb"
+  }
+]

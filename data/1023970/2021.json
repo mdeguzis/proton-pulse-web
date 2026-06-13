@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1023970",
+    "cpu": "Intel Xeon E3-1240 V2 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.10.0-0.bpo.5-amd64",
+    "notes": "Just installed id, set latest Proton for this game, and it just runs, both with keyboard and controller.",
+    "os": "Debian GNU/Linux 10 (buster) (64 \u0431\u0438\u0442)",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1624600424,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1023970",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.42.0, 5.14.10-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.14.10-1-MANJARO",
+    "notes": "Runs out of the box, gameplay was smooth, my PS4 controller was detected and Steam Link works with no problem",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1637029220,
+    "title": "",
+    "source": "protondb"
+  }
+]

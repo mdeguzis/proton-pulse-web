@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "714120",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "6.0.12-76060006-generic",
+    "notes": "Proton runs just fine",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1676995218,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "714120",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1688999917,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "714120",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.7-200.fc38.x86_64",
+    "notes": "Runs perfectly out of the Box. Finished it twice.",
+    "os": "Fedora Linux 38 (Workstation Edition)",
+    "protonVersion": "8.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1692864578,
+    "title": "",
+    "source": "protondb"
+  }
+]

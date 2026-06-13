@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1357190",
+    "cpu": "Intel Core i5-1035G1 @ 1.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (ICL GT1)",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.8.0-48-generic",
+    "notes": "Works just like on Windows 10",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1616962991,
+    "title": "",
+    "source": "protondb"
+  }
+]

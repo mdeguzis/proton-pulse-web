@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "521720",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.15-zen1-1-zen",
+    "notes": "I can't read the game messages because of the mysterious pattern on the screen.",
+    "os": "Arch Linux\uff0864 \u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "6.3-5",
+    "ram": "32030Mb",
+    "rating": "borked",
+    "timestamp": 1626490805,
+    "title": "Uncharted Waters",
+    "source": "protondb"
+  }
+]

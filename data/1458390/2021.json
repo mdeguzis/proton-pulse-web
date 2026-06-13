@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1458390",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 (NAVI10, DRM 3.41.0, 5.13.0-xanmod2-3, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.4",
+    "kernel": "5.13.0-xanmod2-3",
+    "notes": "Game runs fine out of the box.\nMinor stuttering when grenades explode.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1626105345,
+    "title": "Rule No. 1",
+    "source": "protondb"
+  }
+]

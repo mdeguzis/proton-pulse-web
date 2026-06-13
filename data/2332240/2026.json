@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2332240",
+    "cpu": "AMD A6-4400M APU with Radeon HD Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "4.5 Mesa 22.3.6",
+    "kernel": "6.1.0-16-amd64",
+    "notes": "You will need a lot of patience and probably disable the realtime mechanics in the options.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "10.0-3",
+    "ram": "5 GB",
+    "rating": "borked",
+    "timestamp": 1768078627,
+    "title": "",
+    "source": "protondb"
+  }
+]

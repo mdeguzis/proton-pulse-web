@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3078140",
+    "cpu": "11th Gen Intel Core i3-1115G4 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.4",
+    "kernel": "6.6.43",
+    "notes": "the demo seems to run decently other than the menu issue and the occasional crash after a couple mins",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1723061574,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3078140",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.57, 6.10.3-arch1-2)",
+    "gpuDriver": "4.6 Mesa 24.1.5-arch1.1",
+    "kernel": "6.10.3-arch1-2",
+    "notes": "Demo runs, Performance good, controllers work, occasional crashes can happen",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1723661017,
+    "title": "",
+    "source": "protondb"
+  }
+]

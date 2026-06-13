@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1106530",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.16.4-116.bazzite.fc42.x86_64",
+    "notes": "Broken.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1776433378,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1106530",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.16.4-116.bazzite.fc42.x86_64",
+    "notes": "Everything seems to work, but the very first right click of the session makes left click stop working for the entire game: in-game, in-menu, everywhere.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1776504736,
+    "title": "",
+    "source": "protondb"
+  }
+]

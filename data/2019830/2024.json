@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2019830",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.10-76060610-generic",
+    "notes": "I tried both whatever the default Proton is and Experimental. Neither worked.",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "128 GB",
+    "rating": "borked",
+    "timestamp": 1711400426,
+    "title": "",
+    "source": "protondb"
+  }
+]

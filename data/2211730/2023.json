@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2211730",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (navi23, LLVM 15.0.7, DRM 3.52, 6.3.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.0",
+    "kernel": "6.3.3-arch1-1",
+    "notes": "Works out of the box (OOTB)",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1685046085,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2211730",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Upscales to 1080 easily for docked, lightweight on battery at 800p 60z",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1702352283,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2211730",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "The game ran perfectly fine out of the box, I played a few rounds and everything seemed to run smoothly.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1703612368,
+    "title": "",
+    "source": "protondb"
+  }
+]

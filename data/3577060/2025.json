@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3577060",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.7, DRM 3.63, 6.15.4-200.nobara.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.15.4-200.nobara.fc42.x86_64",
+    "notes": "Works perfectly outside the box on Native, no proton needed..",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1756967623,
+    "title": "",
+    "source": "protondb"
+  }
+]

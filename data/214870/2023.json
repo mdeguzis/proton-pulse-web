@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "214870",
+    "cpu": "Intel Core i3-10105F @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "5.19.0-45-generic",
+    "notes": "Yes, you can go all in with Proton",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1688019212,
+    "title": "Painkiller Hell & Damnation",
+    "source": "protondb"
+  }
+]

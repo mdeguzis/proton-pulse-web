@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1498570",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.9-200.fc37.x86_64",
+    "notes": "SInce my last review, the game and its Proton support have gotten to a point I don't experience any issues.",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1675800179,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1498570",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.49, 6.1.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.1.12-arch1-1",
+    "notes": "Games run pretty well using Proton 7.0-6",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1677103222,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1498570",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.15-300.fc38.x86_64",
+    "notes": "Hopefully the cross-play patch fixes matchmaking issues",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1684361609,
+    "title": "",
+    "source": "protondb"
+  }
+]

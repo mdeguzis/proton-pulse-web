@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "717560",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.6-76060406-generic",
+    "notes": "I was unable to launch the game using the latest Proton @ 8.0-3 or Experimental at the time, and I wasn't able either to use older versions of Proton per reports here to load the game.\n\nOn each of five different Proton versions from 5.0-x to current, the game would launch, a small beige loading window would appear, and then the game would crash and stop.\n\nI appear up-to-date on GPU drivers, and WineHQ as of this post appears to have nothing on the game with respect to workarounds, and I'm not savvy enough to figure this out on my own.\n\nI was looking forward to playing this game... Oh well.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1692488381,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "717560",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.6-76060406-generic",
+    "notes": "Game Played After Client-Specific Troubleshooting",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1692569806,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "717560",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.15.0-30-generic",
+    "notes": "Worked totally fine out of the box for me.",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1692903199,
+    "title": "",
+    "source": "protondb"
+  }
+]

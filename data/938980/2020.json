@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "938980",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "ATI Technologies Inc. Radeon RX 580",
+    "gpuDriver": "4.6.13594 Compatibility Profile Context 20.10",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Slowdown happens in lots of levels. Although it overall works well, since it's a precision platformer, even slight slowdown really kills it.",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1599765150,
+    "title": "Lantern Bearer",
+    "source": "protondb"
+  }
+]

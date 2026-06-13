@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1099410",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD RENOIR (DRM 3.41.0, 5.13.11-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.13.11-1-MANJARO",
+    "notes": "Runs great! Standard Proton Experimental.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1630737052,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1099410",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.41.0, 5.13.5-arch1-1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.5",
+    "kernel": "5.13.5-arch1-1",
+    "notes": "Works out of the box as expected.",
+    "os": "ArcoLinux",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1630832314,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1099410",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.13-1-MANJARO",
+    "notes": "Runs fine with no issues. Loaded up a campaign completed one and onto the next with no issues. Have not tried multiplayer at all so far.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1631302501,
+    "title": "",
+    "source": "protondb"
+  }
+]

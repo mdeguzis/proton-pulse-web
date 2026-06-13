@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1157250",
+    "cpu": "AMD Ryzen 5 4600HS with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD RENOIR (renoir, LLVM 15.0.2, DRM 3.47, 5.19.0-40-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.19.0-40-generic",
+    "notes": "",
+    "os": "Ubuntu 22.10",
+    "protonVersion": "7.0-6",
+    "ram": "23 GB",
+    "rating": "silver",
+    "timestamp": 1681828877,
+    "title": "Anomaly Zone",
+    "source": "protondb"
+  }
+]

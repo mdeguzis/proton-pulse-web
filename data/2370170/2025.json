@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2370170",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.8.0-60-generic",
+    "notes": "Game immediately quits. Tried Proton Hotfix, Experimental, 9, GE-Proton10-25.\nManually changing the launched executable from LaunchGame.exe to EDFWB2.exe does *something* but the game still quits after about 30 seconds.\n\nIt no case did it open a window, show a splash screen or log a single line.\nRunning with \"-log\" does open the Unreal Engine log window (so something is launching), but it doesn't display anything either. Engine default configurations are created. Logs folder for the game is created but empty. No crash reports are generated.\n\nRunning with OpenGL or Vulkan both causes an UE error message to pop up saying the project wasn't built with either. This does create crash dumps.\nDirectX 11 or 12 doesn't seem to make a difference.\n\n(I can run any other Unreal Engine game just fine.)",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1764886834,
+    "title": "EARTH DEFENSE FORCE: WORLD BROTHERS 2",
+    "source": "protondb"
+  }
+]

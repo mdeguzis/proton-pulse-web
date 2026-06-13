@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "710600",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.11-arch1-1",
+    "notes": "No working Input, I tried mouse, keyboard and gamepad",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1579314917,
+    "title": "Red Bow",
+    "source": "protondb"
+  },
+  {
+    "appId": "710600",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.5.2",
+    "notes": "No input at the language selection screen.",
+    "os": "NixOS 20.03 (Markhor)",
+    "protonVersion": "5.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1581802387,
+    "title": "Red Bow",
+    "source": "protondb"
+  }
+]

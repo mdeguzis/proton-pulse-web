@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1222800",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.10-gentoo",
+    "notes": "doesn't launch, not even with proton-ge",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1642779566,
+    "title": "VALKYRIE CONNECT",
+    "source": "protondb"
+  },
+  {
+    "appId": "1222800",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.7-xanmod1-1",
+    "notes": "Not working on Linux",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "20 GB",
+    "rating": "borked",
+    "timestamp": 1652799001,
+    "title": "VALKYRIE CONNECT",
+    "source": "protondb"
+  },
+  {
+    "appId": "1222800",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 515.43.04",
+    "kernel": "5.17.9-xanmod1-1",
+    "notes": "Anti-cheat file was \"ateam64.sys\" which doesn't work on WINE/Proton.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "20 GB",
+    "rating": "borked",
+    "timestamp": 1654531991,
+    "title": "VALKYRIE CONNECT",
+    "source": "protondb"
+  }
+]

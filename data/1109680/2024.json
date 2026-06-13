@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1109680",
+    "cpu": "AMD Ryzen 5 4600H with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.57, 6.8.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.3-arch1.2",
+    "kernel": "6.8.1-arch1-1",
+    "notes": "Game downloads fine, and runs fine. Absolutely no issues running it whatsoever.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1711216912,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1109680",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.0",
+    "kernel": "6.8.12-200.fsync.fc39.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1718729062,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1109680",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.7, DRM 3.42, 5.15.0-87-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-87-generic",
+    "notes": "",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1732015014,
+    "title": "",
+    "source": "protondb"
+  }
+]

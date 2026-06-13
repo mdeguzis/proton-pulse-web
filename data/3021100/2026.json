@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3021100",
+    "cpu": "AMD Ryzen AI 7 350 w/ Radeon 860M",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon 860M (radeonsi, gfx1152, LLVM 21.1.6, DRM 3.64, 6.16.8-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.16.8-200.fc42.x86_64",
+    "notes": "Works with GE-Proton9-20",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1767228218,
+    "title": "Five Hearts Under One Roof",
+    "source": "protondb"
+  },
+  {
+    "appId": "3021100",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.2-1-cachyos-bore-lto",
+    "notes": "Works perfectly, no issues",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1769161157,
+    "title": "Five Hearts Under One Roof",
+    "source": "protondb"
+  },
+  {
+    "appId": "3021100",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 20.1.8, DRM 3.64, 6.17.0-20-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.25.10.1",
+    "kernel": "6.17.0-20-generic",
+    "notes": "",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776494787,
+    "title": "Five Hearts Under One Roof",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1194680",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.49, 6.2.0-25-generic)",
+    "gpuDriver": "4.6 Mesa 23.1.4 - kisak-mesa PPA",
+    "kernel": "6.2.0-25-generic",
+    "notes": "Had to use Proton 7.0 but works as expected otherwise.",
+    "os": "Ubuntu 23.04",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1694209055,
+    "title": "",
+    "source": "protondb"
+  }
+]

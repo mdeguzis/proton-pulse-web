@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "732050",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 15.0.7, DRM 3.35, 5.4.0-169-generic)",
+    "gpuDriver": "4.6 Mesa 23.3.3 - kisak-mesa PPA",
+    "kernel": "5.4.0-169-generic",
+    "notes": "Works perfectly out the box",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1745430650,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1514840",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (navi21, LLVM 15.0.7, DRM 3.52, 6.3.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.1",
+    "kernel": "6.3.5-arch1-1",
+    "notes": "Also tried it with other proton versions, but I had no luck",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1685781434,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1514840",
+    "cpu": "AMD Ryzen 5 4500 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.8-arch1-1",
+    "notes": "tried different proton versions as well, but couldn't get it working!",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1703799074,
+    "title": "",
+    "source": "protondb"
+  }
+]

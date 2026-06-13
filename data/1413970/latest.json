@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1413970",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 595.45.04",
+    "kernel": "6.17.7-ba28.fc43.x86_64",
+    "notes": "Works normally without tweaking, need outside patch to access full game",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1775216431,
+    "title": "",
+    "source": "protondb"
+  }
+]

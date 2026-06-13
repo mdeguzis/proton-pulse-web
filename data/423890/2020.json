@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "423890",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.8",
+    "kernel": "5.3.0-7625-generic",
+    "notes": "Error atempting to share openGL context[0], somewhat work with wine",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-1",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1581614414,
+    "title": "Gods and Idols",
+    "source": "protondb"
+  },
+  {
+    "appId": "423890",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 550 Ti",
+    "gpuDriver": "NVIDIA 390.132",
+    "kernel": "5.3.0-59-generic",
+    "notes": "no,need install a diferent proton version at the link bellow.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-9",
+    "ram": "12 GB",
+    "rating": "silver",
+    "timestamp": 1593096741,
+    "title": "Gods and Idols",
+    "source": "protondb"
+  },
+  {
+    "appId": "423890",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.0-46-generic",
+    "notes": "Crash on start.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1598672134,
+    "title": "Gods and Idols",
+    "source": "protondb"
+  }
+]

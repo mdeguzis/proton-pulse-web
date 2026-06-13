@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1263550",
+    "cpu": "Intel Core i3-9100 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Anti cheat crash",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1596058112,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1263550",
+    "cpu": "Intel Core i3-2310M @ 2.10GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 3000 (SNB GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "5.4.0-7634-generic",
+    "notes": "Anti cheat error",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1596074086,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1263550",
+    "cpu": "Intel Core i3-2310M @ 2.10GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 3000 (SNB GT2)",
+    "gpuDriver": "3.0 Mesa 20.1.8",
+    "kernel": "5.8.11-1-MANJARO",
+    "notes": "game breaks because of anti cheat",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1601944093,
+    "title": "",
+    "source": "protondb"
+  }
+]

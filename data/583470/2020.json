@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "583470",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-63bff6a9f8)",
+    "kernel": "5.8.6-arch1-1",
+    "notes": "Finished the game using Proton without any issues.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1607457100,
+    "title": "",
+    "source": "protondb"
+  }
+]

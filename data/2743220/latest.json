@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2743220",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 17.0.4, DRM 3.54, 6.6.6-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.0-devel",
+    "kernel": "6.6.6-200.fc39.x86_64",
+    "notes": "Works out of the box, completed a full playthrough",
+    "os": "Fedora Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1704796431,
+    "title": "My Friend The Spider",
+    "source": "protondb"
+  }
+]

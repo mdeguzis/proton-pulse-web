@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1250250",
+    "cpu": "AMD A6-9225 RADEON R4, 5 COMPUTE CORES 2C+3G",
+    "duration": "unreported",
+    "gpu": "AMD STONEY",
+    "gpuDriver": "4.5 Mesa 20.0.8",
+    "kernel": "5.4.0-52-generic",
+    "notes": "Shows Error Screen Anytime you try to play any of the games.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.13-1",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1604559485,
+    "title": "",
+    "source": "protondb"
+  }
+]

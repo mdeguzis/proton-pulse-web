@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2209910",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.3.1-arch1-1",
+    "notes": "Runs pretty well with a bit of tinkering",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1684668341,
+    "title": "",
+    "source": "protondb"
+  }
+]

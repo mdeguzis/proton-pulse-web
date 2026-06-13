@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1791710",
+    "cpu": "Intel Xeon E5-2678 v3 @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.6-1-MANJARO",
+    "notes": "Game crashes on splash screen.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1652690811,
+    "title": "Spacefolk City",
+    "source": "protondb"
+  }
+]

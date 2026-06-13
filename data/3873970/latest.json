@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3873970",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Ryzen 7 9800X3D 8-Core Processor (radeonsi, raphael_mendocino, LLVM 21.1.6, DRM 3.64, 6.18.2-1-cachyos-bsb)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.3",
+    "kernel": "6.18.2-1-cachyos-bsb",
+    "notes": "Tried multiple versions of Proton: experimental, GE 10-26, proton-cachyos.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1767315391,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3873970",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Update in early december broke it and later updates haven't caused the game to launch anymore.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1770170193,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3873970",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "No error messages or anything. Just a black screen for about 10-15 seconds, then it exits.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1773131404,
+    "title": "",
+    "source": "protondb"
+  }
+]

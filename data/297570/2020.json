@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "297570",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "4.19.0-8-amd64",
+    "notes": "Minor problems as noted in report; quite playable so far.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1585799069,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "297570",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-8-amd64",
+    "notes": "Adding report at 13 hours in, on another system. Still quite playable on Linux, with noted issues with swapping and music.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1586010653,
+    "title": "",
+    "source": "protondb"
+  }
+]

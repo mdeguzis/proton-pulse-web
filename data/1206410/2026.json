@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1206410",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpuDriver": "NVIDIA 595.45.04",
+    "kernel": "6.19.8-1-cachyos",
+    "notes": "The game freezes upon launch no matter what proton version or launch arguments I use.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1776990971,
+    "title": "",
+    "source": "protondb"
+  }
+]

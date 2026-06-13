@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1232420",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.6-arch1-1",
+    "notes": "Game installs but does not update, running game .exe directly also does not work",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1632434404,
+    "title": "",
+    "source": "protondb"
+  }
+]

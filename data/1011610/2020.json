@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1011610",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Mic didn't work naively, but worked fine when running through proton",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1593224041,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "803030",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.0-48-generic",
+    "notes": "I haven't reached the die part but so far seek has had no issues",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1602379736,
+    "title": "Seek Or Die",
+    "source": "protondb"
+  }
+]

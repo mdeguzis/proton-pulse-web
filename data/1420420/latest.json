@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1420420",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.6, DRM 3.64, 6.18.0-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.3",
+    "kernel": "6.18.0-3-cachyos",
+    "notes": "The game is not ready for Linux Play-ability, as it loses immersion in the gameplay with the inconsistent FPS.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771234044,
+    "title": "Fret Smasher",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1660910",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "3.0 Mesa 21.1.4 (git-ac105a8e6e)",
+    "kernel": "5.13.9-200.fc34.x86_64",
+    "notes": "No issues.",
+    "os": "Freedesktop.org 20.08.14 (Flatpak runtime)",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1629343195,
+    "title": "Tanks: The Crusades",
+    "source": "protondb"
+  },
+  {
+    "appId": "1660910",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.9-arch2-1",
+    "notes": "Seems to work fine initally, more testing needed",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634083048,
+    "title": "Tanks: The Crusades",
+    "source": "protondb"
+  },
+  {
+    "appId": "1660910",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.14.2-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.14.2-1-MANJARO",
+    "notes": "It works perfectly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634382105,
+    "title": "Tanks: The Crusades",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2280440",
+    "cpu": "Intel Xeon           W3680  @ 3.33GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.15.0-52-generic",
+    "notes": "Swtich to Proton GE",
+    "os": "Zorin OS 16.2",
+    "protonVersion": "7.0-6",
+    "ram": "18 GB",
+    "rating": "platinum",
+    "timestamp": 1681696800,
+    "title": "",
+    "source": "protondb"
+  }
+]

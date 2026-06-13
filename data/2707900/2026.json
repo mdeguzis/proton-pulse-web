@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2707900",
+    "cpu": "11th Gen Intel Core i5-11300H @ 3.10GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.3-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1768247053,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2707900",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.8.0-101-generic",
+    "notes": "Works out of the box",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1772330705,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2707900",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.14.2-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.0.4-cachyos1.2",
+    "kernel": "6.14.2-2-cachyos",
+    "notes": "Flawless // zero issues, runs out of the box.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1774098406,
+    "title": "",
+    "source": "protondb"
+  }
+]

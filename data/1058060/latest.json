@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1058060",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.0-devel (git-bd22a0f710)",
+    "kernel": "5.6.0-rc7-x86_64+",
+    "notes": "It doesn't run as slow as some other games that use nw engine. It's comparable to Meltys Quest.",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1585073629,
+    "title": "",
+    "source": "protondb"
+  }
+]

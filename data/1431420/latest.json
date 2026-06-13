@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1431420",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "4.19.0-16-amd64",
+    "notes": "closes shortly after launch",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1626407346,
+    "title": "",
+    "source": "protondb"
+  }
+]

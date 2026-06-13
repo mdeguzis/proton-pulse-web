@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "27050",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 18.1.8, DRM 3.59, 6.12.4-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.2.8-arch1.1",
+    "kernel": "6.12.4-1-MANJARO",
+    "notes": "Runs flawlessly - just click and play!",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1738341026,
+    "title": "Fatale",
+    "source": "protondb"
+  }
+]

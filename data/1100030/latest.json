@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1100030",
+    "cpu": "12th Gen Intel Core i3-12100F",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 535.161.07",
+    "kernel": "6.5.0-25-generic",
+    "notes": "proton 8.0-5",
+    "os": "Ubuntu 23.10\uff0864bit\uff09",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1710338761,
+    "title": "",
+    "source": "protondb"
+  }
+]

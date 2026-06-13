@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2808560",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, ACO, DRM 3.64, 6.18.9-1-default)",
+    "gpuDriver": "4.6 Mesa 26.0.0-rc3",
+    "kernel": "6.18.9-1-default",
+    "notes": "The Steam Proton versions currently do not show any opening sequences. Use GE-Proton10-30",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771061858,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "905540",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD DIMGREY_CAVEFISH (DRM 3.41.0, 5.13.19-2-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "no major problems on the playing FRIGID Playtest ran with proton experimental and performed quite well. good fps when there isnt much snow",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1632677766,
+    "title": "",
+    "source": "protondb"
+  }
+]

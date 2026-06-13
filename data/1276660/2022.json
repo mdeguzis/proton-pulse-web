@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1276660",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 14.0.6, DRM 3.42, 5.15.71-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.15.71-1-MANJARO",
+    "notes": "I do not recall when this started working for me, but it works pretty well now.  Very happy to be able to play this.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1665350329,
+    "title": "",
+    "source": "protondb"
+  }
+]

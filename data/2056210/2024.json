@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2056210",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.54, 6.5.7-100.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.5.7-100.fc37.x86_64",
+    "notes": "Runs perfectly out of the box",
+    "os": "Fedora Linux 37 (Thirty Seven)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1705790394,
+    "title": "LONESTAR",
+    "source": "protondb"
+  },
+  {
+    "appId": "2056210",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1706567906,
+    "title": "LONESTAR",
+    "source": "protondb"
+  },
+  {
+    "appId": "2056210",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works great by default!",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1707778885,
+    "title": "LONESTAR",
+    "source": "protondb"
+  }
+]

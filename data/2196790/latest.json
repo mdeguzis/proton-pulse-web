@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2196790",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (sienna_cichlid, LLVM 12.0.1, DRM 3.42, 5.14.12-051412-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-60768f4 2021-10-21 focal-oibaf-ppa)",
+    "kernel": "5.14.12-051412-generic",
+    "notes": "Installs without issue. Game works without issues too. No Problems encountered.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1672691157,
+    "title": "",
+    "source": "protondb"
+  }
+]

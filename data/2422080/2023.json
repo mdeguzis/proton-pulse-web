@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2422080",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.19.0-43-generic",
+    "notes": "The game appeared to start, but just gave me a black screen. I was able to ALT-TAB back to steam, but the 'Stop' button had no effect. I couldn't find a process that appeared to be the game, so had to restart Steam before I was able to try again. I tried both Proton Experimental and GE8-3.",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1685655538,
+    "title": "",
+    "source": "protondb"
+  }
+]

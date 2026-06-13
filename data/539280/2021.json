@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "539280",
+    "cpu": "Intel Core i7-5930K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "4.19.164",
+    "notes": "Worked out of the box.",
+    "os": "Linux 4.19",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1640374305,
+    "title": "",
+    "source": "protondb"
+  }
+]

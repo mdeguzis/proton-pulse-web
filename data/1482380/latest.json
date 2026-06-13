@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1482380",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "works out of the box. great little game.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1767593089,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1482380",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.2-2-cachyos",
+    "notes": "Install and press play; flawless",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1767745411,
+    "title": "",
+    "source": "protondb"
+  }
+]

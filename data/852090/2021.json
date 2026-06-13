@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "852090",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-72-generic",
+    "notes": "crashes are very infrequent and don't lose progress",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1621121018,
+    "title": "",
+    "source": "protondb"
+  }
+]

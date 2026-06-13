@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign In With Steam — Proton Pulse</title>
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/site.css?v=93774bad">
+<link rel="stylesheet" href="css/auth/auth.css?v=ca512b85">
+</head>
+<body>
+<div class="auth-shell">
+  <main class="auth-card">
+    <a class="auth-home-link" id="cancel-login-link" href="index.html">Proton Pulse</a>
+    <div class="auth-eyebrow">Steam Sign-In</div>
+    <h1 class="auth-title">You’ll see Steam’s sign-in page next.</h1>
+    <p class="auth-copy">
+      Before we send you there, here’s what to expect: the next page should open on
+      <code>steamcommunity.com</code>, where Steam handles the sign-in directly.
+    </p>
+
+    <section class="auth-panel">
+      <h2>What happens next</h2>
+      <ul class="auth-list">
+        <li>Steam may say you are signing in to <code>ilsgdshkaocrmibwdezk.supabase.co</code>. That is Proton Pulse’s Supabase auth callback.</li>
+        <li>Steam will ask you to sign in or confirm the account you already use there.</li>
+        <li>After you approve it, Steam sends you back to Proton Pulse already signed in.</li>
+        <li>Proton Pulse never receives your Steam password.</li>
+      </ul>
+    </section>
+
+    <section class="auth-panel auth-panel--preview">
+      <h2>What the Steam page will look like</h2>
+      <div class="auth-preview" aria-hidden="true">
+        <div class="auth-preview__header">
+          <span class="auth-preview__title">Sign into <code>ilsgdshkaocrmibwdezk.supabase.co</code> using your Steam account</span>
+        </div>
+        <div class="auth-preview__body">
+          <div class="auth-preview__callout">Steam and Valve are not affiliated with this site. This is the callback domain used to complete Proton Pulse sign-in.</div>
+          <div class="auth-preview__copy">
+            You will see your Steam account on the left and a short explanation on the right about what profile information is shared back after sign-in.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-panel auth-panel--warning">
+      <h2>How to verify it’s legitimate</h2>
+      <p>Check that the next page URL starts with <code>https://steamcommunity.com/</code> before entering anything.</p>
+      <p>It is normal for that Steam page to mention <code>ilsgdshkaocrmibwdezk.supabase.co</code> in the text because that is the service finishing Proton Pulse authentication.</p>
+      <p>If you are already signed into Steam in this browser, you may only need to click <strong>Sign In</strong>.</p>
+    </section>
+
+    <div class="auth-actions">
+      <button class="gh-login-btn gh-login-btn--hero" id="continue-login-btn" type="button" title="Continue to Steam sign-in">
+        <span class="gh-login-btn__badge" aria-hidden="true">
+          <img class="gh-login-btn__icon" src="assets/steam-logo-glyph.png" alt="" aria-hidden="true">
+        </span>
+        <span class="gh-login-btn__label">Login with Steam</span>
+      </button>
+      <a class="auth-secondary-link" href="index.html" id="auth-back-link">Go back</a>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=07e4ec76"></script>
+<script type="module" src="js/auth/main.js?v=0016214c"></script>
+</body>
+</html>

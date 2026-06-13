@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1520380",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.12.19-1-MANJARO",
+    "notes": "The graphics only run smoother when running at the lowest settings on the game. Even then they are not even smooth.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1630169422,
+    "title": "",
+    "source": "protondb"
+  }
+]

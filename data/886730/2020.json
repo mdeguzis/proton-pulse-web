@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "886730",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.0.2 - kisak-mesa PPA",
+    "kernel": "5.3.0-050300-generic",
+    "notes": "Not playable for now.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-7",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1588503472,
+    "title": "",
+    "source": "protondb"
+  }
+]

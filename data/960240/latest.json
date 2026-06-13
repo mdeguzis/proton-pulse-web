@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "960240",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.4.0-65-generic",
+    "notes": "Runs smoothly, good FPS, no lag",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1613051982,
+    "title": "",
+    "source": "protondb"
+  }
+]

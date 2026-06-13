@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1432970",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (sienna_cichlid, LLVM 13.0.1, DRM 3.49, 6.1.1-x64v1-xanmod1)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "6.1.1-x64v1-xanmod1",
+    "notes": "Perfect!",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1672300046,
+    "title": "",
+    "source": "protondb"
+  }
+]

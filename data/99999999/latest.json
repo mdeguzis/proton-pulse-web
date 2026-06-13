@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "99999999",
+    "title": "Half-Life 4: Gabe's Revenge",
+    "cpu": "AMD Ryzen 9 9950X @ 5.70GHz",
+    "gpu": "NVIDIA GeForce RTX 9090",
+    "gpuDriver": "NVIDIA 666.00",
+    "gpuVendor": "nvidia",
+    "ram": "64 GB",
+    "vramMb": null,
+    "os": "SteamOS 3.6",
+    "kernel": "6.99.0-valve420",
+    "protonVersion": "Proton 99.0-1",
+    "rating": "platinum",
+    "duration": "oneToFourHours",
+    "durationMinutes": 142,
+    "notes": "Seed record \u2014 not a real game or config",
+    "launchOptions": "DXVK_ASYNC=1 MANGOHUD=1 %command%",
+    "formResponses": {
+      "canPlay": "yes",
+      "summary": null,
+      "verdict": "yes",
+      "canStart": "yes",
+      "isTinker": true,
+      "canInstall": "yes",
+      "protonType": "ge",
+      "verdictOob": null,
+      "audioFaults": "no",
+      "inputFaults": "no",
+      "saveGameFaults": "no",
+      "graphicalFaults": "yes",
+      "significantBugs": "no",
+      "stabilityFaults": "no",
+      "windowingFaults": "no",
+      "localMultiplayer": "no",
+      "tinkeringMethods": [
+        "Launch options / env vars"
+      ],
+      "onlineMultiplayer": "no",
+      "performanceFaults": "no"
+    },
+    "configKey": "custom:GE-Gaming",
+    "gameOwned": false,
+    "timestamp": 1775825776,
+    "pulseId": 2,
+    "submissionSource": "user",
+    "source": "pulse"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2310810",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 550.78",
+    "kernel": "6.6.37",
+    "notes": "Currently unplayable",
+    "os": "NixOS 24.05 (Uakari)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1733700829,
+    "title": "",
+    "source": "protondb"
+  }
+]

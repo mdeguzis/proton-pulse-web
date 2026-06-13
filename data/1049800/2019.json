@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1049800",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.5 Mesa 19.2.7",
+    "kernel": "5.4.2-1-MANJARO",
+    "notes": "Works without any changes needed, but when joining a server other players would freeze as if you're disconnected.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1577380273,
+    "title": "BLOCKADE",
+    "source": "protondb"
+  }
+]

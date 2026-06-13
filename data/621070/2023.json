@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "621070",
+    "cpu": "AMD Ryzen 5 3600XT 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.1.38-1-MANJARO",
+    "notes": "Game is poorly optimized. Might work fine with better hardware.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1689971668,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "792120",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 535.98",
+    "kernel": "6.4.9-arch1-1",
+    "notes": "Game does not work under Linux, switch to Windows for now.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1767354869,
+    "title": "",
+    "source": "protondb"
+  }
+]

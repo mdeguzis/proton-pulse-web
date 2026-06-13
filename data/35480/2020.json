@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "35480",
+    "cpu": "Intel Core i7-4980HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Iris Pro P5200 (HSW GT3)",
+    "gpuDriver": "3.0 Mesa 20.0.6",
+    "kernel": "5.6.12-1-MANJARO",
+    "notes": "Tried the native version, 5.8GE, and a variety of proton versions. All fail to create a window. No errors, just hangs on start",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1593464898,
+    "title": "Dwarfs!?",
+    "source": "protondb"
+  }
+]

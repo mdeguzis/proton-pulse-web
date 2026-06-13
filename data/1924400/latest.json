@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1924400",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.8.0-60-generic",
+    "notes": "Seems to work out of the box",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1750185986,
+    "title": "Hand of Doom",
+    "source": "protondb"
+  },
+  {
+    "appId": "1924400",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1759770641,
+    "title": "Hand of Doom",
+    "source": "protondb"
+  },
+  {
+    "appId": "1924400",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.6-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1762167297,
+    "title": "Hand of Doom",
+    "source": "protondb"
+  }
+]

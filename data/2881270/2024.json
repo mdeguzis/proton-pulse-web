@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2881270",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.49, 6.1.0-18-amd64)",
+    "gpuDriver": "4.6 Mesa 24.0.3 (git-c4d371fa7e)",
+    "kernel": "6.1.0-18-amd64",
+    "notes": "Aside from the controller not working, no significant issues",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "23 GB",
+    "rating": "gold",
+    "timestamp": 1732807983,
+    "title": "Randy & Manilla",
+    "source": "protondb"
+  }
+]

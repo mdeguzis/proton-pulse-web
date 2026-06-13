@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2207490",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "6.1.0-13-amd64",
+    "notes": "I simply works. Install, click play and enjoy the game.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-4",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1704827310,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2207490",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX Vega (radeonsi, vega10, LLVM 16.0.6, DRM 3.56, 6.7.0-arch3-1)",
+    "gpuDriver": "4.6 Mesa 23.3.3-arch1.1",
+    "kernel": "6.7.0-arch3-1",
+    "notes": "Just worked.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1706593557,
+    "title": "",
+    "source": "protondb"
+  }
+]

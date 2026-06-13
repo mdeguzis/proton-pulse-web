@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1841660",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.12.35",
+    "notes": "",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1752170127,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1841660",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.17.1-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.4-cachyos1.2",
+    "kernel": "6.17.1-2-cachyos",
+    "notes": "Native-like support, decent performance",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "28 GB",
+    "rating": "platinum",
+    "timestamp": 1760702916,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1841660",
+    "cpu": "13th Gen Intel Core i9-13900KS",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.14.6-106.bazzite.fc42.x86_64",
+    "notes": "",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1762170969,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "420930",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.16.7-2-cachyos",
+    "notes": "The native version doesn't work, but the proton version works well enough.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1758666361,
+    "title": "CHKN",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "924970",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "Would not Boot to Main Menu",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1608233873,
+    "title": "Back 4 Blood",
+    "source": "protondb"
+  },
+  {
+    "appId": "924970",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "4.15.0-124-generic",
+    "notes": "Was able to load to pre-main menu loading screen, no further.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "5.13-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1608336077,
+    "title": "Back 4 Blood",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2621420",
+    "cpu": "AMD Ryzen 7 PRO 7840U w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD GFX1103_R1 (gfx1103_r1, LLVM 15.0.7, DRM 3.54, 6.5.0-1027-oem)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "6.5.0-1027-oem",
+    "notes": "it runs nativily this review is written on the laptop the game was tested on before release",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1726057233,
+    "title": "The Elision Effect",
+    "source": "protondb"
+  }
+]

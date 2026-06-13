@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "325610",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.13-arch1-1",
+    "notes": "Native version has poor performance, frequent crashes on proton version.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1609747593,
+    "title": "Total War: ATTILA",
+    "source": "protondb"
+  },
+  {
+    "appId": "325610",
+    "cpu": "Intel Core i7-10870H @ 2.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.13.0-21-generic",
+    "notes": "Runs pretty well, just there may be some crashes while you play with graphical settings.",
+    "os": "Freedesktop.org 21.08.5 (Flatpak runtime)",
+    "protonVersion": "5.0-10",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1638180637,
+    "title": "Total War: ATTILA",
+    "source": "protondb"
+  },
+  {
+    "appId": "325610",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.13.0-7620-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1639503115,
+    "title": "Total War: ATTILA",
+    "source": "protondb"
+  }
+]

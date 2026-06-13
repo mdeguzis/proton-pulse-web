@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1621680",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-14-generic",
+    "notes": "\u4f7f\u7528steam\u5167\u5efa\u7684\u6bd4\u8f03\u65b0\u7684proton Experimental\u6216Proton HotFix\u90fd\u53ef\u4ee5\u8dd1\uff0c\u6d41\u66a2\u5ea6\u6bd4\u820a\u7248\u597d\u5f88\u591a\uff0c\u4f46\u7e41\u4e2d\u6587\u5b57\u986f\u793a\u8a2d\u7f6e\u8207\u820a\u7248proton\u4e0d\u540c\uff0c\u555f\u52d5\u9078\u9805\u8981\u586b\u5165HOST_LC_ALL=zh_TW.UTF-8 LANG=zh_TW.UTF-8 %command%",
+    "os": "Linux Mint 22.3\uff0864 \u4f4d\u5143\uff09",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1771428356,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1366290",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.0-1-MANJARO",
+    "notes": "Works fine without any major tinkering or modifications, just had to force the use of Steam Play compatibillity tool.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1682289216,
+    "title": "",
+    "source": "protondb"
+  }
+]

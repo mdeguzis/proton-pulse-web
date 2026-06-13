@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3022810",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.1.0-18-amd64",
+    "notes": "Works OOTB",
+    "os": "LMDE 6 Faye - Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1731414837,
+    "title": "HackHub: Free Trial",
+    "source": "protondb"
+  }
+]

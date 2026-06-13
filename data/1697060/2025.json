@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1697060",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 19.1.6, DRM 3.59, 6.12.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.3-arch1.2",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "it's a simple platformer game with unique movement mechanic ^w^",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1738336732,
+    "title": "",
+    "source": "protondb"
+  }
+]

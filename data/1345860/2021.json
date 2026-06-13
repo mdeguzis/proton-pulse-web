@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1345860",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.42.0, 5.14.8-arch1-1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.14.8-arch1-1",
+    "notes": "Game runs fine. Been playing the demo for half an hour and no problems so far",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1633114212,
+    "title": "",
+    "source": "protondb"
+  }
+]

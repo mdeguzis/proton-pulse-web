@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "212070",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-7626-generic",
+    "notes": "Game will start out with micro stutters in matches as it compiles shaders quickly, but will smooth out shortly after.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1589644683,
+    "title": "Star Conflict",
+    "source": "protondb"
+  }
+]

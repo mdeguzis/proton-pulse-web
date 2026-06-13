@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2182690",
+    "cpu": "Intel Core i5-10500T @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CML GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.2-arch1.2",
+    "kernel": "6.12.47-1-lts",
+    "notes": "Well, you can edit whathever the file is, but the font is unreadable. Even if you install vlghotic fonts, set the japanese locales plus timezones, and put the dll's with winecfg correctly. Good luck to everyone who wanna try.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "20 GB",
+    "rating": "borked",
+    "timestamp": 1758514155,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2182690",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 21.1.5, DRM 3.64, 6.17.9-200.nobara.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.9-200.nobara.fc43.x86_64",
+    "notes": "It works",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1766081872,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2182690",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 21.1.5, DRM 3.64, 6.17.9-200.nobara.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.9-200.nobara.fc43.x86_64",
+    "notes": "It works!",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1766082782,
+    "title": "",
+    "source": "protondb"
+  }
+]

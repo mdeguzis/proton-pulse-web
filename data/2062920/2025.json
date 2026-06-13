@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2062920",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.17.3-201.nobara.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.5",
+    "kernel": "6.17.3-201.nobara.fc42.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1764078368,
+    "title": "TTV4",
+    "source": "protondb"
+  }
+]

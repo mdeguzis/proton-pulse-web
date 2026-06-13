@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1459960",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 16.0.6, DRM 3.54, 6.5.9-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.5.9-zen2-1-zen",
+    "notes": "Upon starting a new game, the game loads up to 36% and then crashes, showing a dialog box with the error description \"Fatal Error\".",
+    "os": "Garuda Linux",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1716069231,
+    "title": "Glitchpunk",
+    "source": "protondb"
+  },
+  {
+    "appId": "1459960",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 18.1.8, DRM 3.57, 6.9.9-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.1.3-arch1.1",
+    "kernel": "6.9.9-zen1-1-zen",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1729623243,
+    "title": "Glitchpunk",
+    "source": "protondb"
+  }
+]

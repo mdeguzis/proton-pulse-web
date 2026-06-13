@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "355430",
+    "cpu": "Intel Xeon E5-1650 0 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.1-2-MANJARO",
+    "notes": "Opens on white screen in Proton 7.0-3 but works fine in Proton Experimental",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1660446857,
+    "title": "",
+    "source": "protondb"
+  }
+]

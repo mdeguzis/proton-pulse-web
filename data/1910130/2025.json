@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1910130",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "severalHours",
+    "gpu": "Mesa llvmpipe (LLVM 18.1.8, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.3.2-arch1.1",
+    "kernel": "6.12.7-arch1-1",
+    "notes": "Unsure how to proceed further",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1735758468,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1910130",
+    "cpu": "12th Gen Intel Core i9-12900H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.2-arch1-1",
+    "notes": "game not starts.",
+    "os": "Arch Linux(64\ube44\ud2b8)",
+    "protonVersion": "9.0-4",
+    "ram": "15678Mb",
+    "rating": "borked",
+    "timestamp": 1739877607,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1910130",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, LLVM 20.1.8, DRM 3.64, 6.16.4-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.1-cachyos1.6",
+    "kernel": "6.16.4-3-cachyos",
+    "notes": "It doesn't run after installing Edge Webview.",
+    "os": "CachyOS(64\ube44\ud2b8)",
+    "protonVersion": "9.0-4",
+    "ram": "52100Mb",
+    "rating": "borked",
+    "timestamp": 1756808959,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "473530",
+    "cpu": "Intel Xeon E5-2670 v3 @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.15.60",
+    "notes": "It has very many issues currently, and is not playable on the defualt version of proton.",
+    "os": "NixOS 22.05 (Quokka)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1764118941,
+    "title": "",
+    "source": "protondb"
+  }
+]

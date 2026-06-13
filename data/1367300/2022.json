@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1367300",
+    "cpu": "Intel Core i7-5775C @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.8.0-48-lowlatency",
+    "notes": "Works out-of-the-box with ProtonGE",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1643470846,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1367300",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.0.10-arch2-1",
+    "notes": "No issues found",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1670489021,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1367300",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.9-arch1-1",
+    "notes": "Works perfectly fine out of the box.",
+    "os": "ChimeraOS 35",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1670538975,
+    "title": "",
+    "source": "protondb"
+  }
+]

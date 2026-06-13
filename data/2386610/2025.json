@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2386610",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 20.1.8, DRM 3.64, 6.16.0-5-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.1.7-cachyos1.2",
+    "kernel": "6.16.0-5-cachyos",
+    "notes": "only issue is no cutscenes play (from my experience)",
+    "os": "CachyOS",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1754329397,
+    "title": "",
+    "source": "protondb"
+  }
+]

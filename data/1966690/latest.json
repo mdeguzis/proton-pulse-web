@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1966690",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (sienna_cichlid, LLVM 14.0.6, DRM 3.42, 5.15.75-gentoo-x86_64)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.15.75-gentoo-x86_64",
+    "notes": "Game runs fine, no cutscenes with proton experimental, switch to proton GE to have cutscenes",
+    "os": "Gentoo Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1669042805,
+    "title": "",
+    "source": "protondb"
+  }
+]

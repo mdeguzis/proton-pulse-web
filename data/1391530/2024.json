@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1391530",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.11-200.fc39.x86_64",
+    "notes": "Works perfectly out of the box without any fiddling",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1734585494,
+    "title": "",
+    "source": "protondb"
+  }
+]

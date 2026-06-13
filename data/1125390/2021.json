@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1125390",
+    "cpu": "Intel Pentium G3420 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "4.15.0-123-generic",
+    "notes": "Game starts in QWERTY mode and then crash when you try to change keyboard mapping.",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1624319275,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1125390",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.41.0, 5.13.5-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.5",
+    "kernel": "5.13.5-1-MANJARO",
+    "notes": "No issues, though I only played about an hour.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1629266329,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1125390",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-7633-generic",
+    "notes": "Works fine, both on my home rig with a GTX 1070 and my work rig with an RX 590.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1630977743,
+    "title": "",
+    "source": "protondb"
+  }
+]

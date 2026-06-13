@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2960250",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (navi14, LLVM 15.0.6, DRM 3.49, 6.1.0-26-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-26-amd64",
+    "notes": "It worked out of the box",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1734364043,
+    "title": "",
+    "source": "protondb"
+  }
+]

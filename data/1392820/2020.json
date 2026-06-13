@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1392820",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.14-arch1-1",
+    "notes": "It's preferable to use Proton 5.0-10 over Proton 5.13-4 for this one, due to the reasons mentioned below.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1609203679,
+    "title": "",
+    "source": "protondb"
+  }
+]

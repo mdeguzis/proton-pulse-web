@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "971220",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, ACO, DRM 3.64, 6.19.6-1-default)",
+    "gpuDriver": "4.6 Mesa 26.0.1",
+    "kernel": "6.19.6-1-default",
+    "notes": "Hoping they fix the controller support on this game so I can play it on steam deck",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1773975461,
+    "title": "Rogue Monster Rush",
+    "source": "protondb"
+  }
+]

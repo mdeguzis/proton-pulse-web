@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1238880",
+    "cpu": "Intel Core i7-10700 @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD SIENNA_CICHLID (DRM 3.40.0, 5.10.19-1-MANJARO, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.19-1-MANJARO",
+    "notes": "Il gioco si installa e si riesce ad accedere al men\u00f9 origin. Ma il gioco non parte",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1614761420,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1238880",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650 Ti",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.2-1-default",
+    "notes": "Disappointing",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1615203914,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1238880",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-7642-generic",
+    "notes": "Browser doesn't launch the game properly",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1616673309,
+    "title": "",
+    "source": "protondb"
+  }
+]

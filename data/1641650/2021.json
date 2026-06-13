@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1641650",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 460 (POLARIS11, DRM 3.42.0, 5.14.8-arch1-1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.14.8-arch1-1",
+    "notes": "no window, keeps running on background",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1636897016,
+    "title": "",
+    "source": "protondb"
+  }
+]

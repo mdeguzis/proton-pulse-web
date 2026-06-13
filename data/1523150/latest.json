@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1523150",
+    "cpu": "Intel Core i7-10710U @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.15.0-52-generic",
+    "notes": "Runs out of the box with latest Proton version.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1677623348,
+    "title": "",
+    "source": "protondb"
+  }
+]

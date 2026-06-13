@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "565550",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.2-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1615494325,
+    "title": "",
+    "source": "protondb"
+  }
+]

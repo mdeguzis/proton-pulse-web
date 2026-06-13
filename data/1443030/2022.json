@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1443030",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Report from Dev - plays great 30-40 fps on Steam Deck with quality set to Medium or Pixelated (low), and still looks great. Videos dont load",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1662993298,
+    "title": "",
+    "source": "protondb"
+  }
+]

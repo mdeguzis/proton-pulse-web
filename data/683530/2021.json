@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "683530",
+    "cpu": "AMD Ryzen 7 2700U with Radeon Vega Mobile Gfx",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon Vega 3 (RAVEN, DRM 3.40.0, 5.11.0-23-generic, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.0-23-generic",
+    "notes": "Works fine, with a slight performance drop compared to native",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1626311860,
+    "title": "",
+    "source": "protondb"
+  }
+]

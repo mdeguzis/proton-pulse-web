@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "488690",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.41.0, 5.13.13-xanmod1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.13.13-xanmod1",
+    "notes": "It ran exactly like it is on Windows, tested with Proton 6.3-6",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1630291539,
+    "title": "",
+    "source": "protondb"
+  }
+]

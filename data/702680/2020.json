@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "702680",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.6.19-2-MANJARO",
+    "notes": "Game runs with Esync disabled, video playback does not work and blackscreens the game in a point.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1608414508,
+    "title": "Wattam",
+    "source": "protondb"
+  }
+]

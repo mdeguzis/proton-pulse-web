@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "715020",
+    "cpu": "Intel Core i7-4820K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-b8df1c4 2020-07-11 focal-oibaf-ppa)",
+    "kernel": "5.7.8-050708-generic",
+    "notes": "Runs great after MF install",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1594797840,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2929550",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 17.0.6, DRM 3.54, 6.6.8-200.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.1",
+    "kernel": "6.6.8-200.fsync.fc39.x86_64",
+    "notes": "Simply doesn't work",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1729109854,
+    "title": "",
+    "source": "protondb"
+  }
+]

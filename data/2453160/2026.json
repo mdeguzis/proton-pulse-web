@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2453160",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.17.9-76061709-generic",
+    "notes": "Other than it being UE5, this game works out of the box. Rare artifacting and lag from just the amount of things on screen in some moments.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771904165,
+    "title": "",
+    "source": "protondb"
+  }
+]

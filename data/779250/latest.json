@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "779250",
+    "cpu": "Intel Xeon           E5450  @ 3.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.5.0-1.1-liquorix-amd64",
+    "notes": "\u043f\u0440\u043e\u0448\u0435\u043b \u0432\u0441\u044e \u0438\u0433\u0440\u0443 \u043e\u0442 \u043d\u0430\u0447\u0430\u043b\u0430 \u0434\u043e \u043a\u043e\u043d\u0446\u0430, \u0438\u0433\u0440\u0430 \u043a\u043e\u0442\u043e\u0440\u0430\u044f. \u0432\u0441\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u043a\u0430\u043a \u0431\u044b\u043b\u043e \u0437\u0430\u0434\u0443\u043c\u0430\u043d\u043d\u043e. the game that has passed. everything works as intended",
+    "os": "Ubuntu 18.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.0-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1586115145,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "779250",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.6.19-159.current",
+    "notes": "Very short and charming game that works out of the box",
+    "os": "Solus",
+    "protonVersion": "5.0-10",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1605213879,
+    "title": "",
+    "source": "protondb"
+  }
+]

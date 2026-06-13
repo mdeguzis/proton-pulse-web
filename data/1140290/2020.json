@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1140290",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.3.0-40-generic",
+    "notes": "",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1583979881,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1140290",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-dd81f4853c)",
+    "kernel": "5.6.13-gentoo",
+    "notes": "Works out of the box but freezes on exit",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1593656477,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1140290",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.46-1-lts",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1594932610,
+    "title": "",
+    "source": "protondb"
+  }
+]

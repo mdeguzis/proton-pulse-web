@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2819970",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.8-arch1-1",
+    "notes": "Performance becomes unplayable quickly.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1736281814,
+    "title": "",
+    "source": "protondb"
+  }
+]

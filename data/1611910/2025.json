@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1611910",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 19.1.1, DRM 3.57, 6.8.0-60-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-60-generic",
+    "notes": "",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1750011319,
+    "title": "Warhammer 40,000: Chaos Gate - Daemonhunters",
+    "source": "protondb"
+  },
+  {
+    "appId": "1611910",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.8.0-65-generic",
+    "notes": "",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1755979626,
+    "title": "Warhammer 40,000: Chaos Gate - Daemonhunters",
+    "source": "protondb"
+  },
+  {
+    "appId": "1611910",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1766454122,
+    "title": "Warhammer 40,000: Chaos Gate - Daemonhunters",
+    "source": "protondb"
+  }
+]

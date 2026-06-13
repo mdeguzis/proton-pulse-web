@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1076620",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.8.0-63-generic",
+    "notes": "Problem with videos, which form the basic game part",
+    "os": "KDE neon User Edition 5.22",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1628069171,
+    "title": "",
+    "source": "protondb"
+  }
+]

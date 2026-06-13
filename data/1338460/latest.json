@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1338460",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.1",
+    "kernel": "6.2.8-arch1-1",
+    "notes": "Playable with some caveats",
+    "os": "ArcoLinux",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1680694810,
+    "title": "",
+    "source": "protondb"
+  }
+]

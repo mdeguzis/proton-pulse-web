@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2009850",
+    "cpu": "11th Gen Intel Core i3-1115G4 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-86-generic",
+    "notes": "Some unknown error pops up on every version of Proton known to humanity",
+    "os": "Zorin OS 16.3",
+    "protonVersion": "8.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1699519872,
+    "title": "",
+    "source": "protondb"
+  }
+]

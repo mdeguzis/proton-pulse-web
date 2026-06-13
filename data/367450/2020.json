@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "367450",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.4",
+    "kernel": "5.5.11-arch1-1",
+    "notes": "The native Linux game without Proton has massive scaling issues that makes it almost unplayable.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1585346438,
+    "title": "Poly Bridge",
+    "source": "protondb"
+  },
+  {
+    "appId": "367450",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.10-arch1-1",
+    "notes": "Proton version is perfect, native version scales UI incorrectly.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1596501543,
+    "title": "Poly Bridge",
+    "source": "protondb"
+  },
+  {
+    "appId": "367450",
+    "cpu": "Intel Core i3-8130U @ 2.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.6.4-arch1-1",
+    "notes": "Much better than native",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1598215737,
+    "title": "Poly Bridge",
+    "source": "protondb"
+  }
+]

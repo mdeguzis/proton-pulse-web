@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "712100",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.13.0-25-generic",
+    "notes": "Native version does not appear to be very stable, I found it too frustrating to keep restarting.",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1685894114,
+    "title": "",
+    "source": "protondb"
+  }
+]

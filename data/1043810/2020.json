@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1043810",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 650M",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.3.0-40-generic",
+    "notes": "Once in game, UI elements are drawing but the playfield is black and unusable",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "4.11-13",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1583866773,
+    "title": "",
+    "source": "protondb"
+  }
+]

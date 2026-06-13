@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2529610",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.7.6-arch1-2",
+    "notes": "Game starts, gets to the main menu, then freezes.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "129 GB",
+    "rating": "borked",
+    "timestamp": 1724627618,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2529610",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.7.6-arch1-2",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1724628190,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2529610",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.6-arch1-1",
+    "notes": "Works fine on older versions of Proton.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1724948460,
+    "title": "",
+    "source": "protondb"
+  }
+]

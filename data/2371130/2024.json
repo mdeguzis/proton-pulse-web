@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2371130",
+    "cpu": "Intel Xeon E5-2620 v3 @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.6.32-1-MANJARO",
+    "notes": "O jogo funciona perfeitamente usando Proton Experimental.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1718157960,
+    "title": "Duels of Fortune",
+    "source": "protondb"
+  }
+]

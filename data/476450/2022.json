@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "476450",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT 50th Anniversary (NAVI10, DRM 3.44.0, 5.16.10-zen1-1-zen, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.6",
+    "kernel": "5.16.10-zen1-1-zen",
+    "notes": "Worked perfectly fine on my system, despite the fact it did not start at all on Windows.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1645465820,
+    "title": "",
+    "source": "protondb"
+  }
+]

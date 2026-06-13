@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "404660",
+    "cpu": "Intel Core i7-8086K @ 4.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.15-1-MANJARO",
+    "notes": "Installs and runs without issue.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1591556122,
+    "title": "Vicky Saves the Big Dumb World",
+    "source": "protondb"
+  }
+]

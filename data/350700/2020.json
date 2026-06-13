@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "350700",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.9.10-xanmod1",
+    "notes": "Not launch :(",
+    "os": "Ubuntu 20.04.1 LTS (64\u00a0bits)",
+    "protonVersion": "5.13-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1606248165,
+    "title": "",
+    "source": "protondb"
+  }
+]

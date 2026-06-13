@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3247290",
+    "cpu": "Intel Core i3-8130U @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 25.3.3 (git-a9c6420d8c)",
+    "kernel": "6.17.0-14-generic",
+    "notes": "runs great, no problem",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1771785641,
+    "title": "",
+    "source": "protondb"
+  }
+]

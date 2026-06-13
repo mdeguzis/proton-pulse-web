@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1722750",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.14.0-18.1-liquorix-amd64",
+    "notes": "There's an issue with the servers of the game \"connection has been lost\"",
+    "os": "Linux Mint 20.3 (64\u00a0bits)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1661178216,
+    "title": "",
+    "source": "protondb"
+  }
+]

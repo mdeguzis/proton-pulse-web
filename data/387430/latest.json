@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "387430",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.7, DRM 3.52, 6.4.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.5",
+    "kernel": "6.4.10-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1692639191,
+    "title": "The Viceroy",
+    "source": "protondb"
+  }
+]

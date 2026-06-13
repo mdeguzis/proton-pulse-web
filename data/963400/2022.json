@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "963400",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "5.15.0-52-generic",
+    "notes": "Ofcourse playable, but until crash :(",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1666610228,
+    "title": "",
+    "source": "protondb"
+  }
+]

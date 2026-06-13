@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1071240",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 18.1.8, DRM 3.59, 6.12.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.1-arch1.2",
+    "kernel": "6.12.3-arch1-1",
+    "notes": "It's specifically a learning experience, might not be for the typical gamer",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "126 GB",
+    "rating": "borked",
+    "timestamp": 1745094625,
+    "title": "Earthlingo",
+    "source": "protondb"
+  },
+  {
+    "appId": "1071240",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.7.1-050701-generic",
+    "notes": "",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1757952271,
+    "title": "Earthlingo",
+    "source": "protondb"
+  }
+]

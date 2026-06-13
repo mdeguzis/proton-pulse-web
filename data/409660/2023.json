@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "409660",
+    "cpu": "AMD Ryzen 5 4600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (renoir, LLVM 15.0.6, DRM 3.49, 6.2.0-76060200-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.2.0-76060200-generic",
+    "notes": "Just make sure you select the 'Steam Linux Runtime' compatibility tool. Going straight for native may show issues or don't boot at all.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1678639518,
+    "title": "Angry Video Game Nerd II: ASSimilation",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "378760",
+    "cpu": "Intel Core2 Duo     T6600  @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Mobile Intel GM45 Express Chipset (CTG)",
+    "gpuDriver": "2.1 Mesa 22.0.4",
+    "kernel": "5.15.41-1-MANJARO",
+    "notes": "In windows it worked fine, I have tried by all means with proton and it fails to give me the same error, but for some reason it was only able to open once for me. now it gives the error:\n\nFailed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1654562840,
+    "title": "Pixel Starships",
+    "source": "protondb"
+  }
+]

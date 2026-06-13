@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1277940",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.8.0-47-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.1",
+    "kernel": "6.8.0-47-generic",
+    "notes": "Works out the box. Opening included.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1743549434,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1277940",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 19.1.7, DRM 3.57, 6.8.0-56-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.2+git2503251343.caa2e0c0760~n~mesarc2",
+    "kernel": "6.8.0-56-generic",
+    "notes": "finished the whole game with openings and endings working perfectly",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1756330992,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1277940",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 21.1.1, DRM 3.64, 6.17.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.2 (git-22ded5f256)",
+    "kernel": "6.17.1-arch1-1",
+    "notes": "Other than the bug I mentioned, it works great out of the box",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1760399407,
+    "title": "",
+    "source": "protondb"
+  }
+]

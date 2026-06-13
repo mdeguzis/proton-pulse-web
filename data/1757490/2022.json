@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1757490",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Default (7.0-5) and 6.3-8 both close within a second or two after launch. Experimental and GE7-43 both get stuck on an endless Steam loading icon but Abort Game works immediately so seems like it just doesn't launch at all. Seems this just won't work on Deck at all until a patch comes around.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1671786790,
+    "title": "Waifu Fighter",
+    "source": "protondb"
+  },
+  {
+    "appId": "1757490",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 14.0.6, DRM 3.47, 5.19.6-xanmod1-1-piledriver)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.6-xanmod1-1-piledriver",
+    "notes": "Tried the latest versions of everything, none work.",
+    "os": "Artix Linux",
+    "protonVersion": "7.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1672461157,
+    "title": "Waifu Fighter",
+    "source": "protondb"
+  }
+]

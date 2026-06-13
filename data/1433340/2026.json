@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1433340",
+    "cpu": "Intel Core i5-4200U @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.2 - kisak-mesa PPA",
+    "kernel": "6.14.0-37-generic",
+    "notes": "Pop up error and them doesn\u00b4t open, i have the same error with the Shadows of doubt.",
+    "os": "Ubuntu Core 24",
+    "protonVersion": "10.0-3",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1767819416,
+    "title": "",
+    "source": "protondb"
+  }
+]

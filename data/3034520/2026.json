@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3034520",
+    "cpu": "AMD Ryzen 5 7520C with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "Mesa virgl (AMD Radeon (gfx1036, LLVM 15.0.7, DRM 3.54,...)",
+    "gpuDriver": "4.6 Mesa 25.1.0-devel (git-5adf305fe6)",
+    "kernel": "6.1.124-16876-g3d8f548c82ab",
+    "notes": "It seems difficult to play with a mouse.",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "10.0-3",
+    "ram": "7 GB",
+    "rating": "silver",
+    "timestamp": 1777337775,
+    "title": "The Fox's Way Home",
+    "source": "protondb"
+  }
+]

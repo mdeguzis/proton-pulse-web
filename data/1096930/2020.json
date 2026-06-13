@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1096930",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 20.0.5",
+    "kernel": "4.19.118-1-MANJARO",
+    "notes": "You will probably have a hard time playing and enjoying this on linux. Missing values in lower left info box (action points, etc) Some CTDs",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1588432098,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1360720",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.18.16-1-MANJARO",
+    "notes": "The game crashes on start and freezes the system",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1661104334,
+    "title": "",
+    "source": "protondb"
+  }
+]

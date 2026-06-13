@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1749750",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 20.1.8, DRM 3.64, 6.16.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.2-arch1.2",
+    "kernel": "6.16.5-arch1-1",
+    "notes": "Works perfectly",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1759109753,
+    "title": "",
+    "source": "protondb"
+  }
+]

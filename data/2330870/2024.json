@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2330870",
+    "cpu": "AMD A6-4400M APU with Radeon HD Graphics",
+    "duration": "unreported",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "4.5 Mesa 22.3.6",
+    "kernel": "6.1.0-16-amd64",
+    "notes": "Unplayable, there is kind of 4 seconds delay between each frame. The mouse has slow responsiveness and displayed entirely in black, making it hard to see. Loading is very long, it's worst for loading a battle probably because there is an animation behind. I lowered the settings to increase chances of success (frame rate, quality, etc) .",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-5",
+    "ram": "5 GB",
+    "rating": "borked",
+    "timestamp": 1711710065,
+    "title": "",
+    "source": "protondb"
+  }
+]

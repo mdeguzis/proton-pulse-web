@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2497920",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.15-200.fc41.x86_64",
+    "notes": "A little shaky, but starts and runs",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1740630295,
+    "title": "",
+    "source": "protondb"
+  }
+]

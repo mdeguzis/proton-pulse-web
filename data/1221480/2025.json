@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1221480",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 15.0.7, DRM 3.49, 6.1.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.12-arch1-1",
+    "notes": "Finished the entire demo, worked perfectly out of the box",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1756238271,
+    "title": "Big Hops",
+    "source": "protondb"
+  },
+  {
+    "appId": "1221480",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.2-arch1-1",
+    "notes": "It works out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1766235417,
+    "title": "Big Hops",
+    "source": "protondb"
+  }
+]

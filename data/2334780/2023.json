@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2334780",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 16.0.2, DRM 3.52, 6.3.0-63.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.3.0-63.fc39.x86_64",
+    "notes": "Game is playable out of the box with good performance",
+    "os": "Fedora Linux 39 (KDE Plasma Prerelease)",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1683840341,
+    "title": "CANINE",
+    "source": "protondb"
+  }
+]

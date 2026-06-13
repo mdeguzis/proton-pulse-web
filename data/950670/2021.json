@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "950670",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.16-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1609944449,
+    "title": "Gothic Playable Teaser",
+    "source": "protondb"
+  },
+  {
+    "appId": "950670",
+    "cpu": "AMD Ryzen Threadripper 3960X 24-Core",
+    "duration": "unreported",
+    "gpu": "AMD SIENNA_CICHLID (DRM 3.40.0, 5.11.6-1-MANJARO, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.11.6-1-MANJARO",
+    "notes": "The game works without any customization, but with a poor frame rate. After the adjustments, the problem is fixed.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1617128337,
+    "title": "Gothic Playable Teaser",
+    "source": "protondb"
+  },
+  {
+    "appId": "950670",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "The performance issues make this unplayable.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1627915995,
+    "title": "Gothic Playable Teaser",
+    "source": "protondb"
+  }
+]

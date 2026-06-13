@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Link Decky Plugin — Proton Pulse</title>
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/site.css?v=93774bad">
+<link rel="stylesheet" href="css/plugin-link/plugin-link.css?v=05cefd1d">
+</head>
+<body>
+<main class="link-shell">
+  <section class="link-hero">
+    <div class="link-eyebrow">Proton Pulse Account Linking</div>
+    <h1 class="link-title">Link your Decky install without touching the profile form.</h1>
+    <p class="link-copy">
+      Sign in with Steam on this page and Proton Pulse will finish the Decky link in the background.
+      Your profile page will reflect the linked install automatically afterward.
+    </p>
+
+    <div class="link-status-card" id="link-status-card" data-state="idle">
+      <div class="link-status-pill" id="link-status-pill">Waiting</div>
+      <div class="link-status-headline" id="link-status-headline">Loading Decky link details...</div>
+      <div class="link-status-body" id="link-status-body">
+        Proton Pulse is checking this page for a Decky link code.
+      </div>
+    </div>
+  </section>
+
+  <section class="link-grid">
+    <div class="link-panel link-panel--code">
+      <div class="link-panel-label">Decky Link Code</div>
+      <div class="link-code" id="link-code-display">----</div>
+      <div class="link-code-note" id="link-code-note">
+        Generate a link code from the Decky plugin first if this page opened without one.
+      </div>
+      <div class="link-actions">
+        <button type="button" class="link-button link-button--primary" id="link-login-btn">Login with Steam</button>
+        <button type="button" class="link-button" id="link-copy-code-btn">Copy code</button>
+      </div>
+    </div>
+
+    <div class="link-panel">
+      <div class="link-panel-label">Phone-Friendly Link</div>
+      <div class="link-mobile-url" id="link-mobile-url">Waiting for link code...</div>
+      <div class="link-code-note">
+        Open this same page on your phone if Steam Deck browser sign-in is awkward. Once you sign in there, the Decky install will still link to your Proton Pulse account.
+      </div>
+      <div class="link-actions">
+        <button type="button" class="link-button" id="link-copy-url-btn">Copy phone link</button>
+        <a class="link-button" id="link-open-profile-btn" href="profile.html">Open profile</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="link-panel link-panel--steps">
+    <div class="link-panel-label">How This Works</div>
+    <ol class="link-steps">
+      <li>Generate a Decky link code in the Proton Pulse plugin.</li>
+      <li>Open this page from the plugin or on your phone.</li>
+      <li>Sign in with Steam here.</li>
+      <li>Proton Pulse links the Decky install automatically in the background.</li>
+      <li>Go back to the plugin or visit your profile to confirm the linked install.</li>
+    </ol>
+  </section>
+
+  <section class="link-panel link-panel--diagnostics" id="link-diagnostics" hidden>
+    <div class="link-panel-label">Diagnostics</div>
+    <div class="link-diagnostics-copy" id="link-diagnostics-copy">
+      Proton Pulse will show browser, sign-in, or linking errors here if something goes wrong.
+    </div>
+    <pre class="link-diagnostics-log" id="link-diagnostics-log"></pre>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=07e4ec76"></script>
+<script type="module" src="js/plugin-link/main.js?v=1bafccb1"></script>
+</body>
+</html>

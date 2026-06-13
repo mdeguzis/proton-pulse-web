@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1082180",
+    "cpu": "Intel Core i5-14600K",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Arc B580 (BMG G21)",
+    "gpuDriver": "4.6 Mesa 26.0.6-arch2.2",
+    "kernel": "7.0.3-1-cachyos",
+    "notes": "ran smooth and had no issues",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1777763692,
+    "title": "TT Isle of Man: Ride on the Edge 2",
+    "source": "protondb"
+  }
+]

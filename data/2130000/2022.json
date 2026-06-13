@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2130000",
+    "cpu": "AMD Ryzen Threadripper 2950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.19.0-2-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1665289152,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2130000",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works perfectly on the Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1670691211,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2130000",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Finished the game 100% now and absolutely no issues to report",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1671419006,
+    "title": "",
+    "source": "protondb"
+  }
+]

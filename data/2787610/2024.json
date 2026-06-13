@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2787610",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.9.6)",
+    "gpuDriver": "4.6 Mesa 24.1.1",
+    "kernel": "6.9.6",
+    "notes": "Prompts to install Visual C++ Runtime, which says \"Setup Successful\", but runs into a Fatal Error afterwards",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-2",
+    "ram": "96 GB",
+    "rating": "borked",
+    "timestamp": 1719695379,
+    "title": "",
+    "source": "protondb"
+  }
+]

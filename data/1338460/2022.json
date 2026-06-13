@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1338460",
+    "cpu": "Intel Celeron 2957U @ 1.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD (HSW GT1)",
+    "gpuDriver": "3.1 Mesa 22.0.3 - kisak-mesa PPA",
+    "kernel": "5.4.0-110-generic",
+    "notes": "a VN's whole point is seeing the games textures. this under proton is like watching a movie but only 25% of the screen is visable.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "7.0-2",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1652905997,
+    "title": "",
+    "source": "protondb"
+  }
+]

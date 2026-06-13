@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1348270",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.6-100.fc40.x86_64",
+    "notes": "There's a Wine Prefix crash that happens in the middle of loading, so it's likely a specific Wine configuration required for this title. Release was in 2020, and the developer made the game free to play in 2024, likely is not developing further on it.",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1744077538,
+    "title": "",
+    "source": "protondb"
+  }
+]

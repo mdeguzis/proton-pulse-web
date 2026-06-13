@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Proton Pulse</title>
+<meta name="description" content="What Proton Pulse is, how it compares to ProtonDB, and how the open data pipeline works. Open-source compatibility data for Steam on Linux.">
+<meta property="og:title" content="About | Proton Pulse">
+<meta property="og:description" content="What Proton Pulse is, how it compares to ProtonDB, and how the open data pipeline works.">
+<meta property="og:type" content="website">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/site.css?v=93774bad">
+<link rel="stylesheet" href="css/index/index.css?v=9ea97dde">
+</head>
+<body>
+
+<!-- Shared topbar is injected by topbar.js -->
+
+<div class="main-content">
+  <div class="main-inner">
+
+    <div class="prose">
+      <p id="site-version" style="font-size:0.78rem;color:var(--muted);margin-bottom:4px;font-family:var(--mono)">loading version...</p>
+      <h1>About Proton Pulse</h1>
+      <p>
+        Proton Pulse is an open-source compatibility database for Steam on Linux.
+        The main pages stay focused on finding a game and reading its reports. The
+        rest lives here: what the project is, how it differs from ProtonDB, and how
+        the open data pipeline works.
+      </p>
+    </div>
+
+    <!-- Value props - what makes Proton Pulse its own thing, not a feature list -->
+    <div class="section-label">What you get</div>
+    <div class="explore-grid">
+      <a class="explore-item" href="app.html">
+        <div class="ei-title">Real hardware reports</div>
+        <div class="ei-desc">Every Pulse Report carries the actual hardware, Proton version, launch options, and outcome from a real session. No guesswork.</div>
+        <div class="ei-tag">Reports</div>
+      </a>
+      <a class="explore-item" href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener">
+        <div class="ei-title">Open data pipeline</div>
+        <div class="ei-desc">Every report ships as static JSON under <code>/data/{appId}/</code>. Scriptable, scrapeable, forkable. No API key required.</div>
+        <div class="ei-tag">JSON API</div>
+      </a>
+      <a class="explore-item" href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener">
+        <div class="ei-title">Steam Deck native</div>
+        <div class="ei-desc">The Decky Loader plugin reads + writes Pulse Reports right from Gaming Mode. Submit configs without leaving the game.</div>
+        <div class="ei-tag">Decky</div>
+      </a>
+    </div>
+
+    <!-- Spotlight differentiator: you own your reports -->
+    <div class="spotlight">
+      <div class="spotlight-eyebrow">Your data, your control</div>
+      <div class="spotlight-title">Edit and delete your own reports, something ProtonDB still can't do</div>
+      <div class="spotlight-body">
+        ProtonDB reports are permanent. Wrong version, wrong GPU, bad flags, it doesn't matter, you need an admin to pull it. On Proton Pulse, <strong>you edit or delete your own submissions</strong>. Stale configs, wrong hardware, outdated flags: fix them yourself without waiting on anyone.
+      </div>
+    </div>
+
+    <!-- Site vs site comparison -->
+    <div class="section-label">Proton Pulse vs ProtonDB (website comparison)</div>
+    <div class="vs-table-wrap">
+      <table class="vs-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-us">Proton Pulse</th>
+            <th>ProtonDB</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td>Edit your own reports</td>
+            <td class="cell-yes">Yes</td>
+            <td class="cell-no">No</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>Delete your own reports</td>
+            <td class="cell-yes">Yes</td>
+            <td class="cell-no">No, admin only</td>
+          </tr>
+          <tr>
+            <td>Hardware context per report (GPU, driver, Proton version)</td>
+            <td class="cell-yes">Yes, full spec capture</td>
+            <td class="cell-partial">Partial, self-reported text</td>
+          </tr>
+          <tr>
+            <td>Filter reports by your GPU / driver</td>
+            <td class="cell-yes">Yes</td>
+            <td class="cell-no">No</td>
+          </tr>
+          <tr>
+            <td>Hardware-aware compatibility scoring</td>
+            <td class="cell-yes">Yes, weighted algorithm</td>
+            <td class="cell-no">No, flat tier only</td>
+          </tr>
+          <tr>
+            <td>Vote on configs (upvote / downvote)</td>
+            <td class="cell-yes">Yes</td>
+            <td class="cell-no">No</td>
+          </tr>
+          <tr>
+            <td>Open data / JSON API (no key required)</td>
+            <td class="cell-yes">Yes, all data public</td>
+            <td class="cell-no">No, closed</td>
+          </tr>
+          <tr>
+            <td>Source code</td>
+            <td class="cell-yes">GPL-3.0 open source</td>
+            <td class="cell-no">Closed source</td>
+          </tr>
+          <tr>
+            <td>Direct apply configs to Steam (no copy/paste)</td>
+            <td class="cell-yes">Yes, via Decky plugin</td>
+            <td class="cell-no">No</td>
+          </tr>
+          <tr>
+            <td>Submit reports without leaving game</td>
+            <td class="cell-yes">Yes, via Decky plugin</td>
+            <td class="cell-no">No</td>
+          </tr>
+          <tr>
+            <td>Playtime tracking per config</td>
+            <td class="cell-yes">Yes</td>
+            <td class="cell-no">No</td>
+          </tr>
+          <tr>
+            <td>Non-Steam game support (Heroic, GOG)</td>
+            <td class="cell-yes">Yes</td>
+            <td class="cell-no">No</td>
+          </tr>
+          <tr>
+            <td>Report confidence score</td>
+            <td class="cell-yes">Yes, <a href="confidence.html">documented</a></td>
+            <td class="cell-yes">Yes</td>
+          </tr>
+          <tr>
+            <td>Browse without an account</td>
+            <td class="cell-yes">Yes</td>
+            <td class="cell-yes">Yes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Fully open source -->
+    <div class="section-label">Fully open source</div>
+    <div class="prose">
+      <p>
+        Proton Pulse is an <strong>open-source, community-owned</strong> compatibility platform
+        for Steam on Linux, licensed under <strong>GPL-3.0</strong>. Everything lives on GitHub:
+        the data pipeline, hardware reports, voting system, scoring algorithm, and this site.
+        Fork it. Self-host it. Audit it. Contribute.
+      </p>
+      <p>
+        There is no private API, no proprietary backend, no data you can't see. Every Pulse Report
+        ships as static JSON under <code>/data/{appId}/</code>. The scoring algorithm is
+        <a href="scoring.html">fully documented</a> and runs client-side so you can verify it
+        yourself. Upvotes and downvotes surface the most helpful configs.
+      </p>
+      <p>
+        Pulse Reports come from the
+        <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener">Decky Loader plugin</a>
+        and capture real hardware specs, Proton versions, launch options, and outcomes from actual
+        gameplay sessions. Reports merge with other open compatibility datasets so the picture
+        keeps getting sharper.
+      </p>
+      <p>
+        <strong>Repositories:</strong><br>
+        <a href="https://github.com/mdeguzis/proton-pulse-web">proton-pulse-web</a> - data pipeline, static site, and JSON API<br>
+        <a href="https://github.com/mdeguzis/decky-proton-pulse">decky-proton-pulse</a> - Decky Loader plugin for Steam Deck
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<footer class="sitefooter">
+  GPL-3.0 open source - built on <a href="https://www.protondb.com/" target="_blank" rel="noopener">ProtonDB</a> community data |
+  <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener">Data repo</a> |
+  <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener">Decky plugin repo</a> |
+  Updated daily via GitHub Actions |
+  <a href="privacy.html">Privacy</a> |
+  <a href="terms.html">Terms</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=07e4ec76"></script>
+<script src="js/lib/topbar.js?v=c5da1a84"></script>
+<script src="js/about/version.js?v=30fa403d"></script>
+</body>
+</html>

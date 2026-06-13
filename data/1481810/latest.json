@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1481810",
+    "cpu": "Intel Core i3-2100 @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 2000 (SNB GT1)",
+    "gpuDriver": "3.3 Mesa 24.0.3-arch1.2",
+    "kernel": "6.8.2-arch2-1",
+    "notes": "If game would be coocked well from the publisher (they have source codes) or Proton/Wine compatibility layer that would be fine. Unplayable.",
+    "os": "RebornOS Linux (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-1",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1716480852,
+    "title": "Ostrich Runner",
+    "source": "protondb"
+  }
+]

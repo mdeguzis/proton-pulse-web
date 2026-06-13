@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1966170",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 16.0.6, DRM 3.52, 6.4.15-200.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.7 (git-98d9d5f5a3)",
+    "kernel": "6.4.15-200.fc38.x86_64",
+    "notes": "Worked after switching to GE [v0.008]",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1770032708,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "648050",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.6 Mesa 20.0.1",
+    "kernel": "5.6.6-200.fc31.x86_64",
+    "notes": "Stuck on the loading screen when starting a race",
+    "os": "Freedesktop.org 19.08.9 (Flatpak runtime)",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1587865869,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "648050",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.6 Mesa 20.1.2",
+    "kernel": "5.7.11-200.fc32.x86_64",
+    "notes": "Everything worked out-of-the-box, just long loading times and an issue when quiting the game.",
+    "os": "Freedesktop.org 19.08.12 (Flatpak runtime)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1596734615,
+    "title": "",
+    "source": "protondb"
+  }
+]

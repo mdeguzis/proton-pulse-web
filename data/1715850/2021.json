@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1715850",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.41.0, 5.13.12-2-default, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.0",
+    "kernel": "5.13.12-2-default",
+    "notes": "Does not connect online, believes there is no internet connection. The game has no CPU AI, so restricted to local multiplayer only.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1632456491,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1715850",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.11.0-38-generic",
+    "notes": "This game actually ran better than when I ran it in Windows.",
+    "os": "Zorin OS 16",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1635036088,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1715850",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.42.0, 5.15.2-2-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.2-2-MANJARO",
+    "notes": "Works",
+    "os": "Ranno Linux",
+    "protonVersion": "6.3-8",
+    "ram": "999999(bro trust) MB",
+    "rating": "gold",
+    "timestamp": 1640819309,
+    "title": "",
+    "source": "protondb"
+  }
+]

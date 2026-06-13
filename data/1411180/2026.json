@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1411180",
+    "cpu": "Intel Xeon E5-2680 v4 @ 2.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 2048SP (radeonsi, polaris10, ACO, DRM 3.64, 6.18.8-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.2",
+    "kernel": "6.18.8-3-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770915523,
+    "title": "",
+    "source": "protondb"
+  }
+]

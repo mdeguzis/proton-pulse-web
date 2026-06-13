@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3177070",
+    "cpu": "Intel Core i3-7100 @ 3.90GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-122-generic",
+    "notes": "",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-3",
+    "ram": "7 GB",
+    "rating": "bronze",
+    "timestamp": 1732010408,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3177070",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works perfect, though no official controller support.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1732983334,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3177070",
+    "cpu": "AMD Ryzen 5 4600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.57, 6.9.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.1 (git-6c377358a5)",
+    "kernel": "6.9.7-arch1-1",
+    "notes": "Rodou sem problemas, desde a instala\u00e7\u00e3o at\u00e9 a jogatina",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1734299966,
+    "title": "",
+    "source": "protondb"
+  }
+]

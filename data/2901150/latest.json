@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2901150",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "\u305d\u306e\u307e\u307e\u904a\u3079\u308b\u304c\u300118\u7981\u30d1\u30c3\u30c1\u3092\u3042\u3066\u308b\u306b\u306f\u4e00\u624b\u9593\u5fc5\u8981",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1749603305,
+    "title": "Yoru ga Kuru! -Square of the Moon- Remastered",
+    "source": "protondb"
+  }
+]

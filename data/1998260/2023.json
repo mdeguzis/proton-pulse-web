@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1998260",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Tried all sorts of tinker steps im using the legacy launcher version of the game. Which is identical to the steam version. I assume the game is looking for some dependency thats not installed but not sure what.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1704066660,
+    "title": "",
+    "source": "protondb"
+  }
+]

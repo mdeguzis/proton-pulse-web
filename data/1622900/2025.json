@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1622900",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.7-3-cachyos",
+    "notes": "Not sure why but this is extra broken for just me. The game loads to the main menu. But, the fonts are blacked out there and in subsequent menus. I fixed that by using the Clearer Fonts, and Trekked Out fonts mods together. But the game itself loads a grey plane where the skybox should be, planets are not rendered and there are more UI issues.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1756267380,
+    "title": "",
+    "source": "protondb"
+  }
+]

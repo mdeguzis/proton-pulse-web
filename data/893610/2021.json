@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "893610",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 20.1.10",
+    "kernel": "5.4.108",
+    "notes": "Nothing to say except that it works flawlessly",
+    "os": "NixOS 20.09 (Nightingale)",
+    "protonVersion": "6.3-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1622920134,
+    "title": "",
+    "source": "protondb"
+  }
+]

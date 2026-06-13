@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1813820",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.35.0, 5.4.0-104-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.4.0-104-generic",
+    "notes": "The cutscene issues have been fixed with the new version of proton, but the capture minigame is now laggy",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "7.0-1",
+    "ram": "6 GB",
+    "rating": "silver",
+    "timestamp": 1647140571,
+    "title": "",
+    "source": "protondb"
+  }
+]

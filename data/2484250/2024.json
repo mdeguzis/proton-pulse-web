@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2484250",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.1.69-1-MANJARO",
+    "notes": "doesnt work at all, tried GE, Experimental, and all Protons down to 6.3.8\nnothing works. and i didnt get any message why. it just stops launching",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1712946226,
+    "title": "ASTRA: Knights of Veda",
+    "source": "protondb"
+  },
+  {
+    "appId": "2484250",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Unplayable",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1714836900,
+    "title": "ASTRA: Knights of Veda",
+    "source": "protondb"
+  },
+  {
+    "appId": "2484250",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "\u8d77\u52d5\u306f\u3059\u308b\u304c\u3001\u983b\u7e41\u306b\u30af\u30e9\u30c3\u30b7\u30e5\u3059\u308b\u3002",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1716935018,
+    "title": "ASTRA: Knights of Veda",
+    "source": "protondb"
+  }
+]

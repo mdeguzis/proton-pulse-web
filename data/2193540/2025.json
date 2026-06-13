@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2193540",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 19.1.7, DRM 3.59, 6.13.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.1-arch1-1",
+    "notes": "Game runs perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1739126071,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2701800",
+    "cpu": "AMD Ryzen 9 7900X3D 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.8.0-47-generic",
+    "notes": "doesn't start",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1729942940,
+    "title": "",
+    "source": "protondb"
+  }
+]

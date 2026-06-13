@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "917950",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.61, 6.14.0-37-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8 - kisak-mesa PPA",
+    "kernel": "6.14.0-37-generic",
+    "notes": "",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1769476617,
+    "title": "",
+    "source": "protondb"
+  }
+]

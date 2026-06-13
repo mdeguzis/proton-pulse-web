@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1421120",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-2-neptune-dri-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.2 (git-71648faf15)",
+    "kernel": "5.13.0-valve10.1-2-neptune-dri-02144-g7fffaf925dfb",
+    "notes": "Classic 80s platformer that works fine on SteamOS.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1662457970,
+    "title": "Montezuma's Revenge",
+    "source": "protondb"
+  }
+]

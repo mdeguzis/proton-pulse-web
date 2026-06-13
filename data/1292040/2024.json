@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1292040",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 15.0.7, DRM 3.54, 6.5.0-28-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1",
+    "kernel": "6.5.0-28-generic",
+    "notes": "Crashes after opening the first door in tutorial",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "8.0-5",
+    "ram": "96 GB",
+    "rating": "borked",
+    "timestamp": 1714225757,
+    "title": "STRIDE",
+    "source": "protondb"
+  },
+  {
+    "appId": "1292040",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1719046191,
+    "title": "STRIDE",
+    "source": "protondb"
+  }
+]

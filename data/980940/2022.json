@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "980940",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.11-76051611-generic",
+    "notes": "Game plays fine apart from most of the sound missing.",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1648357023,
+    "title": "",
+    "source": "protondb"
+  }
+]

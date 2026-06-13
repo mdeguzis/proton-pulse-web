@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1534610",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.7.4-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.5",
+    "kernel": "6.7.4-200.fc39.x86_64",
+    "notes": "Yeah... nah. Not yet.",
+    "os": "Fedora Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1713838346,
+    "title": "ZombiesWaves",
+    "source": "protondb"
+  }
+]

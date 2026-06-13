@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "489020",
+    "cpu": "Intel Xeon E5-1650 0 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.0-2-MANJARO",
+    "notes": "playable no issues",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1660257268,
+    "title": "",
+    "source": "protondb"
+  }
+]

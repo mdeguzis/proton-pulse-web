@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1710740",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.1.0-14-amd64",
+    "notes": "Le jeu se lance et tout fonctionne sans soucis chez moi",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1702239094,
+    "title": "",
+    "source": "protondb"
+  }
+]

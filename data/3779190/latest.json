@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3779190",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1103_r1, LLVM 18.1.8, DRM 3.59, 6.11.11-valve19-1-neptune-611-g88b36d49a5e3)",
+    "gpuDriver": "4.6 Mesa 24.3.4 (git-8d0948917e)",
+    "kernel": "6.11.11-valve19-1-neptune-611-g88b36d49a5e3",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1751233703,
+    "title": "",
+    "source": "protondb"
+  }
+]

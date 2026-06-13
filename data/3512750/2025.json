@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3512750",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, LLVM 17.0.6, DRM 3.57, 6.8.0-40-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.1",
+    "kernel": "6.8.0-40-generic",
+    "notes": "Apparently this is native, but the demo won't launch, not even with Proton.",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1754918913,
+    "title": "Vampire's Veil",
+    "source": "protondb"
+  }
+]

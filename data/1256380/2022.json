@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1256380",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.13.0-30-generic",
+    "notes": "Summary is pretty much all there is, game does not start using the Native build, and using Proton (tried Experimental, Experimental bleeding, 7.0-1 and 6.3-8) will get you into a black screen for a second, then instantly crashing.",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1646460343,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1256380",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.15.28-1-MANJARO",
+    "notes": "Native version doesnt launch. Using proton wont do a difference.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1649779466,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1256380",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.5-76051505-generic",
+    "notes": "Neiter Native nor GE can launch a window",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1655985682,
+    "title": "",
+    "source": "protondb"
+  }
+]

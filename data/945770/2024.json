@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "945770",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Freezes on intro, so gameplay is not possible.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1716168098,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "945770",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.9.3-3-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.0.9-manjaro1.1",
+    "kernel": "6.9.3-3-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1718609308,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "945770",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 15.0.7, DRM 3.57, 6.8.0-47-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.8.0-47-generic",
+    "notes": "",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1730520047,
+    "title": "",
+    "source": "protondb"
+  }
+]

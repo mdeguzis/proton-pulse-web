@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2196640",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600M (navi23, LLVM 15.0.7, DRM 3.52, 6.4.3-060403-generic)",
+    "gpuDriver": "4.6 Mesa 23.1.4 (git-8b0202e4b4)",
+    "kernel": "6.4.3-060403-generic",
+    "notes": "O jogo est\u00e1 rodando em perfeito estado!!!",
+    "os": "Linux Mint 21.1 x86_64",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1691590410,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2196640",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 470.161.03",
+    "kernel": "6.1.12-1-default",
+    "notes": "Works great as expected, no issues.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1692102146,
+    "title": "",
+    "source": "protondb"
+  }
+]

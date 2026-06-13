@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "358030",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 535.161.07",
+    "kernel": "6.5.0-26-generic",
+    "notes": "Works fine on Proton Experimental. Native Linux build would load for a split second and then silently crash.",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1712533144,
+    "title": "",
+    "source": "protondb"
+  }
+]

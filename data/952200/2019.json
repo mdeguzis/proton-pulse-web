@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "952200",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-6-amd64",
+    "notes": "Crashes on launch",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-10",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1576621759,
+    "title": "stikir",
+    "source": "protondb"
+  }
+]

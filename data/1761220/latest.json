@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1761220",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 6700 XT",
+    "gpuDriver": "4.6.14800 Compatibility Profile Context",
+    "kernel": "5.15.0-97-generic",
+    "notes": "Game does work on GE and Experimental, but cursor is being offset around 30 pixels up which makes the game unplayable (its impossible to click anything near the bottom of the screen and its hard to aim at things you actually want to click). Clicking near the top of the game window (where actual cursor is outside of the game window) will crash the game.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1775686543,
+    "title": "Prosperous Universe",
+    "source": "protondb"
+  }
+]

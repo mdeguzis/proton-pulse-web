@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1052920",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.4.0-165-generic",
+    "notes": "It worked fine",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "5.0-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1585971009,
+    "title": "Caelus Trident",
+    "source": "protondb"
+  },
+  {
+    "appId": "1052920",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "4.15.0-91-generic",
+    "notes": "",
+    "os": "elementary OS 5.1.2 Hera",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1586216607,
+    "title": "Caelus Trident",
+    "source": "protondb"
+  },
+  {
+    "appId": "1052920",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.3.5",
+    "kernel": "5.5.8-1-MANJARO",
+    "notes": "Works well",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1586811156,
+    "title": "Caelus Trident",
+    "source": "protondb"
+  }
+]

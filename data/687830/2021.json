@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "687830",
+    "cpu": "Intel Core i7-10875H @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 Super",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-7634-generic",
+    "notes": "Worked perfectly out of the box.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1617040493,
+    "title": "Transparent Black",
+    "source": "protondb"
+  }
+]

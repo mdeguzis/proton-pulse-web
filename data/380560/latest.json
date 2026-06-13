@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "380560",
+    "cpu": "Intel Xeon E5-1650 0 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.1-2-MANJARO",
+    "notes": "tested it with Proton Experimental and Proton-GE 7-29 and got the same results.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1660628109,
+    "title": "Spandex Force: Champion Rising",
+    "source": "protondb"
+  }
+]

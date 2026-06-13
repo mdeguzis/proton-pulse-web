@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1095590",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.8-76051508-generic",
+    "notes": "He probado distintas versiones de proton. algunas parecen abrir el juego y ver su men\u00fa pero el juego crashea al empezar el gameplay",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1640336791,
+    "title": "",
+    "source": "protondb"
+  }
+]

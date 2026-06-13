@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1884390",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce MX150",
+    "gpuDriver": "NVIDIA 470.129.06",
+    "kernel": "5.17.0-3-amd64",
+    "notes": "Works ok",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1666720750,
+    "title": "",
+    "source": "protondb"
+  }
+]

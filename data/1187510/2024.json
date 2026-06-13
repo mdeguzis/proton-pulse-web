@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1187510",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 18.1.8, DRM 3.57, 6.10.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.6-arch1.1",
+    "kernel": "6.10.6-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1724882149,
+    "title": "",
+    "source": "protondb"
+  }
+]

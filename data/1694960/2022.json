@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1694960",
+    "cpu": "AMD Ryzen Threadripper 3960X 24-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 14.0.3, DRM 3.44, 5.16.8-gentoo-dist)",
+    "gpuDriver": "4.6 Mesa 22.1.0",
+    "kernel": "5.16.8-gentoo-dist",
+    "notes": "Works well enough to get the job done. May need to mess with pulse to make sound audible, but none of that detracts from the core experience",
+    "os": "Gentoo Base System release 2.8",
+    "protonVersion": "7.0-2",
+    "ram": "113 GB",
+    "rating": "gold",
+    "timestamp": 1653237459,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3479140",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 21.1.6, DRM 3.64, 6.17.7-ba20.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "After setting the compatibility to Proton Experimental",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1769271494,
+    "title": "",
+    "source": "protondb"
+  }
+]

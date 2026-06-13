@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stats - Proton Pulse</title>
+<meta name="description" content="Aggregate compatibility stats for Steam on Linux: ratings, GPU and CPU breakdowns, OS distribution, Proton version share, and top-reported games. Filter by hardware to drill in.">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/site.css?v=93774bad">
+<style>
+h1 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.3em;
+}
+.meta {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.4em;
+}
+h2 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  margin: 2em 0 0.8em;
+}
+
+/* ── top-line numbers ────────────────────────────────────────────────── */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+@media (max-width: 1080px) { .stat-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 500px) { .stat-strip { grid-template-columns: 1fr; } }
+.stat-tile {
+  position: relative;
+  background: linear-gradient(180deg, var(--s2), var(--s1));
+  border: 1px solid var(--border);
+  padding: 16px 18px 18px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+}
+.stat-tile::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.7;
+}
+.stat-tile .label {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text);
+}
+.stat-tile .value {
+  font-family: var(--mono);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--accent-hi);
+  text-shadow: 0 0 14px var(--accent-glow);
+  letter-spacing: -0.02em;
+  margin: 6px 0 2px;
+  line-height: 1;
+}
+.stat-tile .detail {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* ── filter dropdowns row ───────────────────────────────────────────── */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 20px;
+  align-items: center;
+}
+.filter-row .label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-right: 4px;
+}
+
+/* Grouped dropdown: button toggles a checkbox panel below. position:relative
+   so the absolutely-positioned panel anchors to the button */
+.filter-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.filter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(11,17,22,0.55);
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .12s, border-color .12s, background .12s, box-shadow .12s;
+}
+.filter-button:hover { color: var(--text); border-color: var(--accent); }
+.filter-button.is-active {
+  color: var(--accent-hi);
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  box-shadow: 0 0 16px -6px var(--accent-glow);
+}
+.filter-btn-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 16px;
+  padding: 0 4px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.66rem;
+  border-radius: 2px;
+}
+.filter-caret {
+  font-size: 0.6rem;
+  color: var(--muted);
+  margin-left: 2px;
+}
+.filter-button.is-active .filter-caret { color: var(--accent-hi); }
+
+/* The panel: hidden by default, revealed when parent has .is-open. Sits above
+   the chart-grid via z-index. Width fits widest option, capped so a SteamOS-style
+   long label doesn't blow it out */
+.filter-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 20;
+  min-width: 200px;
+  max-width: 320px;
+  background: var(--bg-bot, #0a0f14);
+  border: 1px solid var(--accent);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  padding: 8px 4px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+.filter-dropdown.is-open .filter-panel { display: block; }
+
+.filter-panel-summary {
+  padding: 4px 12px 8px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  border-bottom: 1px dashed var(--border);
+  margin-bottom: 4px;
+}
+.filter-panel-summary a {
+  color: var(--accent);
+  margin-left: 4px;
+  text-decoration: none;
+}
+.filter-panel-summary a:hover { text-decoration: underline; }
+
+.filter-check {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text);
+  transition: background .1s, color .1s;
+}
+.filter-check:hover { background: rgba(102,192,244,0.06); color: var(--accent-hi); }
+.filter-check.is-checked { color: var(--accent-hi); }
+.filter-check input[type="checkbox"] {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--border2);
+  background: rgba(11,17,22,0.6);
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+}
+.filter-check input[type="checkbox"]:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.filter-check input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: -1px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--bg);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.filter-check-label {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.filter-check-count {
+  font-size: 0.66rem;
+  color: var(--muted);
+}
+
+.filter-status {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.filter-status a {
+  color: var(--accent);
+  margin-left: 8px;
+  text-decoration: none;
+}
+.filter-status a:hover { text-decoration: underline; }
+
+/* ── chart cards ────────────────────────────────────────────────────── */
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+/* if the final card is the odd one out (e.g. 7 cards in a 2-col grid),
+   let it span the full row instead of sitting alone with empty space */
+.chart-grid > .chart-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+@media (max-width: 880px) {
+  .chart-grid { grid-template-columns: 1fr; }
+  .chart-grid > .chart-card:last-child:nth-child(odd) { grid-column: auto; }
+}
+.chart-card {
+  background: linear-gradient(180deg, var(--s2), var(--s1));
+  border: 1px solid var(--border);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+.chart-card h3 {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chart-card h3::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent-glow);
+  flex-shrink: 0;
+}
+
+/* horizontal bar rows */
+.bars { display: flex; flex-direction: column; gap: 6px; }
+.bar-row {
+  display: grid;
+  /* fixed-width label column so bars line up at the SAME x position across
+     every chart card, not just within a single card. Ellipsis + native title
+     tooltip handles labels that don't fit (e.g. "ARCH / DERIVATIVES") */
+  grid-template-columns: 160px 1fr 60px;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+}
+.bar-row .name {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  /* tighter on small screens */
+  .bar-row { grid-template-columns: 110px 1fr 50px; gap: 8px; }
+}
+.bar-row .track {
+  position: relative;
+  height: 14px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.bar-row .fill {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hi));
+  transition: width .35s ease;
+}
+.bar-row .count {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-align: right;
+  letter-spacing: 0.04em;
+}
+
+/* Per-rating colors for the ratings chart */
+.bar-row[data-rating="platinum"] .fill { background: linear-gradient(90deg, #8aa4bf, #b4c7dc); }
+.bar-row[data-rating="gold"]     .fill { background: linear-gradient(90deg, #a07d36, #ffc83d); }
+.bar-row[data-rating="silver"]   .fill { background: linear-gradient(90deg, #7d8590, #c0c8d2); }
+.bar-row[data-rating="bronze"]   .fill { background: linear-gradient(90deg, #875a30, #c08858); }
+.bar-row[data-rating="borked"]   .fill { background: linear-gradient(90deg, #b34646, var(--red)); }
+.bar-row[data-rating="pending"]  .fill { background: linear-gradient(90deg, var(--muted), #8a99ac); }
+
+/* GPU vendor row colors */
+.bar-row[data-key="amd"]     .fill { background: linear-gradient(90deg, #b3252b, #ed1c24); }
+.bar-row[data-key="nvidia"]  .fill { background: linear-gradient(90deg, #4c8b1f, #76b900); }
+.bar-row[data-key="intel"]   .fill { background: linear-gradient(90deg, #00538f, #0071c5); }
+
+/* ── source split (donut via conic gradient) ────────────────────────── */
+.donut-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.donut {
+  --pulse-pct: 0%;
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--green-hi) 0 var(--pulse-pct),
+    var(--accent) var(--pulse-pct) 100%
+  );
+  flex-shrink: 0;
+}
+.donut::after {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  background: var(--bg-bot);
+  border: 1px solid var(--border);
+}
+.donut-legend { flex: 1; min-width: 160px; display: flex; flex-direction: column; gap: 6px; }
+.donut-legend .row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: border-color .12s, background .12s, color .12s;
+}
+.donut-legend .row:hover {
+  background: rgba(102,192,244,0.06);
+  border-color: var(--border2);
+}
+.donut-legend .row.is-active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  box-shadow: 0 0 14px -6px var(--accent-glow);
+}
+.donut-legend .row .swatch {
+  width: 12px; height: 12px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.donut-legend .row .swatch.protondb { background: var(--accent); }
+.donut-legend .row .swatch.pulse    { background: var(--green-hi); }
+.donut-legend .row .name { color: var(--text); }
+.donut-legend .row .count { color: var(--muted); margin-left: auto; }
+.donut-legend .row .pct { color: var(--muted); font-size: 0.72rem; margin-left: 4px; }
+
+/* ── year sparkline ─────────────────────────────────────────────────── */
+.sparkline-wrap { position: relative; }
+.sparkline-card svg { width: 100%; height: 200px; display: block; }
+.sparkline-card .axis {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--muted);
+  margin-top: 4px;
+  padding-left: 56px; /* align with chart area, leaving room for Y axis */
+}
+.sparkline-card .gridline { stroke: var(--border); stroke-width: 0.5; stroke-dasharray: 2 3; }
+.sparkline-card .yaxis-label {
+  fill: var(--muted);
+  font-family: var(--mono);
+  font-size: 9px;
+  text-anchor: end;
+}
+.sparkline-card .hover-guide {
+  stroke: var(--accent);
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+  opacity: 0;
+  transition: opacity .1s;
+  pointer-events: none;
+}
+.sparkline-card .hover-dot {
+  fill: var(--accent-hi);
+  stroke: var(--bg);
+  stroke-width: 1.5;
+  opacity: 0;
+  transition: opacity .1s;
+  pointer-events: none;
+}
+.sparkline-card .hover-dot.pulse { fill: var(--green-hi); }
+.sparkline-card.is-hovered .hover-guide,
+.sparkline-card.is-hovered .hover-dot { opacity: 1; }
+.sparkline-tooltip {
+  position: absolute;
+  top: 8px;
+  background: rgba(11,17,22,0.95);
+  border: 1px solid var(--accent);
+  padding: 8px 12px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  z-index: 5;
+  display: none;
+}
+.sparkline-tooltip.is-visible { display: block; }
+.sparkline-tooltip .year { color: var(--accent-hi); font-weight: 600; letter-spacing: 0.06em; margin-bottom: 4px; }
+.sparkline-tooltip .row { display: flex; align-items: center; gap: 8px; color: var(--text); }
+.sparkline-tooltip .swatch { width: 8px; height: 8px; flex-shrink: 0; }
+.sparkline-tooltip .swatch.protondb { background: var(--accent); }
+.sparkline-tooltip .swatch.pulse { background: var(--green-hi); }
+.sparkline-tooltip .row .val { margin-left: auto; color: var(--accent-hi); font-weight: 600; }
+
+/* ── top games list ─────────────────────────────────────────────────── */
+.topgames {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 6px;
+}
+.topgames a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: linear-gradient(180deg, var(--s2), var(--s1));
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color .12s, background .12s;
+}
+.topgames a:hover {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, var(--s3), var(--s2));
+}
+.topgames .rank {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  min-width: 28px;
+}
+.topgames .title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+/* Worth-retesting + framegen rows show the title as the primary signal, so
+   give it more breathing room. Drop the 360px min on those grids too so a
+   3-col row at 1400px gets ~460px per card and titles fit without ellipsis */
+#retesting.topgames,
+#fg-topgames.topgames {
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+}
+#retesting.topgames .title,
+#fg-topgames.topgames .title {
+  white-space: normal;
+  text-overflow: clip;
+  line-height: 1.3;
+}
+.topgames .appid {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+.topgames .count {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+  margin-left: 10px;
+}
+
+.loading-state, .error-state {
+  padding: 60px 24px;
+  text-align: center;
+  font-family: var(--mono);
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── re-test callout: highlights stale-borked count above the leaderboard ── */
+.retest-callout {
+  margin: 2em 0 0.5em;
+  padding: 18px 22px;
+  background: linear-gradient(180deg, rgba(255,200,61,0.08), rgba(11,17,22,0.4));
+  border: 1px solid var(--gold);
+  border-left: 3px solid var(--gold);
+}
+.retest-callout .retest-headline {
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.retest-callout .retest-headline strong { color: var(--accent-hi); }
+.retest-callout .retest-borked {
+  display: inline-block;
+  padding: 1px 8px;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.retest-callout .retest-sub {
+  margin-top: 8px;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+/* ── trend chart legend ── */
+.trend-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 8px 10px 4px;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--text);
+}
+.trend-legend .legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.trend-legend .legend-swatch {
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(0,0,0,0.4);
+}
+.trend-legend .legend-clickable {
+  cursor: pointer;
+  padding: 3px 8px;
+  border: 1px solid transparent;
+  transition: border-color .12s, color .12s, background .12s;
+}
+.trend-legend .legend-clickable:hover {
+  color: var(--accent-hi);
+  border-color: var(--border2);
+}
+.trend-legend .legend-clickable.is-active {
+  color: var(--accent-hi);
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+/* ── framegen section: headline tile + yes/no bars + leaderboard ── */
+.framegen-headline {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding: 18px 22px;
+  background: linear-gradient(180deg, rgba(102,192,244,0.06), var(--s1));
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  margin-bottom: 18px;
+}
+.fg-rate-value {
+  font-family: var(--mono);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--accent-hi);
+  text-shadow: 0 0 14px var(--accent-glow);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.fg-pct {
+  font-size: 0.55em;
+  color: var(--muted);
+  font-weight: 500;
+  margin-left: 4px;
+}
+.fg-rate-caption {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin-top: 6px;
+  max-width: 360px;
+}
+.fg-sub {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--text);
+  margin-left: auto;
+  letter-spacing: 0.04em;
+}
+.fg-sub strong { color: var(--accent-hi); }
+
+/* the yes/no question is binary, so the bar fill (yes%) becomes the visual
+   - amber-leaning gradient since "needing framegen" isn't bad, just notable */
+.bar-row.fg-bar .fg-fill {
+  background: linear-gradient(90deg, #a07d36, #ffc83d);
+}
+.bar-row.fg-bar .fg-count {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 4px;
+  white-space: nowrap;
+}
+/* widen the count column in framegen bars - the "(N)" total takes extra room */
+#fg-by-device .bar-row,
+#fg-by-gpu .bar-row,
+#fg-by-vram .bar-row,
+#fg-by-rating .bar-row {
+  grid-template-columns: 160px 1fr 110px;
+}
+@media (max-width: 600px) {
+  #fg-by-device .bar-row,
+  #fg-by-gpu .bar-row,
+  #fg-by-vram .bar-row,
+  #fg-by-rating .bar-row {
+    grid-template-columns: 110px 1fr 90px;
+  }
+}
+.fg-count-pct { font-size: 0.7em; color: var(--muted); margin-left: 1px; }
+.fg-count-n   { font-size: 0.7em; color: var(--muted); margin-left: 4px; }
+.fg-card-hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: -4px 0 8px;
+  line-height: 1.4;
+}
+.fg-sub-h {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin: 1.6em 0 0.4em;
+  color: var(--text);
+}
+.fg-pct-badge {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--accent-hi);
+  background: rgba(255,200,61,0.12);
+  border: 1px solid rgba(255,200,61,0.35);
+  padding: 1px 8px;
+  letter-spacing: 0.04em;
+  margin-right: 6px;
+}
+
+/* ── extra "last seen YYYY" label inside topgames items (worth-retesting) ── */
+.topgames .newest {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--red);
+  letter-spacing: 0.04em;
+  padding: 1px 7px;
+  border: 1px solid rgba(200,80,80,0.3);
+  background: rgba(200,80,80,0.08);
+}
+</style>
+</head>
+<body>
+<script src="js/lib/topbar.js?v=c5da1a84"></script>
+
+<div class="main-content"><div class="main-inner">
+
+<h1>Stats</h1>
+<p class="meta" id="stats-meta">// Loading aggregate stats...</p>
+
+<div id="stats-root">
+  <div class="loading-state">Loading stats.json...</div>
+</div>
+
+</div></div>
+
+<script type="module" src="js/stats/main.js?v=a77bbad8"></script>
+</body>
+</html>

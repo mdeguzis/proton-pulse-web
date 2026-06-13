@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1162930",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.14.3-arch1-1",
+    "notes": "Run well, Just minor shutters when rendering 3D objects",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1632013704,
+    "title": "",
+    "source": "protondb"
+  }
+]

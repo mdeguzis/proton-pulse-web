@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1937820",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "5.15.0-126-generic",
+    "notes": "Works fine. Mouse does not stay on screen if you have multiple monitors, but does not on Windows either, so not a Linux issue.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1736022895,
+    "title": "",
+    "source": "protondb"
+  }
+]

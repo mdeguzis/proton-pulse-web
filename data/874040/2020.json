@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "874040",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 440.26",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Works perfectly out of the box",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "5.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1584690811,
+    "title": "",
+    "source": "protondb"
+  }
+]

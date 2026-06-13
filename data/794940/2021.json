@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "794940",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.7-arch1-1",
+    "notes": "Installed and ran fine using proton 6.3-6",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1632810044,
+    "title": "Hexa Turn",
+    "source": "protondb"
+  }
+]

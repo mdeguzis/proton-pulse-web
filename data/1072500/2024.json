@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1072500",
+    "cpu": "Intel Core i9-10850K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "4.5 Mesa 24.1.1-arch1.1",
+    "kernel": "6.9.4-arch1-1",
+    "notes": "Playing singleplayer mode: flawless.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1718406817,
+    "title": "AO Tennis 2",
+    "source": "protondb"
+  }
+]

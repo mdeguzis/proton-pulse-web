@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1660520",
+    "cpu": "Intel Xeon E5-2690 v2 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.9-artix1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.6-arch1.2",
+    "kernel": "6.8.9-artix1-1",
+    "notes": "All works ok.",
+    "os": "Artix Linux",
+    "protonVersion": "9.0-1",
+    "ram": "*64 Gb",
+    "rating": "gold",
+    "timestamp": 1714894623,
+    "title": "",
+    "source": "protondb"
+  }
+]

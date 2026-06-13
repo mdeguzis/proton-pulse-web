@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2224440",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 20.1.8, DRM 3.64, 6.17.0-6-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.3-1ubuntu1",
+    "kernel": "6.17.0-6-generic",
+    "notes": "",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1766431561,
+    "title": "",
+    "source": "protondb"
+  }
+]

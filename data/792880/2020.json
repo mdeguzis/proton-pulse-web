@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "792880",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.12-2-default",
+    "notes": "Main menu and settings work fine, starting a new game leads to a black screen",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1591122657,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "839630",
+    "cpu": "AMD Ryzen 7 7745HX with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon 610M (radeonsi, raphael_mendocino, LLVM 18.1.8, DRM 3.54, 6.6.38-gentoo-x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.0",
+    "kernel": "6.6.38-gentoo-x86_64",
+    "notes": "Works very well, or at least as well it can, since the game itself is pretty buggy",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1725986268,
+    "title": "",
+    "source": "protondb"
+  }
+]

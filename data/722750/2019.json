@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "722750",
+    "cpu": "Pentium Dual-Core       E6600  @ 3.06GHz",
+    "duration": "underOneHour",
+    "gpu": "X.Org Radeon RX550/550 (POLARIS12, DRM 3.33.0, 4.18.0-17-generic, LLVM 9.0.0)",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel",
+    "kernel": "4.18.0-17-generic",
+    "notes": "\u041f\u043e\u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043c\u0435\u043d\u044e \u043b\u0430\u0443\u043d\u0447\u0435\u0440\u0430 \u0430 \u043f\u043e\u0441\u043b\u0435 \u043d\u0430\u0436\u0430\u0442\u0438\u044f \"\u0438\u0433\u0440\u0430\u0442\u044c\" \u0432\u044b\u043b\u0435\u0442 \u0441 \u0432\u0430\u0439\u043d\u043e\u0432\u0441\u043a\u0438\u043c \u043e\u043a\u043e\u0448\u043a\u043e\u043c",
+    "os": "Ubuntu 18.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.11-7",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1572365171,
+    "title": "",
+    "source": "protondb"
+  }
+]

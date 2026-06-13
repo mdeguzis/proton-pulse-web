@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1225580",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Ryzen Z1 Extreme (radeonsi, phoenix, LLVM 21.1.6, DRM 3.61, 6.12.63-2-cachyos-lts)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.4",
+    "kernel": "6.12.63-2-cachyos-lts",
+    "notes": "Pretty much doing everything and nothing works. Changing proton to older/cachyos one/GE, nothing. Even recreate what EA app lutris script do, nada.",
+    "os": "CachyOS",
+    "protonVersion": "8.0-5",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1767834624,
+    "title": "Fe",
+    "source": "protondb"
+  },
+  {
+    "appId": "1225580",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 19.1.7, DRM 3.61, 6.13.9-103.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.3",
+    "kernel": "6.13.9-103.bazzite.fc41.x86_64",
+    "notes": "if anyone knows how to get this game to run let me know",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "10.0-3",
+    "ram": "13 GB",
+    "rating": "borked",
+    "timestamp": 1768198292,
+    "title": "Fe",
+    "source": "protondb"
+  },
+  {
+    "appId": "1225580",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 19.1.7, DRM 3.61, 6.13.9-103.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.3",
+    "kernel": "6.13.9-103.bazzite.fc41.x86_64",
+    "notes": "if anyone knows how to get this game to run let me know",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "10.0-3",
+    "ram": "13 GB",
+    "rating": "borked",
+    "timestamp": 1768198303,
+    "title": "Fe",
+    "source": "protondb"
+  }
+]

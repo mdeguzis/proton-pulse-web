@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1543030",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.0.0",
+    "kernel": "6.2.8-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1679958600,
+    "title": "Sword and Fairy 7",
+    "source": "protondb"
+  },
+  {
+    "appId": "1543030",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 15.0.7, DRM 3.49, 6.2.0-27-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~23.04.1",
+    "kernel": "6.2.0-27-generic",
+    "notes": "Amazing looking Xianxia style game.",
+    "os": "Ubuntu 23.04",
+    "protonVersion": "8.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1692570082,
+    "title": "Sword and Fairy 7",
+    "source": "protondb"
+  }
+]

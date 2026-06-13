@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2832330",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-56-generic",
+    "notes": "Game launches easily out of the box with proton hotfix. No bugs or performance issues from my testing.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1743385094,
+    "title": "",
+    "source": "protondb"
+  }
+]

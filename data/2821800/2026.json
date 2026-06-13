@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2821800",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.7, DRM 3.64, 6.17.10)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.17.10",
+    "notes": "Marche sur steam par defaut, mais des video vont pas marcher.",
+    "os": "GLF-OS (Phoenix) 25.11",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1771535858,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2821800",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.7, DRM 3.64, 6.17.10)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.17.10",
+    "notes": "Marche sur steam par defaut, mais des video vont pas marcher.",
+    "os": "GLF-OS (Phoenix) 25.11",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1771535893,
+    "title": "",
+    "source": "protondb"
+  }
+]

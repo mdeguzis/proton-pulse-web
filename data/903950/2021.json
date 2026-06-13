@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "903950",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.10.39-1-MANJARO",
+    "notes": "Anticheat Borked",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "40 GB",
+    "rating": "borked",
+    "timestamp": 1628026236,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "903950",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.9-zen1-1-zen",
+    "notes": "Doesn't run because of EAC.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1628550848,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "903950",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.12.12-arch1-1",
+    "notes": "Doesn't start because of EAC anti cheat.",
+    "os": "ChimeraOS 25",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1628831286,
+    "title": "",
+    "source": "protondb"
+  }
+]

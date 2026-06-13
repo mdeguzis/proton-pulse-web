@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "514090",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "590.48.01",
+    "kernel": "6.19.6-arch1-1",
+    "notes": "Actually playable now, although issues with registering input still exist (just at a considerably smaller level)",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1773496351,
+    "title": "Beautiful Japanese Scenery - Animated Jigsaws",
+    "source": "protondb"
+  }
+]

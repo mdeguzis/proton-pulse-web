@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2685810",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX Vega (radeonsi, vega10, LLVM 16.0.6, DRM 3.56, 6.7.0-arch3-1)",
+    "gpuDriver": "4.6 Mesa 23.3.3-arch1.1",
+    "kernel": "6.7.0-arch3-1",
+    "notes": "Had to be launched a second time to actually open the game properly, but otherwise just worked",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1706593071,
+    "title": "",
+    "source": "protondb"
+  }
+]

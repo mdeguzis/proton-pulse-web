@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2253930",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.10-200.fc40.x86_64",
+    "notes": "The game played just fine with Proton Experamental. It also works fine with Wine GE on Lutris.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1731021988,
+    "title": "Kamikaze Lassplanes",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "511070",
+    "cpu": "Intel Core i3-4170 @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-99-generic",
+    "notes": "Installs, shows some kind of splash screen with settings and no more.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1588914389,
+    "title": "",
+    "source": "protondb"
+  }
+]

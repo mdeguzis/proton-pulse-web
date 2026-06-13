@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "714370",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.3.0-46-generic",
+    "notes": "crashes before the first cutscene",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1586216047,
+    "title": "",
+    "source": "protondb"
+  }
+]

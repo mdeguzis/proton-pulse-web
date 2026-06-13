@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1088420",
+    "cpu": "AMD Ryzen 5 3500 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 710",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.4.0-91-generic",
+    "notes": "This shmup seems to work fine on Mint. I have a non-widescreen 4:3 monitor and the game works.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1640789149,
+    "title": "",
+    "source": "protondb"
+  }
+]

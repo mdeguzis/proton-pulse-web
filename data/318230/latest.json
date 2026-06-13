@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "318230",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel Arc A750 (DG2)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-23-generic",
+    "notes": "Works fine in windowed mode, no complaints there. My monitor is 1440p so maybe that broke it?",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1778601288,
+    "title": "",
+    "source": "protondb"
+  }
+]

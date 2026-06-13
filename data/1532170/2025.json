@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1532170",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.8.0-48-generic",
+    "notes": "Works just as if you were playing natively on Windows",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1735775907,
+    "title": "",
+    "source": "protondb"
+  }
+]

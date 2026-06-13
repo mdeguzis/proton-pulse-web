@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3019370",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 18.1.8, DRM 3.54, 6.6.65-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.2.8-arch1.1",
+    "kernel": "6.6.65-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1735758534,
+    "title": "Malware",
+    "source": "protondb"
+  }
+]

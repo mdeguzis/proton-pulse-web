@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "640300",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.1.1",
+    "kernel": "5.7.5-gentoo-fidler-r1",
+    "notes": "Ran fine with my HTC Vive, however, note that the game as such still needs a lot of polish, but that is unrelated to running on Linux.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1594514889,
+    "title": "",
+    "source": "protondb"
+  }
+]

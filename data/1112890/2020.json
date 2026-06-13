@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1112890",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-47-generic",
+    "notes": "Keyboard and mouse control is janky, but the game runs fine",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1608067476,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1112890",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.39.0, 5.9.13-arch1-1, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.0",
+    "kernel": "5.9.13-arch1-1",
+    "notes": "Game loads up intial splash screens, but freezes after a second of loading.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1608202624,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1112890",
+    "cpu": "AMD FX-8370 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Runs without significant problems",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1608207222,
+    "title": "",
+    "source": "protondb"
+  }
+]

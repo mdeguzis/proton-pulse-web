@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "589680",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.15.5-arch1-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.5-arch1-1",
+    "notes": "Old, free, little game made with Vive wands in mind.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1639523528,
+    "title": "",
+    "source": "protondb"
+  }
+]

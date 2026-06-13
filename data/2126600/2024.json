@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2126600",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.8.0-36-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.5-1ubuntu1",
+    "kernel": "6.8.0-36-generic",
+    "notes": "Developer went forward and made it possible to run the game on Linux.",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1720079650,
+    "title": "",
+    "source": "protondb"
+  }
+]

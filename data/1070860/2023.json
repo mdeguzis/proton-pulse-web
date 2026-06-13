@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1070860",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "6.0.12-76060006-generic",
+    "notes": "Launched perfectly fine with Proton experimental",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1675039748,
+    "title": "Serin Fate",
+    "source": "protondb"
+  }
+]

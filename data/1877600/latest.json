@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1877600",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.5-2-cachyos",
+    "notes": "Runs great, more stable frametimes than under Windows 10 and Windows 11",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1768469294,
+    "title": "",
+    "source": "protondb"
+  }
+]

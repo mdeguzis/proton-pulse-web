@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "302610",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 19.1.1, DRM 3.57, 6.8.0-52-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-52-generic",
+    "notes": "Runs native with a little stuttering but is still playable. For the smoothest experience, run with the latest GE-Proton.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1738751530,
+    "title": "",
+    "source": "protondb"
+  }
+]

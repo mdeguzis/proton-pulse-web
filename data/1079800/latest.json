@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1079800",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.3-arch1-1",
+    "notes": "No issues with Quest 3 w/WiVRn",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767662461,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1079800",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.5, DRM 3.64, 6.18.1-273-tkg-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.18.1-273-tkg-eevdf",
+    "notes": "Works with WiVRn, ALVR and Steam Link on the Meta Quest 3, no need for proton variables. Gameplay: https://youtu.be/Cvej81hgxV0",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1774194286,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1079800",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "Mesa llvmpipe (LLVM 20.1.2, 256 bits)",
+    "gpuDriver": "4.5 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-23-generic",
+    "notes": "",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1778025835,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "510290",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-44-lowlatency",
+    "notes": "Freeze almost instantly during boot, on the Unreal 4 logo",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1614457690,
+    "title": "",
+    "source": "protondb"
+  }
+]

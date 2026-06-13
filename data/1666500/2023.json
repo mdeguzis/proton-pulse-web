@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1666500",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.15.0-43-generic",
+    "notes": "You can see the opening slash screens/video, but it locks up in a black screen after. Would love to see this playible, but i don't have the know how to tinker outside of changing proton or using Lutris(doesn't find this game)",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1678998996,
+    "title": "Write 'n' Fight",
+    "source": "protondb"
+  }
+]

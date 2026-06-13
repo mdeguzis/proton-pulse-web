@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1740660",
+    "cpu": "Intel Core i9-10980HK @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.12.74+deb13+1-amd64",
+    "notes": "Works perfectly OOTB",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776267757,
+    "title": "",
+    "source": "protondb"
+  }
+]

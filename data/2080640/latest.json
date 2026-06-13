@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2080640",
+    "cpu": "AMD Ryzen 5 7640HS w/ Radeon 760M Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.12.57+deb13-amd64",
+    "notes": "This appears to be a video playback/rendering issue rather than a general rendering failure, as UI elements function normally. The behavior is consistent with missing or non-functional video codecs / Media Foundation playback under Proton, possibly related to NVIDIA driver video decode. Due to missing background visuals and inability to make selections in some scenes, the game is effectively unplayable.",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1765717967,
+    "title": "",
+    "source": "protondb"
+  }
+]

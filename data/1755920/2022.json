@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1755920",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.16-zen1-1-zen",
+    "notes": "Guess I go touch grass one more day",
+    "os": "Garuda Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1656692213,
+    "title": "Star Hunter - Infinite Lagrange",
+    "source": "protondb"
+  },
+  {
+    "appId": "1755920",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.9-zen1-1-zen",
+    "notes": "Doesn't start",
+    "os": "Garuda Linux",
+    "protonVersion": "7.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1669357010,
+    "title": "Star Hunter - Infinite Lagrange",
+    "source": "protondb"
+  }
+]

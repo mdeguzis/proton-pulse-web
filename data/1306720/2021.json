@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1306720",
+    "cpu": "AMD Ryzen 5 4500U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (DRM 3.41.0, 5.13.12-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.13.12-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1629451493,
+    "title": "Mayhem Brawler",
+    "source": "protondb"
+  },
+  {
+    "appId": "1306720",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-25-generic",
+    "notes": "works out of the box installation with proton 6.3-6 / proton experimental",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1629557322,
+    "title": "Mayhem Brawler",
+    "source": "protondb"
+  },
+  {
+    "appId": "1306720",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5600M (NAVI10, DRM 3.41.0, 5.13.0-19-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.13.0-19-generic",
+    "notes": "",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-7",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1634655094,
+    "title": "Mayhem Brawler",
+    "source": "protondb"
+  }
+]

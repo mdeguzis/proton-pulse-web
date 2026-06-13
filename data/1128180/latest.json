@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1128180",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD DIMGREY_CAVEFISH (LLVM 13.0.1, DRM 3.42, 5.15.32-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.0.0",
+    "kernel": "5.15.32-1-MANJARO",
+    "notes": "One tutorial does not work without GE",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1684119261,
+    "title": "",
+    "source": "protondb"
+  }
+]

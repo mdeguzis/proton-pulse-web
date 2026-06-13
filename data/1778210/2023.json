@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1778210",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.5.6-76060506-generic",
+    "notes": "Works perfectly with native support OOTB",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1702051331,
+    "title": "",
+    "source": "protondb"
+  }
+]

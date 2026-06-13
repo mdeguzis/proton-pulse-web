@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "727850",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.18.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.4",
+    "kernel": "6.18.3-2-cachyos",
+    "notes": "Playable but not perfect. Enjoyable if you set a lower fps to get rid of stuttering or have a overkill setup to prevent the bad optmization.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1771064737,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "727850",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Finished the game on Steam Deck - great experience",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1771500605,
+    "title": "",
+    "source": "protondb"
+  }
+]

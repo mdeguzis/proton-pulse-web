@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1426480",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Mesa/X.org llvmpipe (LLVM 10.0.1, 256 bits)",
+    "gpuDriver": "3.1 Mesa 20.3.0-devel (git-2b977ad 2020-10-06 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-128-generic",
+    "notes": "No issues encountered",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "5.13-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1616443128,
+    "title": "",
+    "source": "protondb"
+  }
+]

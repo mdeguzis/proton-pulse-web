@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "878170",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.13.0-25-generic",
+    "notes": "Game didn't even start",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1643212355,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2300340",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.16-2-cachyos-lts",
+    "notes": "Worked perfectly out of the box on this PC and on my laptop",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1773350742,
+    "title": "",
+    "source": "protondb"
+  }
+]

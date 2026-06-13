@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1536590",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-72-generic",
+    "notes": "Presuming you are not photosensitive this game runs well enough (I suspect many of the issues are also there on windows)",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1619281432,
+    "title": "Cyclotronica",
+    "source": "protondb"
+  }
+]

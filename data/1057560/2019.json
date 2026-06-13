@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1057560",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel - padoka PPA",
+    "kernel": "5.4.0-rc6-steamvr-generic",
+    "notes": "blank screen then small dialog saying fatal error",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1576935657,
+    "title": "",
+    "source": "protondb"
+  }
+]

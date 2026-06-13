@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3904810",
+    "cpu": "AMD Ryzen 7 8700F 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.2-3-cachyos",
+    "notes": "works fine",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767876428,
+    "title": "",
+    "source": "protondb"
+  }
+]

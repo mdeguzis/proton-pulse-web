@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3716700",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.3, DRM 3.61, 6.14.6-102.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.0",
+    "kernel": "6.14.6-102.bazzite.fc42.x86_64",
+    "notes": "Game was booting but got stuck on the menu screen with no buttons for me to continue. Tried a few Proton versions but none of them have worked for me.",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1748334588,
+    "title": "",
+    "source": "protondb"
+  }
+]

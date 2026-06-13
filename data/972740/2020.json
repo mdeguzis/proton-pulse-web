@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "972740",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 440.26",
+    "kernel": "5.0.0-23-lowlatency",
+    "notes": "Played with the Valve Index, Proton 5.0-7. Game ran out of the box, but again, media files won't play.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1590630558,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "972740",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 440.26",
+    "kernel": "5.0.0-23-lowlatency",
+    "notes": "Almost everything works correctly out of the box, only the movies in screens throughout the game need mfplat. Performance is very good.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1590733529,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "972740",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.9-20-tkg-pds",
+    "notes": "Crashes at launch with 5.11-GE-2-MF",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1595537458,
+    "title": "",
+    "source": "protondb"
+  }
+]

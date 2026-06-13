@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "462680",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.13.0-28-generic",
+    "notes": "Dont open",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1645140649,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "462680",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.1, DRM 3.44, 5.17.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.0.4",
+    "kernel": "5.17.9-arch1-1",
+    "notes": "I tried various proton version and was meet with a black screen.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1655474716,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "462680",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "It does startup however it shows a black screen with some background music",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1667941391,
+    "title": "",
+    "source": "protondb"
+  }
+]

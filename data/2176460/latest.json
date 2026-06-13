@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2176460",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (BMG G21)",
+    "gpuDriver": "4.6 Mesa 24.3.3-arch1.2",
+    "kernel": "6.12.9-arch1-1",
+    "notes": "Bad lag after about an hour, fixed by restart. \nOtherwise this ran perfectly out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1737383382,
+    "title": "",
+    "source": "protondb"
+  }
+]

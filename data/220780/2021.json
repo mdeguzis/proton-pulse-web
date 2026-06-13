@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "220780",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.10.42-1-MANJARO",
+    "notes": "use proton not native",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1624832924,
+    "title": "",
+    "source": "protondb"
+  }
+]

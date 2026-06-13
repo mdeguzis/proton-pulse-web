@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2625510",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.9.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.1-arch1.1",
+    "kernel": "6.9.4-arch1-1",
+    "notes": "Works out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1718581784,
+    "title": "Don't Shout Together",
+    "source": "protondb"
+  }
+]

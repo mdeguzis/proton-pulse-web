@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2360950",
+    "cpu": "12th Gen Intel Core i7-12700F",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.16.8-zen3-1-zen",
+    "notes": "NutShot runs perfectly on linux, no tinkering required.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1758999260,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "885950",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.13.0-22-generic",
+    "notes": "It kind of ran on 5.0-10 but not for long",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1639454657,
+    "title": "",
+    "source": "protondb"
+  }
+]

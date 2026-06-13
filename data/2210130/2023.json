@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2210130",
+    "cpu": "Intel Xeon E5-2689 0 @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (navi14, LLVM 15.0.7, DRM 3.49, 6.2.12-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.2.12-zen1-1-zen",
+    "notes": "It's playable from start to finish",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-2",
+    "ram": "24 GB",
+    "rating": "silver",
+    "timestamp": 1687447523,
+    "title": "",
+    "source": "protondb"
+  }
+]

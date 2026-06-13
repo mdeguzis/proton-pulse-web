@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1067850",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 460.84",
+    "kernel": "5.8.0-55-generic",
+    "notes": "Game would crash when trying to create a save file while running native, changing to proton makes the game run flawlessly",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1624263132,
+    "title": "Kindergarten 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1067850",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.2-arch1-1",
+    "notes": "Native is borked. Proton runs perfectly",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1625384992,
+    "title": "Kindergarten 2",
+    "source": "protondb"
+  }
+]

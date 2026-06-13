@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "400110",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 17.0.6, DRM 3.57, 6.8.12-200.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.0",
+    "kernel": "6.8.12-200.fsync.fc39.x86_64",
+    "notes": "Says it runs Natively on Linux but I play with Proton 9.0-2",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1722037386,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "400110",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "You might prefer to use a mouse and keyboard, but the game runs smoothly as far a I played.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1730501523,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "400110",
+    "cpu": "Intel Core i5-10210U @ 1.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.12.1-arch1-1",
+    "notes": "works smoothly natively and works smoothly with Proton too",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1732889488,
+    "title": "",
+    "source": "protondb"
+  }
+]

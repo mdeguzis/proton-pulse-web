@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1103780",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD DIMGREY_CAVEFISH (LLVM 13.0.1, DRM 3.42, 5.15.0-56-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Works perfectly fine here on Lubuntu 22.04, no issues so far with audio, gameplay, graphics, bugs, etc.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1672278894,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1584810",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.15.27-xanmod1",
+    "notes": "Able to open game and start. The loading screen is very long and crashes when you click",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1647561327,
+    "title": "",
+    "source": "protondb"
+  }
+]

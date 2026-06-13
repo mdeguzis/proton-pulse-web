@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "629410",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.7-arch1-2-ARCH",
+    "notes": "Works flawlessly after installing vcrun2015",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1573329807,
+    "title": "",
+    "source": "protondb"
+  }
+]

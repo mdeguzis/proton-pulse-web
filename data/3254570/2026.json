@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3254570",
+    "cpu": "Intel Core i9-14900KF",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.3-2-cachyos",
+    "notes": "Works well, just can't adjust window size",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1772250327,
+    "title": "",
+    "source": "protondb"
+  }
+]

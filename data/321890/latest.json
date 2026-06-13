@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "321890",
+    "cpu": "AMD Ryzen 9 7900X3D 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 20.1.8, DRM 3.63, 6.15.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.7-arch1.1",
+    "kernel": "6.15.9-arch1-1",
+    "notes": "Game keeps minimizing",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1754801183,
+    "title": "",
+    "source": "protondb"
+  }
+]

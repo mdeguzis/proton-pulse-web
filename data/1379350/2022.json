@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1379350",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.4.0-65-generic",
+    "notes": "Also attempted using versions of 7.0-4 and 5.0-10, same result.",
+    "os": "Linux Mint 20",
+    "protonVersion": "4.11-13",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1668108747,
+    "title": "",
+    "source": "protondb"
+  }
+]

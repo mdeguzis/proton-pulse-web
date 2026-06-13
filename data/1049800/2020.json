@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1049800",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.0-29-generic",
+    "notes": "Not playable without the multiplayer working",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-1",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1581208272,
+    "title": "BLOCKADE",
+    "source": "protondb"
+  },
+  {
+    "appId": "1049800",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.1.4 - kisak-mesa PPA",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Works as it does on Windows",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1595984170,
+    "title": "BLOCKADE",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2617400",
+    "cpu": "11th Gen Intel Core i5-11260H @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "Ran well on native (I actually forgot to turn on force compatibility).",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1766577414,
+    "title": "Minimalist Tower Defense",
+    "source": "protondb"
+  }
+]

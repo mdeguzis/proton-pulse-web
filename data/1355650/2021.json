@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1355650",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.42.0, 5.14.5-zen2-1-zen, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.14.5-zen2-1-zen",
+    "notes": "Worked perfectly out of the box with excellent performance. Played from start to finish.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1632131926,
+    "title": "",
+    "source": "protondb"
+  }
+]

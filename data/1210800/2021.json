@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1210800",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII (VEGA20, DRM 3.40.0, 5.11.9-141-tkg-upds, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.1.0-devel (git-cc2a4ff880)",
+    "kernel": "5.11.9-141-tkg-upds",
+    "notes": "Poor performance with any Proton ver.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1618027611,
+    "title": "Rum & Gun",
+    "source": "protondb"
+  }
+]

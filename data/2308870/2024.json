@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2308870",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-38-generic",
+    "notes": "This game like most nutaku games does not start on linux trough any proton version, or wine.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1727293315,
+    "title": "",
+    "source": "protondb"
+  }
+]

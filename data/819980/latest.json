@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "819980",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.8.0-2-MANJARO",
+    "notes": "Game loads, then gets stuck on a white screen",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1598032209,
+    "title": "",
+    "source": "protondb"
+  }
+]

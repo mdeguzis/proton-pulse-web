@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2356310",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.14.6-arch1-1",
+    "notes": "Doesn't work",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1747743236,
+    "title": "Continent of the Ninth Golden",
+    "source": "protondb"
+  }
+]

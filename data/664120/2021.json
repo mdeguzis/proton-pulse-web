@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "664120",
+    "cpu": "Intel Core i3-9100F @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.8.0-43-generic",
+    "notes": "I doesn't even start",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1613486596,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3735490",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Arc B580 (BMG G21)",
+    "gpuDriver": "4.6 Mesa 26.0.1",
+    "kernel": "6.19.5-1-default",
+    "notes": "Game works with a few (minor) issues",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1772900747,
+    "title": "",
+    "source": "protondb"
+  }
+]

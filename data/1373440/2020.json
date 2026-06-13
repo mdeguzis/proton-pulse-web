@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1373440",
+    "cpu": "AMD Athlon II X4 630",
+    "duration": "unreported",
+    "gpu": "AMD Radeon HD 8800",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-47-generic",
+    "notes": "Game doesn't launch. When installed with Lutris, it launches and I can play for a minute or so, then it crashes.",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1600283984,
+    "title": "Picross for a Cause",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2240790",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 550.76",
+    "kernel": "6.6.29-1-lts",
+    "notes": "Einfach starten ohne Parameter. Dauert nur ein bissl zu starten.",
+    "os": "Garuda Linux Bird of Prey",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1714593272,
+    "title": "Sucker for Love: Date to Die For",
+    "source": "protondb"
+  },
+  {
+    "appId": "2240790",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.7.0-zen3-1-zen",
+    "notes": "Plays great!",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-1",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1716288166,
+    "title": "Sucker for Love: Date to Die For",
+    "source": "protondb"
+  },
+  {
+    "appId": "2240790",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 18.1.8, DRM 3.59, 6.11.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.4-arch1.1",
+    "kernel": "6.11.2-arch1-1",
+    "notes": "Runs as if native",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1729171529,
+    "title": "Sucker for Love: Date to Die For",
+    "source": "protondb"
+  }
+]

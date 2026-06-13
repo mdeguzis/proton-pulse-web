@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "837350",
+    "cpu": "AMD Ryzen 7 3750H with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 10 (raven, LLVM 14.0.5, DRM 3.46, 5.18.4-1-default)",
+    "gpuDriver": "4.6 Mesa 22.1.2",
+    "kernel": "5.18.4-1-default",
+    "notes": "The game supports Controllers, You can connect your ps4 controller for example using bluetooth and it will work fine",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "7.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1659869073,
+    "title": "King of the Hat",
+    "source": "protondb"
+  },
+  {
+    "appId": "837350",
+    "cpu": "Intel Core i5-8257U @ 1.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Plus 645 (CFL GT3)",
+    "gpuDriver": "4.6 Mesa 22.1.4",
+    "kernel": "5.19.0-rc6-5-t2",
+    "notes": "Works perfectly, same as native once given the flags.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1659921838,
+    "title": "King of the Hat",
+    "source": "protondb"
+  },
+  {
+    "appId": "837350",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Controller just does not work. This essentinally breaks all functionality.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1667941858,
+    "title": "King of the Hat",
+    "source": "protondb"
+  }
+]

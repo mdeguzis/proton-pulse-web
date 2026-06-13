@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1367300",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 550 / 550 (polaris12, LLVM 13.0.1, DRM 3.42, 5.15.0-58-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-58-generic",
+    "notes": "Funciona lindamente, n\u00e3o tive problemas para jogar, uso o controle e n\u00e3o tive nenhuma dor de cabe\u00e7a s\u00f3 alegrias.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1673659158,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1367300",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "runs perfectly out of box\nJust download and play",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1701188427,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1367300",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.4-202.fsync.fc39.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1703981352,
+    "title": "",
+    "source": "protondb"
+  }
+]

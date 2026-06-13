@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "281080",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.10.22-200.fc33.x86_64",
+    "notes": "Runs great out of the box, no issues except Alt-Tab not working",
+    "os": "Fedora release 33 (Thirty Three)",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1616362326,
+    "title": "",
+    "source": "protondb"
+  }
+]

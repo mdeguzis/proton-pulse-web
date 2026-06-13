@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3056270",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.6, DRM 3.59, 6.12.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.3-arch1.2",
+    "kernel": "6.12.9-arch1-1",
+    "notes": "Installs and plays right out of the box!",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1737394778,
+    "title": "Mekkablood: Quarry Assault",
+    "source": "protondb"
+  }
+]

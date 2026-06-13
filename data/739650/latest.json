@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "739650",
+    "cpu": "Intel Core i7-9700F @ 3.00GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.8.7-201.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.0-rc1",
+    "kernel": "6.8.7-201.fsync.fc39.x86_64",
+    "notes": "Better experience than Windows according to my party",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1717031006,
+    "title": "",
+    "source": "protondb"
+  }
+]

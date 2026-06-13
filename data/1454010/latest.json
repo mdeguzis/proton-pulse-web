@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1454010",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Here's what I've tried,\n* Tried various version of Steam and GE Proton.\n* Add several DLL and change Windows version using command `protontricks 1454010 winecfg`.\n\nThe log file created using launch option `PROTON_LOG=1 %command%` isn't exactly helpful since it create 212K lines, even though the game only ran for ~2.5 minutes.",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1736520847,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1051960",
+    "cpu": "Intel Pentium G3240 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "AMD CYPRESS",
+    "gpuDriver": "3.1 Mesa 20.2.0",
+    "kernel": "5.9.1-arch1-1",
+    "notes": "add this PROTON_USE_WINED3D=1 %command%",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "5.13-1",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1603116351,
+    "title": "Fly Punch Boom!",
+    "source": "protondb"
+  }
+]

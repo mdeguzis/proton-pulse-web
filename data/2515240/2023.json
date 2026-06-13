@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2515240",
+    "cpu": "Intel Core i7-4930K @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX Vega (vega10, LLVM 14.0.0, DRM 3.42, 5.15.0-79-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.0-devel (git-85a94be 2022-04-29 focal-oibaf-ppa)",
+    "kernel": "5.15.0-79-generic",
+    "notes": "Works out of the box!",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1692751892,
+    "title": "Welcome to Kowloon",
+    "source": "protondb"
+  },
+  {
+    "appId": "2515240",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (gfx1100, LLVM 15.0.7, DRM 3.52, 6.4.10-202.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.7",
+    "kernel": "6.4.10-202.fsync.fc38.x86_64",
+    "notes": "Works without significant problems out of the box",
+    "os": "Nobara Linux 38 (Thirty Eight)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1694722132,
+    "title": "Welcome to Kowloon",
+    "source": "protondb"
+  }
+]

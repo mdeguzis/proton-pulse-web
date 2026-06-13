@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "377300",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 21.1.6, DRM 3.64, 6.17.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.2",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "The game runs natively without any issues.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1765843468,
+    "title": "",
+    "source": "protondb"
+  }
+]

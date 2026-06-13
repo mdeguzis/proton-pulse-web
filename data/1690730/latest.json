@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1690730",
+    "cpu": "13th Gen Intel Core i5-13600KF",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, ACO, DRM 3.64, 6.19.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.2-arch1.1",
+    "kernel": "6.19.8-arch1-1",
+    "notes": "The game works perfectly fine.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1773856565,
+    "title": "",
+    "source": "protondb"
+  }
+]

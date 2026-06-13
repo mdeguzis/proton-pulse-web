@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1975580",
+    "cpu": "AMD Ryzen 9 9950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.1, DRM 3.64, 6.16.9-1-default)",
+    "gpuDriver": "4.6 Mesa 25.2.2 (git-22ded5f256)",
+    "kernel": "6.16.9-1-default",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1773602151,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2107540",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 20.1.8, DRM 3.64, 6.16.7-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.7",
+    "kernel": "6.16.7-200.fc42.x86_64",
+    "notes": "Works great out of the box! Game has some roughness but no OS-specific issues.",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1757871564,
+    "title": "",
+    "source": "protondb"
+  }
+]

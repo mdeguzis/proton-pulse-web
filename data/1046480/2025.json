@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1046480",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.17.1-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.1",
+    "kernel": "6.17.1-zen1-1-zen",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1760112568,
+    "title": "",
+    "source": "protondb"
+  }
+]

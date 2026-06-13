@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1064460",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII (VEGA20, DRM 3.39.0, 5.9.1-4-tkg-pds, LLVM 10.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.0-devel (git-57d317865e)",
+    "kernel": "5.9.1-4-tkg-pds",
+    "notes": "Works OOTB",
+    "os": "ArcoLinux",
+    "protonVersion": "5.13-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1603574386,
+    "title": "Murder House",
+    "source": "protondb"
+  }
+]

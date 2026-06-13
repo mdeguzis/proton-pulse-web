@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1719460",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.8-76051508-generic",
+    "notes": "Worked right out the box\nhttps://www.youtube.com/watch?v=LN56mrkwOBY",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1641079159,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1719460",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.8-76051508-generic",
+    "notes": "Run out of the box",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1641104500,
+    "title": "",
+    "source": "protondb"
+  }
+]

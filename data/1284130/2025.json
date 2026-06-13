@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1284130",
+    "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 19.1.7, DRM 3.57, 6.8.0-90-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.5",
+    "kernel": "6.8.0-90-generic",
+    "notes": "Couldn't start.  Tried with Proton 9.0-4, 10.0-3, Experimental, and Hotfix.",
+    "os": "Linux Mint 22.2 Zara",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "borked",
+    "timestamp": 1766923791,
+    "title": "",
+    "source": "protondb"
+  }
+]

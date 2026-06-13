@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1040550",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5600 XT (navi10, LLVM 15.0.7, DRM 3.52, 6.3.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.1",
+    "kernel": "6.3.5-arch1-1",
+    "notes": "Couldn't play on archlinux, but playable on steam deck",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1686380151,
+    "title": "",
+    "source": "protondb"
+  }
+]

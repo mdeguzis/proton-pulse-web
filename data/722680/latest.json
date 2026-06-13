@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "722680",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.8.0-64-generic",
+    "notes": "It works with older versions of Proton, but it still has some issues.",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1753655284,
+    "title": "",
+    "source": "protondb"
+  }
+]

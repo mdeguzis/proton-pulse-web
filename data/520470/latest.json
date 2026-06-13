@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "520470",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Game crashes too frequently to enjoy. It often requires rebooting Steam VR all together.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1628355058,
+    "title": "Music Inside: A VR Rhythm Game",
+    "source": "protondb"
+  }
+]

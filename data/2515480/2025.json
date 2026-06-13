@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2515480",
+    "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, LLVM 21.1.2, DRM 3.64, 6.17.7)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.17.7",
+    "notes": "Game runs perfectly on Linux and will hopefully even support HDR on wayland when it comes out.",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "bronze",
+    "timestamp": 1762606025,
+    "title": "",
+    "source": "protondb"
+  }
+]

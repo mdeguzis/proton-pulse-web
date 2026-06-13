@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2067850",
+    "cpu": "Intel Xeon           X5670  @ 2.93GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (DIMGREY_CAVEFISH, DRM 3.44.0, 5.17.0-1001-oem, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.17.0-1001-oem",
+    "notes": "",
+    "os": "Ubuntu Jammy Jellyfish (development branch)",
+    "protonVersion": "7.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1664917035,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2067850",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.0.11-arch1-1",
+    "notes": "You get to see the server list for a few milliseconds, but it immediately crashes.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1670467821,
+    "title": "",
+    "source": "protondb"
+  }
+]

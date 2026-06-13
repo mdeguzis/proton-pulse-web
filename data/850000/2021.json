@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "850000",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.12.17-1-ck-zen3",
+    "notes": "it's working, and playable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1631622935,
+    "title": "",
+    "source": "protondb"
+  }
+]

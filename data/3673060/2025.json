@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3673060",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.5-2-cachyos",
+    "notes": "It's kinda pointless running it in fullscreen only.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "129 GB",
+    "rating": "borked",
+    "timestamp": 1761852555,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3673060",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "It's important to note that the game only works in fullscreen mode, so it might not be what you are expecting, but it works perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1765288671,
+    "title": "",
+    "source": "protondb"
+  }
+]

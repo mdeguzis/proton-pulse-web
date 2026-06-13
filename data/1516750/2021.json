@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1516750",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.9-arch2-1",
+    "notes": "Worked perfectly with 6.19-GE-2.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1634523265,
+    "title": "",
+    "source": "protondb"
+  }
+]

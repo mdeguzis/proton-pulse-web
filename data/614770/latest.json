@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "614770",
+    "cpu": "Intel Core i7-4800MQ @ 2.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 780M",
+    "gpuDriver": "NVIDIA 390.157",
+    "kernel": "5.15.0-101-generic",
+    "notes": "NOT WORK I TESR ALL PROTON TYPE NOT WORK",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1711611719,
+    "title": "",
+    "source": "protondb"
+  }
+]

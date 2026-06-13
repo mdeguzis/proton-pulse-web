@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "289780",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (sienna_cichlid, LLVM 14.0.6, DRM 3.47, 5.19.3-269-tkg-bmq)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.19.3-269-tkg-bmq",
+    "notes": "",
+    "os": "Garuda Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1661900292,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "483770",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.4",
+    "kernel": "5.5.4-arch1-1",
+    "notes": "runs fine out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1582115759,
+    "title": "",
+    "source": "protondb"
+  }
+]

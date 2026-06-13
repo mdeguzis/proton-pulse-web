@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1136380",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 14.0.6, DRM 3.44, 5.17.15-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.1.3",
+    "kernel": "5.17.15-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1661622315,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1136380",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "If you're alright with 30 FPS @ low settings (which looks quite bad), then go for it. Otherwise wait and hope the dev optimizes the game.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1664163677,
+    "title": "",
+    "source": "protondb"
+  }
+]

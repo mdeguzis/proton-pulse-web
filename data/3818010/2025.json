@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3818010",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.17.8-cachyrt1.fc43.x86_64",
+    "notes": "Looks like I won't be beying my blades today. : (",
+    "os": "Fedora Linux 43 (Forty Three)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1764114245,
+    "title": "",
+    "source": "protondb"
+  }
+]

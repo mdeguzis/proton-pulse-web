@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4292050",
+    "cpu": "AMD Ryzen 7 7745HX with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.7-200.fc43.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1774945808,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2283880",
+    "cpu": "13th Gen Intel Core i9-13900K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 560.31.02",
+    "kernel": "6.10.3-201.fsync.fc40.x86_64",
+    "notes": "Started with GE-Proton9-10 as a reflex I turned it on before firing up. After I turned off compatablilty mode it ran perfect natively",
+    "os": "Nobara Linux 40 (GNOME Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1723515588,
+    "title": "",
+    "source": "protondb"
+  }
+]

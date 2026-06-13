@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1823930",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.17.13-301.fsync.fc36.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 36 (KDE Plasma)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1665262623,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1823930",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.17.3-arch1-1",
+    "notes": "Demo works perfectly",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1665311978,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1823930",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.11-201.fsync.fc36.x86_64",
+    "notes": "Runs like a charm on Linux. Controller works without any tinkering or so.",
+    "os": "Nobara Linux 36 (Thirty Six)",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1670950017,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "496040",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.4.0-71-generic",
+    "notes": "MS Media Foundation Strikes Again?",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1618423934,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "496040",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.41.0, 5.13.0-21-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.13.0-21-generic",
+    "notes": "Fails to start level",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1636802356,
+    "title": "",
+    "source": "protondb"
+  }
+]

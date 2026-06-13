@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1784570",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 15.0.7, DRM 3.42, 5.15.0-83-generic)",
+    "gpuDriver": "4.6 Mesa 23.1.7~kisak1~j",
+    "kernel": "5.15.0-83-generic",
+    "notes": "Tried a few of the tips here, tried older versions of Proton considering it's a 2022 game and will not run on Proton version 7 or lower.\nGame opens setup config OK on first launch, and game launcher, but once starting, game window just stops and does not proceed to playable game. Shows game menu but stalls at that point.\nTo be honest, I was surprised to see a Trainz title as platinum, as even back before Proton, Trainz never really ran in Wine well, if at all. Trainz 2006 I think was the only exception. But Trainz22 was on special and I thought I'd give it a try on Proton, but no go as expected.",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1772929737,
+    "title": "Trainz Railroad Simulator 2022",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1591420",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5600 XT (radeonsi, navi10, LLVM 19.1.7, DRM 3.59, 6.12.13-200.m2jest1c_acs.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.4",
+    "kernel": "6.12.13-200.m2jest1c_acs.fc41.x86_64",
+    "notes": "Perfect. No notes.",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1748144024,
+    "title": "",
+    "source": "protondb"
+  }
+]

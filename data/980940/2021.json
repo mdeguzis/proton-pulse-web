@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "980940",
+    "cpu": "Intel Core i7-1065G7 @ 1.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Iris Plus (ICL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.14.12-arch1-1",
+    "notes": "Completely broken",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1634362337,
+    "title": "",
+    "source": "protondb"
+  }
+]

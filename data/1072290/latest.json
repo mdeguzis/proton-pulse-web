@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1072290",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 20.1.2, 256 bits)",
+    "gpuDriver": "4.5 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.8.0-100-generic",
+    "notes": "I tried the game with several versions of Proton.  Proton Hotfix doesn't launch at all, but most versions will open the pre-menu cinematic animation.  However, the game seems to loop this animation until you give input (Start/A/Enter etc.), then it should proceed to the main menu.  In all versions of Proton the game doesn't seem to accept any kind of input, even from the mouse and keyboard.  After launching several times the game did accept input once using Proton 9-04, but the next time I opened the game it behaved the same as every other attempt.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1773477057,
+    "title": "Ravenlok: Legendary Edition",
+    "source": "protondb"
+  }
+]

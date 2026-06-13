@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1635980",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.11-76051511-generic",
+    "notes": "Works pretty much out of the box with Proton 6.3-8, even recognized my xinput controller",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1642643862,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1635980",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.16.4-1-ck",
+    "notes": "The game works out of the box, install and play.\nUsing a controller also works out of the box (Used a DualShock3 via USB and Bluetooth)",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1643772466,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1635980",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Game does not recognize gamepads yet, As I write this there are no community layouts.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1666679375,
+    "title": "",
+    "source": "protondb"
+  }
+]

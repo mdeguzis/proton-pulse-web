@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "598550",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.41.0, 5.13.19-2-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "Works fine!",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1637426240,
+    "title": "",
+    "source": "protondb"
+  }
+]

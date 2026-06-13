@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1850510",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon Pro WX 4100 (radeonsi, polaris11, LLVM 17.0.6, DRM 3.57, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.3",
+    "kernel": "6.8.0-51-generic",
+    "notes": "I had to enter a launch command because the game opens on a small window by default, and I preffered to play it full screen.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1743306818,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1850510",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Great fit for the Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1744107048,
+    "title": "",
+    "source": "protondb"
+  }
+]

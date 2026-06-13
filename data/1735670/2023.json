@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1735670",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 510.85.02",
+    "kernel": "5.15.0-53-generic",
+    "notes": "Works on GE 7.36, not working on experimental",
+    "os": "Ubuntu 20.04.5 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1697918625,
+    "title": "",
+    "source": "protondb"
+  }
+]

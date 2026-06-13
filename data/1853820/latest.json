@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1853820",
+    "cpu": "Intel Xeon E3-1225 v3 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD P4600/P4700 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.2.6",
+    "kernel": "5.13.0-28-generic",
+    "notes": "not really a fun game but it works just fine",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1644883245,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1141220",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.11.0-40-generic",
+    "notes": "claims to be linux native, but didn't launch until forced through proton",
+    "os": "Zorin OS 16",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1637960549,
+    "title": "",
+    "source": "protondb"
+  }
+]

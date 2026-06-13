@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1358840",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 14.0.6, DRM 3.42, 5.15.74-3-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.15.74-3-MANJARO",
+    "notes": "if user clicks or waits for the \"click to continue\" it will crash before the actual game starts.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1715880584,
+    "title": "",
+    "source": "protondb"
+  }
+]

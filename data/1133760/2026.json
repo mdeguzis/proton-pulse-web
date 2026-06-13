@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1133760",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 535.288.01",
+    "kernel": "6.17.0-14-generic",
+    "notes": "avec r\u00e9glages. Apr\u00e8s configuration (Proton 8), j\u2019ai jou\u00e9 plus d\u20191h sans bugs ni crash. Pas plug & play, mais agr\u00e9able.",
+    "os": "Ubuntu 24.04.3 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "80 GB",
+    "rating": "platinum",
+    "timestamp": 1770523189,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1133760",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Frequent random freezes - resolved by using NTCore to increase the .exe's memory.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1775671239,
+    "title": "",
+    "source": "protondb"
+  }
+]

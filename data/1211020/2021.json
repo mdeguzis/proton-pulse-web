@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1211020",
+    "cpu": "Intel Xeon E3-1231 v3 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.10.15-arch1-1",
+    "notes": "Works perfectly!",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1613911637,
+    "title": "Wobbly Life",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1990270",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-34-generic",
+    "notes": "Gives .NET error \"Unable to get the window handle for the AxWindowsMediaPlayer control\" and then doesn't to anything else.",
+    "os": "Ubuntu 25.04",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1761503886,
+    "title": "",
+    "source": "protondb"
+  }
+]

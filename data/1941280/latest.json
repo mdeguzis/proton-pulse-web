@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1941280",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.11.0-17-generic",
+    "notes": "It's fine and runs well",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1740059301,
+    "title": "",
+    "source": "protondb"
+  }
+]

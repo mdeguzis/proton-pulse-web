@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1502380",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 470.42.01",
+    "kernel": "4.19.0-17-amd64",
+    "notes": "With the cAlphaShift patch compiled in to proton, the game starts and runs, I was able to play singleplayer fine.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1631889681,
+    "title": "",
+    "source": "protondb"
+  }
+]

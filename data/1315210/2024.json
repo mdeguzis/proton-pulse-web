@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1315210",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 18.1.5, DRM 3.57, 6.8.8-1-default)",
+    "gpuDriver": "4.6 Mesa 24.0.5",
+    "kernel": "6.8.8-1-default",
+    "notes": "Out of the box",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1721357370,
+    "title": "",
+    "source": "protondb"
+  }
+]

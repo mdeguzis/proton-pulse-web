@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "365670",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "4.15.0-70-generic",
+    "notes": "Runs perfectly out of the box.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-10",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1576278376,
+    "title": "Blender",
+    "source": "protondb"
+  },
+  {
+    "appId": "365670",
+    "cpu": "Intel Core i7-3537U @ 2.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 735M",
+    "gpuDriver": "NVIDIA 390.129",
+    "kernel": "5.3.0-24-generic",
+    "notes": "",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "4.11-11",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1577633269,
+    "title": "Blender",
+    "source": "protondb"
+  },
+  {
+    "appId": "365670",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.0-7625-generic",
+    "notes": "",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1577681819,
+    "title": "Blender",
+    "source": "protondb"
+  }
+]

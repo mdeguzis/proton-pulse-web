@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3221770",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Once you slog through the outdoor area and make it to the spire, the game is capable of maintaining a solid 90 fps on the steamdeck OLED",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1771093918,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3221770",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.5-200.nobara.fc43.x86_64",
+    "notes": "GE Proton is needed for cutscene videos and launch videos. Game runs otherwise.",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1772865309,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3221770",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 20.1.8, DRM 3.64, 6.16.4-116.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.4",
+    "kernel": "6.16.4-116.bazzite.fc42.x86_64",
+    "notes": "Works OOB from Steam, but with no movie cutscenes playing. Switch to GE-Proton.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1775471670,
+    "title": "",
+    "source": "protondb"
+  }
+]

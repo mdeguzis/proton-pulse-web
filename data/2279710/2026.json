@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2279710",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce MX250",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.17.0-14-generic",
+    "notes": "When trying to launch the game, nothing happens except for steam showing that i'm in the game",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1773346482,
+    "title": "",
+    "source": "protondb"
+  }
+]

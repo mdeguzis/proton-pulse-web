@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1900340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "\u542f\u52a8\u6e38\u620f\u540e\u8fc7\u4e86\u4e00\u6bb5\u65f6\u95f4\uff0c\u53ef\u4ee5\u542c\u89c1\u6e38\u620f\u58f0\u97f3\uff0c\u4f46\u4e0d\u4f1a\u663e\u793a\u753b\u9762\uff0c\u65e0\u6cd5\u8fdb\u884c\u6e38\u73a9",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1683522846,
+    "title": "Ten Trials of Babel: The Doppelganger Maze",
+    "source": "protondb"
+  },
+  {
+    "appId": "1900340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "\u770b\u6765\u6211\u4e0a\u4e00\u4e2a\u62a5\u544a\u7684\u4fe1\u606f\u592a\u65e7\u4e86\uff0c\u8be5\u6e38\u620f\u5df2\u7ecf\u53ef\u4ee5\u5b8c\u7f8e\u542f\u52a8\uff0c\u800c\u4e0d\u662f\u4e4b\u524d\u7684\u65e0\u6cd5\u663e\u793a\u753b\u9762",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1683524608,
+    "title": "Ten Trials of Babel: The Doppelganger Maze",
+    "source": "protondb"
+  },
+  {
+    "appId": "1900340",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 16.0.6, DRM 3.54, 6.5.11-300.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.2.1 (git-49a47f187e)",
+    "kernel": "6.5.11-300.fc39.x86_64",
+    "notes": "Main menu does not render, only get a white screen. Tried Proton 8.0-4 and Experimental.",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1700161624,
+    "title": "Ten Trials of Babel: The Doppelganger Maze",
+    "source": "protondb"
+  }
+]

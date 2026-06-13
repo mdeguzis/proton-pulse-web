@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1201280",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Works fine",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1614116980,
+    "title": "",
+    "source": "protondb"
+  }
+]

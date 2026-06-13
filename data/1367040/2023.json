@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1367040",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 525.116.04",
+    "kernel": "6.3.7-1-default",
+    "notes": "I've waited for around 1 hour and it was still loading the first misson",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1687350706,
+    "title": "",
+    "source": "protondb"
+  }
+]

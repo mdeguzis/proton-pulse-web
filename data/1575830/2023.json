@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1575830",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.11-200.fc37.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "8.0-1",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1682795666,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1575830",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (navi21, LLVM 15.0.7, DRM 3.49, 6.2.13-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.2.13-arch1-1",
+    "notes": "It works, unfortunately multiplayer is not playable.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-1",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1682891942,
+    "title": "",
+    "source": "protondb"
+  }
+]

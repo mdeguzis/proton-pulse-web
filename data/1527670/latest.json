@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1527670",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.12-xanmod1-cacule-MANJARO",
+    "notes": "\"FATAL ERROR in Vertex Shader compilation\"",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1612703321,
+    "title": "",
+    "source": "protondb"
+  }
+]

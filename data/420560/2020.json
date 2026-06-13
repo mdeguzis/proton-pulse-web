@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "420560",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.9.8-200.fc33.x86_64",
+    "notes": "Borked. I can see the small window with the game name after launching, but then it black screens. Tried with Proton 5.0 and 5.13 GE.",
+    "os": "Fedora 33",
+    "protonVersion": "5.13-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1605661645,
+    "title": "Firefighting Simulator - The Squad",
+    "source": "protondb"
+  }
+]

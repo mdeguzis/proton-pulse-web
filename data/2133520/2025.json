@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2133520",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.4-200.fc41.x86_64",
+    "notes": "Lowering resolution cuts of parts of the game window such that it becomes unusable. Forcing a virtual desktop with lower resolution via winecfg works but the game still won't play.\n\nMost likely more powerful hardware will not have this problem.",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1740766948,
+    "title": "Ertugrul of Ulukayin",
+    "source": "protondb"
+  },
+  {
+    "appId": "2133520",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.4-200.fc41.x86_64",
+    "notes": "Playable after update with performance improvements",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1740923348,
+    "title": "Ertugrul of Ulukayin",
+    "source": "protondb"
+  },
+  {
+    "appId": "2133520",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 570.169",
+    "kernel": "6.15.2-pikaos",
+    "notes": "Worked with the default settings. I use Proton-GE for my games as default and the game seems to work fine.",
+    "os": "PikaOS 4",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1750253782,
+    "title": "Ertugrul of Ulukayin",
+    "source": "protondb"
+  }
+]

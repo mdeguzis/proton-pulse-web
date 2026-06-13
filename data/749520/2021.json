@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "749520",
+    "cpu": "AMD Ryzen 7 4800U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (DRM 3.40.0, 5.12.2-zen2-1-zen, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.1.0",
+    "kernel": "5.12.2-zen2-1-zen",
+    "notes": "The whole app *barely* works and is *roughly* playable (with quite some problems). Don't expect a good experience, though",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-4",
+    "ram": "14 GB",
+    "rating": "bronze",
+    "timestamp": 1622209715,
+    "title": "",
+    "source": "protondb"
+  }
+]

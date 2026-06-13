@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "55040",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.10.2-200.fsync.fc40.x86_64",
+    "notes": "No sound or keyboard input using the native build so I was stuck at the first screen. Changing to Proton makes the game fully playable.",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1722536566,
+    "title": "Atom Zombie Smasher",
+    "source": "protondb"
+  }
+]

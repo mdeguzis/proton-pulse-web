@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1045840",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.0-0.bpo.3-amd64",
+    "notes": "",
+    "os": "Debian Buster 10.3",
+    "protonVersion": "5.0-6",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1587759223,
+    "title": "",
+    "source": "protondb"
+  }
+]

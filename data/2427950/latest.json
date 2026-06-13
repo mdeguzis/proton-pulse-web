@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2427950",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 19.1.7, DRM 3.63, 6.15.3)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.15.3",
+    "notes": "",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "9.0-4",
+    "ram": "60 GB",
+    "rating": "gold",
+    "timestamp": 1752059606,
+    "title": "",
+    "source": "protondb"
+  }
+]

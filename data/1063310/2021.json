@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1063310",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.10.16-121-tkg-upds, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.0-devel (git-a740318e42)",
+    "kernel": "5.10.16-121-tkg-upds",
+    "notes": "I think the frame drops seriously removes from the enjoyment of the game",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1613814722,
+    "title": "Vane",
+    "source": "protondb"
+  },
+  {
+    "appId": "1063310",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.1-arch1-1",
+    "notes": "Works very well out of the box, I tried it with two controllers (steam, xbox)  and both worked very well.",
+    "os": "GamerOS 23\u3000(48bc215)",
+    "protonVersion": "6.3-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1620685101,
+    "title": "Vane",
+    "source": "protondb"
+  },
+  {
+    "appId": "1063310",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.7-arch1-1",
+    "notes": "Bad performance.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1622538086,
+    "title": "Vane",
+    "source": "protondb"
+  }
+]

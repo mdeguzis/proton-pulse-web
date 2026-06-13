@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "646240",
+    "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "nvidia-driver-535-ubuntu0.22.04.1",
+    "kernel": "5.15.0-92-generic",
+    "notes": "Works fine",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1740634545,
+    "title": "",
+    "source": "protondb"
+  }
+]

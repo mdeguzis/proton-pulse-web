@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1384320",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 465.24.02",
+    "kernel": "5.11.16-xanmod1-1",
+    "notes": "Game runs perfectly considering my hardware and my kernel. Online is hard to test due to lack of players.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1619708221,
+    "title": "Grapple Tournament",
+    "source": "protondb"
+  },
+  {
+    "appId": "1384320",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 465.24.02",
+    "kernel": "5.11.16-xanmod1-1",
+    "notes": "Game crashes after one singleplayer round, Quickplay is inaccessible",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1620192604,
+    "title": "Grapple Tournament",
+    "source": "protondb"
+  }
+]

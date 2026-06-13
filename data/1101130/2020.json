@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1101130",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.1",
+    "kernel": "4.19.79-1-MANJARO",
+    "notes": "The game will run with Wine, but only after installing the proper fonts (or just all fonts) with Winetricks.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-11",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1578423711,
+    "title": "",
+    "source": "protondb"
+  }
+]

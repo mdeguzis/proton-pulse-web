@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "6120",
+    "cpu": "Intel Core i5-4310M @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.2.5 - kisak-mesa PPA",
+    "kernel": "5.11.0-38-generic",
+    "notes": "From my experience i reccomend proton over native",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1637065371,
+    "title": "Shank",
+    "source": "protondb"
+  }
+]

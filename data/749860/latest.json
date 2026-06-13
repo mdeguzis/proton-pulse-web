@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "749860",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-39-generic",
+    "notes": "Runs perfectly on Ubuntu",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1593372307,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "749860",
+    "cpu": "Intel Core i7-4510U @ 2.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce 840M",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.7.19-2-MANJARO",
+    "notes": "Runs out of the box, maybe playing a little with the version of proton will prove to be a better experience",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1601388957,
+    "title": "",
+    "source": "protondb"
+  }
+]

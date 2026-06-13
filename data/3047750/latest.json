@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3047750",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.1",
+    "kernel": "6.18.3-arch1-1",
+    "notes": "As soon as the game seems to start up, Unity's crash handler kicks in and the game crashes.\nOpening the EXE manually while wine was installed opened a black screen, music playing in the back ground.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1768056968,
+    "title": "",
+    "source": "protondb"
+  }
+]

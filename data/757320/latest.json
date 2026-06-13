@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "757320",
+    "cpu": "12th Gen Intel Core i9-12900HK",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.17.0-20-generic",
+    "notes": "Too many crashes",
+    "os": "Ubuntu 24.04.4 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1776625467,
+    "title": "",
+    "source": "protondb"
+  }
+]

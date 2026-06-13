@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1300100",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 16.0.6, DRM 3.49, 6.2.0-33-generic)",
+    "gpuDriver": "4.6 Mesa 23.1.7 (git-98d9d5f5a3)",
+    "kernel": "6.2.0-33-generic",
+    "notes": "Runs pretty much perfectly out of the box.",
+    "os": "Linux Mint 21.2 Cinnamon Version 5.8.4",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1710564044,
+    "title": "",
+    "source": "protondb"
+  }
+]

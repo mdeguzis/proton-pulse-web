@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1700870",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.6.22",
+    "notes": "Game runs fine",
+    "os": "NixOS 24.05 (Uakari)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1714230701,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1700870",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "5.15.0-112-generic",
+    "notes": "Works perfectly fine out of the box",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1719082546,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1700870",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.4-arch1.2",
+    "kernel": "6.9.10-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1722046604,
+    "title": "",
+    "source": "protondb"
+  }
+]

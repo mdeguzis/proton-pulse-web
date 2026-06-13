@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2082040",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.11-amd64",
+    "notes": "Borked :(",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1736093968,
+    "title": "",
+    "source": "protondb"
+  }
+]

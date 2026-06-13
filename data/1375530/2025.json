@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1375530",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 570.124.04",
+    "kernel": "6.13.5-arch1-1",
+    "notes": "Hangs at start cutscene (but it can be skipped)",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1741739601,
+    "title": "Exo One: Prologue",
+    "source": "protondb"
+  }
+]

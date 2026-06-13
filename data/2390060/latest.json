@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2390060",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (navi21, LLVM 16.0.6, DRM 3.52, 6.4.10-200.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.6",
+    "kernel": "6.4.10-200.fc38.x86_64",
+    "notes": "Looks like game is built on pnacl, a version of chrome native client. Is bork.",
+    "os": "Fedora release 38 (Thirty Eight)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1695332322,
+    "title": "",
+    "source": "protondb"
+  }
+]

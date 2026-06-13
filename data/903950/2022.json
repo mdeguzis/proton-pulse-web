@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "903950",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Starts but flashes anti-cheat program then black screen with white X",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1650071751,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "903950",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.9-zen1-1-zen",
+    "notes": "EAC won't allow starting of game, not playable",
+    "os": "Freedesktop.org 21.08.14 (Flatpak runtime)",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1657278758,
+    "title": "",
+    "source": "protondb"
+  }
+]

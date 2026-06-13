@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1213460",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.40.0, 5.12.15-arch1-1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.4",
+    "kernel": "5.12.15-arch1-1",
+    "notes": "Audio works, no video",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1628945191,
+    "title": "Deity Driving",
+    "source": "protondb"
+  }
+]

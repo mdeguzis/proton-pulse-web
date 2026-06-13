@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2796220",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.6, DRM 3.61, 6.12.63-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.1",
+    "kernel": "6.12.63-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768683193,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2796220",
+    "cpu": "Intel Core Ultra 9 185H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Arc (MTL)",
+    "gpuDriver": "4.6 Mesa 25.2.2 - kisak-mesa PPA",
+    "kernel": "6.14.0-37-generic",
+    "notes": "",
+    "os": "Ubuntu Core 24",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768817166,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2796220",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 21.1.5, DRM 3.64, 6.17.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.17.8-arch1-1",
+    "notes": "works perfectly",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1768860813,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "975370",
+    "cpu": "Intel Core i5-8350U @ 1.70GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.2",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1767844314,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "975370",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.57+deb13-amd64",
+    "notes": "game runs great, occasional instability aside",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1767995500,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "975370",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2050",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.9-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1772573411,
+    "title": "",
+    "source": "protondb"
+  }
+]

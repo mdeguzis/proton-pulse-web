@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1770400",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 14.0.0, DRM 3.48, 6.0.6-76060006-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "6.0.6-76060006-generic",
+    "notes": "So far, had 0 issues tranferring save from Windows to Pop. Plays just as expect it to.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1669324397,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2884210",
+    "cpu": "12th Gen Intel Core i7-1260P",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.6 (git-c659c7e660)",
+    "kernel": "6.8.8-300.fc40.x86_64",
+    "notes": "Runs flawlessly without any problems",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1715114547,
+    "title": "Anzeigen Simulator",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "408770",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.24-1-MANJARO",
+    "notes": "Run well on proton. The shame is that it was a native Linux game when I finish it on steam.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1588779426,
+    "title": "Highschool Possession",
+    "source": "protondb"
+  },
+  {
+    "appId": "408770",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.44-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1593138342,
+    "title": "Highschool Possession",
+    "source": "protondb"
+  }
+]

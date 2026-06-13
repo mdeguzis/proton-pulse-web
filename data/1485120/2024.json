@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1485120",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "5.15.0-91-generic",
+    "notes": "Game used to work, hopefully gets fixed when the issues with OpenXR and/or the plugins on Linux get fixed.",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1705248320,
+    "title": "",
+    "source": "protondb"
+  }
+]

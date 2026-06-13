@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2000950",
+    "cpu": "AMD Ryzen 5 4500 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.7-arch1-1",
+    "notes": "CoD warframe doesnt start.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1720463840,
+    "title": "",
+    "source": "protondb"
+  }
+]

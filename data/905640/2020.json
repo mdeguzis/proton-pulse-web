@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "905640",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce MX150",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.14-arch1-1",
+    "notes": "Cannot run because of anticheat.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-12",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1580029532,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "905640",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.3",
+    "kernel": "5.7.9-1-MANJARO",
+    "notes": "Game is borked.... idk why protondb says native",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1597718558,
+    "title": "",
+    "source": "protondb"
+  }
+]

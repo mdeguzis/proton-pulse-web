@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "501840",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.2 - kisak-mesa PPA",
+    "kernel": "5.4.0-39-generic",
+    "notes": "Only works with PROTON_NO_D3D11",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1594353131,
+    "title": "",
+    "source": "protondb"
+  }
+]

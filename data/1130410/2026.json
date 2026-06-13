@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1130410",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, LLVM 21.1.7, DRM 3.61, 6.12.76)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.12.76",
+    "notes": "",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1774386898,
+    "title": "",
+    "source": "protondb"
+  }
+]

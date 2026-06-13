@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1967750",
+    "cpu": "AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.4.0-122-generic",
+    "notes": "tried various proton versions - never ran",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1659575446,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1967750",
+    "cpu": "AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.4.0-122-generic",
+    "notes": "",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1660599956,
+    "title": "",
+    "source": "protondb"
+  }
+]

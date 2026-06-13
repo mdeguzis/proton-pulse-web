@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "619870",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.40.0, 5.10.2-2-MANJARO, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1",
+    "kernel": "5.10.2-2-MANJARO",
+    "notes": "there is some issues, but is playable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-13",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1616563636,
+    "title": "",
+    "source": "protondb"
+  }
+]

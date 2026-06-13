@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1059120",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD NAVY_FLOUNDER (DRM 3.40.0, 5.12.4-1-siduction-amd64, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.0",
+    "kernel": "5.12.4-1-siduction-amd64",
+    "notes": "Works flawlessly. I haven't noticed any problems running this",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1621272151,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1059120",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT",
+    "gpuDriver": "4.6 Mesa 20.2.4",
+    "kernel": "5.8.0-55-generic",
+    "notes": "Free very Short 15 minute game. Runs fine.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1623950775,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1059120",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.14.18-051418-lowlatency, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2 - kisak-mesa PPA",
+    "kernel": "5.14.18-051418-lowlatency",
+    "notes": "Works fine, but it is highly recommended to use a gamepad (I used Steam Controller).",
+    "os": "Linux Mint 20.2 (64 \u0431\u0438\u0442)",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1640908247,
+    "title": "",
+    "source": "protondb"
+  }
+]

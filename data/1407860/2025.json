@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1407860",
+    "cpu": "AMD FX-6350 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 745",
+    "gpuDriver": "NVIDIA 470.256.02",
+    "kernel": "6.8.0-58-generic",
+    "notes": "game wont open.",
+    "os": "Zorin OS 17.3",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1746206067,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1863030",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Mesa/X.org virgl (Mesa Intel Xe (TGL GT2))",
+    "gpuDriver": "4.5 Mesa 22.3.0-devel (git-d9f0fef91d)",
+    "kernel": "5.15.77-14367-g54a9eb3935aa",
+    "notes": "The game was unplayable, in game FPS were stuck to 2-3 (regardless of graphics settings)",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1673297254,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,532 @@
+/* ---- Index page specifics ---- */
+
+/* hero shell - the atom SVG lives absolutely positioned inside this */
+.welcome-header {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background:
+    radial-gradient(700px 320px at 70% 50%, rgba(102, 192, 244, 0.08), transparent 60%),
+    linear-gradient(180deg, var(--s2), var(--s1));
+  padding: 36px 32px 38px;
+  margin-bottom: 28px;
+  overflow: hidden;
+  /* sci-fi corner clip on top-right */
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
+}
+
+/* hairline accent inside the hero, top edge */
+.welcome-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent, var(--accent) 30%, var(--green-hi) 55%, var(--accent) 70%, transparent);
+  z-index: 2;
+}
+
+/* hero atom SVG layer: anchored right, opacity full so it actually shows up */
+.hero-atom {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* nucleus gets a soft heartbeat - same rhythm as the banner pulse */
+.hero-atom .hero-nucleus {
+  filter: drop-shadow(0 0 12px var(--accent-glow));
+  animation: hero-nucleus-pulse 2s ease-in-out infinite;
+  transform-origin: 0 0;
+}
+
+/* electrons cast a subtle trail glow */
+.hero-atom-group circle[fill^="url"] {
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+/* very slow ring counter-drift adds parallax depth without being noisy */
+.hero-atom .hero-ring-a { animation: hero-ring-drift-a 60s linear infinite; transform-origin: 0 0; }
+.hero-atom .hero-ring-b { animation: hero-ring-drift-b 80s linear infinite; transform-origin: 0 0; }
+.hero-atom .hero-ring-c { animation: hero-ring-drift-c 100s linear infinite; transform-origin: 0 0; }
+
+/* pulse waveform across the bottom of the hero, kept from the old design */
+.hero-atom .pulse-line {
+  stroke-dasharray: 80 800;
+  stroke-dashoffset: 0;
+  animation: hero-pulse-sweep 4.5s linear infinite;
+  filter: drop-shadow(0 0 4px var(--green-glow));
+}
+
+@keyframes hero-nucleus-pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.25); }
+}
+/* each ring keeps its inline rotation (0/60/-60) and adds a full 360 sweep
+   from-and-to that ends at the same visual angle, so the loop is seamless */
+@keyframes hero-ring-drift-a {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes hero-ring-drift-b {
+  from { transform: rotate(60deg); }
+  to   { transform: rotate(-300deg); }
+}
+@keyframes hero-ring-drift-c {
+  from { transform: rotate(-60deg); }
+  to   { transform: rotate(300deg); }
+}
+@keyframes hero-pulse-sweep { to { stroke-dashoffset: -880; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-atom .hero-nucleus,
+  .hero-atom .hero-ring-a,
+  .hero-atom .hero-ring-b,
+  .hero-atom .hero-ring-c,
+  .hero-atom .pulse-line { animation: none; }
+}
+
+/* hero content sits above the SVG */
+.welcome-header > *:not(.hero-atom) { position: relative; z-index: 1; }
+
+.welcome-header .eyebrow {
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+}
+
+.welcome-title {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--strong);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  /* the brand name gets a subtle gradient on the second word, but we keep it as one block for the H1 -
+     uses a span in index.html for the .pulse-word fragment */
+}
+.welcome-title .pulse-word {
+  background: linear-gradient(90deg, var(--accent-hi), var(--green-hi) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 24px var(--accent-glow);
+}
+
+.welcome-sub {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.65;
+  max-width: 640px;
+  opacity: 0.9;
+}
+
+/* community stats bar - mono numbers, hairline accent rule under each */
+.community-stats {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.cs-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 0 8px;
+  position: relative;
+  min-width: 120px;
+}
+.cs-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+.cs-num {
+  font-family: var(--mono);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent-hi);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-shadow: 0 0 18px var(--accent-glow);
+}
+.cs-label {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+/* primary CTA row - keeps first load focused on the two essential actions
+   (browse reports, get the plugin) plus a learn-more link to about.html */
+.welcome-cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin-bottom: 16px;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0b1622;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hi) 92%);
+  text-decoration: none;
+  transition: filter 0.15s, transform 0.05s, box-shadow 0.15s;
+  text-align: center;
+}
+.cta-btn:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+.cta-btn:active { transform: translateY(1px); }
+.cta-primary {
+  background: linear-gradient(90deg, var(--accent-hi), var(--green-hi) 80%);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+.cta-primary:hover { filter: brightness(1.06); }
+.welcome-learn-more {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.welcome-learn-more a { color: var(--accent); }
+
+/* Popular games on Steam: wide-card list (boxart | title + peak | rating).
+   Capped width so the rows read as a list, not a stretched banner. */
+.popular-games { margin-top: 38px; }
+.popular-games-sub {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+.pg-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pg-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px 8px 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s, transform 0.05s;
+}
+.pg-card:hover { border-color: var(--accent); }
+.pg-card:active { transform: translateY(1px); }
+.pg-thumb {
+  width: 92px;
+  height: 43px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.pg-info { flex: 1 1 auto; min-width: 0; }
+.pg-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--strong);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pg-sub {
+  font-size: 0.78rem;
+  color: #c8a050;
+  margin-top: 2px;
+  font-family: var(--mono);
+}
+.pg-badge {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--muted);
+}
+.pg-platinum { background: #b4c7dc; color: #0a0c10; }
+.pg-gold     { background: #c8a050; color: #111; }
+.pg-silver   { background: #8fa0b0; color: #111; }
+.pg-bronze   { background: #b07040; color: #fff; }
+.pg-borked   { background: #c85050; color: #fff; }
+
+/* quick-actions row removed - the topnav covers those links now */
+
+/* explore grid - explicit column count per breakpoint so rows are always uniform
+   3 across on desktop, 2 on tablet, 1 on mobile. cards stretch to equal height */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+@media (max-width: 1024px) {
+  .explore-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .explore-grid { grid-template-columns: 1fr; gap: 12px; }
+}
+.explore-item {
+  position: relative;
+  background: linear-gradient(180deg, var(--s2), var(--s1));
+  border: 1px solid var(--border);
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color .18s, transform .18s, box-shadow .18s, background .18s;
+  /* notched bottom-right corner for the sci-fi panel feel */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+}
+.explore-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.6;
+}
+.explore-item:hover {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, var(--s3), var(--s2));
+  box-shadow: 0 0 24px -8px var(--accent-glow);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.explore-item:hover::before {
+  opacity: 1;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+.explore-item .ei-title {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--strong);
+  letter-spacing: 0.01em;
+}
+.explore-item .ei-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.explore-item .ei-tag {
+  margin-top: auto;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  padding-top: 8px;
+}
+.explore-item .ei-tag::before { content: '> '; opacity: 0.6; }
+
+/* info blocks */
+.info-block {
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border2);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.info-block strong { color: var(--text); font-weight: 600; }
+.info-block a { color: var(--accent); }
+
+/* prose section */
+.prose {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 720px;
+}
+.prose p { margin-bottom: 14px; color: var(--text); }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { color: var(--strong); }
+.prose a { color: var(--accent); }
+.prose code {
+  font-size: 0.85em;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  padding: 1px 5px;
+}
+
+/* search (reuse app.html styles) */
+.search-wrap { position: relative; }
+.search-wrap input {
+  width: 100%;
+  padding: 9px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .12s;
+}
+.search-wrap input:focus { border-color: var(--accent); }
+.search-wrap input::placeholder { color: var(--muted); }
+.search-results {
+  position: fixed;
+  z-index: 9999;
+  background: var(--s1);
+  border: 1px solid var(--border2);
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+}
+.search-results.open { display: block; }
+.search-results a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  transition: background .1s;
+}
+.search-results a:last-child { border-bottom: none; }
+.search-results a:hover { background: var(--s2); text-decoration: none; }
+.search-results img { width: 108px; height: 40px; object-fit: cover; }
+.search-no-results { padding: 12px 10px; font-size: 13px; color: var(--muted); }
+
+/* spotlight callout - single high-impact differentiator card */
+.spotlight {
+  border: 1px solid var(--green);
+  border-left: 3px solid var(--green-hi);
+  background: linear-gradient(135deg, rgba(164, 208, 7, 0.07) 0%, var(--s1) 60%);
+  padding: 20px 22px;
+  margin-bottom: 28px;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+}
+.spotlight::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--green-hi), transparent 60%);
+}
+.spotlight-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--green-hi);
+  margin-bottom: 8px;
+}
+.spotlight-eyebrow::before { content: '> '; opacity: 0.6; }
+.spotlight-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--strong);
+  margin-bottom: 8px;
+}
+.spotlight-body {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.65;
+  max-width: 720px;
+}
+.spotlight-body strong { color: var(--green-hi); }
+
+/* site vs site comparison table */
+.vs-table-wrap {
+  margin-bottom: 40px;
+  overflow-x: auto;
+}
+.vs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.vs-table th,
+.vs-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+.vs-table thead th {
+  background: var(--s2);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--strong);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.vs-table thead th:first-child { color: var(--muted); }
+.vs-table thead th.col-us {
+  color: var(--accent-hi);
+  border-top: 2px solid var(--accent);
+}
+.vs-table tbody tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+.vs-table tbody tr:hover td { background: rgba(102,192,244,0.04); }
+.vs-table td:first-child {
+  color: var(--text);
+  font-weight: 500;
+}
+.vs-table td.cell-yes {
+  color: var(--green-hi);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.vs-table td.cell-no {
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+.vs-table td.cell-partial {
+  color: var(--gold);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+.vs-table td.cell-note {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+.vs-table .highlight-row td { border-left: 2px solid var(--green-hi); }
+
+/* responsive */
+@media (max-width: 600px) {
+  .welcome-title { font-size: 1.3rem; }
+  .explore-grid { grid-template-columns: 1fr; }
+  .quick-actions { flex-direction: column; }
+  .qa-link { justify-content: center; }
+}

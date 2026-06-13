@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "17530",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.9-arch1-1",
+    "notes": "The game is multiplayer-only, but none of the multiplayer functionalities work.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1657365216,
+    "title": "D.I.P.R.I.P. Warm Up",
+    "source": "protondb"
+  }
+]

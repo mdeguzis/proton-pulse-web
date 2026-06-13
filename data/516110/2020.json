@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "516110",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.5.0-5.1-liquorix-amd64",
+    "notes": "Everything seems to work fine except ingame videos.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1582638952,
+    "title": "ToeJam & Earl: Back in the Groove!",
+    "source": "protondb"
+  }
+]

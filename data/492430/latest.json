@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "492430",
+    "cpu": "AMD Ryzen 5 4600H with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD RENOIR (DRM 3.40.0, 5.10.0-8parrot1-amd64, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.0-8parrot1-amd64",
+    "notes": "current game is not supported by linux",
+    "os": "Parrot OS 4.11",
+    "protonVersion": "6.3-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1627756636,
+    "title": "",
+    "source": "protondb"
+  }
+]

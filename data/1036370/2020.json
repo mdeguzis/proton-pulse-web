@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1036370",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GT 630",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.0-2-amd64",
+    "notes": "Playable, but runs properly only in fullscreen.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1592680812,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1036370",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel UHD (Whiskey Lake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.8",
+    "kernel": "5.4.0-40-generic",
+    "notes": "Can't realize there is a terrible lag issue if not play in Windows or in Full-screen.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1594005007,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1244630",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.17.1-arch1-1",
+    "notes": "I just choose the Proton version and had intro cutscene and was ready to go.",
+    "os": "ArcoLinux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1650057485,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1244630",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.0-28-generic",
+    "notes": "I am getting the error from playway-launcher-installer: \n\"Installation has failed\"\n\"please re-run this installer as a normal user instead of \"run as administrator\" \"",
+    "os": "Zorin OS 15.1",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1660285987,
+    "title": "",
+    "source": "protondb"
+  }
+]

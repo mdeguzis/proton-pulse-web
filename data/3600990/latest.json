@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3600990",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.6-2-cachyos",
+    "notes": "Works",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773544085,
+    "title": "",
+    "source": "protondb"
+  }
+]

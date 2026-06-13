@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "327640",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "unreported",
+    "gpu": "AMD BARTS",
+    "gpuDriver": "3.1 Mesa 20.2.0-devel (git-cf21b76 2020-05-14 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-99-generic",
+    "notes": "Doesn't launch with Proton",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1589490181,
+    "title": "",
+    "source": "protondb"
+  }
+]

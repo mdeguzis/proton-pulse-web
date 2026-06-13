@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "635310",
+    "cpu": "AMD Phenom II X4 810",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.28-1-MANJARO",
+    "notes": "No loading",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1587096030,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "635310",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.39.0, 5.9.13-100.fc32.x86_64, LLVM 10.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.0-devel",
+    "kernel": "5.9.13-100.fc32.x86_64",
+    "notes": "haven't played it on windows, but i assume it runs exactly the same. literally nothing out of the ordinary",
+    "os": "Linux 5.x",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1608754364,
+    "title": "",
+    "source": "protondb"
+  }
+]

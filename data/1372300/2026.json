@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1372300",
+    "cpu": "NAME=\"Fedora Linux\"",
+    "duration": "oneToFourHours",
+    "gpu": "lsusb -t",
+    "gpuDriver": "Dev 001, Class=root_hub, Driver=xhci_hcd/10p, 480M",
+    "kernel": "+-00.2  Advanced Micro Devices, Inc. [AMD] Starship/Matisse IOMMU",
+    "notes": "",
+    "os": "lspci -tv",
+    "protonVersion": "10.0-3",
+    "ram": "wpctl status",
+    "rating": "platinum",
+    "timestamp": 1776890197,
+    "title": "Iwaihime",
+    "source": "protondb"
+  }
+]

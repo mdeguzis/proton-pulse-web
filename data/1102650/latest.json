@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1102650",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (ADL GT2) (NVIDIA RTX 3060)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1 (NVIDIA driver version 545.29.06)",
+    "kernel": "6.5.0-21-generic",
+    "notes": "Shows various non-interactive things (the studio, made with gamemaker, recommending user a gamepad, couple of others), then display disappears. Music is playing so it's still running, still shows up in the alt-tab task list, but selecting that task doesn't make it visible, and the keyboard focus is on the steam library window. Tried alt-enter after selecting that task, in hope of changing the windowing mode, but no luck.\nGot the exact same behavior with multiple proton versions, including immediately after a whole system reboot.",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1755052466,
+    "title": "",
+    "source": "protondb"
+  }
+]

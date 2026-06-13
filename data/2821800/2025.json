@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2821800",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.13.7-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.0.1-arch1.2",
+    "kernel": "6.13.7-zen1-1-zen",
+    "notes": "Avoid this developer.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1742081972,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2821800",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.7-3-cachyos",
+    "notes": "Worked perfectly",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "63 GB",
+    "rating": "platinum",
+    "timestamp": 1753373106,
+    "title": "",
+    "source": "protondb"
+  }
+]

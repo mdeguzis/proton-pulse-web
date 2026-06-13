@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1177430",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 440.48.02",
+    "kernel": "5.3.0-29-generic",
+    "notes": "Doesn't even launch.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "4.11-12",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1580223013,
+    "title": "",
+    "source": "protondb"
+  }
+]

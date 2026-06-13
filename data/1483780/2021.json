@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1483780",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Quadro M2000M",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Didn't notice any issues with Proton 5.0",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1617887681,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3230400",
+    "cpu": "11th Gen Intel Core i9-11900K @ 3.50GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Steam deck, Wine not supported",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771894452,
+    "title": "",
+    "source": "protondb"
+  }
+]

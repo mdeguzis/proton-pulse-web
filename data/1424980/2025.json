@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1424980",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 20.1.5, DRM 3.61, 6.14.6-106.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.1",
+    "kernel": "6.14.6-106.bazzite.fc42.x86_64",
+    "notes": "Works Fine",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1749990103,
+    "title": "",
+    "source": "protondb"
+  }
+]

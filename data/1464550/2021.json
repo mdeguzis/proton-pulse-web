@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1464550",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.4.0-84-generic",
+    "notes": "This worked out of the box as it were with just Proton Experimental",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1631641773,
+    "title": "RagingBlasters",
+    "source": "protondb"
+  },
+  {
+    "appId": "1464550",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel HD 3000 (SNB GT2)",
+    "gpuDriver": "3.0 Mesa 20.3.4",
+    "kernel": "5.10.0-7-amd64",
+    "notes": "Works fine",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "6.3-8",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1640200234,
+    "title": "RagingBlasters",
+    "source": "protondb"
+  }
+]

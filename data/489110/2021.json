@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "489110",
+    "cpu": "Intel Core2 Quad    Q6600  @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.13.0-21-generic",
+    "notes": "Works fine if force using a specific proton version",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1637872801,
+    "title": "",
+    "source": "protondb"
+  }
+]

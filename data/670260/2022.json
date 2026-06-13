@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "670260",
+    "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.18.10-76051810-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1659607305,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "670260",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 14.0.0, DRM 3.46, 5.18.13-200.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.1.4",
+    "kernel": "5.18.13-200.fc36.x86_64",
+    "notes": "So far it's running w/o any tweaks",
+    "os": "Fedora Linux 36 (KDE Plasma)",
+    "protonVersion": "7.0-3",
+    "ram": "64 GB",
+    "rating": "bronze",
+    "timestamp": 1660009477,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "670260",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.16.18-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1660512623,
+    "title": "",
+    "source": "protondb"
+  }
+]

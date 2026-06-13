@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "218090",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.64, 6.16.5-1-default)",
+    "gpuDriver": "4.6 Mesa 25.2.2",
+    "kernel": "6.16.5-1-default",
+    "notes": "I tried the native version as well as the Proton Experimental and older Proton versions. The game would not start with any of them.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1757604184,
+    "title": "Unity of Command: Stalingrad Campaign",
+    "source": "protondb"
+  }
+]

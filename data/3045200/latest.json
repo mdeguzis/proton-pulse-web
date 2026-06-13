@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3045200",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs flawlessly without any tinkering, though stick to fullscreen.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1759135511,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3045200",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 565.77 (proprietary)",
+    "kernel": "6.12.9-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1760219458,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3045200",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.10-300.fc43.x86_64",
+    "notes": "Works perfectly under Proton",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1765951507,
+    "title": "",
+    "source": "protondb"
+  }
+]

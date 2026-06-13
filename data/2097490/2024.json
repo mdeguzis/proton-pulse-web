@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2097490",
+    "cpu": "11th Gen Intel Core i5-11400F @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 555.58",
+    "kernel": "6.9.7-arch1-1",
+    "notes": "The game won't start with any version of proton, even with vulkan enabled.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1719766205,
+    "title": "",
+    "source": "protondb"
+  }
+]

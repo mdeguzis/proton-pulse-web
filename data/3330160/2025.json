@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3330160",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 21.1.4, DRM 3.64, 6.17.7-300.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.17.7-300.fc43.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1763839293,
+    "title": "Kingdom Ascension",
+    "source": "protondb"
+  }
+]

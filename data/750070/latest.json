@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "750070",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-45-generic",
+    "notes": "Launcher starts then shows error 'method or operation is not supported' when clicking the 'PLAY GAME' button",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1599357987,
+    "title": "",
+    "source": "protondb"
+  }
+]

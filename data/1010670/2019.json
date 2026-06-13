@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1010670",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Make sure the drivers are right, and it plays fine.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1572839584,
+    "title": "",
+    "source": "protondb"
+  }
+]

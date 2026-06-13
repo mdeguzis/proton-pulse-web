@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1331550",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "It just works, install, set community control layout, and start playing. Works perfectly on my Steam Deck and PC",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1755009149,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1331550",
+    "cpu": "13th Gen Intel Core i5-13600KF",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.63, 6.15.9-106.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.0",
+    "kernel": "6.15.9-106.bazzite.fc42.x86_64",
+    "notes": "Works great with Steam's automatic Steam Play selection.",
+    "os": "Bazzite (FROM Fedora Atomic)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1756122517,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1331550",
+    "cpu": "13th Gen Intel Core i7-13700H",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.16.10-200.fc42.x86_64",
+    "notes": "Proton 9.0-3 improved performance, but it was all decent from the start",
+    "os": "Fedora release 42 (Adams)",
+    "protonVersion": "9.0-3",
+    "ram": "30 GB",
+    "rating": "platinum",
+    "timestamp": 1760616870,
+    "title": "",
+    "source": "protondb"
+  }
+]

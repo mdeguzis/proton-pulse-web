@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1361700",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.9-200.fc38.x86_64",
+    "notes": "No issues under Proton Experimental.",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1699196112,
+    "title": "",
+    "source": "protondb"
+  }
+]

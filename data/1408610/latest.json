@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1408610",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.12+deb14-amd64",
+    "notes": "I attempted some of the tinkering mentioned in other reports (alternative proton versions incl GE, turning off volumetric fog) but when I attempt loading a map, the game hangs before rendering any 3d.",
+    "os": "Debian GNU/Linux forky/sid",
+    "protonVersion": "10.0-3",
+    "ram": "131 GB",
+    "rating": "borked",
+    "timestamp": 1772739052,
+    "title": "",
+    "source": "protondb"
+  }
+]

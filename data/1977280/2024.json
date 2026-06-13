@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1977280",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.2",
+    "kernel": "6.11.7-2-liquorix-amd64",
+    "notes": "",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1731458934,
+    "title": "",
+    "source": "protondb"
+  }
+]

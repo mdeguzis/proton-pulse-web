@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "597220",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.13-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1644478158,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "597220",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Fun game, ran smoothly.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1653934259,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "597220",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1663337289,
+    "title": "",
+    "source": "protondb"
+  }
+]

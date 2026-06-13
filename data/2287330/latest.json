@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2287330",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, navi32, LLVM 16.0.6, DRM 3.54, 6.5.9-200.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.0",
+    "kernel": "6.5.9-200.fsync.fc38.x86_64",
+    "notes": "Seems that the Steam version is fine... wish I wasn't DRM alergic and bought it there instead of GoG",
+    "os": "Nobara Linux 38 (Thirty Eight)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1737568930,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2287330",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, navi32, LLVM 16.0.6, DRM 3.54, 6.5.9-200.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.0",
+    "kernel": "6.5.9-200.fsync.fc38.x86_64",
+    "notes": "After an update (January)  I've finally been able to finish the first mission without any crash.",
+    "os": "Nobara Linux 38 (Thirty Eight)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1745139644,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2287330",
+    "cpu": "Intel Core Ultra 7 155H",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Arc (MTL)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.17.7-300.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1763447869,
+    "title": "",
+    "source": "protondb"
+  }
+]

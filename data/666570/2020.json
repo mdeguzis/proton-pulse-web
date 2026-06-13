@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "666570",
+    "cpu": "Intel Pentium G3258 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.64",
+    "kernel": "4.19.91-1-MANJARO",
+    "notes": "Starts but cannot be played",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1578144789,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "666570",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.6 Mesa 20.1.2",
+    "kernel": "5.7.7-967.native",
+    "notes": "You need to run glorious eggroll version for it to play (mpflat)",
+    "os": "Freedesktop.org 19.08.12 (Flatpak runtime)",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1594598954,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "666570",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 20.0.0-devel (git-9e440b8 2019-11-10 disco-oibaf-ppa)",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Works well after mf-install",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1602018079,
+    "title": "",
+    "source": "protondb"
+  }
+]

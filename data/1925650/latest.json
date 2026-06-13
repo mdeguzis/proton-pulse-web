@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1925650",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 17.0.6, DRM 3.57, 6.8.7-201.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.0-rc1",
+    "kernel": "6.8.7-201.fsync.fc39.x86_64",
+    "notes": "Super early Alpha test, just dropping this to let folks know that it will at least run on Linux",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1762568385,
+    "title": "Stars Reach",
+    "source": "protondb"
+  }
+]

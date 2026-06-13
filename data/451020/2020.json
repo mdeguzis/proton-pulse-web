@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "451020",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.152.00",
+    "kernel": "4.19.0-11-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1602500919,
+    "title": "",
+    "source": "protondb"
+  }
+]

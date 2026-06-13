@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "542930",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon R7 300",
+    "gpuDriver": "4.6 Mesa 20.2.1",
+    "kernel": "5.9.1-1-MANJARO",
+    "notes": "Doesn't work",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1603594957,
+    "title": "",
+    "source": "protondb"
+  }
+]

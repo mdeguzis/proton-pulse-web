@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1639430",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.10-1-cachyos",
+    "notes": "L\u00e4uft ohne Probleme mit bei Steam voreingestelltem Proton Experimental",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1775824083,
+    "title": "",
+    "source": "protondb"
+  }
+]

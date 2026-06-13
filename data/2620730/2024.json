@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2620730",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "a good game without any big issues",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1724700514,
+    "title": "DEVIATOR",
+    "source": "protondb"
+  },
+  {
+    "appId": "2620730",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 18.1.6, DRM 3.57, 6.9.12-205.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.7",
+    "kernel": "6.9.12-205.fsync.fc40.x86_64",
+    "notes": "tried this game a few days ago, couldn't make it past the title before unity crashed. Worked after tweaking",
+    "os": "Bazzite 40 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1727648889,
+    "title": "DEVIATOR",
+    "source": "protondb"
+  }
+]

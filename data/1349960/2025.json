@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1349960",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-300.fc43.x86_64",
+    "notes": "Probably an NVIDIA issue if the other users with AMD cards can play it.",
+    "os": "Fedora Linux 43 (Forty Three)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1766819081,
+    "title": "",
+    "source": "protondb"
+  }
+]

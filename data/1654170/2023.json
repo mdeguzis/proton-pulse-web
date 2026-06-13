@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1654170",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.7, DRM 3.49, 6.2.10-273-tkg-bore)",
+    "gpuDriver": "4.6 Mesa 23.0.1",
+    "kernel": "6.2.10-273-tkg-bore",
+    "notes": "Works ouf of the box, using Valve Index.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1684826673,
+    "title": "",
+    "source": "protondb"
+  }
+]

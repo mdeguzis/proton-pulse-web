@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2287520",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.5.0-35-generic",
+    "notes": "The game runs fine, I don't think that command did anything I think mostly the GE verion of Proton I'm running. Never Notice slow loading",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1716848088,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2287520",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "The game runs extremely well right from download, no tweaking needed as of the June 20th Flatscreen Update.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1718905232,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2287520",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "No massive issues.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1731772055,
+    "title": "",
+    "source": "protondb"
+  }
+]

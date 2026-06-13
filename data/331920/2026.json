@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "331920",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 15.0.7, DRM 3.57, 6.9.3-76060903-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Native linux build works out of the box. Patching the game is recommended.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772602093,
+    "title": "",
+    "source": "protondb"
+  }
+]

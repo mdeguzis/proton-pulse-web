@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2357150",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.64, 6.16.8-zen3-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.16.8-zen3-1-zen",
+    "notes": "Works perfectly without any tinkering.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1759388334,
+    "title": "Blondes",
+    "source": "protondb"
+  }
+]

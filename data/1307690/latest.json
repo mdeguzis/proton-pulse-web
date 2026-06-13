@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1307690",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Game works as expected!",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1673133799,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1307690",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 16.0.6, DRM 3.52, 6.3.0-1-amd64)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1",
+    "kernel": "6.3.0-1-amd64",
+    "notes": "works out of the box",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1700565117,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1307690",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.2.0-32-generic",
+    "notes": "All good, worked as-is, and works with controller too",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1703598141,
+    "title": "",
+    "source": "protondb"
+  }
+]

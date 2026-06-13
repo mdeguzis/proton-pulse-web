@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1524690",
+    "cpu": "Intel Core i5-6500T @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.4",
+    "kernel": "5.18.13-200.fc36.x86_64",
+    "notes": "flawless",
+    "os": "Fedora Linux 36.20220731.0 (Silverblue)",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1660725023,
+    "title": "",
+    "source": "protondb"
+  }
+]

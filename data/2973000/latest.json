@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2973000",
+    "cpu": "AMD Ryzen 7 7435HS",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.13.9-103.bazzite.fc42.x86_64",
+    "notes": "",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1744856780,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "556130",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.16.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.1-arch1.1",
+    "kernel": "6.16.3-arch1-1",
+    "notes": "Game runs fine although native version didn't detect the controller but Proton version did.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1756459137,
+    "title": "",
+    "source": "protondb"
+  }
+]

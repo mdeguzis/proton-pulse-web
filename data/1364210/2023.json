@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1364210",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 590 (polaris10, LLVM 15.0.7, DRM 3.49, 6.2.11-300.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.2 (git-4d5e73870e)",
+    "kernel": "6.2.11-300.fc38.x86_64",
+    "notes": "Just works out of the box with recommended compatibility settings.",
+    "os": "Fedora 38 Silverblue (Flatpak runtime)",
+    "protonVersion": "8.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1682162054,
+    "title": "",
+    "source": "protondb"
+  }
+]

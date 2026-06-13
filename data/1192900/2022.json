@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1192900",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 525.60.13",
+    "kernel": "6.0.0-5-amd64",
+    "notes": "Unity mainwindow launches and immediately hangs with a black screen. Meanwhile VR HMD is stuck on the SteamVR loading screen. Tried on standard and experimental proton, main and beta branches of game",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1672408810,
+    "title": "",
+    "source": "protondb"
+  }
+]

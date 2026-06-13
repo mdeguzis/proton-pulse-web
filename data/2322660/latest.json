@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2322660",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.7, DRM 3.61, 6.14.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.0-arch1.1",
+    "kernel": "6.14.5-arch1-1",
+    "notes": "works just great :)",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1746888578,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2322660",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.14.5-arch1-1",
+    "notes": "Works Great",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1747165215,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2322660",
+    "cpu": "Intel Core i3-9100F @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 550 / 550 (radeonsi, polaris12, LLVM 17.0.6, DRM 3.57, 6.8.0-19-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.2",
+    "kernel": "6.8.0-19-generic",
+    "notes": "funciona com poblema na janelas que s\u00e3o resolvidos facil mente",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1762140278,
+    "title": "",
+    "source": "protondb"
+  }
+]

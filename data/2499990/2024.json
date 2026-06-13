@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2499990",
+    "cpu": "Intel Core i5-4200U @ 1.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.3 (git-0c49f54c76)",
+    "kernel": "6.9.8-amd64",
+    "notes": "The game runs perfectly, I had not the oportunity to try it online due to how niche the game is, local VS training and arcade works",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1725038186,
+    "title": "",
+    "source": "protondb"
+  }
+]

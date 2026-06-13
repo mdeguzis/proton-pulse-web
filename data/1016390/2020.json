@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1016390",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.0-devel (git-dcba773 2019-12-28 bionic-oibaf-ppa)",
+    "kernel": "5.4.6-050406-lowlatency",
+    "notes": "Problem with the game crash when you turn on the controllers. Everything else is fine.",
+    "os": "Linux Mint 19.3 Tricia (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1577992129,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1368030",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.4.80-2-MANJARO",
+    "notes": "Game crashes at the end of the loading screen after selecting \"New Game\"",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1607707856,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1368030",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.4.80-2-MANJARO",
+    "notes": "Demo runs flawlessly with negligible performance drops",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1607708511,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1368030",
+    "cpu": "Intel Core i5-4690T @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 5500 XT",
+    "gpuDriver": "4.6 Mesa 20.2.3",
+    "kernel": "5.9.11-3-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-4",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1607826156,
+    "title": "",
+    "source": "protondb"
+  }
+]

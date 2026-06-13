@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "258890",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Works after forcing Proton",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1726245025,
+    "title": "",
+    "source": "protondb"
+  }
+]

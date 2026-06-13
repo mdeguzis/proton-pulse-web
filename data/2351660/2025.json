@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2351660",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX Vega (radeonsi, vega10, LLVM 15.0.7, DRM 3.57, 6.9.3-76060903-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Downloaded, started and played just as it would on Windows i guess.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1736013152,
+    "title": "Mindbug Online",
+    "source": "protondb"
+  }
+]

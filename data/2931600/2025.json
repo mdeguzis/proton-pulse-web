@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2931600",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.10-76061203-generic",
+    "notes": "Experimental/Hotfix does not load.  Works in Proton 9.0-4",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1742623155,
+    "title": "",
+    "source": "protondb"
+  }
+]

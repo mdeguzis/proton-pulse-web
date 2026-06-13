@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "907650",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.64, 6.17.0-12-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.2 - kisak-mesa PPA",
+    "kernel": "6.17.0-12-generic",
+    "notes": "22 fps on both low and ultra settings for this hardware",
+    "os": "Ubuntu Core 24",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1770310551,
+    "title": "",
+    "source": "protondb"
+  }
+]

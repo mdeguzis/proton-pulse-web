@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1077450",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 15.0.7, DRM 3.54, 6.6.7-x64v3-xanmod1)",
+    "gpuDriver": "4.6 Mesa 23.3.1 - kisak-mesa PPA",
+    "kernel": "6.6.7-x64v3-xanmod1",
+    "notes": "Besides strange controller behaviour, no issues",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1704759970,
+    "title": "",
+    "source": "protondb"
+  }
+]

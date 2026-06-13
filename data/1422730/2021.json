@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1422730",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.8.0-40-generic",
+    "notes": "Not running",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1611404821,
+    "title": "",
+    "source": "protondb"
+  }
+]

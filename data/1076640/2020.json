@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1076640",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-88-generic",
+    "notes": "Works out of the box",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-5",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1585041620,
+    "title": "",
+    "source": "protondb"
+  }
+]

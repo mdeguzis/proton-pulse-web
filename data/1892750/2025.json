@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1892750",
+    "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.11.0-108013-tuxedo",
+    "notes": "Starts to load and briefly displays the initial screen then crashes",
+    "os": "TUXEDO OS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1761815176,
+    "title": "",
+    "source": "protondb"
+  }
+]

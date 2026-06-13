@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "442890",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.2",
+    "kernel": "5.3.7-301.fc31.x86_64",
+    "notes": "Flawless",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "4.11-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1573475720,
+    "title": "",
+    "source": "protondb"
+  }
+]

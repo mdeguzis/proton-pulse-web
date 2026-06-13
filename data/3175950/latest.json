@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3175950",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5500 XT (radeonsi, navi14, LLVM 20.1.6, DRM 3.54, 6.6.100-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.1.6-arch1.1",
+    "kernel": "6.6.100-1-MANJARO",
+    "notes": "It just works.",
+    "os": "BigCommunity",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1759343057,
+    "title": "",
+    "source": "protondb"
+  }
+]

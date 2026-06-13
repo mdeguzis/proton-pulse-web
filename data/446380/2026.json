@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "446380",
+    "cpu": "AMD Ryzen 3 3300U with Radeon Vega Mobile Gfx",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon Vega 6 (radeonsi, raven, ACO, DRM 3.64, 6.18.13-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch1.1",
+    "kernel": "6.18.13-arch1-1",
+    "notes": "There are just a few minor bugs that don't really affect the gameplay; it runs perfectly.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "14 GB",
+    "rating": "silver",
+    "timestamp": 1773730455,
+    "title": "",
+    "source": "protondb"
+  }
+]

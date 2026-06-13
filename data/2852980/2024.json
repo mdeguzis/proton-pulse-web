@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2852980",
+    "cpu": "Intel Core Ultra 9 185H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Arc (MTL)",
+    "gpuDriver": "4.6 Mesa 24.2.1",
+    "kernel": "6.10.6-xanmod1",
+    "notes": "Beside the 2-3 images that aren't being displayed on the tutorial, it has text telling you how to play tho, it is 100% playable.",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1725530215,
+    "title": "Necroking",
+    "source": "protondb"
+  },
+  {
+    "appId": "2852980",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1726034458,
+    "title": "Necroking",
+    "source": "protondb"
+  },
+  {
+    "appId": "2852980",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1734309888,
+    "title": "Necroking",
+    "source": "protondb"
+  }
+]

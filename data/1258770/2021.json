@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1258770",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.0",
+    "notes": "Black screen on launch.",
+    "os": "NixOS 21.11 (Porcupine)",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1636954568,
+    "title": "",
+    "source": "protondb"
+  }
+]

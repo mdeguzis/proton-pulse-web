@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2908050",
+    "cpu": "AMD Ryzen 5 8500G w/ Radeon 740M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Arc A310 (DG2)",
+    "gpuDriver": "4.6 Mesa 25.2.1-arch1.5",
+    "kernel": "6.16.4-arch1-1",
+    "notes": "This is definitely a good experience, I'd say a solid gold. Fully completed game on one go.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "80 GB",
+    "rating": "silver",
+    "timestamp": 1757027864,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2908050",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs flawlessly, had to close and reopen once after first run",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1761008840,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2908050",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1767131899,
+    "title": "",
+    "source": "protondb"
+  }
+]

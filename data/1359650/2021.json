@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1359650",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.16-200.fc33.x86_64",
+    "notes": "",
+    "os": "Fedora release 33 (Thirty Three)",
+    "protonVersion": "5.13-4",
+    "ram": "10 GB",
+    "rating": "gold",
+    "timestamp": 1610200046,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1359650",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.38-gentoo-x86_64",
+    "notes": "Works good enough so you can get the achievements",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "6.3-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1620752410,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1359650",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 560 (polaris11, LLVM 13.0.0, DRM 3.41, 5.13.0-22-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-b05d228 2021-12-15 impish-oibaf-ppa)",
+    "kernel": "5.13.0-22-generic",
+    "notes": "",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1639671305,
+    "title": "",
+    "source": "protondb"
+  }
+]

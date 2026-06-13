@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "708430",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.16.8-zen1-2-zen",
+    "notes": "Black screen with 2 white lines near the top",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1644982380,
+    "title": "Kamikaze Cube",
+    "source": "protondb"
+  }
+]

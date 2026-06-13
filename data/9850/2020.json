@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "9850",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.6.2-arch1-2",
+    "notes": "With Proton 5.0.5 the game didn't start. Switched to 4.11-13 and all worked fine out of the box.",
+    "os": "ArcoLinuxB-plasma",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1586295073,
+    "title": "Codename: Panzers - Cold War",
+    "source": "protondb"
+  }
+]

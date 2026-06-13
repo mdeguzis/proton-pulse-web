@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1341280",
+    "cpu": "AMD Ryzen 7 7735HS with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (rembrandt, LLVM 16.0.0, DRM 3.49, 6.2.12-300.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.2.12-300.fc38.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 38 (Workstation Edition) (64\u00a0bits)",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1698230127,
+    "title": "",
+    "source": "protondb"
+  }
+]

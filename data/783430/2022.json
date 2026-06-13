@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "783430",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 515.43.04",
+    "kernel": "5.17.9-arch1-1",
+    "notes": "Runs perfectly with Proton",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1653194499,
+    "title": "",
+    "source": "protondb"
+  }
+]

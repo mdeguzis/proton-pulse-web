@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1333350",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 20.1.8, DRM 3.64, 6.16.7-2-cachyos-deckify)",
+    "gpuDriver": "4.6 Mesa 25.2.2-cachyos1.3",
+    "kernel": "6.16.7-2-cachyos-deckify",
+    "notes": "nice for awhile",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1769648218,
+    "title": "",
+    "source": "protondb"
+  }
+]

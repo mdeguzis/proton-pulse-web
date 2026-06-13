@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "739190",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.12-100.fc39.x86_64",
+    "notes": "Native version is borked, Proton works perfectly",
+    "os": "Fedora release 39 (Thirty Nine)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1722888801,
+    "title": "",
+    "source": "protondb"
+  }
+]

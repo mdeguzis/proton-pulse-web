@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "360830",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 (radeonsi, navi22, LLVM 21.1.6, DRM 3.64, 6.18.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.2",
+    "kernel": "6.18.4-arch1-1",
+    "notes": "Works fine",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1770472036,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "360830",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.8-arch2-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1770768096,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "360830",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.9-200.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1770928130,
+    "title": "",
+    "source": "protondb"
+  }
+]

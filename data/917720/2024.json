@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "917720",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 18.1.8, DRM 3.54, 6.6.59)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel",
+    "kernel": "6.6.59",
+    "notes": "",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-3",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1731510718,
+    "title": "",
+    "source": "protondb"
+  }
+]

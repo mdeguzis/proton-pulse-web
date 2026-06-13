@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "349730",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1674977165,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "349730",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 515.86.01",
+    "kernel": "5.19.0-35-generic",
+    "notes": "Just works",
+    "os": "Ubuntu 22.10",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1679424651,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "349730",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon Vega 8 (raven, LLVM 15.0.7, DRM 3.49, 6.2.0-23-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.2.0-23-generic",
+    "notes": "Given random chance to have the gameplay freeze at the very end of tense combat encounter, it can be a VERY frustrating experience.",
+    "os": "Ubuntu 23.04",
+    "protonVersion": "8.0-2",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1687191758,
+    "title": "",
+    "source": "protondb"
+  }
+]

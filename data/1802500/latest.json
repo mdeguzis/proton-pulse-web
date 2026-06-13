@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1802500",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.5-arch1-1",
+    "notes": "This likely needs some tinkering, not for the noobs!",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1713240495,
+    "title": "",
+    "source": "protondb"
+  }
+]

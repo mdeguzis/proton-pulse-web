@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1284130",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 535.288.01",
+    "kernel": "6.17.0-14-generic",
+    "notes": "I needed to chage it to proton 9.0.4 to make it barely work.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1772502790,
+    "title": "",
+    "source": "protondb"
+  }
+]

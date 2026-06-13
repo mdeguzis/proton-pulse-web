@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2582560",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Don't bother, they don't want your money apparently.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1738393502,
+    "title": "",
+    "source": "protondb"
+  }
+]

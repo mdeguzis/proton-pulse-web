@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1417010",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-7642-generic",
+    "notes": "IJW It Just Works",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1600827650,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1417010",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-53-generic",
+    "notes": "Won't launch. Works with WINE",
+    "os": "Kubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1606052209,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1417010",
+    "cpu": "Intel Core i5-4200U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 20.2.2",
+    "kernel": "5.9.8-arch1-1",
+    "notes": "Runs with seemingly no issues.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1609136310,
+    "title": "",
+    "source": "protondb"
+  }
+]

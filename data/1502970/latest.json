@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1502970",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.64, 6.16.8-zen3-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.16.8-zen3-1-zen",
+    "notes": "Needs a little tinkering for a perfect experiance.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1759303947,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1502970",
+    "cpu": "12th Gen Intel Core i5-12600KF",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.1-2-cachyos",
+    "notes": "Runs smooth.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1760382847,
+    "title": "",
+    "source": "protondb"
+  }
+]

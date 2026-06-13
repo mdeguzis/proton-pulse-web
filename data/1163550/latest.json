@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1163550",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Para quem gosta de jogos de futebol e tamb\u00e9m gosta do Anime do Tsubasa, \u00e9 uma boa pedida.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1740085618,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1163550",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 18.1.8, DRM 3.54, 6.6.62-gentoo-dist)",
+    "gpuDriver": "4.6 Mesa 24.2.8",
+    "kernel": "6.6.62-gentoo-dist",
+    "notes": "Other than the known workaround, works pretty well. Multiplayer not tested.",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1746288871,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1163550",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.17.7-ba20.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "%$s1 MB",
+    "rating": "platinum",
+    "timestamp": 1766275587,
+    "title": "",
+    "source": "protondb"
+  }
+]

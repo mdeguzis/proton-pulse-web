@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1324780",
+    "cpu": "Intel Core i3-3220 @ 3.30GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GT 710",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-25-generic",
+    "notes": "No issues other than those present on Windows.",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1627530439,
+    "title": "",
+    "source": "protondb"
+  }
+]

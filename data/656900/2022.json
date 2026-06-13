@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "656900",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.3",
+    "kernel": "5.15.12-1-default",
+    "notes": "Game displays main menu but does not respond to input afterwards",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-8",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1644289944,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "656900",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.3",
+    "kernel": "5.15.12-1-default",
+    "notes": "Maybe? If you're willing to drop your screen resolution down to 800x600",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-8",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1644337655,
+    "title": "",
+    "source": "protondb"
+  }
+]

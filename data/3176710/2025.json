@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3176710",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.40.0, 5.10.61-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.10.61-1-MANJARO",
+    "notes": "not really that great without the top part of the monitor blacked out, but it does work if you wanna leave it up while afk",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1738985105,
+    "title": "",
+    "source": "protondb"
+  }
+]

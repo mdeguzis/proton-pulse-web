@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2384920",
+    "cpu": "AMD Ryzen 7 6800H with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, rembrandt, LLVM 17.0.6, DRM 3.57, 6.8.9-arch1-2)",
+    "gpuDriver": "4.6 Mesa 24.0.7-arch1.3",
+    "kernel": "6.8.9-arch1-2",
+    "notes": "\u5de5\u4f5c\u7684\u5f88\u597d\uff0c\u6ca1\u6709\u9047\u5230\u8fc7\u5d29\u6e83",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1715821477,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "948830",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.0-7.1-liquorix-amd64",
+    "notes": "worked great with default settings",
+    "os": "Ubuntu 22.04.1 LTS (64 \u4f4d\u5143)",
+    "protonVersion": "7.0-4",
+    "ram": "18 GB",
+    "rating": "gold",
+    "timestamp": 1664469640,
+    "title": "",
+    "source": "protondb"
+  }
+]

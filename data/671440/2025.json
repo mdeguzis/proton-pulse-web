@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "671440",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.15.2-2-cachyos",
+    "notes": "Runs just like on Windows",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1750262913,
+    "title": "Rise of Industry",
+    "source": "protondb"
+  }
+]

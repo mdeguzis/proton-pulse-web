@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1179680",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-7633-generic",
+    "notes": "FPS is very choppy and intermittent",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1631556162,
+    "title": "",
+    "source": "protondb"
+  }
+]

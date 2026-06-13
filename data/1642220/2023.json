@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1642220",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "5.15.131-1-MANJARO",
+    "notes": "Works using Proton (Experimental)",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1697547288,
+    "title": "",
+    "source": "protondb"
+  }
+]

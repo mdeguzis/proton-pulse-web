@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1700870",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.61, 6.12.20-amd64)",
+    "gpuDriver": "4.6 Mesa 25.0.2-1",
+    "kernel": "6.12.20-amd64",
+    "notes": "Seems to work fine, but crashes ruin the experience.",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1743085451,
+    "title": "",
+    "source": "protondb"
+  }
+]

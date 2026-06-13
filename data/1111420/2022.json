@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1111420",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (DIMGREY_CAVEFISH, DRM 3.42.0, 5.15.0-3-amd64, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-3-amd64",
+    "notes": "After tinkering the launch options, this starts and runs very well",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1644032525,
+    "title": "",
+    "source": "protondb"
+  }
+]

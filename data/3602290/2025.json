@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3602290",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.11.6-300.fc41.x86_64",
+    "notes": "- Audio is working\n- Cursor is drawn\n- Events seem to register, at least hovering events according to audio cues\n- Graphics do not display\n\nTried also with experimental, to no avail.\n\nPS : I'm on Fedora 43 (not 41)",
+    "os": "Fedora Linux 41 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1763576759,
+    "title": "",
+    "source": "protondb"
+  }
+]

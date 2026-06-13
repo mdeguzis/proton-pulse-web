@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "572740",
+    "cpu": "11th Gen Intel Core i7-11850H @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 25.1.7",
+    "kernel": "6.16.7-200.fc42.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1757703664,
+    "title": "Nancy Drew\u00ae: The Secret of Shadow Ranch",
+    "source": "protondb"
+  },
+  {
+    "appId": "572740",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-34-generic",
+    "notes": "",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1762108920,
+    "title": "Nancy Drew\u00ae: The Secret of Shadow Ranch",
+    "source": "protondb"
+  }
+]

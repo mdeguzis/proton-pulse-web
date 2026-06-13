@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "661130",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.2 - kisak-mesa PPA",
+    "kernel": "5.9.10-xanmod1",
+    "notes": "Works out of the box. This was tested using \"Proton-5.21-GE-1\".",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1606161446,
+    "title": "",
+    "source": "protondb"
+  }
+]

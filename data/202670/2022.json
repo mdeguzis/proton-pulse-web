@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "202670",
+    "cpu": "Intel Core i5-4300M @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.0.3",
+    "kernel": "5.4.0-96-generic",
+    "notes": "Black screen when starting the game.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-8",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1643199591,
+    "title": "Nancy Drew\u00ae: Alibi in Ashes",
+    "source": "protondb"
+  },
+  {
+    "appId": "202670",
+    "cpu": "Intel Core i5-4300M @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.0.3",
+    "kernel": "5.4.0-96-generic",
+    "notes": "Black screen at startup",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-8",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1643200288,
+    "title": "Nancy Drew\u00ae: Alibi in Ashes",
+    "source": "protondb"
+  },
+  {
+    "appId": "202670",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.2-2-MANJARO",
+    "notes": "black unresponsive screen",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1646580348,
+    "title": "Nancy Drew\u00ae: Alibi in Ashes",
+    "source": "protondb"
+  }
+]

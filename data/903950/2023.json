@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "903950",
+    "cpu": "Intel Core i7-5775C @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.15.46-1-MANJARO",
+    "notes": "No playable, I tried different Proton Versions",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1680716641,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "903950",
+    "cpu": "Intel Core i7-5775C @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.4-artix1-1",
+    "notes": "Yeah, I guess the problem is related to EAC. I just wanted to give a little update for you all.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1703929040,
+    "title": "",
+    "source": "protondb"
+  }
+]

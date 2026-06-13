@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "239800",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Runs out of the box NATIVE",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1598372504,
+    "title": "Bleed",
+    "source": "protondb"
+  },
+  {
+    "appId": "239800",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Native Linux game",
+    "os": "Ubuntu 20.04.1 LTS (64\u00a0bits)",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1609004233,
+    "title": "Bleed",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "903950",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.22-1-MANJARO",
+    "notes": "EasyAntiCheat",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1585270312,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "903950",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.3.5",
+    "kernel": "5.6.0-1-MANJARO",
+    "notes": "Starts up, but immediately crashes because of EAC",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1585647086,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "903950",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "4.15.0-126-generic",
+    "notes": "Not playable - Easy Anti Cheat Problem",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1607887681,
+    "title": "",
+    "source": "protondb"
+  }
+]

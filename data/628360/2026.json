@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "628360",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.17.12-300.fc43.x86_64",
+    "notes": "Needs an older version of Proton to avoid slowdown and input delay, 6.3-8 works fine",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1767564668,
+    "title": "",
+    "source": "protondb"
+  }
+]

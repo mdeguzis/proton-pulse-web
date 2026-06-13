@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "491540",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, gfx1201, ACO, DRM 3.61, 6.13.7-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.0.1-arch1.2",
+    "kernel": "6.13.7-2-cachyos",
+    "notes": "Works without problems",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1742117301,
+    "title": "",
+    "source": "protondb"
+  }
+]

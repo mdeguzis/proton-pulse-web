@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "893050",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "Mesa/X.org llvmpipe (LLVM 15.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 22.2.5",
+    "kernel": "5.15.0-69-generic",
+    "notes": "Tried using Proton experimental, GE7 48 and 49, and a few earlier versions, none of which were able to launch the game.",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1681257365,
+    "title": "",
+    "source": "protondb"
+  }
+]

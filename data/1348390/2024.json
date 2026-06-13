@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1348390",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 16.0.6, DRM 3.49, 6.1.63)",
+    "gpuDriver": "4.6 Mesa 23.1.9",
+    "kernel": "6.1.63",
+    "notes": "It's playable with an older Proton version, but the experience is far from smooth and nice due to heavy stutters",
+    "os": "NixOS 24.05 (Uakari)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1727298687,
+    "title": "",
+    "source": "protondb"
+  }
+]

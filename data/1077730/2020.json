@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1077730",
+    "cpu": "Intel Core i5-4300M @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 730M",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-40-generic",
+    "notes": "After starting the game short sound plays and a large white window appears. Then nothing happens.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1594250666,
+    "title": "",
+    "source": "protondb"
+  }
+]

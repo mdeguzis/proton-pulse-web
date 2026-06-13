@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "906510",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 560 (polaris11, LLVM 13.0.1, DRM 3.44, 5.17.1-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 22.0.0",
+    "kernel": "5.17.1-zen1-1-zen",
+    "notes": "Doesn't work",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1648907408,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "906510",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Fails when you try to launch. You can open the config launcher, but doesn't help. Tried both Steam Recommended Proton and Experimental",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1650389514,
+    "title": "",
+    "source": "protondb"
+  }
+]

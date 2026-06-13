@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2091960",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "6.2.6-arch1-1",
+    "notes": "It seems to work but only on the Desktop, witch is useless for a VR Title.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1679332262,
+    "title": "The Utility Room",
+    "source": "protondb"
+  }
+]

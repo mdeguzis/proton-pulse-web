@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1137320",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve21.3-1-neptune)",
+    "gpuDriver": "4.6 Mesa 22.0.2 (git-71648faf15)",
+    "kernel": "5.13.0-valve21.3-1-neptune",
+    "notes": "Slight Issues, but overall playable",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1668462842,
+    "title": "",
+    "source": "protondb"
+  }
+]

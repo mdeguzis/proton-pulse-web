@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3598340",
+    "cpu": "Intel Core i7-10510U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-63-generic",
+    "notes": "The installation is ok, but I tried to open it with Proton 8.0-5 and 9.0-4 and both show the same window error, just say: Fatal! EU *something (i don't remember)* crashed...\n\nI didn't complicate with it and I desinstalled it.\n\nI'm sorry if my explanation is very superficial, I'm not a professional on the subject.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1752371253,
+    "title": "",
+    "source": "protondb"
+  }
+]

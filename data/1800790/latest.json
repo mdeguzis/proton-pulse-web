@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1800790",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.42.0, 5.15.23-gentoo-dist, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.8",
+    "kernel": "5.15.23-gentoo-dist",
+    "notes": "",
+    "os": "Gentoo/Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1675354588,
+    "title": "",
+    "source": "protondb"
+  }
+]

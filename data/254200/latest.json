@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "254200",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.7, DRM 3.61, 6.12.65)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.12.65",
+    "notes": "",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1775604854,
+    "title": "",
+    "source": "protondb"
+  }
+]

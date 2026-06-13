@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2070550",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.7.6-arch1-1",
+    "notes": "Finished game without issues",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1709917976,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2070550",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.54, 6.6.13-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.3",
+    "kernel": "6.6.13-200.fc39.x86_64",
+    "notes": "Works perfectly",
+    "os": "Fedora release 39 (Thirty Nine)",
+    "protonVersion": "9.0-1",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1717282913,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2070550",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.6-arch1-1",
+    "notes": "Works more than well enough.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1725167065,
+    "title": "",
+    "source": "protondb"
+  }
+]

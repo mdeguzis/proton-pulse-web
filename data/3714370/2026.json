@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3714370",
+    "cpu": "Intel Core Ultra 7 265KF",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.8-200.fc43.x86_64",
+    "notes": "Runs fine but with typical overlay transparency issues",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1770746052,
+    "title": "",
+    "source": "protondb"
+  }
+]

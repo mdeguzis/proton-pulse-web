@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1527880",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 21.1.5, DRM 3.61, 6.14.0-35-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.14.0-35-generic",
+    "notes": "FATAL ERROR in\naction number 1\nof Create Event\nfor object <undefined>:\n\nMemory allocation failed: Attempting to allocate 2083130013 bytes",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771856559,
+    "title": "",
+    "source": "protondb"
+  }
+]

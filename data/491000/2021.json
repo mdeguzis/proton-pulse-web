@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "491000",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.8.0-38-generic",
+    "notes": "Alt+Enter to fix black screen, works as normal after.",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1611139412,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "491000",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 560 (polaris11, LLVM 13.0.0, DRM 3.41, 5.13.0-22-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-b05d228 2021-12-15 impish-oibaf-ppa)",
+    "kernel": "5.13.0-22-generic",
+    "notes": "Works fine out of the box",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1639619191,
+    "title": "",
+    "source": "protondb"
+  }
+]

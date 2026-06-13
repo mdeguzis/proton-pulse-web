@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2953510",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, ACO, DRM 3.64, 6.16.4-116.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.4",
+    "kernel": "6.16.4-116.bazzite.fc42.x86_64",
+    "notes": "I am still new to creating ProtonDB reports and tinkering, I have checked the proton log as well and saw some error about ```Memory allocation fail``` and I am not sure if its part of debug checking in proton or it can be ignored and I have no idea what else to try in making the game work.\n# \n## Tried launching the game with different Proton versions\n* ProtonGE Borked\n* Proton-CachyOS Borked\n* Proton-TKG borked\n* Hotfix Borked\n* Experimental Borked\n* Proton 5.13-6 Borked \n# \n## Tried the game as well with these commands\n```\nPROTON_NO_ESYNC=1 %command%\nPROTON_USE_WINED3D=1 %command%\n```\nand its borked as well\n# \nWhen I tried launching the game with ```PROTON_NO_ESYNC=1 %command%``` my system became laggy and I thought I just experienced a system crash, however I could still click and open stuff with long delay in seconds, I have tried alt+f4 and ctrl-q and the game did not close at all, I managed to peek by virtual desktop and saw that the game has already crashed but it was taking too long and I had to force shutdown\n# \nWhen I tried ```PROTON_USE_WINED3D=1 %command%```  as the launch option I prepared the system monitor to watch CPU, GPU and RAM usage, and on launch I saw the RAM usage spiked to using 99% and i could not kill process as i also used my terminal to run ```top``` and i do not know what is the PID of the game, i was at the mercy of the game crashing on its own to close itself and no inputs where being accepted by the game but luckily linux detected something about high RAM consumption and closed both steam and the game.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1763635178,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2953510",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, ACO, DRM 3.61, 6.14.0-34-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-34-generic",
+    "notes": "The game can be installed, but don't run on Linux using Proton (I tried with Hotfix, Experimental, 10, 9)",
+    "os": "Zorin OS 18",
+    "protonVersion": "10.0-3",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1765815345,
+    "title": "",
+    "source": "protondb"
+  }
+]

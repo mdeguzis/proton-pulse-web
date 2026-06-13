@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1732060",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 15.0.7, DRM 3.54, 6.6.6-76060606-generic)",
+    "gpuDriver": "4.6 Mesa 23.3.0-1pop0~1702935939~22.04~67e417a",
+    "kernel": "6.6.6-76060606-generic",
+    "notes": "Game runs great, no issues",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1704096538,
+    "title": "",
+    "source": "protondb"
+  }
+]

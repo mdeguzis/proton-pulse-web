@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "649950",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.17-xanmod2-2",
+    "notes": "Works out the box, minor stutter when loading new areas.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1643739001,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "649950",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1651395838,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "649950",
+    "cpu": "11th Gen Intel Core i5-11300H @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.4",
+    "kernel": "5.17.11-generic-2rosa2021.1-x86_64",
+    "notes": "Good game for everyone who played Demon's Souls or Dark Souls. Pretty visual. Good story.",
+    "os": "ROSA Fresh Desktop 12.2, platform 2021.1",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1662392575,
+    "title": "",
+    "source": "protondb"
+  }
+]

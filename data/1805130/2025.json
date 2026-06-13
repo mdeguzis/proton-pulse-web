@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1805130",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.11.0-13-generic",
+    "notes": "It plays the jingle that accompanies the KLACE author mark, then freezes as it attempts to continue. I have also tried this with GE-Proton9-20",
+    "os": "Ubuntu 24.10",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1736673384,
+    "title": "Komorebi",
+    "source": "protondb"
+  },
+  {
+    "appId": "1805130",
+    "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 17.0.6, DRM 3.58, 6.11.0-9-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.6 - kisak-mesa PPA",
+    "kernel": "6.11.0-9-generic",
+    "notes": "",
+    "os": "Ubuntu 24.10",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1736726560,
+    "title": "Komorebi",
+    "source": "protondb"
+  }
+]

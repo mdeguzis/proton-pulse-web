@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "281920",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel Arc A770 (DG2)",
+    "gpuDriver": "4.6 Mesa 23.3.5",
+    "kernel": "6.7.0-204.fsync.fc39.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1707780977,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "281920",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050 OEM",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.5.0-28-generic",
+    "notes": "Underrated gem, hope it'll gain more traction now",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1715514508,
+    "title": "",
+    "source": "protondb"
+  }
+]

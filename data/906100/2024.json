@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "906100",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.16-2-MANJARO",
+    "notes": "Works great with proton-ge didn't have to tweak anything",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1708849855,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "906100",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works perfectly",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1728248459,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "906100",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1732682542,
+    "title": "",
+    "source": "protondb"
+  }
+]

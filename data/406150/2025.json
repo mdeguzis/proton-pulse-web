@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "406150",
+    "cpu": "13th Gen Intel Core i9-13900K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-52-generic",
+    "notes": "Worked out of the box",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1739898291,
+    "title": "Refunct",
+    "source": "protondb"
+  },
+  {
+    "appId": "406150",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-37-generic",
+    "notes": "It feels a little more \"stuttery\" than on Windows, but nothing major. Works just fine.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1766868859,
+    "title": "Refunct",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3633680",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.8-200.fc43.x86_64",
+    "notes": "Feels slow and the ground texture were missing",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1770727004,
+    "title": "",
+    "source": "protondb"
+  }
+]

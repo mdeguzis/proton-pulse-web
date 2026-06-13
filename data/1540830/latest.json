@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1540830",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "With some extra steps it's playable",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1706487442,
+    "title": "Conspiracy Girls",
+    "source": "protondb"
+  },
+  {
+    "appId": "1540830",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "It works with some tinkering",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1708363002,
+    "title": "Conspiracy Girls",
+    "source": "protondb"
+  },
+  {
+    "appId": "1540830",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "It's playable with some tinkering, Either use bottles or protontricks.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1708379629,
+    "title": "Conspiracy Girls",
+    "source": "protondb"
+  }
+]

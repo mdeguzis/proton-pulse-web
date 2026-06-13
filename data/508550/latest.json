@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "508550",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.11.0-7612-generic",
+    "notes": "Runs amazing out of the box with proton 5.13-6",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1617812031,
+    "title": "",
+    "source": "protondb"
+  }
+]

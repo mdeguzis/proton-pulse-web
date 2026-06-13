@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1959960",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.1.1-arch1-1",
+    "notes": "Game runs great, seems to be the exact same as it does on windows.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1672601209,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1959960",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.19.0-32-generic",
+    "notes": "Very slow frame rate given hardware, buggy and not enjoyable. Technically playable, but *not* worth the effort imo.",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1691773234,
+    "title": "",
+    "source": "protondb"
+  }
+]

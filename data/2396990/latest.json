@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2396990",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 21.1.8, DRM 3.64, 6.19.8-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.5 (git-8418351c7c)",
+    "kernel": "6.19.8-200.fc43.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1778683483,
+    "title": "Fate/hollow ataraxia REMASTERED",
+    "source": "protondb"
+  }
+]

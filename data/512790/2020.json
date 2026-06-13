@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "512790",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "ATI Technologies Inc. Radeon RX 580",
+    "gpuDriver": "4.6.14752 Compatibility Profile Context",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Did not run natively - needed gloriousEgg",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1608979635,
+    "title": "Quern - Undying Thoughts",
+    "source": "protondb"
+  }
+]

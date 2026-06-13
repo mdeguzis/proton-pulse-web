@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "860450",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.40.0, 5.10.23-1-MANJARO, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.23-1-MANJARO",
+    "notes": "Generally runs well, though does slow down a bit as a level gets busier.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1617919938,
+    "title": "",
+    "source": "protondb"
+  }
+]

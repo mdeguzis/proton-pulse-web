@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1482770",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.1, DRM 3.35, 5.4.200-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.1.2",
+    "kernel": "5.4.200-1-MANJARO",
+    "notes": "I'm not knowledgable enough to troubleshoot and try special launch options, but I'll update this report if I figure something out",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1725001763,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3731020",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 20.1.8, DRM 3.64, 6.17.0-5-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.3-1ubuntu1",
+    "kernel": "6.17.0-5-generic",
+    "notes": "",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1763528718,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3731020",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs with minor bugs that aren't too annoying. Have to switch to Proton Hotfix, but that's it.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1763571980,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3731020",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Solid game as long as you switch to Steam Linux Runtime Scout",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1766799359,
+    "title": "",
+    "source": "protondb"
+  }
+]

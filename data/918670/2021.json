@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "918670",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5500 XT (NAVI14, DRM 3.42.0, 5.14.16-204.current, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.14.16-204.current",
+    "notes": "Works perfectly out of the box, 100% completed",
+    "os": "Solus",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1638067103,
+    "title": "",
+    "source": "protondb"
+  }
+]

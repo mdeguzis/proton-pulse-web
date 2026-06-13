@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1222800",
+    "cpu": "Intel Core i5-4200U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.2.8",
+    "kernel": "5.5.10-100.fc30.x86_64",
+    "notes": "Won't start",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1586740161,
+    "title": "VALKYRIE CONNECT",
+    "source": "protondb"
+  },
+  {
+    "appId": "1222800",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "unreported",
+    "gpu": "X.Org Radeon RX550/550 (POLARIS12, DRM 3.37.0, 5.7.9-20-tkg-pds, LLVM 10.0.0)",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-36e6ac65c5)",
+    "kernel": "5.7.9-20-tkg-pds",
+    "notes": "Game failed to launch",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1595336767,
+    "title": "VALKYRIE CONNECT",
+    "source": "protondb"
+  }
+]

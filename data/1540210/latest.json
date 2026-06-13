@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1540210",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.18.13-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch1.1",
+    "kernel": "6.18.13-arch1-1",
+    "notes": "Worked out of the box with Monado and Valve Index",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1773089431,
+    "title": "Arizona Sunshine\u00ae 2",
+    "source": "protondb"
+  }
+]

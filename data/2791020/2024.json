@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2791020",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6950 XT (radeonsi, navi21, LLVM 18.1.6, DRM 3.57, 6.10.3-201.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.5",
+    "kernel": "6.10.3-201.fsync.fc40.x86_64",
+    "notes": "Video will not play",
+    "os": "Nobara Linux 40 (GNOME Edition)",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1733274931,
+    "title": "",
+    "source": "protondb"
+  }
+]

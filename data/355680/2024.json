@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "355680",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.15.145",
+    "notes": "Runs great natively.",
+    "os": "Slackware Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1710890329,
+    "title": "",
+    "source": "protondb"
+  }
+]

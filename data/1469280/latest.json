@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1469280",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.1, DRM 3.42, 5.15.0-27-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.15.0-27-generic",
+    "notes": "The game runs really well",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1652007881,
+    "title": "SuchArt: Creative Space",
+    "source": "protondb"
+  }
+]

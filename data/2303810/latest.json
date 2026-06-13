@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2303810",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.9.6-arch1-1",
+    "notes": "Weird crash issue might be due to my setup, but otherwise runs fine!",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1720917040,
+    "title": "",
+    "source": "protondb"
+  }
+]

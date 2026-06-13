@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "995240",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.15.48-1-lts",
+    "notes": "The game crashes while loading into the menu",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1656621574,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "995240",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "First loadingscreen takes a little while, but after that runs flawlessly.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1667757124,
+    "title": "",
+    "source": "protondb"
+  }
+]

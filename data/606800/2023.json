@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "606800",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "6.1.15-201.fsync.fc37.x86_64",
+    "notes": "it werks",
+    "os": "Fedora Linux 37 (Thirty Seven)",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1679573845,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "606800",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Game's initial loading screen was fine, but the game resolution was set to something way bigger than the Steam Deck (even forcing resolution didn't resolve) - and because of this, I coudln't access the game menu to change it.\n\nI was able to move the camera around, but the game ran at a very low FPS, so pretty much unplayable anyway.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1679580582,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "606800",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 15.0.7, DRM 3.52, 6.4.3-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.1.3",
+    "kernel": "6.4.3-zen1-1-zen",
+    "notes": "",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1694522197,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2430900",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 19.1.5, DRM 3.59, 6.12.11-204.nobara.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.4",
+    "kernel": "6.12.11-204.nobara.fc41.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 41 (GNOME Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1738197079,
+    "title": "",
+    "source": "protondb"
+  }
+]

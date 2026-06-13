@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "414550",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 15.0.7, DRM 3.54, 6.6.10-76060610-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.0-1pop0~1706872735~22.04~0fa430c",
+    "kernel": "6.6.10-76060610-generic",
+    "notes": "Played with friends worked perfectly out of the box",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1710580051,
+    "title": "Death Toll",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1380420",
+    "cpu": "Intel Core i3-8130U @ 2.20GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.4.0-122-generic",
+    "notes": "the game runs very well and during 29 hours of playing no problems arose.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-3",
+    "ram": "4 GB",
+    "rating": "platinum",
+    "timestamp": 1659216842,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1380420",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1671553972,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1380420",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "6.3-8",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1672163002,
+    "title": "",
+    "source": "protondb"
+  }
+]

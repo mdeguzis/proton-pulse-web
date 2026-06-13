@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2277320",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 21.1.7, DRM 3.64, 6.18.2-200.nobara.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.2",
+    "kernel": "6.18.2-200.nobara.fc43.x86_64",
+    "notes": "I've tryed a lot of stuff and give up some days before, still, couldn't make it work with anything.\nI cloud only launch with Lutris and Protonge-GE but the intro freezes, so I can't even se the menu.\n\nVersions tried:\nProton:\n10.0-3  \nHotfix\nExperimental\n9.0-4\n8.0-5\n7.0-6\n\n\"Worked\" on:\nLutris - Proton GE Latest\n\nCommands, I forgot",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1767000275,
+    "title": "",
+    "source": "protondb"
+  }
+]

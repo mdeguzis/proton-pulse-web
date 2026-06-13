@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "734900",
+    "cpu": "Intel Core i5-6300U @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.9-arch1-1-surface",
+    "notes": "runs out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1666679021,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1226000",
+    "cpu": "AMD Phenom II X4 945",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 460",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.19.0-8-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1589119577,
+    "title": "Nations At War Digital Core Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "1226000",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-29-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1589578873,
+    "title": "Nations At War Digital Core Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "1226000",
+    "cpu": "Intel Core i5-3317U @ 1.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "5.4.0-47-generic",
+    "notes": "Working out of the box!",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1599856251,
+    "title": "Nations At War Digital Core Game",
+    "source": "protondb"
+  }
+]

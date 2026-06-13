@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2712550",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.76",
+    "kernel": "6.8.6-200.fc39.x86_64",
+    "notes": "Runs flawlessly without any workaround.",
+    "os": "Fedora Linux 39 (Workstation Edition)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1713787662,
+    "title": "",
+    "source": "protondb"
+  }
+]

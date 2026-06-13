@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2026750",
+    "cpu": "12th Gen Intel Core i5-12400",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 730 (ADL-S GT1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "6.8.0-49-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1745922933,
+    "title": "Astra Protocol 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "2026750",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.16.7-2-cachyos",
+    "notes": "Switch to the latest Beta to get it to launch. Else the game always crashes immediately on startup.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1766421799,
+    "title": "Astra Protocol 2",
+    "source": "protondb"
+  }
+]

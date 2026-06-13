@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2865440",
+    "cpu": "Linux",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "Unavailable",
+    "notes": "Made various attempts with multiple protons and trying to make it run in windowed mode. Somehow worked once as a fluke but all other launches the game gets stuck on the artwork for the main menu screen and cant even exit out no matter what. Have to restart pc every time just to get out of it",
+    "os": "1763795278",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1766249379,
+    "title": "FRONT MISSION 2: Remake",
+    "source": "protondb"
+  }
+]

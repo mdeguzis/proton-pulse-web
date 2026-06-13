@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3500640",
+    "cpu": "AMD Ryzen AI 7 350 w/ Radeon 860M",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon 860M (radeonsi, gfx1152, LLVM 20.1.8, DRM 3.64, 6.17.0-8-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.3-1ubuntu1",
+    "kernel": "6.17.0-8-generic",
+    "notes": "",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1768086850,
+    "title": "Arithmetic",
+    "source": "protondb"
+  }
+]

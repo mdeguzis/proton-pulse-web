@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1509970",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.14.0-37-generic",
+    "notes": "It works well , i had to reduce the graphics to \"potato\" ( as they called it :)) ) but i think this has to do with my hardware.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1769807438,
+    "title": "",
+    "source": "protondb"
+  }
+]

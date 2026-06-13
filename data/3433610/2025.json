@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3433610",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 535.247.01",
+    "kernel": "6.1.0-38-amd64",
+    "notes": "worked find after changing proton version to 9.0-4",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1755993954,
+    "title": "Terrafactor",
+    "source": "protondb"
+  },
+  {
+    "appId": "3433610",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 460 (radeonsi, polaris11, ACO, DRM 3.64, 6.16.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.2-arch1.2",
+    "kernel": "6.16.7-arch1-1",
+    "notes": "Proton Experimental and Proton Hotfix only shows a black screen. Proton 9.0-4 also shows a black screen but with audio. Proton 8.0-5 immediately crashes.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1758083055,
+    "title": "Terrafactor",
+    "source": "protondb"
+  }
+]

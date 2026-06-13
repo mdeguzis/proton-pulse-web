@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "428830",
+    "cpu": "Intel Core i5-3470S @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD NAVI24 (navi24, LLVM 15.0.7, DRM 3.42, 5.15.79-generic-1rosa2021.1-x86_64)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "5.15.79-generic-1rosa2021.1-x86_64",
+    "notes": "Starts well",
+    "os": "ROSA Fresh Desktop 12.3, platform 2021.1 (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-6",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1679862986,
+    "title": "Save the Dodos",
+    "source": "protondb"
+  }
+]

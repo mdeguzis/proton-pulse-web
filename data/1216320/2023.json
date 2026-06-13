@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1216320",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 15.0.0, DRM 3.48, 6.0.9-300.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "6.0.9-300.fc37.x86_64",
+    "notes": "does not launch",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1688669602,
+    "title": "Shieldwall",
+    "source": "protondb"
+  }
+]

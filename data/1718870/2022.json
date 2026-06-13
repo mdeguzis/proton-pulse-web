@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1718870",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.0-27-generic",
+    "notes": "You get used to the only consistent bug so far, which is the staging engine duplication. Everything else seem to work fine",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1645400126,
+    "title": "Spaceflight Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "1718870",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (sienna_cichlid, LLVM 13.0.1, DRM 3.42, 5.15.6-051506-generic)",
+    "gpuDriver": "4.6 Mesa 22.1.0-devel (git-ae710f3 2022-03-26 focal-oibaf-ppa)",
+    "kernel": "5.15.6-051506-generic",
+    "notes": "Runs like native.",
+    "os": "Kubuntu 20.04 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1649461218,
+    "title": "Spaceflight Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "1718870",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.15.0-27-generic",
+    "notes": "Runs like a native game. No configuration needed.",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1652313040,
+    "title": "Spaceflight Simulator",
+    "source": "protondb"
+  }
+]

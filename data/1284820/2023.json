@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1284820",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.7, DRM 3.52, 6.3.3-273-tkg-pds)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.3.3-273-tkg-pds",
+    "notes": "It works, partially",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1685726027,
+    "title": "Desktop Kanojo",
+    "source": "protondb"
+  }
+]

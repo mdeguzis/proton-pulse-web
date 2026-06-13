@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "586920",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-31-generic",
+    "notes": "Game won't start. Tried different Proton versions and a couple of launch options, no success.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1593564485,
+    "title": "",
+    "source": "protondb"
+  }
+]

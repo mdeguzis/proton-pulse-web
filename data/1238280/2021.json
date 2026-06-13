@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1238280",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.35.0, 5.4.0-59-generic, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.0-devel (git-62703b7 2021-01-07 focal-oibaf-ppa)",
+    "kernel": "5.4.0-59-generic",
+    "notes": "Runs perfectly well out of the box",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1610046504,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1238280",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 20.3.1",
+    "kernel": "5.4.0-58-generic",
+    "notes": "The game works totally fine. It's just a pity that the steam achievements do not work.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.13-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1612445085,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1238280",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.7",
+    "notes": "Works perfectly out of the box.",
+    "os": "NixOS 21.11 (Porcupine)",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1632730275,
+    "title": "",
+    "source": "protondb"
+  }
+]

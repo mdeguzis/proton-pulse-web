@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2775560",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.49, 6.1.90-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.0.6-manjaro1.1",
+    "kernel": "6.1.90-1-MANJARO",
+    "notes": "[Demo, native] Game won't launch via Steam. Possible to launch from directory",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1725754595,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2775560",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.107.02",
+    "kernel": "6.1.106-1-MANJARO",
+    "notes": "[Demo, Proton] Playable, but barely, natively is better, but with caveat",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-1",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1725754954,
+    "title": "",
+    "source": "protondb"
+  }
+]

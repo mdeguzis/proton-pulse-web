@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "326190",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 18.1.8, DRM 3.54, 6.6.43-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.1.4-arch10.2",
+    "kernel": "6.6.43-1-MANJARO",
+    "notes": "It works very well, better than the native linux version.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1724430037,
+    "title": "",
+    "source": "protondb"
+  }
+]

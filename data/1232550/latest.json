@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1232550",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.3.0-40-generic",
+    "notes": "Shows black screen on start.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1582732407,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "840210",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.11.11-arch1-1",
+    "notes": "Game seems to run fine save for the cutscenes not playing (and skipping by themselves).",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1641427747,
+    "title": "",
+    "source": "protondb"
+  }
+]

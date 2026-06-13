@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "459680",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.0-7625-generic",
+    "notes": "cool game, can't play it.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1580579353,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "459680",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.0-7625-generic",
+    "notes": "Works great now. Used GloriousEggroll's Proton-5.1-GE-1",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1582121241,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "459680",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.4.0-42-generic",
+    "notes": "works out of the box",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1596289755,
+    "title": "",
+    "source": "protondb"
+  }
+]

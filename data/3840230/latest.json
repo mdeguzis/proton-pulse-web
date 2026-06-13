@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3840230",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs great out of the box. FPS only slightly over 30, irrespective of which graphics settings are chosen. Impressions are based on the demo.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1772957232,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3840230",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Arc B580 (BMG G21)",
+    "gpuDriver": "4.6 Mesa 26.0.1",
+    "kernel": "6.17.7-ba28.fc43.x86_64",
+    "notes": "Based on the demo, of course, but I played through the demo's story with no problems whatsoever.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1773394646,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3840230",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Seems to have near perfect Steam Deck and Linux/Proton support",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1777868164,
+    "title": "",
+    "source": "protondb"
+  }
+]

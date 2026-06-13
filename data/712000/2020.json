@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "712000",
+    "cpu": "AMD A10-7700K APU with Radeon R7 Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.6",
+    "kernel": "5.4.0-2-amd64",
+    "notes": "Appears to work correctly.   I only completed the tutorial though.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-12",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1579209782,
+    "title": "",
+    "source": "protondb"
+  }
+]

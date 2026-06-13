@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1924150",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.0-2-amd64",
+    "notes": "Install vcrun2019 using protontricks",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-5",
+    "ram": "56 GB",
+    "rating": "gold",
+    "timestamp": 1672716501,
+    "title": "CYBERHUNK",
+    "source": "protondb"
+  }
+]

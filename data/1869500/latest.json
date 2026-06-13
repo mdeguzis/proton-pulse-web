@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1869500",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 15.0.7, DRM 3.57, 6.8.0-52-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.1 - kisak-mesa PPA",
+    "kernel": "6.8.0-52-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773742168,
+    "title": "",
+    "source": "protondb"
+  }
+]

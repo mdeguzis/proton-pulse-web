@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "274900",
+    "cpu": "AMD Ryzen 3 3100 4-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 580.159.03",
+    "kernel": "7.0.5-2-cachyos",
+    "notes": "Game runs great on latest update after adding commandline args.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1778728369,
+    "title": "Murder Miners",
+    "source": "protondb"
+  }
+]

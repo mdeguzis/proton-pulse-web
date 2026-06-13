@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1114090",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.40.0, 5.11.12_1, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.2",
+    "kernel": "5.11.12_1",
+    "notes": "Launches but unplayable with Proton 4, newer versions do not launch at all.",
+    "os": "Void Linux",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1618131159,
+    "title": "",
+    "source": "protondb"
+  }
+]

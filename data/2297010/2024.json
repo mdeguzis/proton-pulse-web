@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2297010",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 545.29.02",
+    "kernel": "6.6.7",
+    "notes": "Does now work with the default proton install",
+    "os": "NixOS 23.11 (Tapir)",
+    "protonVersion": "8.0-4",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1704461910,
+    "title": "",
+    "source": "protondb"
+  }
+]

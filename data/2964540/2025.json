@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2964540",
+    "cpu": "AMD Ryzen Threadripper 2990WX 32-Core",
+    "duration": "severalHours",
+    "gpu": "Mesa llvmpipe (LLVM 20.1.8, 256 bits)",
+    "gpuDriver": "4.5 Mesa 25.2.5",
+    "kernel": "6.17.5-200.nobara.fc42.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1762437189,
+    "title": "",
+    "source": "protondb"
+  }
+]

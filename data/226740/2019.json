@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "226740",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "5.3.15-200.fc30.x86_64",
+    "notes": "Achievements don't unlock in native version. Runs great in Proton, though.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1576797825,
+    "title": "",
+    "source": "protondb"
+  }
+]

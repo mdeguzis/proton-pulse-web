@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2173460",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6500 XT (radeonsi, navi24, LLVM 21.1.5, DRM 3.49, 6.1.0-40-amd64)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.1.0-40-amd64",
+    "notes": "Rodou maravilhosamente, mas exigiu alguns ajuste simples (Ex: Mudar a vers\u00e3o do ProtonGE para 9-13 no ProtonUP-QT)",
+    "os": "PeppermintOS_Bookworm12 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1763063691,
+    "title": "",
+    "source": "protondb"
+  }
+]

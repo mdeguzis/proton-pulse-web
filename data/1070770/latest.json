@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1070770",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.2.0-36-generic",
+    "notes": "Auf 3 verschiedenen Linux-PCs ist jeweils eine andere Proton-Version n\u00f6tig, sonst kommt es beim Starten zu \"Zugriffsverletzung\"-Fehlern.",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1699343596,
+    "title": "Skat 3D Premium",
+    "source": "protondb"
+  }
+]

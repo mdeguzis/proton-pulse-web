@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2438970",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.6-arch1-1",
+    "notes": "Worked perfectly out of the box, I was able to create and play a multiplayer game with friends.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1735485055,
+    "title": "",
+    "source": "protondb"
+  }
+]

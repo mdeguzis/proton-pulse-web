@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "505740",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.11-76051611-generic",
+    "notes": "Runs flawlessly in all ways.",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1654127945,
+    "title": "",
+    "source": "protondb"
+  }
+]

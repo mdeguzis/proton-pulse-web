@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "296210",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 18.1.8, DRM 3.59, 6.11.4-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.2.5-arch1.1",
+    "kernel": "6.11.4-zen1-1-zen",
+    "notes": "The game launches, and the tutorial seems to work although I did not finish it.. The character creation works, however during the first mission when you choose the first dialog option that appears the game crashes. The error log is no longer reporting an obvious error after installing MFC42 as well as enabling \"PROTON_USE_WINED3D\".",
+    "os": "Garuda Linux Bird of Prey",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1730075603,
+    "title": "",
+    "source": "protondb"
+  }
+]

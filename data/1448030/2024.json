@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1448030",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1726014318,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1448030",
+    "cpu": "Intel Celeron 2955U @ 1.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD (HSW GT1)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.1",
+    "kernel": "6.8.0-41-generic",
+    "notes": "",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-2",
+    "ram": "4 GB",
+    "rating": "platinum",
+    "timestamp": 1726101648,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1448030",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 16.0.6, DRM 3.49, 6.2.0-26-generic)",
+    "gpuDriver": "4.6 Mesa 24.1.4",
+    "kernel": "6.2.0-26-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1726355720,
+    "title": "",
+    "source": "protondb"
+  }
+]

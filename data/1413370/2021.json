@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1413370",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 465.27",
+    "kernel": "5.12.4-156-tkg-pds",
+    "notes": "Demo works out of the box.",
+    "os": "ArcoLinux",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1624180570,
+    "title": "",
+    "source": "protondb"
+  }
+]

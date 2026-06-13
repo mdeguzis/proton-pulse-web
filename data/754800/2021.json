@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "754800",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.11.0-25-generic",
+    "notes": "Main menu never appears, screen remains black",
+    "os": "Zorin OS 16",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1629077242,
+    "title": "",
+    "source": "protondb"
+  }
+]

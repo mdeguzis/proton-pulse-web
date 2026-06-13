@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2856450",
+    "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7700S (radeonsi, navi33, LLVM 19.1.7, DRM 3.61, 6.13.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.2-arch1.2",
+    "kernel": "6.13.8-arch1-1",
+    "notes": "Launched and played without issue on default  settings",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1743315585,
+    "title": "Dimensionals",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "693700",
+    "cpu": "Intel Xeon E5-2690 0 @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.0-2parrot2-amd64",
+    "notes": "Linux native is busted, Proton works fine",
+    "os": "Parrot GNU/Linux 4.10",
+    "protonVersion": "5.13-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1609961539,
+    "title": "Prime Mover",
+    "source": "protondb"
+  }
+]

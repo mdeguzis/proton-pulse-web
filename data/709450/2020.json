@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "709450",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.3.4",
+    "kernel": "5.5.7-1-MANJARO",
+    "notes": "Starts and crashes immediately",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-13",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1583769765,
+    "title": "Towards The Pantheon: Escaping Eternity",
+    "source": "protondb"
+  }
+]

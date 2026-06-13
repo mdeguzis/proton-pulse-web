@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "826540",
+    "cpu": "13th Gen Intel Core i9-13900K",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.3-arch1-1",
+    "notes": "Works Great w/ Latest Xrizer & Monado",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1770963711,
+    "title": "Audio Trip",
+    "source": "protondb"
+  }
+]

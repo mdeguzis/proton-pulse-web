@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2160000",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.4, DRM 3.61, 6.12.45_1)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.12.45_1",
+    "notes": "Just changed the version of proton to 9.0.3 before that the game wouldn't even start, but there is no noticeable bug.",
+    "os": "Void Linux",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1758329461,
+    "title": "Trapped with Jester",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "837400",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Game installed and started without issue. Unable to test multiplayer due to time the game was tested (6 AM EST).",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1601635509,
+    "title": "Fated Kingdom",
+    "source": "protondb"
+  }
+]

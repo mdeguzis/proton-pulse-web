@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1381440",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 (NAVI10, DRM 3.40.0, 5.11.11-xanmod1, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.11-xanmod1",
+    "notes": "works without any issues with glorious-eggroll 6.5.GE 2",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1617984632,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1381440",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-22-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1624648250,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1381440",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.4.0-80-generic",
+    "notes": "Unplayable unless you force compatibility with Proton, otherwise runs perfectly.",
+    "os": "Linux Mint 20",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1628091806,
+    "title": "",
+    "source": "protondb"
+  }
+]

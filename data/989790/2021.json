@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "989790",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon R9 390 (HAWAII, DRM 3.42.0, 5.15.6-arch2-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.6-arch2-1",
+    "notes": "This jewel runs perfectly out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1639095280,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "989790",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.41.0, 5.13.0-22-generic, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.1 - kisak-mesa PPA",
+    "kernel": "5.13.0-22-generic",
+    "notes": "Runs like a charm OOTB.",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1639128751,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "989790",
+    "cpu": "AMD Ryzen 7 4800U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (DRM 3.42.0, 5.15.7-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.7-1-MANJARO",
+    "notes": "Works perfectly fine. I had no issues",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1640351451,
+    "title": "",
+    "source": "protondb"
+  }
+]

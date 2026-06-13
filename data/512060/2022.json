@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "512060",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "5.15.72-1-MANJARO",
+    "notes": "Game runs fine out of the box and patch works without any other tools",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1668881326,
+    "title": "Stay! Stay! Democratic People's Republic of Korea!",
+    "source": "protondb"
+  }
+]

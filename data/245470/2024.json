@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "245470",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 550.76",
+    "kernel": "6.8.8-arch1-1",
+    "notes": "Flawless",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1714591443,
+    "title": "",
+    "source": "protondb"
+  }
+]

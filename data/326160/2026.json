@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "326160",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.5-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.5",
+    "kernel": "6.18.5-2-cachyos",
+    "notes": "installieren und starten, das wars.\nSollte es doch Probleme geben, Kompatibilit\u00e4t Proton-GE oder experimental ausw\u00e4hlen.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "platinum",
+    "timestamp": 1772579486,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "326160",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "7.0.1-1-cachyos",
+    "notes": "Ich hatte keinerlei Probleme, funktioniert wie immer. Auch mit neuem Kernel 7.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1777148429,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "326160",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.9-1-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1779211619,
+    "title": "",
+    "source": "protondb"
+  }
+]

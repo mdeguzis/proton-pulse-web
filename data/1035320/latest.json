@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1035320",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.5, DRM 3.64, 6.18.1-273-tkg-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.18.1-273-tkg-eevdf",
+    "notes": "ALVR and Steam Link work with Meta Quest 3, WiVRn doesn't. Gameplay: https://youtu.be/5k0W9GxI9eI",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1774192289,
+    "title": "",
+    "source": "protondb"
+  }
+]

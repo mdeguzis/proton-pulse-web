@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3450390",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.14.2-200.nobara.fc41.x86_64",
+    "notes": "It just worked.",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1744780182,
+    "title": "E.T.E",
+    "source": "protondb"
+  },
+  {
+    "appId": "3450390",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.14.2-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1744934303,
+    "title": "E.T.E",
+    "source": "protondb"
+  },
+  {
+    "appId": "3450390",
+    "cpu": "Intel Core i9-14900K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-58-generic",
+    "notes": "Il n'est pas gourmand et remplit bien son r\u00f4le.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1745893481,
+    "title": "E.T.E",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1945760",
+    "cpu": "13th Gen Intel Core i7-13700KF",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 580.82.07",
+    "kernel": "6.16.5-arch1-1",
+    "notes": "Works on Proton 9.0-4",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1763738077,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "427820",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Native build still works",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1736171177,
+    "title": "Hitman GO: Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "427820",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 (radeonsi, navi10, LLVM 20.1.6, DRM 3.63, 6.15.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.4-arch1.1",
+    "kernel": "6.15.3-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1750807307,
+    "title": "Hitman GO: Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "427820",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works straight out of the box, no issues found through entire game.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1760799185,
+    "title": "Hitman GO: Definitive Edition",
+    "source": "protondb"
+  }
+]

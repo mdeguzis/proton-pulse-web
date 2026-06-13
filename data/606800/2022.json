@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "606800",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.19-76051619-generic",
+    "notes": "Game runs great!",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-2",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1651432571,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "606800",
+    "cpu": "Intel Core i5-6500T @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.2",
+    "kernel": "5.18.7-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1656653763,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "606800",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.18.5-arch1-1",
+    "notes": "Game runs too poorly to play. After selecting a building my game would tank down to 10-15 FPS. ASYNC and gamemode doesn't help.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-3",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1658393306,
+    "title": "",
+    "source": "protondb"
+  }
+]

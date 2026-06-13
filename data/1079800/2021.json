@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1079800",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-25-generic",
+    "notes": "Runs just as good as Windows. No issues.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1629342630,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1079800",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.13.19_1",
+    "notes": "",
+    "os": "Void Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1633828621,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1079800",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.8-arch1-1",
+    "notes": "Runs exactly as expected",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1639781736,
+    "title": "",
+    "source": "protondb"
+  }
+]

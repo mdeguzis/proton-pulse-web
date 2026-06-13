@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1562260",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.15.19-1-MANJARO",
+    "notes": "Game runs good in Linux.\nHave yet to try it in Windows",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1647040994,
+    "title": "",
+    "source": "protondb"
+  }
+]

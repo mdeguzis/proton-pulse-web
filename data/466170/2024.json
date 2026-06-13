@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "466170",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 17.0.6, DRM 3.57, 6.9.3-76060903-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.1 (git-c222f7299c)",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1726155863,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "466170",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 16.0.6, DRM 3.54, 6.6.1-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.9-manjaro1.1",
+    "kernel": "6.6.1-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1733671454,
+    "title": "",
+    "source": "protondb"
+  }
+]

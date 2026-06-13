@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "577980",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 17.0.6, DRM 3.56, 5.15.0-113-generic)",
+    "gpuDriver": "4.6 Mesa 24.1.1 (git-6c377358a5)",
+    "kernel": "5.15.0-113-generic",
+    "notes": "If you don't care about cutscenes, then a vanilla install is just fine.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1724364844,
+    "title": "",
+    "source": "protondb"
+  }
+]

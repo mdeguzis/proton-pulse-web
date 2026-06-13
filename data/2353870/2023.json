@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2353870",
+    "cpu": "Intel Core i7-10700F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (navi14, LLVM 16.0.6, DRM 3.49, 6.1.57-gentoo-x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.8",
+    "kernel": "6.1.57-gentoo-x86_64",
+    "notes": "Nothing I could do resolved it, I gave up and refunded it",
+    "os": "Gentoo Linux",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1698626724,
+    "title": "Unsolved Case: Murderous Script Collector's Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1608730",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.9-arch1-2",
+    "notes": "Tried every proton version steam gives and recent had the most \"success\" while older ones won't start at all",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1726263542,
+    "title": "Dawn of Corruption",
+    "source": "protondb"
+  }
+]

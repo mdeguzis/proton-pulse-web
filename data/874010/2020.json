@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "874010",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.6 - kisak-mesa PPA",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Only music plays on the background. White screen",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1599254525,
+    "title": "",
+    "source": "protondb"
+  }
+]

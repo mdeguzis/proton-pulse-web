@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "837930",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.3.0-40-generic",
+    "notes": "Works great. No issues on Linux whatsoever.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1584291252,
+    "title": "",
+    "source": "protondb"
+  }
+]

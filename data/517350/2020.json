@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "517350",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.26",
+    "kernel": "5.3.0-40-generic",
+    "notes": "Does not start.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1582833818,
+    "title": "Squareface",
+    "source": "protondb"
+  }
+]

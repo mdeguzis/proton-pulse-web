@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1301930",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.1, DRM 3.44, 5.17.6-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.0.3",
+    "kernel": "5.17.6-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1653335783,
+    "title": "Traffic Jams",
+    "source": "protondb"
+  },
+  {
+    "appId": "1301930",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.18.14",
+    "notes": "Works perfectly out of the box. I've been using an older Proton version by default. It could work fine with a newer version as well.",
+    "os": "Devuan GNU/Linux 4 (chimaera)",
+    "protonVersion": "5.0-10",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1666163122,
+    "title": "Traffic Jams",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "548340",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.40.0, 5.11.11-arch1-1, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.11-arch1-1",
+    "notes": "Runs great",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1617440258,
+    "title": "Abode",
+    "source": "protondb"
+  }
+]

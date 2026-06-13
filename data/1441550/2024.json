@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1441550",
+    "cpu": "AMD Ryzen 5 3500 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5500 (radeonsi, navi14, LLVM 17.0.6, DRM 3.42, 5.15.0-101-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3 (git-c4d371fa7e)",
+    "kernel": "5.15.0-101-generic",
+    "notes": "Making and editing mods using external resources would probably be impossible on Linux due to aformentioned issues.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1711832530,
+    "title": "",
+    "source": "protondb"
+  }
+]

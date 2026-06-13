@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2937710",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 550.107.02",
+    "kernel": "6.8.0-41-generic",
+    "notes": "",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1725704984,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2937710",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Aside from a black screen on startup that persists until a button is pressed, it runs fine.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1729603908,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2937710",
+    "cpu": "AMD Ryzen 3 3250U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 3 (radeonsi, raven2, LLVM 18.1.8, DRM 3.59, 6.11.8-arch1-2)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.11.8-arch1-2",
+    "notes": "Apro il gioco e non fa entrare",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "%$s1 MB",
+    "rating": "borked",
+    "timestamp": 1731832597,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3154850",
+    "cpu": "Intel Core Ultra 7 155H",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Arc (MTL)",
+    "gpuDriver": "4.6 Mesa 24.3.1-arch1.3",
+    "kernel": "6.12.5-2-MANJARO",
+    "notes": "No only does the game issue an error when started, but the location of the error log does not exist.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1735001236,
+    "title": "",
+    "source": "protondb"
+  }
+]

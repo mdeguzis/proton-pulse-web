@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2697890",
+    "cpu": "13th Gen Intel Core i7-1355U",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Iris Xe (RPL-U)",
+    "gpuDriver": "4.6 Mesa 24.3.2-arch1.1",
+    "kernel": "6.12.7-zen1-1-zen",
+    "notes": "Game launcher opens up but no text is displayed on the launcher, and none of the buttons work.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1735959478,
+    "title": "",
+    "source": "protondb"
+  }
+]

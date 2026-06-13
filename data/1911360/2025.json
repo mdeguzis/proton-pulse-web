@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1911360",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.4.0-150600.23.73-default)",
+    "gpuDriver": "4.6 Mesa 23.3.4",
+    "kernel": "6.4.0-150600.23.73-default",
+    "notes": "Inicia y funciona perfecto [Amzn]: Finalizado, Graficos(fullscreenwindow, 1920x1080, calidad = high), control(xbox series).",
+    "os": "openSUSE Leap 15.6",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1762169504,
+    "title": "",
+    "source": "protondb"
+  }
+]

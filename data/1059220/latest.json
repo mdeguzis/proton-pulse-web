@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1059220",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.8.0-110-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.4 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1776956440,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1059220",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.5-1-cachyos",
+    "notes": "AMD works out of the box, but NVIDIA users will need to force Proton Experimental with these launch options (still works though)",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1778259227,
+    "title": "",
+    "source": "protondb"
+  }
+]

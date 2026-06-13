@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1966420",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Its a very nice looking game on the deck it makes a perfect addition to my game collection",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1686364900,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1966420",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1686757917,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1966420",
+    "cpu": "12th Gen Intel Core i7-12700",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "5.15.0-52-generic",
+    "notes": "no issues, works out of the box",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1687079962,
+    "title": "",
+    "source": "protondb"
+  }
+]

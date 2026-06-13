@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "964130",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.18.29-1-lts)",
+    "gpuDriver": "4.6 Mesa 26.0.6-arch1.1",
+    "kernel": "6.18.29-1-lts",
+    "notes": "Works well after changing compatibility",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1778981773,
+    "title": "",
+    "source": "protondb"
+  }
+]

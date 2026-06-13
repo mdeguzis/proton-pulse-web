@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1203930",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-42-generic",
+    "notes": "May not be stable enough.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1585171208,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1203930",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.0-devel (git-238e2ed 2020-03-24 eoan-oibaf-ppa)",
+    "kernel": "5.6.0-050600rc2-generic",
+    "notes": "Seems to run fine, using Proton-5.4-GE-3. Untested with stock proton 5.05.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1585343733,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1203930",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-37-generic",
+    "notes": "Runs with no problems, just start and play.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1590082086,
+    "title": "",
+    "source": "protondb"
+  }
+]

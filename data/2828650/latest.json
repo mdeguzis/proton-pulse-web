@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2828650",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7700S (radeonsi, gfx1103_r1, LLVM 19.1.7, DRM 3.59, 6.12.13_1)",
+    "gpuDriver": "4.6 Mesa 24.3.4 (git-769e51468b)",
+    "kernel": "6.12.13_1",
+    "notes": "Unplayable currently with my configuration.",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime) (Void Linux)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1760668986,
+    "title": "",
+    "source": "protondb"
+  }
+]

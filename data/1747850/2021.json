@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1747850",
+    "cpu": "AMD Ryzen 9 3900XT 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.15.2-arch1-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.2-arch1-1",
+    "notes": "While everything works, the input is processed slow and there screen does weird things when the undo button is pressed.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1637250460,
+    "title": "",
+    "source": "protondb"
+  }
+]

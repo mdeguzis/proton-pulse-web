@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "354290",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 20.1.2, DRM 3.64, 6.17.0-14-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Funkar inte p\u00e5 linux",
+    "os": "Zorin OS 18",
+    "protonVersion": "10.0-3",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1771525765,
+    "title": "",
+    "source": "protondb"
+  }
+]

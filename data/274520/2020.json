@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "274520",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "allTheTime",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-30a393f 2020-06-03 bionic-oibaf-ppa)",
+    "kernel": "5.6.16-050616-lowlatency",
+    "notes": "Works out of the box.",
+    "os": "Linux Mint 19.3 Tricia (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1593797178,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "274520",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.7.9-1-MANJARO",
+    "notes": "Flawless",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1597187734,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "274520",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 455.28",
+    "kernel": "5.8.16-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1604714479,
+    "title": "",
+    "source": "protondb"
+  }
+]

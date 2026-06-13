@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1262240",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-53-generic",
+    "notes": "Plants vs Zombies BFN",
+    "os": "Ubuntu 18.04.4 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.0-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1591526215,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1262240",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.11-2-MANJARO",
+    "notes": "Easy Anti-Cheat fails to start",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1606856283,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1262240",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.9.11",
+    "notes": "Easy Anti Cheat Error",
+    "os": "NixOS 21.03 (Okapi)",
+    "protonVersion": "5.13-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1607376659,
+    "title": "",
+    "source": "protondb"
+  }
+]

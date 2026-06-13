@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "683000",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.6-arch1-1",
+    "notes": "Black screen after initial text.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1577814550,
+    "title": "",
+    "source": "protondb"
+  }
+]

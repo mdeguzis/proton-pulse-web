@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "997380",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.18.10-76051810-generic",
+    "notes": "Works excellent out of box except for fullscreen bug",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1660528840,
+    "title": "",
+    "source": "protondb"
+  }
+]

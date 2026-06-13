@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "340730",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.10.19-1-MANJARO",
+    "notes": "Well, it's native and works as intended.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1615945393,
+    "title": "",
+    "source": "protondb"
+  }
+]

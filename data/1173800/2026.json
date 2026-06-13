@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1173800",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel Iris Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.18.7-200.fc43.x86_64",
+    "notes": "Serious crashes that result in lost save data are increadibly frustrating",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1769918391,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2163220",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 15.0.7, DRM 3.49, 6.1.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.12-arch1-1",
+    "notes": "You need to specify Dx11 at start-up, seemed to work the same as on Windows (based on the average reviews), intro video is a green screen",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1694703683,
+    "title": "S.P.L.I.C.E.D.",
+    "source": "protondb"
+  }
+]

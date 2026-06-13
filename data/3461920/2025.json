@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3461920",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.4-106.bazzite.fc42.x86_64",
+    "notes": "Works out of the box",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1752194646,
+    "title": "The Boba Teashop",
+    "source": "protondb"
+  }
+]

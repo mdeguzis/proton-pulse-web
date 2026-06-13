@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2105960",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 XT (DIMGREY_CAVEFISH, DRM 3.44.0, 5.16.14-arch1-1, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.14-arch1-1",
+    "notes": "I downloaded, played and completed the entire game including acheivements without issue on my Steam Deck.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1727911477,
+    "title": "",
+    "source": "protondb"
+  }
+]

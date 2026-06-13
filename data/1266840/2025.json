@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1266840",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 (radeonsi, navi22, LLVM 19.1.7, DRM 3.59, 6.13.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.2-arch1-1",
+    "notes": "Works perfectly fine with proton",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1739981311,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1266840",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.4-4-cachyos",
+    "notes": "can play however not by default, switched to proton experimental and turned on Vsync",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1760230845,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1266840",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Jumped in with no issues",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1766688185,
+    "title": "",
+    "source": "protondb"
+  }
+]

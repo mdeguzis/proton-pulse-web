@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1148470",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "UHD 620 + Nvidia MX150",
+    "gpuDriver": "Mesa 20.3.3 + Nvidia 460.32.03",
+    "kernel": "5.10.7-3-MANJARO",
+    "notes": "Can not navigate on main menu",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1611312601,
+    "title": "Killjoy Hunter Yuuko",
+    "source": "protondb"
+  }
+]

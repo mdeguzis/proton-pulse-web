@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2336720",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 550.78",
+    "kernel": "6.9.3-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1719949717,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2336720",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "5.15.0-113-generic",
+    "notes": "",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1723277301,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2336720",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Game won't start and weirdly lags steam deck to the point the steam menu an quick acces won't open",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1723913346,
+    "title": "",
+    "source": "protondb"
+  }
+]

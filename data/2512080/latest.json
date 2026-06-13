@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2512080",
+    "cpu": "AMD Ryzen 7 6800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, rembrandt, LLVM 17.0.2, DRM 3.57, 6.8.3-pikaos)",
+    "gpuDriver": "4.6 Mesa 24.0.4 - PikaOS YellowBirb Mesa Stable (git-bb6a55b75b)",
+    "kernel": "6.8.3-pikaos",
+    "notes": "",
+    "os": "PikaOS Linux 3",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1716021693,
+    "title": "DDI Rally Championship",
+    "source": "protondb"
+  }
+]

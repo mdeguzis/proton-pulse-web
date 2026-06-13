@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1822710",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.44.0, 5.16.11-1-default, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.11-1-default",
+    "notes": "It works, but there is progessive slow-down that becomes quite painful as time goes on.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1647078427,
+    "title": "",
+    "source": "protondb"
+  }
+]

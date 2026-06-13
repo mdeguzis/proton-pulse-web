@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "868360",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.5, DRM 3.59, 6.12.9-203.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.8",
+    "kernel": "6.12.9-203.bazzite.fc41.x86_64",
+    "notes": "No Problems at all!",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1737605971,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "868360",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 19.1.7, DRM 3.61, 6.13.7-1-default)",
+    "gpuDriver": "4.6 Mesa 25.0.2",
+    "kernel": "6.13.7-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1744486584,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "868360",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "unreported",
+    "gpu": "NVIDIA RTX A2000 8GB Laptop GPU",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.14.0-28-generic",
+    "notes": "Works flawlessly with all DLC and lots of mods (plus no population cap) !",
+    "os": "Ubuntu 24.04.3 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1756452775,
+    "title": "",
+    "source": "protondb"
+  }
+]

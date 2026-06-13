@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1710540",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1687703543,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1710540",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.15.0-48-generic",
+    "notes": "Pretty entertaining story game, played well and was a good time",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1691463106,
+    "title": "",
+    "source": "protondb"
+  }
+]

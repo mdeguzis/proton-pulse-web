@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1318800",
+    "cpu": "AMD Athlon X4 760K Quad Core",
+    "duration": "unreported",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 20.0.8",
+    "kernel": "5.4.0-54-generic",
+    "notes": "With these launch options, I have zero problems:\n    \nPROTON_NO_ESYNC=1 PROTON_USE_WINED3D=1 %command%",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1606343174,
+    "title": "",
+    "source": "protondb"
+  }
+]

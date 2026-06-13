@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1730260",
+    "cpu": "Intel Core i7         960  @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Mesa/X.org llvmpipe (LLVM 13.0.1, 128 bits)",
+    "gpuDriver": "4.5 Mesa 22.0.5",
+    "kernel": "5.15.0-56-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "24 GB",
+    "rating": "platinum",
+    "timestamp": 1673338117,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1730260",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 17.0.4, DRM 3.54, 6.5.9-1-default)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.9-1-default",
+    "notes": "No issues",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1699937406,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1730260",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 525.105.17",
+    "kernel": "5.19.0-41-generic",
+    "notes": "It is good, with the exception of exporting to the workshop.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1703366531,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "287580",
+    "cpu": "AMD Ryzen 5 8645HS w/ Radeon 760M Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon 760M (radeonsi, phoenix, LLVM 20.1.8, DRM 3.64, 6.17.8-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.17.8-200.fc42.x86_64",
+    "notes": "Do not use Proton! Start the native Linux version under \"X11\". When using \"Wayland\", you must also use Gamescope.",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1763823295,
+    "title": "",
+    "source": "protondb"
+  }
+]

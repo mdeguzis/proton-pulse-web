@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "523080",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.11-arch1-1",
+    "notes": "Runs just like it would nativly",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1624079028,
+    "title": "Gamepad Controller Template",
+    "source": "protondb"
+  }
+]

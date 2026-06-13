@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "211180",
+    "cpu": "12th Gen Intel Core i3-12100F",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 595.45.04",
+    "kernel": "6.19.9-1-cachyos",
+    "notes": "Very mechanical actually",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1774449910,
+    "title": "Unmechanical",
+    "source": "protondb"
+  }
+]

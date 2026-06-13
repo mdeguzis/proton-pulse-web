@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "778700",
+    "cpu": "11th Gen Intel Core i7-11700F @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.5.4-zen2-1-zen",
+    "notes": "Runs well. Starts up",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1737054469,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "778700",
+    "cpu": "AMD Ryzen 9 8945HS w/ Radeon 780M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 19.1.7, DRM 3.61, 6.14.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.3-arch1.1",
+    "kernel": "6.14.2-arch1-1",
+    "notes": "literally no problems at all thats what ive heard from a friend i mean",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1745007754,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "778700",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 575.64",
+    "kernel": "6.15.3-2-cachyos",
+    "notes": "Upon installing the game, it does not even load up at all. Where it was able to load previously, but won't now.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1750844132,
+    "title": "",
+    "source": "protondb"
+  }
+]

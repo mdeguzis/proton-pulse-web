@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1129220",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.44.0, 5.16.3-arch1-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.3-arch1-1",
+    "notes": "The play button shows the \"x stop\" as though it's starting, then it just cancels back to the play button without the game starting up.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1648326227,
+    "title": "",
+    "source": "protondb"
+  }
+]

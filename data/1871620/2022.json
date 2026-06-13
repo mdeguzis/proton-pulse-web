@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1871620",
+    "cpu": "AMD Ryzen 7 PRO 5850U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (DRM 3.44.0, 5.16.1-1-default, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.4",
+    "kernel": "5.16.1-1-default",
+    "notes": "Works just like it does on Windows.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-8",
+    "ram": "23 GB",
+    "rating": "gold",
+    "timestamp": 1643138307,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1871620",
+    "cpu": "AMD Ryzen Threadripper 3960X 24-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "Seems to work great, just like on windows",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1643157720,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1871620",
+    "cpu": "AMD Ryzen Threadripper 3960X 24-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "Works just like it does on Wiondows",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1643208540,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2477010",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 17.0.6, DRM 3.54, 6.6.11-1-default)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.6.11-1-default",
+    "notes": "Perfect",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1705646253,
+    "title": "Ticket to Ride\u00ae",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1678860",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.13-arch1-2",
+    "notes": "The game crashed after 1 hour, but I'm unsure if it's an issue with Proton or not.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1626200402,
+    "title": "TV Kid",
+    "source": "protondb"
+  }
+]

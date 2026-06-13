@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1232180",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.4.0-104-generic",
+    "notes": "Game ran as it would natively.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1647401472,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1232180",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Good Game",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1659045372,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1232180",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "6.0.6-arch1-1",
+    "notes": "works great",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1668711457,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1924150",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "5.15.78-1-MANJARO",
+    "notes": "Microsoft Visual C++ Runtime error",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1670306999,
+    "title": "CYBERHUNK",
+    "source": "protondb"
+  }
+]

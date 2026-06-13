@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2207070",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 15.0.7, DRM 3.49, 6.2.11-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.2.11-arch1-1",
+    "notes": "Doesn't launch at all. Tested on Intel igpu-laptop, amdcpu-nvidiagpu system and amdgpu-amdgpu system.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-6",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1681755500,
+    "title": "",
+    "source": "protondb"
+  }
+]

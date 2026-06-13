@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1351950",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.1.7",
+    "kernel": "5.8.9-200.fc32.x86_64",
+    "notes": "Ran great on Fedora, no extra work.",
+    "os": "Fedora 32",
+    "protonVersion": "5.13-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1603592010,
+    "title": "",
+    "source": "protondb"
+  }
+]

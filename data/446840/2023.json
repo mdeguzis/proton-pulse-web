@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "446840",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "5.19.0-31-generic",
+    "notes": "Xbox (One/360) controller support is borked on native. Not even Big Picture fixed it.",
+    "os": "Ubuntu 22.10",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1676367007,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "446840",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 535.98",
+    "kernel": "6.3.13_1",
+    "notes": "",
+    "os": "Void Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1695220578,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "446840",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works well!",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1701274276,
+    "title": "",
+    "source": "protondb"
+  }
+]

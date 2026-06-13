@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2871440",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.10-100.fc36.x86_64",
+    "notes": "Everything seemed to have work perfectly!  However this is specifically the demo so this report will need to be updated for later.",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1728640405,
+    "title": "Squeakross: Home Squeak Home",
+    "source": "protondb"
+  }
+]

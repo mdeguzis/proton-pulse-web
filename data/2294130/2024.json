@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2294130",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5500 XT (navi14, LLVM 15.0.7, DRM 3.49, 6.2.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.2.12-arch1-1",
+    "notes": "Very nice and runns good. Just dont forget to add -dx12 to your launch options",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1705139439,
+    "title": "",
+    "source": "protondb"
+  }
+]

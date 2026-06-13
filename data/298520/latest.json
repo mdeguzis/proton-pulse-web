@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "298520",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "Had issues with the Native Linux build (It was full screen but 50% off screen. Changing to windowed fixed)",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1656189794,
+    "title": "",
+    "source": "protondb"
+  }
+]

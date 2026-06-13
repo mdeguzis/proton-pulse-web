@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "832140",
+    "cpu": "AMD FX-9370 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.10.9-1-default",
+    "notes": "Game works well with Proton-6.1-GE-1. No other changes were required.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1612485441,
+    "title": "Infernal Radiation",
+    "source": "protondb"
+  }
+]

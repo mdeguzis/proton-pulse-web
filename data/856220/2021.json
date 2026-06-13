@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "856220",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 21.1.4 (git-ac105a8e6e)",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "game is trying to install driver that cant run on linux and after that nothing any window showing up",
+    "os": "Freedesktop.org 20.08.14 (Flatpak runtime)",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1627133628,
+    "title": "",
+    "source": "protondb"
+  }
+]

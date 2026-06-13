@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1211240",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1103_r1, LLVM 16.0.6, DRM 3.57, 6.8.10-291.current)",
+    "gpuDriver": "4.6 Mesa 24.0.8",
+    "kernel": "6.8.10-291.current",
+    "notes": "Works out of the box.",
+    "os": "Solus",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1716892475,
+    "title": "Trifox",
+    "source": "protondb"
+  },
+  {
+    "appId": "1211240",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 550.78",
+    "kernel": "6.9.2-arch1-1",
+    "notes": "Completed game without issues",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1717150240,
+    "title": "Trifox",
+    "source": "protondb"
+  },
+  {
+    "appId": "1211240",
+    "cpu": "12th Gen Intel Core i3-1215U",
+    "duration": "underOneHour",
+    "gpu": "Mesa virgl (Mesa Intel (ADL GT2))",
+    "gpuDriver": "4.6 Mesa 24.2.0-devel (git-c44e76676b)",
+    "kernel": "6.1.92-14423-g0fd0f31485f2",
+    "notes": "Not a fast-moving or super-responsive game but I think it's playing as intended.",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "9.0-2",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1720593027,
+    "title": "Trifox",
+    "source": "protondb"
+  }
+]

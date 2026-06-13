@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1114830",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 16.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.3.3-arch1.1",
+    "kernel": "6.6.10-arch1-1",
+    "notes": "You get the blue loading screen with the rotating tank model, then it suddenly freezes and goes no further.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1705705881,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1114830",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 16.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.3.3-arch1.1",
+    "kernel": "6.6.10-arch1-1",
+    "notes": "Insane load times.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1705707717,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "845250",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 560 (polaris11, LLVM 14.0.6, DRM 3.47, 5.19.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.7-arch1-1",
+    "notes": "With 0 dev support, I don't see the bugs getting ironed out, but for the most part it runs totally fine with proton.",
+    "os": "ArcoLinux",
+    "protonVersion": "8.0-5",
+    "ram": "24 GB",
+    "rating": "silver",
+    "timestamp": 1706494072,
+    "title": "",
+    "source": "protondb"
+  }
+]

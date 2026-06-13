@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "501120",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.8, DRM 3.57, 6.10.9-zen1)",
+    "gpuDriver": "4.6 Mesa 24.2.2",
+    "kernel": "6.10.9-zen1",
+    "notes": "Native version didn't work, Proton works flawlessly.",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1754243813,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "501120",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.8-arch1-2",
+    "notes": "Works great by simply using Proton Experimental",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1754261120,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "501120",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "If you like Clock Simulator on PC, you will like it on Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1754744453,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1248080",
+    "cpu": "AMD Ryzen 9 5900XT 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.16.4-108.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.1",
+    "kernel": "6.16.4-108.bazzite.fc42.x86_64",
+    "notes": "Excellent",
+    "os": "Bazzite",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1758724127,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1248080",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.8-arch3-1)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.16.8-arch3-1",
+    "notes": "Game crashes with DXGI_ERROR_INVALID_CALL error.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1758994657,
+    "title": "",
+    "source": "protondb"
+  }
+]

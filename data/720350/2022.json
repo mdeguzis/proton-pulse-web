@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "720350",
+    "cpu": "Intel Xeon           X5460  @ 3.87GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 470.63",
+    "kernel": "5.14.16",
+    "notes": "Very tight on memory with 8GB, presumably the Wine framework adds overhead. Runs best after fresh boot with only Steam in the background.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1643459397,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "720350",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.6-200.fc33.x86_64",
+    "notes": "Runs great",
+    "os": "Fedora release 33 (Thirty Three)",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1645734902,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "720350",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.16.11-200.fc35.x86_64",
+    "notes": "Works perfectly, no tweaks required",
+    "os": "Fedora release 35 (Thirty Five)",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1646586726,
+    "title": "",
+    "source": "protondb"
+  }
+]

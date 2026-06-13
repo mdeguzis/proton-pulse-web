@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1640300",
+    "cpu": "AMD Ryzen 9 9950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.14.5-arch1-1",
+    "notes": "Runs exactly as-expected",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "126 GB",
+    "rating": "platinum",
+    "timestamp": 1749145161,
+    "title": "",
+    "source": "protondb"
+  }
+]

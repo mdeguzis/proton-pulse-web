@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1515640",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 15.0.7, DRM 3.52, 6.4.4-1-cachyos-lto)",
+    "gpuDriver": "4.6 Mesa 23.1.3",
+    "kernel": "6.4.4-1-cachyos-lto",
+    "notes": "Doesn't launch. The Epic version still needs -dx11 to run. The game's just running, but nothing shows up.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1689834847,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1515640",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.15.19-xanmod1",
+    "notes": "needs to be launched in dx11",
+    "os": "Drauger OS 7.5.1 Zombi",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1689954847,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1515640",
+    "cpu": "Intel Core i7-10700F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.7-x64v3-xanmod1",
+    "notes": "Works out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1698370039,
+    "title": "",
+    "source": "protondb"
+  }
+]

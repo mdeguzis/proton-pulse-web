@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2749770",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 21.1.5, DRM 3.64, 6.18.7-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.18.7-200.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (COSMIC)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1770194559,
+    "title": "Galaxy Burger",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "314320",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.10.53-1-MANJARO",
+    "notes": "Unplayable, after starting the game endless Error Messages were shown",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1628415731,
+    "title": "",
+    "source": "protondb"
+  }
+]

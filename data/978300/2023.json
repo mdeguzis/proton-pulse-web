@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "978300",
+    "cpu": "Intel Core i5-8490M @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "GeForce GTX 1050 Ti",
+    "gpuDriver": "4.2 Mesa 22.1.7",
+    "kernel": "6.0.12-200.fc36.x86_64",
+    "notes": "Very laggy bought it for alll  the dlc but personally I prefer the original as it is way smoother.",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1674509361,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "978300",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.7, DRM 3.49, 6.1.14-201.fsync.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.0",
+    "kernel": "6.1.14-201.fsync.fc37.x86_64",
+    "notes": "I recommended set max to 120 hz with gamescope command to get smooth gameplay.",
+    "os": "Nobara Linux 37 (KDE Plasma)",
+    "protonVersion": "8.0-1",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1682085078,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "978300",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD GFX1036 (gfx1036, LLVM 14.0.0, DRM 3.48, 6.0.12-76060006-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "6.0.12-76060006-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "31 GB",
+    "rating": "bronze",
+    "timestamp": 1694221768,
+    "title": "",
+    "source": "protondb"
+  }
+]

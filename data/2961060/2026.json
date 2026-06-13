@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2961060",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.16-1-lts",
+    "notes": "The game ran fine, no tweaks required, but at most some tweaking. Overall it runs good all by itself.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1773277433,
+    "title": "",
+    "source": "protondb"
+  }
+]

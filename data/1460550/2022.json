@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1460550",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD DIMGREY_CAVEFISH (DRM 3.41.0, 5.13.0-35-generic, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.7 - kisak-mesa PPA",
+    "kernel": "5.13.0-35-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1646960893,
+    "title": "Ring of Titans",
+    "source": "protondb"
+  }
+]

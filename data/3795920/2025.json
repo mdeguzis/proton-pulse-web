@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3795920",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 19.1.1, DRM 3.57, 6.8.0-64-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-64-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "126 GB",
+    "rating": "gold",
+    "timestamp": 1753421831,
+    "title": "",
+    "source": "protondb"
+  }
+]

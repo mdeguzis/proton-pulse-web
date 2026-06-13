@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "615730",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Cursor lags a bit but it's nothing that will hold you back",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1609828508,
+    "title": "",
+    "source": "protondb"
+  }
+]

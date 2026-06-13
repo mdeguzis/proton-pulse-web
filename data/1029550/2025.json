@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1029550",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 19.1.0, DRM 3.59, 6.12.6-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.8",
+    "kernel": "6.12.6-200.fc41.x86_64",
+    "notes": "Not working",
+    "os": "Fedora Linux 41 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1735775928,
+    "title": "",
+    "source": "protondb"
+  }
+]

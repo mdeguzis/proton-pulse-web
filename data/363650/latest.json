@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "363650",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce MX150",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.4.0-77-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1625881115,
+    "title": "",
+    "source": "protondb"
+  }
+]

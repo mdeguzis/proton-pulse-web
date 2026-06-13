@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1540350",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.6-76060606-generic",
+    "notes": "Todo funciona sin problemas",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1704294771,
+    "title": "The Fabulous Fear Machine",
+    "source": "protondb"
+  },
+  {
+    "appId": "1540350",
+    "cpu": "AMD Ryzen 7 PRO 6850H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, rembrandt, LLVM 17.0.6, DRM 3.57, 6.7.9-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.2 (git-a3df5eab6c)",
+    "kernel": "6.7.9-200.fc39.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1710756943,
+    "title": "The Fabulous Fear Machine",
+    "source": "protondb"
+  },
+  {
+    "appId": "1540350",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.9.7-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1725218585,
+    "title": "The Fabulous Fear Machine",
+    "source": "protondb"
+  }
+]

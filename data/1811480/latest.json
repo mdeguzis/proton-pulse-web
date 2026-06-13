@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1811480",
+    "cpu": "Intel Core i5-9500F @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.11-76051511-generic",
+    "notes": "Only thing you need to do is enable proton for it and it will work just fine.",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1642797950,
+    "title": "\u982d\u75db",
+    "source": "protondb"
+  }
+]

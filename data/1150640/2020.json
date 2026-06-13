@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1150640",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.16-1-MANJARO",
+    "notes": "No issue at all with base proton 5.0.9, GE versions work as well, so no issues with any version",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1593374530,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1150640",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.52-1-MANJARO",
+    "notes": "Works perfectly out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1595201275,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1150640",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.6 Mesa 20.3.0-devel (git-ef980ac 2020-09-11 focal-oibaf-ppa)",
+    "kernel": "5.4.0-7642-generic",
+    "notes": "dueling, opening packs and deck build all works with n/p but did not try the online parts of the game",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1599987433,
+    "title": "",
+    "source": "protondb"
+  }
+]

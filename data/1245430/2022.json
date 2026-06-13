@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1245430",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.11.0-46-generic",
+    "notes": "Game runs perfectly out of the box",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-8",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1642075205,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1245430",
+    "cpu": "Intel Core i5-8500 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.17.1-arch1-1",
+    "notes": "Worked OOTB no tinkering",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1652810295,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1245430",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.129.06",
+    "kernel": "5.15.37-214.current",
+    "notes": "",
+    "os": "Solus",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1656159882,
+    "title": "",
+    "source": "protondb"
+  }
+]

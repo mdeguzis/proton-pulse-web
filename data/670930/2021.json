@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "670930",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.4.0-65-generic",
+    "notes": "Almost perfect, just needs a quick tweak for cutscenes",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1614018801,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "670930",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.8.0-50-generic",
+    "notes": "I finished the tutorial level and played for a while the next level. I also messed around with graphics options without an issue.,",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1620515639,
+    "title": "",
+    "source": "protondb"
+  }
+]

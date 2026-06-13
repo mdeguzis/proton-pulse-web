@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1803310",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon Vega 8 (raven, LLVM 15.0.7, DRM 3.52, 6.3.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.2",
+    "kernel": "6.3.8-arch1-1",
+    "notes": "White or blank videos near the end but run fine otherwise.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "10 GB",
+    "rating": "gold",
+    "timestamp": 1718781999,
+    "title": "",
+    "source": "protondb"
+  }
+]

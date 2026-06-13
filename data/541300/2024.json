@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "541300",
+    "cpu": "Intel Xeon E31270 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.4.0-132-generic",
+    "notes": "Non si avvia",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "9.0-4",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1734198121,
+    "title": "",
+    "source": "protondb"
+  }
+]

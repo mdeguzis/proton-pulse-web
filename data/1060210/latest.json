@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1060210",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (sienna_cichlid, LLVM 14.0.6, DRM 3.47, 5.19.1-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.19.1-2-MANJARO",
+    "notes": "Excepting the Epilogue everything runs fine",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "64 GB",
+    "rating": "bronze",
+    "timestamp": 1665334010,
+    "title": "Disaster Report 4: Summer Memories",
+    "source": "protondb"
+  },
+  {
+    "appId": "1060210",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 15.0.0, DRM 3.48, 6.0.3_tkg_cfs)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "6.0.3_tkg_cfs",
+    "notes": "Played through the main game and was also able to play the epilogue",
+    "os": "Fedora release 37 (Thirty Seven)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1666551810,
+    "title": "Disaster Report 4: Summer Memories",
+    "source": "protondb"
+  },
+  {
+    "appId": "1060210",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1666751294,
+    "title": "Disaster Report 4: Summer Memories",
+    "source": "protondb"
+  }
+]

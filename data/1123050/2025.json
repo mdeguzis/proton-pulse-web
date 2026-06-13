@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1123050",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.8.0-60-generic",
+    "notes": "",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1748436509,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1123050",
+    "cpu": "Intel Core Ultra 7 265K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.8.0-71-generic",
+    "notes": "",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1755553041,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1123050",
+    "cpu": "Intel Core i5-1035G1 @ 1.00GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel UHD (ICL GT1)",
+    "gpuDriver": "4.6 Mesa 25.2.5",
+    "kernel": "6.17.4-300.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (Forty Three)",
+    "protonVersion": "9.0-4",
+    "ram": "20 GB",
+    "rating": "gold",
+    "timestamp": 1761931884,
+    "title": "",
+    "source": "protondb"
+  }
+]

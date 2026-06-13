@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1273540",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 21.1.7, DRM 3.64, 6.17.7-ba22.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.1",
+    "kernel": "6.17.7-ba22.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773667696,
+    "title": "Mail Mole + 'Xpress Deliveries",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "983870",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 470.42.01",
+    "kernel": "5.10.47-1-MANJARO",
+    "notes": "Nextfest demo works great out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1696883038,
+    "title": "FOUNDRY",
+    "source": "protondb"
+  },
+  {
+    "appId": "983870",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 16.0.6, DRM 3.54, 6.2.0-34-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.0-devel",
+    "kernel": "6.2.0-34-generic",
+    "notes": "",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1696884026,
+    "title": "FOUNDRY",
+    "source": "protondb"
+  },
+  {
+    "appId": "983870",
+    "cpu": "Intel Core i9-7980XE @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.3.13-1-liquorix-amd64",
+    "notes": "Mit der richtigen Proton-Version l\u00e4uft das Spiel ohne Probleme.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-6",
+    "ram": "128 GB",
+    "rating": "platinum",
+    "timestamp": 1697034120,
+    "title": "FOUNDRY",
+    "source": "protondb"
+  }
+]

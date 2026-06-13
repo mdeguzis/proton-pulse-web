@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "941480",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.15.10-artix1-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.15.10-artix1-1",
+    "notes": "Runs great! As well as native",
+    "os": "Artix Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1640848203,
+    "title": "Giraffe Town",
+    "source": "protondb"
+  }
+]

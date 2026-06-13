@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1360000",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.1, DRM 3.42, 5.15.0-56-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-56-generic",
+    "notes": "The game runs fine for me out of box. No tinering needed. I haven't noticed any problems while playing.",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1673156066,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1360000",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Fun survival game.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1682766179,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1360000",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "6.1.0-13-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1701705897,
+    "title": "",
+    "source": "protondb"
+  }
+]

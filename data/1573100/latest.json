@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1573100",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 550.107.02",
+    "kernel": "6.8.0-45-generic",
+    "notes": "runs well enough. startup takes a while though thats udnerstandable for a game running via proton.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1728119006,
+    "title": "",
+    "source": "protondb"
+  }
+]

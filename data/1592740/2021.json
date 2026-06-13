@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1592740",
+    "cpu": "AMD Athlon II X2 250",
+    "duration": "unreported",
+    "gpu": "AMD RV730",
+    "gpuDriver": "3.0 Mesa 20.2.6",
+    "kernel": "5.4.0-74-generic",
+    "notes": "Failed to initalize graphics",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1624448876,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1592740",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1627222247,
+    "title": "",
+    "source": "protondb"
+  }
+]

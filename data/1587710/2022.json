@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1587710",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.3",
+    "kernel": "5.15.16_1",
+    "notes": "Used Proton Experimental (ie. didn't adjust any values), worked perfect. I didn't even realize it was running via Proton.",
+    "os": "Void Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1643321502,
+    "title": "",
+    "source": "protondb"
+  }
+]

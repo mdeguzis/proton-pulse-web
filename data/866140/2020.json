@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "866140",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.6 Mesa 20.2.3 (git-8440307a61)",
+    "kernel": "5.4.83-1-lts",
+    "notes": "Game works, barely. Not really playable",
+    "os": "Freedesktop.org 20.08.2 (Flatpak runtime)",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1608588209,
+    "title": "",
+    "source": "protondb"
+  }
+]

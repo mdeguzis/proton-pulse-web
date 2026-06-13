@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2306590",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 560.31.02",
+    "kernel": "6.10.6-2-cachyos",
+    "notes": "Works great with proton.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1724340876,
+    "title": "",
+    "source": "protondb"
+  }
+]

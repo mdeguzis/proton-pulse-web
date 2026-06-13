@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2025310",
+    "cpu": "AMD Ryzen AI 9 HX PRO 370 w/ Radeon 890M",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon 890M (radeonsi, strix1, ACO, DRM 3.64, 6.18.15)",
+    "gpuDriver": "4.6 Mesa 26.0.1",
+    "kernel": "6.18.15",
+    "notes": "",
+    "os": "NixOS 26.05 (Yarara)",
+    "protonVersion": "10.0-3",
+    "ram": "88 GB",
+    "rating": "platinum",
+    "timestamp": 1772999022,
+    "title": "Sigh of the Abyss",
+    "source": "protondb"
+  }
+]

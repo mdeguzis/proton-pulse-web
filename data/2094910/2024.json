@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2094910",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.78",
+    "kernel": "6.6.28",
+    "notes": "Seems to work well.",
+    "os": "NixOS 24.05 (Uakari)",
+    "protonVersion": "9.0-1",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1715632807,
+    "title": "",
+    "source": "protondb"
+  }
+]

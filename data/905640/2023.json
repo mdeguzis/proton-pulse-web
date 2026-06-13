@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "905640",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 16.0.6, DRM 3.54, 6.6.1-1-cachyos-bore)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.1-1-cachyos-bore",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1702597008,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "905640",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 16.0.6, DRM 3.54, 6.6.1-1-cachyos-bore)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.1-1-cachyos-bore",
+    "notes": "Install with 4.11, after GG installs, switch to 8.0-2 or later. Change resolution to resolve sticking keys.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1702599000,
+    "title": "",
+    "source": "protondb"
+  }
+]

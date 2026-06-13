@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2473070",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 525.105.17",
+    "kernel": "6.1.0-10-amd64",
+    "notes": "Doesn't run on Debian",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1695163372,
+    "title": "",
+    "source": "protondb"
+  }
+]

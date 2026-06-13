@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2023910",
+    "cpu": "AMD Ryzen 7 5700U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.16.7-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.3-cachyos1.2",
+    "kernel": "6.16.7-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1758352516,
+    "title": "Light Maze",
+    "source": "protondb"
+  }
+]

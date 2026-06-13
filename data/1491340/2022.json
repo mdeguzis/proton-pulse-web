@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1491340",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.10.0-12-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 11 (bullseye) (64\u00a0bits)",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1649131446,
+    "title": "Marble World",
+    "source": "protondb"
+  }
+]

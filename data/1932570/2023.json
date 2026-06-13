@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1932570",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (renoir, LLVM 15.0.3, DRM 3.48, 5.4.0-146-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.0-devel",
+    "kernel": "5.4.0-146-generic",
+    "notes": "Testet Proton from 6 to 8 with no luck. even not with GE 8-6. Gaame would not started.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "8.0-3",
+    "ram": "60 GB",
+    "rating": "borked",
+    "timestamp": 1690998280,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "979450",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.16.2-2-cachyos",
+    "notes": "It works, though I did get a crash after losing once.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1757387130,
+    "title": "",
+    "source": "protondb"
+  }
+]

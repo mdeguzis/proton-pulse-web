@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1709070",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.18.7-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.2",
+    "kernel": "6.18.7-2-cachyos",
+    "notes": "works like clockwork",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1769442023,
+    "title": "",
+    "source": "protondb"
+  }
+]

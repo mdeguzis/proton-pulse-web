@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3103940",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 18.1.6, DRM 3.57, 6.10.4-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel",
+    "kernel": "6.10.4-200.fc40.x86_64",
+    "notes": "Playable completed a full playthrough, there were some performance issues and bugs.",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1724515643,
+    "title": "",
+    "source": "protondb"
+  }
+]

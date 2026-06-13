@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1460220",
+    "cpu": "Intel Core i5-8490M @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "GeForce GTX 1050 Ti",
+    "gpuDriver": "528.49",
+    "kernel": "6.0.12-200.fc36.x86_64",
+    "notes": "Got a error \"fatal error\" no matter what I do",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1677361182,
+    "title": "Evil Nun: The Broken Mask",
+    "source": "protondb"
+  }
+]

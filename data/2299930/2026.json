@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2299930",
+    "cpu": "AMD Ryzen Z2 Go",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, rembrandt, LLVM 18.1.8, DRM 3.59, 6.11.11-valve27-1-neptune-611-g60ef8556a811)",
+    "gpuDriver": "4.6 Mesa 24.3.4 (git-8d0948917e)",
+    "kernel": "6.11.11-valve27-1-neptune-611-g60ef8556a811",
+    "notes": "I'm playing on a Lenovo Legion Go S Z2 Go. This runs flawlessly on SteamOS with zero issues, and controller is automatically working.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1775240407,
+    "title": "",
+    "source": "protondb"
+  }
+]

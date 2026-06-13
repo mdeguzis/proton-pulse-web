@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "638510",
+    "cpu": "AMD Ryzen 7 5700U with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.18.3-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.18.3-200.fc43.x86_64",
+    "notes": "Seems like asset loader crashes or something,because there's like 1/20 launch chance,it does progress to ingame,but selecting character crashes the game again",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1767995197,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "638510",
+    "cpu": "AMD Ryzen 7 5700U with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.18.3-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.18.3-200.fc43.x86_64",
+    "notes": "In new patches of the game,there's some bug where game lags/crashes on asset loading right few ms after you opened the game,so only assets of that loading menu are displayed,tried changing proton versions to \"Proton Hotfix\" and 9.x and 8.x but issue still remains",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1767996058,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "638510",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1769817166,
+    "title": "",
+    "source": "protondb"
+  }
+]

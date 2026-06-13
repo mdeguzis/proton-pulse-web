@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1850740",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.47, 5.19.0-46-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.5-0ubuntu0.1~22.04.3",
+    "kernel": "5.19.0-46-generic",
+    "notes": "Playable without problems",
+    "os": "Linux Mint 21",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1689052400,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1850740",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6750 XT (navi22, LLVM 16.0.6, DRM 3.52, 6.4.12-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.1.6-arch1.4",
+    "kernel": "6.4.12-zen1-1-zen",
+    "notes": "all fine with the game",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1693938525,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1850740",
+    "cpu": "Intel Core i5-9300HF @ 2.40GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.4.14-200.fc38.x86_64",
+    "notes": "Playable, but better hardware and maybe Proton GE will work better",
+    "os": "Fedora Linux 38 (Cinnamon)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1694267818,
+    "title": "",
+    "source": "protondb"
+  }
+]

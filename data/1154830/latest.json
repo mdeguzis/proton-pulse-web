@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1154830",
+    "cpu": "Intel Core i5-10600K @ 4.10GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "5.19.0-35-generic",
+    "notes": "Should work as well as it works on Windows. Linux rules.",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1679723358,
+    "title": "Scathe",
+    "source": "protondb"
+  }
+]

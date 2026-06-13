@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2171440",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.7.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.3.4 (git-27405fd573)",
+    "kernel": "6.7.4-arch1-1",
+    "notes": "Works out of box on Proton Experimental",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1707695785,
+    "title": "",
+    "source": "protondb"
+  }
+]

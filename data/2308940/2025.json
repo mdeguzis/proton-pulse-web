@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2308940",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 18.1.8, DRM 3.64, 6.16.12)",
+    "gpuDriver": "4.6 Mesa 25.2.3",
+    "kernel": "6.16.12",
+    "notes": "",
+    "os": "Guix System",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1764541554,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1173400",
+    "cpu": "Intel Xeon E3-1231 v3 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.0-7625-generic",
+    "notes": "Window opens but never loads, black screen",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-4",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1609238372,
+    "title": "",
+    "source": "protondb"
+  }
+]

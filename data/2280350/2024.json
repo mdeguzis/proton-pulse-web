@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2280350",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Arc A770 (DG2)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "6.5.0-28-generic",
+    "notes": "Graphics are a bit glitchy, performance isn't amazing, but still perfectly playable for this sort of game",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1728938292,
+    "title": "",
+    "source": "protondb"
+  }
+]

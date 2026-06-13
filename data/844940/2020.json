@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "844940",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.2.2",
+    "kernel": "5.9.8-2-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "5.13-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1605905864,
+    "title": "",
+    "source": "protondb"
+  }
+]

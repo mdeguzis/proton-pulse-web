@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1059120",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "unreported",
+    "gpu": "AMD BARTS",
+    "gpuDriver": "3.1 Mesa 20.3.0-devel (git-0f8ef37 2020-08-10 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-112-generic",
+    "notes": "Horrible crash, I was forced to reboot",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1597105863,
+    "title": "",
+    "source": "protondb"
+  }
+]

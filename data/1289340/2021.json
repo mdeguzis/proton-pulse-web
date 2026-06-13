@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1289340",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.10.12-1-default",
+    "notes": "Works without any tweaking at all",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1613680872,
+    "title": "TasteMaker",
+    "source": "protondb"
+  }
+]

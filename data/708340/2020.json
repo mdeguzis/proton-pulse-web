@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "708340",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "The game runs consistently with no major issues",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "24 GB",
+    "rating": "silver",
+    "timestamp": 1598693992,
+    "title": "Shark Simulator",
+    "source": "protondb"
+  }
+]

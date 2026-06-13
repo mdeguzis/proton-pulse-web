@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "758600",
+    "cpu": "AMD A10-7860K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "4.15.0-72-generic",
+    "notes": "",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-10",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1576499311,
+    "title": "",
+    "source": "protondb"
+  }
+]

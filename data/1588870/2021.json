@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1588870",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.4.0-72-generic",
+    "notes": "Jogo rodou de inicio em Proton 6.3-2 ae mudei para proton 6.5-GE-1 e tudo funcionou normalmente",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "6.3-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1619133194,
+    "title": "",
+    "source": "protondb"
+  }
+]

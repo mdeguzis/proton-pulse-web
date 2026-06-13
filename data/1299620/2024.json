@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1299620",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD NAVI22 (navi22, LLVM 15.0.7, DRM 3.54, 6.5.11-300.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.2.1 - kisak-mesa PPA",
+    "kernel": "6.5.11-300.fc39.x86_64",
+    "notes": "Was working fine up through the dev logo and start screen but after starting I saw nothing but a blank screen.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "8.0-5",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1706900458,
+    "title": "",
+    "source": "protondb"
+  }
+]

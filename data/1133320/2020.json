@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1133320",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.4.18-200.fc31.x86_64",
+    "notes": "Nothing is shown",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "5.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1581773054,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1133320",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.2.1",
+    "kernel": "5.8.9",
+    "notes": "",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1609357289,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1133320",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (DRM 3.40.0, 5.10.1-103-tkg-bmq, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1",
+    "kernel": "5.10.1-103-tkg-bmq",
+    "notes": "Runs flawlessly from the go with Proton-5.13-4. Valve Index, Radeon RX 6800 XT.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1609422053,
+    "title": "",
+    "source": "protondb"
+  }
+]

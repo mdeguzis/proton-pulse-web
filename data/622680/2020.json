@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "622680",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 480",
+    "gpuDriver": "4.6.14736 Compatibility Profile Context 20.20",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Tried both eggroll and 5.0-9. Both showed initial splash screens and then gets stuck on a black screen",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1602156240,
+    "title": "",
+    "source": "protondb"
+  }
+]

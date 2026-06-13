@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1028590",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 19.1.7, DRM 3.61, 6.13.9-103.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.3",
+    "kernel": "6.13.9-103.bazzite.fc41.x86_64",
+    "notes": "Absolutely runs like a dream on the Lenovo legion go \n30 watts graphics on medium and im maxing out my settings (48fps)",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "13 GB",
+    "rating": "gold",
+    "timestamp": 1744446445,
+    "title": "",
+    "source": "protondb"
+  }
+]

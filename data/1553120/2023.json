@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1553120",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.0-20-amd64",
+    "notes": "Of course, game works alright other than the minor issue with mouse input I already mentioned.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1673540301,
+    "title": "The Inheritance of Crimson Manor",
+    "source": "protondb"
+  }
+]

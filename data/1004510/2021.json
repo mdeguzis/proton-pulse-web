@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1004510",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (DRM 3.40.0, 5.11.6-137-tkg-bmq, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.11.6-137-tkg-bmq",
+    "notes": "Flawless experience, works out of the box. Valve Index VR kit.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1616933291,
+    "title": "",
+    "source": "protondb"
+  }
+]

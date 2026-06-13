@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3371630",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 20.1.6, DRM 3.63, 6.15.5-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.1.5-cachyos1.3",
+    "kernel": "6.15.5-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1763991382,
+    "title": "",
+    "source": "protondb"
+  }
+]

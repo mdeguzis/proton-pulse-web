@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "839200",
+    "cpu": "Intel Core i5-10210U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.2.2-arch2-1",
+    "notes": "Fehler zwecks \"dotnet.exe\"",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1729723072,
+    "title": "",
+    "source": "protondb"
+  }
+]

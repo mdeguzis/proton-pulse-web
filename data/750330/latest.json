@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "750330",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.4.0-86-generic",
+    "notes": "Works as intended, no FPS drops, runs with the default Proton version at the time of writing this.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1640140446,
+    "title": "",
+    "source": "protondb"
+  }
+]

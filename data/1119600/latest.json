@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1119600",
+    "cpu": "13th Gen Intel Core i7-13620H",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.12.49",
+    "notes": "Works without issues through Proton",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1760141566,
+    "title": "",
+    "source": "protondb"
+  }
+]

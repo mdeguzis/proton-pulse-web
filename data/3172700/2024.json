@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3172700",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.57, 6.10.6-AMD-znver3)",
+    "gpuDriver": "4.6 Mesa 24.2.3-arch1.1",
+    "kernel": "6.10.6-AMD-znver3",
+    "notes": "The Game Runs Smootly",
+    "os": "Garuda Linux Bird of Prey",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1727821015,
+    "title": "Banquet for Fools",
+    "source": "protondb"
+  },
+  {
+    "appId": "3172700",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "1728093750",
+    "gpuDriver": "Enabled",
+    "kernel": "6.8.5-301.fc40.x86_64",
+    "notes": "Game installs a 6kb stub by default, but forcing Proton on fixes this.",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-3",
+    "ram": "ATI R6xx HDMI",
+    "rating": "platinum",
+    "timestamp": 1728506144,
+    "title": "Banquet for Fools",
+    "source": "protondb"
+  }
+]

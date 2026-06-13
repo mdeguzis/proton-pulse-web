@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1642890",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.7, DRM 3.40, 5.10.167-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "5.10.167-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1677856834,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1642890",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1677857473,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1642890",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.7, DRM 3.40, 5.10.167-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "5.10.167-1-MANJARO",
+    "notes": "I usually get a splash screen, but then it stays black and never makes it to the main menu any more.  The game has always worked fine for me until this update on both PC and steamdeck, but no longer.  I sent an email to support but did not receive a reply.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1702663682,
+    "title": "",
+    "source": "protondb"
+  }
+]

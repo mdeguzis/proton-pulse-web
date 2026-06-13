@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1246420",
+    "cpu": "Intel Core i5-3317U @ 1.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.1",
+    "kernel": "5.6.7-arch1-1",
+    "notes": "A black screen pops up and then the game crashes",
+    "os": "Freedesktop.org 19.08.9 (Flatpak runtime)",
+    "protonVersion": "5.0-6",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1588167102,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1008020",
+    "cpu": "AMD Ryzen 7 7840HS with Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 18.1.8, DRM 3.57, 6.10.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.2-arch1.1",
+    "kernel": "6.10.8-arch1-1",
+    "notes": "Runs great on proton 7.0-6",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1726481851,
+    "title": "",
+    "source": "protondb"
+  }
+]

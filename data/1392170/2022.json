@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1392170",
+    "cpu": "Intel Core i5-4210U @ 1.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "4.15.0-118-generic",
+    "notes": "Had 2 crashes but could play all game with proton-experimental",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1643555801,
+    "title": "",
+    "source": "protondb"
+  }
+]

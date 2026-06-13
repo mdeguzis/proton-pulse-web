@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1100410",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD RX 6800 AMD SIENNA_CICHLID (DRM 3.40.0, 5.10.5-051005-generic, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.0-devel (git-d2f4934 2021-01-07 focal-oibaf-ppa)",
+    "kernel": "5.10.5-051005-generic",
+    "notes": "You need to know how to use protontricks or use an alternative version of proton as proton GE",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1610291095,
+    "title": "",
+    "source": "protondb"
+  }
+]

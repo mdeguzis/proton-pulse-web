@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2509120",
+    "cpu": "AMD Ryzen Threadripper 3990X 64-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.14.1-1-default",
+    "notes": "Works great except for sound",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-4",
+    "ram": "129 GB",
+    "rating": "bronze",
+    "timestamp": 1745178098,
+    "title": "AtmaSphere 2",
+    "source": "protondb"
+  }
+]

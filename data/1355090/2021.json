@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1355090",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.9.16-1-MANJARO",
+    "notes": "Worked fine on proton experimental.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1612736536,
+    "title": "",
+    "source": "protondb"
+  }
+]

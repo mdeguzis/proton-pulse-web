@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2091250",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480 (polaris10, LLVM 14.0.6, DRM 3.47, 5.19.2-zen1-2-zen)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.19.2-zen1-2-zen",
+    "notes": "There is no screen after clicking Play Game + Unable to run\n\nAt first it starts KoishiNavigationDesktopYoukai.exe but there is no screen and then it crashes.\n\n| Tested Proton version\uff1a |\n|----------|\n| GE-Proton7-17 |\n| Proton 7.0-4 |",
+    "os": "Arch Linux (64 \u4f4d\u5143)",
+    "protonVersion": "7.0-4",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1661707050,
+    "title": "Koishi Navigation Desktop Youkai",
+    "source": "protondb"
+  }
+]

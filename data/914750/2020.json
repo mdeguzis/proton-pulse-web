@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "914750",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.64.00",
+    "kernel": "4.12.14-lp151.28.44-default",
+    "notes": "Crashes at startup",
+    "os": "openSUSE Leap 15.1",
+    "protonVersion": "5.13-2",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1605617039,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "914750",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.3.18-lp152.50-default",
+    "notes": "Game runs but cannot move with keyboard or gamepad",
+    "os": "openSUSE Leap 15.2",
+    "protonVersion": "5.13-2",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1605728879,
+    "title": "",
+    "source": "protondb"
+  }
+]

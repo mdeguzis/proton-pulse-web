@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1639790",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.59, 6.12.7-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 24.3.2-cachyos1.2",
+    "kernel": "6.12.7-2-cachyos",
+    "notes": "Excellent performance at high framerates",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1735746314,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1639790",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.4-arch1-1",
+    "notes": "Great",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1740783888,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1639790",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 20.1.8, DRM 3.64, 6.17.7-gentoo)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.17.7-gentoo",
+    "notes": "Just press \"play\" button.",
+    "os": "Gentoo Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1763816036,
+    "title": "",
+    "source": "protondb"
+  }
+]

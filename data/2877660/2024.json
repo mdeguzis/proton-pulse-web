@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2877660",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.0.3 - kisak-mesa PPA",
+    "kernel": "6.8.0-35-generic",
+    "notes": "",
+    "os": "Ubuntu Core 22 (64bit)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1726569561,
+    "title": "Jitter",
+    "source": "protondb"
+  }
+]

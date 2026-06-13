@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1460550",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.4.10-202.fsync.fc38.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 38 (Thirty Eight)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1694576632,
+    "title": "Ring of Titans",
+    "source": "protondb"
+  }
+]

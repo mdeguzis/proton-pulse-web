@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1664670",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "7.0-1",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1649470370,
+    "title": "Refactor",
+    "source": "protondb"
+  }
+]

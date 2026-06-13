@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1947500",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.7, DRM 3.49, 6.2.10-273-tkg-bore)",
+    "gpuDriver": "4.6 Mesa 23.0.1",
+    "kernel": "6.2.10-273-tkg-bore",
+    "notes": "This one works out of the box. Meta Quest 3 via ALVR.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1733771863,
+    "title": "",
+    "source": "protondb"
+  }
+]

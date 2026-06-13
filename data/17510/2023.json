@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "17510",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 16.0.6, DRM 3.54, 6.5.9-201.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.9-201.fsync.fc38.x86_64",
+    "notes": "Fun game just not supported by the dev anymore",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1700579658,
+    "title": "Age of Chivalry",
+    "source": "protondb"
+  }
+]

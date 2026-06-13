@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1893820",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.15.0-37-generic",
+    "notes": "Not stable enough for normal gameplay but this is day 1 of EA so maybe give it a week or so.",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1692658265,
+    "title": "",
+    "source": "protondb"
+  }
+]

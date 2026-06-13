@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1104480",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R9 200 (HAWAII, DRM 3.40.0, 5.10.2-2-MANJARO, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1",
+    "kernel": "5.10.2-2-MANJARO",
+    "notes": "Does not get past DOSBOX startup logo",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1610561555,
+    "title": "",
+    "source": "protondb"
+  }
+]

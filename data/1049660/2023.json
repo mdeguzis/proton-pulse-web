@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1049660",
+    "cpu": "Intel",
+    "duration": "unreported",
+    "gpu": "Mesa",
+    "gpuDriver": "4.5",
+    "kernel": "5.19.0-41-generic",
+    "notes": "For most of the Protons I got the game to launch, but it shut down automatically.",
+    "os": "Elementary os 7",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1683153717,
+    "title": "stein.world",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1554010",
+    "cpu": "Intel Core i5-6300U @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "6.2.8-surface",
+    "notes": "tried :\n\nproton GE\n\nproton experimental \n\ndebuging proton log",
+    "os": "Ubuntu 22.10",
+    "protonVersion": "8.0-2",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1685217286,
+    "title": "\u6211\u7684\u53d8\u8272\u9f99\u5973\u53cbMy Chameleon Girlfriend",
+    "source": "protondb"
+  }
+]

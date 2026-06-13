@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1331510",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, ACO, DRM 3.64, 6.17.7-ba28.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.2",
+    "kernel": "6.17.7-ba28.fc43.x86_64",
+    "notes": "game worked fine except a minor bug and some delays in loading between scenes.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1774632464,
+    "title": "",
+    "source": "protondb"
+  }
+]

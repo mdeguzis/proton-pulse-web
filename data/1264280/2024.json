@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1264280",
+    "cpu": "Intel Core i7-6850K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 15.0.7, DRM 3.57, 6.8.0-76060800daily20240311-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.0-1pop0~1706872735~22.04~0fa430c",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1711899756,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1264280",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 11 (RAVEN, DRM 3.35.0, 5.4.0-181-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.4.0-181-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.6 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "14 GB",
+    "rating": "platinum",
+    "timestamp": 1715756068,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1264280",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Crashes, sometimes after seconds, sometimes after hours. Great game, but unstable on my Steam Deck.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1720546083,
+    "title": "",
+    "source": "protondb"
+  }
+]

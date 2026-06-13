@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2672520",
+    "cpu": "AMD Ryzen 5 3450U with Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, ACO, DRM 3.64, 6.17.9-artix1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.2.1",
+    "kernel": "6.17.9-artix1-1",
+    "notes": "There was no problem in running the game, not a single issue.",
+    "os": "Artix Linux",
+    "protonVersion": "10.0-3",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1768569963,
+    "title": "",
+    "source": "protondb"
+  }
+]

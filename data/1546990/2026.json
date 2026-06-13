@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1546990",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Great experience",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1776801088,
+    "title": "Grand Theft Auto: Vice City \u2013 The Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "1546990",
+    "cpu": "13th Gen Intel Core i5-13500HX",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.12.85+deb13-amd64",
+    "notes": "Almost finished the game. 17 hours of playing without any issues.",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1777819409,
+    "title": "Grand Theft Auto: Vice City \u2013 The Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "1546990",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1778356189,
+    "title": "Grand Theft Auto: Vice City \u2013 The Definitive Edition",
+    "source": "protondb"
+  }
+]

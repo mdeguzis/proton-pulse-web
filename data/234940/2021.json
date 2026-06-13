@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "234940",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.14.2-xanmod1-cacule-1",
+    "notes": "The game ran better on proton than native.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1631379808,
+    "title": "",
+    "source": "protondb"
+  }
+]

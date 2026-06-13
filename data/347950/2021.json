@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "347950",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.8-gentoo",
+    "notes": "Black screen",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1616761904,
+    "title": "",
+    "source": "protondb"
+  }
+]

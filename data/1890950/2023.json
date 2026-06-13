@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1890950",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "4.2 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.3-arch1-1",
+    "notes": "Crashes on launch",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1701723287,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1890950",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 16.0.6, DRM 3.54, 6.6.1-artix1-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.1-artix1-1",
+    "notes": "runs fine for me, i haven't had to tinker at all yet. i will keep this updated if anything changes",
+    "os": "Artix Linux",
+    "protonVersion": "8.0-4",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1701841210,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1890950",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "Mesa AMD TURKS (DRM 2.50.0 / 6.6.4-arch1-1, LLVM 16.0.6)",
+    "gpuDriver": "4.5 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.4-arch1-1",
+    "notes": "game runs fine after changing launch options",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1702044887,
+    "title": "",
+    "source": "protondb"
+  }
+]

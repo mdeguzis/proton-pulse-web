@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "968870",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 14.0.0, DRM 3.44, 5.17.9-302.fsync.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.0-git",
+    "kernel": "5.17.9-302.fsync.fc36.x86_64",
+    "notes": "Needs launch option to not crash on Intel 10th gen or later CPU's",
+    "os": "Fedora Linux 36 (KDE Plasma)",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1654346852,
+    "title": "Close To The Sun",
+    "source": "protondb"
+  }
+]

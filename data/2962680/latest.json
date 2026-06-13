@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2962680",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 19.1.7, DRM 3.61, 6.14.6-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.0.5-arch1.1",
+    "kernel": "6.14.6-2-MANJARO",
+    "notes": "Not working at the moment",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1751096475,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2962680",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 15.0.7, DRM 3.54, 6.5.0-21-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.1 - kisak-mesa PPA",
+    "kernel": "6.5.0-21-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1761950911,
+    "title": "",
+    "source": "protondb"
+  }
+]

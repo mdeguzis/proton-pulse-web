@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1076160",
+    "cpu": "Intel Core i5-10210U @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.2",
+    "kernel": "6.0.16-300.fc37.x86_64",
+    "notes": "Game won't even start.",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "7.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1673020644,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1076160",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.11.0-34-generic",
+    "notes": "Misreably broken",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1688072260,
+    "title": "",
+    "source": "protondb"
+  }
+]

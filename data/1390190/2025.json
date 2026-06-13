@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1390190",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 23.3.4",
+    "kernel": "6.4.0-150600.23.30-default",
+    "notes": "Runs on Steam Linux Runtime",
+    "os": "openSUSE Leap 15.6",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1736695497,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1390190",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Game defaults to controller UI. Switch to Proton Experimental and change controls.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1740075535,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1390190",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-arch1-1",
+    "notes": "works out of the box, no issues.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1762921171,
+    "title": "",
+    "source": "protondb"
+  }
+]

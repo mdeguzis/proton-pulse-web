@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "311840",
+    "cpu": "Intel Celeron  N3160  @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 400 (BSW)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "4.16.18-galliumos",
+    "notes": "Runs great apart for the main menu.",
+    "os": "GalliumOS 3.1",
+    "protonVersion": "5.0-9",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1595708689,
+    "title": "",
+    "source": "protondb"
+  }
+]

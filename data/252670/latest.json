@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "252670",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.10.0-16-amd64",
+    "notes": "Runs Natively, and with Proton",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1658628094,
+    "title": "",
+    "source": "protondb"
+  }
+]

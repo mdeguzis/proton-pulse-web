@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2187300",
+    "cpu": "11th Gen Intel Core i5-11500 @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (RKL GT1)",
+    "gpuDriver": "4.6 Mesa 23.1.2 - kisak-mesa PPA",
+    "kernel": "5.19.0-45-generic",
+    "notes": "Performance is insufficient",
+    "os": "elementary OS 7 Horus",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1687183861,
+    "title": "",
+    "source": "protondb"
+  }
+]

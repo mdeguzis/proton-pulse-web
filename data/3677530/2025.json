@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3677530",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.57, 6.9.12-chos7-chimeraos-1)",
+    "gpuDriver": "4.6 Mesa 24.1.5.chos1-1.1",
+    "kernel": "6.9.12-chos7-chimeraos-1",
+    "notes": "",
+    "os": "ChimeraOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1763089104,
+    "title": "",
+    "source": "protondb"
+  }
+]

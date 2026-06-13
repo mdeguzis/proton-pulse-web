@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "366960",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-37-generic",
+    "notes": "No issues. It starts.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1579377545,
+    "title": "SECTOR",
+    "source": "protondb"
+  }
+]

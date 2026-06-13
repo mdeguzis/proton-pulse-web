@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1653420",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.41.0, 5.13.8-arch1-1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.13.8-arch1-1",
+    "notes": "Works fine out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1634906597,
+    "title": "",
+    "source": "protondb"
+  }
+]

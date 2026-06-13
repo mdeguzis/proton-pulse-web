@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "511430",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.10.0-12.1-liquorix-amd64",
+    "notes": "No issues, installed and ran as if I was playing it in windows.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1612131761,
+    "title": "CrossWorlds: Escape",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2302660",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.7, DRM 3.54, 6.5.0-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.6",
+    "kernel": "6.5.0-1-MANJARO",
+    "notes": "Slightly Clunky, need patience, but otherwise works fine",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1738941542,
+    "title": "",
+    "source": "protondb"
+  }
+]

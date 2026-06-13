@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2289970",
+    "cpu": "AMD Athlon 3000G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 3 (radeonsi, raven, LLVM 17.0.6, DRM 3.57, 6.7.6-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.6",
+    "kernel": "6.7.6-200.fc39.x86_64",
+    "notes": "i tried to open the game but it just won't open, i'm using proton experimental",
+    "os": "Fedora Linux 39 (Workstation Edition)",
+    "protonVersion": "8.0-5",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1709480548,
+    "title": "",
+    "source": "protondb"
+  }
+]

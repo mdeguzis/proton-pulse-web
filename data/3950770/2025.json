@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3950770",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.4-115.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.4",
+    "kernel": "6.16.4-115.bazzite.fc42.x86_64",
+    "notes": "Works natively, no issues",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1762691302,
+    "title": "",
+    "source": "protondb"
+  }
+]

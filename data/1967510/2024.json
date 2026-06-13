@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1967510",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 16.0.6, DRM 3.56, 6.7.0-zen3-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.3.3-arch1.1",
+    "kernel": "6.7.0-zen3-1-zen",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1705431086,
+    "title": "",
+    "source": "protondb"
+  }
+]

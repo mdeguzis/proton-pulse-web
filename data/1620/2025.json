@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1620",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.15.57-2-MANJARO",
+    "notes": "I've tried launching the game (from a clean install) and deleting the intro.slf file with no luck",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1757419077,
+    "title": "Jagged Alliance 2 Gold",
+    "source": "protondb"
+  }
+]

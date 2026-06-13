@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "724350",
+    "cpu": "Intel Core i5-5250U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 6000 (BDW GT3)",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Stuck trying to install Microsoft DirectX for Windows.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1599869950,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "671970",
+    "cpu": "Intel Xeon E3-1245 v5 @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.10.0-8-amd64",
+    "notes": "Early access so many game bugs are present for now developer is working on most of them actively",
+    "os": "Freedesktop.org 20.08.14 (Flatpak runtime)",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1634168762,
+    "title": "Junkyard Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "671970",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.14.16-arch1-1",
+    "notes": "Game starts into a black screen, doesn't load into main menu and the only thing that's left to do is force quit.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1636033869,
+    "title": "Junkyard Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "671970",
+    "cpu": "AMD Ryzen 7 PRO 4750G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.11.0-43-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.0-43-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1639726260,
+    "title": "Junkyard Simulator",
+    "source": "protondb"
+  }
+]

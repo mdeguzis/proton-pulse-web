@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1194590",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.41.0, 5.13.0-7614-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "no issues",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1656034632,
+    "title": "",
+    "source": "protondb"
+  }
+]

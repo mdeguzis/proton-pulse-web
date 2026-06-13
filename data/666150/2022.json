@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "666150",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.15.0-27-generic",
+    "notes": "Game launched out of the box and is stable. No other issues than the performance.",
+    "os": "Kubuntu 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1651085428,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "666150",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.13.0-40-generic",
+    "notes": "Installed and running fine without any issue!",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1651116998,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "666150",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Installs and plays fine. Needs minor edits to control layout for camera angling.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1651222740,
+    "title": "",
+    "source": "protondb"
+  }
+]

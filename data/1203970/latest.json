@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1203970",
+    "cpu": "AMD Ryzen 7 PRO 3700U w/ Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 10",
+    "gpuDriver": "4.6 Mesa 20.2.2",
+    "kernel": "5.9.1-rt20-1-rt",
+    "notes": "As only Windowed mode works and window content won't scale with window size, the experience will be typically degrated significantly.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1647430041,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "843440",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 525.116.04",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "No issues on native",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1690140742,
+    "title": "",
+    "source": "protondb"
+  }
+]

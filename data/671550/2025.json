@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "671550",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 19.1.1, DRM 3.57, 6.8.0-52-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-52-generic",
+    "notes": "Works just fine. It's a different take on the classic DX-Ball; does some things right, does some things wrong.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1738672838,
+    "title": "Brickochet",
+    "source": "protondb"
+  }
+]

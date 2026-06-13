@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1424050",
+    "cpu": "Intel Core i5-3470S @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "X.Org Radeon RX550/550 (POLARIS12, DRM 3.23.0, 4.15.0-desktop-94.1rosa-x86_64, LLVM 8.0.1)",
+    "gpuDriver": "4.6 Mesa 20.1.2",
+    "kernel": "4.15.0-desktop-94.1rosa-x86_64",
+    "notes": "Work well.",
+    "os": "ROSA Desktop Fresh R11.1 (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.0-10",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1610901158,
+    "title": "",
+    "source": "protondb"
+  }
+]

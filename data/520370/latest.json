@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "520370",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-51-generic",
+    "notes": "Works, but you have to be careful which Proton you use.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "3.7-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1603030954,
+    "title": "Pigeon Fight",
+    "source": "protondb"
+  }
+]

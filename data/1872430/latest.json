@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1872430",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.8-300.fc41.x86_64",
+    "notes": "Works out of the box.",
+    "os": "Fedora 41 KDE",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1733978310,
+    "title": "",
+    "source": "protondb"
+  }
+]

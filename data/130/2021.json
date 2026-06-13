@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "130",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.42.0, 5.15.7-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.7-1-MANJARO",
+    "notes": "Native version does not launch, but proton version is flawless.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1640510841,
+    "title": "Half-Life: Blue Shift",
+    "source": "protondb"
+  }
+]

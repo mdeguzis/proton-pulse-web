@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1270930",
+    "cpu": "Intel Core i7-10700F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.13-200.fc34.x86_64",
+    "notes": "It doesnt start, it's just preparing but doesn't launch",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1636398891,
+    "title": "Hentai vs Virus: I Am Waifu",
+    "source": "protondb"
+  }
+]

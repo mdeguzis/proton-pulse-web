@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1152340",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 16.0.6, DRM 3.54, 6.5.4-1-default)",
+    "gpuDriver": "4.6 Mesa 23.1.7 (git-98d9d5f5a3)",
+    "kernel": "6.5.4-1-default",
+    "notes": "",
+    "os": "openSUSE MicroOS",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1695574443,
+    "title": "Book of Travels",
+    "source": "protondb"
+  }
+]

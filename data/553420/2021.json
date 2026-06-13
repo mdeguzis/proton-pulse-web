@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "553420",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.42.0, 5.14.2-arch1-2, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.14.2-arch1-2",
+    "notes": "The demo works out of the box. Gamepad working too",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1633218372,
+    "title": "",
+    "source": "protondb"
+  }
+]

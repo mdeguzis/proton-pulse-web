@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "248310",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 550 / 550 (polaris12, LLVM 15.0.7, DRM 3.42, 5.15.0-101-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-101-generic",
+    "notes": "Perfect",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1711855624,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "248310",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works perfectly",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1718459132,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "248310",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.9.6-200.fc40.x86_64",
+    "notes": "If you're fine with no or minimal controller support, runs great!",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1719934753,
+    "title": "",
+    "source": "protondb"
+  }
+]

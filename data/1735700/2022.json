@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1735700",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.44.0, 5.16.11-2-MANJARO, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.11-2-MANJARO",
+    "notes": "Demo Runs fine with default Proton",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1649026667,
+    "title": "",
+    "source": "protondb"
+  }
+]

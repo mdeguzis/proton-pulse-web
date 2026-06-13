@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1196080",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.1-2-cachyos",
+    "notes": "the terminal window opens the app also opens but it's only a black screen and after that it crashes",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1766748039,
+    "title": "",
+    "source": "protondb"
+  }
+]

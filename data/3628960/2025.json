@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3628960",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1756996340,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3628960",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 21.1.4, DRM 3.64, 6.17.7-300.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.17.7-300.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora 43",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1762768908,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3628960",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1763898421,
+    "title": "",
+    "source": "protondb"
+  }
+]

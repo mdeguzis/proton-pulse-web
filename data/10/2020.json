@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "10",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.6 Mesa 20.1.5",
+    "kernel": "5.8.9_1",
+    "notes": "",
+    "os": "Freedesktop.org 20.08.0 (Flatpak runtime)",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1606005678,
+    "title": "Counter-Strike",
+    "source": "protondb"
+  }
+]

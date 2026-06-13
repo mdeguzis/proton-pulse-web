@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1344070",
+    "cpu": "Intel Core i3-9100F @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "4.19.0-12-amd64",
+    "notes": "After the developer's logo fades out, it doesn't load anything else, gets stuck in an infinite black screen.",
+    "os": "LMDE 4 (debbie)",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1606430142,
+    "title": "",
+    "source": "protondb"
+  }
+]

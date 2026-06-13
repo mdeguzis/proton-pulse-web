@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1243850",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.15.0-46-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "24 GB",
+    "rating": "platinum",
+    "timestamp": 1685835372,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1243850",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Early report, but so far very enjoyable on Deck.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1698849786,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1243850",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.0.1",
+    "kernel": "6.2.9-arch1-1",
+    "notes": "Just work out of the box",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1701542128,
+    "title": "",
+    "source": "protondb"
+  }
+]

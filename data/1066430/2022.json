@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1066430",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (sienna_cichlid, LLVM 13.0.1, DRM 3.42, 5.15.0-41-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.15.0-41-generic",
+    "notes": "Perfect!",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1658769284,
+    "title": "Kwaidan \uff5eAzuma manor story\uff5e",
+    "source": "protondb"
+  },
+  {
+    "appId": "1066430",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Perfect!",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1658769744,
+    "title": "Kwaidan \uff5eAzuma manor story\uff5e",
+    "source": "protondb"
+  },
+  {
+    "appId": "1066430",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Graphic issues aside, the game works great on Steam Deck and is a nice fit on the platform.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1665159277,
+    "title": "Kwaidan \uff5eAzuma manor story\uff5e",
+    "source": "protondb"
+  }
+]

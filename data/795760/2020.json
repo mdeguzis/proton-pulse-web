@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "795760",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.8.16-2-MANJARO",
+    "notes": "Uppers stuck on a white screen",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1604076063,
+    "title": "UPPERS",
+    "source": "protondb"
+  }
+]

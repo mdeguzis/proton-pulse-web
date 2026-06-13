@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3880350",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.9-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.3-arch2.2",
+    "kernel": "6.19.9-1-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1774122155,
+    "title": "",
+    "source": "protondb"
+  }
+]

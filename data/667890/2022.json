@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "667890",
+    "cpu": "Intel Celeron J4105 @ 1.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 600 (GLK 2)",
+    "gpuDriver": "4.6 Mesa 21.3.4 - kisak-mesa PPA",
+    "kernel": "5.4.0-94-generic",
+    "notes": "the game will not even run.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "6.3-8",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1642593720,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "667890",
+    "cpu": "Intel Core i3-7020U @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2F)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.8-arch1-1",
+    "notes": "stuck on a white screen",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1644685356,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "667890",
+    "cpu": "AMD Ryzen 9 4900H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (DRM 3.44.0, 5.16.13-xanmod1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.13-xanmod1",
+    "notes": "Needs to create an email based login. This is a Steam game. We don't live in the '80s.",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1646929451,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3217970",
+    "cpu": "Intel Core i7-10875H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 Super",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.14.10",
+    "notes": "works perfectly, behaves well under wayland as well.",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1759737775,
+    "title": "",
+    "source": "protondb"
+  }
+]

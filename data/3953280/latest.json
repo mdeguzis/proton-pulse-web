@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3953280",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Rebind a button to F4 so you can fullscreen the game. The game crashes occasionally but it's very short and you can save so not a big issue.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1769953335,
+    "title": "",
+    "source": "protondb"
+  }
+]

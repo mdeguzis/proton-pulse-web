@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1078760",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.13.0-20-generic",
+    "notes": "Works great out of the box",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1637173909,
+    "title": "",
+    "source": "protondb"
+  }
+]

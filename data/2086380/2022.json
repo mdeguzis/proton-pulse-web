@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2086380",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (sienna_cichlid, LLVM 13.0.1, DRM 3.42, 5.15.0-50-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-50-generic",
+    "notes": "Perfect!",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1666892244,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2086380",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Perfect!",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1666893290,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2086380",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1670058909,
+    "title": "",
+    "source": "protondb"
+  }
+]

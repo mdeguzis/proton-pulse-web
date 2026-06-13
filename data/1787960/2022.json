@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1787960",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.1, DRM 3.35, 5.4.0-104-generic)",
+    "gpuDriver": "4.6 Mesa 22.1.0-devel (git-177805c 2022-03-13 focal-oibaf-ppa)",
+    "kernel": "5.4.0-104-generic",
+    "notes": "Works great out of the box",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1647800323,
+    "title": "Milling machine simulator",
+    "source": "protondb"
+  }
+]

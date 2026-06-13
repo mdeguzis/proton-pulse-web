@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1297390",
+    "cpu": "Intel Core i7-5775C @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.0-24-generic",
+    "notes": "Works fine with Proton 4.11-13, doesn't work with Proton 5.0-7",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1590604085,
+    "title": "",
+    "source": "protondb"
+  }
+]

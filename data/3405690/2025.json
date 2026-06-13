@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3405690",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.64, 6.17.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.1",
+    "kernel": "6.17.1-arch1-1",
+    "notes": "The game installed fine through Steam. It went through the process of installing the EA App, having me login, and then attempting to launch the game. Before the initial anti-cheat was loaded, it gave an error window saying \"Error: The program encourntered E111000B at 00002302 during initialization. Wine, Proton, and Steam Deck are not supported by this application!\", then lets you click OK and it closes the game.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1760169115,
+    "title": "EA SPORTS FC\u2122 26",
+    "source": "protondb"
+  },
+  {
+    "appId": "3405690",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.0-6-generic",
+    "notes": "EA f*** yourself pls",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1764142838,
+    "title": "EA SPORTS FC\u2122 26",
+    "source": "protondb"
+  }
+]

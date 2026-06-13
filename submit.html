@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Submit Report — Proton Pulse</title>
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/site.css?v=93774bad">
+<link rel="stylesheet" href="css/app/app.css?v=833dbb37">
+</head>
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=07e4ec76"></script>
+<script src="js/lib/topbar.js?v=c5da1a84"></script>
+
+<div class="main-content">
+  <div class="main-inner" style="max-width:860px">
+
+    <div style="display:flex;align-items:flex-start;gap:18px;margin-bottom:24px;flex-wrap:wrap">
+      <a id="back-link" href="app.html" class="hub-link" style="flex-shrink:0;margin-top:4px">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="vertical-align:-2px"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        Back to game
+      </a>
+      <div>
+        <div class="eyebrow">Submit a Report</div>
+        <h1 id="game-title" style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--strong);letter-spacing:-0.02em;margin:0;line-height:1.2">Loading...</h1>
+      </div>
+    </div>
+
+    <div id="auth-gate" hidden>
+      <div style="padding:32px;background:var(--s1);border:1px solid var(--border);text-align:center">
+        <p style="color:var(--muted);margin-bottom:14px">Sign in with Steam to submit a report</p>
+        <button class="gh-login-btn" id="login-btn" style="margin:0 auto">
+          <span class="gh-login-btn__badge"><img class="gh-login-btn__icon" src="assets/steam-logo-glyph.png" alt=""></span>
+          <span class="gh-login-btn__label">Login with Steam</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="submit-form-content">Loading form...</div>
+
+  </div>
+</div>
+
+<script type="module" src="js/submit/main.js?v=f6e64435"></script>
+</body>
+</html>

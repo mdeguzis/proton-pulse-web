@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1542810",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 19.1.1, DRM 3.57, 6.8.0-56-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-56-generic",
+    "notes": "works fine",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1747537722,
+    "title": "Sunshine Heavy Industries",
+    "source": "protondb"
+  }
+]

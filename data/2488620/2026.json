@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2488620",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.11-1-cachyos",
+    "notes": "I bought the F1 games yearly on Windows. Thanks to EA Anticheat, that ends now!",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1775646834,
+    "title": "F1\u00ae 24",
+    "source": "protondb"
+  },
+  {
+    "appId": "2488620",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.5-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.1.0-arch2.1",
+    "kernel": "7.0.5-2-cachyos",
+    "notes": "Wine, Proton and Steam Deck are not supported by this application!",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1778356983,
+    "title": "F1\u00ae 24",
+    "source": "protondb"
+  }
+]

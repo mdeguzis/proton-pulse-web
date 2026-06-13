@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2449430",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.3",
+    "kernel": "5.9.11-3-MANJARO",
+    "notes": "Didnt start the first few times, after deleting prefix and switching proton versions it does work.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1738639230,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2449430",
+    "cpu": "Intel Core i9-10900KF @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-52-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1738667215,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2449430",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.6.83",
+    "notes": "Use the launch command, otherwise it keeps freezing",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1744037627,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3966790",
+    "cpu": "AMD Ryzen Z2 A",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Ryzen Z2 A (radeonsi, vangogh, ACO, DRM 3.64, 6.17.7-ba25.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.0",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Out of the box works totally fine (game is in early access currently)",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "10 GB",
+    "rating": "gold",
+    "timestamp": 1772129639,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1287530",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.10.0-19-amd64",
+    "notes": "Initial playtesting shows game works OOTB",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1669355731,
+    "title": "Lords and Villeins",
+    "source": "protondb"
+  }
+]

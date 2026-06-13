@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1520810",
+    "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, ACO, DRM 3.64, 6.17.7-ba25.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.0",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Installed the game. It started. Loaded up. Music played but screen was black. Had to stop via the steam client.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "borked",
+    "timestamp": 1771731352,
+    "title": "",
+    "source": "protondb"
+  }
+]

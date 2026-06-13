@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "926180",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 570.172.08",
+    "kernel": "6.12.40",
+    "notes": "Works out of the box purrfectly",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1754348670,
+    "title": "",
+    "source": "protondb"
+  }
+]

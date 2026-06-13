@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "530720",
+    "cpu": "Intel Core i7-3615QM @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 21.0.1",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Works without problems.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1627748285,
+    "title": "",
+    "source": "protondb"
+  }
+]

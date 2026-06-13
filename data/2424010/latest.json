@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2424010",
+    "cpu": "Intel Core i7-14700",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 20.1.2, DRM 3.61, 6.14.0-37-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-37-generic",
+    "notes": "Works flawlessly out of the box",
+    "os": "Ubuntu 24.04.3 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768765399,
+    "title": "",
+    "source": "protondb"
+  }
+]

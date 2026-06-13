@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "814530",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.42.0, 5.11.0-34-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.0-devel",
+    "kernel": "5.11.0-34-generic",
+    "notes": "Runs perfectly well out of the box. Negligible crash upon changing the windowed setting, but the game runs well in either.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1631616725,
+    "title": "Death Crown",
+    "source": "protondb"
+  }
+]

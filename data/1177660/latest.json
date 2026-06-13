@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1177660",
+    "cpu": "11th Gen Intel Core i9-11900KF @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.5-arch1-1",
+    "notes": "No difference to Windows.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1752153483,
+    "title": "",
+    "source": "protondb"
+  }
+]

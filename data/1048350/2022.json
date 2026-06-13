@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1048350",
+    "cpu": "AMD Ryzen 5 3500 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5500 XT (NAVI14, DRM 3.42.0, 5.15.16-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.4",
+    "kernel": "5.15.16-1-MANJARO",
+    "notes": "Game slowed down siginificantly on High setting. Not sure it's the game or Linux to blame.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1644718049,
+    "title": "",
+    "source": "protondb"
+  }
+]

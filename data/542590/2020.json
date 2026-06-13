@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "542590",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "4.14.78",
+    "notes": "After proceeding from the launcher to the game it only shows a splash screen for a moment and then immediately closes.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.0-7",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1590334210,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "542590",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-7629-generic",
+    "notes": "Install, but not even launching when I press on Play",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1590635653,
+    "title": "",
+    "source": "protondb"
+  }
+]

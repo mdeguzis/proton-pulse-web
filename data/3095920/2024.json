@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3095920",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 18.1.6, DRM 3.57, 6.10.11-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.7",
+    "kernel": "6.10.11-200.fc40.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 40 (Cinnamon)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1728848524,
+    "title": "",
+    "source": "protondb"
+  }
+]

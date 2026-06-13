@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1569090",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.4.0-77-generic",
+    "notes": "works out of the box.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1626870631,
+    "title": "",
+    "source": "protondb"
+  }
+]

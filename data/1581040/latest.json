@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1581040",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.8.0-64-generic",
+    "notes": "Seems to work fine. My XBOX controller was detected without issue.",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1756165921,
+    "title": "",
+    "source": "protondb"
+  }
+]

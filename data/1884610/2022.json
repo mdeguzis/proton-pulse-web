@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1884610",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 14.0.6, DRM 3.47, 5.19.0-15-generic)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.0-15-generic",
+    "notes": "Stalls at the launcher. No luck getting ingame.",
+    "os": "Ubuntu Kinetic Kudu (development branch)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1665771954,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1884610",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.44.0, 5.16.9-200.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.6",
+    "kernel": "5.16.9-200.fc35.x86_64",
+    "notes": "",
+    "os": "Fedora release 35 (Thirty Five)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1665878592,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1884610",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 14.0.6, DRM 3.42, 5.15.75-gentoo)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.15.75-gentoo",
+    "notes": "",
+    "os": "Gentoo Linux",
+    "protonVersion": "7.0-4",
+    "ram": "24 GB",
+    "rating": "silver",
+    "timestamp": 1668735375,
+    "title": "",
+    "source": "protondb"
+  }
+]

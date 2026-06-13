@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3247270",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 19.1.7, DRM 3.60, 6.13.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.3-arch1-1",
+    "notes": "The game launches but with no menu background and unable to start playing.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1741670104,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3247270",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 19.1.7, DRM 3.61, 6.13.9-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.2",
+    "kernel": "6.13.9-200.fc41.x86_64",
+    "notes": "The menu and first cutscene loads fine but the game crashed after the character selection",
+    "os": "Fedora Linux 41 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1745230654,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3247270",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.7, DRM 3.61, 6.13.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.1-arch1.2",
+    "kernel": "6.13.6-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1745529300,
+    "title": "",
+    "source": "protondb"
+  }
+]

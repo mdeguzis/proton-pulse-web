@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3022110",
+    "cpu": "Intel Core2 Quad Q8400 @ 2.66GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GT 610",
+    "gpuDriver": "NVIDIA 390.157",
+    "kernel": "6.9.7-200.fc40.x86_64",
+    "notes": "At least in my machine:\nBreak a Leg  doesn't work on linux (fedora 40) even with lutris and proton.",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1720189713,
+    "title": "Break a Leg",
+    "source": "protondb"
+  },
+  {
+    "appId": "3022110",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 16.0.6, DRM 3.54, 6.6.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.2-arch1-1",
+    "notes": "Works fine",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1720318380,
+    "title": "Break a Leg",
+    "source": "protondb"
+  },
+  {
+    "appId": "3022110",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.7 (git-3900828265)",
+    "kernel": "6.1.0-28-amd64",
+    "notes": "Everytime I load the game, it takes 10 secs until it show an error message that says: \"Fatal error\"!\n\nOS: Debian 12",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1734257481,
+    "title": "Break a Leg",
+    "source": "protondb"
+  }
+]

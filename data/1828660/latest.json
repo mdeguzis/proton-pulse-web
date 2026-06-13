@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1828660",
+    "cpu": "Intel Core i7-10700 @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.6, DRM 3.64, 6.18.5-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.5",
+    "kernel": "6.18.5-2-cachyos",
+    "notes": "Game runs perfectly fine out of the box, no configuration needed.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768471938,
+    "title": "",
+    "source": "protondb"
+  }
+]

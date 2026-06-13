@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1078280",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.41.0, 5.13.19-2-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "Borked Rendering",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1641032665,
+    "title": "",
+    "source": "protondb"
+  }
+]

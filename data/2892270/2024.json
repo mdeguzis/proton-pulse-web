@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2892270",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 17.0.6, DRM 3.54, 6.6.21-gentoo-x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.6",
+    "kernel": "6.6.21-gentoo-x86_64",
+    "notes": "Escape still takes you back to the menu, so it isn't locked up but nothing I did would move forward past the pattern.  :(",
+    "os": "Gentoo Linux",
+    "protonVersion": "8.0-5",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1712187919,
+    "title": "you feel normal.",
+    "source": "protondb"
+  }
+]

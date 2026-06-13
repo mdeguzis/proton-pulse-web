@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1638300",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 575.64",
+    "kernel": "6.15.4-arch2-1",
+    "notes": "* beta 0.16  \n* Arch Linux Hyprland  \n* NVIDIA RTX 3060  \n* Steam Proton Hotfix  \n* In game: DirectX 12  \n* Ultra Quality 1080p",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1751433334,
+    "title": "",
+    "source": "protondb"
+  }
+]

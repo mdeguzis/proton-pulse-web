@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1399380",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA P106-100",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.9-arch1-1",
+    "notes": "Full play-through with a DS3 controller",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1663785072,
+    "title": "NUI",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "369030",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Borked",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1608616210,
+    "title": "Vinyl",
+    "source": "protondb"
+  }
+]

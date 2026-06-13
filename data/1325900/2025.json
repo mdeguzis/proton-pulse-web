@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1325900",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 19.1.0, DRM 3.59, 6.11.10-304.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.7",
+    "kernel": "6.11.10-304.bazzite.fc41.x86_64",
+    "notes": "Base game works fine",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1735900781,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1325900",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.16.3-200.fc42.x86_64",
+    "notes": "The launcher loads and each of the games will start, but all get stuck on infinite loading screens before reaching menus and gameplay.\n\nAlso tested Proton 7.0-6 with the same result.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1756903939,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1325900",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.16.9-200.fc42.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1760820065,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1292630",
+    "cpu": "Intel Pentium Silver N5000 @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 605 (GLK 3)",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Loading screen and then crash",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1609555033,
+    "title": "3on3 FreeStyle: Rebound",
+    "source": "protondb"
+  },
+  {
+    "appId": "1292630",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.4.0-60-generic",
+    "notes": "Loading screen and then crash",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1624542725,
+    "title": "3on3 FreeStyle: Rebound",
+    "source": "protondb"
+  },
+  {
+    "appId": "1292630",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.7",
+    "notes": "Loading Screen Then Crash",
+    "os": "NixOS 21.11 (Porcupine)",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1636050612,
+    "title": "3on3 FreeStyle: Rebound",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1711950",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5500 XT (navi14, LLVM 16.0.6, DRM 3.54, 6.5.3-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.7 (git-5b02bc6f0e)",
+    "kernel": "6.5.3-1-MANJARO",
+    "notes": "O jogo funciona bem, o proton experimental resolveu o problema de n\u00e3o conseguir logar na conta",
+    "os": "BigLinux (based in Manjaro)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1695847945,
+    "title": "",
+    "source": "protondb"
+  }
+]

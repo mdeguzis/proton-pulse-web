@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3047070",
+    "cpu": "AMD Ryzen 9 9950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "1738026274",
+    "gpuDriver": "Aktiviert",
+    "kernel": "6.12.12-207.bazzite.fc41.x86_64",
+    "notes": "L\u00e4uft auf BAZZITE ohne Probleme.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "USB Mixer",
+    "rating": "gold",
+    "timestamp": 1740062820,
+    "title": "",
+    "source": "protondb"
+  }
+]

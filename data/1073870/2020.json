@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1073870",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 980M",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.6-arch3-1",
+    "notes": "Game itself runs fine, but due to SteamVR starting and crashing the entire display session it's not really enjoyable.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1577887410,
+    "title": "Self Shot",
+    "source": "protondb"
+  }
+]

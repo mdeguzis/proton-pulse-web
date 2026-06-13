@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2534370",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Played great from start to finish. No issues.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1742183741,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2534370",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 19.1.1, DRM 3.61, 6.14.0-24-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.14.0-24-generic",
+    "notes": "Runs perfectly fine right out of the box",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1756884375,
+    "title": "",
+    "source": "protondb"
+  }
+]

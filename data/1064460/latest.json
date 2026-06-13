@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1064460",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 (radeonsi, navi10, LLVM 21.1.8, DRM 3.64, 6.18.7-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.3 (git-a9c6420d8c)",
+    "kernel": "6.18.7-200.fc43.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1769957778,
+    "title": "Murder House",
+    "source": "protondb"
+  }
+]

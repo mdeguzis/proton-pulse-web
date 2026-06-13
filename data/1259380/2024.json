@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1259380",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.7.2-zen1-1-zen",
+    "notes": "Proton had some problems with launching game properly. You need unofficial patch, Lutris, and System Wine 9.1, but it works!",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1706736559,
+    "title": "",
+    "source": "protondb"
+  }
+]

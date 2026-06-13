@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "298630",
+    "cpu": "Intel Core i7         860  @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-31-generic",
+    "notes": "The game crash after the animations at startup with Proton.",
+    "os": "Ubuntu 20.04 LTS (64\u00a0bits)",
+    "protonVersion": "5.0-7",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1590923296,
+    "title": "",
+    "source": "protondb"
+  }
+]

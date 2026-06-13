@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "684450",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.4 - kisak-mesa PPA",
+    "kernel": "5.15.0-47-generic",
+    "notes": "install ok, don't start :(",
+    "os": "Ubuntu Core 20 (64\u00a0bits)",
+    "protonVersion": "8.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1696456763,
+    "title": "Surviving the Aftermath",
+    "source": "protondb"
+  },
+  {
+    "appId": "684450",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6750 XT (navi22, LLVM 15.0.6, DRM 3.52, 6.4.0-1mx-ahs-amd64)",
+    "gpuDriver": "4.6 Mesa 23.1.2-1~mx23ahs",
+    "kernel": "6.4.0-1mx-ahs-amd64",
+    "notes": "Works perfekt with Proton 8.0-4\n\nFullsceen 4k, medium ~ High,  ~ 55-60 fps",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-4",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1697230864,
+    "title": "Surviving the Aftermath",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1477790",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.15.48-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1655648835,
+    "title": "Luna's Fishing Garden",
+    "source": "protondb"
+  },
+  {
+    "appId": "1477790",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1665808996,
+    "title": "Luna's Fishing Garden",
+    "source": "protondb"
+  },
+  {
+    "appId": "1477790",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Game actually works well on the Steam Deck, the controlls are good too. Short and cute.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1671097127,
+    "title": "Luna's Fishing Garden",
+    "source": "protondb"
+  }
+]

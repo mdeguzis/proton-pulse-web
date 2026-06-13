@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "972660",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-ba14.fc43.x86_64",
+    "notes": "\u53ef\u6b63\u5e38\u904a\u73a9",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1768666177,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "972660",
+    "cpu": "Intel Xeon E3-1225 v3 @ 3.20GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon Pro WX 2100 (radeonsi, polaris12, ACO, DRM 3.57, 6.8.0-90-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.8.0-90-generic",
+    "notes": "Runs well",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1774028715,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1254130",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5600 XT (navi10, LLVM 13.0.1, DRM 3.42, 5.15.0-33-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.15.0-33-generic",
+    "notes": "The game crashes at the second tutorial (with ot without proton).",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1653837302,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1254130",
+    "cpu": "Intel Core i7-10510U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.13.0-28-generic",
+    "notes": "Unplayable out of the box.",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "7.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1662160431,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1254130",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1663014912,
+    "title": "",
+    "source": "protondb"
+  }
+]

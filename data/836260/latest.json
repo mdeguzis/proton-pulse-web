@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "836260",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.10-arch1-1",
+    "notes": "borked",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1705665548,
+    "title": "Call of Bitcoin",
+    "source": "protondb"
+  }
+]

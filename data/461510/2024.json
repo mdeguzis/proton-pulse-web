@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "461510",
+    "cpu": "AMD Ryzen 5 4600G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 560 (polaris11, LLVM 15.0.7, DRM 3.47, 5.19.0-41-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.2 (git-4d5e73870e)",
+    "kernel": "5.19.0-41-generic",
+    "notes": "The game just works. No issues!",
+    "os": "VanillaOS 22.10 all (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1717371830,
+    "title": "",
+    "source": "protondb"
+  }
+]

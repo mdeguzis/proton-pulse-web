@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "890310",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.13.0-7620-generic",
+    "notes": "Runs great with Proton Default, though you can't see the intro or other videos. There is a Linux version but it has artifacts.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-8",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1637909383,
+    "title": "",
+    "source": "protondb"
+  }
+]

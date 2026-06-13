@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "750010",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.9-666.rog.fc37.x86_64",
+    "notes": "I tried using proton experimental as well as some GE versions 7.40-48 used APU and used dGPU no difference.",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1675947074,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1162130",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.4.0-77-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1628585963,
+    "title": "Windbound",
+    "source": "protondb"
+  }
+]

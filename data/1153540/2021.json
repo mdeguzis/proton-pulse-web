@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1153540",
+    "cpu": "Intel Xeon E3-1240 v3 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (NAVI14, DRM 3.40.0, 5.11.0-7612-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.0",
+    "kernel": "5.11.0-7612-generic",
+    "notes": "works great, no difference to windows",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "6.3-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1617648157,
+    "title": "Concept Destruction",
+    "source": "protondb"
+  }
+]

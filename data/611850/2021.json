@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "611850",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 20.3.4",
+    "kernel": "5.4.105-1-MANJARO",
+    "notes": "It runs like a obese hamster on running wheel.. It keeps semi freezing.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1616419502,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "611850",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.42.01",
+    "kernel": "5.13.0-186.current",
+    "notes": "The game only renders to something like a 800x600 rectangle which makes 3/4 of the game not visible.",
+    "os": "Solus",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1637332779,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "611850",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.42.0, 5.14.0-1-MANJARO, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.0-devel (git-cf2747e7ac)",
+    "kernel": "5.14.0-1-MANJARO",
+    "notes": "Due to the inconsistent performance issues have to say no, renders the game unplayable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1637477812,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1388230",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.8",
+    "kernel": "5.8.12-arch1-1",
+    "notes": "Perfect",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1610340361,
+    "title": "DANMAKAI: Red Forbidden Fruit",
+    "source": "protondb"
+  },
+  {
+    "appId": "1388230",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA Device",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.7",
+    "notes": "To avoid massive slowness use Proton 4.11-13",
+    "os": "GamerOS 19",
+    "protonVersion": "4.11-13",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1611670985,
+    "title": "DANMAKAI: Red Forbidden Fruit",
+    "source": "protondb"
+  }
+]

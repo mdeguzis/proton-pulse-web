@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1876850",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.6, DRM 3.64, 6.18.2-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.2",
+    "kernel": "6.18.2-3-cachyos",
+    "notes": "Glitches and bugs all over the place. Just as expected. Jokes aside, game runs great out of the box and did not need any tinkering at all.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1766451933,
+    "title": "",
+    "source": "protondb"
+  }
+]

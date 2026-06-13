@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1739900",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (gfx1101, LLVM 16.0.6, DRM 3.54, 6.5.5-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.9-manjaro1.1",
+    "kernel": "6.5.5-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1731073205,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1739900",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.9-200.fsync.fc40.x86_64",
+    "notes": "Works natively. I finished the game and all achievements without any issue to report.",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1733481927,
+    "title": "",
+    "source": "protondb"
+  }
+]

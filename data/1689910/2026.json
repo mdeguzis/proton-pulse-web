@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1689910",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "Mesa NV176",
+    "gpuDriver": "4.3 Mesa 25.0.7-2",
+    "kernel": "6.12.48+deb13-amd64",
+    "notes": "Might need to wait until a later version of Proton is out because it seems broken.",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1771149890,
+    "title": "",
+    "source": "protondb"
+  }
+]

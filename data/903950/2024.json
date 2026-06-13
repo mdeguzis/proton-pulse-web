@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "903950",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-45-generic",
+    "notes": "Don't know if the game itself even runs well on Linux because Easy Anti-Cheat refuses to even let the game launch.\nMy experience is:\n- Click \"Play\" to launch game.\n- Wait a few seconds with nothing happening.\n- EAC loading screen briefly pops up.\n- Immediate crash before the game even loads.",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1728509462,
+    "title": "",
+    "source": "protondb"
+  }
+]

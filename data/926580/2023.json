@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "926580",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works fine with the default controls. No problems locked to 40 Hz.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1674351205,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "926580",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 530.30.02",
+    "kernel": "6.1.0-5-amd64",
+    "notes": "Works OOTB.",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "8.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1682204570,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "926580",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (gfx1102, LLVM 15.0.7, DRM 3.54, 6.5.0-9-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3",
+    "kernel": "6.5.0-9-generic",
+    "notes": "I tried running it through proton as well, but this gives much the same result, loading screen shown then the game crashes. With proton it does not force a logout though.",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1698582506,
+    "title": "",
+    "source": "protondb"
+  }
+]

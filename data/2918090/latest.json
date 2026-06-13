@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2918090",
+    "cpu": "AMD Ryzen 7 5800XT 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, ACO, DRM 3.64, 7.0.0-rc4-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 26.1.0-devel (git-72e9f9a760)",
+    "kernel": "7.0.0-rc4-1-MANJARO",
+    "notes": "no tinkering needed, installed and played with no issues",
+    "os": "BigLinux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1775141474,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "785110",
+    "cpu": "Intel Core i5-14600KF",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.14.0-24-generic",
+    "notes": "Runs nicely on Proton 5",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1753925550,
+    "title": "",
+    "source": "protondb"
+  }
+]

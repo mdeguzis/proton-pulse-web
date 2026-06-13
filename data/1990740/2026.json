@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1990740",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1768471975,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1990740",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 17.0.6, DRM 3.57, 6.8.0-52-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.3",
+    "kernel": "6.8.0-52-generic",
+    "notes": "Pas de probl\u00e8mes.",
+    "os": "Linux Mint 22",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1768718017,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1990740",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.17.7-ba25.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.3",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Good",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "silver",
+    "timestamp": 1769715683,
+    "title": "",
+    "source": "protondb"
+  }
+]

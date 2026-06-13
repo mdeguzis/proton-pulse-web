@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1937470",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.8.0-53-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1668465974,
+    "title": "",
+    "source": "protondb"
+  }
+]

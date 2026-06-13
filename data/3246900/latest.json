@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3246900",
+    "cpu": "13th Gen Intel Core i7-13700F",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.12.12-203.bazzite.fc41.x86_64",
+    "notes": "",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1747692044,
+    "title": "",
+    "source": "protondb"
+  }
+]

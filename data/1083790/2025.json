@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1083790",
+    "cpu": "AMD Ryzen 5 3600XT 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.17.3-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.5-cachyos1.2",
+    "kernel": "6.17.3-3-cachyos",
+    "notes": "Could start the game no problem, and get to the main menu. However, there I could not do much: no mouse cursor was shown, console input did not work at all. The only thing I could do is navigating menu options via W and S, but I could not enter any menu points via Spacebar (as indicated), except - ironically - the quit entry.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1761334110,
+    "title": "",
+    "source": "protondb"
+  }
+]

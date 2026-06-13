@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3288270",
+    "cpu": "13th Gen Intel Core i5-13400F",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 580.82.07",
+    "kernel": "6.16.6-200.nobara.fc42.x86_64",
+    "notes": "around 100fps with a RTX5070ti, no stutters, crashes, or any setting changes required",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1774253359,
+    "title": "",
+    "source": "protondb"
+  }
+]

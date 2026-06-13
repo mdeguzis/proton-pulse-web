@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2742180",
+    "cpu": "Intel Core i7-9700KF @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.15.2-2-cachyos",
+    "notes": "tried many different Proton versions.. maybe its a Hyprland / Wayland issue.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1750269514,
+    "title": "ByteBurst: Hacking Simulator",
+    "source": "protondb"
+  }
+]

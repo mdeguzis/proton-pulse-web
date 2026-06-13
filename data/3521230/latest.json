@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3521230",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "5.15.0-91-generic",
+    "notes": "Not working with experimental/9.0-5,8.0-5",
+    "os": "Ubuntu Core 22\uff0864\u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1741780478,
+    "title": "PARALLEL RIFT",
+    "source": "protondb"
+  }
+]
