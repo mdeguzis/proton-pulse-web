@@ -553,19 +553,15 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
-/* tier-row groups the [confidence%] [TIER] tiles side-by-side, matching the
-   plugin's "78% GOLD" pattern. Both tiles get the same min-height + padding
-   so the confidence reads as an equal-weight badge instead of an afterthought */
-/* Badge stacks on top of confidence vertically so users read "the rating
-   first, then the trust qualifier second". Side-by-side was confusing when
-   both pills had the same width - they blurred into one visual band */
 .source-summary-tier-row {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  align-items: stretch;
+  gap: 0;
   width: 100%;
+}
+.source-summary-tier-row > * {
+  flex: 1;
 }
 .source-summary-conf {
   display: inline-flex;
