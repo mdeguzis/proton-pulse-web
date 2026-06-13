@@ -192,6 +192,20 @@ gh-pages-only: gh-check check-staging-sync
 	@echo "Triggered $(GITHUB_WORKFLOW) with pages_only=true"
 
 gh-staging: gh-check
+	@local_sha=$$(git rev-parse HEAD); \
+	echo "Waiting for origin/main to reflect $$local_sha..."; \
+	for i in 1 2 3 4 5 6 7 8 9 10; do \
+		remote_sha=$$(git ls-remote origin refs/heads/main | cut -f1); \
+		if [ "$$remote_sha" = "$$local_sha" ]; then break; fi; \
+		echo "  attempt $$i: remote has $$remote_sha, retrying in 3s..."; \
+		sleep 3; \
+	done; \
+	remote_sha=$$(git ls-remote origin refs/heads/main | cut -f1); \
+	if [ "$$remote_sha" != "$$local_sha" ]; then \
+		echo "error: origin/main ($$remote_sha) still does not match HEAD ($$local_sha) after retries." >&2; \
+		echo "Push your changes first: git push origin main" >&2; \
+		exit 1; \
+	fi
 	gh workflow run $(GITHUB_WORKFLOW) --field staging_only=true
 	@echo "Triggered $(GITHUB_WORKFLOW) with staging_only=true -- preview at https://mdeguzis.github.io/proton-pulse-web-staging/"
 
