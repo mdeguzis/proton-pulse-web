@@ -2,7 +2,7 @@
 
 import { estimateScore } from '../../shared/scoring.js?v=2787ec1d';
 import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=9052e252';
-import { renderGamePage } from './game-page.js?v=9516c751';
+import { renderGamePage } from './game-page.js?v=426709cd';
 import { STEAM_IMG } from '../config.js?v=9970759a';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=d4fea298';
 import { renderGameCard } from '../lib/card.js?v=9d469496';

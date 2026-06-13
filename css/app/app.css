@@ -559,6 +559,8 @@
   align-items: stretch;
   gap: 0;
   width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
 }
 .source-summary-tier-row > * {
   flex: 1;
