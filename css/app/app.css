@@ -1183,7 +1183,7 @@ a.card:active { transform: translateY(1px); }
   padding: 6px 10px;
   font-size: 0.72rem;
   color: var(--text);
-  max-width: 360px;
+  max-width: 420px;
   pointer-events: none;
   z-index: 9999;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
