@@ -1315,7 +1315,7 @@ a.card:hover { text-decoration: none; }
 }
 .card-summary .row:last-child { border-bottom: none; }
 .card-summary .label { color: var(--muted); min-width: 100px; }
-.card-summary .notes-full { margin-top: 10px; white-space: pre-wrap; line-height: 1.5; color: #a0b4c4; }
+.card-summary .notes-full { white-space: pre-wrap; line-height: 1.5; color: #a0b4c4; }
 /* Detail buttons snug up against the row above instead of drifting with a
    margin-top gap - keeps the card-summary stack visually tight */
 .details-btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0; justify-content: flex-end; }

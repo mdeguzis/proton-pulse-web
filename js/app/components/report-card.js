@@ -1,13 +1,13 @@
 // report-card (components) for the app page. Relocated from app.js.
 
-import { estimateScore } from '../../shared/scoring.js?v=2787ec1d';
-import { getWebClientId } from '../../shared/submit.js?v=4543b1fc';
+import { estimateScore } from '../../shared/scoring.js?v=0dae1257';
+import { getWebClientId } from '../../shared/submit.js?v=09904778';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
-import { renderAuthorBlock } from './author.js?v=22ba4dee';
-import { buildFormRows } from './config-cards.js?v=c95d3721';
-import { renderSignalStrip } from './signals.js?v=92178f77';
+import { renderAuthorBlock } from './author.js?v=eebcfe6b';
+import { buildFormRows } from './config-cards.js?v=60f932da';
+import { renderSignalStrip } from './signals.js?v=4a38a36c';
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=9970759a';
-import { confColor, confTextColor, configKey, daysAgo, esc, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js?v=d4fea298';
+import { confColor, confTextColor, configKey, daysAgo, esc, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js?v=5184cce6';
 
 export function renderPermalink(r) {
   let id = r.reportId != null ? `r${r.reportId}` : (r.clientId ? `c${r.clientId.slice(0, 8)}` : '');
@@ -54,7 +54,7 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
       ${renderAuthorBlock(r)}
       <div class="card-body">
         <div class="proton">${esc(r.protonVersion || 'Unknown')}</div>
-        <div class="hw">${esc([r.gpu, r.os].filter(Boolean).join(' / ') || 'Hardware unavailable')}${arch ? ` <span class="arch-badge">${esc(arch)}</span>` : ''}</div>
+        <div class="hw">${esc([r.gpu, r.os].filter(Boolean).join(' / ') || 'Hardware unavailable')}</div>
         <div class="age">
           ${daysAgo(r.timestamp)}
           ${(r.durationMinutes != null || fmtDuration(r.duration)) ? `<span class="hours-inline" title="Steam playtime when the reporter submitted this report">  &middot;  ${r.durationMinutes != null ? fmtMinutes(r.durationMinutes) : fmtDuration(r.duration)} played</span>` : ''}
@@ -77,13 +77,13 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
       <div class="row"><span class="label">CPU</span><span>${na(esc(r.cpu))}</span></div>
       <div class="row"><span class="label">OS</span><span>${na(esc(r.os))}</span></div>
       <div class="row"><span class="label">Proton</span><span>${na(esc(r.protonVersion))}</span></div>
+      ${arch ? `<div class="row"><span class="label">GPU Arch</span><span>${esc(arch)}</span></div>` : ''}
       ${(r.durationMinutes != null || fmtDuration(r.duration)) ? `<div class="row"><span class="label">Steam playtime</span><span>${r.durationMinutes != null ? fmtMinutes(r.durationMinutes) : fmtDuration(r.duration)}</span></div>` : ''}
       ${(() => { const pt = r.configKey && configPlaytimeTotals.find(t => t.config_key === r.configKey); return pt ? `<div class="row"><span class="label">Config playtime</span><span title="${pt.session_count} session${pt.session_count !== 1 ? 's' : ''}">${fmtMinutes(pt.total_minutes)}</span></div>` : ''; })()}
-      ${r.notes ? `<div class="notes-full">${esc(r.notes)}</div>` : ''}
+      ${r.notes ? `<div class="row"><span class="label">Notes</span><span class="notes-full">${esc(r.notes)}</span></div>` : ''}
       <div class="all-details-panel hw-details-panel">
         <div class="row"><span class="label">RAM</span><span>${na(esc(r.ram))}</span></div>
         ${r.vramMb ? `<div class="row"><span class="label">VRAM</span><span>${r.vramMb >= 1024 ? (r.vramMb/1024).toFixed(1)+' GB' : r.vramMb+' MB'}</span></div>` : ''}
-        ${arch ? `<div class="row"><span class="label">GPU Architecture</span><span>${esc(arch)}</span></div>` : ''}
         <div class="row"><span class="label">GPU Driver</span><span>${na(esc(r.gpuDriver))}</span></div>
         <div class="row"><span class="label">Kernel</span><span>${na(esc(r.kernel))}</span></div>
         ${r.launchOptions ? `<div class="row"><span class="label">Launch Options</span><span>${esc(r.launchOptions)}</span></div>` : ''}
