@@ -1216,7 +1216,9 @@ a.card:active { transform: translateY(1px); }
   color: var(--accent-hi, #aedcff);
 }
 .signal-icon.signal-neutral {
-  opacity: 0.35;
+  background: rgba(11,17,22,0.25);
+  border-color: rgba(31,51,70,0.5);
+  color: rgba(103,120,140,0.45);
 }
 
 
