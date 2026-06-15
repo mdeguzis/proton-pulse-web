@@ -3,7 +3,7 @@
 import { estimateScore } from '../../shared/scoring.js?v=0dae1257';
 import { getWebClientId } from '../../shared/submit.js?v=09904778';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
-import { renderAuthorBlock } from './author.js?v=eebcfe6b';
+import { renderAuthorBlock } from './author.js?v=56bc02a9';
 import { buildFormRows } from './config-cards.js?v=60f932da';
 import { renderSignalStrip } from './signals.js?v=4a38a36c';
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=9970759a';
@@ -77,11 +77,11 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
       <div class="row"><span class="label">CPU</span><span>${na(esc(r.cpu))}</span></div>
       <div class="row"><span class="label">OS</span><span>${na(esc(r.os))}</span></div>
       <div class="row"><span class="label">Proton</span><span>${na(esc(r.protonVersion))}</span></div>
-      ${arch ? `<div class="row"><span class="label">GPU Arch</span><span>${esc(arch)}</span></div>` : ''}
       ${(r.durationMinutes != null || fmtDuration(r.duration)) ? `<div class="row"><span class="label">Steam playtime</span><span>${r.durationMinutes != null ? fmtMinutes(r.durationMinutes) : fmtDuration(r.duration)}</span></div>` : ''}
       ${(() => { const pt = r.configKey && configPlaytimeTotals.find(t => t.config_key === r.configKey); return pt ? `<div class="row"><span class="label">Config playtime</span><span title="${pt.session_count} session${pt.session_count !== 1 ? 's' : ''}">${fmtMinutes(pt.total_minutes)}</span></div>` : ''; })()}
       ${r.notes ? `<div class="row"><span class="label">Notes</span><span class="notes-full">${esc(r.notes)}</span></div>` : ''}
       <div class="all-details-panel hw-details-panel">
+        ${arch ? `<div class="row"><span class="label">GPU Arch</span><span>${esc(arch)}</span></div>` : ''}
         <div class="row"><span class="label">RAM</span><span>${na(esc(r.ram))}</span></div>
         ${r.vramMb ? `<div class="row"><span class="label">VRAM</span><span>${r.vramMb >= 1024 ? (r.vramMb/1024).toFixed(1)+' GB' : r.vramMb+' MB'}</span></div>` : ''}
         <div class="row"><span class="label">GPU Driver</span><span>${na(esc(r.gpuDriver))}</span></div>
