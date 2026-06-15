@@ -226,20 +226,19 @@
 }
 .game-header-main {
   display: flex;
-  /* Top-align so the game box-art lines up with the title row instead of
-     centering vertically with the meta block below it */
+  flex-direction: column;
   align-items: flex-start;
-  gap: 18px;
+  gap: 10px;
   min-width: 0;
 }
 .game-header img {
-  width: 178px;
-  height: 84px;
-  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 460 / 215;
   object-fit: cover;
   border: 1px solid var(--border);
 }
-.game-header-info { flex: 1; min-width: 0; }
+.game-header-info { width: 100%; min-width: 0; }
 .game-header-side {
   display: flex;
   flex-direction: column;
@@ -1638,11 +1637,7 @@ a.card:hover { text-decoration: none; }
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  .game-header-main {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .game-header img { height: auto; width: 100%; max-width: 240px; }
+  .game-header img { max-width: 280px; }
   .game-header-side {
     width: 100%;
   }
