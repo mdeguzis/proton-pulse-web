@@ -7,11 +7,11 @@ import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=7ad8fd16';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase } from '../api/supabase.js?v=3052bd1b';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=cb7b4c5e';
-import { enhanceAuthorBlocks } from './author.js?v=4c127d91';
+import { enhanceAuthorBlocks } from './author.js?v=003c20a5';
 import { renderConfigCard } from './config-cards.js?v=60f932da';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=2b40ff03';
-import { renderCard } from './report-card.js?v=b30032a3';
-import { loadSearchIndex, searchIndex } from './search.js?v=d99224a7';
+import { renderCard } from './report-card.js?v=84f74d0a';
+import { loadSearchIndex, searchIndex } from './search.js?v=9beab0a9';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, STEAM_IMG, dataFilesHref } from '../config.js?v=9970759a';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=85cf4195';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=5184cce6';
@@ -399,8 +399,13 @@ export async function renderGamePage(appId) {
         <div class="reports-section-copy">
           <span class="reports-section-title">Community Configs &amp; Reports</span>
         </div>
-        <div class="sort-filter-row">
-          <div class="filter-wrap">
+        <div class="sort-bar">
+          <button class="${sortMode==='recent'?'active':''}" data-sort="recent">Recent</button>
+          <button class="${sortMode==='votes'?'active':''}" data-sort="votes">Top Voted</button>
+        </div>
+      </div>
+
+      <div class="filter-wrap">
         ${(() => {
           const GPU_LABEL = { nvidia: 'NVIDIA', amd: 'AMD', intel: 'Intel' };
           const RATING_LABEL = { platinum: 'Platinum', gold: 'Gold', silver: 'Silver', bronze: 'Bronze', borked: 'Borked' };
@@ -484,7 +489,7 @@ export async function renderGamePage(appId) {
 
           return `
             <button class="filter-toggle-btn${activeCount > 0 ? ' has-filters' : ''}" id="filterToggle">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M10 18h4v-2h-4v2zm-7-14v2h18V4H3zm3 7h12v-2H6v2z"/></svg>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M4.25 5.61C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39C20.25 4.95 19.8 4 18.95 4H5.04C4.2 4 3.74 4.95 4.25 5.61z"/></svg>
               Filters${activeCount > 0 ? ` <span class="filter-badge">${activeCount}</span>` : ''}
             </button>
             ${anyActive ? `<span class="filter-count">${reps.length} of ${combined.length} shown</span>` : ''}
@@ -502,12 +507,6 @@ export async function renderGamePage(appId) {
             </div>
           `;
         })()}
-          </div>
-          <div class="sort-bar">
-            <button class="${sortMode==='recent'?'active':''}" data-sort="recent">Recent</button>
-            <button class="${sortMode==='votes'?'active':''}" data-sort="votes">Top Voted</button>
-          </div>
-        </div>
       </div>
 
       <div class="cards">
