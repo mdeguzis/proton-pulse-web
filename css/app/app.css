@@ -1067,7 +1067,7 @@ a.card:hover { text-decoration: none; }
   transition: border-color 0.15s, background 0.15s, transform 0.05s;
 }
 .card:hover { border-color: var(--accent); }
-.card:active { transform: translateY(1px); }
+a.card:active { transform: translateY(1px); }
 .card .left { flex: 1; min-width: 0; }
 /* card-body replaces .left for the new layout - middle column with proton +
    hw + age + signal-strip. Same flex behavior as .left so existing rules still
