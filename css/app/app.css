@@ -936,13 +936,20 @@
 .sort-bar button:hover { background: var(--s2); color: var(--text); }
 .sort-bar button.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
 
+/* controls row: filter button left, sort toggles right */
+.reports-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
 /* filter bar */
 .filter-wrap {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
 }
 .filter-toggle-btn {
   display: inline-flex;
