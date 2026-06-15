@@ -1190,7 +1190,7 @@ a.card:active { transform: translateY(1px); }
   pointer-events: none;
   z-index: 9999;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  transition-delay: 200ms;
+  transition-delay: 350ms;
 }
 .signal-icon svg { width: 20px; height: 20px; }
 /* state variants - good (Steam install green), bad (red), warn (amber),
@@ -1216,7 +1216,7 @@ a.card:active { transform: translateY(1px); }
   color: var(--accent-hi, #aedcff);
 }
 .signal-icon.signal-neutral {
-  opacity: 0.35;
+  opacity: 0.6;
 }
 
 
