@@ -7,11 +7,11 @@ import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=7ad8fd16';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase } from '../api/supabase.js?v=3052bd1b';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=cb7b4c5e';
-import { enhanceAuthorBlocks } from './author.js?v=f904255f';
+import { enhanceAuthorBlocks } from './author.js?v=4c127d91';
 import { renderConfigCard } from './config-cards.js?v=60f932da';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=2b40ff03';
-import { renderCard } from './report-card.js?v=f4e15498';
-import { loadSearchIndex, searchIndex } from './search.js?v=521cd65c';
+import { renderCard } from './report-card.js?v=b30032a3';
+import { loadSearchIndex, searchIndex } from './search.js?v=d99224a7';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, STEAM_IMG, dataFilesHref } from '../config.js?v=9970759a';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=85cf4195';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=5184cce6';
@@ -400,10 +400,6 @@ export async function renderGamePage(appId) {
           <span class="reports-section-title">Community Configs &amp; Reports</span>
         </div>
         <div class="sort-filter-row">
-          <div class="sort-bar">
-            <button class="${sortMode==='recent'?'active':''}" data-sort="recent">Recent</button>
-            <button class="${sortMode==='votes'?'active':''}" data-sort="votes">Top Voted</button>
-          </div>
           <div class="filter-wrap">
         ${(() => {
           const GPU_LABEL = { nvidia: 'NVIDIA', amd: 'AMD', intel: 'Intel' };
@@ -507,6 +503,10 @@ export async function renderGamePage(appId) {
           `;
         })()}
           </div>
+          <div class="sort-bar">
+            <button class="${sortMode==='recent'?'active':''}" data-sort="recent">Recent</button>
+            <button class="${sortMode==='votes'?'active':''}" data-sort="votes">Top Voted</button>
+          </div>
         </div>
       </div>
 
@@ -523,6 +523,35 @@ export async function renderGamePage(appId) {
     el.querySelectorAll('.sort-bar button').forEach(b =>
       b.onclick = () => { sortMode = b.dataset.sort; render(); }
     );
+
+    // Signal icon click popup - wire directly on each icon so no bubbling issues
+    el.querySelectorAll('.signal-icon').forEach(icon => {
+      icon.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const label = icon.getAttribute('title') || '';
+        if (!label) return;
+        let p = document.getElementById('__signal_popup');
+        if (!p) {
+          p = document.createElement('div');
+          p.id = '__signal_popup';
+          p.className = 'signal-popup';
+          document.body.appendChild(p);
+        }
+        p.textContent = label;
+        p.classList.add('visible');
+        const rect = icon.getBoundingClientRect();
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        const w = p.offsetWidth || 160;
+        const h = p.offsetHeight || 30;
+        let left = rect.left + rect.width / 2 - w / 2;
+        left = Math.max(8, Math.min(left, vw - w - 8));
+        const topBelow = rect.bottom + 6;
+        const top = topBelow + h > vh ? rect.top - h - 6 : topBelow;
+        p.style.left = left + 'px';
+        p.style.top = top + 'px';
+      });
+    });
     // rating-info-btn is now a plain <a href> to scoring.html - no JS needed.
     // populateScoringTooltip / #rating-info-tip kept around in case anything
     // else still references them (search/etc); safe to delete in a cleanup pass
