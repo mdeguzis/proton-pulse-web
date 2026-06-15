@@ -232,11 +232,10 @@
   min-width: 0;
 }
 .game-header img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 460 / 215;
-  max-height: 190px;
-  object-fit: cover;
+  width: auto;
+  max-width: 100%;
+  max-height: 175px;
+  display: block;
   border: 1px solid var(--border);
 }
 .game-header-info { width: 100%; min-width: 0; }
@@ -1638,7 +1637,7 @@ a.card:hover { text-decoration: none; }
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  .game-header img { max-width: 280px; }
+  .game-header img { max-height: 140px; }
   .game-header-side {
     width: 100%;
   }
