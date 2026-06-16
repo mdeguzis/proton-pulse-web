@@ -5,7 +5,7 @@ import { renderFlagged } from './components/flagged.js?v=b9c9f230';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
 import { fetchAllUsers } from './api/users.js?v=718eb921';
-import { renderUsers } from './components/users.js?v=32cf3ec5';
+import { renderUsers } from './components/users.js?v=5af3a493';
 import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=637a90b4';
 import { renderAdmins } from './components/admins.js?v=0956f8c4';
 import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ca024bd3';
@@ -352,8 +352,23 @@ function wireEvents() {
     const btn = e.target.closest('[data-action]');
     if (!btn) return;
     const action = btn.dataset.action;
+    if (action === 'copy-id') {
+      const val = btn.dataset.value || '';
+      navigator.clipboard.writeText(val).then(() => {
+        const tip = document.createElement('span');
+        tip.className = 'copy-tooltip';
+        tip.textContent = 'Copied';
+        btn.appendChild(tip);
+        requestAnimationFrame(() => tip.classList.add('copy-tooltip--show'));
+        setTimeout(() => tip.remove(), 1000);
+      }).catch(() => {});
+      return;
+    }
     if (action === 'ban-user') {
-      openBanModal(btn.dataset.userid, null, btn.dataset.username);
+      // Pass BOTH ids: anonymous users have only client_id, Steam users have
+      // proton_pulse_user_id. Sending only userid for an anonymous user left the
+      // ban with no identity and the insert failed the has-identity CHECK (400).
+      openBanModal(btn.dataset.userid || null, btn.dataset.clientid || null, btn.dataset.username);
     }
     if (action === 'unban-user') {
       if (!confirm('Unban this user and restore their reports?')) return;

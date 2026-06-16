@@ -42,9 +42,21 @@ export function renderUsers(rows, { currentUserId, counts } = {}) {
     // hover) so two unnamed users can be told apart -- e.g. for moderation/bans.
     const idType = r.proton_pulse_user_id ? 'steam' : (r.client_id ? 'client' : '');
     const idRaw  = r.proton_pulse_user_id || r.client_id || '';
-    const idShort = idRaw.length > 18 ? `${idRaw.slice(0, 18)}…` : idRaw;
+    const idSafe = escapeHtml(idRaw);
+    // Show the full id (no truncation) with a copy button on the right, matching
+    // the copy-id control on the user detail screen. The copy value is the raw
+    // id without the steam:/client: prefix so it pastes cleanly.
     const identityCell = idRaw
-      ? `<code class="admin-uid" title="${escapeHtml(idType)}: ${escapeHtml(idRaw)}">${escapeHtml(idType)}:${escapeHtml(idShort)}</code>`
+      ? `<span class="admin-id-cell">
+          <code class="admin-uid">${escapeHtml(idType)}:${idSafe}</code>
+          <button class="admin-btn admin-btn--sm user-detail-copy-btn" type="button"
+            data-action="copy-id" data-value="${idSafe}" title="Copy ID to clipboard">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="5" y="1" width="9" height="11" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M3 4H2a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </span>`
       : '<span class="admin-uid">&mdash;</span>';
     const lastActive = escapeHtml(fmtDate(r.last_active));
     const lastLogin = escapeHtml(fmtDate(r.last_login));
@@ -60,7 +72,7 @@ export function renderUsers(rows, { currentUserId, counts } = {}) {
         data-ban-id="${escapeHtml(String(r.ban_id || ''))}"
         data-userid="${uid}" data-clientid="${cid}">Unban</button>`;
     } else {
-      banBtn = `<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="ban-user" data-userid="${uid}" data-username="${name}">Ban</button>`;
+      banBtn = `<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="ban-user" data-userid="${uid}" data-clientid="${cid}" data-username="${name}">Ban</button>`;
     }
     // Details button: navigates to the full user detail screen.
     const userObj = escapeHtml(JSON.stringify({

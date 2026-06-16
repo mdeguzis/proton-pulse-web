@@ -277,6 +277,14 @@
   display: inline;
 }
 
+/* Identity cell in the All Users table: full id (no truncation) with a copy
+   button held to the right, vertically centered. */
+.admin-id-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .admin-role-badge {
   display: inline-block;
   font-size: 0.7rem;
