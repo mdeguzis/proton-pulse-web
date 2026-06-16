@@ -24,6 +24,11 @@ Deno.serve(async (req: Request) => {
   const siteUrl = Deno.env.get("SITE_URL") ?? "https://www.proton-pulse.com";
   const siteOrigin = new URL(siteUrl).origin;
 
+  // Staging origin is allowed as a redirect target so sign-in works on the
+  // staging preview site. Only set in dev -- leave unset in production.
+  const stagingUrl = Deno.env.get("STAGING_URL") ?? "";
+  const stagingOrigin = stagingUrl ? new URL(stagingUrl).origin : null;
+
   // ── Health check: GET ?health=1 ─────────────────────────────────────────
   if (params.get("health") === "1") {
     return new Response(JSON.stringify({ ok: true, site_url: siteUrl }), {
@@ -143,7 +148,7 @@ Deno.serve(async (req: Request) => {
   if (returnToRaw) {
     try {
       const parsed = new URL(returnToRaw, siteUrl);
-      if (parsed.origin === siteOrigin) {
+      if (parsed.origin === siteOrigin || (stagingOrigin && parsed.origin === stagingOrigin)) {
         redirectUrl = parsed;
       }
     } catch {
