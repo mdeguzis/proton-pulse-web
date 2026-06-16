@@ -873,6 +873,20 @@ jobs:
             git commit -m "Staging preview: $(date +%F)"
           fi
 
+      - name: Check Supabase SITE_URL
+        run: |
+          RESP=$(curl -sf "https://ilsgdshkaocrmibwdezk.supabase.co/functions/v1/steam-callback?health=1" || echo '{}')
+          SITE_URL=$(echo "$RESP" | python3 -c "import json,sys; print(json.load(sys.stdin).get('site_url',''))" 2>/dev/null || echo '')
+          echo "steam-callback SITE_URL: $SITE_URL"
+          if [ -z "$SITE_URL" ]; then
+            echo "WARNING: health endpoint not available on deployed function (deploy-functions.yml may not have run yet). Skipping check."
+          elif [ "$SITE_URL" != "https://www.proton-pulse.com" ]; then
+            echo "ERROR: SITE_URL is '$SITE_URL', expected 'https://www.proton-pulse.com'. Update the SITE_URL secret in Supabase before deploying."
+            exit 1
+          else
+            echo "SITE_URL OK"
+          fi
+
       - name: Push to staging
         run: |
           cd gh-pages-data

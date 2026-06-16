@@ -4,8 +4,8 @@ import { fetchFlaggedReports, reinstateReport, deleteReport } from './api/flagge
 import { renderFlagged } from './components/flagged.js?v=b9c9f230';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
-import { fetchAllUsers } from './api/users.js?v=b1e9a610';
-import { renderUsers } from './components/users.js?v=e8804ac3';
+import { fetchAllUsers } from './api/users.js?v=19272bae';
+import { renderUsers } from './components/users.js?v=78aabc27';
 import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=637a90b4';
 import { renderAdmins } from './components/admins.js?v=0956f8c4';
 import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ca024bd3';

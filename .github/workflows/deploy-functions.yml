@@ -1,0 +1,28 @@
+name: Deploy Supabase Edge Functions
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'supabase/functions/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Deploy all edge functions
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_TOKEN }}
+        run: |
+          for fn in supabase/functions/*/; do
+            slug=$(basename "$fn")
+            [ -d "$fn" ] || continue
+            echo "Deploying $slug..."
+            supabase functions deploy "$slug" --project-ref ilsgdshkaocrmibwdezk
+          done

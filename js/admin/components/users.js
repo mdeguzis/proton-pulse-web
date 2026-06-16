@@ -36,6 +36,7 @@ export function renderUsers(rows, { currentUserId, counts } = {}) {
     const cid = escapeHtml(r.client_id || '');
     const name = escapeHtml(r.display_name || '(anonymous)');
     const lastActive = escapeHtml(fmtDate(r.last_active));
+    const lastLogin = escapeHtml(fmtDate(r.last_login));
     // Only known roles get a modifier class; everyone else is the neutral "User" badge.
     const roleMod = ROLE_LABELS[r.role] ? ` admin-role-badge--${r.role}` : '';
     const roleCell = `<span class="admin-role-badge${roleMod}">${escapeHtml(roleLabel(r.role))}</span>`;
@@ -43,14 +44,18 @@ export function renderUsers(rows, { currentUserId, counts } = {}) {
     const banBtn = isSelf
       ? `<button class="admin-btn admin-btn--danger admin-btn--sm" disabled title="Cannot ban yourself">Ban</button>`
       : `<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="ban-user" data-userid="${uid}" data-username="${name}">Ban</button>`;
+    // Details button: reveals long ID columns on mobile (hidden via CSS on small screens).
+    const detailsBtn = `<button class="admin-btn admin-btn--sm admin-btn--details" type="button"
+      onclick="this.closest('tr').classList.toggle('admin-row--expanded')" title="Show IDs">Details</button>`;
     return `<tr>
       <td>${name}</td>
       <td>${roleCell}</td>
-      <td><code class="admin-uid">${uid || '—'}</code></td>
-      <td><code class="admin-uid">${cid || '—'}</code></td>
+      <td class="admin-col-ids"><code class="admin-uid">${uid || '—'}</code></td>
+      <td class="admin-col-ids"><code class="admin-uid">${cid || '—'}</code></td>
       <td>${r.report_count}</td>
       <td>${lastActive}</td>
-      <td>${banBtn}</td>
+      <td>${lastLogin || '—'}</td>
+      <td class="admin-col-actions">${detailsBtn}${banBtn}</td>
     </tr>`;
   }).join('');
 }

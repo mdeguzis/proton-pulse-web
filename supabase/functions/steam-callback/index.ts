@@ -24,6 +24,14 @@ Deno.serve(async (req: Request) => {
   const siteUrl = Deno.env.get("SITE_URL") ?? "https://www.proton-pulse.com";
   const siteOrigin = new URL(siteUrl).origin;
 
+  // ── Health check: GET ?health=1 ─────────────────────────────────────────
+  if (params.get("health") === "1") {
+    return new Response(JSON.stringify({ ok: true, site_url: siteUrl }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
   // ── 1. Verify the OpenID assertion with Steam ────────────────────────────
   const verifyParams = new URLSearchParams(params);
   verifyParams.set("openid.mode", "check_authentication");

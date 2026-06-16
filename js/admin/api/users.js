@@ -78,6 +78,38 @@ export async function fetchAllUsers(session, { search } = {}) {
     }
   }
 
+  // Pull last_sign_in_at from auth.users via admin RPC.
+  // Also surfaces users who logged in but never submitted anything.
+  try {
+    const authRes = await fetch(`${SUPABASE_URL}/rest/v1/rpc/admin_list_users`, {
+      method: 'POST',
+      headers: { ...supabaseHeaders(session), 'Content-Type': 'application/json' },
+      body: '{}',
+    });
+    if (authRes.ok) {
+      const authUsers = await authRes.json();
+      for (const au of authUsers) {
+        if (!au.id) continue;
+        if (byUser.has(au.id)) {
+          byUser.get(au.id).last_login = au.last_sign_in_at || null;
+        } else {
+          // User exists in auth but has never submitted - still show them.
+          byUser.set(au.id, {
+            proton_pulse_user_id: au.id,
+            client_id: null,
+            report_count: 0,
+            last_active: au.last_sign_in_at || au.created_at || null,
+            last_login: au.last_sign_in_at || null,
+            display_name: au.display_name || null,
+            role: null,
+          });
+        }
+      }
+    }
+  } catch (_) {
+    // Non-fatal: admin_list_users unavailable, fall back to activity-only list.
+  }
+
   // Counts over the full set, independent of the search filter. A user with a
   // proton_pulse_user_id signed in via Steam; client_id-only users are anonymous.
   const everyone = [...byUser.values()];

@@ -340,3 +340,28 @@
   font-size: 1rem;
   margin-right: 4px;
 }
+
+/* Details button: neutral secondary style */
+.admin-btn--details {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.12);
+  color: var(--muted, #8b98a5);
+  margin-right: 6px;
+}
+.admin-btn--details:hover { background: rgba(255,255,255,0.1); }
+
+/* Actions cell: keep buttons inline */
+.admin-col-actions { white-space: nowrap; }
+
+/* On narrow screens, hide the ID columns and details button by default.
+   .admin-row--expanded reveals them inline via a stacked block per cell. */
+@media (max-width: 768px) {
+  .admin-col-ids { display: none; }
+  .admin-row--expanded .admin-col-ids {
+    display: table-cell;
+  }
+  .admin-col-ids code { word-break: break-all; font-size: 0.68rem; }
+}
+@media (min-width: 769px) {
+  .admin-btn--details { display: none; }
+}
