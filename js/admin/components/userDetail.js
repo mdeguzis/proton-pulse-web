@@ -134,7 +134,7 @@ export function renderUserDetail(user, reports, authEvents, { session, onBack, o
     <div class="user-detail-section">
       <div class="user-detail-section-title">IDs</div>
       ${idRow('User ID', user.proton_pulse_user_id)}
-      ${idRow('Plugin Client ID', user.client_id)}
+      ${idRow('Plugin ID', user.client_id)}
     </div>
 
     <div class="user-detail-section">

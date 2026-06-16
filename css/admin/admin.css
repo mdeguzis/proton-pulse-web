@@ -395,7 +395,7 @@
 .user-detail-label {
   font-size: 0.75rem;
   color: var(--text-muted, #888);
-  min-width: 90px;
+  min-width: 75px;
   flex-shrink: 0;
 }
 
