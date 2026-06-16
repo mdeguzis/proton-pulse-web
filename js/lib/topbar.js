@@ -228,7 +228,7 @@
         <span>About</span>
       </a>
       <!-- GitHub issue chooser - shows Game Report / Missing ProtonDB / Plugin Issue / Blank etc. -->
-      <a href="https://github.com/mdeguzis/decky-proton-pulse/issues/new/choose" target="_blank" rel="noopener" title="Report a bug, file a Game Report, or contact the maintainer">
+      <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener" title="Report a bug, file a Game Report, or contact the maintainer">
         <svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg>
         <span>Contact</span>
       </a>
@@ -264,7 +264,7 @@
   <a href="stats.html" data-page="stats"><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Stats</a>
   <a href="about.html" data-page="about"><svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg> About</a>
   <a href="scoring.html" data-page="scoring"><svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg> Scoring</a>
-  <a href="https://github.com/mdeguzis/decky-proton-pulse/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
+  <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
   <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> Decky Plugin</a>
   <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-github"/></svg> GitHub</a>
   <a href="admin.html" id="mobile-admin-link" data-page="admin" hidden><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Admin</a>

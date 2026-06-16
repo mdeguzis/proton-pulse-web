@@ -1,0 +1,34 @@
+name: Missing Reports
+description: Report a game with missing or incomplete reports on proton-pulse.com
+labels: ["missing-reports"]
+body:
+  - type: input
+    id: game_name
+    attributes:
+      label: Game Name
+      placeholder: e.g. Elden Ring
+    validations:
+      required: true
+  - type: input
+    id: app_id
+    attributes:
+      label: Steam AppID
+      placeholder: e.g. 1245620
+    validations:
+      required: true
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue Type
+      options:
+        - No reports at all
+        - Reports exist on ProtonDB but not shown
+        - Reports outdated / stale
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Any additional context about the missing reports

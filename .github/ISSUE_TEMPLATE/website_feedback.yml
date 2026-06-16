@@ -1,0 +1,47 @@
+name: Website Feedback
+description: Bug, design tweak, or feature idea for proton-pulse.com
+labels: ["feedback"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of feedback
+      options:
+        - Bug (something broken or rendering wrong)
+        - Design / UX tweak
+        - Feature idea
+        - Data issue (missing / wrong info on a game page)
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page URL
+      description: Which page? Paste the full URL.
+      placeholder: https://www.proton-pulse.com/app.html#/app/1091500
+  - type: textarea
+    id: description
+    attributes:
+      label: What did you see?
+      description: For bugs include what you expected vs what happened. For design tweaks, what felt off and what would feel better.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce (bugs only)
+      placeholder: |
+        1. Open https://www.proton-pulse.com/...
+        2. Click X
+        3. Notice Y
+  - type: input
+    id: browser
+    attributes:
+      label: Browser / device
+      placeholder: Firefox 134 on Steam Deck, Chrome 132 on desktop
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot (optional)
+      description: Drag and drop an image or paste a URL.
