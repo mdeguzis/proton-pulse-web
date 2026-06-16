@@ -1,19 +1,28 @@
 /**
  * Tests for js/app/utils.js -- pure helper functions.
  *
- * utils.js uses a CJS hybrid export (module.exports block at the bottom)
- * so Jest can require() it directly and Istanbul will instrument it.
- *
- * Two functions require browser globals and are stubbed here:
- *   - esc() needs document.createElement
- *   - withTimeout() needs window.setTimeout (but we use real setTimeout below)
+ * babel-jest transforms the ES module to CommonJS at test time so Jest can
+ * require() it and Istanbul instruments the source file directly.
  */
 
-const path = require('path');
+global.window = global;
+global.document = {
+  createElement: () => {
+    let _text = '';
+    return {
+      set textContent(v) { _text = v; },
+      get innerHTML() {
+        return _text
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      },
+    };
+  },
+};
 
-// Load via the CJS shim so Istanbul can instrument the function bodies.
-// The shim (utils.cjs) strips ESM export keywords and stubs browser globals.
-const utils = require('../js/app/utils.cjs');
+const utils = require('../js/app/utils.js');
 
 const {
   normalizeOs,
@@ -441,8 +450,8 @@ describe('esc', () => {
     expect(esc('"quoted"')).toBe('&quot;quoted&quot;');
   });
 
-  test('escapes single quote', () => {
-    expect(esc("it's")).toBe('it&#39;s');
+  test('does not escape single quote (matches browser innerHTML behaviour)', () => {
+    expect(esc("it's")).toBe("it's");
   });
 
   test('handles empty string', () => {

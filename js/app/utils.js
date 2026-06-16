@@ -265,13 +265,3 @@ export function hashReportKey(s) {
   return 'h' + (h >>> 0).toString(16).slice(0, 7);
 }
 
-// CJS hybrid export for Jest coverage instrumentation.
-// The ESM exports above are used by the browser; this block lets Jest require()
-// the file directly so Istanbul can instrument it.
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  module.exports = {
-    normalizeOs, latestPerApp, withTimeout, latestPerClient, fmtDuration,
-    fmtMinutes, reportKey, daysAgo, utcStamp, confColor, confTextColor,
-    truncate, esc, cfgNa, downloadJson, configKey, hashReportKey, NA_SPAN,
-  };
-}

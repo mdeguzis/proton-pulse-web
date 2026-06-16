@@ -1,8 +1,11 @@
 module.exports = {
   testEnvironment: 'node',
   testMatch: ['**/tests/*.test.js'],
+  transform: {
+    '^.+\\.m?js$': 'babel-jest',
+  },
   collectCoverageFrom: [
-    'js/app/utils.cjs',
+    'js/app/utils.js',
   ],
   coverageThreshold: {
     global: {

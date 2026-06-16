@@ -9,6 +9,9 @@
     "naughty-words": "^1.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "babel-jest": "^30.4.1",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
     "supabase": "^2.92.0",
