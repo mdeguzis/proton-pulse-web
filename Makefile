@@ -21,8 +21,12 @@ build:
 test-js:
 	@npx jest
 
-# Full pre-push gate: cache-bust, Jest, smoke
-pre-push: build test-js smoke
+# Run Jest with coverage report and enforce thresholds from jest.config.js
+coverage:
+	@npx jest --coverage
+
+# Full pre-push gate: cache-bust, Jest (with coverage), smoke
+pre-push: build coverage smoke
 
 # Render-path smoke test: serves a staged copy of the site (with an error
 # catcher injected at the top of every <head>) and drives headless Firefox
@@ -43,7 +47,8 @@ help:
 	@echo ""
 	@echo "  build               Update cache buster hashes (?v=hash) in HTML files"
 	@echo "  test-js             Run Jest unit tests and manifest completeness check"
-	@echo "  pre-push            Full pre-push gate: build + test-js + smoke"
+	@echo "  coverage            Run Jest with coverage report and enforce thresholds"
+	@echo "  pre-push            Full pre-push gate: build + coverage + smoke"
 	@echo "  install             Install node deps (vite + jest) via pnpm"
 	@echo "  serve               Run vite dev server with CSS HMR (http://localhost:5173)"
 	@echo "  smoke               Render-path smoke test against a local staged copy"
