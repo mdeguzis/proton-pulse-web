@@ -16,22 +16,24 @@ function renderDayButtons(daysBack, onChangeDays) {
   }).join('');
 }
 
-function renderStatCards(totals) {
+function renderStatRows(totals) {
   const stats = [
-    { label: 'Events',      value: totals.total_events      ?? 0 },
-    { label: 'Sessions',    value: totals.total_sessions    ?? 0 },
-    { label: 'Unique users',value: totals.authed_users      ?? 0 },
-    { label: 'New users',   value: totals.new_users         ?? 0 },
-    { label: 'Logins',      value: totals.auth_success      ?? 0 },
-    { label: 'Login fails', value: totals.auth_failure      ?? 0 },
-    { label: 'Reports',     value: totals.reports_submitted ?? 0 },
+    { label: 'Total events',     value: totals.total_events      ?? 0 },
+    { label: 'Sessions',         value: totals.total_sessions    ?? 0 },
+    { label: 'Unique users',     value: totals.authed_users      ?? 0 },
+    { label: 'New users',        value: totals.new_users         ?? 0 },
+    { label: 'Logins',           value: totals.auth_success      ?? 0 },
+    { label: 'Login failures',   value: totals.auth_failure      ?? 0 },
+    { label: 'Reports submitted',value: totals.reports_submitted ?? 0 },
   ];
-  return `<div class="analytics-stats">${stats.map(s =>
-    `<div class="analytics-stat">
-      <div class="analytics-stat-value">${escapeHtml(String(s.value))}</div>
-      <div class="analytics-stat-label">${escapeHtml(s.label)}</div>
-    </div>`
-  ).join('')}</div>`;
+  return `<table class="admin-table analytics-stat-rows">
+    <tbody>${stats.map(s =>
+      `<tr>
+        <td style="color:var(--text-muted,#888);font-size:0.82rem;padding:6px 10px">${escapeHtml(s.label)}</td>
+        <td style="font-weight:600;text-align:right;padding:6px 10px">${escapeHtml(String(s.value))}</td>
+      </tr>`
+    ).join('')}</tbody>
+  </table>`;
 }
 
 function renderPagesTable(rows) {
@@ -76,7 +78,6 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
       <span class="admin-sort-label">Range:</span>
       ${renderDayButtons(daysBack, onChangeDays)}
     </div>
-    ${renderStatCards(data.totals || {})}
     <div style="margin-bottom:6px">
       <span class="analytics-section-title">Daily activity</span>
       <span style="float:right;font-size:0.75rem;color:var(--text-muted,#888)">
@@ -100,6 +101,10 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     <div style="margin-top:20px">
       <div class="analytics-section-title">Top games viewed</div>
       ${renderGamesTable(data.top_games)}
+    </div>
+    <div style="margin-top:20px">
+      <div class="analytics-section-title">Summary</div>
+      ${renderStatRows(data.totals || {})}
     </div>
   `;
 

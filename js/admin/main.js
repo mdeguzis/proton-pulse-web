@@ -14,7 +14,7 @@ import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965
 import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=916aedfc';
 import { renderUserDetail } from './components/userDetail.js?v=e56ae2a7';
 import { fetchAnalytics } from './api/analytics.js?v=1b3f4599';
-import { renderAnalytics } from './components/analytics.js?v=5f91d7b1';
+import { renderAnalytics } from './components/analytics.js?v=7d29939b';
 
 // ---------------------------------------------------------------------------
 // State
