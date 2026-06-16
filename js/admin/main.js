@@ -248,6 +248,9 @@ function activateTab(tabName, { updateUrl = true } = {}) {
   if (tabName === 'users' && searchInput) {
     const urlSearch = new URLSearchParams(window.location.search).get('search');
     if (urlSearch !== null) searchInput.value = urlSearch;
+    // Keep the inline clear (X) button in sync with the restored value.
+    const clearBtn = document.getElementById('users-search-clear');
+    if (clearBtn) clearBtn.hidden = !searchInput.value;
   }
   if (updateUrl) {
     const url = new URL(window.location.href);
@@ -297,6 +300,17 @@ function wireEvents() {
   document.getElementById('flagged-date-to').addEventListener('change', loadFlagged);
   document.getElementById('banned-search').addEventListener('keydown', e => { if (e.key === 'Enter') loadBanned(); });
   document.getElementById('users-search').addEventListener('keydown', e => { if (e.key === 'Enter') loadUsers(); });
+
+  // Users search: inline clear (X) button, only visible when there is text.
+  const usersSearchEl = document.getElementById('users-search');
+  const usersSearchClearEl = document.getElementById('users-search-clear');
+  usersSearchEl.addEventListener('input', () => { usersSearchClearEl.hidden = !usersSearchEl.value; });
+  usersSearchClearEl.addEventListener('click', () => {
+    usersSearchEl.value = '';
+    usersSearchClearEl.hidden = true;
+    usersSearchEl.focus();
+    loadUsers();
+  });
 
   // Flagged table actions (delegated)
   document.getElementById('flagged-tbody').addEventListener('click', async e => {

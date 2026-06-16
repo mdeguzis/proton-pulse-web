@@ -56,6 +56,34 @@
   outline: none;
 }
 
+/* Search box with an inline clear (X) button, shown only when there is text. */
+.admin-search-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.admin-search-wrap .admin-input {
+  padding-right: 26px;
+}
+.admin-search-clear {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background: none;
+  border: none;
+  color: var(--text-muted, #888);
+  cursor: pointer;
+  line-height: 0;
+}
+.admin-search-clear:hover {
+  color: var(--text, #eee);
+}
+
 .admin-input--date {
   padding: 4px 8px;
 }
