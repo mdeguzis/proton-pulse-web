@@ -137,8 +137,11 @@ async function loadPhrases() {
 }
 
 async function loadUserDetail(user) {
-  // Push history so the browser back button/swipe returns to the users tab.
-  history.pushState({ adminView: 'user-detail' }, '');
+  // Persist user so a page refresh can restore this view.
+  sessionStorage.setItem('admin_detail_user', JSON.stringify(user));
+  const url = new URL(window.location.href);
+  url.searchParams.set('detail', user.proton_pulse_user_id || user.client_id || '1');
+  history.pushState({ adminView: 'user-detail' }, '', url);
 
   // Show the detail section and hide all tab sections.
   document.querySelectorAll('.admin-section').forEach(sec => { sec.hidden = true; });
@@ -233,6 +236,7 @@ function activateTab(tabName, { updateUrl = true } = {}) {
   if (updateUrl) {
     const url = new URL(window.location.href);
     url.searchParams.set('tab', tabName);
+    url.searchParams.delete('detail');
     history.replaceState(null, '', url);
   }
   TAB_LOADERS[tabName]();
@@ -575,8 +579,22 @@ async function init() {
 
   panel.hidden = false;
   wireEvents();
+
+  const params = new URLSearchParams(window.location.search);
+  const detailParam = params.get('detail');
+  if (detailParam) {
+    try {
+      const stored = sessionStorage.getItem('admin_detail_user');
+      const user = stored ? JSON.parse(stored) : null;
+      if (user && (user.proton_pulse_user_id === detailParam || user.client_id === detailParam)) {
+        loadUserDetail(user);
+        return;
+      }
+    } catch (_) {}
+  }
+
   // Restore the tab from ?tab= (written by activateTab) so a refresh keeps your place.
-  const requestedTab = new URLSearchParams(window.location.search).get('tab');
+  const requestedTab = params.get('tab');
   activateTab(TAB_LOADERS[requestedTab] ? requestedTab : 'users', { updateUrl: false });
 }
 
