@@ -23,6 +23,8 @@ jobs:
           for fn in supabase/functions/*/; do
             slug=$(basename "$fn")
             [ -d "$fn" ] || continue
+            # skip shared helpers (not deployable as standalone functions)
+            [[ "$slug" == _* ]] && continue
             echo "Deploying $slug..."
             supabase functions deploy "$slug" --project-ref ilsgdshkaocrmibwdezk
           done
