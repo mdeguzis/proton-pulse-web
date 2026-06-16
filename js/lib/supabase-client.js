@@ -108,6 +108,24 @@ const SupaAuth = (() => {
 
   async function logout() {
     console.log('[SupaAuth] Signing out');
+    const session = await getSession();
+    if (session?.user?.id) {
+      fetch(`${SUPABASE_URL}/rest/v1/site_events`, {
+        method: 'POST',
+        headers: {
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${session.access_token}`,
+          'Content-Type': 'application/json',
+          Prefer: 'return=minimal',
+        },
+        body: JSON.stringify({
+          event_type: 'auth_logout',
+          page: location.pathname,
+          session_id: sessionStorage.getItem('pp_sid') || null,
+          proton_pulse_user_id: session.user.id,
+        }),
+      }).catch(() => {});
+    }
     await _sb.auth.signOut();
   }
 

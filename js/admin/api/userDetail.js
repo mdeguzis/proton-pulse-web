@@ -24,15 +24,16 @@ export async function fetchUserReports(session, { userId, clientId }) {
   return rows;
 }
 
-export async function fetchUserAuthEvents(session, { userId }) {
+export async function fetchUserActivity(session, { userId }) {
   if (!userId) return [];
-  const url = `${SUPABASE_URL}/rest/v1/site_events?event_type=in.(auth_success,auth_failure)&proton_pulse_user_id=eq.${encodeURIComponent(userId)}&order=created_at.desc&limit=50`;
+  const select = 'id,event_type,page,metadata,created_at';
+  const url = `${SUPABASE_URL}/rest/v1/site_events?proton_pulse_user_id=eq.${encodeURIComponent(userId)}&select=${select}&order=created_at.desc&limit=200`;
   const res = await fetch(url, { headers: supabaseHeaders(session) });
   if (!res.ok) {
     const text = await res.text().catch(() => res.status);
-    throw new Error(`fetchUserAuthEvents failed (${res.status}): ${text}`);
+    throw new Error(`fetchUserActivity failed (${res.status}): ${text}`);
   }
   const rows = await res.json();
-  console.debug('[userDetail] fetchUserAuthEvents', { userId, count: rows.length, source: 'site_events' });
+  console.debug('[userDetail] fetchUserActivity', { userId, count: rows.length, source: 'site_events' });
   return rows;
 }

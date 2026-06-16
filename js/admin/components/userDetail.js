@@ -62,16 +62,34 @@ function renderReportsTable(reports) {
   </table>`;
 }
 
-function renderAuthEvents(authEvents) {
-  if (!authEvents || !authEvents.length) return '';
-  const items = authEvents.slice(0, 10).map(ev => {
-    const label = ev.event_type === 'auth_success' ? 'Logged in' : 'Login failed';
-    return `<li style="margin-bottom:2px">${escapeHtml(fmtDateTime(ev.created_at))} - ${escapeHtml(label)}</li>`;
-  }).join('');
-  return `<div class="user-detail-tl-row" style="flex-direction:column;align-items:flex-start;gap:4px;margin-top:4px">
-    <span class="user-detail-label">Login history (last 10)</span>
-    <ul style="margin:0;padding-left:16px;color:var(--text,#eee);font-size:0.85rem;list-style:disc">${items}</ul>
-  </div>`;
+function metaSummary(metadata) {
+  if (!metadata) return '';
+  const parts = [];
+  if (metadata.reason)   parts.push(escapeHtml(metadata.reason));
+  if (metadata.steam_id) parts.push(`steam:${escapeHtml(metadata.steam_id)}`);
+  return parts.join(', ');
+}
+
+function buildActivityTable(events) {
+  if (!events.length) return '<p class="admin-empty" style="padding:8px 0">No activity recorded yet.</p>';
+  const rows = events.map(ev =>
+    `<tr>
+      <td style="white-space:nowrap">${escapeHtml(fmtDateTime(ev.created_at))}</td>
+      <td><code style="font-size:0.78rem">${escapeHtml(ev.event_type)}</code></td>
+      <td>${escapeHtml(ev.page || '')}</td>
+      <td style="color:var(--text-muted,#888);font-size:0.8rem">${metaSummary(ev.metadata)}</td>
+    </tr>`
+  ).join('');
+  return `<table class="admin-table user-detail-table">
+    <thead><tr><th>Date/Time</th><th>Event</th><th>Page</th><th>Details</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
+function renderActivitySection(el, allActivity, filter) {
+  const filtered = filter ? allActivity.filter(e => e.event_type === filter) : allActivity;
+  el.querySelector('#ud-activity-table').innerHTML = buildActivityTable(filtered);
+  el.querySelector('#ud-activity-count').textContent = `(${filtered.length})`;
 }
 
 export function renderUserDetail(user, reports, authEvents, { onBack, onBan, currentUserId } = {}) {
@@ -123,12 +141,25 @@ export function renderUserDetail(user, reports, authEvents, { onBack, onBan, cur
           <span class="user-detail-label">Member since</span>
           <span>${since}</span>
         </div>
-        ${renderAuthEvents(authEvents)}
       </div>
     </div>
 
     <div class="user-detail-section">
-      <div class="user-detail-section-title">Activity <span class="user-detail-count">(${reports.length} report${reports.length !== 1 ? 's' : ''})</span></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span class="user-detail-section-title" style="margin:0">Audit log</span>
+        <span class="user-detail-count" id="ud-activity-count">(${authEvents.length})</span>
+        <select id="ud-activity-filter" class="admin-select admin-select--sm">
+          <option value="">All types</option>
+          ${[...new Set(authEvents.map(e => e.event_type))].map(t =>
+            `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`
+          ).join('')}
+        </select>
+      </div>
+      <div id="ud-activity-table">${buildActivityTable(authEvents)}</div>
+    </div>
+
+    <div class="user-detail-section">
+      <div class="user-detail-section-title">Reports <span class="user-detail-count">(${reports.length})</span></div>
       ${renderReportsTable(reports)}
     </div>
   `;
@@ -143,6 +174,11 @@ export function renderUserDetail(user, reports, authEvents, { onBack, onBan, cur
         setTimeout(() => { btn.textContent = orig; }, 1200);
       }).catch(() => {});
     });
+  });
+
+  // Activity filter dropdown.
+  el.querySelector('#ud-activity-filter')?.addEventListener('change', e => {
+    renderActivitySection(el, authEvents, e.target.value);
   });
 
   // Export JSON download.
