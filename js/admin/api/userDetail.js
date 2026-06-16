@@ -23,3 +23,16 @@ export async function fetchUserReports(session, { userId, clientId }) {
   console.debug('[userDetail] fetchUserReports', { userId, clientId, count: rows.length, source: 'user_configs', filter });
   return rows;
 }
+
+export async function fetchUserAuthEvents(session, { userId }) {
+  if (!userId) return [];
+  const url = `${SUPABASE_URL}/rest/v1/site_events?event_type=in.(auth_success,auth_failure)&proton_pulse_user_id=eq.${encodeURIComponent(userId)}&order=created_at.desc&limit=50`;
+  const res = await fetch(url, { headers: supabaseHeaders(session) });
+  if (!res.ok) {
+    const text = await res.text().catch(() => res.status);
+    throw new Error(`fetchUserAuthEvents failed (${res.status}): ${text}`);
+  }
+  const rows = await res.json();
+  console.debug('[userDetail] fetchUserAuthEvents', { userId, count: rows.length, source: 'site_events' });
+  return rows;
+}

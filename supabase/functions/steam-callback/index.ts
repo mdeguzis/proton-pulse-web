@@ -88,6 +88,17 @@ Deno.serve(async (req: Request) => {
     Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
   );
 
+  async function trackAuthEvent(eventType: string, userId: string | null, metadata: Record<string, unknown>) {
+    try {
+      await supabase.from('site_events').insert({
+        event_type: eventType,
+        page: '/steam-callback',
+        proton_pulse_user_id: userId,
+        metadata,
+      });
+    } catch { /* non-fatal */ }
+  }
+
   // Use a deterministic fake email so the same Steam account always maps to
   // the same Supabase user without requiring a real email address.
   const fakeEmail = `steam_${steamId}@steam.protonpulse.local`;
@@ -115,6 +126,7 @@ Deno.serve(async (req: Request) => {
     });
 
     if (createError && createError.message !== "User already exists") {
+      await trackAuthEvent('auth_failure', null, { reason: 'create_user_failed', steam_id: steamId, error: createError.message });
       return new Response(`Failed to create user: ${createError.message}`, { status: 500 });
     }
 
@@ -136,10 +148,13 @@ Deno.serve(async (req: Request) => {
     const { data: signIn2, error: signIn2Error } =
       await supabase.auth.signInWithPassword({ email: fakeEmail, password });
     if (signIn2Error || !signIn2?.session) {
+      await trackAuthEvent('auth_failure', null, { reason: 'signin_failed', steam_id: steamId, error: signIn2Error?.message });
       return new Response(`Sign-in failed: ${signIn2Error?.message}`, { status: 500 });
     }
     session = signIn2.session;
   }
+
+  await trackAuthEvent('auth_success', session.user.id, { steam_id: steamId });
 
   // ── 5. Redirect to site with session tokens in the URL fragment ──────────
   // The client-side JS reads these and calls setSession().

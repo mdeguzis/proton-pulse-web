@@ -11,8 +11,10 @@ import { renderAdmins } from './components/admins.js?v=0956f8c4';
 import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ca024bd3';
 import { renderPhrases } from './components/phrases.js?v=79051c31';
 import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965';
-import { fetchUserReports } from './api/userDetail.js?v=b630558f';
-import { renderUserDetail } from './components/userDetail.js?v=74542c4d';
+import { fetchUserReports, fetchUserAuthEvents } from './api/userDetail.js?v=3098b2f6';
+import { renderUserDetail } from './components/userDetail.js?v=f67336d4';
+import { fetchAnalytics } from './api/analytics.js?v=1b3f4599';
+import { renderAnalytics } from './components/analytics.js?v=b796a4f0';
 
 // ---------------------------------------------------------------------------
 // State
@@ -149,11 +151,14 @@ async function loadUserDetail(user) {
   content.innerHTML = '<div class="admin-loading">Loading reports...</div>';
 
   try {
-    const reports = await fetchUserReports(currentSession, {
-      userId: user.proton_pulse_user_id || null,
-      clientId: user.client_id || null,
-    });
-    renderUserDetail(user, reports, {
+    const [reports, authEvents] = await Promise.all([
+      fetchUserReports(currentSession, {
+        userId: user.proton_pulse_user_id || null,
+        clientId: user.client_id || null,
+      }),
+      fetchUserAuthEvents(currentSession, { userId: user.proton_pulse_user_id || null }),
+    ]);
+    renderUserDetail(user, reports, authEvents, {
       currentUserId: currentSession?.user?.id,
     });
   } catch (e) {
@@ -194,6 +199,22 @@ function switchTab(tabName) {
   });
 }
 
+let analyticsDays = 30;
+
+async function loadAnalytics() {
+  const content = document.getElementById('analytics-content');
+  content.innerHTML = '<div class="admin-loading">Loading...</div>';
+  try {
+    const data = await fetchAnalytics(currentSession, { daysBack: analyticsDays });
+    renderAnalytics(data, {
+      daysBack: analyticsDays,
+      onChangeDays: (d) => { analyticsDays = d; loadAnalytics(); },
+    });
+  } catch (e) {
+    content.innerHTML = `<div class="admin-error">${e.message}</div>`;
+  }
+}
+
 // Maps each tab to its data loader so tab clicks and ?tab= restore share one path.
 const TAB_LOADERS = {
   flagged: loadFlagged,
@@ -201,6 +222,7 @@ const TAB_LOADERS = {
   users: loadUsers,
   admins: loadAdmins,
   phrases: loadPhrases,
+  analytics: loadAnalytics,
 };
 
 // Activate a tab, load its data, and reflect it in the URL as ?tab=<name> so a

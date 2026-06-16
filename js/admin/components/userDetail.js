@@ -1,6 +1,6 @@
 // userDetail (component) for the admin page - renders the full user detail screen.
 
-import { escapeHtml, fmtDate, ROLE_LABELS, roleLabel } from '../utils.js?v=86489fcb';
+import { escapeHtml, fmtDate, fmtDateTime, ROLE_LABELS, roleLabel } from '../utils.js?v=86489fcb';
 
 function idRow(label, value) {
   if (!value) {
@@ -62,7 +62,19 @@ function renderReportsTable(reports) {
   </table>`;
 }
 
-export function renderUserDetail(user, reports, { onBack, onBan, currentUserId } = {}) {
+function renderAuthEvents(authEvents) {
+  if (!authEvents || !authEvents.length) return '';
+  const items = authEvents.slice(0, 10).map(ev => {
+    const label = ev.event_type === 'auth_success' ? 'Logged in' : 'Login failed';
+    return `<li style="margin-bottom:2px">${escapeHtml(fmtDateTime(ev.created_at))} - ${escapeHtml(label)}</li>`;
+  }).join('');
+  return `<div class="user-detail-tl-row" style="flex-direction:column;align-items:flex-start;gap:4px;margin-top:4px">
+    <span class="user-detail-label">Login history (last 10)</span>
+    <ul style="margin:0;padding-left:16px;color:var(--text,#eee);font-size:0.85rem;list-style:disc">${items}</ul>
+  </div>`;
+}
+
+export function renderUserDetail(user, reports, authEvents, { onBack, onBan, currentUserId } = {}) {
   const name       = escapeHtml(user.display_name || '(anonymous)');
   const roleMod    = ROLE_LABELS[user.role] ? ` admin-role-badge--${user.role}` : '';
   const rolePill   = `<span class="admin-role-badge${roleMod}">${escapeHtml(roleLabel(user.role))}</span>`;
@@ -110,6 +122,7 @@ export function renderUserDetail(user, reports, { onBack, onBan, currentUserId }
           <span class="user-detail-label">Member since</span>
           <span>${since}</span>
         </div>
+        ${renderAuthEvents(authEvents)}
       </div>
     </div>
 

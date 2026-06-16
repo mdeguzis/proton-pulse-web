@@ -65,12 +65,14 @@ js/admin/api/users.js
 js/admin/api/admins.js
 js/admin/api/phrases.js
 js/admin/api/userDetail.js
+js/admin/api/analytics.js
 js/admin/components/flagged.js
 js/admin/components/banned.js
 js/admin/components/users.js
 js/admin/components/admins.js
 js/admin/components/phrases.js
 js/admin/components/userDetail.js
+js/admin/components/analytics.js
 stats.html
 js/stats/main.js
 scoring.html
@@ -79,6 +81,7 @@ game-stats.html
 submit.html
 js/lib/gpu-arch-detector.js
 js/lib/supabase-client.js
+js/lib/analytics.js
 js/lib/topbar.js
 js/lib/gh-gist.js
 js/lib/gh-auth.js

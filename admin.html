@@ -6,7 +6,7 @@
 <title>Admin — Proton Pulse</title>
 <meta name="color-scheme" content="dark">
 <link rel="stylesheet" href="css/shared/site.css?v=93774bad">
-<link rel="stylesheet" href="css/admin/admin.css?v=b5bf76e2">
+<link rel="stylesheet" href="css/admin/admin.css?v=3891ce52">
 </head>
 <body>
 
@@ -34,6 +34,7 @@
         <button class="admin-tab" data-tab="banned" role="tab">Banned Users</button>
         <button class="admin-tab" data-tab="admins" role="tab">Admins</button>
         <button class="admin-tab" data-tab="phrases" role="tab">Banned Phrases</button>
+        <button class="admin-tab" data-tab="analytics" role="tab">Analytics</button>
       </div>
 
       <!-- Flagged Reports -->
@@ -193,6 +194,11 @@
         </table>
       </section>
 
+      <!-- Analytics -->
+      <section id="tab-analytics" class="admin-section" hidden>
+        <div id="analytics-content"></div>
+      </section>
+
     </div><!-- /admin-panel -->
 
     <!-- Ban reason modal -->
@@ -214,8 +220,10 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script src="js/lib/supabase-client.js?v=07e4ec76"></script>
+<script src="js/lib/analytics.js?v=89bd7747"></script>
 <script src="js/lib/topbar.js?v=95de26c5"></script>
-<script type="module" src="js/admin/main.js?v=41da0afd"></script>
+<script type="module" src="js/admin/main.js?v=487ab1b3"></script>
 </body>
 </html>
