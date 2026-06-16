@@ -37,6 +37,15 @@ export function renderUsers(rows, { currentUserId, counts } = {}) {
     const uid = escapeHtml(r.proton_pulse_user_id || '');
     const cid = escapeHtml(r.client_id || '');
     const name = escapeHtml(r.display_name || '(anonymous)');
+    // Identity cell: Steam users are keyed by proton_pulse_user_id, anonymous
+    // users by client_id. Always show the relevant id (truncated, full value on
+    // hover) so two unnamed users can be told apart -- e.g. for moderation/bans.
+    const idType = r.proton_pulse_user_id ? 'steam' : (r.client_id ? 'client' : '');
+    const idRaw  = r.proton_pulse_user_id || r.client_id || '';
+    const idShort = idRaw.length > 18 ? `${idRaw.slice(0, 18)}…` : idRaw;
+    const identityCell = idRaw
+      ? `<code class="admin-uid" title="${escapeHtml(idType)}: ${escapeHtml(idRaw)}">${escapeHtml(idType)}:${escapeHtml(idShort)}</code>`
+      : '<span class="admin-uid">&mdash;</span>';
     const lastActive = escapeHtml(fmtDate(r.last_active));
     const lastLogin = escapeHtml(fmtDate(r.last_login));
     // Only known roles get a modifier class; everyone else is the neutral "User" badge.
@@ -74,6 +83,7 @@ export function renderUsers(rows, { currentUserId, counts } = {}) {
     const bannedBadge = r.is_banned ? ' <span class="user-detail-flag user-detail-flag--danger">banned</span>' : '';
     return `<tr${r.is_banned ? ' class="admin-row--banned"' : ''}>
       <td>${name}${bannedBadge}</td>
+      <td>${identityCell}</td>
       <td>${roleCell}</td>
       <td>${r.report_count}</td>
       <td>${lastActive}</td>

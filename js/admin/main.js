@@ -5,7 +5,7 @@ import { renderFlagged } from './components/flagged.js?v=b9c9f230';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
 import { fetchAllUsers } from './api/users.js?v=718eb921';
-import { renderUsers } from './components/users.js?v=996b2026';
+import { renderUsers } from './components/users.js?v=32cf3ec5';
 import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=637a90b4';
 import { renderAdmins } from './components/admins.js?v=0956f8c4';
 import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ca024bd3';
@@ -98,6 +98,12 @@ async function loadUsers() {
   const loading = document.getElementById('users-loading');
   const err     = document.getElementById('users-error');
   const search  = document.getElementById('users-search')?.value.trim() || '';
+  // Reflect the search in the URL as ?search= so it is bookmarkable and survives
+  // a refresh (mirrors the existing ?tab= / ?detail= params).
+  const searchUrl = new URL(window.location.href);
+  if (search) searchUrl.searchParams.set('search', search);
+  else searchUrl.searchParams.delete('search');
+  history.replaceState(null, '', searchUrl);
   loading.hidden = false;
   err.hidden = true;
   try {
@@ -234,10 +240,21 @@ const TAB_LOADERS = {
 function activateTab(tabName, { updateUrl = true } = {}) {
   if (!TAB_LOADERS[tabName]) tabName = 'users';
   switchTab(tabName);
+  // ?search= is specific to the Users tab. When entering Users, restore the box
+  // from the URL (so a bookmarked/refreshed ?search= filters on load). The input
+  // keeps its own value across tab switches, so only overwrite it when the URL
+  // actually carries a search term.
+  const searchInput = document.getElementById('users-search');
+  if (tabName === 'users' && searchInput) {
+    const urlSearch = new URLSearchParams(window.location.search).get('search');
+    if (urlSearch !== null) searchInput.value = urlSearch;
+  }
   if (updateUrl) {
     const url = new URL(window.location.href);
     url.searchParams.set('tab', tabName);
     url.searchParams.delete('detail');
+    // Drop the Users-only search param when viewing any other tab.
+    if (tabName !== 'users') url.searchParams.delete('search');
     history.replaceState(null, '', url);
   }
   TAB_LOADERS[tabName]();

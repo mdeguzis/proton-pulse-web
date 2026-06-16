@@ -12,7 +12,7 @@ FORCE_DEPLOY ?=
 
 .PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker \
 	gh-run gh-pages-only gh-staging gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
-	build serve smoke smoke-live pre-push
+	build serve smoke smoke-live pre-push coverage
 
 build:
 	@bash scripts/cache-bust.sh
