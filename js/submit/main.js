@@ -287,6 +287,7 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
         }
         if (result.ok) {
           if (statusEl) { statusEl.textContent = savedText; statusEl.style.color = 'var(--green)'; }
+          if (typeof window.ppTrack === 'function') window.ppTrack('report_submit', { app_id: String(appId), is_edit: isEdit });
           setTimeout(() => { window.location.href = `app.html#/app/${appId}`; }, 1200);
         } else {
           if (statusEl) { statusEl.textContent = result.error || 'Failed'; statusEl.style.color = 'var(--red)'; }
