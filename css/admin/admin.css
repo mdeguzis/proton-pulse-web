@@ -353,15 +353,115 @@
 /* Actions cell: keep buttons inline */
 .admin-col-actions { white-space: nowrap; }
 
-/* On narrow screens, hide the ID columns and details button by default.
-   .admin-row--expanded reveals them inline via a stacked block per cell. */
-@media (max-width: 768px) {
-  .admin-col-ids { display: none; }
-  .admin-row--expanded .admin-col-ids {
-    display: table-cell;
-  }
-  .admin-col-ids code { word-break: break-all; font-size: 0.68rem; }
+/* -------------------------------------------------------------------------
+   User detail screen
+   ------------------------------------------------------------------------- */
+
+.user-detail-back {
+  margin-bottom: 18px;
 }
-@media (min-width: 769px) {
-  .admin-btn--details { display: none; }
+
+.user-detail-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.user-detail-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text, #eee);
+}
+
+.user-detail-header-actions {
+  margin-left: auto;
+}
+
+.user-detail-section {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.user-detail-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted, #888);
+  margin-bottom: 10px;
+}
+
+.user-detail-count {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.user-detail-id-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.user-detail-id-empty {
+  color: var(--text-muted, #888);
+  font-size: 0.85rem;
+}
+
+.user-detail-label {
+  font-size: 0.75rem;
+  color: var(--text-muted, #888);
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.user-detail-copy-btn {
+  flex-shrink: 0;
+}
+
+.user-detail-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.user-detail-tl-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.user-detail-tl-row .user-detail-label {
+  min-width: 100px;
+}
+
+.user-detail-table {
+  font-size: 0.8rem;
+}
+
+.user-detail-flag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 99px;
+  margin-right: 3px;
+}
+
+.user-detail-flag--warn {
+  background: rgba(212,168,67,0.12);
+  border: 1px solid rgba(212,168,67,0.35);
+  color: #d4b36a;
+}
+
+.user-detail-flag--danger {
+  background: rgba(220,80,80,0.12);
+  border: 1px solid rgba(220,80,80,0.35);
+  color: #e88a8a;
 }

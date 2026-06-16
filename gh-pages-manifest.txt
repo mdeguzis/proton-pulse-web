@@ -64,11 +64,13 @@ js/admin/api/banned.js
 js/admin/api/users.js
 js/admin/api/admins.js
 js/admin/api/phrases.js
+js/admin/api/userDetail.js
 js/admin/components/flagged.js
 js/admin/components/banned.js
 js/admin/components/users.js
 js/admin/components/admins.js
 js/admin/components/phrases.js
+js/admin/components/userDetail.js
 stats.html
 js/stats/main.js
 scoring.html

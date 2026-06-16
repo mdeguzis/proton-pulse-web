@@ -2,8 +2,8 @@
 
 import { fetchAuthorAvatar, fetchAuthorStats, getAuthorIdentity } from '../api/author.js?v=0d33fd7b';
 import { CDN } from '../config.js?v=9970759a';
-import { route } from '../router.js?v=b2055ec0';
-import { esc } from '../utils.js?v=5184cce6';
+import { route } from '../router.js?v=cf6dd02b';
+import { esc } from '../utils.js?v=f5dda5b6';
 
 export const ATOM_ICON_SVG = `
   <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">

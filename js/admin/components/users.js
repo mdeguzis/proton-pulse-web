@@ -44,14 +44,25 @@ export function renderUsers(rows, { currentUserId, counts } = {}) {
     const banBtn = isSelf
       ? `<button class="admin-btn admin-btn--danger admin-btn--sm" disabled title="Cannot ban yourself">Ban</button>`
       : `<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="ban-user" data-userid="${uid}" data-username="${name}">Ban</button>`;
-    // Details button: reveals long ID columns on mobile (hidden via CSS on small screens).
+    // Details button: navigates to the full user detail screen.
+    const userObj = escapeHtml(JSON.stringify({
+      proton_pulse_user_id: r.proton_pulse_user_id,
+      client_id: r.client_id,
+      display_name: r.display_name,
+      role: r.role,
+      last_login: r.last_login,
+      last_active: r.last_active,
+      report_count: r.report_count,
+    }));
     const detailsBtn = `<button class="admin-btn admin-btn--sm admin-btn--details" type="button"
-      onclick="this.closest('tr').classList.toggle('admin-row--expanded')" title="Show IDs">Details</button>`;
+      data-action="view-user-detail"
+      data-userid="${uid}"
+      data-clientid="${cid}"
+      data-username="${name}"
+      data-userobj='${userObj}'>Details</button>`;
     return `<tr>
       <td>${name}</td>
       <td>${roleCell}</td>
-      <td class="admin-col-ids"><code class="admin-uid">${uid || '—'}</code></td>
-      <td class="admin-col-ids"><code class="admin-uid">${cid || '—'}</code></td>
       <td>${r.report_count}</td>
       <td>${lastActive}</td>
       <td>${lastLogin || '—'}</td>

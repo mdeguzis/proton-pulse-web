@@ -5,12 +5,14 @@ import { renderFlagged } from './components/flagged.js?v=b9c9f230';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
 import { fetchAllUsers } from './api/users.js?v=19272bae';
-import { renderUsers } from './components/users.js?v=78aabc27';
+import { renderUsers } from './components/users.js?v=a8a965fd';
 import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=637a90b4';
 import { renderAdmins } from './components/admins.js?v=0956f8c4';
 import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ca024bd3';
 import { renderPhrases } from './components/phrases.js?v=79051c31';
 import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965';
+import { fetchUserReports } from './api/userDetail.js?v=b630558f';
+import { renderUserDetail } from './components/userDetail.js?v=16b624e4';
 
 // ---------------------------------------------------------------------------
 // State
@@ -129,6 +131,31 @@ async function loadPhrases() {
     loading.hidden = true;
     err.textContent = e.message;
     err.hidden = false;
+  }
+}
+
+async function loadUserDetail(user) {
+  // Show the detail section and hide all tab sections.
+  document.querySelectorAll('.admin-section').forEach(sec => { sec.hidden = true; });
+  const detailSection = document.getElementById('tab-user-detail');
+  detailSection.hidden = false;
+  // Deactivate all tab buttons (no active tab while on detail screen).
+  document.querySelectorAll('.admin-tab').forEach(btn => btn.classList.remove('admin-tab--active'));
+
+  const content = document.getElementById('user-detail-content');
+  content.innerHTML = '<div class="admin-loading">Loading reports...</div>';
+
+  try {
+    const reports = await fetchUserReports(currentSession, {
+      userId: user.proton_pulse_user_id || null,
+      clientId: user.client_id || null,
+    });
+    renderUserDetail(user, reports, {
+      currentUserId: currentSession?.user?.id,
+    });
+  } catch (e) {
+    content.innerHTML = `<div class="admin-error">${e.message}</div>
+      <button class="admin-btn admin-btn--ghost admin-btn--sm" type="button" data-action="back-to-users" style="margin-top:10px">&#8592; Back to users</button>`;
   }
 }
 
@@ -276,9 +303,35 @@ function wireEvents() {
 
   // Users table actions (delegated)
   document.getElementById('users-tbody').addEventListener('click', e => {
-    const btn = e.target.closest('[data-action="ban-user"]');
+    const btn = e.target.closest('[data-action]');
     if (!btn) return;
-    openBanModal(btn.dataset.userid, null, btn.dataset.username);
+    const action = btn.dataset.action;
+    if (action === 'ban-user') {
+      openBanModal(btn.dataset.userid, null, btn.dataset.username);
+    }
+    if (action === 'view-user-detail') {
+      let user;
+      try {
+        user = JSON.parse(btn.dataset.userobj);
+      } catch (_) {
+        alert('Could not parse user data.');
+        return;
+      }
+      loadUserDetail(user);
+    }
+  });
+
+  // User detail actions (delegated on the detail content container)
+  document.getElementById('user-detail-content').addEventListener('click', e => {
+    const btn = e.target.closest('[data-action]');
+    if (!btn) return;
+    const action = btn.dataset.action;
+    if (action === 'back-to-users') {
+      activateTab('users');
+    }
+    if (action === 'ban-from-detail') {
+      openBanModal(btn.dataset.userid || null, btn.dataset.clientid || null, btn.dataset.username);
+    }
   });
 
   // Banned table actions (delegated)

@@ -3,11 +3,11 @@
 import { estimateScore } from '../../shared/scoring.js?v=0dae1257';
 import { getWebClientId } from '../../shared/submit.js?v=09904778';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
-import { renderAuthorBlock } from './author.js?v=00364f8e';
-import { buildFormRows } from './config-cards.js?v=60f932da';
-import { renderSignalStrip } from './signals.js?v=cdea451a';
+import { renderAuthorBlock } from './author.js?v=5e8f0221';
+import { buildFormRows } from './config-cards.js?v=42909e25';
+import { renderSignalStrip } from './signals.js?v=a1026433';
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=9970759a';
-import { confColor, confTextColor, configKey, daysAgo, esc, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js?v=5184cce6';
+import { confColor, confTextColor, configKey, daysAgo, esc, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js?v=f5dda5b6';
 
 export function renderPermalink(r) {
   let id = r.reportId != null ? `r${r.reportId}` : (r.clientId ? `c${r.clientId.slice(0, 8)}` : '');
