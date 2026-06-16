@@ -1,7 +1,7 @@
 // submit (shared) module. Used across multiple pages. Relocated from app-submit.js.
 
 import { SupaAuth } from './config.js?v=f6f2c00a';
-import { FAULT_KEYS_WEB, deriveRatingFromState, inferProtonType } from './scoring.js?v=2787ec1d';
+import { FAULT_KEYS_WEB, deriveRatingFromState, inferProtonType } from './scoring.js?v=0dae1257';
 import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=1f02f4a6';
 
 // Form submission + populate-submit-form -- factored out of app.js.

@@ -3,7 +3,7 @@
 // api layer; takes no closure state from main.
 import {
   escapeHtml, formatSystemUpdated, enabledVarsToText, textToEnabledVars,
-} from '../utils.js?v=4b20b7e4';
+} from '../utils.js?v=2324dd84';
 import {
   fetchCloudConfig, patchCloudConfig, fetchFullUserConfig,
   fetchReportHistory, patchUserConfig,

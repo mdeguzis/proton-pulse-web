@@ -1,6 +1,6 @@
 // Entry module for confidence.html. Migrated from the page's inline script.
-import { estimateScoreBreakdown, loadScoringInfo } from '../shared/scoring.js?v=2787ec1d';
-import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner } from '../shared/hardware.js?v=92d72bad';
+import { estimateScoreBreakdown, loadScoringInfo } from '../shared/scoring.js?v=0dae1257';
+import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner } from '../shared/hardware.js?v=6a1246aa';
 import { attachChartHover } from '../shared/chart-interactions.js?v=6b608095';
 
 (function () {

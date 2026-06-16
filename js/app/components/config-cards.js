@@ -1,8 +1,8 @@
 // config-cards (components) for the app page. Relocated from app.js.
 
-import { getWebClientId } from '../../shared/submit.js?v=4543b1fc';
+import { getWebClientId } from '../../shared/submit.js?v=09904778';
 import { isNonSteamAppId } from '../config.js?v=9970759a';
-import { cfgNa, configKey, esc, utcStamp } from '../utils.js?v=d4fea298';
+import { cfgNa, configKey, esc, utcStamp } from '../utils.js?v=5184cce6';
 
 export const FORM_RESPONSE_LABELS = {
   canInstall:        'Were you able to install the game?',
