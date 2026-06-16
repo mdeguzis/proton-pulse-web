@@ -14,7 +14,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Push main to staging repo
+      - name: Sync main to staging repo
+        env:
+          GH_TOKEN: ${{ secrets.STAGING_DEPLOY_TOKEN }}
         run: |
-          git remote add staging https://x-access-token:${{ secrets.STAGING_DEPLOY_TOKEN }}@github.com/mdeguzis/proton-pulse-web-staging.git
-          git push staging main:main --force
+          gh repo sync mdeguzis/proton-pulse-web-staging \
+            --source mdeguzis/proton-pulse-web \
+            --branch main \
+            --force
