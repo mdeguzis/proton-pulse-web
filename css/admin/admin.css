@@ -13,34 +13,16 @@
   padding: 1rem 0;
 }
 
-/* Tabs */
-.admin-tabs {
-  display: flex;
-  gap: 4px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+/* Section nav */
+.admin-nav {
   margin-bottom: 1.5rem;
 }
 
-.admin-tab {
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  color: var(--text-muted, #888);
-  cursor: pointer;
-  font-size: 0.9rem;
+.admin-nav-select {
+  font-size: 0.95rem;
   font-weight: 600;
-  margin-bottom: -1px;
-  padding: 8px 16px;
-  transition: color 0.15s, border-color 0.15s;
-}
-
-.admin-tab:hover {
-  color: var(--text, #eee);
-}
-
-.admin-tab--active {
-  border-bottom-color: var(--accent, #5c8bd6);
-  color: var(--text, #eee);
+  padding: 7px 14px;
+  min-width: 200px;
 }
 
 /* Filters */

@@ -144,8 +144,8 @@ async function loadUserDetail(user) {
   document.querySelectorAll('.admin-section').forEach(sec => { sec.hidden = true; });
   const detailSection = document.getElementById('tab-user-detail');
   detailSection.hidden = false;
-  // Deactivate all tab buttons (no active tab while on detail screen).
-  document.querySelectorAll('.admin-tab').forEach(btn => btn.classList.remove('admin-tab--active'));
+  // Clear the select so no option appears active while on the detail screen.
+  document.getElementById('admin-tab-select').value = '';
 
   const content = document.getElementById('user-detail-content');
   content.innerHTML = '<div class="admin-loading">Loading reports...</div>';
@@ -191,9 +191,8 @@ function closeBanModal() {
 // ---------------------------------------------------------------------------
 
 function switchTab(tabName) {
-  document.querySelectorAll('.admin-tab').forEach(btn => {
-    btn.classList.toggle('admin-tab--active', btn.dataset.tab === tabName);
-  });
+  const sel = document.getElementById('admin-tab-select');
+  if (sel.value !== tabName) sel.value = tabName;
   document.querySelectorAll('.admin-section').forEach(sec => {
     sec.hidden = sec.id !== `tab-${tabName}`;
   });
@@ -244,9 +243,9 @@ function activateTab(tabName, { updateUrl = true } = {}) {
 // ---------------------------------------------------------------------------
 
 function wireEvents() {
-  // Tab buttons -- activateTab updates ?tab= so the choice survives a refresh
-  document.querySelectorAll('.admin-tab').forEach(btn => {
-    btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+  // Tab select -- activateTab updates ?tab= so the choice survives a refresh
+  document.getElementById('admin-tab-select').addEventListener('change', e => {
+    activateTab(e.target.value);
   });
 
   // Sort buttons
