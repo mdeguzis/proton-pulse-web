@@ -208,9 +208,12 @@ export function renderUserDetail(user, reports, authEvents, { session, onBack, o
     btn.addEventListener('click', () => {
       const val = btn.dataset.value;
       navigator.clipboard.writeText(val).then(() => {
-        const orig = btn.textContent;
-        btn.textContent = 'Copied';
-        setTimeout(() => { btn.textContent = orig; }, 1200);
+        const tip = document.createElement('span');
+        tip.className = 'copy-tooltip';
+        tip.textContent = 'Copied';
+        btn.appendChild(tip);
+        requestAnimationFrame(() => tip.classList.add('copy-tooltip--show'));
+        setTimeout(() => tip.remove(), 1000);
       }).catch(() => {});
     });
   });
