@@ -119,7 +119,13 @@ export async function fetchAllUsers(session, { search } = {}) {
     anon: everyone.filter(u => !u.proton_pulse_user_id).length,
   };
 
-  let rows = everyone.sort((a, b) => (b.last_active || '') > (a.last_active || '') ? 1 : -1);
+  const ROLE_PRIORITY = { super_admin: 0, moderator: 1 };
+  let rows = everyone.sort((a, b) => {
+    const pa = ROLE_PRIORITY[a.role] ?? 2;
+    const pb = ROLE_PRIORITY[b.role] ?? 2;
+    if (pa !== pb) return pa - pb;
+    return (b.last_active || '') > (a.last_active || '') ? 1 : -1;
+  });
 
   if (search) {
     const q = search.toLowerCase();

@@ -3,7 +3,7 @@
 import { estimateScore } from '../../shared/scoring.js?v=0dae1257';
 import { getWebClientId } from '../../shared/submit.js?v=09904778';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
-import { renderAuthorBlock } from './author.js?v=0b04ff4f';
+import { renderAuthorBlock } from './author.js?v=3d740947';
 import { buildFormRows } from './config-cards.js?v=42909e25';
 import { renderSignalStrip } from './signals.js?v=a1026433';
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=9970759a';

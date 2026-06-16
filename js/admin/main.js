@@ -4,7 +4,7 @@ import { fetchFlaggedReports, reinstateReport, deleteReport } from './api/flagge
 import { renderFlagged } from './components/flagged.js?v=b9c9f230';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
-import { fetchAllUsers } from './api/users.js?v=19272bae';
+import { fetchAllUsers } from './api/users.js?v=25494638';
 import { renderUsers } from './components/users.js?v=a8a965fd';
 import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=637a90b4';
 import { renderAdmins } from './components/admins.js?v=0956f8c4';
@@ -384,6 +384,13 @@ function wireEvents() {
   document.getElementById('ban-confirm-btn').addEventListener('click', async () => {
     if (!pendingBan) return;
     const reason = document.getElementById('ban-reason-input').value.trim();
+    if (!reason) {
+      const input = document.getElementById('ban-reason-input');
+      input.focus();
+      input.style.borderColor = 'var(--red, #e06c75)';
+      setTimeout(() => { input.style.borderColor = ''; }, 1500);
+      return;
+    }
     const confirmBtn = document.getElementById('ban-confirm-btn');
     confirmBtn.disabled = true;
     confirmBtn.textContent = '...';
