@@ -108,13 +108,25 @@ export function renderUserDetail(user, reports, authEvents, { session, onBack, o
   const roleMod    = ROLE_LABELS[user.role] ? ` admin-role-badge--${user.role}` : '';
   const rolePill   = `<span class="admin-role-badge${roleMod}">${escapeHtml(roleLabel(user.role))}</span>`;
   const isSelf     = currentUserId && user.proton_pulse_user_id === currentUserId;
-  const banBtn     = isSelf
-    ? `<button class="admin-btn admin-btn--danger admin-btn--sm" disabled title="Cannot ban yourself">Ban</button>`
-    : `<button class="admin-btn admin-btn--danger admin-btn--sm"
-        data-action="ban-from-detail"
-        data-userid="${escapeHtml(user.proton_pulse_user_id || '')}"
-        data-clientid="${escapeHtml(user.client_id || '')}"
-        data-username="${name}">Ban</button>`;
+  let banBtn;
+  if (isSelf) {
+    banBtn = `<button class="admin-btn admin-btn--danger admin-btn--sm" disabled title="Cannot ban yourself">Ban</button>`;
+  } else if (user.is_banned) {
+    banBtn = `<button class="admin-btn admin-btn--ok admin-btn--sm"
+      data-action="unban-from-detail"
+      data-ban-id="${escapeHtml(String(user.ban_id || ''))}"
+      data-userid="${escapeHtml(user.proton_pulse_user_id || '')}"
+      data-clientid="${escapeHtml(user.client_id || '')}">Unban</button>`;
+  } else {
+    banBtn = `<button class="admin-btn admin-btn--danger admin-btn--sm"
+      data-action="ban-from-detail"
+      data-userid="${escapeHtml(user.proton_pulse_user_id || '')}"
+      data-clientid="${escapeHtml(user.client_id || '')}"
+      data-username="${name}">Ban</button>`;
+  }
+  const statusBadge = user.is_banned
+    ? `<span class="user-detail-flag user-detail-flag--danger" style="font-size:0.8rem">Banned</span>`
+    : `<span class="user-detail-flag user-detail-flag--ok" style="font-size:0.8rem">Active</span>`;
   const exportBtn  = `<button class="admin-btn admin-btn--ghost admin-btn--sm" type="button" data-action="export-user-json">Export JSON</button>`;
 
   const since = memberSince(reports);
@@ -128,6 +140,7 @@ export function renderUserDetail(user, reports, authEvents, { session, onBack, o
     <div class="user-detail-header">
       <span class="user-detail-name">${name}</span>
       ${rolePill}
+      ${statusBadge}
       <div class="user-detail-header-actions">${exportBtn}${banBtn}</div>
     </div>
 

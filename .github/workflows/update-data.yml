@@ -891,4 +891,7 @@ jobs:
         run: |
           cd gh-pages-data
           git remote add staging https://x-access-token:${{ secrets.STAGING_DEPLOY_TOKEN }}@github.com/mdeguzis/proton-pulse-web-staging.git
-          git push staging HEAD:gh-pages --force
+          git checkout --orphan staging-deploy
+          git add -A
+          git commit -m "Staging preview: $(date +%F)" --allow-empty
+          git push staging staging-deploy:gh-pages --force

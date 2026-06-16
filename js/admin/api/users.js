@@ -78,6 +78,31 @@ export async function fetchAllUsers(session, { search } = {}) {
     }
   }
 
+  // Cross-reference active bans so callers can show banned status inline.
+  try {
+    const bansRes = await fetch(`${SUPABASE_URL}/rest/v1/banned_users?select=id,proton_pulse_user_id,client_id`, { headers: supabaseHeaders(session) });
+    console.log('[fetchAllUsers] banned_users fetch status:', bansRes.status);
+    if (bansRes.ok) {
+      const bans = await bansRes.json();
+      console.log('[fetchAllUsers] active bans:', bans.length, bans);
+      let markedCount = 0;
+      for (const ban of bans) {
+        const key = ban.proton_pulse_user_id || ban.client_id;
+        if (key && byUser.has(key)) {
+          const u = byUser.get(key);
+          u.is_banned = true;
+          u.ban_id = ban.id;
+          markedCount++;
+        }
+      }
+      console.log('[fetchAllUsers] users marked as banned:', markedCount);
+    } else {
+      console.warn('[fetchAllUsers] banned_users fetch failed:', bansRes.status, await bansRes.text());
+    }
+  } catch (err) {
+    console.warn('[fetchAllUsers] banned_users fetch threw:', err);
+  }
+
   // Pull last_sign_in_at from auth.users via admin RPC.
   // Also surfaces users who logged in but never submitted anything.
   try {

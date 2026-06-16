@@ -4,15 +4,15 @@ import { fetchFlaggedReports, reinstateReport, deleteReport } from './api/flagge
 import { renderFlagged } from './components/flagged.js?v=b9c9f230';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
-import { fetchAllUsers } from './api/users.js?v=25494638';
-import { renderUsers } from './components/users.js?v=a8a965fd';
+import { fetchAllUsers } from './api/users.js?v=718eb921';
+import { renderUsers } from './components/users.js?v=996b2026';
 import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=637a90b4';
 import { renderAdmins } from './components/admins.js?v=0956f8c4';
 import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ca024bd3';
 import { renderPhrases } from './components/phrases.js?v=79051c31';
 import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965';
 import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=916aedfc';
-import { renderUserDetail } from './components/userDetail.js?v=e56ae2a7';
+import { renderUserDetail } from './components/userDetail.js?v=7025c758';
 import { fetchAnalytics } from './api/analytics.js?v=1b3f4599';
 import { renderAnalytics } from './components/analytics.js?v=7d29939b';
 
@@ -331,12 +331,26 @@ function wireEvents() {
   });
 
   // Users table actions (delegated)
-  document.getElementById('users-tbody').addEventListener('click', e => {
+  document.getElementById('users-tbody').addEventListener('click', async e => {
     const btn = e.target.closest('[data-action]');
     if (!btn) return;
     const action = btn.dataset.action;
     if (action === 'ban-user') {
       openBanModal(btn.dataset.userid, null, btn.dataset.username);
+    }
+    if (action === 'unban-user') {
+      if (!confirm('Unban this user and restore their reports?')) return;
+      btn.disabled = true;
+      btn.textContent = '...';
+      console.log('[unban-user] banId:', btn.dataset.banId, 'userid:', btn.dataset.userid);
+      try {
+        await unbanUser(currentSession, btn.dataset.banId, { protonPulseUserId: btn.dataset.userid, clientId: btn.dataset.clientid });
+        loadUsers();
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Unban';
+        alert(`Error: ${err.message}`);
+      }
     }
     if (action === 'view-user-detail') {
       let user;
@@ -351,7 +365,7 @@ function wireEvents() {
   });
 
   // User detail actions (delegated on the detail content container)
-  document.getElementById('user-detail-content').addEventListener('click', e => {
+  document.getElementById('user-detail-content').addEventListener('click', async e => {
     const btn = e.target.closest('[data-action]');
     if (!btn) return;
     const action = btn.dataset.action;
@@ -360,6 +374,19 @@ function wireEvents() {
     }
     if (action === 'ban-from-detail') {
       openBanModal(btn.dataset.userid || null, btn.dataset.clientid || null, btn.dataset.username);
+    }
+    if (action === 'unban-from-detail') {
+      if (!confirm('Unban this user and restore their reports?')) return;
+      btn.disabled = true;
+      btn.textContent = '...';
+      try {
+        await unbanUser(currentSession, btn.dataset.banId, { protonPulseUserId: btn.dataset.userid, clientId: btn.dataset.clientid });
+        activateTab('users');
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Unban';
+        alert(`Error: ${err.message}`);
+      }
     }
   });
 
@@ -384,6 +411,7 @@ function wireEvents() {
   document.getElementById('ban-confirm-btn').addEventListener('click', async () => {
     if (!pendingBan) return;
     const reason = document.getElementById('ban-reason-input').value.trim();
+    console.log('[ban-confirm] pendingBan:', pendingBan, 'reason:', reason);
     if (!reason) {
       const input = document.getElementById('ban-reason-input');
       input.focus();
@@ -402,7 +430,8 @@ function wireEvents() {
         reason,
       });
       closeBanModal();
-      loadFlagged();
+      // Refresh the users list so the newly banned user shows Unban.
+      loadUsers();
     } catch (err) {
       alert(`Error: ${err.message}`);
       confirmBtn.disabled = false;

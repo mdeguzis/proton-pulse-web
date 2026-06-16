@@ -22,6 +22,8 @@ export function renderUsers(rows, { currentUserId, counts } = {}) {
     countsEl.hidden = false;
   }
 
+  console.log('[renderUsers] total rows:', rows.length, 'banned:', rows.filter(r => r.is_banned).length);
+
   if (!rows.length) {
     empty.hidden = false;
     table.hidden = true;
@@ -41,9 +43,16 @@ export function renderUsers(rows, { currentUserId, counts } = {}) {
     const roleMod = ROLE_LABELS[r.role] ? ` admin-role-badge--${r.role}` : '';
     const roleCell = `<span class="admin-role-badge${roleMod}">${escapeHtml(roleLabel(r.role))}</span>`;
     const isSelf = currentUserId && r.proton_pulse_user_id === currentUserId;
-    const banBtn = isSelf
-      ? `<button class="admin-btn admin-btn--danger admin-btn--sm" disabled title="Cannot ban yourself">Ban</button>`
-      : `<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="ban-user" data-userid="${uid}" data-username="${name}">Ban</button>`;
+    let banBtn;
+    if (isSelf) {
+      banBtn = `<button class="admin-btn admin-btn--danger admin-btn--sm" disabled title="Cannot ban yourself">Ban</button>`;
+    } else if (r.is_banned) {
+      banBtn = `<button class="admin-btn admin-btn--ok admin-btn--sm" data-action="unban-user"
+        data-ban-id="${escapeHtml(String(r.ban_id || ''))}"
+        data-userid="${uid}" data-clientid="${cid}">Unban</button>`;
+    } else {
+      banBtn = `<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="ban-user" data-userid="${uid}" data-username="${name}">Ban</button>`;
+    }
     // Details button: navigates to the full user detail screen.
     const userObj = escapeHtml(JSON.stringify({
       proton_pulse_user_id: r.proton_pulse_user_id,
@@ -53,6 +62,8 @@ export function renderUsers(rows, { currentUserId, counts } = {}) {
       last_login: r.last_login,
       last_active: r.last_active,
       report_count: r.report_count,
+      is_banned: r.is_banned || false,
+      ban_id: r.ban_id || null,
     }));
     const detailsBtn = `<button class="admin-btn admin-btn--sm admin-btn--details" type="button"
       data-action="view-user-detail"
@@ -60,8 +71,9 @@ export function renderUsers(rows, { currentUserId, counts } = {}) {
       data-clientid="${cid}"
       data-username="${name}"
       data-userobj='${userObj}'>Details</button>`;
-    return `<tr>
-      <td>${name}</td>
+    const bannedBadge = r.is_banned ? ' <span class="user-detail-flag user-detail-flag--danger">banned</span>' : '';
+    return `<tr${r.is_banned ? ' class="admin-row--banned"' : ''}>
+      <td>${name}${bannedBadge}</td>
       <td>${roleCell}</td>
       <td>${r.report_count}</td>
       <td>${lastActive}</td>

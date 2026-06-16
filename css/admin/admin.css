@@ -453,6 +453,16 @@
   color: #e88a8a;
 }
 
+.user-detail-flag--ok {
+  background: rgba(76,175,128,0.12);
+  border: 1px solid rgba(76,175,128,0.35);
+  color: #4caf80;
+}
+
+.admin-row--banned td {
+  opacity: 0.75;
+}
+
 /* Mobile: hide Reports and Last active columns from the users table */
 @media (max-width: 640px) {
   #users-table th:nth-child(3),
