@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=ab9bb0d8';
-import { loadSearchIndex, searchIndex } from './search.js?v=9b0792b2';
+import { loadSearchIndex, searchIndex } from './search.js?v=fd385d65';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=9970759a';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=ae6042a4';
@@ -31,6 +31,13 @@ function _sortReports(reports, sort) {
 function _filterByTier(reports, tier) {
   if (!tier || tier === 'all') return reports;
   return reports.filter(r => r.tier === tier);
+}
+
+function _filterByType(reports, type) {
+  if (!type || type === 'all') return reports;
+  return reports.filter(r => type === 'protondb'
+    ? (r.protondbCount || 0) > 0
+    : (r.pulseCount || 0) > 0);
 }
 
 function _popularSub(g) {
@@ -71,10 +78,6 @@ function _recentCardHtml(r) {
   });
 }
 
-function _tierChip(tier, label) {
-  return `<button class="home-tier-chip" data-tier="${tier}">${label}</button>`;
-}
-
 export async function renderHomePage() {
   const el = document.getElementById('content');
   el.innerHTML = '<div class="state-box">Loading recent reports...</div>';
@@ -97,38 +100,46 @@ export async function renderHomePage() {
       unratedGames = all.filter(g => String(g.rating || '').toLowerCase() === 'pending');
     }
 
-    const popularQueue = ratedGames.slice(PAGE_SIZE);
-    const popularInitial = ratedGames.slice(0, PAGE_SIZE);
-    const popularHtml = popularInitial.map(g => renderGameCard({
-      href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
-      title: g.title, sub: _popularSub(g),
-      tier: String(g.rating || '').toLowerCase() || undefined, sourceLabel: 'Steam',
-    })).join('');
-
     const unratedToggle = unratedGames.length
       ? `<button class="unrated-toggle" id="unrated-toggle" type="button">Not rated yet <span class="unrated-count">${unratedGames.length}</span></button>`
       : '';
 
     el.innerHTML = `
       <div class="home-filter-bar">
-        <div class="home-sort-group">
-          <button class="home-sort-btn active" data-sort="recent">Recent</button>
-          <button class="home-sort-btn" data-sort="best">Best Tier</button>
-          <button class="home-sort-btn" data-sort="worst">Worst Tier</button>
-          <button class="home-sort-btn" data-sort="count">Most Reported</button>
+        <div class="home-filter-selects">
+          <div class="home-filter-item">
+            <label class="home-filter-label" for="home-sort-select">Sort</label>
+            <select id="home-sort-select" class="home-filter-select">
+              <option value="recent">Recent</option>
+              <option value="best">Best Tier</option>
+              <option value="worst">Worst Tier</option>
+              <option value="count">Most Reported</option>
+            </select>
+          </div>
+          <div class="home-filter-item">
+            <label class="home-filter-label" for="home-tier-select">Tier</label>
+            <select id="home-tier-select" class="home-filter-select">
+              <option value="all">All</option>
+              <option value="platinum">Platinum</option>
+              <option value="gold">Gold</option>
+              <option value="silver">Silver</option>
+              <option value="bronze">Bronze</option>
+              <option value="borked">Borked</option>
+            </select>
+          </div>
+          <div class="home-filter-item">
+            <label class="home-filter-label" for="home-type-select">Source</label>
+            <select id="home-type-select" class="home-filter-select">
+              <option value="all">All</option>
+              <option value="protondb">ProtonDB</option>
+              <option value="pulse">Pulse</option>
+            </select>
+          </div>
         </div>
         <div class="home-layout-toggle">
           <button class="home-layout-btn active" data-layout="grid" title="Grid view">Grid</button>
           <button class="home-layout-btn" data-layout="list" title="List view">List</button>
         </div>
-      </div>
-      <div class="home-tier-chips">
-        <button class="home-tier-chip active" data-tier="all">All</button>
-        ${_tierChip('platinum', 'Platinum')}
-        ${_tierChip('gold', 'Gold')}
-        ${_tierChip('silver', 'Silver')}
-        ${_tierChip('bronze', 'Bronze')}
-        ${_tierChip('borked', 'Borked')}
       </div>
       <p class="section-label" style="margin-bottom:10px">Recent Reports</p>
       <div class="cards" id="cards-recent"></div>
@@ -137,11 +148,12 @@ export async function renderHomePage() {
         <span class="section-label" style="margin:0">Popular on Steam</span>
         ${unratedToggle}
       </div>
-      <div class="cards" id="cards-popular">${popularHtml}</div>
-      <div id="load-more-popular">${popularQueue.length ? _loadMoreBtn('popular') : ''}</div>`;
+      <div class="cards" id="cards-popular"></div>
+      <div id="load-more-popular"></div>`;
 
     let currentSort = 'recent';
     let currentTier = 'all';
+    let currentType = 'all';
     let currentLayout = 'grid';
     let showingUnrated = false;
     const unratedQueue = unratedGames.slice(PAGE_SIZE);
@@ -157,8 +169,33 @@ export async function renderHomePage() {
       </a>`;
     }
 
+    function applyPopularFilters() {
+      if (showingUnrated) return;
+      let filtered = ratedGames;
+      if (currentTier !== 'all') {
+        filtered = filtered.filter(g => String(g.rating || '').toLowerCase() === currentTier);
+      }
+      if (currentType !== 'all') {
+        filtered = filtered.filter(g => currentType === 'protondb'
+          ? (g.protondbCount || 0) > 0
+          : (g.pulseCount || 0) > 0);
+      }
+      const cardsEl = document.getElementById('cards-popular');
+      const loadMoreEl = document.getElementById('load-more-popular');
+      if (!cardsEl) return;
+      const initial = filtered.slice(0, PAGE_SIZE);
+      const newQueue = filtered.slice(PAGE_SIZE);
+      cardsEl.innerHTML = initial.map(g => renderGameCard({
+        href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
+        title: g.title, sub: _popularSub(g),
+        tier: String(g.rating || '').toLowerCase() || undefined, sourceLabel: 'Steam',
+      })).join('') || '<div class="state-box">No games match the current filters.</div>';
+      loadMoreEl.innerHTML = newQueue.length ? _loadMoreBtn('popular') : '';
+      loadMoreEl.querySelector('button')?.addEventListener('click', () => _appendCards('popular', newQueue));
+    }
+
     function applyRecentFilters() {
-      const filtered = _filterByTier(_sortReports(allRecentReports, currentSort), currentTier);
+      const filtered = _filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), currentTier), currentType);
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
       const isDefault = currentSort === 'recent' && currentTier === 'all';
@@ -176,22 +213,21 @@ export async function renderHomePage() {
       }
     }
 
-    document.querySelectorAll('.home-sort-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.home-sort-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentSort = btn.dataset.sort;
-        applyRecentFilters();
-      });
+    document.getElementById('home-sort-select')?.addEventListener('change', e => {
+      currentSort = e.target.value;
+      applyRecentFilters();
     });
 
-    document.querySelectorAll('.home-tier-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        document.querySelectorAll('.home-tier-chip').forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        currentTier = chip.dataset.tier;
-        applyRecentFilters();
-      });
+    document.getElementById('home-tier-select')?.addEventListener('change', e => {
+      currentTier = e.target.value;
+      applyRecentFilters();
+      applyPopularFilters();
+    });
+
+    document.getElementById('home-type-select')?.addEventListener('change', e => {
+      currentType = e.target.value;
+      applyRecentFilters();
+      applyPopularFilters();
     });
 
     document.querySelectorAll('.home-layout-btn').forEach(btn => {
@@ -206,6 +242,7 @@ export async function renderHomePage() {
     });
 
     applyRecentFilters();
+    applyPopularFilters();
 
     document.getElementById('unrated-toggle')?.addEventListener('click', (e) => {
       showingUnrated = !showingUnrated;
@@ -231,18 +268,9 @@ export async function renderHomePage() {
           if (!unratedQueue.length) loadMoreEl.innerHTML = '';
         });
       } else {
-        cardsEl.innerHTML = popularInitial.map(g => renderGameCard({
-          href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
-          title: g.title, sub: _popularSub(g),
-          tier: String(g.rating || '').toLowerCase() || undefined, sourceLabel: 'Steam',
-        })).join('');
-        loadMoreEl.innerHTML = popularQueue.length ? _loadMoreBtn('popular') : '';
-        loadMoreEl.querySelector('button')?.addEventListener('click', () => _appendCards('popular', popularQueue, null));
+        applyPopularFilters();
       }
     });
-
-    document.getElementById('load-more-popular')?.querySelector('button')
-      ?.addEventListener('click', () => _appendCards('popular', popularQueue, null));
   } catch {
     el.innerHTML = '<div class="state-box">Search for a game above or navigate to <code>#/app/{appId}</code></div>';
   }

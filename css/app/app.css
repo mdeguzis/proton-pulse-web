@@ -1868,12 +1868,28 @@ a.card:active { transform: translateY(1px); }
 /* ---- Home filter bar ---- */
 .home-filter-bar {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
 }
+.home-filter-selects { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; }
+.home-filter-item { display: flex; flex-direction: column; gap: 3px; }
+.home-filter-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.home-filter-select {
+  background: var(--s1);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 5px 8px;
+  font-size: 0.76rem;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: border-color .1s;
+}
+.home-filter-select:focus { border-color: var(--accent); }
 .home-sort-group { display: flex; gap: 4px; flex-wrap: wrap; }
 .home-sort-btn {
   padding: 5px 11px;

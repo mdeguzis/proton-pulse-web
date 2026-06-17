@@ -22,11 +22,11 @@ import {
 import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
   deleteAllMyData, fetchAllMyData, checkMyDataExists,
-} from './api/configs.js?v=7de3eb21';
+} from './api/configs.js?v=d05d75ee';
 import {
   listLinkedPlugins, completePluginLink, removePluginLink,
 } from './api/plugin-links.js?v=59c9f51e';
-import { showEditCloudConfigModal, showEditReportModal } from './components/edit-modals.js?v=297a8286';
+import { showEditCloudConfigModal, showEditReportModal } from './components/edit-modals.js?v=9a559851';
 
 (async function () {
   const signedIn  = document.getElementById('profile-signed-in');
