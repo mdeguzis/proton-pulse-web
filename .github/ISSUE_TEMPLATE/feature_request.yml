@@ -1,5 +1,5 @@
 name: Feature Request
-description: Suggest a new feature or improvement for proton-pulse.com
+description: Suggest a new feature or improvement for proton-pulse.com. For bugs or UX feedback use the Website Feedback template instead.
 labels: ["enhancement"]
 body:
   - type: textarea

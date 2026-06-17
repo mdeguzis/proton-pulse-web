@@ -1,5 +1,5 @@
 name: Website Feedback
-description: Bug, design tweak, or feature idea for proton-pulse.com
+description: Bug or design feedback for proton-pulse.com. For feature requests use the Feature Request template instead.
 labels: ["feedback"]
 body:
   - type: dropdown
@@ -9,7 +9,6 @@ body:
       options:
         - Bug (something broken or rendering wrong)
         - Design / UX tweak
-        - Feature idea
         - Data issue (missing / wrong info on a game page)
         - Other
     validations:
