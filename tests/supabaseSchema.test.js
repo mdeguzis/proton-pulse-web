@@ -51,17 +51,24 @@ const USER_FACING_TABLES = [
   'user_systems',
 ];
 
-async function queryDB(sql) {
-  const res = await fetch(MGMT_QUERY_URL, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${SUPABASE_TOKEN}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ query: sql }),
-  });
-  if (!res.ok) throw new Error(`Management API error: ${res.status} ${await res.text()}`);
-  return res.json();
+async function queryDB(sql, retries = 2) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    const res = await fetch(MGMT_QUERY_URL, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${SUPABASE_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ query: sql }),
+    });
+    if (res.ok) return res.json();
+    const body = await res.text();
+    if (res.status >= 500 && attempt < retries) {
+      await new Promise(r => setTimeout(r, 3000 * attempt));
+      continue;
+    }
+    throw new Error(`Management API error: ${res.status} ${body}`);
+  }
 }
 
 const describeIfCreds = SUPABASE_TOKEN && MGMT_QUERY_URL ? describe : describe.skip;
