@@ -7,11 +7,11 @@ import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=7ad8fd16';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase } from '../api/supabase.js?v=b1ef901e';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=cb7b4c5e';
-import { enhanceAuthorBlocks } from './author.js?v=5254ecb1';
+import { enhanceAuthorBlocks } from './author.js?v=fd2d3185';
 import { renderConfigCard } from './config-cards.js?v=42909e25';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=b0fa82d9';
-import { renderCard } from './report-card.js?v=57c54c1b';
-import { loadSearchIndex, searchIndex } from './search.js?v=99055a08';
+import { renderCard } from './report-card.js?v=94b4050a';
+import { loadSearchIndex, searchIndex } from './search.js?v=85b4ddf1';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, STEAM_IMG, dataFilesHref } from '../config.js?v=9970759a';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=85cf4195';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';
@@ -79,16 +79,44 @@ export async function renderGamePage(appId) {
   ];
 
   // Hard miss: nothing in cache, nothing native, nothing from Pulse.
-  // Show a "not in our mirror" state with a user-triggered live check button
-  // rather than auto-fetching so we don't hammer the ProtonDB API.
+  // Check if we at least know this game from the search-index (title available)
+  // so we can show a stub state instead of the generic mirror-miss message.
   if (!reports.length && !configs.length) {
-    el.innerHTML = `
-      <div class="state-box">
-        <p style="margin:0 0 10px">This game (<strong>${esc(String(appId))}</strong>) is not in our cached ProtonDB mirror.</p>
-        <p style="margin:0 0 14px;color:var(--muted);font-size:0.88rem">Our mirror updates periodically. You can check ProtonDB live, but please use this sparingly to avoid overloading their API.</p>
-        <button id="live-check-btn" class="submit-report-btn" style="margin:0">Check ProtonDB Live</button>
-        <span id="live-check-status" style="margin-left:10px;font-size:0.85rem;color:var(--muted)"></span>
-      </div>`;
+    await loadSearchIndex();
+    const stubHit = (searchIndex || []).find(row => String(row[0]) === String(appId));
+    const stubTitle = stubHit?.[1];
+    if (stubTitle) {
+      // Known game with no reports yet -- show a stub page with a submit CTA.
+      const imgUrl = STEAM_IMG(appId);
+      el.innerHTML = `
+        <div class="stub-page">
+          <div class="stub-header">
+            <img class="stub-img" src="${esc(imgUrl)}" alt="" loading="lazy"
+              onerror="this.style.display='none'">
+            <div class="stub-meta">
+              <h1 class="stub-title">${esc(stubTitle)}</h1>
+              <span class="tier-badge tier-badge--pending">Not rated yet</span>
+            </div>
+          </div>
+          <div class="stub-body">
+            <p class="stub-message">No compatibility reports exist for this game yet. If you have played it on Steam Deck or Linux, your report helps other players know what to expect.</p>
+            <a class="submit-report-btn" href="submit.html?appId=${esc(String(appId))}&title=${encodeURIComponent(stubTitle)}" style="display:inline-block;margin-top:4px">Submit the first report</a>
+          </div>
+          <div class="stub-live-check" style="margin-top:20px">
+            <button id="live-check-btn" class="admin-btn admin-btn--ghost" style="font-size:0.85rem">Check ProtonDB Live</button>
+            <span id="live-check-status" style="margin-left:10px;font-size:0.85rem;color:var(--muted)"></span>
+          </div>
+        </div>`;
+    } else {
+      // Truly unknown game -- generic mirror-miss state.
+      el.innerHTML = `
+        <div class="state-box">
+          <p style="margin:0 0 10px">This game (<strong>${esc(String(appId))}</strong>) is not in our cached ProtonDB mirror.</p>
+          <p style="margin:0 0 14px;color:var(--muted);font-size:0.88rem">Our mirror updates periodically. You can check ProtonDB live, but please use this sparingly to avoid overloading their API.</p>
+          <button id="live-check-btn" class="submit-report-btn" style="margin:0">Check ProtonDB Live</button>
+          <span id="live-check-status" style="margin-left:10px;font-size:0.85rem;color:var(--muted)"></span>
+        </div>`;
+    }
     el.querySelector('#live-check-btn')?.addEventListener('click', async (e) => {
       const btn = e.currentTarget;
       const status = el.querySelector('#live-check-status');

@@ -29,10 +29,51 @@ def test_keeps_rated_games_in_rank_order_and_skips_untracked(tmp_path):
     assert json.loads((tmp_path / "most_played.json").read_text(encoding="utf-8")) == out
 
 
-def test_skips_unknown_or_missing_tier(tmp_path):
+def test_skips_unknown_tier(tmp_path):
     _write_index(tmp_path, [["999", "Untested Game", "unknown", 0, 0]])
     out = build_most_played(tmp_path, ranks=[{"appid": 999, "peak_in_game": 100}])
     assert out == []
+
+
+def test_includes_pending_tier_games(tmp_path):
+    _write_index(tmp_path, [
+        ["730", "CS2", "gold", 10, 0],
+        ["1234", "Pending Game", "pending", 0, 0],
+    ])
+    ranks = [
+        {"appid": 730, "peak_in_game": 500000},
+        {"appid": 1234, "peak_in_game": 100000},
+    ]
+    out = build_most_played(tmp_path, ranks=ranks)
+    app_ids = [g["appId"] for g in out]
+    assert 730 in app_ids
+    assert 1234 in app_ids
+    pending = next(g for g in out if g["appId"] == 1234)
+    assert pending["rating"] == "pending"
+
+
+def test_rated_before_unrated_in_output(tmp_path):
+    _write_index(tmp_path, [
+        ["1", "Rated Game", "gold", 5, 0],
+        ["2", "Pending Game", "pending", 0, 0],
+    ])
+    ranks = [
+        {"appid": 2, "peak_in_game": 999999},  # pending ranks higher
+        {"appid": 1, "peak_in_game": 1},
+    ]
+    out = build_most_played(tmp_path, ranks=ranks)
+    # rated games always come before unrated regardless of steam rank
+    assert out[0]["appId"] == 1
+    assert out[1]["appId"] == 2
+
+
+def test_respects_unrated_limit(tmp_path):
+    rows = [[str(i), f"Game {i}", "pending", 0, 0] for i in range(20)]
+    _write_index(tmp_path, rows)
+    ranks = [{"appid": i, "peak_in_game": 1000 - i} for i in range(20)]
+    out = build_most_played(tmp_path, unrated_limit=5, ranks=ranks)
+    assert len(out) == 5
+    assert all(g["rating"] == "pending" for g in out)
 
 
 def test_respects_limit(tmp_path):

@@ -1,12 +1,13 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=ab9bb0d8';
-import { loadSearchIndex, searchIndex } from './search.js?v=99055a08';
+import { loadSearchIndex, searchIndex } from './search.js?v=85b4ddf1';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=9970759a';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=ae6042a4';
 
 const PAGE_SIZE = 10;
+const KNOWN_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked']);
 
 function _popularSub(g) {
   const total = (g.protondbCount || 0) + (g.pulseCount || 0);
@@ -65,25 +66,73 @@ export async function renderHomePage() {
     const recentHtml = recentInitial.map(_recentCardHtml).join('');
 
     const seenIds = new Set(recentReports.map(r => String(r.appId)));
-    let mostPlayed = [];
+    let ratedGames = [], unratedGames = [];
     if (mostPlayedResp && mostPlayedResp.ok) {
-      mostPlayed = (await mostPlayedResp.json().catch(() => [])).filter(g => !seenIds.has(String(g.appId)));
+      const all = (await mostPlayedResp.json().catch(() => [])).filter(g => !seenIds.has(String(g.appId)));
+      ratedGames = all.filter(g => KNOWN_TIERS.has(String(g.rating || '').toLowerCase()));
+      unratedGames = all.filter(g => String(g.rating || '').toLowerCase() === 'pending');
     }
-    const popularQueue = mostPlayed.slice(PAGE_SIZE);
-    const popularInitial = mostPlayed.slice(0, PAGE_SIZE);
+
+    const popularQueue = ratedGames.slice(PAGE_SIZE);
+    const popularInitial = ratedGames.slice(0, PAGE_SIZE);
     const popularHtml = popularInitial.map(g => renderGameCard({
       href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
       title: g.title, sub: _popularSub(g),
       tier: String(g.rating || '').toLowerCase() || undefined, sourceLabel: 'Steam',
     })).join('');
 
+    const unratedToggle = unratedGames.length
+      ? `<button class="unrated-toggle" id="unrated-toggle" type="button">Not rated yet <span class="unrated-count">${unratedGames.length}</span></button>`
+      : '';
+
     el.innerHTML = `
       <p class="section-label" style="margin-bottom:10px">Recent Reports</p>
       <div class="cards" id="cards-recent">${recentHtml || '<div class="state-box">No reports yet.</div>'}</div>
       ${recentQueue.length ? `<div id="load-more-recent">${_loadMoreBtn('recent')}</div>` : ''}
-      <p class="section-label" style="margin-top:24px;margin-bottom:10px">Popular on Steam</p>
+      <div class="section-label-row" style="margin-top:24px;margin-bottom:10px">
+        <span class="section-label" style="margin:0">Popular on Steam</span>
+        ${unratedToggle}
+      </div>
       <div class="cards" id="cards-popular">${popularHtml}</div>
-      ${popularQueue.length ? `<div id="load-more-popular">${_loadMoreBtn('popular')}</div>` : ''}`;
+      <div id="load-more-popular">${popularQueue.length ? _loadMoreBtn('popular') : ''}</div>`;
+
+    let showingUnrated = false;
+    const unratedQueue = unratedGames.slice(PAGE_SIZE);
+
+    document.getElementById('unrated-toggle')?.addEventListener('click', (e) => {
+      showingUnrated = !showingUnrated;
+      const btn = e.currentTarget;
+      btn.classList.toggle('unrated-toggle--active', showingUnrated);
+      const cardsEl = document.getElementById('cards-popular');
+      const loadMoreEl = document.getElementById('load-more-popular');
+      if (showingUnrated) {
+        const initial = unratedGames.slice(0, PAGE_SIZE);
+        cardsEl.innerHTML = initial.map(g => renderGameCard({
+          href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
+          title: g.title, sub: 'No reports yet \u00b7 be the first',
+          tier: 'pending', sourceLabel: 'Steam',
+        })).join('');
+        loadMoreEl.innerHTML = unratedQueue.length ? _loadMoreBtn('popular') : '';
+        // re-wire the load-more button for unrated queue
+        loadMoreEl.querySelector('button')?.addEventListener('click', () => {
+          const batch = unratedQueue.splice(0, PAGE_SIZE);
+          cardsEl.insertAdjacentHTML('beforeend', batch.map(g => renderGameCard({
+            href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
+            title: g.title, sub: 'No reports yet \u00b7 be the first',
+            tier: 'pending', sourceLabel: 'Steam',
+          })).join(''));
+          if (!unratedQueue.length) loadMoreEl.innerHTML = '';
+        });
+      } else {
+        cardsEl.innerHTML = popularInitial.map(g => renderGameCard({
+          href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
+          title: g.title, sub: _popularSub(g),
+          tier: String(g.rating || '').toLowerCase() || undefined, sourceLabel: 'Steam',
+        })).join('');
+        loadMoreEl.innerHTML = popularQueue.length ? _loadMoreBtn('popular') : '';
+        loadMoreEl.querySelector('button')?.addEventListener('click', () => _appendCards('popular', popularQueue, null));
+      }
+    });
 
     document.getElementById('load-more-recent')?.querySelector('button')
       ?.addEventListener('click', () => _appendCards('recent', recentQueue, null));

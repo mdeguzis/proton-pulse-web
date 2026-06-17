@@ -5,6 +5,11 @@ each with a peak_in_game count. We keep the ones we have compatibility data for
 and attach their overall tier from search-index.json, so the homepage can show
 "Popular games on Steam" with each game's Proton rating.
 
+Games with a known compatibility tier (platinum/gold/silver/bronze/borked) fill
+the first section. Games that appear in Steam charts but have no rated reports
+yet are collected separately with rating="pending", so the homepage can offer a
+"Not rated yet" toggle pointing contributors at popular untested games.
+
 Steam APIs are not CORS-enabled, so this runs in the pipeline (server-side) and
 emits a static most_played.json that the web UI fetches.
 """
@@ -83,13 +88,23 @@ def _last_report_date(data_dir: Path, app_id: str) -> str | None:
         return None
 
 
-def build_most_played(output_dir, limit: int = 100, ranks: list[dict] | None = None) -> list[dict]:
+def build_most_played(
+    output_dir,
+    limit: int = 100,
+    unrated_limit: int = 50,
+    ranks: list[dict] | None = None,
+) -> list[dict]:
     """Write <output_dir>/most_played.json and return the rows written.
 
-    Takes Steam's most-played list (rank order), keeps the games we have a real
-    compatibility tier for, and emits the top ``limit`` as
-    [{appId, title, peak, rating, protondbCount, pulseCount, lastReportDate, headerImage}].
+    Takes Steam's most-played list (rank order) and produces two buckets:
+    - Rated games (tier in KNOWN_TIERS): up to ``limit`` rows, rank order.
+    - Unrated games (tier == "pending", i.e. in our index but no rated reports):
+      up to ``unrated_limit`` rows, appended after the rated section.
+
+    Games not in our search-index at all are skipped (no title available).
     ``ranks`` can be injected for testing.
+
+    Shape: [{appId, title, peak, rating, protondbCount, pulseCount, lastReportDate, headerImage}]
     """
     output_dir = Path(output_dir)
     data_dir = output_dir / "data"
@@ -97,17 +112,18 @@ def build_most_played(output_dir, limit: int = 100, ranks: list[dict] | None = N
     if ranks is None:
         ranks = fetch_most_played()
 
-    result: list[dict] = []
+    rated: list[dict] = []
+    unrated: list[dict] = []
     for entry in ranks:
+        if len(rated) >= limit and len(unrated) >= unrated_limit:
+            break
         app_id = str(entry.get("appid"))
         match = index.get(app_id)
         if not match:
-            continue  # no compatibility data for this game
+            continue  # no title in our index, skip
         title, tier, protondb_count, pulse_count = match
-        if tier not in KNOWN_TIERS:
-            continue  # skip untested / unknown so every row has a real badge
         peak = entry.get("peak_in_game")
-        result.append({
+        row = {
             "appId": int(app_id),
             "title": title,
             "peak": int(peak) if isinstance(peak, int) else None,
@@ -116,11 +132,14 @@ def build_most_played(output_dir, limit: int = 100, ranks: list[dict] | None = N
             "pulseCount": pulse_count,
             "lastReportDate": _last_report_date(data_dir, app_id),
             "headerImage": None,  # filled in by game_images.build_game_images after this step
-        })
-        if len(result) >= limit:
-            break
+        }
+        if tier in KNOWN_TIERS and len(rated) < limit:
+            rated.append(row)
+        elif tier == "pending" and len(unrated) < unrated_limit:
+            unrated.append(row)
 
+    result = rated + unrated
     out_path = output_dir / "most_played.json"
     out_path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    log(f"[most-played] wrote {len(result)} game(s) to {out_path}")
+    log(f"[most-played] wrote {len(rated)} rated + {len(unrated)} unrated game(s) to {out_path}")
     return result
