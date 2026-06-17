@@ -74,14 +74,39 @@ def _load_json_map(path: Path) -> dict:
     return {}
 
 
+def _hot_app_ids(output_dir: Path) -> list[str]:
+    """Return app IDs visible to users right now: recent-reports + most_played."""
+    ids: list[str] = []
+    for fname in ("recent-reports.json", "most_played.json"):
+        p = output_dir / fname
+        if not p.exists():
+            continue
+        try:
+            data = json.loads(p.read_text(encoding="utf-8"))
+            for entry in data:
+                aid = str(entry.get("appId", entry.get("app_id", ""))).strip()
+                if aid.isdigit():
+                    ids.append(aid)
+        except Exception as exc:
+            log(f"[game-images] WARN: could not read {fname}: {exc}")
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for aid in ids:
+        if aid not in seen:
+            seen.add(aid)
+            deduped.append(aid)
+    return deduped
+
+
 def build_game_images(output_dir) -> dict[str, str]:
     """Write game-images.json and game-images-skip.json, return the overrides map.
 
     game-images.json  -- app IDs where standard URL 404s, mapped to real URL.
     game-images-skip.json -- app IDs where standard URL is confirmed OK.
 
-    Only uncached IDs are probed, capped at PROBE_CAP per run so the full
-    corpus backfills incrementally over daily pipeline runs.
+    Visible games (recent-reports + most_played) are always probed first so
+    newly released high-ID games don't wait months in the numeric backlog.
+    Remaining uncached IDs are appended up to PROBE_CAP per run.
     """
     output_dir = Path(output_dir)
     data_dir = output_dir / "data"
@@ -94,12 +119,15 @@ def build_game_images(output_dir) -> dict[str, str]:
 
     all_ids = _collect_all_app_ids(data_dir)
     cached = set(overrides.keys()) | skip_set
-    to_probe = [a for a in all_ids if a not in cached]
+
+    hot = [a for a in _hot_app_ids(output_dir) if a not in cached]
+    rest = [a for a in all_ids if a not in cached and a not in set(hot)]
+    to_probe = hot + rest
 
     log(
         f"[game-images] {len(all_ids)} total app IDs | "
         f"{len(overrides)} override cache | {len(skip_set)} skip cache | "
-        f"{len(to_probe)} uncached (probing up to {PROBE_CAP})"
+        f"{len(hot)} hot uncached | {len(rest)} backlog uncached (probing up to {PROBE_CAP})"
     )
 
     probed = 0
