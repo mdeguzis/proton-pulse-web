@@ -610,16 +610,36 @@
   }
 }
 
-/* Mobile: admins table -- hide Added column, shrink permissions */
+/* Mobile: admins table -- hide Added column, make table scroll */
 @media (max-width: 640px) {
+  /* Constrain the section so overflow-x: auto on the card has a reference width */
+  .admin-section {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Card scrolls rather than pushing the page */
+  .admin-card {
+    max-width: 100%;
+  }
+
+  /* Hide Added column (4th) -- least critical info on small screens */
   #admins-table th:nth-child(4),
   #admins-table td:nth-child(4) {
     display: none;
   }
 
-  /* Permissions chips column: allow wrapping within a constrained width */
+  /* Make the table itself a scroll block */
+  #admins-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Permissions chips column: cap width so chips wrap */
   #admins-table td:nth-child(3) {
-    max-width: 160px;
+    max-width: 150px;
+    min-width: 100px;
   }
 
   /* Add-admin form: UUID and username inputs go full-width on mobile */
