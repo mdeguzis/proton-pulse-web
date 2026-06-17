@@ -116,9 +116,11 @@
 /* Granular permission editor: removable chips + an "add permission" dropdown. */
 .admin-perm-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   margin-bottom: 10px;
+  min-width: 0;
+  max-width: 100%;
 }
 .perm-editor,
 .perm-editor-wrap {
@@ -126,6 +128,15 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Scroll wrapper for wide tables so they scroll rather than overflow the page */
+.admin-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 .perm-chip {
   display: inline-flex;

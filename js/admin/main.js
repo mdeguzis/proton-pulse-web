@@ -8,7 +8,7 @@ import { renderBanned } from './components/banned.js?v=45d01d17';
 import { fetchAllUsers } from './api/users.js?v=718eb921';
 import { renderUsers } from './components/users.js?v=643eabd8';
 import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=16a55837';
-import { renderAdmins, renderNewAdminEditor } from './components/admins.js?v=de3324f1';
+import { renderAdmins, renderNewAdminEditor } from './components/admins.js?v=84b4ecad';
 import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ca024bd3';
 import { renderPhrases } from './components/phrases.js?v=79051c31';
 import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965';
@@ -187,7 +187,7 @@ async function loadAdmins() {
   try {
     syncNewAdminForm();
     const rows = await fetchAdmins(currentSession);
-    renderAdmins(rows);
+    renderAdmins(rows, { currentUserId: currentSession?.user?.id });
   } catch (e) {
     document.getElementById('admins-loading').hidden = true;
     document.getElementById('admins-empty').textContent = e.message;

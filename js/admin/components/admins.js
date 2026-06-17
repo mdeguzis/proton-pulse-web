@@ -44,7 +44,7 @@ export function renderNewAdminEditor(role, perms) {
   if (el) el.innerHTML = permEditorHtml(role, perms, 'new');
 }
 
-export function renderAdmins(rows) {
+export function renderAdmins(rows, { currentUserId } = {}) {
   const loading = document.getElementById('admins-loading');
   const empty   = document.getElementById('admins-empty');
   const table   = document.getElementById('admins-table');
@@ -66,7 +66,10 @@ export function renderAdmins(rows) {
     const name = escapeHtml(r.steam_username);
     const label = resolveRoleLabel(r.role, r.permissions);
     const eff = effectivePermissions(r.role, r.permissions);
-    const removeBtn = `<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="remove-admin" data-uuid="${uid}" data-name="${name}">Remove</button>`;
+    const isSelf = currentUserId && r.proton_pulse_user_id === currentUserId;
+    const removeBtn = isSelf
+      ? `<button class="admin-btn admin-btn--danger admin-btn--sm" disabled title="Cannot remove yourself">Remove</button>`
+      : `<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="remove-admin" data-uuid="${uid}" data-name="${name}">Remove</button>`;
     // data-perms/data-role let the delegated handler compute the next set without a re-fetch.
     return `<tr data-uuid="${uid}" data-role="${escapeHtml(label)}" data-perms="${escapeHtml(eff.join(','))}">
       <td>${name}</td>
