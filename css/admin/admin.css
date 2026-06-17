@@ -56,16 +56,30 @@
   outline: none;
 }
 
-/* "Your role & permissions" summary -- a distinct bar above the tab content. */
+/* "Your role & permissions" summary -- a highlighted banner above the content. */
 .admin-perms-summary {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   gap: 6px 10px;
-  margin: 0 0 22px;
-  padding: 0 0 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin: 0 0 20px;
+  padding: 9px 14px;
+  background: rgba(92,139,214,0.08);
+  border: 1px solid rgba(92,139,214,0.25);
+  border-radius: 10px;
   font-size: 0.8rem;
+}
+
+/* Section card: groups a labeled block (form, table, ...) into a panel. */
+.admin-card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.admin-card > .admin-subhead:first-child {
+  margin-top: 0;
 }
 .admin-perms-label {
   text-transform: uppercase;
