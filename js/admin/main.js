@@ -64,6 +64,7 @@ function renderPermissionSummary() {
   const caps = effectivePermissions(currentAdmin.role, currentAdmin.permissions)
     .map(k => PERMISSION_LABELS[k] || k);
   el.innerHTML =
+    `<span class="admin-perms-label">Your access</span>` +
     `<span class="admin-perms-role">${escapeHtml(ROLE_DISPLAY[label] || label)}</span>` +
     `<span class="admin-perms-caps">${caps.length ? escapeHtml(caps.join(' · ')) : 'no permissions'}</span>`;
   el.hidden = false;

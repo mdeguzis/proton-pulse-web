@@ -56,14 +56,22 @@
   outline: none;
 }
 
-/* "Your role & permissions" summary at the top of the panel. */
+/* "Your role & permissions" summary -- a distinct bar above the tab content. */
 .admin-perms-summary {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 6px 10px;
-  margin: 0 0 14px;
+  margin: 0 0 22px;
+  padding: 0 0 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   font-size: 0.8rem;
+}
+.admin-perms-label {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+  color: var(--muted, #888);
 }
 .admin-perms-role {
   font-weight: 600;
@@ -74,6 +82,19 @@
 }
 .admin-perms-caps {
   color: var(--muted, #888);
+}
+
+/* Small section heading inside a tab (e.g. "Add admin", "Existing admins"). */
+.admin-subhead {
+  margin: 18px 0 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted, #888);
+}
+.admin-subhead:first-child {
+  margin-top: 0;
 }
 
 /* Granular permission editor: removable chips + an "add permission" dropdown. */
