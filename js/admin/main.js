@@ -5,10 +5,10 @@ import { fetchFlaggedReports, reinstateReport, deleteReport } from './api/flagge
 import { renderFlagged } from './components/flagged.js?v=b9c9f230';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
-import { fetchAllUsers } from './api/users.js?v=718eb921';
-import { renderUsers } from './components/users.js?v=643eabd8';
+import { fetchAllUsers } from './api/users.js?v=52e867d2';
+import { renderUsers } from './components/users.js?v=bb3b3f25';
 import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=16a55837';
-import { renderAdmins, renderNewAdminEditor } from './components/admins.js?v=49c62fad';
+import { renderAdmins, renderNewAdminEditor } from './components/admins.js?v=84b4ecad';
 import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ca024bd3';
 import { renderPhrases } from './components/phrases.js?v=79051c31';
 import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965';
@@ -458,7 +458,6 @@ function wireEvents() {
       if (!confirm('Unban this user and restore their reports?')) return;
       btn.disabled = true;
       btn.textContent = '...';
-      console.log('[unban-user] banId:', btn.dataset.banId, 'userid:', btn.dataset.userid);
       try {
         await unbanUser(currentSession, btn.dataset.banId, { protonPulseUserId: btn.dataset.userid, clientId: btn.dataset.clientid });
         loadUsers();
@@ -527,7 +526,6 @@ function wireEvents() {
   document.getElementById('ban-confirm-btn').addEventListener('click', async () => {
     if (!pendingBan) return;
     const reason = document.getElementById('ban-reason-input').value.trim();
-    console.log('[ban-confirm] pendingBan:', pendingBan, 'reason:', reason);
     if (!reason) {
       const input = document.getElementById('ban-reason-input');
       input.focus();

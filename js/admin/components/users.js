@@ -22,8 +22,6 @@ export function renderUsers(rows, { currentUserId, counts, canBan = true } = {})
     countsEl.hidden = false;
   }
 
-  console.log('[renderUsers] total rows:', rows.length, 'banned:', rows.filter(r => r.is_banned).length);
-
   if (!rows.length) {
     empty.hidden = false;
     table.hidden = true;

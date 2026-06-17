@@ -67,7 +67,6 @@ export function renderAdmins(rows, { currentUserId } = {}) {
     const label = resolveRoleLabel(r.role, r.permissions);
     const eff = effectivePermissions(r.role, r.permissions);
     const isSelf = currentUserId && r.proton_pulse_user_id === currentUserId;
-    console.log('[renderAdmins] row:', r.steam_username, 'rowId:', r.proton_pulse_user_id, 'currentUserId:', currentUserId, 'isSelf:', isSelf);
     const removeBtn = isSelf
       ? `<button class="admin-btn admin-btn--danger admin-btn--sm" disabled title="Cannot remove yourself">Remove</button>`
       : `<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="remove-admin" data-uuid="${uid}" data-name="${name}">Remove</button>`;
