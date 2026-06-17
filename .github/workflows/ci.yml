@@ -33,9 +33,6 @@ jobs:
 
       - name: Run tests with coverage
         run: npm test -- --coverage --coverageReporters=text --coverageReporters=lcov
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_TOKEN: ${{ secrets.SUPABASE_TOKEN }}
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
