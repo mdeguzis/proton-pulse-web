@@ -121,19 +121,22 @@ def build_game_images(output_dir) -> dict[str, str]:
     cached = set(overrides.keys()) | skip_set
 
     hot = [a for a in _hot_app_ids(output_dir) if a not in cached]
-    rest = [a for a in all_ids if a not in cached and a not in set(hot)]
+    hot_set = set(hot)
+    rest = [a for a in all_ids if a not in cached and a not in hot_set]
     to_probe = hot + rest
 
     log(
         f"[game-images] {len(all_ids)} total app IDs | "
         f"{len(overrides)} override cache | {len(skip_set)} skip cache | "
-        f"{len(hot)} hot uncached | {len(rest)} backlog uncached (probing up to {PROBE_CAP})"
+        f"{len(hot)} hot uncached (all will probe) | {len(rest)} backlog uncached (cap {PROBE_CAP})"
     )
 
-    probed = 0
+    probed = 0  # total for logging
+    backlog_probed = 0
     for app_id in to_probe:
-        if probed >= PROBE_CAP:
-            log(f"[game-images] hit probe cap ({PROBE_CAP}), deferring remaining {len(to_probe) - probed} to next run")
+        is_backlog = app_id not in hot_set
+        if is_backlog and backlog_probed >= PROBE_CAP:
+            log(f"[game-images] hit backlog cap ({PROBE_CAP}), deferring {len(rest) - backlog_probed} to next run")
             break
         standard_url = _standard_header_url(app_id)
         if _url_is_ok(standard_url):
@@ -149,6 +152,8 @@ def build_game_images(output_dir) -> dict[str, str]:
                 log(f"[game-images] {app_id}: no header image found via Steam API, marking skip")
                 skip_set.add(app_id)
         probed += 1
+        if is_backlog:
+            backlog_probed += 1
         time.sleep(REQUEST_DELAY)
 
     overrides_path.write_text(json.dumps(overrides, indent=2) + "\n", encoding="utf-8")
