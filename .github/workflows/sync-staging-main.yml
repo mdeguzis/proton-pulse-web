@@ -1,4 +1,4 @@
-name: Sync main branch to staging repo
+name: Sync gh-pages to staging repo
 
 on:
   push:
@@ -14,11 +14,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Sync main to staging repo
+      - name: Sync gh-pages to staging repo
         env:
           GH_TOKEN: ${{ secrets.STAGING_DEPLOY_TOKEN }}
         run: |
           gh repo sync mdeguzis/proton-pulse-web-staging \
             --source mdeguzis/proton-pulse-web \
-            --branch main \
+            --branch gh-pages \
             --force
