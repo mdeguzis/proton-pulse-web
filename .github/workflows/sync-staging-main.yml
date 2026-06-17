@@ -1,4 +1,4 @@
-name: Sync main to staging repo
+name: Sync staging repo
 
 on:
   push:
