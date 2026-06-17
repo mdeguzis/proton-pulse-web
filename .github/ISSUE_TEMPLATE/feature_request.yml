@@ -1,0 +1,23 @@
+name: Feature Request
+description: Suggest a new feature or improvement for proton-pulse.com
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: What do you want?
+      description: One or two sentences describing the feature.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would this be useful?
+      description: What problem does it solve, or what does it make easier?
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Any details or examples
+      description: Mockups, links to similar features elsewhere, edge cases to consider -- anything that helps clarify the idea.
