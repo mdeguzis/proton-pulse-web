@@ -77,6 +77,8 @@
   border-radius: 10px;
   padding: 16px;
   margin-bottom: 18px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .admin-card > .admin-subhead:first-child {
   margin-top: 0;
@@ -605,6 +607,32 @@
   #users-table th:nth-child(4),
   #users-table td:nth-child(4) {
     display: none;
+  }
+}
+
+/* Mobile: admins table -- hide Added column, shrink permissions */
+@media (max-width: 640px) {
+  #admins-table th:nth-child(4),
+  #admins-table td:nth-child(4) {
+    display: none;
+  }
+
+  /* Permissions chips column: allow wrapping within a constrained width */
+  #admins-table td:nth-child(3) {
+    max-width: 160px;
+  }
+
+  /* Add-admin form: UUID and username inputs go full-width on mobile */
+  #add-admin-form .admin-input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Permission row on mobile: stack label above chips */
+  .admin-perm-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
 }
 
