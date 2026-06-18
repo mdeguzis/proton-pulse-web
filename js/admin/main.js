@@ -248,6 +248,12 @@ async function loadUserDetail(user) {
 }
 
 async function loadFlagDetail(row) {
+  sessionStorage.setItem('admin_detail_flag', JSON.stringify(row));
+  const url = new URL(window.location.href);
+  url.searchParams.set('flagid', String(row.id));
+  url.searchParams.delete('detail');
+  history.pushState({ adminView: 'flag-detail' }, '', url);
+
   document.querySelectorAll('.admin-section').forEach(sec => { sec.hidden = true; });
   document.getElementById('tab-flag-detail').hidden = false;
   document.getElementById('admin-tab-select').value = '';
@@ -338,6 +344,7 @@ function activateTab(tabName, { updateUrl = true } = {}) {
     const url = new URL(window.location.href);
     url.searchParams.set('tab', tabName);
     url.searchParams.delete('detail');
+    url.searchParams.delete('flagid');
     // Drop the Users-only search param when viewing any other tab.
     if (tabName !== 'users') url.searchParams.delete('search');
     history.replaceState(null, '', url);
@@ -791,6 +798,22 @@ async function init() {
   wireEvents();
 
   const params = new URLSearchParams(window.location.search);
+
+  const flagIdParam = params.get('flagid');
+  if (flagIdParam) {
+    try {
+      const stored = sessionStorage.getItem('admin_detail_flag');
+      const row = stored ? JSON.parse(stored) : null;
+      if (row && String(row.id) === flagIdParam) {
+        loadFlagDetail(row);
+        return;
+      }
+    } catch (_) {}
+    // flagid present but no cached row - fall through to flagged tab
+    activateTab('flagged', { updateUrl: false });
+    return;
+  }
+
   const detailParam = params.get('detail');
   if (detailParam) {
     try {
