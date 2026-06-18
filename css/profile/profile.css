@@ -674,7 +674,9 @@
   cursor: default;
   pointer-events: none;
 }
-.profile-configs-publish-btn {
+.profile-configs-publish-btn,
+.profile-configs-view-link:not(.profile-configs-view-disabled),
+.profile-configs-edit-btn {
   color: #9ecbe8;
   border-color: rgba(74,159,208,0.45);
 }
