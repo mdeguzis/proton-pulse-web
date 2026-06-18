@@ -97,8 +97,6 @@ export function renderFlagDetail(flagRow, reportContent) {
       ${noteText ? `<div class="flag-detail-reason-note">${noteText}</div>` : ''}
     </div>
 
-    ${_renderReportCard(reportContent)}
-
     <div class="flag-detail-meta">
       <div><span class="admin-label-text">Game</span>
         <a href="${escapeHtml(appLink)}" target="_blank" rel="noopener" class="admin-link">${name}</a>
@@ -109,6 +107,8 @@ export function renderFlagDetail(flagRow, reportContent) {
       <div><span class="admin-label-text">Status</span>
         <span class="admin-status admin-status--${escapeHtml(status)}" id="flag-detail-status">${statusLabel}</span></div>
     </div>
+
+    ${_renderReportCard(reportContent)}
 
     <div class="flag-detail-actions">
       <button class="admin-btn admin-btn--ok" data-action="flag-set-status" data-status="open" data-id="${rowId}">Dismiss</button>
