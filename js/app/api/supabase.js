@@ -43,7 +43,7 @@ export async function fetchSupabase(appId) {
 export async function fetchNativeReports(appId) {
   try {
     const r = await fetch(
-      `${SB_URL}/user_configs?app_id=eq.${appId}&select=id,client_id,app_id,title,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,os,kernel,proton_version,rating,duration,duration_minutes,notes,vram_mb,form_responses,config_key,game_owned,created_at,updated_at,source&order=created_at.desc`,
+      `${SB_URL}/user_configs?app_id=eq.${appId}&is_flagged=neq.true&select=id,client_id,app_id,title,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,os,kernel,proton_version,rating,duration,duration_minutes,notes,vram_mb,form_responses,config_key,game_owned,created_at,updated_at,source,is_flagged&order=created_at.desc`,
       { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
     );
     if (!r.ok) return [];
@@ -80,8 +80,18 @@ export async function fetchNativeReports(appId) {
       timestamp:         Math.floor(new Date(row.created_at).getTime() / 1000),
       updatedAt:         row.updated_at ? Math.floor(new Date(row.updated_at).getTime() / 1000) : null,
       source:            row.source || 'proton-pulse',
+      isFlagged:         row.is_flagged ?? false,
     }));
   } catch { return []; }
+}
+
+export async function flagReport(reportId) {
+  const r = await fetch(`${SB_URL}/user_configs?id=eq.${reportId}`, {
+    method: 'PATCH',
+    headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+    body: JSON.stringify({ is_flagged: true }),
+  });
+  return r.ok;
 }
 
 export async function fetchConfigPlaytimeTotals(appId) {

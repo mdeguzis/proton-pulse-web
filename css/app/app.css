@@ -1473,6 +1473,9 @@ a.card:active { transform: translateY(1px); }
 }
 .action-btn-danger:hover { background: rgba(200,80,80,0.12); color: #ff8a7a; }
 .action-btn-icon { padding: 5px 10px; }
+.flag-report-btn { opacity: 0.45; }
+.flag-report-btn:hover { opacity: 1; color: #e0824a; border-color: #e0824a; }
+.flag-report-btn.flagged { opacity: 1; color: #e0824a; border-color: #e0824a; cursor: default; }
 /* Permalink button used in the footer alongside the other action buttons -
    inherits .action-btn styling, just adds the chain icon */
 .card-footer .permalink-btn {
