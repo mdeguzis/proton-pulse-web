@@ -279,43 +279,71 @@
 .pg-borked   { background: #c85050; color: #fff; }
 .pg-unrated  { background: var(--border); color: var(--muted); }
 
-/* Popular games header row: section label + "Not rated yet" toggle.
-   Toggle styling mirrors .unrated-toggle in css/app/app.css so the control
-   looks the same on the homepage and the app browser. */
+/* Popular games header row: section label + two rating filter buttons.
+   "Rated" and "Not Rated" are independent toggles, any combination allowed.
+   Inactive buttons read as clearly off (dim, hollow); active buttons light up
+   with the accent so the current filter state is obvious at a glance. */
 .pg-head {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
 }
 .pg-head .section-label { margin-bottom: 0; }
-.pg-head .unrated-toggle {
+.pg-filters {
+  display: inline-flex;
+  gap: 8px;
+}
+.pg-filter {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 3px 10px;
-  background: transparent;
-  border: 1px solid var(--border2, var(--border));
+  gap: 7px;
+  padding: 6px 14px;
+  background: var(--card);
+  border: 1.5px solid var(--border);
   color: var(--muted);
-  font-size: 0.68rem;
-  font-family: var(--mono);
-  letter-spacing: 0.08em;
-  cursor: pointer;
-  border-radius: 3px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: border-color 0.15s, color 0.15s;
-}
-.pg-head .unrated-toggle:hover:not([disabled]) { border-color: var(--accent); color: var(--accent); }
-.pg-head .unrated-toggle--active { border-color: var(--accent); color: var(--accent); background: rgba(190,238,17,0.06); }
-.pg-head .unrated-toggle[disabled] { opacity: 0.5; cursor: default; }
-.pg-head .unrated-count {
-  background: var(--border2, var(--border));
-  border-radius: 2px;
-  padding: 0 5px;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s;
 }
-.pg-head .unrated-toggle--active .unrated-count { background: rgba(190,238,17,0.18); }
+.pg-filter:hover { border-color: var(--accent); color: var(--strong); }
+.pg-filter--active {
+  border-color: var(--accent);
+  color: #0a0c10;
+  background: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 12px rgba(190,238,17,0.25);
+}
+.pg-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+.pg-filter--active .pg-filter-count {
+  background: rgba(10,12,16,0.22);
+  color: #0a0c10;
+}
+.pg-empty {
+  padding: 24px 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+}
 
 /* quick-actions row removed - the topnav covers those links now */
 

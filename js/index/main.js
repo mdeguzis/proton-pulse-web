@@ -124,33 +124,49 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=85cf419
       return;
     }
 
-    // Split into rated games (shown by default) and unrated titles that lack
-    // reports (catalog/pending). The unrated ones stay hidden behind a toggle
-    // so the default view is only games we actually have a rating for.
+    // Split into rated games and unrated titles that lack reports
+    // (catalog/pending). Two independent filter buttons drive the view:
+    // "Rated" (on by default) and "Not Rated" (off by default). Any
+    // combination is allowed, including both on or both off.
     const ratedGames = games.filter((g) => KNOWN_TIERS.has(String(g.rating || '').toLowerCase()));
     const unratedGames = games.filter((g) => !KNOWN_TIERS.has(String(g.rating || '').toLowerCase()));
     console.debug('[popular-games] loaded most_played.json', {
       total: games.length, rated: ratedGames.length, unrated: unratedGames.length, source: 'most_played.json',
     });
 
-    list.innerHTML = ratedGames.map(pgCardHtml).join('');
     section.hidden = false;
 
-    // Toggle reveals/hides the unrated titles. Disabled when there are none so
-    // the control is always visible but inert rather than missing.
-    const toggle = document.getElementById('pg-unrated-toggle');
-    const countEl = document.getElementById('pg-unrated-count');
-    if (countEl) countEl.textContent = String(unratedGames.length);
-    if (toggle) {
-      toggle.disabled = unratedGames.length === 0;
-      let showingUnrated = false;
-      toggle.addEventListener('click', () => {
-        if (!unratedGames.length) return;
-        showingUnrated = !showingUnrated;
-        toggle.classList.toggle('unrated-toggle--active', showingUnrated);
-        list.innerHTML = (showingUnrated ? [...ratedGames, ...unratedGames] : ratedGames).map(pgCardHtml).join('');
+    const ratedBtn = document.getElementById('pg-filter-rated');
+    const unratedBtn = document.getElementById('pg-filter-unrated');
+    const ratedCountEl = document.getElementById('pg-rated-count');
+    const unratedCountEl = document.getElementById('pg-unrated-count');
+    if (ratedCountEl) ratedCountEl.textContent = String(ratedGames.length);
+    if (unratedCountEl) unratedCountEl.textContent = String(unratedGames.length);
+
+    const state = { rated: true, unrated: false };
+
+    function renderPopular() {
+      const shown = [
+        ...(state.rated ? ratedGames : []),
+        ...(state.unrated ? unratedGames : []),
+      ];
+      list.innerHTML = shown.length
+        ? shown.map(pgCardHtml).join('')
+        : '<div class="pg-empty">No games match the current filters.</div>';
+    }
+
+    function wireFilter(btn, key) {
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        state[key] = !state[key];
+        btn.classList.toggle('pg-filter--active', state[key]);
+        btn.setAttribute('aria-pressed', String(state[key]));
+        renderPopular();
       });
     }
+    wireFilter(ratedBtn, 'rated');
+    wireFilter(unratedBtn, 'unrated');
+    renderPopular();
   } catch (err) {
     console.debug('[popular-games] failed to load most_played.json', { error: String(err) });
     /* leave the section hidden */

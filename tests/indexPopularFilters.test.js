@@ -10,11 +10,19 @@ const indexHtml = fs.readFileSync(
   'utf8'
 );
 
-describe('index page popular games unrated toggle', () => {
-  test('index.html renders the unrated toggle button and count', () => {
-    expect(indexHtml).toContain('id="pg-unrated-toggle"');
-    expect(indexHtml).toContain('id="pg-unrated-count"');
-    expect(indexHtml).toContain('Not rated yet');
+describe('index page popular games rating filters', () => {
+  test('index.html renders two distinct Rated / Not Rated filter buttons', () => {
+    expect(indexHtml).toContain('id="pg-filter-rated"');
+    expect(indexHtml).toContain('id="pg-filter-unrated"');
+    // Exact button labels requested by the user
+    expect(indexHtml).toMatch(/id="pg-filter-rated"[^>]*>Rated /);
+    expect(indexHtml).toMatch(/id="pg-filter-unrated"[^>]*>Not Rated /);
+  });
+
+  test('Rated is active (pressed) by default, Not Rated is not', () => {
+    expect(indexHtml).toMatch(/id="pg-filter-rated"[^>]*aria-pressed="true"/);
+    expect(indexHtml).toMatch(/id="pg-filter-unrated"[^>]*aria-pressed="false"/);
+    expect(indexHtml).toMatch(/pg-filter pg-filter--active" id="pg-filter-rated"/);
   });
 
   test('main.js splits rated vs unrated using KNOWN_TIERS', () => {
@@ -23,13 +31,23 @@ describe('index page popular games unrated toggle', () => {
     expect(indexSrc).toContain('const unratedGames = games.filter((g) => !KNOWN_TIERS.has(String(g.rating || \'\').toLowerCase()))');
   });
 
-  test('only rated games render by default', () => {
-    expect(indexSrc).toContain('list.innerHTML = ratedGames.map(pgCardHtml).join(\'\')');
+  test('default state shows rated and hides unrated', () => {
+    expect(indexSrc).toContain('const state = { rated: true, unrated: false }');
   });
 
-  test('toggle reveals unrated games and is disabled when none exist', () => {
-    expect(indexSrc).toContain("toggle.disabled = unratedGames.length === 0");
-    expect(indexSrc).toContain("showingUnrated ? [...ratedGames, ...unratedGames] : ratedGames");
-    expect(indexSrc).toContain("toggle.classList.toggle('unrated-toggle--active', showingUnrated)");
+  test('render combines the two filters and supports any combination', () => {
+    expect(indexSrc).toContain('...(state.rated ? ratedGames : [])');
+    expect(indexSrc).toContain('...(state.unrated ? unratedGames : [])');
+  });
+
+  test('each button toggles its own state independently', () => {
+    expect(indexSrc).toContain("state[key] = !state[key]");
+    expect(indexSrc).toContain("btn.classList.toggle('pg-filter--active', state[key])");
+    expect(indexSrc).toContain("wireFilter(ratedBtn, 'rated')");
+    expect(indexSrc).toContain("wireFilter(unratedBtn, 'unrated')");
+  });
+
+  test('shows an empty state when both filters are off', () => {
+    expect(indexSrc).toContain("class=\"pg-empty\"");
   });
 });
