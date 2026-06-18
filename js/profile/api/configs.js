@@ -210,18 +210,6 @@ export async function deleteAllMyData(protonPulseUserId, clientId, session) {
   }
 }
 
-export async function fetchMyFlags(clientId) {
-  if (!clientId) return [];
-  try {
-    const url = `${SUPABASE_URL}/rest/v1/flagged_reports`
-      + `?reporter_client_id=eq.${encodeURIComponent(clientId)}`
-      + `&select=id,app_id,source,reason_category,reason_text,status,flagged_at`
-      + `&order=flagged_at.desc`;
-    const r = await fetch(url, { headers: supabaseHeaders(null) });
-    return r.ok ? await r.json() : [];
-  } catch { return []; }
-}
-
 export async function patchCloudConfig(protonPulseUserId, appId, configPatch, session) {
   const url = `${SUPABASE_URL}/rest/v1/user_proton_configs`
     + `?proton_pulse_user_id=eq.${encodeURIComponent(protonPulseUserId)}`
