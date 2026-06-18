@@ -994,13 +994,12 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
           ? `<a class="profile-configs-action profile-configs-publish-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1" target="_blank" rel="noopener">Publish</a>`
           : '',
         // Edit: published rows go to submit.html in edit mode (full form
-        // pre-fill from user_configs). Cloud-only (unpublished) rows open
-        // the lightweight cloud config modal -- just Proton version, launch
-        // options, and env vars. Use Publish to go through the full form.
+        // pre-fill from user_configs). Cloud-only rows go to submit.html?fromCloud=1
+        // where a Save button lets them update the draft without publishing.
         row.published_id
           ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&edit=${escapeHtml(String(row.published_id))}" target="_blank" rel="noopener">Edit</a>`
           : row.cloud
-            ? `<button type="button" class="profile-configs-action profile-configs-edit-btn" data-cloud-app-id="${escapeHtml(String(row.app_id))}">Edit</button>`
+            ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1" target="_blank" rel="noopener">Edit</a>`
             : '',
         row.published_id
           ? `<button type="button" class="profile-configs-action profile-configs-unpublish-btn" data-published-id="${escapeHtml(String(row.published_id))}">Unpublish</button>`

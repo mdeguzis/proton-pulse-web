@@ -188,24 +188,23 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
   } else if (fromCloud && session) {
     // Pull the user's cloud config for this app so the proton version
     // + launch options + any saved hardware/profile fields are already
-    // filled in. The user still has to answer the question flow, but
-    // they don't re-type the data the cloud already knows about
+    // filled in. The user still has to answer the question flow to
+    // Publish, but they can Save at any point to update the draft.
+    let cloudRec = null;
     try {
       const r = await fetch(
         `${SUPABASE_URL}/rest/v1/user_proton_configs?app_id=eq.${encodeURIComponent(appId)}&voter_id=eq.${encodeURIComponent(session.user.id)}&select=app_name,config,updated_at&order=updated_at.desc&limit=1`,
         { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}` } }
       );
       const rows = r.ok ? await r.json() : [];
-      const rec = rows[0];
-      if (rec) {
-        const cfg = rec.config || {};
+      cloudRec = rows[0] ?? null;
+      if (cloudRec) {
+        const cfg = cloudRec.config || {};
         const form = el.querySelector('#submit-report-form');
         const set = (name, val) => { if (form?.elements[name] && val != null) form.elements[name].value = val; };
-        if (rec.app_name) set('gameTitle', rec.app_name);
+        if (cloudRec.app_name) set('gameTitle', cloudRec.app_name);
         if (cfg.protonVersion) set('protonVersion', cfg.protonVersion);
         if (cfg.launchOptions) set('launchOptions', cfg.launchOptions);
-        // Some cloud configs carry hardware snapshots from when the user
-        // saved them; pull those in if present so the user doesnt re-type
         if (cfg.hardware) {
           const hw = cfg.hardware;
           set('cpu', hw.cpu);
@@ -222,8 +221,6 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
         }
         console.debug('[submit] fromCloud: prefilled from cloud config', { appId });
       } else {
-        // No cloud config found (race condition / row missing) -- fall
-        // back to saved-hardware prefill so the form isnt totally empty
         prefillSubmitFormFromMyHardware(el);
       }
     } catch (err) {
@@ -232,6 +229,49 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
     }
     const submitBtn = el.querySelector('button[type="submit"]');
     if (submitBtn) submitBtn.textContent = 'Publish';
+
+    // Save button: patches the cloud draft without requiring the full question flow
+    const saveBtn = document.createElement('button');
+    saveBtn.type = 'button';
+    saveBtn.textContent = 'Save';
+    saveBtn.className = 'submit-report-btn';
+    saveBtn.style.cssText = 'background:var(--s2);color:var(--text);border:1px solid var(--border);';
+    if (submitBtn) submitBtn.insertAdjacentElement('beforebegin', saveBtn);
+    saveBtn.addEventListener('click', async () => {
+      const form = el.querySelector('#submit-report-form');
+      const get = name => form?.elements[name]?.value?.trim() || '';
+      const hw = { ...(cloudRec?.config?.hardware || {}) };
+      for (const k of ['cpu','gpu','gpuDriver','gpuVendor','ram','kernel']) {
+        const v = get(k); if (v) hw[k] = v; else delete hw[k];
+      }
+      const osVal = [get('os'), get('osVersion')].filter(Boolean).join(' ');
+      if (osVal) hw.os = osVal; else delete hw.os;
+      const newConfig = { ...(cloudRec?.config || {}), protonVersion: get('protonVersion'), launchOptions: get('launchOptions'), hardware: hw };
+      const gameTitle = el.querySelector('input[name="gameTitle"]')?.value?.trim() || title;
+      const statusEl = el.querySelector('#submit-status');
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Saving...';
+      try {
+        const patchR = await fetch(
+          `${SUPABASE_URL}/rest/v1/user_proton_configs?app_id=eq.${encodeURIComponent(appId)}&voter_id=eq.${encodeURIComponent(session.user.id)}`,
+          {
+            method: 'PATCH',
+            headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+            body: JSON.stringify({ app_name: gameTitle, config: newConfig }),
+          }
+        );
+        if (!patchR.ok) throw new Error(`HTTP ${patchR.status}`);
+        cloudRec = { ...cloudRec, app_name: gameTitle, config: newConfig };
+        if (statusEl) { statusEl.textContent = 'Saved.'; statusEl.style.color = 'var(--green)'; }
+        console.debug('[submit] fromCloud: saved draft', { appId });
+      } catch (err) {
+        if (statusEl) { statusEl.textContent = 'Save failed: ' + (err.message || err); statusEl.style.color = 'var(--red)'; }
+        console.warn('[submit] fromCloud: save draft failed', { appId, error: String(err) });
+      } finally {
+        saveBtn.disabled = false;
+        saveBtn.textContent = 'Save';
+      }
+    });
   } else if (fromCloud && !session) {
     // localhost dev preview without auth: can't fetch cloud config, just
     // prefill from saved hardware so the form is at least populated

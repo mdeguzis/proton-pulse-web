@@ -188,7 +188,7 @@ describe('profile action button rendering', () => {
       row.published_id
         ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${esc(String(row.app_id))}&edit=${esc(String(row.published_id))}">Edit</a>`
         : row.cloud
-          ? `<button type="button" class="profile-configs-action profile-configs-edit-btn" data-cloud-app-id="${esc(String(row.app_id))}">Edit</button>`
+          ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${esc(String(row.app_id))}&fromCloud=1">Edit</a>`
           : '',
       row.published_id
         ? `<button type="button" class="profile-configs-action profile-configs-unpublish-btn" data-published-id="${esc(String(row.published_id))}">Unpublish</button>`
@@ -198,16 +198,15 @@ describe('profile action button rendering', () => {
     return actions;
   }
 
-  test('cloud-only edit is a button with data-cloud-app-id, not a link to submit.html', () => {
+  test('cloud-only edit is a link to submit.html?fromCloud=1', () => {
     const row = { app_id: 2358720, cloud: true, unpublished: true, published_id: null };
     const html = makeActions(row);
-    expect(html).toContain('data-cloud-app-id="2358720"');
-    // The Edit element specifically must be a button, not an anchor to submit.html
-    expect(html).not.toMatch(/profile-configs-edit-btn[^>]*href=.*submit\.html/);
-    expect(html).toContain('<button');
+    expect(html).toContain('submit.html?app=2358720&fromCloud=1');
+    expect(html).toContain('profile-configs-edit-btn');
+    expect(html).not.toContain('data-cloud-app-id');
   });
 
-  test('cloud-only edit button has profile-configs-edit-btn class', () => {
+  test('cloud-only edit link has profile-configs-edit-btn class', () => {
     const row = { app_id: 2358720, cloud: true, unpublished: true, published_id: null };
     const html = makeActions(row);
     expect(html).toMatch(/class="[^"]*profile-configs-edit-btn[^"]*"/);
