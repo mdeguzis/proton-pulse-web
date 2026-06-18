@@ -53,7 +53,7 @@ export async function renderCacheStatus(container) {
   const resourceRows = _resourceCacheRows();
 
   const versionRow = deployed
-    ? `<tr><td>Deployed version</td><td>${_pass('v' + escapeHtml(deployed.version || '?') + ' &middot; ' + escapeHtml((deployed.sha || '').slice(0, 7)))}</td></tr>`
+    ? `<tr><td>Deployed version</td><td><span class="cache-status-pass">v${escapeHtml(deployed.version || '?')} \u00b7 ${escapeHtml((deployed.sha || '').slice(0, 7))}</span></td></tr>`
     : `<tr><td>Deployed version</td><td>${_fail('version.json unavailable')}</td></tr>`;
 
   const metaRow = `<tr><td>No-cache meta tags</td><td>${metaOk ? _pass('present') : _fail('missing -- HTML may be served stale')}</td></tr>`;
