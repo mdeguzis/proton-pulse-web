@@ -634,10 +634,23 @@ export async function populateSubmitForm(el) {
   const protonInput = container.querySelector('input[name="protonVersion"]');
   const suggList   = container.querySelector('.sf-suggestions');
   if (protonInput && suggList) {
+    const CACHE_KEY = 'pp_proton_versions_v1';
+    const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
     const PROTON_FALLBACK = ['Proton Experimental','Proton 10.0-4','Proton 9.0-4','Proton 8.0-5','GE-Proton9-27','GE-Proton9-20','GE-Proton8-32'];
-    let protonVersions = [...new Set([...PROTON_FALLBACK, ...(schema.knownProtonVersions || [])])];
     const tagToLabel = tag => { const m = tag.match(/^proton-(\d+\.\d+-\d+)$/i); return m ? `Proton ${m[1]}` : null; };
-    // async: fetch live releases and extend the list (non-blocking)
+
+    // Seed from fallback + schema immediately so suggestions work before network
+    let protonVersions = [...new Set([...PROTON_FALLBACK, ...(schema.knownProtonVersions || [])])];
+
+    // Load cached list from localStorage if fresh
+    try {
+      const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+      if (cached?.ts && Date.now() - cached.ts < CACHE_TTL && Array.isArray(cached.versions)) {
+        protonVersions = [...new Set([...protonVersions, ...cached.versions])];
+      }
+    } catch {}
+
+    // Async: fetch live releases, extend, and persist to cache
     Promise.allSettled([
       fetch('https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases?per_page=20')
         .then(r => r.ok ? r.json() : [])
@@ -645,7 +658,10 @@ export async function populateSubmitForm(el) {
       fetch('https://api.github.com/repos/ValveSoftware/Proton/releases?per_page=20')
         .then(r => r.ok ? r.json() : [])
         .then(rels => { for (const rel of rels) { const l = tagToLabel(rel.tag_name); if (l) protonVersions.push(l); } }),
-    ]).then(() => { protonVersions = [...new Set(protonVersions)]; });
+    ]).then(() => {
+      protonVersions = [...new Set(protonVersions)];
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), versions: protonVersions })); } catch {}
+    });
 
     const showSuggestions = (q) => {
       const lq = q.toLowerCase();
@@ -662,7 +678,6 @@ export async function populateSubmitForm(el) {
       const li = e.target.closest('li');
       if (li) { protonInput.value = li.textContent; hideSuggestions(); protonInput.dispatchEvent(new Event('change')); }
     });
-    // touchstart for mobile tap
     suggList.addEventListener('touchstart', e => {
       const li = e.target.closest('li');
       if (li) { e.preventDefault(); protonInput.value = li.textContent; hideSuggestions(); protonInput.dispatchEvent(new Event('change')); }
