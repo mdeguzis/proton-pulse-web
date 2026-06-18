@@ -391,10 +391,10 @@ export async function populateSubmitForm(el) {
         <span style="font-size:0.72rem;color:var(--muted)">Pick a saved system to prefill hardware fields</span>
       </div>
       <div class="sf-row"><label>Proton Version *</label>
-        <input name="protonVersion" list="proton-versions" required placeholder="e.g. Proton 9.0-4 or GE-Proton9-7">
-        <datalist id="proton-versions">
-          ${(schema.knownProtonVersions || []).map(v => '<option value="'+esc(v)+'">').join('')}
-        </datalist>
+        <div class="sf-autocomplete" style="position:relative;flex:1;">
+          <input name="protonVersion" required placeholder="e.g. Proton 9.0-4 or GE-Proton9-27" autocomplete="off" style="width:100%">
+          <ul class="sf-suggestions" style="display:none;position:absolute;top:100%;left:0;right:0;z-index:100;background:var(--s2);border:1px solid var(--border);border-top:none;max-height:200px;overflow-y:auto;list-style:none;margin:0;padding:0;"></ul>
+        </div>
       </div>
       <div class="sf-row"><label>GPU *</label><input name="gpu" required placeholder="e.g. NVIDIA GeForce RTX 4070"></div>
       <div class="sf-row"><label>GPU Vendor *</label><select name="gpuVendor" required><option value="" disabled selected>-- choose one --</option>${opts(gpuVendors,true)}</select></div>
@@ -630,25 +630,44 @@ export async function populateSubmitForm(el) {
     });
   });
 
-  // - Populate proton datalist: schema defaults + live GE-Proton + official Proton releases
-  const dl = container.querySelector('#proton-versions');
-  if (dl) {
+  // - Proton Version custom autocomplete (replaces <datalist> which is unreliable on mobile)
+  const protonInput = container.querySelector('input[name="protonVersion"]');
+  const suggList   = container.querySelector('.sf-suggestions');
+  if (protonInput && suggList) {
     const PROTON_FALLBACK = ['Proton Experimental','Proton 10.0-4','Proton 9.0-4','Proton 8.0-5','GE-Proton9-27','GE-Proton9-20','GE-Proton8-32'];
-    const known = new Set([...PROTON_FALLBACK, ...(schema.knownProtonVersions || [])]);
-    const tagToLabel = tag => {
-      // proton-10.0-4 -> "Proton 10.0-4", ignore pre-release suffixes like -beta3
-      const m = tag.match(/^proton-(\d+\.\d+-\d+)$/i);
-      return m ? `Proton ${m[1]}` : null;
-    };
-    await Promise.allSettled([
+    let protonVersions = [...new Set([...PROTON_FALLBACK, ...(schema.knownProtonVersions || [])])];
+    const tagToLabel = tag => { const m = tag.match(/^proton-(\d+\.\d+-\d+)$/i); return m ? `Proton ${m[1]}` : null; };
+    // async: fetch live releases and extend the list (non-blocking)
+    Promise.allSettled([
       fetch('https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases?per_page=20')
         .then(r => r.ok ? r.json() : [])
-        .then(rels => { for (const rel of rels) known.add(rel.tag_name); }),
+        .then(rels => { for (const rel of rels) protonVersions.push(rel.tag_name); }),
       fetch('https://api.github.com/repos/ValveSoftware/Proton/releases?per_page=20')
         .then(r => r.ok ? r.json() : [])
-        .then(rels => { for (const rel of rels) { const l = tagToLabel(rel.tag_name); if (l) known.add(l); } }),
-    ]);
-    dl.innerHTML = [...known].map(v => '<option value="'+esc(v)+'">').join('');
+        .then(rels => { for (const rel of rels) { const l = tagToLabel(rel.tag_name); if (l) protonVersions.push(l); } }),
+    ]).then(() => { protonVersions = [...new Set(protonVersions)]; });
+
+    const showSuggestions = (q) => {
+      const lq = q.toLowerCase();
+      const matches = lq ? protonVersions.filter(v => v.toLowerCase().includes(lq)).slice(0, 10) : protonVersions.slice(0, 10);
+      if (!matches.length) { suggList.style.display = 'none'; return; }
+      suggList.innerHTML = matches.map(v => `<li style="padding:8px 12px;cursor:pointer;font-size:0.82rem;color:var(--text);border-bottom:1px solid var(--border);">${esc(v)}</li>`).join('');
+      suggList.style.display = 'block';
+    };
+    const hideSuggestions = () => { suggList.style.display = 'none'; };
+
+    protonInput.addEventListener('focus', () => showSuggestions(protonInput.value));
+    protonInput.addEventListener('input', () => showSuggestions(protonInput.value));
+    suggList.addEventListener('mousedown', e => {
+      const li = e.target.closest('li');
+      if (li) { protonInput.value = li.textContent; hideSuggestions(); protonInput.dispatchEvent(new Event('change')); }
+    });
+    // touchstart for mobile tap
+    suggList.addEventListener('touchstart', e => {
+      const li = e.target.closest('li');
+      if (li) { e.preventDefault(); protonInput.value = li.textContent; hideSuggestions(); protonInput.dispatchEvent(new Event('change')); }
+    }, { passive: false });
+    document.addEventListener('click', e => { if (!protonInput.contains(e.target) && !suggList.contains(e.target)) hideSuggestions(); });
   }
 
   // populate system picker from user's saved systems

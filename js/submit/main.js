@@ -1,6 +1,6 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=0dae1257';
-import { populateSubmitForm, prefillSubmitFormFromMyHardware, submitReport } from '../shared/submit.js?v=b1c0d82b';
+import { populateSubmitForm, prefillSubmitFormFromMyHardware, submitReport } from '../shared/submit.js?v=5bbe6609';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 
 (async function() {
@@ -253,7 +253,7 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
       saveBtn.textContent = 'Saving...';
       try {
         const patchR = await fetch(
-          `${SUPABASE_URL}/rest/v1/user_proton_configs?app_id=eq.${encodeURIComponent(appId)}&proton_pulse_user_id=eq.${encodeURIComponent(session.user.id)}`,
+          `${SUPABASE_URL}/rest/v1/user_proton_configs?app_id=eq.${encodeURIComponent(appId)}&voter_id=eq.${encodeURIComponent(session.user.id)}`,
           {
             method: 'PATCH',
             headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}`, 'Content-Type': 'application/json', Prefer: 'return=representation' },
