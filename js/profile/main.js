@@ -21,12 +21,12 @@ import {
 } from './api/systems.js?v=fcfc95e6';
 import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
-  deleteAllMyData, fetchAllMyData, checkMyDataExists,
-} from './api/configs.js?v=d05d75ee';
+  deleteAllMyData, fetchAllMyData, checkMyDataExists, unpublishReport,
+} from './api/configs.js?v=a51234ab';
 import {
   listLinkedPlugins, completePluginLink, removePluginLink,
 } from './api/plugin-links.js?v=59c9f51e';
-import { showEditCloudConfigModal, showEditReportModal } from './components/edit-modals.js?v=9a559851';
+import { showEditCloudConfigModal, showEditReportModal } from './components/edit-modals.js?v=d0e0780c';
 
 (async function () {
   const signedIn  = document.getElementById('profile-signed-in');
@@ -1003,6 +1003,9 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
           : row.cloud
             ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1" target="_blank" rel="noopener">Edit</a>`
             : '',
+        row.published_id
+          ? `<button type="button" class="profile-configs-action profile-configs-unpublish-btn" data-published-id="${escapeHtml(String(row.published_id))}">Unpublish</button>`
+          : '',
         `<button type="button" class="profile-configs-action profile-configs-delete-btn" data-app-id="${escapeHtml(String(row.app_id))}">Delete</button>`,
       ].filter(Boolean).join('');
       return `
@@ -1033,11 +1036,25 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
     try {
       const protonPulseUserId = getProtonPulseUserIdFromSession(s);
       const cid  = getWebClientIdProfile();
-      const [publishedRows, cloudRows] = await Promise.all([
-        fetchMyUserConfigs(protonPulseUserId, cid, s),
-        fetchMyCloudConfigs(protonPulseUserId, s),
+      const [[publishedRows, cloudRows], searchIndex] = await Promise.all([
+        Promise.all([
+          fetchMyUserConfigs(protonPulseUserId, cid, s),
+          fetchMyCloudConfigs(protonPulseUserId, s),
+        ]),
+        fetch('search-index.json').then(r => r.ok ? r.json() : []).catch(() => []),
       ]);
-      renderMyConfigs(mergeMyReportRows(publishedRows, cloudRows));
+      const merged = mergeMyReportRows(publishedRows, cloudRows);
+      // resolve titles not stored in DB from search-index (pipeline-generated)
+      if (Array.isArray(searchIndex) && searchIndex.length) {
+        const titleMap = new Map(searchIndex.map(([id, t]) => [String(id), t]));
+        for (const row of merged) {
+          if (!row.title || /^App \d+$/.test(row.title)) {
+            const resolved = titleMap.get(String(row.app_id));
+            if (resolved) row.title = resolved;
+          }
+        }
+      }
+      renderMyConfigs(merged);
     } catch (e) {
       myConfigsLoading.hidden = true;
       showMyConfigsStatus(e.message || 'Failed to load', false);
@@ -1048,7 +1065,7 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
   myConfigsTbody?.addEventListener('click', (e) => {
     const target = e.target;
     if (!(target instanceof HTMLElement)) return;
-    const action = target.closest('.profile-configs-publish-btn, .profile-configs-delete-btn, .profile-configs-edit-btn');
+    const action = target.closest('.profile-configs-publish-btn, .profile-configs-delete-btn, .profile-configs-edit-btn, .profile-configs-unpublish-btn');
     if (!(action instanceof HTMLElement)) return;
 
     void (async () => {
@@ -1081,6 +1098,17 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
       // the anchor click without firing this handler for them (no
       // data-app-id on the new anchors either since we matched the
       // selector above already, but the dataset.appId guard above
+      if (action.classList.contains('profile-configs-unpublish-btn')) {
+        const publishedId = action.dataset.publishedId;
+        if (!publishedId) return;
+        if (!window.confirm('Remove this report from the public game page? Your cloud config will be kept.')) return;
+        action.textContent = 'Unpublishing...';
+        await unpublishReport(s, publishedId);
+        showMyConfigsStatus('Unpublished', true);
+        await refreshMyConfigs();
+        return;
+      }
+
       // covers it -- only delete-btn carries data-app-id in this
       // updated markup)
       if (!action.classList.contains('profile-configs-delete-btn')) return;

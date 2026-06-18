@@ -106,6 +106,15 @@ export async function fetchReportHistory(reportId, session) {
   return await r.json();
 }
 
+export async function unpublishReport(session, publishedId) {
+  const url = `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${encodeURIComponent(publishedId)}`;
+  const r = await fetch(url, {
+    method: 'DELETE',
+    headers: { ...supabaseHeaders(session), Prefer: 'return=minimal' },
+  });
+  if (!r.ok) throw new Error(`Unpublish failed: HTTP ${r.status}`);
+}
+
 export async function patchUserConfig(reportId, fields, session) {
   const url = `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${encodeURIComponent(reportId)}`;
   const r = await fetch(url, {

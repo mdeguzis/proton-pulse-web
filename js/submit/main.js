@@ -59,6 +59,17 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
         }
       } catch {}
     }
+    if (!title) {
+      // Steam Store API fallback -- returns name for any app on Steam
+      try {
+        const steamResp = await fetch(`https://store.steampowered.com/api/appdetails?appids=${encodeURIComponent(appId)}&filters=basic`);
+        if (steamResp.ok) {
+          const steamData = await steamResp.json();
+          const appData = steamData?.[String(appId)];
+          if (appData?.success && appData?.data?.name) title = appData.data.name;
+        }
+      } catch {}
+    }
     if (!title) title = `App ${appId}`;
   }
 
@@ -112,7 +123,7 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
       if (rec) {
         const form = el.querySelector('#submit-report-form');
         const set = (name, val) => { if (form?.elements[name] && val != null) form.elements[name].value = val; };
-        set('gameTitle',    rec.title);
+        set('gameTitle', (rec.title && !/^App \d+$/.test(rec.title)) ? rec.title : title);
         set('cpu',          rec.cpu);
         set('gpu',          rec.gpu);
         set('gpuDriver',    rec.gpu_driver);
