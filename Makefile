@@ -170,22 +170,23 @@ check-staging-sync:
 	@if [ -n "$(FORCE_DEPLOY)" ]; then \
 		echo "FORCE_DEPLOY set -- skipping staging sync check."; \
 	else \
-		echo "Checking staging is in sync with HEAD before prod deploy..."; \
+		echo "Checking staging site is in sync with origin/staging before prod deploy..."; \
 		staging_sha=$$(curl -sf '$(STAGING_VERSION_URL)' \
 			| python3 -c 'import json,sys; print(json.load(sys.stdin).get("sha","")[:7])' 2>/dev/null || true); \
-		head_sha=$$(git rev-parse --short=7 HEAD); \
+		git fetch origin staging --quiet 2>/dev/null || true; \
+		branch_sha=$$(git rev-parse --short=7 origin/staging 2>/dev/null || git rev-parse --short=7 HEAD); \
 		if [ -z "$$staging_sha" ]; then \
 			echo "error: could not read $(STAGING_VERSION_URL)" >&2; \
-			echo "Run 'make gh-staging' and verify before promoting to prod." >&2; \
+			echo "Run 'make gh-staging' from the staging branch and verify before promoting to prod." >&2; \
 			exit 1; \
 		fi; \
-		if [ "$$staging_sha" != "$$head_sha" ]; then \
-			echo "error: staging is at $$staging_sha but HEAD is $$head_sha" >&2; \
-			echo "Run 'make gh-staging', verify the fix, then re-run this target." >&2; \
+		if [ "$$staging_sha" != "$$branch_sha" ]; then \
+			echo "error: staging site is at $$staging_sha but origin/staging is at $$branch_sha" >&2; \
+			echo "Run 'make gh-staging' from the staging branch, verify the fix, then re-run this target." >&2; \
 			echo "To skip this check (emergencies only): FORCE_DEPLOY=1 make $@" >&2; \
 			exit 1; \
 		fi; \
-		echo "Staging matches HEAD ($$staging_sha). OK to promote."; \
+		echo "Staging site matches origin/staging ($$staging_sha). OK to promote."; \
 	fi
 
 gh-run: gh-check check-staging-sync

@@ -853,6 +853,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
+          ref: staging
           path: repo
           persist-credentials: false
 
