@@ -85,15 +85,20 @@ export async function fetchNativeReports(appId) {
   } catch { return []; }
 }
 
-export async function flagReport({ reportId, appId, reportKey, source }) {
+export async function flagReport({ reportId, appId, reportKey, source, reasonCategory, reasonText, reporterClientId }) {
   const results = await Promise.all([
-    // All reports: log to flagged_reports for admin review
     fetch(`${SB_URL}/flagged_reports`, {
       method: 'POST',
       headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
-      body: JSON.stringify({ app_id: String(appId), report_key: reportKey, source: source || 'unknown' }),
+      body: JSON.stringify({
+        app_id: String(appId),
+        report_key: reportKey,
+        source: source || 'unknown',
+        reason_category: reasonCategory || null,
+        reason_text: reasonText || null,
+        reporter_client_id: reporterClientId || null,
+      }),
     }),
-    // Pulse reports only: also mark the source row so the pipeline excludes it
     reportId != null
       ? fetch(`${SB_URL}/user_configs?id=eq.${reportId}`, {
           method: 'PATCH',
@@ -102,7 +107,18 @@ export async function flagReport({ reportId, appId, reportKey, source }) {
         })
       : Promise.resolve({ ok: true }),
   ]);
-  return results.every(r => r.ok);
+  // 409 = unique constraint (already flagged) -- treat as success
+  return results.every(r => r.ok || r.status === 409);
+}
+
+export async function fetchMyFlags(clientId) {
+  try {
+    const r = await fetch(
+      `${SB_URL}/flagged_reports?reporter_client_id=eq.${encodeURIComponent(clientId)}&select=id,app_id,source,reason_category,reason_text,status,flagged_at&order=flagged_at.desc`,
+      { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
+    );
+    return r.ok ? await r.json() : [];
+  } catch { return []; }
 }
 
 export async function fetchConfigPlaytimeTotals(appId) {
