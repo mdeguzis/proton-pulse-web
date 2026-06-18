@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=a9fb53ae';
-import { loadSearchIndex, searchIndex } from './search.js?v=e2e0605e';
+import { loadSearchIndex, searchIndex } from './search.js?v=5d6f9f3e';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=4031c5fa';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=3a07c55e';
@@ -30,6 +30,7 @@ function _sortReports(reports, sort) {
 
 function _filterByTier(reports, tier) {
   if (!tier || tier === 'all') return reports;
+  if (tier === 'rated') return reports.filter(r => KNOWN_TIERS.has(r.tier));
   return reports.filter(r => r.tier === tier);
 }
 
@@ -104,9 +105,7 @@ export async function renderHomePage() {
       unratedGames = all.filter(g => ['pending', 'catalog'].includes(String(g.rating || '').toLowerCase()));
     }
 
-    const unratedToggle = unratedGames.length
-      ? `<button class="unrated-toggle" id="unrated-toggle" type="button">Not rated yet <span class="unrated-count">${unratedGames.length}</span></button>`
-      : '';
+    const unratedToggle = `<button class="unrated-toggle" id="unrated-toggle" type="button"${unratedGames.length ? '' : ' disabled'}>Not rated yet <span class="unrated-count">${unratedGames.length}</span></button>`;
 
     el.innerHTML = `
       <div class="home-filter-bar">
@@ -124,6 +123,7 @@ export async function renderHomePage() {
             <label class="home-filter-label" for="home-tier-select">Tier</label>
             <select id="home-tier-select" class="home-filter-select">
               <option value="all">All</option>
+              <option value="rated">Rated only</option>
               <option value="platinum">Platinum</option>
               <option value="gold">Gold</option>
               <option value="silver">Silver</option>
@@ -176,7 +176,7 @@ export async function renderHomePage() {
     function applyPopularFilters() {
       if (showingUnrated) return;
       let filtered = ratedGames;
-      if (currentTier !== 'all') {
+      if (currentTier !== 'all' && currentTier !== 'rated') {
         filtered = filtered.filter(g => String(g.rating || '').toLowerCase() === currentTier);
       }
       if (currentType !== 'all') {
