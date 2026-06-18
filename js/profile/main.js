@@ -1022,6 +1022,9 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
         row.cloud && row.unpublished
           ? `<a class="profile-configs-action profile-configs-publish-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1" target="_blank" rel="noopener">Publish</a>`
           : '',
+        row.published_id
+          ? `<button type="button" class="profile-configs-action profile-configs-unpublish-btn" data-published-id="${escapeHtml(String(row.published_id))}">Unpublish</button>`
+          : '',
         // Edit: published rows go to submit.html in edit mode (full form
         // pre-fill from user_configs). Cloud-only rows go to submit.html?fromCloud=1
         // where a Save button lets them update the draft without publishing.
@@ -1030,9 +1033,6 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
           : row.cloud
             ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1" target="_blank" rel="noopener">Edit</a>`
             : '',
-        row.published_id
-          ? `<button type="button" class="profile-configs-action profile-configs-unpublish-btn" data-published-id="${escapeHtml(String(row.published_id))}">Unpublish</button>`
-          : '',
         `<button type="button" class="profile-configs-action profile-configs-delete-btn" data-app-id="${escapeHtml(String(row.app_id))}">Delete</button>`,
       ].filter(Boolean).join('');
       return `

@@ -646,7 +646,7 @@
 .profile-configs-actions {
   display: flex;
   gap: 5px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   width: 100%;
 }
 .profile-configs-view-link,
@@ -655,17 +655,14 @@
   color: var(--muted);
   text-decoration: none;
   border: 1px solid var(--border2);
-  padding: 3px 6px;
+  padding: 3px 8px;
   display: inline-block;
   background: transparent;
   font-family: inherit;
   cursor: pointer;
-  flex: 1 1 0;
-  min-width: 0;
+  flex: 0 0 auto;
   text-align: center;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .profile-configs-view-link:hover,
 .profile-configs-action:hover { color: var(--accent); border-color: var(--accent); }
