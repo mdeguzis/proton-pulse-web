@@ -392,17 +392,17 @@ export async function populateSubmitForm(el) {
       </div>
       <div class="sf-row"><label>Proton Version *</label>
         <div class="sf-autocomplete" style="position:relative;flex:1;">
-          <input name="protonVersion" required placeholder="e.g. Proton 9.0-4 or GE-Proton9-27" autocomplete="off" style="width:100%">
+          <input name="protonVersion" placeholder="e.g. Proton 9.0-4 or GE-Proton9-27" autocomplete="off" style="width:100%">
           <ul class="sf-suggestions" style="display:none;position:absolute;top:100%;left:0;right:0;z-index:100;background:var(--s2);border:1px solid var(--border);border-top:none;max-height:200px;overflow-y:auto;list-style:none;margin:0;padding:0;"></ul>
         </div>
       </div>
-      <div class="sf-row"><label>GPU *</label><input name="gpu" required placeholder="e.g. NVIDIA GeForce RTX 4070"></div>
-      <div class="sf-row"><label>GPU Vendor *</label><select name="gpuVendor" required><option value="" disabled selected>-- choose one --</option>${opts(gpuVendors,true)}</select></div>
+      <div class="sf-row"><label>GPU *</label><input name="gpu" placeholder="e.g. NVIDIA GeForce RTX 4070"></div>
+      <div class="sf-row"><label>GPU Vendor *</label><select name="gpuVendor"><option value="" disabled selected>-- choose one --</option>${opts(gpuVendors,true)}</select></div>
       <div class="sf-row"><label>GPU Driver</label><input name="gpuDriver" placeholder="e.g. Mesa 24.1.0 or 555.42.02"></div>
-      <div class="sf-row"><label>CPU *</label><input name="cpu" required placeholder="e.g. AMD Ryzen 7 5800X3D"></div>
-      <div class="sf-row"><label>RAM *</label><input name="ram" required placeholder="e.g. 16 GB or 64"></div>
+      <div class="sf-row"><label>CPU *</label><input name="cpu" placeholder="e.g. AMD Ryzen 7 5800X3D"></div>
+      <div class="sf-row"><label>RAM *</label><input name="ram" placeholder="e.g. 16 GB or 64"></div>
       <div class="sf-row"><label>VRAM (MB)</label><input name="vramMb" type="number" placeholder="e.g. 8192"></div>
-      <div class="sf-row"><label>OS *</label><select name="os" required><option value="" disabled selected>-- choose one --</option>${opts(osList,false)}</select><input name="osVersion" placeholder="Version (e.g. 24.04)" style="max-width:120px"></div>
+      <div class="sf-row"><label>OS *</label><select name="os"><option value="" disabled selected>-- choose one --</option>${opts(osList,false)}</select><input name="osVersion" placeholder="Version (e.g. 24.04)" style="max-width:120px"></div>
       <div class="sf-row"><label>Kernel</label><input name="kernel" placeholder="e.g. 6.8.0"></div>
       <div class="sf-row"><label>Steam Playtime</label><select name="duration">${durationOpts}</select></div>
       <div class="sf-row"><label>Launch Options</label><input name="launchOptions" placeholder="e.g. PROTON_USE_WINED3D=1 %command%"></div>
@@ -492,7 +492,7 @@ export async function populateSubmitForm(el) {
       </div>
 
       <div class="sf-section-label" style="margin-top:16px">Notes</div>
-      <div class="sf-row"><textarea name="notes" rows="3" required placeholder="How did it run? Any issues or tweaks?"></textarea></div>
+      <div class="sf-row"><textarea name="notes" rows="3" placeholder="How did it run? Any issues or tweaks?"></textarea></div>
 
       <div class="sf-row">
         <label>Submitted from</label>

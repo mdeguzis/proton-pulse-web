@@ -12,7 +12,7 @@ import {
   getMyHwSourceMeta, setMyHwSourceMeta, getMyHwFieldOrigins,
   setMyHwFieldOrigins, setMyHwFieldOrigin, escapeHtml, formatSystemUpdated,
   getWebClientIdProfile, getMyReportBadges, flaggedMessageHtml,
-  mergeMyReportRows, getPluginLinkCodeFromLocation,
+  mergeMyReportRows, getPluginLinkCodeFromLocation, getSteamIdFromSession,
 } from './utils.js?v=2324dd84';
 import { supabaseHeaders } from './api/supabase.js?v=bdf4b262';
 import {
@@ -208,6 +208,30 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
     renderMyHwFieldOrigins();
   }
 
+  async function syncAvatarVisibility(val, session) {
+    if (!session?.user) return;
+    const uid = session.user.id;
+    const meta = session.user.user_metadata || {};
+    const displayName = meta.full_name || meta.name || '';
+    const avatarUrl = meta.avatar_url || '';
+    const steamId = getSteamIdFromSession(session) || '';
+    const headers = { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}`, 'Content-Type': 'application/json' };
+    if (val) {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/author_avatars`, {
+        method: 'POST',
+        headers: { ...headers, Prefer: 'resolution=merge-duplicates,return=minimal' },
+        body: JSON.stringify({ proton_pulse_user_id: uid, steam_id: steamId, display_name: displayName, avatar_url: avatarUrl }),
+      });
+      console.debug('[profile] author_avatars upserted', { uid, steamId, displayName, ok: res.ok, status: res.status });
+    } else {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/author_avatars?proton_pulse_user_id=eq.${uid}`, {
+        method: 'DELETE',
+        headers,
+      });
+      console.debug('[profile] author_avatars deleted', { uid, ok: res.ok, status: res.status });
+    }
+  }
+
   function showUser(user, session) {
     const name    = user.user_metadata?.full_name || user.user_metadata?.name || '';
     const email   = user.email || '';
@@ -233,6 +257,8 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
       if (fromMeta !== null) setShowUsername(val); // keep localStorage in sync
       usernameToggle.checked = val;
       usernameStatus.textContent = val ? 'Shown on reports' : 'Anonymous';
+      // ensure author_avatars row matches current preference on every load
+      if (session) syncAvatarVisibility(val, session).catch(() => {});
     }
     if (hwGpuSelect) hwGpuSelect.value = localStorage.getItem(HW_GPU_KEY) || '';
     if (hwOsInput)   hwOsInput.value   = localStorage.getItem(HW_OS_KEY)  || '';
@@ -358,7 +384,7 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
   } else {
     const session = await SupaAuth.getSession();
     if (session?.user) {
-      showUser(session.user);
+      showUser(session.user, session);
       void refreshLinkedPlugins();
     } else {
       showSignedOut();
@@ -476,6 +502,10 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
     // persist to Supabase so the preference follows the account across devices
     SupaAuth.updateUserMeta({ show_username: val }).catch((e) => {
       console.warn('[profile] failed to persist show_username to Supabase user_metadata:', e);
+    });
+    // actively upsert or delete the author_avatars row so report cards update immediately
+    SupaAuth.getSession().then(s => syncAvatarVisibility(val, s)).catch((e) => {
+      console.warn('[profile] syncAvatarVisibility failed:', e);
     });
   });
 
@@ -993,6 +1023,9 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
         row.cloud && row.unpublished
           ? `<a class="profile-configs-action profile-configs-publish-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1" target="_blank" rel="noopener">Publish</a>`
           : '',
+        row.published_id
+          ? `<button type="button" class="profile-configs-action profile-configs-unpublish-btn" data-published-id="${escapeHtml(String(row.published_id))}">Unpublish</button>`
+          : '',
         // Edit: published rows go to submit.html in edit mode (full form
         // pre-fill from user_configs). Cloud-only rows go to submit.html?fromCloud=1
         // where a Save button lets them update the draft without publishing.
@@ -1001,9 +1034,6 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
           : row.cloud
             ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1" target="_blank" rel="noopener">Edit</a>`
             : '',
-        row.published_id
-          ? `<button type="button" class="profile-configs-action profile-configs-unpublish-btn" data-published-id="${escapeHtml(String(row.published_id))}">Unpublish</button>`
-          : '',
         `<button type="button" class="profile-configs-action profile-configs-delete-btn" data-app-id="${escapeHtml(String(row.app_id))}">Delete</button>`,
       ].filter(Boolean).join('');
       return `

@@ -673,6 +673,7 @@
   font-family: inherit;
   min-height: 34px;
   text-decoration: none;
+  white-space: nowrap;
 }
 .submit-report-btn:hover { background: rgba(76,175,80,0.25); text-decoration: none; }
 .sf-row {

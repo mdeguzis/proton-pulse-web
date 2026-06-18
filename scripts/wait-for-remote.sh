@@ -12,7 +12,7 @@ set -euo pipefail
 MAX=${1:-10}
 SLEEP=${2:-3}
 
-branch=$(git rev-parse --abbrev-ref HEAD)
+branch=$(git branch --show-current)
 local_sha=$(git rev-parse HEAD)
 echo "Waiting for origin/$branch to reflect $local_sha..."
 
