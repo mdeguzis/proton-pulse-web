@@ -2,6 +2,8 @@ import json
 import math
 import os
 import time
+import urllib.error
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -1223,6 +1225,45 @@ def update_protondb_probe_cache(output_dir: str) -> dict[str, str]:
     return protondb_probe_catalog
 
 
+_SB_URL_DEFAULT = "https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1"
+_SB_ANON_KEY_DEFAULT = "sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V"
+
+
+def write_proton_versions_json(output_path: Path) -> None:
+    """Fetch distinct proton_version values from Supabase user_configs and write
+    proton-versions.json as a sorted JSON array of strings. Silently no-ops on
+    any error so a Supabase outage never fails the overall pipeline."""
+    url = os.environ.get("SUPABASE_URL", _SB_URL_DEFAULT).rstrip("/")
+    key = os.environ.get("SUPABASE_ANON_KEY", _SB_ANON_KEY_DEFAULT)
+    endpoint = (
+        f"{url}/user_configs"
+        "?select=proton_version"
+        "&proton_version=not.is.null"
+        "&order=proton_version"
+    )
+    req = urllib.request.Request(
+        endpoint,
+        headers={"apikey": key, "Accept": "application/json", "Range": "0-4999"},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            payload = json.loads(resp.read().decode("utf-8"))
+    except (urllib.error.URLError, urllib.error.HTTPError, json.JSONDecodeError, OSError) as exc:
+        log(f"[proton-versions] WARNING: failed to fetch proton_version values: {exc}")
+        return
+
+    if not isinstance(payload, list):
+        log(f"[proton-versions] WARNING: unexpected payload shape: {type(payload).__name__}")
+        return
+
+    versions = sorted(
+        {row["proton_version"].strip() for row in payload if row.get("proton_version", "").strip()}
+    )
+    out_file = output_path / "proton-versions.json"
+    out_file.write_text(json.dumps(versions, indent=2))
+    log(f"[proton-versions] Written {len(versions)} unique versions")
+
+
 def finalize_output(output_dir, skip_probe: bool = False):
     output_path = Path(output_dir)
     data_output_path = output_path / "data"
@@ -1320,6 +1361,7 @@ def finalize_output(output_dir, skip_probe: bool = False):
     build_most_played(output_path)
     overrides = build_game_images(output_path)
     _backfill_most_played_header_images(output_path, overrides)
+    write_proton_versions_json(output_path)
     log_summary(state["parsed_count"], data_output_path, output_path, pipeline_start, state["backfilled_keys"])
     flush_steam_title_cache()
     log("Done finalizing output.")

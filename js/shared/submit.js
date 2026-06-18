@@ -650,7 +650,8 @@ export async function populateSubmitForm(el) {
       }
     } catch {}
 
-    // Async: fetch live releases, extend, and persist to cache
+    // Async: fetch live releases + pipeline-harvested versions, extend, and persist to cache
+    const pvUrl = /^localhost/.test(location.host) ? 'https://www.proton-pulse.com/proton-versions.json' : 'proton-versions.json';
     Promise.allSettled([
       fetch('https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases?per_page=20')
         .then(r => r.ok ? r.json() : [])
@@ -658,6 +659,7 @@ export async function populateSubmitForm(el) {
       fetch('https://api.github.com/repos/ValveSoftware/Proton/releases?per_page=20')
         .then(r => r.ok ? r.json() : [])
         .then(rels => { for (const rel of rels) { const l = tagToLabel(rel.tag_name); if (l) protonVersions.push(l); } }),
+      fetch(pvUrl).then(r => r.ok ? r.json() : []).then(vs => { if (Array.isArray(vs)) for (const v of vs) if (v) protonVersions.push(v); }).catch(() => {}),
     ]).then(() => {
       protonVersions = [...new Set(protonVersions)];
       try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), versions: protonVersions })); } catch {}
