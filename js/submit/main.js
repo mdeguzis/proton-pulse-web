@@ -192,8 +192,9 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
     // Publish, but they can Save at any point to update the draft.
     let cloudRec = null;
     try {
+      const uid = encodeURIComponent(session.user.id);
       const r = await fetch(
-        `${SUPABASE_URL}/rest/v1/user_proton_configs?app_id=eq.${encodeURIComponent(appId)}&voter_id=eq.${encodeURIComponent(session.user.id)}&select=app_name,config,updated_at&order=updated_at.desc&limit=1`,
+        `${SUPABASE_URL}/rest/v1/user_proton_configs?app_id=eq.${encodeURIComponent(appId)}&or=(voter_id.eq.${uid},proton_pulse_user_id.eq.${uid})&select=app_name,config,updated_at&order=updated_at.desc&limit=1`,
         { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}` } }
       );
       const rows = r.ok ? await r.json() : [];
@@ -294,7 +295,7 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
       const savingText = isEdit ? 'Saving...' : 'Submitting...';
       const savedText  = isEdit ? 'Saved! Redirecting...' : 'Report submitted! Redirecting...';
 
-      el.querySelectorAll('.sf-question.sf-needs-answer').forEach(q => q.classList.remove('sf-needs-answer'));
+      el.querySelectorAll('.sf-question.sf-needs-answer, .sf-row.sf-needs-answer').forEach(q => q.classList.remove('sf-needs-answer'));
       const state = form._formState || {};
       const needsAnswer = [];
       if (!state.canInstall) needsAnswer.push('q-canInstall');
@@ -311,16 +312,22 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
         const q = el.querySelector('#' + id);
         if (q) q.classList.add('sf-needs-answer');
       }
-      // Block submission if any required question is unanswered. The UI
-      // already highlights the missing rows via .sf-needs-answer; bail
-      // before the network call so users dont publish half-empty reports.
-      // This is critical for the Publish-from-cloud flow where the form
-      // arrives with hardware prefilled but every response is blank
-      if (needsAnswer.length > 0) {
-        const first = el.querySelector('#' + needsAnswer[0]);
-        first?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Required hardware/setup fields -- highlight their parent .sf-row on empty
+      const REQUIRED_FIELD_NAMES = ['protonVersion', 'gpu', 'gpuVendor', 'cpu', 'ram', 'os', 'notes'];
+      for (const name of REQUIRED_FIELD_NAMES) {
+        const input = form.elements[name];
+        if (input && !input.value.trim()) {
+          const row = input.closest('.sf-row');
+          if (row) row.classList.add('sf-needs-answer');
+        }
+      }
+
+      const errorEls = el.querySelectorAll('.sf-needs-answer');
+      if (errorEls.length > 0) {
+        errorEls[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
         if (statusEl) {
-          statusEl.textContent = `Please answer ${needsAnswer.length} required question${needsAnswer.length === 1 ? '' : 's'} before publishing.`;
+          statusEl.textContent = 'Please fill in all required fields before publishing.';
           statusEl.style.color = 'var(--red)';
         }
         return;

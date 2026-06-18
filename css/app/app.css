@@ -710,6 +710,9 @@
 .sf-question { margin-bottom: 10px; }
 .sf-question.sf-needs-answer { border-left: 3px solid var(--red); padding-left: 10px; }
 .sf-question.sf-needs-answer .sf-q-label { color: var(--red); }
+.sf-row.sf-needs-answer { border-left: 3px solid var(--red); padding-left: 10px; }
+.sf-row.sf-needs-answer label { color: var(--red); }
+.sf-row.sf-needs-answer input, .sf-row.sf-needs-answer select, .sf-row.sf-needs-answer textarea { border-color: var(--red); }
 .sf-q-label { font-size: 0.8rem; color: var(--text); margin-bottom: 5px; }
 .sf-yn { display: flex; gap: 8px; }
 .sf-yn-btn { display: flex; align-items: center; gap: 5px; font-size: 0.8rem; color: var(--text); cursor: pointer; padding: 4px 12px; border: 1px solid var(--border); border-radius: 4px; user-select: none; }
