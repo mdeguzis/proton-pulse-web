@@ -49,30 +49,21 @@ export function renderFlagged(rows) {
   }).join('');
 }
 
-function _renderReportCard(r) {
-  if (!r) return '';
-  const rating      = (r.rating || '').toLowerCase();
-  const ratingColor = RATING_COLORS[rating] || '#888';
-  const ratingLabel = escapeHtml(rating || '?');
-  const proton      = escapeHtml(r.protonVersion || r.proton_version || '');
-  const gpu         = escapeHtml(r.gpu || '');
-  const cpu         = escapeHtml(r.cpu || '');
-  const os          = escapeHtml(r.os || '');
-  const notes       = escapeHtml(r.notes || '');
-  const source      = escapeHtml(r.source || '');
-  const ts          = r.timestamp ? new Date(r.timestamp * 1000).toLocaleDateString() : '';
-
-  const hw = [gpu, cpu, os].filter(Boolean).join(' &middot; ');
-
-  return `<div class="flag-report-card">
-    <div class="flag-report-card-header">
-      <span class="flag-report-rating" style="color:${ratingColor}">${ratingLabel}</span>
-      ${proton ? `<span class="flag-report-proton">${proton}</span>` : ''}
-      <span class="flag-report-source">${source}</span>
-      ${ts ? `<span class="flag-report-date admin-sub">${escapeHtml(ts)}</span>` : ''}
-    </div>
-    ${hw ? `<div class="flag-report-hw admin-sub">${hw}</div>` : ''}
-    ${notes ? `<div class="flag-report-notes">${notes}</div>` : '<div class="admin-sub flag-report-notes--empty">(no notes)</div>'}
+function _renderRawFields(obj, title) {
+  const rows = Object.entries(obj).map(([k, v]) => {
+    let display;
+    if (v === null || v === undefined) {
+      display = '<span class="admin-sub">(null)</span>';
+    } else if (typeof v === 'object') {
+      display = `<pre class="flag-raw-json">${escapeHtml(JSON.stringify(v, null, 2))}</pre>`;
+    } else {
+      display = escapeHtml(String(v));
+    }
+    return `<tr><td class="flag-raw-key">${escapeHtml(k)}</td><td class="flag-raw-val">${display}</td></tr>`;
+  }).join('');
+  return `<div class="flag-raw-section">
+    <div class="flag-raw-title">${escapeHtml(title)}</div>
+    <table class="flag-raw-table"><tbody>${rows}</tbody></table>
   </div>`;
 }
 
@@ -108,9 +99,10 @@ export function renderFlagDetail(flagRow, reportContent) {
         <span class="admin-status admin-status--${escapeHtml(status)}" id="flag-detail-status">${statusLabel}</span></div>
     </div>
 
+    ${_renderRawFields(flagRow, 'Flag record (flagged_reports)')}
     ${reportContent
-      ? _renderReportCard(reportContent)
-      : '<div class="admin-sub" style="margin-bottom:20px;font-style:italic">Report content not available (key may not match any stored report).</div>'}
+      ? _renderRawFields(reportContent, 'Linked report content')
+      : '<div class="admin-sub" style="margin-bottom:20px;font-style:italic">Linked report content not available (report_key may not match any stored report).</div>'}
 
     <div class="flag-detail-actions">
       <button class="admin-btn admin-btn--ok" data-action="flag-set-status" data-status="open" data-id="${rowId}">Dismiss</button>

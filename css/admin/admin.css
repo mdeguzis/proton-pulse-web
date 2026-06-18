@@ -769,6 +769,47 @@
   font-style: italic;
 }
 
+/* Raw field dump inside flag detail */
+.flag-raw-section {
+  margin-bottom: 20px;
+}
+.flag-raw-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted, #888);
+  margin-bottom: 6px;
+}
+.flag-raw-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+.flag-raw-table tr:nth-child(odd) {
+  background: rgba(255,255,255,0.03);
+}
+.flag-raw-key {
+  width: 38%;
+  padding: 4px 8px;
+  color: var(--text-muted, #aaa);
+  vertical-align: top;
+  word-break: break-all;
+  border-right: 1px solid rgba(255,255,255,0.07);
+}
+.flag-raw-val {
+  padding: 4px 8px;
+  color: var(--text, #eee);
+  vertical-align: top;
+  word-break: break-word;
+}
+pre.flag-raw-json {
+  margin: 0;
+  white-space: pre-wrap;
+  font-size: 0.75rem;
+  color: var(--text-muted, #aaa);
+}
+
 /* Analytics tab */
 .analytics-stats {
   display: flex;
