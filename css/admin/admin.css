@@ -717,6 +717,58 @@
   gap: 8px;
 }
 
+/* Report preview card inside flag detail */
+.flag-report-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+.flag-report-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.flag-report-rating {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.flag-report-proton {
+  font-size: 0.8rem;
+  color: var(--text-muted, #aaa);
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+.flag-report-source {
+  font-size: 0.75rem;
+  color: var(--text-muted, #888);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.flag-report-date {
+  margin-left: auto;
+  font-size: 0.78rem;
+}
+.flag-report-hw {
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+.flag-report-notes {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text, #eee);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.flag-report-notes--empty {
+  font-style: italic;
+}
+
 /* Analytics tab */
 .analytics-stats {
   display: flex;

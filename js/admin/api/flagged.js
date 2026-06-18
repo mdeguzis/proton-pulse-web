@@ -64,3 +64,50 @@ export async function deleteFlaggedReport(session, id) {
 // Legacy aliases kept so any other admin code that calls these still compiles
 export const reinstateReport = (session, id) => updateFlagStatus(session, id, 'complete');
 export const deleteReport = (session, id) => deleteFlaggedReport(session, id);
+
+function _reportKey(r) {
+  return `${r.timestamp}:${(r.gpu||'').slice(0,20)}:${(r.protonVersion||'').slice(0,15)}`;
+}
+
+export async function fetchFlagReportContent(session, { app_id, report_key, source }) {
+  try {
+    if (source === 'pulse' || source === 'proton-pulse') {
+      const url = `${SUPABASE_URL}/rest/v1/user_configs?app_id=eq.${encodeURIComponent(app_id)}`
+        + `&select=id,client_id,app_id,cpu,gpu,os,kernel,ram,proton_version,rating,duration,duration_minutes,notes,vram_mb,form_responses,created_at,updated_at,source`;
+      const res = await fetch(url, { headers: supabaseHeaders(session) });
+      if (!res.ok) return null;
+      const rows = await res.json();
+      const row = rows.find(r => {
+        const ts = Math.floor(new Date(r.created_at).getTime() / 1000);
+        const key = `${ts}:${(r.gpu||'').slice(0,20)}:${(r.proton_version||'').slice(0,15)}`;
+        return key === report_key;
+      });
+      if (!row) return null;
+      return {
+        source:        row.source || 'proton-pulse',
+        timestamp:     Math.floor(new Date(row.created_at).getTime() / 1000),
+        rating:        row.rating || '',
+        protonVersion: row.proton_version || '',
+        gpu:           row.gpu || '',
+        cpu:           row.cpu || '',
+        os:            row.os || '',
+        kernel:        row.kernel || '',
+        ram:           row.ram || '',
+        vramMb:        row.vram_mb ?? null,
+        notes:         row.notes || '',
+        duration:      row.duration || '',
+        durationMinutes: row.duration_minutes ?? null,
+        formResponses: row.form_responses ?? null,
+      };
+    }
+    // ProtonDB: fetch CDN bundle
+    const cdnBase = 'https://www.proton-pulse.com/data';
+    const res = await fetch(`${cdnBase}/${encodeURIComponent(app_id)}/latest.json`);
+    if (!res.ok) return null;
+    const reports = await res.json();
+    const arr = Array.isArray(reports) ? reports : (reports.reports || reports.data || []);
+    return arr.find(r => _reportKey(r) === report_key) || null;
+  } catch {
+    return null;
+  }
+}

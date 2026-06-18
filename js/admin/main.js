@@ -1,8 +1,8 @@
 import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
 import { supabaseHeaders, escapeHtml } from './utils.js?v=86489fcb';
 import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=529eb059';
-import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport } from './api/flagged.js?v=68890009';
-import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=b3e69751';
+import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent } from './api/flagged.js?v=cdf23ca4';
+import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=822d0a32';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
 import { fetchAllUsers } from './api/users.js?v=52e867d2';
@@ -247,11 +247,14 @@ async function loadUserDetail(user) {
   }
 }
 
-function loadFlagDetail(row) {
+async function loadFlagDetail(row) {
   document.querySelectorAll('.admin-section').forEach(sec => { sec.hidden = true; });
   document.getElementById('tab-flag-detail').hidden = false;
   document.getElementById('admin-tab-select').value = '';
-  document.getElementById('flag-detail-content').innerHTML = renderFlagDetail(row);
+  const content = document.getElementById('flag-detail-content');
+  content.innerHTML = '<div class="admin-loading">Loading report...</div>';
+  const reportContent = await fetchFlagReportContent(currentSession, row);
+  content.innerHTML = renderFlagDetail(row, reportContent);
 }
 
 // ---------------------------------------------------------------------------
