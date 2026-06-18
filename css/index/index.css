@@ -206,6 +206,12 @@
   box-shadow: 0 0 20px var(--accent-glow);
 }
 .cta-primary:hover { filter: brightness(1.06); }
+/* On desktop the flex:1 buttons stretch the full container and read as huge
+   banners. Cap the row to half width so the two CTAs stay a sensible size.
+   Mobile keeps the full-width row for tap targets. */
+@media (min-width: 760px) {
+  .welcome-cta { max-width: 50%; }
+}
 .welcome-learn-more {
   font-size: 0.85rem;
   color: var(--muted);
