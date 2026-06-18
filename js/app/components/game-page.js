@@ -5,13 +5,13 @@ import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '.
 import { getWebClientId } from '../../shared/submit.js?v=09904778';
 import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.js?v=64d7ee9d';
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=a9f7de6b';
-import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=1665ba7c';
+import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=b467da95';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=8acef52f';
-import { enhanceAuthorBlocks } from './author.js?v=1413842c';
+import { enhanceAuthorBlocks } from './author.js?v=fce5dcc9';
 import { renderConfigCard } from './config-cards.js?v=3d52c1a1';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=b0fa82d9';
-import { renderCard } from './report-card.js?v=64bd7761';
-import { loadSearchIndex, searchIndex } from './search.js?v=8285879f';
+import { renderCard } from './report-card.js?v=672c553f';
+import { loadSearchIndex, searchIndex } from './search.js?v=7aa3f91b';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref } from '../config.js?v=4031c5fa';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=85cf4195';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';
@@ -676,7 +676,12 @@ export async function renderGamePage(appId) {
         e.stopPropagation();
         if (b.classList.contains('flagged')) return;
         b.disabled = true;
-        const ok = await flagReport(b.dataset.reportId);
+        const ok = await flagReport({
+          reportId: b.dataset.reportId ? Number(b.dataset.reportId) : null,
+          appId: b.dataset.appId,
+          reportKey: b.dataset.reportKey,
+          source: b.dataset.source,
+        });
         if (ok) {
           b.classList.add('flagged');
           b.title = 'Flagged for review';

@@ -85,13 +85,24 @@ export async function fetchNativeReports(appId) {
   } catch { return []; }
 }
 
-export async function flagReport(reportId) {
-  const r = await fetch(`${SB_URL}/user_configs?id=eq.${reportId}`, {
-    method: 'PATCH',
-    headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
-    body: JSON.stringify({ is_flagged: true }),
-  });
-  return r.ok;
+export async function flagReport({ reportId, appId, reportKey, source }) {
+  const results = await Promise.all([
+    // All reports: log to flagged_reports for admin review
+    fetch(`${SB_URL}/flagged_reports`, {
+      method: 'POST',
+      headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+      body: JSON.stringify({ app_id: String(appId), report_key: reportKey, source: source || 'unknown' }),
+    }),
+    // Pulse reports only: also mark the source row so the pipeline excludes it
+    reportId != null
+      ? fetch(`${SB_URL}/user_configs?id=eq.${reportId}`, {
+          method: 'PATCH',
+          headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+          body: JSON.stringify({ is_flagged: true }),
+        })
+      : Promise.resolve({ ok: true }),
+  ]);
+  return results.every(r => r.ok);
 }
 
 export async function fetchConfigPlaytimeTotals(appId) {

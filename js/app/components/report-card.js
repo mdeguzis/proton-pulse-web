@@ -3,7 +3,7 @@
 import { estimateScore } from '../../shared/scoring.js?v=0dae1257';
 import { getWebClientId } from '../../shared/submit.js?v=09904778';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
-import { renderAuthorBlock } from './author.js?v=1413842c';
+import { renderAuthorBlock } from './author.js?v=fce5dcc9';
 import { buildFormRows } from './config-cards.js?v=3d52c1a1';
 import { renderSignalStrip } from './signals.js?v=a1026433';
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=4031c5fa';
@@ -100,7 +100,7 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
         ${(() => { const fr = buildFormRows(r); return fr ? `<button class="action-btn" onclick="const p=this.closest('.card-summary').querySelector('.fr-panel');p.classList.toggle('open');this.textContent=p.classList.contains('open')?'Hide Report Responses':'Show Report Responses'">Show Report Responses</button>` : ''; })()}
         <button class="action-btn" onclick="this.closest('.card-summary').querySelector('.hw-details-panel').classList.toggle('open');this.textContent=this.closest('.card-summary').querySelector('.hw-details-panel').classList.contains('open')?'Hide details':'All details'">All details</button>
         <button class="action-btn action-btn-icon" data-report-json='${JSON.stringify(r).replace(/'/g,"&#39;")}' title="Download as JSON"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-14 9v2h14v-2H5z"/></svg></button>
-        ${!isProtonDb && r.reportId != null ? `<button class="action-btn action-btn-icon flag-report-btn${r.isFlagged ? ' flagged' : ''}" data-report-id="${r.reportId}" title="${r.isFlagged ? 'Flagged for review' : 'Flag this report'}"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg></button>` : ''}
+        <button class="action-btn action-btn-icon flag-report-btn${r.isFlagged ? ' flagged' : ''}" data-report-id="${r.reportId ?? ''}" data-app-id="${r.appId}" data-report-key="${esc(rKey)}" data-source="${esc(r.source || 'unknown')}" title="${r.isFlagged ? 'Flagged for review' : 'Flag this report'}"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg></button>
         ${renderPermalink(r)}
         ${r.clientId && r.clientId === getWebClientId() ? `<button class="action-btn action-btn-danger delete-report-btn" data-app-id="${r.appId || ''}" title="Delete your report">Delete</button>` : ''}
       </div>
