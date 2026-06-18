@@ -277,6 +277,45 @@
 .pg-silver   { background: #8fa0b0; color: #111; }
 .pg-bronze   { background: #b07040; color: #fff; }
 .pg-borked   { background: #c85050; color: #fff; }
+.pg-unrated  { background: var(--border); color: var(--muted); }
+
+/* Popular games header row: section label + "Not rated yet" toggle.
+   Toggle styling mirrors .unrated-toggle in css/app/app.css so the control
+   looks the same on the homepage and the app browser. */
+.pg-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pg-head .section-label { margin-bottom: 0; }
+.pg-head .unrated-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  background: transparent;
+  border: 1px solid var(--border2, var(--border));
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.15s, color 0.15s;
+}
+.pg-head .unrated-toggle:hover:not([disabled]) { border-color: var(--accent); color: var(--accent); }
+.pg-head .unrated-toggle--active { border-color: var(--accent); color: var(--accent); background: rgba(190,238,17,0.06); }
+.pg-head .unrated-toggle[disabled] { opacity: 0.5; cursor: default; }
+.pg-head .unrated-count {
+  background: var(--border2, var(--border));
+  border-radius: 2px;
+  padding: 0 5px;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+.pg-head .unrated-toggle--active .unrated-count { background: rgba(190,238,17,0.18); }
 
 /* quick-actions row removed - the topnav covers those links now */
 

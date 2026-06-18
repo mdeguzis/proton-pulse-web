@@ -90,29 +90,69 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=85cf419
   }
 
   const RATING_LABEL = { platinum: 'Platinum', gold: 'Gold', silver: 'Silver', bronze: 'Bronze', borked: 'Borked' };
+  // Tiers that count as a real compatibility rating. Anything else (catalog,
+  // pending, empty) is a title we list but have no reports for yet.
+  const KNOWN_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked']);
+
+  function pgCardHtml(g) {
+    const img = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(g.appId)}/header.jpg`;
+    const peak = fmtPeak(g.peak);
+    const rating = String(g.rating || '').toLowerCase();
+    const rated = KNOWN_TIERS.has(rating);
+    const badgeClass = rated ? `pg-${rating}` : 'pg-unrated';
+    const rLabel = rated ? RATING_LABEL[rating] : 'Unrated';
+    return `
+      <a class="pg-card" href="app.html#/app/${encodeURIComponent(g.appId)}">
+        <img class="pg-thumb" src="${img}" data-appid="${g.appId}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">
+        <div class="pg-info">
+          <div class="pg-title">${esc(g.title)}</div>
+          ${peak ? `<div class="pg-sub">${peak} peak players</div>` : ''}
+        </div>
+        <span class="pg-badge ${badgeClass}">${rLabel}</span>
+      </a>`;
+  }
 
   try {
     const resp = await fetch('most_played.json', { cache: 'no-store' });
-    if (!resp.ok) return;
+    if (!resp.ok) {
+      console.debug('[popular-games] most_played.json fetch not ok', { status: resp.status });
+      return;
+    }
     const games = await resp.json();
-    if (!Array.isArray(games) || games.length === 0) return;
+    if (!Array.isArray(games) || games.length === 0) {
+      console.debug('[popular-games] most_played.json empty or not an array', { type: typeof games });
+      return;
+    }
 
-    list.innerHTML = games.map((g) => {
-      const img = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(g.appId)}/header.jpg`;
-      const peak = fmtPeak(g.peak);
-      const rating = String(g.rating || '').toLowerCase();
-      const rLabel = RATING_LABEL[rating] || 'Unrated';
-      return `
-        <a class="pg-card" href="app.html#/app/${encodeURIComponent(g.appId)}">
-          <img class="pg-thumb" src="${img}" data-appid="${g.appId}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">
-          <div class="pg-info">
-            <div class="pg-title">${esc(g.title)}</div>
-            ${peak ? `<div class="pg-sub">${peak} peak players</div>` : ''}
-          </div>
-          <span class="pg-badge pg-${rating}">${rLabel}</span>
-        </a>`;
-    }).join('');
+    // Split into rated games (shown by default) and unrated titles that lack
+    // reports (catalog/pending). The unrated ones stay hidden behind a toggle
+    // so the default view is only games we actually have a rating for.
+    const ratedGames = games.filter((g) => KNOWN_TIERS.has(String(g.rating || '').toLowerCase()));
+    const unratedGames = games.filter((g) => !KNOWN_TIERS.has(String(g.rating || '').toLowerCase()));
+    console.debug('[popular-games] loaded most_played.json', {
+      total: games.length, rated: ratedGames.length, unrated: unratedGames.length, source: 'most_played.json',
+    });
 
+    list.innerHTML = ratedGames.map(pgCardHtml).join('');
     section.hidden = false;
-  } catch (_) { /* leave the section hidden */ }
+
+    // Toggle reveals/hides the unrated titles. Disabled when there are none so
+    // the control is always visible but inert rather than missing.
+    const toggle = document.getElementById('pg-unrated-toggle');
+    const countEl = document.getElementById('pg-unrated-count');
+    if (countEl) countEl.textContent = String(unratedGames.length);
+    if (toggle) {
+      toggle.disabled = unratedGames.length === 0;
+      let showingUnrated = false;
+      toggle.addEventListener('click', () => {
+        if (!unratedGames.length) return;
+        showingUnrated = !showingUnrated;
+        toggle.classList.toggle('unrated-toggle--active', showingUnrated);
+        list.innerHTML = (showingUnrated ? [...ratedGames, ...unratedGames] : ratedGames).map(pgCardHtml).join('');
+      });
+    }
+  } catch (err) {
+    console.debug('[popular-games] failed to load most_played.json', { error: String(err) });
+    /* leave the section hidden */
+  }
 })();

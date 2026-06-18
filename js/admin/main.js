@@ -16,7 +16,7 @@ import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=916ae
 import { renderUserDetail } from './components/userDetail.js?v=7025c758';
 import { fetchAnalytics } from './api/analytics.js?v=1b3f4599';
 import { renderAnalytics } from './components/analytics.js?v=7d29939b';
-import { renderCacheStatus } from './components/cache-status.js?v=1d3568a9';
+import { renderCacheStatus } from './components/cache-status.js?v=764c4d18';
 
 // ---------------------------------------------------------------------------
 // State

@@ -1,6 +1,6 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=0dae1257';
-import { populateSubmitForm, prefillSubmitFormFromMyHardware, submitReport } from '../shared/submit.js?v=9787c27e';
+import { populateSubmitForm, prefillSubmitFormFromMyHardware, submitReport } from '../shared/submit.js?v=c57cb3d6';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 
 (async function() {
