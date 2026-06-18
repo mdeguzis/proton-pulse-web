@@ -1,9 +1,13 @@
 /**
- * Tests for unpublishReport (js/profile/api/configs.js) and the
- * search-index title resolution logic extracted from profile/main.js.
+ * Tests for unpublishReport (js/profile/api/configs.js), search-index title
+ * resolution, and profile action button rendering logic.
  *
  * Regression for: unpublish handler was placed after the appId guard so it
  * never fired (the button has data-published-id, not data-app-id).
+ *
+ * Regression for: cloud-only Edit button was a link to submit.html (fromCloud=1)
+ * which opened the full publish form with no visible Save button -- should
+ * instead be a button with data-cloud-app-id that opens the lightweight modal.
  */
 
 const fs   = require('fs');
@@ -167,5 +171,72 @@ describe('search-index title resolution', () => {
     expect(out[0].title).toBe('Half-Life');
     expect(out[1].title).toBe('Team Fortress 2');
     expect(out[2].title).toBe('App 9999');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Action button rendering -- cloud-only Edit must NOT link to submit.html
+// ---------------------------------------------------------------------------
+
+describe('profile action button rendering', () => {
+  // Mirror the action button logic from profile/main.js renderMyConfigs
+  function makeActions(row, esc = s => String(s)) {
+    const actions = [
+      row.cloud && row.unpublished
+        ? `<a class="profile-configs-action profile-configs-publish-btn" href="submit.html?app=${esc(String(row.app_id))}&fromCloud=1">Publish</a>`
+        : '',
+      row.published_id
+        ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${esc(String(row.app_id))}&edit=${esc(String(row.published_id))}">Edit</a>`
+        : row.cloud
+          ? `<button type="button" class="profile-configs-action profile-configs-edit-btn" data-cloud-app-id="${esc(String(row.app_id))}">Edit</button>`
+          : '',
+      row.published_id
+        ? `<button type="button" class="profile-configs-action profile-configs-unpublish-btn" data-published-id="${esc(String(row.published_id))}">Unpublish</button>`
+        : '',
+      `<button type="button" class="profile-configs-action profile-configs-delete-btn" data-app-id="${esc(String(row.app_id))}">Delete</button>`,
+    ].filter(Boolean).join('');
+    return actions;
+  }
+
+  test('cloud-only edit is a button with data-cloud-app-id, not a link to submit.html', () => {
+    const row = { app_id: 2358720, cloud: true, unpublished: true, published_id: null };
+    const html = makeActions(row);
+    expect(html).toContain('data-cloud-app-id="2358720"');
+    // The Edit element specifically must be a button, not an anchor to submit.html
+    expect(html).not.toMatch(/profile-configs-edit-btn[^>]*href=.*submit\.html/);
+    expect(html).toContain('<button');
+  });
+
+  test('cloud-only edit button has profile-configs-edit-btn class', () => {
+    const row = { app_id: 2358720, cloud: true, unpublished: true, published_id: null };
+    const html = makeActions(row);
+    expect(html).toMatch(/class="[^"]*profile-configs-edit-btn[^"]*"/);
+  });
+
+  test('published edit is an anchor to submit.html with edit param', () => {
+    const row = { app_id: 730, cloud: false, unpublished: false, published_id: 99 };
+    const html = makeActions(row);
+    expect(html).toContain('submit.html?app=730&edit=99');
+    expect(html).toContain('<a ');
+  });
+
+  test('published row shows Unpublish button with data-published-id', () => {
+    const row = { app_id: 730, cloud: false, unpublished: false, published_id: 99 };
+    const html = makeActions(row);
+    expect(html).toContain('data-published-id="99"');
+    expect(html).toContain('profile-configs-unpublish-btn');
+  });
+
+  test('cloud-only row shows Publish link to submit.html fromCloud', () => {
+    const row = { app_id: 2358720, cloud: true, unpublished: true, published_id: null };
+    const html = makeActions(row);
+    expect(html).toContain('submit.html?app=2358720&fromCloud=1');
+    expect(html).toContain('profile-configs-publish-btn');
+  });
+
+  test('cloud-only row does not show Unpublish button', () => {
+    const row = { app_id: 2358720, cloud: true, unpublished: true, published_id: null };
+    const html = makeActions(row);
+    expect(html).not.toContain('profile-configs-unpublish-btn');
   });
 });
