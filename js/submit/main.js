@@ -1,6 +1,6 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=0dae1257';
-import { populateSubmitForm, prefillSubmitFormFromMyHardware, submitReport } from '../shared/submit.js?v=5bbe6609';
+import { populateSubmitForm, prefillSubmitFormFromMyHardware, submitReport } from '../shared/submit.js?v=9787c27e';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 
 (async function() {
@@ -252,17 +252,15 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
       saveBtn.disabled = true;
       saveBtn.textContent = 'Saving...';
       try {
-        const patchR = await fetch(
-          `${SUPABASE_URL}/rest/v1/user_proton_configs?app_id=eq.${encodeURIComponent(appId)}&voter_id=eq.${encodeURIComponent(session.user.id)}`,
+        const rpcR = await fetch(
+          `${SUPABASE_URL}/rest/v1/rpc/update_my_cloud_config`,
           {
-            method: 'PATCH',
-            headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}`, 'Content-Type': 'application/json', Prefer: 'return=representation' },
-            body: JSON.stringify({ app_name: gameTitle, config: newConfig }),
+            method: 'POST',
+            headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}`, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ p_app_id: parseInt(appId, 10), p_app_name: gameTitle, p_config: newConfig }),
           }
         );
-        if (!patchR.ok) throw new Error(`HTTP ${patchR.status}`);
-        const updated = await patchR.json();
-        if (!Array.isArray(updated) || !updated.length) throw new Error('Config row not found -- try reloading');
+        if (!rpcR.ok) { const msg = await rpcR.text().catch(() => ''); throw new Error(`HTTP ${rpcR.status}${msg ? ': ' + msg : ''}`); }
         cloudRec = { ...cloudRec, app_name: gameTitle, config: newConfig };
         if (statusEl) { statusEl.textContent = 'Saved.'; statusEl.style.color = 'var(--green)'; }
         console.debug('[submit] fromCloud: saved draft', { appId });
