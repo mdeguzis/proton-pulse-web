@@ -108,7 +108,9 @@ export function renderFlagDetail(flagRow, reportContent) {
         <span class="admin-status admin-status--${escapeHtml(status)}" id="flag-detail-status">${statusLabel}</span></div>
     </div>
 
-    ${_renderReportCard(reportContent)}
+    ${reportContent
+      ? _renderReportCard(reportContent)
+      : '<div class="admin-sub" style="margin-bottom:20px;font-style:italic">Report content not available (key may not match any stored report).</div>'}
 
     <div class="flag-detail-actions">
       <button class="admin-btn admin-btn--ok" data-action="flag-set-status" data-status="open" data-id="${rowId}">Dismiss</button>
