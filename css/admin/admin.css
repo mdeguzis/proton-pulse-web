@@ -855,3 +855,10 @@ pre.flag-raw-json {
 @media (max-width: 640px) {
   .analytics-two-col { grid-template-columns: 1fr; }
 }
+
+/* Cache status panel */
+.cache-status-pass { color: var(--green, #98c379); font-weight: 600; }
+.cache-status-fail { color: var(--red, #e06c75); font-weight: 600; }
+.cache-status-warn { color: var(--yellow, #e5c07b); font-weight: 600; }
+.cache-status-details summary { font-size: 0.82rem; padding: 4px 0; }
+.cache-status-section { max-width: 860px; }

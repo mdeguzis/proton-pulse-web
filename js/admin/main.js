@@ -2,7 +2,7 @@ import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
 import { supabaseHeaders, escapeHtml } from './utils.js?v=86489fcb';
 import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=529eb059';
 import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent } from './api/flagged.js?v=cdf23ca4';
-import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=822d0a32';
+import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=f187fd29';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
 import { fetchAllUsers } from './api/users.js?v=52e867d2';
@@ -16,6 +16,7 @@ import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=916ae
 import { renderUserDetail } from './components/userDetail.js?v=7025c758';
 import { fetchAnalytics } from './api/analytics.js?v=1b3f4599';
 import { renderAnalytics } from './components/analytics.js?v=7d29939b';
+import { renderCacheStatus } from './components/cache-status.js?v=1d3568a9';
 
 // ---------------------------------------------------------------------------
 // State
@@ -308,6 +309,8 @@ async function loadAnalytics() {
   } catch (e) {
     content.innerHTML = `<div class="admin-error">${e.message}</div>`;
   }
+  const cacheContainer = document.getElementById('cache-status-content');
+  if (cacheContainer) renderCacheStatus(cacheContainer).catch(() => {});
 }
 
 // Maps each tab to its data loader so tab clicks and ?tab= restore share one path.
