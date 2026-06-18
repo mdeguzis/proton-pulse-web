@@ -21,12 +21,12 @@ import {
 } from './api/systems.js?v=fcfc95e6';
 import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
-  deleteAllMyData, fetchAllMyData, checkMyDataExists,
-} from './api/configs.js?v=d05d75ee';
+  deleteAllMyData, fetchAllMyData, checkMyDataExists, fetchMyFlags,
+} from './api/configs.js?v=44dafad8';
 import {
   listLinkedPlugins, completePluginLink, removePluginLink,
 } from './api/plugin-links.js?v=59c9f51e';
-import { showEditCloudConfigModal, showEditReportModal } from './components/edit-modals.js?v=9a559851';
+import { showEditCloudConfigModal, showEditReportModal } from './components/edit-modals.js?v=2ade3cb8';
 
 (async function () {
   const signedIn  = document.getElementById('profile-signed-in');
@@ -1096,6 +1096,57 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
   });
 
   void refreshMyConfigs();
+
+  // ── Reports I Flagged ─────────────────────────────────────────────────────
+  const myFlagsTable   = document.getElementById('my-flags-table');
+  const myFlagsTbody   = document.getElementById('my-flags-tbody');
+  const myFlagsEmpty   = document.getElementById('my-flags-empty');
+  const myFlagsLoading = document.getElementById('my-flags-loading');
+  const myFlagsRefresh = document.getElementById('my-flags-refresh-btn');
+
+  const STATUS_LABELS = { open: 'Open', in_review: 'In Review', complete: 'Complete' };
+  const STATUS_TONES  = { open: '', in_review: 'warn', complete: 'ok' };
+
+  function renderMyFlags(rows) {
+    if (!myFlagsTable || !myFlagsTbody || !myFlagsEmpty || !myFlagsLoading) return;
+    myFlagsLoading.hidden = true;
+    if (!rows || rows.length === 0) {
+      myFlagsTable.hidden = true;
+      myFlagsEmpty.hidden = false;
+      return;
+    }
+    myFlagsEmpty.hidden = true;
+    myFlagsTable.hidden = false;
+    myFlagsTbody.innerHTML = rows.map(row => {
+      const appId   = row.app_id ? escapeHtml(String(row.app_id)) : '';
+      const appLink = appId ? `<a href="app.html#/app/${appId}">App ${appId}</a>` : '—';
+      const reason  = escapeHtml(STATUS_LABELS[row.reason_category] || row.reason_category || '—');
+      const date    = row.flagged_at ? escapeHtml(new Date(row.flagged_at).toLocaleDateString()) : '—';
+      const status  = row.status || 'open';
+      const tone    = STATUS_TONES[status] || '';
+      const badgeClass = tone ? `profile-configs-badge profile-configs-badge--${escapeHtml(tone)}` : 'profile-configs-badge';
+      const statusLabel = escapeHtml(STATUS_LABELS[status] || status);
+      return `<tr>
+        <td>${appLink}</td>
+        <td>${reason}</td>
+        <td>${date}</td>
+        <td><span class="${badgeClass}">${statusLabel}</span></td>
+      </tr>`;
+    }).join('');
+  }
+
+  async function refreshMyFlags() {
+    if (!myFlagsLoading) return;
+    myFlagsLoading.hidden = false;
+    if (myFlagsEmpty) myFlagsEmpty.hidden = true;
+    if (myFlagsTable) myFlagsTable.hidden = true;
+    const cid = getWebClientIdProfile();
+    const rows = await fetchMyFlags(cid);
+    renderMyFlags(rows);
+  }
+
+  myFlagsRefresh?.addEventListener('click', () => { void refreshMyFlags(); });
+  void refreshMyFlags();
 
   // Topbar auth chip + mobile nav are now wired in topbar.js (shared across all pages)
 })();
