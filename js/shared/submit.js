@@ -381,10 +381,7 @@ export async function populateSubmitForm(el) {
     </details>
     <form id="submit-report-form" autocomplete="on">
       <div class="sf-section-label">Game</div>
-      <!-- Game title is required so reports always carry the human-readable
-           name. Pre-filled from the resolved page title; users can correct it
-           if Steam's name differs (e.g. localized vs canonical spelling) -->
-      <div class="sf-row"><label>Game title *</label><input name="gameTitle" required placeholder="e.g. Black Myth: Wukong" minlength="1"></div>
+      <div class="sf-row"><label>Game title</label><input name="gameTitle" readonly style="cursor:default;color:var(--muted);border-color:var(--border2);background:var(--s1);" placeholder="Loading..."></div>
 
       <div class="sf-section-label">Hardware &amp; Setup</div>
       <div class="sf-row"><label>System</label>
@@ -636,7 +633,8 @@ export async function populateSubmitForm(el) {
   // - Populate proton datalist: schema defaults + live GE-Proton + official Proton releases
   const dl = container.querySelector('#proton-versions');
   if (dl) {
-    const known = new Set(schema.knownProtonVersions || []);
+    const PROTON_FALLBACK = ['Proton Experimental','Proton 10.0-4','Proton 9.0-4','Proton 8.0-5','GE-Proton9-27','GE-Proton9-20','GE-Proton8-32'];
+    const known = new Set([...PROTON_FALLBACK, ...(schema.knownProtonVersions || [])]);
     const tagToLabel = tag => {
       // proton-10.0-4 -> "Proton 10.0-4", ignore pre-release suffixes like -beta3
       const m = tag.match(/^proton-(\d+\.\d+-\d+)$/i);

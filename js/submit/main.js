@@ -1,6 +1,6 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=0dae1257';
-import { populateSubmitForm, prefillSubmitFormFromMyHardware, submitReport } from '../shared/submit.js?v=09904778';
+import { populateSubmitForm, prefillSubmitFormFromMyHardware, submitReport } from '../shared/submit.js?v=b1c0d82b';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 
 (async function() {
@@ -253,14 +253,16 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
       saveBtn.textContent = 'Saving...';
       try {
         const patchR = await fetch(
-          `${SUPABASE_URL}/rest/v1/user_proton_configs?app_id=eq.${encodeURIComponent(appId)}&voter_id=eq.${encodeURIComponent(session.user.id)}`,
+          `${SUPABASE_URL}/rest/v1/user_proton_configs?app_id=eq.${encodeURIComponent(appId)}&proton_pulse_user_id=eq.${encodeURIComponent(session.user.id)}`,
           {
             method: 'PATCH',
-            headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+            headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}`, 'Content-Type': 'application/json', Prefer: 'return=representation' },
             body: JSON.stringify({ app_name: gameTitle, config: newConfig }),
           }
         );
         if (!patchR.ok) throw new Error(`HTTP ${patchR.status}`);
+        const updated = await patchR.json();
+        if (!Array.isArray(updated) || !updated.length) throw new Error('Config row not found -- try reloading');
         cloudRec = { ...cloudRec, app_name: gameTitle, config: newConfig };
         if (statusEl) { statusEl.textContent = 'Saved.'; statusEl.style.color = 'var(--green)'; }
         console.debug('[submit] fromCloud: saved draft', { appId });
