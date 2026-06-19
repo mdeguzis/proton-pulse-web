@@ -26,7 +26,7 @@ jobs:
       - name: Notify Discord on failure
         uses: sarisia/actions-status-discord@v1
         with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          webhook: ${{ secrets.DISCORD_WEBHOOK_BUILDS }}
           status: failure
           nofail: true
           title: "${{ github.event.workflow_run.name }} failed"

@@ -1,0 +1,48 @@
+name: Discord Issues
+
+on:
+  issues:
+    types: [opened, closed, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post to Discord
+        env:
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_ISSUES }}
+        run: |
+          ACTION="${{ github.event.action }}"
+          case "$ACTION" in
+            opened)   COLOR=5763719 ;;
+            closed)   COLOR=15548997 ;;
+            reopened) COLOR=16776796 ;;
+            *)        COLOR=9807270 ;;
+          esac
+
+          TITLE=$(echo '${{ github.event.issue.title }}' | jq -Rs '.')
+          BODY=$(cat <<'ENDJQ'
+          {
+            "embeds": [{
+              "title": "Issue ACTIONPLACEHOLDER: #NUMPLACEHOLDER",
+              "description": TITLEPLACEHOLDER,
+              "url": "URLPLACEHOLDER",
+              "color": COLORPLACEHOLDER,
+              "footer": { "text": "USERPLACEHOLDER" }
+            }]
+          }
+          ENDJQ
+          )
+
+          BODY=$(echo "$BODY" | sed \
+            -e "s|ACTIONPLACEHOLDER|$ACTION|" \
+            -e "s|NUMPLACEHOLDER|${{ github.event.issue.number }}|" \
+            -e "s|TITLEPLACEHOLDER|$TITLE|" \
+            -e "s|URLPLACEHOLDER|${{ github.event.issue.html_url }}|" \
+            -e "s|COLORPLACEHOLDER|$COLOR|" \
+            -e "s|USERPLACEHOLDER|${{ github.event.sender.login }}|")
+
+          curl -s -H "Content-Type: application/json" -d "$BODY" "$WEBHOOK_URL"
