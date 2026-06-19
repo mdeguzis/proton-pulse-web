@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=a9fb53ae';
-import { loadSearchIndex, searchIndex } from './search.js?v=78b89e87';
+import { loadSearchIndex, searchIndex } from './search.js?v=d808f5db';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=4031c5fa';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=3a07c55e';
@@ -104,26 +104,6 @@ function _loadMoreBtn(sectionId) {
 
 function _allShownNote(count) {
   return `<p class="home-results-note">Showing all ${count} result${count === 1 ? '' : 's'}</p>`;
-}
-
-function _appendCards(sectionId, queue) {
-  const cardsEl = document.getElementById(`cards-${sectionId}`);
-  const btnEl = document.getElementById(`load-more-${sectionId}`);
-  if (!cardsEl || !queue.length) { if (btnEl) btnEl.innerHTML = ''; return; }
-  const batch = queue.splice(0, PAGE_SIZE);
-  const html = sectionId === 'recent'
-    ? batch.map(_recentCardHtml).join('')
-    : batch.map(g => {
-        const tier = g.tier || String(g.rating || '').toLowerCase();
-        return renderGameCard({
-          href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
-          title: g.title,
-          sub: tier === 'pending' ? 'No reports yet · be the first' : _popularSub(g),
-          tier: tier || undefined, sourceLabel: 'Steam',
-        });
-      }).join('');
-  cardsEl.insertAdjacentHTML('beforeend', html);
-  if (!queue.length && btnEl) btnEl.innerHTML = '';
 }
 
 function _recentCardHtml(r) {
@@ -296,7 +276,12 @@ export async function renderHomePage() {
       if (loadMoreEl) {
         if (queue.length) {
           loadMoreEl.innerHTML = _loadMoreBtn('recent');
-          loadMoreEl.querySelector('button').addEventListener('click', () => _appendCards('recent', queue));
+          // Append with the same renderFn so load-more keeps the current view.
+          loadMoreEl.querySelector('button').addEventListener('click', () => {
+            const batch = queue.splice(0, PAGE_SIZE);
+            cardsEl.insertAdjacentHTML('beforeend', batch.map(renderFn).join(''));
+            if (!queue.length) loadMoreEl.innerHTML = '';
+          });
         } else {
           loadMoreEl.innerHTML = filtered.length ? _allShownNote(filtered.length) : '';
         }

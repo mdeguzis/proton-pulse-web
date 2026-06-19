@@ -44,4 +44,12 @@ describe('configurable card size (S/M/L)', () => {
     expect(homeSrc).toContain('function _popularItemHtml(g)');
     expect(homeSrc).toContain("if (currentLayout === 'list') return _listRowHtml(g)");
   });
+
+  test('load more keeps the current view in both sections', () => {
+    // recent appends with the layout-aware renderFn, popular with _popularItemHtml
+    expect(homeSrc).toContain('batch.map(renderFn).join(\'\')');
+    expect(homeSrc).toContain('batch.map(_popularItemHtml).join(\'\')');
+    // the old layout-blind _appendCards helper is gone
+    expect(homeSrc).not.toContain('function _appendCards');
+  });
 });
