@@ -174,18 +174,20 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=85cf419
       }
     }
 
-    function wireFilter(btn, key) {
-      if (!btn) return;
-      btn.addEventListener('click', () => {
-        state[key] = !state[key];
-        btn.classList.toggle('pg-filter--active', state[key]);
-        btn.setAttribute('aria-pressed', String(state[key]));
-        shownCount = PAGE_SIZE; // restart paging when the filter changes
-        renderPopular();
-      });
+    // Rated / Not Rated are mutually exclusive (either-or): selecting one
+    // deselects the other, and exactly one is always active.
+    function selectFilter(key) {
+      state.rated = key === 'rated';
+      state.unrated = key === 'unrated';
+      ratedBtn?.classList.toggle('pg-filter--active', state.rated);
+      unratedBtn?.classList.toggle('pg-filter--active', state.unrated);
+      ratedBtn?.setAttribute('aria-pressed', String(state.rated));
+      unratedBtn?.setAttribute('aria-pressed', String(state.unrated));
+      shownCount = PAGE_SIZE; // restart paging when the filter changes
+      renderPopular();
     }
-    wireFilter(ratedBtn, 'rated');
-    wireFilter(unratedBtn, 'unrated');
+    ratedBtn?.addEventListener('click', () => selectFilter('rated'));
+    unratedBtn?.addEventListener('click', () => selectFilter('unrated'));
     renderPopular();
   } catch (err) {
     console.debug('[popular-games] failed to load most_played.json', { error: String(err) });

@@ -35,20 +35,18 @@ describe('index page popular games rating filters', () => {
     expect(indexSrc).toContain('const state = { rated: true, unrated: false }');
   });
 
-  test('render combines the two filters and supports any combination', () => {
+  test('render shows whichever single filter is active', () => {
     expect(indexSrc).toContain('...(state.rated ? ratedGames : [])');
     expect(indexSrc).toContain('...(state.unrated ? unratedGames : [])');
   });
 
-  test('each button toggles its own state independently', () => {
-    expect(indexSrc).toContain("state[key] = !state[key]");
-    expect(indexSrc).toContain("btn.classList.toggle('pg-filter--active', state[key])");
-    expect(indexSrc).toContain("wireFilter(ratedBtn, 'rated')");
-    expect(indexSrc).toContain("wireFilter(unratedBtn, 'unrated')");
-  });
-
-  test('shows an empty state when both filters are off', () => {
-    expect(indexSrc).toContain("class=\"pg-empty\"");
+  test('Rated / Not Rated are mutually exclusive (selecting one deselects the other)', () => {
+    expect(indexSrc).toContain("state.rated = key === 'rated'");
+    expect(indexSrc).toContain("state.unrated = key === 'unrated'");
+    expect(indexSrc).toContain("ratedBtn?.addEventListener('click', () => selectFilter('rated'))");
+    expect(indexSrc).toContain("unratedBtn?.addEventListener('click', () => selectFilter('unrated'))");
+    // old independent-toggle behavior is gone
+    expect(indexSrc).not.toContain('state[key] = !state[key]');
   });
 
   test('popular list pages with a load more button', () => {
