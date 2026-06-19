@@ -566,6 +566,12 @@
   font-weight: 600;
 }
 .profile-configs-table tbody tr:last-child td { border-bottom: none; }
+/* Rating values are short (gold / platinum / dash), so cap the column small.
+   The table is table-layout:fixed, so a wide Rating column was starving the
+   actions column and wrapping the View/Publish/Edit/Delete buttons onto two
+   rows. A narrow Rating column gives the actions room to stay on one line. */
+.profile-configs-table th:nth-child(2),
+.profile-configs-table td:nth-child(2) { width: 92px; }
 .profile-configs-table td.col-action,
 .profile-configs-table th.col-action {
   text-align: right;

@@ -1342,9 +1342,9 @@ html[data-motion="off"] .banner-atoms {
   white-space: nowrap;
   font-weight: 500;
 }
-@media (min-width: 1100px) { .auth-username { max-width: 220px; } }
-@media (min-width: 1400px) { .auth-username { max-width: 320px; } }
-@media (min-width: 1700px) { .auth-username { max-width: none; } }
+/* On desktop there's plenty of room in the topbar, so show the full username
+   instead of truncating it. */
+@media (min-width: 1024px) { .auth-username { max-width: none; overflow: visible; } }
 
 .auth-admin-navlink {
   color: #e88a8a !important;
