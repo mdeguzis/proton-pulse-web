@@ -685,7 +685,6 @@ import { showEditCloudConfigModal, showEditReportModal, showEditSystemModal, sho
           <label class="profile-systems-default-toggle" title="Set as default">
             <input type="checkbox" data-role="default" ${r.is_default ? 'checked' : ''}>
             <span class="profile-systems-default-switch" aria-hidden="true"></span>
-            <span class="profile-systems-default-text">Default</span>
           </label>
         </td>
         <td class="col-action">

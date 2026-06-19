@@ -394,18 +394,15 @@
 }
 .profile-systems-table tbody tr:last-child td { border-bottom: none; }
 .profile-systems-table td.col-default,
-.profile-systems-table td.col-action,
-.profile-systems-table th.col-default,
-.profile-systems-table th.col-action {
+.profile-systems-table th.col-default {
   text-align: center;
   vertical-align: middle;
-}
-/* Default column needs more room since the toggle now reserves space for
-   the "Default" text whether or not the row is the current default (so the
-   switches in every row line up vertically at the same x position) */
-.profile-systems-table td.col-default,
-.profile-systems-table th.col-default {
   width: 110px;
+}
+.profile-systems-table td.col-action,
+.profile-systems-table th.col-action {
+  vertical-align: middle;
+  white-space: nowrap;
 }
 .profile-systems-label-input {
   background: transparent;
