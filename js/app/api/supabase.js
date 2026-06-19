@@ -86,29 +86,32 @@ export async function fetchNativeReports(appId) {
 }
 
 export async function flagReport({ reportId, appId, reportKey, source, reasonCategory, reasonText, reporterClientId }) {
-  const results = await Promise.all([
-    fetch(`${SB_URL}/flagged_reports`, {
-      method: 'POST',
-      headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
-      body: JSON.stringify({
-        app_id: String(appId),
-        report_key: reportKey,
-        source: source || 'unknown',
-        reason_category: reasonCategory || null,
-        reason_text: reasonText || null,
-        reporter_client_id: reporterClientId || null,
-      }),
+  // Go through the submit_flag RPC, which upserts on the (app_id, report_key)
+  // unique key and re-opens an already-resolved flag. A plain POST hit the
+  // unique constraint (409) and never resurfaced reviewed reports.
+  const flagRes = await fetch(`${SB_URL}/rpc/submit_flag`, {
+    method: 'POST',
+    headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+    body: JSON.stringify({
+      p_app_id: String(appId),
+      p_report_key: reportKey,
+      p_source: source || 'unknown',
+      p_reason_category: reasonCategory || null,
+      p_reason_text: reasonText || null,
+      p_reporter_client_id: reporterClientId || null,
     }),
-    reportId != null
-      ? fetch(`${SB_URL}/user_configs?id=eq.${reportId}`, {
-          method: 'PATCH',
-          headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
-          body: JSON.stringify({ is_flagged: true }),
-        })
-      : Promise.resolve({ ok: true }),
-  ]);
-  // 409 = unique constraint (already flagged) -- treat as success
-  return results.every(r => r.ok || r.status === 409);
+  });
+  // Best-effort: mark the underlying Pulse report flagged. Only the owner can
+  // do this under RLS, so a failure here must not fail the flag itself -- the
+  // flagged_reports row is the source of truth for moderation.
+  if (reportId != null) {
+    fetch(`${SB_URL}/user_configs?id=eq.${reportId}`, {
+      method: 'PATCH',
+      headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+      body: JSON.stringify({ is_flagged: true }),
+    }).catch(() => {});
+  }
+  return flagRes.ok;
 }
 
 export async function fetchMyFlags(clientId) {

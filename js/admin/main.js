@@ -1,8 +1,8 @@
 import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
 import { supabaseHeaders, escapeHtml } from './utils.js?v=86489fcb';
 import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=529eb059';
-import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent } from './api/flagged.js?v=cdf23ca4';
-import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=822d0a32';
+import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=6202ee12';
+import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=3f4bb02b';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
 import { fetchAllUsers } from './api/users.js?v=52e867d2';
@@ -16,6 +16,7 @@ import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=916ae
 import { renderUserDetail } from './components/userDetail.js?v=7025c758';
 import { fetchAnalytics } from './api/analytics.js?v=1b3f4599';
 import { renderAnalytics } from './components/analytics.js?v=7d29939b';
+import { renderCacheStatus } from './components/cache-status.js?v=764c4d18';
 
 // ---------------------------------------------------------------------------
 // State
@@ -259,8 +260,11 @@ async function loadFlagDetail(row) {
   document.getElementById('admin-tab-select').value = '';
   const content = document.getElementById('flag-detail-content');
   content.innerHTML = '<div class="admin-loading">Loading report...</div>';
-  const reportContent = await fetchFlagReportContent(currentSession, row);
-  content.innerHTML = renderFlagDetail(row, reportContent);
+  const [reportContent, modState] = await Promise.all([
+    fetchFlagReportContent(currentSession, row),
+    fetchReportState(currentSession, { app_id: row.app_id, report_key: row.report_key, source: row.source }),
+  ]);
+  content.innerHTML = renderFlagDetail(row, reportContent, modState);
 }
 
 // ---------------------------------------------------------------------------
@@ -308,6 +312,8 @@ async function loadAnalytics() {
   } catch (e) {
     content.innerHTML = `<div class="admin-error">${e.message}</div>`;
   }
+  const cacheContainer = document.getElementById('cache-status-content');
+  if (cacheContainer) renderCacheStatus(cacheContainer).catch(() => {});
 }
 
 // Maps each tab to its data loader so tab clicks and ?tab= restore share one path.
@@ -459,6 +465,50 @@ function wireEvents() {
       } catch (err) {
         btn.disabled = false;
         btn.textContent = 'Delete';
+        alert(`Error: ${err.message}`);
+      }
+    }
+
+    // Report-level moderation (Pulse reports). Each resolves the underlying
+    // user_configs row, acts on it, then marks the flag complete.
+    if (action === 'flag-shadowban' || action === 'flag-release' || action === 'flag-delete-report') {
+      const id = btn.dataset.id;
+      const flag = flaggedRows.find(r => String(r.id) === id);
+      if (!flag) return;
+      const confirmMsg = {
+        'flag-shadowban': 'Shadow ban this report? It stays visible to the submitter but nobody else.',
+        'flag-release': 'Release this report? It will be kept and its flagged/hidden state cleared.',
+        'flag-delete-report': 'Permanently delete this report content? This cannot be undone.',
+      }[action];
+      if (!confirm(confirmMsg)) return;
+      const origText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '...';
+      try {
+        // Pulse reports have a user_configs row we edit directly. ProtonDB
+        // mirror reports do not, so we record a suppression instead. Either way
+        // the action works -- our site, our rules on what we display.
+        const configId = await findPulseConfigId(currentSession, flag.app_id, flag.report_key);
+        if (configId) {
+          if (action === 'flag-shadowban') await shadowBanReport(currentSession, configId);
+          else if (action === 'flag-release') await releaseReportContent(currentSession, configId);
+          else await deleteReportContent(currentSession, configId);
+        } else {
+          const ref = { flagId: flag.id, appId: flag.app_id, reportKey: flag.report_key, source: flag.source, flaggedAt: flag.flagged_at };
+          if (action === 'flag-release') await unsuppressMirrorReport(currentSession, ref);
+          else await suppressMirrorReport(currentSession, { ...ref, action: action === 'flag-delete-report' ? 'deleted' : 'shadowban' });
+        }
+        // Resolve the flag now that the report has been handled.
+        await updateFlagStatus(currentSession, id, 'complete');
+        const target = flaggedRows.find(r => String(r.id) === id);
+        if (target) target.status = 'complete';
+        // Stay on the detail and re-render with the new state (e.g. Shadow ban
+        // flips to Un-shadow ban) instead of bouncing back to the list. Only the
+        // Back button / browser back should leave this screen.
+        await loadFlagDetail(target || flag);
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = origText;
         alert(`Error: ${err.message}`);
       }
     }

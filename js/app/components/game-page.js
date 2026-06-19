@@ -2,16 +2,16 @@
 
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=0dae1257';
-import { getWebClientId } from '../../shared/submit.js?v=09904778';
+import { getWebClientId } from '../../shared/submit.js?v=c57cb3d6';
 import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.js?v=64d7ee9d';
-import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=a9f7de6b';
-import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=ffef19a3';
-import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=8acef52f';
-import { enhanceAuthorBlocks } from './author.js?v=4bbf9945';
-import { renderConfigCard } from './config-cards.js?v=3d52c1a1';
+import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=f3f1e031';
+import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=0ed723fb';
+import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=f85fdd11';
+import { enhanceAuthorBlocks } from './author.js?v=1934bbfc';
+import { renderConfigCard } from './config-cards.js?v=2578d16a';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=b0fa82d9';
-import { renderCard } from './report-card.js?v=f9562723';
-import { loadSearchIndex, searchIndex } from './search.js?v=e2e0605e';
+import { renderCard } from './report-card.js?v=36dd2fd4';
+import { loadSearchIndex, searchIndex } from './search.js?v=ba3209c7';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref } from '../config.js?v=4031c5fa';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=85cf4195';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';
@@ -29,6 +29,27 @@ async function _fetchSteamCatalog() {
 }
 
 const DISCORD_URL = 'https://discord.gg/4p6e4X7xW';
+
+// Report key used to match a ProtonDB mirror report against a suppression row.
+// Must stay identical to the key the admin flag flow stores (api/flagged.js).
+function _pdbReportKey(r) {
+  return `${r.timestamp}:${(r.gpu || '').slice(0, 20)}:${(r.protonVersion || '').slice(0, 15)}`;
+}
+
+// Fetch the set of suppressed ProtonDB reports for an app (admin shadow ban /
+// delete). Returns a Set of report_key strings to filter out at render time.
+// Our site, our rules: we hide reports we have moderated regardless of source.
+async function _fetchReportModeration(appId) {
+  try {
+    const url = `${SB_URL}/report_moderation?app_id=eq.${encodeURIComponent(appId)}&select=report_key`;
+    const res = await fetch(url, { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } });
+    if (!res.ok) return new Set();
+    const rows = await res.json();
+    return new Set(rows.map(r => r.report_key));
+  } catch {
+    return new Set();
+  }
+}
 
 function _showFlagModal(btn) {
   const existing = document.getElementById('flag-report-modal');
@@ -131,30 +152,46 @@ export async function renderGamePage(appId) {
       return fallback;
     }
   };
-  const [cdn, configs, nativeReports, votes, userVotes, playtimeTotals] = await Promise.all([
+  const [cdnRaw, configs, nativeReports, votes, userVotes, playtimeTotals, suppressedKeys] = await Promise.all([
     safeFetch(() => fetchCdn(appId), 'fetchCdn', []),
     safeFetch(() => fetchSupabase(appId), 'fetchSupabase', []),
     safeFetch(() => fetchNativeReports(appId), 'fetchNativeReports', []),
     safeFetch(() => fetchVotes(appId), 'fetchVotes', {}),
     safeFetch(() => fetchUserVotes(appId), 'fetchUserVotes', {}),
     safeFetch(() => fetchConfigPlaytimeTotals(appId), 'fetchConfigPlaytimeTotals', []),
+    safeFetch(() => _fetchReportModeration(appId), 'reportModeration', new Set()),
   ]);
+
+  // Drop ProtonDB mirror reports an admin has shadow-banned or deleted. Pulse
+  // reports are filtered server-side by RLS (is_hidden), so they never arrive.
+  const cdn = suppressedKeys.size
+    ? cdnRaw.filter(r => !suppressedKeys.has(_pdbReportKey(r)))
+    : cdnRaw;
+  if (suppressedKeys.size && cdn.length !== cdnRaw.length) {
+    console.debug('[game-page] filtered suppressed ProtonDB reports', { appId, removed: cdnRaw.length - cdn.length, source: 'report_moderation' });
+  }
 
   // If CDN was empty but the user already clicked "Check ProtonDB Live" this
   // session, use the cached live result so the page re-renders correctly.
+  // ProtonDB's public summaries API only returns an aggregate (tier + total),
+  // not individual reports, so the live result is a single `_liveOnly` summary.
+  // It must NOT be rendered as a report card (it has no hardware/date and shows
+  // up as a broken "Unknown / NAN days ago" row); instead it drives the header
+  // tier + ProtonDB count below.
   const liveCached = !cdn.length ? (_protonDbLiveCache.get(String(appId)) || []) : [];
+  const liveSummary = liveCached.find(r => r._liveOnly) || null;
+  const liveOnly = !!liveSummary && !cdn.length;
   const cdnMiss = !cdn.length && !liveCached.length;
 
   const reports = [
     ...cdn.map(r => ({ ...r, source: 'protondb' })),
-    ...liveCached.map(r => ({ ...r, source: 'protondb' })),
     ...nativeReports,
   ];
 
   // Hard miss: nothing in cache, nothing native, nothing from Pulse.
   // Check if we at least know this game from the search-index (title available)
   // so we can show a stub state instead of the generic mirror-miss message.
-  if (!reports.length && !configs.length) {
+  if (!reports.length && !configs.length && !liveSummary) {
     await loadSearchIndex();
     const stubHit = (searchIndex || []).find(row => String(row[0]) === String(appId));
     let stubTitle = stubHit?.[1];
@@ -177,7 +214,7 @@ export async function renderGamePage(appId) {
           </div>
           <div class="stub-body">
             <p class="stub-message">No compatibility reports exist for this game yet. If you have played it on Steam Deck or Linux, your report helps other players know what to expect.</p>
-            <a class="submit-report-btn" href="submit.html?appId=${esc(String(appId))}&title=${encodeURIComponent(stubTitle)}" style="display:inline-block;margin-top:4px">Submit the first report</a>
+            <a class="submit-report-btn" href="submit.html?app=${esc(String(appId))}&title=${encodeURIComponent(stubTitle)}" style="display:inline-block;margin-top:4px">Submit the first report</a>
           </div>
           <div class="stub-live-check" style="margin-top:20px">
             <button id="live-check-btn" class="admin-btn admin-btn--ghost" style="font-size:0.85rem">Check ProtonDB Live</button>
@@ -218,8 +255,12 @@ export async function renderGamePage(appId) {
   await loadSearchIndex();
   const indexHit = (searchIndex || []).find(row => String(row[0]) === String(appId));
   const title = reports[0]?.title || configs[0]?.appName || indexHit?.[1] || `App ${appId}`;
-  const protonDbTier = tierFromReports(cdn);
-  const pulseTier = pulseTierFromReports(nativeReports, cdn.length);
+  // Effective ProtonDB report count: the mirrored count when we have it, else
+  // the live aggregate total. Drives the header counts so a live-only game
+  // shows the real ProtonDB rating instead of "0 reports / pending".
+  const protonDbCount = cdn.length || (liveSummary ? (liveSummary.total || 0) : 0);
+  const protonDbTier = liveOnly ? String(liveSummary.tier || '').toLowerCase() : tierFromReports(cdn);
+  const pulseTier = pulseTierFromReports(nativeReports, protonDbCount);
   document.title = `${title} - Proton Pulse`;
   if (typeof window.ppTrack === 'function') window.ppTrack('game_view', { app_id: String(appId), title });
 
@@ -363,7 +404,7 @@ export async function renderGamePage(appId) {
     // summary since the report list below mixes both sources too. pulseTier
     // already accepts a protonDbCount that weights both sources into one
     // overall rating + confidence, which is exactly what we want here
-    const totalReports = nativeReports.length + cdn.length;
+    const totalReports = nativeReports.length + protonDbCount;
     const hasAnyReports = totalReports > 0;
     // Use the combined-source tier when there are any reports; fall back to
     // protondb tier if only protondb reports exist; "pending" when nothing
@@ -385,13 +426,13 @@ export async function renderGamePage(appId) {
     // approximation against the ProtonDB report count alone
     const overallConfidencePct = pulseHasReports && pulseTier.confidencePct
       ? pulseTier.confidencePct
-      : (cdn.length > 0 ? Math.min(95, Math.round(30 + Math.log2(Math.max(1, cdn.length)) * 18)) : 0);
+      : (protonDbCount > 0 ? Math.min(95, Math.round(30 + Math.log2(Math.max(1, protonDbCount)) * 18)) : 0);
     // Per-source breakdown - tiny stat strip at the bottom of the tile. Always
     // shows BOTH Pulse + ProtonDB (even at 0) so users understand both feeds
     // contribute even when only one has data. Configs only appear if > 0
     const statBits = [
       `<span><strong>${nativeReports.length}</strong> Pulse</span>`,
-      `<span><strong>${cdn.length}</strong> ProtonDB</span>`,
+      `<span><strong>${protonDbCount}</strong> ProtonDB</span>`,
     ];
     if (configs.length) statBits.push(`<span><strong>${configs.length}</strong> config${configs.length !== 1 ? 's' : ''}</span>`);
     const statRow = `<div class="source-summary-stats">${statBits.join('<span class="ss-sep">/</span>')}</div>`;
@@ -406,7 +447,11 @@ export async function renderGamePage(appId) {
       if (ratingCounts[r.rating] != null) ratingCounts[r.rating]++;
     }
     const TIER_LABELS = { platinum: 'Plat', gold: 'Gold', silver: 'Silv', bronze: 'Bron', borked: 'Bork' };
-    const ratingDistribution = `
+    // Live-only games have no per-tier breakdown (ProtonDB's summary gives a
+    // single overall tier + total), so show a note instead of an all-zero grid.
+    const ratingDistribution = liveOnly
+      ? '<div class="source-summary-distribution-note">Per-tier breakdown is not available from ProtonDB\'s live summary.</div>'
+      : `
       <div class="source-summary-distribution" title="Rating distribution across all reports">
         ${Object.entries(ratingCounts).map(([tier, n]) => `
           <div class="dist-chip dist-${tier}${n === 0 ? ' dist-empty' : ''}" title="${n} ${tier} report${n !== 1 ? 's' : ''}">
@@ -463,7 +508,7 @@ export async function renderGamePage(appId) {
             <div class="game-title">${esc(title)}</div>
             <div class="game-meta">
               App ${appId}
-              &nbsp;/&nbsp; <strong>${cdn.length}</strong> ProtonDB report${cdn.length !== 1 ? 's' : ''}
+              &nbsp;/&nbsp; <strong>${protonDbCount}</strong> ProtonDB report${protonDbCount !== 1 ? 's' : ''}${liveOnly ? ' (live)' : ''}
               ${nativeReports.length ? `&nbsp;/&nbsp; <strong>${nativeReports.length}</strong> Pulse report${nativeReports.length !== 1 ? 's' : ''}` : ''}
               &nbsp;/&nbsp; <strong>${configs.length}</strong> Pulse config${configs.length !== 1 ? 's' : ''}
               ${totalCommunityMinutes > 0 ? `&nbsp;/&nbsp; <strong>${fmtMinutes(totalCommunityMinutes)}</strong> community playtime (${totalSessionCount} session${totalSessionCount !== 1 ? 's' : ''})` : ''}
@@ -618,12 +663,16 @@ export async function renderGamePage(appId) {
       </div>
 
       <div class="cards">
-        ${reps.length
-          ? reps.map((r, i) => r._kind === 'config'
-              ? renderConfigCard(r, i, votes, userVotes)
-              : renderCard(r, votes, userVotes, playtimeTotals)
-            ).join('')
-          : '<div class="state-box" style="border:none">No configs or reports match filters</div>'}
+        ${liveOnly && !reps.length
+          ? `<div class="live-summary-note">
+               ProtonDB rates this <strong>${esc(String(liveSummary.tier || '').toUpperCase())}</strong> from <strong>${protonDbCount.toLocaleString()}</strong> report${protonDbCount !== 1 ? 's' : ''} (checked live). Individual reports are not mirrored here yet, so there are no cards to show. <a href="https://www.protondb.com/app/${appId}" target="_blank" rel="noopener">View them on ProtonDB &gt;</a> or submit the first Proton Pulse report below.
+             </div>`
+          : (reps.length
+            ? reps.map((r, i) => r._kind === 'config'
+                ? renderConfigCard(r, i, votes, userVotes)
+                : renderCard(r, votes, userVotes, playtimeTotals)
+              ).join('')
+            : '<div class="state-box" style="border:none">No configs or reports match filters</div>')}
       </div>
     `;
 

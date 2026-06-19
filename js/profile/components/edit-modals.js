@@ -7,7 +7,7 @@ import {
 import {
   fetchCloudConfig, patchCloudConfig, fetchFullUserConfig,
   fetchReportHistory, patchUserConfig,
-} from '../api/configs.js?v=d05d75ee';
+} from '../api/configs.js?v=a51234ab';
 
 export let _cloudEditModal = null;
 export function getCloudEditModal() {

@@ -20,14 +20,20 @@ export async function fetchCdn(appId) {
 // repeat visits within the session skip the network hit without auto-fetching.
 export const _protonDbLiveCache = new Map();
 
-// User-triggered live check: fetches ProtonDB public API for a single game.
-// NOT called automatically -- must be triggered by the user clicking the
-// "Check ProtonDB Live" button to avoid hammering their API on every page load.
+// ProtonDB's summaries API only allows its own origin (CORS), so the browser
+// cannot fetch it directly from our static site. We go through the
+// `protondb-summary` Supabase Edge Function, which fetches server-side (no CORS
+// there) and re-serves the JSON with an open CORS header. See issue #54.
+const PROTONDB_PROXY_URL =
+  'https://ilsgdshkaocrmibwdezk.supabase.co/functions/v1/protondb-summary';
+
+// User-triggered live check: fetches the ProtonDB summary for a single game via
+// our proxy. NOT called automatically -- must be triggered by the user clicking
+// the "Check ProtonDB Live" button to avoid hammering their API on every load.
 /**
- * Fetch a live ProtonDB summary for a single game from the public ProtonDB API.
+ * Fetch a live ProtonDB summary for a single game through the proxy Edge Function.
  * Results are cached in `_protonDbLiveCache` for the session lifetime.
  * NOT called automatically -- must be user-triggered to avoid rate-limiting their API.
- * Hits `https://www.protondb.com/api/v1/reports/summaries/${appId}.json`.
  * @param {string|number} appId - Steam app ID.
  * @returns {Promise<Array<{appId: string|number, tier: string, total: number, trendingTier: string, score: number, source: string, _liveOnly: boolean}>>}
  *   Single-element array with the summary, or empty array on failure or missing data.
@@ -37,13 +43,22 @@ export async function fetchProtonDbLive(appId) {
   if (_protonDbLiveCache.has(key)) return _protonDbLiveCache.get(key);
   try {
     const r = await fetch(
-      `https://www.protondb.com/api/v1/reports/summaries/${appId}.json`,
+      `${PROTONDB_PROXY_URL}?appId=${encodeURIComponent(appId)}`,
       { headers: { Accept: 'application/json' } }
     );
-    if (!r.ok) { _protonDbLiveCache.set(key, []); return []; }
+    if (!r.ok) {
+      console.debug(`[proton-pulse] ProtonDB live check proxy not ok | appId=${appId} status=${r.status} source=protondb-summary-proxy`);
+      _protonDbLiveCache.set(key, []);
+      return [];
+    }
     const data = await r.json();
-    if (!data || !data.tier) { _protonDbLiveCache.set(key, []); return []; }
-    console.log(`[proton-pulse] live check for ${appId} | tier=${data.tier} total=${data.total} source=protondb-api`);
+    // The proxy returns { found:false } when ProtonDB has no summary for the game.
+    if (!data || data.found === false || !data.tier) {
+      console.debug(`[proton-pulse] ProtonDB live check empty | appId=${appId} found=${data && data.found} source=protondb-summary-proxy`);
+      _protonDbLiveCache.set(key, []);
+      return [];
+    }
+    console.log(`[proton-pulse] live check for ${appId} | tier=${data.tier} total=${data.total} source=protondb-summary-proxy`);
     const result = [{
       appId,
       tier:         data.tier,
@@ -56,7 +71,7 @@ export async function fetchProtonDbLive(appId) {
     _protonDbLiveCache.set(key, result);
     return result;
   } catch (e) {
-    console.debug(`[proton-pulse] ProtonDB live check failed | appId=${appId} error=${e.message}`);
+    console.debug(`[proton-pulse] ProtonDB live check failed | appId=${appId} error=${e.message} source=protondb-summary-proxy`);
     _protonDbLiveCache.set(key, []);
     return [];
   }

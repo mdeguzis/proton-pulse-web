@@ -206,6 +206,12 @@
   box-shadow: 0 0 20px var(--accent-glow);
 }
 .cta-primary:hover { filter: brightness(1.06); }
+/* On desktop the flex:1 buttons stretch the full container and read as huge
+   banners. Cap the row to half width so the two CTAs stay a sensible size.
+   Mobile keeps the full-width row for tap targets. */
+@media (min-width: 760px) {
+  .welcome-cta { max-width: 50%; }
+}
 .welcome-learn-more {
   font-size: 0.85rem;
   color: var(--muted);
@@ -277,6 +283,98 @@
 .pg-silver   { background: #8fa0b0; color: #111; }
 .pg-bronze   { background: #b07040; color: #fff; }
 .pg-borked   { background: #c85050; color: #fff; }
+.pg-unrated  { background: var(--border); color: var(--muted); }
+
+/* Popular games header row: section label + two rating filter buttons.
+   "Rated" and "Not Rated" are independent toggles, any combination allowed.
+   Inactive buttons read as clearly off (dim, hollow); active buttons light up
+   with the accent so the current filter state is obvious at a glance. */
+.pg-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.pg-head .section-label { margin-bottom: 0; }
+.pg-filters {
+  display: inline-flex;
+  gap: 8px;
+}
+.pg-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.pg-filter:hover { border-color: var(--accent); color: var(--strong); }
+.pg-filter--active {
+  border-color: var(--accent);
+  color: #0a0c10;
+  background: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 12px rgba(190,238,17,0.25);
+}
+.pg-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+.pg-filter--active .pg-filter-count {
+  background: rgba(10,12,16,0.22);
+  color: #0a0c10;
+}
+.pg-empty {
+  padding: 24px 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+}
+/* Load more for the popular list. Matches .load-more-btn in shared/site.css
+   so the homepage and the app browser pagination look the same. */
+.pg-load-more-row { display: flex; justify-content: center; }
+.pg-load-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 14px auto 0;
+  padding: 8px 24px;
+  background: var(--s2);
+  color: var(--muted);
+  border: none;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.pg-load-more:hover { background: var(--s3); color: var(--fg); }
+.pg-load-more-count {
+  background: var(--border);
+  border-radius: 999px;
+  padding: 0 7px;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
 
 /* quick-actions row removed - the topnav covers those links now */
 

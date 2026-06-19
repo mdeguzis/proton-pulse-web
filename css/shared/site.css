@@ -1626,6 +1626,14 @@ html[data-motion="off"] .banner-atoms {
   background: var(--s2);
   flex-shrink: 0;
 }
+/* Desktop: give the report rows more presence with a bigger boxart and
+   roomier padding. Steam header ratio (~2.14:1) is preserved. */
+@media (min-width: 760px) {
+  .game-card { gap: 18px; padding: 11px 18px 11px 11px; }
+  .game-card-thumb { width: 138px; height: 64px; border-radius: 8px; }
+  .game-card-title { font-size: 1.04rem; }
+  .game-card-sub { font-size: 0.82rem; }
+}
 .game-card-thumb--missing {
   display: flex;
   align-items: center;

@@ -714,8 +714,24 @@
 .flag-detail-actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 8px;
+  margin: 4px 0 16px;
 }
+/* Pushes the secondary (status / delete-flag) buttons to the right, separating
+   them from the primary report actions. */
+.flag-detail-actions-sep { flex: 1 1 auto; min-width: 12px; }
+.flag-detail-state {
+  font-size: 0.8rem;
+  color: var(--muted, #9aa);
+  margin-right: 4px;
+}
+.flag-state--visible { color: #6fcf97; }
+.flag-state--shadowbanned { color: #e0a030; }
+.flag-state--deleted { color: #e05050; }
+/* Active toggle (e.g. Un-shadow ban) gets a subtle outline so the current
+   moderation action reads clearly. */
+.flag-action-active { box-shadow: inset 0 0 0 1px currentColor; }
 
 /* Report preview card inside flag detail */
 .flag-report-card {
@@ -855,3 +871,10 @@ pre.flag-raw-json {
 @media (max-width: 640px) {
   .analytics-two-col { grid-template-columns: 1fr; }
 }
+
+/* Cache status panel */
+.cache-status-pass { color: var(--green, #98c379); font-weight: 600; }
+.cache-status-fail { color: var(--red, #e06c75); font-weight: 600; }
+.cache-status-warn { color: var(--yellow, #e5c07b); font-weight: 600; }
+.cache-status-details summary { font-size: 0.82rem; padding: 4px 0; }
+.cache-status-section { max-width: 860px; }

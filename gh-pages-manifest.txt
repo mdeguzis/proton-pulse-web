@@ -74,6 +74,7 @@ js/admin/components/admins.js
 js/admin/components/phrases.js
 js/admin/components/userDetail.js
 js/admin/components/analytics.js
+js/admin/components/cache-status.js
 stats.html
 js/stats/main.js
 scoring.html
