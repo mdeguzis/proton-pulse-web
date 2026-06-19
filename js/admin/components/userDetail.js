@@ -249,9 +249,10 @@ export function renderUserDetail(user, reports, authEvents, { session, onBack, o
         btn.closest('tr').remove();
         const remaining = reportsWrap.querySelectorAll('tbody tr').length;
         el.querySelector('.user-detail-section:last-of-type .user-detail-count').textContent = `(${remaining})`;
+        window.ppToast?.success('Report deleted.');
       } catch (err) {
         btn.disabled = false;
-        alert(err.message);
+        window.ppToast?.error(err.message);
       }
     }
 
@@ -272,8 +273,9 @@ export function renderUserDetail(user, reports, authEvents, { session, onBack, o
             existing.remove();
           }
         }
+        window.ppToast?.success(hide ? 'Report hidden.' : 'Report restored.');
       } catch (err) {
-        alert(err.message);
+        window.ppToast?.error(err.message);
       } finally {
         btn.disabled = false;
       }
@@ -322,8 +324,9 @@ export function renderUserDetail(user, reports, authEvents, { session, onBack, o
       }
       editModal.hidden = true;
       editingId = null;
+      window.ppToast?.success('Report updated.');
     } catch (err) {
-      alert(err.message);
+      window.ppToast?.error(err.message);
     } finally {
       saveBtn.disabled = false;
     }

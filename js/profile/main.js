@@ -979,10 +979,9 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
   const myConfigsRefresh  = document.getElementById('my-configs-refresh-btn');
 
   function showMyConfigsStatus(msg, ok) {
-    if (!myConfigsStatus) return;
-    myConfigsStatus.textContent = msg;
-    myConfigsStatus.style.color = ok ? 'var(--green)' : 'var(--red)';
-    setTimeout(() => { myConfigsStatus.textContent = ''; }, 3000);
+    // Surface report actions (publish/unpublish/delete/update) through the
+    // shared toast so feedback is consistent with the rest of the site.
+    if (ok) window.ppToast?.success(msg); else window.ppToast?.error(msg);
   }
 
   function renderMyConfigs(rows) {

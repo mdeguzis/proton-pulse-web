@@ -73,6 +73,13 @@ describe('actions give feedback via ppToast', () => {
     expect(src).toContain('window.ppToast?.error');
   });
 
+  test('admin and profile actions use toasts, not alert()', () => {
+    expect(read('js/admin/main.js')).not.toContain('alert(');
+    expect(read('js/admin/components/userDetail.js')).not.toContain('alert(');
+    expect(read('js/profile/main.js')).toContain('window.ppToast?.success(msg)');
+    expect(read('js/auth/main.js')).toContain('window.ppToast?.error');
+  });
+
   test('toast.js is in the gh-pages manifest', () => {
     expect(read('gh-pages-manifest.txt')).toContain('js/lib/toast.js');
   });

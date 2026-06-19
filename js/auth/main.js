@@ -40,7 +40,7 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
       console.error('[auth] login error:', error);
       continueBtn.disabled = false;
       continueBtn.classList.remove('is-loading');
-      window.alert('Could not start Steam sign-in. Please try again.');
+      window.ppToast?.error('Could not start Steam sign-in. Please try again.');
     }
   });
 })();
