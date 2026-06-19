@@ -1362,7 +1362,8 @@ a.card:active { transform: translateY(1px); }
   flex-direction: column;
   align-items: flex-end;
   gap: 5px;
-  min-width: 72px;
+  /* Wide enough to keep "Confidence: 100%" + the rating badge on one line. */
+  min-width: 150px;
   flex-shrink: 0;
 }
 /* Home feed activity cards: always-row pg-card-style layout */
@@ -1375,7 +1376,7 @@ a.card:active { transform: translateY(1px); }
 .activity-badge { flex-shrink: 0; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; white-space: nowrap; align-self: center; }
 /* card-rating-row now shows confidence pill (left) and rating badge (right)
    side-by-side in a horizontal row. Matches the plugin's "78% GOLD" layout */
-.card-rating-row { display: flex; flex-direction: row; align-items: center; gap: 6px; margin-top: 4px; flex-wrap: wrap; justify-content: flex-end; }
+.card-rating-row { display: flex; flex-direction: row; align-items: center; gap: 6px; margin-top: 4px; flex-wrap: nowrap; justify-content: flex-end; }
 /* Per-report confidence pill - square corners to match the rating badge
    alongside it. Round corners read like a status pill, square reads like a
    "fact" tile which is what confidence is */
