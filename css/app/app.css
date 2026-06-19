@@ -2054,8 +2054,10 @@ a.card:active { transform: translateY(1px); }
   border-radius: 4px;
   transition: background .1s, color .1s, border-color .1s;
 }
-.home-size-btn:hover { background: var(--s2); color: var(--text); }
+.home-size-btn:hover:not(:disabled) { background: var(--s2); color: var(--text); }
 .home-size-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
+.home-size-btn:disabled { opacity: 0.4; cursor: default; }
+.home-size-toggle--disabled { opacity: 0.6; }
 
 /* Card size preference. Medium matches the default desktop row; small is
    denser, large is roomier. Title/sub scale with the boxart. The size class

@@ -30,4 +30,18 @@ describe('configurable card size (S/M/L)', () => {
     expect(cssSrc).toContain('.cards--md .game-card-thumb');
     expect(cssSrc).toContain('.cards--lg .game-card-thumb');
   });
+
+  test('S/M/L are disabled in list mode', () => {
+    expect(homeSrc).toContain('function _setSizeEnabled(enabled)');
+    expect(homeSrc).toContain('b.disabled = !enabled');
+    expect(homeSrc).toContain('_setSizeEnabled(!isList)');
+    expect(cssSrc).toContain('.home-size-btn:disabled');
+  });
+
+  test('list view applies to both Recent and Popular sections', () => {
+    expect(homeSrc).toContain("document.getElementById('cards-popular')?.classList.toggle('home-cards-list', isList)");
+    // popular renders a slim list row in list mode, a sized card otherwise
+    expect(homeSrc).toContain('function _popularItemHtml(g)');
+    expect(homeSrc).toContain("if (currentLayout === 'list') return _listRowHtml(g)");
+  });
 });

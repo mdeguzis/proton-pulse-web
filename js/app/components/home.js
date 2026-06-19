@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=a9fb53ae';
-import { loadSearchIndex, searchIndex } from './search.js?v=b05fe84a';
+import { loadSearchIndex, searchIndex } from './search.js?v=78b89e87';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=4031c5fa';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=3a07c55e';
@@ -256,21 +256,33 @@ export async function renderHomePage() {
       const loadMoreEl = document.getElementById('load-more-popular');
       if (!cardsEl) return;
       const initial = filtered.slice(0, PAGE_SIZE);
-      const newQueue = filtered.slice(PAGE_SIZE);
-      cardsEl.innerHTML = initial.map(g => renderGameCard({
-        href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
-        title: g.title,
-        sub: g.tier === 'pending' ? 'No reports yet · be the first' : _popularSub(g),
-        tier: g.tier || undefined, sourceLabel: 'Steam',
-      })).join('') || '<div class="state-box">No games match the current filters.</div>';
+      const queue = filtered.slice(PAGE_SIZE);
+      cardsEl.innerHTML = initial.map(_popularItemHtml).join('')
+        || '<div class="state-box">No games match the current filters.</div>';
       if (loadMoreEl) {
-        if (newQueue.length) {
+        if (queue.length) {
           loadMoreEl.innerHTML = _loadMoreBtn('popular');
-          loadMoreEl.querySelector('button').addEventListener('click', () => _appendCards('popular', newQueue));
+          loadMoreEl.querySelector('button').addEventListener('click', () => {
+            const batch = queue.splice(0, PAGE_SIZE);
+            cardsEl.insertAdjacentHTML('beforeend', batch.map(_popularItemHtml).join(''));
+            if (!queue.length) loadMoreEl.innerHTML = '';
+          });
         } else {
           loadMoreEl.innerHTML = initial.length ? _allShownNote(filtered.length) : '';
         }
       }
+    }
+
+    // Render a popular game honoring the current view type: a slim list row in
+    // List mode (same as recent reports), or a sized card in Grid mode.
+    function _popularItemHtml(g) {
+      if (currentLayout === 'list') return _listRowHtml(g);
+      return renderGameCard({
+        href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
+        title: g.title,
+        sub: g.tier === 'pending' ? 'No reports yet · be the first' : _popularSub(g),
+        tier: g.tier || undefined, sourceLabel: 'Steam',
+      });
     }
 
     function applyRecentFilters() {
@@ -348,14 +360,24 @@ export async function renderHomePage() {
       applyPopularFilters();
     });
 
+    // S/M/L only make sense for the card (grid) view; disable them in list mode.
+    function _setSizeEnabled(enabled) {
+      document.querySelectorAll('.home-size-btn').forEach(b => { b.disabled = !enabled; });
+      document.getElementById('home-size-toggle')?.classList.toggle('home-size-toggle--disabled', !enabled);
+    }
+
     document.querySelectorAll('.home-layout-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.home-layout-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         currentLayout = btn.dataset.layout;
-        const cardsEl = document.getElementById('cards-recent');
-        if (cardsEl) cardsEl.classList.toggle('home-cards-list', currentLayout === 'list');
+        const isList = currentLayout === 'list';
+        // List view applies to BOTH sections so they stay consistent.
+        document.getElementById('cards-recent')?.classList.toggle('home-cards-list', isList);
+        document.getElementById('cards-popular')?.classList.toggle('home-cards-list', isList);
+        _setSizeEnabled(!isList);
         applyRecentFilters();
+        applyPopularFilters();
       });
     });
 
