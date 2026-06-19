@@ -1,8 +1,8 @@
 import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
 import { supabaseHeaders, escapeHtml } from './utils.js?v=86489fcb';
 import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=529eb059';
-import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=5bd89483';
-import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=ebef02cf';
+import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=8b6812db';
+import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=3f4bb02b';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
 import { fetchAllUsers } from './api/users.js?v=52e867d2';
@@ -502,7 +502,10 @@ function wireEvents() {
         await updateFlagStatus(currentSession, id, 'complete');
         const target = flaggedRows.find(r => String(r.id) === id);
         if (target) target.status = 'complete';
-        activateTab('flagged');
+        // Stay on the detail and re-render with the new state (e.g. Shadow ban
+        // flips to Un-shadow ban) instead of bouncing back to the list. Only the
+        // Back button / browser back should leave this screen.
+        await loadFlagDetail(target || flag);
       } catch (err) {
         btn.disabled = false;
         btn.textContent = origText;

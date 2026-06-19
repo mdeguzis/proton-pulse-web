@@ -47,8 +47,15 @@ describe('flagged report moderation', () => {
     expect(flaggedComponentSrc).toMatch(/isShadowed[\s\S]*?data-action="flag-release"[\s\S]*?Un-shadow ban/);
   });
 
-  test('flagged list shows a Flagged date column', () => {
+  test('flagged list shows Flagged and Reviewed date columns', () => {
     expect(flaggedComponentSrc).toContain('fmtDateTime(r.flagged_at)');
+    expect(flaggedComponentSrc).toContain('fmtDateTime(r.updated_at)');
+  });
+
+  test('a report action re-renders the detail instead of returning to the list', () => {
+    // After release/shadow ban/delete the handler reloads the detail so the
+    // state toggle updates in place; only Back leaves the screen.
+    expect(adminMainSrc).toContain('await loadFlagDetail(target || flag)');
   });
 
   test('fetchReportState resolves visible vs shadowbanned', async () => {

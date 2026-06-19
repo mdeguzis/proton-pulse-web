@@ -6,7 +6,7 @@ import { supabaseHeaders } from '../utils.js?v=86489fcb';
 export async function fetchFlaggedReports(session, { search, type, dateFrom, dateTo, sortField, sortDir } = {}) {
   // Query the unified flagged_reports log (covers both ProtonDB and Pulse reports)
   let url = `${SUPABASE_URL}/rest/v1/flagged_reports`
-    + `?select=id,app_id,report_key,source,reason_category,reason_text,status,reporter_client_id,flagged_at`
+    + `?select=id,app_id,report_key,source,reason_category,reason_text,status,reporter_client_id,flagged_at,updated_at`
     + `&order=${encodeURIComponent(sortField === 'flagged_reason' ? 'reason_category' : sortField)}.${sortDir}`;
 
   if (dateFrom) url += `&flagged_at=gte.${encodeURIComponent(new Date(dateFrom).toISOString())}`;

@@ -49,6 +49,7 @@ export function renderFlagged(rows) {
           <div class="admin-sub">App ${escapeHtml(String(r.app_id))}</div></td>
       <td>${source}</td>
       <td><span class="admin-sub">${escapeHtml(fmtDateTime(r.flagged_at))}</span></td>
+      <td><span class="admin-sub">${status === 'open' ? '—' : escapeHtml(fmtDateTime(r.updated_at))}</span></td>
       <td><span class="admin-status admin-status--${escapeHtml(status)}">${statusLabel}</span></td>
       <td>
         <button class="admin-btn admin-btn--sm" data-action="review-flag" data-id="${rowId}">Review</button>
@@ -133,6 +134,7 @@ export function renderFlagDetail(flagRow, reportContent, modState) {
       <div><span class="admin-label-text">Source</span> ${source}</div>
       <div><span class="admin-label-text">Reporter</span> <span class="admin-sub">${reporter}</span></div>
       <div><span class="admin-label-text">Flagged</span> ${flaggedAt}</div>
+      <div><span class="admin-label-text">Reviewed</span> ${status === 'open' ? '<span class="admin-sub">not yet</span>' : escapeHtml(fmtDateTime(flagRow.updated_at))}</div>
       <div><span class="admin-label-text">Status</span>
         <span class="admin-status admin-status--${escapeHtml(status)}" id="flag-detail-status">${statusLabel}</span></div>
     </div>
