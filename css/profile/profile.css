@@ -395,8 +395,10 @@
 .profile-systems-table tbody tr:last-child td { border-bottom: none; }
 .profile-systems-table td.col-default,
 .profile-systems-table td.col-delete,
+.profile-systems-table td.col-edit,
 .profile-systems-table th.col-default,
-.profile-systems-table th.col-delete {
+.profile-systems-table th.col-delete,
+.profile-systems-table th.col-edit {
   text-align: center;
   vertical-align: middle;
   width: 80px;
@@ -455,6 +457,20 @@
   padding: 2px 6px;
 }
 .profile-systems-trash:hover { color: #c85050; }
+.profile-systems-edit-btn {
+  padding: 2px 8px;
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.profile-systems-edit-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
 .profile-systems-default-toggle {
   display: inline-flex;
   align-items: center;

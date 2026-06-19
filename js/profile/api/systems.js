@@ -60,6 +60,18 @@ export async function updateSystemLabel(protonPulseUserId, deviceId, label, sess
   if (!r.ok) throw new Error(`Update label failed: HTTP ${r.status}`);
 }
 
+export async function updateSystem(protonPulseUserId, deviceId, fields, session) {
+  const url = supabaseUserSystemsUrl(
+    `proton_pulse_user_id=eq.${encodeURIComponent(protonPulseUserId)}&device_id=eq.${encodeURIComponent(deviceId)}`,
+  );
+  const r = await fetch(url, {
+    method: 'PATCH',
+    headers: supabaseHeaders(session, { Prefer: 'return=minimal' }),
+    body: JSON.stringify({ ...fields, updated_at: new Date().toISOString() }),
+  });
+  if (!r.ok) throw new Error(`Update failed: HTTP ${r.status}`);
+}
+
 export async function deleteSystem(protonPulseUserId, deviceId, session) {
   const url = supabaseUserSystemsUrl(
     `proton_pulse_user_id=eq.${encodeURIComponent(protonPulseUserId)}&device_id=eq.${encodeURIComponent(deviceId)}`,

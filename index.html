@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta name="color-scheme" content="dark">
 <link rel="stylesheet" href="css/shared/site.css?v=aa1f96c6">
-<link rel="stylesheet" href="css/index/index.css?v=857e41cf">
+<link rel="stylesheet" href="css/index/index.css?v=0bdafa7e">
 </head>
 <body>
 
@@ -168,6 +168,17 @@
           <button class="pg-filter pg-filter--active" id="pg-filter-rated" type="button" aria-pressed="true">Rated <span class="pg-filter-count" id="pg-rated-count">0</span></button>
           <button class="pg-filter" id="pg-filter-unrated" type="button" aria-pressed="false">Not Rated <span class="pg-filter-count" id="pg-unrated-count">0</span></button>
         </div>
+        <div class="pg-view-controls">
+          <div class="pg-size-toggle" id="pg-size-toggle" title="Card size">
+            <button class="pg-size-btn" data-size="sm" type="button" title="Small cards">S</button>
+            <button class="pg-size-btn" data-size="md" type="button" title="Medium cards">M</button>
+            <button class="pg-size-btn" data-size="lg" type="button" title="Large cards">L</button>
+          </div>
+          <div class="pg-layout-toggle">
+            <button class="pg-layout-btn active" data-layout="grid" title="Grid view">Grid</button>
+            <button class="pg-layout-btn" data-layout="list" title="List view">List</button>
+          </div>
+        </div>
       </div>
       <p class="popular-games-sub">Steam's most-played games and how they run on Linux through Proton.</p>
       <div class="pg-list" id="pg-list"></div>
@@ -189,6 +200,6 @@
 <script src="js/lib/supabase-client.js?v=04813aa1"></script>
 <script src="js/lib/topbar.js?v=38d23fe3"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/index/main.js?v=76eff07f"></script>
+<script type="module" src="js/index/main.js?v=ade17f5b"></script>
 </body>
 </html>

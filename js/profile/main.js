@@ -17,8 +17,8 @@ import {
 import { supabaseHeaders } from './api/supabase.js?v=bdf4b262';
 import {
   supabaseUserSystemsUrl, listUserSystems, setDefaultSystem,
-  clearDefaultSystem, updateSystemLabel, deleteSystem,
-} from './api/systems.js?v=fcfc95e6';
+  clearDefaultSystem, updateSystemLabel, updateSystem, deleteSystem,
+} from './api/systems.js?v=8c9eb2f2';
 import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
   deleteAllMyData, fetchAllMyData, checkMyDataExists, unpublishReport,
@@ -689,12 +689,15 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
             <span class="profile-systems-default-text">Default</span>
           </label>
         </td>
+        <td class="col-edit">
+          <button type="button" class="profile-systems-edit-btn" data-role="edit" title="Edit">Edit</button>
+        </td>
         <td class="col-delete">
           <button type="button" class="profile-systems-trash" data-role="delete" title="Delete">x</button>
         </td>
       </tr>
       <tr class="profile-systems-details-row" data-details-for="${escapeHtml(r.device_id)}" hidden>
-        <td colspan="4">
+        <td colspan="5">
           <div class="profile-systems-details-card">
             <div class="profile-systems-details-grid">
               ${detailRows.map(([label, value]) => `
@@ -808,6 +811,11 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
         if (detailRow) detailRow.hidden = expanded;
         return;
       }
+      if (btn.dataset.role === 'edit') {
+        const row = systemsCache.find(r => r.device_id === deviceId);
+        if (row) openEditSystemForm(row, protonPulseUserId, s);
+        return;
+      }
       if (btn.dataset.role === 'delete') {
         if (!window.confirm('Delete this system? The plugin will re-create it next time you upload.')) return;
         await deleteSystem(protonPulseUserId, deviceId, s);
@@ -816,6 +824,96 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
     } catch (e) {
       showSystemsStatus(e.message || 'Action failed', false);
     }
+  }
+
+  function openEditSystemForm(row, protonPulseUserId, session) {
+    const existing = document.getElementById('edit-system-form');
+    if (existing) existing.remove();
+
+    const parsed = parseUploadedSystem(row);
+    const displayLabel = isGenericSystemLabel(row.label) ? inferSystemLabel(row) : (row.label || '');
+    const ramGb = parsed.ram ? parseInt(parsed.ram.replace(/[^0-9]/g, ''), 10) || '' : '';
+
+    const formHtml = `
+      <tr id="edit-system-form" data-editing="${escapeHtml(row.device_id)}">
+        <td colspan="5">
+          <div class="profile-prefill-source" style="margin:8px 0">
+            <div class="profile-prefill-source-title">Edit system</div>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;margin-top:10px">
+              <div><label class="profile-field-label">Label</label><input type="text" id="edit-sys-label" class="profile-select" value="${escapeHtml(displayLabel)}" maxlength="80" style="width:100%"></div>
+              <div><label class="profile-field-label">CPU</label><input type="text" id="edit-sys-cpu" class="profile-select" value="${escapeHtml(parsed.cpu || '')}" maxlength="120" style="width:100%"></div>
+              <div><label class="profile-field-label">GPU</label><input type="text" id="edit-sys-gpu" class="profile-select" value="${escapeHtml(parsed.gpu || '')}" maxlength="120" style="width:100%"></div>
+              <div><label class="profile-field-label">GPU Vendor</label>
+                <select id="edit-sys-gpu-vendor" class="profile-select" style="width:100%">
+                  <option value="">--</option>
+                  <option value="nvidia" ${parsed.gpuVendor === 'nvidia' ? 'selected' : ''}>NVIDIA</option>
+                  <option value="amd" ${parsed.gpuVendor === 'amd' ? 'selected' : ''}>AMD</option>
+                  <option value="intel" ${parsed.gpuVendor === 'intel' ? 'selected' : ''}>Intel</option>
+                </select>
+              </div>
+              <div><label class="profile-field-label">GPU Driver</label><input type="text" id="edit-sys-gpu-driver" class="profile-select" value="${escapeHtml(parsed.gpuDriver || '')}" maxlength="80" style="width:100%"></div>
+              <div><label class="profile-field-label">RAM</label><input type="text" id="edit-sys-ram" class="profile-select" value="${ramGb ? ramGb + ' GB' : ''}" maxlength="20" style="width:100%"></div>
+              <div><label class="profile-field-label">VRAM (MB)</label><input type="number" id="edit-sys-vram" class="profile-select" value="${parsed.vramMb || ''}" min="0" max="262144" style="width:100%"></div>
+              <div><label class="profile-field-label">OS</label><input type="text" id="edit-sys-os" class="profile-select" value="${escapeHtml([parsed.os, parsed.osVersion].filter(Boolean).join(' '))}" maxlength="60" style="width:100%"></div>
+              <div><label class="profile-field-label">Kernel</label><input type="text" id="edit-sys-kernel" class="profile-select" value="${escapeHtml(parsed.kernel || '')}" maxlength="60" style="width:100%"></div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:10px;align-items:center">
+              <button type="button" class="profile-parse-btn" id="edit-sys-save">Save</button>
+              <button type="button" class="profile-refresh-btn" id="edit-sys-cancel">Cancel</button>
+              <span id="edit-sys-status" style="font-size:0.76rem;color:var(--muted)"></span>
+            </div>
+          </div>
+        </td>
+      </tr>`;
+
+    const mainRow = systemsTbody.querySelector(`tr[data-device-id="${CSS.escape(row.device_id)}"]`);
+    if (!mainRow) return;
+    mainRow.insertAdjacentHTML('afterend', formHtml);
+
+    document.getElementById('edit-sys-cancel')?.addEventListener('click', () => {
+      document.getElementById('edit-system-form')?.remove();
+    });
+
+    document.getElementById('edit-sys-save')?.addEventListener('click', async () => {
+      const label = document.getElementById('edit-sys-label')?.value?.trim() || displayLabel;
+      const cpu = document.getElementById('edit-sys-cpu')?.value?.trim() || '';
+      const gpu = document.getElementById('edit-sys-gpu')?.value?.trim() || '';
+      const gpuDriver = document.getElementById('edit-sys-gpu-driver')?.value?.trim() || '';
+      const ram = document.getElementById('edit-sys-ram')?.value?.trim() || '';
+      const vram = document.getElementById('edit-sys-vram')?.value?.trim() || '';
+      const os = document.getElementById('edit-sys-os')?.value?.trim() || '';
+      const kernel = document.getElementById('edit-sys-kernel')?.value?.trim() || '';
+
+      const lines = [];
+      if (cpu) lines.push(`CPU Brand: ${cpu}`);
+      if (gpu) lines.push(`Video Card: ${gpu}`);
+      if (gpuDriver) lines.push(`Driver Version: ${gpuDriver}`);
+      if (ram) {
+        const gb = parseInt(ram.replace(/[^0-9]/g, ''), 10);
+        if (gb) lines.push(`RAM: ${gb * 1024} Mb`);
+      }
+      if (vram) lines.push(`VRAM: ${vram} Mb`);
+      if (os) lines.push(`OS Version: ${os}`);
+      if (kernel) lines.push(`Kernel Version: ${kernel}`);
+
+      const saveBtn = document.getElementById('edit-sys-save');
+      const statusEl = document.getElementById('edit-sys-status');
+      try {
+        saveBtn.disabled = true;
+        saveBtn.textContent = 'Saving...';
+        await updateSystem(protonPulseUserId, row.device_id, {
+          label,
+          sysinfo_text: lines.join('\n'),
+        }, session);
+        document.getElementById('edit-system-form')?.remove();
+        showSystemsStatus('System updated', true);
+        void refreshSystems();
+      } catch (e) {
+        saveBtn.disabled = false;
+        saveBtn.textContent = 'Save';
+        if (statusEl) { statusEl.textContent = e.message || 'Save failed'; statusEl.style.color = 'var(--red)'; }
+      }
+    });
   }
 
   // Label saves on blur. Using focusout so it bubbles through the table

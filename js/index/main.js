@@ -94,7 +94,10 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=85cf419
   // pending, empty) is a title we list but have no reports for yet.
   const KNOWN_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked']);
 
+  let currentLayout = 'grid';
+
   function pgCardHtml(g) {
+    if (currentLayout === 'list') return pgListRowHtml(g);
     const img = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(g.appId)}/header.jpg`;
     const peak = fmtPeak(g.peak);
     const rating = String(g.rating || '').toLowerCase();
@@ -110,6 +113,18 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=85cf419
         </div>
         <span class="pg-badge ${badgeClass}">${rLabel}</span>
       </a>`;
+  }
+
+  function pgListRowHtml(g) {
+    const rating = String(g.rating || '').toLowerCase();
+    const rated = KNOWN_TIERS.has(rating);
+    const rLabel = rated ? RATING_LABEL[rating] : '?';
+    const peak = fmtPeak(g.peak);
+    return `<a class="pg-list-row" href="app.html#/app/${encodeURIComponent(g.appId)}">
+      <span class="pg-list-tier pg-badge ${rated ? `pg-${rating}` : 'pg-unrated'}">${rLabel}</span>
+      <span class="pg-list-title">${esc(g.title)}</span>
+      <span class="pg-list-meta">${peak ? peak + ' peak' : ''}</span>
+    </a>`;
   }
 
   try {
@@ -188,7 +203,51 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=85cf419
     }
     ratedBtn?.addEventListener('click', () => selectFilter('rated'));
     unratedBtn?.addEventListener('click', () => selectFilter('unrated'));
-    renderPopular();
+
+    // S/M/L card size (saved preference, shared key with app page)
+    const SIZE_KEY = 'pp:grid-size';
+    const SIZES = ['sm', 'md', 'lg'];
+    function savedSize() {
+      try { const s = localStorage.getItem(SIZE_KEY); return SIZES.includes(s) ? s : 'md'; } catch { return 'md'; }
+    }
+    function applySize(size) {
+      SIZES.forEach(s => list.classList.remove(`pg-list--${s}`));
+      list.classList.add(`pg-list--${size}`);
+      document.querySelectorAll('.pg-size-btn').forEach(b => b.classList.toggle('active', b.dataset.size === size));
+    }
+    function setSizeEnabled(enabled) {
+      document.querySelectorAll('.pg-size-btn').forEach(b => { b.disabled = !enabled; });
+      document.getElementById('pg-size-toggle')?.classList.toggle('pg-size-toggle--disabled', !enabled);
+    }
+    document.querySelectorAll('.pg-size-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        try { localStorage.setItem(SIZE_KEY, btn.dataset.size); } catch { /* ignore */ }
+        applySize(btn.dataset.size);
+      });
+    });
+
+    // Grid/List layout (saved preference, shared key with app page)
+    const LAYOUT_KEY = 'pp:grid-layout';
+    function savedLayout() {
+      try { const l = localStorage.getItem(LAYOUT_KEY); return (l === 'list' || l === 'grid') ? l : 'grid'; } catch { return 'grid'; }
+    }
+    function applyLayout(layout) {
+      currentLayout = layout;
+      const isList = layout === 'list';
+      list.classList.toggle('pg-list--list-mode', isList);
+      document.querySelectorAll('.pg-layout-btn').forEach(b => b.classList.toggle('active', b.dataset.layout === layout));
+      setSizeEnabled(!isList);
+      renderPopular();
+    }
+    document.querySelectorAll('.pg-layout-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        try { localStorage.setItem(LAYOUT_KEY, btn.dataset.layout); } catch { /* ignore */ }
+        applyLayout(btn.dataset.layout);
+      });
+    });
+
+    applySize(savedSize());
+    applyLayout(savedLayout());
   } catch (err) {
     console.debug('[popular-games] failed to load most_played.json', { error: String(err) });
     /* leave the section hidden */
