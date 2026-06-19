@@ -7,11 +7,11 @@ import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=f3f1e031';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=0ed723fb';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=6d4d6884';
-import { enhanceAuthorBlocks } from './author.js?v=660687a9';
+import { enhanceAuthorBlocks } from './author.js?v=a649ee85';
 import { renderConfigCard } from './config-cards.js?v=2578d16a';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=b0fa82d9';
-import { renderCard } from './report-card.js?v=fe7c60bd';
-import { loadSearchIndex, searchIndex } from './search.js?v=13827ba1';
+import { renderCard } from './report-card.js?v=08c806fb';
+import { loadSearchIndex, searchIndex } from './search.js?v=7d01b525';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref } from '../config.js?v=4031c5fa';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=85cf4195';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';
@@ -492,17 +492,6 @@ export async function renderGamePage(appId) {
         </button>
       </div>`;
 
-    // Show a banner if the signed-in client already has a public report on this
-    // game (matched via client id on user_configs). No draft concept: upload means publish.
-    const myCid = getWebClientId();
-    const myPublished = nativeReports.find(r => r.clientId && r.clientId === myCid);
-    const myStatusBadge = myPublished ? `
-      <div class="my-config-banner my-config-banner--published" title="Your report for this game">
-        <span class="my-config-banner-dot"></span>
-        <span class="my-config-banner-label">Your report:</span>
-        <span class="my-config-banner-status">Published</span>
-      </div>` : '';
-
     el.innerHTML = `
       <div class="game-header">
         <div class="game-header-main">
@@ -515,7 +504,6 @@ export async function renderGamePage(appId) {
               &nbsp;/&nbsp; <strong>${configs.length}</strong> Pulse config${configs.length !== 1 ? 's' : ''}
               ${totalCommunityMinutes > 0 ? `&nbsp;/&nbsp; <strong>${fmtMinutes(totalCommunityMinutes)}</strong> community playtime (${totalSessionCount} session${totalSessionCount !== 1 ? 's' : ''})` : ''}
             </div>
-            ${myStatusBadge}
           </div>
           <img src="${STEAM_IMG(appId)}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
         </div>
