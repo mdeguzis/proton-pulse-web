@@ -2037,6 +2037,41 @@ a.card:active { transform: translateY(1px); }
 }
 .home-layout-btn:hover { background: var(--s2); color: var(--text); }
 .home-layout-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
+
+/* View controls row: card-size (S/M/L) + grid/list toggles together. */
+.home-view-controls { display: flex; align-items: center; gap: 10px; }
+.home-size-toggle { display: flex; gap: 4px; }
+.home-size-btn {
+  width: 28px;
+  padding: 5px 0;
+  background: var(--s1);
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background .1s, color .1s, border-color .1s;
+}
+.home-size-btn:hover { background: var(--s2); color: var(--text); }
+.home-size-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
+
+/* Card size preference. Medium matches the default desktop row; small is
+   denser, large is roomier. Title/sub scale with the boxart. The size class
+   lives on the .cards container and overrides the responsive default. */
+.cards--sm .game-card-thumb { width: 100px; height: 47px; }
+.cards--md .game-card-thumb { width: 138px; height: 64px; }
+.cards--lg .game-card-thumb { width: 200px; height: 93px; }
+.cards--sm .game-card { gap: 12px; padding: 8px 12px 8px 8px; }
+.cards--lg .game-card { gap: 20px; padding: 14px 20px 14px 12px; }
+.cards--sm .game-card-title { font-size: 0.92rem; }
+.cards--lg .game-card-title { font-size: 1.12rem; }
+.cards--lg .game-card-sub { font-size: 0.85rem; }
+@media (max-width: 560px) {
+  /* Keep large from overwhelming small screens. */
+  .cards--lg .game-card-thumb { width: 150px; height: 70px; }
+}
 .home-tier-chips { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 12px; }
 .home-tier-chip {
   padding: 4px 11px;

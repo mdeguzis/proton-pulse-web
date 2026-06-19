@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=a9fb53ae';
-import { loadSearchIndex, searchIndex } from './search.js?v=91907ef7';
+import { loadSearchIndex, searchIndex } from './search.js?v=b05fe84a';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=4031c5fa';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=3a07c55e';
@@ -198,9 +198,16 @@ export async function renderHomePage() {
             </div>
           </div>
         </div>
-        <div class="home-layout-toggle">
-          <button class="home-layout-btn active" data-layout="grid" title="Grid view">Grid</button>
-          <button class="home-layout-btn" data-layout="list" title="List view">List</button>
+        <div class="home-view-controls">
+          <div class="home-size-toggle" id="home-size-toggle" title="Card size">
+            <button class="home-size-btn" data-size="sm" type="button" title="Small cards">S</button>
+            <button class="home-size-btn" data-size="md" type="button" title="Medium cards">M</button>
+            <button class="home-size-btn" data-size="lg" type="button" title="Large cards">L</button>
+          </div>
+          <div class="home-layout-toggle">
+            <button class="home-layout-btn active" data-layout="grid" title="Grid view">Grid</button>
+            <button class="home-layout-btn" data-layout="list" title="List view">List</button>
+          </div>
         </div>
       </div>
       <p class="section-label" style="margin-bottom:10px">Recent Reports</p>
@@ -351,6 +358,29 @@ export async function renderHomePage() {
         applyRecentFilters();
       });
     });
+
+    // Card size (S/M/L) is a saved user preference. Applies the cards--<size>
+    // class to both card lists; default medium.
+    const SIZE_KEY = 'pp:grid-size';
+    const SIZES = ['sm', 'md', 'lg'];
+    function _savedSize() {
+      try { const s = localStorage.getItem(SIZE_KEY); return SIZES.includes(s) ? s : 'md'; } catch { return 'md'; }
+    }
+    function applyGridSize(size) {
+      ['cards-recent', 'cards-popular'].forEach(id => {
+        const el2 = document.getElementById(id);
+        if (el2) { SIZES.forEach(s => el2.classList.remove(`cards--${s}`)); el2.classList.add(`cards--${size}`); }
+      });
+      document.querySelectorAll('.home-size-btn').forEach(b => b.classList.toggle('active', b.dataset.size === size));
+    }
+    document.querySelectorAll('.home-size-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const size = btn.dataset.size;
+        try { localStorage.setItem(SIZE_KEY, size); } catch { /* ignore */ }
+        applyGridSize(size);
+      });
+    });
+    applyGridSize(_savedSize());
 
     applyRecentFilters();
     applyPopularFilters();
