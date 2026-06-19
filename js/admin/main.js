@@ -446,10 +446,11 @@ function wireEvents() {
         if (target) target.status = newStatus;
         btn.disabled = false;
         btn.textContent = origText;
+        window.ppToast?.success(`Status set to ${STATUS_LABELS[newStatus] || newStatus}.`);
       } catch (err) {
         btn.disabled = false;
         btn.textContent = origText;
-        alert(`Error: ${err.message}`);
+        window.ppToast?.error(`Could not update status: ${err.message}`);
       }
     }
 
@@ -462,10 +463,11 @@ function wireEvents() {
         await deleteFlaggedReport(currentSession, id);
         flaggedRows = flaggedRows.filter(r => String(r.id) !== id);
         activateTab('flagged');
+        window.ppToast?.success('Flag entry deleted.');
       } catch (err) {
         btn.disabled = false;
         btn.textContent = 'Delete';
-        alert(`Error: ${err.message}`);
+        window.ppToast?.error(`Could not delete flag: ${err.message}`);
       }
     }
 
@@ -506,10 +508,16 @@ function wireEvents() {
         // flips to Un-shadow ban) instead of bouncing back to the list. Only the
         // Back button / browser back should leave this screen.
         await loadFlagDetail(target || flag);
+        const doneMsg = {
+          'flag-shadowban': 'Report shadow banned.',
+          'flag-release': 'Report released and made visible.',
+          'flag-delete-report': 'Report deleted.',
+        }[action];
+        window.ppToast?.success(doneMsg);
       } catch (err) {
         btn.disabled = false;
         btn.textContent = origText;
-        alert(`Error: ${err.message}`);
+        window.ppToast?.error(`Action failed: ${err.message}`);
       }
     }
   });

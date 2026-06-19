@@ -57,7 +57,7 @@ export async function castVote(appId, rKey, vote, upBtn, dnBtn) {
         method: 'DELETE',
         headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, Prefer: 'return=minimal' },
       });
-    } catch { /* silently fail */ }
+    } catch { window.ppToast?.error('Could not update your vote. Check your connection.'); }
     return;
   }
 
@@ -86,7 +86,7 @@ export async function castVote(appId, rKey, vote, upBtn, dnBtn) {
         body: JSON.stringify({ vote }),
       });
     }
-  } catch { /* silently fail */ }
+  } catch { window.ppToast?.error('Could not save your vote. Check your connection.'); }
 }
 
 // - Helpers ------------------------------------------

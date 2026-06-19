@@ -345,15 +345,18 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
         }
         if (result.ok) {
           if (statusEl) { statusEl.textContent = savedText; statusEl.style.color = 'var(--green)'; }
+          window.ppToast?.success(isEdit ? 'Changes saved.' : 'Report submitted. Thanks!');
           if (typeof window.ppTrack === 'function') window.ppTrack('report_submit', { app_id: String(appId), is_edit: isEdit });
           setTimeout(() => { window.location.href = `app.html#/app/${appId}`; }, 1200);
         } else {
           if (statusEl) { statusEl.textContent = result.error || 'Failed'; statusEl.style.color = 'var(--red)'; }
+          window.ppToast?.error(result.error || (isEdit ? 'Could not save changes.' : 'Could not submit the report.'));
           if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = isEdit ? 'Save Changes' : 'Submit'; }
         }
       } catch (err) {
         console.error('[submit] save failed:', err);
         if (statusEl) { statusEl.textContent = err.message || 'Failed'; statusEl.style.color = 'var(--red)'; }
+        window.ppToast?.error(`Submit failed: ${err.message || err}`);
         if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = isEdit ? 'Save Changes' : 'Submit'; }
       }
     });
