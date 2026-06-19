@@ -25,11 +25,18 @@ function loadFlaggedApi(fetchImpl) {
 const ok = (body) => Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(body) });
 
 describe('flagged report moderation', () => {
-  test('detail view offers Release / Shadow ban / Delete report for Pulse sources only', () => {
+  test('detail view offers Release / Shadow ban / Delete report for ANY source', () => {
     expect(flaggedComponentSrc).toContain('data-action="flag-release"');
     expect(flaggedComponentSrc).toContain('data-action="flag-shadowban"');
     expect(flaggedComponentSrc).toContain('data-action="flag-delete-report"');
-    expect(flaggedComponentSrc).toContain('isPulseSource(flagRow.source)');
+    // No source gate around the action buttons; they live in a reusable bar
+    expect(flaggedComponentSrc).toContain('const actionBar =');
+    expect(flaggedComponentSrc).not.toMatch(/isPulseSource\(flagRow\.source\)\s*\?\s*`\s*<button[^`]*flag-release/);
+  });
+
+  test('the action bar is rendered both at the top and bottom of the detail', () => {
+    const occurrences = (flaggedComponentSrc.match(/\$\{actionBar\}/g) || []).length;
+    expect(occurrences).toBeGreaterThanOrEqual(2);
   });
 
   test('isPulseSource recognizes pulse and proton-pulse', () => {
@@ -76,9 +83,27 @@ describe('flagged report moderation', () => {
     expect(id).toBe(2);
   });
 
-  test('admin handler resolves the config then marks the flag complete', () => {
+  test('suppressMirrorReport upserts into report_moderation', async () => {
+    const { mod, calls } = loadFlaggedApi(() => ok(null));
+    await mod.suppressMirrorReport({}, { flagId: 5, appId: '730', reportKey: 'k', source: 'protondb', action: 'shadowban' });
+    expect(calls[0].url).toContain('/report_moderation');
+    expect(calls[0].opts.method).toBe('POST');
+    expect(calls[0].opts.headers.Prefer).toContain('merge-duplicates');
+    expect(JSON.parse(calls[0].opts.body)).toMatchObject({ app_id: '730', source: 'protondb', action: 'shadowban', flag_id: 5 });
+  });
+
+  test('unsuppressMirrorReport deletes the suppression by key', async () => {
+    const { mod, calls } = loadFlaggedApi(() => ok(null));
+    await mod.unsuppressMirrorReport({}, { appId: '730', reportKey: 'k', source: 'protondb' });
+    expect(calls[0].opts.method).toBe('DELETE');
+    expect(calls[0].url).toContain('report_key=eq.k');
+  });
+
+  test('admin handler routes Pulse to DB and mirror reports to suppression', () => {
     expect(adminMainSrc).toContain("action === 'flag-shadowban'");
     expect(adminMainSrc).toContain('findPulseConfigId(currentSession, flag.app_id, flag.report_key)');
+    expect(adminMainSrc).toContain('suppressMirrorReport(currentSession');
+    expect(adminMainSrc).toContain('unsuppressMirrorReport(currentSession, ref)');
     expect(adminMainSrc).toContain("updateFlagStatus(currentSession, id, 'complete')");
   });
 });

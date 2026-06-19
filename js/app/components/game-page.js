@@ -7,11 +7,11 @@ import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=f3f1e031';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=ffef19a3';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=f85fdd11';
-import { enhanceAuthorBlocks } from './author.js?v=38baeac3';
+import { enhanceAuthorBlocks } from './author.js?v=1dbef7a7';
 import { renderConfigCard } from './config-cards.js?v=2578d16a';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=b0fa82d9';
-import { renderCard } from './report-card.js?v=2ffd89e5';
-import { loadSearchIndex, searchIndex } from './search.js?v=630e4254';
+import { renderCard } from './report-card.js?v=e0b0af0b';
+import { loadSearchIndex, searchIndex } from './search.js?v=49fb557e';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref } from '../config.js?v=4031c5fa';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=85cf4195';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';
@@ -29,6 +29,27 @@ async function _fetchSteamCatalog() {
 }
 
 const DISCORD_URL = 'https://discord.gg/4p6e4X7xW';
+
+// Report key used to match a ProtonDB mirror report against a suppression row.
+// Must stay identical to the key the admin flag flow stores (api/flagged.js).
+function _pdbReportKey(r) {
+  return `${r.timestamp}:${(r.gpu || '').slice(0, 20)}:${(r.protonVersion || '').slice(0, 15)}`;
+}
+
+// Fetch the set of suppressed ProtonDB reports for an app (admin shadow ban /
+// delete). Returns a Set of report_key strings to filter out at render time.
+// Our site, our rules: we hide reports we have moderated regardless of source.
+async function _fetchReportModeration(appId) {
+  try {
+    const url = `${SB_URL}/rest/v1/report_moderation?app_id=eq.${encodeURIComponent(appId)}&select=report_key`;
+    const res = await fetch(url, { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } });
+    if (!res.ok) return new Set();
+    const rows = await res.json();
+    return new Set(rows.map(r => r.report_key));
+  } catch {
+    return new Set();
+  }
+}
 
 function _showFlagModal(btn) {
   const existing = document.getElementById('flag-report-modal');
@@ -131,14 +152,24 @@ export async function renderGamePage(appId) {
       return fallback;
     }
   };
-  const [cdn, configs, nativeReports, votes, userVotes, playtimeTotals] = await Promise.all([
+  const [cdnRaw, configs, nativeReports, votes, userVotes, playtimeTotals, suppressedKeys] = await Promise.all([
     safeFetch(() => fetchCdn(appId), 'fetchCdn', []),
     safeFetch(() => fetchSupabase(appId), 'fetchSupabase', []),
     safeFetch(() => fetchNativeReports(appId), 'fetchNativeReports', []),
     safeFetch(() => fetchVotes(appId), 'fetchVotes', {}),
     safeFetch(() => fetchUserVotes(appId), 'fetchUserVotes', {}),
     safeFetch(() => fetchConfigPlaytimeTotals(appId), 'fetchConfigPlaytimeTotals', []),
+    safeFetch(() => _fetchReportModeration(appId), 'reportModeration', new Set()),
   ]);
+
+  // Drop ProtonDB mirror reports an admin has shadow-banned or deleted. Pulse
+  // reports are filtered server-side by RLS (is_hidden), so they never arrive.
+  const cdn = suppressedKeys.size
+    ? cdnRaw.filter(r => !suppressedKeys.has(_pdbReportKey(r)))
+    : cdnRaw;
+  if (suppressedKeys.size && cdn.length !== cdnRaw.length) {
+    console.debug('[game-page] filtered suppressed ProtonDB reports', { appId, removed: cdnRaw.length - cdn.length, source: 'report_moderation' });
+  }
 
   // If CDN was empty but the user already clicked "Check ProtonDB Live" this
   // session, use the cached live result so the page re-renders correctly.

@@ -714,8 +714,13 @@
 .flag-detail-actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 8px;
+  margin: 4px 0 16px;
 }
+/* Pushes the secondary (status / delete-flag) buttons to the right, separating
+   them from the primary report actions. */
+.flag-detail-actions-sep { flex: 1 1 auto; min-width: 12px; }
 
 /* Report preview card inside flag detail */
 .flag-report-card {

@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=a9fb53ae';
-import { loadSearchIndex, searchIndex } from './search.js?v=630e4254';
+import { loadSearchIndex, searchIndex } from './search.js?v=49fb557e';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=4031c5fa';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=3a07c55e';

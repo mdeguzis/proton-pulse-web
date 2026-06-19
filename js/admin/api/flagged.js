@@ -112,6 +112,42 @@ export async function deleteReportContent(session, configId) {
   if (!res.ok) throw new Error(`Delete report failed: ${res.status}`);
 }
 
+// --- Mirror report suppression (ProtonDB reports not in our DB) ------------
+// ProtonDB reports come from the static mirror, so we cannot edit or delete
+// them at the row level. Instead we record a suppression in report_moderation
+// and the game page filters those out at render time. action is 'shadowban' or
+// 'deleted' (both hide it from the site; the distinction is for the audit log).
+export async function suppressMirrorReport(session, { flagId, appId, reportKey, source, action, flaggedAt, reason }) {
+  const url = `${SUPABASE_URL}/rest/v1/report_moderation`;
+  const res = await fetch(url, {
+    method: 'POST',
+    // merge-duplicates upserts on the (app_id, report_key, source) unique key
+    headers: supabaseHeaders(session, { Prefer: 'resolution=merge-duplicates,return=minimal' }),
+    body: JSON.stringify({
+      flag_id: flagId ?? null,
+      app_id: String(appId),
+      report_key: reportKey,
+      source: source || 'protondb',
+      action: action || 'shadowban',
+      flagged_at: flaggedAt ?? null,
+      reason: reason ?? null,
+    }),
+  });
+  if (!res.ok) throw new Error(`Suppress report failed: ${res.status}`);
+}
+
+export async function unsuppressMirrorReport(session, { appId, reportKey, source }) {
+  const url = `${SUPABASE_URL}/rest/v1/report_moderation`
+    + `?app_id=eq.${encodeURIComponent(appId)}`
+    + `&report_key=eq.${encodeURIComponent(reportKey)}`
+    + `&source=eq.${encodeURIComponent(source || 'protondb')}`;
+  const res = await fetch(url, {
+    method: 'DELETE',
+    headers: supabaseHeaders(session, { Prefer: 'return=minimal' }),
+  });
+  if (!res.ok) throw new Error(`Release report failed: ${res.status}`);
+}
+
 function _reportKey(r) {
   return `${r.timestamp}:${(r.gpu||'').slice(0,20)}:${(r.protonVersion||'').slice(0,15)}`;
 }

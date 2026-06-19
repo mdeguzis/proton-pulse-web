@@ -1,8 +1,8 @@
 import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
 import { supabaseHeaders, escapeHtml } from './utils.js?v=86489fcb';
 import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=529eb059';
-import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent } from './api/flagged.js?v=1a8910f5';
-import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=bbef55b1';
+import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport } from './api/flagged.js?v=3f4e44b0';
+import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=690adf91';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
 import { fetchAllUsers } from './api/users.js?v=52e867d2';
@@ -482,11 +482,19 @@ function wireEvents() {
       btn.disabled = true;
       btn.textContent = '...';
       try {
+        // Pulse reports have a user_configs row we edit directly. ProtonDB
+        // mirror reports do not, so we record a suppression instead. Either way
+        // the action works -- our site, our rules on what we display.
         const configId = await findPulseConfigId(currentSession, flag.app_id, flag.report_key);
-        if (!configId) throw new Error('Could not find the report content (report_key did not match any stored report).');
-        if (action === 'flag-shadowban') await shadowBanReport(currentSession, configId);
-        else if (action === 'flag-release') await releaseReportContent(currentSession, configId);
-        else await deleteReportContent(currentSession, configId);
+        if (configId) {
+          if (action === 'flag-shadowban') await shadowBanReport(currentSession, configId);
+          else if (action === 'flag-release') await releaseReportContent(currentSession, configId);
+          else await deleteReportContent(currentSession, configId);
+        } else {
+          const ref = { flagId: flag.id, appId: flag.app_id, reportKey: flag.report_key, source: flag.source, flaggedAt: flag.flagged_at };
+          if (action === 'flag-release') await unsuppressMirrorReport(currentSession, ref);
+          else await suppressMirrorReport(currentSession, { ...ref, action: action === 'flag-delete-report' ? 'deleted' : 'shadowban' });
+        }
         // Resolve the flag now that the report has been handled.
         await updateFlagStatus(currentSession, id, 'complete');
         const target = flaggedRows.find(r => String(r.id) === id);

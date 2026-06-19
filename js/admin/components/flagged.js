@@ -86,8 +86,29 @@ export function renderFlagDetail(flagRow, reportContent) {
   const statusLabel = escapeHtml(STATUS_LABELS[status] || status);
   const rowId      = escapeHtml(String(flagRow.id));
 
+  // One action bar, shown at the top and bottom so a moderator never has to
+  // scroll past the raw fields to act. Actions apply to ANY source: Pulse
+  // reports are edited/deleted in our DB, ProtonDB mirror reports are suppressed
+  // via report_moderation and filtered out on the site. Our site, our rules.
+  const actionBar = `
+    <div class="flag-detail-actions">
+      <button class="admin-btn admin-btn--ok" data-action="flag-release" data-id="${rowId}" title="Keep this report; clear its flagged/hidden state">Release</button>
+      <button class="admin-btn admin-btn--warn" data-action="flag-shadowban" data-id="${rowId}" title="Hide from everyone except the submitter">Shadow ban</button>
+      <button class="admin-btn admin-btn--danger" data-action="flag-delete-report" data-id="${rowId}" title="Remove this report from the site">Delete report</button>
+      <span class="flag-detail-actions-sep"></span>
+      <button class="admin-btn admin-btn--sm" data-action="flag-set-status" data-status="in_review" data-id="${rowId}">In Review</button>
+      <button class="admin-btn admin-btn--ghost admin-btn--sm" data-action="flag-delete" data-id="${rowId}" title="Remove just this flag log entry">Delete flag entry</button>
+    </div>`;
+
+  const sourceNote = isPulseSource(flagRow.source)
+    ? ''
+    : '<div class="admin-sub" style="margin:6px 0 0;font-style:italic">ProtonDB report: Shadow ban and Delete remove it from our site. The upstream mirror is unchanged; Release un-hides it.</div>';
+
   return `
     <button class="admin-btn admin-btn--ghost admin-btn--sm" data-action="back-to-flagged" style="margin-bottom:16px">&#8592; Back</button>
+
+    ${actionBar}
+    ${sourceNote}
 
     <div class="flag-detail-reason">
       <div class="flag-detail-reason-label">Flag reason</div>
@@ -111,15 +132,5 @@ export function renderFlagDetail(flagRow, reportContent) {
       ? _renderRawFields(reportContent, 'Linked report content')
       : '<div class="admin-sub" style="margin-bottom:20px;font-style:italic">Linked report content not available (report_key may not match any stored report).</div>'}
 
-    <div class="flag-detail-actions">
-      <button class="admin-btn admin-btn--warn" data-action="flag-set-status" data-status="in_review" data-id="${rowId}">In Review</button>
-      ${isPulseSource(flagRow.source) ? `
-      <button class="admin-btn admin-btn--ok" data-action="flag-release" data-id="${rowId}" title="Keep this report and clear its flagged/hidden state">Release</button>
-      <button class="admin-btn admin-btn--warn" data-action="flag-shadowban" data-id="${rowId}" title="Hide from everyone except the submitter">Shadow ban</button>
-      <button class="admin-btn admin-btn--danger" data-action="flag-delete-report" data-id="${rowId}" title="Permanently delete the report content">Delete report</button>
-      ` : `
-      <span class="admin-sub" style="align-self:center;font-style:italic">ProtonDB report: content lives in the mirror, only the flag entry can be removed here.</span>
-      `}
-      <button class="admin-btn admin-btn--ghost admin-btn--sm" data-action="flag-delete" data-id="${rowId}" title="Remove just this flag log entry">Delete flag entry</button>
-    </div>`;
+    ${actionBar}`;
 }
