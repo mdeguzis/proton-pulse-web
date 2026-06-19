@@ -1057,14 +1057,29 @@
 .filter-persist:hover { color: var(--text); }
 .filter-persist input { accent-color: var(--accent); cursor: pointer; }
 
-/* Stacked filter panel (browse page): single column of groups instead of the
-   2-up grid used on the game page. */
-.filter-panel--stack {
-  display: none;
-  min-width: 220px;
+/* Browse-page filter panel: lay the groups (Sort / Tier / Source) out side by
+   side so the popover is compact instead of one tall vertical column. Wraps to
+   a single column on narrow screens. */
+.filter-panel--stack { display: none; }
+.filter-panel--stack.open {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px 24px;
 }
-.filter-panel--stack.open { display: flex; flex-direction: column; gap: 14px; }
-.filter-panel--stack .filter-item { gap: 4px; }
+.filter-panel--stack .filter-item { gap: 4px; min-width: 130px; }
+.filter-panel--stack .filter-checks { min-width: 120px; }
+.filter-panel-footer--stack {
+  flex-basis: 100%;
+  margin-top: 2px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  justify-content: flex-end;
+}
+@media (max-width: 560px) {
+  .filter-panel--stack.open { flex-direction: column; gap: 14px; }
+}
 .filter-panel--stack .home-filter-select {
   background: var(--bg);
   border: 1px solid var(--border2);

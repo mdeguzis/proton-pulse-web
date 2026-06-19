@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=a9fb53ae';
-import { loadSearchIndex, searchIndex } from './search.js?v=0e708bed';
+import { loadSearchIndex, searchIndex } from './search.js?v=0595ec64';
 import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=4031c5fa';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=3a07c55e';
@@ -113,11 +113,15 @@ function _appendCards(sectionId, queue) {
   const batch = queue.splice(0, PAGE_SIZE);
   const html = sectionId === 'recent'
     ? batch.map(_recentCardHtml).join('')
-    : batch.map(g => renderGameCard({
-        href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
-        title: g.title, sub: _popularSub(g),
-        tier: String(g.rating || '').toLowerCase() || undefined, sourceLabel: 'Steam',
-      })).join('');
+    : batch.map(g => {
+        const tier = g.tier || String(g.rating || '').toLowerCase();
+        return renderGameCard({
+          href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
+          title: g.title,
+          sub: tier === 'pending' ? 'No reports yet · be the first' : _popularSub(g),
+          tier: tier || undefined, sourceLabel: 'Steam',
+        });
+      }).join('');
   cardsEl.insertAdjacentHTML('beforeend', html);
   if (!queue.length && btnEl) btnEl.innerHTML = '';
 }
@@ -155,8 +159,6 @@ export async function renderHomePage() {
       unratedGames = all.filter(g => ['pending', 'catalog'].includes(String(g.rating || '').toLowerCase()));
     }
 
-    const unratedToggle = `<button class="unrated-toggle" id="unrated-toggle" type="button"${unratedGames.length ? '' : ' disabled'}>Not rated yet <span class="unrated-count">${unratedGames.length}</span></button>`;
-
     el.innerHTML = `
       <div class="home-filter-bar">
         <div class="filter-wrap" id="home-filter-wrap">
@@ -191,6 +193,9 @@ export async function renderHomePage() {
               <label class="filter-check"><input type="checkbox" value="protondb"><span>ProtonDB</span></label>
               <label class="filter-check"><input type="checkbox" value="pulse"><span>Pulse</span></label>
             </div>
+            <div class="filter-panel-footer filter-panel-footer--stack">
+              <button class="filter-clear-btn" id="home-filter-clear" type="button">Clear filters</button>
+            </div>
           </div>
         </div>
         <div class="home-layout-toggle">
@@ -203,7 +208,6 @@ export async function renderHomePage() {
       <div id="load-more-recent"></div>
       <div class="section-label-row" style="margin-top:24px;margin-bottom:10px">
         <span class="section-label" style="margin:0">Popular on Steam</span>
-        ${unratedToggle}
       </div>
       <div class="cards" id="cards-popular"></div>
       <div id="load-more-popular"></div>`;
@@ -212,8 +216,6 @@ export async function renderHomePage() {
     let tierSel = new Set();   // empty => all tiers
     let sourceSel = new Set(); // empty => all sources
     let currentLayout = 'grid';
-    let showingUnrated = false;
-    const unratedQueue = unratedGames.slice(PAGE_SIZE);
 
     function _listRowHtml(r) {
       const tier = String(r.tier || '').toLowerCase();
@@ -227,11 +229,21 @@ export async function renderHomePage() {
     }
 
     function applyPopularFilters() {
-      if (showingUnrated) return;
-      // most_played rated games carry their tier on `rating`; reuse the shared
-      // Set-based filters by mapping rating -> tier so the popular list honors
-      // the same tier/source selection as recent reports.
-      const asReports = ratedGames.map(g => ({ ...g, tier: String(g.rating || '').toLowerCase() }));
+      // Build the candidate pool from the tier selection. Rated games show by
+      // default; the unrated catalog games (no reports yet) only appear when
+      // "Not Rated Yet" (or "All") is selected, so they stay hidden otherwise.
+      const wantUnrated = tierSel.has('all') || tierSel.has('unrated');
+      const onlyUnrated = tierSel.size === 1 && tierSel.has('unrated');
+      const pool = [
+        ...(onlyUnrated ? [] : ratedGames),
+        ...(wantUnrated ? unratedGames : []),
+      ];
+      // Map rating -> tier ('pending' for unrated) so the shared Set-based tier
+      // filter treats them consistently with recent reports.
+      const asReports = pool.map(g => {
+        const t = String(g.rating || '').toLowerCase();
+        return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending' };
+      });
       const filtered = _filterByType(_filterByTier(asReports, tierSel), sourceSel);
       const cardsEl = document.getElementById('cards-popular');
       const loadMoreEl = document.getElementById('load-more-popular');
@@ -240,8 +252,9 @@ export async function renderHomePage() {
       const newQueue = filtered.slice(PAGE_SIZE);
       cardsEl.innerHTML = initial.map(g => renderGameCard({
         href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
-        title: g.title, sub: _popularSub(g),
-        tier: String(g.rating || '').toLowerCase() || undefined, sourceLabel: 'Steam',
+        title: g.title,
+        sub: g.tier === 'pending' ? 'No reports yet · be the first' : _popularSub(g),
+        tier: g.tier || undefined, sourceLabel: 'Steam',
       })).join('') || '<div class="state-box">No games match the current filters.</div>';
       if (loadMoreEl) {
         if (newQueue.length) {
@@ -312,6 +325,22 @@ export async function renderHomePage() {
       sourceSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters();
     });
 
+    // Clear filters: reset every group back to "All", sort back to Recent.
+    document.getElementById('home-filter-clear')?.addEventListener('click', () => {
+      [tierGroup, sourceGroup].forEach(g => {
+        if (!g) return;
+        g.querySelectorAll('input[type="checkbox"]').forEach(cb => { cb.checked = cb.value === 'all'; });
+      });
+      const sortSel = document.getElementById('home-sort-select');
+      if (sortSel) sortSel.value = 'recent';
+      currentSort = 'recent';
+      tierSel = new Set();
+      sourceSel = new Set();
+      updateFilterBadge();
+      applyRecentFilters();
+      applyPopularFilters();
+    });
+
     document.querySelectorAll('.home-layout-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.home-layout-btn').forEach(b => b.classList.remove('active'));
@@ -325,34 +354,6 @@ export async function renderHomePage() {
 
     applyRecentFilters();
     applyPopularFilters();
-
-    document.getElementById('unrated-toggle')?.addEventListener('click', (e) => {
-      showingUnrated = !showingUnrated;
-      const btn = e.currentTarget;
-      btn.classList.toggle('unrated-toggle--active', showingUnrated);
-      const cardsEl = document.getElementById('cards-popular');
-      const loadMoreEl = document.getElementById('load-more-popular');
-      if (showingUnrated) {
-        const initial = unratedGames.slice(0, PAGE_SIZE);
-        cardsEl.innerHTML = initial.map(g => renderGameCard({
-          href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
-          title: g.title, sub: 'No reports yet \u00b7 be the first',
-          tier: 'pending', sourceLabel: 'Steam',
-        })).join('');
-        loadMoreEl.innerHTML = unratedQueue.length ? _loadMoreBtn('popular') : '';
-        loadMoreEl.querySelector('button')?.addEventListener('click', () => {
-          const batch = unratedQueue.splice(0, PAGE_SIZE);
-          cardsEl.insertAdjacentHTML('beforeend', batch.map(g => renderGameCard({
-            href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
-            title: g.title, sub: 'No reports yet \u00b7 be the first',
-            tier: 'pending', sourceLabel: 'Steam',
-          })).join(''));
-          if (!unratedQueue.length) loadMoreEl.innerHTML = '';
-        });
-      } else {
-        applyPopularFilters();
-      }
-    });
   } catch {
     el.innerHTML = '<div class="state-box">Search for a game above or navigate to <code>#/app/{appId}</code></div>';
   }

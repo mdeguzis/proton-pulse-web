@@ -55,4 +55,19 @@ describe('home page browse filters (multi-select)', () => {
     expect(homeSrc).toContain('let sourceSel = new Set()');
     expect(homeSrc).toContain('_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel)');
   });
+
+  test('Not Rated Yet surfaces unrated catalog games in the popular section', () => {
+    expect(homeSrc).toContain("const wantUnrated = tierSel.has('all') || tierSel.has('unrated')");
+    expect(homeSrc).toContain('...(wantUnrated ? unratedGames : [])');
+    // legacy separate unrated toggle is gone
+    expect(homeSrc).not.toContain("id=\"unrated-toggle\"");
+    expect(homeSrc).not.toContain('showingUnrated');
+  });
+
+  test('a Clear filters button resets groups and selections', () => {
+    expect(homeSrc).toContain('id="home-filter-clear"');
+    expect(homeSrc).toContain('tierSel = new Set();');
+    expect(homeSrc).toContain('sourceSel = new Set();');
+    expect(homeSrc).toContain("cb.checked = cb.value === 'all'");
+  });
 });
