@@ -9,7 +9,7 @@
 <title>My Account — Proton Pulse</title>
 <meta name="color-scheme" content="dark">
 <link rel="stylesheet" href="css/shared/site.css?v=aa1f96c6">
-<link rel="stylesheet" href="css/profile/profile.css?v=da401332">
+<link rel="stylesheet" href="css/profile/profile.css?v=43f18079">
 </head>
 <body>
 
@@ -209,31 +209,6 @@
               <button type="button" class="profile-refresh-btn" id="add-system-btn" style="border-color:var(--accent);color:var(--accent)">+ Add system</button>
               <button type="button" class="profile-refresh-btn" id="systems-refresh-btn">Refresh</button>
             </div>
-
-            <!-- inline form for manually adding a system, hidden by default -->
-            <div id="add-system-form" class="profile-prefill-source" hidden style="margin-bottom:12px">
-              <div class="profile-prefill-source-title">Add a system manually</div>
-              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;margin-top:10px">
-                <div><label class="profile-field-label">Label</label><input type="text" id="add-sys-label" class="profile-select" placeholder="e.g. Desktop RTX 4070" maxlength="80" style="width:100%"></div>
-                <div><label class="profile-field-label">CPU</label><input type="text" id="add-sys-cpu" class="profile-select" placeholder="e.g. AMD Ryzen 7 5800X3D" maxlength="120" style="width:100%"></div>
-                <div><label class="profile-field-label">GPU</label><input type="text" id="add-sys-gpu" class="profile-select" placeholder="e.g. NVIDIA GeForce RTX 4070" maxlength="120" style="width:100%"></div>
-                <div><label class="profile-field-label">GPU Vendor</label>
-                  <select id="add-sys-gpu-vendor" class="profile-select" style="width:100%">
-                    <option value="">--</option><option value="nvidia">NVIDIA</option><option value="amd">AMD</option><option value="intel">Intel</option>
-                  </select>
-                </div>
-                <div><label class="profile-field-label">GPU Driver</label><input type="text" id="add-sys-gpu-driver" class="profile-select" placeholder="e.g. Mesa 24.1.0" maxlength="80" style="width:100%"></div>
-                <div><label class="profile-field-label">RAM</label><input type="text" id="add-sys-ram" class="profile-select" placeholder="e.g. 32 GB" maxlength="20" style="width:100%"></div>
-                <div><label class="profile-field-label">VRAM (MB)</label><input type="number" id="add-sys-vram" class="profile-select" placeholder="e.g. 8192" min="0" max="262144" style="width:100%"></div>
-                <div><label class="profile-field-label">OS</label><input type="text" id="add-sys-os" class="profile-select" placeholder="e.g. Arch Linux" maxlength="60" style="width:100%"></div>
-                <div><label class="profile-field-label">Kernel</label><input type="text" id="add-sys-kernel" class="profile-select" placeholder="e.g. 6.8.0" maxlength="60" style="width:100%"></div>
-              </div>
-              <div style="display:flex;gap:8px;margin-top:10px;align-items:center">
-                <button type="button" class="profile-parse-btn" id="add-sys-submit">Save system</button>
-                <button type="button" class="profile-refresh-btn" id="add-sys-cancel">Cancel</button>
-                <span id="add-sys-status" style="font-size:0.76rem;color:var(--muted)"></span>
-              </div>
-            </div>
             <div id="systems-empty" class="profile-field-hint" hidden>
               Open Pulse on your Steam Deck and press <strong>Upload to Pulse</strong> in the plugin settings. Your systems will show up here.
             </div>
@@ -244,8 +219,7 @@
                   <th>Label</th>
                   <th>Updated</th>
                   <th class="col-default">Default</th>
-                  <th class="col-edit"></th>
-                  <th class="col-delete"></th>
+                  <th class="col-action"></th>
                 </tr>
               </thead>
               <tbody id="systems-tbody"></tbody>
@@ -310,6 +284,6 @@
 <script src="js/lib/supabase-client.js?v=04813aa1"></script>
 <script src="js/lib/topbar.js?v=38d23fe3"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/profile/main.js?v=e94d36c6"></script>
+<script type="module" src="js/profile/main.js?v=cc06c649"></script>
 </body>
 </html>

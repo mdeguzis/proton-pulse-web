@@ -394,14 +394,11 @@
 }
 .profile-systems-table tbody tr:last-child td { border-bottom: none; }
 .profile-systems-table td.col-default,
-.profile-systems-table td.col-delete,
-.profile-systems-table td.col-edit,
+.profile-systems-table td.col-action,
 .profile-systems-table th.col-default,
-.profile-systems-table th.col-delete,
-.profile-systems-table th.col-edit {
+.profile-systems-table th.col-action {
   text-align: center;
   vertical-align: middle;
-  width: 80px;
 }
 /* Default column needs more room since the toggle now reserves space for
    the "Default" text whether or not the row is the current default (so the
@@ -434,42 +431,6 @@
   font-size: 0.72rem;
   color: var(--muted);
   line-height: 1.45;
-}
-.profile-systems-view-btn {
-  padding: 2px 8px;
-  background: none;
-  border: 1px solid var(--border2);
-  color: var(--muted);
-  font-size: 0.68rem;
-  font-family: inherit;
-  cursor: pointer;
-}
-.profile-systems-view-btn:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
-.profile-systems-trash {
-  background: none;
-  border: none;
-  color: var(--muted);
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 2px 6px;
-}
-.profile-systems-trash:hover { color: #c85050; }
-.profile-systems-edit-btn {
-  padding: 2px 8px;
-  background: none;
-  border: 1px solid var(--border2);
-  color: var(--muted);
-  font-size: 0.68rem;
-  font-family: inherit;
-  cursor: pointer;
-  border-radius: 3px;
-}
-.profile-systems-edit-btn:hover {
-  color: var(--accent);
-  border-color: var(--accent);
 }
 .profile-systems-default-toggle {
   display: inline-flex;

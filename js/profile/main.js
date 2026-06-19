@@ -17,7 +17,7 @@ import {
 import { supabaseHeaders } from './api/supabase.js?v=bdf4b262';
 import {
   supabaseUserSystemsUrl, listUserSystems, setDefaultSystem,
-  clearDefaultSystem, updateSystemLabel, updateSystem, deleteSystem,
+  clearDefaultSystem, updateSystemLabel, deleteSystem,
 } from './api/systems.js?v=8c9eb2f2';
 import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
@@ -26,7 +26,7 @@ import {
 import {
   listLinkedPlugins, completePluginLink, removePluginLink,
 } from './api/plugin-links.js?v=59c9f51e';
-import { showEditCloudConfigModal, showEditReportModal } from './components/edit-modals.js?v=d0e0780c';
+import { showEditCloudConfigModal, showEditReportModal, showEditSystemModal, showAddSystemModal } from './components/edit-modals.js?v=27767f46';
 
 (async function () {
   const signedIn  = document.getElementById('profile-signed-in');
@@ -678,7 +678,6 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
             <input type="text" class="profile-systems-label-input"
               data-role="label" value="${escapeHtml(displayLabel)}" maxlength="80">
             <div class="profile-systems-summary">${escapeHtml(summary)}</div>
-            <button type="button" class="profile-systems-view-btn" data-role="toggle-details" aria-expanded="false">View hardware</button>
           </div>
         </td>
         <td>${escapeHtml(formatSystemUpdated(r.updated_at))}</td>
@@ -689,15 +688,16 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
             <span class="profile-systems-default-text">Default</span>
           </label>
         </td>
-        <td class="col-edit">
-          <button type="button" class="profile-systems-edit-btn" data-role="edit" title="Edit">Edit</button>
-        </td>
-        <td class="col-delete">
-          <button type="button" class="profile-systems-trash" data-role="delete" title="Delete">x</button>
+        <td class="col-action">
+          <div class="profile-configs-actions">
+            <button type="button" class="profile-configs-action profile-configs-view-link" data-role="toggle-details" aria-expanded="false">View</button>
+            <button type="button" class="profile-configs-action profile-configs-edit-btn" data-role="edit">Edit</button>
+            <button type="button" class="profile-configs-action profile-configs-delete-btn" data-role="delete">Delete</button>
+          </div>
         </td>
       </tr>
       <tr class="profile-systems-details-row" data-details-for="${escapeHtml(r.device_id)}" hidden>
-        <td colspan="5">
+        <td colspan="4">
           <div class="profile-systems-details-card">
             <div class="profile-systems-details-grid">
               ${detailRows.map(([label, value]) => `
@@ -807,13 +807,13 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
           .find((row) => row.getAttribute('data-details-for') === deviceId);
         const expanded = btn.getAttribute('aria-expanded') === 'true';
         btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        btn.textContent = expanded ? 'View hardware' : 'Hide hardware';
+        btn.textContent = expanded ? 'View' : 'Hide';
         if (detailRow) detailRow.hidden = expanded;
         return;
       }
       if (btn.dataset.role === 'edit') {
         const row = systemsCache.find(r => r.device_id === deviceId);
-        if (row) openEditSystemForm(row, protonPulseUserId, s);
+        if (row) showEditSystemModal(row, protonPulseUserId, s, () => { void refreshSystems(); });
         return;
       }
       if (btn.dataset.role === 'delete') {
@@ -824,96 +824,6 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
     } catch (e) {
       showSystemsStatus(e.message || 'Action failed', false);
     }
-  }
-
-  function openEditSystemForm(row, protonPulseUserId, session) {
-    const existing = document.getElementById('edit-system-form');
-    if (existing) existing.remove();
-
-    const parsed = parseUploadedSystem(row);
-    const displayLabel = isGenericSystemLabel(row.label) ? inferSystemLabel(row) : (row.label || '');
-    const ramGb = parsed.ram ? parseInt(parsed.ram.replace(/[^0-9]/g, ''), 10) || '' : '';
-
-    const formHtml = `
-      <tr id="edit-system-form" data-editing="${escapeHtml(row.device_id)}">
-        <td colspan="5">
-          <div class="profile-prefill-source" style="margin:8px 0">
-            <div class="profile-prefill-source-title">Edit system</div>
-            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;margin-top:10px">
-              <div><label class="profile-field-label">Label</label><input type="text" id="edit-sys-label" class="profile-select" value="${escapeHtml(displayLabel)}" maxlength="80" style="width:100%"></div>
-              <div><label class="profile-field-label">CPU</label><input type="text" id="edit-sys-cpu" class="profile-select" value="${escapeHtml(parsed.cpu || '')}" maxlength="120" style="width:100%"></div>
-              <div><label class="profile-field-label">GPU</label><input type="text" id="edit-sys-gpu" class="profile-select" value="${escapeHtml(parsed.gpu || '')}" maxlength="120" style="width:100%"></div>
-              <div><label class="profile-field-label">GPU Vendor</label>
-                <select id="edit-sys-gpu-vendor" class="profile-select" style="width:100%">
-                  <option value="">--</option>
-                  <option value="nvidia" ${parsed.gpuVendor === 'nvidia' ? 'selected' : ''}>NVIDIA</option>
-                  <option value="amd" ${parsed.gpuVendor === 'amd' ? 'selected' : ''}>AMD</option>
-                  <option value="intel" ${parsed.gpuVendor === 'intel' ? 'selected' : ''}>Intel</option>
-                </select>
-              </div>
-              <div><label class="profile-field-label">GPU Driver</label><input type="text" id="edit-sys-gpu-driver" class="profile-select" value="${escapeHtml(parsed.gpuDriver || '')}" maxlength="80" style="width:100%"></div>
-              <div><label class="profile-field-label">RAM</label><input type="text" id="edit-sys-ram" class="profile-select" value="${ramGb ? ramGb + ' GB' : ''}" maxlength="20" style="width:100%"></div>
-              <div><label class="profile-field-label">VRAM (MB)</label><input type="number" id="edit-sys-vram" class="profile-select" value="${parsed.vramMb || ''}" min="0" max="262144" style="width:100%"></div>
-              <div><label class="profile-field-label">OS</label><input type="text" id="edit-sys-os" class="profile-select" value="${escapeHtml([parsed.os, parsed.osVersion].filter(Boolean).join(' '))}" maxlength="60" style="width:100%"></div>
-              <div><label class="profile-field-label">Kernel</label><input type="text" id="edit-sys-kernel" class="profile-select" value="${escapeHtml(parsed.kernel || '')}" maxlength="60" style="width:100%"></div>
-            </div>
-            <div style="display:flex;gap:8px;margin-top:10px;align-items:center">
-              <button type="button" class="profile-parse-btn" id="edit-sys-save">Save</button>
-              <button type="button" class="profile-refresh-btn" id="edit-sys-cancel">Cancel</button>
-              <span id="edit-sys-status" style="font-size:0.76rem;color:var(--muted)"></span>
-            </div>
-          </div>
-        </td>
-      </tr>`;
-
-    const mainRow = systemsTbody.querySelector(`tr[data-device-id="${CSS.escape(row.device_id)}"]`);
-    if (!mainRow) return;
-    mainRow.insertAdjacentHTML('afterend', formHtml);
-
-    document.getElementById('edit-sys-cancel')?.addEventListener('click', () => {
-      document.getElementById('edit-system-form')?.remove();
-    });
-
-    document.getElementById('edit-sys-save')?.addEventListener('click', async () => {
-      const label = document.getElementById('edit-sys-label')?.value?.trim() || displayLabel;
-      const cpu = document.getElementById('edit-sys-cpu')?.value?.trim() || '';
-      const gpu = document.getElementById('edit-sys-gpu')?.value?.trim() || '';
-      const gpuDriver = document.getElementById('edit-sys-gpu-driver')?.value?.trim() || '';
-      const ram = document.getElementById('edit-sys-ram')?.value?.trim() || '';
-      const vram = document.getElementById('edit-sys-vram')?.value?.trim() || '';
-      const os = document.getElementById('edit-sys-os')?.value?.trim() || '';
-      const kernel = document.getElementById('edit-sys-kernel')?.value?.trim() || '';
-
-      const lines = [];
-      if (cpu) lines.push(`CPU Brand: ${cpu}`);
-      if (gpu) lines.push(`Video Card: ${gpu}`);
-      if (gpuDriver) lines.push(`Driver Version: ${gpuDriver}`);
-      if (ram) {
-        const gb = parseInt(ram.replace(/[^0-9]/g, ''), 10);
-        if (gb) lines.push(`RAM: ${gb * 1024} Mb`);
-      }
-      if (vram) lines.push(`VRAM: ${vram} Mb`);
-      if (os) lines.push(`OS Version: ${os}`);
-      if (kernel) lines.push(`Kernel Version: ${kernel}`);
-
-      const saveBtn = document.getElementById('edit-sys-save');
-      const statusEl = document.getElementById('edit-sys-status');
-      try {
-        saveBtn.disabled = true;
-        saveBtn.textContent = 'Saving...';
-        await updateSystem(protonPulseUserId, row.device_id, {
-          label,
-          sysinfo_text: lines.join('\n'),
-        }, session);
-        document.getElementById('edit-system-form')?.remove();
-        showSystemsStatus('System updated', true);
-        void refreshSystems();
-      } catch (e) {
-        saveBtn.disabled = false;
-        saveBtn.textContent = 'Save';
-        if (statusEl) { statusEl.textContent = e.message || 'Save failed'; statusEl.style.color = 'var(--red)'; }
-      }
-    });
   }
 
   // Label saves on blur. Using focusout so it bubbles through the table
@@ -941,97 +851,19 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
   systemsTable?.addEventListener('focusout', handleSystemsLabelBlur);
   systemsRefresh?.addEventListener('click', () => { void refreshSystems(); });
 
-  // manual system add form
+  // Add system button opens modal
   const addSysBtn = document.getElementById('add-system-btn');
-  const addSysForm = document.getElementById('add-system-form');
-  const addSysSubmit = document.getElementById('add-sys-submit');
-  const addSysCancel = document.getElementById('add-sys-cancel');
-  const addSysStatus = document.getElementById('add-sys-status');
-  if (addSysBtn && addSysForm) {
-    addSysBtn.addEventListener('click', () => {
-      addSysForm.hidden = !addSysForm.hidden;
-      addSysBtn.textContent = addSysForm.hidden ? '+ Add system' : '- Cancel';
-    });
-  }
-
-  if (addSysCancel && addSysForm && addSysBtn) {
-    addSysCancel.addEventListener('click', () => {
-      addSysForm.hidden = true;
-      addSysBtn.textContent = '+ Add system';
-    });
-  }
-
-  addSysSubmit?.addEventListener('click', async () => {
-    const label = document.getElementById('add-sys-label')?.value?.trim() || 'Manual system';
-    const cpu = document.getElementById('add-sys-cpu')?.value?.trim() || '';
-    const gpu = document.getElementById('add-sys-gpu')?.value?.trim() || '';
-    const gpuVendor = document.getElementById('add-sys-gpu-vendor')?.value || '';
-    const gpuDriver = document.getElementById('add-sys-gpu-driver')?.value?.trim() || '';
-    const ram = document.getElementById('add-sys-ram')?.value?.trim() || '';
-    const vram = document.getElementById('add-sys-vram')?.value?.trim() || '';
-    const os = document.getElementById('add-sys-os')?.value?.trim() || '';
-    const kernel = document.getElementById('add-sys-kernel')?.value?.trim() || '';
-
-    if (!cpu && !gpu) {
-      if (addSysStatus) { addSysStatus.textContent = 'At least CPU or GPU is needed'; addSysStatus.style.color = 'var(--red)'; }
-      return;
-    }
-
-    // build a sysinfo_text blob that parseSteamSystemInfo can read back
-    const lines = [];
-    if (cpu) lines.push(`CPU Brand: ${cpu}`);
-    if (gpu) lines.push(`Video Card: ${gpu}`);
-    if (gpuDriver) lines.push(`Driver Version: ${gpuDriver}`);
-    // convert user-entered GB to the MB format parseSteamSystemInfo expects
-    if (ram) {
-      const gb = parseInt(ram.replace(/[^0-9]/g, ''), 10);
-      lines.push(`RAM: ${gb * 1024} Mb`);
-    }
-    if (vram) lines.push(`VRAM: ${vram} Mb`);
-    if (os) lines.push(`OS Version: ${os}`);
-    if (kernel) lines.push(`Kernel Version: ${kernel}`);
-    const sysinfoText = lines.join('\n');
-
-    // generate a device_id for web-created systems so they dont collide
-    const deviceId = 'web-' + crypto.randomUUID().slice(0, 12);
-
-    try {
-      addSysSubmit.disabled = true;
-      addSysSubmit.textContent = 'Saving...';
+  if (addSysBtn) {
+    addSysBtn.addEventListener('click', async () => {
       const s = await SupaAuth.getSession();
       const protonPulseUserId = getProtonPulseUserIdFromSession(s);
-      if (!protonPulseUserId) throw new Error('Not signed in');
-
-      const isFirst = systemsCache.length === 0;
-
-      const resp = await fetch(supabaseUserSystemsUrl(), {
-        method: 'POST',
-        headers: supabaseHeaders(s, { Prefer: 'return=minimal' }),
-        body: JSON.stringify({
-          proton_pulse_user_id: protonPulseUserId,
-          device_id: deviceId,
-          label,
-          sysinfo_text: sysinfoText,
-          is_default: isFirst,
-          updated_at: new Date().toISOString(),
-        }),
+      if (!protonPulseUserId) return;
+      showAddSystemModal(protonPulseUserId, s, { supabaseUserSystemsUrl, supabaseHeaders, systemsCache }, () => {
+        showSystemsStatus('System added', true);
+        void refreshSystems();
       });
-      if (!resp.ok) throw new Error(`Save failed: HTTP ${resp.status}`);
-
-      addSysForm.hidden = true;
-      addSysBtn.textContent = '+ Add system';
-      // clear the form inputs
-      ['add-sys-label','add-sys-cpu','add-sys-gpu','add-sys-gpu-vendor','add-sys-gpu-driver','add-sys-ram','add-sys-vram','add-sys-os','add-sys-kernel']
-        .forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
-      showSystemsStatus('System added', true);
-      void refreshSystems();
-    } catch (e) {
-      if (addSysStatus) { addSysStatus.textContent = e.message || 'Failed'; addSysStatus.style.color = 'var(--red)'; }
-    } finally {
-      addSysSubmit.disabled = false;
-      addSysSubmit.textContent = 'Save system';
-    }
-  });
+    });
+  }
 
   // Initial fetch so the table populates on page load
   void refreshSystems();

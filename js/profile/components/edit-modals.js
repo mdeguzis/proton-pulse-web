@@ -3,11 +3,13 @@
 // api layer; takes no closure state from main.
 import {
   escapeHtml, formatSystemUpdated, enabledVarsToText, textToEnabledVars,
+  parseUploadedSystem, isGenericSystemLabel, inferSystemLabel,
 } from '../utils.js?v=2324dd84';
 import {
   fetchCloudConfig, patchCloudConfig, fetchFullUserConfig,
   fetchReportHistory, patchUserConfig,
 } from '../api/configs.js?v=a51234ab';
+import { updateSystem } from '../api/systems.js?v=8c9eb2f2';
 
 export let _cloudEditModal = null;
 export function getCloudEditModal() {
@@ -217,6 +219,249 @@ export async function showEditReportModal(reportId, session, onSaved) {
     } catch (e) {
       status.textContent = e.message || 'Save failed';
       console.warn('[profile] showEditReportModal: save failed', { reportId, error: String(e) });
+    } finally {
+      saveBtn.textContent = 'Save Changes';
+      saveBtn.disabled = false;
+    }
+  };
+}
+
+export let _systemAddModal = null;
+export function getSystemAddModal() {
+  if (_systemAddModal) return _systemAddModal;
+  _systemAddModal = document.createElement('dialog');
+  _systemAddModal.className = 'edit-report-modal';
+  _systemAddModal.innerHTML = `
+    <h2 class="edit-report-title">Add System</h2>
+    <div class="edit-report-fields">
+      <label class="edit-report-label">Label
+        <input class="edit-report-input" type="text" name="label" placeholder="e.g. Desktop RTX 4070" maxlength="80">
+      </label>
+      <label class="edit-report-label">CPU
+        <input class="edit-report-input" type="text" name="cpu" placeholder="e.g. AMD Ryzen 7 5800X3D" maxlength="120">
+      </label>
+      <label class="edit-report-label">GPU
+        <input class="edit-report-input" type="text" name="gpu" placeholder="e.g. NVIDIA GeForce RTX 4070" maxlength="120">
+      </label>
+      <label class="edit-report-label">GPU Vendor
+        <select class="edit-report-input" name="gpu_vendor">
+          <option value="">--</option>
+          <option value="nvidia">NVIDIA</option>
+          <option value="amd">AMD</option>
+          <option value="intel">Intel</option>
+        </select>
+      </label>
+      <label class="edit-report-label">GPU Driver
+        <input class="edit-report-input" type="text" name="gpu_driver" placeholder="e.g. Mesa 24.1.0" maxlength="80">
+      </label>
+      <label class="edit-report-label">RAM
+        <input class="edit-report-input" type="text" name="ram" placeholder="e.g. 32 GB" maxlength="20">
+      </label>
+      <label class="edit-report-label">VRAM (MB)
+        <input class="edit-report-input" type="number" name="vram" placeholder="e.g. 8192" min="0" max="262144">
+      </label>
+      <label class="edit-report-label">OS
+        <input class="edit-report-input" type="text" name="os" placeholder="e.g. Arch Linux" maxlength="60">
+      </label>
+      <label class="edit-report-label">Kernel
+        <input class="edit-report-input" type="text" name="kernel" placeholder="e.g. 6.8.0" maxlength="60">
+      </label>
+    </div>
+    <div class="edit-report-status"></div>
+    <div class="edit-report-actions">
+      <button type="button" class="edit-report-cancel">Cancel</button>
+      <button type="button" class="edit-report-save">Save System</button>
+    </div>
+  `;
+  document.body.appendChild(_systemAddModal);
+  _systemAddModal.querySelector('.edit-report-cancel').addEventListener('click', () => _systemAddModal.close());
+  return _systemAddModal;
+}
+
+export async function showAddSystemModal(protonPulseUserId, session, { supabaseUserSystemsUrl, supabaseHeaders, systemsCache }, onSaved) {
+  const modal = getSystemAddModal();
+  const status = modal.querySelector('.edit-report-status');
+  const saveBtn = modal.querySelector('.edit-report-save');
+  status.textContent = '';
+  saveBtn.disabled = false;
+  saveBtn.textContent = 'Save System';
+  modal.querySelectorAll('input, select, textarea').forEach(el => { el.value = ''; });
+  modal.showModal();
+
+  saveBtn.onclick = async () => {
+    const cpu = modal.querySelector('[name="cpu"]').value.trim();
+    const gpu = modal.querySelector('[name="gpu"]').value.trim();
+    if (!cpu && !gpu) {
+      status.textContent = 'At least CPU or GPU is needed';
+      status.style.color = 'var(--red)';
+      return;
+    }
+    saveBtn.textContent = 'Saving...';
+    saveBtn.disabled = true;
+    status.textContent = '';
+
+    const label = modal.querySelector('[name="label"]').value.trim() || 'Manual system';
+    const gpuDriver = modal.querySelector('[name="gpu_driver"]').value.trim();
+    const ram = modal.querySelector('[name="ram"]').value.trim();
+    const vram = modal.querySelector('[name="vram"]').value.trim();
+    const os = modal.querySelector('[name="os"]').value.trim();
+    const kernel = modal.querySelector('[name="kernel"]').value.trim();
+
+    const lines = [];
+    if (cpu) lines.push(`CPU Brand: ${cpu}`);
+    if (gpu) lines.push(`Video Card: ${gpu}`);
+    if (gpuDriver) lines.push(`Driver Version: ${gpuDriver}`);
+    if (ram) {
+      const gb = parseInt(ram.replace(/[^0-9]/g, ''), 10);
+      if (gb) lines.push(`RAM: ${gb * 1024} Mb`);
+    }
+    if (vram) lines.push(`VRAM: ${vram} Mb`);
+    if (os) lines.push(`OS Version: ${os}`);
+    if (kernel) lines.push(`Kernel Version: ${kernel}`);
+
+    const deviceId = 'web-' + crypto.randomUUID().slice(0, 12);
+    const isFirst = (systemsCache || []).length === 0;
+
+    try {
+      const resp = await fetch(supabaseUserSystemsUrl(), {
+        method: 'POST',
+        headers: supabaseHeaders(session, { Prefer: 'return=minimal' }),
+        body: JSON.stringify({
+          proton_pulse_user_id: protonPulseUserId,
+          device_id: deviceId,
+          label,
+          sysinfo_text: lines.join('\n'),
+          is_default: isFirst,
+          updated_at: new Date().toISOString(),
+        }),
+      });
+      if (!resp.ok) throw new Error(`Save failed: HTTP ${resp.status}`);
+      console.debug('[profile] showAddSystemModal: saved', { deviceId, label });
+      modal.close();
+      onSaved?.();
+    } catch (e) {
+      status.textContent = e.message || 'Save failed';
+      status.style.color = 'var(--red)';
+      console.warn('[profile] showAddSystemModal: save failed', { error: String(e) });
+    } finally {
+      saveBtn.textContent = 'Save System';
+      saveBtn.disabled = false;
+    }
+  };
+}
+
+export let _systemEditModal = null;
+export function getSystemEditModal() {
+  if (_systemEditModal) return _systemEditModal;
+  _systemEditModal = document.createElement('dialog');
+  _systemEditModal.className = 'edit-report-modal';
+  _systemEditModal.innerHTML = `
+    <h2 class="edit-report-title">Edit System</h2>
+    <div class="edit-report-fields">
+      <label class="edit-report-label">Label
+        <input class="edit-report-input" type="text" name="label" placeholder="e.g. Desktop RTX 4070" maxlength="80">
+      </label>
+      <label class="edit-report-label">CPU
+        <input class="edit-report-input" type="text" name="cpu" placeholder="e.g. AMD Ryzen 7 5800X3D" maxlength="120">
+      </label>
+      <label class="edit-report-label">GPU
+        <input class="edit-report-input" type="text" name="gpu" placeholder="e.g. NVIDIA GeForce RTX 4070" maxlength="120">
+      </label>
+      <label class="edit-report-label">GPU Vendor
+        <select class="edit-report-input" name="gpu_vendor">
+          <option value="">--</option>
+          <option value="nvidia">NVIDIA</option>
+          <option value="amd">AMD</option>
+          <option value="intel">Intel</option>
+        </select>
+      </label>
+      <label class="edit-report-label">GPU Driver
+        <input class="edit-report-input" type="text" name="gpu_driver" placeholder="e.g. Mesa 24.1.0" maxlength="80">
+      </label>
+      <label class="edit-report-label">RAM
+        <input class="edit-report-input" type="text" name="ram" placeholder="e.g. 32 GB" maxlength="20">
+      </label>
+      <label class="edit-report-label">VRAM (MB)
+        <input class="edit-report-input" type="number" name="vram" placeholder="e.g. 8192" min="0" max="262144">
+      </label>
+      <label class="edit-report-label">OS
+        <input class="edit-report-input" type="text" name="os" placeholder="e.g. Arch Linux" maxlength="60">
+      </label>
+      <label class="edit-report-label">Kernel
+        <input class="edit-report-input" type="text" name="kernel" placeholder="e.g. 6.8.0" maxlength="60">
+      </label>
+    </div>
+    <div class="edit-report-status"></div>
+    <div class="edit-report-actions">
+      <button type="button" class="edit-report-cancel">Cancel</button>
+      <button type="button" class="edit-report-save">Save Changes</button>
+    </div>
+  `;
+  document.body.appendChild(_systemEditModal);
+  _systemEditModal.querySelector('.edit-report-cancel').addEventListener('click', () => _systemEditModal.close());
+  return _systemEditModal;
+}
+
+export async function showEditSystemModal(row, protonPulseUserId, session, onSaved) {
+  const modal = getSystemEditModal();
+  const status = modal.querySelector('.edit-report-status');
+  const saveBtn = modal.querySelector('.edit-report-save');
+  status.textContent = '';
+  saveBtn.disabled = false;
+  saveBtn.textContent = 'Save Changes';
+  modal.showModal();
+
+  const parsed = parseUploadedSystem(row);
+  const displayLabel = isGenericSystemLabel(row.label) ? inferSystemLabel(row) : (row.label || '');
+  const ramGb = parsed.ram ? parseInt(parsed.ram.replace(/[^0-9]/g, ''), 10) || '' : '';
+
+  modal.querySelector('[name="label"]').value = displayLabel;
+  modal.querySelector('[name="cpu"]').value = parsed.cpu || '';
+  modal.querySelector('[name="gpu"]').value = parsed.gpu || '';
+  modal.querySelector('[name="gpu_vendor"]').value = parsed.gpuVendor || '';
+  modal.querySelector('[name="gpu_driver"]').value = parsed.gpuDriver || '';
+  modal.querySelector('[name="ram"]').value = ramGb ? `${ramGb} GB` : '';
+  modal.querySelector('[name="vram"]').value = parsed.vramMb || '';
+  modal.querySelector('[name="os"]').value = [parsed.os, parsed.osVersion].filter(Boolean).join(' ');
+  modal.querySelector('[name="kernel"]').value = parsed.kernel || '';
+
+  saveBtn.onclick = async () => {
+    saveBtn.textContent = 'Saving...';
+    saveBtn.disabled = true;
+    status.textContent = '';
+
+    const label = modal.querySelector('[name="label"]').value.trim() || displayLabel;
+    const cpu = modal.querySelector('[name="cpu"]').value.trim();
+    const gpu = modal.querySelector('[name="gpu"]').value.trim();
+    const gpuDriver = modal.querySelector('[name="gpu_driver"]').value.trim();
+    const ram = modal.querySelector('[name="ram"]').value.trim();
+    const vram = modal.querySelector('[name="vram"]').value.trim();
+    const os = modal.querySelector('[name="os"]').value.trim();
+    const kernel = modal.querySelector('[name="kernel"]').value.trim();
+
+    const lines = [];
+    if (cpu) lines.push(`CPU Brand: ${cpu}`);
+    if (gpu) lines.push(`Video Card: ${gpu}`);
+    if (gpuDriver) lines.push(`Driver Version: ${gpuDriver}`);
+    if (ram) {
+      const gb = parseInt(ram.replace(/[^0-9]/g, ''), 10);
+      if (gb) lines.push(`RAM: ${gb * 1024} Mb`);
+    }
+    if (vram) lines.push(`VRAM: ${vram} Mb`);
+    if (os) lines.push(`OS Version: ${os}`);
+    if (kernel) lines.push(`Kernel Version: ${kernel}`);
+
+    try {
+      await updateSystem(protonPulseUserId, row.device_id, {
+        label,
+        sysinfo_text: lines.join('\n'),
+      }, session);
+      console.debug('[profile] showEditSystemModal: saved', { deviceId: row.device_id });
+      modal.close();
+      onSaved?.();
+    } catch (e) {
+      status.textContent = e.message || 'Save failed';
+      console.warn('[profile] showEditSystemModal: save failed', { deviceId: row.device_id, error: String(e) });
     } finally {
       saveBtn.textContent = 'Save Changes';
       saveBtn.disabled = false;
