@@ -118,6 +118,8 @@ describe('flagged report moderation', () => {
     const { mod, calls } = loadFlaggedApi(() => ok(null));
     await mod.suppressMirrorReport({}, { flagId: 5, appId: '730', reportKey: 'k', source: 'protondb', action: 'shadowban' });
     expect(calls[0].url).toContain('/report_moderation');
+    // must name the unique key so a second action upserts instead of 409ing
+    expect(calls[0].url).toContain('on_conflict=app_id,report_key,source');
     expect(calls[0].opts.method).toBe('POST');
     expect(calls[0].opts.headers.Prefer).toContain('merge-duplicates');
     expect(JSON.parse(calls[0].opts.body)).toMatchObject({ app_id: '730', source: 'protondb', action: 'shadowban', flag_id: 5 });

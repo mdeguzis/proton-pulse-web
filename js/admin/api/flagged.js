@@ -149,7 +149,9 @@ export async function deleteReportContent(session, configId) {
 // and the game page filters those out at render time. action is 'shadowban' or
 // 'deleted' (both hide it from the site; the distinction is for the audit log).
 export async function suppressMirrorReport(session, { flagId, appId, reportKey, source, action, flaggedAt, reason }) {
-  const url = `${SUPABASE_URL}/rest/v1/report_moderation`;
+  // on_conflict names the unique key; without it PostgREST upserts on the PK and
+  // a second action on the same report 409s instead of updating.
+  const url = `${SUPABASE_URL}/rest/v1/report_moderation?on_conflict=app_id,report_key,source`;
   const res = await fetch(url, {
     method: 'POST',
     // merge-duplicates upserts on the (app_id, report_key, source) unique key
