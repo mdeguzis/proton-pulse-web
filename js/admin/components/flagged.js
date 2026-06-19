@@ -4,6 +4,13 @@ import { escapeHtml, fmtDateTime, friendlyReason } from '../utils.js?v=86489fcb'
 
 const STATUS_LABELS = { open: 'Open', in_review: 'In Review', complete: 'Complete' };
 
+// Pulse reports live in user_configs and can be moderated directly. ProtonDB
+// reports come from the static mirror, so only their flag entry is actionable.
+export function isPulseSource(source) {
+  const s = String(source || '').toLowerCase();
+  return s === 'pulse' || s === 'proton-pulse';
+}
+
 const RATING_COLORS = {
   platinum: '#b9f2ff',
   gold:     '#ffd700',
@@ -105,9 +112,14 @@ export function renderFlagDetail(flagRow, reportContent) {
       : '<div class="admin-sub" style="margin-bottom:20px;font-style:italic">Linked report content not available (report_key may not match any stored report).</div>'}
 
     <div class="flag-detail-actions">
-      <button class="admin-btn admin-btn--ok" data-action="flag-set-status" data-status="open" data-id="${rowId}">Dismiss</button>
       <button class="admin-btn admin-btn--warn" data-action="flag-set-status" data-status="in_review" data-id="${rowId}">In Review</button>
-      <button class="admin-btn" data-action="flag-set-status" data-status="complete" data-id="${rowId}">Complete</button>
-      <button class="admin-btn admin-btn--danger" data-action="flag-delete" data-id="${rowId}">Delete</button>
+      ${isPulseSource(flagRow.source) ? `
+      <button class="admin-btn admin-btn--ok" data-action="flag-release" data-id="${rowId}" title="Keep this report and clear its flagged/hidden state">Release</button>
+      <button class="admin-btn admin-btn--warn" data-action="flag-shadowban" data-id="${rowId}" title="Hide from everyone except the submitter">Shadow ban</button>
+      <button class="admin-btn admin-btn--danger" data-action="flag-delete-report" data-id="${rowId}" title="Permanently delete the report content">Delete report</button>
+      ` : `
+      <span class="admin-sub" style="align-self:center;font-style:italic">ProtonDB report: content lives in the mirror, only the flag entry can be removed here.</span>
+      `}
+      <button class="admin-btn admin-btn--ghost admin-btn--sm" data-action="flag-delete" data-id="${rowId}" title="Remove just this flag log entry">Delete flag entry</button>
     </div>`;
 }

@@ -1,8 +1,8 @@
 import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
 import { supabaseHeaders, escapeHtml } from './utils.js?v=86489fcb';
 import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=529eb059';
-import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent } from './api/flagged.js?v=cdf23ca4';
-import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=f187fd29';
+import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent } from './api/flagged.js?v=1a8910f5';
+import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=bbef55b1';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
 import { fetchAllUsers } from './api/users.js?v=52e867d2';
@@ -462,6 +462,39 @@ function wireEvents() {
       } catch (err) {
         btn.disabled = false;
         btn.textContent = 'Delete';
+        alert(`Error: ${err.message}`);
+      }
+    }
+
+    // Report-level moderation (Pulse reports). Each resolves the underlying
+    // user_configs row, acts on it, then marks the flag complete.
+    if (action === 'flag-shadowban' || action === 'flag-release' || action === 'flag-delete-report') {
+      const id = btn.dataset.id;
+      const flag = flaggedRows.find(r => String(r.id) === id);
+      if (!flag) return;
+      const confirmMsg = {
+        'flag-shadowban': 'Shadow ban this report? It stays visible to the submitter but nobody else.',
+        'flag-release': 'Release this report? It will be kept and its flagged/hidden state cleared.',
+        'flag-delete-report': 'Permanently delete this report content? This cannot be undone.',
+      }[action];
+      if (!confirm(confirmMsg)) return;
+      const origText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '...';
+      try {
+        const configId = await findPulseConfigId(currentSession, flag.app_id, flag.report_key);
+        if (!configId) throw new Error('Could not find the report content (report_key did not match any stored report).');
+        if (action === 'flag-shadowban') await shadowBanReport(currentSession, configId);
+        else if (action === 'flag-release') await releaseReportContent(currentSession, configId);
+        else await deleteReportContent(currentSession, configId);
+        // Resolve the flag now that the report has been handled.
+        await updateFlagStatus(currentSession, id, 'complete');
+        const target = flaggedRows.find(r => String(r.id) === id);
+        if (target) target.status = 'complete';
+        activateTab('flagged');
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = origText;
         alert(`Error: ${err.message}`);
       }
     }

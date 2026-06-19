@@ -65,6 +65,53 @@ export async function deleteFlaggedReport(session, id) {
 export const reinstateReport = (session, id) => updateFlagStatus(session, id, 'complete');
 export const deleteReport = (session, id) => deleteFlaggedReport(session, id);
 
+// --- Report-level moderation (Pulse reports only) -------------------------
+// The flag row only references the report by (app_id, report_key). Resolve the
+// underlying user_configs row id so we can shadow ban / release / delete the
+// actual report content, not just the flag entry.
+export async function findPulseConfigId(session, app_id, report_key) {
+  const url = `${SUPABASE_URL}/rest/v1/user_configs?app_id=eq.${encodeURIComponent(app_id)}`
+    + `&select=id,gpu,proton_version,created_at`;
+  const res = await fetch(url, { headers: supabaseHeaders(session) });
+  if (!res.ok) throw new Error(`Lookup report failed: ${res.status}`);
+  const rows = await res.json();
+  const row = rows.find(r => {
+    const ts = Math.floor(new Date(r.created_at).getTime() / 1000);
+    const key = `${ts}:${(r.gpu || '').slice(0, 20)}:${(r.proton_version || '').slice(0, 15)}`;
+    return key === report_key;
+  });
+  return row ? row.id : null;
+}
+
+async function _patchConfig(session, configId, body) {
+  const url = `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${configId}`;
+  const res = await fetch(url, {
+    method: 'PATCH',
+    headers: supabaseHeaders(session, { Prefer: 'return=minimal' }),
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`Update report failed: ${res.status}`);
+}
+
+// Shadow ban: hide the report from everyone except its submitter. The RLS
+// policy "public read non-hidden configs" enforces the visibility.
+export const shadowBanReport = (session, configId) =>
+  _patchConfig(session, configId, { is_hidden: true, is_flagged: true });
+
+// Release: the report is fine to keep. Clear the hidden + flagged state.
+export const releaseReportContent = (session, configId) =>
+  _patchConfig(session, configId, { is_hidden: false, is_flagged: false });
+
+// Delete the actual report content (not just the flag entry).
+export async function deleteReportContent(session, configId) {
+  const url = `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${configId}`;
+  const res = await fetch(url, {
+    method: 'DELETE',
+    headers: supabaseHeaders(session, { Prefer: 'return=minimal' }),
+  });
+  if (!res.ok) throw new Error(`Delete report failed: ${res.status}`);
+}
+
 function _reportKey(r) {
   return `${r.timestamp}:${(r.gpu||'').slice(0,20)}:${(r.protonVersion||'').slice(0,15)}`;
 }
