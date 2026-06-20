@@ -76,7 +76,7 @@ describe('actions give feedback via ppToast', () => {
   test('admin and profile actions use toasts, not alert()', () => {
     expect(read('js/admin/main.js')).not.toContain('alert(');
     expect(read('js/admin/components/userDetail.js')).not.toContain('alert(');
-    expect(read('js/profile/main.js')).toContain('window.ppToast?.success(msg)');
+    expect(read('js/profile/components/my-reports.js')).toContain('window.ppToast?.success(msg)');
     expect(read('js/auth/main.js')).toContain('window.ppToast?.error');
   });
 

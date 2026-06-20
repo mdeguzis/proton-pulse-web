@@ -3,32 +3,25 @@
 // Migrated from the page's classic profile.js script.
 import {
   IS_LOCAL_DEV, MOCK_USER, HW_GPU_KEY, HW_OS_KEY, CONFIG_TYPE_KEY,
-  MYHW_KEYS, MYHW_ORIGIN_LABELS, SUPABASE_URL, SUPABASE_ANON_KEY, SupaAuth,
+  MYHW_KEYS, SUPABASE_URL, SUPABASE_ANON_KEY, SupaAuth,
 } from './config.js?v=87cd0f3d';
 import {
   getProtonPulseUserIdFromSession, getShowUsername, setShowUsername,
-  parseSteamSystemInfo, inferGpuVendor, parseUploadedSystem,
-  isGenericSystemLabel, inferSystemLabel, summarizeSystem,
-  getMyHwSourceMeta, setMyHwSourceMeta, getMyHwFieldOrigins,
-  setMyHwFieldOrigins, setMyHwFieldOrigin, escapeHtml, formatSystemUpdated,
-  getWebClientIdProfile, getMyReportBadges, flaggedMessageHtml,
-  mergeMyReportRows, getPluginLinkCodeFromLocation, getSteamIdFromSession,
+  escapeHtml, formatSystemUpdated, getWebClientIdProfile,
+  getPluginLinkCodeFromLocation, getSteamIdFromSession,
 } from './utils.js?v=2324dd84';
-import { supabaseHeaders } from './api/supabase.js?v=bdf4b262';
 import {
-  supabaseUserSystemsUrl, listUserSystems, setDefaultSystem,
-  clearDefaultSystem, updateSystemLabel, deleteSystem,
-} from './api/systems.js?v=8c9eb2f2';
-import {
-  fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
-  deleteAllMyData, fetchAllMyData, checkMyDataExists, unpublishReport,
+  deleteAllMyData, fetchAllMyData, checkMyDataExists,
 } from './api/configs.js?v=a51234ab';
 import {
   listLinkedPlugins, completePluginLink, removePluginLink,
 } from './api/plugin-links.js?v=59c9f51e';
-import { showEditCloudConfigModal, showEditReportModal } from './components/edit-modals.js?v=27767f46';
+import { initMyHardware } from './components/my-hardware.js?v=8a25e5b9';
+import { initSystems } from './components/systems.js?v=99c5365d';
+import { initMyReports } from './components/my-reports.js?v=e7349fc9';
 
 (async function () {
+  // ── DOM refs ──────────────────────────────────────────────────────────────
   const signedIn  = document.getElementById('profile-signed-in');
   const signedOut = document.getElementById('profile-signed-out');
   const loginBtn  = document.getElementById('profile-login-btn');
@@ -39,7 +32,6 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
   const checkDataBtn = document.getElementById('profile-check-data-btn');
   const checkDataStatus = document.getElementById('profile-check-data-status');
   const copyBtn   = document.getElementById('copy-uid-btn');
-  const copyLabel = document.getElementById('copy-uid-label');
   const usernameToggle = document.getElementById('show-username-toggle');
   const usernameStatus = document.getElementById('show-username-status');
   const hwGpuSelect    = document.getElementById('hw-gpu-vendor');
@@ -57,7 +49,7 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
   const linkedPluginsEmpty = document.getElementById('linked-plugins-empty');
   const linkedPluginsList = document.getElementById('linked-plugins-list');
 
-  // My hardware (spec used to pre-fill the web submit form)
+  // ── Initialise sub-modules ────────────────────────────────────────────────
   const myhwInputs = {
     cpu:        document.getElementById('myhw-cpu'),
     gpu:        document.getElementById('myhw-gpu'),
@@ -69,144 +61,42 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
     osVersion:  document.getElementById('myhw-os-version'),
     kernel:     document.getElementById('myhw-kernel'),
   };
-  const myhwPasteArea  = document.getElementById('myhw-paste');
-  const myhwParseBtn   = document.getElementById('myhw-parse-btn');
-  const myhwClearBtn   = document.getElementById('myhw-clear-btn');
-  const myhwStatus     = document.getElementById('myhw-parse-status');
-  const myhwSourceTitle = document.getElementById('myhw-source-title');
-  const myhwSourceBody  = document.getElementById('myhw-source-body');
-  const myhwTabButtons = Array.from(document.querySelectorAll('.profile-tab-btn[data-pane]'));
-  const myhwTabPanels  = {
-    systems: document.getElementById('myhw-pane-systems'),
-    local: document.getElementById('myhw-pane-local'),
-  };
-  let suppressMyHwSourceTracking = false;
 
-  function setMyHardwarePane(name) {
-    myhwTabButtons.forEach((btn) => {
-      const active = btn.dataset.pane === name;
-      btn.classList.toggle('active', active);
-      btn.setAttribute('aria-selected', active ? 'true' : 'false');
-    });
-    for (const [pane, el] of Object.entries(myhwTabPanels)) {
-      if (!el) continue;
-      const active = pane === name;
-      el.classList.toggle('active', active);
-      el.hidden = !active;
-    }
-  }
+  const hw = initMyHardware({
+    myhwInputs,
+    myhwPasteArea:   document.getElementById('myhw-paste'),
+    myhwParseBtn:    document.getElementById('myhw-parse-btn'),
+    myhwClearBtn:    document.getElementById('myhw-clear-btn'),
+    myhwStatus:      document.getElementById('myhw-parse-status'),
+    myhwSourceTitle: document.getElementById('myhw-source-title'),
+    myhwSourceBody:  document.getElementById('myhw-source-body'),
+    myhwTabButtons:  Array.from(document.querySelectorAll('.profile-tab-btn[data-pane]')),
+    myhwTabPanels: {
+      systems: document.getElementById('myhw-pane-systems'),
+      local:   document.getElementById('myhw-pane-local'),
+    },
+  });
 
-  function loadMyHardware() {
-    for (const [field, el] of Object.entries(myhwInputs)) {
-      if (!el) continue;
-      el.value = localStorage.getItem(MYHW_KEYS[field]) || '';
-    }
-  }
+  initSystems({
+    systemsTable:   document.getElementById('systems-table'),
+    systemsTbody:   document.getElementById('systems-tbody'),
+    systemsEmpty:   document.getElementById('systems-empty'),
+    systemsLoading: document.getElementById('systems-loading'),
+    systemsStatus:  document.getElementById('systems-status'),
+    systemsRefresh: document.getElementById('systems-refresh-btn'),
+    addSysBtn:      document.getElementById('add-system-btn'),
+  }, hw);
 
-  function saveMyHwField(field, rawVal) {
-    const val = (rawVal ?? '').toString().trim();
-    if (val) localStorage.setItem(MYHW_KEYS[field], val);
-    else     localStorage.removeItem(MYHW_KEYS[field]);
-  }
+  initMyReports({
+    myConfigsTable:   document.getElementById('my-configs-table'),
+    myConfigsTbody:   document.getElementById('my-configs-tbody'),
+    myConfigsEmpty:   document.getElementById('my-configs-empty'),
+    myConfigsLoading: document.getElementById('my-configs-loading'),
+    myConfigsStatus:  document.getElementById('my-configs-status'),
+    myConfigsRefresh: document.getElementById('my-configs-refresh-btn'),
+  });
 
-  function flashStatus(msg, good) {
-    if (!myhwStatus) return;
-    myhwStatus.textContent = msg;
-    myhwStatus.style.color = good ? 'var(--green)' : 'var(--red)';
-    setTimeout(() => { myhwStatus.textContent = ''; }, 2500);
-  }
-
-  function renderMyHwSource() {
-    if (!myhwSourceTitle || !myhwSourceBody) return;
-    const meta = getMyHwSourceMeta();
-    const anyLocal = Object.values(MYHW_KEYS).some((k) => localStorage.getItem(k));
-    if (!meta) {
-      myhwSourceTitle.textContent = anyLocal ? 'Manual browser values' : 'No source selected yet';
-      myhwSourceBody.textContent = anyLocal
-        ? 'These values were entered directly in this browser and will pre-fill the web submit form.'
-        : 'Save values here manually, paste Steam System Information, or set a default uploaded system above.';
-      return;
-    }
-    if (meta.type === 'uploaded-default') {
-      myhwSourceTitle.textContent = `Default uploaded system: ${meta.label || 'Uploaded system'}`;
-      myhwSourceBody.textContent = 'The Web prefill values below were copied from your default uploaded system and are used to pre-fill the submit-a-report form until you edit them.';
-      return;
-    }
-    if (meta.type === 'customized') {
-      myhwSourceTitle.textContent = `Customized browser copy${meta.originLabel ? ` of ${meta.originLabel}` : ''}`;
-      myhwSourceBody.textContent = 'These values started from another source, then were edited in this browser. The edited values below now control web form prefill.';
-      return;
-    }
-    if (meta.type === 'steam-paste') {
-      myhwSourceTitle.textContent = 'Pasted Steam System Information';
-      myhwSourceBody.textContent = 'These values were parsed from the Steam System Information text you pasted here and now pre-fill the web submit form.';
-      return;
-    }
-    myhwSourceTitle.textContent = 'Manual browser values';
-    myhwSourceBody.textContent = 'These values were entered directly in this browser and will pre-fill the web submit form.';
-  }
-
-  // Map the meta.type we use in source-meta over to the short key used for
-  // per-field origin badges. steam-paste and uploaded-default both write all
-  // fields at once, so every field written inherits that type.
-  function fieldOriginKeyFor(sourceMeta) {
-    if (!sourceMeta) return null;
-    if (sourceMeta.type === 'uploaded-default') return 'default-system';
-    if (sourceMeta.type === 'steam-paste')      return 'steam-paste';
-    return null;
-  }
-
-  function renderMyHwFieldOrigins() {
-    const origins = getMyHwFieldOrigins();
-    document.querySelectorAll('[data-myhw-origin]').forEach((el) => {
-      const field  = el.dataset.myhwOrigin;
-      const origin = origins[field];
-      const caption = origin ? MYHW_ORIGIN_LABELS[origin] : '';
-      el.textContent = caption || '';
-      if (caption) el.setAttribute('data-origin', origin);
-      else el.removeAttribute('data-origin');
-    });
-  }
-
-  function setLocalHardwareFromParsed(parsed, sourceMeta) {
-    suppressMyHwSourceTracking = true;
-    try {
-      const originKey = fieldOriginKeyFor(sourceMeta);
-      // Reset ALL origins before writing, so fields that aren't in this parsed
-      // batch don't keep a stale "from default system" label
-      const nextOrigins = {};
-      for (const [field, val] of Object.entries(parsed)) {
-        const el = myhwInputs[field];
-        if (!el) continue;
-        el.value = val;
-        saveMyHwField(field, val);
-        if (originKey) nextOrigins[field] = originKey;
-      }
-      setMyHwFieldOrigins(nextOrigins);
-      setMyHwSourceMeta(sourceMeta);
-      renderMyHwSource();
-      renderMyHwFieldOrigins();
-    } finally {
-      suppressMyHwSourceTracking = false;
-    }
-  }
-
-  function markLocalHardwareEdited(field) {
-    if (suppressMyHwSourceTracking) return;
-    if (field) setMyHwFieldOrigin(field, 'manual');
-    const prev = getMyHwSourceMeta();
-    if (!prev) {
-      setMyHwSourceMeta({ type: 'manual' });
-    } else if (prev.type === 'uploaded-default' || prev.type === 'steam-paste') {
-      setMyHwSourceMeta({
-        type: 'customized',
-        originType: prev.type,
-        originLabel: prev.label || '',
-      });
-    }
-    renderMyHwSource();
-    renderMyHwFieldOrigins();
-  }
+  // ── Session display helpers ───────────────────────────────────────────────
 
   async function syncAvatarVisibility(val, session) {
     if (!session?.user) return;
@@ -249,28 +139,24 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
     document.getElementById('profile-last-signin').textContent  = lastAt;
     document.getElementById('profile-steam-username').textContent = name || '—';
     if (usernameToggle) {
-      // Use Supabase user_metadata as authoritative source; fall back to localStorage
-      // for users who set the preference before this sync was added.
       const meta = user.user_metadata ?? {};
       const fromMeta = typeof meta.show_username === 'boolean' ? meta.show_username : null;
       const val = fromMeta !== null ? fromMeta : getShowUsername();
-      if (fromMeta !== null) setShowUsername(val); // keep localStorage in sync
+      if (fromMeta !== null) setShowUsername(val);
       usernameToggle.checked = val;
       usernameStatus.textContent = val ? 'Shown on reports' : 'Anonymous';
-      // ensure author_avatars row matches current preference on every load
       if (session) syncAvatarVisibility(val, session).catch(() => {});
     }
     if (hwGpuSelect) hwGpuSelect.value = localStorage.getItem(HW_GPU_KEY) || '';
     if (hwOsInput)   hwOsInput.value   = localStorage.getItem(HW_OS_KEY)  || '';
     if (configTypeSelect) configTypeSelect.value = localStorage.getItem(CONFIG_TYPE_KEY) || '';
-    loadMyHardware();
-    renderMyHwSource();
-    renderMyHwFieldOrigins();
+    hw.loadMyHardware();
+    hw.renderMyHwSource();
+    hw.renderMyHwFieldOrigins();
 
     signedOut.hidden = true;
     signedIn.hidden  = false;
 
-    // Show Role field if user is an admin.
     checkIsAdminProfile(session).then(function (admin) {
       const roleField = document.getElementById('profile-role-field');
       if (roleField) roleField.hidden = !admin;
@@ -294,6 +180,8 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
     signedIn.hidden  = true;
     signedOut.hidden = false;
   }
+
+  // ── Plugin linking helpers ────────────────────────────────────────────────
 
   function showPluginLinkStatus(msg, ok) {
     if (!pluginLinkStatus) return;
@@ -379,7 +267,6 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
 
   // ── Initial state ──────────────────────────────────────────────────────────
   if (IS_LOCAL_DEV) {
-    // skip Supabase on localhost, show mock profile
     showUser(MOCK_USER);
   } else {
     const session = await SupaAuth.getSession();
@@ -390,7 +277,6 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
       showSignedOut();
     }
 
-    // ── Stay in sync (e.g. sign-out in another tab) ─────────────────────────
     SupaAuth.onStateChange(({ user, session }) => {
       if (user) {
         showUser(user, session);
@@ -499,11 +385,9 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
     const val = usernameToggle.checked;
     setShowUsername(val);
     if (usernameStatus) usernameStatus.textContent = val ? 'Shown on reports' : 'Anonymous';
-    // persist to Supabase so the preference follows the account across devices
     SupaAuth.updateUserMeta({ show_username: val }).catch((e) => {
       console.warn('[profile] failed to persist show_username to Supabase user_metadata:', e);
     });
-    // actively upsert or delete the author_avatars row so report cards update immediately
     SupaAuth.getSession().then(s => syncAvatarVisibility(val, s)).catch((e) => {
       console.warn('[profile] syncAvatarVisibility failed:', e);
     });
@@ -523,6 +407,7 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
     else localStorage.removeItem(CONFIG_TYPE_KEY);
   });
 
+  // ── Plugin link wiring ────────────────────────────────────────────────────
   pluginLinkSubmitBtn?.addEventListener('click', async () => {
     const linkCode = (pluginLinkCodeInput?.value || '').trim().toUpperCase();
     if (!linkCode) {
@@ -548,6 +433,7 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
     if (pluginLinkEntryBody) {
       pluginLinkEntryBody.innerHTML = `We prefilled the Decky link code <strong>${escapeHtml(linkCodeFromUrl.toUpperCase())}</strong>. Review it below, then press <strong>Link plugin</strong>.`;
     }
+    const session = await SupaAuth.getSession();
     if (session?.user) {
       setTimeout(() => { focusPluginLinkArea(); }, 50);
       showPluginLinkStatus('Decky link code loaded. Press "Link plugin" to finish linking.', true);
@@ -571,498 +457,6 @@ import { showEditCloudConfigModal, showEditReportModal } from './components/edit
       showPluginLinkStatus('Could not copy the link code.', false);
     }
   });
-
-  // Save each My-hardware field as it changes, and flag it as manually edited
-  // so the per-field origin badge flips to "edited"
-  for (const [field, el] of Object.entries(myhwInputs)) {
-    el?.addEventListener('change', () => {
-      saveMyHwField(field, el.value);
-      markLocalHardwareEdited(field);
-    });
-  }
-  myhwTabButtons.forEach((btn) => {
-    btn.addEventListener('click', () => setMyHardwarePane(btn.dataset.pane));
-  });
-  setMyHardwarePane('systems');
-
-  // Parse pasted Steam system info and fill the boxes
-  myhwParseBtn?.addEventListener('click', () => {
-    const text = myhwPasteArea?.value || '';
-    if (!text.trim()) { flashStatus('Paste something first', false); return; }
-
-    const parsed = parseSteamSystemInfo(text);
-    let filled = 0;
-
-    // Try to infer the vendor when the GPU string parsed out but vendor didn't
-    if (parsed.gpu && !parsed.gpuVendor) {
-      const v = inferGpuVendor(parsed.gpu);
-      if (v) parsed.gpuVendor = v;
-    }
-
-    for (const [field, val] of Object.entries(parsed)) {
-      const el = myhwInputs[field];
-      if (!el) continue;
-      filled++;
-    }
-
-    if (filled > 0) {
-      setLocalHardwareFromParsed(parsed, { type: 'steam-paste' });
-    }
-
-    if (filled === 0) flashStatus('Nothing recognized, check the format', false);
-    else              flashStatus(`Filled ${filled} field${filled === 1 ? '' : 's'}`, true);
-  });
-
-  // Wipe everything in My hardware including the paste area
-  myhwClearBtn?.addEventListener('click', () => {
-    suppressMyHwSourceTracking = true;
-    for (const [field, el] of Object.entries(myhwInputs)) {
-      if (!el) continue;
-      el.value = '';
-      localStorage.removeItem(MYHW_KEYS[field]);
-    }
-    if (myhwPasteArea) myhwPasteArea.value = '';
-    setMyHwSourceMeta(null);
-    renderMyHwSource();
-    suppressMyHwSourceTracking = false;
-    flashStatus('Cleared', true);
-  });
-
-  // ── Your systems (server-side) ────────────────────────────────────────────
-  // This is Block 1 on the page, the list of systems the plugin has uploaded
-  // into Supabase. Users can rename, mark one as default, or delete. Deletes
-  // are soft in the sense that the plugin will just re-create the row next
-  // time it pushes hardware info.
-  const systemsTable   = document.getElementById('systems-table');
-  const systemsTbody   = document.getElementById('systems-tbody');
-  const systemsEmpty   = document.getElementById('systems-empty');
-  const systemsLoading = document.getElementById('systems-loading');
-  const systemsStatus  = document.getElementById('systems-status');
-  const systemsRefresh = document.getElementById('systems-refresh-btn');
-
-  // Last list of rows we rendered. Used so the default-toggle handler can
-  // grab the sysinfo_text off the row it just starred without a re-fetch
-  let systemsCache = [];
-
-  function renderSystems(rows) {
-    systemsCache = rows || [];
-    systemsLoading.hidden = true;
-    if (!rows || rows.length === 0) {
-      systemsTable.hidden = true;
-      systemsEmpty.hidden = false;
-      return;
-    }
-    systemsEmpty.hidden = true;
-    systemsTable.hidden = false;
-
-    // Build rows from the cached list. Label is user-editable so it goes
-    // through escapeHtml as the value= attribute
-    systemsTbody.innerHTML = rows.map(r => {
-      const parsed = parseUploadedSystem(r);
-      const displayLabel = isGenericSystemLabel(r.label) ? inferSystemLabel(r) : (r.label || 'Uploaded system');
-      const summary = summarizeSystem(parsed);
-      const detailRows = [
-        ['CPU', parsed.cpu],
-        ['GPU', parsed.gpu],
-        ['GPU vendor', parsed.gpuVendor ? ({ nvidia: 'NVIDIA', amd: 'AMD', intel: 'Intel' }[parsed.gpuVendor] || parsed.gpuVendor) : ''],
-        ['GPU driver', parsed.gpuDriver],
-        ['RAM', parsed.ram],
-        ['VRAM', parsed.vramMb ? `${parsed.vramMb} MB` : ''],
-        ['OS', [parsed.os, parsed.osVersion].filter(Boolean).join(' ')],
-        ['Kernel', parsed.kernel],
-      ].filter(([, value]) => value);
-      return `
-      <tr data-device-id="${escapeHtml(r.device_id)}">
-        <td>
-          <div class="profile-systems-label-stack">
-            <input type="text" class="profile-systems-label-input"
-              data-role="label" value="${escapeHtml(displayLabel)}" maxlength="80">
-            <div class="profile-systems-summary">${escapeHtml(summary)}</div>
-          </div>
-        </td>
-        <td>${escapeHtml(formatSystemUpdated(r.updated_at))}</td>
-        <td class="col-default">
-          <label class="profile-systems-default-toggle" title="Set as default">
-            <input type="checkbox" data-role="default" ${r.is_default ? 'checked' : ''}>
-            <span class="profile-systems-default-switch" aria-hidden="true"></span>
-          </label>
-        </td>
-        <td class="col-action">
-          <div class="profile-configs-actions">
-            <button type="button" class="profile-configs-action profile-configs-view-link" data-role="toggle-details" aria-expanded="false">View</button>
-            <a href="system-edit.html?device=${encodeURIComponent(r.device_id)}" class="profile-configs-action profile-configs-edit-btn">Edit</a>
-            <button type="button" class="profile-configs-action profile-configs-delete-btn" data-role="delete">Delete</button>
-          </div>
-        </td>
-      </tr>
-      <tr class="profile-systems-details-row" data-details-for="${escapeHtml(r.device_id)}" hidden>
-        <td colspan="4">
-          <div class="profile-systems-details-card">
-            <div class="profile-systems-details-grid">
-              ${detailRows.map(([label, value]) => `
-                <div class="profile-systems-detail-item">
-                  <span class="profile-systems-detail-label">${escapeHtml(label)}</span>
-                  <span class="profile-systems-detail-value">${escapeHtml(value)}</span>
-                </div>`).join('')}
-            </div>
-            <div class="profile-systems-detail-note">
-              ${r.is_default
-                ? 'This default uploaded system currently seeds the Web prefill tab and submit form until you edit those values locally.'
-                : 'Mark this as default to use it as the starting source for the Web prefill tab and submit form.'}
-            </div>
-          </div>
-        </td>
-      </tr>`;
-    }).join('');
-  }
-
-  function showSystemsStatus(msg, ok) {
-    if (!systemsStatus) return;
-    systemsStatus.textContent = msg;
-    systemsStatus.style.color = ok ? 'var(--green)' : 'var(--red)';
-    setTimeout(() => { systemsStatus.textContent = ''; }, 2500);
-  }
-
-  async function refreshSystems() {
-    const s = await SupaAuth.getSession();
-    const protonPulseUserId = getProtonPulseUserIdFromSession(s);
-    if (!protonPulseUserId) {
-      systemsLoading.hidden = true;
-      systemsTable.hidden = true;
-      systemsEmpty.hidden = false;
-      systemsEmpty.textContent = 'Sign in with Steam to see your uploaded systems.';
-      return;
-    }
-    systemsLoading.hidden = false;
-    try {
-      let rows = await listUserSystems(protonPulseUserId, s);
-      const genericRows = rows.filter((row) => isGenericSystemLabel(row.label));
-      if (genericRows.length) {
-        await Promise.allSettled(genericRows.map((row) => {
-          const nextLabel = inferSystemLabel(row);
-          return updateSystemLabel(protonPulseUserId, row.device_id, nextLabel, s);
-        }));
-        rows = rows.map((row) => isGenericSystemLabel(row.label)
-          ? { ...row, label: inferSystemLabel(row) }
-          : row);
-      }
-      renderSystems(rows);
-    } catch (e) {
-      systemsLoading.hidden = true;
-      showSystemsStatus(e.message || 'Failed to load systems', false);
-    }
-  }
-
-  // Ask the user if they want to copy the default system's parsed sysinfo
-  // into the Block 2 inputs. Only fires when they opt in via confirm()
-  function askReplaceLocalFrom(row) {
-    const parsed = parseSteamSystemInfo(row.sysinfo_text || '');
-    if (Object.keys(parsed).length === 0) return;
-    const label = isGenericSystemLabel(row.label) ? inferSystemLabel(row) : (row.label || 'this system');
-    const ok = window.confirm(`Replace your local pre-fill values with "${label}"?`);
-    if (!ok) return;
-    if (parsed.gpu && !parsed.gpuVendor) {
-      const v = inferGpuVendor(parsed.gpu);
-      if (v) parsed.gpuVendor = v;
-    }
-    setLocalHardwareFromParsed(parsed, {
-      type: 'uploaded-default',
-      label,
-      deviceId: row.device_id,
-    });
-    flashStatus('Local values updated from default system', true);
-  }
-
-  async function handleSystemsClick(ev) {
-    const tr  = ev.target.closest('tr[data-device-id]');
-    const btn = ev.target.closest('button[data-role]');
-    const defToggle = ev.target.closest('input[data-role="default"]');
-    if (!tr || (!btn && !defToggle)) return;
-    const deviceId = tr.dataset.deviceId;
-    const s = await SupaAuth.getSession();
-    const protonPulseUserId = getProtonPulseUserIdFromSession(s);
-    if (!protonPulseUserId) return;
-
-    try {
-      if (defToggle) {
-        // defToggle.checked is the state AFTER the click. true = user is
-        // turning the default ON for this system; false = they flipped OFF
-        // the only checked toggle and want no default at all
-        if (defToggle.checked) {
-          await setDefaultSystem(protonPulseUserId, deviceId, s);
-          await refreshSystems();
-          const row = systemsCache.find(r => r.device_id === deviceId);
-          if (row) askReplaceLocalFrom(row);
-          setMyHardwarePane('local');
-        } else {
-          await clearDefaultSystem(protonPulseUserId, s);
-          await refreshSystems();
-          flashStatus('Default cleared', true);
-        }
-        return;
-      }
-      if (btn.dataset.role === 'toggle-details') {
-        const detailRow = Array.from(systemsTbody?.querySelectorAll('tr[data-details-for]') || [])
-          .find((row) => row.getAttribute('data-details-for') === deviceId);
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        btn.textContent = expanded ? 'View' : 'Hide';
-        if (detailRow) detailRow.hidden = expanded;
-        return;
-      }
-      if (btn.dataset.role === 'delete') {
-        if (!window.confirm('Delete this system? The plugin will re-create it next time you upload.')) return;
-        await deleteSystem(protonPulseUserId, deviceId, s);
-        await refreshSystems();
-      }
-    } catch (e) {
-      showSystemsStatus(e.message || 'Action failed', false);
-    }
-  }
-
-  // Label saves on blur. Using focusout so it bubbles through the table
-  async function handleSystemsLabelBlur(ev) {
-    const input = ev.target.closest('input[data-role="label"]');
-    if (!input) return;
-    const tr = input.closest('tr[data-device-id]');
-    const deviceId = tr?.dataset.deviceId;
-    if (!deviceId) return;
-    const s = await SupaAuth.getSession();
-    const protonPulseUserId = getProtonPulseUserIdFromSession(s);
-    if (!protonPulseUserId) return;
-    try {
-      const currentRow = systemsCache.find((row) => row.device_id === deviceId);
-      const nextLabel = input.value.trim() || inferSystemLabel(currentRow || {});
-      input.value = nextLabel;
-      await updateSystemLabel(protonPulseUserId, deviceId, nextLabel, s);
-      showSystemsStatus('Saved', true);
-    } catch (e) {
-      showSystemsStatus(e.message || 'Save failed', false);
-    }
-  }
-
-  systemsTable?.addEventListener('click', handleSystemsClick);
-  systemsTable?.addEventListener('focusout', handleSystemsLabelBlur);
-  systemsRefresh?.addEventListener('click', () => { void refreshSystems(); });
-
-  // Add system navigates to system-edit page
-  const addSysBtn = document.getElementById('add-system-btn');
-  if (addSysBtn) {
-    addSysBtn.addEventListener('click', () => {
-      window.location.href = 'system-edit.html';
-    });
-  }
-
-  // Initial fetch so the table populates on page load
-  void refreshSystems();
-
-  // First-load convenience: if the user has nothing in Block 2 locally and
-  // they've got a default system uploaded, copy its parsed sysinfo into the
-  // inputs. Never clobbers existing local values
-  async function autoFillFromDefaultIfEmpty() {
-    const anyLocal = Object.values(MYHW_KEYS).some(k => localStorage.getItem(k));
-    if (anyLocal) return;
-    const s = await SupaAuth.getSession();
-    const protonPulseUserId = getProtonPulseUserIdFromSession(s);
-    if (!protonPulseUserId) return;
-    try {
-      const rows = await listUserSystems(protonPulseUserId, s);
-      const def = rows.find(r => r.is_default);
-      if (!def) return;
-      const parsed = parseUploadedSystem(def);
-      const label = isGenericSystemLabel(def.label) ? inferSystemLabel(def) : (def.label || 'your system');
-      setLocalHardwareFromParsed(parsed, {
-        type: 'uploaded-default',
-        label,
-        deviceId: def.device_id,
-      });
-      if (Object.keys(parsed).length > 0) {
-        flashStatus(`Loaded hardware from "${label}"`, true);
-      }
-    } catch {
-      // non-fatal, just leave Block 2 empty
-    }
-  }
-
-  void autoFillFromDefaultIfEmpty();
-
-  // ── My reports ────────────────────────────────────────────────────────────
-  // Merge publicly published Pulse reports with cloud-synced plugin configs so
-  // the profile can show both "published" and "still only in cloud" states.
-  const myConfigsTable    = document.getElementById('my-configs-table');
-  const myConfigsTbody    = document.getElementById('my-configs-tbody');
-  const myConfigsEmpty    = document.getElementById('my-configs-empty');
-  const myConfigsLoading  = document.getElementById('my-configs-loading');
-  const myConfigsStatus   = document.getElementById('my-configs-status');
-  const myConfigsRefresh  = document.getElementById('my-configs-refresh-btn');
-
-  function showMyConfigsStatus(msg, ok) {
-    // Surface report actions (publish/unpublish/delete/update) through the
-    // shared toast so feedback is consistent with the rest of the site.
-    if (ok) window.ppToast?.success(msg); else window.ppToast?.error(msg);
-  }
-
-  function renderMyConfigs(rows) {
-    myConfigsLoading.hidden = true;
-    if (!rows || rows.length === 0) {
-      myConfigsTable.hidden = true;
-      myConfigsEmpty.hidden = false;
-      return;
-    }
-    myConfigsEmpty.hidden = true;
-    myConfigsTable.hidden = false;
-
-    myConfigsTbody.innerHTML = rows.map(row => {
-      const appLink = `app.html#/app/${encodeURIComponent(row.app_id)}`;
-      const reportAnchor = row.published_id ? `${appLink}#report-r${row.published_id}` : null;
-      const viewHref = reportAnchor || appLink;
-      const name = row.title || `App ${row.app_id}`;
-      const badges = getMyReportBadges(row).map((badge) => (
-        `<span class="profile-configs-badge profile-configs-badge--${escapeHtml(badge.tone)}">${escapeHtml(badge.label)}</span>`
-      )).join('');
-      const flaggedNote = row.flagged
-        ? `<details class="profile-configs-flagged-details">
-            <summary>Why was this flagged?</summary>
-            <p>${flaggedMessageHtml(row.flagged_reason)}</p>
-          </details>`
-        : '';
-      const actions = [
-        viewHref
-          ? `<a class="profile-configs-view-link" href="${escapeHtml(viewHref)}">View</a>`
-          : `<span class="profile-configs-view-link profile-configs-view-disabled" title="Not published">View</span>`,
-        // Publish on an unpublished cloud row -> open submit.html in
-        // "complete from cloud" mode. A config without form responses is
-        // effectively an incomplete draft; the user must answer the
-        // can-install/start/play/verdict + fault questions before it can
-        // be published as a real report. submit.html prefills what we
-        // already have (proton version, launch options, hardware) and
-        // validation enforces the rest before save
-        row.cloud && row.unpublished
-          ? `<a class="profile-configs-action profile-configs-publish-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1&return=profile.html" target="_blank" rel="noopener">Publish</a>`
-          : '',
-        row.published_id
-          ? `<button type="button" class="profile-configs-action profile-configs-unpublish-btn" data-published-id="${escapeHtml(String(row.published_id))}">Unpublish</button>`
-          : '',
-        // Edit: published rows go to submit.html in edit mode (full form
-        // pre-fill from user_configs). Cloud-only rows go to submit.html?fromCloud=1
-        // where a Save button lets them update the draft without publishing.
-        row.published_id
-          ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&edit=${escapeHtml(String(row.published_id))}&return=profile.html" target="_blank" rel="noopener">Edit</a>`
-          : row.cloud
-            ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1&return=profile.html" target="_blank" rel="noopener">Edit</a>`
-            : '',
-        `<button type="button" class="profile-configs-action profile-configs-delete-btn" data-app-id="${escapeHtml(String(row.app_id))}">Delete</button>`,
-      ].filter(Boolean).join('');
-      return `
-        <tr data-app-id="${escapeHtml(String(row.app_id))}">
-          <td>
-            <a href="${escapeHtml(appLink)}" class="profile-configs-game-link">${escapeHtml(name)}</a>
-            <div class="profile-configs-appid">App ${escapeHtml(String(row.app_id))}</div>
-          </td>
-          <td>${escapeHtml(row.rating || '—')}</td>
-          <td><div class="profile-configs-status">${badges}</div>${flaggedNote}</td>
-          <td>${escapeHtml(formatSystemUpdated(row.updated_at))}</td>
-          <td class="col-action"><div class="profile-configs-actions">${actions}</div></td>
-        </tr>`;
-    }).join('');
-  }
-
-  async function refreshMyConfigs() {
-    const s = await SupaAuth.getSession();
-    if (!s?.user) {
-      myConfigsLoading.hidden = true;
-      myConfigsTable.hidden   = true;
-      myConfigsEmpty.hidden   = false;
-      myConfigsEmpty.textContent = 'Sign in with Steam to see your reports and cloud-synced configs.';
-      return;
-    }
-    myConfigsLoading.hidden = false;
-    myConfigsEmpty.hidden   = true;
-    try {
-      const protonPulseUserId = getProtonPulseUserIdFromSession(s);
-      const cid  = getWebClientIdProfile();
-      const [[publishedRows, cloudRows], searchIndex] = await Promise.all([
-        Promise.all([
-          fetchMyUserConfigs(protonPulseUserId, cid, s),
-          fetchMyCloudConfigs(protonPulseUserId, s),
-        ]),
-        fetch('search-index.json').then(r => r.ok ? r.json() : []).catch(() => []),
-      ]);
-      const merged = mergeMyReportRows(publishedRows, cloudRows);
-      // resolve titles not stored in DB from search-index (pipeline-generated)
-      if (Array.isArray(searchIndex) && searchIndex.length) {
-        const titleMap = new Map(searchIndex.map(([id, t]) => [String(id), t]));
-        for (const row of merged) {
-          if (!row.title || /^App \d+$/.test(row.title)) {
-            const resolved = titleMap.get(String(row.app_id));
-            if (resolved) row.title = resolved;
-          }
-        }
-      }
-      renderMyConfigs(merged);
-    } catch (e) {
-      myConfigsLoading.hidden = true;
-      showMyConfigsStatus(e.message || 'Failed to load', false);
-    }
-  }
-
-  myConfigsRefresh?.addEventListener('click', () => { void refreshMyConfigs(); });
-  myConfigsTbody?.addEventListener('click', (e) => {
-    const target = e.target;
-    if (!(target instanceof HTMLElement)) return;
-    const action = target.closest('.profile-configs-publish-btn, .profile-configs-delete-btn, .profile-configs-edit-btn, .profile-configs-unpublish-btn');
-    if (!(action instanceof HTMLElement)) return;
-
-    void (async () => {
-      const s = await SupaAuth.getSession();
-      const protonPulseUserId = getProtonPulseUserIdFromSession(s);
-      const cid = getWebClientIdProfile();
-
-      if (action.classList.contains('profile-configs-edit-btn')) {
-        const reportId    = action.dataset.reportId;
-        const cloudAppId  = action.dataset.cloudAppId;
-        if (reportId) {
-          void showEditReportModal(reportId, s, async () => {
-            showMyConfigsStatus('Report updated', true);
-            await refreshMyConfigs();
-          });
-        } else if (cloudAppId) {
-          void showEditCloudConfigModal(protonPulseUserId, cloudAppId, s, async () => {
-            showMyConfigsStatus('Config updated', true);
-            await refreshMyConfigs();
-          });
-        }
-        return;
-      }
-
-      if (action.classList.contains('profile-configs-unpublish-btn')) {
-        const publishedId = action.dataset.publishedId;
-        if (!publishedId) return;
-        if (!window.confirm('Remove this report from the public game page? Your cloud config will be kept.')) return;
-        action.textContent = 'Unpublishing...';
-        await unpublishReport(s, publishedId);
-        showMyConfigsStatus('Unpublished', true);
-        await refreshMyConfigs();
-        return;
-      }
-
-      const appId = action.dataset.appId;
-      if (!appId) return;
-
-      // Publish + Edit are now <a> links; only delete-btn carries data-app-id
-      if (!action.classList.contains('profile-configs-delete-btn')) return;
-      if (!window.confirm('Delete this report/config from Proton Pulse?')) return;
-      action.textContent = 'Deleting...';
-      await deleteMyReportsEverywhere(protonPulseUserId, cid, appId, s);
-      showMyConfigsStatus('Deleted', true);
-      await refreshMyConfigs();
-    })().catch((err) => {
-      showMyConfigsStatus(err?.message || 'Action failed', false);
-      void refreshMyConfigs();
-    });
-  });
-
-  void refreshMyConfigs();
 
   // Topbar auth chip + mobile nav are now wired in topbar.js (shared across all pages)
 })();

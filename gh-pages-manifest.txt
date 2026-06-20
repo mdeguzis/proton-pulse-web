@@ -58,6 +58,9 @@ js/profile/api/systems.js
 js/profile/api/configs.js
 js/profile/api/plugin-links.js
 js/profile/components/edit-modals.js
+js/profile/components/my-hardware.js
+js/profile/components/systems.js
+js/profile/components/my-reports.js
 js/profile/main.js
 css/profile/profile.css
 admin.html
@@ -84,6 +87,9 @@ js/admin/components/analytics.js
 js/admin/components/cache-status.js
 stats.html
 js/stats/main.js
+js/stats/utils.js
+js/stats/filters.js
+js/stats/charts.js
 scoring.html
 confidence.html
 game-stats.html
