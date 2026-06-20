@@ -31,7 +31,10 @@ css/app/app.css
 index.html
 js/index/main.js
 css/index/index.css
+css/shared/base.css
+css/shared/topbar.css
 css/shared/site.css
+css/shared/cards.css
 about.html
 options.html
 js/options/main.js

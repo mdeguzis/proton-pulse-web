@@ -1,0 +1,183 @@
+/* ── Unified game card ─────────────────────────────────────────────────────
+   Single source of truth for any card that shows: thumbnail | title + sub | badge.
+   Use renderGameCard() in js/app/lib/card.js to generate the HTML.
+   Mobile: thumbnail shrinks to 60x28, title stays bold, sub truncates.        */
+.game-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px 8px 8px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.05s;
+}
+.game-card:hover { border-color: var(--accent); text-decoration: none; }
+.game-card:active { transform: translateY(1px); }
+.game-card-thumb {
+  width: 92px;
+  height: 43px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--s2);
+  flex-shrink: 0;
+}
+/* Desktop: give the report rows more presence with a bigger boxart and
+   roomier padding. Steam header ratio (~2.14:1) is preserved. */
+@media (min-width: 760px) {
+  .game-card { gap: 18px; padding: 11px 18px 11px 11px; }
+  .game-card-thumb { width: 138px; height: 64px; border-radius: 8px; }
+  .game-card-title { font-size: 1.04rem; }
+  .game-card-sub { font-size: 0.82rem; }
+}
+.game-card-thumb--missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.game-card-body { flex: 1; min-width: 0; }
+.game-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--strong);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.game-card-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 2px;
+  font-family: var(--mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.game-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.game-card-badge {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: var(--s2);
+  color: var(--muted);
+}
+.game-card-source {
+  font-size: 0.65rem;
+  color: var(--muted);
+  white-space: nowrap;
+  opacity: 0.7;
+  padding-right: 10px;
+}
+.load-more-btn {
+  display: block;
+  margin: 12px auto 0;
+  padding: 8px 24px;
+  background: var(--s2);
+  color: var(--muted);
+  border: none;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.load-more-btn:hover {
+  background: var(--s3);
+  color: var(--fg);
+}
+@media (max-width: 480px) {
+  .game-card-thumb { width: 60px; height: 28px; }
+  .game-card-title { font-size: 0.88rem; }
+  .game-card-sub   { font-size: 0.72rem; }
+}
+
+/* Floating "Copied" tooltip for clipboard buttons */
+.copy-tooltip {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30,30,46,0.95);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 4px;
+  color: #eee;
+  font-size: 0.72rem;
+  padding: 2px 7px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+  z-index: 10;
+}
+.copy-tooltip--show { opacity: 1; }
+
+/* ---- Toasts (js/lib/toast.js) -------------------------------------------
+   Transient action feedback. Stacks bottom-right, slides in/out, auto-dismiss.
+   Sits above modals/overlays. */
+.pp-toast-container {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: min(360px, calc(100vw - 32px));
+  pointer-events: none;
+}
+.pp-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 12px 11px 14px;
+  border-radius: 8px;
+  background: var(--s2);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--muted);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  font-size: 0.88rem;
+  line-height: 1.4;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.pp-toast--in { opacity: 1; transform: translateY(0); }
+.pp-toast--out { opacity: 0; transform: translateY(8px); }
+.pp-toast--success { border-left-color: var(--green); }
+.pp-toast--error { border-left-color: var(--red); }
+.pp-toast--info { border-left-color: var(--accent); }
+.pp-toast-msg { flex: 1 1 auto; min-width: 0; word-wrap: break-word; }
+.pp-toast-close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+}
+.pp-toast-close:hover { color: var(--fg); }
+@media (max-width: 480px) {
+  .pp-toast-container { right: 10px; left: 10px; bottom: 10px; max-width: none; }
+}
