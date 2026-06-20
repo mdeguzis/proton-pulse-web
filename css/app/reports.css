@@ -42,6 +42,7 @@
 }
 .sort-bar button:hover { background: var(--s2); color: var(--text); }
 .sort-bar button.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
+.sort-mine-btn { margin-left: 6px; border-left: 1px solid var(--border); padding-left: 12px !important; }
 
 /* controls row: filter button left, sort toggles right */
 .reports-controls-row {
