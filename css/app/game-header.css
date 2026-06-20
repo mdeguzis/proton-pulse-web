@@ -1,0 +1,774 @@
+/* -- App page styles -- */
+
+/* search */
+.search-wrap { position: relative; }
+.search-wrap input {
+  width: 100%;
+  padding: 9px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .12s;
+}
+.search-wrap input:focus { border-color: var(--accent); }
+.search-wrap input::placeholder { color: var(--muted); }
+.search-results {
+  position: fixed;
+  z-index: 9999;
+  background: var(--s1);
+  border: 1px solid var(--border2);
+  min-width: 620px;
+  max-width: min(780px, calc(100vw - 24px));
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.35);
+}
+.search-results.open { display: block; }
+.search-results a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  transition: background .1s;
+}
+.search-results a:last-child { border-bottom: none; }
+.search-results a:hover, .search-results a.focused { background: var(--s2); text-decoration: none; }
+.search-results img { width: 84px; height: 40px; object-fit: cover; flex-shrink: 0; }
+.search-no-results { padding: 12px 10px; font-size: 13px; color: var(--muted); }
+.search-result-info { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.search-result-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.25;
+  max-height: 2.5em;
+  font-weight: 500;
+}
+.search-result-info { flex: 1; }
+.search-result-badges { display: flex; gap: 4px; flex-wrap: wrap; }
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.badge-reports  { background: #1a3a5c; color: #5dade2; border: 1px solid #2a5a8c; }
+.badge-pulse    { background: #1a3a1a; color: #4caf50; border: 1px solid #2a5a2a; }
+.search-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: var(--s2);
+  text-decoration: none;
+  transition: background .1s;
+}
+.search-footer:hover { background: var(--border); color: var(--text); text-decoration: none; }
+
+.page-header {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.page-header .eyebrow { margin-bottom: 6px; }
+.page-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--strong);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+.page-sub {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.search-summary {
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.search-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.search-group {
+  border: 1px solid var(--border);
+  background: var(--s1);
+}
+
+.search-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--s2);
+  border-bottom: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+}
+
+.search-group-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.search-group-count {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+
+.search-group-empty {
+  padding: 14px 16px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.search-result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-result-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px 8px 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s, transform 0.05s;
+}
+
+.search-result-card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.search-result-card:active { transform: translateY(1px); }
+
+.search-result-card img {
+  width: 92px;
+  height: 43px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.search-result-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-result-main-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--strong);
+  margin-bottom: 4px;
+}
+
+.search-result-main-meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.search-result-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  min-width: 90px;
+}
+
+/* game page */
+.game-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.95fr);
+  align-items: stretch;
+  gap: 22px;
+  padding: 20px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  margin-bottom: 16px;
+}
+.game-header-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+.game-header img {
+  width: auto;
+  max-width: 100%;
+  max-height: 175px;
+  display: block;
+  border: 1px solid var(--border);
+}
+.game-header-info { width: 100%; min-width: 0; }
+.game-header-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+.game-header-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 6px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 100%;
+}
+/* Icon-text action buttons grow to fill the row evenly. Without this, they
+   sit on the left at their natural width and leave a gap before the row wraps.
+   min-width: 0 lets them shrink as much as needed to stay on one line; the
+   submit-report-btn wraps to its own row below */
+.game-header-actions .info-btn-labeled,
+.game-header-actions .deck-status-btn {
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
+}
+/* Stats has a short label so let it shrink to content width. That frees up
+   horizontal space for the longer "Min. Requirements" label so it doesn't
+   wrap to two lines at the typical hero card width */
+.game-header-actions #stats-btn {
+  flex: 0 0 auto;
+}
+/* Submit Report goes full-width on its own row below the icon buttons */
+.game-header-actions .submit-report-btn {
+  flex: 1 1 100%;
+  padding: 8px 18px;
+  text-align: center;
+}
+.game-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--strong);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.game-meta { font-size: 0.8rem; color: var(--muted); }
+.game-meta strong { color: var(--text); }
+.game-header-summary {
+  margin-top: 10px;
+  max-width: 58ch;
+  font-size: 0.82rem;
+  color: #9fb4c9;
+  line-height: 1.5;
+}
+
+/* --- Steam Deck Verified status (now a modal-triggering icon button) ---
+   Lives alongside the "i" info button and Min Reqs button in the
+   .game-header-actions row. The icon itself shows the status at a glance
+   (green check / yellow i / red x / gray ?) via inline SVG */
+.deck-status-btn { padding: 0; background: none; border: none; }
+.deck-status-btn-unsupported { opacity: 0.85; }
+.deck-status-btn svg { display: block; }
+/* Modal content - badge + per-criterion checklist */
+.deck-status-badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 4px;
+}
+.deck-status-badge.deck-status-verified    { background: #5ba32b; color: #fff; }
+.deck-status-badge.deck-status-playable    { background: #d4a72c; color: #0a0c10; }
+.deck-status-badge.deck-status-unsupported { background: #c84a4a; color: #fff; }
+.deck-status-badge.deck-status-unknown {
+  background: rgba(120,120,120,0.35);
+  color: var(--muted);
+  border: 1px solid var(--border2);
+}
+.deck-criteria-list { display: flex; flex-direction: column; gap: 8px; }
+.deck-criterion {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.84rem;
+  color: var(--text);
+  line-height: 1.45;
+}
+.deck-criterion-icon { flex-shrink: 0; padding-top: 1px; }
+
+/* --- External links row ---
+   Matches ProtonDB's "Steam SteamDB Steamcharts ..." row near the top of a
+   game page. Keep links small + muted so they don't compete with the rating */
+.game-header-links {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 0.8rem;
+}
+.game-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: color .12s, border-color .12s;
+}
+.game-link:hover {
+  color: var(--accent-hi, #aedcff);
+  border-bottom-color: var(--accent);
+}
+
+/* "Your report" chip, shown on the game page when the signed-in
+   client id matches a row in user_configs (a published compatibility report) */
+.my-config-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 5px 10px;
+  border: 1px solid var(--border2);
+  font-size: 0.72rem;
+  line-height: 1;
+}
+.my-config-banner-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.my-config-banner-label {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.66rem;
+}
+.my-config-banner-status {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.my-config-banner--published {
+  border-color: rgba(126, 196, 138, 0.45);
+  background: rgba(100, 180, 120, 0.08);
+}
+.my-config-banner--published .my-config-banner-dot { background: #7ec48a; }
+.my-config-banner--published .my-config-banner-status { color: #7ec48a; }
+.source-summary-grid {
+  display: grid;
+  /* Now one combined "Community" tile instead of separate Pulse + ProtonDB.
+     Per-source counts live in the small stat strip at the bottom of the tile */
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: 100%;
+}
+/* Confidence pill is a link to scoring.html - reset the anchor underline +
+   color so it inherits the pill background like the original span did */
+.conf-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.conf-link:hover { filter: brightness(1.12); text-decoration: none; }
+
+/* Rating distribution as a 5-chip grid showing each tier with its count.
+   Always shows all 5 tiers (even zero) so users see the full spread at a
+   glance and 0-count tiers don't visually disappear. Empty tiers fade out
+   via .dist-empty so populated ones still pop */
+.source-summary-distribution {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  width: 100%;
+}
+.dist-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 4px;
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  min-width: 0;
+}
+.dist-chip-label {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.6rem;
+  opacity: 0.85;
+}
+.dist-chip-count {
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.1;
+  margin-top: 1px;
+}
+/* Empty tiers fade out so the populated counts visually dominate */
+.dist-chip.dist-empty { opacity: 0.35; }
+/* Per-tier colors - same palette the cards / stats page already use */
+.dist-chip.dist-platinum { background: #b4c7dc; color: #111; }
+.dist-chip.dist-gold     { background: #c8a050; color: #111; }
+.dist-chip.dist-silver   { background: #8fa0b0; color: #111; }
+.dist-chip.dist-bronze   { background: #b07040; color: #fff; }
+.dist-chip.dist-borked   { background: #c85050; color: #fff; }
+
+/* Newest-report freshness line - terse "data is fresh / stale" signal */
+.source-summary-freshness {
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.source-summary-freshness strong { color: var(--text); }
+
+/* Tiny per-source stat strip under the rating + confidence row */
+.source-summary-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border2);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.source-summary-stats strong { color: var(--text); }
+.source-summary-stats .ss-sep { opacity: 0.4; padding: 0 2px; }
+.source-summary-tile {
+  /* Two-column inner layout - primary info on left, distribution + freshness
+     + per-source stats on right. Used to be flex-column which left the right
+     half of the wide tile completely empty */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  min-height: 136px;
+  padding: 14px 16px;
+  border: 1px solid var(--border2);
+  background: linear-gradient(180deg, rgba(39, 49, 63, 0.98), rgba(28, 35, 46, 0.98));
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color .15s, transform .15s, background .15s, box-shadow .15s;
+}
+/* Inner columns - each is a vertical flex stack of its own content. Border
+   between them makes the split feel intentional, not accidental. Both use
+   space-between so the top items (kicker / distribution bar) hug the top,
+   bottom items (note / per-source stats) hug the bottom - keeps the two
+   columns visually aligned across their full height */
+.ss-primary, .ss-details {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: flex-start;
+  min-width: 0;
+  justify-content: space-between;
+}
+.ss-details {
+  padding-left: 18px;
+  border-left: 1px solid var(--border);
+}
+@media (max-width: 720px) {
+  /* On narrow screens the two columns stack to one - no more vertical border,
+     details flow below primary */
+  .source-summary-tile { grid-template-columns: 1fr; gap: 10px; }
+  .ss-details { padding-left: 0; border-left: none; padding-top: 10px; border-top: 1px solid var(--border); }
+}
+.source-summary-tile:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+.source-summary-tile:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.source-summary-tile-pulse {
+  background: linear-gradient(180deg, rgba(27, 45, 63, 0.98), rgba(21, 32, 46, 0.98));
+}
+.source-summary-tile-protondb {
+  background: linear-gradient(180deg, rgba(40, 44, 56, 0.98), rgba(26, 31, 39, 0.98));
+}
+.source-summary-kicker {
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  font-weight: 700;
+}
+.source-summary-tile-pulse .source-summary-kicker {
+  color: #5cb3e6;
+}
+.source-summary-tile-protondb .source-summary-kicker {
+  color: #d3dceb;
+}
+.source-summary-value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 11px;
+  min-height: 31px;
+  font-weight: 800;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.source-summary-tier-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 6px;
+  width: 100%;
+}
+.source-summary-tier-row > * {
+  border-radius: 3px;
+}
+.source-summary-tier-row > :first-child { flex: 7; }
+.source-summary-tier-row > :last-child  { flex: 3; }
+.source-summary-conf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 11px;
+  min-height: 31px;
+  font-family: var(--mono);
+  font-weight: 800;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+}
+.source-summary-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.3;
+}
+.source-summary-note {
+  font-size: 0.68rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.info-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  line-height: 0;
+  opacity: 1;
+  transition: opacity .15s, border-color .15s, background .15s;
+}
+.info-btn:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(95, 156, 250, 0.6);
+}
+.info-btn svg { display: block; }
+/* Labeled variant - icon + text. Used by Min Requirements + Deck Verified
+   so users don't have to hover to guess what each icon means */
+.info-btn-labeled {
+  width: auto;
+  height: 34px;
+  padding: 0 12px;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+.info-btn-labeled span { line-height: 1; }
+/* Deck status button matches the Min Requirements blue chrome so the row
+   reads as a coherent set. The status SVG icon (green check / yellow i /
+   red x / gray ?) still carries the at-a-glance state - the surrounding
+   button style stays neutral blue regardless */
+.deck-status-btn.info-btn-labeled {
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+}
+.deck-status-btn.info-btn-labeled:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(95, 156, 250, 0.6);
+}
+.info-tooltip {
+  display: none;
+  background: var(--s2);
+  border: 1px solid var(--border2);
+  margin-top: 10px;
+  width: 100%;
+  grid-column: 1 / -1;
+}
+.info-tooltip.open { display: block; }
+.info-tooltip-inner {
+  padding: 16px 18px;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--text);
+  max-height: 420px;
+  overflow-y: auto;
+}
+.info-tooltip-inner h3 { font-size: 0.88rem; color: var(--strong); }
+.info-tooltip-inner h4 { font-size: 0.78rem; color: var(--accent); }
+.info-tooltip-inner code {
+  font-size: 0.72rem;
+  background: var(--bg);
+  padding: 1px 5px;
+  border: 1px solid var(--border);
+}
+
+/* hub links */
+
+.submit-report-btn {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(76,175,80,0.12);
+  border: 1px solid #4caf50;
+  color: #4caf50;
+  font-size: 0.72rem;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 700;
+  flex-shrink: 0;
+  font-family: inherit;
+  min-height: 34px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.submit-report-btn:hover { background: rgba(76,175,80,0.25); text-decoration: none; }
+.sf-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 0.78rem;
+}
+.sf-row label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--muted);
+  padding-top: 5px;
+  font-size: 0.72rem;
+}
+.sf-row input, .sf-row select, .sf-row textarea {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 5px 8px;
+  font-size: 0.76rem;
+  font-family: inherit;
+  outline: none;
+}
+.sf-row input:focus, .sf-row select:focus, .sf-row textarea:focus { border-color: var(--accent); }
+.sf-row textarea { resize: vertical; }
+.sf-row--check { flex-direction: column; gap: 3px; }
+.sf-check-label { display: flex; align-items: center; gap: 6px; color: var(--text); font-size: 0.76rem; cursor: pointer; width: auto; }
+.sf-check-label input[type="checkbox"] { width: auto; flex: none; cursor: pointer; }
+.sf-check-hint { font-size: 0.68rem; color: var(--muted); padding-left: 1px; }
+.sf-hidden { display: none !important; }
+.sf-section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 12px 0 6px; }
+.sf-question { margin-bottom: 10px; }
+.sf-question.sf-needs-answer { border-left: 3px solid var(--red); padding-left: 10px; }
+.sf-question.sf-needs-answer .sf-q-label { color: var(--red); }
+.sf-row.sf-needs-answer { border-left: 3px solid var(--red); padding-left: 10px; }
+.sf-row.sf-needs-answer label { color: var(--red); }
+.sf-row.sf-needs-answer input, .sf-row.sf-needs-answer select, .sf-row.sf-needs-answer textarea { border-color: var(--red); }
+.sf-q-label { font-size: 0.8rem; color: var(--text); margin-bottom: 5px; }
+.sf-yn { display: flex; gap: 8px; }
+.sf-yn-btn { display: flex; align-items: center; gap: 5px; font-size: 0.8rem; color: var(--text); cursor: pointer; padding: 4px 12px; border: 1px solid var(--border); border-radius: 4px; user-select: none; }
+.sf-yn-btn:has(input:checked) { border-color: var(--accent); background: rgba(76,175,80,0.12); color: var(--accent); }
+.sf-yn-btn input[type="radio"] { display: none; }
+.sf-fault-notes { margin-top: 6px; }
+.sf-fault-notes textarea { width: 100%; background: var(--s1); border: 1px solid var(--border); color: var(--text); font-size: 0.8rem; font-family: inherit; padding: 6px 10px; resize: vertical; }
+.sf-fault-notes textarea:focus { outline: none; border-color: var(--accent); }
+.sf-tink-grid { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.sf-tink-label { display: flex; align-items: center; gap: 5px; font-size: 0.76rem; color: var(--text); cursor: pointer; padding: 3px 10px; border: 1px solid var(--border); border-radius: 4px; user-select: none; }
+.sf-tink-label:has(input:checked) { border-color: var(--accent); background: rgba(76,175,80,0.12); color: var(--accent); }
+.sf-tink-label input[type="checkbox"] { display: none; }
+.hub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  /* extra breathing room before the "Community Configs & Reports" heading
+     so the link boxes don't crowd the section break below */
+  margin-bottom: 32px;
+}
+/* When the link strip lives inside the game-header banner (the new layout),
+   it stitches to the banner's bottom border instead of floating below. The
+   top border-line visually links it to the rating tile above */
+.hub-links-in-banner {
+  margin: 18px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  grid-column: 1 / -1;
+}
+.hub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border: 1px solid var(--border2);
+  background: var(--s1);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: background .1s, border-color .1s, color .1s;
+}
+.hub-link:hover {
+  background: var(--s2);
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* trend */
+.trend {
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding: 9px 12px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border2);
+  margin-bottom: 14px;
+}

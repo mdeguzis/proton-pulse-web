@@ -4,7 +4,7 @@ const read = (p) => fs.readFileSync(path.join(__dirname, '..', p), 'utf8');
 
 describe('configurable card size (S/M/L)', () => {
   const homeSrc = read('js/app/components/home.js');
-  const cssSrc = read('css/app/app.css');
+  const cssSrc = read('css/app/home.css');
 
   test('renders an S/M/L size toggle', () => {
     expect(homeSrc).toContain('id="home-size-toggle"');

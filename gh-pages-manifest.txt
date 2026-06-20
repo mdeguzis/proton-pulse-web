@@ -27,7 +27,11 @@ js/shared/chart-interactions.js
 js/submit/main.js
 js/confidence/main.js
 js/game-stats/main.js
-css/app/app.css
+css/app/game-header.css
+css/app/configs.css
+css/app/reports.css
+css/app/modals.css
+css/app/home.css
 index.html
 js/index/main.js
 css/index/index.css
