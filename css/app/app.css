@@ -1411,6 +1411,7 @@ a.card:active { transform: translateY(1px); }
 .vote-btn:hover { color: var(--text); border-color: var(--accent); }
 .vote-btn.vote-up.active { color: var(--accent); border-color: var(--accent); }
 .vote-btn.vote-dn.active { color: #c85050; border-color: #c85050; }
+.vote-btn:disabled { opacity: 0.35; cursor: default; pointer-events: none; }
 
 .tier-badge {
   flex-shrink: 0;

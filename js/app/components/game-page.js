@@ -7,11 +7,11 @@ import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=f3f1e031';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=621c68c5';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=6d4d6884';
-import { enhanceAuthorBlocks } from './author.js?v=1817c49a';
+import { enhanceAuthorBlocks } from './author.js?v=d1684398';
 import { renderConfigCard } from './config-cards.js?v=2578d16a';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=b0fa82d9';
-import { renderCard } from './report-card.js?v=f2beb91c';
-import { loadSearchIndex, searchIndex } from './search.js?v=1172debb';
+import { renderCard } from './report-card.js?v=b36c67c1';
+import { loadSearchIndex, searchIndex } from './search.js?v=ec18de56';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref } from '../config.js?v=4031c5fa';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=85cf4195';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';
@@ -729,9 +729,20 @@ export async function renderGamePage(appId) {
         else if (b.dataset.reportJson) downloadJson(JSON.parse(b.dataset.reportJson), 'report');
       });
     });
+    const myClientId = getWebClientId();
+    el.querySelectorAll('.vote-btns').forEach(btns => {
+      const authorId = btns.dataset.authorId;
+      if (authorId && authorId === myClientId) {
+        btns.querySelectorAll('.vote-btn').forEach(b => {
+          b.disabled = true;
+          b.title = 'You cannot vote on your own report';
+        });
+      }
+    });
     el.querySelectorAll('.vote-btn').forEach(btn => {
       btn.addEventListener('click', e => {
         e.stopPropagation();
+        if (btn.disabled) return;
         const vote  = parseInt(btn.dataset.vote);
         const rKey  = btn.dataset.rkey;
         const aId   = btn.dataset.appid;
