@@ -2,7 +2,7 @@ import { SUPABASE_URL, SUPABASE_ANON_KEY, SupaAuth } from './config.js?v=87cd0f3
 import {
   getProtonPulseUserIdFromSession, parseSteamSystemInfo, inferGpuVendor,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel, escapeHtml,
-} from './utils.js?v=2324dd84';
+} from './utils.js?v=8168d79c';
 import { supabaseHeaders } from './api/supabase.js?v=bdf4b262';
 import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/systems.js?v=8c9eb2f2';
 
@@ -70,21 +70,45 @@ import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/sys
     const label = document.getElementById('sys-label').value.trim() || 'Manual system';
     const cpu = document.getElementById('sys-cpu').value.trim();
     const gpu = document.getElementById('sys-gpu').value.trim();
+    const gpuVendor = document.getElementById('sys-gpu-vendor').value;
     const gpuDriver = document.getElementById('sys-gpu-driver').value.trim();
     const ram = document.getElementById('sys-ram').value.trim();
     const vram = document.getElementById('sys-vram').value.trim();
     const os = document.getElementById('sys-os').value.trim();
     const kernel = document.getElementById('sys-kernel').value.trim();
 
+    // Per-field validation
+    let firstError = null;
+    function fieldError(id, msg) {
+      const el = document.getElementById(id);
+      const labelEl = formEl.querySelector(`label[for="${id}"]`);
+      if (el) el.style.outline = '2px solid var(--red)';
+      if (labelEl) labelEl.style.color = 'var(--red)';
+      if (!firstError) firstError = { el, msg };
+    }
+    function clearErrors() {
+      ['sys-cpu', 'sys-gpu'].forEach(id => {
+        const el = document.getElementById(id);
+        const labelEl = formEl.querySelector(`label[for="${id}"]`);
+        if (el) el.style.outline = '';
+        if (labelEl) labelEl.style.color = '';
+      });
+    }
+    clearErrors();
+
     if (!cpu && !gpu) {
-      statusEl.textContent = 'At least CPU or GPU is needed';
+      fieldError('sys-cpu', 'At least CPU or GPU is required');
+      fieldError('sys-gpu', 'At least CPU or GPU is required');
+      statusEl.textContent = firstError.msg;
       statusEl.style.color = 'var(--red)';
+      firstError.el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
 
     const lines = [];
     if (cpu) lines.push(`CPU Brand: ${cpu}`);
     if (gpu) lines.push(`Video Card: ${gpu}`);
+    if (gpuVendor) lines.push(`GPU Vendor: ${gpuVendor}`);
     if (gpuDriver) lines.push(`Driver Version: ${gpuDriver}`);
     if (ram) {
       const gb = parseInt(ram.replace(/[^0-9]/g, ''), 10);

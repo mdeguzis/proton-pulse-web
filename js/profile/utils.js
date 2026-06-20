@@ -158,6 +158,13 @@ export function parseSteamSystemInfo(text) {
     }
   }
 
+  // GPU Vendor: stored explicitly when user selects via the edit form
+  const gpuVendorLine = text.match(/GPU Vendor:\s*(.+)/i);
+  if (gpuVendorLine) {
+    const v = cleanUnknown(gpuVendorLine[1]);
+    if (v) out.gpuVendor = v.toLowerCase();
+  }
+
   // GPU driver version line shows up separately
   const gpuDrv = text.match(/Driver Version:\s*(.+)/i);
   if (gpuDrv) out.gpuDriver = gpuDrv[1].trim();

@@ -6,7 +6,7 @@ import {
   getProtonPulseUserIdFromSession, parseSteamSystemInfo, inferGpuVendor,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel,
   summarizeSystem, escapeHtml, formatSystemUpdated,
-} from '../utils.js?v=2324dd84';
+} from '../utils.js?v=8168d79c';
 import {
   listUserSystems, setDefaultSystem, clearDefaultSystem,
   updateSystemLabel, deleteSystem,
