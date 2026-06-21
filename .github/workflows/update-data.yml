@@ -286,6 +286,12 @@ jobs:
       - name: Hardware suggestions (PCI IDs)
         run: uv run python scripts/pipeline/hardware_suggestions.py
 
+      - name: Approve pending reports
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: uv run python scripts/pipeline/approve_reports.py
+
       - name: Save pipeline cache
         if: always()
         uses: actions/cache/save@v4

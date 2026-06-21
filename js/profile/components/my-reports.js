@@ -28,7 +28,10 @@ export function initMyReports(ctx) {
   const {
     myConfigsTable, myConfigsTbody, myConfigsEmpty,
     myConfigsLoading, myConfigsStatus, myConfigsRefresh,
+    myConfigsSearch,
   } = ctx;
+
+  let allRows = [];
 
   // ── Internal helpers ─────────────────────────────────────────────────────
 
@@ -38,9 +41,20 @@ export function initMyReports(ctx) {
 
   function renderMyConfigs(rows) {
     myConfigsLoading.hidden = true;
-    if (!rows || rows.length === 0) {
+    allRows = rows || [];
+    applySearch();
+  }
+
+  function applySearch() {
+    const q = (myConfigsSearch?.value || '').trim().toLowerCase();
+    const rows = q ? allRows.filter(r => {
+      const hay = [r.title, r.app_id, r.rating, r.os, r.gpu, r.notes].filter(Boolean).join(' ').toLowerCase();
+      return hay.includes(q);
+    }) : allRows;
+    if (!rows.length) {
       myConfigsTable.hidden = true;
       myConfigsEmpty.hidden = false;
+      myConfigsEmpty.textContent = q ? 'No reports match your search.' : 'Nothing synced yet.';
       return;
     }
     myConfigsEmpty.hidden = true;
@@ -132,6 +146,7 @@ export function initMyReports(ctx) {
   // ── Wire event listeners ─────────────────────────────────────────────────
 
   myConfigsRefresh?.addEventListener('click', () => { void refreshMyConfigs(); });
+  myConfigsSearch?.addEventListener('input', () => { applySearch(); });
 
   myConfigsTbody?.addEventListener('click', (e) => {
     const target = e.target;
