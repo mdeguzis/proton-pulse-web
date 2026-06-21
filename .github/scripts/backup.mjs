@@ -18,36 +18,25 @@ import { mkdirSync, writeFileSync, readdirSync, statSync } from 'fs';
 import { join } from 'path';
 import { tmpdir } from 'os';
 
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const HMAC_SECRET  = process.env.BACKUP_HMAC_SECRET;
-const DATE         = process.env.BACKUP_DATE;
-const TYPE         = process.env.BACKUP_TYPE || 'all';
-const SITE_DIR     = process.env.SITE_DIR || '';
-const OUT_DIR      = process.env.OUT_DIR || '.';
+// ---------------------------------------------------------------------------
+// Pure helpers (exported for testing)
+// ---------------------------------------------------------------------------
 
-if (!HMAC_SECRET) {
-  console.error('FATAL: BACKUP_HMAC_SECRET is not set. Refusing to run without a pseudonymization key.');
-  process.exit(1);
-}
-if (!SUPABASE_URL || !SUPABASE_KEY) {
-  console.error('FATAL: SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must both be set.');
-  process.exit(1);
+// Tables that don't have an `id` column and need a different order key.
+export const TABLE_ORDER_KEY = { author_avatars: 'proton_pulse_user_id' };
+
+export function buildFetchUrl(baseUrl, table, select, extraFilter, offset, limit) {
+  const orderKey = TABLE_ORDER_KEY[table] || 'id';
+  return `${baseUrl}/rest/v1/${table}?select=${encodeURIComponent(select)}${extraFilter}&limit=${limit}&offset=${offset}&order=${orderKey}.asc`;
 }
 
-const HEADERS = {
-  apikey: SUPABASE_KEY,
-  Authorization: `Bearer ${SUPABASE_KEY}`,
-  'Content-Type': 'application/json',
-};
-
-function hmac(value) {
+export function hmac(value, secret) {
   if (!value) return null;
-  return createHmac('sha256', HMAC_SECRET).update(String(value)).digest('hex');
+  return createHmac('sha256', secret).update(String(value)).digest('hex');
 }
 
 // Strip common PII patterns from free-text fields (email, URLs, file paths, Steam IDs).
-function sanitizeNotes(str) {
+export function sanitizeNotes(str) {
   if (!str) return str;
   return str
     .replace(/[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/g, '[email redacted]')
@@ -59,7 +48,7 @@ function sanitizeNotes(str) {
 }
 
 // Redact anything that looks like an absolute file path to avoid leaking OS usernames.
-function redactPaths(str) {
+export function redactPaths(str) {
   if (!str) return str;
   return str
     .replace(/\/home\/[^/\s]+/g, '/home/[redacted]')
@@ -68,54 +57,7 @@ function redactPaths(str) {
     .replace(/\/root/g, '/root');
 }
 
-async function fetchAll(table, select = '*', extraFilter = '') {
-  const rows = [];
-  let offset = 0;
-  const limit = 1000;
-  while (true) {
-    const url = `${SUPABASE_URL}/rest/v1/${table}?select=${encodeURIComponent(select)}${extraFilter}&limit=${limit}&offset=${offset}&order=id.asc`;
-    const res = await fetch(url, { headers: HEADERS });
-    if (!res.ok) throw new Error(`Fetch ${table} failed: ${res.status} ${await res.text()}`);
-    const batch = await res.json();
-    rows.push(...batch);
-    if (batch.length < limit) break;
-    offset += limit;
-  }
-  return rows;
-}
-
-async function fetchSchema() {
-  const tables = ['user_configs', 'author_avatars', 'user_proton_configs', 'user_systems', 'admins', 'banned_users'];
-  const lines = [`-- Schema export ${DATE}\n`];
-  for (const table of tables) {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?limit=0`, { headers: HEADERS });
-    lines.push(`-- Table: ${table} (columns from API response headers)\n`);
-    lines.push(`-- Content-Range: ${res.headers.get('content-range') || 'n/a'}\n\n`);
-  }
-
-  // Fetch RLS policies via management API (requires service role introspection).
-  const policyQuery = `
-    SELECT schemaname, tablename, policyname, cmd, qual, with_check
-    FROM pg_policies
-    WHERE schemaname = 'public'
-    ORDER BY tablename, policyname;
-  `;
-  const queryRes = await fetch(`${SUPABASE_URL}/rest/v1/rpc/query`, {
-    method: 'POST',
-    headers: HEADERS,
-    body: JSON.stringify({ query: policyQuery }),
-  }).catch(() => null);
-
-  if (queryRes?.ok) {
-    const policies = await queryRes.json();
-    lines.push('-- RLS Policies\n');
-    lines.push(JSON.stringify(policies, null, 2));
-  }
-
-  return lines.join('');
-}
-
-function sanitizeUserConfig(row) {
+export function sanitizeUserConfig(row, secret) {
   return {
     id: row.id,
     app_id: row.app_id,
@@ -148,14 +90,14 @@ function sanitizeUserConfig(row) {
     created_at: row.created_at,
     updated_at: row.updated_at,
     // pseudonymized
-    proton_pulse_user_id: hmac(row.proton_pulse_user_id),
-    client_id: hmac(row.client_id),
+    proton_pulse_user_id: hmac(row.proton_pulse_user_id, secret),
+    client_id: hmac(row.client_id, secret),
   };
 }
 
-function sanitizeAuthorAvatar(row) {
+export function sanitizeAuthorAvatar(row, secret) {
   return {
-    proton_pulse_user_id: hmac(row.proton_pulse_user_id),
+    proton_pulse_user_id: hmac(row.proton_pulse_user_id, secret),
     display_name: row.display_name,
     avatar_url: row.avatar_url,
     cached_at: row.cached_at,
@@ -163,44 +105,93 @@ function sanitizeAuthorAvatar(row) {
   };
 }
 
+// ---------------------------------------------------------------------------
+// I/O (not exported; depends on env + network)
+// ---------------------------------------------------------------------------
+
+async function fetchAll(table, select = '*', extraFilter = '', headers) {
+  const rows = [];
+  let offset = 0;
+  const limit = 1000;
+  while (true) {
+    const url = buildFetchUrl(process.env.SUPABASE_URL, table, select, extraFilter, offset, limit);
+    const res = await fetch(url, { headers });
+    if (!res.ok) throw new Error(`Fetch ${table} failed: ${res.status} ${await res.text()}`);
+    const batch = await res.json();
+    rows.push(...batch);
+    if (batch.length < limit) break;
+    offset += limit;
+  }
+  return rows;
+}
+
+async function fetchSchema(headers, date) {
+  const tables = ['user_configs', 'author_avatars', 'user_proton_configs', 'user_systems', 'admins', 'banned_users'];
+  const lines = [`-- Schema export ${date}\n`];
+  for (const table of tables) {
+    const res = await fetch(`${process.env.SUPABASE_URL}/rest/v1/${table}?limit=0`, { headers });
+    lines.push(`-- Table: ${table} (columns from API response headers)\n`);
+    lines.push(`-- Content-Range: ${res.headers.get('content-range') || 'n/a'}\n\n`);
+  }
+
+  const policyQuery = `
+    SELECT schemaname, tablename, policyname, cmd, qual, with_check
+    FROM pg_policies
+    WHERE schemaname = 'public'
+    ORDER BY tablename, policyname;
+  `;
+  const queryRes = await fetch(`${process.env.SUPABASE_URL}/rest/v1/rpc/query`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({ query: policyQuery }),
+  }).catch(() => null);
+
+  if (queryRes?.ok) {
+    const policies = await queryRes.json();
+    lines.push('-- RLS Policies\n');
+    lines.push(JSON.stringify(policies, null, 2));
+  }
+
+  return lines.join('');
+}
+
 function makeTarball(srcDir, outPath) {
   execSync(`tar -czf "${outPath}" -C "${srcDir}" .`, { stdio: 'inherit' });
 }
 
-async function run(type) {
-  const workDir = join(tmpdir(), `backup-${DATE}-${type}`);
+async function run(type, { headers, date, outDir, siteDir, secret }) {
+  const workDir = join(tmpdir(), `backup-${date}-${type}`);
   mkdirSync(workDir, { recursive: true });
 
   console.log(`[${type}] exporting...`);
 
   if (type === 'schema') {
-    const schema = await fetchSchema();
-    writeFileSync(join(workDir, `schema-${DATE}.sql`), schema);
+    const schema = await fetchSchema(headers, date);
+    writeFileSync(join(workDir, `schema-${date}.sql`), schema);
   }
 
   if (type === 'user_configs') {
-    // Exclude hidden reports - they were hidden for a reason (flagged/banned).
-    const rows = await fetchAll('user_configs', '*', '&is_hidden=eq.false');
-    const sanitized = rows.map(sanitizeUserConfig);
-    writeFileSync(join(workDir, `user_configs-${DATE}.json`), JSON.stringify(sanitized, null, 2));
+    const rows = await fetchAll('user_configs', '*', '&is_hidden=eq.false', headers);
+    const sanitized = rows.map(r => sanitizeUserConfig(r, secret));
+    writeFileSync(join(workDir, `user_configs-${date}.json`), JSON.stringify(sanitized, null, 2));
     console.log(`[user_configs] exported ${sanitized.length} rows`);
   }
 
   if (type === 'author_avatars') {
-    const rows = await fetchAll('author_avatars', 'proton_pulse_user_id,display_name,avatar_url,cached_at');
-    const sanitized = rows.map(sanitizeAuthorAvatar);
-    writeFileSync(join(workDir, `author_avatars-${DATE}.json`), JSON.stringify(sanitized, null, 2));
+    const rows = await fetchAll('author_avatars', 'proton_pulse_user_id,display_name,avatar_url,cached_at', '', headers);
+    const sanitized = rows.map(r => sanitizeAuthorAvatar(r, secret));
+    writeFileSync(join(workDir, `author_avatars-${date}.json`), JSON.stringify(sanitized, null, 2));
     console.log(`[author_avatars] exported ${sanitized.length} rows`);
   }
 
   if (type === 'site') {
-    if (!SITE_DIR) throw new Error('SITE_DIR is required for site backup');
+    if (!siteDir) throw new Error('SITE_DIR is required for site backup');
     const siteOut = join(workDir, 'site');
     mkdirSync(siteOut, { recursive: true });
     const allowed = ['.html', '.js', '.css', '.svg', '.png', '.ico'];
-    for (const f of readdirSync(SITE_DIR)) {
+    for (const f of readdirSync(siteDir)) {
       if (allowed.some(ext => f.endsWith(ext))) {
-        const src = join(SITE_DIR, f);
+        const src = join(siteDir, f);
         if (statSync(src).isFile()) {
           execSync(`cp "${src}" "${siteOut}/"`);
         }
@@ -208,21 +199,47 @@ async function run(type) {
     }
   }
 
-  const outPath = join(OUT_DIR, `backup-${DATE}-${type}.tar.gz`);
+  const outPath = join(outDir, `backup-${date}-${type}.tar.gz`);
   makeTarball(workDir, outPath);
   console.log(`[${type}] wrote ${outPath}`);
   execSync(`rm -rf "${workDir}"`);
 }
 
 async function main() {
-  mkdirSync(OUT_DIR, { recursive: true });
-  const types = TYPE === 'all'
+  const secret = process.env.BACKUP_HMAC_SECRET;
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!secret) {
+    console.error('FATAL: BACKUP_HMAC_SECRET is not set. Refusing to run without a pseudonymization key.');
+    process.exit(1);
+  }
+  if (!supabaseUrl || !supabaseKey) {
+    console.error('FATAL: SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must both be set.');
+    process.exit(1);
+  }
+
+  const headers = {
+    apikey: supabaseKey,
+    Authorization: `Bearer ${supabaseKey}`,
+    'Content-Type': 'application/json',
+  };
+  const date = process.env.BACKUP_DATE;
+  const outDir = process.env.OUT_DIR || '.';
+  const siteDir = process.env.SITE_DIR || '';
+  const type = process.env.BACKUP_TYPE || 'all';
+
+  mkdirSync(outDir, { recursive: true });
+  const types = type === 'all'
     ? ['schema', 'user_configs', 'author_avatars', 'site']
-    : [TYPE];
+    : [type];
 
   for (const t of types) {
-    await run(t);
+    await run(t, { headers, date, outDir, siteDir, secret });
   }
 }
 
-main().catch(e => { console.error(e); process.exit(1); });
+// Only run as CLI entry point, not when imported by tests.
+if (process.argv[1]?.endsWith('backup.mjs')) {
+  main().catch(e => { console.error(e); process.exit(1); });
+}
