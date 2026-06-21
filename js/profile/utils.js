@@ -123,10 +123,10 @@ export function parseSteamSystemInfo(text) {
   // newline and indentation so (.+) captures just the value line.
   // Windows Steam writes "Operating System Version:", the Linux/SteamOS client
   // writes just "Operating System:". Both put the value on the next line.
-  const os = text.match(/Operating System(?: Version)?:\s*\n\s*(.+)/i);
+  // The system-edit form writes "OS Version: <value>" on a single line.
+  const os = text.match(/Operating System(?: Version)?:\s*\n\s*(.+)/i)
+    || text.match(/OS Version:\s*(.+)/i);
   if (os) {
-    // strip the "(64 bit)" tail first so any wrapping quotes end up
-    // at the real end of the string, then peel those off
     const v = cleanUnknown(os[1].trim()
       .replace(/\s*\(.*?\)\s*/g, '')
       .replace(/^"(.*)"$/, '$1'));
@@ -159,13 +159,12 @@ export function parseSteamSystemInfo(text) {
   // On the Deck in game mode the plugin may fall back to lspci (no X11),
   // but if even that probe fails the line will literally say "Driver:  Unknown".
   // Treat that as no data so we don't trap a useless string in the form.
-  const gpu = text.match(/(?:^|\n)\s*Driver:\s*(.+)/i);
+  // The system-edit form writes "Video Card: <gpu>" on a single line.
+  const gpu = text.match(/(?:^|\n)\s*Driver:\s*(.+)/i)
+    || text.match(/Video Card:\s*(.+)/i);
   if (gpu) {
     let g = gpu[1].trim();
     if (!/^unknown$/i.test(g)) {
-      // Two-pass strip: drop the corp prefix first, then peel a trailing
-      // "NVIDIA " that often doubles up in Steam's output, e.g.
-      // "NVIDIA Corporation NVIDIA GeForce RTX 4070" -> "GeForce RTX 4070"
       g = g
         .replace(/^(NVIDIA Corporation|Advanced Micro Devices.*?Inc\.|AMD|Intel Corporation|Intel)\s+/i, '')
         .replace(/^NVIDIA\s+/i, '');

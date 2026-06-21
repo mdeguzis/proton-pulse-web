@@ -2,7 +2,7 @@ import { SUPABASE_URL, SUPABASE_ANON_KEY, SupaAuth } from './config.js?v=87cd0f3
 import {
   getProtonPulseUserIdFromSession, parseSteamSystemInfo, inferGpuVendor, inferCpuVendor,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel, escapeHtml,
-} from './utils.js?v=db23ba95';
+} from './utils.js?v=0adb6340';
 import { supabaseHeaders } from './api/supabase.js?v=bdf4b262';
 import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/systems.js?v=8c9eb2f2';
 
