@@ -20,10 +20,6 @@ jobs:
           SENDER: ${{ github.event.sender.login }}
         run: |
           jq -n \
-            --arg title "New release: $TAG" \
-            --arg desc "$RELEASE_NAME" \
-            --arg url "$RELEASE_URL" \
-            --argjson color 5763719 \
-            --arg footer "$SENDER" \
-            '{embeds: [{title: $title, description: $desc, url: $url, color: $color, footer: {text: $footer}}]}' \
+            --arg content "**New release: $TAG**\n$RELEASE_NAME\n$RELEASE_URL\n_by $SENDER_" \
+            '{content: $content}' \
           | curl -s -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"
