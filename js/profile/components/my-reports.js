@@ -96,7 +96,7 @@ export function initMyReports(ctx) {
         <tr data-app-id="${escapeHtml(String(row.app_id))}">
           <td>
             <a href="${escapeHtml(appLink)}" class="profile-configs-game-link">${escapeHtml(name)}</a>
-            <div class="profile-configs-appid">App ${escapeHtml(String(row.app_id))}</div>
+            <div class="profile-configs-appid">App ${escapeHtml(String(row.app_id))}${row.published_id ? ` · Report #${row.published_id}` : ''}</div>
           </td>
           <td>${escapeHtml(row.rating || '—')}</td>
           <td><div class="profile-configs-status">${badges}</div>${flaggedNote}</td>
