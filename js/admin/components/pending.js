@@ -24,15 +24,12 @@ export async function renderPending(session, { onApproved } = {}) {
 
     table.hidden = false;
     tbody.innerHTML = reports.map(r => {
-      const author = escapeHtml(r.proton_pulse_user_id?.slice(0, 8) || r.client_id?.slice(0, 8) || 'anonymous');
-      const game = escapeHtml(`App ${r.app_id}`);
+      const game = escapeHtml(r.app_id ? `App ${r.app_id}` : 'Unknown');
+      const reportId = escapeHtml(r.id?.slice(0, 8) || '?');
       const date = escapeHtml(fmtDate(r.created_at));
-      const rating = escapeHtml(r.rating || '?');
       return `<tr data-report-id="${r.id}">
-        <td>#${r.id}</td>
-        <td>${game}</td>
-        <td>${author}</td>
-        <td>${rating}</td>
+        <td><a class="admin-link" href="app.html#/app/${r.app_id}" target="_blank">${game}</a></td>
+        <td><code>${reportId}</code></td>
         <td>${date}</td>
         <td>
           <button class="admin-btn admin-btn--sm" data-action="review" data-report='${escapeHtml(JSON.stringify(r))}'>Review</button>
