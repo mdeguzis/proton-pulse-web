@@ -37,6 +37,8 @@ import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/sys
   }
 
   formEl.hidden = false;
+  const parseOpenBtn = document.getElementById('steam-parse-open');
+  if (parseOpenBtn) parseOpenBtn.hidden = false;
 
   // Fill the detail fields from a parsed sysinfo object. Used both when editing
   // an existing system and when the user pastes Steam System Info via the modal.
@@ -62,6 +64,7 @@ import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/sys
     if (!row) {
       titleEl.textContent = 'System not found';
       formEl.hidden = true;
+      if (parseOpenBtn) parseOpenBtn.hidden = true;
       return;
     }
     const parsed = parseUploadedSystem(row);

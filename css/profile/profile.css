@@ -103,7 +103,8 @@
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--muted);
+  /* High-contrast labels: white in dark mode, near-black in light mode. */
+  color: var(--strong);
   margin-bottom: 6px;
   display: inline-flex;
   align-items: center;
@@ -831,15 +832,16 @@
   }
 }
 
-/* system-edit: header row (title + Parse-from-Steam button) and the paste modal. */
-.sys-form-head {
+/* system-edit: page header row keeps the title block left and the
+   Parse-from-Steam pill on the right (wraps below on narrow screens). */
+.sys-page-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
-  margin-bottom: 6px;
 }
+.sys-page-header-titles { min-width: 0; }
 .sys-modal-overlay {
   position: fixed;
   inset: 0;
