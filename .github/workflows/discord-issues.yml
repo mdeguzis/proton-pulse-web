@@ -20,7 +20,6 @@ jobs:
           ISSUE_URL: ${{ github.event.issue.html_url }}
           SENDER: ${{ github.event.sender.login }}
         run: |
-          jq -n \
-            --arg content "**Issue $EVENT_ACTION: #$ISSUE_NUMBER**\n$ISSUE_TITLE\n$ISSUE_URL\n_by $SENDER_" \
-            '{content: $content}' \
+          MSG=$(printf '**Issue %s: #%s**\n%s\n%s\n_by %s_' "$EVENT_ACTION" "$ISSUE_NUMBER" "$ISSUE_TITLE" "$ISSUE_URL" "$SENDER")
+          jq -n --arg content "$MSG" '{content: $content}' \
           | curl -s -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"

@@ -1,11 +1,16 @@
 import { escapeHtml } from '../utils.js?v=86489fcb';
 
 let chartInstance = null;
+let reportsChartInstance = null;
 
 function destroyChart() {
   if (chartInstance) {
     chartInstance.destroy();
     chartInstance = null;
+  }
+  if (reportsChartInstance) {
+    reportsChartInstance.destroy();
+    reportsChartInstance = null;
   }
 }
 
@@ -88,6 +93,15 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     <div class="analytics-chart-wrap">
       <canvas id="analytics-daily-chart"></canvas>
     </div>
+    <div style="margin-top:24px;margin-bottom:6px">
+      <span class="analytics-section-title">Report submissions</span>
+      <span style="float:right;font-size:0.75rem;color:var(--text-muted,#888)">
+        <span style="color:#d4b36a">&#9644;</span> Reports
+      </span>
+    </div>
+    <div class="analytics-chart-wrap">
+      <canvas id="analytics-reports-chart"></canvas>
+    </div>
     <div class="analytics-two-col" style="margin-top:20px">
       <div>
         <div class="analytics-section-title">Top pages</div>
@@ -157,6 +171,35 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
           scales: {
             x: { ticks: { color: '#888', maxTicksLimit: 10 }, grid: { color: 'rgba(255,255,255,0.05)' } },
             y: { ticks: { color: '#888' }, grid: { color: 'rgba(255,255,255,0.05)' }, beginAtZero: true },
+          },
+        },
+      });
+    }
+  }
+
+  const reportsByDay = data.reports_by_day || [];
+  if (reportsByDay.length && typeof Chart !== 'undefined') {
+    const canvas = document.getElementById('analytics-reports-chart');
+    if (canvas) {
+      reportsChartInstance = new Chart(canvas, {
+        type: 'bar',
+        data: {
+          labels: reportsByDay.map(r => r.day),
+          datasets: [{
+            label: 'Reports',
+            data: reportsByDay.map(r => r.count),
+            backgroundColor: 'rgba(212,179,106,0.5)',
+            borderColor: '#d4b36a',
+            borderWidth: 1,
+          }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 10 }, grid: { color: 'rgba(255,255,255,0.05)' } },
+            y: { ticks: { color: '#888', stepSize: 1 }, grid: { color: 'rgba(255,255,255,0.05)' }, beginAtZero: true },
           },
         },
       });

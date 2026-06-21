@@ -26,8 +26,6 @@ jobs:
           else
             LABEL="$EVENT_ACTION"
           fi
-
-          jq -n \
-            --arg content "**PR $LABEL: #$PR_NUMBER**\n$PR_TITLE\n$PR_URL\n_by $SENDER_" \
-            '{content: $content}' \
+          MSG=$(printf '**PR %s: #%s**\n%s\n%s\n_by %s_' "$LABEL" "$PR_NUMBER" "$PR_TITLE" "$PR_URL" "$SENDER")
+          jq -n --arg content "$MSG" '{content: $content}' \
           | curl -s -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"

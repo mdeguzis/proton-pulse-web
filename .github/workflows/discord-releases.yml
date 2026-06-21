@@ -19,7 +19,6 @@ jobs:
           RELEASE_URL: ${{ github.event.release.html_url }}
           SENDER: ${{ github.event.sender.login }}
         run: |
-          jq -n \
-            --arg content "**New release: $TAG**\n$RELEASE_NAME\n$RELEASE_URL\n_by $SENDER_" \
-            '{content: $content}' \
+          MSG=$(printf '**New release: %s**\n%s\n%s\n_by %s_' "$TAG" "$RELEASE_NAME" "$RELEASE_URL" "$SENDER")
+          jq -n --arg content "$MSG" '{content: $content}' \
           | curl -s -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"

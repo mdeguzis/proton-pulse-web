@@ -26,7 +26,6 @@ jobs:
           WF_URL: ${{ github.event.workflow_run.html_url }}
           SENDER: ${{ github.event.sender.login }}
         run: |
-          jq -n \
-            --arg content "**Build failed: $WF_NAME**\nBranch: \`$WF_BRANCH\`\n$WF_URL\n_triggered by $SENDER_" \
-            '{content: $content}' \
+          MSG=$(printf '**Build failed: %s**\nBranch: `%s`\n%s\n_triggered by %s_' "$WF_NAME" "$WF_BRANCH" "$WF_URL" "$SENDER")
+          jq -n --arg content "$MSG" '{content: $content}' \
           | curl -s -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"
