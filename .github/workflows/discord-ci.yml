@@ -27,10 +27,6 @@ jobs:
           SENDER: ${{ github.event.sender.login }}
         run: |
           jq -n \
-            --arg title "$WF_NAME failed" \
-            --arg desc "Branch \`$WF_BRANCH\` - [view run]($WF_URL)" \
-            --arg url "$WF_URL" \
-            --argjson color 15548997 \
-            --arg footer "$SENDER" \
-            '{embeds: [{title: $title, description: $desc, url: $url, color: $color, footer: {text: $footer}}]}' \
+            --arg content "**Build failed: $WF_NAME**\nBranch: \`$WF_BRANCH\`\n$WF_URL\n_triggered by $SENDER_" \
+            '{content: $content}' \
           | curl -s -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"

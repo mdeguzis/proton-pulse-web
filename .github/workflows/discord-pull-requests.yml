@@ -22,20 +22,12 @@ jobs:
           SENDER: ${{ github.event.sender.login }}
         run: |
           if [ "$PR_MERGED" = "true" ]; then
-            COLOR=10181046; LABEL="merged"
-          elif [ "$EVENT_ACTION" = "opened" ]; then
-            COLOR=5763719; LABEL="opened"
-          elif [ "$EVENT_ACTION" = "closed" ]; then
-            COLOR=15548997; LABEL="closed"
+            LABEL="merged"
           else
-            COLOR=16776796; LABEL="reopened"
+            LABEL="$EVENT_ACTION"
           fi
 
           jq -n \
-            --arg title "PR $LABEL: #$PR_NUMBER" \
-            --arg desc "$PR_TITLE" \
-            --arg url "$PR_URL" \
-            --argjson color "$COLOR" \
-            --arg footer "$SENDER" \
-            '{embeds: [{title: $title, description: $desc, url: $url, color: $color, footer: {text: $footer}}]}' \
+            --arg content "**PR $LABEL: #$PR_NUMBER**\n$PR_TITLE\n$PR_URL\n_by $SENDER_" \
+            '{content: $content}' \
           | curl -s -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"

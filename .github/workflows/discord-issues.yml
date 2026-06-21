@@ -20,18 +20,7 @@ jobs:
           ISSUE_URL: ${{ github.event.issue.html_url }}
           SENDER: ${{ github.event.sender.login }}
         run: |
-          case "$EVENT_ACTION" in
-            opened)   COLOR=5763719 ;;
-            closed)   COLOR=15548997 ;;
-            reopened) COLOR=16776796 ;;
-            *)        COLOR=9807270 ;;
-          esac
-
           jq -n \
-            --arg title "Issue $EVENT_ACTION: #$ISSUE_NUMBER" \
-            --arg desc "$ISSUE_TITLE" \
-            --arg url "$ISSUE_URL" \
-            --argjson color "$COLOR" \
-            --arg footer "$SENDER" \
-            '{embeds: [{title: $title, description: $desc, url: $url, color: $color, footer: {text: $footer}}]}' \
+            --arg content "**Issue $EVENT_ACTION: #$ISSUE_NUMBER**\n$ISSUE_TITLE\n$ISSUE_URL\n_by $SENDER_" \
+            '{content: $content}' \
           | curl -s -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"
