@@ -104,6 +104,16 @@ export function parseSteamSystemInfo(text) {
     if (v) out.cpu = v;
   }
 
+  // CPU Vendor: stored explicitly by the edit form, else inferred from the model.
+  const cpuVendorLine = text.match(/CPU Vendor:\s*(.+)/i);
+  if (cpuVendorLine) {
+    const v = cleanUnknown(cpuVendorLine[1]);
+    if (v) out.cpuVendor = v.toLowerCase();
+  } else if (out.cpu) {
+    const inferred = inferCpuVendor(out.cpu);
+    if (inferred) out.cpuVendor = inferred;
+  }
+
   // "Operating System Version:" is a header. The actual value sits on
   // the next line. Windows Steam quotes it ("Arch Linux"), the Linux
   // plugin writes it unquoted with some indent. \s*\n\s* eats the
@@ -206,6 +216,19 @@ export function inferGpuVendor(gpuString) {
   if (/(amd|radeon|rdna|rx\s*\d|vega)/.test(s)) return 'amd';
   if (/(intel|arc|iris|uhd|xe\b)/.test(s)) return 'intel';
   return '';
+}
+
+/**
+ * Infers CPU vendor from a free-text CPU string.
+ * @param {string} cpuString - Free-text CPU description.
+ * @returns {'amd'|'intel'|'other'|''} Vendor key, or '' if empty.
+ */
+export function inferCpuVendor(cpuString) {
+  const s = (cpuString || '').toString().toLowerCase();
+  if (!s) return '';
+  if (/(amd|ryzen|threadripper|epyc|athlon)/.test(s)) return 'amd';
+  if (/(intel|core\s*i\d|core\s*ultra|xeon|pentium|celeron)/.test(s)) return 'intel';
+  return 'other';
 }
 
 /**

@@ -87,3 +87,41 @@ describe('parseSteamSystemInfo GPU Vendor round-trip', () => {
     expect(out.gpuVendor).toBe('amd');
   });
 });
+
+describe('CPU vendor', () => {
+  test('inferCpuVendor recognizes AMD, Intel, and falls back to other', () => {
+    expect(ctx.inferCpuVendor('AMD Ryzen 7 5800X3D')).toBe('amd');
+    expect(ctx.inferCpuVendor('Ryzen 9 7950X3D')).toBe('amd');
+    expect(ctx.inferCpuVendor('Intel Core i9-13900K')).toBe('intel');
+    expect(ctx.inferCpuVendor('Apple M2')).toBe('other');
+    expect(ctx.inferCpuVendor('')).toBe('');
+  });
+
+  test('parseSteamSystemInfo reads an explicit CPU Vendor line', () => {
+    const out = ctx.parseSteamSystemInfo('CPU Brand: Some Chip\nCPU Vendor: intel');
+    expect(out.cpuVendor).toBe('intel');
+  });
+
+  test('parseSteamSystemInfo infers CPU vendor from the brand when no explicit line', () => {
+    const out = ctx.parseSteamSystemInfo('CPU Brand: AMD Ryzen 5 5600X 6-Core Processor');
+    expect(out.cpuVendor).toBe('amd');
+  });
+
+  test('submit handler reads sys-cpu-vendor and writes a CPU Vendor line', () => {
+    expect(editSrc).toContain("document.getElementById('sys-cpu-vendor').value");
+    expect(editSrc).toContain('if (cpuVendor) lines.push(`CPU Vendor: ${cpuVendor}`)');
+  });
+});
+
+describe('Steam-info parse modal + cancel', () => {
+  test('cancel button navigates back to profile', () => {
+    expect(editSrc).toContain("getElementById('cancel-btn')");
+    expect(editSrc).toContain("window.location.href = 'profile.html'");
+  });
+
+  test('parse modal runs parseSteamSystemInfo and fills via applyParsed', () => {
+    expect(editSrc).toContain("getElementById('steam-parse-run')");
+    expect(editSrc).toContain('const parsed = parseSteamSystemInfo(text)');
+    expect(editSrc).toContain('applyParsed(parsed)');
+  });
+});

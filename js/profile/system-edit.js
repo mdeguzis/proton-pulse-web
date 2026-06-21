@@ -1,8 +1,8 @@
 import { SUPABASE_URL, SUPABASE_ANON_KEY, SupaAuth } from './config.js?v=87cd0f3d';
 import {
-  getProtonPulseUserIdFromSession, parseSteamSystemInfo, inferGpuVendor,
+  getProtonPulseUserIdFromSession, parseSteamSystemInfo, inferGpuVendor, inferCpuVendor,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel, escapeHtml,
-} from './utils.js?v=8168d79c';
+} from './utils.js?v=1af1debf';
 import { supabaseHeaders } from './api/supabase.js?v=bdf4b262';
 import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/systems.js?v=8c9eb2f2';
 
@@ -38,6 +38,24 @@ import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/sys
 
   formEl.hidden = false;
 
+  // Fill the detail fields from a parsed sysinfo object. Used both when editing
+  // an existing system and when the user pastes Steam System Info via the modal.
+  // Only sets a field when the parse produced a value, so a paste does not wipe
+  // fields the user already typed.
+  function applyParsed(parsed) {
+    const set = (id, val) => { if (val) document.getElementById(id).value = val; };
+    set('sys-cpu', parsed.cpu);
+    set('sys-cpu-vendor', parsed.cpuVendor || inferCpuVendor(parsed.cpu));
+    set('sys-gpu', parsed.gpu);
+    set('sys-gpu-vendor', parsed.gpuVendor || inferGpuVendor(parsed.gpu));
+    set('sys-gpu-driver', parsed.gpuDriver);
+    const ramGb = parsed.ram ? parseInt(parsed.ram.replace(/[^0-9]/g, ''), 10) || '' : '';
+    set('sys-ram', ramGb ? `${ramGb} GB` : '');
+    set('sys-vram', parsed.vramMb);
+    set('sys-os', [parsed.os, parsed.osVersion].filter(Boolean).join(' '));
+    set('sys-kernel', parsed.kernel);
+  }
+
   if (!isAdd) {
     const rows = await listUserSystems(protonPulseUserId, session);
     const row = rows.find(r => r.device_id === deviceId);
@@ -49,17 +67,8 @@ import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/sys
     const parsed = parseUploadedSystem(row);
     const displayLabel = isGenericSystemLabel(row.label) ? inferSystemLabel(row) : (row.label || '');
     titleEl.textContent = displayLabel;
-
     document.getElementById('sys-label').value = displayLabel;
-    document.getElementById('sys-cpu').value = parsed.cpu || '';
-    document.getElementById('sys-gpu').value = parsed.gpu || '';
-    document.getElementById('sys-gpu-vendor').value = parsed.gpuVendor || '';
-    document.getElementById('sys-gpu-driver').value = parsed.gpuDriver || '';
-    const ramGb = parsed.ram ? parseInt(parsed.ram.replace(/[^0-9]/g, ''), 10) || '' : '';
-    document.getElementById('sys-ram').value = ramGb ? `${ramGb} GB` : '';
-    document.getElementById('sys-vram').value = parsed.vramMb || '';
-    document.getElementById('sys-os').value = [parsed.os, parsed.osVersion].filter(Boolean).join(' ');
-    document.getElementById('sys-kernel').value = parsed.kernel || '';
+    applyParsed(parsed);
   } else {
     titleEl.textContent = 'New System';
     saveBtn.textContent = 'Save System';
@@ -69,6 +78,7 @@ import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/sys
     e.preventDefault();
     const label = document.getElementById('sys-label').value.trim() || 'Manual system';
     const cpu = document.getElementById('sys-cpu').value.trim();
+    const cpuVendor = document.getElementById('sys-cpu-vendor').value;
     const gpu = document.getElementById('sys-gpu').value.trim();
     const gpuVendor = document.getElementById('sys-gpu-vendor').value;
     const gpuDriver = document.getElementById('sys-gpu-driver').value.trim();
@@ -114,6 +124,7 @@ import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/sys
 
     const lines = [];
     if (cpu) lines.push(`CPU Brand: ${cpu}`);
+    if (cpuVendor) lines.push(`CPU Vendor: ${cpuVendor}`);
     if (gpu) lines.push(`Video Card: ${gpu}`);
     if (gpuVendor) lines.push(`GPU Vendor: ${gpuVendor}`);
     if (gpuDriver) lines.push(`Driver Version: ${gpuDriver}`);
@@ -160,5 +171,43 @@ import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/sys
       saveBtn.disabled = false;
       saveBtn.textContent = isAdd ? 'Save System' : 'Save Changes';
     }
+  });
+
+  // Cancel returns to the profile page.
+  document.getElementById('cancel-btn')?.addEventListener('click', () => {
+    window.location.href = 'profile.html';
+  });
+
+  // "Parse from Steam info" modal: paste Steam System Information, parse it, and
+  // fill the form fields. Reuses parseSteamSystemInfo (same format the plugin and
+  // the My Hardware paste box use).
+  const parseModal = document.getElementById('steam-parse-modal');
+  const parseText = document.getElementById('steam-parse-text');
+  const parseStatus = document.getElementById('steam-parse-status');
+  function openParseModal() {
+    if (parseStatus) parseStatus.textContent = '';
+    parseModal.hidden = false;
+    parseText?.focus();
+  }
+  function closeParseModal() { parseModal.hidden = true; }
+  document.getElementById('steam-parse-open')?.addEventListener('click', openParseModal);
+  document.getElementById('steam-parse-cancel')?.addEventListener('click', closeParseModal);
+  parseModal?.addEventListener('click', (e) => { if (e.target === parseModal) closeParseModal(); });
+  document.getElementById('steam-parse-run')?.addEventListener('click', () => {
+    const text = parseText?.value || '';
+    const parsed = parseSteamSystemInfo(text);
+    const filledKeys = Object.keys(parsed).filter(k => parsed[k]);
+    if (!filledKeys.length) {
+      if (parseStatus) {
+        parseStatus.textContent = 'Could not read any fields from that text.';
+        parseStatus.style.color = 'var(--red)';
+      }
+      return;
+    }
+    applyParsed(parsed);
+    closeParseModal();
+    const msg = `Filled ${filledKeys.length} field${filledKeys.length === 1 ? '' : 's'} from Steam info`;
+    if (window.ppToast) window.ppToast.success(msg);
+    else { statusEl.textContent = msg; statusEl.style.color = 'var(--green)'; }
   });
 })();

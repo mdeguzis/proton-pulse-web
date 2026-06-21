@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=55e85c86">
 <link rel="stylesheet" href="css/shared/site.css?v=86052a10">
 <link rel="stylesheet" href="css/shared/cards.css?v=c0a5fad1">
-<link rel="stylesheet" href="css/profile/profile.css?v=ebafcea9">
+<link rel="stylesheet" href="css/profile/profile.css?v=75644b9b">
 </head>
 <body>
 
@@ -47,18 +47,27 @@
     </div>
 
     <form id="system-form" class="profile-section" hidden>
-      <div class="profile-section-title" id="form-section-title">System details</div>
+      <div class="sys-form-head">
+        <div class="profile-section-title" id="form-section-title" style="margin:0">System details</div>
+        <button type="button" class="profile-parse-btn" id="steam-parse-open">Parse from Steam info</button>
+      </div>
+      <p class="profile-field-hint" style="margin:0 0 16px">Fill the fields below, or paste your Steam System Information to autofill them.</p>
       <div class="profile-field">
         <label class="profile-field-label" for="sys-label">Label</label>
         <input type="text" id="sys-label" class="profile-select" style="width:100%" maxlength="80" placeholder="e.g. Desktop RTX 4070">
       </div>
       <div class="profile-field">
-        <label class="profile-field-label" for="sys-cpu">CPU</label>
-        <input type="text" id="sys-cpu" class="profile-select" style="width:100%" maxlength="120" placeholder="e.g. AMD Ryzen 7 5800X3D">
+        <label class="profile-field-label" for="sys-cpu-vendor">CPU Vendor</label>
+        <select id="sys-cpu-vendor" class="profile-select" style="width:100%">
+          <option value="">--</option>
+          <option value="amd">AMD</option>
+          <option value="intel">Intel</option>
+          <option value="other">Other</option>
+        </select>
       </div>
       <div class="profile-field">
-        <label class="profile-field-label" for="sys-gpu">GPU</label>
-        <input type="text" id="sys-gpu" class="profile-select" style="width:100%" maxlength="120" placeholder="e.g. NVIDIA GeForce RTX 4070">
+        <label class="profile-field-label" for="sys-cpu">CPU Model</label>
+        <input type="text" id="sys-cpu" class="profile-select" style="width:100%" maxlength="120" placeholder="e.g. Ryzen 7 5800X3D">
       </div>
       <div class="profile-field">
         <label class="profile-field-label" for="sys-gpu-vendor">GPU Vendor</label>
@@ -68,6 +77,10 @@
           <option value="amd">AMD</option>
           <option value="intel">Intel</option>
         </select>
+      </div>
+      <div class="profile-field">
+        <label class="profile-field-label" for="sys-gpu">GPU Model</label>
+        <input type="text" id="sys-gpu" class="profile-select" style="width:100%" maxlength="120" placeholder="e.g. GeForce RTX 4070">
       </div>
       <div class="profile-field">
         <label class="profile-field-label" for="sys-gpu-driver">GPU Driver</label>
@@ -91,14 +104,32 @@
       </div>
       <div class="profile-field" style="display:flex;gap:10px;align-items:center">
         <button type="submit" class="profile-parse-btn" id="save-btn">Save Changes</button>
-        <a href="profile.html" class="profile-parse-btn" style="text-decoration:none">Cancel</a>
+        <button type="button" class="profile-parse-btn" id="cancel-btn">Cancel</button>
         <span id="form-status" style="font-size:0.76rem"></span>
       </div>
+
     </form>
+
+    <!-- Steam System Info parse modal -->
+    <div id="steam-parse-modal" class="sys-modal-overlay" hidden>
+      <div class="sys-modal" role="dialog" aria-modal="true" aria-labelledby="steam-parse-title">
+        <h3 class="sys-modal-title" id="steam-parse-title">Fill from Steam System Info</h3>
+        <p class="profile-field-hint" style="margin:0 0 12px">
+          In Steam, open <strong>Help &rarr; System Information</strong>. Click inside the box, select all
+          (Ctrl+A), copy (Ctrl+C), then paste it below and we'll fill the fields for you.
+        </p>
+        <textarea id="steam-parse-text" class="profile-select" rows="8" style="width:100%;font-family:var(--mono);font-size:0.8rem" placeholder="Paste your Steam System Information here..."></textarea>
+        <div class="sys-modal-actions">
+          <button type="button" class="profile-parse-btn" id="steam-parse-run">Parse from Steam info</button>
+          <button type="button" class="profile-parse-btn" id="steam-parse-cancel" style="opacity:0.8">Cancel</button>
+          <span id="steam-parse-status" style="font-size:0.76rem"></span>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
 
-<script type="module" src="js/profile/system-edit.js?v=1af2e9e8"></script>
+<script type="module" src="js/profile/system-edit.js?v=d57843e5"></script>
 </body>
 </html>
