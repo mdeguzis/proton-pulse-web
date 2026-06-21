@@ -113,6 +113,21 @@ describe('CPU vendor', () => {
     expect(out.cpuVendor).toBe('amd');
   });
 
+  test('normalizes the raw CPUID vendor string GenuineIntel/AuthenticAMD', () => {
+    expect(ctx.parseSteamSystemInfo('CPU Vendor: GenuineIntel').cpuVendor).toBe('intel');
+    expect(ctx.parseSteamSystemInfo('CPU Vendor: AuthenticAMD').cpuVendor).toBe('amd');
+  });
+
+  test('real Steam sample (Core Ultra 5 125U, GenuineIntel) resolves to intel', () => {
+    const sample = [
+      'Processor Information:',
+      'CPU Vendor: GenuineIntel',
+      'CPU Brand: Intel(R) Core(TM) Ultra 5 125U',
+      'CPU Model: 0xaa',
+    ].join('\n');
+    expect(ctx.parseSteamSystemInfo(sample).cpuVendor).toBe('intel');
+  });
+
   test('submit handler reads sys-cpu-vendor and writes a CPU Vendor line', () => {
     expect(editSrc).toContain("document.getElementById('sys-cpu-vendor').value");
     expect(editSrc).toContain('if (cpuVendor) lines.push(`CPU Vendor: ${cpuVendor}`)');

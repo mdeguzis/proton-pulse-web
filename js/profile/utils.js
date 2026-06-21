@@ -104,15 +104,18 @@ export function parseSteamSystemInfo(text) {
     if (v) out.cpu = v;
   }
 
-  // CPU Vendor: stored explicitly by the edit form, else inferred from the model.
+  // CPU Vendor: normalize to our amd/intel/other select. Steam writes the raw
+  // CPUID string ("CPU Vendor: GenuineIntel" / "AuthenticAMD"), and the edit form
+  // writes amd/intel/other directly. inferCpuVendor maps all of these. If the
+  // vendor line is missing or unrecognized, fall back to the CPU brand.
   const cpuVendorLine = text.match(/CPU Vendor:\s*(.+)/i);
-  if (cpuVendorLine) {
-    const v = cleanUnknown(cpuVendorLine[1]);
-    if (v) out.cpuVendor = v.toLowerCase();
-  } else if (out.cpu) {
-    const inferred = inferCpuVendor(out.cpu);
-    if (inferred) out.cpuVendor = inferred;
+  const cpuVendorRaw = cpuVendorLine ? cleanUnknown(cpuVendorLine[1]) : '';
+  let cpuVendor = inferCpuVendor(cpuVendorRaw);
+  if ((!cpuVendor || cpuVendor === 'other') && out.cpu) {
+    const fromBrand = inferCpuVendor(out.cpu);
+    if (fromBrand && fromBrand !== 'other') cpuVendor = fromBrand;
   }
+  if (cpuVendor) out.cpuVendor = cpuVendor;
 
   // "Operating System Version:" is a header. The actual value sits on
   // the next line. Windows Steam quotes it ("Arch Linux"), the Linux
