@@ -121,7 +121,9 @@ export function parseSteamSystemInfo(text) {
   // the next line. Windows Steam quotes it ("Arch Linux"), the Linux
   // plugin writes it unquoted with some indent. \s*\n\s* eats the
   // newline and indentation so (.+) captures just the value line.
-  const os = text.match(/Operating System Version:\s*\n\s*(.+)/i);
+  // Windows Steam writes "Operating System Version:", the Linux/SteamOS client
+  // writes just "Operating System:". Both put the value on the next line.
+  const os = text.match(/Operating System(?: Version)?:\s*\n\s*(.+)/i);
   if (os) {
     // strip the "(64 bit)" tail first so any wrapping quotes end up
     // at the real end of the string, then peel those off

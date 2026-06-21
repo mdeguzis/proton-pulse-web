@@ -127,6 +127,18 @@ describe('CPU vendor', () => {
     ].join('\n');
     expect(ctx.parseSteamSystemInfo(sample).cpuVendor).toBe('intel');
   });
+});
+
+describe('OS header variants', () => {
+  test('reads the Linux "Operating System:" header (value on next line)', () => {
+    const out = ctx.parseSteamSystemInfo('Operating System:\nCachyOS (64 bit)\nKernel Name: Linux');
+    expect(out.os).toBe('CachyOS');
+  });
+
+  test('still reads the Windows "Operating System Version:" header', () => {
+    const out = ctx.parseSteamSystemInfo('Operating System Version:\n  "Arch Linux" (64 bit)');
+    expect(out.os).toBe('Arch Linux');
+  });
 
   test('submit handler reads sys-cpu-vendor and writes a CPU Vendor line', () => {
     expect(editSrc).toContain("document.getElementById('sys-cpu-vendor').value");
