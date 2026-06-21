@@ -42,10 +42,16 @@ describe('system-edit submit handler (source checks)', () => {
     expect(editSrc).toContain("fieldError('sys-gpu'");
   });
 
-  test('validates GPU Vendor, RAM, and OS as required fields', () => {
+  test('validates Label, GPU Vendor, RAM, and OS as required fields', () => {
+    expect(editSrc).toContain("if (!label) fieldError('sys-label'");
     expect(editSrc).toContain("if (!gpuVendor) fieldError('sys-gpu-vendor'");
     expect(editSrc).toContain("if (!ram) fieldError('sys-ram'");
     expect(editSrc).toContain("if (!os) fieldError('sys-os'");
+  });
+
+  test('label has no silent default - it is required', () => {
+    expect(editSrc).not.toContain("|| 'Manual system'");
+    expect(editSrc).toContain("VALIDATED_FIELDS = ['sys-label'");
   });
 
   test('per-field error marks outline and label red', () => {

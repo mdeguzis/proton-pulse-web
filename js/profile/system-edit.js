@@ -76,7 +76,7 @@ import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/sys
 
   formEl.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const label = document.getElementById('sys-label').value.trim() || 'Manual system';
+    const label = document.getElementById('sys-label').value.trim();
     const cpu = document.getElementById('sys-cpu').value.trim();
     const cpuVendor = document.getElementById('sys-cpu-vendor').value;
     const gpu = document.getElementById('sys-gpu').value.trim();
@@ -89,7 +89,7 @@ import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/sys
 
     // Per-field validation
     let firstError = null;
-    const VALIDATED_FIELDS = ['sys-cpu', 'sys-gpu', 'sys-gpu-vendor', 'sys-ram', 'sys-os'];
+    const VALIDATED_FIELDS = ['sys-label', 'sys-cpu', 'sys-gpu', 'sys-gpu-vendor', 'sys-ram', 'sys-os'];
     function fieldError(id, msg) {
       const el = document.getElementById(id);
       const labelEl = formEl.querySelector(`label[for="${id}"]`);
@@ -107,6 +107,7 @@ import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/sys
     }
     clearErrors();
 
+    if (!label) fieldError('sys-label', 'Label is required');
     if (!cpu && !gpu) {
       fieldError('sys-cpu', 'At least CPU or GPU is required');
       fieldError('sys-gpu', 'At least CPU or GPU is required');
