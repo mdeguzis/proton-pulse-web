@@ -1,6 +1,6 @@
 // My Reports section: fetches published + cloud-synced configs, renders the
 // table, and handles publish/unpublish/delete/edit actions.
-import { SupaAuth } from '../config.js?v=87cd0f3d';
+import { SupaAuth, SUPABASE_URL, SUPABASE_ANON_KEY } from '../config.js?v=87cd0f3d';
 import {
   getProtonPulseUserIdFromSession, escapeHtml, formatSystemUpdated,
   getWebClientIdProfile, getMyReportBadges, flaggedMessageHtml,
@@ -136,6 +136,22 @@ export function initMyReports(ctx) {
           }
         }
       }
+      // Check approval status for published reports
+      try {
+        const approvalsRes = await fetch(
+          `${SUPABASE_URL}/rest/v1/report_approvals?select=report_id,approval_hash`,
+          { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}` } }
+        );
+        if (approvalsRes.ok) {
+          const approvals = await approvalsRes.json();
+          const approvalMap = new Map(approvals.map(a => [a.report_id, a.approval_hash]));
+          for (const row of merged) {
+            if (row.published_id && !approvalMap.has(row.published_id)) {
+              row.pending = true;
+            }
+          }
+        }
+      } catch {}
       renderMyConfigs(merged);
     } catch (e) {
       myConfigsLoading.hidden = true;
