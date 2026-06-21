@@ -661,6 +661,10 @@
 .profile-configs-unpublish-btn {
   min-width: 72px;
 }
+.profile-configs-unpublish-btn {
+  color: #d4b36a;
+  border-color: rgba(212,168,67,0.45);
+}
 .profile-configs-publish-btn,
 .profile-configs-view-link:not(.profile-configs-view-disabled),
 .profile-configs-edit-btn {

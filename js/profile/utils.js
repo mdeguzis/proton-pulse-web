@@ -478,13 +478,14 @@ export function textToEnabledVars(text) {
  */
 export function getMyReportBadges(row) {
   const badges = [];
-  if (row.cloud) badges.push({ label: 'Cloud', tone: 'cloud' });
   if (row.pending) {
+    badges.push({ label: 'Cloud', tone: 'cloud' });
     badges.push({ label: 'Pending', tone: 'pending' });
-  } else if (row.published) {
-    badges.push({ label: 'Published', tone: 'published' });
+  } else {
+    if (row.cloud) badges.push({ label: 'Cloud', tone: 'cloud' });
+    if (row.published) badges.push({ label: 'Published', tone: 'published' });
+    if (row.unpublished) badges.push({ label: 'Unpublished', tone: 'unpublished' });
   }
-  if (row.unpublished && !row.pending) badges.push({ label: 'Unpublished', tone: 'unpublished' });
   if (row.flagged) badges.push({ label: 'Flagged', tone: 'flagged' });
   return badges;
 }

@@ -4,7 +4,7 @@
 import {
   escapeHtml, formatSystemUpdated, enabledVarsToText, textToEnabledVars,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel,
-} from '../utils.js?v=2c832a3c';
+} from '../utils.js?v=c97505eb';
 import {
   fetchCloudConfig, patchCloudConfig, fetchFullUserConfig,
   fetchReportHistory, patchUserConfig,

@@ -5,12 +5,12 @@ import {
   getProtonPulseUserIdFromSession, escapeHtml, formatSystemUpdated,
   getWebClientIdProfile, getMyReportBadges, flaggedMessageHtml,
   mergeMyReportRows,
-} from '../utils.js?v=2c832a3c';
+} from '../utils.js?v=c97505eb';
 import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
   unpublishReport,
 } from '../api/configs.js?v=a51234ab';
-import { showEditCloudConfigModal, showEditReportModal } from './edit-modals.js?v=e0dc33e4';
+import { showEditCloudConfigModal, showEditReportModal } from './edit-modals.js?v=9c4eb133';
 
 /**
  * Initialise the My Reports pane. Call once after DOM is ready.
