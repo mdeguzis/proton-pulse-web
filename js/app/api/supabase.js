@@ -40,17 +40,75 @@ export async function fetchSupabase(appId) {
   } catch { return []; }
 }
 
+function computeApprovalHash(row) {
+  const parts = [
+    String(row.app_id || ''),
+    String(row.client_id || ''),
+    String(row.rating || ''),
+    String(row.notes || ''),
+    String(row.os || ''),
+    String(row.gpu || ''),
+    String(row.created_at || ''),
+  ];
+  return md5(parts.join('|'));
+}
+
+function md5(str) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(str);
+  let h0 = 0x67452301, h1 = 0xEFCDAB89, h2 = 0x98BADCFE, h3 = 0x10325476;
+  const k = [], s = [7,12,17,22,7,12,17,22,7,12,17,22,7,12,17,22,5,9,14,20,5,9,14,20,5,9,14,20,5,9,14,20,4,11,16,23,4,11,16,23,4,11,16,23,4,11,16,23,6,10,15,21,6,10,15,21,6,10,15,21,6,10,15,21];
+  for (let i = 0; i < 64; i++) k[i] = Math.floor(2**32 * Math.abs(Math.sin(i + 1))) >>> 0;
+  const pad = new Uint8Array(((data.length + 9 + 63) & ~63));
+  pad.set(data); pad[data.length] = 0x80;
+  const dv = new DataView(pad.buffer);
+  dv.setUint32(pad.length - 8, (data.length * 8) >>> 0, true);
+  dv.setUint32(pad.length - 4, (data.length * 8 / 2**32) >>> 0, true);
+  for (let off = 0; off < pad.length; off += 64) {
+    const m = [];
+    for (let j = 0; j < 16; j++) m[j] = dv.getUint32(off + j * 4, true);
+    let [a, b, c, d] = [h0, h1, h2, h3];
+    for (let i = 0; i < 64; i++) {
+      let f, g;
+      if (i < 16) { f = (b & c) | (~b & d); g = i; }
+      else if (i < 32) { f = (d & b) | (~d & c); g = (5*i+1) % 16; }
+      else if (i < 48) { f = b ^ c ^ d; g = (3*i+5) % 16; }
+      else { f = c ^ (b | ~d); g = (7*i) % 16; }
+      f = (f + a + k[i] + m[g]) >>> 0;
+      a = d; d = c; c = b;
+      b = (b + ((f << s[i]) | (f >>> (32 - s[i])))) >>> 0;
+    }
+    h0 = (h0 + a) >>> 0; h1 = (h1 + b) >>> 0; h2 = (h2 + c) >>> 0; h3 = (h3 + d) >>> 0;
+  }
+  return [h0, h1, h2, h3].map(v => v.toString(16).padStart(8, '0').replace(/(..)(..)(..)(..)/, '$4$3$2$1')).join('');
+}
+
 export async function fetchNativeReports(appId) {
   try {
-    const r = await fetch(
-      `${SB_URL}/user_configs?app_id=eq.${appId}&is_flagged=neq.true&select=id,client_id,proton_pulse_user_id,app_id,title,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,os,kernel,proton_version,rating,duration,duration_minutes,notes,vram_mb,form_responses,config_key,game_owned,created_at,updated_at,source,is_flagged&order=created_at.desc`,
-      { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
-    );
+    const [r, approvalRes] = await Promise.all([
+      fetch(
+        `${SB_URL}/user_configs?app_id=eq.${appId}&is_flagged=neq.true&select=id,client_id,proton_pulse_user_id,app_id,title,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,os,kernel,proton_version,rating,duration,duration_minutes,notes,vram_mb,form_responses,config_key,game_owned,created_at,updated_at,source,is_flagged&order=created_at.desc`,
+        { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
+      ),
+      fetch(
+        `${SB_URL}/report_approvals?select=report_id,approval_hash`,
+        { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
+      ).catch(() => ({ ok: false })),
+    ]);
     if (!r.ok) return [];
     const rows = await r.json();
+    const approvals = approvalRes.ok ? await approvalRes.json() : [];
+    const approvalMap = new Map(approvals.map(a => [a.report_id, a.approval_hash]));
+
+    // Filter to only approved reports (hash matches current content)
+    const approvedRows = rows.filter(row => {
+      const storedHash = approvalMap.get(row.id);
+      if (!storedHash) return false;
+      return storedHash === computeApprovalHash(row);
+    });
     // keep only the latest submission per client
     const seen = new Map();
-    for (const row of rows) {
+    for (const row of approvedRows) {
       const key = row.client_id || Math.random();
       const existing = seen.get(key);
       if (!existing || row.created_at > existing.created_at) seen.set(key, row);
