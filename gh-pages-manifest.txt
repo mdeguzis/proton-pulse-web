@@ -27,11 +27,18 @@ js/shared/chart-interactions.js
 js/submit/main.js
 js/confidence/main.js
 js/game-stats/main.js
-css/app/app.css
+css/app/game-header.css
+css/app/configs.css
+css/app/reports.css
+css/app/modals.css
+css/app/home.css
 index.html
 js/index/main.js
 css/index/index.css
+css/shared/base.css
+css/shared/topbar.css
 css/shared/site.css
+css/shared/cards.css
 about.html
 options.html
 js/options/main.js
@@ -51,6 +58,9 @@ js/profile/api/systems.js
 js/profile/api/configs.js
 js/profile/api/plugin-links.js
 js/profile/components/edit-modals.js
+js/profile/components/my-hardware.js
+js/profile/components/systems.js
+js/profile/components/my-reports.js
 js/profile/main.js
 css/profile/profile.css
 admin.html
@@ -77,6 +87,9 @@ js/admin/components/analytics.js
 js/admin/components/cache-status.js
 stats.html
 js/stats/main.js
+js/stats/utils.js
+js/stats/filters.js
+js/stats/charts.js
 scoring.html
 confidence.html
 game-stats.html
@@ -106,3 +119,4 @@ js/app/lib/card.js
 js/app/lib/steam-img.js
 system-edit.html
 js/profile/system-edit.js
+hardware-suggestions.json

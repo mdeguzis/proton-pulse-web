@@ -8,8 +8,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Edit System — Proton Pulse</title>
 <meta name="color-scheme" content="dark">
-<link rel="stylesheet" href="css/shared/site.css?v=aa1f96c6">
-<link rel="stylesheet" href="css/profile/profile.css?v=ebafcea9">
+<link rel="stylesheet" href="css/shared/base.css?v=45c7e06d">
+<link rel="stylesheet" href="css/shared/topbar.css?v=55e85c86">
+<link rel="stylesheet" href="css/shared/site.css?v=86052a10">
+<link rel="stylesheet" href="css/shared/cards.css?v=c0a5fad1">
+<link rel="stylesheet" href="css/profile/profile.css?v=ef82d101">
 </head>
 <body>
 
@@ -28,9 +31,12 @@
       </a>
     </div>
 
-    <div class="page-header" style="margin-bottom:20px">
-      <div class="eyebrow" id="page-eyebrow">Edit System</div>
-      <div class="page-title" id="page-title">Loading...</div>
+    <div class="page-header sys-page-header" style="margin-bottom:20px">
+      <div class="sys-page-header-titles">
+        <div class="eyebrow" id="page-eyebrow">Edit System</div>
+        <div class="page-title" id="page-title">Loading...</div>
+      </div>
+      <button type="button" class="profile-parse-btn" id="steam-parse-open" hidden>Parse from Steam info</button>
     </div>
 
     <div id="auth-gate" hidden>
@@ -44,18 +50,24 @@
     </div>
 
     <form id="system-form" class="profile-section" hidden>
-      <div class="profile-section-title" id="form-section-title">System details</div>
+      <p class="profile-field-hint" style="margin:0 0 16px">Fill the fields below, or use Parse from Steam info above to autofill them.</p>
       <div class="profile-field">
         <label class="profile-field-label" for="sys-label">Label</label>
         <input type="text" id="sys-label" class="profile-select" style="width:100%" maxlength="80" placeholder="e.g. Desktop RTX 4070">
       </div>
       <div class="profile-field">
-        <label class="profile-field-label" for="sys-cpu">CPU</label>
-        <input type="text" id="sys-cpu" class="profile-select" style="width:100%" maxlength="120" placeholder="e.g. AMD Ryzen 7 5800X3D">
+        <label class="profile-field-label" for="sys-cpu-vendor">CPU Vendor</label>
+        <select id="sys-cpu-vendor" class="profile-select" style="width:100%">
+          <option value="">--</option>
+          <option value="amd">AMD</option>
+          <option value="intel">Intel</option>
+          <option value="other">Other</option>
+        </select>
       </div>
       <div class="profile-field">
-        <label class="profile-field-label" for="sys-gpu">GPU</label>
-        <input type="text" id="sys-gpu" class="profile-select" style="width:100%" maxlength="120" placeholder="e.g. NVIDIA GeForce RTX 4070">
+        <label class="profile-field-label" for="sys-cpu">CPU Model</label>
+        <input type="text" id="sys-cpu" class="profile-select" style="width:100%" maxlength="120" placeholder="e.g. Ryzen 7 5800X3D" list="cpu-suggestions">
+        <datalist id="cpu-suggestions"></datalist>
       </div>
       <div class="profile-field">
         <label class="profile-field-label" for="sys-gpu-vendor">GPU Vendor</label>
@@ -65,6 +77,11 @@
           <option value="amd">AMD</option>
           <option value="intel">Intel</option>
         </select>
+      </div>
+      <div class="profile-field">
+        <label class="profile-field-label" for="sys-gpu">GPU Model</label>
+        <input type="text" id="sys-gpu" class="profile-select" style="width:100%" maxlength="120" placeholder="e.g. GeForce RTX 4070" list="gpu-suggestions">
+        <datalist id="gpu-suggestions"></datalist>
       </div>
       <div class="profile-field">
         <label class="profile-field-label" for="sys-gpu-driver">GPU Driver</label>
@@ -80,7 +97,8 @@
       </div>
       <div class="profile-field">
         <label class="profile-field-label" for="sys-os">OS</label>
-        <input type="text" id="sys-os" class="profile-select" style="width:100%" maxlength="60" placeholder="e.g. Arch Linux">
+        <input type="text" id="sys-os" class="profile-select" style="width:100%" maxlength="60" placeholder="e.g. Arch Linux" list="os-suggestions">
+        <datalist id="os-suggestions"></datalist>
       </div>
       <div class="profile-field">
         <label class="profile-field-label" for="sys-kernel">Kernel</label>
@@ -88,14 +106,32 @@
       </div>
       <div class="profile-field" style="display:flex;gap:10px;align-items:center">
         <button type="submit" class="profile-parse-btn" id="save-btn">Save Changes</button>
-        <a href="profile.html" class="profile-refresh-btn" style="text-decoration:none">Cancel</a>
+        <button type="button" class="profile-parse-btn" id="cancel-btn">Cancel</button>
         <span id="form-status" style="font-size:0.76rem"></span>
       </div>
+
     </form>
+
+    <!-- Steam System Info parse modal -->
+    <div id="steam-parse-modal" class="sys-modal-overlay" hidden>
+      <div class="sys-modal" role="dialog" aria-modal="true" aria-labelledby="steam-parse-title">
+        <h3 class="sys-modal-title" id="steam-parse-title">Fill from Steam System Info</h3>
+        <p class="profile-field-hint" style="margin:0 0 12px">
+          In Steam, open <strong>Help &rarr; System Information</strong>. Click inside the box, select all
+          (Ctrl+A), copy (Ctrl+C), then paste it below and we'll fill the fields for you.
+        </p>
+        <textarea id="steam-parse-text" class="profile-select" rows="8" style="width:100%;font-family:var(--mono);font-size:0.8rem" placeholder="Paste your Steam System Information here..."></textarea>
+        <div class="sys-modal-actions">
+          <button type="button" class="profile-parse-btn" id="steam-parse-run">Parse from Steam info</button>
+          <button type="button" class="profile-parse-btn" id="steam-parse-cancel" style="opacity:0.8">Cancel</button>
+          <span id="steam-parse-status" style="font-size:0.76rem"></span>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
 
-<script type="module" src="js/profile/system-edit.js?v=95998027"></script>
+<script type="module" src="js/profile/system-edit.js?v=f9bcb57c"></script>
 </body>
 </html>

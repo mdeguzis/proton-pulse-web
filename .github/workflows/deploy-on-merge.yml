@@ -1,0 +1,24 @@
+name: Deploy on merge to main
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '*.md'
+      - '.github/workflows/discord-*.yml'
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger pages-only deploy
+        run: |
+          gh workflow run "Update ProtonDB Data" \
+            --field pages_only=true \
+            --repo "${{ github.repository }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -103,7 +103,8 @@
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--muted);
+  /* High-contrast labels: white in dark mode, near-black in light mode. */
+  color: var(--strong);
   margin-bottom: 6px;
   display: inline-flex;
   align-items: center;
@@ -183,8 +184,8 @@
   line-height: 1.5;
 }
 .profile-select {
-  background: var(--card-bg);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--card-bg, var(--s1));
+  border: 1px solid var(--border2);
   border-radius: 6px;
   color: var(--text);
   font-size: 0.82rem;
@@ -829,4 +830,62 @@
     padding: 5px 4px;
     font-size: 0.65rem;
   }
+}
+
+/* system-edit: page header row keeps the title block left and the
+   Parse-from-Steam pill on the right (wraps below on narrow screens). */
+.sys-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.sys-page-header-titles { min-width: 0; }
+.sys-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+}
+.sys-modal-overlay[hidden] { display: none; }
+.sys-modal {
+  width: 100%;
+  max-width: 560px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+.sys-modal-title { margin: 0 0 10px; font-size: 1.05rem; color: var(--strong); }
+.sys-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+/* "Parse from Steam info" stands out from the outlined Save/Cancel buttons:
+   a filled, rounded accent pill with a soft glow. Uses the theme accent vars
+   so it tracks light/dark automatically. */
+#steam-parse-open {
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-hi);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 7px 18px;
+  box-shadow: 0 0 12px var(--accent-glow);
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+#steam-parse-open:hover {
+  background: var(--accent);
+  color: #08131f;
+  box-shadow: 0 0 18px var(--accent-glow);
 }

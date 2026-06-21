@@ -7,11 +7,11 @@ import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=f3f1e031';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=621c68c5';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=6d4d6884';
-import { enhanceAuthorBlocks } from './author.js?v=d1684398';
+import { enhanceAuthorBlocks } from './author.js?v=353024a9';
 import { renderConfigCard } from './config-cards.js?v=2578d16a';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=b0fa82d9';
-import { renderCard } from './report-card.js?v=b36c67c1';
-import { loadSearchIndex, searchIndex } from './search.js?v=ec18de56';
+import { renderCard } from './report-card.js?v=319f8660';
+import { loadSearchIndex, searchIndex } from './search.js?v=2467d1c3';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref } from '../config.js?v=4031c5fa';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=85cf4195';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';
@@ -134,6 +134,11 @@ export function trendSummary(reps) {
 export async function renderGamePage(appId) {
   const el = document.getElementById('content');
   el.innerHTML = '<div class="state-box">Loading reports...</div>';
+
+  window._ppMyUserId = '';
+  if (window.SupaAuth) {
+    try { const s = await window.SupaAuth.getSession(); window._ppMyUserId = s?.user?.id || ''; } catch {}
+  }
 
   // Promise.all was hanging silently on Wukong (appId 2358720) when one of
   // the six fetches stalled -- the page sat on "Loading reports..."
@@ -291,6 +296,7 @@ export async function renderGamePage(appId) {
   // Minimum reporter playtime in minutes (0 = any). Useful to skip "launched
   // it once" reports that don't reflect real-use compatibility
   let filterMinPlaytime = persistedFilters.minPlaytime || 0;
+  let filterMine = false;
   let persistFilters = localStorage.getItem(FILTER_PERSIST_KEY) === '1';
 
   function saveFiltersIfEnabled() {
@@ -377,6 +383,11 @@ export async function renderGamePage(appId) {
     if (filterSource === 'protondb') arr = arr.filter(r => r._bucket === 'protondb' || r._bucket === 'protondb-edited');
     else if (filterSource === 'pulse') arr = arr.filter(r => r._bucket === 'pulse-config' || r._bucket === 'pulse-report');
     else if (filterSource) arr = arr.filter(r => r._bucket === filterSource);
+    if (filterMine) {
+      const myCid = getWebClientId();
+      const myPpid = window._ppMyUserId || '';
+      arr = arr.filter(r => (myCid && r.clientId === myCid) || (myPpid && r.protonPulseUserId === myPpid));
+    }
     return arr;
   };
 
@@ -649,6 +660,7 @@ export async function renderGamePage(appId) {
         <div class="sort-bar">
           <button class="${sortMode==='recent'?'active':''}" data-sort="recent">Recent</button>
           <button class="${sortMode==='votes'?'active':''}" data-sort="votes">Top Voted</button>
+          <button class="sort-mine-btn${filterMine?' active':''}" data-action="toggle-mine">Mine</button>
         </div>
       </div>
 
@@ -666,9 +678,13 @@ export async function renderGamePage(appId) {
       </div>
     `;
 
-    el.querySelectorAll('.sort-bar button').forEach(b =>
+    el.querySelectorAll('.sort-bar button[data-sort]').forEach(b =>
       b.onclick = () => { sortMode = b.dataset.sort; render(); }
     );
+    el.querySelector('.sort-mine-btn')?.addEventListener('click', () => {
+      filterMine = !filterMine;
+      render();
+    });
 
     // rating-info-btn is now a plain <a href> to scoring.html - no JS needed.
     // populateScoringTooltip / #rating-info-tip kept around in case anything
@@ -730,9 +746,13 @@ export async function renderGamePage(appId) {
       });
     });
     const myClientId = getWebClientId();
+    const myPpid = window._ppMyUserId || '';
     el.querySelectorAll('.vote-btns').forEach(btns => {
       const authorId = btns.dataset.authorId;
-      if (authorId && authorId === myClientId) {
+      const authorPpid = btns.dataset.authorPpid;
+      const isOwn = (authorId && authorId === myClientId)
+        || (myPpid && authorPpid && authorPpid === myPpid);
+      if (isOwn) {
         btns.querySelectorAll('.vote-btn').forEach(b => {
           b.disabled = true;
           b.title = 'You cannot vote on your own report';

@@ -104,14 +104,29 @@ export function parseSteamSystemInfo(text) {
     if (v) out.cpu = v;
   }
 
+  // CPU Vendor: normalize to our amd/intel/other select. Steam writes the raw
+  // CPUID string ("CPU Vendor: GenuineIntel" / "AuthenticAMD"), and the edit form
+  // writes amd/intel/other directly. inferCpuVendor maps all of these. If the
+  // vendor line is missing or unrecognized, fall back to the CPU brand.
+  const cpuVendorLine = text.match(/CPU Vendor:\s*(.+)/i);
+  const cpuVendorRaw = cpuVendorLine ? cleanUnknown(cpuVendorLine[1]) : '';
+  let cpuVendor = inferCpuVendor(cpuVendorRaw);
+  if ((!cpuVendor || cpuVendor === 'other') && out.cpu) {
+    const fromBrand = inferCpuVendor(out.cpu);
+    if (fromBrand && fromBrand !== 'other') cpuVendor = fromBrand;
+  }
+  if (cpuVendor) out.cpuVendor = cpuVendor;
+
   // "Operating System Version:" is a header. The actual value sits on
   // the next line. Windows Steam quotes it ("Arch Linux"), the Linux
   // plugin writes it unquoted with some indent. \s*\n\s* eats the
   // newline and indentation so (.+) captures just the value line.
-  const os = text.match(/Operating System Version:\s*\n\s*(.+)/i);
+  // Windows Steam writes "Operating System Version:", the Linux/SteamOS client
+  // writes just "Operating System:". Both put the value on the next line.
+  // The system-edit form writes "OS Version: <value>" on a single line.
+  const os = text.match(/Operating System(?: Version)?:\s*\n\s*(.+)/i)
+    || text.match(/OS Version:\s*(.+)/i);
   if (os) {
-    // strip the "(64 bit)" tail first so any wrapping quotes end up
-    // at the real end of the string, then peel those off
     const v = cleanUnknown(os[1].trim()
       .replace(/\s*\(.*?\)\s*/g, '')
       .replace(/^"(.*)"$/, '$1'));
@@ -141,21 +156,27 @@ export function parseSteamSystemInfo(text) {
   }
 
   // Video card: Steam prints "Driver:  NVIDIA Corporation NVIDIA GeForce RTX 4070"
-  // On the Deck in game mode the plugin may fall back to lspci (no X11),
-  // but if even that probe fails the line will literally say "Driver:  Unknown".
-  // Treat that as no data so we don't trap a useless string in the form.
-  const gpu = text.match(/(?:^|\n)\s*Driver:\s*(.+)/i);
-  if (gpu) {
-    let g = gpu[1].trim();
+  // The system-edit form writes "Video Card: <gpu>" on a single line (no stripping needed).
+  const gpuSteam = text.match(/(?:^|\n)\s*Driver:\s*(.+)/i);
+  const gpuForm = text.match(/Video Card:\s*(.+)/i);
+  if (gpuSteam) {
+    let g = gpuSteam[1].trim();
     if (!/^unknown$/i.test(g)) {
-      // Two-pass strip: drop the corp prefix first, then peel a trailing
-      // "NVIDIA " that often doubles up in Steam's output, e.g.
-      // "NVIDIA Corporation NVIDIA GeForce RTX 4070" -> "GeForce RTX 4070"
       g = g
         .replace(/^(NVIDIA Corporation|Advanced Micro Devices.*?Inc\.|AMD|Intel Corporation|Intel)\s+/i, '')
         .replace(/^NVIDIA\s+/i, '');
       out.gpu = g;
     }
+  } else if (gpuForm) {
+    const g = cleanUnknown(gpuForm[1]);
+    if (g) out.gpu = g;
+  }
+
+  // GPU Vendor: stored explicitly when user selects via the edit form
+  const gpuVendorLine = text.match(/GPU Vendor:\s*(.+)/i);
+  if (gpuVendorLine) {
+    const v = cleanUnknown(gpuVendorLine[1]);
+    if (v) out.gpuVendor = v.toLowerCase();
   }
 
   // GPU driver version line shows up separately
@@ -199,6 +220,19 @@ export function inferGpuVendor(gpuString) {
   if (/(amd|radeon|rdna|rx\s*\d|vega)/.test(s)) return 'amd';
   if (/(intel|arc|iris|uhd|xe\b)/.test(s)) return 'intel';
   return '';
+}
+
+/**
+ * Infers CPU vendor from a free-text CPU string.
+ * @param {string} cpuString - Free-text CPU description.
+ * @returns {'amd'|'intel'|'other'|''} Vendor key, or '' if empty.
+ */
+export function inferCpuVendor(cpuString) {
+  const s = (cpuString || '').toString().toLowerCase();
+  if (!s) return '';
+  if (/(amd|ryzen|threadripper|epyc|athlon)/.test(s)) return 'amd';
+  if (/(intel|core\s*i\d|core\s*ultra|xeon|pentium|celeron)/.test(s)) return 'intel';
+  return 'other';
 }
 
 /**

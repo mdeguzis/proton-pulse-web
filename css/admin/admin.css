@@ -613,6 +613,8 @@
 
 /* Mobile: hide Reports and Last active columns from the users table */
 @media (max-width: 640px) {
+  #users-table th:nth-child(2),
+  #users-table td:nth-child(2),
   #users-table th:nth-child(3),
   #users-table td:nth-child(3),
   #users-table th:nth-child(4),
@@ -852,8 +854,10 @@ pre.flag-raw-json {
   margin-top: 2px;
 }
 .analytics-chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 260px;
   margin: 0 0 24px;
-  max-height: 240px;
 }
 .analytics-section-title {
   font-size: 0.8rem;

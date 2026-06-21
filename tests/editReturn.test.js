@@ -4,11 +4,11 @@ const read = (p) => fs.readFileSync(path.join(__dirname, '..', p), 'utf8');
 
 describe('edit/submit return-to-origin and toast-only success', () => {
   const submitSrc = read('js/submit/main.js');
-  const profileSrc = read('js/profile/main.js');
+  const profileReportsSrc = read('js/profile/components/my-reports.js');
 
   test('profile edit/publish links pass return=profile.html', () => {
-    expect(profileSrc).toContain('&edit=${escapeHtml(String(row.published_id))}&return=profile.html');
-    expect(profileSrc).toContain('&fromCloud=1&return=profile.html');
+    expect(profileReportsSrc).toContain('&edit=${escapeHtml(String(row.published_id))}&return=profile.html');
+    expect(profileReportsSrc).toContain('&fromCloud=1&return=profile.html');
   });
 
   test('submit reads and sanitizes the return param (no open redirect)', () => {

@@ -22,6 +22,9 @@ const PROFILE_MODULE_FILES = [
   'js/profile/api/configs.js',
   'js/profile/api/plugin-links.js',
   'js/profile/components/edit-modals.js',
+  'js/profile/components/my-hardware.js',
+  'js/profile/components/systems.js',
+  'js/profile/components/my-reports.js',
   'js/profile/main.js',
 ];
 

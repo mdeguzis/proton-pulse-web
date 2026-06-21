@@ -1,0 +1,373 @@
+/* ---------------------------------------------
+   Proton Pulse - shared design system
+   Identity: Steam Deck navy + atom orbital motif + cyberpunk polish
+   Palette pulls from store.steampowered.com (link blue, install green)
+   --------------------------------------------- */
+
+/* Google Fonts: Space Grotesk for display, Inter for body, JetBrains Mono for stats/code */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  /* surfaces - deep Steam navy gradient stack */
+  --bg:        #0b1116;
+  --bg-top:    #0b1116;
+  --bg-bot:    #131c26;
+  --s1:        #131c26;
+  --s2:        #1b2838;   /* Steam store main panel */
+  --s3:        #2a475e;   /* Steam store card raised */
+  --border:    #1f3346;
+  --border2:   #2f4a63;
+
+  /* text */
+  --text:      #c7d5e0;   /* Steam body text */
+  --strong:    #ffffff;
+  --muted:     #67788c;
+
+  /* identity accents
+     blue is primary (Steam links), green is the "alive / compatible" pop,
+     magenta is the cyberpunk punctuation - used sparingly for glows only */
+  --accent:       #66c0f4;
+  --accent-hi:    #aedcff;
+  --accent-soft:  rgba(102, 192, 244, 0.16);
+  --accent-glow:  rgba(102, 192, 244, 0.45);
+
+  --green:        #a4d007;  /* Steam install button green */
+  --green-hi:     #beee11;
+  --green-glow:   rgba(190, 238, 17, 0.35);
+
+  --magenta:      #ff3aa5;
+  --magenta-glow: rgba(255, 58, 165, 0.35);
+
+  /* tiers (kept for compat across pages) */
+  --gold:    #ffc83d;
+  --silver:  #c0c8d2;
+  --bronze:  #c08858;
+  --red:     #ff5566;
+
+  /* type */
+  --font-display: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:         "JetBrains Mono", "SF Mono", "Consolas", "Liberation Mono", monospace;
+
+  /* layout */
+  --sidebar-w:    260px;  /* legacy, kept until all pages migrate off sidebar */
+  --banner-h:     46px;   /* identity strip - tighter to drop vertical padding */
+  --nav-h:        44px;   /* functional nav row underneath */
+
+  /* layout tokens (must stay in :root, not in a theme override, since they
+     control structural dimensions that don't change between light/dark) */
+  --topnav-h:     calc(var(--banner-h) + var(--nav-h));
+  --content-max:  1440px;
+  --content-pad:  clamp(16px, 3.2vw, 48px);
+
+  color-scheme: dark;
+}
+
+/* ── Light theme override ─────────────────────────────────────────────
+   Flipped by adding data-theme="light" on <html>. Only COLOR tokens
+   live here - layout tokens stay in :root since they don't change
+   between themes. */
+[data-theme="light"] {
+  --bg:        #f0f2f5;
+  --bg-top:    #e8ecf0;
+  --bg-bot:    #f5f7fa;
+  --s1:        #ffffff;
+  --s2:        #e9edf2;
+  --s3:        #dde3ea;
+  --border:    #d0d7de;
+  --border2:   #b8c2cc;
+
+  --text:      #2c3e50;
+  --strong:    #0a0c10;
+  --muted:     #6b7d8f;
+
+  --accent:       #1a73e8;
+  --accent-hi:    #0d47a1;
+  --accent-soft:  rgba(26, 115, 232, 0.12);
+  --accent-glow:  rgba(26, 115, 232, 0.25);
+
+  --green:        #2e7d32;
+  --green-hi:     #43a047;
+  --green-glow:   rgba(46, 125, 50, 0.25);
+
+  --magenta:      #c2185b;
+  --magenta-glow: rgba(194, 24, 91, 0.25);
+
+  --gold:    #f9a825;
+  --silver:  #90a4ae;
+  --bronze:  #a1887f;
+  --red:     #e53935;
+
+  color-scheme: light;
+}
+
+/* ── Light theme: fix hardcoded backgrounds across all pages ──────────
+   Many page-specific styles use literal rgba() dark values instead of
+   var(--tokens). Until those get refactored to use tokens, we override
+   the most common hardcoded patterns here. The list looks long because
+   every page (stats, scoring, coverage, app, index) has its own dark
+   surface classes that need flipping */
+[data-theme="light"] body {
+  background: linear-gradient(180deg, var(--bg-top), var(--bg-bot));
+  color: var(--text);
+}
+/* Topbar stays dark in light mode (brand identity reads best on dark canvas).
+   CRITICAL: force nav link colors to stay light since --accent/--accent-hi
+   flip to dark blue in light mode, making them invisible on the dark nav */
+[data-theme="light"] .topbar-banner {
+  background: linear-gradient(180deg, #2a3a4a, #1b2838);
+}
+[data-theme="light"] .topbar-nav {
+  background: rgba(42, 58, 74, 0.95);
+}
+[data-theme="light"] .topnav-links > a {
+  color: #8fa8c4;
+}
+[data-theme="light"] .topnav-links > a:hover {
+  color: #e8f4ff;
+  background: rgba(102, 192, 244, 0.1);
+}
+[data-theme="light"] .topnav-links > a.active {
+  color: #aedcff;
+  border-bottom-color: #66c0f4;
+  background: linear-gradient(180deg, transparent, rgba(102, 192, 244, 0.12));
+}
+[data-theme="light"] .topbar-search-wrap input {
+  background: rgba(11, 17, 22, 0.4);
+  border-color: rgba(102, 192, 244, 0.3);
+  color: #e8f4ff;
+}
+[data-theme="light"] .topbar-search-wrap input::placeholder { color: #8fa8c4; }
+[data-theme="light"] .topbar-search-icon { color: #8fa8c4; }
+[data-theme="light"] .banner-icon-link,
+[data-theme="light"] .theme-toggle { color: #8fa8c4; }
+[data-theme="light"] .banner-icon-link:hover,
+[data-theme="light"] .theme-toggle:hover { color: #e8f4ff; }
+[data-theme="light"] .auth-link { color: #8fa8c4 !important; }
+[data-theme="light"] .auth-link:hover { color: #e8f4ff !important; }
+/* Overflow MORE button + panel keep the dark nav styling */
+[data-theme="light"] .nav-overflow-toggle { color: #8fa8c4; }
+[data-theme="light"] .nav-overflow-toggle:hover { color: #e8f4ff; }
+[data-theme="light"] .nav-overflow-panel { background: #1b2838; border-color: #66c0f4; }
+[data-theme="light"] .nav-overflow-panel > a { color: #8fa8c4; }
+[data-theme="light"] .nav-overflow-panel > a:hover { color: #e8f4ff; background: rgba(102,192,244,0.08); }
+[data-theme="light"] .nav-overflow-panel > a.active { color: #aedcff; }
+/* Card/tile surfaces that use hardcoded dark gradients */
+[data-theme="light"] .source-summary-tile,
+[data-theme="light"] .stat-tile,
+[data-theme="light"] .chart-card,
+[data-theme="light"] .card,
+[data-theme="light"] .config-card,
+[data-theme="light"] .card-summary,
+[data-theme="light"] .retest-callout,
+[data-theme="light"] .framegen-headline {
+  background: var(--s1) !important;
+  border-color: var(--border);
+}
+/* The inner panels/details that used rgba(11,17,22,...) */
+[data-theme="light"] .all-details-panel,
+[data-theme="light"] .filter-panel,
+[data-theme="light"] .info-tooltip-inner,
+[data-theme="light"] .nav-overflow-panel {
+  background: var(--s1);
+  border-color: var(--border);
+}
+/* Signal icon neutral state: was dark bg that vanishes on light surface */
+[data-theme="light"] .signal-icon.signal-neutral {
+  background: var(--s2);
+  border-color: var(--border);
+  opacity: 0.6;
+}
+[data-theme="light"] .signal-icon {
+  border-color: var(--border);
+}
+/* Author avatar area */
+[data-theme="light"] .author-avatar {
+  background: var(--s2);
+  border-color: var(--border);
+  color: var(--accent);
+}
+/* Game header needs the left accent border to stay visible */
+[data-theme="light"] .game-header {
+  background: var(--s1);
+  border-color: var(--border);
+}
+/* Hub link buttons */
+[data-theme="light"] .hub-link {
+  background: var(--s1);
+  border-color: var(--border);
+  color: var(--text);
+}
+[data-theme="light"] .hub-link:hover {
+  background: var(--s2);
+  border-color: var(--accent);
+}
+/* Scoring page: matrix grid cells */
+[data-theme="light"] .matrix-cell,
+[data-theme="light"] .matrix-row-head {
+  background: var(--s1);
+  border-color: var(--border);
+}
+[data-theme="light"] .matrix-cell strong { color: var(--strong); }
+[data-theme="light"] .matrix-cell span { color: var(--muted); }
+/* Scenario cards on scoring page */
+[data-theme="light"] .scenario-card {
+  background: var(--s1) !important;
+  border-color: var(--border);
+}
+/* Stats page: filter chips/buttons + sparkline card */
+[data-theme="light"] .filter-button,
+[data-theme="light"] .filter-check:hover,
+[data-theme="light"] .chip {
+  background: var(--s1);
+  border-color: var(--border);
+}
+/* Index page hero - keep it dark since the brand identity lives there */
+/* (hero gradient + atom SVG look best on the dark canvas) */
+/* Coverage / data-index table rows */
+[data-theme="light"] .config-hw,
+[data-theme="light"] .weight-group,
+[data-theme="light"] .confidence-group,
+[data-theme="light"] .os-fam {
+  background: var(--s2);
+  border-color: var(--border);
+}
+/* Source summary details panel divider */
+[data-theme="light"] .ss-details {
+  border-left-color: var(--border);
+}
+/* Freshness + stat strip text */
+[data-theme="light"] .source-summary-freshness,
+[data-theme="light"] .source-summary-stats,
+[data-theme="light"] .source-summary-meta,
+[data-theme="light"] .source-summary-note {
+  color: var(--muted);
+}
+[data-theme="light"] .source-summary-freshness strong,
+[data-theme="light"] .source-summary-stats strong {
+  color: var(--strong);
+}
+/* Vote buttons + action buttons */
+[data-theme="light"] .vote-btn {
+  border-color: var(--border);
+  color: var(--muted);
+}
+[data-theme="light"] .action-btn {
+  background: var(--s1);
+}
+/* Scoring page: scenario tag + example lines + flow blocks */
+[data-theme="light"] .scenario-tag {
+  background: var(--s2);
+  border-left-color: var(--accent);
+  color: var(--text);
+}
+[data-theme="light"] .example-lines code {
+  background: var(--s2);
+  border-color: var(--border);
+  color: var(--text);
+}
+[data-theme="light"] .flow {
+  background: var(--s2);
+  border-color: var(--border);
+  color: var(--text);
+}
+[data-theme="light"] .flow .branch { color: var(--accent); }
+[data-theme="light"] .flow .verdict { color: #2e7d32; }
+[data-theme="light"] .flow .borked { color: #e53935; }
+/* Index page: feature cards have hardcoded dark gradients */
+[data-theme="light"] .feature-card,
+[data-theme="light"] .feature-cards > div {
+  background: var(--s1) !important;
+  border-color: var(--border);
+  color: var(--text);
+}
+[data-theme="light"] .feature-card p,
+[data-theme="light"] .feature-cards > div p {
+  color: var(--muted);
+}
+/* Mobile drawer stays dark */
+[data-theme="light"] .mobile-nav-drawer {
+  background: #1b2838;
+}
+[data-theme="light"] .mobile-nav-drawer a { color: #8fa8c4; }
+[data-theme="light"] .mobile-nav-drawer a:hover { color: #e8f4ff; }
+[data-theme="light"] .mobile-nav-drawer a.active { color: #aedcff; }
+
+/* Confidence breakdown page */
+[data-theme="light"] .cb-header {
+  background: var(--s1);
+  border-color: var(--border);
+}
+[data-theme="light"] .cb-factors {
+  background: var(--border);
+}
+[data-theme="light"] .cb-factor {
+  background: var(--s1);
+}
+[data-theme="light"] .cb-formula {
+  background: var(--s2);
+  border-color: var(--border);
+}
+[data-theme="light"] .cb-disclaimer {
+  background: rgba(249, 168, 37, 0.08);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enforce hidden attribute — CSS display rules can override it otherwise */
+[hidden] { display: none !important; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(102, 192, 244, 0.08), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(190, 238, 17, 0.05), transparent 60%),
+    linear-gradient(180deg, var(--bg-top), var(--bg-bot));
+  background-attachment: fixed;
+  color: var(--text);
+  font: 15px/1.6 var(--font-body);
+  font-feature-settings: "ss01", "cv11";
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* scanline + grain overlay - keeps it textured, never loud */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    repeating-linear-gradient(0deg,
+      rgba(255, 255, 255, 0.025) 0px,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px,
+      transparent 3px);
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+}
+
+/* keep real content above the overlay */
+.topbar, .main-content { position: relative; z-index: 2; }
+.topbar { z-index: 200; }
+
+/* legacy sidebar: hide for pages that still have the markup so they don't double-render */
+.sidebar-nav, .sidebar-overlay { display: none !important; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  padding: 1px 5px;
+}

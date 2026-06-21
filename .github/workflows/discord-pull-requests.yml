@@ -2,7 +2,7 @@ name: Discord Pull Requests
 
 on:
   pull_request:
-    types: [opened, closed, reopened]
+    types: [opened, closed, reopened, synchronize, edited]
 
 permissions:
   contents: read
@@ -23,6 +23,8 @@ jobs:
         run: |
           if [ "$PR_MERGED" = "true" ]; then
             LABEL="merged"
+          elif [ "$EVENT_ACTION" = "synchronize" ] || [ "$EVENT_ACTION" = "edited" ]; then
+            LABEL="updated"
           else
             LABEL="$EVENT_ACTION"
           fi

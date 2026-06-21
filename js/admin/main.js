@@ -14,8 +14,8 @@ import { renderPhrases } from './components/phrases.js?v=79051c31';
 import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965';
 import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=916aedfc';
 import { renderUserDetail } from './components/userDetail.js?v=74450110';
-import { fetchAnalytics } from './api/analytics.js?v=1b3f4599';
-import { renderAnalytics } from './components/analytics.js?v=7d29939b';
+import { fetchAnalytics } from './api/analytics.js?v=f0ba00d2';
+import { renderAnalytics } from './components/analytics.js?v=e9b6ce1c';
 import { renderCacheStatus } from './components/cache-status.js?v=764c4d18';
 
 // ---------------------------------------------------------------------------
