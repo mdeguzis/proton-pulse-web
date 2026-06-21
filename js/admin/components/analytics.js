@@ -144,6 +144,8 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
           ],
         },
         options: {
+          responsive: true,
+          maintainAspectRatio: false,
           plugins: {
             legend: { display: false },
             tooltip: {

@@ -854,8 +854,10 @@ pre.flag-raw-json {
   margin-top: 2px;
 }
 .analytics-chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 260px;
   margin: 0 0 24px;
-  max-height: 240px;
 }
 .analytics-section-title {
   font-size: 0.8rem;
