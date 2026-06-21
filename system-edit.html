@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=55e85c86">
 <link rel="stylesheet" href="css/shared/site.css?v=86052a10">
 <link rel="stylesheet" href="css/shared/cards.css?v=c0a5fad1">
-<link rel="stylesheet" href="css/profile/profile.css?v=fea192b9">
+<link rel="stylesheet" href="css/profile/profile.css?v=ef82d101">
 </head>
 <body>
 
@@ -66,7 +66,8 @@
       </div>
       <div class="profile-field">
         <label class="profile-field-label" for="sys-cpu">CPU Model</label>
-        <input type="text" id="sys-cpu" class="profile-select" style="width:100%" maxlength="120" placeholder="e.g. Ryzen 7 5800X3D">
+        <input type="text" id="sys-cpu" class="profile-select" style="width:100%" maxlength="120" placeholder="e.g. Ryzen 7 5800X3D" list="cpu-suggestions">
+        <datalist id="cpu-suggestions"></datalist>
       </div>
       <div class="profile-field">
         <label class="profile-field-label" for="sys-gpu-vendor">GPU Vendor</label>
@@ -79,7 +80,8 @@
       </div>
       <div class="profile-field">
         <label class="profile-field-label" for="sys-gpu">GPU Model</label>
-        <input type="text" id="sys-gpu" class="profile-select" style="width:100%" maxlength="120" placeholder="e.g. GeForce RTX 4070">
+        <input type="text" id="sys-gpu" class="profile-select" style="width:100%" maxlength="120" placeholder="e.g. GeForce RTX 4070" list="gpu-suggestions">
+        <datalist id="gpu-suggestions"></datalist>
       </div>
       <div class="profile-field">
         <label class="profile-field-label" for="sys-gpu-driver">GPU Driver</label>
@@ -129,6 +131,6 @@
   </div>
 </div>
 
-<script type="module" src="js/profile/system-edit.js?v=b2871000"></script>
+<script type="module" src="js/profile/system-edit.js?v=55abbf95"></script>
 </body>
 </html>

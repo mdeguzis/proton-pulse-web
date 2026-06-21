@@ -6,7 +6,26 @@ import {
 import { supabaseHeaders } from './api/supabase.js?v=bdf4b262';
 import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/systems.js?v=8c9eb2f2';
 
+function loadHardwareSuggestions() {
+  fetch('hardware-suggestions.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : null)
+    .then(data => {
+      if (!data) return;
+      const gpuList = document.getElementById('gpu-suggestions');
+      const cpuList = document.getElementById('cpu-suggestions');
+      if (gpuList && data.gpu) {
+        gpuList.innerHTML = data.gpu.map(g => `<option value="${g}">`).join('');
+      }
+      if (cpuList && data.cpu) {
+        cpuList.innerHTML = data.cpu.map(c => `<option value="${c}">`).join('');
+      }
+    })
+    .catch(() => {});
+}
+
 (async function () {
+  loadHardwareSuggestions();
+
   const params = new URLSearchParams(window.location.search);
   const deviceId = params.get('device');
   const isAdd = !deviceId;
