@@ -72,11 +72,20 @@ export async function renderPending(session, { onApproved } = {}) {
   }
 }
 
+export function closePendingReview() {
+  const detail = document.getElementById('pending-detail');
+  const table = document.getElementById('pending-table');
+  if (!detail || detail.hidden) return;
+  detail.hidden = true;
+  table.hidden = false;
+}
+
 function showReviewDetail(report) {
   const detail = document.getElementById('pending-detail');
   const table = document.getElementById('pending-table');
   if (!detail) return;
 
+  history.pushState({ adminView: 'pending-review' }, '', window.location.href);
   table.hidden = true;
   detail.hidden = false;
 

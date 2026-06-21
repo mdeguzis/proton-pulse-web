@@ -17,7 +17,7 @@ import { renderUserDetail } from './components/userDetail.js?v=74450110';
 import { fetchAnalytics } from './api/analytics.js?v=f0ba00d2';
 import { renderAnalytics } from './components/analytics.js?v=e9b6ce1c';
 import { renderCacheStatus } from './components/cache-status.js?v=764c4d18';
-import { renderPending } from './components/pending.js?v=83437de7';
+import { renderPending, closePendingReview } from './components/pending.js?v=e6e814c2';
 
 // ---------------------------------------------------------------------------
 // State
@@ -661,6 +661,8 @@ function wireEvents() {
 
   // Browser back button / swipe back from detail screens.
   window.addEventListener('popstate', e => {
+    const pendingDetail = document.getElementById('pending-detail');
+    if (pendingDetail && !pendingDetail.hidden) { closePendingReview(); return; }
     if (!document.getElementById('tab-user-detail').hidden) activateTab('users');
     else if (!document.getElementById('tab-flag-detail').hidden) activateTab('flagged');
   });
