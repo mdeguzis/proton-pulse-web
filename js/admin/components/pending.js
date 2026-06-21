@@ -22,7 +22,7 @@ export async function renderPending(session, { onApproved } = {}) {
 
     table.hidden = false;
     tbody.innerHTML = reports.map(r => {
-      const author = escapeHtml(r.display_name || r.client_id?.slice(0, 8) || 'anonymous');
+      const author = escapeHtml(r.proton_pulse_user_id?.slice(0, 8) || r.client_id?.slice(0, 8) || 'anonymous');
       const game = escapeHtml(r.app_id ? `App ${r.app_id}` : 'Unknown');
       const date = escapeHtml(fmtDate(r.created_at));
       const rating = escapeHtml(r.rating || '?');

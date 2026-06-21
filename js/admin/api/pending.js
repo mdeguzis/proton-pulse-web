@@ -3,7 +3,7 @@ import { supabaseHeaders } from '../utils.js?v=86489fcb';
 
 export async function fetchPendingReports(session) {
   const [reportsRes, approvalsRes] = await Promise.all([
-    fetch(`${SUPABASE_URL}/rest/v1/user_configs?is_flagged=neq.true&select=id,app_id,client_id,rating,notes,os,gpu,created_at,display_name,proton_pulse_user_id&order=created_at.desc&limit=200`, {
+    fetch(`${SUPABASE_URL}/rest/v1/user_configs?is_flagged=neq.true&select=id,app_id,client_id,rating,notes,os,gpu,created_at,proton_pulse_user_id&order=created_at.desc&limit=200`, {
       headers: supabaseHeaders(session),
     }),
     fetch(`${SUPABASE_URL}/rest/v1/report_approvals?select=report_id,approval_hash`, {
