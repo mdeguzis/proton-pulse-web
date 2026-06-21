@@ -14,44 +14,28 @@ jobs:
       - name: Post to Discord
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_PULL_REQUESTS }}
+          EVENT_ACTION: ${{ github.event.action }}
+          PR_MERGED: ${{ github.event.pull_request.merged }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          SENDER: ${{ github.event.sender.login }}
         run: |
-          ACTION="${{ github.event.action }}"
-          MERGED="${{ github.event.pull_request.merged }}"
-
-          if [ "$MERGED" = "true" ]; then
-            COLOR=10181046
-            LABEL="merged"
-          elif [ "$ACTION" = "opened" ]; then
-            COLOR=5763719
-            LABEL="opened"
-          elif [ "$ACTION" = "closed" ]; then
-            COLOR=15548997
-            LABEL="closed"
+          if [ "$PR_MERGED" = "true" ]; then
+            COLOR=10181046; LABEL="merged"
+          elif [ "$EVENT_ACTION" = "opened" ]; then
+            COLOR=5763719; LABEL="opened"
+          elif [ "$EVENT_ACTION" = "closed" ]; then
+            COLOR=15548997; LABEL="closed"
           else
-            COLOR=16776796
-            LABEL="reopened"
+            COLOR=16776796; LABEL="reopened"
           fi
 
-          TITLE=$(echo '${{ github.event.pull_request.title }}' | jq -Rs '.')
-          BODY=$(cat <<'ENDJQ'
-          {
-            "embeds": [{
-              "title": "PR LABELPLACEHOLDER: #NUMPLACEHOLDER",
-              "description": TITLEPLACEHOLDER,
-              "url": "URLPLACEHOLDER",
-              "color": COLORPLACEHOLDER,
-              "footer": { "text": "USERPLACEHOLDER" }
-            }]
-          }
-          ENDJQ
-          )
-
-          BODY=$(echo "$BODY" | sed \
-            -e "s|LABELPLACEHOLDER|$LABEL|" \
-            -e "s|NUMPLACEHOLDER|${{ github.event.pull_request.number }}|" \
-            -e "s|TITLEPLACEHOLDER|$TITLE|" \
-            -e "s|URLPLACEHOLDER|${{ github.event.pull_request.html_url }}|" \
-            -e "s|COLORPLACEHOLDER|$COLOR|" \
-            -e "s|USERPLACEHOLDER|${{ github.event.sender.login }}|")
-
-          curl -s -H "Content-Type: application/json" -d "$BODY" "$WEBHOOK_URL"
+          jq -n \
+            --arg title "PR $LABEL: #$PR_NUMBER" \
+            --arg desc "$PR_TITLE" \
+            --arg url "$PR_URL" \
+            --argjson color "$COLOR" \
+            --arg footer "$SENDER" \
+            '{embeds: [{title: $title, description: $desc, url: $url, color: $color, footer: {text: $footer}}]}' \
+          | curl -s -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"

@@ -14,26 +14,16 @@ jobs:
       - name: Post to Discord
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_RELEASES }}
+          TAG: ${{ github.event.release.tag_name }}
+          RELEASE_NAME: ${{ github.event.release.name }}
+          RELEASE_URL: ${{ github.event.release.html_url }}
+          SENDER: ${{ github.event.sender.login }}
         run: |
-          TAG=$(echo '${{ github.event.release.tag_name }}' | jq -Rs '.')
-          NAME=$(echo '${{ github.event.release.name }}' | jq -Rs '.')
-          BODY=$(cat <<'ENDJQ'
-          {
-            "embeds": [{
-              "title": "New release: TAGPLACEHOLDER",
-              "description": NAMEPLACEHOLDER,
-              "url": "URLPLACEHOLDER",
-              "color": 5763719,
-              "footer": { "text": "USERPLACEHOLDER" }
-            }]
-          }
-          ENDJQ
-          )
-
-          BODY=$(echo "$BODY" | sed \
-            -e "s|TAGPLACEHOLDER|${{ github.event.release.tag_name }}|" \
-            -e "s|NAMEPLACEHOLDER|$NAME|" \
-            -e "s|URLPLACEHOLDER|${{ github.event.release.html_url }}|" \
-            -e "s|USERPLACEHOLDER|${{ github.event.sender.login }}|")
-
-          curl -s -H "Content-Type: application/json" -d "$BODY" "$WEBHOOK_URL"
+          jq -n \
+            --arg title "New release: $TAG" \
+            --arg desc "$RELEASE_NAME" \
+            --arg url "$RELEASE_URL" \
+            --argjson color 5763719 \
+            --arg footer "$SENDER" \
+            '{embeds: [{title: $title, description: $desc, url: $url, color: $color, footer: {text: $footer}}]}' \
+          | curl -s -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"
