@@ -156,20 +156,20 @@ export function parseSteamSystemInfo(text) {
   }
 
   // Video card: Steam prints "Driver:  NVIDIA Corporation NVIDIA GeForce RTX 4070"
-  // On the Deck in game mode the plugin may fall back to lspci (no X11),
-  // but if even that probe fails the line will literally say "Driver:  Unknown".
-  // Treat that as no data so we don't trap a useless string in the form.
-  // The system-edit form writes "Video Card: <gpu>" on a single line.
-  const gpu = text.match(/(?:^|\n)\s*Driver:\s*(.+)/i)
-    || text.match(/Video Card:\s*(.+)/i);
-  if (gpu) {
-    let g = gpu[1].trim();
+  // The system-edit form writes "Video Card: <gpu>" on a single line (no stripping needed).
+  const gpuSteam = text.match(/(?:^|\n)\s*Driver:\s*(.+)/i);
+  const gpuForm = text.match(/Video Card:\s*(.+)/i);
+  if (gpuSteam) {
+    let g = gpuSteam[1].trim();
     if (!/^unknown$/i.test(g)) {
       g = g
         .replace(/^(NVIDIA Corporation|Advanced Micro Devices.*?Inc\.|AMD|Intel Corporation|Intel)\s+/i, '')
         .replace(/^NVIDIA\s+/i, '');
       out.gpu = g;
     }
+  } else if (gpuForm) {
+    const g = cleanUnknown(gpuForm[1]);
+    if (g) out.gpu = g;
   }
 
   // GPU Vendor: stored explicitly when user selects via the edit form
