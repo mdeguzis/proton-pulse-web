@@ -27,6 +27,15 @@ function loadHardwareSuggestions() {
     .catch(() => {});
 }
 
+function parseRamToMb(raw) {
+  if (!raw) return 0;
+  const s = raw.trim().toLowerCase();
+  const num = parseFloat(s.replace(/[^0-9.]/g, ''));
+  if (!num || num <= 0 || !isFinite(num)) return 0;
+  if (s.includes('mb')) return Math.round(num);
+  return Math.round(num * 1024);
+}
+
 (async function () {
   loadHardwareSuggestions();
 
@@ -139,7 +148,11 @@ function loadHardwareSuggestions() {
       fieldError('sys-gpu', 'At least CPU or GPU is required');
     }
     if (!gpuVendor) fieldError('sys-gpu-vendor', 'GPU Vendor is required');
-    if (!ram) fieldError('sys-ram', 'RAM is required');
+    if (!ram) {
+      fieldError('sys-ram', 'RAM is required');
+    } else if (!parseRamToMb(ram)) {
+      fieldError('sys-ram', 'Enter a number, e.g. 16 GB or 16384 MB');
+    }
     if (!os) fieldError('sys-os', 'OS is required');
 
     if (firstError) {
@@ -155,10 +168,8 @@ function loadHardwareSuggestions() {
     if (gpu) lines.push(`Video Card: ${gpu}`);
     if (gpuVendor) lines.push(`GPU Vendor: ${gpuVendor}`);
     if (gpuDriver) lines.push(`Driver Version: ${gpuDriver}`);
-    if (ram) {
-      const gb = parseInt(ram.replace(/[^0-9]/g, ''), 10);
-      if (gb) lines.push(`RAM: ${gb * 1024} Mb`);
-    }
+    const ramMb = parseRamToMb(ram);
+    if (ramMb) lines.push(`RAM: ${ramMb} Mb`);
     if (vram) lines.push(`VRAM: ${vram} Mb`);
     if (os) lines.push(`OS Version: ${os}`);
     if (kernel) lines.push(`Kernel Version: ${kernel}`);

@@ -45,7 +45,7 @@ describe('system-edit submit handler (source checks)', () => {
   test('validates Label, GPU Vendor, RAM, and OS as required fields', () => {
     expect(editSrc).toContain("if (!label) fieldError('sys-label'");
     expect(editSrc).toContain("if (!gpuVendor) fieldError('sys-gpu-vendor'");
-    expect(editSrc).toContain("if (!ram) fieldError('sys-ram'");
+    expect(editSrc).toContain("fieldError('sys-ram'");
     expect(editSrc).toContain("if (!os) fieldError('sys-os'");
   });
 
