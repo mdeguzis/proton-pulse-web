@@ -635,14 +635,16 @@
   opacity: 0.75;
 }
 
-/* Mobile: hide Reports and Last active columns from the users table */
+/* Mobile: hide Identity, Role, Reports, Last active, Last login columns */
 @media (max-width: 640px) {
   #users-table th:nth-child(2),
   #users-table td:nth-child(2),
   #users-table th:nth-child(3),
   #users-table td:nth-child(3),
   #users-table th:nth-child(4),
-  #users-table td:nth-child(4) {
+  #users-table td:nth-child(4),
+  #users-table th:nth-child(6),
+  #users-table td:nth-child(6) {
     display: none;
   }
 }
