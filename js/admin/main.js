@@ -5,7 +5,7 @@ import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagRe
 import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=3f4bb02b';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
 import { renderBanned } from './components/banned.js?v=45d01d17';
-import { fetchAllUsers } from './api/users.js?v=52e867d2';
+import { fetchAllUsers } from './api/users.js?v=7b784e9c';
 import { renderUsers } from './components/users.js?v=bb3b3f25';
 import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=16a55837';
 import { renderAdmins, renderNewAdminEditor } from './components/admins.js?v=84b4ecad';

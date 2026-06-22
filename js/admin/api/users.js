@@ -109,7 +109,11 @@ export async function fetchAllUsers(session, { search } = {}) {
       for (const au of authUsers) {
         if (!au.id) continue;
         if (byUser.has(au.id)) {
-          byUser.get(au.id).last_login = au.last_sign_in_at || null;
+          const u = byUser.get(au.id);
+          u.last_login = au.last_sign_in_at || null;
+          if (au.last_sign_in_at && au.last_sign_in_at > (u.last_active || '')) {
+            u.last_active = au.last_sign_in_at;
+          }
         } else {
           // User exists in auth but has never submitted - still show them.
           byUser.set(au.id, {
