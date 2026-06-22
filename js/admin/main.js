@@ -236,13 +236,29 @@ async function loadUserDetail(user) {
   content.innerHTML = '<div class="admin-loading">Loading reports...</div>';
 
   try {
-    const [reports, authEvents] = await Promise.all([
-      fetchUserReports(currentSession, {
-        userId: user.proton_pulse_user_id || null,
-        clientId: user.client_id || null,
-      }),
-      fetchUserActivity(currentSession, { userId: user.proton_pulse_user_id || null }),
+    const uid = user.proton_pulse_user_id || null;
+    const [reports, authEvents, avatarRows, authRows] = await Promise.all([
+      fetchUserReports(currentSession, { userId: uid, clientId: user.client_id || null }),
+      fetchUserActivity(currentSession, { userId: uid }),
+      uid ? fetch(`${SUPABASE_URL}/rest/v1/author_avatars?proton_pulse_user_id=eq.${encodeURIComponent(uid)}&select=last_seen_at`, { headers: supabaseHeaders(currentSession) }).then(r => r.ok ? r.json() : []).catch(() => []) : Promise.resolve([]),
+      uid ? fetch(`${SUPABASE_URL}/rest/v1/rpc/admin_list_users`, { method: 'POST', headers: { ...supabaseHeaders(currentSession), 'Content-Type': 'application/json' }, body: '{}' }).then(r => r.ok ? r.json() : []).catch(() => []) : Promise.resolve([]),
     ]);
+
+    // Re-derive last_active from all available signals so the detail view
+    // always reflects the most recent one, independent of what was serialized
+    // into the button's data-userobj at render time.
+    const avatarRow  = avatarRows[0];
+    const authUser   = uid ? authRows.find(a => a.id === uid) : null;
+    const candidates = [
+      user.last_active,
+      avatarRow?.last_seen_at,
+      authUser?.last_sign_in_at,
+    ].filter(Boolean);
+    if (candidates.length) {
+      user.last_active = candidates.reduce((a, b) => (a > b ? a : b));
+    }
+    if (authUser?.last_sign_in_at) user.last_login = authUser.last_sign_in_at;
+
     renderUserDetail(user, reports, authEvents, {
       session: currentSession,
       currentUserId: currentSession?.user?.id,
