@@ -4,20 +4,20 @@ import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMI
 import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=6202ee12';
 import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=3f4bb02b';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
-import { renderBanned } from './components/banned.js?v=45d01d17';
+import { renderBanned } from './components/banned.js?v=1c1ba341';
 import { fetchAllUsers } from './api/users.js?v=72f82137';
-import { renderUsers } from './components/users.js?v=bb3b3f25';
+import { renderUsers } from './components/users.js?v=765cb3cc';
 import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=16a55837';
-import { renderAdmins, renderNewAdminEditor } from './components/admins.js?v=84b4ecad';
+import { renderAdmins, renderNewAdminEditor } from './components/admins.js?v=30fa53a1';
 import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ca024bd3';
-import { renderPhrases } from './components/phrases.js?v=79051c31';
+import { renderPhrases } from './components/phrases.js?v=20dbf1ea';
 import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965';
 import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=916aedfc';
-import { renderUserDetail } from './components/userDetail.js?v=74450110';
+import { renderUserDetail } from './components/userDetail.js?v=de9360ad';
 import { fetchAnalytics } from './api/analytics.js?v=f0ba00d2';
 import { renderAnalytics } from './components/analytics.js?v=e9b6ce1c';
 import { renderCacheStatus } from './components/cache-status.js?v=764c4d18';
-import { renderPending, closePendingReview } from './components/pending.js?v=980babc0';
+import { renderPending, closePendingReview } from './components/pending.js?v=1fc5b1b4';
 
 // ---------------------------------------------------------------------------
 // State

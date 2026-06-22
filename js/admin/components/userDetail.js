@@ -1,6 +1,6 @@
 // userDetail (component) for the admin page - renders the full user detail screen.
 
-import { escapeHtml, fmtDate, fmtDateTime, ROLE_LABELS, roleLabel } from '../utils.js?v=86489fcb';
+import { escapeHtml, fmtDateTime, ROLE_LABELS, roleLabel } from '../utils.js?v=86489fcb';
 import { deleteUserReport, hideUserReport, editUserReport } from '../api/userDetail.js?v=916aedfc';
 
 function idRow(label, value) {
@@ -27,7 +27,7 @@ function idRow(label, value) {
 function memberSince(reports) {
   if (!reports.length) return '&#8212;';
   const earliest = reports.reduce((a, b) => (a.created_at < b.created_at ? a : b));
-  return escapeHtml(fmtDate(earliest.created_at));
+  return escapeHtml(fmtDateTime(earliest.created_at));
 }
 
 function renderReportsTable(reports) {
@@ -155,11 +155,11 @@ export function renderUserDetail(user, reports, authEvents, { session, onBack, o
       <div class="user-detail-timeline">
         <div class="user-detail-tl-row">
           <span class="user-detail-label">Last login</span>
-          <span>${escapeHtml(fmtDate(user.last_login))}</span>
+          <span>${escapeHtml(fmtDateTime(user.last_login))}</span>
         </div>
         <div class="user-detail-tl-row">
           <span class="user-detail-label">Last active</span>
-          <span>${escapeHtml(fmtDate(user.last_active))}</span>
+          <span>${escapeHtml(fmtDateTime(user.last_active))}</span>
         </div>
         <div class="user-detail-tl-row">
           <span class="user-detail-label">Member since</span>

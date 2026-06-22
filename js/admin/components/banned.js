@@ -1,6 +1,6 @@
 // banned (components) for the admin page.
 
-import { escapeHtml, fmtDate } from '../utils.js?v=86489fcb';
+import { escapeHtml, fmtDateTime } from '../utils.js?v=86489fcb';
 
 export function renderBanned(rows) {
   const loading = document.getElementById('banned-loading');
@@ -22,7 +22,7 @@ export function renderBanned(rows) {
   tbody.innerHTML = rows.map(r => {
     const name = escapeHtml(r.steam_username || r.client_id?.slice(0, 8) || 'unknown');
     const reason = escapeHtml(r.banned_reason || '—');
-    const bannedAt = escapeHtml(fmtDate(r.banned_at));
+    const bannedAt = escapeHtml(fmtDateTime(r.banned_at));
     const banId = escapeHtml(String(r.id));
     const userId = escapeHtml(r.proton_pulse_user_id || '');
     const clientId = escapeHtml(r.client_id || '');

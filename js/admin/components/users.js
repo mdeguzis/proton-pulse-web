@@ -1,6 +1,6 @@
 // users (components) for the admin page.
 
-import { escapeHtml, fmtDate, ROLE_LABELS, roleLabel } from '../utils.js?v=86489fcb';
+import { escapeHtml, fmtDateTime, ROLE_LABELS, roleLabel } from '../utils.js?v=86489fcb';
 
 export function renderUsers(rows, { currentUserId, counts, canBan = true } = {}) {
   const loading = document.getElementById('users-loading');
@@ -56,8 +56,8 @@ export function renderUsers(rows, { currentUserId, counts, canBan = true } = {})
           </button>
         </span>`
       : '<span class="admin-uid">&mdash;</span>';
-    const lastActive = escapeHtml(fmtDate(r.last_active));
-    const lastLogin = escapeHtml(fmtDate(r.last_login));
+    const lastActive = escapeHtml(fmtDateTime(r.last_active));
+    const lastLogin = escapeHtml(fmtDateTime(r.last_login));
     // Only known roles get a modifier class; everyone else is the neutral "User" badge.
     const roleMod = ROLE_LABELS[r.role] ? ` admin-role-badge--${r.role}` : '';
     const roleCell = `<span class="admin-role-badge${roleMod}">${escapeHtml(roleLabel(r.role))}</span>`;

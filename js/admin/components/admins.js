@@ -1,6 +1,6 @@
 // admins (components) for the admin page.
 
-import { escapeHtml, fmtDate } from '../utils.js?v=86489fcb';
+import { escapeHtml, fmtDateTime } from '../utils.js?v=86489fcb';
 import { PERMISSION_LABELS, effectivePermissions, resolveRoleLabel, permissionsToAdd } from '../permissions.js?v=529eb059';
 
 // Role <select> for a row or the add form. `uuid` is 'new' for the add form.
@@ -75,7 +75,7 @@ export function renderAdmins(rows, { currentUserId } = {}) {
       <td>${name}</td>
       <td>${roleSelectHtml(label, uid)}</td>
       <td>${permEditorHtml(label, eff, uid)}</td>
-      <td>${escapeHtml(fmtDate(r.added_at))}</td>
+      <td>${escapeHtml(fmtDateTime(r.added_at))}</td>
       <td>${removeBtn}</td>
     </tr>`;
   }).join('');

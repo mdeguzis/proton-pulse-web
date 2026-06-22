@@ -1,4 +1,4 @@
-import { escapeHtml, fmtDate } from '../utils.js?v=86489fcb';
+import { escapeHtml, fmtDateTime } from '../utils.js?v=86489fcb';
 import { fetchPendingReports, approveReport } from '../api/pending.js?v=6eb54134';
 
 export async function renderPending(session, { onApproved } = {}) {
@@ -26,7 +26,7 @@ export async function renderPending(session, { onApproved } = {}) {
     tbody.innerHTML = reports.map(r => {
       const game = escapeHtml(r.app_id ? `App ${r.app_id}` : 'Unknown');
       const reportId = escapeHtml(r.id != null ? String(r.id).slice(0, 8) : '?');
-      const date = escapeHtml(fmtDate(r.created_at));
+      const date = escapeHtml(fmtDateTime(r.created_at));
       return `<tr data-report-id="${r.id}">
         <td><a class="admin-link" href="app.html#/app/${r.app_id}" target="_blank">${game}</a></td>
         <td><code>${reportId}</code></td>

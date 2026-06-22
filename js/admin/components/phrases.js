@@ -1,6 +1,6 @@
 // phrases (components) for the admin page.
 
-import { escapeHtml, fmtDate } from '../utils.js?v=86489fcb';
+import { escapeHtml, fmtDateTime } from '../utils.js?v=86489fcb';
 
 export function renderPhrases(rows) {
   const loading = document.getElementById('phrases-loading');
@@ -28,7 +28,7 @@ export function renderPhrases(rows) {
       ? '<span class="admin-badge admin-badge--regex">Regex</span>'
       : '<span class="admin-badge">Literal</span>';
     const desc    = escapeHtml(r.description || '—');
-    const added   = escapeHtml(fmtDate(r.created_at));
+    const added   = escapeHtml(fmtDateTime(r.created_at));
     const toggleLabel = r.enabled ? 'Disable' : 'Enable';
     const toggleClass = r.enabled ? 'admin-btn--warn' : 'admin-btn--ok';
     return `<tr data-phrase-id="${id}"${r.enabled ? '' : ' class="admin-row--disabled"'}>
