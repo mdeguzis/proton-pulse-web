@@ -76,6 +76,7 @@ jobs:
 
       - name: Publish release and update backups.jsonl
         env:
+          GH_TOKEN: ${{ secrets.BACKUP_REPO_TOKEN }}
           BACKUP_REPO_TOKEN: ${{ secrets.BACKUP_REPO_TOKEN }}
           DATE: ${{ steps.date.outputs.date }}
           TS:   ${{ steps.date.outputs.ts }}
