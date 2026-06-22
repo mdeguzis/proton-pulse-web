@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=55e85c86">
 <link rel="stylesheet" href="css/shared/site.css?v=86052a10">
 <link rel="stylesheet" href="css/shared/cards.css?v=c0a5fad1">
-<link rel="stylesheet" href="css/admin/admin.css?v=47b33e48">
+<link rel="stylesheet" href="css/admin/admin.css?v=391c2951">
 </head>
 <body>
 
@@ -54,7 +54,7 @@
           <div id="pending-loading" class="admin-loading">Loading pending reports...</div>
           <div id="pending-empty" class="admin-empty" hidden>No pending reports.</div>
           <table id="pending-table" class="admin-table" hidden>
-            <thead><tr><th>Game</th><th>Report ID</th><th>Submitted</th><th></th></tr></thead>
+            <thead><tr><th data-sort-col="0">Game</th><th data-sort-col="1">Report ID</th><th data-sort-col="2" data-sort-type="date">Submitted</th><th></th></tr></thead>
             <tbody id="pending-tbody"></tbody>
           </table>
           <div id="pending-detail" hidden></div>
@@ -90,11 +90,11 @@
         <table class="admin-table" id="flagged-table" hidden>
           <thead>
             <tr>
-              <th>Game</th>
-              <th>Source</th>
-              <th>Flagged</th>
-              <th>Reviewed</th>
-              <th>Status</th>
+              <th data-sort-col="0">Game</th>
+              <th data-sort-col="1">Source</th>
+              <th data-sort-col="2" data-sort-type="date">Flagged</th>
+              <th data-sort-col="3" data-sort-type="date">Reviewed</th>
+              <th data-sort-col="4">Status</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -121,9 +121,9 @@
         <table class="admin-table" id="banned-table" hidden>
           <thead>
             <tr>
-              <th>User</th>
-              <th>Reason</th>
-              <th>Banned</th>
+              <th data-sort-col="0">User</th>
+              <th data-sort-col="1">Reason</th>
+              <th data-sort-col="2" data-sort-type="date">Banned</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -134,7 +134,7 @@
       <!-- All Users -->
       <section id="tab-users" class="admin-section" hidden>
         <div class="admin-filters">
-          <div class="admin-search-wrap">
+          <div class="admin-search-wrap admin-search-wrap--wide">
             <input type="text" id="users-search" class="admin-input" placeholder="Search username or client ID...">
             <button class="admin-search-clear" id="users-search-clear" type="button" title="Clear search" aria-label="Clear search" hidden>
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -154,12 +154,12 @@
         <table class="admin-table" id="users-table" hidden>
           <thead>
             <tr>
-              <th>Username</th>
+              <th data-sort-col="0">Username</th>
               <th>Identity</th>
-              <th>Role</th>
-              <th>Reports</th>
-              <th>Last active</th>
-              <th>Last login</th>
+              <th data-sort-col="2">Role</th>
+              <th data-sort-col="3" data-sort-type="number">Reports</th>
+              <th data-sort-col="4" data-sort-type="date">Last active</th>
+              <th data-sort-col="5" data-sort-type="date">Last login</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -203,10 +203,10 @@
         <table class="admin-table" id="admins-table" hidden>
           <thead>
             <tr>
-              <th>Username</th>
-              <th>Role</th>
+              <th data-sort-col="0">Username</th>
+              <th data-sort-col="1">Role</th>
               <th>Permissions</th>
-              <th>Added</th>
+              <th data-sort-col="3" data-sort-type="date">Added</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -236,10 +236,10 @@
         <table class="admin-table" id="phrases-table" hidden>
           <thead>
             <tr>
-              <th>Pattern</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Added</th>
+              <th data-sort-col="0">Pattern</th>
+              <th data-sort-col="1">Type</th>
+              <th data-sort-col="2">Description</th>
+              <th data-sort-col="3" data-sort-type="date">Added</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -281,6 +281,6 @@
 <script src="js/lib/analytics.js?v=89bd7747"></script>
 <script src="js/lib/topbar.js?v=38d23fe3"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/admin/main.js?v=94a719b9"></script>
+<script type="module" src="js/admin/main.js?v=fe8aa86c"></script>
 </body>
 </html>

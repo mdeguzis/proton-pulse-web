@@ -842,6 +842,63 @@ function wireEvents() {
 }
 
 // ---------------------------------------------------------------------------
+// Generic client-side table sort
+// ---------------------------------------------------------------------------
+
+function setupTableSort(tableId) {
+  const table = document.getElementById(tableId);
+  if (!table) return;
+  const ths = table.querySelectorAll('thead th[data-sort-col]');
+  ths.forEach(th => {
+    const indicator = document.createElement('span');
+    indicator.className = 'sort-indicator';
+    indicator.setAttribute('aria-hidden', 'true');
+    th.appendChild(indicator);
+
+    th.addEventListener('click', () => {
+      const col  = parseInt(th.dataset.sortCol, 10);
+      const type = th.dataset.sortType || 'text';
+      const tbody = table.querySelector('tbody');
+      if (!tbody) return;
+
+      const wasActive = th.dataset.sortActive === '1';
+      const nowAsc    = wasActive ? th.dataset.sortDir !== 'asc' : true;
+
+      ths.forEach(h => {
+        h.dataset.sortActive = '';
+        h.dataset.sortDir    = '';
+        h.classList.remove('admin-th--sorted');
+        const ind = h.querySelector('.sort-indicator');
+        if (ind) ind.textContent = '';
+      });
+
+      th.dataset.sortActive = '1';
+      th.dataset.sortDir    = nowAsc ? 'asc' : 'desc';
+      th.classList.add('admin-th--sorted');
+      indicator.textContent = nowAsc ? ' \u25b2' : ' \u25bc';
+
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      rows.sort((a, b) => {
+        const aVal = a.cells[col]?.textContent.trim() ?? '';
+        const bVal = b.cells[col]?.textContent.trim() ?? '';
+        let cmp = 0;
+        if (type === 'number') {
+          cmp = (parseFloat(aVal) || 0) - (parseFloat(bVal) || 0);
+        } else if (type === 'date') {
+          const at = Date.parse(aVal);
+          const bt = Date.parse(bVal);
+          cmp = (isNaN(at) ? 0 : at) - (isNaN(bt) ? 0 : bt);
+        } else {
+          cmp = aVal.localeCompare(bVal, undefined, { sensitivity: 'base' });
+        }
+        return nowAsc ? cmp : -cmp;
+      });
+      rows.forEach(r => tbody.appendChild(r));
+    });
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Init
 // ---------------------------------------------------------------------------
 
@@ -868,6 +925,7 @@ async function init() {
   renderPermissionSummary();
   applyTabVisibility();
   wireEvents();
+  ['pending-table', 'flagged-table', 'banned-table', 'users-table', 'admins-table', 'phrases-table'].forEach(setupTableSort);
 
   const params = new URLSearchParams(window.location.search);
 

@@ -174,6 +174,10 @@
   display: inline-flex;
   align-items: center;
 }
+
+.admin-search-wrap--wide {
+  min-width: 260px;
+}
 .admin-search-wrap .admin-input {
   padding-right: 26px;
 }
@@ -267,6 +271,26 @@
   padding: 6px 10px;
   text-align: left;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.admin-table th[data-sort-col] {
+  cursor: pointer;
+  user-select: none;
+}
+
+.admin-table th[data-sort-col]:hover {
+  color: var(--text, #eee);
+}
+
+.admin-table th.admin-th--sorted {
+  color: var(--text, #eee);
+}
+
+.sort-indicator {
+  font-size: 0.6rem;
+  margin-left: 4px;
+  opacity: 0.8;
 }
 
 .admin-table td {
