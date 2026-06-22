@@ -115,8 +115,15 @@ jobs:
           RELEASE_URL="https://github.com/mdeguzis/proton-pulse-data-backup/releases/tag/${TAG}"
           echo "Release published: $RELEASE_URL"
 
-          # Update backups.jsonl with release URL and asset details
+          # Clone backup repo to update latest/ and backups.jsonl
           git clone https://x-access-token:${BACKUP_REPO_TOKEN}@github.com/mdeguzis/proton-pulse-data-backup.git backup-repo
+
+          # Overwrite latest/ with the current tarballs (stable filenames, always current)
+          mkdir -p backup-repo/latest
+          for f in backup-out/*.tar.gz; do
+            base="${f##*backup-out/backup-${DATE}-}"   # strip prefix → e.g. schema.tar.gz
+            cp "$f" "backup-repo/latest/latest-${base}"
+          done
 
           python3 - <<'PYEOF'
           import json, os
@@ -141,9 +148,9 @@ jobs:
             'source_url':  f'{base_url}/{repo}/commit/{os.environ["GITHUB_SHA"]}',
             'assets': [
               {
-                'name':      f['name'],
-                'size_bytes': f['size_bytes'],
-                'row_count': f['row_count'],
+                'name':         f['name'],
+                'size_bytes':   f['size_bytes'],
+                'row_count':    f['row_count'],
                 'download_url': f'{release_url}/{f["name"]}',
               }
               for f in manifest['files']
@@ -158,6 +165,6 @@ jobs:
           cd backup-repo
           git config user.name "mdeguzis"
           git config user.email "mdeguzis@gmail.com"
-          git add backups.jsonl
+          git add latest/ backups.jsonl
           git commit -m "backup (${TRIGGER}): ${DATE} [${TAG}]"
           git push
