@@ -1,7 +1,7 @@
 // userDetail (component) for the admin page - renders the full user detail screen.
 
 import { escapeHtml, fmtDateTime, ROLE_LABELS, roleLabel } from '../utils.js?v=86489fcb';
-import { deleteUserReport, hideUserReport, editUserReport } from '../api/userDetail.js?v=916aedfc';
+import { deleteUserReport, hideUserReport, editUserReport, eraseUser } from '../api/userDetail.js?v=d96a321c';
 
 function idRow(label, value) {
   if (!value) {
@@ -187,6 +187,23 @@ export function renderUserDetail(user, reports, authEvents, { session, onBack, o
       <div id="ud-reports-wrap">${renderReportsTable(reports)}</div>
     </div>
 
+    <div class="user-detail-section user-detail-danger-zone">
+      <div class="user-detail-section-title user-detail-danger-zone-title">Danger zone</div>
+      <p class="user-detail-danger-zone-desc">
+        Permanently erases all data for this user across every table, including their auth account.
+        This satisfies a GDPR right-to-erasure request. It cannot be undone.
+      </p>
+      <button class="admin-btn admin-btn--danger admin-btn--sm" type="button"
+        data-action="erase-user"
+        data-userid="${escapeHtml(user.proton_pulse_user_id || '')}"
+        data-clientid="${escapeHtml(user.client_id || '')}"
+        data-username="${name}"
+        ${!user.proton_pulse_user_id ? 'disabled title="No user ID - cannot erase anon-only user via this function"' : ''}>
+        Erase all data (GDPR)
+      </button>
+      <span id="ud-erase-status" style="margin-left:10px;font-size:0.82rem;color:#aaa"></span>
+    </div>
+
     <div id="ud-edit-modal" class="admin-modal-backdrop" hidden>
       <div class="admin-modal">
         <div class="admin-modal-title">Edit report</div>
@@ -335,6 +352,40 @@ export function renderUserDetail(user, reports, authEvents, { session, onBack, o
   // Activity filter dropdown.
   el.querySelector('#ud-activity-filter')?.addEventListener('change', e => {
     renderActivitySection(el, authEvents, e.target.value);
+  });
+
+  // GDPR erase.
+  el.querySelector('[data-action="erase-user"]')?.addEventListener('click', async e => {
+    const btn      = e.currentTarget;
+    const userId   = btn.dataset.userid;
+    const clientId = btn.dataset.clientid || null;
+    const uname    = btn.dataset.username;
+    const status   = el.querySelector('#ud-erase-status');
+    if (!confirm(
+      `GDPR ERASE: permanently delete ALL data for "${uname}"?\n\n` +
+      `This removes their account, all reports, votes, configs, and identity data.\n\n` +
+      `Type the user's display name to confirm:` +
+      `\n\n(Click OK to proceed - this cannot be undone)`
+    )) return;
+    btn.disabled = true;
+    status.textContent = 'Erasing...';
+    status.style.color = '#aaa';
+    try {
+      const result = await eraseUser(session, userId, clientId);
+      const summary = Object.entries(result)
+        .filter(([k]) => !['user_id','client_id'].includes(k))
+        .map(([k, v]) => `${k}: ${v}`)
+        .join(', ');
+      status.textContent = `Erased. ${summary}`;
+      status.style.color = '#4caf50';
+      window.ppToast?.success(`User "${uname}" fully erased.`);
+      btn.textContent = 'Erased';
+    } catch (err) {
+      status.textContent = err.message;
+      status.style.color = '#f44';
+      btn.disabled = false;
+      window.ppToast?.error(err.message);
+    }
   });
 
   // Export JSON download.

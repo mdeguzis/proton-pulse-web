@@ -50,6 +50,20 @@ export async function editUserReport(session, id, fields) {
   if (!res.ok) throw new Error(`Edit failed: ${res.status}`);
 }
 
+export async function eraseUser(session, userId, clientId) {
+  const body = { p_user_id: userId };
+  if (clientId) body.p_client_id = clientId;
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/admin_erase_user`, {
+    method: 'POST',
+    headers: { ...supabaseHeaders(session), 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  const json = await res.json().catch(() => null);
+  if (!res.ok) throw new Error(`Erase failed (${res.status}): ${JSON.stringify(json)}`);
+  console.debug('[userDetail] eraseUser result', { userId, clientId, result: json });
+  return json;
+}
+
 export async function fetchUserActivity(session, { userId }) {
   if (!userId) return [];
   const select = 'id,event_type,page,metadata,created_at';
