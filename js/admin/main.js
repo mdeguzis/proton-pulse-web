@@ -17,7 +17,7 @@ import { renderUserDetail } from './components/userDetail.js?v=74450110';
 import { fetchAnalytics } from './api/analytics.js?v=f0ba00d2';
 import { renderAnalytics } from './components/analytics.js?v=e9b6ce1c';
 import { renderCacheStatus } from './components/cache-status.js?v=764c4d18';
-import { renderPending, closePendingReview } from './components/pending.js?v=15b1bbac';
+import { renderPending, closePendingReview } from './components/pending.js?v=c19f23ea';
 
 // ---------------------------------------------------------------------------
 // State
