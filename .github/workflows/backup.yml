@@ -46,9 +46,11 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Set backup date
+      - name: Set backup date and timestamp
         id: date
-        run: echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+          echo "ts=$(date -u +%Y-%m-%dT%H%M%SZ)" >> "$GITHUB_OUTPUT"
 
       - name: Run backup script
         env:
@@ -72,49 +74,90 @@ jobs:
             echo "label=manual" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Commit tarballs and update backups.jsonl
+      - name: Publish release and update backups.jsonl
         env:
           BACKUP_REPO_TOKEN: ${{ secrets.BACKUP_REPO_TOKEN }}
           DATE: ${{ steps.date.outputs.date }}
+          TS:   ${{ steps.date.outputs.ts }}
           TRIGGER: ${{ steps.trigger.outputs.label }}
           GITHUB_RUN_ID: ${{ github.run_id }}
           GITHUB_SHA: ${{ github.sha }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_SERVER_URL: ${{ github.server_url }}
         run: |
-          git clone https://x-access-token:${BACKUP_REPO_TOKEN}@github.com/mdeguzis/proton-pulse-data-backup.git backup-repo
-          cp backup-out/*.tar.gz backup-repo/
+          # Tag format: backup-{DATE}-{TRIGGER} for scheduled (once/week, safe to overwrite same-day)
+          #             backup-{TS}-{TRIGGER}   for post-deploy and manual (can run multiple times/day)
+          if [[ "$TRIGGER" == "scheduled" ]]; then
+            TAG="backup-${DATE}-${TRIGGER}"
+          else
+            TAG="backup-${TS}-${TRIGGER}"
+          fi
 
-          # Append JSONL entry from the manifest written by backup.mjs
+          RELEASE_TITLE="Backup ${DATE} (${TRIGGER})"
+          RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          COMMIT_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}"
+          RELEASE_NOTES="**Trigger:** ${TRIGGER}
+          **Run:** ${RUN_URL}
+          **Source commit:** ${COMMIT_URL}"
+
+          # Delete existing release+tag of the same name if present (scheduled overwrite)
+          gh release delete "$TAG" \
+            --repo mdeguzis/proton-pulse-data-backup \
+            --yes 2>/dev/null || true
+
+          # Create release and upload all tarballs as assets
+          gh release create "$TAG" backup-out/*.tar.gz \
+            --repo mdeguzis/proton-pulse-data-backup \
+            --title "$RELEASE_TITLE" \
+            --notes "$RELEASE_NOTES" \
+            --latest=false
+
+          RELEASE_URL="https://github.com/mdeguzis/proton-pulse-data-backup/releases/tag/${TAG}"
+          echo "Release published: $RELEASE_URL"
+
+          # Update backups.jsonl with release URL and asset details
+          git clone https://x-access-token:${BACKUP_REPO_TOKEN}@github.com/mdeguzis/proton-pulse-data-backup.git backup-repo
+
           python3 - <<'PYEOF'
           import json, os
 
           repo     = os.environ['GITHUB_REPOSITORY']
           run_id   = os.environ['GITHUB_RUN_ID']
           base_url = os.environ['GITHUB_SERVER_URL']
-          run_url  = f'{base_url}/{repo}/actions/runs/{run_id}'
+          tag      = os.environ['TAG']
+          date     = os.environ['DATE']
 
           manifest = json.load(open('backup-out/backup-manifest.json'))
+          release_url = f'https://github.com/mdeguzis/proton-pulse-data-backup/releases/tag/{tag}'
           entry = {
-            'ts': manifest['ts'],
-            'date': manifest['date'],
-            'trigger': os.environ['TRIGGER'],
-            'run_id': run_id,
-            'run_url': run_url,
-            'source_sha': os.environ['GITHUB_SHA'],
-            'source_url': f'{base_url}/{repo}/commit/{os.environ["GITHUB_SHA"]}',
-            'files': manifest['files'],
+            'ts':          manifest['ts'],
+            'date':        date,
+            'tag':         tag,
+            'trigger':     os.environ['TRIGGER'],
+            'release_url': release_url,
+            'run_id':      run_id,
+            'run_url':     f'{base_url}/{repo}/actions/runs/{run_id}',
+            'source_sha':  os.environ['GITHUB_SHA'],
+            'source_url':  f'{base_url}/{repo}/commit/{os.environ["GITHUB_SHA"]}',
+            'assets': [
+              {
+                'name':      f['name'],
+                'size_bytes': f['size_bytes'],
+                'row_count': f['row_count'],
+                'download_url': f'{release_url}/{f["name"]}',
+              }
+              for f in manifest['files']
+            ],
           }
           log_path = 'backup-repo/backups.jsonl'
           with open(log_path, 'a') as f:
             f.write(json.dumps(entry) + '\n')
-          print(f'Appended to {log_path}')
-          print(f'run_url: {run_url}')
+          print(f'Appended to {log_path}: tag={tag}')
           PYEOF
 
           cd backup-repo
           git config user.name "mdeguzis"
           git config user.email "mdeguzis@gmail.com"
-          git add *.tar.gz backups.jsonl
-          git commit -m "backup (${TRIGGER}): ${DATE}"
+          git add backups.jsonl
+          git commit -m "backup (${TRIGGER}): ${DATE} [${TAG}]"
           git push
