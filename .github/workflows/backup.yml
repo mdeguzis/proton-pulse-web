@@ -4,6 +4,9 @@ on:
   schedule:
     # Weekly, Sunday at 04:00 UTC.
     - cron: "0 4 * * 0"
+  workflow_run:
+    workflows: ["Update ProtonDB Data"]
+    types: [completed]
   workflow_dispatch:
     inputs:
       type:
@@ -25,6 +28,8 @@ jobs:
   backup:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
+    # For workflow_run triggers, only run if the upstream workflow succeeded.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
 
     steps:
       - name: Checkout source
@@ -56,16 +61,50 @@ jobs:
           OUT_DIR: backup-out
         run: node .github/scripts/backup.mjs
 
-      - name: Commit tarballs to backup repo
+      - name: Set trigger label
+        id: trigger
+        run: |
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            echo "label=scheduled" >> "$GITHUB_OUTPUT"
+          elif [[ "${{ github.event_name }}" == "workflow_run" ]]; then
+            echo "label=post-deploy" >> "$GITHUB_OUTPUT"
+          else
+            echo "label=manual" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit tarballs and update backups.jsonl
         env:
           BACKUP_REPO_TOKEN: ${{ secrets.BACKUP_REPO_TOKEN }}
           DATE: ${{ steps.date.outputs.date }}
+          TRIGGER: ${{ steps.trigger.outputs.label }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_SHA: ${{ github.sha }}
         run: |
           git clone https://x-access-token:${BACKUP_REPO_TOKEN}@github.com/mdeguzis/proton-pulse-data-backup.git backup-repo
           cp backup-out/*.tar.gz backup-repo/
+
+          # Append JSONL entry from the manifest written by backup.mjs
+          python3 - <<'PYEOF'
+          import json, os
+
+          manifest = json.load(open('backup-out/backup-manifest.json'))
+          entry = {
+            'ts': manifest['ts'],
+            'date': manifest['date'],
+            'trigger': os.environ['TRIGGER'],
+            'run_id': os.environ['GITHUB_RUN_ID'],
+            'source_sha': os.environ['GITHUB_SHA'],
+            'files': manifest['files'],
+          }
+          log_path = 'backup-repo/backups.jsonl'
+          with open(log_path, 'a') as f:
+            f.write(json.dumps(entry) + '\n')
+          print(f'Appended entry to {log_path}: {json.dumps(entry)}')
+          PYEOF
+
           cd backup-repo
           git config user.name "mdeguzis"
           git config user.email "mdeguzis@gmail.com"
-          git add *.tar.gz
-          git commit -m "backup: ${DATE}"
+          git add *.tar.gz backups.jsonl
+          git commit -m "backup (${TRIGGER}): ${DATE}"
           git push

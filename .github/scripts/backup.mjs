@@ -18,6 +18,8 @@ import { mkdirSync, writeFileSync, readdirSync, statSync } from 'fs';
 import { join } from 'path';
 import { tmpdir } from 'os';
 
+export const MANIFEST_FILE = 'backup-manifest.json';
+
 // ---------------------------------------------------------------------------
 // Pure helpers (exported for testing)
 // ---------------------------------------------------------------------------
@@ -165,6 +167,8 @@ async function run(type, { headers, date, outDir, siteDir, secret }) {
 
   console.log(`[${type}] exporting...`);
 
+  let rowCount = null;
+
   if (type === 'schema') {
     const schema = await fetchSchema(headers, date);
     writeFileSync(join(workDir, `schema-${date}.sql`), schema);
@@ -174,6 +178,7 @@ async function run(type, { headers, date, outDir, siteDir, secret }) {
     const rows = await fetchAll('user_configs', '*', '&is_hidden=eq.false', headers);
     const sanitized = rows.map(r => sanitizeUserConfig(r, secret));
     writeFileSync(join(workDir, `user_configs-${date}.json`), JSON.stringify(sanitized, null, 2));
+    rowCount = sanitized.length;
     console.log(`[user_configs] exported ${sanitized.length} rows`);
   }
 
@@ -181,6 +186,7 @@ async function run(type, { headers, date, outDir, siteDir, secret }) {
     const rows = await fetchAll('author_avatars', 'proton_pulse_user_id,display_name,avatar_url,cached_at', '', headers);
     const sanitized = rows.map(r => sanitizeAuthorAvatar(r, secret));
     writeFileSync(join(workDir, `author_avatars-${date}.json`), JSON.stringify(sanitized, null, 2));
+    rowCount = sanitized.length;
     console.log(`[author_avatars] exported ${sanitized.length} rows`);
   }
 
@@ -189,20 +195,26 @@ async function run(type, { headers, date, outDir, siteDir, secret }) {
     const siteOut = join(workDir, 'site');
     mkdirSync(siteOut, { recursive: true });
     const allowed = ['.html', '.js', '.css', '.svg', '.png', '.ico'];
+    let fileCount = 0;
     for (const f of readdirSync(siteDir)) {
       if (allowed.some(ext => f.endsWith(ext))) {
         const src = join(siteDir, f);
         if (statSync(src).isFile()) {
           execSync(`cp "${src}" "${siteOut}/"`);
+          fileCount++;
         }
       }
     }
+    rowCount = fileCount;
   }
 
   const outPath = join(outDir, `backup-${date}-${type}.tar.gz`);
   makeTarball(workDir, outPath);
-  console.log(`[${type}] wrote ${outPath}`);
+  const sizeBytes = statSync(outPath).size;
+  console.log(`[${type}] wrote ${outPath} (${sizeBytes} bytes)`);
   execSync(`rm -rf "${workDir}"`);
+
+  return { type, file: `backup-${date}-${type}.tar.gz`, size_bytes: sizeBytes, row_count: rowCount };
 }
 
 async function main() {
@@ -234,9 +246,19 @@ async function main() {
     ? ['schema', 'user_configs', 'author_avatars', 'site']
     : [type];
 
+  const results = [];
   for (const t of types) {
-    await run(t, { headers, date, outDir, siteDir, secret });
+    results.push(await run(t, { headers, date, outDir, siteDir, secret }));
   }
+
+  // Write manifest for the workflow to append to backups.jsonl
+  const manifest = {
+    ts: new Date().toISOString(),
+    date,
+    files: results.map(r => ({ name: r.file, size_bytes: r.size_bytes, row_count: r.row_count })),
+  };
+  writeFileSync(join(outDir, MANIFEST_FILE), JSON.stringify(manifest, null, 2) + '\n');
+  console.log(`[manifest] written to ${join(outDir, MANIFEST_FILE)}`);
 }
 
 // Only run as CLI entry point, not when imported by tests.
