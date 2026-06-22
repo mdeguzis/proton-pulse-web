@@ -83,7 +83,14 @@ jobs:
           GITHUB_SERVER_URL: ${{ github.server_url }}
         run: |
           git clone https://x-access-token:${BACKUP_REPO_TOKEN}@github.com/mdeguzis/proton-pulse-data-backup.git backup-repo
-          cp backup-out/*.tar.gz backup-repo/
+
+          # Place tarballs under year/month/day/ hierarchy
+          YEAR="${DATE:0:4}"
+          MONTH="${DATE:5:2}"
+          DAY="${DATE:8:2}"
+          DEST="backup-repo/${YEAR}/${MONTH}/${DAY}"
+          mkdir -p "$DEST"
+          cp backup-out/*.tar.gz "$DEST/"
 
           # Append JSONL entry from the manifest written by backup.mjs
           python3 - <<'PYEOF'
@@ -93,17 +100,24 @@ jobs:
           run_id   = os.environ['GITHUB_RUN_ID']
           base_url = os.environ['GITHUB_SERVER_URL']
           run_url  = f'{base_url}/{repo}/actions/runs/{run_id}'
+          date     = os.environ['DATE']
+          year, month, day = date.split('-')
+          folder   = f'{year}/{month}/{day}'
 
           manifest = json.load(open('backup-out/backup-manifest.json'))
           entry = {
             'ts': manifest['ts'],
-            'date': manifest['date'],
+            'date': date,
+            'folder': folder,
             'trigger': os.environ['TRIGGER'],
             'run_id': run_id,
             'run_url': run_url,
             'source_sha': os.environ['GITHUB_SHA'],
             'source_url': f'{base_url}/{repo}/commit/{os.environ["GITHUB_SHA"]}',
-            'files': manifest['files'],
+            'files': [
+              {**f, 'path': f'{folder}/{f["name"]}'}
+              for f in manifest['files']
+            ],
           }
           log_path = 'backup-repo/backups.jsonl'
           with open(log_path, 'a') as f:
@@ -115,6 +129,6 @@ jobs:
           cd backup-repo
           git config user.name "mdeguzis"
           git config user.email "mdeguzis@gmail.com"
-          git add *.tar.gz backups.jsonl
+          git add "${YEAR}/${MONTH}/${DAY}/" backups.jsonl
           git commit -m "backup (${TRIGGER}): ${DATE}"
           git push
