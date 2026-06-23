@@ -241,15 +241,15 @@ def test_stats_framegen_no_yes_skipped(tmp_path):
     assert all(t[0] != "730" for t in top)
 
 
-# ── game_images.py: _load_json_map corrupt file branch (lines 72-73) ─────────
+# ── game_images.py: _load_cache corrupt file branch ──────────────────────────
 
-from scripts.pipeline.game_images import _load_json_map
+from scripts.pipeline.game_images import _load_cache
 
 
-def test_load_json_map_corrupt_returns_empty(tmp_path):
+def test_load_cache_corrupt_returns_empty(tmp_path):
     bad = tmp_path / "bad.json"
     bad.write_text("not json")
-    result = _load_json_map(bad)
+    result = _load_cache(bad)
     assert result == {}
 
 

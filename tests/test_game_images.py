@@ -76,14 +76,14 @@ def test_build_adds_override_when_standard_404s(tmp_path):
     assert result["12345"] == "https://cdn.steam.com/hashed/12345/header_abc.jpg"
 
 
-def test_build_adds_to_skip_when_standard_ok(tmp_path):
+def test_build_adds_to_cache_when_standard_ok(tmp_path):
     _make_data_dir(tmp_path, ["730"])
 
     with patch("scripts.pipeline.game_images._url_is_ok", return_value=True):
         build_game_images(tmp_path)
 
-    skip_data = json.loads((tmp_path / "game-images-skip.json").read_text(encoding="utf-8"))
-    assert "730" in skip_data["ids"]
+    cache = json.loads((tmp_path / "game-images-cache.json").read_text(encoding="utf-8"))
+    assert cache.get("730", {}).get("status") == "ok"
 
 
 def test_build_respects_probe_cap(tmp_path):
@@ -110,4 +110,4 @@ def test_build_writes_both_output_files(tmp_path):
         build_game_images(tmp_path)
 
     assert (tmp_path / "game-images.json").exists()
-    assert (tmp_path / "game-images-skip.json").exists()
+    assert (tmp_path / "game-images-cache.json").exists()
