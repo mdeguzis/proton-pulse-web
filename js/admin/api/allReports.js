@@ -1,8 +1,8 @@
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
 import { supabaseHeaders } from '../utils.js?v=86489fcb';
 
-const COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,source,is_flagged,is_hidden,created_at';
-const DETAIL_COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,proton_version,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,vram_mb,os,kernel,duration,duration_minutes,notes,form_responses,config_key,game_owned,source,is_flagged,is_hidden,created_at,updated_at';
+const COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,source,app_type,is_flagged,is_hidden,created_at';
+const DETAIL_COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,proton_version,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,vram_mb,os,kernel,duration,duration_minutes,notes,form_responses,config_key,game_owned,source,app_type,is_flagged,is_hidden,created_at,updated_at';
 
 export async function fetchReportById(session, id) {
   const res = await fetch(
@@ -15,7 +15,7 @@ export async function fetchReportById(session, id) {
   return rows[0];
 }
 
-export async function fetchAllReports(session, { search = '', status = 'clean', dateFrom = '', dateTo = '', limit = 500 } = {}) {
+export async function fetchAllReports(session, { search = '', status = 'clean', appType = '', dateFrom = '', dateTo = '', limit = 500 } = {}) {
   let url = `${SUPABASE_URL}/rest/v1/user_configs?select=${COLS}&order=created_at.desc&limit=${limit}`;
 
   if (search) {
@@ -26,6 +26,8 @@ export async function fetchAllReports(session, { search = '', status = 'clean', 
   if (status === 'flagged') url += '&is_flagged=eq.true';
   if (status === 'hidden')  url += '&is_hidden=eq.true';
   if (status === 'clean')   url += '&is_flagged=eq.false&is_hidden=eq.false';
+
+  if (appType) url += `&app_type=eq.${encodeURIComponent(appType)}`;
 
   if (dateFrom) url += `&created_at=gte.${encodeURIComponent(dateFrom)}`;
   if (dateTo)   url += `&created_at=lte.${encodeURIComponent(dateTo + 'T23:59:59')}`;

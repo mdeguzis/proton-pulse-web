@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+from .common import app_id_to_dir
+
 
 APP_METADATA_FILENAME = "metadata.json"
 RESERVED_APP_JSON_STEMS = {"index", "latest", "votes", "metadata"}
@@ -23,7 +25,7 @@ LIVE_NORMALIZED_ALLOWED_KEYS = {
 
 
 def app_metadata_path(data_output_path: Path, app_id: str) -> Path:
-    return data_output_path / str(app_id) / APP_METADATA_FILENAME
+    return data_output_path / app_id_to_dir(str(app_id)) / APP_METADATA_FILENAME
 
 
 def read_app_metadata(data_output_path: Path, app_id: str) -> dict[str, bool]:
@@ -43,7 +45,7 @@ def read_app_metadata(data_output_path: Path, app_id: str) -> dict[str, bool]:
 
 
 def update_app_metadata(data_output_path: Path, app_id: str, **flags: bool) -> dict[str, bool]:
-    app_dir = data_output_path / str(app_id)
+    app_dir = data_output_path / app_id_to_dir(str(app_id))
     app_dir.mkdir(parents=True, exist_ok=True)
 
     metadata = {
@@ -84,7 +86,7 @@ def _is_live_normalized_report(report: dict) -> bool:
 
 
 def infer_app_metadata_from_disk(data_output_path: Path, app_id: str) -> dict[str, bool]:
-    app_dir = data_output_path / str(app_id)
+    app_dir = data_output_path / app_id_to_dir(str(app_id))
     if not app_dir.is_dir():
         return {}
 

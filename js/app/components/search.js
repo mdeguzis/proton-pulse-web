@@ -2,7 +2,7 @@
 
 import { estimateScore } from '../../shared/scoring.js?v=0dae1257';
 import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=a9fb53ae';
-import { renderGamePage } from './game-page.js?v=2aa96ba9';
+import { renderGamePage } from './game-page.js?v=71281b0f';
 import { STEAM_IMG } from '../config.js?v=4031c5fa';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=3a07c55e';
@@ -37,10 +37,9 @@ export function renderPulseSearchResult(row) {
 
 // --- renderIndexSearchResult ---
 export function renderIndexSearchResult(entry) {
-  // search-index entries may be the legacy 2-tuple [appId, title] or the
-  // extended 5-tuple [appId, title, tier, protondbCount, pulseCount].
+  // search-index entries: [appId, title, tier, protondbCount, pulseCount, appType]
   // Destructure defensively so older deploys keep rendering
-  const [appId, title, tier, protondbCount, pulseCount] = entry;
+  const [appId, title, tier, protondbCount, pulseCount, appType] = entry;
   // Build a counts subline only when at least one count is present
   const counts = [];
   if (protondbCount) counts.push(`${protondbCount} ProtonDB`);
@@ -48,7 +47,8 @@ export function renderIndexSearchResult(entry) {
   const meta = counts.length
     ? counts.join(' + ') + ' report' + ((protondbCount + pulseCount) === 1 ? '' : 's')
     : `ProtonDB data indexed for app ${esc(appId)}.`;
-  return renderGameCard({ href: `#/app/${appId}`, appId, title, sub: meta, tier: tier || undefined });
+  const storeLabel = (appType && appType !== 'steam') ? appType.toUpperCase() : 'Steam';
+  return renderGameCard({ href: `#/app/${appId}`, appId, title, sub: meta, tier: tier || undefined, sourceLabel: storeLabel });
 }
 
 // --- renderSearchPage ---

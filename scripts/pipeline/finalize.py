@@ -19,7 +19,16 @@ from .catalog import (
     read_protondb_probe_cache,
     write_protondb_probe_cache,
 )
-from .common import LIVE_COUNTS_URL, count_year_bucket_files, fetch_json, flush_steam_title_cache, log
+from .common import (
+    LIVE_COUNTS_URL,
+    app_id_to_dir,
+    app_type_from_id,
+    count_year_bucket_files,
+    dir_to_app_id,
+    fetch_json,
+    flush_steam_title_cache,
+    log,
+)
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
 from .game_images import build_game_images
 from .most_played import build_most_played
@@ -72,7 +81,7 @@ def reindex_apps(output_dir: str, app_ids: list[str]) -> None:
     data_path = Path(output_dir) / "data"
     index_keys: set[tuple[str, str]] = set()
     for app_id in app_ids:
-        app_dir = data_path / app_id
+        app_dir = data_path / app_id_to_dir(app_id)
         if not app_dir.is_dir():
             log(f"[reindex] Skipping {app_id}: no data directory")
             continue
@@ -92,7 +101,7 @@ def generate_app_indexes(index_keys: set, data_output_path: Path) -> None:
 
     for app_id, years in app_years.items():
         sorted_years = sorted(years, key=lambda y: (0, int(y)) if y.isdigit() else (1, y))
-        app_dir = data_output_path / app_id
+        app_dir = data_output_path / app_id_to_dir(app_id)
         app_dir.mkdir(parents=True, exist_ok=True)
         index_file = app_dir / "index.json"
         index_file.write_text(json.dumps(sorted_years))
@@ -136,7 +145,7 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     data_path = output_path / "data"
     app_titles: dict[str, str] = {}
     for app_id in sorted_app_ids:
-        title = _extract_title(data_path / app_id)
+        title = _extract_title(data_path / app_id_to_dir(app_id))
         app_titles[app_id] = title
 
     sample_apps = {
@@ -531,7 +540,7 @@ def _resolve_coverage_title(
     protondb_signal_catalog: dict[str, str] | None = None,
     steam_catalog: dict[str, str] | None = None,
 ) -> tuple[str, str]:
-    local_title = _extract_title(data_output_path / app_id)
+    local_title = _extract_title(data_output_path / app_id_to_dir(app_id))
     if local_title:
         return local_title, "indexed-data"
 
@@ -563,8 +572,10 @@ def derive_index_keys_from_disk(data_output_path: Path) -> set[tuple[str, str]]:
     for app_dir in data_output_path.iterdir():
         if not app_dir.is_dir():
             continue
-        app_id = app_dir.name
-        if not app_id.isdigit():
+        dir_name = app_dir.name
+        app_id = dir_to_app_id(dir_name)
+        # skip dirs that aren't valid app IDs (e.g. plain text dirs, unknown prefixes)
+        if not (app_id.isdigit() or app_id.startswith("gog:") or app_id.startswith("epic:")):
             continue
         for year_file in app_dir.glob("*.json"):
             stem = year_file.stem
@@ -654,7 +665,7 @@ def generate_recent_reports(data_output_path: Path, output_path: Path, limit: in
     for app_dir in data_output_path.iterdir():
         if not app_dir.is_dir():
             continue
-        app_id = app_dir.name
+        app_id = dir_to_app_id(app_dir.name)
         year_files = sorted(
             (f for f in app_dir.glob("*.json") if f.stem not in {"latest", "index", "votes", "metadata"}),
             key=lambda p: p.stem,
@@ -685,6 +696,7 @@ def generate_recent_reports(data_output_path: Path, output_path: Path, limit: in
             "lastReportDate": last_date,
             "protondbCount": pdb_count,
             "pulseCount": pulse_count,
+            "appType": app_type_from_id(app_id),
         })
 
     results.sort(key=lambda r: r["lastReportDate"], reverse=True)
@@ -721,7 +733,7 @@ def _backfill_most_played_header_images(output_path: Path, overrides: dict) -> N
 def generate_search_index(index_keys: set, data_output_path: Path, output_path: Path) -> None:
     """Generate search-index.json with overall tier + report counts per game.
 
-    Shape: [[appId, title, tier, protondbCount, pulseCount], ...]
+    Shape: [[appId, title, tier, protondbCount, pulseCount, appType], ...]
     Older consumers reading only the first two columns continue to work --
     JS destructuring ignores extra elements silently.
     """
@@ -731,12 +743,12 @@ def generate_search_index(index_keys: set, data_output_path: Path, output_path: 
     )
     entries = []
     for app_id in app_ids:
-        app_dir = data_output_path / app_id
+        app_dir = data_output_path / app_id_to_dir(app_id)
         title = _extract_title(app_dir)
         if not title:
             continue
         tier, pdb_count, pulse_count = _compute_game_summary(app_dir)
-        entries.append([app_id, title, tier, pdb_count, pulse_count])
+        entries.append([app_id, title, tier, pdb_count, pulse_count, app_type_from_id(app_id)])
     index_file = output_path / "search-index.json"
     index_file.write_text(json.dumps(entries, separators=(",", ":")))
     log(f"[search-index] Written {len(entries):,} entries to {index_file}")

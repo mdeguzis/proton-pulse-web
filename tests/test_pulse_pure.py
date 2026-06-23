@@ -122,6 +122,18 @@ def test_normalize_form_responses_preserved():
     r = normalize_pulse_row(_make_row(form_responses={"requiresFramegen": "yes"}))
     assert r["formResponses"]["requiresFramegen"] == "yes"
 
+def test_normalize_app_type_steam_default():
+    r = normalize_pulse_row(_make_row())
+    assert r["appType"] == "steam"
+
+def test_normalize_app_type_gog():
+    r = normalize_pulse_row(_make_row(app_type="gog"))
+    assert r["appType"] == "gog"
+
+def test_normalize_app_type_epic():
+    r = normalize_pulse_row(_make_row(app_type="epic"))
+    assert r["appType"] == "epic"
+
 
 # ── _bucket_by_app_year ───────────────────────────────────────────────────────
 
@@ -140,6 +152,16 @@ def test_bucket_skips_non_numeric_app_ids():
     rows = [{"app_id": "not-an-id", "created_at": "2025-01-01T00:00:00Z"}]
     buckets = _bucket_by_app_year(rows)
     assert len(buckets) == 0
+
+def test_bucket_includes_gog_app_ids():
+    rows = [{"app_id": "gog:1234567890", "created_at": "2025-01-01T00:00:00Z"}]
+    buckets = _bucket_by_app_year(rows)
+    assert ("gog:1234567890", "2025") in buckets
+
+def test_bucket_includes_epic_app_ids():
+    rows = [{"app_id": "epic:somegame", "created_at": "2025-01-01T00:00:00Z"}]
+    buckets = _bucket_by_app_year(rows)
+    assert ("epic:somegame", "2025") in buckets
 
 def test_bucket_by_app_year_unknown_date():
     rows = [{"app_id": 730, "created_at": "bad-date"}]
@@ -226,3 +248,22 @@ def test_merge_handles_corrupt_year_file(tmp_path):
     with patch("scripts.pipeline.pulse.fetch_pulse_rows", return_value=_make_pulse_rows()):
         apps, reports = merge_pulse_into_data_dir(tmp_path)
     assert reports == 1
+
+def test_merge_gog_creates_underscore_dir(tmp_path):
+    rows = [{
+        "id": 10,
+        "app_id": "gog:1234567890",
+        "title": "Witcher 3",
+        "cpu": "i7", "gpu": "RX 580", "gpu_driver": "", "gpu_vendor": "amd",
+        "ram": "16GB", "vram_mb": None, "os": "Arch Linux", "kernel": "6.1",
+        "proton_version": "GE-Proton9-1", "rating": "gold", "duration": "severalHours",
+        "duration_minutes": None, "notes": "", "launch_options": "", "form_responses": None,
+        "config_key": None, "game_owned": True, "created_at": "2025-06-01T12:00:00Z",
+        "source": "user", "app_type": "gog",
+    }]
+    with patch("scripts.pipeline.pulse.fetch_pulse_rows", return_value=rows):
+        apps, reports = merge_pulse_into_data_dir(tmp_path)
+    assert apps == 1
+    assert reports == 1
+    assert (tmp_path / "gog_1234567890" / "2025.json").exists()
+    assert not (tmp_path / "gog:1234567890").exists()

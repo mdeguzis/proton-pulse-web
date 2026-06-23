@@ -18,6 +18,10 @@ from scripts.pipeline.common import (
     infer_duration,
     count_year_bucket_files,
     fetch_steam_title_with_source,
+    app_id_to_dir,
+    dir_to_app_id,
+    app_type_from_id,
+    is_valid_app_id,
     flush_steam_title_cache,
     _load_steam_title_cache,
     _save_steam_title_cache,
@@ -351,3 +355,49 @@ def test_fetch_steam_title_scrape_fallback_empty():
     assert "empty" in source
     common_module._steam_title_cache = None
     common_module._steam_title_cache_dirty = False
+
+
+# ── app_id_to_dir / dir_to_app_id / app_type_from_id / is_valid_app_id ────────
+
+def test_app_id_to_dir_steam():
+    assert app_id_to_dir("730") == "730"
+
+def test_app_id_to_dir_gog():
+    assert app_id_to_dir("gog:1234567890") == "gog_1234567890"
+
+def test_app_id_to_dir_epic():
+    assert app_id_to_dir("epic:somegame") == "epic_somegame"
+
+def test_dir_to_app_id_steam():
+    assert dir_to_app_id("730") == "730"
+
+def test_dir_to_app_id_gog():
+    assert dir_to_app_id("gog_1234567890") == "gog:1234567890"
+
+def test_dir_to_app_id_epic():
+    assert dir_to_app_id("epic_somegame") == "epic:somegame"
+
+def test_dir_to_app_id_unknown():
+    assert dir_to_app_id("unknown_dir") == "unknown_dir"
+
+def test_app_type_from_id_steam():
+    assert app_type_from_id("730") == "steam"
+
+def test_app_type_from_id_gog():
+    assert app_type_from_id("gog:1234567890") == "gog"
+
+def test_app_type_from_id_epic():
+    assert app_type_from_id("epic:game") == "epic"
+
+def test_is_valid_app_id_steam():
+    assert is_valid_app_id("730") is True
+
+def test_is_valid_app_id_gog():
+    assert is_valid_app_id("gog:1234567890") is True
+
+def test_is_valid_app_id_epic():
+    assert is_valid_app_id("epic:game") is True
+
+def test_is_valid_app_id_invalid():
+    assert is_valid_app_id("not-an-id") is False
+    assert is_valid_app_id("") is False

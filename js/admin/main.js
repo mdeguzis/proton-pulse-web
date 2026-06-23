@@ -17,8 +17,8 @@ import { renderUserDetail } from './components/userDetail.js?v=1fd27df1';
 import { fetchAnalytics } from './api/analytics.js?v=f0ba00d2';
 import { renderAnalytics } from './components/analytics.js?v=e9b6ce1c';
 import { renderCacheStatus } from './components/cache-status.js?v=764c4d18';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=f8e00357';
-import { patchReportFlags, fetchReportById } from './api/allReports.js?v=117740c3';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=06239b0a';
+import { patchReportFlags, fetchReportById } from './api/allReports.js?v=de397c2f';
 
 // ---------------------------------------------------------------------------
 // State

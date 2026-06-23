@@ -1,5 +1,5 @@
 import { escapeHtml, fmtDateTime } from '../utils.js?v=86489fcb';
-import { fetchAllReports } from '../api/allReports.js?v=117740c3';
+import { fetchAllReports } from '../api/allReports.js?v=de397c2f';
 
 function statusBadges(isF, isH) {
   if (isF || isH) {
@@ -23,15 +23,16 @@ function actionBtns(id, isF, isH) {
 }
 
 export async function renderAllReports(session) {
-  const loading   = document.getElementById('all-reports-loading');
-  const empty     = document.getElementById('all-reports-empty');
-  const table     = document.getElementById('all-reports-table');
-  const tbody     = document.getElementById('all-reports-tbody');
-  const countEl   = document.getElementById('all-reports-count');
-  const searchEl  = document.getElementById('all-reports-search');
-  const statusEl  = document.getElementById('all-reports-status-filter');
-  const dateFromEl = document.getElementById('all-reports-date-from');
-  const dateToEl   = document.getElementById('all-reports-date-to');
+  const loading     = document.getElementById('all-reports-loading');
+  const empty       = document.getElementById('all-reports-empty');
+  const table       = document.getElementById('all-reports-table');
+  const tbody       = document.getElementById('all-reports-tbody');
+  const countEl     = document.getElementById('all-reports-count');
+  const searchEl    = document.getElementById('all-reports-search');
+  const statusEl    = document.getElementById('all-reports-status-filter');
+  const appTypeEl   = document.getElementById('all-reports-apptype-filter');
+  const dateFromEl  = document.getElementById('all-reports-date-from');
+  const dateToEl    = document.getElementById('all-reports-date-to');
 
   loading.hidden = false;
   empty.hidden   = true;
@@ -41,9 +42,10 @@ export async function renderAllReports(session) {
   try {
     const q        = searchEl ? searchEl.value.trim() : '';
     const status   = statusEl ? statusEl.value : 'clean';
+    const appType  = appTypeEl ? appTypeEl.value : '';
     const dateFrom = dateFromEl ? dateFromEl.value : '';
     const dateTo   = dateToEl ? dateToEl.value : '';
-    const reports = await fetchAllReports(session, { search: q, status, dateFrom, dateTo });
+    const reports = await fetchAllReports(session, { search: q, status, appType, dateFrom, dateTo });
 
     loading.hidden = true;
 
@@ -64,8 +66,9 @@ export async function renderAllReports(session) {
         : 'Unknown';
       const rid    = escapeHtml(String(r.id));
       const title  = escapeHtml(r.title || '');
-      const source = escapeHtml(r.source || '');
-      const date   = escapeHtml(fmtDateTime(r.created_at));
+      const source  = escapeHtml(r.source || '');
+      const appType = escapeHtml(r.app_type || 'steam');
+      const date    = escapeHtml(fmtDateTime(r.created_at));
       const uid    = r.proton_pulse_user_id || null;
       const cid    = r.client_id || null;
       const userObj = escapeHtml(JSON.stringify({ proton_pulse_user_id: uid, client_id: cid, username: uid || cid || 'anon' }));
@@ -76,6 +79,7 @@ export async function renderAllReports(session) {
         <td>${appLink}</td>
         <td>${title}</td>
         <td>${source}</td>
+        <td>${appType}</td>
         <td>${userBtn}</td>
         <td>${date}</td>
         <td class="ar-status">${statusBadges(r.is_flagged, r.is_hidden)}</td>
@@ -110,6 +114,7 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
     ['App ID',          val(report.app_id)],
     ['Title',           val(report.title)],
     ['Source',          val(report.source)],
+    ['App Type',        val(report.app_type)],
     ['Rating',          val(report.rating)],
     ['Proton Version',  val(report.proton_version)],
     ['CPU',             val(report.cpu)],

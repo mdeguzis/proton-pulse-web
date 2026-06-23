@@ -197,3 +197,33 @@ def count_year_bucket_files(data_output_path: Path) -> int:
                 continue
             count += 1
     return count
+
+
+# Non-Steam app ID helpers
+
+def app_id_to_dir(app_id: str) -> str:
+    """Convert canonical app_id (e.g. 'gog:123') to filesystem-safe directory name."""
+    return app_id.replace(":", "_")
+
+
+def dir_to_app_id(dir_name: str) -> str:
+    """Convert filesystem directory name back to canonical app_id."""
+    if dir_name.startswith("gog_") and dir_name[4:].isdigit():
+        return "gog:" + dir_name[4:]
+    if dir_name.startswith("epic_"):
+        return "epic:" + dir_name[5:]
+    return dir_name
+
+
+def app_type_from_id(app_id: str) -> str:
+    """Derive store type string from app_id prefix."""
+    if app_id.startswith("gog:"):
+        return "gog"
+    if app_id.startswith("epic:"):
+        return "epic"
+    return "steam"
+
+
+def is_valid_app_id(app_id: str) -> bool:
+    """Return True for Steam (digit) IDs and known non-Steam prefixes."""
+    return app_id.isdigit() or app_id.startswith("gog:") or app_id.startswith("epic:")
