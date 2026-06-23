@@ -32,13 +32,11 @@ export async function renderAllReports(session) {
   const statusEl  = document.getElementById('all-reports-status-filter');
   const dateFromEl = document.getElementById('all-reports-date-from');
   const dateToEl   = document.getElementById('all-reports-date-to');
-  const detail    = document.getElementById('all-reports-detail');
 
   loading.hidden = false;
   empty.hidden   = true;
   table.hidden   = true;
   if (countEl) countEl.hidden = true;
-  if (detail) detail.hidden = true;
 
   try {
     const q        = searchEl ? searchEl.value.trim() : '';
@@ -102,13 +100,9 @@ export function updateAllReportsRow(id, isF, isH) {
   if (actionsCell) actionsCell.innerHTML = actionBtns(id, isF, isH);
 }
 
-export function renderAllReportsDetail(report, { onAction } = {}) {
-  const detail = document.getElementById('all-reports-detail');
-  const table  = document.getElementById('all-reports-table');
+export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
+  const detail = document.getElementById('report-detail-content');
   if (!detail) return;
-
-  table.hidden  = true;
-  detail.hidden = false;
 
   const val = v => (v != null && v !== '') ? escapeHtml(String(v)) : '(not set)';
   const fields = [
@@ -170,8 +164,7 @@ export function renderAllReportsDetail(report, { onAction } = {}) {
     </div>`;
 
   detail.querySelector('[data-action="ar-back"]')?.addEventListener('click', () => {
-    detail.hidden = true;
-    document.getElementById('all-reports-table').hidden = false;
+    onBack?.();
   });
 
   detail.addEventListener('click', async e => {

@@ -17,7 +17,7 @@ import { renderUserDetail } from './components/userDetail.js?v=1fd27df1';
 import { fetchAnalytics } from './api/analytics.js?v=f0ba00d2';
 import { renderAnalytics } from './components/analytics.js?v=e9b6ce1c';
 import { renderCacheStatus } from './components/cache-status.js?v=764c4d18';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=5789a2cc';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=f8e00357';
 import { patchReportFlags, fetchReportById } from './api/allReports.js?v=117740c3';
 
 // ---------------------------------------------------------------------------
@@ -120,6 +120,50 @@ async function applyAdminChange(uuid, role, permissions) {
 
 async function loadAllReports() {
   await renderAllReports(currentSession);
+}
+
+async function loadReportDetail(id) {
+  const url = new URL(window.location.href);
+  url.searchParams.set('reportid', String(id));
+  url.searchParams.delete('detail');
+  url.searchParams.delete('flagid');
+  history.pushState({ adminView: 'report-detail' }, '', url);
+
+  document.querySelectorAll('.admin-section').forEach(sec => { sec.hidden = true; });
+  document.getElementById('tab-report-detail').hidden = false;
+  document.getElementById('admin-tab-select').value = '';
+
+  const content = document.getElementById('report-detail-content');
+  content.innerHTML = '<div class="admin-loading">Loading report...</div>';
+
+  try {
+    const report = await fetchReportById(currentSession, id);
+    renderAllReportsDetail(report, {
+      onBack: () => activateTab('all-reports'),
+      onAction: async (action, rid, btn) => {
+        try {
+          if (action === 'ar-flag') {
+            await patchReportFlags(currentSession, rid, { is_flagged: true });
+            updateAllReportsRow(rid, true, false);
+          } else if (action === 'ar-hide') {
+            await patchReportFlags(currentSession, rid, { is_flagged: true, is_hidden: true });
+            updateAllReportsRow(rid, true, true);
+          } else if (action === 'ar-release') {
+            await patchReportFlags(currentSession, rid, { is_flagged: false, is_hidden: false });
+            updateAllReportsRow(rid, false, false);
+          }
+          window.ppToast?.success('Report updated.');
+        } catch (err) {
+          if (btn) btn.disabled = false;
+          window.ppToast?.error(err.message);
+        }
+      },
+    });
+  } catch (err) {
+    content.innerHTML = `<div class="admin-error">${err.message}</div>
+      <button class="admin-btn admin-btn--ghost admin-btn--sm" data-action="ar-back" style="margin-top:10px">&#8592; Back to reports</button>`;
+    content.querySelector('[data-action="ar-back"]')?.addEventListener('click', () => activateTab('all-reports'));
+  }
 }
 
 async function loadFlagged() {
@@ -571,33 +615,7 @@ function wireEvents() {
     if (action === 'ar-view-detail') {
       const rid = btn.dataset.rid;
       if (!rid) return;
-      btn.disabled = true;
-      try {
-        const report = await fetchReportById(currentSession, rid);
-        renderAllReportsDetail(report, {
-          onAction: async (detailAction, detailRid, detailBtn) => {
-            try {
-              if (detailAction === 'ar-flag') {
-                await patchReportFlags(currentSession, detailRid, { is_flagged: true });
-                updateAllReportsRow(detailRid, true, false);
-              } else if (detailAction === 'ar-hide') {
-                await patchReportFlags(currentSession, detailRid, { is_flagged: true, is_hidden: true });
-                updateAllReportsRow(detailRid, true, true);
-              } else if (detailAction === 'ar-release') {
-                await patchReportFlags(currentSession, detailRid, { is_flagged: false, is_hidden: false });
-                updateAllReportsRow(detailRid, false, false);
-              }
-              window.ppToast?.success('Report updated.');
-            } catch (err) {
-              if (detailBtn) detailBtn.disabled = false;
-              window.ppToast?.error(err.message);
-            }
-          },
-        });
-      } catch (err) {
-        btn.disabled = false;
-        window.ppToast?.error(err.message);
-      }
+      loadReportDetail(rid);
       return;
     }
 
@@ -756,6 +774,7 @@ function wireEvents() {
   window.addEventListener('popstate', e => {
     if (!document.getElementById('tab-user-detail').hidden) activateTab(userDetailReturnTab);
     else if (!document.getElementById('tab-flag-detail').hidden) activateTab('flagged');
+    else if (!document.getElementById('tab-report-detail').hidden) activateTab('all-reports');
   });
 
   // Add admin form
@@ -1019,6 +1038,12 @@ async function init() {
   ['flagged-table', 'banned-table', 'users-table', 'admins-table', 'phrases-table'].forEach(setupTableSort);
 
   const params = new URLSearchParams(window.location.search);
+
+  const reportIdParam = params.get('reportid');
+  if (reportIdParam) {
+    loadReportDetail(reportIdParam);
+    return;
+  }
 
   const flagIdParam = params.get('flagid');
   if (flagIdParam) {

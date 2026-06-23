@@ -70,6 +70,7 @@
         <div id="all-reports-count" class="admin-counts" hidden></div>
         <div id="all-reports-loading" class="admin-loading">Loading reports...</div>
         <div id="all-reports-empty" class="admin-empty" hidden>No reports found.</div>
+        <div class="admin-table-scroll">
         <table id="all-reports-table" class="admin-table" hidden>
           <thead>
             <tr>
@@ -85,7 +86,12 @@
           </thead>
           <tbody id="all-reports-tbody"></tbody>
         </table>
-        <div id="all-reports-detail" hidden></div>
+        </div>
+      </section>
+
+      <!-- Report Detail (navigated to programmatically) -->
+      <section id="tab-report-detail" class="admin-section" hidden>
+        <div id="report-detail-content"></div>
       </section>
 
       <!-- Flag Review -->
@@ -308,6 +314,6 @@
 <script src="js/lib/analytics.js?v=89bd7747"></script>
 <script src="js/lib/topbar.js?v=46cb7ea1"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/admin/main.js?v=7e082848"></script>
+<script type="module" src="js/admin/main.js?v=a0dea41b"></script>
 </body>
 </html>
