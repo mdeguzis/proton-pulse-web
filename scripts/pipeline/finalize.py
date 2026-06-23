@@ -29,6 +29,7 @@ from .common import (
     flush_steam_title_cache,
     log,
 )
+from .gog_catalog import load_gog_catalog
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
 from .game_images import build_game_images
 from .most_played import build_most_played
@@ -730,18 +731,29 @@ def _backfill_most_played_header_images(output_path: Path, overrides: dict) -> N
         log(f"[game-images] backfilled {changed} headerImage(s) in most_played.json")
 
 
-def generate_search_index(index_keys: set, data_output_path: Path, output_path: Path) -> None:
+def generate_search_index(
+    index_keys: set,
+    data_output_path: Path,
+    output_path: Path,
+    gog_catalog: dict[str, str] | None = None,
+) -> None:
     """Generate search-index.json with overall tier + report counts per game.
 
     Shape: [[appId, title, tier, protondbCount, pulseCount, appType], ...]
     Older consumers reading only the first two columns continue to work --
     JS destructuring ignores extra elements silently.
+
+    GOG games from gog_catalog that have no local report data are emitted as
+    stub entries (tier="", counts=0) so users can search for them before
+    anyone has submitted a Pulse report.
     """
     app_ids = sorted(
         {app_id for app_id, _ in index_keys},
         key=lambda a: (0, int(a)) if a.isdigit() else (1, a),
     )
     entries = []
+    seen_ids: set[str] = set()
+
     for app_id in app_ids:
         app_dir = data_output_path / app_id_to_dir(app_id)
         title = _extract_title(app_dir)
@@ -749,6 +761,20 @@ def generate_search_index(index_keys: set, data_output_path: Path, output_path: 
             continue
         tier, pdb_count, pulse_count = _compute_game_summary(app_dir)
         entries.append([app_id, title, tier, pdb_count, pulse_count, app_type_from_id(app_id)])
+        seen_ids.add(app_id)
+
+    # Emit stubs for GOG catalog games not yet in the index so users can search
+    # for them and submit their first report.
+    if gog_catalog:
+        stubs = 0
+        for pid, title in sorted(gog_catalog.items(), key=lambda kv: kv[1].lower()):
+            canonical_id = f"gog:{pid}"
+            if canonical_id not in seen_ids:
+                entries.append([canonical_id, title, "", 0, 0, "gog"])
+                stubs += 1
+        if stubs:
+            log(f"[search-index] Added {stubs:,} GOG catalog stubs (no reports yet)")
+
     index_file = output_path / "search-index.json"
     index_file.write_text(json.dumps(entries, separators=(",", ":")))
     log(f"[search-index] Written {len(entries):,} entries to {index_file}")
@@ -1307,6 +1333,12 @@ def finalize_output(output_dir, skip_probe: bool = False):
             log(f"[steam-catalog] Failed to load Steam app catalog: {exc}")
     else:
         log("[steam-catalog] STEAM_API_KEY not set; coverage report will use local output only", debug=True)
+
+    gog_catalog: dict[str, str] | None = None
+    try:
+        gog_catalog = load_gog_catalog()
+    except Exception as exc:
+        log(f"[gog-catalog] Failed to load GOG catalog: {exc}")
     protondb_counts = None
     try:
         protondb_counts = fetch_json(LIVE_COUNTS_URL)
@@ -1352,7 +1384,7 @@ def finalize_output(output_dir, skip_probe: bool = False):
 
     generate_app_indexes(full_index_keys, data_output_path)
     generate_index_html(full_index_keys, output_path)
-    generate_search_index(full_index_keys, data_output_path, output_path)
+    generate_search_index(full_index_keys, data_output_path, output_path, gog_catalog=gog_catalog)
     generate_coverage_report(
         full_index_keys,
         state["backfilled_keys"],

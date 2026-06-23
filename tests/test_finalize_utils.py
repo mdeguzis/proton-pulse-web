@@ -110,10 +110,24 @@ def test_derive_index_keys_skips_reserved(tmp_path):
     keys = derive_index_keys_from_disk(tmp_path)
     assert len(keys) == 0
 
-def test_derive_index_keys_skips_non_numeric_dirs(tmp_path):
+def test_derive_index_keys_skips_unknown_dirs(tmp_path):
     (tmp_path / "some-dir").mkdir()
     keys = derive_index_keys_from_disk(tmp_path)
     assert len(keys) == 0
+
+def test_derive_index_keys_includes_gog_dir(tmp_path):
+    app_dir = tmp_path / "gog_1234567890"
+    app_dir.mkdir()
+    (app_dir / "2025.json").write_text("[]")
+    keys = derive_index_keys_from_disk(tmp_path)
+    assert ("gog:1234567890", "2025") in keys
+
+def test_derive_index_keys_includes_epic_dir(tmp_path):
+    app_dir = tmp_path / "epic_somegame"
+    app_dir.mkdir()
+    (app_dir / "2025.json").write_text("[]")
+    keys = derive_index_keys_from_disk(tmp_path)
+    assert ("epic:somegame", "2025") in keys
 
 def test_derive_index_keys_missing_dir(tmp_path):
     keys = derive_index_keys_from_disk(tmp_path / "missing")
@@ -190,6 +204,36 @@ def test_generate_search_index_basic(tmp_path):
     assert len(index) == 1
     assert index[0][0] == "730"
     assert index[0][1] == "CS2"
+    assert index[0][5] == "steam"  # appType
+
+def test_generate_search_index_gog_stub_from_catalog(tmp_path):
+    keys = set()
+    gog_catalog = {"1234567890": "Swat 4"}
+    generate_search_index(keys, tmp_path, tmp_path, gog_catalog=gog_catalog)
+
+    index = json.loads((tmp_path / "search-index.json").read_text())
+    assert len(index) == 1
+    assert index[0][0] == "gog:1234567890"
+    assert index[0][1] == "Swat 4"
+    assert index[0][2] == ""    # no tier
+    assert index[0][3] == 0     # no protondb reports
+    assert index[0][4] == 0     # no pulse reports
+    assert index[0][5] == "gog"
+
+def test_generate_search_index_gog_with_reports_not_duplicated(tmp_path):
+    app_dir = tmp_path / "gog_1234567890"
+    app_dir.mkdir()
+    (app_dir / "latest.json").write_text(json.dumps([{"title": "Swat 4"}]))
+    (app_dir / "2025.json").write_text(json.dumps([{"rating": "gold", "source": "pulse", "title": "Swat 4"}]))
+
+    keys = {("gog:1234567890", "2025")}
+    gog_catalog = {"1234567890": "Swat 4"}
+    generate_search_index(keys, tmp_path, tmp_path, gog_catalog=gog_catalog)
+
+    index = json.loads((tmp_path / "search-index.json").read_text())
+    gog_entries = [e for e in index if e[0] == "gog:1234567890"]
+    assert len(gog_entries) == 1  # no duplicate stub
+    assert gog_entries[0][4] == 1  # pulse count from real data
 
 def test_generate_search_index_skips_no_title(tmp_path):
     app_dir = tmp_path / "730"
