@@ -19,7 +19,18 @@ from .catalog import (
     read_protondb_probe_cache,
     write_protondb_probe_cache,
 )
-from .common import LIVE_COUNTS_URL, count_year_bucket_files, fetch_json, flush_steam_title_cache, log
+from .common import (
+    LIVE_COUNTS_URL,
+    app_id_to_dir,
+    app_type_from_id,
+    count_year_bucket_files,
+    dir_to_app_id,
+    fetch_json,
+    flush_steam_title_cache,
+    log,
+)
+from .gog_catalog import load_gog_catalog
+from .epic_catalog import load_epic_catalog
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
 from .game_images import build_game_images
 from .most_played import build_most_played
@@ -72,7 +83,7 @@ def reindex_apps(output_dir: str, app_ids: list[str]) -> None:
     data_path = Path(output_dir) / "data"
     index_keys: set[tuple[str, str]] = set()
     for app_id in app_ids:
-        app_dir = data_path / app_id
+        app_dir = data_path / app_id_to_dir(app_id)
         if not app_dir.is_dir():
             log(f"[reindex] Skipping {app_id}: no data directory")
             continue
@@ -92,7 +103,7 @@ def generate_app_indexes(index_keys: set, data_output_path: Path) -> None:
 
     for app_id, years in app_years.items():
         sorted_years = sorted(years, key=lambda y: (0, int(y)) if y.isdigit() else (1, y))
-        app_dir = data_output_path / app_id
+        app_dir = data_output_path / app_id_to_dir(app_id)
         app_dir.mkdir(parents=True, exist_ok=True)
         index_file = app_dir / "index.json"
         index_file.write_text(json.dumps(sorted_years))
@@ -136,7 +147,7 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     data_path = output_path / "data"
     app_titles: dict[str, str] = {}
     for app_id in sorted_app_ids:
-        title = _extract_title(data_path / app_id)
+        title = _extract_title(data_path / app_id_to_dir(app_id))
         app_titles[app_id] = title
 
     sample_apps = {
@@ -531,7 +542,7 @@ def _resolve_coverage_title(
     protondb_signal_catalog: dict[str, str] | None = None,
     steam_catalog: dict[str, str] | None = None,
 ) -> tuple[str, str]:
-    local_title = _extract_title(data_output_path / app_id)
+    local_title = _extract_title(data_output_path / app_id_to_dir(app_id))
     if local_title:
         return local_title, "indexed-data"
 
@@ -563,8 +574,10 @@ def derive_index_keys_from_disk(data_output_path: Path) -> set[tuple[str, str]]:
     for app_dir in data_output_path.iterdir():
         if not app_dir.is_dir():
             continue
-        app_id = app_dir.name
-        if not app_id.isdigit():
+        dir_name = app_dir.name
+        app_id = dir_to_app_id(dir_name)
+        # skip dirs that aren't valid app IDs (e.g. plain text dirs, unknown prefixes)
+        if not (app_id.isdigit() or app_id.startswith("gog:") or app_id.startswith("epic:")):
             continue
         for year_file in app_dir.glob("*.json"):
             stem = year_file.stem
@@ -654,7 +667,7 @@ def generate_recent_reports(data_output_path: Path, output_path: Path, limit: in
     for app_dir in data_output_path.iterdir():
         if not app_dir.is_dir():
             continue
-        app_id = app_dir.name
+        app_id = dir_to_app_id(app_dir.name)
         year_files = sorted(
             (f for f in app_dir.glob("*.json") if f.stem not in {"latest", "index", "votes", "metadata"}),
             key=lambda p: p.stem,
@@ -685,6 +698,7 @@ def generate_recent_reports(data_output_path: Path, output_path: Path, limit: in
             "lastReportDate": last_date,
             "protondbCount": pdb_count,
             "pulseCount": pulse_count,
+            "appType": app_type_from_id(app_id),
         })
 
     results.sort(key=lambda r: r["lastReportDate"], reverse=True)
@@ -718,25 +732,59 @@ def _backfill_most_played_header_images(output_path: Path, overrides: dict) -> N
         log(f"[game-images] backfilled {changed} headerImage(s) in most_played.json")
 
 
-def generate_search_index(index_keys: set, data_output_path: Path, output_path: Path) -> None:
+def generate_search_index(
+    index_keys: set,
+    data_output_path: Path,
+    output_path: Path,
+    gog_catalog: dict[str, str] | None = None,
+    epic_catalog: dict[str, str] | None = None,
+) -> None:
     """Generate search-index.json with overall tier + report counts per game.
 
-    Shape: [[appId, title, tier, protondbCount, pulseCount], ...]
+    Shape: [[appId, title, tier, protondbCount, pulseCount, appType], ...]
     Older consumers reading only the first two columns continue to work --
     JS destructuring ignores extra elements silently.
+
+    GOG and Epic games from their respective catalogs that have no local report
+    data are emitted as stub entries (tier="", counts=0) so users can search for
+    them and submit their first report before any data exists.
     """
     app_ids = sorted(
         {app_id for app_id, _ in index_keys},
         key=lambda a: (0, int(a)) if a.isdigit() else (1, a),
     )
     entries = []
+    seen_ids: set[str] = set()
+
     for app_id in app_ids:
-        app_dir = data_output_path / app_id
+        app_dir = data_output_path / app_id_to_dir(app_id)
         title = _extract_title(app_dir)
         if not title:
             continue
         tier, pdb_count, pulse_count = _compute_game_summary(app_dir)
-        entries.append([app_id, title, tier, pdb_count, pulse_count])
+        entries.append([app_id, title, tier, pdb_count, pulse_count, app_type_from_id(app_id)])
+        seen_ids.add(app_id)
+
+    if gog_catalog:
+        stubs = 0
+        for pid, title in sorted(gog_catalog.items(), key=lambda kv: kv[1].lower()):
+            canonical_id = f"gog:{pid}"
+            if canonical_id not in seen_ids:
+                entries.append([canonical_id, title, "", 0, 0, "gog"])
+                stubs += 1
+        if stubs:
+            log(f"[search-index] Added {stubs:,} GOG catalog stubs (no reports yet)")
+
+    if epic_catalog:
+        stubs = 0
+        for namespace, title in sorted(epic_catalog.items(), key=lambda kv: kv[1].lower()):
+            canonical_id = f"epic:{namespace}"
+            if canonical_id not in seen_ids:
+                entries.append([canonical_id, title, "", 0, 0, "epic"])
+                stubs += 1
+        if stubs:
+            log(f"[search-index] Added {stubs:,} Epic catalog stubs (no reports yet)")
+
     index_file = output_path / "search-index.json"
     index_file.write_text(json.dumps(entries, separators=(",", ":")))
     log(f"[search-index] Written {len(entries):,} entries to {index_file}")
@@ -1295,6 +1343,18 @@ def finalize_output(output_dir, skip_probe: bool = False):
             log(f"[steam-catalog] Failed to load Steam app catalog: {exc}")
     else:
         log("[steam-catalog] STEAM_API_KEY not set; coverage report will use local output only", debug=True)
+
+    gog_catalog: dict[str, str] | None = None
+    try:
+        gog_catalog = load_gog_catalog()
+    except Exception as exc:
+        log(f"[gog-catalog] Failed to load GOG catalog: {exc}")
+
+    epic_catalog: dict[str, str] | None = None
+    try:
+        epic_catalog = load_epic_catalog()
+    except Exception as exc:
+        log(f"[epic-catalog] Failed to load Epic catalog: {exc}")
     protondb_counts = None
     try:
         protondb_counts = fetch_json(LIVE_COUNTS_URL)
@@ -1340,7 +1400,7 @@ def finalize_output(output_dir, skip_probe: bool = False):
 
     generate_app_indexes(full_index_keys, data_output_path)
     generate_index_html(full_index_keys, output_path)
-    generate_search_index(full_index_keys, data_output_path, output_path)
+    generate_search_index(full_index_keys, data_output_path, output_path, gog_catalog=gog_catalog, epic_catalog=epic_catalog)
     generate_coverage_report(
         full_index_keys,
         state["backfilled_keys"],

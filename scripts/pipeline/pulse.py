@@ -20,7 +20,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from .common import log
+from .common import app_id_to_dir, is_valid_app_id, log
 
 
 SB_URL_DEFAULT = "https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1"
@@ -102,6 +102,7 @@ def normalize_pulse_row(row: dict[str, Any]) -> dict[str, Any]:
         "gameOwned": row.get("game_owned"),
         "timestamp": _ts_from_created_at(row.get("created_at", "")),
         "pulseId": row.get("id"),
+        "appType": row.get("app_type") or "steam",
         # keep the granular submission origin (user / web-linux / web / etc)
         # so we don't lose it under the broader source: "pulse" tag
         "submissionSource": row.get("source"),
@@ -114,7 +115,7 @@ def _bucket_by_app_year(rows: list[dict]) -> dict[tuple[str, str], list[dict]]:
     buckets: dict[tuple[str, str], list[dict]] = defaultdict(list)
     for row in rows:
         app_id = str(row.get("app_id", "")).strip()
-        if not app_id.isdigit():
+        if not is_valid_app_id(app_id):
             continue
         year = _year_from_created_at(row.get("created_at", ""))
         buckets[(app_id, year)].append(normalize_pulse_row(row))
@@ -139,7 +140,7 @@ def merge_pulse_into_data_dir(data_output_path: Path) -> tuple[int, int]:
     reports_merged = 0
 
     for (app_id, year), pulse_reports in buckets.items():
-        app_dir = data_output_path / app_id
+        app_dir = data_output_path / app_id_to_dir(app_id)
         app_dir.mkdir(parents=True, exist_ok=True)
         year_file = app_dir / f"{year}.json"
 
