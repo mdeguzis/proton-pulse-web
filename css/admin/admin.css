@@ -920,6 +920,17 @@ pre.flag-raw-json {
   .analytics-two-col { grid-template-columns: 1fr; }
 }
 
+/* Status legend line */
+.admin-legend {
+  font-size: 0.78rem;
+  color: var(--text-muted, #888);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
 /* Inline status badges */
 .admin-badge {
   display: inline-block;

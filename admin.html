@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=55e85c86">
 <link rel="stylesheet" href="css/shared/site.css?v=86052a10">
 <link rel="stylesheet" href="css/shared/cards.css?v=c0a5fad1">
-<link rel="stylesheet" href="css/admin/admin.css?v=d668dd10">
+<link rel="stylesheet" href="css/admin/admin.css?v=beb60dd8">
 </head>
 <body>
 
@@ -60,6 +60,11 @@
             <option value="hidden">Hidden</option>
           </select>
           <button class="admin-btn" id="all-reports-refresh-btn">Refresh</button>
+        </div>
+        <div class="admin-legend">
+          <span class="admin-badge admin-badge--warn">flagged</span> queued for mod review &nbsp;&middot;&nbsp;
+          <span class="admin-badge admin-badge--muted">hidden</span> shadow-banned, not visible to users &nbsp;&middot;&nbsp;
+          blank = visible and clean
         </div>
         <div id="all-reports-count" class="admin-counts" hidden></div>
         <div id="all-reports-loading" class="admin-loading">Loading reports...</div>
@@ -314,6 +319,6 @@
 <script src="js/lib/analytics.js?v=89bd7747"></script>
 <script src="js/lib/topbar.js?v=46cb7ea1"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/admin/main.js?v=b115bd92"></script>
+<script type="module" src="js/admin/main.js?v=22042259"></script>
 </body>
 </html>

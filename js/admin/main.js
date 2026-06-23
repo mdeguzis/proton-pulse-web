@@ -30,6 +30,7 @@ let flaggedRows = [];
 let bannedRows = [];
 let sortField = 'flagged_at';
 let sortDir = 'desc';
+let userDetailReturnTab = 'users';
 
 // ---------------------------------------------------------------------------
 // Supabase queries
@@ -225,6 +226,7 @@ async function loadPhrases() {
 }
 
 async function loadUserDetail(user) {
+  userDetailReturnTab = document.getElementById('admin-tab-select').value || 'users';
   // Persist user so a page refresh can restore this view.
   sessionStorage.setItem('admin_detail_user', JSON.stringify(user));
   const url = new URL(window.location.href);
@@ -269,9 +271,11 @@ async function loadUserDetail(user) {
       session: currentSession,
       currentUserId: currentSession?.user?.id,
     });
+    const backBtn = content.querySelector('[data-action="back-to-users"]');
+    if (backBtn) backBtn.textContent = `\u2190 Back to ${userDetailReturnTab.replace('-', ' ')}`;
   } catch (e) {
     content.innerHTML = `<div class="admin-error">${e.message}</div>
-      <button class="admin-btn admin-btn--ghost admin-btn--sm" type="button" data-action="back-to-users" style="margin-top:10px">&#8592; Back to users</button>`;
+      <button class="admin-btn admin-btn--ghost admin-btn--sm" type="button" data-action="back-to-users" style="margin-top:10px">\u2190 Back to ${userDetailReturnTab.replace('-', ' ')}</button>`;
   }
 }
 
@@ -642,7 +646,7 @@ function wireEvents() {
     if (!btn) return;
     const action = btn.dataset.action;
     if (action === 'back-to-users') {
-      activateTab('users');
+      activateTab(userDetailReturnTab);
     }
     if (action === 'ban-from-detail') {
       openBanModal(btn.dataset.userid || null, btn.dataset.clientid || null, btn.dataset.username);
@@ -654,7 +658,7 @@ function wireEvents() {
       try {
         await unbanUser(currentSession, btn.dataset.banId, { protonPulseUserId: btn.dataset.userid, clientId: btn.dataset.clientid });
         window.ppToast?.success('User unbanned.');
-        activateTab('users');
+        activateTab(userDetailReturnTab);
       } catch (err) {
         btn.disabled = false;
         btn.textContent = 'Unban';
@@ -722,7 +726,7 @@ function wireEvents() {
   window.addEventListener('popstate', e => {
     const pendingDetail = document.getElementById('pending-detail');
     if (pendingDetail && !pendingDetail.hidden) { closePendingReview(); return; }
-    if (!document.getElementById('tab-user-detail').hidden) activateTab('users');
+    if (!document.getElementById('tab-user-detail').hidden) activateTab(userDetailReturnTab);
     else if (!document.getElementById('tab-flag-detail').hidden) activateTab('flagged');
   });
 
