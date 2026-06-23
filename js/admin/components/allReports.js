@@ -8,7 +8,7 @@ function statusBadges(isF, isH) {
       isH ? '<span class="admin-badge admin-badge--muted">hidden</span>'  : '',
     ].filter(Boolean).join(' ');
   }
-  return '<span class="admin-badge admin-badge--ok">ok</span>';
+  return '';
 }
 
 function actionBtns(id, isF, isH) {
