@@ -1,0 +1,63 @@
+name: Update Epic Catalog
+
+on:
+  schedule:
+    - cron: "0 4 * * 0"  # weekly, Sunday 4am UTC
+  workflow_dispatch:
+    inputs:
+      force_refresh:
+        description: "Force re-fetch even if cache is fresh"
+        type: boolean
+        default: false
+
+jobs:
+  update-epic-catalog:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Checkout gh-pages for existing catalog cache
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages-data
+          fetch-depth: 1
+        continue-on-error: true
+
+      - name: Seed catalog cache from gh-pages
+        run: |
+          mkdir -p .cache
+          cp gh-pages-data/epic-catalog-cache.json .cache/ 2>/dev/null || true
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "latest"
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Fetch Epic catalog
+        run: |
+          uv run python - <<'PY'
+          from scripts.pipeline.epic_catalog import load_epic_catalog
+          import os
+          force = os.environ.get("FORCE_REFRESH", "false").lower() == "true"
+          catalog = load_epic_catalog(force_refresh=force)
+          print(f"[epic-catalog] {len(catalog):,} entries loaded")
+          PY
+        env:
+          FORCE_REFRESH: ${{ inputs.force_refresh }}
+
+      - name: Commit catalog cache to gh-pages
+        run: |
+          cd gh-pages-data
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          cp ../.cache/epic-catalog-cache.json .
+          git add epic-catalog-cache.json
+          git diff --cached --quiet && echo "Cache unchanged, nothing to commit" || git commit -m "chore: refresh Epic catalog cache $(date +%F)"
+          git push origin gh-pages
