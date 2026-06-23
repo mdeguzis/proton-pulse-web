@@ -364,14 +364,12 @@ jobs:
           git commit -m "Deploy: $(date +%F)"
           git push origin gh-pages-new:gh-pages --force
 
-      - name: Sync to staging
-        if: env.STAGING_DEPLOY_TOKEN != ''
-        env:
-          STAGING_DEPLOY_TOKEN: ${{ secrets.STAGING_DEPLOY_TOKEN }}
-        run: |
-          git config --local --unset-all http.https://github.com/.extraheader || true
-          git remote add staging https://x-access-token:${{ secrets.STAGING_DEPLOY_TOKEN }}@github.com/mdeguzis/proton-pulse-web-staging.git
-          git push staging gh-pages-new:gh-pages --force
+      # NOTE: the production pipeline must NOT push to the staging site. Doing so
+      # force-pushed main's (production) frontend over any in-review staging
+      # preview, silently reverting staging to prod whenever this ran after a
+      # `make gh-staging`. Staging is owned exclusively by the staging-preview
+      # job (make gh-staging) and reads production data through the CDN
+      # (USES_PROD_DATA in config.js), so it never needs a data sync from here.
 
   # ── Pages-only redeploy: refresh app/index shell files on gh-pages ─────────
   pages-only:
