@@ -18,7 +18,7 @@ import { fetchAnalytics } from './api/analytics.js?v=f0ba00d2';
 import { renderAnalytics } from './components/analytics.js?v=e9b6ce1c';
 import { renderCacheStatus } from './components/cache-status.js?v=764c4d18';
 import { renderPending, closePendingReview } from './components/pending.js?v=1fc5b1b4';
-import { renderAllReports } from './components/allReports.js?v=1e5e8569';
+import { renderAllReports } from './components/allReports.js?v=d7fe1915';
 
 // ---------------------------------------------------------------------------
 // State
@@ -550,6 +550,15 @@ function wireEvents() {
         window.ppToast?.error(`Action failed: ${err.message}`);
       }
     }
+  });
+
+  // All Reports table actions (delegated)
+  document.getElementById('all-reports-tbody').addEventListener('click', e => {
+    const btn = e.target.closest('[data-action="view-user-detail"]');
+    if (!btn) return;
+    let user;
+    try { user = JSON.parse(btn.dataset.userobj); } catch (_) { return; }
+    loadUserDetail(user);
   });
 
   // Users table actions (delegated)

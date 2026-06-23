@@ -1,5 +1,5 @@
 import { escapeHtml, fmtDateTime } from '../utils.js?v=86489fcb';
-import { fetchAllReports } from '../api/allReports.js?v=d8f732fd';
+import { fetchAllReports } from '../api/allReports.js?v=86dc6b4e';
 
 export async function renderAllReports(session) {
   const loading = document.getElementById('all-reports-loading');
@@ -31,26 +31,37 @@ export async function renderAllReports(session) {
     }
 
     tbody.innerHTML = reports.map(r => {
-      const appLink = r.app_id
-        ? `<a class="admin-link" href="app.html#/app/${r.app_id}" target="_blank">App ${escapeHtml(String(r.app_id))}</a>`
+      const appId   = r.app_id ? escapeHtml(String(r.app_id)) : null;
+      const appLink = appId
+        ? `<a class="admin-link" href="app.html#/app/${appId}" target="_blank">App ${appId}</a>`
         : 'Unknown';
-      const title   = escapeHtml(r.title || '');
-      const rating  = escapeHtml(r.rating || '');
-      const source  = escapeHtml(r.source || '');
-      const user    = escapeHtml(r.proton_pulse_user_id || r.client_id || 'anon');
-      const date    = escapeHtml(fmtDateTime(r.created_at));
-      const badges  = [
-        r.is_flagged ? '<span class="admin-badge admin-badge--warn">flagged</span>' : '',
-        r.is_hidden  ? '<span class="admin-badge admin-badge--muted">hidden</span>'  : '',
-      ].filter(Boolean).join(' ');
+      const title  = escapeHtml(r.title || '');
+      const rating = escapeHtml(r.rating || '');
+      const source = escapeHtml(r.source || '');
+      const date   = escapeHtml(fmtDateTime(r.created_at));
+
+      const uid = r.proton_pulse_user_id || null;
+      const cid = r.client_id || null;
+      const userObj = escapeHtml(JSON.stringify({ proton_pulse_user_id: uid, client_id: cid, username: uid || cid || 'anon' }));
+      const userBtn = `<button class="admin-btn admin-btn--ghost admin-btn--sm" data-action="view-user-detail" data-userobj='${userObj}'>Details</button>`;
+
+      const flagged = r.is_flagged;
+      const hidden  = r.is_hidden;
+      const status  = (flagged || hidden)
+        ? [
+            flagged ? '<span class="admin-badge admin-badge--warn">flagged</span>' : '',
+            hidden  ? '<span class="admin-badge admin-badge--muted">hidden</span>'  : '',
+          ].filter(Boolean).join(' ')
+        : '<span class="admin-badge admin-badge--ok">ok</span>';
+
       return `<tr>
         <td>${appLink}</td>
         <td>${title}</td>
         <td>${rating}</td>
         <td>${source}</td>
-        <td><code style="font-size:0.75rem">${user.slice(0, 16)}</code></td>
+        <td>${userBtn}</td>
         <td>${date}</td>
-        <td>${badges}</td>
+        <td>${status}</td>
       </tr>`;
     }).join('');
 
