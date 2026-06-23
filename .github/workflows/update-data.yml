@@ -258,10 +258,6 @@ jobs:
           cp gh-pages-data/game-images.json /tmp/protondb-output/ 2>/dev/null || true
           cp gh-pages-data/game-images-skip.json /tmp/protondb-output/ 2>/dev/null || true
           cp gh-pages-data/game-images-cache.json /tmp/protondb-output/ 2>/dev/null || true
-          # Seed store catalog caches so pipeline skips re-fetching within TTL
-          mkdir -p .cache
-          cp gh-pages-data/gog-catalog-cache.json .cache/ 2>/dev/null || true
-          cp gh-pages-data/epic-catalog-cache.json .cache/ 2>/dev/null || true
 
       - name: Restore pipeline cache
         uses: actions/cache/restore@v4
@@ -270,6 +266,17 @@ jobs:
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-final
           restore-keys: |
             pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-
+
+      # Seed the store catalog caches from gh-pages AFTER restoring the pipeline
+      # cache, so the freshly rebuilt catalog (pushed by the dedicated GOG/Epic
+      # workflows) wins over a stale copy carried in the actions cache. Doing
+      # this before the restore let the old catalog clobber the new one, which
+      # silently froze the GOG/Epic search-index stubs at an outdated count.
+      - name: Seed store catalog caches from gh-pages
+        run: |
+          mkdir -p .cache
+          cp gh-pages-data/gog-catalog-cache.json .cache/ 2>/dev/null || true
+          cp gh-pages-data/epic-catalog-cache.json .cache/ 2>/dev/null || true
 
       - name: Write local .env from secret
         run: |
