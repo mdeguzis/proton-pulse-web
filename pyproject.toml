@@ -14,6 +14,7 @@ dev = [
     "pylint>=3.3.8",
     "pyright>=1.1.403",
     "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
 ]
 
 [tool.uv]
