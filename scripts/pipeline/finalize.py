@@ -30,6 +30,7 @@ from .common import (
     log,
 )
 from .gog_catalog import load_gog_catalog
+from .epic_catalog import load_epic_catalog
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
 from .game_images import build_game_images
 from .most_played import build_most_played
@@ -736,6 +737,7 @@ def generate_search_index(
     data_output_path: Path,
     output_path: Path,
     gog_catalog: dict[str, str] | None = None,
+    epic_catalog: dict[str, str] | None = None,
 ) -> None:
     """Generate search-index.json with overall tier + report counts per game.
 
@@ -743,9 +745,9 @@ def generate_search_index(
     Older consumers reading only the first two columns continue to work --
     JS destructuring ignores extra elements silently.
 
-    GOG games from gog_catalog that have no local report data are emitted as
-    stub entries (tier="", counts=0) so users can search for them before
-    anyone has submitted a Pulse report.
+    GOG and Epic games from their respective catalogs that have no local report
+    data are emitted as stub entries (tier="", counts=0) so users can search for
+    them and submit their first report before any data exists.
     """
     app_ids = sorted(
         {app_id for app_id, _ in index_keys},
@@ -763,8 +765,6 @@ def generate_search_index(
         entries.append([app_id, title, tier, pdb_count, pulse_count, app_type_from_id(app_id)])
         seen_ids.add(app_id)
 
-    # Emit stubs for GOG catalog games not yet in the index so users can search
-    # for them and submit their first report.
     if gog_catalog:
         stubs = 0
         for pid, title in sorted(gog_catalog.items(), key=lambda kv: kv[1].lower()):
@@ -774,6 +774,16 @@ def generate_search_index(
                 stubs += 1
         if stubs:
             log(f"[search-index] Added {stubs:,} GOG catalog stubs (no reports yet)")
+
+    if epic_catalog:
+        stubs = 0
+        for namespace, title in sorted(epic_catalog.items(), key=lambda kv: kv[1].lower()):
+            canonical_id = f"epic:{namespace}"
+            if canonical_id not in seen_ids:
+                entries.append([canonical_id, title, "", 0, 0, "epic"])
+                stubs += 1
+        if stubs:
+            log(f"[search-index] Added {stubs:,} Epic catalog stubs (no reports yet)")
 
     index_file = output_path / "search-index.json"
     index_file.write_text(json.dumps(entries, separators=(",", ":")))
@@ -1339,6 +1349,12 @@ def finalize_output(output_dir, skip_probe: bool = False):
         gog_catalog = load_gog_catalog()
     except Exception as exc:
         log(f"[gog-catalog] Failed to load GOG catalog: {exc}")
+
+    epic_catalog: dict[str, str] | None = None
+    try:
+        epic_catalog = load_epic_catalog()
+    except Exception as exc:
+        log(f"[epic-catalog] Failed to load Epic catalog: {exc}")
     protondb_counts = None
     try:
         protondb_counts = fetch_json(LIVE_COUNTS_URL)
@@ -1384,7 +1400,7 @@ def finalize_output(output_dir, skip_probe: bool = False):
 
     generate_app_indexes(full_index_keys, data_output_path)
     generate_index_html(full_index_keys, output_path)
-    generate_search_index(full_index_keys, data_output_path, output_path, gog_catalog=gog_catalog)
+    generate_search_index(full_index_keys, data_output_path, output_path, gog_catalog=gog_catalog, epic_catalog=epic_catalog)
     generate_coverage_report(
         full_index_keys,
         state["backfilled_keys"],

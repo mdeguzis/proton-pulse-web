@@ -235,6 +235,35 @@ def test_generate_search_index_gog_with_reports_not_duplicated(tmp_path):
     assert len(gog_entries) == 1  # no duplicate stub
     assert gog_entries[0][4] == 1  # pulse count from real data
 
+def test_generate_search_index_epic_stub_from_catalog(tmp_path):
+    keys = set()
+    epic_catalog = {"fortnite": "Fortnite"}
+    generate_search_index(keys, tmp_path, tmp_path, epic_catalog=epic_catalog)
+
+    index = json.loads((tmp_path / "search-index.json").read_text())
+    assert len(index) == 1
+    assert index[0][0] == "epic:fortnite"
+    assert index[0][1] == "Fortnite"
+    assert index[0][2] == ""
+    assert index[0][3] == 0
+    assert index[0][4] == 0
+    assert index[0][5] == "epic"
+
+def test_generate_search_index_epic_with_reports_not_duplicated(tmp_path):
+    app_dir = tmp_path / "epic_fortnite"
+    app_dir.mkdir()
+    (app_dir / "latest.json").write_text(json.dumps([{"title": "Fortnite"}]))
+    (app_dir / "2025.json").write_text(json.dumps([{"rating": "gold", "source": "pulse", "title": "Fortnite"}]))
+
+    keys = {("epic:fortnite", "2025")}
+    epic_catalog = {"fortnite": "Fortnite"}
+    generate_search_index(keys, tmp_path, tmp_path, epic_catalog=epic_catalog)
+
+    index = json.loads((tmp_path / "search-index.json").read_text())
+    epic_entries = [e for e in index if e[0] == "epic:fortnite"]
+    assert len(epic_entries) == 1
+    assert epic_entries[0][4] == 1
+
 def test_generate_search_index_skips_no_title(tmp_path):
     app_dir = tmp_path / "730"
     app_dir.mkdir()

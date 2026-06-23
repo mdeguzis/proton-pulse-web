@@ -258,6 +258,10 @@ jobs:
           cp gh-pages-data/game-images.json /tmp/protondb-output/ 2>/dev/null || true
           cp gh-pages-data/game-images-skip.json /tmp/protondb-output/ 2>/dev/null || true
           cp gh-pages-data/game-images-cache.json /tmp/protondb-output/ 2>/dev/null || true
+          # Seed store catalog caches so pipeline skips re-fetching within TTL
+          mkdir -p .cache
+          cp gh-pages-data/gog-catalog-cache.json .cache/ 2>/dev/null || true
+          cp gh-pages-data/epic-catalog-cache.json .cache/ 2>/dev/null || true
 
       - name: Restore pipeline cache
         uses: actions/cache/restore@v4
@@ -292,6 +296,11 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: uv run python scripts/pipeline/approve_reports.py
 
+      - name: Copy catalog caches to output
+        run: |
+          cp .cache/gog-catalog-cache.json /tmp/protondb-output/ 2>/dev/null || true
+          cp .cache/epic-catalog-cache.json /tmp/protondb-output/ 2>/dev/null || true
+
       - name: Save pipeline cache
         if: always()
         uses: actions/cache/save@v4
@@ -315,6 +324,8 @@ jobs:
           cp /tmp/protondb-output/game-images.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-skip.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-cache.json . 2>/dev/null || true
+          cp /tmp/protondb-output/gog-catalog-cache.json . 2>/dev/null || true
+          cp /tmp/protondb-output/epic-catalog-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/most_played.json . 2>/dev/null || true
           cp /tmp/protondb-output/proton-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/steam-catalog.json . 2>/dev/null || true
@@ -338,7 +349,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json most_played.json proton-versions.json steam-catalog.json hardware-suggestions.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json proton-versions.json steam-catalog.json hardware-suggestions.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
@@ -482,6 +493,9 @@ jobs:
           else
             mkdir -p /tmp/protondb-output/data
           fi
+          mkdir -p repo/.cache
+          cp gh-pages-data/gog-catalog-cache.json repo/.cache/ 2>/dev/null || true
+          cp gh-pages-data/epic-catalog-cache.json repo/.cache/ 2>/dev/null || true
 
       - name: Repair official dump provenance metadata
         working-directory: repo
@@ -542,6 +556,11 @@ jobs:
           uv run python scripts/split_reports.py finalize --skip-probe \
             /tmp/protondb-output
 
+      - name: Copy catalog caches to output
+        run: |
+          cp repo/.cache/gog-catalog-cache.json /tmp/protondb-output/ 2>/dev/null || true
+          cp repo/.cache/epic-catalog-cache.json /tmp/protondb-output/ 2>/dev/null || true
+
       - name: Save pipeline cache
         if: always()
         uses: actions/cache/save@v4
@@ -566,6 +585,8 @@ jobs:
           cp /tmp/protondb-output/game-images.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-skip.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-cache.json . 2>/dev/null || true
+          cp /tmp/protondb-output/gog-catalog-cache.json . 2>/dev/null || true
+          cp /tmp/protondb-output/epic-catalog-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/most_played.json . 2>/dev/null || true
           cp /tmp/protondb-output/proton-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/steam-catalog.json . 2>/dev/null || true
@@ -589,7 +610,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json most_played.json proton-versions.json steam-catalog.json hardware-suggestions.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json proton-versions.json steam-catalog.json hardware-suggestions.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
@@ -662,6 +683,9 @@ jobs:
           else
             mkdir -p /tmp/protondb-output/data
           fi
+          mkdir -p repo/.cache
+          cp gh-pages-data/gog-catalog-cache.json repo/.cache/ 2>/dev/null || true
+          cp gh-pages-data/epic-catalog-cache.json repo/.cache/ 2>/dev/null || true
 
       - name: Repair official dump provenance metadata
         working-directory: repo
@@ -748,6 +772,11 @@ jobs:
           uv run python scripts/split_reports.py finalize --skip-probe \
             /tmp/protondb-output
 
+      - name: Copy catalog caches to output
+        run: |
+          cp repo/.cache/gog-catalog-cache.json /tmp/protondb-output/ 2>/dev/null || true
+          cp repo/.cache/epic-catalog-cache.json /tmp/protondb-output/ 2>/dev/null || true
+
       - name: Save pipeline cache
         if: always()
         uses: actions/cache/save@v4
@@ -772,6 +801,8 @@ jobs:
           cp /tmp/protondb-output/game-images.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-skip.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-cache.json . 2>/dev/null || true
+          cp /tmp/protondb-output/gog-catalog-cache.json . 2>/dev/null || true
+          cp /tmp/protondb-output/epic-catalog-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/most_played.json . 2>/dev/null || true
           cp /tmp/protondb-output/proton-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/steam-catalog.json . 2>/dev/null || true
@@ -795,7 +826,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json most_played.json proton-versions.json steam-catalog.json hardware-suggestions.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json proton-versions.json steam-catalog.json hardware-suggestions.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
