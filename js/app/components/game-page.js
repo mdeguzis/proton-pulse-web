@@ -4,15 +4,15 @@ import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=0dae1257';
 import { getWebClientId } from '../../shared/submit.js?v=c57cb3d6';
 import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.js?v=21903124';
-import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=f3f1e031';
-import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=006daef4';
-import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=6d4d6884';
-import { enhanceAuthorBlocks } from './author.js?v=33954771';
-import { renderConfigCard } from './config-cards.js?v=2578d16a';
+import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=bac2f4eb';
+import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=ac040be6';
+import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=220e13ea';
+import { enhanceAuthorBlocks } from './author.js?v=e88902cd';
+import { renderConfigCard } from './config-cards.js?v=473be757';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=3d873bb3';
-import { renderCard } from './report-card.js?v=4bb8a317';
-import { loadSearchIndex, searchIndex } from './search.js?v=064a9d4f';
-import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref } from '../config.js?v=4031c5fa';
+import { renderCard } from './report-card.js?v=c123d7ca';
+import { loadSearchIndex, searchIndex } from './search.js?v=d9c7b9b8';
+import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=df5b5024';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=85cf4195';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';
 
@@ -209,6 +209,7 @@ export async function renderGamePage(appId) {
     if (stubTitle) {
       // Known game with no reports yet -- show a stub page with a submit CTA.
       const imgUrl = STEAM_IMG(appId);
+      const store = storeLabelFromAppId(appId);
       el.innerHTML = `
         <div class="stub-page">
           <div class="stub-header">
@@ -216,7 +217,10 @@ export async function renderGamePage(appId) {
               onerror="this.style.display='none'">
             <div class="stub-meta">
               <h1 class="stub-title">${esc(stubTitle)}</h1>
-              <span class="tier-badge tier-badge--pending">Not rated yet</span>
+              <div class="stub-pills">
+                <span class="tier-badge tier-badge--pending">Not rated yet</span>
+                <span class="game-card-store-pill game-card-store-pill--${store.toLowerCase()}">${store}</span>
+              </div>
             </div>
           </div>
           <div class="stub-body">

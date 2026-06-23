@@ -1,6 +1,6 @@
 // Unified game card renderer. Single source of truth for the
 // thumbnail | title + sub | badge card layout used everywhere.
-import { STEAM_IMG } from '../config.js?v=4031c5fa';
+import { STEAM_IMG } from '../config.js?v=df5b5024';
 import { esc } from '../utils.js?v=f5dda5b6';
 import { loadSteamImg as _loadSteamImg } from './steam-img.js?v=85cf4195';
 
@@ -12,12 +12,13 @@ const TIER_COLORS = {
   borked:   { bg: '#c85050', color: '#fff' },
 };
 
-// opts: { href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel }
+// opts: { href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill }
 // imgUrl: pre-resolved Steam image URL (bypasses CDN guessing entirely)
 // tier: one of platinum/gold/silver/bronze/borked - auto-colours the badge
 // badge: raw label string - used when tier is not applicable
-// sourceLabel: plain text shown below the badge pill (e.g. "Steam", "Non-Steam")
-export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel }) {
+// storePill: store name shown as a coloured pill next to the rating pill (e.g. "Steam", "GOG", "Epic")
+// sourceLabel: plain muted text shown below the pills (legacy; prefer storePill)
+export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill }) {
   const primarySrc = imgUrl || (appId ? STEAM_IMG(appId) : '');
   const aid = appId != null ? String(appId) : '';
   const thumbHtml = primarySrc
@@ -35,11 +36,17 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const badgeHtml = label
     ? `<span class="game-card-badge" ${badgeStyle}>${esc(label)}</span>`
     : '';
+  const storePillHtml = storePill
+    ? `<span class="game-card-store-pill game-card-store-pill--${esc(String(storePill).toLowerCase())}">${esc(storePill)}</span>`
+    : '';
+  const pillsRowHtml = (badgeHtml || storePillHtml)
+    ? `<div class="game-card-pills">${badgeHtml}${storePillHtml}</div>`
+    : '';
   const sourceLabelHtml = sourceLabel
     ? `<span class="game-card-source">${esc(sourceLabel)}</span>`
     : '';
-  const rightHtml = (badgeHtml || sourceLabelHtml)
-    ? `<div class="game-card-right">${badgeHtml}${sourceLabelHtml}</div>`
+  const rightHtml = (pillsRowHtml || sourceLabelHtml)
+    ? `<div class="game-card-right">${pillsRowHtml}${sourceLabelHtml}</div>`
     : '';
 
   return `<a class="game-card" href="${href}">${thumbHtml}<div class="game-card-body"><div class="game-card-title">${esc(title)}</div><div class="game-card-sub">${sub}</div></div>${rightHtml}</a>`;

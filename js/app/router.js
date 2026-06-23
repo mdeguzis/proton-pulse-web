@@ -1,14 +1,17 @@
 // router (entry) for the app page. Relocated from app.js.
 
-import { renderGamePage } from './components/game-page.js?v=357066d4';
-import { renderHomePage } from './components/home.js?v=4b056ee2';
-import { renderSearchPage } from './components/search.js?v=66190bc0';
+import { renderGamePage } from './components/game-page.js?v=1e3ed1ab';
+import { renderHomePage } from './components/home.js?v=28b896fa';
+import { renderSearchPage } from './components/search.js?v=bdf79db7';
 
 export function getRoute() {
   const h = location.hash.replace(/^#\/?/, '');
-  const m = h.match(/^app\/(\d+)/);
+  // Steam ids are bare digits; catalog (non-Steam) ids are prefixed
+  // (gog:<productId>, epic:<namespace>). Match all three so GOG/Epic stub
+  // pages are reachable. Stop at the next path/query separator.
+  const m = h.match(/^app\/((?:gog:|epic:)?[^/?#]+)/);
   const q = new URLSearchParams(location.search).get('q')?.trim() || '';
-  if (m) return { page: 'app', appId: m[1], query: q };
+  if (m) return { page: 'app', appId: decodeURIComponent(m[1]), query: q };
   if (q) return { page: 'search', query: q };
   return { page: 'home', query: '' };
 }
