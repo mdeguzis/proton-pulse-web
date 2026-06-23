@@ -43,8 +43,9 @@ jobs:
       - name: Fetch Epic catalog
         run: |
           uv run python - <<'PY'
+          import sys, os
+          sys.path.insert(0, '.')
           from scripts.pipeline.epic_catalog import load_epic_catalog
-          import os
           force = os.environ.get("FORCE_REFRESH", "false").lower() == "true"
           catalog = load_epic_catalog(force_refresh=force)
           print(f"[epic-catalog] {len(catalog):,} entries loaded")
