@@ -18,6 +18,7 @@ import { fetchAnalytics } from './api/analytics.js?v=f0ba00d2';
 import { renderAnalytics } from './components/analytics.js?v=e9b6ce1c';
 import { renderCacheStatus } from './components/cache-status.js?v=764c4d18';
 import { renderPending, closePendingReview } from './components/pending.js?v=1fc5b1b4';
+import { renderAllReports } from './components/allReports.js?v=1e5e8569';
 
 // ---------------------------------------------------------------------------
 // State
@@ -115,6 +116,10 @@ async function applyAdminChange(uuid, role, permissions) {
 // ---------------------------------------------------------------------------
 // Load sections
 // ---------------------------------------------------------------------------
+
+async function loadAllReports() {
+  await renderAllReports(currentSession);
+}
 
 async function loadPending() {
   await renderPending(currentSession);
@@ -339,6 +344,7 @@ async function loadAnalytics() {
 
 // Maps each tab to its data loader so tab clicks and ?tab= restore share one path.
 const TAB_LOADERS = {
+  'all-reports': loadAllReports,
   pending: loadPending,
   flagged: loadFlagged,
   banned: loadBanned,
@@ -406,11 +412,13 @@ function wireEvents() {
   });
 
   // Refresh buttons
+  document.getElementById('all-reports-refresh-btn').addEventListener('click', loadAllReports);
   document.getElementById('flagged-refresh-btn').addEventListener('click', loadFlagged);
   document.getElementById('banned-refresh-btn').addEventListener('click', loadBanned);
   document.getElementById('users-refresh-btn').addEventListener('click', loadUsers);
 
   // Search inputs - live filter on enter
+  document.getElementById('all-reports-search').addEventListener('keydown', e => { if (e.key === 'Enter') loadAllReports(); });
   document.getElementById('flagged-search').addEventListener('keydown', e => { if (e.key === 'Enter') loadFlagged(); });
   document.getElementById('flagged-type').addEventListener('change', loadFlagged);
   document.getElementById('flagged-date-from').addEventListener('change', loadFlagged);

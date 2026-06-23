@@ -67,7 +67,7 @@ export async function fetchMinRequirements(appId) {
   if (!appId) return null;
   if (_reqsCache[appId] !== undefined) return _reqsCache[appId];
   try {
-    const r = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appId}&filters=basic`);
+    const r = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appId}&filters=basic&l=english`);
     if (!r.ok) throw new Error(r.status);
     const d = await r.json();
     const app = d?.[appId]?.data;

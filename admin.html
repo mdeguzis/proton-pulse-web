@@ -37,6 +37,7 @@
       <div class="admin-nav">
         <select id="admin-tab-select" class="admin-select admin-nav-select">
           <option value="users">All Users</option>
+          <option value="all-reports">All Reports</option>
           <option value="pending">Pending Reports</option>
           <option value="flagged">Flagged Reports</option>
           <option value="banned">Banned Users</option>
@@ -47,6 +48,31 @@
       </div>
 
       <div id="admin-perms-summary" class="admin-perms-summary" hidden></div>
+
+      <!-- All Reports -->
+      <section id="tab-all-reports" class="admin-section" hidden>
+        <div class="admin-filters">
+          <input type="text" id="all-reports-search" class="admin-input" placeholder="Search by app ID or title...">
+          <button class="admin-btn" id="all-reports-refresh-btn">Refresh</button>
+        </div>
+        <div id="all-reports-count" class="admin-counts" hidden></div>
+        <div id="all-reports-loading" class="admin-loading">Loading reports...</div>
+        <div id="all-reports-empty" class="admin-empty" hidden>No reports found.</div>
+        <table id="all-reports-table" class="admin-table" hidden>
+          <thead>
+            <tr>
+              <th>App</th>
+              <th>Title</th>
+              <th>Rating</th>
+              <th>Source</th>
+              <th>User</th>
+              <th>Submitted</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="all-reports-tbody"></tbody>
+        </table>
+      </section>
 
       <!-- Pending Reports (awaiting approval) -->
       <section id="tab-pending" class="admin-section" hidden>
@@ -281,6 +307,6 @@
 <script src="js/lib/analytics.js?v=89bd7747"></script>
 <script src="js/lib/topbar.js?v=46cb7ea1"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/admin/main.js?v=5fe8d7bc"></script>
+<script type="module" src="js/admin/main.js?v=6bf3b8bf"></script>
 </body>
 </html>
