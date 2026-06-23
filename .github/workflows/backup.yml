@@ -89,9 +89,9 @@ jobs:
           # Tag format: backup-{DATE}-{TRIGGER} for scheduled (once/week, safe to overwrite same-day)
           #             backup-{TS}-{TRIGGER}   for post-deploy and manual (can run multiple times/day)
           if [[ "$TRIGGER" == "scheduled" ]]; then
-            TAG="backup-${DATE}-${TRIGGER}"
+            export TAG="backup-${DATE}-${TRIGGER}"
           else
-            TAG="backup-${TS}-${TRIGGER}"
+            export TAG="backup-${TS}-${TRIGGER}"
           fi
 
           RELEASE_TITLE="Backup ${DATE} (${TRIGGER})"

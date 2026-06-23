@@ -18,7 +18,7 @@ import {
 } from './api/plugin-links.js?v=59c9f51e';
 import { initMyHardware } from './components/my-hardware.js?v=350d68d5';
 import { initSystems } from './components/systems.js?v=6c3aa1d4';
-import { initMyReports } from './components/my-reports.js?v=1fe31246';
+import { initMyReports } from './components/my-reports.js?v=0b2a71e2';
 
 (async function () {
   // ── DOM refs ──────────────────────────────────────────────────────────────
