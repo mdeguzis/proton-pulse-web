@@ -17,8 +17,8 @@ import { renderUserDetail } from './components/userDetail.js?v=1fd27df1';
 import { fetchAnalytics } from './api/analytics.js?v=f0ba00d2';
 import { renderAnalytics } from './components/analytics.js?v=e9b6ce1c';
 import { renderCacheStatus } from './components/cache-status.js?v=764c4d18';
-import { renderAllReports, updateAllReportsRow } from './components/allReports.js?v=4229bcf3';
-import { patchReportFlags } from './api/allReports.js?v=7d4bf7df';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=5789a2cc';
+import { patchReportFlags, fetchReportById } from './api/allReports.js?v=117740c3';
 
 // ---------------------------------------------------------------------------
 // State
@@ -565,6 +565,39 @@ function wireEvents() {
       let user;
       try { user = JSON.parse(btn.dataset.userobj); } catch (_) { return; }
       loadUserDetail(user);
+      return;
+    }
+
+    if (action === 'ar-view-detail') {
+      const rid = btn.dataset.rid;
+      if (!rid) return;
+      btn.disabled = true;
+      try {
+        const report = await fetchReportById(currentSession, rid);
+        renderAllReportsDetail(report, {
+          onAction: async (detailAction, detailRid, detailBtn) => {
+            try {
+              if (detailAction === 'ar-flag') {
+                await patchReportFlags(currentSession, detailRid, { is_flagged: true });
+                updateAllReportsRow(detailRid, true, false);
+              } else if (detailAction === 'ar-hide') {
+                await patchReportFlags(currentSession, detailRid, { is_flagged: true, is_hidden: true });
+                updateAllReportsRow(detailRid, true, true);
+              } else if (detailAction === 'ar-release') {
+                await patchReportFlags(currentSession, detailRid, { is_flagged: false, is_hidden: false });
+                updateAllReportsRow(detailRid, false, false);
+              }
+              window.ppToast?.success('Report updated.');
+            } catch (err) {
+              if (detailBtn) detailBtn.disabled = false;
+              window.ppToast?.error(err.message);
+            }
+          },
+        });
+      } catch (err) {
+        btn.disabled = false;
+        window.ppToast?.error(err.message);
+      }
       return;
     }
 

@@ -79,6 +79,31 @@ describe('fetchAllReports', () => {
   });
 });
 
+describe('fetchReportById', () => {
+  test('fetches a single report by id from user_configs', async () => {
+    const report = { id: 42, app_id: '730', title: 'Counter-Strike 2', is_flagged: false, is_hidden: false };
+    const { ctx, calls } = loadApi(() => Promise.resolve({ ok: true, json: () => Promise.resolve([report]) }));
+
+    const result = await ctx.fetchReportById(makeSession(), '42');
+
+    expect(result).toEqual(report);
+    expect(calls[0].url).toContain('user_configs');
+    expect(calls[0].url).toContain('id=eq.42');
+  });
+
+  test('throws when report is not found', async () => {
+    const { ctx } = loadApi(() => Promise.resolve({ ok: true, json: () => Promise.resolve([]) }));
+
+    await expect(ctx.fetchReportById(makeSession(), '99')).rejects.toThrow('Report not found');
+  });
+
+  test('throws when response is not ok', async () => {
+    const { ctx } = loadApi(() => Promise.resolve({ ok: false, status: 403 }));
+
+    await expect(ctx.fetchReportById(makeSession(), '1')).rejects.toThrow('403');
+  });
+});
+
 describe('patchReportFlags', () => {
   test('sends PATCH to user_configs with correct id filter', async () => {
     const { ctx, calls } = loadApi(() => Promise.resolve({ ok: true }));

@@ -2,6 +2,18 @@ import { SUPABASE_URL } from '../config.js?v=ffed3d84';
 import { supabaseHeaders } from '../utils.js?v=86489fcb';
 
 const COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,source,is_flagged,is_hidden,created_at';
+const DETAIL_COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,proton_version,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,vram_mb,os,kernel,duration,duration_minutes,notes,form_responses,config_key,game_owned,source,is_flagged,is_hidden,created_at,updated_at';
+
+export async function fetchReportById(session, id) {
+  const res = await fetch(
+    `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${encodeURIComponent(id)}&select=${DETAIL_COLS}&limit=1`,
+    { headers: supabaseHeaders(session) },
+  );
+  if (!res.ok) throw new Error(`Failed to fetch report: ${res.status}`);
+  const rows = await res.json();
+  if (!rows.length) throw new Error('Report not found');
+  return rows[0];
+}
 
 export async function fetchAllReports(session, { search = '', status = 'clean', dateFrom = '', dateTo = '', limit = 500 } = {}) {
   let url = `${SUPABASE_URL}/rest/v1/user_configs?select=${COLS}&order=created_at.desc&limit=${limit}`;
