@@ -24,9 +24,14 @@ DEFAULT_GOG_CATALOG_CACHE_PATH = (
     Path(__file__).resolve().parents[2] / ".cache" / "gog-catalog-cache.json"
 )
 GOG_CATALOG_CACHE_MAX_AGE_SECONDS = 7 * 86400  # 7 days
+# Use the modern catalog.gog.com API (what the GOG website catalog page calls).
+# The old embed.gog.com/games/ajax/filtered endpoint hard-caps deep pagination
+# at ~12,288 items (page 256) and 400s past it, silently dropping the tail of
+# the alphabet (SWAT 4 among them). catalog.gog.com paginates the full set.
 GOG_CATALOG_URL = (
-    "https://embed.gog.com/games/ajax/filtered"
-    "?mediaType=game&sort=title&limit=48&page={page}"
+    "https://catalog.gog.com/v1/catalog"
+    "?limit=48&page={page}&order=asc:title"
+    "&productType=in:game,pack&countryCode=US&locale=en-US&currencyCode=USD"
 )
 
 _gog_catalog_cache: dict[str, str] | None = None
@@ -95,9 +100,9 @@ def _fetch_all_pages() -> dict[str, str]:
             continue
 
         if page == 1:
-            total_pages = int(data.get("totalPages", 1))
+            total_pages = int(data.get("pages", 1))
             log(
-                f"[gog-catalog] {data.get('totalResults', '?')} GOG games"
+                f"[gog-catalog] {data.get('productCount', '?')} GOG games"
                 f" across {total_pages} pages"
             )
 

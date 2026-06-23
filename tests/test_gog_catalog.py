@@ -12,10 +12,11 @@ def _reset():
 
 
 def _make_page(products: list, total_pages: int = 1, total_results: int = 1) -> bytes:
+    # catalog.gog.com/v1/catalog response shape: pages + productCount + products.
     return json.dumps({
         "products": products,
-        "totalPages": total_pages,
-        "totalResults": total_results,
+        "pages": total_pages,
+        "productCount": total_results,
     }).encode("utf-8")
 
 
