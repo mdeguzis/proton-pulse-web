@@ -1,5 +1,5 @@
 import { escapeHtml, fmtDateTime } from '../utils.js?v=86489fcb';
-import { fetchAllReports } from '../api/allReports.js?v=3e62862a';
+import { fetchAllReports } from '../api/allReports.js?v=7d4bf7df';
 
 function statusBadges(isF, isH) {
   if (isF || isH) {
@@ -28,8 +28,10 @@ export async function renderAllReports(session) {
   const table     = document.getElementById('all-reports-table');
   const tbody     = document.getElementById('all-reports-tbody');
   const countEl   = document.getElementById('all-reports-count');
-  const searchEl  = document.getElementById('all-reports-search');
-  const statusEl  = document.getElementById('all-reports-status-filter');
+  const searchEl   = document.getElementById('all-reports-search');
+  const statusEl   = document.getElementById('all-reports-status-filter');
+  const dateFromEl = document.getElementById('all-reports-date-from');
+  const dateToEl   = document.getElementById('all-reports-date-to');
 
   loading.hidden = false;
   empty.hidden   = true;
@@ -37,9 +39,11 @@ export async function renderAllReports(session) {
   if (countEl) countEl.hidden = true;
 
   try {
-    const q      = searchEl ? searchEl.value.trim() : '';
-    const status = statusEl ? statusEl.value : '';
-    const reports = await fetchAllReports(session, { search: q, status });
+    const q        = searchEl ? searchEl.value.trim() : '';
+    const status   = statusEl ? statusEl.value : 'clean';
+    const dateFrom = dateFromEl ? dateFromEl.value : '';
+    const dateTo   = dateToEl ? dateToEl.value : '';
+    const reports = await fetchAllReports(session, { search: q, status, dateFrom, dateTo });
 
     loading.hidden = true;
 

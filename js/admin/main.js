@@ -17,9 +17,8 @@ import { renderUserDetail } from './components/userDetail.js?v=1fd27df1';
 import { fetchAnalytics } from './api/analytics.js?v=f0ba00d2';
 import { renderAnalytics } from './components/analytics.js?v=e9b6ce1c';
 import { renderCacheStatus } from './components/cache-status.js?v=764c4d18';
-import { renderPending, closePendingReview } from './components/pending.js?v=1fc5b1b4';
-import { renderAllReports, updateAllReportsRow } from './components/allReports.js?v=fc80dada';
-import { patchReportFlags } from './api/allReports.js?v=3e62862a';
+import { renderAllReports, updateAllReportsRow } from './components/allReports.js?v=4229bcf3';
+import { patchReportFlags } from './api/allReports.js?v=7d4bf7df';
 
 // ---------------------------------------------------------------------------
 // State
@@ -121,10 +120,6 @@ async function applyAdminChange(uuid, role, permissions) {
 
 async function loadAllReports() {
   await renderAllReports(currentSession);
-}
-
-async function loadPending() {
-  await renderPending(currentSession);
 }
 
 async function loadFlagged() {
@@ -350,7 +345,6 @@ async function loadAnalytics() {
 // Maps each tab to its data loader so tab clicks and ?tab= restore share one path.
 const TAB_LOADERS = {
   'all-reports': loadAllReports,
-  pending: loadPending,
   flagged: loadFlagged,
   banned: loadBanned,
   users: loadUsers,
@@ -363,6 +357,7 @@ const TAB_LOADERS = {
 // refresh restores the same tab. Unknown names fall back to 'users' (the
 // default landing tab).
 function activateTab(tabName, { updateUrl = true } = {}) {
+  if (tabName === 'pending') tabName = 'all-reports';
   if (!TAB_LOADERS[tabName]) tabName = 'users';
   // Never land on a tab this admin lacks access to (e.g. via a stale ?tab= URL).
   if (currentAdmin && !canSeeTab(currentAdmin.role, currentAdmin.permissions, tabName)) tabName = 'users';
@@ -425,6 +420,8 @@ function wireEvents() {
   // Search inputs - live filter on enter
   document.getElementById('all-reports-search').addEventListener('keydown', e => { if (e.key === 'Enter') loadAllReports(); });
   document.getElementById('all-reports-status-filter').addEventListener('change', loadAllReports);
+  document.getElementById('all-reports-date-from').addEventListener('change', loadAllReports);
+  document.getElementById('all-reports-date-to').addEventListener('change', loadAllReports);
   document.getElementById('flagged-search').addEventListener('keydown', e => { if (e.key === 'Enter') loadFlagged(); });
   document.getElementById('flagged-type').addEventListener('change', loadFlagged);
   document.getElementById('flagged-date-from').addEventListener('change', loadFlagged);
@@ -724,8 +721,6 @@ function wireEvents() {
 
   // Browser back button / swipe back from detail screens.
   window.addEventListener('popstate', e => {
-    const pendingDetail = document.getElementById('pending-detail');
-    if (pendingDetail && !pendingDetail.hidden) { closePendingReview(); return; }
     if (!document.getElementById('tab-user-detail').hidden) activateTab(userDetailReturnTab);
     else if (!document.getElementById('tab-flag-detail').hidden) activateTab('flagged');
   });
@@ -988,7 +983,7 @@ async function init() {
   renderPermissionSummary();
   applyTabVisibility();
   wireEvents();
-  ['pending-table', 'flagged-table', 'banned-table', 'users-table', 'admins-table', 'phrases-table'].forEach(setupTableSort);
+  ['flagged-table', 'banned-table', 'users-table', 'admins-table', 'phrases-table'].forEach(setupTableSort);
 
   const params = new URLSearchParams(window.location.search);
 

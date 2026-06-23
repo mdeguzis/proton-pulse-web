@@ -16,7 +16,7 @@ function loadApi(fetchImpl) {
 }
 
 describe('fetchAllReports', () => {
-  test('fetches user_configs ordered by created_at desc', async () => {
+  test('fetches user_configs ordered by created_at desc, defaults to clean', async () => {
     const rows = [{ id: 1, app_id: '730', title: 'Counter-Strike 2', rating: 'platinum', source: 'pulse', created_at: '2025-01-01T00:00:00Z' }];
     const { ctx, calls } = loadApi(() => Promise.resolve({ ok: true, json: () => Promise.resolve(rows) }));
 
@@ -26,6 +26,16 @@ describe('fetchAllReports', () => {
     expect(calls).toHaveLength(1);
     expect(calls[0].url).toContain('/user_configs');
     expect(calls[0].url).toContain('order=created_at.desc');
+    expect(calls[0].url).toContain('is_flagged=eq.false');
+  });
+
+  test('applies date range filter when provided', async () => {
+    const { ctx, calls } = loadApi(() => Promise.resolve({ ok: true, json: () => Promise.resolve([]) }));
+
+    await ctx.fetchAllReports(makeSession(), { dateFrom: '2025-01-01', dateTo: '2025-06-30' });
+
+    expect(calls[0].url).toContain('created_at=gte.');
+    expect(calls[0].url).toContain('created_at=lte.');
   });
 
   test('appends search filter when query is provided', async () => {

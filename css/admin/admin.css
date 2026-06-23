@@ -200,6 +200,7 @@
   color: var(--text, #eee);
 }
 
+.admin-input--wide { min-width: 240px; flex: 1; }
 .admin-input--date {
   padding: 4px 8px;
 }
