@@ -1,10 +1,10 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=30cf98fd';
-import { loadSearchIndex, searchIndex } from './search.js?v=d9c7b9b8';
+import { loadSearchIndex, searchIndex } from './search.js?v=a2fdfd30';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
-import { renderGameCard } from '../lib/card.js?v=cebb8272';
+import { renderGameCard } from '../lib/card.js?v=633df5fd';
 
 const PAGE_SIZE = 10;
 const KNOWN_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked']);

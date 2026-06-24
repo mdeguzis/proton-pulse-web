@@ -1,5 +1,5 @@
 // Entry module for index.html (homepage). Migrated from index.js.
-import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=85cf4195';
+import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e345596';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
 // search dropdown, auth indicator) lives in topbar.js.

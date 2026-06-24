@@ -35,6 +35,10 @@ GOG_CATALOG_URL = (
 )
 
 _gog_catalog_cache: dict[str, str] | None = None
+# Parallel map {str(product_id): cover_image_url} populated alongside the title
+# catalog. Kept separate so load_gog_catalog stays a {id: title} contract for
+# existing callers (search-index stub generation).
+_gog_covers_cache: dict[str, str] | None = None
 
 
 def load_gog_catalog(
@@ -45,9 +49,10 @@ def load_gog_catalog(
     """Return {str(product_id): title} for all GOG games.
 
     Reads from local cache if fresh enough, otherwise fetches from the API.
-    Returns empty dict on failure so callers degrade gracefully.
+    Returns empty dict on failure so callers degrade gracefully. Cover image
+    URLs are loaded into a parallel cache; use load_gog_covers() to read them.
     """
-    global _gog_catalog_cache
+    global _gog_catalog_cache, _gog_covers_cache
     if _gog_catalog_cache is not None and not force_refresh:
         return _gog_catalog_cache
 
@@ -57,34 +62,55 @@ def load_gog_catalog(
             age = time.time() - cached.get("_ts", 0)
             if age < max_age_seconds:
                 _gog_catalog_cache = cached.get("catalog", {})
+                _gog_covers_cache = cached.get("covers", {})
                 log(
                     f"[gog-catalog] loaded {len(_gog_catalog_cache):,} entries"
-                    f" from cache (age {age / 3600:.1f}h)"
+                    f" ({len(_gog_covers_cache):,} covers) from cache (age {age / 3600:.1f}h)"
                 )
                 return _gog_catalog_cache
         except (OSError, json.JSONDecodeError, KeyError):
             pass
 
-    log("[gog-catalog] fetching full GOG catalog from embed.gog.com ...")
+    log("[gog-catalog] fetching full GOG catalog from catalog.gog.com ...")
     try:
-        catalog = _fetch_all_pages()
+        catalog, covers = _fetch_all_pages()
     except Exception as exc:
         log(f"[gog-catalog] WARN: catalog fetch failed: {exc}; search index will lack GOG stubs")
         _gog_catalog_cache = {}
+        _gog_covers_cache = {}
         return _gog_catalog_cache
 
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(
-        json.dumps({"_ts": int(time.time()), "catalog": catalog}, ensure_ascii=False),
+        json.dumps(
+            {"_ts": int(time.time()), "catalog": catalog, "covers": covers},
+            ensure_ascii=False,
+        ),
         encoding="utf-8",
     )
-    log(f"[gog-catalog] cached {len(catalog):,} entries to {cache_path}")
+    log(f"[gog-catalog] cached {len(catalog):,} entries ({len(covers):,} covers) to {cache_path}")
     _gog_catalog_cache = catalog
+    _gog_covers_cache = covers
     return catalog
 
 
-def _fetch_all_pages() -> dict[str, str]:
+def load_gog_covers(
+    cache_path: Path = DEFAULT_GOG_CATALOG_CACHE_PATH,
+    max_age_seconds: int = GOG_CATALOG_CACHE_MAX_AGE_SECONDS,
+) -> dict[str, str]:
+    """Return {str(product_id): cover_image_url} for GOG games.
+
+    Triggers a catalog load if needed so the covers cache is populated.
+    """
+    global _gog_covers_cache
+    if _gog_covers_cache is None:
+        load_gog_catalog(cache_path=cache_path, max_age_seconds=max_age_seconds)
+    return _gog_covers_cache or {}
+
+
+def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str]]:
     catalog: dict[str, str] = {}
+    covers: dict[str, str] = {}
     page = 1
     total_pages = 1
     skipped_pages = 0
@@ -111,6 +137,9 @@ def _fetch_all_pages() -> dict[str, str]:
             title = (product.get("title") or "").strip()
             if pid and title:
                 catalog[str(pid)] = title
+                cover = (product.get("coverHorizontal") or "").strip()
+                if cover:
+                    covers[str(pid)] = cover
 
         if page % 100 == 0:
             log(f"[gog-catalog] page {page}/{total_pages} ({len(catalog):,} games so far)")
@@ -118,16 +147,15 @@ def _fetch_all_pages() -> dict[str, str]:
         time.sleep(_INTER_PAGE_DELAY_SECONDS)
 
     log(f"[gog-catalog] complete: {len(catalog):,} GOG games ({skipped_pages} page(s) skipped after retries)")
-    return catalog
+    return catalog, covers
 
 
 def _fetch_page(page: int) -> dict:
     """Fetch one catalog page, retrying transient failures with backoff.
 
-    embed.gog.com returns HTTP 429 under load. The old code skipped those pages
-    outright, which silently dropped thousands of games. Retry with exponential
-    backoff (honoring Retry-After when present) and only give up after
-    _MAX_PAGE_ATTEMPTS, so a busy moment no longer truncates the catalog.
+    catalog.gog.com returns HTTP 429 under load. Retry with exponential backoff
+    (honoring Retry-After when present) and only give up after _MAX_PAGE_ATTEMPTS,
+    so a busy moment no longer truncates the catalog.
     """
     url = GOG_CATALOG_URL.format(page=page)
     req = request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -154,5 +182,6 @@ def _fetch_page(page: int) -> dict:
 
 
 def flush_gog_catalog_cache() -> None:
-    global _gog_catalog_cache
+    global _gog_catalog_cache, _gog_covers_cache
     _gog_catalog_cache = None
+    _gog_covers_cache = None

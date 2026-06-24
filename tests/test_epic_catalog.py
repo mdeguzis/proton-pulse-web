@@ -172,3 +172,48 @@ def test_fetch_page_does_not_retry_non_transient_status():
         with pytest.raises(HTTPError):
             epic_module._fetch_page(0)
     assert calls["n"] == 1
+
+
+# ── cover image capture ───────────────────────────────────────────────────────
+
+def test_pick_cover_prefers_wide_types():
+    images = [
+        {"type": "Thumbnail", "url": "https://img/thumb.jpg"},
+        {"type": "DieselStoreFrontWide", "url": "https://img/wide.jpg"},
+    ]
+    assert epic_module._pick_cover(images) == "https://img/wide.jpg"
+
+
+def test_pick_cover_falls_back_to_any_url():
+    images = [{"type": "SomethingElse", "url": "https://img/other.jpg"}]
+    assert epic_module._pick_cover(images) == "https://img/other.jpg"
+
+
+def test_pick_cover_empty_returns_blank():
+    assert epic_module._pick_cover([]) == ""
+    assert epic_module._pick_cover(None) == ""
+
+
+def test_fetch_page_captures_covers():
+    def fake_urlopen(req, timeout=30):
+        class FakeResp:
+            def read(self):
+                return json.dumps({
+                    "data": {"Catalog": {"searchStore": {
+                        "elements": [{
+                            "namespace": "ns1", "title": "Game",
+                            "keyImages": [{"type": "OfferImageWide", "url": "https://img/g.jpg"}],
+                        }],
+                        "paging": {"count": 1, "total": 1},
+                    }}}
+                }).encode("utf-8")
+            def __enter__(self): return self
+            def __exit__(self, *a): pass
+        return FakeResp()
+    epic_module._epic_catalog_cache = None
+    epic_module._epic_covers_cache = None
+    with patch("scripts.pipeline.epic_catalog.request.urlopen", side_effect=fake_urlopen), \
+         patch("scripts.pipeline.epic_catalog.time.sleep"):
+        catalog, covers = epic_module._fetch_all_pages()
+    assert catalog == {"ns1": "Game"}
+    assert covers == {"ns1": "https://img/g.jpg"}

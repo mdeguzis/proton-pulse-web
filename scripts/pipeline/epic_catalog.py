@@ -40,6 +40,10 @@ _EPIC_QUERY = """
       elements {
         title
         namespace
+        keyImages {
+          type
+          url
+        }
       }
       paging {
         count
@@ -58,6 +62,11 @@ _HEADERS = {
 }
 
 _epic_catalog_cache: dict[str, str] | None = None
+# Parallel map {namespace: cover_image_url}, kept separate so load_epic_catalog
+# stays a {namespace: title} contract. Read it via load_epic_covers().
+_epic_covers_cache: dict[str, str] | None = None
+# keyImages types worth using as a header/box image, best first.
+_EPIC_COVER_TYPES = ("DieselStoreFrontWide", "OfferImageWide", "Featured", "DieselGameBoxWide")
 
 
 def load_epic_catalog(
@@ -68,9 +77,10 @@ def load_epic_catalog(
     """Return {namespace: title} for all Epic Games Store games.
 
     Reads from local cache if fresh enough, otherwise fetches from the API.
-    Returns empty dict on failure so callers degrade gracefully.
+    Returns empty dict on failure so callers degrade gracefully. Cover image
+    URLs load into a parallel cache; read them via load_epic_covers().
     """
-    global _epic_catalog_cache
+    global _epic_catalog_cache, _epic_covers_cache
     if _epic_catalog_cache is not None and not force_refresh:
         return _epic_catalog_cache
 
@@ -80,9 +90,10 @@ def load_epic_catalog(
             age = time.time() - cached.get("_ts", 0)
             if age < max_age_seconds:
                 _epic_catalog_cache = cached.get("catalog", {})
+                _epic_covers_cache = cached.get("covers", {})
                 log(
                     f"[epic-catalog] loaded {len(_epic_catalog_cache):,} entries"
-                    f" from cache (age {age / 3600:.1f}h)"
+                    f" ({len(_epic_covers_cache):,} covers) from cache (age {age / 3600:.1f}h)"
                 )
                 return _epic_catalog_cache
         except (OSError, json.JSONDecodeError, KeyError):
@@ -90,24 +101,54 @@ def load_epic_catalog(
 
     log("[epic-catalog] fetching full Epic catalog from store.epicgames.com ...")
     try:
-        catalog = _fetch_all_pages()
+        catalog, covers = _fetch_all_pages()
     except Exception as exc:
         log(f"[epic-catalog] WARN: catalog fetch failed: {exc}; search index will lack Epic stubs")
         _epic_catalog_cache = {}
+        _epic_covers_cache = {}
         return _epic_catalog_cache
 
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(
-        json.dumps({"_ts": int(time.time()), "catalog": catalog}, ensure_ascii=False),
+        json.dumps(
+            {"_ts": int(time.time()), "catalog": catalog, "covers": covers},
+            ensure_ascii=False,
+        ),
         encoding="utf-8",
     )
-    log(f"[epic-catalog] cached {len(catalog):,} entries to {cache_path}")
+    log(f"[epic-catalog] cached {len(catalog):,} entries ({len(covers):,} covers) to {cache_path}")
     _epic_catalog_cache = catalog
+    _epic_covers_cache = covers
     return catalog
 
 
-def _fetch_all_pages() -> dict[str, str]:
+def load_epic_covers(
+    cache_path: Path = DEFAULT_EPIC_CATALOG_CACHE_PATH,
+    max_age_seconds: int = EPIC_CATALOG_CACHE_MAX_AGE_SECONDS,
+) -> dict[str, str]:
+    """Return {namespace: cover_image_url} for Epic games."""
+    global _epic_covers_cache
+    if _epic_covers_cache is None:
+        load_epic_catalog(cache_path=cache_path, max_age_seconds=max_age_seconds)
+    return _epic_covers_cache or {}
+
+
+def _pick_cover(key_images: list) -> str:
+    """Choose the best wide header image from an Epic keyImages list."""
+    by_type = {img.get("type"): (img.get("url") or "").strip() for img in (key_images or []) if isinstance(img, dict)}
+    for t in _EPIC_COVER_TYPES:
+        if by_type.get(t):
+            return by_type[t]
+    # fall back to the first non-empty image url of any type
+    for url in by_type.values():
+        if url:
+            return url
+    return ""
+
+
+def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str]]:
     catalog: dict[str, str] = {}
+    covers: dict[str, str] = {}
     start = 0
     total = None
 
@@ -131,6 +172,9 @@ def _fetch_all_pages() -> dict[str, str]:
             title = (elem.get("title") or "").strip()
             if namespace and title:
                 catalog[namespace] = title
+                cover = _pick_cover(elem.get("keyImages"))
+                if cover:
+                    covers[namespace] = cover
 
         start += len(elements)
         if not elements or start >= total:
@@ -140,8 +184,8 @@ def _fetch_all_pages() -> dict[str, str]:
             log(f"[epic-catalog] fetched {start}/{total} ({len(catalog):,} unique namespaces so far)")
         time.sleep(_INTER_PAGE_DELAY_SECONDS)
 
-    log(f"[epic-catalog] complete: {len(catalog):,} Epic games")
-    return catalog
+    log(f"[epic-catalog] complete: {len(catalog):,} Epic games ({len(covers):,} covers)")
+    return catalog, covers
 
 
 def _fetch_page(start: int) -> dict:
@@ -177,5 +221,6 @@ def _fetch_page(start: int) -> dict:
 
 
 def flush_epic_catalog_cache() -> None:
-    global _epic_catalog_cache
+    global _epic_catalog_cache, _epic_covers_cache
     _epic_catalog_cache = None
+    _epic_covers_cache = None

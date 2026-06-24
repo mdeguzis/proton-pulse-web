@@ -162,5 +162,35 @@ def test_fetch_all_pages_skips_only_after_retries_exhausted():
         return json.loads(_make_page([{"id": page, "title": f"Game {page}"}], total_pages=3))
     with patch("scripts.pipeline.gog_catalog._fetch_page", side_effect=fake_fetch_page), \
          patch("scripts.pipeline.gog_catalog.time.sleep"):
-        catalog = gog_module._fetch_all_pages()
+        catalog, _covers = gog_module._fetch_all_pages()
     assert catalog == {"1": "Game 1", "3": "Game 3"}
+
+
+def test_fetch_all_pages_captures_cover_images():
+    def fake_fetch_page(page):
+        return {
+            "products": [{"id": 5, "title": "Cover Game",
+                          "coverHorizontal": "https://images.gog-statics.com/abc.png"}],
+            "pages": 1,
+            "productCount": 1,
+        }
+    with patch("scripts.pipeline.gog_catalog._fetch_page", side_effect=fake_fetch_page), \
+         patch("scripts.pipeline.gog_catalog.time.sleep"):
+        catalog, covers = gog_module._fetch_all_pages()
+    assert catalog == {"5": "Cover Game"}
+    assert covers == {"5": "https://images.gog-statics.com/abc.png"}
+
+
+def test_load_gog_covers_reads_from_cache(tmp_path):
+    _reset()
+    gog_module._gog_covers_cache = None
+    cache_path = tmp_path / "gog-catalog-cache.json"
+    cache_path.write_text(json.dumps({
+        "_ts": int(time.time()),
+        "catalog": {"5": "Cover Game"},
+        "covers": {"5": "https://images.gog-statics.com/abc.png"},
+    }))
+    covers = gog_module.load_gog_covers(cache_path=cache_path)
+    assert covers == {"5": "https://images.gog-statics.com/abc.png"}
+    _reset()
+    gog_module._gog_covers_cache = None

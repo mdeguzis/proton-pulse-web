@@ -81,6 +81,16 @@
   background: var(--s2);
   color: var(--muted);
 }
+/* Not-yet-rated games: muted outlined pill so it reads as "no data" rather than
+   a real tier. */
+.game-card-badge--unrated {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border, #2a3340);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
 .game-card-pills {
   display: flex;
   align-items: center;

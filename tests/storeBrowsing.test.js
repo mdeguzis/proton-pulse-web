@@ -87,6 +87,19 @@ describe('store pill rendering', () => {
   });
 });
 
+describe('non-Steam box art', () => {
+  const steamImgSrc = read('js/app/lib/steam-img.js');
+  test('steam-img resolves gog/epic ids from nonsteam-images.json and skips the Steam CDN', () => {
+    expect(steamImgSrc).toContain('nonsteam-images.json');
+    expect(steamImgSrc).toContain("id.startsWith('gog:') || id.startsWith('epic:')");
+    expect(steamImgSrc).toContain('route=nonsteam-images-json');
+  });
+  test('the game-page stub image routes through the loader bridge', () => {
+    const gamePageSrc = read('js/app/components/game-page.js');
+    expect(gamePageSrc).toContain('onerror="window.__steamImgLoad(this)"');
+  });
+});
+
 describe('search index loads from prod on staging', () => {
   test('loadSearchIndex uses USES_PROD_DATA + SITE_ROOT, not a hardcoded host check', () => {
     expect(searchSrc).toContain('USES_PROD_DATA');

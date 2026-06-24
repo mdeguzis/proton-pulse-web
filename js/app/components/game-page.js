@@ -7,13 +7,13 @@ import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=bac2f4eb';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=ac040be6';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=220e13ea';
-import { enhanceAuthorBlocks } from './author.js?v=e88902cd';
+import { enhanceAuthorBlocks } from './author.js?v=ce03b00d';
 import { renderConfigCard } from './config-cards.js?v=473be757';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=3d873bb3';
-import { renderCard } from './report-card.js?v=c123d7ca';
-import { loadSearchIndex, searchIndex } from './search.js?v=d9c7b9b8';
+import { renderCard } from './report-card.js?v=ec52319e';
+import { loadSearchIndex, searchIndex } from './search.js?v=a2fdfd30';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=df5b5024';
-import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=85cf4195';
+import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=3e345596';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';
 
 let _steamCatalogCache = null;
@@ -213,8 +213,8 @@ export async function renderGamePage(appId) {
       el.innerHTML = `
         <div class="stub-page">
           <div class="stub-header">
-            <img class="stub-img" src="${esc(imgUrl)}" alt="" loading="lazy"
-              onerror="this.style.display='none'">
+            <img class="stub-img" src="${esc(imgUrl)}" data-appid="${esc(String(appId))}" alt="" loading="lazy"
+              onerror="window.__steamImgLoad(this)">
             <div class="stub-meta">
               <h1 class="stub-title">${esc(stubTitle)}</h1>
               <div class="stub-pills">

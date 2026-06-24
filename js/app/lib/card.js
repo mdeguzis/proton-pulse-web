@@ -2,7 +2,7 @@
 // thumbnail | title + sub | badge card layout used everywhere.
 import { STEAM_IMG } from '../config.js?v=df5b5024';
 import { esc } from '../utils.js?v=f5dda5b6';
-import { loadSteamImg as _loadSteamImg } from './steam-img.js?v=85cf4195';
+import { loadSteamImg as _loadSteamImg } from './steam-img.js?v=3e345596';
 
 const TIER_COLORS = {
   platinum: { bg: '#b4c7dc', color: '#0a0c10' },
@@ -25,7 +25,11 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
     ? `<img class="game-card-thumb" src="${primarySrc}" data-appid="${aid}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">`
     : `<div class="game-card-thumb game-card-thumb--missing">Box art missing</div>`;
 
-  const label = tier ? tier.toUpperCase() : (badge || '');
+  // Rating pill. A real tier colours the pill; an explicit badge (e.g. "Pulse")
+  // is shown as-is; otherwise fall back to a muted "No Rating" pill so every
+  // card carries a rating slot, including not-yet-rated catalog games.
+  const label = tier ? tier.toUpperCase() : (badge || 'No Rating');
+  const isNoRating = !tier && !badge;
   let badgeStyle = '';
   if (tier && TIER_COLORS[tier.toLowerCase()]) {
     const c = TIER_COLORS[tier.toLowerCase()];
@@ -33,9 +37,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   } else if (badgeBg) {
     badgeStyle = `style="background:${badgeBg};color:${badgeColor || '#fff'}"`;
   }
-  const badgeHtml = label
-    ? `<span class="game-card-badge" ${badgeStyle}>${esc(label)}</span>`
-    : '';
+  const badgeHtml = `<span class="game-card-badge${isNoRating ? ' game-card-badge--unrated' : ''}" ${badgeStyle}>${esc(label)}</span>`;
   const storePillHtml = storePill
     ? `<span class="game-card-store-pill game-card-store-pill--${esc(String(storePill).toLowerCase())}">${esc(storePill)}</span>`
     : '';
