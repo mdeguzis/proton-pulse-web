@@ -1,10 +1,10 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=30cf98fd';
-import { loadSearchIndex, searchIndex } from './search.js?v=a2fdfd30';
+import { loadSearchIndex, searchIndex } from './search.js?v=b2d692f6';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
-import { renderGameCard } from '../lib/card.js?v=633df5fd';
+import { renderGameCard } from '../lib/card.js?v=8f45a69a';
 
 const PAGE_SIZE = 10;
 const KNOWN_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked']);
@@ -213,7 +213,7 @@ export async function renderHomePage() {
       <div class="cards" id="cards-recent"></div>
       <div id="load-more-recent"></div>
       <div class="section-label-row" style="margin-top:24px;margin-bottom:10px">
-        <span class="section-label" style="margin:0">Popular on Steam</span>
+        <span class="section-label" id="popular-section-label" style="margin:0">Popular on Steam</span>
       </div>
       <div class="cards" id="cards-popular"></div>
       <div id="load-more-popular"></div>`;
@@ -237,22 +237,50 @@ export async function renderHomePage() {
       </a>`;
     }
 
+    function _popularSectionLabel(sel) {
+      if (!sel || sel.size === 0 || sel.has('all') || sel.has('steam')) return 'Popular on Steam';
+      if (sel.size === 1 && sel.has('gog')) return 'Popular GOG Games';
+      if (sel.size === 1 && sel.has('epic')) return 'Popular Epic Games';
+      return 'Popular Games';
+    }
+
     function applyPopularFilters() {
-      // Build the candidate pool from the tier selection. Rated games show by
-      // default; the unrated catalog games (no reports yet) only appear when
-      // "Not Rated Yet" (or "All") is selected, so they stay hidden otherwise.
-      const wantUnrated = tierSel.has('all') || tierSel.has('unrated');
-      const onlyUnrated = tierSel.size === 1 && tierSel.has('unrated');
-      const pool = [
-        ...(onlyUnrated ? [] : ratedGames),
-        ...(wantUnrated ? unratedGames : []),
-      ];
-      // Map rating -> tier ('pending' for unrated) so the shared Set-based tier
-      // filter treats them consistently with recent reports.
-      const asReports = pool.map(g => {
-        const t = String(g.rating || '').toLowerCase();
-        return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending' };
-      });
+      const labelEl = document.getElementById('popular-section-label');
+      if (labelEl) labelEl.textContent = _popularSectionLabel(storeSel);
+
+      // When filtering to non-Steam stores only, pull from the search index (which
+      // covers GOG/Epic catalog entries) instead of most_played.json (Steam only).
+      const wantNonSteamOnly = storeSel.size > 0 && !storeSel.has('all') && !storeSel.has('steam');
+      let asReports;
+      if (wantNonSteamOnly) {
+        asReports = (searchIndex || [])
+          .filter(row => row[5] && storeSel.has(row[5]))
+          .sort((a, b) => (a[1] || '').localeCompare(b[1] || ''))
+          .map(row => {
+            const t = String(row[2] || '').toLowerCase();
+            return {
+              appId: row[0], title: row[1],
+              tier: KNOWN_TIERS.has(t) ? t : 'pending',
+              protondbCount: row[3] || 0, pulseCount: row[4] || 0, appType: row[5],
+            };
+          });
+      } else {
+        // Build the candidate pool from the tier selection. Rated games show by
+        // default; the unrated catalog games (no reports yet) only appear when
+        // "Not Rated Yet" (or "All") is selected, so they stay hidden otherwise.
+        const wantUnrated = tierSel.has('all') || tierSel.has('unrated');
+        const onlyUnrated = tierSel.size === 1 && tierSel.has('unrated');
+        const pool = [
+          ...(onlyUnrated ? [] : ratedGames),
+          ...(wantUnrated ? unratedGames : []),
+        ];
+        // Map rating -> tier ('pending' for unrated) so the shared Set-based tier
+        // filter treats them consistently with recent reports.
+        asReports = pool.map(g => {
+          const t = String(g.rating || '').toLowerCase();
+          return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending' };
+        });
+      }
       const filtered = _filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel);
       const cardsEl = document.getElementById('cards-popular');
       const loadMoreEl = document.getElementById('load-more-popular');

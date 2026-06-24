@@ -53,7 +53,7 @@ describe('home page browse filters (multi-select)', () => {
   test('filters drive both recent and popular lists via Sets', () => {
     expect(homeSrc).toContain('let tierSel = new Set()');
     expect(homeSrc).toContain('let sourceSel = new Set()');
-    expect(homeSrc).toContain('_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel)');
+    expect(homeSrc).toContain('_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel)');
   });
 
   test('Not Rated Yet surfaces unrated catalog games in the popular section', () => {
@@ -68,6 +68,36 @@ describe('home page browse filters (multi-select)', () => {
     expect(homeSrc).toContain('id="home-filter-clear"');
     expect(homeSrc).toContain('tierSel = new Set();');
     expect(homeSrc).toContain('sourceSel = new Set();');
+    expect(homeSrc).toContain('storeSel = new Set();');
     expect(homeSrc).toContain("cb.checked = cb.value === 'all'");
+  });
+});
+
+describe('home page popular section -- store-aware label and pool', () => {
+  test('popular section label element has an id for dynamic updates', () => {
+    expect(homeSrc).toContain('id="popular-section-label"');
+  });
+
+  test('_popularSectionLabel returns correct label per store selection', () => {
+    expect(homeSrc).toContain('function _popularSectionLabel(sel)');
+    expect(homeSrc).toContain("return 'Popular on Steam'");
+    expect(homeSrc).toContain("return 'Popular GOG Games'");
+    expect(homeSrc).toContain("return 'Popular Epic Games'");
+    expect(homeSrc).toContain("return 'Popular Games'");
+  });
+
+  test('applyPopularFilters updates the label element text', () => {
+    expect(homeSrc).toContain('labelEl.textContent = _popularSectionLabel(storeSel)');
+  });
+
+  test('non-Steam-only store selection pulls from searchIndex stubs', () => {
+    expect(homeSrc).toContain("const wantNonSteamOnly = storeSel.size > 0 && !storeSel.has('all') && !storeSel.has('steam')");
+    expect(homeSrc).toContain('(searchIndex || [])');
+    expect(homeSrc).toContain('.filter(row => row[5] && storeSel.has(row[5]))');
+  });
+
+  test('Steam/all path still uses wantUnrated and unratedGames for tier compat', () => {
+    expect(homeSrc).toContain("const wantUnrated = tierSel.has('all') || tierSel.has('unrated')");
+    expect(homeSrc).toContain('...(wantUnrated ? unratedGames : [])');
   });
 });
