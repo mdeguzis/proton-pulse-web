@@ -7,20 +7,20 @@ const homeSrc = fs.readFileSync(
 );
 
 describe('home page browse filters (multi-select)', () => {
-  test('tier group is checkboxes with All first, plus Rated and Not Rated Yet', () => {
+  test('tier group is pill buttons with All first, plus Rated and Not Rated Yet', () => {
     expect(homeSrc).toContain('id="home-tier-checks"');
-    expect(homeSrc).toMatch(/value="all" checked><span>All<\/span>/);
-    expect(homeSrc).toContain('value="rated"><span>Rated</span>');
-    expect(homeSrc).toContain('value="unrated"><span>Not Rated Yet</span>');
+    expect(homeSrc).toContain('class="pg-filter pg-filter--active" type="button" data-value="all"');
+    expect(homeSrc).toContain('data-value="rated"');
+    expect(homeSrc).toContain('data-value="unrated"');
     ['platinum', 'gold', 'silver', 'bronze', 'borked'].forEach(t => {
-      expect(homeSrc).toContain(`value="${t}">`);
+      expect(homeSrc).toContain(`data-value="${t}"`);
     });
   });
 
-  test('source group is checkboxes with All first', () => {
+  test('source group is pill buttons with All first', () => {
     expect(homeSrc).toContain('id="home-source-checks"');
-    expect(homeSrc).toContain('value="protondb"><span>ProtonDB</span>');
-    expect(homeSrc).toContain('value="pulse"><span>Pulse</span>');
+    expect(homeSrc).toContain('data-value="protondb"');
+    expect(homeSrc).toContain('data-value="pulse"');
   });
 
   test('filters live in a popover toggled by a Filters button', () => {
@@ -42,12 +42,11 @@ describe('home page browse filters (multi-select)', () => {
     expect(homeSrc).toContain("if (v === 'pulse' && (r.pulseCount || 0) > 0) return true");
   });
 
-  test('checkbox group helper enforces All vs specific mutual exclusion', () => {
-    expect(homeSrc).toContain('function _wireCheckGroup(groupEl, onChange)');
-    expect(homeSrc).toContain('function _readCheckGroup(groupEl)');
-    // checking All clears specifics; last specific unchecked re-checks All
-    expect(homeSrc).toContain('if (cb.checked && allCb) allCb.checked = false');
-    expect(homeSrc).toContain('if (_readCheckGroup(groupEl).size === 0 && allCb) allCb.checked = true');
+  test('pill group helper enforces All vs specific mutual exclusion', () => {
+    expect(homeSrc).toContain('function _wirePillGroup(groupEl, onChange)');
+    expect(homeSrc).toContain('function _readPillGroup(groupEl)');
+    expect(homeSrc).toContain("allBtn.classList.remove('pg-filter--active')");
+    expect(homeSrc).toContain("if (_readPillGroup(groupEl).size === 0 && allBtn) allBtn.classList.add('pg-filter--active')");
   });
 
   test('filters drive both recent and popular lists via Sets', () => {
@@ -69,7 +68,8 @@ describe('home page browse filters (multi-select)', () => {
     expect(homeSrc).toContain('tierSel = new Set();');
     expect(homeSrc).toContain('sourceSel = new Set();');
     expect(homeSrc).toContain('storeSel = new Set();');
-    expect(homeSrc).toContain("cb.checked = cb.value === 'all'");
+    expect(homeSrc).toContain("g.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'))");
+    expect(homeSrc).toContain("allBtn.classList.add('pg-filter--active')");
   });
 });
 

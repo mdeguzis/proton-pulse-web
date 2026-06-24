@@ -50,10 +50,9 @@ describe('_filterByStore (behavioral)', () => {
 describe('store filter group in the home Filters popover', () => {
   test('store group exists with All first and all supported stores', () => {
     expect(homeSrc).toContain('id="home-store-checks"');
-    expect(homeSrc).toContain('data-group="store"');
-    expect(homeSrc).toMatch(/value="all" checked><span>All<\/span>/);
+    expect(homeSrc).toContain('class="pg-filter pg-filter--active" type="button" data-value="all"');
     ['steam', 'gog', 'epic'].forEach((s) => {
-      expect(homeSrc).toContain(`value="${s}">`);
+      expect(homeSrc).toContain(`data-value="${s}"`);
     });
   });
   test('storeSel is wired into both lists, the badge count, and clear', () => {

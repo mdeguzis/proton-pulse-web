@@ -140,7 +140,7 @@
   gap: 16px 24px;
 }
 .filter-panel--stack .filter-item { gap: 4px; min-width: 130px; }
-.filter-panel--stack .filter-checks { min-width: 120px; }
+.filter-panel--stack .pg-filter-group { min-width: 120px; }
 .filter-panel-footer--stack {
   flex-basis: 100%;
   margin-top: 2px;
@@ -162,35 +162,8 @@
   cursor: pointer;
 }
 
-/* Multi-select checkbox filter group. The label sits above a column of
-   checkable rows; "All" is the first row. Mirrors the clean panel styling of
-   the game-page report filters. */
-.filter-checks { display: flex; flex-direction: column; gap: 5px; }
-.filter-checks-label {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  margin-bottom: 1px;
-}
-.filter-check {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.8rem;
-  color: var(--text);
-  cursor: pointer;
-  user-select: none;
-  padding: 1px 0;
-}
-.filter-check input {
-  accent-color: var(--accent);
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-.filter-check:hover { color: var(--accent); }
+/* .filter-checks / .filter-check removed -- filter groups now use
+   .pg-filter-group + .pg-filter pill buttons (css/shared/filters.css) */
 
 /* Live ProtonDB summary note: shown when a game is not in our mirror but the
    user checked ProtonDB live. We only have the aggregate (tier + total), so we

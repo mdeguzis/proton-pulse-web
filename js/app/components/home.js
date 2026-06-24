@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=30cf98fd';
-import { loadSearchIndex, searchIndex } from './search.js?v=594f0fc3';
+import { loadSearchIndex, searchIndex } from './search.js?v=3e4b5a09';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=de2b700a';
@@ -72,33 +72,33 @@ function _filterByStore(reports, sel) {
   return reports.filter(r => sel.has(r.appType || appTypeFromAppId(r.appId)));
 }
 
-// Read the checked values (excluding 'all') from a checkbox filter group.
-function _readCheckGroup(groupEl) {
+// Read the active (non-all) pill values from a pg-filter-group element.
+function _readPillGroup(groupEl) {
   const set = new Set();
-  groupEl.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-    if (cb.value !== 'all' && cb.checked) set.add(cb.value);
+  groupEl.querySelectorAll('.pg-filter').forEach(btn => {
+    if (btn.dataset.value !== 'all' && btn.classList.contains('pg-filter--active')) {
+      set.add(btn.dataset.value);
+    }
   });
   return set;
 }
 
-// Wire an "All + specific values" checkbox group. Checking "All" clears the
-// specifics; checking a specific clears "All"; unchecking the last specific
-// re-checks "All". Calls onChange with the resulting Set after every change.
-function _wireCheckGroup(groupEl, onChange) {
-  const allCb = groupEl.querySelector('input[value="all"]');
-  groupEl.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('change', () => {
-      if (cb.value === 'all') {
-        if (cb.checked) {
-          groupEl.querySelectorAll('input[type="checkbox"]').forEach(o => { if (o !== cb) o.checked = false; });
-        } else if (_readCheckGroup(groupEl).size === 0) {
-          cb.checked = true; // never leave the whole group empty
-        }
+// Wire an "All + specific values" pill group. Clicking All deactivates
+// specifics; clicking a specific deactivates All; deactivating the last
+// specific re-activates All. Calls onChange after every click.
+function _wirePillGroup(groupEl, onChange) {
+  const allBtn = groupEl.querySelector('.pg-filter[data-value="all"]');
+  groupEl.querySelectorAll('.pg-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.value === 'all') {
+        groupEl.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'));
+        btn.classList.add('pg-filter--active');
       } else {
-        if (cb.checked && allCb) allCb.checked = false;
-        if (_readCheckGroup(groupEl).size === 0 && allCb) allCb.checked = true;
+        btn.classList.toggle('pg-filter--active');
+        if (allBtn) allBtn.classList.remove('pg-filter--active');
+        if (_readPillGroup(groupEl).size === 0 && allBtn) allBtn.classList.add('pg-filter--active');
       }
-      onChange(_readCheckGroup(groupEl));
+      onChange(_readPillGroup(groupEl));
     });
   });
 }
@@ -172,29 +172,29 @@ export async function renderHomePage() {
                 <option value="count">Most Reported</option>
               </select>
             </div>
-            <div class="filter-checks" id="home-store-checks" data-group="store">
-              <span class="filter-checks-label">Store</span>
-              <label class="filter-check"><input type="checkbox" value="all" checked><span>All</span></label>
-              <label class="filter-check"><input type="checkbox" value="steam"><span>Steam</span></label>
-              <label class="filter-check"><input type="checkbox" value="gog"><span>GOG</span></label>
-              <label class="filter-check"><input type="checkbox" value="epic"><span>Epic</span></label>
+            <div class="pg-filter-group" id="home-store-checks">
+              <span class="pg-filter-group-label">Store</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="steam">Steam</button>
+              <button class="pg-filter" type="button" data-value="gog">GOG</button>
+              <button class="pg-filter" type="button" data-value="epic">Epic</button>
             </div>
-            <div class="filter-checks" id="home-tier-checks" data-group="tier">
-              <span class="filter-checks-label">Tier</span>
-              <label class="filter-check"><input type="checkbox" value="all" checked><span>All</span></label>
-              <label class="filter-check"><input type="checkbox" value="rated"><span>Rated</span></label>
-              <label class="filter-check"><input type="checkbox" value="unrated"><span>Not Rated Yet</span></label>
-              <label class="filter-check"><input type="checkbox" value="platinum"><span>Platinum</span></label>
-              <label class="filter-check"><input type="checkbox" value="gold"><span>Gold</span></label>
-              <label class="filter-check"><input type="checkbox" value="silver"><span>Silver</span></label>
-              <label class="filter-check"><input type="checkbox" value="bronze"><span>Bronze</span></label>
-              <label class="filter-check"><input type="checkbox" value="borked"><span>Borked</span></label>
+            <div class="pg-filter-group" id="home-tier-checks">
+              <span class="pg-filter-group-label">Tier</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="rated">Rated</button>
+              <button class="pg-filter" type="button" data-value="unrated">Not Rated Yet</button>
+              <button class="pg-filter" type="button" data-value="platinum">Platinum</button>
+              <button class="pg-filter" type="button" data-value="gold">Gold</button>
+              <button class="pg-filter" type="button" data-value="silver">Silver</button>
+              <button class="pg-filter" type="button" data-value="bronze">Bronze</button>
+              <button class="pg-filter" type="button" data-value="borked">Borked</button>
             </div>
-            <div class="filter-checks" id="home-source-checks" data-group="source">
-              <span class="filter-checks-label">Source</span>
-              <label class="filter-check"><input type="checkbox" value="all" checked><span>All</span></label>
-              <label class="filter-check"><input type="checkbox" value="protondb"><span>ProtonDB</span></label>
-              <label class="filter-check"><input type="checkbox" value="pulse"><span>Pulse</span></label>
+            <div class="pg-filter-group" id="home-source-checks">
+              <span class="pg-filter-group-label">Source</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="protondb">ProtonDB</button>
+              <button class="pg-filter" type="button" data-value="pulse">Pulse</button>
             </div>
             <div class="filter-panel-footer filter-panel-footer--stack">
               <button class="filter-clear-btn" id="home-filter-clear" type="button">Clear filters</button>
@@ -397,13 +397,13 @@ export async function renderHomePage() {
     const tierGroup = document.getElementById('home-tier-checks');
     const sourceGroup = document.getElementById('home-source-checks');
     const storeGroup = document.getElementById('home-store-checks');
-    if (tierGroup) _wireCheckGroup(tierGroup, sel => {
+    if (tierGroup) _wirePillGroup(tierGroup, sel => {
       tierSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters();
     });
-    if (sourceGroup) _wireCheckGroup(sourceGroup, sel => {
+    if (sourceGroup) _wirePillGroup(sourceGroup, sel => {
       sourceSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters();
     });
-    if (storeGroup) _wireCheckGroup(storeGroup, sel => {
+    if (storeGroup) _wirePillGroup(storeGroup, sel => {
       storeSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters();
     });
 
@@ -411,7 +411,9 @@ export async function renderHomePage() {
     document.getElementById('home-filter-clear')?.addEventListener('click', () => {
       [tierGroup, sourceGroup, storeGroup].forEach(g => {
         if (!g) return;
-        g.querySelectorAll('input[type="checkbox"]').forEach(cb => { cb.checked = cb.value === 'all'; });
+        g.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'));
+        const allBtn = g.querySelector('.pg-filter[data-value="all"]');
+        if (allBtn) allBtn.classList.add('pg-filter--active');
       });
       const sortSel = document.getElementById('home-sort-select');
       if (sortSel) sortSel.value = 'recent';

@@ -100,3 +100,64 @@
   }
   .filter-panel-summary { column-span: all; }
 }
+
+/* ── Pill filter group ────────────────────────────────────────────────────── */
+/* Shared across index.html, app.html (home), and stats.html. A group is a
+   label row followed by a horizontal row of pills that wraps on overflow. */
+.pg-filter-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.pg-filter-group-label {
+  flex-basis: 100%;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.pg-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-family: inherit;
+  transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.pg-filter:hover { border-color: var(--accent); color: var(--strong); }
+.pg-filter--active {
+  border-color: var(--accent);
+  color: #0a0c10;
+  background: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 12px rgba(190,238,17,0.25);
+}
+.pg-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+.pg-filter--active .pg-filter-count {
+  background: rgba(10,12,16,0.22);
+  color: #0a0c10;
+}
