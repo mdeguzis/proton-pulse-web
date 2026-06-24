@@ -103,10 +103,10 @@ describe('home page popular section -- store-aware label and pool', () => {
 });
 
 describe('home page browse -- text filter box', () => {
-  test('text filter input has the short "Filter text" placeholder', () => {
+  test('text filter input placeholder makes clear it only filters the loaded list', () => {
     expect(homeSrc).toContain('id="home-text-filter"');
     expect(homeSrc).toContain('class="home-filter-text"');
-    expect(homeSrc).toContain('placeholder="Filter text"');
+    expect(homeSrc).toContain('placeholder="Filter loaded list"');
   });
 
   test('text box lives in the bar (home-filter-left), outside the filter panel', () => {
@@ -148,9 +148,13 @@ describe('home page browse -- text filter box', () => {
 });
 
 describe('home page browse -- Save filters (persist)', () => {
-  test('footer has a Save filters checkbox', () => {
-    expect(homeSrc).toContain('id="home-filter-persist"');
+  test('Save filters is a rounded toggle button (not a checkbox)', () => {
+    expect(homeSrc).toContain('class="filter-save-btn" id="home-filter-persist"');
     expect(homeSrc).toContain('Save filters');
+    expect(homeSrc).not.toContain('type="checkbox" id="home-filter-persist"');
+    // toggle state tracked via aria-pressed + is-active class
+    expect(homeSrc).toContain("btn.setAttribute('aria-pressed', String(on))");
+    expect(homeSrc).toContain("btn.classList.toggle('is-active', on)");
   });
 
   test('saves the full filter state to localStorage under a stable key', () => {
@@ -181,5 +185,19 @@ describe('home page browse -- Save filters (persist)', () => {
     const matches = homeSrc.match(/_saveFiltersIfEnabled\(\)/g) || [];
     // 1 definition + at least 6 call sites.
     expect(matches.length).toBeGreaterThanOrEqual(7);
+  });
+});
+
+describe('home page browse -- unrated cards show "No Rating", never "PENDING"', () => {
+  test('_cardTier only returns a known rated tier, otherwise undefined', () => {
+    expect(homeSrc).toContain('function _cardTier(t)');
+    expect(homeSrc).toContain('return KNOWN_TIERS.has(x) ? x : undefined;');
+  });
+
+  test('card renders pass tier through _cardTier so pending becomes No Rating', () => {
+    // Neither card builder should pass a raw tier string straight through.
+    expect(homeSrc).toContain('tier: _cardTier(r.tier),');
+    expect(homeSrc).toContain('tier: _cardTier(g.tier),');
+    expect(homeSrc).not.toContain('tier: g.tier || undefined');
   });
 });

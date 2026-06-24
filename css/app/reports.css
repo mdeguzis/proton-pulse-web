@@ -104,17 +104,38 @@
   border-top: 1px solid var(--border);
 }
 .filter-clear-btn {
-  background: none;
-  border: 1px solid var(--border2);
-  color: var(--muted);
+  background: rgba(220, 70, 70, 0.12);
+  border: 1px solid rgba(220, 70, 70, 0.45);
+  color: #ff9b9b;
   font-size: 0.72rem;
   font-family: inherit;
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding: 6px 14px;
+  border-radius: 999px;
   cursor: pointer;
-  transition: color .1s, border-color .1s;
+  transition: color .1s, border-color .1s, background .1s;
 }
-.filter-clear-btn:hover { color: var(--text); border-color: var(--text); }
+.filter-clear-btn:hover { background: rgba(220, 70, 70, 0.22); border-color: #ff6b6b; color: #ffc1c1; }
+/* Save filters: rounded pill matching the toggle/pill style; fills when active. */
+.filter-save-btn {
+  background: var(--s1);
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color .1s, border-color .1s, background .1s;
+}
+.filter-save-btn:hover { border-color: var(--accent); color: var(--strong); }
+.filter-save-btn.is-active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-hi);
+}
 .filter-count { font-size: 0.72rem; color: var(--muted); }
 .filter-persist {
   display: inline-flex;
@@ -146,7 +167,8 @@
   margin-top: 2px;
   padding-top: 12px;
   border-top: 1px solid var(--border);
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 8px;
 }
 @media (max-width: 560px) {
   .filter-panel--stack.open { flex-direction: column; gap: 14px; }
@@ -166,7 +188,7 @@
    the dropdown). Wider on desktop, shorter on mobile. */
 .home-filter-left { display: flex; align-items: center; gap: 8px; }
 .home-filter-text {
-  width: 220px;
+  width: 240px;
   max-width: 40vw;
   box-sizing: border-box;
   background: var(--bg);

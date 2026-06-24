@@ -1,8 +1,8 @@
 // router (entry) for the app page. Relocated from app.js.
 
-import { renderGamePage } from './components/game-page.js?v=fd4f2e3a';
-import { renderHomePage } from './components/home.js?v=6d131a85';
-import { renderSearchPage } from './components/search.js?v=fdc451a3';
+import { renderGamePage } from './components/game-page.js?v=03531fdb';
+import { renderHomePage } from './components/home.js?v=1c0762cf';
+import { renderSearchPage } from './components/search.js?v=50308c43';
 
 export function getRoute() {
   const h = location.hash.replace(/^#\/?/, '');

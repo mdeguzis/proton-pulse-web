@@ -199,6 +199,7 @@
 .cta-btn:hover {
   filter: brightness(1.08);
   box-shadow: 0 0 16px var(--accent-glow);
+  text-decoration: none; /* override global a:hover underline */
 }
 .cta-btn:active { transform: translateY(1px); }
 .cta-primary {

@@ -39,14 +39,32 @@ describe('index page popular games rating filters', () => {
     expect(indexSrc).toContain("let storeSel = new Set(['steam'])");
     expect(indexSrc).not.toContain('let currentStore');
     // store buttons toggle membership instead of replacing the selection
-    expect(indexSrc).toContain('if (storeSel.has(store)) storeSel.delete(store);');
+    expect(indexSrc).toContain('storeSel.delete(store);');
     expect(indexSrc).toContain("btn.addEventListener('click', () => toggleStore(btn.dataset.store))");
   });
 
+  test('store group has an All pill that clears the specific selections', () => {
+    expect(indexHtml).toContain('data-store="all"');
+    expect(indexSrc).toContain("if (store === 'all') {");
+    expect(indexSrc).toContain('storeSel.clear();');
+    // All is active when no specific store is selected (empty set == all stores)
+    expect(indexSrc).toContain('const allActive = storeSel.size === 0;');
+    expect(indexSrc).toContain("function effectiveStores()");
+    expect(indexSrc).toContain("return storeSel.size === 0 ? ['steam', 'gog', 'epic'] : [...storeSel];");
+  });
+
   test('currentList merges Steam most_played with non-Steam search-index rows', () => {
-    expect(indexSrc).toContain("if (storeSel.has('steam'))");
-    expect(indexSrc).toContain("const nonSteam = [...storeSel].filter(s => s !== 'steam')");
+    expect(indexSrc).toContain("if (stores.includes('steam'))");
+    expect(indexSrc).toContain("const nonSteam = stores.filter(s => s !== 'steam')");
     expect(indexSrc).toContain('.filter(row => nonSteam.includes(row[5]))');
+  });
+
+  test('rating chip counts reflect the selected stores, not just Steam', () => {
+    expect(indexSrc).toContain('function updateRatingCounts()');
+    expect(indexSrc).toContain("if (stores.includes('steam')) { rated += ratedGames.length; unrated += unratedGames.length; }");
+    expect(indexSrc).toContain('if (KNOWN_TIERS.has(String(row[2] || \'\').toLowerCase())) rated++; else unrated++;');
+    // counts refresh when the store selection changes
+    expect(indexSrc).toContain('updateRatingCounts();');
   });
 
   test('Rated / Not Rated are independent toggles (multi-select)', () => {
@@ -60,7 +78,7 @@ describe('index page popular games rating filters', () => {
   });
 
   test('selecting any non-Steam store loads the search index once', () => {
-    expect(indexSrc).toContain("[...storeSel].some(s => s !== 'steam') && !searchIndexCache");
+    expect(indexSrc).toContain("effectiveStores().some(s => s !== 'steam') && !searchIndexCache");
     expect(indexSrc).toContain('await loadSearchIndex()');
   });
 

@@ -197,8 +197,6 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
     const ratedCountEl = document.getElementById('pg-rated-count');
     const unratedCountEl = document.getElementById('pg-unrated-count');
     const loadMoreEl = document.getElementById('pg-load-more');
-    if (ratedCountEl) ratedCountEl.textContent = String(ratedGames.length);
-    if (unratedCountEl) unratedCountEl.textContent = String(unratedGames.length);
 
     const PAGE_SIZE = 12;
     const state = { rated: true, unrated: false };
@@ -214,13 +212,18 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
       if (state.unrated && !state.rated) return !rated;
       return true;
     }
+    // An empty selection means "All" -> every store.
+    function effectiveStores() {
+      return storeSel.size === 0 ? ['steam', 'gog', 'epic'] : [...storeSel];
+    }
     function currentList() {
+      const stores = effectiveStores();
       const out = [];
-      if (storeSel.has('steam')) {
+      if (stores.includes('steam')) {
         if (state.rated || (!state.rated && !state.unrated)) out.push(...ratedGames);
         if (state.unrated || (!state.rated && !state.unrated)) out.push(...unratedGames);
       }
-      const nonSteam = [...storeSel].filter(s => s !== 'steam');
+      const nonSteam = stores.filter(s => s !== 'steam');
       if (nonSteam.length) {
         const rows = (searchIndexCache || [])
           .filter(row => nonSteam.includes(row[5]))
@@ -238,6 +241,24 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
       const countOf = g => (g.protondbCount || 0) + (g.pulseCount || 0);
       return out.sort((a, b) =>
         peakOf(b) - peakOf(a) || countOf(b) - countOf(a) || (a.title || '').localeCompare(b.title || ''));
+    }
+
+    // Rated / Not Rated chip counts reflect the currently selected stores, not
+    // just Steam. Steam counts come from most_played; GOG/Epic from the index.
+    function updateRatingCounts() {
+      const stores = effectiveStores();
+      let rated = 0, unrated = 0;
+      if (stores.includes('steam')) { rated += ratedGames.length; unrated += unratedGames.length; }
+      const nonSteam = stores.filter(s => s !== 'steam');
+      if (nonSteam.length && searchIndexCache) {
+        for (const row of searchIndexCache) {
+          if (!nonSteam.includes(row[5])) continue;
+          if (KNOWN_TIERS.has(String(row[2] || '').toLowerCase())) rated++; else unrated++;
+        }
+      }
+      if (ratedCountEl) ratedCountEl.textContent = String(rated);
+      if (unratedCountEl) unratedCountEl.textContent = String(unrated);
+      console.debug('[popular-games] rating counts updated', { stores, rated, unrated, source: nonSteam.length ? 'most_played+search-index' : 'most_played' });
     }
 
     function renderPopular() {
@@ -318,17 +339,27 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
     // Store filter is multi-select. Steam uses most_played; GOG/Epic lazy-load
     // the search index. Selecting any non-Steam store loads the index once.
     async function toggleStore(store) {
-      if (storeSel.has(store)) storeSel.delete(store);
-      else storeSel.add(store);
+      // "All" clears the specific selections (empty set == all stores). Picking a
+      // specific store clears All; deselecting the last specific falls back to All.
+      if (store === 'all') {
+        storeSel.clear();
+      } else if (storeSel.has(store)) {
+        storeSel.delete(store);
+      } else {
+        storeSel.add(store);
+      }
+      const allActive = storeSel.size === 0;
       document.querySelectorAll('.pg-store-btn').forEach(b => {
-        b.classList.toggle('pg-filter--active', storeSel.has(b.dataset.store));
+        const v = b.dataset.store;
+        b.classList.toggle('pg-filter--active', v === 'all' ? allActive : storeSel.has(v));
       });
       syncSectionLabel();
-      if ([...storeSel].some(s => s !== 'steam') && !searchIndexCache) {
+      if (effectiveStores().some(s => s !== 'steam') && !searchIndexCache) {
         list.innerHTML = '<div class="pg-empty">Loading...</div>';
         await loadSearchIndex();
-        console.debug('[popular-games] search-index loaded', { stores: [...storeSel], entries: (searchIndexCache || []).length });
+        console.debug('[popular-games] search-index loaded', { stores: effectiveStores(), entries: (searchIndexCache || []).length });
       }
+      updateRatingCounts();
       updateFilterBadge();
       shownCount = PAGE_SIZE;
       renderPopular();
@@ -379,6 +410,7 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
       });
     });
 
+    updateRatingCounts(); // seed the rating chip counts for the default (Steam)
     applySize(savedSize());
     applyLayout(savedLayout());
   } catch (err) {

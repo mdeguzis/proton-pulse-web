@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=30cf98fd';
-import { loadSearchIndex, searchIndex } from './search.js?v=a30bff33';
+import { loadSearchIndex, searchIndex } from './search.js?v=fdc451a3';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=de2b700a';
@@ -12,6 +12,13 @@ const TIER_SCORE = { platinum: 5, gold: 4, silver: 3, bronze: 2, borked: 1 };
 
 function normTitle(s) {
   return String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+// Card tier prop: only pass a real rated tier. Unrated/pending returns undefined
+// so the card shows the "No Rating" badge instead of an ugly "PENDING" pill.
+function _cardTier(t) {
+  const x = String(t || '').toLowerCase();
+  return KNOWN_TIERS.has(x) ? x : undefined;
 }
 
 function _sortReports(reports, sort) {
@@ -136,7 +143,7 @@ function _recentCardHtml(r) {
     appId: r.appId,
     title: r.title,
     sub: _popularSub(r),
-    tier: String(r.tier || '').toLowerCase() || undefined,
+    tier: _cardTier(r.tier),
     storePill: storeLabel(appType),
   });
 }
@@ -207,12 +214,12 @@ export async function renderHomePage() {
               <button class="pg-filter" type="button" data-value="pulse">Pulse</button>
             </div>
             <div class="filter-panel-footer filter-panel-footer--stack">
-              <label class="filter-persist"><input type="checkbox" id="home-filter-persist" /> Save filters</label>
+              <button class="filter-save-btn" id="home-filter-persist" type="button" aria-pressed="false">Save filters</button>
               <button class="filter-clear-btn" id="home-filter-clear" type="button">Clear filters</button>
             </div>
           </div>
         </div>
-        <input id="home-text-filter" class="home-filter-text" type="search" placeholder="Filter text" autocomplete="off" />
+        <input id="home-text-filter" class="home-filter-text" type="search" placeholder="Filter loaded list" autocomplete="off" />
         </div>
         <div class="home-view-controls">
           <div class="home-size-toggle" id="home-size-toggle" title="Card size">
@@ -345,7 +352,7 @@ export async function renderHomePage() {
         href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
         title: g.title,
         sub: g.tier === 'pending' ? 'No reports yet · be the first' : _popularSub(g),
-        tier: g.tier || undefined, storePill: storeLabel(g.appType || appTypeFromAppId(g.appId)),
+        tier: _cardTier(g.tier), storePill: storeLabel(g.appType || appTypeFromAppId(g.appId)),
       });
     }
 
@@ -412,7 +419,13 @@ export async function renderHomePage() {
     // filter state to localStorage and restore it on the next visit. Unchecking
     // clears the saved state. The box itself reflects whether a save is active.
     const FILTERS_KEY = 'pp:browse-filters';
-    function _persistOn() { return !!document.getElementById('home-filter-persist')?.checked; }
+    function _persistOn() { return document.getElementById('home-filter-persist')?.getAttribute('aria-pressed') === 'true'; }
+    function _setPersist(on) {
+      const btn = document.getElementById('home-filter-persist');
+      if (!btn) return;
+      btn.setAttribute('aria-pressed', String(on));
+      btn.classList.toggle('is-active', on);
+    }
     function _saveFilters() {
       try {
         localStorage.setItem(FILTERS_KEY, JSON.stringify({
@@ -438,8 +451,7 @@ export async function renderHomePage() {
       let saved = null;
       try { saved = JSON.parse(localStorage.getItem(FILTERS_KEY) || 'null'); } catch { saved = null; }
       if (!saved) return false;
-      const persistBox = document.getElementById('home-filter-persist');
-      if (persistBox) persistBox.checked = true;
+      _setPersist(true);
       currentSort = saved.sort || 'recent';
       const sortSel = document.getElementById('home-sort-select');
       if (sortSel) sortSel.value = currentSort;
@@ -456,8 +468,10 @@ export async function renderHomePage() {
       console.debug('[browse-filters] restored saved filters', { source: FILTERS_KEY, sort: currentSort, tiers: [...tierSel], sources: [...sourceSel], stores: [...storeSel], text: textFilter });
       return true;
     }
-    document.getElementById('home-filter-persist')?.addEventListener('change', e => {
-      if (e.target.checked) _saveFilters();
+    document.getElementById('home-filter-persist')?.addEventListener('click', () => {
+      const on = !_persistOn();
+      _setPersist(on);
+      if (on) _saveFilters();
       else { try { localStorage.removeItem(FILTERS_KEY); } catch { /* ignore */ } }
     });
 
