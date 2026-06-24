@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=30cf98fd';
-import { loadSearchIndex, searchIndex } from './search.js?v=69369686';
+import { loadSearchIndex, searchIndex } from './search.js?v=594f0fc3';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=de2b700a';
@@ -206,6 +206,7 @@ export async function renderHomePage() {
             <button class="home-size-btn" data-size="sm" type="button" title="Small cards">S</button>
             <button class="home-size-btn" data-size="md" type="button" title="Medium cards">M</button>
             <button class="home-size-btn" data-size="lg" type="button" title="Large cards">L</button>
+            <button class="home-size-btn home-size-btn--desktop-only" data-size="xl" type="button" title="Extra large cards">XL</button>
           </div>
           <div class="home-layout-toggle">
             <button class="home-layout-btn active" data-layout="grid" title="Grid view">Grid</button>
@@ -455,7 +456,7 @@ export async function renderHomePage() {
     // Card size (S/M/L) is a saved user preference. Applies the cards--<size>
     // class to both card lists; default medium.
     const SIZE_KEY = 'pp:grid-size';
-    const SIZES = ['sm', 'md', 'lg'];
+    const SIZES = ['sm', 'md', 'lg', 'xl'];
     function _savedSize() {
       try { const s = localStorage.getItem(SIZE_KEY); return SIZES.includes(s) ? s : 'md'; } catch { return 'md'; }
     }

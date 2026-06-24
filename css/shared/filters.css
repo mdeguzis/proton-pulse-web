@@ -63,7 +63,7 @@
 /* ── Panel container ──────────────────────────────────────────────────── */
 /* app.html and stats.html use .filter-panel; index uses .pg-filter-panel.
    Both are absolutely-positioned dropdowns anchored to their toggle button. */
-.filter-panel:not(.filter-panel--stack),
+.filter-panel,
 .pg-filter-panel {
   position: absolute;
   top: calc(100% + 6px);
