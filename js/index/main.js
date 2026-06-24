@@ -93,9 +93,21 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
   const KNOWN_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked']);
   const STORE_LABEL = { gog: 'GOG', epic: 'Epic', steam: 'Steam' };
   const STORE_PILL_CLASS = { gog: 'game-card-store-pill--gog', epic: 'game-card-store-pill--epic', steam: 'game-card-store-pill--steam' };
+  function storeColorClass(appType) {
+    const t = appType || 'steam';
+    return STORE_PILL_CLASS[t] || 'game-card-store-pill--steam';
+  }
   function storePill(appType) {
     const t = appType || 'steam';
-    return `<span class="game-card-store-pill ${STORE_PILL_CLASS[t] || 'game-card-store-pill--steam'}">${STORE_LABEL[t] || 'Steam'}</span>`;
+    const label = STORE_LABEL[t] || 'Steam';
+    const cls = storeColorClass(t);
+    return `<span class="game-card-store-pill ${cls}">${label}</span>`;
+  }
+  function storeTag(appType) {
+    const t = appType || 'steam';
+    const label = STORE_LABEL[t] || 'Steam';
+    const cls = storeColorClass(t);
+    return `<span class="game-card-store-tag ${cls}">${label}</span>`;
   }
   const SECTION_LABEL = { steam: 'Popular on Steam', gog: 'Popular GOG Games', epic: 'Popular Epic Games' };
   const SECTION_SUB = {
@@ -132,7 +144,10 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
     const rLabel = rated ? RATING_LABEL[rating] : 'Unrated';
     return `
       <a class="pg-card" href="app.html#/app/${encodeURIComponent(g.appId)}">
-        <img class="pg-thumb" src="${img}" data-appid="${g.appId}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">
+        <div class="pg-thumb-wrap">
+          <img class="pg-thumb" src="${img}" data-appid="${g.appId}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">
+          ${storeTag(g.appType)}
+        </div>
         <div class="pg-info">
           <div class="pg-title">${esc(g.title)}</div>
           ${peak ? `<div class="pg-sub">${peak} peak players</div>` : ''}

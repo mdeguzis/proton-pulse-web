@@ -245,6 +245,11 @@
 }
 .pg-card:hover { border-color: var(--accent); }
 .pg-card:active { transform: translateY(1px); }
+.pg-thumb-wrap {
+  position: relative;
+  flex-shrink: 0;
+  line-height: 0;
+}
 .pg-thumb {
   width: 92px;
   height: 43px;
