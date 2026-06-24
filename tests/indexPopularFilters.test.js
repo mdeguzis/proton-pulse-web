@@ -35,18 +35,33 @@ describe('index page popular games rating filters', () => {
     expect(indexSrc).toContain('const state = { rated: true, unrated: false }');
   });
 
-  test('render shows whichever single filter is active', () => {
-    expect(indexSrc).toContain('...(state.rated ? ratedGames : [])');
-    expect(indexSrc).toContain('...(state.unrated ? unratedGames : [])');
+  test('store is multi-select via a Set, not a single currentStore string', () => {
+    expect(indexSrc).toContain("let storeSel = new Set(['steam'])");
+    expect(indexSrc).not.toContain('let currentStore');
+    // store buttons toggle membership instead of replacing the selection
+    expect(indexSrc).toContain('if (storeSel.has(store)) storeSel.delete(store);');
+    expect(indexSrc).toContain("btn.addEventListener('click', () => toggleStore(btn.dataset.store))");
   });
 
-  test('Rated / Not Rated are mutually exclusive (selecting one deselects the other)', () => {
-    expect(indexSrc).toContain("state.rated = key === 'rated'");
-    expect(indexSrc).toContain("state.unrated = key === 'unrated'");
-    expect(indexSrc).toContain("ratedBtn?.addEventListener('click', () => selectFilter('rated'))");
-    expect(indexSrc).toContain("unratedBtn?.addEventListener('click', () => selectFilter('unrated'))");
-    // old independent-toggle behavior is gone
-    expect(indexSrc).not.toContain('state[key] = !state[key]');
+  test('currentList merges Steam most_played with non-Steam search-index rows', () => {
+    expect(indexSrc).toContain("if (storeSel.has('steam'))");
+    expect(indexSrc).toContain("const nonSteam = [...storeSel].filter(s => s !== 'steam')");
+    expect(indexSrc).toContain('.filter(row => nonSteam.includes(row[5]))');
+  });
+
+  test('Rated / Not Rated are independent toggles (multi-select)', () => {
+    expect(indexSrc).toContain('state[key] = !state[key]');
+    expect(indexSrc).toContain("ratedBtn?.addEventListener('click', () => toggleRating('rated'))");
+    expect(indexSrc).toContain("unratedBtn?.addEventListener('click', () => toggleRating('unrated'))");
+    // both-or-neither means show all
+    expect(indexSrc).toContain('if (state.rated && !state.unrated) return rated;');
+    // old mutually-exclusive behavior is gone
+    expect(indexSrc).not.toContain("state.rated = key === 'rated'");
+  });
+
+  test('selecting any non-Steam store loads the search index once', () => {
+    expect(indexSrc).toContain("[...storeSel].some(s => s !== 'steam') && !searchIndexCache");
+    expect(indexSrc).toContain('await loadSearchIndex()');
   });
 
   test('popular list pages with a load more button', () => {

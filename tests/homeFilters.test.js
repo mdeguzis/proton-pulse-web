@@ -103,10 +103,20 @@ describe('home page popular section -- store-aware label and pool', () => {
 });
 
 describe('home page browse -- text filter box', () => {
-  test('panel has a text filter input with the short "Filter text" placeholder', () => {
+  test('text filter input has the short "Filter text" placeholder', () => {
     expect(homeSrc).toContain('id="home-text-filter"');
     expect(homeSrc).toContain('class="home-filter-text"');
     expect(homeSrc).toContain('placeholder="Filter text"');
+  });
+
+  test('text box lives in the bar (home-filter-left), outside the filter panel', () => {
+    expect(homeSrc).toContain('<div class="home-filter-left">');
+    // The input must come AFTER the filter panel closes, not inside it.
+    const panelIdx = homeSrc.indexOf('id="home-filter-panel"');
+    const inputIdx = homeSrc.indexOf('id="home-text-filter"');
+    const footerIdx = homeSrc.indexOf('filter-panel-footer--stack');
+    expect(inputIdx).toBeGreaterThan(panelIdx);
+    expect(inputIdx).toBeGreaterThan(footerIdx);
   });
 
   test('_filterByText is a case-insensitive, trimmed title substring match', () => {
@@ -134,5 +144,42 @@ describe('home page browse -- text filter box', () => {
   test('clear filters resets the text box value and textFilter state', () => {
     expect(homeSrc).toContain("if (textInput) textInput.value = ''");
     expect(homeSrc).toContain("textFilter = ''");
+  });
+});
+
+describe('home page browse -- Save filters (persist)', () => {
+  test('footer has a Save filters checkbox', () => {
+    expect(homeSrc).toContain('id="home-filter-persist"');
+    expect(homeSrc).toContain('Save filters');
+  });
+
+  test('saves the full filter state to localStorage under a stable key', () => {
+    expect(homeSrc).toContain("const FILTERS_KEY = 'pp:browse-filters'");
+    expect(homeSrc).toContain('localStorage.setItem(FILTERS_KEY, JSON.stringify(');
+    expect(homeSrc).toContain('tier: [...tierSel], source: [...sourceSel], store: [...storeSel]');
+  });
+
+  test('only writes when the box is checked', () => {
+    expect(homeSrc).toContain('function _saveFiltersIfEnabled() { if (_persistOn()) _saveFilters(); }');
+  });
+
+  test('unchecking the box removes the saved state', () => {
+    expect(homeSrc).toContain('localStorage.removeItem(FILTERS_KEY)');
+  });
+
+  test('restores a saved filter set before the first render', () => {
+    expect(homeSrc).toContain('function _restoreFilters()');
+    expect(homeSrc).toContain('storeSel = new Set(saved.store || [])');
+    const restoreIdx = homeSrc.indexOf('_restoreFilters(); // re-apply');
+    const firstApplyIdx = homeSrc.indexOf('applyRecentFilters();\n    applyPopularFilters();\n  } catch');
+    expect(restoreIdx).toBeGreaterThan(0);
+    expect(restoreIdx).toBeLessThan(firstApplyIdx);
+  });
+
+  test('every filter change calls _saveFiltersIfEnabled', () => {
+    // sort, text, three pill groups, and clear = 6 call sites.
+    const matches = homeSrc.match(/_saveFiltersIfEnabled\(\)/g) || [];
+    // 1 definition + at least 6 call sites.
+    expect(matches.length).toBeGreaterThanOrEqual(7);
   });
 });

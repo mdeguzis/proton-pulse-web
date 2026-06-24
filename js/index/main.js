@@ -117,7 +117,7 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
   };
 
   let currentLayout = 'grid';
-  let currentStore = 'steam';
+  let storeSel = new Set(['steam']); // multi-select store filter; defaults to Steam
   let searchIndexCache = null;
   let steamPeakByTitle = new Map();
 
@@ -204,36 +204,40 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
     const state = { rated: true, unrated: false };
     let shownCount = PAGE_SIZE;
 
-    // Build the game list for the current store + rating filter state.
-    // Steam uses most_played.json. GOG/Epic use the search index filtered by
-    // appType so all catalog stubs show, including games with 0 reports.
+    // Build the game list for the selected stores + rating filter state. Store
+    // is multi-select: Steam pulls from most_played.json, GOG/Epic pull from the
+    // search index filtered by appType (so catalog stubs with 0 reports show).
+    // Results from all selected stores are merged and ranked together.
+    function ratingPasses(rated) {
+      // Both selected or neither selected -> show all; otherwise honor the one.
+      if (state.rated && !state.unrated) return rated;
+      if (state.unrated && !state.rated) return !rated;
+      return true;
+    }
     function currentList() {
-      if (currentStore === 'steam') {
-        return [
-          ...(state.rated ? ratedGames : []),
-          ...(state.unrated ? unratedGames : []),
-        ];
+      const out = [];
+      if (storeSel.has('steam')) {
+        if (state.rated || (!state.rated && !state.unrated)) out.push(...ratedGames);
+        if (state.unrated || (!state.rated && !state.unrated)) out.push(...unratedGames);
       }
-      return (searchIndexCache || [])
-        .filter(row => row[5] === currentStore)
-        .filter(row => {
-          const tier = String(row[2] || '').toLowerCase();
-          const rated = KNOWN_TIERS.has(tier);
-          if (state.rated && !state.unrated) return rated;
-          if (state.unrated && !state.rated) return !rated;
-          return true; // both or neither -> show all
-        })
-        .sort((a, b) => {
-          // prefer Steam title match (borrows peak player rank), then report count, then alpha
-          const peakA = steamPeakByTitle.get(normTitle(a[1])) || 0;
-          const peakB = steamPeakByTitle.get(normTitle(b[1])) || 0;
-          if (peakB !== peakA) return peakB - peakA;
-          const countA = (a[3] || 0) + (a[4] || 0);
-          const countB = (b[3] || 0) + (b[4] || 0);
-          if (countB !== countA) return countB - countA;
-          return (a[1] || '').localeCompare(b[1] || '');
-        })
-        .map(row => ({ appId: row[0], title: row[1], rating: row[2] || '', appType: row[5] }));
+      const nonSteam = [...storeSel].filter(s => s !== 'steam');
+      if (nonSteam.length) {
+        const rows = (searchIndexCache || [])
+          .filter(row => nonSteam.includes(row[5]))
+          .filter(row => ratingPasses(KNOWN_TIERS.has(String(row[2] || '').toLowerCase())))
+          .map(row => ({
+            appId: row[0], title: row[1], rating: row[2] || '', appType: row[5],
+            protondbCount: row[3] || 0, pulseCount: row[4] || 0,
+          }));
+        out.push(...rows);
+      }
+      // Rank the merged list: Steam peak-player rank first, then report count,
+      // then alphabetical. Steam games carry peak directly; non-Steam borrow it
+      // from a title match in the Steam most-played map.
+      const peakOf = g => g.peak || steamPeakByTitle.get(normTitle(g.title)) || 0;
+      const countOf = g => (g.protondbCount || 0) + (g.pulseCount || 0);
+      return out.sort((a, b) =>
+        peakOf(b) - peakOf(a) || countOf(b) - countOf(a) || (a.title || '').localeCompare(b.title || ''));
     }
 
     function renderPopular() {
@@ -254,20 +258,23 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
       }
     }
 
-    // Rated / Not Rated are mutually exclusive (either-or).
-    function selectFilter(key) {
-      state.rated = key === 'rated';
-      state.unrated = key === 'unrated';
+    // Rated / Not Rated are independent toggles (multi-select). Both on or both
+    // off both mean "show all", matching the browse page tier behavior.
+    function syncRatingButtons() {
       ratedBtn?.classList.toggle('pg-filter--active', state.rated);
       unratedBtn?.classList.toggle('pg-filter--active', state.unrated);
       ratedBtn?.setAttribute('aria-pressed', String(state.rated));
       unratedBtn?.setAttribute('aria-pressed', String(state.unrated));
+    }
+    function toggleRating(key) {
+      state[key] = !state[key];
+      syncRatingButtons();
       shownCount = PAGE_SIZE;
       updateFilterBadge();
       renderPopular();
     }
-    ratedBtn?.addEventListener('click', () => selectFilter('rated'));
-    unratedBtn?.addEventListener('click', () => selectFilter('unrated'));
+    ratedBtn?.addEventListener('click', () => toggleRating('rated'));
+    unratedBtn?.addEventListener('click', () => toggleRating('unrated'));
 
     // Filters popover toggle.
     const filterWrap = document.getElementById('pg-filter-wrap');
@@ -290,43 +297,44 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
     function updateFilterBadge() {
       const badge = document.getElementById('pg-filter-badge');
       const btn = document.getElementById('pg-filter-toggle');
-      const nonDefault = (currentStore !== 'steam' ? 1 : 0) + (state.unrated ? 1 : 0);
+      // Store deviates from the default (Steam only); rating deviates when it is
+      // not the default "Rated only".
+      const storeDev = (storeSel.size === 1 && storeSel.has('steam')) ? 0 : storeSel.size;
+      const ratingDev = (state.unrated ? 1 : 0) + (state.rated ? 0 : 1);
+      const nonDefault = storeDev + ratingDev;
       if (badge) { badge.textContent = String(nonDefault); badge.hidden = nonDefault === 0; }
       btn?.classList.toggle('has-filters', nonDefault > 0);
     }
 
-    // Store filter: Steam uses most_played; GOG/Epic lazy-load the search index.
-    async function selectStore(store) {
-      currentStore = store;
-      document.querySelectorAll('.pg-store-btn').forEach(b => {
-        b.classList.toggle('pg-filter--active', b.dataset.store === store);
-      });
+    // Label/sub reflect a single selected store; multi-select shows a generic title.
+    function syncSectionLabel() {
       const labelEl = document.getElementById('pg-section-label');
       const subEl = document.getElementById('pg-sub');
-      if (labelEl) labelEl.textContent = SECTION_LABEL[store] || 'Popular Games';
-      if (subEl) subEl.textContent = SECTION_SUB[store] || '';
-      // Non-Steam catalog stubs are mostly unrated -- default to showing all
-      // so the section isn't empty; Steam keeps the "Rated only" default.
-      if (store !== 'steam') {
-        state.rated = true;
-        state.unrated = true;
+      const only = storeSel.size === 1 ? [...storeSel][0] : null;
+      if (labelEl) labelEl.textContent = (only && SECTION_LABEL[only]) || 'Popular Games';
+      if (subEl) subEl.textContent = (only && SECTION_SUB[only]) || '';
+    }
+
+    // Store filter is multi-select. Steam uses most_played; GOG/Epic lazy-load
+    // the search index. Selecting any non-Steam store loads the index once.
+    async function toggleStore(store) {
+      if (storeSel.has(store)) storeSel.delete(store);
+      else storeSel.add(store);
+      document.querySelectorAll('.pg-store-btn').forEach(b => {
+        b.classList.toggle('pg-filter--active', storeSel.has(b.dataset.store));
+      });
+      syncSectionLabel();
+      if ([...storeSel].some(s => s !== 'steam') && !searchIndexCache) {
         list.innerHTML = '<div class="pg-empty">Loading...</div>';
         await loadSearchIndex();
-        console.debug('[popular-games] search-index loaded for store', { store, entries: (searchIndexCache || []).length });
-      } else {
-        state.rated = true;
-        state.unrated = false;
+        console.debug('[popular-games] search-index loaded', { stores: [...storeSel], entries: (searchIndexCache || []).length });
       }
-      ratedBtn?.classList.toggle('pg-filter--active', state.rated);
-      unratedBtn?.classList.toggle('pg-filter--active', state.unrated);
-      ratedBtn?.setAttribute('aria-pressed', String(state.rated));
-      unratedBtn?.setAttribute('aria-pressed', String(state.unrated));
       updateFilterBadge();
       shownCount = PAGE_SIZE;
       renderPopular();
     }
     document.querySelectorAll('.pg-store-btn').forEach(btn => {
-      btn.addEventListener('click', () => selectStore(btn.dataset.store));
+      btn.addEventListener('click', () => toggleStore(btn.dataset.store));
     });
 
     // S/M/L card size (saved preference, shared key with app page)

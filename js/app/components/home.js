@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=30cf98fd';
-import { loadSearchIndex, searchIndex } from './search.js?v=37a03e4e';
+import { loadSearchIndex, searchIndex } from './search.js?v=a30bff33';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=de2b700a';
@@ -166,16 +166,13 @@ export async function renderHomePage() {
 
     el.innerHTML = `
       <div class="home-filter-bar">
+        <div class="home-filter-left">
         <div class="filter-wrap" id="home-filter-wrap">
           <button class="filter-toggle-btn" id="home-filter-toggle" type="button" aria-expanded="false">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M4.25 5.61C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39C20.25 4.95 19.8 4 18.95 4H5.04C4.2 4 3.74 4.95 4.25 5.61z"/></svg>
             Filters<span class="filter-badge" id="home-filter-badge" hidden></span>
           </button>
           <div class="filter-panel filter-panel--stack" id="home-filter-panel">
-            <div class="filter-item">
-              <label class="home-filter-label" for="home-text-filter">Filter</label>
-              <input id="home-text-filter" class="home-filter-text" type="search" placeholder="Filter text" autocomplete="off" />
-            </div>
             <div class="filter-item">
               <label class="home-filter-label" for="home-sort-select">Sort</label>
               <select id="home-sort-select" class="home-filter-select">
@@ -210,9 +207,12 @@ export async function renderHomePage() {
               <button class="pg-filter" type="button" data-value="pulse">Pulse</button>
             </div>
             <div class="filter-panel-footer filter-panel-footer--stack">
+              <label class="filter-persist"><input type="checkbox" id="home-filter-persist" /> Save filters</label>
               <button class="filter-clear-btn" id="home-filter-clear" type="button">Clear filters</button>
             </div>
           </div>
+        </div>
+        <input id="home-text-filter" class="home-filter-text" type="search" placeholder="Filter text" autocomplete="off" />
         </div>
         <div class="home-view-controls">
           <div class="home-size-toggle" id="home-size-toggle" title="Card size">
@@ -379,6 +379,7 @@ export async function renderHomePage() {
     document.getElementById('home-sort-select')?.addEventListener('change', e => {
       currentSort = e.target.value;
       applyRecentFilters();
+      _saveFiltersIfEnabled();
     });
 
     // Text filter: filters both sections by title substring as the user types.
@@ -387,6 +388,7 @@ export async function renderHomePage() {
       updateFilterBadge();
       applyRecentFilters();
       applyPopularFilters();
+      _saveFiltersIfEnabled();
     });
 
     // Filters popover: toggle open, close on outside click.
@@ -406,6 +408,59 @@ export async function renderHomePage() {
       }
     });
 
+    // Save filters: when the "Save filters" box is checked, persist the full
+    // filter state to localStorage and restore it on the next visit. Unchecking
+    // clears the saved state. The box itself reflects whether a save is active.
+    const FILTERS_KEY = 'pp:browse-filters';
+    function _persistOn() { return !!document.getElementById('home-filter-persist')?.checked; }
+    function _saveFilters() {
+      try {
+        localStorage.setItem(FILTERS_KEY, JSON.stringify({
+          sort: currentSort, text: textFilter,
+          tier: [...tierSel], source: [...sourceSel], store: [...storeSel],
+        }));
+      } catch { /* ignore */ }
+    }
+    // Call after any filter change; only writes when the box is checked.
+    function _saveFiltersIfEnabled() { if (_persistOn()) _saveFilters(); }
+    function _applyPillSelection(groupEl, values) {
+      if (!groupEl) return;
+      groupEl.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'));
+      const set = new Set(values || []);
+      if (set.size === 0) {
+        groupEl.querySelector('.pg-filter[data-value="all"]')?.classList.add('pg-filter--active');
+      } else {
+        set.forEach(v => groupEl.querySelector(`.pg-filter[data-value="${v}"]`)?.classList.add('pg-filter--active'));
+      }
+    }
+    // Restore a previously saved filter set on load. Returns true if restored.
+    function _restoreFilters() {
+      let saved = null;
+      try { saved = JSON.parse(localStorage.getItem(FILTERS_KEY) || 'null'); } catch { saved = null; }
+      if (!saved) return false;
+      const persistBox = document.getElementById('home-filter-persist');
+      if (persistBox) persistBox.checked = true;
+      currentSort = saved.sort || 'recent';
+      const sortSel = document.getElementById('home-sort-select');
+      if (sortSel) sortSel.value = currentSort;
+      textFilter = saved.text || '';
+      const textInput = document.getElementById('home-text-filter');
+      if (textInput) textInput.value = textFilter;
+      tierSel = new Set(saved.tier || []);
+      sourceSel = new Set(saved.source || []);
+      storeSel = new Set(saved.store || []);
+      _applyPillSelection(tierGroup, saved.tier);
+      _applyPillSelection(sourceGroup, saved.source);
+      _applyPillSelection(storeGroup, saved.store);
+      updateFilterBadge();
+      console.debug('[browse-filters] restored saved filters', { source: FILTERS_KEY, sort: currentSort, tiers: [...tierSel], sources: [...sourceSel], stores: [...storeSel], text: textFilter });
+      return true;
+    }
+    document.getElementById('home-filter-persist')?.addEventListener('change', e => {
+      if (e.target.checked) _saveFilters();
+      else { try { localStorage.removeItem(FILTERS_KEY); } catch { /* ignore */ } }
+    });
+
     // Active-filter badge: count specific tier + source + store selections.
     function updateFilterBadge() {
       const n = tierSel.size + sourceSel.size + storeSel.size + (textFilter.trim() ? 1 : 0);
@@ -420,13 +475,13 @@ export async function renderHomePage() {
     const sourceGroup = document.getElementById('home-source-checks');
     const storeGroup = document.getElementById('home-store-checks');
     if (tierGroup) _wirePillGroup(tierGroup, sel => {
-      tierSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters();
+      tierSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     });
     if (sourceGroup) _wirePillGroup(sourceGroup, sel => {
-      sourceSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters();
+      sourceSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     });
     if (storeGroup) _wirePillGroup(storeGroup, sel => {
-      storeSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters();
+      storeSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     });
 
     // Clear filters: reset every group back to "All", sort back to Recent.
@@ -449,6 +504,8 @@ export async function renderHomePage() {
       updateFilterBadge();
       applyRecentFilters();
       applyPopularFilters();
+      // Persist the cleared state too so a saved set does not come back on reload.
+      _saveFiltersIfEnabled();
     });
 
     // S/M/L only make sense for the card (grid) view; disable them in list mode.
@@ -504,6 +561,7 @@ export async function renderHomePage() {
     applyGridSize(_savedSize());
     applyLayout(_savedLayout()); // restore saved list/grid before first render
 
+    _restoreFilters(); // re-apply a saved filter set (if any) before first render
     applyRecentFilters();
     applyPopularFilters();
   } catch {

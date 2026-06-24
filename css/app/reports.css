@@ -146,7 +146,7 @@
   margin-top: 2px;
   padding-top: 12px;
   border-top: 1px solid var(--border);
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 @media (max-width: 560px) {
   .filter-panel--stack.open { flex-direction: column; gap: 14px; }
@@ -162,22 +162,27 @@
   cursor: pointer;
 }
 
-/* Text filter box: filters the shown games by title substring. Full width of
-   the panel so it stretches wider automatically on the wider desktop panel. */
-.filter-panel--stack .home-filter-text {
-  width: 100%;
+/* Text filter box: sits in the bar to the right of the Filters button (not in
+   the dropdown). Wider on desktop, shorter on mobile. */
+.home-filter-left { display: flex; align-items: center; gap: 8px; }
+.home-filter-text {
+  width: 220px;
+  max-width: 40vw;
   box-sizing: border-box;
   background: var(--bg);
   border: 1px solid var(--border2);
   color: var(--text);
-  padding: 6px 10px;
-  font-size: 0.8rem;
+  padding: 7px 12px;
+  font-size: 0.85rem;
   font-family: inherit;
-  border-radius: 4px;
+  border-radius: 999px;
   outline: none;
   transition: border-color .1s;
 }
-.filter-panel--stack .home-filter-text:focus { border-color: var(--accent); }
+.home-filter-text:focus { border-color: var(--accent); }
+@media (max-width: 560px) {
+  .home-filter-text { width: 130px; }
+}
 
 /* Desktop: the narrow row-wrap of groups made the variable-width pills wrap
    raggedly. On wider screens lay the panel out as a single vertical column of
