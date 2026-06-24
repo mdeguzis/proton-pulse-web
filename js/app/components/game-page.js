@@ -7,11 +7,11 @@ import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=bac2f4eb';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=ac040be6';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=220e13ea';
-import { enhanceAuthorBlocks } from './author.js?v=2ee6f936';
+import { enhanceAuthorBlocks } from './author.js?v=0730c36c';
 import { renderConfigCard } from './config-cards.js?v=473be757';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=3d873bb3';
-import { renderCard } from './report-card.js?v=1134e3c7';
-import { loadSearchIndex, searchIndex } from './search.js?v=f56dd455';
+import { renderCard } from './report-card.js?v=623197f8';
+import { loadSearchIndex, searchIndex } from './search.js?v=53fee6c7';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=df5b5024';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=3e345596';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';

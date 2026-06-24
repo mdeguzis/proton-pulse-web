@@ -292,8 +292,8 @@
 .pg-head {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 14px;
-  flex-wrap: wrap;
   margin-bottom: 10px;
 }
 .pg-section-heading { margin: 6px 0 2px; }
@@ -788,5 +788,4 @@
   .quick-actions { flex-direction: column; }
   .qa-link { justify-content: center; }
   .pg-head { gap: 8px; }
-  .pg-view-controls { margin-left: 0; width: 100%; justify-content: flex-end; }
 }

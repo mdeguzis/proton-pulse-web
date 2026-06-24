@@ -281,11 +281,22 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
       const subEl = document.getElementById('pg-sub');
       if (labelEl) labelEl.textContent = SECTION_LABEL[store] || 'Popular Games';
       if (subEl) subEl.textContent = SECTION_SUB[store] || '';
+      // Non-Steam catalog stubs are mostly unrated -- default to showing all
+      // so the section isn't empty; Steam keeps the "Rated only" default.
       if (store !== 'steam') {
+        state.rated = true;
+        state.unrated = true;
         list.innerHTML = '<div class="pg-empty">Loading...</div>';
         await loadSearchIndex();
         console.debug('[popular-games] search-index loaded for store', { store, entries: (searchIndexCache || []).length });
+      } else {
+        state.rated = true;
+        state.unrated = false;
       }
+      ratedBtn?.classList.toggle('pg-filter--active', state.rated);
+      unratedBtn?.classList.toggle('pg-filter--active', state.unrated);
+      ratedBtn?.setAttribute('aria-pressed', String(state.rated));
+      unratedBtn?.setAttribute('aria-pressed', String(state.unrated));
       updateFilterBadge();
       shownCount = PAGE_SIZE;
       renderPopular();

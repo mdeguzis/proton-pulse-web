@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=30cf98fd';
-import { loadSearchIndex, searchIndex } from './search.js?v=f56dd455';
+import { loadSearchIndex, searchIndex } from './search.js?v=53fee6c7';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=8f45a69a';
@@ -213,9 +213,11 @@ export async function renderHomePage() {
           </div>
         </div>
       </div>
-      <p class="section-label" style="margin-bottom:10px">Recent Reports</p>
-      <div class="cards" id="cards-recent"></div>
-      <div id="load-more-recent"></div>
+      <div id="recent-section">
+        <p class="section-label" style="margin-bottom:10px">Recent Reports</p>
+        <div class="cards" id="cards-recent"></div>
+        <div id="load-more-recent"></div>
+      </div>
       <div class="section-label-row" style="margin-top:24px;margin-bottom:10px">
         <span class="section-label" id="popular-section-label" style="margin:0">Popular on Steam</span>
       </div>
@@ -334,12 +336,16 @@ export async function renderHomePage() {
 
     function applyRecentFilters() {
       const filtered = _filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel);
+      const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
       const renderFn = currentLayout === 'list' ? _listRowHtml : _recentCardHtml;
       const queue = filtered.slice(PAGE_SIZE);
       const initial = filtered.slice(0, PAGE_SIZE);
-      cardsEl.innerHTML = initial.map(renderFn).join('') || '<div class="state-box">No reports found.</div>';
+      // Hide the whole recent section when empty so there's no blank state box.
+      if (sectionEl) sectionEl.hidden = !filtered.length;
+      if (!filtered.length) { if (cardsEl) cardsEl.innerHTML = ''; return; }
+      cardsEl.innerHTML = initial.map(renderFn).join('');
       if (loadMoreEl) {
         if (queue.length) {
           loadMoreEl.innerHTML = _loadMoreBtn('recent');
