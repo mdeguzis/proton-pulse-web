@@ -91,6 +91,12 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
 
   const RATING_LABEL = { platinum: 'Platinum', gold: 'Gold', silver: 'Silver', bronze: 'Bronze', borked: 'Borked' };
   const KNOWN_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked']);
+  const STORE_LABEL = { gog: 'GOG', epic: 'Epic', steam: 'Steam' };
+  const STORE_PILL_CLASS = { gog: 'game-card-store-pill--gog', epic: 'game-card-store-pill--epic', steam: 'game-card-store-pill--steam' };
+  function storePill(appType) {
+    const t = appType || 'steam';
+    return `<span class="game-card-store-pill ${STORE_PILL_CLASS[t] || 'game-card-store-pill--steam'}">${STORE_LABEL[t] || 'Steam'}</span>`;
+  }
   const SECTION_LABEL = { steam: 'Popular on Steam', gog: 'Popular GOG Games', epic: 'Popular Epic Games' };
   const SECTION_SUB = {
     steam: "Steam's most-played games and how they run on Linux through Proton.",
@@ -131,7 +137,10 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
           <div class="pg-title">${esc(g.title)}</div>
           ${peak ? `<div class="pg-sub">${peak} peak players</div>` : ''}
         </div>
-        <span class="pg-badge ${badgeClass}">${rLabel}</span>
+        <div class="pg-right">
+          <span class="pg-badge ${badgeClass}">${rLabel}</span>
+          ${storePill(g.appType)}
+        </div>
       </a>`;
   }
 
@@ -143,7 +152,7 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
     return `<a class="pg-list-row" href="app.html#/app/${encodeURIComponent(g.appId)}">
       <span class="pg-list-tier pg-badge ${rated ? `pg-${rating}` : 'pg-unrated'}">${rLabel}</span>
       <span class="pg-list-title">${esc(g.title)}</span>
-      <span class="pg-list-meta">${peak ? peak + ' peak' : ''}</span>
+      <span class="pg-list-meta">${storePill(g.appType)}${peak ? ' ' + peak + ' peak' : ''}</span>
     </a>`;
   }
 
