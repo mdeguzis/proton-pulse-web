@@ -90,11 +90,26 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
   }
 
   const RATING_LABEL = { platinum: 'Platinum', gold: 'Gold', silver: 'Silver', bronze: 'Bronze', borked: 'Borked' };
-  // Tiers that count as a real compatibility rating. Anything else (catalog,
-  // pending, empty) is a title we list but have no reports for yet.
   const KNOWN_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked']);
+  const SECTION_LABEL = { steam: 'Popular on Steam', gog: 'Popular GOG Games', epic: 'Popular Epic Games' };
+  const SECTION_SUB = {
+    steam: "Steam's most-played games and how they run on Linux through Proton.",
+    gog: 'GOG catalog games and how they run on Linux.',
+    epic: 'Epic Games Store titles and how they run on Linux.',
+  };
 
   let currentLayout = 'grid';
+  let currentStore = 'steam';
+  let searchIndexCache = null;
+
+  async function loadSearchIndex() {
+    if (searchIndexCache) return searchIndexCache;
+    try {
+      const resp = await fetch('search-index.json');
+      if (resp.ok) searchIndexCache = await resp.json();
+    } catch (_) {}
+    return searchIndexCache || [];
+  }
 
   function pgCardHtml(g) {
     if (currentLayout === 'list') return pgListRowHtml(g);
@@ -139,10 +154,6 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
       return;
     }
 
-    // Split into rated games and unrated titles that lack reports
-    // (catalog/pending). Two independent filter buttons drive the view:
-    // "Rated" (on by default) and "Not Rated" (off by default). Any
-    // combination is allowed, including both on or both off.
     const ratedGames = games.filter((g) => KNOWN_TIERS.has(String(g.rating || '').toLowerCase()));
     const unratedGames = games.filter((g) => !KNOWN_TIERS.has(String(g.rating || '').toLowerCase()));
     console.debug('[popular-games] loaded most_played.json', {
@@ -163,12 +174,27 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
     const state = { rated: true, unrated: false };
     let shownCount = PAGE_SIZE;
 
-    // The combined list of games to show for the current filter state.
+    // Build the game list for the current store + rating filter state.
+    // Steam uses most_played.json. GOG/Epic use the search index filtered by
+    // appType so all catalog stubs show, including games with 0 reports.
     function currentList() {
-      return [
-        ...(state.rated ? ratedGames : []),
-        ...(state.unrated ? unratedGames : []),
-      ];
+      if (currentStore === 'steam') {
+        return [
+          ...(state.rated ? ratedGames : []),
+          ...(state.unrated ? unratedGames : []),
+        ];
+      }
+      return (searchIndexCache || [])
+        .filter(row => row[5] === currentStore)
+        .filter(row => {
+          const tier = String(row[2] || '').toLowerCase();
+          const rated = KNOWN_TIERS.has(tier);
+          if (state.rated && !state.unrated) return rated;
+          if (state.unrated && !state.rated) return !rated;
+          return true; // both or neither -> show all
+        })
+        .sort((a, b) => (a[1] || '').localeCompare(b[1] || ''))
+        .map(row => ({ appId: row[0], title: row[1], rating: row[2] || '', appType: row[5] }));
     }
 
     function renderPopular() {
@@ -189,8 +215,7 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
       }
     }
 
-    // Rated / Not Rated are mutually exclusive (either-or): selecting one
-    // deselects the other, and exactly one is always active.
+    // Rated / Not Rated are mutually exclusive (either-or).
     function selectFilter(key) {
       state.rated = key === 'rated';
       state.unrated = key === 'unrated';
@@ -198,11 +223,33 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
       unratedBtn?.classList.toggle('pg-filter--active', state.unrated);
       ratedBtn?.setAttribute('aria-pressed', String(state.rated));
       unratedBtn?.setAttribute('aria-pressed', String(state.unrated));
-      shownCount = PAGE_SIZE; // restart paging when the filter changes
+      shownCount = PAGE_SIZE;
       renderPopular();
     }
     ratedBtn?.addEventListener('click', () => selectFilter('rated'));
     unratedBtn?.addEventListener('click', () => selectFilter('unrated'));
+
+    // Store filter: Steam uses most_played; GOG/Epic lazy-load the search index.
+    async function selectStore(store) {
+      currentStore = store;
+      document.querySelectorAll('.pg-store-btn').forEach(b => {
+        b.classList.toggle('pg-filter--active', b.dataset.store === store);
+      });
+      const labelEl = document.getElementById('pg-section-label');
+      const subEl = document.getElementById('pg-sub');
+      if (labelEl) labelEl.textContent = SECTION_LABEL[store] || 'Popular Games';
+      if (subEl) subEl.textContent = SECTION_SUB[store] || '';
+      if (store !== 'steam') {
+        list.innerHTML = '<div class="pg-empty">Loading...</div>';
+        await loadSearchIndex();
+        console.debug('[popular-games] search-index loaded for store', { store, entries: (searchIndexCache || []).length });
+      }
+      shownCount = PAGE_SIZE;
+      renderPopular();
+    }
+    document.querySelectorAll('.pg-store-btn').forEach(btn => {
+      btn.addEventListener('click', () => selectStore(btn.dataset.store));
+    });
 
     // S/M/L card size (saved preference, shared key with app page)
     const SIZE_KEY = 'pp:grid-size';

@@ -166,8 +166,13 @@
          the pipeline). Hidden until data loads so the section never shows empty. -->
     <section class="popular-games" id="popular-games" hidden>
       <div class="pg-head">
-        <div class="section-label">Popular games on Steam</div>
-        <div class="pg-filters" role="group" aria-label="Filter popular games by rating">
+        <div class="section-label" id="pg-section-label">Popular on Steam</div>
+        <div class="pg-store-filters" role="group" aria-label="Filter by store">
+          <button class="pg-filter pg-filter--active pg-store-btn" data-store="steam" id="pg-store-steam" type="button">Steam</button>
+          <button class="pg-filter pg-store-btn" data-store="gog" id="pg-store-gog" type="button">GOG</button>
+          <button class="pg-filter pg-store-btn" data-store="epic" id="pg-store-epic" type="button">Epic</button>
+        </div>
+        <div class="pg-filters" id="pg-rating-filters" role="group" aria-label="Filter popular games by rating">
           <button class="pg-filter pg-filter--active" id="pg-filter-rated" type="button" aria-pressed="true">Rated <span class="pg-filter-count" id="pg-rated-count">0</span></button>
           <button class="pg-filter" id="pg-filter-unrated" type="button" aria-pressed="false">Not Rated <span class="pg-filter-count" id="pg-unrated-count">0</span></button>
         </div>
@@ -183,7 +188,7 @@
           </div>
         </div>
       </div>
-      <p class="popular-games-sub">Steam's most-played games and how they run on Linux through Proton.</p>
+      <p class="popular-games-sub" id="pg-sub">Steam's most-played games and how they run on Linux through Proton.</p>
       <div class="pg-list" id="pg-list"></div>
       <div class="pg-load-more-row" id="pg-load-more"></div>
     </section>
@@ -203,6 +208,6 @@
 <script src="js/lib/supabase-client.js?v=04813aa1"></script>
 <script src="js/lib/topbar.js?v=46cb7ea1"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/index/main.js?v=4c1581c6"></script>
+<script type="module" src="js/index/main.js?v=514076f1"></script>
 </body>
 </html>

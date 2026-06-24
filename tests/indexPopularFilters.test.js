@@ -58,6 +58,6 @@ describe('index page popular games rating filters', () => {
   });
 
   test('changing a filter restarts paging', () => {
-    expect(indexSrc).toContain('shownCount = PAGE_SIZE; // restart paging when the filter changes');
+    expect(indexSrc).toContain('shownCount = PAGE_SIZE;');
   });
 });
