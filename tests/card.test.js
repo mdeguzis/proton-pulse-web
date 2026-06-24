@@ -41,19 +41,19 @@ describe('renderGameCard rating pill', () => {
 describe('renderGameCard store tag', () => {
   const renderGameCard = loadCard();
 
-  test('store renders as a corner tag overlaid on the artwork, not in the right column', () => {
+  test('store pill renders inside game-card-pills alongside the rating badge', () => {
     const html = renderGameCard({ href: '#/app/gog:1', appId: 'gog:1', title: 'X', sub: '', storePill: 'GOG' });
-    expect(html).toContain('game-card-store-tag game-card-store-pill--gog');
+    expect(html).toContain('game-card-store-pill game-card-store-pill--gog');
     expect(html).toContain('>GOG<');
-    // the tag lives inside the thumbnail wrapper, before the body
-    expect(html.indexOf('game-card-store-tag')).toBeLessThan(html.indexOf('game-card-body'));
+    // pill lives inside game-card-pills, which is inside game-card-right
+    const pills = html.slice(html.indexOf('game-card-pills'));
+    expect(pills).toContain('game-card-store-pill--gog');
+    expect(pills).toContain('game-card-badge');
   });
 
-  test('the right column holds only the rating pill (no store pill)', () => {
+  test('no store pill is rendered as a thumbnail overlay (game-card-store-tag)', () => {
     const html = renderGameCard({ href: '#/app/gog:1', appId: 'gog:1', title: 'X', sub: '', storePill: 'GOG' });
-    const right = html.slice(html.indexOf('game-card-right'));
-    expect(right).not.toContain('game-card-store');
-    expect(right).toContain('game-card-badge');
+    expect(html).not.toContain('game-card-store-tag');
   });
 });
 

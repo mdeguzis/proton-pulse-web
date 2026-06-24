@@ -427,3 +427,6 @@
   .sidebar-nav-block { display: none; }
   .sidebar-about-block { display: none; }
 }
+
+/* Store pill site preference: set by topbar.js from pp:store-pill localStorage key */
+[data-store-pill="off"] .game-card-store-pill { display: none; }

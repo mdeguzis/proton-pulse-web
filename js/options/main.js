@@ -41,3 +41,26 @@ if (toggle) {
     console.log('[options] localStorage now:', localStorage.getItem(MOTION_KEY));
   });
 }
+
+// Store pill preference: show/hide the store badge on game cards site-wide.
+const STORE_PILL_KEY = 'pp:store-pill';
+function applyStorePill(on) {
+  if (on) {
+    document.documentElement.removeAttribute('data-store-pill');
+  } else {
+    document.documentElement.setAttribute('data-store-pill', 'off');
+  }
+}
+const storePillToggle = document.getElementById('opt-store-pill');
+if (storePillToggle) {
+  const stored = localStorage.getItem(STORE_PILL_KEY);
+  const on = stored !== 'off';
+  storePillToggle.checked = on;
+  applyStorePill(on);
+  storePillToggle.addEventListener('change', () => {
+    const val = storePillToggle.checked ? 'on' : 'off';
+    localStorage.setItem(STORE_PILL_KEY, val);
+    applyStorePill(storePillToggle.checked);
+    console.log('[options] store-pill:', val);
+  });
+}

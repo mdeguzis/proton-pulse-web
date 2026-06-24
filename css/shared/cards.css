@@ -127,13 +127,16 @@
   padding: 4px 10px;
   border-radius: 999px;
   white-space: nowrap;
-  background: #2a3f5a;
-  color: #cfe0f0;
+  background: #1689d0;
+  color: #fff;
 }
-.game-card-store-pill--steam { background: #2a3f5a; color: #cfe0f0; }
+.game-card-store-pill--steam { background: #1689d0; color: #fff; }
 .game-card-store-pill--gog   { background: #7a3fcf; color: #fff; }
-.game-card-store-pill--epic  { background: #3a3a3a; color: #fff; }
+.game-card-store-pill--epic  { background: #555; color: #eee; }
 .game-card-store-pill--non-steam { background: #444; color: #ddd; }
+@media (max-width: 600px) {
+  .game-card-pills { flex-direction: column; align-items: flex-end; gap: 4px; }
+}
 .game-card-source {
   font-size: 0.65rem;
   color: var(--muted);
