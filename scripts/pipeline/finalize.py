@@ -29,8 +29,8 @@ from .common import (
     flush_steam_title_cache,
     log,
 )
-from .gog_catalog import load_gog_catalog
-from .epic_catalog import load_epic_catalog
+from .gog_catalog import load_gog_catalog, load_gog_covers
+from .epic_catalog import load_epic_catalog, load_epic_covers
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
 from .game_images import build_game_images
 from .most_played import build_most_played
@@ -790,6 +790,34 @@ def generate_search_index(
     log(f"[search-index] Written {len(entries):,} entries to {index_file}")
 
 
+def generate_nonsteam_images(output_path: Path) -> None:
+    """Emit nonsteam-images.json: {canonical_id: cover_url} for GOG/Epic games.
+
+    Steam header images come from the Steam CDN by app id, but GOG/Epic ids are
+    prefixed (gog:<productId>, epic:<namespace>) and have no Steam image. The
+    catalog APIs return a cover image per game, so map them by canonical id and
+    let the frontend use it as the card thumbnail. Degrades to an empty map if
+    the covers are unavailable.
+    """
+    images: dict[str, str] = {}
+    try:
+        for pid, url in load_gog_covers().items():
+            if url:
+                images[f"gog:{pid}"] = url
+    except Exception as exc:
+        log(f"[nonsteam-images] WARN: GOG covers unavailable: {exc}")
+    try:
+        for namespace, url in load_epic_covers().items():
+            if url:
+                images[f"epic:{namespace}"] = url
+    except Exception as exc:
+        log(f"[nonsteam-images] WARN: Epic covers unavailable: {exc}")
+
+    out_file = output_path / "nonsteam-images.json"
+    out_file.write_text(json.dumps(images, separators=(",", ":")))
+    log(f"[nonsteam-images] Written {len(images):,} cover URLs to {out_file}")
+
+
 def generate_coverage_report(
     index_keys: set,
     backfilled_keys: set,
@@ -1401,6 +1429,7 @@ def finalize_output(output_dir, skip_probe: bool = False):
     generate_app_indexes(full_index_keys, data_output_path)
     generate_index_html(full_index_keys, output_path)
     generate_search_index(full_index_keys, data_output_path, output_path, gog_catalog=gog_catalog, epic_catalog=epic_catalog)
+    generate_nonsteam_images(output_path)
     generate_coverage_report(
         full_index_keys,
         state["backfilled_keys"],

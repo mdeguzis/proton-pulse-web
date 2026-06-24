@@ -1,10 +1,10 @@
 // home (components) for the app page. Relocated from app.js.
 
-import { fetchRecentPulseReports } from '../api/reports.js?v=a9fb53ae';
-import { loadSearchIndex, searchIndex } from './search.js?v=064a9d4f';
-import { SB_KEY, SB_URL, isNonSteamAppId } from '../config.js?v=4031c5fa';
+import { fetchRecentPulseReports } from '../api/reports.js?v=30cf98fd';
+import { loadSearchIndex, searchIndex } from './search.js?v=a2fdfd30';
+import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
-import { renderGameCard } from '../lib/card.js?v=3a07c55e';
+import { renderGameCard } from '../lib/card.js?v=633df5fd';
 
 const PAGE_SIZE = 10;
 const KNOWN_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked']);
@@ -60,6 +60,14 @@ function _filterByType(reports, sel) {
   });
 }
 
+// Store filter is multi-select. `sel` is a Set of chosen values ('steam' / 'gog'
+// / 'epic'). Empty or 'all' means no filtering. A game's store comes from its
+// appType field (pipeline) or is derived from the canonical app id prefix.
+function _filterByStore(reports, sel) {
+  if (!sel || sel.size === 0 || sel.has('all')) return reports;
+  return reports.filter(r => sel.has(r.appType || appTypeFromAppId(r.appId)));
+}
+
 // Read the checked values (excluding 'all') from a checkbox filter group.
 function _readCheckGroup(groupEl) {
   const set = new Set();
@@ -107,13 +115,17 @@ function _allShownNote(count) {
 }
 
 function _recentCardHtml(r) {
+  // recent-reports.json carries appType ('gog'|'epic'|'steam') from the pipeline.
+  // Fall back to deriving it from the id so non-Steam games are labeled even on
+  // older payloads that predate the appType field.
+  const appType = r.appType || appTypeFromAppId(r.appId);
   return renderGameCard({
     href: `#/app/${r.appId}`,
     appId: r.appId,
     title: r.title,
     sub: _popularSub(r),
     tier: String(r.tier || '').toLowerCase() || undefined,
-    sourceLabel: 'Steam',
+    storePill: storeLabel(appType),
   });
 }
 
@@ -173,6 +185,13 @@ export async function renderHomePage() {
               <label class="filter-check"><input type="checkbox" value="protondb"><span>ProtonDB</span></label>
               <label class="filter-check"><input type="checkbox" value="pulse"><span>Pulse</span></label>
             </div>
+            <div class="filter-checks" id="home-store-checks" data-group="store">
+              <span class="filter-checks-label">Store</span>
+              <label class="filter-check"><input type="checkbox" value="all" checked><span>All</span></label>
+              <label class="filter-check"><input type="checkbox" value="steam"><span>Steam</span></label>
+              <label class="filter-check"><input type="checkbox" value="gog"><span>GOG</span></label>
+              <label class="filter-check"><input type="checkbox" value="epic"><span>Epic</span></label>
+            </div>
             <div class="filter-panel-footer filter-panel-footer--stack">
               <button class="filter-clear-btn" id="home-filter-clear" type="button">Clear filters</button>
             </div>
@@ -202,14 +221,17 @@ export async function renderHomePage() {
     let currentSort = 'recent';
     let tierSel = new Set();   // empty => all tiers
     let sourceSel = new Set(); // empty => all sources
+    let storeSel = new Set();  // empty => all stores
     let currentLayout = 'grid';
 
     function _listRowHtml(r) {
       const tier = String(r.tier || '').toLowerCase();
       const total = (r.protondbCount || 0) + (r.pulseCount || 0);
       const countStr = total > 0 ? `${total.toLocaleString()} reports` : '';
+      const store = storeLabel(r.appType || appTypeFromAppId(r.appId));
       return `<a class="home-list-row" href="#/app/${r.appId}">
         <span class="home-list-tier tier-badge tier-badge--${tier || 'pending'}">${tier || '?'}</span>
+        <span class="home-list-store game-card-store-pill game-card-store-pill--${store.toLowerCase()}">${store}</span>
         <span class="home-list-title">${r.title || r.appId}</span>
         <span class="home-list-meta">${[r.lastReportDate, countStr].filter(Boolean).join(' \u00b7 ')}</span>
       </a>`;
@@ -231,7 +253,7 @@ export async function renderHomePage() {
         const t = String(g.rating || '').toLowerCase();
         return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending' };
       });
-      const filtered = _filterByType(_filterByTier(asReports, tierSel), sourceSel);
+      const filtered = _filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel);
       const cardsEl = document.getElementById('cards-popular');
       const loadMoreEl = document.getElementById('load-more-popular');
       if (!cardsEl) return;
@@ -261,12 +283,12 @@ export async function renderHomePage() {
         href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
         title: g.title,
         sub: g.tier === 'pending' ? 'No reports yet · be the first' : _popularSub(g),
-        tier: g.tier || undefined, sourceLabel: 'Steam',
+        tier: g.tier || undefined, storePill: storeLabel(g.appType || appTypeFromAppId(g.appId)),
       });
     }
 
     function applyRecentFilters() {
-      const filtered = _filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel);
+      const filtered = _filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel);
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
       const renderFn = currentLayout === 'list' ? _listRowHtml : _recentCardHtml;
@@ -310,9 +332,9 @@ export async function renderHomePage() {
       }
     });
 
-    // Active-filter badge: count specific tier + source selections.
+    // Active-filter badge: count specific tier + source + store selections.
     function updateFilterBadge() {
-      const n = tierSel.size + sourceSel.size;
+      const n = tierSel.size + sourceSel.size + storeSel.size;
       filterToggle?.classList.toggle('has-filters', n > 0);
       if (filterBadge) {
         filterBadge.textContent = String(n);
@@ -322,16 +344,20 @@ export async function renderHomePage() {
 
     const tierGroup = document.getElementById('home-tier-checks');
     const sourceGroup = document.getElementById('home-source-checks');
+    const storeGroup = document.getElementById('home-store-checks');
     if (tierGroup) _wireCheckGroup(tierGroup, sel => {
       tierSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters();
     });
     if (sourceGroup) _wireCheckGroup(sourceGroup, sel => {
       sourceSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters();
     });
+    if (storeGroup) _wireCheckGroup(storeGroup, sel => {
+      storeSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters();
+    });
 
     // Clear filters: reset every group back to "All", sort back to Recent.
     document.getElementById('home-filter-clear')?.addEventListener('click', () => {
-      [tierGroup, sourceGroup].forEach(g => {
+      [tierGroup, sourceGroup, storeGroup].forEach(g => {
         if (!g) return;
         g.querySelectorAll('input[type="checkbox"]').forEach(cb => { cb.checked = cb.value === 'all'; });
       });
@@ -340,6 +366,7 @@ export async function renderHomePage() {
       currentSort = 'recent';
       tierSel = new Set();
       sourceSel = new Set();
+      storeSel = new Set();
       updateFilterBadge();
       applyRecentFilters();
       applyPopularFilters();
@@ -459,13 +486,17 @@ export function renderActivityCard(kind, row, counts = {}) {
     isNonSteam = cfg.isNonSteam === true || isNonSteamAppId(appId);
   }
   const rating = isReport ? String(row.rating || '').toLowerCase() : '';
+  // Prefer the canonical store from the id prefix (gog:/epic:); otherwise fall
+  // back to the legacy CRC32 non-Steam shortcut heuristic.
+  const at = appTypeFromAppId(appId);
+  const storePillLabel = at !== 'steam' ? storeLabel(at) : (isNonSteam ? 'Non-Steam' : 'Steam');
   return renderGameCard({
     href: `#/app/${appId}`,
     appId,
     title,
     sub,
     tier: rating || undefined,
-    sourceLabel: isNonSteam ? 'Non-Steam' : 'Steam',
+    storePill: storePillLabel,
   });
 }
 

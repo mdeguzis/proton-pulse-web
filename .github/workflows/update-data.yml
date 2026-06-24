@@ -258,10 +258,6 @@ jobs:
           cp gh-pages-data/game-images.json /tmp/protondb-output/ 2>/dev/null || true
           cp gh-pages-data/game-images-skip.json /tmp/protondb-output/ 2>/dev/null || true
           cp gh-pages-data/game-images-cache.json /tmp/protondb-output/ 2>/dev/null || true
-          # Seed store catalog caches so pipeline skips re-fetching within TTL
-          mkdir -p .cache
-          cp gh-pages-data/gog-catalog-cache.json .cache/ 2>/dev/null || true
-          cp gh-pages-data/epic-catalog-cache.json .cache/ 2>/dev/null || true
 
       - name: Restore pipeline cache
         uses: actions/cache/restore@v4
@@ -270,6 +266,17 @@ jobs:
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-final
           restore-keys: |
             pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-
+
+      # Seed the store catalog caches from gh-pages AFTER restoring the pipeline
+      # cache, so the freshly rebuilt catalog (pushed by the dedicated GOG/Epic
+      # workflows) wins over a stale copy carried in the actions cache. Doing
+      # this before the restore let the old catalog clobber the new one, which
+      # silently froze the GOG/Epic search-index stubs at an outdated count.
+      - name: Seed store catalog caches from gh-pages
+        run: |
+          mkdir -p .cache
+          cp gh-pages-data/gog-catalog-cache.json .cache/ 2>/dev/null || true
+          cp gh-pages-data/epic-catalog-cache.json .cache/ 2>/dev/null || true
 
       - name: Write local .env from secret
         run: |
@@ -327,6 +334,7 @@ jobs:
           cp /tmp/protondb-output/gog-catalog-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/epic-catalog-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/most_played.json . 2>/dev/null || true
+          cp /tmp/protondb-output/nonsteam-images.json . 2>/dev/null || true
           cp /tmp/protondb-output/proton-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/steam-catalog.json . 2>/dev/null || true
           cp /tmp/protondb-output/hardware-suggestions.json . 2>/dev/null || true
@@ -349,7 +357,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json proton-versions.json steam-catalog.json hardware-suggestions.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
@@ -364,14 +372,12 @@ jobs:
           git commit -m "Deploy: $(date +%F)"
           git push origin gh-pages-new:gh-pages --force
 
-      - name: Sync to staging
-        if: env.STAGING_DEPLOY_TOKEN != ''
-        env:
-          STAGING_DEPLOY_TOKEN: ${{ secrets.STAGING_DEPLOY_TOKEN }}
-        run: |
-          git config --local --unset-all http.https://github.com/.extraheader || true
-          git remote add staging https://x-access-token:${{ secrets.STAGING_DEPLOY_TOKEN }}@github.com/mdeguzis/proton-pulse-web-staging.git
-          git push staging gh-pages-new:gh-pages --force
+      # NOTE: the production pipeline must NOT push to the staging site. Doing so
+      # force-pushed main's (production) frontend over any in-review staging
+      # preview, silently reverting staging to prod whenever this ran after a
+      # `make gh-staging`. Staging is owned exclusively by the staging-preview
+      # job (make gh-staging) and reads production data through the CDN
+      # (USES_PROD_DATA in config.js), so it never needs a data sync from here.
 
   # ── Pages-only redeploy: refresh app/index shell files on gh-pages ─────────
   pages-only:
@@ -588,6 +594,7 @@ jobs:
           cp /tmp/protondb-output/gog-catalog-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/epic-catalog-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/most_played.json . 2>/dev/null || true
+          cp /tmp/protondb-output/nonsteam-images.json . 2>/dev/null || true
           cp /tmp/protondb-output/proton-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/steam-catalog.json . 2>/dev/null || true
           cp /tmp/protondb-output/hardware-suggestions.json . 2>/dev/null || true
@@ -610,7 +617,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json proton-versions.json steam-catalog.json hardware-suggestions.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
@@ -804,6 +811,7 @@ jobs:
           cp /tmp/protondb-output/gog-catalog-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/epic-catalog-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/most_played.json . 2>/dev/null || true
+          cp /tmp/protondb-output/nonsteam-images.json . 2>/dev/null || true
           cp /tmp/protondb-output/proton-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/steam-catalog.json . 2>/dev/null || true
           cp /tmp/protondb-output/hardware-suggestions.json . 2>/dev/null || true
@@ -826,7 +834,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json proton-versions.json steam-catalog.json hardware-suggestions.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do

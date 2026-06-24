@@ -1,11 +1,11 @@
 // search (components) for the app page. Relocated from app.js/app-search.js.
 
 import { estimateScore } from '../../shared/scoring.js?v=0dae1257';
-import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=a9fb53ae';
-import { renderGamePage } from './game-page.js?v=357066d4';
-import { STEAM_IMG } from '../config.js?v=4031c5fa';
+import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=30cf98fd';
+import { renderGamePage } from './game-page.js?v=9161b3cf';
+import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId } from '../config.js?v=df5b5024';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=f5dda5b6';
-import { renderGameCard } from '../lib/card.js?v=3a07c55e';
+import { renderGameCard } from '../lib/card.js?v=633df5fd';
 
 // Search index + results UX -- factored out of app.js.
 // Loaded as a classic script BEFORE app.js so its globals
@@ -32,7 +32,7 @@ export function searchIndexMatches(query, limit) {
 export function renderPulseSearchResult(row) {
   const age = daysAgo(Math.floor(new Date(row.updatedAt).getTime() / 1000));
   const sub = `${row.profileName ? esc(row.profileName) : ''}${row.protonVersion ? ' \u00b7 ' + esc(row.protonVersion) : ''} \u00b7 ${age}`;
-  return renderGameCard({ href: `#/app/${row.appId}`, appId: row.appId, title: row.appName, sub, badge: 'Pulse' });
+  return renderGameCard({ href: `#/app/${row.appId}`, appId: row.appId, title: row.appName, sub, badge: 'Pulse', storePill: storeLabelFromAppId(row.appId) });
 }
 
 // --- renderIndexSearchResult ---
@@ -47,8 +47,10 @@ export function renderIndexSearchResult(entry) {
   const meta = counts.length
     ? counts.join(' + ') + ' report' + ((protondbCount + pulseCount) === 1 ? '' : 's')
     : `ProtonDB data indexed for app ${esc(appId)}.`;
-  const storeLabel = (appType && appType !== 'steam') ? appType.toUpperCase() : 'Steam';
-  return renderGameCard({ href: `#/app/${appId}`, appId, title, sub: meta, tier: tier || undefined, sourceLabel: storeLabel });
+  // Prefer the appType column from the index; fall back to deriving from the id
+  // so legacy 5-tuple entries still get a store pill.
+  const store = appType === 'gog' ? 'GOG' : appType === 'epic' ? 'Epic' : appType === 'steam' ? 'Steam' : storeLabelFromAppId(appId);
+  return renderGameCard({ href: `#/app/${appId}`, appId, title, sub: meta, tier: tier || undefined, storePill: store });
 }
 
 // --- renderSearchPage ---
@@ -92,10 +94,11 @@ export async function renderSearchPage(query) {
 export async function loadSearchIndex() {
   if (searchIndex !== null) return;
   try {
-    // On localhost the search-index is gitignored + missing; pull it from
-    // production so dev preview can search any game without running the pipeline
-    const SEARCH_URL = ['localhost', '127.0.0.1', '0.0.0.0'].includes(window.location.hostname)
-      ? 'https://www.proton-pulse.com/search-index.json'
+    // Localhost and staging (.github.io) have no pipeline data of their own, so
+    // pull the production search-index just like CDN/data do (USES_PROD_DATA).
+    // On the real domain this stays relative.
+    const SEARCH_URL = USES_PROD_DATA
+      ? `${SITE_ROOT}/search-index.json`
       : 'search-index.json';
     const r = await fetch(SEARCH_URL);
     searchIndex = r.ok ? await r.json() : [];
@@ -165,11 +168,13 @@ export async function onSearchInput() {
 
   const rows = allItems.map(({ id, title, hasIndex, hasPulse }) => {
     const img = STEAM_IMG(id);
+    const store = storeLabelFromAppId(id);
     return `<a class="search-item" href="#/app/${id}" data-id="${id}">
       <img src="${img}" data-appid="${id}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">
       <div class="search-result-info">
         <div class="search-result-title">${esc(title)}</div>
         <div class="search-result-badges">
+          <span class="game-card-store-pill game-card-store-pill--${store.toLowerCase()}">${store}</span>
           ${hasIndex ? '<span class="badge badge-reports">ProtonDB</span>' : ''}
           ${hasPulse ? '<span class="badge badge-pulse">Pulse</span>' : ''}
         </div>

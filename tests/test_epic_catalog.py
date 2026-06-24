@@ -118,3 +118,102 @@ def test_skips_elements_with_missing_namespace(tmp_path):
     assert "goodns" in result
     assert "" not in result
     _reset()
+
+
+# ── _fetch_page retry behavior (rate limiting) ────────────────────────────────
+
+import pytest  # noqa: E402
+from email.message import Message  # noqa: E402
+from urllib.error import HTTPError  # noqa: E402
+
+
+def _http_error(code):
+    return HTTPError("https://store.epicgames.com/graphql", code, "err", Message(), None)
+
+
+def test_fetch_page_retries_on_429_then_succeeds():
+    calls = {"n": 0}
+
+    class FakeResp:
+        def read(self):
+            return _make_response([{"namespace": "ns1", "title": "Game"}], total=40)
+        def __enter__(self): return self
+        def __exit__(self, *a): pass
+
+    def fake_urlopen(req, timeout=30):
+        calls["n"] += 1
+        if calls["n"] < 3:
+            raise _http_error(429)
+        return FakeResp()
+
+    with patch("scripts.pipeline.epic_catalog.request.urlopen", side_effect=fake_urlopen), \
+         patch("scripts.pipeline.epic_catalog.time.sleep"):
+        data = epic_module._fetch_page(0)
+    assert calls["n"] == 3
+    assert data["data"]["Catalog"]["searchStore"]["elements"][0]["title"] == "Game"
+
+
+def test_fetch_page_gives_up_after_max_attempts():
+    def fake_urlopen(req, timeout=30):
+        raise _http_error(503)
+    with patch("scripts.pipeline.epic_catalog.request.urlopen", side_effect=fake_urlopen), \
+         patch("scripts.pipeline.epic_catalog.time.sleep"):
+        with pytest.raises(HTTPError):
+            epic_module._fetch_page(0)
+
+
+def test_fetch_page_does_not_retry_non_transient_status():
+    calls = {"n": 0}
+    def fake_urlopen(req, timeout=30):
+        calls["n"] += 1
+        raise _http_error(400)
+    with patch("scripts.pipeline.epic_catalog.request.urlopen", side_effect=fake_urlopen), \
+         patch("scripts.pipeline.epic_catalog.time.sleep"):
+        with pytest.raises(HTTPError):
+            epic_module._fetch_page(0)
+    assert calls["n"] == 1
+
+
+# ── cover image capture ───────────────────────────────────────────────────────
+
+def test_pick_cover_prefers_wide_types():
+    images = [
+        {"type": "Thumbnail", "url": "https://img/thumb.jpg"},
+        {"type": "DieselStoreFrontWide", "url": "https://img/wide.jpg"},
+    ]
+    assert epic_module._pick_cover(images) == "https://img/wide.jpg"
+
+
+def test_pick_cover_falls_back_to_any_url():
+    images = [{"type": "SomethingElse", "url": "https://img/other.jpg"}]
+    assert epic_module._pick_cover(images) == "https://img/other.jpg"
+
+
+def test_pick_cover_empty_returns_blank():
+    assert epic_module._pick_cover([]) == ""
+    assert epic_module._pick_cover(None) == ""
+
+
+def test_fetch_page_captures_covers():
+    def fake_urlopen(req, timeout=30):
+        class FakeResp:
+            def read(self):
+                return json.dumps({
+                    "data": {"Catalog": {"searchStore": {
+                        "elements": [{
+                            "namespace": "ns1", "title": "Game",
+                            "keyImages": [{"type": "OfferImageWide", "url": "https://img/g.jpg"}],
+                        }],
+                        "paging": {"count": 1, "total": 1},
+                    }}}
+                }).encode("utf-8")
+            def __enter__(self): return self
+            def __exit__(self, *a): pass
+        return FakeResp()
+    epic_module._epic_catalog_cache = None
+    epic_module._epic_covers_cache = None
+    with patch("scripts.pipeline.epic_catalog.request.urlopen", side_effect=fake_urlopen), \
+         patch("scripts.pipeline.epic_catalog.time.sleep"):
+        catalog, covers = epic_module._fetch_all_pages()
+    assert catalog == {"ns1": "Game"}
+    assert covers == {"ns1": "https://img/g.jpg"}

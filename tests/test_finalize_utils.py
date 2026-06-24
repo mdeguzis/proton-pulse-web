@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from unittest.mock import patch
 
 from scripts.pipeline.finalize import (
     generate_latest_files,
@@ -7,11 +8,41 @@ from scripts.pipeline.finalize import (
     reindex_apps,
     generate_search_index,
     generate_recent_reports,
+    generate_nonsteam_images,
     _extract_title,
     _resolve_coverage_title,
     _compute_game_summary,
     _score_to_tier,
 )
+
+
+# ── generate_nonsteam_images ──────────────────────────────────────────────────
+
+def test_generate_nonsteam_images_maps_by_canonical_id(tmp_path):
+    with patch("scripts.pipeline.finalize.load_gog_covers", return_value={"123": "https://gog/cover.png"}), \
+         patch("scripts.pipeline.finalize.load_epic_covers", return_value={"ns1": "https://epic/cover.jpg"}):
+        generate_nonsteam_images(tmp_path)
+    out = json.loads((tmp_path / "nonsteam-images.json").read_text())
+    assert out == {
+        "gog:123": "https://gog/cover.png",
+        "epic:ns1": "https://epic/cover.jpg",
+    }
+
+
+def test_generate_nonsteam_images_skips_empty_urls(tmp_path):
+    with patch("scripts.pipeline.finalize.load_gog_covers", return_value={"123": "", "456": "https://gog/x.png"}), \
+         patch("scripts.pipeline.finalize.load_epic_covers", return_value={}):
+        generate_nonsteam_images(tmp_path)
+    out = json.loads((tmp_path / "nonsteam-images.json").read_text())
+    assert out == {"gog:456": "https://gog/x.png"}
+
+
+def test_generate_nonsteam_images_degrades_when_covers_unavailable(tmp_path):
+    with patch("scripts.pipeline.finalize.load_gog_covers", side_effect=RuntimeError("boom")), \
+         patch("scripts.pipeline.finalize.load_epic_covers", return_value={}):
+        generate_nonsteam_images(tmp_path)
+    out = json.loads((tmp_path / "nonsteam-images.json").read_text())
+    assert out == {}
 
 
 # ── _extract_title ────────────────────────────────────────────────────────────
