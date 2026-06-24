@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=55e85c86">
 <link rel="stylesheet" href="css/shared/site.css?v=86052a10">
 <link rel="stylesheet" href="css/shared/cards.css?v=14c56151">
-<link rel="stylesheet" href="css/index/index.css?v=0bdafa7e">
+<link rel="stylesheet" href="css/index/index.css?v=ff4b9357">
 </head>
 <body>
 
@@ -167,14 +167,23 @@
     <section class="popular-games" id="popular-games" hidden>
       <div class="pg-head">
         <div class="section-label" id="pg-section-label">Popular on Steam</div>
-        <div class="pg-store-filters" role="group" aria-label="Filter by store">
-          <button class="pg-filter pg-filter--active pg-store-btn" data-store="steam" id="pg-store-steam" type="button">Steam</button>
-          <button class="pg-filter pg-store-btn" data-store="gog" id="pg-store-gog" type="button">GOG</button>
-          <button class="pg-filter pg-store-btn" data-store="epic" id="pg-store-epic" type="button">Epic</button>
-        </div>
-        <div class="pg-filters" id="pg-rating-filters" role="group" aria-label="Filter popular games by rating">
-          <button class="pg-filter pg-filter--active" id="pg-filter-rated" type="button" aria-pressed="true">Rated <span class="pg-filter-count" id="pg-rated-count">0</span></button>
-          <button class="pg-filter" id="pg-filter-unrated" type="button" aria-pressed="false">Not Rated <span class="pg-filter-count" id="pg-unrated-count">0</span></button>
+        <div class="pg-filter-wrap" id="pg-filter-wrap">
+          <button class="pg-filter-toggle-btn" id="pg-filter-toggle" type="button" aria-expanded="false">
+            Filters<span class="pg-filter-badge" id="pg-filter-badge" hidden></span>
+          </button>
+          <div class="pg-filter-panel" id="pg-filter-panel">
+            <div class="pg-filter-group">
+              <span class="pg-filter-group-label">Store</span>
+              <button class="pg-filter pg-filter--active pg-store-btn" data-store="steam" id="pg-store-steam" type="button">Steam</button>
+              <button class="pg-filter pg-store-btn" data-store="gog" id="pg-store-gog" type="button">GOG</button>
+              <button class="pg-filter pg-store-btn" data-store="epic" id="pg-store-epic" type="button">Epic</button>
+            </div>
+            <div class="pg-filter-group">
+              <span class="pg-filter-group-label">Rating</span>
+              <button class="pg-filter pg-filter--active" id="pg-filter-rated" type="button" aria-pressed="true">Rated <span class="pg-filter-count" id="pg-rated-count">0</span></button>
+              <button class="pg-filter" id="pg-filter-unrated" type="button" aria-pressed="false">Not Rated <span class="pg-filter-count" id="pg-unrated-count">0</span></button>
+            </div>
+          </div>
         </div>
         <div class="pg-view-controls">
           <div class="pg-size-toggle" id="pg-size-toggle" title="Card size">
@@ -208,6 +217,6 @@
 <script src="js/lib/supabase-client.js?v=04813aa1"></script>
 <script src="js/lib/topbar.js?v=46cb7ea1"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/index/main.js?v=514076f1"></script>
+<script type="module" src="js/index/main.js?v=8fc32f4e"></script>
 </body>
 </html>

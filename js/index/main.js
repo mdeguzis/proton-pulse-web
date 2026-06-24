@@ -224,10 +224,37 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
       ratedBtn?.setAttribute('aria-pressed', String(state.rated));
       unratedBtn?.setAttribute('aria-pressed', String(state.unrated));
       shownCount = PAGE_SIZE;
+      updateFilterBadge();
       renderPopular();
     }
     ratedBtn?.addEventListener('click', () => selectFilter('rated'));
     unratedBtn?.addEventListener('click', () => selectFilter('unrated'));
+
+    // Filters popover toggle.
+    const filterWrap = document.getElementById('pg-filter-wrap');
+    const filterToggle = document.getElementById('pg-filter-toggle');
+    const filterPanel = document.getElementById('pg-filter-panel');
+    if (filterToggle && filterPanel) {
+      filterToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = filterPanel.classList.toggle('open');
+        filterToggle.setAttribute('aria-expanded', String(open));
+      });
+      document.addEventListener('click', (e) => {
+        if (filterWrap && !filterWrap.contains(e.target)) {
+          filterPanel.classList.remove('open');
+          filterToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    function updateFilterBadge() {
+      const badge = document.getElementById('pg-filter-badge');
+      const btn = document.getElementById('pg-filter-toggle');
+      const nonDefault = (currentStore !== 'steam' ? 1 : 0) + (state.unrated ? 1 : 0);
+      if (badge) { badge.textContent = String(nonDefault); badge.hidden = nonDefault === 0; }
+      btn?.classList.toggle('has-filters', nonDefault > 0);
+    }
 
     // Store filter: Steam uses most_played; GOG/Epic lazy-load the search index.
     async function selectStore(store) {
@@ -244,6 +271,7 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
         await loadSearchIndex();
         console.debug('[popular-games] search-index loaded for store', { store, entries: (searchIndexCache || []).length });
       }
+      updateFilterBadge();
       shownCount = PAGE_SIZE;
       renderPopular();
     }
