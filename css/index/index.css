@@ -294,9 +294,9 @@
   align-items: center;
   gap: 14px;
   flex-wrap: wrap;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
 }
-.pg-head .section-label { margin-bottom: 0; }
+.pg-section-heading { margin: 6px 0 2px; }
 /* Unified Filters popover for the popular section */
 .pg-filter-wrap { position: relative; }
 .pg-filter-toggle-btn {
