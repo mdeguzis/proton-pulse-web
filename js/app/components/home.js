@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=30cf98fd';
-import { loadSearchIndex, searchIndex } from './search.js?v=6a0124d8';
+import { loadSearchIndex, searchIndex } from './search.js?v=0e76ead0';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=8f45a69a';
@@ -9,6 +9,10 @@ import { renderGameCard } from '../lib/card.js?v=8f45a69a';
 const PAGE_SIZE = 10;
 const KNOWN_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked']);
 const TIER_SCORE = { platinum: 5, gold: 4, silver: 3, bronze: 2, borked: 1 };
+
+function normTitle(s) {
+  return String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+}
 
 function _sortReports(reports, sort) {
   const copy = [...reports];
@@ -253,9 +257,22 @@ export async function renderHomePage() {
       const wantNonSteamOnly = storeSel.size > 0 && !storeSel.has('all') && !storeSel.has('steam');
       let asReports;
       if (wantNonSteamOnly) {
+        // Build a title->peak map from the Steam most-played list so we can rank
+        // non-Steam titles by Steam popularity when the name matches.
+        const steamPeakByTitle = new Map(
+          [...ratedGames, ...unratedGames].map(g => [normTitle(g.title), g.peak || 0])
+        );
         asReports = (searchIndex || [])
           .filter(row => row[5] && storeSel.has(row[5]))
-          .sort((a, b) => (a[1] || '').localeCompare(b[1] || ''))
+          .sort((a, b) => {
+            const peakA = steamPeakByTitle.get(normTitle(a[1])) || 0;
+            const peakB = steamPeakByTitle.get(normTitle(b[1])) || 0;
+            if (peakB !== peakA) return peakB - peakA;
+            const countA = (a[3] || 0) + (a[4] || 0);
+            const countB = (b[3] || 0) + (b[4] || 0);
+            if (countB !== countA) return countB - countA;
+            return (a[1] || '').localeCompare(b[1] || '');
+          })
           .map(row => {
             const t = String(row[2] || '').toLowerCase();
             return {

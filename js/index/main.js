@@ -101,6 +101,11 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
   let currentLayout = 'grid';
   let currentStore = 'steam';
   let searchIndexCache = null;
+  let steamPeakByTitle = new Map();
+
+  function normTitle(s) {
+    return String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  }
 
   async function loadSearchIndex() {
     if (searchIndexCache) return searchIndexCache;
@@ -156,6 +161,7 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
 
     const ratedGames = games.filter((g) => KNOWN_TIERS.has(String(g.rating || '').toLowerCase()));
     const unratedGames = games.filter((g) => !KNOWN_TIERS.has(String(g.rating || '').toLowerCase()));
+    steamPeakByTitle = new Map(games.map(g => [normTitle(g.title), g.peak || 0]));
     console.debug('[popular-games] loaded most_played.json', {
       total: games.length, rated: ratedGames.length, unrated: unratedGames.length, source: 'most_played.json',
     });
@@ -193,7 +199,16 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
           if (state.unrated && !state.rated) return !rated;
           return true; // both or neither -> show all
         })
-        .sort((a, b) => (a[1] || '').localeCompare(b[1] || ''))
+        .sort((a, b) => {
+          // prefer Steam title match (borrows peak player rank), then report count, then alpha
+          const peakA = steamPeakByTitle.get(normTitle(a[1])) || 0;
+          const peakB = steamPeakByTitle.get(normTitle(b[1])) || 0;
+          if (peakB !== peakA) return peakB - peakA;
+          const countA = (a[3] || 0) + (a[4] || 0);
+          const countB = (b[3] || 0) + (b[4] || 0);
+          if (countB !== countA) return countB - countA;
+          return (a[1] || '').localeCompare(b[1] || '');
+        })
         .map(row => ({ appId: row[0], title: row[1], rating: row[2] || '', appType: row[5] }));
     }
 
