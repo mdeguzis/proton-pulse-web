@@ -427,3 +427,10 @@
   .sidebar-nav-block { display: none; }
   .sidebar-about-block { display: none; }
 }
+
+/* Store pill position preference (pp:store-pill-pos).
+   Default ('right'): pill in the rating column, overlay hidden.
+   'art': overlay on the thumbnail, right-column pill hidden. */
+.game-card-store-tag { display: none; }
+[data-store-pill-pos="art"] .game-card-store-tag { display: inline; }
+[data-store-pill-pos="art"] .game-card-store-pill { display: none; }

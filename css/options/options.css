@@ -64,3 +64,19 @@
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+.option-row--block { align-items: flex-start; flex-direction: column; gap: 12px; }
+.option-radio-group { display: flex; gap: 10px; flex-wrap: wrap; }
+.option-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: var(--text);
+  padding: 6px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  transition: border-color 0.12s, color 0.12s;
+}
+.option-radio:has(input:checked) { border-color: var(--accent); color: var(--accent); }
+.option-radio input { display: none; }

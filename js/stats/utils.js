@@ -7,6 +7,7 @@ export const FILTER_DIMS = [
   { id: 'cpu',    label: 'CPU',     statsKey: 'by_cpu_brand',      crossKey: 'by_rating_x_cpu_brand' },
   { id: 'os',     label: 'OS',      statsKey: 'by_os_family',      crossKey: 'by_rating_x_os_family' },
   { id: 'device', label: 'Device',  statsKey: 'by_device_family',  crossKey: 'by_rating_x_device_family' },
+  { id: 'store',  label: 'Store',   statsKey: 'by_store',          crossKey: 'by_rating_x_store' },
   { id: 'source', label: 'Source',  statsKey: 'by_source',         crossKey: 'by_rating_x_source' },
   { id: 'rating', label: 'Rating',  statsKey: 'by_rating',         crossKey: null },
 ];
@@ -26,6 +27,7 @@ const PRETTY = {
   'proton-tkg': 'Proton-TKG', 'proton-next': 'Proton Next',
   'steam-linux-runtime': 'Steam Linux Runtime',
   native: 'Native',
+  steam: 'Steam', gog: 'GOG', epic: 'Epic',
   protondb: 'ProtonDB', pulse: 'Pulse',
   'steam-deck-lcd': 'Steam Deck LCD',
   'steam-deck-oled': 'Steam Deck OLED',

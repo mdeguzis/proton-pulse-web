@@ -50,10 +50,9 @@ describe('_filterByStore (behavioral)', () => {
 describe('store filter group in the home Filters popover', () => {
   test('store group exists with All first and all supported stores', () => {
     expect(homeSrc).toContain('id="home-store-checks"');
-    expect(homeSrc).toContain('data-group="store"');
-    expect(homeSrc).toMatch(/value="all" checked><span>All<\/span>/);
+    expect(homeSrc).toContain('class="pg-filter pg-filter--active" type="button" data-value="all"');
     ['steam', 'gog', 'epic'].forEach((s) => {
-      expect(homeSrc).toContain(`value="${s}">`);
+      expect(homeSrc).toContain(`data-value="${s}"`);
     });
   });
   test('storeSel is wired into both lists, the badge count, and clear', () => {
@@ -63,13 +62,19 @@ describe('store filter group in the home Filters popover', () => {
     expect(homeSrc).toContain('tierSel.size + sourceSel.size + storeSel.size');
     expect(homeSrc).toContain('storeSel = new Set();');
   });
+  test('renderHomePage preloads the search index so GOG/Epic filters can pull stubs', () => {
+    // Without this, storeSel = Set(['gog'|'epic']) hits the wantNonSteamOnly
+    // path against a null searchIndex and renders no results.
+    expect(homeSrc).toContain('loadSearchIndex().catch(() => null)');
+  });
 });
 
 describe('store pill rendering', () => {
-  test('renderGameCard supports a storePill rendered next to the rating pill', () => {
+  test('renderGameCard renders both overlay and right-column pill; CSS controls position', () => {
     expect(cardSrc).toContain('storePill');
     expect(cardSrc).toContain('game-card-store-pill game-card-store-pill--');
-    expect(cardSrc).toContain('game-card-pills'); // pills sit in one row
+    expect(cardSrc).toContain('game-card-store-tag game-card-store-pill--');
+    expect(cardSrc).toContain('game-card-thumb-wrap');
   });
   test('cards.css defines a colour per store', () => {
     ['steam', 'gog', 'epic'].forEach((s) => {

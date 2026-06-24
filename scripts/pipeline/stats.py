@@ -18,7 +18,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from .common import log
+from .common import app_type_from_id, log
 
 
 # ── Categorical normalizers ────────────────────────────────────────────────
@@ -273,6 +273,7 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
     by_cpu: Counter = Counter()
     by_os: Counter = Counter()
     by_proton: Counter = Counter()
+    by_store: Counter = Counter()
     by_device: Counter = Counter()
     by_year: Counter = Counter()
     by_year_source: dict[str, Counter] = defaultdict(Counter)
@@ -283,6 +284,7 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
     by_rating_x_cpu: dict[str, Counter] = defaultdict(Counter)
     by_rating_x_os: dict[str, Counter] = defaultdict(Counter)
     by_rating_x_source: dict[str, Counter] = defaultdict(Counter)
+    by_rating_x_store: dict[str, Counter] = defaultdict(Counter)
     by_rating_x_device: dict[str, Counter] = defaultdict(Counter)
     # Year x rating: enables the "ratings shift over time" chart (% borked dropping, etc.)
     # shape: { "2025": Counter(rating -> count), ... }
@@ -340,6 +342,7 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
             os_fam = normalize_os_family(r)
             proton = normalize_proton_type(r)
             device = normalize_device_family(r)
+            store = app_type_from_id(app_id)
 
             by_source[src] += 1
             by_rating[rating] += 1
@@ -347,6 +350,7 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
             by_cpu[cpu] += 1
             by_os[os_fam] += 1
             by_proton[proton] += 1
+            by_store[store] += 1
             by_device[device] += 1
             if year.isdigit():
                 by_year[year] += 1
@@ -357,6 +361,7 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
             by_rating_x_cpu[cpu][rating] += 1
             by_rating_x_os[os_fam][rating] += 1
             by_rating_x_source[src][rating] += 1
+            by_rating_x_store[store][rating] += 1
             by_rating_x_device[device][rating] += 1
 
             # Framegen: count the response across the relevant cross-tabs. Skip
@@ -456,6 +461,7 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
         "by_gpu_vendor": dict(by_gpu),
         "by_cpu_brand": dict(by_cpu),
         "by_os_family": dict(by_os),
+        "by_store": dict(by_store),
         "by_proton_type": dict(by_proton),
         "by_device_family": dict(by_device),
         "by_year": dict(by_year),
@@ -465,6 +471,7 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
         "by_rating_x_cpu_brand": flatten_cross(by_rating_x_cpu),
         "by_rating_x_os_family": flatten_cross(by_rating_x_os),
         "by_rating_x_source": flatten_cross(by_rating_x_source),
+        "by_rating_x_store": flatten_cross(by_rating_x_store),
         "by_rating_x_device_family": flatten_cross(by_rating_x_device),
         # Rating shift over time: { "2025": { "platinum": N, "gold": N, ... }, ... }
         # Powers the trend chart that shows compatibility improving year-over-year

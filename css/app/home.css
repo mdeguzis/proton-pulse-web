@@ -28,6 +28,13 @@
   gap: 10px;
 }
 .section-label-row .section-label::after { display: none; }
+.section-count {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  white-space: nowrap;
+}
 .unrated-toggle {
   display: inline-flex;
   align-items: center;
@@ -132,6 +139,10 @@
 .home-size-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
 .home-size-btn:disabled { opacity: 0.4; cursor: default; }
 .home-size-toggle--disabled { opacity: 0.6; }
+.home-size-btn--desktop-only { display: none; }
+@media (min-width: 760px) {
+  .home-size-btn--desktop-only { display: inline-flex; align-items: center; justify-content: center; }
+}
 
 /* Card size preference. Medium matches the default desktop row; small is
    denser, large is roomier. Title/sub scale with the boxart. The size class
@@ -139,11 +150,15 @@
 .cards--sm .game-card-thumb { width: 100px; height: 47px; }
 .cards--md .game-card-thumb { width: 138px; height: 64px; }
 .cards--lg .game-card-thumb { width: 200px; height: 93px; }
+.cards--xl .game-card-thumb { width: 280px; height: 130px; }
 .cards--sm .game-card { gap: 12px; padding: 8px 12px 8px 8px; }
 .cards--lg .game-card { gap: 20px; padding: 14px 20px 14px 12px; }
+.cards--xl .game-card { gap: 24px; padding: 16px 22px 16px 14px; }
 .cards--sm .game-card-title { font-size: 0.92rem; }
 .cards--lg .game-card-title { font-size: 1.12rem; }
 .cards--lg .game-card-sub { font-size: 0.85rem; }
+.cards--xl .game-card-title { font-size: 1.25rem; }
+.cards--xl .game-card-sub { font-size: 0.9rem; }
 @media (max-width: 560px) {
   /* Keep large from overwhelming small screens. */
   .cards--lg .game-card-thumb { width: 150px; height: 70px; }

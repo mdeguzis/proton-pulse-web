@@ -11,8 +11,9 @@
 <meta name="color-scheme" content="dark">
 <link rel="stylesheet" href="css/shared/base.css?v=45c7e06d">
 <link rel="stylesheet" href="css/shared/topbar.css?v=55e85c86">
-<link rel="stylesheet" href="css/shared/site.css?v=86052a10">
-<link rel="stylesheet" href="css/shared/cards.css?v=eab020ab">
+<link rel="stylesheet" href="css/shared/site.css?v=4d518a51">
+<link rel="stylesheet" href="css/shared/filters.css?v=26d5b7e1">
+<link rel="stylesheet" href="css/shared/cards.css?v=68f59a72">
 <style>
 h1 {
   font-family: var(--font-display);
@@ -106,66 +107,17 @@ h2 {
   position: relative;
   display: inline-block;
 }
-.filter-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-  background: rgba(11,17,22,0.55);
-  border: 1px solid var(--border2);
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: color .12s, border-color .12s, background .12s, box-shadow .12s;
-}
-.filter-button:hover { color: var(--text); border-color: var(--accent); }
-.filter-button.is-active {
-  color: var(--accent-hi);
-  background: var(--accent-soft);
-  border-color: var(--accent);
-  box-shadow: 0 0 16px -6px var(--accent-glow);
-}
-.filter-btn-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 18px;
-  height: 16px;
-  padding: 0 4px;
-  background: var(--accent);
-  color: var(--bg);
-  font-size: 0.66rem;
-  border-radius: 2px;
-}
-.filter-caret {
-  font-size: 0.6rem;
-  color: var(--muted);
-  margin-left: 2px;
-}
+/* .filter-button, .filter-btn-badge -- base styles in css/shared/filters.css */
+.filter-caret { font-size: 0.6rem; color: var(--muted); margin-left: 2px; }
 .filter-button.is-active .filter-caret { color: var(--accent-hi); }
 
 /* The panel: hidden by default, revealed when parent has .is-open. Sits above
    the chart-grid via z-index. Width fits widest option, capped so a SteamOS-style
    long label doesn't blow it out */
-.filter-panel {
-  display: none;
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
-  z-index: 20;
-  min-width: 200px;
-  max-width: 320px;
-  background: var(--bg-bot, #0a0f14);
-  border: 1px solid var(--accent);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
-  padding: 8px 4px;
-  max-height: 320px;
-  overflow-y: auto;
-}
+/* .filter-panel base -- positioning/bg/border/radius/shadow in css/shared/filters.css */
+.filter-panel { display: none; }
 .filter-dropdown.is-open .filter-panel { display: block; }
+
 
 .filter-panel-summary {
   padding: 4px 12px 8px;
@@ -709,7 +661,7 @@ h2 {
 </style>
 </head>
 <body>
-<script src="js/lib/topbar.js?v=46cb7ea1"></script>
+<script src="js/lib/topbar.js?v=50b75e70"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
 
 <div class="main-content"><div class="main-inner">
@@ -723,6 +675,6 @@ h2 {
 
 </div></div>
 
-<script type="module" src="js/stats/main.js?v=0ea0efb1"></script>
+<script type="module" src="js/stats/main.js?v=91b64e42"></script>
 </body>
 </html>

@@ -38,13 +38,23 @@ describe('renderGameCard rating pill', () => {
   });
 });
 
-describe('renderGameCard store pill', () => {
+describe('renderGameCard store tag', () => {
   const renderGameCard = loadCard();
 
-  test('store pill renders with a per-store modifier class', () => {
+  test('store pill renders inside game-card-pills alongside the rating badge', () => {
     const html = renderGameCard({ href: '#/app/gog:1', appId: 'gog:1', title: 'X', sub: '', storePill: 'GOG' });
     expect(html).toContain('game-card-store-pill game-card-store-pill--gog');
     expect(html).toContain('>GOG<');
+    // pill lives inside game-card-pills, which is inside game-card-right
+    const pills = html.slice(html.indexOf('game-card-pills'));
+    expect(pills).toContain('game-card-store-pill--gog');
+    expect(pills).toContain('game-card-badge');
+  });
+
+  test('both overlay and right-column pill are rendered (CSS picks which is visible)', () => {
+    const html = renderGameCard({ href: '#/app/gog:1', appId: 'gog:1', title: 'X', sub: '', storePill: 'GOG' });
+    expect(html).toContain('game-card-store-tag game-card-store-pill--gog');
+    expect(html).toContain('game-card-store-pill game-card-store-pill--gog');
   });
 });
 

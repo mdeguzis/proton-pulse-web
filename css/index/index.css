@@ -199,6 +199,7 @@
 .cta-btn:hover {
   filter: brightness(1.08);
   box-shadow: 0 0 16px var(--accent-glow);
+  text-decoration: none; /* override global a:hover underline */
 }
 .cta-btn:active { transform: translateY(1px); }
 .cta-primary {
@@ -245,6 +246,11 @@
 }
 .pg-card:hover { border-color: var(--accent); }
 .pg-card:active { transform: translateY(1px); }
+.pg-thumb-wrap {
+  position: relative;
+  flex-shrink: 0;
+  line-height: 0;
+}
 .pg-thumb {
   width: 92px;
   height: 43px;
@@ -266,6 +272,16 @@
   color: #c8a050;
   margin-top: 2px;
   font-family: var(--mono);
+}
+.pg-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .pg-right { flex-direction: column; align-items: flex-end; gap: 4px; }
 }
 .pg-badge {
   flex-shrink: 0;
@@ -292,56 +308,22 @@
 .pg-head {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 14px;
-  flex-wrap: wrap;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
 }
-.pg-head .section-label { margin-bottom: 0; }
-.pg-filters {
-  display: inline-flex;
-  gap: 8px;
+.pg-section-heading { margin: 6px 0 2px; }
+/* Unified Filters popover for the popular section */
+.pg-filter-wrap { position: relative; }
+/* .pg-filter-toggle-btn, .pg-filter-badge -- base styles in css/shared/filters.css */
+/* .pg-filter-panel base -- in css/shared/filters.css */
+.pg-filter-panel { display: none; flex-direction: column; gap: 14px; }
+.pg-filter-panel.open { display: flex; }
+@media (min-width: 601px) {
+  .pg-filter-panel.open { flex-direction: row; gap: 24px; }
 }
-.pg-filter {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 6px 14px;
-  background: var(--card);
-  border: 1.5px solid var(--border);
-  color: var(--muted);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 999px;
-  white-space: nowrap;
-  transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s;
-}
-.pg-filter:hover { border-color: var(--accent); color: var(--strong); }
-.pg-filter--active {
-  border-color: var(--accent);
-  color: #0a0c10;
-  background: var(--accent);
-  box-shadow: 0 0 0 1px var(--accent), 0 0 12px rgba(190,238,17,0.25);
-}
-.pg-filter-count {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 20px;
-  height: 18px;
-  padding: 0 5px;
-  border-radius: 999px;
-  background: var(--border);
-  color: var(--muted);
-  font-size: 0.7rem;
-  font-weight: 800;
-}
-.pg-filter--active .pg-filter-count {
-  background: rgba(10,12,16,0.22);
-  color: #0a0c10;
-}
+/* .pg-filter-group, .pg-filter-group-label, .pg-filter, .pg-filter--active,
+   .pg-filter-count -- all in css/shared/filters.css */
 /* View controls: S/M/L size + Grid/List toggle */
 .pg-view-controls { display: flex; align-items: center; gap: 10px; margin-left: auto; }
 .pg-size-toggle { display: flex; gap: 4px; }
@@ -375,7 +357,7 @@
 .pg-layout-btn:hover { background: var(--s2); color: var(--text); }
 .pg-layout-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
 
-/* S/M/L card sizes */
+/* S/M/L/XL card sizes */
 .pg-list--sm .pg-thumb { width: 68px; height: 32px; }
 .pg-list--sm .pg-card { gap: 10px; padding: 6px 10px 6px 6px; }
 .pg-list--sm .pg-title { font-size: 0.85rem; }
@@ -384,6 +366,13 @@
 .pg-list--lg .pg-card { gap: 18px; padding: 10px 16px 10px 10px; }
 .pg-list--lg .pg-title { font-size: 1.05rem; }
 .pg-list--lg .pg-sub { font-size: 0.82rem; }
+.pg-list--xl .pg-thumb { width: 184px; height: 86px; }
+.pg-list--xl .pg-card { gap: 20px; padding: 12px 18px 12px 12px; }
+.pg-list--xl .pg-title { font-size: 1.15rem; }
+.pg-list--xl .pg-sub { font-size: 0.88rem; }
+/* XL only makes sense on wider screens */
+.pg-size-btn--desktop-only { display: none; }
+@media (min-width: 760px) { .pg-size-btn--desktop-only { display: inline-flex; } }
 @media (max-width: 600px) {
   .pg-list--lg .pg-thumb { width: 100px; height: 47px; }
 }
@@ -725,5 +714,4 @@
   .quick-actions { flex-direction: column; }
   .qa-link { justify-content: center; }
   .pg-head { gap: 8px; }
-  .pg-view-controls { margin-left: 0; width: 100%; justify-content: flex-end; }
 }

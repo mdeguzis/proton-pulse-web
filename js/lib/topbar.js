@@ -361,6 +361,10 @@
   // (avoids a flash of the wrong mode / running animations).
   initTheme();
   initMotion();
+  // Store pill position preference: 'art' = thumbnail overlay, 'right' (default) = rating column.
+  if (localStorage.getItem('pp:store-pill-pos') === 'art') {
+    document.documentElement.setAttribute('data-store-pill-pos', 'art');
+  }
 
   // inject favicon if the page doesn't already have one
   if (!document.querySelector('link[rel="icon"]')) {

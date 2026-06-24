@@ -1,16 +1,16 @@
 // Entry module for stats.html. Orchestrates data fetch, filter state, and
 // chart rendering by delegating to utils, filters, and charts modules.
 
-import { FILTER_DIMS, dimDef, label, fmt } from './utils.js?v=ceb23379';
+import { FILTER_DIMS, dimDef, label, fmt } from './utils.js?v=9bcdac4f';
 import {
   applyFilter, getFilter, getOpenDropdown, setOpenDropdown,
   renderDropdownButton, toggleFilterValue, clearFilter,
   setFilterChangeCallback, restoreFilterFromUrl,
-} from './filters.js?v=bfe27ee2';
+} from './filters.js?v=a9253694';
 import {
   renderBars, renderFreshness, renderFramegen, renderDonut,
   renderSparkline, renderTopGames, renderRatingsTrend,
-} from './charts.js?v=f5fe3e5f';
+} from './charts.js?v=81765579';
 
 const root = document.getElementById('stats-root');
 const metaEl = document.getElementById('stats-meta');
@@ -113,6 +113,10 @@ function renderAll() {
       </div>
 
       <div class="chart-card">
+        <h3>Store</h3>
+        <div class="bars" id="chart-store"></div>
+      </div>
+      <div class="chart-card">
         <h3>Device family</h3>
         <div class="bars" id="chart-device"></div>
       </div>
@@ -179,6 +183,8 @@ function renderAll() {
     data.os, { limit: 10, filterDim: 'os' });
   renderBars(document.getElementById('chart-proton'),
     data.proton, { limit: 10 });
+  renderBars(document.getElementById('chart-store'),
+    data.store, { filterDim: 'store' });
   renderBars(document.getElementById('chart-device'),
     data.device, { filterDim: 'device' });
 

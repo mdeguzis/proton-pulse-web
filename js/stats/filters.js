@@ -1,6 +1,6 @@
 // Stats page filter state and UI logic.
 
-import { FILTER_DIMS, dimDef, label, fmt, sum } from './utils.js?v=ceb23379';
+import { FILTER_DIMS, dimDef, label, fmt, sum } from './utils.js?v=9bcdac4f';
 
 // Active filter. Only one dim active at a time (because the cross-tabs
 // we ship only key off one dim), but multiple values within that dim.
@@ -35,6 +35,7 @@ export function applyFilter(stats) {
       cpu:    stats.by_cpu_brand || {},
       os:     stats.by_os_family || {},
       proton: stats.by_proton_type || {},
+      store:  stats.by_store || {},
       source: stats.by_source || {},
       device: stats.by_device_family || {},
       total:  stats.total_reports || 0,
@@ -44,7 +45,7 @@ export function applyFilter(stats) {
   // Filtered: cross-tabs let us pivot rating-by-dim or dim-by-rating.
   // For multi-value within a dim, sum across the selected values.
   const out = {
-    rating: {}, gpu: {}, cpu: {}, os: {}, proton: {}, source: {}, device: {},
+    rating: {}, gpu: {}, cpu: {}, os: {}, proton: {}, store: {}, source: {}, device: {},
     total: 0,
   };
   const vals = Array.from(filter.values);

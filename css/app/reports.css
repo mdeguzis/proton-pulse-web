@@ -59,46 +59,13 @@
   align-items: center;
   gap: 10px;
 }
-.filter-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  background: var(--s1);
-  border: 1px solid var(--border2);
-  border-radius: 6px;
-  color: var(--muted);
-  font-size: 0.76rem;
-  font-weight: 600;
-  font-family: inherit;
-  cursor: pointer;
-  transition: background .1s, color .1s, border-color .1s;
-}
-.filter-toggle-btn:hover { background: var(--s2); color: var(--text); }
-.filter-toggle-btn.has-filters { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
-.filter-badge {
-  background: var(--accent);
-  color: #fff;
-  border-radius: 10px;
-  padding: 1px 6px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  line-height: 1.4;
-}
-.filter-panel {
-  display: none;
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 0;
-  z-index: 200;
-  background: var(--s1);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 14px;
-  min-width: 280px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-}
+/* .filter-toggle-btn, .filter-badge -- base styles in css/shared/filters.css */
+/* .filter-panel base -- positioning, bg, border, radius, shadow in css/shared/filters.css */
+.filter-panel { display: none; }
 .filter-panel.open { display: block; }
+@media (min-width: 601px) {
+  .filter-panel-grid { grid-template-columns: repeat(3, 1fr); }
+}
 .filter-panel-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -136,18 +103,39 @@
   padding-top: 10px;
   border-top: 1px solid var(--border);
 }
+/* Save filters and Clear filters share one pill shape: same size, text size,
+   and border thickness. Only the colors differ. */
+.filter-save-btn,
 .filter-clear-btn {
-  background: none;
-  border: 1px solid var(--border2);
-  color: var(--muted);
   font-size: 0.72rem;
+  font-weight: 600;
   font-family: inherit;
-  padding: 4px 10px;
-  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border-width: 1.5px;
+  border-style: solid;
   cursor: pointer;
-  transition: color .1s, border-color .1s;
+  transition: color .1s, border-color .1s, background .1s;
 }
-.filter-clear-btn:hover { color: var(--text); border-color: var(--text); }
+.filter-clear-btn {
+  background: rgba(220, 70, 70, 0.12);
+  border-color: rgba(220, 70, 70, 0.45);
+  color: #ff9b9b;
+}
+.filter-clear-btn:hover { background: rgba(220, 70, 70, 0.22); border-color: #ff6b6b; color: #ffc1c1; }
+.filter-save-btn {
+  background: var(--s1);
+  border-color: var(--border);
+  color: var(--muted);
+}
+.filter-save-btn:hover { border-color: var(--accent); color: var(--strong); }
+.filter-save-btn.is-active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-hi);
+}
 .filter-count { font-size: 0.72rem; color: var(--muted); }
 .filter-persist {
   display: inline-flex;
@@ -173,13 +161,15 @@
   gap: 16px 24px;
 }
 .filter-panel--stack .filter-item { gap: 4px; min-width: 130px; }
-.filter-panel--stack .filter-checks { min-width: 120px; }
+.filter-panel--stack .pg-filter-group { min-width: 120px; }
 .filter-panel-footer--stack {
   flex-basis: 100%;
+  width: 100%;
   margin-top: 2px;
   padding-top: 12px;
   border-top: 1px solid var(--border);
   justify-content: flex-end;
+  gap: 8px;
 }
 @media (max-width: 560px) {
   .filter-panel--stack.open { flex-direction: column; gap: 14px; }
@@ -195,35 +185,59 @@
   cursor: pointer;
 }
 
-/* Multi-select checkbox filter group. The label sits above a column of
-   checkable rows; "All" is the first row. Mirrors the clean panel styling of
-   the game-page report filters. */
-.filter-checks { display: flex; flex-direction: column; gap: 5px; }
-.filter-checks-label {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  margin-bottom: 1px;
-}
-.filter-check {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.8rem;
+/* Text filter box: sits in the bar to the right of the Filters button (not in
+   the dropdown). Wider on desktop, shorter on mobile. */
+.home-filter-left { display: flex; align-items: center; gap: 8px; }
+.home-filter-text {
+  width: 240px;
+  max-width: 40vw;
+  box-sizing: border-box;
+  background: var(--bg);
+  border: 1px solid var(--border2);
   color: var(--text);
-  cursor: pointer;
-  user-select: none;
-  padding: 1px 0;
+  padding: 7px 12px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  border-radius: 999px;
+  outline: none;
+  transition: border-color .1s;
 }
-.filter-check input {
-  accent-color: var(--accent);
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
-  flex-shrink: 0;
+.home-filter-text:focus { border-color: var(--accent); }
+@media (max-width: 560px) {
+  .home-filter-text { width: 130px; }
 }
-.filter-check:hover { color: var(--accent); }
+
+/* Desktop: the narrow row-wrap of groups made the variable-width pills wrap
+   raggedly. On wider screens lay the panel out as a single vertical column of
+   full-width groups, each group an even pill grid so they align in tidy
+   columns. Mobile keeps the compact stack from the max-width:560 rule above. */
+@media (min-width: 561px) {
+  .filter-panel--stack.open {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 14px;
+    min-width: 540px;
+  }
+  .filter-panel--stack .filter-item,
+  .filter-panel--stack .pg-filter-group {
+    width: 100%;
+    min-width: 0;
+  }
+  .filter-panel--stack .pg-filter-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+    align-items: stretch;
+  }
+  .filter-panel--stack .pg-filter-group-label { grid-column: 1 / -1; }
+  .filter-panel--stack .pg-filter {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* .filter-checks / .filter-check removed -- filter groups now use
+   .pg-filter-group + .pg-filter pill buttons (css/shared/filters.css) */
 
 /* Live ProtonDB summary note: shown when a game is not in our mirror but the
    user checked ProtonDB live. We only have the aggregate (tier + total), so we
