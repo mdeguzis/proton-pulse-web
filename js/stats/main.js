@@ -10,7 +10,7 @@ import {
 import {
   renderBars, renderFreshness, renderFramegen, renderDonut,
   renderSparkline, renderTopGames, renderRatingsTrend,
-} from './charts.js?v=95916069';
+} from './charts.js?v=81765579';
 
 const root = document.getElementById('stats-root');
 const metaEl = document.getElementById('stats-meta');

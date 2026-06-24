@@ -99,6 +99,10 @@
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
 .filter-panel.open { display: block; }
+@media (min-width: 601px) {
+  .filter-panel { min-width: 480px; }
+  .filter-panel-grid { grid-template-columns: repeat(3, 1fr); }
+}
 .filter-panel-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
