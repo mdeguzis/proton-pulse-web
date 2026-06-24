@@ -16,14 +16,22 @@ const TIER_COLORS = {
 // imgUrl: pre-resolved Steam image URL (bypasses CDN guessing entirely)
 // tier: one of platinum/gold/silver/bronze/borked - auto-colours the badge
 // badge: raw label string - used when tier is not applicable
-// storePill: store name shown as a coloured pill next to the rating pill (e.g. "Steam", "GOG", "Epic")
+// storePill: store name shown as a small coloured tag in the bottom-right corner
+//   of the artwork (e.g. "Steam", "GOG", "Epic"), keeping the right column free
+//   for just the rating pill so titles get more width on mobile.
 // sourceLabel: plain muted text shown below the pills (legacy; prefer storePill)
 export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill }) {
   const primarySrc = imgUrl || (appId ? STEAM_IMG(appId) : '');
   const aid = appId != null ? String(appId) : '';
-  const thumbHtml = primarySrc
+  const thumbInner = primarySrc
     ? `<img class="game-card-thumb" src="${primarySrc}" data-appid="${aid}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">`
     : `<div class="game-card-thumb game-card-thumb--missing">Box art missing</div>`;
+  // Store tag overlays the artwork corner instead of taking a slot in the right
+  // column. Scales with the thumbnail (small on mobile, larger on desktop).
+  const storeOverlayHtml = storePill
+    ? `<span class="game-card-store-tag game-card-store-pill--${esc(String(storePill).toLowerCase())}">${esc(storePill)}</span>`
+    : '';
+  const thumbHtml = `<div class="game-card-thumb-wrap">${thumbInner}${storeOverlayHtml}</div>`;
 
   // Rating pill. A real tier colours the pill; an explicit badge (e.g. "Pulse")
   // is shown as-is; otherwise fall back to a muted "No Rating" pill so every
@@ -38,18 +46,11 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
     badgeStyle = `style="background:${badgeBg};color:${badgeColor || '#fff'}"`;
   }
   const badgeHtml = `<span class="game-card-badge${isNoRating ? ' game-card-badge--unrated' : ''}" ${badgeStyle}>${esc(label)}</span>`;
-  const storePillHtml = storePill
-    ? `<span class="game-card-store-pill game-card-store-pill--${esc(String(storePill).toLowerCase())}">${esc(storePill)}</span>`
-    : '';
-  const pillsRowHtml = (badgeHtml || storePillHtml)
-    ? `<div class="game-card-pills">${badgeHtml}${storePillHtml}</div>`
-    : '';
+  const pillsRowHtml = `<div class="game-card-pills">${badgeHtml}</div>`;
   const sourceLabelHtml = sourceLabel
     ? `<span class="game-card-source">${esc(sourceLabel)}</span>`
     : '';
-  const rightHtml = (pillsRowHtml || sourceLabelHtml)
-    ? `<div class="game-card-right">${pillsRowHtml}${sourceLabelHtml}</div>`
-    : '';
+  const rightHtml = `<div class="game-card-right">${pillsRowHtml}${sourceLabelHtml}</div>`;
 
   return `<a class="game-card" href="${href}">${thumbHtml}<div class="game-card-body"><div class="game-card-title">${esc(title)}</div><div class="game-card-sub">${sub}</div></div>${rightHtml}</a>`;
 }

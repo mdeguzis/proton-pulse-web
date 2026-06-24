@@ -66,10 +66,11 @@ describe('store filter group in the home Filters popover', () => {
 });
 
 describe('store pill rendering', () => {
-  test('renderGameCard supports a storePill rendered next to the rating pill', () => {
+  test('renderGameCard renders the store as a corner tag on the artwork', () => {
     expect(cardSrc).toContain('storePill');
-    expect(cardSrc).toContain('game-card-store-pill game-card-store-pill--');
-    expect(cardSrc).toContain('game-card-pills'); // pills sit in one row
+    // store tag overlays the thumbnail; right column keeps the rating pill only
+    expect(cardSrc).toContain('game-card-store-tag game-card-store-pill--');
+    expect(cardSrc).toContain('game-card-thumb-wrap');
   });
   test('cards.css defines a colour per store', () => {
     ['steam', 'gog', 'epic'].forEach((s) => {

@@ -17,6 +17,11 @@
 }
 .game-card:hover { border-color: var(--accent); text-decoration: none; }
 .game-card:active { transform: translateY(1px); }
+.game-card-thumb-wrap {
+  position: relative;
+  flex-shrink: 0;
+  line-height: 0;
+}
 .game-card-thumb {
   width: 92px;
   height: 43px;
@@ -25,6 +30,21 @@
   background: var(--s2);
   flex-shrink: 0;
 }
+/* Store tag overlaid on the artwork's bottom-right corner. Frees the right
+   column for the rating pill alone, so titles get more width on mobile. */
+.game-card-store-tag {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 1px 5px;
+  border-radius: 4px;
+  line-height: 1.25;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
 /* Desktop: give the report rows more presence with a bigger boxart and
    roomier padding. Steam header ratio (~2.14:1) is preserved. */
 @media (min-width: 760px) {
@@ -32,6 +52,7 @@
   .game-card-thumb { width: 138px; height: 64px; border-radius: 8px; }
   .game-card-title { font-size: 1.04rem; }
   .game-card-sub { font-size: 0.82rem; }
+  .game-card-store-tag { font-size: 0.64rem; right: 6px; bottom: 6px; padding: 2px 7px; }
 }
 .game-card-thumb--missing {
   display: flex;
