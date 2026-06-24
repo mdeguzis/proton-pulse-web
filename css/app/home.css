@@ -28,6 +28,13 @@
   gap: 10px;
 }
 .section-label-row .section-label::after { display: none; }
+.section-count {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  white-space: nowrap;
+}
 .unrated-toggle {
   display: inline-flex;
   align-items: center;

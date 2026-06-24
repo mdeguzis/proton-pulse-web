@@ -66,3 +66,21 @@ if (storePillGroup) {
   });
   applyStorePillPos(stored);
 }
+
+// Reports per page: how many cards app.html preloads per section before "Load
+// more". Stored as a string number; app.html reads it on load. Default 50.
+const LOAD_COUNT_KEY = 'pp:load-count';
+const LOAD_COUNTS = ['50', '100', '150', '200'];
+const loadCountGroup = document.getElementById('opt-load-count');
+if (loadCountGroup) {
+  const stored = LOAD_COUNTS.includes(localStorage.getItem(LOAD_COUNT_KEY)) ? localStorage.getItem(LOAD_COUNT_KEY) : '50';
+  loadCountGroup.querySelectorAll('input[type="radio"]').forEach(r => {
+    r.checked = r.value === stored;
+    r.addEventListener('change', () => {
+      if (r.checked) {
+        localStorage.setItem(LOAD_COUNT_KEY, r.value);
+        console.log('[options] load-count:', r.value);
+      }
+    });
+  });
+}

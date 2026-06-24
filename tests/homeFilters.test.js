@@ -188,6 +188,32 @@ describe('home page browse -- Save filters (persist)', () => {
   });
 });
 
+describe('home page browse -- preload count preference', () => {
+  test('preload count comes from the pp:load-count preference, default 50', () => {
+    expect(homeSrc).toContain("const LOAD_COUNT_KEY = 'pp:load-count'");
+    expect(homeSrc).toContain('const LOAD_COUNTS = [50, 100, 150, 200]');
+    expect(homeSrc).toContain('return LOAD_COUNTS.includes(n) ? n : 50;');
+    expect(homeSrc).toContain('const PAGE_SIZE = _loadCount();');
+  });
+});
+
+describe('home page browse -- loaded count display', () => {
+  test('both section headers have a count element', () => {
+    expect(homeSrc).toContain('id="recent-count"');
+    expect(homeSrc).toContain('id="popular-count"');
+  });
+
+  test('_updateShownCount shows loaded vs total and refreshes on load-more', () => {
+    expect(homeSrc).toContain('function _updateShownCount(countId, cardsEl, total)');
+    expect(homeSrc).toContain('`${cardsEl.children.length} of ${total} loaded`');
+    // called for both sections on render and on load-more append
+    const recent = homeSrc.match(/_updateShownCount\('recent-count'/g) || [];
+    const popular = homeSrc.match(/_updateShownCount\('popular-count'/g) || [];
+    expect(recent.length).toBeGreaterThanOrEqual(2);
+    expect(popular.length).toBeGreaterThanOrEqual(2);
+  });
+});
+
 describe('home page browse -- unrated cards show "No Rating", never "PENDING"', () => {
   test('_cardTier only returns a known rated tier, otherwise undefined', () => {
     expect(homeSrc).toContain('function _cardTier(t)');

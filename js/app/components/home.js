@@ -1,12 +1,19 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=30cf98fd';
-import { loadSearchIndex, searchIndex } from './search.js?v=fdc451a3';
+import { loadSearchIndex, searchIndex } from './search.js?v=50308c43';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=de2b700a';
 
-const PAGE_SIZE = 10;
+const LOAD_COUNT_KEY = 'pp:load-count';
+const LOAD_COUNTS = [50, 100, 150, 200];
+// How many report cards to preload per section before "Load more". Set on the
+// site options (gear) page; defaults to 50.
+function _loadCount() {
+  const n = parseInt(localStorage.getItem(LOAD_COUNT_KEY) || '', 10);
+  return LOAD_COUNTS.includes(n) ? n : 50;
+}
 const KNOWN_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked']);
 const TIER_SCORE = { platinum: 5, gold: 4, silver: 3, bronze: 2, borked: 1 };
 
@@ -151,6 +158,8 @@ function _recentCardHtml(r) {
 export async function renderHomePage() {
   const el = document.getElementById('content');
   el.innerHTML = '<div class="state-box">Loading recent reports...</div>';
+  const PAGE_SIZE = _loadCount(); // user-set preload count (50/100/150/200)
+  console.debug('[browse] preload count', { count: PAGE_SIZE, source: LOAD_COUNT_KEY });
   try {
     const [recentResp, mostPlayedResp] = await Promise.all([
       fetch('recent-reports.json').catch(() => null),
@@ -235,12 +244,16 @@ export async function renderHomePage() {
         </div>
       </div>
       <div id="recent-section">
-        <p class="section-label" style="margin-bottom:10px">Recent Reports</p>
+        <div class="section-label-row" style="margin-bottom:10px">
+          <span class="section-label" style="margin:0">Recent Reports</span>
+          <span class="section-count" id="recent-count"></span>
+        </div>
         <div class="cards" id="cards-recent"></div>
         <div id="load-more-recent"></div>
       </div>
       <div class="section-label-row" style="margin-top:24px;margin-bottom:10px">
         <span class="section-label" id="popular-section-label" style="margin:0">Popular on Steam</span>
+        <span class="section-count" id="popular-count"></span>
       </div>
       <div class="cards" id="cards-popular"></div>
       <div id="load-more-popular"></div>`;
@@ -330,12 +343,14 @@ export async function renderHomePage() {
       const queue = filtered.slice(PAGE_SIZE);
       cardsEl.innerHTML = initial.map(_popularItemHtml).join('')
         || '<div class="state-box">No games match the current filters.</div>';
+      _updateShownCount('popular-count', cardsEl, initial.length ? filtered.length : 0);
       if (loadMoreEl) {
         if (queue.length) {
           loadMoreEl.innerHTML = _loadMoreBtn('popular');
           loadMoreEl.querySelector('button').addEventListener('click', () => {
             const batch = queue.splice(0, PAGE_SIZE);
             cardsEl.insertAdjacentHTML('beforeend', batch.map(_popularItemHtml).join(''));
+            _updateShownCount('popular-count', cardsEl, filtered.length);
             if (!queue.length) loadMoreEl.innerHTML = '';
           });
         } else {
@@ -356,6 +371,15 @@ export async function renderHomePage() {
       });
     }
 
+    // Show how many cards are currently loaded vs how many match the filters,
+    // e.g. "50 of 132". Reads the live card count so it stays right after
+    // load-more appends. Hidden when there is nothing to show.
+    function _updateShownCount(countId, cardsEl, total) {
+      const c = document.getElementById(countId);
+      if (!c) return;
+      c.textContent = total ? `${cardsEl.children.length} of ${total} loaded` : '';
+    }
+
     function applyRecentFilters() {
       const filtered = _filterByText(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), textFilter);
       const sectionEl = document.getElementById('recent-section');
@@ -366,8 +390,9 @@ export async function renderHomePage() {
       const initial = filtered.slice(0, PAGE_SIZE);
       // Hide the whole recent section when empty so there's no blank state box.
       if (sectionEl) sectionEl.hidden = !filtered.length;
-      if (!filtered.length) { if (cardsEl) cardsEl.innerHTML = ''; return; }
+      if (!filtered.length) { if (cardsEl) cardsEl.innerHTML = ''; _updateShownCount('recent-count', cardsEl, 0); return; }
       cardsEl.innerHTML = initial.map(renderFn).join('');
+      _updateShownCount('recent-count', cardsEl, filtered.length);
       if (loadMoreEl) {
         if (queue.length) {
           loadMoreEl.innerHTML = _loadMoreBtn('recent');
@@ -375,6 +400,7 @@ export async function renderHomePage() {
           loadMoreEl.querySelector('button').addEventListener('click', () => {
             const batch = queue.splice(0, PAGE_SIZE);
             cardsEl.insertAdjacentHTML('beforeend', batch.map(renderFn).join(''));
+            _updateShownCount('recent-count', cardsEl, filtered.length);
             if (!queue.length) loadMoreEl.innerHTML = '';
           });
         } else {

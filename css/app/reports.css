@@ -103,23 +103,10 @@
   padding-top: 10px;
   border-top: 1px solid var(--border);
 }
+/* Save filters and Clear filters share one pill shape: same size, text size,
+   and border thickness. Only the colors differ. */
+.filter-save-btn,
 .filter-clear-btn {
-  background: rgba(220, 70, 70, 0.12);
-  border: 1px solid rgba(220, 70, 70, 0.45);
-  color: #ff9b9b;
-  font-size: 0.72rem;
-  font-family: inherit;
-  padding: 6px 14px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: color .1s, border-color .1s, background .1s;
-}
-.filter-clear-btn:hover { background: rgba(220, 70, 70, 0.22); border-color: #ff6b6b; color: #ffc1c1; }
-/* Save filters: rounded pill matching the toggle/pill style; fills when active. */
-.filter-save-btn {
-  background: var(--s1);
-  border: 1.5px solid var(--border);
-  color: var(--muted);
   font-size: 0.72rem;
   font-weight: 600;
   font-family: inherit;
@@ -127,8 +114,21 @@
   letter-spacing: 0.04em;
   padding: 6px 14px;
   border-radius: 999px;
+  border-width: 1.5px;
+  border-style: solid;
   cursor: pointer;
   transition: color .1s, border-color .1s, background .1s;
+}
+.filter-clear-btn {
+  background: rgba(220, 70, 70, 0.12);
+  border-color: rgba(220, 70, 70, 0.45);
+  color: #ff9b9b;
+}
+.filter-clear-btn:hover { background: rgba(220, 70, 70, 0.22); border-color: #ff6b6b; color: #ffc1c1; }
+.filter-save-btn {
+  background: var(--s1);
+  border-color: var(--border);
+  color: var(--muted);
 }
 .filter-save-btn:hover { border-color: var(--accent); color: var(--strong); }
 .filter-save-btn.is-active {
@@ -164,6 +164,7 @@
 .filter-panel--stack .pg-filter-group { min-width: 120px; }
 .filter-panel-footer--stack {
   flex-basis: 100%;
+  width: 100%;
   margin-top: 2px;
   padding-top: 12px;
   border-top: 1px solid var(--border);
