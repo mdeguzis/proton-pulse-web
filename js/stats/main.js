@@ -6,11 +6,11 @@ import {
   applyFilter, getFilter, getOpenDropdown, setOpenDropdown,
   renderDropdownButton, toggleFilterValue, clearFilter,
   setFilterChangeCallback, restoreFilterFromUrl,
-} from './filters.js?v=a9253694';
+} from './filters.js?v=f364d0eb';
 import {
   renderBars, renderFreshness, renderFramegen, renderDonut,
   renderSparkline, renderTopGames, renderRatingsTrend,
-} from './charts.js?v=81765579';
+} from './charts.js?v=870157ea';
 
 const root = document.getElementById('stats-root');
 const metaEl = document.getElementById('stats-meta');

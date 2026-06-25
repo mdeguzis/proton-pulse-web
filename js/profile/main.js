@@ -9,16 +9,16 @@ import {
   getProtonPulseUserIdFromSession, getShowUsername, setShowUsername,
   escapeHtml, formatSystemUpdated, getWebClientIdProfile,
   getPluginLinkCodeFromLocation, getSteamIdFromSession,
-} from './utils.js?v=c97505eb';
+} from './utils.js?v=a77e8ddf';
 import {
   deleteAllMyData, fetchAllMyData, checkMyDataExists,
-} from './api/configs.js?v=a51234ab';
+} from './api/configs.js?v=93128a98';
 import {
   listLinkedPlugins, completePluginLink, removePluginLink,
-} from './api/plugin-links.js?v=59c9f51e';
-import { initMyHardware } from './components/my-hardware.js?v=350d68d5';
-import { initSystems } from './components/systems.js?v=6c3aa1d4';
-import { initMyReports } from './components/my-reports.js?v=0b2a71e2';
+} from './api/plugin-links.js?v=05003ae3';
+import { initMyHardware } from './components/my-hardware.js?v=34fd810c';
+import { initSystems } from './components/systems.js?v=382fb770';
+import { initMyReports } from './components/my-reports.js?v=81bb3ed8';
 
 (async function () {
   // ── DOM refs ──────────────────────────────────────────────────────────────

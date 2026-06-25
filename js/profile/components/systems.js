@@ -6,11 +6,11 @@ import {
   getProtonPulseUserIdFromSession, parseSteamSystemInfo, inferGpuVendor,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel,
   summarizeSystem, escapeHtml, formatSystemUpdated,
-} from '../utils.js?v=c97505eb';
+} from '../utils.js?v=a77e8ddf';
 import {
   listUserSystems, setDefaultSystem, clearDefaultSystem,
   updateSystemLabel, deleteSystem,
-} from '../api/systems.js?v=8c9eb2f2';
+} from '../api/systems.js?v=770d14b7';
 
 /**
  * Initialise the Systems pane. Call once after DOM is ready.

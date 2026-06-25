@@ -1,5 +1,5 @@
-import { escapeHtml, fmtDateTime } from '../utils.js?v=86489fcb';
-import { fetchAllReports } from '../api/allReports.js?v=de397c2f';
+import { escapeHtml, fmtDateTime } from '../utils.js?v=bd5a67c2';
+import { fetchAllReports } from '../api/allReports.js?v=3540a5a1';
 
 function statusBadges(isF, isH) {
   if (isF || isH) {

@@ -1,5 +1,5 @@
-import { escapeHtml, fmtDateTime } from '../utils.js?v=86489fcb';
-import { fetchPendingReports, approveReport } from '../api/pending.js?v=6eb54134';
+import { escapeHtml, fmtDateTime } from '../utils.js?v=bd5a67c2';
+import { fetchPendingReports, approveReport } from '../api/pending.js?v=84292a58';
 
 export async function renderPending(session, { onApproved } = {}) {
   const loading = document.getElementById('pending-loading');

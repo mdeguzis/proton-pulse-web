@@ -1,10 +1,10 @@
 // home (components) for the app page. Relocated from app.js.
 
-import { fetchRecentPulseReports } from '../api/reports.js?v=30cf98fd';
-import { loadSearchIndex, searchIndex } from './search.js?v=f3a48257';
+import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
+import { loadSearchIndex, searchIndex } from './search.js?v=828a837d';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
-import { renderGameCard } from '../lib/card.js?v=de2b700a';
+import { renderGameCard } from '../lib/card.js?v=e29af0e5';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
 const LOAD_COUNTS = [50, 100, 150, 200];

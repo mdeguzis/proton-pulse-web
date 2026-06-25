@@ -1,7 +1,7 @@
 // user_configs + user_proton_configs REST helpers: fetch/publish/delete
 // reports, fetch history, and patch report/cloud config rows.
 import { SUPABASE_URL } from '../config.js?v=87cd0f3d';
-import { supabaseHeaders } from './supabase.js?v=bdf4b262';
+import { supabaseHeaders } from './supabase.js?v=4889c5e6';
 
 export async function fetchMyUserConfigs(protonPulseUserId, clientId, session) {
   // Public Pulse reports that show up on game pages.

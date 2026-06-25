@@ -1,24 +1,24 @@
 import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
-import { supabaseHeaders, escapeHtml } from './utils.js?v=86489fcb';
+import { supabaseHeaders, escapeHtml } from './utils.js?v=bd5a67c2';
 import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=529eb059';
-import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=27d63fd5';
-import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=3f4bb02b';
-import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=aa9b6b53';
-import { renderBanned } from './components/banned.js?v=1c1ba341';
-import { fetchAllUsers } from './api/users.js?v=72f82137';
-import { renderUsers } from './components/users.js?v=765cb3cc';
-import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=16a55837';
-import { renderAdmins, renderNewAdminEditor } from './components/admins.js?v=30fa53a1';
-import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ca024bd3';
-import { renderPhrases } from './components/phrases.js?v=20dbf1ea';
+import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=9359a45e';
+import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=5e2c6b60';
+import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=0d6ec118';
+import { renderBanned } from './components/banned.js?v=7bb95620';
+import { fetchAllUsers } from './api/users.js?v=0acf098a';
+import { renderUsers } from './components/users.js?v=8907b4fa';
+import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=2ad9f027';
+import { renderAdmins, renderNewAdminEditor } from './components/admins.js?v=04c577e8';
+import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ac74cb89';
+import { renderPhrases } from './components/phrases.js?v=5fb05dc2';
 import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965';
-import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=d96a321c';
-import { renderUserDetail } from './components/userDetail.js?v=1fd27df1';
-import { fetchAnalytics } from './api/analytics.js?v=efbe6581';
-import { renderAnalytics } from './components/analytics.js?v=a3f4e5f2';
-import { renderCacheStatus } from './components/cache-status.js?v=764c4d18';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=06239b0a';
-import { patchReportFlags, fetchReportById } from './api/allReports.js?v=de397c2f';
+import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=2bb0cee1';
+import { renderUserDetail } from './components/userDetail.js?v=62542337';
+import { fetchAnalytics } from './api/analytics.js?v=79ced8b7';
+import { renderAnalytics } from './components/analytics.js?v=761695ec';
+import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=84b0746c';
+import { patchReportFlags, fetchReportById } from './api/allReports.js?v=3540a5a1';
 
 // ---------------------------------------------------------------------------
 // State

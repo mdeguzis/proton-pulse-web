@@ -1,7 +1,7 @@
 // phrases (api) for the admin page.
 
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
-import { supabaseHeaders } from '../utils.js?v=86489fcb';
+import { supabaseHeaders } from '../utils.js?v=bd5a67c2';
 
 export async function fetchBannedPhrases(session) {
   const url = `${SUPABASE_URL}/rest/v1/banned_phrases?select=*&order=created_at.desc`;

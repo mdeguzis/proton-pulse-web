@@ -1,7 +1,7 @@
 // userDetail (api) for the admin page - fetches and manages a single user's data.
 
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
-import { supabaseHeaders } from '../utils.js?v=86489fcb';
+import { supabaseHeaders } from '../utils.js?v=bd5a67c2';
 
 export async function fetchUserReports(session, { userId, clientId }) {
   const select = 'id,app_id,title,rating,proton_version,launch_options,created_at,updated_at,is_hidden,is_flagged,source';

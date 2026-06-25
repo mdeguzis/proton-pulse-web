@@ -2,9 +2,9 @@ import { SUPABASE_URL, SUPABASE_ANON_KEY, SupaAuth } from './config.js?v=87cd0f3
 import {
   getProtonPulseUserIdFromSession, parseSteamSystemInfo, inferGpuVendor, inferCpuVendor,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel, escapeHtml,
-} from './utils.js?v=c97505eb';
-import { supabaseHeaders } from './api/supabase.js?v=bdf4b262';
-import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/systems.js?v=8c9eb2f2';
+} from './utils.js?v=a77e8ddf';
+import { supabaseHeaders } from './api/supabase.js?v=4889c5e6';
+import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/systems.js?v=770d14b7';
 
 function loadHardwareSuggestions() {
   fetch('hardware-suggestions.json', { cache: 'no-store' })

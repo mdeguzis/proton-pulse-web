@@ -1,7 +1,7 @@
 // Stats page chart renderers.
 
 import { label, fmt, niceCeil, formatAxisLabel, vramLabel, TIER_COLORS } from './utils.js?v=9bcdac4f';
-import { getFilter } from './filters.js?v=a9253694';
+import { getFilter } from './filters.js?v=f364d0eb';
 
 // Render N horizontal bar rows sorted descending by count.
 // dataAttr is the data-* attribute name (rating, key) for per-row tinting.
