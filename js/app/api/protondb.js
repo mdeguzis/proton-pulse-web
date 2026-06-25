@@ -1,16 +1,17 @@
 // protondb (api) for the app page. Relocated from app.js.
 
 import { CDN } from '../config.js?v=df5b5024';
+import { appIdToDir } from '../../lib/app-id.js?v=18a73fb7';
 
 /**
- * Fetch the latest ProtonDB CDN report bundle for a game.
- * Hits `${CDN}/${appId}/latest.json` (static JSON hosted on CDN).
- * @param {string|number} appId - Steam app ID.
+ * Fetch the latest CDN report bundle for a game.
+ * Hits `${CDN}/${appIdToDir(appId)}/latest.json` (static JSON hosted on CDN).
+ * @param {string|number} appId - Canonical app ID ('730', 'gog:123', 'epic:abc').
  * @returns {Promise<Array<object>>} Array of report objects, or empty array on failure.
  */
 export async function fetchCdn(appId) {
   try {
-    const r = await fetch(`${CDN}/${appId}/latest.json`);
+    const r = await fetch(`${CDN}/${appIdToDir(appId)}/latest.json`);
     if (!r.ok) return [];
     return await r.json();
   } catch { return []; }

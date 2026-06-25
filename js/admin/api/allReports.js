@@ -1,5 +1,5 @@
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
-import { supabaseHeaders } from '../utils.js?v=86489fcb';
+import { supabaseHeaders } from '../utils.js?v=bd5a67c2';
 
 const COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,source,app_type,is_flagged,is_hidden,created_at';
 const DETAIL_COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,proton_version,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,vram_mb,os,kernel,duration,duration_minutes,notes,form_responses,config_key,game_owned,source,app_type,is_flagged,is_hidden,created_at,updated_at';

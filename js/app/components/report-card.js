@@ -1,11 +1,11 @@
 // report-card (components) for the app page. Relocated from app.js.
 
 import { estimateScore } from '../../shared/scoring.js?v=0dae1257';
-import { getWebClientId } from '../../shared/submit.js?v=c57cb3d6';
+import { getWebClientId } from '../../shared/submit.js?v=1a4ae53c';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
-import { renderAuthorBlock } from './author.js?v=039a4282';
-import { buildFormRows } from './config-cards.js?v=473be757';
-import { renderSignalStrip } from './signals.js?v=2980c285';
+import { renderAuthorBlock } from './author.js?v=2316d334';
+import { buildFormRows } from './config-cards.js?v=c67740f8';
+import { renderSignalStrip } from './signals.js?v=a918ea75';
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=df5b5024';
 import { confColor, confTextColor, configKey, daysAgo, esc, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js?v=f5dda5b6';
 

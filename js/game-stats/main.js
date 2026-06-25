@@ -3,6 +3,7 @@ import { computeGameStats } from '../lib/scoring/gameStats.js?v=883b9a4c';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner } from '../shared/hardware.js?v=6a1246aa';
 import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange } from '../shared/chart-interactions.js?v=6b608095';
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e345596';
+import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
 // Per-game stats page (game-stats.html). Reads ?app=APPID from the URL,
 // pulls the same CDN data the main app page uses, then renders a thoughtful
@@ -32,7 +33,7 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=3e34559
 
   async function loadGame(appId) {
     try {
-      const r = await fetch(`${CDN_BASE}/${appId}/latest.json`);
+      const r = await fetch(`${CDN_BASE}/${appIdToDir(appId)}/latest.json`);
       if (!r.ok) return [];
       return await r.json();
     } catch { return []; }

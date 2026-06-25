@@ -1,5 +1,5 @@
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
-import { supabaseHeaders } from '../utils.js?v=86489fcb';
+import { supabaseHeaders } from '../utils.js?v=bd5a67c2';
 
 export async function fetchPendingReports(session) {
   const [reportsRes, approvalsRes] = await Promise.all([

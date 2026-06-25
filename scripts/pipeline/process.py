@@ -9,7 +9,7 @@ from pathlib import Path
 
 import ijson  # pylint: disable=import-error
 
-from .common import log
+from .common import app_id_to_dir, log
 from .metadata import update_app_metadata
 from .state import pipeline_state_path, write_pipeline_state
 
@@ -22,7 +22,7 @@ DEFAULT_TARBALL_CACHE_PATH = (
 def parse_and_split(file_handle, data_output_path, source_label="?"):
     """
     Stream-parse a report array and write output as:
-        data/{appId}/{year}.json
+        data/{app_id_to_dir(appId)}/{year}.json
     Each year file is a JSON array of all reports for that app in that year.
     Appends to existing year files so multiple source archives merge correctly.
     Deduplicates by timestamp to guard against the same archive appearing both
@@ -68,7 +68,9 @@ def parse_and_split(file_handle, data_output_path, source_label="?"):
     flush_start = time.time()
 
     for (app_id, year), new_reports in buffer.items():
-        app_dir = data_output_path / app_id
+        # Non-Steam IDs use ':' canonically (e.g. 'gog:123'). Convert to a
+        # filesystem-safe dir name ('gog_123') so process and finalize agree.
+        app_dir = data_output_path / app_id_to_dir(app_id)
         app_dir.mkdir(exist_ok=True)
         year_file = app_dir / f"{year}.json"
 

@@ -2,16 +2,16 @@
 
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=0dae1257';
-import { getWebClientId } from '../../shared/submit.js?v=c57cb3d6';
+import { getWebClientId } from '../../shared/submit.js?v=1a4ae53c';
 import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.js?v=21903124';
-import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=bac2f4eb';
-import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=ac040be6';
-import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=220e13ea';
-import { enhanceAuthorBlocks } from './author.js?v=039a4282';
-import { renderConfigCard } from './config-cards.js?v=473be757';
-import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=3d873bb3';
-import { renderCard } from './report-card.js?v=d2566fe5';
-import { loadSearchIndex, searchIndex } from './search.js?v=e4bf74fc';
+import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
+import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=0594677b';
+import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
+import { enhanceAuthorBlocks } from './author.js?v=2316d334';
+import { renderConfigCard } from './config-cards.js?v=c67740f8';
+import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=48037483';
+import { renderCard } from './report-card.js?v=ec94c31c';
+import { loadSearchIndex, searchIndex } from './search.js?v=828a837d';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=df5b5024';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=3e345596';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';

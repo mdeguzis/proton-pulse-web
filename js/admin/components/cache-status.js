@@ -1,4 +1,4 @@
-import { escapeHtml } from '../utils.js?v=86489fcb';
+import { escapeHtml } from '../utils.js?v=bd5a67c2';
 
 function _pass(label) {
   return `<span class="cache-status-pass">${escapeHtml(label)}</span>`;

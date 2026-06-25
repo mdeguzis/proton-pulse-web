@@ -96,6 +96,7 @@ scoring.html
 confidence.html
 game-stats.html
 submit.html
+js/lib/app-id.js
 js/lib/gpu-arch-detector.js
 js/lib/supabase-client.js
 js/lib/analytics.js

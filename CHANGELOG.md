@@ -2,6 +2,12 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.4.1
+
+- GOG and Epic game pages now load their data from the correct directory (the pipeline writes `gog_123/` but five frontend call sites were requesting `gog:123/`)
+- Favicon shows blue rings on a black square so Google search results no longer render it on a white background
+- `make pre-push` is idempotent again: cache-bust hashes the file's stripped content so import cycles in `js/app/` no longer keep `?v=` strings oscillating between runs
+
 ## v1.4.0
 
 - Service worker image cache: game cover art is served from the browser cache so the browse grid paints instantly on repeat visits, instead of waiting on dozens of CDN round trips
