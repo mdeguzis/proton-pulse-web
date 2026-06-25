@@ -75,6 +75,26 @@ function renderEventTypesTable(rows) {
   </table>`;
 }
 
+function renderSwCache(sw) {
+  if (!sw || !sw.sessions) {
+    return `<p class="admin-empty">No service worker cache data yet.</p>`;
+  }
+  const rows = [
+    { label: 'Image cache hit rate', value: `${sw.hit_rate}%` },
+    { label: 'Images served from cache', value: sw.served },
+    { label: 'Cache misses', value: sw.misses },
+    { label: 'Sessions reporting', value: sw.sessions },
+  ];
+  return `<table class="admin-table analytics-stat-rows">
+    <tbody>${rows.map(s =>
+      `<tr>
+        <td style="color:var(--text-muted,#888);font-size:0.82rem;padding:6px 10px">${escapeHtml(s.label)}</td>
+        <td style="font-weight:600;text-align:right;padding:6px 10px">${escapeHtml(String(s.value))}</td>
+      </tr>`
+    ).join('')}</tbody>
+  </table>`;
+}
+
 export function renderAnalytics(data, { daysBack, onChangeDays }) {
   const content = document.getElementById('analytics-content');
 
@@ -119,6 +139,10 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     <div style="margin-top:20px">
       <div class="analytics-section-title">Summary</div>
       ${renderStatRows(data.totals || {})}
+    </div>
+    <div style="margin-top:20px">
+      <div class="analytics-section-title">Image cache (service worker)</div>
+      ${renderSwCache(data.sw_cache)}
     </div>
   `;
 

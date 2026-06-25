@@ -806,4 +806,48 @@
   } else {
     inject();
   }
+
+  // ---- 8. Service worker (cache-first image cache) --------------------
+  // Registered from a plain script tag (no build step). sw.js resolves relative
+  // to the page, so it works at the prod root and under the /proton-pulse-web*
+  // staging subpath alike. Only caches cover images; see sw.js.
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').then(function (reg) {
+        console.debug('[sw] registered', { scope: reg.scope, source: 'topbar' });
+      }).catch(function (err) {
+        console.debug('[sw] registration failed', { error: String(err), source: 'topbar' });
+      });
+    });
+
+    // Cache analytics: ask the worker for its hit/miss counters when the page is
+    // hidden and report one aggregate event (via ppTrack -> site_events) so the
+    // admin tab can chart the image cache hit rate. The worker resets counters on
+    // read, so each report is a delta and totals never double-count.
+    var reportSwStats = function () {
+      var sw = navigator.serviceWorker.controller;
+      if (!sw) return; // no active worker controlling this page yet
+      try {
+        var ch = new MessageChannel();
+        ch.port1.onmessage = function (e) {
+          var d = e.data || {};
+          var total = (d.hits || 0) + (d.misses || 0);
+          if (!total) return; // nothing happened since the last report
+          if (window.ppTrack) {
+            window.ppTrack('sw_cache', {
+              hits: d.hits || 0,
+              misses: d.misses || 0,
+              hit_rate: Math.round((d.hits || 0) / total * 100),
+            });
+          }
+        };
+        sw.postMessage({ type: 'pp-sw-stats' }, [ch.port2]);
+      } catch (err) {
+        console.debug('[sw] stats report failed', { error: String(err), source: 'topbar' });
+      }
+    };
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'hidden') reportSwStats();
+    });
+  }
 })();

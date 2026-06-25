@@ -2,6 +2,12 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.4.0
+
+- Service worker image cache: game cover art is served from the browser cache so the browse grid paints instantly on repeat visits, instead of waiting on dozens of CDN round trips
+- Cache-first with stale-while-revalidate gated by a 7-day max-age: covers serve instantly and refresh quietly in the background only when older than a week
+- Admin Analytics tab shows an Image cache card with the cache hit rate, images served from cache, misses, and sessions reporting
+
 ## v1.3.0
 
 - Browse filter panel widens on desktop and lays the pills out in an aligned grid instead of wrapping unevenly

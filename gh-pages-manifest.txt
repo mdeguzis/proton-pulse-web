@@ -1,5 +1,6 @@
 # Static shell files copied from main to gh-pages.
 # For intentionally excluded files, see gh-pages-exclude-manifest.txt.
+sw.js
 app.html
 js/app/config.js
 js/app/utils.js
