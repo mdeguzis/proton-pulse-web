@@ -806,4 +806,18 @@
   } else {
     inject();
   }
+
+  // ---- 8. Service worker (cache-first image cache) --------------------
+  // Registered from a plain script tag (no build step). sw.js resolves relative
+  // to the page, so it works at the prod root and under the /proton-pulse-web*
+  // staging subpath alike. Only caches cover images; see sw.js.
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').then(function (reg) {
+        console.debug('[sw] registered', { scope: reg.scope, source: 'topbar' });
+      }).catch(function (err) {
+        console.debug('[sw] registration failed', { error: String(err), source: 'topbar' });
+      });
+    });
+  }
 })();
