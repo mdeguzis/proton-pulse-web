@@ -8,7 +8,22 @@
 const CACHE = 'pp-img-cache-v1';
 const MAX_ENTRIES = 300;
 
+// Running counters since this worker spun up (or since the last stats read).
+// The page reads + resets these on pagehide and reports one aggregate event,
+// so we measure the cache hit rate without flooding analytics per image.
+const stats = { hits: 0, misses: 0 };
+
 self.addEventListener('install', () => self.skipWaiting());
+
+// Stats query: reply with the current counters, then reset so each report from
+// the page is a delta and we never double-count across reports in one session.
+self.addEventListener('message', (event) => {
+  if (!event.data || event.data.type !== 'pp-sw-stats') return;
+  const snapshot = { hits: stats.hits, misses: stats.misses };
+  stats.hits = 0;
+  stats.misses = 0;
+  if (event.ports && event.ports[0]) event.ports[0].postMessage(snapshot);
+});
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
@@ -36,7 +51,8 @@ self.addEventListener('fetch', (event) => {
   event.respondWith((async () => {
     const cache = await caches.open(CACHE);
     const hit = await cache.match(req);
-    if (hit) return hit;
+    if (hit) { stats.hits++; return hit; }
+    stats.misses++;
     try {
       const res = await fetch(req);
       // Cache ok responses and opaque ones. Cards load covers no-cors, so the
