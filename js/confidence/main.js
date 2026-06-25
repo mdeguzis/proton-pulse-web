@@ -2,6 +2,7 @@
 import { estimateScoreBreakdown, loadScoringInfo } from '../shared/scoring.js?v=0dae1257';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner } from '../shared/hardware.js?v=6a1246aa';
 import { attachChartHover } from '../shared/chart-interactions.js?v=6b608095';
+import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
 (function () {
   const root = document.getElementById('cb-root');
@@ -769,7 +770,7 @@ import { attachChartHover } from '../shared/chart-interactions.js?v=6b608095';
       : ['latest.json'];
     for (const file of files) {
       try {
-        const r = await fetch(`${CDN_BASE}/${appId}/${file}`);
+        const r = await fetch(`${CDN_BASE}/${appIdToDir(appId)}/${file}`);
         if (!r.ok) continue;
         const data = await r.json();
         if (Array.isArray(data) && data.length) return data;

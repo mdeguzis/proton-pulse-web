@@ -2,6 +2,7 @@
 
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
 import { supabaseHeaders } from '../utils.js?v=86489fcb';
+import { appIdToDir } from '../../lib/app-id.js?v=18a73fb7';
 
 export async function fetchFlaggedReports(session, { search, type, dateFrom, dateTo, sortField, sortDir } = {}) {
   // Query the unified flagged_reports log (covers both ProtonDB and Pulse reports)
@@ -218,7 +219,7 @@ export async function fetchFlagReportContent(session, { app_id, report_key, sour
     }
     // ProtonDB: fetch CDN bundle
     const cdnBase = 'https://www.proton-pulse.com/data';
-    const res = await fetch(`${cdnBase}/${encodeURIComponent(app_id)}/latest.json`);
+    const res = await fetch(`${cdnBase}/${encodeURIComponent(appIdToDir(app_id))}/latest.json`);
     if (!res.ok) return null;
     const reports = await res.json();
     const arr = Array.isArray(reports) ? reports : (reports.reports || reports.data || []);

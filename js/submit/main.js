@@ -2,6 +2,7 @@
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=0dae1257';
 import { populateSubmitForm, prefillSubmitFormFromMyHardware, submitReport } from '../shared/submit.js?v=c57cb3d6';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
+import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
 (async function() {
   const params = new URLSearchParams(window.location.search);
@@ -55,9 +56,10 @@ import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
       // Last-ditch: per-app data file. Use latest.json (real path) rather
       // than the directory listing
       try {
+        const appDir = appIdToDir(appId);
         const dataUrl = /^localhost/.test(location.host)
-          ? `https://www.proton-pulse.com/data/${appId}/latest.json`
-          : `data/${appId}/latest.json`;
+          ? `https://www.proton-pulse.com/data/${appDir}/latest.json`
+          : `data/${appDir}/latest.json`;
         const resp = await fetch(dataUrl);
         if (resp.ok) {
           const data = await resp.json();
