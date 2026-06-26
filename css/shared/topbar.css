@@ -561,9 +561,31 @@ html[data-motion="off"] .banner-atoms {
 }
 .search-dropdown .sd-appid {
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   color: var(--muted);
+  flex-shrink: 1;
+  max-width: 96px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.search-dropdown .sd-store {
   flex-shrink: 0;
+  align-self: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: #fff;
+}
+.search-dropdown .sd-store--steam { background: #1689d0; }
+.search-dropdown .sd-store--gog   { background: #7a3fcf; }
+.search-dropdown .sd-store--epic  { background: #555; color: #eee; }
+@media (max-width: 540px) {
+  .search-dropdown .sd-appid { max-width: 60px; font-size: 0.6rem; }
+  .search-dropdown .sd-store { font-size: 0.55rem; padding: 2px 6px; }
 }
 .search-dropdown .sd-empty {
   padding: 14px 12px;
