@@ -721,6 +721,9 @@
                          : inferredStore === 'epic' ? 'Epic'
                          : 'Steam';
         const storeHtml = '<span class="sd-store sd-store--' + inferredStore + '">' + storeLabel + '</span>';
+        // Order on the right side: appId (truncated) -> store badge (far right).
+        // Store pill goes last so it sits at the trailing edge of the row, in
+        // line with the convention on the app.html cards.
         return '<a href="app.html#/app/' + r.appId + '" role="option" data-idx="' + idx + '">' +
                '<img loading="lazy" data-appid="' + r.appId + '" src="' + steamHeader(r.appId) + '" alt="" ' +
                  'onerror="window.__steamImgLoad && window.__steamImgLoad(this)">' +
@@ -729,8 +732,8 @@
                  countsHtml +
                '</span>' +
                tierHtml +
-               storeHtml +
                '<span class="sd-appid" title="' + idStr + '">' + idStr + '</span>' +
+               storeHtml +
                '</a>';
       }).join('');
       dropdown.innerHTML = html;

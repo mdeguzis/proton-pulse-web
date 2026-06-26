@@ -572,13 +572,20 @@ html[data-motion="off"] .banner-atoms {
 .search-dropdown .sd-store {
   flex-shrink: 0;
   align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  height: 20px;
+  margin-left: 4px;
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 3px 8px;
+  padding: 0 10px;
   border-radius: 999px;
   color: #fff;
+  line-height: 1;
 }
 .search-dropdown .sd-store--steam { background: #1689d0; }
 .search-dropdown .sd-store--gog   { background: #7a3fcf; }
