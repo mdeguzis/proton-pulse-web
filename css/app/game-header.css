@@ -662,20 +662,37 @@
 .submit-report-btn {
   display: inline-flex;
   align-items: center;
-  background: rgba(76,175,80,0.12);
-  border: 1px solid #4caf50;
-  color: #4caf50;
-  font-size: 0.72rem;
-  padding: 8px 14px;
+  gap: 8px;
+  background: var(--green-hi, #beee11);
+  border: 0;
+  color: #0b1116;
+  font-size: 0.78rem;
+  padding: 9px 18px;
+  border-radius: 999px;
   cursor: pointer;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   flex-shrink: 0;
   font-family: inherit;
   min-height: 34px;
   text-decoration: none;
   white-space: nowrap;
+  box-shadow: 0 0 0 1px rgba(190, 238, 17, 0.35), 0 4px 18px var(--green-glow, rgba(190, 238, 17, 0.35));
+  transition: background 0.12s ease, transform 0.06s ease, box-shadow 0.12s ease;
 }
-.submit-report-btn:hover { background: rgba(76,175,80,0.25); text-decoration: none; }
+.submit-report-btn:hover {
+  background: #d8ff3b;
+  text-decoration: none;
+  box-shadow: 0 0 0 1px rgba(216, 255, 59, 0.55), 0 4px 22px var(--green-glow, rgba(190, 238, 17, 0.45));
+}
+.submit-report-btn:active { transform: translateY(1px); }
+.submit-report-btn:disabled {
+  background: var(--s3, #2a475e);
+  color: var(--muted, #67788c);
+  cursor: not-allowed;
+  box-shadow: none;
+}
 
 /* Live ProtonDB check action: modern colored pill (Steam accent blue) to
    distinguish it from the green submit-report path and signal "fetches fresh
