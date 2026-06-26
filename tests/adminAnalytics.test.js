@@ -142,7 +142,7 @@ describe('renderAnalytics', () => {
     ctx.renderAnalytics(sampleData, { daysBack: 30, onChangeDays: noop });
     expect(store.html).toContain('analytics-jump-nav');
     // One button per major section -- a missing one means the nav is out of sync
-    ['sec-daily', 'sec-reports', 'sec-pages', 'sec-games', 'sec-summary', 'sec-sw-cache', 'sec-data-cache', 'sec-img-routes']
+    ['sec-daily', 'sec-reports', 'sec-pages', 'sec-games', 'sec-summary', 'sec-sw-cache', 'sec-data-cache', 'sec-img-routes', 'sec-img-timings']
       .forEach(id => expect(store.html).toContain(`data-target="${id}"`));
   });
 
@@ -169,6 +169,14 @@ describe('renderAnalytics', () => {
     ctx.window.__imgRouteCounts = {};
     ctx.renderAnalytics(sampleData, { daysBack: 30, onChangeDays: noop });
     expect(store.html).toContain('Primary akamai CDN handled every image');
+  });
+
+  test('image timings section renders and shows empty state when no entries', () => {
+    ctx.renderAnalytics(sampleData, { daysBack: 30, onChangeDays: noop });
+    expect(store.html).toContain('Image load timings');
+    expect(store.html).toContain('id="img-timings-table"');
+    // performance is undefined in the vm context -> stats are empty -> empty state shown
+    expect(store.html).toContain('No image transfers observed yet this session');
   });
 });
 

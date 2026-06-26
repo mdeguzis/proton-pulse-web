@@ -66,36 +66,107 @@ function _renderDataCacheChart(rows) {
   const canvas = document.getElementById('data-cache-chart');
   if (!canvas || typeof Chart === 'undefined') return;
   if (dataCacheChartInstance) { dataCacheChartInstance.destroy(); dataCacheChartInstance = null; }
-  // Bars are "age as % of max-age". Above 100% = stale, color red. 50-100% =
-  // warming, color yellow. <50% = fresh, color green. Files without a max-age
-  // header are charted at 0 with a neutral grey bar.
+  // Bars are "age as % of max-age". Pipeline data files routinely sit far
+  // past their 10min Cache-Control header (search-index updates every few
+  // hours, max-age is for CDN edge churn). Visualizing 1200% would just
+  // produce a single dominant bar, so we clamp display at 200% (= 2x stale)
+  // and surface the true value in the tooltip. The 100% mark is implicit
+  // as "anything red is stale". Files without max-age render at 0 in grey.
   const labels = rows.map(r => r.name);
-  const pcts = rows.map(r => {
+  const truePcts = rows.map(r => {
     if (!r.ok || r.ageSecs == null || !r.maxAge) return 0;
     return Math.round((r.ageSecs / r.maxAge) * 100);
   });
-  const colors = pcts.map(p => p === 0 ? 'rgba(120,120,120,0.5)' : p > 100 ? '#ff5566' : p > 50 ? '#d4b36a' : '#4caf80');
+  const DISPLAY_CAP = 200;
+  const displayPcts = truePcts.map(p => Math.min(p, DISPLAY_CAP));
+  const colors = truePcts.map(p => p === 0 ? 'rgba(120,120,120,0.5)' : p > 100 ? '#ff5566' : p > 50 ? '#d4b36a' : '#4caf80');
   dataCacheChartInstance = new Chart(canvas, {
     type: 'bar',
-    data: { labels, datasets: [{ label: 'Age vs max-age', data: pcts, backgroundColor: colors, borderWidth: 0 }] },
+    data: { labels, datasets: [{ label: 'Age vs max-age', data: displayPcts, backgroundColor: colors, borderWidth: 0 }] },
     options: {
       indexAxis: 'y',
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: ctx => `${ctx.parsed.x}% of TTL elapsed` } },
+        tooltip: { callbacks: { label: ctx => `${truePcts[ctx.dataIndex]}% of TTL elapsed (max-age ${_formatAge(rows[ctx.dataIndex].maxAge)})` } },
       },
       scales: {
         x: {
+          min: 0, max: DISPLAY_CAP,
           ticks: { color: '#888', callback: v => v + '%' },
           grid: { color: 'rgba(255,255,255,0.05)' },
-          suggestedMax: 120,
         },
         y: { ticks: { color: '#888', font: { size: 11 } }, grid: { display: false } },
       },
     },
   });
+}
+
+// Image load timings from the browser's performance entry buffer.
+// Groups all image transfers from the steam header CDNs (akamai, cloudflare,
+// game-images.json hashed URLs, nonsteam covers) by route and reports cache
+// hit rate (transferSize === 0) plus median + p95 duration in ms. This is the
+// "where do images lag" view -- the per-page-life resource buffer is the
+// authoritative source for what the browser actually fetched.
+function readImageLoadStats() {
+  if (typeof performance === 'undefined' || !performance.getEntriesByType) return [];
+  const routes = [
+    { key: 'akamai',     label: 'akamai (primary)',  match: /shared\.akamai\.steamstatic\.com/ },
+    { key: 'cloudflare', label: 'cloudflare CDN',    match: /(shared|cdn)\.cloudflare\.steamstatic\.com/ },
+    { key: 'gameImages', label: 'game-images hashed', match: /steamcdn-a\.akamaihd\.net|akamaihd\.net|cloudflare\.steamstatic\.com\/.+_hash/ },
+    { key: 'nonsteam',   label: 'nonsteam covers',    match: /gog-statics|images\.gog|epicgames\.com\/.+\.jpg|epicgames\.com\/.+\.png/ },
+  ];
+  const entries = performance.getEntriesByType('resource').filter(e =>
+    e.initiatorType === 'img' || /\.(jpg|jpeg|png|webp)(\?|$)/i.test(e.name)
+  );
+  const out = [];
+  for (const r of routes) {
+    const matches = entries.filter(e => r.match.test(e.name));
+    if (!matches.length) {
+      out.push({ ...r, count: 0, cacheHits: 0, cacheHitRate: 0, medianMs: 0, p95Ms: 0 });
+      continue;
+    }
+    const durations = matches.map(e => Math.round(e.duration)).sort((a, b) => a - b);
+    const cacheHits = matches.filter(e => e.transferSize === 0).length;
+    const median = durations[Math.floor(durations.length / 2)] || 0;
+    const p95 = durations[Math.floor(durations.length * 0.95)] || durations[durations.length - 1] || 0;
+    out.push({
+      ...r,
+      count: matches.length,
+      cacheHits,
+      cacheHitRate: Math.round((cacheHits / matches.length) * 100),
+      medianMs: median,
+      p95Ms: p95,
+    });
+  }
+  return out;
+}
+
+function renderImageLoadStats() {
+  const stats = readImageLoadStats();
+  const total = stats.reduce((s, r) => s + r.count, 0);
+  if (!total) {
+    return `<p class="admin-empty">No image transfers observed yet this session. Visit a few game pages to populate the buffer.</p>`;
+  }
+  return `<table class="admin-table">
+    <thead><tr><th>Route</th><th>Loads</th><th>Cache hits</th><th>Hit %</th><th>Median</th><th>p95</th></tr></thead>
+    <tbody>${stats.map(r => {
+      if (!r.count) {
+        return `<tr><td>${escapeHtml(r.label)}</td><td colspan="5" style="color:var(--muted)">(no loads)</td></tr>`;
+      }
+      const p95Color = r.p95Ms > 800 ? '#ff5566' : r.p95Ms > 300 ? '#d4b36a' : '#4caf80';
+      return `<tr>
+        <td>${escapeHtml(r.label)}</td>
+        <td>${r.count}</td>
+        <td>${r.cacheHits}</td>
+        <td>${r.cacheHitRate}%</td>
+        <td>${r.medianMs} ms</td>
+        <td style="color:${p95Color}">${r.p95Ms} ms</td>
+      </tr>`;
+    }).join('')}</tbody>
+  </table>
+  <p class="admin-empty" style="margin-top:8px;font-size:0.78rem">Cache hit = browser served from disk (transferSize 0). p95 > 800ms is flagged red. Buffer is per-tab session; admin page itself does not load game thumbnails, so visit /app/... pages first.</p>`;
 }
 
 function renderImgRoutesChart() {
@@ -322,6 +393,7 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     { id: 'sec-sw-cache',   label: 'SW Cache' },
     { id: 'sec-data-cache', label: 'Data Cache' },
     { id: 'sec-img-routes', label: 'Image Routes' },
+    { id: 'sec-img-timings', label: 'Image Timings' },
   ];
   const navHtml = `<div class="analytics-jump-nav" id="analytics-jump-nav">${
     NAV_SECTIONS.map(s =>
@@ -345,6 +417,7 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     <div class="analytics-chart-wrap">
       <canvas id="analytics-daily-chart"></canvas>
     </div>
+    <p class="chart-caption">Sessions and distinct authenticated users per day across the selected range.</p>
     <div id="sec-reports" style="margin-top:24px;margin-bottom:6px">
       <span class="analytics-section-title">Report submissions</span>
       <span style="float:right;font-size:0.75rem;color:var(--text-muted,#888)">
@@ -354,6 +427,7 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     <div class="analytics-chart-wrap">
       <canvas id="analytics-reports-chart"></canvas>
     </div>
+    <p class="chart-caption">Pulse Reports landed per day. Spikes usually follow a release or a wiki post.</p>
     <div id="sec-pages" class="analytics-two-col" style="margin-top:20px">
       <div>
         <div class="analytics-section-title">Top pages</div>
@@ -379,12 +453,18 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     <div id="sec-data-cache" style="margin-top:20px">
       <div class="analytics-section-title">Pipeline data cache <button type="button" class="admin-sort-btn" id="data-cache-refresh" style="margin-left:10px;font-size:0.72rem">Refresh</button></div>
       <div class="analytics-chart-wrap" style="height:200px"><canvas id="data-cache-chart"></canvas></div>
+      <p class="chart-caption">Each bar is one pipeline JSON file. Length is age divided by Cache-Control max-age. Green &lt;50%, yellow 50&ndash;100%, red &gt;100% (past TTL). Bars clamp at 200% so a single very-stale file does not squash the rest; hover for the true number.</p>
       <div id="data-cache-table"><p class="admin-empty">Probing data files...</p></div>
     </div>
     <div id="sec-img-routes" style="margin-top:20px">
       <div class="analytics-section-title">Image route hits (this session)</div>
       <div class="analytics-chart-wrap" style="height:200px"><canvas id="img-routes-chart"></canvas></div>
+      <p class="chart-caption">Counts of fallback hits since you opened this tab. The primary akamai CDN is not counted (no fallback fires on success), so a low total means most images loaded on the first try.</p>
       ${renderImgRoutes()}
+    </div>
+    <div id="sec-img-timings" style="margin-top:20px">
+      <div class="analytics-section-title">Image load timings <button type="button" class="admin-sort-btn" id="img-timings-refresh" style="margin-left:10px;font-size:0.72rem">Refresh</button></div>
+      <div id="img-timings-table">${renderImageLoadStats()}</div>
     </div>
   `;
 
@@ -392,6 +472,10 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
   loadDataCacheTable();
   renderImgRoutesChart();
   content.querySelector('#data-cache-refresh')?.addEventListener('click', loadDataCacheTable);
+  content.querySelector('#img-timings-refresh')?.addEventListener('click', () => {
+    const t = document.getElementById('img-timings-table');
+    if (t) t.innerHTML = renderImageLoadStats();
+  });
 
   content.querySelectorAll('[data-days]').forEach(btn => {
     btn.addEventListener('click', () => onChangeDays(Number(btn.dataset.days)));

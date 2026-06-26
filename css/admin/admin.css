@@ -953,6 +953,15 @@ pre.flag-raw-json {
   color: var(--strong, #fff);
 }
 
+/* One-liner explanation under a chart so the reader doesn't have to guess
+   what the bars or trendline represent. Sits between chart and table. */
+.chart-caption {
+  font-size: 0.78rem;
+  color: var(--text-muted, #888);
+  margin: -8px 0 14px;
+  line-height: 1.45;
+}
+
 /* Status legend line */
 .admin-legend {
   font-size: 0.78rem;
