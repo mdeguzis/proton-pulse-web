@@ -921,6 +921,39 @@ pre.flag-raw-json {
   .analytics-two-col { grid-template-columns: 1fr; }
 }
 
+/* Sticky jump-to-section nav at the top of the analytics panel. Sticks under
+   the admin header so users do not have to scroll back to switch sections. */
+.analytics-jump-nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 0;
+  margin: -8px 0 12px;
+  background: var(--bg, #0b1116);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.analytics-jump-btn {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text, #c7d5e0);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+.analytics-jump-btn:hover {
+  background: rgba(102, 192, 244, 0.12);
+  border-color: var(--accent, #66c0f4);
+  color: var(--strong, #fff);
+}
+
 /* Status legend line */
 .admin-legend {
   font-size: 0.78rem;

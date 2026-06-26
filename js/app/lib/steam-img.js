@@ -53,6 +53,20 @@ function _swap(el, loaded) {
   el.parentNode?.replaceChild(loaded, el);
 }
 
+// Session-scoped route counters surfaced on the admin analytics page.
+// Each fallback hit increments one bucket. Primary akamai successes are NOT
+// counted here -- onerror does not fire on success, and we do not instrument
+// every img tag. The admin can read totals separately and subtract.
+function _bumpRoute(route) {
+  const counts = window.__imgRouteCounts || (window.__imgRouteCounts = {
+    cloudflare: 0,
+    'game-images-json': 0,
+    'nonsteam-images-json': 0,
+    hidden: 0,
+  });
+  counts[route] = (counts[route] || 0) + 1;
+}
+
 // Called after the primary akamai src fails (onerror).
 // Tries cloudflare, then game-images.json, then hides the slot.
 export async function loadSteamImg(el, appId) {
@@ -68,11 +82,13 @@ export async function loadSteamImg(el, appId) {
       const loaded = await _tryUrl(nsUrl);
       if (loaded) {
         console.log(`[steam-img] appId=${id} route=nonsteam-images-json`);
+        _bumpRoute('nonsteam-images-json');
         _swap(el, loaded);
         return;
       }
     }
     console.warn(`[steam-img] appId=${id} no non-Steam cover available`);
+    _bumpRoute('hidden');
     el.style.visibility = 'hidden';
     return;
   }
@@ -80,6 +96,7 @@ export async function loadSteamImg(el, appId) {
   const cdn2 = await _tryUrl(_CDN2(id));
   if (cdn2) {
     console.log(`[steam-img] appId=${id} route=cloudflare`);
+    _bumpRoute('cloudflare');
     _swap(el, cdn2);
     return;
   }
@@ -90,12 +107,14 @@ export async function loadSteamImg(el, appId) {
     const loaded = await _tryUrl(url);
     if (loaded) {
       console.log(`[steam-img] appId=${id} route=game-images-json`);
+      _bumpRoute('game-images-json');
       _swap(el, loaded);
       return;
     }
   }
 
   console.warn(`[steam-img] appId=${id} all CDN paths exhausted`);
+  _bumpRoute('hidden');
   el.style.visibility = 'hidden';
 }
 

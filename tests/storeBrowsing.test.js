@@ -103,6 +103,15 @@ describe('non-Steam box art', () => {
     const gamePageSrc = read('js/app/components/game-page.js');
     expect(gamePageSrc).toContain('onerror="window.__steamImgLoad(this)"');
   });
+  test('steam-img bumps window.__imgRouteCounts on every fallback route', () => {
+    // The admin analytics image-routes section reads from this global. Each
+    // route must call _bumpRoute so the dashboard counts are accurate.
+    expect(steamImgSrc).toContain('window.__imgRouteCounts');
+    expect(steamImgSrc).toContain("_bumpRoute('cloudflare')");
+    expect(steamImgSrc).toContain("_bumpRoute('game-images-json')");
+    expect(steamImgSrc).toContain("_bumpRoute('nonsteam-images-json')");
+    expect(steamImgSrc).toContain("_bumpRoute('hidden')");
+  });
 });
 
 describe('search index loads from prod on staging', () => {

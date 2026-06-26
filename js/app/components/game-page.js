@@ -13,7 +13,7 @@ import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, 
 import { renderCard } from './report-card.js?v=ec94c31c';
 import { loadSearchIndex, searchIndex } from './search.js?v=386e4fc4';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=df5b5024';
-import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=3e345596';
+import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=e7fe3ce0';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';
 
 let _steamCatalogCache = null;
