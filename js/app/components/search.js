@@ -36,8 +36,8 @@ export function renderPulseSearchResult(row) {
 }
 
 // --- renderIndexSearchResult ---
-export function renderIndexSearchResult(entry) {
-  // search-index entries: [appId, title, tier, protondbCount, pulseCount, appType]
+export function renderIndexSearchResult(entry, displayTitleOverride) {
+  // search-index entries: [appId, title, tier, protondbCount, pulseCount, appType, releaseYear]
   // Destructure defensively so older deploys keep rendering
   const [appId, title, tier, protondbCount, pulseCount, appType] = entry;
   // Build a counts subline only when at least one count is present
@@ -50,7 +50,8 @@ export function renderIndexSearchResult(entry) {
   // Prefer the appType column from the index; fall back to deriving from the id
   // so legacy 5-tuple entries still get a store pill.
   const store = appType === 'gog' ? 'GOG' : appType === 'epic' ? 'Epic' : appType === 'steam' ? 'Steam' : storeLabelFromAppId(appId);
-  return renderGameCard({ href: `#/app/${appId}`, appId, title, sub: meta, tier: tier || undefined, storePill: store });
+  const displayTitle = displayTitleOverride || title;
+  return renderGameCard({ href: `#/app/${appId}`, appId, title: displayTitle, sub: meta, tier: tier || undefined, storePill: store });
 }
 
 // --- renderSearchPage ---
@@ -61,6 +62,13 @@ export async function renderSearchPage(query) {
   await loadSearchIndex();
   const pulseResults = await withTimeout(fetchMatchingPulseConfigs(q), 2500, []);
   const indexResults = searchIndexMatches(q, 24);
+  // Disambiguate same-name games (e.g. Prey 2006 vs Prey 2017) with a "(YEAR)"
+  // suffix when the pipeline supplied a releaseYear (column 7 of search-index).
+  // window.__buildTitleOverrides is registered globally by topbar.js.
+  const indexShaped = indexResults.map(([appId, title, , , , , releaseYear]) => ({ appId, title, releaseYear }));
+  const indexOverrides = (typeof window.__buildTitleOverrides === 'function')
+    ? window.__buildTitleOverrides(indexShaped)
+    : new Map();
   const total = pulseResults.length + indexResults.length;
 
   el.innerHTML = `
@@ -84,7 +92,7 @@ export async function renderSearchPage(query) {
           <span class="search-group-count">${indexResults.length} app${indexResults.length === 1 ? '' : 's'}</span>
         </div>
         ${indexResults.length
-          ? `<div class="search-result-list">${indexResults.map(renderIndexSearchResult).join('')}</div>`
+          ? `<div class="search-result-list">${indexResults.map((entry, i) => renderIndexSearchResult(entry, indexOverrides.get(i))).join('')}</div>`
           : '<div class="search-group-empty">No static index entries matched this query.</div>'}
       </section>
     </div>`;
@@ -162,17 +170,23 @@ export async function onSearchInput() {
   const seenIds = new Set(matches.map(([id]) => String(id)));
   const pulseOnly = pulseResults.filter(r => !seenIds.has(String(r.appId))).slice(0, MAX - matches.length);
   const allItems = [
-    ...matches.map(([id, title]) => ({ id, title, hasIndex: true, hasPulse: pulseAppIds.has(String(id)) })),
-    ...pulseOnly.map(r => ({ id: r.appId, title: r.appName, hasIndex: false, hasPulse: true })),
+    ...matches.map(([id, title, , , , , releaseYear]) => ({ id, title, releaseYear, hasIndex: true, hasPulse: pulseAppIds.has(String(id)) })),
+    ...pulseOnly.map(r => ({ id: r.appId, title: r.appName, releaseYear: null, hasIndex: false, hasPulse: true })),
   ];
+  // Append " (YEAR)" to colliding titles when a year is known. Falls back to
+  // the raw title (no override) when the helper hasn't been registered yet.
+  const dropdownOverrides = (typeof window.__buildTitleOverrides === 'function')
+    ? window.__buildTitleOverrides(allItems.map(it => ({ title: it.title, releaseYear: it.releaseYear })))
+    : new Map();
 
-  const rows = allItems.map(({ id, title, hasIndex, hasPulse }) => {
+  const rows = allItems.map(({ id, title, hasIndex, hasPulse }, i) => {
+    const display = dropdownOverrides.get(i) || title;
     const img = STEAM_IMG(id);
     const store = storeLabelFromAppId(id);
     return `<a class="search-item" href="#/app/${id}" data-id="${id}">
       <img src="${img}" data-appid="${id}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">
       <div class="search-result-info">
-        <div class="search-result-title">${esc(title)}</div>
+        <div class="search-result-title">${esc(display)}</div>
         <div class="search-result-badges">
           <span class="game-card-store-pill game-card-store-pill--${store.toLowerCase()}">${store}</span>
           ${hasIndex ? '<span class="badge badge-reports">ProtonDB</span>' : ''}

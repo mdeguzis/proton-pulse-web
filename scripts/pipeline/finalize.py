@@ -34,6 +34,7 @@ from .epic_catalog import load_epic_catalog, load_epic_covers
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
 from .game_images import build_game_images
 from .most_played import build_most_played
+from .release_years import enrich_search_index_with_release_years
 from .pulse import merge_pulse_into_data_dir
 from .state import read_pipeline_state
 from .stats import write_stats_json
@@ -1429,6 +1430,10 @@ def finalize_output(output_dir, skip_probe: bool = False):
     generate_app_indexes(full_index_keys, data_output_path)
     generate_index_html(full_index_keys, output_path)
     generate_search_index(full_index_keys, data_output_path, output_path, gog_catalog=gog_catalog, epic_catalog=epic_catalog)
+    # Fill in releaseYear column on same-name collisions (e.g. Prey 2006 vs
+    # Prey 2017). Runs against the freshly written search-index.json so it can
+    # detect collisions before the file is consumed by the homepage / app page.
+    enrich_search_index_with_release_years(output_path)
     generate_nonsteam_images(output_path)
     generate_coverage_report(
         full_index_keys,

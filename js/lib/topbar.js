@@ -375,6 +375,50 @@
     document.head.appendChild(link);
   }
 
+  // Make the steam-img.js 3-tier fallback (akamai -> cloudflare -> game-images.json
+  // -> hide) available on every page that loads the topbar. Pages that already
+  // import steam-img.js through their bundle short-circuit via the __steamImgLoad
+  // existence check. Without this, the topbar search dropdown's <img onerror>
+  // would no-op on pages outside the app bundle.
+  if (typeof window.__steamImgLoad !== 'function' &&
+      !document.querySelector('script[data-topbar-steam-img]')) {
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'js/app/lib/steam-img.js';
+    s.dataset.topbarSteamImg = '';
+    document.head.appendChild(s);
+  }
+
+  // Same-name disambiguation for search results. When two or more visible
+  // results normalize to the same title (Prey 2006 vs Prey 2017, etc.), append
+  // " (YEAR)" to any result that has a releaseYear -- the storefront badge
+  // alone is not enough to tell them apart. Returns Map<index, displayTitle>
+  // with only the overridden indices; callers fall back to r.title when absent.
+  //
+  // Exposed as window.__buildTitleOverrides so the app.html grouped-results
+  // page (an ES module) can reuse the same logic without duplicating it.
+  function buildTitleOverrides(results) {
+    const groups = {};
+    for (let i = 0; i < results.length; i++) {
+      const key = String(results[i].title || '').trim().toLowerCase();
+      if (!key) continue;
+      (groups[key] = groups[key] || []).push(i);
+    }
+    const out = new Map();
+    Object.keys(groups).forEach(function (key) {
+      const idxs = groups[key];
+      if (idxs.length <= 1) return;
+      idxs.forEach(function (i) {
+        const r = results[i];
+        if (r.releaseYear) {
+          out.set(i, r.title + ' (' + r.releaseYear + ')');
+        }
+      });
+    });
+    return out;
+  }
+  window.__buildTitleOverrides = buildTitleOverrides;
+
   function inject() {
     if (document.querySelector('.topbar')) return; // page already has it (e.g. inlined for SSR)
     // sprite first so the <use href="#..."> refs in the banner resolve immediately
@@ -604,13 +648,16 @@
         const id = String(row[0]);
         const title = String(row[1] || '');
         if (asAppId ? id.startsWith(q) : title.toLowerCase().indexOf(ql) !== -1) {
-          // extra columns may not exist on older deployments - fall back gracefully
+          // extra columns may not exist on older deployments - fall back gracefully.
+          // Column 7 (releaseYear) is set only when the pipeline could resolve a
+          // year and powers same-name disambiguation (Prey 2006 vs Prey 2017).
           out.push({
             appId: id,
             title: title,
             tier: row[2] || '',
             protondbCount: row[3] || 0,
             pulseCount: row[4] || 0,
+            releaseYear: row[6] || null,
           });
         }
       }
@@ -618,7 +665,9 @@
     }
 
     function steamHeader(appId) {
-      return 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/' + appId + '/header.jpg';
+      // akamai is the primary tier; steam-img.js (window.__steamImgLoad)
+      // walks cloudflare -> game-images.json -> hide on error.
+      return 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/' + appId + '/header.jpg';
     }
 
     function render(results, query) {
@@ -640,8 +689,10 @@
         input.setAttribute('aria-expanded', 'true');
         return;
       }
+      const titleOverrides = window.__buildTitleOverrides(results);
       const html = results.map(function (r, idx) {
-        const safe = r.title.replace(/[<>&]/g, function (c) {
+        const display = titleOverrides.get(idx) || r.title;
+        const safe = display.replace(/[<>&]/g, function (c) {
           return { '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c];
         });
         // Build the counts subline only if either count is present; older
@@ -657,7 +708,8 @@
           ? '<span class="sd-tier tier-' + r.tier + '">' + r.tier + '</span>'
           : '';
         return '<a href="app.html#/app/' + r.appId + '" role="option" data-idx="' + idx + '">' +
-               '<img loading="lazy" src="' + steamHeader(r.appId) + '" alt="">' +
+               '<img loading="lazy" data-appid="' + r.appId + '" src="' + steamHeader(r.appId) + '" alt="" ' +
+                 'onerror="window.__steamImgLoad && window.__steamImgLoad(this)">' +
                '<span class="sd-meta">' +
                  '<span class="sd-title">' + safe + '</span>' +
                  countsHtml +
