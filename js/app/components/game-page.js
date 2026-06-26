@@ -228,7 +228,7 @@ export async function renderGamePage(appId) {
             <a class="submit-report-btn" href="submit.html?app=${esc(String(appId))}&title=${encodeURIComponent(stubTitle)}" style="display:inline-block;margin-top:4px">Submit the first report</a>
           </div>
           <div class="stub-live-check" style="margin-top:20px">
-            <button id="live-check-btn" class="admin-btn admin-btn--ghost" style="font-size:0.85rem">Check ProtonDB Live</button>
+            <button id="live-check-btn" class="live-check-pill">Check ProtonDB Live</button>
             <span id="live-check-status" style="margin-left:10px;font-size:0.85rem;color:var(--muted)"></span>
           </div>
         </div>`;
@@ -238,7 +238,7 @@ export async function renderGamePage(appId) {
         <div class="state-box">
           <p style="margin:0 0 10px">This game (<strong>${esc(String(appId))}</strong>) is not in our cached ProtonDB mirror.</p>
           <p style="margin:0 0 14px;color:var(--muted);font-size:0.88rem">Our mirror updates periodically. You can check ProtonDB live, but please use this sparingly to avoid overloading their API.</p>
-          <button id="live-check-btn" class="submit-report-btn" style="margin:0">Check ProtonDB Live</button>
+          <button id="live-check-btn" class="live-check-pill">Check ProtonDB Live</button>
           <span id="live-check-status" style="margin-left:10px;font-size:0.85rem;color:var(--muted)"></span>
         </div>`;
     }
