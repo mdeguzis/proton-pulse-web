@@ -168,7 +168,7 @@
   width: 100%;
   /* margin-top adds breathing space between the row text and the rating
      strip so the title/sub aren't sandwiched against the bar. */
-  margin-top: 6px;
+  margin-top: 12px;
   padding: 0 14px;
   background: var(--s2);
   color: var(--muted);
