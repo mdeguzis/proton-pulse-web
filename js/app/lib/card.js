@@ -60,5 +60,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const stripLabel = tier ? tier.toUpperCase() : 'NO RATING';
   const stripHtml = `<div class="game-card-strip" data-tier="${esc(stripTier)}"><span class="game-card-strip-tier">${esc(stripLabel)}</span>${storePillHtml}</div>`;
 
-  return `<a class="game-card" href="${href}">${thumbHtml}<div class="game-card-body"><div class="game-card-title">${esc(title)}</div><div class="game-card-sub">${sub}</div>${stripHtml}</div>${rightHtml}</a>`;
+  // Strip is a sibling of the row (not inside the body) so it can extend
+  // the full card width including under the thumbnail when strip mode is on.
+  return `<a class="game-card" href="${href}"><div class="game-card-row">${thumbHtml}<div class="game-card-body"><div class="game-card-title">${esc(title)}</div><div class="game-card-sub">${sub}</div></div>${rightHtml}</div>${stripHtml}</a>`;
 }

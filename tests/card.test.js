@@ -77,6 +77,20 @@ describe('renderGameCard strip layout', () => {
     expect(html).toContain('game-card-strip');
   });
 
+  test('strip is a sibling of the row -- can span full card width', () => {
+    // The bottom-bar layout needs the strip outside of game-card-body so it
+    // can extend under the thumbnail. Verify the markup order: row, then strip.
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold' });
+    const rowIdx = html.indexOf('game-card-row');
+    const stripIdx = html.indexOf('game-card-strip');
+    expect(rowIdx).toBeGreaterThan(-1);
+    expect(stripIdx).toBeGreaterThan(rowIdx);
+    // Strip should NOT be inside game-card-body
+    const bodyOpen = html.indexOf('game-card-body');
+    const bodyClose = html.indexOf('</div>', bodyOpen);
+    expect(stripIdx).toBeGreaterThan(bodyClose);
+  });
+
   test('strip carries data-tier so CSS can color the bar by tier', () => {
     const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold' });
     expect(html).toContain('data-tier="gold"');

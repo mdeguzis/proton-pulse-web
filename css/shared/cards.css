@@ -4,16 +4,21 @@
    Mobile: thumbnail shrinks to 60x28, title stays bold, sub truncates.        */
 .game-card {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 8px 14px 8px 8px;
+  flex-direction: column;
   background: var(--s1);
   border: 1px solid var(--border);
   border-radius: 10px;
+  overflow: hidden;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   transition: border-color 0.15s, background 0.15s, transform 0.05s;
+}
+.game-card-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px 8px 8px;
 }
 .game-card:hover { border-color: var(--accent); text-decoration: none; }
 .game-card:active { transform: translateY(1px); }
@@ -145,20 +150,17 @@
   padding-right: 10px;
 }
 
-/* Strip card layout (data-card-layout="strip"): hide the right column,
-   show a tier-colored bar beneath the title spanning the full card body
-   width. Mirrors ProtonDB's card design so long names get the title row
-   to themselves. Toggle lives in options.html as "Card layout".
-   See #111. */
+/* Bottom-bar layout (data-card-layout="strip"): hide the right column,
+   show a tier-colored bar spanning the full card width across the bottom,
+   mirroring ProtonDB's card design. Title row gets the full body width.
+   Toggle lives in options.html as "Rating layout". See #111. */
 .game-card-strip { display: none; }
 [data-card-layout="strip"] .game-card-strip {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  margin-top: 8px;
-  padding: 6px 12px;
-  border-radius: 5px;
+  padding: 7px 14px;
   background: var(--s2);
   color: var(--muted);
 }

@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/shared/base.css?v=45c7e06d">
 <link rel="stylesheet" href="css/shared/topbar.css?v=f4f0510d">
 <link rel="stylesheet" href="css/shared/site.css?v=4d518a51">
-<link rel="stylesheet" href="css/shared/cards.css?v=f95cc608">
+<link rel="stylesheet" href="css/shared/cards.css?v=5a77b933">
 <link rel="stylesheet" href="css/options/options.css?v=11d3971b">
 </head>
 <body>
@@ -69,12 +69,13 @@
 
       <div class="option-row option-row--block">
         <div class="option-text">
-          <div class="option-title">Card layout</div>
+          <div class="option-title">Rating layout</div>
           <div class="option-desc">
             Where to show the rating on game cards. "On right" keeps the
-            rating pill in a column next to the title. "Under title" moves
-            the rating beneath the title so long names get the full card
-            width -- easier to read on mobile.
+            rating pill in a column next to the title. "Bottom bar" puts
+            the rating into a tier-colored bar across the full bottom of
+            the card -- easier to read on mobile because the title gets
+            the full card width.
           </div>
         </div>
         <div class="option-radio-group" id="opt-card-layout">
@@ -84,7 +85,7 @@
           </label>
           <label class="option-radio">
             <input type="radio" name="card-layout" value="strip">
-            <span>Under title</span>
+            <span>Bottom bar</span>
           </label>
         </div>
       </div>
