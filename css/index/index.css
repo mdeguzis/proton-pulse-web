@@ -260,9 +260,14 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  width: 100%;
   padding: 3px 14px;
   background: var(--s2);
   color: var(--muted);
+  /* Rounded bottom corners that follow the parent .pg-card border-radius
+     so the bar reads as part of the card, not a separate inset block. */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 [data-card-layout="strip"] .pg-card-strip .game-card-store-pill {
   position: absolute;

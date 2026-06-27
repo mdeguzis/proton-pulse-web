@@ -166,9 +166,17 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  width: 100%;
   padding: 3px 14px;
   background: var(--s2);
   color: var(--muted);
+  /* Match the parent card's border-radius so the bar's bottom corners
+     curve into the card outline instead of squaring off. Belt-and-
+     suspenders -- the card has overflow: hidden too, but some browsers
+     still paint the corners square inside an overflow-hidden flex parent
+     when the child is the last in flow. */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 [data-card-layout="strip"] .game-card-strip .game-card-store-pill {
   position: absolute;
