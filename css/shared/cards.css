@@ -22,10 +22,15 @@
   padding: 8px 14px 8px 8px;
 }
 .game-card,
+.game-card *,
 .game-card:hover,
+.game-card:hover *,
 .game-card:focus,
+.game-card:focus *,
 .game-card:focus-visible,
-.game-card:active { text-decoration: none; }
+.game-card:focus-visible *,
+.game-card:active,
+.game-card:active * { text-decoration: none; }
 .game-card:hover { box-shadow: 0 0 0 1px var(--accent); }
 .game-card:active { transform: translateY(1px); }
 .game-card-thumb-wrap {

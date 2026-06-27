@@ -292,11 +292,19 @@
   padding: 2px 8px;
 }
 [data-card-layout="strip"] .pg-right { display: none; }
+/* Suppress link underline on the card AND every text-bearing descendant
+   in every state. Browsers apply :focus underlines to the inner spans
+   (title, sub, tier label) too, not just the <a> itself. */
 .pg-card,
+.pg-card *,
 .pg-card:hover,
+.pg-card:hover *,
 .pg-card:focus,
+.pg-card:focus *,
 .pg-card:focus-visible,
-.pg-card:active { text-decoration: none; }
+.pg-card:focus-visible *,
+.pg-card:active,
+.pg-card:active * { text-decoration: none; }
 .pg-card:hover { box-shadow: 0 0 0 1px var(--accent); }
 .pg-card:active { transform: translateY(1px); }
 .pg-thumb-wrap {
