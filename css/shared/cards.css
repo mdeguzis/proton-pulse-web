@@ -162,13 +162,15 @@
   justify-content: center;
   gap: 8px;
   flex: 0 0 26px;
-  width: 100%;
-  padding: 0 14px;
+  /* Aggressive negative-margin bleed pushes the strip past any phantom
+     padding on the card. overflow: hidden on the card clips the bleed
+     so it never visually overshoots the card outline. */
+  margin: 0 -16px;
+  width: calc(100% + 32px);
+  padding: 0 30px;
   background: var(--s2);
   color: var(--muted);
   box-sizing: border-box;
-  /* Explicit bottom-corner radius matches the card's outer 10px so the bar
-     curves into the card outline instead of squaring off inside it. */
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
