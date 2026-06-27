@@ -142,18 +142,29 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=e7fe3ce
     const rated = KNOWN_TIERS.has(rating);
     const badgeClass = rated ? `pg-${rating}` : 'pg-unrated';
     const rLabel = rated ? RATING_LABEL[rating] : 'Unrated';
+    // Rating layout = strip: tier-colored bar across the full card bottom.
+    // The pg-card-row wraps thumb/info/right so the strip can sit as a
+    // sibling and span the full card width (including under the thumbnail).
+    const stripTier = rated ? rating : '';
+    const stripLabel = rated ? RATING_LABEL[rating].toUpperCase() : 'NO RATING';
     return `
       <a class="pg-card" href="app.html#/app/${encodeURIComponent(g.appId)}">
-        <div class="pg-thumb-wrap">
-          <img class="pg-thumb" src="${img}" data-appid="${g.appId}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">
-          ${storeTag(g.appType)}
+        <div class="pg-card-row">
+          <div class="pg-thumb-wrap">
+            <img class="pg-thumb" src="${img}" data-appid="${g.appId}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">
+            ${storeTag(g.appType)}
+          </div>
+          <div class="pg-info">
+            <div class="pg-title">${esc(g.title)}</div>
+            ${peak ? `<div class="pg-sub">${peak} peak players</div>` : ''}
+          </div>
+          <div class="pg-right">
+            <span class="pg-badge ${badgeClass}">${rLabel}</span>
+            ${storePill(g.appType)}
+          </div>
         </div>
-        <div class="pg-info">
-          <div class="pg-title">${esc(g.title)}</div>
-          ${peak ? `<div class="pg-sub">${peak} peak players</div>` : ''}
-        </div>
-        <div class="pg-right">
-          <span class="pg-badge ${badgeClass}">${rLabel}</span>
+        <div class="pg-card-strip" data-tier="${stripTier}">
+          <span class="pg-card-strip-tier">${stripLabel}</span>
           ${storePill(g.appType)}
         </div>
       </a>`;

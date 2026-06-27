@@ -67,6 +67,33 @@ if (storePillGroup) {
   applyStorePillPos(stored);
 }
 
+// Card layout: 'right' (rating pill in right column) or 'strip' (rating row
+// beneath the title so long names get the full card width). Mirrors the
+// store-pill-pos pattern: a single attribute on <html> drives the CSS swap.
+const CARD_LAYOUT_KEY = 'pp:card-layout';
+function applyCardLayout(pos) {
+  if (pos === 'strip') {
+    document.documentElement.setAttribute('data-card-layout', 'strip');
+  } else {
+    document.documentElement.removeAttribute('data-card-layout');
+  }
+}
+const cardLayoutGroup = document.getElementById('opt-card-layout');
+if (cardLayoutGroup) {
+  const stored = localStorage.getItem(CARD_LAYOUT_KEY) || 'right';
+  cardLayoutGroup.querySelectorAll('input[type="radio"]').forEach(r => {
+    r.checked = r.value === stored;
+    r.addEventListener('change', () => {
+      if (r.checked) {
+        localStorage.setItem(CARD_LAYOUT_KEY, r.value);
+        applyCardLayout(r.value);
+        console.log('[options] card-layout:', r.value);
+      }
+    });
+  });
+  applyCardLayout(stored);
+}
+
 // Reports per page: how many cards app.html preloads per section before "Load
 // more". Stored as a string number; app.html reads it on load. Default 50.
 const LOAD_COUNT_KEY = 'pp:load-count';

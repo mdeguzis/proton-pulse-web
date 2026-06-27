@@ -235,16 +235,64 @@
 }
 .pg-card {
   display: flex;
+  flex-direction: column;
+  border: 0;
+  box-shadow: 0 0 0 1px var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  overflow: hidden;
+  text-decoration: none;
+  transition: box-shadow 0.15s, background 0.15s, transform 0.05s;
+}
+.pg-card-row {
+  display: flex;
   align-items: center;
   gap: 14px;
   padding: 8px 14px 8px 8px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--card);
-  text-decoration: none;
-  transition: border-color 0.15s, background 0.15s, transform 0.05s;
 }
-.pg-card:hover { border-color: var(--accent); }
+/* Hide the bottom strip by default; "Rating layout: Bottom bar" flips it on. */
+.pg-card-strip { display: none; }
+[data-card-layout="strip"] .pg-card-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 0 0 26px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 0 14px;
+  background: var(--s2);
+  color: var(--muted);
+  box-sizing: border-box;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+[data-card-layout="strip"] .pg-card-strip .game-card-store-pill {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+[data-card-layout="strip"] .pg-card-strip[data-tier="platinum"] { background: linear-gradient(90deg, #b4c7dc, #cad8e7); color: #0a0c10; }
+[data-card-layout="strip"] .pg-card-strip[data-tier="gold"]     { background: linear-gradient(90deg, #cfb274, #e4cb8f); color: #0a0c10; }
+[data-card-layout="strip"] .pg-card-strip[data-tier="silver"]   { background: linear-gradient(90deg, #a8b1bd, #c5cdd7); color: #0a0c10; }
+[data-card-layout="strip"] .pg-card-strip[data-tier="bronze"]   { background: linear-gradient(90deg, #b07d4f, #cf9e6f); color: #0a0c10; }
+[data-card-layout="strip"] .pg-card-strip[data-tier="borked"]   { background: linear-gradient(90deg, #884444, #b25555); color: #fff; }
+[data-card-layout="strip"] .pg-card-strip-tier {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+[data-card-layout="strip"] .pg-card-strip .game-card-store-pill {
+  background: rgba(0, 0, 0, 0.22) !important;
+  color: inherit;
+  font-size: 0.62rem;
+  padding: 2px 8px;
+}
+[data-card-layout="strip"] .pg-right { display: none; }
+.pg-card:hover { box-shadow: 0 0 0 1px var(--accent); }
 .pg-card:active { transform: translateY(1px); }
 .pg-thumb-wrap {
   position: relative;
@@ -358,16 +406,20 @@
 .pg-layout-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
 
 /* S/M/L/XL card sizes */
+/* Size modifiers redirect spacing to .pg-card-row instead of .pg-card so
+   the bottom-bar strip (a sibling of the row) can still reach the card's
+   bottom and side edges. Putting padding on .pg-card itself would inset
+   every child including the strip. */
 .pg-list--sm .pg-thumb { width: 68px; height: 32px; }
-.pg-list--sm .pg-card { gap: 10px; padding: 6px 10px 6px 6px; }
+.pg-list--sm .pg-card-row { gap: 10px; padding: 6px 10px 6px 6px; }
 .pg-list--sm .pg-title { font-size: 0.85rem; }
 .pg-list--md .pg-thumb { width: 92px; height: 43px; }
 .pg-list--lg .pg-thumb { width: 130px; height: 61px; }
-.pg-list--lg .pg-card { gap: 18px; padding: 10px 16px 10px 10px; }
+.pg-list--lg .pg-card-row { gap: 18px; padding: 10px 16px 10px 10px; }
 .pg-list--lg .pg-title { font-size: 1.05rem; }
 .pg-list--lg .pg-sub { font-size: 0.82rem; }
 .pg-list--xl .pg-thumb { width: 184px; height: 86px; }
-.pg-list--xl .pg-card { gap: 20px; padding: 12px 18px 12px 12px; }
+.pg-list--xl .pg-card-row { gap: 20px; padding: 12px 18px 12px 12px; }
 .pg-list--xl .pg-title { font-size: 1.15rem; }
 .pg-list--xl .pg-sub { font-size: 0.88rem; }
 /* XL only makes sense on wider screens */

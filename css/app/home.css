@@ -151,9 +151,13 @@
 .cards--md .game-card-thumb { width: 138px; height: 64px; }
 .cards--lg .game-card-thumb { width: 200px; height: 93px; }
 .cards--xl .game-card-thumb { width: 280px; height: 130px; }
-.cards--sm .game-card { gap: 12px; padding: 8px 12px 8px 8px; }
-.cards--lg .game-card { gap: 20px; padding: 14px 20px 14px 12px; }
-.cards--xl .game-card { gap: 24px; padding: 16px 22px 16px 14px; }
+/* Size-variant padding lives on .game-card-row so the bottom-bar strip
+   (a sibling of the row) can still reach the card's bottom and side
+   edges. Same change pattern as the matching .pg-list--XX rules in
+   css/index/index.css for the homescreen card. */
+.cards--sm .game-card-row { gap: 12px; padding: 8px 12px 8px 8px; }
+.cards--lg .game-card-row { gap: 20px; padding: 14px 20px 14px 12px; }
+.cards--xl .game-card-row { gap: 24px; padding: 16px 22px 16px 14px; }
 .cards--sm .game-card-title { font-size: 0.92rem; }
 .cards--lg .game-card-title { font-size: 1.12rem; }
 .cards--lg .game-card-sub { font-size: 0.85rem; }

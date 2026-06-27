@@ -4,18 +4,24 @@
    Mobile: thumbnail shrinks to 60x28, title stays bold, sub truncates.        */
 .game-card {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 8px 14px 8px 8px;
+  flex-direction: column;
   background: var(--s1);
-  border: 1px solid var(--border);
+  border: 0;
+  box-shadow: 0 0 0 1px var(--border);
   border-radius: 10px;
+  overflow: hidden;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s, transform 0.05s;
+  transition: box-shadow 0.15s, background 0.15s, transform 0.05s;
 }
-.game-card:hover { border-color: var(--accent); text-decoration: none; }
+.game-card-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px 8px 8px;
+}
+.game-card:hover { box-shadow: 0 0 0 1px var(--accent); text-decoration: none; }
 .game-card:active { transform: translateY(1px); }
 .game-card-thumb-wrap {
   position: relative;
@@ -48,7 +54,10 @@
 /* Desktop: give the report rows more presence with a bigger boxart and
    roomier padding. Steam header ratio (~2.14:1) is preserved. */
 @media (min-width: 760px) {
-  .game-card { gap: 18px; padding: 11px 18px 11px 11px; }
+  /* Padding goes on .game-card-row so the bottom-bar strip (a sibling) can
+     still reach the card's bottom and side edges. See the matching note
+     on the size-modifier rules below. */
+  .game-card-row { gap: 18px; padding: 11px 18px 11px 11px; }
   .game-card-thumb { width: 138px; height: 64px; border-radius: 8px; }
   .game-card-title { font-size: 1.04rem; }
   .game-card-sub { font-size: 0.82rem; }
@@ -144,6 +153,56 @@
   opacity: 0.7;
   padding-right: 10px;
 }
+
+/* Bottom-bar layout (data-card-layout="strip"): hide the right column,
+   show a tier-colored bar spanning the full card width across the bottom,
+   mirroring ProtonDB's card design. Title row gets the full body width.
+   Toggle lives in options.html as "Rating layout". See #111. */
+.game-card-strip { display: none; }
+[data-card-layout="strip"] .game-card-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 0 0 26px;
+  width: 100%;
+  /* margin-top adds breathing space between the row text and the rating
+     strip so the title/sub aren't sandwiched against the bar. */
+  margin-top: 12px;
+  padding: 0 14px;
+  background: var(--s2);
+  color: var(--muted);
+  box-sizing: border-box;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+[data-card-layout="strip"] .game-card-strip .game-card-store-pill {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+[data-card-layout="strip"] .game-card-strip[data-tier="platinum"] { background: linear-gradient(90deg, #b4c7dc, #cad8e7); color: #0a0c10; }
+[data-card-layout="strip"] .game-card-strip[data-tier="gold"]     { background: linear-gradient(90deg, #cfb274, #e4cb8f); color: #0a0c10; }
+[data-card-layout="strip"] .game-card-strip[data-tier="silver"]   { background: linear-gradient(90deg, #a8b1bd, #c5cdd7); color: #0a0c10; }
+[data-card-layout="strip"] .game-card-strip[data-tier="bronze"]   { background: linear-gradient(90deg, #b07d4f, #cf9e6f); color: #0a0c10; }
+[data-card-layout="strip"] .game-card-strip[data-tier="borked"]   { background: linear-gradient(90deg, #884444, #b25555); color: #fff; }
+[data-card-layout="strip"] .game-card-strip-tier {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+[data-card-layout="strip"] .game-card-strip .game-card-store-pill {
+  /* Knock the store pill darker so it reads as a chip on top of the
+     tier-colored bar instead of competing with it. */
+  background: rgba(0, 0, 0, 0.22) !important;
+  color: inherit;
+  font-size: 0.62rem;
+  padding: 2px 8px;
+}
+[data-card-layout="strip"] .game-card-right { display: none; }
 .load-more-btn {
   display: block;
   margin: 12px auto 0;

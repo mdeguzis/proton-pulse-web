@@ -67,3 +67,40 @@ describe('renderGameCard thumbnail', () => {
     expect(html).toContain('onerror="window.__steamImgLoad(this)"');
   });
 });
+
+describe('renderGameCard strip layout', () => {
+  const renderGameCard = loadCard();
+
+  test('renders both the right column and the strip element so CSS can pick one', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold', storePill: 'Steam' });
+    expect(html).toContain('game-card-right');
+    expect(html).toContain('game-card-strip');
+  });
+
+  test('strip is a sibling of the row -- can span full card width', () => {
+    // The bottom-bar layout needs the strip outside of game-card-body so it
+    // can extend under the thumbnail. Verify the markup order: row, then strip.
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold' });
+    const rowIdx = html.indexOf('game-card-row');
+    const stripIdx = html.indexOf('game-card-strip');
+    expect(rowIdx).toBeGreaterThan(-1);
+    expect(stripIdx).toBeGreaterThan(rowIdx);
+    // Strip should NOT be inside game-card-body
+    const bodyOpen = html.indexOf('game-card-body');
+    const bodyClose = html.indexOf('</div>', bodyOpen);
+    expect(stripIdx).toBeGreaterThan(bodyClose);
+  });
+
+  test('strip carries data-tier so CSS can color the bar by tier', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold' });
+    expect(html).toContain('data-tier="gold"');
+    expect(html).toContain('game-card-strip-tier');
+    expect(html).toContain('>GOLD<');
+  });
+
+  test('strip falls back to NO RATING when tier is missing', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '' });
+    expect(html).toContain('data-tier=""');
+    expect(html).toContain('>NO RATING<');
+  });
+});

@@ -235,14 +235,15 @@
           </a>
         </div>
       </div>
-      <!-- About: top-level, placed after the dropdowns (dropdowns come first) -->
-      <a href="about.html" data-page="about" title="What Proton Pulse is and how it compares to ProtonDB">
-        <svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg>
-        <span>About</span>
-      </a>
       <!-- Admin link: hidden until checkIsAdmin confirms the signed-in user is an admin -->
       <a href="admin.html" id="topbar-admin-link" class="auth-admin-navlink" hidden>
         <span>Admin</span>
+      </a>
+      <!-- About: kept last in nav order so it sits at the trailing edge
+           regardless of whether the admin link is visible. -->
+      <a href="about.html" data-page="about" title="What Proton Pulse is and how it compares to ProtonDB">
+        <svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg>
+        <span>About</span>
       </a>
       <!-- Overflow "More" button. Hidden by default; topbar resize observer
            reveals it and migrates trailing items into the panel when the nav
@@ -270,13 +271,15 @@
   <a href="data-index.html" data-page="data-index"><svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg> Data</a>
   <a href="coverage.html" data-page="coverage"><svg class="nav-icon" aria-hidden="true"><use href="#icon-chart"/></svg> Coverage</a>
   <a href="stats.html" data-page="stats"><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Stats</a>
-  <a href="about.html" data-page="about"><svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg> About</a>
   <a href="scoring.html" data-page="scoring"><svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg> Scoring</a>
   <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
   <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> Decky Plugin</a>
   <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-github"/></svg> GitHub</a>
   <a href="https://discord.gg/4p6e4X7xW" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg> Discord</a>
   <a href="admin.html" id="mobile-admin-link" data-page="admin" hidden><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Admin</a>
+  <!-- About kept last so it remains the trailing item whether the
+       admin link is visible or not. -->
+  <a href="about.html" data-page="about"><svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg> About</a>
 </div>`;
 
   // ---- 2. Insert markup at body start (skip if already present) --------
@@ -364,6 +367,11 @@
   // Store pill position preference: 'art' = thumbnail overlay, 'right' (default) = rating column.
   if (localStorage.getItem('pp:store-pill-pos') === 'art') {
     document.documentElement.setAttribute('data-store-pill-pos', 'art');
+  }
+  // Card layout preference: 'strip' = rating row under title (more title width
+  // on mobile), default = rating pill in right column.
+  if (localStorage.getItem('pp:card-layout') === 'strip') {
+    document.documentElement.setAttribute('data-card-layout', 'strip');
   }
 
   // inject favicon if the page doesn't already have one
