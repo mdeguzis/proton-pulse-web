@@ -67,3 +67,16 @@ describe('renderGameCard thumbnail', () => {
     expect(html).toContain('onerror="window.__steamImgLoad(this)"');
   });
 });
+
+describe('renderGameCard strip layout', () => {
+  const renderGameCard = loadCard();
+
+  test('renders both the right column and the strip element so CSS can pick one', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold', storePill: 'Steam' });
+    expect(html).toContain('game-card-right');
+    expect(html).toContain('game-card-strip');
+    // Pills row markup appears twice (once per layout container)
+    const matches = html.match(/game-card-pills/g) || [];
+    expect(matches.length).toBe(2);
+  });
+});

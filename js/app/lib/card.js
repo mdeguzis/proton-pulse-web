@@ -52,6 +52,10 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
     ? `<span class="game-card-source">${esc(sourceLabel)}</span>`
     : '';
   const rightHtml = `<div class="game-card-right">${pillsRowHtml}${sourceLabelHtml}</div>`;
+  // Strip layout duplicates the same pills row beneath the title. CSS picks
+  // which is visible based on <html data-card-layout="strip">; on the default
+  // setting the strip is hidden and the right column shows.
+  const stripHtml = `<div class="game-card-strip">${pillsRowHtml}${sourceLabelHtml}</div>`;
 
-  return `<a class="game-card" href="${href}">${thumbHtml}<div class="game-card-body"><div class="game-card-title">${esc(title)}</div><div class="game-card-sub">${sub}</div></div>${rightHtml}</a>`;
+  return `<a class="game-card" href="${href}">${thumbHtml}<div class="game-card-body"><div class="game-card-title">${esc(title)}</div><div class="game-card-sub">${sub}</div>${stripHtml}</div>${rightHtml}</a>`;
 }

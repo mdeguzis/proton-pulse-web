@@ -144,6 +144,29 @@
   opacity: 0.7;
   padding-right: 10px;
 }
+
+/* Strip card layout (data-card-layout="strip"): hide the right column,
+   show the rating row beneath the title so long names get the full body
+   width. Especially useful on mobile where the right column squeezes the
+   title to ~half the card width.
+   See #111 -- toggle lives in options.html as "Card layout". */
+.game-card-strip { display: none; }
+[data-card-layout="strip"] .game-card-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+[data-card-layout="strip"] .game-card-strip .game-card-pills {
+  /* Strip mode keeps pills horizontal even on narrow mobile widths --
+     the override in @media (max-width: 600px) above would otherwise
+     stack them vertically against the right edge. */
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+[data-card-layout="strip"] .game-card-right { display: none; }
 .load-more-btn {
   display: block;
   margin: 12px auto 0;

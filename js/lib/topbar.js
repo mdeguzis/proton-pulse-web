@@ -365,6 +365,11 @@
   if (localStorage.getItem('pp:store-pill-pos') === 'art') {
     document.documentElement.setAttribute('data-store-pill-pos', 'art');
   }
+  // Card layout preference: 'strip' = rating row under title (more title width
+  // on mobile), default = rating pill in right column.
+  if (localStorage.getItem('pp:card-layout') === 'strip') {
+    document.documentElement.setAttribute('data-card-layout', 'strip');
+  }
 
   // inject favicon if the page doesn't already have one
   if (!document.querySelector('link[rel="icon"]')) {
