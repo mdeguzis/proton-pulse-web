@@ -258,9 +258,8 @@
   justify-content: center;
   gap: 8px;
   flex: 0 0 26px;
-  margin: 0 -16px;
-  width: calc(100% + 32px);
-  padding: 0 30px;
+  width: 100%;
+  padding: 0 14px;
   background: var(--s2);
   color: var(--muted);
   box-sizing: border-box;
@@ -406,16 +405,20 @@
 .pg-layout-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
 
 /* S/M/L/XL card sizes */
+/* Size modifiers redirect spacing to .pg-card-row instead of .pg-card so
+   the bottom-bar strip (a sibling of the row) can still reach the card's
+   bottom and side edges. Putting padding on .pg-card itself would inset
+   every child including the strip. */
 .pg-list--sm .pg-thumb { width: 68px; height: 32px; }
-.pg-list--sm .pg-card { gap: 10px; padding: 6px 10px 6px 6px; }
+.pg-list--sm .pg-card-row { gap: 10px; padding: 6px 10px 6px 6px; }
 .pg-list--sm .pg-title { font-size: 0.85rem; }
 .pg-list--md .pg-thumb { width: 92px; height: 43px; }
 .pg-list--lg .pg-thumb { width: 130px; height: 61px; }
-.pg-list--lg .pg-card { gap: 18px; padding: 10px 16px 10px 10px; }
+.pg-list--lg .pg-card-row { gap: 18px; padding: 10px 16px 10px 10px; }
 .pg-list--lg .pg-title { font-size: 1.05rem; }
 .pg-list--lg .pg-sub { font-size: 0.82rem; }
 .pg-list--xl .pg-thumb { width: 184px; height: 86px; }
-.pg-list--xl .pg-card { gap: 20px; padding: 12px 18px 12px 12px; }
+.pg-list--xl .pg-card-row { gap: 20px; padding: 12px 18px 12px 12px; }
 .pg-list--xl .pg-title { font-size: 1.15rem; }
 .pg-list--xl .pg-sub { font-size: 0.88rem; }
 /* XL only makes sense on wider screens */
