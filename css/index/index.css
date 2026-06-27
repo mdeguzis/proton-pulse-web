@@ -292,6 +292,11 @@
   padding: 2px 8px;
 }
 [data-card-layout="strip"] .pg-right { display: none; }
+.pg-card,
+.pg-card:hover,
+.pg-card:focus,
+.pg-card:focus-visible,
+.pg-card:active { text-decoration: none; }
 .pg-card:hover { box-shadow: 0 0 0 1px var(--accent); }
 .pg-card:active { transform: translateY(1px); }
 .pg-thumb-wrap {

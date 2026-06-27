@@ -21,7 +21,12 @@
   gap: 14px;
   padding: 8px 14px 8px 8px;
 }
-.game-card:hover { box-shadow: 0 0 0 1px var(--accent); text-decoration: none; }
+.game-card,
+.game-card:hover,
+.game-card:focus,
+.game-card:focus-visible,
+.game-card:active { text-decoration: none; }
+.game-card:hover { box-shadow: 0 0 0 1px var(--accent); }
 .game-card:active { transform: translateY(1px); }
 .game-card-thumb-wrap {
   position: relative;
