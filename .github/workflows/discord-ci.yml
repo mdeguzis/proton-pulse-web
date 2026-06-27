@@ -2,12 +2,20 @@ name: Discord CI Status
 
 on:
   workflow_run:
+    # When adding a new workflow .yml to this repo, add its `name:` value here
+    # so a failure surfaces in #builds. Discord-* notifier workflows are
+    # intentionally excluded -- if Discord is down they would not be able to
+    # report their own failure anyway.
     workflows:
       - Update ProtonDB Data
       - CI
       - Deploy Supabase Edge Functions
       - Backup
       - Content Moderation
+      - Deploy on merge to main
+      - Sync staging repo
+      - Update Epic Catalog
+      - Update GOG Catalog
     types: [completed]
 
 permissions:
