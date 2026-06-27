@@ -137,3 +137,68 @@ def test_steam_and_gog_stubs_coexist(tmp_path):
     entries = json.loads((tmp_path / "search-index.json").read_text())
     ids = sorted(e[0] for e in entries)
     assert ids == ["480490", "gog:1158493447"]
+
+
+def test_protondb_signal_stub_for_app_absent_from_steam_catalog(tmp_path):
+    """An app that ProtonDB knows about but Steam dropped from GetAppList
+    falls through the steam_catalog stub pass. The signal-catalog fallback
+    picks it up using ProtonDB's stored title -- the #122 case.
+    """
+    _data_dir(tmp_path)
+    generate_search_index(
+        index_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        steam_catalog={},  # Steam dropped this app
+        protondb_known_app_ids={"236830"},
+        protondb_signal_titles={"236830": "Some Delisted Game"},
+    )
+    entries = json.loads((tmp_path / "search-index.json").read_text())
+    assert entries == [["236830", "Some Delisted Game", "", 0, 0, "steam"]]
+
+
+def test_protondb_signal_stub_does_not_duplicate_steam_catalog_entry(tmp_path):
+    """When an app is in BOTH steam_catalog and signal_titles, only one row
+    -- the steam_catalog pass owns it because that is the canonical title.
+    """
+    _data_dir(tmp_path)
+    generate_search_index(
+        index_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        steam_catalog={"480490": "Prey"},
+        protondb_known_app_ids={"480490"},
+        protondb_signal_titles={"480490": "Prey (ProtonDB title)"},
+    )
+    entries = json.loads((tmp_path / "search-index.json").read_text())
+    assert entries == [["480490", "Prey", "", 0, 0, "steam"]]
+
+
+def test_protondb_signal_stub_skips_empty_title(tmp_path):
+    """Some signal-catalog entries lack a title -- still cannot stub them."""
+    _data_dir(tmp_path)
+    generate_search_index(
+        index_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        steam_catalog={},
+        protondb_known_app_ids={"236830"},
+        protondb_signal_titles={"236830": ""},
+    )
+    entries = json.loads((tmp_path / "search-index.json").read_text())
+    assert entries == []
+
+
+def test_protondb_signal_stub_pass_is_noop_without_signal_titles(tmp_path):
+    """No signal_titles param -> no signal-catalog stub pass."""
+    _data_dir(tmp_path)
+    generate_search_index(
+        index_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        steam_catalog={"480490": "Prey"},
+        protondb_known_app_ids={"480490"},
+        protondb_signal_titles=None,
+    )
+    entries = json.loads((tmp_path / "search-index.json").read_text())
+    assert entries == [["480490", "Prey", "", 0, 0, "steam"]]

@@ -741,6 +741,7 @@ def generate_search_index(
     epic_catalog: dict[str, str] | None = None,
     steam_catalog: dict[str, str] | None = None,
     protondb_known_app_ids: set[str] | None = None,
+    protondb_signal_titles: dict[str, str] | None = None,
 ) -> None:
     """Generate search-index.json with overall tier + report counts per game.
 
@@ -813,6 +814,29 @@ def generate_search_index(
             log(
                 f"[search-index] Added {stubs:,} Steam catalog stubs "
                 f"(ProtonDB-known apps with no local data; {skipped_no_signal:,} skipped without signal)"
+            )
+
+    # ProtonDB-only fallback: apps that ProtonDB knows about but Steam has
+    # fully removed from GetAppList. Steam catalog won't yield a title, but
+    # the signal export does. These are nearly always delisted -- the chip
+    # at column 7 lands in the same enrich pass that the cache-confirmed
+    # delistings use. See #122.
+    if protondb_signal_titles:
+        stubs = 0
+        skipped_no_title = 0
+        for app_id, title in sorted(protondb_signal_titles.items(), key=lambda kv: (kv[1] or "").lower()):
+            if app_id in seen_ids:
+                continue
+            if not title:
+                skipped_no_title += 1
+                continue
+            entries.append([str(app_id), title, "", 0, 0, "steam"])
+            seen_ids.add(str(app_id))
+            stubs += 1
+        if stubs:
+            log(
+                f"[search-index] Added {stubs:,} ProtonDB-only stubs "
+                f"(known to ProtonDB but absent from Steam catalog; {skipped_no_title:,} skipped without title)"
             )
 
     index_file = output_path / "search-index.json"
@@ -1471,6 +1495,7 @@ def finalize_output(output_dir, skip_probe: bool = False):
         epic_catalog=epic_catalog,
         steam_catalog=steam_catalog,
         protondb_known_app_ids=protondb_known_app_ids,
+        protondb_signal_titles=protondb_signal_catalog,
     )
     # Fill in releaseYear column on same-name collisions (e.g. Prey 2006 vs
     # Prey 2017). Runs against the freshly written search-index.json so it can
