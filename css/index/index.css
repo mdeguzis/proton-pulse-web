@@ -245,7 +245,7 @@
   text-decoration: none;
   transition: box-shadow 0.15s, background 0.15s, transform 0.05s;
 }
-[data-card-layout="strip"] .pg-card { padding-bottom: 26px; }
+[data-card-layout="strip"] .pg-card { padding-bottom: 32px; }
 .pg-card-row {
   display: flex;
   align-items: center;
@@ -255,8 +255,6 @@
 /* Hide the bottom strip by default; "Rating layout: Bottom bar" flips it on. */
 .pg-card-strip { display: none; }
 [data-card-layout="strip"] .pg-card-strip {
-  /* Absolute positioning forces edge-to-edge spanning. See matching
-     .game-card-strip rule for the rationale. */
   position: absolute;
   left: 0;
   right: 0;
@@ -265,7 +263,8 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 4px 14px;
+  height: 26px;
+  padding: 0 14px;
   background: var(--s2);
   color: var(--muted);
 }

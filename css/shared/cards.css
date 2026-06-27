@@ -17,8 +17,9 @@
   transition: box-shadow 0.15s, background 0.15s, transform 0.05s;
 }
 /* Reserve room for the absolutely-positioned strip in strip mode so the
-   card grows by the strip height instead of overlapping the row content. */
-[data-card-layout="strip"] .game-card { padding-bottom: 26px; }
+   card grows by the strip height instead of overlapping the row content.
+   The padding-bottom must match the strip's fixed height below. */
+[data-card-layout="strip"] .game-card { padding-bottom: 32px; }
 .game-card-row {
   display: flex;
   align-items: center;
@@ -161,10 +162,6 @@
    Toggle lives in options.html as "Rating layout". See #111. */
 .game-card-strip { display: none; }
 [data-card-layout="strip"] .game-card-strip {
-  /* Absolute positioning forces the strip to span left:0 to right:0 of the
-     card -- the flex/stretch approach left a visible inset in some
-     browsers. overflow: hidden on .game-card clips the bottom corners
-     so the bar follows the card's rounded outline. */
   position: absolute;
   left: 0;
   right: 0;
@@ -173,7 +170,8 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 4px 14px;
+  height: 26px;
+  padding: 0 14px;
   background: var(--s2);
   color: var(--muted);
 }
