@@ -252,13 +252,20 @@
 /* Hide the bottom strip by default; "Rating layout: Bottom bar" flips it on. */
 .pg-card-strip { display: none; }
 [data-card-layout="strip"] .pg-card-strip {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 8px;
-  padding: 7px 14px;
+  padding: 3px 14px;
   background: var(--s2);
   color: var(--muted);
+}
+[data-card-layout="strip"] .pg-card-strip .game-card-store-pill {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 [data-card-layout="strip"] .pg-card-strip[data-tier="platinum"] { background: linear-gradient(90deg, #b4c7dc, #cad8e7); color: #0a0c10; }
 [data-card-layout="strip"] .pg-card-strip[data-tier="gold"]     { background: linear-gradient(90deg, #cfb274, #e4cb8f); color: #0a0c10; }
@@ -266,10 +273,11 @@
 [data-card-layout="strip"] .pg-card-strip[data-tier="bronze"]   { background: linear-gradient(90deg, #b07d4f, #cf9e6f); color: #0a0c10; }
 [data-card-layout="strip"] .pg-card-strip[data-tier="borked"]   { background: linear-gradient(90deg, #884444, #b25555); color: #fff; }
 [data-card-layout="strip"] .pg-card-strip-tier {
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 [data-card-layout="strip"] .pg-card-strip .game-card-store-pill {
   background: rgba(0, 0, 0, 0.22) !important;
