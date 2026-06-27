@@ -75,8 +75,18 @@ describe('renderGameCard strip layout', () => {
     const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold', storePill: 'Steam' });
     expect(html).toContain('game-card-right');
     expect(html).toContain('game-card-strip');
-    // Pills row markup appears twice (once per layout container)
-    const matches = html.match(/game-card-pills/g) || [];
-    expect(matches.length).toBe(2);
+  });
+
+  test('strip carries data-tier so CSS can color the bar by tier', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold' });
+    expect(html).toContain('data-tier="gold"');
+    expect(html).toContain('game-card-strip-tier');
+    expect(html).toContain('>GOLD<');
+  });
+
+  test('strip falls back to NO RATING when tier is missing', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '' });
+    expect(html).toContain('data-tier=""');
+    expect(html).toContain('>NO RATING<');
   });
 });

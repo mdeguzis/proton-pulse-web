@@ -52,10 +52,13 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
     ? `<span class="game-card-source">${esc(sourceLabel)}</span>`
     : '';
   const rightHtml = `<div class="game-card-right">${pillsRowHtml}${sourceLabelHtml}</div>`;
-  // Strip layout duplicates the same pills row beneath the title. CSS picks
-  // which is visible based on <html data-card-layout="strip">; on the default
-  // setting the strip is hidden and the right column shows.
-  const stripHtml = `<div class="game-card-strip">${pillsRowHtml}${sourceLabelHtml}</div>`;
+  // Strip layout: a full-width tier-colored bar beneath the title (ProtonDB
+  // style). data-tier drives the background via CSS so we do not have to
+  // inline color per-card. Hidden by default; data-card-layout="strip" on
+  // <html> flips it in for both visibility and the right-column hide.
+  const stripTier = tier ? String(tier).toLowerCase() : '';
+  const stripLabel = tier ? tier.toUpperCase() : 'NO RATING';
+  const stripHtml = `<div class="game-card-strip" data-tier="${esc(stripTier)}"><span class="game-card-strip-tier">${esc(stripLabel)}</span>${storePillHtml}</div>`;
 
   return `<a class="game-card" href="${href}">${thumbHtml}<div class="game-card-body"><div class="game-card-title">${esc(title)}</div><div class="game-card-sub">${sub}</div>${stripHtml}</div>${rightHtml}</a>`;
 }
