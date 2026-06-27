@@ -921,6 +921,47 @@ pre.flag-raw-json {
   .analytics-two-col { grid-template-columns: 1fr; }
 }
 
+/* Sticky jump-to-section nav at the top of the analytics panel. No background:
+   we want the panel content underneath to bleed through rather than getting
+   covered by an opaque strip. The buttons themselves carry their own chrome. */
+.analytics-jump-nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 0;
+  margin: -8px 0 12px;
+}
+.analytics-jump-btn {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text, #c7d5e0);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+.analytics-jump-btn:hover {
+  background: rgba(102, 192, 244, 0.12);
+  border-color: var(--accent, #66c0f4);
+  color: var(--strong, #fff);
+}
+
+/* One-liner explanation under a chart so the reader doesn't have to guess
+   what the bars or trendline represent. Sits between chart and table. */
+.chart-caption {
+  font-size: 0.78rem;
+  color: var(--text-muted, #888);
+  margin: -8px 0 14px;
+  line-height: 1.45;
+}
+
 /* Status legend line */
 .admin-legend {
   font-size: 0.78rem;

@@ -657,6 +657,7 @@
             tier: row[2] || '',
             protondbCount: row[3] || 0,
             pulseCount: row[4] || 0,
+            appType: row[5] || '',
             releaseYear: row[6] || null,
           });
         }
@@ -707,6 +708,22 @@
         const tierHtml = r.tier
           ? '<span class="sd-tier tier-' + r.tier + '">' + r.tier + '</span>'
           : '';
+        // Store badge + appId on the right edge. Long ids (e.g. epic hashes)
+        // would otherwise dominate the row -- the pill + truncated mono text
+        // is the same visual treatment used on the app.html cards.
+        const idStr = String(r.appId);
+        const inferredStore = r.appType
+          ? r.appType
+          : (idStr.startsWith('gog:') ? 'gog'
+            : idStr.startsWith('epic:') ? 'epic'
+            : 'steam');
+        const storeLabel = inferredStore === 'gog' ? 'GOG'
+                         : inferredStore === 'epic' ? 'Epic'
+                         : 'Steam';
+        const storeHtml = '<span class="sd-store sd-store--' + inferredStore + '">' + storeLabel + '</span>';
+        // Order on the right side: appId (truncated) -> store badge (far right).
+        // Store pill goes last so it sits at the trailing edge of the row, in
+        // line with the convention on the app.html cards.
         return '<a href="app.html#/app/' + r.appId + '" role="option" data-idx="' + idx + '">' +
                '<img loading="lazy" data-appid="' + r.appId + '" src="' + steamHeader(r.appId) + '" alt="" ' +
                  'onerror="window.__steamImgLoad && window.__steamImgLoad(this)">' +
@@ -715,7 +732,8 @@
                  countsHtml +
                '</span>' +
                tierHtml +
-               '<span class="sd-appid">' + r.appId + '</span>' +
+               '<span class="sd-appid" title="' + idStr + '">' + idStr + '</span>' +
+               storeHtml +
                '</a>';
       }).join('');
       dropdown.innerHTML = html;

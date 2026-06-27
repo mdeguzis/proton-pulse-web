@@ -137,6 +137,47 @@ describe('renderAnalytics', () => {
     ctx.renderAnalytics(sampleData, { daysBack: 30, onChangeDays: noop });
     expect(store.html).toContain('Summary');
   });
+
+  test('renders sticky jump-nav with all section buttons', () => {
+    ctx.renderAnalytics(sampleData, { daysBack: 30, onChangeDays: noop });
+    expect(store.html).toContain('analytics-jump-nav');
+    // One button per major section -- a missing one means the nav is out of sync
+    ['sec-daily', 'sec-reports', 'sec-pages', 'sec-games', 'sec-summary', 'sec-sw-cache', 'sec-data-cache', 'sec-img-routes', 'sec-img-timings']
+      .forEach(id => expect(store.html).toContain(`data-target="${id}"`));
+  });
+
+  test('renders data-cache section placeholder and refresh button', () => {
+    ctx.renderAnalytics(sampleData, { daysBack: 30, onChangeDays: noop });
+    expect(store.html).toContain('Pipeline data cache');
+    expect(store.html).toContain('id="data-cache-table"');
+    expect(store.html).toContain('id="data-cache-refresh"');
+    // Initial placeholder is rendered synchronously; the actual probe runs async
+    expect(store.html).toContain('Probing data files...');
+  });
+
+  test('image routes section reads window.__imgRouteCounts', () => {
+    // Bump the counter, then render -- the rendered table should reflect counts.
+    ctx.window.__imgRouteCounts = { cloudflare: 3, 'game-images-json': 1, 'nonsteam-images-json': 0, hidden: 0 };
+    ctx.renderAnalytics(sampleData, { daysBack: 30, onChangeDays: noop });
+    expect(store.html).toContain('Image route hits');
+    expect(store.html).toContain('Cloudflare CDN');
+    expect(store.html).toContain('Total fallbacks');
+    ctx.window.__imgRouteCounts = {};
+  });
+
+  test('image routes section shows empty state when no fallbacks hit', () => {
+    ctx.window.__imgRouteCounts = {};
+    ctx.renderAnalytics(sampleData, { daysBack: 30, onChangeDays: noop });
+    expect(store.html).toContain('Primary akamai CDN handled every image');
+  });
+
+  test('image timings section renders and shows empty state when no entries', () => {
+    ctx.renderAnalytics(sampleData, { daysBack: 30, onChangeDays: noop });
+    expect(store.html).toContain('Image load timings');
+    expect(store.html).toContain('id="img-timings-table"');
+    // performance is undefined in the vm context -> stats are empty -> empty state shown
+    expect(store.html).toContain('No image transfers observed yet this session');
+  });
 });
 
 // ── renderUserDetail ─────────────────────────────────────────────────────────

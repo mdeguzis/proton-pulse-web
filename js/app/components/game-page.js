@@ -11,9 +11,9 @@ import { enhanceAuthorBlocks } from './author.js?v=2316d334';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=48037483';
 import { renderCard } from './report-card.js?v=ec94c31c';
-import { loadSearchIndex, searchIndex } from './search.js?v=386e4fc4';
+import { loadSearchIndex, searchIndex } from './search.js?v=7ef4c01d';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=df5b5024';
-import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=3e345596';
+import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=e7fe3ce0';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';
 
 let _steamCatalogCache = null;
@@ -228,7 +228,7 @@ export async function renderGamePage(appId) {
             <a class="submit-report-btn" href="submit.html?app=${esc(String(appId))}&title=${encodeURIComponent(stubTitle)}" style="display:inline-block;margin-top:4px">Submit the first report</a>
           </div>
           <div class="stub-live-check" style="margin-top:20px">
-            <button id="live-check-btn" class="admin-btn admin-btn--ghost" style="font-size:0.85rem">Check ProtonDB Live</button>
+            <button id="live-check-btn" class="live-check-pill">Check ProtonDB Live</button>
             <span id="live-check-status" style="margin-left:10px;font-size:0.85rem;color:var(--muted)"></span>
           </div>
         </div>`;
@@ -238,7 +238,7 @@ export async function renderGamePage(appId) {
         <div class="state-box">
           <p style="margin:0 0 10px">This game (<strong>${esc(String(appId))}</strong>) is not in our cached ProtonDB mirror.</p>
           <p style="margin:0 0 14px;color:var(--muted);font-size:0.88rem">Our mirror updates periodically. You can check ProtonDB live, but please use this sparingly to avoid overloading their API.</p>
-          <button id="live-check-btn" class="submit-report-btn" style="margin:0">Check ProtonDB Live</button>
+          <button id="live-check-btn" class="live-check-pill">Check ProtonDB Live</button>
           <span id="live-check-status" style="margin-left:10px;font-size:0.85rem;color:var(--muted)"></span>
         </div>`;
     }
@@ -266,6 +266,11 @@ export async function renderGamePage(appId) {
   await loadSearchIndex();
   const indexHit = (searchIndex || []).find(row => String(row[0]) === String(appId));
   const title = reports[0]?.title || configs[0]?.appName || indexHit?.[1] || `App ${appId}`;
+  // Steam returned success=false from appdetails for this app: it has been
+  // pulled from the store. Reports remain valid (people still own it via
+  // family share, backups, or regional accounts) -- we just flag it so the
+  // visitor knows there is no Steam page to visit.
+  const isDelisted = !!indexHit?.[7];
   // Effective ProtonDB report count: the mirrored count when we have it, else
   // the live aggregate total. Drives the header counts so a live-only game
   // shows the real ProtonDB rating instead of "0 reports / pending".
@@ -511,7 +516,7 @@ export async function renderGamePage(appId) {
       <div class="game-header">
         <div class="game-header-main">
           <div class="game-header-info">
-            <div class="game-title">${esc(title)}</div>
+            <div class="game-title">${esc(title)}${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}</div>
             <div class="game-meta">
               App ${appId}
               &nbsp;/&nbsp; <strong>${protonDbCount}</strong> ProtonDB report${protonDbCount !== 1 ? 's' : ''}${liveOnly ? ' (live)' : ''}

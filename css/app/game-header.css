@@ -283,6 +283,25 @@
   line-height: 1.1;
   margin-bottom: 6px;
 }
+/* "DELISTED" chip surfaced inline next to the title on the game-detail page
+   when the pipeline confirmed Steam appdetails returned success=false. */
+.game-detail-delisted {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--red, #ff5566);
+  background: rgba(255, 85, 102, 0.12);
+  color: var(--red, #ff5566);
+  line-height: 1;
+  cursor: help;
+}
 .game-meta { font-size: 0.8rem; color: var(--muted); }
 .game-meta strong { color: var(--text); }
 .game-header-summary {
@@ -662,20 +681,72 @@
 .submit-report-btn {
   display: inline-flex;
   align-items: center;
-  background: rgba(76,175,80,0.12);
-  border: 1px solid #4caf50;
-  color: #4caf50;
-  font-size: 0.72rem;
-  padding: 8px 14px;
+  gap: 8px;
+  background: var(--green-hi, #beee11);
+  border: 0;
+  color: #0b1116;
+  font-size: 0.78rem;
+  line-height: 1;
+  padding: 9px 18px;
+  border-radius: 999px;
   cursor: pointer;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   flex-shrink: 0;
   font-family: inherit;
-  min-height: 34px;
   text-decoration: none;
   white-space: nowrap;
+  box-shadow: 0 0 0 1px rgba(190, 238, 17, 0.35), 0 4px 18px var(--green-glow, rgba(190, 238, 17, 0.35));
+  transition: background 0.12s ease, transform 0.06s ease, box-shadow 0.12s ease;
 }
-.submit-report-btn:hover { background: rgba(76,175,80,0.25); text-decoration: none; }
+.submit-report-btn:hover {
+  background: #d8ff3b;
+  text-decoration: none;
+  box-shadow: 0 0 0 1px rgba(216, 255, 59, 0.55), 0 4px 22px var(--green-glow, rgba(190, 238, 17, 0.45));
+}
+.submit-report-btn:active { transform: translateY(1px); }
+.submit-report-btn:disabled {
+  background: var(--s3, #2a475e);
+  color: var(--muted, #67788c);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Live ProtonDB check action: modern colored pill (Steam accent blue) to
+   distinguish it from the green submit-report path and signal "fetches fresh
+   data from a third party" rather than "writes user content". */
+.live-check-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #0b1116;
+  border: 0;
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  box-shadow: 0 0 0 1px rgba(102, 192, 244, 0.35), 0 4px 18px var(--accent-glow);
+  transition: background 0.12s ease, transform 0.06s ease, box-shadow 0.12s ease;
+}
+.live-check-pill:hover {
+  background: var(--accent-hi);
+  text-decoration: none;
+  box-shadow: 0 0 0 1px rgba(174, 220, 255, 0.55), 0 4px 22px var(--accent-glow);
+}
+.live-check-pill:active { transform: translateY(1px); }
+.live-check-pill:disabled {
+  background: var(--s3);
+  color: var(--muted);
+  cursor: not-allowed;
+  box-shadow: none;
+}
 .sf-row {
   display: flex;
   align-items: flex-start;

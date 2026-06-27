@@ -2,7 +2,7 @@
 
 import { estimateScore } from '../../shared/scoring.js?v=0dae1257';
 import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=003f23c0';
-import { renderGamePage } from './game-page.js?v=9d2c5527';
+import { renderGamePage } from './game-page.js?v=565f22df';
 import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId } from '../config.js?v=df5b5024';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=e29af0e5';
@@ -37,7 +37,7 @@ export function renderPulseSearchResult(row) {
 
 // --- renderIndexSearchResult ---
 export function renderIndexSearchResult(entry, displayTitleOverride) {
-  // search-index entries: [appId, title, tier, protondbCount, pulseCount, appType, releaseYear]
+  // search-index entries: [appId, title, tier, protondbCount, pulseCount, appType, releaseYear, delisted]
   // Destructure defensively so older deploys keep rendering
   const [appId, title, tier, protondbCount, pulseCount, appType] = entry;
   // Build a counts subline only when at least one count is present

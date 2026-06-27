@@ -32,7 +32,7 @@ from .common import (
 from .gog_catalog import load_gog_catalog, load_gog_covers
 from .epic_catalog import load_epic_catalog, load_epic_covers
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
-from .game_images import build_game_images
+from .game_images import build_game_images, enrich_search_index_with_delisted
 from .most_played import build_most_played
 from .release_years import enrich_search_index_with_release_years
 from .pulse import merge_pulse_into_data_dir
@@ -1496,6 +1496,10 @@ def finalize_output(output_dir, skip_probe: bool = False):
     generate_recent_reports(data_output_path, output_path)
     build_most_played(output_path)
     overrides = build_game_images(output_path)
+    # Game-images probing now knows which Steam IDs returned success=false from
+    # appdetails. Flag them in search-index.json column 7 so the frontend can
+    # render a DELISTED chip without re-fetching anything client-side.
+    enrich_search_index_with_delisted(output_path)
     _backfill_most_played_header_images(output_path, overrides)
     write_proton_versions_json(output_path)
     log_summary(state["parsed_count"], data_output_path, output_path, pipeline_start, state["backfilled_keys"])

@@ -24,9 +24,14 @@ from pathlib import Path
 from .common import log
 
 STEAM_APPDETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={appid}&filters=basic"
-REQUEST_DELAY = 0.3   # seconds between Steam API calls
-PROBE_CAP = 500       # max backlog IDs to probe per run (hot IDs are uncapped)
-STALE_DAYS = 30       # re-probe hot games whose cache entry is older than this
+STEAM_STORE_PAGE_URL = "https://store.steampowered.com/app/{appid}/"
+REQUEST_DELAY = 0.3       # seconds between Steam API calls
+PROBE_CAP = 500           # max backlog IDs to probe per run (hot IDs are uncapped)
+STALE_DAYS = 30           # re-probe hot games whose cache entry is older than this
+# A known-live Steam app used as a canary: if the store page redirects for THIS
+# id during a run, Steam's storefront is wobbling and we must not flag anything
+# as delisted. Half-Life 2 (220) has been continuously listed since 2004.
+CANARY_APPID = "220"
 
 
 def _standard_header_url(app_id: str) -> str:
@@ -42,19 +47,95 @@ def _url_is_ok(url: str, timeout: int = 8) -> bool:
         return False
 
 
-def _fetch_steam_header(app_id: str, timeout: int = 10) -> str | None:
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    """urlopen handler that refuses to follow 3xx so we can inspect the
+    Location header ourselves. Live store pages return 200 with the game
+    name in apphub_AppName; banned/delisted/invalid ids 302 to the
+    storefront homepage (https://store.steampowered.com/)."""
+
+    def http_error_302(self, req, fp, code, msg, headers):
+        raise urllib.error.HTTPError(req.full_url, code, msg, headers, fp)
+    http_error_301 = http_error_303 = http_error_307 = http_error_302
+
+
+def _probe_store_page(app_id: str, timeout: int = 10) -> bool | None:
+    """Returns True if the store page exists (200 OK), False if it redirects
+    to the homepage (banned/delisted/invalid), or None on transport error.
+
+    The HEAD method works -- Steam returns the same 200/302 we get via GET
+    without spending bandwidth on the full body.
+    """
+    url = STEAM_STORE_PAGE_URL.format(appid=app_id)
+    req = urllib.request.Request(
+        url, method="HEAD", headers={"User-Agent": "Mozilla/5.0 (proton-pulse pipeline probe)"},
+    )
+    opener = urllib.request.build_opener(_NoRedirect)
+    try:
+        with opener.open(req, timeout=timeout) as resp:
+            return resp.status == 200
+    except urllib.error.HTTPError as e:
+        if e.code in (301, 302, 303, 307):
+            # Live store pages do not redirect; this is the banned/delisted signal
+            return False
+        return None
+    except Exception as exc:
+        log(f"[game-images] WARN: store page probe failed for {app_id}: {exc}", debug=True)
+        return None
+
+
+def is_steam_store_up() -> bool:
+    """Canary check: probe a known-good app's store page once per run. If the
+    canary fails we cannot trust the per-app delisted signal because Steam's
+    storefront is misbehaving globally.
+    """
+    result = _probe_store_page(CANARY_APPID)
+    if result is True:
+        return True
+    log(f"[game-images] canary check FAILED for app {CANARY_APPID}; suppressing delisted detection for this run")
+    return False
+
+
+# Returned by _fetch_steam_header for a single app probe. "live" is the happy
+# path. "delisted" requires BOTH the appdetails success=false signal and a
+# store-page 302 -- a SteamDB-style two-signal corroboration that rules out
+# single-endpoint API hiccups. "unknown" means we cannot conclude either way
+# this run (transient network, ambiguous response, or canary down).
+_STATUS_LIVE = "live"
+_STATUS_DELISTED = "delisted"
+_STATUS_UNKNOWN = "unknown"
+
+
+def _fetch_steam_header(app_id: str, store_up: bool, timeout: int = 10) -> tuple[str | None, str]:
+    """Return (header_url, status). status is one of _STATUS_LIVE,
+    _STATUS_DELISTED, _STATUS_UNKNOWN.
+
+    Delisted requires both signals to fire: appdetails returns success=false
+    AND the store page redirects to homepage. Either alone is treated as
+    unknown (transient API behavior, region restriction, or wobbling Steam
+    backend). When store_up is False (canary down) we never return delisted
+    -- the safe default during a Steam outage is to keep apps live until
+    the next run can confirm.
+    """
     url = STEAM_APPDETAILS_URL.format(appid=app_id)
     req = urllib.request.Request(url, headers={"Accept": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             data = json.loads(resp.read().decode("utf-8"))
         app_data = data.get(str(app_id), {})
-        if not app_data.get("success"):
-            return None
-        return app_data.get("data", {}).get("header_image") or None
+        if app_data.get("success"):
+            return app_data.get("data", {}).get("header_image") or None, _STATUS_LIVE
     except Exception as exc:
         log(f"[game-images] WARN: Steam appdetails fetch failed for {app_id}: {exc}")
-        return None
+        return None, _STATUS_UNKNOWN
+
+    # appdetails said success=false. Need a second signal to confirm.
+    if not store_up:
+        # Canary failed at start of run; do not flag anything as delisted
+        return None, _STATUS_UNKNOWN
+    store_page_alive = _probe_store_page(app_id, timeout=timeout)
+    if store_page_alive is False:
+        return None, _STATUS_DELISTED
+    return None, _STATUS_UNKNOWN
 
 
 def _collect_all_app_ids(data_dir: Path) -> list[str]:
@@ -176,6 +257,11 @@ def build_game_images(output_dir) -> dict[str, str]:
         f"hot: {len(hot_to_probe)} to probe | backlog: {len(backlog_to_probe)} uncached/stale-hashed (cap {PROBE_CAP})"
     )
 
+    # Run-wide canary: do we even believe Steam's storefront right now? If not,
+    # _fetch_steam_header refuses to return delisted for any app this run.
+    store_up = is_steam_store_up()
+    log(f"[game-images] storefront canary: {'OK' if store_up else 'DOWN'}")
+
     today = date.today().isoformat()
     backlog_probed = 0
 
@@ -193,14 +279,22 @@ def build_game_images(output_dir) -> dict[str, str]:
             cache[app_id] = {"status": "ok", "probed_at": today}
         else:
             log(f"[game-images] {app_id}: standard URL 404, fetching from Steam API")
-            real_url = _fetch_steam_header(app_id)
+            real_url, status = _fetch_steam_header(app_id, store_up=store_up)
             if real_url:
                 url_clean = real_url.split("?")[0]
                 cache[app_id] = {"status": "hashed", "url": url_clean, "probed_at": today}
                 log(f"[game-images] {app_id}: hashed URL -> {url_clean}")
+            elif status == _STATUS_DELISTED:
+                # Two-signal confirmation fired: appdetails success=false AND
+                # store page 302's to the homepage. Canary verified Steam was
+                # responsive at run start, so this is a high-confidence flag.
+                cache[app_id] = {"status": "delisted", "probed_at": today}
+                log(f"[game-images] {app_id}: delisted (appdetails false + store page redirect)")
             else:
+                # _STATUS_LIVE with no header, or _STATUS_UNKNOWN. Treat as
+                # transient -- next run can try again with a fresh canary.
                 cache[app_id] = {"status": "missing", "probed_at": today}
-                log(f"[game-images] {app_id}: no image found via Steam API")
+                log(f"[game-images] {app_id}: no image found (status={status})")
         time.sleep(REQUEST_DELAY)
 
     cache_path.write_text(json.dumps(cache, indent=2) + "\n", encoding="utf-8")
@@ -213,3 +307,46 @@ def build_game_images(output_dir) -> dict[str, str]:
     log(f"[game-images] wrote {len(frontend)} hashed URL(s) to {frontend_path.name}")
 
     return frontend
+
+
+def enrich_search_index_with_delisted(output_dir) -> None:
+    """Write a delisted=True flag into column 7 of search-index.json for any
+    Steam app the cache marked as delisted (appdetails returned success=false).
+
+    Read-modify-write of search-index in place. Pads rows to length 8 so column
+    7 lands consistently regardless of whether column 6 (releaseYear) was
+    populated by release_years.py.
+    """
+    output_dir = Path(output_dir)
+    index_path = output_dir / "search-index.json"
+    cache_path = output_dir / "game-images-cache.json"
+    if not index_path.exists() or not cache_path.exists():
+        return
+    try:
+        entries = json.loads(index_path.read_text(encoding="utf-8"))
+        cache = json.loads(cache_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        log(f"[delisted] WARN: could not read input files: {exc}")
+        return
+    if not isinstance(entries, list) or not isinstance(cache, dict):
+        return
+
+    delisted_ids = {aid for aid, e in cache.items() if isinstance(e, dict) and e.get("status") == "delisted"}
+    if not delisted_ids:
+        log("[delisted] no delisted Steam apps in cache, skipping enrich")
+        return
+
+    updated = 0
+    for row in entries:
+        if not isinstance(row, list) or len(row) < 1:
+            continue
+        if str(row[0]) in delisted_ids:
+            # Pad to 8 columns: [id, title, tier, pdb, pulse, appType, releaseYear, delisted]
+            while len(row) < 8:
+                row.append(None)
+            row[7] = True
+            updated += 1
+
+    if updated:
+        index_path.write_text(json.dumps(entries, separators=(",", ":")), encoding="utf-8")
+        log(f"[delisted] flagged {updated} entries as delisted in search-index.json")
