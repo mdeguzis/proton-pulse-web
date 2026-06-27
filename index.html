@@ -6,9 +6,9 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Proton Pulse | Smart ProtonDB Launch Configurations for Steam Deck</title>
-<meta name="description" content="Stop copying and pasting launch flags. View weighted ProtonDB hardware scores, filter compatibility reports by your GPU and driver, and apply Proton launch options directly to your Steam Deck library.">
-<meta property="og:title" content="Proton Pulse | Smart ProtonDB Launch Configurations for Steam Deck">
+<title>Proton Pulse | Smart Proton Launch Configurations for Steam Deck</title>
+<meta name="description" content="Stop copying and pasting launch flags. View weighted hardware scores, filter compatibility reports by your GPU and driver, and apply Proton launch options directly to your Steam Deck library.">
+<meta property="og:title" content="Proton Pulse | Smart Proton Launch Configurations for Steam Deck">
 <meta property="og:description" content="Stop copying and pasting launch flags. View weighted ProtonDB hardware scores, filter compatibility reports by your GPU and driver, and apply Proton launch options directly to your Steam Deck library.">
 <meta property="og:type" content="website">
 <meta name="color-scheme" content="dark">
@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="css/shared/site.css?v=4d518a51">
 <link rel="stylesheet" href="css/shared/filters.css?v=26d5b7e1">
 <link rel="stylesheet" href="css/shared/cards.css?v=b75e75b2">
-<link rel="stylesheet" href="css/index/index.css?v=e6de6b33">
+<link rel="stylesheet" href="css/index/index.css?v=2d161a7e">
 </head>
 <body>
 
@@ -129,28 +129,25 @@
       </p>
     </div>
 
-    <!-- Headline numbers. Populated by index.js:
-         - Pulse Reports comes from Supabase HEAD count
-         - The other three come from parsing coverage.html
-         long-term these should ship as a small coverage-summary.json
-         from the pipeline so we don't fetch 100KB of HTML for 3 numbers -->
-    <div class="community-stats">
-      <div class="cs-item">
-        <span class="cs-num" id="stat-steam-games">—</span>
-        <span class="cs-label">Steam games tracked</span>
-      </div>
-      <div class="cs-item">
-        <span class="cs-num" id="stat-protondb-games">—</span>
-        <span class="cs-label">With ProtonDB data</span>
-      </div>
-      <div class="cs-item">
-        <span class="cs-num" id="stat-indexed">—</span>
-        <span class="cs-label">Indexed locally</span>
-      </div>
-      <div class="cs-item">
-        <span class="cs-num" id="pulse-report-count">—</span>
-        <span class="cs-label">Pulse Reports</span>
-      </div>
+    <!-- Games-by-store snapshot. Populated by js/index/main.js from
+         search-index.json. The full numbers (Pulse Reports, ProtonDB
+         coverage, etc.) live on stats.html so the home page stays a
+         quick visual orientation rather than a dashboard. -->
+    <div class="store-counts" id="store-counts" aria-label="Games tracked per store" hidden>
+      <a class="store-count" data-store="steam" href="app.html#steam">
+        <span class="store-count-num" id="store-count-steam">—</span>
+        <span class="store-count-label">Steam</span>
+      </a>
+      <a class="store-count" data-store="gog" href="app.html#gog">
+        <span class="store-count-num" id="store-count-gog">—</span>
+        <span class="store-count-label">GOG</span>
+      </a>
+      <a class="store-count" data-store="epic" href="app.html#epic">
+        <span class="store-count-num" id="store-count-epic">—</span>
+        <span class="store-count-label">Epic</span>
+      </a>
+      <div class="store-count-bar" id="store-count-bar" aria-hidden="true"></div>
+      <a class="store-count-link" href="stats.html">See full stats &rarr;</a>
     </div>
 
     <!-- Primary CTAs: keep the landing focused on browse / get-plugin. The
@@ -221,6 +218,6 @@
 <script src="js/lib/supabase-client.js?v=04813aa1"></script>
 <script src="js/lib/topbar.js?v=7e8205f8"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/index/main.js?v=5bc9db83"></script>
+<script type="module" src="js/index/main.js?v=80e0188b"></script>
 </body>
 </html>

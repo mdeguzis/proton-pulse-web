@@ -15,12 +15,17 @@ import { loadSearchIndex, searchIndex } from './search.js?v=28b593a1';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=df5b5024';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=e7fe3ce0';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=f5dda5b6';
+import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 
 let _steamCatalogCache = null;
 async function _fetchSteamCatalog() {
   if (_steamCatalogCache !== null) return _steamCatalogCache;
   try {
-    const resp = await fetch(`${SITE_ROOT}/steam-catalog.json`);
+    // Route through dataUrl so the content hash invalidates the cache when
+    // the catalog actually changes (#119). The bare name resolves to the
+    // staging/local copy or the prod copy depending on USES_PROD_DATA.
+    const bustedName = await dataUrl('steam-catalog.json');
+    const resp = await fetch(`${SITE_ROOT}/${bustedName}`);
     _steamCatalogCache = resp.ok ? await resp.json() : {};
   } catch {
     _steamCatalogCache = {};
@@ -260,12 +265,21 @@ export async function renderGamePage(appId) {
     return;
   }
 
-  // Resolve a human-readable title: reports first (they almost always carry one),
-  // then configs, then fall back to the pre-loaded search-index which has the
-  // canonical Steam name per appId. Final fallback is the bare app id.
+  // Resolve a human-readable title. Order, most specific first:
+  //   1. report title (mirrored/local data carries it)
+  //   2. config appName (Pulse Reports carry the user's chosen title)
+  //   3. search-index hit (.[1] is the title column)
+  //   4. steam-catalog lookup (covers live-only apps that are not in our
+  //      search-index but still on Steam -- the #115 case)
+  //   5. bare "App <id>" -- last resort when nothing else can resolve a name
   await loadSearchIndex();
   const indexHit = (searchIndex || []).find(row => String(row[0]) === String(appId));
-  const title = reports[0]?.title || configs[0]?.appName || indexHit?.[1] || `App ${appId}`;
+  let resolvedTitle = reports[0]?.title || configs[0]?.appName || indexHit?.[1];
+  if (!resolvedTitle && /^\d+$/.test(String(appId))) {
+    const catalog = await _fetchSteamCatalog();
+    resolvedTitle = catalog?.[String(appId)] || null;
+  }
+  const title = resolvedTitle || `App ${appId}`;
   // Steam returned success=false from appdetails for this app: it has been
   // pulled from the store. Reports remain valid (people still own it via
   // family share, backups, or regional accounts) -- we just flag it so the

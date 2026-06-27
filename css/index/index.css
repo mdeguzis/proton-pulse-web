@@ -129,43 +129,74 @@
 }
 
 /* community stats bar - mono numbers, hairline accent rule under each */
-.community-stats {
-  display: flex;
-  gap: 28px;
+/* Games-by-store snapshot. Three counts + a stacked bar showing the share
+   each store contributes, plus a link to the full stats page. Replaces
+   the old .community-stats block on the home page. */
+.store-counts {
+  display: grid;
+  grid-template-columns: repeat(3, auto) 1fr auto;
+  gap: 18px 24px;
+  align-items: center;
   margin-bottom: 28px;
   flex-wrap: wrap;
 }
-.cs-item {
+.store-count {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 6px 0 8px;
+  gap: 2px;
+  text-decoration: none;
+  color: inherit;
   position: relative;
-  min-width: 120px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease;
 }
-.cs-item::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 32px;
-  height: 1px;
-  background: linear-gradient(90deg, var(--accent), transparent);
-}
-.cs-num {
+.store-count[data-store="steam"]:hover { border-bottom-color: #1689d0; }
+.store-count[data-store="gog"]:hover   { border-bottom-color: #7a3fcf; }
+.store-count[data-store="epic"]:hover  { border-bottom-color: #bbb; }
+.store-count-num {
   font-family: var(--mono);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: var(--accent-hi);
   letter-spacing: -0.02em;
   line-height: 1;
-  text-shadow: 0 0 18px var(--accent-glow);
 }
-.cs-label {
+.store-count-label {
   font-size: 0.66rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--muted);
+}
+.store-count-bar {
+  display: flex;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--s1);
+}
+.store-count-bar .seg {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+.store-count-bar .seg--steam { background: #1689d0; }
+.store-count-bar .seg--gog   { background: #7a3fcf; }
+.store-count-bar .seg--epic  { background: #888; }
+.store-count-link {
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.store-count-link:hover { color: var(--accent); }
+@media (max-width: 640px) {
+  .store-counts {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 16px;
+  }
+  .store-count-bar { grid-column: 1 / -1; order: 4; }
+  .store-count-link { grid-column: 1 / -1; order: 5; text-align: right; }
 }
 
 /* primary CTA row - keeps first load focused on the two essential actions
@@ -771,8 +802,8 @@
   .welcome-header .eyebrow { margin-bottom: 6px; }
   .welcome-title { font-size: 1.5rem; margin-bottom: 8px; }
   .welcome-sub { font-size: 0.82rem; line-height: 1.5; }
-  .community-stats { gap: 14px; margin-bottom: 18px; }
-  .cs-num { font-size: 1.3rem; }
+  .store-counts { margin-bottom: 18px; }
+  .store-count-num { font-size: 1.25rem; }
   .welcome-cta { margin-bottom: 8px; }
   .welcome-learn-more { margin-bottom: 14px; }
   .explore-grid { grid-template-columns: 1fr; }
