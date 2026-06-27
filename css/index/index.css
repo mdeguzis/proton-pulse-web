@@ -263,6 +263,8 @@
   background: var(--s2);
   color: var(--muted);
   box-sizing: border-box;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 [data-card-layout="strip"] .pg-card-strip .game-card-store-pill {
   position: absolute;
