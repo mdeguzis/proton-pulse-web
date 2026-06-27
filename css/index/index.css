@@ -330,8 +330,13 @@
 
 /* Strip store segment for pg-cards. Hidden unless a bar-* placement is set.
    The strip is already display:flex so margin-left:auto pushes the chip to
-   the trailing edge instead of needing absolute positioning. */
+   the trailing edge instead of needing absolute positioning. The span also
+   carries .store-icon so we have to hide its SVG child explicitly in text
+   mode -- otherwise the round monogram circle paints behind the label. */
 .pg-card-strip-store { display: none; }
+.pg-card-strip-store > svg { display: none; }
+[data-store-display="icon"] .pg-card-strip-store > svg { display: block; }
+[data-store-display="icon"] .pg-card-strip-store > .store-text { display: none; }
 [data-card-layout="strip"][data-store-pill-pos="bar-right"] .pg-card-strip-store {
   display: inline-flex;
   align-items: center;

@@ -172,8 +172,14 @@
 }
 
 /* Bottom-bar strip store segment. Hidden by default; revealed by the
-   bar-right or bar-segment placement preferences. */
+   bar-right or bar-segment placement preferences. The strip-store span
+   carries the .store-icon class so it can render the round monogram when
+   the user picks the icon display mode -- but in text mode we need to hide
+   the SVG so the colored circle doesn't paint behind the store label. */
 .game-card-strip-store { display: none; }
+.game-card-strip-store > svg { display: none; }
+[data-store-display="icon"] .game-card-strip-store > svg { display: block; }
+[data-store-display="icon"] .game-card-strip-store > .store-text { display: none; }
 [data-card-layout="strip"][data-store-pill-pos="bar-right"] .game-card-strip-store {
   display: inline-flex;
   align-items: center;
