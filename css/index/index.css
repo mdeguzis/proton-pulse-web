@@ -297,6 +297,7 @@
   box-sizing: border-box;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  position: relative;
 }
 [data-card-layout="strip"] .pg-card-strip .game-card-store-pill {
   position: absolute;
@@ -327,16 +328,15 @@
 [data-card-layout="strip"][data-store-pill-pos="bar-right"] .pg-card-strip .game-card-store-pill,
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .pg-card-strip .game-card-store-pill { display: none; }
 
-/* Strip store segment for pg-cards. Hidden unless a bar-* placement is set. */
+/* Strip store segment for pg-cards. Hidden unless a bar-* placement is set.
+   The strip is already display:flex so margin-left:auto pushes the chip to
+   the trailing edge instead of needing absolute positioning. */
 .pg-card-strip-store { display: none; }
 [data-card-layout="strip"][data-store-pill-pos="bar-right"] .pg-card-strip-store {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  margin-left: auto;
   font-size: 0.62rem;
   background: rgba(0, 0, 0, 0.22);
   padding: 2px 8px;
