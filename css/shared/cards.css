@@ -183,14 +183,19 @@
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip {
   /* Two-tone strip: tier color fills the leading 75%, store color fills
      the trailing 25%. The store segment's background overrides the strip's
-     own tier background via specificity. */
+     own tier background via specificity. gap:0 + align-items:stretch make
+     the cells butt up against each other and fill the strip vertically so
+     there's no visible tier color between them. */
   display: grid;
   grid-template-columns: 3fr 1fr;
   padding: 0;
+  gap: 0;
+  align-items: stretch;
 }
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip-tier {
-  align-self: center;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0 14px;
 }
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip-store {
@@ -203,6 +208,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #fff;
+  border-bottom-right-radius: 10px;
 }
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip[data-store="steam"] .game-card-strip-store { background: #1689d0; }
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip[data-store="gog"] .game-card-strip-store   { background: #7a3fcf; }
