@@ -185,6 +185,13 @@
 .store-icon svg { width: 18px; height: 18px; display: block; }
 [data-store-display="icon"] .store-text { display: none; }
 [data-store-display="icon"] .store-icon { display: inline-flex; align-items: center; }
+/* The strip-store span also carries .store-icon so it can become a round
+   monogram in icon mode -- but only inside the bar-segment placement. For
+   every other placement the strip-store has no business showing up, so
+   the icon-mode reveal above must not turn it on. The bar-segment rule
+   lower in the file overrides this when needed. */
+[data-store-display="icon"] .game-card-strip-store,
+[data-store-display="icon"] .pg-card-strip-store { display: none; }
 /* Store pill chrome collapses to just the icon when display=icon so we do
    not paint a colored background around the icon's own circle. */
 [data-store-display="icon"] .game-card-store-pill,
