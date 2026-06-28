@@ -309,12 +309,23 @@
 [data-card-layout="strip"] .game-card-right { display: none; }
 /* Hide the inline pill inside the strip whenever the store badge lives
    somewhere else: on the artwork ('art'), as a card-level corner piece
-   ('art-corner'), or as the trailing strip segment ('bar-segment'). The
-   default 'right' placement keeps the pill in the strip since the right
-   column is hidden in strip mode and the strip is the only spot left. */
+   ('art-corner'), as a round bar icon ('bar-icon'), or as the trailing
+   strip segment ('bar-segment'). The default 'right' placement keeps the
+   pill in the strip since the right column is hidden in strip mode and
+   the strip is the only spot left. */
 [data-card-layout="strip"][data-store-pill-pos="art"] .game-card-strip .game-card-store-pill,
 [data-card-layout="strip"][data-store-pill-pos="art-corner"] .game-card-strip .game-card-store-pill,
+[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .game-card-strip .game-card-store-pill,
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip .game-card-store-pill { display: none; }
+/* bar-icon: round store glyph sits inside the strip next to the tier
+   label. Icon-only (no text) regardless of the global store-display
+   pref, since this placement is specifically about the icon look. */
+[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .game-card-strip-store {
+  display: inline-flex;
+  align-items: center;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .game-card-strip-store > svg { display: block; }
+[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .game-card-strip-store > .store-text { display: none; }
 .load-more-btn {
   display: block;
   margin: 12px auto 0;
