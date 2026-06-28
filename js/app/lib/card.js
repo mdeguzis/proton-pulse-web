@@ -72,7 +72,14 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
     : '';
   const stripHtml = `<div class="game-card-strip" data-tier="${esc(stripTier)}" data-store="${storeKey}"><span class="game-card-strip-tier">${esc(stripLabel)}</span>${storePillHtml}${stripStoreHtml}</div>`;
 
+  // Card-level corner tag for the 'art-corner' placement. Direct child of
+  // <a class="game-card"> so absolute positioning anchors to the card's
+  // top-right edge (not just the thumbnail). Hidden by default; shown when
+  // data-store-pill-pos="art-corner".
+  const cornerTagHtml = storePill
+    ? `<span class="game-card-corner-tag game-card-store-pill--${storeKey}"><span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
+    : '';
   // Strip is a sibling of the row (not inside the body) so it can extend
   // the full card width including under the thumbnail when strip mode is on.
-  return `<a class="game-card" href="${href}"><div class="game-card-row">${thumbHtml}<div class="game-card-body"><div class="game-card-title">${esc(title)}</div><div class="game-card-sub">${sub}</div></div>${rightHtml}</div>${stripHtml}</a>`;
+  return `<a class="game-card" href="${href}">${cornerTagHtml}<div class="game-card-row">${thumbHtml}<div class="game-card-body"><div class="game-card-title">${esc(title)}</div><div class="game-card-sub">${sub}</div></div>${rightHtml}</div>${stripHtml}</a>`;
 }

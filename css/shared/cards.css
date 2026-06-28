@@ -14,6 +14,29 @@
   color: inherit;
   cursor: pointer;
   transition: box-shadow 0.15s, background 0.15s, transform 0.05s;
+  /* position:relative anchors the .game-card-corner-tag's absolute box to
+     the card itself (not the row or thumbnail), so it can sit at the top
+     right edge of the entire card under the 'art-corner' placement. */
+  position: relative;
+}
+.game-card-corner-tag { display: none; }
+[data-store-pill-pos="art-corner"] .game-card-corner-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 10px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  /* Top-right matches the card's 10px corner radius so it tucks cleanly
+     into the rounded edge. Bottom-left rounds into the card body. */
+  border-radius: 0 10px 0 10px;
+  box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.55);
+  z-index: 2;
 }
 .game-card-row {
   display: flex;

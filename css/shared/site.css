@@ -431,19 +431,10 @@
 /* Store pill position preference (pp:store-pill-pos).
    Default ('right'): pill in the rating column, overlay hidden.
    'art': overlay on the thumbnail bottom-right, right-column pill hidden.
-   'art-corner': overlay anchored to the artwork's top-right corner, squared
-   off against the outer edges (corner piece look). */
+   'art-corner': card-level corner piece pinned to the whole card's
+   top-right edge (uses .game-card-corner-tag, styled in cards.css /
+   index.css; the thumbnail overlay and right-column pill are hidden). */
 .game-card-store-tag { display: none; }
 [data-store-pill-pos="art"] .game-card-store-tag { display: inline; }
 [data-store-pill-pos="art"] .game-card-store-pill { display: none; }
-[data-store-pill-pos="art-corner"] .game-card-store-tag {
-  display: inline;
-  top: 0;
-  right: 0;
-  bottom: auto;
-  left: auto;
-  padding: 3px 9px;
-  border-radius: 0 6px 0 8px;
-  box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.55);
-}
 [data-store-pill-pos="art-corner"] .game-card-store-pill { display: none; }

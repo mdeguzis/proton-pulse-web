@@ -5,7 +5,7 @@ import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../ap
 import { renderGamePage } from './game-page.js?v=8c173ecc';
 import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId } from '../config.js?v=df5b5024';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=f5dda5b6';
-import { renderGameCard } from '../lib/card.js?v=0ac206f6';
+import { renderGameCard } from '../lib/card.js?v=373798af';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 
 // Search index + results UX -- factored out of app.js.

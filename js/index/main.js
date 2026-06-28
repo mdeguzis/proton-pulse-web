@@ -86,6 +86,15 @@ import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
     const cls = storeColorClass(t);
     return `<span class="game-card-store-tag ${cls}"><span class="store-text">${label}</span>${storeIconHtml(t, label)}</span>`;
   }
+  // Card-level corner piece for the 'art-corner' placement. Rendered as a
+  // direct child of <a class="pg-card"> so it anchors to the whole card's
+  // top-right edge instead of the thumbnail.
+  function cornerTag(appType) {
+    const t = appType || 'steam';
+    const label = STORE_LABEL[t] || 'Steam';
+    const cls = storeColorClass(t);
+    return `<span class="pg-card-corner-tag game-card-corner-tag ${cls}"><span class="store-text">${label}</span>${storeIconHtml(t, label)}</span>`;
+  }
   // Store segment that sits inside the bottom-bar strip. CSS controls
   // visibility based on data-store-pill-pos (bar-right / bar-segment).
   function stripStoreHtml(appType) {
@@ -133,6 +142,7 @@ import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
     const stripLabel = rated ? RATING_LABEL[rating].toUpperCase() : 'NO RATING';
     return `
       <a class="pg-card" href="app.html#/app/${encodeURIComponent(g.appId)}">
+        ${cornerTag(g.appType)}
         <div class="pg-card-row">
           <div class="pg-thumb-wrap">
             <img class="pg-thumb" src="${img}" data-appid="${g.appId}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">

@@ -4,7 +4,7 @@ import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
 import { loadSearchIndex, searchIndex } from './search.js?v=28b593a1';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
-import { renderGameCard } from '../lib/card.js?v=0ac206f6';
+import { renderGameCard } from '../lib/card.js?v=373798af';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
