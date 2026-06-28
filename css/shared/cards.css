@@ -172,29 +172,14 @@
 }
 
 /* Bottom-bar strip store segment. Hidden by default; revealed by the
-   bar-right or bar-segment placement preferences. The strip-store span
-   carries the .store-icon class so it can render the round monogram when
-   the user picks the icon display mode -- but in text mode we need to hide
-   the SVG so the colored circle doesn't paint behind the store label. */
+   bar-segment placement (split bar). The strip-store span carries the
+   .store-icon class so it can render the round monogram in icon mode --
+   the SVG is hidden in text mode so the colored circle doesn't paint
+   behind the store label. */
 .game-card-strip-store { display: none; }
 .game-card-strip-store > svg { display: none; }
 [data-store-display="icon"] .game-card-strip-store > svg { display: block; }
 [data-store-display="icon"] .game-card-strip-store > .store-text { display: none; }
-[data-card-layout="strip"][data-store-pill-pos="bar-right"] .game-card-strip-store {
-  display: inline-flex;
-  align-items: center;
-  margin-left: auto;
-  margin-right: 12px;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-[data-card-layout="strip"][data-store-pill-pos="bar-right"] .game-card-strip-store .store-text {
-  background: rgba(0, 0, 0, 0.22);
-  padding: 2px 8px;
-  border-radius: 999px;
-}
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip {
   /* Two-tone strip: tier color fills the leading 75%, store color fills
      the trailing 25%. The store segment's background overrides the strip's
@@ -286,9 +271,9 @@
   padding: 2px 8px;
 }
 [data-card-layout="strip"] .game-card-right { display: none; }
-/* When a bar-* placement is active the strip-store segment is shown -- hide
-   the inline pill inside the strip so we don't render the store twice. */
-[data-card-layout="strip"][data-store-pill-pos="bar-right"] .game-card-strip .game-card-store-pill,
+/* When bar-segment is active the strip-store segment owns the trailing
+   quarter -- hide the inline pill inside the strip so we don't render the
+   store twice. */
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip .game-card-store-pill { display: none; }
 .load-more-btn {
   display: block;

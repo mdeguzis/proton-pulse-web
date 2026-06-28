@@ -49,7 +49,11 @@ if (toggle) {
 //   'bar-segment' - last 1/4 of the bottom bar in store color (two-tone with tier)
 // bar-* values only have an effect when card-layout is 'strip'.
 const STORE_PILL_POS_KEY = 'pp:store-pill-pos';
-const STORE_PILL_POS_VALUES = ['right', 'art', 'bar-right', 'bar-segment'];
+const STORE_PILL_POS_VALUES = ['right', 'art', 'bar-segment'];
+// One-time migration from the dropped 'bar-right' chip variant to the split.
+if (localStorage.getItem(STORE_PILL_POS_KEY) === 'bar-right') {
+  localStorage.setItem(STORE_PILL_POS_KEY, 'bar-segment');
+}
 function applyStorePillPos(pos) {
   if (pos && pos !== 'right') {
     document.documentElement.setAttribute('data-store-pill-pos', pos);

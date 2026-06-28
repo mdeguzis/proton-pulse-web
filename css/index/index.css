@@ -323,35 +323,17 @@
   font-size: 0.62rem;
   padding: 2px 8px;
 }
-/* Hide the inline pill on the bar when one of the bar-* placements is on --
-   either the chip on the trailing edge or the two-tone segment takes over. */
-[data-card-layout="strip"][data-store-pill-pos="bar-right"] .pg-card-strip .game-card-store-pill,
+/* Hide the inline pill on the bar when the split placement is on -- the
+   strip-store segment takes over the trailing quarter. */
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .pg-card-strip .game-card-store-pill { display: none; }
 
-/* Strip store segment for pg-cards. Hidden unless a bar-* placement is set.
-   The strip is already display:flex so margin-left:auto pushes the chip to
-   the trailing edge instead of needing absolute positioning. The span also
-   carries .store-icon so we have to hide its SVG child explicitly in text
-   mode -- otherwise the round monogram circle paints behind the label. */
+/* Strip store segment for pg-cards. Hidden unless bar-segment is set. The
+   strip-store span carries .store-icon so the SVG must be hidden in text
+   mode or the round monogram circle paints behind the label. */
 .pg-card-strip-store { display: none; }
 .pg-card-strip-store > svg { display: none; }
 [data-store-display="icon"] .pg-card-strip-store > svg { display: block; }
 [data-store-display="icon"] .pg-card-strip-store > .store-text { display: none; }
-[data-card-layout="strip"][data-store-pill-pos="bar-right"] .pg-card-strip-store {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-left: auto;
-  font-size: 0.62rem;
-  background: rgba(0, 0, 0, 0.22);
-  padding: 2px 8px;
-  border-radius: 999px;
-}
-[data-card-layout="strip"][data-store-pill-pos="bar-right"] .pg-card-strip-store .store-text {
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
 /* Two-tone segment: tier color in the leading 3/4, store color in the last
    1/4. The strip becomes a grid so the segment owns its own column. */
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .pg-card-strip {

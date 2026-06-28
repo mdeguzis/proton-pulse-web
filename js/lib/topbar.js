@@ -387,14 +387,16 @@
   // (avoids a flash of the wrong mode / running animations).
   initTheme();
   initMotion();
-  // Store pill position preference: 'art' = thumbnail overlay, 'right' (default) = rating column.
-  // Store badge placement: 'art' (overlay on thumbnail), 'right' (default
-   // pill column), 'bar-right' (sits at the trailing edge of the bottom-bar
-   // strip), 'bar-segment' (last quarter of the bottom-bar strip in store
-   // color, two-tone with the tier). The bar-* values only paint when
-   // data-card-layout="strip" is also set; they fall back to 'right'
-   // otherwise (no visual change). */
-  const storePillPos = localStorage.getItem('pp:store-pill-pos');
+  // Store badge placement: 'art' (overlay on thumbnail), 'right' (default,
+  // pill column), 'bar-segment' (the bottom-bar strip splits, last 1/4 in
+  // the store color). bar-segment only paints when data-card-layout="strip"
+  // is also set; otherwise it falls back to the default column placement.
+  // Migrate the dropped 'bar-right' chip value to 'bar-segment'.
+  let storePillPos = localStorage.getItem('pp:store-pill-pos');
+  if (storePillPos === 'bar-right') {
+    storePillPos = 'bar-segment';
+    localStorage.setItem('pp:store-pill-pos', 'bar-segment');
+  }
   if (storePillPos && storePillPos !== 'right') {
     document.documentElement.setAttribute('data-store-pill-pos', storePillPos);
   }
