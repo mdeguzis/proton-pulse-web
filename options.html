@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="css/shared/base.css?v=45c7e06d">
 <link rel="stylesheet" href="css/shared/topbar.css?v=f4f0510d">
 <link rel="stylesheet" href="css/shared/site.css?v=5fac0fae">
-<link rel="stylesheet" href="css/shared/cards.css?v=b48b5b18">
-<link rel="stylesheet" href="css/options/options.css?v=25925fc2">
+<link rel="stylesheet" href="css/shared/cards.css?v=cb310e3b">
+<link rel="stylesheet" href="css/options/options.css?v=8f15bf06">
 </head>
 <body>
 
@@ -45,6 +45,7 @@
           <input type="checkbox" id="opt-animations">
           <span class="option-switch-track"></span>
         </label>
+        <div class="option-default-note">Default: on (off when your system requests reduced motion).</div>
       </div>
       <div class="option-row option-row--block">
         <div class="option-text">
@@ -58,7 +59,7 @@
         <div class="option-radio-group" id="opt-store-pill-pos">
           <label class="option-radio">
             <input type="radio" name="store-pill-pos" value="right" checked>
-            <span>On right</span>
+            <span>On right <span class="option-default-tag">(default)</span></span>
           </label>
           <label class="option-radio">
             <input type="radio" name="store-pill-pos" value="art">
@@ -69,8 +70,8 @@
             <span>Card corner</span>
           </label>
           <label class="option-radio" data-requires="card-layout=strip">
-            <input type="radio" name="store-pill-pos" value="bar-icon">
-            <span>On bar (icon)</span>
+            <input type="radio" name="store-pill-pos" value="bar-inline">
+            <span>On bar (next to rating)</span>
           </label>
           <label class="option-radio" data-requires="card-layout=strip">
             <input type="radio" name="store-pill-pos" value="bar-segment">
@@ -90,7 +91,7 @@
         <div class="option-radio-group" id="opt-store-display">
           <label class="option-radio">
             <input type="radio" name="store-display" value="text" checked>
-            <span>Text</span>
+            <span>Text <span class="option-default-tag">(default)</span></span>
           </label>
           <label class="option-radio">
             <input type="radio" name="store-display" value="icon">
@@ -113,7 +114,7 @@
         <div class="option-radio-group" id="opt-card-layout">
           <label class="option-radio">
             <input type="radio" name="card-layout" value="right" checked>
-            <span>On right</span>
+            <span>On right <span class="option-default-tag">(default)</span></span>
           </label>
           <label class="option-radio">
             <input type="radio" name="card-layout" value="strip">
@@ -134,7 +135,7 @@
         <div class="option-radio-group" id="opt-load-count">
           <label class="option-radio">
             <input type="radio" name="load-count" value="50" checked>
-            <span>50</span>
+            <span>50 <span class="option-default-tag">(default)</span></span>
           </label>
           <label class="option-radio">
             <input type="radio" name="load-count" value="100">
@@ -149,6 +150,11 @@
             <span>200</span>
           </label>
         </div>
+      </div>
+
+      <div class="options-reset">
+        <button type="button" id="opt-reset" class="options-reset-btn">Reset to defaults</button>
+        <span class="options-reset-note">Clears all settings on this device and reloads the page.</span>
       </div>
     </div>
 
@@ -167,8 +173,8 @@
      reflect the signed-in state via SupaAuth.onStateChange. -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/lib/supabase-client.js?v=04813aa1"></script>
-<script src="js/lib/topbar.js?v=f444bec4"></script>
+<script src="js/lib/topbar.js?v=2f8197e0"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/options/main.js?v=48696e52"></script>
+<script type="module" src="js/options/main.js?v=95c96649"></script>
 </body>
 </html>

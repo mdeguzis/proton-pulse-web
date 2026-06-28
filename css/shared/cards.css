@@ -309,24 +309,22 @@
 [data-card-layout="strip"] .game-card-right { display: none; }
 /* Hide the inline pill inside the strip whenever the store badge lives
    somewhere else: on the artwork ('art'), as a card-level corner piece
-   ('art-corner'), as a round bar icon ('bar-icon'), or as the trailing
-   strip segment ('bar-segment'). The default 'right' placement keeps the
-   pill in the strip since the right column is hidden in strip mode and
-   the strip is the only spot left. */
+   ('art-corner'), inline next to the tier ('bar-inline'), or as the
+   trailing strip segment ('bar-segment'). The default 'right' placement
+   keeps the pill in the strip since the right column is hidden in strip
+   mode and the strip is the only spot left. */
 [data-card-layout="strip"][data-store-pill-pos="art"] .game-card-strip .game-card-store-pill,
 [data-card-layout="strip"][data-store-pill-pos="art-corner"] .game-card-strip .game-card-store-pill,
-[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .game-card-strip .game-card-store-pill,
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip .game-card-store-pill,
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip .game-card-store-pill { display: none; }
-/* bar-icon: round store glyph sits flush to the right of the tier
-   label. Icon-only (no text) regardless of the global store-display
-   pref, since this placement is specifically about the icon look.
-   No shadow, no background, no padding -- just the glyph next to the
-   text. The tier-color gradient on the strip already provides the
-   backdrop. */
-[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .game-card-strip {
+/* bar-inline: store badge sits flush to the right of the tier label.
+   Honors the global store-display pref -- shows the text label by
+   default, the round glyph when display=icon. No shadow, no background,
+   no padding; the tier-color gradient is the backdrop. */
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip {
   gap: 6px;
 }
-[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .game-card-strip-store {
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip-store {
   display: inline-flex;
   align-items: center;
   background: none;
@@ -334,13 +332,15 @@
   padding: 0;
   margin: 0;
   border-radius: 0;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
-[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .game-card-strip-store > svg {
-  display: block;
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip-store > svg {
   width: 16px;
   height: 16px;
 }
-[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .game-card-strip-store > .store-text { display: none; }
 .load-more-btn {
   display: block;
   margin: 12px auto 0;

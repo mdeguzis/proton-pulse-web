@@ -49,10 +49,14 @@ if (toggle) {
 //   'bar-segment' - last 1/4 of the bottom bar in store color (two-tone with tier)
 // bar-* values only have an effect when card-layout is 'strip'.
 const STORE_PILL_POS_KEY = 'pp:store-pill-pos';
-const STORE_PILL_POS_VALUES = ['right', 'art', 'art-corner', 'bar-icon', 'bar-segment'];
-// One-time migration from the dropped 'bar-right' chip variant to the split.
-if (localStorage.getItem(STORE_PILL_POS_KEY) === 'bar-right') {
-  localStorage.setItem(STORE_PILL_POS_KEY, 'bar-segment');
+const STORE_PILL_POS_VALUES = ['right', 'art', 'art-corner', 'bar-inline', 'bar-segment'];
+// Migrations: the old 'bar-right' chip variant collapsed into 'bar-segment';
+// 'bar-icon' was renamed to 'bar-inline' once it learned to honor the
+// store-display preference instead of always rendering the icon.
+{
+  const cur = localStorage.getItem(STORE_PILL_POS_KEY);
+  if (cur === 'bar-right') localStorage.setItem(STORE_PILL_POS_KEY, 'bar-segment');
+  else if (cur === 'bar-icon') localStorage.setItem(STORE_PILL_POS_KEY, 'bar-inline');
 }
 function applyStorePillPos(pos) {
   if (pos && pos !== 'right') {
@@ -173,5 +177,19 @@ if (loadCountGroup) {
         console.log('[options] load-count:', r.value);
       }
     });
+  });
+}
+
+// Reset to defaults: drop every browser-local preference key this page owns
+// then reload, so the controls and the page re-evaluate from system
+// defaults (OS reduced-motion, no card-layout attribute, etc).
+const resetBtn = document.getElementById('opt-reset');
+if (resetBtn) {
+  const RESET_KEYS = [MOTION_KEY, STORE_PILL_POS_KEY, STORE_DISPLAY_KEY, CARD_LAYOUT_KEY, LOAD_COUNT_KEY];
+  resetBtn.addEventListener('click', () => {
+    if (!confirm('Reset all site preferences on this device to their defaults?')) return;
+    RESET_KEYS.forEach(k => localStorage.removeItem(k));
+    console.log('[options] cleared preferences:', RESET_KEYS);
+    window.location.reload();
   });
 }

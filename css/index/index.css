@@ -344,18 +344,19 @@
   padding: 2px 8px;
 }
 /* Hide the inline pill in the strip whenever the store badge lives
-   elsewhere (artwork overlay, card corner, round bar icon, or trailing
-   split segment). */
+   elsewhere (artwork overlay, card corner, inline next to tier, or
+   trailing split segment). */
 [data-card-layout="strip"][data-store-pill-pos="art"] .pg-card-strip .game-card-store-pill,
 [data-card-layout="strip"][data-store-pill-pos="art-corner"] .pg-card-strip .game-card-store-pill,
-[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .pg-card-strip .game-card-store-pill,
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip .game-card-store-pill,
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .pg-card-strip .game-card-store-pill { display: none; }
-/* bar-icon: round store glyph flush right of the tier label. No shadow,
-   no background -- the tier-color gradient is the backdrop. */
-[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .pg-card-strip {
+/* bar-inline: store badge flush right of tier label. Honors the global
+   store-display pref so the text label shows in text mode and the round
+   glyph shows in icon mode. */
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip {
   gap: 6px;
 }
-[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .pg-card-strip-store {
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip-store {
   display: inline-flex;
   align-items: center;
   background: none;
@@ -363,13 +364,15 @@
   padding: 0;
   margin: 0;
   border-radius: 0;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
-[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .pg-card-strip-store > svg {
-  display: block;
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip-store > svg {
   width: 16px;
   height: 16px;
 }
-[data-card-layout="strip"][data-store-pill-pos="bar-icon"] .pg-card-strip-store > .store-text { display: none; }
 
 /* Strip store segment for pg-cards. Hidden unless bar-segment is set. The
    strip-store span carries .store-icon so the SVG must be hidden in text

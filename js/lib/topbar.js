@@ -391,11 +391,15 @@
   // pill column), 'bar-segment' (the bottom-bar strip splits, last 1/4 in
   // the store color). bar-segment only paints when data-card-layout="strip"
   // is also set; otherwise it falls back to the default column placement.
-  // Migrate the dropped 'bar-right' chip value to 'bar-segment'.
+  // Migrations: dropped 'bar-right' -> 'bar-segment'; renamed 'bar-icon'
+  // -> 'bar-inline' once it started honoring the store-display pref.
   let storePillPos = localStorage.getItem('pp:store-pill-pos');
   if (storePillPos === 'bar-right') {
     storePillPos = 'bar-segment';
     localStorage.setItem('pp:store-pill-pos', 'bar-segment');
+  } else if (storePillPos === 'bar-icon') {
+    storePillPos = 'bar-inline';
+    localStorage.setItem('pp:store-pill-pos', 'bar-inline');
   }
   if (storePillPos && storePillPos !== 'right') {
     document.documentElement.setAttribute('data-store-pill-pos', storePillPos);
