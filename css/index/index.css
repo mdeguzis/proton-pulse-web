@@ -343,8 +343,10 @@
   font-size: 0.62rem;
   padding: 2px 8px;
 }
-/* Hide the inline pill on the bar when the split placement is on -- the
-   strip-store segment takes over the trailing quarter. */
+/* Hide the inline pill in the strip whenever the store badge lives
+   elsewhere (artwork overlay, card corner, or trailing split segment). */
+[data-card-layout="strip"][data-store-pill-pos="art"] .pg-card-strip .game-card-store-pill,
+[data-card-layout="strip"][data-store-pill-pos="art-corner"] .pg-card-strip .game-card-store-pill,
 [data-card-layout="strip"][data-store-pill-pos="bar-segment"] .pg-card-strip .game-card-store-pill { display: none; }
 
 /* Strip store segment for pg-cards. Hidden unless bar-segment is set. The
