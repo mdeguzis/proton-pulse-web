@@ -341,6 +341,17 @@
   width: 16px;
   height: 16px;
 }
+/* Text mode: the store label gets a brand-colored pill so it stays
+   readable against any tier strip color. */
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip-store > .store-text {
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: #fff;
+  line-height: 1.4;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip[data-store="steam"] .game-card-strip-store > .store-text { background: #1689d0; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip[data-store="gog"]   .game-card-strip-store > .store-text { background: #7a3fcf; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip[data-store="epic"]  .game-card-strip-store > .store-text { background: #2a2a2a; }
 .load-more-btn {
   display: block;
   margin: 12px auto 0;

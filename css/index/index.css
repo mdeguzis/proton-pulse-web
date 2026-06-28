@@ -373,6 +373,17 @@
   width: 16px;
   height: 16px;
 }
+/* Text mode: brand-colored pill behind the store label so it reads
+   cleanly on any tier-colored strip. */
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip-store > .store-text {
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: #fff;
+  line-height: 1.4;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip[data-store="steam"] .pg-card-strip-store > .store-text { background: #1689d0; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip[data-store="gog"]   .pg-card-strip-store > .store-text { background: #7a3fcf; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip[data-store="epic"]  .pg-card-strip-store > .store-text { background: #2a2a2a; }
 
 /* Strip store segment for pg-cards. Hidden unless bar-segment is set. The
    strip-store span carries .store-icon so the SVG must be hidden in text
