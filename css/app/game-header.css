@@ -581,18 +581,22 @@
 .source-summary-tier-row > * {
   border-radius: 3px;
 }
-.source-summary-tier-row > :first-child { flex: 7; }
+/* Widen the confidence slot just enough that 'Confidence: 95%' stays
+   on one line at the narrowest tile widths. Was 7:3; the conf pill
+   needs the extra share since its label is longer than the tier name. */
+.source-summary-tier-row > :first-child { flex: 9; }
 .source-summary-tier-row > :last-child  { flex: 3; }
 .source-summary-conf {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 5px 11px;
+  padding: 5px 10px;
   min-height: 31px;
   font-family: var(--mono);
   font-weight: 800;
   font-size: 0.74rem;
   letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 .source-summary-meta {
   font-size: 0.82rem;
