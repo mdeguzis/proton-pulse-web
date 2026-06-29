@@ -13,10 +13,11 @@ describe('configurable card size (S/M/L)', () => {
     expect(homeSrc).toContain('data-size="lg"');
   });
 
-  test('size is a saved user preference defaulting to medium', () => {
+  test('size is a saved user preference; default picks lg on desktop, md on mobile', () => {
     expect(homeSrc).toContain("const SIZE_KEY = 'pp:grid-size'");
     expect(homeSrc).toContain('localStorage.setItem(SIZE_KEY, size)');
-    expect(homeSrc).toContain("return SIZES.includes(s) ? s : 'md'");
+    expect(homeSrc).toContain("window.matchMedia('(min-width: 760px)').matches ? 'lg' : 'md'");
+    expect(homeSrc).toContain('SIZES.includes(s) ? s : _DEFAULT_SIZE');
     expect(homeSrc).toContain('applyGridSize(_savedSize())');
   });
 

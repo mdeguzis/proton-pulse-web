@@ -79,7 +79,16 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const cornerTagHtml = storePill
     ? `<span class="game-card-corner-tag game-card-store-pill--${storeKey}"><span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
+  // Combined corner chip for the 'combo' card layout. Two-tone pill at the
+  // top-right edge of the card with the tier on the left and the store on
+  // the right. CSS picks per-tier and per-store colors via data-* attrs.
+  // Hidden unless data-card-layout="combo" is set on <html>.
+  const comboTier = tier ? String(tier).toLowerCase() : '';
+  const comboTierLabel = tier ? tier.toUpperCase() : (badge || 'NO RATING');
+  const comboTagHtml = (storePill || tier || badge)
+    ? `<span class="game-card-combo-tag" data-tier="${esc(comboTier)}" data-store="${storeKey}"><span class="combo-tier">${esc(comboTierLabel)}</span>${storePill ? `<span class="combo-store">${esc(storePill)}</span>` : ''}</span>`
+    : '';
   // Strip is a sibling of the row (not inside the body) so it can extend
   // the full card width including under the thumbnail when strip mode is on.
-  return `<a class="game-card" href="${href}">${cornerTagHtml}<div class="game-card-row">${thumbHtml}<div class="game-card-body"><div class="game-card-title">${esc(title)}</div><div class="game-card-sub">${sub}</div></div>${rightHtml}</div>${stripHtml}</a>`;
+  return `<a class="game-card" href="${href}">${cornerTagHtml}${comboTagHtml}<div class="game-card-row">${thumbHtml}<div class="game-card-body"><div class="game-card-title">${esc(title)}</div><div class="game-card-sub">${sub}</div></div>${rightHtml}</div>${stripHtml}</a>`;
 }

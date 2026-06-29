@@ -167,25 +167,27 @@
   /* Keep large from overwhelming small screens. */
   .cards--lg .game-card-thumb { width: 150px; height: 70px; }
 }
-/* Desktop sizes: every step gets roomier than the mobile defaults so the
-   grid actually uses the wider viewport. Thumbnail width drives card
-   height (~2.14:1 Steam header ratio); title/sub scale up to match. */
+/* Desktop sizes: every step gets noticeably roomier than the mobile
+   defaults so the grid actually uses the wider viewport. Thumbnail width
+   drives card height (~2.14:1 Steam header ratio); title/sub scale up to
+   match. Default size on desktop is 'lg'. */
 @media (min-width: 760px) {
-  .cards--sm .game-card-thumb { width: 120px; height: 56px; }
-  .cards--md .game-card-thumb { width: 170px; height: 79px; }
-  .cards--lg .game-card-thumb { width: 240px; height: 112px; }
-  .cards--xl .game-card-thumb { width: 340px; height: 158px; }
-  .cards--sm .game-card-row { gap: 14px; padding: 10px 14px 10px 10px; }
-  .cards--md .game-card-row { gap: 18px; padding: 12px 18px 12px 12px; }
-  .cards--lg .game-card-row { gap: 22px; padding: 16px 22px 16px 14px; }
-  .cards--xl .game-card-row { gap: 28px; padding: 18px 26px 18px 16px; }
-  .cards--sm .game-card-title { font-size: 1rem; }
-  .cards--md .game-card-title { font-size: 1.1rem; }
-  .cards--lg .game-card-title { font-size: 1.22rem; }
-  .cards--xl .game-card-title { font-size: 1.38rem; }
-  .cards--md .game-card-sub { font-size: 0.85rem; }
-  .cards--lg .game-card-sub { font-size: 0.92rem; }
-  .cards--xl .game-card-sub { font-size: 1rem; }
+  .cards--sm .game-card-thumb { width: 140px; height: 65px; }
+  .cards--md .game-card-thumb { width: 200px; height: 93px; }
+  .cards--lg .game-card-thumb { width: 290px; height: 135px; }
+  .cards--xl .game-card-thumb { width: 400px; height: 187px; }
+  .cards--sm .game-card-row { gap: 16px; padding: 12px 16px 12px 10px; }
+  .cards--md .game-card-row { gap: 20px; padding: 14px 20px 14px 12px; }
+  .cards--lg .game-card-row { gap: 26px; padding: 18px 26px 18px 14px; }
+  .cards--xl .game-card-row { gap: 32px; padding: 22px 32px 22px 18px; }
+  .cards--sm .game-card-title { font-size: 1.05rem; }
+  .cards--md .game-card-title { font-size: 1.18rem; }
+  .cards--lg .game-card-title { font-size: 1.35rem; }
+  .cards--xl .game-card-title { font-size: 1.55rem; }
+  .cards--sm .game-card-sub { font-size: 0.82rem; }
+  .cards--md .game-card-sub { font-size: 0.9rem; }
+  .cards--lg .game-card-sub { font-size: 1rem; }
+  .cards--xl .game-card-sub { font-size: 1.1rem; }
 }
 .home-tier-chips { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 12px; }
 .home-tier-chip {

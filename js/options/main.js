@@ -118,9 +118,10 @@ if (storeDisplayGroup) {
 // beneath the title so long names get the full card width). Mirrors the
 // store-pill-pos pattern: a single attribute on <html> drives the CSS swap.
 const CARD_LAYOUT_KEY = 'pp:card-layout';
+const CARD_LAYOUTS_WITH_ATTR = new Set(['strip', 'combo']);
 function applyCardLayout(pos) {
-  if (pos === 'strip') {
-    document.documentElement.setAttribute('data-card-layout', 'strip');
+  if (CARD_LAYOUTS_WITH_ATTR.has(pos)) {
+    document.documentElement.setAttribute('data-card-layout', pos);
   } else {
     document.documentElement.removeAttribute('data-card-layout');
   }

@@ -102,6 +102,17 @@ import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
     const label = STORE_LABEL[t] || 'Steam';
     return `<span class="pg-card-strip-store game-card-strip-store store-icon store-icon--${t}"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-store-${t}"/></svg><span class="store-text">${label}</span></span>`;
   }
+  // Two-tone combined corner chip for the 'combo' card layout. Tier on the
+  // left, store on the right, both colored. CSS hides this unless
+  // data-card-layout="combo" is set on <html>.
+  function comboTag(rating, appType) {
+    const t = appType || 'steam';
+    const storeLabel = STORE_LABEL[t] || 'Steam';
+    const rated = KNOWN_TIERS.has(rating);
+    const tier = rated ? rating : '';
+    const tierLabel = rated ? RATING_LABEL[rating].toUpperCase() : 'NO RATING';
+    return `<span class="pg-card-combo-tag game-card-combo-tag" data-tier="${tier}" data-store="${t}"><span class="combo-tier">${tierLabel}</span><span class="combo-store">${storeLabel}</span></span>`;
+  }
   const SECTION_LABEL = { steam: 'Popular on Steam', gog: 'Popular GOG Games', epic: 'Popular Epic Games' };
   const SECTION_SUB = {
     steam: "Steam's most-played games and how they run on Linux through Proton.",
@@ -143,6 +154,7 @@ import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
     return `
       <a class="pg-card" href="app.html#/app/${encodeURIComponent(g.appId)}">
         ${cornerTag(g.appType)}
+        ${comboTag(rating, g.appType)}
         <div class="pg-card-row">
           <div class="pg-thumb-wrap">
             <img class="pg-thumb" src="${img}" data-appid="${g.appId}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">
@@ -377,8 +389,11 @@ import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
     // S/M/L card size (saved preference, shared key with app page)
     const SIZE_KEY = 'pp:grid-size';
     const SIZES = ['sm', 'md', 'lg', 'xl'];
+    // Default 'lg' on desktop so wider viewports get roomier cards by default;
+    // mobile stays on 'md' to keep more rows on screen.
+    const DEFAULT_SIZE = window.matchMedia('(min-width: 760px)').matches ? 'lg' : 'md';
     function savedSize() {
-      try { const s = localStorage.getItem(SIZE_KEY); return SIZES.includes(s) ? s : 'md'; } catch { return 'md'; }
+      try { const s = localStorage.getItem(SIZE_KEY); return SIZES.includes(s) ? s : DEFAULT_SIZE; } catch { return DEFAULT_SIZE; }
     }
     function applySize(size) {
       SIZES.forEach(s => list.classList.remove(`pg-list--${s}`));

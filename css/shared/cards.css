@@ -19,6 +19,50 @@
      right edge of the entire card under the 'art-corner' placement. */
   position: relative;
 }
+/* Combined corner chip (rating + store) for the 'combo' card layout.
+   Two segments side by side: tier color on the left with the tier label,
+   store color on the right with the store name. Hidden unless
+   data-card-layout="combo" is set on <html>. Rounded only on the inner
+   corner so it tucks into the card's top-right outline. */
+.game-card-combo-tag { display: none; }
+[data-card-layout="combo"] .game-card-combo-tag {
+  display: inline-flex;
+  align-items: stretch;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  border-radius: 0 10px 0 10px;
+  overflow: hidden;
+  box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+[data-card-layout="combo"] .game-card-combo-tag .combo-tier,
+[data-card-layout="combo"] .game-card-combo-tag .combo-store {
+  padding: 4px 9px;
+  display: inline-flex;
+  align-items: center;
+}
+/* Tier color block (default subdued grey for unrated / no-tier rows). */
+[data-card-layout="combo"] .game-card-combo-tag .combo-tier { background: #3a4252; color: #d6dee8; }
+[data-card-layout="combo"] .game-card-combo-tag[data-tier="platinum"] .combo-tier { background: #b4c7dc; color: #0a0c10; }
+[data-card-layout="combo"] .game-card-combo-tag[data-tier="gold"]     .combo-tier { background: #c8a050; color: #111; }
+[data-card-layout="combo"] .game-card-combo-tag[data-tier="silver"]   .combo-tier { background: #8fa0b0; color: #111; }
+[data-card-layout="combo"] .game-card-combo-tag[data-tier="bronze"]   .combo-tier { background: #b07040; color: #fff; }
+[data-card-layout="combo"] .game-card-combo-tag[data-tier="borked"]   .combo-tier { background: #c85050; color: #fff; }
+/* Store color block. */
+[data-card-layout="combo"] .game-card-combo-tag .combo-store { background: #1689d0; color: #fff; }
+[data-card-layout="combo"] .game-card-combo-tag[data-store="gog"]  .combo-store { background: #7a3fcf; }
+[data-card-layout="combo"] .game-card-combo-tag[data-store="epic"] .combo-store { background: #2a2a2a; }
+/* Combo owns the rating + store -- hide the column rating and the
+   bottom strip so they don't compete with the corner chip. */
+[data-card-layout="combo"] .game-card-right { display: none; }
+[data-card-layout="combo"] .game-card-strip { display: none; }
+
 .game-card-corner-tag { display: none; }
 [data-store-pill-pos="art-corner"] .game-card-corner-tag {
   display: inline-flex;

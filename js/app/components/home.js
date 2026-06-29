@@ -4,7 +4,7 @@ import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
 import { loadSearchIndex, searchIndex } from './search.js?v=28b593a1';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
-import { renderGameCard } from '../lib/card.js?v=373798af';
+import { renderGameCard } from '../lib/card.js?v=754da47b';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
@@ -586,8 +586,11 @@ export async function renderHomePage() {
     // class to both card lists; default medium.
     const SIZE_KEY = 'pp:grid-size';
     const SIZES = ['sm', 'md', 'lg', 'xl'];
+    // Desktop has the room for larger cards, so the default steps up to 'lg'
+    // there; mobile stays on 'md' to keep more rows on screen.
+    const _DEFAULT_SIZE = window.matchMedia('(min-width: 760px)').matches ? 'lg' : 'md';
     function _savedSize() {
-      try { const s = localStorage.getItem(SIZE_KEY); return SIZES.includes(s) ? s : 'md'; } catch { return 'md'; }
+      try { const s = localStorage.getItem(SIZE_KEY); return SIZES.includes(s) ? s : _DEFAULT_SIZE; } catch { return _DEFAULT_SIZE; }
     }
     function applyGridSize(size) {
       ['cards-recent', 'cards-popular'].forEach(id => {

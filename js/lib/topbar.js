@@ -416,10 +416,11 @@
   }
   // Card layout preference. Default is 'strip' on both viewports (tier in
   // a colored bar across the full bottom of the card). 'right' falls back
-  // to the column pill.
+  // to the column pill; 'combo' shows the tier + store as a two-tone
+  // corner chip and hides the strip / right column entirely.
   const cardLayoutPref = localStorage.getItem('pp:card-layout') || 'strip';
-  if (cardLayoutPref === 'strip') {
-    document.documentElement.setAttribute('data-card-layout', 'strip');
+  if (cardLayoutPref === 'strip' || cardLayoutPref === 'combo') {
+    document.documentElement.setAttribute('data-card-layout', cardLayoutPref);
   }
   // Store badge display. Default depends on viewport: 'icon' on mobile
   // (saves space next to the rating), 'text' on desktop (room for the
