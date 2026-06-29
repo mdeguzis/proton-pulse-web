@@ -67,8 +67,8 @@ function applyStorePillPos(pos) {
 }
 const storePillGroup = document.getElementById('opt-store-pill-pos');
 if (storePillGroup) {
-  let stored = localStorage.getItem(STORE_PILL_POS_KEY) || 'right';
-  if (!STORE_PILL_POS_VALUES.includes(stored)) stored = 'right';
+  let stored = localStorage.getItem(STORE_PILL_POS_KEY) || 'bar-inline';
+  if (!STORE_PILL_POS_VALUES.includes(stored)) stored = 'bar-inline';
   storePillGroup.querySelectorAll('input[type="radio"]').forEach(r => {
     r.checked = r.value === stored;
     r.addEventListener('change', () => {
@@ -95,7 +95,7 @@ function applyStoreDisplay(mode) {
 }
 const storeDisplayGroup = document.getElementById('opt-store-display');
 if (storeDisplayGroup) {
-  const stored = localStorage.getItem(STORE_DISPLAY_KEY) || 'text';
+  const stored = localStorage.getItem(STORE_DISPLAY_KEY) || 'icon';
   storeDisplayGroup.querySelectorAll('input[type="radio"]').forEach(r => {
     r.checked = r.value === stored;
     r.addEventListener('change', () => {
@@ -148,7 +148,7 @@ function updateConditionalOptions() {
 }
 const cardLayoutGroup = document.getElementById('opt-card-layout');
 if (cardLayoutGroup) {
-  const stored = localStorage.getItem(CARD_LAYOUT_KEY) || 'right';
+  const stored = localStorage.getItem(CARD_LAYOUT_KEY) || 'strip';
   cardLayoutGroup.querySelectorAll('input[type="radio"]').forEach(r => {
     r.checked = r.value === stored;
     r.addEventListener('change', () => {

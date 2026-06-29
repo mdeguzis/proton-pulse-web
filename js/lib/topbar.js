@@ -387,10 +387,10 @@
   // (avoids a flash of the wrong mode / running animations).
   initTheme();
   initMotion();
-  // Store badge placement: 'art' (overlay on thumbnail), 'right' (default,
-  // pill column), 'bar-segment' (the bottom-bar strip splits, last 1/4 in
-  // the store color). bar-segment only paints when data-card-layout="strip"
-  // is also set; otherwise it falls back to the default column placement.
+  // Store badge placement. Default is 'bar-inline' (paired with the strip
+  // card layout, the store sits flush right of the tier label as a brand
+  // pill or icon). Other values: 'right' (legacy column), 'art' (thumbnail
+  // overlay), 'art-corner' (card top-right), 'bar-segment' (split strip).
   // Migrations: dropped 'bar-right' -> 'bar-segment'; renamed 'bar-icon'
   // -> 'bar-inline' once it started honoring the store-display pref.
   let storePillPos = localStorage.getItem('pp:store-pill-pos');
@@ -401,17 +401,21 @@
     storePillPos = 'bar-inline';
     localStorage.setItem('pp:store-pill-pos', 'bar-inline');
   }
-  if (storePillPos && storePillPos !== 'right') {
+  if (!storePillPos) storePillPos = 'bar-inline';
+  if (storePillPos !== 'right') {
     document.documentElement.setAttribute('data-store-pill-pos', storePillPos);
   }
-  // Card layout preference: 'strip' = rating row under title (more title width
-  // on mobile), default = rating pill in right column.
-  if (localStorage.getItem('pp:card-layout') === 'strip') {
+  // Card layout preference. Default is 'strip' (tier in a colored bar across
+  // the full bottom of the card -- better on mobile because the title row
+  // gets the full card width). 'right' falls back to the column pill.
+  const cardLayoutPref = localStorage.getItem('pp:card-layout') || 'strip';
+  if (cardLayoutPref === 'strip') {
     document.documentElement.setAttribute('data-card-layout', 'strip');
   }
-  // Store badge display preference: 'icon' = round colored glyph, default
-  // = text pill ('STEAM', 'GOG', 'EPIC').
-  if (localStorage.getItem('pp:store-display') === 'icon') {
+  // Store badge display. Default is 'icon' (round brand glyph). 'text' uses
+  // the text label ('STEAM', 'GOG', 'EPIC').
+  const storeDisplayPref = localStorage.getItem('pp:store-display') || 'icon';
+  if (storeDisplayPref === 'icon') {
     document.documentElement.setAttribute('data-store-display', 'icon');
   }
 
