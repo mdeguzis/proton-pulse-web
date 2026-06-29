@@ -1,6 +1,7 @@
 // Entry module for index.html (homepage). Migrated from index.js.
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=e7fe3ce0';
 import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
+import { padTileRows, watchTileRows } from '../lib/tile-pad.js?v=defd5c6b';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
 // search dropdown, auth indicator) lives in topbar.js.
@@ -286,6 +287,10 @@ import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
         const moreBtn = document.getElementById('pg-load-more-btn');
         if (moreBtn) moreBtn.addEventListener('click', () => { shownCount += PAGE_SIZE; renderPopular(); });
       }
+      // Top off the last grid row with invisible filler tiles in tile mode
+      // so the grid doesn't look ragged on the trailing edge. No-op in list
+      // mode (the helper bails when grid-template-columns isn't set).
+      padTileRows(list, { tileSelector: '.pg-card' });
     }
 
     // Rated / Not Rated are independent toggles (multi-select). Both on or both
@@ -417,6 +422,9 @@ import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
       // tile column width in grid mode.
       setSizeEnabled(true);
       renderPopular();
+      // Keep the last grid row full as the viewport resizes. watchTileRows
+      // is idempotent so calling it on every applyLayout is safe.
+      watchTileRows(list, { tileSelector: '.pg-card' });
     }
     document.querySelectorAll('.pg-layout-btn').forEach(btn => {
       btn.addEventListener('click', () => {

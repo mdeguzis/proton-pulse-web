@@ -19,6 +19,17 @@
      right edge of the entire card under the 'art-corner' placement. */
   position: relative;
 }
+/* Filler placeholder for tile-mode grids. JS in js/lib/tile-pad.js
+   appends these after every render so the last row has the same number
+   of tracks filled as the rows above it -- otherwise the trailing
+   columns are blank and the grid looks ragged. The placeholder is fully
+   transparent and doesn't accept events; it just reserves a grid cell. */
+.tile-filler {
+  visibility: hidden;
+  pointer-events: none;
+  min-height: 1px;
+}
+
 /* Combined corner chip (rating + store) for the 'combo' card layout.
    Two segments side by side: tier color on the left with the tier label,
    store color on the right with the store name. Hidden unless

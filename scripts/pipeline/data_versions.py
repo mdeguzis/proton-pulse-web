@@ -22,6 +22,7 @@ from .common import log
 # means adding it here so it gets a hash entry.
 DATA_FILES = [
     "search-index.json",
+    "search-index-steam-extended.json",
     "recent-reports.json",
     "most_played.json",
     "game-images.json",

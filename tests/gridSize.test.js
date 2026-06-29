@@ -46,7 +46,11 @@ describe('configurable card size (S/M/L)', () => {
   });
 
   test('tile-mode (grid) applies to both Recent and Popular sections', () => {
-    expect(homeSrc).toContain("document.getElementById('cards-popular')?.classList.toggle('home-cards-tile-mode', isTile)");
+    // applyLayout now grabs both section elements then toggles tile mode
+    // on each via local references (recentEl / popularEl), so look for
+    // the class swap on the popularEl variable.
+    expect(homeSrc).toContain("popularEl?.classList.toggle('home-cards-tile-mode', isTile)");
+    expect(homeSrc).toContain("recentEl?.classList.toggle('home-cards-tile-mode', isTile)");
     // both layouts use the same card renderer; CSS does the visual swap
     expect(homeSrc).toContain('function _popularItemHtml(g)');
     expect(homeSrc).not.toContain('_listRowHtml');

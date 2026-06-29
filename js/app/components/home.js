@@ -1,11 +1,12 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
-import { loadSearchIndex, searchIndex } from './search.js?v=28b593a1';
+import { loadSearchIndex, searchIndex } from './search.js?v=650561b1';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
 import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
 import { renderGameCard } from '../lib/card.js?v=754da47b';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
+import { padTileRows, watchTileRows } from '../../lib/tile-pad.js?v=defd5c6b';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
 const LOAD_COUNTS = [50, 100, 150, 200];
@@ -348,12 +349,14 @@ export async function renderHomePage() {
             const batch = queue.splice(0, PAGE_SIZE);
             cardsEl.insertAdjacentHTML('beforeend', batch.map(_popularItemHtml).join(''));
             _updateShownCount('popular-count', cardsEl, filtered.length);
+            padTileRows(cardsEl, { tileSelector: '.game-card' });
             if (!queue.length) loadMoreEl.innerHTML = '';
           });
         } else {
           loadMoreEl.innerHTML = initial.length ? _allShownNote(filtered.length) : '';
         }
       }
+      padTileRows(cardsEl, { tileSelector: '.game-card' });
     }
 
     // Render a popular game as a card. Both layouts use the same markup;
@@ -397,12 +400,14 @@ export async function renderHomePage() {
             const batch = queue.splice(0, PAGE_SIZE);
             cardsEl.insertAdjacentHTML('beforeend', batch.map(renderFn).join(''));
             _updateShownCount('recent-count', cardsEl, filtered.length);
+            padTileRows(cardsEl, { tileSelector: '.game-card' });
             if (!queue.length) loadMoreEl.innerHTML = '';
           });
         } else {
           loadMoreEl.innerHTML = filtered.length ? _allShownNote(filtered.length) : '';
         }
       }
+      padTileRows(cardsEl, { tileSelector: '.game-card' });
     }
 
     document.getElementById('home-sort-select')?.addEventListener('change', e => {
@@ -562,11 +567,18 @@ export async function renderHomePage() {
       currentLayout = layout;
       const isTile = layout === 'grid';
       document.querySelectorAll('.home-layout-btn').forEach(b => b.classList.toggle('active', b.dataset.layout === layout));
-      document.getElementById('cards-recent')?.classList.toggle('home-cards-tile-mode', isTile);
-      document.getElementById('cards-popular')?.classList.toggle('home-cards-tile-mode', isTile);
+      const recentEl = document.getElementById('cards-recent');
+      const popularEl = document.getElementById('cards-popular');
+      recentEl?.classList.toggle('home-cards-tile-mode', isTile);
+      popularEl?.classList.toggle('home-cards-tile-mode', isTile);
       // S/M/L/XL stay enabled in both modes -- in tile mode the size
       // controls the column width, in list mode it controls row height.
       _setSizeEnabled(true);
+      // Pad the trailing row of each tile grid with invisible fillers so
+      // an incomplete last row doesn't read as a ragged edge, and keep
+      // it padded as the viewport resizes.
+      if (recentEl) watchTileRows(recentEl, { tileSelector: '.game-card' });
+      if (popularEl) watchTileRows(popularEl, { tileSelector: '.game-card' });
     }
     document.querySelectorAll('.home-layout-btn').forEach(btn => {
       btn.addEventListener('click', () => {

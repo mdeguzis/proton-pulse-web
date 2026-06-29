@@ -845,6 +845,55 @@ def generate_search_index(
     log(f"[search-index] Written {len(entries):,} entries to {index_file}")
 
 
+def generate_extended_steam_index(
+    output_path: Path,
+    steam_catalog: dict[str, str] | None = None,
+) -> None:
+    """Emit search-index-steam-extended.json: every Steam catalog entry that
+    is NOT already present in the primary search-index.json.
+
+    Issue #134: the primary index gates Steam stubs by ProtonDB-known apps to
+    keep the file small. That hid real Steam games that have ProtonDB reports
+    but are not in the curated signal export (e.g. "Thank You For Your
+    Application" app 2881370). The extended file removes that gate entirely
+    and is lazy-loaded by the frontend only when the primary index has no
+    match for a query. Same row shape as the primary index so the existing
+    render helpers work unchanged.
+    """
+    if not steam_catalog:
+        log("[search-index-ext] No steam_catalog; skipping extended index")
+        return
+
+    primary_path = output_path / "search-index.json"
+    seen_ids: set[str] = set()
+    if primary_path.exists():
+        try:
+            for row in json.loads(primary_path.read_text(encoding="utf-8")):
+                if row and len(row) >= 1:
+                    seen_ids.add(str(row[0]))
+        except (json.JSONDecodeError, OSError) as exc:
+            log(f"[search-index-ext] WARN: cannot read primary index ({exc}); proceeding with empty seen set")
+
+    entries = []
+    skipped_no_title = 0
+    skipped_already_primary = 0
+    for app_id, title in sorted(steam_catalog.items(), key=lambda kv: (kv[1] or "").lower()):
+        if str(app_id) in seen_ids:
+            skipped_already_primary += 1
+            continue
+        if not title:
+            skipped_no_title += 1
+            continue
+        entries.append([str(app_id), title, "", 0, 0, "steam"])
+
+    ext_file = output_path / "search-index-steam-extended.json"
+    ext_file.write_text(json.dumps(entries, separators=(",", ":")))
+    log(
+        f"[search-index-ext] Written {len(entries):,} extended Steam stubs "
+        f"({skipped_already_primary:,} already in primary, {skipped_no_title:,} skipped no title)"
+    )
+
+
 def generate_nonsteam_images(output_path: Path) -> None:
     """Emit nonsteam-images.json: {canonical_id: cover_url} for GOG/Epic games.
 
@@ -1526,6 +1575,10 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # appdetails. Flag them in search-index.json column 7 so the frontend can
     # render a DELISTED chip without re-fetching anything client-side.
     enrich_search_index_with_delisted(output_path)
+    # Issue #134: emit the extended Steam index AFTER the primary index has
+    # been finalized (release-year + delisted enrichment runs first), so the
+    # primary id set we read back is the final one.
+    generate_extended_steam_index(output_path, steam_catalog=steam_catalog)
     _backfill_most_played_header_images(output_path, overrides)
     write_proton_versions_json(output_path)
     # Hash every emitted data file and write data-versions.json so the

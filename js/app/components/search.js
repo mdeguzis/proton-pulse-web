@@ -16,17 +16,33 @@ import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 // estimateScore (not currently called from here but available).
 
 // --- search index state vars ---
-export let searchIndex     = null;   // [[appId, title], ...]
-export let searchFocusIdx  = -1;
+export let searchIndex            = null;   // primary: [[appId, title, tier, pdb, pulse, appType, releaseYear?, delisted?], ...]
+export let extendedSteamIndex     = null;   // lazy: [[appId, title, "", 0, 0, "steam"], ...]
+export let extendedSteamLoadingP  = null;   // in-flight Promise so concurrent searches share one fetch
+export let searchFocusIdx         = -1;
+
+// --- _matchEntries (pure filter, shared between primary and extended) ---
+function _matchEntries(entries, query, limit) {
+  if (!entries || !entries.length) return [];
+  const ql = query.toLowerCase();
+  const isNum = /^\d+$/.test(query);
+  return entries.filter(([id, title]) =>
+    isNum ? String(id).startsWith(query) : (String(title).toLowerCase().includes(ql) || String(id).startsWith(query))
+  ).slice(0, limit);
+}
 
 // --- searchIndexMatches ---
 export function searchIndexMatches(query, limit) {
   const q = query.trim();
-  const ql = q.toLowerCase();
-  const isNum = /^\d+$/.test(q);
-  return (searchIndex || []).filter(([id, title]) =>
-    isNum ? String(id).startsWith(q) : (String(title).toLowerCase().includes(ql) || String(id).startsWith(q))
-  ).slice(0, limit);
+  return _matchEntries(searchIndex, q, limit);
+}
+
+// --- searchExtendedSteamMatches ---
+// Synchronous match against the already-loaded extended index. Call
+// loadExtendedSteamIndex() first when you want the long-tail Steam catalog.
+export function searchExtendedSteamMatches(query, limit) {
+  const q = query.trim();
+  return _matchEntries(extendedSteamIndex, q, limit);
 }
 
 // --- renderPulseSearchResult ---
@@ -60,9 +76,24 @@ export async function renderSearchPage(query) {
   const el = document.getElementById('content');
   const q = query.trim();
   el.innerHTML = '<div class="state-box">Searching Proton Pulse and index data...</div>';
-  await loadSearchIndex();
+  // Issue #134: load the extended Steam catalog alongside the primary index
+  // so long-tail Steam games (apps that ProtonDB knows about but the curated
+  // signal export does not) are findable from the grouped results page. The
+  // extended file is large, so it stays out of the dropdown (onSearchInput)
+  // and only loads on this deliberate Enter-to-search path.
+  await Promise.all([loadSearchIndex(), loadExtendedSteamIndex()]);
   const pulseResults = await withTimeout(fetchMatchingPulseConfigs(q), 2500, []);
-  const indexResults = searchIndexMatches(q, 24);
+  const primaryResults = searchIndexMatches(q, 24);
+  // Pad the merged list up to a soft cap of 48 with extended Steam stubs,
+  // skipping any appId already covered by the primary index.
+  const primaryIds = new Set(primaryResults.map(([id]) => String(id)));
+  const extendedRoom = Math.max(0, 48 - primaryResults.length);
+  const extendedResults = extendedRoom
+    ? searchExtendedSteamMatches(q, extendedRoom + primaryIds.size)
+        .filter(([id]) => !primaryIds.has(String(id)))
+        .slice(0, extendedRoom)
+    : [];
+  const indexResults = [...primaryResults, ...extendedResults];
   // Disambiguate same-name games (e.g. Prey 2006 vs Prey 2017) with a "(YEAR)"
   // suffix when the pipeline supplied a releaseYear (column 7 of search-index).
   // window.__buildTitleOverrides is registered globally by topbar.js.
@@ -116,6 +147,30 @@ export async function loadSearchIndex() {
     const r = await fetch(SEARCH_URL);
     searchIndex = r.ok ? await r.json() : [];
   } catch { searchIndex = []; }
+}
+
+// --- loadExtendedSteamIndex ---
+// Lazy-loaded long-tail Steam catalog stubs (#134). Only fetched when the
+// primary search-index has no hit for a query. Concurrent callers share one
+// in-flight promise so the multi-megabyte payload is fetched at most once.
+export async function loadExtendedSteamIndex() {
+  if (extendedSteamIndex !== null) return;
+  if (extendedSteamLoadingP) { await extendedSteamLoadingP; return; }
+  extendedSteamLoadingP = (async () => {
+    try {
+      const bustedName = await dataUrl('search-index-steam-extended.json');
+      const url = USES_PROD_DATA ? `${SITE_ROOT}/${bustedName}` : bustedName;
+      const r = await fetch(url);
+      extendedSteamIndex = r.ok ? await r.json() : [];
+    } catch (err) {
+      // Network failure or 404 -- log once and degrade to empty so we don't
+      // spin on retries. The primary index still works.
+      try { console.warn('[search] extended Steam index unavailable:', err); } catch {}
+      extendedSteamIndex = [];
+    }
+  })();
+  await extendedSteamLoadingP;
+  extendedSteamLoadingP = null;
 }
 
 // --- closeSearch ---
