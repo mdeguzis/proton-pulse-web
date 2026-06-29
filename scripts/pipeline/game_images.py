@@ -9,7 +9,9 @@ Uses a unified cache (game-images-cache.json) tracking status + probe date per a
 Hot games (visible in recent-reports.json + most_played.json) are always probed
 first and re-probed when their cache entry is older than STALE_DAYS. Backlog
 entries (all other app IDs with ProtonDB data) are only probed when uncached,
-capped at PROBE_CAP per run.
+capped at PROBE_CAP per run. Extended Steam catalog stubs (search-index-steam-
+extended.json, ~140k store entries with no reports) sit at the tail of the
+backlog so they trickle in over many runs without blowing Steam rate limits.
 
 On first run after this format change, legacy game-images.json and
 game-images-skip.json entries are migrated into the unified cache automatically.
@@ -27,6 +29,7 @@ STEAM_APPDETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={ap
 STEAM_STORE_PAGE_URL = "https://store.steampowered.com/app/{appid}/"
 REQUEST_DELAY = 0.3       # seconds between Steam API calls
 PROBE_CAP = 500           # max backlog IDs to probe per run (hot IDs are uncapped)
+EXTENDED_STEAM_INDEX = "search-index-steam-extended.json"  # catalog stubs with no reports
 STALE_DAYS = 30           # re-probe hot games whose cache entry is older than this
 # A known-live Steam app used as a canary: if the store page redirects for THIS
 # id during a run, Steam's storefront is wobbling and we must not flag anything
@@ -176,6 +179,33 @@ def _hot_app_ids(output_dir: Path) -> list[str]:
     return ids
 
 
+def _extended_steam_ids(output_dir: Path) -> list[str]:
+    """Steam app IDs from the extended catalog index (search-index-steam-extended.json).
+
+    These are Steam store entries with no ProtonDB/Pulse reports, so they have no
+    data/ directory and never show up in _collect_all_app_ids. Most resolve fine via
+    the standard header.jpg path client-side; only the hashed-path stragglers need a
+    game-images.json override. Returned in index order so they drain deterministically
+    through the capped backlog rather than probing 140k+ IDs in a single run.
+    """
+    p = output_dir / EXTENDED_STEAM_INDEX
+    if not p.exists():
+        return []
+    ids: list[str] = []
+    seen: set[str] = set()
+    try:
+        for entry in json.loads(p.read_text(encoding="utf-8")):
+            if not isinstance(entry, list) or not entry:
+                continue
+            aid = str(entry[0]).strip()
+            if aid.isdigit() and aid not in seen:
+                seen.add(aid)
+                ids.append(aid)
+    except Exception as exc:
+        log(f"[game-images] WARN: could not read {EXTENDED_STEAM_INDEX}: {exc}")
+    return ids
+
+
 def _load_cache(path: Path) -> dict:
     """Load unified cache: { appId: {status, url?, probed_at} }"""
     if path.exists():
@@ -251,10 +281,21 @@ def build_game_images(output_dir) -> dict[str, str]:
             (cache[a].get("status") == "hashed" and _is_stale(cache[a]))
         )
     ]
+    # Extended Steam catalog stubs have no data/ dir, so _collect_all_app_ids never
+    # sees them. Append the uncached ones to the END of the backlog: apps with real
+    # reports drain first, and PROBE_CAP still bounds the whole backlog per run so the
+    # 140k+ catalog IDs trickle in over many runs instead of probing all at once.
+    extended_seen = hot_set | set(all_ids)
+    extended_to_probe = [
+        a for a in _extended_steam_ids(output_dir)
+        if a not in extended_seen and a not in cache
+    ]
+    backlog_to_probe += extended_to_probe
 
     log(
         f"[game-images] {len(all_ids)} total app IDs | cache: {len(cache)} | "
-        f"hot: {len(hot_to_probe)} to probe | backlog: {len(backlog_to_probe)} uncached/stale-hashed (cap {PROBE_CAP})"
+        f"hot: {len(hot_to_probe)} to probe | backlog: {len(backlog_to_probe)} uncached/stale-hashed "
+        f"({len(extended_to_probe)} extended-steam) (cap {PROBE_CAP})"
     )
 
     # Run-wide canary: do we even believe Steam's storefront right now? If not,
