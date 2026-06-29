@@ -168,6 +168,26 @@ if (cardLayoutGroup) {
   applyCardLayout(stored);
 }
 
+// Default layout: 'list' (horizontal cards) or 'grid' (Steam-style tile
+// grid). Each browse page also has its own quick toggle, but this radio
+// is the persistent baseline. Shared storage key with the browse pages.
+const GRID_LAYOUT_KEY = 'pp:grid-layout';
+const GRID_LAYOUT_VALUES = ['list', 'grid'];
+const gridLayoutGroup = document.getElementById('opt-grid-layout');
+if (gridLayoutGroup) {
+  let stored = localStorage.getItem(GRID_LAYOUT_KEY) || 'list';
+  if (!GRID_LAYOUT_VALUES.includes(stored)) stored = 'list';
+  gridLayoutGroup.querySelectorAll('input[type="radio"]').forEach(r => {
+    r.checked = r.value === stored;
+    r.addEventListener('change', () => {
+      if (r.checked) {
+        localStorage.setItem(GRID_LAYOUT_KEY, r.value);
+        console.log('[options] grid-layout:', r.value);
+      }
+    });
+  });
+}
+
 // Reports per page: how many cards app.html preloads per section before "Load
 // more". Stored as a string number; app.html reads it on load. Default 50.
 const LOAD_COUNT_KEY = 'pp:load-count';
@@ -191,7 +211,7 @@ if (loadCountGroup) {
 // defaults (OS reduced-motion, no card-layout attribute, etc).
 const resetBtn = document.getElementById('opt-reset');
 if (resetBtn) {
-  const RESET_KEYS = [MOTION_KEY, STORE_PILL_POS_KEY, STORE_DISPLAY_KEY, CARD_LAYOUT_KEY, LOAD_COUNT_KEY];
+  const RESET_KEYS = [MOTION_KEY, STORE_PILL_POS_KEY, STORE_DISPLAY_KEY, CARD_LAYOUT_KEY, GRID_LAYOUT_KEY, LOAD_COUNT_KEY];
   resetBtn.addEventListener('click', () => {
     if (!confirm('Reset all site preferences on this device to their defaults?')) return;
     RESET_KEYS.forEach(k => localStorage.removeItem(k));

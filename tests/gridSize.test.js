@@ -38,25 +38,29 @@ describe('configurable card size (S/M/L)', () => {
     expect(cssSrc).toContain('.cards--lg .game-card-thumb');
   });
 
-  test('S/M/L are disabled in list mode', () => {
+  test('S/M/L/XL stay enabled in both layouts (tile mode uses size as column width)', () => {
     expect(homeSrc).toContain('function _setSizeEnabled(enabled)');
     expect(homeSrc).toContain('b.disabled = !enabled');
-    expect(homeSrc).toContain('_setSizeEnabled(!isList)');
+    expect(homeSrc).toContain('_setSizeEnabled(true)');
     expect(cssSrc).toContain('.home-size-btn:disabled');
   });
 
-  test('list view applies to both Recent and Popular sections', () => {
-    expect(homeSrc).toContain("document.getElementById('cards-popular')?.classList.toggle('home-cards-list', isList)");
-    // popular renders a slim list row in list mode, a sized card otherwise
+  test('tile-mode (grid) applies to both Recent and Popular sections', () => {
+    expect(homeSrc).toContain("document.getElementById('cards-popular')?.classList.toggle('home-cards-tile-mode', isTile)");
+    // both layouts use the same card renderer; CSS does the visual swap
     expect(homeSrc).toContain('function _popularItemHtml(g)');
-    expect(homeSrc).toContain("if (currentLayout === 'list') return _listRowHtml(g)");
+    expect(homeSrc).not.toContain('_listRowHtml');
   });
 
   test('load more keeps the current view in both sections', () => {
-    // recent appends with the layout-aware renderFn, popular with _popularItemHtml
     expect(homeSrc).toContain('batch.map(renderFn).join(\'\')');
     expect(homeSrc).toContain('batch.map(_popularItemHtml).join(\'\')');
-    // the old layout-blind _appendCards helper is gone
     expect(homeSrc).not.toContain('function _appendCards');
+  });
+
+  test('CSS reshapes the card container into a Steam-style tile grid', () => {
+    expect(cssSrc).toContain('.home-cards-tile-mode');
+    expect(cssSrc).toContain('grid-template-columns: repeat(auto-fill, minmax');
+    expect(cssSrc).toContain('aspect-ratio: 460 / 215');
   });
 });

@@ -81,9 +81,8 @@ describe('store pill rendering', () => {
       expect(cardsCss).toContain(`.game-card-store-pill--${s}`);
     });
   });
-  test('home cards and list rows pass a storePill', () => {
+  test('home cards pass a storePill to the renderer (both layouts use the same card)', () => {
     expect(homeSrc).toContain('storePill: storeLabel(appType)');
-    expect(homeSrc).toContain('game-card-store-pill game-card-store-pill--${store.toLowerCase()}');
   });
   test('search results and dropdown show the store pill', () => {
     expect(searchSrc).toContain('storePill: storeLabelFromAppId(row.appId)');

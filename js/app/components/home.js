@@ -243,8 +243,8 @@ export async function renderHomePage() {
             <button class="home-size-btn home-size-btn--desktop-only" data-size="xl" type="button" title="Extra large cards">XL</button>
           </div>
           <div class="home-layout-toggle">
-            <button class="home-layout-btn active" data-layout="grid" title="Grid view">Grid</button>
-            <button class="home-layout-btn" data-layout="list" title="List view">List</button>
+            <button class="home-layout-btn active" data-layout="list" title="List of horizontal cards (default)">List</button>
+            <button class="home-layout-btn" data-layout="grid" title="Grid of Steam-style tiles">Grid</button>
           </div>
         </div>
       </div>
@@ -270,18 +270,10 @@ export async function renderHomePage() {
     let storeSel = new Set();  // empty => all stores
     let currentLayout = 'grid';
 
-    function _listRowHtml(r) {
-      const tier = String(r.tier || '').toLowerCase();
-      const total = (r.protondbCount || 0) + (r.pulseCount || 0);
-      const countStr = total > 0 ? `${total.toLocaleString()} reports` : '';
-      const store = storeLabel(r.appType || appTypeFromAppId(r.appId));
-      return `<a class="home-list-row" href="#/app/${r.appId}">
-        <span class="home-list-tier tier-badge tier-badge--${tier || 'pending'}">${tier || '?'}</span>
-        <span class="home-list-store game-card-store-pill game-card-store-pill--${store.toLowerCase()}">${store}</span>
-        <span class="home-list-title">${r.title || r.appId}</span>
-        <span class="home-list-meta">${[r.lastReportDate, countStr].filter(Boolean).join(' \u00b7 ')}</span>
-      </a>`;
-    }
+    // The previous super-condensed list-row renderer is gone -- the two
+    // layouts now are 'list' (horizontal cards from _recentCardHtml /
+    // popular item) and 'grid' (the same cards re-flowed into Steam-
+    // style vertical tiles by CSS via .home-cards-tile-mode).
 
     function _popularSectionLabel(sel) {
       if (!sel || sel.size === 0 || sel.has('all') || sel.has('steam')) return 'Popular on Steam';
@@ -364,10 +356,9 @@ export async function renderHomePage() {
       }
     }
 
-    // Render a popular game honoring the current view type: a slim list row in
-    // List mode (same as recent reports), or a sized card in Grid mode.
+    // Render a popular game as a card. Both layouts use the same markup;
+    // CSS reshapes it for the tile grid mode.
     function _popularItemHtml(g) {
-      if (currentLayout === 'list') return _listRowHtml(g);
       return renderGameCard({
         href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
         title: g.title,
@@ -390,7 +381,7 @@ export async function renderHomePage() {
       const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
-      const renderFn = currentLayout === 'list' ? _listRowHtml : _recentCardHtml;
+      const renderFn = _recentCardHtml;
       const queue = filtered.slice(PAGE_SIZE);
       const initial = filtered.slice(0, PAGE_SIZE);
       // Hide the whole recent section when empty so there's no blank state box.
@@ -559,19 +550,23 @@ export async function renderHomePage() {
       document.getElementById('home-size-toggle')?.classList.toggle('home-size-toggle--disabled', !enabled);
     }
 
-    // List/Grid is a saved user preference, like card size. Default grid.
+    // Layout: 'list' (horizontal cards, default) or 'grid' (Steam-style
+    // vertical tile grid). Both layouts use the same card markup; CSS
+    // reshapes the container into a tile grid for 'grid' mode. Shared
+    // storage key with the home page.
     const LAYOUT_KEY = 'pp:grid-layout';
     function _savedLayout() {
-      try { const l = localStorage.getItem(LAYOUT_KEY); return (l === 'list' || l === 'grid') ? l : 'grid'; } catch { return 'grid'; }
+      try { const l = localStorage.getItem(LAYOUT_KEY); return (l === 'list' || l === 'grid') ? l : 'list'; } catch { return 'list'; }
     }
     function applyLayout(layout) {
       currentLayout = layout;
-      const isList = layout === 'list';
+      const isTile = layout === 'grid';
       document.querySelectorAll('.home-layout-btn').forEach(b => b.classList.toggle('active', b.dataset.layout === layout));
-      // List view applies to BOTH sections so they stay consistent.
-      document.getElementById('cards-recent')?.classList.toggle('home-cards-list', isList);
-      document.getElementById('cards-popular')?.classList.toggle('home-cards-list', isList);
-      _setSizeEnabled(!isList);
+      document.getElementById('cards-recent')?.classList.toggle('home-cards-tile-mode', isTile);
+      document.getElementById('cards-popular')?.classList.toggle('home-cards-tile-mode', isTile);
+      // S/M/L/XL stay enabled in both modes -- in tile mode the size
+      // controls the column width, in list mode it controls row height.
+      _setSizeEnabled(true);
     }
     document.querySelectorAll('.home-layout-btn').forEach(btn => {
       btn.addEventListener('click', () => {

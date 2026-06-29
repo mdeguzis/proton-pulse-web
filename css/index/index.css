@@ -634,49 +634,54 @@
   .pg-list--xl .pg-sub { font-size: 1.08rem; }
 }
 
-/* List mode */
-.pg-list--list-mode { gap: 2px !important; }
-.pg-list--list-mode .pg-card { display: none; }
-.pg-list-row {
+/* Tile (grid) mode: Steam library look. The container becomes a CSS grid
+   of header-aspect thumbnails; each card re-flows into a vertical tile
+   with the thumbnail on top and the title row below. S/M/L/XL size still
+   applies -- it controls the minimum tile width (and via auto-fill, how
+   many columns fit). */
+.pg-list--tile-mode {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+.pg-list--tile-mode.pg-list--sm { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+.pg-list--tile-mode.pg-list--md { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+.pg-list--tile-mode.pg-list--lg { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.pg-list--tile-mode.pg-list--xl { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.pg-list--tile-mode .pg-card {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
-  background: var(--s1);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  text-decoration: none;
-  color: var(--text);
-  transition: background .1s;
-  overflow: hidden;
-}
-.pg-list-row:hover { background: var(--s2); }
-.pg-list-tier {
-  flex-shrink: 0;
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 3px 8px;
-  border-radius: 3px;
-  min-width: 56px;
-  text-align: center;
-}
-.pg-list-title {
-  flex: 1 1 auto;
+  flex-direction: column;
   min-width: 0;
-  font-size: 0.9rem;
-  font-weight: 500;
-  white-space: nowrap;
+}
+.pg-list--tile-mode .pg-card-row {
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  align-items: stretch;
+}
+.pg-list--tile-mode .pg-thumb-wrap { width: 100%; }
+.pg-list--tile-mode .pg-thumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 460 / 215;
+  border-radius: 0;
+  display: block;
+}
+.pg-list--tile-mode .pg-info { padding: 8px 10px; min-width: 0; }
+.pg-list--tile-mode .pg-title {
+  font-size: 0.95rem;
+  line-height: 1.25;
   overflow: hidden;
-  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
-.pg-list-meta {
-  flex-shrink: 0;
-  font-size: 0.72rem;
-  color: var(--muted);
-  font-family: var(--mono);
-}
+.pg-list--tile-mode .pg-sub { font-size: 0.78rem; }
+/* Right-column rating pill doesn't fit in a vertical tile -- the strip
+   (which the user's card layout already enables by default) carries the
+   tier across the tile bottom instead. */
+.pg-list--tile-mode .pg-right { display: none; }
 
 .pg-empty {
   padding: 24px 14px;

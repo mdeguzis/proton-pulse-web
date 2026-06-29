@@ -139,7 +139,6 @@ import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
   }
 
   function pgCardHtml(g) {
-    if (currentLayout === 'list') return pgListRowHtml(g);
     const img = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(g.appId)}/header.jpg`;
     const peak = fmtPeak(g.peak);
     const rating = String(g.rating || '').toLowerCase();
@@ -177,17 +176,9 @@ import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
       </a>`;
   }
 
-  function pgListRowHtml(g) {
-    const rating = String(g.rating || '').toLowerCase();
-    const rated = KNOWN_TIERS.has(rating);
-    const rLabel = rated ? RATING_LABEL[rating] : '?';
-    const peak = fmtPeak(g.peak);
-    return `<a class="pg-list-row" href="app.html#/app/${encodeURIComponent(g.appId)}">
-      <span class="pg-list-tier pg-badge ${rated ? `pg-${rating}` : 'pg-unrated'}">${rLabel}</span>
-      <span class="pg-list-title">${esc(g.title)}</span>
-      <span class="pg-list-meta">${storePill(g.appType)}${peak ? ' ' + peak + ' peak' : ''}</span>
-    </a>`;
-  }
+  // The previous super-condensed pgListRowHtml is gone -- the two layouts
+  // now are 'list' (horizontal cards from pgCardHtml) and 'grid' (the same
+  // cards re-flowed into Steam-style vertical tiles by CSS).
 
   try {
     const resp = await fetch(await dataUrl('most_played.json'));
@@ -411,17 +402,20 @@ import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
       });
     });
 
-    // Grid/List layout (saved preference, shared key with app page)
+    // Layout: 'list' (horizontal cards, the new default) or 'grid'
+    // (Steam-style vertical tile grid). Both layouts use the same card
+    // markup; CSS reshapes them. Storage key is shared with the app page.
     const LAYOUT_KEY = 'pp:grid-layout';
     function savedLayout() {
-      try { const l = localStorage.getItem(LAYOUT_KEY); return (l === 'list' || l === 'grid') ? l : 'grid'; } catch { return 'grid'; }
+      try { const l = localStorage.getItem(LAYOUT_KEY); return (l === 'list' || l === 'grid') ? l : 'list'; } catch { return 'list'; }
     }
     function applyLayout(layout) {
       currentLayout = layout;
-      const isList = layout === 'list';
-      list.classList.toggle('pg-list--list-mode', isList);
+      list.classList.toggle('pg-list--tile-mode', layout === 'grid');
       document.querySelectorAll('.pg-layout-btn').forEach(b => b.classList.toggle('active', b.dataset.layout === layout));
-      setSizeEnabled(!isList);
+      // S/M/L/XL sizing stays available in both layouts now -- it controls
+      // tile column width in grid mode.
+      setSizeEnabled(true);
       renderPopular();
     }
     document.querySelectorAll('.pg-layout-btn').forEach(btn => {
