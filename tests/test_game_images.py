@@ -65,8 +65,8 @@ def test_build_adds_override_when_standard_404s(tmp_path):
     def fake_url_ok(url, timeout=8):
         return False  # standard URL 404s
 
-    def fake_fetch(app_id, timeout=10):
-        return "https://cdn.steam.com/hashed/12345/header_abc.jpg?t=123"
+    def fake_fetch(app_id, store_up, timeout=10):
+        return ("https://cdn.steam.com/hashed/12345/header_abc.jpg?t=123", "live")
 
     with patch("scripts.pipeline.game_images._url_is_ok", side_effect=fake_url_ok), \
          patch("scripts.pipeline.game_images._fetch_steam_header", side_effect=fake_fetch):
@@ -101,6 +101,51 @@ def test_build_respects_probe_cap(tmp_path):
         build_game_images(tmp_path)
 
     assert len(probed) == 5
+
+
+def _write_extended_index(tmp_path, app_ids):
+    entries = [[str(a), f"Stub {a}", "", 0, 0, "steam"] for a in app_ids]
+    (tmp_path / "search-index-steam-extended.json").write_text(
+        json.dumps(entries), encoding="utf-8"
+    )
+
+
+def test_build_probes_extended_steam_stubs(tmp_path):
+    # No report apps at all, only extended catalog stubs (no data/ dir entries)
+    _make_data_dir(tmp_path, [])
+    _write_extended_index(tmp_path, ["555001", "555002"])
+
+    probed = []
+
+    def fake_url_ok(url, timeout=8):
+        probed.append(url.split("/apps/")[1].split("/")[0])
+        return True
+
+    with patch("scripts.pipeline.game_images._url_is_ok", side_effect=fake_url_ok):
+        build_game_images(tmp_path)
+
+    assert "555001" in probed
+    assert "555002" in probed
+
+
+def test_extended_stubs_drain_after_report_backlog(tmp_path):
+    # Two report apps + one extended stub, cap of 2: report apps drain first,
+    # the extended stub is deferred to a later run.
+    _make_data_dir(tmp_path, ["1000", "1001"])
+    _write_extended_index(tmp_path, ["555001"])
+
+    probed = []
+
+    def fake_url_ok(url, timeout=8):
+        probed.append(url.split("/apps/")[1].split("/")[0])
+        return True
+
+    with patch("scripts.pipeline.game_images.PROBE_CAP", 2), \
+         patch("scripts.pipeline.game_images._url_is_ok", side_effect=fake_url_ok):
+        build_game_images(tmp_path)
+
+    assert len(probed) == 2
+    assert "555001" not in probed
 
 
 def test_build_writes_both_output_files(tmp_path):
