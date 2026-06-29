@@ -769,12 +769,6 @@
         const countsHtml = counts.length
           ? '<span class="sd-counts">' + counts.join(' + ') + '</span>'
           : '';
-        const tierHtml = r.tier
-          ? '<span class="sd-tier tier-' + r.tier + '">' + r.tier + '</span>'
-          : '';
-        // Store badge + appId on the right edge. Long ids (e.g. epic hashes)
-        // would otherwise dominate the row -- the pill + truncated mono text
-        // is the same visual treatment used on the app.html cards.
         const idStr = String(r.appId);
         const inferredStore = r.appType
           ? r.appType
@@ -784,20 +778,25 @@
         const storeLabel = inferredStore === 'gog' ? 'GOG'
                          : inferredStore === 'epic' ? 'Epic'
                          : 'Steam';
-        const storeHtml = '<span class="sd-store sd-store--' + inferredStore + '">' + storeLabel + '</span>';
-        // Order on the right side: appId (truncated) -> store badge (far right).
-        // Store pill goes last so it sits at the trailing edge of the row, in
-        // line with the convention on the app.html cards.
+        // Single split chip on the right edge that mirrors the .game-card
+        // combined corner chip (tier color on the left, store color on the
+        // right). App id moves to the left of the title so the right edge
+        // belongs entirely to the chip.
+        const tierAttr = r.tier ? r.tier.toLowerCase() : '';
+        const tierLabel = r.tier ? r.tier.toUpperCase() : 'NO RATING';
+        const comboHtml = '<span class="sd-combo" data-tier="' + tierAttr + '" data-store="' + inferredStore + '">' +
+                          '<span class="sd-combo-tier">' + tierLabel + '</span>' +
+                          '<span class="sd-combo-store">' + storeLabel + '</span>' +
+                          '</span>';
         return '<a href="app.html#/app/' + r.appId + '" role="option" data-idx="' + idx + '">' +
                '<img loading="lazy" data-appid="' + r.appId + '" src="' + steamHeader(r.appId) + '" alt="" ' +
                  'onerror="window.__steamImgLoad && window.__steamImgLoad(this)">' +
+               '<span class="sd-appid sd-appid--left" title="' + idStr + '">' + idStr + '</span>' +
                '<span class="sd-meta">' +
                  '<span class="sd-title">' + safe + '</span>' +
                  countsHtml +
                '</span>' +
-               tierHtml +
-               '<span class="sd-appid" title="' + idStr + '">' + idStr + '</span>' +
-               storeHtml +
+               comboHtml +
                '</a>';
       }).join('');
       dropdown.innerHTML = html;
