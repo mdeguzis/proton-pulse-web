@@ -65,10 +65,14 @@ function applyStorePillPos(pos) {
     document.documentElement.removeAttribute('data-store-pill-pos');
   }
 }
-// Defaults differ by viewport (matches topbar.js). Picked once at page load.
+// Store badge placement default is viewport-aware: desktop has room for a
+// card-corner tag, mobile would lose too much title width so the bar-inline
+// badge next to the rating reads better. Display defaults to text on both
+// (matches topbar.js) until the round brand glyphs read consistently
+// across stores.
 const _IS_DESKTOP = window.matchMedia('(min-width: 760px)').matches;
 const _DEFAULT_STORE_PILL_POS = _IS_DESKTOP ? 'art-corner' : 'bar-inline';
-const _DEFAULT_STORE_DISPLAY  = _IS_DESKTOP ? 'text' : 'icon';
+const _DEFAULT_STORE_DISPLAY  = 'text';
 
 const storePillGroup = document.getElementById('opt-store-pill-pos');
 if (storePillGroup) {

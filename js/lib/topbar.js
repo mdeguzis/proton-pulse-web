@@ -390,11 +390,11 @@
   // (avoids a flash of the wrong mode / running animations).
   initTheme();
   initMotion();
-  // Defaults differ by viewport. Mobile loses too much width to a corner
-  // tag, so the bar-inline badge next to the rating reads better; desktop
-  // has plenty of room for an art-corner tag + a full text label, which
-  // is more skim-friendly when scanning a dense grid. User picks override
-  // both defaults via the options page.
+  // Defaults: store badge sits in the bar (bar-inline) on mobile, in the
+  // card corner (art-corner) on desktop. Both viewports default to the
+  // text label until the round brand glyphs read consistently across
+  // stores. Mobile picks bar-inline because the card-corner tag steals
+  // useful width from the title row at narrow screens.
   const _isDesktop = window.matchMedia('(min-width: 760px)').matches;
 
   // Store badge placement. Other values: 'right' (legacy column), 'art'
@@ -422,10 +422,10 @@
   if (cardLayoutPref === 'strip' || cardLayoutPref === 'combo') {
     document.documentElement.setAttribute('data-card-layout', cardLayoutPref);
   }
-  // Store badge display. Default depends on viewport: 'icon' on mobile
-  // (saves space next to the rating), 'text' on desktop (room for the
-  // full STEAM/GOG/EPIC label, easier to scan).
-  const storeDisplayPref = localStorage.getItem('pp:store-display') || (_isDesktop ? 'text' : 'icon');
+  // Store badge display. Default is 'text' on both viewports until the
+  // round brand glyphs read consistently at small sizes; 'icon' is still
+  // available as an opt-in for users who want the compact look.
+  const storeDisplayPref = localStorage.getItem('pp:store-display') || 'text';
   if (storeDisplayPref === 'icon') {
     document.documentElement.setAttribute('data-store-display', 'icon');
   }
