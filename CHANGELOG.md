@@ -2,6 +2,17 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.5.0
+
+- Card layout: a new bottom-bar tier strip is the site default, with the store badge sitting next to the rating as a brand-colored pill or round logo (Steam, GOG, Epic). Five placement options for the store badge (right, artwork, card corner, on bar next to rating, on bar split) and a separate text-or-icon display toggle
+- Site Options page: defaults are now labeled, a Reset button clears all browser-local preferences, and the signed-in/avatar header now renders correctly on options, privacy, scoring, stats, and terms (the supabase library wasn't being loaded on those pages)
+- GOG and Epic store glyphs redrawn so they keep their brand shape (white GOG disc, dark Epic shield) instead of being squashed into a generic circle
+- Admin Reports tab adds a "Pending approval" filter and approval-aware status badges: rows in user_configs without a matching `report_approvals` row now show as pending instead of being silently mixed in with "Clean"
+- Admin Reports App link goes to the specific report's permalink for approved-and-visible rows; pending, flagged, and hidden rows keep the game-level link since the permalink would 404 there
+- Report permalink anchor moved to wrap the whole report block so navigating to `#report-r<id>` lands on the top of the visible report instead of the footer area, with a topbar offset so the report header isn't tucked behind the fixed toolbar
+- Framegen signal icon now reads green when not required and red when required, matching how readers interpret "did this game need framegen help?"
+- My Reports page no longer shows the same report twice when one row stored `app_id` as a number and another as a string
+
 ## v1.4.1
 
 - GOG and Epic game pages now load their data from the correct directory (the pipeline writes `gog_123/` but five frontend call sites were requesting `gog:123/`)
