@@ -540,29 +540,17 @@ html[data-motion="off"] .banner-atoms {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.search-dropdown .sd-counts {
+/* App id is the row-two subline now (the old report-count line went away).
+   Mono + muted so long Epic / GOG ids stay readable without competing
+   with the title. */
+.search-dropdown .sd-appid {
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   color: var(--muted);
   letter-spacing: 0.04em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-/* App id now sits on the LEFT of the row (between thumbnail and title),
-   in mono so long Epic / GOG ids stay readable but don't push the title
-   around. */
-.search-dropdown .sd-appid--left {
-  flex-shrink: 0;
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  color: var(--muted);
-  max-width: 90px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  align-self: center;
-  margin-left: 2px;
 }
 /* Split chip on the trailing edge of the row -- tier color on the left,
    store color on the right. Mirrors the .game-card-combo-tag styling on
@@ -598,7 +586,7 @@ html[data-motion="off"] .banner-atoms {
 .search-dropdown .sd-combo[data-store="gog"]  .sd-combo-store { background: #7a3fcf; }
 .search-dropdown .sd-combo[data-store="epic"] .sd-combo-store { background: #2a2a2a; }
 @media (max-width: 540px) {
-  .search-dropdown .sd-appid--left { max-width: 56px; font-size: 0.58rem; }
+  .search-dropdown .sd-appid { font-size: 0.62rem; }
   .search-dropdown .sd-combo { font-size: 0.55rem; }
   .search-dropdown .sd-combo .sd-combo-tier,
   .search-dropdown .sd-combo .sd-combo-store { padding: 3px 6px; }

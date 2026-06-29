@@ -760,15 +760,6 @@
         const safe = display.replace(/[<>&]/g, function (c) {
           return { '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c];
         });
-        // Build the counts subline only if either count is present; older
-        // search-index.json deployments without these fields render the old
-        // way (no subline, no tier badge)
-        const counts = [];
-        if (r.protondbCount) counts.push(r.protondbCount + ' ProtonDB');
-        if (r.pulseCount) counts.push(r.pulseCount + ' Pulse');
-        const countsHtml = counts.length
-          ? '<span class="sd-counts">' + counts.join(' + ') + '</span>'
-          : '';
         const idStr = String(r.appId);
         const inferredStore = r.appType
           ? r.appType
@@ -778,10 +769,10 @@
         const storeLabel = inferredStore === 'gog' ? 'GOG'
                          : inferredStore === 'epic' ? 'Epic'
                          : 'Steam';
-        // Single split chip on the right edge that mirrors the .game-card
-        // combined corner chip (tier color on the left, store color on the
-        // right). App id moves to the left of the title so the right edge
-        // belongs entirely to the chip.
+        // Split chip on the trailing edge that mirrors the .game-card combo
+        // corner chip (tier color on the left, store color on the right).
+        // The app id is the row-two subline (replacing the old report-count
+        // line) so the thumbnail flows straight into the title.
         const tierAttr = r.tier ? r.tier.toLowerCase() : '';
         const tierLabel = r.tier ? r.tier.toUpperCase() : 'NO RATING';
         const comboHtml = '<span class="sd-combo" data-tier="' + tierAttr + '" data-store="' + inferredStore + '">' +
@@ -791,10 +782,9 @@
         return '<a href="app.html#/app/' + r.appId + '" role="option" data-idx="' + idx + '">' +
                '<img loading="lazy" data-appid="' + r.appId + '" src="' + steamHeader(r.appId) + '" alt="" ' +
                  'onerror="window.__steamImgLoad && window.__steamImgLoad(this)">' +
-               '<span class="sd-appid sd-appid--left" title="' + idStr + '">' + idStr + '</span>' +
                '<span class="sd-meta">' +
                  '<span class="sd-title">' + safe + '</span>' +
-                 countsHtml +
+                 '<span class="sd-appid" title="' + idStr + '">' + idStr + '</span>' +
                '</span>' +
                comboHtml +
                '</a>';
