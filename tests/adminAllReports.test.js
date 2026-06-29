@@ -4,12 +4,21 @@ function makeSession() {
   return { access_token: 'tok', user: { id: 'uid' } };
 }
 
-function loadApi(fetchImpl) {
+// Default approval mock: empty list (every row reads as pending). Tests that
+// care about approval state override `approvalsImpl`.
+function loadApi(fetchImpl, { approvalsImpl } = {}) {
   const calls = [];
   const ctx = {
     SUPABASE_URL: 'https://sb.example',
     supabaseHeaders: (s, extra = {}) => ({ Authorization: 'Bearer tok', apikey: 'anon', ...extra }),
-    fetch: (url, opts) => { calls.push({ url, opts }); return fetchImpl(url, opts); },
+    fetch: (url, opts) => {
+      calls.push({ url, opts });
+      if (url.includes('/report_approvals')) {
+        const impl = approvalsImpl || (() => Promise.resolve({ ok: true, json: () => Promise.resolve([]) }));
+        return impl(url, opts);
+      }
+      return fetchImpl(url, opts);
+    },
   };
   loadEsm(['js/admin/api/allReports.js'], ctx);
   return { ctx, calls };
@@ -18,15 +27,53 @@ function loadApi(fetchImpl) {
 describe('fetchAllReports', () => {
   test('fetches user_configs ordered by created_at desc, defaults to clean', async () => {
     const rows = [{ id: 1, app_id: '730', title: 'Counter-Strike 2', rating: 'platinum', source: 'pulse', created_at: '2025-01-01T00:00:00Z' }];
-    const { ctx, calls } = loadApi(() => Promise.resolve({ ok: true, json: () => Promise.resolve(rows) }));
+    const { ctx, calls } = loadApi(
+      () => Promise.resolve({ ok: true, json: () => Promise.resolve(rows) }),
+      { approvalsImpl: () => Promise.resolve({ ok: true, json: () => Promise.resolve([{ report_id: 1 }]) }) },
+    );
 
     const result = await ctx.fetchAllReports(makeSession());
 
-    expect(result).toEqual(rows);
-    expect(calls).toHaveLength(1);
-    expect(calls[0].url).toContain('/user_configs');
-    expect(calls[0].url).toContain('order=created_at.desc');
-    expect(calls[0].url).toContain('is_flagged=eq.false');
+    expect(result).toEqual([{ ...rows[0], is_pending: false }]);
+    const userCfgCall = calls.find(c => c.url.includes('/user_configs'));
+    expect(userCfgCall).toBeTruthy();
+    expect(userCfgCall.url).toContain('order=created_at.desc');
+    expect(userCfgCall.url).toContain('is_flagged=eq.false');
+    expect(calls.some(c => c.url.includes('/report_approvals'))).toBe(true);
+  });
+
+  test('clean status filters out reports without an approval row', async () => {
+    const rows = [
+      { id: 1, app_id: '730', title: 'Approved game', created_at: '2025-01-01' },
+      { id: 2, app_id: '731', title: 'Pending game',  created_at: '2025-01-02' },
+    ];
+    const { ctx } = loadApi(
+      () => Promise.resolve({ ok: true, json: () => Promise.resolve(rows) }),
+      { approvalsImpl: () => Promise.resolve({ ok: true, json: () => Promise.resolve([{ report_id: 1 }]) }) },
+    );
+
+    const result = await ctx.fetchAllReports(makeSession(), { status: 'clean' });
+
+    expect(result).toHaveLength(1);
+    expect(result[0].id).toBe(1);
+    expect(result[0].is_pending).toBe(false);
+  });
+
+  test('pending status keeps only reports without an approval row', async () => {
+    const rows = [
+      { id: 1, app_id: '730', created_at: '2025-01-01' },
+      { id: 2, app_id: '731', created_at: '2025-01-02' },
+    ];
+    const { ctx } = loadApi(
+      () => Promise.resolve({ ok: true, json: () => Promise.resolve(rows) }),
+      { approvalsImpl: () => Promise.resolve({ ok: true, json: () => Promise.resolve([{ report_id: 1 }]) }) },
+    );
+
+    const result = await ctx.fetchAllReports(makeSession(), { status: 'pending' });
+
+    expect(result).toHaveLength(1);
+    expect(result[0].id).toBe(2);
+    expect(result[0].is_pending).toBe(true);
   });
 
   test('applies date range filter when provided', async () => {
@@ -82,13 +129,29 @@ describe('fetchAllReports', () => {
 describe('fetchReportById', () => {
   test('fetches a single report by id from user_configs', async () => {
     const report = { id: 42, app_id: '730', title: 'Counter-Strike 2', is_flagged: false, is_hidden: false };
-    const { ctx, calls } = loadApi(() => Promise.resolve({ ok: true, json: () => Promise.resolve([report]) }));
+    const { ctx, calls } = loadApi(
+      () => Promise.resolve({ ok: true, json: () => Promise.resolve([report]) }),
+      { approvalsImpl: () => Promise.resolve({ ok: true, json: () => Promise.resolve([{ report_id: 42 }]) }) },
+    );
 
     const result = await ctx.fetchReportById(makeSession(), '42');
 
-    expect(result).toEqual(report);
-    expect(calls[0].url).toContain('user_configs');
-    expect(calls[0].url).toContain('id=eq.42');
+    expect(result).toEqual({ ...report, is_pending: false });
+    const userCfgCall = calls.find(c => c.url.includes('/user_configs'));
+    expect(userCfgCall.url).toContain('id=eq.42');
+    expect(calls.some(c => c.url.includes('/report_approvals') && c.url.includes('report_id=eq.42'))).toBe(true);
+  });
+
+  test('marks report as pending when no approval row exists', async () => {
+    const report = { id: 42, app_id: '730', title: 'Counter-Strike 2', is_flagged: false, is_hidden: false };
+    const { ctx } = loadApi(
+      () => Promise.resolve({ ok: true, json: () => Promise.resolve([report]) }),
+      { approvalsImpl: () => Promise.resolve({ ok: true, json: () => Promise.resolve([]) }) },
+    );
+
+    const result = await ctx.fetchReportById(makeSession(), '42');
+
+    expect(result.is_pending).toBe(true);
   });
 
   test('throws when report is not found', async () => {

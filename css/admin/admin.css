@@ -988,6 +988,7 @@ pre.flag-raw-json {
 .admin-badge--warn  { background: rgba(212,168,67,0.18);  color: #d4a843; }
 .admin-badge--muted { background: rgba(255,255,255,0.07); color: var(--text-muted, #888); }
 .admin-badge--ok    { background: rgba(152,195,121,0.15); color: #98c379; }
+.admin-badge--info  { background: rgba(97,175,239,0.15);  color: #61afef; }
 .admin-badge--regex { background: rgba(97,175,239,0.15);  color: #61afef; }
 
 /* Cache status panel */

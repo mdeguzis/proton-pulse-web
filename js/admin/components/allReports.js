@@ -1,14 +1,18 @@
 import { escapeHtml, fmtDateTime } from '../utils.js?v=bd5a67c2';
-import { fetchAllReports } from '../api/allReports.js?v=3540a5a1';
+import { fetchAllReports } from '../api/allReports.js?v=805161ee';
 
-function statusBadges(isF, isH) {
+function statusBadges(isF, isH, isP) {
+  // Flagged and hidden take precedence (moderator action). Pending is shown
+  // only when the row is neither -- a fresh or edited report still waiting
+  // for the daily approval pipeline.
   if (isF || isH) {
     return [
       isF ? '<span class="admin-badge admin-badge--warn">flagged</span>' : '',
       isH ? '<span class="admin-badge admin-badge--muted">hidden</span>'  : '',
     ].filter(Boolean).join(' ');
   }
-  return '';
+  if (isP) return '<span class="admin-badge admin-badge--info">pending</span>';
+  return '<span class="admin-badge admin-badge--ok">approved</span>';
 }
 
 function actionBtns(id, isF, isH) {
@@ -74,7 +78,7 @@ export async function renderAllReports(session) {
       const userObj = escapeHtml(JSON.stringify({ proton_pulse_user_id: uid, client_id: cid, username: uid || cid || 'anon' }));
       const userBtn = `<button class="admin-btn admin-btn--ghost admin-btn--sm" data-action="view-user-detail" data-userobj='${userObj}'>Details</button>`;
 
-      return `<tr data-rid="${rid}">
+      return `<tr data-rid="${rid}" data-pending="${r.is_pending ? '1' : '0'}">
         <td><button class="admin-link-btn" data-action="ar-view-detail" data-rid="${rid}">#${rid}</button></td>
         <td>${appLink}</td>
         <td>${title}</td>
@@ -82,7 +86,7 @@ export async function renderAllReports(session) {
         <td>${appType}</td>
         <td>${userBtn}</td>
         <td>${date}</td>
-        <td class="ar-status">${statusBadges(r.is_flagged, r.is_hidden)}</td>
+        <td class="ar-status">${statusBadges(r.is_flagged, r.is_hidden, r.is_pending)}</td>
         <td class="ar-actions">${actionBtns(r.id, r.is_flagged, r.is_hidden)}</td>
       </tr>`;
     }).join('');
@@ -98,9 +102,10 @@ export async function renderAllReports(session) {
 export function updateAllReportsRow(id, isF, isH) {
   const row = document.querySelector(`#all-reports-tbody tr[data-rid="${CSS.escape(String(id))}"]`);
   if (!row) return;
+  const isP = row.dataset.pending === '1';
   const statusCell  = row.querySelector('.ar-status');
   const actionsCell = row.querySelector('.ar-actions');
-  if (statusCell)  statusCell.innerHTML  = statusBadges(isF, isH);
+  if (statusCell)  statusCell.innerHTML  = statusBadges(isF, isH, isP);
   if (actionsCell) actionsCell.innerHTML = actionBtns(id, isF, isH);
 }
 
@@ -143,6 +148,7 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
 
   const isF = report.is_flagged;
   const isH = report.is_hidden;
+  const isP = report.is_pending === true;
   const rid = escapeHtml(String(report.id));
   const actionHtml = (isF || isH)
     ? `<button class="admin-btn admin-btn--ok" data-action="ar-release" data-rid="${rid}">Release</button>`
@@ -153,7 +159,7 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
     <button class="admin-btn admin-btn--sm admin-btn--ghost" data-action="ar-back" style="margin-bottom:12px">&#8592; Back to list</button>
     <div class="admin-card">
       <div class="admin-subhead">Report Detail</div>
-      <div id="ar-detail-status" style="margin-bottom:10px">${statusBadges(isF, isH)}</div>
+      <div id="ar-detail-status" style="margin-bottom:10px">${statusBadges(isF, isH, isP)}</div>
       <table class="admin-table" style="margin-bottom:16px">
         <tbody>
           ${fields.map(([label, value]) => `
