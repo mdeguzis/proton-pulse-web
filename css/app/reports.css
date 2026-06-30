@@ -294,6 +294,9 @@ a.card:active { transform: translateY(1px); }
   max-width: 128px;
   flex-shrink: 0;
   padding-right: 10px;
+  /* #151: bottom breathing room so the "N reports / Xh" line is not
+     flush against the card border below. */
+  padding-bottom: 8px;
   border-right: 1px solid var(--border);
 }
 .author-avatar {
