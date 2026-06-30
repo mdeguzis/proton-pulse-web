@@ -307,14 +307,40 @@
   word-break: break-all;
   white-space: normal;
 }
-/* Two-row banner layout: top row carries the badge + summary, bottom
-   row dedicates a full line to the approval hash so a 32-char md5 stays
-   fully visible on narrow screens. */
-.submit-approval-banner-row { display: block; }
-.submit-approval-banner-hash {
+/* #149: collapsible approval banner. Summary row stays compact (badge
+   + Report #N + See all details link); expanded section drops the
+   approved date, by, and the full hash on their own rows. */
+.submit-approval-banner-details > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.submit-approval-banner-details > summary::-webkit-details-marker { display: none; }
+.submit-approval-banner-report { font-weight: 600; }
+.submit-approval-banner-toggle {
+  margin-left: auto;
+  color: var(--accent, #5c8bd6);
+  font-size: 0.78rem;
+}
+.submit-approval-banner-toggle::before { content: "\25B6 "; opacity: 0.7; }
+.submit-approval-banner-details[open] > summary .submit-approval-banner-toggle::before { content: "\25BC "; }
+.submit-approval-banner-details[open] > summary .submit-approval-banner-toggle { font-weight: 600; }
+.submit-approval-banner-details > summary:hover .submit-approval-banner-toggle { text-decoration: underline; }
+.submit-approval-banner-field {
   margin-top: 6px;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: var(--muted, #b8c0c8);
+}
+.submit-approval-banner-label {
+  display: inline-block;
+  min-width: 70px;
+  color: var(--text-muted, #888);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 6px;
 }
 .submit-approval-badge {
   display: inline-block;

@@ -229,15 +229,21 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
           const banner = document.createElement('div');
           banner.className = 'submit-approval-banner';
           if (approval) {
-            // #147 follow-up: show the full hash on its own row instead of
-            // truncating to 12 chars. Verification flows (e.g. comparing
-            // against a stored value) need the whole digest to be readable.
+            // #149: collapsed default state. Header line shows the badge +
+            // report number; everything else lives behind a native
+            // <details>/<summary> expander, one field per row so a long
+            // md5 hash never has to fit on the same line as a date.
             banner.innerHTML = `
-              <div class="submit-approval-banner-row">
-                <span class="submit-approval-badge submit-approval-badge--approved">Approved</span>
-                Report #${editReportId} | Approved: ${new Date(approval.approved_at).toLocaleDateString()} | By: ${approval.approved_by || 'pipeline'}
-              </div>
-              <div class="submit-approval-banner-hash">Hash: <code>${approval.approval_hash}</code></div>`;
+              <details class="submit-approval-banner-details">
+                <summary class="submit-approval-banner-summary">
+                  <span class="submit-approval-badge submit-approval-badge--approved">Approved</span>
+                  <span class="submit-approval-banner-report">Report #${editReportId}</span>
+                  <span class="submit-approval-banner-toggle">See all details</span>
+                </summary>
+                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">Approved</span> ${new Date(approval.approved_at).toLocaleDateString()}</div>
+                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">By</span> ${approval.approved_by || 'pipeline'}</div>
+                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">Hash</span> <code>${approval.approval_hash}</code></div>
+              </details>`;
           } else {
             banner.innerHTML = `<span class="submit-approval-badge submit-approval-badge--pending">Pending Approval</span> Report #${editReportId} | This report is awaiting review. It will not appear publicly until approved. Reference this ID if you need to request a manual review.`;
           }
