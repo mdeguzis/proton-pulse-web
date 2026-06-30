@@ -22,13 +22,10 @@ module.exports = {
     'js/admin/api/allReports.js',
     'js/admin/api/analytics.js',
     'js/admin/api/pending.js',
+    'js/profile/utils.js',
     'js/lib/analytics.js',
     'js/lib/app-id.js',
     'js/lib/gpu-arch-detector.js',
-    // js/profile/utils.js is a large legacy module without direct
-    // require-based coverage yet; add when behavioral tests land
-    // (existing profileSystems.test.js uses vm/loadEsm which Istanbul
-    // does not instrument).
   ],
   coverageThreshold: {
     global: {
