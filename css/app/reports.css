@@ -618,21 +618,28 @@ a.card:active { transform: translateY(1px); }
 .card-summary .label { color: var(--muted); min-width: 100px; }
 .card-summary .notes-full { white-space: pre-wrap; line-height: 1.5; color: #a0b4c4; }
 /* #22: blurred spoiler spans in notes. Click or focus+Enter toggles
-   .revealed which lifts the blur. Keep a subtle background so unrevealed
-   spans are still locatable even when the text behind is short. */
+   .revealed which lifts the blur. The unrevealed state is intentionally
+   loud -- accent-bordered block + heavy blur -- so it reads as a
+   deliberate spoiler region rather than a faint visual artefact. */
 .spoiler {
-  filter: blur(6px);
-  background: rgba(255,255,255,0.06);
+  display: inline-block;
+  filter: blur(10px);
+  background: rgba(92,139,214,0.18);
+  border: 1px solid rgba(92,139,214,0.55);
+  color: var(--accent, #5c8bd6);
   border-radius: 3px;
-  padding: 0 4px;
+  padding: 0 6px;
   cursor: pointer;
   user-select: none;
-  transition: filter 150ms ease;
+  transition: filter 150ms ease, background 150ms ease;
 }
+.spoiler:hover { background: rgba(92,139,214,0.28); }
 .spoiler:focus-visible { outline: 2px solid var(--accent, #5c8bd6); outline-offset: 2px; }
 .spoiler.revealed {
   filter: none;
-  background: rgba(255,255,255,0.02);
+  background: rgba(92,139,214,0.06);
+  border-color: rgba(92,139,214,0.25);
+  color: inherit;
   cursor: default;
 }
 /* Detail buttons snug up against the row above instead of drifting with a
