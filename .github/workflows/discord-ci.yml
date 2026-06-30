@@ -7,7 +7,7 @@ on:
     # intentionally excluded -- if Discord is down they would not be able to
     # report their own failure anyway.
     workflows:
-      - Update ProtonDB Data
+      - Build Site Data
       - CI
       - Deploy Supabase Edge Functions
       - Backup

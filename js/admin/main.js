@@ -6,19 +6,20 @@ import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=5e2c6
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=0d6ec118';
 import { renderBanned } from './components/banned.js?v=7bb95620';
 import { fetchAllUsers } from './api/users.js?v=0acf098a';
-import { renderUsers } from './components/users.js?v=8907b4fa';
+import { renderUsers } from './components/users.js?v=6d46e622';
 import { fetchAdmins, addAdmin, removeAdmin, updateAdminRole } from './api/admins.js?v=2ad9f027';
 import { renderAdmins, renderNewAdminEditor } from './components/admins.js?v=04c577e8';
 import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ac74cb89';
 import { renderPhrases } from './components/phrases.js?v=5fb05dc2';
 import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965';
-import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=2bb0cee1';
-import { renderUserDetail } from './components/userDetail.js?v=62542337';
-import { fetchAnalytics } from './api/analytics.js?v=79ced8b7';
-import { renderAnalytics } from './components/analytics.js?v=878b5818';
+import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=28cb08af';
+import { renderUserDetail } from './components/userDetail.js?v=5ff164c0';
+import { fetchAnalytics } from './api/analytics.js?v=ad63b2e7';
+import { renderAnalytics } from './components/analytics.js?v=0e977dd7';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=ff236263';
-import { patchReportFlags, fetchReportById } from './api/allReports.js?v=805161ee';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=c8c8396a';
+import { patchReportFlags, fetchReportById } from './api/allReports.js?v=7e28c862';
+import { approveReport } from './api/pending.js?v=84292a58';
 
 // ---------------------------------------------------------------------------
 // State
@@ -122,6 +123,24 @@ async function loadAllReports() {
   await renderAllReports(currentSession);
 }
 
+// #48: helper that prompts a moderator for a free-text reason before
+// applying a flag or hide. Returning null means the prompt was cancelled
+// and the caller should abort -- a confirmed empty string is treated the
+// same so an admin who clicks OK with nothing typed does not silently
+// blank the flagged_reason column.
+function promptFlagReason(action) {
+  const verb = action === 'ar-hide' ? 'hide' : 'flag';
+  const raw = window.prompt(
+    `Reason to ${verb} this report? (e.g. spam, test, fake-id, off-topic)\n` +
+    `Cancel to abort.`
+  );
+  if (raw === null) return null;
+  const trimmed = raw.trim();
+  if (!trimmed) return null;
+  // Cap the stored reason so an accidental paste does not blow up the row.
+  return trimmed.slice(0, 200);
+}
+
 async function loadReportDetail(id) {
   const url = new URL(window.location.href);
   url.searchParams.set('reportid', String(id));
@@ -143,14 +162,51 @@ async function loadReportDetail(id) {
       onAction: async (action, rid, btn) => {
         try {
           if (action === 'ar-flag') {
-            await patchReportFlags(currentSession, rid, { is_flagged: true });
-            updateAllReportsRow(rid, true, false);
+            const reason = promptFlagReason(action);
+            if (reason === null) { if (btn) btn.disabled = false; return; }
+            await patchReportFlags(currentSession, rid, {
+              is_flagged: true,
+              flagged_reason: reason,
+              flagged_at: new Date().toISOString(),
+            });
+            updateAllReportsRow(rid, true, false, reason);
           } else if (action === 'ar-hide') {
-            await patchReportFlags(currentSession, rid, { is_flagged: true, is_hidden: true });
-            updateAllReportsRow(rid, true, true);
+            const reason = promptFlagReason(action);
+            if (reason === null) { if (btn) btn.disabled = false; return; }
+            await patchReportFlags(currentSession, rid, {
+              is_flagged: true,
+              is_hidden: true,
+              flagged_reason: reason,
+              flagged_at: new Date().toISOString(),
+            });
+            updateAllReportsRow(rid, true, true, reason);
           } else if (action === 'ar-release') {
-            await patchReportFlags(currentSession, rid, { is_flagged: false, is_hidden: false });
-            updateAllReportsRow(rid, false, false);
+            await patchReportFlags(currentSession, rid, {
+              is_flagged: false,
+              is_hidden: false,
+              flagged_reason: null,
+              flagged_at: null,
+            });
+            updateAllReportsRow(rid, false, false, null);
+          } else if (action === 'ar-approve') {
+            // #146: same approval row the Pending Approvals tab writes,
+            // so the next pipeline pass keeps the report public.
+            await approveReport(currentSession, report);
+            updateAllReportsRow(rid, false, false, null, false);
+          } else if (action === 'ar-deny') {
+            // #146: Deny prompts for a reason and shuts the report out
+            // of the public listing (is_hidden + is_flagged). Same data
+            // shape as Hide, just a different button label so the
+            // moderation intent reads cleanly in the audit trail.
+            const reason = promptFlagReason(action);
+            if (reason === null) { if (btn) btn.disabled = false; return; }
+            await patchReportFlags(currentSession, rid, {
+              is_flagged: true,
+              is_hidden: true,
+              flagged_reason: 'denied: ' + reason,
+              flagged_at: new Date().toISOString(),
+            });
+            updateAllReportsRow(rid, true, true, 'denied: ' + reason, false);
           }
           window.ppToast?.success('Report updated.');
         } catch (err) {
@@ -616,26 +672,6 @@ function wireEvents() {
       const rid = btn.dataset.rid;
       if (!rid) return;
       loadReportDetail(rid);
-      return;
-    }
-
-    const rid = btn.dataset.rid;
-    if (!rid) return;
-    btn.disabled = true;
-    try {
-      if (action === 'ar-flag') {
-        await patchReportFlags(currentSession, rid, { is_flagged: true });
-        updateAllReportsRow(rid, true, false);
-      } else if (action === 'ar-hide') {
-        await patchReportFlags(currentSession, rid, { is_flagged: true, is_hidden: true });
-        updateAllReportsRow(rid, true, true);
-      } else if (action === 'ar-release') {
-        await patchReportFlags(currentSession, rid, { is_flagged: false, is_hidden: false });
-        updateAllReportsRow(rid, false, false);
-      }
-    } catch (err) {
-      btn.disabled = false;
-      window.ppToast?.error(err.message);
     }
   });
 
@@ -677,6 +713,9 @@ function wireEvents() {
       }
     }
     if (action === 'view-user-detail') {
+      // The trigger is now an anchor (#139) so stop the default # nav before
+      // routing to the detail view.
+      e.preventDefault();
       let user;
       try {
         user = JSON.parse(btn.dataset.userobj);
@@ -695,6 +734,14 @@ function wireEvents() {
     const action = btn.dataset.action;
     if (action === 'back-to-users') {
       activateTab(userDetailReturnTab);
+    }
+    if (action === 'ar-view-detail') {
+      // #150: unified row template -- clicking #NNN on a report row
+      // inside the user detail opens the same report detail panel the
+      // All Reports table uses.
+      const rid = btn.dataset.rid;
+      if (rid) loadReportDetail(rid);
+      return;
     }
     if (action === 'ban-from-detail') {
       openBanModal(btn.dataset.userid || null, btn.dataset.clientid || null, btn.dataset.username);

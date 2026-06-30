@@ -1,6 +1,6 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=0dae1257';
-import { populateSubmitForm, prefillSubmitFormFromMyHardware, submitReport } from '../shared/submit.js?v=1a4ae53c';
+import { populateSubmitForm, prefillSubmitFormFromMyHardware, submitReport } from '../shared/submit.js?v=113ce5ad';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
@@ -122,6 +122,36 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
   // In edit mode, pre-fill from existing report; otherwise fall back to saved hardware
   if (isEdit && session) {
+    // #144: warn before editing a currently-published report. Fetch the
+    // approval row first so we know whether the report is live. If the
+    // user cancels, bounce them back to where they came from instead of
+    // prefilling the form (avoids them seeing a half-loaded edit they
+    // didn't want to start).
+    try {
+      const preCheckRes = await fetch(
+        `${SUPABASE_URL}/rest/v1/report_approvals?report_id=eq.${editReportId}&select=approval_hash&limit=1`,
+        { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}` } }
+      );
+      const preCheckRows = preCheckRes.ok ? await preCheckRes.json() : [];
+      const isCurrentlyPublished = preCheckRows.length > 0;
+      if (isCurrentlyPublished) {
+        const proceed = window.confirm(
+          'This report is currently published. Editing it puts it back into ' +
+          'pending review until the daily pipeline re-approves it. Continue?'
+        );
+        if (!proceed) {
+          const dest = returnTo || `app.html#/app/${appId}`;
+          window.location.href = dest;
+          return;
+        }
+      }
+    } catch (err) {
+      // Approval pre-check is best-effort. A network blip should not block
+      // the edit flow; the form still loads and the inline banner below
+      // will reflect the actual status once it does come back.
+      console.warn('[submit] edit pre-check failed:', err);
+    }
+
     try {
       const r = await fetch(
         `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${encodeURIComponent(editReportId)}&select=*&limit=1`,
@@ -199,7 +229,21 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
           const banner = document.createElement('div');
           banner.className = 'submit-approval-banner';
           if (approval) {
-            banner.innerHTML = `<span class="submit-approval-badge submit-approval-badge--approved">Approved</span> Report #${editReportId} | Hash: <code>${approval.approval_hash.slice(0, 12)}...</code> | Approved: ${new Date(approval.approved_at).toLocaleDateString()} | By: ${approval.approved_by || 'pipeline'}`;
+            // #149: collapsed default state. Header line shows the badge +
+            // report number; everything else lives behind a native
+            // <details>/<summary> expander, one field per row so a long
+            // md5 hash never has to fit on the same line as a date.
+            banner.innerHTML = `
+              <details class="submit-approval-banner-details">
+                <summary class="submit-approval-banner-summary">
+                  <span class="submit-approval-badge submit-approval-badge--approved">Approved</span>
+                  <span class="submit-approval-banner-report">Report #${editReportId}</span>
+                  <span class="submit-approval-banner-toggle">See all details</span>
+                </summary>
+                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">Approved</span> ${new Date(approval.approved_at).toLocaleDateString()}</div>
+                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">By</span> ${approval.approved_by || 'Auto-Moderator'}</div>
+                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">Hash</span> <code>${approval.approval_hash}</code></div>
+              </details>`;
           } else {
             banner.innerHTML = `<span class="submit-approval-badge submit-approval-badge--pending">Pending Approval</span> Report #${editReportId} | This report is awaiting review. It will not appear publicly until approved. Reference this ID if you need to request a manual review.`;
           }

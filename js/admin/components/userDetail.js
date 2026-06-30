@@ -1,7 +1,7 @@
 // userDetail (component) for the admin page - renders the full user detail screen.
 
 import { escapeHtml, fmtDateTime, ROLE_LABELS, roleLabel } from '../utils.js?v=bd5a67c2';
-import { deleteUserReport, hideUserReport, editUserReport, eraseUser } from '../api/userDetail.js?v=2bb0cee1';
+import { deleteUserReport, hideUserReport, editUserReport, eraseUser } from '../api/userDetail.js?v=28cb08af';
 
 function idRow(label, value) {
   if (!value) {
@@ -30,32 +30,59 @@ function memberSince(reports) {
   return escapeHtml(fmtDateTime(earliest.created_at));
 }
 
+// #150: mirror the badge logic from components/allReports.js so the
+// "Status" cell renders the same approved / pending / flagged / hidden
+// badges with the same flagged_reason tooltip.
+function statusBadgesForUserRow(r) {
+  const isF = r.is_flagged;
+  const isH = r.is_hidden;
+  const reason = r.flagged_reason;
+  if (isF || isH) {
+    const titleAttr = reason ? ` title="${escapeHtml(String(reason))}"` : '';
+    return [
+      isF ? `<span class="admin-badge admin-badge--warn"${titleAttr}>flagged</span>` : '',
+      isH ? `<span class="admin-badge admin-badge--muted"${titleAttr}>hidden</span>`  : '',
+    ].filter(Boolean).join(' ');
+  }
+  // Without an approval check, we cannot tell pending from approved here,
+  // so default to a neutral "submitted" badge. Click into the report
+  // detail to see the canonical approval state.
+  return '<span class="admin-badge admin-badge--info">submitted</span>';
+}
+
 function renderReportsTable(reports) {
   if (!reports.length) {
     return `<p class="admin-empty" style="padding:8px 0">No reports submitted yet.</p>`;
   }
+  // #150: row structure matches the All Reports table (minus the User
+  // column, which is implicit in user-detail) so a moderator gets the
+  // same visual scan in both contexts. Edit/Hide/Delete still live in
+  // a trailing Actions cell because they are user-detail specific row
+  // operations (the report detail toolbar handles approve/deny/flag
+  // moderation; these are account cleanup tools).
   const rows = reports.map(r => {
-    const id         = escapeHtml(String(r.id));
-    const title      = escapeHtml(r.title || r.app_id || '—');
-    const rating     = escapeHtml(r.rating || '—');
-    const proton     = escapeHtml(r.proton_version || '—');
-    const date       = escapeHtml(fmtDateTime(r.created_at));
-    const source     = escapeHtml(r.source || '—');
-    const hiddenFlag = r.is_hidden  ? '<span class="user-detail-flag user-detail-flag--warn">hidden</span>'  : '';
-    const flagged    = r.is_flagged ? '<span class="user-detail-flag user-detail-flag--danger">flagged</span>' : '';
-    const appId      = escapeHtml(String(r.app_id || ''));
-    const gameLink   = r.app_id
-      ? `<a class="admin-link" href="/app.html#/app/${appId}" target="_blank">${title}</a>`
-      : title;
-    const hideLabel  = r.is_hidden ? 'Restore' : 'Hide';
-    const hideClass  = r.is_hidden ? 'admin-btn--ok' : 'admin-btn--warn';
+    const id        = escapeHtml(String(r.id));
+    const appId     = r.app_id ? escapeHtml(String(r.app_id)) : null;
+    const isPublic  = appId && !r.is_flagged && !r.is_hidden;
+    const appLink   = appId
+      ? (isPublic
+          ? `<a class="admin-link" href="app.html#/app/${appId}#report-r${id}" target="_blank" title="Open this report on the public page">App ${appId}</a>`
+          : `<a class="admin-link" href="app.html#/app/${appId}" target="_blank" title="Open the game's report list">App ${appId}</a>`)
+      : 'Unknown';
+    const title     = escapeHtml(r.title || '');
+    const source    = escapeHtml(r.source || '');
+    const appType   = escapeHtml(r.app_type || 'steam');
+    const date      = escapeHtml(fmtDateTime(r.created_at));
+    const hideLabel = r.is_hidden ? 'Restore' : 'Hide';
+    const hideClass = r.is_hidden ? 'admin-btn--ok' : 'admin-btn--warn';
     return `<tr data-report-id="${id}">
-      <td>${gameLink}</td>
-      <td>${rating}</td>
-      <td>${proton}</td>
-      <td>${date}</td>
+      <td><button class="admin-link-btn" data-action="ar-view-detail" data-rid="${id}">#${id}</button></td>
+      <td>${appLink}</td>
+      <td>${title}</td>
       <td>${source}</td>
-      <td>${hiddenFlag}${flagged}</td>
+      <td>${appType}</td>
+      <td>${date}</td>
+      <td>${statusBadgesForUserRow(r)}</td>
       <td class="admin-col-actions">
         <button class="admin-btn admin-btn--sm" data-action="edit-report" data-id="${id}"
           data-rating="${escapeHtml(r.rating||'')}" data-proton="${escapeHtml(r.proton_version||'')}"
@@ -67,7 +94,7 @@ function renderReportsTable(reports) {
   }).join('');
   return `<table class="admin-table user-detail-table">
     <thead><tr>
-      <th>Game</th><th>Rating</th><th>Proton</th><th>Date</th><th>Source</th><th>Flags</th><th>Actions</th>
+      <th>Report ID</th><th>App</th><th>Title</th><th>Source</th><th>Store</th><th>Submitted</th><th>Status</th><th>Actions</th>
     </tr></thead>
     <tbody>${rows}</tbody>
   </table>`;

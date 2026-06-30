@@ -83,7 +83,7 @@ def approve_reports(pending):
             'report_id': report['id'],
             'approval_hash': hash_val,
             'approved_at': 'now()',
-            'approved_by': 'pipeline',
+            'approved_by': 'Auto-Moderator',
         })
 
     # Batch upsert via PostgREST

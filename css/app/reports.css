@@ -294,6 +294,9 @@ a.card:active { transform: translateY(1px); }
   max-width: 128px;
   flex-shrink: 0;
   padding-right: 10px;
+  /* #151: bottom breathing room so the "N reports / Xh" line is not
+     flush against the card border below. */
+  padding-bottom: 8px;
   border-right: 1px solid var(--border);
 }
 .author-avatar {
@@ -614,6 +617,39 @@ a.card:active { transform: translateY(1px); }
 .card-summary .row:last-child { border-bottom: none; }
 .card-summary .label { color: var(--muted); min-width: 100px; }
 .card-summary .notes-full { white-space: pre-wrap; line-height: 1.5; color: #a0b4c4; }
+/* #22: spoiler spans render as a clear "Reveal spoiler text" button
+   until clicked. The actual content lives in a nested .spoiler-content
+   span that swaps in when .revealed is set. This is much more
+   discoverable than the previous blur-only treatment, which was hard
+   to spot on shorter spoilers. */
+.spoiler {
+  display: inline-block;
+  background: rgba(92,139,214,0.18);
+  border: 1px solid rgba(92,139,214,0.55);
+  color: var(--accent, #5c8bd6);
+  border-radius: 3px;
+  padding: 1px 8px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: background 150ms ease;
+}
+.spoiler::before { content: "Reveal spoiler text"; }
+.spoiler > .spoiler-content { display: none; }
+.spoiler:hover { background: rgba(92,139,214,0.28); }
+.spoiler:focus-visible { outline: 2px solid var(--accent, #5c8bd6); outline-offset: 2px; }
+.spoiler.revealed {
+  background: rgba(92,139,214,0.08);
+  border-color: rgba(92,139,214,0.25);
+  color: inherit;
+  cursor: default;
+  font-weight: normal;
+  font-size: inherit;
+  user-select: text;
+}
+.spoiler.revealed::before { display: none; }
+.spoiler.revealed > .spoiler-content { display: inline; }
 /* Detail buttons snug up against the row above instead of drifting with a
    margin-top gap - keeps the card-summary stack visually tight */
 .details-btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0; justify-content: flex-end; }

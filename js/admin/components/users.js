@@ -74,7 +74,9 @@ export function renderUsers(rows, { currentUserId, counts, canBan = true } = {})
     } else {
       banBtn = `<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="ban-user" data-userid="${uid}" data-clientid="${cid}" data-username="${name}">Ban</button>`;
     }
-    // Details button: navigates to the full user detail screen.
+    // #139: collapsed the Details button into a click on the username so the
+    // Actions column only needs the Ban control. The user-detail handler in
+    // js/admin/main.js delegates off [data-action] regardless of element type.
     const userObj = escapeHtml(JSON.stringify({
       proton_pulse_user_id: r.proton_pulse_user_id,
       client_id: r.client_id,
@@ -86,21 +88,21 @@ export function renderUsers(rows, { currentUserId, counts, canBan = true } = {})
       is_banned: r.is_banned || false,
       ban_id: r.ban_id || null,
     }));
-    const detailsBtn = `<button class="admin-btn admin-btn--sm admin-btn--details" type="button"
+    const nameCell = `<a href="#" class="admin-link admin-user-name-link" type="button"
       data-action="view-user-detail"
       data-userid="${uid}"
       data-clientid="${cid}"
       data-username="${name}"
-      data-userobj='${userObj}'>Details</button>`;
+      data-userobj='${userObj}'>${name}</a>`;
     const bannedBadge = r.is_banned ? ' <span class="user-detail-flag user-detail-flag--danger">banned</span>' : '';
     return `<tr${r.is_banned ? ' class="admin-row--banned"' : ''}>
-      <td>${name}${bannedBadge}</td>
+      <td>${nameCell}${bannedBadge}</td>
       <td>${identityCell}</td>
       <td>${roleCell}</td>
       <td>${r.report_count}</td>
       <td>${lastActive}</td>
       <td>${lastLogin || '—'}</td>
-      <td class="admin-col-actions">${detailsBtn}${banBtn}</td>
+      <td class="admin-col-actions">${banBtn}</td>
     </tr>`;
   }).join('');
 }

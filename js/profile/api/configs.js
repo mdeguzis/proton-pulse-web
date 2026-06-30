@@ -123,6 +123,21 @@ export async function patchUserConfig(reportId, fields, session) {
     body: JSON.stringify(fields),
   });
   if (!r.ok) throw new Error(`Update failed: HTTP ${r.status}`);
+  // #141: invalidate the prior approval row so the next pipeline pass
+  // re-approves against the new content. Best-effort -- a failure here
+  // still leaves the row visibly pending via the live hash-mismatch check.
+  try {
+    const delUrl = `${SUPABASE_URL}/rest/v1/report_approvals?report_id=eq.${encodeURIComponent(reportId)}`;
+    const dr = await fetch(delUrl, {
+      method: 'DELETE',
+      headers: { ...supabaseHeaders(session), Prefer: 'return=minimal' },
+    });
+    if (!dr.ok) {
+      console.warn('[patchUserConfig] approval invalidate non-ok', { reportId, status: dr.status });
+    }
+  } catch (err) {
+    console.warn('[patchUserConfig] approval invalidate failed', { reportId, error: String(err) });
+  }
 }
 
 export async function fetchCloudConfig(protonPulseUserId, appId, session) {

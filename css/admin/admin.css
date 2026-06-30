@@ -317,6 +317,28 @@
   text-decoration: underline;
 }
 
+/* admin-link-btn: a <button> that should read as a link in a table cell
+   (e.g. the #NNN report id triggers). Strip the default button chrome
+   and copy .admin-link's color + hover so it stands out from the
+   surrounding plain text. Cursor: pointer is what was missing -- the
+   default UA cursor on <button> was just the arrow pointer. */
+.admin-link-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--accent, #5c8bd6);
+  text-decoration: none;
+  cursor: pointer;
+}
+.admin-link-btn:hover { text-decoration: underline; }
+.admin-link-btn:focus-visible {
+  outline: 2px solid var(--accent, #5c8bd6);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 .admin-sub {
   color: var(--text-muted, #888);
   font-size: 0.75rem;
@@ -350,6 +372,23 @@
 .admin-btn:disabled {
   cursor: not-allowed;
   opacity: 0.5;
+}
+
+/* #148: report detail header lays the subhead title flush left and the
+   moderation toolbar flush right so all actions sit above the fold.
+   Wraps to a second row on narrow viewports so nothing overflows. */
+.ar-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.ar-detail-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .admin-btn--sm {

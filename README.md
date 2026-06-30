@@ -1,4 +1,4 @@
-[![CI](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/ci.yml/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/mdeguzis/proton-pulse-web/graph/badge.svg)](https://codecov.io/gh/mdeguzis/proton-pulse-web) [![Update ProtonDB Data](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/update-data.yml/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/update-data.yml) [![Content Moderation](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/content-moderation.yml/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/content-moderation.yml) [![pages-build-deployment](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/pages/pages-build-deployment) [![Sync staging repo](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/sync-staging-main.yml/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/sync-staging-main.yml)
+[![CI](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/ci.yml/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/mdeguzis/proton-pulse-web/graph/badge.svg)](https://codecov.io/gh/mdeguzis/proton-pulse-web) [![Build Site Data](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/update-data.yml/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/update-data.yml) [![Content Moderation](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/content-moderation.yml/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/content-moderation.yml) [![pages-build-deployment](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/pages/pages-build-deployment) [![Sync staging repo](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/sync-staging-main.yml/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/sync-staging-main.yml)
 
 # proton-pulse-web
 
@@ -104,7 +104,7 @@ detailed report data exists. Add those games to
 
 ## Triggering manually
 
-Go to **Actions -> Update ProtonDB Data -> Run workflow**.
+Go to **Actions -> Build Site Data -> Run workflow**.
 
 ## Local development
 

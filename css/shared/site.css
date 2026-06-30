@@ -438,3 +438,40 @@
 [data-store-pill-pos="art"] .game-card-store-tag { display: inline; }
 [data-store-pill-pos="art"] .game-card-store-pill { display: none; }
 [data-store-pill-pos="art-corner"] .game-card-store-pill { display: none; }
+
+/* #22 follow-up: formatting help expander next to editable text fields.
+   Native <details>/<summary> so it works without JS. Summary acts as a
+   small link-styled button; expanded panel renders a quick description
+   and a <code>-wrapped example. */
+.formatting-help {
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: 0.78rem;
+}
+.formatting-help > summary {
+  display: inline;
+  cursor: pointer;
+  color: var(--accent, #5c8bd6);
+  list-style: none;
+}
+.formatting-help > summary::-webkit-details-marker { display: none; }
+.formatting-help > summary::before { content: "? "; opacity: 0.7; }
+.formatting-help > summary:hover { text-decoration: underline; }
+.formatting-help[open] > summary { font-weight: 600; }
+.formatting-help > p {
+  margin: 6px 0 0;
+  padding: 8px 10px;
+  background: rgba(255,255,255,0.04);
+  border-left: 2px solid var(--accent, #5c8bd6);
+  border-radius: 3px;
+  color: var(--text, #cfd6dd);
+  line-height: 1.45;
+}
+.formatting-help code {
+  font-family: var(--mono, ui-monospace, monospace);
+  background: rgba(0,0,0,0.3);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}

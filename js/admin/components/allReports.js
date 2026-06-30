@@ -1,29 +1,21 @@
 import { escapeHtml, fmtDateTime } from '../utils.js?v=bd5a67c2';
-import { fetchAllReports } from '../api/allReports.js?v=805161ee';
+import { fetchAllReports } from '../api/allReports.js?v=7e28c862';
 
-function statusBadges(isF, isH, isP) {
+function statusBadges(isF, isH, isP, flaggedReason) {
   // Flagged and hidden take precedence (moderator action). Pending is shown
   // only when the row is neither -- a fresh or edited report still waiting
   // for the daily approval pipeline.
+  // #48: flagged_reason surfaces in the badge title attribute so admins can
+  // hover the badge in the table without opening report detail.
   if (isF || isH) {
+    const titleAttr = flaggedReason ? ` title="${escapeHtml(String(flaggedReason))}"` : '';
     return [
-      isF ? '<span class="admin-badge admin-badge--warn">flagged</span>' : '',
-      isH ? '<span class="admin-badge admin-badge--muted">hidden</span>'  : '',
+      isF ? `<span class="admin-badge admin-badge--warn"${titleAttr}>flagged</span>` : '',
+      isH ? `<span class="admin-badge admin-badge--muted"${titleAttr}>hidden</span>`  : '',
     ].filter(Boolean).join(' ');
   }
   if (isP) return '<span class="admin-badge admin-badge--info">pending</span>';
   return '<span class="admin-badge admin-badge--ok">approved</span>';
-}
-
-function actionBtns(id, isF, isH) {
-  const rid = escapeHtml(String(id));
-  if (isH || isF) {
-    return `<button class="admin-btn admin-btn--ok admin-btn--sm" data-action="ar-release" data-rid="${rid}">Release</button>`;
-  }
-  return [
-    `<button class="admin-btn admin-btn--warn admin-btn--sm" data-action="ar-flag" data-rid="${rid}">Flag</button>`,
-    `<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="ar-hide" data-rid="${rid}">Hide</button>`,
-  ].join(' ');
 }
 
 export async function renderAllReports(session) {
@@ -45,7 +37,7 @@ export async function renderAllReports(session) {
 
   try {
     const q        = searchEl ? searchEl.value.trim() : '';
-    const status   = statusEl ? statusEl.value : 'clean';
+    const status   = statusEl ? statusEl.value : 'pending';
     const appType  = appTypeEl ? appTypeEl.value : '';
     const dateFrom = dateFromEl ? dateFromEl.value : '';
     const dateTo   = dateToEl ? dateToEl.value : '';
@@ -84,7 +76,12 @@ export async function renderAllReports(session) {
       const userObj = escapeHtml(JSON.stringify({ proton_pulse_user_id: uid, client_id: cid, username: uid || cid || 'anon' }));
       const userBtn = `<button class="admin-btn admin-btn--ghost admin-btn--sm" data-action="view-user-detail" data-userobj='${userObj}'>Details</button>`;
 
-      return `<tr data-rid="${rid}" data-pending="${r.is_pending ? '1' : '0'}">
+      // Stash flagged_reason on the row dataset so updateAllReportsRow can
+      // restore the tooltip without re-fetching the row from Supabase.
+      const flaggedReasonAttr = r.flagged_reason
+        ? ` data-flagged-reason="${escapeHtml(String(r.flagged_reason))}"`
+        : '';
+      return `<tr data-rid="${rid}" data-pending="${r.is_pending ? '1' : '0'}"${flaggedReasonAttr}>
         <td><button class="admin-link-btn" data-action="ar-view-detail" data-rid="${rid}">#${rid}</button></td>
         <td>${appLink}</td>
         <td>${title}</td>
@@ -92,8 +89,7 @@ export async function renderAllReports(session) {
         <td>${appType}</td>
         <td>${userBtn}</td>
         <td>${date}</td>
-        <td class="ar-status">${statusBadges(r.is_flagged, r.is_hidden, r.is_pending)}</td>
-        <td class="ar-actions">${actionBtns(r.id, r.is_flagged, r.is_hidden)}</td>
+        <td class="ar-status">${statusBadges(r.is_flagged, r.is_hidden, r.is_pending, r.flagged_reason)}</td>
       </tr>`;
     }).join('');
 
@@ -105,14 +101,25 @@ export async function renderAllReports(session) {
   }
 }
 
-export function updateAllReportsRow(id, isF, isH) {
+export function updateAllReportsRow(id, isF, isH, flaggedReason, isPending) {
   const row = document.querySelector(`#all-reports-tbody tr[data-rid="${CSS.escape(String(id))}"]`);
   if (!row) return;
-  const isP = row.dataset.pending === '1';
+  // #146: callers can override the pending state when they know it
+  // changed (e.g. approve). Fall back to the dataset flag otherwise.
+  const isP = isPending !== undefined
+    ? Boolean(isPending)
+    : row.dataset.pending === '1';
+  if (isPending !== undefined) row.dataset.pending = isPending ? '1' : '0';
   const statusCell  = row.querySelector('.ar-status');
-  const actionsCell = row.querySelector('.ar-actions');
-  if (statusCell)  statusCell.innerHTML  = statusBadges(isF, isH, isP);
-  if (actionsCell) actionsCell.innerHTML = actionBtns(id, isF, isH);
+  // Use the caller-provided reason if any, otherwise fall back to whatever
+  // is already on the row dataset (set by the initial render). On release
+  // both are cleared so the badge ends up tooltip-less.
+  const reason = flaggedReason !== undefined
+    ? flaggedReason
+    : (row.dataset.flaggedReason || null);
+  if (reason) row.dataset.flaggedReason = String(reason);
+  else delete row.dataset.flaggedReason;
+  if (statusCell) statusCell.innerHTML = statusBadges(isF, isH, isP, reason);
 }
 
 export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
@@ -143,6 +150,8 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
     ['Config Key',      val(report.config_key)],
     ['Notes',           val(report.notes)],
     ['Author',          val(report.proton_pulse_user_id || report.client_id || 'anonymous')],
+    ['Flagged Reason',  val(report.flagged_reason)],
+    ['Flagged At',      report.flagged_at ? new Date(report.flagged_at).toLocaleString() : '(not flagged)'],
     ['Submitted',       report.created_at ? new Date(report.created_at).toLocaleString() : '?'],
     ['Updated',         report.updated_at ? new Date(report.updated_at).toLocaleString() : '(not set)'],
   ];
@@ -156,16 +165,33 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
   const isH = report.is_hidden;
   const isP = report.is_pending === true;
   const rid = escapeHtml(String(report.id));
-  const actionHtml = (isF || isH)
-    ? `<button class="admin-btn admin-btn--ok" data-action="ar-release" data-rid="${rid}">Release</button>`
-    : `<button class="admin-btn admin-btn--warn" data-action="ar-flag" data-rid="${rid}">Flag</button>
-       <button class="admin-btn admin-btn--danger" data-action="ar-hide" data-rid="${rid}">Hide</button>`;
+  // #148: render the full moderation toolbar at the top-right of the
+  // panel and disable the buttons that do not apply to the current
+  // state. Approve/Deny only make sense while pending. Flag/Hide are
+  // disabled once that state is already set. Release is the inverse:
+  // only valid when the row is flagged or hidden. The title attribute
+  // explains the disabled reason on hover.
+  const btn = (action, label, kind, disabled, disabledTitle) => {
+    const d = disabled ? ' disabled' : '';
+    const t = disabled && disabledTitle ? ` title="${escapeHtml(disabledTitle)}"` : '';
+    return `<button class="admin-btn admin-btn--sm admin-btn--${kind}" data-action="${action}" data-rid="${rid}"${d}${t}>${label}</button>`;
+  };
+  const actionHtml = [
+    btn('ar-approve', 'Approve', 'ok',     !isP || isF || isH, !isP ? 'Already approved' : 'Flagged or hidden -- release first'),
+    btn('ar-deny',    'Deny',    'danger', !isP || isF || isH, !isP ? 'Already approved' : 'Flagged or hidden -- release first'),
+    btn('ar-flag',    'Flag',    'warn',   isF,                'Already flagged'),
+    btn('ar-hide',    'Hide',    'danger', isH,                'Already hidden'),
+    btn('ar-release', 'Release', 'ok',    !(isF || isH),       'Nothing to release'),
+  ].join(' ');
 
   detail.innerHTML = `
     <button class="admin-btn admin-btn--sm admin-btn--ghost" data-action="ar-back" style="margin-bottom:12px">&#8592; Back to list</button>
     <div class="admin-card">
-      <div class="admin-subhead">Report Detail</div>
-      <div id="ar-detail-status" style="margin-bottom:10px">${statusBadges(isF, isH, isP)}</div>
+      <div class="ar-detail-header">
+        <div class="admin-subhead" style="margin:0">Report Detail</div>
+        <div id="ar-detail-actions" class="ar-detail-actions">${actionHtml}</div>
+      </div>
+      <div id="ar-detail-status" style="margin:10px 0">${statusBadges(isF, isH, isP, report.flagged_reason)}</div>
       <table class="admin-table" style="margin-bottom:16px">
         <tbody>
           ${fields.map(([label, value]) => `
@@ -176,7 +202,6 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
           ${formResponsesHtml}
         </tbody>
       </table>
-      <div id="ar-detail-actions" style="display:flex;gap:8px">${actionHtml}</div>
       <div id="ar-detail-msg" style="font-size:0.8rem;margin-top:8px"></div>
     </div>`;
 
@@ -187,9 +212,13 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
   detail.addEventListener('click', async e => {
     const btn = e.target.closest('[data-action]');
     if (!btn || btn.dataset.action === 'ar-back') return;
+    // Disabled buttons should never trigger a fetch. The browser blocks the
+    // click event for `disabled` <button>, but a closest() walk could land
+    // here for a click on an inner element, so guard explicitly.
+    if (btn.disabled) return;
     const action = btn.dataset.action;
     const id     = btn.dataset.rid;
-    if (!['ar-flag','ar-hide','ar-release'].includes(action) || !id) return;
+    if (!['ar-flag','ar-hide','ar-release','ar-approve','ar-deny'].includes(action) || !id) return;
     btn.disabled = true;
     onAction?.(action, id, btn);
   });

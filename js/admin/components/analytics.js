@@ -421,13 +421,15 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     <div id="sec-reports" style="margin-top:24px;margin-bottom:6px">
       <span class="analytics-section-title">Report submissions</span>
       <span style="float:right;font-size:0.75rem;color:var(--text-muted,#888)">
-        <span style="color:#d4b36a">&#9644;</span> Reports
+        <span style="color:#5c8bd6">&#9644;</span> Web
+        &nbsp;<span style="color:#4caf80">&#9644;</span> Plugin
+        &nbsp;<span style="color:#d4b36a">&#9644;</span> Other
       </span>
     </div>
     <div class="analytics-chart-wrap">
       <canvas id="analytics-reports-chart"></canvas>
     </div>
-    <p class="chart-caption">Pulse Reports landed per day. Spikes usually follow a release or a wiki post.</p>
+    <p class="chart-caption">Pulse Reports landed per day, stacked by source. Web = browser submissions, Plugin = Steam Deck plugin, Other = anything that does not match those prefixes.</p>
     <div id="sec-pages" class="analytics-two-col" style="margin-top:20px">
       <div>
         <div class="analytics-section-title">Top pages</div>
@@ -536,25 +538,56 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
   if (reportsByDay.length && typeof Chart !== 'undefined') {
     const canvas = document.getElementById('analytics-reports-chart');
     if (canvas) {
+      // #76: stacked bars per source. Older entries that pre-date the source
+      // breakdown still have a .count fallback handled in the data fetcher,
+      // but defensively default each series to 0 here too.
       reportsChartInstance = new Chart(canvas, {
         type: 'bar',
         data: {
           labels: reportsByDay.map(r => r.day),
-          datasets: [{
-            label: 'Reports',
-            data: reportsByDay.map(r => r.count),
-            backgroundColor: 'rgba(212,179,106,0.5)',
-            borderColor: '#d4b36a',
-            borderWidth: 1,
-          }],
+          datasets: [
+            {
+              label: 'Web',
+              data: reportsByDay.map(r => r.web ?? 0),
+              backgroundColor: 'rgba(92,139,214,0.7)',
+              borderColor: '#5c8bd6',
+              borderWidth: 1,
+              stack: 'reports',
+            },
+            {
+              label: 'Plugin',
+              data: reportsByDay.map(r => r.plugin ?? 0),
+              backgroundColor: 'rgba(76,175,128,0.7)',
+              borderColor: '#4caf80',
+              borderWidth: 1,
+              stack: 'reports',
+            },
+            {
+              label: 'Other',
+              data: reportsByDay.map(r => r.other ?? 0),
+              backgroundColor: 'rgba(212,179,106,0.7)',
+              borderColor: '#d4b36a',
+              borderWidth: 1,
+              stack: 'reports',
+            },
+          ],
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
           plugins: { legend: { display: false } },
           scales: {
-            x: { ticks: { color: '#888', maxTicksLimit: 10 }, grid: { color: 'rgba(255,255,255,0.05)' } },
-            y: { ticks: { color: '#888', stepSize: 1 }, grid: { color: 'rgba(255,255,255,0.05)' }, beginAtZero: true },
+            x: {
+              ticks: { color: '#888', maxTicksLimit: 10 },
+              grid: { color: 'rgba(255,255,255,0.05)' },
+              stacked: true,
+            },
+            y: {
+              ticks: { color: '#888', stepSize: 1 },
+              grid: { color: 'rgba(255,255,255,0.05)' },
+              beginAtZero: true,
+              stacked: true,
+            },
           },
         },
       });

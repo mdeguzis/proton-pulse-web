@@ -4,12 +4,13 @@
 import {
   escapeHtml, formatSystemUpdated, enabledVarsToText, textToEnabledVars,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel,
-} from '../utils.js?v=38d77229';
+} from '../utils.js?v=9a539c02';
 import {
   fetchCloudConfig, patchCloudConfig, fetchFullUserConfig,
   fetchReportHistory, patchUserConfig,
-} from '../api/configs.js?v=93128a98';
+} from '../api/configs.js?v=0c5650ed';
 import { updateSystem } from '../api/systems.js?v=770d14b7';
+import { notesFormattingHelpHtml } from '../../shared/submit.js?v=113ce5ad';
 
 export let _cloudEditModal = null;
 export function getCloudEditModal() {
@@ -112,7 +113,7 @@ export function getEditModal() {
       <label class="edit-report-label">OS
         <input class="edit-report-input" type="text" name="os" placeholder="e.g. SteamOS 3.6">
       </label>
-      <label class="edit-report-label">Notes
+      <label class="edit-report-label">Notes ${notesFormattingHelpHtml()}
         <textarea class="edit-report-input" name="notes" rows="4" placeholder="Optional notes about your experience"></textarea>
       </label>
       <label class="edit-report-label">Launch Options

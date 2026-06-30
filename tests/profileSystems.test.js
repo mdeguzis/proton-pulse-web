@@ -804,7 +804,7 @@ describe('mergeMyReportRows', () => {
       }),
     ]);
     expect(ctx.__getMyReportBadges(rows[0])).toEqual([
-      { label: 'Cloud', tone: 'cloud' },
+      { label: 'Synced', tone: 'cloud', title: 'Plugin config saved to cloud sync. Reinstalling the plugin will restore it.' },
       { label: 'Unpublished', tone: 'unpublished' },
     ]);
   });
@@ -831,7 +831,7 @@ describe('mergeMyReportRows', () => {
       }),
     ]);
     expect(ctx.__getMyReportBadges(rows[0])).toEqual([
-      { label: 'Cloud', tone: 'cloud' },
+      { label: 'Synced', tone: 'cloud', title: 'Plugin config saved to cloud sync. Reinstalling the plugin will restore it.' },
       { label: 'Published', tone: 'published' },
     ]);
   });
@@ -853,7 +853,7 @@ describe('mergeMyReportRows', () => {
       }),
     ]);
     expect(ctx.__getMyReportBadges(rows[0])).toEqual([
-      { label: 'Cloud', tone: 'cloud' },
+      { label: 'Synced', tone: 'cloud', title: 'Plugin config saved to cloud sync. Reinstalling the plugin will restore it.' },
       { label: 'Published', tone: 'published' },
     ]);
   });
@@ -880,7 +880,7 @@ describe('mergeMyReportRows', () => {
       rating: 'platinum',
     }));
     expect(ctx.__getMyReportBadges(rows[0])).toEqual([
-      { label: 'Cloud', tone: 'cloud' },
+      { label: 'Synced', tone: 'cloud', title: 'Plugin config saved to cloud sync. Reinstalling the plugin will restore it.' },
       { label: 'Published', tone: 'published' },
     ]);
   });

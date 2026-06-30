@@ -353,6 +353,32 @@
 }
 .profile-refresh-btn:hover { color: var(--accent); border-color: var(--accent); }
 
+/* #152: page-number row for the My Reports table. Lives in the section
+   title's right-aligned slot so the table itself stays uncluttered. */
+.profile-pager {
+  display: inline-flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.profile-pager-num {
+  font-size: 0.7rem;
+  font-family: inherit;
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  padding: 2px 8px;
+  cursor: pointer;
+  min-width: 24px;
+  text-align: center;
+}
+.profile-pager-num:hover { color: var(--accent); border-color: var(--accent); }
+.profile-pager-num--active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(92,139,214,0.08);
+  cursor: default;
+}
+
 .profile-tabs {
   display: inline-flex;
   gap: 6px;

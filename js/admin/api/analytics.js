@@ -58,16 +58,35 @@ async function fetchSwCacheStats(session, daysBack) {
   };
 }
 
+// #76: broken down by source so the chart can show web vs plugin vs other.
+// Source values cluster into 'web-*' (web submissions), 'plugin-*' (Deck plugin),
+// and a long tail of other tags. Anything that does not match those prefixes
+// falls into 'other' so admins can spot weird traffic.
+function classifyReportSource(src) {
+  const s = (src || '').toLowerCase();
+  if (s.startsWith('web')) return 'web';
+  if (s.startsWith('plugin')) return 'plugin';
+  return 'other';
+}
+
 async function fetchReportsByDay(session, daysBack) {
   const since = new Date(Date.now() - daysBack * 86400000).toISOString().slice(0, 10);
-  const url = `${SUPABASE_URL}/rest/v1/user_configs?select=created_at&created_at=gte.${since}T00:00:00&order=created_at.asc`;
+  const url = `${SUPABASE_URL}/rest/v1/user_configs?select=created_at,source&created_at=gte.${since}T00:00:00&order=created_at.asc`;
   const res = await fetch(url, { headers: supabaseHeaders(session) });
   if (!res.ok) return [];
   const rows = await res.json();
-  const counts = {};
+  // { '2026-06-30': { web: 3, plugin: 1, other: 0, count: 4 }, ... }
+  const buckets = {};
   for (const r of rows) {
     const day = r.created_at?.slice(0, 10);
-    if (day) counts[day] = (counts[day] || 0) + 1;
+    if (!day) continue;
+    if (!buckets[day]) buckets[day] = { web: 0, plugin: 0, other: 0, count: 0 };
+    const bucket = classifyReportSource(r.source);
+    buckets[day][bucket] += 1;
+    buckets[day].count += 1;
   }
-  return Object.entries(counts).map(([day, count]) => ({ day, count }));
+  // Sort by day ascending so the chart x-axis renders left-to-right oldest-to-newest.
+  return Object.entries(buckets)
+    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+    .map(([day, b]) => ({ day, count: b.count, web: b.web, plugin: b.plugin, other: b.other }));
 }

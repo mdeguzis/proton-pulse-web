@@ -131,8 +131,9 @@ def test_url_is_ok_exception():
 
 def test_fetch_steam_header_returns_none_on_exception():
     with patch("scripts.pipeline.game_images.urllib.request.urlopen", side_effect=Exception("network")):
-        result = _fetch_steam_header("730")
-    assert result is None
+        url, status = _fetch_steam_header("730", store_up=True)
+    assert url is None
+    assert status == "unknown"
 
 def test_fetch_steam_header_returns_header_image():
     payload = {"730": {"success": True, "data": {"header_image": "https://cdn.example.com/img.jpg"}}}
@@ -141,8 +142,9 @@ def test_fetch_steam_header_returns_header_image():
     mock_resp.__exit__ = MagicMock(return_value=False)
     mock_resp.read.return_value = json.dumps(payload).encode()
     with patch("scripts.pipeline.game_images.urllib.request.urlopen", return_value=mock_resp):
-        result = _fetch_steam_header("730")
-    assert result == "https://cdn.example.com/img.jpg"
+        url, status = _fetch_steam_header("730", store_up=True)
+    assert url == "https://cdn.example.com/img.jpg"
+    assert status == "live"
 
 
 # ── stats.py remaining framegen branch (lines 436-440) ───────────────────────

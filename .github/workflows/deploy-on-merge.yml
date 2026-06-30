@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Trigger pages-only deploy
         run: |
-          gh workflow run "Update ProtonDB Data" \
+          gh workflow run "Build Site Data" \
             --field pages_only=true \
             --repo "${{ github.repository }}"
         env:

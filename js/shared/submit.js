@@ -259,7 +259,16 @@ export async function submitReport(appId, title, form, editReportId = null) {
     },
     body: JSON.stringify(body),
   });
-  if (r.ok) return { ok: true };
+  if (r.ok) {
+    // #141: edits invalidate the prior approval row. Best-effort delete so
+    // the next pipeline pass treats the edited content as a fresh approval
+    // pending re-review. Hash-mismatch detection on the frontend already
+    // surfaces edits as pending; this keeps the stored row consistent too.
+    if (isEdit) {
+      await invalidateReportApproval(editReportId, session);
+    }
+    return { ok: true };
+  }
   try {
     const err = await r.json();
     const msg = err.message || err.hint || err.details || JSON.stringify(err);
@@ -269,6 +278,43 @@ export async function submitReport(appId, title, form, editReportId = null) {
     console.error('[submitReport] HTTP error', r.status);
     return { ok: false, error: `HTTP ${r.status}` };
   }
+}
+
+// #141: drop the existing report_approvals row for an edited report so the
+// next pipeline run computes a fresh hash against the new content. Best-effort
+// -- a network failure here still leaves the report visibly pending via the
+// frontend's live computeHash mismatch check, so we log and move on.
+export async function invalidateReportApproval(reportId, session) {
+  if (!reportId || !session?.access_token) return { ok: false, skipped: true };
+  try {
+    const r = await fetch(`${SB_URL}/report_approvals?report_id=eq.${encodeURIComponent(reportId)}`, {
+      method: 'DELETE',
+      headers: {
+        apikey: SB_KEY,
+        Authorization: `Bearer ${session.access_token}`,
+        Prefer: 'return=minimal',
+      },
+    });
+    if (!r.ok) {
+      console.warn('[invalidateReportApproval] DELETE non-ok', { reportId, status: r.status });
+      return { ok: false, status: r.status };
+    }
+    return { ok: true };
+  } catch (err) {
+    console.warn('[invalidateReportApproval] network error', { reportId, error: String(err) });
+    return { ok: false, error: String(err) };
+  }
+}
+
+// #22 follow-up: small expander that documents the formatting macros
+// recognised in notes. Rendered as a native <details>/<summary> so it
+// works without JS. Used on every UI that lets a user edit a notes field
+// (submit form + profile edit modal).
+export function notesFormattingHelpHtml() {
+  return `<details class="formatting-help">
+    <summary>Formatting help</summary>
+    <p>Wrap a spoiler in <code>{spoiler}your text{/spoiler}</code> to hide it behind a tap. Readers see a blurred span until they tap or focus + Enter on it.</p>
+  </details>`;
 }
 
 // Map of submit-form input name -> localStorage key (set on the profile page).
@@ -491,7 +537,7 @@ export async function populateSubmitForm(el) {
         <span id="derived-rating-badge" style="font-weight:700;padding:2px 10px;border-radius:3px">--</span>
       </div>
 
-      <div class="sf-section-label" style="margin-top:16px">Notes</div>
+      <div class="sf-section-label" style="margin-top:16px">Notes ${notesFormattingHelpHtml()}</div>
       <div class="sf-row"><textarea name="notes" rows="3" placeholder="How did it run? Any issues or tweaks?"></textarea></div>
 
       <div class="sf-row">

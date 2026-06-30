@@ -55,8 +55,17 @@ const SupaAuth = (() => {
     const { error } = await _sb.auth.setSession({ access_token: accessToken, refresh_token: refreshToken });
     if (error) {
       console.error('[SupaAuth] setSession error:', error.message);
+      // #143: surface the failed half of the auth funnel. ppTrack is a
+      // no-op if analytics.js hasn't booted yet, so this is safe to call
+      // unconditionally.
+      if (typeof window.ppTrack === 'function') {
+        window.ppTrack('auth_failure', { reason: (error.message || 'setSession error').slice(0, 200) });
+      }
     } else {
       console.log('[SupaAuth] Steam session set successfully');
+      if (typeof window.ppTrack === 'function') {
+        window.ppTrack('auth_success', {});
+      }
     }
 
     // Redirect to the page the user was on before login, if stored

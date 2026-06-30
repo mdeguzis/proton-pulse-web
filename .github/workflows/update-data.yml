@@ -1,4 +1,4 @@
-name: Update ProtonDB Data
+name: Build Site Data
 
 on:
   schedule:
@@ -859,7 +859,7 @@ jobs:
     steps:
       - name: Summary
         run: |
-          echo "### Update ProtonDB Data" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Build Site Data" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           if [ -n "${{ inputs.coverage_backfill_issue_type }}" ]; then
             echo "**Mode:** Coverage backfill" >> "$GITHUB_STEP_SUMMARY"

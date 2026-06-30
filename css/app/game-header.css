@@ -581,11 +581,14 @@
 .source-summary-tier-row > * {
   border-radius: 3px;
 }
-/* Widen the confidence slot just enough that 'Confidence: 95%' stays
-   on one line at the narrowest tile widths. Was 7:3; the conf pill
-   needs the extra share since its label is longer than the tier name. */
-.source-summary-tier-row > :first-child { flex: 9; }
-.source-summary-tier-row > :last-child  { flex: 3; }
+/* Both pills size to their own content and group at the left edge. The old
+   9:3 flex split stretched the row across the full column, which squeezed the
+   tier value ('PLATINUM') into a narrow right-hand slot - the text overflowed
+   the pill and pushed into the rating-distribution column next to it. Content
+   sizing keeps the conf pill on one line (it has white-space: nowrap) and gives
+   the tier value exactly the width it needs. */
+.source-summary-tier-row > :first-child { flex: 0 1 auto; }
+.source-summary-tier-row > :last-child  { flex: 0 0 auto; }
 .source-summary-conf {
   display: inline-flex;
   align-items: center;

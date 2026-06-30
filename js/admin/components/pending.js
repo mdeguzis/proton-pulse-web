@@ -71,11 +71,20 @@ function showReviewDetail(report, session, onApproved) {
   detail.hidden = false;
 
   const val = (v) => (v != null && v !== '') ? String(v) : '(not set)';
-  const fields = [
+  // Fields are [label, value] or [label, value, opts]. opts.wrap=true is for
+  // long opaque tokens (md5 hash, UUIDs) so they break onto multiple lines
+  // instead of forcing horizontal scroll on narrow viewports.
+  // #145: split into a small summary (visible by default) and a larger
+  // detail table behind a See details toggle so Approve/Decline are above
+  // the fold on narrow viewports.
+  const summaryFields = [
     ['Report ID', `#${String(report.id)}`],
-    ['Approval Hash', val(report._approval_hash)],
+    ['Approval Hash', val(report._approval_hash), { wrap: true }],
     ['App ID', val(report.app_id)],
     ['Title', val(report.title)],
+    ['Author', report.proton_pulse_user_id || report.client_id || 'anonymous', { wrap: true }],
+  ];
+  const detailFields = [
     ['Source', val(report.source)],
     ['Rating', val(report.rating)],
     ['Proton Version', val(report.proton_version)],
@@ -93,11 +102,22 @@ function showReviewDetail(report, session, onApproved) {
     ['Game Owned', val(report.game_owned)],
     ['Config Key', val(report.config_key)],
     ['Notes', val(report.notes)],
-    ['Author', report.proton_pulse_user_id || report.client_id || 'anonymous'],
-    ['Client ID', val(report.client_id)],
+    ['Client ID', val(report.client_id), { wrap: true }],
     ['Submitted', report.created_at ? new Date(report.created_at).toLocaleString() : '?'],
     ['Updated', report.updated_at ? new Date(report.updated_at).toLocaleString() : '(not set)'],
   ];
+
+  const renderRow = ([label, value, opts]) => {
+    const wrapStyle = opts && opts.wrap
+      ? 'font-family:var(--mono);word-break:break-all;white-space:normal'
+      : '';
+    return `
+      <tr>
+        <td style="font-weight:600;color:var(--muted);width:140px">${escapeHtml(label)}</td>
+        <td${wrapStyle ? ` style="${wrapStyle}"` : ''}>${escapeHtml(value)}</td>
+      </tr>
+    `;
+  };
 
   const formResponsesHtml = report.form_responses
     ? `<tr>
@@ -109,21 +129,36 @@ function showReviewDetail(report, session, onApproved) {
         <td>(none)</td>
       </tr>`;
 
+  // Status badge mirrors the inline banner in submit.html: approval row
+  // present = currently approved, absent = pending review.
+  const isApproved = !!report._approval_hash;
+  const statusBadgeHtml = isApproved
+    ? '<span class="submit-approval-badge submit-approval-badge--approved">Approved</span>'
+    : '<span class="submit-approval-badge submit-approval-badge--pending">Pending Approval</span>';
+
   detail.innerHTML = `
     <button class="admin-btn admin-btn--sm" id="pending-back-btn" style="margin-bottom:12px">Back to list</button>
     <div class="admin-card">
-      <div class="admin-subhead">Report Review</div>
-      <table class="admin-table" style="margin-bottom:16px">
+      <div class="admin-subhead" style="display:flex;align-items:center;gap:10px">
+        Report Review ${statusBadgeHtml}
+      </div>
+      <table class="admin-table" style="margin-bottom:12px">
         <tbody>
-          ${fields.map(([label, value]) => `
-            <tr>
-              <td style="font-weight:600;color:var(--muted);width:140px">${escapeHtml(label)}</td>
-              <td>${escapeHtml(value)}</td>
-            </tr>
-          `).join('')}
-          ${formResponsesHtml}
+          ${summaryFields.map(renderRow).join('')}
         </tbody>
       </table>
+      <button type="button" class="admin-btn admin-btn--sm" id="pending-details-toggle"
+        aria-expanded="false" aria-controls="pending-details-extra" style="margin-bottom:12px">
+        Show details
+      </button>
+      <div id="pending-details-extra" hidden>
+        <table class="admin-table" style="margin-bottom:16px">
+          <tbody>
+            ${detailFields.map(renderRow).join('')}
+            ${formResponsesHtml}
+          </tbody>
+        </table>
+      </div>
       <div style="display:flex;gap:8px">
         <button class="admin-btn admin-btn--ok" id="pending-approve-btn">Approve</button>
         <button class="admin-btn admin-btn--warn" id="pending-decline-btn">Decline</button>
@@ -131,6 +166,16 @@ function showReviewDetail(report, session, onApproved) {
       <div id="pending-action-status" style="font-size:0.8rem;margin-top:8px"></div>
     </div>
   `;
+
+  // See details toggle: flip the hidden section + button label.
+  const detailsToggle = detail.querySelector('#pending-details-toggle');
+  const detailsExtra  = detail.querySelector('#pending-details-extra');
+  detailsToggle?.addEventListener('click', () => {
+    const open = !detailsExtra.hidden;
+    detailsExtra.hidden = open;
+    detailsToggle.setAttribute('aria-expanded', String(!open));
+    detailsToggle.textContent = open ? 'Show details' : 'Hide details';
+  });
 
   detail.querySelector('#pending-back-btn')?.addEventListener('click', () => {
     closePendingReview();

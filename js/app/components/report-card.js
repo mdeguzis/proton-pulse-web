@@ -1,13 +1,13 @@
 // report-card (components) for the app page. Relocated from app.js.
 
 import { estimateScore } from '../../shared/scoring.js?v=0dae1257';
-import { getWebClientId } from '../../shared/submit.js?v=1a4ae53c';
+import { getWebClientId } from '../../shared/submit.js?v=113ce5ad';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
 import { renderAuthorBlock } from './author.js?v=2316d334';
 import { buildFormRows } from './config-cards.js?v=c67740f8';
 import { renderSignalStrip } from './signals.js?v=a23da3df';
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=df5b5024';
-import { confColor, confTextColor, configKey, daysAgo, esc, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js?v=f5dda5b6';
+import { confColor, confTextColor, configKey, daysAgo, esc, escWithSpoilers, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js?v=9a30ef3e';
 
 export function renderPermalink(r) {
   let id = r.reportId != null ? `r${r.reportId}` : (r.clientId ? `c${r.clientId.slice(0, 8)}` : '');
@@ -88,7 +88,7 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
       <div class="row"><span class="label">Proton</span><span>${na(esc(r.protonVersion))}</span></div>
       ${(r.durationMinutes != null || fmtDuration(r.duration)) ? `<div class="row"><span class="label">Steam playtime</span><span>${r.durationMinutes != null ? fmtMinutes(r.durationMinutes) : fmtDuration(r.duration)}</span></div>` : ''}
       ${(() => { const pt = r.configKey && configPlaytimeTotals.find(t => t.config_key === r.configKey); return pt ? `<div class="row"><span class="label">Config playtime</span><span title="${pt.session_count} session${pt.session_count !== 1 ? 's' : ''}">${fmtMinutes(pt.total_minutes)}</span></div>` : ''; })()}
-      ${r.notes ? `<div class="row"><span class="label">Notes</span><span class="notes-full">${esc(r.notes)}</span></div>` : ''}
+      ${r.notes ? `<div class="row"><span class="label">Notes</span><span class="notes-full">${escWithSpoilers(r.notes)}</span></div>` : ''}
       <div class="all-details-panel hw-details-panel">
         ${arch ? `<div class="row"><span class="label">GPU Arch</span><span>${esc(arch)}</span></div>` : ''}
         <div class="row"><span class="label">RAM</span><span>${na(esc(r.ram))}</span></div>

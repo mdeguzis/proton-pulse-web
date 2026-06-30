@@ -5,13 +5,13 @@ import {
   getProtonPulseUserIdFromSession, escapeHtml, formatSystemUpdated,
   getWebClientIdProfile, getMyReportBadges, flaggedMessageHtml,
   mergeMyReportRows,
-} from '../utils.js?v=38d77229';
+} from '../utils.js?v=9a539c02';
 import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
   unpublishReport,
-} from '../api/configs.js?v=93128a98';
+} from '../api/configs.js?v=0c5650ed';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
-import { showEditCloudConfigModal, showEditReportModal } from './edit-modals.js?v=1c2e2599';
+import { showEditCloudConfigModal, showEditReportModal } from './edit-modals.js?v=a7c857d1';
 
 /**
  * Initialise the My Reports pane. Call once after DOM is ready.
@@ -33,6 +33,12 @@ export function initMyReports(ctx) {
   } = ctx;
 
   let allRows = [];
+  // #152: paginate My Reports so a user with hundreds of reports does not
+  // dump the whole list into one DOM render. 15 per page; page numbers
+  // live in the section title right of the Refresh button.
+  const PAGE_SIZE = 15;
+  let currentPage = 1;
+  const myConfigsPager = document.getElementById('my-configs-pager');
 
   // ── Internal helpers ─────────────────────────────────────────────────────
 
@@ -43,21 +49,45 @@ export function initMyReports(ctx) {
   function renderMyConfigs(rows) {
     myConfigsLoading.hidden = true;
     allRows = rows || [];
+    currentPage = 1;
     applySearch();
+  }
+
+  function renderPager(totalPages) {
+    if (!myConfigsPager) return;
+    if (totalPages <= 1) {
+      myConfigsPager.hidden = false;
+      myConfigsPager.innerHTML = `<span class="profile-pager-num profile-pager-num--active">1</span>`;
+      return;
+    }
+    myConfigsPager.hidden = false;
+    const buttons = [];
+    for (let p = 1; p <= totalPages; p++) {
+      const active = p === currentPage ? ' profile-pager-num--active' : '';
+      buttons.push(`<button type="button" class="profile-pager-num${active}" data-page="${p}">${p}</button>`);
+    }
+    myConfigsPager.innerHTML = buttons.join('');
   }
 
   function applySearch() {
     const q = (myConfigsSearch?.value || '').trim().toLowerCase();
-    const rows = q ? allRows.filter(r => {
+    const filtered = q ? allRows.filter(r => {
       const hay = [r.title, r.app_id, r.rating, r.os, r.gpu, r.notes].filter(Boolean).join(' ').toLowerCase();
       return hay.includes(q);
     }) : allRows;
-    if (!rows.length) {
+    if (!filtered.length) {
       myConfigsTable.hidden = true;
       myConfigsEmpty.hidden = false;
       myConfigsEmpty.textContent = q ? 'No reports match your search.' : 'Nothing synced yet.';
+      if (myConfigsPager) myConfigsPager.hidden = true;
       return;
     }
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    if (currentPage < 1) currentPage = 1;
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const rows = filtered.slice(start, start + PAGE_SIZE);
+    renderPager(totalPages);
     myConfigsEmpty.hidden = true;
     myConfigsTable.hidden = false;
 
@@ -67,7 +97,7 @@ export function initMyReports(ctx) {
       const viewHref = reportAnchor || appLink;
       const name = row.title || `App ${row.app_id}`;
       const badges = getMyReportBadges(row).map((badge) => (
-        `<span class="profile-configs-badge profile-configs-badge--${escapeHtml(badge.tone)}">${escapeHtml(badge.label)}</span>`
+        `<span class="profile-configs-badge profile-configs-badge--${escapeHtml(badge.tone)}"${badge.title ? ` title="${escapeHtml(badge.title)}"` : ''}>${escapeHtml(badge.label)}</span>`
       )).join('');
       const flaggedNote = row.flagged
         ? `<details class="profile-configs-flagged-details">
@@ -167,13 +197,27 @@ export function initMyReports(ctx) {
 
   const searchClear = document.getElementById('my-configs-search-clear');
   myConfigsSearch?.addEventListener('input', () => {
+    currentPage = 1;
     applySearch();
     if (searchClear) searchClear.hidden = !myConfigsSearch.value;
   });
   searchClear?.addEventListener('click', () => {
     if (myConfigsSearch) { myConfigsSearch.value = ''; myConfigsSearch.focus(); }
     searchClear.hidden = true;
+    currentPage = 1;
     applySearch();
+  });
+
+  // #152: pager clicks. Delegate so we do not have to rewire on every
+  // re-render of the page-number buttons.
+  myConfigsPager?.addEventListener('click', (e) => {
+    const btn = e.target instanceof Element ? e.target.closest('button[data-page]') : null;
+    if (!btn) return;
+    const next = Number(btn.dataset.page);
+    if (!Number.isFinite(next) || next === currentPage) return;
+    currentPage = next;
+    applySearch();
+    myConfigsTable?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
 
   myConfigsTbody?.addEventListener('click', (e) => {

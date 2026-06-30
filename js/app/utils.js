@@ -208,8 +208,42 @@ export function truncate(s, n) { return s && s.length > n ? s.slice(0, n) + '...
  */
 export function esc(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
 
-
-
+/**
+ * #22: Escape a string AND render {spoiler}...{/spoiler} markers as
+ * tap-to-reveal blurred spans. Everything outside a spoiler is escaped
+ * normally so the helper is safe to use anywhere esc() was used before.
+ *
+ * Unclosed spoilers fall back to plain escaped text so a reporter who
+ * forgets the closing tag does not see a giant blurred tail across the
+ * whole notes block.
+ *
+ * Click toggles the .revealed class on the span. Keyboard activation
+ * works via tabindex + Enter/Space because the inline onclick mirror is
+ * fired by the synthetic event.
+ *
+ * @param {string|null|undefined} s
+ * @returns {string} HTML string with spoiler spans + escaped plain text.
+ */
+export function escWithSpoilers(s) {
+  if (!s) return '';
+  const text = String(s);
+  const SPOILER_RE = /\{spoiler\}([\s\S]*?)\{\/spoiler\}/gi;
+  let out = '';
+  let lastIndex = 0;
+  let m;
+  while ((m = SPOILER_RE.exec(text)) !== null) {
+    out += esc(text.slice(lastIndex, m.index));
+    const inner = esc(m[1]);
+    // tap or focus+Enter to reveal. Inline JS keeps this self-contained
+    // without needing a separate delegated handler.
+    const onclick = "this.classList.toggle('revealed')";
+    const onkey = "if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('revealed');}";
+    out += `<span class="spoiler" role="button" tabindex="0" aria-label="Spoiler -- tap to reveal" onclick="${onclick}" onkeydown="${onkey}"><span class="spoiler-content">${inner}</span></span>`;
+    lastIndex = SPOILER_RE.lastIndex;
+  }
+  out += esc(text.slice(lastIndex));
+  return out;
+}
 
 
 

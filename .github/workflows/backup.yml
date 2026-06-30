@@ -5,7 +5,7 @@ on:
     # Weekly, Sunday at 04:00 UTC.
     - cron: "0 4 * * 0"
   workflow_run:
-    workflows: ["Update ProtonDB Data"]
+    workflows: ["Build Site Data"]
     types: [completed]
   workflow_dispatch:
     inputs:

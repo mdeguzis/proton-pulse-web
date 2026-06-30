@@ -1,8 +1,10 @@
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
 import { supabaseHeaders } from '../utils.js?v=bd5a67c2';
 
-const COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,source,app_type,is_flagged,is_hidden,created_at';
-const DETAIL_COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,proton_version,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,vram_mb,os,kernel,duration,duration_minutes,notes,form_responses,config_key,game_owned,source,app_type,is_flagged,is_hidden,created_at,updated_at';
+// #48: flagged_reason on rows so the All Reports table can surface why a
+// row was flagged. flagged_at on detail to show when the flag landed.
+const COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,source,app_type,is_flagged,is_hidden,flagged_reason,created_at';
+const DETAIL_COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,proton_version,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,vram_mb,os,kernel,duration,duration_minutes,notes,form_responses,config_key,game_owned,source,app_type,is_flagged,is_hidden,flagged_reason,flagged_at,created_at,updated_at';
 
 export async function fetchReportById(session, id) {
   const [res, approvalRes] = await Promise.all([
@@ -20,6 +22,8 @@ export async function fetchReportById(session, id) {
   if (!rows.length) throw new Error('Report not found');
   const approvals = approvalRes.ok ? await approvalRes.json() : [];
   rows[0].is_pending = approvals.length === 0;
+  // #147: same fallback-title resolution the list view runs.
+  await resolveFallbackTitles(rows);
   return rows[0];
 }
 
@@ -61,9 +65,60 @@ export async function fetchAllReports(session, { search = '', status = 'clean', 
 
   for (const row of rows) row.is_pending = !approvedIds.has(row.id);
 
+  // #147: rows submitted before the title resolver knew the app (e.g. before
+  // the extended Steam index landed) stored title="App <id>" as a fallback.
+  // Repair the display title at fetch time so admins see the real name.
+  await resolveFallbackTitles(rows);
+
   if (status === 'pending') return rows.filter(r => r.is_pending);
   if (status === 'clean')   return rows.filter(r => !r.is_pending);
   return rows;
+}
+
+// Title was stored as the fallback "App <id>" (or empty) at submit time
+// because the resolver could not find the app yet. Patch in-memory from
+// search-index.json so the table cell shows the real game name. Cached
+// behind a module-level promise so repeat fetches are free.
+let _searchIndexPromise = null;
+function _loadSearchIndexForTitles() {
+  if (!_searchIndexPromise) {
+    // Safe under tests where location is not defined. In a browser the
+    // hostname check picks the prod CDN when we are on localhost/gh-io
+    // staging.
+    const host = (typeof location !== 'undefined' && location.hostname) || '';
+    const url = /^localhost|\.github\.io$/.test(host)
+      ? 'https://www.proton-pulse.com/search-index.json'
+      : '/search-index.json';
+    _searchIndexPromise = fetch(url)
+      .then(r => r.ok ? r.json() : [])
+      .then(entries => {
+        const map = new Map();
+        if (Array.isArray(entries)) {
+          for (const e of entries) {
+            if (Array.isArray(e) && e[0] != null && e[1]) map.set(String(e[0]), e[1]);
+          }
+        }
+        return map;
+      })
+      .catch(() => new Map());
+  }
+  return _searchIndexPromise;
+}
+
+function _isFallbackTitle(t, appId) {
+  if (!t) return true;
+  if (t === String(appId)) return true;
+  return /^App \d+$/.test(t);
+}
+
+async function resolveFallbackTitles(rows) {
+  const needs = rows.filter(r => _isFallbackTitle(r.title, r.app_id));
+  if (!needs.length) return;
+  const map = await _loadSearchIndexForTitles();
+  for (const r of needs) {
+    const real = map.get(String(r.app_id));
+    if (real) r.title = real;
+  }
 }
 
 export async function patchReportFlags(session, id, patch) {

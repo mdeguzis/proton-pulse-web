@@ -473,16 +473,22 @@ export function textToEnabledVars(text) {
 /**
  * Derives the list of status badge descriptors for a user's report row.
  *
+ * The "Synced" badge (tone: 'cloud') signals that the Steam Deck plugin
+ * has a copy of this game's config in cloud sync, so reinstalling the
+ * plugin will restore the launch options and Proton version. The tone
+ * key stays as 'cloud' so existing CSS keeps the same color.
+ *
  * @param {Object} row - Report row with boolean flags: `cloud`, `published`, `unpublished`, `flagged`.
- * @returns {Array<{label: string, tone: string}>} Badge descriptors in display order.
+ * @returns {Array<{label: string, tone: string, title?: string}>} Badge descriptors in display order.
  */
 export function getMyReportBadges(row) {
+  const SYNCED_TITLE = 'Plugin config saved to cloud sync. Reinstalling the plugin will restore it.';
   const badges = [];
   if (row.pending) {
-    badges.push({ label: 'Cloud', tone: 'cloud' });
+    badges.push({ label: 'Synced', tone: 'cloud', title: SYNCED_TITLE });
     badges.push({ label: 'Pending', tone: 'pending' });
   } else {
-    if (row.cloud) badges.push({ label: 'Cloud', tone: 'cloud' });
+    if (row.cloud) badges.push({ label: 'Synced', tone: 'cloud', title: SYNCED_TITLE });
     if (row.published) badges.push({ label: 'Published', tone: 'published' });
     if (row.unpublished) badges.push({ label: 'Unpublished', tone: 'unpublished' });
   }

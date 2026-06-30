@@ -87,7 +87,9 @@ describeIfCreds('Supabase RLS policy linter', () => {
         AND qual IS NOT NULL
       ORDER BY tablename, policyname
     `);
-  }, 15000);
+    // #94: 30s gives queryDB's retry loop room to complete on a slow first
+    // response (15s budget previously raced the 3s backoff + second request).
+  }, 30000);
 
   test('SELECT/ALL policies on user-facing tables contain no cross-table subqueries', () => {
     // Detect FROM <other_table> in policy qual. Self-references (same table) are
