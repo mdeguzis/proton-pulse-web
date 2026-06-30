@@ -17,8 +17,9 @@ import { renderUserDetail } from './components/userDetail.js?v=62542337';
 import { fetchAnalytics } from './api/analytics.js?v=ad63b2e7';
 import { renderAnalytics } from './components/analytics.js?v=0e977dd7';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=eac62a57';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=68ea0bc1';
 import { patchReportFlags, fetchReportById } from './api/allReports.js?v=d6d2b31e';
+import { approveReport } from './api/pending.js?v=84292a58';
 
 // ---------------------------------------------------------------------------
 // State
@@ -187,6 +188,25 @@ async function loadReportDetail(id) {
               flagged_at: null,
             });
             updateAllReportsRow(rid, false, false, null);
+          } else if (action === 'ar-approve') {
+            // #146: same approval row the Pending Approvals tab writes,
+            // so the next pipeline pass keeps the report public.
+            await approveReport(currentSession, report);
+            updateAllReportsRow(rid, false, false, null, false);
+          } else if (action === 'ar-deny') {
+            // #146: Deny prompts for a reason and shuts the report out
+            // of the public listing (is_hidden + is_flagged). Same data
+            // shape as Hide, just a different button label so the
+            // moderation intent reads cleanly in the audit trail.
+            const reason = promptFlagReason(action);
+            if (reason === null) { if (btn) btn.disabled = false; return; }
+            await patchReportFlags(currentSession, rid, {
+              is_flagged: true,
+              is_hidden: true,
+              flagged_reason: 'denied: ' + reason,
+              flagged_at: new Date().toISOString(),
+            });
+            updateAllReportsRow(rid, true, true, 'denied: ' + reason, false);
           }
           window.ppToast?.success('Report updated.');
         } catch (err) {
@@ -702,6 +722,41 @@ function wireEvents() {
           flagged_at: null,
         });
         updateAllReportsRow(rid, false, false, null);
+      } catch (err) {
+        btn.disabled = false;
+        window.ppToast?.error(err.message);
+      }
+      return;
+    }
+    if (action === 'ar-approve') {
+      // #146: pull the full row first so approveReport can compute its
+      // hash. Same code path the detail panel uses; just an extra fetch
+      // because the row click handler does not have the full record.
+      btn.disabled = true;
+      try {
+        const full = await fetchReportById(currentSession, rid);
+        await approveReport(currentSession, full);
+        updateAllReportsRow(rid, false, false, null, false);
+        window.ppToast?.success('Report approved.');
+      } catch (err) {
+        btn.disabled = false;
+        window.ppToast?.error(err.message);
+      }
+      return;
+    }
+    if (action === 'ar-deny') {
+      const reason = promptFlagReason(action);
+      if (reason === null) return;
+      btn.disabled = true;
+      try {
+        await patchReportFlags(currentSession, rid, {
+          is_flagged: true,
+          is_hidden: true,
+          flagged_reason: 'denied: ' + reason,
+          flagged_at: new Date().toISOString(),
+        });
+        updateAllReportsRow(rid, true, true, 'denied: ' + reason, false);
+        window.ppToast?.success('Report denied.');
       } catch (err) {
         btn.disabled = false;
         window.ppToast?.error(err.message);

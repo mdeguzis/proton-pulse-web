@@ -104,8 +104,10 @@ describe('All Reports table surfaces the reason (#48)', () => {
     expect(ALLREPS_CMP).toContain('data-flagged-reason="${escapeHtml(String(r.flagged_reason))}"');
   });
 
-  test('updateAllReportsRow accepts a 4th arg and respects existing dataset on undefined', () => {
-    expect(ALLREPS_CMP).toContain('updateAllReportsRow(id, isF, isH, flaggedReason)');
+  test('updateAllReportsRow accepts a flaggedReason arg and respects existing dataset on undefined', () => {
+    // The signature picked up a 5th param (isPending) when #146 landed; this
+    // test only cares about the flagged_reason handling and dataset fallback.
+    expect(ALLREPS_CMP).toContain('updateAllReportsRow(id, isF, isH, flaggedReason, isPending)');
     expect(ALLREPS_CMP).toContain("flaggedReason !== undefined");
     expect(ALLREPS_CMP).toContain('row.dataset.flaggedReason');
   });

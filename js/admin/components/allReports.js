@@ -18,15 +18,22 @@ function statusBadges(isF, isH, isP, flaggedReason) {
   return '<span class="admin-badge admin-badge--ok">approved</span>';
 }
 
-function actionBtns(id, isF, isH) {
+function actionBtns(id, isF, isH, isP) {
   const rid = escapeHtml(String(id));
   if (isH || isF) {
     return `<button class="admin-btn admin-btn--ok admin-btn--sm" data-action="ar-release" data-rid="${rid}">Release</button>`;
   }
-  return [
-    `<button class="admin-btn admin-btn--warn admin-btn--sm" data-action="ar-flag" data-rid="${rid}">Flag</button>`,
-    `<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="ar-hide" data-rid="${rid}">Hide</button>`,
-  ].join(' ');
+  // #146: when the row is currently pending (no approval row) surface
+  // Approve and Deny alongside the existing Flag/Hide so a moderator
+  // can act without bouncing to the Pending Approvals tab.
+  const buttons = [];
+  if (isP) {
+    buttons.push(`<button class="admin-btn admin-btn--ok admin-btn--sm" data-action="ar-approve" data-rid="${rid}">Approve</button>`);
+    buttons.push(`<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="ar-deny" data-rid="${rid}">Deny</button>`);
+  }
+  buttons.push(`<button class="admin-btn admin-btn--warn admin-btn--sm" data-action="ar-flag" data-rid="${rid}">Flag</button>`);
+  buttons.push(`<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="ar-hide" data-rid="${rid}">Hide</button>`);
+  return buttons.join(' ');
 }
 
 export async function renderAllReports(session) {
@@ -101,7 +108,7 @@ export async function renderAllReports(session) {
         <td>${userBtn}</td>
         <td>${date}</td>
         <td class="ar-status">${statusBadges(r.is_flagged, r.is_hidden, r.is_pending, r.flagged_reason)}</td>
-        <td class="ar-actions">${actionBtns(r.id, r.is_flagged, r.is_hidden)}</td>
+        <td class="ar-actions">${actionBtns(r.id, r.is_flagged, r.is_hidden, r.is_pending)}</td>
       </tr>`;
     }).join('');
 
@@ -113,10 +120,15 @@ export async function renderAllReports(session) {
   }
 }
 
-export function updateAllReportsRow(id, isF, isH, flaggedReason) {
+export function updateAllReportsRow(id, isF, isH, flaggedReason, isPending) {
   const row = document.querySelector(`#all-reports-tbody tr[data-rid="${CSS.escape(String(id))}"]`);
   if (!row) return;
-  const isP = row.dataset.pending === '1';
+  // #146: callers can override the pending state when they know it
+  // changed (e.g. approve). Fall back to the dataset flag otherwise.
+  const isP = isPending !== undefined
+    ? Boolean(isPending)
+    : row.dataset.pending === '1';
+  if (isPending !== undefined) row.dataset.pending = isPending ? '1' : '0';
   const statusCell  = row.querySelector('.ar-status');
   const actionsCell = row.querySelector('.ar-actions');
   // Use the caller-provided reason if any, otherwise fall back to whatever
@@ -128,7 +140,7 @@ export function updateAllReportsRow(id, isF, isH, flaggedReason) {
   if (reason) row.dataset.flaggedReason = String(reason);
   else delete row.dataset.flaggedReason;
   if (statusCell)  statusCell.innerHTML  = statusBadges(isF, isH, isP, reason);
-  if (actionsCell) actionsCell.innerHTML = actionBtns(id, isF, isH);
+  if (actionsCell) actionsCell.innerHTML = actionBtns(id, isF, isH, isP);
 }
 
 export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
@@ -174,16 +186,23 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
   const isH = report.is_hidden;
   const isP = report.is_pending === true;
   const rid = escapeHtml(String(report.id));
+  // #146: pending detail gets Approve + Deny in front of Flag + Hide so
+  // moderators do not have to switch tabs to act on a pending report.
+  const pendingButtons = isP
+    ? `<button class="admin-btn admin-btn--ok" data-action="ar-approve" data-rid="${rid}">Approve</button>
+       <button class="admin-btn admin-btn--danger" data-action="ar-deny" data-rid="${rid}">Deny</button>`
+    : '';
   const actionHtml = (isF || isH)
     ? `<button class="admin-btn admin-btn--ok" data-action="ar-release" data-rid="${rid}">Release</button>`
-    : `<button class="admin-btn admin-btn--warn" data-action="ar-flag" data-rid="${rid}">Flag</button>
+    : `${pendingButtons}
+       <button class="admin-btn admin-btn--warn" data-action="ar-flag" data-rid="${rid}">Flag</button>
        <button class="admin-btn admin-btn--danger" data-action="ar-hide" data-rid="${rid}">Hide</button>`;
 
   detail.innerHTML = `
     <button class="admin-btn admin-btn--sm admin-btn--ghost" data-action="ar-back" style="margin-bottom:12px">&#8592; Back to list</button>
     <div class="admin-card">
       <div class="admin-subhead">Report Detail</div>
-      <div id="ar-detail-status" style="margin-bottom:10px">${statusBadges(isF, isH, isP)}</div>
+      <div id="ar-detail-status" style="margin-bottom:10px">${statusBadges(isF, isH, isP, report.flagged_reason)}</div>
       <table class="admin-table" style="margin-bottom:16px">
         <tbody>
           ${fields.map(([label, value]) => `
@@ -207,7 +226,7 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
     if (!btn || btn.dataset.action === 'ar-back') return;
     const action = btn.dataset.action;
     const id     = btn.dataset.rid;
-    if (!['ar-flag','ar-hide','ar-release'].includes(action) || !id) return;
+    if (!['ar-flag','ar-hide','ar-release','ar-approve','ar-deny'].includes(action) || !id) return;
     btn.disabled = true;
     onAction?.(action, id, btn);
   });
