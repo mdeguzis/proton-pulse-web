@@ -76,6 +76,12 @@ export async function renderSearchPage(query) {
   const el = document.getElementById('content');
   const q = query.trim();
   el.innerHTML = '<div class="state-box">Searching Proton Pulse and index data...</div>';
+  // #143: track the query so the admin chart can show what people search
+  // for. Anonymous events from signed-out visitors still count -- the
+  // chart aggregates by q value, not by user.
+  if (q && typeof window.ppTrack === 'function') {
+    void window.ppTrack('search_query', { q: q.slice(0, 120), source: 'app' });
+  }
   // Issue #134: load the extended Steam catalog alongside the primary index
   // so long-tail Steam games (apps that ProtonDB knows about but the curated
   // signal export does not) are findable from the grouped results page. The
@@ -128,6 +134,34 @@ export async function renderSearchPage(query) {
           : '<div class="search-group-empty">No static index entries matched this query.</div>'}
       </section>
     </div>`;
+
+  // #143: track which result card was clicked + which group + position.
+  // Tells us whether the extended Steam index (group=extended) actually
+  // earns its keep on the long-tail catalog. Uses a delegated handler
+  // so it stays in O(1) DOM listeners regardless of result count.
+  const primaryIdSet = new Set(primaryResults.map(([id]) => String(id)));
+  const pulseIdSet = new Set(pulseResults.map((r) => String(r.appId)));
+  el.addEventListener('click', (ev) => {
+    const card = ev.target instanceof Element ? ev.target.closest('a[href^="#/app/"]') : null;
+    if (!card) return;
+    const m = card.getAttribute('href').match(/^#\/app\/(.+)$/);
+    if (!m) return;
+    const clickedId = String(m[1]);
+    let group = 'extended';
+    if (pulseIdSet.has(clickedId)) group = 'pulse';
+    else if (primaryIdSet.has(clickedId)) group = 'primary';
+    // Position is the index of the card among rendered result anchors.
+    const cards = Array.from(el.querySelectorAll('a[href^="#/app/"]'));
+    const position = cards.indexOf(card);
+    if (typeof window.ppTrack === 'function') {
+      void window.ppTrack('search_result_click', {
+        appId: clickedId,
+        q: q.slice(0, 120),
+        position,
+        group,
+      });
+    }
+  });
 }
 
 // --- loadSearchIndex ---

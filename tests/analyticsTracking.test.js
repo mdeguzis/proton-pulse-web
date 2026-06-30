@@ -16,9 +16,10 @@ const vm = require('vm');
 const ROOT = path.join(__dirname, '..');
 const ANALYTICS_SRC = fs.readFileSync(path.join(ROOT, 'js', 'lib', 'analytics.js'), 'utf8');
 
-function loadAnalytics({ session, fetchImpl } = {}) {
+function loadAnalytics({ session, fetchImpl, userAgent } = {}) {
   const sessionStorageMap = {};
   const docListeners = [];
+  const winListeners = [];
   const ctx = {
     fetch: fetchImpl || jest.fn().mockResolvedValue({ ok: true }),
     crypto: { randomUUID: () => 'test-sid-uuid' },
@@ -26,6 +27,7 @@ function loadAnalytics({ session, fetchImpl } = {}) {
       getItem: (k) => Object.prototype.hasOwnProperty.call(sessionStorageMap, k) ? sessionStorageMap[k] : null,
       setItem: (k, v) => { sessionStorageMap[k] = String(v); },
     },
+    navigator: { userAgent: userAgent || 'Mozilla/5.0 (X11; Linux x86_64)' },
     document: {
       addEventListener: (event, fn) => docListeners.push({ event, fn }),
       querySelectorAll: () => [],
@@ -38,6 +40,7 @@ function loadAnalytics({ session, fetchImpl } = {}) {
   ctx.window = {
     SUPABASE_URL: 'https://test.supabase.co',
     SUPABASE_ANON_KEY: 'anon-key',
+    addEventListener: (event, fn) => winListeners.push({ event, fn }),
   };
   if (session !== undefined) {
     ctx.window.SupaAuth = {
@@ -48,9 +51,10 @@ function loadAnalytics({ session, fetchImpl } = {}) {
   // Mirror those onto the vm context so the iife resolves them.
   ctx.SUPABASE_URL = ctx.window.SUPABASE_URL;
   ctx.SUPABASE_ANON_KEY = ctx.window.SUPABASE_ANON_KEY;
+  ctx.addEventListener = ctx.window.addEventListener;
   vm.createContext(ctx);
   vm.runInContext(ANALYTICS_SRC, ctx);
-  return { ctx, docListeners };
+  return { ctx, docListeners, winListeners };
 }
 
 async function flushAsync() {
@@ -117,20 +121,23 @@ describe('analytics.js track()', () => {
     expect(body.proton_pulse_user_id).toBeNull();
   });
 
-  test('omits metadata when empty object', async () => {
+  test('always attaches device field even when caller passes empty metadata', async () => {
+    // #143: track() folds the device tag into metadata for every event so
+    // admin charts can break Deck vs phone vs desktop. Caller-supplied
+    // metadata stays intact alongside it.
     const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
     const { ctx } = loadAnalytics({ session: null, fetchImpl });
     await ctx.window.ppTrack('page_view', {});
     const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
-    expect(body.metadata).toBeNull();
+    expect(body.metadata).toEqual({ device: 'desktop' });
   });
 
-  test('keeps metadata when non-empty', async () => {
+  test('merges device with caller metadata', async () => {
     const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
     const { ctx } = loadAnalytics({ session: null, fetchImpl });
     await ctx.window.ppTrack('report_submit', { app_id: '730', is_edit: true });
     const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
-    expect(body.metadata).toEqual({ app_id: '730', is_edit: true });
+    expect(body.metadata).toEqual({ device: 'desktop', app_id: '730', is_edit: true });
   });
 
   test('no-ops when SUPABASE_URL is missing', async () => {
@@ -139,19 +146,182 @@ describe('analytics.js track()', () => {
       fetch: fetchImpl,
       crypto: { randomUUID: () => 'sid' },
       sessionStorage: { getItem: () => null, setItem: () => {} },
+      navigator: { userAgent: 'Mozilla/5.0' },
       document: { addEventListener: () => {}, querySelectorAll: () => [] },
       location: { pathname: '/' },
       console,
       Promise, JSON, Object, Math, Date,
       setTimeout, clearTimeout,
     };
-    ctx.window = { SUPABASE_URL: undefined, SUPABASE_ANON_KEY: undefined };
+    ctx.window = {
+      SUPABASE_URL: undefined,
+      SUPABASE_ANON_KEY: undefined,
+      addEventListener: () => {},
+    };
     ctx.SUPABASE_URL = undefined;
     ctx.SUPABASE_ANON_KEY = undefined;
+    ctx.addEventListener = () => {};
     vm.createContext(ctx);
     vm.runInContext(ANALYTICS_SRC, ctx);
     await ctx.window.ppTrack('page_view', {});
     expect(fetchImpl).not.toHaveBeenCalled();
+  });
+});
+
+describe('analytics.js device classification (#143)', () => {
+  test('classifies Steam Deck UA as deck', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { ctx } = loadAnalytics({
+      session: null,
+      fetchImpl,
+      userAgent: 'Mozilla/5.0 (X11; Linux x86_64; SteamDeck) AppleWebKit/...',
+    });
+    await ctx.window.ppTrack('page_view', {});
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.device).toBe('deck');
+  });
+
+  test('classifies Android UA as mobile', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { ctx } = loadAnalytics({
+      session: null,
+      fetchImpl,
+      userAgent: 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/...',
+    });
+    await ctx.window.ppTrack('page_view', {});
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.device).toBe('mobile');
+  });
+
+  test('classifies iPhone UA as mobile', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { ctx } = loadAnalytics({
+      session: null,
+      fetchImpl,
+      userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0) AppleWebKit/...',
+    });
+    await ctx.window.ppTrack('page_view', {});
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.device).toBe('mobile');
+  });
+
+  test('classifies Windows UA as desktop', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { ctx } = loadAnalytics({
+      session: null,
+      fetchImpl,
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/...',
+    });
+    await ctx.window.ppTrack('page_view', {});
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.device).toBe('desktop');
+  });
+
+  test('falls back to other for unfamiliar UAs', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { ctx } = loadAnalytics({
+      session: null,
+      fetchImpl,
+      userAgent: 'curl/8.5.0',
+    });
+    await ctx.window.ppTrack('page_view', {});
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.device).toBe('other');
+  });
+
+  test('deck UA wins over the mobile/desktop substring checks', async () => {
+    // Steam Deck UA contains both 'SteamDeck' and 'Linux'. Order in
+    // classifyDevice() must keep deck the most specific check.
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { ctx } = loadAnalytics({
+      session: null,
+      fetchImpl,
+      userAgent: 'Mozilla/5.0 (X11; Linux x86_64; SteamDeck)',
+    });
+    await ctx.window.ppTrack('page_view', {});
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.device).toBe('deck');
+  });
+});
+
+describe('analytics.js client-side error reporting (#143)', () => {
+  test('registers window error + unhandledrejection listeners at boot', () => {
+    const { winListeners } = loadAnalytics({ session: null });
+    const events = winListeners.map((l) => l.event);
+    expect(events).toContain('error');
+    expect(events).toContain('unhandledrejection');
+  });
+
+  test("error listener fires ppTrack('error_event') with message + stack", async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { ctx, winListeners } = loadAnalytics({ session: null, fetchImpl });
+    const onError = winListeners.find((l) => l.event === 'error').fn;
+    fetchImpl.mockClear();
+    onError({
+      message: 'boom',
+      filename: 'app.js',
+      lineno: 42,
+      colno: 7,
+      error: { stack: 'Error: boom\n  at foo' },
+    });
+    await flushAsync();
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.event_type).toBe('error_event');
+    expect(body.metadata.message).toBe('boom');
+    expect(body.metadata.file).toBe('app.js');
+    expect(body.metadata.line).toBe(42);
+    expect(body.metadata.stack).toContain('Error: boom');
+  });
+
+  test('rate-limits identical errors within the cooldown window', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { winListeners } = loadAnalytics({ session: null, fetchImpl });
+    const onError = winListeners.find((l) => l.event === 'error').fn;
+    fetchImpl.mockClear();
+    const payload = { message: 'tight loop', error: { stack: 'Error: tight loop\n  at hot' } };
+    onError(payload);
+    onError(payload);
+    onError(payload);
+    await flushAsync();
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
+  test('does not rate-limit distinct error signatures', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { winListeners } = loadAnalytics({ session: null, fetchImpl });
+    const onError = winListeners.find((l) => l.event === 'error').fn;
+    fetchImpl.mockClear();
+    onError({ message: 'a', error: { stack: 'Error: a\n  at one' } });
+    onError({ message: 'b', error: { stack: 'Error: b\n  at two' } });
+    await flushAsync();
+    expect(fetchImpl).toHaveBeenCalledTimes(2);
+  });
+
+  test('unhandledrejection extracts message from reason.message', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { winListeners } = loadAnalytics({ session: null, fetchImpl });
+    const onRej = winListeners.find((l) => l.event === 'unhandledrejection').fn;
+    fetchImpl.mockClear();
+    onRej({ reason: { message: 'rejected!', stack: 'Error: rejected!\n  at p' } });
+    await flushAsync();
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.event_type).toBe('error_event');
+    expect(body.metadata.message).toBe('rejected!');
+    expect(body.metadata.source).toBe('unhandledrejection');
+  });
+
+  test('truncates stack trace to 2048 chars', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { winListeners } = loadAnalytics({ session: null, fetchImpl });
+    const onError = winListeners.find((l) => l.event === 'error').fn;
+    fetchImpl.mockClear();
+    const longStack = 'Error: huge\n' + 'x'.repeat(5000);
+    onError({ message: 'huge', error: { stack: longStack } });
+    await flushAsync();
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.stack.length).toBeLessThanOrEqual(2048);
   });
 });
 
