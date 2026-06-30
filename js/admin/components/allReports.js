@@ -1,14 +1,17 @@
 import { escapeHtml, fmtDateTime } from '../utils.js?v=bd5a67c2';
-import { fetchAllReports } from '../api/allReports.js?v=805161ee';
+import { fetchAllReports } from '../api/allReports.js?v=d6d2b31e';
 
-function statusBadges(isF, isH, isP) {
+function statusBadges(isF, isH, isP, flaggedReason) {
   // Flagged and hidden take precedence (moderator action). Pending is shown
   // only when the row is neither -- a fresh or edited report still waiting
   // for the daily approval pipeline.
+  // #48: flagged_reason surfaces in the badge title attribute so admins can
+  // hover the badge in the table without opening report detail.
   if (isF || isH) {
+    const titleAttr = flaggedReason ? ` title="${escapeHtml(String(flaggedReason))}"` : '';
     return [
-      isF ? '<span class="admin-badge admin-badge--warn">flagged</span>' : '',
-      isH ? '<span class="admin-badge admin-badge--muted">hidden</span>'  : '',
+      isF ? `<span class="admin-badge admin-badge--warn"${titleAttr}>flagged</span>` : '',
+      isH ? `<span class="admin-badge admin-badge--muted"${titleAttr}>hidden</span>`  : '',
     ].filter(Boolean).join(' ');
   }
   if (isP) return '<span class="admin-badge admin-badge--info">pending</span>';
@@ -84,7 +87,12 @@ export async function renderAllReports(session) {
       const userObj = escapeHtml(JSON.stringify({ proton_pulse_user_id: uid, client_id: cid, username: uid || cid || 'anon' }));
       const userBtn = `<button class="admin-btn admin-btn--ghost admin-btn--sm" data-action="view-user-detail" data-userobj='${userObj}'>Details</button>`;
 
-      return `<tr data-rid="${rid}" data-pending="${r.is_pending ? '1' : '0'}">
+      // Stash flagged_reason on the row dataset so updateAllReportsRow can
+      // restore the tooltip without re-fetching the row from Supabase.
+      const flaggedReasonAttr = r.flagged_reason
+        ? ` data-flagged-reason="${escapeHtml(String(r.flagged_reason))}"`
+        : '';
+      return `<tr data-rid="${rid}" data-pending="${r.is_pending ? '1' : '0'}"${flaggedReasonAttr}>
         <td><button class="admin-link-btn" data-action="ar-view-detail" data-rid="${rid}">#${rid}</button></td>
         <td>${appLink}</td>
         <td>${title}</td>
@@ -92,7 +100,7 @@ export async function renderAllReports(session) {
         <td>${appType}</td>
         <td>${userBtn}</td>
         <td>${date}</td>
-        <td class="ar-status">${statusBadges(r.is_flagged, r.is_hidden, r.is_pending)}</td>
+        <td class="ar-status">${statusBadges(r.is_flagged, r.is_hidden, r.is_pending, r.flagged_reason)}</td>
         <td class="ar-actions">${actionBtns(r.id, r.is_flagged, r.is_hidden)}</td>
       </tr>`;
     }).join('');
@@ -105,13 +113,21 @@ export async function renderAllReports(session) {
   }
 }
 
-export function updateAllReportsRow(id, isF, isH) {
+export function updateAllReportsRow(id, isF, isH, flaggedReason) {
   const row = document.querySelector(`#all-reports-tbody tr[data-rid="${CSS.escape(String(id))}"]`);
   if (!row) return;
   const isP = row.dataset.pending === '1';
   const statusCell  = row.querySelector('.ar-status');
   const actionsCell = row.querySelector('.ar-actions');
-  if (statusCell)  statusCell.innerHTML  = statusBadges(isF, isH, isP);
+  // Use the caller-provided reason if any, otherwise fall back to whatever
+  // is already on the row dataset (set by the initial render). On release
+  // both are cleared so the badge ends up tooltip-less.
+  const reason = flaggedReason !== undefined
+    ? flaggedReason
+    : (row.dataset.flaggedReason || null);
+  if (reason) row.dataset.flaggedReason = String(reason);
+  else delete row.dataset.flaggedReason;
+  if (statusCell)  statusCell.innerHTML  = statusBadges(isF, isH, isP, reason);
   if (actionsCell) actionsCell.innerHTML = actionBtns(id, isF, isH);
 }
 
@@ -143,6 +159,8 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
     ['Config Key',      val(report.config_key)],
     ['Notes',           val(report.notes)],
     ['Author',          val(report.proton_pulse_user_id || report.client_id || 'anonymous')],
+    ['Flagged Reason',  val(report.flagged_reason)],
+    ['Flagged At',      report.flagged_at ? new Date(report.flagged_at).toLocaleString() : '(not flagged)'],
     ['Submitted',       report.created_at ? new Date(report.created_at).toLocaleString() : '?'],
     ['Updated',         report.updated_at ? new Date(report.updated_at).toLocaleString() : '(not set)'],
   ];

@@ -3,7 +3,7 @@
 import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
 import { loadSearchIndex, searchIndex } from './search.js?v=f7b2fe47';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=df5b5024';
-import { daysAgo, latestPerApp } from '../utils.js?v=f5dda5b6';
+import { daysAgo, latestPerApp } from '../utils.js?v=f53cd830';
 import { renderGameCard } from '../lib/card.js?v=754da47b';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { padTileRows, watchTileRows } from '../../lib/tile-pad.js?v=defd5c6b';

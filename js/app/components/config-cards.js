@@ -2,7 +2,7 @@
 
 import { getWebClientId } from '../../shared/submit.js?v=14b5778f';
 import { isNonSteamAppId } from '../config.js?v=df5b5024';
-import { cfgNa, configKey, esc, utcStamp } from '../utils.js?v=f5dda5b6';
+import { cfgNa, configKey, esc, utcStamp } from '../utils.js?v=f53cd830';
 
 export const FORM_RESPONSE_LABELS = {
   canInstall:        'Were you able to install the game?',

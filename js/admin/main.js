@@ -17,8 +17,8 @@ import { renderUserDetail } from './components/userDetail.js?v=62542337';
 import { fetchAnalytics } from './api/analytics.js?v=ad63b2e7';
 import { renderAnalytics } from './components/analytics.js?v=0e977dd7';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=ff236263';
-import { patchReportFlags, fetchReportById } from './api/allReports.js?v=805161ee';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=eac62a57';
+import { patchReportFlags, fetchReportById } from './api/allReports.js?v=d6d2b31e';
 
 // ---------------------------------------------------------------------------
 // State
@@ -122,6 +122,24 @@ async function loadAllReports() {
   await renderAllReports(currentSession);
 }
 
+// #48: helper that prompts a moderator for a free-text reason before
+// applying a flag or hide. Returning null means the prompt was cancelled
+// and the caller should abort -- a confirmed empty string is treated the
+// same so an admin who clicks OK with nothing typed does not silently
+// blank the flagged_reason column.
+function promptFlagReason(action) {
+  const verb = action === 'ar-hide' ? 'hide' : 'flag';
+  const raw = window.prompt(
+    `Reason to ${verb} this report? (e.g. spam, test, fake-id, off-topic)\n` +
+    `Cancel to abort.`
+  );
+  if (raw === null) return null;
+  const trimmed = raw.trim();
+  if (!trimmed) return null;
+  // Cap the stored reason so an accidental paste does not blow up the row.
+  return trimmed.slice(0, 200);
+}
+
 async function loadReportDetail(id) {
   const url = new URL(window.location.href);
   url.searchParams.set('reportid', String(id));
@@ -143,14 +161,32 @@ async function loadReportDetail(id) {
       onAction: async (action, rid, btn) => {
         try {
           if (action === 'ar-flag') {
-            await patchReportFlags(currentSession, rid, { is_flagged: true });
-            updateAllReportsRow(rid, true, false);
+            const reason = promptFlagReason(action);
+            if (reason === null) { if (btn) btn.disabled = false; return; }
+            await patchReportFlags(currentSession, rid, {
+              is_flagged: true,
+              flagged_reason: reason,
+              flagged_at: new Date().toISOString(),
+            });
+            updateAllReportsRow(rid, true, false, reason);
           } else if (action === 'ar-hide') {
-            await patchReportFlags(currentSession, rid, { is_flagged: true, is_hidden: true });
-            updateAllReportsRow(rid, true, true);
+            const reason = promptFlagReason(action);
+            if (reason === null) { if (btn) btn.disabled = false; return; }
+            await patchReportFlags(currentSession, rid, {
+              is_flagged: true,
+              is_hidden: true,
+              flagged_reason: reason,
+              flagged_at: new Date().toISOString(),
+            });
+            updateAllReportsRow(rid, true, true, reason);
           } else if (action === 'ar-release') {
-            await patchReportFlags(currentSession, rid, { is_flagged: false, is_hidden: false });
-            updateAllReportsRow(rid, false, false);
+            await patchReportFlags(currentSession, rid, {
+              is_flagged: false,
+              is_hidden: false,
+              flagged_reason: null,
+              flagged_at: null,
+            });
+            updateAllReportsRow(rid, false, false, null);
           }
           window.ppToast?.success('Report updated.');
         } catch (err) {
@@ -621,21 +657,55 @@ function wireEvents() {
 
     const rid = btn.dataset.rid;
     if (!rid) return;
-    btn.disabled = true;
-    try {
-      if (action === 'ar-flag') {
-        await patchReportFlags(currentSession, rid, { is_flagged: true });
-        updateAllReportsRow(rid, true, false);
-      } else if (action === 'ar-hide') {
-        await patchReportFlags(currentSession, rid, { is_flagged: true, is_hidden: true });
-        updateAllReportsRow(rid, true, true);
-      } else if (action === 'ar-release') {
-        await patchReportFlags(currentSession, rid, { is_flagged: false, is_hidden: false });
-        updateAllReportsRow(rid, false, false);
+    if (action === 'ar-flag') {
+      const reason = promptFlagReason(action);
+      if (reason === null) return;
+      btn.disabled = true;
+      try {
+        await patchReportFlags(currentSession, rid, {
+          is_flagged: true,
+          flagged_reason: reason,
+          flagged_at: new Date().toISOString(),
+        });
+        updateAllReportsRow(rid, true, false, reason);
+      } catch (err) {
+        btn.disabled = false;
+        window.ppToast?.error(err.message);
       }
-    } catch (err) {
-      btn.disabled = false;
-      window.ppToast?.error(err.message);
+      return;
+    }
+    if (action === 'ar-hide') {
+      const reason = promptFlagReason(action);
+      if (reason === null) return;
+      btn.disabled = true;
+      try {
+        await patchReportFlags(currentSession, rid, {
+          is_flagged: true,
+          is_hidden: true,
+          flagged_reason: reason,
+          flagged_at: new Date().toISOString(),
+        });
+        updateAllReportsRow(rid, true, true, reason);
+      } catch (err) {
+        btn.disabled = false;
+        window.ppToast?.error(err.message);
+      }
+      return;
+    }
+    if (action === 'ar-release') {
+      btn.disabled = true;
+      try {
+        await patchReportFlags(currentSession, rid, {
+          is_flagged: false,
+          is_hidden: false,
+          flagged_reason: null,
+          flagged_at: null,
+        });
+        updateAllReportsRow(rid, false, false, null);
+      } catch (err) {
+        btn.disabled = false;
+        window.ppToast?.error(err.message);
+      }
     }
   });
 

@@ -614,6 +614,24 @@ a.card:active { transform: translateY(1px); }
 .card-summary .row:last-child { border-bottom: none; }
 .card-summary .label { color: var(--muted); min-width: 100px; }
 .card-summary .notes-full { white-space: pre-wrap; line-height: 1.5; color: #a0b4c4; }
+/* #22: blurred spoiler spans in notes. Click or focus+Enter toggles
+   .revealed which lifts the blur. Keep a subtle background so unrevealed
+   spans are still locatable even when the text behind is short. */
+.spoiler {
+  filter: blur(6px);
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  padding: 0 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: filter 150ms ease;
+}
+.spoiler:focus-visible { outline: 2px solid var(--accent, #5c8bd6); outline-offset: 2px; }
+.spoiler.revealed {
+  filter: none;
+  background: rgba(255,255,255,0.02);
+  cursor: default;
+}
 /* Detail buttons snug up against the row above instead of drifting with a
    margin-top gap - keeps the card-summary stack visually tight */
 .details-btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0; justify-content: flex-end; }
