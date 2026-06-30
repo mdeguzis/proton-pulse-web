@@ -55,7 +55,7 @@ export async function renderAllReports(session) {
 
   try {
     const q        = searchEl ? searchEl.value.trim() : '';
-    const status   = statusEl ? statusEl.value : 'clean';
+    const status   = statusEl ? statusEl.value : 'pending';
     const appType  = appTypeEl ? appTypeEl.value : '';
     const dateFrom = dateFromEl ? dateFromEl.value : '';
     const dateTo   = dateToEl ? dateToEl.value : '';
