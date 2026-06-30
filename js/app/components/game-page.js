@@ -1,6 +1,6 @@
 // game-page (components) for the app page. Relocated from app.js.
 
-import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
+import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=0dae1257';
 import { getWebClientId } from '../../shared/submit.js?v=113ce5ad';
 import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.js?v=21903124';

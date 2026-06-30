@@ -53,9 +53,9 @@ describe('detectGpuArch', () => {
     expect(detectGpuArch('Radeon VII')).toBe('Vega');
     expect(detectGpuArch('Radeon RX 580')).toBe('Polaris');
     expect(detectGpuArch('Radeon R9 Fury X')).toBe('GCN3');
-    // Source regex matches R9 280 as GCN3 (r9\s*28[05]). The classification
-    // table comment says it should be GCN2; tracked as a small follow-up.
-    expect(detectGpuArch('Radeon R9 280X')).toBe('GCN3');
+    expect(detectGpuArch('Radeon R9 285')).toBe('GCN3');
+    // #151: R9 280 is Tahiti -> GCN2, not GCN3.
+    expect(detectGpuArch('Radeon R9 280X')).toBe('GCN2');
     expect(detectGpuArch('Radeon R9 270X')).toBe('GCN2');
     expect(detectGpuArch('Radeon HD 7970')).toBe('GCN1');
   });
@@ -70,28 +70,34 @@ describe('detectGpuArch', () => {
   });
 
   test('NVIDIA GTX generations classify correctly', () => {
-    // Source regex `gtx\s*10[567]\d` covers 1050/1060/1070, not 1080.
-    // GTX 1080 is a real gap; tracked separately.
+    expect(detectGpuArch('GeForce GTX 1080 Ti')).toBe('Pascal');
     expect(detectGpuArch('GeForce GTX 1070')).toBe('Pascal');
     expect(detectGpuArch('GeForce GTX 1060')).toBe('Pascal');
+    expect(detectGpuArch('GeForce GTX 1050')).toBe('Pascal');
     expect(detectGpuArch('GeForce GTX 960')).toBe('Maxwell');
     expect(detectGpuArch('GeForce GTX 750')).toBe('Maxwell');
     expect(detectGpuArch('GeForce GTX 770')).toBe('Kepler');
     expect(detectGpuArch('GeForce GTX 660')).toBe('Kepler');
   });
 
-  test('Intel Arc / Xe / Gen9 classify', () => {
+  test('Intel Arc / Xe / Gen9 classify (#151: Intel block precedes NVIDIA)', () => {
     expect(detectGpuArch('Intel Arc B580')).toBe('Battlemage');
-    // Intel Arc A-series collides with NVIDIA's Ampere fallback
-    // (\ba\d{3,4}\b) and currently misclassifies as Ampere. Tracked as
-    // a follow-up; test pins current behaviour.
-    expect(detectGpuArch('Intel Arc A770')).toBe('Ampere');
+    // Intel Arc A-series no longer falls through to NVIDIA Ampere.
+    expect(detectGpuArch('Intel Arc A770')).toBe('Alchemist');
+    expect(detectGpuArch('Intel Arc A380')).toBe('Alchemist');
     expect(detectGpuArch('Intel Iris Xe Graphics')).toBe('Xe');
-    // Source regex `uhd\s*7[0-9]{2}` requires UHD<ws>7xx with no intervening
-    // word, so "Intel UHD Graphics 770" misses. Test with a tighter form.
+    // The optional "graphics" word now matches.
+    expect(detectGpuArch('Intel UHD Graphics 770')).toBe('Xe');
     expect(detectGpuArch('Intel UHD 770')).toBe('Xe');
-    expect(detectGpuArch('Intel HD 530')).toBe('Gen9');
-    expect(detectGpuArch('Intel UHD 630')).toBe('Gen9');
+    expect(detectGpuArch('Intel HD Graphics 530')).toBe('Gen9');
+    expect(detectGpuArch('Intel UHD Graphics 630')).toBe('Gen9');
+  });
+
+  test('NVIDIA Ampere workstation A-series still classifies after the Intel reorder', () => {
+    // Regression guard: moving Intel above NVIDIA must not break the
+    // `\ba\d{3,4}\b` Ampere fallback for actual NVIDIA cards.
+    expect(detectGpuArch('NVIDIA A100')).toBe('Ampere');
+    expect(detectGpuArch('NVIDIA A4000')).toBe('Ampere');
   });
 
   test('unrecognised GPU strings return empty', () => {

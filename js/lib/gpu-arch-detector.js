@@ -31,14 +31,36 @@ export function detectGpuArch(gpu) {
   // Polaris — RX 4xx/5xx (discrete, not RDNA RX 5xxx already matched above)
   if (/\brx\s*[45][0-9]{2}\b/.test(s)) return 'Polaris';
 
-  // GCN3 — Fiji/Hawaii: R9 Fury, R9 Nano, R9 390, R9 285, R9 380
-  if (/r9\s*(fury|nano)|r9\s*3[89]0|r9\s*28[05]|r9\s*380/.test(s)) return 'GCN3';
+  // GCN3 — Tonga/Fiji: R9 Fury, R9 Nano, R9 285, R9 380/390
+  // #151: dropped "R9 280" from the GCN3 set -- it's GCN2 (Tahiti). Only
+  // R9 285 (Tonga) belongs here.
+  if (/r9\s*(fury|nano)|r9\s*3[89]0|r9\s*285/.test(s)) return 'GCN3';
 
   // GCN2 — Sea Islands: R9 270/280, R7 260/265
   if (/r[79]\s*2[678]\d/.test(s)) return 'GCN2';
 
   // GCN1 — Southern Islands: HD 7xxx
   if (/hd\s*7[0-9]{3}/.test(s)) return 'GCN1';
+
+  // ---- Intel --------------------------------------------------------------
+  // #151: Intel block runs BEFORE NVIDIA so the Arc A-series doesn't get
+  // swallowed by NVIDIA Ampere's `\ba\d{3,4}\b` workstation fallback.
+  // Architectures are distinct across vendors so reorder is safe.
+
+  // Arc Battlemage — Arc B-series (B580, B770)
+  if (/arc\s*b\d{3}/.test(s)) return 'Battlemage';
+
+  // Arc Alchemist — Arc A-series (A380, A750, A770)
+  if (/arc\s*a\d{3}/.test(s) || /\balchemist\b/.test(s)) return 'Alchemist';
+
+  // Xe / Gen12 — Iris Xe, UHD 7xx (Tiger Lake / Alder Lake). Allow an
+  // optional "graphics" word between UHD and the model number so e.g.
+  // "Intel UHD Graphics 770" matches.
+  if (/iris\s*xe|uhd(?:\s+graphics)?\s*7[0-9]{2}/.test(s)) return 'Xe';
+
+  // Gen9 — HD 5xx/6xx, UHD 6xx (Skylake/Kaby Lake/Coffee Lake). Same
+  // optional "graphics" affordance as Xe.
+  if (/(?:^|\W)hd(?:\s+graphics)?\s*[56]\d{2}|uhd(?:\s+graphics)?\s*6[0-9]{2}/.test(s)) return 'Gen9';
 
   // ---- NVIDIA -------------------------------------------------------------
 
@@ -54,28 +76,15 @@ export function detectGpuArch(gpu) {
   // Turing — RTX 2xxx, GTX 1650/1660
   if (/rtx\s*2\d{3}/.test(s) || /gtx\s*16[56]\d/.test(s)) return 'Turing';
 
-  // Pascal — GTX 10xx (e.g. GTX 1080 Ti, GTX 1060)
-  if (/gtx\s*10[567]\d/.test(s)) return 'Pascal';
+  // Pascal — GTX 1050/1060/1070/1080 (range widened from 10[567] to 10[5-8]
+  // so the GTX 1080 flagship matches; #151).
+  if (/gtx\s*10[5-8]\d/.test(s)) return 'Pascal';
 
   // Maxwell — GTX 9xx, GTX 750 (not GTX 760+ which are Kepler)
   if (/gtx\s*9[0-9]{2}/.test(s) || /gtx\s*750/.test(s)) return 'Maxwell';
 
   // Kepler — GTX 6xx, GTX 7xx (excepting 750 already matched)
   if (/gtx\s*[67]\d{2}/.test(s)) return 'Kepler';
-
-  // ---- Intel --------------------------------------------------------------
-
-  // Arc Battlemage — Arc B-series (B580, B770)
-  if (/arc\s*b\d{3}/.test(s)) return 'Battlemage';
-
-  // Arc Alchemist — Arc A-series (A380, A750, A770)
-  if (/arc\s*a\d{3}/.test(s) || /\balchemist\b/.test(s)) return 'Alchemist';
-
-  // Xe / Gen12 — Iris Xe, UHD 7xx (Tiger Lake / Alder Lake)
-  if (/iris\s*xe|uhd\s*7[0-9]{2}/.test(s)) return 'Xe';
-
-  // Gen9 — HD 5xx/6xx, UHD 6xx (Skylake/Kaby Lake/Coffee Lake)
-  if (/hd\s*[56]\d{2}|uhd\s*6[0-9]{2}/.test(s)) return 'Gen9';
 
   return '';
 }
