@@ -18,7 +18,7 @@ import { fetchAnalytics } from './api/analytics.js?v=ad63b2e7';
 import { renderAnalytics } from './components/analytics.js?v=0e977dd7';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
 import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=e8c072b0';
-import { patchReportFlags, fetchReportById } from './api/allReports.js?v=d6d2b31e';
+import { patchReportFlags, fetchReportById } from './api/allReports.js?v=7e28c862';
 import { approveReport } from './api/pending.js?v=84292a58';
 
 // ---------------------------------------------------------------------------

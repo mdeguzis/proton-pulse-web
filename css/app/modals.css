@@ -303,6 +303,18 @@
   background: rgba(255,255,255,0.06);
   padding: 1px 5px;
   border-radius: 3px;
+  font-family: var(--mono, ui-monospace, monospace);
+  word-break: break-all;
+  white-space: normal;
+}
+/* Two-row banner layout: top row carries the badge + summary, bottom
+   row dedicates a full line to the approval hash so a 32-char md5 stays
+   fully visible on narrow screens. */
+.submit-approval-banner-row { display: block; }
+.submit-approval-banner-hash {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: var(--muted, #b8c0c8);
 }
 .submit-approval-badge {
   display: inline-block;

@@ -1,5 +1,5 @@
 import { escapeHtml, fmtDateTime } from '../utils.js?v=bd5a67c2';
-import { fetchAllReports } from '../api/allReports.js?v=d6d2b31e';
+import { fetchAllReports } from '../api/allReports.js?v=7e28c862';
 
 function statusBadges(isF, isH, isP, flaggedReason) {
   // Flagged and hidden take precedence (moderator action). Pending is shown

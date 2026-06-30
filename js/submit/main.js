@@ -229,7 +229,15 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
           const banner = document.createElement('div');
           banner.className = 'submit-approval-banner';
           if (approval) {
-            banner.innerHTML = `<span class="submit-approval-badge submit-approval-badge--approved">Approved</span> Report #${editReportId} | Hash: <code>${approval.approval_hash.slice(0, 12)}...</code> | Approved: ${new Date(approval.approved_at).toLocaleDateString()} | By: ${approval.approved_by || 'pipeline'}`;
+            // #147 follow-up: show the full hash on its own row instead of
+            // truncating to 12 chars. Verification flows (e.g. comparing
+            // against a stored value) need the whole digest to be readable.
+            banner.innerHTML = `
+              <div class="submit-approval-banner-row">
+                <span class="submit-approval-badge submit-approval-badge--approved">Approved</span>
+                Report #${editReportId} | Approved: ${new Date(approval.approved_at).toLocaleDateString()} | By: ${approval.approved_by || 'pipeline'}
+              </div>
+              <div class="submit-approval-banner-hash">Hash: <code>${approval.approval_hash}</code></div>`;
           } else {
             banner.innerHTML = `<span class="submit-approval-badge submit-approval-badge--pending">Pending Approval</span> Report #${editReportId} | This report is awaiting review. It will not appear publicly until approved. Reference this ID if you need to request a manual review.`;
           }
