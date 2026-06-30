@@ -10,40 +10,37 @@ const ROOT = path.join(__dirname, '..');
 const MAIN_SRC      = fs.readFileSync(path.join(ROOT, 'js', 'admin', 'main.js'), 'utf8');
 const ALLREPS_CMP   = fs.readFileSync(path.join(ROOT, 'js', 'admin', 'components', 'allReports.js'), 'utf8');
 const ADMIN_CSS     = fs.readFileSync(path.join(ROOT, 'css', 'admin', 'admin.css'), 'utf8');
+const ADMIN_HTML    = fs.readFileSync(path.join(ROOT, 'admin.html'), 'utf8');
 
-describe('All Reports table row buttons (#146)', () => {
-  test('actionBtns now accepts isP and adds Approve + Deny when pending', () => {
-    expect(ALLREPS_CMP).toContain('function actionBtns(id, isF, isH, isP)');
-    const fn = ALLREPS_CMP.slice(
-      ALLREPS_CMP.indexOf('function actionBtns'),
-      ALLREPS_CMP.indexOf('function actionBtns') + 1500
+describe('All Reports table row layout (#148 follow-up: Actions column removed)', () => {
+  test('actionBtns function and ar-actions cell are gone (actions live in detail only)', () => {
+    expect(ALLREPS_CMP).not.toContain('function actionBtns');
+    expect(ALLREPS_CMP).not.toContain('class="ar-actions"');
+  });
+
+  test('row template still emits #NNN, app link, title, source, store, user, date, status', () => {
+    // 8 <td> cells per row, no Actions cell at the end.
+    const rowTmpl = ALLREPS_CMP.slice(
+      ALLREPS_CMP.indexOf('return `<tr data-rid='),
+      ALLREPS_CMP.indexOf('return `<tr data-rid=') + 1200
     );
-    expect(fn).toContain('if (isP)');
-    expect(fn).toContain('data-action="ar-approve"');
-    expect(fn).toContain('>Approve<');
-    expect(fn).toContain('data-action="ar-deny"');
-    expect(fn).toContain('>Deny<');
+    expect((rowTmpl.match(/<td/g) || []).length).toBe(8);
+    expect(rowTmpl).toContain('ar-status');
+    expect(rowTmpl).not.toContain('ar-actions');
   });
 
-  test('Approve + Deny never render when row is flagged or hidden', () => {
-    // Flagged/hidden rows go to Release; pending-only branch stays out.
-    const fn = ALLREPS_CMP.slice(
-      ALLREPS_CMP.indexOf('function actionBtns'),
-      ALLREPS_CMP.indexOf('function actionBtns') + 1500
-    );
-    const flaggedBlock = fn.slice(fn.indexOf('if (isH || isF)'), fn.indexOf('if (isP)'));
-    expect(flaggedBlock).toContain('data-action="ar-release"');
-    expect(flaggedBlock).not.toContain('data-action="ar-approve"');
-    expect(flaggedBlock).not.toContain('data-action="ar-deny"');
+  test('all-reports-table thead drops the Actions <th>', () => {
+    // Other admin tables (flagged, banned, etc.) still have Actions; only
+    // the All Reports table loses the column.
+    const start = ADMIN_HTML.indexOf('id="all-reports-table"');
+    const end = ADMIN_HTML.indexOf('</thead>', start);
+    const arHead = ADMIN_HTML.slice(start, end);
+    expect(arHead).not.toMatch(/<th>Actions<\/th>/);
   });
 
-  test('row template passes is_pending through to actionBtns', () => {
-    expect(ALLREPS_CMP).toContain('actionBtns(r.id, r.is_flagged, r.is_hidden, r.is_pending)');
-  });
-
-  test('updateAllReportsRow accepts optional isPending and rewrites buttons', () => {
+  test('updateAllReportsRow no longer touches an actions cell', () => {
     expect(ALLREPS_CMP).toContain('export function updateAllReportsRow(id, isF, isH, flaggedReason, isPending)');
-    expect(ALLREPS_CMP).toContain('actionBtns(id, isF, isH, isP)');
+    expect(ALLREPS_CMP).not.toContain("row.querySelector('.ar-actions')");
   });
 });
 
@@ -131,31 +128,17 @@ describe('main.js handlers for ar-approve / ar-deny (#146)', () => {
     expect(block).toContain("'denied: ' + reason");
   });
 
-  test('row-click handler fetches the full row before approving', () => {
-    // The row click handler does not have the full record in scope, so
-    // it has to fetch by id first and pass that to approveReport. Use
-    // lastIndexOf to land on the row-click block (the detail panel
-    // block appears earlier in main.js).
-    const rowApproveIdx = MAIN_SRC.lastIndexOf("if (action === 'ar-approve') {");
-    const block = MAIN_SRC.slice(rowApproveIdx, rowApproveIdx + 800);
-    expect(block).toContain('await fetchReportById(currentSession, rid)');
-    expect(block).toContain('await approveReport(currentSession, full)');
-  });
-
-  test('row-click handler ar-deny uses promptFlagReason and patches the row', () => {
-    const rowDenyIdx = MAIN_SRC.lastIndexOf("if (action === 'ar-deny') {");
-    const block = MAIN_SRC.slice(rowDenyIdx, rowDenyIdx + 800);
-    expect(block).toContain('promptFlagReason(action)');
-    expect(block).toContain("'denied: ' + reason");
-    expect(block).toContain('updateAllReportsRow(rid, true, true');
-  });
-
-  test('approve flips the row out of pending state via updateAllReportsRow(..., false)', () => {
-    // Pin the fifth argument so the row buttons re-render without
-    // Approve/Deny (which only show when isP is truthy).
-    const rowApproveIdx = MAIN_SRC.lastIndexOf("if (action === 'ar-approve') {");
-    const block = MAIN_SRC.slice(rowApproveIdx, rowApproveIdx + 800);
-    expect(block).toMatch(/updateAllReportsRow\(rid, false, false, null, false\)/);
+  test('row-click handler exposes only ar-view-detail now', () => {
+    // The Actions column is gone (#148 follow-up). Row clicks only navigate
+    // to detail; all moderation actions live inside the detail toolbar.
+    const tbodyClickIdx = MAIN_SRC.indexOf("document.getElementById('all-reports-tbody').addEventListener('click'");
+    const block = MAIN_SRC.slice(tbodyClickIdx, tbodyClickIdx + 1200);
+    expect(block).toContain("action === 'ar-view-detail'");
+    expect(block).not.toContain("action === 'ar-flag'");
+    expect(block).not.toContain("action === 'ar-hide'");
+    expect(block).not.toContain("action === 'ar-release'");
+    expect(block).not.toContain("action === 'ar-approve'");
+    expect(block).not.toContain("action === 'ar-deny'");
   });
 });
 

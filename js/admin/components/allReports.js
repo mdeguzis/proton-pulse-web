@@ -18,24 +18,6 @@ function statusBadges(isF, isH, isP, flaggedReason) {
   return '<span class="admin-badge admin-badge--ok">approved</span>';
 }
 
-function actionBtns(id, isF, isH, isP) {
-  const rid = escapeHtml(String(id));
-  if (isH || isF) {
-    return `<button class="admin-btn admin-btn--ok admin-btn--sm" data-action="ar-release" data-rid="${rid}">Release</button>`;
-  }
-  // #146: when the row is currently pending (no approval row) surface
-  // Approve and Deny alongside the existing Flag/Hide so a moderator
-  // can act without bouncing to the Pending Approvals tab.
-  const buttons = [];
-  if (isP) {
-    buttons.push(`<button class="admin-btn admin-btn--ok admin-btn--sm" data-action="ar-approve" data-rid="${rid}">Approve</button>`);
-    buttons.push(`<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="ar-deny" data-rid="${rid}">Deny</button>`);
-  }
-  buttons.push(`<button class="admin-btn admin-btn--warn admin-btn--sm" data-action="ar-flag" data-rid="${rid}">Flag</button>`);
-  buttons.push(`<button class="admin-btn admin-btn--danger admin-btn--sm" data-action="ar-hide" data-rid="${rid}">Hide</button>`);
-  return buttons.join(' ');
-}
-
 export async function renderAllReports(session) {
   const loading     = document.getElementById('all-reports-loading');
   const empty       = document.getElementById('all-reports-empty');
@@ -108,7 +90,6 @@ export async function renderAllReports(session) {
         <td>${userBtn}</td>
         <td>${date}</td>
         <td class="ar-status">${statusBadges(r.is_flagged, r.is_hidden, r.is_pending, r.flagged_reason)}</td>
-        <td class="ar-actions">${actionBtns(r.id, r.is_flagged, r.is_hidden, r.is_pending)}</td>
       </tr>`;
     }).join('');
 
@@ -130,7 +111,6 @@ export function updateAllReportsRow(id, isF, isH, flaggedReason, isPending) {
     : row.dataset.pending === '1';
   if (isPending !== undefined) row.dataset.pending = isPending ? '1' : '0';
   const statusCell  = row.querySelector('.ar-status');
-  const actionsCell = row.querySelector('.ar-actions');
   // Use the caller-provided reason if any, otherwise fall back to whatever
   // is already on the row dataset (set by the initial render). On release
   // both are cleared so the badge ends up tooltip-less.
@@ -139,8 +119,7 @@ export function updateAllReportsRow(id, isF, isH, flaggedReason, isPending) {
     : (row.dataset.flaggedReason || null);
   if (reason) row.dataset.flaggedReason = String(reason);
   else delete row.dataset.flaggedReason;
-  if (statusCell)  statusCell.innerHTML  = statusBadges(isF, isH, isP, reason);
-  if (actionsCell) actionsCell.innerHTML = actionBtns(id, isF, isH, isP);
+  if (statusCell) statusCell.innerHTML = statusBadges(isF, isH, isP, reason);
 }
 
 export function renderAllReportsDetail(report, { onAction, onBack } = {}) {

@@ -52,37 +52,34 @@ describe('promptFlagReason helper (#48)', () => {
 
 describe('ar-flag / ar-hide call sites include reason in PATCH (#48)', () => {
   test('ar-flag PATCH carries is_flagged + flagged_reason + flagged_at', () => {
-    // Walk both call sites: the detail panel onAction and the delegated
-    // tbody handler. Both must include the reason fields.
+    // After #148 the row Actions column is gone, so the only ar-flag
+    // call site is the detail-panel onAction handler.
     const flagBlocks = MAIN_SRC.match(/if \(action === 'ar-flag'\)[\s\S]{0,800}/g) || [];
-    expect(flagBlocks.length).toBeGreaterThanOrEqual(2);
-    for (const blk of flagBlocks) {
-      expect(blk).toContain('is_flagged: true');
-      expect(blk).toContain('flagged_reason: reason');
-      expect(blk).toContain('flagged_at: new Date().toISOString()');
-    }
+    expect(flagBlocks.length).toBe(1);
+    const blk = flagBlocks[0];
+    expect(blk).toContain('is_flagged: true');
+    expect(blk).toContain('flagged_reason: reason');
+    expect(blk).toContain('flagged_at: new Date().toISOString()');
   });
 
   test('ar-hide PATCH carries is_flagged + is_hidden + flagged_reason + flagged_at', () => {
     const hideBlocks = MAIN_SRC.match(/if \(action === 'ar-hide'\)[\s\S]{0,800}/g) || [];
-    expect(hideBlocks.length).toBeGreaterThanOrEqual(2);
-    for (const blk of hideBlocks) {
-      expect(blk).toContain('is_flagged: true');
-      expect(blk).toContain('is_hidden: true');
-      expect(blk).toContain('flagged_reason: reason');
-      expect(blk).toContain('flagged_at: new Date().toISOString()');
-    }
+    expect(hideBlocks.length).toBe(1);
+    const blk = hideBlocks[0];
+    expect(blk).toContain('is_flagged: true');
+    expect(blk).toContain('is_hidden: true');
+    expect(blk).toContain('flagged_reason: reason');
+    expect(blk).toContain('flagged_at: new Date().toISOString()');
   });
 
   test('ar-release PATCH clears flagged_reason + flagged_at to null', () => {
     const relBlocks = MAIN_SRC.match(/if \(action === 'ar-release'\)[\s\S]{0,500}/g) || [];
-    expect(relBlocks.length).toBeGreaterThanOrEqual(2);
-    for (const blk of relBlocks) {
-      expect(blk).toContain('is_flagged: false');
-      expect(blk).toContain('is_hidden: false');
-      expect(blk).toContain('flagged_reason: null');
-      expect(blk).toContain('flagged_at: null');
-    }
+    expect(relBlocks.length).toBe(1);
+    const blk = relBlocks[0];
+    expect(blk).toContain('is_flagged: false');
+    expect(blk).toContain('is_hidden: false');
+    expect(blk).toContain('flagged_reason: null');
+    expect(blk).toContain('flagged_at: null');
   });
 
   test('cancelled prompt does not fire a PATCH (return early)', () => {

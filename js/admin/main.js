@@ -17,7 +17,7 @@ import { renderUserDetail } from './components/userDetail.js?v=62542337';
 import { fetchAnalytics } from './api/analytics.js?v=ad63b2e7';
 import { renderAnalytics } from './components/analytics.js?v=0e977dd7';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=0e148008';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=c8c8396a';
 import { patchReportFlags, fetchReportById } from './api/allReports.js?v=7e28c862';
 import { approveReport } from './api/pending.js?v=84292a58';
 
@@ -672,95 +672,6 @@ function wireEvents() {
       const rid = btn.dataset.rid;
       if (!rid) return;
       loadReportDetail(rid);
-      return;
-    }
-
-    const rid = btn.dataset.rid;
-    if (!rid) return;
-    if (action === 'ar-flag') {
-      const reason = promptFlagReason(action);
-      if (reason === null) return;
-      btn.disabled = true;
-      try {
-        await patchReportFlags(currentSession, rid, {
-          is_flagged: true,
-          flagged_reason: reason,
-          flagged_at: new Date().toISOString(),
-        });
-        updateAllReportsRow(rid, true, false, reason);
-      } catch (err) {
-        btn.disabled = false;
-        window.ppToast?.error(err.message);
-      }
-      return;
-    }
-    if (action === 'ar-hide') {
-      const reason = promptFlagReason(action);
-      if (reason === null) return;
-      btn.disabled = true;
-      try {
-        await patchReportFlags(currentSession, rid, {
-          is_flagged: true,
-          is_hidden: true,
-          flagged_reason: reason,
-          flagged_at: new Date().toISOString(),
-        });
-        updateAllReportsRow(rid, true, true, reason);
-      } catch (err) {
-        btn.disabled = false;
-        window.ppToast?.error(err.message);
-      }
-      return;
-    }
-    if (action === 'ar-release') {
-      btn.disabled = true;
-      try {
-        await patchReportFlags(currentSession, rid, {
-          is_flagged: false,
-          is_hidden: false,
-          flagged_reason: null,
-          flagged_at: null,
-        });
-        updateAllReportsRow(rid, false, false, null);
-      } catch (err) {
-        btn.disabled = false;
-        window.ppToast?.error(err.message);
-      }
-      return;
-    }
-    if (action === 'ar-approve') {
-      // #146: pull the full row first so approveReport can compute its
-      // hash. Same code path the detail panel uses; just an extra fetch
-      // because the row click handler does not have the full record.
-      btn.disabled = true;
-      try {
-        const full = await fetchReportById(currentSession, rid);
-        await approveReport(currentSession, full);
-        updateAllReportsRow(rid, false, false, null, false);
-        window.ppToast?.success('Report approved.');
-      } catch (err) {
-        btn.disabled = false;
-        window.ppToast?.error(err.message);
-      }
-      return;
-    }
-    if (action === 'ar-deny') {
-      const reason = promptFlagReason(action);
-      if (reason === null) return;
-      btn.disabled = true;
-      try {
-        await patchReportFlags(currentSession, rid, {
-          is_flagged: true,
-          is_hidden: true,
-          flagged_reason: 'denied: ' + reason,
-          flagged_at: new Date().toISOString(),
-        });
-        updateAllReportsRow(rid, true, true, 'denied: ' + reason, false);
-        window.ppToast?.success('Report denied.');
-      } catch (err) {
-        btn.disabled = false;
-        window.ppToast?.error(err.message);
-      }
     }
   });
 
