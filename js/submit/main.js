@@ -241,7 +241,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
                   <span class="submit-approval-banner-toggle">See all details</span>
                 </summary>
                 <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">Approved</span> ${new Date(approval.approved_at).toLocaleDateString()}</div>
-                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">By</span> ${approval.approved_by || 'pipeline'}</div>
+                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">By</span> ${approval.approved_by || 'Auto-Moderator'}</div>
                 <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">Hash</span> <code>${approval.approval_hash}</code></div>
               </details>`;
           } else {
