@@ -245,14 +245,16 @@ describe('renderUserDetail', () => {
     expect(store.html).toContain('data-action="delete-report"');
   });
 
-  test('renders hidden flag when is_hidden=true', () => {
+  test('renders hidden badge when is_hidden=true', () => {
+    // #150: user-detail Reports rows now reuse the shared admin-badge
+    // palette (muted = hidden) so the row matches the All Reports table.
     ctx.renderUserDetail(user, [{ ...reports[0], is_hidden: true }], [], { session: null, onBack: noop, onBan: noop, currentUserId: 'other' });
-    expect(store.html).toContain('user-detail-flag--warn');
+    expect(store.html).toContain('admin-badge--muted');
   });
 
   test('renders flagged badge when is_flagged=true', () => {
     ctx.renderUserDetail(user, [{ ...reports[0], is_flagged: true }], [], { session: null, onBack: noop, onBan: noop, currentUserId: 'other' });
-    expect(store.html).toContain('user-detail-flag--danger');
+    expect(store.html).toContain('admin-badge--warn');
   });
 
   test('renders empty state when no reports', () => {

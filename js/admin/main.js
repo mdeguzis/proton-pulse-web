@@ -12,8 +12,8 @@ import { renderAdmins, renderNewAdminEditor } from './components/admins.js?v=04c
 import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ac74cb89';
 import { renderPhrases } from './components/phrases.js?v=5fb05dc2';
 import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965';
-import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=2bb0cee1';
-import { renderUserDetail } from './components/userDetail.js?v=62542337';
+import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=28cb08af';
+import { renderUserDetail } from './components/userDetail.js?v=5ff164c0';
 import { fetchAnalytics } from './api/analytics.js?v=ad63b2e7';
 import { renderAnalytics } from './components/analytics.js?v=0e977dd7';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
@@ -734,6 +734,14 @@ function wireEvents() {
     const action = btn.dataset.action;
     if (action === 'back-to-users') {
       activateTab(userDetailReturnTab);
+    }
+    if (action === 'ar-view-detail') {
+      // #150: unified row template -- clicking #NNN on a report row
+      // inside the user detail opens the same report detail panel the
+      // All Reports table uses.
+      const rid = btn.dataset.rid;
+      if (rid) loadReportDetail(rid);
+      return;
     }
     if (action === 'ban-from-detail') {
       openBanModal(btn.dataset.userid || null, btn.dataset.clientid || null, btn.dataset.username);

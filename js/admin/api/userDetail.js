@@ -4,7 +4,9 @@ import { SUPABASE_URL } from '../config.js?v=ffed3d84';
 import { supabaseHeaders } from '../utils.js?v=bd5a67c2';
 
 export async function fetchUserReports(session, { userId, clientId }) {
-  const select = 'id,app_id,title,rating,proton_version,launch_options,created_at,updated_at,is_hidden,is_flagged,source';
+  // #150: unify columns with the All Reports table -- need app_type +
+  // flagged_reason + notes so the same row template renders cleanly.
+  const select = 'id,app_id,title,rating,proton_version,launch_options,notes,created_at,updated_at,is_hidden,is_flagged,flagged_reason,source,app_type';
   let filter;
   if (userId) {
     filter = `proton_pulse_user_id=eq.${encodeURIComponent(userId)}`;
