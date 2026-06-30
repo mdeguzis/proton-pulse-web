@@ -2,7 +2,7 @@
 
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=1f02f4a6';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=0dae1257';
-import { getWebClientId } from '../../shared/submit.js?v=1a4ae53c';
+import { getWebClientId } from '../../shared/submit.js?v=14b5778f';
 import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.js?v=21903124';
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=0594677b';

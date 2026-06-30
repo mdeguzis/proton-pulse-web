@@ -12,7 +12,7 @@ import {
 } from './utils.js?v=38d77229';
 import {
   deleteAllMyData, fetchAllMyData, checkMyDataExists,
-} from './api/configs.js?v=93128a98';
+} from './api/configs.js?v=0c5650ed';
 import {
   listLinkedPlugins, completePluginLink, removePluginLink,
 } from './api/plugin-links.js?v=05003ae3';
