@@ -122,6 +122,36 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
   // In edit mode, pre-fill from existing report; otherwise fall back to saved hardware
   if (isEdit && session) {
+    // #144: warn before editing a currently-published report. Fetch the
+    // approval row first so we know whether the report is live. If the
+    // user cancels, bounce them back to where they came from instead of
+    // prefilling the form (avoids them seeing a half-loaded edit they
+    // didn't want to start).
+    try {
+      const preCheckRes = await fetch(
+        `${SUPABASE_URL}/rest/v1/report_approvals?report_id=eq.${editReportId}&select=approval_hash&limit=1`,
+        { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}` } }
+      );
+      const preCheckRows = preCheckRes.ok ? await preCheckRes.json() : [];
+      const isCurrentlyPublished = preCheckRows.length > 0;
+      if (isCurrentlyPublished) {
+        const proceed = window.confirm(
+          'This report is currently published. Editing it puts it back into ' +
+          'pending review until the daily pipeline re-approves it. Continue?'
+        );
+        if (!proceed) {
+          const dest = returnTo || `app.html#/app/${appId}`;
+          window.location.href = dest;
+          return;
+        }
+      }
+    } catch (err) {
+      // Approval pre-check is best-effort. A network blip should not block
+      // the edit flow; the form still loads and the inline banner below
+      // will reflect the actual status once it does come back.
+      console.warn('[submit] edit pre-check failed:', err);
+    }
+
     try {
       const r = await fetch(
         `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${encodeURIComponent(editReportId)}&select=*&limit=1`,
