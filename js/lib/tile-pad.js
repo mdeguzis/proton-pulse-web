@@ -20,6 +20,26 @@
 
 const _RESIZE_KEY = '__tilePadHandlers';
 
+// Returns the number of grid columns the container is currently showing,
+// or 1 if it isn't in grid mode (list layout / probe hasn't laid out yet).
+// Column count is derived from the resolved gridTemplateColumns tracks,
+// which reflect the auto-fill count for the container's actual width.
+export function currentColCount(container) {
+  if (!container) return 1;
+  const cs = getComputedStyle(container);
+  if (cs.display !== 'grid') return 1;
+  const cols = cs.gridTemplateColumns.split(' ').filter(Boolean).length;
+  return Math.max(1, cols);
+}
+
+// How many tiles the caller should render per "page" (initial + each Load
+// more click) so the visible grid always fills roughly N complete rows.
+// Enforces a floor so a viewport that only fits 1 column doesn't ship a
+// 4-item first page (too little content to be useful).
+export function pageSizeForFullRows(container, rows = 4, minItems = 8) {
+  return Math.max(minItems, currentColCount(container) * rows);
+}
+
 export function padTileRows(container, { tileSelector = '> *', fillerClass = 'tile-filler', hasMore = false } = {}) {
   if (!container) return;
   // Wipe stale fillers from the previous pad pass before counting.

@@ -1,7 +1,7 @@
 // Entry module for index.html (homepage). Migrated from index.js.
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=e7fe3ce0';
 import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
-import { padTileRows, watchTileRerender } from '../lib/tile-pad.js?v=a9b4e85c';
+import { padTileRows, watchTileRerender, pageSizeForFullRows } from '../lib/tile-pad.js?v=de862970';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
 // search dropdown, auth indicator) lives in topbar.js.
@@ -208,9 +208,12 @@ import { padTileRows, watchTileRerender } from '../lib/tile-pad.js?v=a9b4e85c';
     const unratedCountEl = document.getElementById('pg-unrated-count');
     const loadMoreEl = document.getElementById('pg-load-more');
 
-    const PAGE_SIZE = 12;
+    // Aim for roughly 4 full rows on the initial render and per Load
+    // more click. On desktop (5-6 cols) that's ~20-24 items; on mobile
+    // (2 cols) it drops to the 8-item floor. See pageSizeForFullRows.
+    const TARGET_ROWS = 4;
     const state = { rated: true, unrated: false };
-    let shownCount = PAGE_SIZE;
+    let shownCount = pageSizeForFullRows(list, TARGET_ROWS);
 
     // Build the game list for the selected stores + rating filter state. Store
     // is multi-select: Steam pulls from most_played.json, GOG/Epic pull from the
@@ -294,7 +297,7 @@ import { padTileRows, watchTileRerender } from '../lib/tile-pad.js?v=a9b4e85c';
           ? `<button class="pg-load-more" id="pg-load-more-btn" type="button">Load more <span class="pg-load-more-count">${remaining}</span></button>`
           : '';
         const moreBtn = document.getElementById('pg-load-more-btn');
-        if (moreBtn) moreBtn.addEventListener('click', () => { shownCount = rendered + PAGE_SIZE; renderPopular(); });
+        if (moreBtn) moreBtn.addEventListener('click', () => { shownCount = rendered + pageSizeForFullRows(list, TARGET_ROWS); renderPopular(); });
       }
     }
 
@@ -309,7 +312,7 @@ import { padTileRows, watchTileRerender } from '../lib/tile-pad.js?v=a9b4e85c';
     function toggleRating(key) {
       state[key] = !state[key];
       syncRatingButtons();
-      shownCount = PAGE_SIZE;
+      shownCount = pageSizeForFullRows(list, TARGET_ROWS);
       updateFilterBadge();
       renderPopular();
     }
@@ -380,7 +383,7 @@ import { padTileRows, watchTileRerender } from '../lib/tile-pad.js?v=a9b4e85c';
       }
       updateRatingCounts();
       updateFilterBadge();
-      shownCount = PAGE_SIZE;
+      shownCount = pageSizeForFullRows(list, TARGET_ROWS);
       renderPopular();
     }
     document.querySelectorAll('.pg-store-btn').forEach(btn => {

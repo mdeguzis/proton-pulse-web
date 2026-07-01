@@ -6,7 +6,7 @@ import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '.
 import { daysAgo, latestPerApp } from '../utils.js?v=c7e1268c';
 import { renderGameCard } from '../lib/card.js?v=754da47b';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
-import { padTileRows, watchTileRerender } from '../../lib/tile-pad.js?v=a9b4e85c';
+import { padTileRows, watchTileRerender, pageSizeForFullRows } from '../../lib/tile-pad.js?v=de862970';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
 const LOAD_COUNTS = [50, 100, 150, 200];
@@ -160,8 +160,13 @@ function _recentCardHtml(r) {
 export async function renderHomePage() {
   const el = document.getElementById('content');
   el.innerHTML = '<div class="state-box">Loading recent reports...</div>';
-  const PAGE_SIZE = _loadCount(); // user-set preload count (50/100/150/200)
-  console.debug('[browse] preload count', { count: PAGE_SIZE, source: LOAD_COUNT_KEY });
+  // Initial load + each Load more click aim for roughly TARGET_ROWS full
+  // rows of the current grid. Column count is measured off the container
+  // via pageSizeForFullRows. See lib/tile-pad.js. The old fixed preload
+  // count setting (LOAD_COUNTS) is retained in localStorage for backwards
+  // compat but no longer drives paging.
+  const TARGET_ROWS = 4;
+  console.debug('[browse] preload target rows', { rows: TARGET_ROWS });
   try {
     const [recentUrl, mostPlayedUrl] = await Promise.all([
       dataUrl('recent-reports.json'),
@@ -343,7 +348,7 @@ export async function renderHomePage() {
         if (loadMoreEl) loadMoreEl.innerHTML = '';
         return;
       }
-      let popularShown = PAGE_SIZE;
+      let popularShown = pageSizeForFullRows(cardsEl, TARGET_ROWS);
       const renderPopular = () => {
         const shown = Math.min(popularShown, filtered.length);
         cardsEl.innerHTML = filtered.slice(0, shown).map(_popularItemHtml).join('');
@@ -356,7 +361,7 @@ export async function renderHomePage() {
           if (filtered.length > rendered) {
             loadMoreEl.innerHTML = _loadMoreBtn('popular');
             loadMoreEl.querySelector('button').addEventListener('click', () => {
-              popularShown = rendered + PAGE_SIZE;
+              popularShown = rendered + pageSizeForFullRows(cardsEl, TARGET_ROWS);
               renderPopular();
             });
           } else {
@@ -396,7 +401,7 @@ export async function renderHomePage() {
       // Hide the whole recent section when empty so there's no blank state box.
       if (sectionEl) sectionEl.hidden = !filtered.length;
       if (!filtered.length) { if (cardsEl) cardsEl.innerHTML = ''; _updateShownCount('recent-count', cardsEl, 0); return; }
-      let recentShown = PAGE_SIZE;
+      let recentShown = pageSizeForFullRows(cardsEl, TARGET_ROWS);
       const renderRecent = () => {
         const shown = Math.min(recentShown, filtered.length);
         cardsEl.innerHTML = filtered.slice(0, shown).map(_recentCardHtml).join('');
@@ -409,7 +414,7 @@ export async function renderHomePage() {
           if (filtered.length > rendered) {
             loadMoreEl.innerHTML = _loadMoreBtn('recent');
             loadMoreEl.querySelector('button').addEventListener('click', () => {
-              recentShown = rendered + PAGE_SIZE;
+              recentShown = rendered + pageSizeForFullRows(cardsEl, TARGET_ROWS);
               renderRecent();
             });
           } else {

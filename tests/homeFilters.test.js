@@ -188,12 +188,17 @@ describe('home page browse -- Save filters (persist)', () => {
   });
 });
 
-describe('home page browse -- preload count preference', () => {
-  test('preload count comes from the pp:load-count preference, default 50', () => {
-    expect(homeSrc).toContain("const LOAD_COUNT_KEY = 'pp:load-count'");
-    expect(homeSrc).toContain('const LOAD_COUNTS = [50, 100, 150, 200]');
-    expect(homeSrc).toContain('return LOAD_COUNTS.includes(n) ? n : 50;');
-    expect(homeSrc).toContain('const PAGE_SIZE = _loadCount();');
+describe('home page browse -- page size targets full rows', () => {
+  test('initial + Load more sizes come from pageSizeForFullRows(cardsEl, 4)', () => {
+    // Replaces the older fixed pp:load-count preference (50/100/150/200)
+    // with a row-count target so the grid always shows ~4 complete rows
+    // regardless of viewport (mobile drops to the 8-item floor). See
+    // pageSizeForFullRows in js/lib/tile-pad.js.
+    expect(homeSrc).toContain('const TARGET_ROWS = 4');
+    expect(homeSrc).toContain('pageSizeForFullRows(cardsEl, TARGET_ROWS)');
+    // Old fixed preload count is no longer wired to paging (kept in
+    // localStorage for backwards compat, but not read by the render).
+    expect(homeSrc).not.toContain('const PAGE_SIZE = _loadCount();');
   });
 });
 
