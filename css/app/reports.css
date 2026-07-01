@@ -532,10 +532,11 @@ a.card:active { transform: translateY(1px); }
 .vote-btns { display: inline-flex; align-items: center; gap: 5px; }
 .vote-btn {
   display: inline-flex; align-items: center; gap: 5px;
-  background: none; border: 1px solid var(--border2);
+  background: var(--s2); border: 1px solid var(--border2);
+  border-radius: 3px;
   color: var(--muted); font-size: 0.78rem; font-family: var(--mono);
   padding: 3px 9px; cursor: pointer; line-height: 1;
-  transition: color .1s, border-color .1s;
+  transition: color .1s, border-color .1s, background .1s;
   box-sizing: border-box;
 }
 .vote-btn svg { width: 14px; height: 14px; }
