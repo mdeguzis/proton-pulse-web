@@ -464,6 +464,24 @@ export async function renderGamePage(appId) {
     return arr;
   };
 
+  // On mobile (<= 560px), tuck each report card's vote buttons into the
+  // .signal-strip row so they sit inline with the yes/no signal icons
+  // instead of dropping to a fresh row below the icons. Desktop keeps
+  // them in the right-column card layout. Called after each render()
+  // and on window resize (both directions).
+  const _MOBILE_MQ = window.matchMedia('(max-width: 560px)');
+  function _relocateVotes() {
+    const mobile = _MOBILE_MQ.matches;
+    el.querySelectorAll('.report-block').forEach(block => {
+      const votes = block.querySelector('.vote-btns');
+      if (!votes) return;
+      const strip = block.querySelector('.signal-strip');
+      const right = block.querySelector('.card .right');
+      const target = mobile ? strip : right;
+      if (target && votes.parentElement !== target) target.appendChild(votes);
+    });
+  }
+
   function render() {
     const reps = sorted();
     const protonDbBadgeColor = RATING_COLORS[protonDbTier] || '#3a4a5a';
@@ -893,9 +911,23 @@ export async function renderGamePage(appId) {
         reqsEl.innerHTML = '<p style="color:var(--muted);padding:8px 0">No system requirements available from Steam for this title.</p>';
       }
     })();
+
+    // Every render() rebuilds innerHTML, so re-apply the mobile-only
+    // relocation of vote buttons into the signal-strip row.
+    _relocateVotes();
   }
 
   render();
+
+  // Debounced resize re-runs the relocation both directions. The
+  // relocation itself lives inside render() (via _relocateVotes) so
+  // every re-render also re-applies. Node move preserves attached
+  // click listeners so no wiring is lost.
+  let _relocatePending = null;
+  window.addEventListener('resize', () => {
+    if (_relocatePending) cancelAnimationFrame(_relocatePending);
+    _relocatePending = requestAnimationFrame(_relocateVotes);
+  }, { passive: true });
 
   // Delegated flag-button handler: one listener on the container survives
   // render() calls (innerHTML replacement removes per-element listeners)
