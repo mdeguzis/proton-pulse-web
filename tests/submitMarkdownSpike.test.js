@@ -20,15 +20,17 @@ describe('markdown editor spike (#153)', () => {
     expect(SUBMIT_HTML).toContain('markdown-it@14.1.0/dist/markdown-it.min.js');
   });
 
-  test('enhancer wires only when ?md=1 AND window.markdownit is present', () => {
-    expect(SUBMIT_MAIN).toContain("params.get('md') === '1'");
+  test('enhancer wires whenever window.markdownit is present (no flag gate)', () => {
+    // Flag was removed once the spike graduated site-wide -- the CDN
+    // load is the only gate now.
+    expect(SUBMIT_MAIN).not.toContain("params.get('md') === '1'");
     expect(SUBMIT_MAIN).toContain("typeof window.markdownit === 'function'");
     expect(SUBMIT_MAIN).toContain('enhanceNotesWithMarkdown(el)');
   });
 
   test('enhancer runs after populateSubmitForm so the textarea exists', () => {
     const popIdx = SUBMIT_MAIN.indexOf('await populateSubmitForm(el)');
-    const wireIdx = SUBMIT_MAIN.indexOf("params.get('md') === '1'");
+    const wireIdx = SUBMIT_MAIN.indexOf('enhanceNotesWithMarkdown(el)');
     expect(popIdx).toBeGreaterThan(0);
     expect(wireIdx).toBeGreaterThan(popIdx);
   });

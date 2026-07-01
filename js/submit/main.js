@@ -120,11 +120,11 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     return;
   }
 
-  // Markdown editor spike (#153): opt-in via ?md=1. When on, wrap the
-  // Notes textarea with Write / Preview tabs and render the preview via
-  // window.markdownit. Reader-side rendering unchanged for now; this is
-  // just for evaluating the input UX.
-  if (params.get('md') === '1' && typeof window.markdownit === 'function') {
+  // #153: markdown editor is on site-wide now (no flag). Wrap the Notes
+  // textarea with Write / Preview tabs and render the preview via
+  // window.markdownit. Falls through silently if the CDN failed to load,
+  // in which case the textarea keeps working as plain text.
+  if (typeof window.markdownit === 'function') {
     enhanceNotesWithMarkdown(el);
   }
 

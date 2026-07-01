@@ -10,11 +10,11 @@ import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f
 import { enhanceAuthorBlocks } from './author.js?v=2316d334';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=48037483';
-import { renderCard } from './report-card.js?v=1fa18873';
+import { renderCard } from './report-card.js?v=eae7957c';
 import { loadSearchIndex, searchIndex } from './search.js?v=f7b2fe47';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=df5b5024';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=e7fe3ce0';
-import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=9a30ef3e';
+import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=c7e1268c';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 
 let _steamCatalogCache = null;

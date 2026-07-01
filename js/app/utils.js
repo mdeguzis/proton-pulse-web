@@ -245,6 +245,56 @@ export function escWithSpoilers(s) {
   return out;
 }
 
+// #153 rollout: render Notes text through markdown-it, then post-process
+// {spoiler}...{/spoiler} tokens in the resulting HTML. markdown-it is
+// loaded from CDN in submit.html + app.html; when it is not available
+// (older cached page, test env) we fall back to escWithSpoilers so
+// spoilers still work.
+let _mdInstance = null;
+function _getMdRenderer() {
+  if (_mdInstance) return _mdInstance;
+  if (typeof window !== 'undefined' && typeof window.markdownit === 'function') {
+    // html:false removes the primary XSS surface -- users cannot inject
+    // raw HTML through the Notes field. linkify + breaks match GitHub-
+    // style behaviour so URLs and hard line breaks Just Work.
+    _mdInstance = window.markdownit({
+      html: false,
+      linkify: true,
+      breaks: true,
+      typographer: false,
+    });
+  }
+  return _mdInstance;
+}
+
+/**
+ * Render a Notes string as HTML: markdown (via markdown-it) + spoiler
+ * tokens post-processed to reveal spans.
+ *
+ * Known limitation: {spoiler} tokens inside fenced code blocks are still
+ * substituted (string-level replace runs on the rendered HTML). A
+ * markdown-it plugin would fix that; the string approach is fine for
+ * the current spike scope.
+ *
+ * @param {string|null|undefined} text - Raw Notes value from user_configs.
+ * @returns {string} HTML string, safe to drop into innerHTML.
+ */
+export function renderNotes(text) {
+  if (!text) return '';
+  const md = _getMdRenderer();
+  if (!md) return escWithSpoilers(text);
+  let html = md.render(String(text));
+  // markdown-it with html:false already escaped the inner text, so we
+  // can drop it into the spoiler span without additional escaping.
+  const SPOILER_RE = /\{spoiler\}([\s\S]*?)\{\/spoiler\}/gi;
+  html = html.replace(
+    SPOILER_RE,
+    (_full, inner) =>
+      `<span class="spoiler" role="button" tabindex="0" aria-label="Spoiler -- tap to reveal" onclick="this.classList.toggle('revealed')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('revealed');}"><span class="spoiler-content">${inner}</span></span>`,
+  );
+  return html;
+}
+
 
 
 // - Render: Proton Pulse Configs section ------------
