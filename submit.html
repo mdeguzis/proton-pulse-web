@@ -12,9 +12,9 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=2d6b5e52">
 <link rel="stylesheet" href="css/shared/site.css?v=e05a0f73">
 <link rel="stylesheet" href="css/shared/cards.css?v=16c748ed">
-<link rel="stylesheet" href="css/app/game-header.css?v=08bbcb4a">
+<link rel="stylesheet" href="css/app/game-header.css?v=66685a3b">
 <link rel="stylesheet" href="css/app/configs.css?v=90d5bed5">
-<link rel="stylesheet" href="css/app/reports.css?v=f6493b79">
+<link rel="stylesheet" href="css/app/reports.css?v=9ac38baa">
 <link rel="stylesheet" href="css/app/modals.css?v=99a2a3d5">
 <link rel="stylesheet" href="css/app/home.css?v=d983b41a">
 </head>
@@ -25,6 +25,9 @@
 <script src="js/lib/analytics.js?v=e6dfbad8"></script>
 <script src="js/lib/topbar.js?v=449040e3"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
+<!-- Markdown editor spike (?md=1). Loaded eagerly but only wired when the
+     flag is on -- window.markdownit stays unused otherwise. -->
+<script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
 
 <div class="main-content">
   <div class="main-inner" style="max-width:860px">
@@ -55,6 +58,6 @@
   </div>
 </div>
 
-<script type="module" src="js/submit/main.js?v=54ad1139"></script>
+<script type="module" src="js/submit/main.js?v=54f5adb8"></script>
 </body>
 </html>

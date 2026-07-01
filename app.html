@@ -17,9 +17,9 @@
 <link rel="stylesheet" href="css/shared/site.css?v=e05a0f73">
 <link rel="stylesheet" href="css/shared/filters.css?v=26d5b7e1">
 <link rel="stylesheet" href="css/shared/cards.css?v=16c748ed">
-<link rel="stylesheet" href="css/app/game-header.css?v=08bbcb4a">
+<link rel="stylesheet" href="css/app/game-header.css?v=66685a3b">
 <link rel="stylesheet" href="css/app/configs.css?v=90d5bed5">
-<link rel="stylesheet" href="css/app/reports.css?v=f6493b79">
+<link rel="stylesheet" href="css/app/reports.css?v=9ac38baa">
 <link rel="stylesheet" href="css/app/modals.css?v=99a2a3d5">
 <link rel="stylesheet" href="css/app/home.css?v=d983b41a">
 </head>
@@ -59,6 +59,10 @@
 <script src="js/lib/topbar.js?v=449040e3"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
 <script src="js/lib/gh-gist.js?v=346e3ea7"></script>
+<!-- #153: markdown-it renders the Notes field on report cards. renderNotes
+     in js/app/utils.js falls back to plain-text + spoiler handling when
+     the global is missing, so a load failure degrades gracefully. -->
+<script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
 <script type="module" src="js/app/main.js?v=7417f4a4"></script>
 </body>
 </html>

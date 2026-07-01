@@ -120,6 +120,14 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     return;
   }
 
+  // #153: markdown editor is on site-wide now (no flag). Wrap the Notes
+  // textarea with Write / Preview tabs and render the preview via
+  // window.markdownit. Falls through silently if the CDN failed to load,
+  // in which case the textarea keeps working as plain text.
+  if (typeof window.markdownit === 'function') {
+    enhanceNotesWithMarkdown(el);
+  }
+
   // In edit mode, pre-fill from existing report; otherwise fall back to saved hardware
   if (isEdit && session) {
     // #144: warn before editing a currently-published report. Fetch the
@@ -438,3 +446,59 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
   const fc = document.getElementById('submit-form-content');
   if (fc) fc.innerHTML = `<div style="padding:24px;color:var(--red)">Page error: ${err.message || err}</div>`;
 });
+
+// #153 spike: wraps the Notes textarea (name="notes") with a Write /
+// Preview tab pair. Preview renders via markdown-it. The textarea keeps
+// its name so the existing submitReport payload logic is untouched --
+// the raw markdown flows into user_configs.notes exactly like plain
+// text does today.
+function enhanceNotesWithMarkdown(rootEl) {
+  const textarea = rootEl.querySelector('textarea[name="notes"]');
+  if (!textarea || textarea.dataset.mdEnhanced === '1') return;
+  textarea.dataset.mdEnhanced = '1';
+
+  // html: false stops raw HTML from flowing through so the notes field
+  // is not an XSS vector. linkify + breaks match how most chat / issue
+  // renderers behave (Discord, GitHub Discussions).
+  const md = window.markdownit({
+    html: false,
+    linkify: true,
+    breaks: true,
+    typographer: false,
+  });
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'md-editor';
+  wrapper.innerHTML = `
+    <div class="md-editor-tabs" role="tablist">
+      <button type="button" class="md-editor-tab md-editor-tab--active" data-md-tab="write" role="tab" aria-selected="true">Write</button>
+      <button type="button" class="md-editor-tab" data-md-tab="preview" role="tab" aria-selected="false">Preview</button>
+      <span class="md-editor-hint">Markdown supported</span>
+    </div>
+    <div class="md-editor-preview" hidden></div>
+  `;
+  textarea.parentNode.insertBefore(wrapper, textarea);
+  wrapper.appendChild(textarea);
+
+  const previewEl = wrapper.querySelector('.md-editor-preview');
+  const writeBtn = wrapper.querySelector('[data-md-tab="write"]');
+  const previewBtn = wrapper.querySelector('[data-md-tab="preview"]');
+
+  function activate(tab) {
+    const isPreview = tab === 'preview';
+    writeBtn.classList.toggle('md-editor-tab--active', !isPreview);
+    previewBtn.classList.toggle('md-editor-tab--active', isPreview);
+    writeBtn.setAttribute('aria-selected', String(!isPreview));
+    previewBtn.setAttribute('aria-selected', String(isPreview));
+    textarea.hidden = isPreview;
+    previewEl.hidden = !isPreview;
+    if (isPreview) {
+      const raw = textarea.value || '';
+      previewEl.innerHTML = raw.trim()
+        ? md.render(raw)
+        : '<em class="md-editor-empty">Nothing to preview yet.</em>';
+    }
+  }
+  writeBtn.addEventListener('click', () => activate('write'));
+  previewBtn.addEventListener('click', () => activate('preview'));
+}

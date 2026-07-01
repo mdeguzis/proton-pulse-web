@@ -39,6 +39,7 @@ const {
   truncate,
   esc,
   escWithSpoilers,
+  renderNotes,
   cfgNa,
   configKey,
   hashReportKey,
@@ -586,6 +587,64 @@ describe('downloadJson', () => {
     expect(clicked[0]._download).toBe('My_Report___2026.json');
     expect(clicked[0]._href).toBe('blob:fake');
     expect(revoked).toEqual(['blob:fake']);
+  });
+});
+
+describe('renderNotes (#153)', () => {
+  test('empty / falsy input returns empty string', () => {
+    expect(renderNotes('')).toBe('');
+    expect(renderNotes(null)).toBe('');
+    expect(renderNotes(undefined)).toBe('');
+  });
+
+  test('falls back to escWithSpoilers when window.markdownit is missing', () => {
+    // No global.markdownit in test env by default -- so renderNotes
+    // should degrade to the plain-text + spoiler pipeline.
+    const out = renderNotes('hi {spoiler}secret{/spoiler} there');
+    expect(out).toContain('class="spoiler"');
+    expect(out).toContain('<span class="spoiler-content">secret</span>');
+    // No markdown-emitted <p> because we're on the fallback path.
+    expect(out).not.toContain('<p>');
+  });
+
+  test('escapes HTML in fallback path (XSS-safe)', () => {
+    const out = renderNotes('<img src=x onerror=alert(1)>');
+    expect(out).not.toMatch(/<img\b/);
+    expect(out).toContain('&lt;img');
+  });
+
+  test('with a stub markdown-it: renders paragraphs + swaps spoiler tokens', () => {
+    // Install a minimal fake md renderer to exercise the markdown branch.
+    // It escapes < and > and wraps the text in <p>, mirroring the shape
+    // real markdown-it produces for a single-paragraph input. html:false
+    // in the config means the render call is the only source of HTML.
+    global.window = global.window || global;
+    global.window.markdownit = () => ({
+      render: (t) => `<p>${t.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>\n`,
+    });
+    jest.resetModules();
+    const fresh = require('../js/app/utils.js');
+    const out = fresh.renderNotes('hello {spoiler}surprise{/spoiler} world');
+    expect(out).toContain('<p>');
+    expect(out).toContain('class="spoiler"');
+    expect(out).toContain('<span class="spoiler-content">surprise</span>');
+    // Cleanup so downstream describe blocks stay on the fallback path.
+    delete global.window.markdownit;
+  });
+
+  test('markdown branch keeps spoiler inner content safe (already-escaped)', () => {
+    global.window = global.window || global;
+    global.window.markdownit = () => ({
+      render: (t) => `<p>${t.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>\n`,
+    });
+    jest.resetModules();
+    const fresh = require('../js/app/utils.js');
+    const out = fresh.renderNotes('{spoiler}<img src=x>{/spoiler}');
+    // markdown-it already escaped the < and > before renderNotes did
+    // the spoiler replace, so no raw <img> leaks.
+    expect(out).not.toMatch(/<img\b/);
+    expect(out).toContain('&lt;img');
+    delete global.window.markdownit;
   });
 });
 
