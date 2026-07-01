@@ -664,6 +664,18 @@
 .pg-list--tile-mode.pg-list--md { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
 .pg-list--tile-mode.pg-list--lg { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 .pg-list--tile-mode.pg-list--xl { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+
+/* Mobile tile grid: same fix as .home-cards-tile-mode in app/home.css.
+   Desktop minmax values collapsed sm+md to 2 cols each and lg+xl to 1
+   col each on a ~360-430px viewport, so the four size steps looked
+   identical in pairs. Tighten mobile so each step produces a distinct
+   column count. */
+@media (max-width: 560px) {
+  .pg-list--tile-mode.pg-list--sm { grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); }
+  .pg-list--tile-mode.pg-list--md { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); }
+  .pg-list--tile-mode.pg-list--lg { grid-template-columns: 1fr; }
+  .pg-list--tile-mode.pg-list--xl { grid-template-columns: 1fr; }
+}
 .pg-list--tile-mode .pg-card {
   display: flex;
   flex-direction: column;
