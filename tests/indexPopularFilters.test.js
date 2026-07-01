@@ -85,9 +85,13 @@ describe('index page popular games rating filters', () => {
   test('popular list pages with a load more button', () => {
     expect(indexHtml).toContain('id="pg-load-more"');
     expect(indexSrc).toContain('const PAGE_SIZE = 12');
-    expect(indexSrc).toContain('all.slice(0, shownCount)');
+    // Slice uses the min-clamped shown count so an oversized shownCount
+    // (from a filter change or resize) never overruns the list length.
+    expect(indexSrc).toContain('all.slice(0, shown)');
     expect(indexSrc).toContain('id="pg-load-more-btn"');
-    expect(indexSrc).toContain('shownCount += PAGE_SIZE');
+    // Load more picks up from the actual rendered count (not stale
+    // shownCount) because trimming orphans mutates the DOM under it.
+    expect(indexSrc).toContain('shownCount = rendered + PAGE_SIZE');
   });
 
   test('changing a filter restarts paging', () => {

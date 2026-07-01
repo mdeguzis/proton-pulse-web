@@ -1,18 +1,26 @@
-// Pad a tile-mode grid container so the last row has the same number of
-// boxes as the rows above it. CSS grid normally leaves the trailing
-// columns of an incomplete row blank, which reads as a ragged edge in
-// the Steam-style tile view. We append invisible filler divs (with the
-// classes `<prefix>-card tile-filler`) so the trailing tiles still take
-// up the same grid cells without showing any content.
+// Pad a tile-mode grid container so the last row is never ragged.
 //
-// Call padTileRows(containerEl, { tileSelector, fillerClass }) after
-// every render of the tiles, and once after window resize. The helper
-// reads grid-template-columns off the live computed style so it
-// respects whatever auto-fill column count the browser actually picked.
+// Two modes depending on whether more items are queued behind the "Load
+// more" button:
+//
+// - hasMore=true: the last row is likely incomplete because the fixed
+//   page size doesn't divide evenly by the current column count. In that
+//   case we REMOVE the trailing orphan tiles so the grid ends on a full
+//   row and the Load more button visually takes the place of the missing
+//   tiles. The removed items come back on the next Load more click via
+//   a normal re-render.
+// - hasMore=false: everything the source has is already on screen, so
+//   the incomplete last row is real. We PAD it with invisible filler
+//   divs (`.tile-filler`) that occupy the trailing grid cells so the
+//   real tiles stay aligned with the columns above.
+//
+// Call padTileRows(containerEl, { tileSelector, fillerClass, hasMore })
+// after every render, and re-render on window resize (the column count
+// changes with viewport width, so a stale clamp needs recomputing).
 
 const _RESIZE_KEY = '__tilePadHandlers';
 
-export function padTileRows(container, { tileSelector = '> *', fillerClass = 'tile-filler' } = {}) {
+export function padTileRows(container, { tileSelector = '> *', fillerClass = 'tile-filler', hasMore = false } = {}) {
   if (!container) return;
   // Wipe stale fillers from the previous pad pass before counting.
   container.querySelectorAll('.' + fillerClass).forEach(f => f.remove());
@@ -28,6 +36,16 @@ export function padTileRows(container, { tileSelector = '> *', fillerClass = 'ti
   const items = container.querySelectorAll(':scope ' + tileSelector + ':not(.' + fillerClass + ')');
   const remainder = items.length % cols;
   if (remainder === 0) return;
+
+  if (hasMore) {
+    // Trim the incomplete last row -- the user can pull the missing tiles
+    // into view by clicking Load more, which re-renders with more items.
+    for (let i = 0; i < remainder; i++) {
+      const orphan = items[items.length - 1 - i];
+      if (orphan && orphan.parentNode === container) orphan.remove();
+    }
+    return;
+  }
 
   const need = cols - remainder;
   const frag = document.createDocumentFragment();
@@ -56,4 +74,24 @@ export function watchTileRows(container, opts) {
   container[_RESIZE_KEY] = handler;
   window.addEventListener('resize', handler, { passive: true });
   padTileRows(container, opts);
+}
+
+// Wire a container so it re-renders (via the caller's callback) on
+// window resize. Needed when padTileRows is used with hasMore=true:
+// trimming orphans is destructive, so a resize that changes the column
+// count means the trimmed tiles need to come back via a fresh render.
+// Idempotent -- a second call replaces the previous handler.
+const _RERENDER_KEY = '__tileRerenderHandler';
+export function watchTileRerender(container, callback) {
+  if (!container || typeof callback !== 'function') return;
+  if (container[_RERENDER_KEY]) {
+    window.removeEventListener('resize', container[_RERENDER_KEY]);
+  }
+  let pending = null;
+  const handler = () => {
+    if (pending) cancelAnimationFrame(pending);
+    pending = requestAnimationFrame(() => callback());
+  };
+  container[_RERENDER_KEY] = handler;
+  window.addEventListener('resize', handler, { passive: true });
 }

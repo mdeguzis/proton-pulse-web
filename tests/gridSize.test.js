@@ -57,8 +57,10 @@ describe('configurable card size (S/M/L)', () => {
   });
 
   test('load more keeps the current view in both sections', () => {
-    expect(homeSrc).toContain('batch.map(renderFn).join(\'\')');
-    expect(homeSrc).toContain('batch.map(_popularItemHtml).join(\'\')');
+    // Both sections re-render (rather than splice+append) so the tile-row
+    // orphan trim on the last row stays correct after every click.
+    expect(homeSrc).toContain('filtered.slice(0, shown).map(_popularItemHtml)');
+    expect(homeSrc).toContain('filtered.slice(0, shown).map(_recentCardHtml)');
     expect(homeSrc).not.toContain('function _appendCards');
   });
 

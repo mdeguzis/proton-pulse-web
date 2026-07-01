@@ -6,7 +6,7 @@ import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '.
 import { daysAgo, latestPerApp } from '../utils.js?v=c7e1268c';
 import { renderGameCard } from '../lib/card.js?v=754da47b';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
-import { padTileRows, watchTileRows } from '../../lib/tile-pad.js?v=defd5c6b';
+import { padTileRows, watchTileRerender } from '../../lib/tile-pad.js?v=a9b4e85c';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
 const LOAD_COUNTS = [50, 100, 150, 200];
@@ -337,26 +337,35 @@ export async function renderHomePage() {
       const cardsEl = document.getElementById('cards-popular');
       const loadMoreEl = document.getElementById('load-more-popular');
       if (!cardsEl) return;
-      const initial = filtered.slice(0, PAGE_SIZE);
-      const queue = filtered.slice(PAGE_SIZE);
-      cardsEl.innerHTML = initial.map(_popularItemHtml).join('')
-        || '<div class="state-box">No games match the current filters.</div>';
-      _updateShownCount('popular-count', cardsEl, initial.length ? filtered.length : 0);
-      if (loadMoreEl) {
-        if (queue.length) {
-          loadMoreEl.innerHTML = _loadMoreBtn('popular');
-          loadMoreEl.querySelector('button').addEventListener('click', () => {
-            const batch = queue.splice(0, PAGE_SIZE);
-            cardsEl.insertAdjacentHTML('beforeend', batch.map(_popularItemHtml).join(''));
-            _updateShownCount('popular-count', cardsEl, filtered.length);
-            padTileRows(cardsEl, { tileSelector: '.game-card' });
-            if (!queue.length) loadMoreEl.innerHTML = '';
-          });
-        } else {
-          loadMoreEl.innerHTML = initial.length ? _allShownNote(filtered.length) : '';
-        }
+      if (!filtered.length) {
+        cardsEl.innerHTML = '<div class="state-box">No games match the current filters.</div>';
+        _updateShownCount('popular-count', cardsEl, 0);
+        if (loadMoreEl) loadMoreEl.innerHTML = '';
+        return;
       }
-      padTileRows(cardsEl, { tileSelector: '.game-card' });
+      let popularShown = PAGE_SIZE;
+      const renderPopular = () => {
+        const shown = Math.min(popularShown, filtered.length);
+        cardsEl.innerHTML = filtered.slice(0, shown).map(_popularItemHtml).join('');
+        // hasMore=true trims trailing orphans so the last row stays flush; the
+        // trimmed tiles come back via the Load more click below.
+        padTileRows(cardsEl, { tileSelector: '.game-card', hasMore: filtered.length > shown });
+        const rendered = cardsEl.querySelectorAll(':scope .game-card:not(.tile-filler)').length;
+        _updateShownCount('popular-count', cardsEl, filtered.length);
+        if (loadMoreEl) {
+          if (filtered.length > rendered) {
+            loadMoreEl.innerHTML = _loadMoreBtn('popular');
+            loadMoreEl.querySelector('button').addEventListener('click', () => {
+              popularShown = rendered + PAGE_SIZE;
+              renderPopular();
+            });
+          } else {
+            loadMoreEl.innerHTML = _allShownNote(filtered.length);
+          }
+        }
+      };
+      renderPopular();
+      watchTileRerender(cardsEl, renderPopular);
     }
 
     // Render a popular game as a card. Both layouts use the same markup;
@@ -384,30 +393,32 @@ export async function renderHomePage() {
       const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
-      const renderFn = _recentCardHtml;
-      const queue = filtered.slice(PAGE_SIZE);
-      const initial = filtered.slice(0, PAGE_SIZE);
       // Hide the whole recent section when empty so there's no blank state box.
       if (sectionEl) sectionEl.hidden = !filtered.length;
       if (!filtered.length) { if (cardsEl) cardsEl.innerHTML = ''; _updateShownCount('recent-count', cardsEl, 0); return; }
-      cardsEl.innerHTML = initial.map(renderFn).join('');
-      _updateShownCount('recent-count', cardsEl, filtered.length);
-      if (loadMoreEl) {
-        if (queue.length) {
-          loadMoreEl.innerHTML = _loadMoreBtn('recent');
-          // Append with the same renderFn so load-more keeps the current view.
-          loadMoreEl.querySelector('button').addEventListener('click', () => {
-            const batch = queue.splice(0, PAGE_SIZE);
-            cardsEl.insertAdjacentHTML('beforeend', batch.map(renderFn).join(''));
-            _updateShownCount('recent-count', cardsEl, filtered.length);
-            padTileRows(cardsEl, { tileSelector: '.game-card' });
-            if (!queue.length) loadMoreEl.innerHTML = '';
-          });
-        } else {
-          loadMoreEl.innerHTML = filtered.length ? _allShownNote(filtered.length) : '';
+      let recentShown = PAGE_SIZE;
+      const renderRecent = () => {
+        const shown = Math.min(recentShown, filtered.length);
+        cardsEl.innerHTML = filtered.slice(0, shown).map(_recentCardHtml).join('');
+        // hasMore=true trims trailing orphans so the last row stays flush; the
+        // trimmed tiles come back via the Load more click below.
+        padTileRows(cardsEl, { tileSelector: '.game-card', hasMore: filtered.length > shown });
+        const rendered = cardsEl.querySelectorAll(':scope .game-card:not(.tile-filler)').length;
+        _updateShownCount('recent-count', cardsEl, filtered.length);
+        if (loadMoreEl) {
+          if (filtered.length > rendered) {
+            loadMoreEl.innerHTML = _loadMoreBtn('recent');
+            loadMoreEl.querySelector('button').addEventListener('click', () => {
+              recentShown = rendered + PAGE_SIZE;
+              renderRecent();
+            });
+          } else {
+            loadMoreEl.innerHTML = _allShownNote(filtered.length);
+          }
         }
-      }
-      padTileRows(cardsEl, { tileSelector: '.game-card' });
+      };
+      renderRecent();
+      watchTileRerender(cardsEl, renderRecent);
     }
 
     document.getElementById('home-sort-select')?.addEventListener('change', e => {
@@ -574,11 +585,9 @@ export async function renderHomePage() {
       // S/M/L/XL stay enabled in both modes -- in tile mode the size
       // controls the column width, in list mode it controls row height.
       _setSizeEnabled(true);
-      // Pad the trailing row of each tile grid with invisible fillers so
-      // an incomplete last row doesn't read as a ragged edge, and keep
-      // it padded as the viewport resizes.
-      if (recentEl) watchTileRows(recentEl, { tileSelector: '.game-card' });
-      if (popularEl) watchTileRows(popularEl, { tileSelector: '.game-card' });
+      // Resize re-render is wired inside applyRecent/PopularFilters via
+      // watchTileRerender -- nothing to hook here beyond triggering the
+      // caller's applyRecent/PopularFilters which runs on layout change.
     }
     document.querySelectorAll('.home-layout-btn').forEach(btn => {
       btn.addEventListener('click', () => {

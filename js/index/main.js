@@ -1,7 +1,7 @@
 // Entry module for index.html (homepage). Migrated from index.js.
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=e7fe3ce0';
 import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
-import { padTileRows, watchTileRows } from '../lib/tile-pad.js?v=defd5c6b';
+import { padTileRows, watchTileRerender } from '../lib/tile-pad.js?v=a9b4e85c';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
 // search dropdown, auth indicator) lives in topbar.js.
@@ -278,19 +278,24 @@ import { padTileRows, watchTileRows } from '../lib/tile-pad.js?v=defd5c6b';
         if (loadMoreEl) loadMoreEl.innerHTML = '';
         return;
       }
-      list.innerHTML = all.slice(0, shownCount).map(pgCardHtml).join('');
+      const shown = Math.min(shownCount, all.length);
+      list.innerHTML = all.slice(0, shown).map(pgCardHtml).join('');
+      const hasMore = all.length > shown;
+      // In tile mode: when more items are queued, trim any orphan tiles on
+      // the last row so the grid ends flush (the Load more button visually
+      // fills the gap). When fully shown, pad the last row with invisible
+      // fillers instead so the trailing tiles stay aligned.
+      padTileRows(list, { tileSelector: '.pg-card', hasMore });
       if (loadMoreEl) {
-        const remaining = all.length - shownCount;
+        // Recompute remaining after any orphan trim so the count is accurate.
+        const rendered = list.querySelectorAll(':scope .pg-card:not(.tile-filler)').length;
+        const remaining = all.length - rendered;
         loadMoreEl.innerHTML = remaining > 0
           ? `<button class="pg-load-more" id="pg-load-more-btn" type="button">Load more <span class="pg-load-more-count">${remaining}</span></button>`
           : '';
         const moreBtn = document.getElementById('pg-load-more-btn');
-        if (moreBtn) moreBtn.addEventListener('click', () => { shownCount += PAGE_SIZE; renderPopular(); });
+        if (moreBtn) moreBtn.addEventListener('click', () => { shownCount = rendered + PAGE_SIZE; renderPopular(); });
       }
-      // Top off the last grid row with invisible filler tiles in tile mode
-      // so the grid doesn't look ragged on the trailing edge. No-op in list
-      // mode (the helper bails when grid-template-columns isn't set).
-      padTileRows(list, { tileSelector: '.pg-card' });
     }
 
     // Rated / Not Rated are independent toggles (multi-select). Both on or both
@@ -422,9 +427,11 @@ import { padTileRows, watchTileRows } from '../lib/tile-pad.js?v=defd5c6b';
       // tile column width in grid mode.
       setSizeEnabled(true);
       renderPopular();
-      // Keep the last grid row full as the viewport resizes. watchTileRows
-      // is idempotent so calling it on every applyLayout is safe.
-      watchTileRows(list, { tileSelector: '.pg-card' });
+      // Column count changes with viewport width, so a resize invalidates
+      // the last-row clamp. watchTileRerender re-runs renderPopular on
+      // debounced resize; it's idempotent so re-wiring on every layout
+      // apply is safe.
+      watchTileRerender(list, renderPopular);
     }
     document.querySelectorAll('.pg-layout-btn').forEach(btn => {
       btn.addEventListener('click', () => {
