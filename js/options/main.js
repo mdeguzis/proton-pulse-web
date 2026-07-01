@@ -42,6 +42,19 @@ if (toggle) {
   });
 }
 
+// Adult games visibility. Off by default; when off, browse views hide
+// any row whose data.adult === true. Value is a simple on/off string so
+// missing/malformed keys default to off (the safer state).
+const SHOW_ADULT_KEY = 'pp:show-adult';
+const adultToggle = document.getElementById('opt-show-adult');
+if (adultToggle) {
+  adultToggle.checked = localStorage.getItem(SHOW_ADULT_KEY) === 'on';
+  adultToggle.addEventListener('change', () => {
+    localStorage.setItem(SHOW_ADULT_KEY, adultToggle.checked ? 'on' : 'off');
+    console.log('[options] show-adult:', adultToggle.checked);
+  });
+}
+
 // Store pill position. Values:
 //   'right'       - inline with the rating pill in the right column
 //   'art'         - overlaid on the thumbnail corner

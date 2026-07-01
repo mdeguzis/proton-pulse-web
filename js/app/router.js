@@ -1,7 +1,7 @@
 // router (entry) for the app page. Relocated from app.js.
 
 import { renderGamePage } from './components/game-page.js?v=d79ce4b8';
-import { renderHomePage } from './components/home.js?v=2c5ae26a';
+import { renderHomePage } from './components/home.js?v=7675ca15';
 import { renderSearchPage } from './components/search.js?v=f7b2fe47';
 
 export function getRoute() {

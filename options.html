@@ -47,6 +47,46 @@
         </label>
         <div class="option-default-note">Default: on (off when your system requests reduced motion).</div>
       </div>
+
+      <div class="option-row option-row--block">
+        <div class="option-text">
+          <div class="option-title">Default layout</div>
+          <div class="option-desc">
+            How browse pages lay games out by default. "List" shows
+            horizontal cards stacked top to bottom. "Grid" shows a
+            Steam-style grid of header thumbnails. Each page also has a
+            List/Grid toggle that overrides this for the rest of the
+            session.
+          </div>
+        </div>
+        <div class="option-radio-group" id="opt-grid-layout">
+          <label class="option-radio">
+            <input type="radio" name="grid-layout" value="list">
+            <span>List</span>
+          </label>
+          <label class="option-radio">
+            <input type="radio" name="grid-layout" value="grid" checked>
+            <span>Grid (tiles) <span class="option-default-tag">(default)</span></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="option-row">
+        <div class="option-text">
+          <div class="option-title">Show adult games</div>
+          <div class="option-desc">
+            Include titles flagged by Steam as containing sexual content
+            or nudity in Popular / Recent lists and search. Off by
+            default; toggle on if you want them visible in browse views.
+          </div>
+        </div>
+        <label class="option-switch">
+          <input type="checkbox" id="opt-show-adult">
+          <span class="option-switch-track"></span>
+        </label>
+        <div class="option-default-note">Default: off.</div>
+      </div>
+
       <div class="option-row option-row--block">
         <div class="option-text">
           <div class="option-title">Store badge position</div>
@@ -129,29 +169,6 @@
 
       <div class="option-row option-row--block">
         <div class="option-text">
-          <div class="option-title">Default layout</div>
-          <div class="option-desc">
-            How browse pages lay games out by default. "List" shows
-            horizontal cards stacked top to bottom. "Grid" shows a
-            Steam-style grid of header thumbnails. Each page also has a
-            List/Grid toggle that overrides this for the rest of the
-            session.
-          </div>
-        </div>
-        <div class="option-radio-group" id="opt-grid-layout">
-          <label class="option-radio">
-            <input type="radio" name="grid-layout" value="list">
-            <span>List</span>
-          </label>
-          <label class="option-radio">
-            <input type="radio" name="grid-layout" value="grid" checked>
-            <span>Grid (tiles) <span class="option-default-tag">(default)</span></span>
-          </label>
-        </div>
-      </div>
-
-      <div class="option-row option-row--block">
-        <div class="option-text">
           <div class="option-title">Reports per page</div>
           <div class="option-desc">
             How many game cards to preload in each section when browsing reports
@@ -203,6 +220,6 @@
 <script src="js/lib/analytics.js?v=e6dfbad8"></script>
 <script src="js/lib/topbar.js?v=449040e3"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/options/main.js?v=0b84807c"></script>
+<script type="module" src="js/options/main.js?v=428d8388"></script>
 </body>
 </html>

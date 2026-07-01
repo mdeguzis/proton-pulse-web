@@ -20,7 +20,7 @@ import urllib.request
 from pathlib import Path
 
 from .catalog import read_cached_steam_game_catalog
-from .common import log
+from .common import flush_steam_descriptors_cache, is_adult_app, log
 
 STEAM_MOST_PLAYED_URL = (
     "https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/"
@@ -137,6 +137,9 @@ def build_most_played(
             "pulseCount": pulse_count,
             "lastReportDate": _last_report_date(data_dir, app_id),
             "headerImage": None,  # filled in by game_images.build_game_images after this step
+            # Flag Steam-classified adult games so the frontend can hide
+            # them by default (opt-in via site options "Show adult games").
+            "adult": is_adult_app(app_id),
         }
         if tier in KNOWN_TIERS and len(rated) < limit:
             rated.append(row)
@@ -170,6 +173,7 @@ def build_most_played(
                     "pulseCount": 0,
                     "lastReportDate": None,
                     "headerImage": None,
+                    "adult": is_adult_app(app_id),
                 })
             if catalog_only:
                 log(f"[most-played] {len(catalog_only)} catalog-only game(s) added from Steam catalog cache")
@@ -187,5 +191,9 @@ def build_most_played(
     catalog_stub_path = output_dir / "steam-catalog.json"
     catalog_stub_path.write_text(json.dumps(catalog_stubs, indent=2) + "\n", encoding="utf-8")
     log(f"[most-played] wrote {len(catalog_stubs)} catalog stub(s) to {catalog_stub_path.name}")
+
+    # Persist any newly-fetched Steam content descriptor entries so the
+    # next pipeline run doesn't re-hit appdetails for them (30d TTL).
+    flush_steam_descriptors_cache()
 
     return result

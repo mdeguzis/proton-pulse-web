@@ -7,6 +7,7 @@ import { daysAgo, latestPerApp } from '../utils.js?v=c7e1268c';
 import { renderGameCard } from '../lib/card.js?v=754da47b';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { padTileRows, watchTileRerender, pageSizeForFullRows } from '../../lib/tile-pad.js?v=de862970';
+import { filterAdult } from '../../lib/adult-filter.js?v=7630e414';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
 const LOAD_COUNTS = [50, 100, 150, 200];
@@ -338,7 +339,7 @@ export async function renderHomePage() {
           return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending' };
         });
       }
-      const filtered = _filterByText(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), textFilter);
+      const filtered = filterAdult(_filterByText(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), textFilter));
       const cardsEl = document.getElementById('cards-popular');
       const loadMoreEl = document.getElementById('load-more-popular');
       if (!cardsEl) return;
@@ -394,7 +395,7 @@ export async function renderHomePage() {
     }
 
     function applyRecentFilters() {
-      const filtered = _filterByText(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), textFilter);
+      const filtered = filterAdult(_filterByText(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), textFilter));
       const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');

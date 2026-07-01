@@ -11,9 +11,22 @@ DEBUG = False
 DEFAULT_STEAM_TITLE_CACHE_PATH = Path(__file__).resolve().parents[2] / ".cache" / "steam-title-cache.json"
 STEAM_TITLE_CACHE_MAX_AGE_SECONDS = 30 * 86400  # 30 days
 
+# Steam content descriptor cache -- keeps the { app_id -> descriptor_ids }
+# mapping so we don't re-hit appdetails on every pipeline run.
+DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH = Path(__file__).resolve().parents[2] / ".cache" / "steam-content-descriptors-cache.json"
+STEAM_DESCRIPTORS_CACHE_MAX_AGE_SECONDS = 30 * 86400  # 30 days
+# Steam descriptor IDs that flag a game as adult-only for our purposes.
+# 1 = Some Nudity or Sexual Content
+# 4 = Adult Only Sexual Content
+# 5 = Frequent Nudity or Sexual Content
+ADULT_DESCRIPTOR_IDS = {1, 4, 5}
+
 # In-memory Steam title cache (loaded once per run)
 _steam_title_cache: dict[str, dict] | None = None
 _steam_title_cache_dirty = False
+# In-memory Steam content descriptor cache
+_steam_descriptors_cache: dict[str, dict] | None = None
+_steam_descriptors_cache_dirty = False
 LIVE_COUNTS_URL = "https://www.protondb.com/data/counts.json"
 LIVE_REPORTS_URL = "https://www.protondb.com/data/reports/{device}/app/{hash}.json"
 LIVE_REPORT_DEVICE = "all-devices"
@@ -169,6 +182,89 @@ def fetch_steam_title_with_source(app_id: str) -> tuple[str, str]:
         cache[app_id] = {"title": "", "source": "steam-store-error", "ts": now}
         _steam_title_cache_dirty = True
         return "", "steam-store-error"
+
+
+def _load_steam_descriptors_cache(
+    cache_path: Path = DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH,
+) -> dict[str, dict]:
+    """Load the persistent Steam content-descriptor cache from disk."""
+    global _steam_descriptors_cache
+    if _steam_descriptors_cache is not None:
+        return _steam_descriptors_cache
+    if cache_path.exists():
+        try:
+            raw = json.loads(cache_path.read_text())
+            if isinstance(raw, dict):
+                _steam_descriptors_cache = raw
+                log(f"[steam-descriptors-cache] Loaded {len(raw):,} entries from {cache_path}")
+                return _steam_descriptors_cache
+        except (json.JSONDecodeError, OSError):
+            pass
+    _steam_descriptors_cache = {}
+    return _steam_descriptors_cache
+
+
+def _save_steam_descriptors_cache(
+    cache_path: Path = DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH,
+) -> None:
+    global _steam_descriptors_cache_dirty
+    if not _steam_descriptors_cache_dirty or _steam_descriptors_cache is None:
+        return
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps(_steam_descriptors_cache))
+    _steam_descriptors_cache_dirty = False
+    log(f"[steam-descriptors-cache] Saved {len(_steam_descriptors_cache):,} entries to {cache_path}")
+
+
+def flush_steam_descriptors_cache(
+    cache_path: Path = DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH,
+) -> None:
+    _save_steam_descriptors_cache(cache_path)
+
+
+def fetch_steam_content_descriptors(app_id: str) -> list[int]:
+    """Return Steam content-descriptor ids for an app, cached on disk.
+
+    Descriptor list comes from the same appdetails endpoint the title
+    fetcher uses. Empty list on miss / unsuccessful response so callers
+    can safely treat "no data" as "no flags". The result is cached for
+    STEAM_DESCRIPTORS_CACHE_MAX_AGE_SECONDS (30 days) so pipeline reruns
+    only pay the Steam API cost for new / expired entries.
+    """
+    global _steam_descriptors_cache_dirty
+    cache = _load_steam_descriptors_cache()
+    now = int(time.time())
+
+    cached = cache.get(app_id)
+    if cached and isinstance(cached, dict):
+        age = now - cached.get("ts", 0)
+        if age < STEAM_DESCRIPTORS_CACHE_MAX_AGE_SECONDS:
+            ids = cached.get("ids", [])
+            return list(ids) if isinstance(ids, list) else []
+
+    try:
+        data = fetch_json(STEAM_APP_DETAILS_URL.format(app_id=app_id))
+        app_data = (data or {}).get(str(app_id), {})
+        if app_data.get("success"):
+            descriptors = app_data.get("data", {}).get("content_descriptors", {}) or {}
+            raw_ids = descriptors.get("ids", []) or []
+            ids = [int(i) for i in raw_ids if isinstance(i, (int, float)) and not isinstance(i, bool)]
+            cache[app_id] = {"ids": ids, "ts": now}
+            _steam_descriptors_cache_dirty = True
+            return ids
+        cache[app_id] = {"ids": [], "ts": now}
+        _steam_descriptors_cache_dirty = True
+        return []
+    except Exception:
+        cache[app_id] = {"ids": [], "ts": now}
+        _steam_descriptors_cache_dirty = True
+        return []
+
+
+def is_adult_app(app_id: str) -> bool:
+    """True when Steam flags the app with any ADULT_DESCRIPTOR_IDS."""
+    ids = fetch_steam_content_descriptors(app_id)
+    return bool(set(ids) & ADULT_DESCRIPTOR_IDS)
 
 
 def normalize_whitespace(value):

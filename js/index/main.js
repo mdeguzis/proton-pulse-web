@@ -2,6 +2,7 @@
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=e7fe3ce0';
 import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
 import { padTileRows, watchTileRerender, pageSizeForFullRows } from '../lib/tile-pad.js?v=de862970';
+import { filterAdult } from '../lib/adult-filter.js?v=7630e414';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
 // search dropdown, auth indicator) lives in topbar.js.
@@ -252,7 +253,7 @@ import { padTileRows, watchTileRerender, pageSizeForFullRows } from '../lib/tile
       // from a title match in the Steam most-played map.
       const peakOf = g => g.peak || steamPeakByTitle.get(normTitle(g.title)) || 0;
       const countOf = g => (g.protondbCount || 0) + (g.pulseCount || 0);
-      return out.sort((a, b) =>
+      return filterAdult(out).sort((a, b) =>
         peakOf(b) - peakOf(a) || countOf(b) - countOf(a) || (a.title || '').localeCompare(b.title || ''));
     }
 
