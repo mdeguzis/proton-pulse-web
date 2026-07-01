@@ -17,6 +17,18 @@ const DATA_FILES = [
   'proton-versions.json',
 ];
 
+// Format a YYYY-MM-DD label as e.g. "Mon Jul 1, 2026" for chart tooltips.
+// Falls back to the raw label if it doesn't parse (Chart.js sometimes passes
+// numeric indices during transitions).
+function _formatTooltipDate(label) {
+  if (!label || typeof label !== 'string') return String(label || '');
+  const m = label.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return label;
+  const d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+  if (isNaN(d.getTime())) return label;
+  return d.toLocaleDateString(undefined, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+}
+
 function _formatAge(secs) {
   if (!Number.isFinite(secs)) return '?';
   if (secs < 60) return `${Math.round(secs)}s`;
@@ -24,6 +36,31 @@ function _formatAge(secs) {
   if (secs < 86400) return `${Math.round(secs / 3600)}h`;
   return `${Math.round(secs / 86400)}d`;
 }
+
+// Chart.js plugin: draws a 1px vertical crosshair at the hovered x position.
+// Chart.js gives us index-mode tooltips out of the box but does not draw a
+// visible guideline, so hovering feels imprecise. Register this per chart
+// via the `plugins: [_verticalHoverLine]` array in the Chart config.
+const _verticalHoverLine = {
+  id: 'verticalHoverLine',
+  afterDraw(chart) {
+    const active = chart.tooltip?._active;
+    if (!active || !active.length) return;
+    const x = active[0].element.x;
+    const top = chart.chartArea.top;
+    const bottom = chart.chartArea.bottom;
+    const ctx = chart.ctx;
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(x, top);
+    ctx.lineTo(x, bottom);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(255,255,255,0.35)';
+    ctx.setLineDash([3, 3]);
+    ctx.stroke();
+    ctx.restore();
+  },
+};
 
 function _formatSize(bytes) {
   if (!Number.isFinite(bytes)) return '?';
@@ -409,9 +446,9 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     </div>
     <div id="sec-daily" style="margin-bottom:6px">
       <span class="analytics-section-title">Daily activity</span>
-      <span style="float:right;font-size:0.75rem;color:var(--text-muted,#888)">
-        <span style="color:#5c8bd6">&#9644;</span> Sessions &nbsp;
-        <span style="color:#4caf80">&#9644;</span> Unique users
+      <span class="analytics-legend">
+        <span class="analytics-legend-item"><span class="analytics-legend-swatch" style="background:#5c8bd6"></span>Sessions</span>
+        <span class="analytics-legend-item"><span class="analytics-legend-swatch" style="background:#4caf80"></span>Unique users</span>
       </span>
     </div>
     <div class="analytics-chart-wrap">
@@ -420,10 +457,10 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     <p class="chart-caption">Sessions and distinct authenticated users per day across the selected range.</p>
     <div id="sec-reports" style="margin-top:24px;margin-bottom:6px">
       <span class="analytics-section-title">Report submissions</span>
-      <span style="float:right;font-size:0.75rem;color:var(--text-muted,#888)">
-        <span style="color:#5c8bd6">&#9644;</span> Web
-        &nbsp;<span style="color:#4caf80">&#9644;</span> Plugin
-        &nbsp;<span style="color:#d4b36a">&#9644;</span> Other
+      <span class="analytics-legend">
+        <span class="analytics-legend-item"><span class="analytics-legend-swatch" style="background:#5c8bd6"></span>Web</span>
+        <span class="analytics-legend-item"><span class="analytics-legend-swatch" style="background:#4caf80"></span>Plugin</span>
+        <span class="analytics-legend-item"><span class="analytics-legend-swatch" style="background:#d4b36a"></span>Other</span>
       </span>
     </div>
     <div class="analytics-chart-wrap">
@@ -491,6 +528,7 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     if (canvas) {
       chartInstance = new Chart(canvas, {
         type: 'line',
+        plugins: [_verticalHoverLine],
         data: {
           labels: daily.map(r => r.day),
           datasets: [
@@ -501,6 +539,7 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
               backgroundColor: 'rgba(92,139,214,0.12)',
               fill: true,
               tension: 0.3,
+              cubicInterpolationMode: 'monotone',
               pointRadius: 3,
             },
             {
@@ -510,6 +549,7 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
               backgroundColor: 'rgba(76,175,128,0.08)',
               fill: true,
               tension: 0.3,
+              cubicInterpolationMode: 'monotone',
               pointRadius: 3,
             },
           ],
@@ -517,17 +557,28 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
           plugins: {
             legend: { display: false },
             tooltip: {
+              mode: 'index',
+              intersect: false,
+              backgroundColor: 'rgba(20,24,32,0.95)',
+              borderColor: 'rgba(255,255,255,0.15)',
+              borderWidth: 1,
+              padding: 10,
+              titleFont: { weight: '600' },
               callbacks: {
-                title: items => items[0].label,
+                title: items => _formatTooltipDate(items[0].label),
+                label: ctx => `${ctx.dataset.label}: ${Number(ctx.parsed.y || 0).toLocaleString()}`,
               },
             },
           },
           scales: {
             x: { ticks: { color: '#888', maxTicksLimit: 10 }, grid: { color: 'rgba(255,255,255,0.05)' } },
-            y: { ticks: { color: '#888' }, grid: { color: 'rgba(255,255,255,0.05)' }, beginAtZero: true },
+            // grace: 1 pads the axis max by a single unit so the tallest
+            // point doesn't sit flush against the chart ceiling.
+            y: { ticks: { color: '#888' }, grid: { color: 'rgba(255,255,255,0.05)' }, beginAtZero: true, grace: 1 },
           },
         },
       });
@@ -542,32 +593,45 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
       // breakdown still have a .count fallback handled in the data fetcher,
       // but defensively default each series to 0 here too.
       reportsChartInstance = new Chart(canvas, {
-        type: 'bar',
+        type: 'line',
+        plugins: [_verticalHoverLine],
         data: {
           labels: reportsByDay.map(r => r.day),
           datasets: [
             {
               label: 'Web',
               data: reportsByDay.map(r => r.web ?? 0),
-              backgroundColor: 'rgba(92,139,214,0.7)',
+              backgroundColor: 'rgba(92,139,214,0.35)',
               borderColor: '#5c8bd6',
-              borderWidth: 1,
+              borderWidth: 1.5,
+              pointRadius: 2,
+              tension: 0.3,
+              cubicInterpolationMode: 'monotone',
+              fill: true,
               stack: 'reports',
             },
             {
               label: 'Plugin',
               data: reportsByDay.map(r => r.plugin ?? 0),
-              backgroundColor: 'rgba(76,175,128,0.7)',
+              backgroundColor: 'rgba(76,175,128,0.35)',
               borderColor: '#4caf80',
-              borderWidth: 1,
+              borderWidth: 1.5,
+              pointRadius: 2,
+              tension: 0.3,
+              cubicInterpolationMode: 'monotone',
+              fill: true,
               stack: 'reports',
             },
             {
               label: 'Other',
               data: reportsByDay.map(r => r.other ?? 0),
-              backgroundColor: 'rgba(212,179,106,0.7)',
+              backgroundColor: 'rgba(212,179,106,0.35)',
               borderColor: '#d4b36a',
-              borderWidth: 1,
+              borderWidth: 1.5,
+              pointRadius: 2,
+              tension: 0.3,
+              cubicInterpolationMode: 'monotone',
+              fill: true,
               stack: 'reports',
             },
           ],
@@ -575,7 +639,27 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: { legend: { display: false } },
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              mode: 'index',
+              intersect: false,
+              backgroundColor: 'rgba(20,24,32,0.95)',
+              borderColor: 'rgba(255,255,255,0.15)',
+              borderWidth: 1,
+              padding: 10,
+              titleFont: { weight: '600' },
+              callbacks: {
+                title: items => _formatTooltipDate(items[0].label),
+                label: ctx => `${ctx.dataset.label}: ${Number(ctx.parsed.y || 0).toLocaleString()}`,
+                footer: items => {
+                  const total = items.reduce((s, it) => s + Number(it.parsed.y || 0), 0);
+                  return `Total: ${total.toLocaleString()}`;
+                },
+              },
+            },
+          },
           scales: {
             x: {
               ticks: { color: '#888', maxTicksLimit: 10 },
@@ -587,6 +671,9 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
               grid: { color: 'rgba(255,255,255,0.05)' },
               beginAtZero: true,
               stacked: true,
+              // +1 above the tallest stack keeps a clean gap without
+              // dwarfing days that have few reports.
+              grace: 1,
             },
           },
         },

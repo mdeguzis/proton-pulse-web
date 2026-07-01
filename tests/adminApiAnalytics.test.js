@@ -53,7 +53,10 @@ describe('fetchAnalytics top-level RPC + side fetches', () => {
     expect(JSON.parse(rpcCall[1].body)).toEqual({ days_back: 7 });
 
     expect(result.totals.authed_users).toBe(7);
-    expect(result.reports_by_day).toEqual([
+    // reports_by_day pads every day in the range with zero rows; assert on
+    // the non-zero entries so the test stays stable regardless of the
+    // padding window size or wall-clock "today".
+    expect(result.reports_by_day.filter(r => r.count > 0)).toEqual([
       { day: '2026-06-29', count: 1, web: 1, plugin: 0, other: 0 },
       { day: '2026-06-30', count: 1, web: 0, plugin: 1, other: 0 },
     ]);
@@ -104,7 +107,7 @@ describe('fetchReportsByDay source bucketing (via fetchAnalytics)', () => {
       ],
     });
     const result = await fetchAnalytics(makeSession());
-    expect(result.reports_by_day).toEqual([
+    expect(result.reports_by_day.filter(r => r.count > 0)).toEqual([
       { day: '2026-06-30', count: 3, web: 0, plugin: 0, other: 3 },
     ]);
   });
@@ -118,7 +121,8 @@ describe('fetchReportsByDay source bucketing (via fetchAnalytics)', () => {
       ],
     });
     const result = await fetchAnalytics(makeSession());
-    expect(result.reports_by_day[0]).toEqual({ day: '2026-06-30', count: 2, web: 1, plugin: 1, other: 0 });
+    const nonZero = result.reports_by_day.filter(r => r.count > 0);
+    expect(nonZero[0]).toEqual({ day: '2026-06-30', count: 2, web: 1, plugin: 1, other: 0 });
   });
 
   test('days are returned in ascending order', async () => {
@@ -131,7 +135,10 @@ describe('fetchReportsByDay source bucketing (via fetchAnalytics)', () => {
       ],
     });
     const result = await fetchAnalytics(makeSession());
-    expect(result.reports_by_day.map((r) => r.day)).toEqual(['2026-06-28', '2026-06-30', '2026-07-01']);
+    // The zero-padded window also emits 2026-06-29; assert only that the
+    // days with data appear in ascending order.
+    expect(result.reports_by_day.filter(r => r.count > 0).map((r) => r.day))
+      .toEqual(['2026-06-28', '2026-06-30', '2026-07-01']);
   });
 
   test('rows missing created_at are skipped silently', async () => {
@@ -143,9 +150,31 @@ describe('fetchReportsByDay source bucketing (via fetchAnalytics)', () => {
       ],
     });
     const result = await fetchAnalytics(makeSession());
-    expect(result.reports_by_day).toEqual([
+    expect(result.reports_by_day.filter(r => r.count > 0)).toEqual([
       { day: '2026-06-30', count: 1, web: 1, plugin: 0, other: 0 },
     ]);
+  });
+
+  test('every day in the range is emitted as at least a zero row (padding)', async () => {
+    jest.useFakeTimers({ now: new Date('2026-06-30T18:00:00Z') });
+    try {
+      global.fetch = routedFetch({
+        'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
+        'https://test.supabase.co/rest/v1/user_configs': [
+          { created_at: '2026-06-30T01:00:00Z', source: 'web' },
+        ],
+      });
+      const result = await fetchAnalytics(makeSession(), { daysBack: 3 });
+      // 3-day window ending 2026-06-30 covers 06-27, 06-28, 06-29, 06-30.
+      // Every day must be present so the chart line reaches zero on empty
+      // days instead of skipping them.
+      expect(result.reports_by_day.map(r => r.day)).toEqual([
+        '2026-06-27', '2026-06-28', '2026-06-29', '2026-06-30',
+      ]);
+      expect(result.reports_by_day.slice(0, 3).every(r => r.count === 0)).toBe(true);
+    } finally {
+      jest.useRealTimers();
+    }
   });
 });
 

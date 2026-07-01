@@ -68,7 +68,17 @@ describe('fetchReportsByDay source breakdown (#76)', () => {
     expect(ctx.classifyReportSource('Plugin-Steamdeck')).toBe('plugin');
   });
 
+  // The padded-range assertions depend on Date.now(). Freeze it to a known
+  // day so 'since' and 'today' are deterministic across all environments.
+  beforeEach(() => {
+    jest.useFakeTimers({ now: new Date('2026-06-30T18:00:00Z') });
+  });
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
   test('fetchReportsByDay groups by day + source and includes web/plugin/other counts', async () => {
+    // 2d window ending 2026-06-30: covers 06-28 (empty), 06-29, 06-30.
     const ctx = loadApi({
       '*': [
         { created_at: '2026-06-29T10:00:00Z', source: 'web-linux' },
@@ -78,23 +88,43 @@ describe('fetchReportsByDay source breakdown (#76)', () => {
         { created_at: '2026-06-30T09:00:00Z', source: 'plugin-windows' },
       ],
     });
-    const rows = await ctx.fetchReportsByDay({}, 7);
+    const rows = await ctx.fetchReportsByDay({}, 2);
     expect(rows).toEqual([
+      { day: '2026-06-28', count: 0, web: 0, plugin: 0, other: 0 },
       { day: '2026-06-29', count: 4, web: 2, plugin: 1, other: 1 },
       { day: '2026-06-30', count: 1, web: 0, plugin: 1, other: 0 },
     ]);
   });
 
+  test('fetchReportsByDay pads missing days with zero rows across the full range', async () => {
+    // 4d window ending 2026-06-30. Only 06-28 has a report; every other
+    // day in the range must still appear as an explicit zero row so the
+    // line chart plots a continuous "0 today" signal instead of skipping.
+    const ctx = loadApi({
+      '*': [
+        { created_at: '2026-06-28T10:00:00Z', source: 'web' },
+      ],
+    });
+    const rows = await ctx.fetchReportsByDay({}, 4);
+    expect(rows.map(r => r.day)).toEqual([
+      '2026-06-26', '2026-06-27', '2026-06-28', '2026-06-29', '2026-06-30',
+    ]);
+    expect(rows.filter(r => r.count === 0)).toHaveLength(4);
+    expect(rows.find(r => r.day === '2026-06-28')).toEqual({
+      day: '2026-06-28', count: 1, web: 1, plugin: 0, other: 0,
+    });
+  });
+
   test('fetchReportsByDay returns days sorted ascending', async () => {
     const ctx = loadApi({
       '*': [
-        { created_at: '2026-07-01T10:00:00Z', source: 'web' },
-        { created_at: '2026-06-28T10:00:00Z', source: 'web' },
         { created_at: '2026-06-30T10:00:00Z', source: 'web' },
+        { created_at: '2026-06-28T10:00:00Z', source: 'web' },
+        { created_at: '2026-06-29T10:00:00Z', source: 'web' },
       ],
     });
-    const rows = await ctx.fetchReportsByDay({}, 7);
-    expect(rows.map((r) => r.day)).toEqual(['2026-06-28', '2026-06-30', '2026-07-01']);
+    const rows = await ctx.fetchReportsByDay({}, 2);
+    expect(rows.map((r) => r.day)).toEqual(['2026-06-28', '2026-06-29', '2026-06-30']);
   });
 
   test('fetchReportsByDay returns [] on fetch failure', async () => {
@@ -120,10 +150,11 @@ describe('fetchReportsByDay source breakdown (#76)', () => {
         { created_at: '2026-06-29T14:00:00Z', source: 'web' },
       ],
     });
-    const rows = await ctx.fetchReportsByDay({}, 7);
-    expect(rows).toEqual([
-      { day: '2026-06-29', count: 3, web: 1, plugin: 0, other: 2 },
-    ]);
+    const rows = await ctx.fetchReportsByDay({}, 1);
+    // Padded range: 06-29 (data) + 06-30 (empty). Only 06-29 has counts.
+    expect(rows.find(r => r.day === '2026-06-29')).toEqual({
+      day: '2026-06-29', count: 3, web: 1, plugin: 0, other: 2,
+    });
   });
 });
 
@@ -146,7 +177,7 @@ describe('Report Submissions chart source shape (#76)', () => {
   test('chart has 3 datasets with matching stack key', () => {
     // All three series must share stack: 'reports' so they stack visually
     // instead of rendering side-by-side.
-    const block = CMP_SRC.slice(CMP_SRC.indexOf('reportsChartInstance = new Chart'), CMP_SRC.indexOf('reportsChartInstance = new Chart') + 2500);
+    const block = CMP_SRC.slice(CMP_SRC.indexOf('reportsChartInstance = new Chart'), CMP_SRC.indexOf('reportsChartInstance = new Chart') + 4000);
     expect(block).toContain("label: 'Web'");
     expect(block).toContain("label: 'Plugin'");
     expect(block).toContain("label: 'Other'");
@@ -154,16 +185,16 @@ describe('Report Submissions chart source shape (#76)', () => {
     expect(stackCount).toBe(3);
   });
 
-  test('chart axes use stacked: true so bars accumulate', () => {
-    const block = CMP_SRC.slice(CMP_SRC.indexOf('reportsChartInstance = new Chart'), CMP_SRC.indexOf('reportsChartInstance = new Chart') + 2500);
-    // Both x and y axes must declare stacked, otherwise Chart.js groups bars
-    // side-by-side and the stack key is ignored.
+  test('chart axes use stacked: true so the three areas add up', () => {
+    const block = CMP_SRC.slice(CMP_SRC.indexOf('reportsChartInstance = new Chart'), CMP_SRC.indexOf('reportsChartInstance = new Chart') + 4000);
+    // Both x and y axes must declare stacked, otherwise Chart.js overlays the
+    // three line areas instead of stacking them and the daily total is lost.
     const stackedCount = (block.match(/stacked: true/g) || []).length;
     expect(stackedCount).toBe(2);
   });
 
   test('defends against rows missing per-source counts with ?? 0', () => {
-    const block = CMP_SRC.slice(CMP_SRC.indexOf('reportsChartInstance = new Chart'), CMP_SRC.indexOf('reportsChartInstance = new Chart') + 2500);
+    const block = CMP_SRC.slice(CMP_SRC.indexOf('reportsChartInstance = new Chart'), CMP_SRC.indexOf('reportsChartInstance = new Chart') + 4000);
     expect(block).toContain('r.web ?? 0');
     expect(block).toContain('r.plugin ?? 0');
     expect(block).toContain('r.other ?? 0');

@@ -224,6 +224,17 @@
 .home-cards-tile-mode.cards--md { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
 .home-cards-tile-mode.cards--lg { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 .home-cards-tile-mode.cards--xl { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+
+/* Mobile tile grid: tighten the minmax so the four size steps actually
+   produce different column counts on a ~360-430px viewport. Desktop
+   values (above) already spread cleanly at larger widths; the mobile
+   defaults collapsed sm+md to 2 cols each and lg+xl to 1 col each. */
+@media (max-width: 560px) {
+  .home-cards-tile-mode.cards--sm { grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); }
+  .home-cards-tile-mode.cards--md { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); }
+  .home-cards-tile-mode.cards--lg { grid-template-columns: 1fr; }
+  .home-cards-tile-mode.cards--xl { grid-template-columns: 1fr; }
+}
 .home-cards-tile-mode .game-card { display: flex; flex-direction: column; min-width: 0; }
 .home-cards-tile-mode .game-card-row {
   flex-direction: column;

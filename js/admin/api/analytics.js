@@ -85,8 +85,18 @@ async function fetchReportsByDay(session, daysBack) {
     buckets[day][bucket] += 1;
     buckets[day].count += 1;
   }
-  // Sort by day ascending so the chart x-axis renders left-to-right oldest-to-newest.
-  return Object.entries(buckets)
-    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
-    .map(([day, b]) => ({ day, count: b.count, web: b.web, plugin: b.plugin, other: b.other }));
+  // Pad every day in the range with a zero-count row so the chart plots a
+  // continuous line instead of skipping missing days. Without this, a 90-day
+  // range with sparse reports collapses to a handful of x-axis ticks and
+  // hides the "0 reports today" signal admins actually want to see.
+  const today = new Date().toISOString().slice(0, 10);
+  const start = new Date(since + 'T00:00:00Z');
+  const end   = new Date(today + 'T00:00:00Z');
+  const out = [];
+  for (let d = new Date(start); d <= end; d.setUTCDate(d.getUTCDate() + 1)) {
+    const day = d.toISOString().slice(0, 10);
+    const b = buckets[day] || { web: 0, plugin: 0, other: 0, count: 0 };
+    out.push({ day, count: b.count, web: b.web, plugin: b.plugin, other: b.other });
+  }
+  return out;
 }

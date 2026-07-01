@@ -959,6 +959,29 @@ pre.flag-raw-json {
 @media (max-width: 640px) {
   .analytics-two-col { grid-template-columns: 1fr; }
 }
+/* Inline legend for the analytics charts. Uses colored swatches instead of
+   the previous &#9644; unicode character which renders as an off-color line
+   glyph in most fonts. Floats to the right of the section title. */
+.analytics-legend {
+  float: right;
+  font-size: 0.75rem;
+  color: var(--text-muted, #888);
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  line-height: 1;
+}
+.analytics-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.analytics-legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+}
 
 /* Sticky jump-to-section nav at the top of the analytics panel. No background:
    we want the panel content underneath to bleed through rather than getting
