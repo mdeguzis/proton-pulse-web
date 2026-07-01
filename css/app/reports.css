@@ -496,10 +496,8 @@ a.card:active { transform: translateY(1px); }
 .activity-sources { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 5px; }
 .activity-badge { flex-shrink: 0; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; white-space: nowrap; align-self: center; }
 /* card-rating-row now shows confidence pill (left) and rating badge (right)
-   side-by-side in a horizontal row. Matches the plugin's "78% GOLD" layout.
-   margin-bottom keeps the row from butting into the GPU / CPU / OS field
-   list that follows on mobile. */
-.card-rating-row { display: flex; flex-direction: row; align-items: center; gap: 6px; margin-top: 4px; margin-bottom: 12px; flex-wrap: nowrap; justify-content: flex-end; }
+   side-by-side in a horizontal row. Matches the plugin's "78% GOLD" layout. */
+.card-rating-row { display: flex; flex-direction: row; align-items: center; gap: 6px; margin-top: 4px; flex-wrap: nowrap; justify-content: flex-end; }
 /* Per-report confidence pill - square corners to match the rating badge
    alongside it. Round corners read like a status pill, square reads like a
    "fact" tile which is what confidence is */

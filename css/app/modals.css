@@ -279,7 +279,18 @@
   .signal-icon { width: 26px; height: 26px; }
   .signal-icon svg { width: 17px; height: 17px; }
   .card-footer { flex-wrap: wrap; justify-content: flex-start; }
+  /* Desktop uses margin-top: -12px so the summary butts flush against the
+     card header. On mobile the header stacks (author/body/right column)
+     so that overlap crushes the vote button row into the GPU field.
+     Reset the negative pull and give it a small positive gap instead. */
+  .card-summary { margin-top: 8px; }
   .card-summary .row { flex-direction: column; gap: 2px; }
+  /* Drop the "Show"/"Hide" verb prefix on the Report Responses button
+     so the button + siblings fit on one row without wrapping. Desktop
+     keeps the verb for clarity. */
+  .action-btn .action-btn-verb { display: none; }
+  .action-btn .action-btn-verb + span,
+  .action-btn .action-btn-verb { margin-right: 0; }
   .reports-section-head { flex-direction: column; align-items: flex-start; gap: 8px; }
   .hub-links { gap: 4px; }
   .hub-link { font-size: 0.72rem; padding: 4px 8px; }
