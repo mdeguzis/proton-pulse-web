@@ -540,11 +540,14 @@ a.card:active { transform: translateY(1px); }
 }
 .vote-btn svg { width: 14px; height: 14px; }
 /* Shared height for the pill row (Confidence / rating / vote buttons) so
-   their box edges align on the same horizontal line on every viewport. */
+   their box edges align on the same horizontal line on every viewport.
+   Explicit height + line-height:1 so the pills' default line-height
+   doesn't stretch them past the vote buttons. */
 .card .confidence-pill,
 .card .rating,
 .card .vote-btn {
-  min-height: 26px;
+  height: 28px;
+  line-height: 1;
   display: inline-flex;
   align-items: center;
   box-sizing: border-box;
