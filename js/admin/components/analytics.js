@@ -17,6 +17,18 @@ const DATA_FILES = [
   'proton-versions.json',
 ];
 
+// Format a YYYY-MM-DD label as e.g. "Mon Jul 1, 2026" for chart tooltips.
+// Falls back to the raw label if it doesn't parse (Chart.js sometimes passes
+// numeric indices during transitions).
+function _formatTooltipDate(label) {
+  if (!label || typeof label !== 'string') return String(label || '');
+  const m = label.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return label;
+  const d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+  if (isNaN(d.getTime())) return label;
+  return d.toLocaleDateString(undefined, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+}
+
 function _formatAge(secs) {
   if (!Number.isFinite(secs)) return '?';
   if (secs < 60) return `${Math.round(secs)}s`;
@@ -517,11 +529,20 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
           plugins: {
             legend: { display: false },
             tooltip: {
+              mode: 'index',
+              intersect: false,
+              backgroundColor: 'rgba(20,24,32,0.95)',
+              borderColor: 'rgba(255,255,255,0.15)',
+              borderWidth: 1,
+              padding: 10,
+              titleFont: { weight: '600' },
               callbacks: {
-                title: items => items[0].label,
+                title: items => _formatTooltipDate(items[0].label),
+                label: ctx => `${ctx.dataset.label}: ${Number(ctx.parsed.y || 0).toLocaleString()}`,
               },
             },
           },
@@ -542,32 +563,41 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
       // breakdown still have a .count fallback handled in the data fetcher,
       // but defensively default each series to 0 here too.
       reportsChartInstance = new Chart(canvas, {
-        type: 'bar',
+        type: 'line',
         data: {
           labels: reportsByDay.map(r => r.day),
           datasets: [
             {
               label: 'Web',
               data: reportsByDay.map(r => r.web ?? 0),
-              backgroundColor: 'rgba(92,139,214,0.7)',
+              backgroundColor: 'rgba(92,139,214,0.35)',
               borderColor: '#5c8bd6',
-              borderWidth: 1,
+              borderWidth: 1.5,
+              pointRadius: 2,
+              tension: 0.3,
+              fill: true,
               stack: 'reports',
             },
             {
               label: 'Plugin',
               data: reportsByDay.map(r => r.plugin ?? 0),
-              backgroundColor: 'rgba(76,175,128,0.7)',
+              backgroundColor: 'rgba(76,175,128,0.35)',
               borderColor: '#4caf80',
-              borderWidth: 1,
+              borderWidth: 1.5,
+              pointRadius: 2,
+              tension: 0.3,
+              fill: true,
               stack: 'reports',
             },
             {
               label: 'Other',
               data: reportsByDay.map(r => r.other ?? 0),
-              backgroundColor: 'rgba(212,179,106,0.7)',
+              backgroundColor: 'rgba(212,179,106,0.35)',
               borderColor: '#d4b36a',
-              borderWidth: 1,
+              borderWidth: 1.5,
+              pointRadius: 2,
+              tension: 0.3,
+              fill: true,
               stack: 'reports',
             },
           ],
@@ -575,7 +605,27 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: { legend: { display: false } },
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              mode: 'index',
+              intersect: false,
+              backgroundColor: 'rgba(20,24,32,0.95)',
+              borderColor: 'rgba(255,255,255,0.15)',
+              borderWidth: 1,
+              padding: 10,
+              titleFont: { weight: '600' },
+              callbacks: {
+                title: items => _formatTooltipDate(items[0].label),
+                label: ctx => `${ctx.dataset.label}: ${Number(ctx.parsed.y || 0).toLocaleString()}`,
+                footer: items => {
+                  const total = items.reduce((s, it) => s + Number(it.parsed.y || 0), 0);
+                  return `Total: ${total.toLocaleString()}`;
+                },
+              },
+            },
+          },
           scales: {
             x: {
               ticks: { color: '#888', maxTicksLimit: 10 },

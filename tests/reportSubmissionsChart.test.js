@@ -146,7 +146,7 @@ describe('Report Submissions chart source shape (#76)', () => {
   test('chart has 3 datasets with matching stack key', () => {
     // All three series must share stack: 'reports' so they stack visually
     // instead of rendering side-by-side.
-    const block = CMP_SRC.slice(CMP_SRC.indexOf('reportsChartInstance = new Chart'), CMP_SRC.indexOf('reportsChartInstance = new Chart') + 2500);
+    const block = CMP_SRC.slice(CMP_SRC.indexOf('reportsChartInstance = new Chart'), CMP_SRC.indexOf('reportsChartInstance = new Chart') + 4000);
     expect(block).toContain("label: 'Web'");
     expect(block).toContain("label: 'Plugin'");
     expect(block).toContain("label: 'Other'");
@@ -154,16 +154,16 @@ describe('Report Submissions chart source shape (#76)', () => {
     expect(stackCount).toBe(3);
   });
 
-  test('chart axes use stacked: true so bars accumulate', () => {
-    const block = CMP_SRC.slice(CMP_SRC.indexOf('reportsChartInstance = new Chart'), CMP_SRC.indexOf('reportsChartInstance = new Chart') + 2500);
-    // Both x and y axes must declare stacked, otherwise Chart.js groups bars
-    // side-by-side and the stack key is ignored.
+  test('chart axes use stacked: true so the three areas add up', () => {
+    const block = CMP_SRC.slice(CMP_SRC.indexOf('reportsChartInstance = new Chart'), CMP_SRC.indexOf('reportsChartInstance = new Chart') + 4000);
+    // Both x and y axes must declare stacked, otherwise Chart.js overlays the
+    // three line areas instead of stacking them and the daily total is lost.
     const stackedCount = (block.match(/stacked: true/g) || []).length;
     expect(stackedCount).toBe(2);
   });
 
   test('defends against rows missing per-source counts with ?? 0', () => {
-    const block = CMP_SRC.slice(CMP_SRC.indexOf('reportsChartInstance = new Chart'), CMP_SRC.indexOf('reportsChartInstance = new Chart') + 2500);
+    const block = CMP_SRC.slice(CMP_SRC.indexOf('reportsChartInstance = new Chart'), CMP_SRC.indexOf('reportsChartInstance = new Chart') + 4000);
     expect(block).toContain('r.web ?? 0');
     expect(block).toContain('r.plugin ?? 0');
     expect(block).toContain('r.other ?? 0');
