@@ -510,12 +510,18 @@ a.card:active { transform: translateY(1px); }
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
+/* Rating pill sits next to the confidence pill on every card. Match its
+   size, weight, radius, and letter-spacing so the pair reads as a
+   single group rather than two different-looking chips. Uppercase +
+   sans stays for the label (tier codes read stronger in caps). */
 .card .rating {
-  padding: 3px 8px;
-  font-weight: 800;
-  font-size: 0.66rem;
+  padding: 3px 9px;
+  font-weight: 700;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  white-space: nowrap;
 }
 .card .score { font-size: 0.75rem; font-weight: 700; font-family: var(--mono); }
 /* Vote buttons - bumped to match the confidence pill + rating badge sized
