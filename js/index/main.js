@@ -281,6 +281,12 @@ import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
         if (loadMoreEl) loadMoreEl.innerHTML = '';
         return;
       }
+      // Recompute the row-based target now that the grid layout is
+      // definitely applied (initial shownCount was set before .cards
+      // became display:grid, so cols returned 1 and the size fell to
+      // the 8-item floor -- yielding only 2-3 rows on mobile at sm).
+      const target = pageSizeForFullRows(list, targetRowsForViewport());
+      if (shownCount < target) shownCount = target;
       const shown = Math.min(shownCount, all.length);
       list.innerHTML = all.slice(0, shown).map(pgCardHtml).join('');
       const hasMore = all.length > shown;

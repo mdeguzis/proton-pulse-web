@@ -349,6 +349,11 @@ export async function renderHomePage() {
       }
       let popularShown = pageSizeForFullRows(cardsEl, targetRowsForViewport());
       const renderPopular = () => {
+        // Recompute the row-target now that the grid layout is applied
+        // (initial value was set when the container wasn't yet display:
+        // grid so cols=1 and the size fell to the floor).
+        const popularTarget = pageSizeForFullRows(cardsEl, targetRowsForViewport());
+        if (popularShown < popularTarget) popularShown = popularTarget;
         const shown = Math.min(popularShown, filtered.length);
         cardsEl.innerHTML = filtered.slice(0, shown).map(_popularItemHtml).join('');
         // hasMore=true trims trailing orphans so the last row stays flush; the
@@ -402,6 +407,10 @@ export async function renderHomePage() {
       if (!filtered.length) { if (cardsEl) cardsEl.innerHTML = ''; _updateShownCount('recent-count', cardsEl, 0); return; }
       let recentShown = pageSizeForFullRows(cardsEl, targetRowsForViewport());
       const renderRecent = () => {
+        // Recompute the row-target now that the grid layout is applied
+        // (initial value can fall to the floor when cols hasn't resolved).
+        const recentTarget = pageSizeForFullRows(cardsEl, targetRowsForViewport());
+        if (recentShown < recentTarget) recentShown = recentTarget;
         const shown = Math.min(recentShown, filtered.length);
         cardsEl.innerHTML = filtered.slice(0, shown).map(_recentCardHtml).join('');
         // hasMore=true trims trailing orphans so the last row stays flush; the
