@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "255220",
+    "title": "GRID Autosport",
+    "timestamp": 1535272216,
+    "rating": "Borked",
+    "notes": "Crashes on game logo after startup.",
+    "os": "Ubuntu 18.04 (4.15)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700K / GTX 1080",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "255220",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Works flawlessly on ultra settings, after \"LC_ALL=C %command%\" startup parameter has been written as described in the steam community thread-> https://steamcommunity.com/app/255220/discussions/0/494631967653501112/?ctp=5",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1544821343,
+    "title": "GRID Autosport",
+    "source": "protondb"
+  },
+  {
+    "appId": "255220",
+    "title": "GRID Autosport",
+    "timestamp": 1535257816,
+    "rating": "Borked",
+    "notes": "Crashes on game logo after startup.",
+    "os": "Ubuntu 18.04 (4.15)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700K / GTX 1080",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

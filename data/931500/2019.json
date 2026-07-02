@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "931500",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Game seems completely playable. However, voice lines will more frequently begin to not play the longer you play, until you are unable to hear them at all.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556762279,
+    "title": "Touhou Genso Wanderer -Reloaded- / \u4e0d\u53ef\u601d\u8bae\u7684\u5e7b\u60f3\u4e61TOD -RELOADED- / \u4e0d\u601d\u8b70\u306e\u5e7b\u60f3\u90f7TOD -RELOADED-",
+    "source": "protondb"
+  },
+  {
+    "appId": "931500",
+    "cpu": "AMD Ryzen 7 2700U with Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.1.0-mainline",
+    "notes": "Can be launched, some action sounds lost when playing, this issue does not exist two months ago, My operating system (Archlinux) have been upgraded",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "7 GB",
+    "rating": "Bronze",
+    "timestamp": 1557557656,
+    "title": "Touhou Genso Wanderer -Reloaded- / \u4e0d\u53ef\u601d\u8bae\u7684\u5e7b\u60f3\u4e61TOD -RELOADED- / \u4e0d\u601d\u8b70\u306e\u5e7b\u60f3\u90f7TOD -RELOADED-",
+    "source": "protondb"
+  },
+  {
+    "appId": "931500",
+    "cpu": "AMD Ryzen 7 2700U with Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.1.0-mainline",
+    "notes": "The game can be launched, but some action sounds lost when playing, this issue does not exist two months ago. My operating system (Archlinux) have been upgraded",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "7 GB",
+    "rating": "Bronze",
+    "timestamp": 1557558986,
+    "title": "Touhou Genso Wanderer -Reloaded- / \u4e0d\u53ef\u601d\u8bae\u7684\u5e7b\u60f3\u4e61TOD -RELOADED- / \u4e0d\u601d\u8b70\u306e\u5e7b\u60f3\u90f7TOD -RELOADED-",
+    "source": "protondb"
+  }
+]

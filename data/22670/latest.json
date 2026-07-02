@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "22670",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Works out of the box. Installation is quite slow and you need to confirm a lot of messages. Installed manually D9VK and it worked great as well with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556746582,
+    "title": "Alien Breed 3: Descent",
+    "source": "protondb"
+  },
+  {
+    "appId": "22670",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-31-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-7",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571399311,
+    "title": "Alien Breed 3: Descent",
+    "source": "protondb"
+  }
+]

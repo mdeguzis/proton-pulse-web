@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "205350",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Won't start. I'm pretty sure it's due to the windows game portion that this game uses as a platform. ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1566450476,
+    "title": "Mortal Kombat Kollection",
+    "source": "protondb"
+  },
+  {
+    "appId": "205350",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1566731594,
+    "title": "Mortal Kombat Kollection",
+    "source": "protondb"
+  }
+]

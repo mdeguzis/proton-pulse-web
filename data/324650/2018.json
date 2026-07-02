@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "324650",
+    "cpu": "Intel(R) Pentium(R) CPU G4560 @ 3.50GHz",
+    "gpu": "GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Only displays a message saying \"DX11 feature level 10.0 is required to run the engine\"",
+    "os": "Linux Mint 18 Sarah (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7948 Mb",
+    "rating": "Borked",
+    "timestamp": 1536723981,
+    "title": "Gemini: Heroes Reborn",
+    "source": "protondb"
+  },
+  {
+    "appId": "324650",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Three months ago I reported that this didn't run at all; that it just had a DirectX error. I tried it again using a newer version of Proton and I found that it worked. You just need to set PROTON_USE_WINED3D=1 in your launch properties. Unfortunately, even at 800x600 at the lowest video settings the framerate was unplayably low (<10fps). Perhaps someone with a better system than mine would have more luck, as my CPU doesn't meet the minimum specs to run it on Windows!",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1544427808,
+    "title": "Gemini: Heroes Reborn",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "324650",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.0",
+    "kernel": "4.20.0-rc5-2595646791c319cadfdbf271563aac97d0843dc7+",
+    "os": "Fedora release 30 (Rawhide)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1544546071,
+    "title": "Gemini: Heroes Reborn",
+    "source": "protondb"
+  }
+]

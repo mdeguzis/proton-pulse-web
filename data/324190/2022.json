@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "324190",
+    "cpu": "AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.10.9-051009-generic",
+    "notes": "If you start this game without Proton it will run, but you can not code spells - tools doesn't apear in screen. If you run it with Proton it starts, but menu is inactive and you can not start the game. \nIf you want to explore world and only use default spels you can play it. But main point of this game is creating your own spells and this part doesn't work.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1650535705,
+    "title": "",
+    "source": "protondb"
+  }
+]

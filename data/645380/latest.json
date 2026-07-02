@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "645380",
+    "cpu": "Intel Core i3-8130U @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "6.10.9-helios-one",
+    "notes": "I played the free Java-based beta version on Linux years ago. Never had any problems. Unfortunately, the Steam version I bought doesn't work on Linux. I've tried every Proton version, including Proton GE. Nothing worked. Even \"PROTON_USE_WINED3D11=1 %command%\" made no difference. Sometimes I get an error message saying that Mono should be installed, but when I click on Install, it doesn't work. Don't buy the game if you use Linux, save yourself the frustration. It's a real shame, I'm returning the game.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1727813088,
+    "title": "",
+    "source": "protondb"
+  }
+]

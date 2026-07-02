@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "574590",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Warning : this game defaults to the native linux version (which is broken : game frozen after Unity intro). In \"Properties\", you have to check \"Force the use of a specific Steam Play compatibility tool\"\nThe Proton version plays perfectly.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567958276,
+    "title": "Koloro",
+    "source": "protondb"
+  }
+]

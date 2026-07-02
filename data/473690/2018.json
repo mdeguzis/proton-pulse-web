@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "473690",
+    "title": "Absolver",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Game runs in offline mode, can't play online due to EAC. At one point, EAC worked in lutris's patched fortnite build of wine. Framerate also seems worse with Proton.",
+    "os": "Gentoo",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600k / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "473690",
+    "title": "Absolver",
+    "timestamp": 1535491366,
+    "rating": "Borked",
+    "notes": "Game starts, you can change settings in menu but you can't continue your game because it crashes while loading.",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "specs": "AMD FX(tm)-4100 Quad-Core / Radeon RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "473690",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.26.0, 4.18.7-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.7-1-MANJARO",
+    "notes": "Game runs well, but cannot continue character or start a new character due to EAC kicking or timeout.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16056 Mb",
+    "rating": "Borked",
+    "timestamp": 1537022206,
+    "title": "Absolver",
+    "source": "protondb"
+  },
+  {
+    "appId": "473690",
+    "title": "Absolver",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Game runs in offline mode, can't play online due to EAC. At one point, EAC worked in lutris's patched fortnite build of wine. Framerate also seems worse with Proton.",
+    "os": "Gentoo",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600k / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "473690",
+    "title": "Absolver",
+    "timestamp": 1535476966,
+    "rating": "Borked",
+    "notes": "Game starts, you can change settings in menu but you can't continue your game because it crashes while loading.",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "specs": "AMD FX(tm)-4100 Quad-Core / Radeon RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

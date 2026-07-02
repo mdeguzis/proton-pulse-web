@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "9500",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.8-200.fc29.x86_64",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560707077,
+    "title": "Gish",
+    "source": "protondb"
+  }
+]

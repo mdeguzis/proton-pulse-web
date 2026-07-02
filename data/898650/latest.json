@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "898650",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.0.13-050013-lowlatency",
+    "notes": "Game launches to a black screen and then nothing happens.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1562636522,
+    "title": "The Shapeshifting Detective",
+    "source": "protondb"
+  }
+]

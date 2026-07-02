@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "536280",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 18.1.7, DRM 3.58, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.0-devel",
+    "kernel": "6.8.0-51-generic",
+    "notes": "Works after install, just like in Windows. No tinkering required. (9 Jan 2025)",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1736388300,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "536280",
+    "cpu": "AMD FX-8350 Eight-Core @ 4.1 GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 570.124.06",
+    "kernel": "6.12.28",
+    "notes": "Installs w/o problems, plays smooth (tested only 60Hz), no lag or stutter (in game or videosequences)",
+    "os": "Manjaro 25.0.3 Zetar",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "platinum",
+    "timestamp": 1749295072,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "536280",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.8-273-tkg-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.16.8-273-tkg-eevdf",
+    "notes": "Needs Proton 9 but works out of the box this way.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1764787918,
+    "title": "",
+    "source": "protondb"
+  }
+]

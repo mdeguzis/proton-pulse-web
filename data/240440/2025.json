@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "240440",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.11.0-19-generic",
+    "notes": "Unfortunately, bugs.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1749729384,
+    "title": "",
+    "source": "protondb"
+  }
+]

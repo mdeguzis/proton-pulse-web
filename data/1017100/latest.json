@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1017100",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 19.0.0",
+    "kernel": "5.0.3-arch1-1-ARCH",
+    "notes": "Supports natively- no tweaks needed.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553390580,
+    "title": "Territory Idle",
+    "source": "protondb"
+  },
+  {
+    "appId": "1017100",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Works perfectly. I played almost 20 hours of it.",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1553511414,
+    "title": "Territory Idle",
+    "source": "protondb"
+  }
+]

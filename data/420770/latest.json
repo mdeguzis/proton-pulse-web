@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "420770",
+    "cpu": "i5-2400S CPU @ 2.50GHz",
+    "gpu": "GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works out of the box, although there are some minor visual glitches (mainly the load bar and GUI). The game is perfectly playable, anyway",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5926 Mb",
+    "rating": "Silver",
+    "timestamp": 1536843318,
+    "title": "The Legend of Dark Witch",
+    "source": "protondb"
+  },
+  {
+    "appId": "420770",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.5 Mesa 18.3.0-rc4",
+    "kernel": "4.18.20-gentoo",
+    "notes": "Had to disable Esync to get the game to launch. Once done, played through the whole game twice, both on Normal difficulty. Controller support also tested and working (Genuine PS3 controller)",
+    "os": "Gentoo Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1543485177,
+    "title": "The Legend of Dark Witch",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

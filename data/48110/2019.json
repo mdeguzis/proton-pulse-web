@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "48110",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Refuses to start ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556995605,
+    "title": "Silent Hunter 5\u00ae: Battle of the Atlantic",
+    "source": "protondb"
+  }
+]

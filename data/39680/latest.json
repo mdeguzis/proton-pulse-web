@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "39680",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Everything works but some textures are too dark (faces, windows).",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1550360070,
+    "title": "The Guild II Renaissance",
+    "source": "protondb"
+  },
+  {
+    "appId": "39680",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.30-1-MANJARO",
+    "notes": "Run with few bugs, the performance are not epic and the game is not fluid but thats ok. No crash.",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1554019577,
+    "title": "The Guild II Renaissance",
+    "source": "protondb"
+  },
+  {
+    "appId": "39680",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.32-1-MANJARO",
+    "notes": "Runns everything maxed out, the only glitch is the dark character portrais",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555231195,
+    "title": "The Guild II Renaissance",
+    "source": "protondb"
+  }
+]

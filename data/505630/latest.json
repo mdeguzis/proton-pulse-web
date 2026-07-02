@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "505630",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Needs PROTON_FORCE_LARGE_ADDRESS_AWARE=1 in order to run, otherwise it throws an out of memory error. After enabling that parameter, gameplay is perfect with absolutely no issues.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1546346638,
+    "title": "Let Them Come",
+    "source": "protondb"
+  },
+  {
+    "appId": "505630",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.16-112.current",
+    "notes": "Tried Disabling Esync, \"PROTON_OLD_GL_STRING=1\", and \"PROTON_FORCE_LARGE_ADDRESS_AWARE=1\" with the same luck. An Out of Memory pop up without even showing any part of the game.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554390037,
+    "title": "Let Them Come",
+    "source": "protondb"
+  }
+]

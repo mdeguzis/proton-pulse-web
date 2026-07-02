@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "269790",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Windows version works perfectly out of the box using Proton (Linux native version does not work)",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "3.16-8",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552133951,
+    "title": "DreadOut",
+    "source": "protondb"
+  },
+  {
+    "appId": "269790",
+    "cpu": "AMD A8-7100 Radeon R5, 8 Compute Cores 4C+4G",
+    "duration": "aboutAnHour",
+    "gpu": "AMD OLAND",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.15.0-52-generic",
+    "notes": "The game, although it runs natively, was impossible for me to play due to corrupted savings. With Proton I solved the problem and the game runs very well after setting in the launch options the parameter PROTON_USE_WINED3D=1 %command%. I played Act 0 and part of the first act with no issues except for the initial lagging video and the anti-aliasing that doesn't work.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-7",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1561001990,
+    "title": "DreadOut",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

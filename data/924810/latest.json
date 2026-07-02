@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "924810",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.11-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550838426,
+    "title": "Idle Kingdom Builder",
+    "source": "protondb"
+  },
+  {
+    "appId": "924810",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Game crashes with a DirectX 11 error as soon as I click on \"PLAY\".",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551170088,
+    "title": "Idle Kingdom Builder",
+    "source": "protondb"
+  },
+  {
+    "appId": "924810",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "The game was crashing with a graphics DirectX 11 error as soon as I clicked on \"PLAY\", but worked perfectly after I set the following launch options: \"PROTON_USE_WINED3D=1 %command%\". Now everything seems to be working.",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1551456289,
+    "title": "Idle Kingdom Builder",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "924810",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It had some graphical issues, but everything works perfectly when you use Wine D3d11 with the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552256748,
+    "title": "Idle Kingdom Builder",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "694720",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544114535,
+    "title": "notmycar",
+    "source": "protondb"
+  }
+]

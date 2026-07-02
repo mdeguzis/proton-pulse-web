@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "262240",
+    "title": "Suguri",
+    "timestamp": 1535129650,
+    "rating": "Borked",
+    "notes": "The game is stuck looping continuously the opening credits",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.0)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3550 / RX480 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "262240",
+    "title": "Suguri",
+    "timestamp": 1536202936,
+    "rating": "Platinum",
+    "notes": "-",
+    "os": "Manjaro 64-bit (kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790k / gtx 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "262240",
+    "title": "Suguri",
+    "timestamp": 1535115250,
+    "rating": "Borked",
+    "notes": "The game is stuck looping continuously the opening credits",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.0)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3550 / RX480 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "262240",
+    "title": "Suguri",
+    "timestamp": 1536188536,
+    "rating": "Platinum",
+    "notes": "-",
+    "os": "Manjaro 64-bit (kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790k / gtx 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

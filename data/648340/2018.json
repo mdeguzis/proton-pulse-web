@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "648340",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Crashes unless you put \"PROTON_USE_WINED3D11=1 %command%\" in the game's launch options. With it, everything seems fine (haven't extensively tested).",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1543694844,
+    "title": "Harald: A Game of Influence",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "648340",
+    "cpu": "AMD A10-7850K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.7-1-default",
+    "notes": "Tried with Wine D3D as was suggested, but it didn't work. Also tried disabling esync. In both cases, it crashes without loading the main menu.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544539575,
+    "title": "Harald: A Game of Influence",
+    "source": "protondb"
+  }
+]

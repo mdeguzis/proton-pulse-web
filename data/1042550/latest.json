@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1042550",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Sometimes inconsistent walking speed with keyboard & xbox controller, otherwise it just runs fine, only other thing to note is when using \"fullscreen\" i goes out-of-view, needed to be brought back with HOME+SHIFT+Arrow Keys",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1571621087,
+    "title": "Digimon Story Cyber Sleuth: Complete Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "1042550",
+    "cpu": "%s1",
+    "duration": "severalHours",
+    "gpu": "Red Hat virgl",
+    "gpuDriver": "3.1 Mesa 19.2.0-devel",
+    "kernel": "4.19.69-06666-g6c4f8cbba24e",
+    "notes": "Seems to run without issue, except walking is slow. There is a glitch where if I open my app launcher during gameplay, the game freezes. I am running this game inside a Crostini VM under the default Debian container with GPU acceleration enabled.",
+    "os": "Debian GNU/Linux 9.11 (stretch)",
+    "protonVersion": "Default",
+    "ram": "3 GB",
+    "rating": "Platinum",
+    "timestamp": 1572048017,
+    "title": "Digimon Story Cyber Sleuth: Complete Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "1042550",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.2.21-1-MANJARO",
+    "notes": "Runs perfectly but Alt F4 doesn't work.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1572061099,
+    "title": "Digimon Story Cyber Sleuth: Complete Edition",
+    "source": "protondb"
+  }
+]

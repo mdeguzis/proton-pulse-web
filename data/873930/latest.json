@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "873930",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Runs out of the box but performance is not great",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1544704485,
+    "title": "ALIENS INVADED OUR PLANET",
+    "source": "protondb"
+  }
+]

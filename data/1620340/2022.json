@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1620340",
+    "cpu": "Intel Core i5-4200M @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.2.6",
+    "kernel": "5.13.0-28-generic",
+    "notes": "Pretty much playable with no problems.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "6.3-8",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1644792732,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1620340",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.35.0, 5.4.0-91-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.4.0-91-generic",
+    "notes": "Perfect, 0 problems, 0 bugs.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-1",
+    "ram": "11 GB",
+    "rating": "gold",
+    "timestamp": 1647807111,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1620340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "5.13-6",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1650923526,
+    "title": "",
+    "source": "protondb"
+  }
+]

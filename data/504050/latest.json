@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "504050",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "5.0.5-rcbnocu",
+    "notes": "Game seems to run perfectly fine.\nPerformance is good: 50-60fps in 1920x1080 with high settings.\nI use the Windows version because saving and loading currently doesn't work with the Linux version.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557013496,
+    "title": "Planet Nomads",
+    "source": "protondb"
+  }
+]

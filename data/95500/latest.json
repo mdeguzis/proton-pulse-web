@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "95500",
+    "title": "Your Doodles Are Bugged!",
+    "timestamp": 1535412584,
+    "rating": "Borked",
+    "notes": "Installs but won't start.",
+    "os": "Linux Mint 17.3 MATE 64-bit",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i7-4790 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "95500",
+    "title": "Your Doodles Are Bugged!",
+    "timestamp": 1535398184,
+    "rating": "Borked",
+    "notes": "Installs but won't start.",
+    "os": "Linux Mint 17.3 MATE 64-bit",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i7-4790 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

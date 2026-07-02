@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "794860",
+    "title": "eSail Sailing Simulator",
+    "timestamp": 1535728212,
+    "rating": "Borked",
+    "notes": "Access violation ",
+    "os": "Arch 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "specs": "i5-7200 / HD 620",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  },
+  {
+    "appId": "794860",
+    "title": "eSail Sailing Simulator",
+    "timestamp": 1535713812,
+    "rating": "Borked",
+    "notes": "Access violation ",
+    "os": "Arch 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "specs": "i5-7200 / HD 620",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "619700",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD VEGA20",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-f509213675)",
+    "kernel": "4.20.10-arch1-1-ARCH",
+    "notes": "Had to press ESC to skip the intro screen, it was black but other than that it worked perfectly fine with DXVK.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "protonVersionManual": "3.16-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1552116869,
+    "title": "Steel Rats\u2122",
+    "source": "protondb"
+  }
+]

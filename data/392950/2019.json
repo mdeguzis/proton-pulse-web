@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "392950",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-54-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567509264,
+    "title": "Lost Lands: A Hidden Object Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "392950",
+    "cpu": "AMD A6-6400K APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.1 Mesa 19.2.1",
+    "kernel": "5.3.6-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1571370556,
+    "title": "Lost Lands: A Hidden Object Adventure",
+    "source": "protondb"
+  }
+]

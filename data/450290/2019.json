@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "450290",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-44-generic",
+    "notes": "Runs perfect in windowed or fullscreen mode. It has a 2D and 3D-ish map option. Both work. Mouse/UI = fluid, no issues. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548532937,
+    "title": "Assault on Arnhem",
+    "source": "protondb"
+  }
+]

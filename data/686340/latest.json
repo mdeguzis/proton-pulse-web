@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "686340",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.52.18",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Produces \"Fatal Error\" popup window upon exiting the game. Otherwise works perfectly with my Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565560484,
+    "title": "Insanity VR: Last Score",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "525240",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Gamepad work now (xbox one)",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2.5",
+    "protonVersionManual": "4.2.5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558793425,
+    "title": "LOST SPHEAR",
+    "source": "protondb"
+  },
+  {
+    "appId": "525240",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Gamepad work now (xbox one)",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2.5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561959125,
+    "title": "LOST SPHEAR",
+    "source": "protondb"
+  },
+  {
+    "appId": "525240",
+    "cpu": "AMD A8-7600 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "37 hours worth of gameplay since last weekend. Works very well with a keyboard, although input lag can be an issue for my XBOX 360 gamepad (~300 milliseconds). However, I've experienced no issue with my keyboard and the graphics and sound works very well with no sluggish at all. I would like to choose a gold rating but I don't think I can come up with any tweaks to fix the gamepad input lag issue so it can play perfectly, but it does play perfect from time to time with my XBOX 360 gamepad. I did experience ~300ms of input lag when starting the game after I plug in my gamepad, so I solved the problem by leaving my gamepad unplugged, start the game, and plug in the XBOX 360 gamepad. All in all, even a minor issue won't stop me from giving a game a Platinum rating.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "15 GB",
+    "rating": "Platinum",
+    "timestamp": 1562393776,
+    "title": "LOST SPHEAR",
+    "source": "protondb"
+  }
+]

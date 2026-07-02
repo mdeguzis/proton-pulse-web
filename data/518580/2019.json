@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "518580",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.19.0-steamvr-generic",
+    "notes": "Long looad times. I thought it was borked at first. Everything worked fine tho. just be patient on startup/level change",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547487560,
+    "title": "Accounting (Legacy)",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "265170",
+    "title": "Acceleration of SUGURI X-Edition HD",
+    "timestamp": 1536262256,
+    "rating": "Platinum",
+    "notes": "Seems to run perfect.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "265170",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 470 Graphics (POLARIS10, DRM 3.26.0, 4.18.0-041800-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.1 Mesa 18.1.7 - padoka PPA",
+    "kernel": "4.18.0-041800-generic",
+    "notes": "work fine, online not tested, work with xbox 360 controller wirreless (using xoxdrv)",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16022 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537324966,
+    "title": "Acceleration of SUGURI X-Edition HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "265170",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.0-041900-generic",
+    "notes": "Wireless xbox 360 controller works perfectly. No tested online",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541207484,
+    "title": "Acceleration of SUGURI X-Edition HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "265170",
+    "title": "Acceleration of SUGURI X-Edition HD",
+    "timestamp": 1536247856,
+    "rating": "Platinum",
+    "notes": "Seems to run perfect.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

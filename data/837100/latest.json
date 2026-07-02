@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "837100",
+    "title": "Chronicles of Mystery - The Legend of the Sacred Treasure",
+    "timestamp": 1535817065,
+    "rating": "Borked",
+    "notes": "Games starts without flaw but after selecting the profile/savegame ...runtime error wine c++ abnormal program termination",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "837100",
+    "cpu": "i5-7440HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-ext73-58.4-kabylake",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.6 beta",
+    "ram": "7911 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536598871,
+    "title": "Chronicles of Mystery - The Legend of the Sacred Treasure",
+    "source": "protondb"
+  },
+  {
+    "appId": "837100",
+    "title": "Chronicles of Mystery - The Legend of the Sacred Treasure",
+    "timestamp": 1535802665,
+    "rating": "Borked",
+    "notes": "Games starts without flaw but after selecting the profile/savegame ...runtime error wine c++ abnormal program termination",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

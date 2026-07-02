@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "223430",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-18-generic",
+    "notes": "runs and crashes after 10 seconds! no luck with any of the 3 tweaks.",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1556714576,
+    "title": "Miner Wars 2081",
+    "source": "protondb"
+  },
+  {
+    "appId": "223430",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.7-arch1-1-ARCH",
+    "notes": "I get the following error: \n\n\"Unofficial modification of MinerWars has crashed, please contact creator of this modification and send him logfile: C:\\users\\steamuser\\Application Data\\MinerWars\\MinerWars.log\". \n\nHere is the logfile: https://pastebin.com/raw/40GQgzQD",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559841907,
+    "title": "Miner Wars 2081",
+    "source": "protondb"
+  }
+]

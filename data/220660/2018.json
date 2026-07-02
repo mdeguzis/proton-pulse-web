@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "220660",
+    "title": "StarDrive",
+    "timestamp": 1535385788,
+    "rating": "Borked",
+    "notes": "Game doesn't start ",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "220660",
+    "title": "StarDrive",
+    "timestamp": 1535371388,
+    "rating": "Borked",
+    "notes": "Game doesn't start ",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

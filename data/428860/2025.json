@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "428860",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.4, DRM 3.64, 6.18.0-rc3-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 26.0.0-devel (git-45a762727c)",
+    "kernel": "6.18.0-rc3-1-MANJARO",
+    "notes": "Works but saves are broken",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "128 GB",
+    "rating": "borked",
+    "timestamp": 1761998413,
+    "title": "Red Haze",
+    "source": "protondb"
+  }
+]

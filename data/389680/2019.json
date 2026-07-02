@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "389680",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4",
+    "notes": "Won't start.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559133829,
+    "title": "Luxury Hotel Emporium",
+    "source": "protondb"
+  }
+]

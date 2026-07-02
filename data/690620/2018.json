@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "690620",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Basically a Unity3D game. Runs in DirectX 10 and 11 only (no OpenGL or D3D9 compiled). Performance is good and didn't dip below 60 while I played.\nOnly problems are related to mouse movement as in other (older) Unity3D games: Camera/Cursor is drifting slightly when moving the mouse, doors and cut scenes sometimes make the camera go up and/or crazy for a few seconds or until alt-tabbing. Alt-tabbing usually fixes the camera issues except the drifting.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1546092382,
+    "title": "Downward Spiral: Horus Station",
+    "source": "protondb"
+  }
+]

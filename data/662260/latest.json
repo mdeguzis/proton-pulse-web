@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "662260",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Native version did not launch for me. Running the Windows version with Proton worked perfectly in windowed mode, but the screen would jitter in fullscreen. I completed it from start to finish with no issues in windowed mode.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568935526,
+    "title": "On Earth As It Is In Heaven - A Kinetic Novel",
+    "source": "protondb"
+  }
+]

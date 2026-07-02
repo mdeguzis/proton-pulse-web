@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "260190",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Good News: There exists a beta for this game called \"no-launcher\" and if you select it, the game will start and you are able to set some settings. Bad News: The game itself (when you load the first mission) is flickering and glitching the hell out. In such a state it is not playable or enjoyable to play... But the Ingame Menu music is still very enjoyable *Peace* :]",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546712952,
+    "title": "Marc Eck\u014d's Getting Up: Contents Under Pressure",
+    "source": "protondb"
+  },
+  {
+    "appId": "260190",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-48-generic",
+    "notes": "I needed to use tweaks from here (https://www.reddit.com/r/wine_gaming/comments/8euu22/marc_eckos_getting_up/) to make it work. In protontricks you need to open winecfg and set: d3d8 (native, builtin) msvcp71 (native) msvcr71 (native). After that game should run. Make sure that resolution you set up on a popup window that opens before the actual game is run, matches the resolution set in ingame settings. If those resolutions don't match, game is pretty laggy. \n\nAnyway, after all this the perf in game is not really good. Controller support is almost ok (right analog chorizontal axis doesn't work). Game is rather buggy, so for example I'm not able to finish Subway level as the game doesn't recognize that I already painted all required graffitis and won't let me go further.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1564033318,
+    "title": "Marc Eck\u014d's Getting Up: Contents Under Pressure",
+    "source": "protondb"
+  }
+]

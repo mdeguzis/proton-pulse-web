@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "269770",
+    "title": "Secrets of Grindea",
+    "timestamp": 1536147431,
+    "rating": "Borked",
+    "notes": "Crashes on startup without any error message",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-7700HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "269770",
+    "cpu": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.4-steamvr-generic",
+    "notes": "Crashes without warning.",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15960 MB",
+    "rating": "Borked",
+    "timestamp": 1537125640,
+    "title": "Secrets of Grindea",
+    "source": "protondb"
+  },
+  {
+    "appId": "269770",
+    "cpu": "Intel Core i3-4005U @ 1.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Only tried the demo, it doesn't start at all.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541873410,
+    "title": "Secrets of Grindea",
+    "source": "protondb"
+  },
+  {
+    "appId": "269770",
+    "title": "Secrets of Grindea",
+    "timestamp": 1536133031,
+    "rating": "Borked",
+    "notes": "Crashes on startup without any error message",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-7700HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

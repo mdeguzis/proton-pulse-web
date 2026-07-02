@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "454350",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.7-1-MANJARO",
+    "notes": "Anticheat prevents starting of the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1555183971,
+    "title": "Days of War",
+    "source": "protondb"
+  }
+]

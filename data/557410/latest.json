@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "557410",
+    "cpu": "Intel Core i5-7300U @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Only played for a few minutes. Sound stutters, but everything else seems fine.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1547139283,
+    "title": "Dream Quest",
+    "source": "protondb"
+  }
+]

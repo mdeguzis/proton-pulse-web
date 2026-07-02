@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2282020",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX TURB0 (gigabyte oc 7900xtx)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.13.0-40-generic",
+    "notes": "fullscreen issues, and audio errors.",
+    "os": "KDE Ubuntu 20.04.5 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1698150031,
+    "title": "",
+    "source": "protondb"
+  }
+]

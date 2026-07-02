@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "814640",
+    "title": "Sleepwalker",
+    "timestamp": 1535908386,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't focus initially, but Alt-Tab and Enter run the game fullscreen. After that, it runs perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "814640",
+    "title": "Sleepwalker",
+    "timestamp": 1535893986,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't focus initially, but Alt-Tab and Enter run the game fullscreen. After that, it runs perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

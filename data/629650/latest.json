@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "629650",
+    "cpu": "Intel Core i3-3217U @ 1.80GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Runs perfectly, had to install fakejapanese and cjkfonts via winetricks to play it in japanese",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1551402833,
+    "title": "Symphonic Rain",
+    "source": "protondb"
+  }
+]

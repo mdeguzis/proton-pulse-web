@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "411680",
+    "cpu": "AMD Opteron 6282 SE",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon Pro WX 5100",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.19.16",
+    "notes": "Tested full screen and windowed mode, OK. Saves work OK. All menus work OK. Sound works OK. Graphics good as native. Performance good as native.\n\nMinor issue is that switching to Gamepad mode is ignored. Always remains in Keyboard mode. I am using a Steam controller. No issues with Keyboard mode.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "131 GB",
+    "rating": "Silver",
+    "timestamp": 1553728854,
+    "title": "Loot Hound\u2122",
+    "source": "protondb"
+  }
+]

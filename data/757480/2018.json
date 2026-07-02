@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "757480",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-32-generic",
+    "notes": "The game runs well out of the box. The performance with Nvidia cards gets a bit better with spoofing a AMD card in the dxvk config because of the NVAPI bugs. The game also seems to suffer from the mouse drifting a bit. Both are general bugs with Proton though, and happen with other games, so I don't feel they make this game in particular not worthy of platinum.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544573883,
+    "title": "Broken Reality",
+    "source": "protondb"
+  }
+]

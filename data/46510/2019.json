@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "46510",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.18.19-100.fc27.x86_64",
+    "notes": "Played the whole game. At first, it was run in 3.16-6 Beta. Then at the point where Kate Walker needs to climb a wall, the cutscene after she climbs the wall crashes the game (this cutscene can be skipped). However, when using 3.16-4, that cutscene does not crash. The game was played in 3.16-4 after that point and ran perfectly. ",
+    "os": "Fedora release 27 (Twenty Seven)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1548299996,
+    "title": "Syberia II",
+    "source": "protondb"
+  },
+  {
+    "appId": "46510",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Works fine out of the box.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556371507,
+    "title": "Syberia II",
+    "source": "protondb"
+  },
+  {
+    "appId": "46510",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.0.0-25-generic",
+    "notes": "out of the box",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567730301,
+    "title": "Syberia II",
+    "source": "protondb"
+  }
+]

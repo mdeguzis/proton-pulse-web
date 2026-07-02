@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "358370",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "this pulls up virtual box with a command prompt, but doesn't start the game",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541187575,
+    "title": "Terminal Velocity",
+    "source": "protondb"
+  }
+]

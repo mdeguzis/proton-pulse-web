@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1172650",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.10-1-cachyos",
+    "notes": "works great out of the box in both dx11 and dx12",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1775092110,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1172650",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1775545802,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1172650",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6500 XT (radeonsi, navi24, LLVM 15.0.7, DRM 3.64, 6.18.2-x64v3-xanmod1)",
+    "gpuDriver": "4.6 Mesa 25.0.5 - kisak-mesa PPA",
+    "kernel": "6.18.2-x64v3-xanmod1",
+    "notes": "",
+    "os": "Linux Mint 21.2 (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1778989628,
+    "title": "",
+    "source": "protondb"
+  }
+]

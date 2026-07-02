@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1041320",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Ivybridge Desktop",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-16-generic",
+    "notes": "If you just install the Steam, the game it won't simply work. You'll need to do a couple of things. It's really simple. || 1- Download the latest 'winetricks'. I only had success using the lastest version. https://github.com/Winetricks/winetricks || 2- With the latest version of 'winetricks' installed you'll need to install the Lords Mobile dependencies. The Steam itself do this, but without doing this with the new version of 'winetricks' the game will crash at loading. I don't know why, actually... This did the trick for me after a week trying to make this game run on my Kubuntu 19. || Installing the dependencies: WINEPREFIX=~/.steam/steam/steamapps/compatdata/1041320/pfx/ winetricks vcrun2017 vcrun2013 dotnet35sp1 || 3- Run the game...",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1560353541,
+    "title": "Lords Mobile",
+    "source": "protondb"
+  },
+  {
+    "appId": "1041320",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Ivybridge Desktop",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-16-generic",
+    "notes": "If you just install the Steam, the game it won't simply work. You'll need to do a couple of things. It's really simple. || 1- Download the latest 'winetricks'. I only had success using the lastest version. https://github.com/Winetricks/winetricks || 2- With the latest version of 'winetricks' installed you'll need to install the Lords Mobile dependencies. The Steam itself do this, but without doing this with the new version of 'winetricks' the game will crash at loading. I don't know why, actually... This did the trick for me after a week trying to make this game run on my Kubuntu 19. Installing the dependencies: WINEPREFIX=~/.steam/steam/steamapps/compatdata/1041320/pfx/ winetricks vcrun2017 vcrun2013 dotnet35sp1 || 3- Run the game...",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1560354996,
+    "title": "Lords Mobile",
+    "source": "protondb"
+  }
+]

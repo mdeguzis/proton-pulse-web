@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1186390",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.41.0, 5.13.4-1-default, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.5",
+    "kernel": "5.13.4-1-default",
+    "notes": "DLL not found",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-6",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1629733722,
+    "title": "",
+    "source": "protondb"
+  }
+]

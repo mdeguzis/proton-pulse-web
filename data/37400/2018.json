@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "37400",
+    "title": "Time Gentlemen, Please!",
+    "timestamp": 1536047838,
+    "rating": "Platinum",
+    "notes": "constant 40 FPS",
+    "os": "Arch Linux Stable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "E3-1230 v2 / GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "37400",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "But not working with any graphics filter (2x, 3x...)",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542242536,
+    "title": "Time Gentlemen, Please! and Ben There, Dan That! Special Edition  Double Pack",
+    "source": "protondb"
+  },
+  {
+    "appId": "37400",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-39-generic",
+    "notes": "I've only tested Ben There, Dan That so far. Most graphics filters only work in windowed mode, so I wouldn't say it runs perfectly, but you can definitely play it without any tweaks.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1543771824,
+    "title": "Time Gentlemen, Please! and Ben There, Dan That! Special Edition  Double Pack",
+    "source": "protondb"
+  },
+  {
+    "appId": "37400",
+    "title": "Time Gentlemen, Please!",
+    "timestamp": 1536033438,
+    "rating": "Platinum",
+    "notes": "constant 40 FPS",
+    "os": "Arch Linux Stable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "E3-1230 v2 / GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

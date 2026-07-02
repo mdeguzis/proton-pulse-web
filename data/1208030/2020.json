@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1208030",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "Game exits without fully starting. Attempted using Proton-5.21-GE-1,\nProton-5.11-GE-1-MF, Proton 5.13-2, and Proton 5.0-10.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1607202252,
+    "title": "Let's Learn Japanese! Vocabulary",
+    "source": "protondb"
+  }
+]

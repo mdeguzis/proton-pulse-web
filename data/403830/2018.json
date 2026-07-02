@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "403830",
+    "title": "The Consuming Shadow",
+    "timestamp": 1535311817,
+    "rating": "Platinum",
+    "notes": "Runs Flawlessly",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-8700K/GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "403830",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1546027603,
+    "title": "The Consuming Shadow",
+    "source": "protondb"
+  },
+  {
+    "appId": "403830",
+    "title": "The Consuming Shadow",
+    "timestamp": 1535297417,
+    "rating": "Platinum",
+    "notes": "Runs Flawlessly",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-8700K/GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

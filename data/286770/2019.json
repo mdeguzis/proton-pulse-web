@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "286770",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Opens a game window which doesn't refresh...and nothing happens",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556131900,
+    "title": "Shadow Ops: Red Mercury",
+    "source": "protondb"
+  }
+]

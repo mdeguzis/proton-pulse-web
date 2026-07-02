@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "593600",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0 AMD 18.30 , 4.15.0-34-generic, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.0-rc4",
+    "kernel": "4.15.0-34-generic",
+    "notes": "fails to open the game",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7941 Mb",
+    "rating": "Borked",
+    "timestamp": 1537812300,
+    "title": "PixARK",
+    "source": "protondb"
+  }
+]

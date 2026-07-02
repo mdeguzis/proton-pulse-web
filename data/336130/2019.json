@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "336130",
+    "cpu": "AMD Phenom 9550 Quad-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 19.1.0 - padoka PPA",
+    "kernel": "5.0.0-17-generic",
+    "notes": "Runs fine, but often fails to create a window.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1561390844,
+    "title": "Shardlight",
+    "source": "protondb"
+  }
+]

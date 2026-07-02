@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "579980",
+    "cpu": "AMD A10-7870K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.26",
+    "kernel": "5.3.0-19-generic",
+    "notes": "runs in DosBox ",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571912865,
+    "title": "Lost Eden",
+    "source": "protondb"
+  }
+]

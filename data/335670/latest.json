@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "335670",
+    "cpu": "Intel Xeon E5-2667 v3 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 470 (radeonsi, polaris10, ACO, DRM 3.64, 6.17.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.17.7-arch1-1",
+    "notes": "Definitive Edition only works on Windows, force Proton",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1769097494,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "335670",
+    "cpu": "13th Gen Intel Core i5-13500",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 21.1.6, DRM 3.64, 6.18.2-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.2",
+    "kernel": "6.18.2-2-cachyos",
+    "notes": "The game is native on Linux and works perfectly. The Definitive Edition works perfectly by forcing Proton, which I recommend",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1769968116,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "335670",
+    "cpu": "Genuine Intel 0000",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.9-arch1-1",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1774315914,
+    "title": "",
+    "source": "protondb"
+  }
+]

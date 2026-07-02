@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "311140",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.16-1-MANJARO",
+    "notes": "Get a black screen on launch. Tweaking graphics options made it worse, now it doesn't even start. Not that it matters, nobody would willingly want to play this anyway. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563562407,
+    "title": "The Stalin Subway",
+    "source": "protondb"
+  }
+]

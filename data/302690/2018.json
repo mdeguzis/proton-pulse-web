@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "302690",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Can use game setup when launching. Game normally runs 800x600 as default.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32113 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538868878,
+    "title": "Metal Dead",
+    "source": "protondb"
+  }
+]

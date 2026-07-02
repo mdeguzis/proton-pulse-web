@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "555570",
+    "title": "Infestation: The New Z",
+    "timestamp": 1535991575,
+    "rating": "Bronze",
+    "notes": "Game loads fine but all the textures are transparent.",
+    "os": "Manjaro Linux 17.1.12 (Kernel 4.18.5-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX8350",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "555570",
+    "cpu": "i7-6700K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Failed to start FAC",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Proton 3.7-3",
+    "ram": "32030 Mb",
+    "rating": "Borked",
+    "timestamp": "1536335412",
+    "title": "Infestation: The New Z",
+    "source": "protondb"
+  },
+  {
+    "appId": "555570",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Lets you register for new account. FAC then updates and then fails on  game start  --> [0x6] Failed to start FAC (driver could not be loaded (0x45a DLL initialization failed.) etc..",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7874 Mb",
+    "rating": "Borked",
+    "timestamp": 1537560547,
+    "title": "Infestation: The New Z",
+    "source": "protondb"
+  },
+  {
+    "appId": "555570",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-38-generic",
+    "notes": "[0x6] Failed to start FAC (diver could not be loaded [0x45a] DLL initialization failed.) )from 'C:\\users\\ateamuser\\Application Data\\FAC\\FACDriver.sys'). If the problem persists pelase contact support. You can also try restarting your computer.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1541174035,
+    "title": "Infestation: The New Z",
+    "source": "protondb"
+  },
+  {
+    "appId": "555570",
+    "title": "Infestation: The New Z",
+    "timestamp": 1535977175,
+    "rating": "Bronze",
+    "notes": "Game loads fine but all the textures are transparent.",
+    "os": "Manjaro Linux 17.1.12 (Kernel 4.18.5-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX8350",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

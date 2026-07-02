@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "718560",
+    "cpu": "Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 960M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Minor FPS drop for few seconds after game loaded, but the rest time is perfect",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7844 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537616995,
+    "title": "Scythe: Digital Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "718560",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.4.0-138-generic",
+    "notes": "Ran into a \"Failed to initialize graphics\" error with the default driver in Mint. Manually upgraded to version 396 and the game runs amazing. No issues at all.",
+    "os": "Linux Mint 18.1 Serena",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540691888,
+    "title": "Scythe: Digital Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "718560",
+    "cpu": "Intel Core i7-4600M @ 2.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "notes": "When trying to start Scythe, I get an error: \"Failed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed\"\n\nNote that while the Steam system information reports the integrated GPU, this machines does have an GeForce GT 730M as well.  Prefixing the game command with \"optirun\" *should* cause Scythe to be run on that GPU instead, but it seems that it isn't.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541707658,
+    "title": "Scythe: Digital Edition",
+    "source": "protondb"
+  }
+]

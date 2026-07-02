@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "202710",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "4.20.0-sabayon",
+    "notes": "Finally works like a charm!",
+    "os": "Sabayon Linux amd64 19.01",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1553721824,
+    "title": "Demigod",
+    "source": "protondb"
+  },
+  {
+    "appId": "202710",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "When I first ran it the screen was peculiar. it was only showing the top left 3/5ths of the screen. After finding the Game.pref (for me at: /home/<username>/.steam/steam/steamapps/compatdata/202710/pfx/drive_c/users/steamuser/My Documents/My Games/Gas Powered Games/Demigod) and opening with a text editor. I changed primary_adapter line to primary_adapter = '1920,1080,60' which  is the native resolution for my monitors and everything worked fine after that.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1558214906,
+    "title": "Demigod",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "301320",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Game Crashes at Start with Error Message \"Direct3D returned with an unknown error code. X11/GNU/Linux was detected so this is most likely an implementation error inside the DirectX emulation layer of your OS.\"",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546545947,
+    "title": "NoLimits 2 Roller Coaster Simulation",
+    "source": "protondb"
+  },
+  {
+    "appId": "301320",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.0",
+    "kernel": "5.0.3-arch1-1-ARCH",
+    "notes": "Output with default settings:\n\nWelcome to NoLimits 2 Demo (2.5.7.1 Windows x86_64)\nRenderer: D3D11\nFATAL ERROR: Direct3D returned with an unknown error code. X11/GNU/Linux was detected so this is most likely an implementation error inside the DirectX emulation layer of your OS.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553428848,
+    "title": "NoLimits 2 Roller Coaster Simulation",
+    "source": "protondb"
+  },
+  {
+    "appId": "301320",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Game Crashes at Start with Error Message \"Direct3D returned with an unknown error code. X11/GNU/Linux was detected so this is most likely an implementation error inside the DirectX emulation layer of your OS.\"",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1553801542,
+    "title": "NoLimits 2 Roller Coaster Simulation",
+    "source": "protondb"
+  }
+]

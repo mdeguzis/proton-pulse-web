@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1650040",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (POLARIS10, DRM 3.40.0, 5.10.70-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.10.70-1-MANJARO",
+    "notes": "Crash when click on play button",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1639327964,
+    "title": "",
+    "source": "protondb"
+  }
+]

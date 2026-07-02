@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "31180",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556559287,
+    "title": "Tales of Monkey Island Complete Pack: Chapter 2 - The Siege of Spinner Cay",
+    "source": "protondb"
+  },
+  {
+    "appId": "31180",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Works.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560217982,
+    "title": "Tales of Monkey Island Complete Pack: Chapter 2 - The Siege of Spinner Cay",
+    "source": "protondb"
+  },
+  {
+    "appId": "31180",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Confirmed.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570949705,
+    "title": "Tales of Monkey Island Complete Pack: Chapter 2 - The Siege of Spinner Cay",
+    "source": "protondb"
+  }
+]

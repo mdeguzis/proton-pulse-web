@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "42140",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558909557,
+    "title": "Hamilton's Great Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "42140",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with an Xbox 360 controller and no tweaks.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559356390,
+    "title": "Hamilton's Great Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "42140",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "os": "Unknown (64\u00a0bits)",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565517482,
+    "title": "Hamilton's Great Adventure",
+    "source": "protondb"
+  }
+]

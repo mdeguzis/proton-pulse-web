@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "675680",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Crashes on start and deposites log",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7894 Mb",
+    "rating": "Borked",
+    "timestamp": 1537661752,
+    "title": "ShineG In The Zombies",
+    "source": "protondb"
+  }
+]

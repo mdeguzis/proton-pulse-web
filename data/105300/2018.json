@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "105300",
+    "title": "Critical Mass",
+    "timestamp": 1535509736,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "105300",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-20-generic",
+    "notes": "runs perfectly with steam proton 3.16-4 beta no tweaks needed to be playable\nnetworking seems to be a problem but didn't test it in deep, need to test more",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542930717,
+    "title": "Critical Mass",
+    "source": "protondb"
+  },
+  {
+    "appId": "105300",
+    "cpu": "Intel Core i3-3225 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1545575888,
+    "title": "Critical Mass",
+    "source": "protondb"
+  },
+  {
+    "appId": "105300",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545738648,
+    "title": "Critical Mass",
+    "source": "protondb"
+  },
+  {
+    "appId": "105300",
+    "title": "Critical Mass",
+    "timestamp": 1535495336,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

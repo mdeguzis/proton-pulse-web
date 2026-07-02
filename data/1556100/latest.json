@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1556100",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.5-200.fc42.x86_64",
+    "notes": "Frequent and significant frame drops",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1752350063,
+    "title": "Killer Klowns From Outer Space: The Game",
+    "source": "protondb"
+  }
+]

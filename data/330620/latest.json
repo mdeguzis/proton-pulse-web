@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "330620",
+    "cpu": "Intel Core i7-5930K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-6-amd64",
+    "notes": "Since last update you'll have to use the betacode \"testing12345\" and switch to the opengl version, then it will run just fine.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1571595137,
+    "title": "It's A Wipe!",
+    "source": "protondb"
+  }
+]

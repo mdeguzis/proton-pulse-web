@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "965320",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "5.0.7-200.fc29.x86_64",
+    "notes": "After Start the following window appear\nUplay installation error\nCannot find Uplay. Please check your installation and try again.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1555278743,
+    "title": "The Settlers\u00ae 7 : History Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "965320",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "5.0.7-200.fc29.x86_64",
+    "notes": "After starting game the following window appers\nUplay installation error\nCannot find Uplay. Please check your installation and try again.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-2, 3.7-8, 3.16-4",
+    "protonVersionManual": "4.2-2, 3.7-8, 3.16-4",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1555279534,
+    "title": "The Settlers\u00ae 7 : History Edition",
+    "source": "protondb"
+  }
+]

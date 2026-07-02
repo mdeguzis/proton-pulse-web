@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "734020",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.12.14-lp150.12.22-default",
+    "notes": "Some text in the tutorial doesn't show up, but it didn't affect completing the tutorial.  The game itself plays perfectly (26 hours in).",
+    "os": "openSUSE Leap 15.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541717177,
+    "title": "Legendary DXP",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "474210",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.1.0-1-MANJARO",
+    "notes": "Native version sucks, display problem only half the screen is visible - switch to proton version everything works fine out of the box!",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1763660781,
+    "title": "",
+    "source": "protondb"
+  }
+]

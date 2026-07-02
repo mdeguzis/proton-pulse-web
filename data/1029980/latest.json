@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1029980",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.19.0-2-amd64",
+    "notes": "First Early Access Release",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551580800,
+    "title": "UBERMOSH Vol.7",
+    "source": "protondb"
+  },
+  {
+    "appId": "1029980",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Runs perfectly. No issues what so ever.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564318460,
+    "title": "UBERMOSH Vol.7",
+    "source": "protondb"
+  }
+]

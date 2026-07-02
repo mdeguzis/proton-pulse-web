@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1044340",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Played it from start to finish and it ran like native after the simple dotnet4 protonfix.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "4.11-13",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1598106872,
+    "title": "",
+    "source": "protondb"
+  }
+]

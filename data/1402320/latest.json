@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1402320",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.7, DRM 3.49, 6.2.10-273-tkg-bore)",
+    "gpuDriver": "4.6 Mesa 23.0.1",
+    "kernel": "6.2.10-273-tkg-bore",
+    "notes": "It works only in Proton 6.3-8 for some reason, but it works nicely.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1709982700,
+    "title": "",
+    "source": "protondb"
+  }
+]

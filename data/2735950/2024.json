@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2735950",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 550 / 550 (polaris12, LLVM 15.0.7, DRM 3.54, 6.5.0-25-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "6.5.0-25-generic",
+    "notes": "Roda bem e sem problemas o jogo, requisitos leves e bom pra se divertir",
+    "os": "Zorin OS 17.1",
+    "protonVersion": "9.0-1",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1715284567,
+    "title": "Necro Rumble",
+    "source": "protondb"
+  }
+]

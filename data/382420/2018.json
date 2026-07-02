@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "382420",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-caa964b422)",
+    "kernel": "4.19.1-zen2-2-zen",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542700079,
+    "title": "E.T. Armies",
+    "source": "protondb"
+  }
+]

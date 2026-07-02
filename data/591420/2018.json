@@ -1,0 +1,29 @@
+[
+  {
+    "appId": "591420",
+    "cpu": "i7-2600 CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.45",
+    "notes": "No issues",
+    "os": "Fedora release 28 (Twenty Eight) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Zup! 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "591420",
+    "cpu": "i7-6800K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.19-1-MANJARO",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "32136 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536616849,
+    "title": "Zup! 4",
+    "source": "protondb"
+  }
+]

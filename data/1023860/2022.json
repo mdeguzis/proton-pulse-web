@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1023860",
+    "cpu": "Intel Core i5-4200M @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.3.4",
+    "kernel": "5.16.0-arch1-1",
+    "notes": "Shows a loading screen, disappears and runs in the background forever",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-8",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1642280601,
+    "title": "",
+    "source": "protondb"
+  }
+]

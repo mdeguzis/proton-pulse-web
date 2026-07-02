@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2512840",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, ACO, DRM 3.64, 6.18.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.0-devel (git-6d07a56c6a)",
+    "kernel": "6.18.3-2-cachyos",
+    "notes": "It runs perfectly fine.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768215462,
+    "title": "DORONKO WANKO",
+    "source": "protondb"
+  }
+]

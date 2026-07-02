@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "822800",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-db73bde35c)",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "Aside from the ping to the limited servers making playing difficult, there was no issues running the game itself.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566921876,
+    "title": "Soulfire",
+    "source": "protondb"
+  }
+]

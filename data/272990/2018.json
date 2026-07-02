@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "272990",
+    "title": "GAUGE",
+    "timestamp": 1535099927,
+    "rating": "Silver",
+    "notes": "Zoomed too far in fullscreen, alt+enter to switch to windowed.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "272990",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Zoomed too far in fullscreen, alt+enter to switch to windowed.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Gold",
+    "timestamp": 1537743731,
+    "title": "GAUGE",
+    "source": "protondb"
+  },
+  {
+    "appId": "272990",
+    "title": "GAUGE",
+    "timestamp": 1535085527,
+    "rating": "Silver",
+    "notes": "Zoomed too far in fullscreen, alt+enter to switch to windowed.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

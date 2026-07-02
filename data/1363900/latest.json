@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1363900",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.13-arch1-1",
+    "notes": "Would be completley fine, except for the mouse bug which makes it very difficult to play.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1683271820,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1363900",
+    "cpu": "12th Gen Intel Core i7-12800H",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "6.1.0-9-amd64",
+    "notes": "No unless you're not going to play it as single player only",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1685557822,
+    "title": "",
+    "source": "protondb"
+  }
+]

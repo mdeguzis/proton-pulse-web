@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2412010",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6500 XT (radeonsi, navi24, LLVM 19.1.1, DRM 3.59, 6.11.0-19-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.11.0-19-generic",
+    "notes": "Still works, but will need some care.",
+    "os": "elementary OS 8",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1741799340,
+    "title": "",
+    "source": "protondb"
+  }
+]

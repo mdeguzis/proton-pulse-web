@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "734120",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-96.current",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541715615,
+    "title": "Bonbon",
+    "source": "protondb"
+  },
+  {
+    "appId": "734120",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.9-arch1-1-ARCH",
+    "notes": "Played through the game without issues",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544915409,
+    "title": "Bonbon",
+    "source": "protondb"
+  }
+]

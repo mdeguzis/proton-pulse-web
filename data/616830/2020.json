@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "616830",
+    "cpu": "Intel Celeron N3350 @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 500 (APL 2)",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.8.0-23-generic",
+    "notes": "Game installs and shows resolution menu, after that its a black screen then crashes.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.13-1",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1602812992,
+    "title": "",
+    "source": "protondb"
+  }
+]

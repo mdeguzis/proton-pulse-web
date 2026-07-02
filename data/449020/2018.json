@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "449020",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-3-MANJARO",
+    "notes": "Unity game, runs flawlessly out of the box.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541068007,
+    "title": "The Bottom of the Well",
+    "source": "protondb"
+  }
+]

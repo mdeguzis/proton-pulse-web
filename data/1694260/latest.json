@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1694260",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 20.1.2, DRM 3.64, 6.17.0-22-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-22-generic",
+    "notes": "Played the game on Windows earlier, playing it on Linux was indistinguishable as far as I could tell.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1777317009,
+    "title": "Moons of Ardan",
+    "source": "protondb"
+  }
+]

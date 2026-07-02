@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "210550",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "doesn't start. the game opens and closes immediately",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "15962 MB",
+    "rating": "Borked",
+    "timestamp": 1537773253,
+    "title": "Angry Birds Space",
+    "source": "protondb"
+  },
+  {
+    "appId": "210550",
+    "cpu": "Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Exits the first time, then runs fine.",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "32122 Mo",
+    "rating": "Platinum",
+    "timestamp": 1539190424,
+    "title": "Angry Birds Space",
+    "source": "protondb"
+  }
+]

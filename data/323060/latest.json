@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "323060",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.5-200.fc29.x86_64",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549329773,
+    "title": "Tharsis",
+    "source": "protondb"
+  },
+  {
+    "appId": "323060",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Works perfectly for me.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1551936831,
+    "title": "Tharsis",
+    "source": "protondb"
+  },
+  {
+    "appId": "323060",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Haven't tried any tweaks, but have to try them, because out of the box there are big audio/video de-synchronizations in the cut scenes and dice animations sometimes are stuttering.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1564875640,
+    "title": "Tharsis",
+    "source": "protondb"
+  }
+]

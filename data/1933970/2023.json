@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1933970",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "\ud2b9\ubcc4\ud55c \uc124\uc815 \uc5c6\uc774\ub3c4 \uc798 \ud50c\ub808\uc774 \ub429\ub2c8\ub2e4.\n\nIt can be played well without any special settings.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1685626147,
+    "title": "",
+    "source": "protondb"
+  }
+]

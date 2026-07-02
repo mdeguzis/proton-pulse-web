@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "39550",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-200.fc29.x86_64",
+    "notes": "Use PROTON_FORCE_LARGE_ADDRESS_AWARE=1 tweak to avoid Access Violation. Game have shadow lags and mid perfomance ~30fps and ~45fps if set water settings to normal.",
+    "os": "Linux Fedora 29 (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551817061,
+    "title": "SpellForce 2 - Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "39550",
+    "cpu": "AMD FX-6350 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD TURKS",
+    "gpuDriver": "3.1 Mesa 18.3.4",
+    "kernel": "4.14.107-1-MANJARO",
+    "notes": "In general, it works perfectly - I have just experienced some minor graphic bugs like overlapping textures, but it is nothing that affects the gameplay.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1553974575,
+    "title": "SpellForce 2 - Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "39550",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.2-antix.1-amd64-smp",
+    "notes": "The game would not start for me because the \"config.xml\" file contained the wrong screen resolution. I disabled \"Steam Cloud sync\" and edited the \"config.xml\" file in \"/path to your /SteamLibrary/steamapps/compatdata/39550/pfx/drive_c/users/steamuser/My Documents/SpellForce2/\" folder to the exact resolution of my desktop. In my case it is screenheight=\"1050\" screenwidth=\"1680\".\n\nThe game runs fine from within Steam now.",
+    "os": "MX 18.3 Continuum",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559674249,
+    "title": "SpellForce 2 - Anniversary Edition",
+    "source": "protondb"
+  }
+]

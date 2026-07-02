@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "537060",
+    "cpu": "Intel Xeon  X5675 (x2) @ 3.07GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.2-1-default",
+    "notes": "While performance can be considered lacking, I'm flagging it Platinum since it ran without any tweaks on my part.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.11-7",
+    "ram": "72 GB",
+    "rating": "Platinum",
+    "timestamp": 1571142315,
+    "title": "MagixHome\u2122 VR",
+    "source": "protondb"
+  }
+]

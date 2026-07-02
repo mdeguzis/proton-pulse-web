@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "494170",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.0-8.1-liquorix-amd64",
+    "notes": "fullscreen = crash and can't change resolution other than that it plays",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2.5",
+    "protonVersionManual": "4.2.5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560237665,
+    "title": "Miniature Garden",
+    "source": "protondb"
+  }
+]

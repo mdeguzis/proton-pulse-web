@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "269030",
+    "cpu": "Intel Core i3-2120 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-116-generic",
+    "notes": "Black screen opens up, then crashes.",
+    "os": "Linux Mint 17.3 Rosa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546435593,
+    "title": "The Yawhg",
+    "source": "protondb"
+  },
+  {
+    "appId": "269030",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "The crashing and blackscreens are actually issues on Windows too. Setting the game in windowed mode with alt+enter fixes the blackscreen issue and the game then runs fine.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1554151792,
+    "title": "The Yawhg",
+    "source": "protondb"
+  },
+  {
+    "appId": "269030",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Graphics are messed up in fullscreen, press alt-enter to go into windowed mode, where the game works fine.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1558185401,
+    "title": "The Yawhg",
+    "source": "protondb"
+  }
+]

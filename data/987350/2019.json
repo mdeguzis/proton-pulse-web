@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "987350",
+    "cpu": "Intel Core i7-5960X @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "BattlEye, gets you into a match and then kills it and kicks you out.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568917090,
+    "title": "PlanetSide Arena",
+    "source": "protondb"
+  },
+  {
+    "appId": "987350",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel",
+    "kernel": "5.2.7-050207-generic",
+    "notes": "Installation without problems. But as soon as you start the game you fly with a game error - code G201 from the server. This is due to the anti cheat software BattleEye. As long as there is no proton support the game will probably not be playable.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568927736,
+    "title": "PlanetSide Arena",
+    "source": "protondb"
+  },
+  {
+    "appId": "987350",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "Game runs just fine from what i can tell, but BattleEye forcefully closes the game after a minute or two.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1568959674,
+    "title": "PlanetSide Arena",
+    "source": "protondb"
+  },
+  {
+    "appId": "987350",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.1.21-1-MANJARO",
+    "notes": "After disabling esync, performance is great. Forcing large address awareness seems to help also. Unfortunately, the game just crashes every few minutes.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1568970960,
+    "title": "PlanetSide Arena",
+    "tweaks": {
+      "disableEsync": true,
+      "largeAddressAware": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "987350",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-29-generic",
+    "notes": "using tweaks I could get past initial setup, but during loading, the game crashes and gives an error code G201, which is an error related to BattlEye.\n\nI was not able to get into any matches, although it did let me name my character the first time it was run.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-5",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1569002549,
+    "title": "PlanetSide Arena",
+    "tweaks": {
+      "disableEsync": true,
+      "largeAddressAware": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "appId": "726390",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.1 Mesa 18.2.2",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Works perfectly!",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "10 GB",
+    "rating": "Gold",
+    "timestamp": 1551712474,
+    "title": "Scream Collector",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "726390",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "The game was crashing with an error as soon as I clicked on \"PLAY\", but worked perfectly after I set the following launch options: \"PROTON_USE_WINED3D=1 %command%\". Now everything seems to be working.",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1551811762,
+    "title": "Scream Collector",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "726390",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It had some graphical issues, but everything works perfectly when you use Wine D3d11 with the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552235284,
+    "title": "Scream Collector",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "726390",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It had some graphical issues related to text not displaying correctly and some graphical stuff not displaying at all, but everything works perfectly when you use Wine D3d11 with the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1557065297,
+    "title": "Scream Collector",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

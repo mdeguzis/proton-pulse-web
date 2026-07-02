@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1815340",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.13-arch1-1",
+    "notes": "Extreme Artifacts in Terrain and certain Assets",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1644083479,
+    "title": "",
+    "source": "protondb"
+  }
+]

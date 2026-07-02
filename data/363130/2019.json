@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "363130",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Video playback needs to be disabled in the game launcher. I played the first handful of missions and it plays pretty much perfectly. As such one could even consider it close to platinum. I did not try online however.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1561661566,
+    "title": "Toukiden: Kiwami",
+    "source": "protondb"
+  }
+]

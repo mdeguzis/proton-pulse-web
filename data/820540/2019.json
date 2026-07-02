@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "820540",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.24-1-MANJARO",
+    "notes": "DEMO version only. Xbox controller didn't work and the game failed to shut down properly. Playable with keyboard and mouse.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560722844,
+    "title": "Bloodroots",
+    "source": "protondb"
+  }
+]

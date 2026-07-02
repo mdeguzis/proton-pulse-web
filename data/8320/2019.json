@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "8320",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.15-1-MANJARO",
+    "notes": "Unplayable frame rates every now and again and the only thing that would fix it was exiting and reopening the game. Other than that every thing was fine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1558742158,
+    "title": "Bone: The Great Cow Race",
+    "source": "protondb"
+  }
+]

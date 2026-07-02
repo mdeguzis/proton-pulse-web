@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "1133730",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.13-200.fc30.x86_64",
+    "notes": "It need to disble Vulcan API, if we not, we found  a lot of texture/model error. After that, it working well.\n\nI found only one little error, if i use a jumpgate, the travel animation is blinking.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568359790,
+    "title": "Second Galaxy",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "1133730",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-31-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571181769,
+    "title": "Second Galaxy",
+    "source": "protondb"
+  }
+]

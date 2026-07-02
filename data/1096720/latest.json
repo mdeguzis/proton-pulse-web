@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1096720",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 760 (192-bit)",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.16-050116-generic",
+    "notes": "Runs perfectly out of the box. The only glitches I found where a texture glitch after clicking the information button at the start of a level and the game didn't close properly so I had to force close it.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563560915,
+    "title": "CATGIRL LOVER",
+    "source": "protondb"
+  }
+]

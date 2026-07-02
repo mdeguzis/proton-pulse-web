@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "11040",
+    "cpu": "Intel Core i7-4720HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-200.fc29.x86_64",
+    "notes": "This game, as its bretheren require manual installation of the PhysX runtime libraries, as the preparations from Proton do not successfully do this. The best version I could find were the one ones that accompany the \"Versis Jack the Ripper\" game, which are version PhysX-9.13.0725-SystemSoftware.msi and PhysX-9.13.0604-SystemSoftware-Legacy.msi packages. The same is true for the three games that share the same engine: Sherlock Holmes versus Jack the Ripper, SH: The Awakened - Remastered and SH: Nemesis. Installing the latest legacy PhysX from nVidia also works, but I have had trouble in my main rig (Ryzen 7 1800X, GTX1080)",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "11 GB",
+    "rating": "Gold",
+    "timestamp": 1555185313,
+    "title": "Sherlock Holmes - Nemesis",
+    "source": "protondb"
+  },
+  {
+    "appId": "11040",
+    "cpu": "Intel Core i7-2620M @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.2.0-devel (git-730ceed 2019-07-14 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1563112599,
+    "title": "Sherlock Holmes - Nemesis",
+    "source": "protondb"
+  }
+]

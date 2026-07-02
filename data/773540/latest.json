@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "773540",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Works well out of box.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "20 GB",
+    "rating": "Platinum",
+    "timestamp": 1558636268,
+    "title": "Boss Crushers",
+    "source": "protondb"
+  },
+  {
+    "appId": "773540",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-lowlatency",
+    "notes": "First test during 30 minutes. Runs perfectly in solo. Didn't test in coop yet.",
+    "os": "Ubuntu 18.04.2 LTS (64\u00a0bits)",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560976789,
+    "title": "Boss Crushers",
+    "source": "protondb"
+  }
+]

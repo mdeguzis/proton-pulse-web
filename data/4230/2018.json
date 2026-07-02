@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "4230",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.7-1.el7.elrepo.x86_64",
+    "notes": "Intro runs extremely slowly with stuttering audio. Main menu has working menu music, but navigation is incredibly slow and takes minutes to do anything, making it literally unplayable.",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "64419 Mb",
+    "rating": "Borked",
+    "timestamp": 1537042254,
+    "title": "RACE - The WTCC Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "4230",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "X.Org AMD HAWAII (DRM 2.50.0 / 4.15.0-34-generic, LLVM 6.0.0) R9 290",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "1FPS, single thread 100%",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7970 Mb",
+    "rating": "Borked",
+    "timestamp": 1537311362,
+    "title": "RACE - The WTCC Game",
+    "source": "protondb"
+  }
+]

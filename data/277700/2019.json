@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "277700",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-2d2927938f)",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Works fine native on Linux and as well on Proton. It seems to run always via OpenGL.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557521166,
+    "title": "On Rusty Trails",
+    "source": "protondb"
+  }
+]

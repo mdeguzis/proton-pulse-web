@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "4880",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-zen1-2-zen",
+    "notes": "Runs too quickly.",
+    "os": "Linux",
+    "protonVersion": "4.2-8",
+    "protonVersionManual": "4.2-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1561651728,
+    "title": "Cossacks: European Wars",
+    "source": "protondb"
+  },
+  {
+    "appId": "4880",
+    "cpu": "Intel Core i5-3475S @ 2.90GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "The game is running a little bit too fast, but is still playable",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1571567275,
+    "title": "Cossacks: European Wars",
+    "source": "protondb"
+  }
+]

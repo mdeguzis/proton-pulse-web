@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1734390",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Textes trop petits et cin\u00e9matiques impossibles \u00e0 voir.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1674243936,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1734390",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.49, 6.2.6-273-tkg-bore)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.2.6-273-tkg-bore",
+    "notes": "It's very early access, but I experienced most of the crashes on Windows as well.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1679058041,
+    "title": "",
+    "source": "protondb"
+  }
+]

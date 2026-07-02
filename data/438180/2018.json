@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "438180",
+    "title": "Super Mustache",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Crashes on start. Crash folder: https://drive.google.com/open?id=1AUnaF1LKlP1ps-yq3w8z-EaeUjcH7fRy",
+    "os": "Arch",
+    "gpuDriver": "4.18.3-arch1-1-ARCH",
+    "specs": "i3-6100 / Rx460 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "438180",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "xbone controller is not detected, otherwise fine",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Silver",
+    "timestamp": 1536874570,
+    "title": "Super Mustache",
+    "source": "protondb"
+  },
+  {
+    "appId": "438180",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541914124,
+    "title": "Super Mustache",
+    "source": "protondb"
+  },
+  {
+    "appId": "438180",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "The game works fine, except I had to unplug my 360 controller otherwise I would constantly run in random directions. To check my hardware, I tried another Proton game and the controller worked fine in that. Fortunately, the game played fine with the keyboard.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1545967248,
+    "title": "Super Mustache",
+    "source": "protondb"
+  },
+  {
+    "appId": "438180",
+    "title": "Super Mustache",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Crashes on start. Crash folder: https://drive.google.com/open?id=1AUnaF1LKlP1ps-yq3w8z-EaeUjcH7fRy",
+    "os": "Arch",
+    "gpuDriver": "4.18.3-arch1-1-ARCH",
+    "specs": "i3-6100 / Rx460 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

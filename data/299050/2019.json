@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "299050",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Runs fine once you force DirectX 11, otherwise it crashes once you start the game from the main menu\n\nPROTON_USE_WINED3D11=1 %command%",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1555463206,
+    "title": "Blood II: The Chosen + Expansion",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "299050",
+    "cpu": "Intel Core i5-2450M @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Stable fps. No lags. Perfect.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556035860,
+    "title": "Blood II: The Chosen + Expansion",
+    "source": "protondb"
+  },
+  {
+    "appId": "299050",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Game crashes if you set resolution higher than 1280x960, but otherwise runs fine.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567014956,
+    "title": "Blood II: The Chosen + Expansion",
+    "source": "protondb"
+  }
+]

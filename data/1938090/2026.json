@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1938090",
+    "cpu": "12th Gen Intel Core i5-12500H",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.8-3-cachyos",
+    "notes": "Not even single player can be launched",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1769923370,
+    "title": "Call of Duty",
+    "source": "protondb"
+  },
+  {
+    "appId": "1938090",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.18.7-arch1-1",
+    "notes": "It won't even launch. Don't bother installing it.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1770850339,
+    "title": "Call of Duty",
+    "source": "protondb"
+  }
+]

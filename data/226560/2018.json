@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "226560",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Escape Dead Island",
+    "source": "protondb"
+  },
+  {
+    "appId": "226560",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.2-1-MANJARO",
+    "notes": "Works perfectly",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542975517,
+    "title": "Escape Dead Island",
+    "source": "protondb"
+  }
+]

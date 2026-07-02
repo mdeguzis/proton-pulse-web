@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "1028780",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.9.0-9-amd64",
+    "notes": "The game displayed an error on start: \"DX11 Feature level 10.0 is required to run the engine\". Launching with \"PROTON_USE_WINED3D11=1 %command%\" in the launch options lets the game run, albeit at  very low FPS.",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1561637449,
+    "title": "Warmord",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

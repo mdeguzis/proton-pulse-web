@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "795510",
+    "title": "Koihime Enbu RyoRaiRai",
+    "timestamp": 1535869677,
+    "rating": "Silver",
+    "notes": "Cant configure Dinput controls since it needs an external config tool that actually doesnt run. Works fine with Xinput controls and Steam controller layout Keyboard(xpadder like tool Steam has for converting joystick inputs to keyboard ones). Also the game crashes to desktop when joining a room. Arcade, Versus and training mode works fine.",
+    "os": "SteamOS Brewmaster Beta",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "AMD A8-6410 with Radeon R5",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "795510",
+    "cpu": "AMD A8-6410 APU with AMD Radeon R5 Graphics",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Turn off Steam generic controller support so your joysticks will be detected. Selecting netplay in the game causes a crash. Animations in fight are missing, when you call your partner or you make a super special movement, including Hougeki super special. Those missing animations doesnt affect the gameplay since they happen on the background(Personally I prefer to play the game on proton since those background animations are annoying), so the game can be played perfectly on Arcade, Versus and Training.\n",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "5 GB",
+    "rating": "Silver",
+    "timestamp": 1541095083,
+    "title": "Koihime Enbu RyoRaiRai \u604b\u59eb\u2020\u6f14\u6b66 \uff5e\u907c\u6765\u6765\uff5e",
+    "source": "protondb"
+  },
+  {
+    "appId": "795510",
+    "title": "Koihime Enbu RyoRaiRai",
+    "timestamp": 1535855277,
+    "rating": "Silver",
+    "notes": "Cant configure Dinput controls since it needs an external config tool that actually doesnt run. Works fine with Xinput controls and Steam controller layout Keyboard(xpadder like tool Steam has for converting joystick inputs to keyboard ones). Also the game crashes to desktop when joining a room. Arcade, Versus and training mode works fine.",
+    "os": "SteamOS Brewmaster Beta",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "AMD A8-6410 with Radeon R5",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

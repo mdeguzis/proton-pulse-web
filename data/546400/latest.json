@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "546400",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega 56",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.13-zen1-1-zen",
+    "notes": "The game run fine but the mouse doesn't disappear in game ",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1557773890,
+    "title": "Cavern Escape",
+    "source": "protondb"
+  },
+  {
+    "appId": "546400",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-zen1-2-zen",
+    "notes": "Couldn't get the window to cooperate and couldn't click on anything in the main menu.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1561523234,
+    "title": "Cavern Escape Extremely Hard game!!!",
+    "source": "protondb"
+  }
+]

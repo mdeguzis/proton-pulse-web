@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "621930",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.14-200.fc30.x86_64",
+    "notes": "The native version just shows a black screen and plays music. All unity3d trick didn't help, so I tried with proton and whoa-la...it works",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568540053,
+    "title": "Attack of the Earthlings",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "61100",
+    "title": "Lucid",
+    "timestamp": 1534968351,
+    "rating": "Platinum",
+    "notes": "woof",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Geforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "61100",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Can't go fullscreen at native 1920x1080, but I believe this is the case in Windows as well.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541858033,
+    "title": "Lucid",
+    "source": "protondb"
+  },
+  {
+    "appId": "61100",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Works without issues",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542414400,
+    "title": "Lucid",
+    "source": "protondb"
+  },
+  {
+    "appId": "61100",
+    "title": "Lucid",
+    "timestamp": 1534953951,
+    "rating": "Platinum",
+    "notes": "woof",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Geforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

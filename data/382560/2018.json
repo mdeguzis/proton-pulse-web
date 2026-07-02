@@ -1,0 +1,100 @@
+[
+  {
+    "appId": "382560",
+    "title": "Hot Lava",
+    "timestamp": 1535123494,
+    "rating": "Silver",
+    "notes": "Performance is okay, I need to use Medium graphics quality; First start takes around 30seconds with no response, but works afterwards, ",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Xeon E3-1230v5 / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "382560",
+    "title": "Hot Lava",
+    "timestamp": 1536111075,
+    "rating": "Platinum",
+    "notes": "Performance is great, and I can run at highest graphics settings. Changing the resolution seems to be a bit unresponsive. Game runs well fullscreen and in windowed mode.",
+    "os": "Debian 9.5",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4570",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "382560",
+    "cpu": "Intel(R) Core(TM) i5-4570 CPU @ 3.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Initial startup time is a bit long, but after that there are no problems with the game.",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15940 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537396624,
+    "title": "Hot Lava",
+    "source": "protondb"
+  },
+  {
+    "appId": "382560",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Only launched after using Wine D3D11, with very minor graphical bugs but severely reduced performance compared to windows but still playable on potato graphics.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542406348,
+    "title": "Hot Lava",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "382560",
+    "cpu": "Intel Xeon E3-1230 v5 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.11-zen1-1-zen",
+    "notes": "Mouse input is glitchy sometimes. Is very playable, graphics settings are on medium only",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545478961,
+    "title": "Hot Lava",
+    "source": "protondb"
+  },
+  {
+    "appId": "382560",
+    "title": "Hot Lava",
+    "timestamp": 1535109094,
+    "rating": "Silver",
+    "notes": "Performance is okay, I need to use Medium graphics quality; First start takes around 30seconds with no response, but works afterwards, ",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Xeon E3-1230v5 / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "382560",
+    "title": "Hot Lava",
+    "timestamp": 1536096675,
+    "rating": "Platinum",
+    "notes": "Performance is great, and I can run at highest graphics settings. Changing the resolution seems to be a bit unresponsive. Game runs well fullscreen and in windowed mode.",
+    "os": "Debian 9.5",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4570",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

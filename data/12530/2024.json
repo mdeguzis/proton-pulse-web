@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "12530",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 15.0.7, DRM 3.57, 6.8.5-1-liquorix-amd64)",
+    "gpuDriver": "4.6 Mesa 24.0.6 - kisak-mesa PPA",
+    "kernel": "6.8.5-1-liquorix-amd64",
+    "notes": "Did nothing and it worked. Perfect.",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1714935164,
+    "title": "Hunting Unlimited\u2122 2008",
+    "source": "protondb"
+  }
+]

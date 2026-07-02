@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "346780",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.5 - SteamVR PPA",
+    "kernel": "4.20.0-042000rc4-generic",
+    "notes": "Game works fine except if you minimize the window you can't bring up the game again (opens up again in a tiny window where you can't see anything)",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543345623,
+    "title": "Luminosity",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2729480",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.4.10-202.fsync.fc38.x86_64",
+    "notes": "Game starts fine and I can see it display on my monitor, and yet it does not display on my Valve Index",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1722722514,
+    "title": "NightClub Simulator",
+    "source": "protondb"
+  }
+]

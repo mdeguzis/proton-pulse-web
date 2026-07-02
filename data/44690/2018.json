@@ -1,0 +1,101 @@
+[
+  {
+    "appId": "44690",
+    "title": "GT Legends",
+    "timestamp": 1535059775,
+    "rating": "Borked",
+    "notes": "Game does not run",
+    "os": "Arch 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX-8150 / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "44690",
+    "title": "GT Legends",
+    "timestamp": 1535315468,
+    "rating": "Borked",
+    "notes": "Will not start",
+    "os": "Ubuntu 16.04.5 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "GTX 550Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "44690",
+    "cpu": "i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Able to adjust grfx settings before you try to start game, but then just crashed. Many .dll error files in logs",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7874 Mb",
+    "rating": "Borked",
+    "timestamp": 1536965240,
+    "title": "GT Legends",
+    "source": "protondb"
+  },
+  {
+    "appId": "44690",
+    "cpu": "Intel Core i7-4790S @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Doesn't start",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543067844,
+    "title": "GT Legends",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "44690",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.8-300.fc29.x86_64",
+    "notes": "Will not start at all.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544801974,
+    "title": "GT Legends",
+    "source": "protondb"
+  },
+  {
+    "appId": "44690",
+    "title": "GT Legends",
+    "timestamp": 1535045375,
+    "rating": "Borked",
+    "notes": "Game does not run",
+    "os": "Arch 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX-8150 / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "44690",
+    "title": "GT Legends",
+    "timestamp": 1535301068,
+    "rating": "Borked",
+    "notes": "Will not start",
+    "os": "Ubuntu 16.04.5 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "GTX 550Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

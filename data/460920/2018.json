@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "460920",
+    "title": "Steep",
+    "timestamp": 1534970528,
+    "rating": "Borked",
+    "notes": "Displays a blank window that I can only identify as the Uplay launcher",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA GTX 980 Ti",
+    "specs": "i5-2500",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "460920",
+    "title": "Steep",
+    "timestamp": 1534970695,
+    "rating": "Borked",
+    "notes": "Displays a blank window that I can only identify as the Uplay launcher",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-2500 / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "460920",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.0-1-amd64, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Pops up the uplay login screen, but won't connect to the servers.",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "16054 Mb",
+    "rating": "Borked",
+    "timestamp": 1536977903,
+    "title": "Steep\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "460920",
+    "title": "Steep",
+    "timestamp": 1534956128,
+    "rating": "Borked",
+    "notes": "Displays a blank window that I can only identify as the Uplay launcher",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA GTX 980 Ti",
+    "specs": "i5-2500",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "460920",
+    "title": "Steep",
+    "timestamp": 1534956295,
+    "rating": "Borked",
+    "notes": "Displays a blank window that I can only identify as the Uplay launcher",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-2500 / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

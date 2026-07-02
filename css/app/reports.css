@@ -1,0 +1,828 @@
+/* -- Reports section -- */
+
+.reports-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  /* Equivalent to a double blank-line above the heading so the section
+     break reads clearly after the game-header banner ends */
+  margin-top: 48px;
+}
+.reports-section-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.reports-section-title {
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+  color: var(--strong);
+  font-weight: 800;
+}
+.reports-section-subtitle {
+  font-size: 0.76rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+/* sort bar */
+.sort-bar { display: flex; gap: 6px; }
+.sort-bar button {
+  padding: 5px 10px;
+  background: var(--s1);
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .1s, color .1s, border-color .1s;
+}
+.sort-bar button:hover { background: var(--s2); color: var(--text); }
+.sort-bar button.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
+.sort-mine-btn { margin-left: 6px; border-left: 1px solid var(--border); padding-left: 12px !important; }
+
+/* controls row: filter button left, sort toggles right */
+.reports-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* filter bar */
+.filter-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+/* .filter-toggle-btn, .filter-badge -- base styles in css/shared/filters.css */
+/* .filter-panel base -- positioning, bg, border, radius, shadow in css/shared/filters.css */
+.filter-panel { display: none; }
+.filter-panel.open { display: block; }
+@media (min-width: 601px) {
+  .filter-panel-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.filter-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 14px;
+}
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.filter-item label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.filter-item select {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 5px 8px;
+  font-size: 0.76rem;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: border-color .1s;
+}
+.filter-item select:focus { border-color: var(--accent); }
+.filter-panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+/* Save filters and Clear filters share one pill shape: same size, text size,
+   and border thickness. Only the colors differ. */
+.filter-save-btn,
+.filter-clear-btn {
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border-width: 1.5px;
+  border-style: solid;
+  cursor: pointer;
+  transition: color .1s, border-color .1s, background .1s;
+}
+.filter-clear-btn {
+  background: rgba(220, 70, 70, 0.12);
+  border-color: rgba(220, 70, 70, 0.45);
+  color: #ff9b9b;
+}
+.filter-clear-btn:hover { background: rgba(220, 70, 70, 0.22); border-color: #ff6b6b; color: #ffc1c1; }
+.filter-save-btn {
+  background: var(--s1);
+  border-color: var(--border);
+  color: var(--muted);
+}
+.filter-save-btn:hover { border-color: var(--accent); color: var(--strong); }
+.filter-save-btn.is-active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-hi);
+}
+.filter-count { font-size: 0.72rem; color: var(--muted); }
+.filter-persist {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.74rem;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+}
+.filter-persist:hover { color: var(--text); }
+.filter-persist input { accent-color: var(--accent); cursor: pointer; }
+
+/* Browse-page filter panel: lay the groups (Sort / Tier / Source) out side by
+   side so the popover is compact instead of one tall vertical column. Wraps to
+   a single column on narrow screens. */
+.filter-panel--stack { display: none; }
+.filter-panel--stack.open {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px 24px;
+}
+.filter-panel--stack .filter-item { gap: 4px; min-width: 130px; }
+.filter-panel--stack .pg-filter-group { min-width: 120px; }
+.filter-panel-footer--stack {
+  flex-basis: 100%;
+  width: 100%;
+  margin-top: 2px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  justify-content: flex-end;
+  gap: 8px;
+}
+@media (max-width: 560px) {
+  .filter-panel--stack.open { flex-direction: column; gap: 14px; }
+}
+.filter-panel--stack .home-filter-select {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 5px 8px;
+  font-size: 0.76rem;
+  font-family: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Text filter box: sits in the bar to the right of the Filters button (not in
+   the dropdown). Wider on desktop, shorter on mobile. */
+.home-filter-left { display: flex; align-items: center; gap: 8px; }
+.home-filter-text {
+  width: 240px;
+  max-width: 40vw;
+  box-sizing: border-box;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 7px 12px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  border-radius: 999px;
+  outline: none;
+  transition: border-color .1s;
+}
+.home-filter-text:focus { border-color: var(--accent); }
+@media (max-width: 560px) {
+  .home-filter-text { width: 130px; }
+}
+
+/* Desktop: the narrow row-wrap of groups made the variable-width pills wrap
+   raggedly. On wider screens lay the panel out as a single vertical column of
+   full-width groups, each group an even pill grid so they align in tidy
+   columns. Mobile keeps the compact stack from the max-width:560 rule above. */
+@media (min-width: 561px) {
+  .filter-panel--stack.open {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 14px;
+    min-width: 540px;
+  }
+  .filter-panel--stack .filter-item,
+  .filter-panel--stack .pg-filter-group {
+    width: 100%;
+    min-width: 0;
+  }
+  .filter-panel--stack .pg-filter-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+    align-items: stretch;
+  }
+  .filter-panel--stack .pg-filter-group-label { grid-column: 1 / -1; }
+  .filter-panel--stack .pg-filter {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* .filter-checks / .filter-check removed -- filter groups now use
+   .pg-filter-group + .pg-filter pill buttons (css/shared/filters.css) */
+
+/* Live ProtonDB summary note: shown when a game is not in our mirror but the
+   user checked ProtonDB live. We only have the aggregate (tier + total), so we
+   explain that rather than render fake report cards. */
+.live-summary-note {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  background: var(--s1);
+  color: var(--text);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.live-summary-note a { color: var(--accent); }
+.source-summary-distribution-note {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* report cards */
+.cards { display: flex; flex-direction: column; gap: 12px; }
+a.card { display: flex; color: inherit; }
+a.card:hover { text-decoration: none; }
+.card {
+  display: flex;
+  gap: 14px;
+  padding: 8px 14px 8px 8px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.05s;
+}
+.card:hover { border-color: var(--accent); }
+a.card:active { transform: translateY(1px); }
+.card .left { flex: 1; min-width: 0; }
+/* card-body replaces .left for the new layout - middle column with proton +
+   hw + age + signal-strip. Same flex behavior as .left so existing rules still
+   apply to descendants */
+.card .card-body { flex: 1; min-width: 0; }
+
+/* --- Author column (left edge of each card) ---
+   Square 4x4-style profile area. Wider than before because the column was
+   too narrow + rectangular previously; now there's room to fit a larger
+   square avatar (Steam profile pics will land here once we wire that up). */
+.card-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 112px;
+  max-width: 128px;
+  flex-shrink: 0;
+  padding-right: 10px;
+  /* #151: bottom breathing room so the "N reports / Xh" line is not
+     flush against the card border below. */
+  padding-bottom: 8px;
+  border-right: 1px solid var(--border);
+}
+.author-avatar {
+  /* Truly square - fills the column's content width with a locked 1:1 aspect
+     ratio. Previous fixed 80x80 looked rectangular because the column was
+     wider; now the avatar resizes with the column and stays a perfect square */
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 4px;
+  background: rgba(11,17,22,0.5);
+  border: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+/* SVG inside scales with the box - 60% of the avatar size keeps it from
+   crowding the frame edges */
+.author-avatar svg { width: 60%; height: 60%; }
+/* atom-mark color shifts subtly per source so plugin vs protondb anonymous
+   are distinguishable at a glance */
+.author-avatar-pulse    { color: var(--accent-hi, #aedcff); }
+.author-avatar-protondb { color: var(--muted); }
+.author-name {
+  font-family: var(--font-display, var(--mono));
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.author-sub {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.author-stats {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  margin-top: 2px;
+  min-height: 0.7em;
+}
+.author-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* --- Signal-icon strip (inline with report body) ---
+   Small ~22px squares, color-coded by yes/no/neutral. Tooltips on hover
+   give the full label since the icons alone are intentionally tight. */
+.signal-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+.signal-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  background: rgba(11,17,22,0.5);
+  color: var(--muted);
+  transition: transform .08s;
+  cursor: pointer;
+  position: relative;
+}
+.signal-icon:hover { transform: scale(1.08); }
+.signal-tooltip {
+  display: none;
+  position: fixed;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.72rem;
+  color: var(--text);
+  max-width: 420px;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  line-height: 1.5;
+}
+.signal-tooltip .st-state { display: block; }
+.signal-tooltip .st-desc  { display: block; margin-top: 2px; }
+.signal-icon svg { width: 20px; height: 20px; }
+/* state variants - good (Steam install green), bad (red), warn (amber),
+   info (accent blue), neutral (muted gray, dim) */
+.signal-icon.signal-good {
+  background: #5ba32b;
+  border-color: #5ba32b;
+  color: #0a0c10;
+}
+.signal-icon.signal-bad {
+  background: #c84a4a;
+  border-color: #c84a4a;
+  color: #fff;
+}
+.signal-icon.signal-warn {
+  background: #d4a72c;
+  border-color: #d4a72c;
+  color: #0a0c10;
+}
+.signal-icon.signal-info {
+  background: rgba(102,192,244,0.18);
+  border-color: var(--accent);
+  color: var(--accent-hi, #aedcff);
+}
+.signal-icon.signal-neutral {
+  background: rgba(11,17,22,0.25);
+  border-color: rgba(31,51,70,0.5);
+  color: rgba(103,120,140,0.45);
+}
+
+
+/* --- Permalink button (right column) --- */
+.permalink-btn {
+  margin-top: 4px;
+  padding: 3px 6px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.66rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: color .12s, border-color .12s, background .12s;
+}
+.permalink-btn:hover {
+  color: var(--accent-hi, #aedcff);
+  border-color: var(--accent);
+  background: rgba(102,192,244,0.06);
+}
+.permalink-btn.copied {
+  color: #5ba32b;
+  border-color: #5ba32b;
+}
+.permalink-btn svg { width: 12px; height: 12px; }
+.card .proton { font-size: 0.88rem; font-weight: 700; color: var(--strong); margin-bottom: 3px; font-family: var(--mono); }
+.card .card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.card .card-head .proton { margin-bottom: 0; }
+.card .hw { font-size: 0.75rem; color: var(--muted); margin-bottom: 6px; }
+.arch-badge { display: inline-block; font-size: 0.65rem; font-weight: 600; padding: 1px 6px; border-radius: 999px; background: rgba(100,160,220,0.15); border: 1px solid rgba(100,160,220,0.3); color: var(--accent-light, #8fc4ee); vertical-align: middle; margin-left: 4px; }
+.card .age {
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+}
+.card .age .hours-inline {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.card .notes { font-size: 0.76rem; color: #a0b4c4; line-height: 1.4; }
+.card .right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  /* Wide enough to keep "Confidence: 100%" + the rating badge on one line. */
+  min-width: 150px;
+  flex-shrink: 0;
+}
+/* Home feed activity cards: always-row pg-card-style layout */
+.activity-card { flex-direction: row !important; align-items: center !important; padding: 8px 14px 8px 8px; gap: 12px; }
+.activity-thumb { width: 92px; height: 43px; object-fit: cover; flex-shrink: 0; border-radius: 6px; background: var(--s2); }
+.activity-info { flex: 1 1 auto; min-width: 0; }
+.activity-title { font-size: 0.95rem; font-weight: 600; color: var(--strong); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.activity-sub { font-size: 0.78rem; color: var(--muted); margin-top: 2px; font-family: var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.activity-sources { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 5px; }
+.activity-badge { flex-shrink: 0; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; white-space: nowrap; align-self: center; }
+/* card-rating-row now shows confidence pill (left) and rating badge (right)
+   side-by-side in a horizontal row. Matches the plugin's "78% GOLD" layout */
+.card-rating-row { display: flex; flex-direction: row; align-items: center; gap: 6px; margin-top: 4px; flex-wrap: nowrap; justify-content: flex-end; }
+/* Per-report confidence pill - square corners to match the rating badge
+   alongside it. Round corners read like a status pill, square reads like a
+   "fact" tile which is what confidence is */
+.card .confidence-pill {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 3px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.card .rating {
+  padding: 3px 8px;
+  font-weight: 800;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.card .score { font-size: 0.75rem; font-weight: 700; font-family: var(--mono); }
+/* Vote buttons - bumped to match the confidence pill + rating badge sized
+   to their right. Old 11x11 icon felt undersized next to a 22+px badge */
+.vote-btns { display: inline-flex; align-items: center; gap: 5px; }
+.vote-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: none; border: 1px solid var(--border2);
+  color: var(--muted); font-size: 0.78rem; font-family: var(--mono);
+  padding: 4px 9px; cursor: pointer; line-height: 1;
+  transition: color .1s, border-color .1s;
+}
+.vote-btn svg { width: 16px; height: 16px; }
+.vote-btn:hover { color: var(--text); border-color: var(--accent); }
+.vote-btn.vote-up.active { color: var(--accent); border-color: var(--accent); }
+.vote-btn.vote-dn.active { color: #c85050; border-color: #c85050; }
+.vote-btn:disabled { opacity: 0.35; cursor: default; pointer-events: none; }
+
+.tier-badge {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--muted);
+}
+.tier-badge.tier-platinum { background: #b4c7dc; color: #0a0c10; }
+.tier-badge.tier-gold     { background: #c8a050; color: #111; }
+.tier-badge.tier-silver   { background: #8fa0b0; color: #111; }
+.tier-badge.tier-bronze   { background: #b07040; color: #fff; }
+.tier-badge.tier-borked   { background: #c85050; color: #fff; }
+.tier-badge.tier-pending  { background: var(--border); color: var(--muted); }
+
+.source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.66rem;
+  padding: 2px 5px;
+  background: rgba(74,159,208,0.1);
+  border: 1px solid rgba(74,159,208,0.25);
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.source-badge img { width: 10px; height: 10px; object-fit: contain; }
+.source-badge.protondb {
+  background: rgba(140, 172, 208, 0.1);
+  border-color: rgba(140, 172, 208, 0.22);
+  color: #d6e4f3;
+}
+.source-badge.pulse {
+  background: rgba(74,159,208,0.14);
+}
+.source-badge.steam-game {
+  background: rgba(23,126,196,0.12);
+  border-color: rgba(23,126,196,0.30);
+  color: #5ab4e5;
+}
+.source-badge.non-steam-game {
+  background: rgba(180,110,40,0.12);
+  border-color: rgba(180,110,40,0.30);
+  color: #d4894a;
+}
+.source-badge.web {
+  background: rgba(100,180,100,0.1);
+  border-color: rgba(100,180,100,0.25);
+  color: #7ecf7e;
+}
+.source-badge.owned-game {
+  background: rgba(80,200,120,0.12);
+  border-color: rgba(80,200,120,0.30);
+  color: #5ec87a;
+}
+
+
+/* detail expand */
+.card-summary {
+  padding: 10px 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-top: none;
+  margin-top: -12px;
+  margin-bottom: 0;
+  font-size: 0.76rem;
+  color: var(--text);
+}
+.card-summary .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+}
+.card-summary .row:last-child { border-bottom: none; }
+.card-summary .label { color: var(--muted); min-width: 100px; }
+/* #153: notes-full is now a block container so markdown-emitted <p>,
+   <h1>, <ul>, <pre> can nest inside without inline-context conflicts.
+   Drop pre-wrap since markdown-it handles line breaks; leave the color
+   + rhythm to match the surrounding row. */
+.card-summary .notes-full { line-height: 1.5; color: #a0b4c4; }
+.card-summary .notes-full p { margin: 0.35em 0; }
+.card-summary .notes-full p:first-child { margin-top: 0; }
+.card-summary .notes-full p:last-child { margin-bottom: 0; }
+.card-summary .notes-full h1,
+.card-summary .notes-full h2,
+.card-summary .notes-full h3 { margin: 0.8em 0 0.3em; line-height: 1.2; color: var(--text); }
+.card-summary .notes-full h1 { font-size: 1.15rem; }
+.card-summary .notes-full h2 { font-size: 1.05rem; }
+.card-summary .notes-full h3 { font-size: 0.95rem; }
+.card-summary .notes-full ul,
+.card-summary .notes-full ol { margin: 0.35em 0; padding-left: 22px; }
+.card-summary .notes-full code {
+  background: rgba(0,0,0,0.35);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.9em;
+}
+.card-summary .notes-full pre {
+  background: rgba(0,0,0,0.35);
+  padding: 10px 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 0.5em 0;
+}
+.card-summary .notes-full pre code { background: none; padding: 0; }
+.card-summary .notes-full blockquote {
+  border-left: 3px solid var(--accent, #5c8bd6);
+  padding: 2px 10px;
+  margin: 0.5em 0;
+  color: var(--muted, #b8c0c8);
+}
+.card-summary .notes-full a { color: var(--accent, #5c8bd6); }
+/* #22: spoiler spans render as a clear "Reveal spoiler text" button
+   until clicked. The actual content lives in a nested .spoiler-content
+   span that swaps in when .revealed is set. This is much more
+   discoverable than the previous blur-only treatment, which was hard
+   to spot on shorter spoilers. */
+.spoiler {
+  display: inline-block;
+  background: rgba(92,139,214,0.18);
+  border: 1px solid rgba(92,139,214,0.55);
+  color: var(--accent, #5c8bd6);
+  border-radius: 3px;
+  padding: 1px 8px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: background 150ms ease;
+}
+.spoiler::before { content: "Reveal spoiler text"; }
+.spoiler > .spoiler-content { display: none; }
+.spoiler:hover { background: rgba(92,139,214,0.28); }
+.spoiler:focus-visible { outline: 2px solid var(--accent, #5c8bd6); outline-offset: 2px; }
+.spoiler.revealed {
+  background: rgba(92,139,214,0.08);
+  border-color: rgba(92,139,214,0.25);
+  color: inherit;
+  cursor: default;
+  font-weight: normal;
+  font-size: inherit;
+  user-select: text;
+}
+.spoiler.revealed::before { display: none; }
+.spoiler.revealed > .spoiler-content { display: inline; }
+/* Detail buttons snug up against the row above instead of drifting with a
+   margin-top gap - keeps the card-summary stack visually tight */
+.details-btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0; justify-content: flex-end; }
+.all-details-btn {
+  background: var(--s1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 0.72rem;
+  padding: 5px 14px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 600;
+  width: fit-content;
+}
+.all-details-btn:hover { background: rgba(74,159,208,0.12); color: var(--text); }
+.all-details-panel { display: none; margin-top: 6px; }
+.all-details-panel.open { display: block; }
+.fr-section { margin: 4px 0; }
+.fr-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 3px 0; border-bottom: 1px solid var(--border); font-size: 0.76rem; }
+.fr-row:last-child { border-bottom: none; }
+.fr-lbl { color: var(--muted); flex: 1; }
+.fr-badge { font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 3px; background: var(--s2); color: var(--muted); }
+.fr-badge.fr-yes { background: rgba(76,175,80,0.15); color: #4caf50; }
+.fr-badge.fr-no  { background: rgba(200,80,80,0.15);  color: #c85050; }
+.card-footer {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+/* Uniform footer action buttons - Show Responses, All Hardware Details,
+   Permalink, JSON, Delete all share the same outlined-blue look so the row
+   reads as one toolbar. Previously they were mixed (.all-details-btn in
+   the middle, .cfg-dl-btn at the end) which felt unrelated */
+.action-btn {
+  background: var(--s1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 0.72rem;
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background .12s, color .12s, border-color .12s;
+}
+.action-btn:hover {
+  background: rgba(102,192,244,0.12);
+  color: var(--accent-hi);
+}
+.action-btn-disabled, .action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: var(--border2);
+  color: var(--muted);
+}
+.action-btn-disabled:hover { background: var(--s1); color: var(--muted); }
+.action-btn-danger {
+  border-color: #c85050;
+  color: #c85050;
+}
+.action-btn-danger:hover { background: rgba(200,80,80,0.12); color: #ff8a7a; }
+.action-btn-icon { padding: 5px 10px; }
+.flag-report-btn { }
+.flag-report-btn:hover { opacity: 1; color: #e0824a; border-color: #e0824a; }
+.flag-report-btn.flagged { opacity: 1; color: #e0824a; border-color: #e0824a; cursor: default; }
+.flag-modal-overlay {
+  position: fixed; inset: 0; z-index: 9000;
+  background: rgba(0,0,0,0.6);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+}
+.flag-modal {
+  background: var(--s1); border: 1px solid var(--border2);
+  border-radius: 6px; padding: 24px; width: 100%; max-width: 420px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.flag-modal-title { margin: 0; font-size: 1rem; color: var(--text); }
+.flag-modal-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+.flag-modal-select, .flag-modal-textarea {
+  background: var(--bg); border: 1px solid var(--border2); color: var(--text);
+  padding: 7px 10px; font-size: 0.85rem; font-family: inherit;
+  border-radius: 4px; outline: none; width: 100%;
+}
+.flag-modal-select:focus, .flag-modal-textarea:focus { border-color: var(--accent); }
+.flag-modal-textarea { resize: vertical; }
+.flag-modal-discord { font-size: 0.78rem; color: var(--muted); margin: 2px 0 0; }
+.flag-modal-discord a { color: var(--accent); }
+.flag-modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px; }
+.flag-modal-submit { background: #c85050; border-color: #c85050; color: #fff; }
+.flag-modal-submit:hover:not(:disabled) { background: #e06060; border-color: #e06060; }
+.flag-modal-submit:disabled { opacity: 0.45; cursor: not-allowed; }
+/* Permalink button used in the footer alongside the other action buttons -
+   inherits .action-btn styling, just adds the chain icon */
+.card-footer .permalink-btn {
+  background: var(--s1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  margin-top: 0;
+  padding: 5px 10px;
+}
+.card-footer .permalink-btn:hover {
+  background: rgba(102,192,244,0.12);
+  color: var(--accent-hi);
+  border-color: var(--accent);
+}
+.card-footer .permalink-btn.copied {
+  background: rgba(91,163,43,0.18);
+  color: #5ba32b;
+  border-color: #5ba32b;
+}
+
+/* configs empty state */
+.configs-empty {
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding: 10px 14px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border2);
+  margin-bottom: 16px;
+}
+.configs-empty a { color: var(--accent); }
+
+/* empty / loading */
+.state-box {
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  background: var(--s1);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.state-box code { font-size: 0.85em; }

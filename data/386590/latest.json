@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "386590",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-41c8f99 2018-11-12 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Animated models are invisible. Game is still well playable in first person.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542936772,
+    "title": "Novus Inceptio",
+    "source": "protondb"
+  },
+  {
+    "appId": "386590",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-896c59d 2018-11-22 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Proton 3.16-4 solved the previous issue with invisible models.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542998016,
+    "title": "Novus Inceptio",
+    "source": "protondb"
+  }
+]

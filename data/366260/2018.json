@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "366260",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "ATI Technologies Inc. AMD Radeon R9 380",
+    "gpuDriver": "4.5.13529 Compatibility Profile Context",
+    "kernel": "4.15.0-36-generic",
+    "notes": "microsoft visual c++ runtime error dialog on startup",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540362040,
+    "title": "METAL SLUG 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "366260",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-3-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541284882,
+    "title": "METAL SLUG 2",
+    "source": "protondb"
+  }
+]

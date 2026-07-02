@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3161270",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Arc B580 (BMG G21)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.17.12-200.fc42.x86_64",
+    "notes": "Works out of the box, no proton or launch options",
+    "os": "Fedora release 42 (Adams)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1775610800,
+    "title": "",
+    "source": "protondb"
+  }
+]

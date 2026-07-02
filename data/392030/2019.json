@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "392030",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.62-1-MANJARO",
+    "notes": "No problems observed",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565326680,
+    "title": "Murasaki",
+    "source": "protondb"
+  }
+]

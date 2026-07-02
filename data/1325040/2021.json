@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1325040",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.13-arch1-1",
+    "notes": "runs (almost)perfectly with proton crashes sometimes doesn't seem like a proton problem though",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1632440362,
+    "title": "",
+    "source": "protondb"
+  }
+]

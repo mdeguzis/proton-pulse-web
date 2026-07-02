@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "893010",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.2-arch1-1-ARCH",
+    "notes": "Runs out of the box. No game-breaking bugs, but lags quite heavily in areas larger than a single screen. Running it with native nwjs instead of the bundled version doesn't improve performance a lot either.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1547717313,
+    "title": "Slave's Sword",
+    "source": "protondb"
+  },
+  {
+    "appId": "893010",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-35-generic",
+    "notes": "Bad performance, but native nwjs fixed it",
+    "os": "Ubuntu 18.10 (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1548116915,
+    "title": "Slave's Sword",
+    "source": "protondb"
+  }
+]

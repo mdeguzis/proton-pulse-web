@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "626580",
+    "cpu": "AMD Athlon 64 X2 Dual Core 5000+",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 8500 GT",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.15.0-45-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1557255679,
+    "title": "Spellspire",
+    "source": "protondb"
+  },
+  {
+    "appId": "626580",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-60-generic",
+    "notes": "Game works great, had no problems playing it.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1568226299,
+    "title": "Spellspire",
+    "source": "protondb"
+  }
+]

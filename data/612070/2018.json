@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "612070",
+    "cpu": "Intel i7-6700K",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Vega 64",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "kernel": "4.18.12-300.fc29.x86_64",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32GB",
+    "rating": "Platinum",
+    "timestamp": 1540558882,
+    "title": "Kio's Adventure",
+    "source": "protondb"
+  }
+]

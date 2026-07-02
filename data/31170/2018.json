@@ -1,0 +1,102 @@
+[
+  {
+    "appId": "31170",
+    "title": "Tales of Monkey Island Complete Pack",
+    "timestamp": 1535191771,
+    "rating": "Silver",
+    "notes": "After a few seconds the mouse stops to work. It's only possible to move the mouse if a mouse key is pressed down (right or left). Works with workaround from https://github.com/ValveSoftware/Proton/issues/204.",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA 387.22",
+    "specs": "AMD A10-5700 / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "31170",
+    "title": "Tales of Monkey Island: Chapter 1 - Launch of the Screaming Narwhal",
+    "timestamp": 1535075488,
+    "rating": "Platinum",
+    "notes": "PLAYED FIRST 20 MINUTES OF GAME, NO SIGNS OF ANY ISSUES",
+    "os": "UBUNTU 16.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "CORE 2 QUAD Q9300 OC",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "31170",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 680/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-1-MANJARO",
+    "notes": "No problems. Some screen transitions/loads use 1-3 seconds longer than windows.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "7922 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537194330,
+    "title": "Tales of Monkey Island Complete Pack",
+    "source": "protondb"
+  },
+  {
+    "appId": "31170",
+    "cpu": "AMD Athlon(tm) II X4 605e Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GT 710/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Initial splash screen works, animation to menu screen follows. Then black. ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "12008 Mb",
+    "rating": "Borked",
+    "timestamp": 1537985230,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Tales of Monkey Island Complete Pack",
+    "source": "protondb"
+  },
+  {
+    "appId": "31170",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "No problems noticed.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541356894,
+    "title": "Tales of Monkey Island Complete Pack",
+    "source": "protondb"
+  },
+  {
+    "appId": "31170",
+    "title": "Tales of Monkey Island Complete Pack",
+    "timestamp": 1535177371,
+    "rating": "Silver",
+    "notes": "After a few seconds the mouse stops to work. It's only possible to move the mouse if a mouse key is pressed down (right or left). Works with workaround from https://github.com/ValveSoftware/Proton/issues/204.",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA 387.22",
+    "specs": "AMD A10-5700 / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "31170",
+    "title": "Tales of Monkey Island: Chapter 1 - Launch of the Screaming Narwhal",
+    "timestamp": 1535061088,
+    "rating": "Platinum",
+    "notes": "PLAYED FIRST 20 MINUTES OF GAME, NO SIGNS OF ANY ISSUES",
+    "os": "UBUNTU 16.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "CORE 2 QUAD Q9300 OC",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

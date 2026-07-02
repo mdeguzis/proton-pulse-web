@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "964470",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "The game runs perfectly out of the box. No audio/visual errors. The steam overlay also is working. No in-game currency purchased so cannot comment on that but from the reviews it seems like it's a problem on the developers' end. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543049477,
+    "title": "Shakes and Fidget Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "964470",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-2-MANJARO",
+    "notes": "Game works flawlessly and overlay is usable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1545233101,
+    "title": "Shakes and Fidget Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "964470",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.19.6-1-MANJARO",
+    "notes": "Works perfectly after you set the app to run on windowed mode, since otherwise the mouse wont work after you alt-tab to another window and back at this.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1545861538,
+    "title": "Shakes and Fidget Remastered",
+    "source": "protondb"
+  }
+]

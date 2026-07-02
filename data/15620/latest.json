@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "15620",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-c989661985)",
+    "kernel": "5.0.12-arch1-1-ARCH",
+    "notes": "Game works native and on Proton out of the box. I installed manually D9VK and it worked with this DX9 to Vulkan translation, but there are a lot of graphical glitches.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557254509,
+    "title": "Warhammer 40,000: Dawn of War II",
+    "source": "protondb"
+  },
+  {
+    "appId": "15620",
+    "cpu": "Intel Core i7-4510U @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 840M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.1-zen1-1-zen",
+    "notes": "Unfortunately the game shows only a black screen, both with D9VK and wined3d",
+    "os": "Antergos Linux",
+    "protonVersion": "4.11-7",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1570876087,
+    "title": "Warhammer 40,000: Dawn of War II",
+    "source": "protondb"
+  }
+]

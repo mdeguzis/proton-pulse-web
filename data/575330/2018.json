@@ -1,0 +1,95 @@
+[
+  {
+    "appId": "575330",
+    "title": "Oh...Sir! The Hollywood Roast",
+    "timestamp": 1535168216,
+    "rating": "Silver",
+    "notes": "Game hangs upon closing and leaves a dump file. Otherwise perfectly playable.",
+    "os": "Linux Mint 19 (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "AMD A10-5800K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "575330",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Runs, but crashes too frequently to be playable.  Maybe sound-related?",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Bronze",
+    "timestamp": "1536342888",
+    "title": "Oh...Sir! The Hollywood Roast",
+    "source": "protondb"
+  },
+  {
+    "appId": "575330",
+    "cpu": "Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Crashes with music still running, error message \"the game has crashed\". error.log says: KERNEL32.dll caused an Unknown exception type (0x80000100) in module KERNEL32.dll at 0023:7b43c45c",
+    "os": "Debian GNU/Linux stable-updates (sid) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16011 Mb",
+    "rating": "Bronze",
+    "timestamp": 1538246989,
+    "title": "Oh...Sir! The Hollywood Roast",
+    "source": "protondb"
+  },
+  {
+    "appId": "575330",
+    "cpu": "Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "PROTON_NO_ESYNC=1 makes the game run great. It still crashes on exit, requiring manual termination of the game, but otherwise no issues found. Played several hours of campaign over several sessions.",
+    "os": "Debian GNU/Linux stable-updates (sid) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16011 Mb",
+    "rating": "Silver",
+    "timestamp": 1539447572,
+    "tweaks": {
+      "disableEsync": true
+    },
+    "title": "Oh...Sir! The Hollywood Roast",
+    "source": "protondb"
+  },
+  {
+    "appId": "575330",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "No issues at all after disabling esync. Exits normally, no crashes, steam overlay works fine - everything runs perfectly.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541609602,
+    "title": "Oh...Sir! The Hollywood Roast",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "575330",
+    "title": "Oh...Sir! The Hollywood Roast",
+    "timestamp": 1535153816,
+    "rating": "Silver",
+    "notes": "Game hangs upon closing and leaves a dump file. Otherwise perfectly playable.",
+    "os": "Linux Mint 19 (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "AMD A10-5800K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

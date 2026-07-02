@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2553530",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 23.3.0 (git-1fbdd37d4c)",
+    "kernel": "6.6.6-1-default",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1709055498,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2553530",
+    "cpu": "AMD Ryzen Embedded R1606G with Radeon Vega Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Ryzen Embedded R1606G with Radeon Vega Gfx (raven2, LLVM 15.0.7, DRM 3.42, 5.15.0-126-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-126-generic",
+    "notes": "Works perfectly with Forced Experimental.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-3",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1733043103,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "359940",
+    "title": "Shadows Peak",
+    "timestamp": 1535277704,
+    "rating": "Silver",
+    "notes": "Requires launch option \"PROTON_USE_WINED3D11=1 %command%\" to run. Playable but has a some graphical glitches.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "359940",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.9-92.current, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.18.9-92.current",
+    "notes": "Control menu is not viewable. Performance is poor at times. As low as 30 as high as 100. Usually 40-50. Proton 3.7-6.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16052 Mb",
+    "rating": "Silver",
+    "timestamp": 1537815124,
+    "title": "Shadows Peak",
+    "source": "protondb"
+  },
+  {
+    "appId": "359940",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.4 - SteamVR PPA",
+    "kernel": "4.19.0-041900rc8-generic",
+    "notes": "Works out of the box since Proton 3.16.4, that update fixed the problem with fonts/text not being displayed.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541103443,
+    "title": "Shadows Peak",
+    "source": "protondb"
+  },
+  {
+    "appId": "359940",
+    "title": "Shadows Peak",
+    "timestamp": 1535263304,
+    "rating": "Silver",
+    "notes": "Requires launch option \"PROTON_USE_WINED3D11=1 %command%\" to run. Playable but has a some graphical glitches.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

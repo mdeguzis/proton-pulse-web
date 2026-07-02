@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "416180",
+    "title": "Gun Bombers",
+    "timestamp": 1535825546,
+    "rating": "Gold",
+    "notes": "Had to add \"PROTON_USE_WINED3D11=1 %command%\" as launch command and use ALSA instead of PulseAudio (killall pulseaudio)",
+    "os": "CentOS 7.5 (Kernel: 4.4.153-1.el7.elrepo.x86_64)",
+    "gpuDriver": "NVIDIA-driver-390.77-1.el7.x86_64",
+    "specs": "i7-3770 CPU / GTX 1060",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "416180",
+    "title": "Gun Bombers",
+    "timestamp": 1535811146,
+    "rating": "Gold",
+    "notes": "Had to add \"PROTON_USE_WINED3D11=1 %command%\" as launch command and use ALSA instead of PulseAudio (killall pulseaudio)",
+    "os": "CentOS 7.5 (Kernel: 4.4.153-1.el7.elrepo.x86_64)",
+    "gpuDriver": "NVIDIA-driver-390.77-1.el7.x86_64",
+    "specs": "i7-3770 CPU / GTX 1060",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1378290",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.0-59-generic",
+    "notes": "No sound at all",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1610408516,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1378290",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.11-300.fc34.x86_64",
+    "notes": "Sounds Works on Proton 6.3-x Now",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1624582894,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1378290",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.41.0, 5.13.0-7614-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "Game ran smoothly and audio is working. Used proton 6.3-8",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1637964479,
+    "title": "",
+    "source": "protondb"
+  }
+]

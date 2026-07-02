@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "830640",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.6.13-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1718133273,
+    "title": "DayZ Tools",
+    "source": "protondb"
+  }
+]

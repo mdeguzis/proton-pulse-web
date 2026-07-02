@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "245730",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Stuck after uplay update. Window appear (probably uplay launcher) but nothing can be seen, there is no text or texture on it.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32111 Mb",
+    "rating": "Borked",
+    "timestamp": 1537945869,
+    "title": "Flashback",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "991260",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.7-arch1-1",
+    "notes": "Tried proton experimental and proton GE, neither worked, the game would not launch",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1703441798,
+    "title": "",
+    "source": "protondb"
+  }
+]

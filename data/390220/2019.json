@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "390220",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Game loads and able to start a new game. Crashes on the tombola if music is turned on (which is default). Crashes on clicking Statistics. Mouse cursor non-responsive if the game is Alt-Tabbed out of and back in. Taking a Steam screenshot garbled the screen.",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1564344290,
+    "title": "Toilet Tycoon",
+    "source": "protondb"
+  }
+]

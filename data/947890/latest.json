@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "947890",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.18.15-1-default",
+    "notes": "Unless you want to stream the area you spawn in or have people on Windows join you and deal with crashes it's not going to be that good.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1660504624,
+    "title": "",
+    "source": "protondb"
+  }
+]

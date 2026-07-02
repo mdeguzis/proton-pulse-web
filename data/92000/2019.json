@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "92000",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "In windows 10 i couldn't play this game because the resolution option in the launcher it's impossible to set it, it's just a blank field.\nHowever in Proton it just works.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546556363,
+    "title": "Hydrophobia: Prophecy",
+    "source": "protondb"
+  },
+  {
+    "appId": "92000",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Played and completed the game in 5 hours, game crashed once during that time. Also some minor frame rate drops while playing, otherwise playable.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1546717262,
+    "title": "Hydrophobia: Prophecy",
+    "source": "protondb"
+  },
+  {
+    "appId": "92000",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "A few graphical glitches ere and there but that may be in the windows version\n",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560027293,
+    "title": "Hydrophobia: Prophecy",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

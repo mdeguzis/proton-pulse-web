@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "17570",
+    "cpu": "Intel Core i5-1035G1 @ 1.00GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD (ICL GT1)",
+    "gpuDriver": "4.6 Mesa 24.0.6 (git-c659c7e660)",
+    "kernel": "6.1.67-gentoo-x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "36 GB",
+    "rating": "platinum",
+    "timestamp": 1718044055,
+    "title": "Pirates, Vikings, and Knights II",
+    "source": "protondb"
+  }
+]

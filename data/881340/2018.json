@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "881340",
+    "title": "ZONE OF THE ENDERS THE 2nd RUNNER : MARS / ANUBIS ZONE OF THE ENDERS : MARS ORANGE CASE",
+    "timestamp": 1535238829,
+    "rating": "Borked",
+    "notes": "Process starts at background but quietly shutsdown and nothing happens.",
+    "os": "Fedora 28 64-bit (Kernel 4.17.14-202)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8320 / nVidia GTX 960 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "881340",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Uses Denuvo.  Crashes immediately after launch with no feedback.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Borked",
+    "timestamp": "1536342194",
+    "title": "ZONE OF THE ENDERS THE 2nd RUNNER : M\u2200RS / \u30a2\u30cc\u30d3\u30b9 \u30be\u30fc\u30f3\u30fb\u30aa\u30d6\u30fb\u30a8\u30f3\u30c0\u30fc\u30ba : \u30de\u30fc\u30ba",
+    "source": "protondb"
+  },
+  {
+    "appId": "881340",
+    "title": "ZONE OF THE ENDERS THE 2nd RUNNER : MARS / ANUBIS ZONE OF THE ENDERS : MARS ORANGE CASE",
+    "timestamp": 1535224429,
+    "rating": "Borked",
+    "notes": "Process starts at background but quietly shutsdown and nothing happens.",
+    "os": "Fedora 28 64-bit (Kernel 4.17.14-202)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8320 / nVidia GTX 960 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

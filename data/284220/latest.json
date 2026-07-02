@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "284220",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.9-300.fc30.x86_64",
+    "notes": "Must use Windowed Mode otherwise only black screen is displayed after switching back from other apps. Steam Overlay should be disabled if the game silently crashed on launch.",
+    "os": "Freedesktop.org 18.08.33 (Flatpak runtime)",
+    "protonVersion": "4.2-9",
+    "ram": "20 GB",
+    "rating": "Gold",
+    "timestamp": 1563233634,
+    "title": "Diadra Empty",
+    "source": "protondb"
+  },
+  {
+    "appId": "284220",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.62-1-MANJARO",
+    "notes": "No issues with gameplay itself, but when playing full screen a loss of game focus will leave an unplayable black screen when you return.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1565379114,
+    "title": "Diadra Empty",
+    "source": "protondb"
+  },
+  {
+    "appId": "284220",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.62-1-MANJARO",
+    "notes": "Generally playable in windowed mode. Will end up with a black screen if you alt-tab out in fullscreen mode.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565426435,
+    "title": "Diadra Empty",
+    "source": "protondb"
+  }
+]

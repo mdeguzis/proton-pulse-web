@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1314460",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.35.0, 5.4.0-81-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.4.0-81-generic",
+    "notes": "Game will run good if you have a good PC set up and can play on high settings, just don't use the menu to make changes.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-6",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1630605066,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1314460",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.41.0, 5.13.18-xanmod1-1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.1 (git-f5d4509d36)",
+    "kernel": "5.13.18-xanmod1-1",
+    "notes": "Playable from start to end with no significant issue.",
+    "os": "Freedesktop.org 21.08.2 (Flatpak runtime)",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1632670240,
+    "title": "",
+    "source": "protondb"
+  }
+]

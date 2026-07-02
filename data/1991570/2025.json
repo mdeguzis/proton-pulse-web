@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1991570",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.12.21-1-lts",
+    "notes": "mouse control does not work properly, apart from that fluidity, startup and others work fine",
+    "os": "Freedesktop(Arch Linux) SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1743964221,
+    "title": "",
+    "source": "protondb"
+  }
+]

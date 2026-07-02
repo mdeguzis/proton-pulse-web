@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "200670",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD POLARIS10",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.5-200.fc29.x86_64",
+    "notes": "Played one mission without issue.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549131753,
+    "title": "Disciples III - Resurrection",
+    "source": "protondb"
+  },
+  {
+    "appId": "200670",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.20.13-200.fc29.x86_64",
+    "notes": "No issue encountered.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552241270,
+    "title": "Disciples III - Resurrection",
+    "source": "protondb"
+  }
+]

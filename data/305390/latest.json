@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "305390",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 525.105.17",
+    "kernel": "5.19.0-38-generic",
+    "notes": "Old, but totally playable.",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1743130156,
+    "title": "",
+    "source": "protondb"
+  }
+]

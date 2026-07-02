@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2020030",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 16.0.6, DRM 3.54, 6.5.9-201.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.9-201.fsync.fc38.x86_64",
+    "notes": "Out of the box.",
+    "os": "Nobara Linux 38 (Thirty Eight)",
+    "protonVersion": "9.0-1",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1717937911,
+    "title": "",
+    "source": "protondb"
+  }
+]

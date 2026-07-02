@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "417310",
+    "cpu": "AMD Ryzen Threadripper 2990WX 32-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Quits as soon as the Steam starting dialog closes.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1551482420,
+    "title": "Hiragana Pixel Party",
+    "source": "protondb"
+  },
+  {
+    "appId": "417310",
+    "cpu": "AMD Ryzen Threadripper 2990WX 32-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Proton Beta has the same problem. After the Steam starting dialog closes the game just quits instantly.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1551557322,
+    "title": "Hiragana Pixel Party",
+    "source": "protondb"
+  }
+]

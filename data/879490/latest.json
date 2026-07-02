@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "879490",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Current Demo is Windows-64 exe version. Runs flawless in Linux.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1550121016,
+    "title": "Crying Suns Demo",
+    "source": "protondb"
+  },
+  {
+    "appId": "879490",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "Runs like native!",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568318873,
+    "title": "Crying Suns Demo",
+    "source": "protondb"
+  }
+]

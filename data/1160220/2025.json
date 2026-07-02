@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1160220",
+    "cpu": "Intel Core i9-14900HX",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (RPL-S)",
+    "gpuDriver": "4.6 Mesa 25.0.2",
+    "kernel": "6.13.8-201.nobara.fc41.x86_64",
+    "notes": "It works like native, runs without problems.",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1743222304,
+    "title": "Paradise Killer",
+    "source": "protondb"
+  },
+  {
+    "appId": "1160220",
+    "cpu": "AMD Ryzen 7 8700F 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.8.0-79-generic",
+    "notes": "No issues",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1757051858,
+    "title": "Paradise Killer",
+    "source": "protondb"
+  },
+  {
+    "appId": "1160220",
+    "cpu": "AMD Ryzen 7 8700F 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.8.0-79-generic",
+    "notes": "no issues",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1757860913,
+    "title": "Paradise Killer",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "976730",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Uses EasyAntiCheat, so unplayable with Steam Play. Tested with FIreflight 2 Insider key, so may change in the future. ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1566687744,
+    "title": "Halo: The Master Chief Collection",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "585840",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-14-generic",
+    "notes": "NO LONGER NATIVE - Linux version WITHDRAWN - have not yet tested under Steam Play",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547643779,
+    "title": "Leaving Lyndow",
+    "source": "protondb"
+  },
+  {
+    "appId": "585840",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1556364394,
+    "title": "Leaving Lyndow",
+    "source": "protondb"
+  },
+  {
+    "appId": "585840",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-14-generic",
+    "notes": "Native Linux version reinstated after the developer originally planned to drop it.  Works perfectly.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557037923,
+    "title": "Leaving Lyndow",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "803350",
+    "cpu": "AMD Phenom II X4 850",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 710",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "I've tried to start the game without D3D11, with wine D3D11 and without Esync, but nothing has worked for me. Still unable to start the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1558014893,
+    "title": "Fighter Royale - Last Ace Flying",
+    "source": "protondb"
+  }
+]

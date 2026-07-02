@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "856540",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Flawlessly, like native. Full keyboard and 360 controller support.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556950635,
+    "title": "Super Dangerous Dungeons",
+    "source": "protondb"
+  }
+]

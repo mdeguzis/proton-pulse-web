@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1674820",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.10-arch1-1",
+    "notes": "Inputs are inconsistent and do not seem to work",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1687324075,
+    "title": "TFC: The Fertile Crescent",
+    "source": "protondb"
+  }
+]

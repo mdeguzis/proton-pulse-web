@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "204580",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.18.0-17-generic",
+    "notes": "no configs required, runs perfetly",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1554678684,
+    "title": "Rotastic",
+    "source": "protondb"
+  }
+]

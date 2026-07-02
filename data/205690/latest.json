@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "205690",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Enable fullscreen then exit the game and restart. Then it works fine.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563614754,
+    "title": "1000 Amps",
+    "source": "protondb"
+  }
+]

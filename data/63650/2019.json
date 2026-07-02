@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "63650",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Seems to run perfectly so far. A few minor issues with falling through the ground that windows users had as well and occasional problem after alt-tabbing where you can't move the mouse all the way down the screen but that only seems to happen if you alt-tab several times in fairly quick succession.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554941957,
+    "title": "URU: Complete Chronicles",
+    "source": "protondb"
+  }
+]

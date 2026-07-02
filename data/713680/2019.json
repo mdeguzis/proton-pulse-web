@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "713680",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Does not start",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563862931,
+    "title": "Ablepsia",
+    "source": "protondb"
+  },
+  {
+    "appId": "713680",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.1.15-050115-generic",
+    "notes": "Just runs. Good performance, game opens to the correct monitor on multi-monitor setup and windowed-mode works perfectly (moving & alt+tab). \nThe game is built on Chromium browser so that's probably why it works so well.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-1",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1566499842,
+    "title": "Ablepsia",
+    "source": "protondb"
+  }
+]

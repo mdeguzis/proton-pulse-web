@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "523810",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540452613,
+    "title": "Wonder Boy Returns",
+    "source": "protondb"
+  },
+  {
+    "appId": "523810",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Text partially missing in the options menu. Controllers not working without mapping to keyboard. Otherwise seems to be working perfectly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1540849522,
+    "title": "Wonder Boy Returns",
+    "source": "protondb"
+  }
+]

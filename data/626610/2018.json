@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "626610",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.15.0-36-generic",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "15983 MB",
+    "rating": "Platinum",
+    "timestamp": 1540140102,
+    "title": "TT Isle of Man",
+    "source": "protondb"
+  },
+  {
+    "appId": "626610",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Installs and runs without additional steps. Optionally you can add the DXVK's HUD for feedback purposes, on launcher options.\nAs expected, it uses the DXVK wrapper to translate DirectX 11 to Vulkan.\nOn a i7 Haswell CPU with a Nvidia GTX 970 card, with Vulkan drivers, it runs at a solid 60 fps within a 1080p screen.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540986501,
+    "title": "TT Isle of Man",
+    "source": "protondb"
+  },
+  {
+    "appId": "626610",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Changing Anti-Aliasing mode to FXAA to remove rendering issues. Unfortunately the game wont let me change the resolution to 1920x1080 on my 4K monitor. I tried to edit the UserSettings.cfg file to 1920x1080, but this caused the game to flicker. Currently the game is barely playable at 25 FPS due to being unable to change the resolution.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1545541742,
+    "title": "TT Isle of Man",
+    "source": "protondb"
+  }
+]

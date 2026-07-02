@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1638160",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 535.288.01",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Despite being a game I enjoyed elsewhere, unfortunetly it does not run well on Linux, at least on my device at the time of testing...",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1772740043,
+    "title": "",
+    "source": "protondb"
+  }
+]

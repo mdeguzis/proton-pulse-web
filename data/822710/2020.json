@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "822710",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "418.113",
+    "kernel": "4.19.0-9-amd64",
+    "notes": "Game installs and runs, but once you click on Connect in the login screen the game freezes",
+    "os": "SparkyLinux 5.12 (Nibiru)",
+    "protonVersion": "5.0-9",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1594294773,
+    "title": "",
+    "source": "protondb"
+  }
+]

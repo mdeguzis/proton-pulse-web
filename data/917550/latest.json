@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "917550",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.5.19-1-MANJARO",
+    "notes": "Throws an error and if you click on continue you get stuck on an infinite loading screen.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1602568600,
+    "title": "",
+    "source": "protondb"
+  }
+]

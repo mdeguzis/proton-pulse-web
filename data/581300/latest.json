@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "581300",
+    "cpu": "AMD FX(tm)-8300 Eight-Core Processor",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.15.0-36-generic",
+    "notes": "the game is native",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16022 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538825042,
+    "title": "Black Mirror",
+    "source": "protondb"
+  }
+]

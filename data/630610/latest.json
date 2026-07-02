@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "630610",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Same as before with version 3.16-4, game won't start.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1570481867,
+    "title": "Disneyland Adventures",
+    "source": "protondb"
+  }
+]

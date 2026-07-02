@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "312350",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.10.15-1-MANJARO",
+    "notes": "Works fine after installing the lucon.tff font",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1614432740,
+    "title": "",
+    "source": "protondb"
+  }
+]

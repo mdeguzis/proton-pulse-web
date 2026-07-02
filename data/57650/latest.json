@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "57650",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.8-towo.3-siduction-amd64",
+    "notes": "game runs flawless even in ultrawide if you uninstall Mono from the Proton prefix & install dotnet40. steps: [1: install Winetricks & Protontricks to your system. google it if you don't know how] [2: uninstall Mono. run: WINEPREFIX=path-to-steam/steamapps/compatdata/57650/pfx/ path-to-steam/steamapps/common/Proton\\ 4.11/dist/bin/wine64 uninstaller] [3: set mscoree.dll to native only. run: protontricks 57650 winecfg] [4: install dotnet40. run: protontricks 57650 dotnet40]",
+    "os": "Siduction (Debian sid)",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1565719118,
+    "title": "Dungeons",
+    "source": "protondb"
+  },
+  {
+    "appId": "57650",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "This game fails to load up - It looks like there are tweaks.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1569682791,
+    "title": "Dungeons",
+    "source": "protondb"
+  }
+]

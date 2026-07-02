@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "608110",
+    "cpu": "AMD A6-6400K APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.1 Mesa 18.2.8",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Put PROTON_USE_WINED3D=1 %command% in \"Launcher options\"",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "3.16-4",
+    "protonVersionManual": "3.16-4",
+    "ram": "7 GB",
+    "rating": "Gold",
+    "timestamp": 1547275185,
+    "title": "Null Vector",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "608110",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core @ 4 GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Use \"PROTON_USE_WINED3D=1 %command%\"",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1557162171,
+    "title": "Null Vector",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

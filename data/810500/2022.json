@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "810500",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 14.0.0, DRM 3.44, 5.17.4-1-default)",
+    "gpuDriver": "4.5 Mesa 22.0.2",
+    "kernel": "5.17.4-1-default",
+    "notes": "Works perfectly unless you enable the heart rate monitoring. Then it crashes. Deleting the compatdata folder fixes it.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1650969345,
+    "title": "PowerBeatsVR - VR Fitness",
+    "source": "protondb"
+  },
+  {
+    "appId": "810500",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.44.0, 5.17.1-3-MANJARO, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.8",
+    "kernel": "5.17.1-3-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1653252342,
+    "title": "PowerBeatsVR - VR Fitness",
+    "source": "protondb"
+  },
+  {
+    "appId": "810500",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.3-arch1-1",
+    "notes": "Fantastic",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1664726253,
+    "title": "PowerBeatsVR - VR Fitness",
+    "source": "protondb"
+  }
+]

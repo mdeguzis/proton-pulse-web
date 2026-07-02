@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "895620",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.6-arch1-1-ARCH",
+    "notes": "It starts to lag quite badly after a while, i dont know if its because of wine or because the game is still in early access",
+    "os": "Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569354894,
+    "title": "Spellcaster University",
+    "source": "protondb"
+  }
+]

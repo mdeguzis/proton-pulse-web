@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "624890",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.4",
+    "kernel": "5.2.8-200.fc30.x86_64",
+    "notes": "The sound is not working, it will show up some media errors but otherwise it runs just fine.",
+    "os": "Unknown",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1566210467,
+    "title": "Adventure Craft",
+    "source": "protondb"
+  },
+  {
+    "appId": "624890",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-17-generic",
+    "notes": "The game crashes at start with Init Device Fail.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1566842113,
+    "title": "Adventure Craft",
+    "source": "protondb"
+  },
+  {
+    "appId": "624890",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.19.79",
+    "notes": "No sound, constant errors.",
+    "os": "NixOS 19.09.794.28d2548a03f (Loris)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1571226026,
+    "title": "Adventure Craft",
+    "source": "protondb"
+  }
+]

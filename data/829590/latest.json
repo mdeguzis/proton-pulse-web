@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "829590",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Error: Wrong GX latency mode setting.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1556436954,
+    "title": "CryoFall",
+    "source": "protondb"
+  },
+  {
+    "appId": "829590",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Same error as the other person reported:\n\nWrong GC latency mode setting\nat CBNDMonoGameApplication.Initialize()\nat Game.DoInitialize()\nat Game.Run(runBehavior)\nat Game.Run()\nat CBNDClientLauncher.Launch(isEditor, getServerLoggerProviderFunc)",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1563550041,
+    "title": "CryoFall",
+    "source": "protondb"
+  },
+  {
+    "appId": "829590",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.88",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "freeze on the start page",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1570448844,
+    "title": "CryoFall",
+    "source": "protondb"
+  }
+]

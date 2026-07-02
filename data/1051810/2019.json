@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1051810",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 670MX",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-54-generic",
+    "notes": "I don't know if it is this game's optimization, outdated drivers or Proton itself, but I get around 40FPS while in the car and 58-60 while on foot.\nI was able to complete the game without any issues.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563503404,
+    "title": "VCB: Why City 4k",
+    "source": "protondb"
+  }
+]

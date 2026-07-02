@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "855860",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.8-zen1-1-zen",
+    "notes": "Doesn't start at all.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1556461672,
+    "title": "Superfighters Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "855860",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD BONAIRE",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.0.0-32-generic",
+    "notes": "I tested these fixes out but they didn't help.",
+    "os": "Unknown",
+    "protonVersion": "4.11-7",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1572046461,
+    "title": "Superfighters Deluxe",
+    "tweaks": {
+      "disableD3d10": true,
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

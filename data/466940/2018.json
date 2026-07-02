@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "466940",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Did a whole level, that was flawless. Crashed when I clicked \"next\"",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15972 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537398664,
+    "title": "The Sandbox Evolution - Craft a 2D Pixel Universe!",
+    "source": "protondb"
+  },
+  {
+    "appId": "466940",
+    "cpu": "Intel(R) Core(TM) i5-6260U CPU @ 1.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Iris Graphics 540 (Skylake GT3e) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.14-zen1-1-zen",
+    "notes": "Steam-native = Launch but can't connect to the server, no freeze when click next button after a level.\n\nSteam-runtime = Doesn't launch (infinite loop on loading screen)\n\nPS: Launch and work on a 32bit prefix but stop and quit when click next button after a level.",
+    "os": "Linux 4.x (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15490 Mo",
+    "rating": "Bronze",
+    "timestamp": 1539873638,
+    "title": "The Sandbox Evolution - Craft a 2D Pixel Universe!",
+    "source": "protondb"
+  }
+]

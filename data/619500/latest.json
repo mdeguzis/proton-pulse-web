@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "619500",
+    "cpu": "Intel Xeon           E5410  @ 2.33GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game does not start at all",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1558490288,
+    "title": "cyubeVR",
+    "source": "protondb"
+  },
+  {
+    "appId": "619500",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Works like a charm but does not close after Playing need to kill the task",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565889880,
+    "title": "cyubeVR",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2710",
+    "cpu": "Intel Core i7-5775C @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Displays an error message related to KERNEL32.DLL at launch, but doesn't prevent the game from starting.\nVideos (both cutscenes and in-game camera feeds) don't work properly\u00a0: display is black, though audio is fine. Might be correctable by tweaks.\nResolution and detail level are at lowest by default.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1569061536,
+    "title": "Act of War: Direct Action",
+    "source": "protondb"
+  }
+]

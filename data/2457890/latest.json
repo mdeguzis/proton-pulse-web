@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2457890",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.17.3-arch2-1)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.2",
+    "kernel": "6.17.3-arch2-1",
+    "notes": "Works perfectly or at least I didn't notice any bugs",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "24 GB",
+    "rating": "platinum",
+    "timestamp": 1772519137,
+    "title": "DRACOMATON",
+    "source": "protondb"
+  }
+]

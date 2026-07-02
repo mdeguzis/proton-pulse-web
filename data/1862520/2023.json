@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1862520",
+    "cpu": "Intel Core i3-3110M @ 2.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "4.2 Mesa 23.2.1",
+    "kernel": "6.5.11-300.fc39.x86_64",
+    "notes": "Works well.",
+    "os": "Fedora Linux 39 (Workstation Edition)",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1699828941,
+    "title": "",
+    "source": "protondb"
+  }
+]

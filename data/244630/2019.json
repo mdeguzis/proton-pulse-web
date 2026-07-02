@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "244630",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.1-1-MANJARO",
+    "notes": "Runs almost as good as on Windows, completely playable. \n\nThere may be some issues with crashing on mapchanges or joining servers, however, those issues are also present in Windows too because the game is not that well optimized (It has some memory leaks). You just need to change Texture quality to \"Medium\" and it will stop crashing.\n\nFonts on main menu can be very small or distorted on higher resolutions, but It's still legible. So far I had that problem with every source based game I ran trough Wine/Proton, so I guess it's some quirk of the engine itself.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1552920597,
+    "title": "NEOTOKYO",
+    "source": "protondb"
+  },
+  {
+    "appId": "244630",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.15.0-46-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1553819153,
+    "title": "NEOTOKYO",
+    "source": "protondb"
+  },
+  {
+    "appId": "244630",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Works OTB, no tweaks required",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567858559,
+    "title": "NEOTOKYO",
+    "source": "protondb"
+  }
+]

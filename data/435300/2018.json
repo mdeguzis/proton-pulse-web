@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "435300",
+    "title": "We Know the Devil",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "435300",
+    "title": "We Know the Devil",
+    "timestamp": 1535215321,
+    "rating": "Borked",
+    "notes": "Briefly opens a black window for a second, which closes automatically.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.65-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i3-2100 / GeForce GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "435300",
+    "title": "We Know the Devil",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "435300",
+    "title": "We Know the Devil",
+    "timestamp": 1535200921,
+    "rating": "Borked",
+    "notes": "Briefly opens a black window for a second, which closes automatically.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.65-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i3-2100 / GeForce GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

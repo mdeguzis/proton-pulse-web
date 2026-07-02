@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "249230",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "5.1.7-1-default",
+    "notes": "Crashes randomly, otherwise perfect performance on best graphic settings.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1560857909,
+    "title": "Risen 3 - Titan Lords",
+    "source": "protondb"
+  },
+  {
+    "appId": "249230",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.16-arch1-1-ARCH",
+    "notes": "Does freeze very often.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1562609295,
+    "title": "Risen 3 - Titan Lords",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "249230",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-23-generic",
+    "notes": "This works OK'ish default proton dx9 support but if you want the best performance then try (PROTON_USE_D9VK=1 %command%), just keep in mind D9VK can be a bit finicky at start because it needs to cache everything (somewhere) and sometimes that cache can get corrupted. With D9VK you will experience initial stutters in new areas due to caching but once that passes it will run great, even works with reshade tools. ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1565837907,
+    "title": "Risen 3 - Titan Lords",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

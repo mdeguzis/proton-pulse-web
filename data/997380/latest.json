@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "997380",
+    "cpu": "AMD Ryzen 7 8700G w/ Radeon 780M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, ACO, DRM 3.64, 6.19.14-300.fc44.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.5",
+    "kernel": "6.19.14-300.fc44.x86_64",
+    "notes": "Corre nativamente perfecto. Incluso va m\u00e1s fluido que en Windows.",
+    "os": "Fedora Linux 44 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1778278699,
+    "title": "",
+    "source": "protondb"
+  }
+]

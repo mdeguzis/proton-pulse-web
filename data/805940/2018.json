@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "805940",
+    "cpu": "AMD Phenom II X4 945",
+    "duration": "aboutAnHour",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Multiplayer works as well",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1544885975,
+    "title": "RUSSIA BATTLEGROUNDS",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

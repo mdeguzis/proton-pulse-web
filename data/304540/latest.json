@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "304540",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.3-arch1-1-ARCH",
+    "notes": "On launch game shows black screen and if you press Enter it says \"There's a problem with the disc you're using. It may be dirty or damaged\". Tried disabling DX10/11, changing windows version to XP through winecfg with no effect. ",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1555837970,
+    "title": "FreakOut: Extreme Freeride",
+    "source": "protondb"
+  }
+]

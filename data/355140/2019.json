@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "355140",
+    "cpu": "AMD A6-9220 RADEON R4, 5 COMPUTE CORES 2C+3G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD STONEY",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-23-generic",
+    "notes": "If my laptop could handle this game then any computer can. Just set this launch option \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1565114353,
+    "title": "Traps N' Gemstones",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

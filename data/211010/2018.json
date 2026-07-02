@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "211010",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Very nice",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537387961,
+    "title": "Alien Shooter 2 Conscription",
+    "source": "protondb"
+  },
+  {
+    "appId": "211010",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     E8400  @ 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce 8500 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.106",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "works, needs corefonts to correct ingame text. minor performance issues, but from what I've seen on game reviews it's same for Windows OS as well",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "5715 Mb",
+    "rating": "Gold",
+    "timestamp": 1537735066,
+    "title": "Alien Shooter 2 Conscription",
+    "source": "protondb"
+  }
+]

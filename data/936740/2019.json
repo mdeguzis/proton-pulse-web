@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "936740",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "4.19.83",
+    "notes": "",
+    "os": "NixOS 19.09.git.65eafbf (Loris)",
+    "protonVersion": "4.11-10",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1576277535,
+    "title": "Orogenesis",
+    "source": "protondb"
+  }
+]

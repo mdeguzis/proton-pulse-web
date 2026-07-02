@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "764510",
+    "cpu": "Intel Xeon E5-2680 v3 @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "6.2.0-39-generic",
+    "notes": "Worked great except one hicup.  Steampopup says that steam isnot responding and keeps popping up.  I had to run it with Proton 8.4 and force",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1703965622,
+    "title": "",
+    "source": "protondb"
+  }
+]

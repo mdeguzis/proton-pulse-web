@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "343860",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.10.6-110-tkg-upds",
+    "notes": "Has Native version, but completed the Game with proton. Out of box experience.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1611052789,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "343860",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.5",
+    "kernel": "5.4.35-1-MANJARO",
+    "notes": "Practically flawless from beginning to end, except end crash, and none of the achievements triggered.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1618074809,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "343860",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.15-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1627091154,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "880950",
+    "cpu": "Intel Core i5         760  @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.12-arch1-1-ARCH",
+    "notes": "Playable but video cannot be show",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1551468355,
+    "title": "\u7231\u4e0a\u706b\u8f66-Pure Station-  Maitetsu:Pure Station",
+    "source": "protondb"
+  },
+  {
+    "appId": "880950",
+    "cpu": "Intel Core i7-4710MQ @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.3",
+    "kernel": "5.0.14-1-ck-haswell",
+    "notes": "Just like the English version, all in-game opening videos does not work. Tested both in \"special\" review mode and actually entering a route. Proton versions below 3.16-9 Beta will work, but the menu bar will only display mojibake due to lacking Chinese UI fonts (the menu bar uses Win32 controls). Text in the game itself, which uses its own UI controls, are not affected as it bundles Adobe's Source Han fonts to aid with properly displaying Chinese and/or Japanese text. The host OS LANG variable is set to zh_CN.UTF-8.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1557472665,
+    "title": "\u7231\u4e0a\u706b\u8f66-Pure Station- / Maitetsu:Pure Station",
+    "source": "protondb"
+  }
+]

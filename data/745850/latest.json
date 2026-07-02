@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "745850",
+    "title": "karakara 2",
+    "timestamp": 1535377578,
+    "rating": "Platinum",
+    "notes": "higher fps in linux than windows ",
+    "os": "ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "ryzen 5 1600/ gtx 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "745850",
+    "cpu": "i7-4710MQ CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-ext73-58.4-haswell",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.5 beta",
+    "ram": "7872 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536338340",
+    "title": "KARAKARA2",
+    "source": "protondb"
+  },
+  {
+    "appId": "745850",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3",
+    "kernel": "4.19.0-1-MANJARO",
+    "notes": "just work, no problem",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1540321705,
+    "title": "KARAKARA2",
+    "source": "protondb"
+  },
+  {
+    "appId": "745850",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "Works perfectly out of the box",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545822051,
+    "title": "KARAKARA2",
+    "source": "protondb"
+  },
+  {
+    "appId": "745850",
+    "title": "karakara 2",
+    "timestamp": 1535363178,
+    "rating": "Platinum",
+    "notes": "higher fps in linux than windows ",
+    "os": "ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "ryzen 5 1600/ gtx 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

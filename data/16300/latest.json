@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "16300",
+    "cpu": "Intel Core i7-7820HQ @ 2.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-43-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1546703256,
+    "title": "Everyday Shooter",
+    "source": "protondb"
+  },
+  {
+    "appId": "16300",
+    "cpu": "Intel Core i7-5500U @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.2",
+    "kernel": "4.19.16_1",
+    "notes": "Installed and ran perfectly.  Played a session through the first few levels.  Key chording gave me some trouble, but I think that's just my laptop keyboard.",
+    "os": "Void Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1548544646,
+    "title": "Everyday Shooter",
+    "source": "protondb"
+  },
+  {
+    "appId": "16300",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.16",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558236414,
+    "title": "Everyday Shooter",
+    "source": "protondb"
+  }
+]

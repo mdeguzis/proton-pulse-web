@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "954080",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Starting the game results in a totally black fullscreen except for the in-game mouse cursor.  No sound or images ever start, and keypresses do nothing.\n\nPROTON_USE_WINED3D did not help.  No other tweaks were attempted.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-6",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1569613551,
+    "title": "Memorrha",
+    "source": "protondb"
+  }
+]

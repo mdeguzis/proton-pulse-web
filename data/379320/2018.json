@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "379320",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.9-92.current",
+    "notes": "Launched and ran without issues. Only played about 40 minutes, but it's a pretty simple game, I doubt it will run into issues if it hasn't already.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7977 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538554706,
+    "title": "Clandestinity of Elsie",
+    "source": "protondb"
+  }
+]

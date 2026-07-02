@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2181930",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 19.1.7, DRM 3.61, 6.13.8-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.2",
+    "kernel": "6.13.8-200.fc41.x86_64",
+    "notes": "Game opens for 1 second then immediately crashes",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1743319889,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2181930",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.61, 6.14.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.5-arch1.1",
+    "kernel": "6.14.5-arch1-1",
+    "notes": "The game starts at menu, but freezes immediately",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1746852206,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2181930",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.61, 6.14.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.5-arch1.1",
+    "kernel": "6.14.5-arch1-1",
+    "notes": "The game starts, but freezes immediately.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1746852325,
+    "title": "",
+    "source": "protondb"
+  }
+]

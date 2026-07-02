@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "670730",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Crashes on the loading screen",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "3.16-7",
+    "protonVersionManual": "3.16-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550324578,
+    "title": "Sure Footing",
+    "source": "protondb"
+  },
+  {
+    "appId": "670730",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Runs fine with Proton 4.2-1. Had to force fullscreen using my window manager.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1553929853,
+    "title": "Sure Footing",
+    "source": "protondb"
+  },
+  {
+    "appId": "670730",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-0dff1533f2)",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "Works fine with DXVK on Proton. First start didn't work, but second one was fine.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1554640319,
+    "title": "Sure Footing",
+    "source": "protondb"
+  }
+]

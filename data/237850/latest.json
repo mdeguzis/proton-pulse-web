@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "237850",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.3",
+    "kernel": "5.2.5-arch1-1-ARCH",
+    "notes": "Game works native on Linux. On Proton it works out of the box with DXVK. Tested on Plasma Wayland.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564903677,
+    "title": "Dreamfall Chapters",
+    "source": "protondb"
+  }
+]

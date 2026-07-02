@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1173330",
+    "cpu": "AMD FX-4320 Quad-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 430.64",
+    "kernel": "4.13.16-100.fc25.x86_64",
+    "notes": "just works",
+    "os": "Linux 4.x",
+    "protonVersion": "5.13-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1612026368,
+    "title": "",
+    "source": "protondb"
+  }
+]

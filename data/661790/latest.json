@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "661790",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Mouse glitches to bottom right (similar to 'The Forest', seems to be a Unity wide problem). Some crucial texts are missing (all items in the trader store for example are invisible) which makes the game basically unplayable: https://imgur.com/a/BjBCJ19. ~ 20-30% performance impact compared to Windows 10.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1546802787,
+    "title": "Witch Hunt",
+    "source": "protondb"
+  },
+  {
+    "appId": "661790",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Works perfectly except with a big approximately 30% performance hit, 35-50fps at 2560x1600 resolution. Oddly the game runs at seemingly same performance regardless of quality settings or resolution, so might as well set everything on Ultra. All the previous problems with text missing and mouse drifting/jumping have been fixed.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "3.16-8",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552137094,
+    "title": "Witch Hunt",
+    "source": "protondb"
+  }
+]

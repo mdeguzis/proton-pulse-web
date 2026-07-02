@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "968870",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.0.14-300.fc37.x86_64",
+    "notes": "Works fine enough",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1675290619,
+    "title": "Close To The Sun",
+    "source": "protondb"
+  }
+]

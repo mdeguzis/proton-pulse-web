@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2169930",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, ACO, DRM 3.61, 6.14.3-061403-generic)",
+    "gpuDriver": "4.6 Mesa 26.1.3 - kisak-mesa PPA",
+    "kernel": "6.14.3-061403-generic",
+    "notes": "Game works as intended on GE. Proton Experimental and 10.X were interactable until a whitescreen at the first cinematic.",
+    "os": "Ageless Linux 0.1.0 (Ubuntu 24.04)",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1782366777,
+    "title": "R-Type Tactics I \u2022 II Cosmos",
+    "source": "protondb"
+  },
+  {
+    "appId": "2169930",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, ACO, DRM 3.61, 6.14.3-061403-generic)",
+    "gpuDriver": "4.6 Mesa 26.1.3 - kisak-mesa PPA",
+    "kernel": "6.14.3-061403-generic",
+    "notes": "Fully playable on GE, played three missions, including two in a row. No slowdowns.",
+    "os": "Ageless Linux 0.1.0 (Ubuntu 24.04)",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1782402775,
+    "title": "R-Type Tactics I \u2022 II Cosmos",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "364250",
+    "title": "XIIZEAL",
+    "timestamp": 1534910400,
+    "rating": "Gold",
+    "notes": "Runs perfectly in windowed mode, fullscreen opens up hidden in the background and has to be alt-tabbed to bring up (flaw of pantheon?)",
+    "os": "Elementary OS 5.0",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900x / RX 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "364250",
+    "cpu": "Intel Core i7-2640M @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Upon launch, a window is displayed, after which the game immediately exits, rendering it unplayable.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546294736,
+    "title": "XIIZEAL",
+    "source": "protondb"
+  },
+  {
+    "appId": "364250",
+    "title": "XIIZEAL",
+    "timestamp": 1534896000,
+    "rating": "Gold",
+    "notes": "Runs perfectly in windowed mode, fullscreen opens up hidden in the background and has to be alt-tabbed to bring up (flaw of pantheon?)",
+    "os": "Elementary OS 5.0",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900x / RX 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

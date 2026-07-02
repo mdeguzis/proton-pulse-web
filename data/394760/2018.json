@@ -1,0 +1,63 @@
+[
+  {
+    "appId": "394760",
+    "title": "Dead Effect 2",
+    "timestamp": 1535520814,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "394760",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc5-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900rc5-generic",
+    "notes": "After the main menu and intro/story slides, game gets stuck in \"syncing cloud data\" and will not proceed. Tried beta and main branch of the game.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15960 Mb",
+    "rating": "Borked",
+    "timestamp": 1538088393,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Dead Effect 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "394760",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "No changes needed, beginning of the game was fine and ran my windows save game without issue. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542829243,
+    "title": "Dead Effect 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "394760",
+    "title": "Dead Effect 2",
+    "timestamp": 1535506414,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

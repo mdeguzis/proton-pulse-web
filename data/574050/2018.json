@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "574050",
+    "cpu": "Intel(R) Core(TM) i5-2320 CPU @ 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GT 545/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.14.65-gentoo",
+    "notes": "wine: Unhandled page fault on read access to 0x00000000 at address 0x14093496e (thread 0009), starting debugger.\n",
+    "os": "Linux 4.14 (64 bit)",
+    "protonVersion": "3.7.6-beta",
+    "ram": "7807 Mb",
+    "rating": "Borked",
+    "timestamp": 1537370570,
+    "title": "DRAGON QUEST HEROES\u2122 II",
+    "source": "protondb"
+  }
+]

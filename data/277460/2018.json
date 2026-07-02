@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "277460",
+    "title": "Praetorians",
+    "timestamp": 1535554590,
+    "rating": "Platinum",
+    "notes": "Works well",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Intel Pentium CPU 3550M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "277460",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 390.67",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "Used the widescreen binary (see pc gaming wiki), had to set \"realtime-scheduling = no\" for pulseaudio in /etc/pulse/daemon.conf for music to play stutter free.",
+    "os": "Debian GNU/Linux unstable (sid)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541023681,
+    "title": "Praetorians",
+    "source": "protondb"
+  },
+  {
+    "appId": "277460",
+    "cpu": "Intel Core i7-5930K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.10-arch1-1-ARCH",
+    "notes": "Tested singleplayer only",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1546003257,
+    "title": "Praetorians",
+    "source": "protondb"
+  },
+  {
+    "appId": "277460",
+    "title": "Praetorians",
+    "timestamp": 1535540190,
+    "rating": "Platinum",
+    "notes": "Works well",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Intel Pentium CPU 3550M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

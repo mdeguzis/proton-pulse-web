@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "285070",
+    "title": "Between Me and The Night",
+    "timestamp": 1535437510,
+    "rating": "Silver",
+    "notes": "Minor graphical issues in menus",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "285070",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-zen1-1-zen",
+    "notes": "Some menu text doesn't show up, but it is otherwise playable.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "11884 Mb",
+    "rating": "Silver",
+    "timestamp": 1537045364,
+    "title": "Between Me and The Night",
+    "source": "protondb"
+  },
+  {
+    "appId": "285070",
+    "title": "Between Me and The Night",
+    "timestamp": 1535423110,
+    "rating": "Silver",
+    "notes": "Minor graphical issues in menus",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

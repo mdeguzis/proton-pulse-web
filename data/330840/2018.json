@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "330840",
+    "title": "Game of Thrones - A Telltale Games Series",
+    "timestamp": 1535081321,
+    "rating": "Platinum",
+    "notes": "Nice Performance, no errors, no workarounds needed",
+    "os": "Xubuntu 16.04 xenial 64-bit (Kernel 4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "330840",
+    "title": "Game of Thrones - A Telltale Games Series",
+    "timestamp": 1535502856,
+    "rating": "Silver",
+    "notes": "Game launched in unfocused window at low resolution. Changing it to fullscreen and changing the resolution in the settings menu caused the game to unfocus again. Alt-tabbing back to it worked fine. Audio and video played very smooth without any hitching. However, the game was unplayable because it does not confine the mouse to the game window or to the main screen, so I ended up clicking on my second monitor a good amount of the time during interactive sequences. Restarting the game and playing with only one monitor on was a great experience, though.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "330840",
+    "title": "Game of Thrones - A Telltale Games Series",
+    "timestamp": 1535737799,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Debian unstable",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-7400 / NVIDIA GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "330840",
+    "title": "Game of Thrones - A Telltale Games Series",
+    "timestamp": 1535066921,
+    "rating": "Platinum",
+    "notes": "Nice Performance, no errors, no workarounds needed",
+    "os": "Xubuntu 16.04 xenial 64-bit (Kernel 4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "330840",
+    "title": "Game of Thrones - A Telltale Games Series",
+    "timestamp": 1535488456,
+    "rating": "Silver",
+    "notes": "Game launched in unfocused window at low resolution. Changing it to fullscreen and changing the resolution in the settings menu caused the game to unfocus again. Alt-tabbing back to it worked fine. Audio and video played very smooth without any hitching. However, the game was unplayable because it does not confine the mouse to the game window or to the main screen, so I ended up clicking on my second monitor a good amount of the time during interactive sequences. Restarting the game and playing with only one monitor on was a great experience, though.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "330840",
+    "title": "Game of Thrones - A Telltale Games Series",
+    "timestamp": 1535723399,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Debian unstable",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-7400 / NVIDIA GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

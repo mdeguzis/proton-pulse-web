@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "283640",
+    "cpu": "AMD A10-9600P RADEON R5, 10 COMPUTE CORES 4C+6G",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon R5 (radeonsi, carrizo, ACO, DRM 3.64, 6.17.9-76061709-generic)",
+    "gpuDriver": "4.6 Mesa 25.1.5-1pop0~1753463422~24.04~8af185e",
+    "kernel": "6.17.9-76061709-generic",
+    "notes": "",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "19 GB",
+    "rating": "gold",
+    "timestamp": 1768537224,
+    "title": "",
+    "source": "protondb"
+  }
+]

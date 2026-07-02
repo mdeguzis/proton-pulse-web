@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "9760",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The game don not start at all.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540460120,
+    "title": "Act of War: High Treason",
+    "source": "protondb"
+  }
+]

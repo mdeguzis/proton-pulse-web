@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "325930",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.4.0-157-generic",
+    "notes": "didn't have a controller to test; performance was ok after disabling AA (understandable because of thet integrated intel card)",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "4.11-1",
+    "ram": "15 GB",
+    "rating": "Gold",
+    "timestamp": 1564756135,
+    "title": "Viking Squad",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

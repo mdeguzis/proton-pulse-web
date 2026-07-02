@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "355170",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Won't start at all.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542647124,
+    "title": "Sam & Max Hit the Road",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3110750",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 18.1.8, DRM 3.57, 6.10.11-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.2.2-arch1.1",
+    "kernel": "6.10.11-2-MANJARO",
+    "notes": "Works flawlessly out of the box.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1727806191,
+    "title": "100 hidden Cthulhu fish 2",
+    "source": "protondb"
+  }
+]

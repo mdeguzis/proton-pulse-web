@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "964570",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-43-generic",
+    "notes": "Issues installing dependencies which seem to trigger each time. Fails to show initial menu on default or Proton-GE.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1654990907,
+    "title": "DCL - The Game",
+    "source": "protondb"
+  }
+]

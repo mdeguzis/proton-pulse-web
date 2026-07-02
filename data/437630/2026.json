@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "437630",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-49-generic",
+    "notes": "It's playable, but it freezes, which might be annoying.",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772929407,
+    "title": "State of Mind",
+    "source": "protondb"
+  }
+]

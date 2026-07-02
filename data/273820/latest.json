@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "273820",
+    "cpu": "i5-3210M CPU @ 2.50GHz",
+    "gpu": "X.Org AMD VERDE (DRM 2.50.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs without problems but the FPS isn't great.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "5836 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537033404,
+    "title": "Mining & Tunneling Simulator",
+    "source": "protondb"
+  }
+]

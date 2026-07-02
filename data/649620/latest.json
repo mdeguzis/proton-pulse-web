@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "649620",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Tried demo on Valve Index and it works",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562623178,
+    "title": "VR Battleship YAMATO",
+    "source": "protondb"
+  },
+  {
+    "appId": "649620",
+    "cpu": "Intel Xeon E5-2687W v2 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "4.19.57-gentoo",
+    "notes": "Some minor lag, but a better CPU would probably make it work fine.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "3.16-4",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1564891036,
+    "title": "VR Battleship YAMATO",
+    "source": "protondb"
+  }
+]

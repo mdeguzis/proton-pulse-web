@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3854330",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.11-arch1-1",
+    "notes": "Because of the non-existing background taransperency it's not as good as on Windows",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1776340025,
+    "title": "",
+    "source": "protondb"
+  }
+]

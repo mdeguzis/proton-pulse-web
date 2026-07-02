@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "586110",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-141-generic",
+    "notes": "So far is not working. It immediately shuts down. Also it can't update, resulting in a window named \"Sansar Updater\" with the following error: \"Timeout waiting for window to load\" ",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1546637642,
+    "title": "Sansar",
+    "source": "protondb"
+  },
+  {
+    "appId": "586110",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.4.0-141-generic",
+    "notes": "The game is marked as \"Running\", but nothing happens. It showed a window, with Sansar logo inside, but only once.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1548081793,
+    "title": "Sansar",
+    "source": "protondb"
+  },
+  {
+    "appId": "586110",
+    "cpu": "Intel Core i5-10210U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce MX250",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-19-generic",
+    "notes": "A small tray window appears that contains the Sansar logo. Then the Sansar Updater window appears too, followed by an error message - \"Timeout waiting for window to load.\" After pressing OK, it closes. Game is totally unplayable.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1571727031,
+    "title": "Sansar",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "345120",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "A couple of times I experienced a glitch where exiting one room flicker and reload the same room, but it was easy to resolve by re-exiting. Other than this, the game was perfectly playable with an Xbox 360 controller.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1558969689,
+    "title": "Vox Populi Vox Dei 2",
+    "source": "protondb"
+  }
+]

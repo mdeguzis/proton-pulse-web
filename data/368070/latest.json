@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "368070",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "There is some screen tearing, judder and lag, but it is mostly playable. You need to add the teejee2008 PPA and UKUU software package to install Linux kernel 4.20.0 64 bit. Then, you need to add the X-Swat Updates PPA and install the Vulkan drivers and restart your gaming desktop PC. Run Steam, install Sniper: Ghost Warrior 3 and play it. My ASUS ROG STRIX GL702ZC gaming notebook PC runs it just fine using the stable Padoka PPA, Vulkan drivers and Linux kernel version 4.20.0 64 bit as well.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1546471114,
+    "title": "Sniper Ghost Warrior 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "368070",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.4.0-141-generic",
+    "notes": "Don't expect to have solid 60 FPS all the time. The game is extremely GPU demanding, even with the video settings on Low. ",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547057099,
+    "title": "Sniper Ghost Warrior 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "368070",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-24-generic",
+    "notes": "It works at 40-50 fps with high level setting. sometimes it freeze and crash. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1565037408,
+    "title": "Sniper Ghost Warrior 3",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

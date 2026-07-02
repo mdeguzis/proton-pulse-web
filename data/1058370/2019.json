@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "1058370",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9-2-MANJARO",
+    "notes": "Launches a splash screen and then into a black screen. Sits on the black screen for a bit and then gives a fatal error and closes. Tried both disabling Esync and D3d11 and neither made it get any further.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557797538,
+    "title": "Bone Voyage",
+    "source": "protondb"
+  },
+  {
+    "appId": "1058370",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Completely failed to launch with a fatal error",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557930612,
+    "title": "Bone Voyage",
+    "source": "protondb"
+  }
+]

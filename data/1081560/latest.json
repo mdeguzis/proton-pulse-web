@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1081560",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel",
+    "kernel": "5.0.0-23-generic",
+    "notes": "No issues so far. Note that as a multiplayer game, it's not excluded that an incompatible anti-cheat system may be added in the future once the game is released.",
+    "os": "Ubuntu 19.04 (64\u00a0bits)",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564883977,
+    "title": "GOLD EXPRESS",
+    "source": "protondb"
+  },
+  {
+    "appId": "1081560",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.3.2-050302-generic",
+    "notes": "You can't play tutorials videos. This is the only issue so far. Good performance. Still doesn't use an incompatible AntiCheat (It is not excluded that it will later). Tested during early access ",
+    "os": "Ubuntu 19.04 (64\u00a0bits)",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570317755,
+    "title": "\u9ec4\u91d1\u5217\u8f66 GOLD EXPRESS",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "65710",
+    "cpu": "AMD FX-8370E Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-gentoo",
+    "notes": "Crashes when trying some sub-games due to missing media player components. Only \"minigolf\" and \"fashion show\" games are playable. Sound tends to get stuck after a while and sometimes glitches around cursor appear. Probably installing some components manually might make it better but I didn't try.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1547067864,
+    "title": "Pat & Mat",
+    "source": "protondb"
+  },
+  {
+    "appId": "65710",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-16-generic",
+    "notes": "Music is looping randomly. Minigames crashes because \"CPAL3D: Cannot initialize WMV playback\". It's unplayable to me.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1560260135,
+    "title": "Pat & Mat",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "548680",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game loads menu fine but hangs on opening cutscene of new game.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559956385,
+    "title": "Iron Crypticle",
+    "source": "protondb"
+  },
+  {
+    "appId": "548680",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.8-towo.3-siduction-amd64",
+    "notes": "disable Bloom in the video options! Bloom shader compiler errors out on start and gives 3 crash popups, just press ignore/retry on them and game runs perfectly. Logitech F710 controller works too. with 4.11-2 and 4.13-2 there's no music in menu, game hangs during the intro, or when selecting high scores.",
+    "os": "Siduction (Debian sid)",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1565697968,
+    "title": "Iron Crypticle",
+    "source": "protondb"
+  }
+]

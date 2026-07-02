@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "430960",
+    "title": "Lucy -The Eternity She Wished For-",
+    "timestamp": 1535571848,
+    "rating": "Platinum",
+    "notes": "Works fine without issues",
+    "os": "Manjaro KDE Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7-3770 / RX 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "430960",
+    "title": "Lucy -The Eternity She Wished For-",
+    "timestamp": 1535567190,
+    "rating": "Silver",
+    "notes": "Small glitches in text, size of the monitor isn't detected correctly in fullscreen",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 980",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "430960",
+    "title": "Lucy -The Eternity She Wished For-",
+    "timestamp": 1536265157,
+    "rating": "Silver",
+    "notes": "Small glitches in text, size of the monitor isn't detected correctly in fullscreen.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5-4670K / msi R7950",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "430960",
+    "title": "Lucy -The Eternity She Wished For-",
+    "timestamp": 1535557448,
+    "rating": "Platinum",
+    "notes": "Works fine without issues",
+    "os": "Manjaro KDE Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7-3770 / RX 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "430960",
+    "title": "Lucy -The Eternity She Wished For-",
+    "timestamp": 1535552790,
+    "rating": "Silver",
+    "notes": "Small glitches in text, size of the monitor isn't detected correctly in fullscreen",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 980",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "430960",
+    "title": "Lucy -The Eternity She Wished For-",
+    "timestamp": 1536250757,
+    "rating": "Silver",
+    "notes": "Small glitches in text, size of the monitor isn't detected correctly in fullscreen.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5-4670K / msi R7950",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

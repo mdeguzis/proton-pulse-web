@@ -1,0 +1,1061 @@
+.admin-error {
+  color: var(--red, #e06c75);
+  padding: 1rem 0;
+}
+
+.admin-loading {
+  color: var(--text-muted, #888);
+  padding: 1rem 0;
+}
+
+.admin-empty {
+  color: var(--text-muted, #888);
+  padding: 1rem 0;
+}
+
+/* Section nav */
+.admin-nav {
+  margin-bottom: 1.5rem;
+}
+
+.admin-nav-select {
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  min-width: 200px;
+}
+
+/* Filters */
+.admin-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.admin-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-muted, #888);
+}
+
+.admin-input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  color: var(--text, #eee);
+  font-size: 0.85rem;
+  padding: 5px 10px;
+}
+
+.admin-input:focus {
+  border-color: var(--accent, #5c8bd6);
+  outline: none;
+}
+
+/* "Your role & permissions" summary -- a highlighted banner above the content. */
+.admin-perms-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 0 0 20px;
+  padding: 9px 14px;
+  background: rgba(92,139,214,0.08);
+  border: 1px solid rgba(92,139,214,0.25);
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+/* Section card: groups a labeled block (form, table, ...) into a panel. */
+.admin-card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 18px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.admin-card > .admin-subhead:first-child {
+  margin-top: 0;
+}
+.admin-perms-label {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+  color: var(--muted, #888);
+}
+.admin-perms-role {
+  font-weight: 600;
+  color: var(--text, #eee);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  padding: 1px 9px;
+}
+.admin-perms-caps {
+  color: var(--muted, #888);
+}
+
+/* Small section heading inside a tab (e.g. "Add admin", "Existing admins"). */
+.admin-subhead {
+  margin: 18px 0 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted, #888);
+}
+.admin-subhead:first-child {
+  margin-top: 0;
+}
+
+/* Granular permission editor: removable chips + an "add permission" dropdown. */
+.admin-perm-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  min-width: 0;
+  max-width: 100%;
+}
+.perm-editor,
+.perm-editor-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Scroll wrapper for wide tables so they scroll rather than overflow the page */
+.admin-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+.perm-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  color: var(--text, #eee);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  padding: 1px 4px 1px 9px;
+}
+.perm-chip-x {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--muted, #888);
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+.perm-chip-x:hover {
+  color: var(--red, #e06c75);
+}
+
+/* Search box with an inline clear (X) button, shown only when there is text. */
+.admin-search-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.admin-search-wrap--wide {
+  min-width: 260px;
+}
+.admin-search-wrap .admin-input {
+  padding-right: 26px;
+}
+.admin-search-clear {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background: none;
+  border: none;
+  color: var(--text-muted, #888);
+  cursor: pointer;
+  line-height: 0;
+}
+.admin-search-clear:hover {
+  color: var(--text, #eee);
+}
+
+.admin-input--wide { min-width: 240px; flex: 1; }
+.admin-input--date {
+  padding: 4px 8px;
+}
+
+.admin-select {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  color: var(--text, #eee);
+  font-size: 0.85rem;
+  padding: 5px 10px;
+}
+
+.admin-select--sm {
+  font-size: 0.78rem;
+  padding: 3px 6px;
+}
+
+.admin-field-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted, #888);
+}
+
+/* Sort row */
+.admin-sort-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.admin-sort-label {
+  font-size: 0.78rem;
+  color: var(--text-muted, #888);
+}
+
+.admin-sort-btn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 99px;
+  color: var(--text-muted, #888);
+  cursor: pointer;
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  transition: all 0.15s;
+}
+
+.admin-sort-btn:hover,
+.admin-sort-btn--active {
+  background: rgba(92,139,214,0.15);
+  border-color: rgba(92,139,214,0.4);
+  color: var(--text, #eee);
+}
+
+/* Table */
+.admin-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.admin-table th {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-muted, #888);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 6px 10px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.admin-table th[data-sort-col] {
+  cursor: pointer;
+  user-select: none;
+}
+
+.admin-table th[data-sort-col]:hover {
+  color: var(--text, #eee);
+}
+
+.admin-table th.admin-th--sorted {
+  color: var(--text, #eee);
+}
+
+.sort-indicator {
+  font-size: 0.6rem;
+  margin-left: 4px;
+  opacity: 0.8;
+}
+
+.admin-table td {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 10px 10px;
+  vertical-align: top;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+
+.admin-link {
+  color: var(--accent, #5c8bd6);
+  text-decoration: none;
+}
+
+.admin-link:hover {
+  text-decoration: underline;
+}
+
+/* admin-link-btn: a <button> that should read as a link in a table cell
+   (e.g. the #NNN report id triggers). Strip the default button chrome
+   and copy .admin-link's color + hover so it stands out from the
+   surrounding plain text. Cursor: pointer is what was missing -- the
+   default UA cursor on <button> was just the arrow pointer. */
+.admin-link-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--accent, #5c8bd6);
+  text-decoration: none;
+  cursor: pointer;
+}
+.admin-link-btn:hover { text-decoration: underline; }
+.admin-link-btn:focus-visible {
+  outline: 2px solid var(--accent, #5c8bd6);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.admin-sub {
+  color: var(--text-muted, #888);
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+.admin-reason {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #d4b36a;
+  word-break: break-all;
+}
+
+/* Buttons */
+.admin-btn {
+  background: rgba(92,139,214,0.15);
+  border: 1px solid rgba(92,139,214,0.35);
+  border-radius: 6px;
+  color: #9ecbe8;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.admin-btn:hover {
+  background: rgba(92,139,214,0.25);
+}
+
+.admin-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* #148: report detail header lays the subhead title flush left and the
+   moderation toolbar flush right so all actions sit above the fold.
+   Wraps to a second row on narrow viewports so nothing overflows. */
+.ar-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.ar-detail-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.admin-btn--sm {
+  font-size: 0.78rem;
+  padding: 3px 10px;
+}
+
+.admin-btn--ok {
+  background: rgba(76,175,128,0.12);
+  border-color: rgba(76,175,128,0.35);
+  color: #a9d7b6;
+}
+
+.admin-btn--ok:hover { background: rgba(76,175,128,0.22); }
+
+.admin-btn--danger {
+  background: rgba(220,80,80,0.12);
+  border-color: rgba(220,80,80,0.35);
+  color: #e88a8a;
+}
+
+.admin-btn--danger:hover { background: rgba(220,80,80,0.22); }
+
+.admin-btn--warn {
+  background: rgba(212,168,67,0.12);
+  border-color: rgba(212,168,67,0.35);
+  color: #d4b36a;
+}
+
+.admin-btn--warn:hover { background: rgba(212,168,67,0.22); }
+
+.admin-btn--ghost {
+  background: none;
+  border-color: rgba(255,255,255,0.12);
+  color: var(--text-muted, #888);
+}
+
+.admin-btn--ghost:hover { background: rgba(255,255,255,0.05); }
+
+.admin-actions {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+/* Ban modal */
+.admin-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.admin-modal {
+  background: var(--surface, #1e1e2e);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 420px;
+  padding: 24px;
+  width: 90%;
+}
+
+.admin-modal-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.admin-modal-sub {
+  color: var(--text-muted, #888);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.admin-modal-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.admin-uid {
+  font-size: 0.7rem;
+  color: var(--muted);
+  word-break: break-all;
+  display: inline;
+}
+
+/* Identity cell in the All Users table: full id (no truncation) with a copy
+   button held to the right, vertically centered. */
+.admin-id-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-role-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 99px;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--text-muted, #888);
+  white-space: nowrap;
+}
+
+.admin-role-badge--super_admin {
+  background: rgba(212,168,67,0.12);
+  border-color: rgba(212,168,67,0.35);
+  color: #d4b36a;
+}
+
+.admin-role-badge--moderator {
+  background: rgba(92,139,214,0.15);
+  border-color: rgba(92,139,214,0.4);
+  color: #9ecbe8;
+}
+
+.admin-section {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* User-count summary above the All Users table (total / Steam / anonymous) */
+.admin-counts {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 0 0 14px;
+  font-size: 0.82rem;
+  color: var(--muted, #8b98a5);
+}
+.admin-count strong {
+  color: var(--strong, #fff);
+  font-family: var(--mono, monospace);
+  font-size: 1rem;
+  margin-right: 4px;
+}
+
+/* Details button: neutral secondary style */
+.admin-btn--details {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.12);
+  color: var(--muted, #8b98a5);
+  margin-right: 6px;
+}
+.admin-btn--details:hover { background: rgba(255,255,255,0.1); }
+
+/* Actions cell: keep buttons inline */
+.admin-col-actions { white-space: nowrap; }
+
+/* -------------------------------------------------------------------------
+   User detail screen
+   ------------------------------------------------------------------------- */
+
+.user-detail-back {
+  margin-bottom: 18px;
+}
+
+.user-detail-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.user-detail-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text, #eee);
+}
+
+.user-detail-header-actions {
+  margin-left: auto;
+}
+
+.user-detail-section {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.user-detail-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted, #888);
+  margin-bottom: 10px;
+}
+
+.user-detail-danger-zone {
+  border-top: 1px solid rgba(220, 60, 60, 0.3);
+  padding: 14px 12px 12px;
+  border-radius: 6px;
+  background: rgba(200, 40, 40, 0.05);
+}
+
+.user-detail-danger-zone-title {
+  color: #e06c75;
+}
+
+.user-detail-danger-zone-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted, #888);
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+
+.user-detail-count {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.user-detail-id-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.user-detail-id-empty {
+  color: var(--text-muted, #888);
+  font-size: 0.85rem;
+}
+
+.user-detail-label {
+  font-size: 0.75rem;
+  color: var(--text-muted, #888);
+  min-width: 75px;
+  flex-shrink: 0;
+}
+
+.user-detail-copy-btn {
+  flex-shrink: 0;
+  padding: 3px 6px;
+  line-height: 1;
+  background: none;
+  border-color: rgba(255,255,255,0.1);
+  color: var(--text-muted, #888);
+  position: relative;
+}
+
+/* .copy-tooltip lives in css/shared/site.css */
+
+.user-detail-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.user-detail-tl-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.user-detail-tl-row .user-detail-label {
+  min-width: 100px;
+}
+
+.user-detail-table {
+  font-size: 0.8rem;
+}
+
+.user-detail-flag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 99px;
+  margin-right: 3px;
+}
+
+.user-detail-flag--warn {
+  background: rgba(212,168,67,0.12);
+  border: 1px solid rgba(212,168,67,0.35);
+  color: #d4b36a;
+}
+
+.user-detail-flag--danger {
+  background: rgba(220,80,80,0.12);
+  border: 1px solid rgba(220,80,80,0.35);
+  color: #e88a8a;
+}
+
+.user-detail-flag--ok {
+  background: rgba(76,175,128,0.12);
+  border: 1px solid rgba(76,175,128,0.35);
+  color: #4caf80;
+}
+
+.admin-row--banned td {
+  opacity: 0.75;
+}
+
+/* Mobile: hide Identity, Role, Reports, Last active, Last login columns */
+@media (max-width: 640px) {
+  #users-table th:nth-child(2),
+  #users-table td:nth-child(2),
+  #users-table th:nth-child(3),
+  #users-table td:nth-child(3),
+  #users-table th:nth-child(4),
+  #users-table td:nth-child(4),
+  #users-table th:nth-child(6),
+  #users-table td:nth-child(6) {
+    display: none;
+  }
+}
+
+/* Mobile: admins table -- hide Added column, make table scroll */
+@media (max-width: 640px) {
+  /* Constrain the section so overflow-x: auto on the card has a reference width */
+  .admin-section {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Card scrolls rather than pushing the page */
+  .admin-card {
+    max-width: 100%;
+  }
+
+  /* Hide Added column (4th) -- least critical info on small screens */
+  #admins-table th:nth-child(4),
+  #admins-table td:nth-child(4) {
+    display: none;
+  }
+
+  /* Make the table itself a scroll block */
+  #admins-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Permissions chips column: cap width so chips wrap */
+  #admins-table td:nth-child(3) {
+    max-width: 150px;
+    min-width: 100px;
+  }
+
+  /* Add-admin form: UUID and username inputs go full-width on mobile */
+  #add-admin-form .admin-input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Permission row on mobile: stack label above chips */
+  .admin-perm-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* Flag detail view */
+.flag-detail-reason {
+  background: rgba(255, 200, 80, 0.08);
+  border: 1px solid rgba(255, 200, 80, 0.25);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+}
+.flag-detail-reason-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted, #888);
+  margin-bottom: 4px;
+}
+.flag-detail-reason-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text, #eee);
+}
+.flag-detail-reason-note {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted, #aaa);
+  font-style: italic;
+}
+.flag-detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 0.875rem;
+}
+.flag-detail-meta .admin-label-text {
+  display: inline-block;
+  min-width: 72px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted, #888);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 6px;
+}
+.flag-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0 16px;
+}
+/* Pushes the secondary (status / delete-flag) buttons to the right, separating
+   them from the primary report actions. */
+.flag-detail-actions-sep { flex: 1 1 auto; min-width: 12px; }
+.flag-detail-state {
+  font-size: 0.8rem;
+  color: var(--muted, #9aa);
+  margin-right: 4px;
+}
+.flag-state--visible { color: #6fcf97; }
+.flag-state--shadowbanned { color: #e0a030; }
+.flag-state--deleted { color: #e05050; }
+/* Active toggle (e.g. Un-shadow ban) gets a subtle outline so the current
+   moderation action reads clearly. */
+.flag-action-active { box-shadow: inset 0 0 0 1px currentColor; }
+
+/* Report preview card inside flag detail */
+.flag-report-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+.flag-report-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.flag-report-rating {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.flag-report-proton {
+  font-size: 0.8rem;
+  color: var(--text-muted, #aaa);
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+.flag-report-source {
+  font-size: 0.75rem;
+  color: var(--text-muted, #888);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.flag-report-date {
+  margin-left: auto;
+  font-size: 0.78rem;
+}
+.flag-report-hw {
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+.flag-report-notes {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text, #eee);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.flag-report-notes--empty {
+  font-style: italic;
+}
+
+/* Raw field dump inside flag detail */
+.flag-raw-section {
+  margin-bottom: 20px;
+}
+.flag-raw-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted, #888);
+  margin-bottom: 6px;
+}
+.flag-raw-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+.flag-raw-table tr:nth-child(odd) {
+  background: rgba(255,255,255,0.03);
+}
+.flag-raw-key {
+  width: 38%;
+  padding: 4px 8px;
+  color: var(--text-muted, #aaa);
+  vertical-align: top;
+  word-break: break-all;
+  border-right: 1px solid rgba(255,255,255,0.07);
+}
+.flag-raw-val {
+  padding: 4px 8px;
+  color: var(--text, #eee);
+  vertical-align: top;
+  word-break: break-word;
+}
+pre.flag-raw-json {
+  margin: 0;
+  white-space: pre-wrap;
+  font-size: 0.75rem;
+  color: var(--text-muted, #aaa);
+}
+
+/* Analytics tab */
+.analytics-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.analytics-stat {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 12px 20px;
+  min-width: 110px;
+  text-align: center;
+}
+.analytics-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text, #eee);
+}
+.analytics-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted, #888);
+  margin-top: 2px;
+}
+.analytics-chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  margin: 0 0 24px;
+}
+.analytics-section-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted, #888);
+  margin-bottom: 10px;
+}
+.analytics-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 640px) {
+  .analytics-two-col { grid-template-columns: 1fr; }
+}
+/* Inline legend for the analytics charts. Uses colored swatches instead of
+   the previous &#9644; unicode character which renders as an off-color line
+   glyph in most fonts. Floats to the right of the section title. */
+.analytics-legend {
+  float: right;
+  font-size: 0.75rem;
+  color: var(--text-muted, #888);
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  line-height: 1;
+}
+.analytics-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.analytics-legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+/* Sticky jump-to-section nav at the top of the analytics panel. No background:
+   we want the panel content underneath to bleed through rather than getting
+   covered by an opaque strip. The buttons themselves carry their own chrome. */
+.analytics-jump-nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 0;
+  margin: -8px 0 12px;
+}
+.analytics-jump-btn {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text, #c7d5e0);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+.analytics-jump-btn:hover {
+  background: rgba(102, 192, 244, 0.12);
+  border-color: var(--accent, #66c0f4);
+  color: var(--strong, #fff);
+}
+
+/* One-liner explanation under a chart so the reader doesn't have to guess
+   what the bars or trendline represent. Sits between chart and table. */
+.chart-caption {
+  font-size: 0.78rem;
+  color: var(--text-muted, #888);
+  margin: -8px 0 14px;
+  line-height: 1.45;
+}
+
+/* Status legend line */
+.admin-legend {
+  font-size: 0.78rem;
+  color: var(--text-muted, #888);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* Inline status badges */
+.admin-badge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.08);
+  color: var(--text-muted, #888);
+}
+.admin-badge--warn  { background: rgba(212,168,67,0.18);  color: #d4a843; }
+.admin-badge--muted { background: rgba(255,255,255,0.07); color: var(--text-muted, #888); }
+.admin-badge--ok    { background: rgba(152,195,121,0.15); color: #98c379; }
+.admin-badge--info  { background: rgba(97,175,239,0.15);  color: #61afef; }
+.admin-badge--regex { background: rgba(97,175,239,0.15);  color: #61afef; }
+
+/* Cache status panel */
+.cache-status-pass { color: var(--green, #98c379); font-weight: 600; }
+.cache-status-fail { color: var(--red, #e06c75); font-weight: 600; }
+.cache-status-warn { color: var(--yellow, #e5c07b); font-weight: 600; }
+.cache-status-details summary { font-size: 0.82rem; padding: 4px 0; }
+.cache-status-section { max-width: 860px; }

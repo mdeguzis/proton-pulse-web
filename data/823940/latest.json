@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "823940",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Installs and launches but crashes immediately when entering menu.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1599400400,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "361320",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Launcher runs fine but both games briefly launch, display a black screen and then crash.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560304318,
+    "title": "Casino Inc.",
+    "source": "protondb"
+  }
+]

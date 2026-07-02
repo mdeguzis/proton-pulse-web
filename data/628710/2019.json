@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "628710",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Works fine with m/kb but controller goes haywire.",
+    "os": "Ubuntu 18.04 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "20 GB",
+    "rating": "Silver",
+    "timestamp": 1551418816,
+    "title": "Hell Warders",
+    "source": "protondb"
+  }
+]

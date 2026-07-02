@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "340200",
+    "title": "Bloop",
+    "timestamp": 1535994495,
+    "rating": "Borked",
+    "notes": "Popup Window : Runtime error - Failed to load plugin C:\\users\\steamuser\\Temp\\cap9423.tmp\\31.csx (126)   -  Steam Forum indicates not shipped with required MFC resdistributables.",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "340200",
+    "title": "Bloop",
+    "timestamp": 1535980095,
+    "rating": "Borked",
+    "notes": "Popup Window : Runtime error - Failed to load plugin C:\\users\\steamuser\\Temp\\cap9423.tmp\\31.csx (126)   -  Steam Forum indicates not shipped with required MFC resdistributables.",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

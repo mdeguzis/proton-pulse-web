@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "369070",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-38-generic",
+    "notes": "",
+    "os": "Linux Mint 21.2 (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1724167636,
+    "title": "Slain: Back from Hell",
+    "source": "protondb"
+  },
+  {
+    "appId": "369070",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.9-arch1-1",
+    "notes": "Works Great",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1726771219,
+    "title": "Slain: Back from Hell",
+    "source": "protondb"
+  },
+  {
+    "appId": "369070",
+    "cpu": "Box86 on Cortex-A76 @2.40 GHz",
+    "duration": "underOneHour",
+    "gpu": "Broadcom V3D 7.1",
+    "gpuDriver": "3.1 Mesa 23.2.1-1~bpo12+rpt3",
+    "kernel": "6.6.64-v8+",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1734140876,
+    "title": "Slain: Back from Hell",
+    "source": "protondb"
+  }
+]

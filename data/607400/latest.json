@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "607400",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "5.0.4-050004-generic",
+    "notes": "Although there's now a native version for linux, there wasn't when I first tested this game about 5 months ago. I'm writing this report because my old one, (blank screen, no sound etc) no longer applies - not only does the native version work well, but all five currently available proton versions (3.7-8, 3.7-8 beta, 3.16-4, 3.16-8 beta, 4.2-1) run the windows version perfectly too.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553735112,
+    "title": "Necrosphere",
+    "source": "protondb"
+  }
+]

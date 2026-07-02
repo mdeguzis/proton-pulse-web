@@ -1,0 +1,121 @@
+/* -- Proton Pulse Configs section -- */
+
+.configs-section {
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+}
+.configs-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--s2);
+  border-bottom: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+}
+.configs-section-title {
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.configs-section-count {
+  font-size: 0.74rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.configs-list { display: flex; flex-direction: column; }
+.config-card {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--s1);
+}
+.config-card:last-child { border-bottom: none; }
+.config-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.config-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--strong);
+}
+.config-name--unnamed {
+  color: var(--muted);
+  font-style: italic;
+  font-weight: 400;
+}
+.config-id-line {
+  font-size: 0.68rem;
+  font-family: monospace;
+  color: var(--muted);
+  margin-top: 2px;
+  letter-spacing: 0.03em;
+}
+.config-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 5px;
+  font-size: 0.78rem;
+}
+.config-row:last-of-type { margin-bottom: 0; }
+.config-lbl {
+  color: var(--muted);
+  width: 96px;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+.config-val {
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.78em;
+  word-break: break-all;
+}
+.config-vars { display: flex; flex-wrap: wrap; gap: 4px; }
+.var-tag {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  padding: 1px 5px;
+  background: rgba(74, 159, 208, 0.1);
+  border: 1px solid rgba(74, 159, 208, 0.25);
+  color: var(--accent);
+}
+.config-hw {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.config-hw-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.config-meta {
+  margin-top: 8px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 7px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cfg-dl-btn {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  font-size: 0.66rem;
+  padding: 2px 7px;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-weight: 600;
+}
+.cfg-dl-btn:hover { color: var(--accent); border-color: var(--accent); }

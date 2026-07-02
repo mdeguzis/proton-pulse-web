@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "215100",
+    "title": "Ragnarok Online",
+    "timestamp": 1535465795,
+    "rating": "Silver",
+    "notes": "Runs better on PlayOnLinux + Wine (x86) 1.4-rc3 + workarounds",
+    "os": "GNU/Linux",
+    "gpuDriver": "NVIDIA 304.137",
+    "specs": "Nvidia GeForce 6200 TurboCache",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "215100",
+    "cpu": "Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 660/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Patcher crashes randomly, almost always before completing. ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7931 Mb",
+    "rating": "Borked",
+    "timestamp": 1537217353,
+    "title": "Ragnarok Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "215100",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Managed to update but fails to run",
+    "os": "elementary OS 0.4.1 Loki (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7719 Mb",
+    "rating": "Borked",
+    "timestamp": 1537580655,
+    "title": "Ragnarok Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "215100",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.8-300.fc29.x86_64",
+    "notes": "Patcher crashes randomly. Tired all options , might have to try it with wine.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545866369,
+    "title": "Ragnarok Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "215100",
+    "title": "Ragnarok Online",
+    "timestamp": 1535451395,
+    "rating": "Silver",
+    "notes": "Runs better on PlayOnLinux + Wine (x86) 1.4-rc3 + workarounds",
+    "os": "GNU/Linux",
+    "gpuDriver": "NVIDIA 304.137",
+    "specs": "Nvidia GeForce 6200 TurboCache",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

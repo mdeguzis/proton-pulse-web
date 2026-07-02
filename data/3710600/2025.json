@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3710600",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti with Max-Q Design",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.18.0-3-cachyos",
+    "notes": "# Works like a charm.\nIt ran smoother than expected from my laptop",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1766306805,
+    "title": "",
+    "source": "protondb"
+  }
+]

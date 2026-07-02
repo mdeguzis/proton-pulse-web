@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "3300",
+    "cpu": "AMD A8-6410 APU with AMD Radeon R5 Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.19.55-041955-generic",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "Default",
+    "ram": "3 GB",
+    "rating": "Platinum",
+    "timestamp": 1562514241,
+    "title": "Bejeweled 2 Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3300",
+    "cpu": "AMD Ryzen Threadripper 2950X 16-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "It was Borked for me before in the past, but now it just works perfectly and flawlessly. Nice game.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-2",
+    "ram": "129 GB",
+    "rating": "Platinum",
+    "timestamp": 1566529739,
+    "title": "Bejeweled 2 Deluxe",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "677160",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Initially the config set the resolution to 1920,0, 1080,0 which was then intepreted as 1920x0 causing the game to crash on start, after manually fixing the resolution to 1920, 1080 the game started normally.\n\nWas able to create a room using the \"invite Friend\" option. Voice chat works as expected.\n\nTo be able to actually play the game i had to install .NET in the games Wine prefix. This can be done by using the command\n\n\"protontricks 677160 -q --force vcrun2017 dotnet472 gdiplus\"\n\nWith that the game worked normally. With no seen issue. Did a complete playthough with a friend.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-7",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1570959350,
+    "title": "We Were Here Too",
+    "source": "protondb"
+  }
+]

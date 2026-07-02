@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "110630",
+    "title": "Call of Duty",
+    "timestamp": 1536415513,
+    "rating": "Silver",
+    "notes": "Performance good. Need to apply \"__GL_ExtensionStringVersion=17700 %command%\" to launch options. Can't apply other luminosity",
+    "os": "Manjaro Stable 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1060 6GB",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "110630",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546250841,
+    "title": "Mutant Storm: Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "110630",
+    "title": "Call of Duty",
+    "timestamp": 1536401113,
+    "rating": "Silver",
+    "notes": "Performance good. Need to apply \"__GL_ExtensionStringVersion=17700 %command%\" to launch options. Can't apply other luminosity",
+    "os": "Manjaro Stable 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1060 6GB",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  }
+]

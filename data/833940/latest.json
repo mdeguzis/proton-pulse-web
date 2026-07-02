@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "833940",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "single player with bots is working. Could not be bothered to try multiplayer I imagine there would not be anybody there anyway.  ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556385484,
+    "title": "Vertigo FPS",
+    "source": "protondb"
+  }
+]

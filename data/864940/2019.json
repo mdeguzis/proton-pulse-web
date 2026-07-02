@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "864940",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Simple game. Game works with Proton 3.7-8. Game doesn't work for me with Proton 4+.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "3.7-8",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1565883992,
+    "title": "150,000 B.C.",
+    "source": "protondb"
+  }
+]

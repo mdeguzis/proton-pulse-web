@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2359600",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD RX 7900 XTX (gfx1100, LLVM 15.0.5, DRM 3.49, 6.1.0-1-x64v2-xanmod-amd64)",
+    "gpuDriver": "4.6 Mesa 23.0.0-devel (git-57f73d0 2022-12-29 kinetic-oibaf-ppa)",
+    "kernel": "6.1.0-1-x64v2-xanmod-amd64",
+    "notes": "If you sit on launcher for 15-20 seconds, crash. If you start the game quick enough it will launch full screen to a loading bar that crashes upon finishing.",
+    "os": "PikaOS 22.10",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1683206772,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1744570",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.14.8-200.nobara.fc42.x86_64",
+    "notes": "Modern Proton is pretty powerful to run most novel games without tinkering, just pick Proton Hotfix or Proton 10 and works perfectly",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1748138771,
+    "title": "",
+    "source": "protondb"
+  }
+]

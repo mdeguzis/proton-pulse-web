@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2024070",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, gfx1103_r1, LLVM 19.1.0, DRM 3.59, 6.11.10-304.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.7",
+    "kernel": "6.11.10-304.bazzite.fc41.x86_64",
+    "notes": "While TTS is absent and it makes the game feel quite empty, nothing gets in the way of enjoying the quiz proper.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "8.0-5",
+    "ram": "10 GB",
+    "rating": "gold",
+    "timestamp": 1735460429,
+    "title": "Party Quiz",
+    "source": "protondb"
+  },
+  {
+    "appId": "2024070",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, gfx1103_r1, LLVM 19.1.0, DRM 3.59, 6.11.10-304.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.7",
+    "kernel": "6.11.10-304.bazzite.fc41.x86_64",
+    "notes": "The TTS delay makes the game unbearable. It's functional. You'll just take upwards of 30' for a quiz that should take 10.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "10 GB",
+    "rating": "borked",
+    "timestamp": 1735460745,
+    "title": "Party Quiz",
+    "source": "protondb"
+  }
+]

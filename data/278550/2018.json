@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "278550",
+    "title": "A-Train 9 V4.0 : Japan Rail Simulator",
+    "timestamp": 1535558158,
+    "rating": "Silver",
+    "notes": "In the config tool, set Textures to \"Low\" for game to work (\"High\" does not work in Windows 10 either so not a direct fault of Proton). Ran several hours with anisotropic 16x filter, anti-aliasing on, HDR on high, not see any issues. ",
+    "os": "Ubuntu 18.04 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "278550",
+    "title": "A-Train 9 V4.0 : Japan Rail Simulator",
+    "timestamp": 1535321872,
+    "rating": "Borked",
+    "notes": "Setting textures to high causes the game to run with a black screen and the log is flooded with framebuffer errors\nSetting shadow resolution to high makes the game crash\nRunning the game at 4k will cause the game to only render UI\nAnti-aliasing doesn't seem to do anything\nForcing anti-aliasing via the driver causes similar issues to setting texture or shadow resolution",
+    "os": "Gentoo Stable 17.0 64-bit (Kernel 4.14.65)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-6700HQ / GTX 1070 Mobile",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "278550",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Tried the demo.  No sound; graphics running at ~1FPS.  Utterly unplayable.  Didn't bother trying to troubleshoot.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7841 Mb",
+    "rating": "Borked",
+    "timestamp": 1536944587,
+    "title": "A-Train 9 V4.0 : Japan Rail Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "278550",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "I am asked if I want to play or if I want to start the configuration tool. After selecting one of them and clicking play, nothing happens.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540477827,
+    "title": "A-Train 9 V4.0 : Japan Rail Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "278550",
+    "title": "A-Train 9 V4.0 : Japan Rail Simulator",
+    "timestamp": 1535543758,
+    "rating": "Silver",
+    "notes": "In the config tool, set Textures to \"Low\" for game to work (\"High\" does not work in Windows 10 either so not a direct fault of Proton). Ran several hours with anisotropic 16x filter, anti-aliasing on, HDR on high, not see any issues. ",
+    "os": "Ubuntu 18.04 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "278550",
+    "title": "A-Train 9 V4.0 : Japan Rail Simulator",
+    "timestamp": 1535307472,
+    "rating": "Borked",
+    "notes": "Setting textures to high causes the game to run with a black screen and the log is flooded with framebuffer errors\nSetting shadow resolution to high makes the game crash\nRunning the game at 4k will cause the game to only render UI\nAnti-aliasing doesn't seem to do anything\nForcing anti-aliasing via the driver causes similar issues to setting texture or shadow resolution",
+    "os": "Gentoo Stable 17.0 64-bit (Kernel 4.14.65)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-6700HQ / GTX 1070 Mobile",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "34810",
+    "cpu": "Intel Core i3-4170 @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.13-1-MANJARO",
+    "notes": "Found a comment in the games discussion forums.  \n\n1. get: https://community.pcgamingwiki.com/files/file/431-project-freedom-dummy-mpegdll/\n\n2. Go to the games home folder and unzip the file from step 1 and replace mpeg.dll (or rename it)  with the this new one .\n\nThis new mpeg.dll apparently doesn't run the movies. Otherwise runs fine.  You can watch the movies in mplayer but if you don't you've lost nothing whatsoever :)\n\nGame runs ok so far but I only tried the first three tutorial missions.\n\nGood luck",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1547472744,
+    "title": "Project Freedom",
+    "source": "protondb"
+  }
+]

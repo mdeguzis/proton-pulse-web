@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1497950",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.0.3 - kisak-mesa PPA",
+    "kernel": "6.8.0-31-generic",
+    "notes": "Perfect apart from fixable windowing issue.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1746054134,
+    "title": "",
+    "source": "protondb"
+  }
+]

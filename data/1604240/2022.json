@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1604240",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.8-76051508-generic",
+    "notes": "Sound needs fixed, no sound whatsoever and no obvious way to fix",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1641222323,
+    "title": "Sumotori Dreams Classic",
+    "source": "protondb"
+  },
+  {
+    "appId": "1604240",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Audio is entirely broken.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1660387696,
+    "title": "Sumotori Dreams Classic",
+    "source": "protondb"
+  }
+]

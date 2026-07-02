@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "819520",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6950 XT (radeonsi, navi21, LLVM 20.1.8, DRM 3.64, 6.17.3-arch2-1)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.2",
+    "kernel": "6.17.3-arch2-1",
+    "notes": "Borked. No amount of tinkering has solved the issue of the black screen.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1761639725,
+    "title": "Star Souls",
+    "source": "protondb"
+  }
+]

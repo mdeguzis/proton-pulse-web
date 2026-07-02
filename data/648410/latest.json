@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "648410",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 19.1.1, DRM 3.57, 6.8.0-62-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-62-generic",
+    "notes": "",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1774087395,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "648410",
+    "cpu": "AMD Ryzen 7 7435HS",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.17.0-20-generic",
+    "notes": "It Just Works",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1776581488,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "648410",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.6-1-cachyos",
+    "notes": "Simply works",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1779098858,
+    "title": "",
+    "source": "protondb"
+  }
+]

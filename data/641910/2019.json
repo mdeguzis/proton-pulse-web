@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "641910",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "PROTON_NO_ESYNC=1 fixes invisible gun and greatly improves performance. Game is slightly slower than on windows and fully playable with my system on Ultra with 150% resolution scaling.\nFor Vulkan-Less GPUs PROTON_USE_WINED3D=1 may work, but it disables HDR rendering, making game darker and game is only just playable.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1557424748,
+    "title": "Bike Rush",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

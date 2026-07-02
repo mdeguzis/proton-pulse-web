@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "531680",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs but numerical values such as number of units or $ values appear as ##0; unable to get multiplayer to function or connect; adding an anti-aliasing value in the video settings causes the screen to displace in a horizontal bar pattern. Almost a silver rating.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "32113 Mb",
+    "rating": "Bronze",
+    "timestamp": 1539591793,
+    "title": "8-Bit Invaders!",
+    "source": "protondb"
+  }
+]

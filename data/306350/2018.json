@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "306350",
+    "title": "Slipstream 5000",
+    "timestamp": 1535665409,
+    "rating": "Platinum",
+    "notes": "No visible issues.",
+    "os": "Fedora 26 64-bit",
+    "gpuDriver": "384.9",
+    "specs": "AMD FX(tm)-6300 Six-Core / GTX 750 Ti ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "306350",
+    "cpu": "AMD A4-3300 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD SUMO2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-39-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1542497952,
+    "title": "Slipstream 5000",
+    "source": "protondb"
+  },
+  {
+    "appId": "306350",
+    "title": "Slipstream 5000",
+    "timestamp": 1535651009,
+    "rating": "Platinum",
+    "notes": "No visible issues.",
+    "os": "Fedora 26 64-bit",
+    "gpuDriver": "384.9",
+    "specs": "AMD FX(tm)-6300 Six-Core / GTX 750 Ti ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "283000",
+    "title": "Strategic War in Europe",
+    "timestamp": 1536097682,
+    "rating": "Borked",
+    "notes": "Game crashes at launch. Probably related to the DotNet issue.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "283000",
+    "title": "Strategic War in Europe",
+    "timestamp": 1536083282,
+    "rating": "Borked",
+    "notes": "Game crashes at launch. Probably related to the DotNet issue.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1031480",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 21.1.6, DRM 3.61, 6.12.73-1-lts)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.1",
+    "kernel": "6.12.73-1-lts",
+    "notes": "Game is prone to crashing with latest regular Proton. I recommend GE-Proton10-29 with this game; works perfectly fine with that.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1771648274,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1031480",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 595.45.04",
+    "kernel": "6.17.7-ba28.fc43.x86_64",
+    "notes": "\u9664\u4e86\u63a7\u5236\u5668\u8a2d\u5b9a\u754c\u9762\u5982\u540c\u7cfb\u5217\u50b3\u7d71\u53cd\u4eba\u985e\u5916\uff0c\u4e00\u5207\u904a\u73a9\u6b63\u5e38",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1775392419,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1031480",
+    "cpu": "12th Gen Intel Core i5-12500T",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD 770 (ADL-S GT1)",
+    "gpuDriver": "4.6 Mesa 26.0.2",
+    "kernel": "6.17.7-ba28.fc43.x86_64",
+    "notes": "The game works---just use Steam Input!",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1777903126,
+    "title": "",
+    "source": "protondb"
+  }
+]

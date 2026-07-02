@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "934860",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.1-arch1-1-ARCH",
+    "notes": "Played to the end with no issues using xbox one controller",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547138553,
+    "title": "La Rana",
+    "source": "protondb"
+  },
+  {
+    "appId": "934860",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "4.19.69-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1569411299,
+    "title": "La Rana",
+    "source": "protondb"
+  },
+  {
+    "appId": "934860",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.0.0-29-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1570357204,
+    "title": "La Rana",
+    "source": "protondb"
+  }
+]

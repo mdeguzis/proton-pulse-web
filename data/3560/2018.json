@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "3560",
+    "title": "Bejeweled Twist",
+    "timestamp": 1535329758,
+    "rating": "Borked",
+    "notes": "Crashes saying: Invalid command line parameter: -changedir",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "3560",
+    "cpu": "Intel(R) Atom(TM) CPU  330   @ 1.60GHz",
+    "gpu": "NVIDIA Corporation ION/integrated/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-33-generic",
+    "notes": "This game requires the command line argument -changedir to be specified in the launch options. This also happens on Windows, hence why my result is Platinum as this is not a Proton issue. Runs in software mode only due to NVIDIA ION GPU being incompatible with Vulkan enabled NVIDIA drivers. May work with hardware acceleration on other systems with supported video cards. Using Alt+Tab causes Unity 7 to black screen. Using the Super key causes the game to freeze. Otherwise the game is perfectly playable using all modes in full screen and window mode on a 2010 Intel Atom CPU. Given the above, there are no graphical or audio issues.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "2749 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537656262,
+    "title": "Bejeweled Twist",
+    "source": "protondb"
+  },
+  {
+    "appId": "3560",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Add to launcher   -changedir",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15980 Mb",
+    "rating": "Gold",
+    "timestamp": 1538143701,
+    "title": "Bejeweled Twist",
+    "source": "protondb"
+  },
+  {
+    "appId": "3560",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.4.166-1-MANJARO",
+    "notes": "Use \"-changedir\" in launch options to run the game",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1544083743,
+    "title": "Bejeweled Twist",
+    "source": "protondb"
+  },
+  {
+    "appId": "3560",
+    "title": "Bejeweled Twist",
+    "timestamp": 1535315358,
+    "rating": "Borked",
+    "notes": "Crashes saying: Invalid command line parameter: -changedir",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

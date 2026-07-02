@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "463120",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.2-arch1-1-ARCH",
+    "notes": "Joypad support is a little iffy but otherwise works great",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1558035009,
+    "title": "MOP Operation Cleanup",
+    "source": "protondb"
+  }
+]

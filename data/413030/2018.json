@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "413030",
+    "title": "Mytheon",
+    "timestamp": 1535751484,
+    "rating": "Bronze",
+    "notes": "Game starts up in borderless-fullscreen. Sound works. Menus work. However it cannot connect to the main server, sits on waiting for characters indefinitely.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700HQ / GTX 1050",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "413030",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Game installs and loads to main menu without issue.  However, the game is unable to retrieve the player's characters: the game stalls at \"retrieving characters.\"  Choosing to quit the retrieval generates the message \"server unavailable.\"  The game also crashes when quitting to desktop.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32162 Mb",
+    "rating": "Borked",
+    "timestamp": 1538322185,
+    "title": "Mytheon",
+    "source": "protondb"
+  },
+  {
+    "appId": "413030",
+    "title": "Mytheon",
+    "timestamp": 1535737084,
+    "rating": "Bronze",
+    "notes": "Game starts up in borderless-fullscreen. Sound works. Menus work. However it cannot connect to the main server, sits on waiting for characters indefinitely.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700HQ / GTX 1050",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

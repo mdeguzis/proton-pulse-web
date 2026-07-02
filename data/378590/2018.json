@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "378590",
+    "title": "Forest Warrior",
+    "timestamp": 1535548059,
+    "rating": "Borked",
+    "notes": "Vertex shader error",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "378590",
+    "title": "Forest Warrior",
+    "timestamp": 1535533659,
+    "rating": "Borked",
+    "notes": "Vertex shader error",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

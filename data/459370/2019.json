@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "459370",
+    "cpu": "AMD FX-9370 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.5-arch1-2-ARCH",
+    "notes": "Only thing that i could not get working was the controllers(Xbox 360 wired ones), but that seems also to be a problem running this game on Windows. ",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1560390746,
+    "title": "Riverbond",
+    "source": "protondb"
+  }
+]

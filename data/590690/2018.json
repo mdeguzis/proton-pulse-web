@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "590690",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.51",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "With no tweaks this starts up, but crashes after the intro video.",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541126956,
+    "title": "Sprint Vector",
+    "source": "protondb"
+  }
+]

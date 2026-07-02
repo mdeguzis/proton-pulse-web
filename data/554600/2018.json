@@ -1,0 +1,63 @@
+[
+  {
+    "appId": "554600",
+    "cpu": "i5-5200U CPU @ 2.20GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 5500 (Broadwell GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works perfectly",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.5-beta",
+    "ram": "3859 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536774937,
+    "title": "Learn Japanese To Survive! Katakana War",
+    "source": "protondb"
+  },
+  {
+    "appId": "554600",
+    "cpu": "i7-8700K CPU @ 3.70GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.24",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Launches momentarily in window; fails to start. Game is javascript-based, so able to launch by opening \"~/../steam/steamapps/common/Learn Japanese To Survive! Katakana War/www/index.html\" in FireFox. But does not launch in Steam.",
+    "os": "Pop!_OS 18.04 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "32112 Mb",
+    "rating": "Borked",
+    "timestamp": 1536983761,
+    "title": "Learn Japanese To Survive! Katakana War",
+    "source": "protondb"
+  },
+  {
+    "appId": "554600",
+    "cpu": "AMD A10-4600M APU with Radeon(tm) HD Graphics",
+    "gpu": "X.Org AMD ARUBA (DRM 2.50.0 / 4.18.9-92.current, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.18.9-92.current",
+    "notes": "While launching from Steam results in a CTD, running ./www/index.html from the game's main directory will allow it to run perfectly inside FIrefox.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7438 Mb",
+    "rating": "Gold",
+    "timestamp": 1537889222,
+    "title": "Learn Japanese To Survive! Katakana War",
+    "source": "protondb"
+  },
+  {
+    "appId": "554600",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Has to be ran with the index.html file found within /home/[username]/.steam/steam/steamapps/common/Learn Japanese To Survive! Katakana War/www/index.html",
+    "os": "Linux Lite 4.0 (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15927 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537996644,
+    "title": "Learn Japanese To Survive! Katakana War",
+    "source": "protondb"
+  }
+]

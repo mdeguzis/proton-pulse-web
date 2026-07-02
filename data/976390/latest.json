@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "976390",
+    "cpu": "AMD Athlon 64 X2 Dual Core 5000+",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 8500 GT",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.15.0-39-generic",
+    "notes": "To display Japanese text properly, set launch options: LC_ALL=ja_JP.UTF-8 %command%",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1549790530,
+    "title": "9-nine-:Episode 1",
+    "source": "protondb"
+  }
+]

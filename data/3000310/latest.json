@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3000310",
+    "cpu": "Intel Core i7-6600U @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.48+deb13-amd64",
+    "notes": "similar problem that i had with last resort (same dev), but this time since there is no native build, i couldn't use the same solution.",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1761194543,
+    "title": "",
+    "source": "protondb"
+  }
+]

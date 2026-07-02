@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "631510",
+    "title": "Devil May Cry HD Collection",
+    "timestamp": 1535124197,
+    "rating": "Borked",
+    "notes": "Game selection screen appears, but upon selecting a game, save data is loaded, and the game crashes.",
+    "os": "Antergos 64-bit 18.8",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "631510",
+    "title": "Devil May Cry HD Collection",
+    "timestamp": 1535246051,
+    "rating": "Borked",
+    "notes": "HD collection launcher works. All DMC games when launched show first loading screen then crash",
+    "os": "Arch Linux 64 Bit (Arch Linux 4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "631510",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon R9 200 Series (HAWAII, DRM 3.25.0, 4.17.10-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.0",
+    "kernel": "4.17.10-1-ARCH",
+    "notes": "works flawless W/O wmv videos - rename/move/delete the 3 \"Video\" -dirs OR hexedit dmc1.exe, dmc2.exe and dmc3.exe -  search \"57 4d 46 00 00 00 00 2e\" - replace string \"WMV\" with 3 other letters",
+    "os": "\"Arch Linux\" (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15941 MB",
+    "rating": "Silver",
+    "systemInfoNotes": "R9 290X",
+    "timestamp": 1537018288,
+    "title": "Devil May Cry HD Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "631510",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Games requires .wmv playback to launch which Proton does not currently support. Can be worked around by renaming or moving the \"Video\" folders within the game directories, though obviously cut scenes will be missing. Good performance and full controller support. No graphics or audio errors noted apart from those related to missing cut scenes and tutorial videos.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1545375775,
+    "title": "Devil May Cry HD Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "631510",
+    "title": "Devil May Cry HD Collection",
+    "timestamp": 1535109797,
+    "rating": "Borked",
+    "notes": "Game selection screen appears, but upon selecting a game, save data is loaded, and the game crashes.",
+    "os": "Antergos 64-bit 18.8",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "631510",
+    "title": "Devil May Cry HD Collection",
+    "timestamp": 1535231651,
+    "rating": "Borked",
+    "notes": "HD collection launcher works. All DMC games when launched show first loading screen then crash",
+    "os": "Arch Linux 64 Bit (Arch Linux 4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

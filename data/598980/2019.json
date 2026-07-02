@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "598980",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "5.0.2-arch1-1-vfio",
+    "notes": "It has some strange mouse behavior, but everything runs really well",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "Proton 3.16-6 Gallium Nine Extras 0.3.0",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553199046,
+    "title": "The Coin Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "598980",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.14-arch1-1-vfio",
+    "notes": "It has some strange mouse behavior at times, but it's perfectly playable",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "Proton 3.16-6 Gallium Nine Extras 0.3.0",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1561552577,
+    "title": "The Coin Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "598980",
+    "cpu": "Intel Core i5-5300U @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "The demo appears to run fine. I've played this for ~15-20 minutes without issue. It doesn't run great on my laptop, but I think that has more to do with not having a dedicated GPU than anything. The minimum specs are a GTX960, and the developer specifically says no intel hd GPUs. \n\nThat said, I am running at around 20FPS After changing to potato quality in the settings, which is almost playable depending on the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571024140,
+    "title": "The Coin Game",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,131 @@
+[
+  {
+    "appId": "743890",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.10-041810-generic",
+    "notes": "Refer to issue https://github.com/ValveSoftware/Proton/issues/1556",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15988 Mb",
+    "rating": "Borked",
+    "timestamp": 1538007551,
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Mega Man X Legacy Collection / \u30ed\u30c3\u30af\u30de\u30f3X \u30a2\u30cb\u30d0\u30fc\u30b5\u30ea\u30fc \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+    "source": "protondb"
+  },
+  {
+    "appId": "743890",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.10-041810-generic",
+    "notes": " Issue related to https://github.com/ValveSoftware/Proton/issues/1556",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15988 Mb",
+    "rating": "Borked",
+    "timestamp": 1538008201,
+    "title": "Mega Man X Legacy Collection / \u30ed\u30c3\u30af\u30de\u30f3X \u30a2\u30cb\u30d0\u30fc\u30b5\u30ea\u30fc \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+    "source": "protondb"
+  },
+  {
+    "appId": "743890",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15988 Mb",
+    "rating": "Borked",
+    "timestamp": 1539986124,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "title": "Mega Man X Legacy Collection / \u30ed\u30c3\u30af\u30de\u30f3X \u30a2\u30cb\u30d0\u30fc\u30b5\u30ea\u30fc \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+    "source": "protondb"
+  },
+  {
+    "appId": "743890",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "notes": "Game still lunches to a blank black window and crashes",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15988 Mb",
+    "rating": "Borked",
+    "timestamp": 1539988097,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "title": "Mega Man X Legacy Collection / \u30ed\u30c3\u30af\u30de\u30f3X \u30a2\u30cb\u30d0\u30fc\u30b5\u30ea\u30fc \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+    "source": "protondb"
+  },
+  {
+    "appId": "743890",
+    "cpu": "Intel Core i7-5930K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 480",
+    "gpuDriver": "4.5.13527 Compatibility Profile Context",
+    "kernel": "4.15.0-38-generic",
+    "notes": "X1, X2, X3 work flawlessly.  X4 hangs on playing the opening movie.  DXVK gives awful framerates - use WineD3D11 instead for now.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1540932900,
+    "title": "Mega Man X Legacy Collection / \u30ed\u30c3\u30af\u30de\u30f3X \u30a2\u30cb\u30d0\u30fc\u30b5\u30ea\u30fc \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "743890",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Launcher now works and all games up to x4 work. X4 just sits on black screen. Also had to alter game config to use native resolution of 1920 x 1080.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1543103744,
+    "title": "Mega Man X Legacy Collection / \u30ed\u30c3\u30af\u30de\u30f3X \u30a2\u30cb\u30d0\u30fc\u30b5\u30ea\u30fc \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "743890",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "runs perfectly",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1546089226,
+    "title": "Mega Man X Legacy Collection / \u30ed\u30c3\u30af\u30de\u30f3X \u30a2\u30cb\u30d0\u30fc\u30b5\u30ea\u30fc \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+    "source": "protondb"
+  }
+]

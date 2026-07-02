@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "316810",
+    "cpu": "Intel Core2 Duo     E8500  @ 3.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 9600 GT",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Doesn't launch.\n\nAn error dialogue box pops up:\n\nWin32 function failed: HRESULT 0x80004005\nCall: At line 223 in file \\Graphics_DisplayM.cpp\n\nAfter clicking OK the prompt disappears and the game doesn't launch.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1559100390,
+    "title": "Shadowcrypt",
+    "source": "protondb"
+  },
+  {
+    "appId": "316810",
+    "cpu": "Intel Core2 Duo     E8500  @ 3.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 9600 GT",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Runs using WineD3D11",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1559101474,
+    "title": "Shadowcrypt",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

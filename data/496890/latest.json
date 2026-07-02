@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "496890",
+    "title": "Replica",
+    "timestamp": 1535907760,
+    "rating": "Platinum",
+    "notes": "Ran perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "496890",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "No issues",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536698859,
+    "title": "Replica",
+    "source": "protondb"
+  },
+  {
+    "appId": "496890",
+    "cpu": "i5-2400S CPU @ 2.50GHz",
+    "gpu": "GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Like native",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5926 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536786401,
+    "title": "Replica",
+    "source": "protondb"
+  },
+  {
+    "appId": "496890",
+    "title": "Replica",
+    "timestamp": 1535893360,
+    "rating": "Platinum",
+    "notes": "Ran perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

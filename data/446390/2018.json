@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "446390",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 480",
+    "gpuDriver": "4.5.13540 Compatibility Profile Context",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Nothing runs and non of the tweaks worked. Screen is always black but you can hear sounds when clicking on it. Have tested multiple launch options as well but nothing seems to get it to display an image",
+    "os": "elementary OS 0.4.1 Loki",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1545441841,
+    "title": "Onechanbara Z2: Chaos",
+    "source": "protondb"
+  }
+]

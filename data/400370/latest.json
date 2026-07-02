@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "400370",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "After the start you just see the DOSBox window, but the settings in the dosbox.conf could not be executed meaning no drive is mounted and the game is not started. Most likely this happens due to the wrong paths being used for starting the game.\n\nAs a workaround you can install DOSBox natively and then mount the Normality folder and starting it from there (check the conf file in the DOSBox folder what exactly needs to be done).",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1560699423,
+    "title": "Normality",
+    "source": "protondb"
+  },
+  {
+    "appId": "400370",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-zen1-2-zen",
+    "notes": "No game, only a prompt.",
+    "os": "Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562090251,
+    "title": "Normality",
+    "source": "protondb"
+  }
+]

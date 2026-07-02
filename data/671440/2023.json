@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "671440",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.6-1-MANJARO",
+    "notes": "It can't find the default browser on XFCE (not sure why it'd need it - always thought that was a horrible design, to require signin to some publisher's site)",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1678198944,
+    "title": "Rise of Industry",
+    "source": "protondb"
+  }
+]

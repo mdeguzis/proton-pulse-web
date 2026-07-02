@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "783210",
+    "title": "Aggressors: Ancient Rome",
+    "timestamp": 1536205380,
+    "rating": "Borked",
+    "notes": "Opens Autorun.exe splash screen, but game wont open",
+    "os": "Ubuntu SMP 64-bit (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1800X",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "783210",
+    "cpu": "Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10 / DRM 3.25.0 / 4.17.19-200.fc28.x86_64, LLVM 6.0.1)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.17.19-200.fc28.x86_64",
+    "notes": "Cannot launch new game.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7951 Mb",
+    "rating": "Borked",
+    "timestamp": 1538236634,
+    "title": "Aggressors: Ancient Rome",
+    "source": "protondb"
+  },
+  {
+    "appId": "783210",
+    "title": "Aggressors: Ancient Rome",
+    "timestamp": 1536190980,
+    "rating": "Borked",
+    "notes": "Opens Autorun.exe splash screen, but game wont open",
+    "os": "Ubuntu SMP 64-bit (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1800X",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

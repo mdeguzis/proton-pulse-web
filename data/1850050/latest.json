@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1850050",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.2-2-cachyos",
+    "notes": "Works, but performance could be better",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771677528,
+    "title": "",
+    "source": "protondb"
+  }
+]

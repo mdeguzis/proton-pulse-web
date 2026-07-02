@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "689100",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "The tiny snowflakes that appear over the startup menu were almost the size of the screen (making it unplayable) until I set the launch options to:\nPROTON_FORCE_LARGE_ADDRESS_AWARE=1 %command%\n\nAfter that it worked fine. It takes a few minutes to load, but that happens on Windows too.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1562998619,
+    "title": "Ravager",
+    "source": "protondb"
+  }
+]

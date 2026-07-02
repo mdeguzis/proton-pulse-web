@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1030950",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "4.15.0-106-generic",
+    "notes": "After \"Made with Unity\" and a loading spinning logo, it just has a white screen with a cursor.",
+    "os": "KDE neon User Edition 5.19",
+    "protonVersion": "5.0-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1591834830,
+    "title": "",
+    "source": "protondb"
+  }
+]

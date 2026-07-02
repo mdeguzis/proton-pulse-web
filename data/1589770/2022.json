@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1589770",
+    "cpu": "Intel Xeon           X5460  @ 3.87GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 470.63",
+    "kernel": "5.14.16",
+    "notes": "Only runs well on my hardware on Lightest settings, may be same under Windows.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1643459703,
+    "title": "",
+    "source": "protondb"
+  }
+]

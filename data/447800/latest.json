@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "447800",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.0",
+    "os": "Linux 4.x (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546456998,
+    "title": "LostWinds 2: Winter of the Melodias",
+    "source": "protondb"
+  },
+  {
+    "appId": "447800",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-c989661985)",
+    "kernel": "5.0.12-arch1-1-ARCH",
+    "notes": "Game works on Proton out of the box. I installed manually D9VK and it worked as well fine with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557047771,
+    "title": "LostWinds 2: Winter of the Melodias",
+    "source": "protondb"
+  }
+]

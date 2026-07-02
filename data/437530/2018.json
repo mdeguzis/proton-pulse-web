@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "437530",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Works perfectly with keyboard. If using the steam controller, the controller must be switched to a keyboard-only profile and must be turned on only after the game starts playing sounds at launch.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543915446,
+    "title": "A Blind Legend",
+    "source": "protondb"
+  },
+  {
+    "appId": "437530",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Works perfectly with keyboard. If using the steam controller, the controller must be switched to a keyboard-only profile and must be turned on only after the game starts playing sounds at launch.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543915518,
+    "title": "A Blind Legend",
+    "source": "protondb"
+  }
+]

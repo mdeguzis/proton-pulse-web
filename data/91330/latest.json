@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "91330",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "Game runs to splashscreen for about a second then displays message: \"Bad serial number given in Setup\". There is no way to input serial number. Apparently fix exist: https://forums.bohemia.net/forums/topic/130923-bad-serial-number-given-in-setup-error-tried-everything/ but I don't know how to run regedit in Proton. I tried by winerticks, but regedit window is empty. It's a shame really, because I managed to run Arma II OA sucesfully.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546356110,
+    "title": "Iron Front: Digital War Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "91330",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "The problem is \"bad serial number given in Setup\" - there is nowhere to input the serial. I found the answer here: https://github.com/ValveSoftware/Proton/issues/767. I followed the comments to convert key to hex (just use the terminal) and updated system.reg (add commas after each pair of characters of your hexed key).  After that, game runs flawlessly as far as I can tell.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563141716,
+    "title": "Iron Front: Digital War Edition",
+    "source": "protondb"
+  }
+]

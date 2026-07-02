@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "234270",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.11.0-43-generic",
+    "notes": "Controllers Not Detected with Proton or Native",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1640456594,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "380",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-0905189a25)",
+    "kernel": "5.1.9-arch1-1-ARCH",
+    "notes": "Game works native on Linux. On Proton the game works too out of the box, only if you click on options the game crashes, but I changed the resolution with the parameter -w 3840 -h 2160. I installed manually D9VK and it worked without graphical glitches too with this DX9 to Vulkan translation!",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1560691730,
+    "title": "Half-Life 2: Episode One",
+    "source": "protondb"
+  }
+]

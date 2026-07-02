@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "682570",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Framedrops occur when seemingly building shader cache, framerate and gameplay was perfect afterward. What frame drops do occur are usually very minimal.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1549715661,
+    "title": "SG/ZH: School Girl/Zombie Hunter",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "681970",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.2.1-1-MANJARO",
+    "notes": "It never actually launches. It says \"Running\" in the steam client but nothing happens.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563990863,
+    "title": "The Tavern",
+    "source": "protondb"
+  }
+]

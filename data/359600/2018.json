@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "359600",
+    "cpu": "AMD Ryzen 5 1600X Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.12-1-MANJARO, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.18.12-1-MANJARO",
+    "notes": "Only opens a transparent window. Might be the launcher not loading correctly. Can't play the game.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16053 Mb",
+    "rating": "Borked",
+    "timestamp": 1539971461,
+    "title": "Assassin\u2019s Creed\u00ae Chronicles: Russia",
+    "source": "protondb"
+  },
+  {
+    "appId": "359600",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-42-generic",
+    "notes": "the *Uplay* screen becomes transparent and locked without functionality",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1545149528,
+    "title": "Assassin\u2019s Creed\u00ae Chronicles: Russia",
+    "source": "protondb"
+  }
+]

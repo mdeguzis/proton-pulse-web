@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2128270",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.49, 6.2.15-300.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.2 (git-4d5e73870e)",
+    "kernel": "6.2.15-300.fc38.x86_64",
+    "notes": "works great out of the box. Fun game",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1685394814,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2128270",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "works great just needs offical control layot",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1687535605,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2128270",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "5.15.0-78-generic",
+    "notes": "works well out of the box",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1691856697,
+    "title": "",
+    "source": "protondb"
+  }
+]

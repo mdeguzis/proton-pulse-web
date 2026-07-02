@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "650510",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.6-arch1-1-ARCH",
+    "notes": "Game does not start, regardless of Proton settings.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1549554565,
+    "title": "ZONE OF THE ENDERS THE 2nd RUNNER : M\u2200RS / \u30a2\u30cc\u30d3\u30b9 \u30be\u30fc\u30f3\u30fb\u30aa\u30d6\u30fb\u30a8\u30f3\u30c0\u30fc\u30ba : \u30de\u30fc\u30ba",
+    "source": "protondb"
+  },
+  {
+    "appId": "650510",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Games does not start",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1564581622,
+    "title": "ZONE OF THE ENDERS THE 2nd RUNNER : M\u2200RS / \u30a2\u30cc\u30d3\u30b9 \u30be\u30fc\u30f3\u30fb\u30aa\u30d6\u30fb\u30a8\u30f3\u30c0\u30fc\u30ba : \u30de\u30fc\u30ba",
+    "source": "protondb"
+  }
+]

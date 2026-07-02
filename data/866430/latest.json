@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "866430",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Framerate runs smoothly between 45 and 60fps. Main menu, audio, and matchmaking works correctly. Every ten seconds or so, the game camera will jerk around, making it hard to aim your weapons. ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1559014201,
+    "title": "AS+CEND",
+    "source": "protondb"
+  }
+]

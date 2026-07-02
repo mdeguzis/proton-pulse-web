@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "547960",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Getting achievements, works ( \u0361\u00b0 \u035c\u0296 \u0361\u00b0). Muting game in the menu doesn't work, but not sure is it a game bug or Proton problem.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1546974981,
+    "title": "Space Beret",
+    "source": "protondb"
+  }
+]

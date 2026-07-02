@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "573370",
+    "cpu": "Intel Core i7-4765T @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.9.164-nrj-desktop-1rosa-x86_64",
+    "notes": "works great with 418* nvidia drivers, with 410* has a issue with DX (invisible objects)",
+    "os": "ROSA Desktop Fresh R11 (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553413660,
+    "title": "Tyler: Model 005",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "409000",
+    "title": "Mystery Chronicle: One Way Heroics",
+    "timestamp": 1536173463,
+    "rating": "Silver",
+    "notes": "Online features and videos don't work",
+    "os": "Arch Linux (4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3770 / GTX 660ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "409000",
+    "cpu": "AMD FX(tm)-6100 Six-Core Processor",
+    "gpu": "GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.51",
+    "kernel": "4.15.0-29-generic",
+    "notes": "FMVs don't play. Input is detected only on 1/2 frame. ",
+    "os": "elementary OS 0.4.1 Loki (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5939 Mb",
+    "rating": "Silver",
+    "timestamp": 1536622868,
+    "title": "Mystery Chronicle: One Way Heroics",
+    "source": "protondb"
+  },
+  {
+    "appId": "409000",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541868377,
+    "title": "Mystery Chronicle: One Way Heroics",
+    "source": "protondb"
+  },
+  {
+    "appId": "409000",
+    "title": "Mystery Chronicle: One Way Heroics",
+    "timestamp": 1536159063,
+    "rating": "Silver",
+    "notes": "Online features and videos don't work",
+    "os": "Arch Linux (4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3770 / GTX 660ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

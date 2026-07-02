@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "923890",
+    "cpu": "Intel Core i7         870  @ 2.93GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-38-generic",
+    "notes": "When using Proton 3.7-8 Beta the assets for the menu would not show correctly. Attempted to use various commands and nothing worked besides changing the version of Proton to 3.16-4 Beta",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541564682,
+    "title": "Yet another tower defence",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "503210",
+    "cpu": "Intel(R) Core(TM) i7-2600 CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.45",
+    "kernel": "4.18.7-200.fc28.x86_64",
+    "notes": "Everything seems to work perfectly.",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7930 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537367208,
+    "title": "Sentry Knight Tactics",
+    "source": "protondb"
+  },
+  {
+    "appId": "503210",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.16-200.fc28.x86_64",
+    "notes": "Audio is a little glitchy, could just be me though, or pulseaudio being dodgy",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540601772,
+    "title": "Sentry Knight Tactics",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "370910",
+    "title": "Kathy Rain",
+    "timestamp": 1535758042,
+    "rating": "Platinum",
+    "notes": "Flawless",
+    "os": "Ubuntu 18.04 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "370910",
+    "title": "Kathy Rain",
+    "timestamp": 1535778283,
+    "rating": "Platinum",
+    "notes": "runs flawless",
+    "os": "Archlinux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "E3-1230 V2 / GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "370910",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "native",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541407820,
+    "title": "Kathy Rain",
+    "source": "protondb"
+  },
+  {
+    "appId": "370910",
+    "cpu": "Intel Core i7-4900MQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.18.14-95.current",
+    "notes": "Perfect",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15 GB",
+    "rating": "Platinum",
+    "timestamp": 1541447970,
+    "title": "Kathy Rain",
+    "source": "protondb"
+  },
+  {
+    "appId": "370910",
+    "title": "Kathy Rain",
+    "timestamp": 1535743642,
+    "rating": "Platinum",
+    "notes": "Flawless",
+    "os": "Ubuntu 18.04 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "370910",
+    "title": "Kathy Rain",
+    "timestamp": 1535763883,
+    "rating": "Platinum",
+    "notes": "runs flawless",
+    "os": "Archlinux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "E3-1230 V2 / GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

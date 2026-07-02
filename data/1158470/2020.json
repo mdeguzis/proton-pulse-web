@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1158470",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 418.113",
+    "kernel": "4.19.0-9-amd64",
+    "notes": "Works out of the box",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1590360926,
+    "title": "Voxelgram",
+    "source": "protondb"
+  },
+  {
+    "appId": "1158470",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.2.2",
+    "kernel": "5.9.8-200.fc33.x86_64",
+    "notes": "Flawless out of the box",
+    "os": "Fedora 33",
+    "protonVersion": "5.13-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1606411328,
+    "title": "Voxelgram",
+    "source": "protondb"
+  }
+]

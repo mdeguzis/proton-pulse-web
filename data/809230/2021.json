@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "809230",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-52-generic",
+    "notes": "no significant problems, works very well",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1612014495,
+    "title": "Unity of Command II",
+    "source": "protondb"
+  },
+  {
+    "appId": "809230",
+    "cpu": "Intel Core i9-9880H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T2000",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.8.0-44-generic",
+    "notes": "all seems good",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1614891967,
+    "title": "Unity of Command II",
+    "source": "protondb"
+  },
+  {
+    "appId": "809230",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.10.0-8-amd64",
+    "notes": "It run out of the box with Proton 6.3-7",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1637089648,
+    "title": "Unity of Command II",
+    "source": "protondb"
+  }
+]

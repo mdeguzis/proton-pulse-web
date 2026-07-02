@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "732240",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-43-lowlatency",
+    "notes": "Tried all proton variable combinations, no dice. When starting the game it shows a blank screen for some seconds then opens up a \"Fatal Error!\" dialog window. Opened up a compatibility report on proton's github, https://github.com/ValveSoftware/Proton/issues/2847 and also commented this status on the proper steam thread at https://steamcommunity.com/app/732240/discussions/0/1742216566127593383/?ctp=4 -- please check those for updated instructions if you want to run the game (it's UE4, so it should run at some point).",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561962291,
+    "title": "SpaceBourne",
+    "source": "protondb"
+  }
+]

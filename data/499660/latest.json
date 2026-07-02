@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "499660",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It starts fine, but then it bombs immediately. The game will not run, which is sad, because I read an earlier report that claimed to work flawlessly.",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1547321736,
+    "title": "Medieval Kingdom Wars",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "499660",
+    "cpu": "AMD FX-8120 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.13-300.fc29.x86_64",
+    "notes": "Hello I can confirm this one works almost flawlessly. But one thing that I noticed is that the game freezes if loses focus. Sadly for Gnome users this is caused by the window manager popup telling you that the game doesn't respond (which is untrue) but if you use any other DE or WM like XFCE, KDE, etc. it should work correctly. ",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1547581767,
+    "title": "Medieval Kingdom Wars",
+    "source": "protondb"
+  },
+  {
+    "appId": "499660",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Played the tutorial; had no issues with window focus",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548658130,
+    "title": "Medieval Kingdom Wars",
+    "source": "protondb"
+  },
+  {
+    "appId": "499660",
+    "cpu": "AMD A10-7860K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.15.0-55-generic",
+    "notes": "The game is not playable",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "ram": "14 GB",
+    "rating": "Borked",
+    "timestamp": 1564651447,
+    "title": "Medieval Kingdom Wars",
+    "source": "protondb"
+  }
+]

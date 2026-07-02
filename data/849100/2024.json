@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "849100",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.5-307.bazzite.fc41.x86_64",
+    "notes": "The game is basically unplayable if you got an average PC. Only someone with a NASA PC will be able to play . No steering wheel either",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1730842319,
+    "title": "",
+    "source": "protondb"
+  }
+]

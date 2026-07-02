@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "360830",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.6-100.fc40.x86_64",
+    "notes": "Native doesn't load; switch to Proton",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1749683791,
+    "title": "",
+    "source": "protondb"
+  }
+]

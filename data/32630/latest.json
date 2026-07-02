@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "32630",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Like native.",
+    "os": "Ubuntu 18.04.1 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547322132,
+    "title": "Delta Force 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "32630",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon HD 8800",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.13-126.current",
+    "notes": "Works fine in general but crashes when changing the resolution in-game, also there are FPS drops when looking far away through the binoculars.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1569581975,
+    "title": "Delta Force 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "32630",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.79-1-MANJARO",
+    "notes": "no issues, software is better than hardware, capped at 62 fps",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1572181387,
+    "title": "Delta Force 2",
+    "source": "protondb"
+  }
+]

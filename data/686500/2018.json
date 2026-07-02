@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "686500",
+    "title": "Sylvio 2",
+    "timestamp": 1535169420,
+    "rating": "Borked",
+    "notes": "Requires launch option \"PROTON_NO_D3D11=1 %command%\" to run. But the menu/option screen is bugged, can't select to start the game. The menu screen is very buggy on windows too though.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "686500",
+    "title": "Sylvio 2",
+    "timestamp": 1535155020,
+    "rating": "Borked",
+    "notes": "Requires launch option \"PROTON_NO_D3D11=1 %command%\" to run. But the menu/option screen is bugged, can't select to start the game. The menu screen is very buggy on windows too though.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

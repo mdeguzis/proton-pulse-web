@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "780500",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.5.8-arch1-1",
+    "notes": "Very playable with minor issue",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-13",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1583785026,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "780500",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "allTheTime",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.1.6",
+    "kernel": "5.7.17-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1599472583,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "780500",
+    "cpu": "Intel Core2 Duo     E7200  @ 2.53GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce 210",
+    "gpuDriver": "NVIDIA 340.108",
+    "kernel": "5.9.14-arch1-1",
+    "notes": "Perfectly playable. Everything works.",
+    "os": "Obarun Linux",
+    "protonVersion": "5.13-4",
+    "ram": "2 GB",
+    "rating": "gold",
+    "timestamp": 1608936659,
+    "title": "",
+    "source": "protondb"
+  }
+]

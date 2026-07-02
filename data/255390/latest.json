@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "255390",
+    "cpu": "AMD Phenom II X6 1090T",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 418.30",
+    "kernel": "4.20.11",
+    "notes": "work very well, no problem with keyboard,but if you use a controller,there is a uggly bug: the left button is always selected that give strange things,otherwise it's playable\n",
+    "os": "Debian GNU/Linux 9.8 (stretch) (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1551005525,
+    "title": "Max: The Curse of Brotherhood",
+    "source": "protondb"
+  },
+  {
+    "appId": "255390",
+    "cpu": "AMD Phenom II X6 1090T",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.5-Custom4gaming",
+    "notes": "work well",
+    "os": "Debian GNU/Linux buster/sid (64\u00a0bits)",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-2",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1558863652,
+    "title": "Max: The Curse of Brotherhood",
+    "source": "protondb"
+  },
+  {
+    "appId": "255390",
+    "cpu": "AMD Phenom II X6 1090T",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "os": "Debian GNU/Linux 10 (buster) (64\u00a0bits)",
+    "protonVersion": "4.11-2",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1565725366,
+    "title": "Max: The Curse of Brotherhood",
+    "source": "protondb"
+  }
+]

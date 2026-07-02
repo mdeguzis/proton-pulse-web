@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "745830",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "Everything works out of the box for me on Manjaro Linux with Steam Beta Proton 4.2-2",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555527357,
+    "title": "Dragon Sinker",
+    "source": "protondb"
+  }
+]

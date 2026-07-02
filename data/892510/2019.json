@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "892510",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "It runs fine but sometimes it stutters, very playable still",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1570099977,
+    "title": "Slay Together",
+    "source": "protondb"
+  }
+]

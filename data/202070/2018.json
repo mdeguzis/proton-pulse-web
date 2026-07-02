@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "202070",
+    "title": "Choplifter HD",
+    "timestamp": 1535013480,
+    "rating": "Borked",
+    "notes": "Microsoft .NET Framework 3.5 SP1 will not install, \"You must use the Role Management tool\". Game fails to run",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7 5820k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "202070",
+    "title": "Choplifter HD",
+    "timestamp": 1535506229,
+    "rating": "Borked",
+    "notes": ".NET 3.5 error",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "202070",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": ".NET error",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Borked",
+    "timestamp": 1539222010,
+    "title": "Choplifter HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "202070",
+    "title": "Choplifter HD",
+    "timestamp": 1534999080,
+    "rating": "Borked",
+    "notes": "Microsoft .NET Framework 3.5 SP1 will not install, \"You must use the Role Management tool\". Game fails to run",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7 5820k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "202070",
+    "title": "Choplifter HD",
+    "timestamp": 1535491829,
+    "rating": "Borked",
+    "notes": ".NET 3.5 error",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

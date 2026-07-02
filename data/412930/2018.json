@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "412930",
+    "cpu": "Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.13.0-41-generic",
+    "os": "Linux Mint 18.2 Sonya (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7934 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537418016,
+    "title": "Farm Mania: Hot Vacation",
+    "source": "protondb"
+  },
+  {
+    "appId": "412930",
+    "cpu": "Intel Core2 Duo     E8400  @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce 8500 GT",
+    "gpuDriver": "NVIDIA 340.106",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "everything works out of the box",
+    "os": "Debian GNU/Linux 9.5 (stretch)",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1542896747,
+    "title": "Farm Mania: Hot Vacation",
+    "source": "protondb"
+  },
+  {
+    "appId": "412930",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Instantly crashed on first startup, after that it worked flawlessly.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1542999653,
+    "title": "Farm Mania: Hot Vacation",
+    "source": "protondb"
+  }
+]

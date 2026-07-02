@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "399120",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.2.0-1-MANJARO",
+    "notes": "After it started it gave me a blank screen. Did not tried to disable or override default proton settings.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-6",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1560340323,
+    "title": "Prospekt",
+    "source": "protondb"
+  }
+]

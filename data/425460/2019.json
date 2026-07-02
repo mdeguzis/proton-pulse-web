@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "425460",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.12-arch1-1-ARCH",
+    "notes": "Requires desktop resolution of 1920x1080 or some parts are half off-screen (same on windows), Requires launch options:\nPROTON_FORCE_LARGE_ADDRESS_AWARE=1 %command%\nor you will have missing/black graphics at some points.\nController works fine, for keyboard controls see 'view the manual' link from steam store page",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1561307531,
+    "title": "Tokyo Twilight Ghost Hunters Daybreak: Special Gigs",
+    "source": "protondb"
+  }
+]

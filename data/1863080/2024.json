@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1863080",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Runs perfectly ootb!",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1704197096,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1863080",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.5.0-10036-tuxedo",
+    "notes": "Native version works great out of the box.",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1714720057,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1863080",
+    "cpu": "Intel Core i7-10875H @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.8.0-50-generic",
+    "notes": "Native version works great out of the box.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1714750881,
+    "title": "",
+    "source": "protondb"
+  }
+]

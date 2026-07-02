@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "240760",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Menu is scaled off screen (~1920x1080)\nOn my 1440x900 display I could reach and toggle fullscreen checkbox, after that it worked normal.\nGraphics performance marginally better than the native port for me.\nForced Proton version 4.11-3",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1567351659,
+    "title": "Wasteland 2: Director's Cut",
+    "source": "protondb"
+  }
+]

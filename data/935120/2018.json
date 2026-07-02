@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "935120",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Does not start",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541015386,
+    "title": "GonzoVR",
+    "source": "protondb"
+  },
+  {
+    "appId": "935120",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "No tweaks needed, but I only tested the tutorial. Did not manage to test live broadcast.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1541330590,
+    "title": "GonzoVR",
+    "source": "protondb"
+  }
+]

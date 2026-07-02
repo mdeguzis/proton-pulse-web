@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1373700",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "The game works perfectly on linux - you don't need to do anything extra :)",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1604944708,
+    "title": "Barry the Bunny",
+    "source": "protondb"
+  },
+  {
+    "appId": "1373700",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-52-generic",
+    "notes": "It is impossible to distinguish this game from the native version :)",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1605364386,
+    "title": "Barry the Bunny",
+    "source": "protondb"
+  }
+]

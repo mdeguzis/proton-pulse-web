@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "880300",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Requires a mfplat fix, detailed here: https://github.com/z0z0z/mf-install",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1572123423,
+    "title": "Blood will be Spilled",
+    "source": "protondb"
+  }
+]

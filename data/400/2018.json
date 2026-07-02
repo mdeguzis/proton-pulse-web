@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "400",
+    "title": "Portal",
+    "timestamp": 1534910400,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Arch",
+    "gpuDriver": "Mesa git 18.3",
+    "specs": "i7-4770k / Vega 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "400",
+    "title": "Portal",
+    "timestamp": 1535159507,
+    "rating": "Platinum",
+    "notes": "Runs excellent",
+    "os": "Pop!_OS",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-4600u / iGPU HD 4400",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "400",
+    "title": "Portal",
+    "timestamp": 1534896000,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Arch",
+    "gpuDriver": "Mesa git 18.3",
+    "specs": "i7-4770k / Vega 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "400",
+    "title": "Portal",
+    "timestamp": 1535145107,
+    "rating": "Platinum",
+    "notes": "Runs excellent",
+    "os": "Pop!_OS",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-4600u / iGPU HD 4400",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

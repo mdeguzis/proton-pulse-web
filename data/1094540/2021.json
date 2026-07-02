@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1094540",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 (NAVI10, DRM 3.41.0, 5.13.0-7620-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.13.0-7620-generic",
+    "notes": "Works out of the box\nUses xbox controller layout",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1637493148,
+    "title": "",
+    "source": "protondb"
+  }
+]

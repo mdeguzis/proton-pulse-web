@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2937310",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 470.256.02",
+    "kernel": "6.1.0-23-amd64",
+    "notes": "Im not sure if its my computers specs, or proton version as ive tried them all. you either instantly crash, or you get the missing il2cpp error. it seems to be something that handles c++ in unity.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1731736325,
+    "title": "",
+    "source": "protondb"
+  }
+]

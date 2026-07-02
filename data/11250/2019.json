@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "11250",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.1-arch1-1-ARCH",
+    "notes": "Fails to start",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552557886,
+    "title": "Pacific Storm",
+    "source": "protondb"
+  },
+  {
+    "appId": "11250",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "5.1.4-arch1-1-ARCH",
+    "notes": "Says running for a few seconds and stops even with wineD3d",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559216702,
+    "title": "Pacific Storm",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "567370",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.13.0-32-generic",
+    "notes": "Game runs fine but the mouse look keeps jumping to the upper left randomly making it very difficult to play. ",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1548350857,
+    "title": "Atomic 79",
+    "source": "protondb"
+  },
+  {
+    "appId": "567370",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.32-1-MANJARO",
+    "notes": "Runs at the full 60fps at all times, however view keeps jumping up and to the left suddenly at seemingly random intervals. Makes game virtually unplayable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554575124,
+    "title": "Atomic 79",
+    "source": "protondb"
+  }
+]

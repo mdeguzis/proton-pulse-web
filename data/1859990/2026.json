@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1859990",
+    "cpu": "AMD Ryzen 5 7640U w/ Radeon 760M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon 760M (radeonsi, phoenix, LLVM 21.1.2, DRM 3.64, 6.18.2-zen2)",
+    "gpuDriver": "4.6 Mesa 25.3.2",
+    "kernel": "6.18.2-zen2",
+    "notes": "",
+    "os": "NixOS 26.05 (Yarara)",
+    "protonVersion": "10.0-3",
+    "ram": "23 GB",
+    "rating": "silver",
+    "timestamp": 1767717614,
+    "title": "",
+    "source": "protondb"
+  }
+]

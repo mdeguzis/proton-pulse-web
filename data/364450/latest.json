@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "364450",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with no tweaks needed. Completed a full playthrough (game is short). Does not have native fullscreen option so must be played in window.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560092274,
+    "title": "Freshman Year",
+    "source": "protondb"
+  }
+]

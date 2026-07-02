@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "324810",
+    "title": "TOXIKK",
+    "timestamp": 1535803960,
+    "rating": "Borked",
+    "notes": "Tested in both Native and Runtime. The game just refuses to launch.",
+    "os": "Antergos",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "324810",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Does not launch. Not even with PROTON_USE_WINED3D11=1 %command%",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15972 Mb",
+    "rating": "Borked",
+    "timestamp": 1536870441,
+    "title": "TOXIKK\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "324810",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD Radeon (TM) R9 Fury Series (FIJI, DRM 3.23.0, 4.15.0-36-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Won't launch.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15901 Mb",
+    "rating": "Borked",
+    "timestamp": 1539402363,
+    "title": "TOXIKK\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "324810",
+    "title": "TOXIKK",
+    "timestamp": 1535789560,
+    "rating": "Borked",
+    "notes": "Tested in both Native and Runtime. The game just refuses to launch.",
+    "os": "Antergos",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

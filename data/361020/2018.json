@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "361020",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Pefect",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537214918,
+    "title": "Luxor HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "361020",
+    "cpu": "AMD Ryzen 7 PRO 2700U w/ Radeon Vega Mobile Gfx",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-beb66d3 2018-11-17 bionic-oibaf-ppa)",
+    "kernel": "4.19.0-041900-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "15 GB",
+    "rating": "Platinum",
+    "timestamp": 1542668294,
+    "title": "Luxor HD",
+    "source": "protondb"
+  }
+]

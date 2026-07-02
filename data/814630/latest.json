@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "814630",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "No issues found during very quick test.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557684790,
+    "title": "ELF",
+    "source": "protondb"
+  }
+]

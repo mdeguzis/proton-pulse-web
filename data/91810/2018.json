@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "91810",
+    "title": "Ancients of Ooga",
+    "timestamp": 1535706671,
+    "rating": "Silver",
+    "notes": "No sound. Everything else works that I can tell.",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "91810",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Sound doesn't work at all. Even with installing xact. Solid performance otherwise.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1541748259,
+    "title": "Ancients of Ooga",
+    "source": "protondb"
+  },
+  {
+    "appId": "91810",
+    "title": "Ancients of Ooga",
+    "timestamp": 1535692271,
+    "rating": "Silver",
+    "notes": "No sound. Everything else works that I can tell.",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

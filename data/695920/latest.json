@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "695920",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.7-rt5-MANJARO",
+    "notes": "The game hangs up at the first chapter of Story Mode, after pressing the Play button. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1556221791,
+    "title": "Super Seducer : How to Talk to Girls",
+    "source": "protondb"
+  }
+]

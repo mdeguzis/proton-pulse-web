@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2166920",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.54, 6.6.35-gentoo-dist)",
+    "gpuDriver": "4.6 Mesa 24.2.6",
+    "kernel": "6.6.35-gentoo-dist",
+    "notes": "Works perfectly out of the box, native to linux",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1732759130,
+    "title": "Captain Contraption's Chocolate Factory",
+    "source": "protondb"
+  }
+]

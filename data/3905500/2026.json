@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3905500",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.19.5-3-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1779558379,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3905500",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, ACO, DRM 3.64, 7.0.10-201.fc44.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.7",
+    "kernel": "7.0.10-201.fc44.x86_64",
+    "notes": "Launches and runs well, but the mouse pointer isn't visible",
+    "os": "Fedora Linux 44 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1780773276,
+    "title": "",
+    "source": "protondb"
+  }
+]

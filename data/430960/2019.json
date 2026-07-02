@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "430960",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Under Proton 4.11 w/ D9VK enabled everything works as expected and the fullscreen bug present in earlier Proton versions is fixed.",
+    "os": "Unknown",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1565786698,
+    "title": "Lucy -The Eternity She Wished For-",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

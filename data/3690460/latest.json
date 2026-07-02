@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3690460",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.5-arch1-1",
+    "notes": "runs without issues",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768640326,
+    "title": "",
+    "source": "protondb"
+  }
+]

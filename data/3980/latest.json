@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "3980",
+    "cpu": "AMD E1-6010 APU with AMD Radeon R2 Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "4.20.16-112.current",
+    "notes": "Performance was as expected given the specs of this laptop. No more flickering of the cursor and all menus render fine. Videos in game play as intended and overall is a very positive experience. ",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "5 GB",
+    "rating": "Platinum",
+    "timestamp": 1553513221,
+    "title": "CivCity: Rome",
+    "source": "protondb"
+  },
+  {
+    "appId": "3980",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558733232,
+    "title": "CivCity: Rome",
+    "source": "protondb"
+  },
+  {
+    "appId": "3980",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.6-arch1-1-ARCH",
+    "notes": "Runs flawlessly out of the box. Played the first three missions. Listened to every dialogue, played with the settings. No issues at all.\n\nHint: If you want to set custom resolutions, manually edit   [...]/steamapps/compatdata/3980/pfx/drive_c/users/steamuser/My Documents/CivCity Rome/CivCityRome.GraphicsSettings.xml\n",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1559670192,
+    "title": "CivCity: Rome",
+    "source": "protondb"
+  }
+]

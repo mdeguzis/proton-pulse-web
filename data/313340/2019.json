@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "313340",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-21dd881416)",
+    "kernel": "5.1.12-arch1-1-ARCH",
+    "notes": "Works native on Linux. On Proton it works too with DXVK.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561125951,
+    "title": "Mountain",
+    "source": "protondb"
+  }
+]

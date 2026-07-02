@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "647590",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.9.0-7-amd64",
+    "notes": "It does launch, but I cannot play game because Easy Anti Cheat. ",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561535629,
+    "title": "Space Junkies\u2122",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "289930",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Seems to work great",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536932787,
+    "title": "TransOcean: The Shipping Company",
+    "source": "protondb"
+  },
+  {
+    "appId": "289930",
+    "cpu": "AMD A8-5600K APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "The campaign gets stuck in the tutorial (getting the first contract). The rest of the campaign is unplayable.",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541264748,
+    "title": "TransOcean: The Shipping Company",
+    "source": "protondb"
+  },
+  {
+    "appId": "289930",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.8-200.fc28.x86_64",
+    "notes": "Game itself seems to run flawlessly, but no contracts load, neither in free play nor the campaign, making the game unplayable. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1545381355,
+    "title": "TransOcean: The Shipping Company",
+    "source": "protondb"
+  }
+]

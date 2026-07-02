@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy - Proton Pulse</title>
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/base.css?v=45c7e06d">
+<link rel="stylesheet" href="css/shared/topbar.css?v=2d6b5e52">
+<link rel="stylesheet" href="css/shared/site.css?v=e05a0f73">
+<link rel="stylesheet" href="css/shared/cards.css?v=16c748ed">
+<link rel="stylesheet" href="css/index/index.css?v=c8fe17a2">
+<style>
+  .prose { max-width: 720px; margin: 2rem auto; line-height: 1.7; }
+  .prose h1 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+  .prose h2 { font-size: 1.15rem; margin-top: 2rem; color: var(--accent, #66ccff); }
+  .prose p, .prose ul { color: var(--muted, #aaa); }
+  .prose ul { padding-left: 1.4rem; }
+  .prose a { color: var(--accent, #66ccff); }
+  .updated { font-size: 0.8rem; color: var(--muted, #888); }
+</style>
+</head>
+<body>
+
+
+
+<!-- Shared topbar injected by topbar.js -->
+<div class="main-content">
+<div class="prose">
+
+<h1>Privacy Policy</h1>
+<p class="updated">Last updated: April 15, 2026</p>
+
+<h2>What data we collect</h2>
+<p>
+  When you sign in with Steam, we receive your Steam ID, display name, and
+  avatar URL from Steam's public profile API. This info is stored in our
+  authentication provider (Supabase) so we can identify your account.
+</p>
+<p>
+  If you submit Proton compatibility configs or vote on reports, that activity
+  is tied to your account so you can manage it later.
+</p>
+
+<h2>What we don't collect</h2>
+<ul>
+  <li>We don't track you with analytics or ad pixels</li>
+  <li>We don't sell or share your data with third parties</li>
+  <li>We don't access your Steam account beyond public profile info (no games, no friends, no purchase history)</li>
+</ul>
+
+<h2>Where data is stored</h2>
+<p>
+  Authentication is handled by <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>
+  (hosted on AWS). User-submitted configs and votes are stored in a Supabase
+  Postgres database. The static site itself is hosted on GitHub Pages.
+</p>
+
+<h2>Data retention</h2>
+<p>
+  You can delete your account and all associated data from the
+  <a href="profile.html">account management page</a> at any time. If you sign
+  out and never return, your profile data stays in Supabase until you request
+  deletion.
+</p>
+
+<h2>Open source</h2>
+<p>
+  This project is fully open source. You can audit exactly what data we collect
+  and how we handle it by reading the code:
+</p>
+<ul>
+  <li><a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener">Data site repo</a></li>
+  <li><a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener">Decky plugin repo</a></li>
+</ul>
+
+<h2>Contact</h2>
+<p>
+  Questions? Open an issue on
+  <a href="https://github.com/mdeguzis/proton-pulse-web/issues" target="_blank" rel="noopener">GitHub</a>
+  or email <a href="mailto:mdeguzis@gmail.com">mdeguzis@gmail.com</a>.
+</p>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=79bf62c6"></script>
+<script src="js/lib/analytics.js?v=e6dfbad8"></script>
+<script src="js/lib/topbar.js?v=449040e3"></script>
+<script src="js/lib/toast.js?v=7bb23014"></script>
+</body>
+</html>

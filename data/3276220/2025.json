@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3276220",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 18.1.8, DRM 3.59, 6.12.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.2-arch1.1",
+    "kernel": "6.12.7-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1739748198,
+    "title": "",
+    "source": "protondb"
+  }
+]

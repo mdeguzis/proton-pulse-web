@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "397740",
+    "cpu": "AMD A8-5550M APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.1 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Lag in some areas and alt-tabbing out of fullscreen only shows the top left corner of the game until you go back to fullscreen. Battles and everything else play fine.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1557331743,
+    "title": "Hylics",
+    "source": "protondb"
+  },
+  {
+    "appId": "397740",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.5-gentoo",
+    "notes": "Works great out of the box. Gamepad doesn't work in fullscreen, had to map controller to keyboard",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2.2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563859292,
+    "title": "Hylics",
+    "source": "protondb"
+  },
+  {
+    "appId": "397740",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "Game runs fine out of the box, occasionally crashes when loading the world. Console seems to suggest the game is running out of memory. I would suggest adding \"PROTON_FORCE_LARGE_ADDRESS_AWARE=1 %command%\" to the launch options for the game, but I'm not sure if this is effective yet.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1568570610,
+    "title": "Hylics",
+    "tweaks": {
+      "largeAddressAware": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "397740",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.15-1-MANJARO",
+    "notes": "Works perfectly, fullscreen works now too.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569049184,
+    "title": "Hylics",
+    "source": "protondb"
+  }
+]

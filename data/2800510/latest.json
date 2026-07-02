@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2800510",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 15.0.7, DRM 3.57, 6.8.0-76060800daily20240311-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "Works out of the box",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1724794924,
+    "title": "",
+    "source": "protondb"
+  }
+]

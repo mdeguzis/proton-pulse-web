@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "322210",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Everything is fine, Steam Controller working. GG",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555661778,
+    "title": "Guns, Gore & Cannoli",
+    "source": "protondb"
+  },
+  {
+    "appId": "322210",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.0-0.bpo.4-amd64",
+    "notes": "it worked like a charm. I used xbox 360 controller.",
+    "os": "Debian GNU/Linux 9.9 (stretch) (64\u00a0bits)",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557694442,
+    "title": "Guns, Gore & Cannoli",
+    "source": "protondb"
+  },
+  {
+    "appId": "322210",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-8d5f905 2019-09-18 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-23-generic",
+    "notes": "work fine, play with gamepad xbox360",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "3.16-9",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1569004796,
+    "title": "Guns, Gore & Cannoli",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

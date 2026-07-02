@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "794490",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.0",
+    "kernel": "5.3.15-1-MANJARO",
+    "notes": "Unable to get the game to run at all",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1579483276,
+    "title": "Journey Of Life",
+    "source": "protondb"
+  },
+  {
+    "appId": "794490",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.2",
+    "kernel": "5.4.12-1-MANJARO",
+    "notes": "Installs fine. Starts, but before you get anywhere you get a fatal error and quits.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1592436073,
+    "title": "Journey Of Life",
+    "source": "protondb"
+  },
+  {
+    "appId": "794490",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-52-generic",
+    "notes": "Fatal Error no matter what version of Proton. This game should run, it appears to be an issue with a win64 process that can not start.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.13-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1604369421,
+    "title": "Journey Of Life",
+    "source": "protondb"
+  }
+]

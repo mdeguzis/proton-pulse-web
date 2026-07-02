@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1283130",
+    "cpu": "Intel Core i7-4930K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.5.10-arch1-1",
+    "notes": "Early access, no sound in game yet. Played all training, normal, hard and insane levels without issue",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1589301802,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1283130",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD OLAND",
+    "gpuDriver": "4.5 Mesa 20.0.4",
+    "kernel": "5.4.33-3-MANJARO",
+    "notes": "Runs perfectly out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1591553793,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1283130",
+    "cpu": "AMD E2-3800 APU with Radeon HD Graphics",
+    "duration": "unreported",
+    "gpu": "AMD KABINI",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.0-53-generic",
+    "notes": "Runs perfectly, but a controller doesn't work without configuration in steam.",
+    "os": "KDE neon User Edition 5.19",
+    "protonVersion": "5.0-9",
+    "ram": "3 GB",
+    "rating": "gold",
+    "timestamp": 1592766139,
+    "title": "",
+    "source": "protondb"
+  }
+]

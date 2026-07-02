@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1619750",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 555.58",
+    "kernel": "6.9.7-2-cachyos",
+    "notes": "Also, game assets randomly disappear when playing so you have to restart the whole game to fix that. Mods will not work if you launch with nw-js.\n\n(https://nwjs.io/downloads/) if you want to fix.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1721035350,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1619750",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.10-arch1-1",
+    "notes": "Download linux version of nw.js, extract the tarball and copy all of its contents into Karryn's Prison install directory overwriting the files. Then open \"nw\" instead of running through steam.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1727223573,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1619750",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.6-arch1-1",
+    "notes": "Perfectly stable on older Proton versions",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "129 GB",
+    "rating": "platinum",
+    "timestamp": 1727683393,
+    "title": "",
+    "source": "protondb"
+  }
+]

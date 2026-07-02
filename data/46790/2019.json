@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "46790",
+    "cpu": "AMD FX-9590 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-43-generic",
+    "notes": "the game will install but wont run, it runs the first run installers each time i try to launch the game",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1555452086,
+    "title": "Armada 2526",
+    "source": "protondb"
+  },
+  {
+    "appId": "46790",
+    "cpu": "AMD FX-9590 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-43-generic",
+    "notes": "the game wont start, even with defrent proton versions and launch options. it keeps runing the first time launch installation of .net 3.5 and vcredist_x86 ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556741112,
+    "title": "Armada 2526",
+    "source": "protondb"
+  },
+  {
+    "appId": "46790",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Won't launch",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1561842263,
+    "title": "Armada 2526",
+    "source": "protondb"
+  },
+  {
+    "appId": "46790",
+    "cpu": "AMD FX-9590 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-43-generic",
+    "notes": "same as the other report launches to install things on first run and after loading crashes",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563635109,
+    "title": "Armada 2526",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

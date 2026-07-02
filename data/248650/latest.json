@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "248650",
+    "cpu": "Intel Core i7-4702MQ @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 750M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "14 GB",
+    "rating": "Platinum",
+    "timestamp": 1555972320,
+    "title": "Draw a Stickman: EPIC",
+    "source": "protondb"
+  },
+  {
+    "appId": "248650",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.4.118",
+    "notes": "Game now works perfectly with Proton. (Used to not run at all)",
+    "os": "Linux 4.4",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557164809,
+    "title": "Draw a Stickman: EPIC",
+    "source": "protondb"
+  },
+  {
+    "appId": "248650",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-30deepin-generic",
+    "notes": "like native",
+    "os": "Deepin 15.10.1",
+    "protonVersion": "4.2-7",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1560653153,
+    "title": "Draw a Stickman: EPIC",
+    "source": "protondb"
+  }
+]

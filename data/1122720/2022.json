@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1122720",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.15.15-76051515-generic",
+    "notes": "Great game and great performance with proton",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1649498825,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1122720",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Excellent on Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1649726668,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1122720",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.1.0-1-MANJARO",
+    "notes": "No problems",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1671770450,
+    "title": "",
+    "source": "protondb"
+  }
+]

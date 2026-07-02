@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "522490",
+    "title": "Carrie's Order Up!",
+    "timestamp": 1536222681,
+    "rating": "Borked",
+    "notes": "Boots without issues, but when you start a game, it crashes with \"FATAL ERROR in Vertex Shader compilation...\"",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "522490",
+    "title": "Carrie's Order Up!",
+    "timestamp": 1536208281,
+    "rating": "Borked",
+    "notes": "Boots without issues, but when you start a game, it crashes with \"FATAL ERROR in Vertex Shader compilation...\"",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1161160",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.6-arch1-1",
+    "notes": "",
+    "os": "Arch Linux(64\ube44\ud2b8)",
+    "protonVersion": "6.3-5",
+    "ram": "15925Mb",
+    "rating": "gold",
+    "timestamp": 1627814142,
+    "title": "Talesshop Puzzle",
+    "source": "protondb"
+  },
+  {
+    "appId": "1161160",
+    "cpu": "Intel Core i3-4000M @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.1.4 (git-ac105a8e6e)",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Perpect.",
+    "os": "Pop-OS 20.04 (Flatpak runtime)(64\ube44\ud2b8)",
+    "protonVersion": "6.3-5",
+    "ram": "7877Mb",
+    "rating": "gold",
+    "timestamp": 1629357396,
+    "title": "Talesshop Puzzle",
+    "source": "protondb"
+  }
+]

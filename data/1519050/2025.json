@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1519050",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800M (radeonsi, navi22, LLVM 19.1.7, DRM 3.63, 6.15.4)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.15.4",
+    "notes": "Works out of the box.",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1754763294,
+    "title": "",
+    "source": "protondb"
+  }
+]

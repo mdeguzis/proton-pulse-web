@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "377190",
+    "title": "Pale Echoes",
+    "timestamp": 1535440958,
+    "rating": "Platinum",
+    "notes": "No problems",
+    "os": "4.18.5-arch1-1-ARCH 64bit",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600 / gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "377190",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Fullscreen doesn't work. Controls work fine including gamepad.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Silver",
+    "timestamp": 1539833757,
+    "title": "Pale Echoes",
+    "source": "protondb"
+  },
+  {
+    "appId": "377190",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 With Max-Q Design",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Worked perfectly fine as far as I can see",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541214345,
+    "title": "Pale Echoes",
+    "source": "protondb"
+  },
+  {
+    "appId": "377190",
+    "title": "Pale Echoes",
+    "timestamp": 1535426558,
+    "rating": "Platinum",
+    "notes": "No problems",
+    "os": "4.18.5-arch1-1-ARCH 64bit",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600 / gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

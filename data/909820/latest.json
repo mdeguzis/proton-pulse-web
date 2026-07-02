@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "909820",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564097689,
+    "title": "Songbird Symphony",
+    "source": "protondb"
+  },
+  {
+    "appId": "909820",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "4.19.57-gentoo",
+    "notes": "Run without any issue while using keyboard. Gamepad is not recognized.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1565197166,
+    "title": "Songbird Symphony",
+    "source": "protondb"
+  }
+]

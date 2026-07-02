@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "302380",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (sienna_cichlid, LLVM 13.0.1, DRM 3.44, 5.17.7-arch1-2)",
+    "gpuDriver": "4.6 Mesa 22.0.3",
+    "kernel": "5.17.7-arch1-2",
+    "notes": "Switch to Experimental, and have fun c:",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1653218541,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "302380",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 14.0.6, DRM 3.47, 5.19.5-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.5-zen1-1-zen",
+    "notes": "",
+    "os": "Garuda Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1662327022,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "302380",
+    "cpu": "Pentium Dual-Core       E5200  @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GT 710",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "6.0.10-272-tkg-cfs",
+    "notes": "Enable Steam Linux Runtime to fix audio. Otherwise runs perfectly fine on Native.",
+    "os": "Artix Linux",
+    "protonVersion": "7.0-5",
+    "ram": "3 GB",
+    "rating": "silver",
+    "timestamp": 1672201696,
+    "title": "",
+    "source": "protondb"
+  }
+]

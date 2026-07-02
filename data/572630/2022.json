@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "572630",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "5.15.0-56-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1672129955,
+    "title": "LyraVR",
+    "source": "protondb"
+  }
+]

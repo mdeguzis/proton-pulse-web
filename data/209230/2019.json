@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "209230",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.4.0-142-generic",
+    "notes": "Out of the box.",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552700263,
+    "title": "Sherlock Holmes and The Hound of The Baskervilles",
+    "source": "protondb"
+  },
+  {
+    "appId": "209230",
+    "cpu": "Intel Core i7-2620M @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.2.0-devel (git-730ceed 2019-07-14 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1563123614,
+    "title": "Sherlock Holmes and The Hound of The Baskervilles",
+    "source": "protondb"
+  }
+]

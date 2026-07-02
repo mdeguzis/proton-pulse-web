@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "684580",
+    "cpu": "Intel Xeon           X5680  @ 3.33GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Shows a black screen and plays music",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "28 GB",
+    "rating": "Borked",
+    "timestamp": 1541907285,
+    "title": "Shoppe Keep 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "684580",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-3-MANJARO",
+    "notes": "Does not work",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542433233,
+    "title": "Shoppe Keep 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "684580",
+    "cpu": "Intel Core i7-6600U @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Using a non-d3d11 GPU (eg. built-in Intel GPU) will not work at all. With default D3d11 the error \"couldn't switch to requested monitor resolution\" appeared. Using Wine D3d11 starts the game but only a white screen appears after the splash screen so it's unplayable.\n\nLogs show the following error all over the place:\n\n3291.391:0022:002d:fixme:d3d:wined3d_device_resolve_sub_resource Multisample resolve is not fully supported for typeless formats (dst_format WINED3DFMT_R8G8B8A8_TYPELESS, src_format WINED3DFMT_R8G8B8A8_TYPELESS, format WINED3DFMT_R8G8B8A8_UNORM).",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546100776,
+    "title": "Shoppe Keep 2",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

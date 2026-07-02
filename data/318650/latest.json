@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "318650",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Tested: Campaign & Skirmish mode. Not tested: Multiplayer aka online play",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547256130,
+    "title": "SunAge: Battle for Elysium",
+    "source": "protondb"
+  },
+  {
+    "appId": "318650",
+    "cpu": "Intel Celeron  N2840  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "The game crashes instantly. Not even a sound or a blank window opening. Just Steam saying \"running\" and then it crashes.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555756839,
+    "title": "SunAge: Battle for Elysium",
+    "source": "protondb"
+  }
+]

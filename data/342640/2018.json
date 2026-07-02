@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "342640",
+    "title": "Pixel Privateers",
+    "timestamp": 1535921782,
+    "rating": "Borked",
+    "notes": "Stack Trace Output : (0x0042DE49) (privateers): (filename not available): (function-name not available) + 0x0",
+    "os": " Ubuntu 18.04.1 LTS (64 bit)",
+    "gpuDriver": "X.Org AMD Radeon (TM) R9 390 Series (HAWAII / DRM 3.26.0 / 4.18.5-041805-generic, LLVM 6.0.0)",
+    "specs": " i7-6700K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "342640",
+    "title": "Pixel Privateers",
+    "timestamp": 1535907382,
+    "rating": "Borked",
+    "notes": "Stack Trace Output : (0x0042DE49) (privateers): (filename not available): (function-name not available) + 0x0",
+    "os": " Ubuntu 18.04.1 LTS (64 bit)",
+    "gpuDriver": "X.Org AMD Radeon (TM) R9 390 Series (HAWAII / DRM 3.26.0 / 4.18.5-041805-generic, LLVM 6.0.0)",
+    "specs": " i7-6700K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

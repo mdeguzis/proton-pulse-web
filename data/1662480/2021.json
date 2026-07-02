@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1662480",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.14.10-1-MANJARO",
+    "notes": "Works perfectly at first launch.",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1634664867,
+    "title": "Nuclear Blaze",
+    "source": "protondb"
+  },
+  {
+    "appId": "1662480",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon R9 380 (TONGA, DRM 3.40.0, 5.10.73-1-lts, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.10.73-1-lts",
+    "notes": "Worked out of the box. Played a mixture of both OpenGL and DirectX mode and saw no noticeable difference in performance.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1634771042,
+    "title": "Nuclear Blaze",
+    "source": "protondb"
+  }
+]

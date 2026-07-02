@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2264020",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Works perfecelty with potential graphical issues (could be my setup)",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1719434002,
+    "title": "",
+    "source": "protondb"
+  }
+]

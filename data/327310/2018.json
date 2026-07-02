@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "327310",
+    "cpu": "Intel(R) Core(TM)2 Quad CPU    Q9550  @ 2.83GHz",
+    "gpu": "GeForce GTX 460/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.14.68-1-MANJARO",
+    "notes": "Does not start.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5964 Mb",
+    "rating": "Borked",
+    "timestamp": 1536696439,
+    "title": "The Marvellous Miss Take",
+    "source": "protondb"
+  },
+  {
+    "appId": "327310",
+    "cpu": "i5-6400 CPU @ 2.70GHz",
+    "gpu": "GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Doesn't start",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15986 Mb",
+    "rating": "Borked",
+    "timestamp": 1536719823,
+    "title": "The Marvellous Miss Take",
+    "source": "protondb"
+  },
+  {
+    "appId": "327310",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Does not launch",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540905666,
+    "title": "The Marvellous Miss Take",
+    "source": "protondb"
+  }
+]

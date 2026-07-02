@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "545830",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.8-300.fc29.x86_64",
+    "notes": "Work perfectly with this option : PROTON_NO_D3D11=1 %command%",
+    "os": "Fedora release 29 (Twenty Nine) (64\u00a0bits)",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "3.7-8",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1545667963,
+    "title": "Princess of Tavern Collector's Edition",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1674010",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.8-arch1-1",
+    "notes": "I tried the two bellow tips using \"Proton-EM-10.0.2F+protontricks...\" and the \"TKG-proton + Proton Plus\". However the game crash",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1767405029,
+    "title": "Nin Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "1674010",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.8-arch1-1",
+    "notes": "the game crash after 6 to 15 minutes",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1767405217,
+    "title": "Nin Online",
+    "source": "protondb"
+  }
+]

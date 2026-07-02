@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1470920",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.7-3-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1753469219,
+    "title": "Howdy, Jacob!",
+    "source": "protondb"
+  }
+]

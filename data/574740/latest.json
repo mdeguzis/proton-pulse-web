@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "574740",
+    "cpu": "Intel Pentium 2020M @ 2.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.4",
+    "kernel": "4.19.4-300.fc29.x86_64",
+    "notes": "Everything works.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543932574,
+    "title": "Fausts Alptraum",
+    "source": "protondb"
+  }
+]

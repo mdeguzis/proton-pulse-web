@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "1840",
+    "title": "Source Filmmaker",
+    "timestamp": 1535052698,
+    "rating": "Silver",
+    "notes": "Works with minor hitches. I don't know what the load times are compared to running on Windows",
+    "os": "Xubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600K / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "1840",
+    "cpu": "Intel(R) Core(TM) i3-6100U CPU @ 2.30GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 520 (Skylake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "dunno it run with proton because it run on wine icon",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "11883 Mb",
+    "rating": "Silver",
+    "timestamp": 1537161162,
+    "title": "Source Filmmaker",
+    "source": "protondb"
+  },
+  {
+    "appId": "1840",
+    "title": "Source Filmmaker",
+    "timestamp": 1535038298,
+    "rating": "Silver",
+    "notes": "Works with minor hitches. I don't know what the load times are compared to running on Windows",
+    "os": "Xubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600K / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

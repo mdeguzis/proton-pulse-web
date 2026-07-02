@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "859680",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-041807-generic",
+    "notes": "Perfect under Proton 3.7-7 Beta. Does contain bugs unrelated to Steam Play. Doesn't require the launch option workaround for the previous two in the series in my testing.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "24032 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538452107,
+    "title": "Deep Space Waifu: FANTASY",
+    "source": "protondb"
+  },
+  {
+    "appId": "859680",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD Radeon HD 7900 Series (TAHITI, DRM 3.23.0, 4.15.0-34-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Text don't show inside balloons when hovering mouse over stars in bike selection screen. Also, game crashes on exit (doesn't close cleanly).",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "19937 Mb",
+    "rating": "Silver",
+    "timestamp": 1538539801,
+    "title": "Deep Space Waifu: FANTASY",
+    "source": "protondb"
+  },
+  {
+    "appId": "859680",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541271325,
+    "title": "Deep Space Waifu: FANTASY",
+    "source": "protondb"
+  }
+]

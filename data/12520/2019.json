@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "12520",
+    "cpu": "Intel Core i3-7100U @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.0",
+    "kernel": "5.0.5-113.current",
+    "notes": "Everything works, just make sure to wait for the DirectX popup",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1555293065,
+    "title": "18 Wheels of Steel: American Long Haul",
+    "source": "protondb"
+  }
+]

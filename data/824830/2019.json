@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "824830",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "Works fine except for a few issues: quitting freezes the game, I couldn't get my controller to work even though it was detected by the game, and movies completely freeze the game.\n\nAs the game's script files are stored in plain text, it is possible to patch the game so it doesn't play any movies. Movies are stored in StreamingAssets/Movies, so watch directly from here. In StreamingAssets/Lua/Adventure/HauntedAdventure.lua, comment line 1508 (should be System.PlayMovie( file_name, next_scene, localized )) and add the following line right beneath it : System.LoadScene(next_scene) ",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1570808753,
+    "title": "Corpse Party: Blood Drive",
+    "source": "protondb"
+  }
+]

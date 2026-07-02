@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1369970",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 20.1.8, DRM 3.63, 6.15.6-105.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.6",
+    "kernel": "6.15.6-105.bazzite.fc42.x86_64",
+    "notes": "",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1755289924,
+    "title": "",
+    "source": "protondb"
+  }
+]

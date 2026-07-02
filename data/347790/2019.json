@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "347790",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD (Whiskey Lake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.0-15-generic",
+    "notes": "Plays well, but pegs a CPU which seems strange for how simple it is.",
+    "os": "Ubuntu Eoan Ermine (development branch)",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568363704,
+    "title": "Terraform",
+    "source": "protondb"
+  }
+]

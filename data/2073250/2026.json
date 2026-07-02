@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2073250",
+    "cpu": "Intel Core i7-14700F",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.9-arch1-2",
+    "notes": "Game runs perfectly on Hyprland",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771050182,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2073250",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Played the entire story mode with no issues at all",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1772406462,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2073250",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 595.45.04",
+    "kernel": "6.17.7-ba28.fc43.x86_64",
+    "notes": "\u904a\u73a9\u9806\u66a2",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1775450689,
+    "title": "",
+    "source": "protondb"
+  }
+]

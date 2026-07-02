@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1721590",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.9.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.1-arch1.1",
+    "kernel": "6.9.3-arch1-1",
+    "notes": "just werks",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1718546822,
+    "title": "",
+    "source": "protondb"
+  }
+]

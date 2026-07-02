@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2006330",
+    "cpu": "Intel Core i5-8350U @ 1.70GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.1 (git-fa55e3c026)",
+    "kernel": "6.3.6-arch1-1",
+    "notes": "Just as the title says, Fungiman will download and install, but not launch with default and Experimental Steam settings.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1705972583,
+    "title": "Fungiman",
+    "source": "protondb"
+  }
+]

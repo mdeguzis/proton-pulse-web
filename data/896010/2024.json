@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "896010",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 16.0.6, DRM 3.49, 6.2.0-33-generic)",
+    "gpuDriver": "4.6 Mesa 23.1.7 (git-98d9d5f5a3)",
+    "kernel": "6.2.0-33-generic",
+    "notes": "Game loads the developer logo, then loads up a screen of error messages about not being able to find functions. Pressing a button will bring up the main menu, but the background only displays some flashing colors. The main menu can be navigated, but the error messages block it so that the options are unreadable. Starting a new game clears the error messages, but when the game starts, the background goes from flashing colors to a hall-of-mirrors effect and the character is invisible. Some sounds are present but no music.",
+    "os": "Linux Mint 21.2 Cinnamon Version 5.8.4",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1718070522,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "537180",
+    "title": "Digimon Masters Online",
+    "timestamp": 1535071888,
+    "rating": "Borked",
+    "notes": "\"HashCode: 13811712\" and \"Translation Needed\" error when trying to start the game (from its own launcher).",
+    "os": "Void Linux 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4670K / GTX 770 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "537180",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "An error window titled \"CsMessage\" and containing \"HashCode: 157044955\", among a lot of special characters that don't seem to be displaying correctly. \nThis happened when I hit the play button from the DMO launcher after installing updates.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541564898,
+    "title": "Digimon Masters Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "537180",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "I reported that it crashed after clicking the play button, but after closing several of the mostly unreadable error windows, it starts to load the game, pausing to spit several error boxes at me periodically until it finally gave me a connection error message and \"translation needed\", and then fully crashing.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541565143,
+    "title": "Digimon Masters Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "537180",
+    "title": "Digimon Masters Online",
+    "timestamp": 1535057488,
+    "rating": "Borked",
+    "notes": "\"HashCode: 13811712\" and \"Translation Needed\" error when trying to start the game (from its own launcher).",
+    "os": "Void Linux 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4670K / GTX 770 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

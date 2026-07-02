@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "13250",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556500427,
+    "title": "Unreal Gold",
+    "source": "protondb"
+  },
+  {
+    "appId": "13250",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Works perfectly in that it runs out of the box. Tested with the default \"Direct3D\" renderer. \n\nHowever, because this game is so old, the controls are quite weird. I recommend changing the movement to WASD and unchecking Invert Mouse (for some reason, the X axis is inverted too).",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559024173,
+    "title": "Unreal Gold",
+    "source": "protondb"
+  },
+  {
+    "appId": "13250",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.1.11-050111-generic",
+    "notes": "Granted, I didn't play very long and will add an updated report if needed, I will definitely recommend using the Direct3D settings as the old glide settings don't seem to allow full screen play.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1560840291,
+    "title": "Unreal Gold",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "737770",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-f7bccf6 2018-12-28 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-43-generic",
+    "notes": "It won't start after 3-5sec pretending. Nothing. When using WineD3d11 there came a black screen shortly for about 2 sec. Then again, nothing.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546050702,
+    "title": "Project CARS 2 Demo",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

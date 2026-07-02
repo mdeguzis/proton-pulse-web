@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "212390",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1551552873,
+    "title": "Continent of the Ninth Seal",
+    "source": "protondb"
+  },
+  {
+    "appId": "212390",
+    "cpu": "AMD A8-7600 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "3.0 Mesa 18.0.4",
+    "kernel": "4.15.0-29deepin-generic",
+    "notes": "No inicia pero deber\u00eda funcionar sin Directx11 . ",
+    "os": "Deepin 15.9.2",
+    "protonVersion": "Beta (3.7-8)",
+    "protonVersionManual": "3.7",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1553821052,
+    "title": "Continent of the Ninth Seal",
+    "source": "protondb"
+  },
+  {
+    "appId": "212390",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Borked. Crashes after pressing  Play in Steam. Doesn't even show error. Errors shown if started in terminal, but I am not competent to even know what they mean.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1562176497,
+    "title": "Continent of the Ninth Seal",
+    "source": "protondb"
+  }
+]

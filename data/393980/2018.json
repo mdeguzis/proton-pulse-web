@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "393980",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Fatal error in gc: GetThreadContext failed.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543063545,
+    "title": "Pretty Girls Mahjong Solitaire",
+    "source": "protondb"
+  },
+  {
+    "appId": "393980",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Fatal error in gc: GetThreadContext failed",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543064114,
+    "title": "Pretty Girls Mahjong Solitaire",
+    "source": "protondb"
+  },
+  {
+    "appId": "393980",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "The game works just fine, the errors reported were caused by nVidia drivers that had an issue with Unity3D games.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544311335,
+    "title": "Pretty Girls Mahjong Solitaire",
+    "source": "protondb"
+  }
+]

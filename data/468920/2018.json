@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "468920",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-36-generic",
+    "notes": "internet radio is not working, in menu 3d fish view is not working",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1540396250,
+    "title": "Ultimate Fishing Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "468920",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-39-generic",
+    "notes": "While the game appears to have no issues actually starting, there is quite a bit that needs done with its compatibility. The radio stations, while functional crackle consistently every 10 or so seconds. There are no 3D fish models at all it seems, even upon landing a fish all you will see is empty space where the fish should be. These honestly could be ignored, if the game itself didn't crash so hard upon exit that it hangs the entire system to the point of needing a reboot.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543779466,
+    "title": "Ultimate Fishing Simulator",
+    "source": "protondb"
+  }
+]

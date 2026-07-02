@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "415740",
+    "cpu": "AMD Ryzen 5 PRO 2400GE w/ Radeon Vega Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon Vega 11 (radeonsi, raven, ACO, DRM 3.64, 6.17.7-ba28.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.2",
+    "kernel": "6.17.7-ba28.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1774532311,
+    "title": "OmniBus",
+    "source": "protondb"
+  }
+]

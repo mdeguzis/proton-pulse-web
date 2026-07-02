@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4089910",
+    "cpu": "AMD A10-5800K APU with Radeon HD Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.11-300.fc43.x86_64",
+    "notes": "It runs weird",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1771070508,
+    "title": "",
+    "source": "protondb"
+  }
+]

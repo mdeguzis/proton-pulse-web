@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "289840",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551789160,
+    "title": "Dracula 3: The Path of the Dragon",
+    "source": "protondb"
+  },
+  {
+    "appId": "289840",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "No issue at all",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552336795,
+    "title": "Dracula 3: The Path of the Dragon",
+    "source": "protondb"
+  }
+]

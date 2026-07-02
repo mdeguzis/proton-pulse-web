@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "293180",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.17-1-MANJARO",
+    "notes": "Work well after tweak",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1553552661,
+    "title": "Overcast - Walden and the Werewolf",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "293180",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558909310,
+    "title": "Overcast - Walden and the Werewolf",
+    "source": "protondb"
+  }
+]

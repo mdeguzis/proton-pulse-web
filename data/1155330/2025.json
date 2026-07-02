@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1155330",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.8.0-41-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.1",
+    "kernel": "6.8.0-41-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04 LTS (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1736885617,
+    "title": "Showgunners",
+    "source": "protondb"
+  },
+  {
+    "appId": "1155330",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6950 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.13.8-1-default)",
+    "gpuDriver": "4.6 Mesa 25.0.2",
+    "kernel": "6.13.8-1-default",
+    "notes": "Unfortunately, can't recommend.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1743423647,
+    "title": "Showgunners",
+    "source": "protondb"
+  },
+  {
+    "appId": "1155330",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1755011417,
+    "title": "Showgunners",
+    "source": "protondb"
+  }
+]

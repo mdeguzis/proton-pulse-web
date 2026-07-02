@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "622590",
+    "title": "PUBG: Test Server",
+    "timestamp": 1535575137,
+    "rating": "Borked",
+    "notes": "The pre-launch \"PLAY\" button does come up, and there's an option to disable anti-cheat, but the game still hangs on nothing it would seem, after BattlEye gives Error 31.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "622590",
+    "title": "PUBG: Test Server",
+    "timestamp": 1535560737,
+    "rating": "Borked",
+    "notes": "The pre-launch \"PLAY\" button does come up, and there's an option to disable anti-cheat, but the game still hangs on nothing it would seem, after BattlEye gives Error 31.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

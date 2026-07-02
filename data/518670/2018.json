@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "518670",
+    "cpu": "Intel(R) Core(TM) i5-2400S CPU @ 2.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Perfect",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5926 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537193113,
+    "title": "Intensive Exposure",
+    "source": "protondb"
+  },
+  {
+    "appId": "518670",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541274157,
+    "title": "Intensive Exposure",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "287840",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Still won't start at all.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546562262,
+    "title": "TY the Tasmanian Tiger 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "287840",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game immediately crashes. Attempted using the following launch options:\nPROTON_USE_WINED3D11 %command%\nPROTON_NO_D3D11 %command%\nPROTON_NO_ESYNC %command%",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560684362,
+    "title": "TY the Tasmanian Tiger 4",
+    "source": "protondb"
+  }
+]

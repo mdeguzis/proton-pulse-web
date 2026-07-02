@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1137350",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.2.1 refresh - kisak-mesa PPA",
+    "kernel": "6.5.0-14-generic",
+    "notes": "Crashed immediately with default Proton, forced experimental and works perfect",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1704142442,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1137350",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.2.1 refresh - kisak-mesa PPA",
+    "kernel": "6.5.0-14-generic",
+    "notes": "",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1704269450,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1137350",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 15.0.7, DRM 3.57, 6.8.0-45-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "6.8.0-45-generic",
+    "notes": "GOG version works great",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1731535797,
+    "title": "",
+    "source": "protondb"
+  }
+]

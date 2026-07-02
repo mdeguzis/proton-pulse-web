@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2349510",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.16.2-200.nobara.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.1",
+    "kernel": "6.16.2-200.nobara.fc42.x86_64",
+    "notes": "It just works.",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1757232309,
+    "title": "VERTEX",
+    "source": "protondb"
+  }
+]

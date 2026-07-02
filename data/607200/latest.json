@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "607200",
+    "title": "Tanki X",
+    "timestamp": 1535193071,
+    "rating": "Gold",
+    "notes": "Missing models when using dxvk, fine when using wined3d",
+    "os": "Debian Buster 64bit (Kernel 4.17) ",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GT 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "607200",
+    "title": "Tanki X",
+    "timestamp": 1535178671,
+    "rating": "Gold",
+    "notes": "Missing models when using dxvk, fine when using wined3d",
+    "os": "Debian Buster 64bit (Kernel 4.17) ",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GT 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

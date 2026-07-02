@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "378260",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1566939753,
+    "title": "Fortify",
+    "tweaks": {
+      "largeAddressAware": true
+    },
+    "source": "protondb"
+  }
+]

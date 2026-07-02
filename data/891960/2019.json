@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "891960",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Everything worked fine (couldn't test audio)",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1563618559,
+    "title": "WebbVR: The James Webb Space Telescope Virtual Experience",
+    "source": "protondb"
+  }
+]

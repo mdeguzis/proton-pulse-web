@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "764030",
+    "cpu": "Intel(R) Celeron(R) CPU  N2830  @ 2.16GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7865 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537367583,
+    "title": "Realm Revolutions",
+    "source": "protondb"
+  },
+  {
+    "appId": "764030",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-35-generic",
+    "os": "Ubuntu 18.10 (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542141482,
+    "title": "Realm Revolutions",
+    "source": "protondb"
+  }
+]

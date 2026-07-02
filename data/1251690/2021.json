@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1251690",
+    "cpu": "Intel Core i7-4720HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "5.10.0-0.bpo.5-amd64",
+    "notes": "works flawlessly with:  \nProton 6.3-2",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1619302495,
+    "title": "",
+    "source": "protondb"
+  }
+]

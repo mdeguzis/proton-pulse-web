@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "680380",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.2",
+    "kernel": "5.1.18-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563699695,
+    "title": "Night Call",
+    "source": "protondb"
+  },
+  {
+    "appId": "680380",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "It gets stuck on game options menu.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563997054,
+    "title": "Night Call",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

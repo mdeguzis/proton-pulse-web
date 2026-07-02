@@ -1,0 +1,62 @@
+[
+  {
+    "appId": "339580",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-24-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7940 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537463283,
+    "title": "Ember",
+    "source": "protondb"
+  },
+  {
+    "appId": "339580",
+    "cpu": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "X.Org AMD CAPE VERDE (DRM 2.50.0, 4.18.0-8-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.18.0-8-generic",
+    "notes": "Played through entire main story and some side quests with no issues.",
+    "os": "Ubuntu Cosmic Cuttlefish (development branch) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7918 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538864828,
+    "title": "Ember",
+    "source": "protondb"
+  },
+  {
+    "appId": "339580",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541936633,
+    "title": "Ember",
+    "source": "protondb"
+  },
+  {
+    "appId": "339580",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-24-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543690566,
+    "title": "Ember",
+    "source": "protondb"
+  }
+]

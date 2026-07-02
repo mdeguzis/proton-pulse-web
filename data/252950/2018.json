@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "252950",
+    "title": "Rocket League",
+    "timestamp": 1535405118,
+    "rating": "Silver",
+    "notes": "Anti-aliasing configurations seems to be ignored. Some small stutters on the menus. The matches run smoothly.",
+    "os": "Ubuntu 18.04.1 LTS (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-7500",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "252950",
+    "title": "Rocket League",
+    "timestamp": 1535739116,
+    "rating": "Platinum",
+    "notes": "Everything works great",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.65-1-MANJARO)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-7600K / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "252950",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) R9 380 Series (TONGA, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works perfectly fine",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "11974 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536677775,
+    "title": "Rocket League\u00ae",
+    "source": "protondb"
+  },
+  {
+    "appId": "252950",
+    "title": "Rocket League",
+    "timestamp": 1535390718,
+    "rating": "Silver",
+    "notes": "Anti-aliasing configurations seems to be ignored. Some small stutters on the menus. The matches run smoothly.",
+    "os": "Ubuntu 18.04.1 LTS (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-7500",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "252950",
+    "title": "Rocket League",
+    "timestamp": 1535724716,
+    "rating": "Platinum",
+    "notes": "Everything works great",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.65-1-MANJARO)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-7600K / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

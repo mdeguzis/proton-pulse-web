@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2647820",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.11.4-arch1-1",
+    "notes": "Framerate issues but nothing game breaking.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1729371987,
+    "title": "",
+    "source": "protondb"
+  }
+]

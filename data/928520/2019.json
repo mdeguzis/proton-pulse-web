@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "928520",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-4ee638cd78)",
+    "kernel": "5.3.0-rc2",
+    "notes": "Uses Unity Engine, runs without issues.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564526652,
+    "title": "Story of Eve - A Hero's Study",
+    "source": "protondb"
+  }
+]

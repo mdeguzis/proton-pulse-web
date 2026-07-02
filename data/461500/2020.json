@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "461500",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.1",
+    "kernel": "5.3.18",
+    "notes": "Needs PROTON_USE_WINED3D to not crash.",
+    "os": "Slackware Linux",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1579359725,
+    "title": "",
+    "source": "protondb"
+  }
+]

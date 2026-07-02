@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "545050",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.34-1-MANJARO",
+    "notes": "All i got is a black screen with steam overlay working. While doing Alt + F4, i see the Badiya game cursor, then windows shut down. Nothing is working for me",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556925041,
+    "title": "Badiya: Desert Survival",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

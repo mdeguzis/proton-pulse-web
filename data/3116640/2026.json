@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3116640",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, ACO, DRM 3.64, 6.17.0-14-generic)",
+    "gpuDriver": "4.6 Mesa 26.0.0~rc3+git2602061547.2538e974cae~n~mesarc2",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Tried downloading dependencies but didn't work",
+    "os": "Zorin OS 18",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771504526,
+    "title": "Torque Drift 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "appId": "214730",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.2-zen1-1-zen",
+    "notes": "Frequent crashes can be fixed by disabling Esync. Add PROTON_NO_ESYNC=1 %command% as a launch option",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1547712718,
+    "title": "Space Rangers HD: A War Apart",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "214730",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.32-1-MANJARO",
+    "notes": "14 -16 fps, crashes after 15 min",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1555264440,
+    "title": "Space Rangers HD: A War Apart",
+    "source": "protondb"
+  },
+  {
+    "appId": "214730",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-13-generic",
+    "notes": "working, 330-350 FPS in space, 60 in 3d battle, 1200+ in hyper\n\n\nGame Settings (in game):\n\nMulticore --> enable (better fps)\nvsync --> disable (better fps)\n\nin file:\n\"/home/$(whoami)/.local/share/Steam/steamapps/common/Space Rangers HD A War Apart/CFG.TXT\"\n\nadd string\nAllowHardwareRenderUnderWine=Yes\n\n\n issues:\n\nAlt+Tab --> Black-screen\nneed start \"New Game\" on real windows, after work fine .\n3D battles work with minor glitch in loading screen, work fine after load",
+    "os": "Ubuntu 19.04 (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1556265497,
+    "title": "Space Rangers HD: A War Apart",
+    "source": "protondb"
+  },
+  {
+    "appId": "214730",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 640",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "~50 fps in space. Enable multicore and disable vsync in game settings. In file: \"/home/user/.local/share/Steam/steamapps/common/Space Rangers HD A War Apart/CFG.TXT\" add string AllowHardwareRenderUnderWine=Yes. Add PROTON_NO_ESYNC=1 %command% as a launch option.",
+    "os": "Ubuntu 18.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1565588846,
+    "title": "Space Rangers HD: A War Apart",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "214730",
+    "cpu": "Intel Core i3-3110M @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Disabling vsync really speeds up the game. However, literally reaching the first take-off into space, the game immediately break down.\nI tried to disable many parameters in the graphics settings to improve performance. But this does not help.",
+    "os": "Ubuntu 19.04 (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.11-2",
+    "ram": "4 GB",
+    "rating": "Bronze",
+    "timestamp": 1566679250,
+    "title": "Space Rangers HD: A War Apart",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

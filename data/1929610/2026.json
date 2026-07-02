@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1929610",
+    "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.2-arch2-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1767546872,
+    "title": "Demonologist",
+    "source": "protondb"
+  },
+  {
+    "appId": "1929610",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.18.2-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.2",
+    "kernel": "6.18.2-2-cachyos",
+    "notes": "Game launch, degraded performance and multiplayer lobby feature does not work",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "borked",
+    "timestamp": 1769444139,
+    "title": "Demonologist",
+    "source": "protondb"
+  },
+  {
+    "appId": "1929610",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.49, 6.2.10-200.fsync.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.1",
+    "kernel": "6.2.10-200.fsync.fc37.x86_64",
+    "notes": "Game Launches - Multiplayer Requires switching to GE-Proton",
+    "os": "Nobara Linux 37 (KDE Plasma)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773213474,
+    "title": "Demonologist",
+    "source": "protondb"
+  }
+]

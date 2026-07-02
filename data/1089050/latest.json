@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1089050",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-17-generic",
+    "notes": "No audio, graphical glitches in full screen mode. The game unpacked incorrectly, I had to go to the game directory (/steamapps/common/Speakerman/) and move all the files from Speakerman subdir into the main directory.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1567022703,
+    "title": "Speakerman",
+    "source": "protondb"
+  }
+]

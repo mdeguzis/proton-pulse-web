@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "601540",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-39-generic",
+    "notes": "Everything works fine for a while, then the GUI stops responding to the mouse clicks (cursor moves normally).",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1625068960,
+    "title": "",
+    "source": "protondb"
+  }
+]

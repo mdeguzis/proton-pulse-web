@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "502940",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "This time I haven't touched anything and now it just works. Something relevant must have changed in Proton that fixed my performance in this game.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548024955,
+    "title": "Calm Down, Stalin",
+    "source": "protondb"
+  }
+]

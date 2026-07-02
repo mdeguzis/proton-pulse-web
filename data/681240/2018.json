@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "681240",
+    "title": "Dujanah",
+    "timestamp": 1535689339,
+    "rating": "Borked",
+    "notes": "Window rendered properly, inside there's a blue glitched screen, and some music. Doesn't seem to respond to input.",
+    "os": "Void Linux 64-bit (Kernel 4.17.19_1)",
+    "gpuDriver": "Mesa 18.1.17",
+    "specs": "I5-3320M / Intel HD 4000",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "681240",
+    "title": "Dujanah",
+    "timestamp": 1535674939,
+    "rating": "Borked",
+    "notes": "Window rendered properly, inside there's a blue glitched screen, and some music. Doesn't seem to respond to input.",
+    "os": "Void Linux 64-bit (Kernel 4.17.19_1)",
+    "gpuDriver": "Mesa 18.1.17",
+    "specs": "I5-3320M / Intel HD 4000",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

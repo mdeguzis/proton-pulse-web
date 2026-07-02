@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3017760",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, ACO, DRM 3.63, 6.15.4-arch2-1)",
+    "gpuDriver": "4.6 Mesa 25.1.5-arch1.1",
+    "kernel": "6.15.4-arch2-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "platinum",
+    "timestamp": 1753096906,
+    "title": "Relic Abyss",
+    "source": "protondb"
+  },
+  {
+    "appId": "3017760",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, ACO, DRM 3.63, 6.15.4-arch2-1)",
+    "gpuDriver": "4.6 Mesa 25.1.5-arch1.1",
+    "kernel": "6.15.4-arch2-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1753096959,
+    "title": "Relic Abyss",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "appId": "23420",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-48-generic",
+    "notes": "1. Steam Launch Option:\n\nPROTON_USE_WINED3D=1 PROTON_NO_D3D11=1 %command%\n\n2. Command Line: protontricks 23420 - \n\nInstall D3D9\n\n... after that, runs flawlessly, just like CK2 or EUIV etc.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1557043502,
+    "title": "Europa Universalis: Rome - Gold Edition ",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "23420",
+    "cpu": "AMD Ryzen Threadripper 1920X 12-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.20.17-042017-generic",
+    "notes": "Works with PROTON_USE_WINED3D=1 PROTON_NO_D3D11=1 %command% and installing d3dx9 with protontricks, but it seems to crash very easily. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1557263881,
+    "title": "Europa Universalis: Rome - Gold Edition ",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "23420",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Crash on start: Application load error. No way to bypass Launcher. 64-bit WINE/Proton.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-5",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1559551733,
+    "title": "Europa Universalis: Rome - Gold Edition ",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "23420",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Dismiss my previous 'borked' report. It was referring to EU Rome \"Vae Victis\" (no longer available & won't run with these tricks). Gold version runs perfectly fine and stable after reported tweaks (see below). Steam/Proton DOES auto-install DirectX on first start, but you STILL HAVE TO install DX9 via Protontricks to run the game.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-5",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1559553773,
+    "title": "Europa Universalis: Rome - Gold Edition ",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "23420",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Works with PROTON_USE_WINED3D=1 PROTON_NO_D3D11=1 %command% and installing d3dx9 - It DOES occasionally crash, when you start a new game, clicking on  a province. After a restart and clicking the same thing again, game WILL start & work thereafter. //Multiplayer not tested.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1563374176,
+    "title": "Europa Universalis: Rome - Gold Edition ",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

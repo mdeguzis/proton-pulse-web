@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "249550",
+    "cpu": "AMD FX-8150 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.4-1-MANJARO",
+    "notes": "Throws a weird error on launching, showing the server's that are online, then redirects you to what looks like a login form.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1565124017,
+    "title": "NEStalgia",
+    "source": "protondb"
+  },
+  {
+    "appId": "249550",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-65-generic",
+    "notes": "First, you need a 32-bit wineprefix to install ie8 with winetricks, because the custom launcher uses embedded internet explorer. (Currently Proton doesn't crash on loading a 32-bit wineprefix, so don't mess with Steam's proton system files.) Then, you need to set Windows XP mode in winecfg for the BYOND account login or registration button to work.\n\nAfter you've successfully connected your BYOND account to Steam and the custom launcher is giving you the options to run the game, you can return winecfg to Windows 7 mode if you prefer. You're probably going to get incredibly poor performance either way. It doesn't seem like the launcher can properly enable hardware rendering.\n\nIf you know what BYOND is and can get it running better in Wine directly, the launcher should unpack the BYOND game file to \"steamapps/compatdata/249550/pfx/drive_c/users/steamuser/My Documents/BYOND/MyHub/silkgames/nestalgia/\", but only users who have purchased it via BYOND or Steam will be able to log-in and play (so it's not 100% DRM-free). Good luck.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1571081114,
+    "title": "NEStalgia",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "741510",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-9c80be9 2019-03-12 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Video cinematics don't actually play, I just have a black screen with a \"skip\" button. Otherwise, there are some stutters when a lot of gunfires (or particles generally) are visible on the screen. Everything else seems to work perfectly fine, when not firing, the game is very smooth at max settings.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552431928,
+    "title": "The Hong Kong Massacre",
+    "source": "protondb"
+  }
+]

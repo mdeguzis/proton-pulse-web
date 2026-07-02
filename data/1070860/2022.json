@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1070860",
+    "cpu": "AMD Ryzen 7 3750H with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 10 (RAVEN, DRM 3.42.0, 5.15.28-1-MANJARO, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.15.28-1-MANJARO",
+    "notes": "crashes with error 'Call at line 232 in file Graphics_DisplayM.cpp",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1647753355,
+    "title": "Serin Fate",
+    "source": "protondb"
+  }
+]

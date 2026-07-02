@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1653100",
+    "cpu": "Intel Core i5-8265U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.4.0-91-generic",
+    "notes": "Game runs for a few seconds, then closes.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1648413212,
+    "title": "",
+    "source": "protondb"
+  }
+]

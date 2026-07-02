@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "270880",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.6-042006-generic",
+    "notes": "Forcing Steam Play/Proton. Game runs perfectly out of the box. The reason I chose Proton over the native build is because the native Linux build doesn't recognize any controller other than specifically Microsoft Xbox controllers, no generic xinput controllers, no Steam Controller, etc. The Windows version has no such limitation, and the developers even have a Steam Controller recommended configuration that mixes gamepad and keyboard & mouse controls. Their recommended configuration does not work with the Linux build, but forcing the game to use Proton, everything is working as anticipated, Steam Controller now works perfectly with gamepad inputs, mouse & keyboard inputs, or a mix of both.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1550593560,
+    "title": "American Truck Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "270880",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Native, Proton DX9 and Proton OpenGL work all fine.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556899073,
+    "title": "American Truck Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "270880",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-0905189a25)",
+    "kernel": "5.1.7-arch1-1-ARCH",
+    "notes": "Game works native on Linux. On Proton it works out of the box either with OpenGL or DX9. I installed manually D9VK and it worked as well fine with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-6",
+    "protonVersionManual": "3.16-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1559984792,
+    "title": "American Truck Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "270880",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Game works almost perfectly, however when alt-tabbing the game locks up",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1567458772,
+    "title": "American Truck Simulator",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

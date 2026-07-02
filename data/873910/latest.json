@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "873910",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "The game crashes with an error as soon as I open it.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1549370823,
+    "title": "Rail World",
+    "source": "protondb"
+  },
+  {
+    "appId": "873910",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "The game crashes with an error as soon as I click on \"PLAY\".",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551208834,
+    "title": "Rail World",
+    "source": "protondb"
+  },
+  {
+    "appId": "873910",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It had some graphical issues, but everything works perfectly when you use Wine D3d11 with the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552265396,
+    "title": "Rail World",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

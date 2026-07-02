@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "355800",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-13-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1548503708,
+    "title": "Space Run Galaxy",
+    "source": "protondb"
+  },
+  {
+    "appId": "355800",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.0-4-amd64",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1558477906,
+    "title": "Space Run Galaxy",
+    "source": "protondb"
+  }
+]

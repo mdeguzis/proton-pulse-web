@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "369830",
+    "cpu": "i5-7400 CPU @ 3.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Plays fine. 1. Not full screen - Small left corner.  2. F1 not working, use Ctrl-F5 -> ScummVM Menu - Quit",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536697488,
+    "title": "Toonstruck",
+    "source": "protondb"
+  }
+]

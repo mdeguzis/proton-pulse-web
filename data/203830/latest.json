@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "203830",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-1-ck-skylake",
+    "notes": "It played without modifications, and I was able to play it through. Switching window with alt+tab did break it unfortunately (on Gnome/x11). Even then autosave worked, and once I killed the process and restarted I was back with no progress lost. I did encounter a couple of glitches with character sprites appearing/disappearing for a second when they shouldn't. This only happened 3 times (all before or after an animation), and didn't break anything. It seem more like a game bug than an issue with Proton.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1546720469,
+    "title": "The Dark Eye: Chains of Satinav",
+    "source": "protondb"
+  },
+  {
+    "appId": "203830",
+    "cpu": "Intel Core i5-7Y54 @ 1.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel HD 615 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Since Proton 4.2-3, the game works out of the box. Finished the game after 15h. ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555747649,
+    "title": "The Dark Eye: Chains of Satinav",
+    "source": "protondb"
+  },
+  {
+    "appId": "203830",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "No Problemo!",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570363354,
+    "title": "The Dark Eye: Chains of Satinav",
+    "source": "protondb"
+  }
+]

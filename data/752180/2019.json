@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "752180",
+    "cpu": "AMD Phenom 9550 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.18.0-17-generic",
+    "notes": "Did not try any tweaks",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1556587740,
+    "title": "One Night",
+    "source": "protondb"
+  },
+  {
+    "appId": "752180",
+    "cpu": "AMD Phenom 9550 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.18.0-17-generic",
+    "notes": "Runs - shows black window; Click on window, then Alt-Enter for fullscreen; Seems to work after that..",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1556588550,
+    "title": "One Night",
+    "source": "protondb"
+  }
+]

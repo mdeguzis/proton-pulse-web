@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "332250",
+    "cpu": "i5-3570K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 550 Ti/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.13.0-46-generic",
+    "notes": "Game natively provides a linux version. No proton testing needed here.",
+    "os": "Ubuntu 17.10 (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32131 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536750500,
+    "title": "The Next Penelope",
+    "source": "protondb"
+  },
+  {
+    "appId": "332250",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.19.1-1.el7.elrepo.x86_64",
+    "notes": "There is a native Linux version, but the author has discontinued support for it (a pinned post in the game's forum explains why). I have the native Linux version installed, but it just brings up a \"node-webkit\" text window and doiesn't start the game. The author really should pull the Linux platform for the game from Steam, so we can at least try it with Proton. Ideally, Proton should allow you to override the native version and try the Windows version in cases like these.",
+    "os": "CentOS Linux release 7.5.1804 (Core)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1541926799,
+    "title": "The Next Penelope",
+    "source": "protondb"
+  }
+]

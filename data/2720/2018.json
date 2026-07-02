@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2720",
+    "cpu": "Intel(R) Core(TM) i7-2670QM CPU @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Sandybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.14.74-1-MANJARO",
+    "notes": "Works as intended ",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7889 Mb",
+    "rating": "Platinum",
+    "timestamp": 1540072813,
+    "title": "ThreadSpace: Hyperbol",
+    "source": "protondb"
+  }
+]

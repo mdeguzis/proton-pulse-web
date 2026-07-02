@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "253940",
+    "cpu": "Intel Core i5-4300M @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.2-1~mx23ahs",
+    "kernel": "6.1.0-13-amd64",
+    "notes": "Works almost perfectly through a recent version of proton.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1710103013,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "253940",
+    "cpu": "AMD Ryzen 5 7520U with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 17.0.6, DRM 3.57, 6.8.0-39-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.1",
+    "kernel": "6.8.0-39-generic",
+    "notes": "Me again, but with another machine this time. The \"native\" version is useless on any machine I ever tried it on, and Proton seems to work sporadically -- on one machine it works, on this one it doesn't. I tried many different versions of Proton and Proton-GE, various settings with winetricks, protontricks, installing through Lutris... Nothing works. Whatever I do, I always get the \"Septerra Core Fatal Panic\" error stating: \"v1.04 Panic: Game has not been properly installed. Septerra Core will exit now.\" Nothing seems to solve this.\nI'm not sure if this has anything to do with the hardware. The other machine, where the game works with Proton 8, has both CPU and GPU by Intel. The one I'm writing this report from has them both from AMD. And I see most people complaining on PC have AMD hardware, strangely enough, if we consider that the game seems to work fine on the SteamDeck, which is also AMD-based...",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1722199029,
+    "title": "",
+    "source": "protondb"
+  }
+]

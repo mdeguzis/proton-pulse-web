@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "464060",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD VEGA20",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-017349997f)",
+    "kernel": "4.20.10-arch1-1-ARCH",
+    "notes": "Works perfectly fine with DXVK.",
+    "os": "Linux 4.x",
+    "protonVersion": "3.16-7",
+    "protonVersionManual": "3.16-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1550394401,
+    "title": "RUINER",
+    "source": "protondb"
+  }
+]

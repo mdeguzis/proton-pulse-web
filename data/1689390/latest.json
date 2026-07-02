@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1689390",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4080 Super",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Works OoB! No problems at all.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1775759262,
+    "title": "Mythrealm",
+    "source": "protondb"
+  }
+]

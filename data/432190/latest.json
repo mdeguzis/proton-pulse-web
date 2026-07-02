@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "432190",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Black screen, but sound works.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556483840,
+    "title": "Chef Solitaire: USA",
+    "source": "protondb"
+  },
+  {
+    "appId": "432190",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Loads black screen. Sound is audible but game is not playable.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560999441,
+    "title": "Chef Solitaire: USA",
+    "source": "protondb"
+  }
+]

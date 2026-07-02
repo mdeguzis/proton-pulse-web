@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "623940",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-2d2927938f)",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Game doesn't work on Proton with DXVK, it shows the menu and you can start a new game, but then nothing happens anymore.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1557431075,
+    "title": "HIVESWAP: Act 1",
+    "source": "protondb"
+  }
+]

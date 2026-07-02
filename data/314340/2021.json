@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "314340",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.10-200.fc35.x86_64",
+    "notes": "Runs just like it would on Windows. I wanted to test online multiplayer but there's no-one playing.",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1640213525,
+    "title": "",
+    "source": "protondb"
+  }
+]

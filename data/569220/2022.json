@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "569220",
+    "cpu": "Intel Core i7-8665U @ 1.90GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.7 (git-7a3414c4bd)",
+    "kernel": "5.19.12-300.fc37.x86_64",
+    "notes": "If you're playing this uninterrupted it's fine, if you want to multitask you'll have to quit the game each time.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1665525238,
+    "title": "Spycraft: The Great Game",
+    "source": "protondb"
+  }
+]

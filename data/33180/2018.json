@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "33180",
+    "title": "Zombie Shooter 2",
+    "timestamp": 1535477236,
+    "rating": "Borked",
+    "notes": "Panels flash around screen for half a second but no game window appears on launch.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-2400 / GT 730",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33180",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     E8400  @ 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce 8500 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.106",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Fails to start",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "5715 Mb",
+    "rating": "Borked",
+    "timestamp": 1537832174,
+    "title": "Zombie Shooter 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "33180",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Does not start",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540844778,
+    "title": "Zombie Shooter 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "33180",
+    "title": "Zombie Shooter 2",
+    "timestamp": 1535462836,
+    "rating": "Borked",
+    "notes": "Panels flash around screen for half a second but no game window appears on launch.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-2400 / GT 730",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

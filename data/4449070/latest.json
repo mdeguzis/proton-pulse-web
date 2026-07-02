@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4449070",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, ACO, DRM 3.64, 6.17.7-ba29.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.4",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "Got a proton error when booting along the lines of \"invalid image error\", tried going back to an older version, only one that got me to the menu was 5.13-6, but the menu was broken and wouldn't let me select anything",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1778762659,
+    "title": "Game Game Developer",
+    "source": "protondb"
+  }
+]

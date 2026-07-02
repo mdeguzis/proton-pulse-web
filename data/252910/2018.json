@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "252910",
+    "cpu": "i5-3210M CPU @ 2.50GHz",
+    "gpu": "X.Org AMD VERDE (DRM 2.50.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "The game doesn't open.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5836 Mb",
+    "rating": "Borked",
+    "timestamp": 1536808566,
+    "title": "Skyscraper Simulator",
+    "source": "protondb"
+  }
+]

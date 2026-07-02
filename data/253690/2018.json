@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "253690",
+    "title": "Tiny Brains",
+    "timestamp": 1535067052,
+    "rating": "Borked",
+    "notes": "Doesn't start. No error message",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "Ryzen 5 2600X / Vega64",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "253690",
+    "title": "Tiny Brains",
+    "timestamp": 1535052652,
+    "rating": "Borked",
+    "notes": "Doesn't start. No error message",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "Ryzen 5 2600X / Vega64",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

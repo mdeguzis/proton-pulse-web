@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2736690",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.2-200.fsync.fc40.x86_64",
+    "notes": "Perfect out the box.",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1731746450,
+    "title": "Void Sols",
+    "source": "protondb"
+  },
+  {
+    "appId": "2736690",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "This game runs at a stable 90 on ultra graphics. Really fun game and the steam deck makes me enjoy it more. Very good Steam deck game!",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1732045360,
+    "title": "Void Sols",
+    "source": "protondb"
+  },
+  {
+    "appId": "2736690",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Game works near flawlessly out of the box, and performance is beautiful capped at 45",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1732813599,
+    "title": "Void Sols",
+    "source": "protondb"
+  }
+]

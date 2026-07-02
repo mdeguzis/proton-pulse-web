@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "271970",
+    "title": "Hero and Daughter+",
+    "timestamp": 1536118115,
+    "rating": "Platinum",
+    "notes": "If I switch workspaces while fullscreen or click outside of the game while fullscreen the game may crash(9/10 times, but there *was* that one time it didn't crash). I'm on i3 though and haven't tested on a normal stacking wm. Computer info pulled from inxi -b",
+    "os": "Ubuntu 18.04.1 LTS, 4.17.0-8.1-liquorix-amd64 x86_64 ",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel - padoka PPA",
+    "specs": "Quad core Intel Core i5-7500 (-MCP-) speed/max: 3612/3401 MHz, Radeon RX 580 Series (POLARIS10, DRM 3.25.0, 4.17.0-8.1-liquorix-amd64, LLVM 8.0.0)",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "271970",
+    "title": "Hero and Daughter+",
+    "timestamp": 1536103715,
+    "rating": "Platinum",
+    "notes": "If I switch workspaces while fullscreen or click outside of the game while fullscreen the game may crash(9/10 times, but there *was* that one time it didn't crash). I'm on i3 though and haven't tested on a normal stacking wm. Computer info pulled from inxi -b",
+    "os": "Ubuntu 18.04.1 LTS, 4.17.0-8.1-liquorix-amd64 x86_64 ",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel - padoka PPA",
+    "specs": "Quad core Intel Core i5-7500 (-MCP-) speed/max: 3612/3401 MHz, Radeon RX 580 Series (POLARIS10, DRM 3.25.0, 4.17.0-8.1-liquorix-amd64, LLVM 8.0.0)",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

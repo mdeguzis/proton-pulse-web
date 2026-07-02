@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "303340",
+    "cpu": "Intel(R) Core(TM)2 Quad CPU    Q9550  @ 2.83GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 460/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.14.71-1-MANJARO",
+    "notes": "Does not start. Because of OpenGL?",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "5964 Mb",
+    "rating": "Borked",
+    "timestamp": 1537818638,
+    "title": "Concursion",
+    "source": "protondb"
+  }
+]

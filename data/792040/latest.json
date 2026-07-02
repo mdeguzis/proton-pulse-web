@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "792040",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.0-devel (git-e44a4ba 2019-05-10 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-48-generic",
+    "notes": "show game crashed alert right after start up",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557474367,
+    "title": "Detective Di: The Silk Rose Murders | \u72c4\u4ec1\u6770\u4e4b\u9526\u8537\u8587",
+    "source": "protondb"
+  },
+  {
+    "appId": "792040",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.2.0-30-generic",
+    "os": "Ubuntu 15.10",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562054083,
+    "title": "Detective Di: The Silk Rose Murders | \u72c4\u4ec1\u6770\u4e4b\u9526\u8537\u8587",
+    "source": "protondb"
+  },
+  {
+    "appId": "792040",
+    "cpu": "Intel Core i5-6300U @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Games crashes directly at startup",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563008066,
+    "title": "Detective Di: The Silk Rose Murders | \u72c4\u4ec1\u6770\u4e4b\u9526\u8537\u8587",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

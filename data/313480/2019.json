@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "313480",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.14.92-1-MANJARO",
+    "notes": "Completed 2 Tutorials without any problems. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553030366,
+    "title": "Blitzkrieg Anthology",
+    "source": "protondb"
+  },
+  {
+    "appId": "313480",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "4.19.47_1",
+    "notes": "Game runs flawless and without any issues. ",
+    "os": "Void Linux",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559512138,
+    "title": "Blitzkrieg Anthology",
+    "source": "protondb"
+  }
+]

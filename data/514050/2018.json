@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "514050",
+    "cpu": "Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz",
+    "gpu": "X.Org AMD VERDE (DRM 2.50.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "I needed to go to winecfg and activate the desktop so that the game didn't boil down to a black screen. (WINEPREFIX=\"/silo_l/SteamLibrary/steamapps/compatdata/514050/pfx\" winecfg)",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "5836 Mb",
+    "rating": "Gold",
+    "timestamp": 1537128063,
+    "title": "Uprising 2: Lead and Destroy",
+    "source": "protondb"
+  }
+]

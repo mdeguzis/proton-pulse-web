@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1664200",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 470.161.03",
+    "kernel": "5.10.0-20-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1672797290,
+    "title": "Duelists of Eden",
+    "source": "protondb"
+  },
+  {
+    "appId": "1664200",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.5-arch1-1",
+    "notes": "Runs without issue on older version of proton",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1681532774,
+    "title": "Duelists of Eden",
+    "source": "protondb"
+  },
+  {
+    "appId": "1664200",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.1.25-1-MANJARO",
+    "notes": "Using GE, the game's open beta worked well.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-1",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1682503151,
+    "title": "Duelists of Eden",
+    "source": "protondb"
+  }
+]

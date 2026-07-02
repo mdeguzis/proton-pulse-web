@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "839540",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Ran fine after tweak.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1548185222,
+    "title": "Electroquest: Resistance is Futile",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

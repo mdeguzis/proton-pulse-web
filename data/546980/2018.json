@@ -1,0 +1,15 @@
+[
+  {
+    "appId": "546980",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Opens a white window and hangs",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-6",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "Midnight Carnival",
+    "source": "protondb"
+  }
+]

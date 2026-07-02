@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "897730",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.14.15-1-MANJARO",
+    "notes": "If you're OK with 30-40 FPS then you'll have a fine time with this.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1635558528,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "897730",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.4.0-90-generic",
+    "notes": "Not advising to play this game on Linux.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1636638141,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "897730",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.4.0-90-generic",
+    "notes": "Very laggy on Linux with Proton",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1640176212,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "200490",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.7-arch1-1-ARCH",
+    "notes": "Did not work with proton but I made a win32 wineprefix and installed wmp9, it worked in that.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Bronze",
+    "timestamp": 1549796581,
+    "title": "Memento Mori",
+    "source": "protondb"
+  },
+  {
+    "appId": "200490",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Crashes with error message \"cannot initialize windows media playback.\" Recommended tweaks did not resolve issue.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560117258,
+    "title": "Memento Mori",
+    "source": "protondb"
+  }
+]

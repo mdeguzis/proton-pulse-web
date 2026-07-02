@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3854330",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.6-200.fc42.x86_64",
+    "notes": "The game runs fine, but with no transparency.",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1762591067,
+    "title": "",
+    "source": "protondb"
+  }
+]

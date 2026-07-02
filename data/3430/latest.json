@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "3430",
+    "title": "Pizza Frenzy",
+    "timestamp": 1535304852,
+    "rating": "Platinum",
+    "notes": "Works Perfectly",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "3430",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Perfect",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541885291,
+    "title": "Pizza Frenzy Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3430",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.4.166-1-MANJARO",
+    "notes": "No problems running the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1544085511,
+    "title": "Pizza Frenzy Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3430",
+    "title": "Pizza Frenzy",
+    "timestamp": 1535290452,
+    "rating": "Platinum",
+    "notes": "Works Perfectly",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

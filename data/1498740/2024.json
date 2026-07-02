@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1498740",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "I installed it Offline, using wine, then I launched it with steam proton, adding it as a nonsteam game. It's possible that the steam version",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1730854334,
+    "title": "",
+    "source": "protondb"
+  }
+]

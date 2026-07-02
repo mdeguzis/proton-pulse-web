@@ -1,0 +1,59 @@
+[
+  {
+    "appId": "337360",
+    "title": "Dead Island Retro Revenge",
+    "timestamp": 1535156164,
+    "rating": "Platinum",
+    "notes": "no problem",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 6500 / R9 290x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "337360",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Run fine",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540575688,
+    "title": "Dead Island Retro Revenge",
+    "source": "protondb"
+  },
+  {
+    "appId": "337360",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "Logitech F710 gamepad works perfectly.",
+    "os": "Debian GNU/Linux stable-updates (sid)",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541348601,
+    "title": "Dead Island Retro Revenge",
+    "source": "protondb"
+  },
+  {
+    "appId": "337360",
+    "title": "Dead Island Retro Revenge",
+    "timestamp": 1535141764,
+    "rating": "Platinum",
+    "notes": "no problem",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 6500 / R9 290x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

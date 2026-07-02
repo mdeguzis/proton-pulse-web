@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "92600",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.16-112.current",
+    "notes": "Gnome 3.28.2 The game minimizes when clicked",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1553717451,
+    "title": "Xotic",
+    "source": "protondb"
+  },
+  {
+    "appId": "92600",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.16-112.current",
+    "notes": "The game minimizes when clicked",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1553717989,
+    "title": "Xotic",
+    "source": "protondb"
+  },
+  {
+    "appId": "92600",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4",
+    "notes": "Didn't encounter any problems with the game minimizing, as I'm using a tiling window manager, but the game window certainly doesn't like to cooperate and can be quite picky about where it's placed and how it's sized. Still, I managed to get it working and playing fine with a little fidgeting. Maybe this game could benefit from a WINE virtual desktop.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1559075210,
+    "title": "Xotic",
+    "source": "protondb"
+  }
+]

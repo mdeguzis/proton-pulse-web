@@ -1,0 +1,60 @@
+[
+  {
+    "appId": "788770",
+    "title": "Meteor 60 Seconds!",
+    "timestamp": 1535665458,
+    "rating": "Silver",
+    "notes": "When you fly in the rocket, there are some graphical glitches in the sprites of the earth and the asteroid",
+    "os": "Kubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 2700x / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "788770",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Works perfectly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542220408,
+    "title": "Meteor 60 Seconds!",
+    "source": "protondb"
+  },
+  {
+    "appId": "788770",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "55min; finished the game",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "protonVersionManual": "native",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544747772,
+    "title": "Meteor 60 Seconds!",
+    "source": "protondb"
+  },
+  {
+    "appId": "788770",
+    "title": "Meteor 60 Seconds!",
+    "timestamp": 1535651058,
+    "rating": "Silver",
+    "notes": "When you fly in the rocket, there are some graphical glitches in the sprites of the earth and the asteroid",
+    "os": "Kubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 2700x / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "410000",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.14.81-1-MANJARO",
+    "notes": "Main Menu shows up, but xbox 360 wired controller is not recognized. Keyboard works, but game is multiplayer. With only one keyboard you cannot play it.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1543162482,
+    "title": "Chalo Chalo",
+    "source": "protondb"
+  }
+]

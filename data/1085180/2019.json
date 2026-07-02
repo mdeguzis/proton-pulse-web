@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1085180",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Fonts are missing and will be represented as empty squares, although it's very easy to fix - install allfonts via winetricks (I also installed corefonts although I don't think that was necessary). Additionally, controller support is iffy, the best workaround is to disable the d-pad and left stick and remap them to keyboard arrow keys using Steam Input. Once you do that, the game runs absolutely flawlessly.",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1569475048,
+    "title": "Gunvolt Chronicles: Luminous Avenger iX",
+    "source": "protondb"
+  },
+  {
+    "appId": "1085180",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.3.0-devel (git-b38fcaa 2019-09-28 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Game works perfectly; fonts do not match with Windows, causing some text to overflow out of text boxes.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1569654335,
+    "title": "Gunvolt Chronicles: Luminous Avenger iX",
+    "source": "protondb"
+  },
+  {
+    "appId": "1085180",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.3.0-devel (git-b38fcaa 2019-09-28 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Game works well, however you are unable to use a controller properly. Keyboard controls are fine. Fonts do not match with Windows, causing some text to overflow out of text boxes.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1569655378,
+    "title": "Gunvolt Chronicles: Luminous Avenger iX",
+    "source": "protondb"
+  }
+]

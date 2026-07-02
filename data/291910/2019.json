@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "291910",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Works fine out of the box. Performance is OK.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562417626,
+    "title": "Firefighters 2014",
+    "source": "protondb"
+  }
+]

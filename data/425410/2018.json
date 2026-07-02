@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "425410",
+    "title": "Road to Ballhalla",
+    "timestamp": 1535379912,
+    "rating": "Borked",
+    "notes": "Error message: \"DX feature level 10.0 is required to run the engine\"",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "425410",
+    "title": "Road to Ballhalla",
+    "timestamp": 1536121057,
+    "rating": "Bronze",
+    "notes": "Game runs fine, but audio is completely glitched with crackling and non-stop sound effects. Legacy version has poor performance in hub but is fine in-game. Current version doesn't exit properly so you need to kill the process when you're done playing.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "425410",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "The audio is very messed up, but the game runs perfectly otherwise.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32175 Mb",
+    "rating": "Silver",
+    "timestamp": 1539308373,
+    "title": "Road to Ballhalla",
+    "source": "protondb"
+  },
+  {
+    "appId": "425410",
+    "title": "Road to Ballhalla",
+    "timestamp": 1535365512,
+    "rating": "Borked",
+    "notes": "Error message: \"DX feature level 10.0 is required to run the engine\"",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "425410",
+    "title": "Road to Ballhalla",
+    "timestamp": 1536106657,
+    "rating": "Bronze",
+    "notes": "Game runs fine, but audio is completely glitched with crackling and non-stop sound effects. Legacy version has poor performance in hub but is fine in-game. Current version doesn't exit properly so you need to kill the process when you're done playing.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "774181",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.5.8-1-MANJARO",
+    "notes": "runs really well, some stuttering in level 2 (on kde plasma)",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1593039816,
+    "title": "",
+    "source": "protondb"
+  }
+]

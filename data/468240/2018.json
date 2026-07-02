@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "468240",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.18.04",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Just works. Have not yet tested multiplayer.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544865104,
+    "title": "VR Regatta - The Sailing Game",
+    "source": "protondb"
+  }
+]

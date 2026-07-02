@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "859340",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559800419,
+    "title": "Seeking Dawn",
+    "source": "protondb"
+  }
+]

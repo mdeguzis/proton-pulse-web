@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "242960",
+    "title": "Blood Omen 2: Legacy of Kain",
+    "timestamp": 1535193167,
+    "rating": "Platinum",
+    "notes": "Runs perfectly at 60 FPS",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-6350 / GTX 760 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "242960",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs flawlessly.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15923 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537483140,
+    "title": "Blood Omen 2: Legacy of Kain",
+    "source": "protondb"
+  },
+  {
+    "appId": "242960",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Working well",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537824549,
+    "title": "Blood Omen 2: Legacy of Kain",
+    "source": "protondb"
+  },
+  {
+    "appId": "242960",
+    "cpu": "Intel Core i7         950  @ 3.07GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.16_1",
+    "notes": "Had an issue where the window was losing focus but I think that was herbstluftwm being dumb, Game runs flawlessly. The issue was solved by restarting steam.",
+    "os": "Void Linux",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1540516768,
+    "title": "Blood Omen 2: Legacy of Kain",
+    "source": "protondb"
+  },
+  {
+    "appId": "242960",
+    "title": "Blood Omen 2: Legacy of Kain",
+    "timestamp": 1535178767,
+    "rating": "Platinum",
+    "notes": "Runs perfectly at 60 FPS",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-6350 / GTX 760 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

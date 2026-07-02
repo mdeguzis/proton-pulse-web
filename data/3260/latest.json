@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "3260",
+    "title": "Safecracker: the ultimate puzzle adventure",
+    "timestamp": 1534959708,
+    "rating": "Platinum",
+    "notes": "nothing",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-5200U / NVIDIA GeForce 830M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "3260",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Just works",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536776285,
+    "title": "Safecracker: The Ultimate Puzzle Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "3260",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Game works but has some minor perfomance issues. At some locations framerate dips below 60 fps and in main menu it is 25 fps. This is rather surprising considering low system requirements. ",
+    "os": "Linux 4.x (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.7-6)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1540552913,
+    "title": "Safecracker: The Ultimate Puzzle Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "3260",
+    "title": "Safecracker: the ultimate puzzle adventure",
+    "timestamp": 1534945308,
+    "rating": "Platinum",
+    "notes": "nothing",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-5200U / NVIDIA GeForce 830M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

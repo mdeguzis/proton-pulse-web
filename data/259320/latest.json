@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "259320",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Runs fine out of a box. Performance is very smooth.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "9 GB",
+    "rating": "Platinum",
+    "timestamp": 1551839165,
+    "title": "Heli Heroes",
+    "source": "protondb"
+  },
+  {
+    "appId": "259320",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555166118,
+    "title": "Heli Heroes",
+    "source": "protondb"
+  }
+]

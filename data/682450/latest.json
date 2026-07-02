@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "682450",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "it runs, but i cant get it to the \"front layer\" , it keeps running on background\"layer\"",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7958 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537287476,
+    "title": "Garrison: Archangel",
+    "source": "protondb"
+  }
+]

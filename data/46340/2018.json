@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "46340",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.6-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.6-1-MANJARO",
+    "notes": "Runs fine",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.4-6",
+    "ram": "16042 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536768445,
+    "title": "Theatre of War 2: Africa 1943",
+    "source": "protondb"
+  },
+  {
+    "appId": "46340",
+    "cpu": "i7-7820HQ CPU @ 2.90GHz",
+    "gpu": "GeForce 940MX/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.19-200.fc28.x86_64",
+    "notes": "Played few missions, works well",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15768 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536811854,
+    "title": "Theatre of War 2: Africa 1943",
+    "source": "protondb"
+  }
+]

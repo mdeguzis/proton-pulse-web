@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "459160",
+    "title": "Allods Online My.com",
+    "timestamp": 1534946352,
+    "rating": "Gold",
+    "notes": "The Steam API dll needs to be deleted from the game folder, otherwise the game complains about Steam \"not running\"",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "open source Intel Mesa drivers",
+    "specs": "Intel HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "459160",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "3.1 Mesa 18.1.0-rc4",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Unfortunately, while removing the steam_api.dll file will resolve the \"steam needs to be running in order to play\" issue, it also means you can't login with steam. So, unless you have a separate account tied to an email address, you will be unable to play.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541129512,
+    "title": "Allods Online My.com",
+    "source": "protondb"
+  },
+  {
+    "appId": "459160",
+    "title": "Allods Online My.com",
+    "timestamp": 1534931952,
+    "rating": "Gold",
+    "notes": "The Steam API dll needs to be deleted from the game folder, otherwise the game complains about Steam \"not running\"",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "open source Intel Mesa drivers",
+    "specs": "Intel HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

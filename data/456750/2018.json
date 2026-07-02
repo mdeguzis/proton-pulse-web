@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "456750",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.14.78-1-lts",
+    "notes": "The first two rooms were tested at the highest graphical settings at 3440x1440 on a 7.1 surround setup with no issues or slowdown whatsoever.",
+    "os": "Linux 4.14",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "48 GB",
+    "rating": "Platinum",
+    "timestamp": 1542112973,
+    "title": "The Room Three",
+    "source": "protondb"
+  },
+  {
+    "appId": "456750",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "The game works great up until the part where return to the train again, your read the paper, and then it fades to white. After fading to white, it doesn't return back to normal, I can hear the audio of game running, and I can click things, I hear the help notification sound, I can even see the mouse cursor, but everything is just all white besides that.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543147457,
+    "title": "The Room Three",
+    "source": "protondb"
+  }
+]

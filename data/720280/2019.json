@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "720280",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 19.0.0-devel (git-6b7aea9 2019-01-04 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-43-generic",
+    "notes": "i recommend for you play this game use this command PROTON_NO_D3D11=1 %command% and you can play this perfectly ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1546798581,
+    "title": "Fox Hime",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "720280",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557624385,
+    "title": "Fox Hime",
+    "source": "protondb"
+  }
+]

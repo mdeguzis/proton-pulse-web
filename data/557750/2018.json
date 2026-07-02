@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "557750",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Everything works out of the box.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540940169,
+    "title": "Giants: Citizen Kabuto",
+    "source": "protondb"
+  },
+  {
+    "appId": "557750",
+    "cpu": "AMD A6-3400M APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1541018115,
+    "title": "Giants: Citizen Kabuto",
+    "source": "protondb"
+  }
+]

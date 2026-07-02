@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2767950",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.8.0-63-generic",
+    "notes": "No tweaks tried yet since I'm not experienced with it. If anyone has tweaks that work with this game, feel free to let me know.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1751643787,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2767950",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 19.1.1, DRM 3.57, 6.8.0-63-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-63-generic",
+    "notes": "Game works with bugs! Vulkan only (NVIDIA Cards refuse to launch the game in VR whatsoever.)",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1751735244,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "429330",
+    "title": "Stikbold!",
+    "timestamp": 1535919585,
+    "rating": "Borked",
+    "notes": "Doesn't start (no errors, no black screen...it just stops directly after starting)",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD Graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "429330",
+    "cpu": "Intel Core i7-4510U @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "The first time it started it took long and with sound stuttering. after loading gameplay and visuals were perfect. Next time the game started there were no issues.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1540692407,
+    "title": "Stikbold! A Dodgeball Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "429330",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541915196,
+    "title": "Stikbold! A Dodgeball Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "429330",
+    "title": "Stikbold!",
+    "timestamp": 1535905185,
+    "rating": "Borked",
+    "notes": "Doesn't start (no errors, no black screen...it just stops directly after starting)",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD Graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

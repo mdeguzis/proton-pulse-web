@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1898500",
+    "cpu": "AMD Ryzen 7 PRO 5850U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 19.1.7, DRM 3.59, 6.12.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1738336049,
+    "title": "",
+    "source": "protondb"
+  }
+]

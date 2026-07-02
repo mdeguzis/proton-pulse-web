@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2122430",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 3000 (SNB GT2)",
+    "gpuDriver": "3.3 Mesa 23.0.1",
+    "kernel": "6.2.2-artix1-1",
+    "notes": "I've tried using proton-GE, I've tried updating all my drivers and every other standard trick, just doesn't work. Very strange since everything just werks on my desktop running manjaro, so not sure what's going on there. \nlooking at the log it errors out with\n\"err:vulkan:wine_vk_instance_load_physical_devices Failed to enumerate physical devices, res=-3\"\n\"err:vulkan:__wine_create_vk_instance_with_callback Failed to load physical devices, res=-3\"\n\" terminate called after throwing an instance of 'dxvk::DxvkError' \"\nSo i guess I'm having some kind of vulkan driver issue? I'm not super good with these things",
+    "os": "Artix Linux",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1680067278,
+    "title": "",
+    "source": "protondb"
+  }
+]

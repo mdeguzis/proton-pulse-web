@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "755950",
+    "cpu": "Intel Core i3-4160 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 440.48.02",
+    "kernel": "5.3.0-26-generic",
+    "notes": "Works as native",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "4.11-12",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1579835960,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1094640",
+    "cpu": "Intel Core i5-6300U @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 20.2.0",
+    "kernel": "5.8.14-gentoo",
+    "notes": "The game starts with no sound, but after the intro you only get a black screen",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1602495281,
+    "title": "",
+    "source": "protondb"
+  }
+]

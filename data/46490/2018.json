@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "46490",
+    "title": "Still Life 2",
+    "timestamp": 1535041311,
+    "rating": "Borked",
+    "notes": "Textures are completely messed up, the same as in normal Wine.",
+    "os": "Ubuntu 16.04.5",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-2500K / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "46490",
+    "title": "Still Life 2",
+    "timestamp": 1535658922,
+    "rating": "Borked",
+    "notes": "Graphic Glitches",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ/HD4400",
+    "protonVersion": "3.7.4",
+    "source": "protondb"
+  },
+  {
+    "appId": "46490",
+    "cpu": "AMD FX(tm)-6350 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Textures and model geometry is completely broken to the degree where it is unplayable.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.6 beta",
+    "ram": "7995 Mb",
+    "rating": "Borked",
+    "timestamp": 1537365958,
+    "title": "Still Life 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "46490",
+    "title": "Still Life 2",
+    "timestamp": 1535026911,
+    "rating": "Borked",
+    "notes": "Textures are completely messed up, the same as in normal Wine.",
+    "os": "Ubuntu 16.04.5",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-2500K / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "46490",
+    "title": "Still Life 2",
+    "timestamp": 1535644522,
+    "rating": "Borked",
+    "notes": "Graphic Glitches",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ/HD4400",
+    "protonVersion": "3.7.4",
+    "source": "protondb"
+  }
+]

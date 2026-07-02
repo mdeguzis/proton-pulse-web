@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "407060",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Valve Index, fails to start",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1567461664,
+    "title": "AltspaceVR\u2014The Social VR App",
+    "source": "protondb"
+  }
+]

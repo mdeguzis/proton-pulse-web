@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "97330",
+    "cpu": "Intel Core i3-8100",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon Gigabyte AORUS RX 580 8GB",
+    "gpuDriver": "3.0 Mesa 18.2.5",
+    "kernel": "4.15",
+    "notes": "Game hangs on exit for me using Proton 3.7-8 (Valve Tested version). Seems fine with this Proton version.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551980202,
+    "title": "Magic: The Gathering - Duels of the Planeswalkers 2013",
+    "source": "protondb"
+  },
+  {
+    "appId": "97330",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557492729,
+    "title": "Magic: The Gathering - Duels of the Planeswalkers 2013",
+    "source": "protondb"
+  }
+]

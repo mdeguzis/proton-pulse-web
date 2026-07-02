@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "104000",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "crash on map loading",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15989 Mb",
+    "rating": "Borked",
+    "timestamp": 1536688522,
+    "title": "iBomber Defense",
+    "source": "protondb"
+  },
+  {
+    "appId": "104000",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Crashes on map sclection screen",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540840829,
+    "title": "iBomber Defense",
+    "source": "protondb"
+  },
+  {
+    "appId": "104000",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Starts up fine, the menu works, but when starting any map, it just crashes right after the progress bar.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1543785102,
+    "title": "iBomber Defense",
+    "source": "protondb"
+  }
+]

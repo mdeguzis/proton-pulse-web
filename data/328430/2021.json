@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "328430",
+    "cpu": "%s1",
+    "duration": "underOneHour",
+    "gpu": "Red Hat virgl",
+    "gpuDriver": "3.1 Mesa 19.2.8",
+    "kernel": "5.4.139-16311-g330b3df0010b",
+    "notes": "Unable to resize Dosbox window to see entire screen. Music working and game mouse cursor appears.",
+    "os": "Linux 5.4",
+    "protonVersion": "6.3-7",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1637409638,
+    "title": "",
+    "source": "protondb"
+  }
+]

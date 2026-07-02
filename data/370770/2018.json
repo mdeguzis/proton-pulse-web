@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "370770",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.8-041808-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel",
+    "kernel": "4.18.8-041808-generic",
+    "notes": "Right click on the game, go to properties and click on set launch options and copy and paste the text below into select set launch options and click ok and now the game should run \n\nPROTON_NO_D3D11=1 %command%",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "32181 Mb",
+    "rating": "Gold",
+    "timestamp": 1537084046,
+    "title": "Holodrive",
+    "source": "protondb"
+  },
+  {
+    "appId": "370770",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Added \"PROTON_NO_D3D11=1 %command%\" to launch options.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1545012691,
+    "title": "Holodrive",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

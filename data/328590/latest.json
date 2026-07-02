@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "328590",
+    "cpu": "i5-6400 CPU @ 2.70GHz",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.4-steamvr-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-steamvr-generic",
+    "notes": "Seems to run fine after playing for a few minutes. Did not try VR mode.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15983 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536808262,
+    "title": "Don't Knock Twice",
+    "source": "protondb"
+  }
+]

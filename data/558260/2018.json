@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "558260",
+    "title": "Gravel",
+    "timestamp": 1535630537,
+    "rating": "Borked",
+    "notes": "Fatal Error Message Upon Launch",
+    "os": "Linux Mint 19 Tara 64 bit (4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-8700 / GTX 1060 6GB",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "558260",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Doesnt Run. You get a black screen and an error message \"Fatal Error\". However, i discovered that it is probably a Codec Problem. There are several people that have fixed that Error Message by simply installing an update called \"Windows Media Pack N\". Also the Readme of the Game says you should check that your \"Windows Media Player\" is up-to-date. So i think it is a sure shot to try it. Problem is... i dont know how to install that \".msu\" file in Linux ^^' But maybe it will help anyone.",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16054 MB",
+    "rating": "Borked",
+    "timestamp": 1540052945,
+    "title": "Gravel",
+    "source": "protondb"
+  },
+  {
+    "appId": "558260",
+    "title": "Gravel",
+    "timestamp": 1535616137,
+    "rating": "Borked",
+    "notes": "Fatal Error Message Upon Launch",
+    "os": "Linux Mint 19 Tara 64 bit (4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-8700 / GTX 1060 6GB",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

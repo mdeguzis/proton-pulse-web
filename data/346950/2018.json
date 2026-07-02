@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "346950",
+    "cpu": "AMD A10-6700 APU with Radeon(tm) HD Graphics",
+    "gpu": "X.Org AMD OLAND (DRM 2.50.0 / 4.15.0-34-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Framerate is sometimes low. Alt + enter to full screen.",
+    "os": "Ubuntu 18.04.1 LTS (64 bits)",
+    "protonVersion": "Default",
+    "ram": "7988 MB",
+    "rating": "Gold",
+    "timestamp": 1537538694,
+    "title": "The Dark Stone from Mebara",
+    "source": "protondb"
+  }
+]

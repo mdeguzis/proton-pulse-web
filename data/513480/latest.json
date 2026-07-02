@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "513480",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Game opens in Window with partial content only (missing bottom/right corner). Cannot change graphic settings because they aren't on screen.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1563875945,
+    "title": "Geo",
+    "source": "protondb"
+  }
+]

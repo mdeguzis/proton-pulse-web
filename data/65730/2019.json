@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "65730",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.12.12-gentoo_stordator",
+    "notes": "Mouse behaves badly, DRM can be circumvented by copying registry key from windows installation.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "20 GB",
+    "rating": "Bronze",
+    "timestamp": 1551379352,
+    "title": "Take On Helicopters",
+    "source": "protondb"
+  },
+  {
+    "appId": "65730",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "I've got a dual boot with Windows 10 on another drive that I use if I absolutely have to, so I logged in there and installed TKOH then went to regedit and exported the key HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\bohemia interactive studio.\n\nI then booted back into Linux and opened regedit using Wine - env WINEPREFIX=PATH TO STEAM LIBRARY/steamapps/compatdata/65730/pfx regedit.\n\ni then renamed the registry key Steam had set up and imported my new registry key back in.  I did have to change a couple of paths for the game and expansions as they're in different locations.\n\nAfter that, the game launched straight away and seems to work as intended.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1566567106,
+    "title": "Take On Helicopters",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "1022450",
+    "cpu": "Intel Xeon           E5450  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.2.11-050211-generic",
+    "notes": "\u043d\u0435 \u0443\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u043f\u0443\u0441\u0442\u0438\u0442\u044c \u0438\u0433\u0440\u0443, \u043d\u0435 \u043e\u0434\u0438\u043d \u0438\u0437 \u0442\u0432\u0438\u043a\u043e\u0432 \u043d\u0435 \u043f\u043e\u043c\u043e\u0433. \u041a\u0442\u043e \u043d\u0438\u0431\u0443\u0434\u044c \u043f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0442\u043e\u0436\u0435 \n\nI can\u2019t start the game, not one of the tweaks helped. Try somebody too",
+    "os": "Ubuntu 18.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1571168691,
+    "title": "War Selection",
+    "source": "protondb"
+  },
+  {
+    "appId": "1022450",
+    "cpu": "Intel Xeon           E5450  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.2.11-050211-generic",
+    "notes": "PROTON_USE_WINED3D11=1  %command%  \u0432 \u0438\u0433\u0440\u0443 \u0434\u0438\u043a\u0438\u0435 \u0430\u0440\u0442\u0438\u0444\u0430\u043a\u0442\u044b \u0438\u0433\u0440\u0430\u0442\u044c \u043d\u0435\u043b\u044c\u0437\u044f ",
+    "os": "Ubuntu 18.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.2-1",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1572201513,
+    "title": "War Selection",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

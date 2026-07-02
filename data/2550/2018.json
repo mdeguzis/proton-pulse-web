@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "2550",
+    "title": "RIP 3: The Last Hero",
+    "timestamp": 1535049568,
+    "rating": "Borked",
+    "notes": "Won't Start",
+    "os": "Ubuntu 16.04 (Kernel 4.15.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-3220T / GTX 660 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2550",
+    "title": "RIP 3: The Last Hero",
+    "timestamp": 1535035168,
+    "rating": "Borked",
+    "notes": "Won't Start",
+    "os": "Ubuntu 16.04 (Kernel 4.15.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-3220T / GTX 660 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

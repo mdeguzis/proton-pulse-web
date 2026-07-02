@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "860620",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-39-generic",
+    "notes": "no it does not run platinum. <1 hour is not enough testing for this. after the hotel scene the fps goes down to 1fps you can solve this with middle settings, but this is far from platinum. even the intro does not play. ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1548262920,
+    "title": "KURSK",
+    "source": "protondb"
+  }
+]

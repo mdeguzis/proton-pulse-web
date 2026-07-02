@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "551370",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-360bda0b1d)",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "Just doesn't launch at all.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1567985572,
+    "title": "Gravity Sketch",
+    "source": "protondb"
+  }
+]

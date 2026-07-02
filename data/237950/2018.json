@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "237950",
+    "title": "UFO: Afterlight",
+    "timestamp": 1535130508,
+    "rating": "Borked",
+    "notes": "Black screen but sound works - you can hear the intro sequence. Does the \"Direct X for Windows\" 2 step install.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700 / GTX 780",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "237950",
+    "title": "UFO: Afterlight",
+    "timestamp": 1535116108,
+    "rating": "Borked",
+    "notes": "Black screen but sound works - you can hear the intro sequence. Does the \"Direct X for Windows\" 2 step install.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700 / GTX 780",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

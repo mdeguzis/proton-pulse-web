@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "65080",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD BARTS",
+    "gpuDriver": "3.1 Mesa 18.3.6",
+    "kernel": "5.0.0-trunk-amd64",
+    "notes": "If the game complains that it's already running, you need to delete the file steam/steamapps/compatdata/65080/pfx/drive_c/ProgramData/Cateia Games/Kaptain Brawe/steamuser/hwnd.txt",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-9",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1562496722,
+    "title": "Kaptain Brawe: A Brawe New World",
+    "source": "protondb"
+  },
+  {
+    "appId": "65080",
+    "cpu": "AMD A8-6410 APU with AMD Radeon R5 Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.19.55-041955-generic",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "Default",
+    "ram": "3 GB",
+    "rating": "Platinum",
+    "timestamp": 1562517754,
+    "title": "Kaptain Brawe: A Brawe New World",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "226700",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.11-arch2-1-ARCH",
+    "notes": "The game launcher starts up and it tries to connect to a server, after a while it fails. According to other online reports, their servers are shut down. So this game is dead does not work anymore. ",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "20 GB",
+    "rating": "Borked",
+    "timestamp": 1551197948,
+    "title": "Infestation: Survivor Stories Classic",
+    "source": "protondb"
+  }
+]

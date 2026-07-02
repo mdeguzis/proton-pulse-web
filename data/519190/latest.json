@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "519190",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Opens fine, Can select server but boots you before joining because of Easy Anti Cheat.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559381039,
+    "title": "Next Day: Survival",
+    "source": "protondb"
+  },
+  {
+    "appId": "519190",
+    "cpu": "Intel Core i7-2600K @ 4.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.18.0-24-generic",
+    "notes": "Can't see the map (completly green). Also I only played in solo. Otherwise work fine.",
+    "os": "Ubuntu 18.04.2 LTS (64\u00a0bits)",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1562582640,
+    "title": "Next Day: Survival",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "519190",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Ran as expected out of the box.\n81-85 FPS Max graphic settings, fullscreen.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564713992,
+    "title": "Next Day: Survival",
+    "source": "protondb"
+  }
+]

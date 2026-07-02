@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1790370",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 13.0.1, DRM 3.42, 5.15.38-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.0.3",
+    "kernel": "5.15.38-1-MANJARO",
+    "notes": "About 2 seconds of the opening credits appear. Followed by an engine error",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1655206512,
+    "title": "Rogue AI Simulator",
+    "source": "protondb"
+  }
+]

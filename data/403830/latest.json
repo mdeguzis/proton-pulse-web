@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "403830",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.32-1-MANJARO",
+    "notes": "Zero issues. Runs practically as well as windows, no Linux exclusive bugs found.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554574504,
+    "title": "The Consuming Shadow",
+    "source": "protondb"
+  }
+]

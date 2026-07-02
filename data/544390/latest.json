@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "544390",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Stuck at Startup loading screen (After launcher)",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552419473,
+    "title": "NITE Team 4",
+    "source": "protondb"
+  }
+]

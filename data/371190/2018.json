@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "371190",
+    "title": "Making History: The Calm and the Storm Gold Edition",
+    "timestamp": 1535835311,
+    "rating": "Borked",
+    "notes": "Game runs fine but all entries in menu are missing. Unable to play the game.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-6700K / GTX 1060",
+    "protonVersion": "3.5-7",
+    "source": "protondb"
+  },
+  {
+    "appId": "371190",
+    "cpu": "Intel(R) Xeon(R) CPU           E5520  @ 2.27GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.66",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Need to install extra fonts to the wine prefix for this game: ~/.local/share/Steam/steamapps/compatdata/371190/pfx/drive_c/windows/Fonts\nFonts can be grabbed from here: https://github.com/TorqDL/moddingmhg/raw/master/OLD/files/winefonts.zip\nWithout fonts installed, menus and other screens are missing text.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "64411 Mb",
+    "rating": "Gold",
+    "timestamp": 1539837918,
+    "title": "Making History: The Calm and the Storm Gold Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "371190",
+    "title": "Making History: The Calm and the Storm Gold Edition",
+    "timestamp": 1535820911,
+    "rating": "Borked",
+    "notes": "Game runs fine but all entries in menu are missing. Unable to play the game.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-6700K / GTX 1060",
+    "protonVersion": "3.5-7",
+    "source": "protondb"
+  }
+]

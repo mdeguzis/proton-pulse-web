@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "570710",
+    "cpu": "Intel Xeon           X5687  @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.9-105.current",
+    "notes": "To mitigate crashing I increased hard open file limit to 1048576 by setting in \"/etc/security/limits.conf\" the line \"* hard nofile 1048576\"\n\nThen, in both \"/etc/systemd/system.conf\" and \"/etc/systemd/user.conf\" set:\n\"DefaultLimitNOFILE=1048576\" \n\nRestart session with:\n\"systemctl daemon-reexec\"\n\nUpon booting the game, following the loading symbol, the screen will turn black indefinitely until hitting the ESC key once. It will then proceed to the menu.\n\nTips on changing hard limits taken from reddit post by user DePingus. Thank you.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1545468354,
+    "title": "Extinction",
+    "source": "protondb"
+  }
+]

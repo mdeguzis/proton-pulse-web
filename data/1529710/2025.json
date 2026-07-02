@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1529710",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 550 (radeonsi, polaris11, ACO, DRM 3.61, 6.14.11-300.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.14.11-300.fc42.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1751876037,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "43190",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-18-generic",
+    "notes": "game does not start, net.framework error i think",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1556610692,
+    "title": "The Haunted: Hells Reach",
+    "source": "protondb"
+  },
+  {
+    "appId": "43190",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Does nothing.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1557580384,
+    "title": "The Haunted: Hells Reach",
+    "source": "protondb"
+  },
+  {
+    "appId": "43190",
+    "cpu": "Intel Core i7-5930K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561874156,
+    "title": "The Haunted: Hells Reach",
+    "source": "protondb"
+  }
+]

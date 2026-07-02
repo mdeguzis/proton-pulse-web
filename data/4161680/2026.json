@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4161680",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.0-8-generic",
+    "notes": "crashes immediately on different Proton version and on different game versions",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1769098342,
+    "title": "",
+    "source": "protondb"
+  }
+]

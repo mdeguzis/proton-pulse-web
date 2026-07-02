@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "550470",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD HAINAN",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-262787b 2019-06-22 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-52-generic",
+    "notes": "Runs perfectly with no bugs out of the box. I notice a slight performance drop after 1 hour of playing but that could be down to my hardware",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561298541,
+    "title": "NosTale",
+    "source": "protondb"
+  },
+  {
+    "appId": "550470",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-24-generic",
+    "notes": "runs perfectly with no tweaking",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-8",
+    "protonVersionManual": "4.2-8",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561663324,
+    "title": "NosTale",
+    "source": "protondb"
+  },
+  {
+    "appId": "550470",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.4",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "funciona perfectamente, como si estuviera en windows, sin problema ni configurar nada",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567354274,
+    "title": "NosTale",
+    "source": "protondb"
+  }
+]

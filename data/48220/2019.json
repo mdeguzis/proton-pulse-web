@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "48220",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.34-1-MANJARO",
+    "notes": "The installations is a bit tricky.\nI had to click Play from Steam to go to the next Step of the installation which are: \n - UPlay Install \n - Uplay patching\n - UPlay Login. (Exit UPlay)\n - Patching Games.\n\nAfter all of those step the game runs fine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1555810366,
+    "title": "Might & Magic: Heroes VI",
+    "source": "protondb"
+  }
+]

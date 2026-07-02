@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "343070",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Runs, more or less, but crashes frequently and with garbled transparency on the train windows that makes driving in the cabin impossible to enjoy.  And it's a janky game anyway.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7841 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536939767,
+    "title": "World of Subways 4 \u2013 New York Line 7",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "658260",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.13-1-MANJARO",
+    "notes": "Launcher works, but I can't open settings window. Game freezes at KOEI Tecmo logo",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546350034,
+    "title": "BLUE REFLECTION / BLUE REFLECTION\u3000\u5e7b\u306b\u821e\u3046\u5c11\u5973\u306e\u5263",
+    "source": "protondb"
+  },
+  {
+    "appId": "658260",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Main menu and settings works fine and you could even play beginning dialog, but then game crashes. I suspect it's because of cinematic intro.",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1560774954,
+    "title": "BLUE REFLECTION / BLUE REFLECTION\u3000\u5e7b\u306b\u821e\u3046\u5c11\u5973\u306e\u5263",
+    "source": "protondb"
+  }
+]

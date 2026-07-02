@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1073810",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "Works well barring a couple of problems that I encountered which might or might not occur for others.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1624823636,
+    "title": "Shapik: The Moon Quest",
+    "source": "protondb"
+  },
+  {
+    "appId": "1073810",
+    "cpu": "Intel Celeron 2955U @ 1.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD (HSW GT1)",
+    "gpuDriver": "3.0 Mesa 20.2.6",
+    "kernel": "5.4.0-73-generic",
+    "notes": "Sound crackling is the only annoying part, and that's definitely not gamebreaking. Could also be because my laptop's a bit underpowered.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "4 GB",
+    "rating": "bronze",
+    "timestamp": 1627413959,
+    "title": "Shapik: The Moon Quest",
+    "source": "protondb"
+  }
+]

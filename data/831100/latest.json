@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "831100",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "I see a black screen. Nothing happens. I waited about 30 minutes.",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551449161,
+    "title": "Brother Perro",
+    "source": "protondb"
+  },
+  {
+    "appId": "831100",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Black Screen.",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1552240532,
+    "title": "Brother Perro",
+    "source": "protondb"
+  }
+]

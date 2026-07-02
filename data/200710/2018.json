@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "200710",
+    "title": "Torchlight II",
+    "timestamp": 1535370584,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Ryzen 7 1700X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "200710",
+    "title": "Torchlight II",
+    "timestamp": 1535697730,
+    "rating": "Platinum",
+    "notes": "Perfekt",
+    "os": "Xubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-4570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "200710",
+    "cpu": "Intel Core i7-2670QM @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.4",
+    "kernel": "4.19.0-4-MANJARO",
+    "notes": "Had to use\n\n cd <path_to_you_library>/steamapps/common/Torchlight II/lib64/\n\n# to create symlink\nln -s ~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libfontconfig.so.1\n\nThis allowed the game to run without issue on Manjaro and Arch",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1541284185,
+    "title": "Torchlight II",
+    "source": "protondb"
+  },
+  {
+    "appId": "200710",
+    "title": "Torchlight II",
+    "timestamp": 1535356184,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Ryzen 7 1700X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "200710",
+    "title": "Torchlight II",
+    "timestamp": 1535683330,
+    "rating": "Platinum",
+    "notes": "Perfekt",
+    "os": "Xubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-4570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

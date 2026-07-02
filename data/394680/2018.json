@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "394680",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Game runs at 1FPS in main menu and ingame 5FPS or something, couldn't even move mouse had to wait 2 seconds or so before it actually moved on screen",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1545170657,
+    "title": "Mountain Crime: Requital",
+    "source": "protondb"
+  }
+]

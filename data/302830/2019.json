@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "302830",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-51-generic",
+    "notes": "I entered into an empty game and a full game room my graphics were on the minimum.\nOn the empty game room it was ok, generally speaking, it's playable but on my laptop, I experienced stuttering while walking.\nOn the full game room, I experienced FPS drops a lot almost all the time.\nI suspect that my laptop just can't handle that game good enough but I could be wrong and maybe it is lagging for everyone.\nBeside that runs perfectly fine, no connection issues or crashes. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-5",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1559913045,
+    "title": "BLOCKADE 3D",
+    "source": "protondb"
+  },
+  {
+    "appId": "302830",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Works perfectly out of the box (no mouse drift)",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563262794,
+    "title": "BLOCKADE 3D",
+    "source": "protondb"
+  }
+]

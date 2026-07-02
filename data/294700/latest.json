@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "294700",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Does not start but throws no errors",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557739966,
+    "title": "Putt-Putt\u00ae: Pep's Birthday Surprise",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294700",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Runs fine but Nvidia overlay reports its running GL at 10 FPS. For this kind of game its still quite playable and responsive at this frame rate but the lip sync does seem a bit \"off\". Compared with a native putt-putt game and the native game runs at 60 FPS (both vsync on).",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1568873918,
+    "title": "Putt-Putt\u00ae: Pep's Birthday Surprise",
+    "source": "protondb"
+  }
+]

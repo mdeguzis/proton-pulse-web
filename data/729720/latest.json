@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "729720",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.10-arch1-1-ARCH",
+    "notes": "No character models, wine d3d11 gives just a black screen",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15985 Mb",
+    "rating": "Borked",
+    "timestamp": 1538200786,
+    "title": "Zomborg",
+    "source": "protondb"
+  },
+  {
+    "appId": "729720",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "With the stream output changes to dxvk and drivers works like expected",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544472464,
+    "title": "Zomborg",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,69 @@
+[
+  {
+    "appId": "580720",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 780 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.8-200.fc29.x86_64",
+    "notes": "Game seems run out of the box perfectly. There's sound, but no music. I'm not sure if there's music in the game by design.\n\nHowever there's an issue with the Slitherine launcher: clicking on the background of the launcher forces mouse control away from you, you can't click away from the background. Only option at that point is ALT+F4 to close the Wine Window. \n\nSo beware: only click interface buttons, not the background of the launcher.\nMy gold rating is for the Slitherine launcher issue, and because I'm unsure if there is meant to be music or not.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1550622712,
+    "title": "Carrier Deck",
+    "source": "protondb"
+  },
+  {
+    "appId": "580720",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 660M",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "3.10.0-957.5.1.el7.x86_64",
+    "notes": "Visuals had some troubles but ended working perfectly after using PROTON_NO_D3D11. Background music is playing fine. The launcher does have some troubles, be sure to click the buttons and not anywhere else.",
+    "os": "CentOS Linux release 7.6.1810 (Core)  (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1550715009,
+    "title": "Carrier Deck",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "580720",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 660M",
+    "gpuDriver": "NVIDIA 418.30",
+    "kernel": "3.10.0-957.5.1.el7.x86_64",
+    "notes": "Works flawlessly after updating NVIDIA driver to 418.30.",
+    "os": "CentOS Linux release 7.6.1810 (Core)  (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1550866372,
+    "title": "Carrier Deck",
+    "source": "protondb"
+  },
+  {
+    "appId": "580720",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Seems to run perfectly out of the box. Did not notice any issues. ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571539965,
+    "title": "Carrier Deck",
+    "source": "protondb"
+  }
+]

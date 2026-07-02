@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2357760",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.2-arch1.1",
+    "kernel": "6.10.8-arch1-1",
+    "notes": "Very simple game that works practically natively, no slowdowns or (unintentional) visual bugs.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1725720979,
+    "title": "The Jeffy Game",
+    "source": "protondb"
+  }
+]

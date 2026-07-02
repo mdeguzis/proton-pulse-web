@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "594570",
+    "cpu": "Intel Xeon E5-2697 v2 @ 3.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Works great and actually performs better using Vulkan than it did running on Windows via DX12!",
+    "os": "Arch Linux",
+    "protonVersion": "Native",
+    "protonVersionManual": "Native",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1556079814,
+    "title": "Total War: WARHAMMER II",
+    "source": "protondb"
+  },
+  {
+    "appId": "594570",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.9-2-MANJARO",
+    "notes": "Try to do some multiplayer with a Windows friend :( Does not launch with Proton, crashes after splash screen. Got it working with Lutris/Wine(Staging) though!",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558841036,
+    "title": "Total War: WARHAMMER II",
+    "source": "protondb"
+  },
+  {
+    "appId": "594570",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-20-mfutex",
+    "notes": "Works great, but with 40% FPS less than Windows version using the same settings and hardware.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564908163,
+    "title": "Total War: WARHAMMER II",
+    "source": "protondb"
+  }
+]

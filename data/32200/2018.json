@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "32200",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Spawns a black window, after a while a menu showed up but no cursor, very low fps.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Borked",
+    "timestamp": 1537861136,
+    "title": "Metal Drift",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "358130",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 630 (KBL GT2)",
+    "gpuDriver": "3.0 Mesa 20.3.4 (git-6d8c68603f)",
+    "kernel": "5.4.0-70-generic",
+    "notes": "Proton 4x to run the game. - Linux Mint",
+    "os": "Freedesktop.org 20.08.6 (Flatpak runtime)",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1621612182,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "27900",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Installed it, run it, works fine, no glitches so far.",
+    "os": "Debian GNU/Linux 9.5 (stretch)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540727364,
+    "title": "Twin Sector",
+    "source": "protondb"
+  },
+  {
+    "appId": "27900",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Works great",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541013990,
+    "title": "Twin Sector",
+    "source": "protondb"
+  }
+]

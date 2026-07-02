@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1568400",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.44.0, 5.17.0-0.rc7.116.fc36.x86_64, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.8 (git-813ee839be)",
+    "kernel": "5.17.0-0.rc7.116.fc36.x86_64",
+    "notes": "The game launches with a black screen. Keyboard presses are registered, audio works, the game even changes music after pressing Enter, but the screen remains black.\n\nI tried using different different versions of Proton and Proton-GE, but none of them worked. I disabled all environment variables (FSR and vkBasalt), but the issue reproduces.",
+    "os": "Freedesktop.org 21.08.12 (Flatpak runtime)",
+    "protonVersion": "7.0-1",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1648509146,
+    "title": "",
+    "source": "protondb"
+  }
+]

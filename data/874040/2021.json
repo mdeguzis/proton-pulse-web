@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "874040",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT 50th Anniversary (NAVI10, DRM 3.40.0, 5.10.2-2-MANJARO, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1",
+    "kernel": "5.10.2-2-MANJARO",
+    "notes": "Works perfectly out of the box, nothing needed to tinker",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1616417305,
+    "title": "",
+    "source": "protondb"
+  }
+]

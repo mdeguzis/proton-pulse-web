@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1076200",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 16.0.6, DRM 3.54, 6.5.3-chos1-chimeraos-1)",
+    "gpuDriver": "4.6 Mesa",
+    "kernel": "6.5.3-chos1-chimeraos-1",
+    "notes": "Works perfectly fine",
+    "os": "ChimeraOS 44 (c3670dd)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1704752371,
+    "title": "Roguebook",
+    "source": "protondb"
+  },
+  {
+    "appId": "1076200",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.7.0-zen3-1-zen",
+    "notes": "Works great out of the box.",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1705748846,
+    "title": "Roguebook",
+    "source": "protondb"
+  },
+  {
+    "appId": "1076200",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5600 XT (radeonsi, navi10, LLVM 16.0.6, DRM 3.54, 6.6.10-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.3.3-manjaro1.1",
+    "kernel": "6.6.10-1-MANJARO",
+    "notes": "Native Linux build have issues. Use Proton instead",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1707755247,
+    "title": "Roguebook",
+    "source": "protondb"
+  }
+]

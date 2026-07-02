@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1111380",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 580.159.03",
+    "kernel": "6.17.0-29-generic",
+    "notes": "NVidia driver 595 breaks the game on Linux Mint 22.3 (as of May 2026)",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1779376046,
+    "title": "",
+    "source": "protondb"
+  }
+]

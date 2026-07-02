@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "516440",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "On first installation, I created a keyboard control layout that essentially worked fine. However, upon uninstalling and then reinstalling the game, the controls are completely broken - even if the arrow keys are properly mapped to the d-pad or analog stick, the game does not recognize them and so there is no way to navigate the menus or move your character in-game.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1653695887,
+    "title": "Alien Rampage",
+    "source": "protondb"
+  }
+]

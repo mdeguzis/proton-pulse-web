@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1488310",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 17.0.6, DRM 3.57, 6.9.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.2-arch1.1",
+    "kernel": "6.9.7-arch1-1",
+    "notes": "Game ran fine after enabling Proton 9.0-2, and installing microsoft visual c++.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1719943939,
+    "title": "",
+    "source": "protondb"
+  }
+]

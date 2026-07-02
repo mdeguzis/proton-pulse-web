@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "393080",
+    "title": "Call of Duty: Modern Warfare Remastered",
+    "timestamp": 1535276668,
+    "rating": "Borked",
+    "notes": "Error 12 on launch. This is very old bug of this stupid launcher from 00-s.",
+    "os": "Ubuntu 18.04 (4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1080",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "393080",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Tried launching the game. Launcher gave error 12 (Out of memory). I have around 250GB left om my HDD and more than 8GB RAM left as well. ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540465406,
+    "title": "Call of Duty\u00ae: Modern Warfare\u00ae Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "393080",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD HAWAII",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Game fails to launch with Error Code 12 (Low memory). Tried modifying players2 dir to no avail.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541195196,
+    "title": "Call of Duty\u00ae: Modern Warfare\u00ae Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "393080",
+    "title": "Call of Duty: Modern Warfare Remastered",
+    "timestamp": 1535262268,
+    "rating": "Borked",
+    "notes": "Error 12 on launch. This is very old bug of this stupid launcher from 00-s.",
+    "os": "Ubuntu 18.04 (4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1080",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

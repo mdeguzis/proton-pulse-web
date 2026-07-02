@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "760920",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "All the main functionality works.  There's an error dialog regarding the missing C:\\ProgramData folder that doesn't appear to affect any other functionality (though it does pop up there error on every launch).  The dialog boxes sometimes truncate prompts.  The built-in screenshot function doesn't work.  The manual menu entry doesn't work, but you can access it via the steam page link or their home page.\n\nIf you create a ProgramData folder manually in steamapps/compatdata/760920/pfx/drive_c/ you won't get the error anymore and Proton will stop trying to reinstall the VC runtime.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1547059335,
+    "title": "ElectricVLab",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "2610",
+    "title": "GUN",
+    "timestamp": 1535128655,
+    "rating": "Platinum",
+    "notes": "Just runs.  Game has no native widescreen resolution support.",
+    "os": "Fedora 28 64-bit(4.17.14-202)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Phenom II 960T",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2610",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15923 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537395241,
+    "title": "GUN\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "2610",
+    "title": "GUN",
+    "timestamp": 1535114255,
+    "rating": "Platinum",
+    "notes": "Just runs.  Game has no native widescreen resolution support.",
+    "os": "Fedora 28 64-bit(4.17.14-202)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Phenom II 960T",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

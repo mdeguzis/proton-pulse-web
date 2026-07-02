@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "553960",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "I am using this Xorg config - Option \"metamodes\" \"nvidia-auto-select +0+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}\"",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1547980337,
+    "title": "Husk",
+    "source": "protondb"
+  },
+  {
+    "appId": "553960",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.9.0-9-amd64",
+    "os": "Debian 9.9",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-7",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1564710816,
+    "title": "Husk",
+    "source": "protondb"
+  },
+  {
+    "appId": "553960",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.3.1-050301-lowlatency",
+    "notes": "Out of the box performance is poor. With launch option \"PROTON_USE_D9VK=1%command%\" game works perfectly (60+ fps at 1600p resolution using ACO). You can't switch back to the desktop (game does not minimize, but you can switch the game to a secondary workspace to get around it).",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1570272702,
+    "title": "Husk",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "553960",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-19-generic",
+    "notes": "Game would not properly fullscreen. Ran fine otherwise. There were a few moments of choppiness on loading, but it's unclear if that's from Proton or just the game itself.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1572196597,
+    "title": "Husk",
+    "source": "protondb"
+  }
+]

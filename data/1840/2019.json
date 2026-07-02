@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "1840",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-16-generic",
+    "notes": "No apparent issues whatsoever. Very stable, and viewport FPS was good. My test involved doing a render of Meet the Heavy, with AO and light sampling. Outputs worked fine and render went smoothly. It appears to work well",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1552117847,
+    "title": "Source Filmmaker",
+    "source": "protondb"
+  },
+  {
+    "appId": "1840",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "The program itself works great. Visually the program is doing what it's supposed to do. However movies that it renders are completely black with sound.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1552768210,
+    "title": "Source Filmmaker",
+    "source": "protondb"
+  },
+  {
+    "appId": "1840",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Runs just like on Windows, seems to have native performance.\nThe framerate when moving the mouse on a 3d viewport drops enormously (this is not the case when moving the camera otherwise - and also doesn't happen on Windows).\nFont is slightly hard to read.\nRendering movies works fine when using Image Sequence.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555947153,
+    "title": "Source Filmmaker",
+    "source": "protondb"
+  },
+  {
+    "appId": "1840",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Crashes with D9VK",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1569518785,
+    "title": "Source Filmmaker",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

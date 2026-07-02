@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "460250",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Mesa/X.org llvmpipe (LLVM 13.0.1, 256 bits)",
+    "gpuDriver": "4.5 Mesa 22.0.3",
+    "kernel": "5.17.7-zen1-1-zen",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1652527078,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "460250",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.18.6-zen1-1-zen",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1656066468,
+    "title": "",
+    "source": "protondb"
+  }
+]

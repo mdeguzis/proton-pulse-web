@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "423580",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Doesn't lunch without proton, lunch with proton but it's just a black screen.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566244712,
+    "title": "Project Highrise",
+    "source": "protondb"
+  },
+  {
+    "appId": "423580",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.3.0-050300-generic",
+    "notes": "cannot use workshop with native version. steamplay works fine with WINED3D11",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1569370903,
+    "title": "Project Highrise",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "423580",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Use set launch options: PROTON_USE_WINED3D=1 %command%",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1569773695,
+    "title": "Project Highrise",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

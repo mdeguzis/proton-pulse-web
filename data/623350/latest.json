@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "623350",
+    "title": "Cyberdimension Neptunia: 4 Goddesses Online",
+    "timestamp": 1535227013,
+    "rating": "Gold",
+    "notes": "Black screen at the beginning. This is normal and correspond to the static image loading image when playing on Windows. Give it 30 to 60 seconds depending on how fast your system loads the game. DS4 does not work but this game never worked well with DS4 from steam so you will need to use the joystick implementation from Wine.",
+    "os": "OpenSUSE Tumbleweed (4.18.0-1)",
+    "gpuDriver": "Amdgpu and Mesa 18.1.6 (LLVM 6.0.1)",
+    "specs": "Sapphire Nitro R9 390 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "623350",
+    "title": "Cyberdimension Neptunia: 4 Goddesses Online",
+    "timestamp": 1535212613,
+    "rating": "Gold",
+    "notes": "Black screen at the beginning. This is normal and correspond to the static image loading image when playing on Windows. Give it 30 to 60 seconds depending on how fast your system loads the game. DS4 does not work but this game never worked well with DS4 from steam so you will need to use the joystick implementation from Wine.",
+    "os": "OpenSUSE Tumbleweed (4.18.0-1)",
+    "gpuDriver": "Amdgpu and Mesa 18.1.6 (LLVM 6.0.1)",
+    "specs": "Sapphire Nitro R9 390 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

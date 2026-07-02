@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "2545",
+    "title": "RIP 2: Strike Back",
+    "timestamp": 1535049573,
+    "rating": "Borked",
+    "notes": "Won't Start",
+    "os": "Ubuntu 16.04 (Kernel 4.15.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-3220T / GTX 660 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2545",
+    "title": "RIP 2: Strike Back",
+    "timestamp": 1535077044,
+    "rating": "Platinum",
+    "notes": "Runs like native",
+    "os": "Arch Linux 4.18.4-arch1-1-ARCH",
+    "gpuDriver": "amdgpu 18.0.1-2",
+    "specs": "i5-4670S / RX 460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2545",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD PITCAIRN (DRM 2.50.0 / 4.15.0-20-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-20-generic",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "7988 MB",
+    "rating": "Platinum",
+    "timestamp": 1538442839,
+    "title": "RIP - Trilogy\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "2545",
+    "title": "RIP 2: Strike Back",
+    "timestamp": 1535035173,
+    "rating": "Borked",
+    "notes": "Won't Start",
+    "os": "Ubuntu 16.04 (Kernel 4.15.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-3220T / GTX 660 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2545",
+    "title": "RIP 2: Strike Back",
+    "timestamp": 1535062644,
+    "rating": "Platinum",
+    "notes": "Runs like native",
+    "os": "Arch Linux 4.18.4-arch1-1-ARCH",
+    "gpuDriver": "amdgpu 18.0.1-2",
+    "specs": "i5-4670S / RX 460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

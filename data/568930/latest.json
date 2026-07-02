@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "568930",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Runs out of the Box no issue at all",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550867421,
+    "title": "The Land of Pain",
+    "source": "protondb"
+  },
+  {
+    "appId": "568930",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.5",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "It actually hanged on first attempt to launch while setting up, but after closing the Steam popup window and trying again it launched without issue.  Operated with good performance from there.  No tweaks necessary. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554325739,
+    "title": "The Land of Pain",
+    "source": "protondb"
+  }
+]

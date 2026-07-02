@@ -1,0 +1,92 @@
+[
+  {
+    "appId": "201870",
+    "title": "Assassin's Creed Revelations",
+    "timestamp": 1535256471,
+    "rating": "Borked",
+    "notes": "\"Uplay has detected an unrecoverable error and must shut down.\" It used to work on wine.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4820K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "201870",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.26.0, 4.18.7-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.7-1-MANJARO",
+    "notes": "Uplay encounters error then crashes. Game still shows running until process is killed.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16056 Mb",
+    "rating": "Borked",
+    "timestamp": 1537019940,
+    "title": "Assassin's Creed\u00ae Revelations",
+    "source": "protondb"
+  },
+  {
+    "appId": "201870",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "You need to set the correct libgnutls lib:\nsudo pacman -S lib32-gnutls\nsudo ln -s /usr/lib/libgnutls.so.30.14.11 ~/.local/share/Steam/ubuntu12_32/steam-runtime/pinned_libs_64/libgnutls.so.26\nsudo ln -s /usr/lib32/libgnutls.so.30.14.11 ~/.local/share/Steam/ubuntu12_32/steam-runtime/pinned_libs_32/libgnutls.so.26\n\nInstall corefonts:\nwget https://raw.githubusercontent.com/Sirmentio/protontricks/master/protontricks && chmod +x protontricks\nsudo mv protontricks /usr/bin/protontricks\nprotontricks 271590 corefonts\n\nInstall uplay:\nWINEPREFIX=/folder_games/steamapps/compatdata/201870/pfx wine Donwnload/Uplay.exe\n\nLet uplay reinstall steam.\n\nLaunch the game and it will work.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1540993435,
+    "title": "Assassin's Creed\u00ae Revelations",
+    "source": "protondb"
+  },
+  {
+    "appId": "201870",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.4",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Works after setting the libgnutls and installing uplay seperatly. Only after enabling eagle vision the fog doesn't dissapear.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541159139,
+    "title": "Assassin's Creed\u00ae Revelations",
+    "source": "protondb"
+  },
+  {
+    "appId": "201870",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Game does not start.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1542158825,
+    "title": "Assassin's Creed\u00ae Revelations",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "201870",
+    "title": "Assassin's Creed Revelations",
+    "timestamp": 1535242071,
+    "rating": "Borked",
+    "notes": "\"Uplay has detected an unrecoverable error and must shut down.\" It used to work on wine.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4820K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

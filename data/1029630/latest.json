@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1029630",
+    "cpu": "AMD A10-7700K Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.4.6-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1579027945,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1029630",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Game works well out of the box. Sometimes it freezes.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1601693910,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1029630",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "8 GB",
+    "rating": "bronze",
+    "timestamp": 1608846014,
+    "title": "",
+    "source": "protondb"
+  }
+]

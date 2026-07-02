@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "874460",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "I used the Wine D3D fix and overall it runs well.  Performance is a bit below average, even with low graphics, but everything appears to be clean.  A system with better specs would probably be just fine.  It's definitely playable, just a bit slow.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1565664946,
+    "title": "Achtung! Cthulhu Tactics",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

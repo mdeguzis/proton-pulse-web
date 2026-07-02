@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "344630",
+    "title": "Princess Evangile",
+    "timestamp": 1535252669,
+    "rating": "Silver",
+    "notes": "OP movie doesn't work (I don't believe there any others). Workaround for that likely requires a 32-bit prefix, which isn't supported in Proton. Performance will be pretty bad without using the D3D rendering option in \"Advanced Window Settings\". Fullscreen won't work properly initially, but you can fix by switching from Windowed back to Fullscreen with Alt-Enter.",
+    "os": "Gentoo AMD64 (Kernel 4.18.4)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "344630",
+    "title": "Princess Evangile",
+    "timestamp": 1535238269,
+    "rating": "Silver",
+    "notes": "OP movie doesn't work (I don't believe there any others). Workaround for that likely requires a 32-bit prefix, which isn't supported in Proton. Performance will be pretty bad without using the D3D rendering option in \"Advanced Window Settings\". Fullscreen won't work properly initially, but you can fix by switching from Windowed back to Fullscreen with Alt-Enter.",
+    "os": "Gentoo AMD64 (Kernel 4.18.4)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

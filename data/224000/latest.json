@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "224000",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-44-generic",
+    "notes": "Unity Engine based 'game'/demo which does not work on my 1000 games library Linux. Neither via Steam/Proton nor pure WINE. Via Steam/Proton it won't crash, accepts keyboard inputs, but won't render frames. Turning Unity Analytics off (option.ini file) makes no difference. Windowed/Fullscreen neither.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1548432629,
+    "title": "Project Eagle: A 3D Interactive Mars Base",
+    "source": "protondb"
+  },
+  {
+    "appId": "224000",
+    "cpu": "AMD Phenom II X6 1090T",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 780 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.32-1-MANJARO",
+    "notes": "Starts and shows menu. After click on \"start\" shows loading screen, background animation keeps moving but thats it. it loads forever.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1554646847,
+    "title": "Project Eagle: A 3D Interactive Mars Base",
+    "source": "protondb"
+  },
+  {
+    "appId": "224000",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Starts but hangs on \"Loading...\" after choosing \"Start\".",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563988971,
+    "title": "Project Eagle: A 3D Interactive Mars Base",
+    "source": "protondb"
+  }
+]

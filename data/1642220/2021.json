@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1642220",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Game does not run.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1627412752,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1642220",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.4.0-77-generic",
+    "notes": "The game does not work at all in Proton 6.3-5, but works fine with Proton 5.13-6.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1628452409,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1642220",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-39-generic",
+    "notes": "Works fine in Proton 5.13, will not run with proton 6.3",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1628873780,
+    "title": "",
+    "source": "protondb"
+  }
+]

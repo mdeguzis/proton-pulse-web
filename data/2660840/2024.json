@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2660840",
+    "cpu": "AMD Athlon II X2 240",
+    "duration": "unreported",
+    "gpu": "Mesa AMD RV770 (DRM 2.50.0 / 5.15.0-117-generic, LLVM 15.0.7)",
+    "gpuDriver": "3.0 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-117-generic",
+    "notes": "I used Proton 9.0-2 in order to launch. Login button didn't work as server status was offline. I haven't checked anywhere to see if there's a reason for current offline server staus.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-1",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1722354415,
+    "title": "",
+    "source": "protondb"
+  }
+]

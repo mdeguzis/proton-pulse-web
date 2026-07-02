@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "746930",
+    "cpu": "AMD Ryzen Threadripper 1920X 12-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.19.0-rc7-mainline",
+    "notes": "Game was running at 25fps with a frame time of 30ms. Hand textures/meshes are missing.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "64350 Mb",
+    "rating": "Bronze",
+    "timestamp": 1539641400,
+    "title": "OrbusVR",
+    "source": "protondb"
+  },
+  {
+    "appId": "746930",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-2-MANJARO",
+    "notes": "Had issues of the login not tracking my VR headset and controllers (vive) but found out if I start the game manually through non-vr steam interface it has problems tracking.\n\nSolution for this is start Steam VR and launch the game through the Steam VR menu.\nGame performance isnt good but it is playable on Low gfx.\nStream output driver update fixed invisible characters and such.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1544894593,
+    "title": "OrbusVR",
+    "source": "protondb"
+  }
+]

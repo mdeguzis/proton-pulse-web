@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "899960",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.5-2-MANJARO",
+    "notes": "Game does not launch.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543690094,
+    "title": "The Greater Good",
+    "source": "protondb"
+  },
+  {
+    "appId": "899960",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.14.87-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546112786,
+    "title": "The Greater Good",
+    "source": "protondb"
+  }
+]

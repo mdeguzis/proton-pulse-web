@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "257790",
+    "title": "Riptide GP2",
+    "timestamp": 1534948663,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "openSuse Leap 15.0",
+    "gpuDriver": "?",
+    "specs": "NVidia 1080 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "257790",
+    "title": "Riptide GP2",
+    "timestamp": 1535999005,
+    "rating": "Platinum",
+    "notes": "All OK",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "I3 3217U 1,8ghz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "257790",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Like native",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541147547,
+    "title": "Riptide GP2",
+    "source": "protondb"
+  },
+  {
+    "appId": "257790",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Works fine",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541268078,
+    "title": "Riptide GP2",
+    "source": "protondb"
+  },
+  {
+    "appId": "257790",
+    "title": "Riptide GP2",
+    "timestamp": 1534934263,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "openSuse Leap 15.0",
+    "gpuDriver": "?",
+    "specs": "NVidia 1080 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "257790",
+    "title": "Riptide GP2",
+    "timestamp": 1535984605,
+    "rating": "Platinum",
+    "notes": "All OK",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "I3 3217U 1,8ghz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

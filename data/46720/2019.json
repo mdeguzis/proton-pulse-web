@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "46720",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-200.fc29.x86_64",
+    "notes": "Unpainted window, that needs to be xkilled.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1552718168,
+    "title": "Dimensity",
+    "source": "protondb"
+  }
+]

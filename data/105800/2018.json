@@ -1,0 +1,113 @@
+[
+  {
+    "appId": "105800",
+    "title": "Pixeljunk Eden",
+    "timestamp": 1535015274,
+    "rating": "Borked",
+    "notes": "Appears to go fullscreen, then halts on a frozen screen.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "105800",
+    "title": "PixelJunk Eden",
+    "timestamp": 1535068268,
+    "rating": "Silver",
+    "notes": "Steam controller doesn't work (also true in Windows).",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "105800",
+    "title": "PixelJunk Eden",
+    "timestamp": 1535118795,
+    "rating": "Platinum",
+    "notes": "Good Perfomance",
+    "os": "Manjaro Stable 64-bit",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "105800",
+    "title": "PixelJunk\u2122 Eden",
+    "timestamp": 1535243479,
+    "rating": "Silver",
+    "notes": "Game works well with KB+M, the only flaw is that a controller is not detected.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "105800",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537637649,
+    "title": "PixelJunk\u2122 Eden",
+    "source": "protondb"
+  },
+  {
+    "appId": "105800",
+    "title": "Pixeljunk Eden",
+    "timestamp": 1535000874,
+    "rating": "Borked",
+    "notes": "Appears to go fullscreen, then halts on a frozen screen.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "105800",
+    "title": "PixelJunk Eden",
+    "timestamp": 1535053868,
+    "rating": "Silver",
+    "notes": "Steam controller doesn't work (also true in Windows).",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "105800",
+    "title": "PixelJunk Eden",
+    "timestamp": 1535104395,
+    "rating": "Platinum",
+    "notes": "Good Perfomance",
+    "os": "Manjaro Stable 64-bit",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "105800",
+    "title": "PixelJunk\u2122 Eden",
+    "timestamp": 1535229079,
+    "rating": "Silver",
+    "notes": "Game works well with KB+M, the only flaw is that a controller is not detected.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

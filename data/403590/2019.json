@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "403590",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "HTC Vive worked out of the box, tutorial area seemed to work without issues. Once loaded into the city the game lagged pretty bad for me. Not sure if it was the game or proton but the shadows appeared to be in the shape of triangles and just generally don't look right.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552533569,
+    "title": "Klepto",
+    "source": "protondb"
+  }
+]

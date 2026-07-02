@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1614440",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Doesn't play comfortably with the steam deck's controls due to the design of the steam deck.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1746376823,
+    "title": "B\u014d: Path of the Teal Lotus",
+    "source": "protondb"
+  },
+  {
+    "appId": "1614440",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.6, DRM 3.64, 6.18.2-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.2",
+    "kernel": "6.18.2-2-cachyos",
+    "notes": "Game runs well. Heroic Launcher only used as game was acquired through Amazon Luna's claiming games feature. Source: GOG Version: 1.2.5",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767153389,
+    "title": "B\u014d: Path of the Teal Lotus",
+    "source": "protondb"
+  }
+]

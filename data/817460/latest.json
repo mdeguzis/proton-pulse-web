@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "817460",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.14.78-1-lts",
+    "notes": "Is likewise affected with this bug \"https://bugs.winehq.org/show_bug.cgi?id=27439\" as it's wine counterpart.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541013866,
+    "title": "Sea Dogs: Caribbean Tales",
+    "source": "protondb"
+  },
+  {
+    "appId": "817460",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.14.78-1-lts",
+    "notes": "affected with \"https://bugs.winehq.org/show_bug.cgi?id=27439\"",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541067273,
+    "title": "Sea Dogs: Caribbean Tales",
+    "source": "protondb"
+  }
+]

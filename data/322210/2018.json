@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "322210",
+    "title": "Guns, Gore & Cannoli",
+    "timestamp": 1535657431,
+    "rating": "Gold",
+    "notes": "Game in itself runs extremely well. However I marked it \"stable\" for two reasons.\n1: When exiting the game. It hangs on a black screen that stays forever. Either exit steam to shut it down (sometimes does not work) or open system monitor and look for the games running process i.e gcc.exe, and kill it. \n\n2. Steams default xbox controller does'nt work in this game. both xbox 360 wired and wireless pads don't work in the game by default. Therefore, youll need an app like Antimicro to keymapp joypad buttons to keys which will work,\n\n3. One of the options in the menu is the for the controller. However, the selection buttons have no text and so its not possible to select your preferred joypad.",
+    "os": "Ubuntu 16.04lts",
+    "gpuDriver": "NVIDIA driver 396.54",
+    "specs": "nvidia gtx 1060",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "322210",
+    "cpu": "Intel(R) Core(TM) i5-2400S CPU @ 2.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "It works, but the game language defaults to other than English/your system setting (this has already been reported in the valve tracker, and it has to do with the prefix not having a language set, so some games default to their first in the list, or crash), and the game does not close on exit. Other than this, it works pretty well",
+    "os": "KDE neon User Edition 5.13 (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5928 Mb",
+    "rating": "Silver",
+    "timestamp": 1537384858,
+    "title": "Guns, Gore & Cannoli",
+    "source": "protondb"
+  },
+  {
+    "appId": "322210",
+    "title": "Guns, Gore & Cannoli",
+    "timestamp": 1535643031,
+    "rating": "Gold",
+    "notes": "Game in itself runs extremely well. However I marked it \"stable\" for two reasons.\n1: When exiting the game. It hangs on a black screen that stays forever. Either exit steam to shut it down (sometimes does not work) or open system monitor and look for the games running process i.e gcc.exe, and kill it. \n\n2. Steams default xbox controller does'nt work in this game. both xbox 360 wired and wireless pads don't work in the game by default. Therefore, youll need an app like Antimicro to keymapp joypad buttons to keys which will work,\n\n3. One of the options in the menu is the for the controller. However, the selection buttons have no text and so its not possible to select your preferred joypad.",
+    "os": "Ubuntu 16.04lts",
+    "gpuDriver": "NVIDIA driver 396.54",
+    "specs": "nvidia gtx 1060",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

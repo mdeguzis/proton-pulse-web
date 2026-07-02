@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "257630",
+    "title": "Blast Em!",
+    "timestamp": 1535564808,
+    "rating": "Borked",
+    "notes": "Error message on start: \"The game crashed, check log file\".",
+    "os": "Manjaro Stable 64 bit (Kernel 4.14.66-1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "specs": "i5 M 460 / Mobility Radeon HD5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "257630",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538144834,
+    "title": "Blast Em!",
+    "source": "protondb"
+  },
+  {
+    "appId": "257630",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542673853,
+    "title": "Blast Em!",
+    "source": "protondb"
+  },
+  {
+    "appId": "257630",
+    "title": "Blast Em!",
+    "timestamp": 1535550408,
+    "rating": "Borked",
+    "notes": "Error message on start: \"The game crashed, check log file\".",
+    "os": "Manjaro Stable 64 bit (Kernel 4.14.66-1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "specs": "i5 M 460 / Mobility Radeon HD5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

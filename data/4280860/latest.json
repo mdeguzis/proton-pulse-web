@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "4280860",
+    "cpu": "AMD Ryzen 9 6900HS with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 680M (radeonsi, rembrandt, LLVM 20.1.2, DRM 3.64, 6.18.7-76061807-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.18.7-76061807-generic",
+    "notes": "Plays the intro, and it's possible (from the audio) to dismiss the intro & have a menu. Mouse pointer is visible, and sounds suggest button hovers.\n\nThe configuration burden, judging by https://forum.dark-omen.org/help-section/warhammer-dark-omen-installation-2024-linux-ubuntu-2204-lts-t1675.0.html, looks to be extensive. I think I'll return it instead.",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1776523875,
+    "title": "Warhammer: Dark Omen (Classic)",
+    "source": "protondb"
+  },
+  {
+    "appId": "4280860",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.12-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.4-arch2.2",
+    "kernel": "6.19.12-1-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1776553598,
+    "title": "Warhammer: Dark Omen (Classic)",
+    "source": "protondb"
+  },
+  {
+    "appId": "4280860",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1778047270,
+    "title": "Warhammer: Dark Omen (Classic)",
+    "source": "protondb"
+  }
+]

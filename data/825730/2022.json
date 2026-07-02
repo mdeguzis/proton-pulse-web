@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "825730",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.4.0-105-generic",
+    "notes": "It is possible to launch the game and get in the main menu, but when loading textures and assets it fails to load them leading to me having to abort.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1648392261,
+    "title": "Tzar: The Burden of the Crown",
+    "source": "protondb"
+  },
+  {
+    "appId": "825730",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1651904143,
+    "title": "Tzar: The Burden of the Crown",
+    "source": "protondb"
+  },
+  {
+    "appId": "825730",
+    "cpu": "Intel Core i7       Q 720  @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD REDWOOD",
+    "gpuDriver": "3.1 Mesa 22.0.5",
+    "kernel": "5.15.41-gentoo",
+    "notes": "Invalid TZAR configuration detected.",
+    "os": "Gentoo Base System release 2.8",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1657023916,
+    "title": "Tzar: The Burden of the Crown",
+    "source": "protondb"
+  }
+]

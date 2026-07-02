@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "226560",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.13-1-MANJARO",
+    "notes": "Runs like a charm on full hd.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547329021,
+    "title": "Escape Dead Island",
+    "source": "protondb"
+  },
+  {
+    "appId": "226560",
+    "cpu": "Intel Core i3-3110M @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.0 - padoka PPA",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Game runs and there is sound, but the screen is always black.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1562153193,
+    "title": "Escape Dead Island",
+    "source": "protondb"
+  },
+  {
+    "appId": "226560",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Runs perfectly out of the box.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1562502345,
+    "title": "Escape Dead Island",
+    "source": "protondb"
+  }
+]

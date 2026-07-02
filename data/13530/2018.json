@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "13530",
+    "title": "PRINCE OF PERSIA: THE TWO THRONES",
+    "timestamp": 1535147238,
+    "rating": "Borked",
+    "notes": "THE GAME INSTALLS AND RUNS BUT AT THE POINT YOU GAIN CONTROL OF THE PRINCE THE CAMERA GOES INTO A CONTINUOUS ROTATION. NOT SPENT A LOT OF TIME INVESTIGATING BUT GAME IS UNPLAYABLE LIKE THIS. TRIED REDUCING SENSITIVITY AND INVERTING CAMERA CONTROL, HAD NO EFFECT. I THINK MISALIGNED GAMEPAD INPUT/SENSITIVITY SETTINGS ARE CAUSING THIS.",
+    "os": "UBUNTU 16.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "CORE 2 QUAD Q9300 OC",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "13530",
+    "title": "Prince of Persia: The Two Thrones",
+    "timestamp": 1536139254,
+    "rating": "Platinum",
+    "notes": "Tested it for 30 minutes. Everything seems to be working fine",
+    "os": "Ubuntu MATE 14.04.5 (Kernel 4.4.0-131-generic)",
+    "gpuDriver": "Mesa 10.5.9",
+    "specs": "i5-4460 / Intel HD 4600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "13530",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "With gamepad connected, camera keeps spinning non stop. Without gamepad, using keyboard + mouse, the game is Platinum (flawless).",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15923 Mb",
+    "rating": "Silver",
+    "timestamp": 1537417366,
+    "title": "Prince of Persia: The Two Thrones\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "13530",
+    "cpu": "Intel Core i7-3770S @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-200.fc28.x86_64",
+    "notes": "Played with KB + Mouse, no gamepad.  Awkward controls, but I don't think that's Proton's fault",
+    "os": "Fedora release 28 (Twenty Eight)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541629379,
+    "title": "Prince of Persia: The Two Thrones\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "13530",
+    "title": "PRINCE OF PERSIA: THE TWO THRONES",
+    "timestamp": 1535132838,
+    "rating": "Borked",
+    "notes": "THE GAME INSTALLS AND RUNS BUT AT THE POINT YOU GAIN CONTROL OF THE PRINCE THE CAMERA GOES INTO A CONTINUOUS ROTATION. NOT SPENT A LOT OF TIME INVESTIGATING BUT GAME IS UNPLAYABLE LIKE THIS. TRIED REDUCING SENSITIVITY AND INVERTING CAMERA CONTROL, HAD NO EFFECT. I THINK MISALIGNED GAMEPAD INPUT/SENSITIVITY SETTINGS ARE CAUSING THIS.",
+    "os": "UBUNTU 16.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "CORE 2 QUAD Q9300 OC",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "13530",
+    "title": "Prince of Persia: The Two Thrones",
+    "timestamp": 1536124854,
+    "rating": "Platinum",
+    "notes": "Tested it for 30 minutes. Everything seems to be working fine",
+    "os": "Ubuntu MATE 14.04.5 (Kernel 4.4.0-131-generic)",
+    "gpuDriver": "Mesa 10.5.9",
+    "specs": "i5-4460 / Intel HD 4600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

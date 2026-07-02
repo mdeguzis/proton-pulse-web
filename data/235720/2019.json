@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "235720",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-1-MANJARO",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547759395,
+    "title": "Cubetractor",
+    "source": "protondb"
+  },
+  {
+    "appId": "235720",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.1-arch1-1-ARCH",
+    "notes": "Played through the first couple of levels and haven't noticed any issues. ",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552602707,
+    "title": "Cubetractor",
+    "source": "protondb"
+  },
+  {
+    "appId": "235720",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-zen1-1-zen",
+    "notes": "Working perfectly out of the box.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562148763,
+    "title": "Cubetractor",
+    "source": "protondb"
+  }
+]

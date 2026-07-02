@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "781290",
+    "title": "Hostage: Rescue Mission",
+    "timestamp": 1535903281,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't initially focus, but Alt-Tab, Enter and F2 start the game in fullscreen. After that, it plays perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "781290",
+    "title": "Hostage: Rescue Mission",
+    "timestamp": 1535888881,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't initially focus, but Alt-Tab, Enter and F2 start the game in fullscreen. After that, it plays perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

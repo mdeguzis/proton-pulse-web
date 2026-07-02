@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "454410",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.10-200.fc29.x86_64",
+    "notes": "The game itself works perfectly except for a few issues: \n\n* Audio randomly dies, every few hours, requiring a restart of the game.\\n\n* Doesn't detect the Switch Pro Controller inputs as a controller despite switching to gamepad control display, requiring manually configuring the controller in Config>Keyboard Input instead of Joystick Input .\\n\n* Trying to configure joystick/pad controls in-game will hard lock the system, requiring a hard reboot, but there's no reason to ever use this option because of the above issue.\\n",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551016161,
+    "title": "GIGA WRECKER",
+    "source": "protondb"
+  }
+]

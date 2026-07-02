@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1469620",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Some control fiddling is required for a good experience",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1653929045,
+    "title": "Epic Battle Fantasy Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "1469620",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.40.0, 5.10.41-1-MANJARO, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.1.2",
+    "kernel": "5.10.41-1-MANJARO",
+    "notes": "Proton 7.0-2. Flash has its limitations no matter what OS or hardware. I had no issues in the 4 games in this collection that i played.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1654403369,
+    "title": "Epic Battle Fantasy Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "1469620",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 515.43.04",
+    "kernel": "5.17.7-arch1-1",
+    "notes": "The game works perfectly out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1656874892,
+    "title": "Epic Battle Fantasy Collection",
+    "source": "protondb"
+  }
+]

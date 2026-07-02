@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "676840",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.41.0, 5.13.6-184-tkg-bmq, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.13.6-184-tkg-bmq",
+    "notes": "Apart from the mfplat issue, the game runs flawlessly out of the box. Valve Index.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1630360003,
+    "title": "Contagion VR: Outbreak",
+    "source": "protondb"
+  }
+]

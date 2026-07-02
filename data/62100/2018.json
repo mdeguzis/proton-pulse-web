@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "62100",
+    "title": "Chime",
+    "timestamp": 1534965090,
+    "rating": "Borked",
+    "notes": "Won't start",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i3-550 / GT 740",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "62100",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Title fails to launch after first time setup. Logs hints the title might required Wine Mono to function correctly: \n\nerr:mscoree:CLRRuntimeInfo_GetRuntimeHost Wine Mono is not installed",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1540861564,
+    "title": "Chime",
+    "source": "protondb"
+  },
+  {
+    "appId": "62100",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Seems to fail first-time install. Window just disappears and the process stops.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541752788,
+    "title": "Chime",
+    "source": "protondb"
+  },
+  {
+    "appId": "62100",
+    "title": "Chime",
+    "timestamp": 1534950690,
+    "rating": "Borked",
+    "notes": "Won't start",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i3-550 / GT 740",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

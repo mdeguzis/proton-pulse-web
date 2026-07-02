@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "476360",
+    "title": "Strike Vector EX",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Gets through opening titles and never loads intro movie nor menu.",
+    "os": "Ubuntu 18.10 LTS",
+    "gpuDriver": "NVIDIA 396.51 Mesa 18",
+    "specs": "i7-4790 / GTX 1050ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "476360",
+    "title": "Strike Vector EX",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Gets through opening titles and never loads intro movie nor menu.",
+    "os": "Ubuntu 18.10 LTS",
+    "gpuDriver": "NVIDIA 396.51 Mesa 18",
+    "specs": "i7-4790 / GTX 1050ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

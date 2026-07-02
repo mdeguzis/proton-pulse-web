@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "619780",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Native Linux version had some library incompatibility problems and wouldn't start, so I went with Proton and it works perfectly.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570567520,
+    "title": "The Swords of Ditto: Mormo's Curse",
+    "source": "protondb"
+  }
+]

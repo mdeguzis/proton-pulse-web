@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "21800",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Singleplayer and voice commands work perfectly, some audio issues and occasionally freezes",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1565014585,
+    "title": "Tom Clancy's EndWar\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

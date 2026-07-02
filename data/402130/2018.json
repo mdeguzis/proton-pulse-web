@@ -1,0 +1,47 @@
+[
+  {
+    "appId": "402130",
+    "cpu": "Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.19-200.fc28.x86_64",
+    "notes": "Game does not start",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "24045 Mb",
+    "rating": "Borked",
+    "timestamp": 1537727683,
+    "title": "FlatOut 4: Total Insanity",
+    "source": "protondb"
+  },
+  {
+    "appId": "402130",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.9-92.current, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.18.9-92.current",
+    "notes": "I tried quick play with Stunt, deathmatch and carnage races. I also tried the career mode for one derby race. The performance is good at 60+ FPS maxed out at 1080P. Proton 3.7-6",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16052 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537806290,
+    "title": "FlatOut 4: Total Insanity",
+    "source": "protondb"
+  },
+  {
+    "appId": "402130",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540452713,
+    "title": "FlatOut 4: Total Insanity",
+    "source": "protondb"
+  }
+]

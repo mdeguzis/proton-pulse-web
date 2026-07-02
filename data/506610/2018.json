@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "506610",
+    "title": "Five Nights At Freddy's: Sister Location",
+    "timestamp": 1535505020,
+    "rating": "Platinum",
+    "notes": "Everything seems to work perfectly out of the box, but I only played the first night.",
+    "os": "Antergos x64 (Arch 4.18.5) ",
+    "gpuDriver": "AMDGPU",
+    "specs": "RX 460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "506610",
+    "title": "Five Nights at Freddy's: Sister Location",
+    "timestamp": 1535661499,
+    "rating": "Gold",
+    "notes": "Launch Options: PROTON_USE_WINED3D11=1 %command%",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i3-3240 / GX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "506610",
+    "title": "Five Nights at Freddy's: Sister Location",
+    "timestamp": 1535821345,
+    "rating": "Platinum",
+    "notes": "Runs perfectly",
+    "os": "Ubuntu 18.04.1 LTS 64bit (4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-5200U / Intel HD Graphics 5500 (rev 09)",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "506610",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.18.10-gentoo",
+    "notes": "Got through the introductory/first night just fine, FPS was solid. Overall everything seemed to be working perfectly.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540963997,
+    "title": "Five Nights at Freddy's: Sister Location",
+    "source": "protondb"
+  },
+  {
+    "appId": "506610",
+    "title": "Five Nights At Freddy's: Sister Location",
+    "timestamp": 1535490620,
+    "rating": "Platinum",
+    "notes": "Everything seems to work perfectly out of the box, but I only played the first night.",
+    "os": "Antergos x64 (Arch 4.18.5) ",
+    "gpuDriver": "AMDGPU",
+    "specs": "RX 460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "506610",
+    "title": "Five Nights at Freddy's: Sister Location",
+    "timestamp": 1535647099,
+    "rating": "Gold",
+    "notes": "Launch Options: PROTON_USE_WINED3D11=1 %command%",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i3-3240 / GX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "506610",
+    "title": "Five Nights at Freddy's: Sister Location",
+    "timestamp": 1535806945,
+    "rating": "Platinum",
+    "notes": "Runs perfectly",
+    "os": "Ubuntu 18.04.1 LTS 64bit (4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-5200U / Intel HD Graphics 5500 (rev 09)",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

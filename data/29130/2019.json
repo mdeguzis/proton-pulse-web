@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "29130",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Just works",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551349700,
+    "title": "Musaic Box",
+    "source": "protondb"
+  },
+  {
+    "appId": "29130",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "5.1.4-arch1-1-ARCH",
+    "notes": "Works great.",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558734124,
+    "title": "Musaic Box",
+    "source": "protondb"
+  },
+  {
+    "appId": "29130",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "4.19.69-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571606396,
+    "title": "Musaic Box",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "289440",
+    "cpu": "Intel(R) Xeon(R) CPU           X5470  @ 3.33GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.71-1-MANJARO",
+    "notes": "I have make 1 mission without problem, need to configure your resolution, all seem to be ok.",
+    "os": "\"Manjaro Linux\" (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "32171 Mo",
+    "rating": "Platinum",
+    "timestamp": 1538143087,
+    "title": "Perimeter",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "324310",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.4-1-MANJARO",
+    "notes": "The game runs OK with default settings but it's a bit sluggish unless you fine tune the graphics settings. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "20 GB",
+    "rating": "Gold",
+    "timestamp": 1543596797,
+    "title": "Bus Simulator 16",
+    "source": "protondb"
+  }
+]

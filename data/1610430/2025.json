@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1610430",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.63, 6.15.9-106.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.0",
+    "kernel": "6.15.9-106.bazzite.fc42.x86_64",
+    "notes": "works out of the box with lastest proton build",
+    "os": "Bazzite (FROM Fedora Atomic)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1756937019,
+    "title": "OPG: Clan Wars",
+    "source": "protondb"
+  }
+]

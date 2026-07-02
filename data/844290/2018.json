@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "844290",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "The mouse pulls downward like in many proton games, making this one nearly impossible du to the accuracy needed",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15985 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537645869,
+    "title": "Sniper Squad Mission",
+    "source": "protondb"
+  }
+]

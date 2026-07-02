@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1324340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Playable from start to finish at 60FPS on SDLED",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1736666145,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1324340",
+    "cpu": "AMD Ryzen 7 6800HS with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 575.64",
+    "kernel": "6.14.6-109.bazzite.fc42.x86_64",
+    "notes": "Awesome RPG of an interesting Manga with Anime adapation. Beware the [Space] for back and [Left Mouse] for enter controls",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1756922015,
+    "title": "",
+    "source": "protondb"
+  }
+]

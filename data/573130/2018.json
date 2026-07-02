@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "573130",
+    "title": "Aporia: Beyond the Valley",
+    "timestamp": 1534962161,
+    "rating": "Silver",
+    "notes": "Some slight visual artifacts occasionally",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA-driver-390",
+    "specs": "EVGA GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "573130",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.10-200.fc28.x86_64",
+    "notes": "You should use the Proton version that comes with the game. You can test newer Proton versions but if there's a problem fall back to that one. Game fully playable to end. A bit worse performance than Windows so you'll need a little bit lower settings. You may or may not experience some additional problems such as it being minimized on start, etc.",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7986 Mb",
+    "rating": "Gold",
+    "timestamp": 1538520533,
+    "title": "Aporia: Beyond The Valley",
+    "source": "protondb"
+  },
+  {
+    "appId": "573130",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541698514,
+    "title": "Aporia: Beyond The Valley",
+    "source": "protondb"
+  },
+  {
+    "appId": "573130",
+    "title": "Aporia: Beyond the Valley",
+    "timestamp": 1534947761,
+    "rating": "Silver",
+    "notes": "Some slight visual artifacts occasionally",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA-driver-390",
+    "specs": "EVGA GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

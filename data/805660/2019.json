@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "805660",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-18-generic",
+    "notes": "runs great, maybe turn off v-sync and lock it to 60fps for a smoother experience :)",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1556619149,
+    "title": "Rad Rodgers - Radical Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "805660",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2",
+    "kernel": "5.2.1-1-MANJARO",
+    "notes": "Wanted to test it out and played little over half hour at time of report and everything started up and ran out of the box on latest proton. Good to go on AMD gpu side.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564190169,
+    "title": "Rad Rodgers - Radical Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "805660",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Works flawlessly out of the box",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567332423,
+    "title": "Rad Rodgers - Radical Edition",
+    "source": "protondb"
+  }
+]

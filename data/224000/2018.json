@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "224000",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-39-generic",
+    "notes": "I tried \"PROTON_USE_WINED3D=1\" but it's no load.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543563445,
+    "title": "Project Eagle: A 3D Interactive Mars Base",
+    "source": "protondb"
+  },
+  {
+    "appId": "224000",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "os": "Antergos Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1546005385,
+    "title": "Project Eagle: A 3D Interactive Mars Base",
+    "source": "protondb"
+  }
+]

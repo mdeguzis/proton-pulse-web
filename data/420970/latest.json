@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "420970",
+    "cpu": "Intel Core i5-3450 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R7 360",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Crashing at startup with error about \"Indeo codec\".",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551592062,
+    "title": "RoBoRumble",
+    "source": "protondb"
+  },
+  {
+    "appId": "420970",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Need install Indeo codecs to prefix (protontricks 420970 icodecs). After that game starts and works properly, except intro videos",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "9 GB",
+    "rating": "Silver",
+    "timestamp": 1551956664,
+    "title": "RoBoRumble",
+    "source": "protondb"
+  }
+]

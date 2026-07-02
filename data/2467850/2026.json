@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2467850",
+    "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, ACO, DRM 3.64, 6.19.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.2-arch1.1",
+    "kernel": "6.19.8-arch1-1",
+    "notes": "Works OOTB on Proton Hotfix",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1774121092,
+    "title": "Wild Growth",
+    "source": "protondb"
+  }
+]

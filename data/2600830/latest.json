@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2600830",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 23.2.1 (git-49a47f187e)",
+    "kernel": "6.1.0-13-amd64",
+    "notes": "",
+    "os": "LMDE 6",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1700419488,
+    "title": "Lost Hope: Backrooms",
+    "source": "protondb"
+  }
+]

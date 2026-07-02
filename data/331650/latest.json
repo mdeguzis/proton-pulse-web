@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "331650",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Works only in software renderer. Everything works correctly but it looks so horrendous that I can only give it a bronze rating.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1549609697,
+    "title": "Carmageddon TDR 2000",
+    "source": "protondb"
+  },
+  {
+    "appId": "331650",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "You must open TDR2000.gfx in game root directory. Change second and fourth lines of file to \"0\". Save it. Open \"TDR2000 Setup\", choose resolution and other settings as you wish, and start game.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "9 GB",
+    "rating": "Gold",
+    "timestamp": 1551355725,
+    "title": "Carmageddon TDR 2000",
+    "source": "protondb"
+  }
+]

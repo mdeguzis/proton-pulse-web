@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "508530",
+    "cpu": "i7-4702HQ CPU @ 2.20GHz",
+    "gpu": "Quadro K1100M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-lowlatency",
+    "notes": "Graphics are perfect after entering and then leaving fullscreen. (req'd) Controller did not map on all layouts for xbox360 controller. Only one of three control layouts was responsive. Everything else works.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15943 Mb",
+    "rating": "Silver",
+    "timestamp": 1536906639,
+    "title": "HackyZack",
+    "source": "protondb"
+  },
+  {
+    "appId": "508530",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.11-arch1-1-ARCH, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-cb863de626)",
+    "kernel": "4.18.11-arch1-1-ARCH",
+    "notes": "Crashes directly after start",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32159 Mb",
+    "rating": "Borked",
+    "timestamp": 1538554599,
+    "title": "HackyZack",
+    "source": "protondb"
+  },
+  {
+    "appId": "508530",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-e2ae5f2f0a)",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Immediate crash after start",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1546265651,
+    "title": "HackyZack",
+    "source": "protondb"
+  }
+]

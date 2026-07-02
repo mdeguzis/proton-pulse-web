@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "754150",
+    "title": "Rolling Line",
+    "timestamp": 1535753019,
+    "rating": "Borked",
+    "notes": "Launches to initial menu, but mouse is uncontrollable and keyboard does not work. \n\nAlso appears to be running in software rendering mode (low resolution and high CPU usage). ",
+    "os": "Fedora 27 (4.17.17-100.fc27.x86_64)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 1600X / GTX 1080 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "754150",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Performance is fine, no tweaks required",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542222404,
+    "title": "Rolling Line",
+    "source": "protondb"
+  },
+  {
+    "appId": "754150",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Desktop Gameplay is OK.\nVR Untested.\nPerformance is good.\n- All mouse events cause the camera to turn down and to the right slightly\n- Steam engines do not have wheels",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542545223,
+    "title": "Rolling Line",
+    "source": "protondb"
+  },
+  {
+    "appId": "754150",
+    "title": "Rolling Line",
+    "timestamp": 1535738619,
+    "rating": "Borked",
+    "notes": "Launches to initial menu, but mouse is uncontrollable and keyboard does not work. \n\nAlso appears to be running in software rendering mode (low resolution and high CPU usage). ",
+    "os": "Fedora 27 (4.17.17-100.fc27.x86_64)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 1600X / GTX 1080 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

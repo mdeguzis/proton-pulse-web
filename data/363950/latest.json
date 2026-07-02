@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "363950",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-23-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1565015403,
+    "title": "Windscape",
+    "source": "protondb"
+  },
+  {
+    "appId": "363950",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-23-generic",
+    "notes": "no issues found, works perfectly",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1565015621,
+    "title": "Windscape",
+    "source": "protondb"
+  }
+]

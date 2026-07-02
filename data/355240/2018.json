@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "355240",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3",
+    "kernel": "4.18.16-1-MANJARO",
+    "notes": "Runs fine as far as I can tell. Network play not tested.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540743665,
+    "title": "NEO AQUARIUM - The King of Crustaceans -",
+    "source": "protondb"
+  }
+]

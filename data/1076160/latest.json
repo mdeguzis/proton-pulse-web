@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1076160",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.3-arch1-2",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1778184495,
+    "title": "",
+    "source": "protondb"
+  }
+]

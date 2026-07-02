@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "389050",
+    "cpu": "Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Everything works fine, including multiplayer without any tweaks.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15946 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538943039,
+    "title": "Pocket Rumble",
+    "source": "protondb"
+  },
+  {
+    "appId": "389050",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.25.0, 4.17.19-041719-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.17.19-041719-generic",
+    "notes": "Everything works fine. Proton 3.7-8",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16030 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539461437,
+    "title": "Pocket Rumble",
+    "source": "protondb"
+  }
+]

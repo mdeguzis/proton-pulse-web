@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "339640",
+    "cpu": "AMD Ryzen Threadripper 2920X 12-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "Forces SteamPlay uage, failed on startup: no connection to server.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1552215951,
+    "title": "Jagged Alliance Online: Reloaded",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "639170",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.18.0-14-generic",
+    "notes": "Runs smooth, without any problems or glitches.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549096430,
+    "title": "Minecraft: Story Mode - Season Two",
+    "source": "protondb"
+  },
+  {
+    "appId": "639170",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-79a30543ee)",
+    "kernel": "5.1.10-20-tkg-bmq",
+    "notes": "D3D11 using DXVK. Sometimes results in a little stutter, at least in the mechanical drive, the first time shader cache needs to generated, which could be solved by having up to date shader cache. Sometimes stutter won't go until the restart which may be issue on my side. Otherwise no issues whatsoever completing the game.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561136334,
+    "title": "Minecraft: Story Mode - Season Two",
+    "source": "protondb"
+  },
+  {
+    "appId": "639170",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "works otb, had a mouse issue due to an AltTab, fixed by relaunching the game, but this issues also happened on windows for me, so, no problem here! it works well and i'm happy!",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565648416,
+    "title": "Minecraft: Story Mode - Season Two",
+    "source": "protondb"
+  }
+]

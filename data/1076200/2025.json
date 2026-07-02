@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1076200",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 (radeonsi, navi10, LLVM 21.1.6, DRM 3.64, 6.18.1-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.3",
+    "kernel": "6.18.1-2-cachyos",
+    "notes": "Native version would not load (missing FMOD) so had to switch to Proton",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1766342533,
+    "title": "Roguebook",
+    "source": "protondb"
+  }
+]

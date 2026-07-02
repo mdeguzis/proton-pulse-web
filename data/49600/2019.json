@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "49600",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-13-generic",
+    "notes": "The native port of this game is somewhat shoddy, with resolution issues with multi-monitor setups, a 60 FPS cap, and track indexing issues. Running it in Proton eliminates all of these issues and everything seems to work as expected, however multiplayer was not tested.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558877326,
+    "title": "Beat Hazard",
+    "source": "protondb"
+  },
+  {
+    "appId": "49600",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.16-artix1-1-ARTIX",
+    "notes": "Game runs perfectly through proton, the native version complains about alsa (which i don't use)",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1564269603,
+    "title": "Beat Hazard",
+    "source": "protondb"
+  },
+  {
+    "appId": "49600",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-6-amd64",
+    "notes": "Had issues with the native version giving me choppy sound output. Everything works just fine except for controllers. It wouldn't let me configure my xbox360 controller.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568503054,
+    "title": "Beat Hazard",
+    "source": "protondb"
+  }
+]

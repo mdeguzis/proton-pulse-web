@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "46400",
+    "cpu": "i7-2600 CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "The video scenes are in the wrong format, just press ESC.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "16007 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536675411,
+    "title": "Greed: Black Border",
+    "source": "protondb"
+  },
+  {
+    "appId": "46400",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Sometimes a bit laggy and the Intro-Movies doesnt start because some DirectX / Video Codec Problem. Besides that - it is playable out of the box :]",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16054 MB",
+    "rating": "Silver",
+    "timestamp": 1539993125,
+    "title": "Greed: Black Border",
+    "source": "protondb"
+  }
+]

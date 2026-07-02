@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "457370",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-5aeee1a 2018-11-05 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "20 GB",
+    "rating": "Platinum",
+    "timestamp": 1541468231,
+    "title": "Alexa's Wild Night",
+    "source": "protondb"
+  }
+]

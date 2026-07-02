@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "802880",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Minor issues with text (w overlaps any character that comes after it). Otherwise, game runs perfectly.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553543228,
+    "title": "Muv-Luv",
+    "source": "protondb"
+  }
+]

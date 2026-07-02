@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1340300",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.4.0-150600.23.42-default)",
+    "gpuDriver": "4.6 Mesa 23.3.4",
+    "kernel": "6.4.0-150600.23.42-default",
+    "notes": "",
+    "os": "openSUSE Leap 15.6",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1743503525,
+    "title": "",
+    "source": "protondb"
+  }
+]

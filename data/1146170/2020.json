@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1146170",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.4.0-159-generic",
+    "notes": "Launches into a black-screen and stays there.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "5.0-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1591894974,
+    "title": "KingSim",
+    "source": "protondb"
+  }
+]

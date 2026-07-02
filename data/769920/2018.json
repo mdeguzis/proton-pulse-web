@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "769920",
+    "title": "Odysseus Kosmos and his Robot Quest - Episode 1",
+    "timestamp": 1535142710,
+    "rating": "Platinum",
+    "notes": "Works flawlessly.",
+    "os": "Debian Stable 64-bit (Kernel 4.17)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 970 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "769920",
+    "cpu": "Intel Core i7         870  @ 2.93GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-42-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1544999764,
+    "title": "Odysseus Kosmos and his Robot Quest: Episode 1",
+    "source": "protondb"
+  },
+  {
+    "appId": "769920",
+    "cpu": "Intel Core i3-5005U @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "All  runs smoothly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1545831165,
+    "title": "Odysseus Kosmos and his Robot Quest: Episode 1",
+    "source": "protondb"
+  },
+  {
+    "appId": "769920",
+    "title": "Odysseus Kosmos and his Robot Quest - Episode 1",
+    "timestamp": 1535128310,
+    "rating": "Platinum",
+    "notes": "Works flawlessly.",
+    "os": "Debian Stable 64-bit (Kernel 4.17)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 970 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

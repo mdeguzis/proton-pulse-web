@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1182620",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Game plays perfectly fine outside of a few minor quirks (missing mouse mapping, audio missing after waking from sleep mode).",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1677250598,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1182620",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1683410485,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1182620",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 16.0.6, DRM 3.54, 6.6.6-100.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.9",
+    "kernel": "6.6.6-100.fc38.x86_64",
+    "notes": "",
+    "os": "Fedora release 38 (Thirty Eight)",
+    "protonVersion": "8.0-4",
+    "ram": "%$s1 MB",
+    "rating": "platinum",
+    "timestamp": 1703291252,
+    "title": "",
+    "source": "protondb"
+  }
+]

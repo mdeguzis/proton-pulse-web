@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "892830",
+    "cpu": "Intel(R) Pentium(R) CPU G4620 @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org Radeon RX 550 Series (POLARIS12, DRM 3.23.0, 4.15.0-36-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Perfectly smooth, no input delay, no tweak required, works with arcade controller out of the box.",
+    "os": "KDE neon User Edition 5.14 (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16001 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539337843,
+    "title": "VRITRA COMPLETE EDITION",
+    "source": "protondb"
+  }
+]

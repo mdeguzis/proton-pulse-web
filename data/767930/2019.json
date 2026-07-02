@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "767930",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Runs out of the box but would hang if you are at the menu and there is no input from keyboard or controller for extended time. Story mode runs fine. For users of ultrawide (21:9) monitors, avoid this game. The game does not have black bars but it just zooms in (Vert-).",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1559622046,
+    "title": "Assault Spy / \u30a2\u30b5\u30eb\u30c8\u30b9\u30d1\u30a4",
+    "source": "protondb"
+  },
+  {
+    "appId": "767930",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.14.19",
+    "notes": "Had to disable Esync or the game would crash on startup. Played through the entire Asaru campaign without any real issues, just some minor fps drops at some places. Used a Logitech Cordless RumblePad 2 which was detected automatically.",
+    "os": "Linux 4.14",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1562437770,
+    "title": "Assault Spy / \u30a2\u30b5\u30eb\u30c8\u30b9\u30d1\u30a4",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

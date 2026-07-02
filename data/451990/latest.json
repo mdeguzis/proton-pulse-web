@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "451990",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon HD 7800 Series (PITCAIRN, DRM 3.26.0, 4.18.9-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.18.9-1-MANJARO",
+    "notes": "Random crash",
+    "os": "\"Manjaro Linux\" (64 bits)",
+    "protonVersion": "Beta",
+    "ram": "15956 MB",
+    "rating": "Silver",
+    "timestamp": 1537620701,
+    "title": "Cranks and Goggles",
+    "source": "protondb"
+  }
+]

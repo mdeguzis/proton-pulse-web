@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "593600",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "Overwrite the \u00bbmprapi.dll\u00ab to native. I\u2019ve used protonfixes with a local gamefix: util.winedll_override('mprapi', 'x'). I will create a pull request for protonfixes and merge it.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1555671933,
+    "title": "PixARK",
+    "source": "protondb"
+  },
+  {
+    "appId": "593600",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.5-arch1-1-fsync",
+    "notes": "The Game runs perfectly after a small tweak.\nThe game currently needs a 64bit copy of mprapi.dll from a Windows 7 Install placed in the same folder as shootergame.exe and mprapi needs to be set to native in winecfg. Which solves the following issue, \"wine: Call from 0x7b45317c to unimplemented function mprapi.dll.MprConfigServerConnect, aborting\".",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1565116552,
+    "title": "PixARK",
+    "source": "protondb"
+  }
+]

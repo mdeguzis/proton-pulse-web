@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "730410",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.15.0-39-lowlatency",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563899853,
+    "title": "Music Band Manager",
+    "source": "protondb"
+  }
+]

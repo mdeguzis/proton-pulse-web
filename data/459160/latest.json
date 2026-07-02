@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "459160",
+    "cpu": "AMD Athlon II X4 640",
+    "duration": "aboutAnHour",
+    "gpu": "AMD CAICOS",
+    "gpuDriver": "3.1 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-48-generic",
+    "notes": "After installation, the game starts without any problem",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1557394481,
+    "title": "Allods Online My.com",
+    "source": "protondb"
+  },
+  {
+    "appId": "459160",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Works OTB, no need to delete or do anything!",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567864139,
+    "title": "Allods Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "459160",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569414149,
+    "title": "Allods Online",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "appId": "50650",
+    "title": "Darksiders II",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Crashes after the THQ, Vigil videos",
+    "os": "Antergos",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "Ryzen 1500, rx 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "50650",
+    "title": "Darksiders II",
+    "timestamp": 1535032978,
+    "rating": "Borked",
+    "notes": "crash after intro.  About to connect() to thqc-darksiders2-pc.thqconnect.com port 8443 (#0)   Trying 38.103.18.162...  Connection refused",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4670",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "50650",
+    "title": "Darksiders II",
+    "timestamp": 1535098112,
+    "rating": "Borked",
+    "notes": "Crashes after the THQ, Vigil videos",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GeForce GTX 850",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "50650",
+    "title": "Darksiders II",
+    "timestamp": 1535572450,
+    "rating": "Borked",
+    "notes": "Crashes on launch",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "specs": "AMD FX(tm)-4100 Quad-Core / Radeon RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "50650",
+    "title": "Darksiders II",
+    "timestamp": 1535410940,
+    "rating": "Borked",
+    "notes": "Starts up and goes through the starting splash screens.  Right on last one, it freezes then crashes out.",
+    "os": "Mint Mate 18.3 Kernel 4.17.11",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "1900X / GTX960 FTW",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "50650",
+    "title": "Darksiders II",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Crashes after the THQ, Vigil videos",
+    "os": "Antergos",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "Ryzen 1500, rx 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "50650",
+    "title": "Darksiders II",
+    "timestamp": 1535018578,
+    "rating": "Borked",
+    "notes": "crash after intro.  About to connect() to thqc-darksiders2-pc.thqconnect.com port 8443 (#0)   Trying 38.103.18.162...  Connection refused",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4670",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "50650",
+    "title": "Darksiders II",
+    "timestamp": 1535083712,
+    "rating": "Borked",
+    "notes": "Crashes after the THQ, Vigil videos",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GeForce GTX 850",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "50650",
+    "title": "Darksiders II",
+    "timestamp": 1535558050,
+    "rating": "Borked",
+    "notes": "Crashes on launch",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "specs": "AMD FX(tm)-4100 Quad-Core / Radeon RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "50650",
+    "title": "Darksiders II",
+    "timestamp": 1535396540,
+    "rating": "Borked",
+    "notes": "Starts up and goes through the starting splash screens.  Right on last one, it freezes then crashes out.",
+    "os": "Mint Mate 18.3 Kernel 4.17.11",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "1900X / GTX960 FTW",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

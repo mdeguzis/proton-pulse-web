@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "984450",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.3-arch1-1-ARCH",
+    "notes": "Game itself seems to play flawlessly, but the game fails to connect to the Steam servers so online leaderboards do not work.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1553627326,
+    "title": "Super Crome: Bullet Purgatory",
+    "source": "protondb"
+  }
+]

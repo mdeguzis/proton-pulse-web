@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "433570",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon HD 8500M",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Runs perfectly after adding \"PROTON_USE_WINED3D11=1 %command\" in Properties > Set Launch Options.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1543002109,
+    "title": "Side Quest",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "433570",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon HD 8500M",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Runs perfectly after adding \"PROTON_USE_WINED3D11=1 %command\" in Properties > Set Launch Options.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1543002510,
+    "title": "Side Quest",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

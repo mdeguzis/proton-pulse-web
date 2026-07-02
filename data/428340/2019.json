@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "428340",
+    "cpu": "Intel Core2 Quad    Q6600  @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Everything works out of the box, no tweaks, no crash",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1553113395,
+    "title": "Marmoset Hexels 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "428340",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.14.109-1-MANJARO",
+    "notes": "Originally tried with 4.2 with no luck. Had to uninstall and reinstall the app after changing the proton version. Some text on the menus is ugly but everything seems to function well.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555899874,
+    "title": "Marmoset Hexels 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "428340",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-acs-patch",
+    "notes": "the start can be slow sometimes, so at least wait 15 seconds",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1562251706,
+    "title": "Marmoset Hexels 3",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "338060",
+    "cpu": "AMD A10-4600M APU with Radeon(tm) HD Graphics",
+    "gpu": "X.Org AMD ARUBA (DRM 2.50.0 / 4.18.6-041806-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.18.6-041806-generic",
+    "notes": "Fails to start",
+    "os": "elementary OS 0.4.1 Loki (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "11457 Mb",
+    "rating": "Borked",
+    "timestamp": 1536636989,
+    "title": "Mahjong Pretty Girls Battle",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "597970",
+    "cpu": "Intel Core i9-9900KF @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.10.0-9-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1697051481,
+    "title": "",
+    "source": "protondb"
+  }
+]

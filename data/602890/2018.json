@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "602890",
+    "title": "hack_me 2",
+    "timestamp": 1535820231,
+    "rating": "Borked",
+    "notes": "Reason Unknown",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "602890",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "No window opens.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Borked",
+    "timestamp": 1539828652,
+    "title": "hack_me 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "602890",
+    "title": "hack_me 2",
+    "timestamp": 1535805831,
+    "rating": "Borked",
+    "notes": "Reason Unknown",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

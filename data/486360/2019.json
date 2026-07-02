@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "486360",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Crashed the first time I started it, but second time it worked fine.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555852639,
+    "title": "Timore Inferno",
+    "source": "protondb"
+  }
+]

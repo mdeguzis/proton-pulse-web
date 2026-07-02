@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "333300",
+    "cpu": "11th Gen Intel Core i7-1185G7 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 550.76",
+    "kernel": "6.8.7-arch1-1",
+    "notes": "Will make a new report if I find a Proton version that plays the game well.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1716949369,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "333300",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "The game works well enough, but a keyboard is essential.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1716954497,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "333300",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-28-amd64",
+    "notes": "The framerate is far too low to be enjoyed",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1734615081,
+    "title": "",
+    "source": "protondb"
+  }
+]

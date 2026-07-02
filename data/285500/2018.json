@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "285500",
+    "title": "Hard Truck Apocalypse / Ex Machina",
+    "timestamp": 1535086300,
+    "rating": "Silver",
+    "notes": "there is a stutter sometimes when interacting with npc's, also the game doesn't exit cleanly",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Geforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "285500",
+    "title": "Hard Truck Apocalypse / Ex Machina",
+    "timestamp": 1535118439,
+    "rating": "Platinum",
+    "notes": "everything works out of the box",
+    "os": "Gentoo (Kernel 4.18.3)",
+    "gpuDriver": "Mesa 18.2.0-rc4 (LLVM 7.0.0)",
+    "specs": "i7-4771/R9 280X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "285500",
+    "cpu": "i5-3470 CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.13.0-32-generic",
+    "notes": "Needs some graphics resolution tweaks before play",
+    "os": "elementary OS 0.4.1 Loki (64 bit)",
+    "protonVersion": "default",
+    "ram": "7924 Mb",
+    "rating": "Gold",
+    "timestamp": 1536806343,
+    "title": "Hard Truck Apocalypse / Ex Machina",
+    "source": "protondb"
+  },
+  {
+    "appId": "285500",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 860M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.4.0-139-generic",
+    "notes": "Works as good as on Windows",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1543713223,
+    "title": "Hard Truck Apocalypse / Ex Machina",
+    "source": "protondb"
+  },
+  {
+    "appId": "285500",
+    "title": "Hard Truck Apocalypse / Ex Machina",
+    "timestamp": 1535071900,
+    "rating": "Silver",
+    "notes": "there is a stutter sometimes when interacting with npc's, also the game doesn't exit cleanly",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Geforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "285500",
+    "title": "Hard Truck Apocalypse / Ex Machina",
+    "timestamp": 1535104039,
+    "rating": "Platinum",
+    "notes": "everything works out of the box",
+    "os": "Gentoo (Kernel 4.18.3)",
+    "gpuDriver": "Mesa 18.2.0-rc4 (LLVM 7.0.0)",
+    "specs": "i7-4771/R9 280X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

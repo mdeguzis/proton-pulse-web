@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "433280",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.9-200.fc30.x86_64",
+    "notes": "Terrible performance - supposedly it's also very bad on Windows, so this might be not a Proton issue, but the game is barely playable.  There is long thread on community forum about installing missing/newer patches to fix the experience, but I haven't tried it yet.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1567409730,
+    "title": "Warlords Battlecry III",
+    "source": "protondb"
+  }
+]

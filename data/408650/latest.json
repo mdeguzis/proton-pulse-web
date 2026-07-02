@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "408650",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "The full game itself is native. The free demo is not, unfortunately. So, want to try before you buy? Well, for me the game crashed when I clicked \"play\" in Steam. Running the game outside of Steam, whether through Proton or vanilla WINE, seems to work though. If you want to rebind controls, you will need to run on a prefix with DXVK set up, as text does not show up on the controls menu with wined3d. The framerate is about the same between the two, so stick with DXVK if you already have it. Speaking of controls, when I started the demo on the first level, I couldn't move for some reason. After an alt+enter to switch to windowed mode, that never happened again. The game mostly ran at 50-60 FPS, however there was some stuttering when looking at a lot of drones; even so, the performance was respectable considering I was using integrated graphics as I cannot afford a discrete graphics card right now, hopefully native port performs better when I purchase the full game.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "14 GB",
+    "rating": "Gold",
+    "timestamp": 1570226769,
+    "title": "ChromaGun",
+    "source": "protondb"
+  }
+]

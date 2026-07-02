@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "518150",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Reports an anticheat violation",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1551493858,
+    "title": "Intruder",
+    "source": "protondb"
+  },
+  {
+    "appId": "518150",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.19.28-1-MANJARO",
+    "notes": "You can't play the game due to Easy Anti-Cheat",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552854392,
+    "title": "Intruder",
+    "source": "protondb"
+  },
+  {
+    "appId": "518150",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Game runs but can't play because of Easy Anti-Cheat",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1556610833,
+    "title": "Intruder",
+    "source": "protondb"
+  }
+]

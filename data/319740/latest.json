@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "319740",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Everything appears to run fine, but the voice recognition in the setup never registers when saying the test phrase \"loud and clear\" making the game effectively unplayable.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546369485,
+    "title": "There Came an Echo",
+    "source": "protondb"
+  },
+  {
+    "appId": "319740",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.19.67",
+    "notes": "Voice control don't work (the main feature of the game), but you can use right-mouse on a unit and give commands there",
+    "os": "Unknown",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1567885282,
+    "title": "There Came an Echo",
+    "source": "protondb"
+  }
+]

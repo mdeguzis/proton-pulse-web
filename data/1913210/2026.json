@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1913210",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.14-artix1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.5-arch1.1",
+    "kernel": "6.19.14-artix1-1",
+    "notes": "I tried all the workaround, the farthest I was able to go is when I set it to DX11 it gone to connect to server and then it froze.",
+    "os": "Artix Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1777609794,
+    "title": "",
+    "source": "protondb"
+  }
+]

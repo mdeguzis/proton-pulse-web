@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1595710",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 550 (POLARIS11, DRM 3.40.0, 5.11.0-25-generic, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.1.4 (git-ac105a8e6e)",
+    "kernel": "5.11.0-25-generic",
+    "notes": "Not working with newer versions",
+    "os": "Freedesktop.org 20.08.14 (Flatpak runtime)",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1627657164,
+    "title": "Chased by Darkness",
+    "source": "protondb"
+  }
+]

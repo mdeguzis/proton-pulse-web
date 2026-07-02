@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "460540",
+    "cpu": "Intel Core i5-4300M @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.3.2",
+    "kernel": "5.5.0-1-MANJARO",
+    "notes": "crash on startup",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1580646683,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "460540",
+    "cpu": "Intel Core i5-4300M @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.3.3",
+    "kernel": "5.5.2-1-MANJARO",
+    "notes": "runs flawlessly with \"PROTON_USE_WINED3D=1 %command%\"",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1581402137,
+    "title": "",
+    "source": "protondb"
+  }
+]

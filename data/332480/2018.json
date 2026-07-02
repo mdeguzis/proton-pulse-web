@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "332480",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15980 Mb",
+    "rating": "Borked",
+    "timestamp": 1539371236,
+    "title": "Phoenix Force",
+    "source": "protondb"
+  },
+  {
+    "appId": "332480",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 390.67",
+    "kernel": "4.15.0-29deepin-generic",
+    "notes": "simply don't start",
+    "os": "Deepin 15.8",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1545950471,
+    "title": "Phoenix Force",
+    "source": "protondb"
+  }
+]

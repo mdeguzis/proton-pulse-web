@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "242780",
+    "title": "Cognition: An Erica Reed Thriller",
+    "timestamp": 1534973218,
+    "rating": "Platinum",
+    "notes": "Installs and runs fine.  Tested 10 minutes of gameplay with no problems at all.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "242780",
+    "title": "Cognition: An Erica Reed Thriller",
+    "timestamp": 1535454113,
+    "rating": "Silver",
+    "notes": "Alt+Tab black screens the game, but than that completely stable",
+    "os": "Ubuntu 18.04.1 w/unity (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700HQ/ GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "242780",
+    "cpu": "AMD FX-9590 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.15.0-38-generic",
+    "notes": "runs ok",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540657678,
+    "title": "Cognition: An Erica Reed Thriller",
+    "source": "protondb"
+  },
+  {
+    "appId": "242780",
+    "cpu": "Intel Core i7-4900MQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.18.14-95.current",
+    "notes": "Perfect",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15 GB",
+    "rating": "Platinum",
+    "timestamp": 1541452251,
+    "title": "Cognition: An Erica Reed Thriller",
+    "source": "protondb"
+  },
+  {
+    "appId": "242780",
+    "title": "Cognition: An Erica Reed Thriller",
+    "timestamp": 1534958818,
+    "rating": "Platinum",
+    "notes": "Installs and runs fine.  Tested 10 minutes of gameplay with no problems at all.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "242780",
+    "title": "Cognition: An Erica Reed Thriller",
+    "timestamp": 1535439713,
+    "rating": "Silver",
+    "notes": "Alt+Tab black screens the game, but than that completely stable",
+    "os": "Ubuntu 18.04.1 w/unity (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700HQ/ GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

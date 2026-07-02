@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "371670",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with Xbox 360 controller and no tweaks. Only issue is that it hangs on exit.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560624648,
+    "title": "Rolling Sun",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "530700",
+    "title": "Argo",
+    "timestamp": 1535534278,
+    "rating": "Borked",
+    "notes": "Battleye prevents the game from starting",
+    "os": "Antergos x86_64 Linux 4.14.67-1-lts",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4460 / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "530700",
+    "title": "Argo",
+    "timestamp": 1535635673,
+    "rating": "Borked",
+    "notes": "BattlEye installation request dialog appears, followed by a loading screen, then crashes with an error dialog saying \"Win32 error: Cannot create MT object\" or something to that effect.",
+    "os": "Linux Mint 18.3 KDE 64-bit (kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6198DU / GT 920 MX",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "530700",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Hang on \"battle eye service starting\"",
+    "os": "Xubuntu custom 18.04 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541160638,
+    "title": "Argo",
+    "source": "protondb"
+  },
+  {
+    "appId": "530700",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Wine32 Error: Cannot create MT object.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541325558,
+    "title": "Argo",
+    "source": "protondb"
+  },
+  {
+    "appId": "530700",
+    "title": "Argo",
+    "timestamp": 1535519878,
+    "rating": "Borked",
+    "notes": "Battleye prevents the game from starting",
+    "os": "Antergos x86_64 Linux 4.14.67-1-lts",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4460 / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "530700",
+    "title": "Argo",
+    "timestamp": 1535621273,
+    "rating": "Borked",
+    "notes": "BattlEye installation request dialog appears, followed by a loading screen, then crashes with an error dialog saying \"Win32 error: Cannot create MT object\" or something to that effect.",
+    "os": "Linux Mint 18.3 KDE 64-bit (kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6198DU / GT 920 MX",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

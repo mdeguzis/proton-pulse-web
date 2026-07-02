@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "289600",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.1.2-1-default",
+    "os": "openSUSE Tumbleweed (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558259756,
+    "title": "Marauder",
+    "source": "protondb"
+  },
+  {
+    "appId": "289600",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Runs, but it is very slow at a moments...with some tweaks should work fine",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1567201606,
+    "title": "Marauder",
+    "source": "protondb"
+  }
+]

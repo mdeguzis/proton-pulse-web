@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1067220",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "6.0.0-3-amd64",
+    "notes": "I have played for just about 3 hours so far and It was fine hasnt crashed or done anything weird so far works great/",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1668727063,
+    "title": "RoboCo",
+    "source": "protondb"
+  }
+]

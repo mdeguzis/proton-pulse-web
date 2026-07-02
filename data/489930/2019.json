@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "489930",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "I did play the full game and it did work expectedly well (the game has quite a few known minor glitches, nothing actually game breaking). Only then at the very end the actual ending video sequence did play, but after that there should play a let's call it epilogue video sequence followed by the credits which instead did just show a black screen that could only be closed with Alt+F4. Reloading the save game, just ended in the same issue again.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1553823166,
+    "title": "Adventures of Bertram Fiddle: Episode 2: A Bleaker Predicklement",
+    "source": "protondb"
+  }
+]

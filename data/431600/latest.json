@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "431600",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.12.14-lp150.12.48-default",
+    "notes": "Does not start",
+    "os": "openSUSE Leap 15.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553472595,
+    "title": "Automobilista",
+    "source": "protondb"
+  },
+  {
+    "appId": "431600",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GT 740",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-18-generic",
+    "notes": "The game only works with Proton 3.7-x. If you use 3.16-x or 4.2-x doesn't start. Works with Logitech G29 without Force Feedback, a pity because this game has a fantastic FF effects. There are some flickering with HUD. When you click on Multiplayer, the game tries to show the list of games and crashes to Desktop. You can post your tests in the Automobilista's Proton Issues in Github:\nhttps://github.com/ValveSoftware/Proton/issues/246",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "6 GB",
+    "rating": "Silver",
+    "timestamp": 1557499222,
+    "title": "Automobilista",
+    "source": "protondb"
+  },
+  {
+    "appId": "431600",
+    "cpu": "Intel Core i5-3550 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.18.0-25-generic",
+    "notes": "With the Proton 4.11-1, the game starts, but it don't show the cars when you try to drive on a track (only shows a Safety Car Mini) and also only a track (Caruaru). With this problems is impossible to load a race or test. I tried with D9VK and without it. There is a change, now is possible to see the list of games in the multiplayer lobby. With Proton 3.7 the game works normal without FFB and Online.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1564589747,
+    "title": "Automobilista",
+    "source": "protondb"
+  }
+]

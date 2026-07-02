@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2059810",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "\u770b\u89c1\u4e86 1.\u7e41\u4f53\u4e2d\u6587\u63d0\u793a\u7a97\u53e3 2.\u8bbe\u7f6e \u7a97\u53e3\u5316 \u5168\u5c4f \u7684\u754c\u9762\uff0c\u4e0b\u4e00\u6b65\u5c31\u6ca1\u6cd5\u8fd0\u884c\u6e38\u620f\u4e86.\u5e0c\u671b\u6709\u4e00\u5929 Proton / \u517c\u5bb9\u5c42 \u80fd\u8fd0\u884c\u8fd9\u6e38\u620f\uff0c\u4e8c\u5341\u5e74\u524d\u5f88\u559c\u6b22\u73a9\u8fd9\u6e38\u620f\uff0c\u56db\u4eba\u672c\u5730\u8054\u673a / \u5728\u540c\u4e00\u5929\u7535\u8111\u9762\u524d\u4e00\u8d77\u73a9.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1670171804,
+    "title": "Richman 4",
+    "source": "protondb"
+  }
+]

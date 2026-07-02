@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1095060",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.0.0",
+    "kernel": "5.5.6",
+    "notes": "Two minute freeze first loading the game, and some 20s pauses in other places when loading levels. Runs great once it's going.",
+    "os": "Slackware Linux",
+    "protonVersion": "5.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1582732524,
+    "title": "",
+    "source": "protondb"
+  }
+]

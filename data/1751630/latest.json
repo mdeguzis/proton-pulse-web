@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1751630",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.6-gentoo-dist-hardened",
+    "notes": "Runs great with minor tweaks applied",
+    "os": "Gentoo Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1778612733,
+    "title": "",
+    "source": "protondb"
+  }
+]

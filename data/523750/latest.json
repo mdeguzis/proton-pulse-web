@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "523750",
+    "cpu": "Intel Core i7-7820HQ @ 2.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Quadro M2200",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.18-300.fc30.x86_64",
+    "notes": "Looks like everything works out of the box. First time ever this plays on Linux. So many memories...",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564757638,
+    "title": "Die 4te Offenbarung",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2121510",
+    "cpu": "AMD Ryzen 9 7900X3D 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.8.0-47-generic",
+    "notes": "the (demo) doesn't start at all with proton 9 or proton-experimental right now.  haven't tried other proton versions yet.",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1729905342,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2121510",
+    "cpu": "AMD Ryzen 9 7900X3D 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.8.0-47-generic",
+    "notes": "tried proton-experimental and proton9 so far",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1729943005,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "72000",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, navi32, LLVM 15.0.7, DRM 3.57, 6.8.0-31-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3 - kisak-mesa PPA",
+    "kernel": "6.8.0-31-generic",
+    "notes": "",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1769976797,
+    "title": "Closure",
+    "source": "protondb"
+  }
+]

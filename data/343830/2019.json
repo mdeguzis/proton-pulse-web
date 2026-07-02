@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "343830",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "No sound, and the fonts on the right-click menu are missing, even after 'corefonts' are installed",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1555786730,
+    "title": "D\u00e9j\u00e0 Vu II: MacVenture Series",
+    "source": "protondb"
+  }
+]

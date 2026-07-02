@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "257050",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550995245,
+    "title": "Darkout",
+    "source": "protondb"
+  },
+  {
+    "appId": "257050",
+    "cpu": "Intel Core i5-3360M @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TURKS",
+    "gpuDriver": "3.1 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-lowlatency",
+    "notes": "imstalls and launches perfectly, once in game I had to disable Bloom or I got a white screen with hud, after that.. well.. it was better, I could see there was stuff, I couldn't see my character, the sky was white, there was a huge black segment of ground that kept expanding and moving, sometimes taking up the whole screen.. it's a mess, also no matter what I tried, I couldn't chop down a tree.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1552358075,
+    "title": "Darkout",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "257050",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Tried using Proton 3.7, 3.7 Beta, 3.16, 3.16 Beta, and 4.2. All resulted in the ability to launch the game, create a new character and world, and enter the world. However, I am only able to see a white screen with the games HUD. If I go into the games graphics settings and turn off all the settings, I can get the white screen to go away and some of the graphics to show up, but the game is still unplayable.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1554867789,
+    "title": "Darkout",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "486810",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Five games work perfectly. Sixth game has some wonky mouse controls occasionally.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1626134493,
+    "title": "",
+    "source": "protondb"
+  }
+]

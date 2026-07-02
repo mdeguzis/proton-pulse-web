@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1301850",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.4.0-58-generic",
+    "notes": "constant  reprojection",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1614123668,
+    "title": "Meditation VR",
+    "source": "protondb"
+  }
+]

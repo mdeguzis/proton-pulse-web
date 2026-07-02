@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2772650",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.3-arch1.2",
+    "kernel": "6.8.2-zen2-1-zen",
+    "notes": "stupid",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1712075251,
+    "title": "",
+    "source": "protondb"
+  }
+]

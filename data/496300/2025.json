@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "496300",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX Vega (vega10, LLVM 13.0.1, DRM 3.44, 5.16.10-051610-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.16.10-051610-generic",
+    "notes": "Works natively without issuees.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1735870883,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "496300",
+    "cpu": "12th Gen Intel Core i3-12100F",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.8.0-51-generic",
+    "notes": "Ran perfect without any tweaks. Max framerate and no issues.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1735878119,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "496300",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "Just works",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1764823094,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "298180",
+    "cpu": "AMD A10-7870K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-43-generic",
+    "notes": "It closes itself, no matter what parameters.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1547460298,
+    "title": "The Desolate Hope",
+    "source": "protondb"
+  },
+  {
+    "appId": "298180",
+    "cpu": "Intel Core i5-7640X @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-15-generic",
+    "notes": "dont start",
+    "os": "Ubuntu 18.04.2 LTS (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550961104,
+    "title": "The Desolate Hope",
+    "source": "protondb"
+  },
+  {
+    "appId": "298180",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "I clicked play and it launched without any issues. Everything seems to be working.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554749952,
+    "title": "The Desolate Hope",
+    "source": "protondb"
+  }
+]

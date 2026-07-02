@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "9060",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.20.3-200.fc29.x86_64",
+    "notes": "Crashes immediately and says my graphics chipset doesn't support OpenGL acceleration. ",
+    "os": "Fedora 29",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1548392296,
+    "title": "HeXen II",
+    "source": "protondb"
+  },
+  {
+    "appId": "9060",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.13-200.fc29.x86_64",
+    "notes": "Crashes on launch.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1553305718,
+    "title": "HeXen II",
+    "source": "protondb"
+  },
+  {
+    "appId": "9060",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Crashes on launch. Hammer of Thyrion source port runs perfectly but this is not what is being tested. Maybe it is a problem with early Open GL versions.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556244234,
+    "title": "HeXen II",
+    "source": "protondb"
+  }
+]

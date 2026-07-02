@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "368590",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Expect there was a Linux planned steam\nJust downloads an empty folder not the windows version",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552653089,
+    "title": "Albert and Otto",
+    "source": "protondb"
+  },
+  {
+    "appId": "368590",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Runs fine BUT you have to select \"Force the use of a specific Steam Play compatibility tool\" in the properties to make Steam use the Windows version rather than the (broken) Linux version",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554770417,
+    "title": "Albert and Otto",
+    "source": "protondb"
+  }
+]

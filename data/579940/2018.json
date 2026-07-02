@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "579940",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-96.current",
+    "notes": "Runs out of the box without issues.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "15 GB",
+    "rating": "Platinum",
+    "timestamp": 1541098054,
+    "title": "Race for the Galaxy",
+    "source": "protondb"
+  }
+]

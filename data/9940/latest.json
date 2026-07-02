@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "9940",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "I just quickly installed and ran this game just to test it out, but I was able to install, run, start the game, and move around in a level without any issues and with default settings. I haven't played the game to completion but it looks pretty stable.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1546846429,
+    "title": "Blade Kitten",
+    "source": "protondb"
+  },
+  {
+    "appId": "9940",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.19.0-2-amd64",
+    "notes": "Works great",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553795622,
+    "title": "Blade Kitten",
+    "source": "protondb"
+  },
+  {
+    "appId": "9940",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.14.138-1-MANJARO",
+    "notes": "Works great OOB, no tweaks, using Xbox360 controller with xboxdrv and default config.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567987639,
+    "title": "Blade Kitten",
+    "source": "protondb"
+  }
+]

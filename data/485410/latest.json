@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "485410",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "No issues OOTB but crashes if you try full screen",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564678243,
+    "title": "Alien Run",
+    "source": "protondb"
+  }
+]

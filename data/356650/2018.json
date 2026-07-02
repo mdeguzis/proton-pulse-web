@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "356650",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1540452394,
+    "title": "Death's Gambit",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "356650",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "https://www.youtube.com/watch?v=MvZaUnJbvjc",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1543169413,
+    "title": "Death's Gambit",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "356650",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.19.8-zen2-1-zen",
+    "notes": "FPS drop at the start of the game where you get the first bow but that it, game run flawless. I did not have see any difference with or without Wine D3d11.\nI did the whole game multiple time and did not encounter any other issues",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1546097627,
+    "title": "Death's Gambit",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "377670",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Game has issues with the resolution and rendering of some of the characters on the screen but crashes on Save (Game saves), as well as Load. Crash is bad enough that it drops you back to the login screen for Linux.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557086129,
+    "title": "G-senjou no Maou - The Devil on G-String",
+    "source": "protondb"
+  },
+  {
+    "appId": "377670",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "If window resolution does not match desktop resolution yes/no prompts on save and exit are misaligned in full screen, click somewhere around the middle of the screen.  No crashes or rendering issues, only played up to the end of the first day.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1557623490,
+    "title": "G-senjou no Maou - The Devil on G-String",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "236490",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.0.0-15-generic",
+    "notes": "After clicking play, there is a delay while it performs first time setup of redistributables. Then the status shows as running for a few seconds and quits. No game screen ever appears",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558647955,
+    "title": "Hexodius",
+    "source": "protondb"
+  },
+  {
+    "appId": "236490",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.0.0-15-generic",
+    "notes": "After clicking play, there is a delay while it performs first time setup of redistributables. Then the status shows as running but no game screen ever appears. Have to use system monitor to kill hexodius.exe",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558648339,
+    "title": "Hexodius",
+    "source": "protondb"
+  },
+  {
+    "appId": "236490",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Fails to launch.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560008406,
+    "title": "Hexodius",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1262930",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.8.0-29-generic",
+    "notes": "Crashes at launch.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1611845726,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1262930",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.14.17-xanmod1",
+    "notes": "",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1637065174,
+    "title": "",
+    "source": "protondb"
+  }
+]

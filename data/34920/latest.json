@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "34920",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "I dont know why, but every time i reach the Main-Menu of the Game, my Keyboard shuts down and wont respond till i restart my PC. This is the First Game that have such an Impact on my hardware. The Keyboard is completly new...so i doubt that it is a hardware-failure. I use OpenRazer and Polychromatic as the frontend. My Keyboard is a Razer BlackWidow Chroma V2. This is a really strange and suspicious behavior...",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550170376,
+    "title": "Razor2: Hidden Skies",
+    "source": "protondb"
+  }
+]

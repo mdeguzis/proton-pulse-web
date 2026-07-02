@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "562270",
+    "cpu": "AMD Athlon(tm) II X4 630 Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "nouveau NV137",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Host server can not be created.\nLan server yes.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7975 Mb",
+    "rating": "Bronze",
+    "timestamp": 1539439142,
+    "title": "Shot Shot Tactic",
+    "source": "protondb"
+  }
+]

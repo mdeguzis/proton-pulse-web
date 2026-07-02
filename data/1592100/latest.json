@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1592100",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.8-300.fc41.x86_64",
+    "notes": "Game runs great",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1732377497,
+    "title": "",
+    "source": "protondb"
+  }
+]

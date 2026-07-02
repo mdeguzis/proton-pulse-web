@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "660990",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "This game runs much slower than in Windows, particulary without PROTON_USE_WINED3D=1. With it HDR rendering is disabled, making overall game darker and it's still slower and drops below 60 FPS on low settings with those specs.\nWith PROTON_NO_D3D11=1 is just as slow as without PROTON_USE_WINED3D=1 and have graphic corruption with blood decals.\nPROTON_NO_ESYNC is recommended, as it increase responsibility of clicking a mouse in menus.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1557401702,
+    "title": "Dead Purge: Outbreak",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

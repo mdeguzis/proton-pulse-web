@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "289280",
+    "cpu": "i5-2400 CPU @ 3.10GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Sandybridge Desktop x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "It does not work with the standard version of proton, the game even opens but soon the menu shows audio failure. and when trying to play the phases do not start. if you insist for it if you start the game date.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default ",
+    "ram": "3771 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536787252,
+    "title": "El Matador",
+    "source": "protondb"
+  },
+  {
+    "appId": "289280",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Working but at 1 or 2 FPS - unplayable",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541377141,
+    "title": "El Matador",
+    "source": "protondb"
+  }
+]

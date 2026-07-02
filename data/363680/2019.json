@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "363680",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 375.82",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Very slight sound crackling when game starts (does not matter, really) and continues at cut scenes. On this rig it, \nruns with \n3.7-6 with set launch options : PROTON_USE_WINED3D11=1 %command%\n3.16-4 (Beta) with set launch options : PROTON_USE_WINED3D11=1 %command%\nfails with\n3.16-4 with both set launch options : PROTON_USE_WINED3D11=1 %command% and without\n\nall good bar my drivers being below spec making some glitches on rendering during game and invert of colours that flash briefly though ",
+    "os": "Debian GNU/Linux 9.6 (stretch)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1546358794,
+    "title": "Battlefleet Gothic: Armada",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "363680",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD POLARIS10",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.15-300.fc29.x86_64",
+    "notes": "Played the tutorial and first mission without any issue. Cinematics not working.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1547889587,
+    "title": "Battlefleet Gothic: Armada",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "363680",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.20.13-200.fc29.x86_64",
+    "notes": "Played one mission without any issue.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552242125,
+    "title": "Battlefleet Gothic: Armada",
+    "source": "protondb"
+  },
+  {
+    "appId": "363680",
+    "cpu": "AMD Ryzen Threadripper 2990WX 32-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Only issue - no cinematics. \n\nFor these go here: https://www.youtube.com/watch?v=INPgubrPpZg",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1559829143,
+    "title": "Battlefleet Gothic: Armada",
+    "source": "protondb"
+  }
+]

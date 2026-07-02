@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "337340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Only achievement unlock not working, otherwise working great",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1674314224,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "337340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Experienced frequent stuttering on Proton 7.0-6; switching to native Linux runtime eliminated the issue. Achievement unlock worked fine.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1678421747,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "337340",
+    "cpu": "12th Gen Intel Core i7-1280P",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.2.12-zen1",
+    "notes": "",
+    "os": "NixOS 23.05 (Stoat)",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1683462492,
+    "title": "",
+    "source": "protondb"
+  }
+]

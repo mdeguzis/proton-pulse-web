@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1113010",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.11.16-2-MANJARO",
+    "notes": "Starts fine with GE 6 and Proton 6 but hangs on loading the game",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1619787382,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1113010",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 465.27",
+    "kernel": "5.8.0-48-generic",
+    "notes": "While the game technically did run, the stock performance is unusable. I tested with minimum graphics and no proton tweaks.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1625174476,
+    "title": "",
+    "source": "protondb"
+  }
+]

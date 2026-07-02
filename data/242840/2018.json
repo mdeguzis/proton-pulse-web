@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "242840",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) R9 Fury Series (FIJI, DRM 3.23.0, 4.15.0-20-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-20-generic",
+    "notes": "game wont launch",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "7958 Mb",
+    "rating": "Borked",
+    "timestamp": 1537140379,
+    "title": "In Verbis Virtus",
+    "source": "protondb"
+  }
+]

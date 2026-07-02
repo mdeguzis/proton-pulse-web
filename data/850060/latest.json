@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "850060",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Putting \"PROTON_USE_WINED3D11=1 %command%\" in launch options made the characters visible for me.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1554826343,
+    "title": "Anima: Gate of Memories - The Nameless Chronicles",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

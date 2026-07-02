@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "295710",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Works right away, without any tweaking.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1551984383,
+    "title": "Darkwind: War on Wheels",
+    "source": "protondb"
+  },
+  {
+    "appId": "295710",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Ivybridge Desktop",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Does what it says on the tin.",
+    "os": "Linux Mint 18.2 Sonya",
+    "protonVersion": "3.7-8",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561846183,
+    "title": "Darkwind: War on Wheels",
+    "source": "protondb"
+  },
+  {
+    "appId": "295710",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-46-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1564079309,
+    "title": "Darkwind: War on Wheels",
+    "source": "protondb"
+  }
+]

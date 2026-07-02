@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1623660",
+    "cpu": "AMD A4-9125 RADEON R3, 4 COMPUTE CORES 2C+2G",
+    "duration": "unreported",
+    "gpu": "AMD STONEY (LLVM 13.0.1, DRM 3.42, 5.15.0-41-generic)",
+    "gpuDriver": "4.5 Mesa 22.0.1",
+    "kernel": "5.15.0-41-generic",
+    "notes": "This game have an anticheat also seen in the android emulators, i used proton experimental, and like some people have errors while downloading, i copied the game files from a fully steam windows install with its latest update, and the log in appears, but then the anticheat pop up will freeze the game.",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1676244834,
+    "title": "MIR4",
+    "source": "protondb"
+  }
+]

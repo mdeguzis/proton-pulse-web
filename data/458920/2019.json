@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "458920",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-arch1-1-fsync",
+    "notes": "last time I tried it didn't work at all but looks like some recent proton fixed the issue. with proton 4.11-3 (not yet in the drop down menu) the game works excellent!",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566920221,
+    "title": "Carnival Games\u00ae VR",
+    "source": "protondb"
+  }
+]

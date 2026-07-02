@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "485000",
+    "title": "Cthulhu Realms",
+    "timestamp": 1535904969,
+    "rating": "Platinum",
+    "notes": "Seems to work as intended",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "485000",
+    "cpu": "Intel Core i7-4510U @ 2.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Played good twice against the AI. Didn't play online.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540671014,
+    "title": "Cthulhu Realms",
+    "source": "protondb"
+  },
+  {
+    "appId": "485000",
+    "cpu": "AMD FX-8370E Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 18.3.0",
+    "kernel": "4.19.8-gentoo",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545622015,
+    "title": "Cthulhu Realms",
+    "source": "protondb"
+  },
+  {
+    "appId": "485000",
+    "title": "Cthulhu Realms",
+    "timestamp": 1535890569,
+    "rating": "Platinum",
+    "notes": "Seems to work as intended",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

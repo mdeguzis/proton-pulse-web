@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "461410",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "Just running the game from steam when manually selecting proton / steam play resulted in the game loading and working as expected. Performance appeared to be on par with windows or at least no noticeable issues. \n\nThe game also supports VR however I have not attempted to get my oculas rift working in linux or via proton. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555193373,
+    "title": "Protonwar",
+    "source": "protondb"
+  }
+]

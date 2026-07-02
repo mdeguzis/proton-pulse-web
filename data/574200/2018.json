@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "574200",
+    "cpu": "Intel Core i7-7820X @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.11-arch1-1-ARCH",
+    "notes": "Everything works out of the box. The only issue keeping this game from Platinum would be the game refusing to properly close. When you hit exit the game closes to the desktop, but you still have a minimized task running.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "64 GB",
+    "rating": "Gold",
+    "timestamp": 1545588999,
+    "title": "EARTH DEFENSE FORCE 4.1 WINGDIVER THE SHOOTER",
+    "source": "protondb"
+  }
+]

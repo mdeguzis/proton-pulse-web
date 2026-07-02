@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "524580",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.11-1-MANJARO",
+    "notes": "Error Box: \"Unable to use custom presenter\" due to being unable to playback .wmv videos. To make game at least playable create a new folder and move video folders: Common, CN, EN, JP inside the new folder. This lets you avoid and skip most .wmv videos. However, two key visual-to-wmv transition scenes from the prologue (prison, inn) may still crash. For these scenes use skip event (with L2 / Z) to bypass the scene and continue with the game. While the 3d graphics, 2d visuals, exploration, battles, and sound seem to run well. Bronzish-silver because of .wmv crashing.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552118137,
+    "title": "Fairy Fencer F Advent Dark Force | \u30d5\u30a7\u30a2\u30ea\u30fc\u30d5\u30a7\u30f3\u30b5\u30fc \u30a8\u30d5 ADVENT DARK FORCE | \u5996\u7cbe\u528d\u58eb F ADVENT DARK FORCE",
+    "source": "protondb"
+  },
+  {
+    "appId": "524580",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Game wold work fine if not for the .wmv playback problems. Move the folders Common, CN, EN, JP to outside the games's directory. Then the game will run fine, albeit with no video cutscenes. (PS: disabling esync or enabling/disabling D3d11 did nothing or made it worse, keep the default configs on proton and you should be fine )",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1558120898,
+    "title": "Fairy Fencer F Advent Dark Force | \u30d5\u30a7\u30a2\u30ea\u30fc\u30d5\u30a7\u30f3\u30b5\u30fc \u30a8\u30d5 ADVENT DARK FORCE | \u5996\u7cbe\u528d\u58eb F ADVENT DARK FORCE",
+    "source": "protondb"
+  },
+  {
+    "appId": "524580",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.0.0-29-generic",
+    "notes": "the wmv incompatibility persists, other than that, the game runs flawlessly",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.11-5",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1569183469,
+    "title": "Fairy Fencer F Advent Dark Force",
+    "source": "protondb"
+  }
+]

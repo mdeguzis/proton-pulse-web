@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "875240",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.4-zen1-1-zen",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570604301,
+    "title": "Tree Bonsai",
+    "source": "protondb"
+  }
+]

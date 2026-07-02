@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1348390",
+    "cpu": "Intel Core i5-7500T @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.18.16-200.fc43.x86_64",
+    "notes": "The game does run pretty well with launch option",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1773072013,
+    "title": "",
+    "source": "protondb"
+  }
+]

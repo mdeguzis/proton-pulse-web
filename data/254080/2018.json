@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "254080",
+    "cpu": "AMD A8-7650K Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTS 450",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.14.87-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1544895566,
+    "title": "World War III: Black Gold",
+    "source": "protondb"
+  },
+  {
+    "appId": "254080",
+    "cpu": "AMD A8-7650K Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTS 450",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.14.87-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1544909956,
+    "title": "World War III: Black Gold",
+    "source": "protondb"
+  }
+]

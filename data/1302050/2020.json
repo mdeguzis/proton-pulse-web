@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1302050",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 20.3.0-devel (git-2b977ad 2020-10-06 focal-oibaf-ppa)",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Can't progress due to visual bugs.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1601975191,
+    "title": "Milky Way Prince \u2013 The Vampire Star",
+    "source": "protondb"
+  }
+]

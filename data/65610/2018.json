@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "65610",
+    "title": "ArcaniA: Fall of Setarrif",
+    "timestamp": 1535382756,
+    "rating": "Borked",
+    "notes": "Only a mouse cursor on black background on startup",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "65610",
+    "cpu": "Intel(R) Core(TM) i5-7440HQ CPU @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.8-ext73-58.8-kabylake",
+    "notes": "only ingame cursor and blackscreen",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7911 Mb",
+    "rating": "Borked",
+    "timestamp": 1537954057,
+    "title": "ArcaniA: Fall of Setarrif",
+    "source": "protondb"
+  },
+  {
+    "appId": "65610",
+    "title": "ArcaniA: Fall of Setarrif",
+    "timestamp": 1535368356,
+    "rating": "Borked",
+    "notes": "Only a mouse cursor on black background on startup",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

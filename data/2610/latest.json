@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2610",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.7-119.current",
+    "notes": "Works right out of the box. No issues detected.",
+    "os": "Solus",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561066100,
+    "title": "GUN\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "2610",
+    "cpu": "Intel Core i7       Q 720  @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 19.0.2",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Game crashed the first time I tried loading it up but the second time it started up fine.  It didn't seem to like my controller as the mouse was stuck going up (will probably look into a workaround later) but works fine with keyboard/mouse.  I didn't try to mod it to work with widescreen or anything like that yet, just will try that also later.  ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1564336802,
+    "title": "GUN\u2122",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "988110",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.42.0, 5.15.0-87-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-87-generic",
+    "notes": "Forced Proton 8 because it didn't launch with the recommended one. No issue other than that. Game plays fine.",
+    "os": "Feren OS",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1724056523,
+    "title": "Breacher Story",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "203730",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000rc1-generic",
+    "notes": "dont strart",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547961640,
+    "title": "Q.U.B.E.",
+    "source": "protondb"
+  }
+]

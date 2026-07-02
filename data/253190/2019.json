@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "253190",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Starts with loading screen, reaches 100% then crashes.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550857500,
+    "title": "Kingdom Wars 2: Battles",
+    "source": "protondb"
+  },
+  {
+    "appId": "253190",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1550858563,
+    "title": "Kingdom Wars 2: Battles",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

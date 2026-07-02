@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4096900",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.7, DRM 3.64, 6.18.9)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.18.9",
+    "notes": "",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1771108471,
+    "title": "",
+    "source": "protondb"
+  }
+]

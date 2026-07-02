@@ -1,0 +1,83 @@
+[
+  {
+    "appId": "588950",
+    "cpu": "Intel Core i7-2700K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1550443781,
+    "title": "Kingsway",
+    "source": "protondb"
+  },
+  {
+    "appId": "588950",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.3",
+    "kernel": "5.2.3-1-default",
+    "notes": "Out of the box, the game doesnt run. For me, after adding the command \"PROTON_USE_WINED3D11=1 %command%\" the game run without problems.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.11-1",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1564784782,
+    "title": "Kingsway",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "588950",
+    "cpu": "AMD Phenom II X4 955",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.5-arch1-1-ARCH",
+    "notes": "Worked out of the box after picking Proton 4.11-2.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1565547135,
+    "title": "Kingsway",
+    "source": "protondb"
+  },
+  {
+    "appId": "588950",
+    "cpu": "Intel Core i3-4130 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.6-arch1-1-ARCH",
+    "notes": "Ran without any noticeable issues.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566464969,
+    "title": "Kingsway",
+    "source": "protondb"
+  },
+  {
+    "appId": "588950",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-32-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1572158526,
+    "title": "Kingsway",
+    "source": "protondb"
+  }
+]

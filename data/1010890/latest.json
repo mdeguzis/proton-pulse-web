@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "1010890",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-3f3665b8d5)",
+    "kernel": "5.2.1-arch1-1-ARCH",
+    "notes": "Runs perfectly. Smooth 60 FPS, no problems and no tweaks needed for this Shmup game.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563705577,
+    "title": "Touhou Fantasia / \u4e1c\u65b9\u68a6\u60f3\u66f2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1010890",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 740M",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Completely perfect",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1566974401,
+    "title": "Touhou Fantasia / \u4e1c\u65b9\u68a6\u60f3\u66f2",
+    "source": "protondb"
+  }
+]

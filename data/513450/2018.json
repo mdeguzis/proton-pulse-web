@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "513450",
+    "title": "Drop Alive",
+    "timestamp": 1535669040,
+    "rating": "Silver",
+    "notes": "Gamepad doesn't work. Otherwise no issues.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "513450",
+    "cpu": "AMD A9-9410 RADEON R5, 5 COMPUTE CORES 2C+3G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD STONEY",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1540840701,
+    "title": "Drop Alive",
+    "source": "protondb"
+  },
+  {
+    "appId": "513450",
+    "title": "Drop Alive",
+    "timestamp": 1535654640,
+    "rating": "Silver",
+    "notes": "Gamepad doesn't work. Otherwise no issues.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "12310",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Works fine outside of a bit of audio clipping in the intro movies. ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1540294993,
+    "title": "Culpa Innata",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "497460",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "works perfectly ootb. feels native",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548007242,
+    "title": "Mervils: A VR Adventure",
+    "source": "protondb"
+  }
+]

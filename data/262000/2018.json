@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "262000",
+    "title": "Gabriel Knight - Sins of the Fathers",
+    "timestamp": 1534951965,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "I5 3570k / AMD HD 7870",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "262000",
+    "title": "Gabriel Knight\u00a0: Sins of the Fathers",
+    "timestamp": 1536407762,
+    "rating": "Platinum",
+    "notes": "As native",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "Mesa 18.3.0-devel \u2013 padoka",
+    "specs": "i5-3210M / iGPU HD4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "262000",
+    "cpu": "i7-4900MQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.6",
+    "kernel": "4.17.17-87.current",
+    "notes": "Works good, perfectly playable. The mouse is just slightly lagging. ",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15467 Mb",
+    "rating": "Gold",
+    "timestamp": 1536762923,
+    "title": "Gabriel Knight: Sins of the Fathers 20th Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "262000",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Working with default settings.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540641514,
+    "title": "Gabriel Knight: Sins of the Fathers 20th Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "262000",
+    "title": "Gabriel Knight - Sins of the Fathers",
+    "timestamp": 1534937565,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "I5 3570k / AMD HD 7870",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "262000",
+    "title": "Gabriel Knight\u00a0: Sins of the Fathers",
+    "timestamp": 1536393362,
+    "rating": "Platinum",
+    "notes": "As native",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "Mesa 18.3.0-devel \u2013 padoka",
+    "specs": "i5-3210M / iGPU HD4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

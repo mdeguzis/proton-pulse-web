@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1534270",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro M2000M",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.8.0-55-generic",
+    "notes": "Native build didn't start, Proton 5.0 worked. Issues only when alt+tab'ing out of the game.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1630582833,
+    "title": "Bard Harder!",
+    "source": "protondb"
+  }
+]

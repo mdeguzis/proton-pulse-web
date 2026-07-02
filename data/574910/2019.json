@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "574910",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Umm..it RUNS, but only in the technical sense. Most (but not all) of the text appears rotated 90 degrees and a lot of it runs outside the window so it's unreadable. There's no sound either. Fullscreen works.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1555458437,
+    "title": "The Bits That Saved The Universe",
+    "source": "protondb"
+  }
+]

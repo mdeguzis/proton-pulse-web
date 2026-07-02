@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "351230",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Steam says the game is playing for a split second. The game window never opens.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1572399288,
+    "title": "",
+    "source": "protondb"
+  }
+]

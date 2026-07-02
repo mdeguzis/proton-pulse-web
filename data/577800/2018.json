@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "577800",
+    "title": "Battleborn",
+    "timestamp": 1536482531,
+    "rating": "Borked",
+    "notes": "Does not launch.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "AMD FX-8320 / GTX 650 Ti 2 GB",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "577800",
+    "title": "NBA 2K18",
+    "timestamp": 1535119626,
+    "rating": "Silver",
+    "notes": "Online isn't working, does not even connect to 2K servers. Very low sound from commentators. Performance could be better. Xbox 360 wireless controller works.",
+    "os": "Arch Linux 4.18.3",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "i5-8305G / RX Vega M GL",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "577800",
+    "title": "Battleborn",
+    "timestamp": 1536468131,
+    "rating": "Borked",
+    "notes": "Does not launch.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "AMD FX-8320 / GTX 650 Ti 2 GB",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "577800",
+    "title": "NBA 2K18",
+    "timestamp": 1535105226,
+    "rating": "Silver",
+    "notes": "Online isn't working, does not even connect to 2K servers. Very low sound from commentators. Performance could be better. Xbox 360 wireless controller works.",
+    "os": "Arch Linux 4.18.3",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "i5-8305G / RX Vega M GL",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

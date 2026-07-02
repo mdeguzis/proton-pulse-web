@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "633460",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-21dd881416)",
+    "kernel": "5.1.12-arch1-1-ARCH",
+    "notes": "Works native on Linux. On Proton it works fine too with DXVK, only in the main menu mouse and keyboard input didn't work at the same time, but it a game it was fine.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561126638,
+    "title": "Tannenberg",
+    "source": "protondb"
+  },
+  {
+    "appId": "633460",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-25-generic",
+    "os": "Freedesktop.org 18.08.34 (Flatpak runtime)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563935797,
+    "title": "Tannenberg",
+    "source": "protondb"
+  },
+  {
+    "appId": "633460",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Performance is worse than Windows version like Verdun but it'll be fine when you lower the graphical settings.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566530068,
+    "title": "Tannenberg",
+    "source": "protondb"
+  }
+]

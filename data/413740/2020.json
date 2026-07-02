@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "413740",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-40-generic",
+    "notes": "Wont run on latest proton but will run on proton 4.2-9 without any sound.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-2",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1582153125,
+    "title": "Mines of Mars",
+    "source": "protondb"
+  }
+]

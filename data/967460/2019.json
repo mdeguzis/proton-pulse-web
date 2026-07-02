@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "967460",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.6 Mesa 20.0.0-devel (git-f81c41a812)",
+    "kernel": "5.4.5-arch1-1",
+    "notes": "Works fine on Proton",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1576836632,
+    "title": "Red Eclipse",
+    "source": "protondb"
+  }
+]

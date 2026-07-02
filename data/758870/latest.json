@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "758870",
+    "cpu": "Intel Core i3-4130T @ 2.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 860M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.34-1-MANJARO",
+    "notes": "Initial loading screen comes up, then crashes",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "4 GB",
+    "rating": "Bronze",
+    "timestamp": 1555973718,
+    "title": "Kynseed",
+    "source": "protondb"
+  },
+  {
+    "appId": "758870",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.14.52-gentoo",
+    "notes": "Starting with Proton 4.2-5, this game seems to run out-of-the-box without issues.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560003754,
+    "title": "Kynseed",
+    "source": "protondb"
+  },
+  {
+    "appId": "758870",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Run with PROTON_FORCE_LARGE_ADDRESS_AWARE=1 or it will seem to crash to loading screen like others have noted. The game doesn't seem to fully close after running, so you may need to do a pkill -9 -f Kynseed after quitting.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1561786692,
+    "title": "Kynseed",
+    "source": "protondb"
+  },
+  {
+    "appId": "758870",
+    "cpu": "Intel Core i5-4200M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.5",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "running well after fixed with PROTON_FORCE_LARGE_ADDRESS_AWARE=1",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1569770304,
+    "title": "Kynseed",
+    "tweaks": {
+      "largeAddressAware": true
+    },
+    "source": "protondb"
+  }
+]

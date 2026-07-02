@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "355520",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557382203,
+    "title": "The Albino Hunter",
+    "source": "protondb"
+  },
+  {
+    "appId": "355520",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "The Albino Hunter has some serious stability & annoying graphical issues under Proton on my system; occasionally (or imminently, depending on the run), the game will crash upon entering or leaving a battle screen. It is impossible to functionally enable fullscreen '4:3'\u2013really 20:13\u2013in the settings & attempting to do so may result in a crash, which sucks as in this game the fullscreen 16:9 implementation is just stretching, so you would want to enable the fullscreen '4:3' option (or stick to windowed mode) for the truest representation of the game's visual proportions. This can be fixed by manually creating a 20:13 equivalent of your screen resolution (e.g. 2216\u00d71440 on a screen with 1440 lines) & leaving the game on 16:9 for it to squish itself in to look the way it should. Speaking of visuals, this game is meant to have nearest neighbour upscaling of its low-res graphics for that sharp 'pixel art' look, but under Proton it's reduced to blurry interpolation for some reason, so it may be preferable to run it windowed for that reason alone.\n\nNo version of Proton helps with any of these issues, so I rate Albino Hunter 'bronze'. All in all what I think what saves it from a 'borked' rating is that you can save whenever you want, so save frequently to avoid losing your progress to crashes! I highly encourage further exploration into the game's engine 'RPG Maker VX Ace' & its compatibility with Proton.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1568198509,
+    "title": "The Albino Hunter",
+    "source": "protondb"
+  },
+  {
+    "appId": "355520",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "This is the second reporter again. Albino Hunter got an update, so I thought I'd test it to see if anything got better for it under Proton. Unfortunately all the problems in my previous report ring true, but I was able to make an interesting observation: if you press the key combo Alt + Enter, the game is forced fullscreen without having to select one of the two in-game options for it. Better yet, it's the proper aspect ratio you would get if you enabled the broken '4:3' setting (albeit seemingly integer upscaled so you'll have black bars on the top & bottom, although it's still interpolated/blurry). \n\nWhat's most interesting is that doing this will 'magically' activate the Steam overlay, which this game & its engine don't even support on Windows (even if you do this forced fullscreen trick).",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1568267525,
+    "title": "The Albino Hunter",
+    "source": "protondb"
+  }
+]

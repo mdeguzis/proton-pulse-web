@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1916310",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 13.0.1, DRM 3.42, 5.15.37-1-lts)",
+    "gpuDriver": "4.6 Mesa 22.0.3",
+    "kernel": "5.15.37-1-lts",
+    "notes": "Change mic type in sound settings from photon to unity, works amazing.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1659177063,
+    "title": "Remnant Records",
+    "source": "protondb"
+  },
+  {
+    "appId": "1916310",
+    "cpu": "12th Gen Intel Core i7-12700",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.18.0-0.bpo.1-amd64",
+    "notes": "Works fine",
+    "os": "LMDE 5 (elsie)",
+    "protonVersion": "7.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1659633500,
+    "title": "Remnant Records",
+    "source": "protondb"
+  },
+  {
+    "appId": "1916310",
+    "cpu": "11th Gen Intel Core i5-11400F @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.18.15-051815-generic",
+    "notes": "Runs flawless. No problems at all. Switched sound to Unity.",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1664358531,
+    "title": "Remnant Records",
+    "source": "protondb"
+  }
+]

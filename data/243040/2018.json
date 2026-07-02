@@ -1,0 +1,88 @@
+[
+  {
+    "appId": "243040",
+    "title": "Mutant Storm: Reloaded",
+    "timestamp": 1536507379,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Debian Testing 64-bit (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Core(TM) i5-4670K / NVIDIA GeForce 770",
+    "protonVersion": "3.7.6",
+    "source": "protondb"
+  },
+  {
+    "appId": "243040",
+    "title": "Startopia",
+    "timestamp": 1535305267,
+    "rating": "Gold",
+    "notes": "Has problems with 1920x1080 resolution, 1366 x 768 works fine.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "243040",
+    "title": "The Elder Scrolls V: Skyrim",
+    "timestamp": 1536524573,
+    "rating": "Gold",
+    "notes": "The game works out of the box, except since my system is in french, I had to rename \"Mes documents\" folder as \"My documents\" in \"~/.local/share/Steam/steamapps/compatdata/72850/pfx/drive_c/users/steamuser\" to make savegames working",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "i5-M520 / GT 330M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "243040",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "gpu": "GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16051 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537087133,
+    "title": "Startopia",
+    "source": "protondb"
+  },
+  {
+    "appId": "243040",
+    "title": "Mutant Storm: Reloaded",
+    "timestamp": 1536492979,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Debian Testing 64-bit (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Core(TM) i5-4670K / NVIDIA GeForce 770",
+    "protonVersion": "3.7.6",
+    "source": "protondb"
+  },
+  {
+    "appId": "243040",
+    "title": "Startopia",
+    "timestamp": 1535290867,
+    "rating": "Gold",
+    "notes": "Has problems with 1920x1080 resolution, 1366 x 768 works fine.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "243040",
+    "title": "The Elder Scrolls V: Skyrim",
+    "timestamp": 1536510173,
+    "rating": "Gold",
+    "notes": "The game works out of the box, except since my system is in french, I had to rename \"Mes documents\" folder as \"My documents\" in \"~/.local/share/Steam/steamapps/compatdata/72850/pfx/drive_c/users/steamuser\" to make savegames working",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "i5-M520 / GT 330M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

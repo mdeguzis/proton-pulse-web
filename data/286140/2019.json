@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "286140",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Fails to launch",
+    "os": "Ubuntu 18.04 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "20 GB",
+    "rating": "Borked",
+    "timestamp": 1551784080,
+    "title": "Eidolon",
+    "source": "protondb"
+  },
+  {
+    "appId": "286140",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "5.1.4-zen1-1-zen",
+    "notes": "I had to delete the prefix left over from testing the game with older Proton versions, after which the game ran perfect. There are no obvious problems with graphics if the screenshots on the store page are anything to go by. It was likely Proton's inclusion of Mono that fixed this game.",
+    "os": "Antergos",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558942472,
+    "title": "Eidolon",
+    "source": "protondb"
+  }
+]

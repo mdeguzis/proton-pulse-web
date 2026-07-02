@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "354160",
+    "cpu": "i7-2600 CPU @ 3.40GHz",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.26.0, 4.18.5-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "notes": "game crash with 'WRC5 has stop working' dialog",
+    "os": "Manjaro Linux (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "WRC 5 FIA World Rally Championship",
+    "source": "protondb"
+  },
+  {
+    "appId": "354160",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Loads the game in a window then game instantly crashes.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1545197343,
+    "title": "WRC 5 FIA World Rally Championship",
+    "source": "protondb"
+  }
+]

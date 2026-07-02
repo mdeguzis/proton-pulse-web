@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "34270",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.1.4-1-MANJARO",
+    "notes": "The proton version is met with a black screen.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-6",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1560048737,
+    "title": "SEGA Mega Drive and Genesis Classics",
+    "source": "protondb"
+  }
+]

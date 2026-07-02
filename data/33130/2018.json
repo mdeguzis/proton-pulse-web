@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "33130",
+    "title": "Zombie Shooter",
+    "timestamp": 1535476633,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-2400 / GT 730",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33130",
+    "cpu": "Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org AMD Radeon HD 7900 Series (TAHITI / DRM 3.23.0 / 4.15.0-34-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "15997 MB",
+    "rating": "Platinum",
+    "timestamp": 1538070098,
+    "title": "Zombie Shooter",
+    "source": "protondb"
+  },
+  {
+    "appId": "33130",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Runs great",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540835220,
+    "title": "Zombie Shooter",
+    "source": "protondb"
+  },
+  {
+    "appId": "33130",
+    "title": "Zombie Shooter",
+    "timestamp": 1535462233,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-2400 / GT 730",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

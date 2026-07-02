@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2467300",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-51-generic",
+    "notes": "Game is not stable in multiplayer and crashes frequently. Generally unoptimized and buggy game.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1736645394,
+    "title": "Hoofobia",
+    "source": "protondb"
+  }
+]

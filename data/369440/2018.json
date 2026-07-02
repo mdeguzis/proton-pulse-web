@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "369440",
+    "title": "Immortal: Unchained",
+    "timestamp": 1536606500,
+    "rating": "Gold",
+    "notes": "The games built on Autodesk - Stingray. Some scene changes hang briefly but it works quite well.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Ryzen 7 2700X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "369440",
+    "title": "Old Man's Journey",
+    "timestamp": 1536479781,
+    "rating": "Borked",
+    "notes": "Crashes at startup",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "i5-M520 / GT 330M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "369440",
+    "title": "Immortal: Unchained",
+    "timestamp": 1536592100,
+    "rating": "Gold",
+    "notes": "The games built on Autodesk - Stingray. Some scene changes hang briefly but it works quite well.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Ryzen 7 2700X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "369440",
+    "title": "Old Man's Journey",
+    "timestamp": 1536465381,
+    "rating": "Borked",
+    "notes": "Crashes at startup",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "i5-M520 / GT 330M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

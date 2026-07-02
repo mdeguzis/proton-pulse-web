@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "692840",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Have to use native2proton to get proton to work (they have a Linux build, but it's BORKED). There also doesn't seem to be any character sprites. Makes it hard to detect/fight monsters.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1542310035,
+    "title": "Underworld Ascendant",
+    "source": "protondb"
+  },
+  {
+    "appId": "692840",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Out of the box it runs till you start the game then you can see only text and black screen.",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542370975,
+    "title": "Underworld Ascendant",
+    "source": "protondb"
+  },
+  {
+    "appId": "692840",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Crashes after blackscreen with strange white signes.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1543786086,
+    "title": "Underworld Ascendant",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "205190",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.5",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Can get in-game, menu, sound, and in-game songs work. I haven't set my real-tone cable up yet but will update/replace this review if it doesn't work/requires seriously more/less tweaking to get it to work ",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1547578915,
+    "title": "Rocksmith\u2122",
+    "source": "protondb"
+  }
+]

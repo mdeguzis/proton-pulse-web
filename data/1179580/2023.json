@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1179580",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.4.5-x64v1-xanmod1",
+    "notes": "The game works quite well, except for occasional crashes/freezes and stutters during cutscenes",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1690565996,
+    "title": "",
+    "source": "protondb"
+  }
+]

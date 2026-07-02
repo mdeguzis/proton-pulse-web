@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "231990",
+    "title": "Spider-Man: Shattered Dimensions",
+    "timestamp": 1534990782,
+    "rating": "Borked",
+    "notes": "game exits when selecting save file",
+    "os": "Kubuntu 18.04 (Kernel 4.18.0-041800-generic)",
+    "gpuDriver": "Mesa 18.1.6 - padoka PPA",
+    "specs": "AMD Ryzen 5 2600 / AMD Radeon R9 FURY",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "231990",
+    "title": "Spider-Man: Shattered Dimensions",
+    "timestamp": 1534976382,
+    "rating": "Borked",
+    "notes": "game exits when selecting save file",
+    "os": "Kubuntu 18.04 (Kernel 4.18.0-041800-generic)",
+    "gpuDriver": "Mesa 18.1.6 - padoka PPA",
+    "specs": "AMD Ryzen 5 2600 / AMD Radeon R9 FURY",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

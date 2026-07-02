@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "312230",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.8-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.2",
+    "kernel": "6.18.8-2-cachyos",
+    "notes": "Worked great, worked great on deck too. Fun system shock like game",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1769955449,
+    "title": "",
+    "source": "protondb"
+  }
+]

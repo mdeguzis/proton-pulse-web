@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "428550",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-c989661985)",
+    "kernel": "5.0.12-arch1-1-ARCH",
+    "notes": "Game doesn't work native for me, but it does on Proton out of the box. ",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557048421,
+    "title": "Momodora: Reverie Under The Moonlight",
+    "source": "protondb"
+  },
+  {
+    "appId": "428550",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-677bea5144)",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "Game works native on Linux. Works fine out of the box on Proton. I installed D9VK and it runs fine too, even when testing it with the new ACO compiler.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1563004542,
+    "title": "Momodora: Reverie Under The Moonlight",
+    "source": "protondb"
+  }
+]

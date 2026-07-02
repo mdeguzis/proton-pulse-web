@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "581370",
+    "cpu": "Intel Xeon E3-1240 V2 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.4.0-141-generic",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1548611637,
+    "title": "Drizzlepath: Glass",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "893680",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Graphically fine, but has mouse issues. Clicking does a 180 degree turn, etc. Very similar to Subnautica's mouse issues.",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1546267490,
+    "title": "Project Warlock",
+    "source": "protondb"
+  }
+]

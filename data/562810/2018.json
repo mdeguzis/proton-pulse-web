@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "562810",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Tried using the launch options individually to disable Esync, D3d11 and use Wine D3d11, none of which worked.  In System Monitor I see upc.exe and the Ubisoft Game Launcher processes start, the latter of which ends shortly after and the game never launches.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546282844,
+    "title": "MONOPOLY\u00ae PLUS",
+    "source": "protondb"
+  }
+]

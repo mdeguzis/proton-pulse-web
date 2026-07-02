@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3667230",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 18.1.6, DRM 3.57, 6.9.9-206.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.4",
+    "kernel": "6.9.9-206.fsync.fc40.x86_64",
+    "notes": "works grate",
+    "os": "Bazzite (FROM Fedora Kinoite 40)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1747280645,
+    "title": "",
+    "source": "protondb"
+  }
+]

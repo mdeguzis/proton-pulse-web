@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "278440",
+    "cpu": "Intel Core i7-3770K @ 4.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 Fury Nano",
+    "gpuDriver": "4.5 Mesa-ACO 19.3.0-devel (git-374999ecfd)",
+    "kernel": "5.2.15-lqx2-1-lqx",
+    "notes": "Runs without any tweaking or huge issues. It feels a bit stuttery compared to Windows, but not laggy or like it's actually affecting gameplay in the slightest. (It's either not having any effect on input at all or is something my brain easily compensates for.)",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1568948765,
+    "title": "0RBITALIS",
+    "source": "protondb"
+  }
+]

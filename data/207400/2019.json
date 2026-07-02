@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "207400",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Tried no tweaks, but game runs, it just doesn't seem to draw anything other than white squares on a black background with some weird credit screen elements. Will try with tweaks later when I get more time. Till then, avoid. ",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1558499340,
+    "title": "eXceed 3rd - Jade Penetrate Black Package",
+    "source": "protondb"
+  }
+]

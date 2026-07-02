@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "681620",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-15012077bc)",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "The game claims native Linux support, but there seems to be no executable. On Proton it works fine.",
+    "os": "Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1554026022,
+    "title": "Cube Link",
+    "source": "protondb"
+  },
+  {
+    "appId": "681620",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Works on Proton. I installed manually D9VK and the game worked too with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556917231,
+    "title": "Cube Link",
+    "source": "protondb"
+  },
+  {
+    "appId": "681620",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Game still claims to have native support when it doesn't. Works without issues with Proton at least.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1559430513,
+    "title": "Cube Link",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1969440",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1673175618,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1969440",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 14.0.6, DRM 3.49, 6.1.10)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "6.1.10",
+    "notes": "Aside from some minor issues with the opening video, this plays flawlessly all the way through.",
+    "os": "NixOS 22.11 (Raccoon)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1676289211,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1969440",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.2.6-201.fsync.fc37.x86_64",
+    "notes": "Some minor bugs but softlocked from completing the game in Chapter 3 due to a UI bug.",
+    "os": "Nobara Linux 37 (KDE Plasma)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1679984248,
+    "title": "",
+    "source": "protondb"
+  }
+]

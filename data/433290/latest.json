@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "433290",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-45-generic",
+    "notes": "I had to change the resolution of my Linux desktop to 1024x768 for the game to fit the screen correctly without black space. The game also has no sound. I am able to play the game just fine though besides those two issues.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1554642966,
+    "title": "Nemesis of the Roman Empire",
+    "source": "protondb"
+  }
+]

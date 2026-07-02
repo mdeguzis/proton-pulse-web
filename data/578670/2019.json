@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "578670",
+    "cpu": "Intel Xeon E3-1230 v3 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "4.15.0-65-generic",
+    "notes": "It work just with no sound at all. It will not play the beginning videos just press ECS and the mouse will act strange turn off \"enable direct input\" under settings.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "20 GB",
+    "rating": "Silver",
+    "timestamp": 1570373190,
+    "title": "Conquest: Frontier Wars",
+    "source": "protondb"
+  }
+]

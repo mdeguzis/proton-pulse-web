@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "241240",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.5, DRM 3.59, 6.12.7-200.fsync.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.2",
+    "kernel": "6.12.7-200.fsync.fc41.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1737125789,
+    "title": "",
+    "source": "protondb"
+  }
+]

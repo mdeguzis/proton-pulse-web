@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "204440",
+    "title": "Pickers",
+    "timestamp": 1536182243,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Ubuntu Mate 16.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4690 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "204440",
+    "cpu": "AMD Athlon(tm) 64 X2 Dual Core Processor 5000+",
+    "gpu": "NVIDIA Corporation GeForce 8500 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-33-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3945 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537243782,
+    "title": "Pickers",
+    "source": "protondb"
+  },
+  {
+    "appId": "204440",
+    "title": "Pickers",
+    "timestamp": 1536167843,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Ubuntu Mate 16.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4690 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

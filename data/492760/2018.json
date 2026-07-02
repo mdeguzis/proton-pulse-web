@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "492760",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-12-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1544811148,
+    "title": "Aftercharge",
+    "source": "protondb"
+  },
+  {
+    "appId": "492760",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.5-101.current",
+    "notes": "Not tested: controller support. Performance is excellent. Steady 1080p60 on max settings on my 750ti.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1544905122,
+    "title": "Aftercharge",
+    "source": "protondb"
+  }
+]

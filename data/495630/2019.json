@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "495630",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.10-arch1-1-ARCH",
+    "notes": "Starts and plays music but everything is black",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566932747,
+    "title": "The Divine Paradox",
+    "source": "protondb"
+  }
+]

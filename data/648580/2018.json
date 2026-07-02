@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "648580",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.23.0, 4.15.0-33-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "notes": "Only played about half an hour. So far it runs perfectly fine with no need for any tweaks.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Platinum",
+    "timestamp": "1536364800",
+    "title": "428: Shibuya Scramble",
+    "source": "protondb"
+  },
+  {
+    "appId": "648580",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-d4e7d8b 2018-11-24 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Able to hear static while playing sometimes. Disabling Esync doesn't fix the sound issue.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543077326,
+    "title": "428: Shibuya Scramble",
+    "source": "protondb"
+  }
+]

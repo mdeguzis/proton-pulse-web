@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "270230",
+    "cpu": "Intel Core i5-5300U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Start fine, but freezes after around 30 seconds in game.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543350376,
+    "title": "Prominence",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

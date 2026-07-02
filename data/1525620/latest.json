@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1525620",
+    "cpu": "Intel Core i5-10600KF @ 4.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.11.0-37-generic",
+    "notes": "Works correctly with Proton 4.11-13",
+    "os": "Freedesktop.org 21.08.4 (Flatpak runtime) (64\u00a0bits)",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1643454666,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1525620",
+    "cpu": "Intel Xeon E31270 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.15.38-1-MANJARO",
+    "notes": "\u0417\u0430\u043f\u0443\u0441\u043a\u0430\u0435\u0442\u0441\u044f \u043d\u0430 PROTON_STEAM_7.0-2. \u041d\u0430 PROTON_GE_7-16 \u0437\u0430\u0432\u0438\u0441\u0430\u043b\u0430 \u043d\u0430 \u0437\u0430\u043f\u0443\u0441\u043a\u0435.",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-2",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1652816853,
+    "title": "",
+    "source": "protondb"
+  }
+]

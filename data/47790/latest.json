@@ -1,0 +1,89 @@
+[
+  {
+    "appId": "47790",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.0-12-generic",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-7)",
+    "protonVersionManual": "Beta (3.16-7)",
+    "ram": "10 GB",
+    "rating": "Platinum",
+    "timestamp": 1550317462,
+    "title": "Medal of Honor\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "47790",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.1-arch1-1-ARCH",
+    "notes": "Only tried the single player but it worked very well. ",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552602226,
+    "title": "Medal of Honor\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "47790",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-45-generic",
+    "notes": "The game started and was able to play the first level just fine. It was slow at first but Disable Esync (PROTON_NO_ESYNC=1 %command%) to gain a massive performance increase. I was able to play at 1080P, 2K, and 4K with no slowdown after this. This game was broken in earlier versions of Proton so this is a nice improvement! ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554180440,
+    "title": "Medal of Honor\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "47790",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.1.16-050116-generic",
+    "notes": "Didn't need to disable esync, but it definitely gave better frame rates by doing so.  Played through entire first level without any sort of glitch or issue!",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564882197,
+    "title": "Medal of Honor\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "47790",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0",
+    "kernel": "5.3.4-arch1-1-ARCH",
+    "notes": "Runs without any issue.",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570373539,
+    "title": "Medal of Honor\u2122",
+    "source": "protondb"
+  }
+]

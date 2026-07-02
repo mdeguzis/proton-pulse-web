@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "17700",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49_1",
+    "notes": "Everything seems to be working fine. Haven't tested multiplayer.",
+    "os": "Void Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561135987,
+    "title": "INSURGENCY: Modern Infantry Combat",
+    "source": "protondb"
+  }
+]

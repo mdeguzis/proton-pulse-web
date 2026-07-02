@@ -1,0 +1,98 @@
+[
+  {
+    "appId": "438130",
+    "title": "Root Double -Before Crime * After Days- Xtend edition",
+    "timestamp": 1535002192,
+    "rating": "Borked",
+    "notes": "Crashes with \"Xaudio2Create\" message. Likely would be fixed by installing xact.",
+    "os": "Gentoo AMD64 (Kernel 4.18.3)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "438130",
+    "title": "Root Double -Before Crime * After Days- Xtend Edition",
+    "timestamp": 1535077472,
+    "rating": "Silver",
+    "notes": "Videos are silently skipped. Everything else appears to work (didn't test extended gameplay).",
+    "os": "Gentoo AMD64 (Kernel 4.18.3)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "438130",
+    "title": "Root Double -Before Crime * After Days- Xtend Edition",
+    "timestamp": 1535310853,
+    "rating": "Borked",
+    "notes": "Shows as Running for less than a second after launching, but the game doesn't start.",
+    "os": "Ubuntu 17.10 64-bit",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "438130",
+    "title": "Root Double -Before Crime * After Days- Xtend Edition",
+    "timestamp": 1535583584,
+    "rating": "Gold",
+    "notes": "Performed very well with no errors. Its not tested in video scenes. ",
+    "os": "Solus 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-2320 / iGPU HD 2000",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "438130",
+    "title": "Root Double -Before Crime * After Days- Xtend edition",
+    "timestamp": 1534987792,
+    "rating": "Borked",
+    "notes": "Crashes with \"Xaudio2Create\" message. Likely would be fixed by installing xact.",
+    "os": "Gentoo AMD64 (Kernel 4.18.3)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "438130",
+    "title": "Root Double -Before Crime * After Days- Xtend Edition",
+    "timestamp": 1535063072,
+    "rating": "Silver",
+    "notes": "Videos are silently skipped. Everything else appears to work (didn't test extended gameplay).",
+    "os": "Gentoo AMD64 (Kernel 4.18.3)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "438130",
+    "title": "Root Double -Before Crime * After Days- Xtend Edition",
+    "timestamp": 1535296453,
+    "rating": "Borked",
+    "notes": "Shows as Running for less than a second after launching, but the game doesn't start.",
+    "os": "Ubuntu 17.10 64-bit",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "438130",
+    "title": "Root Double -Before Crime * After Days- Xtend Edition",
+    "timestamp": 1535569184,
+    "rating": "Gold",
+    "notes": "Performed very well with no errors. Its not tested in video scenes. ",
+    "os": "Solus 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-2320 / iGPU HD 2000",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

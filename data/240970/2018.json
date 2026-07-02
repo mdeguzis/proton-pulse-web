@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "240970",
+    "cpu": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "notes": "Everything works perfect without modifications.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32081 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537659715,
+    "title": "Half Minute Hero: The Second Coming",
+    "source": "protondb"
+  },
+  {
+    "appId": "240970",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "nouveau NV134",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-43-generic",
+    "notes": "works fine, but music is heavily distorted after a while of playing",
+    "os": "Ubuntu 18.04 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545493184,
+    "title": "Half Minute Hero: The Second Coming",
+    "source": "protondb"
+  }
+]

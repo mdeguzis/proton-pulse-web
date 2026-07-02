@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "202570",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.5.4-arch1-1",
+    "notes": "Same state as the Italian, or universal English release. Seems to work out of the box.",
+    "os": "ArcoLinuxB-plasma (64\u00a0bits)",
+    "protonVersion": "5.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1582204335,
+    "title": "",
+    "source": "protondb"
+  }
+]

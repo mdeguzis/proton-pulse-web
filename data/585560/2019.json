@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "585560",
+    "cpu": "Intel Core i5-3340S @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.62-1-MANJARO",
+    "notes": "Launches out of the box but had to set the resolution to 960*640 to get the ball show.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-1",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1565110222,
+    "title": "Finnish Roller",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "229810",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1547912774,
+    "title": "A Fistful of Gun",
+    "source": "protondb"
+  },
+  {
+    "appId": "229810",
+    "cpu": "Intel Core i7-2670QM @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.0-devel (git-0a793c7 2019-01-21 cosmic-oibaf-ppa)",
+    "kernel": "4.20.3-042003-generic",
+    "notes": "The resolution is shown out of the screen, but can be played in Window mode",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1548090706,
+    "title": "A Fistful of Gun",
+    "source": "protondb"
+  }
+]

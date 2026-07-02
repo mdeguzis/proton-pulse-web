@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "724490",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.3",
+    "kernel": "5.10.8-200.fc33.x86_64",
+    "notes": "Actually runs well, i recommend disabling ESYNC in proton",
+    "os": "Fedora release 33 (Thirty Three)",
+    "protonVersion": "5.13-6",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1616386632,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "313390",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.3-1-MANJARO",
+    "notes": "Game seems to run OK at first, but performance is quite poor compared to Windows. Controller support is unfortunately also very poor - It works, but not consistently or well. Menu navigation is difficult when the controller decides to be uncooperative (constantly presses \"back\"), and when binding axes, an axis (axis 3 on Xbox One controller) is considered to always be activated.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1553840271,
+    "title": "Vertical Strike Endless Challenge",
+    "source": "protondb"
+  },
+  {
+    "appId": "313390",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "Controller might be borked (used a DS4 with Steam's inbuilt support, yours may vary). Except that, works perfectly out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "18 GB",
+    "rating": "Gold",
+    "timestamp": 1554671954,
+    "title": "Vertical Strike Endless Challenge",
+    "source": "protondb"
+  }
+]

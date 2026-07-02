@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "274940",
+    "title": "Depth",
+    "timestamp": 1535335901,
+    "rating": "Platinum",
+    "notes": "FPS fluctuates between 45 and 80",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-7700HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "274940",
+    "title": "Depth",
+    "timestamp": 1535340058,
+    "rating": "Silver",
+    "notes": "60+ FPS. Anti-aliasing needs to be disabled to fix black & white artifacts appearing across half of the screen.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4771 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "274940",
+    "cpu": "i7-4500U CPU @ 1.80GHz",
+    "gpu": "X.Org AMD CAPE VERDE (DRM 2.50.0, 4.15.0-1-amd64, LLVM 6.0.0)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.15.0-1-amd64",
+    "notes": "Runs but performance is choppy and sound is glitching all the time.",
+    "os": "MX 17 Horizon (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "7861 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537094037,
+    "title": "Depth",
+    "source": "protondb"
+  },
+  {
+    "appId": "274940",
+    "cpu": "Intel Core i7-4500U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "r9 m265x",
+    "gpuDriver": "3.1 Mesa 18.1.9",
+    "kernel": "4.15.0-1-amd64",
+    "notes": "After upgrading to Mesa 18.1.9 game runs much better without any issue. Slightly lower fps than windows.",
+    "os": "MX 17 Horizon",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541108068,
+    "title": "Depth",
+    "source": "protondb"
+  },
+  {
+    "appId": "274940",
+    "title": "Depth",
+    "timestamp": 1535321501,
+    "rating": "Platinum",
+    "notes": "FPS fluctuates between 45 and 80",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-7700HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "274940",
+    "title": "Depth",
+    "timestamp": 1535325658,
+    "rating": "Silver",
+    "notes": "60+ FPS. Anti-aliasing needs to be disabled to fix black & white artifacts appearing across half of the screen.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4771 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

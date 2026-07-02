@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1661920",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 14.0.6, DRM 3.46, 5.18.10-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 22.1.3",
+    "kernel": "5.18.10-zen1-1-zen",
+    "notes": "Runs great aside from two small issues.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1657696063,
+    "title": "Ancient: Legacy of Azul",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,76 @@
+[
+  {
+    "appId": "922460",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Finished all achievements and upgrades with no issues",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548176807,
+    "title": "Cheeky Chooks",
+    "source": "protondb"
+  },
+  {
+    "appId": "922460",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "This game runs perfectly after I set the following launch options: \"PROTON_USE_WINED3D=1 %command%\". I played over 200 hours on this game and completed all of the Steam Achievements for this game.",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1551450629,
+    "title": "Cheeky Chooks",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "922460",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It had some graphical issues, but everything works perfectly when you use Wine D3d11 with the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552241048,
+    "title": "Cheeky Chooks",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "922460",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.1",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "cute game, have to be run with \"PROTON_USE_WINED3D=1 %command%\"",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1555517557,
+    "title": "Cheeky Chooks",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

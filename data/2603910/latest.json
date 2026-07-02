@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2603910",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch1.1",
+    "kernel": "6.12.74-1-lts",
+    "notes": "Maybe it works.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1772277681,
+    "title": "\u6842\u82b1\u843d",
+    "source": "protondb"
+  }
+]

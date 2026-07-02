@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "714800",
+    "title": "Maitetsu",
+    "timestamp": 1534959880,
+    "rating": "Gold",
+    "notes": "Font issues. Workaround: add LC_ALL=ja_JP.UTF-8 %command% as a launch option.",
+    "os": "Solus",
+    "gpuDriver": "NVIDIA 390.77 / Mesa 18.1.6",
+    "specs": "FX-6300 / NVIDIA GTX 960 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "714800",
+    "title": "Maitetsu",
+    "timestamp": 1535633774,
+    "rating": "Silver",
+    "notes": "Everything but the openings work. Other video probably won't work as well.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "714800",
+    "title": "Maitetsu",
+    "timestamp": 1534945480,
+    "rating": "Gold",
+    "notes": "Font issues. Workaround: add LC_ALL=ja_JP.UTF-8 %command% as a launch option.",
+    "os": "Solus",
+    "gpuDriver": "NVIDIA 390.77 / Mesa 18.1.6",
+    "specs": "FX-6300 / NVIDIA GTX 960 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "714800",
+    "title": "Maitetsu",
+    "timestamp": 1535619374,
+    "rating": "Silver",
+    "notes": "Everything but the openings work. Other video probably won't work as well.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "801290",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Other than the fact that some parts of the game are really annoying it runs perfect. The only caveat is that it is stuck on 30 fps. I think this is just because of how the game was built rather than a linux only sort of thing. ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1557864998,
+    "title": "Diabolic",
+    "source": "protondb"
+  }
+]

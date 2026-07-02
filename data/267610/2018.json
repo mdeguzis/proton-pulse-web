@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "267610",
+    "cpu": "Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz",
+    "gpu": "X.Org AMD VERDE (DRM 2.50.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "1) Download and install PhysX-9.13.0604-SystemSoftware-Legacy.msi manually in the 267610 Proton prefix; 2) The game doesn't open with this error: https://github.com/ValveSoftware/wine/issues/1.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "5836 Mb",
+    "rating": "Borked",
+    "timestamp": 1537129456,
+    "title": "Woodcutter Simulator 2013",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "416290",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3 - SteamVR PPA",
+    "kernel": "4.19.0-041900rc8-generic",
+    "notes": "Controls are broken, both on KB+M and controller. With mouse horizontal direction is not registered, with controller game moves in one direction constantly.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540314977,
+    "title": "Bleeding Border",
+    "source": "protondb"
+  }
+]

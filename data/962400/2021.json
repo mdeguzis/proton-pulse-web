@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "962400",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.8.0-63-generic",
+    "notes": "Game runs well perfectly out of the box",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1626993983,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1862020",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.13.0-28-generic",
+    "notes": "The game is as much fun as on Windows, but at the same time has a few annoying bugs.",
+    "os": "Zorin OS 16",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1644979666,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1862020",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD DIMGREY_CAVEFISH (LLVM 13.0.1, DRM 3.41, 5.13.0-30-generic)",
+    "gpuDriver": "4.6 Mesa 22.1.0-devel (git-f2dee2e 2022-02-27 impish-oibaf-ppa)",
+    "kernel": "5.13.0-30-generic",
+    "notes": "Tried setting proton to use wine rendering (both normal and d3d11) but could not get it to run.",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1646100620,
+    "title": "",
+    "source": "protondb"
+  }
+]

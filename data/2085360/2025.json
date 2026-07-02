@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2085360",
+    "cpu": "AMD Ryzen 7 8700G w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 555.52.04",
+    "kernel": "6.9.6-zen1-1-zen",
+    "notes": "Does not launch. Quickly shows a window and stops",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1738791395,
+    "title": "",
+    "source": "protondb"
+  }
+]

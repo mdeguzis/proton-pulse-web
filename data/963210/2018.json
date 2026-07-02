@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "963210",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Issue 1: The game will show between the top desktop menu and the side taskbar (Ubuntu's take on GNOME) click in the game area or press a controllers button to go full screen.\n\nIssue 2: Every time the game is closed a error box is visible, somewhere in it says \"LowLevelFatelError\". This dialog box is from Wine.\n\nI would say this should be a safe game to play with minimal regrets.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542392172,
+    "title": "Another Sight - Hodge's Journey",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "730",
+    "cpu": "",
+    "duration": "unreported",
+    "gpu": "",
+    "gpuDriver": "Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "",
+    "notes": "",
+    "os": "Kubuntu",
+    "protonVersion": "3.7-3",
+    "ram": "",
+    "rating": "pending",
+    "timestamp": 1534968330,
+    "title": "Counter-Strike 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "730",
+    "cpu": "",
+    "duration": "unreported",
+    "gpu": "",
+    "gpuDriver": "Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "",
+    "notes": "",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "3.7-5",
+    "ram": "",
+    "rating": "pending",
+    "timestamp": 1536270602,
+    "title": "Counter-Strike 2",
+    "source": "protondb"
+  }
+]

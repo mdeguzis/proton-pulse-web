@@ -1,0 +1,61 @@
+[
+  {
+    "appId": "534360",
+    "cpu": "AMD FX-4100 Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 580",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.18.5-041805-generic",
+    "notes": "Multiplayer not tested, singleplayer works perfectly after D3d11 off and Esync off. Without both of these tweaks used together, the game crashes.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1543357549,
+    "title": "Colt Express",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "534360",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Needs commands \"PROTON_NO_D3D11=1 %command% PROTON_NO_ESYNC=1 %command%\" (without parentheses) to work, and even then I found it sometimes crashing on me when quitting the game. Once ingame, though, all seems perfectly fine (also tested online connection).",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1543747269,
+    "title": "Colt Express",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "534360",
+    "cpu": "Intel Core i7-4600U @ 2.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-39-generic",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1545280596,
+    "title": "Colt Express",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

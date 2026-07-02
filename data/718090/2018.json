@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "718090",
+    "cpu": "Intel Core i3-5005U @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "All runs smoothly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1545992572,
+    "title": "Princess.Loot.Pixel.Again x2",
+    "source": "protondb"
+  },
+  {
+    "appId": "718090",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Everything works out of the box. Tested also that Switch Pro controller support and switching between windowed/fullscreen works.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546020465,
+    "title": "Princess.Loot.Pixel.Again x2",
+    "source": "protondb"
+  }
+]

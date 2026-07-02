@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1642130",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro 4000",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.8.0-63-generic",
+    "notes": "There's something strange in the neighborhood... The game is starting, but nothing happens. Steam displays \"Runo - Running\" ...",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1627899887,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1642130",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.40.0, 5.11.0-7620-generic, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1628176591,
+    "title": "",
+    "source": "protondb"
+  }
+]

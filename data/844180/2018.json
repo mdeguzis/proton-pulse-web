@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "844180",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 470 Graphics (POLARIS10, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "The game will throw an error and refuse to start unless \"PROTON_USE_WINED3D11=1 %command%\" is added to the launch options.\nThe game has noticable mouse input lag which makes the game more difficult, but not unplayable.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16032 Mb",
+    "rating": "Silver",
+    "timestamp": 1537457079,
+    "title": "Slab",
+    "source": "protondb"
+  }
+]

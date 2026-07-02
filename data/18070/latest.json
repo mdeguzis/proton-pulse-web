@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "18070",
+    "title": "The Baconing",
+    "timestamp": 1534910400,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX970m",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "18070",
+    "title": "The Baconing",
+    "timestamp": 1535119542,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Starting a new game",
+    "gpuDriver": "Arch, Intel MESA",
+    "specs": "Intel HD Graphics 620",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "18070",
+    "cpu": "i5-2400S CPU @ 2.50GHz",
+    "gpu": "GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Another game that works exactly like native",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "5926 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536951218,
+    "title": "The Baconing",
+    "source": "protondb"
+  },
+  {
+    "appId": "18070",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Everything (including input via Steam Controller) works",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546250385,
+    "title": "The Baconing",
+    "source": "protondb"
+  },
+  {
+    "appId": "18070",
+    "title": "The Baconing",
+    "timestamp": 1534896000,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX970m",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "18070",
+    "title": "The Baconing",
+    "timestamp": 1535105142,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Starting a new game",
+    "gpuDriver": "Arch, Intel MESA",
+    "specs": "Intel HD Graphics 620",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

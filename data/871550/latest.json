@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "871550",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Did't find anything that doesn't work.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1556825512,
+    "title": "Chicken Rider",
+    "source": "protondb"
+  }
+]

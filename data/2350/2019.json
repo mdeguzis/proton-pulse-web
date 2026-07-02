@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "2350",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Could not start a single player game, caught in \"awaiting snapshot\" loop. Tried disabling sound but it did not fix. May be a problem with the game itself. Cannot check due to it not booting on Windows.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1556086588,
+    "title": "QUAKE III: Team Arena",
+    "source": "protondb"
+  },
+  {
+    "appId": "2350",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556737868,
+    "title": "QUAKE III: Team Arena",
+    "source": "protondb"
+  },
+  {
+    "appId": "2350",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "There's a brightness issue\u2013it's too dark\u2013you can fix by simply entering 'r_overbrightbits 0' or 'r_ignorehwgamma 1' on the in-game console, accessed by pressing the tilde (~) key. After that it runs perfectly, & unlike on Windows the Steam overlay will render at your desktop resolution rather than the (likely lower & thinner aspect ratio) in-game resolution, which was a pleasant surprise. Preferably, you could also just install a native & more modern source port like ioquake3 or Spearmint.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1568283309,
+    "title": "QUAKE III: Team Arena",
+    "source": "protondb"
+  }
+]

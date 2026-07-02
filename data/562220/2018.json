@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "562220",
+    "title": "Zup! 2",
+    "timestamp": 1535288910,
+    "rating": "Gold",
+    "notes": "mouse cursor is glitched in windowed mode, but works well in fullscreen (press alt+enter)",
+    "os": "Arch Linux 64-bit (kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "562220",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542449602,
+    "title": "Zup! 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "562220",
+    "title": "Zup! 2",
+    "timestamp": 1535274510,
+    "rating": "Gold",
+    "notes": "mouse cursor is glitched in windowed mode, but works well in fullscreen (press alt+enter)",
+    "os": "Arch Linux 64-bit (kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

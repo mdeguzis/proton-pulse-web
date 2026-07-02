@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "788880",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Framerate dips can occur and it could be faster, but it is still ploayable to an acceptable degree.",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1553422848,
+    "title": "Horizon Source",
+    "source": "protondb"
+  }
+]

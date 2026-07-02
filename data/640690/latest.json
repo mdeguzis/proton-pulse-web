@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "640690",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-1-MANJARO",
+    "notes": "Graphics are a little bit messy/blurry when npc/player is looking left. After enabling d9vk the graphic glitches are gone and the game runs more smoothly. Also Multiverse/Workshop works fine also the level editor.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1566196525,
+    "title": "Super Tony Land",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

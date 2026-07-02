@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "243970",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.6 Mesa 20.1.0-devel (git-740cb3d193)",
+    "kernel": "5.5.5-arch1-1",
+    "notes": "Borked, just a black screen",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1582467208,
+    "title": "",
+    "source": "protondb"
+  }
+]

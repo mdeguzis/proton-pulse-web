@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2285550",
+    "cpu": "12th Gen Intel Core i5-12500H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.16.8-arch3-1",
+    "notes": "Started with the Demo, works smooth except for the same aforementioned bug and only with Proton 6.3-8. Demo save carried over automatically.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1759582462,
+    "title": "",
+    "source": "protondb"
+  }
+]

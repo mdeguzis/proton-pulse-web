@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "94530",
+    "title": "Back to the Future: Ep 5 - OUTATIME",
+    "timestamp": 1534982703,
+    "rating": "Bronze",
+    "notes": "Locks the mouse in the window, even when alt-tabbing.  You can set the game to windowed which fixes this.  Seems to run perfectly otherwise.",
+    "os": "Fedora 28",
+    "gpuDriver": "FOSS AMDGPU",
+    "specs": "i5-4690K, AMD RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "94530",
+    "cpu": "Intel(R) Core(TM) i5-4440 CPU @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-200.fc28.x86_64",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7910 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538207767,
+    "title": "Back to the Future: Ep 5 - OUTATIME",
+    "source": "protondb"
+  },
+  {
+    "appId": "94530",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs perfectly, 60fps @ highest detail, playable all the way through.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540364637,
+    "title": "Back to the Future: Ep 5 - OUTATIME",
+    "source": "protondb"
+  },
+  {
+    "appId": "94530",
+    "title": "Back to the Future: Ep 5 - OUTATIME",
+    "timestamp": 1534968303,
+    "rating": "Bronze",
+    "notes": "Locks the mouse in the window, even when alt-tabbing.  You can set the game to windowed which fixes this.  Seems to run perfectly otherwise.",
+    "os": "Fedora 28",
+    "gpuDriver": "FOSS AMDGPU",
+    "specs": "i5-4690K, AMD RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

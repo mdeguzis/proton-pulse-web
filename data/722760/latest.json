@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "722760",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.6, DRM 3.63, 6.15.4-arch2-1)",
+    "gpuDriver": "4.6 Mesa 25.2.0-devel (git-7fd99c88b9)",
+    "kernel": "6.15.4-arch2-1",
+    "notes": "Requires old Proton version to play",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1751210246,
+    "title": "",
+    "source": "protondb"
+  }
+]

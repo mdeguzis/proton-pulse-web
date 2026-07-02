@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "1063130",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.20-300.fc30.x86_64",
+    "notes": "The description says something about \"desktop pet\", but the thing seems to be in a dark void. I've no clue if it works differently on Windows.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-5",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1564862155,
+    "title": "H Chan",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,103 @@
+[
+  {
+    "appId": "394160",
+    "title": "ARCADE GAME SERIES: PAC-MAN",
+    "timestamp": 1535666429,
+    "rating": "Platinum",
+    "notes": "Works perfectly. ",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "394160",
+    "title": "ARCADE GAME SERIES: PAC-MAN",
+    "timestamp": 1536076867,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "394160",
+    "title": "ARCADE GAME SERIES: PAC-MAN",
+    "timestamp": 1536557950,
+    "rating": "Platinum",
+    "notes": "Working Perfect",
+    "os": "Arch Linux LTS",
+    "gpuDriver": "NVIDIA GeForce GTX 960 4GB",
+    "specs": "Intel i7 920",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "394160",
+    "cpu": "i5-3437U CPU @ 1.90GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.18.5-200.fc28.x86_64",
+    "notes": "HP elitebok 9470m\nFedora 28",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7",
+    "ram": "7842 Mb",
+    "rating": "Borked",
+    "timestamp": 1536963333,
+    "title": "ARCADE GAME SERIES: PAC-MAN",
+    "source": "protondb"
+  },
+  {
+    "appId": "394160",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7958 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537291060,
+    "title": "ARCADE GAME SERIES: PAC-MAN",
+    "source": "protondb"
+  },
+  {
+    "appId": "394160",
+    "title": "ARCADE GAME SERIES: PAC-MAN",
+    "timestamp": 1535652029,
+    "rating": "Platinum",
+    "notes": "Works perfectly. ",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "394160",
+    "title": "ARCADE GAME SERIES: PAC-MAN",
+    "timestamp": 1536062467,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "394160",
+    "title": "ARCADE GAME SERIES: PAC-MAN",
+    "timestamp": 1536543550,
+    "rating": "Platinum",
+    "notes": "Working Perfect",
+    "os": "Arch Linux LTS",
+    "gpuDriver": "NVIDIA GeForce GTX 960 4GB",
+    "specs": "Intel i7 920",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

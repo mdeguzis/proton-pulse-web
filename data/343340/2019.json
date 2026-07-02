@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "343340",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555077607,
+    "title": "Tiamat X",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1678420",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "l\u00e4uft perfekt, man muss nichts umstellen etc",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1710917696,
+    "title": "Blade Runner: Enhanced Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "1678420",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.8.0-48-generic",
+    "notes": "Game does not start with Proton 9, 8, 7, Experimental or GE-Proton9-20",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1733339561,
+    "title": "Blade Runner: Enhanced Edition",
+    "source": "protondb"
+  }
+]

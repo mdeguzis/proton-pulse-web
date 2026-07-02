@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "586030",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.6-200.fc29.x86_64",
+    "notes": "Seems to work fine, except music is crackling.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1550068952,
+    "title": "Shardbound",
+    "source": "protondb"
+  },
+  {
+    "appId": "586030",
+    "cpu": "Intel Core i7-2640M @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 17.0.7",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Without any setting or with disabled Esync it crashes with \"DX11 feature level 10 is required to run the engine\". Disabling DSd11 doesn't help: game shows Running, no warning is shown but nothing happens. It works once that \"PROTON_USE_WINED3D=1 %command%\" is set in Launch Options. It seemed OK but I didn't got further than to the first tutorial mission due to overheating.",
+    "os": "Ubuntu 16.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1559491874,
+    "title": "Shardbound",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "586030",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.1.16-300.fc30.x86_64",
+    "os": "Linux Fedora",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1562869790,
+    "title": "Shardbound",
+    "source": "protondb"
+  }
+]

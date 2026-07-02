@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "275570",
+    "cpu": "AMD A8-6410 APU with AMD Radeon R5 Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-45-generic",
+    "notes": "changing options is like fighting a tank with an stick... nothing happens. just complaining about \"no Direct3D device was found\"",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1552989978,
+    "title": "Summoner",
+    "source": "protondb"
+  },
+  {
+    "appId": "275570",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-d4e8a44 2019-05-24 disco-oibaf-ppa)",
+    "kernel": "5.1.5-050105-generic",
+    "notes": "For the game to run, you need a glide wrapper. Either nGlide or dgVoodoo would do. Open the launcher (by just running the game) and click\"Setup\". Let it scan for all, and choose \"3DFx Glide\". It runs without problem! And with dgVoodoo you can play it at higher resolutions and with Anti-Aliasing!",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559037100,
+    "title": "Summoner",
+    "source": "protondb"
+  },
+  {
+    "appId": "275570",
+    "cpu": "Intel Core2 Quad    Q8200  @ 2.33GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon HD 8500",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.0.16-116.current",
+    "notes": "You have to use a Glide wrapper like dgVoodoo or nGlide and tell the game to use the Glide backend. I used dgVoodoo. On DirectX the game simply refuses to run. On glide it runs like it's native.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Gold",
+    "timestamp": 1560624339,
+    "title": "Summoner",
+    "source": "protondb"
+  }
+]

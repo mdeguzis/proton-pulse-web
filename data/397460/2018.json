@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "397460",
+    "title": "The Jackbox Party Pack 2",
+    "timestamp": 1535506101,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Xeon E5 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "397460",
+    "cpu": "Intel(R) Core(TM) i5-7300HQ CPU @ 2.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-90.current",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7939 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537829353,
+    "title": "The Jackbox Party Pack 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "397460",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel (git-416abe8 2018-10-26 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Doesn't respect monitor settings, will turn off secondary monitors. Fine on single monitor setups but dual monitors either run in windowed mode or fix it after.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541193283,
+    "title": "The Jackbox Party Pack 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "397460",
+    "cpu": "Intel Celeron N3450 @ 1.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 500 (Broxton 2x6)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1542752601,
+    "title": "The Jackbox Party Pack 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "397460",
+    "title": "The Jackbox Party Pack 2",
+    "timestamp": 1535491701,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Xeon E5 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "785770",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.11.16-2-MANJARO",
+    "notes": "Playable  on a high-end machine, but it has issues, unrelated to Proton. I recommend wait for a bit before buying, while devs patch.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1619787909,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "785770",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.40.0, 5.10.59-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.10.59-1-MANJARO",
+    "notes": "Completely unplayable",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1640006776,
+    "title": "",
+    "source": "protondb"
+  }
+]

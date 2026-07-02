@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "227480",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-16-generic",
+    "notes": "The menus work great. Player matching does not find any players. When creating a match after 5 seconds it has a error popup and creates a error dump.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560888984,
+    "title": "God Mode",
+    "source": "protondb"
+  },
+  {
+    "appId": "227480",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.16-300.fc30.x86_64",
+    "notes": "It is possible to go to the main menu, then the game crashed. Multiple lines with \"GL_OUT_OF_MEMORY error generated. Failed to map buffer.\" are present in the execution log.",
+    "os": "Fedora release 30 (Thirty) (64\u00a0bits)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563137907,
+    "title": "God Mode",
+    "source": "protondb"
+  },
+  {
+    "appId": "227480",
+    "cpu": "Intel Core i7-5930K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Runs perfectly after setting in the launch options: PROTON_USE_D9VK=1 %command%",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1565661837,
+    "title": "God Mode",
+    "source": "protondb"
+  }
+]

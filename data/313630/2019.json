@@ -1,0 +1,75 @@
+[
+  {
+    "appId": "313630",
+    "cpu": "AMD Ryzen Threadripper 2970WX 24-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0",
+    "kernel": "5.1.12-1-MANJARO",
+    "notes": "Won't start. A \"Fatal Error!\" pop up appears right after the splash screen.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "129 GB",
+    "rating": "Borked",
+    "timestamp": 1561403599,
+    "title": "The Solus Project",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "313630",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.14-200.fc29.x86_64",
+    "notes": "too dark in caves ever with maximum brightness, only light speculars on rocks is visible ",
+    "os": "Fedora release 29 (Twenty Nine) (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1561547169,
+    "title": "The Solus Project",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "313630",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-20-mfutex",
+    "notes": "144fps maxed out",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564937154,
+    "title": "The Solus Project",
+    "source": "protondb"
+  },
+  {
+    "appId": "313630",
+    "cpu": "AMD EPYC 7281 16-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon Vega Frontier Edition",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.2.15-200.fc30.x86_64",
+    "notes": "Disabling Esync does not work, using different proton versions does not work, forcing older D3D does not work.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "129 GB",
+    "rating": "Borked",
+    "timestamp": 1569168024,
+    "title": "The Solus Project",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "820730",
+    "title": "Adventure of a Lifetime",
+    "timestamp": 1536330916,
+    "rating": "Borked",
+    "notes": "Does not start at all",
+    "os": "Ubuntu 18.04 (Kernel 4.18.6)",
+    "gpuDriver": "amdgpu (kernel driver) / Mesa 18.3 (oibaf)",
+    "specs": "Intel Pentium G3220 / HD 7850",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "820730",
+    "title": "Adventure of a Lifetime",
+    "timestamp": 1536316516,
+    "rating": "Borked",
+    "notes": "Does not start at all",
+    "os": "Ubuntu 18.04 (Kernel 4.18.6)",
+    "gpuDriver": "amdgpu (kernel driver) / Mesa 18.3 (oibaf)",
+    "specs": "Intel Pentium G3220 / HD 7850",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

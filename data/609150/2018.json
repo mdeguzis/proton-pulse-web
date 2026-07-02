@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "609150",
+    "title": "Star ocean",
+    "timestamp": 1535648264,
+    "rating": "Borked",
+    "notes": "doesn't even open ",
+    "os": "Manjaro Stable 64-bit",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "3570k / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "609150",
+    "title": "STAR OCEAN\u2122 - THE LAST HOPE\u2122 - 4K & Full HD Remaster",
+    "timestamp": 1535286425,
+    "rating": "Borked",
+    "notes": "Probably related to Denuvo",
+    "os": "Arch Linux 64bit (Kernel 4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "609150",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX 570 Series (POLARIS10, DRM 3.27.0, 4.19.0-1-MANJARO, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-cb863de626)",
+    "kernel": "4.19.0-1-MANJARO",
+    "notes": "Crashes on launch.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15973 Mb",
+    "rating": "Borked",
+    "timestamp": 1538383363,
+    "title": "STAR OCEAN\u2122 - THE LAST HOPE -\u2122 4K & Full HD Remaster",
+    "source": "protondb"
+  },
+  {
+    "appId": "609150",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543155998,
+    "title": "STAR OCEAN\u2122 - THE LAST HOPE -\u2122 4K & Full HD Remaster",
+    "source": "protondb"
+  },
+  {
+    "appId": "609150",
+    "title": "Star ocean",
+    "timestamp": 1535633864,
+    "rating": "Borked",
+    "notes": "doesn't even open ",
+    "os": "Manjaro Stable 64-bit",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "3570k / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "609150",
+    "title": "STAR OCEAN\u2122 - THE LAST HOPE\u2122 - 4K & Full HD Remaster",
+    "timestamp": 1535272025,
+    "rating": "Borked",
+    "notes": "Probably related to Denuvo",
+    "os": "Arch Linux 64bit (Kernel 4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

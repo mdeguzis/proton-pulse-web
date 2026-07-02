@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "290460",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Loads two different black windows. Can hear music. Using Wine D3d11 changed it to one black window with music.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560115753,
+    "title": "Legionwood 2: Rise of the Eternal's Realm - Director's Cut",
+    "source": "protondb"
+  }
+]

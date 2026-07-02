@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1589120",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.1, DRM 3.42, 5.15.46-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.1.1",
+    "kernel": "5.15.46-1-MANJARO",
+    "notes": "Demo works alright",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1655278052,
+    "title": "",
+    "source": "protondb"
+  }
+]

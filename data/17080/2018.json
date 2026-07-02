@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "17080",
+    "title": "Tribes: Ascend",
+    "timestamp": 1536263019,
+    "rating": "Bronze",
+    "notes": "Game will start but the login screen will not authenticate. Significant framerate issues",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA-340",
+    "specs": "AMD Athlon II x2 260 / NVIDIA GeForce 9800 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "17080",
+    "cpu": "AMD Athlon(tm) II X2 260 Processor",
+    "gpu": "GeForce 9800 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "notes": "Able to install and start, but logging in will always fail. Significant framerate issues.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "rating": "Bronze",
+    "timestamp": "1536451200",
+    "title": "Tribes: Ascend",
+    "source": "protondb"
+  },
+  {
+    "appId": "17080",
+    "cpu": "Intel Core i7-4500U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "r9 m265x",
+    "gpuDriver": "3.1 Mesa 18.1.9",
+    "kernel": "4.15.0-1-amd64",
+    "notes": "Game starts but after filling username and password it gives me \"unable to contact server\"",
+    "os": "MX 17 Horizon",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541108666,
+    "title": "Tribes: Ascend",
+    "source": "protondb"
+  },
+  {
+    "appId": "17080",
+    "cpu": "Intel Core i5-3570K",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7970",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Launches, but can not log in.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544619099,
+    "title": "Tribes: Ascend",
+    "source": "protondb"
+  },
+  {
+    "appId": "17080",
+    "title": "Tribes: Ascend",
+    "timestamp": 1536248619,
+    "rating": "Bronze",
+    "notes": "Game will start but the login screen will not authenticate. Significant framerate issues",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA-340",
+    "specs": "AMD Athlon II x2 260 / NVIDIA GeForce 9800 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

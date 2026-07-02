@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1957780",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 550.142",
+    "kernel": "6.12.6_3",
+    "notes": "Automatic ban immediately after tutorial",
+    "os": "Void Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1737385421,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1957780",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1201, ACO, DRM 3.61, 6.14.2-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.0.3-cachyos1.2",
+    "kernel": "6.14.2-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1750987706,
+    "title": "",
+    "source": "protondb"
+  }
+]

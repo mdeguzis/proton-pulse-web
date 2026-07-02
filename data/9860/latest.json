@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "9860",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.10-arch1-1-ARCH",
+    "notes": "At first start, there is a TAGES (some sort of DRM) installer which fails or complains about not being an administrator. I tried some no-CD cracks (from Steam forums), which seem to resolve that DRM issue. But it still fails to load with inexplicable module errors. \"unknown module\" or \"module init error\"",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1550603791,
+    "title": "The Chronicles of Riddick\u2122 Assault on Dark Athena",
+    "source": "protondb"
+  },
+  {
+    "appId": "9860",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-1-MANJARO",
+    "notes": "The Steam version is flat out borked because of TAGES DRM. However, the GOG version is DRM free and gets a platinum rating. If you own the GOG version add it as a non-Steam game and configure it to use Proton as a compatibility tool. Alternatively, you can replace the contents of the Steam version's folder with that of the GOG version.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1558498081,
+    "title": "The Chronicles of Riddick\u2122 Assault on Dark Athena",
+    "source": "protondb"
+  }
+]

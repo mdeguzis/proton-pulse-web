@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1469610",
+    "cpu": "AMD Ryzen 5 7640U w/ Radeon 760M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon 760M (radeonsi, gfx1103_r1, LLVM 18.1.8, DRM 3.57, 6.10.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.4-arch1.2",
+    "kernel": "6.10.1-arch1-1",
+    "notes": "Running with GE Proton and medium settings is perfectly playable, but not perfect. Game has occasional stutters, otherwise seems to work.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "bronze",
+    "timestamp": 1723820282,
+    "title": "Last Train Home",
+    "source": "protondb"
+  }
+]

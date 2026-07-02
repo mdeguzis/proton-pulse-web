@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "291330",
+    "cpu": "i5-3570K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 660/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "There's a problem with the fullscreen aspect ratio at the start of the game, but alt-tabing in & out fixes it. Terrible fighting game though...",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16001 Mb",
+    "rating": "Gold",
+    "timestamp": 1536877181,
+    "title": "Final Slam 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "418950",
+    "title": "DreadOut: Keepers of The Dark",
+    "timestamp": 1535205828,
+    "rating": "Silver",
+    "notes": "erratic mouse movement",
+    "os": "KDE Neon (bionic, Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670k / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418950",
+    "title": "DreadOut: Keepers of The Dark",
+    "timestamp": 1535235678,
+    "rating": "Silver",
+    "notes": "Requires Steam launch option \"PROTON_NO_D3D11=1 %command%\" to run. Game works but does not detect a controller, also the KB+M controls are not precise, the mouse direction keeps floating slowly at a downward direction.  ",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "418950",
+    "title": "Dreadout: Keepers of the Dark",
+    "timestamp": 1535456579,
+    "rating": "Gold",
+    "notes": "works fine",
+    "os": "Ubuntu 16.04.5 64-bit (kernel 4.15.0-33-Generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7200u",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418950",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "X.Org AMD Radeon (TM) R9 380 Series (TONGA, DRM 3.26.0, 4.18.7-041807-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.7-041807-generic",
+    "notes": "Game works without ENV commands. When moving the mouse to any side, the cursor drift downwards. It also doesn't detect the gamepad (F710)",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "24044 Mb",
+    "rating": "Silver",
+    "systemInfoNotes": "OS: Kubuntu 18.04.1",
+    "timestamp": 1536938554,
+    "title": "DreadOut: Keepers of The Dark",
+    "source": "protondb"
+  },
+  {
+    "appId": "418950",
+    "title": "DreadOut: Keepers of The Dark",
+    "timestamp": 1535191428,
+    "rating": "Silver",
+    "notes": "erratic mouse movement",
+    "os": "KDE Neon (bionic, Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670k / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418950",
+    "title": "DreadOut: Keepers of The Dark",
+    "timestamp": 1535221278,
+    "rating": "Silver",
+    "notes": "Requires Steam launch option \"PROTON_NO_D3D11=1 %command%\" to run. Game works but does not detect a controller, also the KB+M controls are not precise, the mouse direction keeps floating slowly at a downward direction.  ",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "418950",
+    "title": "Dreadout: Keepers of the Dark",
+    "timestamp": 1535442179,
+    "rating": "Gold",
+    "notes": "works fine",
+    "os": "Ubuntu 16.04.5 64-bit (kernel 4.15.0-33-Generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7200u",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

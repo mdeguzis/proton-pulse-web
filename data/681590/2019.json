@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "681590",
+    "cpu": "Intel Core i3-5005U @ 2.00GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Works flawlessly, appart from crashes that also happen on Windows, this is reduced by moving the game to an SSD",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1548671248,
+    "title": "Company of Heroes: Blitzkrieg Mod",
+    "source": "protondb"
+  },
+  {
+    "appId": "681590",
+    "cpu": "Intel Core i3-5005U @ 2.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 920M",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Works awesomely, but you need to add the following launch command to the Game to start in blitzkrieg mod : -dev -mod blitzkrieg -nomovies  (Don't add them to the blitzkrieg mod, but to the game)",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1548671610,
+    "title": "Company of Heroes: Blitzkrieg Mod",
+    "source": "protondb"
+  },
+  {
+    "appId": "681590",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-d0ed7ce952)",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "Had many issues getting the blitzkrieg mod to run, after that the game would crash the second i would finish loading. Got all of it to work and run perfectly with the launch options of PROTON_FORCE_LARGE_ADDRESS_AWARE=1 PROTON_NO_D3D11=1 %command% -dev -mod blitzkrieg -nomovies \nKeep in mind these launch options are on the base game itself! Not the mod!\nOne minor issue i did encounter was if i played a match and went into a second one without restarting the game i would get tons of texture corruption. After a restart it was pefectly fine. Also dont minimize, just dont.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1570297097,
+    "title": "Company of Heroes: Blitzkrieg Mod",
+    "source": "protondb"
+  }
+]

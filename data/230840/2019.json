@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "230840",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Crash on start-up. Tried disable ESYNC, disable D3D11 and use D3D11. Nothing worked. ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559459096,
+    "title": "Daylight",
+    "source": "protondb"
+  },
+  {
+    "appId": "230840",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Runs perfectly after creating a \".config\" file with content \"pass\" in the game root directory. eg. 1. open terminal in game directory 2. do \"echo 'pass' >.config\"  and that's it. Game should now start without problems.\n",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562329902,
+    "title": "Daylight",
+    "source": "protondb"
+  },
+  {
+    "appId": "230840",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "You need to create a .config file with the content \"pass\" as some other user described. After that the game starts without any issues.\n\nIt can be done this way:\ncd /SteamLibrary/steamapps/common/Daylight (adjust this path)\necho 'pass' > .config",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1571755440,
+    "title": "Daylight",
+    "source": "protondb"
+  }
+]

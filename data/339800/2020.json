@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "339800",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.6",
+    "kernel": "5.6.11-1-MANJARO",
+    "notes": "Runs great on Proton with 1 critical bug. Otherwise, play it Natively.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1594602738,
+    "title": "",
+    "source": "protondb"
+  }
+]

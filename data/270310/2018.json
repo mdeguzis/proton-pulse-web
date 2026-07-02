@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "270310",
+    "title": "Dominique Pamplemousse",
+    "timestamp": 1535569847,
+    "rating": "Borked",
+    "notes": "Works perfectly for 10 min. then nothing is clickable. Esc possible to menu, also unclickable. Had to force exit the game.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5  M 460  @ 2.53GHz / Mobility Radeon HD5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "270310",
+    "title": "Dominique Pamplemousse",
+    "timestamp": 1535757515,
+    "rating": "Platinum",
+    "notes": "Without any problem",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i3-3240 / GTX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "270310",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537291830,
+    "title": "Dominique Pamplemousse",
+    "source": "protondb"
+  },
+  {
+    "appId": "270310",
+    "title": "Dominique Pamplemousse",
+    "timestamp": 1535555447,
+    "rating": "Borked",
+    "notes": "Works perfectly for 10 min. then nothing is clickable. Esc possible to menu, also unclickable. Had to force exit the game.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5  M 460  @ 2.53GHz / Mobility Radeon HD5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "270310",
+    "title": "Dominique Pamplemousse",
+    "timestamp": 1535743115,
+    "rating": "Platinum",
+    "notes": "Without any problem",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i3-3240 / GTX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

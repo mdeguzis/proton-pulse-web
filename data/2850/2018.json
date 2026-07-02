@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "2850",
+    "title": "X-Tension",
+    "timestamp": 1535213611,
+    "rating": "Platinum",
+    "notes": "Works as native",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2850",
+    "title": "X-Tension",
+    "timestamp": 1535199211,
+    "rating": "Platinum",
+    "notes": "Works as native",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

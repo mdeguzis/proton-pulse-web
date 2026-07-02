@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "235320",
+    "title": "Original War",
+    "timestamp": 1535307597,
+    "rating": "Platinum",
+    "notes": "Played through 2 first missions, everything worked perfect",
+    "os": "Ubuntu 17.10",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-2410M  / GeForce GT 540M",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "235320",
+    "title": "Original War",
+    "timestamp": 1535312570,
+    "rating": "Silver",
+    "notes": "When you start the game in launcher first time it may throw an access violation error, when you start it second time it works flawlessly. Intros in russian campaign are not displayed, but i am not sure whether it's game fault or Proton fault. I run it with OpenGL 3.0 renderer.",
+    "os": "Arch Linux 64-bit (Kernel 4.17.14-arch)",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "i7-4710HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "235320",
+    "title": "Original War",
+    "timestamp": 1535293197,
+    "rating": "Platinum",
+    "notes": "Played through 2 first missions, everything worked perfect",
+    "os": "Ubuntu 17.10",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-2410M  / GeForce GT 540M",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "235320",
+    "title": "Original War",
+    "timestamp": 1535298170,
+    "rating": "Silver",
+    "notes": "When you start the game in launcher first time it may throw an access violation error, when you start it second time it works flawlessly. Intros in russian campaign are not displayed, but i am not sure whether it's game fault or Proton fault. I run it with OpenGL 3.0 renderer.",
+    "os": "Arch Linux 64-bit (Kernel 4.17.14-arch)",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "i7-4710HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

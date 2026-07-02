@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "42890",
+    "title": "Sword of the Stars Complete Collection",
+    "timestamp": 1534972801,
+    "rating": "Borked",
+    "notes": "Shows games own dialog about error log dump having been done",
+    "os": "Xubuntu 16.04.5 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "42890",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-29-generic",
+    "notes": "Tried disable Esync\n\nIt saved a crash log to Mars.dmp.\n\nNOTE: do no try to install the original Sword of Stars - it seems there's a cd key issue there.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541368229,
+    "title": "Sword of the Stars: Complete Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "42890",
+    "title": "Sword of the Stars Complete Collection",
+    "timestamp": 1534958401,
+    "rating": "Borked",
+    "notes": "Shows games own dialog about error log dump having been done",
+    "os": "Xubuntu 16.04.5 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

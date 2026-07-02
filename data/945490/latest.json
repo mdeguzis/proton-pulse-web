@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "945490",
+    "cpu": "AMD A8-6500 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Runs perfectly out of the box with Proton 4.2-3. Completed all of World 1 and some of World 2.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555686082,
+    "title": "Little Square Things",
+    "source": "protondb"
+  }
+]

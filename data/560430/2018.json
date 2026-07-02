@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "560430",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Does not work. The intro videos play, but as soon as the main menu shows up, the following error pops up and the game crashes: \"(Render) An invalid floating point camera matrix was passed to the D3D driver!\"",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542646829,
+    "title": "Indiana Jones\u00ae and the Emperor's Tomb\u2122",
+    "source": "protondb"
+  }
+]

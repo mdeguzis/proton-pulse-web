@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "230290",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.24.02",
+    "kernel": "5.2.14-arch1-1-fsync",
+    "notes": "It did eventually show a window, but it took a long time and it was running very slow. Additionally, it did not detect my Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569578502,
+    "title": "Universe Sandbox \u00b2",
+    "source": "protondb"
+  },
+  {
+    "appId": "230290",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-3ad6154f4e)",
+    "kernel": "5.4.0-1-MANJARO",
+    "notes": "As VR does not work in native, i tried proton. The game runs, VR works, but sound stops after loading and performance is not that great.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "protonVersionManual": "Proton-4.6-GE-2",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1571587738,
+    "title": "Universe Sandbox \u00b2",
+    "source": "protondb"
+  }
+]

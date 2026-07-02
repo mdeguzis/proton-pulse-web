@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "918530",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Mostly works, but audio stutters and is out of sync with the video. Still somewhat playable with subtitles though.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15968 Mb",
+    "rating": "Silver",
+    "timestamp": 1538493840,
+    "title": "The Dark Room",
+    "source": "protondb"
+  }
+]

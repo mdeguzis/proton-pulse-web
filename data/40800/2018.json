@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "40800",
+    "title": "Universe Sandbox",
+    "timestamp": 1535692373,
+    "rating": "Borked",
+    "notes": "Won't start",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "40800",
+    "title": "Universe Sandbox",
+    "timestamp": 1535677973,
+    "rating": "Borked",
+    "notes": "Won't start",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

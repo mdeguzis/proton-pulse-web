@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "888790",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "Movies get skipped, otherwise it works perfectly",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1566479090,
+    "title": "Sabbat of the Witch",
+    "source": "protondb"
+  }
+]

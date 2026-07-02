@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "778390",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.27-gentoo-r1",
+    "notes": "Doesn't work when running from steam but it works if you launch it separately (from terminal)",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1554941779,
+    "title": "Corpse Party: Book of Shadows",
+    "source": "protondb"
+  }
+]

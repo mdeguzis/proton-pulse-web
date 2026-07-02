@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "942510",
+    "cpu": "Intel Core i3-7100 @ 3.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.0 - padoka PPA",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Tela preta ou menu completamente travado. Tentei duas vezes, nas duas tive que reiniciar o PC. N\u00e3o tentei desativar Esync, D3d11 ou usar Wine D3d11.",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1562010344,
+    "title": "Scamp: High Hat Havoc",
+    "source": "protondb"
+  },
+  {
+    "appId": "942510",
+    "cpu": "Intel Core i3-7100 @ 3.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Abre, aparece o menu e depois trava tudo. Tive que reiniciar o PC.",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "3.16-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564950976,
+    "title": "Scamp: High Hat Havoc",
+    "source": "protondb"
+  }
+]

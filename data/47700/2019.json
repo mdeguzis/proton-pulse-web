@@ -1,0 +1,99 @@
+[
+  {
+    "appId": "47700",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-gentoo",
+    "notes": "Does not start",
+    "os": "NAME=Gentoo",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553790879,
+    "title": "Command & Conquer 4: Tiberian Twilight",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "47700",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-gentoo",
+    "notes": "does not start",
+    "os": "NAME=Gentoo",
+    "protonVersion": "4.2.1",
+    "protonVersionManual": "4.2.1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553792042,
+    "title": "Command & Conquer 4: Tiberian Twilight",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "47700",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.8-gentoo",
+    "notes": "Does not even start",
+    "os": "NAME=Gentoo",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1553792368,
+    "title": "Command & Conquer 4: Tiberian Twilight",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "47700",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-17-generic",
+    "notes": "GAME DON'T START",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1555966479,
+    "title": "Command & Conquer 4: Tiberian Twilight",
+    "source": "protondb"
+  },
+  {
+    "appId": "47700",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Game can be run, but not directly from Steam. There are graphical issues on higher settings. More details in bug report: https://github.com/ValveSoftware/Proton/issues/2039",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1564000841,
+    "title": "Command & Conquer 4: Tiberian Twilight",
+    "source": "protondb"
+  }
+]

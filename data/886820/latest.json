@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "886820",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-gentoo",
+    "notes": "launcher work but actual game force close",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553651286,
+    "title": "Nelke & the Legendary Alchemists ~Ateliers of the New World~ / \u30cd\u30eb\u30b1\u3068\u4f1d\u8aac\u306e\u932c\u91d1\u8853\u58eb\u305f\u3061 \uff5e\u65b0\u305f\u306a\u5927\u5730\u306e\u30a2\u30c8\u30ea\u30a8\uff5e",
+    "source": "protondb"
+  },
+  {
+    "appId": "886820",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Game runs well until you want to save, then you get an error dialog. Problem is that the game wants to re-create the save folder every time; deleting the folder will allow it to create a new one and successfully save. Probably a bug in WinCreateDirectory() returning the wrong error code.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1557457446,
+    "title": "Nelke & the Legendary Alchemists ~Ateliers of the New World~ / \u30cd\u30eb\u30b1\u3068\u4f1d\u8aac\u306e\u932c\u91d1\u8853\u58eb\u305f\u3061 \uff5e\u65b0\u305f\u306a\u5927\u5730\u306e\u30a2\u30c8\u30ea\u30a8\uff5e",
+    "source": "protondb"
+  },
+  {
+    "appId": "886820",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "With the save file fix in 4.2-6, this game runs exactly like it should.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1560869036,
+    "title": "Nelke & the Legendary Alchemists ~Ateliers of the New World~ / \u30cd\u30eb\u30b1\u3068\u4f1d\u8aac\u306e\u932c\u91d1\u8853\u58eb\u305f\u3061 \uff5e\u65b0\u305f\u306a\u5927\u5730\u306e\u30a2\u30c8\u30ea\u30a8\uff5e",
+    "source": "protondb"
+  }
+]

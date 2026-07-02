@@ -1,0 +1,59 @@
+[
+  {
+    "appId": "844930",
+    "title": "Fox Hime Zero",
+    "timestamp": 1535551234,
+    "rating": "Gold",
+    "notes": "Works perfectly, but you need to install corefonts in game's wineprefix. Easiest way is to install https://github.com/Sirmentio/protontricks and then run $ protontricks 844930 corefonts",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "844930",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.16-300.fc29.x86_64",
+    "notes": "The latest Proton update pushes this game to Platinum :)",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "Beta (3.16-4)",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1541121876,
+    "title": "Fox Hime Zero",
+    "source": "protondb"
+  },
+  {
+    "appId": "844930",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Note: Nvidia drivers 415 completely break unity games and will cause crash on start. drivers 410 however are perfectly fine :)",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542495459,
+    "title": "Fox Hime Zero",
+    "source": "protondb"
+  },
+  {
+    "appId": "844930",
+    "title": "Fox Hime Zero",
+    "timestamp": 1535536834,
+    "rating": "Gold",
+    "notes": "Works perfectly, but you need to install corefonts in game's wineprefix. Easiest way is to install https://github.com/Sirmentio/protontricks and then run $ protontricks 844930 corefonts",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

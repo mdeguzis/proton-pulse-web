@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "851670",
+    "title": "LUMINES REMASTERED",
+    "timestamp": 1535064817,
+    "rating": "Platinum",
+    "notes": "gamepad works",
+    "os": "Ubuntu 16.04.5",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i7-7700HQ / GTX 1050m",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "851670",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) R9 Fury Series (FIJI, DRM 3.26.0, 4.18.9-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.18.9-1-MANJARO",
+    "notes": "Doesn't recognize dualshock 4, crashes when exiting",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32166 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537653537,
+    "title": "LUMINES REMASTERED",
+    "source": "protondb"
+  },
+  {
+    "appId": "851670",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-1-MANJARO",
+    "notes": "Some skins are just a white background. Gamepad works fine and its totally playable. Crashes when i close the game, must be forced to exit.",
+    "os": "\"Manjaro Linux\" (64 bits)",
+    "protonVersion": "Default",
+    "ram": "7990 MB",
+    "rating": "Silver",
+    "timestamp": 1539506486,
+    "title": "LUMINES REMASTERED",
+    "source": "protondb"
+  },
+  {
+    "appId": "851670",
+    "title": "LUMINES REMASTERED",
+    "timestamp": 1535050417,
+    "rating": "Platinum",
+    "notes": "gamepad works",
+    "os": "Ubuntu 16.04.5",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i7-7700HQ / GTX 1050m",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "21780",
+    "cpu": "Intel Core2 Extreme X9650  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-13-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548369457,
+    "title": "Driver\u00ae Parallel Lines",
+    "source": "protondb"
+  },
+  {
+    "appId": "21780",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD HAWAII",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Just about everything works. Game runs a fantastic 60fps at max settings and all FMVs work fine, even in-game music.\n\nHowever, you still can't set the distance for the shadows as to how far they can go so the game's shadows will look odd when you're driving and walking even if you were playing it on Windows.\n\nAs far as I know, trainers don't work at all. You may need the Windows version of Cheat Engine to get things like the JumpTrainer working but that's up to someone else to test out.",
+    "os": "Linux Lite 4.2",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554165181,
+    "title": "Driver\u00ae Parallel Lines",
+    "source": "protondb"
+  },
+  {
+    "appId": "21780",
+    "cpu": "Intel Core i7-3770K @ 4.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 Fury Nano",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-41f76dd513)",
+    "kernel": "5.0.6-lqx1-1-lqx",
+    "notes": "Works flawlessly with and without gallium nine and zero tweaks. Resolution options are a bit weird but also work somehow. (eg. I'm at 2560x1080, and somehow get native res when I have it set to \"1920x1080 32bit HD\" and Widescreen on)",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1554525700,
+    "title": "Driver\u00ae Parallel Lines",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "363150",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Opening videos don't play, but hitting the mouse buttons or banging ESC skips past them.  Otherwise runs surprisingly well.\n\nI didn't get far enough in to trigger an in-game video, but if they don't play, they can be disabled in the Options.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536343228",
+    "title": "ROMANCE OF THE THREE KINGDOMS XIII / \u4e09\u570b\u5fd713",
+    "source": "protondb"
+  }
+]

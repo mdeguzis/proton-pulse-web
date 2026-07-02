@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "662830",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.09",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Black screen.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15972 Mb",
+    "rating": "Borked",
+    "timestamp": 1540027123,
+    "title": "Bombix",
+    "source": "protondb"
+  }
+]

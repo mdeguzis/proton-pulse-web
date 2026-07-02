@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1088090",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-65-generic",
+    "notes": "Allthought this is late alpha / early beta the game was fully functional and the game was running smoothly. The devs just set up a testserver for all the beta-users and we were able  to fool around. Lag was present but this was also a test of the server. (+ 100 people)",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571173565,
+    "title": "Day of Dragons",
+    "source": "protondb"
+  }
+]

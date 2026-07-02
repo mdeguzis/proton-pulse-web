@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "8890",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.4.0-141-generic",
+    "notes": "When playing in a widescreen resolution, the graphics are fine but mouse movement is stretched horizontally making the game really hard to control. If you play the game in windowed mode in a non-widescreen resolution everything seems to run perfectly",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1550428274,
+    "title": "Freedom Force vs. the Third Reich",
+    "source": "protondb"
+  },
+  {
+    "appId": "8890",
+    "cpu": "Intel Celeron  N2840  @ 2.16GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "Font is a little glitchy, mouse movement is stretched in widescreen resolutions, Proton 4.2-3 did not work for me (sound works but screen is black). Performance was a little worse than Windows (when lots of things are happening), I suspect it was OpenGL overhead causing my low-end CPU work a little harder, potentially becoming a bottleneck. Certainly playable!",
+    "os": "Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1555746762,
+    "title": "Freedom Force vs. the Third Reich",
+    "source": "protondb"
+  }
+]

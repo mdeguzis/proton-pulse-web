@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "648340",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Runs fine after tweak here.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1548183565,
+    "title": "Harald: A Game of Influence",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

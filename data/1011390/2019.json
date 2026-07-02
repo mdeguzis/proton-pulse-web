@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1011390",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Just like with Fields of Glory 2, on first start, game fails to create/detect the monitor resolution. You have to force quit the game if you see a windowed black screen and then manually add a document file named \"options.txt\" in .steam/steam/steamapps/compatdata/1011390/pfx/drive_c/users/steamuser/My%20Documents/My%20Games/FieldOfGloryEmpires/\n... and write these lines: \nRezX 1920\nRezY 1080\nFullscreen 0 \n... or whatever resolution your monitor supports/you use. After that the game starts and it will overwrite the options.txt with it's regular config entires. Game itself then runs great. No issues.\n",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1562910100,
+    "title": "Field of Glory: Empires",
+    "source": "protondb"
+  },
+  {
+    "appId": "1011390",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-20-generic",
+    "notes": "The game failed to run at first throwing an error along the lines \"Failed to create device for rendering...\"\n\nTo fix I did a quick Google and found I needed to add an options.txt file to this location: ~/.steam/steam/steamapps/compatdata/1011390/pfx/drive_c/users/steamuser/My Documents/My Games/FieldOfGloryEmpires . In the options.txt file I had just three lines: \n\nRezX 1920\nRezY 1080\nFullscreen 0\n\nAfter that the game booted up beautifully and I've been playing for about an hour now without a hitch.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562933891,
+    "title": "Field of Glory: Empires",
+    "source": "protondb"
+  }
+]

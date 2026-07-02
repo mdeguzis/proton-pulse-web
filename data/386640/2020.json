@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "386640",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.8-arch1-1",
+    "notes": "As long as you don't need to play with a friend on your squad, everything appears to work as intended.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-11",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1578671922,
+    "title": "Affected Zone Tactics",
+    "source": "protondb"
+  }
+]

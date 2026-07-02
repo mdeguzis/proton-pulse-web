@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "386970",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "protontricks 386970 quartz ffdshow\nnext next finish on the wizard and it works without crashing",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "3.16-4",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1561551489,
+    "title": "Memory's Dogma CODE:01",
+    "source": "protondb"
+  }
+]

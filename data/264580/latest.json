@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "264580",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.1-arch1-1-ARCH",
+    "notes": "Played to the end without issues",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547120255,
+    "title": "Lost Civilization",
+    "source": "protondb"
+  },
+  {
+    "appId": "264580",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Works out of the box",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552331130,
+    "title": "Lost Civilization",
+    "source": "protondb"
+  }
+]

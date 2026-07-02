@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "11050",
+    "title": "Dracula Origin",
+    "timestamp": 1535823955,
+    "rating": "Borked",
+    "notes": "Totally dead. Just silently closes down. Steam overlay manually disabled.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "11050",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Tried PROTON_NO_D3D11=1 %command%    This not help.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15980 Mb",
+    "rating": "Borked",
+    "timestamp": 1538146704,
+    "title": "Dracula Origin",
+    "source": "protondb"
+  },
+  {
+    "appId": "11050",
+    "title": "Dracula Origin",
+    "timestamp": 1535809555,
+    "rating": "Borked",
+    "notes": "Totally dead. Just silently closes down. Steam overlay manually disabled.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

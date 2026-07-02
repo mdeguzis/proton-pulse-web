@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "965840",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-200.fc29.x86_64",
+    "notes": "Appears to play fine, so long as you do not select custom MP3s for the playlist. Attempting to do so crashes the game.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1558019120,
+    "title": "Club Lighting",
+    "source": "protondb"
+  }
+]

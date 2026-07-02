@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "523210",
+    "cpu": "Intel Core i7-5700HQ @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Played game fully on Proton.  Proton was flawless.  Initially tried it native, but it crashed right away.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1550068842,
+    "title": "A Normal Lost Phone",
+    "source": "protondb"
+  },
+  {
+    "appId": "523210",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Native version crashed for me on start. Ran the game with Proton and it worked perfectly. Completed entire campaign.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562277925,
+    "title": "A Normal Lost Phone",
+    "source": "protondb"
+  }
+]

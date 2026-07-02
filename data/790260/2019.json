@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "790260",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.4-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548636798,
+    "title": "Kate's Test",
+    "source": "protondb"
+  },
+  {
+    "appId": "790260",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.11-arch2-1-ARCH",
+    "notes": "Custom Proton, but works on all Beta and Non-Beta out of the box",
+    "os": "Linux 4.x",
+    "protonVersion": "4.0-rc3-GE",
+    "protonVersionManual": "4.0-rc3-GE",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550952285,
+    "title": "Kate's Test",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "606890",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "No graphics available except UI.",
+    "os": "elementary OS 0.4.1 Loki (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7719 Mb",
+    "rating": "Borked",
+    "timestamp": 1537581774,
+    "title": "Masters of Anima",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1785650",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.10-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.3-arch2.2",
+    "kernel": "6.19.10-1-cachyos",
+    "notes": "Game launches into a smaller window. Tried forcing through Launch options on steam but whenever I make modifications via launch options game fails to launch.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1774732238,
+    "title": "TopSpin 2K25",
+    "source": "protondb"
+  }
+]

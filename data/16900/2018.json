@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "16900",
+    "title": "Ground Branch",
+    "timestamp": 1535482870,
+    "rating": "Borked",
+    "notes": "After installing, the games freezes after 2 seconds on the menu and stays like this.",
+    "os": "Ubuntu 18.04.01 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 7 2700X / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "16900",
+    "title": "Ground Branch",
+    "timestamp": 1535468470,
+    "rating": "Borked",
+    "notes": "After installing, the games freezes after 2 seconds on the menu and stays like this.",
+    "os": "Ubuntu 18.04.01 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 7 2700X / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

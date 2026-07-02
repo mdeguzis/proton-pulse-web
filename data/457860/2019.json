@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "457860",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.3.0-1-MANJARO",
+    "notes": "Unlike the HD version, it runs fine without crashing on any level. However, other issues are still shared. The intro speech plays to a blank screen, the opening scene doesn't play anything on the TV or projector, and the credits scene is completely empty. It's not too big an issue as you can skip past these in the menu.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1567229166,
+    "title": "Apollo 11 VR",
+    "source": "protondb"
+  }
+]

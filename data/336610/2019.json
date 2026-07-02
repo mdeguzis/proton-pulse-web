@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "336610",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.34-1-MANJARO",
+    "notes": "Failed to launch properly, copied config.ini from NTFS drive, and renamed OC1.1 to Outcast 1.1; it launched but wouln't load save games nor would the game properly close.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1555900342,
+    "title": "Outcast 1.1",
+    "source": "protondb"
+  },
+  {
+    "appId": "336610",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Won't start. Renaming file to Outcast 1.1.exe got it to briefly load, but then complains about a missing config.ini and tells you to delete config.ini...which doesn't exist (huh?) and run the launcher again. Repeat endlessly.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556220502,
+    "title": "Outcast 1.1",
+    "source": "protondb"
+  },
+  {
+    "appId": "336610",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "The first time you launch the game you'll get a black window with a Outcast log that blink and doesn't display properly but you have the audio, if you press Escape the game then load normally and you can play without issues. Later, from the launcher you'll then be able to load your save directly and this will skip the intro video. I have only played a few minutes but the performance was good, and there was no graphical issues at all.",
+    "os": "Unknown",
+    "protonVersion": "4.11",
+    "protonVersionManual": "4.11",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564533897,
+    "title": "Outcast 1.1",
+    "source": "protondb"
+  }
+]

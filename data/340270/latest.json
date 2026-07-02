@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "340270",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.2-arch1-1-ARCH",
+    "notes": "Finished game start to end with no issues. It runs better with DX9 (PROTON_NO_D3D11=1 %command%) BUT it has graphical glitches so best to run default options and live with some frame drops, it's a very simple game.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552815379,
+    "title": "TIMEframe",
+    "source": "protondb"
+  },
+  {
+    "appId": "340270",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.7-100.fc29.x86_64",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567663102,
+    "title": "TIMEframe",
+    "source": "protondb"
+  }
+]

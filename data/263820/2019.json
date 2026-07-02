@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "263820",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.11-1-MANJARO",
+    "notes": "Uses XNA 4, does not work at all",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1551780950,
+    "title": "EvilQuest",
+    "source": "protondb"
+  },
+  {
+    "appId": "263820",
+    "cpu": "Intel Core i7-4600U @ 2.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.20.14-200.fc29.x86_64",
+    "notes": "As previous reports stated, this game doesn't run right out of the box. However, after a simple .NET 4.0 reinstallation[0], it starts right up and works flawlessly.\n\n[0] WINEPREFIX=\"/home/$USER/.local/share/Steam/steamapps/compatdata/263820/pfx\" winetricks dotnet40 # When the installation dialog apperars, select \"Repair\"",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1554655930,
+    "title": "EvilQuest",
+    "source": "protondb"
+  }
+]

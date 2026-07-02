@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2755520",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 17.0.6, DRM 3.57, 6.9.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.1-arch1.1",
+    "kernel": "6.9.4-arch1-1",
+    "notes": "This game will only run with Proton Experimental and requires installing MS WebView2. After launch, the cursor is not visible on the screen. You can navigate the screens by guessing where the cursor is but its very annoying. I tried applying dinput protonfixes and forcing X11 mode when running the game and neither of those fixed the missing cursor.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1764166668,
+    "title": "Dark Sword: The Light of Ainn",
+    "source": "protondb"
+  }
+]

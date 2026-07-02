@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1184160",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.15-arch1-1",
+    "notes": "Broken :(",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1659302235,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1033410",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.16-1-MANJARO",
+    "notes": "Black screen, on launch - can hear music but can't see anything. Also couldn't close the window normally, and had to pkill it",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1593715641,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1033410",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.6",
+    "kernel": "5.6.8-arch1-1",
+    "notes": "logo shows up, then black screen, then crash window",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1598905340,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1033410",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 455.28",
+    "kernel": "5.9.1-arch1-1",
+    "notes": "Game starts and you can move around in the lobby/main menu server. Performs great before shortly crashing.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1603503293,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "409890",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Was immediately crashing until I enabled \"PROTON_NO_ESYNC\": \"1\". It launched after that, but it was immediately apparent there were some assets missing or some rendering issues as the main menu is mostly black. Going into Options seems to work, except you can't see a lot of it. Choosing New Game caused the game to crash.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1547265215,
+    "title": "Stranger of Sword City / \u5263\u306e\u8857\u306e\u7570\u90a6\u4eba \uff5e\u9ed2\u306e\u5bae\u6bbf\uff5e",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "409890",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.20.7-1-MANJARO",
+    "notes": "The game wouldn't start initially ( a black app window would form then disappear).  Used \"winetricks xact\" in the Proton prefix and now it works fine including audio with keyboard and mouse.  I also wanted Steam Controller support and this required \"winetricks dinput8\", after which this also worked (without the fix the cursor would endlessly move up at the main menu screen).  No other issues detected so far.",
+    "os": "Manjaro Linux",
+    "protonVersion": "3.16-7 Beta",
+    "protonVersionManual": "3.16-7 Beta",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1550345441,
+    "title": "Stranger of Sword City / \u5263\u306e\u8857\u306e\u7570\u90a6\u4eba \uff5e\u9ed2\u306e\u5bae\u6bbf\uff5e",
+    "source": "protondb"
+  },
+  {
+    "appId": "409890",
+    "cpu": "Intel Celeron G1820 @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Works out of the box. There are graphic glitches in the menus. ",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1564828982,
+    "title": "Stranger of Sword City / \u5263\u306e\u8857\u306e\u7570\u90a6\u4eba \uff5e\u9ed2\u306e\u5bae\u6bbf\uff5e",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "783450",
+    "title": "Hypergun",
+    "timestamp": 1535053567,
+    "rating": "Bronze",
+    "notes": "This Unity 3D game runs. But enemies do not display and mouse aiming leaves you staring at the floor when enemies are near. Then goes back to normal. ",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Ryzen 7 2700X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "783450",
+    "title": "Hypergun",
+    "timestamp": 1535072787,
+    "rating": "Borked",
+    "notes": "Enemies are invisible. Game runs smooth, loads pretty fast, doesn't report any errors but if the enemies are invisible you can't really play it properly.",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Core i7-7700HQ / GeForce GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "783450",
+    "title": "Hypergun",
+    "timestamp": 1535039167,
+    "rating": "Bronze",
+    "notes": "This Unity 3D game runs. But enemies do not display and mouse aiming leaves you staring at the floor when enemies are near. Then goes back to normal. ",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Ryzen 7 2700X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "783450",
+    "title": "Hypergun",
+    "timestamp": 1535058387,
+    "rating": "Borked",
+    "notes": "Enemies are invisible. Game runs smooth, loads pretty fast, doesn't report any errors but if the enemies are invisible you can't really play it properly.",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Core i7-7700HQ / GeForce GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "408250",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "All issues revolve around Uplay. Proton 3.16 and 3.7 don't seem to launch Uplay, but that may be a false flag, and Proton 4.2 works fine for me. Upon exiting Eagle Flight, Uplay remains open as a system applet causing steam to think the game is still running. Manually closing Uplay works fine.\n\nOutside of the minor Uplay bugs, the game runs like native Windows once you're in.  ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557100702,
+    "title": "Eagle Flight",
+    "source": "protondb"
+  }
+]

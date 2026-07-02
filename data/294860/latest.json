@@ -1,0 +1,308 @@
+[
+  {
+    "appId": "294860",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.19.16-1-MANJARO",
+    "notes": "Full playthrough with Steam controller, using \"PROTON_NO_ESYNC=1 PULSE_LATENCY_MSEC=30 %command%\" as launch option. Not the greatest performance. The game was hovering between 30-60fps with some stuttering here and there at 1080p, but overall I think it was very playable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1548777577,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "AMD Ryzen 3 1300X Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Out of the box, runs well with choppy sound effects (but music and voices are fine). The following launch options solve this issue: PROTON_NO_ESYNC=1 PULSE_LATENCY_MSEC=30 %command%. Overall runs great despite some frame drops during cutscenes.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1548972693,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.20.10-042010-generic",
+    "notes": "After using the \"PROTON_NO_ESYNC=1 PULSE_LATENCY_MSEC=30 %command%\", the game runs very well. No graphics or audio issues. There weren't many framerate drops from what I experienced. I'm not sure how much of a performance hit there is going from Windows to Proton, but I'm personally satisfied with the performance.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1550471183,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Runs more or less perfect for me! Use the launch option\n\n\"PROTON_NO_ESYNC=1 PULSE_LATENCY_MSEC=30 %command%\"\n\n(without quotes) in the game's properties window. Months ago, I manually edited my Pulse Audio config file and played the game, but this launch option does the same thing and is much easier+faster to setup.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1552821352,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-16-generic",
+    "notes": "OpenGL mode doesn't have audio issues and has better performance than vulkan. So I just disabled ESYNC and use WINED3D and that's it. 10/10, great performance at 1920x1080p",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1553906648,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "Intel Core i7-2630QM @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Sound's kind of messy without the fix, everything else runs smoothly. Got low FPS (24-ish) but that's also because it didn't run on my Nvidia GPU for some reason",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1554466476,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.1-arch1-1-ARCH",
+    "notes": "Sound effects only play if you disable esync. Seems flawless after that. Played with xbox one controller",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557921802,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Game works great out of the box, just the sound is bad. To fix it I just added \"PROTON_NO_ESYNC=1 %command%\"  to the launch options.\nGood performance, even for an integrated GPU.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1558116895,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "Intel Pentium  J2900  @ 2.41GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GT 720",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-46-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1558795600,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "Intel Core i5-3450 @ 3.10GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Need \"PROTON_NO_ESYNC=1 PULSE_LATENCY_MSEC=30 %command%\" to work with no audio issues.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1562159992,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-20-generic",
+    "notes": "As mentioned before, the game runs perfectly after disabling Esync and changing the latency of Pulse  by adding \"PROTON_NO_ESYNC=1 PULSE_LATENCY_MSEC=30 %command%\" to the launch options.\nIt also works very well with Steam Controller.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563991546,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-55-generic",
+    "notes": "As with other users, audio issues were present which were fixed by disabling Esync and changing the Pulse settings.\nHowever, I also found a few other issues.\nFirstly, the controller will not work if connected when the game starts (assuming the controller is managed by Steam), continually inputting start once the intro movies have completed. The controller will not accept any other inputs, rendering the game unplayable. However, if you connect the controller in AFTER the game has booted it works normally, including with the correct button prompts (As opposed to the numbered ones when the controller is not functioning properly).\n\nThe other issue is that performance is slow to the point that it is to uncomfortable to play. Interestingly, the framerate is perfectly stable, but does not run at an acceptable speed for play (in addition to audio not syncing with animations due to the slow animation speeds).",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.2-9",
+    "ram": "24 GB",
+    "rating": "Bronze",
+    "timestamp": 1564090294,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-55-generic",
+    "notes": "My previous report (below) still stands exactly as previous on Proton 4.11-1, this includes an attempt at running under the new D9VK. Performance does appear marginally better than previously, but not significantly so and certainly not enough for most users to play comfortably.\n\nAs with other users, audio issues were present which were fixed by disabling Esync and changing the Pulse settings. However, I also found a few other issues. Firstly, the controller will not work if connected when the game starts (assuming the controller is managed by Steam), continually inputting start once the intro movies have completed. The controller will not accept any other inputs, rendering the game unplayable. However, if you connect the controller in AFTER the game has booted it works normally, including with the correct button prompts (As opposed to the numbered ones when the controller is not functioning properly). The other issue is that performance is slow to the point that it is to uncomfortable to play. Interestingly, the framerate is perfectly stable, but does not run at an acceptable speed for play (in addition to audio not syncing with animations due to the slow animation speeds).",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.11-1",
+    "ram": "24 GB",
+    "rating": "Bronze",
+    "timestamp": 1564761570,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.2.6-050206-generic",
+    "notes": "With the latest Proton update, I tried the game out with D9VK enabled. You still have to disable esync or otherwise, the sound won't work properly. To enable D9VK and disable esync, enter \"PROTON_NO_ESYNC=1 PULSE_LATENCY_MSEC=30 PROTON_USE_D9VK=1 %command%\" (without the quotations) under \"Set launch options\". I notice some framerate improvements as I play the game. There are still some areas where the framerate is lower than acceptable such as Jann's Challenge. However, D9VK was just included with Proton for the very first time, so it should get better down the line.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1564945727,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.4-1-MANJARO",
+    "notes": "Run smoothly with 60FPS, only issue is choppy sound effect",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565799078,
+    "title": "Valkyria Chronicles\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "294860",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.6-arch1-1-ARCH",
+    "notes": "Works fine when using \"PROTON_NO_ESYNC=1 PULSE_LATENCY_MSEC=30 PROTON_USE_D9VK=1 %command%\" launch config",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567337424,
+    "title": "Valkyria Chronicles\u2122",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

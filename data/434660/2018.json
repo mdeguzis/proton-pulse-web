@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "434660",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.4",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Runs smoothly, Xbox 360 controller works. Eventually crashes with \"eventfd: Too many open files\" unless esync is disabled.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1543074394,
+    "title": "OCTAHEDRON",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

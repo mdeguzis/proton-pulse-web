@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "608990",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.17.3-arch1-1",
+    "notes": "Native is borked, refuses to boot whatsoever.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "128 GB",
+    "rating": "borked",
+    "timestamp": 1650517233,
+    "title": "",
+    "source": "protondb"
+  }
+]

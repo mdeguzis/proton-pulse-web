@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "510500",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-43-lowlatency",
+    "notes": "Runs perfectly as if it were native. No tweaks needed, stellar performance.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562059983,
+    "title": "Executive Assault 2",
+    "source": "protondb"
+  }
+]

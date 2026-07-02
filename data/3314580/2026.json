@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3314580",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 20.1.8, DRM 3.64, 7.0.0-22-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.2 - kisak-mesa PPA",
+    "kernel": "7.0.0-22-generic",
+    "notes": "",
+    "os": "Ubuntu Core 24",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1781921492,
+    "title": "",
+    "source": "protondb"
+  }
+]

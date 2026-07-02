@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "935570",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.2.3 (git-8440307a61)",
+    "kernel": "5.9.13-100.fc32.x86_64",
+    "notes": "Game runs perfectly aside from the input issue which seems to affect Windows as well.",
+    "os": "Freedesktop.org 20.08.2 (Flatpak runtime)",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1608119393,
+    "title": "Ary and the Secret of Seasons",
+    "source": "protondb"
+  }
+]

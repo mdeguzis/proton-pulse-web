@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "2500",
+    "title": "Shadowgrounds",
+    "timestamp": 1534978804,
+    "rating": "Silver",
+    "notes": "Pillar-boxed, low resolution. If you can, use the non-Steam native version (which works fine).",
+    "os": "Debian stretch (custom kernel, 4.18.3)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600 /. RX 470",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2500",
+    "title": "Shadowgrounds",
+    "timestamp": 1535482895,
+    "rating": "Silver",
+    "notes": "Only showing text in intro. Occasional stutters in-game, otherwise fine. Widescreen resolutions will need to be manual enabled in options.txt in the game's config directory (not a proton problem).",
+    "os": "Kubuntu 18.04 64-bit (4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "2500",
+    "title": "Shadowgrounds",
+    "timestamp": 1535723319,
+    "rating": "Bronze",
+    "notes": "Crashed after a few minutes of playing",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Xeon X5460 / GTX 750Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2500",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Perfect.  Some stutter to start with. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541886924,
+    "title": "Shadowgrounds",
+    "source": "protondb"
+  },
+  {
+    "appId": "2500",
+    "title": "Shadowgrounds",
+    "timestamp": 1534964404,
+    "rating": "Silver",
+    "notes": "Pillar-boxed, low resolution. If you can, use the non-Steam native version (which works fine).",
+    "os": "Debian stretch (custom kernel, 4.18.3)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600 /. RX 470",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2500",
+    "title": "Shadowgrounds",
+    "timestamp": 1535468495,
+    "rating": "Silver",
+    "notes": "Only showing text in intro. Occasional stutters in-game, otherwise fine. Widescreen resolutions will need to be manual enabled in options.txt in the game's config directory (not a proton problem).",
+    "os": "Kubuntu 18.04 64-bit (4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "2500",
+    "title": "Shadowgrounds",
+    "timestamp": 1535708919,
+    "rating": "Bronze",
+    "notes": "Crashed after a few minutes of playing",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Xeon X5460 / GTX 750Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

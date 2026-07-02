@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "511680",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.12-041812-generic",
+    "notes": "Booted up perfectly, all settings run smoothly at max without stuttering or frame drops of any kind. Controller is perfect.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556799203,
+    "title": "Fate/EXTELLA",
+    "source": "protondb"
+  },
+  {
+    "appId": "511680",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.11-1-default",
+    "notes": "Game works perfectly. Controller is perfect too.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557678753,
+    "title": "Fate/EXTELLA",
+    "source": "protondb"
+  },
+  {
+    "appId": "511680",
+    "cpu": "AMD A10-7870K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "severalHours",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.15.0-50-generic",
+    "notes": "It just works out of the box. Only detail is that it refuses to go fullscreen no matter how are the game settings, but it can get forced by the window manager (clic der -> maximize)",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "22 GB",
+    "rating": "Platinum",
+    "timestamp": 1558996619,
+    "title": "Fate/EXTELLA",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "334140",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Won't launch",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16038 Mb",
+    "rating": "Borked",
+    "timestamp": 1537724302,
+    "title": "Roche Fusion",
+    "source": "protondb"
+  }
+]

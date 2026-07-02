@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "4122860",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Just works",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1762890034,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "4122860",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works perfectly",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1763425672,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "4122860",
+    "cpu": "Intel Core i5-1035G4 @ 1.10GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel Iris Plus (ICL GT1.5)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.17.8-200.fc42.x86_64",
+    "notes": "The game runs natively witout any problems.",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1763918312,
+    "title": "",
+    "source": "protondb"
+  }
+]

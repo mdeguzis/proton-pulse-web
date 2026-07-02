@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "457480",
+    "cpu": "Intel Xeon           X5660  @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1549312010,
+    "title": "Domino Sky",
+    "source": "protondb"
+  }
+]

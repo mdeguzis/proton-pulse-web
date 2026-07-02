@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "803150",
+    "cpu": "Intel Xeon E3-1240 V2 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.4.0-142-generic",
+    "notes": "The game is playable in general, but I had to use the launch command PROTON_USE_WINED3D=1 %command% for ch. 4 (riding the lion) and ch. 5 (cave) and had to set the graphics to low. Though the game did not crash completely without that (sound was still working), but the screen remained completely white, so you could not see anything. Performance with this command in these two chapters was quite poor (10-25 fps). All the other chapters worked just fine out of the box.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Bronze",
+    "timestamp": 1550130749,
+    "title": "Nephise: Ascension",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "205840",
+    "title": "Yesterday",
+    "timestamp": 1535026876,
+    "rating": "Borked",
+    "notes": "Game doesn't start - no error message",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "i7-6700k / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "205840",
+    "title": "Yesterday",
+    "timestamp": 1535472932,
+    "rating": "Borked",
+    "notes": "Crashes on main men\u00fa. Also, launched configuration window won't save data properly: tries to set window to 0x1980, no matther what option choosed. in console, show error on psengine after game crashing.",
+    "os": "Manjaro stable 64-bit (Kernel 4.16.18-1)",
+    "gpuDriver": "Mesa 18.1.16",
+    "specs": "i7-950",
+    "protonVersion": "3.7-3 & 3.7-4-",
+    "source": "protondb"
+  },
+  {
+    "appId": "205840",
+    "cpu": "AMD Phenom(tm) II X3 720 Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.12.14-lp150.12.22-default",
+    "notes": "Properties, Set Launch Options ---> WINEDLLOVERRIDES=\"openal32=b\" %command%\n\nIf you get a black screen, change the resolution (right click, Configuration). The game doesn't seem to play well with some resolutions in Windows either, so I give it Gold.",
+    "os": "\"openSUSE Leap 15.0\" (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "3936 Mb",
+    "rating": "Gold",
+    "timestamp": 1539966822,
+    "title": "Yesterday",
+    "source": "protondb"
+  },
+  {
+    "appId": "205840",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "After setting launch options, as someone mentioned below (WINEDLLOVERRIDES=\"openal32=b\" %command%), game runs flawless.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1541538547,
+    "title": "Yesterday",
+    "source": "protondb"
+  },
+  {
+    "appId": "205840",
+    "title": "Yesterday",
+    "timestamp": 1535012476,
+    "rating": "Borked",
+    "notes": "Game doesn't start - no error message",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "i7-6700k / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "205840",
+    "title": "Yesterday",
+    "timestamp": 1535458532,
+    "rating": "Borked",
+    "notes": "Crashes on main men\u00fa. Also, launched configuration window won't save data properly: tries to set window to 0x1980, no matther what option choosed. in console, show error on psengine after game crashing.",
+    "os": "Manjaro stable 64-bit (Kernel 4.16.18-1)",
+    "gpuDriver": "Mesa 18.1.16",
+    "specs": "i7-950",
+    "protonVersion": "3.7-3 & 3.7-4-",
+    "source": "protondb"
+  }
+]

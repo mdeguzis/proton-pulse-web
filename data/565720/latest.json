@@ -1,0 +1,77 @@
+[
+  {
+    "appId": "565720",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.4-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558892529,
+    "title": "Pretty Girls Panic!",
+    "source": "protondb"
+  },
+  {
+    "appId": "565720",
+    "cpu": "Intel Core i7-4800MQ @ 2.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.1",
+    "kernel": "4.19.56_1",
+    "notes": "Perfect. Haswell gen iGPU requires PROTON_USE_WINED3D=1 in launch options.",
+    "os": "Void Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1562198200,
+    "title": "Pretty Girls Panic!",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "565720",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Game starts, menu and music works, but when starting a match, the game stays in the menu with music playing and animations. Keyboard stops responding and I have to force-close it from the overlay.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-9",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1563238147,
+    "title": "Pretty Girls Panic!",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "565720",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.6-19.08.05.amdgpu",
+    "notes": "Only works for me with Proton 4.11-7. It's a bug with some Unity games, when played under older version ,the game can't create a save-file. Giving Silver because I can't play in windowed mode. When I turn full-screen off, all sorts of \"funny\" things happens.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1572189833,
+    "title": "Pretty Girls Panic!",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

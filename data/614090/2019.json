@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "614090",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-1-default",
+    "notes": "After short testing, works as expected, maybe some physic glitches of the cape of the hero, but that could be \"normal\", game crashed once when I connected a second controller while in-game, but was not reproducible, so maybe a \"normal\" bug.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1555450976,
+    "title": "Deadbeat Heroes",
+    "source": "protondb"
+  },
+  {
+    "appId": "614090",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.13",
+    "notes": "Played the first few levels (up to the first boss). Seems that all is well with this one.",
+    "os": "Devuan GNU/Linux beowulf/ceres",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555450892,
+    "title": "Deadbeat Heroes",
+    "source": "protondb"
+  },
+  {
+    "appId": "614090",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.10-1-default",
+    "os": "OpenSuse Tumbleweed",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1562092412,
+    "title": "Deadbeat Heroes",
+    "source": "protondb"
+  }
+]

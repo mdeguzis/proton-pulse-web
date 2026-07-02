@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "373420",
+    "cpu": "Intel Core i7-5500U @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Requires a workaround for Mesa drivers, changing screen resolution in game will change desktop resolution as well (and won't switch back to native 1080p after closing the game ) in addition, user configuration files are stored directly in home directory which is quite messy. This port is a joke.",
+    "os": "Linux 4.x",
+    "protonVersion": "Native Linux port",
+    "protonVersionManual": "Native Linux port",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1542970996,
+    "title": "Divinity: Original Sin - Enhanced Edition",
+    "source": "protondb"
+  }
+]

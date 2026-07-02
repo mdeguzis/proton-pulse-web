@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "612540",
+    "title": "Sudden Strike 3",
+    "timestamp": 1535486309,
+    "rating": "Borked",
+    "notes": "Fails to start with error:\nFireglow Games\nPath not found",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD Phenom II X4 965 / GeForce GTX 960",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "612540",
+    "title": "Sudden Strike 3",
+    "timestamp": 1535471909,
+    "rating": "Borked",
+    "notes": "Fails to start with error:\nFireglow Games\nPath not found",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD Phenom II X4 965 / GeForce GTX 960",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

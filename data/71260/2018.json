@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "71260",
+    "title": "Space Channel 5 Part 2",
+    "timestamp": 1535564018,
+    "rating": "Borked",
+    "notes": "Black screen",
+    "os": "Ubuntu 18 18.04.1 LTS",
+    "gpuDriver": "Intel HD Graphics 4000",
+    "specs": "i5-3230M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "71260",
+    "title": "Space Channel 5: Part 2",
+    "timestamp": 1534975824,
+    "rating": "Borked",
+    "notes": "Black screen, 100% CPU. There's more luck under vanilla Wine, but has an uncontrollable FPS due to v-sync not working.",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.13.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "AMD A10-7850K / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "71260",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900-generic",
+    "notes": "Settings screen comes up but selecting play just shows a black screen",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540867269,
+    "title": "Space Channel 5: Part 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "71260",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Setting screen works, game is just a black screen.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541271788,
+    "title": "Space Channel 5: Part 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "71260",
+    "title": "Space Channel 5 Part 2",
+    "timestamp": 1535549618,
+    "rating": "Borked",
+    "notes": "Black screen",
+    "os": "Ubuntu 18 18.04.1 LTS",
+    "gpuDriver": "Intel HD Graphics 4000",
+    "specs": "i5-3230M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "71260",
+    "title": "Space Channel 5: Part 2",
+    "timestamp": 1534961424,
+    "rating": "Borked",
+    "notes": "Black screen, 100% CPU. There's more luck under vanilla Wine, but has an uncontrollable FPS due to v-sync not working.",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.13.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "AMD A10-7850K / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

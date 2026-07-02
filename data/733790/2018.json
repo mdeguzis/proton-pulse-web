@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "733790",
+    "title": "Not Tonight",
+    "timestamp": 1534950204,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Ubuntu Linux 18.04 x64",
+    "gpuDriver": "Proprietary NVIDIA ?",
+    "specs": "Intel core i7 8700K / Geforce GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "733790",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.8-1-default",
+    "notes": "Does not start at all. Log shows that proton cannot load the exe properly. There should not be any compatability issue because the very same executable runs pretty well OOTB in wine.",
+    "os": "\"openSUSE Tumbleweed\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32119 Mb",
+    "rating": "Borked",
+    "timestamp": 1537904460,
+    "title": "Not Tonight",
+    "source": "protondb"
+  },
+  {
+    "appId": "733790",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16034 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538861964,
+    "title": "Not Tonight",
+    "source": "protondb"
+  },
+  {
+    "appId": "733790",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.15-1-default",
+    "notes": "Works after a major proton update. Does not freeze if window loses focus (it does in wine).",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1541361847,
+    "title": "Not Tonight",
+    "source": "protondb"
+  },
+  {
+    "appId": "733790",
+    "title": "Not Tonight",
+    "timestamp": 1534935804,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Ubuntu Linux 18.04 x64",
+    "gpuDriver": "Proprietary NVIDIA ?",
+    "specs": "Intel core i7 8700K / Geforce GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

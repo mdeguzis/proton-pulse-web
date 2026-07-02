@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "501080",
+    "cpu": "Intel Core2 Quad    Q8300  @ 2.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-50-generic",
+    "notes": "All features work well. I was going to give a silver rating. Their are minor issues with graphic artifacts, and missing textures. However, their is crash to desktop situations that can occour. Most of these are internal game bugs as windows users report similar experiences, and their are signs of memory issues. Menu use, like turning off video settings will cause a degradation of performance and CTD that is fixed with a restart of the game. If you don't touch the video settings the game runs fine until the previously mentioned game bugs causes a CTD.  CTD can be managed so game is still playable although barely. Out of 16 hours play time 5 CTDs. BTW if the ocean disappears restart the game. This occurred 3 times in 16 hours of play. To be fare, this game runs like something I would expect on a windows 10 machine.\n\nBTW. Don't bother with Tweaks, Wine D3D made it worse, D3d11 is part of the minimum requirements so disabling it will make the game not run at all.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Bronze",
+    "timestamp": 1562198076,
+    "title": "Fishing: Barents Sea",
+    "source": "protondb"
+  },
+  {
+    "appId": "501080",
+    "cpu": "Intel Xeon E3-1231 v3 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "4.20.16-042016-generic",
+    "notes": "I experienced no bugs so far. It runs out of the box. The performance is about the same as on Windows 10, since it runs on Ultra settings by default.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569409564,
+    "title": "Fishing: Barents Sea",
+    "source": "protondb"
+  },
+  {
+    "appId": "501080",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "4.15.0-64-generic",
+    "notes": "Runs perfectly without tweaks.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.6-GE-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1569795467,
+    "title": "Fishing: Barents Sea",
+    "source": "protondb"
+  }
+]

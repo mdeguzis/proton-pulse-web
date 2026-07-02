@@ -1,0 +1,122 @@
+[
+  {
+    "appId": "224420",
+    "title": "Afterfall InSanity Extended Edition",
+    "timestamp": 1534983748,
+    "rating": "Borked",
+    "notes": "Sadly the game was removed from the store page.",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770k / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224420",
+    "title": "Afterfall InSanity Extended Edition",
+    "timestamp": 1535215032,
+    "rating": "Borked",
+    "notes": ".Net framework doesn't install",
+    "os": "Antergos",
+    "gpuDriver": "vulkan-radeon",
+    "specs": "i5-8400, RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224420",
+    "title": "Afterfall InSanity Extended Edition",
+    "timestamp": 1535377092,
+    "rating": "Platinum",
+    "notes": "No errors observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224420",
+    "title": "Afterfall InSanity Extended Edition",
+    "timestamp": 1535409083,
+    "rating": "Bronze",
+    "notes": "Everything works fine but game like to freeze over and over within a few seconds intervals. Playing it in this stage is hard and painful.",
+    "os": "Arch Linux 64-bit (4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224420",
+    "title": "Afterfall Insanity Extended Edition",
+    "timestamp": 1535971346,
+    "rating": "Platinum",
+    "notes": "no problems",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "224420",
+    "title": "Afterfall InSanity Extended Edition",
+    "timestamp": 1534969348,
+    "rating": "Borked",
+    "notes": "Sadly the game was removed from the store page.",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770k / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224420",
+    "title": "Afterfall InSanity Extended Edition",
+    "timestamp": 1535200632,
+    "rating": "Borked",
+    "notes": ".Net framework doesn't install",
+    "os": "Antergos",
+    "gpuDriver": "vulkan-radeon",
+    "specs": "i5-8400, RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224420",
+    "title": "Afterfall InSanity Extended Edition",
+    "timestamp": 1535362692,
+    "rating": "Platinum",
+    "notes": "No errors observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224420",
+    "title": "Afterfall InSanity Extended Edition",
+    "timestamp": 1535394683,
+    "rating": "Bronze",
+    "notes": "Everything works fine but game like to freeze over and over within a few seconds intervals. Playing it in this stage is hard and painful.",
+    "os": "Arch Linux 64-bit (4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224420",
+    "title": "Afterfall Insanity Extended Edition",
+    "timestamp": 1535956946,
+    "rating": "Platinum",
+    "notes": "no problems",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

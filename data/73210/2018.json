@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "73210",
+    "title": "Sengoku",
+    "timestamp": 1535468249,
+    "rating": "Borked",
+    "notes": "Game does not start",
+    "os": "Archlinux (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7 4770s / r9 285",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "73210",
+    "cpu": "Intel(R) Core(TM) i3-3217U CPU @ 1.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.8",
+    "kernel": "4.14.70-1-MANJARO",
+    "notes": "Rename Sengoku.exe to Sengoku-old.exe / Rename SengokuGame.exe  to Sengoku.exe",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "5860 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537366538,
+    "title": "Sengoku",
+    "source": "protondb"
+  },
+  {
+    "appId": "73210",
+    "title": "Sengoku",
+    "timestamp": 1535453849,
+    "rating": "Borked",
+    "notes": "Game does not start",
+    "os": "Archlinux (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7 4770s / r9 285",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

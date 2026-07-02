@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "95900",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-20-generic",
+    "notes": "loading the menu and  selections works properly. The game does not continue to start the  mission and stop on the message \"press any key to continue\". You can click and press any key it does not continue.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562287984,
+    "title": "Air Conflicts: Secret Wars",
+    "source": "protondb"
+  },
+  {
+    "appId": "95900",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Loads through the menu and selections works properly, but the game input seems to be stuck on \"Press any key to continue.\", but no reaction whatever you press on the keyboard.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562288976,
+    "title": "Air Conflicts: Secret Wars",
+    "source": "protondb"
+  },
+  {
+    "appId": "95900",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "All opening splash screens , intro and menus work.  Stuck at start mission \"press any key to continue\"",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1564381409,
+    "title": "Air Conflicts: Secret Wars",
+    "source": "protondb"
+  }
+]

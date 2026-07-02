@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "285960",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.11-arch2-1-ARCH",
+    "notes": "Forced to the newest proton. Runs exactly the same as the native version. No flaws detected. Played this as a kid, had to give some feedback here.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "20 GB",
+    "rating": "Platinum",
+    "timestamp": 1551032547,
+    "title": "Q*bert: Rebooted",
+    "source": "protondb"
+  }
+]

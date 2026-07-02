@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1696810",
+    "cpu": "12th Gen Intel Core i7-1260P",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.2",
+    "kernel": "6.14.2-300.fc42.x86_64",
+    "notes": "LowLevelFatalError [File:L:\\UE5\\Engine\\Source\\Runtime\\RenderCore\\Private\\ShaderResource.cpp] [Line: 615] \nFShaderMapResource_InlineCode::InitRHI got platform PCD3D_SM6 but it is not compatible with PCD3D_SM5",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "40 GB",
+    "rating": "borked",
+    "timestamp": 1744997009,
+    "title": "",
+    "source": "protondb"
+  }
+]

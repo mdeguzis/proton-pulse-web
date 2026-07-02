@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "42950",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.12-300.fc30.x86_64",
+    "notes": "Runs but displays a bunch of error messages during load and when in-game the terrain doesn't render at all. Buildings, units, UI are fine, just the terrain is missing so technically it's playable.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1562154733,
+    "title": "Elven Legacy: Ranger",
+    "source": "protondb"
+  }
+]

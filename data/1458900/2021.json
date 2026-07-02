@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1458900",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Crash on new game, input lag, and no audio make this game basically unplayable.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1628370418,
+    "title": "Meridian 157: Prologue",
+    "source": "protondb"
+  }
+]

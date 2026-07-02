@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "42810",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Works fine out of the box with no issues at all. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562272634,
+    "title": "For The Glory: A Europa Universalis Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "42810",
+    "cpu": "Intel Core i9-9900KF @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-65-generic",
+    "notes": "NB disable Steam Overlays.\n\nTried FTG with both 4.2-9 and 4.11-7. In both cases it initially loads to the opening menu. I can get music to play. I can change screen resolution, with a restart -- It starts in 800x600. But any attempt to launch a game or a tutorial immediately crashed to the desktop. Turns out that disabling the Steam Overlay and disabling the Desktop Game Theatre in Steam's \"Properties\" for the game allows both the game and the tutorials to load and run normally with either 4.2-9 or 4.11-7. \n\nMusic works, my monitor's native 1920x1200 resolution is supported. Setting new game options and conditions work. The various in game buttons work. Save and Load games work. That's as far as I've got, so far.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1571570873,
+    "title": "For The Glory: A Europa Universalis Game",
+    "source": "protondb"
+  }
+]

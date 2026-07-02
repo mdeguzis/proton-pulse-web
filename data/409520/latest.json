@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "409520",
+    "cpu": "AMD FX-9590 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-54-generic",
+    "notes": "played with xbox driver already installed; used an xb360 controller and it seemed to pick it up without any effort on my end and worked perfectly. Only noticed some minor input lag in the menu; didn't notice one in game. Intro animation/video worked fine. I didn't play very long at all but what i did seemed stable and fluid.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561929971,
+    "title": "Ginger: Beyond the Crystal",
+    "source": "protondb"
+  }
+]

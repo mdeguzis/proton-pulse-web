@@ -1,0 +1,47 @@
+[
+  {
+    "appId": "8260",
+    "cpu": "i5-4570 CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.0-3-amd64",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15983 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536779154,
+    "title": "Sam & Max 201: Ice Station Santa",
+    "source": "protondb"
+  },
+  {
+    "appId": "8260",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537715809,
+    "title": "Sam & Max 201: Ice Station Santa",
+    "source": "protondb"
+  },
+  {
+    "appId": "8260",
+    "cpu": "Intel(R) Core(TM) i5-2500K CPU @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 570/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "notes": "Played throught the entire game. Once had some audio issues (choppiness) but fixed it by saving and restarting the game. Not 100% sure it was Proton's fault.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "11980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539052108,
+    "title": "Sam & Max 201: Ice Station Santa",
+    "source": "protondb"
+  }
+]

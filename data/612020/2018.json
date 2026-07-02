@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "612020",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.23.0, 4.15.0-33-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-33-generic",
+    "notes": "It might error out on first launch, complaining it couldn't load HD textures, but after a restart it should run fine. Framerate is lower than on Windows, but that shouldn't matter in a game like this.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16036 Mb",
+    "rating": "Platinum",
+    "systemInfoNotes": "CPU 3.9GHz",
+    "timestamp": 1536737099,
+    "title": "Zombidle : REMONSTERED",
+    "source": "protondb"
+  },
+  {
+    "appId": "612020",
+    "cpu": "Intel(R) Celeron(R) CPU  N2830  @ 2.16GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "I got a texture error on the first launch, but since the second launch: it now works perfectly.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7865 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537367516,
+    "title": "Zombidle : REMONSTERED",
+    "source": "protondb"
+  },
+  {
+    "appId": "612020",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Ran perfectly the second time, and was able to resume my cloud save.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541139614,
+    "title": "Zombidle : REMONSTERED",
+    "source": "protondb"
+  }
+]

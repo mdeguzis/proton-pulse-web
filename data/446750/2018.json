@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "446750",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Runs but with very low performance.",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "15902 MB",
+    "rating": "Silver",
+    "timestamp": 1536833141,
+    "title": "Portal Stories: VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "446750",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.9-arch1-1-vfio",
+    "notes": "Played entire game. Performance was good. Didn't notice any issues except one minor graphical glitch with the laser beam wall things.",
+    "os": "Antergos Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541354937,
+    "title": "Portal Stories: VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "446750",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.18.04",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Heavy audio crackling/distortions during dialogue when starting a new game. However this problem vanishes once you actually start the first level. I played the entire game without any problems.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1544925250,
+    "title": "Portal Stories: VR",
+    "source": "protondb"
+  }
+]

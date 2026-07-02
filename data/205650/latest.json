@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "205650",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.0-0.bpo.2-amd64",
+    "notes": "The game is crash constantly, mostly at saving, even in windows because it runs out of memory due to be able to only allocate 2GB of ram. It can be fixed patching the exe with this tool that will allow it to allocate up to 4GB of ram. After patching the game runs flawlessly from start to finish.\n",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1556461049,
+    "title": "The Testament of Sherlock Holmes",
+    "source": "protondb"
+  }
+]

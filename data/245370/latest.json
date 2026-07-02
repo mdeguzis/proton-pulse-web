@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "245370",
+    "cpu": "i5-4210U CPU @ 1.70GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Crashes upon starting. :-(",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "3872 Mb",
+    "rating": "Borked",
+    "timestamp": 1537081437,
+    "title": "Etherium",
+    "source": "protondb"
+  },
+  {
+    "appId": "245370",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Seemingly works fine. There might be a few texture glitches, but it might just be a weird art choice (I haven't played this on windows).",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541536637,
+    "title": "Etherium",
+    "source": "protondb"
+  }
+]

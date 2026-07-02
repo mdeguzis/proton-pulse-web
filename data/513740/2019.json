@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "513740",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Game runs, but there are severe graphical glitches. Textures pop in and out...highlighted objects can be seen through walls, and the frame rate is terrible. Using Wine D3D lowers the frame rate to single digits, and disabling D3D stops the game from loading altogether",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1556127860,
+    "title": "Joana's Life",
+    "source": "protondb"
+  },
+  {
+    "appId": "513740",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.5-arch1-1-ARCH",
+    "os": "Arch",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1566237445,
+    "title": "Joana's Life",
+    "source": "protondb"
+  }
+]

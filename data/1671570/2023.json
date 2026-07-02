@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1671570",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 14.0.6, DRM 3.44, 5.17.9-051709-generic)",
+    "gpuDriver": "4.6 Mesa 22.1.5 - kisak-mesa PPA",
+    "kernel": "5.17.9-051709-generic",
+    "notes": "I still have not managed to get it to successfully launch... for me it is BORKED.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1696021075,
+    "title": "Out and About",
+    "source": "protondb"
+  }
+]

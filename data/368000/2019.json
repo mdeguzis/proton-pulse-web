@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "368000",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Even with 2xSSAA works (200% render), at 1080p with everything maxed out and it's just like windows. 11/10",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553441845,
+    "title": "100ft Robot Golf",
+    "source": "protondb"
+  }
+]

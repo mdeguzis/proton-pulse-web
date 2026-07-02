@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3484300",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Slow graphical draw while moving makes it uncomfortable to play. Either its the Game itself in its current state or its because of Proton.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1772380104,
+    "title": "",
+    "source": "protondb"
+  }
+]

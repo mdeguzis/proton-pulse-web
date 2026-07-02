@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "697250",
+    "cpu": "Intel Core i7-6700K @ 4.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa/ACO 19.2.0-devel (git-e1f60e9b38)",
+    "kernel": "5.2.6-arch1-1-ARCH",
+    "notes": "Does not work: `Fatal error!`",
+    "os": "Archlinux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565276432,
+    "title": "Beyond Enemy Lines 2",
+    "source": "protondb"
+  }
+]

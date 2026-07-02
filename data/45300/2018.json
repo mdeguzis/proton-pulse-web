@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "45300",
+    "title": "Wings of Prey",
+    "timestamp": 1535233099,
+    "rating": "Borked",
+    "notes": "It shows the startup menu for a split second then crashes. Probably due to third party DRM.",
+    "os": "Debian GNU/Linux buster/sid",
+    "gpuDriver": "NVIDIA 390.77-1",
+    "specs": "AMD FX-4100 / GTX 750",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "45300",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.18.18-300.fc29.x86_64",
+    "notes": "yuPlay Launcher seems broken, but starting the game from command line seems to be working fine. Another option is to rename launcher.exe to launcher.exe.bak and copy acess.exe to launcher.exe. This removes option to log into online account or set resolution (should launcher work anyway), but allows to use Steam Play button. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542377662,
+    "title": "Wings of Prey",
+    "source": "protondb"
+  },
+  {
+    "appId": "45300",
+    "cpu": "AMD FX-4100 Quad-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "After moving launcher.exe to launcher.exe.bak and then copying acess.exe to launcher.exe it works perfectly as far as i can tell.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1545560343,
+    "title": "Wings of Prey",
+    "source": "protondb"
+  },
+  {
+    "appId": "45300",
+    "title": "Wings of Prey",
+    "timestamp": 1535218699,
+    "rating": "Borked",
+    "notes": "It shows the startup menu for a split second then crashes. Probably due to third party DRM.",
+    "os": "Debian GNU/Linux buster/sid",
+    "gpuDriver": "NVIDIA 390.77-1",
+    "specs": "AMD FX-4100 / GTX 750",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

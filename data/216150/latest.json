@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "216150",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "The Nexon launcher appear for a brief second, after which it disappears but leaves the process running. The game must be killed manually.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1553708191,
+    "title": "MapleStory",
+    "source": "protondb"
+  },
+  {
+    "appId": "216150",
+    "cpu": "Intel Core i5       M 520  @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ironlake Mobile",
+    "gpuDriver": "2.1 Mesa 18.2.8",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Shows pre-launcher but nexon anti-cheat seems to stop the app from working. ",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.2.3",
+    "protonVersionManual": "4.2.3",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1557699841,
+    "title": "MapleStory",
+    "source": "protondb"
+  },
+  {
+    "appId": "216150",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Launcher shows for a brief moment then it disappears leaving the game hanging open.\nYou have to close the process manually.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1559028588,
+    "title": "MapleStory",
+    "source": "protondb"
+  }
+]

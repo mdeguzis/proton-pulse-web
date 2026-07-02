@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1421290",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 GRE",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-60-generic",
+    "notes": "Works fine with slight performance dips",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1749234119,
+    "title": "Battle Shapers",
+    "source": "protondb"
+  }
+]

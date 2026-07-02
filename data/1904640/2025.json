@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1904640",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.16.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.1-arch1.1",
+    "kernel": "6.16.3-arch1-1",
+    "notes": "Game runs fine with the only issue being the fact that the music doesn't play.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1756160395,
+    "title": "Al-Qadim: The Genie's Curse",
+    "source": "protondb"
+  }
+]

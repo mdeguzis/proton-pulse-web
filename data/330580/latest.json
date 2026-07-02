@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "330580",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.6-042006-generic",
+    "notes": "Both single-player and cross-platform multiplayer were tested, played several full matches with friends. Ran quite well! 1440p, no performance issues with friends. I didn't do any sort of configuration work, just ran it with default Steam Play. I even streamed it! I'm really quite surprised at how easy this one was.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549644755,
+    "title": "Shark Attack Deathmatch 2",
+    "source": "protondb"
+  }
+]

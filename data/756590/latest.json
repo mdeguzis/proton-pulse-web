@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "756590",
+    "cpu": "AMD FX-4350 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Crashes in tow seconds after launch. Tweaks didn't work",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1554621273,
+    "title": "Atelier Lydie & Suelle ~The Alchemists and the Mysterious Paintings~",
+    "source": "protondb"
+  },
+  {
+    "appId": "756590",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6.13568 Compatibility Profile Context 5.0.73",
+    "kernel": "5.0.21-050021-generic",
+    "notes": "requires the same d3d9.dll dummy fix as atelier firis (see Firis Github https://github.com/ValveSoftware/Proton/issues/1486#issuecomment-451980052) after that the game runs perfectly",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563878746,
+    "title": "Atelier Lydie & Suelle ~The Alchemists and the Mysterious Paintings~",
+    "source": "protondb"
+  }
+]

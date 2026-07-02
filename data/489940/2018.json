@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "489940",
+    "title": "Battalion 1944",
+    "timestamp": 1535705536,
+    "rating": "Borked",
+    "notes": "-",
+    "os": "Lubuntu 18.04 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX 8350 / GTX 1060 6GB",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "489940",
+    "title": "Battalion 1944",
+    "timestamp": 1536413272,
+    "rating": "Borked",
+    "notes": "ERROR: ld.so: object '/home/username/.steam/ubuntu12_32/gameoverlayrenderer.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored. /bin/sh: 1: /home/username/.steam/steam/steamapps/common/Battalion 1944/Battalion.exe: Exec format error GameAction [AppID 489940, ActionID 6] : LaunchApp changed task to Completed with \"\"",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "489940",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "notes": "ERROR: ld.so: object '/home/thomas/.steam/ubuntu12_32/gameoverlayrenderer.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.\n/bin/sh: 1: /home/thomas/.steam/steam/steamapps/common/Battalion 1944/Battalion.exe: Exec format error\n\n\nInstantly quits. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544797844,
+    "title": "BATTALION 1944",
+    "source": "protondb"
+  },
+  {
+    "appId": "489940",
+    "title": "Battalion 1944",
+    "timestamp": 1535691136,
+    "rating": "Borked",
+    "notes": "-",
+    "os": "Lubuntu 18.04 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX 8350 / GTX 1060 6GB",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "489940",
+    "title": "Battalion 1944",
+    "timestamp": 1536398872,
+    "rating": "Borked",
+    "notes": "ERROR: ld.so: object '/home/username/.steam/ubuntu12_32/gameoverlayrenderer.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored. /bin/sh: 1: /home/username/.steam/steam/steamapps/common/Battalion 1944/Battalion.exe: Exec format error GameAction [AppID 489940, ActionID 6] : LaunchApp changed task to Completed with \"\"",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

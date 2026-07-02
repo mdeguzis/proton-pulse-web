@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "248610",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Native version has 100% CPU usage on my machines, runs perfectly using proton, normal CPU usage.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549325025,
+    "title": "Door Kickers",
+    "source": "protondb"
+  },
+  {
+    "appId": "248610",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Game works fine native and on Proton.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556965915,
+    "title": "Door Kickers",
+    "source": "protondb"
+  }
+]

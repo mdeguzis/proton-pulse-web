@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "452440",
+    "cpu": "Intel(R) Core(TM) i5-2520M CPU @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.18.12-200.fc28.x86_64",
+    "notes": "Tested using free Demo version. Worked without any tweaks, but I have Wine D3D11 enabled because my hardware has no Vulkan support.",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "3830 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539943236,
+    "title": "Flowers -Le volume sur printemps-",
+    "source": "protondb"
+  },
+  {
+    "appId": "452440",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.19.0-3-MANJARO",
+    "notes": "So running this Visual Novel was flawlessly using proton, all text was where it should be all images are shown properly. Install and launch work fine. Though be said the game has a \"Anti-Piracy-Measure\" which is triggered when using proton (even though I legally own a version of the game). Its easy to circumvent it though. After the intro the game will hang in an white screen. You can \"fix\" it if you can get a save right after the intro and load that save. After that the game runs perfectly. So overall Gold for me since you will still need a save to come through the intro scene. \n",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541177276,
+    "title": "Flowers -Le volume sur printemps-",
+    "source": "protondb"
+  }
+]

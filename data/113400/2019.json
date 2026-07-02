@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "113400",
+    "cpu": "Intel Core2 Quad    Q9300  @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 640",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.19.49-1-MANJARO",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1563826625,
+    "title": "APB Reloaded",
+    "source": "protondb"
+  }
+]

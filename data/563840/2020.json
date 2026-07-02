@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "563840",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.0-7625-generic",
+    "notes": "Worked out of the box with Proton 4.11-11 and X-Box game controller without any tweaks! Nice!",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1578671748,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "563840",
+    "cpu": "Intel Pentium G4620 @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.13-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1580825689,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "563840",
+    "cpu": "Intel Pentium G4620 @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.39-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1596702209,
+    "title": "",
+    "source": "protondb"
+  }
+]

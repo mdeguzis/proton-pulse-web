@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "31240",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "Out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "3.16-4",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561558882,
+    "title": "Sam & Max 303: They Stole Max's Brain!",
+    "source": "protondb"
+  },
+  {
+    "appId": "31240",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "runs perfectly, no problems",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "3.7-8",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565612118,
+    "title": "Sam & Max 303: They Stole Max's Brain!",
+    "source": "protondb"
+  }
+]

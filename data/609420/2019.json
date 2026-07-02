@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "609420",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Keep in mind my hardware specs are low...This game runs almost flawlessly with PROTON_USE_WINED3D with the exception of the cut-scenes showing up as a black screen with no audio.  This is OK with me because it displays press the \"A\" button to skip and the cut-scene can be skipped.  The game-play is excellent, not really a story based game, and I can watch the cut-scenes on YouTube in between worlds.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1565895558,
+    "title": "Never Give Up",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "609420",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "notes": "So far the gameplay runs just as well as windows. One problem that occurs is when you start the game is that it goes black until you press enter, even the cutscenes don't startuntil you press enter.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1565901054,
+    "title": "Never Give Up",
+    "source": "protondb"
+  }
+]

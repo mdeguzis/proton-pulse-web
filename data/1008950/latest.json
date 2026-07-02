@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1008950",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.42.0, 5.15.2-217-tkg-bmq, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.2-217-tkg-bmq",
+    "notes": "This VR game starts and seems to respond correctly, but never appears in the headset.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1637548145,
+    "title": "",
+    "source": "protondb"
+  }
+]

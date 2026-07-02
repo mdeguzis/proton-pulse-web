@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "895670",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-62-generic",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-4",
+    "ram": "8 GB",
+    "timestamp": 1568771473,
+    "title": "Armajet",
+    "source": "protondb"
+  },
+  {
+    "appId": "895670",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-62-generic",
+    "notes": "The game works perfect, including registering for the optional account.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-4",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1568771508,
+    "title": "Armajet",
+    "source": "protondb"
+  }
+]

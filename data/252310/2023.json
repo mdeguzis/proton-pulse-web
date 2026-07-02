@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "252310",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 17.0.6, DRM 3.54, 6.5.0-5-amd64)",
+    "gpuDriver": "4.6 Mesa 23.3.1-3",
+    "kernel": "6.5.0-5-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "8.0-4",
+    "ram": "63 GB",
+    "rating": "platinum",
+    "timestamp": 1703202435,
+    "title": "",
+    "source": "protondb"
+  }
+]

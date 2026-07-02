@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "523030",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.6-arch1-1-ARCH",
+    "notes": "I've tried disabling esync and d3d11 as well as using wine d3d11, but nothing allows this game to launch. I don't even get a window.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1549521467,
+    "title": "Tank Universal 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "283600",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "u cant start it, it will crash instantly after a second of black screen.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545439568,
+    "title": "World of Subways 2 \u2013 Berlin Line 7",
+    "source": "protondb"
+  }
+]

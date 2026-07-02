@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "587450",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-113.current",
+    "notes": "Runs fairly slow, but not sure if it's slower than Windows as it's pretty slow there too. Didn't play for very long, mostly just wanted to confirm it worked.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1554974871,
+    "title": "Saurian",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

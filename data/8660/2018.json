@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "8660",
+    "title": "GTR Evolution",
+    "timestamp": 1535053976,
+    "rating": "Borked",
+    "notes": "This game not",
+    "os": "Ubuntu 16.04.5 64-bit",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 3230m/intel hd 4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "8660",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Doesnt start.",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16054 MB",
+    "rating": "Borked",
+    "timestamp": 1540155303,
+    "title": "GTR Evolution Expansion Pack for RACE 07",
+    "source": "protondb"
+  },
+  {
+    "appId": "8660",
+    "title": "GTR Evolution",
+    "timestamp": 1535039576,
+    "rating": "Borked",
+    "notes": "This game not",
+    "os": "Ubuntu 16.04.5 64-bit",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 3230m/intel hd 4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

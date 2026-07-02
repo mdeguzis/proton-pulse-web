@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1086860",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.14.17-lqx1-1-lqx",
+    "notes": "Working fine, needs Steam Input for controllers.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1636585877,
+    "title": "",
+    "source": "protondb"
+  }
+]

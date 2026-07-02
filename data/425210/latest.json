@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "425210",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-c989661985)",
+    "kernel": "5.0.12-arch1-1-ARCH",
+    "notes": "Game works native (but only in FullHD, not any higher resolution) and on Proton out of the box even in 4k. I installed manually D9VK, but the game crashed with D9VK.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557080942,
+    "title": "Shadwen",
+    "source": "protondb"
+  },
+  {
+    "appId": "425210",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-3f3665b8d5)",
+    "kernel": "5.2.1-arch1-1-ARCH",
+    "notes": "Game works native on Linux. It works fine out of the box on Proton, but there is a white box visible slihgtly over half of the screen. I installed D9VK and it worked great too with this DX9 to Vulkan translation, even when testing it with the new ACO compiler.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1563701001,
+    "title": "Shadwen",
+    "source": "protondb"
+  }
+]

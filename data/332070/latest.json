@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "332070",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.1",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "run with wined3d enabled to avoid error, sound not so clean but still enjoyable",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1555594884,
+    "title": "School of Dragons",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "332070",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-200.fc30.x86_64",
+    "notes": "Works pretty well out-of-the-box. Only minor issues are with mouseClick hitboxes which are sometimes off from their targets. (That might just be the game's fault.)",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1566393431,
+    "title": "School of Dragons",
+    "source": "protondb"
+  }
+]

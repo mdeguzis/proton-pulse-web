@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "668360",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.0-devel (git-2da68c8649)",
+    "kernel": "5.5.0-rc2-x86_64+",
+    "notes": "",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1576830534,
+    "title": "",
+    "source": "protondb"
+  }
+]

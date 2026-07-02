@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1576350",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.41.0, 5.13.6-184-tkg-bmq, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.13.6-184-tkg-bmq",
+    "notes": "It starts perfectly and shows the configuration screen, but gets to a black screen when starting a new game.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1633046296,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1576350",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.41.0, 5.13.6-184-tkg-bmq, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.13.6-184-tkg-bmq",
+    "notes": "Game runs flawlessly if you install mfplat scripts from my fork of z0z0z.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1633120963,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1576350",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.42.0, 5.14.8-203-tkg-bmq, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.14.8-203-tkg-bmq",
+    "notes": "Works well (but without some movies) if you install the game and add mfplat libraries to it.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1635357013,
+    "title": "",
+    "source": "protondb"
+  }
+]

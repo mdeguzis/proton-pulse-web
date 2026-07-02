@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "317100",
+    "title": "Republique",
+    "timestamp": 1536120548,
+    "rating": "Borked",
+    "notes": "crashes on startup",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "specs": "i7-7700HQ/HD Graphics 630",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "317100",
+    "cpu": "i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-20-generic",
+    "notes": "crashed",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "default",
+    "ram": "15899 Mb",
+    "rating": "Borked",
+    "timestamp": 1536764393,
+    "title": "Republique",
+    "source": "protondb"
+  },
+  {
+    "appId": "317100",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Runs like windows version. Loaded a few files at the end and at the beginning. Doesnt have an icon on the activities bar when I minimized the game however. Used ALT-TAB to find it again. ",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541887627,
+    "title": "Republique",
+    "source": "protondb"
+  },
+  {
+    "appId": "317100",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.0",
+    "kernel": "4.20.0-rc5-2595646791c319cadfdbf271563aac97d0843dc7+",
+    "os": "Fedora release 30 (Rawhide)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1544546223,
+    "title": "Republique",
+    "source": "protondb"
+  },
+  {
+    "appId": "317100",
+    "title": "Republique",
+    "timestamp": 1536106148,
+    "rating": "Borked",
+    "notes": "crashes on startup",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "specs": "i7-7700HQ/HD Graphics 630",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

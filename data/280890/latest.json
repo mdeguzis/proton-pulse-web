@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "280890",
+    "cpu": "i5-5200U CPU @ 2.20GHz",
+    "gpu": "GeForce 940M/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.15.0-33-generic",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7.6-beta",
+    "ram": "7404 Mb",
+    "rating": "Borked",
+    "timestamp": 1536999613,
+    "title": "Ghostship Aftermath",
+    "source": "protondb"
+  },
+  {
+    "appId": "280890",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc4-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900rc4-generic",
+    "notes": "Nothing happens game won't start, tried also with different Proton launch options. ",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15961 Mb",
+    "rating": "Borked",
+    "timestamp": 1539471063,
+    "title": "Ghostship Aftermath",
+    "source": "protondb"
+  }
+]

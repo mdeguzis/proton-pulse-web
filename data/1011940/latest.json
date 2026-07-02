@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "1011940",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "runs perfectly out of the box. Decensor patch can be installed by navigating to the game directory from the Z: drive in the patch installer. Only minor issue was that some text would be clipped off the screen. That was fixed by installing corefonts using protontricks: protontricks 1011940 corefonts",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "Proton-4.6-GE-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560743958,
+    "title": "Ideology in Friction",
+    "source": "protondb"
+  }
+]

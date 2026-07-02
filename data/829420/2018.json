@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "829420",
+    "title": "Abandon Ship (early access)",
+    "timestamp": 1536711330,
+    "rating": "Platinum",
+    "notes": "no issues",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 6700, Nvidia 1060 6GB",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "829420",
+    "title": "Fun Hospital",
+    "timestamp": 1536792263,
+    "rating": "Bronze",
+    "notes": "no sound, crash every ~5 minutes.",
+    "os": "Ubuntu 16.04 64-bit (Kenel 4.15.0-34)",
+    "gpuDriver": "NVIDIA GT 740M (4.5.0 NVIDIA 384.130)",
+    "specs": "Intel(R) Core(TM) i5-4210U CPU @ 1.70GHz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "829420",
+    "title": "Abandon Ship (early access)",
+    "timestamp": 1536696930,
+    "rating": "Platinum",
+    "notes": "no issues",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 6700, Nvidia 1060 6GB",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "829420",
+    "title": "Fun Hospital",
+    "timestamp": 1536777863,
+    "rating": "Bronze",
+    "notes": "no sound, crash every ~5 minutes.",
+    "os": "Ubuntu 16.04 64-bit (Kenel 4.15.0-34)",
+    "gpuDriver": "NVIDIA GT 740M (4.5.0 NVIDIA 384.130)",
+    "specs": "Intel(R) Core(TM) i5-4210U CPU @ 1.70GHz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "390540",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-141-generic",
+    "notes": "It only started once, but quickly crashed. Since then is not starting.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1546637935,
+    "title": "High Fidelity",
+    "source": "protondb"
+  },
+  {
+    "appId": "390540",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.4.0-141-generic",
+    "notes": "It does not start. It showed a window with an 3D avatar inside, but only once. Since then no window is shown.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1548081930,
+    "title": "High Fidelity",
+    "source": "protondb"
+  }
+]

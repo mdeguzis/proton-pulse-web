@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "234490",
+    "title": "Rush Bros",
+    "timestamp": 1536357347,
+    "rating": "Borked",
+    "notes": "wont boot at all",
+    "os": "Arch",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7- 4500U / iGPU",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  },
+  {
+    "appId": "234490",
+    "cpu": "Intel(R) Core(TM) i5-7300HQ CPU @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 with Max-Q Design/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "Finished one level. Everything is fine.",
+    "os": "\"Antergos Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7839 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538823938,
+    "title": "Rush Bros.",
+    "source": "protondb"
+  },
+  {
+    "appId": "234490",
+    "title": "Rush Bros",
+    "timestamp": 1536342947,
+    "rating": "Borked",
+    "notes": "wont boot at all",
+    "os": "Arch",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7- 4500U / iGPU",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  }
+]

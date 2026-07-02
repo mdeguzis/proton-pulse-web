@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "817130",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.15.0-45-lowlatency",
+    "notes": "1. I usually can't complete a whole match without a crash - usually get about 10-15 minutes in before it happens (This is offline. I haven't tested online yet). Seems to last longer without crashing in 1vs1 matches though. Crashes are much less likely when just browsing menus. I also noticed that in some situations you wouldn't hear characters speaking and would have to rely on the subtitles.\n---\n2. As for performance, I haven't played it on Windows to compare but it seems to run pretty good if I keep it at 1080p, staying at or close to my 60fps vsync cap. It can slow down a bit if there's lots of characters on screen at once (8 man Hell in a Cell makes it chug a bit, for example).\n---\n3. Disabling Esync apparently makes no difference in terms of stability. YMMV.\n---\n4.Over all, it's pretty playable but it CTD's or locks up my system a bit too often to give it a better rating. I will add another report if I see improvements.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1551654731,
+    "title": "WWE 2K19",
+    "source": "protondb"
+  },
+  {
+    "appId": "817130",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Was working before hand. After reinstalling windows a while back trying it out, i decided that I was still unhappy with it. Reinstalling Pop OS I have invisible wrestlers and I'm not sure why (fresh install).  Tried new saves and deleting the config files in the compat data nothing which is a shame as the  performance is perfect once shaders are cached.  Waiting on an update to fix the issue.\n\nNote: Upgraded to V5 kernel to fix a mesa sleep bug, the default kernel still had this issue.",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "4.2.2",
+    "protonVersionManual": "4.2.2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555270030,
+    "title": "WWE 2K19",
+    "source": "protondb"
+  },
+  {
+    "appId": "817130",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-62-generic",
+    "notes": "Perfect...",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "Proton-4.15-G2",
+    "ram": "22 GB",
+    "rating": "Platinum",
+    "timestamp": 1570557459,
+    "title": "WWE 2K19",
+    "source": "protondb"
+  }
+]

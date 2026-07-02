@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "251170",
+    "title": "Damned",
+    "timestamp": 1535360772,
+    "rating": "Silver",
+    "notes": "Crashes upon exit; must force close",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "251170",
+    "cpu": "i7-4770K CPU @ 3.50GHz",
+    "gpu": "X.Org AMD PITCAIRN (DRM 2.50.0 / 4.15.0-34-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Crash at exit game",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Proton 3.7.6 (Beta)",
+    "ram": "15984 Mb",
+    "rating": "Silver",
+    "timestamp": 1537013276,
+    "title": "Damned",
+    "source": "protondb"
+  },
+  {
+    "appId": "251170",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Works fine but takes a long time to start. Hangs / crashes at exit. ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1544241924,
+    "title": "Damned",
+    "source": "protondb"
+  },
+  {
+    "appId": "251170",
+    "title": "Damned",
+    "timestamp": 1535346372,
+    "rating": "Silver",
+    "notes": "Crashes upon exit; must force close",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

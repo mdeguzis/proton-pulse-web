@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "348670",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Missing text in main menu",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5",
+    "rating": "Silver",
+    "timestamp": "1536364800",
+    "title": "Immune - True Survival",
+    "source": "protondb"
+  },
+  {
+    "appId": "348670",
+    "cpu": "Intel Celeron G550 @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Desktop",
+    "gpuDriver": "3.0 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "abre pero al seleccionar servidor se bloquea",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "2 GB",
+    "rating": "Borked",
+    "timestamp": 1541297099,
+    "title": "Immune - True Survival",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

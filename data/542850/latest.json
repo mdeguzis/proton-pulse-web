@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "542850",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "The game launches but stays blank on 4.11-1. On 4.2-9 it launches and runs but has some performance issues. Delay with either controller or the game itself.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1564946987,
+    "title": "Dystopy",
+    "source": "protondb"
+  }
+]

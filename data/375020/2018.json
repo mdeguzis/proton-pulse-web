@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "375020",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz",
+    "gpu": "GeForce 9700M GTS/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.106",
+    "kernel": "4.15.0-33-generic",
+    "notes": "No issues found.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7972 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536763452,
+    "title": "Al Emmo's Postcards from Anozira",
+    "source": "protondb"
+  },
+  {
+    "appId": "375020",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.0-devel (git-6100618 2018-11-07 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-10-generic",
+    "notes": "No issues found",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541588202,
+    "title": "Al Emmo's Postcards from Anozira",
+    "source": "protondb"
+  }
+]

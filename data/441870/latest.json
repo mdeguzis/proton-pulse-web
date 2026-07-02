@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "441870",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Need use wined3d11. Performance is awful, but its Unity.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "9 GB",
+    "rating": "Gold",
+    "timestamp": 1551823018,
+    "title": "OutDrive",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "441870",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556560808,
+    "title": "OutDrive",
+    "source": "protondb"
+  },
+  {
+    "appId": "441870",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-54-generic",
+    "notes": "No issues. 160fps ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563618188,
+    "title": "OutDrive",
+    "source": "protondb"
+  }
+]

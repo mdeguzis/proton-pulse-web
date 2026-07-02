@@ -1,0 +1,69 @@
+[
+  {
+    "appId": "240600",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Run out of a box. Performance not so good",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "9 GB",
+    "rating": "Platinum",
+    "timestamp": 1551121040,
+    "title": "MotoGP\u212213",
+    "source": "protondb"
+  },
+  {
+    "appId": "240600",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "it crashes after content loaded video's wont play. did not use any tweaks yet as of this try.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560150461,
+    "title": "MotoGP\u212213",
+    "source": "protondb"
+  },
+  {
+    "appId": "240600",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "did no tweaks, video's dont play....just black screen no audi. skipable. performance is realy bad with my gpu and cpu it has very noticable frame drops. it alswo wont reconize my gpu but thats maybe on windows side also. will dive deeper into it and do longer game sessions in future",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1560157840,
+    "title": "MotoGP\u212213",
+    "source": "protondb"
+  },
+  {
+    "appId": "240600",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "There is no movie playback, which breaks the intro, menu, and loading screens. The main menu causes a freeze for about 2 minutes, during the first load that session. There's minor stutters during gameplay. D9VK seems to solve these stutters, but causes the game to behave oddly in Fullscreen mode freezing the game during certain loads (Alt-Tabbing a few times seems to fix it). Performance is identical to Windows.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-4",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1568779152,
+    "title": "MotoGP\u212213",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

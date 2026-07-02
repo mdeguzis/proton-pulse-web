@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "206210",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13",
+    "notes": "Crashes after the title screen.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557316020,
+    "title": "Gotham City Impostors Free to Play",
+    "source": "protondb"
+  },
+  {
+    "appId": "206210",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "4.15.0-64-generic",
+    "notes": "PROTON_USE_D9VK",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-4",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1568938860,
+    "title": "Gotham City Impostors Free to Play",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "206210",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-31-generic",
+    "notes": "The game runs perfectly.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570402920,
+    "title": "Gotham City Impostors Free to Play",
+    "source": "protondb"
+  }
+]

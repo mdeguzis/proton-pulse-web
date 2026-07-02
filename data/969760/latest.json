@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "969760",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 21.1.5, DRM 3.64, 6.17.9-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.7-cachyos1.2",
+    "kernel": "6.17.9-2-cachyos",
+    "notes": "Worked perfectly",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773103642,
+    "title": "Omno",
+    "source": "protondb"
+  }
+]

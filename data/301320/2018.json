@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "301320",
+    "title": "NoLimits 2 Roller Coaster Simulation",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "The install from Steam works fine, game won't start, and gives an error: \"FATAL ERROR: Direct3D returned with an unknown error code. X11/GNU/Linux was detected so this is most likely an implementation error inside the DirectX emulation layer of your OS.\" The game uses Direct3D version 11.",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel I7-4770K, Nvidia GTX 780Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "301320",
+    "title": "NoLimits 2 Roller Coaster Simulation",
+    "timestamp": 1534968993,
+    "rating": "Borked",
+    "notes": "The game crashes as soon as it launches. A window pops up saying \"Direct3D returned with an unknown error code. X11/GNU/Linux was detected so this is most likely an implementation error inside the DirectX emulation layer of your OS.\"",
+    "os": "openSuse Tumbleweed (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-8700K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "301320",
+    "title": "NoLimits 2 Roller Coaster Simulation",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "The install from Steam works fine, game won't start, and gives an error: \"FATAL ERROR: Direct3D returned with an unknown error code. X11/GNU/Linux was detected so this is most likely an implementation error inside the DirectX emulation layer of your OS.\" The game uses Direct3D version 11.",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel I7-4770K, Nvidia GTX 780Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "301320",
+    "title": "NoLimits 2 Roller Coaster Simulation",
+    "timestamp": 1534954593,
+    "rating": "Borked",
+    "notes": "The game crashes as soon as it launches. A window pops up saying \"Direct3D returned with an unknown error code. X11/GNU/Linux was detected so this is most likely an implementation error inside the DirectX emulation layer of your OS.\"",
+    "os": "openSuse Tumbleweed (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-8700K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

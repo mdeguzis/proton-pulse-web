@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "522490",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Installs and starts just fine, but shortly into the title sequence it crashes with a detailed error message involving vertex shaders.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1571712056,
+    "title": "Carrie's Order Up!",
+    "source": "protondb"
+  }
+]

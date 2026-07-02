@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1531010",
+    "cpu": "Intel Xeon E5-1650 v2 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.10.0-14-lowlatency",
+    "notes": "Works out of the box",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1615694232,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "923810",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Doesn't detect any graphics adapters OOB and doesn't allow you past the settings screen. After enabling Wine D3D11 it seems to play 100% fine.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552259278,
+    "title": "If My Heart Had Wings -Flight Diary-",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

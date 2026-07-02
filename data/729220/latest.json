@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "729220",
+    "cpu": "Intel Core i7-4750HQ @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Started a new game, I was able to play flawlessly. Exiting the game make it crash.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1541371243,
+    "title": "Save me Mr Tako: Tasukete Tako-San",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "765910",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-300.fc30.x86_64",
+    "notes": "(tested normal version) Similar to Larry 1-5 - fullscreen does not work correctly out of the box. Use alt+enter to switch to windowed. Otherwise seems to be working fine.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1561852599,
+    "title": "Leisure Suit Larry 6 - Shape Up Or Slip Out",
+    "source": "protondb"
+  }
+]

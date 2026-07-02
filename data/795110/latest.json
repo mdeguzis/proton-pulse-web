@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "795110",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.2, DRM 3.59, 6.9.3-76060903-generic)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "os controles problem\u00e1ticos tiram a gra\u00e7a de jogar um plataforma",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1740880448,
+    "title": "IIN",
+    "source": "protondb"
+  }
+]

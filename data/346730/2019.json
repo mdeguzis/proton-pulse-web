@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "346730",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Game plays well at a capped 30 FPS, sound effects don't work...",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1556934554,
+    "title": "GOCCO OF WAR",
+    "source": "protondb"
+  }
+]

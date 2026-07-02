@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "445420",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.17.4-76061704-generic)",
+    "gpuDriver": "4.6 Mesa 25.1.5-1pop0~1756399231~22.04~b84bab8",
+    "kernel": "6.17.4-76061704-generic",
+    "notes": "Works just fine, it's a lovely game",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "silver",
+    "timestamp": 1768706836,
+    "title": "",
+    "source": "protondb"
+  }
+]

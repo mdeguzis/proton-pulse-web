@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "409510",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.19.79",
+    "notes": "Crash on load.",
+    "os": "NixOS 19.09.794.28d2548a03f (Loris)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1571225276,
+    "title": "Genesis Online",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3273660",
+    "cpu": "12th Gen Intel Core i3-1215U",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 26.1.2-arch1.1",
+    "kernel": "7.0.11-arch1-1",
+    "notes": "its not work, i click to play and nothing appear",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1781262742,
+    "title": "",
+    "source": "protondb"
+  }
+]

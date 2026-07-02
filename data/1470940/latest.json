@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1470940",
+    "cpu": "Intel Core i9-10900K @ 4.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Super",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.6-76060606-generic",
+    "notes": "Game runs inside a DOSBox instance; no issues whatsoever.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1708036793,
+    "title": "STAR FLEET II - Krellan Commander Version 2.0",
+    "source": "protondb"
+  },
+  {
+    "appId": "1470940",
+    "cpu": "Intel Core i9-10900K @ 4.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Super",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.6-76060606-generic",
+    "notes": "Game runs inside a DOSBox instance, flawlessly.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1708038883,
+    "title": "STAR FLEET II - Krellan Commander Version 2.0",
+    "source": "protondb"
+  }
+]

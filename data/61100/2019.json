@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "61100",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game runs perfectly in windowed mode only, with a workaround for fullscreen.\n\nWorkaround: When first starting the game a prompt for the graphics mode appears, and selecting any full-screen option causes an EXCEPTION_ACCESS_VIOLATION error message and crash. However, selecting windowed mode and then selecting fullscreen from the main menu allows the game to run in fullscreen. Be aware that the game does not support high resolutions (even on Windows).",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1558478619,
+    "title": "Lucid",
+    "source": "protondb"
+  }
+]

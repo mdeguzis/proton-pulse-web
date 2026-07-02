@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "798180",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-7e9fc11 2018-11-17 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It hung when I quit the game and had to kill the process, but otherwise flawless",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1543950571,
+    "title": "Space Turret Gunner \u5b87\u5b99\u5927\u70ae\u624b",
+    "source": "protondb"
+  }
+]

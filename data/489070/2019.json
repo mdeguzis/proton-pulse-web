@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "489070",
+    "cpu": "Intel Core i5-3550 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Works out of the Box, but Steam overlay isn't working and it has a strange stutter to it - doesn't feel like low FPS or shader compiling though. Sometimes the sound seems to be off, but i don't know if thats proton or the game itself.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "Proton-4.6-GE-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560621836,
+    "title": "Edge of Twilight \u2013 Return To Glory",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "748460",
+    "cpu": "Intel Core i7-7Y75 @ 1.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 615 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.5",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "It doesn't even start with 4.2-9 nor 4.11-2. It is a simulator that requires specific hardware to work, so that might not even be compatible with linux yet. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569127274,
+    "title": "RealFlight 8",
+    "source": "protondb"
+  }
+]

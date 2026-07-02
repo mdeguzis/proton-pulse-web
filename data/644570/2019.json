@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "644570",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.14_1",
+    "notes": "Opens in black window, doesn't respond",
+    "os": "Void Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1551752891,
+    "title": "Material Girl",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "644570",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-7.1-liquorix-amd64",
+    "notes": "Set windows version to xp, and disable d3d11 to run smootly",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1555461924,
+    "title": "Material Girl",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

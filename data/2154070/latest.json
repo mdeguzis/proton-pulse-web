@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2154070",
+    "cpu": "Intel Core i3-10105F @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, ACO, DRM 3.64, 6.19.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.2-arch1.1",
+    "kernel": "6.19.8-arch1-1",
+    "notes": "Yep, it's fun",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1777738208,
+    "title": "INDUSTRIA 2",
+    "source": "protondb"
+  }
+]

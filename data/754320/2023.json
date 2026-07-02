@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "754320",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.6-203.fsync.fc37.x86_64",
+    "notes": "The first loading of the game would take a long time, then the game would crash on New Game",
+    "os": "Nobara Linux 37 (KDE Plasma)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1677305874,
+    "title": "",
+    "source": "protondb"
+  }
+]

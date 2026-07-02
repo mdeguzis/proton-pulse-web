@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "777770",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "The game runs well with some minor performance issues, the game seems like it's running a little slow but I haven't seen it run on windows so I'm not sure if it's steam play or the game. The sound has a few minor issues as well, sometimes the sound will get choppy but this only lasts for a few seconds. Other than that the sound works perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1546390404,
+    "title": "Warparty",
+    "source": "protondb"
+  },
+  {
+    "appId": "777770",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Runs fine out of the box but I have the feeling that some cinematics are missing: When I launch a campaign I see some Black Screen with \"press a key to continue\" and then the game start. I think there should be something but I couldn't check on a windows box.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1563011729,
+    "title": "WAR PARTY",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "718650",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.10.0-38-generic",
+    "notes": "Riftland runs pretty well, but there is a bug with the cursor. When moving it over something that should open up a tooltip, the cursor's size increase like x10, sometimes hiding the text being it. Not a big deal, but still annoying from time to time.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545825156,
+    "title": "Driftland: The Magic Revival",
+    "source": "protondb"
+  }
+]

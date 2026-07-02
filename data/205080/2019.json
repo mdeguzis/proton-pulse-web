@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "205080",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD (Whiskey Lake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Crashes at launch with \"shader: failed to compile vertex shader\"\n",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556622300,
+    "title": "BIT.TRIP FATE",
+    "source": "protondb"
+  },
+  {
+    "appId": "205080",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Does not start, complains about vertex shader",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1565817146,
+    "title": "BIT.TRIP FATE",
+    "source": "protondb"
+  },
+  {
+    "appId": "205080",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD (Whiskey Lake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.0-15-generic",
+    "notes": "Crashes at launch with \"shader: failed to compile vertex shader\"",
+    "os": "Ubuntu Eoan Ermine (development branch)",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568363165,
+    "title": "BIT.TRIP FATE",
+    "source": "protondb"
+  }
+]

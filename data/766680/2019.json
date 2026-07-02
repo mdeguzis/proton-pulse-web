@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "766680",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.55-2-lts",
+    "notes": "Xbox one controller acts strange, Do not touch triggers on controller, they act the same as the Left Stick and will constantly hold a direction after having been moved once. Just don't touch them and they won't activate.\n\nRB and Y are swapped, this is a problem on windows as well. (https://steamcommunity.com/app/766680/discussions/0/1651045226223757437/)",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-8",
+    "protonVersionManual": "4.2-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561623439,
+    "title": "Punch Line",
+    "source": "protondb"
+  }
+]

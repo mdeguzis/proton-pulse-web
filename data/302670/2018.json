@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "302670",
+    "cpu": "i7-6700K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Works perfectly.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Proton 3.7-3",
+    "ram": "32030 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536333126",
+    "title": "Call to Arms",
+    "source": "protondb"
+  },
+  {
+    "appId": "302670",
+    "cpu": "AMD A8-7410 APU with AMD Radeon R5 Graphics",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Opens at first, then immediately closes.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "5 GB",
+    "rating": "Borked",
+    "timestamp": 1540518432,
+    "title": "Call to Arms",
+    "source": "protondb"
+  },
+  {
+    "appId": "302670",
+    "cpu": "Intel Core i3-7100 @ 3.90GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541000315,
+    "title": "Call to Arms",
+    "source": "protondb"
+  }
+]

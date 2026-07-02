@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3126330",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, raphael_mendocino, LLVM 19.1.7, DRM 3.61, 6.13.6-061306-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.1 - kisak-mesa PPA",
+    "kernel": "6.13.6-061306-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1742076002,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3126330",
+    "cpu": "AMD Ryzen 5 7600X3D 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.11.0-19-generic",
+    "notes": "Native. No issues!",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1743035940,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3126330",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.11.0-26-generic",
+    "notes": "",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "bronze",
+    "timestamp": 1752962586,
+    "title": "",
+    "source": "protondb"
+  }
+]

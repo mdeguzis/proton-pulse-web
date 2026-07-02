@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1471410",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.15.21-1-MANJARO",
+    "notes": "Plays almost like native",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1648856909,
+    "title": "SYNTHETIK 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1471410",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Worked great for me. A little over 30 fps without changing anything",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1656159256,
+    "title": "SYNTHETIK 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1471410",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.0-76051900-generic",
+    "notes": "U7 ultra combo update not launching on current configuration. Tried the suggested setting and GE 7.10 as well as 7.33. Just won't start. Runs fine on Windows.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1663057214,
+    "title": "SYNTHETIK 2",
+    "source": "protondb"
+  }
+]

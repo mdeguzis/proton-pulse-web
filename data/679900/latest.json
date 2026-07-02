@@ -1,0 +1,101 @@
+[
+  {
+    "appId": "679900",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-300.fc29.x86_64",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564699939,
+    "title": "Swords & Souls: Neverseen",
+    "source": "protondb"
+  },
+  {
+    "appId": "679900",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Runs out of the box in full screen mode, any quality and any resolution. Does not run in windowed mode.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1564734753,
+    "title": "Swords & Souls: Neverseen",
+    "source": "protondb"
+  },
+  {
+    "appId": "679900",
+    "cpu": "AMD A6-9220 RADEON R4, 5 COMPUTE CORES 2C+3G",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD STONEY",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.15.0-58-generic",
+    "notes": "I experienced some hiccups here and there, but I am 99% sure that my hardware is at fault.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1565989769,
+    "title": "Swords & Souls: Neverseen",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "679900",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 550 Ti",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-52-generic",
+    "notes": "Worked after setting PROTON_USE_WINED3D=1 %command% in launch option",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1567277707,
+    "title": "Swords & Souls: Neverseen",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "679900",
+    "cpu": "Intel Xeon E31280 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.0-2-amd64",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-4",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1568626208,
+    "title": "Swords & Souls: Neverseen",
+    "source": "protondb"
+  },
+  {
+    "appId": "679900",
+    "cpu": "Intel Core i7-5775C @ 3.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-25-generic",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1570282076,
+    "title": "Swords & Souls: Neverseen",
+    "source": "protondb"
+  }
+]

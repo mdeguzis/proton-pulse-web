@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "478980",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.15.0-45-generic",
+    "notes": "game engine itself runs fine but the words are completely gone  when set language to chinese or japanese.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1550645749,
+    "title": "Mansions of Madness",
+    "source": "protondb"
+  },
+  {
+    "appId": "478980",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Initially got the same d3d11 error another user reported. After applying their tweak, the game appears to run fine. (I only went through the setup, since I don't own the physical cardboard components.)",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1555427205,
+    "title": "Mansions of Madness",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

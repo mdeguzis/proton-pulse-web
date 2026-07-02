@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "521150",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Game ran well enough, only issue noticed was black patches randomly on the ground, which didn't seem to have any effect.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548290131,
+    "title": "Another Brick in the Mall",
+    "source": "protondb"
+  },
+  {
+    "appId": "521150",
+    "cpu": "Intel Core i5       M 450  @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD REDWOOD",
+    "gpuDriver": "3.1 Mesa 19.0.2",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Opened stress test map provided and ran, runs about 40fps on this old hardware fully zoomed out!",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1564427252,
+    "title": "Another Brick in The Mall",
+    "source": "protondb"
+  },
+  {
+    "appId": "521150",
+    "cpu": "Intel Core i7-4770S @ 3.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Works perfectly fine.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567613532,
+    "title": "Another Brick in The Mall",
+    "source": "protondb"
+  }
+]

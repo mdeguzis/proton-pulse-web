@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "47000",
+    "title": "4 Elements",
+    "timestamp": 1535611860,
+    "rating": "Gold",
+    "notes": "Works almost totally perfect. Only issue is if you switch to windowed during the game, the viewport inside the window will be shifted. You will need to close the game and start it again. It will then run in a window and run without issues.",
+    "os": "Debian Stretch 64-bit (Kernel 4.9.0)",
+    "gpuDriver": "Mesa 13.0.6",
+    "specs": "iGPU HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "47000",
+    "title": "4 Elements",
+    "timestamp": 1535697120,
+    "rating": "Silver",
+    "notes": "Mouse doesn't exit screen (on dual monitor). This may be the case on Windows, as well. Didn't notice any performance issues.",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "47000",
+    "title": "4 Elements",
+    "timestamp": 1535597460,
+    "rating": "Gold",
+    "notes": "Works almost totally perfect. Only issue is if you switch to windowed during the game, the viewport inside the window will be shifted. You will need to close the game and start it again. It will then run in a window and run without issues.",
+    "os": "Debian Stretch 64-bit (Kernel 4.9.0)",
+    "gpuDriver": "Mesa 13.0.6",
+    "specs": "iGPU HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "47000",
+    "title": "4 Elements",
+    "timestamp": 1535682720,
+    "rating": "Silver",
+    "notes": "Mouse doesn't exit screen (on dual monitor). This may be the case on Windows, as well. Didn't notice any performance issues.",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

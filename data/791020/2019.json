@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "791020",
+    "cpu": "Intel Core i3-6006U @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.20.15-200.fc29.x86_64",
+    "notes": "Game works perfectly. No tweaks needed. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1553077583,
+    "title": "Drumpf: Rise Up, Libertonia!",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "647410",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-1.el7.elrepo.x86_64",
+    "notes": "Seems to run fine - smooth at 1080p. Still claims onscreen that the full version will be released in \"2018\"...hmm...it's now 2019...",
+    "os": "CentOS Linux release 7.6.1810 (Core)",
+    "protonVersion": "4.11-2",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1566808061,
+    "title": "Goodbye My King",
+    "source": "protondb"
+  }
+]

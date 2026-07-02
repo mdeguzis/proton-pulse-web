@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "202690",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "Played through one scenario with no issues. Performance is solid throughout with either Wine OpenGL or D9VK.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-4",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1568821176,
+    "title": "Hegemony Gold: Wars of Ancient Greece",
+    "source": "protondb"
+  }
+]

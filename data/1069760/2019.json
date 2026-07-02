@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1069760",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "4.19.78-1-MANJARO",
+    "notes": "Works perfectly without any changes, only freezes on quit.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570911538,
+    "title": "Ethereal Enigma",
+    "source": "protondb"
+  }
+]

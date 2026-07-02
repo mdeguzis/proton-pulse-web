@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "617450",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.5 Mesa 19.1.0 - padoka PPA",
+    "kernel": "5.1.16-050116-generic",
+    "notes": "black screen on startup, then freezes.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "48 GB",
+    "rating": "Borked",
+    "timestamp": 1566357549,
+    "title": "Trollskog",
+    "source": "protondb"
+  }
+]

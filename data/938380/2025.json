@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "938380",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.6, DRM 3.61, 6.12.61-1-lts)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.2",
+    "kernel": "6.12.61-1-lts",
+    "notes": "Crashes after a fem minutes of playing",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1766840854,
+    "title": "Townsmen - A Kingdom Rebuilt",
+    "source": "protondb"
+  },
+  {
+    "appId": "938380",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.6, DRM 3.61, 6.12.61-1-lts)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.2",
+    "kernel": "6.12.61-1-lts",
+    "notes": "Crashes after a few minutes of playing",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1766840940,
+    "title": "Townsmen - A Kingdom Rebuilt",
+    "source": "protondb"
+  },
+  {
+    "appId": "938380",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.6, DRM 3.61, 6.12.61-1-lts)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.2",
+    "kernel": "6.12.61-1-lts",
+    "notes": "Crashes after a few minutes of playing",
+    "os": "Arch Linux",
+    "protonVersion": "3.16-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1766842760,
+    "title": "Townsmen - A Kingdom Rebuilt",
+    "source": "protondb"
+  }
+]

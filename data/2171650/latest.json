@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2171650",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.8.12-201.fsync.fc40.x86_64",
+    "notes": "Currently, there seems to be no way to play Windows compiled RPG Maker VX Ace games so at the moment this one is unplayable till Proton supports it or there is an engine compatibility tool we can run it under",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1720721973,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "461640",
+    "cpu": "Intel Core i7-7600U @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.0.16-300.fc30.x86_64",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559358935,
+    "title": "Sins Of The Demon RPG",
+    "source": "protondb"
+  },
+  {
+    "appId": "461640",
+    "cpu": "Intel Core i7-4702MQ @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.14-200.fc30.x86_64",
+    "notes": "Black screen with music and sounds responding to keyboard up/down/enter",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1568970405,
+    "title": "Sins Of The Demon RPG",
+    "source": "protondb"
+  }
+]

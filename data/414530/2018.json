@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "414530",
+    "title": "Skyforge",
+    "timestamp": 1534948584,
+    "rating": "Borked",
+    "notes": "While the game appears to load fine, no input is recognized. Further testing is impossible at the moment.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "open source Intel mesa drivers",
+    "specs": "Intel Core i5 2520m with Intel HD 3000 iGPU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "414530",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-2-MANJARO",
+    "notes": "can install and start game center, but can't start the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544988507,
+    "title": "Skyforge",
+    "source": "protondb"
+  },
+  {
+    "appId": "414530",
+    "title": "Skyforge",
+    "timestamp": 1534934184,
+    "rating": "Borked",
+    "notes": "While the game appears to load fine, no input is recognized. Further testing is impossible at the moment.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "open source Intel mesa drivers",
+    "specs": "Intel Core i5 2520m with Intel HD 3000 iGPU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

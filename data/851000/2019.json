@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "851000",
+    "cpu": "Intel Core i7-4702MQ @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD OLAND",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.0.7-200.fc29.x86_64",
+    "notes": "This game requires Proton 3.16-x, as with the 4.2-x branch the game FPS is basically garbage (1 - 5 FPS). However, after switching back to Proton 3.16-x the game runs perfectly without any issues.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562518068,
+    "title": "Achievement Machine",
+    "source": "protondb"
+  }
+]

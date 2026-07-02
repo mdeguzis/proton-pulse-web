@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1799840",
+    "cpu": "Intel Core i3-2100 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "Mesa NV134",
+    "gpuDriver": "4.3 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-33-generic",
+    "notes": "demo runs on proton 9",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1767247562,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1799840",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.0-19-generic",
+    "notes": "Demo runs perfectly, zero issues",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1774789824,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1799840",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.12.74+deb13+1-amd64",
+    "notes": "",
+    "os": "BunsenLabs GNU/Linux 13 (Carbon)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1779207046,
+    "title": "",
+    "source": "protondb"
+  }
+]

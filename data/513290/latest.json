@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "513290",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Appears to work just fine.",
+    "os": "SteamOS 2.0",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556932943,
+    "title": "Lucius III",
+    "source": "protondb"
+  },
+  {
+    "appId": "513290",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.12.14-lp150.12.58-default",
+    "notes": "Appears to work just fine.",
+    "os": "openSUSE Leap 15.0",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556936939,
+    "title": "Lucius III",
+    "source": "protondb"
+  },
+  {
+    "appId": "513290",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-1-default",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568439459,
+    "title": "Lucius III",
+    "source": "protondb"
+  }
+]

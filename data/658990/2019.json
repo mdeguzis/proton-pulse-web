@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "658990",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Doesn't start. Cannot load library nw_elf.dll",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554572432,
+    "title": "Icycle: On Thin Ice",
+    "source": "protondb"
+  }
+]

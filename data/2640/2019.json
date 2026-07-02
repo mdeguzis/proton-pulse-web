@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "2640",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Apply this tweak: \nSet Launch Options (Right Click Game->\"Properties\"->\"General\"->\"Set Launch Options...\")\nTo This String (without triple quotes): \n\"\"\"__GL_ExtensionStringVersion=17700 %command% +set r_mode -1 +set r_customheight 1080 +set r_customwidth 1920 +set cg_fov 80 +set cg_drawfps 0\"\"\"\nr_customwidth and r_customheight define the resolution you want to run the game at, enabling widescreen. cg_fov and cg_drawfps are useful tweaks for testing or comfort. The __GL_ExtensionStringVersion removes a Buffer Overrun error preventing launch.\n\nWith this tweak the game runs flawlessly, with the only issue being the intro cinematic will not play in widescreen, which is exactly the same behavior under Windows, so Gold status is preserved. I also encountered a mouse input issue resolved by adjusting the game resolution to match my monitor.\n\nNote: The same fix and status applies to vanilla Call of Duty",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1549972729,
+    "title": "Call of Duty: United Offensive",
+    "source": "protondb"
+  },
+  {
+    "appId": "2640",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "NOTE: Same Report as Before, Just Tested with Newer Driver:\nApply this tweak: Set Launch Options (Right Click Game->\"Properties\"->\"General\"->\"Set Launch Options...\") To This String (without triple quotes): \"\"\"__GL_ExtensionStringVersion=17700 %command% +set r_mode -1 +set r_customheight 1080 +set r_customwidth 1920 +set cg_fov 80 +set cg_drawfps 0\"\"\" r_customwidth and r_customheight define the resolution you want to run the game at, enabling widescreen. cg_fov and cg_drawfps are useful tweaks for testing or comfort. The __GL_ExtensionStringVersion removes a Buffer Overrun error preventing launch. With this tweak the game runs flawlessly, with the only issue being the intro cinematic will not play in widescreen, which is exactly the same behavior under Windows, so Gold status is preserved. I also encountered a mouse input issue resolved by adjusting the game resolution to match my monitor. Note: The same fix and status applies to vanilla Call of Duty",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1550055493,
+    "title": "Call of Duty: United Offensive",
+    "source": "protondb"
+  },
+  {
+    "appId": "2640",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "It still fails to load up out of the box. It looks like there is tweaks.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1569682485,
+    "title": "Call of Duty: United Offensive",
+    "source": "protondb"
+  }
+]

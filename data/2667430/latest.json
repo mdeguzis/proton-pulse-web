@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2667430",
+    "cpu": "11th Gen Intel Core i7-1185G7 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 26.0.5-arch2.2",
+    "kernel": "7.0.0-1-cachyos",
+    "notes": "Textures in opening level are bright neon. At lower graphics settings, everything is yellow and it is hard to visually distinguish anything.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1776723964,
+    "title": "",
+    "source": "protondb"
+  }
+]

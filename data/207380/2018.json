@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "207380",
+    "title": "eXceed 2nd - Vampire REX",
+    "timestamp": 1535011156,
+    "rating": "Platinum",
+    "notes": "full controller support",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "207380",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "Works perfectly.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545830323,
+    "title": "eXceed 2nd - Vampire REX",
+    "source": "protondb"
+  },
+  {
+    "appId": "207380",
+    "title": "eXceed 2nd - Vampire REX",
+    "timestamp": 1534996756,
+    "rating": "Platinum",
+    "notes": "full controller support",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

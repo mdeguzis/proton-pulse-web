@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "952040",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980M",
+    "gpuDriver": "NVIDIA 415.18.04",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Fails with \"GetThreadContext failed\" on 415.18 driver, but starts on 415.18.04 driver. After intro logos, only a black screen is shown with music playing, no interaction is possible.\nDisabling D3D11 only gives an error message that DirectX 11 isn't installed. Disabling esync or dxkv also only shows a black screen instead of the main menu.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544020330,
+    "title": "MUSYNX",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1331530",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.10.89",
+    "notes": "overall playable",
+    "os": "NixOS 21.11 (Porcupine)",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1642377556,
+    "title": "",
+    "source": "protondb"
+  }
+]

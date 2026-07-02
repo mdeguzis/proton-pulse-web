@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "12710",
+    "cpu": "Intel Xeon E5-2630 v4 @ 2.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "Game runs without any major tweaks perfectly from general gameplay and graphics standpoint.  What doesn't work is clicking on any menu-driven system, from the intro to the game, to tower travel menus, forge, and most importantly your armory.  I can do most anything simply using arrows and enter luckily, but I can't figure out how to go left and right in any way in the armory to change from helmet, weapon, or armor pages.  Playing this through I\"ve not needed to change yet, but once I get Arcanum smelter, I'm a bit screwed to use it.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "129 GB",
+    "rating": "Silver",
+    "timestamp": 1547229284,
+    "title": "Overlord\u2122: Raising Hell",
+    "source": "protondb"
+  }
+]

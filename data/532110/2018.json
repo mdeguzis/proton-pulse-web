@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "532110",
+    "title": "Rusty Lake: Roots",
+    "timestamp": 1535567689,
+    "rating": "Platinum",
+    "notes": "Only installed and played briefly but no noticeable issues.",
+    "os": "Antergos Arch 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "AMD A4-5300 / Integrated Radeon APU",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "532110",
+    "cpu": "Intel(R) Core(TM) i5-4570 CPU @ 3.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-30-lowlatency",
+    "notes": "Works. Warning though no native fullscreen on Windows: https://steamcommunity.com/app/532110/discussions/0/1353742967806367434/",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15979 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537243000,
+    "title": "Rusty Lake: Roots",
+    "source": "protondb"
+  },
+  {
+    "appId": "532110",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-96.current",
+    "notes": "Will not run in full screen by default, but with supplied tweaks works just fine.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541257578,
+    "title": "Rusty Lake: Roots",
+    "source": "protondb"
+  },
+  {
+    "appId": "532110",
+    "cpu": "Intel Core i7-4600M @ 2.90GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.1.5",
+    "kernel": "4.16.18-rt12-MANJARO",
+    "notes": "Works fine.  The game starts in a small window by default and there's no in-game option to go full screen. I used the window's \"maximise\" button in my desktop environment which worked as expected.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542404088,
+    "title": "Rusty Lake: Roots",
+    "source": "protondb"
+  },
+  {
+    "appId": "532110",
+    "title": "Rusty Lake: Roots",
+    "timestamp": 1535553289,
+    "rating": "Platinum",
+    "notes": "Only installed and played briefly but no noticeable issues.",
+    "os": "Antergos Arch 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "AMD A4-5300 / Integrated Radeon APU",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

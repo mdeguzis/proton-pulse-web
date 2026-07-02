@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "12690",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.18.0-25-generic",
+    "notes": "As soon as you move in game, everything turns blue. All you can see is the Hud and your hands.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-8",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1573443134,
+    "title": "Hunting Unlimited 2010",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "11420",
+    "title": "Clive Barker's Jericho",
+    "timestamp": 1535012959,
+    "rating": "Silver",
+    "notes": "Advanced Smoothing must be set to \"No\" or gameplay screen will be black",
+    "os": "Pop-OS",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "Ryzen 5 1600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "11420",
+    "title": "Clive Barker's Jericho",
+    "timestamp": 1535094847,
+    "rating": "Silver",
+    "notes": "The mouse speed is too fast, and there is no option to change it from the game menu.\nBtw, this game didn't even start on Windows, while on Proton is working perfectly.",
+    "os": "Ubuntu 18.04.01",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 7 2700X / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "11420",
+    "title": "Clive Barker's Jericho",
+    "timestamp": 1535308047,
+    "rating": "Borked",
+    "notes": "Won't Start",
+    "os": "Ubuntu 18.04.1 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-8700k/GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "11420",
+    "title": "Clive Barker's Jericho",
+    "timestamp": 1534998559,
+    "rating": "Silver",
+    "notes": "Advanced Smoothing must be set to \"No\" or gameplay screen will be black",
+    "os": "Pop-OS",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "Ryzen 5 1600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "11420",
+    "title": "Clive Barker's Jericho",
+    "timestamp": 1535080447,
+    "rating": "Silver",
+    "notes": "The mouse speed is too fast, and there is no option to change it from the game menu.\nBtw, this game didn't even start on Windows, while on Proton is working perfectly.",
+    "os": "Ubuntu 18.04.01",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 7 2700X / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "11420",
+    "title": "Clive Barker's Jericho",
+    "timestamp": 1535293647,
+    "rating": "Borked",
+    "notes": "Won't Start",
+    "os": "Ubuntu 18.04.1 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-8700k/GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

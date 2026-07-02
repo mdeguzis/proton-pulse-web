@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4133830",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 (radeonsi, navi22, LLVM 20.1.2, DRM 3.64, 6.17.0-20-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-20-generic",
+    "notes": "",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1776679717,
+    "title": "",
+    "source": "protondb"
+  }
+]

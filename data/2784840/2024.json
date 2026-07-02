@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2784840",
+    "cpu": "11th Gen Intel Core i5-11400F @ 2.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 535.154.05",
+    "kernel": "5.15.0-94-generic",
+    "notes": "works perfectly ootb",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1707562904,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2784840",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1103_r1, LLVM 16.0.6, DRM 3.57, 6.7.4-lqx1-1-lqx)",
+    "gpuDriver": "4.6 Mesa 23.3.5-arch1.1",
+    "kernel": "6.7.4-lqx1-1-lqx",
+    "notes": "Runs flawlessly out of the box with Proton Experimental and Proton 8.0-5",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-5",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1707877234,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2784840",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.7.4-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.5",
+    "kernel": "6.7.4-200.fc39.x86_64",
+    "notes": "EGG",
+    "os": "Fedora Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1713829070,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "460750",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-17-generic",
+    "notes": "Online not tested.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555234657,
+    "title": "Blade Ballet",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "278510",
+    "cpu": "Intel Core i7-2640M @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "On this system, trying to enter fullscreen mode results in the game pegging a single CPU core and needing to be killed. Runs fine in windowed mode.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1546353660,
+    "title": "JUDGEMENT SILVERSWORD - Resurrection -",
+    "source": "protondb"
+  }
+]

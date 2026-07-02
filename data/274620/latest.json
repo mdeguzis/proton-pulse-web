@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "274620",
+    "cpu": "i5-7400 CPU @ 3.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game starts with \"Loading Session\" then gives the error \"steam service not responding\" + \"Try in a few minutes\" then \"Accept\" which exits the game.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15980 Mb",
+    "rating": "Borked",
+    "timestamp": 1536941583,
+    "title": "Skara - The Blade Remains",
+    "source": "protondb"
+  }
+]

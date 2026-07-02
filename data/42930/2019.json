@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "42930",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.12-300.fc30.x86_64",
+    "notes": "Game shows a bunch of compilation errors at start starting and loading into a map. Runs totally smoothly, it's just not rendering the terrain at all. So I guess it gets Bronze since you could technically play it since everytinh else seems to render ok...",
+    "os": "Unknown",
+    "protonVersion": "4.2-8",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1562073868,
+    "title": "Elven Legacy: Magic",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

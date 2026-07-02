@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "242610",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Server hosted  :  Everything worked but no one else seems to play this.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538322357,
+    "title": "Grappledrome",
+    "source": "protondb"
+  }
+]

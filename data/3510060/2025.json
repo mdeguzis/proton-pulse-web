@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3510060",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.63, 6.15.4-arch2-1)",
+    "gpuDriver": "4.6 Mesa 25.1.4-arch1.2",
+    "kernel": "6.15.4-arch2-1",
+    "notes": "Working good :D",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1759272362,
+    "title": "Hellbrella",
+    "source": "protondb"
+  }
+]

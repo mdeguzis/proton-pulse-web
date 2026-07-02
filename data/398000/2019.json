@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "398000",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Works very nicely",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554941340,
+    "title": "Little Big Adventure 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "398000",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel",
+    "kernel": "5.2.8-050208-lowlatency",
+    "notes": "Works without issues in Fullscreen. Alt+Enter to Windowed mode does not work, switching to windowed there is just a black screen.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1566154284,
+    "title": "Little Big Adventure 2",
+    "source": "protondb"
+  }
+]

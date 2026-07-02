@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1257410",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-9746e84a7e)",
+    "kernel": "5.7.10-21-tkg-pds",
+    "notes": "Not enjoyable",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1596310732,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1257410",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-9746e84a7e)",
+    "kernel": "5.7.10-21-tkg-pds",
+    "notes": "Most problems seemed to have fixed themselves. Playable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-10 RC3",
+    "ram": "64 GB",
+    "rating": "bronze",
+    "timestamp": 1596440831,
+    "title": "",
+    "source": "protondb"
+  }
+]

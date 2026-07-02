@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1562260",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA Quadro M1000M",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.16.0-3.1-cachyos",
+    "notes": "Very better performance than what I expected",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1754998355,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "appId": "712050",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556223318,
+    "title": "Otaku's Fantasy",
+    "source": "protondb"
+  },
+  {
+    "appId": "712050",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.5",
+    "kernel": "5.0.17-300.fc30.x86_64",
+    "notes": "Works perfectly. No glitches.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1559699108,
+    "title": "Otaku's Fantasy",
+    "source": "protondb"
+  },
+  {
+    "appId": "712050",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.5",
+    "kernel": "5.0.17-300.fc30.x86_64",
+    "notes": "Works perfectly. No glitches.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561246883,
+    "title": "Otaku's Fantasy",
+    "source": "protondb"
+  },
+  {
+    "appId": "712050",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 19.2.0-devel (git-a110a80 2019-07-09 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-54-generic",
+    "notes": "when do you try play the game it not works good it's just freeze the window of game and do you can't do nothing ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "4 GB",
+    "rating": "Bronze",
+    "timestamp": 1562822816,
+    "title": "Otaku's Fantasy",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "712050",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.2",
+    "kernel": "5.2.7",
+    "os": "Freedesktop.org 18.08.34 (Flatpak runtime)\uff0864 \u4f4d\uff09",
+    "protonVersion": "4.11-2",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1567236269,
+    "title": "Otaku's Fantasy",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

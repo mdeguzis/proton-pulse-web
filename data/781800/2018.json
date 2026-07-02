@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "781800",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.9-1.el7.elrepo.x86_64",
+    "notes": "No issues at all",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64419 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537567963,
+    "title": "Walhall",
+    "source": "protondb"
+  }
+]

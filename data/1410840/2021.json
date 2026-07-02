@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1410840",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.35.0, 5.4.0-65-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1 (git-d90622910b)",
+    "kernel": "5.4.0-65-generic",
+    "notes": "it crashes on startup",
+    "os": "Freedesktop.org 20.08.3 (Flatpak runtime)",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1612394705,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1410840",
+    "cpu": "AMD Ryzen 3 PRO 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.40.0, 5.11.0-7620-generic, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1626549647,
+    "title": "",
+    "source": "protondb"
+  }
+]

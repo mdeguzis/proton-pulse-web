@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1333360",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.5",
+    "kernel": "5.8.0-28-generic",
+    "notes": "Works fine out of the box with 5.0-10.",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-2",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1605573207,
+    "title": "",
+    "source": "protondb"
+  }
+]

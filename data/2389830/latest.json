@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2389830",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Game works out of the box but don't expect a locked 60fps on Steam Deck.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1768343101,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2389830",
+    "cpu": "AMD Ryzen 7 5800XT 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-37-generic",
+    "notes": "Tried on my Linux machine after the \"warning\" in my Steam Deck. No problems so far, runs exactly like on my Windows partition.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768351457,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2389830",
+    "cpu": "American Megatrends",
+    "duration": "unreported",
+    "gpu": "snd_hda_intel",
+    "gpuDriver": "0403",
+    "kernel": "4249",
+    "notes": "This games played super smooth and is a nice throwback to Space Harrier.",
+    "os": "2",
+    "protonVersion": "9.0-4",
+    "ram": "0 GB",
+    "rating": "platinum",
+    "timestamp": 1777002066,
+    "title": "",
+    "source": "protondb"
+  }
+]

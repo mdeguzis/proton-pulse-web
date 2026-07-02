@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "959800",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.15-1-MANJARO",
+    "notes": "Crashes on initial loading banner, then crashes instantly on subsequent attempts",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1626096431,
+    "title": "",
+    "source": "protondb"
+  }
+]

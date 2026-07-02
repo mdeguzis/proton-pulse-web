@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "225000",
+    "cpu": "Intel Core i5-3330 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Losing controls of the game after tabbing out and back in. Other than that, no issues so far.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552931389,
+    "title": "Tomb Raider V: Chronicles",
+    "source": "protondb"
+  },
+  {
+    "appId": "225000",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.14",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557926012,
+    "title": "Tomb Raider V: Chronicles",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "475630",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.5",
+    "kernel": "4.19.30-1-MANJARO",
+    "notes": "the client wont update the game",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1553972243,
+    "title": "Crush Online",
+    "source": "protondb"
+  }
+]

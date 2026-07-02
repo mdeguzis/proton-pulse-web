@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "963000",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Only starts with Wine D3d11. The two bottom graphics settings don't work - the game starts but everything is black (so I played on \"she hit the floor\"). Had some weird issues with mouse controls (looking around) in the first room but once I reached the island, everything was fine. Looking around with the magnifying glass feels a little weird but you don't use it much in the game anyway.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543769507,
+    "title": "The Haunted Island, a Frog Detective Game",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

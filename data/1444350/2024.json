@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1444350",
+    "cpu": "Intel Core i5-3330 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 550.78",
+    "kernel": "6.6.30",
+    "notes": "Runs pretty great",
+    "os": "NixOS 24.05 (Uakari)",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1715733018,
+    "title": "",
+    "source": "protondb"
+  }
+]

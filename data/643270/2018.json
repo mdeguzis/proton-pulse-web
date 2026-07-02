@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "643270",
+    "title": "OLDTV",
+    "timestamp": 1534961430,
+    "rating": "Borked",
+    "notes": "Log: https://loli.robsys.space/djWCneUZq0WwBbFYwgZCpNjGpvHxApc1.txt",
+    "os": "Ubuntu MATE 18.04.1 64-bit (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-750",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "643270",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Played through a few levels and appeared to work perfectly",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "11991 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539641257,
+    "title": "OLDTV",
+    "source": "protondb"
+  },
+  {
+    "appId": "643270",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.18.0-11-generic",
+    "notes": "\"Get thread context failed\"",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543540745,
+    "title": "OLDTV",
+    "source": "protondb"
+  },
+  {
+    "appId": "643270",
+    "title": "OLDTV",
+    "timestamp": 1534947030,
+    "rating": "Borked",
+    "notes": "Log: https://loli.robsys.space/djWCneUZq0WwBbFYwgZCpNjGpvHxApc1.txt",
+    "os": "Ubuntu MATE 18.04.1 64-bit (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-750",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

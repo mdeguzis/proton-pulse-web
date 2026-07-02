@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "497640",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.16-300.fc29.x86_64",
+    "notes": "To run in fullscreen press F1, select option and restart game ; alt+enter does not work.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1541023826,
+    "title": "Trick & Treat",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3188910",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 575.64",
+    "kernel": "6.15.2-arch1-1",
+    "notes": "Doesn't launch, when switching to experimental asks for Microsoft Edge WebView2 runtime",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1750941505,
+    "title": "",
+    "source": "protondb"
+  }
+]

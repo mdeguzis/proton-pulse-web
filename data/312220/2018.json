@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "312220",
+    "title": "Tales of Adventure 2",
+    "timestamp": 1535790902,
+    "rating": "Borked",
+    "notes": "The process starts in the background but nothing else happens.",
+    "os": "Debian Buster",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-6600K / GTX-970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "312220",
+    "title": "Tales of Adventure 2",
+    "timestamp": 1535776502,
+    "rating": "Borked",
+    "notes": "The process starts in the background but nothing else happens.",
+    "os": "Debian Buster",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-6600K / GTX-970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

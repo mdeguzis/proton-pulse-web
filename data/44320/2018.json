@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "44320",
+    "title": "DiRT 3",
+    "timestamp": 1534943094,
+    "rating": "Bronze",
+    "notes": "fences often stretch out across the screen like an n64 corruption",
+    "os": "Arch",
+    "gpuDriver": "mesa 18.3",
+    "specs": "4770k / vega 55",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "44320",
+    "title": "DiRT 3",
+    "timestamp": 1535044195,
+    "rating": "Borked",
+    "notes": "Stuck at loading screen",
+    "os": "Linux Mint 19 ",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "iGPU HD 4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "44320",
+    "title": "DiRT 3",
+    "timestamp": 1535390609,
+    "rating": "Borked",
+    "notes": "Unlike the complete edition, this doesn't even load a black screen.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "44320",
+    "title": "DiRT 3",
+    "timestamp": 1534928694,
+    "rating": "Bronze",
+    "notes": "fences often stretch out across the screen like an n64 corruption",
+    "os": "Arch",
+    "gpuDriver": "mesa 18.3",
+    "specs": "4770k / vega 55",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "44320",
+    "title": "DiRT 3",
+    "timestamp": 1535029795,
+    "rating": "Borked",
+    "notes": "Stuck at loading screen",
+    "os": "Linux Mint 19 ",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "iGPU HD 4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "44320",
+    "title": "DiRT 3",
+    "timestamp": 1535376209,
+    "rating": "Borked",
+    "notes": "Unlike the complete edition, this doesn't even load a black screen.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

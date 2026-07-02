@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "864100",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game is perfectly playable--I completed a full playthrough. Only issue is that the mouse can get locked to the middle of the screen in menu and you have to use the keyboard to navigate choices.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559449299,
+    "title": "Sagebrush",
+    "source": "protondb"
+  }
+]

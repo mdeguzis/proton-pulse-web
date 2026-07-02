@@ -1,0 +1,30 @@
+[
+  {
+    "appId": "250030",
+    "cpu": "i5-4690K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.12.14-lp150.12.16-default",
+    "notes": "Got warning \"Graphic Chipset is not recommended\".  (See game FAQ.) Starts without problems and runs perfectly in windowed mode. Huge performace loss in fullscreen mode.",
+    "os": "\"openSUSE Leap 15.0\" (64 bit)",
+    "protonVersion": "3.7.3",
+    "ram": "15976 Mb",
+    "rating": "Silver",
+    "timestamp": "1536341452",
+    "title": "Lilly Looking Through",
+    "source": "protondb"
+  },
+  {
+    "appId": "250030",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Black screen",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5",
+    "rating": "Borked",
+    "timestamp": "1536364800",
+    "title": "Lilly Looking Through",
+    "source": "protondb"
+  }
+]

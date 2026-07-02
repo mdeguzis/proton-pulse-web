@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "12330",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10 / DRM 3.23.0 / 4.15.0-36-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Cleared the first three tutorial missions with no trouble out of box. After clicking Play, be patient and wait, the all-white screen will go away after a few seconds.  Once the game loads it runs smoothly. Sound and in-game movies work fine.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32178 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539649770,
+    "title": "Darkstar One",
+    "source": "protondb"
+  },
+  {
+    "appId": "12330",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541952150,
+    "title": "Darkstar One",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "921630",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-12-generic",
+    "notes": "disable d3d11 or use wine d3d11 can make it show a black window, but nothing happens after",
+    "os": "Ubuntu 18.10\uff0864 \u4f4d\uff09",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1545312554,
+    "title": "\u97f3\u7075 INVAXION",
+    "source": "protondb"
+  },
+  {
+    "appId": "921630",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Only English language usable, other languages did not show any character",
+    "os": "Ubuntu 18.10\uff0864 \u4f4d\uff09",
+    "protonVersion": "3.16-6",
+    "protonVersionManual": "3.16-6",
+    "ram": "15 GB",
+    "rating": "Silver",
+    "timestamp": 1545456395,
+    "title": "\u97f3\u7075 INVAXION",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

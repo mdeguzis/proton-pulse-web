@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "227060",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "notes": "I had to wait about 5 minutes for the game to load on first play, but after that it works perfectly with no tweaks.  Gameplay was smooth and lag free at highest possible resolution and graphics settings.  Proton 4.2-5",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1559001182,
+    "title": "Hegemony Rome: The Rise of Caesar",
+    "source": "protondb"
+  },
+  {
+    "appId": "227060",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-20-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1563192454,
+    "title": "Hegemony Rome: The Rise of Caesar",
+    "source": "protondb"
+  }
+]

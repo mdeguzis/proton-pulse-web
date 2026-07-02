@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1761290",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 15.0.7, DRM 3.42, 5.15.0-91-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-91-generic",
+    "notes": "The whole game is based on real life video of a train as you travel through the rail lines, but the video does not play just a test screen.",
+    "os": "Linux Mint 21",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1742087338,
+    "title": "Japanese Rail Sim: Journey to Kyoto",
+    "source": "protondb"
+  }
+]

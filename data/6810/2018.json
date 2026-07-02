@@ -1,0 +1,80 @@
+[
+  {
+    "appId": "6810",
+    "title": "Commandos: Beyond the Call of Duty",
+    "timestamp": 1535162458,
+    "rating": "Borked",
+    "notes": "The cursor only moves when you click",
+    "os": "SteamOS 2.0 update 1:2.154",
+    "gpuDriver": "Mesa 17.2.4",
+    "specs": "AMD A10-7870K / Radeon R7",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "6810",
+    "title": "Commandos: Beyond the Call of Duty",
+    "timestamp": 1535403476,
+    "rating": "Platinum",
+    "notes": "Runs flawlessly",
+    "os": "Xubuntu 16.04 64-bit",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i3-4160",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "6810",
+    "cpu": "i5-3570K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7924 Mb",
+    "rating": "Platinum",
+    "systemInfoNotes": "CPU @\u00a04.2GHz",
+    "timestamp": 1536725711,
+    "title": "Commandos: Beyond the Call of Duty",
+    "source": "protondb"
+  },
+  {
+    "appId": "6810",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.23.0, 4.15.0-30-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.1 Mesa 18.1.7 - padoka PPA",
+    "kernel": "4.15.0-30-generic",
+    "notes": "Start mission and in-game mechanics worked flawlessly but video are not played in the beginning of the missions. Probably due that it needs a codec (videos are compressed with Cinepak Video). Anyway, videos are just for historical context, so are not mandatory to follow the game.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16008 Mb",
+    "rating": "Silver",
+    "timestamp": 1537495112,
+    "title": "Commandos: Beyond the Call of Duty",
+    "source": "protondb"
+  },
+  {
+    "appId": "6810",
+    "title": "Commandos: Beyond the Call of Duty",
+    "timestamp": 1535148058,
+    "rating": "Borked",
+    "notes": "The cursor only moves when you click",
+    "os": "SteamOS 2.0 update 1:2.154",
+    "gpuDriver": "Mesa 17.2.4",
+    "specs": "AMD A10-7870K / Radeon R7",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "6810",
+    "title": "Commandos: Beyond the Call of Duty",
+    "timestamp": 1535389076,
+    "rating": "Platinum",
+    "notes": "Runs flawlessly",
+    "os": "Xubuntu 16.04 64-bit",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i3-4160",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

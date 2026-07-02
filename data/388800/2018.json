@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "388800",
+    "title": "Azure Striker Gunvolt",
+    "timestamp": 1535308228,
+    "rating": "Platinum",
+    "notes": "Runs perfectly literally no issues whatsoever.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4430 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "388800",
+    "cpu": "i5-4590 CPU @ 3.30GHz",
+    "gpu": "GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "No errors or issues noted.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "24010 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536983296,
+    "title": "Azure Striker Gunvolt",
+    "source": "protondb"
+  },
+  {
+    "appId": "388800",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.4.0-77-generic",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545990733,
+    "title": "Azure Striker Gunvolt",
+    "source": "protondb"
+  },
+  {
+    "appId": "388800",
+    "title": "Azure Striker Gunvolt",
+    "timestamp": 1535293828,
+    "rating": "Platinum",
+    "notes": "Runs perfectly literally no issues whatsoever.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4430 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "397330",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Enhanced Edition  does not launch. (But you can launch original edition with the same launcher, it works)",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1567984758,
+    "title": "Little Big Adventure - Enhanced Edition",
+    "source": "protondb"
+  }
+]

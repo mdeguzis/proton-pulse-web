@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "394680",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Need to use taskset to stop game from running at 1fps. Start the game and alt+tab out. In a terminal run the command \"ps -fC MountainCrime.exe\" (without quotes). Take the PID e.g 1234 and run \"taskset -p 2 1234\" (without quotes). Go back into game. Game ran smoothly at 60fps.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554752123,
+    "title": "Mountain Crime: Requital",
+    "source": "protondb"
+  },
+  {
+    "appId": "394680",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Need to add - (while ! ps -A | grep 'MountainCrime'; do sleep 1; done; sleep 1; taskset -p 2 \"$(ps -A | grep 'MountainCrime' | awk '{print $1}')\") & %command% - to launch options to fix 1 fps problem. After that game ran flawlessly.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563600934,
+    "title": "Mountain Crime: Requital",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "264240",
+    "title": "CONSORTIUM",
+    "timestamp": 1535508526,
+    "rating": "Platinum",
+    "notes": "Appears to run as intended",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "264240",
+    "title": "CONSORTIUM",
+    "timestamp": 1535804922,
+    "rating": "Borked",
+    "notes": "Game screen goes black while first conversation.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "I7-7800X / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "264240",
+    "title": "CONSORTIUM",
+    "timestamp": 1535888418,
+    "rating": "Borked",
+    "notes": "After the intro part everthing is black",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "264240",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 680/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Black screen after first gaining control",
+    "os": "Debian GNU/Linux unstable (sid) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15989 Mb",
+    "rating": "Borked",
+    "timestamp": 1538327528,
+    "title": "CONSORTIUM",
+    "source": "protondb"
+  },
+  {
+    "appId": "264240",
+    "title": "CONSORTIUM",
+    "timestamp": 1535494126,
+    "rating": "Platinum",
+    "notes": "Appears to run as intended",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "264240",
+    "title": "CONSORTIUM",
+    "timestamp": 1535790522,
+    "rating": "Borked",
+    "notes": "Game screen goes black while first conversation.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "I7-7800X / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "264240",
+    "title": "CONSORTIUM",
+    "timestamp": 1535874018,
+    "rating": "Borked",
+    "notes": "After the intro part everthing is black",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

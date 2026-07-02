@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "886250",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-10-generic",
+    "notes": "No issues whatsoever except maybe for a bit of reprojection, but you hardly notice it due to the slow nature of the game. Everything seems to work.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541931523,
+    "title": "PokerStars VR",
+    "source": "protondb"
+  }
+]

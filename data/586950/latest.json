@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "586950",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-7e9fc11 2018-11-17 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-11-generic",
+    "notes": "One eye's screen would go black after ~1 hour of playtime",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542562807,
+    "title": "The Wizards",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "679400",
+    "title": "Relik",
+    "timestamp": 1535329948,
+    "rating": "Borked",
+    "notes": "Does not start",
+    "os": "Linux Mint 19 64-Bit (Kernel 4.15)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "679400",
+    "title": "Relik",
+    "timestamp": 1535315548,
+    "rating": "Borked",
+    "notes": "Does not start",
+    "os": "Linux Mint 19 64-Bit (Kernel 4.15)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

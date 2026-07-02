@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "318530",
+    "title": "Wings of Vi",
+    "timestamp": 1534951769,
+    "rating": "Borked",
+    "notes": "Doesn't even start, I briefly saw it in htop, but it appeared to crash almost instantly",
+    "os": "Manjaro Stable",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "TR 1900x / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "318530",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.14.78-1-MANJARO",
+    "notes": "XBox Controller gets detected and is usable. The main menu works, however loading or starting a new game crashes the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540857457,
+    "title": "Wings of Vi",
+    "source": "protondb"
+  },
+  {
+    "appId": "318530",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "Runs out of the box. No issue.",
+    "os": "Debian GNU/Linux unstable (sid) (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541859368,
+    "title": "Wings of Vi",
+    "source": "protondb"
+  },
+  {
+    "appId": "318530",
+    "title": "Wings of Vi",
+    "timestamp": 1534937369,
+    "rating": "Borked",
+    "notes": "Doesn't even start, I briefly saw it in htop, but it appeared to crash almost instantly",
+    "os": "Manjaro Stable",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "TR 1900x / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "260710",
+    "title": "Dark Fall 2: Lights Out",
+    "timestamp": 1535825002,
+    "rating": "Borked",
+    "notes": "Error message 'Application error: This application cannot start as it cannot create needed files. There may not be enough free disk space.'\nI'm not running from NTFS partition so maybe not compatible with EXT4?",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "260710",
+    "title": "Dark Fall 2: Lights Out",
+    "timestamp": 1535912093,
+    "rating": "Borked",
+    "notes": "Mouse controls are for full screen but only draws gfx in upper left corner",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "260710",
+    "cpu": "i7-4710MQ CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-ext73-58.4-haswell",
+    "notes": "Crashs...message can not create needed file not enough diskspace",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.5 beta",
+    "ram": "7872 Mb",
+    "rating": "Borked",
+    "timestamp": "1536330353",
+    "title": "Dark Fall 2: Lights Out",
+    "source": "protondb"
+  },
+  {
+    "appId": "260710",
+    "title": "Dark Fall 2: Lights Out",
+    "timestamp": 1535810602,
+    "rating": "Borked",
+    "notes": "Error message 'Application error: This application cannot start as it cannot create needed files. There may not be enough free disk space.'\nI'm not running from NTFS partition so maybe not compatible with EXT4?",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "260710",
+    "title": "Dark Fall 2: Lights Out",
+    "timestamp": 1535897693,
+    "rating": "Borked",
+    "notes": "Mouse controls are for full screen but only draws gfx in upper left corner",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

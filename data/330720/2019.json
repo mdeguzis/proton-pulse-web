@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "330720",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.59-1-MANJARO",
+    "notes": "To fix the MCI error, close the game, open a terminal and delete the following videos (only ever played when the game starts... they are irrelevant):\n\nrm ~/.steam/steam/steamapps/common/Flashpoint\\ Campaigns\\ Red\\ Storm/Libraries/Animations/*.wmv\n\nProblems:\n\n1. Cannot use arrow keys to scroll the map (makes setting long waypoints a pain)\n2. Mouse cursor occasionally gets \"stuck\" dragging the map requiring another click to release it.\n3. Some fonts are aliased (see: ugly)\n",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1563753976,
+    "title": "Flashpoint Campaigns: Red Storm Player's Edition",
+    "source": "protondb"
+  }
+]

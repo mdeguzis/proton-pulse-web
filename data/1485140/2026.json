@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1485140",
+    "cpu": "AMD Ryzen 5 4600G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 20.1.7, DRM 3.63, 6.15.5-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.15.5-200.fc42.x86_64",
+    "notes": "I tried WiVRn and Steam Link and neither worked. It takes you to the controller select screen but thats about it",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "borked",
+    "timestamp": 1778250978,
+    "title": "",
+    "source": "protondb"
+  }
+]

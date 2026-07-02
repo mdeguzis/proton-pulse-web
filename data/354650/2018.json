@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "354650",
+    "title": "MISSING: An Interactive Thriller - Episode One",
+    "timestamp": 1535574247,
+    "rating": "Gold",
+    "notes": "Worked great. Completed game. Only fault was some text missing in main menu options but didn't affect gameplay at all.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i3 4170 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "354650",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Runs perfect, no missing text for me",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541292207,
+    "title": "MISSING: An Interactive Thriller - Episode One",
+    "source": "protondb"
+  },
+  {
+    "appId": "354650",
+    "title": "MISSING: An Interactive Thriller - Episode One",
+    "timestamp": 1535559847,
+    "rating": "Gold",
+    "notes": "Worked great. Completed game. Only fault was some text missing in main menu options but didn't affect gameplay at all.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i3 4170 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

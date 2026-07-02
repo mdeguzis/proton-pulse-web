@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "433530",
+    "title": "Heliborne",
+    "timestamp": 1535631168,
+    "rating": "Gold",
+    "notes": "Dell XPS 13 (2017), Tested @1920X1080, medium graphics, Framerate isn't great, but playable, setting to lower res make is smooth, Online works, all seem to work perfectly.",
+    "os": "Antergos 64-bit (Kernel 4.17.8-1-Arch)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7-7500U / Intel HD600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "433530",
+    "title": "Heliborne",
+    "timestamp": 1535616768,
+    "rating": "Gold",
+    "notes": "Dell XPS 13 (2017), Tested @1920X1080, medium graphics, Framerate isn't great, but playable, setting to lower res make is smooth, Online works, all seem to work perfectly.",
+    "os": "Antergos 64-bit (Kernel 4.17.8-1-Arch)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7-7500U / Intel HD600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

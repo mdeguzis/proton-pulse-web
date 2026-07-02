@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "438420",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Needs PROTON_USE_WINED3D11=1 for broken character model. ",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Gold",
+    "timestamp": 1536961505,
+    "title": "Zenith",
+    "source": "protondb"
+  }
+]

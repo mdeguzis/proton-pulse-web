@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "617850",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (gfx1101, LLVM 16.0.6, DRM 3.54, 6.2.0-33-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.0-devel",
+    "kernel": "6.2.0-33-generic",
+    "notes": "Still has Fps issues but way better with AMD than with Nvidia.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1696382500,
+    "title": "",
+    "source": "protondb"
+  }
+]

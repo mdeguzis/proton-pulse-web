@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1067430",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.129.06",
+    "kernel": "4.15.0-188-generic",
+    "notes": "As expexted this unity-based game works flawless out of the box. - Wie erwartet funktioniert das Unity-Game ohne Probleme.",
+    "os": "Ubuntu 18.04.6 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1656086592,
+    "title": "Beam",
+    "source": "protondb"
+  }
+]

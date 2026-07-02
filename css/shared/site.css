@@ -1,0 +1,477 @@
+/* ============================================================
+   SHARED UTILITIES
+   ============================================================ */
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.section-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent-glow);
+  flex-shrink: 0;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border), transparent);
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.eyebrow::before { content: '// '; opacity: 0.7; }
+
+/* - Tier badge colors - */
+.tier-platinum { background: #b4c7dc; color: #0a0c10; }
+.tier-gold     { background: #c8a050; color: #0a0c10; }
+.tier-silver   { background: #8fa0b0; color: #0a0c10; }
+.tier-bronze   { background: #b07040; color: #0a0c10; }
+.tier-borked   { background: #c85050; color: #fff; }
+.tier-pending  { background: #3a4a5a; color: var(--muted); }
+
+/* Pill rendering of the per-game overall tier badge - used in search results,
+   the topbar dropdown, and anywhere else we surface a game's consensus rating. */
+.tier-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   RESPONSIVE - horizontal nav collapses to mobile drawer
+   ============================================================ */
+
+/* tablet: drop the brand tagline. Search box sizing is overridden by the
+   mobile block below (which also fires at <=1024px). Keeping this rule for
+   the tagline only since that change is unrelated to the nav collapse */
+@media (max-width: 1024px) {
+  .topbar-brand-tag { display: none; }
+}
+
+/* mobile: collapse the nav LINKS, show hamburger, drawer takes over.
+   Breakpoint is 1024px - same threshold where the search box was already
+   shrinking. Above 1024 the nav uses the overflow MORE button to gracefully
+   collapse items; at/below 1024 the hamburger takes over so the search box
+   can't dominate the nav row and leave it empty. The search input itself
+   stays visible at all widths (mobile drawer has no search input, so we keep
+   the nav row alive just to host the search). */
+@media (max-width: 1024px) {
+  :root { --banner-h: 52px; }
+
+  .topbar-banner {
+    padding: 0 16px;
+    gap: 10px;
+  }
+  .topbar-brand-text { font-size: 1rem; }
+
+  /* hide just the nav links; keep .topbar-nav row alive for the search box */
+  .topnav-links { display: none; }
+  .topbar-nav { justify-content: flex-end; padding: 10px var(--content-pad); }
+  .topbar-search-wrap { flex: 1 1 auto; max-width: 100%; min-width: 0; }
+
+  /* show the hamburger, lock it so it cannot shrink or be clipped */
+  .topbar-mobile-toggle { display: inline-flex; flex-shrink: 0; }
+
+  /* tighten the login button area on small screens */
+  .gh-login-btn__label { display: none; }
+  .gh-login-btn { padding: 4px 8px 4px 6px; }
+  /* hide username text -- avatar icon only on mobile so hamburger is never pushed off */
+  .auth-username { display: none; }
+  /* clamp auth chip to avatar width so it can't crowd the hamburger */
+  .auth-link--signedin { padding: 0 6px; max-width: 40px; }
+  /* prevent the actions row itself from overflowing and hiding the last item */
+  .topbar-banner-actions { flex-shrink: 0; overflow: visible; }
+
+  .topbar-desktop-only { display: none !important; }
+
+  .main-inner { padding: 24px 16px 40px; }
+}
+
+/* very small screens: even tighter banner */
+@media (max-width: 480px) {
+  .topbar-brand-mark { width: 26px; height: 26px; }
+  .topbar-brand-text { font-size: 0.92rem; letter-spacing: 0.04em; }
+}
+
+/* ============================================================
+   AUTH CHIP — homepage uses the simplified .auth-link variant.
+   Pages still rendering the old .gh-login-btn / .gh-user-menu markup
+   continue to work via the legacy rules below
+   ============================================================ */
+
+.gh-auth-chip {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* simplified auth links - replaces the verbose login button on the homepage.
+   profile.html owns the actual sign-in/out flow */
+.auth-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  padding: 0 12px;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: color .12s;
+}
+.auth-link:hover {
+  color: var(--accent-hi);
+  text-decoration: none;
+}
+.auth-link .nav-icon { width: 16px; height: 16px; color: var(--accent); }
+.auth-link[hidden] { display: none !important; }
+
+.auth-link--signedin { text-transform: none; letter-spacing: 0; padding: 0 10px 0 4px; }
+.auth-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border2);
+}
+.auth-username {
+  /* Cap at 110px on narrow viewports so the username doesn't crowd the
+     hamburger toggle. Step it up on wider screens where there's clearly
+     room -- the screenshot shows "ProfessorK..." truncated at 1920px even
+     though the topbar has hundreds of pixels of empty space next to it */
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+/* On desktop there's plenty of room in the topbar, so show the full username
+   instead of truncating it. */
+@media (min-width: 1024px) { .auth-username { max-width: none; overflow: visible; } }
+
+.auth-admin-navlink {
+  color: #e88a8a !important;
+  font-weight: 600;
+}
+.auth-admin-navlink:hover {
+  color: #f4a8a8 !important;
+}
+
+.gh-login-btn {
+  --steam-btn-bg-top: #21324a;
+  --steam-btn-bg-bottom: #1a2637;
+  --steam-btn-border: #304762;
+  --steam-btn-shadow: rgba(0, 0, 0, 0.24);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: linear-gradient(180deg, var(--steam-btn-bg-top), var(--steam-btn-bg-bottom));
+  border: 1px solid var(--steam-btn-border);
+  border-radius: 16px;
+  color: #f2f6fb;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 8px 18px var(--steam-btn-shadow);
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  min-height: 34px;
+  padding: 1px 13px 1px 6px;
+  cursor: pointer;
+  transition: transform .12s, box-shadow .12s, border-color .12s, filter .12s;
+  white-space: nowrap;
+}
+.gh-login-btn:hover {
+  border-color: #3b5879;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 12px 24px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.04);
+  transform: translateY(-1px);
+}
+
+.gh-login-btn:focus-visible {
+  outline: 2px solid rgba(86, 170, 216, 0.75);
+  outline-offset: 2px;
+}
+
+.gh-login-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+  transform: none;
+}
+
+.gh-login-btn__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gh-login-btn__icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  overflow: visible;
+}
+
+.gh-login-btn__label {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.gh-user-menu {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  position: relative;
+  cursor: pointer;
+}
+.gh-avatar {
+  border-radius: 50%;
+  border: 1px solid var(--border2);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.gh-username {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text);
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gh-chevron {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 10px 8px;
+  line-height: 1;
+  transition: color .1s;
+}
+.gh-chevron:hover { color: var(--text); }
+
+.gh-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--s2);
+  border: 1px solid var(--border2);
+  min-width: 180px;
+  z-index: 500;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.gh-dropdown.open {
+  display: flex;
+  flex-direction: column;
+}
+.gh-dropdown a,
+.gh-dropdown button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 9px 14px;
+  font-size: 0.8rem;
+  color: var(--text);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .1s;
+  text-decoration: none;
+}
+.gh-dropdown a:last-child,
+.gh-dropdown button:last-child { border-bottom: none; }
+.gh-dropdown a:hover,
+.gh-dropdown button:hover { background: var(--s3); color: var(--strong); text-decoration: none; }
+.gh-dropdown .gh-logout { color: #c85050; }
+.gh-dropdown .gh-logout:hover { background: rgba(200,80,80,0.1); color: #e07070; }
+
+/* ============================================================
+   LEGACY compat - keep old topnav / topnav-* classes working
+   for pages that haven't been migrated yet
+   ============================================================ */
+
+.topnav {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--s1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topnav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0 4px;
+  margin-left: auto;
+  line-height: 1;
+}
+
+.topnav-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-right: 28px;
+  color: var(--strong);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+.topnav-brand img { width: 22px; height: 22px; object-fit: contain; }
+.topnav-brand:hover { text-decoration: none; color: var(--strong); }
+
+.topnav-links { display: flex; height: 100%; }
+.topnav-links a {
+  display: flex;
+  align-items: center;
+  padding: 0 13px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+  transition: color .12s, border-color .12s;
+}
+.topnav-links a:hover {
+  color: var(--text);
+  border-bottom-color: var(--border2);
+  text-decoration: none;
+}
+.topnav-links a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 98;
+  background: rgba(0,0,0,0.45);
+}
+.nav-overlay.open { display: block; }
+
+@media (max-width: 900px) {
+  .topnav { padding: 0 16px; }
+  .topnav-toggle { display: flex !important; align-items: center; }
+  .topnav-links {
+    display: none !important;
+    flex-direction: column;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 260px;
+    bottom: 0;
+    background: var(--s1);
+    border-right: 2px solid var(--border);
+    z-index: 99;
+    height: auto;
+    overflow-y: auto;
+    box-shadow: 4px 0 16px rgba(0,0,0,0.4);
+    transform: translateX(-100%);
+    transition: transform .2s ease;
+  }
+  .topnav-links.open { display: flex !important; transform: translateX(0); }
+  .topnav-links a {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    border-left: none !important;
+    font-size: 0.9rem;
+  }
+  .topnav-links a:last-child { border-bottom: none; }
+  .topnav-brand-text { display: none; }
+  .topnav-brand { margin-right: auto; gap: 0; }
+  .topnav-brand img { width: 28px; height: 28px; }
+  .sidebar-nav-block { display: none; }
+  .sidebar-about-block { display: none; }
+}
+
+/* Store pill position preference (pp:store-pill-pos).
+   Default ('right'): pill in the rating column, overlay hidden.
+   'art': overlay on the thumbnail bottom-right, right-column pill hidden.
+   'art-corner': card-level corner piece pinned to the whole card's
+   top-right edge (uses .game-card-corner-tag, styled in cards.css /
+   index.css; the thumbnail overlay and right-column pill are hidden). */
+.game-card-store-tag { display: none; }
+[data-store-pill-pos="art"] .game-card-store-tag { display: inline; }
+[data-store-pill-pos="art"] .game-card-store-pill { display: none; }
+[data-store-pill-pos="art-corner"] .game-card-store-pill { display: none; }
+
+/* #22 follow-up: formatting help expander next to editable text fields.
+   Native <details>/<summary> so it works without JS. Summary acts as a
+   small link-styled button; expanded panel renders a quick description
+   and a <code>-wrapped example. */
+.formatting-help {
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: 0.78rem;
+}
+.formatting-help > summary {
+  display: inline;
+  cursor: pointer;
+  color: var(--accent, #5c8bd6);
+  list-style: none;
+}
+.formatting-help > summary::-webkit-details-marker { display: none; }
+.formatting-help > summary::before { content: "? "; opacity: 0.7; }
+.formatting-help > summary:hover { text-decoration: underline; }
+.formatting-help[open] > summary { font-weight: 600; }
+.formatting-help > p {
+  margin: 6px 0 0;
+  padding: 8px 10px;
+  background: rgba(255,255,255,0.04);
+  border-left: 2px solid var(--accent, #5c8bd6);
+  border-radius: 3px;
+  color: var(--text, #cfd6dd);
+  line-height: 1.45;
+}
+.formatting-help code {
+  font-family: var(--mono, ui-monospace, monospace);
+  background: rgba(0,0,0,0.3);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}

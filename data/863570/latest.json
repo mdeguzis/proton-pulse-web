@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "863570",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.10-300.fc29.x86_64",
+    "notes": "Videos don't play",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545668385,
+    "title": "Super Seducer 2",
+    "source": "protondb"
+  }
+]

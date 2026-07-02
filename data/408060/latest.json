@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "408060",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-16-lowlatency",
+    "notes": "Sometimes the game closes itself",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567252846,
+    "title": "SAVAGE: The Shard of Gosen",
+    "source": "protondb"
+  }
+]

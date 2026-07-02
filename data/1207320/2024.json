@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1207320",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 16.0.6, DRM 3.54, 6.6.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.4-arch1-1",
+    "notes": "Game's anticheat seems to not work on linux",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1714500979,
+    "title": "Gray Zone",
+    "source": "protondb"
+  }
+]

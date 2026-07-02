@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "420790",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.5.12-300.fc39.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1703945930,
+    "title": "StarBreak",
+    "source": "protondb"
+  }
+]

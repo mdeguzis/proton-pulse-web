@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1493520",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.7, DRM 3.61, 6.12.0-160000.29-default)",
+    "gpuDriver": "4.6 Mesa 24.3.3",
+    "kernel": "6.12.0-160000.29-default",
+    "notes": "All out of the box, open mic works too, just one tiny but in the description which is not that big of a deal though.",
+    "os": "openSUSE Leap 16.0",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1778064122,
+    "title": "Beat Hazard 3",
+    "source": "protondb"
+  }
+]

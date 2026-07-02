@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1152310",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs very well without having to use any specific Proton version.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1709160772,
+    "title": "Atelier Escha & Logy: Alchemists of the Dusk Sky DX",
+    "source": "protondb"
+  },
+  {
+    "appId": "1152310",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.0-1pop0~1706872735~22.04~0fa430c",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "While I got some weird hiccups sometimes, it ran great",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1712141351,
+    "title": "Atelier Escha & Logy: Alchemists of the Dusk Sky DX",
+    "source": "protondb"
+  }
+]

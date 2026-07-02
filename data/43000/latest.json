@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "43000",
+    "title": "Front Mission Evolved",
+    "timestamp": 1535549789,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "43000",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Everything works great directly with a Xbox360 controller, full option except MSAA x4 that seems to cause stutters ingame and voice synchronisation problem during cutscenes, maybe related to my hardware.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7924 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537225842,
+    "title": "Front Mission Evolved",
+    "source": "protondb"
+  },
+  {
+    "appId": "43000",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7958 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537286089,
+    "title": "Front Mission Evolved",
+    "source": "protondb"
+  },
+  {
+    "appId": "43000",
+    "title": "Front Mission Evolved",
+    "timestamp": 1535535389,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

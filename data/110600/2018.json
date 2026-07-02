@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "110600",
+    "title": "Astro Tripper",
+    "timestamp": 1535116738,
+    "rating": "Platinum",
+    "notes": "Flawless",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 1400 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "110600",
+    "title": "Astro Tripper",
+    "timestamp": 1535401857,
+    "rating": "Platinum",
+    "notes": "Runs like a charm",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-2620m/intel sandybridge mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "110600",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Training runs like native.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541993330,
+    "title": "Astro Tripper",
+    "source": "protondb"
+  },
+  {
+    "appId": "110600",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "I played this using my 360 controller and it worked perfectly.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1544424999,
+    "title": "Astro Tripper",
+    "source": "protondb"
+  },
+  {
+    "appId": "110600",
+    "title": "Astro Tripper",
+    "timestamp": 1535102338,
+    "rating": "Platinum",
+    "notes": "Flawless",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 1400 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "110600",
+    "title": "Astro Tripper",
+    "timestamp": 1535387457,
+    "rating": "Platinum",
+    "notes": "Runs like a charm",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-2620m/intel sandybridge mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

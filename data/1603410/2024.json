@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1603410",
+    "cpu": "AMD A12-9700P RADEON R7, 10 COMPUTE CORES 4C+6G",
+    "duration": "severalHours",
+    "gpu": "AMD CARRIZO (LLVM 13.0.1, DRM 3.42, 5.15.0-30-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.15.0-30-generic",
+    "notes": "Perfect performance across the board, not a single stutter, no crashes, anything",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "11 GB",
+    "rating": "platinum",
+    "timestamp": 1719246827,
+    "title": "Lost Nova",
+    "source": "protondb"
+  }
+]

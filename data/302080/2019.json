@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "302080",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "4.20.17-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554555326,
+    "title": "Bus Driver",
+    "source": "protondb"
+  },
+  {
+    "appId": "302080",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "4.20.17-1-MANJARO",
+    "notes": "Runs fine with a controller. I've  chosen  OpenGL in the configurator.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554559290,
+    "title": "Bus Driver",
+    "source": "protondb"
+  },
+  {
+    "appId": "302080",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.16.0-2-amd64",
+    "notes": "Sometimes the configuration screen doesn't come up. But after that it was possible to play the game. You may have to create ~/.local/share/Steam/SteamApps/compatdata/302080/pfx/drive_c/users/steamuser/My Documents/Bus Driver/config.cfg by your own to make it work. My res of 1920x1080 was not supported by the game. But setting unsupported resolutions like mine caused it to have rendering issues (e.g. disappearing lines for designated stops).",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1558226149,
+    "title": "Bus Driver",
+    "source": "protondb"
+  }
+]

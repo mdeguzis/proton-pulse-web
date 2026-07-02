@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "254920",
+    "cpu": "Intel Core2 Duo     E8500  @ 3.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD CEDAR",
+    "gpuDriver": "3.1 Mesa 18.2.8",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Outright does not work. Dosbox steals the mouse and while the second Dosbox window can be closed using alt-f4, the primary command window can not. Had to use the keyboard super key to get into system monitor and shut the program that way.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1559677868,
+    "title": "Lords of the Realm",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "389430",
+    "title": "Knight Online",
+    "timestamp": 1536353076,
+    "rating": "Borked",
+    "notes": "The laucher workes, but after start the game crash.",
+    "os": "Antergos (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 3 1200 / GT 1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "389430",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-1-MANJARO",
+    "notes": "Launcher Works fine - XignCode3 anti-hack won't allow it to run. Can probably be bypassed.\n ---> https://www.youtube.com/watch?v=ij5Y54mB3aE\n",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15982 Mb",
+    "rating": "Borked",
+    "timestamp": 1537725739,
+    "title": "Knight Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "389430",
+    "title": "Knight Online",
+    "timestamp": 1536338676,
+    "rating": "Borked",
+    "notes": "The laucher workes, but after start the game crash.",
+    "os": "Antergos (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 3 1200 / GT 1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

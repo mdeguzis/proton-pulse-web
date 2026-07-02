@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "549180",
+    "cpu": "Intel Celeron N3350 @ 1.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 500 (Broxton 2x6)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.8-arch1-1-ARCH",
+    "notes": "It can run on 800x600 fullscreen resolution, but there is glitch that on Boot Camp and Campaign section. When I click that, the screen freeze. The sounds still playing perfectly, but after I press Esc key its came back to main menu, which is no problem there. Fortunately on Battle section, the screen not freezing. I can play 15 minutes there, but when I press Esc the screen and sound glitched.",
+    "os": "Antergos Linux",
+    "protonVersion": "4.2-4",
+    "ram": "4 GB",
+    "rating": "Bronze",
+    "timestamp": 1558865494,
+    "title": "Army Men: Toys in Space",
+    "source": "protondb"
+  }
+]

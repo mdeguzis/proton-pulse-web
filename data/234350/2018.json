@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "234350",
+    "title": "Luxor 2 HD",
+    "timestamp": 1535873426,
+    "rating": "Gold",
+    "notes": "works perfectly apart from screen resolution being set to something quite low",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "234350",
+    "title": "Luxor 2 HD",
+    "timestamp": 1535859026,
+    "rating": "Gold",
+    "notes": "works perfectly apart from screen resolution being set to something quite low",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

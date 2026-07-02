@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1985260",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 14.0.6, DRM 3.47, 5.19.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.19.3-arch1-1",
+    "notes": "Typical KiriKiri Problems",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1661269958,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1985260",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.4-200.fc36.x86_64",
+    "notes": "Perfect, except for movies",
+    "os": "Fedora Linux 36 (KDE Plasma)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1662064538,
+    "title": "",
+    "source": "protondb"
+  }
+]

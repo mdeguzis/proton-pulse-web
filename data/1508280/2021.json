@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1508280",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (DRM 3.40.0, 5.11.6-137-tkg-bmq, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.11.6-137-tkg-bmq",
+    "notes": "Flawless experience out of the box. Tested with Oculus Quest 2 wireless via ALVR.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1636936212,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1508280",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.40.0, 5.12.2-153-tkg-bmq, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.12.2-153-tkg-bmq",
+    "notes": "Flawless experience out of the box. Tested with Oculus Quest 2 wireless via ALVR.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1636936539,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1508280",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.42.0, 5.15.2-217-tkg-bmq, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.2-217-tkg-bmq",
+    "notes": "Flawless experience out of the box. Tested with Oculus Quest 2 wireless via ALVR.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1636936905,
+    "title": "",
+    "source": "protondb"
+  }
+]

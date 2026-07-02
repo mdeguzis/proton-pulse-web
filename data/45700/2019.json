@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "45700",
+    "cpu": "Intel Core i7-3720QM @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 670M",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.19.20-1-MANJARO",
+    "notes": "Graphics, sound, and controller support are all flawless out of the box.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550080608,
+    "title": "Devil May Cry 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "45700",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Just works perfect with a controller",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552674893,
+    "title": "Devil May Cry 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "45700",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-arch1-1-ARCH",
+    "notes": "Max settings run perfectly out of the box with Direct X 10",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561383539,
+    "title": "Devil May Cry 4",
+    "source": "protondb"
+  }
+]

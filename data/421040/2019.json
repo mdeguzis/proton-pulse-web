@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "421040",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "As below, game runs but there is no window border or other elements. Game doesn't fullscreen unless you minimise then click it from task bar.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1546839649,
+    "title": "Plantera",
+    "source": "protondb"
+  },
+  {
+    "appId": "421040",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556473624,
+    "title": "Plantera",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "204960",
+    "title": "Magical Drop V",
+    "timestamp": 1534953419,
+    "rating": "Platinum",
+    "notes": "Runs flawlessly",
+    "os": "Solus 3.9999, latest sync",
+    "gpuDriver": "xf86-video-ati 18.0.1",
+    "specs": "Intel Core i7-4770K/ AMD Radeon RX570 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "204960",
+    "cpu": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Flawless",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15968 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537658987,
+    "title": "Magical Drop V",
+    "source": "protondb"
+  },
+  {
+    "appId": "204960",
+    "cpu": "Intel Core i7-3612QM @ 2.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.19.0-3-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542071763,
+    "title": "Magical Drop V",
+    "source": "protondb"
+  },
+  {
+    "appId": "204960",
+    "title": "Magical Drop V",
+    "timestamp": 1534939019,
+    "rating": "Platinum",
+    "notes": "Runs flawlessly",
+    "os": "Solus 3.9999, latest sync",
+    "gpuDriver": "xf86-video-ati 18.0.1",
+    "specs": "Intel Core i7-4770K/ AMD Radeon RX570 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

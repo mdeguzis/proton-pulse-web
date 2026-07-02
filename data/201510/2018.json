@@ -1,0 +1,47 @@
+[
+  {
+    "appId": "201510",
+    "cpu": "i7-2600 CPU @ 3.40GHz",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.26.0, 4.18.6-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.6-1-MANJARO",
+    "notes": "Game not start (It's show black screen a few time)",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "16008 Mb",
+    "rating": "Borked",
+    "timestamp": 1536676628,
+    "title": "Flatout 3: Chaos & Destruction",
+    "source": "protondb"
+  },
+  {
+    "appId": "201510",
+    "cpu": "Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.19-200.fc28.x86_64",
+    "notes": "Game does not start",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "24045 Mb",
+    "rating": "Borked",
+    "timestamp": 1537727630,
+    "title": "Flatout 3: Chaos & Destruction",
+    "source": "protondb"
+  },
+  {
+    "appId": "201510",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.9-92.current, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.18.9-92.current",
+    "notes": "Black Screen at Launch Then Crashes. Proton 3.7-6.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16052 Mb",
+    "rating": "Borked",
+    "timestamp": 1537811969,
+    "title": "Flatout 3: Chaos & Destruction",
+    "source": "protondb"
+  }
+]

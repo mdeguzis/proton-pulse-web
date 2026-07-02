@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "652410",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "There are a few slow downs when the game has to draw a lot of sprites, particularly when a certain flying enemy uses its attack.  It also has a tendency to crash if you reload a save too much.  Occasionally the audio bugs out, but if you open any menu it fixes except for the outdoor rain sound.  In all other places it runs smoothly.  The demo runs worse and you need to delete all the character audio in the brigand oaxaca sub-folder (not default) or it crashes when certain dialogue triggers.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1570559354,
+    "title": "Brigand: Oaxaca",
+    "source": "protondb"
+  }
+]

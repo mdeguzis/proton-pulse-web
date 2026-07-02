@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1878910",
+    "cpu": "AMD Ryzen 3 4100 4-Core",
+    "duration": "unreported",
+    "gpu": "AMD BEIGE_GOBY (DRM 3.42.0, 5.15.0-60-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-60-generic",
+    "notes": "Cursor bugs out and detaches from wool when moved toward top right of screen. This bug makes the game far more annoying.",
+    "os": "Zorin OS 16.2",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1677578969,
+    "title": "",
+    "source": "protondb"
+  }
+]

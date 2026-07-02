@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "44100",
+    "title": "Super Lazer Racer",
+    "timestamp": 1536268400,
+    "rating": "Borked",
+    "notes": "Doesn't start",
+    "os": "Arch linux 64-bit",
+    "gpuDriver": "mesa 18.1.7",
+    "specs": "1600x/rx480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "44100",
+    "title": "Super Lazer Racer",
+    "timestamp": 1536254000,
+    "rating": "Borked",
+    "notes": "Doesn't start",
+    "os": "Arch linux 64-bit",
+    "gpuDriver": "mesa 18.1.7",
+    "specs": "1600x/rx480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1857950",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 18.1.6, DRM 3.57, 6.9.8-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.2",
+    "kernel": "6.9.8-200.fc40.x86_64",
+    "notes": "The games runs well under Linux, no problems at all",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1721339697,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1857950",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.10-zen1-1-zen",
+    "notes": "Launch and play. 5 hours into it and no issues.",
+    "os": "Garuda Linux Bird of Prey",
+    "protonVersion": "9.0-3",
+    "ram": "63 GB",
+    "rating": "platinum",
+    "timestamp": 1729001607,
+    "title": "",
+    "source": "protondb"
+  }
+]

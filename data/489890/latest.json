@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "489890",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Crashed out of nowhere a couple of times and had some very minor visual glitching sometimes, but otherwise ran without any issues.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1567938495,
+    "title": "Puzzles At Mystery Manor",
+    "source": "protondb"
+  }
+]

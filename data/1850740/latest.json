@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1850740",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 19.1.0, DRM 3.59, 6.12.6-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.8",
+    "kernel": "6.12.6-200.fc41.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1738455819,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1850740",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 19.1.7, DRM 3.61, 6.13.7-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.1",
+    "kernel": "6.13.7-200.fc41.x86_64",
+    "notes": "Game starts, but crashes afterwards.\nNo problems in the main/login screen.\nTested with Proton Experimental, 9.0-4, GE9-26 and TKG 17667",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1742649183,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1850740",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-ba19.fc43.x86_64",
+    "notes": "Works great without any changes. Multiplayer is flawless.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1764933575,
+    "title": "",
+    "source": "protondb"
+  }
+]

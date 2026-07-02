@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "977390",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-338dacc 2019-02-22 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-050000rc5-lowlatency",
+    "notes": "It runs as expected, as a normal game, how it runs with unity that seems to be an expected compatibility.\n\nI had some lag in the game or loading the game, but i think that is realated with the servers and because is still under development. For me was a very fun game.\nI hope this game get more popular to have more options and more interesting things in the game itself.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1550849260,
+    "title": "Tokyo Warfare Turbo",
+    "source": "protondb"
+  }
+]

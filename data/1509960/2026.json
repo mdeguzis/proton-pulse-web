@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1509960",
+    "cpu": "AMD Ryzen 9 7845HX with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.19.8-200.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1774955703,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1509960",
+    "cpu": "Intel Core Ultra 5 125H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Arc (MTL)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.19.10-200.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1775421169,
+    "title": "",
+    "source": "protondb"
+  }
+]

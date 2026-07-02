@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "465240",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-47-generic",
+    "notes": "The game starts and it is playable-ish. (I tried 4 levels)\n////\nWhat doesn't work:\nIt crashed when I tried to use OpenGL or Vulkan instead of D3d11 in graphics menu.\n////\nWhat makes some part unplayable:\nMenu text has some resilience (animations and changes in texts makes trails or superposed texts, in \"jungle\" option menu), thus unless you let your cursor on it to have the highlight and get close to the menu you won't be able to read the options.\nOn the other hand I found menu options not bright enough to read them comfortably in the Saratoga star ship where you see the earth in background.\n\nI had also some graphical artefacts in front of my sight. Depending on the level. The 2nd level  in some sort of catacombs was unplayable as my vision was blocked by some bright image in front of me (following the direction of the headset).\n\nAlso had an issue with the Sniper, when looking in the scope it was 75% white, couldn't even see the cross aim.\n\n////\nTrying to troubleshot it:\n\nI played a bit with graphical options (especially the memory options) and it reduced the issue making the sniper scope usable, but there was still this remanent image in front of my sight and the menu texts were still unreadable (not helping to tweak the options)\n\nDidn't tried any Proton variable options.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1555690390,
+    "title": "Serious Sam VR: The Last Hope",
+    "source": "protondb"
+  },
+  {
+    "appId": "465240",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel",
+    "kernel": "5.2.8",
+    "notes": "Game starts using D3D11, but flickering makes it unplayable. Setting API to Vulkan makes the game crashing at the start.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566333978,
+    "title": "Serious Sam VR: The Last Hope",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "510620",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Doesn't even start. Just opens a small window to tell you it crashed and you can send a crash report to the developer.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1548078704,
+    "title": "THOTH",
+    "source": "protondb"
+  },
+  {
+    "appId": "510620",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "It doesn't even start the game, just opens up an popup to tell you there is a crash and you can send the report to the developer\n",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1548079459,
+    "title": "THOTH",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "510620",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Runs perfectly out of the box; Played with Xbox One Controller",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549650221,
+    "title": "THOTH",
+    "source": "protondb"
+  },
+  {
+    "appId": "510620",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557612255,
+    "title": "THOTH",
+    "source": "protondb"
+  }
+]

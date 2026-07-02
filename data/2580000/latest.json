@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2580000",
+    "cpu": "12th Gen Intel Core i7-1260P",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 25.3.5 (git-8418351c7c)",
+    "kernel": "6.18.18-gentoo-dist",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1774678853,
+    "title": "",
+    "source": "protondb"
+  }
+]

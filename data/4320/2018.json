@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "4320",
+    "title": "Star Trek: D-A-C",
+    "timestamp": 1535681428,
+    "rating": "Borked",
+    "notes": "Crashes after about 3 minutes (at various points/states of the game, unsure of cause yet)",
+    "os": "Fedora 28 Workstation 64-bit (Kernel 4.17.17-200)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3770S / GTX 960 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "4320",
+    "title": "Star Trek: D-A-C",
+    "timestamp": 1535667028,
+    "rating": "Borked",
+    "notes": "Crashes after about 3 minutes (at various points/states of the game, unsure of cause yet)",
+    "os": "Fedora 28 Workstation 64-bit (Kernel 4.17.17-200)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3770S / GTX 960 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

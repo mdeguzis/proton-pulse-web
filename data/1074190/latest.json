@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1074190",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 15.0.7, DRM 3.57, 6.9.3-76060903-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Game runs perfectly if you select the \"Compatible mode for better performance on some devices\" option",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1748090828,
+    "title": "Dragon Spirits",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "314240",
+    "cpu": "Intel(R) Core(TM) i5-8600K CPU @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "It launches a white window that can be closed. No music, sounds or anything else. ",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15994 Mb",
+    "rating": "Borked",
+    "timestamp": 1539026210,
+    "title": "RPG Tycoon",
+    "source": "protondb"
+  }
+]

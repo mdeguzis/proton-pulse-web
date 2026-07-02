@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1165870",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.10-arch1-1",
+    "notes": "The game itself is a bit slow on high settings.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1608500454,
+    "title": "",
+    "source": "protondb"
+  }
+]

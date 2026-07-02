@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "471810",
+    "cpu": "Intel Core i3-6100U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "It plays perfectly but doesn't exit gracefully. Selecting \"Quit\" from the main menu results in a crash report and the game processes becoming unresponsive. To force quit when this happens, open a terminal and type \"pkill Death\"",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1542912224,
+    "title": "Death Squared",
+    "source": "protondb"
+  }
+]

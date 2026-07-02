@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "411980",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Works perfectly without any tweaks. Performance is fine at 1440p on max settings.",
+    "os": "Anarchy Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546311883,
+    "title": "TY the Tasmanian Tiger 3",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "243930",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Works perfectly and out of the box.\n\nThe native version is unplayable for me because of broken controls (a known issue with the Linux version, although not everyone is affected).",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561760388,
+    "title": "Bound By Flame",
+    "source": "protondb"
+  }
+]

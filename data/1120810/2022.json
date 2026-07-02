@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1120810",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.9-arch1-1",
+    "notes": "Works out of box.",
+    "os": "Arch Linux (64 \u4f4d\u5143)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1668256890,
+    "title": "",
+    "source": "protondb"
+  }
+]

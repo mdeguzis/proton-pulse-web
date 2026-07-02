@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1347550",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.11.1-arch1-1",
+    "notes": "Fun game, runs absolutely fine on Linux. Game appears to run smoother than on Windows too. No tinkering needed and no lag/stuttering.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1729104232,
+    "title": "",
+    "source": "protondb"
+  }
+]

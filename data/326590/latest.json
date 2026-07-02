@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "326590",
+    "title": "Cinemaware Anthology: 1986-1991",
+    "timestamp": 1534947075,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX 9350/GTX  970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "326590",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Launcher works and Amiga emulation works perfectly, but the DOS ports won't launch properly.  Technically this makes it \"Silver\" but realistically there's no reason to ever play the DOS versions.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Silver",
+    "timestamp": "1536346837",
+    "title": "Cinemaware Anthology: 1986-1991",
+    "source": "protondb"
+  },
+  {
+    "appId": "326590",
+    "title": "Cinemaware Anthology: 1986-1991",
+    "timestamp": 1534932675,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX 9350/GTX  970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

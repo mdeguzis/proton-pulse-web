@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "466740",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Game works fine with good performance until the first cut-scene video is going to be played. There the game gets stuck in a black screen, the videos are in mp4 AVC/AAC format. Tried different Proton launch options without success.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552839232,
+    "title": "ARAYA",
+    "source": "protondb"
+  },
+  {
+    "appId": "466740",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.7-050007-generic",
+    "notes": "Game works out of the box and is playable until where presumably the first cut-scene is going to be playable. There the game gets stuck in a black screen and you have to force quit.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1555923098,
+    "title": "ARAYA",
+    "source": "protondb"
+  },
+  {
+    "appId": "466740",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-7ceafa4 2019-10-20 bionic-oibaf-ppa)",
+    "kernel": "5.4.0-050400rc3-lowlatency",
+    "notes": "Game works perfectly by installing Quarts and Media Foundation. Got it working with the following files: quartz.dll colorcnv.dll mf.dll mferror.dll mfplat.dll mfplay.dll mfreadwrite.dll msmpeg2adec.dll msmpeg2vdec.dll sqmapi.dll\n\nRating the game borked because this is beyond just a tweak, and not all of these files are freely distributable.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-7",
+    "protonVersionManual": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1571583403,
+    "title": "ARAYA",
+    "source": "protondb"
+  }
+]

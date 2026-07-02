@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1608640",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.18.2-arch1-1",
+    "notes": "Game currently runs as exactly on windows, might be able to get more FPS if you enable FSR",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1661627524,
+    "title": "OTXO",
+    "source": "protondb"
+  }
+]

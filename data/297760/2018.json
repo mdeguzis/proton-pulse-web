@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "297760",
+    "title": "Qvadriga",
+    "timestamp": 1534910400,
+    "rating": "Silver",
+    "notes": "There is a slight audio stutter/glitch at start up, but this goes away quickly, and then things just work fine. Performance is good, sound and music works.",
+    "os": "Fedora 28, Nvidia 390.48",
+    "gpuDriver": "?",
+    "specs": "Intel i7-4770K, Nvidia GTX 780Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "297760",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-13-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "timestamp": 1545413929,
+    "title": "Qvadriga",
+    "source": "protondb"
+  },
+  {
+    "appId": "297760",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Sound and video both fine",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1545413965,
+    "title": "Qvadriga",
+    "source": "protondb"
+  },
+  {
+    "appId": "297760",
+    "title": "Qvadriga",
+    "timestamp": 1534896000,
+    "rating": "Silver",
+    "notes": "There is a slight audio stutter/glitch at start up, but this goes away quickly, and then things just work fine. Performance is good, sound and music works.",
+    "os": "Fedora 28, Nvidia 390.48",
+    "gpuDriver": "?",
+    "specs": "Intel i7-4770K, Nvidia GTX 780Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

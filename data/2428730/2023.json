@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2428730",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.6-76060406-generic",
+    "notes": "Smooth experience after switching to GE Proton, runs with very few issues, if any.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1691186505,
+    "title": "",
+    "source": "protondb"
+  }
+]

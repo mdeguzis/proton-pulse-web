@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2634890",
+    "cpu": "12th Gen Intel Core i3-1215U",
+    "duration": "severalHours",
+    "gpu": "Mesa virgl (Mesa Intel (ADL GT2))",
+    "gpuDriver": "4.6 Mesa 25.1.0-devel (git-4ecd183c56)",
+    "kernel": "6.1.124-16524-g33f8d2d69233",
+    "notes": "Works great if you have a controller!",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "9.0-4",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1743382701,
+    "title": "MARVEL vs. CAPCOM Fighting Collection: Arcade Classics",
+    "source": "protondb"
+  },
+  {
+    "appId": "2634890",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, gfx1201, ACO, DRM 3.61, 6.13.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.0-devel (git-61feea6954)",
+    "kernel": "6.13.6-arch1-1",
+    "notes": "Works out of the box. Sometimes you need to turn off steam input depending on your controller etc",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1765129146,
+    "title": "MARVEL vs. CAPCOM Fighting Collection: Arcade Classics",
+    "source": "protondb"
+  }
+]

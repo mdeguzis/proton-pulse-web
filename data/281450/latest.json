@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "281450",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4",
+    "notes": "\"Unable to load fonts\"",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559131424,
+    "title": "Disciples Sacred Lands Gold",
+    "source": "protondb"
+  },
+  {
+    "appId": "281450",
+    "cpu": "AMD A10-4600M APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.1 Mesa 18.2.8",
+    "kernel": "4.9.0-9-amd64",
+    "notes": "Have mouse issue in emulated desktop mode - top window area is inaccessible. Mouse pointer just stops when I try to move it there. Inaccessible area grows then I move game window down the screen. Resolved by disabling Steam overlay by setting launch options to LD_PRELOAD=\"\" %command% . Unchecking \"Enable Steam overlay...\" doesn't help.",
+    "os": "LMDE 3 Cindy",
+    "protonVersion": "4.2-7",
+    "ram": "7 GB",
+    "rating": "Gold",
+    "timestamp": 1561225000,
+    "title": "Disciples Sacred Lands Gold",
+    "source": "protondb"
+  },
+  {
+    "appId": "281450",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.7",
+    "kernel": "5.2.14-1-default",
+    "notes": "Without PROTON_OLD_GL_STRING game crushes always after first turn ends. I strongly recommend to play in virtual desktop mode if you want to alt-tab. Everything else works as intended.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1569713538,
+    "title": "Disciples Sacred Lands Gold",
+    "tweaks": {
+      "oldGlString": true
+    },
+    "source": "protondb"
+  }
+]

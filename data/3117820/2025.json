@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3117820",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.14.0-4-cachyos",
+    "notes": "Working great when switched to Experimental",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1744372276,
+    "title": "Sultan's Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "3117820",
+    "cpu": "13th Gen Intel Core i7-13700H",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel (RPL-P)",
+    "gpuDriver": "4.6 Mesa 25.0.3-arch1.1",
+    "kernel": "6.14.2-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1744785672,
+    "title": "Sultan's Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "3117820",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 19.1.1, DRM 3.57, 6.8.0-56-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-56-generic",
+    "notes": "Runs and plays perfectly except occasionally one specific shortcut button not working properly (might be game bug)",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1745121807,
+    "title": "Sultan's Game",
+    "source": "protondb"
+  }
+]

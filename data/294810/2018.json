@@ -1,0 +1,89 @@
+[
+  {
+    "appId": "294810",
+    "title": "BlazBlue: Continuum Shift Extend",
+    "timestamp": 1535652145,
+    "rating": "Borked",
+    "notes": "Won't Start",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Ryzen 7 1700X / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "294810",
+    "title": "BlazBlue: Continuum Shift Extend",
+    "timestamp": 1534824000,
+    "rating": "Borked",
+    "notes": "Starts into a Black Screen",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-8700K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "294810",
+    "title": "BlazBlue: Continuum Shift Extend",
+    "timestamp": 1536000921,
+    "rating": "Borked",
+    "notes": "Starts to black screen, alt tabbing reveals graphical artifacting. Likely a direct x issue.",
+    "os": "Linux Mint 18.3 mate",
+    "gpuDriver": "Mesa 18(padoka pkppa)",
+    "specs": "Amd fx8350 + AMD R9 380x",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "294810",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.0-1-amd64, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Hangs with screen corruption. Tested with Wine3D and DX9.",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "16054 Mb",
+    "rating": "Borked",
+    "timestamp": 1536976015,
+    "title": "BlazBlue: Continuum Shift Extend",
+    "source": "protondb"
+  },
+  {
+    "appId": "294810",
+    "title": "BlazBlue: Continuum Shift Extend",
+    "timestamp": 1535637745,
+    "rating": "Borked",
+    "notes": "Won't Start",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Ryzen 7 1700X / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "294810",
+    "title": "BlazBlue: Continuum Shift Extend",
+    "timestamp": 1534809600,
+    "rating": "Borked",
+    "notes": "Starts into a Black Screen",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-8700K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "294810",
+    "title": "BlazBlue: Continuum Shift Extend",
+    "timestamp": 1535986521,
+    "rating": "Borked",
+    "notes": "Starts to black screen, alt tabbing reveals graphical artifacting. Likely a direct x issue.",
+    "os": "Linux Mint 18.3 mate",
+    "gpuDriver": "Mesa 18(padoka pkppa)",
+    "specs": "Amd fx8350 + AMD R9 380x",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

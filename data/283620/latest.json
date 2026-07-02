@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "283620",
+    "title": "World of Subways 3 \u2013 London Underground Circle Line",
+    "timestamp": 1535138258,
+    "rating": "Borked",
+    "notes": "Crashes just after the splash screens with \"ERROR: Couldn't initialize DirectShow. Perhaps the necessary Codec for the video format is missing?\"",
+    "os": "Manjaro Stable 64-bit (Kernel 4.17.17-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-3770 / GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "283620",
+    "title": "World of Subways 3 \u2013 London Underground Circle Line",
+    "timestamp": 1535123858,
+    "rating": "Borked",
+    "notes": "Crashes just after the splash screens with \"ERROR: Couldn't initialize DirectShow. Perhaps the necessary Codec for the video format is missing?\"",
+    "os": "Manjaro Stable 64-bit (Kernel 4.17.17-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-3770 / GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

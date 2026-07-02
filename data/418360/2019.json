@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "418360",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Game works native and out of the box on Proton with DXVK.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556971598,
+    "title": "Gurgamoth",
+    "source": "protondb"
+  },
+  {
+    "appId": "418360",
+    "cpu": "Intel Xeon E3-1230 v5 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.9-arch1-1-ARCH",
+    "notes": "It's native on Linux",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560634243,
+    "title": "Gurgamoth",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2645180",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.8-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.1.0-arch2.1",
+    "kernel": "7.0.8-1-cachyos",
+    "notes": "I played the Game since February of this year. Always using Proton GE 10.28 at the time and now 10.34 both worked very well.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1779722591,
+    "title": "",
+    "source": "protondb"
+  }
+]

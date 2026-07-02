@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2570",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Does not start.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560625736,
+    "title": "Vigil: Blood Bitterness\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "2570",
+    "cpu": "Intel Core i5-3450 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R7 300",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.7-arch1-1-ARCH",
+    "notes": "Doesn't start. It doesn't even output anything to the log file, wtf. Cursed game, don't even try.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1571502235,
+    "title": "Vigil: Blood Bitterness\u2122",
+    "source": "protondb"
+  }
+]

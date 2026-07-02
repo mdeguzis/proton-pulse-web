@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1394460",
+    "cpu": "AMD Ryzen 9 3900 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (navi14, LLVM 14.0.6, DRM 3.42, 5.15.0-48-generic)",
+    "gpuDriver": "4.6 Mesa 22.1.7 (git-7a3414c4bd)",
+    "kernel": "5.15.0-48-generic",
+    "notes": "Single player for Beta 1 Demo worked mostly fine; multiplayer matchmaking issue might be because of limited demo interest/implementation",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1665355051,
+    "title": "RXC - Rally Cross Challenge",
+    "source": "protondb"
+  }
+]

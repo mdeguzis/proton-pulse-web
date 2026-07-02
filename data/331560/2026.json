@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "331560",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "6.19.10-1-cachyos",
+    "notes": "The game works fine without any change.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1781798200,
+    "title": "",
+    "source": "protondb"
+  }
+]

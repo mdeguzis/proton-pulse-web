@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "512230",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "runs fine with very minor screen tearing  (DS4 Controller doesn't work natively)",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "15962 MB",
+    "rating": "Gold",
+    "timestamp": 1537696283,
+    "title": "Sally's Law",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "550810",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "It works",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537386414,
+    "title": "Abduction Bit",
+    "source": "protondb"
+  }
+]

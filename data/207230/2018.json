@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "207230",
+    "title": "archeblade",
+    "timestamp": 1536079652,
+    "rating": "Borked",
+    "notes": "after letting steam install the important software for the game just crash",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 1600 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "207230",
+    "title": "Archeblade",
+    "timestamp": 1536207610,
+    "rating": "Borked",
+    "notes": "Crashes at start",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "207230",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.18-300.fc29.x86_64",
+    "notes": "just do not open",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1543091134,
+    "title": "ArcheBlade\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "207230",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 18.2.6",
+    "kernel": "4.19.6-1-MANJARO",
+    "notes": "Doesnt start",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543865225,
+    "title": "ArcheBlade\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "207230",
+    "title": "archeblade",
+    "timestamp": 1536065252,
+    "rating": "Borked",
+    "notes": "after letting steam install the important software for the game just crash",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 1600 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "207230",
+    "title": "Archeblade",
+    "timestamp": 1536193210,
+    "rating": "Borked",
+    "notes": "Crashes at start",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

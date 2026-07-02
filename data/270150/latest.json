@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "270150",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-2d2927938f)",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Game works native on Linux and on Proton with OpenGL out of the box. DX9 doesn't work. Even installing D9VK didn't help to get it running.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557523285,
+    "title": "RUNNING WITH RIFLES",
+    "source": "protondb"
+  }
+]

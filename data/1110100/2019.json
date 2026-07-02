@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "1110100",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-050300-lowlatency",
+    "notes": "Everything works out of the box except story mode cutscenes which can be fixed by running z0z0z's mf-install script (https://github.com/z0z0z/mf-install) on the game's prefix (AppID 1110100). Full controller support and online multiplayer functionality.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.15-GE-4",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1569456225,
+    "title": "Power Rangers: Battle for the Grid",
+    "source": "protondb"
+  },
+  {
+    "appId": "1110100",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "My DS4 controller was only recognized if I use Steam Big Picture mode. Story mode cutscenes work after media foundation workaround (https://github.com/z0z0z/mf-install/blob/master/install-mf.sh)",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570063735,
+    "title": "Power Rangers: Battle for the Grid",
+    "source": "protondb"
+  }
+]

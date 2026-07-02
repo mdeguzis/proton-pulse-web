@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "503620",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "I had a minor issue when I first started the game regarding the screen size. But once I changed the settings it's been great. Runs fine. Had one crash to desktop after some hours of play.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1549390154,
+    "title": "Fictorum",
+    "source": "protondb"
+  },
+  {
+    "appId": "503620",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Just wait a minute the first time you start it... the black screen isn't a crash just loading",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556574487,
+    "title": "Fictorum",
+    "source": "protondb"
+  },
+  {
+    "appId": "503620",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.21-1-MANJARO",
+    "notes": "Performance used to be rather terrible, but now it runs perfectly. Platinum rating truly deserved.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1571574393,
+    "title": "Fictorum",
+    "source": "protondb"
+  }
+]

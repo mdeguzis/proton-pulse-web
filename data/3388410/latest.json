@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3388410",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.2-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.5-arch2.2",
+    "kernel": "7.0.2-2-cachyos",
+    "notes": "Runs perfectly",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1777577288,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3388410",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1778009614,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3388410",
+    "cpu": "AMD Ryzen 5 5600GT with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, ACO, DRM 3.64, 6.17.7-ba29.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.4",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "Ran perfectly, no issues to be found.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1779674740,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "863590",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.8-arch1-1-ARCH",
+    "notes": "Sometimes crashes on launch, switching menus. 3 in 10 hours",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-6",
+    "protonVersionManual": "Proton 4.2-2",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1560312912,
+    "title": "Starcom: Nexus",
+    "source": "protondb"
+  }
+]

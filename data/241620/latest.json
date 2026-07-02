@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "241620",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Game still does not work with Proton 4.2.9",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562431119,
+    "title": "Inquisitor",
+    "source": "protondb"
+  },
+  {
+    "appId": "241620",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "The game plays, but renderds incorrectly. There are huge red squares that consist about one third of the screen. This happens both in character creation and actual gameplay.  In addition things in character creation might not line correctly (it is hard to tell because of the red squares), because multiple stats gave description to strenght or constitution. Also the game launched in every instance to secondary screen and has been the only Proton game that has done so. ",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1563739826,
+    "title": "Inquisitor",
+    "source": "protondb"
+  },
+  {
+    "appId": "241620",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-fe930ad92a)",
+    "kernel": "5.3.5-arch1-1-fsync",
+    "notes": "The game doesn't run with any default Proton builds currently (latest at time of writing is 4.11-7) but if you build a Tk-Glitch Proton prefix it will work because it includes Wine Staging patches.  Mine is working perfectly on build proton_tkg_4.17.r7.g042a633c    Hopefully this means these fixes will eventually land in regular Proton  (if they don't break other games).",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "protonVersionManual": "3.16-4",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1571441211,
+    "title": "Inquisitor",
+    "source": "protondb"
+  }
+]

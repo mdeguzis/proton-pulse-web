@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "202290",
+    "cpu": "Intel Core i7-6850K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Game runs and is entirely playable, but the sound is a complete mess. Not playable unless you mute the sound. Graphics looked fine.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1567523450,
+    "title": "Sonic Generations Demo",
+    "source": "protondb"
+  }
+]

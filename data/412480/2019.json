@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "412480",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Like native.",
+    "os": "Ubuntu 18.04.1 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547322475,
+    "title": "Turtle Odyssey",
+    "source": "protondb"
+  },
+  {
+    "appId": "412480",
+    "cpu": "Intel Core2 Duo     E7400  @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 9600 GT",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "Runs like native. I did not test the controller though.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-4",
+    "ram": "3 GB",
+    "rating": "Platinum",
+    "timestamp": 1568495391,
+    "title": "Turtle Odyssey",
+    "source": "protondb"
+  }
+]

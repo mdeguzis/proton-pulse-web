@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "375420",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.11-200.fc30.x86_64",
+    "notes": "It works. I can even play with my controller, even if I haven't found how to raise or lower plateforms, except with the mouse. I thinks it's more a bug of the game.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-4",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1569148841,
+    "title": "The Architect",
+    "source": "protondb"
+  }
+]

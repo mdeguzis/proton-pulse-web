@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "55000",
+    "title": "Flotilla",
+    "timestamp": 1535658829,
+    "rating": "Borked",
+    "notes": "Doesn't run, probably due to NET 2.0",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6500 / 1060 6gb",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "55000",
+    "cpu": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+    "gpu": "X.Org AMD PITCAIRN (DRM 2.50.0 / 4.15.0-20-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Fails to install .NET Framework 2.0, does not launch.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7688 Mb",
+    "rating": "Borked",
+    "timestamp": 1537594289,
+    "title": "Flotilla",
+    "source": "protondb"
+  },
+  {
+    "appId": "55000",
+    "title": "Flotilla",
+    "timestamp": 1535644429,
+    "rating": "Borked",
+    "notes": "Doesn't run, probably due to NET 2.0",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6500 / 1060 6gb",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

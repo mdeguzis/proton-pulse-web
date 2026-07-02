@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "316480",
+    "title": "Shadow Puppeteer",
+    "timestamp": 1535417787,
+    "rating": "Silver",
+    "notes": "Controllers were not detected. tested with DS4 and Steam Controller",
+    "os": "Debian Buster (Kernel 4.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4590 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "316480",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "Works great, even with Steam Controller being used for keyboard input.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15920 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537764492,
+    "title": "Shadow Puppeteer",
+    "source": "protondb"
+  },
+  {
+    "appId": "316480",
+    "title": "Shadow Puppeteer",
+    "timestamp": 1535403387,
+    "rating": "Silver",
+    "notes": "Controllers were not detected. tested with DS4 and Steam Controller",
+    "os": "Debian Buster (Kernel 4.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4590 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

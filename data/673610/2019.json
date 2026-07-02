@@ -1,0 +1,69 @@
+[
+  {
+    "appId": "673610",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.30",
+    "kernel": "4.20.5-gentoo",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550941653,
+    "title": "Airport CEO",
+    "source": "protondb"
+  },
+  {
+    "appId": "673610",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "Run without any problems at the moment.",
+    "os": "Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "beta 3.16-8",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1552312553,
+    "title": "Airport CEO",
+    "source": "protondb"
+  },
+  {
+    "appId": "673610",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz (turbos up to 3.1GHz)",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Worked great after \"PROTON_USE_WINED3D11=1 %command%\" I'll update if a problem happens",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1561301158,
+    "title": "Airport CEO",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "673610",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-29-generic",
+    "notes": "No problems. Performance is good. I have noticed some random hiccups but these are rare. ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1569061023,
+    "title": "Airport CEO",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4334840",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, ACO, DRM 3.64, 7.0.9-200.nobara.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.1.0",
+    "kernel": "7.0.9-200.nobara.fc43.x86_64",
+    "notes": "funsiona mais dara erros as vezes para inicializar",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1782070406,
+    "title": "Mesozoic Dawn",
+    "source": "protondb"
+  }
+]

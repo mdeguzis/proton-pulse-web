@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "375250",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Games whole screen is not visible and has graphical glitches on the sides, switching back to desktop is not possible.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547374765,
+    "title": "Pizza Express",
+    "source": "protondb"
+  }
+]

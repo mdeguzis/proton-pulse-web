@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "516650",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs well with either \"PROTON_NO_D3D11=1 %command%\" or \"PROTON_USE_WINED3D=1 %command%\" added to the launch options.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1549720870,
+    "title": "Preston Sterling",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

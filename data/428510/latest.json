@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "428510",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Crashes the second you try to put it in fullscreen.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1554572489,
+    "title": "Solitaire Christmas. Match 2 Cards",
+    "source": "protondb"
+  }
+]

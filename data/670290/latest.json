@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "670290",
+    "cpu": "Intel Core i5-3330S @ 2.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "I not find problem",
+    "os": "Linux Mint 19.1 Tessa (64 \u4f4d\u5143)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1547475366,
+    "title": "Real Pool 3D - Poolians",
+    "source": "protondb"
+  },
+  {
+    "appId": "670290",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "runs fine out of the box; both 3d and 2d gamemodes work, sound works; some of the antiquated web elements in the menus will crash the game but these can be avoided entirely",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1571608909,
+    "title": "Real Pool 3D - Poolians",
+    "source": "protondb"
+  }
+]

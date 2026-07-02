@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "412140",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Zero Issues. It works perfectly!!!",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1552254293,
+    "title": "Electric Highways",
+    "source": "protondb"
+  },
+  {
+    "appId": "412140",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Game uses EDuke32, which means that the game data could be extracted to run on the engine's native version.",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1553422871,
+    "title": "Electric Highways",
+    "source": "protondb"
+  },
+  {
+    "appId": "412140",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569513555,
+    "title": "Electric Highways",
+    "source": "protondb"
+  }
+]

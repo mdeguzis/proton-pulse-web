@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "745880",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Game runs too fast if refresh rate is higher than 60Hz, unless input method is set to \"Fast\" in the configuration tool. Otherwise runs perfectly except for some mojibake in the configuration tool, launcher, and window title.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1547088698,
+    "title": "\u6771\u65b9\u5929\u7a7a\u748b \uff5e Hidden Star in Four Seasons.",
+    "source": "protondb"
+  },
+  {
+    "appId": "745880",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Runs perfectly with no stuttering or input lag. Set launch option to \"LANG=ja_JP.utf8 %command%\" to fix broken characters in config dialog menu.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "3.7-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558570995,
+    "title": "\u6771\u65b9\u5929\u7a7a\u748b \uff5e Hidden Star in Four Seasons.",
+    "source": "protondb"
+  },
+  {
+    "appId": "745880",
+    "cpu": "Intel Xeon E5-2689 0 @ 2.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "5.2.5-1-MANJARO",
+    "notes": "Just works with both Wine and Proton",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-1",
+    "ram": "20 GB",
+    "rating": "Platinum",
+    "timestamp": 1564918662,
+    "title": "\u6771\u65b9\u5929\u7a7a\u748b \uff5e Hidden Star in Four Seasons.",
+    "source": "protondb"
+  }
+]

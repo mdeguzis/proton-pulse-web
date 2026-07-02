@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "899970",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.19.29-1-lts",
+    "notes": "Game runs good, no performance issue. The only defect is text phrase start and end quotes display as block character",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1552918039,
+    "title": "NEKOPARA Extra",
+    "source": "protondb"
+  },
+  {
+    "appId": "899970",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "Seemed to play fine from start to finish with no errors on ENG subs. Didn't try other languages or excessive 'petting' mode.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1561523290,
+    "title": "NEKOPARA Extra",
+    "source": "protondb"
+  }
+]

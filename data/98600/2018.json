@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "98600",
+    "title": "Demolition Inc.",
+    "timestamp": 1535875675,
+    "rating": "Borked",
+    "notes": "Exception / Access Violation",
+    "os": "Linux Mint 19 64-bit (4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-4690K / 970 GTX",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "98600",
+    "title": "Demolition Inc.",
+    "timestamp": 1535738431,
+    "rating": "Borked",
+    "notes": "Seems to start, but black screen only",
+    "os": "Linux Mint 18 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-4690K / GTX970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "98600",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.7-300.fc29.x86_64",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1544745275,
+    "title": "Demolition Inc.",
+    "source": "protondb"
+  },
+  {
+    "appId": "98600",
+    "title": "Demolition Inc.",
+    "timestamp": 1535861275,
+    "rating": "Borked",
+    "notes": "Exception / Access Violation",
+    "os": "Linux Mint 19 64-bit (4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-4690K / 970 GTX",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "98600",
+    "title": "Demolition Inc.",
+    "timestamp": 1535724031,
+    "rating": "Borked",
+    "notes": "Seems to start, but black screen only",
+    "os": "Linux Mint 18 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-4690K / GTX970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

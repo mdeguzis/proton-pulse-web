@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1521070",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "5.4.0-97-generic",
+    "notes": "More or less playable, but with laggy battles and blank cutscenes.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1687488370,
+    "title": "",
+    "source": "protondb"
+  }
+]

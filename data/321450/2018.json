@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "321450",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Loaded, added profile then I got the error.\n\nIntegrity check failed!\nGame state file was corrupted. If it's your work, then put it back otherwise is all lost, sorry...\n\nI closed the error and continued on to play a single race. During the loading screen the screen went black. I had to force close the game.\n",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1545196636,
+    "title": "Aquadelic GT",
+    "source": "protondb"
+  }
+]

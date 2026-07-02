@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "794860",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "The game runs with no tweaks needed and perfectly playable. There are some lighting glitches and very occasional audio crackle but I have never played the game under windows so don't know if these differ from the norm. Interacting with the desktop (eg. changing volume) causes the game to freeze temporarily but once back it continues as normal.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1563023454,
+    "title": "eSail Sailing Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "794860",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "I just ran it and had no issues at all. Having a lot of fun",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565101065,
+    "title": "eSail Sailing Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "794860",
+    "cpu": "Intel Core i7-4720HQ @ 2.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.11-arch1-1-ARCH",
+    "notes": "It just runs with 4.11-2",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565459821,
+    "title": "eSail Sailing Simulator",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "38490",
+    "cpu": "Intel Core2 Duo     E4700  @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 8500 GT",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Perfectly",
+    "os": "Ubuntu 18.04.1 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1546654370,
+    "title": "Earthworm Jim 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "38490",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-300.fc30.x86_64",
+    "notes": "no tweaks required, runs in dosbox so very small resolution...",
+    "os": "Freedesktop.org 18.08.32 (Flatpak runtime)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562387787,
+    "title": "Earthworm Jim 2",
+    "source": "protondb"
+  }
+]

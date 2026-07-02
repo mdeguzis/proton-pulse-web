@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "578720",
+    "cpu": "Intel Core i5-5300U @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 20.2.3",
+    "kernel": "5.8.18-1-MANJARO",
+    "notes": "Works out of the box. Minor graphical glitch at the end for me.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1610711433,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "578720",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.1-arch1-1",
+    "notes": "Works quite well out of the box.",
+    "os": "GamerOS 23\u3000(48bc215)",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1616105981,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "578720",
+    "cpu": "Intel Core i7-4910MQ @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 20.2.6",
+    "kernel": "5.8.0-55-generic",
+    "notes": "Absolument aucun probl\u00e8me",
+    "os": "Ubuntu 20.04.2 LTS (64\u00a0bits)",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1628366167,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "60350",
+    "title": "Glowfish",
+    "timestamp": 1534971862,
+    "rating": "Gold",
+    "notes": "-",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 384.111",
+    "specs": "GeForce GTX 550 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "60350",
+    "title": "Glowfish",
+    "timestamp": 1535340504,
+    "rating": "Platinum",
+    "notes": "There doesn't seem to be any issues. It even loaded and used my old Steam Cloud save data from many years ago. Not bad at all.",
+    "os": "Linux Mint 17.3 64-bit",
+    "gpuDriver": "NVIDIA 384.13",
+    "specs": "i7-4790 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "60350",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Good - Works fine",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538141531,
+    "title": "Glowfish",
+    "source": "protondb"
+  },
+  {
+    "appId": "60350",
+    "title": "Glowfish",
+    "timestamp": 1534957462,
+    "rating": "Gold",
+    "notes": "-",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 384.111",
+    "specs": "GeForce GTX 550 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "60350",
+    "title": "Glowfish",
+    "timestamp": 1535326104,
+    "rating": "Platinum",
+    "notes": "There doesn't seem to be any issues. It even loaded and used my old Steam Cloud save data from many years ago. Not bad at all.",
+    "os": "Linux Mint 17.3 64-bit",
+    "gpuDriver": "NVIDIA 384.13",
+    "specs": "i7-4790 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "234290",
+    "title": "Zack Zero",
+    "timestamp": 1535078297,
+    "rating": "Silver",
+    "notes": "Runs close to native minus some framerate dips from time to time",
+    "os": "Arch Linux 4.18.4-arch1-1-ARCH",
+    "gpuDriver": "amdgpu 18.0.1-2",
+    "specs": "i5-4670S / RX 460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "234290",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Perfect",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538140769,
+    "title": "Zack Zero",
+    "source": "protondb"
+  },
+  {
+    "appId": "234290",
+    "title": "Zack Zero",
+    "timestamp": 1535063897,
+    "rating": "Silver",
+    "notes": "Runs close to native minus some framerate dips from time to time",
+    "os": "Arch Linux 4.18.4-arch1-1-ARCH",
+    "gpuDriver": "amdgpu 18.0.1-2",
+    "specs": "i5-4670S / RX 460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

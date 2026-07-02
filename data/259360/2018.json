@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "259360",
+    "title": "Chicken Shoot 2",
+    "timestamp": 1535742627,
+    "rating": "Gold",
+    "notes": "Little problem after fistr start wiht menu screen",
+    "os": "Manjaro 17.1.12 (x86_64 Linux 4.14.66-1-MANJARO)",
+    "gpuDriver": "NVIDIA 340.107",
+    "specs": "i5-M 520 /NVS 5100M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "259360",
+    "title": "Chicken Shoot 2",
+    "timestamp": 1535877526,
+    "rating": "Borked",
+    "notes": "Plays some tunes, but black screen that crashes to desktop",
+    "os": "LUbuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4700HQ / GTX 850m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "259360",
+    "title": "Chicken Shoot 2",
+    "timestamp": 1535728227,
+    "rating": "Gold",
+    "notes": "Little problem after fistr start wiht menu screen",
+    "os": "Manjaro 17.1.12 (x86_64 Linux 4.14.66-1-MANJARO)",
+    "gpuDriver": "NVIDIA 340.107",
+    "specs": "i5-M 520 /NVS 5100M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "259360",
+    "title": "Chicken Shoot 2",
+    "timestamp": 1535863126,
+    "rating": "Borked",
+    "notes": "Plays some tunes, but black screen that crashes to desktop",
+    "os": "LUbuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4700HQ / GTX 850m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

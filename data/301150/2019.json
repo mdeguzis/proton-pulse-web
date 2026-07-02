@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "301150",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Crash on startup: page fault on read access to 0x0000000f in 32-bit code (0x00677b19).",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1557560789,
+    "title": "The Treasures of Montezuma 4",
+    "source": "protondb"
+  }
+]

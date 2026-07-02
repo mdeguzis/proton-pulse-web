@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2280540",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.16.0-7-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.0-cachyos1.1",
+    "kernel": "6.16.0-7-cachyos",
+    "notes": "Works out of the box with no issues",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1756992255,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1283220",
+    "cpu": "13th Gen Intel Core i9-13900KF",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 16.0.6, DRM 3.54, 6.5.3-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.7-1",
+    "kernel": "6.5.3-1-MANJARO",
+    "notes": "Not playable on Linux past the inital area.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-13",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1709509194,
+    "title": "",
+    "source": "protondb"
+  }
+]

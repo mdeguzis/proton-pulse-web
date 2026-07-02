@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "752780",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.9-1.el7.elrepo.x86_64",
+    "notes": "Launcher looks for exe one dir level above where it is, so fails to launch anything (Steam client error dialogue appears). Copying the contents of the dir (including the exe) up one level stopped the error message, but also just left an executable running with no windows appearing.",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64419 Mb",
+    "rating": "Borked",
+    "timestamp": 1537569052,
+    "title": "W4RR-i/o-RS",
+    "source": "protondb"
+  },
+  {
+    "appId": "752780",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.9-1.el7.elrepo.x86_64",
+    "notes": "Dev has wrongly configured the game manifest - game unpacks its binary/library one subdir further down than the launcher is looking for, so it fails to launch. Yes, I copied the files up a level and this time there was no error, but the executable just hung and didn't bring up any windows. I've added my comments to a Steam community forum posting about this packaging error (yes, \"real\" Windows users have the same problem!).",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64419 Mb",
+    "rating": "Borked",
+    "timestamp": 1537569548,
+    "title": "W4RR-i/o-RS",
+    "source": "protondb"
+  }
+]

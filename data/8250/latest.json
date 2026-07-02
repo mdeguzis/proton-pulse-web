@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "8250",
+    "cpu": "AMD FX-7500 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.0-kali2-amd64",
+    "os": "Kali GNU/Linux Rolling",
+    "protonVersion": "3.7-8",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1568035943,
+    "title": "Sam & Max 106: Bright Side of the Moon",
+    "source": "protondb"
+  }
+]

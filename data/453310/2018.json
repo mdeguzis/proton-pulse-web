@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "453310",
+    "title": "Blackwood Crossing",
+    "timestamp": 1536280305,
+    "rating": "Borked",
+    "notes": "Loads to white screen when new game started",
+    "os": "Solus (kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "RX 580 8GB",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "453310",
+    "title": "Blackwood Crossing",
+    "timestamp": 1536265905,
+    "rating": "Borked",
+    "notes": "Loads to white screen when new game started",
+    "os": "Solus (kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "RX 580 8GB",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

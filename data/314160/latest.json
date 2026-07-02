@@ -1,0 +1,94 @@
+[
+  {
+    "appId": "314160",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.32-1-MANJARO",
+    "notes": "Graphical issues with main menu on startup, once in game right click and context menus don't show text but are clickable, playable but wouldn't recommend for long term unless you're prepared to edit configs manually (.cfg files etc)",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1555094234,
+    "title": "Microsoft Flight Simulator X: Steam Edition",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "314160",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Weird black screen on the main menu but after clicking Multiplayer everything was ok.\nEntering to a server was great in general, however, there are couple issues for example, random weird minimizing the game when touching the autopilot (Could be only with a particular aircraft), when trying to zoom out it's zooming in for some reason and right-click menus are broken no text is shown.\nIt's playable but not perfect at all.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1558704326,
+    "title": "Microsoft Flight Simulator X: Steam Edition",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "314160",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.7-200.fc30.x86_64",
+    "notes": "Runs with a lot of glitches. With a raw install, the game starts but:\n- The game minimizes its window randomly\n- Texts in menu are missing\n- Texts in the mission log are missing\n- Black areas can appear when clicking on the UI\n\nAfter some tweaking, here are my conclusions:\n- texts in the menu can be fixed by installing all the available fonts with winetricks.\n- I suppose the text in the journal/mission view uses Internet Explorer as back-end, so it's impossible to get it working with a 64bits version of Wine.\n- Black areas are always visible, even by disabling D3D11 and DXVK\n\nTo conclude, in this state this game is clearly not playable.",
+    "os": "Unknown (64\u00a0bits)",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1565792969,
+    "title": "Microsoft Flight Simulator X: Steam Edition",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "314160",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "No text ingame; Large areas of the launcher are painted black as soon as any 3D rendering happens. Mission descriptions only contain their first line repeated over and over again.",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1567854749,
+    "title": "Microsoft Flight Simulator X: Steam Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "314160",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-27-generic",
+    "notes": "PROTON_USE_WINED3D11=1 %command% fixes the black box issues in the menu. The menu is still generally Janky and breaks if you press free flight. Menu also pegs both CPU and I/O really bad. \n\nActual rendering of the game once D3D11 is used is fine. No glitches to speak of. All the glitches I've found seem to be rendering issues with the flat interface features.\n\nFor multiplayer, once you're in a session everything works as expected except the flight planning help menu which uses Internet Explorer.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1568434940,
+    "title": "Microsoft Flight Simulator X: Steam Edition",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

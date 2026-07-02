@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "409070",
+    "cpu": "i5-2400S CPU @ 2.50GHz",
+    "gpu": "GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "The game launches, and the dev logos appear, but then it goes to black, and only the sound works. No full-screen either",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "5926 Mb",
+    "rating": "Borked",
+    "timestamp": 1537034634,
+    "title": "Fist Slash: Of Ultimate Fury",
+    "source": "protondb"
+  }
+]

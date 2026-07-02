@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "893790",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.15.0-54-generic",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562475991,
+    "title": "Newfound Courage",
+    "source": "protondb"
+  },
+  {
+    "appId": "893790",
+    "cpu": "Intel Xeon           X5660  @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-d0ed7ce952)",
+    "kernel": "5.2.14-arch1-1-fsync",
+    "notes": "Didn't run into a single problem throughout the entire game.  Completed 100%!",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1572105258,
+    "title": "Newfound Courage",
+    "source": "protondb"
+  }
+]

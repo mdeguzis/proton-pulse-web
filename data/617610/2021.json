@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "617610",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.40.0, 5.10.0-7-amd64, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.0-7-amd64",
+    "notes": "Only 1 out of 50 clicks registers, making the game unplayable",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1622380460,
+    "title": "",
+    "source": "protondb"
+  }
+]

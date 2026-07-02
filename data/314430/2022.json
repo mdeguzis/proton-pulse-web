@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "314430",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700",
+    "gpuDriver": "4.6 Mesa 20.1.7",
+    "kernel": "5.8.6-1-MANJARO",
+    "notes": "Tryed experimental + some 6.x proton to no avail.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1650478306,
+    "title": "",
+    "source": "protondb"
+  }
+]

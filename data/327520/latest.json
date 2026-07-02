@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "327520",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Displays the splash screen, but then quits with no error",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556218472,
+    "title": "Traverser",
+    "source": "protondb"
+  },
+  {
+    "appId": "327520",
+    "cpu": "Intel Core i3-7100 @ 3.90GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-23-generic",
+    "notes": "O pouco que joguei foi devido ao fato do jogo ser chato, mas funcionou bem. N\u00e3o consegui atingir os 30fps - meu hardware n\u00e3o \u00e9 dos melhores e a engine do jogo \u00e9 um tanto pesada - mas rodou com uma boa estabilidade. N\u00e3o tentei os tweaks.",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "3.16-9",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1564951101,
+    "title": "Traverser",
+    "source": "protondb"
+  }
+]

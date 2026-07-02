@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "728530",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.5.10-arch1-1",
+    "notes": "Run without problem with correct font and locale installed",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1585252863,
+    "title": "",
+    "source": "protondb"
+  }
+]

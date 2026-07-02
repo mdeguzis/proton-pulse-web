@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "360850",
+    "title": "Electric Circuit",
+    "timestamp": 1535188297,
+    "rating": "Borked",
+    "notes": "Refuses to start after going through steam's initial setup.",
+    "os": "Xubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "Intel Xeon E5-1620 / NVIDIA GeForce GTX 1050 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "360850",
+    "title": "Electric Circuit",
+    "timestamp": 1535173897,
+    "rating": "Borked",
+    "notes": "Refuses to start after going through steam's initial setup.",
+    "os": "Xubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "Intel Xeon E5-1620 / NVIDIA GeForce GTX 1050 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

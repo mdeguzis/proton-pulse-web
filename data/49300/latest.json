@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "49300",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Doesn't start.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558568585,
+    "title": "Commander: Conquest of the Americas",
+    "source": "protondb"
+  },
+  {
+    "appId": "49300",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.1.7",
+    "notes": "Stuck at intro screen. Had to SSH into my PC from another device and 'kill -n9 <PID>' to kill the process, but then it sent me into a kernel panic and I had to do a hard reboot.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1560434335,
+    "title": "Commander: Conquest of the Americas",
+    "source": "protondb"
+  }
+]

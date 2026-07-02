@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "104600",
+    "title": "Portal 2 - The Final Hours",
+    "timestamp": 1534957537,
+    "rating": "Borked",
+    "notes": "Does NOT work \u274c  because:\n- Requires Adobe AIR that tries to install but is stuck.\n- Could be probably natively supported since there is Adobe Air for Linux.\nSo it's below \"Crashes\" since you can't proceed through Steam first-run procedure.",
+    "os": "Linux Mint 18.3 (Cinnamon)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 960M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "104600",
+    "title": "Portal 2 - The Final Hours",
+    "timestamp": 1536054593,
+    "rating": "Borked",
+    "notes": "Need instaladed Adobe Air for Windows",
+    "os": "Pop_OS! 18.04LTS 64-bit (4.15.0-33-generic)",
+    "gpuDriver": "amdgpu-pro-18.30-641594",
+    "specs": "i5-6400 / Radeon HD7770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "104600",
+    "title": "Portal 2 - The Final Hours",
+    "timestamp": 1534943137,
+    "rating": "Borked",
+    "notes": "Does NOT work \u274c  because:\n- Requires Adobe AIR that tries to install but is stuck.\n- Could be probably natively supported since there is Adobe Air for Linux.\nSo it's below \"Crashes\" since you can't proceed through Steam first-run procedure.",
+    "os": "Linux Mint 18.3 (Cinnamon)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 960M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "104600",
+    "title": "Portal 2 - The Final Hours",
+    "timestamp": 1536040193,
+    "rating": "Borked",
+    "notes": "Need instaladed Adobe Air for Windows",
+    "os": "Pop_OS! 18.04LTS 64-bit (4.15.0-33-generic)",
+    "gpuDriver": "amdgpu-pro-18.30-641594",
+    "specs": "i5-6400 / Radeon HD7770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

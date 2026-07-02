@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2171630",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480 (polaris10, LLVM 15.0.7, DRM 3.54, 6.6.13-x64v3-xanmod1)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "6.6.13-x64v3-xanmod1",
+    "notes": "",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1753537932,
+    "title": "",
+    "source": "protondb"
+  }
+]

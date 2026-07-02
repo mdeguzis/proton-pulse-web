@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "351400",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 455.23.04",
+    "kernel": "5.8.13-arch1-1",
+    "notes": "Installs but complains about audio issues",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1607093545,
+    "title": "",
+    "source": "protondb"
+  }
+]

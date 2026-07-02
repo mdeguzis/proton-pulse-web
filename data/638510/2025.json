@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "638510",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 570.124.04",
+    "kernel": "6.13.7-arch1-1",
+    "notes": "Works perfectly out of the box. Native, no proton needed. \nNo problems with save games, fullscreen/windowed, crashes.",
+    "os": "Arch Linux (Wayland, KDE)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1743187622,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "638510",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.64, 6.16.7-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.7",
+    "kernel": "6.16.7-200.fc42.x86_64",
+    "notes": "Runs smoothly",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1758325011,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "638510",
+    "cpu": "Intel Core i7-14700K",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.16.10-200.fc42.x86_64",
+    "notes": "Works perfectly after changing single option in game settings",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767134463,
+    "title": "",
+    "source": "protondb"
+  }
+]

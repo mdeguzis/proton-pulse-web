@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "639840",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.7, DRM 3.42,  5.15.0-117-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-117-generic",
+    "notes": "Native played perfectly.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1726568638,
+    "title": "",
+    "source": "protondb"
+  }
+]

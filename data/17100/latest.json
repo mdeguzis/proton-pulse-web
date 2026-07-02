@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "17100",
+    "title": "Children of the Nile",
+    "timestamp": 1535333753,
+    "rating": "Gold",
+    "notes": "As expected",
+    "os": "Arch Linux (4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-8400",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "17100",
+    "cpu": "Intel(R) Core(TM) i5-5300U CPU @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 5500 (Broadwell GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "3.7-8",
+    "ram": "7849 Mb",
+    "rating": "Platinum",
+    "timestamp": 1540231010,
+    "title": "Children of the Nile: Enhanced Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "17100",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The game does not start in any way.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540741137,
+    "title": "Children of the Nile: Enhanced Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "17100",
+    "title": "Children of the Nile",
+    "timestamp": 1535319353,
+    "rating": "Gold",
+    "notes": "As expected",
+    "os": "Arch Linux (4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-8400",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

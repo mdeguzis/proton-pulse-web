@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "12690",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.15-1-MANJARO",
+    "notes": "Same issue, I tried PROTON_USE_WINED3D11=1 %command% this time but still the same issue.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1592111298,
+    "title": "Hunting Unlimited 2010",
+    "source": "protondb"
+  }
+]

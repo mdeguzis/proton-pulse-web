@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1381440",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.9.0-0.bpo.2-amd64",
+    "notes": "Game does not start",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1608596680,
+    "title": "",
+    "source": "protondb"
+  }
+]

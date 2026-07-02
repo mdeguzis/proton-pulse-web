@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "207400",
+    "title": "eXceed 3rd - Jade Penetrate Black Package",
+    "timestamp": 1535011208,
+    "rating": "Platinum",
+    "notes": "full controller support",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "207400",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Runs as close to native as far as I can tell.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541969258,
+    "title": "eXceed 3rd - Jade Penetrate Black Package",
+    "source": "protondb"
+  },
+  {
+    "appId": "207400",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "Works perfectly out of the box. Also tried playing with Xbox One controller which also worked fine. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545821572,
+    "title": "eXceed 3rd - Jade Penetrate Black Package",
+    "source": "protondb"
+  },
+  {
+    "appId": "207400",
+    "title": "eXceed 3rd - Jade Penetrate Black Package",
+    "timestamp": 1534996808,
+    "rating": "Platinum",
+    "notes": "full controller support",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

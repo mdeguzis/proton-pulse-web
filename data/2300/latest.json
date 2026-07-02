@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "2300",
+    "cpu": "Intel Core i7-5500U @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.18.0-16-generic",
+    "notes": "run perfect",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Proton 4.2-2",
+    "protonVersionManual": "Proton 4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555550616,
+    "title": "DOOM II",
+    "source": "protondb"
+  },
+  {
+    "appId": "2300",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.16",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558236518,
+    "title": "DOOM II",
+    "source": "protondb"
+  }
+]

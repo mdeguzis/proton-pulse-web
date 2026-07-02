@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "528510",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.8-zen1-1-zen",
+    "os": "Arch Linux (Flatpak)",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1556031206,
+    "title": "Turbo Pug 3D",
+    "source": "protondb"
+  },
+  {
+    "appId": "528510",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-zen1-1-zen",
+    "notes": "No problems.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569172181,
+    "title": "Turbo Pug 3D",
+    "source": "protondb"
+  },
+  {
+    "appId": "528510",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.3.6-200.fc30.x86_64",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1571566519,
+    "title": "Turbo Pug 3D",
+    "source": "protondb"
+  }
+]

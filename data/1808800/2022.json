@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1808800",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 470 (POLARIS10, DRM 3.42.0, 5.15.12, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.3",
+    "kernel": "5.15.12",
+    "notes": "",
+    "os": "NixOS 22.05 (Quokka)",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1642834475,
+    "title": "Duck Simulator 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1808800",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (DRM 3.41.0, 5.13.0-44-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.13.0-44-generic",
+    "notes": "no start",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1654226521,
+    "title": "Duck Simulator 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1808800",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.2-zen1-1-zen",
+    "notes": "You have to force the use of proton to be able to play the game",
+    "os": "Garuda Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1666535109,
+    "title": "Duck Simulator 2",
+    "source": "protondb"
+  }
+]

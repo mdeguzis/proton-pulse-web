@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "232050",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-cb2898f 2019-03-12 bionic-oibaf-ppa)",
+    "kernel": "5.0.1-050001-generic",
+    "notes": "Fails to start",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552496266,
+    "title": "Eador. Masters of the Broken World",
+    "source": "protondb"
+  },
+  {
+    "appId": "232050",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-17-generic",
+    "notes": "does not lauch",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1554433998,
+    "title": "Eador. Masters of the Broken World",
+    "source": "protondb"
+  },
+  {
+    "appId": "232050",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "I had to create a 32bit prefix and install dotnet35 using winetricks. Winetricks also installed dotnet20 and dotnet30sp1 and set wine to xp.\nGame launches fine but I needed to rename/delete the games directory containing DotNet to prevent the game trying to install it, which takes about 15min to complete.\n\nI have to set the graphics to the lowest setting before launching the campaign then increase it to ultra once the campaign is loaded, otherwise the in game graphics get corrupted.\n\nThe land texture under the water is black/missing only once did it appear when I ran the game but have not been able to make it happen again. \n\nIntro cutscene does not play but that is probably cause it is a wmv file.\n\nFinally I needed to rename/delete mscorsvw.exe from inside the prefix windows folder as it prevented the game from quitting and steam would think it was still running. Game runs fine without it.\n\nGameplay seemed fine and responsive with no crashes so far.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1554747059,
+    "title": "Eador. Masters of the Broken World",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "523000",
+    "title": "Princess Maker 2 Refine",
+    "timestamp": 1534958298,
+    "rating": "Bronze",
+    "notes": "WAVE sound works, MIDI not / fullscreen problem (game doesn't scale, just fills with black)",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4690K / NVIDIA GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "523000",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-4-MANJARO",
+    "notes": "works in windowed mode, full screen option doesn't work.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541875253,
+    "title": "Princess Maker 2 Refine",
+    "source": "protondb"
+  },
+  {
+    "appId": "523000",
+    "title": "Princess Maker 2 Refine",
+    "timestamp": 1534943898,
+    "rating": "Bronze",
+    "notes": "WAVE sound works, MIDI not / fullscreen problem (game doesn't scale, just fills with black)",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4690K / NVIDIA GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

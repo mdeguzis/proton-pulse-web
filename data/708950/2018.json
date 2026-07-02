@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "708950",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "No issue",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536879528,
+    "title": "Steam Tactics",
+    "source": "protondb"
+  },
+  {
+    "appId": "708950",
+    "cpu": "Intel(R) Core(TM) i7-4700HQ CPU @ 2.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 850M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Everything",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15923 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538866729,
+    "title": "Steam Tactics",
+    "source": "protondb"
+  }
+]

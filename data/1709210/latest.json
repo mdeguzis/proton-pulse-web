@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1709210",
+    "cpu": "AMD Ryzen 7 7735U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, rembrandt, LLVM 18.1.1, DRM 3.57, 6.8.9-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.8",
+    "kernel": "6.8.9-300.fc40.x86_64",
+    "notes": "For Non-Steam Change Compatibility to Linux Runtime 3.0",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "14 GB",
+    "rating": "platinum",
+    "timestamp": 1718831687,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1709210",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 18.1.6, DRM 3.57, 6.9.4-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.1",
+    "kernel": "6.9.4-200.fc40.x86_64",
+    "notes": "Simple, Yet Halarious - Ren'Py Engine: Visual Novel",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1718848416,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1709210",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Press \"V\" if the Voices, Music or Background audio is too loud.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1718849008,
+    "title": "",
+    "source": "protondb"
+  }
+]

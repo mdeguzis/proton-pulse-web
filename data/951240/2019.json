@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "951240",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.1.4-1-MANJARO",
+    "notes": "Settings selector launches. Once you hit play the game freezes and crashes.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560118936,
+    "title": "Open Sewer",
+    "source": "protondb"
+  },
+  {
+    "appId": "951240",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-21-generic",
+    "notes": "Worked mostly correctly (Game functioned nearly identically to Windows but had minor issues focusing/defocusing the game window) to begin with on older version of game and proton, but now won't run (Steam says game is running but no sign of game) no matter what configurations I have.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1560646308,
+    "title": "Open Sewer",
+    "source": "protondb"
+  }
+]

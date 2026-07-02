@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "702120",
+    "cpu": "AMD Phenom II X2 550",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 18.2.6",
+    "kernel": "4.19.12-2-MANJARO",
+    "notes": "The game runs well, however the multiplayer is not functional, as it does not find games, nor links to servers, in general the game is fully playable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "6 GB",
+    "rating": "Silver",
+    "timestamp": 1546546170,
+    "title": "THE KING OF FIGHTERS '97 GLOBAL MATCH",
+    "source": "protondb"
+  }
+]

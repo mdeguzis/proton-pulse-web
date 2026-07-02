@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "787400",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.12-arch1-1-ARCH",
+    "notes": "played a few rounds in single player, multiplayer not tested",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561131548,
+    "title": "Fantasy Versus",
+    "source": "protondb"
+  },
+  {
+    "appId": "787400",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "4.19.59-1-lts",
+    "notes": "game is working fine but i'm not getting any text, im only getting the name of the object variables stuff like \"ui.info.ok\" instead of the text",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1564353862,
+    "title": "Fantasy Versus",
+    "source": "protondb"
+  },
+  {
+    "appId": "787400",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-17-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1568830617,
+    "title": "Fantasy Versus",
+    "source": "protondb"
+  }
+]

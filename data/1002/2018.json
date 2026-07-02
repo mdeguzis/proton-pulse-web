@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "1002",
+    "title": "Rag Doll Kung Fu",
+    "timestamp": 1536185135,
+    "rating": "Platinum",
+    "notes": "works out of the box",
+    "os": "Debian Stretch",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Amd 860K/Amd 380X",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  },
+  {
+    "appId": "1002",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.14.78-1-MANJARO",
+    "notes": "Played for 10 minutes, everything seems to work fine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541717466,
+    "title": "Rag Doll Kung Fu",
+    "source": "protondb"
+  },
+  {
+    "appId": "1002",
+    "title": "Rag Doll Kung Fu",
+    "timestamp": 1536170735,
+    "rating": "Platinum",
+    "notes": "works out of the box",
+    "os": "Debian Stretch",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Amd 860K/Amd 380X",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  }
+]

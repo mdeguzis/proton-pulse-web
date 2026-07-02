@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "728240",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.20.17-1-MANJARO",
+    "notes": "Black screen on start. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1561516392,
+    "title": "Adventure Time: Pirates of the Enchiridion",
+    "source": "protondb"
+  },
+  {
+    "appId": "728240",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.7-arch1-1-ARCH",
+    "notes": "Black screen on startup",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1567323484,
+    "title": "Adventure Time: Pirates of the Enchiridion",
+    "source": "protondb"
+  }
+]

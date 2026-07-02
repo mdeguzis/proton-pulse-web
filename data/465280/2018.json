@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "465280",
+    "cpu": "i5-4690K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Immediate crash back to desktop",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32096 Mb",
+    "rating": "Borked",
+    "timestamp": 1537089749,
+    "title": "Yesterday Origins",
+    "source": "protondb"
+  },
+  {
+    "appId": "465280",
+    "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Does not start",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7990 Mb",
+    "rating": "Borked",
+    "timestamp": 1537614578,
+    "title": "Yesterday Origins",
+    "source": "protondb"
+  },
+  {
+    "appId": "465280",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "doesn't start ",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541501707,
+    "title": "Yesterday Origins",
+    "source": "protondb"
+  }
+]

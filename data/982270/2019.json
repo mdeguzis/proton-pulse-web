@@ -1,0 +1,20 @@
+[
+  {
+    "appId": "982270",
+    "cpu": "AMD FX-4300 Quad-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-3dc5faf523)",
+    "kernel": "4.20.17-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1556309069,
+    "title": "Dealer's Life",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

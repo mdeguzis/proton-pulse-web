@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1897050",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 515.86.01",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Had no audio when I launched it for the first time but it started working fine after the second launch. Everything seemed fine.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1693590714,
+    "title": "",
+    "source": "protondb"
+  }
+]

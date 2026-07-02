@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1079160",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-1-default",
+    "notes": "Everything works perfectly except for fullscreen (only works when windowed). No tweaks needed for 144 Hz monitor.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1568227706,
+    "title": "\u6771\u65b9\u9b3c\u5f62\u7363 \u301c Wily Beast and Weakest Creature.",
+    "source": "protondb"
+  },
+  {
+    "appId": "1079160",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-1-default",
+    "notes": "Everything works perfectly except for fullscreen (game only works in windowed mode). No tweaks needed for 144 Hz monitor",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1568250093,
+    "title": "\u6771\u65b9\u9b3c\u5f62\u7363 \u301c Wily Beast and Weakest Creature.",
+    "source": "protondb"
+  }
+]

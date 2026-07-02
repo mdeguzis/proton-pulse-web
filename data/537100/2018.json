@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "537100",
+    "title": "Shuffle!",
+    "timestamp": 1535310991,
+    "rating": "Borked",
+    "notes": "Crashes on startup (according to error log, Shuffle!.exe caused an Access Violation (0xc0000005)  in module Shuffle!.exe at 0023:00aa9769). After closing the error message, shows as playing in the Steam client until process is killed. Works pretty well for me in normal Wine, though.",
+    "os": "Ubuntu 17.10 64-bit",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "537100",
+    "title": "Shuffle!",
+    "timestamp": 1535296591,
+    "rating": "Borked",
+    "notes": "Crashes on startup (according to error log, Shuffle!.exe caused an Access Violation (0xc0000005)  in module Shuffle!.exe at 0023:00aa9769). After closing the error message, shows as playing in the Steam client until process is killed. Works pretty well for me in normal Wine, though.",
+    "os": "Ubuntu 17.10 64-bit",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

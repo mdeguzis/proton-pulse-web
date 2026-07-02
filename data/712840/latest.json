@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "712840",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.5",
+    "kernel": "5.0.17-300.fc30.x86_64",
+    "notes": "Works perfectly. No glitches.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1559696806,
+    "title": "King Exit",
+    "source": "protondb"
+  },
+  {
+    "appId": "712840",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.1.18-300.fc30.x86_64",
+    "notes": "Runs perfectly. No glitches.\n",
+    "os": "Fedora 30",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1566733256,
+    "title": "King Exit",
+    "source": "protondb"
+  }
+]

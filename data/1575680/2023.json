@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1575680",
+    "cpu": "Intel Xeon E3-1230 v3 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 16.0.4, DRM 3.52, 6.3.4-1-default)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.3.4-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1686355397,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1575680",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.1.27-rt9xm1.0.fc37.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 37 (KDE Plasma)",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1686391845,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1575680",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 15.0.7, DRM 3.52, 6.3.5-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.1.1",
+    "kernel": "6.3.5-zen1-1-zen",
+    "notes": "Practice/Training works fine, Multiplayer crashes immediately",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1686457710,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1755280",
+    "cpu": "AMD Ryzen 7 5700U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (DRM 3.42.0, 5.15.8-76051508-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.15.8-76051508-generic",
+    "notes": "The game runs normally as windows, only the first launch will be slower;",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "18 GB",
+    "rating": "gold",
+    "timestamp": 1641221954,
+    "title": "Super Grappling Gecko",
+    "source": "protondb"
+  }
+]

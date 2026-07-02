@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "527160",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Crashes on startup.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1562423279,
+    "title": "Cmoar VR Cinema",
+    "source": "protondb"
+  }
+]

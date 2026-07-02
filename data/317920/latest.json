@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "317920",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Runs great. Like native.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556952547,
+    "title": "Hills Of Glory 3D",
+    "source": "protondb"
+  }
+]

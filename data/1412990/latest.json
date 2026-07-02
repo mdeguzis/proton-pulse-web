@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1412990",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 555.42.02",
+    "kernel": "6.8.12-200.fsync.fc39.x86_64",
+    "notes": "Crashes after trying to host or create a venue, unplayable at this time.",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1729632711,
+    "title": "",
+    "source": "protondb"
+  }
+]

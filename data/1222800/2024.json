@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1222800",
+    "cpu": "Intel Core i7-4790K @ 5.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-50-generic",
+    "notes": "Doesn't seem to work on Hotfix, experimental, or latest 9.0-4",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1734310399,
+    "title": "VALKYRIE CONNECT",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "appId": "503300",
+    "cpu": "Intel Core i7-3740QM @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Quadro K1000M",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.2-zen1-1-zen",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542865371,
+    "title": "Super Star",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "290040",
+    "title": "Retro Game Crunch",
+    "timestamp": 1535210595,
+    "rating": "Silver",
+    "notes": "Game(s) work well, but have pretty weird control schemes. Each game starts in it's own window, separate from \"launcher\", but everything worked.",
+    "os": "Fedora 28 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "290040",
+    "cpu": "Intel(R) Core(TM) i7-4712HQ CPU @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Games may work, didn't try them all, but they launch in different windows, sometimes they don't launch properly, and at least the ones I tried didn't clean up properly.  May interact poorly with sloppy focus.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "15956 Mb",
+    "rating": "Bronze",
+    "timestamp": 1539656003,
+    "title": "Retro Game Crunch",
+    "source": "protondb"
+  },
+  {
+    "appId": "290040",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "fullscreen gets confused when launching individual games. \nlauncher sometimes needs restarting before games will launch",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1540905430,
+    "title": "Retro Game Crunch",
+    "source": "protondb"
+  },
+  {
+    "appId": "290040",
+    "title": "Retro Game Crunch",
+    "timestamp": 1535196195,
+    "rating": "Silver",
+    "notes": "Game(s) work well, but have pretty weird control schemes. Each game starts in it's own window, separate from \"launcher\", but everything worked.",
+    "os": "Fedora 28 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

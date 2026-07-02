@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3339780",
+    "cpu": "12th Gen Intel Core i5-12400",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 730 (ADL-S GT1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "6.8.0-49-generic",
+    "notes": "(Demo) Black rectangle in middle of screen, even with virtual desktop",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1734526164,
+    "title": "Desktop Survivors 98",
+    "source": "protondb"
+  },
+  {
+    "appId": "3339780",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.11.10-304.bazzite.fc41.x86_64",
+    "notes": "Game seems to launch but only a black window on the up left corner of the screen.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1735111096,
+    "title": "Desktop Survivors 98",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "364360",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-2d2927938f)",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Game works native on Linux. On Proton it doesn't work for me.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1557564304,
+    "title": "Total War: WARHAMMER",
+    "source": "protondb"
+  },
+  {
+    "appId": "364360",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Installed it, played a custom battle (Greenskins vs Dwarfs). Everything tested worked without tweaking. I did not start a campaign or tested a multiplayer match.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568118596,
+    "title": "Total War: WARHAMMER",
+    "source": "protondb"
+  }
+]

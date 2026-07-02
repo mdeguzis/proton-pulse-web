@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "893690",
+    "cpu": "Intel Core2 Duo     P8600  @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "nouveau NVAF",
+    "gpuDriver": "3.3 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Hardware model: MacBook Pro 7,1 (Mid 2010, 13\") / NVIDIA GeForce 320M (256MB VRAM)\nOS: Ubuntu 19.04 from the live installation environment and its default drivers, booted via EFI. (the system was running from RAM, not actually installed to disk)\n\nThe game detected all controllers out of the box:\n- The laptop's internal accelerometer/gyroscope (registered as /dev/js0 via the built-in applesmc drivers)\n- The Steam controller via dongle (presented as an Xbox 360 controller via Steam)\n\nThe Steam controller was assigned as the player 1's controller.\n\nPlayed through the first 3 single-player caverns without a problem.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557588915,
+    "title": "Rikki & Vikki",
+    "source": "protondb"
+  },
+  {
+    "appId": "893690",
+    "cpu": "Intel Core2 Duo     P8600  @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 320M/integrated/SSE2",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "The same as the other MacBook Pro 7,1 report, but using NVIDIA's proprietary drivers for this GPU and a Debian installation (booted via EFI with https://askubuntu.com/a/613573). Works flawlessly. Had a complete single-player playthrough with a Steam controller.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557593586,
+    "title": "Rikki & Vikki",
+    "source": "protondb"
+  }
+]

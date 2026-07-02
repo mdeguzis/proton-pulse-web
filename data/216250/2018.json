@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "216250",
+    "title": "Dead Island Riptide",
+    "timestamp": 1534960716,
+    "rating": "Platinum",
+    "notes": "Great performance, no workarounds needed",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD Ryzen 1700 / Nvidia GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "216250",
+    "title": "Dead Island Riptide",
+    "timestamp": 1534962442,
+    "rating": "Silver",
+    "notes": "In some scenes fps is around 30-60, in other scenes 100-170",
+    "os": "Arch 64-Bit (Kernel 4.17.14)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 1700 / RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "216250",
+    "title": "Dead Island Riptide",
+    "timestamp": 1534946316,
+    "rating": "Platinum",
+    "notes": "Great performance, no workarounds needed",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD Ryzen 1700 / Nvidia GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "216250",
+    "title": "Dead Island Riptide",
+    "timestamp": 1534948042,
+    "rating": "Silver",
+    "notes": "In some scenes fps is around 30-60, in other scenes 100-170",
+    "os": "Arch 64-Bit (Kernel 4.17.14)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 1700 / RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

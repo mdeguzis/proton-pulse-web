@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1428870",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.11-200.fc41.x86_64",
+    "notes": "Just works",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1738743171,
+    "title": "",
+    "source": "protondb"
+  }
+]

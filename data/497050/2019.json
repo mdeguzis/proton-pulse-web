@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "497050",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.12-arch1-1-ARCH",
+    "notes": "No way to cleanly exit. alt+f4 works just fine",
+    "os": "Arch",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1565343843,
+    "title": "Shape Shifter",
+    "source": "protondb"
+  }
+]

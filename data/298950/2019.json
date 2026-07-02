@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "298950",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.14-121.current",
+    "notes": "Beware Proton 4.2 with this game because it had an issue where the keyboard keys would not respond following a cut-scene of which this game has more than a few.  But 3.16 Proton and now 4.11 don't have the issue.  There was also a visual bug that showed up in a very few places that was annoying but would subside (weird gray rays that would shoot all over across the image) but even this small issue is mostly gone by using PROTON_USE_D9VK=1 option.",
+    "os": "Solus",
+    "protonVersion": "4.11-1",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1564612227,
+    "title": "Darkness Within 2: The Dark Lineage",
+    "source": "protondb"
+  }
+]

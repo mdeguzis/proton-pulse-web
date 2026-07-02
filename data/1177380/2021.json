@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1177380",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.13.0-7620-generic",
+    "notes": "Unfortunately Unplayable",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "experimental",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1636063839,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "939360",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-50-generic",
+    "notes": "it randomly slows down, but I couldn't figure out why.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1558821107,
+    "title": "Pixel FX Designer",
+    "source": "protondb"
+  }
+]

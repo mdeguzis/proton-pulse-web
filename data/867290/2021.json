@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "867290",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 465.27",
+    "kernel": "5.4.0-73-generic",
+    "notes": "On all Proton Versions the Game starts but it exit if you may scroll on the Map.  A shame that the Support for Linux are canceled",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1622470592,
+    "title": "",
+    "source": "protondb"
+  }
+]

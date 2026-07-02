@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1267950",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.9.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.2-arch1.1",
+    "kernel": "6.9.7-arch1-1",
+    "notes": "borked, crashes on start.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1719895782,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1267950",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.9.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.2-arch1.1",
+    "kernel": "6.9.7-arch1-1",
+    "notes": "works perfectly after restarting steamvr",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1721007441,
+    "title": "",
+    "source": "protondb"
+  }
+]

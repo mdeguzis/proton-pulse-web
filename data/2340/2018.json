@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "2340",
+    "title": "Quake II: Ground Zero",
+    "timestamp": 1535064827,
+    "rating": "Borked",
+    "notes": "The window with the following error appears: \n+---------------------------------------------------------------------+\n|Steam Error                                                  |\n|-----------------------------------------------------------------------+\n|Application load error: 5:0000065434      |",
+    "os": "Ubuntu 17.10 64-bit (Kernel 4.13.0-16-generic)",
+    "gpuDriver": "NVIDIA 384.59",
+    "specs": "Intel\u00ae Core\u21222 Quad CPU Q9550 @ 2.83GHz \u00d7 4 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2340",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "\"Application load error 5:0000065434\"",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541944812,
+    "title": "QUAKE II Mission Pack: Ground Zero",
+    "source": "protondb"
+  },
+  {
+    "appId": "2340",
+    "title": "Quake II: Ground Zero",
+    "timestamp": 1535050427,
+    "rating": "Borked",
+    "notes": "The window with the following error appears: \n+---------------------------------------------------------------------+\n|Steam Error                                                  |\n|-----------------------------------------------------------------------+\n|Application load error: 5:0000065434      |",
+    "os": "Ubuntu 17.10 64-bit (Kernel 4.13.0-16-generic)",
+    "gpuDriver": "NVIDIA 384.59",
+    "specs": "Intel\u00ae Core\u21222 Quad CPU Q9550 @ 2.83GHz \u00d7 4 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

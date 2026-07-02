@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1663970",
+    "cpu": "Intel Xeon E3-1240 v3 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "It says native BUT doesn't start the menu or anything just a white screen, tried with proton 6.3.7 and Proton GE 6.2 and results the same",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1635463875,
+    "title": "The Play's the Thing",
+    "source": "protondb"
+  }
+]

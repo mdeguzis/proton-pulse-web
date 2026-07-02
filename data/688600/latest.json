@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "688600",
+    "title": "Lost In Purple",
+    "timestamp": 1535668595,
+    "rating": "Borked",
+    "notes": "Menu options missing, gamepad unusable, starting game can rarely work but pausing is irreversible, process must be killed manually",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "688600",
+    "title": "Lost In Purple",
+    "timestamp": 1535654195,
+    "rating": "Borked",
+    "notes": "Menu options missing, gamepad unusable, starting game can rarely work but pausing is irreversible, process must be killed manually",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

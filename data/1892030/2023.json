@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1892030",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "6.1.12-tkg-bmq",
+    "notes": "Ran well. Native client. Not really noteable",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1678519238,
+    "title": "",
+    "source": "protondb"
+  }
+]

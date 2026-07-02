@@ -1,0 +1,43 @@
+[
+  {
+    "appId": "664430",
+    "title": "WWE 2K18",
+    "timestamp": 1535419340,
+    "rating": "Borked",
+    "notes": "Crashes when match starts and player models should be shown.",
+    "os": "Ubuntu 18.04.1 (4.15.0-29)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Fx-8350 / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "664430",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.11-arch1-1-ARCH",
+    "notes": "No Tweaks nothing works perfect ",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "Proton 3.16-5 Beta - for Elite Dangerous",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545396905,
+    "title": "WWE 2K18",
+    "source": "protondb"
+  },
+  {
+    "appId": "664430",
+    "title": "WWE 2K18",
+    "timestamp": 1535404940,
+    "rating": "Borked",
+    "notes": "Crashes when match starts and player models should be shown.",
+    "os": "Ubuntu 18.04.1 (4.15.0-29)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Fx-8350 / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

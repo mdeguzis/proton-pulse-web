@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2737970",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "6.8.0-31-generic",
+    "notes": "Run without any issues",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1715646977,
+    "title": "Mashiroiro Symphony HD -Love is Pure White-",
+    "source": "protondb"
+  },
+  {
+    "appId": "2737970",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works great",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1715734168,
+    "title": "Mashiroiro Symphony HD -Love is Pure White-",
+    "source": "protondb"
+  },
+  {
+    "appId": "2737970",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works even better with extra fixes",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1715952695,
+    "title": "Mashiroiro Symphony HD -Love is Pure White-",
+    "source": "protondb"
+  }
+]

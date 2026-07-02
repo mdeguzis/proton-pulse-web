@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "474240",
+    "cpu": "Intel Core i5-14600K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-ba14.fc43.x86_64",
+    "notes": "Except for the anti-aliasing bug the game runs flawless.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1763848455,
+    "title": "",
+    "source": "protondb"
+  }
+]

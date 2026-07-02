@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "261880",
+    "title": "Corporate Lifestyle Simulator",
+    "timestamp": 1535761142,
+    "rating": "Borked",
+    "notes": "Does not run at all.",
+    "os": "Ubuntu Mate 18.04 64-Bit",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-2500K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "261880",
+    "cpu": "Intel(R) Core(TM) i7-4900MQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.6",
+    "kernel": "4.17.17-87.current",
+    "notes": "runs fine, even in full-screen-window.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15467 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537563358,
+    "title": "Corporate Lifestyle Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "261880",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Works perfectly (note: need to set fullscreen from options). Possibly aside the gamepad, but I've read that this is often a problem on windows as well.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541603903,
+    "title": "Corporate Lifestyle Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "261880",
+    "title": "Corporate Lifestyle Simulator",
+    "timestamp": 1535746742,
+    "rating": "Borked",
+    "notes": "Does not run at all.",
+    "os": "Ubuntu Mate 18.04 64-Bit",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-2500K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "357330",
+    "title": "Space Beast Terror Fright",
+    "timestamp": 1535359735,
+    "rating": "Platinum",
+    "notes": "Excellent performance",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "357330",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-d4e7d8b 2018-11-24 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Runs great. Didn't notice any issues.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543533661,
+    "title": "Space Beast Terror Fright",
+    "source": "protondb"
+  },
+  {
+    "appId": "357330",
+    "title": "Space Beast Terror Fright",
+    "timestamp": 1535345335,
+    "rating": "Platinum",
+    "notes": "Excellent performance",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

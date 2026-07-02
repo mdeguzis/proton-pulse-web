@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1646580",
+    "cpu": "Intel Core i9-9900 @ 3.10GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.15.55-1-MANJARO",
+    "notes": "Works well after a few tweaks.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1699657190,
+    "title": "",
+    "source": "protondb"
+  }
+]

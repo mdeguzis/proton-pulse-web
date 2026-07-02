@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "407600",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-133a5b8 2018-12-29 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Starts with three error messages about packages \"libGLESv2.dll\". Sound only, Screen is black. No tweak succeeded.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1549388728,
+    "title": "Raiden Legacy - Steam Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "407600",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.0.0-15-generic",
+    "notes": "It doesn't start at all. ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558522748,
+    "title": "Raiden Legacy - Steam Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "407600",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.0.0-17-generic",
+    "notes": "Black Screen after it seems to start with sound, after I ignored three error messages.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561286083,
+    "title": "Raiden Legacy - Steam Edition",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

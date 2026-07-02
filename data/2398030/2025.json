@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2398030",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.1-2-cachyos",
+    "notes": "Coming from Win10, this feels the exact same. Had to adjust some of the controller binds as it auto-calibrated wrong, but this was minor.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1760598402,
+    "title": "FPV LOGIC",
+    "source": "protondb"
+  }
+]

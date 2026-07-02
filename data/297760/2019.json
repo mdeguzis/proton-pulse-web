@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "297760",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.10.0-38-generic",
+    "notes": "Doesn't run at all (stuck on the launcher with some weird glitches), unless i use PROTON_USE_WINED3D=1 %COMMAND% and then it does run very well.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1561748146,
+    "title": "Qvadriga",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

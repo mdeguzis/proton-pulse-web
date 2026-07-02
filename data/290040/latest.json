@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "290040",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.5-arch1-1-ARCH",
+    "notes": "All games work great. Launcher uses a separate window from games which sometimes causes fullscreen issues. This can be worked around by minimizing and then maximizing again",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1548779241,
+    "title": "Retro Game Crunch",
+    "source": "protondb"
+  },
+  {
+    "appId": "290040",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 780 Ti",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-39-generic",
+    "notes": "works great \nbut opens a window whenever i swich a game",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551778188,
+    "title": "Retro Game Crunch",
+    "source": "protondb"
+  },
+  {
+    "appId": "290040",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "3.1 Mesa 18.1.0-rc4",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Games play fine, but upon exit the whole system locks up",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1558963617,
+    "title": "Retro Game Crunch",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "691770",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.20.6-arch1-1-ARCH",
+    "notes": "Works flawlessly out of the box as far as I can tell. Tested gameplay (story, map, battles) & gallery from my old savefiles. Official adult patch works as well and can be installed using wine. I didn't play for too long, so there might be bugs further along.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549666863,
+    "title": "Eiyu*Senki \u2013\u00a0The World Conquest",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "971210",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "4.19.69-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1569328744,
+    "title": "ChronoBreach",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "360870",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Error: Failed to create manipulation processor instance.",
+    "os": "KDE neon User Edition 5.13 (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7959 Mb",
+    "rating": "Borked",
+    "timestamp": 1537129257,
+    "title": "Ultimate Tic-Tac-Toe",
+    "source": "protondb"
+  }
+]

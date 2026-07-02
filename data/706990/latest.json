@@ -1,0 +1,88 @@
+[
+  {
+    "appId": "706990",
+    "cpu": "Intel Core2 Quad    Q6600  @ 2.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 415.22.05",
+    "kernel": "4.19.0-12.3-liquorix-amd64",
+    "notes": "Game runs flawlessly, but, unfortunately doesn't work with DXVK. Still I got more then 100 fps almost all time. ",
+    "os": "Linux 4.x (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1546832883,
+    "title": "BLOCKPOST",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "706990",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "mouse bug",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1547788996,
+    "title": "BLOCKPOST",
+    "source": "protondb"
+  },
+  {
+    "appId": "706990",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.9-301.fc30.x86_64",
+    "notes": "Runs perfectly. No glitches.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1562181599,
+    "title": "BLOCKPOST",
+    "source": "protondb"
+  },
+  {
+    "appId": "706990",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.9-301.fc30.x86_64",
+    "notes": "Work perfectly. No glitches.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1564015197,
+    "title": "BLOCKPOST",
+    "source": "protondb"
+  },
+  {
+    "appId": "706990",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Desktop",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.9-301.fc30.x86_64",
+    "notes": "To make it run perfectly. Copy this \"PROTON_USE_WINED3D=1 %command%\" on launch options and then you are ready to go!",
+    "os": "Fedora 30",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1567635899,
+    "title": "BLOCKPOST",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

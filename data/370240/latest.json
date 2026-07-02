@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "370240",
+    "cpu": "Intel Core i3-8100",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon Gigabyte AORUS RX 580 8GB",
+    "gpuDriver": "3.0 Mesa 18.2.5",
+    "kernel": "4.15",
+    "notes": "Gets to splash screen, then quickly crashes back to Big Picture Mode (I ran this on my couch HTPC)",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547579360,
+    "title": "NBA 2K16",
+    "source": "protondb"
+  }
+]

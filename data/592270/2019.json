@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "592270",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon HD 7770",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Controller support is broken, directional buttons behave odd even when using keyboard while gamepad is plugged in. There is an option in the menu for disabling D-pad/analog stick, which makes the game run with keyboard with no issue and lets you use something like AntiMicro.\nRest of the game runs flawlessly as far as I can tell.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1549933299,
+    "title": "Neko Navy",
+    "source": "protondb"
+  }
+]

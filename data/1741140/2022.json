@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1741140",
+    "cpu": "Intel Core i5-3470S @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX550/550 (POLARIS12, DRM 3.40.0, 5.10.74-generic-2rosa2021.1-x86_64, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.4",
+    "kernel": "5.10.74-generic-2rosa2021.1-x86_64",
+    "notes": "Try play GOG version with 5/6/7 Proton and get error access ram.",
+    "os": "ROSA Fresh Desktop 12.1, platform 2021.1 (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-1",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1649005343,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1741140",
+    "cpu": "Intel Core i5         750  @ 2.67GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.4.0-84-generic",
+    "notes": "Teitei algumas op\u00e7\u00f5es de inicializa\u00e7\u00e3o, mas n\u00e3o consegui fazer o jogo rodar.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1650330267,
+    "title": "",
+    "source": "protondb"
+  }
+]

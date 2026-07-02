@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "691730",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "5.0.2-arch1-1-ARCH",
+    "os": "Antergos Linux (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552856287,
+    "title": "FPV Drone Simulator",
+    "source": "protondb"
+  }
+]

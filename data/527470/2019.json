@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "527470",
+    "cpu": "Intel Core i3-2330M @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA NVS 4200M",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Game works out of the box. Loading screens seem to run a little choppy but the game is generally playable.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1557450879,
+    "title": "Donuts'n'Justice",
+    "source": "protondb"
+  }
+]

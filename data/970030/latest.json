@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "970030",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.1, DRM 3.61, 6.14.11-1-liquorix-amd64)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.14.11-1-liquorix-amd64",
+    "notes": "Spiel startet, h\u00e4ngt dann aber.",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1777654954,
+    "title": "Gems of Magic: Lost Family",
+    "source": "protondb"
+  }
+]

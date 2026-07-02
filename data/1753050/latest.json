@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1753050",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.7-arch1-1",
+    "notes": "Some error with Object reference not set to an instance of an object. Game will close upon pressing \"Ok\". Using Proton Experimental or older versions didn't yield better results.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1735799856,
+    "title": "",
+    "source": "protondb"
+  }
+]

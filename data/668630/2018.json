@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "668630",
+    "title": "Tricolour Lovestory",
+    "timestamp": 1535899584,
+    "rating": "Silver",
+    "notes": "slight fps drops or lag",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 1600 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "668630",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     E7500  @ 2.93GHz",
+    "gpu": "NVIDIA Corporation GeForce 8400GS/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.14.69-1-MANJARO",
+    "notes": "work out of box",
+    "os": "\"Manjaro Linux\" (64-bit)",
+    "protonVersion": "Default",
+    "ram": "3882 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537627827,
+    "title": "Tricolour Lovestory",
+    "source": "protondb"
+  },
+  {
+    "appId": "668630",
+    "title": "Tricolour Lovestory",
+    "timestamp": 1535885184,
+    "rating": "Silver",
+    "notes": "slight fps drops or lag",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 1600 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

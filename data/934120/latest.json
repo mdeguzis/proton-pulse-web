@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "934120",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Game shows a start-up splash but then just crashes with a black screen because of a NullReferenceException related to SharpDX. Older proton versions don't even get to the splash screen. ",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555626301,
+    "title": "Monkeys & Dragons",
+    "source": "protondb"
+  }
+]

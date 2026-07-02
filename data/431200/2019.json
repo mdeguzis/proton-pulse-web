@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "431200",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Only issue is that the game launches fullscreen borderless windowed with the cinnamon taskbar visible. Other than that the game works without problems.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552858273,
+    "title": "Disastr_Blastr",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "359960",
+    "title": "Choice Chamber",
+    "timestamp": 1535505650,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "359960",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-33-generic",
+    "notes": "starts, but no sound and black menu.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16037 Mb",
+    "rating": "Borked",
+    "timestamp": 1539019215,
+    "title": "Choice Chamber",
+    "source": "protondb"
+  },
+  {
+    "appId": "359960",
+    "title": "Choice Chamber",
+    "timestamp": 1535491250,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

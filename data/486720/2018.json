@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "486720",
+    "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.06",
+    "kernel": "4.18.12-1-ck-skylake",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32073 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538865279,
+    "title": "Bastard Bonds",
+    "source": "protondb"
+  },
+  {
+    "appId": "486720",
+    "cpu": "Intel Core i3-3110M @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-39-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1542651588,
+    "title": "Bastard Bonds",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

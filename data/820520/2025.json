@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "820520",
+    "cpu": "Linux",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 580.65.06",
+    "kernel": "indisponible",
+    "notes": "Game runs great without changing anything on Proton Experimental. Didn't test anything else.",
+    "os": "1759461205",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1766261917,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "719660",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.16.3-arch1-1",
+    "notes": "Black screen on menu load. Can hear music and a voice though",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1643499373,
+    "title": "",
+    "source": "protondb"
+  }
+]

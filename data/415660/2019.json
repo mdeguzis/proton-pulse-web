@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "415660",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.8-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556034753,
+    "title": "Tiger Knight",
+    "source": "protondb"
+  },
+  {
+    "appId": "415660",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.8-arch1-1-ARCH",
+    "notes": "Ping seems to be at max value, even though I have fiber internet, and the game runs as if I had a ping of 50 ms.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556035247,
+    "title": "Tiger Knight",
+    "source": "protondb"
+  }
+]

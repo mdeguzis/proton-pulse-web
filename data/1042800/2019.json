@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "1042800",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.1-gentoo",
+    "notes": "Runs perfect with latest version of Proton as of this writing. Borked with 3.x versions (stuck on intro movies/black menu). Played for a little over 4 hours.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.11-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564548998,
+    "title": "Warhammer 40,000: Inquisitor - Prophecy",
+    "source": "protondb"
+  }
+]

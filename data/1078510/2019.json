@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1078510",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.5-arch1-1-ARCH",
+    "notes": "It started with very low resolution, where I could not identify the letters. After guessing where I could change the graphics quality (forth item in the main menu is the \"settings\", and after that, the cone on the left is the quality, above is higher), the game ran perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570828958,
+    "title": "Alluris",
+    "source": "protondb"
+  }
+]

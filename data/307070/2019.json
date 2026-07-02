@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "307070",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.17-1-MANJARO",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553551641,
+    "title": "Memories of a Vagabond",
+    "source": "protondb"
+  },
+  {
+    "appId": "307070",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "5.1.4-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558735441,
+    "title": "Memories of a Vagabond",
+    "source": "protondb"
+  },
+  {
+    "appId": "307070",
+    "cpu": "Intel Core i5-3450 @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R7 300",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.7-arch1-1-ARCH",
+    "notes": "runs fine",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1571574134,
+    "title": "Memories of a Vagabond",
+    "source": "protondb"
+  }
+]

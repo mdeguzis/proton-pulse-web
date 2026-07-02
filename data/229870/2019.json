@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "229870",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Run perfectly! Sometimes lags a bit in the beginning when loading maps",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1553102487,
+    "title": "ShootMania Storm",
+    "source": "protondb"
+  },
+  {
+    "appId": "229870",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.32-1-MANJARO",
+    "notes": "Runs flawlessly out of the box.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555801601,
+    "title": "ShootMania Storm",
+    "source": "protondb"
+  },
+  {
+    "appId": "229870",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.2.0",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "ram": "20 GB",
+    "rating": "Platinum",
+    "timestamp": 1570293701,
+    "title": "ShootMania Storm",
+    "source": "protondb"
+  }
+]

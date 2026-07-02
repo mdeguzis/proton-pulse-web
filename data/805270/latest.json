@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "805270",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "Some textures are buggy",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1572115112,
+    "title": "Playcraft",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "937940",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 510.73.08",
+    "kernel": "5.18.0-3-amd64",
+    "notes": "Works very well except for the crashes. This game needs mostly the same tweaking as it would need on Windows",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1660770056,
+    "title": "Sea Dogs: City of Abandoned Ships",
+    "source": "protondb"
+  },
+  {
+    "appId": "937940",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 510.85.02",
+    "kernel": "5.18.0-4-amd64",
+    "notes": "Works reasonably well after heavy tinkering. The game itself crashes on Windows too, so there's not much you can do about that",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1661431334,
+    "title": "Sea Dogs: City of Abandoned Ships",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1493760",
+    "cpu": "AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 10 (RAVEN, DRM 3.42.0, 5.15.10-200.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.15.10-200.fc35.x86_64",
+    "notes": "Couldn't Actually Play",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-8",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1641446925,
+    "title": "Youtubers Life 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1493760",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "5.15.81-1-arch",
+    "notes": "Game doesn't start.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-5",
+    "ram": "128 GB",
+    "rating": "borked",
+    "timestamp": 1670450660,
+    "title": "Youtubers Life 2",
+    "source": "protondb"
+  }
+]

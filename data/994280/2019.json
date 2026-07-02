@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "994280",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "Game will not load after prologue, system will freeze during loading. Same result if you load a save from after the prologue. Very playing during the prologue, with minor graphical glitches in the shadows.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1555291148,
+    "title": "\u53e4\u5251\u5947\u8c2d\u4e09(Gujian3)",
+    "source": "protondb"
+  },
+  {
+    "appId": "994280",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-44-generic",
+    "notes": "Run almost perfectly with minor graphic glitches",
+    "os": "Ubuntu 18.04.1 LTS\uff0864 \u4f4d\uff09",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1570110334,
+    "title": "\u53e4\u5251\u5947\u8c2d\u4e09(Gujian3)",
+    "source": "protondb"
+  },
+  {
+    "appId": "994280",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 965M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.7-arch1-1-ARCH",
+    "notes": "Sometimes characters have visual glitches, otherwise runs perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1571721130,
+    "title": "\u53e4\u5251\u5947\u8c2d\u4e09(Gujian3)",
+    "source": "protondb"
+  }
+]

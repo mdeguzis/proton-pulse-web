@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "113420",
+    "title": "Fallen Earth",
+    "timestamp": 1534963533,
+    "rating": "Borked",
+    "notes": "Fallen Earth Updater crash on start",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa-git 104270.aa79cc2bc8-1",
+    "specs": "i5-4690k / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "113420",
+    "title": "Fallen Earth",
+    "timestamp": 1535031748,
+    "rating": "Borked",
+    "notes": "Fallen Earth Updater crashes on start into the window for error submission.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-6100 / GTX 960 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "113420",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.4",
+    "kernel": "4.19.2-301.fc29.x86_64",
+    "notes": "Launcher does not start, only shows up the dialog to submit crash log",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543063529,
+    "title": "Fallen Earth Free2Play",
+    "source": "protondb"
+  },
+  {
+    "appId": "113420",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-f447a13032)",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Crashes with \"Fallen Earth Updater Fatal Error!\"",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544574685,
+    "title": "Fallen Earth Free2Play",
+    "source": "protondb"
+  },
+  {
+    "appId": "113420",
+    "title": "Fallen Earth",
+    "timestamp": 1534949133,
+    "rating": "Borked",
+    "notes": "Fallen Earth Updater crash on start",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa-git 104270.aa79cc2bc8-1",
+    "specs": "i5-4690k / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "113420",
+    "title": "Fallen Earth",
+    "timestamp": 1535017348,
+    "rating": "Borked",
+    "notes": "Fallen Earth Updater crashes on start into the window for error submission.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-6100 / GTX 960 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

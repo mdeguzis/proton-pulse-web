@@ -1,0 +1,24 @@
+[
+  {
+    "appId": "316840",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "Game is playable but only on windowed mode (option on top left corner of the launcher), on fullscreen it will instantly crash. The game text doesn't render properly (still readable but barely) unless you install corefonts with winetricks or protontricks. I've just played the first minutes of the game.",
+    "os": "Unknown",
+    "protonVersion": "4.11",
+    "protonVersionManual": "4.11",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564532568,
+    "title": "The Sacred Tears TRUE",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

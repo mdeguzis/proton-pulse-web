@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "34800",
+    "title": "Chronicles of Mystery: The Scorpio Ritual",
+    "timestamp": 1535816174,
+    "rating": "Silver",
+    "notes": "works - but main char has no textures / white puppet",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "34800",
+    "cpu": "i5-7440HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-ext73-58.4-kabylake",
+    "notes": "main char is white - no textures",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.6 beta",
+    "ram": "7911 Mb",
+    "rating": "Silver",
+    "timestamp": 1536599035,
+    "title": "Chronicles of Mystery: The Scorpio Ritual",
+    "source": "protondb"
+  },
+  {
+    "appId": "34800",
+    "title": "Chronicles of Mystery: The Scorpio Ritual",
+    "timestamp": 1535801774,
+    "rating": "Silver",
+    "notes": "works - but main char has no textures / white puppet",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

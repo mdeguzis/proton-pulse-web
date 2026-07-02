@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "8340",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "3.1 Mesa 18.1.0-rc4",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Tested playing the beginning of the game, and had no issues.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552341252,
+    "title": "Strong Bad's Cool Game for Attractive People: Season 1",
+    "source": "protondb"
+  },
+  {
+    "appId": "8340",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "No controller support and mouse issue under SteamOS mouse is just visible by pressing any button on the mouse. Same issue with Xbox one and steam controller",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1554398342,
+    "title": "Strong Bad's Cool Game for Attractive People: Season 1",
+    "source": "protondb"
+  },
+  {
+    "appId": "8340",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Works perfect in desktop mode. SteamOS bigpicture creates mouse issue.",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554543027,
+    "title": "Strong Bad's Cool Game for Attractive People: Season 1",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "34460",
+    "title": "Civilization IV: Beyond the Sword",
+    "timestamp": 1535393921,
+    "rating": "Platinum",
+    "notes": "Arguably better than Windows.",
+    "os": "Linux Mint 64 bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "I7-7400 / GTX 1050 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34460",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs with no issues.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15916 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538513975,
+    "title": "Civilization IV: Beyond the Sword",
+    "source": "protondb"
+  },
+  {
+    "appId": "34460",
+    "title": "Civilization IV: Beyond the Sword",
+    "timestamp": 1535379521,
+    "rating": "Platinum",
+    "notes": "Arguably better than Windows.",
+    "os": "Linux Mint 64 bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "I7-7400 / GTX 1050 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

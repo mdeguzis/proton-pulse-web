@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "529970",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.14.52-gentoo",
+    "notes": "Out-of-the-box, the game will crash after the loading screen.  However, disabling Esync will resolve the issue, and the game will start without problems.  However, performance-wise, there are still issues, as the graphics and responsiveness are both slow, even if the quality is dropped all the way down.  ",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1560004697,
+    "title": "PositronX",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

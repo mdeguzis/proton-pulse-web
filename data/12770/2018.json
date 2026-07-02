@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "12770",
+    "title": "Rise of the Argonauts",
+    "timestamp": 1534999813,
+    "rating": "Bronze",
+    "notes": "Black screen",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "12770",
+    "title": "Rise of the Argonauts",
+    "timestamp": 1536009472,
+    "rating": "Platinum",
+    "notes": "It start with black screen when i supposse it would show some logos but after that everything works great.",
+    "os": "Debian Stretch (Kernel 4.17.17-1~bpo9+1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "12770",
+    "title": "Rise of the Argonauts",
+    "timestamp": 1534985413,
+    "rating": "Bronze",
+    "notes": "Black screen",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "12770",
+    "title": "Rise of the Argonauts",
+    "timestamp": 1535995072,
+    "rating": "Platinum",
+    "notes": "It start with black screen when i supposse it would show some logos but after that everything works great.",
+    "os": "Debian Stretch (Kernel 4.17.17-1~bpo9+1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

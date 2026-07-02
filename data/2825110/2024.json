@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2825110",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.1.0-26-amd64",
+    "notes": "Game crashed and appears to have corrupted the save, wasting all the progress on a save slot.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1732966231,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2825110",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.1.0-26-amd64",
+    "notes": "Works with Proton Experimental",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1733027765,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2825110",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-51-generic",
+    "notes": "Only real issue was some screen tearing while moving the camera, and with the game's use of filters even that's not too noticable.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1734469711,
+    "title": "",
+    "source": "protondb"
+  }
+]

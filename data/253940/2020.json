@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "253940",
+    "cpu": "AMD E1-1200 APU with Radeon HD Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD PALM",
+    "gpuDriver": "3.1 Mesa 18.3.6",
+    "kernel": "4.19.0-9-amd64",
+    "notes": "For a 60 hour RPG, I think it unlikely anyone could tolerate the crashes enough to power through the game.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1601957500,
+    "title": "",
+    "source": "protondb"
+  }
+]

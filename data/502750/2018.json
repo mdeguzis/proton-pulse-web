@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "502750",
+    "title": "Quest for Glory 1-5",
+    "timestamp": 1536224202,
+    "rating": "Platinum",
+    "notes": "Perfect whitelist candidate. It launches DOSBOX versions of the games it includes, and every game worked.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "502750",
+    "title": "Quest for Glory 1-5",
+    "timestamp": 1536209802,
+    "rating": "Platinum",
+    "notes": "Perfect whitelist candidate. It launches DOSBOX versions of the games it includes, and every game worked.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

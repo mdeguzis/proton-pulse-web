@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2522120",
+    "cpu": "12th Gen Intel Core i5-12600",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "The demo is just as fun as on Windows",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1738039349,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2522120",
+    "cpu": "12th Gen Intel Core i5-12600",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "This report is for the 3rd BETA of Airframe Ultra (Playtest). It works just as well on Linux as it does on Windows",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1753624107,
+    "title": "",
+    "source": "protondb"
+  }
+]

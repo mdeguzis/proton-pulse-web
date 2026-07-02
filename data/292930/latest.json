@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "292930",
+    "cpu": "Intel Pentium Silver N5000 @ 1.10GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 605 (Geminilake)",
+    "gpuDriver": "3.0 Mesa 18.3.2",
+    "kernel": "4.19.16-1-MANJARO",
+    "notes": "Played for about 2,5 hours with Full HD resolution, have encountered no problems whatsoever.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1548824372,
+    "title": "Black Mirror I",
+    "source": "protondb"
+  },
+  {
+    "appId": "292930",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.5",
+    "kernel": "5.1.21-1-MANJARO",
+    "notes": "Works well other than slow down when interacting with the inventory. The entire game seems to slow down as the inventory fades in and out.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1567840334,
+    "title": "Black Mirror I",
+    "source": "protondb"
+  }
+]

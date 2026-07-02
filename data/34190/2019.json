@@ -1,0 +1,93 @@
+[
+  {
+    "appId": "34190",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "4.20.17-1-MANJARO",
+    "notes": "The config option is not working, but the game starts with the default config. I played it with a steam controller.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554539021,
+    "title": "Sonic & SEGA All-Stars Racing",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "34190",
+    "cpu": "Intel Core i5-4690K @ 4.30GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega 64",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.7-1-MANJARO",
+    "notes": "Graphics Settings need to be set out of game either in the .ini file directly or via running the config.exe through WINE. Some minor Issues (Track Introductions from the Announcer sometimes get cur off, Voices during Races too quiet no matter the settings), other than that a Flawless experience.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1558184418,
+    "title": "Sonic & SEGA All-Stars Racing",
+    "source": "protondb"
+  },
+  {
+    "appId": "34190",
+    "cpu": "Intel Core i7-4710MQ @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GT 730M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "For a weird reason (but it also an issue on Windows), if your audio is set to \"analogic surround output\", it will crashes after the Sumo logo. You need to set your audio to \"stereo\". After that, it works perfectly (even the configuration panel)",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559704774,
+    "title": "Sonic & SEGA All-Stars Racing",
+    "source": "protondb"
+  },
+  {
+    "appId": "34190",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Large frame rate drops when lots of racers are in view & firing items can cause momentary stutter, although disabling D3D11 & running under WineD3D instead seems to ever so slightly alleviate this, but it's still a problem. Rumble is heavily diminished (using a DualShock 4), maybe due to SFX volume issues.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568307636,
+    "title": "Sonic & SEGA All-Stars Racing",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "34190",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-1-MANJARO",
+    "notes": "Launcher is throwing some errors related to .NET Framework 4.0, probably caused by missing DLLs or overrides. Clicking continue allows to ignore these errors partially.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1568930626,
+    "title": "Sonic & SEGA All-Stars Racing",
+    "source": "protondb"
+  }
+]

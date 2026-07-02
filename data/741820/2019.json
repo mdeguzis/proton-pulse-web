@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "741820",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-43-lowlatency",
+    "notes": "You have to have an account at Bethesda, and you have to have logged in to the side bethesda.net and to have accepted their terms. Otherwise it won't be able to log in. Apart from that, it works perfectly, no DRM preventing the multiplayer it seems, played some matches and all went all apart from me dying every time... lol",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563611495,
+    "title": "Prey: Typhon Hunter",
+    "source": "protondb"
+  },
+  {
+    "appId": "741820",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-34dd1ddde6)",
+    "kernel": "5.3.0-1-MANJARO",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565463642,
+    "title": "Prey: Typhon Hunter",
+    "source": "protondb"
+  }
+]

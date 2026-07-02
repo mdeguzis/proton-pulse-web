@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "570770",
+    "cpu": "\u54c1\u724c\uff1aIntel Core i5-6300HQ @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "\u9a71\u52a8\u7a0b\u5e8f\uff1aNVIDIA GeForce GTX 960M",
+    "gpuDriver": "\u9a71\u52a8\u7a0b\u5e8f\u7248\u672c\uff1aNVIDIA 410.73",
+    "kernel": "\u5185\u6838\u7248\u672c\uff1a4.15.0-38-generic",
+    "notes": "Only half of graphic have shown when indoor (blank for bottom 50%), but outdoor and combat graphic is fine. (unplayable)",
+    "os": "Ubuntu 18.04.1 LTS\uff0864 \u4f4d\uff09",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "RAM\uff1a7850 Mb",
+    "rating": "Borked",
+    "timestamp": 1540713126,
+    "title": "\u53e4\u5251\u5947\u8c2d\u4e8c(GuJian2)",
+    "source": "protondb"
+  }
+]

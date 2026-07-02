@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "629220",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 440.26",
+    "kernel": "5.0.0-23-lowlatency",
+    "notes": "Played through Proton because of VR, which is not present in the Linux version. I am using a Valve Index.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1590637305,
+    "title": "",
+    "source": "protondb"
+  }
+]

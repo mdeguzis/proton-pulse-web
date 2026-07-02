@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "382310",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-7-generic",
+    "notes": "Does not start. a",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1553125597,
+    "title": "Eco",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "211780",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "When I had my 8bitdo controller plugged in the view was constantly being pulled up, but I didn't run into any problems after unplugging the controller.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1547362476,
+    "title": "Conflict Desert Storm\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "211780",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Just launched without tweaks and it works great. No noticeable issues. Also, it runs better than in regular Wine due to the compositor as it's easier to alt+tab out of the game. Note: I highly recommend disabling mouse acceleration in the settings, since the default acceleration curve is insane.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560925947,
+    "title": "Conflict Desert Storm\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "211780",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.1.9-gentoo",
+    "notes": "Runs perfectly out of the box.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561288669,
+    "title": "Conflict Desert Storm\u2122",
+    "source": "protondb"
+  }
+]

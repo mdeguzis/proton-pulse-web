@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "432980",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Both DX9 and DX11 versions work perfectly without any tweaks",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1559483742,
+    "title": "INVERSUS Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "432980",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.11-200.fc30.x86_64",
+    "notes": "Had some crashes with the dx11 version but the dx9 version seems to run great.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1571236263,
+    "title": "INVERSUS Deluxe",
+    "source": "protondb"
+  }
+]

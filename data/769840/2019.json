@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "769840",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "Had to set Xbox controllers to \"Generic\" not \"Xbox\", via the Steam's Big Picture Mode.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1554876153,
+    "title": "Muddledash",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "723420",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.14.87-1-lts",
+    "notes": "Minor slowdowns during some parts, but generally seems to work acceptably well on my Vive. I do not understand Chinese, so I am unable to navigate the menu, meaning there may be game modes I have not tested.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545173590,
+    "title": "\u521b\u4e16-\u4fee\u771f\u5f55",
+    "source": "protondb"
+  }
+]

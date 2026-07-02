@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "211500",
+    "cpu": "i7-2600 CPU @ 3.40GHz",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.26.0, 4.18.6-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.6-1-MANJARO",
+    "notes": "Game crash (Exception code 0xC0000005)",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "16008 Mb",
+    "rating": "Borked",
+    "timestamp": 1536676111,
+    "title": "RaceRoom Racing Experience",
+    "source": "protondb"
+  },
+  {
+    "appId": "211500",
+    "cpu": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "It crashes the entire computer when I go to start it ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "11960 Mb",
+    "rating": "Borked",
+    "timestamp": 1538701946,
+    "title": "RaceRoom Racing Experience",
+    "source": "protondb"
+  },
+  {
+    "appId": "211500",
+    "cpu": "Intel Core2 Quad    Q9400  @ 2.66GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The game crashes... (0xC0000005)",
+    "os": "Ubuntu Gnome 16.04.5",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1542505723,
+    "title": "RaceRoom Racing Experience",
+    "source": "protondb"
+  }
+]

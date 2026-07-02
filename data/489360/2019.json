@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "489360",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-45-generic",
+    "notes": "worked out of the box , i played through the tutorial with no issues.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554037055,
+    "title": "CASE: Animatronics",
+    "source": "protondb"
+  },
+  {
+    "appId": "489360",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Works fine",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555708234,
+    "title": "CASE: Animatronics",
+    "source": "protondb"
+  },
+  {
+    "appId": "489360",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.12.14-lp151.27-default",
+    "notes": "Works but in order to interact with the mouse you'll need to tab in and out of the game. Afterwards the look controls are way to sensitive and in order to fix this you'll need again to tab in and out of the game. But don't minimize the game while this otherwise you'll not be able to get it visible again just Alt+Tab until you're back on the CASE: Animatronic Window(Proton/Wine issue with Full screen applications)",
+    "os": "openSUSE Leap 15.1",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1559079766,
+    "title": "CASE: Animatronics",
+    "source": "protondb"
+  }
+]

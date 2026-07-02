@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "302970",
+    "cpu": "Intel Core i3-2330M @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA NVS 4200M",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Game attempts to run and opens but immediately crashes. Generates crashdump.dmp and crashrpt.xml . Game is not playable",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1553488843,
+    "title": "Radiant Defense",
+    "source": "protondb"
+  },
+  {
+    "appId": "302970",
+    "cpu": "Intel Core i3-2330M @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA NVS 4200M",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.0.0-13-generic",
+    "notes": "I previously reviewed this game as unplayable but am now able to launch the game and play (about 6 hours in) using \" PROTON_USE_WINED3D11=1 %command% \" in launch options. The game is playable but seems to be sped up significantly like a video on fast forward.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1556390046,
+    "title": "Radiant Defense",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1132030",
+    "cpu": "AMD Ryzen 5 3500 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.8.0-59-generic",
+    "notes": "Runs flawlessly on Proton 6.3-4",
+    "os": "Zorin OS 16",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1624571587,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1132030",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.252.64",
+    "kernel": "5.14.10-1-MANJARO",
+    "notes": "A perfect out-of-the-box experience using Proton 6.3-7!",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1636585773,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1132030",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-25-generic",
+    "notes": "Ran smoothly with Proton",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-8",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1639072827,
+    "title": "",
+    "source": "protondb"
+  }
+]

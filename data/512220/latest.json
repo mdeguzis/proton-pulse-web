@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "512220",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Cant find any issues",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546429243,
+    "title": "Trickster VR: Co-op Dungeon Crawler",
+    "source": "protondb"
+  },
+  {
+    "appId": "512220",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.52.18",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "All previously encountered performance and graphical issues seem to be gone. Played through the first campaign level and everything works perfectly with my Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565542787,
+    "title": "Trickster VR: Co-op Dungeon Crawler",
+    "source": "protondb"
+  }
+]

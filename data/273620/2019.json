@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "273620",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.6",
+    "notes": "Won't start.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559737720,
+    "title": "Freespace 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "273620",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "fails to load up out of the box.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1569683031,
+    "title": "Freespace 2",
+    "source": "protondb"
+  }
+]

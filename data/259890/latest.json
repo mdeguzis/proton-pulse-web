@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "259890",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13",
+    "notes": "Doesn't start.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557381506,
+    "title": "Agricultural Simulator: Historical Farming",
+    "source": "protondb"
+  },
+  {
+    "appId": "259890",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "Crash at startup with no error message.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-4",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1568824116,
+    "title": "Agricultural Simulator: Historical Farming",
+    "source": "protondb"
+  }
+]

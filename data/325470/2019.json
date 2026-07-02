@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "325470",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Will not start. None of the Proton options worked. No other tweaks or config options available. Same result with pure WINE.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1550938119,
+    "title": "1953: NATO vs Warsaw Pact",
+    "source": "protondb"
+  }
+]

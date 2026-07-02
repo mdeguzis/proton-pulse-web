@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1259980",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.0-7642-generic",
+    "notes": "Runs out of the box on standard Proton 5.0-9",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1602227235,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1259980",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.14-arch1-1",
+    "notes": "Runs great!",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1602852680,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1259980",
+    "cpu": "Intel Xeon E3-1231 v3 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.6 Mesa 20.0.0-devel - padoka PPA",
+    "kernel": "5.3.6-050306-generic",
+    "notes": "I experienced no stutter, lag, audio glitches or rumble issues ( Xbox 360) controller so far.",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1605397210,
+    "title": "",
+    "source": "protondb"
+  }
+]

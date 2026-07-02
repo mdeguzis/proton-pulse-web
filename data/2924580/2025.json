@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2924580",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.8.0-110052-tuxedo",
+    "notes": "Works great out of the box",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1753815121,
+    "title": "",
+    "source": "protondb"
+  }
+]

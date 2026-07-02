@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "300060",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-rc6",
+    "notes": "Ran and showed the logos.  Ends up with black window with white border.  Sound can be heard.  I tried with -force-d3d9 to no avail.",
+    "os": "Linux 4.x",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1555302484,
+    "title": "ADR1FT",
+    "source": "protondb"
+  },
+  {
+    "appId": "300060",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game loaded initial logo then hard crashed and locked up entire computer, requiring a full restart to resolve.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560613175,
+    "title": "ADR1FT",
+    "source": "protondb"
+  },
+  {
+    "appId": "300060",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-27-generic",
+    "notes": "First launch resulted in a black screen. Second launch displayed a number of technology and engine logos, then ended in a white screen with black window where it plays audio of what I believe is Three One Zero's developer intro. If user launches with the PROTON_USE_WINED3D, the screen is instead all white, but appears to get stuck on the same intro.\n\nI've attempted to launch it with 4.11-3, 4.2.9 and 3.16.9 and with FSYNC, ESYNC  \tPROTON_USE_WINED3D and Large Address Aware with no change.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567883669,
+    "title": "ADR1FT",
+    "source": "protondb"
+  }
+]

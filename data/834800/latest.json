@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "834800",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Works perfectly out of the box, no glitched textures or crashes.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562842347,
+    "title": "SolSeraph",
+    "source": "protondb"
+  }
+]

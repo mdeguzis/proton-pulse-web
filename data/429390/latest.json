@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "429390",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-1-default",
+    "notes": "Starts up with a black window or screen and never goes further. No proton options resolve the issue.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567629222,
+    "title": "XenoShyft",
+    "source": "protondb"
+  }
+]

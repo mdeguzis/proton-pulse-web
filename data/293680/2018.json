@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "293680",
+    "title": "Cinders",
+    "timestamp": 1535575428,
+    "rating": "Borked",
+    "notes": "Technically runs, but only at 5-6 fps. Older versions used to run flawlessly with Wine ",
+    "os": "Kubuntu \"cosmic\" development release (Kernel 4.17)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "FX-8320 / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "293680",
+    "title": "Cinders",
+    "timestamp": 1535150035,
+    "rating": "Silver",
+    "notes": "Runs and you can play, but had sound tearing mitigated by tweaking pulse audio volume control. Seems a bit slower",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390-48-0ubuntu3",
+    "specs": "i7-4510U / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "293680",
+    "title": "Cinders",
+    "timestamp": 1535561028,
+    "rating": "Borked",
+    "notes": "Technically runs, but only at 5-6 fps. Older versions used to run flawlessly with Wine ",
+    "os": "Kubuntu \"cosmic\" development release (Kernel 4.17)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "FX-8320 / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "293680",
+    "title": "Cinders",
+    "timestamp": 1535135635,
+    "rating": "Silver",
+    "notes": "Runs and you can play, but had sound tearing mitigated by tweaking pulse audio volume control. Seems a bit slower",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390-48-0ubuntu3",
+    "specs": "i7-4510U / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "651340",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-52-generic",
+    "notes": "it seems to run perfect",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562593333,
+    "title": "Shephy",
+    "source": "protondb"
+  }
+]

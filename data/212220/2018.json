@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "212220",
+    "title": "Dungeon Fighter Online",
+    "timestamp": 1535309934,
+    "rating": "Borked",
+    "notes": "Launcher hangs while downloading",
+    "os": "Debian Sid 64-bit (Kernel 4.17.0-3 )",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX8350 / R9 380X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "212220",
+    "title": "Dungeon Fighter Online",
+    "timestamp": 1535295534,
+    "rating": "Borked",
+    "notes": "Launcher hangs while downloading",
+    "os": "Debian Sid 64-bit (Kernel 4.17.0-3 )",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX8350 / R9 380X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

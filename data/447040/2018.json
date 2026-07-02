@@ -1,0 +1,86 @@
+[
+  {
+    "appId": "447040",
+    "title": "Watch_Dogs 2",
+    "timestamp": 1535077396,
+    "rating": "Borked",
+    "notes": "Game fails to launch, UPlay keeps running in the background",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "447040",
+    "title": "Watch_Dogs\u00ae 2",
+    "timestamp": 1535880111,
+    "rating": "Borked",
+    "notes": "Uplay never opened",
+    "os": "Ubuntu 16.04 (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 390",
+    "specs": "Intel Core i7-7700HQ / GTX 1050 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "447040",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Failed to launch. Keeps running in the background. 1st time popped up with the launcher window then erred. Nothing popped up on subsequent attempts.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7919 Mb",
+    "rating": "Borked",
+    "timestamp": 1538562675,
+    "title": "Watch_Dogs\u00ae 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "447040",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Won't launch at all. Tried disabling esync, tried using wined3d11",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7919 Mb",
+    "rating": "Borked",
+    "timestamp": 1538563830,
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Watch_Dogs\u00ae 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "447040",
+    "title": "Watch_Dogs 2",
+    "timestamp": 1535062996,
+    "rating": "Borked",
+    "notes": "Game fails to launch, UPlay keeps running in the background",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "447040",
+    "title": "Watch_Dogs\u00ae 2",
+    "timestamp": 1535865711,
+    "rating": "Borked",
+    "notes": "Uplay never opened",
+    "os": "Ubuntu 16.04 (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 390",
+    "specs": "Intel Core i7-7700HQ / GTX 1050 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

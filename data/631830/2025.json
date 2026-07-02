@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "631830",
+    "cpu": "Intel Core i5-10500T @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 2048SP (radeonsi, polaris10, ACO, DRM 3.64, 6.16.4-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.1-cachyos1.6",
+    "kernel": "6.16.4-2-cachyos",
+    "notes": "The game works Out of the box <3",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1756769645,
+    "title": "",
+    "source": "protondb"
+  }
+]

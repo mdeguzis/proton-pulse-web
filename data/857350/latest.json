@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "857350",
+    "cpu": "Intel Core2 Quad    Q6600  @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Need to set rendering mode to OpenGL in the publishing and editor settings, otherwise everything works out of the box. No problems.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1568065756,
+    "title": "CopperCube 6 Game Engine",
+    "source": "protondb"
+  }
+]

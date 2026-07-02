@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "922040",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Desktop",
+    "gpuDriver": "3.0 Mesa 19.0.5",
+    "kernel": "5.1.5-arch1-2-ARCH",
+    "notes": "the demo version is smooth but there was no sound and it didn't work with 4.2-5",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1559260945,
+    "title": "Hamsterdam",
+    "source": "protondb"
+  }
+]

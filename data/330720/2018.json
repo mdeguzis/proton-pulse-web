@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "330720",
+    "title": "Stonehearth",
+    "timestamp": 1536629894,
+    "rating": "Borked",
+    "notes": "Game starts. window shows but stops at \"Radiant\" Logo. Music continue play and I can close game by clicking on close window button. At default version (3.7-3) all the same except Logo (that doesn't shows).",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Xeon e5 1650 v2 / GTX 1060 6 GB",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "330720",
+    "cpu": "AMD Phenom(tm) II X4 940 Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "When starting it shows an 'initialize MCI' error and a black window screen. Close popup error box. On top left click on space where the 'File' 'View' 'Game' 'Help' are but can't be seen. They will show along with a drop down menu. In 'File' menu select 'Goto main menu'. The music will start and the game will be playable. Clicking in the background black makes the menus disappear. Ctrl-Tab to another app window and back and they will be back. Playable during normal play.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7976 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537312749,
+    "title": "Flashpoint Campaigns: Red Storm Player's Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "330720",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce 840M",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "When starting it shows an 'initialize MCI' error and a black window screen, save for a single window bar at the top of the display. Close error. On top left click on space where the 'File' 'View' 'Game' 'Help' are but can't be seen. They will show along with a drop down menu. In 'File' menu select 'Goto main menu'. The music will start and the game will be playable. Clicking in the background black makes the menus disappear. Ctrl-Tab to another app window and back and they will be back. Playable during normal play.  All sounds of normal warfare during game are heard as per normal.  The only issue here is the initial startup phase of the game, after clicking Play Game on the standard Matrix/Slitherine sub-menu.",
+    "os": "Zorin OS 12.4",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1542753631,
+    "title": "Flashpoint Campaigns: Red Storm Player's Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "330720",
+    "title": "Stonehearth",
+    "timestamp": 1536615494,
+    "rating": "Borked",
+    "notes": "Game starts. window shows but stops at \"Radiant\" Logo. Music continue play and I can close game by clicking on close window button. At default version (3.7-3) all the same except Logo (that doesn't shows).",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Xeon e5 1650 v2 / GTX 1060 6 GB",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  }
+]

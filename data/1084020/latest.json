@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1084020",
+    "cpu": "AMD Ryzen 5 PRO 2500U w/ Radeon Vega Mobile Gfx",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.1.2-050102-generic",
+    "notes": " Game starts. But shows a popup telling Java is missing. Clicking OK to install takes you to the Oracle download page. Even with the Linux version of Java installed. Haven't tried installing the Windows version of Java in the Wine environment yet. ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-5",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1559806484,
+    "title": "TheoTown",
+    "source": "protondb"
+  },
+  {
+    "appId": "1084020",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.0-devel (git-7559060 2019-06-01 disco-oibaf-ppa)",
+    "kernel": "5.0.0-15-generic",
+    "notes": "\"TheoTown requires Java to run\" but you can't install java for windows on wine/proton (at least i can't find way to do it)",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559926197,
+    "title": "TheoTown",
+    "source": "protondb"
+  }
+]

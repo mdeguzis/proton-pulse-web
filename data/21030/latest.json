@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "21030",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Same issue as part 1 does not start",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552585259,
+    "title": "Watchmen: The End is Nigh Part 2",
+    "source": "protondb"
+  }
+]

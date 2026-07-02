@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "339400",
+    "title": "Runestone Keeper",
+    "timestamp": 1535734381,
+    "rating": "Gold",
+    "notes": "Runs just fine, but only with 'PROTON_NO_D3D11=1 %command%' in steam launch options. Steam overlay manually disabled.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "339400",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.27.0, 4.19.0-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.19.0-1-MANJARO",
+    "notes": "\n",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32159 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538033250,
+    "title": "Runestone Keeper",
+    "source": "protondb"
+  },
+  {
+    "appId": "339400",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-041901-generic",
+    "notes": "Requires no additional configuration. Works perfectly out of the box.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541562924,
+    "title": "Runestone Keeper",
+    "source": "protondb"
+  },
+  {
+    "appId": "339400",
+    "title": "Runestone Keeper",
+    "timestamp": 1535719981,
+    "rating": "Gold",
+    "notes": "Runs just fine, but only with 'PROTON_NO_D3D11=1 %command%' in steam launch options. Steam overlay manually disabled.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

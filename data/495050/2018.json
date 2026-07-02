@@ -1,0 +1,102 @@
+[
+  {
+    "appId": "495050",
+    "title": "Mega Man Legacy Collection 2",
+    "timestamp": 1535200129,
+    "rating": "Bronze",
+    "notes": "Game starts, but the screen is messed up and the sound doesn't work.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernal 4.18.5)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "Radeon RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "495050",
+    "title": "Megaman Legacy Collection 2",
+    "timestamp": 1535338141,
+    "rating": "Borked",
+    "notes": "Graphics display at a diagonal and mirrored. No audio.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "Ryzen 2700x / Vega56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "495050",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Entire screen is squished to a triangle and mirrored. Not playable at all. Had no sound when playing.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Proton 3.7-5 Beta",
+    "ram": "15971 Mb",
+    "rating": "Borked",
+    "timestamp": 1536717651,
+    "title": "Mega Man Legacy Collection 2 / \u30ed\u30c3\u30af\u30de\u30f3 \u30af\u30e9\u30b7\u30c3\u30af\u30b9 \u30b3\u30ec\u30af\u30b7\u30e7\u30f3 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "495050",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Using the latest beta and tried a combination of settings. Game still launches with rendering issues.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543104484,
+    "title": "Mega Man Legacy Collection 2 / \u30ed\u30c3\u30af\u30de\u30f3 \u30af\u30e9\u30b7\u30c3\u30af\u30b9 \u30b3\u30ec\u30af\u30b7\u30e7\u30f3 2",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "495050",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.14.55-gentoo",
+    "notes": "starts fine, but display is trashed",
+    "os": "Linux 4.14",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546292192,
+    "title": "Mega Man Legacy Collection 2 / \u30ed\u30c3\u30af\u30de\u30f3 \u30af\u30e9\u30b7\u30c3\u30af\u30b9 \u30b3\u30ec\u30af\u30b7\u30e7\u30f3 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "495050",
+    "title": "Mega Man Legacy Collection 2",
+    "timestamp": 1535185729,
+    "rating": "Bronze",
+    "notes": "Game starts, but the screen is messed up and the sound doesn't work.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernal 4.18.5)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "Radeon RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "495050",
+    "title": "Megaman Legacy Collection 2",
+    "timestamp": 1535323741,
+    "rating": "Borked",
+    "notes": "Graphics display at a diagonal and mirrored. No audio.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "Ryzen 2700x / Vega56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "281390",
+    "cpu": "AMD FX-6350 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Runs flawlessly out of the box, no tweaking of Proton required.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1549250707,
+    "title": "ORB",
+    "source": "protondb"
+  }
+]

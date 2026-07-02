@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2092840",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 (navi21, LLVM 15.0.5, DRM 3.48, 6.0.12-1-default)",
+    "gpuDriver": "4.6 Mesa 22.2.4",
+    "kernel": "6.0.12-1-default",
+    "notes": "Works like a charm out fo the box.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776015438,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2092840",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, ACO, DRM 3.64, 6.19.14-ogc1.1.fc44.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.5",
+    "kernel": "6.19.14-ogc1.1.fc44.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1778371528,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2092840",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, ACO, DRM 3.64, 7.0.10-201.fc44.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.2.0-devel",
+    "kernel": "7.0.10-201.fc44.x86_64",
+    "notes": "Works out the box, completed a full playthrough without any issues",
+    "os": "Fedora Linux 44 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1780422053,
+    "title": "",
+    "source": "protondb"
+  }
+]

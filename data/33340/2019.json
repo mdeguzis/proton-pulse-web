@@ -1,0 +1,69 @@
+[
+  {
+    "appId": "33340",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.20.5-zen1-1-zen",
+    "notes": "The game only started after I added `<DirectXVersion>9</DirectXVersion>` to the `Engine.ini` file, but then I only got a black screen with the game sounds and the game-rendered mouse.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1548986901,
+    "title": "Dawn of Discovery\u2122: Venice",
+    "source": "protondb"
+  },
+  {
+    "appId": "33340",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.20.0-042000rc2-generic",
+    "notes": "You must install D3D9X with Winetricks in the prefix and configure Engine.ini to use D3D9. Higher graphics settings and/or larger maps throw out of memory warnings and crashes, but lowering settings and playing on medium or large instead of huge maps seems to work fine.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1550351652,
+    "title": "Dawn of Discovery\u2122: Venice",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "33340",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.8-arch1-1-ARCH",
+    "notes": "There's a problem with the DirectX installation, to make the game to work at all you'll need to run the file located at ~/.local/share/Steam/steamapps/common/Dawn\\ of\\ Discovery/DirectX/DXSETUP.exe through wine in the game's wineprefix. There's also a memory problem, but that affects Windows too, the best approach is to find a patch on the internet that makes the game executable able to use more than 2GB of RAM; otherwise the game will spam alerts about lack of memory and will eventually crash.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1555995917,
+    "title": "Dawn of Discovery\u2122: Venice",
+    "source": "protondb"
+  },
+  {
+    "appId": "33340",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "5.1.4-arch1-1-ARCH",
+    "notes": "Install D3D9 as the other reports mention. To fix the memory warnings simply enable 'PROTON_FORCE_LARGE_ADDRESS_AWARE' in your launch options ie. 'PROTON_FORCE_LARGE_ADDRESS_AWARE=1 %command%'",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559750077,
+    "title": "Dawn of Discovery\u2122: Venice",
+    "source": "protondb"
+  }
+]

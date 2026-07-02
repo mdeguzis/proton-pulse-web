@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "15380",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.1.0-050100rc2-generic",
+    "notes": "Runs fine, but no sound at all. Possibly missing a codec?",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.4-3",
+    "protonVersionManual": "4.4-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556629584,
+    "title": "Heroes of Might & Magic V: Hammers of Fate",
+    "source": "protondb"
+  },
+  {
+    "appId": "15380",
+    "cpu": "Intel Core i7-4800MQ @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 870M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-54-generic",
+    "notes": "At first game launched with just black screen. After disabling esync and d3d11 game started but very laggy. After setting resolution to native FullHD and disabling anisotropic filtering game runs 60FPS. The problem is, after some time when some effect comes into play the game starting to lag again. To heal this I just \"touched\" antialising in video options: that's it, just turn off and on, not the big deal actually. The real problem is then such thing is starts in the battle mode: you can't change video options. Other than that everything is fine, sound+music is ok, no crashes for an hour.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1563480919,
+    "title": "Heroes of Might & Magic V: Hammers of Fate",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

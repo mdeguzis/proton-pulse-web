@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1127680",
+    "cpu": "Intel Core i5-4210U @ 1.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.5",
+    "kernel": "5.2.9-200.fc30.x86_64",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1566943530,
+    "title": "Hypnocult",
+    "source": "protondb"
+  }
+]

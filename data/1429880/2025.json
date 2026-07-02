@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1429880",
+    "cpu": "AMD Ryzen 5 4500U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 19.1.1, DRM 3.59, 6.11.0-25-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.10.1",
+    "kernel": "6.11.0-25-generic",
+    "notes": "Verschiedene Varianten getestet (Proton, Proton GE, Experimental, ...), aber das Spiel st\u00fcrzt mitsamt Steam nach dem Start des Spiels ab. Mehr als einen schwarzen Bildschirm gibts nicht zu sehen.\n\nAuf dem Fedora-PC meiner Schwester (ebenfalls Ryzen mit Onboard Grafik) funktionierts out of the Box.",
+    "os": "Ubuntu 24.10",
+    "protonVersion": "9.0-4",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1746344788,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1429880",
+    "cpu": "AMD Ryzen 5 4600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.14.4-300.fc42.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1746346988,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1429880",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.11.0-24-generic",
+    "notes": "The game still runs pretty well in general",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1746370997,
+    "title": "",
+    "source": "protondb"
+  }
+]

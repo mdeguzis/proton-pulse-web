@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "65530",
+    "title": "SpellForce 2 - Faith in Destiny",
+    "timestamp": 1535147707,
+    "rating": "Bronze",
+    "notes": "During the tutorial, the first enemies instantly killed a member of my party, causing a game over before the tutorial speech explained how to fight. Since it also hadn't explained how to save yet, my only option was to exit to the main menu. The tutorial speech then continued over the main menu. This seems too specific to be a Steam Play issue but I have no prior experience of this game. In general the framerate was good, no input lag, and no audio issues.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700 / GTX 780",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "65530",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "runs fine",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541628445,
+    "title": "SpellForce 2: Faith in Destiny",
+    "source": "protondb"
+  },
+  {
+    "appId": "65530",
+    "title": "SpellForce 2 - Faith in Destiny",
+    "timestamp": 1535133307,
+    "rating": "Bronze",
+    "notes": "During the tutorial, the first enemies instantly killed a member of my party, causing a game over before the tutorial speech explained how to fight. Since it also hadn't explained how to save yet, my only option was to exit to the main menu. The tutorial speech then continued over the main menu. This seems too specific to be a Steam Play issue but I have no prior experience of this game. In general the framerate was good, no input lag, and no audio issues.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700 / GTX 780",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "843260",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.14.71-rt44-1-rt-lts",
+    "notes": "Everything seems to work perfectly, except that if you try and move the mouse focus to another app and then return to the game, it then won't let you use the mouse or keyboard. This, in itself, leaves you stuck in the game. I had to switch to a different virtual console to kill the game!",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1550264492,
+    "title": "The Bard's Tale Trilogy",
+    "source": "protondb"
+  },
+  {
+    "appId": "843260",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "No problems observed",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567132870,
+    "title": "The Bard's Tale Trilogy",
+    "source": "protondb"
+  },
+  {
+    "appId": "843260",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-6-amd64",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "Default",
+    "ram": "30 GB",
+    "rating": "Platinum",
+    "timestamp": 1570983648,
+    "title": "The Bard's Tale Trilogy",
+    "source": "protondb"
+  }
+]

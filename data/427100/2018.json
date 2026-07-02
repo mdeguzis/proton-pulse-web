@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "427100",
+    "title": "Fernbus Simulator",
+    "timestamp": 1534987138,
+    "rating": "Silver",
+    "notes": "need set \"PROTON_USE_WINED3D11\": \"1\", in Set Launch Options under the games Properties or in user_settings.py in proton config dir. Need a good GPU to get hight FPS",
+    "os": "Linux Mint 19 64-bit(Kernel 4.17.8)",
+    "gpuDriver": "Mesa 18.3.0-devel - padoka PPA",
+    "specs": "FX8350 / R9270x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "427100",
+    "title": "Fernbus Simulator",
+    "timestamp": 1534972738,
+    "rating": "Silver",
+    "notes": "need set \"PROTON_USE_WINED3D11\": \"1\", in Set Launch Options under the games Properties or in user_settings.py in proton config dir. Need a good GPU to get hight FPS",
+    "os": "Linux Mint 19 64-bit(Kernel 4.17.8)",
+    "gpuDriver": "Mesa 18.3.0-devel - padoka PPA",
+    "specs": "FX8350 / R9270x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

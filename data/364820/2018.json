@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "364820",
+    "cpu": "Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "The intro doesn't run, but other than that it works flawlessly",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32080 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539990598,
+    "title": "Star Trek: Starfleet Command Gold Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "364820",
+    "cpu": "Intel Core i5-3337U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Works perfect and the widescreen patch from Hot n Spicy works perfect also\nhttps://hotandspicyforums.com/sfc-1-hd-patch-t24716.html",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1545419465,
+    "title": "Star Trek: Starfleet Command Gold Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "364820",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.11-arch1-1-ARCH",
+    "notes": "On a minimal install I ran into issues with not having Python 3 installed, but after that was taken care of everything ran fine. I think Python 3 is for the Proton setup.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1545946173,
+    "title": "Star Trek: Starfleet Command Gold Edition",
+    "source": "protondb"
+  }
+]

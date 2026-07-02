@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "438030",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-zen1-1-zen",
+    "notes": "Has weird full-screen issues and the sound controls don't work and the keyboard mapping is weird.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "11884 Mb",
+    "rating": "Silver",
+    "timestamp": 1537087559,
+    "title": "Dead6hot",
+    "source": "protondb"
+  },
+  {
+    "appId": "438030",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "works perfectly",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7958 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537291198,
+    "title": "Dead6hot",
+    "source": "protondb"
+  }
+]

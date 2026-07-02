@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3039890",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 570.172.08",
+    "kernel": "6.12.41",
+    "notes": "Works out of the box, but Bubsy 3D was running faster than it should. Using GE-Proton works just fine.",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1757449262,
+    "title": "Bubsy in: The Purrfect Collection",
+    "source": "protondb"
+  }
+]

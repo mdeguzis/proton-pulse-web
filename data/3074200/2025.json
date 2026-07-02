@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3074200",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.2, DRM 3.59, 6.8.0-54-generic)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel",
+    "kernel": "6.8.0-54-generic",
+    "notes": "this game doesnt work at all unfortunatly",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1746343224,
+    "title": "",
+    "source": "protondb"
+  }
+]

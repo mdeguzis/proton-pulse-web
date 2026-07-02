@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3960",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Crashes on start. Displays program error - OpenPIMipmapChain: Unable to locate a valid DDS, JPG or TGA file for 'SolidColors'. An old issue the game had with systems more than 2GB of RAM that I could not figure a way around.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544869415,
+    "title": "Shattered Union",
+    "source": "protondb"
+  }
+]

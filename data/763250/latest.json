@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "763250",
+    "cpu": "i5-7600 CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Gameplay is fine but no controller detection and have to force quit.",
+    "os": "Ubuntu 18.04 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7936 Mb",
+    "rating": "Silver",
+    "timestamp": 1536687152,
+    "title": "The Spectrum Retreat",
+    "source": "protondb"
+  },
+  {
+    "appId": "763250",
+    "cpu": "Intel Core i3-6006U @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce 920MX",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Xbox one (bluetooth) controller works fine (xpadneo installed)\nGame crashed when tried to exit.\nMostly unplayable on slow hardware. Even menu works slow.",
+    "os": "Ubuntu 18.04.1 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1546246212,
+    "title": "The Spectrum Retreat",
+    "source": "protondb"
+  }
+]

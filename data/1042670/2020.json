@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1042670",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "No tweak needed, just install then play.",
+    "os": "MX 18.3 Continuum",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1590312420,
+    "title": "",
+    "source": "protondb"
+  }
+]

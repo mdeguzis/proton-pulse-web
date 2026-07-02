@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "746760",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.5 - SteamVR PPA",
+    "kernel": "4.20.0-042000rc4-generic",
+    "notes": "Game crashes on launch with \"UE4 Fatal Error\" message. The different launch options and disabling overlays made no difference.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543348166,
+    "title": "Outside",
+    "source": "protondb"
+  }
+]

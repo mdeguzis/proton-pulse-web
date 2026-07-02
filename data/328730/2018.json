@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "328730",
+    "cpu": "Intel(R) Core(TM)2 Quad CPU    Q9550  @ 2.83GHz",
+    "gpu": "GeForce GTX 460/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.14.68-1-MANJARO",
+    "notes": "Works perfectly. LQ remastered is native though.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5964 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536695810,
+    "title": "Letter Quest: Grimm's Journey",
+    "source": "protondb"
+  },
+  {
+    "appId": "328730",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "I installed it before Proton, I believe this should be marked as native.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541864526,
+    "title": "Letter Quest: Grimm's Journey",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "314030",
+    "title": "Guilty Gear X2 #Reload",
+    "timestamp": 1534995286,
+    "rating": "Platinum",
+    "notes": "No errors",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "Intel HD 5500",
+    "specs": "i7-5500U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "314030",
+    "cpu": "AMD FX-8150 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541243193,
+    "title": "Guilty Gear X2 #Reload",
+    "source": "protondb"
+  },
+  {
+    "appId": "314030",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Works very well out of the box. Xbox One Controller support is fine. On Ubuntu 18.04 with KDE Desktop ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542066376,
+    "title": "Guilty Gear X2 #Reload",
+    "source": "protondb"
+  },
+  {
+    "appId": "314030",
+    "cpu": "Intel Core i7-4700MQ @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.19.12-1-MANJARO",
+    "notes": "No error... Everything was worked greatly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1545844008,
+    "title": "Guilty Gear X2 #Reload",
+    "source": "protondb"
+  },
+  {
+    "appId": "314030",
+    "title": "Guilty Gear X2 #Reload",
+    "timestamp": 1534980886,
+    "rating": "Platinum",
+    "notes": "No errors",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "Intel HD 5500",
+    "specs": "i7-5500U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "607820",
+    "cpu": "AMD Phenom 9750 Quad-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Works perfectly so long as I don't Alt-tab out of it. Due to how it uses the mouse, clicking to regain focus doesn't work the way it should, and so it's impossible to do anything the moment the game is sent to the background. Gotta use Alt-F4 or right-click it in the task bar to close it at that point, losing any unsaved progress.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-GE-1",
+    "protonVersionManual": "4.11-GE-1",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1562884955,
+    "title": "Infinite Adventures\u00ae",
+    "source": "protondb"
+  }
+]

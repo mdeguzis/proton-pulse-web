@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3525620",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.10-1-cachyos",
+    "notes": "The game can be enjoyed, but save often in case you hit a UI hang issue.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1778890392,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3525620",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.10-1-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1778993998,
+    "title": "",
+    "source": "protondb"
+  }
+]

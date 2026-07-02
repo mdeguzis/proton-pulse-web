@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "262150",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) R9 380 Series (TONGA, DRM 3.25.0, 4.17.0-0.bpo.3-amd64, LLVM 6.0.0)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Is a broken wine wrapped port",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15987 Mb",
+    "rating": "Borked",
+    "timestamp": 1537389930,
+    "title": "Vanguard Princess",
+    "source": "protondb"
+  },
+  {
+    "appId": "262150",
+    "cpu": "Intel(R) Core(TM) i3-2120 CPU @ 3.30GHz",
+    "gpu": "NVIDIA Corporation GeForce GT 610/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "For this game to work you have to compile the file \"libsteam_api.so\", which is in the \".steam / steam / steamapps / common / vanguard-princess / bin /\" folder to the \"/ usr / lib\" folder, the game will run normally",
+    "os": "Ubuntu 16.04.4 LTS (64-bit)",
+    "protonVersion": "Beta",
+    "ram": "7941 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537642006,
+    "title": "Vanguard Princess",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "appId": "3010",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Xpand Rally",
+    "source": "protondb"
+  },
+  {
+    "appId": "3010",
+    "cpu": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15945 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538078899,
+    "title": "Xpand Rally",
+    "source": "protondb"
+  },
+  {
+    "appId": "3010",
+    "cpu": "Intel Celeron G1620 @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Desktop",
+    "gpuDriver": "3.0 Mesa 17.0.5",
+    "kernel": "4.13.16-100.fc25.x86_64",
+    "os": "Fedora release 25 (Twenty Five)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1541619445,
+    "title": "Xpand Rally",
+    "source": "protondb"
+  }
+]

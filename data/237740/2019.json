@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "237740",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R7 200",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-gentoo",
+    "notes": "Game works and runs smoothly, PS4 controller doesn't work though.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1546530859,
+    "title": "Angry Video Game Nerd Adventures",
+    "source": "protondb"
+  },
+  {
+    "appId": "237740",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R7 200",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-gentoo",
+    "notes": "Game crashes at startup, tried all environment variables and combinations. Proton 3.7-8 worked (except PS4 controller).",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546531059,
+    "title": "Angry Video Game Nerd Adventures",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "237740",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Can confirm controllers work (my DualShock 4 at least), & FPS is actually higher than on Windows, so it plays fine. However, AVGN Adventures' two fullscreen implementations are flawed & unstable. The game appears to use borderless windowed mode, but under Proton it never fully takes over the whole screen. Not only is the GNOME Shell top bar still present (something that can be done away with by 'Hide Top Bar' from GNOME Extensions), but it's literally just a maximised window with a titlebar.\n\nSometimes upon launching the game or changing screens/menus, you can get thrown back to a smaller windowed mode. The 'compat. mode' fullscreen option in particular is extremely unstable, resulting in incredible graphical glitches & game crashes on my system. This sucks, as the other fullscreen mode\u2013simply 'full'\u2013doesn't preserve the game's 16:9 aspect ratio in its upscaling on my ultrawide monitor (whereas the broken compat .mode could), it stretches. This can be circumvented by manually setting one's desktop resolution to the 16:9 equivalent of the monitor's ultrawide resolution.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568310675,
+    "title": "Angry Video Game Nerd Adventures",
+    "source": "protondb"
+  },
+  {
+    "appId": "237740",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Works pretty well. Although, fullscreen doesn't make the game full. The game crashes randomly when messing around with the screen options. Other than that, it's playable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1568423697,
+    "title": "Angry Video Game Nerd Adventures",
+    "source": "protondb"
+  }
+]

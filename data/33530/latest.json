@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "33530",
+    "title": "Tropico 2: Pirate Cove",
+    "timestamp": 1535078409,
+    "rating": "Borked",
+    "notes": "Menu runs perfectly, but crashes when attempting to start game",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33530",
+    "title": "Tropico 2: Pirate Cove",
+    "timestamp": 1535216881,
+    "rating": "Borked",
+    "notes": "Menus work, but crashes before the game can start proper.",
+    "os": "Kubuntu 18.04 (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33530",
+    "title": "Tropico 2: Pirate Cove",
+    "timestamp": 1535064009,
+    "rating": "Borked",
+    "notes": "Menu runs perfectly, but crashes when attempting to start game",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33530",
+    "title": "Tropico 2: Pirate Cove",
+    "timestamp": 1535202481,
+    "rating": "Borked",
+    "notes": "Menus work, but crashes before the game can start proper.",
+    "os": "Kubuntu 18.04 (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

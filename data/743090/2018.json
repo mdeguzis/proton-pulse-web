@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "743090",
+    "title": "Defiance /Defiance 2050",
+    "timestamp": 1535571476,
+    "rating": "Gold",
+    "notes": "Only played for 30 minutes -  all was well.",
+    "os": "Manjaro Stable 4.18.41",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6600k / GTX 980Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "743090",
+    "title": "Star Conflict",
+    "timestamp": 1535571631,
+    "rating": "Silver",
+    "notes": "Gamma/contrast seems very low/dark - slight shader issue, black blocks appear where some of lights on the ship are.",
+    "os": "Manjaro Stable x64  4.18.4.1",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "I5 6600K / GTX 980Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "743090",
+    "title": "Defiance /Defiance 2050",
+    "timestamp": 1535557076,
+    "rating": "Gold",
+    "notes": "Only played for 30 minutes -  all was well.",
+    "os": "Manjaro Stable 4.18.41",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6600k / GTX 980Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "743090",
+    "title": "Star Conflict",
+    "timestamp": 1535557231,
+    "rating": "Silver",
+    "notes": "Gamma/contrast seems very low/dark - slight shader issue, black blocks appear where some of lights on the ship are.",
+    "os": "Manjaro Stable x64  4.18.4.1",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "I5 6600K / GTX 980Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

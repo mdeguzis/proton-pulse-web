@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "353360",
+    "cpu": "Intel Core2 Duo     T8300  @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Mobile Intel GM45 Express Chipset",
+    "gpuDriver": "2.1 Mesa 18.0.5",
+    "kernel": "4.4.0-141-generic",
+    "notes": "can't maximize, mouse does not work.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "4 GB",
+    "rating": "Bronze",
+    "timestamp": 1546350498,
+    "title": "how do you Do It?",
+    "source": "protondb"
+  },
+  {
+    "appId": "353360",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.5",
+    "kernel": "5.0.17-300.fc30.x86_64",
+    "notes": "This game isn't supposed to run in Full-Screen. It's always windowed. Runs perfectly. No glitches.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1559170913,
+    "title": "how do you Do It?",
+    "source": "protondb"
+  }
+]

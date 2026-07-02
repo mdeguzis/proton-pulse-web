@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "747200",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-kali5-amd64",
+    "notes": "Everything works as expected...",
+    "os": "Kali GNU/Linux Rolling",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561902156,
+    "title": "Keplerth",
+    "source": "protondb"
+  }
+]

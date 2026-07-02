@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "691750",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-25-generic",
+    "notes": "No launch options needed. Joystick works (Xbox360). 1st level completed.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567950369,
+    "title": "Andromeda Wing",
+    "source": "protondb"
+  }
+]

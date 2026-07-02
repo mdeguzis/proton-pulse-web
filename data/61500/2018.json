@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "61500",
+    "title": "Age of Wonders",
+    "timestamp": 1535576772,
+    "rating": "Silver",
+    "notes": "Small graphical glitches with flickering lights, hardly noticeable. ",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600K",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "61500",
+    "cpu": "i5-4570 CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-30-lowlatency",
+    "notes": "Didn't test game saving. Played some of the Tutorial at 1080p",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15979 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536805413,
+    "title": "Age of Wonders",
+    "source": "protondb"
+  },
+  {
+    "appId": "61500",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 780 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-200.fc28.x86_64",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta",
+    "ram": "7974 \u041c\u0411",
+    "rating": "Platinum",
+    "timestamp": 1538126556,
+    "title": "Age of Wonders",
+    "source": "protondb"
+  },
+  {
+    "appId": "61500",
+    "title": "Age of Wonders",
+    "timestamp": 1535562372,
+    "rating": "Silver",
+    "notes": "Small graphical glitches with flickering lights, hardly noticeable. ",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600K",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

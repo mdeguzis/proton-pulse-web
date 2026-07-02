@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "906790",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-50-generic",
+    "notes": "The game works fine out of the box. However, on start of the game, there is a black screen for like 5 minutes. No intro video and no way to hit escape. After waiting, the main menu appears and the game can be setup normally. It takes another 10 to 15 minutes of loading before you are actually in game. Once in game, it works fine and with no issues. FPS and performance is great for me. \n\nI would like to point out, that ALT-Tabbing does not work, once you hit play. If done during loading, the game will freeze or will just show a black screen. No way to terminate it, as ALT+F4 won't work not would open any other window. If the game is loaded, ALT+TAB won't crash it but just wouldn't do anything at all. ALT+F4 and leaving the game works fine, once it is loaded correctly with no issues.  \n\nDuring load, the screen and bar are sometimes displaced. Letters in game, for example on the PDA, are difficult to read. \n\nIt is for these reason, that I am giving gold and not platinum, even though I am not sure if these issues are due to Steam Play or occur on Windows as well. I am not using a Windows Machine for years. So I cannot compare. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560633962,
+    "title": "Gaia",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "571060",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.1, DRM 3.44, 5.17.5-76051705-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "Unfortunately does not work.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1656378054,
+    "title": "Zork Nemesis: The Forbidden Lands",
+    "source": "protondb"
+  }
+]

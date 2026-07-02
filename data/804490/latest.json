@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "804490",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.1.21-1-MANJARO",
+    "notes": "It won't start. Tried with disabling Esync and using Wine D3D11. Nothing worked.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567018416,
+    "title": "Creed: Rise to Glory\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "804490",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "The game will show a blank screen and then CTD. \nIt does generate a minidump file after the crash which I might try to take a look at some time.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567060971,
+    "title": "Creed: Rise to Glory\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "804490",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "I used winedbg to analyse the minidump file generated from the game crash. The issue appears to be with vrclient_x64.\n\nBacktrace:\n=>0 0x00007f38901fa7f4 in vrclient_x64.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567256367,
+    "title": "Creed: Rise to Glory\u2122",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "320340",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD ICELAND",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547161069,
+    "title": "Cosmonautica",
+    "source": "protondb"
+  },
+  {
+    "appId": "320340",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Works fine on Proton. I installed manually D9VK and the game works as well fine with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556913330,
+    "title": "Cosmonautica",
+    "source": "protondb"
+  }
+]

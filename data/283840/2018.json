@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "283840",
+    "title": "ALLTYNEX Second",
+    "timestamp": 1535076790,
+    "rating": "Borked",
+    "notes": "Config screen opens and game window only pops up and closes",
+    "os": "Arch Linux",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600 / RX 570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "283840",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Doesn't launch. Works in WINE.",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546269192,
+    "title": "ALLTYNEX Second",
+    "source": "protondb"
+  },
+  {
+    "appId": "283840",
+    "title": "ALLTYNEX Second",
+    "timestamp": 1535062390,
+    "rating": "Borked",
+    "notes": "Config screen opens and game window only pops up and closes",
+    "os": "Arch Linux",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600 / RX 570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

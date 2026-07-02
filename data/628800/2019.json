@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "628800",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpuDriver": "NVIDIA 415.18.02",
+    "kernel": "4.15.0-33-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546462758,
+    "title": "Super Hydorah",
+    "source": "protondb"
+  },
+  {
+    "appId": "628800",
+    "cpu": "Intel Core i5-8350U @ 1.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Video gets a bit jerky occasionally but other than that, works perfectly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547871679,
+    "title": "Super Hydorah",
+    "source": "protondb"
+  },
+  {
+    "appId": "628800",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-828ec41 2019-04-20 bionic-oibaf-ppa)",
+    "kernel": "5.0.9-050009-generic",
+    "notes": "Win32 function failed: HRESULT: 0x8004005 ; Call: at line 224  in file \\Graphics_Display.cpp",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1555831505,
+    "title": "Super Hydorah",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "900883",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-2-MANJARO",
+    "notes": "Fix frame rate issue with protontricks 22330 quartz",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1545030332,
+    "title": "The Elder Scrolls IV: Oblivion\u00ae Game of the Year Edition Deluxe",
+    "source": "protondb"
+  }
+]

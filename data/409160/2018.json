@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "409160",
+    "title": "Dr. Langeskov, The Tiger, and The Terribly Cursed Emerald: A Whirlwind Heist",
+    "timestamp": 1535762880,
+    "rating": "Silver",
+    "notes": "Alt-Tab messes up mouse input (mouse either \"gets stuck\" at the edge of the screen preventing turning any further or can leave the game window to another monitor) / pausing + unpausing game fixes mouse issues",
+    "os": "Arch Linux 64-Bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 7 2700X / Vega 56",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "409160",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Seems fine, aside from not detecting my 360 controller.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536345061",
+    "title": "Dr. Langeskov, The Tiger, and The Terribly Cursed Emerald: A Whirlwind Heist",
+    "source": "protondb"
+  },
+  {
+    "appId": "409160",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-90.current",
+    "notes": "The game works perfectly aside from one thing that kills all the enjoyment - every time you make *any* camera movement, it drifts 1 pixel to the right and 1 pixel down. So if you move the camera down, you're really moving it right-down, and even if you move the camera up, just *really* slowly (<1px per frame), it will still drift to bottom of the screen.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15981 Mb",
+    "rating": "Bronze",
+    "timestamp": 1538870782,
+    "title": "Dr. Langeskov, The Tiger, and The Terribly Cursed Emerald: A Whirlwind Heist",
+    "source": "protondb"
+  },
+  {
+    "appId": "409160",
+    "title": "Dr. Langeskov, The Tiger, and The Terribly Cursed Emerald: A Whirlwind Heist",
+    "timestamp": 1535748480,
+    "rating": "Silver",
+    "notes": "Alt-Tab messes up mouse input (mouse either \"gets stuck\" at the edge of the screen preventing turning any further or can leave the game window to another monitor) / pausing + unpausing game fixes mouse issues",
+    "os": "Arch Linux 64-Bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 7 2700X / Vega 56",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

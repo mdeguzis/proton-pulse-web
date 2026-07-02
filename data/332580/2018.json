@@ -1,0 +1,16 @@
+[
+  {
+    "appId": "332580",
+    "cpu": "i5-2500K CPU @ 3.30GHz",
+    "gpu": "X.Org AMD CAPE VERDE (DRM 2.50.0 / 4.15.0-34-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "default",
+    "ram": "7870 Mb",
+    "rating": "Borked",
+    "timestamp": 1537098978,
+    "title": "Mimpi",
+    "source": "protondb"
+  }
+]

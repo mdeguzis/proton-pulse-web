@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2377970",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 550.144.03",
+    "kernel": "6.8.0-63-generic",
+    "notes": "",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1771541779,
+    "title": "Travellin Cats Around the World",
+    "source": "protondb"
+  },
+  {
+    "appId": "2377970",
+    "cpu": "12th Gen Intel Core i5-1240P",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.25.10.1",
+    "kernel": "6.17.0-23-generic",
+    "notes": "All the game objects appear to be clickable, sound works but the screen is pure white.",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1778070429,
+    "title": "Travellin Cats Around the World",
+    "source": "protondb"
+  }
+]

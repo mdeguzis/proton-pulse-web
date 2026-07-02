@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "37000",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4",
+    "notes": "Menus are working fine, but once I reach in-game it's just a black screen.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559073685,
+    "title": "The Void",
+    "source": "protondb"
+  },
+  {
+    "appId": "37000",
+    "cpu": "AMD Athlon X4 845 Quad Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.16-arch1-1-ARCH",
+    "notes": "Works almost flawlessly until you reach either second sister's chamber then the game just crashes without spiting out any logs.\nSometimes you may get a black screen in the game but hitting ESC and turning the shadows On and Off back and forward caused the game to render properly again to me, also mouse sensitivity is too high but that's a game bug that also happens on windows, so not a proton problem.\nI've tried all the possible combinations of launch options to no success, I've thought that crashing after getting further into the game would be a problem of memory management easily solved with the proton option to force large address awareness but unfortunately that was not the case. ",
+    "os": "ArchLinux",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1563399829,
+    "title": "The Void",
+    "source": "protondb"
+  }
+]

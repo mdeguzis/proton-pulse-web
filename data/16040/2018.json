@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "16040",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-16.2-liquorix-amd64",
+    "notes": "Works out of the box, including Gamepad.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541230397,
+    "title": "Luxor: Quest for the Afterlife ",
+    "source": "protondb"
+  },
+  {
+    "appId": "16040",
+    "cpu": "Intel Core i7-6770HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Iris Pro 580 (Skylake GT4e)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541842932,
+    "title": "Luxor: Quest for the Afterlife ",
+    "source": "protondb"
+  }
+]

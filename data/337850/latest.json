@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "337850",
+    "title": "Avernum 2: Crystal Souls",
+    "timestamp": 1535343149,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-32)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4720HQ / GTX 960M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "337850",
+    "title": "Avernum 2: Crystal Souls",
+    "timestamp": 1535378897,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "337850",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Game runs flawlessly, found no issues.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15987 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537035827,
+    "title": "Avernum 2: Crystal Souls",
+    "source": "protondb"
+  },
+  {
+    "appId": "337850",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Runs perfectly",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1542088418,
+    "title": "Avernum 2: Crystal Souls",
+    "source": "protondb"
+  },
+  {
+    "appId": "337850",
+    "title": "Avernum 2: Crystal Souls",
+    "timestamp": 1535328749,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-32)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4720HQ / GTX 960M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "337850",
+    "title": "Avernum 2: Crystal Souls",
+    "timestamp": 1535364497,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

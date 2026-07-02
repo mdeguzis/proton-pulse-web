@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1647550",
+    "cpu": "12th Gen Intel Core i5-12600KF",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-45-generic",
+    "notes": "Worked fine using Proton Experimental, no issues.",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1726961321,
+    "title": "NEO: The World Ends with You",
+    "source": "protondb"
+  }
+]

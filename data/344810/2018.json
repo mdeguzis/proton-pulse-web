@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "344810",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.19.1-1.el7.elrepo.x86_64",
+    "notes": "Completely fails to start - immediate crash with no window displayed",
+    "os": "CentOS Linux release 7.5.1804 (Core)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1541926594,
+    "title": "Total Extreme Wrestling 2010",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "273110",
+    "cpu": "Intel Core i5-7640X @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-15-generic",
+    "notes": "doesnt start, just a logo",
+    "os": "Ubuntu 18.04.2 LTS (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550958965,
+    "title": "Counter-Strike Nexon: Zombies",
+    "source": "protondb"
+  },
+  {
+    "appId": "273110",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13-300.fc30.x86_64",
+    "notes": "Company logo appears on the right side of my main monitor, then the game crashes ",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1557646603,
+    "title": "Counter-Strike Nexon: Zombies",
+    "source": "protondb"
+  },
+  {
+    "appId": "273110",
+    "cpu": "Intel Core i3       M 330  @ 2.13GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ironlake Mobile",
+    "gpuDriver": "2.1 Mesa 19.1.4",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1567147878,
+    "title": "Counter-Strike Nexon: Zombies",
+    "source": "protondb"
+  }
+]

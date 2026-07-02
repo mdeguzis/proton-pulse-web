@@ -1,0 +1,76 @@
+[
+  {
+    "appId": "545430",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.16-112.current",
+    "notes": "Tried Disabling Esync and using Wine D3d11",
+    "os": "Solus",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554996832,
+    "title": "Bedfellows FRENZY",
+    "source": "protondb"
+  },
+  {
+    "appId": "545430",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "\"Out of memory\" Error box appears two times, then BF_Frenzy.exe becomes a phantom process",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560675970,
+    "title": "Bedfellows FRENZY",
+    "source": "protondb"
+  },
+  {
+    "appId": "545430",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.7-arch1-1-ARCH",
+    "notes": "PROTON_FORCE_LARGE_ADDRESS_AWARE=1 %command%",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1565398362,
+    "title": "Bedfellows FRENZY",
+    "tweaks": {
+      "largeAddressAware": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "545430",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.0-2-amd64",
+    "notes": "With \"PROTON_FORCE_LARGE_ADDRESS_AWARE=1 %command%\" in the start options it works great!",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1566593003,
+    "title": "Bedfellows FRENZY",
+    "tweaks": {
+      "largeAddressAware": true
+    },
+    "source": "protondb"
+  }
+]

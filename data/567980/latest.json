@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "567980",
+    "title": "Santa Rockstar Steam Edition",
+    "timestamp": 1535891186,
+    "rating": "Platinum",
+    "notes": "works perfect",
+    "os": "Linux Mint 18.3 64bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.44",
+    "specs": "Ryzen 7 1700 / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "567980",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "works perfect",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1540471933,
+    "title": "Santa Rockstar",
+    "source": "protondb"
+  },
+  {
+    "appId": "567980",
+    "title": "Santa Rockstar Steam Edition",
+    "timestamp": 1535876786,
+    "rating": "Platinum",
+    "notes": "works perfect",
+    "os": "Linux Mint 18.3 64bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.44",
+    "specs": "Ryzen 7 1700 / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "appId": "272040",
+    "title": "KAMI",
+    "timestamp": 1535189777,
+    "rating": "Silver",
+    "notes": "Very stuttery, low FPS",
+    "os": "Elementary OS 0.4.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 1600/GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "272040",
+    "title": "KAMI",
+    "timestamp": 1535193194,
+    "rating": "Silver",
+    "notes": "Slows down after a few minutes",
+    "os": "XUbuntu 16.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-3570K / HD7850",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "272040",
+    "title": "KAMI",
+    "timestamp": 1535904047,
+    "rating": "Gold",
+    "notes": "Slow but playable",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 5 2400g / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "272040",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Choppy audio,  missing graphical elements",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5",
+    "rating": "Borked",
+    "timestamp": "1536364800",
+    "title": "KAMI",
+    "source": "protondb"
+  },
+  {
+    "appId": "272040",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-2-amd64",
+    "os": "Debian GNU/Linux 8.11 (jessie)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1540965518,
+    "title": "KAMI",
+    "source": "protondb"
+  },
+  {
+    "appId": "272040",
+    "title": "KAMI",
+    "timestamp": 1535175377,
+    "rating": "Silver",
+    "notes": "Very stuttery, low FPS",
+    "os": "Elementary OS 0.4.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 1600/GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "272040",
+    "title": "KAMI",
+    "timestamp": 1535178794,
+    "rating": "Silver",
+    "notes": "Slows down after a few minutes",
+    "os": "XUbuntu 16.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-3570K / HD7850",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "272040",
+    "title": "KAMI",
+    "timestamp": 1535889647,
+    "rating": "Gold",
+    "notes": "Slow but playable",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 5 2400g / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

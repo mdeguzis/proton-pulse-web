@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "317580",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.2-1-MANJARO",
+    "notes": "The game only displays a black screen. There is audio, and if you click around you'll activate stuff, but you have no way of playing the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543116234,
+    "title": "Disney\u2022Pixar Toy Story Mania!",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "674400",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.11-arch1-1-ARCH",
+    "notes": "Cutscene is black, poor performance sems to hang after the \"arena\" fight",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1550843135,
+    "title": "Einar",
+    "source": "protondb"
+  }
+]

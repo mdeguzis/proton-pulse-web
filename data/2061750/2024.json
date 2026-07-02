@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2061750",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.8, DRM 3.57, 6.10.5-zen1)",
+    "gpuDriver": "4.6 Mesa 24.1.5",
+    "kernel": "6.10.5-zen1",
+    "notes": "Works great with Proton, native is borked in multiplayer though",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1725249892,
+    "title": "Counterpact",
+    "source": "protondb"
+  }
+]

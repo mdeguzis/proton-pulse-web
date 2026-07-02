@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "98300",
+    "title": "Toy Soldiers",
+    "timestamp": 1535308435,
+    "rating": "Gold",
+    "notes": "Resolution issue on first run due to multimonitor. Everything ok after configuring video parameters.",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 4690K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "98300",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 With Max-Q Design",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.0-11-generic",
+    "notes": "No issues have been noticed in various Invasion playthroughs.",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543723029,
+    "title": "Toy Soldiers",
+    "source": "protondb"
+  },
+  {
+    "appId": "98300",
+    "title": "Toy Soldiers",
+    "timestamp": 1535294035,
+    "rating": "Gold",
+    "notes": "Resolution issue on first run due to multimonitor. Everything ok after configuring video parameters.",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 4690K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

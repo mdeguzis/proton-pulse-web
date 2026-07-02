@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1370140",
+    "cpu": "Intel Core i7-4790S @ 3.20GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA T1000 8GB",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.12.57+deb13-amd64",
+    "notes": "Main game works fine. Prerendered cutscenes don't work in the DLC.",
+    "os": "Devuan GNU/Linux 6 (excalibur)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1769568876,
+    "title": "",
+    "source": "protondb"
+  }
+]

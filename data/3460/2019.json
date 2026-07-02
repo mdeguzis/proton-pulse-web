@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "3460",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.3",
+    "kernel": "4.19.59-1-MANJARO",
+    "notes": "Works perfectly, including fullscreen and custom cursor (unlike some other PopCap titles that have issues with fullscreen)",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565231975,
+    "title": "Talismania Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3460",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.3",
+    "kernel": "4.19.59-1-MANJARO",
+    "notes": "Works out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566787871,
+    "title": "Talismania Deluxe",
+    "source": "protondb"
+  }
+]

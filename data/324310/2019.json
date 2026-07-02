@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "324310",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.2.0",
+    "kernel": "5.3.2-300.fc31.x86_64",
+    "notes": "Runs perfectly without tweaking needed.",
+    "os": "Freedesktop.org 19.08.3 (Flatpak runtime)",
+    "protonVersion": "4.11-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1570679074,
+    "title": "Bus Simulator 16",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1378060",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 24.2.6",
+    "kernel": "6.6.63",
+    "notes": "",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1735381027,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "223280",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GT 710/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.9.129-std-def-alt0.M80P.1",
+    "notes": "Does not launch.",
+    "os": "\"ALT starter kit (Hypericum)\" (64-bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "7978 Mb",
+    "rating": "Borked",
+    "timestamp": 1540239597,
+    "title": "Cut the Rope",
+    "source": "protondb"
+  }
+]

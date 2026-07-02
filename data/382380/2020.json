@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "382380",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.11-arch1-1",
+    "notes": "Runs fine out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1589231659,
+    "title": "The Amber Throne",
+    "source": "protondb"
+  }
+]

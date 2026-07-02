@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1272130",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.40-1-MANJARO",
+    "notes": "The main menu comes up but when trying to play a game it crashes with an unkown MCI Error.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1596252278,
+    "title": "Close Combat: The Longest Day",
+    "source": "protondb"
+  }
+]

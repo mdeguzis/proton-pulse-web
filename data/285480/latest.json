@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "285480",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Works well, but won't play intro cinematics, like other games using quartz on 64-bit.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "9 GB",
+    "rating": "Silver",
+    "timestamp": 1551634826,
+    "title": "The Entente Gold",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1061180",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.4, DRM 3.60, 6.12.16_1)",
+    "gpuDriver": "4.6 Mesa 24.3.4",
+    "kernel": "6.12.16_1",
+    "notes": "Requires launch option for Wayland. Otherwise perfect!",
+    "os": "Void Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1741802382,
+    "title": "Crumble",
+    "source": "protondb"
+  }
+]

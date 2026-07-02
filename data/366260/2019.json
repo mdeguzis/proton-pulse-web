@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "366260",
+    "cpu": "Intel Core i5-7640X @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-15-generic",
+    "notes": "doesnt start, complain about a error on render9_utils.cpp, i try install dx9 with protontricks, but doenst help",
+    "os": "Ubuntu 18.04.2 LTS (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550960093,
+    "title": "METAL SLUG 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "366260",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.5",
+    "kernel": "5.0.17-300.fc30.x86_64",
+    "notes": "Give an error message and the exits the game.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1559783659,
+    "title": "METAL SLUG 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "525040",
+    "title": "The Disney Afternoon Collection",
+    "timestamp": 1535251451,
+    "rating": "Platinum",
+    "notes": "Keyboard and Xbox One controller work",
+    "os": "Solus 64-bit (3.999)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD FX 8350 / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "525040",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Perfect, including 360 controller support.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536344210",
+    "title": "The Disney Afternoon Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "525040",
+    "title": "The Disney Afternoon Collection",
+    "timestamp": 1535237051,
+    "rating": "Platinum",
+    "notes": "Keyboard and Xbox One controller work",
+    "os": "Solus 64-bit (3.999)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD FX 8350 / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

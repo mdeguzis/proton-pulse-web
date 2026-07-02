@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1447000",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 17.0.6, DRM 3.54, 6.6.9-200.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.1",
+    "kernel": "6.6.9-200.fsync.fc39.x86_64",
+    "notes": "Works but sometimes game crash. Multiplayer works.",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1704661878,
+    "title": "",
+    "source": "protondb"
+  }
+]

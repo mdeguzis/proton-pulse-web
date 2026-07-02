@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "315430",
+    "cpu": "Intel Core i7-6700K @ 4.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.2-arch1-1-ARCH",
+    "notes": "Works just fine",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558028347,
+    "title": "Polarity",
+    "source": "protondb"
+  },
+  {
+    "appId": "315430",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.7-arch1-1-ARCH",
+    "notes": "Runs perfectly smooth 60fps without any tweaks",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565450680,
+    "title": "Polarity",
+    "source": "protondb"
+  }
+]

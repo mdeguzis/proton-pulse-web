@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1218740",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.6, DRM 3.64, 6.18.8-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.2",
+    "kernel": "6.18.8-2-cachyos",
+    "notes": "Installs fine but doesn't start up.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1769896839,
+    "title": "Rakion Chaos Force",
+    "source": "protondb"
+  }
+]

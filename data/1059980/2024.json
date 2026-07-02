@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1059980",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.10.0-19-amd64",
+    "notes": "Seems to work fine",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1717633219,
+    "title": "Just King",
+    "source": "protondb"
+  }
+]

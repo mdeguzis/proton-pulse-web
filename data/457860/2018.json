@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "457860",
+    "cpu": "AMD A4-6210 APU with AMD Radeon R3 Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.18.0-2-amd64",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Default",
+    "ram": "11 GB",
+    "rating": "Platinum",
+    "timestamp": 1541673361,
+    "title": "Apollo 11 VR",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "968350",
+    "cpu": "Intel Core i3-3240 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Runs perfectly out of the box, no tweaks needed. Played for roughly two hours. Good to note it works well in full-screen mode as well.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1562890788,
+    "title": "Hotel Sowls",
+    "source": "protondb"
+  }
+]

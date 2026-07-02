@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "775220",
+    "cpu": "Intel Pentium G4400 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 510 (Skylake GT1)",
+    "gpuDriver": "3.0 Mesa 18.3.3",
+    "kernel": "4.20.8-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1550310532,
+    "title": "Crusaders of Light",
+    "source": "protondb"
+  },
+  {
+    "appId": "775220",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "The client downloaded well. Game seems to run perfectly well out of the box on 4.11-1.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-1",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1564932839,
+    "title": "Crusaders of Light",
+    "source": "protondb"
+  }
+]

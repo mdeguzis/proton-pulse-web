@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1097880",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-e9875fc0b6)",
+    "kernel": "5.2.0-rc5+",
+    "notes": "After starting game there's only black screen and in proton logs I get exceptions, after: \n\n\n\n320603.139:0025:0026:fixme:wmvcore:WMCreateSyncReader ((nil), 0, 0x2a61374): stub 320603.139:0025:0026:fixme:quartz:AMGetErrorTextW (80004001,0x32e0f0,160) stub \n\n320603.139:0025:0026:trace:seh:raise_exception code=eefface flags=1 addr=0x7b43d64d ip=7b43d64d tid=0026 \n\n\nI tried to disable esync and use D3D11, but it didn't fix the issue.\n\nI guessed that it requires WMV support and tried to install quartz, wmp10, and wmv9vcm (or similar) with the help of winetricks and it still didn't work with proton.\n\nBut then I ran it through wine and it worked.\n\nI did:\n\n\nrm -rf ~/.local/share/Steam/steamapps/compatdata/1097880/pfx/\n\n\nWINEARCH=win32 WINEPREFIX=~/.local/share/Steam/steamapps/compatdata/1097880/pfx/ winetricks\n\n\n (installed quartz, wmp10 and wmv9vcm)\n\n\ncd ~/.local/share/Steam/steamapps/common/Super\\ Naughty\\ Maid 2;\n\n\nWINEARCH=win32 WINEPREFIX=~/.local/share/Steam/steamapps/compatdata/1097880/pfx/ wine ./SuperNaughtyMaid\\!2.eXe\n\n\n...\n\n\nI'm guessing it's borked, since it doesn't work without such workarounds...\n",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1561282956,
+    "title": "Super Naughty Maid 2",
+    "source": "protondb"
+  }
+]

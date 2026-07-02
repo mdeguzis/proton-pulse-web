@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "204560",
+    "title": "Confrontation",
+    "timestamp": 1535139165,
+    "rating": "Borked",
+    "notes": "Stuck at splash screen",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700 / GTX 780",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "204560",
+    "title": "Confrontation",
+    "timestamp": 1535237013,
+    "rating": "Platinum",
+    "notes": "Played through the intro tutorial without issues",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "204560",
+    "title": "Confrontation",
+    "timestamp": 1535124765,
+    "rating": "Borked",
+    "notes": "Stuck at splash screen",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700 / GTX 780",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "204560",
+    "title": "Confrontation",
+    "timestamp": 1535222613,
+    "rating": "Platinum",
+    "notes": "Played through the intro tutorial without issues",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

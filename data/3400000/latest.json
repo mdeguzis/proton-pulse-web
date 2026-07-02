@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3400000",
+    "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 580.159.03",
+    "kernel": "6.18.7-76061807-generic",
+    "notes": "Game runs fine.",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1779516583,
+    "title": "",
+    "source": "protondb"
+  }
+]

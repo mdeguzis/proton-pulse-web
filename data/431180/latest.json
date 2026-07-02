@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "431180",
+    "cpu": "AMD Ryzen 5 1600X Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Performs pretty well out of the box, even with settings cranked. No additional tweaks required; have yet to experience any significant problems, though I've only tried singleplayer.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7990 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537143861,
+    "title": "WolfQuest",
+    "source": "protondb"
+  }
+]

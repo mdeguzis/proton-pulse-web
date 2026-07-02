@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "70640",
+    "cpu": "Intel Core i3-3227U @ 1.90GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.4.0-141-generic",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548363512,
+    "title": "Worms",
+    "source": "protondb"
+  },
+  {
+    "appId": "70640",
+    "cpu": "Intel Core i3-3227U @ 1.90GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Dosbox-window appears, then the screen turns black and that's it. Game does not start.",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1552853220,
+    "title": "Worms",
+    "source": "protondb"
+  },
+  {
+    "appId": "70640",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-zen1-2-zen",
+    "notes": "Use 'steam-dos' to play this game perfectly. https://github.com/dreamer/steam-dos",
+    "os": "Linux",
+    "protonVersion": "steam-dos",
+    "protonVersionManual": "steam-dos",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561567775,
+    "title": "Worms",
+    "source": "protondb"
+  }
+]

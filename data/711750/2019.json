@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "711750",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.1-1-MANJARO",
+    "notes": "Can't get it to launch, popup says \"Fatal error!\"",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1549922643,
+    "title": "Monster Energy Supercross - The Official Videogame",
+    "source": "protondb"
+  }
+]

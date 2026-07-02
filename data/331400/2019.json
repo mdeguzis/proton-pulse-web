@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "331400",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Window stays black and changes window title to \"Uncaught node.js Error\"",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563616193,
+    "title": "Luna: Shattered Hearts: Episode 1",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1069650",
+    "cpu": "AMD Ryzen 9 7900X3D 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-51-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1735557904,
+    "title": "Ultimate Admiral: Age of Sail",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "238530",
+    "title": "Super Puzzle Platformer Deluxe",
+    "timestamp": 1536087573,
+    "rating": "Borked",
+    "notes": "Won't start.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "238530",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Does not start",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Borked",
+    "timestamp": 1536913513,
+    "title": "Super Puzzle Platformer Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "238530",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "crashes immediately",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541944747,
+    "title": "Super Puzzle Platformer Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "238530",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Doesn't start",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542449878,
+    "title": "Super Puzzle Platformer Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "238530",
+    "title": "Super Puzzle Platformer Deluxe",
+    "timestamp": 1536073173,
+    "rating": "Borked",
+    "notes": "Won't start.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

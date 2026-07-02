@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "612470",
+    "title": "Bio Inc. Redemption",
+    "timestamp": 1535202720,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Kubuntu 18.04.1 LTS 64 Bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7-3770 / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "612470",
+    "title": "Bio Inc. Redemption",
+    "timestamp": 1535992714,
+    "rating": "Platinum",
+    "notes": "Works fine",
+    "os": "Arch Linux 64bit (Kernel 4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "612470",
+    "cpu": "AMD A10-7850K APU with Radeon R7 Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "The game works perfectly with stable (3.7-8) version of Steam Play, but doesn't start with latest version (currently 3.16-4 Beta)",
+    "os": "Ubuntu 18.04.1 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543167682,
+    "title": "Bio Inc. Redemption",
+    "source": "protondb"
+  },
+  {
+    "appId": "612470",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545586164,
+    "title": "Bio Inc. Redemption",
+    "source": "protondb"
+  },
+  {
+    "appId": "612470",
+    "title": "Bio Inc. Redemption",
+    "timestamp": 1535188320,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Kubuntu 18.04.1 LTS 64 Bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7-3770 / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "612470",
+    "title": "Bio Inc. Redemption",
+    "timestamp": 1535978314,
+    "rating": "Platinum",
+    "notes": "Works fine",
+    "os": "Arch Linux 64bit (Kernel 4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

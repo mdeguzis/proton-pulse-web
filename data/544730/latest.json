@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "544730",
+    "cpu": "Intel Core i7-2620M @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.19.10-300.fc29.x86_64",
+    "notes": "On Fedora 29, game won't start.  Says running (in Steam), but nothing ever shows up. Catan is listed (3 times) in task manager, but game is not actually launching.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546399255,
+    "title": "Catan Universe",
+    "source": "protondb"
+  },
+  {
+    "appId": "544730",
+    "cpu": "AMD Phenom II X4 945",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.20.6-arch1-1-ARCH",
+    "notes": "Runs fine out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1557480563,
+    "title": "Catan Universe",
+    "source": "protondb"
+  },
+  {
+    "appId": "544730",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.0 - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Game ran out of the box - but was nearly unplayable on my system until using the PROTON_NO_D3D11=1 %command%  switch. Using the reduced graphics settings as suggested before was clearly not enough here. After using the switch the game works well for me.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1562410802,
+    "title": "Catan Universe",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

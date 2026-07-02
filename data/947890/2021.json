@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "947890",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.35.0, 5.4.0-71-lowlatency, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.2 - SteamVR PPA",
+    "kernel": "5.4.0-71-lowlatency",
+    "notes": "Game is bootable in Desktop mode",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1619794133,
+    "title": "",
+    "source": "protondb"
+  }
+]

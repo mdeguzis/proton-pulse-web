@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "465240",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.18.04",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Crashes before it can finish loading.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544949168,
+    "title": "Serious Sam VR: The Last Hope",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

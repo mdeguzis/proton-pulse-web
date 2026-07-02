@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "389140",
+    "cpu": "Intel Core i3-9100F @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GT 630",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-47-generic",
+    "notes": "Runs out of the box with Proton.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1627795240,
+    "title": "Horizon Chase Turbo",
+    "source": "protondb"
+  },
+  {
+    "appId": "389140",
+    "cpu": "Intel Core i3-9100F @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.13.0-7620-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1637293440,
+    "title": "Horizon Chase Turbo",
+    "source": "protondb"
+  },
+  {
+    "appId": "389140",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 21.0.3",
+    "kernel": "5.4.0-90-generic",
+    "notes": "Doesn't install shadders and other things",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-7",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1637342748,
+    "title": "Horizon Chase Turbo",
+    "source": "protondb"
+  }
+]

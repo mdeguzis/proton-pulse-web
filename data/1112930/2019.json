@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1112930",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 440.31",
+    "kernel": "5.3.11-zen1-1-zen",
+    "notes": "Fails to launch due to shader errors.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1574135944,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1112930",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "5.4.2-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1577419789,
+    "title": "",
+    "source": "protondb"
+  }
+]

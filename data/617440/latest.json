@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "617440",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Still boots instantly to a black screen",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565647050,
+    "title": "Juanito Arcade Mayhem",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "907470",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Didn't start untill 'lib32-vulkan-icd-loader' was installed. Runs perfectly (1440p ~120 fps)",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1549785657,
+    "title": "Iris.Fall",
+    "source": "protondb"
+  },
+  {
+    "appId": "907470",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "AMD VEGA20",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-17-generic",
+    "notes": "completely played trough: runs perfectly, but some of the animated cutscenes do not play correctly.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-8",
+    "protonVersionManual": "4.2-8",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561675886,
+    "title": "Iris.Fall",
+    "source": "protondb"
+  },
+  {
+    "appId": "907470",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-gentoo",
+    "notes": "runs perfectly",
+    "os": "Linux\uff0864 \u4f4d\uff09",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562712100,
+    "title": "Iris.Fall",
+    "source": "protondb"
+  }
+]

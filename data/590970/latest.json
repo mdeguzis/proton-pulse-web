@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "590970",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Tried this back when proton was released and it was completely unplayable at 1-4 fps. Currently on 4.2-4 and gameplay is flawless at 60 fps maxed. No tweaks required. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558150825,
+    "title": "Hollow",
+    "source": "protondb"
+  }
+]

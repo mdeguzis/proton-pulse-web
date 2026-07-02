@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "251310",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.4 - SteamVR PPA",
+    "kernel": "4.19.0-041900rc8-generic",
+    "notes": "On launch installs MS .NET and then nothing happens",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541238290,
+    "title": "Eleusis",
+    "source": "protondb"
+  }
+]

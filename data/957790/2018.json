@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "957790",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Works out of the box, with no game-breaking issues found. Reprojection is on almost constantly, though - but I didn't really notice it in the heat of battle.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543143707,
+    "title": "WAR DUST | 32 vs 32 Battles",
+    "source": "protondb"
+  }
+]

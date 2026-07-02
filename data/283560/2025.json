@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "283560",
+    "cpu": "AMD Ryzen 9 5900XT 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 550 / 550 (radeonsi, polaris12, ACO, DRM 3.64, 6.18.1-arch1-2)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.1",
+    "kernel": "6.18.1-arch1-2",
+    "notes": "Funcionou perfeitamente.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "96 GB",
+    "rating": "gold",
+    "timestamp": 1766201144,
+    "title": "",
+    "source": "protondb"
+  }
+]

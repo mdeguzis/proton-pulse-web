@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "340120",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Run out of a box. Nice performance",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "9 GB",
+    "rating": "Platinum",
+    "timestamp": 1551368151,
+    "title": "Moorhuhn (Crazy Chicken)",
+    "source": "protondb"
+  },
+  {
+    "appId": "340120",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "4.19.47_1",
+    "notes": "Game runs fine and without any issues out-of-the-box. ",
+    "os": "Void Linux",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559510291,
+    "title": "Moorhuhn (Crazy Chicken)",
+    "source": "protondb"
+  },
+  {
+    "appId": "340120",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-zen1-2-zen",
+    "notes": "Working perfectly out of the box.",
+    "os": "Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562065333,
+    "title": "Moorhuhn (Crazy Chicken)",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "255960",
+    "cpu": "Intel(R) Core(TM) i5-4670K CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Complains about missing badmojo.ini file and closes. I'm guessing this can be worked around but the ini file actually contains paths to game assets which I don't know how to set in relation to wine prefix.",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "15986 Mb",
+    "rating": "Borked",
+    "timestamp": 1537389578,
+    "title": "Bad Mojo Redux",
+    "source": "protondb"
+  },
+  {
+    "appId": "255960",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Shows error message because of missing file (badmojo.ini).",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540946222,
+    "title": "Bad Mojo Redux",
+    "source": "protondb"
+  },
+  {
+    "appId": "255960",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.9.135-1-MANJARO",
+    "notes": "You need to set up the prefix and run `wine cmd.exe /C gencfg.bat \"%CD%\"` in game directory to generate the missing BADMOJO.INI file but even after that it crashes immediately after a split second of black screen and there's a segfault printed to STDERR when run from the terminal. Tried BADMOJO.EXE, launcher.exe and launcher2.bat - none start the game but STDERR outputs differ slightly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541785914,
+    "title": "Bad Mojo Redux",
+    "source": "protondb"
+  }
+]

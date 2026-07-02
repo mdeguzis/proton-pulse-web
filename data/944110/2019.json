@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "944110",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It had some graphical issues, but everything works perfectly when you use Wine D3d11 with the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552264823,
+    "title": "Pocket Waifu",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "944110",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Like native",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561784611,
+    "title": "Pocket Waifu",
+    "source": "protondb"
+  }
+]

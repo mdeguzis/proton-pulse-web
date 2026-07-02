@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "314010",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Desktop",
+    "gpuDriver": "3.0 Mesa 19.1.0-devel (git-80e1ca9 2019-04-01 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-17-generic",
+    "notes": "The game dosen't open at all. Tried a lot of workarounds, without any success.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1557769016,
+    "title": "Boid",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

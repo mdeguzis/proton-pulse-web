@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "488860",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 14.0.4, DRM 3.44, 5.17.0-1-amd64)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.17.0-1-amd64",
+    "notes": "Utterly broken for me, glad others are able to get it working. No launch options or anything made any difference. I refunded immediately.",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1655154294,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "488860",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 14.0.4, DRM 3.44, 5.17.0-1-amd64)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.17.0-1-amd64",
+    "notes": "Worked great out of the box this time, no idea what I was doing wrong before.",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1656118326,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "488860",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Runs well but controls need to be manually adjusted",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1668105040,
+    "title": "",
+    "source": "protondb"
+  }
+]

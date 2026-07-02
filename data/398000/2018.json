@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "398000",
+    "title": "Little Big Adventure 2",
+    "timestamp": 1535027393,
+    "rating": "Platinum",
+    "notes": "This is a DOS Box back-end, but they were too lazy to add Linux support. Runs perfect.",
+    "os": "Kubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.3.0 Dev",
+    "specs": "i5-4460 / RX460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "398000",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Perfect.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15923 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537456724,
+    "title": "Little Big Adventure 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "398000",
+    "title": "Little Big Adventure 2",
+    "timestamp": 1535012993,
+    "rating": "Platinum",
+    "notes": "This is a DOS Box back-end, but they were too lazy to add Linux support. Runs perfect.",
+    "os": "Kubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.3.0 Dev",
+    "specs": "i5-4460 / RX460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

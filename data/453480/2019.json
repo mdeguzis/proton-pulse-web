@@ -1,0 +1,163 @@
+[
+  {
+    "appId": "453480",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 680M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.14-1-MANJARO",
+    "notes": "No even start up, probably need messing with tweaks.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547974226,
+    "title": "Shadowverse CCG",
+    "source": "protondb"
+  },
+  {
+    "appId": "453480",
+    "cpu": "AMD Phenom II X4 840",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD BARTS",
+    "gpuDriver": "3.1 Mesa 19.0.0-devel (git-932ed9c 2019-01-29 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-44-generic",
+    "notes": "Nothing worked. Clicked on play, game started and crashed down without warning or any message",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1548780871,
+    "title": "Shadowverse CCG",
+    "source": "protondb"
+  },
+  {
+    "appId": "453480",
+    "cpu": "AMD Phenom II X4 840",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD BARTS",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel (git-a203eaa 2019-02-05 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-45-generic",
+    "notes": "After working and many try and errors I finally managed to get this game up and running. For this game you will need the 3.7-8 Beta version. It is the only version, that managed the game to get started. The game itself is running perfectly fine and without any problems. Multiplayer matches not tested right now",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1549515925,
+    "title": "Shadowverse CCG",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "453480",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-45-generic",
+    "notes": "paste this in launch options: \"PROTON_USE_WINED3D=1 %command%\" without quotes. tested deck building, online multiplayer and game settings. runs perfectly. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1551630881,
+    "title": "Shadowverse CCG",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "453480",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.5-050005-generic",
+    "notes": "The game ran perfect. Didn't test multiplayer.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554260595,
+    "title": "Shadowverse CCG",
+    "source": "protondb"
+  },
+  {
+    "appId": "453480",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.18.0-17-generic",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554903483,
+    "title": "Shadowverse CCG",
+    "source": "protondb"
+  },
+  {
+    "appId": "453480",
+    "cpu": "Intel Celeron N3350 @ 1.10GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel HD 500 (Broxton 2x6)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-11-generic",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1555336934,
+    "title": "Shadowverse CCG",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "453480",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.11-1-default",
+    "notes": "Need option: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557674877,
+    "title": "Shadowverse CCG",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "453480",
+    "cpu": "Intel Core i5-3337U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.1",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Make sure to have dxvk installed and set the environment variable PROTON_USE_WINED3D11=1",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1563258958,
+    "title": "Shadowverse CCG",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

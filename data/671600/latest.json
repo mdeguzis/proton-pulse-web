@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "671600",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 480",
+    "gpuDriver": "4.6.13564 Compatibility Profile Context 5.0.19.20.7",
+    "kernel": "5.0.0-27-generic",
+    "notes": "doesn't start",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568109533,
+    "title": "Ashes of Oahu",
+    "source": "protondb"
+  }
+]

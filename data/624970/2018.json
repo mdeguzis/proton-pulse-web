@@ -1,0 +1,64 @@
+[
+  {
+    "appId": "624970",
+    "title": "Battlezone: Combat Commander",
+    "timestamp": 1535056964,
+    "rating": "Borked",
+    "notes": "Black screen but game don't start.",
+    "os": "Xubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "X5470 / GTX 950",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "624970",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.18.0-sabayon",
+    "notes": "The game won't launch unless you use Wine D3D, at that point menus all work perfectly fine, but actually launching the game results in a crash with the message \"Bad FPU Control Word\"",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1540713590,
+    "title": "Battlezone: Combat Commander",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "624970",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 680M",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.15.0-42-generic",
+    "notes": "1) Test with \"Vanilla Proton\": Launching game goes to a black screen and no further.\n|\n2) Test with \"Disable Esync\": Same result as Test 1.\n|\n3) Test with \"Disable D3D11\": Lauching game fails with \"DirectX failed to initialize. This game requires at least a DirectX 11 level graphics card, and version on windows which supports DirectX 11\".\n|\n4) Test with \"Wine D3D11\": Launches game successfully, plays intro movie, allows you to navigate all menus and sub-menus, but trying to start a mission/ map causes game to fail with error \"Bad FPU Control Work\".\n|\n5) Test with \"Wine D3D11\" and \"Disable Esync\": Same result as Test 4.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543905920,
+    "title": "Battlezone: Combat Commander",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "624970",
+    "title": "Battlezone: Combat Commander",
+    "timestamp": 1535042564,
+    "rating": "Borked",
+    "notes": "Black screen but game don't start.",
+    "os": "Xubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "X5470 / GTX 950",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

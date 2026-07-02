@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1429740",
+    "cpu": "Intel Core i5-8500 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "4.15.0-136-lowlatency",
+    "notes": "Game starts, but controls do not work",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1615234341,
+    "title": "",
+    "source": "protondb"
+  }
+]

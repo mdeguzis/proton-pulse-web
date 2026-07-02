@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "702320",
+    "title": "March of Empires",
+    "timestamp": 1535206453,
+    "rating": "Borked",
+    "notes": "Gameloft logo appears briefly and then game crashes without error message.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Intel i5-7200U / HD Graphics 620 (Kaby Lake GT2)",
+    "protonVersion": "3.7-4   (default version was also tested..)",
+    "source": "protondb"
+  },
+  {
+    "appId": "702320",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "If no Env variable is set, the game crashes at the Gameloft logo. If however, the \"PROTON_USE_WINED3D=1 %command%\" variable is used then the game proceeds further onto the loading screen, but at that point it crashes with the dialog saying something to the effect of being unable to connect to the servers. So, until that changes, the game will remain \"Borked\".",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544265644,
+    "title": "March of Empires",
+    "source": "protondb"
+  },
+  {
+    "appId": "702320",
+    "title": "March of Empires",
+    "timestamp": 1535192053,
+    "rating": "Borked",
+    "notes": "Gameloft logo appears briefly and then game crashes without error message.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Intel i5-7200U / HD Graphics 620 (Kaby Lake GT2)",
+    "protonVersion": "3.7-4   (default version was also tested..)",
+    "source": "protondb"
+  }
+]

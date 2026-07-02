@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "262770",
+    "title": "Freedom Fall",
+    "timestamp": 1535145180,
+    "rating": "Platinum",
+    "notes": "Worked well. No issues.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.65-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i3-2100 / GeForce GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "262770",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Working fine.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543593296,
+    "title": "Freedom Fall",
+    "source": "protondb"
+  },
+  {
+    "appId": "262770",
+    "title": "Freedom Fall",
+    "timestamp": 1535130780,
+    "rating": "Platinum",
+    "notes": "Worked well. No issues.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.65-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i3-2100 / GeForce GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

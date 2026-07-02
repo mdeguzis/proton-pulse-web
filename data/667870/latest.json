@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "667870",
+    "cpu": "Intel Core i5-2540M @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 3000 (SNB GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "5.4.0-51-generic",
+    "notes": "Can't connect to the server.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1602794953,
+    "title": "",
+    "source": "protondb"
+  }
+]

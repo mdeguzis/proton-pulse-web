@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1162680",
+    "cpu": "AMD Ryzen Threadripper 1920X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.6 Mesa 20.1.0-devel",
+    "kernel": "5.3.18-050318-lowlatency",
+    "notes": "Played through the whole game",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "4.11-13",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1583672570,
+    "title": "[Chilla's Art] Stigmatized Property | \u4e8b\u6545\u7269\u4ef6",
+    "source": "protondb"
+  },
+  {
+    "appId": "1162680",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.34-1-MANJARO",
+    "notes": "it run just like on Windows",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1587913231,
+    "title": "[Chilla's Art] Stigmatized Property | \u4e8b\u6545\u7269\u4ef6",
+    "source": "protondb"
+  }
+]

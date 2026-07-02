@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "984110",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.7-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1549982864,
+    "title": "SYNTHETIK: Arena",
+    "source": "protondb"
+  },
+  {
+    "appId": "984110",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "The game crashes with an error as soon as I click on \"PLAY\".",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551210132,
+    "title": "SYNTHETIK: Arena",
+    "source": "protondb"
+  }
+]

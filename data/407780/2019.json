@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "407780",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Crash on startup",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554318866,
+    "title": "Lethe - Episode One",
+    "source": "protondb"
+  },
+  {
+    "appId": "407780",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15",
+    "notes": "Works out of the Box, but has graphical glitches that make it unpleasant to play.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1562324767,
+    "title": "Lethe - Episode One",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "407780",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Use experimental Vulkan-based Direct3D 9 renderer in Launch Options   -   \nPROTON_USE_D9VK=1 %command%\n   -   Fixes graphics glitches using Steam Proton 4.11-3 on my system.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1566887573,
+    "title": "Lethe - Episode One",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

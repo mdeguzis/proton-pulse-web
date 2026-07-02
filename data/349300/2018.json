@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "349300",
+    "title": "Littlewitch Romanesque: Editio Regia",
+    "timestamp": 1535871107,
+    "rating": "Borked",
+    "notes": "Right after opening the game, It displays two error messages before crashing.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "349300",
+    "title": "Littlewitch Romanesque: Editio Regia",
+    "timestamp": 1535856707,
+    "rating": "Borked",
+    "notes": "Right after opening the game, It displays two error messages before crashing.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

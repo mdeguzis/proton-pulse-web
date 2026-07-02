@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "535760",
+    "cpu": "Intel Core i5-3450 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R7 300",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Buttons are clickable and I can hear sounds, but no image, just black screen.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1557935850,
+    "title": "Unforgiving Trials: The Space Crusade",
+    "source": "protondb"
+  }
+]

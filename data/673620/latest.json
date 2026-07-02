@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "673620",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.4",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Tested all versions of proton selectable in the properties window, none of them worked.\n\nSome of them launched the game (notably the 3.16-9 version), but upon clicking \"start\" immediately crashed.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1565883323,
+    "title": "Slizer Battle Management System",
+    "source": "protondb"
+  }
+]

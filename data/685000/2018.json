@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "685000",
+    "title": "BAE",
+    "timestamp": 1535966673,
+    "rating": "Platinum",
+    "notes": "Works flawlessly ",
+    "os": "Linux Mint 19 64bit (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "FX 8320 / GTX 1060",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "685000",
+    "cpu": "Intel Core i3-5005U @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "All runs smoothly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1545819155,
+    "title": "BAE",
+    "source": "protondb"
+  },
+  {
+    "appId": "685000",
+    "title": "BAE",
+    "timestamp": 1535952273,
+    "rating": "Platinum",
+    "notes": "Works flawlessly ",
+    "os": "Linux Mint 19 64bit (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "FX 8320 / GTX 1060",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

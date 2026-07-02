@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1305080",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.10.2-2-MANJARO",
+    "notes": "Game runs fine out of the box at the exception of a small framerate bug",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1609733064,
+    "title": "GearBlocks",
+    "source": "protondb"
+  }
+]

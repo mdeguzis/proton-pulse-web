@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "311770",
+    "title": "LEGO\u00ae Pirates of the Caribbean The Video Game",
+    "timestamp": 1535288302,
+    "rating": "Gold",
+    "notes": "Just had to adjust for optimal resolution.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7-4790k/RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "311770",
+    "cpu": "AMD FX(tm)-9590 Eight-Core Processor",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "32064 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536806440,
+    "title": "LEGO\u00ae Pirates of the Caribbean: The Video Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "311770",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15923 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537387000,
+    "title": "LEGO\u00ae Pirates of the Caribbean: The Video Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "311770",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "No issues at all. Still had my save game from Windows",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7919 Mb",
+    "rating": "Platinum",
+    "timestamp": 1540130819,
+    "title": "LEGO\u00ae Pirates of the Caribbean: The Video Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "311770",
+    "title": "LEGO\u00ae Pirates of the Caribbean The Video Game",
+    "timestamp": 1535273902,
+    "rating": "Gold",
+    "notes": "Just had to adjust for optimal resolution.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7-4790k/RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

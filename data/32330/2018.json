@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "32330",
+    "title": "LEGO\u24c7 Indiana Jones\u2122: The Original Adventures",
+    "timestamp": 1535191458,
+    "rating": "Gold",
+    "notes": "Fix the sound loop with the startup parameters \"PROTON_NO_ESYNC=1 %command%\"",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "FX 8350 / RX 570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "32330",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core Processor",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.19.0-1-MANJARO",
+    "notes": "Played first level. Plays as well as any other LEGO game, Steam Controller works great but doesn't prevent screen from sleeping - have to disable screen sleep manually or bump mouse occasionally to prevent display sleep.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16053 Mb",
+    "rating": "Gold",
+    "timestamp": 1537466754,
+    "title": "LEGO\u00ae Indiana Jones\u2122: The Original Adventures",
+    "source": "protondb"
+  },
+  {
+    "appId": "32330",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 570 Series (POLARIS10, DRM 3.26.0, 4.18.9-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.0",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "notes": "I\u00b4m the Ubuntu Guy \nI just wanted to say that in the prefix a controller (js or event) must turn off because otherwise the controller is recognized as a player 1 and 2",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "Beta",
+    "ram": "15995 MB",
+    "rating": "Gold",
+    "timestamp": 1537606810,
+    "title": "LEGO\u00ae Indiana Jones\u2122: The Original Adventures",
+    "source": "protondb"
+  },
+  {
+    "appId": "32330",
+    "title": "LEGO\u24c7 Indiana Jones\u2122: The Original Adventures",
+    "timestamp": 1535177058,
+    "rating": "Gold",
+    "notes": "Fix the sound loop with the startup parameters \"PROTON_NO_ESYNC=1 %command%\"",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "FX 8350 / RX 570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

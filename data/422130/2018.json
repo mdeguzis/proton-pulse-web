@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "422130",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.9-1.el7.elrepo.x86_64",
+    "notes": "Fails to start",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64419 Mb",
+    "rating": "Borked",
+    "timestamp": 1537567228,
+    "title": "Comic Book Hero: The Greatest Cape",
+    "source": "protondb"
+  },
+  {
+    "appId": "422130",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "no tweaks were tried, just standard steam game set-up",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16035 Mb",
+    "rating": "Borked",
+    "timestamp": 1538269545,
+    "title": "Comic Book Hero: The Greatest Cape",
+    "source": "protondb"
+  }
+]

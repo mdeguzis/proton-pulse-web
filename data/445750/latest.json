@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "445750",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.0",
+    "notes": "\"%command% --disable-gpu\" and you'll be fine",
+    "os": "Linux 4.x (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562099228,
+    "title": "Settled",
+    "source": "protondb"
+  },
+  {
+    "appId": "445750",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.63",
+    "notes": "Setting the launch options to \"%command% --disable-gpu\" worked for me.",
+    "os": "NixOS",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1565878429,
+    "title": "Settled",
+    "source": "protondb"
+  },
+  {
+    "appId": "445750",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.16",
+    "notes": "Works perfectly after using --disable-gpu option as others have mentioned.",
+    "os": "NixOS 20.03.git.23a3793 (Markhor)",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1569587514,
+    "title": "Settled",
+    "source": "protondb"
+  }
+]

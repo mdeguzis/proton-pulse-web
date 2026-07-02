@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "953190",
+    "cpu": "Intel Xeon E5-2650L v3 @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "I had to alt-tab first time I started the game. After that it runs with no problems at all.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1553127282,
+    "title": "Dream Walker",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "appId": "508190",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "Game crashes right away, but runs perfectly under Wine-staging 4.8.",
+    "os": "MX 18.2 Continuum",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1558325230,
+    "title": "Dragon Knight",
+    "source": "protondb"
+  },
+  {
+    "appId": "508190",
+    "cpu": "Intel Core i7-4800MQ @ 2.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.1",
+    "kernel": "4.19.56_1",
+    "notes": "This \"game\" works with tweaks but performance is pretty bad (10-25 fps) with this hardware.",
+    "os": "Void Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1561843680,
+    "title": "Dragon Knight",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "508190",
+    "cpu": "Intel Core i7-4800MQ @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "nouveau NVE6",
+    "gpuDriver": "4.3 Mesa 19.1.1",
+    "kernel": "4.19.56_1",
+    "notes": "It's OK, 50+fps/1080p.",
+    "os": "Void Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1561845881,
+    "title": "Dragon Knight",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

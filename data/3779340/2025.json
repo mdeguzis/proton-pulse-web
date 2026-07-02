@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3779340",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.144.03",
+    "kernel": "6.8.0-62-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1750794576,
+    "title": "",
+    "source": "protondb"
+  }
+]

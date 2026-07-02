@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2184280",
+    "cpu": "Intel Pentium G3420 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.161.03",
+    "kernel": "5.4.0-135-generic",
+    "notes": "Tried demo with multiple proton versions, does not start at all... :(",
+    "os": "Ubuntu 20.04.5 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1696965081,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2184280",
+    "cpu": "Intel Pentium G3420 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.161.03",
+    "kernel": "5.4.0-135-generic",
+    "notes": "Steam next fest demo working!",
+    "os": "Ubuntu 20.04.5 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1696971977,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2184280",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD NAVY_FLOUNDER (DRM 3.40.0, 5.11.0-7614-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.0",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "Demo version works out of the box.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1698017270,
+    "title": "",
+    "source": "protondb"
+  }
+]

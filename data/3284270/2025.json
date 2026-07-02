@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3284270",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 (radeonsi, navi10, LLVM 19.1.7, DRM 3.61, 6.14.4-061404-generic)",
+    "gpuDriver": "4.6 Mesa 25.1.3 (git-ba95e694fe)",
+    "kernel": "6.14.4-061404-generic",
+    "notes": "Native. Works perfectly. Really fun and cute puzzle game!",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1749781735,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3284270",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-arch1-1",
+    "notes": "Worked perfectly out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1762628195,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3284270",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs perfectly",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1766342231,
+    "title": "",
+    "source": "protondb"
+  }
+]

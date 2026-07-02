@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "481420",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.18.04",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Played through the tutorial and a little bit of free play. Detects Vive and works without problems.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544919486,
+    "title": "Final Approach: Pilot Edition",
+    "source": "protondb"
+  }
+]

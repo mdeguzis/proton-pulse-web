@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "247730",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Nothing works",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-6",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "Nether: Resurrected",
+    "source": "protondb"
+  },
+  {
+    "appId": "247730",
+    "cpu": "Intel Core i3-6098P @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.18.14-041814-generic",
+    "notes": "This game is dead my dudes, even if you could launch it nobody is playing this stuff,got it in a bundle for 10 cents, wouldn't bother",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1541438556,
+    "title": "Nether: Resurrected",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "843180",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.11.16-arch1-1, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.16-arch1-1",
+    "notes": "performance is perfect in standard 16:9, runs exactly as native",
+    "os": "Salient OS",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1620020614,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "843180",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.4.84-1-lts",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1627051409,
+    "title": "",
+    "source": "protondb"
+  }
+]

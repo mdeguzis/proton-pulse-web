@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "658700",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Doesn't start. Running vanilla, it creates an empty game window and immediately shows a (Windows emulated) crash reporter. By forcing PROTON_USE_WINED3D, I get a pop-up error \"Error initializing DirectX on adapter Radeon RX Vega. Error code: 0x80004001.\" Esync launcher option don't have effect. Using PROTON_NO_D3D11 launcher option, absolutely nothing happens (no game window, no crash message).",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543366653,
+    "title": "V-Rally 4",
+    "source": "protondb"
+  }
+]

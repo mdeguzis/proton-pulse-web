@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "284970",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "With updated Proton game runs out of the box.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1557594947,
+    "title": "Project Root",
+    "source": "protondb"
+  },
+  {
+    "appId": "284970",
+    "cpu": "AMD A10-5700 APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-65-generic",
+    "notes": "No problems.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1571470721,
+    "title": "Project Root",
+    "source": "protondb"
+  }
+]

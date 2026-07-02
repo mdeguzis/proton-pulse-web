@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "229890",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-48-generic",
+    "notes": "The game doesn't start at all",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1557047859,
+    "title": "Joe Danger",
+    "source": "protondb"
+  },
+  {
+    "appId": "229890",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "The game now runs with Proton 4.11-1 and the performance is like native; but it always runs windowed whatever resolution is chosen, even if \"windowed\" isn't checked.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-1",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1564705676,
+    "title": "Joe Danger",
+    "source": "protondb"
+  },
+  {
+    "appId": "229890",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Runs without modifications but always in Windows Mode which for me is not an issue because I am using Steam Link to stream the game fullscreen to my TV.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1567330688,
+    "title": "Joe Danger",
+    "source": "protondb"
+  }
+]

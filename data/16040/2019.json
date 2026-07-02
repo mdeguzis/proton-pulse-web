@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "16040",
+    "cpu": "Intel Pentium G3220 @ 3.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel (git-b2d651b 2019-03-30 bionic-oibaf-ppa)",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Game Settings: 1920x1080; Low Details; Full Screen",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1554026709,
+    "title": "Luxor: Quest for the Afterlife ",
+    "source": "protondb"
+  }
+]

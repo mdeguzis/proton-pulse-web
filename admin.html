@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — Proton Pulse</title>
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/base.css?v=45c7e06d">
+<link rel="stylesheet" href="css/shared/topbar.css?v=2d6b5e52">
+<link rel="stylesheet" href="css/shared/site.css?v=e05a0f73">
+<link rel="stylesheet" href="css/shared/cards.css?v=16c748ed">
+<link rel="stylesheet" href="css/admin/admin.css?v=8063dab4">
+</head>
+<body>
+
+<div class="main-content">
+  <div class="main-inner">
+
+    <div class="page-header">
+      <div class="eyebrow">Administration</div>
+      <div class="page-title">Admin Panel</div>
+    </div>
+
+    <div id="admin-not-authorized" hidden>
+      <p class="admin-error">You are not authorized to view this page.</p>
+    </div>
+
+    <div id="admin-signed-out" hidden>
+      <p class="admin-error">Sign in with Steam to access the admin panel.</p>
+    </div>
+
+    <div id="admin-panel" hidden>
+
+      <div class="admin-nav">
+        <select id="admin-tab-select" class="admin-select admin-nav-select">
+          <option value="users">All Users</option>
+          <option value="all-reports">Reports</option>
+          <option value="flagged">Flag Review</option>
+          <option value="banned">Banned Users</option>
+          <option value="admins">Admins</option>
+          <option value="phrases">Banned Phrases</option>
+          <option value="analytics">Analytics</option>
+        </select>
+      </div>
+
+      <div id="admin-perms-summary" class="admin-perms-summary" hidden></div>
+
+      <!-- Reports (unified) -->
+      <section id="tab-all-reports" class="admin-section" hidden>
+        <div class="admin-filters">
+          <input type="text" id="all-reports-search" class="admin-input admin-input--wide" placeholder="Search by app ID or title...">
+          <select id="all-reports-status-filter" class="admin-select">
+            <option value="">All statuses</option>
+            <option value="clean">Approved (clean)</option>
+            <option value="pending" selected>Pending approval</option>
+            <option value="flagged">Flagged</option>
+            <option value="hidden">Hidden</option>
+          </select>
+          <select id="all-reports-apptype-filter" class="admin-select">
+            <option value="">All stores</option>
+            <option value="steam">Steam</option>
+            <option value="gog">GOG</option>
+            <option value="epic">Epic</option>
+            <option value="nonsteam">Non-Steam</option>
+          </select>
+          <label class="admin-label">From <input type="date" id="all-reports-date-from" class="admin-input admin-input--date"></label>
+          <label class="admin-label">To <input type="date" id="all-reports-date-to" class="admin-input admin-input--date"></label>
+          <button class="admin-btn" id="all-reports-refresh-btn">Refresh</button>
+        </div>
+        <div class="admin-legend">
+          <span class="admin-badge admin-badge--ok">approved</span> visible to the public &nbsp;&middot;&nbsp;
+          <span class="admin-badge admin-badge--info">pending</span> waiting on the daily approval pipeline &nbsp;&middot;&nbsp;
+          <span class="admin-badge admin-badge--warn">flagged</span> queued for mod review &nbsp;&middot;&nbsp;
+          <span class="admin-badge admin-badge--muted">hidden</span> shadow-banned, not visible to users
+        </div>
+        <div id="all-reports-count" class="admin-counts" hidden></div>
+        <div id="all-reports-loading" class="admin-loading">Loading reports...</div>
+        <div id="all-reports-empty" class="admin-empty" hidden>No reports found.</div>
+        <div class="admin-table-scroll">
+        <table id="all-reports-table" class="admin-table" hidden>
+          <thead>
+            <tr>
+              <th>Report ID</th>
+              <th>App</th>
+              <th>Title</th>
+              <th>Source</th>
+              <th>Store</th>
+              <th>User</th>
+              <th>Submitted</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="all-reports-tbody"></tbody>
+        </table>
+        </div>
+      </section>
+
+      <!-- Report Detail (navigated to programmatically) -->
+      <section id="tab-report-detail" class="admin-section" hidden>
+        <div id="report-detail-content"></div>
+      </section>
+
+      <!-- Flag Review -->
+      <section id="tab-flagged" class="admin-section">
+        <div class="admin-filters">
+          <input type="text" id="flagged-search" class="admin-input" placeholder="Search game or user...">
+          <select id="flagged-type" class="admin-select">
+            <option value="">All types</option>
+            <option value="wordlist">Wordlist</option>
+            <option value="openai">OpenAI</option>
+          </select>
+          <label class="admin-label">From <input type="date" id="flagged-date-from" class="admin-input admin-input--date"></label>
+          <label class="admin-label">To <input type="date" id="flagged-date-to" class="admin-input admin-input--date"></label>
+          <label class="admin-label"><input type="checkbox" id="flagged-open-only" checked> Open only</label>
+          <button class="admin-btn" id="flagged-refresh-btn">Refresh</button>
+        </div>
+
+        <div class="admin-sort-row">
+          <span class="admin-sort-label">Sort by:</span>
+          <button class="admin-sort-btn admin-sort-btn--active" data-sort="flagged_at" data-dir="desc">Date flagged</button>
+          <button class="admin-sort-btn" data-sort="title" data-dir="asc">Game</button>
+          <button class="admin-sort-btn" data-sort="flagged_reason" data-dir="asc">Reason</button>
+        </div>
+
+        <div id="flagged-loading" class="admin-loading">Loading...</div>
+        <div id="flagged-empty" class="admin-empty" hidden>No flagged reports found.</div>
+        <div id="flagged-error" class="admin-error" hidden></div>
+
+        <table class="admin-table" id="flagged-table" hidden>
+          <thead>
+            <tr>
+              <th data-sort-col="0">Game</th>
+              <th data-sort-col="1">Source</th>
+              <th data-sort-col="2" data-sort-type="date">Flagged</th>
+              <th data-sort-col="3" data-sort-type="date">Reviewed</th>
+              <th data-sort-col="4">Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="flagged-tbody"></tbody>
+        </table>
+      </section>
+
+      <!-- Flag detail (navigated to programmatically) -->
+      <section id="tab-flag-detail" class="admin-section" hidden>
+        <div id="flag-detail-content"></div>
+      </section>
+
+      <!-- Banned Users -->
+      <section id="tab-banned" class="admin-section" hidden>
+        <div class="admin-filters">
+          <input type="text" id="banned-search" class="admin-input" placeholder="Search username...">
+          <button class="admin-btn" id="banned-refresh-btn">Refresh</button>
+        </div>
+
+        <div id="banned-loading" class="admin-loading">Loading...</div>
+        <div id="banned-empty" class="admin-empty" hidden>No banned users.</div>
+        <div id="banned-error" class="admin-error" hidden></div>
+
+        <table class="admin-table" id="banned-table" hidden>
+          <thead>
+            <tr>
+              <th data-sort-col="0">User</th>
+              <th data-sort-col="1">Reason</th>
+              <th data-sort-col="2" data-sort-type="date">Banned</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="banned-tbody"></tbody>
+        </table>
+      </section>
+
+      <!-- All Users -->
+      <section id="tab-users" class="admin-section" hidden>
+        <div class="admin-filters">
+          <div class="admin-search-wrap admin-search-wrap--wide">
+            <input type="text" id="users-search" class="admin-input" placeholder="Search username or client ID...">
+            <button class="admin-search-clear" id="users-search-clear" type="button" title="Clear search" aria-label="Clear search" hidden>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+          <button class="admin-btn" id="users-refresh-btn">Refresh</button>
+        </div>
+
+        <div id="users-counts" class="admin-counts" hidden></div>
+
+        <div id="users-loading" class="admin-loading">Loading...</div>
+        <div id="users-empty" class="admin-empty" hidden>No users found.</div>
+        <div id="users-error" class="admin-error" hidden></div>
+
+        <table class="admin-table" id="users-table" hidden>
+          <thead>
+            <tr>
+              <th data-sort-col="0">Username</th>
+              <th>Identity</th>
+              <th data-sort-col="2">Role</th>
+              <th data-sort-col="3" data-sort-type="number">Reports</th>
+              <th data-sort-col="4" data-sort-type="date">Last active</th>
+              <th data-sort-col="5" data-sort-type="date">Last login</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="users-tbody"></tbody>
+        </table>
+      </section>
+
+      <!-- User Detail (navigated to programmatically, no tab button) -->
+      <section id="tab-user-detail" class="admin-section" hidden>
+        <div id="user-detail-content"></div>
+      </section>
+
+      <!-- Admins -->
+      <section id="tab-admins" class="admin-section" hidden>
+        <div class="admin-card">
+        <div class="admin-subhead">Add admin</div>
+        <div class="admin-filters" id="add-admin-form">
+          <input type="text" id="new-admin-uuid" class="admin-input" placeholder="User UUID" maxlength="36">
+          <input type="text" id="new-admin-username" class="admin-input" placeholder="Steam username">
+          <select id="new-admin-role" class="admin-select" data-action="change-role" data-uuid="new">
+            <option value="moderator">Moderator</option>
+            <option value="super_admin">Super Admin</option>
+            <option value="custom">Custom</option>
+          </select>
+          <button class="admin-btn" id="add-admin-btn">Add Admin</button>
+        </div>
+        <div class="admin-perm-row">
+          <span class="admin-label">Permissions</span>
+          <div id="new-admin-perms" class="perm-editor-wrap"></div>
+        </div>
+        <div id="add-admin-status" class="admin-field-hint" style="margin-bottom:8px"></div>
+        </div>
+
+        <div class="admin-card">
+        <div class="admin-subhead">Existing admins</div>
+        <div id="admins-loading" class="admin-loading">Loading...</div>
+        <div id="admins-empty" class="admin-empty" hidden>No admins found.</div>
+        <div id="admins-error" class="admin-error" hidden></div>
+
+        <div class="admin-table-scroll">
+        <table class="admin-table" id="admins-table" hidden>
+          <thead>
+            <tr>
+              <th data-sort-col="0">Username</th>
+              <th data-sort-col="1">Role</th>
+              <th>Permissions</th>
+              <th data-sort-col="3" data-sort-type="date">Added</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="admins-tbody"></tbody>
+        </table>
+        </div>
+        </div>
+      </section>
+
+      <!-- Banned Phrases -->
+      <section id="tab-phrases" class="admin-section" hidden>
+        <div class="admin-filters" id="add-phrase-form">
+          <input type="text" id="new-phrase-pattern" class="admin-input" placeholder="Literal text or regex pattern">
+          <label class="admin-label admin-label--inline">
+            <input type="checkbox" id="new-phrase-is-regex"> Regex
+          </label>
+          <button class="admin-btn admin-btn--ghost" id="validate-regex-btn" hidden>Validate</button>
+          <input type="text" id="new-phrase-description" class="admin-input" placeholder="Description (optional)">
+          <button class="admin-btn" id="add-phrase-btn">Add Phrase</button>
+        </div>
+        <div id="add-phrase-status" class="admin-field-hint" style="margin-bottom:8px"></div>
+
+        <div id="phrases-loading" class="admin-loading">Loading...</div>
+        <div id="phrases-empty" class="admin-empty" hidden>No banned phrases.</div>
+        <div id="phrases-error" class="admin-error" hidden></div>
+
+        <table class="admin-table" id="phrases-table" hidden>
+          <thead>
+            <tr>
+              <th data-sort-col="0">Pattern</th>
+              <th data-sort-col="1">Type</th>
+              <th data-sort-col="2">Description</th>
+              <th data-sort-col="3" data-sort-type="date">Added</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="phrases-tbody"></tbody>
+        </table>
+      </section>
+
+      <!-- Analytics -->
+      <section id="tab-analytics" class="admin-section" hidden>
+        <div id="analytics-content"></div>
+        <hr class="admin-divider" style="margin:24px 0">
+        <h3 class="admin-section-title">Cache Status</h3>
+        <div id="cache-status-content"></div>
+      </section>
+
+    </div><!-- /admin-panel -->
+
+    <!-- Ban reason modal -->
+    <div id="ban-modal" class="admin-modal-backdrop" hidden>
+      <div class="admin-modal">
+        <div class="admin-modal-title">Ban User</div>
+        <p id="ban-modal-user" class="admin-modal-sub"></p>
+        <label class="admin-label">Reason
+          <input type="text" id="ban-reason-input" class="admin-input" placeholder="e.g. repeated abuse, spam">
+        </label>
+        <div class="admin-modal-actions">
+          <button class="admin-btn admin-btn--danger" id="ban-confirm-btn">Ban</button>
+          <button class="admin-btn admin-btn--ghost" id="ban-cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script src="js/lib/supabase-client.js?v=79bf62c6"></script>
+<script src="js/lib/analytics.js?v=e6dfbad8"></script>
+<script src="js/lib/topbar.js?v=449040e3"></script>
+<script src="js/lib/toast.js?v=7bb23014"></script>
+<script type="module" src="js/admin/main.js?v=77d7cf1e"></script>
+</body>
+</html>

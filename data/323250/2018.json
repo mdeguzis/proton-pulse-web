@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "323250",
+    "cpu": "i3-3110M CPU @ 2.40GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.18.6-041806-generic",
+    "notes": "Runs perfectly",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "3799 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536312412",
+    "title": "Hexus",
+    "source": "protondb"
+  },
+  {
+    "appId": "323250",
+    "cpu": "i3-3110M CPU @ 2.40GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.18.6-041806-generic",
+    "notes": "Not extensively tested, but all seems to work",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "3799 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536296928",
+    "title": "Hexus",
+    "source": "protondb"
+  },
+  {
+    "appId": "323250",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-39-generic",
+    "notes": "No issues at all",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1543873318,
+    "title": "Hexus",
+    "source": "protondb"
+  }
+]

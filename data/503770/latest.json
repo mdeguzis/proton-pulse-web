@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "503770",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.6-arch1-1-ARCH",
+    "notes": "gave it just a quick try. it is playable ootb but jitters a bit in the menu (not in game). haven't touched any settings",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549383756,
+    "title": "Elven Assassin",
+    "source": "protondb"
+  }
+]

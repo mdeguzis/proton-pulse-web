@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "331160",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.19.0-9-generic",
+    "notes": "Tested the story, works without any problems. At startup resolution wasn't correct so game was just displayed half. Changed resolution in settings fixed. Runs as smooth as can be. No lag, nothing",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546939679,
+    "title": "Disney\u2022Pixar Cars",
+    "source": "protondb"
+  },
+  {
+    "appId": "331160",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "No issues detected",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553199188,
+    "title": "Disney\u2022Pixar Cars",
+    "source": "protondb"
+  },
+  {
+    "appId": "331160",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.1.8-200.fc29.x86_64",
+    "notes": "Game runs flawlessly. While I've played very little using Proton, I played the game extensively using vanilla Wine and there were no flaws there either. There should be no reason for the game to perform any differently.",
+    "os": "Freedesktop.org 18.08.32 (Flatpak runtime)",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561871476,
+    "title": "Disney\u2022Pixar Cars",
+    "source": "protondb"
+  }
+]

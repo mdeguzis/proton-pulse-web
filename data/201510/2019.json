@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "201510",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-200.fc28.x86_64",
+    "notes": "the game does not open",
+    "os": "Fedora release 28 (Twenty Eight)",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1561825812,
+    "title": "Flatout 3: Chaos & Destruction",
+    "source": "protondb"
+  },
+  {
+    "appId": "201510",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 640",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "the game does not start",
+    "os": "Ubuntu 18.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1569002994,
+    "title": "Flatout 3: Chaos & Destruction",
+    "source": "protondb"
+  }
+]

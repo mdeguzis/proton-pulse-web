@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "769390",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "I wanted to test GameGuru DirectX 11 game. However, this game is hardly playable on my specs due to low framerate, regardless of operating system and invisible zombies.\nAvoid this game, Linux or not.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Bronze",
+    "timestamp": 1557417279,
+    "title": "Xmas Zombie Rampage 2",
+    "source": "protondb"
+  }
+]

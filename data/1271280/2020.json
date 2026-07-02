@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1271280",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.2.3",
+    "kernel": "5.9.10-arch1-1",
+    "notes": "Runs great with Proton 5.0-10.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1606649465,
+    "title": "Rift Wizard",
+    "source": "protondb"
+  }
+]

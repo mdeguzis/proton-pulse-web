@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "254440",
+    "title": "Pool Nation",
+    "timestamp": 1535202837,
+    "rating": "Platinum",
+    "notes": "works perfectly",
+    "os": "openSUSE Leap 15.0 (Kernel 4.12.14)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Phenom II x4 920",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "254440",
+    "title": "Pool Nation",
+    "timestamp": 1535313774,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "254440",
+    "cpu": "Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-200.fc28.x86_64",
+    "notes": "Trick Tables do not work. Otherwise, works perfect.",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7915 Mb",
+    "rating": "Gold",
+    "timestamp": 1537852364,
+    "title": "Pool Nation",
+    "source": "protondb"
+  },
+  {
+    "appId": "254440",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-22-generic",
+    "notes": "Runs perfectly, only issue is crashes often on exit.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15938 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538591944,
+    "title": "Pool Nation",
+    "source": "protondb"
+  },
+  {
+    "appId": "254440",
+    "title": "Pool Nation",
+    "timestamp": 1535188437,
+    "rating": "Platinum",
+    "notes": "works perfectly",
+    "os": "openSUSE Leap 15.0 (Kernel 4.12.14)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Phenom II x4 920",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "254440",
+    "title": "Pool Nation",
+    "timestamp": 1535299374,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

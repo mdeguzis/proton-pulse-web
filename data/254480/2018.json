@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "254480",
+    "title": "Obscure II (Obscure: The Aftermath)",
+    "timestamp": 1536225896,
+    "rating": "Platinum",
+    "notes": "It works out of the box, with perfect frame-rate. The only bug I have found is that  scaling does not seem to work very well, ie: 1920x1080 leaves 1/4 of the screen empty (apart from the expected 5:4 aspect-ratio)",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "254480",
+    "title": "Obscure II (Obscure: The Aftermath)",
+    "timestamp": 1536211496,
+    "rating": "Platinum",
+    "notes": "It works out of the box, with perfect frame-rate. The only bug I have found is that  scaling does not seem to work very well, ie: 1920x1080 leaves 1/4 of the screen empty (apart from the expected 5:4 aspect-ratio)",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

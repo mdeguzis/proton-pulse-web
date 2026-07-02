@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "80000",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.23.0, 4.15.0-33-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.1 Mesa 18.1.7 - padoka PPA",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Game won't start, tries to send error report to developers but it's content is not shown (I also didn't find any error log file).",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15998 Mb",
+    "rating": "Borked",
+    "timestamp": 1536699599,
+    "title": "APOX",
+    "source": "protondb"
+  }
+]

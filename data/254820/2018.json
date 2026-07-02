@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "254820",
+    "title": "Ground Control Anthology",
+    "timestamp": 1535057308,
+    "rating": "Silver",
+    "notes": "Playable in software rendering mode. HW rendering still has issues with objects disappearing at most angles. https://bugs.winehq.org/show_bug.cgi?id=33807",
+    "os": "Arch Linux  (Kernel 4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "254820",
+    "title": "Ground Control Anthology",
+    "timestamp": 1535042908,
+    "rating": "Silver",
+    "notes": "Playable in software rendering mode. HW rendering still has issues with objects disappearing at most angles. https://bugs.winehq.org/show_bug.cgi?id=33807",
+    "os": "Arch Linux  (Kernel 4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

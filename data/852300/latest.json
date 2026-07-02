@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "852300",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.11-200.fc30.x86_64",
+    "notes": "I needed to enable the Proton log with \"PROTON_LOG=1 %command%\" or the game would display a black window. After that, game runs perfectly.",
+    "os": "Fedora 30",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567845028,
+    "title": "Creature in the Well",
+    "source": "protondb"
+  },
+  {
+    "appId": "852300",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-60-generic",
+    "notes": "No tweaks needed.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1567890677,
+    "title": "Creature in the Well",
+    "source": "protondb"
+  },
+  {
+    "appId": "852300",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-27-generic",
+    "notes": "I am giving the game a silver due to the fact that it won't detect my controllers. Tried 4 different controllers, dualshock 4, Xbox One, 8bitdo pro and wii u pro, none worked. \n\nThe game did work perfectly with keyboard and mouse.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568769745,
+    "title": "Creature in the Well",
+    "source": "protondb"
+  }
+]

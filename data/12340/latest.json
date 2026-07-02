@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "12340",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Many Objects dont have a Texture but are Black.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1553878220,
+    "title": "Jack Keane",
+    "source": "protondb"
+  }
+]

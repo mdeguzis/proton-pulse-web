@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1566880",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.2-arch1-1",
+    "notes": "The game runs perfectly fine, besides some stuttering.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1696598894,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1566880",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u6e38\u620f\u8fd0\u884c\u6b63\u5e38\uff0c\u9ad8\u753b\u8d28\u80fd\u591f40\u5e27\u5de6\u53f3",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1698666088,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1566880",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Worked with either EAC enabled or disabled.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1699388970,
+    "title": "",
+    "source": "protondb"
+  }
+]

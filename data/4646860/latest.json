@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4646860",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 580.159.03",
+    "kernel": "7.0.9-1-cachyos",
+    "notes": "Unplayable with the GTX 970. Seems like a fun game, I might've been able to play a few games if I had a better GPU.\nGame relies heavily on FSR without any options to tone it down nor remove it completely.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1779722072,
+    "title": "Gator Hucker",
+    "source": "protondb"
+  }
+]

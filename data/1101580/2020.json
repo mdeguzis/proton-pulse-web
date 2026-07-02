@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1101580",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT 8GB",
+    "gpuDriver": "4.6 Mesa 21.0.0-devel (git-4ba884b814)",
+    "kernel": "5.9.13-arch1-1",
+    "notes": "Works perfectly out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1608582113,
+    "title": "",
+    "source": "protondb"
+  }
+]

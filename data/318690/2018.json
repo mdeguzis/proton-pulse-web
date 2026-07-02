@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "318690",
+    "title": "Cargo 3",
+    "timestamp": 1535899659,
+    "rating": "Borked",
+    "notes": "Tries to install Microsoft .Net Framework, installation hangs",
+    "os": "LUbuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48 ",
+    "specs": "i7-4700HQ / GTX 850m",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "318690",
+    "title": "Cargo 3",
+    "timestamp": 1535885259,
+    "rating": "Borked",
+    "notes": "Tries to install Microsoft .Net Framework, installation hangs",
+    "os": "LUbuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48 ",
+    "specs": "i7-4700HQ / GTX 850m",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

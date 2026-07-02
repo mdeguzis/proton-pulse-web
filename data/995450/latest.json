@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "995450",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "Runs well out of the box with minor crashes",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1555624003,
+    "title": "Geeksos",
+    "source": "protondb"
+  },
+  {
+    "appId": "995450",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Runs without any problems with high default settings. Used windowed fullscreen mode on a two display setup.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556139446,
+    "title": "Geeksos",
+    "source": "protondb"
+  }
+]

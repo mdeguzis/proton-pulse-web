@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "7010",
+    "title": "Project: Snowblind",
+    "timestamp": 1535758421,
+    "rating": "Platinum",
+    "notes": "None",
+    "os": "Parrot OS 4.2 Security 64-bit (Kernel 4.17.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-7700K / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "7010",
+    "cpu": "AMD FX-8370 Eight-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.71-1-MANJARO",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15944 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538525500,
+    "title": "Project: Snowblind",
+    "source": "protondb"
+  },
+  {
+    "appId": "7010",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Tested single player mode. Works fine.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541532289,
+    "title": "Project: Snowblind",
+    "source": "protondb"
+  },
+  {
+    "appId": "7010",
+    "title": "Project: Snowblind",
+    "timestamp": 1535744021,
+    "rating": "Platinum",
+    "notes": "None",
+    "os": "Parrot OS 4.2 Security 64-bit (Kernel 4.17.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-7700K / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

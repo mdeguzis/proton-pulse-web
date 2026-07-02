@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "781440",
+    "title": "OH MY GOD, LOOK AT THIS KNIGHT",
+    "timestamp": 1535838706,
+    "rating": "Gold",
+    "notes": "It is actually hilarious; the game starts telling the story and then the narrator realizes it's pitch black around him and recommends to install directX, then the game closes. Trying to open the game again starts by installing directX and the game runs great.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4210U / gt820m",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "781440",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.7-300.fc29.x86_64",
+    "notes": "Runs fine, no noticeable issues",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1544680521,
+    "title": "OH MY GOD, LOOK AT THIS KNIGHT",
+    "source": "protondb"
+  },
+  {
+    "appId": "781440",
+    "title": "OH MY GOD, LOOK AT THIS KNIGHT",
+    "timestamp": 1535824306,
+    "rating": "Gold",
+    "notes": "It is actually hilarious; the game starts telling the story and then the narrator realizes it's pitch black around him and recommends to install directX, then the game closes. Trying to open the game again starts by installing directX and the game runs great.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4210U / gt820m",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "43600",
+    "cpu": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game doesn't start. No useful error message in logs (Unhandled page fault on read access to 0x00000000).",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15965 Mb",
+    "rating": "Borked",
+    "timestamp": 1537713243,
+    "title": "Nancy Drew\u00ae: Warnings at Waverly Academy",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "898750",
+    "cpu": "AMD Ryzen 9 6900HX with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD REMBRANDT (rembrandt, LLVM 15.0.2, DRM 3.47, 5.19.0-29-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "5.19.0-29-generic",
+    "notes": "",
+    "os": "Ubuntu 22.10",
+    "protonVersion": "7.0-5",
+    "ram": "56 GB",
+    "rating": "gold",
+    "timestamp": 1674399151,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "898750",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "as the title said... I tried to change the display as both window and borderless but still dont work in gaming mode.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1676772281,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "898750",
+    "cpu": "Intel Core i3-10100 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.2.0-31-generic",
+    "notes": "Unable to play.",
+    "os": "Ubuntu 22.04.3 LTS\uff0864 \u4f4d\u5143\uff09",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1693750734,
+    "title": "",
+    "source": "protondb"
+  }
+]

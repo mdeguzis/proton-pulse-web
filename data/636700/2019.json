@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "636700",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Doesn't start: Uncaught node.js error.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565627037,
+    "title": "Crappy Day Enhanced Edition",
+    "source": "protondb"
+  }
+]

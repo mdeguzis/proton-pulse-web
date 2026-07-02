@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "285740",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567385138,
+    "title": "Kitty Powers' Matchmaker",
+    "source": "protondb"
+  },
+  {
+    "appId": "285740",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.5-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570956586,
+    "title": "Kitty Powers' Matchmaker",
+    "source": "protondb"
+  }
+]

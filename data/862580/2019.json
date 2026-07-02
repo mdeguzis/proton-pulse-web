@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "862580",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561675457,
+    "title": "OK/NORMAL",
+    "source": "protondb"
+  },
+  {
+    "appId": "862580",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "The credits didn't show, but it ran perfectly otherwise.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564443847,
+    "title": "OK/NORMAL",
+    "source": "protondb"
+  }
+]

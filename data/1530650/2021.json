@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1530650",
+    "cpu": "AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.8.0-14-generic",
+    "notes": "n\u00e3o abre!",
+    "os": "Freedesktop.org 20.08.14 (Flatpak runtime)",
+    "protonVersion": "6.3-5",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1629218073,
+    "title": "",
+    "source": "protondb"
+  }
+]

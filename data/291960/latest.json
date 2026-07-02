@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "291960",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.1.18-1-MANJARO",
+    "notes": "Fails to load intro video files with \"prMovie::Open - Unable to connect pins\". Might be a codec error. Tried renaming and deleting the video files in the game's folder, but no dice. Tried installing video codecs with winetricks, but the problem persists. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563394830,
+    "title": "Elminage Gothic",
+    "source": "protondb"
+  }
+]

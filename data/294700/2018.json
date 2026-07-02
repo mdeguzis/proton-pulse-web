@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "294700",
+    "title": "Putt-Putt\u00ae: Pep's Birthday Surprise",
+    "timestamp": 1535664520,
+    "rating": "Gold",
+    "notes": "Runs DirectX setup at firstlaunch",
+    "os": "xUbuntu 18.04.1 64-bit (Kernel 4.18.1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4460/ GTX 1050 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "294700",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Opens a window that immediately crashes.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Borked",
+    "timestamp": 1539834294,
+    "title": "Putt-Putt\u00ae: Pep's Birthday Surprise",
+    "source": "protondb"
+  },
+  {
+    "appId": "294700",
+    "cpu": "Intel Core i7-3770S @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-200.fc28.x86_64",
+    "notes": "No tweaks required, tested a few locations without issue.  Plays great",
+    "os": "Fedora release 28 (Twenty Eight)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541631824,
+    "title": "Putt-Putt\u00ae: Pep's Birthday Surprise",
+    "source": "protondb"
+  },
+  {
+    "appId": "294700",
+    "title": "Putt-Putt\u00ae: Pep's Birthday Surprise",
+    "timestamp": 1535650120,
+    "rating": "Gold",
+    "notes": "Runs DirectX setup at firstlaunch",
+    "os": "xUbuntu 18.04.1 64-bit (Kernel 4.18.1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4460/ GTX 1050 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

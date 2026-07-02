@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "206020",
+    "title": "Avernum 4",
+    "timestamp": 1535071585,
+    "rating": "Platinum",
+    "notes": "Works without a problem",
+    "os": "Arch Linux",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600/RX 570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "206020",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Runs perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1542474338,
+    "title": "Avernum 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "206020",
+    "title": "Avernum 4",
+    "timestamp": 1535057185,
+    "rating": "Platinum",
+    "notes": "Works without a problem",
+    "os": "Arch Linux",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600/RX 570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

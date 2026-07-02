@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1173810",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1646094916,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1173810",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Mostly works fine, audio issues may require restart sometimes.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1652817708,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1173810",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 22.0.4",
+    "kernel": "5.10.117-1-MANJARO",
+    "notes": "Wayland is great",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1656044929,
+    "title": "",
+    "source": "protondb"
+  }
+]

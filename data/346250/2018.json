@@ -1,0 +1,62 @@
+[
+  {
+    "appId": "346250",
+    "cpu": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-200.fc28.x86_64",
+    "notes": "This whole little puzzle game lasts ~15 minutes. Worked perfectly.",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64-bitowy)",
+    "protonVersion": "3.7-6",
+    "ram": "15980 MB",
+    "rating": "Platinum",
+    "timestamp": 1537139151,
+    "title": "The Old Tree",
+    "source": "protondb"
+  },
+  {
+    "appId": "346250",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "runs fine.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7874 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537564470,
+    "title": "The Old Tree",
+    "source": "protondb"
+  },
+  {
+    "appId": "346250",
+    "cpu": "Intel(R) Core(TM) i5-4210U CPU @ 1.70GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.2.0",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "notes": "No problems at all, runs as native",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7915 MB",
+    "rating": "Platinum",
+    "timestamp": 1537864123,
+    "title": "The Old Tree",
+    "source": "protondb"
+  },
+  {
+    "appId": "346250",
+    "cpu": "AMD A9-9410 RADEON R5, 5 COMPUTE CORES 2C+3G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD STONEY",
+    "gpuDriver": "4.4 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1541268568,
+    "title": "The Old Tree",
+    "source": "protondb"
+  }
+]

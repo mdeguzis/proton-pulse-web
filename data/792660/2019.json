@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "792660",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Turning off all sound effects and background sound effects improves stability tremendously. Game seems to run flawlessly as long as that's done.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1559744278,
+    "title": "The Operational Art of War IV",
+    "source": "protondb"
+  },
+  {
+    "appId": "792660",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "4.12.14-lp151.28.13-default",
+    "notes": "Turn off music and background noise and worked fine for me.",
+    "os": "openSUSE Leap 15.1",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1566169989,
+    "title": "The Operational Art of War IV",
+    "source": "protondb"
+  }
+]

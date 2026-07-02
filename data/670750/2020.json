@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "670750",
+    "cpu": "AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 10 Mobile",
+    "gpuDriver": "4.5 Mesa 19.3.2",
+    "kernel": "5.5.0-1-MANJARO",
+    "notes": "Works better than Linux native for me - Linux native has a bug that prevents more than 360\u00b0 turning, Windows version through Proton doesn't.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-12",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1580384541,
+    "title": "",
+    "source": "protondb"
+  }
+]

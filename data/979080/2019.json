@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "979080",
+    "cpu": "Intel Core i7-2630QM @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1557871473,
+    "title": "Rebel Forces",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

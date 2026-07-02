@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "6040",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-1-ck-skylake",
+    "notes": "It didn't start the first few times I tried, but worked every time after reinstalling. It starts in windowed mode. Pressing Alt + Enter enters fullscreen. I also got the graphical glitch previously mentioned, but if I close it and open again it opens in fullscreen the next time without the glitch. It crashed a few times when switching between windowed and fullscreen, so I recommend using ScummVM instead.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1546568124,
+    "title": "The Dig\u00ae",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "752300",
+    "title": "Forestation",
+    "timestamp": 1535283743,
+    "rating": "Borked",
+    "notes": "Forestation.exe caused an Access Violation (0xc0000005)\n  in module Forestation.exe at 0033:40080203.",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 384.111",
+    "specs": "AMD FX(tm)-4100 Quad-Core / GeForce GTX 550 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "752300",
+    "title": "Forestation",
+    "timestamp": 1535269343,
+    "rating": "Borked",
+    "notes": "Forestation.exe caused an Access Violation (0xc0000005)\n  in module Forestation.exe at 0033:40080203.",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 384.111",
+    "specs": "AMD FX(tm)-4100 Quad-Core / GeForce GTX 550 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

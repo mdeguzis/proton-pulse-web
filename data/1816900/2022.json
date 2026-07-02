@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1816900",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.16.1-artix1-1",
+    "notes": "Similar experience to Windows",
+    "os": "Artix Linux",
+    "protonVersion": "6.3-8",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1643448299,
+    "title": "",
+    "source": "protondb"
+  }
+]

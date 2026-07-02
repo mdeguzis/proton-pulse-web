@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "412470",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Not running at all, steam log reads something about not supporting CP1251 encoding:\n\n[0000007E:] EXCEPTION handling: System.ArgumentException: The requested FontFamily could not be found [GDI+ status: FontFamilyNotFound]\n[0000007E:] EXCEPTION handling: System.ArgumentException: 'CP1251' is not a supported encoding name. For information on defining a custom encoding, see the documentation for the Encoding.RegisterProvider method.\nParameter name: name\n[00000081:] EXCEPTION handling: System.IO.FileNotFoundException: Unable to find the specified file.\n[00000081:] EXCEPTION handling: System.IO.FileNotFoundException: Unable to find the specified file.\n[00000081:] EXCEPTION handling: System.IO.FileNotFoundException: Unable to find the specified file.\n[00000081:] EXCEPTION handling: System.IO.FileNotFoundException: Unable to find the specified file.\n[00000081:] EXCEPTION handling: System.IO.FileNotFoundException: Unable to find the specified file.\n61995.695:007d:007e:trace:seh:__regs_NtGetContextThread 0x128: eax=fffffffc ebx=6c8fe6c4 ecx=00000080 edx=00000000 esi=0aedf998 edi=00000000\n61995.695:007d:007e:trace:seh:__regs_NtGetContextThread 0x128: ebp=00000000 esp=0aedf93c eip=f7f3a929 cs=0023 ss=002b flags=00000286\n[00000082:] EXCEPTION handling: System.Threading.ThreadAbortException: Thread was being aborted.\n61995.715:007d:007e:trace:loaddll:free_modref Unloaded module L\"Z:\\\\media\\\\1000GB\\\\STEAM\\\\steamapps\\\\common\\\\Proton 4.11\\\\dist\\\\share\\\\wine\\\\mono\\\\wine-mono-4.9.2\\\\lib\\\\mono\\\\gac\\\\System.Drawing\\\\4.0.0.0__b03f5f7f11d50a3a\\\\gdiplus.dll\" : builtin\n61995.715:007d:007e:trace:mscoree:_CorDllMain (0x21b0000, 0, 0x1)\n61995.715:007d:007e:trace:mscoree:_CorDllMain (0x21a0000, 0, 0x1)\n61995.715:007d:007e:trace:mscoree:_CorDllMain (0x2120000, 0, 0x1)\n61995.715:007d:007e:trace:mscoree:_CorDllMain (0x1e90000, 0, 0x1)\n61995.715:007d:007e:trace:mscoree:_CorDllMain (0x10000000, 0, 0x1)\n61995.715:007d:007e:trace:mscoree:_CorDllMain (0x1860000, 0, 0x1)\n61995.716:007d:007e:trace:mscoree:DllMain (0x7eb10000, 0, 0x1)\n61996.761:0016:001a:trace:loaddll:free_modref Unloaded module L\"C:\\\\windows\\\\system32\\\\winebus.sys\" : builtin\n61996.761:0016:001a:trace:loaddll:free_modref Unloaded module L\"C:\\\\windows\\\\system32\\\\setupapi.dll\" : builtin\npid 13871 != 13870, skipping destruction (fork without exec?)",
+    "os": "Arch Linux (64  \u0431\u0438\u0442\u0430)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1567873598,
+    "title": "Metal War Online: Retribution",
+    "tweaks": {
+      "disableD3d10": true,
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

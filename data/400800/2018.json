@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "400800",
+    "title": "MXGP2 - The Official Motocross Videogame",
+    "timestamp": 1535765266,
+    "rating": "Silver",
+    "notes": "Performance is good. Videos don't playback at all (though they might if you can figure out how to install WMP12, which a readme claims is necessary). As is, just hit A on the controller to skip the intro. Keyboard input doesn't work very well for inputting text (barely detects any inputs), so you'll want to start your save file on Windows so you can set your Rider and Team names properly.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "400800",
+    "title": "MXGP2 - The Official Motocross Videogame",
+    "timestamp": 1535750866,
+    "rating": "Silver",
+    "notes": "Performance is good. Videos don't playback at all (though they might if you can figure out how to install WMP12, which a readme claims is necessary). As is, just hit A on the controller to skip the intro. Keyboard input doesn't work very well for inputting text (barely detects any inputs), so you'll want to start your save file on Windows so you can set your Rider and Team names properly.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

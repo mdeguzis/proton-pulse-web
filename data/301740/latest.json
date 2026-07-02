@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "301740",
+    "cpu": "i5-4570 CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-30-lowlatency",
+    "notes": "Black windowed screen and then close, after trying the standard Proton options.\n\n000b:err:wineboot:ProcessRunKeys Error running cmd L\"C:\\\\windows\\\\system32\\\\winemenubuilder.exe -a -r\" (2)\n0025:err:winediag:gnutls_initialize failed to load libgnutls, no support for encryption\n0031:err:winediag:gnutls_initialize failed to load libgnutls, no support for encryption\n0009:fixme:d3d:swapchain_init The application requested more than one back buffer, this is not properly supported.\nPlease configure the application to use double buffering (1 back buffer) if possible.\nwine: Unhandled page fault on read access to 0x000002a2 at address 0x471050 (thread 0009), starting debugger...\nUnhandled exception: page fault on read access to 0x000002a2 in 32-bit code (0x00471050).\n",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15979 Mb",
+    "rating": "Borked",
+    "timestamp": 1536800023,
+    "title": "Castle: Never Judge a Book by its Cover",
+    "source": "protondb"
+  }
+]

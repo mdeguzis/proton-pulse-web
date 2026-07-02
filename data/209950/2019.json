@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "209950",
+    "cpu": "AMD FX-6100 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Just works",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548541682,
+    "title": "Triple Town",
+    "source": "protondb"
+  }
+]

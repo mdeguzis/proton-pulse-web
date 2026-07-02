@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "275530",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-1-ck-skylake",
+    "notes": "Runs perfectly out of the box. No glitches between videos.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1552339197,
+    "title": "Z",
+    "source": "protondb"
+  },
+  {
+    "appId": "275530",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557402263,
+    "title": "Z",
+    "source": "protondb"
+  }
+]

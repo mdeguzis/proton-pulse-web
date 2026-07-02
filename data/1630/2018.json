@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "1630",
+    "cpu": "i5-3210M CPU @ 2.50GHz",
+    "gpu": "X.Org AMD VERDE (DRM 2.50.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Doesn't start even mixing all Proton environment variables.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "5836 Mb",
+    "rating": "Borked",
+    "timestamp": 1537030313,
+    "title": "Disciples II: Rise of the Elves",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "appId": "202530",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-34-generic",
+    "notes": "I needed to install Java 1.6 (jre-6u45-windows-i586, and jre8u wouldn't install), then install msxml3, vcrun2010, and d3dx9 using winetricks. The commands for this were `WINEPREFIX=\"/home/username/.steam/steamapps/compatdata/202530/pfx\" WINEARCH=win64 wine jre-6u45-windows-i586.exe` and `WINEPREFIX=\"/home/username/.steam/steamapps/compatdata/202530/pfx\" WINEARCH=win64 winetricks msxml3 vcrun2010 d3dx9` respectively. Finally, I had to disable Esync.",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1553649063,
+    "title": "Sonic the Hedgehog 4 - Episode I",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "202530",
+    "cpu": "Intel Core i7-5500U @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.18.0-16-generic",
+    "notes": "This game doesn't open and show a window like that\n\nLaunch4j\nThis aplication requires a java Runtime Enviroment 1.6",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Proton 4.2-3",
+    "protonVersionManual": "Proton 4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1555695779,
+    "title": "Sonic the Hedgehog 4 - Episode I",
+    "source": "protondb"
+  },
+  {
+    "appId": "202530",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.18.0-18-generic",
+    "notes": "As others mentioned install jre-6u45-windows-i586 first, then msxml3, vcrun2010, and d3dx9 using winetricks",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557504957,
+    "title": "Sonic the Hedgehog 4 - Episode I",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "202530",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-21-generic",
+    "notes": "This game requires a bit of work to get going but seems to run fine after installing its dependencies and disabling esync. First, you need to find and download \"jre-6u45-windows-i586.exe\" Next, I had to run `WINEPREFIX=\"$HOME/.steam/debian-installation/steamapps/compatdata/202530/pfx\" WINEARCH=win64 wine ~/Downloads/jre-6u45-windows-i586.exe` followed by `WINEPREFIX=\"$HOME/.steam/debian-installation/steamapps/compatdata/202530/pfx\" WINEARCH=win64 winetricks msxml3 vcrun2010 d3dx9` and disable esync. You'll probably need to adjust these for your distro, since I'm on Ubuntu 19.04 at the moment. It does run fine after all this though.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1562724041,
+    "title": "Sonic the Hedgehog 4 - Episode I",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "202530",
+    "cpu": "Intel Xeon E5-2690 0 @ 2.90GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Still Requires the tweaks mentioned below but after that runs like a charm, gamepad works out of the box.",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1567526303,
+    "title": "Sonic the Hedgehog 4 - Episode I",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "202530",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.13-200.fc30.x86_64",
+    "notes": "Java1.6, msxml3, vcrun2010 and d3dx9 need to be installed. Most of the fixes here install these dependencies by using the wine installed in your system. I tried this way  too but it didn't work. However, it worked when I used the same wine that proton uses. The following is the two commands I had to execute. Note that my steam library is at /volumes/SteamRepository/Steam and that the wine used by  Proton 4.11-4 is located in my system at /volumes/SteamRepository/Steam/steamapps/common/Proton 4.11/dist/bin/wine.\n\n# Install Java 1.6\nWINEPREFIX=\"/volumes/SteamRepository/Steam/steamapps/compatdata/202530/pfx\" WINEARCH=win64 \"/volumes/SteamRepository/Steam/steamapps/common/Proton 4.11/dist/bin/wine\" ~/Downloads/jre-6u45-windows-i586.exe\n\n# Install msxml3, vcrun2010 and d3dx9\nWINE=\"/volumes/SteamRepository/Steam/steamapps/common/Proton 4.11/dist/bin/wine\" WINEPREFIX=\"/volumes/SteamRepository/Steam/steamapps/compatdata/202530/pfx\" WINEARCH=win64 winetricks msxml3 vcrun2010 d3dx9\n\nI hope it helps!",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1568488710,
+    "title": "Sonic the Hedgehog 4 - Episode I",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

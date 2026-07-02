@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2072840",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5600 XT (navi10, LLVM 15.0.7, DRM 3.42, 5.15.0-89-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-89-generic",
+    "notes": "",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1736284248,
+    "title": "",
+    "source": "protondb"
+  }
+]

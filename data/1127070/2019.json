@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "1127070",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Runs fine after enabling D9vk.",
+    "os": "KDE neon Unstable Edition",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1569689304,
+    "title": "Familiar Travels - Chapter One",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2144600",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-3-cachyos",
+    "notes": "Worked flawless out-of-the-box",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773628699,
+    "title": "Eterspire",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "15540",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "As noted in other report: Graphic errors in second level make the game unplayable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568224226,
+    "title": "1... 2... 3... KICK IT! (Drop That Beat Like an Ugly Baby)",
+    "source": "protondb"
+  }
+]

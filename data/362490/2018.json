@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "362490",
+    "title": "Exanima",
+    "timestamp": 1535024916,
+    "rating": "Platinum",
+    "notes": "steady 60fps",
+    "os": "Arch (Kernel 4.18.3.arch1-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4670K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "362490",
+    "title": "Exanima",
+    "timestamp": 1535435978,
+    "rating": "Gold",
+    "notes": "No crashes. ~20% performance loss vs windows",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "I5 6600k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "362490",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Barely ever dropped under 100fps on 1440p",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542470624,
+    "title": "Exanima",
+    "source": "protondb"
+  },
+  {
+    "appId": "362490",
+    "title": "Exanima",
+    "timestamp": 1535010516,
+    "rating": "Platinum",
+    "notes": "steady 60fps",
+    "os": "Arch (Kernel 4.18.3.arch1-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4670K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "362490",
+    "title": "Exanima",
+    "timestamp": 1535421578,
+    "rating": "Gold",
+    "notes": "No crashes. ~20% performance loss vs windows",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "I5 6600k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

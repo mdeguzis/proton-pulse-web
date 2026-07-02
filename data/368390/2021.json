@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "368390",
+    "cpu": "Intel Core i3-2350M @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 3000 (SNB GT2)",
+    "gpuDriver": "3.0 Mesa 20.2.6",
+    "kernel": "5.8.0-41-generic",
+    "notes": "Native Linux Support.\nWorks perfect.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1613307504,
+    "title": "The Darkside Detective",
+    "source": "protondb"
+  },
+  {
+    "appId": "368390",
+    "cpu": "Intel Core i5-5300U @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 20.2.3",
+    "kernel": "5.8.18-1-MANJARO",
+    "notes": "Works perfectly out of the box.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1613653829,
+    "title": "The Darkside Detective",
+    "source": "protondb"
+  },
+  {
+    "appId": "368390",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-51-generic",
+    "notes": "",
+    "os": "Linux Mint 20",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1621184226,
+    "title": "The Darkside Detective",
+    "source": "protondb"
+  }
+]

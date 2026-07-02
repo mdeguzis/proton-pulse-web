@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "358070",
+    "title": "Earthtongue",
+    "timestamp": 1535419920,
+    "rating": "Borked",
+    "notes": "Error message pops up saying:\nFailed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed",
+    "os": "Ubuntu 18.04.1 LTS (Kernel 4.15)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Intel Xeon CPU E3-1225 v3",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "358070",
+    "cpu": "Intel Core i7-4510U @ 2.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Played without problems for an hour or so.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540689114,
+    "title": "Earthtongue",
+    "source": "protondb"
+  },
+  {
+    "appId": "358070",
+    "title": "Earthtongue",
+    "timestamp": 1535405520,
+    "rating": "Borked",
+    "notes": "Error message pops up saying:\nFailed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed",
+    "os": "Ubuntu 18.04.1 LTS (Kernel 4.15)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Intel Xeon CPU E3-1225 v3",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

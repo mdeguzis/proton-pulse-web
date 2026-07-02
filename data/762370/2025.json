@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "762370",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 19.1.7, DRM 3.61, 6.13.5-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.5-zen1-1-zen",
+    "notes": "minor texture issues but thats it",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1749834541,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "762370",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.12.38",
+    "notes": "Enjoyable experience with no downsides.",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1754779032,
+    "title": "",
+    "source": "protondb"
+  }
+]

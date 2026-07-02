@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "695290",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-15-generic",
+    "notes": "In the pga tour your 3rd event is the Sand Dune Classic. The loading freezed at the end and would not allow you to play the event. I found out I had outdated graphics drivers for the nvidia.\n\nUpdated the drivers and it worked perfrectly.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1549727971,
+    "title": "The Golf Club\u2122 2019 featuring PGA TOUR",
+    "source": "protondb"
+  },
+  {
+    "appId": "695290",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Works great for me, I haven't noticed any slowdown issues.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554072627,
+    "title": "The Golf Club\u2122 2019 featuring PGA TOUR",
+    "source": "protondb"
+  },
+  {
+    "appId": "695290",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Runs very well. No adjustments were needed.",
+    "os": "Arch",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1562199296,
+    "title": "The Golf Club\u2122 2019 featuring PGA TOUR",
+    "source": "protondb"
+  }
+]

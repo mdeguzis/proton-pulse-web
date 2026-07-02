@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "34920",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game runs perfectly fine but performance is very low at around 30fps",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7972 Mb",
+    "rating": "Silver",
+    "timestamp": 1538408084,
+    "title": "Razor2: Hidden Skies",
+    "source": "protondb"
+  }
+]

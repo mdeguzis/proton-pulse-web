@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "670160",
+    "cpu": "i5-4570 CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.0-3-amd64",
+    "notes": "Screen constantly flashes when in fullscreen mode, however, once changed to windowed the game is perfectly playable.",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15983 Mb",
+    "rating": "Gold",
+    "timestamp": 1536688472,
+    "title": "D'LIRIUM",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "40960",
+    "title": "Stronghold 2",
+    "timestamp": 1534960455,
+    "rating": "Borked",
+    "notes": "Doesn't start even after renaming Stronghold2.exe to FFLauncher.exe",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "7-3930K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "40960",
+    "cpu": "Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 650 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.9-92.current",
+    "notes": "won't launch",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "12032 Mb",
+    "rating": "Borked",
+    "timestamp": 1538090039,
+    "title": "Stronghold 2: Steam Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "40960",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-4-MANJARO",
+    "notes": "not launching",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541530432,
+    "title": "Stronghold 2: Steam Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "40960",
+    "title": "Stronghold 2",
+    "timestamp": 1534946055,
+    "rating": "Borked",
+    "notes": "Doesn't start even after renaming Stronghold2.exe to FFLauncher.exe",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "7-3930K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

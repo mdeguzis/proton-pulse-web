@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1694560",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 525.116.04",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "Main menu works, but crashes at loading screen when starting new game.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1688213744,
+    "title": "",
+    "source": "protondb"
+  }
+]

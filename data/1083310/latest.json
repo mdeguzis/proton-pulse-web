@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1083310",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "Works reasonably well. When you first start a new game, you will not get the intro cinematic and will need to hold down A or mouse 1 (or ?enter) to skip it. In addition, you should disable the steam overlay as if you accidently open it, it will screw up the game graphics (inverts the window diagonally). Furthermore the game briefly flashes the underlying OS windows when moving between rooms. Lastly, I'm not sure if this is a game or proton issue, but using the dpad on a xbox controller results in strange behaviours. e.g. d-pad down = enter. Other than those issues, the game works great (at least from a technical perspective)",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "15 GB",
+    "rating": "Silver",
+    "timestamp": 1571564261,
+    "title": "OUTBUDDIES",
+    "source": "protondb"
+  }
+]

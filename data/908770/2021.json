@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "908770",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.7-arch1-1-ARCH",
+    "notes": "Early Access report. It does get to the main menu, but when trying to start a game it crashes with a Unity error",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1610132293,
+    "title": "",
+    "source": "protondb"
+  }
+]

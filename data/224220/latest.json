@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "224220",
+    "title": "Pressure",
+    "timestamp": 1535004660,
+    "rating": "Silver",
+    "notes": "Mouse not visible in overlay, cannot return to game after alt tab\nNote: A \"sequel\" to this game is available, called Pressure Overdrive, which has a native Linux version. Original is no longer on the Steam store",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7 5820k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224220",
+    "title": "Pressure",
+    "timestamp": 1535075232,
+    "rating": "Platinum",
+    "notes": "Runs excellent, full fps, no graphical issues",
+    "os": "Arch Linux 4.18.4-arch1-1-ARCH",
+    "gpuDriver": "amdgpu 18.0.1-2",
+    "specs": "i5-4670S / Radeon RX 460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224220",
+    "title": "Pressure",
+    "timestamp": 1534990260,
+    "rating": "Silver",
+    "notes": "Mouse not visible in overlay, cannot return to game after alt tab\nNote: A \"sequel\" to this game is available, called Pressure Overdrive, which has a native Linux version. Original is no longer on the Steam store",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7 5820k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224220",
+    "title": "Pressure",
+    "timestamp": 1535060832,
+    "rating": "Platinum",
+    "notes": "Runs excellent, full fps, no graphical issues",
+    "os": "Arch Linux 4.18.4-arch1-1-ARCH",
+    "gpuDriver": "amdgpu 18.0.1-2",
+    "specs": "i5-4670S / Radeon RX 460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

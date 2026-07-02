@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "245170",
+    "title": "Skullgirls",
+    "timestamp": 1535389664,
+    "rating": "Gold",
+    "notes": "Works out of the Box",
+    "os": "Fedora 28 (Kernel 4.17.18-200)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3470 / NVIDIA GeForce GTX 650Ti Boost",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "245170",
+    "title": "Skullgirls",
+    "timestamp": 1535375264,
+    "rating": "Gold",
+    "notes": "Works out of the Box",
+    "os": "Fedora 28 (Kernel 4.17.18-200)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3470 / NVIDIA GeForce GTX 650Ti Boost",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

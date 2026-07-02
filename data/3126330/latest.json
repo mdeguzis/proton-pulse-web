@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3126330",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX Vega (radeonsi, vega10, LLVM 18.1.8, DRM 3.54, 6.6.65-1-lts)",
+    "gpuDriver": "4.6 Mesa 24.3.1-arch1.3",
+    "kernel": "6.6.65-1-lts",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1772214657,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "273500",
+    "title": "Over 9000 Zombies!",
+    "timestamp": 1536089308,
+    "rating": "Borked",
+    "notes": "Won't start. Runs first time setup every attempt.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "273500",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Wont start",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Borked",
+    "timestamp": 1538038829,
+    "title": "Over 9000 Zombies!",
+    "source": "protondb"
+  },
+  {
+    "appId": "273500",
+    "cpu": "Intel(R) Core(TM) i7-3770K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 650/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.15.0-36-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7928 MB",
+    "rating": "Borked",
+    "timestamp": 1539199284,
+    "title": "Over 9000 Zombies!",
+    "source": "protondb"
+  },
+  {
+    "appId": "273500",
+    "title": "Over 9000 Zombies!",
+    "timestamp": 1536074908,
+    "rating": "Borked",
+    "notes": "Won't start. Runs first time setup every attempt.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

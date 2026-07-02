@@ -1,0 +1,59 @@
+[
+  {
+    "appId": "543900",
+    "title": "METAL GEAR SURVIVE",
+    "timestamp": 1535730991,
+    "rating": "Borked",
+    "notes": "Connection error, infinity loop in entrance scene.   ",
+    "os": "Fedora 28 (kernel: 4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "E3-1230v2 / GTX970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "543900",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Game is unable to connect with Online servers, which are required in this game.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1541098599,
+    "title": "METAL GEAR SURVIVE",
+    "source": "protondb"
+  },
+  {
+    "appId": "543900",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Game now successfully connects to the servers, the only thing that's preventing me from giving it a platinum rating is a strange lighting flickering.\n\nActual online matches were not tested.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "3.16-6",
+    "protonVersionManual": "3.16-6",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1545451651,
+    "title": "METAL GEAR SURVIVE",
+    "source": "protondb"
+  },
+  {
+    "appId": "543900",
+    "title": "METAL GEAR SURVIVE",
+    "timestamp": 1535716591,
+    "rating": "Borked",
+    "notes": "Connection error, infinity loop in entrance scene.   ",
+    "os": "Fedora 28 (kernel: 4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "E3-1230v2 / GTX970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

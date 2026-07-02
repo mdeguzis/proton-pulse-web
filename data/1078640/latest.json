@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "1078640",
+    "cpu": "Intel Core i7-5960X @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.45-1-MANJARO",
+    "notes": "Runs with \"PROTON_USE_WINED3D11=1 %command%\", crashes your system without it. Some graphical glitches, but seems fine otherwise.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560419948,
+    "title": "Eggoria",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

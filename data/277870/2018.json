@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "277870",
+    "cpu": "i5-3570K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 660/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Steam installs dependencies but game does not start, error in steam.log: 95307.086:0008:0009:err:module:LdrInitializeThunk Main exe initialization for L\"Z:\\\\data\\\\games\\\\steam\\\\linux\\\\steamapps\\\\common\\\\DiehardDungeon\\\\DiehardDungeon.exe\" failed, status c0000017",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16001 Mb",
+    "rating": "Borked",
+    "timestamp": 1536765913,
+    "title": "Diehard Dungeon",
+    "source": "protondb"
+  }
+]

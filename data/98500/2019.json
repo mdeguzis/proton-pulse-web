@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "98500",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.3",
+    "kernel": "5.0.9-2-MANJARO",
+    "notes": "This game opens fine but will not accept the input from the space bar to start missions. This causes the game to hang and eventually an error message appears telling you a wine process is broken and asking if you want to terminate the application. I tried using \" proton_use_wne3d \" option to no avail. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1557136116,
+    "title": "Naval Warfare",
+    "source": "protondb"
+  },
+  {
+    "appId": "98500",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.16",
+    "notes": "\"Press space to continue\" but unable to press space.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1558232480,
+    "title": "Naval Warfare",
+    "source": "protondb"
+  }
+]

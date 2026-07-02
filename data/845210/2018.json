@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "845210",
+    "title": "Sim Racing Telemetry",
+    "timestamp": 1535638946,
+    "rating": "Borked",
+    "notes": "Opens windowed with title bar and blank body",
+    "os": "4.18.5-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5-2467M / integrated",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "845210",
+    "title": "Sim Racing Telemetry",
+    "timestamp": 1535624546,
+    "rating": "Borked",
+    "notes": "Opens windowed with title bar and blank body",
+    "os": "4.18.5-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5-2467M / integrated",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

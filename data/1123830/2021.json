@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1123830",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 465.27",
+    "kernel": "5.10.34-1-MANJARO",
+    "notes": "The game works perfectly out of box.",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "6.3-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1620390224,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1123830",
+    "cpu": "Intel Xeon E3-1245 v5 @ 3.50GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.10.0-4-amd64",
+    "notes": "OOTB - no issues that have not since been resolved by dev updates",
+    "os": "Freedesktop.org 20.08.6 (Flatpak runtime)",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1621432887,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1123830",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.41.0, 5.13.4-1-default, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.5",
+    "kernel": "5.13.4-1-default",
+    "notes": "Farm Management game that is a follow on from the previous Farm Manage 2018.  Works well with proton",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1629963590,
+    "title": "",
+    "source": "protondb"
+  }
+]

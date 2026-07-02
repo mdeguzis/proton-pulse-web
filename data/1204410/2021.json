@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1204410",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.40.0, 5.11.8-arch1-1, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.11.8-arch1-1",
+    "notes": "Can't get to the main menu in the DEMO",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1616589917,
+    "title": "",
+    "source": "protondb"
+  }
+]

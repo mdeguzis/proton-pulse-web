@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1066230",
+    "cpu": "AMD A8-7600 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-54-generic",
+    "notes": "you have to press the space bar after opening the game to be able to start it.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1564074449,
+    "title": "Project Katharsis",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "838110",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9-2-MANJARO",
+    "notes": "No issues for me, played without any issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557724062,
+    "title": "HyperParasite",
+    "source": "protondb"
+  }
+]

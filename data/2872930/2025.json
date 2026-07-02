@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2872930",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 570.124.04",
+    "kernel": "6.6.80-1-MANJARO",
+    "notes": "Runs perfectly fine",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1741975206,
+    "title": "project canvas \u301c\u30f0\u4e16\u754c\u60c5\u7dd2\u80b2\u6210\u8a08\u753b\u301c",
+    "source": "protondb"
+  },
+  {
+    "appId": "2872930",
+    "cpu": "Intel Core i7-10510U @ 1.80GHz",
+    "duration": "underOneHour",
+    "gpu": "Mesa virgl (Mesa Intel UHD (CML GT2))",
+    "gpuDriver": "4.6 Mesa 25.2.0-devel (git-453ecaddb5)",
+    "kernel": "6.1.129-17460-g8b804e0205bb",
+    "notes": "",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1758273266,
+    "title": "project canvas \u301c\u30f0\u4e16\u754c\u60c5\u7dd2\u80b2\u6210\u8a08\u753b\u301c",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "4225400",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.17.7-ba19.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba19.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1769882181,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "4225400",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.10.10-arch1-1",
+    "notes": "The demo now has a native linux build and it works out of the box.  If you already had a proton-ized version, just undo the force-compat.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "platinum",
+    "timestamp": 1770409029,
+    "title": "",
+    "source": "protondb"
+  }
+]

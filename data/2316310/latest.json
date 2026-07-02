@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2316310",
+    "cpu": "AMD Ryzen 5 5625U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (renoir, LLVM 15.0.7, DRM 3.42, 5.15.0-69-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.5 (git-6570a15662)",
+    "kernel": "5.15.0-69-generic",
+    "notes": "",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-1",
+    "ram": "23 GB",
+    "rating": "gold",
+    "timestamp": 1682325433,
+    "title": "",
+    "source": "protondb"
+  }
+]

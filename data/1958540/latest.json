@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1958540",
+    "cpu": "AMD Ryzen 5 3600XT 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 16.0.6, DRM 3.54, 6.6.10-chos1-chimeraos-2)",
+    "gpuDriver": "4.6 Mesa 23.3.5.chos1-1.1",
+    "kernel": "6.6.10-chos1-chimeraos-2",
+    "notes": "Gravity is not a problem on Linux unless you're opening the Windows :D",
+    "os": "ChimeraOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1755436232,
+    "title": "",
+    "source": "protondb"
+  }
+]

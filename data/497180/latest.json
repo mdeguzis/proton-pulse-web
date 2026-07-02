@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "497180",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-114.current",
+    "notes": "Gets to the menu, loading to game from menu will end with black screen",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1556217549,
+    "title": "Street Legal Racing: Redline v2.3.1",
+    "source": "protondb"
+  },
+  {
+    "appId": "497180",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Renamed avi files in data/Fmv to .disabled to avoid getting a black screen after selecting new game or load game. (Deleting them would work as well)",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557698834,
+    "title": "Street Legal Racing: Redline v2.3.1",
+    "source": "protondb"
+  }
+]

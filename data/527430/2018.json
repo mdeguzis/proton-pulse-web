@@ -1,0 +1,98 @@
+[
+  {
+    "appId": "527430",
+    "title": "Warhammer 40,000 Inquisitor Martyr",
+    "timestamp": 1535655082,
+    "rating": "Borked",
+    "notes": "Screen went gray, but you could see and move the mouse, plus hear the music\n",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5- 8600K GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "527430",
+    "title": "Warhammer 40,000: Inquisitor - Martyr",
+    "timestamp": 1535069643,
+    "rating": "Borked",
+    "notes": "Crashes on startup",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Ryzen 7 2700x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "527430",
+    "title": "Warhammer 40,000: Inquisitor - Martyr",
+    "timestamp": 1535406934,
+    "rating": "Borked",
+    "notes": "Starts and sounds play but screen is just black",
+    "os": "Ubuntu 18.04 (Kernel 4.18.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 2700X / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "527430",
+    "title": "Warhammer 40,000: Inquisitor - Martyr",
+    "timestamp": 1535919055,
+    "rating": "Borked",
+    "notes": "Splash screen, then goes black during intro video -sound only, then screen turns gray. Mouse is movable. ",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-8700",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "527430",
+    "title": "Warhammer 40,000 Inquisitor Martyr",
+    "timestamp": 1535640682,
+    "rating": "Borked",
+    "notes": "Screen went gray, but you could see and move the mouse, plus hear the music\n",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5- 8600K GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "527430",
+    "title": "Warhammer 40,000: Inquisitor - Martyr",
+    "timestamp": 1535055243,
+    "rating": "Borked",
+    "notes": "Crashes on startup",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Ryzen 7 2700x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "527430",
+    "title": "Warhammer 40,000: Inquisitor - Martyr",
+    "timestamp": 1535392534,
+    "rating": "Borked",
+    "notes": "Starts and sounds play but screen is just black",
+    "os": "Ubuntu 18.04 (Kernel 4.18.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 2700X / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "527430",
+    "title": "Warhammer 40,000: Inquisitor - Martyr",
+    "timestamp": 1535904655,
+    "rating": "Borked",
+    "notes": "Splash screen, then goes black during intro video -sound only, then screen turns gray. Mouse is movable. ",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-8700",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2373860",
+    "cpu": "Intel Core i7-10700F @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "5.15.0-87-generic",
+    "notes": "Game runs with zero issues, and actually sorta looks better than on windows",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1698791360,
+    "title": "Jessica's Uncomfortable Hanukkah Adventure",
+    "source": "protondb"
+  }
+]

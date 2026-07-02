@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "865060",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Main game borked but not configuration tool",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1627263079,
+    "title": "",
+    "source": "protondb"
+  }
+]

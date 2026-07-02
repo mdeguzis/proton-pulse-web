@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "891790",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.11-arch2-1-ARCH",
+    "notes": "The demo runs flawlessly. Didn't try the full game yet, but there's no reason to assume it would be otherwise. My third-party XBOX controller (Aftershock) also works without issue.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551119029,
+    "title": "Devil Engine",
+    "source": "protondb"
+  },
+  {
+    "appId": "891790",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1551361681,
+    "title": "Devil Engine",
+    "source": "protondb"
+  }
+]

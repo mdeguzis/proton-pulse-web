@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "458730",
+    "title": "Conception II: Children of the Seven Stars",
+    "timestamp": 1535236888,
+    "rating": "Borked",
+    "notes": "Starts and runs on background but main window doesn't show up and you have to kill the process. Configuration tool launches correctly but doesn't recognise resolutions or save settings.",
+    "os": "Fedora 28 64-bit (Kernel 4.17.14-202)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8320 / nVidia GTX 960 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "458730",
+    "title": "Conception II: Children of the Seven Stars",
+    "timestamp": 1535222488,
+    "rating": "Borked",
+    "notes": "Starts and runs on background but main window doesn't show up and you have to kill the process. Configuration tool launches correctly but doesn't recognise resolutions or save settings.",
+    "os": "Fedora 28 64-bit (Kernel 4.17.14-202)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8320 / nVidia GTX 960 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

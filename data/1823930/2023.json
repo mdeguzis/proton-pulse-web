@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1823930",
+    "cpu": "AMD Ryzen 7 5800HS with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (renoir, LLVM 15.0.7, DRM 3.49, 6.1.31-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.0.4",
+    "kernel": "6.1.31-2-MANJARO",
+    "notes": "Good game! / Proton Experimental.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1687042401,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1823930",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 15.0.7, DRM 3.49, 6.1.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.12-arch1-1",
+    "notes": "Played the demo for a bit, everything was in working order",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1691420429,
+    "title": "",
+    "source": "protondb"
+  }
+]

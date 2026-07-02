@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "283370",
+    "cpu": "i7-2600 CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Install's but does not start.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7932 Mb",
+    "rating": "Borked",
+    "timestamp": 1536963341,
+    "title": "Marine Sharpshooter II: Jungle Warfare",
+    "source": "protondb"
+  },
+  {
+    "appId": "283370",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1540570217,
+    "title": "Marine Sharpshooter II: Jungle Warfare",
+    "source": "protondb"
+  }
+]

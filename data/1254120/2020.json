@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1254120",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.10-200.fc32.x86_64",
+    "notes": "Launcher loading bar appears briefly, then nothing",
+    "os": "Fedora 32 Workstation",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1601044888,
+    "title": "",
+    "source": "protondb"
+  }
+]

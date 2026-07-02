@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "343090",
+    "title": "Simple Rockets",
+    "timestamp": 1536357706,
+    "rating": "Borked",
+    "notes": "opens a window, then closes it abruptly.",
+    "os": "Arch",
+    "gpuDriver": "Mesa 1.8.7",
+    "specs": "I7-4500U / iGPU HD4000",
+    "protonVersion": "3.5.7-",
+    "source": "protondb"
+  },
+  {
+    "appId": "343090",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Tried all three tweaks, still does not start.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541626972,
+    "title": "SimpleRockets",
+    "source": "protondb"
+  },
+  {
+    "appId": "343090",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-96.current",
+    "notes": "Doesn't start, tried all three tweaks.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541735579,
+    "title": "SimpleRockets",
+    "source": "protondb"
+  },
+  {
+    "appId": "343090",
+    "title": "Simple Rockets",
+    "timestamp": 1536343306,
+    "rating": "Borked",
+    "notes": "opens a window, then closes it abruptly.",
+    "os": "Arch",
+    "gpuDriver": "Mesa 1.8.7",
+    "specs": "I7-4500U / iGPU HD4000",
+    "protonVersion": "3.5.7-",
+    "source": "protondb"
+  }
+]

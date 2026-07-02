@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "341300",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.11-arch1-1-ARCH",
+    "notes": "Does NOT start if you try to start the game via the mod itself. The mod must be started from the main game (Company of Heroes) by adding \"-mod moderncombat\" to the startup options (Company of Heroes -> properties -> startup options).",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557244731,
+    "title": "Modern Combat",
+    "source": "protondb"
+  }
+]

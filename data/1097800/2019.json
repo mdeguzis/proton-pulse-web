@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1097800",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Runs perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567327180,
+    "title": "Stranger Things 3: The Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "1097800",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-64-generic",
+    "notes": "game works like on windows",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1569666731,
+    "title": "Stranger Things 3: The Game",
+    "source": "protondb"
+  }
+]

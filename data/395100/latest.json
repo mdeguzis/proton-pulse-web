@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "395100",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "First three levels worked fine. Fourth level loaded the HUD but only a black screen. Crashed on the fifth level.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560607338,
+    "title": "Systematic Immunity",
+    "source": "protondb"
+  }
+]

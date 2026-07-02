@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "460220",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-zen1-1-zen",
+    "notes": "Played the first chapter of the campaign. Runs smooth.\nThere were some really minor graphic glitches (that might just belong to the game?).\nGame doesn't start when using D9VK.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566404723,
+    "title": "Xenoraid: The First Space War",
+    "source": "protondb"
+  }
+]

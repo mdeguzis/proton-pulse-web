@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1476100",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 16.0.6, DRM 3.56, 6.7.0-arch2-1)",
+    "gpuDriver": "4.6 Mesa 23.3.3-arch1.1",
+    "kernel": "6.7.0-arch2-1",
+    "notes": "Runs perfectly, played with a Valve Index.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1705158453,
+    "title": "",
+    "source": "protondb"
+  }
+]

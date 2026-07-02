@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "373440",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Any text that doesn't use their built in texture-based font (Options menu text, save menu text) doesn't render.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1557560480,
+    "title": "Stargazer",
+    "source": "protondb"
+  }
+]

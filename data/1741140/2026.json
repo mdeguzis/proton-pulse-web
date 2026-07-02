@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1741140",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.9-200.fc43.x86_64",
+    "notes": "Time spent testing was limited but the game appeared to be working with cnc-ddraw.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1771287163,
+    "title": "",
+    "source": "protondb"
+  }
+]

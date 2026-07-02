@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "591760",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.6 Mesa 20.0.7",
+    "kernel": "5.6.15-1-MANJARO",
+    "notes": "Just black screen after start",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1592514753,
+    "title": "",
+    "source": "protondb"
+  }
+]

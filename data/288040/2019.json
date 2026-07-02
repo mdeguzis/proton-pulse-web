@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "288040",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.7-rt5-MANJARO",
+    "notes": "PROTON_NO_D3D11=1 %command% didn't worked\nPROTON_NO_ESYNC=1 %command% didn't worked\nPROTON_USE_WINED3D11=1 %command% didn't worked\n\nThe Problem lies imho how wine handles the .js files. Since you can change values in /www/index.html and you see those changes when you start the game in the window. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1556026953,
+    "title": "Actual Sunlight",
+    "source": "protondb"
+  },
+  {
+    "appId": "288040",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Fails to run.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559961626,
+    "title": "Actual Sunlight",
+    "source": "protondb"
+  },
+  {
+    "appId": "288040",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.59-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563983109,
+    "title": "Actual Sunlight",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

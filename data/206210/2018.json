@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "206210",
+    "title": "Gotham City Impostors Free To Play",
+    "timestamp": 1535542736,
+    "rating": "Gold",
+    "notes": "Some microstuttering but this could be blamed on the test machine's specs not being quite capable of running it with all graphical settings maxed out",
+    "os": "Linux Mint 18.3 KDE 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6198DU / GT 920 MX",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "206210",
+    "cpu": "i7-4500U CPU @ 1.80GHz",
+    "gpu": "X.Org AMD CAPE VERDE (DRM 2.50.0, 4.15.0-1-amd64, LLVM 6.0.0)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.15.0-1-amd64",
+    "notes": "Game is starting but after showing the first credits crashes immediately.",
+    "os": "MX 17 Horizon (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "7861 Mb",
+    "rating": "Borked",
+    "timestamp": 1537093751,
+    "title": "Gotham City Impostors Free to Play",
+    "source": "protondb"
+  },
+  {
+    "appId": "206210",
+    "cpu": "Intel Core i7-4500U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "r9 m265x",
+    "gpuDriver": "3.1 Mesa 18.1.9",
+    "kernel": "4.15.0-1-amd64",
+    "notes": "After upgrading to Mesa 18.1.9 and proton version game runs perfect. Really amazing progress.",
+    "os": "MX 17 Horizon",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541108534,
+    "title": "Gotham City Impostors Free to Play",
+    "source": "protondb"
+  },
+  {
+    "appId": "206210",
+    "title": "Gotham City Impostors Free To Play",
+    "timestamp": 1535528336,
+    "rating": "Gold",
+    "notes": "Some microstuttering but this could be blamed on the test machine's specs not being quite capable of running it with all graphical settings maxed out",
+    "os": "Linux Mint 18.3 KDE 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6198DU / GT 920 MX",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

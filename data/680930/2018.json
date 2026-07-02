@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "680930",
+    "title": "Fairy Lands: Rinka and the Fairy Gems",
+    "timestamp": 1535324635,
+    "rating": "Platinum",
+    "notes": "-",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 384.111",
+    "specs": "AMD FX(tm)-4100 Quad-Core / GeForce GTX 550 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "680930",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.19.1-1.el7.elrepo.x86_64",
+    "notes": "Runs fine, though the author's choice of keys is a bit weird!",
+    "os": "CentOS Linux release 7.5.1804 (Core)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1541925399,
+    "title": "Fairy Lands: Rinka and the Fairy Gems",
+    "source": "protondb"
+  },
+  {
+    "appId": "680930",
+    "title": "Fairy Lands: Rinka and the Fairy Gems",
+    "timestamp": 1535310235,
+    "rating": "Platinum",
+    "notes": "-",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 384.111",
+    "specs": "AMD FX(tm)-4100 Quad-Core / GeForce GTX 550 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

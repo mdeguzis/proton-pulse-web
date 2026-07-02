@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3444020",
+    "cpu": "13th Gen Intel Core i7-13700",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.17.7-ba20.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767788822,
+    "title": "Demonic Mahjong",
+    "source": "protondb"
+  },
+  {
+    "appId": "3444020",
+    "cpu": "13th Gen Intel Core i7-13700",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.17.7-ba20.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767789047,
+    "title": "Demonic Mahjong",
+    "source": "protondb"
+  },
+  {
+    "appId": "3444020",
+    "cpu": "AMD Ryzen 5 7500X3D 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.19.8-200.nobara.fc43.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1774704458,
+    "title": "Demonic Mahjong",
+    "source": "protondb"
+  }
+]

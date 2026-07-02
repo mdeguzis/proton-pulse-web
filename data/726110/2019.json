@@ -1,0 +1,88 @@
+[
+  {
+    "appId": "726110",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Played through the tutorial, everything seems to work fine so far in both full screen and windowed mode.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559951564,
+    "title": "Overcrowd: A Commute 'Em Up",
+    "source": "protondb"
+  },
+  {
+    "appId": "726110",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.16-300.fc29.x86_64",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1560192670,
+    "title": "Overcrowd: A Commute 'Em Up",
+    "source": "protondb"
+  },
+  {
+    "appId": "726110",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-46-generic",
+    "notes": "The game wouldn't launch without PROTON_USE_WINED3D.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-6",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1560272486,
+    "title": "Overcrowd: A Commute 'Em Up",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "726110",
+    "cpu": "Intel Xeon           W3530  @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "nouveau NVC3",
+    "gpuDriver": "3.1 Mesa 18.2.8",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Works perfectly after tweaking it to use wineD3D (wineD3D11)",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1560849497,
+    "title": "Overcrowd: A Commute 'Em Up",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "726110",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.1-1-MANJARO",
+    "notes": "Ran out of the box, No tweaks required. General short play test. No issues found",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2.2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561226297,
+    "title": "Overcrowd: A Commute 'Em Up",
+    "source": "protondb"
+  }
+]

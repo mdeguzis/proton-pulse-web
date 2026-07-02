@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2175540",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works great on Deck. Lock FPS to 60 on OLED.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1726162965,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2175540",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.8.0-45-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.3 (git-b235da6781)",
+    "kernel": "6.8.0-45-generic",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1728860174,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2175540",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Easily runs at 60fps on the Steam Deck with no problems. Only negative is a very limited graphical options menu, but no tweaking is required",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1729826999,
+    "title": "",
+    "source": "protondb"
+  }
+]

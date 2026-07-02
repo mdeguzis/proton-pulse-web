@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "825730",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.0-7634-generic",
+    "notes": "I have a request for running a config program. On Windows it runs fine, but here, after hiting invisible \"Ok\", it turns off.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1596927596,
+    "title": "Tzar: The Burden of the Crown",
+    "source": "protondb"
+  }
+]

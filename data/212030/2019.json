@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "212030",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-1-MANJARO",
+    "notes": "Works well out of the box for me : I have tested the first 3 levels without any problem.",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547245030,
+    "title": "Kung Fu Strike - The Warrior's Rise",
+    "source": "protondb"
+  },
+  {
+    "appId": "212030",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Game itself ran perfectly out of the box. However to change resolution from 720p you need to use the Config.exe or just edit ~/.local/share/Steam/SteamApps/common/KungFuStrike/Content/data/Config.xna.xml directly.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "3.16-8",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552126662,
+    "title": "Kung Fu Strike - The Warrior's Rise",
+    "source": "protondb"
+  },
+  {
+    "appId": "212030",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game seems to install dependencies but then it wont launch. D3D11 Tweaks did not help.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558925061,
+    "title": "Kung Fu Strike - The Warrior's Rise",
+    "source": "protondb"
+  }
+]

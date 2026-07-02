@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "359940",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Works out of the box with decent performance, text and menues are displayed properly. Tested also switching between desktop and the game.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552220641,
+    "title": "Shadows Peak",
+    "source": "protondb"
+  }
+]

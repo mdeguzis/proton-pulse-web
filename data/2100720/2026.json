@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2100720",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 20.1.8, DRM 3.64, 6.16.12-valve24-1-neptune-616-gc748040e4712)",
+    "gpuDriver": "4.6 Mesa 25.3.0 (git-59b552c765)",
+    "kernel": "6.16.12-valve24-1-neptune-616-gc748040e4712",
+    "notes": "Started right up. Changed to Experimental but it worked fine right away on whatever it first picked.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1782426977,
+    "title": "Rat Cage",
+    "source": "protondb"
+  }
+]

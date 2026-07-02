@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1012570",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.7, DRM 3.61, 6.13.6-cachyos)",
+    "gpuDriver": "4.6 Mesa 24.3.4 (git-769e51468b)",
+    "kernel": "6.13.6-cachyos",
+    "notes": "Runs great if you can ignore the window issues",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1742383670,
+    "title": "",
+    "source": "protondb"
+  }
+]

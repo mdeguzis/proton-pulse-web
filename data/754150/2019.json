@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "754150",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Everything works, but steam locomotives' wheels are invisible.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557683357,
+    "title": "Rolling Line",
+    "source": "protondb"
+  },
+  {
+    "appId": "754150",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Steam locomotive wheels *are* visible with the 430 drivers.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557704285,
+    "title": "Rolling Line",
+    "source": "protondb"
+  },
+  {
+    "appId": "754150",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563060628,
+    "title": "Rolling Line",
+    "source": "protondb"
+  }
+]

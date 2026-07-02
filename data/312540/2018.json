@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "312540",
+    "title": "Ys VI: The Ark of Napishtim",
+    "timestamp": 1534910400,
+    "rating": "Platinum",
+    "notes": "Got up to the first galba boss with no issues, runs at full speed. ",
+    "os": "Debian Sid",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 2700x / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "312540",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Seems to run perfectly",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541295535,
+    "title": "Ys VI: The Ark of Napishtim",
+    "source": "protondb"
+  },
+  {
+    "appId": "312540",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541412891,
+    "title": "Ys VI: The Ark of Napishtim",
+    "source": "protondb"
+  },
+  {
+    "appId": "312540",
+    "title": "Ys VI: The Ark of Napishtim",
+    "timestamp": 1534896000,
+    "rating": "Platinum",
+    "notes": "Got up to the first galba boss with no issues, runs at full speed. ",
+    "os": "Debian Sid",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 2700x / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

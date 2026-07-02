@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "457550",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Doesn't start: Black screen on Desktop, nothing in headset.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15981 Mb",
+    "rating": "Borked",
+    "timestamp": 1536778178,
+    "title": "Bigscreen Beta",
+    "source": "protondb"
+  },
+  {
+    "appId": "457550",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Still dead. Black screen on monitor, nothing in headset. (HTC Vive)",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541278597,
+    "title": "Bigscreen Beta",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "457550",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-42-generic",
+    "notes": "still nothing... after 30s a black window launches on screen, but nothing else happens...",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544955162,
+    "title": "Bigscreen Beta",
+    "source": "protondb"
+  }
+]

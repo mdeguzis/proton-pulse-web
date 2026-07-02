@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "3710",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD ICELAND",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Runs well.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546695083,
+    "title": "Judge Dredd: Dredd vs. Death",
+    "source": "protondb"
+  },
+  {
+    "appId": "3710",
+    "cpu": "Intel Core i5-3350P @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9-050009-generic",
+    "notes": "By default I kept falling through the ground at parts of the level where checkpoints are placed. Disabling Esync however solved this collision error for me.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1557571172,
+    "title": "Judge Dredd: Dredd vs. Death",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "3710",
+    "cpu": "Intel Core i5-3350P @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9-050009-generic",
+    "notes": "By default I kept falling through the ground at certain parts of the map, seemingly where ever there's a new area to be loaded / a checkpoint is placed, such as the winding paths that exit the first area with the protesters and at the bottom of an elevator nearby.\n\nDisabling Esync however solved this collision error for me.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1557571671,
+    "title": "Judge Dredd: Dredd vs. Death",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

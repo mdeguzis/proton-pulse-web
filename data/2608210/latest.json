@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2608210",
+    "cpu": "12th Gen Intel Core i7-12700F",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.8.6-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.5 (git-7737614720)",
+    "kernel": "6.8.6-200.fc39.x86_64",
+    "notes": "The game either crashes in the main menu without doing anything, or crashes when trying to load a level.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1715908405,
+    "title": "BLOODKILL",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "730920",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Ran perfectly with no tweaks",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558212616,
+    "title": "Super Skelemania",
+    "source": "protondb"
+  },
+  {
+    "appId": "730920",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce MX150",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "Works perfectly, I have completed the game.",
+    "os": "Unknown\uff0864 \u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "4.2-9",
+    "ram": "7884Mb",
+    "rating": "Platinum",
+    "timestamp": 1563132637,
+    "title": "Super Skelemania",
+    "source": "protondb"
+  }
+]

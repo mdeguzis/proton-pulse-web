@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "18400",
+    "title": "Crazy Machines 2",
+    "timestamp": 1534986176,
+    "rating": "Platinum",
+    "notes": "Installation had prompts to install vc++ redist and directx, went fine.  No problems during gameplay.",
+    "os": "Xubuntu 17.10 (Kernel 4.13.0)",
+    "gpuDriver": "?",
+    "specs": "i5-3550S / Radeon HD 6870",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "18400",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 770",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "There's no sound at all, unfortunately. That definitely makes it less comfortable to play.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15991 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536791591,
+    "title": "Crazy Machines 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "18400",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Runs perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537277577,
+    "title": "Crazy Machines 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "18400",
+    "title": "Crazy Machines 2",
+    "timestamp": 1534971776,
+    "rating": "Platinum",
+    "notes": "Installation had prompts to install vc++ redist and directx, went fine.  No problems during gameplay.",
+    "os": "Xubuntu 17.10 (Kernel 4.13.0)",
+    "gpuDriver": "?",
+    "specs": "i5-3550S / Radeon HD 6870",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

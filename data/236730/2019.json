@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "236730",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Native version doesn't work for me. On Proton the game runs well. I installed manual D9VK and it worked well too with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556908321,
+    "title": "Anomaly 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "236730",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.5-1-MANJARO",
+    "notes": "Native is broken. I recorded this game play video with Linux kernel 5.2 and Mesa 19.1.5. D9VK works, see this --> https://www.youtube.com/watch?v=2pUxEU6swwk&feature=youtu.be&t=113",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570803241,
+    "title": "Anomaly 2",
+    "source": "protondb"
+  }
+]

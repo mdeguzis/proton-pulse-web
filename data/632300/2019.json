@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "632300",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.18.0-21-generic",
+    "notes": "I couldn't compare performance with a native machine, but it runs as well as I can expect it to. I didn't notice any issues with the game and everything functioned as I would have expected it to on a Windows machine. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570895954,
+    "title": "Hobo: Tough Life",
+    "source": "protondb"
+  }
+]

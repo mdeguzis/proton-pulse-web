@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "658570",
+    "title": "FURIDASHI: Drift Cyber Sport",
+    "timestamp": 1535131030,
+    "rating": "Platinum",
+    "notes": "Multiplayer works, good framerate",
+    "os": "Fedora 28 (Kernel: 4.17.14-202)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4790K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "658570",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "No Problems Runs Perfekt",
+    "os": "ArcoLinuxD",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546220617,
+    "title": "FURIDASHI: Drift Cyber Sport",
+    "source": "protondb"
+  },
+  {
+    "appId": "658570",
+    "title": "FURIDASHI: Drift Cyber Sport",
+    "timestamp": 1535116630,
+    "rating": "Platinum",
+    "notes": "Multiplayer works, good framerate",
+    "os": "Fedora 28 (Kernel: 4.17.14-202)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4790K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

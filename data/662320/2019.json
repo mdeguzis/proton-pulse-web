@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "662320",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-338dacc 2019-02-22 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-050000rc5-lowlatency",
+    "notes": "just got stycj in the loading screen and the game never started",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1550892549,
+    "title": "METRO CONFLICT: THE ORIGIN",
+    "source": "protondb"
+  }
+]

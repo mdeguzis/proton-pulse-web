@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "723920",
+    "cpu": "AMD Athlon 64 X2 Dual Core 5000+",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce 8500 GT",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Lags on scene transitions, but still playable.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1546588247,
+    "title": "Dangerous Games: Illusionist Collector's Edition",
+    "source": "protondb"
+  }
+]

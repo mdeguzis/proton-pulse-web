@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "7220",
+    "title": "Runaway: The Dream of the Turtle",
+    "timestamp": 1534978478,
+    "rating": "Platinum",
+    "notes": "No issues found",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "7220",
+    "cpu": "Intel(R) Xeon(R) CPU E5-2630 0 @ 2.30GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "mouse lags a lot",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15986 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537910481,
+    "title": "Runaway, The Dream of The Turtle",
+    "source": "protondb"
+  },
+  {
+    "appId": "7220",
+    "title": "Runaway: The Dream of the Turtle",
+    "timestamp": 1534964078,
+    "rating": "Platinum",
+    "notes": "No issues found",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

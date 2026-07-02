@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "9880",
+    "title": "Champions Online",
+    "timestamp": 1534976283,
+    "rating": "Borked",
+    "notes": "Launcher works, I could log in, download the game and run it after ignoring the warning, but the game crashes at Cryptic logo",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa-git 104270.aa79cc2bc8-1",
+    "specs": "i5-4690K / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "9880",
+    "title": "Champions Online",
+    "timestamp": 1535080641,
+    "rating": "Silver",
+    "notes": "Game crashes every once in a while, you need to raise the ulimit for it to not crash at start if it's set to 4096 (I have mine at 1048576 as per instructions in proton)",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.3.0-devel (git-aa79cc2bc8)",
+    "specs": "i5-4690K / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "9880",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-f447a13032)",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "You may need to run on lower details to avoid crashes, but they also appear under Windows. Except for that, the game runs flawlessly.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544575193,
+    "title": "Champions Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "9880",
+    "title": "Champions Online",
+    "timestamp": 1534961883,
+    "rating": "Borked",
+    "notes": "Launcher works, I could log in, download the game and run it after ignoring the warning, but the game crashes at Cryptic logo",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa-git 104270.aa79cc2bc8-1",
+    "specs": "i5-4690K / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "9880",
+    "title": "Champions Online",
+    "timestamp": 1535066241,
+    "rating": "Silver",
+    "notes": "Game crashes every once in a while, you need to raise the ulimit for it to not crash at start if it's set to 4096 (I have mine at 1048576 as per instructions in proton)",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.3.0-devel (git-aa79cc2bc8)",
+    "specs": "i5-4690K / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

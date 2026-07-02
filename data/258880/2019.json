@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "258880",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "Game seems to run about as well as it does in Windows (which is to say it's just as bad). No special settings needed to get it to run.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-4",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1568826050,
+    "title": "Professional Farmer 2014",
+    "source": "protondb"
+  }
+]

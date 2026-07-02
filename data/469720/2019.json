@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "469720",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-17-generic",
+    "notes": "The game seems to work fine at first, but when entering a dungeon, I get \"loading failed at step 3\" error and the dungeon doesn't render correctly. I tried switching Windows version and other tweaks, but nothing helped.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1567016819,
+    "title": "Monsters' Den: Godfall",
+    "source": "protondb"
+  }
+]

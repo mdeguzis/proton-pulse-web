@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1033420",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 13.0.1, DRM 3.44, 5.17.2-252-tkg-cacule)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.17.2-252-tkg-cacule",
+    "notes": "Runs well, need some tinkering to get movies working.",
+    "os": "Garuda Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1650009526,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1033420",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "No issues, from beginning to end",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1657405930,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1033420",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1658431736,
+    "title": "",
+    "source": "protondb"
+  }
+]

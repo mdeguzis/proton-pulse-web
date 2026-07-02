@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1063080",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Out of the box, does not work at all. No sound, black screen. I used ProtonTricks to attempt installation of WMP9. It fails, but you should try to install this at least twice. After checking DLLs installed, it seems the minimum required is WSH57. When episode 3 comes out, I will try installing nothing BUT that DLL, see if that works, but attempting a WMP9 install twice seems to fix it.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1565275104,
+    "title": "Genius! NAZI-GIRL GoePPels-Chan ep2",
+    "source": "protondb"
+  }
+]

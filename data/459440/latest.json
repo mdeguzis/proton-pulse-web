@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "459440",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-38-generic",
+    "notes": "runs fine performance wise... but the game highly relies on windows tts and voice recognition which do not work in Linux",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "3.7-8",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1540903979,
+    "title": "Tower!3D",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "932850",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-beb66d3 2018-11-17 cosmic-oibaf-ppa)",
+    "kernel": "4.18.8",
+    "notes": "Crashes on startup",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1543950559,
+    "title": "Simmiland",
+    "source": "protondb"
+  }
+]

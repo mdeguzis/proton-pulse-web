@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "418300",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Game won't start, tried different launch options, disabling steam overlays.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547295522,
+    "title": "Wick",
+    "source": "protondb"
+  },
+  {
+    "appId": "418300",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Cursor does not work in menues, and switching between desktop and the game the cursor gets stuck. Other than that the game works fine.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552334114,
+    "title": "Wick",
+    "source": "protondb"
+  }
+]

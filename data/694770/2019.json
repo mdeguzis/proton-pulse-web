@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "694770",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.2.2",
+    "kernel": "5.3.8-300.fc31.x86_64",
+    "notes": "Doesn't launch. Throws a SRPG Studio error in Japanese about 8000ffff",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "4.11-11",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1577732970,
+    "title": "Vestaria Saga I: War of the Scions",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "242820",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 19.1.1, DRM 3.57, 6.8.0-52-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-52-generic",
+    "notes": "For the best performance, use Proton. The game sees frame drops across the board otherwise, but is still playable.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1739425775,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "242820",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.2-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1767193415,
+    "title": "",
+    "source": "protondb"
+  }
+]

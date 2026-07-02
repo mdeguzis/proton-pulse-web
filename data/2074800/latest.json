@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2074800",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.4",
+    "kernel": "6.1.1-1-default",
+    "notes": "\u8fd0\u884c\u826f\u597d",
+    "os": "openSUSE Tumbleweed\uff0864 \u4f4d\uff09",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1680950093,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2074800",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.4",
+    "kernel": "6.1.1-1-default",
+    "notes": "\u8fd0\u884c\u826f\u597d",
+    "os": "openSUSE Tumbleweed\uff0864 \u4f4d\uff09",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1680962187,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2074800",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1681807605,
+    "title": "",
+    "source": "protondb"
+  }
+]

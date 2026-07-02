@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "322080",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Seems to be working, with and without controller.. -Only thing that seems weird is that 'Esc'-button takes out of fullscreen, and takes the game window out of focus. (This is not a review of the game, but since the keyboard-scheme layout is kinda weird,  not sure if it is supposed to exit the fullscreen) Either or;\u00a0this is easily remedied;\u00a0by not pressing 'Esc' and setting the fullscreen back from options.. \n -And no other problems were discovered, so I think we're still in the platinum.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556109712,
+    "title": "Disorder",
+    "source": "protondb"
+  },
+  {
+    "appId": "322080",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "The game sometimes freezes for about a second when playing in full screen. Works perfectly otherwise.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559319158,
+    "title": "Disorder",
+    "source": "protondb"
+  }
+]

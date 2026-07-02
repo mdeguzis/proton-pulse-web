@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "590690",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "(SteamVR beta 1.2.6) Playable.\n\nIntro sequence had some minor audio crackling, tutorial sections are missing videos, the stutter from shaders compiling will probably ruin your first attempt at a map but races appear playable once cached.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1547216018,
+    "title": "Sprint Vector",
+    "source": "protondb"
+  },
+  {
+    "appId": "590690",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Runs without stutter and problems, just no tutorial videos shown.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1548270392,
+    "title": "Sprint Vector",
+    "source": "protondb"
+  },
+  {
+    "appId": "590690",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Runs fine out of the box, not had any other issues I've seen logged here.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561566187,
+    "title": "Sprint Vector",
+    "source": "protondb"
+  }
+]

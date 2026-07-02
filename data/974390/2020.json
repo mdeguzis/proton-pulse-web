@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "974390",
+    "cpu": "Intel Core i3-2310M @ 2.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 3000 (SNB GT2)",
+    "gpuDriver": "3.0 Mesa 20.2.1",
+    "kernel": "5.8.0-33-generic",
+    "notes": "Needs to be launched with PROTON_USE_WINED3D=1",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1608844753,
+    "title": "",
+    "source": "protondb"
+  }
+]

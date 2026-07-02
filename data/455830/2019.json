@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "455830",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.10.0-38-generic",
+    "notes": "Tried with different usual tricks, nothing. Either doesn't start, or infinite black screen.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561707075,
+    "title": "FrightShow Fighter",
+    "source": "protondb"
+  }
+]

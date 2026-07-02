@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "378720",
+    "cpu": "i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "Booted up the game and started a campaign, tested some stuff and it all seems to be working perfectly. No performance hit, lag, etc. Runs as if it was ran on Windows.",
+    "os": "\"Antergos Linux\" (64 bit)",
+    "protonVersion": "3.7-3 & 3.7-6-beta",
+    "ram": "15924 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536566125,
+    "title": "Thea: The Awakening",
+    "source": "protondb"
+  },
+  {
+    "appId": "378720",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "This game is actually native.  Linux build is unlisted on store page.  Does not use Proton.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Native",
+    "protonVersionManual": "Native",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541261970,
+    "title": "Thea: The Awakening",
+    "source": "protondb"
+  }
+]

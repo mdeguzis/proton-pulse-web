@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "254060",
+    "title": "KnightShift",
+    "timestamp": 1535901810,
+    "rating": "Silver",
+    "notes": "Doesn't work at higher resolutions. Don't know if that's consistent with Windows.",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "254060",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     E8400  @ 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce 8500 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.106",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "To enter CD-key and start to play it you'll need corefonts. After that game runs well, everything works",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "5715 Mb",
+    "rating": "Gold",
+    "timestamp": 1537735226,
+    "title": "KnightShift",
+    "source": "protondb"
+  },
+  {
+    "appId": "254060",
+    "title": "KnightShift",
+    "timestamp": 1535887410,
+    "rating": "Silver",
+    "notes": "Doesn't work at higher resolutions. Don't know if that's consistent with Windows.",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

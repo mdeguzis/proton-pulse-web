@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3852250",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 19.1.5, DRM 3.63, 6.8.0-101-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.0-devel",
+    "kernel": "6.8.0-101-generic",
+    "notes": "Does not work",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1775054626,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3852250",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Ryzen 7 9700X 8-Core Processor (radeonsi, raphael_mendocino, LLVM 20.1.2, DRM 3.64, 6.17.0-20-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-20-generic",
+    "notes": "Forums show Dev doesn't want to build for linux not worth trying to solve.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1776122981,
+    "title": "",
+    "source": "protondb"
+  }
+]

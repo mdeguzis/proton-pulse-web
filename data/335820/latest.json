@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "335820",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Will show you a couple of error messages when you log in but you can just click OK and it will log in fine. Game runs perfectly.",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1557477924,
+    "title": "Dream Of Mirror Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "335820",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.6",
+    "notes": "Gives errors after selecting a server but continues to run. Text is exceptionally hard to read. ",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1559735810,
+    "title": "Dream Of Mirror Online",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "490450",
+    "cpu": "AMD FX-6100 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 8800",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Fails to run with \"Unimplemented function vulkan-1.dll.vkGetInstanceProcAddr called at address 0x7bc56451 (thread 0009)\" on DXVK, works using Wine D3D11.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1548329715,
+    "title": "Tokyo 42",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "490450",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.8-arch1-1-ARCH",
+    "notes": "Runs smooth for a while then frame-rate noticeably drops, restarting the game fixes it. Game-pad is recognised but doesn't work correctly (game's better played with KB and mouse anyway).",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1550605876,
+    "title": "Tokyo 42",
+    "source": "protondb"
+  },
+  {
+    "appId": "490450",
+    "cpu": "AMD A9-9410 RADEON R5, 5 COMPUTE CORES 2C+3G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD STONEY",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Crashed on startup",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1557152468,
+    "title": "Tokyo 42",
+    "source": "protondb"
+  }
+]

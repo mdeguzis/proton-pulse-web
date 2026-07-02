@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "373610",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.7-041807-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel",
+    "kernel": "4.18.7-041807-generic",
+    "notes": "Won't start, tried different proton launch options and disabling overlays.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "3.6-7 Beta",
+    "ram": "15899 Mb",
+    "rating": "Borked",
+    "timestamp": 1536620626,
+    "title": "Shoot 1UP",
+    "source": "protondb"
+  }
+]

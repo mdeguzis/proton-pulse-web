@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "35420",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "4.19.45-1-MANJARO",
+    "notes": "Apparently some update to base KF caused this mod to break a long time ago. An effort is ongoing to obtain the mod source code to diagnose the issue and hopefully this mod will be playable again one day.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1561259625,
+    "title": "Defence Alliance 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "35420",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Opens to a really slow intro, that eventually just stops. Clicking or pressing certain keys will reset the audio track, but the game is unplayable.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566192583,
+    "title": "Defence Alliance 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "35420",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Borked as it is on Windows. Nobody gets to play this anymore, sadly.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568201728,
+    "title": "Defence Alliance 2",
+    "source": "protondb"
+  }
+]

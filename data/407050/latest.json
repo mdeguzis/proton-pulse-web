@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "407050",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 930M",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "\n162/5000\nThe game works, however the graphic gets a little pixelated and sometimes happens to give a few fights on the screen. I ran the game on Windows and it worked normally.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1561722545,
+    "title": "Mussoumano: Ataque dos Haters",
+    "source": "protondb"
+  }
+]

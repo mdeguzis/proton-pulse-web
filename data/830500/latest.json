@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "830500",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.10-arch1-1-ARCH",
+    "notes": "Controls do not work so cannot join game or change settings",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15985 Mb",
+    "rating": "Borked",
+    "timestamp": 1538201584,
+    "title": "The Blobs Fight",
+    "source": "protondb"
+  }
+]

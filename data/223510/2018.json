@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "223510",
+    "title": "Miasmata",
+    "timestamp": 1535083949,
+    "rating": "Borked",
+    "notes": "Must lower all graphics settings and choose smallest resolution to load pass first cutscene (graphics can then be set to normal once the game has begun). Water graphics are broken (all water is either black or invisible). Game crashes constantly with no apparent trigger.",
+    "os": "Manjaro Unstable (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2500k / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "223510",
+    "title": "Miasmata",
+    "timestamp": 1536355035,
+    "rating": "Borked",
+    "notes": "pc freezes - but sound of game is playing",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "223510",
+    "cpu": "Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz",
+    "gpu": "NVIDIA Corporation GeForce 940M/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.15.0-33-generic",
+    "notes": "cannot reach maximum configuration",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7404 Mb",
+    "rating": "Gold",
+    "timestamp": 1537621304,
+    "title": "Miasmata",
+    "source": "protondb"
+  },
+  {
+    "appId": "223510",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.14.87-1-MANJARO",
+    "notes": "PROTON_FORCE_LARGE_ADDRESS_AWARE gets into the game without crashing, but water textures are messed up",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1546112051,
+    "title": "Miasmata",
+    "source": "protondb"
+  },
+  {
+    "appId": "223510",
+    "title": "Miasmata",
+    "timestamp": 1535069549,
+    "rating": "Borked",
+    "notes": "Must lower all graphics settings and choose smallest resolution to load pass first cutscene (graphics can then be set to normal once the game has begun). Water graphics are broken (all water is either black or invisible). Game crashes constantly with no apparent trigger.",
+    "os": "Manjaro Unstable (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2500k / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "223510",
+    "title": "Miasmata",
+    "timestamp": 1536340635,
+    "rating": "Borked",
+    "notes": "pc freezes - but sound of game is playing",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

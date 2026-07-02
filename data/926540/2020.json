@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "926540",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.38-gentoo",
+    "notes": "Game won't start",
+    "os": "Gentoo",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1597790267,
+    "title": "",
+    "source": "protondb"
+  }
+]

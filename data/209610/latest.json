@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "209610",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "Still requires that you play it in \"Windowed Mode\", but I gave it Platinum anyway since the fix is required in Windows also.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-4",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1568829476,
+    "title": "Roller Coaster Rampage",
+    "source": "protondb"
+  }
+]

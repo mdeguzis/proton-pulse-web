@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "375250",
+    "title": "Pizza Express",
+    "timestamp": 1534951814,
+    "rating": "Platinum",
+    "notes": "Tested with both steam and native runtimes",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "375250",
+    "title": "Pizza Express",
+    "timestamp": 1534937414,
+    "rating": "Platinum",
+    "notes": "Tested with both steam and native runtimes",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

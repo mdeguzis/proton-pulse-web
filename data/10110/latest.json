@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "10110",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.15.0-43-generic",
+    "notes": "I ran Space Quest I, IV, and V.  With SQ 1, I ran through the opening sequence until the game started where Roger was standing there.  I didn't know how to move him, but I could enter commands, all of which were bad guesses.  In SQ V, I let it start and the intro worked fine.  I quit, then went to my favorite... SQ IV.  I ran it for about 5 minutes.  All controls worked fine.  I ran into no issues.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548654372,
+    "title": "Space Quest\u2122 Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "10110",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.6",
+    "notes": "Some of the games are crashing.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1559737107,
+    "title": "Space Quest\u2122 Collection",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "355400",
+    "cpu": "Intel Core i5-4590T @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GPU",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Using the PROTON_USE_WINED3D flag fixes start up. Saw some stuttering but it might be the game and not steam play.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1543775273,
+    "title": "Diesel Guns",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

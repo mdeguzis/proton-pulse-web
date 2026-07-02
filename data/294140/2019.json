@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "294140",
+    "cpu": "Intel Core i3-4030U @ 1.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.0.0-31-generic",
+    "notes": "After adding this line of code: PROTON_USE_WINED3D=1 %command% on the launch options and then the game works.\n\nI tried the in-game continue option and i got right back were i was.\n\nI also tried to play the original 2014 edition and that just gives an error and doesn't start.\n\nHowever, CPU usage is higher then on Windows. i got an average of around 50-80%\nAnd there was audio stuttering.\n\nWhen i beat the boss, there was a huge lag spike due to the amount of particles.\nprobably due to the computer i'm using (It's a Laptop from 2014)\n\nNote: You have to use the pause menu to quit the game, i used alt+f4 once and the game crashed with a lot of errors.\n\nDue to that it gets a Silver Rating.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1570853464,
+    "title": "They Breathe",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "294140",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.2.20-130.current",
+    "notes": "Game started with no problems out of the box.\nI had to quit the game for a few minutes and the continue function worked with no problems.\n\nI had some audio crackling issues and it was a little annoying, but it didn\u00b4t stop me from playing the game. (This is probably happening due to my terrible integrated HD audio)\n\nCPU usage was around 15-20% but that\u00b4s ok. (Proton conversion magic probably?)\nplayed it with no hassle. Deserves an easy platinum!",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "10 GB",
+    "rating": "Platinum",
+    "timestamp": 1570988659,
+    "title": "They Breathe",
+    "source": "protondb"
+  },
+  {
+    "appId": "294140",
+    "cpu": "Intel Core i3-4030U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.2.1",
+    "kernel": "5.2.20-130.current",
+    "notes": "I recently switched my OS to check if i could get better support for this game, and yes! this games works out of the box on Solus!\n\nI had some audio issues, but it\u00b4s working flawless.\n\nCPU usage was a solid 50% on all cores. which is a lot better then the directx to opengl conversion stuff.\nThis is probably due to having the latest mesa drivers (Solus OS is a rolling distro i think?)\n\nstill a silver, even due to audio issues and reinstalling another OS.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1571252811,
+    "title": "They Breathe",
+    "source": "protondb"
+  }
+]

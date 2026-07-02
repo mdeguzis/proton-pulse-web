@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "3050",
+    "title": "Xpand Rally Xtreme",
+    "timestamp": 1535660455,
+    "rating": "Platinum",
+    "notes": "None",
+    "os": "Debian Stable (Kernel 4.9.0-8)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Xeon E3-1280 / Geforce 9600GT",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "3050",
+    "title": "Xpand Rally Xtreme",
+    "timestamp": 1535646055,
+    "rating": "Platinum",
+    "notes": "None",
+    "os": "Debian Stable (Kernel 4.9.0-8)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Xeon E3-1280 / Geforce 9600GT",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

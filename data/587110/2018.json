@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "587110",
+    "title": "Ys: Memories of Celceta",
+    "timestamp": 1535056102,
+    "rating": "Borked",
+    "notes": "Configuration tool runs, but the game doesn't (it doesn't even pop up a window).",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-5820K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "587110",
+    "cpu": "Intel(R) Core(TM) i7 CPU         870  @ 2.93GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.10-arch1-1-ARCH",
+    "notes": "I tried changing all of them in game settings through the launcher, disabling d3d11, using the wine d3d11, and installing vcrun2017 through winetricks since it uses vcrun and that had helped with a similar problem in Dark Souls Remastered. None of it helped. It just crashes immediately every time.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15975 Mb",
+    "rating": "Borked",
+    "timestamp": 1538405962,
+    "title": "Ys: Memories of Celceta",
+    "source": "protondb"
+  },
+  {
+    "appId": "587110",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Able to launch configuration tool, but the game doesn't launch although the window appears.\n\nNone of the launch options work.\nPROTON_USE_WINED3D11=1 %command%\nPROTON_NO_D3D11=1 %command%\nPROTON_NO_ESYNC=1 %command%",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541095409,
+    "title": "Ys: Memories of Celceta",
+    "source": "protondb"
+  },
+  {
+    "appId": "587110",
+    "title": "Ys: Memories of Celceta",
+    "timestamp": 1535041702,
+    "rating": "Borked",
+    "notes": "Configuration tool runs, but the game doesn't (it doesn't even pop up a window).",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-5820K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

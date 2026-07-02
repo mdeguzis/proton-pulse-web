@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "47730",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.0.0-25-generic",
+    "notes": "it didn't work for me",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1570022443,
+    "title": "Dragon Age\u2122: Origins Awakening",
+    "source": "protondb"
+  }
+]

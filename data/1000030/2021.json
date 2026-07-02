@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1000030",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.1-arch1-1",
+    "notes": "Works perfectly fine in Single Player Mode.\nI did not test multiplayer.",
+    "os": "GamerOS 23\u3000(48bc215)",
+    "protonVersion": "6.3-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1620248874,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1000030",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.80-gentoo",
+    "notes": "",
+    "os": "Gentoo",
+    "protonVersion": "5.0-10",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1624426678,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1000030",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 560 (POLARIS11, DRM 3.40.0, 5.12.14-arch1-1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.4",
+    "kernel": "5.12.14-arch1-1",
+    "notes": "Runs as well as CSD2 (native)",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1626132357,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "766320",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "game doesn't start",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1563110229,
+    "title": "The Mage's Tale",
+    "source": "protondb"
+  }
+]

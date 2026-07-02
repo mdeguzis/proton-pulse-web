@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3500800",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, ACO, DRM 3.64, 6.17.12-300.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.0-devel",
+    "kernel": "6.17.12-300.fc43.x86_64",
+    "notes": "Works out of the box with good performance",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767038207,
+    "title": "DreadOut Remastered Collection",
+    "source": "protondb"
+  }
+]

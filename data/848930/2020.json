@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "848930",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.16-300.fc31.x86_64",
+    "notes": "Game is OK, works with x360 controller out of the box.",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1579893560,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "848930",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.3.3",
+    "kernel": "5.4.0-4-amd64",
+    "notes": "OK out of the box with proton 4.11 (this game is a bug itself, either with windows or linux)",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.0-5",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1585025280,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "848930",
+    "cpu": "Intel Core i7-2760QM @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 440.26",
+    "kernel": "4.15.0-66-generic",
+    "notes": "Flawless",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1593692604,
+    "title": "",
+    "source": "protondb"
+  }
+]

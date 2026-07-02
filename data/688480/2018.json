@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "688480",
+    "title": "EVE: Valkyrie - Warzone",
+    "timestamp": 1535074312,
+    "rating": "Platinum",
+    "notes": "A bit of slowdown, more than playing on Lutris with DXVK",
+    "os": "Ubuntu Budgie 18.04 64-bit (Kernel 4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel\u00ae Core\u2122 i7-6700 / NVIDIA 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "688480",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 980M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.11-1-MANJARO",
+    "notes": "Runs flawlessly, but, strangely like many titles, a bit slower than DXVK+Wine alone.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545628111,
+    "title": "EVE: Valkyrie \u2013 Warzone",
+    "source": "protondb"
+  },
+  {
+    "appId": "688480",
+    "title": "EVE: Valkyrie - Warzone",
+    "timestamp": 1535059912,
+    "rating": "Platinum",
+    "notes": "A bit of slowdown, more than playing on Lutris with DXVK",
+    "os": "Ubuntu Budgie 18.04 64-bit (Kernel 4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel\u00ae Core\u2122 i7-6700 / NVIDIA 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

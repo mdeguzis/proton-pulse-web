@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "351080",
+    "title": "The Corporate Machin",
+    "timestamp": 1535653248,
+    "rating": "Platinum",
+    "notes": "Runs smoothly and without errors.",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5-4690K / R9 290",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "351080",
+    "title": "The Corporate Machine",
+    "timestamp": 1536239810,
+    "rating": "Platinum",
+    "notes": "Perfect, works very well.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770k / GTX 1060 (3GB)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "351080",
+    "title": "The Corporate Machin",
+    "timestamp": 1535638848,
+    "rating": "Platinum",
+    "notes": "Runs smoothly and without errors.",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5-4690K / R9 290",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "351080",
+    "title": "The Corporate Machine",
+    "timestamp": 1536225410,
+    "rating": "Platinum",
+    "notes": "Perfect, works very well.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770k / GTX 1060 (3GB)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

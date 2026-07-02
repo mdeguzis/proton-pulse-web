@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "850690",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "DEMO runs out of the box",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.10-GE-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564544199,
+    "title": "Crying is not Enough: Remastered",
+    "source": "protondb"
+  }
+]

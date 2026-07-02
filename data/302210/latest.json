@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "302210",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.13-1-MANJARO",
+    "notes": "I recommend to take a look into controls before playing.\nIn options I switched from mouse to joystick controls and played it with the steam controller. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547319097,
+    "title": "Curse: The Eye of Isis",
+    "source": "protondb"
+  },
+  {
+    "appId": "302210",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.13-1-MANJARO",
+    "notes": "I recommend to take a look into controls before playing.\nWorks very well with the steam controller.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547320493,
+    "title": "Curse: The Eye of Isis",
+    "source": "protondb"
+  },
+  {
+    "appId": "302210",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.18-200.fc30.x86_64",
+    "notes": "Works great out of the box.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570907569,
+    "title": "Curse: The Eye of Isis",
+    "source": "protondb"
+  }
+]

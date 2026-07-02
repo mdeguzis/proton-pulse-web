@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "219340",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.20.0-gentoo",
+    "notes": "runs better than the banner saga. there are small bits of glitchiness and lag lag here and there but nowhere near as bad as the original",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1547165610,
+    "title": "The Banner Saga: Factions",
+    "source": "protondb"
+  },
+  {
+    "appId": "219340",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.14.65-gentoo",
+    "notes": "First tutorial fight went well.  Had some issues with the tutorial and the hiring process.  Once past tutorial stuff it might work well.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1547678317,
+    "title": "The Banner Saga: Factions",
+    "source": "protondb"
+  },
+  {
+    "appId": "219340",
+    "cpu": "Intel Core i7-4710MQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 860M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Runs perfectly. Played through tutorial and found a match fine. Runs better than all the other TBS games.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1551225463,
+    "title": "The Banner Saga: Factions",
+    "source": "protondb"
+  }
+]

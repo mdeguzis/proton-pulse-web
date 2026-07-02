@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "317470",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Runs fine, just that the fog make the character and most of the map invisible.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "Cubic Castles",
+    "source": "protondb"
+  },
+  {
+    "appId": "317470",
+    "cpu": "Intel Celeron G550 @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Desktop",
+    "gpuDriver": "3.0 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "inicia pero no se puede ver nada porque esta todo nublado",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "2 GB",
+    "rating": "Borked",
+    "timestamp": 1541430823,
+    "title": "Cubic Castles",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

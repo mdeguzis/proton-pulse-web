@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "420180",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Just show the baar for starting a windows game and stuck in this screen had to reboot the system",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553191387,
+    "title": "Chronicle of Innsmouth",
+    "source": "protondb"
+  }
+]

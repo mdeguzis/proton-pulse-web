@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "37500",
+    "cpu": "AMD A10-7890K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.26.0, 4.18.0-1-amd64, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.0-1-amd64",
+    "os": "Debian GNU/Linux unstable (sid) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7982 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539311046,
+    "title": "Magnetis",
+    "source": "protondb"
+  }
+]

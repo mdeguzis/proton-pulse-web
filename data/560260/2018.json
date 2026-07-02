@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "560260",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works perfectly. Fullscreen and alt-tab too.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15972 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536961247,
+    "title": "Super Blue Boy Planet",
+    "source": "protondb"
+  },
+  {
+    "appId": "560260",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works perfectly.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7874 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537466589,
+    "title": "Super Blue Boy Planet",
+    "source": "protondb"
+  },
+  {
+    "appId": "560260",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Used to crash when ESYNC was enabled, but after disabling worked fine with a\nDualShock 4 controller. However, there were some gray bars in level selection menu. (Also it starts in windowed mode rather than fullscreen)",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1541881250,
+    "title": "Super Blue Boy Planet",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

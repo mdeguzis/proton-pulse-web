@@ -1,0 +1,103 @@
+[
+  {
+    "appId": "989690",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-lowlatency",
+    "notes": "It complained about not having the latest drivers, click OK and it loads fine after that.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "48 GB",
+    "rating": "Platinum",
+    "timestamp": 1559229485,
+    "title": "Conan Unconquered",
+    "source": "protondb"
+  },
+  {
+    "appId": "989690",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4-1-MANJARO",
+    "notes": "It runs nearly perfectly! single player and co-op no issues. Performance is awsome. Only the status effects window (poison, fire, etc) on the units and building stretch height wise the more enemies you kill. but not a deal breaker for me. Petroglyph was super helpful on sorting out bugs  that occurred while playing with proton.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559250123,
+    "title": "Conan Unconquered",
+    "source": "protondb"
+  },
+  {
+    "appId": "989690",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559366287,
+    "title": "Conan Unconquered",
+    "source": "protondb"
+  },
+  {
+    "appId": "989690",
+    "cpu": "Intel Core i7-6850K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4-1-MANJARO",
+    "notes": "just works",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559470587,
+    "title": "Conan Unconquered",
+    "source": "protondb"
+  },
+  {
+    "appId": "989690",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Doesn't behave nicely in windowed mode. It keeps stealing focus and maximizing itself, even after toggling windowed in the settings, and I can not change the resolution either (it only lists my default resolution). Other than that it runs perfectly after enabling WINED3D. Also played coop with a Windows user without issue.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-5",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1559695048,
+    "title": "Conan Unconquered",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "989690",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD HAWAII",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "4.15.0-62-generic",
+    "notes": "Played the first solo level for about 20 minutes. Performance is not very good, but I have not tested this game on Windows to compare. Weird sharpness effect on some text.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1568930282,
+    "title": "Conan Unconquered",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

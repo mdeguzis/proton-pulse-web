@@ -1,0 +1,46 @@
+[
+  {
+    "appId": "427660",
+    "title": "NightCry",
+    "timestamp": 1535165424,
+    "rating": "Gold",
+    "notes": "Works flawlessly with Steam Launch option \"PROTON_NO_D3D11=1 %command%\". Game takes a while to start after hitting play, but it does that on Windows too.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "427660",
+    "cpu": "Intel(R) Core(TM) i7-3930K CPU @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.23.0, 4.15.0-36-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "PROTON_NO_D3D11=1 %command%\nNeeded to disable D3d11 because the character models will not appear. Best option so far.\nPROTON_USE_WINED3D11=1 %command%\nIf use Wine D3d11, the character models appear but mosaic appears on top of the characters. Environment and effects like blood spills are not affected.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15980 Mb",
+    "rating": "Gold",
+    "timestamp": 1539480946,
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "title": "NightCry",
+    "source": "protondb"
+  },
+  {
+    "appId": "427660",
+    "title": "NightCry",
+    "timestamp": 1535151024,
+    "rating": "Gold",
+    "notes": "Works flawlessly with Steam Launch option \"PROTON_NO_D3D11=1 %command%\". Game takes a while to start after hitting play, but it does that on Windows too.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

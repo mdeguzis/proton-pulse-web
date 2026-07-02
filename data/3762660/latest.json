@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3762660",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.4-200.fc42.x86_64",
+    "notes": "works nnative as well, but stutters on loading screens. GE proton works perfectly",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1762502875,
+    "title": "",
+    "source": "protondb"
+  }
+]

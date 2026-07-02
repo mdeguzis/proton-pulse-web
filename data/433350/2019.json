@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "433350",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.0-rc4",
+    "kernel": "5.0.11-050011-generic",
+    "notes": "Unable to start the game, ask to create a account in a endless loop.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558535617,
+    "title": "BlackShot: Mercenary Warfare FPS",
+    "source": "protondb"
+  }
+]

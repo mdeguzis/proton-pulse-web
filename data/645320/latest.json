@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "645320",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.10.11-200.fc40.x86_64",
+    "notes": "Poor performance makes for a poor experience",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1740574558,
+    "title": "",
+    "source": "protondb"
+  }
+]

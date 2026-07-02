@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "731650",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.9.0-7-amd64",
+    "notes": "The game started fine, but ran at about 9\u221210 FPS for me, and randomly crashed after the first 9 minutes. The developer has stated there's supposed to be a native version soon, it's just been delayed due to some significant problems discovered while testing.",
+    "os": "Debian GNU/Linux 9.7 (stretch)",
+    "protonVersion": "4.2-7",
+    "ram": "24 GB",
+    "rating": "Bronze",
+    "timestamp": 1561180144,
+    "title": "Summer Islands",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "966540",
+    "cpu": "AMD FX-9370 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.7-1-default",
+    "notes": "I didn't have to modify anything. The game loads and certainly works playing the first scenario.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545356137,
+    "title": "Bedtime Blues",
+    "source": "protondb"
+  }
+]

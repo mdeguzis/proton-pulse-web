@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "395900",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Worked fairly well right out of gate. Only complaint is no mouse support out of box. Still played perfectly.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1596322752,
+    "title": "Backgammon Blitz",
+    "source": "protondb"
+  }
+]

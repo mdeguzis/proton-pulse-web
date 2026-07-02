@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "213350",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.1-2-cachyos",
+    "notes": "Game runs near perfectly with XACT",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1761497053,
+    "title": "MDK2 HD",
+    "source": "protondb"
+  }
+]

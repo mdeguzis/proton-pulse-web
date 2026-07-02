@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "318690",
+    "cpu": "Intel Core i7-4700HQ @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 850M",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Game tries to go through a bunch of installers, dies on .net installer.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558915216,
+    "title": "Cargo 3",
+    "source": "protondb"
+  }
+]

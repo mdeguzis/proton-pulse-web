@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1956740",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 13.0.1, DRM 3.44, 5.17.5-76051705-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "EAC borked it. Was playing fine before, devs if you're reading this, please add EAC support!",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1709250699,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1956740",
+    "cpu": "12th Gen Intel Core i3-12100F",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "5.15.0-84-generic",
+    "notes": "Frozen on \"Initializing...\" screen",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1715111566,
+    "title": "",
+    "source": "protondb"
+  }
+]

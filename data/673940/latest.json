@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "673940",
+    "cpu": "Intel Celeron 1007U @ 1.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-45-generic",
+    "notes": "O jogo funciona perfeitamente aqui. sem  ajustes  necess\u00e1rios, apresenta alguma gagueira inicial, mas funciona muito bem fora da caixa",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "3 GB",
+    "rating": "Platinum",
+    "timestamp": 1551738811,
+    "title": "Dragon Glory",
+    "source": "protondb"
+  }
+]

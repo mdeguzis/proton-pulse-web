@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "48220",
+    "title": "Might & Magic: Heroes VI",
+    "timestamp": 1534968149,
+    "rating": "Borked",
+    "notes": "Uplay stuck on \"Logging in\".",
+    "os": "Debian unstable",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-7400 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "48220",
+    "title": "Might & Magic: Heroes VI",
+    "timestamp": 1535738180,
+    "rating": "Borked",
+    "notes": "Requires Uplay which cannot login.",
+    "os": "Debian unstable",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-7400 / NVIDIA GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "48220",
+    "cpu": "Intel(R) Core(TM) i5-8300H CPU @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "With tweak for internet connection:\n\nsudo ln -s /usr/lib/x86_64-linux-gnu/i386-linux-gnu/libgnutls.so.30.14.10 /usr/lib/x86_64-linux-gnu/libgnutls.so.26\n\nand\n\nsudo ln -s /usr/lib/x86_64-linux-gnu/i386-linux-gnu/libgnutls.so.30.14.10 /usr/lib/x86_64-linux-gnu/libgnutls.so.26\n",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15884 Mb",
+    "rating": "Gold",
+    "timestamp": 1539950000,
+    "title": "Might & Magic: Heroes VI",
+    "source": "protondb"
+  },
+  {
+    "appId": "48220",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Random crashes, I've noticed that when defending a castle graphic is going mad.... Tested in Proton beta..",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541368870,
+    "title": "Might & Magic: Heroes VI",
+    "source": "protondb"
+  },
+  {
+    "appId": "48220",
+    "title": "Might & Magic: Heroes VI",
+    "timestamp": 1534953749,
+    "rating": "Borked",
+    "notes": "Uplay stuck on \"Logging in\".",
+    "os": "Debian unstable",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-7400 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "48220",
+    "title": "Might & Magic: Heroes VI",
+    "timestamp": 1535723780,
+    "rating": "Borked",
+    "notes": "Requires Uplay which cannot login.",
+    "os": "Debian unstable",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-7400 / NVIDIA GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "350770",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-16-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1553895814,
+    "title": "Giana Sisters 2D",
+    "source": "protondb"
+  }
+]

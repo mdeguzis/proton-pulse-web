@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2454980",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.5-arch1-1",
+    "notes": "Enjoyable (but not great) if you predict your movements by a few ms so the input lag is less noticeable but yeah. It doesn't feel smooth",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1753619790,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2454980",
+    "cpu": "12th Gen Intel Core i5-1235U",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.3",
+    "kernel": "6.8.0-50-generic",
+    "notes": "",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1753629879,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2454980",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, ACO, DRM 3.63, 6.15.7-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.1.6-arch1.1",
+    "kernel": "6.15.7-1-MANJARO",
+    "notes": "O jogo funcionou perfeitamente!",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1753664688,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "264060",
+    "title": "Full Bore",
+    "timestamp": 1534951765,
+    "rating": "Borked",
+    "notes": "Crashes on launch",
+    "os": "Xubuntu",
+    "gpuDriver": "NVIDIA proprietary ?",
+    "specs": "i5 6600k, 780ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "264060",
+    "title": "Full Bore",
+    "timestamp": 1534937365,
+    "rating": "Borked",
+    "notes": "Crashes on launch",
+    "os": "Xubuntu",
+    "gpuDriver": "NVIDIA proprietary ?",
+    "specs": "i5 6600k, 780ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

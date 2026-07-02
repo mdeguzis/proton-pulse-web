@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "285480",
+    "title": "The Entente Gold",
+    "timestamp": 1535567673,
+    "rating": "Gold",
+    "notes": "needs corefonts installed otherwise text in GUI is not readable. runs well.",
+    "os": "Debian 9",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "E 8400/GT 8500 512Mb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "285480",
+    "cpu": "Intel Core i7-5930K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Main menu is sluggish. Game is sluggish. Screen occasionally flashes black when scrolling which is uncomfortable.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1543048922,
+    "title": "The Entente Gold",
+    "source": "protondb"
+  },
+  {
+    "appId": "285480",
+    "title": "The Entente Gold",
+    "timestamp": 1535553273,
+    "rating": "Gold",
+    "notes": "needs corefonts installed otherwise text in GUI is not readable. runs well.",
+    "os": "Debian 9",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "E 8400/GT 8500 512Mb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "351870",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "No video, but the rest of the game seems to be working.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1558742754,
+    "title": "Cultures - 8th Wonder of the World",
+    "source": "protondb"
+  },
+  {
+    "appId": "351870",
+    "cpu": "AMD Phenom II 1100T Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD REDWOOD",
+    "gpuDriver": "3.1 Mesa 19.1.2",
+    "kernel": "5.2.3-desktop-1omv4000",
+    "notes": "All works fine. Only video (intro) not playing.",
+    "os": "OpenMandriva Lx Cooker",
+    "protonVersion": "4.2-9",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1564247530,
+    "title": "Cultures - 8th Wonder of the World",
+    "source": "protondb"
+  }
+]

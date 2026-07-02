@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1035510",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "4.19.0-9-amd64",
+    "notes": "\"Initialize Steam failed\" Message after last Update comes with DLC Map.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1628677052,
+    "title": "",
+    "source": "protondb"
+  }
+]

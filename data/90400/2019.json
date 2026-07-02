@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "90400",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "1. When running, I was presented with this error message... \"Error occurred during load of settings file. Advanced error information: There is an error in XML document (16, 1).\"\n2. Afterwards, you get the game launcher.\n3. Skipping registration exits the game\n4. Re-Launch the game, and click on Play\n5. The game will launch\n\nInput, video and audio works. The game is playable.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560219564,
+    "title": "Blue Toad Murder Files\u2122: The Mysteries of Little Riddle",
+    "source": "protondb"
+  }
+]

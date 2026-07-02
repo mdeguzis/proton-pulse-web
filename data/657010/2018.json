@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "657010",
+    "title": "Lucky Night: Texas Hold'em VR",
+    "timestamp": 1536029040,
+    "rating": "Borked",
+    "notes": "Crashes on load with a window entitled \"The UE4-SolarGame Game has crashed\" body of window says \"LowLevelFatalError [File:F:\\galaxyP4_Server\\UnrealEngine4.15\\Engine\\Source\\Runtime\\Windows\\D3D11RHI\\Private\\D3D11Util.cpp] [Line:227] NvAPI_D3D11_MultiGPU_GetCaps(&MultiGPUCaps) failed at F:\\galaxyP4_Server\\UnrealEngine4.15\\Engine\\Source\\Runtime\\Windows\\D3D11RHI\\Private\\Windows\\WindowsD3D11Device.cpp:879 with error FFFFFFFE\"",
+    "os": "Xubuntu 18.04 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "657010",
+    "title": "Lucky Night: Texas Hold'em VR",
+    "timestamp": 1536014640,
+    "rating": "Borked",
+    "notes": "Crashes on load with a window entitled \"The UE4-SolarGame Game has crashed\" body of window says \"LowLevelFatalError [File:F:\\galaxyP4_Server\\UnrealEngine4.15\\Engine\\Source\\Runtime\\Windows\\D3D11RHI\\Private\\D3D11Util.cpp] [Line:227] NvAPI_D3D11_MultiGPU_GetCaps(&MultiGPUCaps) failed at F:\\galaxyP4_Server\\UnrealEngine4.15\\Engine\\Source\\Runtime\\Windows\\D3D11RHI\\Private\\Windows\\WindowsD3D11Device.cpp:879 with error FFFFFFFE\"",
+    "os": "Xubuntu 18.04 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

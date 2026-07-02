@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "3580",
+    "title": "The Wizard's Pen",
+    "timestamp": 1535306879,
+    "rating": "Borked",
+    "notes": "Crashes stating: Invalid command line parameter: -changedir",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "3580",
+    "cpu": "Intel(R) Core(TM) i5-3330 CPU @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GT 240/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-33-generic",
+    "notes": "This game requires the command line argument -changedir to be specified in the launch options. This also happens on Windows, hence why my result is Platinum as this is not a Proton issue. Runs in software mode only due to NVIDIA GT 240 GPU being incompatible with Vulkan enabled NVIDIA drivers. May work with hardware acceleration on other systems with supported video cards. Using Alt+Tab or the Super key causes the game to freeze.  Otherwise the game is perfectly playable using all modes in full screen and window mode on a 2012 Intel Core i5 3330. Given the above, there are no graphical or audio issues.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7848 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539046346,
+    "title": "The Wizard's Pen\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "3580",
+    "title": "The Wizard's Pen",
+    "timestamp": 1535292479,
+    "rating": "Borked",
+    "notes": "Crashes stating: Invalid command line parameter: -changedir",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

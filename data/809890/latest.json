@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "809890",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.2-arch1-1-ARCH",
+    "notes": "Plays perfectly out of the box, with no issues whatsoever. No glitches, shading issues, or lag, and gamepad works perfectly, as if it was natively supported. One issue I did have which I assume to be me using too much RAM was the game would close automatically after 45-50 minutes, but once I closed my programs it ran longer and didn't close again",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1552847705,
+    "title": "Shining Resonance Refrain",
+    "source": "protondb"
+  },
+  {
+    "appId": "809890",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.49.04",
+    "kernel": "5.0.0-1-tkg-pds",
+    "notes": "The game runs really well performance wise and without any issues.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553021066,
+    "title": "Shining Resonance Refrain",
+    "source": "protondb"
+  },
+  {
+    "appId": "809890",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Perfect gameplay out of the box, no need for any kind of tweaks.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556981342,
+    "title": "Shining Resonance Refrain",
+    "source": "protondb"
+  }
+]

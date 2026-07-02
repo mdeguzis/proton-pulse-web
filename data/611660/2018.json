@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "611660",
+    "title": "Fallout 4 VR",
+    "timestamp": 1534910400,
+    "rating": "Bronze",
+    "notes": "Wouldn't start at first, reboot fixed that. Framerate is comparable (bad) to Windows but I'm on a weak GPU 980Ti. Head movement caused a cross-eyed sensation.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "611660",
+    "title": "Fallout 4 VR",
+    "timestamp": 1534896000,
+    "rating": "Bronze",
+    "notes": "Wouldn't start at first, reboot fixed that. Framerate is comparable (bad) to Windows but I'm on a weak GPU 980Ti. Head movement caused a cross-eyed sensation.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

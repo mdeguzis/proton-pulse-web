@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "46280",
+    "title": "Star Wolves 2",
+    "timestamp": 1535153131,
+    "rating": "Borked",
+    "notes": "No errors but the game runs at 1fps even on the menu screen. Tried to change graphics options but it didn't help.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Phenom II x4 965 / R9 270X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "46280",
+    "title": "Star Wolves 2",
+    "timestamp": 1535138731,
+    "rating": "Borked",
+    "notes": "No errors but the game runs at 1fps even on the menu screen. Tried to change graphics options but it didn't help.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Phenom II x4 965 / R9 270X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

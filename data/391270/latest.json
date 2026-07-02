@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "391270",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Works perfectly.\nOne minor issue: When the game runs in windowed mode it resets the cursor to the middle of the screen instead of the middle of the window. This leads to drift in the camera controls if the center of the maximized window is not the center of the screen.\nFixed by fullscreening the window using my windowmanager(awesomewm).",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546869360,
+    "title": "Fingerbones",
+    "source": "protondb"
+  }
+]

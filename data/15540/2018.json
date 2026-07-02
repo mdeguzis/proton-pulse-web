@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "15540",
+    "cpu": "i5-3210M CPU @ 2.50GHz",
+    "gpu": "X.Org AMD VERDE (DRM 2.50.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "A crash window appears and generates a report in the game folder.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "5836 Mb",
+    "rating": "Borked",
+    "timestamp": 1537029405,
+    "title": "1... 2... 3... KICK IT! (Drop That Beat Like an Ugly Baby)",
+    "source": "protondb"
+  },
+  {
+    "appId": "15540",
+    "cpu": "Intel(R) Xeon(R) CPU E5-2630 0 @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.66",
+    "kernel": "4.15.0-36-generic",
+    "notes": "First level is great. Second level only shows strange ornaments.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15986 Mb",
+    "rating": "Borked",
+    "timestamp": 1540053091,
+    "title": "1... 2... 3... KICK IT! (Drop That Beat Like an Ugly Baby)",
+    "source": "protondb"
+  }
+]

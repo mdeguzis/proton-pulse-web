@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "464780",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "The game crashes with an error as soon as I click on \"PLAY\".",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551450893,
+    "title": "ChuSingura46+1 S",
+    "source": "protondb"
+  },
+  {
+    "appId": "464780",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Works perfectly!",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1552241349,
+    "title": "ChuSingura46+1 S",
+    "source": "protondb"
+  },
+  {
+    "appId": "464780",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "Works perfectly out of the box.",
+    "os": "MX 18.2 Continuum",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558329086,
+    "title": "ChuSingura46+1 S",
+    "source": "protondb"
+  }
+]

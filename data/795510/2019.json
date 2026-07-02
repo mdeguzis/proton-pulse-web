@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "795510",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Must force Proton 3.16-4 under game properties in order to play; newer versions will get stuck loading after the title screen. Online multiplayer doesn't seem to work and some text appears garbled.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "4.2-2",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1556989607,
+    "title": "Koihime Enbu RyoRaiRai \u604b\u59eb\u2020\u6f14\u6b66 \uff5e\u907c\u6765\u6765\uff5e",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "256330",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Crash just after the launcher. See the loading screen sometimes for less than 2s.",
+    "os": "Ubuntu 19.04 (64\u00a0bits)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561814958,
+    "title": "WRC 4 FIA World Rally Championship",
+    "source": "protondb"
+  }
+]

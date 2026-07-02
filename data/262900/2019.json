@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "262900",
+    "cpu": "Intel Core2 Extreme X9650  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Fails to launch",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1548085989,
+    "title": "Smooth Operators",
+    "source": "protondb"
+  },
+  {
+    "appId": "262900",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Game works without any tweaks. But the game is Unable to Save.  Cant really say this game is Borked then because it runs fine.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559401728,
+    "title": "Smooth Operators",
+    "source": "protondb"
+  },
+  {
+    "appId": "262900",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game runs perfectly. Saving does not work.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1559954168,
+    "title": "Smooth Operators",
+    "source": "protondb"
+  }
+]

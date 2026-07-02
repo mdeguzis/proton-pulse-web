@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1845630",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.12-arch1-1",
+    "notes": "I tried Proton GE, Proton 10 and Proton 9.\n\nIt even crash SteamVR  entirely sometimes and I have to restart steamVR",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1746997897,
+    "title": "",
+    "source": "protondb"
+  }
+]

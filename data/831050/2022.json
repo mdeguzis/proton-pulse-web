@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "831050",
+    "cpu": "AMD Ryzen Threadripper 3990X 64-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.44.0, 5.17.0-pf3, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.8 (git-813ee839be)",
+    "kernel": "5.17.0-pf3",
+    "notes": "Uses MF for cutscenes.  GE requires -dx11 flag.",
+    "os": "Freedesktop.org 21.08.13 (Flatpak runtime)",
+    "protonVersion": "7.0-2",
+    "ram": "129 GB",
+    "rating": "platinum",
+    "timestamp": 1653062614,
+    "title": "Dolmen",
+    "source": "protondb"
+  }
+]

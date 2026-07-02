@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1727180",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.1",
+    "kernel": "6.8.0-41-generic",
+    "notes": "works out of the box, just installs normally and runs with steam proton experimental; runs great!; full-screen and windowed, no problems.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1727279745,
+    "title": "",
+    "source": "protondb"
+  }
+]

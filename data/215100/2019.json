@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "215100",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-51-lowlatency",
+    "notes": "Patches fine but window is pure black with music in the background and no cursor. \nClassic mode's window has no visual or audio content and neither has a window, just a title bar.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564402831,
+    "title": "Ragnarok Online",
+    "source": "protondb"
+  }
+]

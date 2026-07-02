@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3482510",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.2.1-1ubuntu3.1",
+    "kernel": "6.5.0-25-generic",
+    "notes": "Proton 9.0-4 crash",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1772944415,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "209230",
+    "title": "Sherlock Holmes and The Hound of The Baskervilles",
+    "timestamp": 1535736249,
+    "rating": "Platinum",
+    "notes": "10 min. play. Ran perfectly. Steam overlay manually disabled.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "209230",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Short test. Everything seemed to work correctly.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541357073,
+    "title": "Sherlock Holmes and The Hound of The Baskervilles",
+    "source": "protondb"
+  },
+  {
+    "appId": "209230",
+    "title": "Sherlock Holmes and The Hound of The Baskervilles",
+    "timestamp": 1535721849,
+    "rating": "Platinum",
+    "notes": "10 min. play. Ran perfectly. Steam overlay manually disabled.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "332490",
+    "cpu": "AMD Phenom II X4 810",
+    "duration": "allTheTime",
+    "gpu": "Radeon Rx 5600",
+    "gpuDriver": "4.5 Mesa 20.0.4",
+    "kernel": "5.5.15-nrj-desktop-1rosa-x86_64",
+    "notes": "It works flawlessly.",
+    "os": "Rosa Desktop Fresh R11",
+    "protonVersion": "5.0-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1586705974,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "332490",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-40-generic",
+    "notes": "It starts out of the box without a problem.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1595099307,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "332490",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Runs perfectly fine with Proton 5.0-10",
+    "os": "Kubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1608410730,
+    "title": "",
+    "source": "protondb"
+  }
+]

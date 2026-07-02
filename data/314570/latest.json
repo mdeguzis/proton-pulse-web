@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "314570",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD CAPE VERDE",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540929070,
+    "title": "The Sun at Night",
+    "source": "protondb"
+  }
+]

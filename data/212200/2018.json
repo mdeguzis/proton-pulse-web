@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "212200",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 570 Series (POLARIS10, DRM 3.25.0, 4.15.0-33-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Game fails to launch",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16045 Mb",
+    "rating": "Borked",
+    "timestamp": 1536556603,
+    "title": "Mabinogi",
+    "source": "protondb"
+  }
+]

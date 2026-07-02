@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "461950",
+    "cpu": "Intel Core i3       M 380  @ 2.53GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD (ILK)",
+    "gpuDriver": "2.1 Mesa 21.2.1 - kisak-mesa PPA",
+    "kernel": "5.4.0-84-generic",
+    "notes": "Just don't open the game.",
+    "os": "Zorin OS 15.3",
+    "protonVersion": "6.3-7",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1633890591,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1930",
+    "cpu": "Intel Core i7-8700K @ 5.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.16-112.current",
+    "notes": "Game did not run \"nativity\" as advertised but does run through proton, however it does not have sound.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Bronze",
+    "timestamp": 1553789653,
+    "title": "Two Worlds Epic Edition",
+    "source": "protondb"
+  }
+]

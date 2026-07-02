@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "629440",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc4-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900rc4-generic",
+    "notes": "Trying to launch the game it just tries to install .net framework, and then nothing happens. Tried the different launch options.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15961 Mb",
+    "rating": "Borked",
+    "timestamp": 1538500851,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Graze Counter",
+    "source": "protondb"
+  },
+  {
+    "appId": "629440",
+    "cpu": "Intel Core i7-2640M @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Steam appears to install .NET Framework 3.5, after which the game does not launch. I was then able to launch the game with WINE 4.0-rc3 but not Proton.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546166660,
+    "title": "Graze Counter",
+    "source": "protondb"
+  },
+  {
+    "appId": "629440",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Won't launch. Runs perfectly in WINE",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546269112,
+    "title": "Graze Counter",
+    "source": "protondb"
+  }
+]

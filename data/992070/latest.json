@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "992070",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Had some graphics oddity with the Linux native version, thankfully everything worked out of the box with Proton.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556690483,
+    "title": "Idle Wizard",
+    "source": "protondb"
+  }
+]

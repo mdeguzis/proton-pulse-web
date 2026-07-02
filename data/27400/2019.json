@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "27400",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-42-generic",
+    "notes": "After using winecfg to enable a virtual desktop with the size of my screen, I could click the start button. After that the game can be played and seems to work without issue.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560030850,
+    "title": "Dangerous High School Girls in Trouble!\u2122",
+    "source": "protondb"
+  }
+]

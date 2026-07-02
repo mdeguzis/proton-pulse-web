@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1135690",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT",
+    "gpuDriver": "4.6 Mesa 20.1.6",
+    "kernel": "5.11.0-051100-generic",
+    "notes": "Native version works perfectly, but it runs perfectly under Proton as well.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1636304565,
+    "title": "",
+    "source": "protondb"
+  }
+]

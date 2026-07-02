@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "788690",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-42-generic",
+    "notes": "The game runs perfectly. The controls are non-standard relying on head movement and controller buttons rather than controller movement. The only issue encountered was that after each of the three location changes, the framerate dropped really badly and the game needed to be restarted.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1546007347,
+    "title": "Psychonauts in the Rhombus of Ruin",
+    "source": "protondb"
+  }
+]

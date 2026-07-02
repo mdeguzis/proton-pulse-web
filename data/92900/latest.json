@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "92900",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Runs great at the highest settings with no tweaking required! That is to say it runs nearly identical to the Windows version, bar the expected occasional framerate dip. The game is still a buggy, laughable piece of crap, but Steam Play can't fix that. The only problem I had was when I got a black screen when changing the resolution. I could still see the Steam framerate overlay, shift-tab still worked, alt-tab still worked, and alt-f4 still worked, so that was probably just a bug with the game itself. The right resolution was being used when I restarted. So platinum results overall.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548610019,
+    "title": "Agricultural Simulator 2011: Extended Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "92900",
+    "cpu": "Intel Core i7         950  @ 3.07GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.27_1",
+    "notes": "Ran out of box without issues.",
+    "os": "Void Linux",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1552343330,
+    "title": "Agricultural Simulator 2011: Extended Edition",
+    "source": "protondb"
+  }
+]

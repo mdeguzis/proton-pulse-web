@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "833370",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "some sequences/videos didn't start (screen stayed mono-colored). Pressing \"ESC\" helped most of the time, but it might skip stuff.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1561975374,
+    "title": "HexLab",
+    "source": "protondb"
+  }
+]

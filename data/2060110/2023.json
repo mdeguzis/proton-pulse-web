@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2060110",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 with Max-Q Design",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "6.1.11-x64v3-xanmod1",
+    "notes": "Most likely disrespected the user by trying to crank up refresh rates and diddle the graphics card in unconsentual manners surprising to most developers.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1676560140,
+    "title": "Spellic",
+    "source": "protondb"
+  }
+]

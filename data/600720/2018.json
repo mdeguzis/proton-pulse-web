@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "600720",
+    "title": "Trackmania\u00b2 Lagoon",
+    "timestamp": 1536179254,
+    "rating": "Gold",
+    "notes": "Maniaplanet common files are currently duplicated using $WINEPREFIX, recommend sharing %ProgramData%\\Maniaplanet & %USERPROFILE%\\My Documents\\Maniaplanet across all related products.",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 369.54",
+    "specs": "i5-3570 / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "600720",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game was downloaded via Stadium (All TM2 games can be downloaded like that), first 2 minutes of driving included a few lag spikes, but after that it runs like a charm. No noticeable faults in the editors (Map and skin). Skin from Steam Workshop are also perfectly loaded, with shadows, sounds, etc.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15964 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538424305,
+    "title": "Trackmania\u00b2 Lagoon",
+    "source": "protondb"
+  },
+  {
+    "appId": "600720",
+    "title": "Trackmania\u00b2 Lagoon",
+    "timestamp": 1536164854,
+    "rating": "Gold",
+    "notes": "Maniaplanet common files are currently duplicated using $WINEPREFIX, recommend sharing %ProgramData%\\Maniaplanet & %USERPROFILE%\\My Documents\\Maniaplanet across all related products.",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 369.54",
+    "specs": "i5-3570 / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

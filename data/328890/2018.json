@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "328890",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-13-generic",
+    "notes": "On first running, it installs a number of other things, including a Visual C++ redistributable. It then asks for a CD key - don't forget to save the one you're shown right at the start of this! - and for you to complete a four letter CAPTCHA. Which you usually can't see properly, because most of one or more letters is off the top of the narrow strip you can see. Should you get past that, it works - I think - except that you can never get it to 'activated' status. That's possibly because the server itself seems to be gone, but it means you have to do that key and CAPTCHA every. single. time.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1545427874,
+    "title": "Fritz for Fun 13",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "727130",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.1-arch1-1-ARCH",
+    "notes": "The game is a little choppy, but completely playable. The game is still EA, and recent, so some of these issues are to be expected(long load screens, unstable saves).",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564211532,
+    "title": "Between the Stars",
+    "source": "protondb"
+  },
+  {
+    "appId": "727130",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.0-0.bpo.5-amd64",
+    "notes": "Runs out of the box and playable but the performance is not overwhelming. In some situations it seems a little lagged and choppy. Loading times seems longer as on Windows and sometimes it crashed when saving",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1567891195,
+    "title": "Between the Stars",
+    "source": "protondb"
+  },
+  {
+    "appId": "727130",
+    "cpu": "AMD Ryzen Threadripper 2950X 16-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA TITAN RTX",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "nothing tested, the game is in good performance when it is running, but crushed several times during the gameplay, and there is no clear clue of why that happened. Loading of the game is slow and sometimes window pops out asking me to kill the app (I choose to wait and eventually game loaded successfully). Game crushed once when I paused it during a dialogue, and another time when it about to enter a dialogue, both times I played the game for similar amount of time. Not sure if it is the matter of period of time, or specidic behavior. Up till now, the frequency of crush makes the game not quite playable.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-6",
+    "ram": "48 GB",
+    "rating": "Bronze",
+    "timestamp": 1570299860,
+    "title": "Between the Stars",
+    "source": "protondb"
+  }
+]

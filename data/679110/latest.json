@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "679110",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "7.0.0-1-cachyos-bore",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1777142978,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "679110",
+    "cpu": "AMD Ryzen 5 7500F 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, ACO, DRM 3.64, 6.17.7-ba29.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.4",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "Besides the Cutscenes being broken the game Run Flawlessly on Linux.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1778896076,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "679110",
+    "cpu": "AMD Ryzen 5 7500F 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, ACO, DRM 3.64, 6.17.7-ba29.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.4",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "Update: Works and Run Natively Using Older GE Proton",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1779093208,
+    "title": "",
+    "source": "protondb"
+  }
+]

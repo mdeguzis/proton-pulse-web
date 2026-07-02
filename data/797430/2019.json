@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "797430",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Game opens, but then freezes after initial loading screen. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566648727,
+    "title": "HD Poker: Texas Hold'em",
+    "source": "protondb"
+  }
+]

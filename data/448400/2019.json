@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "448400",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-54-generic",
+    "notes": "It WORKS, though runs at about 0.5fps so is completely unplayable",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562503364,
+    "title": "Hidden Object 6-in-1 bundle",
+    "source": "protondb"
+  },
+  {
+    "appId": "448400",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.12.14-lp151.28.13-default",
+    "notes": "Performance is pretty low, unplayable, unable to play the game",
+    "os": "Linux 4.x (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566428549,
+    "title": "Hidden Object 6-in-1 bundle",
+    "source": "protondb"
+  },
+  {
+    "appId": "448400",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-64-generic",
+    "notes": "In Set Launch Options add PROTON_USE_D9VK=1 %command% \n\nThey all work well except for the fifth game The Other Side: Tower of Souls. \nFor this game you have to install Flash with Winetricks; it will become playable but with some graphic problems.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1569194612,
+    "title": "Hidden Object 6-in-1 bundle",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

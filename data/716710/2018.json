@@ -1,0 +1,60 @@
+[
+  {
+    "appId": "716710",
+    "title": "\u6771\u65b9\u6191\u4f9d\u83ef\u3000\uff5e Antinomy of Common Flowers.",
+    "timestamp": 1536069453,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Arch (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-8700k / GTX 1070 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "716710",
+    "cpu": "AMD FX(tm)-6100 Six-Core Processor",
+    "gpu": "GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "FPS drops down after a couple of matches (or one story playthrough) down to 45FPS. Restarting the game brings is back up to 60FPS.\nWorks perfectly otherwise, even without the problems I have on Windows.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "15987 Mb",
+    "rating": "Silver",
+    "timestamp": 1536953281,
+    "title": "\u6771\u65b9\u6191\u4f9d\u83ef\u3000\uff5e Antinomy of Common Flowers.",
+    "source": "protondb"
+  },
+  {
+    "appId": "716710",
+    "cpu": "Intel Pentium G4400 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.18.15-1-default",
+    "notes": "Put \"PROTON_USE_WINED3D11=1 %command%\" in the launch options. Everything else works fine.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1543173166,
+    "title": "\u6771\u65b9\u6191\u4f9d\u83ef\u3000\uff5e Antinomy of Common Flowers.",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "716710",
+    "title": "\u6771\u65b9\u6191\u4f9d\u83ef\u3000\uff5e Antinomy of Common Flowers.",
+    "timestamp": 1536055053,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Arch (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-8700k / GTX 1070 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

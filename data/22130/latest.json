@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "22130",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Works well",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "9 GB",
+    "rating": "Platinum",
+    "timestamp": 1550580600,
+    "title": "Hearts of Iron 2 Complete",
+    "source": "protondb"
+  },
+  {
+    "appId": "22130",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1553357441,
+    "title": "Hearts of Iron 2 Complete",
+    "source": "protondb"
+  },
+  {
+    "appId": "22130",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-29-generic",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569526880,
+    "title": "Hearts of Iron 2 Complete",
+    "source": "protondb"
+  }
+]

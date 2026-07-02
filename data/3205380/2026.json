@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3205380",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.1",
+    "kernel": "6.18.7-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771831612,
+    "title": "Omelet You Cook",
+    "source": "protondb"
+  }
+]

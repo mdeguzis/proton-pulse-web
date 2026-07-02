@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1126190",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "Game Will Not Start",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1610951423,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1126190",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "Runs great. No tinkering. No issues.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1611976110,
+    "title": "",
+    "source": "protondb"
+  }
+]

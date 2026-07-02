@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "766280",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563157660,
+    "title": "A Light in the Dark",
+    "source": "protondb"
+  }
+]

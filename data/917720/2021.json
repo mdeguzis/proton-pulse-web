@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "917720",
+    "cpu": "AMD Ryzen 5 3600XT 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.10.23-1-MANJARO",
+    "notes": "If I chose 30FPS limit in menu, the demo worked fine without any problems out of box",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1617014006,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "917720",
+    "cpu": "Intel Core i7-4800MQ @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.1.8",
+    "kernel": "5.13.15-200.fc34.x86_64",
+    "notes": "",
+    "os": "Fedora 34",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1631832290,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "917720",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 465.27",
+    "kernel": "5.8.0-53-generic",
+    "notes": "Flawless out-of-the box. On the first start, some warning about a missing file appeared, but it can be ignored.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1636327854,
+    "title": "",
+    "source": "protondb"
+  }
+]

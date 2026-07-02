@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3020510",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.8-zen1-1-zen",
+    "notes": "game stuck randomly",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1747274436,
+    "title": "Legend of Heroes: Three Kingdoms",
+    "source": "protondb"
+  }
+]

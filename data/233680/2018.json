@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "233680",
+    "title": "Black Ink",
+    "timestamp": 1535963320,
+    "rating": "Borked",
+    "notes": "Has two options to boot, one of which is to force Direct X 9. Neither option works.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790 / Nvidia GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "233680",
+    "title": "Black Ink ",
+    "timestamp": 1536214934,
+    "rating": "Borked",
+    "notes": "It offers two modes for launching the game (launch black ink/blackink (force dx9)). I tried both and none of them work. The game doesn't even start. ",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX 8350 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "233680",
+    "title": "Black Ink",
+    "timestamp": 1535948920,
+    "rating": "Borked",
+    "notes": "Has two options to boot, one of which is to force Direct X 9. Neither option works.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790 / Nvidia GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "233680",
+    "title": "Black Ink ",
+    "timestamp": 1536200534,
+    "rating": "Borked",
+    "notes": "It offers two modes for launching the game (launch black ink/blackink (force dx9)). I tried both and none of them work. The game doesn't even start. ",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX 8350 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

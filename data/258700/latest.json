@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "258700",
+    "title": "Dragon Nest Europe",
+    "timestamp": 1535714534,
+    "rating": "Silver",
+    "notes": "Works perfectly fine on high settings, however there were some issues with the mouse (the mouse disappears at times). Don't forget to activate your account or you'll receive an unknown error when attempting to start the game.",
+    "os": "Arch Linux 64-bit",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "specs": "i7-4700MQ / iGPU HD 4600",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "258700",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.9.147-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1545947976,
+    "title": "Dragon Nest Europe",
+    "source": "protondb"
+  },
+  {
+    "appId": "258700",
+    "title": "Dragon Nest Europe",
+    "timestamp": 1535700134,
+    "rating": "Silver",
+    "notes": "Works perfectly fine on high settings, however there were some issues with the mouse (the mouse disappears at times). Don't forget to activate your account or you'll receive an unknown error when attempting to start the game.",
+    "os": "Arch Linux 64-bit",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "specs": "i7-4700MQ / iGPU HD 4600",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

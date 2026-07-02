@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "695360",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541993738,
+    "title": "Veritex",
+    "source": "protondb"
+  }
+]

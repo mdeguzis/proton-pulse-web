@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1099960",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.0-33-generic",
+    "notes": "works fine, 60fps, finished it without issues.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1695911067,
+    "title": "",
+    "source": "protondb"
+  }
+]

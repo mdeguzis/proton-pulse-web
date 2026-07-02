@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "613220",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Launches and shows skinned controllers with a media playback control bar attached to one of them. However, it does not seem to be possible to interact with anything.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542644198,
+    "title": "Steam 360 Video Player",
+    "source": "protondb"
+  }
+]

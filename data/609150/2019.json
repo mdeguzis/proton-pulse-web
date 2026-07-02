@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "609150",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Doesn't launch.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1546669234,
+    "title": "STAR OCEAN\u2122 - THE LAST HOPE -\u2122 4K & Full HD Remaster",
+    "source": "protondb"
+  },
+  {
+    "appId": "609150",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Window does not open at all unfortunately.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561756493,
+    "title": "STAR OCEAN\u2122 - THE LAST HOPE -\u2122 4K & Full HD Remaster",
+    "source": "protondb"
+  },
+  {
+    "appId": "609150",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.1-1-MANJARO",
+    "notes": "it launch get to new game than Crashes",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1564549783,
+    "title": "STAR OCEAN\u2122 - THE LAST HOPE -\u2122 4K & Full HD Remaster",
+    "source": "protondb"
+  }
+]

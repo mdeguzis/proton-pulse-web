@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "382110",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "it tries to install dotnet472 as dependency and fails, but installing it via protontricks doesn't help as well. it silently crashes. would have been interesting to play normal games with reshade and superdepth3d.fx shader with the vive in vr. maybe bigscreen works one day good enough to get it running.\n",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552241187,
+    "title": "Virtual Desktop",
+    "source": "protondb"
+  }
+]

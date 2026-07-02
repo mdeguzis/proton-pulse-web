@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "793150",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "The game opens with Wine D3d11 enabled, but it's lagging and not responding. I have to restart my computer. I tried this for several hours.;",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551485109,
+    "title": "Moe! Ninja Girls",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "793150",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Laggy and doesn't respond. I had to restart my computer in order to exit the game.",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1552259245,
+    "title": "Moe! Ninja Girls",
+    "source": "protondb"
+  },
+  {
+    "appId": "793150",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.9-301.fc30.x86_64",
+    "notes": "Works perfectly. No glitches.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1563577225,
+    "title": "Moe! Ninja Girls",
+    "source": "protondb"
+  }
+]

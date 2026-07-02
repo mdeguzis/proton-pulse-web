@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "974090",
+    "cpu": "Intel Xeon E5-2670 0 @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Played from start to finish without any issues except it crashes when you open display settings.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1548641598,
+    "title": "Gravity Bone",
+    "source": "protondb"
+  }
+]

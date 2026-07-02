@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1218210",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.2-2-cachyos",
+    "notes": "Install & Play, no tinkering required",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1767718745,
+    "title": "Coromon",
+    "source": "protondb"
+  },
+  {
+    "appId": "1218210",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1768614337,
+    "title": "Coromon",
+    "source": "protondb"
+  },
+  {
+    "appId": "1218210",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "6.17.0-23-generic",
+    "notes": "It works generally smoothly",
+    "os": "Ubuntu 24.04.4 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1778708461,
+    "title": "Coromon",
+    "source": "protondb"
+  }
+]

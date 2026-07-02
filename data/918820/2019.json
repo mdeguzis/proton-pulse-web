@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "918820",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Game did not run natively (wasn't listed as supporting Linux  on steam store page so I'm not sure why it gave me the option to on steam and is listed here as native)\nGame does seem to run just fine after forcing use of proton 4.2-9",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562439490,
+    "title": "Headliner: NoviNews",
+    "source": "protondb"
+  },
+  {
+    "appId": "918820",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.21-rt16-MANJARO",
+    "notes": "When I first started the game it had a flickering white-grayish screen and was not able to be played. After changing the preference file at\n \n\"~/.config/unity3d/Unbound\\ Creations/Headliner_\\ NoviNews/prefs\"\n\nto my native screen resolution, the game works fine. \nMore info at:\n https://steamcommunity.com/app/918820/discussions/0/1777136225031326027/",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1565384851,
+    "title": "Headliner: NoviNews",
+    "source": "protondb"
+  }
+]

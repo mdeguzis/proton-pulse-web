@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "556740",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "ATI Technologies Inc. Radeon RX 580",
+    "gpuDriver": "4.5.13540 Compatibility Profile Context 18.40.2.15",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Game will load and open to main menu, but will not recognize any game controllers I plugged in, despite having a pop up message saying to play with a controller. Game crashed in the options menu, and froze open trying to start a new game. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543361319,
+    "title": "LEGRAND LEGACY: Tale of the Fatebounds",
+    "source": "protondb"
+  }
+]

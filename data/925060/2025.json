@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "925060",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.17.5-pikaos)",
+    "gpuDriver": "4.6 Mesa 25.2.5 - PikaOS YellowBirb Mesa Stable (git-84c1064eef)",
+    "kernel": "6.17.5-pikaos",
+    "notes": "Everything works if it were native.",
+    "os": "PikaOS 4",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1761875626,
+    "title": "",
+    "source": "protondb"
+  }
+]

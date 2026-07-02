@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "257990",
+    "title": "Oozi: Earth Adventure",
+    "timestamp": 1535917305,
+    "rating": "Borked",
+    "notes": "Simply doesn't display anything (no black screen, no error message, just...nothing after \"now preparing to start\")",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "257990",
+    "cpu": "i7-4900MQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.6",
+    "kernel": "4.17.17-87.current",
+    "notes": "Does not start at all, no reaction. ",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15467 Mb",
+    "rating": "Borked",
+    "timestamp": 1536746081,
+    "title": "Oozi: Earth Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "257990",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Running .net 40 twice (second run click repair button)through winetricks enables the game to work, no music playing at all though even with xact, other sounds are as normal.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15989 Mb",
+    "rating": "Silver",
+    "timestamp": 1538480395,
+    "title": "Oozi: Earth Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "257990",
+    "title": "Oozi: Earth Adventure",
+    "timestamp": 1535902905,
+    "rating": "Borked",
+    "notes": "Simply doesn't display anything (no black screen, no error message, just...nothing after \"now preparing to start\")",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

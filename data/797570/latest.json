@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "797570",
+    "cpu": "Intel Core i7-3740QM @ 2.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA Quadro K2000M",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.8-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1633247733,
+    "title": "Go Morse Go! Arcade Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "431840",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Did not encounter anything that did not work as expected.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540667716,
+    "title": "3DRPG",
+    "source": "protondb"
+  },
+  {
+    "appId": "431840",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-43-generic",
+    "notes": "On first start: \"getthreadcontext failed\" (a common error message you may get with Unity Engine games and Nvidia drivers). Use PROTON_USE_WINED3D=1 %command% in Steam Launch Option and the game's message box shows up, letting you choose the usual Unity games options (resolutions/graphic quality). \n\nGame runs super bad and slow on my PC which can run Witcher 3 or Tomb Raider on max 60FPS and AC Odyssee at 30FPS clocked (1080p). This little game does not want to run at 30FPS with Wine/Proton on lowest settings.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "7 GB",
+    "rating": "Bronze",
+    "timestamp": 1544496805,
+    "title": "3DRPG",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

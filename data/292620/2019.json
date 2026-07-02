@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "292620",
+    "cpu": "Intel Core2 Duo     P8700  @ 2.53GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Mobile Intel GM45 Express Chipset",
+    "gpuDriver": "2.1 Mesa 18.2.8",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Doesn't launch. Game seems to be built on XNA framework.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1558884799,
+    "title": "Pressured",
+    "source": "protondb"
+  }
+]

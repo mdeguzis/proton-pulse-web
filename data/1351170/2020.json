@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1351170",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 740",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-38-generic",
+    "notes": "Works perfectly with proton 3.16-9",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1598762130,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1351170",
+    "cpu": "Intel Core i5-8265U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 20.1.6",
+    "kernel": "5.8.3-2-MANJARO",
+    "notes": "Works great with Proton 3.16-9, for some reason, the game won't start with Proton 5.0-9. Other than that, the game works flawlessly!",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1599113529,
+    "title": "",
+    "source": "protondb"
+  }
+]

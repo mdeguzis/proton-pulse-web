@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "418620",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.18.0-20-generic",
+    "notes": "The game itself runs fine, but the cut scenes are just black with subtitles. The opening movie runs fine, but not the ones that run after you start a game. I played past the first boss and into the second stage with no issues.",
+    "os": "Peppermint 10 Ten",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1558149936,
+    "title": "The TakeOver",
+    "source": "protondb"
+  }
+]

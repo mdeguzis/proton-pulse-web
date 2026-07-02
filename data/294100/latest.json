@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "294100",
+    "cpu": "Intel Core2 Duo     E8500  @ 3.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD CEDAR",
+    "gpuDriver": "3.1 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Warning to those running this native: ensure drivers are up to date. Game works fine for me, now. When my drivers were not fully updated, I could only see the menus and nothing else. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1559748053,
+    "title": "RimWorld",
+    "source": "protondb"
+  }
+]

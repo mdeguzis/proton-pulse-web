@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "724300",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-1-MANJARO",
+    "notes": "The game runs perfectly out of the box but the xbox controller is not recognized",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1546813652,
+    "title": "Roof Rage",
+    "source": "protondb"
+  },
+  {
+    "appId": "724300",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Works perfect out of the box. I had no issues with a logitech F310 controller.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2",
+    "protonVersionManual": "4.2",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1566970305,
+    "title": "Roof Rage",
+    "source": "protondb"
+  }
+]

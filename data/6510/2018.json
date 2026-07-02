@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "6510",
+    "title": "Lost Planet: Extreme Condition",
+    "timestamp": 1534959117,
+    "rating": "Borked",
+    "notes": "Gets pass Capcom screen then an error \"steam is not running please start steam then start the game\" ",
+    "os": "Linux Mint 18.3",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4590 / Nvidia GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "6510",
+    "title": "Lost Planet\u2122: Extreme Condition",
+    "timestamp": 1535708236,
+    "rating": "Borked",
+    "notes": "Capcom logo shows, then error \"steam is not running please start steam then start the game\" appears.",
+    "os": "Arch Linux x86_64 (Kernel: 4.18.4-arch1-1-vfio)",
+    "gpuDriver": "3.1 Mesa 18.1.73.1 Mesa 18.1.7",
+    "specs": "i7-7700K",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "6510",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Steam is not running error after splash screens",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541445399,
+    "title": "Lost Planet\u2122: Extreme Condition",
+    "source": "protondb"
+  },
+  {
+    "appId": "6510",
+    "title": "Lost Planet: Extreme Condition",
+    "timestamp": 1534944717,
+    "rating": "Borked",
+    "notes": "Gets pass Capcom screen then an error \"steam is not running please start steam then start the game\" ",
+    "os": "Linux Mint 18.3",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4590 / Nvidia GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "6510",
+    "title": "Lost Planet\u2122: Extreme Condition",
+    "timestamp": 1535693836,
+    "rating": "Borked",
+    "notes": "Capcom logo shows, then error \"steam is not running please start steam then start the game\" appears.",
+    "os": "Arch Linux x86_64 (Kernel: 4.18.4-arch1-1-vfio)",
+    "gpuDriver": "3.1 Mesa 18.1.73.1 Mesa 18.1.7",
+    "specs": "i7-7700K",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

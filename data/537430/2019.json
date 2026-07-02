@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "537430",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "Game launches and plays but cutscenes have no video. They have audio but just a black screen. Proton 4.11-3.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567798263,
+    "title": "Inner Chains",
+    "source": "protondb"
+  },
+  {
+    "appId": "537430",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.4.0-050400rc3-lowlatency",
+    "notes": "Game is out of the box playable but cut-scenes are just black. This can be fixed with Microsoft Media Foundation 64bit cab version. ",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-7",
+    "protonVersionManual": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1571506214,
+    "title": "Inner Chains",
+    "source": "protondb"
+  }
+]

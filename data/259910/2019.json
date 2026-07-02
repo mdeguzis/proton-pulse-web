@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "259910",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-31-generic",
+    "notes": "This game depends on old Physx driver. I could not make it work, despite installing Physx (and all other redist runtimes) via protontricks. Usual Proton command options do not work here. Linux 64-bit PC with 32-bit architecture installed. If somebody knows how to trick this game to start, do please share. It has also issues on Windows 10, but runs fine with Win8.1 on my PCs.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1571147257,
+    "title": "Farming Giant",
+    "source": "protondb"
+  }
+]

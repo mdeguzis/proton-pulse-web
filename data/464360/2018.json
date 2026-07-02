@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "464360",
+    "title": "3030 Deathwar Redux - A Space Odyssey",
+    "timestamp": 1535065062,
+    "rating": "Silver",
+    "notes": "Perhaps some render order issues, otherwise perfect",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6500",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "464360",
+    "cpu": "Intel Core i7-4700MQ @ 2.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GT 755M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1541869193,
+    "title": "3030 Deathwar Redux - A Space Odyssey",
+    "source": "protondb"
+  },
+  {
+    "appId": "464360",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-5526420 2018-11-11 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Seems to run perfectly.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542163456,
+    "title": "3030 Deathwar Redux - A Space Odyssey",
+    "source": "protondb"
+  },
+  {
+    "appId": "464360",
+    "cpu": "Intel Core i7-4700MQ @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GT 755M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1542487175,
+    "title": "3030 Deathwar Redux - A Space Odyssey",
+    "source": "protondb"
+  },
+  {
+    "appId": "464360",
+    "title": "3030 Deathwar Redux - A Space Odyssey",
+    "timestamp": 1535050662,
+    "rating": "Silver",
+    "notes": "Perhaps some render order issues, otherwise perfect",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6500",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "6420",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.1.15-300.fc30.x86_64",
+    "notes": "Menus and videos run normally, but the game itself is less than 1 frame per second. Tested in X and Wayland.",
+    "os": "Freedesktop.org 18.08.33 (Flatpak runtime)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1563470249,
+    "title": "Nexus - The Jupiter Incident",
+    "source": "protondb"
+  },
+  {
+    "appId": "6420",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-5c6077221d)",
+    "kernel": "5.2.4-arch1-1-ARCH",
+    "notes": "The game is broken with Proton versions 4.* . During gameplay screen updates only on alt-tab. D9VK helps, but cause crashes when trying to look at some objects. \nFIX: use proton 3.16",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1564688028,
+    "title": "Nexus - The Jupiter Incident",
+    "source": "protondb"
+  },
+  {
+    "appId": "6420",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "No issues.  Frame rates are good",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-4",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1568787348,
+    "title": "Nexus - The Jupiter Incident",
+    "source": "protondb"
+  }
+]

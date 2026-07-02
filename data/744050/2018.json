@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "744050",
+    "title": "Space Invaders Extreme",
+    "timestamp": 1535230246,
+    "rating": "Silver",
+    "notes": "Requires Steam Launch option \"PROTON_NO_D3D11=1 %command%\" to run. The game works but freezes frequently for a second.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "744050",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.6-041806-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel",
+    "notes": "Game runs flawlessly with good performance. Updating to a more recent Kernel was necessary to get rid of micro stutter/freezes in this game on my computer.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "3.6-7 Beta",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Space Invaders Extreme",
+    "source": "protondb"
+  },
+  {
+    "appId": "744050",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Works perfectly.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32113 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538545998,
+    "title": "Space Invaders Extreme",
+    "source": "protondb"
+  },
+  {
+    "appId": "744050",
+    "title": "Space Invaders Extreme",
+    "timestamp": 1535215846,
+    "rating": "Silver",
+    "notes": "Requires Steam Launch option \"PROTON_NO_D3D11=1 %command%\" to run. The game works but freezes frequently for a second.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

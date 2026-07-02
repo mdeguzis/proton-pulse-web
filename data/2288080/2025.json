@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2288080",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "You MUST switch to Proton 5.13-6 or the game either won't load or flashes.",
+    "os": "SteamOS Holo",
+    "protonVersion": "5.13-6",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1744613392,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2288080",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.4-200.fc41.x86_64",
+    "notes": "Tried Proton GE/Experimental/9.0-4. Says I'm playing and then I see a flash of the game and it immediately closes.",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1751267899,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2288080",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.4-200.fc41.x86_64",
+    "notes": "Missing textures, poor resolution",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1751269216,
+    "title": "",
+    "source": "protondb"
+  }
+]

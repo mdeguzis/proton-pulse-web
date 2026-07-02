@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "770370",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Won't start. \"Loading error - failed to load: audio/se/Blow1.ogg\" and then \"TypeError: Cannot read property \"undefined\" of undefined\" ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554768238,
+    "title": "Adventures of Dragon",
+    "source": "protondb"
+  }
+]

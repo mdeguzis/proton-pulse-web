@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "27940",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game is fully playable with no tweaks. Flickering text may be a cosmetic issue or part of the design of the game. Even if it is an error, it doesn't impact readability and game is still fully playable.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558917657,
+    "title": "Dead Horde",
+    "source": "protondb"
+  },
+  {
+    "appId": "27940",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4",
+    "notes": "Mouse isn't working at all.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1559131279,
+    "title": "Dead Horde",
+    "source": "protondb"
+  }
+]

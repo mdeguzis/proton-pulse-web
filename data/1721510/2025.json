@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1721510",
+    "cpu": "12th Gen Intel Core i9-12900HK",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "Ran this game using; Proton Experimental - fail, Proton Hotfix - fail, GE-Proton10-27 - fail, GE-Proton10-26 - fail, Proton 10.0-3 - fail, Proton 9.0-4 - game spash screen with music was playing - started a new quest - game crashed with error, will continue to try other tricks using bottles",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1766913014,
+    "title": "",
+    "source": "protondb"
+  }
+]

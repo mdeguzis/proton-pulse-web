@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "497850",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "runs perfectly",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7958 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537305508,
+    "title": "8-Bit Hordes",
+    "source": "protondb"
+  },
+  {
+    "appId": "497850",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs but numerical values such as number of units or $ values appear as ##0; unable to get multiplayer to function or connect; online replays functioned; adding an anti-aliasing value in the video settings causes the screen to displace in a horizontal bar pattern.  Occasional temporary screen freezes occur when Alt-Tabbing. (Unknown values and no multiplayer prevent a Silver rating).",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "32113 Mb",
+    "rating": "Bronze",
+    "timestamp": 1539594062,
+    "title": "8-Bit Hordes",
+    "source": "protondb"
+  }
+]

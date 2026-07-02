@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "625470",
+    "title": "The Red Stare",
+    "timestamp": 1535224155,
+    "rating": "Silver",
+    "notes": "HTC Vive. Everything works, but very bad performance",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "625470",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.14.87-1-lts",
+    "notes": "Occasional minor slowdowns. Major slowdown the first time you start using the in-game camera, but that seems to vanish after a few seconds. Tested with Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545067234,
+    "title": "The Red Stare",
+    "source": "protondb"
+  },
+  {
+    "appId": "625470",
+    "title": "The Red Stare",
+    "timestamp": 1535209755,
+    "rating": "Silver",
+    "notes": "HTC Vive. Everything works, but very bad performance",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "814580",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-48-generic",
+    "notes": "The game didn't start out of the box but I was able to run it by using a native Linux installation of Dosbox. Just install it and use the dosbox.conf of the game as an argument.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1565824709,
+    "title": "Where Time Stood Still",
+    "source": "protondb"
+  }
+]

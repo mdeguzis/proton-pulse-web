@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "627350",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.4.14-200.fc38.x86_64",
+    "notes": "Perfect with LAVFilters and quartz",
+    "os": "Fedora Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1694638436,
+    "title": "",
+    "source": "protondb"
+  }
+]

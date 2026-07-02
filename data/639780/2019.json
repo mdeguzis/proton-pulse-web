@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "639780",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Proton 4.2-1 seems to have fixed all issues. Game runs (and exits) perfectly.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1553916146,
+    "title": "Deep Space Waifu: FLAT JUSTICE",
+    "source": "protondb"
+  },
+  {
+    "appId": "639780",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.19.34-1-MANJARO",
+    "notes": "Did a full playthrough, got all the achievements and used the Steam Controller. Game launched and played perfectly. If you play fullscreen and Alt+Tab/lose focus on the game window, you have to maximise the window again - otherwise you'll just see a mostly blank window. This issue could be present on Windows as far as I'm aware anyway. As with all other entries in the series, the game now exists without any errors too.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556652207,
+    "title": "Deep Space Waifu: FLAT JUSTICE",
+    "source": "protondb"
+  }
+]

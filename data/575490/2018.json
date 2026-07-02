@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "575490",
+    "cpu": "Pentium(R) Dual-Core  CPU      E5300  @ 2.60GHz",
+    "gpu": "GeForce GT 240/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.106",
+    "kernel": "4.15.0-33-generic",
+    "notes": "when you press start it starts it shows you go ingame and then crashes with an access violation",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "3944 Mb",
+    "rating": "Borked",
+    "timestamp": 1536767457,
+    "title": "Let's Draw",
+    "source": "protondb"
+  }
+]

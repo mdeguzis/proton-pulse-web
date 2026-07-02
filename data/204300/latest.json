@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "204300",
+    "cpu": "Intel Core i5-2300 @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "runs as well at 60FPS with proton, using directx, but will get more than 100FPS you use D9VK",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1562712930,
+    "title": "Awesomenauts - the 2D moba",
+    "source": "protondb"
+  }
+]

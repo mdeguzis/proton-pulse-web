@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "530930",
+    "cpu": "AMD Ryzen 5 1600X Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.8-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.0",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "Controller not detected, otherwise fully works",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16057 Mb",
+    "rating": "Gold",
+    "timestamp": 1537473864,
+    "title": "Soulblight",
+    "source": "protondb"
+  },
+  {
+    "appId": "530930",
+    "cpu": "Intel(R) Core(TM) i5-2400S CPU @ 2.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "It works, but the performance is quite bad for being a top down perspective game",
+    "os": "KDE neon User Edition 5.13 (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5928 Mb",
+    "rating": "Silver",
+    "timestamp": 1537474316,
+    "title": "Soulblight",
+    "source": "protondb"
+  }
+]

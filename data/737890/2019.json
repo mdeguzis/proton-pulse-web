@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "737890",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.11-arch2-1-ARCH",
+    "notes": "I'm able to play the game, but I get stuck in the tutorial ship after finishing it, the audio for the cutscene plays but the scene does not change.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1551656782,
+    "title": "Catastronauts",
+    "source": "protondb"
+  }
+]

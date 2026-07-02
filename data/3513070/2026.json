@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3513070",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 13.0.1, DRM 3.42, 5.15.0-56-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Fun shmup with no tinkering needed",
+    "os": "Linux Mint 21",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1778985854,
+    "title": "",
+    "source": "protondb"
+  }
+]

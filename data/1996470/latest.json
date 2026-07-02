@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1996470",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.6-200.fc42.x86_64",
+    "notes": "Works fine and i was able to get 100%, only some minor problems",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1752926576,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3060170",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 535.230.02",
+    "kernel": "6.11.0-21-generic",
+    "notes": "",
+    "os": "Ubuntu 24.10",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1744527646,
+    "title": "",
+    "source": "protondb"
+  }
+]

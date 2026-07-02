@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "673260",
+    "cpu": "12th Gen Intel Core i5-12500",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 16.0.6, DRM 3.54, 6.5.6-arch2-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.5.6-arch2-1",
+    "notes": "It loads onto a black screen and does nothing from there",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1706060334,
+    "title": "Starblast",
+    "source": "protondb"
+  }
+]

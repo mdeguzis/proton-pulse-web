@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3659990",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.15.2-2-cachyos",
+    "notes": "works great OTB",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1750997039,
+    "title": "",
+    "source": "protondb"
+  }
+]

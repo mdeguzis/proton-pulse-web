@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "545040",
+    "cpu": "Intel Core i5-2300 @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-2-MANJARO",
+    "notes": "First installed with proton 4.2.7 and it just gave a grey screen (borked). Switched to 3.16-9 and it runs perfectly. No issues detected. No tweaks needed.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561286003,
+    "title": "Feather",
+    "source": "protondb"
+  },
+  {
+    "appId": "545040",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "Had to specifically set 3.16-9 to run, the default Proton causes a hang at a bright white screen.  Runs perfectly following this selection.",
+    "os": "Manjaro Linux",
+    "protonVersion": "3.16-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1571073101,
+    "title": "Feather",
+    "source": "protondb"
+  }
+]

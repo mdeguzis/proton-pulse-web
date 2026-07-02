@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "253190",
+    "title": "Kingdom Wars 2: Battles",
+    "timestamp": 1535188885,
+    "rating": "Silver",
+    "notes": "Main menu items might get stuck (use \u201cPROTON_NO_ESYNC=1 %command%\u201d in Launch option)\nPerformance-wise playable framerates with occasional dips",
+    "os": "Manjaro (4.18.3-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.51-1",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "253190",
+    "title": "Kingdom Wars 2: Battles",
+    "timestamp": 1535174485,
+    "rating": "Silver",
+    "notes": "Main menu items might get stuck (use \u201cPROTON_NO_ESYNC=1 %command%\u201d in Launch option)\nPerformance-wise playable framerates with occasional dips",
+    "os": "Manjaro (4.18.3-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.51-1",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

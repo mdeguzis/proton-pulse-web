@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "301150",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "crashes on startup with: Unhandled exception: page fault on read access to 0x0000000f in 32-bit code (0x00677b19)",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1543061615,
+    "title": "The Treasures of Montezuma 4",
+    "source": "protondb"
+  }
+]

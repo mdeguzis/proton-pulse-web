@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "346630",
+    "title": "Plazma Being",
+    "timestamp": 1535660509,
+    "rating": "Gold",
+    "notes": "Works perfectly with \"PROTON_NO_D3D11=1 %command%\" in steam launch options.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "346630",
+    "title": "Plazma Being",
+    "timestamp": 1535646109,
+    "rating": "Gold",
+    "notes": "Works perfectly with \"PROTON_NO_D3D11=1 %command%\" in steam launch options.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

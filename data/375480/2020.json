@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "375480",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.7",
+    "kernel": "5.7.0-3-MANJARO",
+    "notes": "I was not expecting this to work, but I hit play and it popped up in windowed mode.  Changed to full screen and played.  Cool.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1598468225,
+    "title": "Chronicon",
+    "source": "protondb"
+  }
+]

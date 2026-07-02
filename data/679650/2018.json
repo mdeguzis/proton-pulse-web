@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "679650",
+    "title": "dead_file.exe",
+    "timestamp": 1535567563,
+    "rating": "Borked",
+    "notes": "Won't start. Under Wine it throws stack overflow (0009:err:seh:setup_exception_record stack overflow 1424 bytes in thread 0009 eip 7bc45856 esp 00550da0 stack 0x550000-0x551000-0x750000)",
+    "os": "Arch Linux 64bit (Kernel 4.18.1-arch1-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Intel Core i5-3427U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "679650",
+    "title": "dead_file.exe",
+    "timestamp": 1535553163,
+    "rating": "Borked",
+    "notes": "Won't start. Under Wine it throws stack overflow (0009:err:seh:setup_exception_record stack overflow 1424 bytes in thread 0009 eip 7bc45856 esp 00550da0 stack 0x550000-0x551000-0x750000)",
+    "os": "Arch Linux 64bit (Kernel 4.18.1-arch1-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Intel Core i5-3427U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

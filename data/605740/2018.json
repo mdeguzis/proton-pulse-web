@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "605740",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Text missing from menu, crashes when selecting first menu option (user32.dll caused an Access Violation (0xc0000005))",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542438957,
+    "title": "Flashing Lights - Police Fire EMS",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1607300",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 13.0.1, DRM 3.47, 5.19.13-tkg-bmq)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.13-tkg-bmq",
+    "notes": "Demo plays flawless",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1664981339,
+    "title": "March March!",
+    "source": "protondb"
+  }
+]

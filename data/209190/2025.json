@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "209190",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 19.1.7, DRM 3.59, 6.12.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "%$s1 MB",
+    "rating": "silver",
+    "timestamp": 1750607630,
+    "title": "Stealth Bastard Deluxe",
+    "source": "protondb"
+  }
+]

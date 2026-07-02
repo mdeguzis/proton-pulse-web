@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1811600",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Arc B580 (BMG G21)",
+    "gpuDriver": "4.6 Mesa 26.0.0",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Works well",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1774202235,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "234650",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-c989661985)",
+    "kernel": "5.0.12-arch1-1-ARCH",
+    "notes": "Game works native and on Proton out of the box. I installed manually D9VK and it worked as well fine with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557080716,
+    "title": "Shadowrun Returns",
+    "source": "protondb"
+  }
+]

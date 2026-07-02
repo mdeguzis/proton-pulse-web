@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "486990",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Attempted to join online (just the hub world, not a match). Banned for improper usage. As for offline mode, the game runs, but I had to lower some of the settings just to get an acceptable framerate.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1550942444,
+    "title": "Jump Stars",
+    "source": "protondb"
+  },
+  {
+    "appId": "486990",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "Has server issues but no crashes just very slow level transitions.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1552201757,
+    "title": "Jump Stars",
+    "source": "protondb"
+  },
+  {
+    "appId": "486990",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Runs smoothly, some input issues. But certainly runs.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1560218916,
+    "title": "Jump Stars",
+    "source": "protondb"
+  }
+]

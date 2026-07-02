@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1168690",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 525.116.04",
+    "kernel": "5.15.0-76-generic",
+    "notes": "Doesnt load at all.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1748628460,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1090390",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Low framerate makes the game unplayable.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1573409904,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "416210",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, ACO, DRM 3.63, 6.8.0-78-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.0-devel",
+    "kernel": "6.8.0-78-generic",
+    "notes": "Works great under Proton. Native is broken",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1756410810,
+    "title": "Block'hood",
+    "source": "protondb"
+  }
+]

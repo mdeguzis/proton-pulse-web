@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "406130",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.14-arch1-1-ARCH, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "notes": "Not launching at all, doesn't even show a window. Installs .NET Runtime during first time setup, so that's likely to be the issue",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16034 Mb",
+    "rating": "Borked",
+    "timestamp": 1540117225,
+    "title": "DarkMaus",
+    "source": "protondb"
+  }
+]

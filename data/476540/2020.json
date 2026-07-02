@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "476540",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.5-arch1-1",
+    "notes": "Used a custom proton version as the game would otherwise immediately crash. Plays out perfectly with the indicated proton version.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1600033228,
+    "title": "",
+    "source": "protondb"
+  }
+]

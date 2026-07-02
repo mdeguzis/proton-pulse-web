@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1306630",
+    "cpu": "Intel Core i9-14900HX",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (RPL-S)",
+    "gpuDriver": "4.6 Mesa 25.0.2",
+    "kernel": "6.13.8-201.nobara.fc41.x86_64",
+    "notes": "The native version works as it should",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1746447891,
+    "title": "Lost Ruins",
+    "source": "protondb"
+  }
+]

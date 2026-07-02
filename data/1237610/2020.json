@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1237610",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.34",
+    "notes": "All works, but like its predecessor the in game movies don't work beyond audio.",
+    "os": "Unknown",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1593573738,
+    "title": "",
+    "source": "protondb"
+  }
+]

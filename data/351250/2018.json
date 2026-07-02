@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "351250",
+    "title": "Avalanche 2: Super Avalanche",
+    "timestamp": 1535097207,
+    "rating": "Silver",
+    "notes": "Will not register controller after unplugging and plugging in once more.",
+    "os": "Ubuntu 18.04 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700HQ/GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "351250",
+    "title": "Avalanche 2: super avalanche",
+    "timestamp": 1535377997,
+    "rating": "Platinum",
+    "notes": "Plays exactly as it should",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "351250",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "Works perfectly out of the box. Tested with xbox360 controller.",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16065 MB",
+    "rating": "Platinum",
+    "timestamp": 1539955987,
+    "title": "Avalanche 2: Super Avalanche",
+    "source": "protondb"
+  },
+  {
+    "appId": "351250",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541468497,
+    "title": "Avalanche 2: Super Avalanche",
+    "source": "protondb"
+  },
+  {
+    "appId": "351250",
+    "title": "Avalanche 2: Super Avalanche",
+    "timestamp": 1535082807,
+    "rating": "Silver",
+    "notes": "Will not register controller after unplugging and plugging in once more.",
+    "os": "Ubuntu 18.04 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700HQ/GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "351250",
+    "title": "Avalanche 2: super avalanche",
+    "timestamp": 1535363597,
+    "rating": "Platinum",
+    "notes": "Plays exactly as it should",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "451650",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "5.0.7-114.current",
+    "notes": "Performance is probably a bit choppier than on Windows, I don't have a Windows install to test but framerate isn't perfect. Occasionally freezes up for a moment, but only occasionally and so far not while just watching a video, mostly while making certain changes in the settings.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556244627,
+    "title": "Whirligig VR Media Player",
+    "source": "protondb"
+  },
+  {
+    "appId": "451650",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "5.0.7-114.current",
+    "notes": "Performance can be choppy. Sometimes freezes, especially on videos on higher resolution - I've found some that make it entirely choke. But generally videos play fine so long as they're not too high res.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1556251121,
+    "title": "Whirligig VR Media Player",
+    "source": "protondb"
+  }
+]

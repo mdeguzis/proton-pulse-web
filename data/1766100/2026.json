@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1766100",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, ACO, DRM 3.64, 6.19.7-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.2-arch2.3",
+    "kernel": "6.19.7-1-cachyos",
+    "notes": "It doesn't take a miracle to make it work; you can still play it despite the performance issues.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "24 GB",
+    "rating": "silver",
+    "timestamp": 1773774754,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "560300",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.9-zen1-2-zen",
+    "notes": "Seems solid enough with minor issues (fullscreen tabbing). Controllers can be a bit weird, but that's a steam issue not specific to the game",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1686841263,
+    "title": "",
+    "source": "protondb"
+  }
+]

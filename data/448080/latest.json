@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "448080",
+    "title": "Fibbage XL",
+    "timestamp": 1536370264,
+    "rating": "Platinum",
+    "notes": "This game actually runs natively",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 7 2700X / RX 580",
+    "protonVersion": "None",
+    "source": "protondb"
+  },
+  {
+    "appId": "448080",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Connect detected fine via jackbox.tv on my phone.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541622045,
+    "title": "Fibbage XL",
+    "source": "protondb"
+  },
+  {
+    "appId": "448080",
+    "title": "Fibbage XL",
+    "timestamp": 1536355864,
+    "rating": "Platinum",
+    "notes": "This game actually runs natively",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 7 2700X / RX 580",
+    "protonVersion": "None",
+    "source": "protondb"
+  }
+]

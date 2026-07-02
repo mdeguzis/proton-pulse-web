@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "49330",
+    "cpu": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs perfectly apart from a few black textures on some islands. I played the Gold edition but I assume the standard one should work just fine too.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15969 Mb",
+    "rating": "Silver",
+    "timestamp": 1537708148,
+    "title": "Pirates of Black Cove",
+    "source": "protondb"
+  },
+  {
+    "appId": "49330",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Plays fine. Black glitch on the island.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541874002,
+    "title": "Pirates of Black Cove",
+    "source": "protondb"
+  },
+  {
+    "appId": "49330",
+    "cpu": "Intel Core i7-4930K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Only tried the demo. No issues.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543232101,
+    "title": "Pirates of Black Cove",
+    "source": "protondb"
+  }
+]

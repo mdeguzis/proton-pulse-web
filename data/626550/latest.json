@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "626550",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "The game runs, but there are texture issues with WINED3D and framerate issues with DXVK. Will test again later.",
+    "os": "SteamOS 2.0",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1571066998,
+    "title": "Prodigy Tactics",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

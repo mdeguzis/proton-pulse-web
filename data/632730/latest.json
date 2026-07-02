@@ -1,0 +1,15 @@
+[
+  {
+    "appId": "632730",
+    "cpu": "i7-6700 CPU @ 3.40GHz",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.6-041806-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "notes": "The game can't run in full screen, and it crashes as soon as i start joining to a server.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Proton 3.7-6",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "Base Defense",
+    "source": "protondb"
+  }
+]

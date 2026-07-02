@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1759870",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-53-generic",
+    "notes": "Works out of the box for me. It might steal some cpu resources while out of focus but that might also just be my system.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1739908337,
+    "title": "The Repair House: Restoration Sim",
+    "source": "protondb"
+  },
+  {
+    "appId": "1759870",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 535.247.01",
+    "kernel": "5.15.0-151-generic",
+    "notes": "Works fine.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "128 GB",
+    "rating": "gold",
+    "timestamp": 1759335858,
+    "title": "The Repair House: Restoration Sim",
+    "source": "protondb"
+  },
+  {
+    "appId": "1759870",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 570.195.03",
+    "kernel": "6.8.0-87-generic",
+    "notes": "Tried some different proton versions but it starts up, the screen is all black, and the rest of the systems chugs heavily.  Some music starts and then finally it crashes.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1762633897,
+    "title": "The Repair House: Restoration Sim",
+    "source": "protondb"
+  }
+]

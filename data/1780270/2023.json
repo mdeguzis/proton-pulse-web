@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1780270",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 535.98",
+    "kernel": "6.4.11-200.fc38.x86_64",
+    "notes": "There is no reason to play, if your old save can not be loaded.",
+    "os": "Fedora Linux 38 (Workstation Edition)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1693648650,
+    "title": "",
+    "source": "protondb"
+  }
+]

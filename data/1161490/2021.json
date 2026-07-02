@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1161490",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.11.12-zen1-1-zen",
+    "notes": "El juego parece nativo. El modo online funciona.",
+    "os": "RebornOS Linux",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1618177178,
+    "title": "MotoGP\u212220",
+    "source": "protondb"
+  },
+  {
+    "appId": "1161490",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.8.0-50-generic",
+    "notes": "freeze with proton 6.3-2 in main menu or gamma correction parameters\nBut it work with proton 5.0-10",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1618905722,
+    "title": "MotoGP\u212220",
+    "source": "protondb"
+  },
+  {
+    "appId": "1161490",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.11.0-37-generic",
+    "notes": "I've played for almost an hour and a half, and the game runs out of the box for me",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1634147294,
+    "title": "MotoGP\u212220",
+    "source": "protondb"
+  }
+]

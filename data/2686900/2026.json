@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2686900",
+    "cpu": "AMD Ryzen 7 6800U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, rembrandt, ACO, DRM 3.64, 6.17.7-ba29.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.3",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "Perfectly playable in Gaming Mode.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "24 GB",
+    "rating": "silver",
+    "timestamp": 1775532763,
+    "title": "",
+    "source": "protondb"
+  }
+]

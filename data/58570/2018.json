@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "58570",
+    "title": "The Next Big Thing",
+    "timestamp": 1535020293,
+    "rating": "Borked",
+    "notes": "shows error: \"error with direct sound. Close all programmes using your audio card\"",
+    "os": "Manjaro Unstable 64-bit (Kernel 4.18.3-1-clear)",
+    "gpuDriver": "Mesa 18.1.6 ",
+    "specs": "Ryzen 3 2200G / Radeon Vega",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "58570",
+    "title": "The Next BIG Thing",
+    "timestamp": 1535478849,
+    "rating": "Gold",
+    "notes": "All seems to work, but didn't play for long. Goes less smooth on proton 3.7-4 than in 3.7-3",
+    "os": "Manjaro Stable 64-bit (Kernel 4.16.18-1)",
+    "gpuDriver": "Mesa 18.16",
+    "specs": "i7-950/RX470",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "58570",
+    "title": "The Next Big Thing",
+    "timestamp": 1535005893,
+    "rating": "Borked",
+    "notes": "shows error: \"error with direct sound. Close all programmes using your audio card\"",
+    "os": "Manjaro Unstable 64-bit (Kernel 4.18.3-1-clear)",
+    "gpuDriver": "Mesa 18.1.6 ",
+    "specs": "Ryzen 3 2200G / Radeon Vega",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "58570",
+    "title": "The Next BIG Thing",
+    "timestamp": 1535464449,
+    "rating": "Gold",
+    "notes": "All seems to work, but didn't play for long. Goes less smooth on proton 3.7-4 than in 3.7-3",
+    "os": "Manjaro Stable 64-bit (Kernel 4.16.18-1)",
+    "gpuDriver": "Mesa 18.16",
+    "specs": "i7-950/RX470",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

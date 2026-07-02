@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "587100",
+    "cpu": "AMD A10-7850K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Fonts are too wide, and run out of the dialog boxes. Deleting \"lang/en/system/font.bin\" from the install folder fixes the issue, and text looks as expected. ",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1549363717,
+    "title": "Ys SEVEN",
+    "source": "protondb"
+  }
+]

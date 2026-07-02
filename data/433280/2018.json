@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "433280",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "3.0 Mesa 17.3.9",
+    "kernel": "4.14.78-desktop-1.mga6",
+    "notes": "Game install and launch without any tweak.\nBut it feels like it plays at low FPS, and every time you discover some fog of war it lag.\nDisable Esync, didn't change anything.",
+    "os": "Mageia 6",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1542558253,
+    "title": "Warlords Battlecry III",
+    "source": "protondb"
+  }
+]

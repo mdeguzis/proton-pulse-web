@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "358090",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc6-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900rc6-generic",
+    "notes": "Won't start, tried with different proton launch options, and disabling Steam overlay.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15960 Mb",
+    "rating": "Borked",
+    "timestamp": 1539197467,
+    "title": "D4: Dark Dreams Don\u2019t Die -Season One-",
+    "source": "protondb"
+  },
+  {
+    "appId": "358090",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Game doesn't start",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540398074,
+    "title": "D4: Dark Dreams Don\u2019t Die -Season One-",
+    "source": "protondb"
+  },
+  {
+    "appId": "358090",
+    "cpu": "AMD Phenom II X3 720",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.12.14-lp150.12.22-default",
+    "notes": "Seems to work fine after installing wine-mono: \"http://dl.winehq.org/wine/wine-mono/4.7.3/\". I used the \"PROTON_DUMP_DEBUG_COMMANDS=1 %command%\" launch option to get the 'run' script and then executed in a terminal \"/tmp/proton_$USER/run msiexec /i fullpathtowine-mono.msi\". I also renamed the DotNet's exe in the '_CommonRedist' folder inside the game's directory, otherwise steam attempts to install it everytime.",
+    "os": "openSUSE Leap 15.0",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1542283036,
+    "title": "D4: Dark Dreams Don\u2019t Die -Season One-",
+    "source": "protondb"
+  }
+]

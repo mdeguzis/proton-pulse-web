@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "621530",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1 - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Game launches with a black screen, there is audio but no video. Tried different Proton launch options.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547572608,
+    "title": "One Star",
+    "source": "protondb"
+  }
+]

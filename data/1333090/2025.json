@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1333090",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 16.0.6, DRM 3.54, 6.6.1-artix1-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.1-artix1-1",
+    "notes": "Doesn't launch by default",
+    "os": "Artix Linux",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1766184939,
+    "title": "",
+    "source": "protondb"
+  }
+]

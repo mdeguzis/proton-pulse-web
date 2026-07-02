@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1327080",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.60-gentoo",
+    "notes": "Worked flawlessly using the Gentoo steam-overlay",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "5.13-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1604414498,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1327080",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.60-gentoo",
+    "notes": "Unable to run in Flatpak version of Steam",
+    "os": "Freedesktop.org 20.08.0 (Flatpak runtime)",
+    "protonVersion": "5.13-1",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1604414694,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1327080",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.2.1",
+    "kernel": "5.9.1-zen2-1-zen",
+    "notes": "Just using GE's Proton version makes it entirely playable.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1604566131,
+    "title": "",
+    "source": "protondb"
+  }
+]

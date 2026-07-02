@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "560820",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-25-generic",
+    "notes": "starts, but very low frames, so it is unplayable ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566316060,
+    "title": "The Saint: Abyss of Despair",
+    "source": "protondb"
+  }
+]

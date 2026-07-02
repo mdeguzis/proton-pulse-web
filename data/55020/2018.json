@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "55020",
+    "title": "Air Forte",
+    "timestamp": 1535394987,
+    "rating": "Borked",
+    "notes": "Nothing",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-2620m/intel sandbridge mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "55020",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Does not start.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15989 Mb",
+    "rating": "Borked",
+    "timestamp": 1537312042,
+    "title": "Air Forte",
+    "source": "protondb"
+  },
+  {
+    "appId": "55020",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.9-92.current",
+    "notes": "Doesn't start.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7977 Mb",
+    "rating": "Borked",
+    "timestamp": 1538753778,
+    "title": "Air Forte",
+    "source": "protondb"
+  },
+  {
+    "appId": "55020",
+    "title": "Air Forte",
+    "timestamp": 1535380587,
+    "rating": "Borked",
+    "notes": "Nothing",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-2620m/intel sandbridge mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

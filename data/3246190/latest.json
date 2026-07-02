@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3246190",
+    "cpu": "AMD Ryzen 9 9950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.17.3-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.5-cachyos1.2",
+    "kernel": "6.17.3-3-cachyos",
+    "notes": "Basically the sequel to Yeah, You Want Those Games, Right? 2. Works out of the box just like the last 2.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "47 GB",
+    "rating": "gold",
+    "timestamp": 1761063167,
+    "title": "",
+    "source": "protondb"
+  }
+]

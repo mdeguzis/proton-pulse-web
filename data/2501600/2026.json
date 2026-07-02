@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2501600",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.3 (git-b235da6781)",
+    "kernel": "6.10.10-1.surface.fc40.x86_64",
+    "notes": "Disregard my older report, works perfectly!",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1774300552,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "746710",
+    "title": "Cypher",
+    "timestamp": 1535803856,
+    "rating": "Platinum",
+    "notes": "Fabulous. No problems found.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6500 / 1060 6gb",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "746710",
+    "title": "Cypher",
+    "timestamp": 1535959314,
+    "rating": "Gold",
+    "notes": "Whenever you move the mouse the camera moves to the right, so you have to compensate for it when making small movements. Some audio stuttering.",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Ryzen 7 1700 / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "746710",
+    "cpu": "Intel(R) Core(TM) i5-8400 CPU @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538835861,
+    "title": "Cypher",
+    "source": "protondb"
+  },
+  {
+    "appId": "746710",
+    "title": "Cypher",
+    "timestamp": 1535789456,
+    "rating": "Platinum",
+    "notes": "Fabulous. No problems found.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6500 / 1060 6gb",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "746710",
+    "title": "Cypher",
+    "timestamp": 1535944914,
+    "rating": "Gold",
+    "notes": "Whenever you move the mouse the camera moves to the right, so you have to compensate for it when making small movements. Some audio stuttering.",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Ryzen 7 1700 / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4090330",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.2-2-cachyos",
+    "notes": "Works very well, just some symbols doesn't show up on UI, instead they show up with white blank box. Doensn't effect the gameplay.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1777709145,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "492090",
+    "title": "A-Train PC Classic / \u307f\u3093\u306a\u306eA\u5217\u8eca\u3067\u884c\u3053\u3046PC",
+    "timestamp": 1535322077,
+    "rating": "Borked",
+    "notes": "Game itself seems to run fine.\nIt's the UI that is the problem, it doesn't register clicks after the main menu.",
+    "os": "Gentoo Stable 17.0 64-bit (Kernel 4.14.65)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-6700HQ / GTX 1070 Mobile",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "492090",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.14-gentoo",
+    "notes": "Same as with Proton 3.7, game launches but you are unable to click certain UI elements that prevent you from actually starting a game.",
+    "os": "Gentoo Base System release 2.4.1",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541282381,
+    "title": "A-Train PC Classic / \u307f\u3093\u306a\u306eA\u5217\u8eca\u3067\u884c\u3053\u3046PC",
+    "source": "protondb"
+  },
+  {
+    "appId": "492090",
+    "title": "A-Train PC Classic / \u307f\u3093\u306a\u306eA\u5217\u8eca\u3067\u884c\u3053\u3046PC",
+    "timestamp": 1535307677,
+    "rating": "Borked",
+    "notes": "Game itself seems to run fine.\nIt's the UI that is the problem, it doesn't register clicks after the main menu.",
+    "os": "Gentoo Stable 17.0 64-bit (Kernel 4.14.65)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-6700HQ / GTX 1070 Mobile",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

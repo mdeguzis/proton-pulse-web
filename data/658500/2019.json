@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "658500",
+    "cpu": "Intel Core i3-4160 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD OLAND",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "won't work, and I dont know how to tweak.., this error code pop up..,\n\nFailed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1570519019,
+    "title": "Ultra Space Battle Brawl",
+    "source": "protondb"
+  }
+]

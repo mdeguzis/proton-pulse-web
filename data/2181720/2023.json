@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2181720",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Great game to play on deck works out of the box no tinkering needed unless you want to improve battery life.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1680453909,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2181720",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Game runs out of the box",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1682415316,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2181720",
+    "cpu": "AMD Ryzen 7 PRO 4750G with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (renoir, LLVM 15.0.7, DRM 3.49, 6.2.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.0.0",
+    "kernel": "6.2.8-arch1-1",
+    "notes": "Funciona totalmente y sin errores como un navito",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-2",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1683503012,
+    "title": "",
+    "source": "protondb"
+  }
+]

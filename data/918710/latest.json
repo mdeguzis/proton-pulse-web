@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "918710",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-10-generic",
+    "notes": "No apparent issues, other than performance not being too good (but I hear it's like that in Windows, too). Playable!",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541862454,
+    "title": "Zero Caliber VR Demo",
+    "source": "protondb"
+  }
+]

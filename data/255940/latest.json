@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "255940",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.5",
+    "kernel": "5.0.7-300.fc30.x86_64",
+    "notes": "Runs great out of the box",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555350060,
+    "title": "The 11th Hour",
+    "source": "protondb"
+  },
+  {
+    "appId": "255940",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.5",
+    "kernel": "5.0.7-300.fc30.x86_64",
+    "notes": "No issue encountered",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555869487,
+    "title": "The 11th Hour",
+    "source": "protondb"
+  }
+]

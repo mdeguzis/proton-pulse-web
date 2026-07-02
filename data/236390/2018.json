@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "236390",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-4-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "3.7-8",
+    "ram": "32 GB",
+    "rating": "pending",
+    "timestamp": 1541612211,
+    "title": "War Thunder",
+    "source": "protondb"
+  },
+  {
+    "appId": "236390",
+    "cpu": "Intel Core i7         860  @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.15.0-42-generic",
+    "notes": "",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "3.16-5",
+    "ram": "8 GB",
+    "rating": "pending",
+    "timestamp": 1545162291,
+    "title": "War Thunder",
+    "source": "protondb"
+  }
+]

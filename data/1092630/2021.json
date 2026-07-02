@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1092630",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 20.0.0-devel",
+    "kernel": "5.3.13-300.fc31.x86_64",
+    "notes": "",
+    "os": "Unknown",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1616041609,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1092630",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.1-arch1-1",
+    "notes": "Works perfectly fine.",
+    "os": "GamerOS 23\u3000(48bc215)",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1619555988,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1092630",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.10.0-9-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1637959732,
+    "title": "",
+    "source": "protondb"
+  }
+]

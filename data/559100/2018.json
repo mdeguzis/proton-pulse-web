@@ -1,0 +1,143 @@
+[
+  {
+    "appId": "559100",
+    "title": "Phantom Doctrine",
+    "timestamp": 1535124224,
+    "rating": "Borked",
+    "notes": "Shows a black screen with the mouse pointer before crashing to desktop.",
+    "os": "Gentoo Stable 17.0 64-bit (Kernel 4.14.65)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i7-6700HQ / GTX 1070 Mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "title": "Phantom Doctrine",
+    "timestamp": 1535315881,
+    "rating": "Borked",
+    "notes": "crashes immediately after showing splash screen, probably when trying to switch to full screen",
+    "os": "OpenSuSE Tumbleweed",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1800X / Radeon R9 290X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "title": "Phantom Doctrine",
+    "timestamp": 1535406942,
+    "rating": "Silver",
+    "notes": "Running with a \"-WINDOWED\" flag gets the game running, borderless window mode works as well, fullscreen crashes on start\nStable 60FPS\nAmbient sounds(rain, wind, car engine, etc) play way louder than all other, gets real annoying real quick",
+    "os": "Gentoo Stable 17.0 64-bit (Kernel 4.14.65)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-6700HQ / GTX 1070 Mobile",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "cpu": "Intel Xeon E5-2650 v4 @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Quadro M2000",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Runs with default settings. Graphic seems to be good, however maybe slower than expected. Sound is garbage. Barely playable.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Bronze",
+    "timestamp": 1540981753,
+    "title": "Phantom Doctrine",
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel (git-3bd239f71d)",
+    "kernel": "4.18.15-1-default",
+    "notes": "https://github.com/ValveSoftware/Proton/issues/54 | \nxact needs to be installed for proper sound",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541180099,
+    "title": "Phantom Doctrine",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "Works flawlessly without any workarouns w/ new FAudio support in latest Proton.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545982840,
+    "title": "Phantom Doctrine",
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "os": "Antergos Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1546170405,
+    "title": "Phantom Doctrine",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "title": "Phantom Doctrine",
+    "timestamp": 1535109824,
+    "rating": "Borked",
+    "notes": "Shows a black screen with the mouse pointer before crashing to desktop.",
+    "os": "Gentoo Stable 17.0 64-bit (Kernel 4.14.65)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i7-6700HQ / GTX 1070 Mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "title": "Phantom Doctrine",
+    "timestamp": 1535301481,
+    "rating": "Borked",
+    "notes": "crashes immediately after showing splash screen, probably when trying to switch to full screen",
+    "os": "OpenSuSE Tumbleweed",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1800X / Radeon R9 290X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "title": "Phantom Doctrine",
+    "timestamp": 1535392542,
+    "rating": "Silver",
+    "notes": "Running with a \"-WINDOWED\" flag gets the game running, borderless window mode works as well, fullscreen crashes on start\nStable 60FPS\nAmbient sounds(rain, wind, car engine, etc) play way louder than all other, gets real annoying real quick",
+    "os": "Gentoo Stable 17.0 64-bit (Kernel 4.14.65)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-6700HQ / GTX 1070 Mobile",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

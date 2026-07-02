@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "259570",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.11-042011-generic",
+    "notes": "The game/engine requires the windows media foundation dll: mfplat.dll, MFPlay.dll, and mfreadwrite.dll, in order to run. If you get these three files from a windows 7 computer and place them in the same folder as the games executable, the game will start. DXVK will work if you have a graphics card with 4gb of ram or more. If your graphics card has less than 4gb of ram then you need to add PROTON_USE_WINED3D=1 to the steam launch options, or else when trying to spawn in the world the game will crash with a c++ error.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551682175,
+    "title": "EDEN STAR",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

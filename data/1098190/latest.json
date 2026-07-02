@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1098190",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Menu is visible but the environment is only black. It is almost impossible to play through the massive lags.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1569956173,
+    "title": "VersaillesVR | the Palace is yours",
+    "source": "protondb"
+  }
+]

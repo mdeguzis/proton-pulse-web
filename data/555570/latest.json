@@ -1,0 +1,62 @@
+[
+  {
+    "appId": "555570",
+    "cpu": "AMD A8-7600 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Anti-Cheat does't work.\nLog: https://pastebin.com/K39eBcW2",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1556739332,
+    "title": "Infestation: The New Z",
+    "source": "protondb"
+  },
+  {
+    "appId": "555570",
+    "cpu": "AMD A8-7600 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Anti-Cheat does't work. Log:https://pastebin.com/hPJtECNK",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-9)",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1556740088,
+    "title": "Infestation: The New Z",
+    "source": "protondb"
+  },
+  {
+    "appId": "555570",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.4",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "error en fredaikis anticheat, no me permite jugar",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567308859,
+    "title": "Infestation: The New Z",
+    "tweaks": {
+      "disableD3d10": true,
+      "disableD3d11": true,
+      "disableEsync": true,
+      "disableFsync": true,
+      "largeAddressAware": true,
+      "oldGlString": true,
+      "useWineD3d11": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

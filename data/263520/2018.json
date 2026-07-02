@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "263520",
+    "title": "Enola",
+    "timestamp": 1535240869,
+    "rating": "Borked",
+    "notes": "Nothing happens when trying to start the game, tried different proton launch options and disabling Steam overlay.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "263520",
+    "title": "Enola",
+    "timestamp": 1535226469,
+    "rating": "Borked",
+    "notes": "Nothing happens when trying to start the game, tried different proton launch options and disabling Steam overlay.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

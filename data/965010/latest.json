@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "965010",
+    "cpu": "AMD A10-5750M APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.1 Mesa 18.2.8",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Game runs and visuals work fine but fonts are garbled horribly. Likely a font fix is needed with protontricks. I was not able to fix it. 3.7 ran it best as visual effects were glitched with later versions of Proton.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "3.7-8",
+    "ram": "15 GB",
+    "rating": "Bronze",
+    "timestamp": 1559468557,
+    "title": "Trinoline All Ages Version",
+    "source": "protondb"
+  }
+]

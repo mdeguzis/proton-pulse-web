@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "405830",
+    "title": "Turok 2: Seeds of Evil",
+    "timestamp": 1536044705,
+    "rating": "Gold",
+    "notes": "Use public Beta (LInux support)",
+    "os": "Debian 4.17.0-3-amd64",
+    "gpuDriver": "NVIDIA 296.45",
+    "specs": "i7 2700K, TGX 1070 OC",
+    "protonVersion": "Linux native i think.",
+    "source": "protondb"
+  },
+  {
+    "appId": "405830",
+    "title": "Turok 2: Seeds of Evil",
+    "timestamp": 1536107306,
+    "rating": "Borked",
+    "notes": "Error on launch: Invalid app configuration",
+    "os": "  elementary OS 0.4.1 Loki (Kernel 4.45.0-33)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "AMD FX-8350 Eight-Core ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "405830",
+    "title": "Turok 2: Seeds of Evil",
+    "timestamp": 1536030305,
+    "rating": "Gold",
+    "notes": "Use public Beta (LInux support)",
+    "os": "Debian 4.17.0-3-amd64",
+    "gpuDriver": "NVIDIA 296.45",
+    "specs": "i7 2700K, TGX 1070 OC",
+    "protonVersion": "Linux native i think.",
+    "source": "protondb"
+  },
+  {
+    "appId": "405830",
+    "title": "Turok 2: Seeds of Evil",
+    "timestamp": 1536092906,
+    "rating": "Borked",
+    "notes": "Error on launch: Invalid app configuration",
+    "os": "  elementary OS 0.4.1 Loki (Kernel 4.45.0-33)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "AMD FX-8350 Eight-Core ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

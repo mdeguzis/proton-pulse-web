@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "444650",
+    "cpu": "Intel Core i3-3110M @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Would not start without using either WineD3D11 or D3D9, I initially got better performance with D3D9. However, whichever I used the game froze after just a few minutes.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1545507735,
+    "title": "Endciv",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

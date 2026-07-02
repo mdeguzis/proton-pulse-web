@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "889740",
+    "cpu": "AMD Athlon(tm) 64 X2 Dual Core Processor 5000+",
+    "gpu": "NVIDIA Corporation GeForce 8500 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Unplayably laggy. However, the files include a browser version (windows_content/www/index.html) that runs very smoothly in Firefox.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3945 Mb",
+    "rating": "Borked",
+    "timestamp": 1537361266,
+    "title": "The Oni Sellsword",
+    "source": "protondb"
+  }
+]

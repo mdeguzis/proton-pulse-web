@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "370840",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Giving it a bronze so far. It works without making any changes, but it crashes to the desktop when starting a single game. When playing \"Be a pro\", everything works really well though. ",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1544535187,
+    "title": "Rugby Challenge 3",
+    "source": "protondb"
+  }
+]

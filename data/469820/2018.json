@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "469820",
+    "title": "Genital Jousting",
+    "timestamp": 1535093527,
+    "rating": "Platinum",
+    "notes": "flawless. stuff of nightmares.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600k / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "469820",
+    "cpu": "i7-8700K CPU @ 3.70GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.4-steamvr-generic",
+    "notes": "The game works great. Xbox One Controller does not work.",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15960 MB",
+    "rating": "Silver",
+    "timestamp": 1537034421,
+    "title": "Genital Jousting",
+    "source": "protondb"
+  },
+  {
+    "appId": "469820",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Perfectly playable with keyboard but can't get controllers to work",
+    "os": "Antergos",
+    "protonVersion": "3.7-6",
+    "ram": "15984 Mb",
+    "rating": "Gold",
+    "timestamp": 1537317711,
+    "title": "Genital Jousting",
+    "source": "protondb"
+  },
+  {
+    "appId": "469820",
+    "cpu": "Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "notes": "Won't get past the \"Content Warning\" screen. Weirdly enough though, I can still press Esc to quit out...\n\nTried both keyboard and controller. Neither worked.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32115 Mb",
+    "rating": "Borked",
+    "timestamp": 1537773024,
+    "title": "Genital Jousting",
+    "source": "protondb"
+  },
+  {
+    "appId": "469820",
+    "title": "Genital Jousting",
+    "timestamp": 1535079127,
+    "rating": "Platinum",
+    "notes": "flawless. stuff of nightmares.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600k / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

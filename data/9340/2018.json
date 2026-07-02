@@ -1,0 +1,45 @@
+[
+  {
+    "appId": "9340",
+    "title": "Company of Heroes: Opposing Fronts",
+    "timestamp": 1535236478,
+    "rating": "Platinum",
+    "notes": "works fine",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "9340",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Initially there was just a black screen with game sound.  Used PROTON_NO_D3D11=1 %command%   and the game worked perfectly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541623051,
+    "title": "Company of Heroes: Opposing Fronts",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9340",
+    "title": "Company of Heroes: Opposing Fronts",
+    "timestamp": 1535222078,
+    "rating": "Platinum",
+    "notes": "works fine",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

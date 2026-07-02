@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "6370",
+    "title": "Bloodline Champions",
+    "timestamp": 1535286791,
+    "rating": "Borked",
+    "notes": ".net  issue , needs 3.5 etc..",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Intel i5-7200U / HD Graphics 620 (Kaby Lake GT2)",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "6370",
+    "title": "Bloodline Champions",
+    "timestamp": 1535272391,
+    "rating": "Borked",
+    "notes": ".net  issue , needs 3.5 etc..",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Intel i5-7200U / HD Graphics 620 (Kaby Lake GT2)",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

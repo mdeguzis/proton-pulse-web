@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "514490",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1555771501,
+    "title": "Ultimate Word Search 2: Letter Boxed",
+    "source": "protondb"
+  },
+  {
+    "appId": "514490",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558574230,
+    "title": "Ultimate Word Search 2: Letter Boxed",
+    "source": "protondb"
+  }
+]

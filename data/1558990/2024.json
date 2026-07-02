@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1558990",
+    "cpu": "Intel Core i5-10600K @ 4.10GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 18.1.5, DRM 3.57, 6.8.8-1-default)",
+    "gpuDriver": "4.6 Mesa 24.0.5",
+    "kernel": "6.8.8-1-default",
+    "notes": "With the official patch (1.03) the Launcher starts (with glitched fonts). After clicking on \"Launch\" the intro video plays and ends in a black screen. With the community patch not even the video plays. Clickin \"Launch\" just closes the Launcher.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1715877144,
+    "title": "",
+    "source": "protondb"
+  }
+]

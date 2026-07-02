@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "799510",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Game runs perfectly, but far too fast to actually play comfortably. I haven't found a way to slow the game down to the correct speed.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1546048855,
+    "title": "Squidlit",
+    "source": "protondb"
+  }
+]

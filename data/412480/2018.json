@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "412480",
+    "cpu": "Intel Core m5-6Y54 @ 1.10GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 515 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "No tweaks, no issues, runs flawlessly; albeit gamepad support wasn't tested",
+    "os": "Ubuntu 18.10 (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543318415,
+    "title": "Turtle Odyssey",
+    "source": "protondb"
+  }
+]

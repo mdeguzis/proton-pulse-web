@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "227760",
+    "title": "March of the Eagles",
+    "timestamp": 1535468109,
+    "rating": "Borked",
+    "notes": ".NET first setup shows up every time I hit play",
+    "os": "ARchlinux (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7 4770s / r9 285",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "227760",
+    "title": "March of the Eagles",
+    "timestamp": 1535453709,
+    "rating": "Borked",
+    "notes": ".NET first setup shows up every time I hit play",
+    "os": "ARchlinux (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7 4770s / r9 285",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

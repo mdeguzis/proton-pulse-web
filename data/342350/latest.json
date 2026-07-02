@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "342350",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.3.6-200.fc30.x86_64",
+    "notes": "Not sure what rating to give. The game seems to work fine. The mouse control seems quite ok, but sometimes clicking or using the wheels change the direction in which I'm looking. I don't know if it's a feature or not. I'm just troed what seems to be a prologue in an infinite dark space with ghosts. I don't know it there should be a background or not.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1571566248,
+    "title": "Into The Gloom",
+    "source": "protondb"
+  }
+]

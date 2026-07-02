@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proton Pulse | Smart Proton Launch Configurations for Steam Deck</title>
+<meta name="description" content="Stop copying and pasting launch flags. View weighted hardware scores, filter compatibility reports by your GPU and driver, and apply Proton launch options directly to your Steam Deck library.">
+<meta property="og:title" content="Proton Pulse | Smart Proton Launch Configurations for Steam Deck">
+<meta property="og:description" content="Stop copying and pasting launch flags. View weighted ProtonDB hardware scores, filter compatibility reports by your GPU and driver, and apply Proton launch options directly to your Steam Deck library.">
+<meta property="og:type" content="website">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/base.css?v=45c7e06d">
+<link rel="stylesheet" href="css/shared/topbar.css?v=2d6b5e52">
+<link rel="stylesheet" href="css/shared/site.css?v=e05a0f73">
+<link rel="stylesheet" href="css/shared/filters.css?v=26d5b7e1">
+<link rel="stylesheet" href="css/shared/cards.css?v=16c748ed">
+<link rel="stylesheet" href="css/index/index.css?v=c8fe17a2">
+</head>
+<body>
+
+<!-- Shared topbar (sprite, banner, nav row, mobile drawer) is injected by topbar.js -->
+<!-- Note: legacy sidebar + auth chip markup intentionally removed; topbar.js owns the chrome -->
+
+
+<!-- Main content -->
+<div class="main-content">
+  <div class="main-inner">
+
+    <div class="welcome-header">
+      <!-- Hero atom: full-strength 3-ring atom with 6 orbiting electrons.
+           Anchored to the right side so the eyebrow + title + subtitle have
+           breathing room on the left. Rings use solid stroke (not faded) so
+           the structure reads at a glance instead of looking like noise -->
+      <svg class="hero-atom" viewBox="0 0 800 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs>
+          <radialGradient id="heroNucleus">
+            <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
+            <stop offset="40%"  stop-color="#aedcff" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#66c0f4" stop-opacity="0.7"/>
+          </radialGradient>
+          <radialGradient id="heroElectronCyan">
+            <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
+            <stop offset="40%"  stop-color="#aedcff" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#66c0f4" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="heroElectronGreen">
+            <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
+            <stop offset="40%"  stop-color="#dffb56" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#beee11" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="heroElectronMagenta">
+            <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
+            <stop offset="40%"  stop-color="#ff8acf" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#ff3aa5" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="pulseGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%"   stop-color="#beee11" stop-opacity="0"/>
+            <stop offset="50%"  stop-color="#beee11" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#beee11" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+
+        <!-- atom anchored further right (~80% from left) so it gives the
+             title/subtitle copy more breathing room on the left -->
+        <g class="hero-atom-group" transform="translate(640 180)">
+          <!-- 3 rings at different rotations, solid stroke for presence -->
+          <ellipse class="hero-ring hero-ring-a" cx="0" cy="0" rx="180" ry="62"
+                   fill="none" stroke="#66c0f4" stroke-width="1.2" opacity="0.55"/>
+          <ellipse class="hero-ring hero-ring-b" cx="0" cy="0" rx="180" ry="62"
+                   fill="none" stroke="#beee11" stroke-width="1.2" opacity="0.42"
+                   transform="rotate(60)"/>
+          <ellipse class="hero-ring hero-ring-c" cx="0" cy="0" rx="180" ry="62"
+                   fill="none" stroke="#ff3aa5" stroke-width="1.2" opacity="0.32"
+                   transform="rotate(-60)"/>
+
+          <!-- nucleus dot with glow -->
+          <circle class="hero-nucleus" cx="0" cy="0" r="7" fill="url(#heroNucleus)"/>
+
+          <!-- 6 electrons orbiting on the 3 rings, 2 per ring at offset phases.
+               Each motion path matches its ring's rx/ry/rotation -->
+
+          <!-- ring A electrons (horizontal, cyan) -->
+          <circle r="4" fill="url(#heroElectronCyan)">
+            <animateMotion dur="6s" repeatCount="indefinite"
+                           path="M 180 0 A 180 62 0 1 1 -180 0 A 180 62 0 1 1 180 0"/>
+          </circle>
+          <circle r="3" fill="url(#heroElectronCyan)" opacity="0.85">
+            <animateMotion dur="6s" begin="-3s" repeatCount="indefinite"
+                           path="M 180 0 A 180 62 0 1 1 -180 0 A 180 62 0 1 1 180 0"/>
+          </circle>
+
+          <!-- ring B electrons (rotated +60deg, green) -->
+          <circle r="4" fill="url(#heroElectronGreen)">
+            <animateMotion dur="7.5s" begin="-1s" repeatCount="indefinite"
+                           path="M 180 0 A 180 62 60 1 1 -180 0 A 180 62 60 1 1 180 0"/>
+          </circle>
+          <circle r="3" fill="url(#heroElectronGreen)" opacity="0.85">
+            <animateMotion dur="7.5s" begin="-4.5s" repeatCount="indefinite"
+                           path="M 180 0 A 180 62 60 1 1 -180 0 A 180 62 60 1 1 180 0"/>
+          </circle>
+
+          <!-- ring C electrons (rotated -60deg, magenta - the cyberpunk pop) -->
+          <circle r="4" fill="url(#heroElectronMagenta)">
+            <animateMotion dur="5.2s" begin="-2s" repeatCount="indefinite"
+                           path="M 180 0 A 180 62 -60 1 1 -180 0 A 180 62 -60 1 1 180 0"/>
+          </circle>
+          <circle r="3" fill="url(#heroElectronMagenta)" opacity="0.85">
+            <animateMotion dur="5.2s" begin="-4.6s" repeatCount="indefinite"
+                           path="M 180 0 A 180 62 -60 1 1 -180 0 A 180 62 -60 1 1 180 0"/>
+          </circle>
+        </g>
+
+        <!-- pulse waveform anchored to the bottom of the hero -->
+        <path class="pulse-line"
+              d="M 0 330 L 120 330 L 140 310 L 160 340 L 180 320 L 200 330 L 800 330"
+              fill="none" stroke="url(#pulseGrad)" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+
+      <div class="eyebrow">Open-Source Compatibility Platform</div>
+      <h1 class="welcome-title">Proton <span class="pulse-word">Pulse</span></h1>
+      <p class="welcome-sub">
+        100% open-source compatibility data for Steam on Linux. Real hardware
+        reports, voted configs, and a fully transparent data pipeline. Every
+        line of code, every report, every dataset is public. Built by the
+        community, free forever.
+      </p>
+    </div>
+
+    <!-- Games-by-store snapshot. Populated by js/index/main.js from
+         search-index.json. The full numbers (Pulse Reports, ProtonDB
+         coverage, etc.) live on stats.html so the home page stays a
+         quick visual orientation rather than a dashboard. -->
+    <div class="store-counts" id="store-counts" aria-label="Games tracked per store" hidden>
+      <a class="store-count" data-store="steam" href="app.html#steam">
+        <span class="store-count-num" id="store-count-steam">—</span>
+        <span class="store-count-label">Steam</span>
+      </a>
+      <a class="store-count" data-store="gog" href="app.html#gog">
+        <span class="store-count-num" id="store-count-gog">—</span>
+        <span class="store-count-label">GOG</span>
+      </a>
+      <a class="store-count" data-store="epic" href="app.html#epic">
+        <span class="store-count-num" id="store-count-epic">—</span>
+        <span class="store-count-label">Epic</span>
+      </a>
+      <div class="store-count-bar" id="store-count-bar" aria-hidden="true"></div>
+      <a class="store-count-link" href="stats.html">See full stats &rarr;</a>
+    </div>
+
+    <!-- Primary CTAs: keep the landing focused on browse / get-plugin. The
+         fuller story (value props, ProtonDB comparison, open-source details)
+         lives on about.html so first load stays uncluttered. -->
+    <div class="welcome-cta">
+      <a class="cta-btn cta-primary" href="app.html">Browse compatibility reports</a>
+      <a class="cta-btn" href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener">Get the Steam Deck plugin</a>
+    </div>
+    <p class="welcome-learn-more">New here? <a href="about.html">Learn what Proton Pulse is and how it compares to ProtonDB</a>.</p>
+
+    <!-- Popular games on Steam: most-played Steam titles we have Proton data
+         for. Populated by js/index/main.js from most_played.json (produced by
+         the pipeline). Hidden until data loads so the section never shows empty. -->
+    <section class="popular-games" id="popular-games" hidden>
+      <div class="pg-head">
+        <div class="pg-filter-wrap" id="pg-filter-wrap">
+          <button class="pg-filter-toggle-btn" id="pg-filter-toggle" type="button" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M4.25 5.61C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39C20.25 4.95 19.8 4 18.95 4H5.04C4.2 4 3.74 4.95 4.25 5.61z"/></svg>
+            Filters<span class="pg-filter-badge" id="pg-filter-badge" hidden></span>
+          </button>
+          <div class="pg-filter-panel" id="pg-filter-panel">
+            <div class="pg-filter-group">
+              <span class="pg-filter-group-label">Store</span>
+              <button class="pg-filter pg-store-btn" data-store="all" id="pg-store-all" type="button">All</button>
+              <button class="pg-filter pg-filter--active pg-store-btn" data-store="steam" id="pg-store-steam" type="button">Steam</button>
+              <button class="pg-filter pg-store-btn" data-store="gog" id="pg-store-gog" type="button">GOG</button>
+              <button class="pg-filter pg-store-btn" data-store="epic" id="pg-store-epic" type="button">Epic</button>
+            </div>
+            <div class="pg-filter-group">
+              <span class="pg-filter-group-label">Rating</span>
+              <button class="pg-filter pg-filter--active" id="pg-filter-rated" type="button" aria-pressed="true">Rated <span class="pg-filter-count" id="pg-rated-count">0</span></button>
+              <button class="pg-filter" id="pg-filter-unrated" type="button" aria-pressed="false">Not Rated <span class="pg-filter-count" id="pg-unrated-count">0</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="pg-view-controls">
+          <div class="pg-size-toggle" id="pg-size-toggle" title="Card size">
+            <button class="pg-size-btn" data-size="sm" type="button" title="Small cards">S</button>
+            <button class="pg-size-btn" data-size="md" type="button" title="Medium cards">M</button>
+            <button class="pg-size-btn" data-size="lg" type="button" title="Large cards">L</button>
+            <button class="pg-size-btn pg-size-btn--desktop-only" data-size="xl" type="button" title="Extra large cards">XL</button>
+          </div>
+          <div class="pg-layout-toggle">
+            <button class="pg-layout-btn" data-layout="list" title="List of horizontal cards">List</button>
+            <button class="pg-layout-btn active" data-layout="grid" title="Grid of Steam-style tiles (default)">Grid</button>
+          </div>
+        </div>
+      </div>
+      <div class="section-label pg-section-heading" id="pg-section-label">Popular on Steam</div>
+      <p class="popular-games-sub" id="pg-sub">Steam's most-played games and how they run on Linux through Proton.</p>
+      <div class="pg-list" id="pg-list"></div>
+      <div class="pg-load-more-row" id="pg-load-more"></div>
+    </section>
+  </div>
+
+  <footer class="sitefooter">
+    GPL-3.0 open source - built on <a href="https://www.protondb.com/" target="_blank" rel="noopener">ProtonDB</a> community data |
+    <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener">Data repo</a> |
+    <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener">Decky plugin repo</a> |
+    Updated daily via GitHub Actions |
+    <a href="privacy.html">Privacy</a> |
+    <a href="terms.html">Terms</a>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=79bf62c6"></script>
+<script src="js/lib/analytics.js?v=e6dfbad8"></script>
+<script src="js/lib/topbar.js?v=449040e3"></script>
+<script src="js/lib/toast.js?v=7bb23014"></script>
+<script type="module" src="js/index/main.js?v=691a8097"></script>
+</body>
+</html>

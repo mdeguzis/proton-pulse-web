@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "664430",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "4.20.16-112.current",
+    "notes": "Loading screen takes up to 5 minutes to register a button press. Performance is generally good with approx 20% penalty when compared to Windows. No Online tested but multiple offline game types.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552815625,
+    "title": "WWE 2K18",
+    "source": "protondb"
+  }
+]

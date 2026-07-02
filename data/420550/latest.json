@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "420550",
+    "title": "Super Arcade Football",
+    "timestamp": 1534956952,
+    "rating": "Borked",
+    "notes": "Error dialog says it could not initialize with DirectX11",
+    "os": "Fedora 29",
+    "gpuDriver": "amdgpu / Mesa 18.1.5",
+    "specs": "AMD Bonaire GPU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "420550",
+    "title": "Super Arcade Football",
+    "timestamp": 1535185640,
+    "rating": "Platinum",
+    "notes": "Runs at 60 FPS",
+    "os": "Kubuntu 18.04.1 LTS 64 Bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7-3770 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "420550",
+    "title": "Super Arcade Football",
+    "timestamp": 1535199628,
+    "rating": "Silver",
+    "notes": "Works now. Mesa and proton updated since first report",
+    "os": "Fedora 29",
+    "gpuDriver": "AMDGPU/Mesa 18.2.0~rc3",
+    "specs": "AMD Bonaire GPU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "420550",
+    "title": "Super Arcade Football",
+    "timestamp": 1534942552,
+    "rating": "Borked",
+    "notes": "Error dialog says it could not initialize with DirectX11",
+    "os": "Fedora 29",
+    "gpuDriver": "amdgpu / Mesa 18.1.5",
+    "specs": "AMD Bonaire GPU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "420550",
+    "title": "Super Arcade Football",
+    "timestamp": 1535171240,
+    "rating": "Platinum",
+    "notes": "Runs at 60 FPS",
+    "os": "Kubuntu 18.04.1 LTS 64 Bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7-3770 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "420550",
+    "title": "Super Arcade Football",
+    "timestamp": 1535185228,
+    "rating": "Silver",
+    "notes": "Works now. Mesa and proton updated since first report",
+    "os": "Fedora 29",
+    "gpuDriver": "AMDGPU/Mesa 18.2.0~rc3",
+    "specs": "AMD Bonaire GPU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

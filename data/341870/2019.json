@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "341870",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.22.05",
+    "kernel": "4.20.10-042010-generic",
+    "notes": "After proton 3.16-7 the game works almost perfect. The joystick now works fine but there's a small delay betwen the button press and the action in game. Also my xbox one controller is identified as a generic control. But the game is perfectly playable now.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "protonVersionManual": "3.16-7",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1550372624,
+    "title": "TEMBO THE BADASS ELEPHANT",
+    "source": "protondb"
+  },
+  {
+    "appId": "341870",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.17-1-MANJARO",
+    "notes": "The game works with perfect sound and graphics. But the joystick (xbox one) is recognized as a generic one and there's a huge input lag delay betwen the button press and the action. It seems that the problem got worse since the last proton update.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1553826545,
+    "title": "TEMBO THE BADASS ELEPHANT",
+    "source": "protondb"
+  },
+  {
+    "appId": "341870",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.15-1-MANJARO",
+    "notes": "Runs perfectly",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569048887,
+    "title": "TEMBO THE BADASS ELEPHANT",
+    "source": "protondb"
+  }
+]

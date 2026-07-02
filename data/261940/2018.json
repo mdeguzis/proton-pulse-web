@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "261940",
+    "title": "The Mysterious Cities of Gold -Secret Paths",
+    "timestamp": 1535486733,
+    "rating": "Borked",
+    "notes": "Won't boot past installing .NET Framework",
+    "os": "Kubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-2860QM / NVIDIA Quadro 1000M",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "261940",
+    "title": "The Mysterious Cities of Gold -Secret Paths",
+    "timestamp": 1535472333,
+    "rating": "Borked",
+    "notes": "Won't boot past installing .NET Framework",
+    "os": "Kubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-2860QM / NVIDIA Quadro 1000M",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

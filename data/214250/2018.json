@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "214250",
+    "title": "I Am Alive",
+    "timestamp": 1535613710,
+    "rating": "Platinum",
+    "notes": "Max Settings at 1080p and runs perfectly.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD FX-8350 / Radeon HD 7950",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "214250",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs great with vsync off. With vsync on, performance with max graphics is under 22fps.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15923 Mb",
+    "rating": "Gold",
+    "timestamp": 1537423995,
+    "title": "I Am Alive",
+    "source": "protondb"
+  },
+  {
+    "appId": "214250",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Flawless.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15923 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537858735,
+    "title": "I Am Alive",
+    "source": "protondb"
+  },
+  {
+    "appId": "214250",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc5-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900rc5-generic",
+    "notes": "Runs out of the box with performance (mediocre) similar to native. First time launching the game, there was a warning message \"no audio device detected\" but everything worked anyway. Not sure if this also happens the first time on Windows.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15960 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538004533,
+    "title": "I Am Alive",
+    "source": "protondb"
+  },
+  {
+    "appId": "214250",
+    "title": "I Am Alive",
+    "timestamp": 1535599310,
+    "rating": "Platinum",
+    "notes": "Max Settings at 1080p and runs perfectly.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD FX-8350 / Radeon HD 7950",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

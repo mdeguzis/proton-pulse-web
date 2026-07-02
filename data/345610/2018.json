@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "345610",
+    "title": "The Fruit of Grisaia",
+    "timestamp": 1535659131,
+    "rating": "Gold",
+    "notes": "works fine / no error",
+    "os": "Fedora 28 (kernel: 4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "E3-1230v2 / GTX 970",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "345610",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) R7 300 Series (BONAIRE, DRM 3.26.0, 4.18.5-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "notes": "It's playable but has some graphical glitches and sometimes the text disappears",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7.5-beta",
+    "rating": "Silver",
+    "timestamp": "1536451200",
+    "title": "The Fruit of Grisaia",
+    "source": "protondb"
+  },
+  {
+    "appId": "345610",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Ran without any adjustments to proton or wine.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545272361,
+    "title": "The Fruit of Grisaia",
+    "source": "protondb"
+  },
+  {
+    "appId": "345610",
+    "title": "The Fruit of Grisaia",
+    "timestamp": 1535644731,
+    "rating": "Gold",
+    "notes": "works fine / no error",
+    "os": "Fedora 28 (kernel: 4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "E3-1230v2 / GTX 970",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

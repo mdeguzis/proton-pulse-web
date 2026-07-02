@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "503240",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.0-rc3",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Tried disable esync, tried wine3d but no luck",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1553394762,
+    "title": "Hurricane",
+    "source": "protondb"
+  }
+]

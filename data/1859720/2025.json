@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1859720",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.5, DRM 3.59, 6.12.7-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.2",
+    "kernel": "6.12.7-200.fc41.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 41 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1736589141,
+    "title": "",
+    "source": "protondb"
+  }
+]

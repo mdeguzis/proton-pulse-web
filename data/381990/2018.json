@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "381990",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 970M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.24",
+    "kernel": "4.15.0-33-generic",
+    "notes": "It takes a long time to load but once running it works just fine. ",
+    "os": "Pop!_OS 18.04 LTS (64 bit)",
+    "protonVersion": "3.76-beta",
+    "ram": "7928 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536536341,
+    "title": "Dragon Saga",
+    "source": "protondb"
+  },
+  {
+    "appId": "381990",
+    "cpu": "Intel(R) Core(TM) i5-7300HQ CPU @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 with Max-Q Design/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs perfectly. The launcher/patcher even works properly, which is rare for MMOs.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7842 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539514051,
+    "title": "Dragon Saga",
+    "source": "protondb"
+  }
+]

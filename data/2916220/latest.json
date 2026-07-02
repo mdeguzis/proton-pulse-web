@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2916220",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.15.28-1-MANJARO, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.15.28-1-MANJARO",
+    "notes": "Yes, but frequent saving is needed in case of crash",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1742419054,
+    "title": "",
+    "source": "protondb"
+  }
+]

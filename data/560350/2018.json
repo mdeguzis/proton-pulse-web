@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "560350",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz",
+    "gpu": "GeForce 9700M GTS/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.106",
+    "kernel": "4.15.0-33-generic",
+    "notes": "The launcher works, but then the DosBox window gets stuck trying to execute SIERRAH.EXE.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7972 Mb",
+    "rating": "Borked",
+    "timestamp": 1536763696,
+    "title": "Police Quest: SWAT",
+    "source": "protondb"
+  },
+  {
+    "appId": "560350",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.6-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.6-1-MANJARO",
+    "notes": "Works fine",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.4-6",
+    "ram": "16042 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536769386,
+    "title": "Police Quest: SWAT",
+    "source": "protondb"
+  }
+]

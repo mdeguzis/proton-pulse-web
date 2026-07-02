@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "814680",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.5-200.fc34.x86_64",
+    "notes": "*Game runs with Proton* Mediocre perf.-graph. glitches: startup menu && no cutscenes. Slow, didn't compare to native because it doesn't work",
+    "os": "Fedora 34 (Workstation Edition) x86_64",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1627642300,
+    "title": "Unbound: Worlds Apart",
+    "source": "protondb"
+  }
+]

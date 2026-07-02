@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "699180",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "opens only black window on start",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546174021,
+    "title": "Human-powered spacecraft",
+    "source": "protondb"
+  }
+]

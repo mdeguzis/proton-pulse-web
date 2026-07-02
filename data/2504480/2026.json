@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2504480",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.4-200.fc44.x86_64",
+    "notes": "It works well. There is some stuttering but I think that's just Unreal",
+    "os": "Fedora Linux 44 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1778422508,
+    "title": "",
+    "source": "protondb"
+  }
+]

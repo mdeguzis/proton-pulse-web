@@ -1,0 +1,68 @@
+[
+  {
+    "appId": "438180",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.5-arch1-1-ARCH",
+    "os": "Arch",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1565882394,
+    "title": "Super Mustache",
+    "source": "protondb"
+  },
+  {
+    "appId": "438180",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "runs as expected.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566231307,
+    "title": "Super Mustache",
+    "source": "protondb"
+  },
+  {
+    "appId": "438180",
+    "cpu": "Intel Xeon           E5450  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.2.11-050211-generic",
+    "notes": "\u043d\u0435 \u0437\u0430\u043f\u0443\u0441\u0442\u0438\u043b\u0430\u0441\u044c",
+    "os": "Ubuntu 18.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1571515316,
+    "title": "Super Mustache",
+    "source": "protondb"
+  },
+  {
+    "appId": "438180",
+    "cpu": "Intel Xeon           E5450  @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.2.11-050211-generic",
+    "notes": "\u0437\u0430\u043f\u0443\u0441\u0442\u0438\u043b\u0430\u0441\u044c \u043f\u043e\u0441\u043b\u0435 \u0442\u0432\u0438\u043a\u043e\u0432 PROTON_USE_WINED3D11=1  %command% 60 fps",
+    "os": "Ubuntu 18.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "3.16-8",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1572194072,
+    "title": "Super Mustache",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

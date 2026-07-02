@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "3340",
+    "cpu": "Intel Celeron  N3160  @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 400 (Braswell)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.14.29-galliumos",
+    "os": "GalliumOS 2.1",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1552163371,
+    "title": "AstroPop Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3340",
+    "cpu": "Intel Core2 Duo     E8500  @ 3.16GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Q45/Q43",
+    "gpuDriver": "2.1 Mesa 17.3.9",
+    "kernel": "4.14.106-desktop-1.mga6",
+    "os": "Mageia 6",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1556951525,
+    "title": "AstroPop Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3340",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "4.19.59-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564107676,
+    "title": "AstroPop Deluxe",
+    "source": "protondb"
+  }
+]

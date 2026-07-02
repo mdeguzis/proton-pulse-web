@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "45710",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Crash after title screen",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1551735201,
+    "title": "Dark Void\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "45710",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Installs ok, including directx , Games for windows, and Physx. The key Actives ok. Launcher starts ok. Splash screen. Game windows opens with Capcom banner and music. Then nothing but a black window.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556377493,
+    "title": "Dark Void\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "45710",
+    "cpu": "AMD Phenom II X2 B55",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 550",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "This game behaves insanely. I thought it was just a regular crash at startup, but while sometimes it'd make it to the Capcom logo and freeze, sometimes it'd go to the Unreal logo.\n\nI decided to engage PROTON_NO_D3D10 and... it booted! Right up and into menus, performed fine through cutscenes and the first mission. I was excited! There was a long black screen after the second cutscene and then my entire screen turned artifacted pink, such that I had to reboot. That was the only time I got the game to boot and how magical.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1563244088,
+    "title": "Dark Void\u2122",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1082450",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.8-76051508-generic",
+    "notes": "Missing Microsoft Visual C++ Runtime",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1641674828,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1082450",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.8-76051508-generic",
+    "notes": "Startable but not playable atm.",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1641986255,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1082450",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.15.23-76051523-generic",
+    "notes": "You can access the menu and even play the game by just using steam play or with proton 4.2. Newer versions won't load the main menu.",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "4.2-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1647092658,
+    "title": "",
+    "source": "protondb"
+  }
+]

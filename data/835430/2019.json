@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "835430",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Beat the entire game without any issues. Played using DS4 controller.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555753397,
+    "title": "La-Mulana 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "835430",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.1",
+    "kernel": "4.19.27-gentoo-r1-EMERALD",
+    "os": "Freedesktop.org 18.08.33 (Flatpak runtime)",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1562974016,
+    "title": "La-Mulana 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "835430",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.59-1-MANJARO",
+    "notes": "The game itself runs without issue, but initial controller support was buggy. Re-binding movement to d-pad with Steam's built-in custom controller config fixed it. \n\nWas using a Playstation 3 controller.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1564004568,
+    "title": "La-Mulana 2",
+    "source": "protondb"
+  }
+]

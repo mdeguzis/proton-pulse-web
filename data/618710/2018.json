@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "618710",
+    "title": "Elminage ORIGINAL - Priestess of Darkness and The Ring of the Gods\n",
+    "timestamp": 1534977488,
+    "rating": "Borked",
+    "notes": "Game freezes after opening logo. Crashes shortly after with this error: \"MovieError pins 80040218\"",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "618710",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "notes": "The game runs fine, if you skip intro videos fast enough (tap Escape rapidly).",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1544583900,
+    "title": "Elminage ORIGINAL - Priestess of Darkness and The Ring of the Gods",
+    "source": "protondb"
+  },
+  {
+    "appId": "618710",
+    "title": "Elminage ORIGINAL - Priestess of Darkness and The Ring of the Gods\n",
+    "timestamp": 1534963088,
+    "rating": "Borked",
+    "notes": "Game freezes after opening logo. Crashes shortly after with this error: \"MovieError pins 80040218\"",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

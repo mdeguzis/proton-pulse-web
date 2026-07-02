@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "421660",
+    "title": "Team Indie",
+    "timestamp": 1536502263,
+    "rating": "Gold",
+    "notes": "Game appears to support gamepad, but the steam controller was not recognised. Keyboard gameplay works fine.",
+    "os": "Debian Testing 64-bit (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 397.54",
+    "specs": "NVIDIA GeForce 770",
+    "protonVersion": "3.7.6",
+    "source": "protondb"
+  },
+  {
+    "appId": "421660",
+    "cpu": "i7-4770 CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Runs perfectly",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5 Beta",
+    "rating": "Platinum",
+    "timestamp": "1536364800",
+    "title": "Harmonia",
+    "source": "protondb"
+  },
+  {
+    "appId": "421660",
+    "cpu": "i7-6800K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.19-1-MANJARO",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "32136 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536610395,
+    "title": "Harmonia",
+    "source": "protondb"
+  },
+  {
+    "appId": "421660",
+    "title": "Team Indie",
+    "timestamp": 1536487863,
+    "rating": "Gold",
+    "notes": "Game appears to support gamepad, but the steam controller was not recognised. Keyboard gameplay works fine.",
+    "os": "Debian Testing 64-bit (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 397.54",
+    "specs": "NVIDIA GeForce 770",
+    "protonVersion": "3.7.6",
+    "source": "protondb"
+  }
+]

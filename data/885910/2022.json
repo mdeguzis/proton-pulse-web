@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "885910",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.15-arch1-1",
+    "notes": "Game works. Does not crash anymore. Intro cinematics works. I was able to complete several stages with no issues. Running Proton 7.0-1.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1647795263,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "885910",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Plays great. Solid 60fps. Should be verified",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1663895195,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "885910",
+    "cpu": "Intel Core i3-10100F @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6400 (beige_goby, LLVM 14.0.6, DRM 3.42, 5.15.77-0-lts)",
+    "gpuDriver": "4.6 Mesa 22.1.7 (git-7a3414c4bd)",
+    "kernel": "5.15.77-0-lts",
+    "notes": "",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1668569720,
+    "title": "",
+    "source": "protondb"
+  }
+]

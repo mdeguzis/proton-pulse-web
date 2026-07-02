@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "579020",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.17.0-1-amd64",
+    "os": "Debian GNU/Linux unstable (sid)",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "40 GB",
+    "rating": "Platinum",
+    "timestamp": 1545171692,
+    "title": "Constructor",
+    "source": "protondb"
+  }
+]

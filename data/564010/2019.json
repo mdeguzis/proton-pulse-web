@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "564010",
+    "cpu": "AMD A10-6800K APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-39-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-5",
+    "ram": "14 GB",
+    "rating": "Borked",
+    "timestamp": 1559870570,
+    "title": "Stern Pinball Arcade",
+    "source": "protondb"
+  }
+]

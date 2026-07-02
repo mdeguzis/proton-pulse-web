@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "515650",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-52-generic",
+    "notes": "Works fine if you put \"PROTON_USE_WINED3D11=1 %command%\" in the launch options",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1561508305,
+    "title": "Straimium Immortaly",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

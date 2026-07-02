@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "61010",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-17-generic",
+    "notes": "Main game menu works but any mission jumps after loading back to menu.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1555159802,
+    "title": "DCS: A-10C Warthog",
+    "source": "protondb"
+  }
+]

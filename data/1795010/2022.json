@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1795010",
+    "cpu": "Intel Core i7-3687U @ 2.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.1 Mesa 22.0.5",
+    "kernel": "5.15.0-47-generic",
+    "notes": "Has anyone had better luck!?",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1662392923,
+    "title": "",
+    "source": "protondb"
+  }
+]

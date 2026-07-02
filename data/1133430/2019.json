@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "1133430",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "Cannot be installed/download in launcher - shows \"requires NTFS file system\" dialog. Probably wouldn't run anyway, since among installed prerequisites was EasyAntiCheat.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1569646419,
+    "title": "Ashes of Creation Apocalypse",
+    "source": "protondb"
+  },
+  {
+    "appId": "1133430",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "Hi I tried playing this game with proton but was not successfull. The game loads fine into the menu, hits start, finds servers but crash just there right before entenring the lobby. Maybe my system is too low in resources but my pc checks the minimum system requirements so I am assuming not. I dont know if this helps but here goes.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1570706584,
+    "title": "Ashes of Creation Apocalypse",
+    "source": "protondb"
+  }
+]

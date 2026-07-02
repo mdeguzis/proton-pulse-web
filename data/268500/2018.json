@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "268500",
+    "title": "XCOM 2",
+    "timestamp": 1535313503,
+    "rating": "Platinum",
+    "notes": "Medium settings and it runs 50-60 FPS consistently. No issues whatsoever.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.6)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3470K / GTX 680",
+    "protonVersion": "3.7-4-",
+    "source": "protondb"
+  },
+  {
+    "appId": "268500",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel (git-9007c0ed26)",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "With Proton (using native2proton), the GAME ITSELF seems to run well, very well actually. But the problem is that I cannot get the mod launcher to work at all, it just instantly fails. Well, XCOM2 without mods is pretty dull. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541577253,
+    "title": "XCOM\u00ae 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "268500",
+    "title": "XCOM 2",
+    "timestamp": 1535299103,
+    "rating": "Platinum",
+    "notes": "Medium settings and it runs 50-60 FPS consistently. No issues whatsoever.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.6)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3470K / GTX 680",
+    "protonVersion": "3.7-4-",
+    "source": "protondb"
+  }
+]

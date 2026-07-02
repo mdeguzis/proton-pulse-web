@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "785480",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.0-rc3",
+    "kernel": "4.19.2-gentoo",
+    "notes": "The game requires 256 colours and refuses to start.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544538552,
+    "title": "Titanic: Adventure Out Of Time",
+    "source": "protondb"
+  }
+]

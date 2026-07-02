@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "599610",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.4.0-66-lowlatency",
+    "notes": "Other than the initial no-input intro (workaround: Alt+Tab), the game works perfectly well and it's very enjoyable.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1614546351,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "599610",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Quadro M2000M",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Noticed no issues with Proton 5.0, fullscreen and input (mentioned by someone else) were trouble-free for me.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1617887358,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "936180",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "The game starts with proton version 3.16-6, but it\u2019s not playable yet. While audio and menus work, there's no graphics, just a white screen. DXVK created a log file containing this message: err:  D3D11: Unsupported format: 0. I tried wine D3D11 but that didn't work either.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546340247,
+    "title": "Atelier Totori ~The Adventurer of Arland~ DX - \u30c8\u30c8\u30ea\u306e\u30a2\u30c8\u30ea\u30a8 \uff5e\u30a2\u30fc\u30e9\u30f3\u30c9\u306e\u932c\u91d1\u8853\u58eb\uff12\uff5e DX",
+    "source": "protondb"
+  }
+]

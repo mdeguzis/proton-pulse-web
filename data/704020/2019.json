@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "704020",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Run \"protontricks 704020 -q dotnet472\" or else the game will not launch. By default, the game uses DX9 renderer. Set launch options to \"-d3d11\" to enable the DX11 renderer.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1551675516,
+    "title": "Master Arena",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

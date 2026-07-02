@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "377530",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "While I was not too sure whether or not to rate this as bronze or borked, I decided to go with borked as not having a functioning save system in an rpg is pretty much unplayable. The game is unable to save using proton and clicking the save slots yield nothing. Messing with launch option fixes does nothing. Have tested game on windows before and saving functionality works there. Other than the save function, the game appears to run just fine, although it is seems to be missing certain fonts. Framerate seems to fluctuate a little as well, as it will randomly dip below 60 at times. The graphics menu seems a little borked and will revert to sub par graphic settings, so it's recommended to just go to the /launch/TalesOfWuxia.ini to change settings. Overall this is unplayable without a functioning save system.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556431244,
+    "title": "\u4fa0\u5ba2\u98ce\u4e91\u4f20(Tale of Wuxia)",
+    "source": "protondb"
+  },
+  {
+    "appId": "377530",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-44-generic",
+    "notes": "Traditional Chinese &  English version run perfectly by default, however the Simplified Chinese version have font issue and cannot show the dialogues and menu words.",
+    "os": "Ubuntu 18.04.1 LTS\uff0864 \u4f4d\uff09",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1562858804,
+    "title": "\u4fa0\u5ba2\u98ce\u4e91\u4f20(Tale of Wuxia)",
+    "source": "protondb"
+  }
+]

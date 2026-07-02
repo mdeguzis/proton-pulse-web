@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "365260",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Change to non-touch UI, set graphisc to max - works flawlessly.",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1542904485,
+    "title": "Crash Dive",
+    "source": "protondb"
+  }
+]

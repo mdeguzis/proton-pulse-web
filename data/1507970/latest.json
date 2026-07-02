@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1507970",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "\u904a\u6232\u53ef\u4ee5\u904a\u73a9\uff0c\u4f46\u90e8\u5206\u529f\u80fd\u9700\u81ea\u884c\u8a2d\u5b9a\u6309\u9375\u6620\u5c04\u3002",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1679023963,
+    "title": "",
+    "source": "protondb"
+  }
+]

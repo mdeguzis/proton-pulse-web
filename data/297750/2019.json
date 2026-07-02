@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "297750",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "Installed and loaded tutorial mission and gameplay with no tweaks - no issues seen.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566911747,
+    "title": "Close Combat - Gateway to Caen",
+    "source": "protondb"
+  }
+]

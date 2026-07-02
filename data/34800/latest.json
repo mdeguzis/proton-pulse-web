@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "34800",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-f9c594cdf5)",
+    "kernel": "5.0.8-arch1-1-ARCH",
+    "notes": "The game works fine out of the box in Proton. Only the main character is white, no textures.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1555933621,
+    "title": "Chronicles of Mystery: The Scorpio Ritual",
+    "source": "protondb"
+  },
+  {
+    "appId": "34800",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-70bb3c0bec)",
+    "kernel": "5.2.6-arch1-1-ARCH",
+    "notes": "On Proton it works out of the box with WineD3D. The bug with the white main character is fixed in Proton 4.11. If you use PROTON_USE_D9VK=1 %command% as a launch option (available since Proton 4.11) the game starts with D9VK (D3D9 to Vulkan translation), but it will freeze as soon as you launch a new game. Tested with the new Mesa ACO compiler on Plasma Wayland.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565290266,
+    "title": "Chronicles of Mystery: The Scorpio Ritual",
+    "source": "protondb"
+  }
+]

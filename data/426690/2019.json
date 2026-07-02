@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "426690",
+    "cpu": "Intel Celeron G1610 @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Desktop",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Couldn't get the Japanese version working but English version works without any issue.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1551875261,
+    "title": "Narcissu 10th Anniversary Anthology Project",
+    "source": "protondb"
+  }
+]

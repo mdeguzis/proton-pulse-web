@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "366440",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.20.5-200.fc29.x86_64",
+    "notes": "Can start game and get into a match",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1549382255,
+    "title": "Savage Resurrection",
+    "source": "protondb"
+  }
+]

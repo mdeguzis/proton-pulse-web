@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "415010",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Works perfect ",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554319145,
+    "title": "The Other 99",
+    "source": "protondb"
+  },
+  {
+    "appId": "415010",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Very playable with a solid 60FPS avg. at Medium graphic settings. High and Epic settings both performed about the same with frames from 40 to 53 FPS. Ran in game benchmarks. Day benchmark: 59.71 avg. FPS. Night benchmark 59.43 avg. FPS.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564621488,
+    "title": "The Other 99",
+    "source": "protondb"
+  }
+]

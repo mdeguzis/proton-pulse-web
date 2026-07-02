@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "473050",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Everything works as well as on windows. Or lack thereof: I had enormous issues with the controls and the gamepad...which is exactly what every steam review complains about. :P",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541608774,
+    "title": "UnderWater Adventure",
+    "source": "protondb"
+  }
+]

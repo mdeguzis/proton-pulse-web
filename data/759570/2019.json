@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "759570",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD VEGA20",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.2.11-zen1-1-zen",
+    "notes": "The kinematics are heard but the black screen is seen. For the rest the game is going perfect. Between 180 and 215 fps stable at all times. Surely with protontricks it can be solved, but I don't know what to enable or do.",
+    "os": "Freedesktop.org 18.08.34 (Flatpak runtime)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1567194714,
+    "title": "Decay of Logos",
+    "source": "protondb"
+  }
+]

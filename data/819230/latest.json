@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "819230",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Still has the speed issue. Outside of this, perfect compatibility.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557284600,
+    "title": "Gothicc Breaker",
+    "source": "protondb"
+  },
+  {
+    "appId": "819230",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "The speed issue seems to have been fixed. The game now works perfectly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560803298,
+    "title": "Gothicc Breaker",
+    "source": "protondb"
+  },
+  {
+    "appId": "819230",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.3",
+    "kernel": "4.19.59-1-MANJARO",
+    "notes": "Game runs too fast again. D9VK causes the girls not to show up in the background. Couldn't get libstrangle to work with this game. If you could limit the FPS to 60, I imagine the game would work fine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1566791513,
+    "title": "Gothicc Breaker",
+    "source": "protondb"
+  }
+]

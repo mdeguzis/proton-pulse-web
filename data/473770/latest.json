@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "473770",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.0",
+    "kernel": "4.19.55-2-lts",
+    "notes": "(SteamVR beta 1.5.15 / Vive / 8BitDo NES30Pro)\n\nOpens to a black screen which I can only assume is an intro failing to play, and you need to press a button on the controller to get past it. Runs fine otherwise, although the VR perspective isn't fun...",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1561511721,
+    "title": "BallisticNG",
+    "source": "protondb"
+  },
+  {
+    "appId": "473770",
+    "cpu": "AMD Ryzen 7 2700X",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Currently running this game through Proton because the native Linux version has trouble playing certain Steam workshop tracks. Videos do not play (intro, campaign marquees). Game will constantly scan for workshop tracks when returning to main menu; this can be worked around by copying workshop files into the Userdata/MyTracks folder.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1563082907,
+    "title": "BallisticNG",
+    "source": "protondb"
+  }
+]

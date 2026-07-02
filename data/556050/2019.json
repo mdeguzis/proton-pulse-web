@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "556050",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.20.6-arch1-1-ARCH",
+    "notes": "Game requires a rename to the \"Movies\" folder as well as changing some file permissions to achive proper functionality. See issue on GitHub for more information.\nGame stutters a lot while it generates the shader cache. Play some \"Local Versus\" matches against bots until it subsides.\nRequires Proton 3.16-5 or newer or audio will be troublesome.\nLosing focus of the game window can sometimes cause mouse clicks to fail on certain UI elements. Tab out and back in to fix.\n",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1550049852,
+    "title": "Hyper Jam",
+    "source": "protondb"
+  }
+]

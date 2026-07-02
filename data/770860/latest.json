@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "770860",
+    "cpu": "Intel Core i5         750  @ 2.67GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "Had trouble on initial testing: graphics weren't rendering correctly and couldn't access menu, but coincidentally Antergos offered me a new version of Steam and when I updated and started it again there was a quick, tiny update to the game itself that meant it now works completely flawlessly. I've put Platinum because I didn't need to apply any further tweaks other then letting Steam update.",
+    "os": "Antergos Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555417897,
+    "title": "Annwn: the Otherworld",
+    "source": "protondb"
+  },
+  {
+    "appId": "770860",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Works perfectly! I ran into one bug where the animation of the menu sliding out of the way to begin a level started looping, but it hasn't recurred after restarting the game.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555597420,
+    "title": "Annwn: the Otherworld",
+    "source": "protondb"
+  }
+]

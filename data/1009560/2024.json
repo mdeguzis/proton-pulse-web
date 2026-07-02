@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1009560",
+    "cpu": "AMD Ryzen Threadripper 2970WX 24-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 (radeonsi, navi10, LLVM 17.0.6, DRM 3.54, 6.6.9-200.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.1",
+    "kernel": "6.6.9-200.fsync.fc39.x86_64",
+    "notes": "Working out of the box.",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1704374095,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1009560",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.7.0-zen3-1-zen",
+    "notes": "Works great out of the box.",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1705749073,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1009560",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 535.154.05",
+    "kernel": "5.4.0-171-generic",
+    "notes": "Works out of the box",
+    "os": "Ubuntu 20.04.6 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1707851615,
+    "title": "",
+    "source": "protondb"
+  }
+]

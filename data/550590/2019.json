@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "550590",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Flawless",
+    "os": "Ubuntu 18.04 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "20 GB",
+    "rating": "Platinum",
+    "timestamp": 1551891376,
+    "title": "Archaica: The Path of Light",
+    "source": "protondb"
+  },
+  {
+    "appId": "550590",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-16-generic",
+    "notes": "In general it works very good. Just when it comes to displaying water surface in the background I get a black void. On the bright side: this helped to find a collectible",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1551984481,
+    "title": "Archaica: The Path of Light",
+    "source": "protondb"
+  }
+]

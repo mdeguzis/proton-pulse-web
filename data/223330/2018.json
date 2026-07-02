@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "223330",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.14.78-1-lts",
+    "notes": "is also affected with \"https://bugs.winehq.org/show_bug.cgi?id=27439\"",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541099463,
+    "title": "Sea Dogs: To Each His Own - Pirate Open World RPG",
+    "source": "protondb"
+  },
+  {
+    "appId": "223330",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-35-generic",
+    "os": "Ubuntu 18.10 (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543102853,
+    "title": "Sea Dogs: To Each His Own - Pirate Open World RPG",
+    "source": "protondb"
+  }
+]

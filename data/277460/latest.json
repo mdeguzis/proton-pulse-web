@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "277460",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.3",
+    "kernel": "5.0.9-2-MANJARO",
+    "notes": "This game ran faultlessly without any tweaks.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556985690,
+    "title": "Praetorians",
+    "source": "protondb"
+  },
+  {
+    "appId": "277460",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-50-generic",
+    "notes": "I did the first tutorial no issues! Worked out of the box.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558685484,
+    "title": "Praetorians",
+    "source": "protondb"
+  },
+  {
+    "appId": "277460",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Works perfectly with no issues. A shame a game this old doesn't support modern screen resolutions, but, you know, that's not Proton's fault at all of course!",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571317466,
+    "title": "Praetorians",
+    "source": "protondb"
+  }
+]

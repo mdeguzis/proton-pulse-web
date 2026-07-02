@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "668210",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.10-arch1-1-ARCH",
+    "notes": "Game opens, but gets stuck on \"connecting...\" screen.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15930 Mb",
+    "rating": "Borked",
+    "timestamp": 1539040102,
+    "title": "Super Fancy Pants Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "668210",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Game starts and is frozen on connecting screen. some form of DRM? Currently tried default proton and beta 3.16-4. Unplayable for now. no access to main menu. ",
+    "os": "Antergos Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541088965,
+    "title": "Super Fancy Pants Adventure",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "appId": "881000",
+    "title": "Beholder 2 Beta",
+    "timestamp": 1534972691,
+    "rating": "Platinum",
+    "notes": "Only played a couple of minutes. Looked good.",
+    "os": "Xubuntu 16.04.5 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "881000",
+    "title": "Beholder 2 Beta",
+    "timestamp": 1535202131,
+    "rating": "Borked",
+    "notes": "CreateDirectory '' failed: Path not found. (current dir: ). Looks like it tries to create dir with no name.",
+    "os": "Xubuntu 18.04 64-bit",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD FX-6300 / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "881000",
+    "title": "Beholder 2 Beta",
+    "timestamp": 1535208320,
+    "rating": "Bronze",
+    "notes": "Upd. on CreateDirectory error: kill Beholder's UnityCrashHandler32.exe process, game starts. Wasd/Esc isn't working after alt-tab, mouse only.",
+    "os": "Xubuntu 18.04 64-bit",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD FX-6300 / GTX 970",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "881000",
+    "title": "Beholder 2 Beta",
+    "timestamp": 1535803500,
+    "rating": "Platinum",
+    "notes": "Works flawless",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "I7-7800X / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "881000",
+    "title": "Beholder 2 Beta",
+    "timestamp": 1536127943,
+    "rating": "Platinum",
+    "notes": "Runs fine.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD FX 8350 / GTX 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "881000",
+    "title": "Beholder 2 Beta",
+    "timestamp": 1534958291,
+    "rating": "Platinum",
+    "notes": "Only played a couple of minutes. Looked good.",
+    "os": "Xubuntu 16.04.5 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "881000",
+    "title": "Beholder 2 Beta",
+    "timestamp": 1535187731,
+    "rating": "Borked",
+    "notes": "CreateDirectory '' failed: Path not found. (current dir: ). Looks like it tries to create dir with no name.",
+    "os": "Xubuntu 18.04 64-bit",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD FX-6300 / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "881000",
+    "title": "Beholder 2 Beta",
+    "timestamp": 1535193920,
+    "rating": "Bronze",
+    "notes": "Upd. on CreateDirectory error: kill Beholder's UnityCrashHandler32.exe process, game starts. Wasd/Esc isn't working after alt-tab, mouse only.",
+    "os": "Xubuntu 18.04 64-bit",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD FX-6300 / GTX 970",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "881000",
+    "title": "Beholder 2 Beta",
+    "timestamp": 1535789100,
+    "rating": "Platinum",
+    "notes": "Works flawless",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "I7-7800X / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "881000",
+    "title": "Beholder 2 Beta",
+    "timestamp": 1536113543,
+    "rating": "Platinum",
+    "notes": "Runs fine.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD FX 8350 / GTX 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

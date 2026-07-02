@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3668330",
+    "cpu": "12th Gen Intel Core i5-12400",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 15.0.7, DRM 3.49, 6.2.0-37-generic)",
+    "gpuDriver": "4.6 Mesa 23.3.0 - kisak-mesa PPA",
+    "kernel": "6.2.0-37-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1758220240,
+    "title": "",
+    "source": "protondb"
+  }
+]

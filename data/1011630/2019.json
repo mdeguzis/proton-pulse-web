@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1011630",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.3.1",
+    "kernel": "5.4.6-arch3-1",
+    "notes": "Game starts with DXVK to main menu",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1577719711,
+    "title": "",
+    "source": "protondb"
+  }
+]

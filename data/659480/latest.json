@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "659480",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.7, DRM 3.42, 5.15.0-94-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-94-generic",
+    "notes": "No problems, just don't Alt + Tab",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1714412317,
+    "title": "",
+    "source": "protondb"
+  }
+]

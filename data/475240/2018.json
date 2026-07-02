@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "475240",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.11-arch1-1-ARCH",
+    "notes": "Opens with a black screen. Nothing happens beyond that.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545512892,
+    "title": "ORCS",
+    "source": "protondb"
+  }
+]

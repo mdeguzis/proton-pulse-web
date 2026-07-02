@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "426930",
+    "cpu": "Intel Core i3-2310M @ 2.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Crash at startup. Same as other Unity games.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544092029,
+    "title": "Moonshot",
+    "source": "protondb"
+  }
+]

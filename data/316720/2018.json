@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "316720",
+    "title": "planetarian ~the reverie of a little planet~",
+    "timestamp": 1534968191,
+    "rating": "Platinum",
+    "notes": "Needs compatible font, Sazanami Gothic works well",
+    "os": "Artix 64-bit",
+    "gpuDriver": "\"NVIDIA 396.51",
+    "specs": "Intel(R) Xeon(R) CPU E5640",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "316720",
+    "cpu": "Intel(R) Core(TM) i7-4930K CPU @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation TITAN V/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Needs an appropriate font - I used the freely available VL Gothic.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64362 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539045262,
+    "title": "planetarian ~the reverie of a little planet~",
+    "source": "protondb"
+  },
+  {
+    "appId": "316720",
+    "cpu": "Intel Core i5-4430 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.11-arch1-1-ARCH",
+    "notes": "Requires ja_JP.EUC-JP locale to play in Japanese, otherwise character encoding is bork. This can be accomplished by setting the launch options to \" LC_ALL=ja_JP.EUC-JP %command% \".",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1545416566,
+    "title": "planetarian ~the reverie of a little planet~",
+    "source": "protondb"
+  },
+  {
+    "appId": "316720",
+    "title": "planetarian ~the reverie of a little planet~",
+    "timestamp": 1534953791,
+    "rating": "Platinum",
+    "notes": "Needs compatible font, Sazanami Gothic works well",
+    "os": "Artix 64-bit",
+    "gpuDriver": "\"NVIDIA 396.51",
+    "specs": "Intel(R) Xeon(R) CPU E5640",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

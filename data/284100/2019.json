@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "284100",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game fails to start. Did not try any tweaks.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550695563,
+    "title": "Unclaimed World",
+    "source": "protondb"
+  },
+  {
+    "appId": "284100",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.0",
+    "notes": "Asks for Windows Media Player which I don't know how to install",
+    "os": "Linux 4.x (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560722396,
+    "title": "Unclaimed World",
+    "source": "protondb"
+  }
+]

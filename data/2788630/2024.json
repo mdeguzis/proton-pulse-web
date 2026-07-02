@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2788630",
+    "cpu": "AMD Ryzen 5 PRO 2500U w/ Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (raven, LLVM 15.0.7, DRM 3.49, 6.8.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.8.1-arch1-1",
+    "notes": "wow, it works",
+    "os": "Arch Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1711130865,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2788630",
+    "cpu": "11th Gen Intel Core i5-11300H @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "Well its a game about nothing so it should not be a shock at all that it runs perfectly",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1718808822,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "313980",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "underOneHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.8.0-50-generic",
+    "notes": "The launcher opens, where you can change some settings, but when you press \"play\", it crashes",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1619998576,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "313980",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.12.2-1-MANJARO",
+    "notes": "Game starts the launcher, but after hitting play it crashes",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1623240479,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "313980",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.8-1-MANJARO",
+    "notes": "Game launcher starts, but crashes if you try to play the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1623274965,
+    "title": "",
+    "source": "protondb"
+  }
+]

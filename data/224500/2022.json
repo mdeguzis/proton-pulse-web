@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "224500",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.13.0-30-generic",
+    "notes": "Game crash is unavoidable and breaks the game, making it unplayable.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1645669225,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "224500",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 13.0.1, DRM 3.42, 5.15.32-gentoo-r1-x86_64)",
+    "gpuDriver": "4.6 Mesa 22.0.3",
+    "kernel": "5.15.32-gentoo-r1-x86_64",
+    "notes": "",
+    "os": "Gentoo Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1654825644,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "224500",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1670710936,
+    "title": "",
+    "source": "protondb"
+  }
+]

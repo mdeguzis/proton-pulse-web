@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "574520",
+    "cpu": "Intel Xeon           X5660  @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.8.16-2-MANJARO",
+    "notes": "Missing file, was not able to see the menu",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-1",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1604060228,
+    "title": "",
+    "source": "protondb"
+  }
+]

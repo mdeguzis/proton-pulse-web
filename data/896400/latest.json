@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "896400",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Fulll game runs out of the bat, while the free DEMO version needed \"PROTON_USE_WINED3D=1\" to run smoothly.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1550217150,
+    "title": "Alien Attack: Pocket Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "896400",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Crash to desktop during gameplay.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1556405571,
+    "title": "Alien Attack: Pocket Edition",
+    "source": "protondb"
+  }
+]

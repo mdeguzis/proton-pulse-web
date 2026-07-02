@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "455120",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Works out of the box. Slight shader cache stutter at the beginning but goes away after a minute.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1548362712,
+    "title": "Stay Close",
+    "source": "protondb"
+  }
+]

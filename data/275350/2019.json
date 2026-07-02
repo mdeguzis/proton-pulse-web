@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "275350",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.18.0-17-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555264586,
+    "title": "Sentinel 3: Homeworld",
+    "source": "protondb"
+  },
+  {
+    "appId": "275350",
+    "cpu": "Intel Xeon E5-1620 v3 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Quadro K620",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-65-generic",
+    "os": "Ubuntu 18.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1570103272,
+    "title": "Sentinel 3: Homeworld",
+    "source": "protondb"
+  }
+]

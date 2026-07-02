@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "878110",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "PROTON_USE_WINED3D=1 does the trick. UE4 DX11 game. Game menu changes (resolution or trying to click on online play) might cause a crash, though. See the crash text message for details (points to pointers?). Otherwise, the game itself runs fine and performant. Gamepad works. Fullscreen or Windowed works. High framerate. No rendering issues.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1550119334,
+    "title": "Fuel Renegades",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "878110",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.11-arch1-1-ARCH",
+    "notes": "No issues. Played with xbox one controller",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550850871,
+    "title": "Fuel Renegades",
+    "source": "protondb"
+  }
+]

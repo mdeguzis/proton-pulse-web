@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "816200",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553355803,
+    "title": "Planet Assault",
+    "source": "protondb"
+  },
+  {
+    "appId": "816200",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.4.0-151-generic",
+    "notes": "Works as well as it does on Windows. It only displays in a window, but the game does not support fullscreen mode at all so it is not a fault of Proton.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1565335546,
+    "title": "Planet Assault",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "645420",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Complains about a missing MS MPEG4 video decoder, then quits...rather than just playing without the cut-scenes. Said decoder doesn't seem to be available via winetricks",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556144736,
+    "title": "Entwined: Strings of Deception",
+    "source": "protondb"
+  }
+]

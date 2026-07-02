@@ -1,0 +1,112 @@
+[
+  {
+    "appId": "314070",
+    "title": "Super Mega Baseball: Extra Innings",
+    "timestamp": 1534979809,
+    "rating": "Borked",
+    "notes": "Won't start.",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "314070",
+    "title": "Super Mega Baseball: Extra Innings",
+    "timestamp": 1535094525,
+    "rating": "Platinum",
+    "notes": "flawless",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600k / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "314070",
+    "cpu": "i5-5200U CPU @ 2.20GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 5500 (Broadwell GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Doesn't start",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.5-beta",
+    "ram": "3859 Mb",
+    "rating": "Borked",
+    "timestamp": 1536776124,
+    "title": "Super Mega Baseball: Extra Innings",
+    "source": "protondb"
+  },
+  {
+    "appId": "314070",
+    "cpu": "Intel(R) Core(TM) i5-3350P CPU @ 3.10GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16003 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537739553,
+    "title": "Super Mega Baseball: Extra Innings",
+    "source": "protondb"
+  },
+  {
+    "appId": "314070",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15984 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537818366,
+    "title": "Super Mega Baseball: Extra Innings",
+    "source": "protondb"
+  },
+  {
+    "appId": "314070",
+    "cpu": "Intel(R) Core(TM) i5-4690 CPU @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "X.Org AMD TAHITI (DRM 2.50.0, 4.15.0-33-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Launched into a black screen. Set launch options in Steam to \"PROTON_USE_WINED3D11=1 %command%\" and it works perfectly.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7919 Mb",
+    "rating": "Gold",
+    "timestamp": 1538879429,
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "title": "Super Mega Baseball: Extra Innings",
+    "source": "protondb"
+  },
+  {
+    "appId": "314070",
+    "title": "Super Mega Baseball: Extra Innings",
+    "timestamp": 1534965409,
+    "rating": "Borked",
+    "notes": "Won't start.",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "314070",
+    "title": "Super Mega Baseball: Extra Innings",
+    "timestamp": 1535080125,
+    "rating": "Platinum",
+    "notes": "flawless",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600k / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

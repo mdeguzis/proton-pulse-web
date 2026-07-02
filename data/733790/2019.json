@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "733790",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.10.0-33-generic",
+    "notes": "Ran until first job after tutorial. No problem. Seemingly native performance.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547498106,
+    "title": "Not Tonight",
+    "source": "protondb"
+  },
+  {
+    "appId": "733790",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.3",
+    "kernel": "5.0.7.a-2-hardened",
+    "notes": "Works nicely with PROTON_USE_WINED3D=1 %command%",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1556863408,
+    "title": "Not Tonight",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "733790",
+    "cpu": "Intel Core i7-5500U @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.0",
+    "kernel": "5.1.11-arch1-1-ARCH",
+    "notes": "Tried this game on three different machines, no luck running it whatsoever. Game crashes on launch.\nTried using wine3d3 as mentioned in previous reports.\nTried using older versions of proton.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1561651292,
+    "title": "Not Tonight",
+    "source": "protondb"
+  },
+  {
+    "appId": "733790",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-21-generic",
+    "notes": "As Todd Howard ones said, \"And again it just works\"",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562857036,
+    "title": "Not Tonight",
+    "source": "protondb"
+  },
+  {
+    "appId": "733790",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.2",
+    "kernel": "5.2.1-arch1-1-ARCH",
+    "notes": "So, I'm not sure if I got the syntax right... I wrote all three recommended settings into the Launch-options box like this: PROTON_USE_WINED3D=0 %command% PROTON_NO_ESYNC=0 %command% PROTON_NO_D3D11=1 %command%\nI don't know if that is the exact right way to write them, so that might be a reason, but the game just doesn't start. I get a process, steam registers it as running, that's why I actually have over 25h in the game... simply because I didn't realize this, but nothing happens on the screen. I didn't go as far as log-files, also partially because I \ndon't have all to much experience with them.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1564230196,
+    "title": "Not Tonight",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

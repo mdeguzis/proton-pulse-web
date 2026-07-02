@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "625980",
+    "cpu": "Intel Core i3-3227U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-43-generic",
+    "notes": "it says:\nERROR_CODE:887a0004\nPROCESS_NIMBER:101\nFailed to initialize the window.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "10 GB",
+    "rating": "Borked",
+    "timestamp": 1547549273,
+    "title": "Yomawari: Midnight Shadows / \u6df1\u591c\u5efb",
+    "source": "protondb"
+  },
+  {
+    "appId": "625980",
+    "cpu": "Intel Core i3-3227U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Opens a black window and then instantly crashes",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "Default",
+    "ram": "10 GB",
+    "rating": "Borked",
+    "timestamp": 1560323526,
+    "title": "Yomawari: Midnight Shadows / \u6df1\u591c\u5efb",
+    "source": "protondb"
+  },
+  {
+    "appId": "625980",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.0-0.steamos2.3-amd64",
+    "notes": "Instantly  Crash",
+    "os": "SteamOS 2.0",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1568004022,
+    "title": "Yomawari: Midnight Shadows",
+    "source": "protondb"
+  }
+]

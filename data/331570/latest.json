@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "331570",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.6",
+    "notes": "Crash after the first video on the first level.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559456039,
+    "title": "Wimp: Who Stole My Pants?",
+    "source": "protondb"
+  }
+]

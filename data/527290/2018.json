@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "527290",
+    "title": "Atelier Firis: The Alchemist and the Mysterious Journey",
+    "timestamp": 1535916904,
+    "rating": "Borked",
+    "notes": "Cannot start the game, even the launcher won't start",
+    "os": "Linux Mint 18.3 64-bit (kernal 4.13)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "527290",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Game won't start at all. Launcher will not even show up.",
+    "os": "Debian GNU/Linux 9.5 (stretch)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542440841,
+    "title": "Atelier Firis: The Alchemist and the Mysterious Journey / \u30d5\u30a3\u30ea\u30b9\u306e\u30a2\u30c8\u30ea\u30a8 \uff5e\u4e0d\u601d\u8b70\u306a\u65c5\u306e\u932c\u91d1\u8853\u58eb\uff5e",
+    "source": "protondb"
+  },
+  {
+    "appId": "527290",
+    "title": "Atelier Firis: The Alchemist and the Mysterious Journey",
+    "timestamp": 1535902504,
+    "rating": "Borked",
+    "notes": "Cannot start the game, even the launcher won't start",
+    "os": "Linux Mint 18.3 64-bit (kernal 4.13)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

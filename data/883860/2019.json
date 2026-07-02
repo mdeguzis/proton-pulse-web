@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "883860",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-1-MANJARO",
+    "notes": "Game boots into a splash screen with the characters. I can click around and cause ripples with the cursor, but I can't progress from there. I can access the steam overlay just fine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1547486597,
+    "title": "Cadria Item Shop",
+    "source": "protondb"
+  },
+  {
+    "appId": "883860",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.1-arch1-1-ARCH",
+    "notes": "Performance could be better but it plays just fine",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552327676,
+    "title": "Cadria Item Shop",
+    "source": "protondb"
+  },
+  {
+    "appId": "883860",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.9-arch1-1-ARCH",
+    "notes": "No issues starting and playing the game. Performance seemed fine on my system, but I had vsync on, so no telling how far the fps would go beyond 60fps.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560628211,
+    "title": "Cadria Item Shop",
+    "source": "protondb"
+  }
+]

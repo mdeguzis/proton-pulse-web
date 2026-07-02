@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "311100",
+    "cpu": "Intel Xeon E5-2665 0 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.10.33uksm",
+    "notes": "Game is possiible to run, but fix needed",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1619977185,
+    "title": "",
+    "source": "protondb"
+  }
+]

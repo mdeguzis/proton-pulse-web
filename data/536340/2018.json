@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "536340",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.4 - SteamVR PPA",
+    "kernel": "4.19.0-041900rc8-generic",
+    "notes": "Runs out of the box with similar (poor) performance as on windows.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541189366,
+    "title": "Endless Room",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "595770",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.79",
+    "kernel": "4.13.0-43-generic",
+    "notes": "when i press play it will try and launch i get a black screen then goes of.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545216628,
+    "title": "AirMech Wastelands",
+    "source": "protondb"
+  }
+]

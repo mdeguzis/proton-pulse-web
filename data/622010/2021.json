@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "622010",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.8.0-7642-generic",
+    "notes": "Works out of the box.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1616690010,
+    "title": "",
+    "source": "protondb"
+  }
+]

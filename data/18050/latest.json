@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "18050",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-1-ck-zen",
+    "notes": "Won't start",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1551407031,
+    "title": "DeathSpank: Thongs of Virtue",
+    "source": "protondb"
+  },
+  {
+    "appId": "18050",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Attempted to get both this and the original DeathSpank working. Both show similar logs (nearly empty), presumably both have the same issue. If you can get a 32-bit prefix set up, it -might- work, but that's still a maybe.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-1",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565082837,
+    "title": "DeathSpank: Thongs of Virtue",
+    "source": "protondb"
+  }
+]

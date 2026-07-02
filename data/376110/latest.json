@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "376110",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.02",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Crashed the first time running after installing. After that no problems.",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Gold",
+    "timestamp": 1537210039,
+    "title": "Black Island",
+    "source": "protondb"
+  }
+]

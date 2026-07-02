@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1337710",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "The game is as fun as any Mega Man, despite some tweaks needed for it to run.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1625758575,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1337710",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Game crashes too often to consistently play through. I end up repeating stages over and over again until the game decides to let you pass.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1625939896,
+    "title": "",
+    "source": "protondb"
+  }
+]

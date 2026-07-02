@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "412790",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Shows empty window on desktop. Does not display anything to HMD.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542579101,
+    "title": "Adventure Time: Magic Man's Head Games",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "521230",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "No issues",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536909971,
+    "title": "Stone Age Wars",
+    "source": "protondb"
+  },
+  {
+    "appId": "521230",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-zen1-1-zen",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "11884 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537180933,
+    "title": "Stone Age Wars",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "668210",
+    "cpu": "AMD Athlon X4 760K Quad Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.0-8-generic",
+    "notes": "stuck in a white page with the word \"Connecting\" on the bottom.",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1554623517,
+    "title": "Super Fancy Pants Adventure",
+    "source": "protondb"
+  }
+]

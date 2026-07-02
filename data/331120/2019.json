@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "331120",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.31",
+    "kernel": "5.3.11-arch1-1",
+    "notes": "Game dies on an access violation during the loading screen",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1573940998,
+    "title": "",
+    "source": "protondb"
+  }
+]

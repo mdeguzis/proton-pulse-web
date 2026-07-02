@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "529520",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-f447a13032)",
+    "kernel": "4.20.0-rc1-mainline",
+    "notes": "Works out of the box. Since it's a unity game I had to lower details to low, then restart and then change the details to higher levels to get good performance (this thing affects unity games like Subnautica, Planet Nomads, etc)",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550404617,
+    "title": "Mutant Football League",
+    "source": "protondb"
+  },
+  {
+    "appId": "529520",
+    "cpu": "Intel Core i5-3350P @ 3.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "I reported before that the players were missing. That error has been fixed, and it now plays perfectly with no modifications.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554059112,
+    "title": "Mutant Football League",
+    "source": "protondb"
+  }
+]

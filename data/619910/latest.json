@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "619910",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.7-300.fc30.x86_64",
+    "notes": "Just Cause 3 does not run so neither will this ",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561116480,
+    "title": "Just Cause\u2122 3: Multiplayer Mod",
+    "source": "protondb"
+  },
+  {
+    "appId": "619910",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Just Cause 3 is borked, so is this mod.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1566131276,
+    "title": "Just Cause\u2122 3: Multiplayer Mod",
+    "source": "protondb"
+  },
+  {
+    "appId": "619910",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "ubuntu 19.04 kernel 5.3.5-050305, Radeon VII, multi player won't load at all.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1571574743,
+    "title": "Just Cause\u2122 3: Multiplayer Mod",
+    "source": "protondb"
+  }
+]

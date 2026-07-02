@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "688260",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Launches but is stuck in loop trying to load a video codec of some kind , sadly it seems said video codec doesn't work on Linux ...",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1550916428,
+    "title": "Morph Girl",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "688260",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Video codec isn't recognized / Don't work it's an FMV point and click game and therefore the window is nothing but a big black box of nothing.\nGame launches at least ",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1567577586,
+    "title": "Morph Girl",
+    "source": "protondb"
+  }
+]

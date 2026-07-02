@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "366040",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "UDK installation fails with a path not found message. Game launched successfully after this anyway and worked in menu and in the opening cutscene. Crashed at load of first level.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558307788,
+    "title": "Iggy's Egg Adventure",
+    "source": "protondb"
+  }
+]

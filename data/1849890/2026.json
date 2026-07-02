@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1849890",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.8, DRM 3.64, 6.18.5-evernight.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.4",
+    "kernel": "6.18.5-evernight.fc43.x86_64",
+    "notes": "\u5b8c\u7f8e\u8fd0\u884c",
+    "os": "Evernight Vista 43.1",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770373426,
+    "title": "",
+    "source": "protondb"
+  }
+]

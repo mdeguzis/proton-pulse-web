@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "297100",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Ran through the tutorial with no issues.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1554005850,
+    "title": "Beyond Space Remastered Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "297100",
+    "cpu": "AMD Ryzen Threadripper 1920X 12-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.20.17-042017-generic",
+    "notes": "Runs fine but there's something wrong with audio, music ok but no sound effects.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1557261735,
+    "title": "Beyond Space Remastered Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "297100",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.4.0-151-generic",
+    "notes": "Ran without tweaks and no crashes, but also no sound effects or voices. The music played fine, but there was no other sound like there was in the trailer on Steam. The sounds are not actually required to play, but it does lose a bit of impact without them.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1565183399,
+    "title": "Beyond Space Remastered Edition",
+    "source": "protondb"
+  }
+]

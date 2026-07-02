@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "342230",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-47-generic",
+    "notes": "It didn't seem to like my Logitech F310. It recognized it, but the ship kept trying to barrel roll until I unplugged it. Works flawlessly with KB+mouse. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556326095,
+    "title": "Air Guardians",
+    "source": "protondb"
+  },
+  {
+    "appId": "342230",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557322679,
+    "title": "Air Guardians",
+    "source": "protondb"
+  },
+  {
+    "appId": "342230",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567003119,
+    "title": "Air Guardians",
+    "source": "protondb"
+  }
+]

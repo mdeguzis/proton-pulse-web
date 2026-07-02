@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "533970",
+    "title": "Blocks",
+    "timestamp": 1535221824,
+    "rating": "Borked",
+    "notes": "HTC Vive. Bad performance; crashes",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "533970",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "wine err: \"get Thread context failed\"",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16005 Mb",
+    "rating": "Borked",
+    "timestamp": 1537801703,
+    "title": "Blocks by Google",
+    "source": "protondb"
+  },
+  {
+    "appId": "533970",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "(Runs with SteamVR beta 1.2.3) Able to add some geometry but the editing tools only work on the first attempt and fail to interact with objects afterwards. Many actions (eg. adding models) will cause it to freeze and become unresponsive.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546085055,
+    "title": "Blocks by Google",
+    "source": "protondb"
+  },
+  {
+    "appId": "533970",
+    "title": "Blocks",
+    "timestamp": 1535207424,
+    "rating": "Borked",
+    "notes": "HTC Vive. Bad performance; crashes",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

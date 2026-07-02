@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1028730",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 15.0.7, DRM 3.42, 5.15.0-97-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-97-generic",
+    "notes": "Worked perfectly straight away.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1709825315,
+    "title": "",
+    "source": "protondb"
+  }
+]

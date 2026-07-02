@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "992690",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-29-generic",
+    "notes": "When you click on 'start a new game' in the UI, you see a separate message box; it tries loading, but then crashes or hangs infinitely. Fullscreen and Windowed tested. ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1569034884,
+    "title": "We are the Plague",
+    "source": "protondb"
+  }
+]

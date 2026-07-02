@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "311240",
+    "title": "Zero Escape: Zero Time Dilemma",
+    "timestamp": 1535297451,
+    "rating": "Gold",
+    "notes": "Requires OpenAL for Audio to work but stable framerate",
+    "os": "Antergos 18.7 (kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 8400",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "311240",
+    "title": "Zero Escape: Zero Time Dilemma",
+    "timestamp": 1535283051,
+    "rating": "Gold",
+    "notes": "Requires OpenAL for Audio to work but stable framerate",
+    "os": "Antergos 18.7 (kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 8400",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

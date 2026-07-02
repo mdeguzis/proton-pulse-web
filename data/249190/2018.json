@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "249190",
+    "title": "Ancient Space",
+    "timestamp": 1535379402,
+    "rating": "Borked",
+    "notes": "crash when main menu loads",
+    "os": "Gentoo (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.2.0-rc4 (LLVM 7.0.0)",
+    "specs": "i7-4771/R9 280X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "249190",
+    "title": "Ancient Space",
+    "timestamp": 1535454303,
+    "rating": "Platinum",
+    "notes": "No issues good frame rates, alt+tab works, steam overlay works",
+    "os": "18.04.1 w/unity (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700HQ/ GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "249190",
+    "title": "Ancient Space",
+    "timestamp": 1535365002,
+    "rating": "Borked",
+    "notes": "crash when main menu loads",
+    "os": "Gentoo (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.2.0-rc4 (LLVM 7.0.0)",
+    "specs": "i7-4771/R9 280X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "249190",
+    "title": "Ancient Space",
+    "timestamp": 1535439903,
+    "rating": "Platinum",
+    "notes": "No issues good frame rates, alt+tab works, steam overlay works",
+    "os": "18.04.1 w/unity (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700HQ/ GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

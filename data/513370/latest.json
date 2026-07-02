@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "513370",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-15012077bc)",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Works perfectly fine with DXVK",
+    "os": "Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1554023904,
+    "title": "Blade & Bones",
+    "source": "protondb"
+  },
+  {
+    "appId": "513370",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.16.3-041603-generic",
+    "notes": "added 'PROTON_USE_WINED3D11=1 %command%' to Launch Options and worked",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1558833150,
+    "title": "Blade & Bones",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "513370",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Did not properly fullscreen. Ran perfectly in windowed mode with an Xbox 360 controller.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559478617,
+    "title": "Blade & Bones",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "291330",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-50-generic",
+    "notes": "It feels like it is running at 5 FPS but I can't tell whose fault it is (the awful game or Proton). The HUD randomly disappeared and the UI gets cut off in some places.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1559855961,
+    "title": "Final Slam 2",
+    "source": "protondb"
+  }
+]

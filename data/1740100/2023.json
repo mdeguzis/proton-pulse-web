@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1740100",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "\u5b8c\u7f8e\u8fd0\u884c\uff0c\u53ea\u9700\u7ed1\u5b9a\u4e24\u4e2a\u6309\u952e\u5373\u53ef\u8212\u9002\u64cd\u63a7\u3002",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1673259763,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1740100",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1673277994,
+    "title": "",
+    "source": "protondb"
+  }
+]

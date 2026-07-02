@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "11190",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-200.fc29.x86_64",
+    "notes": "Though I rate this games platinum, and while it plays really nice on all of my systems (this being my main rig), there are two minor cosmetic nuances: It may be related to driver or some such, but you cannot enable shadows and water reflections, no matter what you do. You can set Depth and Bloom, and sometimes fiddling with these settings will yield reset to minimum quality settings. I just tried to run the game through regular wine, and it crashes, for some reason (4.5-staging)",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1554787616,
+    "title": "Sherlock Holmes versus Jack the Ripper",
+    "source": "protondb"
+  },
+  {
+    "appId": "11190",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "4.15.0-65-generic",
+    "notes": "Game runs great, and on highest graphics settings, no tweaks required.  Just install and play.\n\nFew minor issues that I've come across, but not sure if they're related to Linux / Proton or would also happen on Windows...\n\nGame has exited back to desktop twice (in 5+ hrs).  Recommend you save often.\nFor some reason you can't save in certain places at certain times.  Slightly annoying, but generally means you just have to enter/leave from where you are and you can save again.\nEnabling anti-aliasing causes the game to become incredibly slow for me (but with everything else on max the game runs great).",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1570507734,
+    "title": "Sherlock Holmes versus Jack the Ripper",
+    "source": "protondb"
+  }
+]

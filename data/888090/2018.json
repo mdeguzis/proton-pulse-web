@@ -1,0 +1,43 @@
+[
+  {
+    "appId": "888090",
+    "title": "TREE",
+    "timestamp": 1535751489,
+    "rating": "Silver",
+    "notes": "Top bar and Dock remain visible. ",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "888090",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "A bit of sound crackling.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542221569,
+    "title": "TREE",
+    "source": "protondb"
+  },
+  {
+    "appId": "888090",
+    "title": "TREE",
+    "timestamp": 1535737089,
+    "rating": "Silver",
+    "notes": "Top bar and Dock remain visible. ",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

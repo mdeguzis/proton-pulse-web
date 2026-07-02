@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1332760",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 550 / 550 (polaris12, LLVM 13.0.1, DRM 3.42, 5.15.0-58-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-58-generic",
+    "notes": "Roda tranquilamente, n\u00e3o tive problemas e tive a sensa\u00e7\u00e3o de estar jogando um jogo nativo.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1673658684,
+    "title": "",
+    "source": "protondb"
+  }
+]

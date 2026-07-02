@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1730910",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.4.0-109-generic",
+    "notes": "The launcher works, but the game gives a directx error",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1662403134,
+    "title": "",
+    "source": "protondb"
+  }
+]

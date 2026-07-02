@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "289200",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Gets to main menu but cannot create or load a save game.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568068220,
+    "title": "Ascension to the Throne",
+    "tweaks": {
+      "disableEsync": true,
+      "disableFsync": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "289200",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "Enable Wine D9VK with PROTON_USE_D9VK=1 %command% in the game's launch option and it will work.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1568434780,
+    "title": "Ascension to the Throne",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

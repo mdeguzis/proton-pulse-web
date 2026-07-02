@@ -1,0 +1,30 @@
+[
+  {
+    "appId": "408920",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Seems to work like intended",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5",
+    "rating": "Platinum",
+    "timestamp": "1536364800",
+    "title": "Krai Mira: Extended Cut",
+    "source": "protondb"
+  },
+  {
+    "appId": "408920",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.6-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1544724548,
+    "title": "Krai Mira: Extended Cut",
+    "source": "protondb"
+  }
+]

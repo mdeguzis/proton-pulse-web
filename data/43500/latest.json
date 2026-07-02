@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "43500",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.1.0-050100rc2-generic",
+    "notes": "Doesn't launch. Tried disabling Esync to no avail.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.4-3",
+    "protonVersionManual": "4.4-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556636612,
+    "title": "M.U.D. TV",
+    "source": "protondb"
+  }
+]

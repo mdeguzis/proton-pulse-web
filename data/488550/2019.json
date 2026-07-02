@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "488550",
+    "cpu": "Intel Core i7-2820QM @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.4.0-157-generic",
+    "notes": "Intel HD Graphics 3000 does not support Vulkan. ",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1564978517,
+    "title": "Dream Car Builder",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

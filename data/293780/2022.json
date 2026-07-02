@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "293780",
+    "cpu": "AMD Ryzen 7 3750H with Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.8-76051508-generic",
+    "notes": "Minor controller binding annoyance",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1645509830,
+    "title": "Crawl",
+    "source": "protondb"
+  },
+  {
+    "appId": "293780",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1656195147,
+    "title": "Crawl",
+    "source": "protondb"
+  },
+  {
+    "appId": "293780",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.10.141-1-MANJARO",
+    "notes": "Game ran smoothly, it felt native and I have no complaints about it's quality.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1664586752,
+    "title": "Crawl",
+    "source": "protondb"
+  }
+]

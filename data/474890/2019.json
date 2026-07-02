@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "474890",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.10.0-38-generic",
+    "notes": "Can access menu, change options etc, but as soon as i try to actually play, it's over. Greenish screen with infinite loading. Tried all the main tweaks, no luck.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562514580,
+    "title": "Uncrewed",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2343650",
+    "cpu": "AMD Ryzen 5 7530U with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD RENOIR (radeonsi, renoir, LLVM 15.0.7, DRM 3.54, 6.5.0-18-generic)",
+    "gpuDriver": "4.6 Mesa 23.3.4 - kisak-mesa PPA",
+    "kernel": "6.5.0-18-generic",
+    "notes": "I installed Waven and I'm using version 6.3-8 of Proton DB because versions higher than 6.3-8 do not launch the game. Here is the error I get when I launch Waven in version 6.3-8:\n\nA JavaScript error occurred in the main process:\nUncaught Exception:\nError: EINVAL: invalid argument, uv_pipe_open\nat new Socket (node:net:327:24)\nat createWritableStdioStream (node:internal/bootstrap/switches/is_main_thread:72:18)\nat process.getStdout [as stdout] (node:internal/bootstrap/switches/is_main_thread:123:12)\nat Object.<anonymous> (C:\\users\\steamuser\\Temp\\12Wto5Tmlk6AwMWQm1R3mZafCOjL\\resources\\app.asar\\main.js:32:12418)\nat r (C:\\users\\steamuser\\Temp\\2Wto5Tmlk6AwMWQm1R3mZafCOjL\\resources\\app.asar\\main.js:1:124)\nat Object.<anonymous> (C:\\users\\steamuser\\Temp\\2Wto5Tmlk6AwMWQm1R3mZafCOjL\\resources\\app.asar\\main.js:1:43109)\nat r (C:\\users\\steamuser\\Temp\\2Wto5Tmlk6AwMWQm1R3mZafCOjL\\resources\\app.asar\\main.js:1:124)\nat Object.<anonymous> (C:\\users\\steamuser\\Temp\\12Wto5Tmlk6AwMWQm1R3mZafCOjL\\resources\\app.asar\\main.js:32:11535)\nat r (C:\\users\\steamuser\\Temp\\2Wto5Tmlk6AwMWQm1R3mZafCOjL\\resources\\app.asar\\main.js:1:124)\nat Object.<anonymous> (C:\\users\\steamuser\\Temp\\12Wto5Tmlk6AwMWQm1R3mZafCOjL\\resources\\app.asar\\main.js:7:11243)",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "6.3-8",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1708563025,
+    "title": "Waven",
+    "source": "protondb"
+  },
+  {
+    "appId": "2343650",
+    "cpu": "Intel Core i5-10500H @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.2-arch1.2",
+    "kernel": "6.7.8-zen1-1-zen",
+    "notes": "",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1709849391,
+    "title": "Waven",
+    "source": "protondb"
+  }
+]

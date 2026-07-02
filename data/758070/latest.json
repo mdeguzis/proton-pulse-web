@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "758070",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.9-arch1-1-ARCH",
+    "notes": "No apparent issues",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544998341,
+    "title": "Kill the Superweapon",
+    "source": "protondb"
+  }
+]

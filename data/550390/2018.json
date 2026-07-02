@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "550390",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "No issues",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5",
+    "rating": "Platinum",
+    "timestamp": "1536364800",
+    "title": "Kingdom of Aurelia: Mystery of the Poisoned Dagger",
+    "source": "protondb"
+  },
+  {
+    "appId": "550390",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Played through entire game without issues",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544815527,
+    "title": "Kingdom of Aurelia: Mystery of the Poisoned Dagger",
+    "source": "protondb"
+  }
+]

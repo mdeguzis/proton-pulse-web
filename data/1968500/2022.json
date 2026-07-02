@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1968500",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.129.06",
+    "kernel": "5.15.0-37-generic",
+    "notes": "The game does not start",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1655491749,
+    "title": "",
+    "source": "protondb"
+  }
+]

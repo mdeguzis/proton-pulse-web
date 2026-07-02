@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "975000",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 550 Ti",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-52-generic",
+    "notes": "Game runs perfectly fine - but the few videos the game offers will not play (doesn't affect gameplay). A debug window pops up listing a directory for a .yst file that I can't locate. A few of the .ypf videos are playable w/ VLC media player. I can't tell if the issue is with Proton, the game engine, or a dependency. Wish I could locate that debug file.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1562453186,
+    "title": "NO, THANK YOU!!!",
+    "source": "protondb"
+  },
+  {
+    "appId": "975000",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 550 Ti",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Game runs perfectly fine. But, videos do not (doesn't affect gameplay). A debug window pops up with an output file in .yst format. Can't locate it though. A few of the .ypf videos are playable w/ VLC media player. Tried standard tweaks.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1562522859,
+    "title": "NO, THANK YOU!!!",
+    "source": "protondb"
+  }
+]

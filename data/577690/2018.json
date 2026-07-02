@@ -1,0 +1,45 @@
+[
+  {
+    "appId": "577690",
+    "title": "Spooky's Jump Scare Mansion: HD Renovation",
+    "timestamp": 1535518406,
+    "rating": "Gold",
+    "notes": "Took a bit longer to boot, but that might be my hard drive's fault",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "4.5.13536 Compatibility Profile Context 18.30.2.15",
+    "specs": "i5-4590 / RX480 8gb",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "577690",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Works only with forced WineD3D11. Game crashes on exit (black screen, unresponsive window), otherwise it seems to work perfectly",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1544569676,
+    "title": "Spooky's Jump Scare Mansion: HD Renovation",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "577690",
+    "title": "Spooky's Jump Scare Mansion: HD Renovation",
+    "timestamp": 1535504006,
+    "rating": "Gold",
+    "notes": "Took a bit longer to boot, but that might be my hard drive's fault",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "4.5.13536 Compatibility Profile Context 18.30.2.15",
+    "specs": "i5-4590 / RX480 8gb",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "678800",
+    "title": "SAS: Zombie Assault 4",
+    "timestamp": 1535474887,
+    "rating": "Borked",
+    "notes": "Brings up opening screen, but then clicking play causes it to crash",
+    "os": "Linux Mint 19 (Kernel 4.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "678800",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "Crashes after clicking play button",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15985 Mb",
+    "rating": "Borked",
+    "timestamp": 1537614740,
+    "title": "SAS: Zombie Assault 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "678800",
+    "cpu": "AMD Athlon(tm) X4 870K Quad Core Processor",
+    "gpu": "X.Org AMD PITCAIRN (DRM 2.50.0 / 4.15.0-20-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Crashes when trying to leave the main menu.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7991 Mb",
+    "rating": "Borked",
+    "timestamp": 1537757711,
+    "title": "SAS: Zombie Assault 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "678800",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.7-300.fc29.x86_64",
+    "notes": "Still crashes after clicking the 'Play' button.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544680055,
+    "title": "SAS: Zombie Assault 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "678800",
+    "title": "SAS: Zombie Assault 4",
+    "timestamp": 1535460487,
+    "rating": "Borked",
+    "notes": "Brings up opening screen, but then clicking play causes it to crash",
+    "os": "Linux Mint 19 (Kernel 4.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

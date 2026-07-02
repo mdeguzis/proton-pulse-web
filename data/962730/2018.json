@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "962730",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.19.9-arch1-1-ARCH",
+    "notes": "Various graphical glitches (invisible player), very low framerate (~5 FPS)",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545248927,
+    "title": "Skater XL",
+    "source": "protondb"
+  },
+  {
+    "appId": "962730",
+    "cpu": "Intel Core i7-8086K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "nvldumd.dll",
+    "kernel": "Supported 311 0x0 0x0 0x0",
+    "notes": "Worked the first time i played it then after that very low fps to the point its unplayable",
+    "os": "Windows 10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545702083,
+    "title": "Skater XL",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

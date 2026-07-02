@@ -1,0 +1,43 @@
+[
+  {
+    "appId": "42640",
+    "title": "Blur",
+    "timestamp": 1535320977,
+    "rating": "Platinum",
+    "notes": "Game works flawlessly and with good performance, the online connectivity appears to work too, I was able to create an online account and login. Only tried playing singleplayer though.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "42640",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-97.current",
+    "notes": "Install was smooth. Game started up fine. Attempting to alt-tab or use the steam overlay, possibly results in game crashing. No cursor support if you do get to the steam overlay. Menu buttons would occasionally stay visible after utilizing them during videos. Navigating menus was fine. Display options worked with bugs. Changing quality was acceptable, but changing AA settings would cause display to hang. If you restarted the game, AA settings would be applied. Running the game with AA on seemed to have crashed it. I turned the quality to the lowest setting and with AA off, game seemed to play just fine. Quite a bit of pop-in with the environment, but gameplay was acceptable. I tried a standard race and a destruction race, no issues actually playing it, so long as it loaded. Occasionally would experience black spots before and after race. Controller support exists, but I was unable to utilize my Xbox One controller with the game, even using it via steam's controller default. Multiplayer was not tested.",
+    "os": "Solus",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "3.7-8",
+    "ram": "24 GB",
+    "rating": "Bronze",
+    "timestamp": 1542510922,
+    "title": "Blur",
+    "source": "protondb"
+  },
+  {
+    "appId": "42640",
+    "title": "Blur",
+    "timestamp": 1535306577,
+    "rating": "Platinum",
+    "notes": "Game works flawlessly and with good performance, the online connectivity appears to work too, I was able to create an online account and login. Only tried playing singleplayer though.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

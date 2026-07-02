@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2287520",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 21.1.5, DRM 3.64, 6.17.12-300.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.17.12-300.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1766839872,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "appId": "234160",
+    "title": "Strike Suit Infinity",
+    "timestamp": 1535292268,
+    "rating": "Borked",
+    "notes": "Fulscreen black screen and crash",
+    "os": "Archlinux 64 bits (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600 / GTX 650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "234160",
+    "cpu": "i7-3930K CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "black window, and then it crash.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "32109 Mb",
+    "rating": "Borked",
+    "timestamp": 1536763153,
+    "title": "Strike Suit Infinity",
+    "source": "protondb"
+  },
+  {
+    "appId": "234160",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.19.0-4-MANJARO",
+    "notes": "Had to use PROTON_USE_WINED3D=1 %command% in launch options or else the game would just crash and won't launch. Perfomance is okay-ish and game is playable. Some of the problems include: glitchy textures while playing, text disappearing and general weirdness if you try to change resolution, can't exit game normally by pressing exit button, instead you have to do Alt+F4 or to kill process with kill command in terminal.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1541335854,
+    "title": "Strike Suit Infinity",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "234160",
+    "title": "Strike Suit Infinity",
+    "timestamp": 1535277868,
+    "rating": "Borked",
+    "notes": "Fulscreen black screen and crash",
+    "os": "Archlinux 64 bits (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600 / GTX 650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "385490",
+    "cpu": "i5-5200U CPU @ 2.20GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 5500 (Broadwell GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs perfectly",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.5-beta",
+    "ram": "3859 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536775622,
+    "title": "MiniDrivers",
+    "source": "protondb"
+  }
+]

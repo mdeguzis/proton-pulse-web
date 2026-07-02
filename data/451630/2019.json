@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "451630",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.1-2-MANJARO",
+    "notes": "Black screen on startup",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558885761,
+    "title": "Brute",
+    "source": "protondb"
+  }
+]

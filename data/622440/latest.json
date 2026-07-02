@@ -1,0 +1,75 @@
+[
+  {
+    "appId": "622440",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD TURKS",
+    "gpuDriver": "3.0 Mesa 18.0.2",
+    "kernel": "4.12.14-lp150.12.48-default",
+    "notes": "Set launch options to 'PROTON_NO_D3D11=1 %command%' otherwise there is no next. Performance is good. The only glitches are the rotating circles that are boxed do    to wrong texturing.",
+    "os": "openSUSE Leap 15.0",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1551479097,
+    "title": "Pandemic: The Board Game",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "622440",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.9.0-8-amd64",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1551928206,
+    "title": "Pandemic: The Board Game",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "622440",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Kabylake GT2",
+    "gpuDriver": "3.0 Mesa 11.2.0",
+    "kernel": "4.8.0-53-generic",
+    "notes": "Game launches, but no text and unable to click items if you alt-tab out and back in.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1557459673,
+    "title": "Pandemic: The Board Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "622440",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Kabylake GT2",
+    "gpuDriver": "3.0 Mesa 11.2.0",
+    "kernel": "4.8.0-53-generic",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557460990,
+    "title": "Pandemic: The Board Game",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

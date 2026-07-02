@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1286880",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.7, DRM 3.52, 6.4.6-76060406-generic)",
+    "gpuDriver": "4.6 Mesa 23.1.5 - kisak-mesa PPA",
+    "kernel": "6.4.6-76060406-generic",
+    "notes": "works out of the box",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1692531441,
+    "title": "Ship Graveyard Simulator",
+    "source": "protondb"
+  }
+]

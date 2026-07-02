@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1528240",
+    "cpu": "Intel Celeron N3350 @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 500 (APL 2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "4.16.18-pa2-1bp5",
+    "notes": "I use a Linux, Ubuntu 20.01 and the game dont start",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "2 GB",
+    "rating": "borked",
+    "timestamp": 1662419990,
+    "title": "",
+    "source": "protondb"
+  }
+]

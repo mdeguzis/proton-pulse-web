@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1706870",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.3-1-MANJARO",
+    "notes": "The click offset is just too big to get used to, it makes it kinda unusable",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1712626477,
+    "title": "",
+    "source": "protondb"
+  }
+]

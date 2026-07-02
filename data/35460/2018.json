@@ -1,0 +1,120 @@
+[
+  {
+    "appId": "35460",
+    "title": "The Ball",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Played through intro and started playing game but crashed to desktop after about 15 minutes. Haven't tested further.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "garbage",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "35460",
+    "title": "The Ball",
+    "timestamp": 1535624845,
+    "rating": "Silver",
+    "notes": "Game launched and ran fine. I played about 2 hours so far without any problems.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Nivida 390",
+    "specs": "GeForce GTX 750 Ti/PCIe/SSE2",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "35460",
+    "cpu": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.09",
+    "kernel": "4.15.0-36-generic",
+    "notes": "On first launch an error message about .NET framework appears, but this can be ignored and doesn't pop up again. The game never ran well on windows and it doesn't run much worse on Steam Play.",
+    "os": "KDE neon User Edition 5.14 (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "15835 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539702371,
+    "title": "The Ball",
+    "source": "protondb"
+  },
+  {
+    "appId": "35460",
+    "cpu": "Intel Core i3-4030U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.14.77-1-MANJARO",
+    "notes": "Error about .NET on first run. If using \"Disable D3d11\", a blank window will show up and nothing will happen. Otherwise, it won't even get that far without crashing.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543202558,
+    "title": "The Ball",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "35460",
+    "cpu": "Intel Core i3-4030U @ 1.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.5",
+    "kernel": "4.19.4-1-MANJARO",
+    "notes": "Didn't used to run, but started working fine for me AFTER I upgraded my kernel from 4.14.77 to 4.19.4 and my GPU driver from 3.0 Mesa 18.2.3 to 3.0 Mesa 18.2.5. The Disable D3d11 setting is required for it to run. Performance isn't great, but it is playable with settings and resolution turned all the way down. I don't know if that's because of Proton or my hardware, and I don't typically run Windows on this machine and can't compare.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1543469904,
+    "title": "The Ball",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "35460",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.6-1-MANJARO",
+    "notes": "Everything works fine from Campaign to Survival. Game may crash sometimes in Survival but it is a game engine bug and not a Wine bug.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1544310178,
+    "title": "The Ball",
+    "source": "protondb"
+  },
+  {
+    "appId": "35460",
+    "title": "The Ball",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Played through intro and started playing game but crashed to desktop after about 15 minutes. Haven't tested further.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "garbage",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "35460",
+    "title": "The Ball",
+    "timestamp": 1535610445,
+    "rating": "Silver",
+    "notes": "Game launched and ran fine. I played about 2 hours so far without any problems.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Nivida 390",
+    "specs": "GeForce GTX 750 Ti/PCIe/SSE2",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

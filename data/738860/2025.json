@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "738860",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.12.29-1-lts",
+    "notes": "No issues on my desktop OR steam deck!",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1759720146,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "738860",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "No issues on my desktop OR steam deck!",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1759720179,
+    "title": "",
+    "source": "protondb"
+  }
+]

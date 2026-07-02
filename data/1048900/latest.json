@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "1048900",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Unplayably laggy. However, runs perfectly off Steam in vanilla Wine (tested v3.0 64-bit).",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568877615,
+    "title": "The Fog: Trap for Moths",
+    "source": "protondb"
+  },
+  {
+    "appId": "1048900",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-60-generic",
+    "notes": "It works well, in Set Launch Options add PROTON_USE_D9VK=1 %command%",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1569010013,
+    "title": "The Fog: Trap for Moths",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "1048900",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Low framerate makes the game unplayable.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569692459,
+    "title": "The Fog: Trap for Moths",
+    "source": "protondb"
+  }
+]

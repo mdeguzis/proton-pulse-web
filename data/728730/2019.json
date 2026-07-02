@@ -1,0 +1,92 @@
+[
+  {
+    "appId": "728730",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Game crashes with a graphics DirectX 11 error as soon as I click on \"PLAY\".",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551169598,
+    "title": "Holyday City: Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "728730",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "The game was crashing with an error as soon as I clicked on \"PLAY\", but worked perfectly after I set the following launch options: \"PROTON_USE_WINED3D=1 %command%\". Now everything seems to be working.",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1551455868,
+    "title": "Holyday City: Reloaded",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "728730",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It had some graphical issues, but everything works perfectly when you use Wine D3d11 with the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552256234,
+    "title": "Holyday City: Reloaded",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "728730",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.18.0-17-generic",
+    "notes": "No problems at all",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555572916,
+    "title": "Holyday City: Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "728730",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "aboutAnHour",
+    "gpu": "AMD CYPRESS",
+    "gpuDriver": "3.1 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-23-generic",
+    "notes": " My gpu is old so game start if i use PROTON_USE_WINED3D11=1 %command% in steam launch settings. So it runs smooth",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1565612031,
+    "title": "Holyday City: Reloaded",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

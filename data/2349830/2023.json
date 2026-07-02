@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2349830",
+    "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.1.29-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1687260600,
+    "title": "Touhou: Gensokyo Survivors",
+    "source": "protondb"
+  },
+  {
+    "appId": "2349830",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "6.1.0-13-amd64",
+    "notes": "Werks",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1699917747,
+    "title": "Touhou: Gensokyo Survivors",
+    "source": "protondb"
+  },
+  {
+    "appId": "2349830",
+    "cpu": "Intel Core i5-4460 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 17.0.5, DRM 3.54, 6.6.6-1-default)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.6.6-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1703461153,
+    "title": "Touhou: Gensokyo Survivors",
+    "source": "protondb"
+  }
+]

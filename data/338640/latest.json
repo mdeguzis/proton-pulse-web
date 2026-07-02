@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "338640",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.14.0-1-default",
+    "notes": "Infinite connecting screen",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1631123224,
+    "title": "",
+    "source": "protondb"
+  }
+]

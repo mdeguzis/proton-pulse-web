@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "225260",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Native and Proton version work both fine. I installed D9VK and the game works fine with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556905120,
+    "title": "Brutal Legend",
+    "source": "protondb"
+  },
+  {
+    "appId": "225260",
+    "cpu": "Intel Core i5-2300 @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "works as well in native and proton,  but if you use D9VK maybe you can get a double of FPS, as me",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1562676127,
+    "title": "Brutal Legend",
+    "source": "protondb"
+  },
+  {
+    "appId": "225260",
+    "cpu": "AMD Athlon 5370 APU with Radeon R3",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-65-generic",
+    "notes": "Played the Native version first, but it was very slow. Play it through proton seem better and greatly faster. I'm not sure it there is some kind of graphic bug for i can't see the light points that marks the path, but i don't know if there is supposed to be any in the first place.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1571787393,
+    "title": "Brutal Legend",
+    "source": "protondb"
+  }
+]

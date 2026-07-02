@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "48800",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.1.0-050100rc2-generic",
+    "notes": "Doesn't start at all. Tried disabling eSync, tried disabling Steam Overlay. Is there an intro video? It might need a codec to play it.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.4-3",
+    "protonVersionManual": "4.4-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556526662,
+    "title": "Ship Simulator Extremes",
+    "source": "protondb"
+  },
+  {
+    "appId": "48800",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Were able to get to the cd-key screen by using an older Proton version and disable Steam Overlay. The key given by Steam wouldn't work for some reason, so wasn't able to test the actual game itself.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "3.16-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1572198141,
+    "title": "Ship Simulator Extremes",
+    "source": "protondb"
+  }
+]

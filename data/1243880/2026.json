@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1243880",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, ACO, DRM 3.64, 6.19.13-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.5-arch1.1",
+    "kernel": "6.19.13-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776956066,
+    "title": "",
+    "source": "protondb"
+  }
+]

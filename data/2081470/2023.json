@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2081470",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 16.0.6, DRM 3.54, 6.6.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.3.1-arch1.1",
+    "kernel": "6.6.8-arch1-1",
+    "notes": "The game displays on screen instead of the headset.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1704023246,
+    "title": "",
+    "source": "protondb"
+  }
+]

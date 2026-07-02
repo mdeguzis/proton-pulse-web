@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "244890",
+    "title": "Velocity\u00aeUltra",
+    "timestamp": 1535136420,
+    "rating": "Borked",
+    "notes": "No sound; stops responding/freezes when actually starting to play.",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.0)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3550 / RX480 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "244890",
+    "title": "Velocity\u00aeUltra",
+    "timestamp": 1535122020,
+    "rating": "Borked",
+    "notes": "No sound; stops responding/freezes when actually starting to play.",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.0)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3550 / RX480 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

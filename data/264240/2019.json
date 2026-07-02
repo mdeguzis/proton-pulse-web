@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "264240",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.0",
+    "notes": "Works perfect after applying fixes from dev:\n- https://steamcommunity.com/app/264240/discussions/0/613956964585243941/\n- https://steamcommunity.com/app/264240/discussions/0/1470840994964699347/",
+    "os": "Linux 4.x (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1551293997,
+    "title": "CONSORTIUM",
+    "source": "protondb"
+  },
+  {
+    "appId": "264240",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "This game seemed to be working okay out of the box at first - but I found that after 30 seconds of gameplay the screen would go black. I fixed it by adding this to the launch options: +r_signal_fx \"0\"",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1558566438,
+    "title": "CONSORTIUM",
+    "source": "protondb"
+  },
+  {
+    "appId": "264240",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "Works perfectly after applying a fix that is in a pinned thread on the game's steam forums called \"Wine Support\" made by the developer, if not applied most of the game will be just a black screen. https://steamcommunity.com/app/264240/discussions/0/613956964585243941/",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1569147759,
+    "title": "CONSORTIUM",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "560720",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-31-generic",
+    "notes": "Everything works from the start to the end.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1591206058,
+    "title": "",
+    "source": "protondb"
+  }
+]

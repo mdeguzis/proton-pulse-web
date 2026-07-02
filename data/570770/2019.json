@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "570770",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "runs and works. but you get no floor textures inside. so you cant really see where you are going.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562502874,
+    "title": "\u53e4\u5251\u5947\u8c2d\u4e8c(GuJian2)",
+    "source": "protondb"
+  }
+]

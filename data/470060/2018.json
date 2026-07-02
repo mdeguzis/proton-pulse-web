@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "470060",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "No problems",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541271608,
+    "title": "1917 - The Alien Invasion DX",
+    "source": "protondb"
+  },
+  {
+    "appId": "470060",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Game works fine with Keyboard controls, but with Switch Pro inputs had to be manually remapped, rating it Platinum because that appears to be problem for Windows users too.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545944795,
+    "title": "1917 - The Alien Invasion DX",
+    "source": "protondb"
+  }
+]

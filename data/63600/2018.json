@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "63600",
+    "title": "realMyst",
+    "timestamp": 1535737512,
+    "rating": "Gold",
+    "notes": "just played some minutes - works great",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ/HD4400",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "63600",
+    "cpu": "i5-7440HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-ext73-58.4-kabylake",
+    "notes": "linking book shows white movie",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "7911 Mb",
+    "rating": "Silver",
+    "timestamp": 1537021440,
+    "title": "realMYST",
+    "source": "protondb"
+  },
+  {
+    "appId": "63600",
+    "cpu": "AMD Ryzen 5 1600X Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10 / DRM 3.23.0 / 4.15.0-34-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "None of the videos work, although you can still hear the audio. I'm getting some lag when I'm in or around the library. Everything else seems to work.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16034 Mb",
+    "rating": "Silver",
+    "timestamp": 1537202588,
+    "title": "realMYST",
+    "source": "protondb"
+  },
+  {
+    "appId": "63600",
+    "title": "realMyst",
+    "timestamp": 1535723112,
+    "rating": "Gold",
+    "notes": "just played some minutes - works great",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ/HD4400",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

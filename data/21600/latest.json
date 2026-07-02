@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "21600",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-25-generic",
+    "notes": "No Launch Options needed.\nYou are welcomed by a white window: click a few times inside and wait about 10 seconds, then the main menu appears. Alt+Enter to go fullscreen. \nActivate securom with the CD Key provided by Steam. \nMultiplayer works too !! (I only tried on LAN, but it should work also over internet if you open the right ports)\nYou need a \"gamespy\" server/emulator like this : http://aluigi.altervista.org/papers/gs_login_server.zip\nThe source code is provided, it's very easy to compile (all is well explained in gs_login_server.txt)",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1566127086,
+    "title": "Age of Booty\u2122",
+    "source": "protondb"
+  }
+]

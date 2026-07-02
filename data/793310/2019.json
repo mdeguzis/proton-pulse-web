@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "793310",
+    "cpu": "AMD A10-5800K APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.1 Mesa 18.2.8",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Black Screen after start",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1560591977,
+    "title": "Die drei ??? und der Riesenkrake",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "359400",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "notes": "Seems to work out of the box with Proton. I've already played the game elsewhere, so I didn't want to go through the whole thing on Linux, but based on what I know, I see no reason later parts of the game would cause trouble.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554005303,
+    "title": "Why Am I Dead At Sea",
+    "source": "protondb"
+  }
+]

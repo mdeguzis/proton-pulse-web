@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "7210",
+    "title": "Runaway: A Road Adventure",
+    "timestamp": 1534976739,
+    "rating": "Borked",
+    "notes": "Old game that uses direct draw, complains about directx 8.0 not being installed",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770k / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "7210",
+    "title": "Runaway: A Road Adventure",
+    "timestamp": 1535702203,
+    "rating": "Platinum",
+    "notes": "Since proton 3.7-5 this an many games are running.",
+    "os": "Debian Stretch (Kernel 4.17.17-1~bpo9+1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080TI",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "7210",
+    "cpu": "Intel(R) Xeon(R) CPU E5-2630 0 @ 2.30GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "mouse cursor lags, animations stutter and finally whole game freezes",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15986 Mb",
+    "rating": "Borked",
+    "timestamp": 1537908250,
+    "title": "Runaway, A Road Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "7210",
+    "title": "Runaway: A Road Adventure",
+    "timestamp": 1534962339,
+    "rating": "Borked",
+    "notes": "Old game that uses direct draw, complains about directx 8.0 not being installed",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770k / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "7210",
+    "title": "Runaway: A Road Adventure",
+    "timestamp": 1535687803,
+    "rating": "Platinum",
+    "notes": "Since proton 3.7-5 this an many games are running.",
+    "os": "Debian Stretch (Kernel 4.17.17-1~bpo9+1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080TI",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

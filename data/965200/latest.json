@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "965200",
+    "cpu": "Intel Xeon           E5450  @ 3.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.2.11-050211-generic",
+    "notes": "PROTON_USE_WINED3D11=1 %command% ",
+    "os": "Ubuntu 18.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1571079581,
+    "title": "Walking Zombie 2",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

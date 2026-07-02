@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1234920",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.10.70",
+    "notes": "No issues",
+    "os": "NixOS 21.11 (Porcupine)",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1633476626,
+    "title": "",
+    "source": "protondb"
+  }
+]

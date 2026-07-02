@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2607870",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.8-2-cachyos",
+    "notes": "Game launches fine and plays smooth",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1764090362,
+    "title": "Slyders",
+    "source": "protondb"
+  }
+]

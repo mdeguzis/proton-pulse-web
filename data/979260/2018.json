@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "979260",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "No major issues noted. Would be platinum if it didn't throw up an error message after quitting.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1545761009,
+    "title": "Gizmo",
+    "source": "protondb"
+  }
+]

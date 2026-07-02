@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "841370",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.16.18-rt12-MANJARO",
+    "notes": "Game launches fine, however it cannot connect to online servers, rendering most of the game unplayable. Quickplay seems to work, played a few minutes of a game with my controller, though I did not test extensively, and there may have been some audio volume issues as well.\n\nNetwork issues seem to be related to this bug:\nhttps://github.com/ValveSoftware/Proton/issues/162",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7 Beta",
+    "ram": "7876 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537377656,
+    "title": "NBA 2K19",
+    "source": "protondb"
+  },
+  {
+    "appId": "841370",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Cannot connect to servers. Menus functioned smoothly at very low resolution. Even at very low resolution, gameplay saw constant frame drops and inconsistent render quality.\n\nTried disabling esync, d3d11, and using wine d3d11, with no change. Could be failure to use the dedicated graphics card.\n\n",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1545064381,
+    "title": "NBA 2K19",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "2450",
+    "title": "Bloody Good Time",
+    "timestamp": 1535817679,
+    "rating": "Borked",
+    "notes": "Launches to menu but fails to create a server: \"CD Key authentication invalid for internet servers.\"",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "Xeon E5440 / GTX 680",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  },
+  {
+    "appId": "2450",
+    "cpu": "AMD Athlon X4 760K Quad Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-11-generic",
+    "notes": "The menu works, but the game doesn't. You are not able to start a game because of an invalid CD key error. You can't even start the tutorial.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1543353348,
+    "title": "Bloody Good Time",
+    "source": "protondb"
+  },
+  {
+    "appId": "2450",
+    "title": "Bloody Good Time",
+    "timestamp": 1535803279,
+    "rating": "Borked",
+    "notes": "Launches to menu but fails to create a server: \"CD Key authentication invalid for internet servers.\"",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "Xeon E5440 / GTX 680",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "27920",
+    "title": "Booster Trooper",
+    "timestamp": 1535996626,
+    "rating": "Silver",
+    "notes": "Slight text flicker in menus",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "27920",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Graphical glitches... Text flickers. Some transparent geometry.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541387318,
+    "title": "Booster Trooper",
+    "source": "protondb"
+  },
+  {
+    "appId": "27920",
+    "title": "Booster Trooper",
+    "timestamp": 1535982226,
+    "rating": "Silver",
+    "notes": "Slight text flicker in menus",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

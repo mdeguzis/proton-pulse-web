@@ -1,0 +1,47 @@
+[
+  {
+    "appId": "506140",
+    "title": "Shop Heroes",
+    "timestamp": 1535077036,
+    "rating": "Platinum",
+    "notes": "Works as expected.",
+    "os": "Linux Mint 18.3 Cin 64-bit (K:4.15.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "GeForce GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "506140",
+    "cpu": "Intel Xeon E5-2670 0 @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Fatal error in gc, GetThreadContext failed, right after clean install of Ubuntu 18.04 it worked perfectly, then after updates it crashes. I attempted reverting every setting, changing drivers, uninstall/reinstall etc. and nothing seems to make it work again.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1543444081,
+    "title": "Shop Heroes",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "506140",
+    "title": "Shop Heroes",
+    "timestamp": 1535062636,
+    "rating": "Platinum",
+    "notes": "Works as expected.",
+    "os": "Linux Mint 18.3 Cin 64-bit (K:4.15.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "GeForce GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

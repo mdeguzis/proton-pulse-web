@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1410870",
+    "cpu": "AMD FX-9830P RADEON R7, 12 COMPUTE CORES 4C+8G",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.8-200.fc33.x86_64",
+    "notes": "I think it's playable enough.",
+    "os": "Linux 5.x\uff0864 \u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "5.13-6",
+    "ram": "15962Mb",
+    "rating": "gold",
+    "timestamp": 1616643370,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1410870",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Works fine.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1628372479,
+    "title": "",
+    "source": "protondb"
+  }
+]

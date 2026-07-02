@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "366240",
+    "cpu": "Intel Core i3-8130U @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Kabylake GT1.5",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.9.0-9-amd64",
+    "notes": "Won't get into the game, throws up an error message about \"Assertion failed!\" from Microsoft Visual Studio Runtime Editor.\n\nrenderer/renderer9_utils.cpp\nline: 387\n\nSeems to be the problem.\n\nYou can \"abort, retry, ignore\" but ignoring will just close like abort does and retry will just throw the error up again.",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1565465344,
+    "title": "GAROU: MARK OF THE WOLVES",
+    "source": "protondb"
+  }
+]

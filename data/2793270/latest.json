@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2793270",
+    "cpu": "11th Gen Intel Core i5-11260H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.1.0-10-amd64",
+    "notes": "I couldn't get this game to start with vanilla Proton (9.0-4) nor with Glorious Eggroll (9-22).  Launching the game brings up a fatal crash message after a few seconds.  I haven't tried any tweaks.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1735965219,
+    "title": "",
+    "source": "protondb"
+  }
+]

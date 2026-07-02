@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "359580",
+    "title": "Uncanny Valley",
+    "timestamp": 1534947268,
+    "rating": "Gold",
+    "notes": "",
+    "os": "Ubuntu Mate",
+    "gpuDriver": "?",
+    "specs": "i7-7500U / Intel 5916",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "359580",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Tried all compatibility flags, no change. Game crashes when entering elevator, with the following message: \n\n############################################################################################\nFATAL ERROR in Vertex Shader compilation\nShaderName: shd_buttonHighlight\n\nD3DXCompile failed - result\n\nat gml_Object_o_safeButton_Draw_0\n############################################################################################",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "Beta",
+    "ram": "16002 MB",
+    "rating": "Borked",
+    "timestamp": 1538057369,
+    "title": "Uncanny Valley",
+    "source": "protondb"
+  },
+  {
+    "appId": "359580",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540436294,
+    "title": "Uncanny Valley",
+    "source": "protondb"
+  },
+  {
+    "appId": "359580",
+    "title": "Uncanny Valley",
+    "timestamp": 1534932868,
+    "rating": "Gold",
+    "notes": "",
+    "os": "Ubuntu Mate",
+    "gpuDriver": "?",
+    "specs": "i7-7500U / Intel 5916",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "645480",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Jittery graphics and some sound stutters.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1542350869,
+    "title": "Spider-Man: Homecoming - Virtual Reality Experience",
+    "source": "protondb"
+  },
+  {
+    "appId": "645480",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.18.04",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Moderately severe audio crackling/distortions.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1544946284,
+    "title": "Spider-Man: Homecoming - Virtual Reality Experience",
+    "source": "protondb"
+  }
+]

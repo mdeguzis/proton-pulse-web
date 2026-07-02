@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "616220",
+    "cpu": "Intel Core i3-3110M @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "4.2 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-37-generic",
+    "notes": "Niepoprawny odczyt po\u0142o\u017cenia myszy w grze.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1773562688,
+    "title": "",
+    "source": "protondb"
+  }
+]

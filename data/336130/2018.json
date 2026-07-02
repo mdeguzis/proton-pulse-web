@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "336130",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.02",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Configuration program and game work flawlessly, out of the box",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537053400,
+    "title": "Shardlight",
+    "source": "protondb"
+  },
+  {
+    "appId": "336130",
+    "cpu": "Intel(R) Core(TM) i7-6800K CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "Runs flawlessly.",
+    "os": "\"Antergos Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "32059 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537443017,
+    "title": "Shardlight",
+    "source": "protondb"
+  },
+  {
+    "appId": "336130",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "I have finished the game wih no problems!",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545054909,
+    "title": "Shardlight",
+    "source": "protondb"
+  }
+]

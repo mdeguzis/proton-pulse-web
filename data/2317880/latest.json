@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2317880",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 20.1.2, DRM 3.61, 6.14.4-300.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.4",
+    "kernel": "6.14.4-300.fc42.x86_64",
+    "notes": "No issues",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1746378257,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "2520",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.6-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.6-1-MANJARO",
+    "notes": "Frame rate is very low",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "16042 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536633887,
+    "title": "Gumboy - Crazy Adventures\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "2520",
+    "cpu": "AMD Opteron 6344",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.19.2-041902-generic",
+    "notes": "Seems to run without issue, just not great FPS.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1542489952,
+    "title": "Gumboy - Crazy Adventures\u2122",
+    "source": "protondb"
+  }
+]

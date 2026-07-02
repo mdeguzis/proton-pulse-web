@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "375230",
+    "title": "Warhammer 40,000: Eternal Crusade",
+    "timestamp": 1535740970,
+    "rating": "Borked",
+    "notes": "Crash on startup",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GeForce GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "375230",
+    "cpu": "Intel(R) Core(TM) i5-2500K CPU @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.13-041813-lowlatency, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.13-041813-lowlatency",
+    "notes": "Crashes at startup, shortly after the splash screen.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7942 Mb",
+    "rating": "Borked",
+    "timestamp": 1539369480,
+    "title": "Warhammer 40,000: Eternal Crusade",
+    "source": "protondb"
+  },
+  {
+    "appId": "375230",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Tried both the default and the DirectX 10 launch options. Tried the two applicable common tweaks, PROTON_USE_WINED3D and PROTON_NO_ESYNC. Tried with both the default and Beta (3.16-4) Proton versions. The game shows a splash screen, a black window and then closes.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544023389,
+    "title": "Warhammer 40,000: Eternal Crusade",
+    "source": "protondb"
+  },
+  {
+    "appId": "375230",
+    "title": "Warhammer 40,000: Eternal Crusade",
+    "timestamp": 1535726570,
+    "rating": "Borked",
+    "notes": "Crash on startup",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GeForce GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

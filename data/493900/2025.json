@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "493900",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 19.1.5, DRM 3.59, 6.13.2-200.nobara.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.4",
+    "kernel": "6.13.2-200.nobara.fc41.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1743863148,
+    "title": "",
+    "source": "protondb"
+  }
+]

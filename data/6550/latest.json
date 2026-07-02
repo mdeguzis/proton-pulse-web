@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "6550",
+    "cpu": "Intel Core i7-3720QM @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 670M",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.19.20-1-MANJARO",
+    "notes": "Game loads and runs out of the box, except for controller configuration utility.  Since DMC3 predated good controller support, configuration must be done with Steam or some external tool, which is not a small issue.  It's not obvious which buttons and axes map to what in the game - for example, the L trigger on my 360 controller was mapped to the y axis of the left stick.  Could be platinum if a controller could be configured with the game's utility instead of with guess-and-check outside the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1550079531,
+    "title": "Devil May Cry\u00ae 3 Special Edition",
+    "source": "protondb"
+  }
+]

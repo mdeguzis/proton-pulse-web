@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "470090",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "Black screen on launch, have splash screen sound but nothing else.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552967035,
+    "title": "Quantum Replica",
+    "source": "protondb"
+  }
+]

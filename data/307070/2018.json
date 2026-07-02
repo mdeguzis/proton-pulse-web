@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "307070",
+    "title": "memories of a vagabond",
+    "timestamp": 1535685205,
+    "rating": "Silver",
+    "notes": "run normally but the text on the game disapear just this",
+    "os": "lubuntu 18.04 gtx 650",
+    "gpuDriver": "nvidea 390.48",
+    "specs": "core2quad q8400",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "307070",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "The game works perfectly",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543341834,
+    "title": "Memories of a Vagabond",
+    "source": "protondb"
+  },
+  {
+    "appId": "307070",
+    "title": "memories of a vagabond",
+    "timestamp": 1535670805,
+    "rating": "Silver",
+    "notes": "run normally but the text on the game disapear just this",
+    "os": "lubuntu 18.04 gtx 650",
+    "gpuDriver": "nvidea 390.48",
+    "specs": "core2quad q8400",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

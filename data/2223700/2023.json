@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2223700",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.52, 6.3.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.1",
+    "kernel": "6.3.6-arch1-1",
+    "notes": "It just runs",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1686672574,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2223700",
+    "cpu": "AMD Ryzen 5 3500X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.7, DRM 3.52, 6.3.8-200.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.1 (git-fa55e3c026)",
+    "kernel": "6.3.8-200.fc38.x86_64",
+    "notes": "",
+    "os": "Fedora 38",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1689436506,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2223700",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "runs perfectly",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1701600220,
+    "title": "",
+    "source": "protondb"
+  }
+]

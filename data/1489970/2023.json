@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1489970",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD GFX1102 (gfx1102, LLVM 15.0.7, DRM 3.49, 6.2.0-33-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "6.2.0-33-generic",
+    "notes": "",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-3",
+    "ram": "63 GB",
+    "rating": "silver",
+    "timestamp": 1695531300,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1489970",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.2.10-1-liquorix-amd64",
+    "notes": "It's enjoyable, but be aware that terraforming and road building are very annoying because some nodes don't work and game freezes sometimes.",
+    "os": "Linux Mint 21",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1699439091,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1489970",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (navi14, LLVM 16.0.6, DRM 3.49, 5.14.21-150500.55.36-default)",
+    "gpuDriver": "4.6 Mesa 23.2.1 (git-49a47f187e)",
+    "kernel": "5.14.21-150500.55.36-default",
+    "notes": "Fun with Suse Leap 15.5",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1701151712,
+    "title": "",
+    "source": "protondb"
+  }
+]

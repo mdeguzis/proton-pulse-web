@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "282030",
+    "title": "Carmageddon 2: Carpocalypse Now",
+    "timestamp": 1534958189,
+    "rating": "Gold",
+    "notes": "Tested for 1 race. crashed on exit the first time",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-6600K / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "282030",
+    "title": "Carmageddon 2: Carpocalypse Now",
+    "timestamp": 1534963531,
+    "rating": "Silver",
+    "notes": "Can't change resolution in-game. You would have to run the 3DFX configuration manager in the \"Photon\"/Wine prefix to change the resolution etc..\nEverything else seems to be fine except the LAN multiplayer was untested.",
+    "os": "Xubuntu 18.04 LTS 64-bit (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel Core i7-4790",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "282030",
+    "title": "Carmageddon 2: Carpocalypse Now",
+    "timestamp": 1534943789,
+    "rating": "Gold",
+    "notes": "Tested for 1 race. crashed on exit the first time",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-6600K / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "282030",
+    "title": "Carmageddon 2: Carpocalypse Now",
+    "timestamp": 1534949131,
+    "rating": "Silver",
+    "notes": "Can't change resolution in-game. You would have to run the 3DFX configuration manager in the \"Photon\"/Wine prefix to change the resolution etc..\nEverything else seems to be fine except the LAN multiplayer was untested.",
+    "os": "Xubuntu 18.04 LTS 64-bit (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel Core i7-4790",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

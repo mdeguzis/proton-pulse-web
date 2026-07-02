@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "116100",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.7-1.el7.elrepo.x86_64",
+    "notes": "No issues at all - runs with good framerates at 1080p",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "64419 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537043358,
+    "title": "Super Toy Cars",
+    "source": "protondb"
+  },
+  {
+    "appId": "116100",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Works with PROTON_USE_WINED3D11=1 %command%",
+    "os": "Linux 4.x (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541703194,
+    "title": "Super Toy Cars",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "116100",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-dd0172e 2018-11-20 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Same experience as I remember it from playing in Windows.",
+    "os": "Ubuntu Cosmic Cuddlefish",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "15 GB",
+    "rating": "Platinum",
+    "timestamp": 1543527830,
+    "title": "Super Toy Cars",
+    "source": "protondb"
+  }
+]

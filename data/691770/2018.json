@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "691770",
+    "title": "Eiyu*Senki \u2013 The World Conquest",
+    "timestamp": 1536205047,
+    "rating": "Borked",
+    "notes": "A window opens, gives two errors, then closes. The error codes are TC01-1.05-40047-105 [40000101] and TC01-1.05-40051-150 [00000000]",
+    "os": "Manjaro 64-bit (kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790k / gtx 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "691770",
+    "title": "Eiyu*Senki \u2013 The World Conquest",
+    "timestamp": 1536190647,
+    "rating": "Borked",
+    "notes": "A window opens, gives two errors, then closes. The error codes are TC01-1.05-40047-105 [40000101] and TC01-1.05-40051-150 [00000000]",
+    "os": "Manjaro 64-bit (kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790k / gtx 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

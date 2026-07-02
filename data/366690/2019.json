@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "366690",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Runs flawlessly out of the box.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556949922,
+    "title": "Cue Club 2: Pool & Snooker",
+    "source": "protondb"
+  },
+  {
+    "appId": "366690",
+    "cpu": "Intel Core i3-6006U @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Run perfect without tweaks",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-5",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1559328088,
+    "title": "Cue Club 2: Pool & Snooker",
+    "source": "protondb"
+  }
+]

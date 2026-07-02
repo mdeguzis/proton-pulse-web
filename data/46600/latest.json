@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "46600",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "The game runs perfectly with no tweaks. When my Xbox 360 controller was plugged in, the game registered some constant input and the menu and would flash as it repeatedly searched & aborted searching for online matches. I seem to remember encountering a similar problem on Windows, and the game has never been listed as \"full controller support\". Since the game plays perfectly with the default keyboard input, I think it fair to give it a Platinum rating. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561562555,
+    "title": "Swarm Arena",
+    "source": "protondb"
+  }
+]

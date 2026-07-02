@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "369030",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Will show the menu for a split second before crashing. Tried with proton experimental and the latest GE proton.",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1671627476,
+    "title": "Vinyl",
+    "source": "protondb"
+  }
+]

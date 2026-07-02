@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "229870",
+    "title": "Shootmania Storm",
+    "timestamp": 1535403961,
+    "rating": "Platinum",
+    "notes": "Everything works flawlessly.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "Nivida 396.54",
+    "specs": "i5-3570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "229870",
+    "title": "ShootMania Storm",
+    "timestamp": 1535818076,
+    "rating": "Borked",
+    "notes": "Steam indicates that the game is working for a few seconds, but it crashes with no message or ui",
+    "os": "Manjaro 4.14.66-1",
+    "gpuDriver": "NVIDIA GeForce GTX 560 Ti",
+    "specs": "Intel Pentium G4560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "229870",
+    "title": "Shootmania Storm",
+    "timestamp": 1535389561,
+    "rating": "Platinum",
+    "notes": "Everything works flawlessly.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "Nivida 396.54",
+    "specs": "i5-3570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "229870",
+    "title": "ShootMania Storm",
+    "timestamp": 1535803676,
+    "rating": "Borked",
+    "notes": "Steam indicates that the game is working for a few seconds, but it crashes with no message or ui",
+    "os": "Manjaro 4.14.66-1",
+    "gpuDriver": "NVIDIA GeForce GTX 560 Ti",
+    "specs": "Intel Pentium G4560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

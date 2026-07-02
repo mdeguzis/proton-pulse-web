@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "400470",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Does run \"out of the box\" ... except for having a horrible framerate (sub 10FPS), due to it's game engine/rendering. You might want to tinker with the game settings. {I will try to run the game with WINE and specific Win-emu settings to figure out how to make it render faster. Update my report}",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1544503110,
+    "title": "The Seven Years War (1756-1763)",
+    "source": "protondb"
+  }
+]

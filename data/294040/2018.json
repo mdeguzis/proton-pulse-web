@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "294040",
+    "title": "Loot Hero DX",
+    "timestamp": 1536200435,
+    "rating": "Platinum",
+    "notes": "No apparent issues.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit 4.15.0-33-generic",
+    "gpuDriver": "NVIDIA 340.107",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "294040",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Perfect",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5",
+    "rating": "Platinum",
+    "timestamp": "1536364800",
+    "title": "Loot Hero DX",
+    "source": "protondb"
+  },
+  {
+    "appId": "294040",
+    "cpu": "AMD A6-6400K APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1540592026,
+    "title": "Loot Hero DX",
+    "source": "protondb"
+  },
+  {
+    "appId": "294040",
+    "title": "Loot Hero DX",
+    "timestamp": 1536186035,
+    "rating": "Platinum",
+    "notes": "No apparent issues.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit 4.15.0-33-generic",
+    "gpuDriver": "NVIDIA 340.107",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

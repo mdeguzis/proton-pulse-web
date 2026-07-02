@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1018830",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 20.1.8, DRM 3.61, 6.12.58-gentoo)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.12.58-gentoo",
+    "notes": "Works perfectly",
+    "os": "Gentoo Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1766317905,
+    "title": "",
+    "source": "protondb"
+  }
+]

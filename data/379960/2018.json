@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "379960",
+    "cpu": "AMD A10-4600M APU with Radeon(tm) HD Graphics",
+    "gpu": "X.Org AMD ARUBA (DRM 2.50.0 / 4.18.6-041806-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.18.6-041806-generic",
+    "notes": "Fails to start",
+    "os": "elementary OS 0.4.1 Loki (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "11457 Mb",
+    "rating": "Borked",
+    "timestamp": 1536636941,
+    "title": "Mahjong Pretty Girls Battle : School Girls Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "379960",
+    "cpu": "Intel Core2 Duo     E8400  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 8500 GT",
+    "gpuDriver": "NVIDIA 340.106",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "game fails to start, shows as running process for 3-4 minutes then terminates itself without any notice.",
+    "os": "Debian GNU/Linux 9.5 (stretch)",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1544156957,
+    "title": "Mahjong Pretty Girls Battle : School Girls Edition",
+    "source": "protondb"
+  }
+]

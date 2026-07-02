@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "17311",
+    "title": "Crysis Warhead",
+    "timestamp": 1535073511,
+    "rating": "Borked",
+    "notes": "Error when starting the game. \"The game can not start. There seems to be a problem contacting the license server. Ensure your internet connect is active and try again in a few minutes.\"",
+    "os": "Arch Linux x64 (Kernel 4.18.1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "17311",
+    "title": "Crysis Warhead",
+    "timestamp": 1535059111,
+    "rating": "Borked",
+    "notes": "Error when starting the game. \"The game can not start. There seems to be a problem contacting the license server. Ensure your internet connect is active and try again in a few minutes.\"",
+    "os": "Arch Linux x64 (Kernel 4.18.1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

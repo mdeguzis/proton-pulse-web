@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "635880",
+    "cpu": "Intel Core i7-2630QM @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.14.83-gentoo",
+    "notes": "Won't start.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546356234,
+    "title": "Chicken Labyrinth Puzzles",
+    "source": "protondb"
+  },
+  {
+    "appId": "635880",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Doesn't start",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1548874546,
+    "title": "Chicken Labyrinth Puzzles",
+    "source": "protondb"
+  },
+  {
+    "appId": "635880",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-zen1-2-zen",
+    "notes": "Crashes on launch.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561526946,
+    "title": "Chicken Labyrinth Puzzles",
+    "source": "protondb"
+  }
+]

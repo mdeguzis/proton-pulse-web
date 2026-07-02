@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "774811",
+    "title": "YUME NIKKI -DREAM DIARY-",
+    "timestamp": 1535223995,
+    "rating": "Silver",
+    "notes": "Audio stuttering, gamepad not detected",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1060 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "774811",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs perfectly but performs slightly worse than it does on Windows.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16036 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538359739,
+    "title": "YUMENIKKI -DREAM DIARY-",
+    "source": "protondb"
+  },
+  {
+    "appId": "774811",
+    "title": "YUME NIKKI -DREAM DIARY-",
+    "timestamp": 1535209595,
+    "rating": "Silver",
+    "notes": "Audio stuttering, gamepad not detected",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1060 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

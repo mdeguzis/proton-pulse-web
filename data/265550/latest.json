@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "265550",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-45-generic",
+    "notes": "The game now starts up and can play it at a low frame rate. This game used to not work before.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.3",
+    "protonVersionManual": "4.3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1555645648,
+    "title": "Dead Rising 3 Apocalypse Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "265550",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-45-generic",
+    "notes": "The game now starts up and can play it at a low frame rate. This game used to not work before.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556400499,
+    "title": "Dead Rising 3 Apocalypse Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "265550",
+    "cpu": "Intel Core i7-4785T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GPU",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.3.0-1-MANJARO",
+    "notes": "Game launches into the main menu and the new game cutscene, but crashes after the cutscene ends or is skipped.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1567270409,
+    "title": "Dead Rising 3 Apocalypse Edition",
+    "source": "protondb"
+  }
+]

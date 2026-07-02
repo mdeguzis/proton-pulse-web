@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1770440",
+    "cpu": "AMD Ryzen 5 PRO 4650GE with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (DRM 3.42.0, 5.15.80, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.15.80",
+    "notes": "You will be able to use the interface as expected, but powering on any of the computers results in an infinite loading symbol in the lower left corner of the screen. The monitors will never display a picture beyond a plain black or white image.",
+    "os": "Slackware 15.0 x86_64",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1676155071,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1770440",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "6.2.6-arch1-1",
+    "notes": "The 3D models of each machine can be seen and interacted with as expected, but the actual emulator fails to start.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1679074287,
+    "title": "",
+    "source": "protondb"
+  }
+]

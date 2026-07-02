@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "734510",
+    "cpu": "AMD FX-4100 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 580",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.18.5-041805-generic",
+    "notes": "Seems to work OK.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1545601944,
+    "title": "Worshippers",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3135070",
+    "cpu": "AMD A8-4500M APU with Radeon HD Graphics",
+    "duration": "underOneHour",
+    "gpu": "Mesa AMD ARUBA (DRM 2.50.0 / 6.10.7-zen1-1-zen, LLVM 18.1.8)",
+    "gpuDriver": "4.5 Mesa 24.1.6-arch1.1",
+    "kernel": "6.10.7-zen1-1-zen",
+    "notes": "Trying to run through Wine didn't work at all, causing a black screen and a freeze laptop and then having to force shut down.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1725467818,
+    "title": "",
+    "source": "protondb"
+  }
+]

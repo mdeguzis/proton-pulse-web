@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "428280",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.7-103.current",
+    "notes": "Game launches to black screen and mouse pointer if Esync isn't disabled in Proton's user_settings.py. \n\nIf it is disabled then the game launches normally and everything appears to work- sound, graphics, saving, quitting, starting again and continuing. ",
+    "os": "Solus",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1544881254,
+    "title": "Mystery of Unicorn Castle: The Beastmaster",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

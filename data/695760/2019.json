@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "695760",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "The game runs fine. If no text is appearing in the game, make sure the package \"ttf-mscorefonts-installer\" is installed on your system. The game needs comic sans ms font to be installed, which should resolve the issue.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1546477493,
+    "title": "Girls and Dungeons",
+    "source": "protondb"
+  }
+]

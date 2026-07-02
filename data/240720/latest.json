@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "240720",
+    "title": "Getting Over It with Bennett Foddy",
+    "timestamp": 1534967321,
+    "rating": "Platinum",
+    "notes": "Same performance as windows (i.e. slightly stuttery). Mouse control feels native.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 7 2700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "240720",
+    "title": "Getting Over It with Bennett Foddy",
+    "timestamp": 1534983817,
+    "rating": "Silver",
+    "notes": "Runs like the current Linux beta, but will not play the end reward video due to Widevine DRM in Chrome Embedded Framework. Developer is planning a Native Linux version, currently in beta (Beta code: \"nakedmaninapot\", beta branch \"testing\")",
+    "os": "Kubuntu 18.04.1 (Kernel 4.17.3)",
+    "gpuDriver": "NVIDIA 396.51.02",
+    "specs": "Intel E5-1660 / GTX 1080 11Gbps",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "240720",
+    "title": "Getting Over It with Bennett Foddy",
+    "timestamp": 1534952921,
+    "rating": "Platinum",
+    "notes": "Same performance as windows (i.e. slightly stuttery). Mouse control feels native.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 7 2700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "240720",
+    "title": "Getting Over It with Bennett Foddy",
+    "timestamp": 1534969417,
+    "rating": "Silver",
+    "notes": "Runs like the current Linux beta, but will not play the end reward video due to Widevine DRM in Chrome Embedded Framework. Developer is planning a Native Linux version, currently in beta (Beta code: \"nakedmaninapot\", beta branch \"testing\")",
+    "os": "Kubuntu 18.04.1 (Kernel 4.17.3)",
+    "gpuDriver": "NVIDIA 396.51.02",
+    "specs": "Intel E5-1660 / GTX 1080 11Gbps",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

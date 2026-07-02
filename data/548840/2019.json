@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "548840",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "notes": "Played well into the game, haven't finished it but it works well.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554499317,
+    "title": "A Rose in the Twilight / \u30ed\u30bc\u3068\u9ec4\u660f\u306e\u53e4\u57ce",
+    "source": "protondb"
+  },
+  {
+    "appId": "548840",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Launch options: PROTON_FORCE_LARGE_ADDRESS_AWARE=1 %command% or menu text may disappear and may crash on dying or moving to next area.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1557593332,
+    "title": "A Rose in the Twilight / \u30ed\u30bc\u3068\u9ec4\u660f\u306e\u53e4\u57ce",
+    "source": "protondb"
+  }
+]

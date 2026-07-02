@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "470260",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "There is a native Linux beta that you have to opt into that is out of the scope of this database, and would of course be changing. If you don't opt into the Linux beta then the game will not download anything and cause an error when trying to play.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557579821,
+    "title": "Event[0]",
+    "source": "protondb"
+  },
+  {
+    "appId": "470260",
+    "cpu": "AMD FX-8120 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0",
+    "kernel": "5.3.0-13-generic",
+    "notes": "Before installing 'Force the use of a specific Steam Play compatibility tool' to install the Windows version. In the game's control settings I did have to lower the mouse sensitivity.",
+    "os": "Ubuntu Eoan Ermine (development branch)",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1570200281,
+    "title": "Event[0]",
+    "source": "protondb"
+  }
+]

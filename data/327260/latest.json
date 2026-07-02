@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "327260",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.34-1-MANJARO",
+    "notes": "boots on non-primary monitor with no way of changing that. Also starts in full-screen in a highly blown up resolution, making it very hard to see the menu. it's however possible to navigate to the options and change it to windowed mode, after which it runs perfectly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Gold",
+    "timestamp": 1555922014,
+    "title": "Super Life of Pixel",
+    "source": "protondb"
+  }
+]

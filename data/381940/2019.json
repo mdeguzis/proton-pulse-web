@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "381940",
+    "cpu": "Intel Xeon           X5460  @ 3.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.56",
+    "notes": "A black window opens, then a single frame is partly rendered. Then it's frozen and the computer hangs. Had to kill it!",
+    "os": "Linux 4.x",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1562202395,
+    "title": "Trials on Tatooine",
+    "source": "protondb"
+  },
+  {
+    "appId": "381940",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-40087ffc5b)",
+    "kernel": "5.3.1-1-MANJARO",
+    "notes": "Starts in window and instantly freezes",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "Proton-4.6-GE-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1569367122,
+    "title": "Trials on Tatooine",
+    "source": "protondb"
+  },
+  {
+    "appId": "381940",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.24.02",
+    "kernel": "5.2.14-arch1-1-fsync",
+    "notes": "Creates a window, but freezes before it outputs anything to my Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569638523,
+    "title": "Trials on Tatooine",
+    "source": "protondb"
+  }
+]

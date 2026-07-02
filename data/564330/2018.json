@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "564330",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Mouse drift and no option to go to fullscreen.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541192212,
+    "title": "In Your Face TD",
+    "source": "protondb"
+  },
+  {
+    "appId": "564330",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "using STEAM_RUNTIME_PREFER_HOST_LIBRARIES=0\ngame renders perfectly, but enemies do not, so not really playable",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541852272,
+    "title": "In Your Face TD",
+    "source": "protondb"
+  },
+  {
+    "appId": "564330",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-7e9fc11 2018-11-17 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Replaced the NVIDIA 1060 with a Radeon RX480 and everything renders OK",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542540023,
+    "title": "In Your Face TD",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "564330",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.14.87-1-lts",
+    "notes": "Very minor performance issues with my Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545071669,
+    "title": "In Your Face TD",
+    "source": "protondb"
+  }
+]

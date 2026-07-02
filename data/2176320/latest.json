@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2176320",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 15.0.7, DRM 3.42, 5.15.0-91-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-91-generic",
+    "notes": "No noticeable issues playing the game. Did not test multiplayer.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1706375469,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2176320",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 16.0.6, DRM 3.54, 6.5.13-6-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.9-manjaro1.1",
+    "kernel": "6.5.13-6-MANJARO",
+    "notes": "Never was able to connect to anyone for online multiplayer in any of the modes - quick match, or joining rooms.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1729808619,
+    "title": "",
+    "source": "protondb"
+  }
+]

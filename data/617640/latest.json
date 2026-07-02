@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "617640",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Works well with Proton 4.11-2. Some menu items hang for a second. But it all works. Also, press Space to skip cut scenes. ",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1566796932,
+    "title": "Forged of Blood",
+    "source": "protondb"
+  }
+]

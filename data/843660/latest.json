@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "843660",
+    "cpu": "Intel Core i7-2640M @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 17.0.7",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Without any setting it crashes with \"Failed to initialize graphics. Make sure you have DirectX 11 installed\" but it works once that \"PROTON_USE_WINED3D=1 %command%\" is set in Launch Options. No issues experienced, just the game seems a bit bland.",
+    "os": "Ubuntu 16.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1559495385,
+    "title": "Rogue Agent",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "843660",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.18.0-21-generic",
+    "notes": "Played a couple games and found no issues",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1560629166,
+    "title": "Rogue Agent",
+    "source": "protondb"
+  }
+]

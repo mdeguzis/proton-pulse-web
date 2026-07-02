@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "947300",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.14.79-1-MANJARO",
+    "notes": "Played the game for several hours and only had one issue that might be due to having an ultrawide monitor, some of the text is not aligned properly and is cut off the side of the screen when events happen. Other than that runs perfectly. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541964080,
+    "title": "Grim Nights",
+    "source": "protondb"
+  }
+]

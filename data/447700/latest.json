@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "447700",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "After initial loading screens, the game opens to  a black screen. Attempted multiple versions of Proton  & all the switches, but nothing seemed to be able to allow me to advance forward. ",
+    "os": "SteamOS 2.0",
+    "protonVersion": "4.11-1",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564754290,
+    "title": "Crystal Crisis",
+    "source": "protondb"
+  }
+]

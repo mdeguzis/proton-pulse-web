@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "306410",
+    "title": "Crystals of Time",
+    "timestamp": 1535510118,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "306410",
+    "cpu": "i5-2500K CPU @ 3.30GHz",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "No issues.",
+    "os": "elementary OS 0.4.1 Loki (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7945 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537141398,
+    "title": "Crystals of Time",
+    "source": "protondb"
+  },
+  {
+    "appId": "306410",
+    "cpu": "AMD Athlon 64 X2 Dual Core 6000+",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.15.0-36-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1540397236,
+    "title": "Crystals of Time",
+    "source": "protondb"
+  },
+  {
+    "appId": "306410",
+    "title": "Crystals of Time",
+    "timestamp": 1535495718,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

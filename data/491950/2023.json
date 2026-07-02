@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "491950",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.4.0-126-generic",
+    "notes": "It ran just fine, no major problem, just the graphical issue I mentioned before. Overall, very much playable",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1677423749,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "491950",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.5",
+    "kernel": "6.4.10-arch1-1",
+    "notes": "Perfect game to run under Linux.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1696000026,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "491950",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "5.15.0-88-generic",
+    "notes": "Proton works flawlessly",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1699899931,
+    "title": "",
+    "source": "protondb"
+  }
+]

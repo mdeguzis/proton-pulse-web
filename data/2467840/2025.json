@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2467840",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "5.15.0-122-generic",
+    "notes": "Mission keeps crashing? Maybe because I had no client connected.",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1753147287,
+    "title": "Artemis Cosmos",
+    "source": "protondb"
+  }
+]

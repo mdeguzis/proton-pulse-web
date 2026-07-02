@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3762210",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 19.1.7, DRM 3.59, 6.12.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1749555655,
+    "title": "",
+    "source": "protondb"
+  }
+]

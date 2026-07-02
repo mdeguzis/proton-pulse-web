@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "762030",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "Launches to a black window, no graphics or sound.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553964668,
+    "title": "Mowin' & Throwin'",
+    "source": "protondb"
+  }
+]

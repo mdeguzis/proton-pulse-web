@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1335230",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "5.10.150-gentoo",
+    "notes": "It just works",
+    "os": "Gentoo Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1679230485,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1335230",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Runs well on the Steam Deck, lovely experience",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1679883019,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1335230",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD NAVI31 (radeonsi, navi31, LLVM 15.0.7, DRM 3.54, 6.6.6-76060606-generic)",
+    "gpuDriver": "4.6 Mesa 23.3.0-1pop0~1702935939~22.04~67e417a",
+    "kernel": "6.6.6-76060606-generic",
+    "notes": "Unplayable due to a map loading bug.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1703805699,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "293460",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Runs perfectly out of the box; however, changing the anti-aliasing settings to highest caused the game to crash repeated at start; had to reinstall to get it working again.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1540682862,
+    "title": "I Shall Remain",
+    "source": "protondb"
+  },
+  {
+    "appId": "293460",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Don't activate FSAA or it won't start again unless you uninstall and install again.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541377117,
+    "title": "I Shall Remain",
+    "source": "protondb"
+  }
+]

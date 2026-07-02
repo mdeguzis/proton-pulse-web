@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "427100",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Keeps getting a \"fatal error\" message when trying to launch the game, tried using PROTON_USE_WINED3D11 as suggested but still don't work. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559579697,
+    "title": "Fernbus Simulator",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "427100",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "notes": "The game opens to a black screen and a crash notification comes up. No tweaks could make it work with any proton version currently availabel.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1561878199,
+    "title": "Fernbus Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "427100",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "The performance is a bit lower than on windows, and with wined3d it has weird graphical glitches, but everything is ok with dxvk",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1569055026,
+    "title": "Fernbus Simulator",
+    "source": "protondb"
+  }
+]

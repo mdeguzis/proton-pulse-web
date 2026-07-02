@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "352120",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "You need to unplug your gamepad/HOTAS/Joystick on first start, otherwise you cannot get passed the menu screen (you need your mouse for navigating through menus). After first start, you can change settings in the options menu (not a real Linux issue). Game runs at 60FPS. No glitches. All shader effects working.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554160831,
+    "title": "Fair Strike",
+    "source": "protondb"
+  },
+  {
+    "appId": "352120",
+    "cpu": "AMD A10-5757M APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.1 Mesa 19.3.0-devel (bionic-oibaf-ppa)",
+    "kernel": "5.0.0-31-generic",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-7",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1571397787,
+    "title": "Fair Strike",
+    "source": "protondb"
+  }
+]

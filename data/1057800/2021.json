@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1057800",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.10.11-arch1-1",
+    "notes": "Game boots to title screen, hangs when loading the game itself.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1612416601,
+    "title": "",
+    "source": "protondb"
+  }
+]

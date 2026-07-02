@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "881490",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Played the tutorial without issues",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553438370,
+    "title": "Tower Keepers",
+    "source": "protondb"
+  },
+  {
+    "appId": "881490",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-300.fc29.x86_64",
+    "notes": "The game runs fine, but what does not work is login. Many of the game's features do not work without logging in.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1566313090,
+    "title": "Tower Keepers",
+    "source": "protondb"
+  }
+]

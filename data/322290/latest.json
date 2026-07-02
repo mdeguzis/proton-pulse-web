@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "322290",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Crashes in some parts of the game. Opened an issue on this:\nhttps://github.com/ValveSoftware/Proton/issues/2177",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1546366210,
+    "title": "Gurumin: A Monstrous Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "322290",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.12.14-lp150.12.45-default",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549319493,
+    "title": "Gurumin: A Monstrous Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "322290",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-23-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1565839970,
+    "title": "Gurumin: A Monstrous Adventure",
+    "source": "protondb"
+  }
+]

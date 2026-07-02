@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "327140",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Latest update does not detect HTC Vive, had to opt into the 'previous release' to get it to run.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1563841077,
+    "title": "Tilt Brush",
+    "source": "protondb"
+  },
+  {
+    "appId": "327140",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Current tilt brush version must have an issue because it wouldn't launch at all. It said it was unable to detect a VR headset. I selected \"previous version\" in Tilt Brush properties under the BETAS menu and it started working without any issues that I noticed, although I haven't tried very much yet ",
+    "os": "Ubuntu 16.04 LTS",
+    "protonVersion": "4.2-1",
+    "ram": "64 GB",
+    "rating": "Silver",
+    "timestamp": 1564905054,
+    "title": "Tilt Brush",
+    "source": "protondb"
+  },
+  {
+    "appId": "327140",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Run well after using Proton 4.11. With Proton 4.2 Tilt Brush was unable to detect the headset. Works fine with minor performance issues.",
+    "os": "Unknown",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1567534214,
+    "title": "Tilt Brush",
+    "source": "protondb"
+  }
+]

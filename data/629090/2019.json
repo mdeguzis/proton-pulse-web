@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "629090",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 435.17",
+    "kernel": "5.3.0-9.rc4-tkg-pds",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566311158,
+    "title": "Horace",
+    "source": "protondb"
+  },
+  {
+    "appId": "629090",
+    "cpu": "AMD Phenom II X6 1090T",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "I had no trouble running this. Xbox controller (wired) also worked just fine. Audio and framerates were as I'd expect. Great.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567459574,
+    "title": "Horace",
+    "source": "protondb"
+  },
+  {
+    "appId": "629090",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Runs perfectly with no tweaks, just install and play. A couple of times the game only gave me a black screen when I launched it but I could still hear the sounds of the game in the background, alt+tab'ing out and back in fixes this.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568336117,
+    "title": "Horace",
+    "source": "protondb"
+  }
+]

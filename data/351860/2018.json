@@ -1,0 +1,47 @@
+[
+  {
+    "appId": "351860",
+    "cpu": "Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz",
+    "gpu": "NVIDIA Corporation GeForce 940M/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.15.0-33-generic",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "7404 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537142086,
+    "title": "Cultures - Northland",
+    "source": "protondb"
+  },
+  {
+    "appId": "351860",
+    "cpu": "Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz",
+    "gpu": "NVIDIA Corporation GeForce 940M/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.15.0-33-generic",
+    "notes": "video not playing",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "7404 Mb",
+    "rating": "Silver",
+    "timestamp": 1537228502,
+    "title": "Cultures - Northland",
+    "source": "protondb"
+  },
+  {
+    "appId": "351860",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Opening video doesn't play",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1541897918,
+    "title": "Cultures - Northland",
+    "source": "protondb"
+  }
+]

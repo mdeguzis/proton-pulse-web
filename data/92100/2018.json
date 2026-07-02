@@ -1,0 +1,15 @@
+[
+  {
+    "appId": "92100",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Crashes immediately after 'Installing: Microsoft .NET Framework (step 1 of 2)'",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "DETOUR",
+    "source": "protondb"
+  }
+]

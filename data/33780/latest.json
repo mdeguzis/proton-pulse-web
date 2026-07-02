@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "33780",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.0-devel (git-f7332fb 2019-03-18 bionic-oibaf-ppa)",
+    "kernel": "5.0.5-050005-generic",
+    "notes": "This review is the same as river of time since practically its running the same executable. Game runs flawlessly. Choppiness in video is related to game recorder. Although it would run much better if I my settings went on 720p (which I didn't). [Can't blame the game, since I'm running this on an iGPU] Only issue you will probably have is that the game doesn't terminate properly. You will have to restart steam and also kill wineserver manually. Video of the game running on intel hd 630: https://youtu.be/tmkHDriNc5o",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554040105,
+    "title": "Drakensang - Phileasson's Secret",
+    "source": "protondb"
+  },
+  {
+    "appId": "33780",
+    "cpu": "Intel Core i7-4500U @ 1.80GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon HD 8800M",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "notes": "Add -novideo to the launch options. Disable high resolution textures within the game to avoid out of memory errors.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554472748,
+    "title": "Drakensang - Phileasson's Secret",
+    "source": "protondb"
+  }
+]

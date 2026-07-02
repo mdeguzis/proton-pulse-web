@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "495110",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-39-generic",
+    "notes": "It's native, but it wouldn't launch. Worked with Proton",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1741307552,
+    "title": "",
+    "source": "protondb"
+  }
+]

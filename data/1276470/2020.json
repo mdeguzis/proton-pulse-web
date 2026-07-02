@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1276470",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.113",
+    "kernel": "4.19.0-9-amd64",
+    "notes": "Worked fine, no issues, smooth frame rate.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1595040043,
+    "title": "",
+    "source": "protondb"
+  }
+]

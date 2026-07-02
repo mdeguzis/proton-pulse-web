@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "311910",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "4.14.124-1-MANJARO",
+    "notes": "Ran fine without any tweaks.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1560524514,
+    "title": "DIG IT! - A Digger Simulator",
+    "source": "protondb"
+  }
+]

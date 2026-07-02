@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3508770",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-29-generic",
+    "notes": "No issues from install to end of the tutorial area.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1766269409,
+    "title": "Haydee 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "3508770",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-29-generic",
+    "notes": "Flawless performance from start to finish",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1766464511,
+    "title": "Haydee 3",
+    "source": "protondb"
+  }
+]

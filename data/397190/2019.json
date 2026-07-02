@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "397190",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-0862929 2019-01-14 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Changed resolution in options.txt to match my resolution. Options.txt found in {steam}/steamapps/compatdata/397190/pfx/drive_c/users/steamuser/My Documents/My Games/SJIDAI\n\nMultiplayer not tested",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1547917283,
+    "title": "Sengoku Jidai: Shadow of the Shogun",
+    "source": "protondb"
+  }
+]

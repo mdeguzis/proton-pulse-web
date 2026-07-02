@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "480",
+    "title": "Spacewar",
+    "timestamp": 1535167425,
+    "rating": "Borked",
+    "notes": "Game loads, but the menu is not displayed, only stars are visible in the background",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.3.0-devel (git-e345247092)",
+    "specs": "i5-4690k / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "480",
+    "title": "Spacewar",
+    "timestamp": 1535153025,
+    "rating": "Borked",
+    "notes": "Game loads, but the menu is not displayed, only stars are visible in the background",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.3.0-devel (git-e345247092)",
+    "specs": "i5-4690k / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

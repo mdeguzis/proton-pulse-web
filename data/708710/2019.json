@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "708710",
+    "cpu": "Intel Core i5-5300U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Starts but hangs with a Microsoft VC Redist error that doesn't close without force quitting.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-5",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1569265251,
+    "title": "Defend Your Castle",
+    "source": "protondb"
+  }
+]

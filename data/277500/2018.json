@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "277500",
+    "title": "Farming World",
+    "timestamp": 1535238493,
+    "rating": "Platinum",
+    "notes": "No issues, worked out of the box, performance is decent",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "277500",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD PITCAIRN (DRM 2.50.0 / 4.15.0-20-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-20-generic",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "7988 MB",
+    "rating": "Platinum",
+    "timestamp": 1538526663,
+    "title": "Farming World",
+    "source": "protondb"
+  },
+  {
+    "appId": "277500",
+    "title": "Farming World",
+    "timestamp": 1535224093,
+    "rating": "Platinum",
+    "notes": "No issues, worked out of the box, performance is decent",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

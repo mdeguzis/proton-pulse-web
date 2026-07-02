@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "8790",
+    "title": "GTR 2 FIA GT Racing Game",
+    "timestamp": 1535583845,
+    "rating": "Borked",
+    "notes": "1 fps in the menu. When you try to start the practice-got an error and the inability to close the game even through the system monitor. Remains a zombie process that plays music from the main menu.",
+    "os": "openSUSE Tumbleweed (kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4210U / GeForce 820M",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "8790",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Doesnt start. Keeps telling me that i have \"Insufficient video memory detected. A minimum of 32MB of free video memory required\".",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16054 MB",
+    "rating": "Borked",
+    "timestamp": 1540147780,
+    "title": "GTR 2 FIA GT Racing Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "8790",
+    "title": "GTR 2 FIA GT Racing Game",
+    "timestamp": 1535569445,
+    "rating": "Borked",
+    "notes": "1 fps in the menu. When you try to start the practice-got an error and the inability to close the game even through the system monitor. Remains a zombie process that plays music from the main menu.",
+    "os": "openSUSE Tumbleweed (kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4210U / GeForce 820M",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

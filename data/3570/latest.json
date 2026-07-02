@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3570",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Mouse cursor is extremely laggy in full-screen mode to the point of being unplayable. Works fine in windowed mode though, although you have to quit the game and restart when switching otherwise the screen doesn't update",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1554762257,
+    "title": "Mystery P.I.\u2122 - The New York Fortune",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "839310",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "This game runs better on proton than natively.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1605990209,
+    "title": "",
+    "source": "protondb"
+  }
+]

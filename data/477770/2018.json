@@ -1,0 +1,62 @@
+[
+  {
+    "appId": "477770",
+    "title": "Ride 2",
+    "timestamp": 1534945902,
+    "rating": "Borked",
+    "notes": "Can't proceed past title screen (press enter or spacebar))",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790k, GTX 1060, 16GB ram",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "477770",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Can't proceed past startup screen. Screen goes black.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1545193535,
+    "title": "Ride 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "477770",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "notes": "cannot get past splash screen.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1545955170,
+    "title": "Ride 2",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "477770",
+    "title": "Ride 2",
+    "timestamp": 1534931502,
+    "rating": "Borked",
+    "notes": "Can't proceed past title screen (press enter or spacebar))",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790k, GTX 1060, 16GB ram",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

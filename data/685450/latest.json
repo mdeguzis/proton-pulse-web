@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "685450",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "The game is playable. Controller support is busted because the aim is not working. Some minor graphical glitches but I can't tell if from using Proton or just the game in general (I have not tested the game under Windows). ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-1",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1564930205,
+    "title": "Cobos",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1013960",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.9.0-0.bpo.2-amd64",
+    "notes": "Game window opened, displayed an unresponsive black screen with no sound. Had to kill the process.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1621809944,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1013960",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.11.13-zen1-1-zen, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.2",
+    "kernel": "5.11.13-zen1-1-zen",
+    "notes": "",
+    "os": "Garuda Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1640762584,
+    "title": "",
+    "source": "protondb"
+  }
+]

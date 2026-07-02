@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "834150",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-31-generic",
+    "notes": "The first time I started the game, it opened a window and flashed white before it turned black entirely.\n\nI tried using other proton versions but, the window wouldn't display anymore after that.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-7",
+    "ram": "10 GB",
+    "rating": "Borked",
+    "timestamp": 1571634440,
+    "title": "Glare1more",
+    "source": "protondb"
+  }
+]

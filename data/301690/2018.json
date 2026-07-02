@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "301690",
+    "title": "Cobi Treasure Deluxe",
+    "timestamp": 1535095752,
+    "rating": "Borked",
+    "notes": "Resolution is too low to even get started. Same issue as the game Numba Deluxe.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "301690",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-16.2-liquorix-amd64",
+    "notes": "Game starts in fullscreen, but only half of it is visible. Using ALT + ENTER to force window mode and restart the game works. However, the game window 800x600 pixels only and can't be resized.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1541487555,
+    "title": "Cobi Treasure Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "301690",
+    "title": "Cobi Treasure Deluxe",
+    "timestamp": 1535081352,
+    "rating": "Borked",
+    "notes": "Resolution is too low to even get started. Same issue as the game Numba Deluxe.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

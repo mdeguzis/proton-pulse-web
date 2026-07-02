@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "313690",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "5.0.9-200.fc29.x86_64",
+    "notes": "Runs perfectly, turn on Direct X 9",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556365986,
+    "title": "LEGO\u00ae Batman\u2122 3: Beyond Gotham",
+    "source": "protondb"
+  },
+  {
+    "appId": "313690",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Runs out of the box, but needs \"PROTON_NO_ESYNC=1 %command%\" to take care of the FPS drips here and there.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "6 GB",
+    "rating": "Gold",
+    "timestamp": 1561264706,
+    "title": "LEGO\u00ae Batman\u2122 3: Beyond Gotham",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "313690",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-3f3665b8d5)",
+    "kernel": "5.2.2-arch1-1-ARCH",
+    "notes": "It works fine out of the box on Proton with DXVK.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564310661,
+    "title": "LEGO\u00ae Batman\u2122 3: Beyond Gotham",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "502280",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.71-1-MANJARO",
+    "notes": "The game allows to choose or create a save game but it won't start after that. The screen becomes grey for a second, then it closes completely. I tried to disable esync,  to disable d3d11 or to use wine d3d11 but the game still crashes. \n\nMy steam controller is picked up and works in the menu, but the button layout seems weird. ",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16006 Mb",
+    "rating": "Borked",
+    "timestamp": 1538822041,
+    "title": "BERSERK and the Band of the Hawk",
+    "source": "protondb"
+  },
+  {
+    "appId": "502280",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "crashes after loading the save",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543775878,
+    "title": "BERSERK and the Band of the Hawk",
+    "source": "protondb"
+  }
+]

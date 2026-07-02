@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "529870",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "Disabling D3D11 is a MUST for the game to even start",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1544662151,
+    "title": "Microgons",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

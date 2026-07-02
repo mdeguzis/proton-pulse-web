@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "975680",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-62-generic",
+    "notes": "Changed graphics settings to 1920x1080 to fit my 2560x1080 screen, otherwise ran fine on my system; suspect slow downs occur in Windows also according to reviews; completed one play through successfully; did not test local coop.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-4",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1568446995,
+    "title": "METAL SLUG XX",
+    "source": "protondb"
+  },
+  {
+    "appId": "975680",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-62-generic",
+    "notes": "Set graphics to 1920x1080 to fit my widescreen; runs perfectly after changing graphics resolution; slow down in games occur in Windows also. Tested with Xbox 360 controller.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-4",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1568520436,
+    "title": "METAL SLUG XX",
+    "source": "protondb"
+  },
+  {
+    "appId": "975680",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-62-generic",
+    "notes": "Manually set resolution to 1920x1080 to play on widescreen; everything runs fine.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1568615632,
+    "title": "METAL SLUG XX",
+    "source": "protondb"
+  }
+]

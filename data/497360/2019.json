@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "497360",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.6-300.fc30.x86_64",
+    "notes": "Installs and runs, shows a black screen which after hitting esc you see the opening movie and the continue screen. Saving works, you have to disable \"incremental rendering\" in the game settings to avoid ghosting. You have to disable FSAA (FXAA/MSAA in nvidia's control panel). Several things are broken: The inventory does not show any items in it (when there are several), there are certain items in the world you cannot interact with (especially pesky is the roll of tape in the closet of the initial room, needed to further advance in the game later on). Once you have had dialog with a character, the \"talk to\" icon is missing from the options as you click a character (the basis of these types of games talk, talk, talk, investigate, look around, talk some more, and finally... talk!), just for the record, the very same happens with regular wine. This seems to be a problem of the models being \"invisible\" to the cursor, so you end up selecting what is lying behind character models. Speaking of models there seem to be a number of rendering issues with skins and depth, so when a character, for instance passes his/her hand over his/her chest, the outline of the underlying texture shows on the back of the hand, etc (Z buffer issues??). For the record, this very same things also happen in regular wine, and worse, regular wine may be a pain to get working since, for some reason, the .exe is not recognized as a win32 application. None of the usual workarounds have any effect.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1559795445,
+    "title": "Gabriel Knight\u00ae 3: Blood of the Sacred, Blood of the Damned",
+    "source": "protondb"
+  }
+]

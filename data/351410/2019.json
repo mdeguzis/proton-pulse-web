@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "351410",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "The game does not launch on default settings for 4.11-1, 4.2-9, 3.16-9 nor 3.7-8.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-1",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564929364,
+    "title": "Clean'Em Up",
+    "source": "protondb"
+  }
+]

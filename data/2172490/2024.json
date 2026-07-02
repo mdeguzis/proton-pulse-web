@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2172490",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "With more tweaking, you likely could get it working, but on default Proton Experimental, the game has minor control issues and major crashes",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1708478743,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2172490",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Using Proton 6.3-8, the game runs well enough to complete. Newer Proton Builds will cause System Crashes and Save Data Loss",
+    "os": "SteamOS Holo",
+    "protonVersion": "6.3-8",
+    "ram": "15 GB",
+    "rating": "bronze",
+    "timestamp": 1708570685,
+    "title": "",
+    "source": "protondb"
+  }
+]

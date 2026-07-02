@@ -1,0 +1,46 @@
+[
+  {
+    "appId": "442070",
+    "cpu": "i5-6400 CPU @ 2.70GHz",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.4-steamvr-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "notes": "After setting was changed to Full screen, graphical glitches occurred, but Alt+Tab fixed it. Play a quick round and seem to work fine.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "rating": "Gold",
+    "timestamp": "1536451200",
+    "title": "Drawful 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "442070",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541967285,
+    "title": "Drawful 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "442070",
+    "cpu": "Intel Core i5-3570K",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon HD 7970",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel (git-7d66edd 2018-10-30 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Native version available since November 2017, even though it is not advertised on its store page. Runs flawless without proton.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543482327,
+    "title": "Drawful 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "302850",
+    "title": "Samurai Gunn",
+    "timestamp": 1536608185,
+    "rating": "Platinum",
+    "notes": "all perfect",
+    "os": "Ubuntu 18.04 64-but (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "ntel i7-7820HK / NVIDIA GeForce GTX 1070 Mobile ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "302850",
+    "cpu": "Intel(R) Core(TM) i5-4670K CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Works fine but it doesn't recognise the controller",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "15986 Mb",
+    "rating": "Silver",
+    "timestamp": 1537388661,
+    "title": "Team Indie",
+    "source": "protondb"
+  },
+  {
+    "appId": "302850",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Controller doesn't work",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1540434428,
+    "title": "Team Indie",
+    "source": "protondb"
+  },
+  {
+    "appId": "302850",
+    "title": "Samurai Gunn",
+    "timestamp": 1536593785,
+    "rating": "Platinum",
+    "notes": "all perfect",
+    "os": "Ubuntu 18.04 64-but (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "ntel i7-7820HK / NVIDIA GeForce GTX 1070 Mobile ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "70000",
+    "title": "Dino D-Day",
+    "timestamp": 1535069172,
+    "rating": "Silver",
+    "notes": "You can create your own game, but if you try to join an online match, ti crashes",
+    "os": "Antergos",
+    "gpuDriver": "vulkan-radeon",
+    "specs": "i5-8400, RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "70000",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-16.2-liquorix-amd64",
+    "notes": "Works out of the box, connecting to servers does work as well.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541434830,
+    "title": "Dino D-Day",
+    "source": "protondb"
+  },
+  {
+    "appId": "70000",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "All modes seem to work perfectly",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542405321,
+    "title": "Dino D-Day",
+    "source": "protondb"
+  },
+  {
+    "appId": "70000",
+    "title": "Dino D-Day",
+    "timestamp": 1535054772,
+    "rating": "Silver",
+    "notes": "You can create your own game, but if you try to join an online match, ti crashes",
+    "os": "Antergos",
+    "gpuDriver": "vulkan-radeon",
+    "specs": "i5-8400, RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

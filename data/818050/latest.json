@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "818050",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "seems to run fine as long as you don't alt-tab to desktop while game runs. also ds4 controller doesn't work out of the box.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541944276,
+    "title": "Wormster Dash",
+    "source": "protondb"
+  }
+]

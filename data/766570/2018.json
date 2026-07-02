@@ -1,0 +1,89 @@
+[
+  {
+    "appId": "766570",
+    "title": "Russian Fishing 4",
+    "timestamp": 1535214209,
+    "rating": "Gold",
+    "notes": "The rod will be invisible until you set on steam launch options: PROTON_USE_WINED3D11=1 %command%",
+    "os": "Arch Linux 64 bits (Kernel 4.16)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "RX380",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "766570",
+    "title": "Russian Fishing 4",
+    "timestamp": 1535227724,
+    "rating": "Silver",
+    "notes": "some graphic bugs",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 6500 / R9 280x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "766570",
+    "title": "Russian Fishing 4",
+    "timestamp": 1535481880,
+    "rating": "Gold",
+    "notes": "PROTON_USE_WINED3D11=1 %command%",
+    "os": "Fedora 28  (4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "AMD Ryzen7 1800x / GTX980",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "766570",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "won't start, dll errors in log files",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7874 Mb",
+    "rating": "Borked",
+    "timestamp": 1537560735,
+    "title": "Russian Fishing 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "766570",
+    "title": "Russian Fishing 4",
+    "timestamp": 1535199809,
+    "rating": "Gold",
+    "notes": "The rod will be invisible until you set on steam launch options: PROTON_USE_WINED3D11=1 %command%",
+    "os": "Arch Linux 64 bits (Kernel 4.16)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "RX380",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "766570",
+    "title": "Russian Fishing 4",
+    "timestamp": 1535213324,
+    "rating": "Silver",
+    "notes": "some graphic bugs",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 6500 / R9 280x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "766570",
+    "title": "Russian Fishing 4",
+    "timestamp": 1535467480,
+    "rating": "Gold",
+    "notes": "PROTON_USE_WINED3D11=1 %command%",
+    "os": "Fedora 28  (4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "AMD Ryzen7 1800x / GTX980",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "595260",
+    "title": "Heat Guardian",
+    "timestamp": 1535003818,
+    "rating": "Borked",
+    "notes": "The game launched, mission started then crashed. Could not relaunch.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Ryzen 7 2700X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "595260",
+    "title": "Heat Guardian",
+    "timestamp": 1534989418,
+    "rating": "Borked",
+    "notes": "The game launched, mission started then crashed. Could not relaunch.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Ryzen 7 2700X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

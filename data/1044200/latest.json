@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "1044200",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "notes": "fonts missing. Tried corefonts on linux & protontricks, not helping much. I will clone all windows fonts and try again later on.\nother than that runs out of the box.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1560367878,
+    "title": "Wasteland Survival",
+    "source": "protondb"
+  },
+  {
+    "appId": "1044200",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1563969899,
+    "title": "Wasteland Survival",
+    "source": "protondb"
+  }
+]

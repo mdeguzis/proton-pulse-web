@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "543320",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Graphics are a little glitchy on menus and cut-scenes, but the game runs fine",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554770564,
+    "title": "Alchemist",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "appId": "609940",
+    "title": "KROSMAGA",
+    "timestamp": 1535309956,
+    "rating": "Borked",
+    "notes": "Using i3 window manager. Game notices you that you are running it as administrator when launched; this is expected due to the way Wine works. After that, the launcher (which works with an mouse lag of maybe 4 seconds) updates the game correctly, but after pressing Play, it crashes.",
+    "os": "Debian Sid 64-bit (Kernel 4.17.0-3-amd64)",
+    "gpuDriver": "Mesa 18.1.16",
+    "specs": "AMD FX-8350 / R9 380X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "609940",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.8-300.fc29.x86_64",
+    "notes": "Game just notices you that you are running it as administrator when launched.",
+    "os": "Fedora release 29 (Twenty Nine) (64\u00a0bits)",
+    "protonVersion": "3.16-4",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546008124,
+    "title": "KROSMAGA",
+    "source": "protondb"
+  },
+  {
+    "appId": "609940",
+    "title": "KROSMAGA",
+    "timestamp": 1535295556,
+    "rating": "Borked",
+    "notes": "Using i3 window manager. Game notices you that you are running it as administrator when launched; this is expected due to the way Wine works. After that, the launcher (which works with an mouse lag of maybe 4 seconds) updates the game correctly, but after pressing Play, it crashes.",
+    "os": "Debian Sid 64-bit (Kernel 4.17.0-3-amd64)",
+    "gpuDriver": "Mesa 18.1.16",
+    "specs": "AMD FX-8350 / R9 380X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

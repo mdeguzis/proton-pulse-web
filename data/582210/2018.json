@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "582210",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-42-generic",
+    "notes": "It works but the sound stutters sometimes - which, considering the subject, is a major deal. The sound problems did seem to improve with time, however.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1544721740,
+    "title": "VRemin (A Virtual Theremin)",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "434530",
+    "cpu": "Intel Core2 Duo     E8400  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "nouveau NV96",
+    "gpuDriver": "3.3 Mesa 19.0.8",
+    "kernel": "4.15.0-62-generic",
+    "notes": "Game crash just after running",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-4",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1568523354,
+    "title": "Flobe",
+    "source": "protondb"
+  }
+]

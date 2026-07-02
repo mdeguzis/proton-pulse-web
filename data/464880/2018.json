@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "464880",
+    "cpu": "AMD A6-3400M APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Some stars don't render correctly, but the majority do and it doesn't affect gameplay. Everything else seems to work.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1541619318,
+    "title": "Stars in Shadow",
+    "source": "protondb"
+  }
+]

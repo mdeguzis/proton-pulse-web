@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "445600",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.19.2-041902-generic",
+    "notes": "Game boots, and will display a message reading \"Please update your DirectX\". Waiting ~5 seconds will load the main menu, and the game is fully playable. Neither PROTON_USE_WINED3D nor PROTON_NO_D3D11 bypasses this message. Audio perfect. Controller support not verified. ",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543072474,
+    "title": "Void Raiders",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "435020",
+    "cpu": "Intel Core i3-8100",
+    "duration": "severalHours",
+    "gpu": "Radeon Gigabyte AORUS RX 580 8GB",
+    "gpuDriver": "3.0 Mesa 18.2.5",
+    "kernel": "4.15",
+    "notes": "Square blocks of light on main menu as noted elsewhere, literally the only issue and no effect on playability",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551980920,
+    "title": "AFL Evolution",
+    "source": "protondb"
+  },
+  {
+    "appId": "435020",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Actually y'all, I think the weird menu light squares are meant to be there... I mean, look at the game banner!",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564858087,
+    "title": "AFL Evolution",
+    "source": "protondb"
+  }
+]

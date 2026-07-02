@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "228400",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Everything works perfectly. I do get an occasional graphical glitch or two but I got them on Windows as well so that's that.",
+    "os": "elementary OS 0.4.1 Loki",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1549153361,
+    "title": "Ace Combat Assault Horizon - Enhanced Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "228400",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.5",
+    "kernel": "5.0.4-200.fc29.x86_64",
+    "notes": "Tends to crash when entering game. Constant graphical glitches.\n\nCauses my graphics drivers to reset and break, but that may be due to my configuration.\n\nIt's not good.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1554859784,
+    "title": "Ace Combat Assault Horizon - Enhanced Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "228400",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556686176,
+    "title": "Ace Combat Assault Horizon - Enhanced Edition",
+    "source": "protondb"
+  }
+]

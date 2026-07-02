@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "877440",
+    "cpu": "Intel Core i7-2760QM @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.4",
+    "kernel": "5.2.6-arch1-1-ARCH",
+    "notes": "I run Arch Linux.  Quench launched flawlessly when I set the environment variable, PROTON_USE_WINED3D11.  Specifically, my cmdline was:  \"PROTON_USE_WINED3D11=1 steam-runtime\" (steam-runtime is already in my executable path).\n\nOne minor issue was that my mainboard CPUs ran hot (they got up to about 98 degrees Celcius before I exited the game).  But also, I was running Steam in a configuration that didn't fully utilize my NVIDIA GPU.  That is, my laptop has an onboard Intel GPU, as well as NVIDIA secondary GPU.  Anyone who has tried use a box like that for Linux gaming might be familiar with nvidia-xrun.  Well... When I launched Quench, I wasn't running nvidia-xrun.\n\nSo I expect that with nvidia-xrun, I can offload some of the work the mainboard CPU was doing onto the NVIDIA.  (I probably should've tried that before writing this report :D)\n\nBut anyway, Quench runs!",
+    "os": "Unknown",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1565412513,
+    "title": "Quench",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

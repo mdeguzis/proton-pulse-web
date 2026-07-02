@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "407900",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon HD 7770",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game only has sound in safe mode and the graphics are rather blurry. I also had problems with my controller. While it was plugged in, the character kept walking upwards and the game didn't let me reconfigure the controller settings; the configuration first asks to press up on the D-pad, but it ignored any input from the joypad. Rest of the game seemed to run fine when I unplugged the pad.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1551524202,
+    "title": "Princess Remedy in a World of Hurt",
+    "source": "protondb"
+  },
+  {
+    "appId": "407900",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-65-generic",
+    "notes": "works in safe mode",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570831810,
+    "title": "Princess Remedy in a World of Hurt",
+    "source": "protondb"
+  },
+  {
+    "appId": "407900",
+    "cpu": "Intel Core i7-2630QM @ 2.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 460M",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.0.0-29-generic",
+    "notes": "No sound; graphics and input reactions are on-point, played it to completion without interruption.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1572220300,
+    "title": "Princess Remedy in a World of Hurt",
+    "source": "protondb"
+  }
+]

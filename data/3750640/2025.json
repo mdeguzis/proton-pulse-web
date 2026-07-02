@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3750640",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 21.1.5, DRM 3.64, 6.17.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.17.8-arch1-1",
+    "notes": "Game is very playable through Proton",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1763594065,
+    "title": "",
+    "source": "protondb"
+  }
+]

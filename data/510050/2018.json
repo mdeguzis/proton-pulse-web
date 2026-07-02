@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "510050",
+    "title": "Flashpoint Campaigns: Red Storm",
+    "timestamp": 1536738396,
+    "rating": "Borked",
+    "notes": "Dos not start. A window pops up instead, telling me \"A problem occured initializing MCI. Try restarting Windows\".",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 6700, Nvidia 1060 6GB",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "510050",
+    "title": "Flashpoint Campaigns: Red Storm",
+    "timestamp": 1536723996,
+    "rating": "Borked",
+    "notes": "Dos not start. A window pops up instead, telling me \"A problem occured initializing MCI. Try restarting Windows\".",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 6700, Nvidia 1060 6GB",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  }
+]

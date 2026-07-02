@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1302270",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6950 XT (navi21, LLVM 15.0.6, DRM 3.49, 6.1.0-23-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-23-amd64",
+    "notes": "Only for single-player",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1753647311,
+    "title": "F29 Retaliator",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "530520",
+    "title": "Aegis",
+    "timestamp": 1534981030,
+    "rating": "Borked",
+    "notes": "",
+    "os": "Fedora 28",
+    "gpuDriver": "FOSS AMDGPU",
+    "specs": "i5-4690K, AMD RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "530520",
+    "title": "Aegis",
+    "timestamp": 1534966630,
+    "rating": "Borked",
+    "notes": "",
+    "os": "Fedora 28",
+    "gpuDriver": "FOSS AMDGPU",
+    "specs": "i5-4690K, AMD RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

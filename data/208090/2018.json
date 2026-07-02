@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "208090",
+    "title": "Loadout",
+    "timestamp": 1534986909,
+    "rating": "Platinum",
+    "notes": "Game servers were closed after 2018-05-25, but the game launches fine and you can navigate through menu",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.3.0-devel (git-aa79cc2bc8)",
+    "specs": "i5-4690K / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "208090",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 18.2.6",
+    "kernel": "4.19.6-1-MANJARO",
+    "notes": "White screen",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543865160,
+    "title": "Loadout",
+    "source": "protondb"
+  },
+  {
+    "appId": "208090",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 18.2.6",
+    "kernel": "4.19.6-1-MANJARO",
+    "notes": "Dont start",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543865255,
+    "title": "Loadout",
+    "source": "protondb"
+  },
+  {
+    "appId": "208090",
+    "title": "Loadout",
+    "timestamp": 1534972509,
+    "rating": "Platinum",
+    "notes": "Game servers were closed after 2018-05-25, but the game launches fine and you can navigate through menu",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.3.0-devel (git-aa79cc2bc8)",
+    "specs": "i5-4690K / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "429720",
+    "title": "IMSCARED",
+    "timestamp": 1535160559,
+    "rating": "Platinum",
+    "notes": "Flawless performance",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8370 Eight-Core/GeForce GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "429720",
+    "cpu": "Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15982 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537645335,
+    "title": "IMSCARED",
+    "source": "protondb"
+  },
+  {
+    "appId": "429720",
+    "cpu": "Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.10-zen1-1-zen",
+    "notes": "\nPerfect.",
+    "os": "\"Antergos Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7932 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538823027,
+    "title": "IMSCARED",
+    "source": "protondb"
+  },
+  {
+    "appId": "429720",
+    "title": "IMSCARED",
+    "timestamp": 1535146159,
+    "rating": "Platinum",
+    "notes": "Flawless performance",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8370 Eight-Core/GeForce GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

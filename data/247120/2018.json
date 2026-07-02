@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "247120",
+    "cpu": "i7-4700MQ CPU @ 2.40GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-lowlatency",
+    "notes": "The game starts but after the intro it crashed.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "11924 Mb",
+    "rating": "Borked",
+    "systemInfoNotes": "GPU: Nvidia GeForce GT 755M",
+    "timestamp": 1536914185,
+    "title": "Portal 2 Sixense Perceptual Pack",
+    "source": "protondb"
+  }
+]

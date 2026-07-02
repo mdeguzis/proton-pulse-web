@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "312640",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Requires .NET 4 and XNA 4 \"protontricks 312640 dotnet40 xna40\"",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1541997608,
+    "title": "Power-Up",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1077520",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.40.0, 5.10.4-1-ck-zen, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1 (git-d90622910b)",
+    "kernel": "5.10.4-1-ck-zen",
+    "notes": "Flawless experience with latest Proton version",
+    "os": "Freedesktop.org 20.08.3 (Flatpak runtime)",
+    "protonVersion": "6.3-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1617495141,
+    "title": "",
+    "source": "protondb"
+  }
+]

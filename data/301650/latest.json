@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "301650",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.16-1-MANJARO",
+    "notes": "Loader still doesn't show images, but once the game starts, everything runs perfectly. Even all of my many mods I have for it run perfectly!\nJust beat the American campaign fine!",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549934584,
+    "title": "Battlezone 98 Redux",
+    "source": "protondb"
+  },
+  {
+    "appId": "301650",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-24-generic",
+    "notes": "Runs like a charm. Nostalgia alert!",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561781246,
+    "title": "Battlezone 98 Redux",
+    "source": "protondb"
+  },
+  {
+    "appId": "301650",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-25-generic",
+    "notes": "The game works great with the missions I've played using Proton 4.11-3. I am now longer having the issue related to having Caps Lock on, which caused the radar to switch when pressing any button on the keyboard. Only minor complaint is the BZ98R game launcher box still doesn't display any images, but that is an insignificant issue and does not affect the actual game experience.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567413124,
+    "title": "Battlezone 98 Redux",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "420530",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 Mesa 18.2.1",
+    "kernel": "4.19.0-rc8",
+    "notes": "Opens and immediately closes on 3.16-8. All other versions don't open.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1553634637,
+    "title": "OneShot",
+    "source": "protondb"
+  },
+  {
+    "appId": "420530",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "4.20.16-112.current",
+    "notes": "Crashes immediately, seemed to have worked fine before proton 3.7.4-ish",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554001413,
+    "title": "OneShot",
+    "source": "protondb"
+  },
+  {
+    "appId": "420530",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "I remember it booting some time ago, but now it just crashes on startup.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554065564,
+    "title": "OneShot",
+    "source": "protondb"
+  }
+]

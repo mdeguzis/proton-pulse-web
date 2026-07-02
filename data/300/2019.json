@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "300",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-0905189a25)",
+    "kernel": "5.1.9-arch1-1-ARCH",
+    "notes": "Game works native on Linux. On Proton it works out of the box. I installed manually D9VK and it worked as well fine with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1560697383,
+    "title": "Day of Defeat: Source",
+    "source": "protondb"
+  }
+]

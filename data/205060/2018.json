@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "205060",
+    "title": "BIT.TRIP CORE",
+    "timestamp": 1535317015,
+    "rating": "Borked",
+    "notes": "Crashes at launch with \"shader: failed to compile vertex shader\"",
+    "os": "Ubuntu 18.04.1 Bionic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i3-2310M / Nvidia GeForce GT 520m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "205060",
+    "title": "BIT.TRIP CORE",
+    "timestamp": 1535302615,
+    "rating": "Borked",
+    "notes": "Crashes at launch with \"shader: failed to compile vertex shader\"",
+    "os": "Ubuntu 18.04.1 Bionic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i3-2310M / Nvidia GeForce GT 520m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

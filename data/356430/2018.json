@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "356430",
+    "cpu": "Intel Core i3-5010U @ 2.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.9.131-110.lts",
+    "notes": "game runs and is playable, attempting to change resolution while in game caused crash",
+    "os": "Solus",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "6 GB",
+    "rating": "Silver",
+    "timestamp": 1541279928,
+    "title": "Chris Sawyer's Locomotion\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "356430",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Performance is fine.\n- Cannot save game.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1542546580,
+    "title": "Chris Sawyer's Locomotion\u2122",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "468700",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.1-2",
+    "notes": "'Unsupported GPU Detected', game wont boot",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559034701,
+    "title": "NVIDIA\u00ae VR Funhouse",
+    "source": "protondb"
+  },
+  {
+    "appId": "468700",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-23-generic",
+    "notes": "\"Unsupported GPU detected\" when I have a very supported GPU",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565211935,
+    "title": "NVIDIA\u00ae VR Funhouse",
+    "source": "protondb"
+  },
+  {
+    "appId": "468700",
+    "cpu": "Intel Xeon E5-2687W v2 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "4.19.57-gentoo",
+    "notes": "Creating a dxvk.conf file with `dxgi.nvapiHack = False` and setting the DXVK_CONFIG_FILE=\"/path/to/dxvk.conf\" environment variable will workaround the unsupported GPU issue on Nvidia hardware, but the game will quit right after it starts.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "3.16-4",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1565468448,
+    "title": "NVIDIA\u00ae VR Funhouse",
+    "source": "protondb"
+  }
+]

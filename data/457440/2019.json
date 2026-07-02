@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "457440",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.0-15.1-liquorix-amd64",
+    "notes": "Works out of the box",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1547795033,
+    "title": "Watch This!",
+    "source": "protondb"
+  }
+]

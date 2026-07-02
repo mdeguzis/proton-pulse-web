@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "536660",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-e8cd7a3 2019-06-18 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-17-generic",
+    "notes": "Set graphic details to maximum.\nSkipped the intro mission, started directly in the main \"hub\". \nGame SEEMS to be unplayable at first sight due to VERY low FPS.\nSwitched graphics one level \"down\". I dont know what really happens, but it seems as if graphic data is slowly loaded(cached?) somewhere. When this is done the game speeds up to be playable.\nNo graphical issues, no sound issues, feels good. WHEN those data is fully loaded..\nThis LAG may reappear in any newly discovered region; takes  roughly under a minute to load all those -whatever- . Then it runs smooth.\nNo tweaks needed. Runs out of the box. Gold status due to those strange \"LAG until fully loading\".\n",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560876994,
+    "title": "JCB Pioneer: Mars",
+    "source": "protondb"
+  }
+]

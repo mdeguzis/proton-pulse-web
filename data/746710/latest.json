@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "746710",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.14-100.fc28.x86_64",
+    "os": "Fedora release 28 (Twenty Eight)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1552867289,
+    "title": "Cypher",
+    "source": "protondb"
+  },
+  {
+    "appId": "746710",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561928301,
+    "title": "Cypher",
+    "source": "protondb"
+  },
+  {
+    "appId": "746710",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Worked perfectly with no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563897095,
+    "title": "Cypher",
+    "source": "protondb"
+  }
+]

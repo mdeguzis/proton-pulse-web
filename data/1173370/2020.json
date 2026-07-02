@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1173370",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 455.28",
+    "kernel": "5.6.19-159.current",
+    "notes": "Tried to launch game, nothing showed up, had to kill exe to close it",
+    "os": "Solus",
+    "protonVersion": "5.13-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1607371677,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1173370",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Launched and played some games with friends. Didn't experience any problems, and it performed well",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1607568851,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1173370",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.39.0, 5.9.14-arch1-1, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.0",
+    "kernel": "5.9.14-arch1-1",
+    "notes": "Game works, but framerate is too bad to enjoy",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1608426859,
+    "title": "",
+    "source": "protondb"
+  }
+]

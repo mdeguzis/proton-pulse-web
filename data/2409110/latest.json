@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2409110",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.4-arch1-1",
+    "notes": "Works perfectly, only issue is that the cursor doesn't get hidden",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1752257112,
+    "title": "",
+    "source": "protondb"
+  }
+]

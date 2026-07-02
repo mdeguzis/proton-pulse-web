@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "240970",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.15.0-43-generic",
+    "notes": "The game has minor sound issues but plays perfectly, also, if you're using a controller and it disconnects mid-game you might have to restart the game.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1548893344,
+    "title": "Half Minute Hero: The Second Coming",
+    "source": "protondb"
+  },
+  {
+    "appId": "240970",
+    "cpu": "Intel Core i5-3350P @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.19.10-041910-generic",
+    "notes": "Game works flawless. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1550085924,
+    "title": "Half Minute Hero: The Second Coming",
+    "source": "protondb"
+  }
+]

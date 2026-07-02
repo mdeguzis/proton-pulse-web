@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "415350",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Native depot is empty. Works great in proton but achievements does not seem to work",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1547833469,
+    "title": "Shooting Stars!",
+    "source": "protondb"
+  }
+]

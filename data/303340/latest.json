@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "303340",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "It's a Java game, hardcoded with 32-bit dependencies. So you'll probably be running a 64-bit Java runtime on Linux...which means the game can't find any of the libraries it just assumes are present on your system. Downloading and installing lwjgl 64-bit lets the game start, but then it hangs because it can't find any controllers. Even adding libjinput doesn't help...and I gave up at this point.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1555713563,
+    "title": "Concursion",
+    "source": "protondb"
+  }
+]

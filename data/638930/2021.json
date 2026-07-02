@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "638930",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD SIENNA_CICHLID (DRM 3.40.0, 5.10.16-201.fsync.fc33.x86_64, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.0-devel",
+    "kernel": "5.10.16-201.fsync.fc33.x86_64",
+    "notes": "",
+    "os": "Fedora 33",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1618653544,
+    "title": "",
+    "source": "protondb"
+  }
+]

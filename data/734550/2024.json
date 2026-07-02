@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "734550",
+    "cpu": "Intel Core i3-8350K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 16.0.6, DRM 3.49, 6.1.71-1-lts)",
+    "gpuDriver": "4.6 Mesa 23.3.3-arch1.1",
+    "kernel": "6.1.71-1-lts",
+    "notes": "It is working fine",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "%$s1 MB",
+    "rating": "platinum",
+    "timestamp": 1705249166,
+    "title": "",
+    "source": "protondb"
+  }
+]

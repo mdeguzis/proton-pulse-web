@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "274960",
+    "cpu": "Intel Core i7-7820X @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Works fine out of box, I don't recommend the game however as it's broken itself",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546039873,
+    "title": "Tech Executive Tycoon",
+    "source": "protondb"
+  }
+]

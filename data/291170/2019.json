@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "291170",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551590002,
+    "title": "Royal Defense",
+    "source": "protondb"
+  },
+  {
+    "appId": "291170",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-60-generic",
+    "notes": "Works.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1568475121,
+    "title": "Royal Defense",
+    "source": "protondb"
+  }
+]

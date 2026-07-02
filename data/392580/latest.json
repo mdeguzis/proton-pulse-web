@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "392580",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-6dade5d 2019-01-07 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-13-generic",
+    "notes": "No real issues.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1547922895,
+    "title": "WARSHIFT",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "392580",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-6dade5d 2019-01-07 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Works just fine.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1548457587,
+    "title": "WARSHIFT",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

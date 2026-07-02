@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "521500",
+    "title": "Sakura Space",
+    "timestamp": 1535714487,
+    "rating": "Platinum",
+    "notes": "flawless",
+    "os": "Debian Buster (Kernel 4.17.0-3-amd64)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "AMD Ryzen 5 1600 /NVIDIA 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "521500",
+    "title": "Sakura Space",
+    "timestamp": 1535700087,
+    "rating": "Platinum",
+    "notes": "flawless",
+    "os": "Debian Buster (Kernel 4.17.0-3-amd64)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "AMD Ryzen 5 1600 /NVIDIA 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

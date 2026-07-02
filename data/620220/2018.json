@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "620220",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.0-8-generic",
+    "notes": "Typically 54-60 FPS (technically simple game, but the engine used might not be the best in terms of performance)",
+    "os": "Ubuntu Cosmic Cuttlefish (development branch) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15939 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537726893,
+    "title": "Catmaze",
+    "source": "protondb"
+  }
+]

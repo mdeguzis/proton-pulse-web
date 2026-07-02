@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "407680",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "Starts but only gives a black screen with music. not able to get past it.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "3.16-4",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1561550044,
+    "title": "Last Days of Spring Visual Novel",
+    "source": "protondb"
+  }
+]

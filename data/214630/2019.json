@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "214630",
+    "cpu": "Intel Core i7-5600U @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.5",
+    "kernel": "5.1.5-300.fc30.x86_64",
+    "notes": "Doesn't work, because it's only for macOS.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-5",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1559485284,
+    "title": "Call of Duty: Black Ops - Mac Edition",
+    "source": "protondb"
+  }
+]

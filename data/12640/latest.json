@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "12640",
+    "cpu": "Intel Core i7-4500U @ 1.80GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon HD 8800M",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "notes": "Add -novideo to the launch options. Disable high resolution textures within the game to avoid out of memory errors.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554455642,
+    "title": "Drakensang",
+    "source": "protondb"
+  }
+]

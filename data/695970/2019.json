@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "695970",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Short test: Needs mentioned tweaks to start, seems playable though, crashes on exit.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1558539801,
+    "title": "Treadnauts",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "695970",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Game seems to run just fine. The sound is good; Menus are responsive, etc. I don't have anyone to test MP with just yet and I'm personally not a big fan of random MP matches. The tutorial section \"windows\" still appear blank so it may be best to find a tutorial video or just poke around until you're comfortable. Played two matches with bots and the game worked just fine. Haven't had time to play around with different tweaks.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1559221063,
+    "title": "Treadnauts",
+    "source": "protondb"
+  }
+]

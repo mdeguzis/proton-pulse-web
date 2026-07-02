@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "901583",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-9007c0ed26)",
+    "kernel": "4.18.14-1-ck",
+    "notes": "Need xliveless and a line in the /etc/hosts. (127.0.0.1 tv.rockstargames.com). It has poor perfomrance.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1540915432,
+    "title": "Grand Theft Auto IV: Complete Edition",
+    "source": "protondb"
+  }
+]

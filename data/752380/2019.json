@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "752380",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "The game works perfectly via Proton but my controller does not work in game. I think the issue is more like caused by the game itself rather than Proton. Overall it is enjoyable playing with keyboard. ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557525925,
+    "title": "TERRORHYTHM (TRRT) - Rhythm driven action beat 'em up!",
+    "source": "protondb"
+  }
+]

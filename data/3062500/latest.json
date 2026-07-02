@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3062500",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7700S (radeonsi, navi33, LLVM 21.1.6, DRM 3.64, 6.17.7-ba20.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "Plays as expected",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "88 GB",
+    "rating": "gold",
+    "timestamp": 1769290411,
+    "title": "",
+    "source": "protondb"
+  }
+]

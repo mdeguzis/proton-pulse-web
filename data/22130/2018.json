@@ -1,0 +1,44 @@
+[
+  {
+    "appId": "22130",
+    "cpu": "i7-6700 CPU @ 3.40GHz",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.6-041806-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "notes": "",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Proton 3.7-6",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Hearts of Iron 2 Complete",
+    "source": "protondb"
+  },
+  {
+    "appId": "22130",
+    "cpu": "AMD A8-5557M APU with Radeon(tm) HD Graphics",
+    "gpu": "X.Org AMD ARUBA (DRM 2.49.0",
+    "gpuDriver": "3.0 Mesa 17.2.8",
+    "notes": "Game opens with a little bit of lag at the start, but is very playable.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Platinum",
+    "timestamp": "1536364800",
+    "title": "Hearts of Iron 2 Complete",
+    "source": "protondb"
+  },
+  {
+    "appId": "22130",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-4-MANJARO",
+    "notes": "Runs perfectly and smoothly, but there is no music. Rest of the sound works. Both Vanilla and Doomsday work as intended, at least for a few months run trying click any button.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541873211,
+    "title": "Hearts of Iron 2 Complete",
+    "source": "protondb"
+  }
+]

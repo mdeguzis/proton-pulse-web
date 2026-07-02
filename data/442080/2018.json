@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "442080",
+    "title": "Riders of Icarus",
+    "timestamp": 1536004111,
+    "rating": "Borked",
+    "notes": "Hangs at launcher wanting to continuously reinstall dx11",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-6700k / GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "442080",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "I couldn't get past the launcher. Seems to be a problem with the Nexon launcher, as I had very similar problems with Vindictus.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541477372,
+    "title": "Riders of Icarus",
+    "source": "protondb"
+  },
+  {
+    "appId": "442080",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.6-1-MANJARO",
+    "notes": "there is an improvement now you can see the login window",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544919113,
+    "title": "Riders of Icarus",
+    "source": "protondb"
+  },
+  {
+    "appId": "442080",
+    "title": "Riders of Icarus",
+    "timestamp": 1535989711,
+    "rating": "Borked",
+    "notes": "Hangs at launcher wanting to continuously reinstall dx11",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-6700k / GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

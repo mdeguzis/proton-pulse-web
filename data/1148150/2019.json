@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1148150",
+    "cpu": "AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD POLARIS11",
+    "gpuDriver": "4.5 Mesa 19.2.4",
+    "kernel": "5.3.11-1-MANJARO",
+    "notes": "After tweaking the configuration in Lutris and installing video codecs via winetricks the game worked properly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1577315632,
+    "title": "Man of the House",
+    "source": "protondb"
+  }
+]

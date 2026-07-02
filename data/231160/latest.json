@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "231160",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-34dd1ddde6)",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "On Proton it doesn't work, it will show a crash, but with Wine 4.13 it worked somehow.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565558612,
+    "title": "The Swapper",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "295750",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Decided I'd give this one another shot under Proton 4.11, still no dice. The game starts after installing lib32-lcms2 but still got the behaviour described by other reports. Tried with D9VK and disabling esync as well.",
+    "os": "Unknown",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565784058,
+    "title": "The Floor is Jelly",
+    "source": "protondb"
+  }
+]

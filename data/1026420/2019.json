@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1026420",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Requires DX11. Hangs on black screen after opening logos; likely an error to load a movie. \n\nDoes not load with Esync disabled. ",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1570096093,
+    "title": "WARSAW",
+    "source": "protondb"
+  },
+  {
+    "appId": "1026420",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Game requires Media Foundation to be installed. Appears to work flawlessly once MF installed.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1570131329,
+    "title": "WARSAW",
+    "source": "protondb"
+  }
+]

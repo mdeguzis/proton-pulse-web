@@ -1,0 +1,62 @@
+[
+  {
+    "appId": "452420",
+    "title": "Koihime Enbu",
+    "timestamp": 1535088071,
+    "rating": "Silver",
+    "notes": "Full playthrough. The post-fight quotes from the fighters are rendered in some strange font.",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "452420",
+    "cpu": "Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Single player works; Multiplayer crashes.",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16001 Mb",
+    "rating": "Bronze",
+    "timestamp": 1539359925,
+    "title": "Koihime Enbu \u604b\u59eb\u2020\u6f14\u6b66",
+    "source": "protondb"
+  },
+  {
+    "appId": "452420",
+    "cpu": "Intel Core i7-5557U @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Iris 6100 (Broadwell GT3)",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel (git-9007c0e 2018-10-29 bionic-oibaf-ppa)",
+    "kernel": "4.18.16-041816-generic",
+    "notes": "As some have reported...with Proton the fonts in story mode are not correct.  The intro movie and special/ex move animations do not work.  Although there is limited remap within the game, a controller buttons cannot be remapped because KE's included controller configuration utility does not work even though Proton includes .NET.  In the past before trying Proton I've successfully played many hours using PlayOnLinux + winetricks in a 32-bit WinXP wine prefix with required DLL components: d3dx9, xinput, wmp9, wmpcodecs, corefonts, gdiplusDX9, and .NET 4.5.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "3.16-4",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541058875,
+    "title": "Koihime Enbu \u604b\u59eb\u2020\u6f14\u6b66",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "452420",
+    "title": "Koihime Enbu",
+    "timestamp": 1535073671,
+    "rating": "Silver",
+    "notes": "Full playthrough. The post-fight quotes from the fighters are rendered in some strange font.",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

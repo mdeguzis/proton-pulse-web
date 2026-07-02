@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2356470",
+    "cpu": "Intel Core Ultra 9 275HX",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 5070 Mobile",
+    "gpuDriver": "595.58.03 CUDA 13.2",
+    "kernel": "7.0.5-200.nobara.fc43.x86_64",
+    "notes": "Was annoying to get it working. Absolutely not playable as a fresh download.",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1778909481,
+    "title": "Lost Chapter",
+    "source": "protondb"
+  }
+]

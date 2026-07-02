@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1684510",
+    "cpu": "Intel Xeon E3-1225 v3 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD P4600/P4700 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.2.6",
+    "kernel": "5.13.0-28-generic",
+    "notes": "starts opens crashes",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1644980198,
+    "title": "",
+    "source": "protondb"
+  }
+]

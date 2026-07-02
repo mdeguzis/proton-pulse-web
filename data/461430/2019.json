@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "461430",
+    "cpu": "Intel Core i3-6006U @ 2.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce 920MX",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.0.0-17-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "6 GB",
+    "rating": "Bronze",
+    "timestamp": 1561110076,
+    "title": "EmergeNYC",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "854550",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "5.15.0-60-generic",
+    "notes": "Only shows a Runtime Error 501 and pressing OK ends the game, some older versions of Proton don't even get that far.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1689773109,
+    "title": "",
+    "source": "protondb"
+  }
+]

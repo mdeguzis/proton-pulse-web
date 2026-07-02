@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "38600",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Native version doesn't work right, as confirmed by the developer. Works fine on Proton but not in fullscreen. Press F11 to switch to windowed if it starts up in fullscreen and then set it to windowed properly in the game options. After a save and quit it should run fine afterwards.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562164844,
+    "title": "Faerie Solitaire",
+    "source": "protondb"
+  },
+  {
+    "appId": "38600",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-60-generic",
+    "notes": "Use Proton version instead of native. You cannot play in fullscreen: press F11 to switch to windowed, then change setting in game options. Achievements are working fine.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1568145907,
+    "title": "Faerie Solitaire",
+    "source": "protondb"
+  }
+]

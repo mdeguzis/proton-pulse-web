@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1324410",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 19.1.7, DRM 3.57, 6.8.1-060801-generic)",
+    "gpuDriver": "4.6 Mesa 24.3.4 (git-769e51468b)",
+    "kernel": "6.8.1-060801-generic",
+    "notes": "It's a simple and small game about parking cars, and it's enjoyful.",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1757729156,
+    "title": "",
+    "source": "protondb"
+  }
+]

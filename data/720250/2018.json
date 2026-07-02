@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "720250",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Didn't use and tweaks",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1542313643,
+    "title": "Welcome to the Game II",
+    "source": "protondb"
+  }
+]

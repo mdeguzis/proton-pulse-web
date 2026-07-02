@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3081840",
+    "cpu": "Intel Core i3-1005G1 @ 1.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (ICL GT1)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.19.12-200.fc43.x86_64",
+    "notes": "Runs perfect",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "7 GB",
+    "rating": "platinum",
+    "timestamp": 1776861171,
+    "title": "",
+    "source": "protondb"
+  }
+]

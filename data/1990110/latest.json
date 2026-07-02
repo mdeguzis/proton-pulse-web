@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1990110",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090 Ti",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.12.21-1-lts",
+    "notes": "Worked smoothly out of the box",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "96 GB",
+    "rating": "gold",
+    "timestamp": 1745681050,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1990110",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090 Ti",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.12.21-1-lts",
+    "notes": "Worked well out of the box. No tinkering or settings needed adjusted.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "96 GB",
+    "rating": "gold",
+    "timestamp": 1745696527,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1990110",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.12.36",
+    "notes": "It just works!",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1752111333,
+    "title": "",
+    "source": "protondb"
+  }
+]

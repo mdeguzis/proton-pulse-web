@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "342280",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Seems to run fine as of the 3.16-5 Beta.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545101303,
+    "title": "Manyland",
+    "source": "protondb"
+  }
+]

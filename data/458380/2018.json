@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "458380",
+    "title": "Gahkthun of the Golden Lightning Steam Edition",
+    "timestamp": 1535634523,
+    "rating": "Borked",
+    "notes": "Cackling audio, fullscreen doesn't work properly, movie files don't play, loading a save crashes the game.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "458380",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Cackling audio in the menu.\nGame launches in full screen but only occupies 40% of the screen.\nMouse clicks are not correct: Different areas are clicked.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541096798,
+    "title": "Gahkthun of the Golden Lightning Steam Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "458380",
+    "title": "Gahkthun of the Golden Lightning Steam Edition",
+    "timestamp": 1535620123,
+    "rating": "Borked",
+    "notes": "Cackling audio, fullscreen doesn't work properly, movie files don't play, loading a save crashes the game.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

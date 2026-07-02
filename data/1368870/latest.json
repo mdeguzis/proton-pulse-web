@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1368870",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.1.0-17-amd64",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1752771823,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1368870",
+    "cpu": "AMD Ryzen 5 5500GT with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6400 (radeonsi, navi24, LLVM 17.0.6, DRM 3.54, 6.6.78-generic-2rosa2021.1-x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.6",
+    "kernel": "6.6.78-generic-2rosa2021.1-x86_64",
+    "notes": "Starts good",
+    "os": "ROSA Fresh Desktop 12.5.1, platform 2021.1 (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1753039735,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1368870",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 580.82.07",
+    "kernel": "6.16.4-arch1-1",
+    "notes": "Works Great",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1757079754,
+    "title": "",
+    "source": "protondb"
+  }
+]

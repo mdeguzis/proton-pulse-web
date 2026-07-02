@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "859570",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.6-1-MANJARO",
+    "notes": "When you are about to enter a Quick Play Game, you are just going to get an infinite Loading Screen.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1572020401,
+    "title": "Secret Neighbor",
+    "source": "protondb"
+  },
+  {
+    "appId": "859570",
+    "cpu": "Intel Xeon E3-1220 v3 @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.7-arch1-1-ARCH",
+    "notes": "Game works flawlessly, but unable to join the voice. I can neither hear or say anything in the voice chat.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1572189239,
+    "title": "Secret Neighbor",
+    "source": "protondb"
+  },
+  {
+    "appId": "859570",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "using the command \"PROTON_USE_WINED3D=1 %command%\" allows you to load into the game instead of being caught in the loading menu, runs perfectly after.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1572230924,
+    "title": "Secret Neighbor",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

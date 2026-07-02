@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "378770",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Perfect out of the box, tried the game both windowed and fullscreen.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552249446,
+    "title": "ESCHATOS",
+    "source": "protondb"
+  },
+  {
+    "appId": "378770",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.1.0-rc5-RAVEN",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1555810429,
+    "title": "ESCHATOS",
+    "source": "protondb"
+  },
+  {
+    "appId": "378770",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.7-050007-generic",
+    "notes": "Flawless out of the box, great performance and no audio issues. Also worked fine with Nintendo Switch Pro controller.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555861788,
+    "title": "ESCHATOS",
+    "source": "protondb"
+  }
+]

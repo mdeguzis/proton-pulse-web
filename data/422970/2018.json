@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "422970",
+    "title": "Devil Daggers",
+    "timestamp": 1535417386,
+    "rating": "Borked",
+    "notes": "Says running but nothing shows up and it closes",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "422970",
+    "title": "Devil Daggers",
+    "timestamp": 1535402986,
+    "rating": "Borked",
+    "notes": "Says running but nothing shows up and it closes",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

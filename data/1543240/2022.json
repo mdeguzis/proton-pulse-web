@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1543240",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX Vega (vega10, LLVM 13.0.1, DRM 3.44, 5.16.19-76051619-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.16.19-76051619-generic",
+    "notes": "Played the first level (about 20 mins) checked the menu and settings out Gigapocalypse runs great so far.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1652243988,
+    "title": "Gigapocalypse",
+    "source": "protondb"
+  }
+]

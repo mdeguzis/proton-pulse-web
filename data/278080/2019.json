@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "278080",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.17-1-MANJARO",
+    "notes": "You need to disable cinematics in the configuration tool. If your wireless controller keeps spinning the camera even when it is turned off, do the following:  go to /home/user_name/.local/share/Steam/steamapps/compatdata/278080/pfx/drive_c/users/steamuser/My Documents/TecmoKoei/Dynasty Warriors 8/ and find inputmap1.dat and inputmap2.dat . Rename 2 to 1, and 1 to 2. Now your controller configuration is on player 2, and won't get in the way. Now plug out your controller. Now go in the game, go to options, and delete the button configuration for player 2 (TAB), but don't touch the gamepad inputs. Now you can freely set any button for your player 1 configuration without getting a prompt about duplicates. After you set it to your liking, don't forget to apply the changes and save the options. Now go out of the game, plug in your controller, and that is it. Now you can play the game with the keyboard, without your controller spinning the camera, and preventing you from changing the button layout.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1548166528,
+    "title": "DYNASTY WARRIORS 8: Xtreme Legends Complete Edition / \u771f\u30fb\u4e09\u570b\u7121\u53cc\uff17 with \u731b\u5c06\u4f1d",
+    "source": "protondb"
+  }
+]

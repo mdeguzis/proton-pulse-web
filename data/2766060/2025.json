@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2766060",
+    "cpu": "Intel Core i7-14700K",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.6, DRM 3.61, 6.14.11-300.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.14.11-300.fc42.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1758624489,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2766060",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-36-generic",
+    "notes": "I get an error about missing .NET Desktop Runtime 6.0.25. I tried different proton versions including 9.0-3 which is mentioned in the other reports but to no avail. I tried running the installer in the game files manually but the game still does not recognize the installation.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1764098693,
+    "title": "",
+    "source": "protondb"
+  }
+]

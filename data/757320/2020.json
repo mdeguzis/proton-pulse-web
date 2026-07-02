@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "757320",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.64-1-MANJARO",
+    "notes": "Had to move back to Proton 4.11. Otherwise game runs great.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-13",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1600359286,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "757320",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.1.7",
+    "kernel": "5.4.64-1-MANJARO",
+    "notes": "Runs perfectly out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1601067036,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "757320",
+    "cpu": "Intel Core i5-3450 @ 3.10GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.6 Mesa 20.2.2",
+    "kernel": "5.9.8-arch1-1",
+    "notes": "Runs perfectly fine with no tinkering whatsoever",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1606474707,
+    "title": "",
+    "source": "protondb"
+  }
+]

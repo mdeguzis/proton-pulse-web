@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "418180",
+    "cpu": "AMD Ryzen 5 1600X Six-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org AMD PITCAIRN (DRM 2.50.0 / 4.15.0-36-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Played the tutorial. No issues identified.",
+    "os": "Ubuntu 18.04.1 LTS (64 Bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16037 MB",
+    "rating": "Platinum",
+    "timestamp": 1540158488,
+    "title": "Tempest: Pirate Action RPG",
+    "source": "protondb"
+  },
+  {
+    "appId": "418180",
+    "cpu": "AMD A8-5600K APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "I don't know how the original game is supposed to work, what I can say is that I have not seen any strange graphical or sound behavior, at least during the tutorial.",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541268371,
+    "title": "Tempest: Pirate Action RPG",
+    "source": "protondb"
+  },
+  {
+    "appId": "418180",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541820652,
+    "title": "Tempest: Pirate Action RPG",
+    "source": "protondb"
+  }
+]

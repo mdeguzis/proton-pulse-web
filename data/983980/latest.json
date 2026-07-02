@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "983980",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Works Flawless",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1550043741,
+    "title": "Euclidean Skies",
+    "source": "protondb"
+  },
+  {
+    "appId": "983980",
+    "cpu": "Intel Core i5-6600K OC @ 4.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.25_1",
+    "notes": "Game runs nicely (no visual glitches, no stuttering), but framerate is locked lower than my monitor's refresh rate (possibly unrelated to proton)",
+    "os": "Void Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551317718,
+    "title": "Euclidean Skies",
+    "source": "protondb"
+  }
+]

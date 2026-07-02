@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "351640",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Have to start twice as the first time it doesn't take inputs appropriately. Crashed once in the middle of the game.",
+    "os": "Linux Mint 18.2 Sonya",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1553704399,
+    "title": "Eternal Senia",
+    "source": "protondb"
+  },
+  {
+    "appId": "351640",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 740M",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Perfect.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1566975398,
+    "title": "Eternal Senia",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "956100",
+    "cpu": "Intel Core i5-2467M @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1546682492,
+    "title": "Lovers ' Smiles",
+    "source": "protondb"
+  },
+  {
+    "appId": "956100",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Did a full playthrough in windowed mode. Fullscreen freezes the game on start.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560766832,
+    "title": "Lovers ' Smiles",
+    "source": "protondb"
+  }
+]

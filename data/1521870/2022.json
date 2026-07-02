@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1521870",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.4.0-121-generic",
+    "notes": "After initial developer card, window goes black at intro video and minimizes. Window will not un-minimize and remains black. Sound good though.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-3",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1656193496,
+    "title": "",
+    "source": "protondb"
+  }
+]

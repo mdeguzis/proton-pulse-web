@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "370240",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Shows splash screen then just quits running.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "2.7.6 beta",
+    "ram": "16008 Mb",
+    "rating": "Borked",
+    "timestamp": 1537117348,
+    "title": "NBA 2K16",
+    "source": "protondb"
+  },
+  {
+    "appId": "370240",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.09",
+    "kernel": "4.18.10-041810-generic",
+    "notes": "Works fine in offline mode.  Online crashes, I'm guessing it has something to do with trying to connect or something.  Tested the play now single player.  Needs xact I think.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16051 Mb",
+    "rating": "Silver",
+    "timestamp": 1540143200,
+    "title": "NBA 2K16",
+    "source": "protondb"
+  }
+]

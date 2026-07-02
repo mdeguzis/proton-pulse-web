@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1054490",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.8.0-90-generic",
+    "notes": "Works great out of the box. FPS is lower than expected for a lightweight game (averaging about 85)",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1769533023,
+    "title": "Wingspan",
+    "source": "protondb"
+  }
+]

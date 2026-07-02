@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "313480",
+    "title": "Blitzkrieg Anthology",
+    "timestamp": 1535194615,
+    "rating": "Platinum",
+    "notes": "better that windows xp in 2004",
+    "os": "Linux Mint Tara Cinamon",
+    "gpuDriver": "AMD kernel module",
+    "specs": "AMD R1700",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "313480",
+    "title": "Blitzkrieg Anthology",
+    "timestamp": 1535536299,
+    "rating": "Platinum",
+    "notes": "The game runs great, no graphical issues, no performance issues, it runs completely stable. The performance issues people experience when running this game via Winetricks and PlayonLinux are absent. ",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7-1",
+    "specs": "i7 5820k / Vega 64",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "313480",
+    "cpu": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.8-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.0",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "Game has weird lags with Proton 3.7(stable) but runs completely fine with 3.7-6 Beta. It runs significantly better under Proton then it does natively on modern Windows machines. ",
+    "os": "\"Arch Linux\" (64 bits)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15953 MB",
+    "rating": "Platinum",
+    "timestamp": 1537455998,
+    "title": "Blitzkrieg Anthology",
+    "source": "protondb"
+  },
+  {
+    "appId": "313480",
+    "cpu": "AMD Athlon II X4 645",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TURKS",
+    "gpuDriver": "3.1 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "I'm not sure how to do any of the above tweaks. I tried to install and run the game and it gave me a error report called \"oops\": The game crashed. The crash report folder named \"2018-11-14_185136\" next to game exicuteable. It would be great if you'd send to the developer of this game!\n\nI'm am currently trying to send this report to the developer with a plea to get it working with Proton so I can buy the full version of the game.\n",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542223196,
+    "title": "Blitzkrieg Anthology",
+    "source": "protondb"
+  },
+  {
+    "appId": "313480",
+    "title": "Blitzkrieg Anthology",
+    "timestamp": 1535180215,
+    "rating": "Platinum",
+    "notes": "better that windows xp in 2004",
+    "os": "Linux Mint Tara Cinamon",
+    "gpuDriver": "AMD kernel module",
+    "specs": "AMD R1700",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "313480",
+    "title": "Blitzkrieg Anthology",
+    "timestamp": 1535521899,
+    "rating": "Platinum",
+    "notes": "The game runs great, no graphical issues, no performance issues, it runs completely stable. The performance issues people experience when running this game via Winetricks and PlayonLinux are absent. ",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7-1",
+    "specs": "i7 5820k / Vega 64",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

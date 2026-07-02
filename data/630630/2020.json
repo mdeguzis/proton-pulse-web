@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "630630",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.38.0, 5.8.0-7625-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.0-devel (git-c8630fd 2020-11-05 focal-oibaf-ppa)",
+    "kernel": "5.8.0-7625-generic",
+    "notes": "Anti-Cheat ruins an otherwise seamless experience",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1604581019,
+    "title": "",
+    "source": "protondb"
+  }
+]

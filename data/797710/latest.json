@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "797710",
+    "title": "RPGolf",
+    "timestamp": 1535276319,
+    "rating": "Silver",
+    "notes": "Music doesn't work. Font issues; text is too large and often overruns the textbox, leaving the last line unreadable. Otherwise seems to run smoothly.",
+    "os": "Ubuntu 17.10 (64-bit)",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "797710",
+    "title": "RPGolf",
+    "timestamp": 1535261919,
+    "rating": "Silver",
+    "notes": "Music doesn't work. Font issues; text is too large and often overruns the textbox, leaving the last line unreadable. Otherwise seems to run smoothly.",
+    "os": "Ubuntu 17.10 (64-bit)",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

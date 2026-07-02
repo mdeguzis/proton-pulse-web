@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "439350",
+    "title": "Kritika Online",
+    "timestamp": 1535311675,
+    "rating": "Borked",
+    "notes": "Using i3 window manager. Launcher works perfectly, account setup included, and even goes as far as showing up the EnMasse icon in the systray, but upon pressing Play, it shows \"couldn't launch\". If you attempt to press the button again, the launcher gets glitchy, and eventually crashes.",
+    "os": "Debian Sid  64-bit (Kernel 4.17.9-3)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD FX-8350 / R9 380X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "439350",
+    "title": "Kritika Online",
+    "timestamp": 1535297275,
+    "rating": "Borked",
+    "notes": "Using i3 window manager. Launcher works perfectly, account setup included, and even goes as far as showing up the EnMasse icon in the systray, but upon pressing Play, it shows \"couldn't launch\". If you attempt to press the button again, the launcher gets glitchy, and eventually crashes.",
+    "os": "Debian Sid  64-bit (Kernel 4.17.9-3)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD FX-8350 / R9 380X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

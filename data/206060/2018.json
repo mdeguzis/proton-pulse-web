@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "206060",
+    "title": "Avernum 6",
+    "timestamp": 1535076423,
+    "rating": "Platinum",
+    "notes": "Works well",
+    "os": "Arch Linux",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600  / RX 570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "206060",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.9-92.current",
+    "notes": "Ran flawlessly, couldn't find any issues.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7977 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539034137,
+    "title": "Avernum 6",
+    "source": "protondb"
+  },
+  {
+    "appId": "206060",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Ran great!",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1542489597,
+    "title": "Avernum 6",
+    "source": "protondb"
+  },
+  {
+    "appId": "206060",
+    "title": "Avernum 6",
+    "timestamp": 1535062023,
+    "rating": "Platinum",
+    "notes": "Works well",
+    "os": "Arch Linux",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600  / RX 570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "429530",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554662438,
+    "title": "Falcon 4.0",
+    "source": "protondb"
+  },
+  {
+    "appId": "429530",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4",
+    "notes": "Intro video is black, otherwise seems to work fine.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1559135003,
+    "title": "Falcon 4.0",
+    "source": "protondb"
+  }
+]

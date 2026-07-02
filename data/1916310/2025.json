@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1916310",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 580.94.11",
+    "kernel": "6.17.8-324.current",
+    "notes": "Works perfectly out of the box",
+    "os": "Solus 4.8 Opportunity",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1766278245,
+    "title": "Remnant Records",
+    "source": "protondb"
+  }
+]

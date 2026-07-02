@@ -1,0 +1,63 @@
+[
+  {
+    "appId": "728730",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "No issues at all.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15972 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537315525,
+    "title": "Holyday City: Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "728730",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.12-200.fc28.x86_64",
+    "notes": "It worked out of the box and it was also able to download the original file save (from my Windows partition) from the cloud.",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15975 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539522119,
+    "title": "Holyday City: Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "728730",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.19.10-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545162834,
+    "title": "Holyday City: Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "728730",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-35-generic",
+    "os": "Ubuntu 18.10 (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1545234845,
+    "title": "Holyday City: Reloaded",
+    "source": "protondb"
+  }
+]

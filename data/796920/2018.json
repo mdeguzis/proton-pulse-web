@@ -1,0 +1,62 @@
+[
+  {
+    "appId": "796920",
+    "cpu": "i7-4790 CPU @ 3.60GHz",
+    "gpu": "GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Tested the demo version, seems to work perfectly except it runs at ~35fps at graphics quality 5, which seems a bit low.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7863 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537078290,
+    "title": "Xenoform",
+    "source": "protondb"
+  },
+  {
+    "appId": "796920",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "SAMs don't render\n\nHOPs don't render\n",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.6 Beta",
+    "ram": "32166 Mb",
+    "rating": "Silver",
+    "timestamp": 1537283695,
+    "title": "Xenoform",
+    "source": "protondb"
+  },
+  {
+    "appId": "796920",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "A clarification on the prior silver rating - SAMs and HOPs being unrendered is not just cosmetic, it impacts playability.  I would have given it a gold rating if only cosmetic defects.\n",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32166 Mb",
+    "rating": "Silver",
+    "timestamp": 1537876803,
+    "title": "Xenoform",
+    "source": "protondb"
+  },
+  {
+    "appId": "796920",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "How to edit my previous report?",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32166 Mb",
+    "rating": "Silver",
+    "timestamp": 1537919876,
+    "title": "Xenoform",
+    "source": "protondb"
+  }
+]

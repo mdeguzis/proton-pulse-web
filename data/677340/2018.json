@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "677340",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "I've played the first and second Szenario without Problems.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540921456,
+    "title": "The Colonists",
+    "source": "protondb"
+  },
+  {
+    "appId": "677340",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Either it stops at launch, or it displays an error about dx11 not being setup. (even after I tried the different proton options)",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541266301,
+    "title": "The Colonists",
+    "source": "protondb"
+  }
+]

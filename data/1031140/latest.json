@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "1031140",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.5",
+    "kernel": "4.19.30-1-MANJARO",
+    "notes": "The game runs fine but the text is unreadable. Waiting for someone smarter then me to solve it :D",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "6 GB",
+    "rating": "Silver",
+    "timestamp": 1553968827,
+    "title": "The Horus Heresy: Legions",
+    "source": "protondb"
+  },
+  {
+    "appId": "1031140",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.5",
+    "kernel": "4.19.30-1-MANJARO",
+    "notes": " Paste \"PROTON_USE_WINED3D=1 %command%\" without quotes in the launch option",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "6 GB",
+    "rating": "Gold",
+    "timestamp": 1554016797,
+    "title": "The Horus Heresy: Legions",
+    "source": "protondb"
+  },
+  {
+    "appId": "1031140",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "The game does not even start",
+    "os": "MX 18.2 Continuum",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554832887,
+    "title": "The Horus Heresy: Legions",
+    "source": "protondb"
+  }
+]

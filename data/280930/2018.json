@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "280930",
+    "cpu": "Intel Celeron G550 @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Desktop",
+    "gpuDriver": "3.0 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "no abre",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "2 GB",
+    "rating": "Borked",
+    "timestamp": 1541448589,
+    "title": "Battlepillars Gold Edition",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

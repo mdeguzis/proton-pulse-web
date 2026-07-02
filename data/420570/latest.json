@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "420570",
+    "title": "Cubixx HD",
+    "timestamp": 1535378311,
+    "rating": "Borked",
+    "notes": "Just doesn't start (no error messages or blackscreen)",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "420570",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Works perfectly, including controller support.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542448344,
+    "title": "Cubixx HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "420570",
+    "title": "Cubixx HD",
+    "timestamp": 1535363911,
+    "rating": "Borked",
+    "notes": "Just doesn't start (no error messages or blackscreen)",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

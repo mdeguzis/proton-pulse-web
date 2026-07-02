@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "253490",
+    "title": "CABAL Online",
+    "timestamp": 1535112124,
+    "rating": "Borked",
+    "notes": "Must be installed in a 32 bit WINEPREFIX, The Anti-cheat XIGNCODE3 will refuse to work on 64 bits",
+    "os": "OpenSUSE Tumbleweed",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-6600k / GTX 970oc",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "253490",
+    "cpu": "AMD A10-7890K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "3.13.0-24-generic",
+    "notes": "The launcher continually crashes while updating, unplayable.",
+    "os": "Linux Mint 17 Qiana",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541963663,
+    "title": "CABAL Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "253490",
+    "title": "CABAL Online",
+    "timestamp": 1535097724,
+    "rating": "Borked",
+    "notes": "Must be installed in a 32 bit WINEPREFIX, The Anti-cheat XIGNCODE3 will refuse to work on 64 bits",
+    "os": "OpenSUSE Tumbleweed",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-6600k / GTX 970oc",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3933150",
+    "cpu": "AMD Ryzen 7 6800HS with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 680M (radeonsi, rembrandt, ACO, DRM 3.64, 6.19.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.2-arch2.2",
+    "kernel": "6.19.6-2-cachyos",
+    "notes": "EOS error on start if Proton Experimental not used.\nMicrophone input/PTT occasionally glitchy.\nSteam invites do not work, lobby codes do.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "39 GB",
+    "rating": "gold",
+    "timestamp": 1773462123,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "721010",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Works great and smoothly. The only issue that I found is that it can't play the cinematics (including opening). It only shows black screen (Can be skipped though). Tried different things (Disabling Esync, D3d11, etc.) Still can't play the cinematics. ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1562738312,
+    "title": "Newton and the Apple Tree",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "619150",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.13.0-28-generic",
+    "notes": "",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1644078878,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "619150",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.18.16-zen1-1-zen",
+    "notes": "Come se fosse nativo",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1660224473,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "619150",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.1, DRM 3.42, 5.15.0-47-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-47-generic",
+    "notes": "It's a logic puzzle type game that introduces machine learning (ML). Not unlike Zachtronics games.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1662167115,
+    "title": "",
+    "source": "protondb"
+  }
+]

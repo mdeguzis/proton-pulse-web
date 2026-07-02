@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1045340",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII (VEGA20, DRM 3.39.0, 5.9.12-97-tkg-cfs, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.0-devel (git-bdd09066fa)",
+    "kernel": "5.9.12-97-tkg-cfs",
+    "notes": "Works perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1608919117,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "233230",
+    "cpu": "12th Gen Intel Core i3-12100F",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-ba19.fc43.x86_64",
+    "notes": "Runs natively",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772094636,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "233230",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, ACO, DRM 3.64, 6.19.10-artix1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.3-arch1.1",
+    "kernel": "6.19.10-artix1-1",
+    "notes": "Won't start native, had to force proton experimental",
+    "os": "Artix Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1775933765,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "appId": "521150",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core Processor",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Devs reported game working flawlessly with Proton on Steam forum\nhttps://steamcommunity.com/app/521150/discussions/0/1736588252417071853\nI've tried it myself for a short time and everything seems to work as well",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Another Brick in the Mall",
+    "source": "protondb"
+  }
+]

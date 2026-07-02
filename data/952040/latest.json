@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "952040",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.16-112.current",
+    "notes": "Title screen is stuck black screen, you can hear the background music, but that's it.",
+    "os": "Solus",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554094853,
+    "title": "MUSYNX",
+    "source": "protondb"
+  },
+  {
+    "appId": "952040",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-16-generic",
+    "notes": "Game starts, goes though the logos, then Black screen with music. Tried disabling esync, and forcing wine d3d11. Disabling d3d11 causes an error stating that the game needs d3d11. ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560736122,
+    "title": "MUSYNX",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "952040",
+    "cpu": "Intel Core i5-6600K @ 4.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Black screen on startup. A similar music game has this issue and the problem appears to be media support. Issue discussed here https://github.com/ValveSoftware/Proton/issues/2816",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562076602,
+    "title": "MUSYNX",
+    "source": "protondb"
+  },
+  {
+    "appId": "952040",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-rc7",
+    "notes": "The game can run after running mf-install\nhttps://github.com/z0z0z/mf-install",
+    "os": "Linux\uff0864 \u4f4d\uff09",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1562543348,
+    "title": "MUSYNX",
+    "source": "protondb"
+  }
+]

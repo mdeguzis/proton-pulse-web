@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "283060",
+    "cpu": "AMD Ryzen 3 1300X Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.13-zen1-1-zen",
+    "notes": "You can get to the main menu, then to character select screen. In the character creation screen the character seems completely black, and if you manage to make the character, clicking \"Enter\" will make the game crash on loading.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1557862687,
+    "title": "Lucent Heart",
+    "source": "protondb"
+  },
+  {
+    "appId": "283060",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-6-amd64",
+    "notes": "Patch tool works, intro works, server screen and news works, character screen works both to select character and to make a new one. Clicking enter to start the game goes to a loading screen which completes but then crashes. Tried all the 'tweaks' individually, but none helped. Noticed some errors in log about D3D shaders \"24777.492:0067:00a2:warn:debugstr:OutputDebugStringA \"NiBinaryShaderLib> DLLMain CALL - \"\n24777.492:0067:00a2:trace:seh:raise_exception code=40010006 flags=0 addr=0x7b4520df ip=7b4520df tid=00a2\", no idea if that means anything.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1570750238,
+    "title": "Lucent Heart",
+    "source": "protondb"
+  }
+]

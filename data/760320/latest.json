@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "760320",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "Starts and plays a single-player game without faults",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571049522,
+    "title": "Gunman Tales",
+    "source": "protondb"
+  }
+]

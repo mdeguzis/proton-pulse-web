@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3135530",
+    "cpu": "AMD Ryzen 7 7445HS w/ Radeon 740M Graphics",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-37-generic",
+    "notes": "Works OOTB, a few bugs but nothing game breaking",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1768643020,
+    "title": "",
+    "source": "protondb"
+  }
+]

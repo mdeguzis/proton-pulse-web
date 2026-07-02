@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "319560",
+    "cpu": "AMD FX-8370 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "ATI Technologies Inc. Radeon RX Vega",
+    "gpuDriver": "4.6.13542 Compatibility Profile Context 18.50.1.418",
+    "kernel": "4.15.0-43-generic",
+    "notes": "The game runs without problems under Proton.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546344098,
+    "title": "Reprisal Universe",
+    "source": "protondb"
+  },
+  {
+    "appId": "319560",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Had no problems with entering my name, the game ran perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556492517,
+    "title": "Reprisal Universe",
+    "source": "protondb"
+  },
+  {
+    "appId": "319560",
+    "cpu": "Intel Core i7-8086K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "All seems to work fine, after a crash at the first startup. We can't change keyboard shortcut.\nThe game is in qwerty, if you need an auto switch to something like azerty: right click on the game -> Properties -> STARTUP -> setxkbmap us && %command% && setxkbmap fr\nYou need to change fr to your xkb layout, here it's for french keyboard.",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557784812,
+    "title": "Reprisal Universe",
+    "source": "protondb"
+  }
+]

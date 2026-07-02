@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "15080",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1545770460,
+    "title": "Rayman Raving Rabbids\u2122",
+    "source": "protondb"
+  }
+]

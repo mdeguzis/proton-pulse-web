@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "977300",
+    "cpu": "Intel Core i3-3110M @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.0.0-31-generic",
+    "notes": "El juego corre bien en este sistema. Lo probe tambien en Manjaro y Solus OS y no hubo ningun inconveniente, solo NO pude correrlo en Elementary OS por el error de que no encontro adaptador. ",
+    "os": "Zorin OS 15",
+    "protonVersion": "4.11-6",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1570214304,
+    "title": "Fenimore Fillmore: 3 Skulls of the Toltecs",
+    "source": "protondb"
+  }
+]

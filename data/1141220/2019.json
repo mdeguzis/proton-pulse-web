@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1141220",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "4.15.0-66-generic",
+    "notes": "Worked out of the box with no tinkering.  If you like minesweeper and roguelikes it is worth a try.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1577772196,
+    "title": "",
+    "source": "protondb"
+  }
+]

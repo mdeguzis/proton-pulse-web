@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "17440",
+    "title": "Spore: Creepy & Cute Parts Pack",
+    "timestamp": 1535443815,
+    "rating": "Platinum",
+    "notes": "to start use Spore: Galactic Adventures' or Spore's play button",
+    "os": "4.18.5-arch1-1-ARCH 64bit",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600 / gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "17440",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "notes": "Error message at start, then starts but stays black.",
+    "os": "Solus (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "SPORE\u2122 Creepy &amp; Cute Parts Pack",
+    "source": "protondb"
+  },
+  {
+    "appId": "17440",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Launch from either Spore or Spore: Galactic Adventures",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541955850,
+    "title": "SPORE\u2122 Creepy & Cute Parts Pack",
+    "source": "protondb"
+  },
+  {
+    "appId": "17440",
+    "title": "Spore: Creepy & Cute Parts Pack",
+    "timestamp": 1535429415,
+    "rating": "Platinum",
+    "notes": "to start use Spore: Galactic Adventures' or Spore's play button",
+    "os": "4.18.5-arch1-1-ARCH 64bit",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600 / gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

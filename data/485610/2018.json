@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "485610",
+    "title": "Ball 3D: Soccer Online",
+    "timestamp": 1535737683,
+    "rating": "Borked",
+    "notes": "Gets past Unity splash but hangs on loading screen",
+    "os": "Antergos x64 Kernel 4.18.5-arch1-1",
+    "gpuDriver": "18.1.7-1",
+    "specs": "i7-7500U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "485610",
+    "title": "Ball 3D: Soccer Online",
+    "timestamp": 1535723283,
+    "rating": "Borked",
+    "notes": "Gets past Unity splash but hangs on loading screen",
+    "os": "Antergos x64 Kernel 4.18.5-arch1-1",
+    "gpuDriver": "18.1.7-1",
+    "specs": "i7-7500U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

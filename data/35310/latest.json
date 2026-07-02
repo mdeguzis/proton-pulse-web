@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "35310",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.7-041807-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel",
+    "kernel": "4.18.7-041807-generic",
+    "notes": "Requires launch option \"PROTON_NO_D3D11=1 %command%\" to run. Game works with similar performance as native and no glitches, but does not detect a Xbox One controller (don't know if it does on Windows either).",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "3.6-7 Beta",
+    "ram": "15899 Mb",
+    "rating": "Silver",
+    "timestamp": 1536698101,
+    "title": "Clutch",
+    "source": "protondb"
+  }
+]

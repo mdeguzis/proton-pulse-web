@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1613770",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro M2000M",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.8.0-55-generic",
+    "notes": "No issues with Proton 5.0",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1627910447,
+    "title": "Cave Quest 2",
+    "source": "protondb"
+  }
+]

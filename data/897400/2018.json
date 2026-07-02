@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "897400",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "This failed with an error message about DirectX 11 support if I didn't turn on Wine's D3D support with PROTON_USE_WINED3D=1. The game ran nicely once it finally started running, but the driving was uncontrollable. It was way too sensitive to be able to use they keyboard, and I was stuck turning hard right with my Xbox 360 gamepad; sometimes in reverse only. I tried another Steam Play game to test the controller and it worked fine.\n\n-- I just tried it again, and this time I found myself steering to the left, but forwards. I found one spot on the stick where I could get it to drive straight, but it was so sensitive that it kept wobbling left and right when I didn't change position. There is something wrong with the calibration. I can't try this game on Windows to see if it is the game or Wine/Proton.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1544417255,
+    "title": "Driftpunk Racer",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

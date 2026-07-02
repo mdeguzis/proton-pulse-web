@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1203750",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.18.0-16.2-liquorix-amd64",
+    "notes": "still playable but suddenly it crashes or runs at very low fps and you need to save and restar the game",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1660612804,
+    "title": "",
+    "source": "protondb"
+  }
+]

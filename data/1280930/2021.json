@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1280930",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.12-300.fc34.x86_64",
+    "notes": "Works ok. Problem with controller solved by using Proton GE.",
+    "os": "Fedora release 34 (Thirty Four)",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1635083012,
+    "title": "",
+    "source": "protondb"
+  }
+]

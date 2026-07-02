@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "328880",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.9-1.el7.elrepo.x86_64",
+    "notes": "Fails to remember any game settings or player profiles between runs, which means you'd have to finish it all in one sitting! A shame, because otherwise it runs perfectly. And I think \"Elizabeth\" should be called \"Kate\" :-)",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64419 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537566698,
+    "title": "Space Legends: At the Edge of the Universe",
+    "source": "protondb"
+  }
+]

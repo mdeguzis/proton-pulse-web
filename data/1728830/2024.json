@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1728830",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 18.1.8, DRM 3.57, 6.10.3-gentoo-dist)",
+    "gpuDriver": "4.6 Mesa 24.1.3",
+    "kernel": "6.10.3-gentoo-dist",
+    "notes": "Started via SteamVR on Valve Index. No problems whatsoever - started without problem, played the tutorial - what a blast!",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1722894002,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "378750",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Originally crashed on open with a \"Can't create direct 3D device\" error on Proton 3.7-8 and 3.16-4. Following the instructions on the Proton GitHub page (https://github.com/ValveSoftware/Proton/wiki/Requirements) under \"AMD/Intel\" allowed the game to launch. Controls, graphics, sound, etc. seem to be working as intended now that the game will launch.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552766362,
+    "title": "Sayonara Umihara Kawase",
+    "source": "protondb"
+  },
+  {
+    "appId": "378750",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Worked perfectly with Xbox 360 controller and no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564281704,
+    "title": "Sayonara Umihara Kawase",
+    "source": "protondb"
+  }
+]

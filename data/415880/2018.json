@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "415880",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD8800",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-16f1023 2018-11-07 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Must use \"renderer for low-end PCs\" option, Online Play not available, Audio at max level in-game despite changing settings",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541716570,
+    "title": "Disc Jam",
+    "source": "protondb"
+  }
+]

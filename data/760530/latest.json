@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "760530",
+    "cpu": "Intel Core i5-4430 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-48-generic",
+    "notes": "some times it not start or fail to quit but is playable and fun",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1557007824,
+    "title": "Futurejam",
+    "source": "protondb"
+  }
+]

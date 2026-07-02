@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "494360",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Is the previous report trying to run off an NTFS drive (which by default mounts read-only)? Game loads, but doesn't respond to clicks on menu making it unplayable",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554824426,
+    "title": "Barrow Hill: Curse of the Ancient Circle",
+    "source": "protondb"
+  }
+]

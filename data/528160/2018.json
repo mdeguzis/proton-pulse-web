@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "528160",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "Runs with great performance without any tweaks, but only Survival mode works properly. Story mode hangs with black screen when first cutscene is supposed to start. Rated Borked since Story mode is the major part of the game.",
+    "os": "Debian GNU/Linux stable-updates (sid)",
+    "protonVersion": "3.16-4",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541077958,
+    "title": "Solstice Chronicles: MIA",
+    "source": "protondb"
+  },
+  {
+    "appId": "528160",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "After deleting the 3 video files in /Steam/steamapps/common/Solstice Chronicles MIA/TwinStick/Content/Movies/ the Story mode works (press Spacebar when the screen goes black after starting Story mode). I completed the first level, replaced the deleted files and the game is still working now. Great success?",
+    "os": "Debian GNU/Linux stable-updates (sid)",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541333999,
+    "title": "Solstice Chronicles: MIA",
+    "source": "protondb"
+  }
+]

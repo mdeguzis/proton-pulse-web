@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "579940",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-12-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1548620889,
+    "title": "Race for the Galaxy",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "579940",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.1.15-300.fc30.x86_64",
+    "os": "Unknown",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1562184596,
+    "title": "Race for the Galaxy",
+    "source": "protondb"
+  },
+  {
+    "appId": "579940",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-29-generic",
+    "notes": "It ran right out of the box, but before updating proton and video drivers I had to run with \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569129054,
+    "title": "Race for the Galaxy",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

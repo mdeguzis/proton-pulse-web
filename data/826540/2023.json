@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "826540",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 16.0.6, DRM 3.54, 6.5.9-200.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.9-200.fsync.fc38.x86_64",
+    "notes": "Works as expected (with Steam Beta and SteamVR Beta 2.x)",
+    "os": "Nobara release 38 (Thirty Eight)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1699117889,
+    "title": "Audio Trip",
+    "source": "protondb"
+  }
+]

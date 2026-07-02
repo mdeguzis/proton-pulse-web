@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "44310",
+    "title": "F1 2010",
+    "timestamp": 1535741872,
+    "rating": "Borked",
+    "notes": "Running but no window appears (alt + enter doesn't help)",
+    "os": "fedora 28",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-2520M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "44310",
+    "title": "F1 2010",
+    "timestamp": 1535727472,
+    "rating": "Borked",
+    "notes": "Running but no window appears (alt + enter doesn't help)",
+    "os": "fedora 28",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-2520M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

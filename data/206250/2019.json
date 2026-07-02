@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "206250",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Crashes immediately",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1547362106,
+    "title": "Cladun X2 / \u30af\u30e9\u30b7\u30c3\u30af\u30c0\u30f3\u30b8\u30e7\u30f3X2",
+    "source": "protondb"
+  },
+  {
+    "appId": "206250",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Still crashes immediately.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1551937468,
+    "title": "Cladun X2 / \u30af\u30e9\u30b7\u30c3\u30af\u30c0\u30f3\u30b8\u30e7\u30f3X2",
+    "source": "protondb"
+  },
+  {
+    "appId": "206250",
+    "cpu": "Intel Core i7-4820K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Displays \"Now Loading\" for a second and then closes",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567265152,
+    "title": "Cladun X2",
+    "source": "protondb"
+  }
+]

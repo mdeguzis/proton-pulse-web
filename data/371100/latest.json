@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "371100",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.6",
+    "notes": "Works in windowed mode.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559449944,
+    "title": "Waste Walkers",
+    "source": "protondb"
+  }
+]

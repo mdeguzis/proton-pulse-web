@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "529180",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.15.0-34-generic",
+    "notes": "With no tweaks, it didn't start and displayed the message \"DX11 feature level 10 is required to run the engine.\" The same message appeared with the \"PROTON_NO_ESYNC\" tweak. With the \"PROTON_NO_D3D11\" tweak, nothing happened at all. With the \"PROTON_USE_WINED3D11\" tweak, the game actually tried to run, but the window didn't actually display the game at all, instead displaying a really distorted version of my desktop and other open windows. I had to kill the process to close it.",
+    "os": "elementary OS 0.4.1 Loki (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32098 Mb",
+    "rating": "Borked",
+    "timestamp": 1538353118,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Dark and Light",
+    "source": "protondb"
+  },
+  {
+    "appId": "529180",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.14.61-gentoo",
+    "notes": "Game starts sound plays but video engine does not initialize and game errors with ansel or default startup \n\nhttps://i.imgur.com/mIRIWqT.png",
+    "os": "Gentoo Linux 4.14",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1540322026,
+    "title": "Dark and Light",
+    "source": "protondb"
+  },
+  {
+    "appId": "529180",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Game doesn't start at all. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541597799,
+    "title": "Dark and Light",
+    "source": "protondb"
+  }
+]

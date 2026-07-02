@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "1018900",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game says \"Running\" and then quits. This is from the logs running steam in a terminal: ERROR: ld.so: object '.local/share/Steam/ubuntu12_64/gameoverlayrenderer.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS64): ignored.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554513924,
+    "title": "Let's Learn Japanese! Katakana",
+    "source": "protondb"
+  }
+]

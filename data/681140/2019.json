@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "681140",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-20-generic",
+    "notes": "It works out of the box. No issues.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548883929,
+    "title": "Last Soldier",
+    "source": "protondb"
+  }
+]

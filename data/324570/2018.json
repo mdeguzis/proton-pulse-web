@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "324570",
+    "title": "Halo: Spartan Strike",
+    "timestamp": 1535384049,
+    "rating": "Borked",
+    "notes": "Glitchy audio, crashes before the menu can load",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "324570",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3",
+    "kernel": "4.18.16-zen1-1-zen",
+    "notes": "No issues. Tested with keyboard/mouse and PS3 controller.",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540771590,
+    "title": "Halo: Spartan Strike",
+    "source": "protondb"
+  },
+  {
+    "appId": "324570",
+    "title": "Halo: Spartan Strike",
+    "timestamp": 1535369649,
+    "rating": "Borked",
+    "notes": "Glitchy audio, crashes before the menu can load",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

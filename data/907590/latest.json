@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "907590",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Game runs, but no sound",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1555768161,
+    "title": "Data mining",
+    "source": "protondb"
+  }
+]

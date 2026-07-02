@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "784950",
+    "cpu": "11th Gen Intel Core i9-11900F @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "6.1.12-artix1-1",
+    "notes": "just use browser.",
+    "os": "Artix Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1678788040,
+    "title": "SUPREMACY: WORLD WAR 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "784950",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "5.15.0-72-generic",
+    "notes": "Started the game once, played for a few minutes, now whenever I try to start it shows the main menu, then immediately a white screen. \nLogs show:\nwine: Unhandled page fault on read access to 0000000000000000 at address 00000001DBC7B25F (thread 01cc), starting debugger...\nUnhandled exception: page fault on read access to 0x0000000000000000 in 64-bit code (0x000001dbc7b25f).\nRegister dump:\n rip:00000001dbc7b25f rsp:000000000011c8a0 rbp:000000000011c8d0 eflags:00010246 (  R- --  I  Z- -P- )\n rax:0000000000000000 rbx:000000000011ce40 rcx:0000000000000000 rdx:0000000000000000\n rsi:000000000011d758 rdi:000000000011d770  r8:ffffffffea08a960  r9:0000000000000000 r10:0000000000000000\n r11:0000000000000060 r12:0000000000000000 r13:000000000011ce40 r14:000000000011d770 r15:0000000006764a10",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1685303245,
+    "title": "SUPREMACY: WORLD WAR 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "784950",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD DIMGREY_CAVEFISH (LLVM 13.0.1, DRM 3.42, 5.15.0-56-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Runs perfectly fine. Occasional frame drops/lag, but far from unplayable. If it doesn't work, you can play in the browser",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1698195108,
+    "title": "SUPREMACY: WORLD WAR 3",
+    "source": "protondb"
+  }
+]

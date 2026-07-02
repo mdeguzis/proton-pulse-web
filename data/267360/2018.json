@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "267360",
+    "title": "MURI",
+    "timestamp": 1535057741,
+    "rating": "Silver",
+    "notes": "Runs well, but there is no audio.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 2520m / Intel HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "267360",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "No audio, but other than that, the game runs well.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541386253,
+    "title": "MURI",
+    "source": "protondb"
+  },
+  {
+    "appId": "267360",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Game runs generally well, but there is no audio.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1544242263,
+    "title": "MURI",
+    "source": "protondb"
+  },
+  {
+    "appId": "267360",
+    "title": "MURI",
+    "timestamp": 1535043341,
+    "rating": "Silver",
+    "notes": "Runs well, but there is no audio.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 2520m / Intel HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

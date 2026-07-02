@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3596040",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.4-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.4",
+    "kernel": "6.18.4-2-cachyos",
+    "notes": "Doesn't work yet, think it's EAC and them not supporting linux. But I don't know. I tried various fixes, nothing worked.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1773372955,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3596040",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.8-200.fc43.x86_64",
+    "notes": "EAC window opens, then an error window appears. The error is pretty short and basically says \"third party error\".",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1773732619,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3596040",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.8-200.fc43.x86_64",
+    "notes": "No linux support for past and soon-to-happen playtest. Will update if a new playtest or final build is supported on linux.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1778311339,
+    "title": "",
+    "source": "protondb"
+  }
+]

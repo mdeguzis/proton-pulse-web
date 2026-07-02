@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "305390",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.6",
+    "kernel": "5.3.13-135.current",
+    "notes": "Game only shows a black screen and plays music.",
+    "os": "Solus",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1633818251,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "70900",
+    "cpu": "AMD FX-6350 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Full game was tested. Does not appear to use DirectX of any variety. Performance is playable on default settings, but nowhere near perfect. Disabling galaxy gas seems to dramatically improve performance.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1549250148,
+    "title": "Star Ruler",
+    "source": "protondb"
+  },
+  {
+    "appId": "70900",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1551344525,
+    "title": "Star Ruler",
+    "source": "protondb"
+  },
+  {
+    "appId": "70900",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-48-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555942229,
+    "title": "Star Ruler",
+    "source": "protondb"
+  }
+]

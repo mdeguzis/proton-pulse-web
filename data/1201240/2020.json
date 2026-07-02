@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1201240",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.28-1-MANJARO",
+    "notes": "It's incredibly close the start of the entire BLEACH story ARC as I remember it from the ANIME.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1597876794,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1201240",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.6 Mesa 20.1.5",
+    "kernel": "5.7.15-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1598455404,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1201240",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.3.0-62-generic",
+    "notes": "Initial cutscenes may require mfplat. Clicking to skip it allows you to see the menu.",
+    "os": "KDE neon User Edition 5.19",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1601161967,
+    "title": "",
+    "source": "protondb"
+  }
+]

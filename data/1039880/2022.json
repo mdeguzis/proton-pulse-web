@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1039880",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.15.0-39-generic",
+    "notes": "Runs pretty good but takes some fiddling to get working, wouldn't work until i restarted my pc after trying to launch it once.",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1656352302,
+    "title": "",
+    "source": "protondb"
+  }
+]

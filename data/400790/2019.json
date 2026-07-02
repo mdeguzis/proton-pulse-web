@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "400790",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Game is playable but explosions leave a black/dark area on the screen, making it impossible to see the enemy. Different Proton launch options made no difference.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1552749035,
+    "title": "The Juicer",
+    "source": "protondb"
+  },
+  {
+    "appId": "400790",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "Game works but has some graphical glitches",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "3.16-4",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1561548164,
+    "title": "The Juicer",
+    "source": "protondb"
+  }
+]

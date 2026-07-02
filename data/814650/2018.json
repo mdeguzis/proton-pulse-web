@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "814650",
+    "title": "Pushover",
+    "timestamp": 1535907446,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't initially focus, but Alt-Tab and Enter run the game fullscreen. After that, it's perfect(ly Quavertastic).",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "814650",
+    "title": "Pushover",
+    "timestamp": 1535893046,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't initially focus, but Alt-Tab and Enter run the game fullscreen. After that, it's perfect(ly Quavertastic).",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

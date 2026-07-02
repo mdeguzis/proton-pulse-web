@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "260210",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz",
+    "gpu": "GeForce 9700M GTS/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.106",
+    "kernel": "4.15.0-33-generic",
+    "notes": "The game can't run without the Uplay client. The Uplay client shows the \"service unavailable\" error. Therefore the game is unplayable.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7972 Mb",
+    "rating": "Borked",
+    "timestamp": 1536764059,
+    "title": "Assassin\u2019s Creed\u00ae Liberation HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "260210",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Uplay install works. The game starts to a black screen.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541441347,
+    "title": "Assassin\u2019s Creed\u00ae Liberation HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "260210",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Failed. Game does not start mainly because Uplay will not connect",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1542159460,
+    "title": "Assassin\u2019s Creed\u00ae Liberation HD",
+    "source": "protondb"
+  }
+]

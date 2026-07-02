@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "347620",
+    "title": "Gaokao.Love.100Days",
+    "timestamp": 1535728078,
+    "rating": "Platinum",
+    "notes": "Great performance / No error",
+    "os": "Fedora 28 (kernel: 4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "E3-1230v2 / GTX 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "347620",
+    "cpu": "AMD Athlon(tm) 64 X2 Dual Core Processor 5000+",
+    "gpu": "NVIDIA Corporation GeForce 8500 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Fullscreen mode is borked, and it seems the only way to switch back to windowed mode is to delete your save data. Runs great in windowed mode.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3945 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537357117,
+    "title": "Gaokao.Love.100Days",
+    "source": "protondb"
+  },
+  {
+    "appId": "347620",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Desktop",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Changing to full-screen mode makes the game crash, and I didn't find a way to change it back in Linux, so I had to change the setting back while running the game in windows. (settings are synced) Videos do not play and fail silently, so you may not even notice, that you're missing them. Other than that, the game seems to run fine.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1542657060,
+    "title": "Gaokao.Love.100Days",
+    "source": "protondb"
+  },
+  {
+    "appId": "347620",
+    "title": "Gaokao.Love.100Days",
+    "timestamp": 1535713678,
+    "rating": "Platinum",
+    "notes": "Great performance / No error",
+    "os": "Fedora 28 (kernel: 4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "E3-1230v2 / GTX 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

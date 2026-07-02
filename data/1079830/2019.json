@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "1079830",
+    "cpu": "Intel Core i5-4690T @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.42-1-MANJARO",
+    "notes": "Tested with the pre-release demo. Seems to be a unity3d game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-6",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1560210685,
+    "title": "Cris Tales",
+    "source": "protondb"
+  },
+  {
+    "appId": "1079830",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "5.1.7-1-default",
+    "notes": "Tested using demo version. No flaws. Actually runs more smoothly than on windows, but locks to 60 fps.",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560391813,
+    "title": "Cris Tales",
+    "source": "protondb"
+  },
+  {
+    "appId": "1079830",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-48-generic",
+    "notes": "This for the demo. Ran perfectly start to finish.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560843781,
+    "title": "Cris Tales",
+    "source": "protondb"
+  }
+]

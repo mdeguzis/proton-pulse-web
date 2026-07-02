@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "49810",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556737106,
+    "title": "CreaVures",
+    "source": "protondb"
+  },
+  {
+    "appId": "49810",
+    "cpu": "AMD Ryzen Threadripper 1920X 12-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Runs fine but seems to have issues with xbox360 wired controller",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1558375833,
+    "title": "CreaVures",
+    "source": "protondb"
+  }
+]

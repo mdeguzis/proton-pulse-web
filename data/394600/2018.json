@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "394600",
+    "title": "Mighty Gunvolt",
+    "timestamp": 1535073111,
+    "rating": "Platinum",
+    "notes": "Runs, just don't know why anyone would play it.  :-D",
+    "os": "Fedora 28",
+    "gpuDriver": "Mesa 18.0.5-3",
+    "specs": "i5-3690k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "394600",
+    "title": "Mighty Gunvolt",
+    "timestamp": 1535087781,
+    "rating": "Silver",
+    "notes": "Perhaps some odd behavior in the button binding screen, but otherwise flawless.",
+    "os": "Ubuntu 18.04.1 LTS (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "NVIDIA-driver-390",
+    "specs": "Intel i7-4470K (3.5GHz x 8) / GeForce GTX 760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "394600",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Everything seems to work",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541283480,
+    "title": "Mighty Gunvolt",
+    "source": "protondb"
+  },
+  {
+    "appId": "394600",
+    "title": "Mighty Gunvolt",
+    "timestamp": 1535058711,
+    "rating": "Platinum",
+    "notes": "Runs, just don't know why anyone would play it.  :-D",
+    "os": "Fedora 28",
+    "gpuDriver": "Mesa 18.0.5-3",
+    "specs": "i5-3690k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "394600",
+    "title": "Mighty Gunvolt",
+    "timestamp": 1535073381,
+    "rating": "Silver",
+    "notes": "Perhaps some odd behavior in the button binding screen, but otherwise flawless.",
+    "os": "Ubuntu 18.04.1 LTS (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "NVIDIA-driver-390",
+    "specs": "Intel i7-4470K (3.5GHz x 8) / GeForce GTX 760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

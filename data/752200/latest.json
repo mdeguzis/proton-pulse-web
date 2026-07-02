@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "752200",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.5-arch1-1",
+    "notes": "Performance issues make the game unplayable in VR.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1600032914,
+    "title": "",
+    "source": "protondb"
+  }
+]

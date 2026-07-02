@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1957780",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 16.0.6, DRM 3.56, 6.7.0-arch3-1)",
+    "gpuDriver": "4.6 Mesa 23.3.3-arch1.1",
+    "kernel": "6.7.0-arch3-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1705513848,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1957780",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 15.0.7, DRM 3.49, 6.1.31-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.1.31-1-MANJARO",
+    "notes": "The game runs flawlessly up until deployment. Then it goes to a loading screen, and sends you right back to the bunker. This might be an anti-cheat issue, might be a proton issue, I don't know.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1709523537,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1957780",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (gfx1100, LLVM 15.0.6, DRM 3.49, 6.1.6-200.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.3.3",
+    "kernel": "6.1.6-200.fc37.x86_64",
+    "notes": "Account Ban through BattlEye",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1728177636,
+    "title": "",
+    "source": "protondb"
+  }
+]

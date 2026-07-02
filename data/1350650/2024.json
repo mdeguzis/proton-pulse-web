@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1350650",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 17.0.6, DRM 3.57, 6.9.5-100.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.6",
+    "kernel": "6.9.5-100.fc39.x86_64",
+    "notes": "Works perfect!",
+    "os": "Fedora Linux 39 (Workstation Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "128 GB",
+    "rating": "gold",
+    "timestamp": 1719530279,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1012610",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Every part of game played, high settings with no performance problems, fullscreen works well, vsync works well.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567569061,
+    "title": "Buoyancy",
+    "source": "protondb"
+  }
+]

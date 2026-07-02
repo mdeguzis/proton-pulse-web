@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "868520",
+    "cpu": "Intel Core i5-2310 @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Works flawlessly with a controller. However, first person mouse aiming is not working. I can't find a fix for that anywhere right now.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1564329783,
+    "title": "killer7",
+    "source": "protondb"
+  },
+  {
+    "appId": "868520",
+    "cpu": "Intel Core i5-5350U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 6000 (Broadwell GT3)",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "The menu screen and loading screen are perfect, but I couldn't see NPCs, characters, and the environment. Something went wrong with the game's graphic.",
+    "os": "MX 18.3 Continuum",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1565895624,
+    "title": "killer7",
+    "tweaks": {
+      "useWineD3d11": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

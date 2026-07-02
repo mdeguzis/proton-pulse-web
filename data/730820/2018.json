@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "730820",
+    "title": "The Curse of Monkey Island",
+    "timestamp": 1535079198,
+    "rating": "Platinum",
+    "notes": "PLAYED FIRST 20 MINUTES OF GAME ALL SEEMS TO BE WORKING CORRECTLY",
+    "os": "UBUNTU 16.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "CORE2 QUAD Q9300",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "730820",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.19.1-041901-generic",
+    "notes": "Runs perfectly without tweaks. It's admittedly a bit weird to be running COMI through ScummVM over Wine when ScummVM runs natively on Linux, but it works.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542581380,
+    "title": "The Curse of Monkey Island",
+    "source": "protondb"
+  },
+  {
+    "appId": "730820",
+    "title": "The Curse of Monkey Island",
+    "timestamp": 1535064798,
+    "rating": "Platinum",
+    "notes": "PLAYED FIRST 20 MINUTES OF GAME ALL SEEMS TO BE WORKING CORRECTLY",
+    "os": "UBUNTU 16.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "CORE2 QUAD Q9300",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

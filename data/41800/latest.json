@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "41800",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 21.1.4, DRM 3.64, 6.17.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.6-arch1.1",
+    "kernel": "6.17.7-arch1-1",
+    "notes": "Unable to watch the battle, cannot exit out. I tried different proton versions with no luck.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1762471456,
+    "title": "Gratuitous Space Battles",
+    "source": "protondb"
+  }
+]

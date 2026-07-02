@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "481180",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.0 - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Game runs OK without tweaks here - but has a better performance using PROTON_USE_WINED3D=1 %command%",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561812199,
+    "title": "System Crash",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "481180",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.10.0-38-generic",
+    "notes": "Does not even start via Steam (i tried every known tricks), but does run via WINE if launched from the local folder, at least on my system.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1561829113,
+    "title": "System Crash",
+    "source": "protondb"
+  },
+  {
+    "appId": "481180",
+    "cpu": "Intel Core i7-7600U @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.1",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Wouldn't start until adding \"PROTON_USE_WINED3D=1 %command%\" in the Launch Options. Following that, working apprently flawlessly.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562674803,
+    "title": "System Crash",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

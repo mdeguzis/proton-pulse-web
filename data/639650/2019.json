@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "639650",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Runs perfectly out of the box; Controller input not tested (but also not advertised on store page)",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546546542,
+    "title": "1982",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3486770",
+    "cpu": "AMD Ryzen 7 PRO 5850U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.63, 6.15.6-103.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.5",
+    "kernel": "6.15.6-103.bazzite.fc42.x86_64",
+    "notes": "Plays well with default settings on a mid-range PC with Bazzite.",
+    "os": "Bazzite 42 (FROM Fedora Silverblue)",
+    "protonVersion": "9.0-4",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1760311722,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1655220",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.7, DRM 3.61, 6.13.9-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.2",
+    "kernel": "6.13.9-200.fc41.x86_64",
+    "notes": "Full play through. No tinkering, or Proton was neccesary.",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1744297983,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1655220",
+    "cpu": "AMD Ryzen 7 7840U w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, LLVM 19.1.7, DRM 3.59, 6.11.0-21-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.4 - kisak-mesa PPA",
+    "kernel": "6.11.0-21-generic",
+    "notes": "Set Heroic Launcher to use a default ubuntu install of wine 9 and it works absolutely fine.",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "60 GB",
+    "rating": "borked",
+    "timestamp": 1747250198,
+    "title": "",
+    "source": "protondb"
+  }
+]

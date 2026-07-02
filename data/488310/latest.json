@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "488310",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.9.0-7-amd64",
+    "notes": "Works great. No tweaks required. Didn't test multiplayer",
+    "os": "Debian GNU/Linux 9.6 (stretch)",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557578141,
+    "title": "Eleven: Table Tennis VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "488310",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Controllers disappearing after SteamVR menu, otherwise seems good.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1562622827,
+    "title": "Eleven: Table Tennis VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "488310",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-62-generic",
+    "notes": "I previously could not get this game to run at all. It started working today after I messed around with re-installing SteamVR. Runs great except for the issue with controllers disappearing that others have mentioned. That is avoidable though, just try not to open the steam menu in game.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-5",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1569141855,
+    "title": "Eleven: Table Tennis VR",
+    "source": "protondb"
+  }
+]

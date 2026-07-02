@@ -1,0 +1,77 @@
+[
+  {
+    "appId": "21980",
+    "title": "Call of Juarez\u00ae: Bound in Blood",
+    "timestamp": 1536174650,
+    "rating": "Gold",
+    "notes": "Screen resolution auto-detection is broken on first launch, so you need to edit ~/.steam/steam/steamapps/compatdata/21980/pfx/drive_c/users/steamuser/My Documents/Call of Juarez - Bound in Blood/Out/Settings/Video.scr and hardcode your resolution there, ie: Resolution(1920,1080).\nOnce it boots, press enter on the black screen, after dismissing the serial key disclaimer (shift+tab), and the welcome screen will appear. It is Golden from there. It works better than in windows10 (plagued with compatibility issues)\n",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54 ",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "21980",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.15.0-38-generic",
+    "notes": "There is a black screen if you do not modify the resolution of the game before you start (like someone wrote it here) but after this runs perfectly!!!! Great game!",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1540841926,
+    "title": "Call of Juarez\u00ae: Bound in Blood",
+    "source": "protondb"
+  },
+  {
+    "appId": "21980",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "aboutAnHour",
+    "gpu": "AMD CAPE VERDE",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-96.current",
+    "notes": "After disabling ESync I was able to achieve full frames for over an hour with little to no dips. Would rate Platinum if not for having to disable ESync",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1541792134,
+    "title": "Call of Juarez\u00ae: Bound in Blood",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "21980",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Takes long to launch. The screen is black until I wait a while and then press enter, and then alt tab out and back into the game. The game itself works fine until I get enough concentration (60), in which moment the game just crashes. Online play was not tested at all.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1542927646,
+    "title": "Call of Juarez\u00ae: Bound in Blood",
+    "source": "protondb"
+  },
+  {
+    "appId": "21980",
+    "title": "Call of Juarez\u00ae: Bound in Blood",
+    "timestamp": 1536160250,
+    "rating": "Gold",
+    "notes": "Screen resolution auto-detection is broken on first launch, so you need to edit ~/.steam/steam/steamapps/compatdata/21980/pfx/drive_c/users/steamuser/My Documents/Call of Juarez - Bound in Blood/Out/Settings/Video.scr and hardcode your resolution there, ie: Resolution(1920,1080).\nOnce it boots, press enter on the black screen, after dismissing the serial key disclaimer (shift+tab), and the welcome screen will appear. It is Golden from there. It works better than in windows10 (plagued with compatibility issues)\n",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54 ",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

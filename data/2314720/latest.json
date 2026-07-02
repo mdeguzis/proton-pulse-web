@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2314720",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 16.0.6, DRM 3.52, 6.4.11-200.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.6",
+    "kernel": "6.4.11-200.fc38.x86_64",
+    "notes": "Completed full playthrough using Proton Experimental Bleeding Edge",
+    "os": "Fedora Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1693157807,
+    "title": "",
+    "source": "protondb"
+  }
+]

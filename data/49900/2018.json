@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "49900",
+    "title": "Plain Sight",
+    "timestamp": 1535316530,
+    "rating": "Borked",
+    "notes": ".NET Framework 2.0 fails to install and then fails with \"XNA Framework Redistributable 3.1 requires .NET Framework 2.0\"",
+    "os": "Ubuntu 18.04.1 Bionic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i3-2310M / Nvidia GeForce GT 520m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "49900",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": ".Net issue",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542417602,
+    "title": "Plain Sight",
+    "source": "protondb"
+  },
+  {
+    "appId": "49900",
+    "title": "Plain Sight",
+    "timestamp": 1535302130,
+    "rating": "Borked",
+    "notes": ".NET Framework 2.0 fails to install and then fails with \"XNA Framework Redistributable 3.1 requires .NET Framework 2.0\"",
+    "os": "Ubuntu 18.04.1 Bionic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i3-2310M / Nvidia GeForce GT 520m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

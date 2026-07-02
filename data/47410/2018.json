@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "47410",
+    "title": "Stronghold Kingdoms",
+    "timestamp": 1535213139,
+    "rating": "Borked",
+    "notes": "Does not start. (Doesnt work under WINE either)",
+    "os": "Linux Mint 19 64-Bit (Kernel 4.15)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "AMD E450 APU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "47410",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Wont Start",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1545542636,
+    "title": "Stronghold Kingdoms",
+    "source": "protondb"
+  },
+  {
+    "appId": "47410",
+    "title": "Stronghold Kingdoms",
+    "timestamp": 1535198739,
+    "rating": "Borked",
+    "notes": "Does not start. (Doesnt work under WINE either)",
+    "os": "Linux Mint 19 64-Bit (Kernel 4.15)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "AMD E450 APU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "592270",
+    "title": "Neko Navy",
+    "timestamp": 1536348160,
+    "rating": "Silver",
+    "notes": "Controller not supported",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "J2900  @ 2.41GHz / GT 720",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "592270",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Runs fine.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536343418",
+    "title": "Neko Navy",
+    "source": "protondb"
+  },
+  {
+    "appId": "592270",
+    "title": "Neko Navy",
+    "timestamp": 1536333760,
+    "rating": "Silver",
+    "notes": "Controller not supported",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "J2900  @ 2.41GHz / GT 720",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

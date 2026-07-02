@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1006140",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (navi23, LLVM 15.0.6, DRM 3.49, 6.2.6-76060206-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "the game is not enjoyable on Linux, as it drops to OS instantly upon entering any dungeon.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1690914392,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1006140",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.52, 6.4.12-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.6",
+    "kernel": "6.4.12-1-MANJARO",
+    "notes": "Crashes make it impossible to play more than a few minutes",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1694362189,
+    "title": "",
+    "source": "protondb"
+  }
+]

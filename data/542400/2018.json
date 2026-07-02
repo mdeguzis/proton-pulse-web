@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "542400",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.19.1-1.el7.elrepo.x86_64",
+    "notes": "Works fine - no issues at all",
+    "os": "CentOS Linux release 7.5.1804 (Core)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1541925583,
+    "title": "Pixel Gladiator",
+    "source": "protondb"
+  }
+]

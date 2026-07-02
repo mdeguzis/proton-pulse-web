@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1127780",
+    "cpu": "Intel Pentium G4500 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "After installing MediaFoundation, game runs just fine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-4",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1568733406,
+    "title": "Daymare: 1998 Demo",
+    "source": "protondb"
+  }
+]

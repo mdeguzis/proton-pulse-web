@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "579950",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.32-1-MANJARO",
+    "notes": "Occasional stuttering disabling esync helps but not by much.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1555455049,
+    "title": "Marvel's Guardians of the Galaxy: The Telltale Series",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "579950",
+    "cpu": "AMD A8-6410 APU with AMD Radeon R5 Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-27-generic",
+    "notes": "DirectX Error",
+    "os": "Ubuntu 19.04 (64\u00a0bits)",
+    "protonVersion": "4.2-9",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1569250109,
+    "title": "Marvel's Guardians of the Galaxy: The Telltale Series",
+    "source": "protondb"
+  },
+  {
+    "appId": "579950",
+    "cpu": "Intel Core i7-4770K @ 4.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.19.03",
+    "kernel": "5.2.0-0.bpo.2-amd64",
+    "notes": "Occasional stuttering.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569878797,
+    "title": "Marvel's Guardians of the Galaxy: The Telltale Series",
+    "source": "protondb"
+  }
+]

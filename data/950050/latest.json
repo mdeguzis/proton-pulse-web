@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "950050",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Though Uplay successfully launches, the game closes with \"There is not enough memory available to run this program. Quit one or more programs, and then try again.\"\nMaybe Denuvo related. Tried to manually install media foundation, but it didn't help.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560706146,
+    "title": "Starlink: Battle for Atlas",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "1096200",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564083267,
+    "title": "The Orville - Interactive Fan Experience",
+    "source": "protondb"
+  },
+  {
+    "appId": "1096200",
+    "cpu": "Intel Core2 Quad    Q6600  @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Runs nice and smooth out of the box with 3.16, got black screen with 4.2",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1564243475,
+    "title": "The Orville - Interactive Fan Experience",
+    "source": "protondb"
+  },
+  {
+    "appId": "1096200",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.2-zen1-2-zen",
+    "notes": "protontricks dotnet40 win7 dxvk  was able to get running ws able to walk around ship, push a few buttons but that was about it.  Any selection I picked there was no other crew members.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1570275020,
+    "title": "The Orville - Interactive Fan Experience",
+    "source": "protondb"
+  }
+]

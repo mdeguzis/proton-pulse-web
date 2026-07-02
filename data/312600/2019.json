@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "312600",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Launcher showing correctly but game comes up with a black screen and just music and sound effects. Tried  \"Disable Esync\" and \"Use Wine D3d11\" options but with no success.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1557898558,
+    "title": "Rime Berta",
+    "source": "protondb"
+  },
+  {
+    "appId": "312600",
+    "cpu": "AMD FX-8150 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.4-1-MANJARO",
+    "notes": "The game still loads into a black screen with music.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1565124314,
+    "title": "Rime Berta",
+    "source": "protondb"
+  }
+]

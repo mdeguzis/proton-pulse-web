@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "407060",
+    "cpu": "Intel(R) Xeon(R) CPU E5-1650 v2 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.09",
+    "kernel": "4.14.65-gentoo",
+    "os": "\"Gentoo Base System release 2.4.1\" (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "protonVersionManual": "3.16-2",
+    "ram": "64299 Mb",
+    "rating": "Borked",
+    "timestamp": 1540261313,
+    "title": "AltspaceVR\u2014The Social VR App",
+    "source": "protondb"
+  },
+  {
+    "appId": "407060",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.14.87-1-lts",
+    "notes": "Does not run with my Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545184446,
+    "title": "AltspaceVR\u2014The Social VR App",
+    "source": "protondb"
+  }
+]

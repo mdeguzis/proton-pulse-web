@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "940520",
+    "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 960M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Needs corefonts to work. Use winetricks/protontricks to install corefonts.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15889 Mb",
+    "rating": "Gold",
+    "timestamp": 1539109184,
+    "title": "Attractorache",
+    "source": "protondb"
+  }
+]

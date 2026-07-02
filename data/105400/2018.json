@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "105400",
+    "title": "Fable III",
+    "timestamp": 1535128733,
+    "rating": "Borked",
+    "notes": "Fails at installing \"Games for Windows \u2014 Live\", accepts activation key, activates, then crashes. Re-starting will immediately crash again.",
+    "os": "Gentoo 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "Mesa 18.2.0_rc4",
+    "specs": "i7-8650K / iGPU UHD620",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "105400",
+    "title": "Fable III",
+    "timestamp": 1535536429,
+    "rating": "Borked",
+    "notes": "Game not started. ",
+    "os": "Linux Mint 19 64-bit (kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.40",
+    "specs": "i7-7700HQ / GTX 1050 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "105400",
+    "title": "Fable III",
+    "timestamp": 1535114333,
+    "rating": "Borked",
+    "notes": "Fails at installing \"Games for Windows \u2014 Live\", accepts activation key, activates, then crashes. Re-starting will immediately crash again.",
+    "os": "Gentoo 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "Mesa 18.2.0_rc4",
+    "specs": "i7-8650K / iGPU UHD620",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "105400",
+    "title": "Fable III",
+    "timestamp": 1535522029,
+    "rating": "Borked",
+    "notes": "Game not started. ",
+    "os": "Linux Mint 19 64-bit (kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.40",
+    "specs": "i7-7700HQ / GTX 1050 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

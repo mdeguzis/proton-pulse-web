@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "410990",
+    "title": "Master of Orion 3",
+    "timestamp": 1535669410,
+    "rating": "Gold",
+    "notes": "The game is hard-coded to run at 800X600, so the only way to play is to change the display settings on the computer to 800x600. Once the computers resolution was changed to 800x600 the game ran fine. Issue also appears in windows if compatibility mode is turned off.",
+    "os": "Linux Mint 19 64-bit (kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6500 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "410990",
+    "title": "Master of Orion 3",
+    "timestamp": 1535655010,
+    "rating": "Gold",
+    "notes": "The game is hard-coded to run at 800X600, so the only way to play is to change the display settings on the computer to 800x600. Once the computers resolution was changed to 800x600 the game ran fine. Issue also appears in windows if compatibility mode is turned off.",
+    "os": "Linux Mint 19 64-bit (kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6500 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

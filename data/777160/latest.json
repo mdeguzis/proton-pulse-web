@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "777160",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Taskbar still visible in fullscreen. Needs to be restarted every 20-30 minutes due to the game starting to lag a lot. Other than that there don't seem to be any issues.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1543254795,
+    "title": "Forgotten Places: Regained Castle",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "236870",
+    "title": "Hitman",
+    "timestamp": 1535317609,
+    "rating": "Platinum",
+    "notes": "I haven't done extensive testing, but it seems to run fine. ",
+    "os": "Antergos 4.14.18-4",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7-8700K / EVGA 1080 FTW ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "236870",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.9.135-112.lts",
+    "notes": "Distro: SolusOS. TBH I'm not sure if it was installed natively or via Proton. \nDO NOT HAVE A CONTROLLED PLUGGED IN! \nThe game will fight your controller for access to controls against the keyboard - game will run well without a controller (PS3 or other) plugged in. Game runs fine but has minor screen tearing. This game would be a viable option for Linux gaming if the user experience were better...or if you don't care about UX. Overall this game passes on its compatibility merits- would recommend some general ",
+    "os": "Solus",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1543038191,
+    "title": "HITMAN\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "236870",
+    "title": "Hitman",
+    "timestamp": 1535303209,
+    "rating": "Platinum",
+    "notes": "I haven't done extensive testing, but it seems to run fine. ",
+    "os": "Antergos 4.14.18-4",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7-8700K / EVGA 1080 FTW ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

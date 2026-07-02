@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "628070",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "5.0.11-300.fc30.x86_64",
+    "os": "Linux",
+    "protonVersion": "4.2-4",
+    "ram": "20 GB",
+    "rating": "Platinum",
+    "timestamp": 1558489541,
+    "title": "Romance of the Three Kingdoms 11 with Power Up Kit / \u4e09\u570b\u5fd711 with \u30d1\u30ef\u30fc\u30a2\u30c3\u30d7\u30ad\u30c3\u30c8",
+    "source": "protondb"
+  },
+  {
+    "appId": "628070",
+    "cpu": "Intel Core i3       M 370  @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD CEDAR",
+    "gpuDriver": "3.1 Mesa 18.3.6",
+    "kernel": "5.0.16-300.fc30.x86_64",
+    "notes": "Steam installed from Flathub",
+    "os": "Linux",
+    "protonVersion": "4.2-4",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1558619516,
+    "title": "Romance of the Three Kingdoms 11 with Power Up Kit / \u4e09\u570b\u5fd711 with \u30d1\u30ef\u30fc\u30a2\u30c3\u30d7\u30ad\u30c3\u30c8",
+    "source": "protondb"
+  },
+  {
+    "appId": "628070",
+    "cpu": "Intel Core i7-3635QM @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.5",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "Runs perfectly, except for the cursor which is constantly flickering/disappearing. But its not too much of an issue.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1570147799,
+    "title": "Romance of the Three Kingdoms XI with Power Up Kit",
+    "source": "protondb"
+  }
+]

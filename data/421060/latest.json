@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "421060",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Crashes within seconds.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556633129,
+    "title": "Age of Steel: Recharge",
+    "source": "protondb"
+  },
+  {
+    "appId": "421060",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Starts with splash-screen then crashes.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1564380282,
+    "title": "Age of Steel: Recharge",
+    "source": "protondb"
+  },
+  {
+    "appId": "421060",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Played through the campaign. Everything works, but crashes often on startup",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1567661896,
+    "title": "Age of Steel: Recharge",
+    "source": "protondb"
+  }
+]

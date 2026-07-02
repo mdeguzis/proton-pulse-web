@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "434420",
+    "title": "The Chosen RPG",
+    "timestamp": 1535506482,
+    "rating": "Silver",
+    "notes": "Fullscreen doesn't occupy whole screen",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "434420",
+    "cpu": "AMD FX-4100 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542581481,
+    "title": "The Chosen RPG",
+    "source": "protondb"
+  },
+  {
+    "appId": "434420",
+    "title": "The Chosen RPG",
+    "timestamp": 1535492082,
+    "rating": "Silver",
+    "notes": "Fullscreen doesn't occupy whole screen",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

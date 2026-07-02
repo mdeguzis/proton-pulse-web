@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "32420",
+    "cpu": "i5-4670K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Fails to even start, suspect \"Gamers for Windows LIVE\" to be the issue.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7.5",
+    "ram": "15980 Mb",
+    "rating": "Borked",
+    "timestamp": 1536670557,
+    "title": "STAR WARS\u2122: The Clone Wars - Republic Heroes\u2122",
+    "source": "protondb"
+  }
+]

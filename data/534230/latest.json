@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "534230",
+    "title": "Quell 4D",
+    "timestamp": 1535223586,
+    "rating": "Bronze",
+    "notes": "HTC Vive. Playable, but the text is missing and performance hit is bad",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "534230",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "HTC Vive. The missing text issue (noted in previous report) is now fixed. Performance issues remain.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542569265,
+    "title": "Quell 4D",
+    "source": "protondb"
+  },
+  {
+    "appId": "534230",
+    "title": "Quell 4D",
+    "timestamp": 1535209186,
+    "rating": "Bronze",
+    "notes": "HTC Vive. Playable, but the text is missing and performance hit is bad",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "275830",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Ran perfectly with no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559353470,
+    "title": "7 Wonders: Magical Mystery Tour",
+    "source": "protondb"
+  }
+]

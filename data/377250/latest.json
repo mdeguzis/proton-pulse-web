@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "377250",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Launch time has video(?) that doesnt render correctly (can be skipped by pressing esc), same with other cutscenes. Controller doesnt work.",
+    "os": "Antergos Linux",
+    "protonVersion": "3.16-5",
+    "protonVersionManual": "3.16-5",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1546603942,
+    "title": "Subaeria",
+    "source": "protondb"
+  }
+]

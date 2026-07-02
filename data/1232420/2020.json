@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1232420",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "The game cannot connect to the server",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1597316481,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1232420",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.5-arch1-1",
+    "notes": "Can't connect to the servers.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1599141591,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1232420",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "Radeon Vega Frontier Edition",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-b3beb62 2020-06-07 focal-oibaf-ppa)",
+    "kernel": "5.7.1-050701-generic",
+    "notes": "The Patch Launcher starts but fails to connect to the Patch Server",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1599415286,
+    "title": "",
+    "source": "protondb"
+  }
+]

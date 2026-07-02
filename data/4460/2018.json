@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4460",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "No problems at all.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7919 Mb",
+    "rating": "Platinum",
+    "timestamp": 1540128646,
+    "title": "City Life 2008",
+    "source": "protondb"
+  }
+]

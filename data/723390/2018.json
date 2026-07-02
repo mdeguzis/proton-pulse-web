@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "723390",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "No tweaks needed, but the game will crash instantly when trying to play unless you load the tutorial first.\n\nPerformance problems prevent you from playing comfortable.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1546272445,
+    "title": "Hunt Down The Freeman",
+    "source": "protondb"
+  }
+]

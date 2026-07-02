@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "463760",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "No issues, Xbox controller works as expected",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568498671,
+    "title": "The Beggar's Ride",
+    "source": "protondb"
+  }
+]

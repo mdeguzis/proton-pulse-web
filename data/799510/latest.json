@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "799510",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "The game runs too fast, it's too difficult to play in these conditions...",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1553955992,
+    "title": "Squidlit",
+    "source": "protondb"
+  },
+  {
+    "appId": "799510",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Runs very well but extrem fast",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1554569723,
+    "title": "Squidlit",
+    "source": "protondb"
+  },
+  {
+    "appId": "799510",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-0dff1533f2)",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "Runs fine with DXVK on Proton, but it is really fast.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1554640104,
+    "title": "Squidlit",
+    "source": "protondb"
+  }
+]

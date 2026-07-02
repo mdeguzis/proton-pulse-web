@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "318090",
+    "cpu": "AMD A6-4400M APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "4.5 Mesa 22.3.6",
+    "kernel": "6.1.0-16-amd64",
+    "notes": "The game is lagging too much, on playable.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "10.0-3",
+    "ram": "5 GB",
+    "rating": "borked",
+    "timestamp": 1772171997,
+    "title": "",
+    "source": "protondb"
+  }
+]

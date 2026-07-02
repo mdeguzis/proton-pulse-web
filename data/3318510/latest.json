@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3318510",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.17.5-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.6-cachyos1.2",
+    "kernel": "6.17.5-2-cachyos",
+    "notes": "Desempenho muito baixo fora do esperado, afinal minha m\u00e1quina est\u00e1 muito acima dos requesitos m\u00ednimos.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1762367650,
+    "title": "Aurora Heights",
+    "source": "protondb"
+  }
+]

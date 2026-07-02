@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "572050",
+    "cpu": "Intel Celeron N3350 @ 2.400GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 500 (APL 2)",
+    "gpuDriver": "4.6 Mesa 24.0.3 (git-c4d371fa7e)",
+    "kernel": "5.14.21-150500.55.52-default",
+    "notes": "Gets stuck on the menu loading. Just BORKED",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1711894215,
+    "title": "Call to Power II",
+    "source": "protondb"
+  }
+]

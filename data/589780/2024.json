@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "589780",
+    "cpu": "12th Gen Intel Core i5-12500H",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 535.146.02",
+    "kernel": "6.5.0-14-generic",
+    "notes": "Works out of the box",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1706718697,
+    "title": "",
+    "source": "protondb"
+  }
+]

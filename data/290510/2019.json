@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "290510",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Forced to use Proton 3.16-8, otherwise the game downloads a dysfunctional Linux version (not advertised on Steam). Windows version works through Proton perfectly and with good performance,  both in Windowed and in fullscreen and with good performance. Nintendo Switch Pro Controller works too.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552742226,
+    "title": "GNOG",
+    "source": "protondb"
+  },
+  {
+    "appId": "290510",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Runs for me with zero problems, EXCEPT when I tried to get the achievement \"\"Chocolate Cheater\" the mouse tended to lag until about my sixth try.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564377060,
+    "title": "GNOG",
+    "source": "protondb"
+  }
+]

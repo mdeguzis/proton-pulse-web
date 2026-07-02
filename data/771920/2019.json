@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "771920",
+    "cpu": "Intel Xeon           X5675  @ 3.07GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.12.14-lp151.28.13-default",
+    "notes": "Title shows  up and ends with  \"FATAL ERROR\" window before crashing.",
+    "os": "OpenSUSE Leap 15.1",
+    "protonVersion": "4.11-2",
+    "ram": "72 GB",
+    "rating": "Borked",
+    "timestamp": 1567716918,
+    "title": "TOGETHER VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "771920",
+    "cpu": "Intel Xeon           X5675  @ 3.07GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.12.14-lp151.28.13-default",
+    "notes": "The game now works as of the current version of Proton (4.11-5) in VR mode. Did not try the DLC desktop mode yet.",
+    "os": "OpenSUSE Leap 15.1",
+    "protonVersion": "4.11-5",
+    "ram": "72 GB",
+    "rating": "Platinum",
+    "timestamp": 1568890540,
+    "title": "TOGETHER VR",
+    "source": "protondb"
+  }
+]

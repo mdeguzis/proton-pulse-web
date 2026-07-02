@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "275610",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "Crashes an boot if not started with bootoptions \"PROTON_USE_WINED3D=1 %command%\".\n\nWorks fine then. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542389025,
+    "title": "Warhammer 40,000: Kill Team",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

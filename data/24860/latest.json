@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "24860",
+    "title": "Battlefield 2",
+    "timestamp": 1535315703,
+    "rating": "Platinum",
+    "notes": "Single player worked fine",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "24860",
+    "title": "Battlefield 2",
+    "timestamp": 1535627596,
+    "rating": "Platinum",
+    "notes": "Dell XPS 13 (2017), Perform great at 1920X1080@60h, All graphics set to high (with no AA).",
+    "os": "Antergos 64-bit (Kernel 4.17.8-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7-7500U / Intel HD 620",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "24860",
+    "title": "Battlefield 2",
+    "timestamp": 1536354423,
+    "rating": "Borked",
+    "notes": "dodx not start",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "24860",
+    "title": "Battlefield 2",
+    "timestamp": 1535301303,
+    "rating": "Platinum",
+    "notes": "Single player worked fine",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "24860",
+    "title": "Battlefield 2",
+    "timestamp": 1535613196,
+    "rating": "Platinum",
+    "notes": "Dell XPS 13 (2017), Perform great at 1920X1080@60h, All graphics set to high (with no AA).",
+    "os": "Antergos 64-bit (Kernel 4.17.8-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7-7500U / Intel HD 620",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "24860",
+    "title": "Battlefield 2",
+    "timestamp": 1536340023,
+    "rating": "Borked",
+    "notes": "dodx not start",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

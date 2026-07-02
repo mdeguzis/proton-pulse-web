@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "349250",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-17-generic",
+    "notes": "xna40 installation using winetricks is required\n\nWINEPREFIX=~/.steam/steam/steamapps/compatdata/349250/pfx winetricks xna40\n\nAfter booting for the first time (only the first time), it will flood with multiple error messages which can be ignored.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1555441826,
+    "title": "Copy Kitty",
+    "source": "protondb"
+  }
+]

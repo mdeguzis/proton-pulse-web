@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "728540",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Currently there are no players available to play with. Game installs and runs smooth, you will get into the waiting lobby (ingame GunGame Lobby) but the game won't start because there are not enough players.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1562943725,
+    "title": "Islands of Nyne: Battle Royale",
+    "source": "protondb"
+  }
+]

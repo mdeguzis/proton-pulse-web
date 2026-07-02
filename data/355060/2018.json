@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "355060",
+    "cpu": "i7-2600 CPU @ 3.40GHz",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.26.0, 4.18.5-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "notes": "game is work but graphic is jerky although framerate &gt;60FPS",
+    "os": "Manjaro Linux (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Silver",
+    "timestamp": "1536451200",
+    "title": "S\u00e9bastien Loeb Rally EVO",
+    "source": "protondb"
+  },
+  {
+    "appId": "355060",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.19.0-041900-generic",
+    "notes": "Alt-tabbing in fullscreen mode crashes the game. Runs flawlessly in windowed mode. ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541313402,
+    "title": "S\u00e9bastien Loeb Rally EVO",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1238680",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.10-arch1-1",
+    "notes": "Process freezes and never starts",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1605598362,
+    "title": "",
+    "source": "protondb"
+  }
+]

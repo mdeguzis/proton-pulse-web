@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "204120",
+    "cpu": "AMD Phenom II X6 1055T",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-42-generic",
+    "notes": "24 hours clocked, 100% completed, no issues. Steam Controller and Xbox 360 wireless controllers used.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546364095,
+    "title": "LEGO Harry Potter: Years 5-7",
+    "source": "protondb"
+  },
+  {
+    "appId": "204120",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Black screen, no sound, have to alt+F4 to exit",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557076876,
+    "title": "LEGO\u00ae Harry Potter: Years 5-7",
+    "source": "protondb"
+  },
+  {
+    "appId": "204120",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-3573412981)",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Works out of the box on Proton. I installed D9VK and it worked as well perfectly fine with this DX9 to Vulkan translation.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561880944,
+    "title": "LEGO\u00ae Harry Potter: Years 5-7",
+    "source": "protondb"
+  }
+]

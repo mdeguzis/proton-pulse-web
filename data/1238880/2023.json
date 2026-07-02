@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1238880",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 16.0.6, DRM 3.52, 6.4.8-200.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.5",
+    "kernel": "6.4.8-200.fc38.x86_64",
+    "notes": "Works with little tinkering",
+    "os": "Fedora Linux 38 (Workstation Edition)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1691655476,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "577480",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.17-050017-generic",
+    "notes": "Tried using Proton since native version did not start, which is strange for a Unity Engine app.\n\nNo issues with 3.7-8 but did not work on the more recent 4.2-3, so recommend the former Proton version for anyone experiencing problems with the native version like I did.",
+    "os": "Linux Mint 18.1 Serena",
+    "protonVersion": "3.7-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558528796,
+    "title": "Higurashi When They Cry Hou - Ch. 5 Meakashi",
+    "source": "protondb"
+  }
+]

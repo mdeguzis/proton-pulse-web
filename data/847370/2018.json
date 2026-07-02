@@ -1,0 +1,184 @@
+[
+  {
+    "appId": "847370",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Attempted to run the game directly from Steam with Steam Play. Tried Default, and by checking the \"Use this tool instead of...\" with 3.7-8, 3.7-8 beta and 3.16 beta. None of these options worked. Default runs the intro video until it locks up at random times. If I use Default and hit esc immediately sometimes I can get to the menu but then it locks up when any menu option is chosen. All other versions than Default lock up at either the Microsoft Logo or with a blank black screen.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542407675,
+    "title": "Sunset Overdrive",
+    "source": "protondb"
+  },
+  {
+    "appId": "847370",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Launches without tweaks but often hangs while trying to load assets forcing me to kill the process. Disabling Esync improves stability somewhat, though it doesn't fix the issue completely. There are very obvious graphical glitches in the form of dark, boxy splotches on the screen, but otherwise the in-game performance is reasonably good. Full controller support.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "24 GB",
+    "rating": "Bronze",
+    "timestamp": 1542408764,
+    "title": "Sunset Overdrive",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "847370",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-3-MANJARO",
+    "notes": "Graphical glitches galore, and stability is bad, I'm not getting any sound and performance is exceptionally poor, BUT it does run, so there is SOME promise for this title.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1542431839,
+    "title": "Sunset Overdrive",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "847370",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Disable Esync to fix crashing at the intro screen. During gameplay, the music seems to cut out, but I am not sure if this is a problem with Windows too. Also During cutscenes, some of the shadows are glitched and flicker.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542474455,
+    "title": "Sunset Overdrive",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "847370",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.17.2-041702-generic",
+    "notes": "Cutscenes have glitchy shaders. Menu has frozen the game once or twice. Game eventually crashed after an hour of usage (could be a port problem). Generally music  , graphics and gameplay all work fine and aren't interrupted. Performance is good and at times feels like a native game.\n\nGet's a silver as it requires tweaking Esync, and can crash early or late into the game. However, frequent autosaves make that bearable.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542556195,
+    "title": "Sunset Overdrive",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "847370",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.2-1-MANJARO",
+    "notes": "If Esync is not disabled the game will crash at the title screen. The first 15 minutes or so stutter heavily due to shader compilation but after that the game runs flawlessly. The only problem with it, and the reason that I'm calling it silver, is that it has a tendency to randomly crash. It could happen after 30 minutes or 3 hours. The autosave system is pretty robust so I've never lost more than a minute or two of progress because of it, but it is something to keep in mind.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1542580224,
+    "title": "Sunset Overdrive",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "847370",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Crashes during intro cinematic regardless of Proton version, even with ESYNC disabled.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.7-8",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543477705,
+    "title": "Sunset Overdrive",
+    "source": "protondb"
+  },
+  {
+    "appId": "847370",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Much improved as of Proton 3.16-6. Still requires disabling esync to avoid crashes, though the game is far more stable using this tweak than it was before. Graphics errors during cut scenes and game play have also been drastically reduced. Heavy shader cache stutter when starting the game that goes away over time.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1545713924,
+    "title": "Sunset Overdrive",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "847370",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.9-105.current",
+    "notes": "Runs nicely but has minor graphical artifacts and often crashes, sometimes minutes into the game, sometimes over an hour playing. Doesn't work properly with Linux Steam Integration, use the bundled runtime instead of the native runtime.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1545773316,
+    "title": "Sunset Overdrive",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "847370",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "With esync disabled it crashes in the intro sequence. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545839387,
+    "title": "Sunset Overdrive",
+    "source": "protondb"
+  }
+]

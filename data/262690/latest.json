@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "262690",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-15012077bc)",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Doesn't work at all",
+    "os": "Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1554064565,
+    "title": "Little Racers STREET",
+    "source": "protondb"
+  },
+  {
+    "appId": "262690",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "The game start only to a black screen, nothing happens then.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1556703923,
+    "title": "Little Racers STREET",
+    "source": "protondb"
+  },
+  {
+    "appId": "262690",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-zen1-1-zen",
+    "notes": "To run this game natively on Arch Linux follow this guide \nhttps://steamcommunity.com/app/262690/discussions/0/1471967615840577315/",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1566642055,
+    "title": "Little Racers STREET",
+    "source": "protondb"
+  }
+]

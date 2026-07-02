@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "327030",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "I had to use  LC_ALL=C %command% to get the game running, strange given that this game should run natively. After that it runs perfect!",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1545580459,
+    "title": "Worms W.M.D",
+    "source": "protondb"
+  }
+]

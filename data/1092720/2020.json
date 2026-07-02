@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1092720",
+    "cpu": "Intel Core i3-6006U @ 2.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD ATI Radeon HD 8670A/8670M/8690M / R5 M3  (DRM 2.50.0, 5.6.15-1-MANJARO, LLVM 10.0.0)",
+    "gpuDriver": "4.5 Mesa 20.0.7",
+    "kernel": "5.6.15-1-MANJARO",
+    "notes": "Broken!!!",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-8",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1591701745,
+    "title": "",
+    "source": "protondb"
+  }
+]

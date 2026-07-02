@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "371670",
+    "title": "Rolling Sun",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Doens't startup at all, a message pop up and it says:\"failed to recognize gpu\", if you click okay the game failes to initialize the \"starting\" screen",
+    "os": "Antergos",
+    "gpuDriver": "?",
+    "specs": "?",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "371670",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541965659,
+    "title": "Rolling Sun",
+    "source": "protondb"
+  },
+  {
+    "appId": "371670",
+    "title": "Rolling Sun",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Doens't startup at all, a message pop up and it says:\"failed to recognize gpu\", if you click okay the game failes to initialize the \"starting\" screen",
+    "os": "Antergos",
+    "gpuDriver": "?",
+    "specs": "?",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

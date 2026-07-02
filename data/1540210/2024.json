@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1540210",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.4.10-202.fsync.fc38.x86_64",
+    "notes": "Arizona Sunshine works in VR with ALVR out of the box without any tinkering",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1704120553,
+    "title": "Arizona Sunshine\u00ae 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1540210",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.5.0-35-generic",
+    "notes": "Works out of the box.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1720383560,
+    "title": "Arizona Sunshine\u00ae 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1540210",
+    "cpu": "13th Gen Intel Core i5-13600KF",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 15.0.7, DRM 3.54, 6.5.0-1024-oem)",
+    "gpuDriver": "4.6 Mesa 24.1.1 - kisak-mesa PPA",
+    "kernel": "6.5.0-1024-oem",
+    "notes": "Runs perfect using ALVR and Linux Mint 20.3 with Quest 3 (Kernel 6.5.0-1025-oem)",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1720600122,
+    "title": "Arizona Sunshine\u00ae 2",
+    "source": "protondb"
+  }
+]

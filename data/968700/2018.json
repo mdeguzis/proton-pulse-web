@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "968700",
+    "cpu": "AMD A6-6400K APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 M360",
+    "gpuDriver": "3.1 Mesa 18.1.0-rc4",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Al principio se ejecutaba pero no se iniciaba, pero se soluciono con actualizar los drivers de v\u00eddeo de aqu\u00ed: https://github.com/NoXPhasma/protondb_faq/wiki/Graphics-driver-installation ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543366405,
+    "title": "The Kite",
+    "source": "protondb"
+  }
+]

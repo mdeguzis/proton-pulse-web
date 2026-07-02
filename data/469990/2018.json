@@ -1,0 +1,77 @@
+[
+  {
+    "appId": "469990",
+    "title": "NEKOPALIVE",
+    "timestamp": 1535101661,
+    "rating": "Borked",
+    "notes": "Tried running with and without optirun, got the same performance of around 10 FPS, which is clearly unplayable. The dancing scene will also have an odd shade of yellow everywhere, and some artifacts on moving parts. No known workarounds.",
+    "os": "KDE neon 5.13 / Ubuntu 16.04 LTS (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54 / Mesa 18.3",
+    "specs": "i7-6700HQ / GTX 960M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "469990",
+    "cpu": "i7-6800K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.19-1-MANJARO",
+    "notes": "Doesnt require VR, but VR was also tested and worked out of the box",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "32136 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536615366,
+    "title": "NEKOPALIVE",
+    "source": "protondb"
+  },
+  {
+    "appId": "469990",
+    "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 960M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15889 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539109555,
+    "title": "NEKOPALIVE",
+    "source": "protondb"
+  },
+  {
+    "appId": "469990",
+    "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 530 (Skylake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Only works properly with PROTON_USE_WINED3D=1 and PROTON_NO_ESYNC=1 (use wined3d and disable esync). The former gets rid of odd yellow hue and the latter gets rid of lag.\nIt might have not been necessary, but I also added LC_ALL=ja_JP.UTF-8.\nFPS appears to be capped at ~32 while they're dancing, but 60 in menu.\nSteam overlay works, changing views with number keys also works.\nTested with and without optirun.",
+    "os": "KDE neon User Edition 5.14 (64 bit)",
+    "protonVersion": "Beta (3.16-2)",
+    "ram": "15923 Mb",
+    "rating": "Gold",
+    "systemInfoNotes": "GPU: NVIDIA GeForce GTX 960M (396.54) using Bumblebee/optirun.",
+    "timestamp": 1539886013,
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "NEKOPALIVE",
+    "source": "protondb"
+  },
+  {
+    "appId": "469990",
+    "title": "NEKOPALIVE",
+    "timestamp": 1535087261,
+    "rating": "Borked",
+    "notes": "Tried running with and without optirun, got the same performance of around 10 FPS, which is clearly unplayable. The dancing scene will also have an odd shade of yellow everywhere, and some artifacts on moving parts. No known workarounds.",
+    "os": "KDE neon 5.13 / Ubuntu 16.04 LTS (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54 / Mesa 18.3",
+    "specs": "i7-6700HQ / GTX 960M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

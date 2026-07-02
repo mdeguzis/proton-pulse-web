@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "876330",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "notes": "The launcher works fine but when I started the game it just gave me a crash report and after that I couldn't turn off the launcher it was stuck there and didn't react to anything",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1562070361,
+    "title": "Revelation Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "876330",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "The launcher starts but when I click play to start the game I get the following error: I/O Device Error",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568468287,
+    "title": "Revelation Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "876330",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "The Laucnher Start but clicking play gives an I/O device error message. If you press the down menu next to play and choose \"open game folder\" I was able to launch the game via the \"tianyu.exe\" file from the game folder. But than I can't get pass the menu. It asks for password with no option to write the password so I just press ok and nothing else happens.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568468730,
+    "title": "Revelation Online",
+    "source": "protondb"
+  }
+]

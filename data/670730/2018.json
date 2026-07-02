@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "670730",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-e2ae5f2f0a)",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "The game enter into the loading screen, DXVK seems to work, but then the game crashes.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1546159756,
+    "title": "Sure Footing",
+    "source": "protondb"
+  }
+]

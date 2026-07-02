@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "801480",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-200.fc30.x86_64",
+    "notes": "Initial test indicates, that game runs perfectly - game is locked to smooth 60fps, starts in native resolution out of the box and properly interacts with desktop (I can freely alt-tab in and out of the game). Steam Overlay also works exactly as it should.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567694793,
+    "title": "Agent A: A puzzle in disguise",
+    "source": "protondb"
+  }
+]

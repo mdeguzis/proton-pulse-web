@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4318080",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 535.288.01",
+    "kernel": "6.14.0-37-generic",
+    "notes": "Runs perfectly only with Proton GE 10-4 specifically.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1780267488,
+    "title": "ALTEREDBLOOD+ [AB+]",
+    "source": "protondb"
+  }
+]

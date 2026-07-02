@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "388800",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Buttons with a Z-axis on a controller (i.e Xbox 360 controller and the like) does not work. The shoot button can't be mapped in settings, on both keyboard and controller. Due to the Z-axis issues, weapon switching when pressing the LT becomes a finicky mess. The RT does not work at all on controller.\n\nIt plays just fine on keyboard if you're fine with the default config, but your weapon gets switched every time you get into a new \"room\" or get past a load screen.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1564415676,
+    "title": "Azure Striker Gunvolt",
+    "source": "protondb"
+  },
+  {
+    "appId": "388800",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.3.0-devel (git-b38fcaa 2019-09-28 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Controller is unable to be configured properly, and is unusable. Game works well with keyboard controls.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1569655159,
+    "title": "Azure Striker Gunvolt",
+    "source": "protondb"
+  }
+]

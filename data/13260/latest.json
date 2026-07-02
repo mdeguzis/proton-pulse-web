@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "13260",
+    "title": "Unreal Development Kit",
+    "timestamp": 1534967916,
+    "rating": "Borked",
+    "notes": "Does not launch",
+    "os": "Kubuntu",
+    "gpuDriver": "Mesa 18.3.0-devel - padoka PPA",
+    "specs": "Ryzen 5 1600 / AMD RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "13260",
+    "title": "Unreal Development Kit",
+    "timestamp": 1534953516,
+    "rating": "Borked",
+    "notes": "Does not launch",
+    "os": "Kubuntu",
+    "gpuDriver": "Mesa 18.3.0-devel - padoka PPA",
+    "specs": "Ryzen 5 1600 / AMD RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

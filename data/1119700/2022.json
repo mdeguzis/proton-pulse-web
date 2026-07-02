@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1119700",
+    "cpu": "Intel Core i5-5250U @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 6000 (BDW GT3)",
+    "gpuDriver": "4.6 Mesa 21.3.3 (git-a65ad66c47)",
+    "kernel": "5.13.0-27-generic",
+    "notes": "",
+    "os": "ZorinOS 16",
+    "protonVersion": "5.0-10",
+    "ram": "4 GB",
+    "rating": "silver",
+    "timestamp": 1643527768,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1119700",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.129.06",
+    "kernel": "5.15.0-10033-tuxedo",
+    "notes": "Couldn't get it to run",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1657813840,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1119700",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.129.06",
+    "kernel": "5.15.0-10033-tuxedo",
+    "notes": "",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1657827438,
+    "title": "",
+    "source": "protondb"
+  }
+]

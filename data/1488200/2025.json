@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1488200",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.7, DRM 3.61, 6.13.8-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.1",
+    "kernel": "6.13.8-200.fc41.x86_64",
+    "notes": "Works like native",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1743040234,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1488200",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 570.172.08",
+    "kernel": "6.12.40",
+    "notes": "Works great without any tinkering",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1754339190,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1488200",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.2-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1767031363,
+    "title": "",
+    "source": "protondb"
+  }
+]

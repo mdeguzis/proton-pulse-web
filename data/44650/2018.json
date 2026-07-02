@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "44650",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "It doesnt start. I think there is a Problem with the Steam-Downloader or Installer. Because on my first \"Check of Integrity of Local Files\" it says that 68 corrupted Files were found. On the next Check it says 2 Files are corrupted and requested them again. After that it keeps telling me it have found 2 corrupted Files.",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16054 MB",
+    "rating": "Borked",
+    "timestamp": 1540141514,
+    "title": "GT Power Pack \u2013 Expansion Pack for RACE 07",
+    "source": "protondb"
+  }
+]

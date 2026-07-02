@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "700030",
+    "title": "Life is Feudal: MMO",
+    "timestamp": 1535213951,
+    "rating": "Gold",
+    "notes": "Qt needs these environment variables in the pfx/user.reg registry to run: \n\n[Environment] 1534934689\n#time=1d43a0526616850\n\"QMLSCENE_DEVICE\"=\"softwarecontext\"\n\"QT_ANGLE_PLATFORM\"=\"d3d9\"\n\"TEMP\"=\"C:\\\\users\\\\steamuser\\\\Temp\"\n\"TMP\"=\"C:\\\\users\\\\steamuser\\\\Temp\"",
+    "os": "Arch Linux 64 bits (Kernel 4.16)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "RX380",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "700030",
+    "title": "Life is Feudal: MMO",
+    "timestamp": 1535199551,
+    "rating": "Gold",
+    "notes": "Qt needs these environment variables in the pfx/user.reg registry to run: \n\n[Environment] 1534934689\n#time=1d43a0526616850\n\"QMLSCENE_DEVICE\"=\"softwarecontext\"\n\"QT_ANGLE_PLATFORM\"=\"d3d9\"\n\"TEMP\"=\"C:\\\\users\\\\steamuser\\\\Temp\"\n\"TMP\"=\"C:\\\\users\\\\steamuser\\\\Temp\"",
+    "os": "Arch Linux 64 bits (Kernel 4.16)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "RX380",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

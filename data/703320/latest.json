@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "703320",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Device",
+    "gpuDriver": "NVIDIA 418.30",
+    "kernel": "4.19.20-customo",
+    "notes": "Without Esync disabled,  only 10FPS.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1551300787,
+    "title": "Hidden & Dangerous 2: Courage Under Fire",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

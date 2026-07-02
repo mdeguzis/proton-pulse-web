@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "248530",
+    "title": "Depth Hunter 2: Deep Dive",
+    "timestamp": 1535583707,
+    "rating": "Platinum",
+    "notes": "flawless",
+    "os": "Archlinux 64-bit 4.18.5-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Intel Xeon E3-1231 v3 / AMD Radeon R9 290",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "248530",
+    "cpu": "i7-4710MQ CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-ext73-58.4-haswell",
+    "notes": "",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.5 beta",
+    "ram": "7872 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536330927",
+    "title": "Depth Hunter 2: Deep Dive",
+    "source": "protondb"
+  },
+  {
+    "appId": "248530",
+    "title": "Depth Hunter 2: Deep Dive",
+    "timestamp": 1535569307,
+    "rating": "Platinum",
+    "notes": "flawless",
+    "os": "Archlinux 64-bit 4.18.5-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Intel Xeon E3-1231 v3 / AMD Radeon R9 290",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1131530",
+    "cpu": "AMD Ryzen 5 3600XT 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 640",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.4.0-81-generic",
+    "notes": "The game contains a mini game called dum-dum the videos stop playing at certain point, probably is the lack of mf-install",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1640631700,
+    "title": "",
+    "source": "protondb"
+  }
+]

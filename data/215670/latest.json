@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "215670",
+    "title": "Home",
+    "timestamp": 1535411966,
+    "rating": "Bronze",
+    "notes": "Runs great but crashes after a while",
+    "os": "Manjaro Unstable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Core i7-4720HQ/ nvidia 960m",
+    "protonVersion": "latest3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "215670",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537370049,
+    "title": "Home",
+    "source": "protondb"
+  },
+  {
+    "appId": "215670",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "Played through the end without issue. Both xbone controller and keyboard works",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15985 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537602369,
+    "title": "Home",
+    "source": "protondb"
+  },
+  {
+    "appId": "215670",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Works out of the box. ",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542372146,
+    "title": "Home",
+    "source": "protondb"
+  },
+  {
+    "appId": "215670",
+    "title": "Home",
+    "timestamp": 1535397566,
+    "rating": "Bronze",
+    "notes": "Runs great but crashes after a while",
+    "os": "Manjaro Unstable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Core i7-4720HQ/ nvidia 960m",
+    "protonVersion": "latest3.7-4",
+    "source": "protondb"
+  }
+]

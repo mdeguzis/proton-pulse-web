@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "12840",
+    "title": "DiRT 2",
+    "timestamp": 1536223901,
+    "rating": "Borked",
+    "notes": "Does not start",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 960",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "12840",
+    "title": "DiRT 2",
+    "timestamp": 1536209501,
+    "rating": "Borked",
+    "notes": "Does not start",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 960",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

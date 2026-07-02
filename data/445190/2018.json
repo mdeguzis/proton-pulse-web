@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "445190",
+    "title": "Expeditions: Viking",
+    "timestamp": 1535159222,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Xubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD Ryzen 5 1600X/ Radeon RX 560 OC",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "445190",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Hangs indefinitely at loading screen. ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Proton 3.7-6 Beta",
+    "ram": "16035 Mb",
+    "rating": "Borked",
+    "timestamp": 1537009373,
+    "title": "Expeditions: Viking",
+    "source": "protondb"
+  },
+  {
+    "appId": "445190",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 with Max-Q Design",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.11-gentoo",
+    "notes": "Intro movie doesn't work. Pressing Esc skips the missing movie, and everything else works with no glitches",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541350035,
+    "title": "Expeditions: Viking",
+    "source": "protondb"
+  },
+  {
+    "appId": "445190",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.0-rc5",
+    "kernel": "4.19.3-gentoo",
+    "notes": "Videos don\u2019t work, but can be\u00a0skipped (press ESC). This include the\u00a0intro video, which makes the\u00a0game look frozen (black screen and nothing happens).",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "64 GB",
+    "rating": "Bronze",
+    "timestamp": 1546289287,
+    "title": "Expeditions: Viking",
+    "source": "protondb"
+  },
+  {
+    "appId": "445190",
+    "title": "Expeditions: Viking",
+    "timestamp": 1535144822,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Xubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD Ryzen 5 1600X/ Radeon RX 560 OC",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

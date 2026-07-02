@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "11360",
+    "title": "Chains",
+    "timestamp": 1535316299,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "11360",
+    "title": "Chains",
+    "timestamp": 1535329369,
+    "rating": "Platinum",
+    "notes": "Excellent performance. No problems found within an hour of gameplay.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "E5-2665 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "11360",
+    "title": "Chains",
+    "timestamp": 1535301899,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "11360",
+    "title": "Chains",
+    "timestamp": 1535314969,
+    "rating": "Platinum",
+    "notes": "Excellent performance. No problems found within an hour of gameplay.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "E5-2665 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

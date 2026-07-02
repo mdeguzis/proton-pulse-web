@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "522230",
+    "cpu": "AMD A12-9800 RADEON R7, 12 COMPUTE CORES 4C+8G",
+    "duration": "allTheTime",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.6 Mesa 20.1.0-devel (git-bf3c9d2 2020-04-25 eoan-oibaf-ppa)",
+    "kernel": "5.3.0-29-generic",
+    "notes": "Freezes before getting to the menu",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1592621430,
+    "title": "The Fishing Club 3D: Co-op Sport Angling",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "359840",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Runs perfectly, even with the steam controller!",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554508126,
+    "title": "Shift Happens",
+    "source": "protondb"
+  }
+]

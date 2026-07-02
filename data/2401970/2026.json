@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2401970",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.5-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1769300569,
+    "title": "Ace Attorney Investigations Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "2401970",
+    "cpu": "Intel Core i9-14900K",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.3",
+    "notes": "Ran perfect, no problems",
+    "os": "Gentoo Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1771733177,
+    "title": "Ace Attorney Investigations Collection",
+    "source": "protondb"
+  }
+]

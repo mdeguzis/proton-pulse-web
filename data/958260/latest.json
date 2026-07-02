@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "958260",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-050005-generic",
+    "notes": "It can run the start interface. But, click the \"Start\" Button after not any thing show.",
+    "os": "Linux Mint 19.1 Tessa (64 \u4f4d\u5143)",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553918010,
+    "title": "DEAD OR ALIVE Xtreme Venus Vacation",
+    "source": "protondb"
+  },
+  {
+    "appId": "958260",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.16-112.current",
+    "notes": "The launcher runs, but the game closes as soon as you click \"Game Start\".",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554014239,
+    "title": "DEAD OR ALIVE Xtreme Venus Vacation",
+    "source": "protondb"
+  }
+]

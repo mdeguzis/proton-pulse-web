@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "522470",
+    "title": "The House of Da Vinci",
+    "timestamp": 1535288211,
+    "rating": "Borked",
+    "notes": "RtlLookupFunctionEntry returned NULL function. Aborting stack walk.",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 384.111",
+    "specs": "AMD FX(tm)-4100 Quad-Core / GeForce GTX 550 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "522470",
+    "title": "The House of Da Vinci",
+    "timestamp": 1535273811,
+    "rating": "Borked",
+    "notes": "RtlLookupFunctionEntry returned NULL function. Aborting stack walk.",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 384.111",
+    "specs": "AMD FX(tm)-4100 Quad-Core / GeForce GTX 550 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "296770",
+    "cpu": "Intel Core i7-4930K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA TITAN V",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Does not start.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1552428262,
+    "title": "Real Boxing\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "296770",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.2-arch1-1-ARCH",
+    "notes": "Doesn't start",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553459809,
+    "title": "Real Boxing\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "296770",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.9-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562467563,
+    "title": "Real Boxing\u2122",
+    "source": "protondb"
+  }
+]

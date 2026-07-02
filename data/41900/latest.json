@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "41900",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Proton version hangs when intro video is supposed to start. Native version also unplayble, but because in-game bugs.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1562074105,
+    "title": "The Bard's Tale",
+    "source": "protondb"
+  }
+]

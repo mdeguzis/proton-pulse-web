@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "850230",
+    "title": "Warhammer 40,000: Space Wolf",
+    "timestamp": 1536428377,
+    "rating": "Bronze",
+    "notes": "1. to make bodies visible add launch option: PROTON_USE_WINED3D11=1 %command%\n2. Was able to complete tutorial mission, but had no success connecting to server to sync with my profile (played on windows ~200h).",
+    "os": "Lubuntu 16.04.5 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 5 2600 / NVIDIA GTX 1050",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  },
+  {
+    "appId": "850230",
+    "title": "Women's Soccer Manager",
+    "timestamp": 1536534320,
+    "rating": "Platinum",
+    "notes": "No errors found Yet. I didn't even notice it was a Windows game while installing it :D",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 5 2600X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "850230",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "gpu": "GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "No Problem at all",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16051 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537087514,
+    "title": "Women's Soccer Manager",
+    "source": "protondb"
+  },
+  {
+    "appId": "850230",
+    "title": "Warhammer 40,000: Space Wolf",
+    "timestamp": 1536413977,
+    "rating": "Bronze",
+    "notes": "1. to make bodies visible add launch option: PROTON_USE_WINED3D11=1 %command%\n2. Was able to complete tutorial mission, but had no success connecting to server to sync with my profile (played on windows ~200h).",
+    "os": "Lubuntu 16.04.5 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 5 2600 / NVIDIA GTX 1050",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  },
+  {
+    "appId": "850230",
+    "title": "Women's Soccer Manager",
+    "timestamp": 1536519920,
+    "rating": "Platinum",
+    "notes": "No errors found Yet. I didn't even notice it was a Windows game while installing it :D",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 5 2600X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "390520",
+    "cpu": "Intel Core i7-7600U @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.0.16-300.fc30.x86_64",
+    "notes": "Runs Perfectly.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559359862,
+    "title": "PewDiePie: Legend of the Brofist",
+    "source": "protondb"
+  },
+  {
+    "appId": "390520",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.18-200.fc30.x86_64",
+    "notes": "Works great out of the box",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570907657,
+    "title": "PewDiePie: Legend of the Brofist",
+    "source": "protondb"
+  }
+]

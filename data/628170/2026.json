@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "628170",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.7, DRM 3.64, 7.0.2_1)",
+    "gpuDriver": "4.6 Mesa 25.3.3",
+    "kernel": "7.0.2_1",
+    "notes": "how to fix japanese mozibake",
+    "os": "Void Linux(64\ube44\ud2b8)",
+    "protonVersion": "10.0-3",
+    "ram": "32001Mb",
+    "rating": "platinum",
+    "timestamp": 1777709855,
+    "title": "Uncharted Waters II",
+    "source": "protondb"
+  },
+  {
+    "appId": "628170",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.7, DRM 3.64, 7.0.2_1)",
+    "gpuDriver": "4.6 Mesa 25.3.3",
+    "kernel": "7.0.2_1",
+    "notes": "how to fix japanese mojibake",
+    "os": "Void Linux(64\ube44\ud2b8)",
+    "protonVersion": "10.0-3",
+    "ram": "32001Mb",
+    "rating": "platinum",
+    "timestamp": 1777710345,
+    "title": "Uncharted Waters II",
+    "source": "protondb"
+  }
+]

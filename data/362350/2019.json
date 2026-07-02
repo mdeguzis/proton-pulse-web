@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "362350",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Crash on launch. Even tried 3.16-8 with no luck. NO_ESYNC and USE_WINED3D PROTON flags don't work either.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1554007354,
+    "title": "Boss Monster",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "386840",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-47-generic",
+    "notes": "no sound !",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1555268347,
+    "title": "Sentinel 4: Dark Star",
+    "source": "protondb"
+  },
+  {
+    "appId": "386840",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-47-generic",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555350076,
+    "title": "Sentinel 4: Dark Star",
+    "source": "protondb"
+  }
+]

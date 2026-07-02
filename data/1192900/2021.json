@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1192900",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.15.11-zen1-1-zen",
+    "notes": "Can't get past the tutorial.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1640723749,
+    "title": "",
+    "source": "protondb"
+  }
+]

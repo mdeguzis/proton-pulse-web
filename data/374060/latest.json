@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "374060",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-25-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567982582,
+    "title": "Stairs",
+    "source": "protondb"
+  },
+  {
+    "appId": "374060",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-19-generic",
+    "notes": "Quite buggy, and it's unclear if that's a result of the game or Proton. My first savegame didn't take so I had to start over from the beginning. When I got to the second area, the game never loaded the new objectives for it (i.e. the photos for the area). It's certainly playable, and these issues might be due to the game itself (reviews point out numerous bugs), but I'm giving it a Silver to be on the safe side.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1572229371,
+    "title": "Stairs",
+    "source": "protondb"
+  }
+]

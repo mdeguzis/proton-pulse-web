@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "441550",
+    "title": "STAR WARS\u2122 Rebellion",
+    "timestamp": 1534972317,
+    "rating": "Silver",
+    "notes": "Occasional minor sound stutter",
+    "os": "Linux Mint 18.3 64-bit",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "441550",
+    "cpu": "AMD A8-3870 APU with Radeon(tm) HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTS 450/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Game works fine and without any issues. Just after some time it minimizes. Can be restored afterwards but just appears as a small window with the original solution. Other than that all good. ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15515 Mb",
+    "rating": "Silver",
+    "timestamp": 1539215334,
+    "title": "STAR WARS\u2122 Rebellion",
+    "source": "protondb"
+  },
+  {
+    "appId": "441550",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.2-301.fc29.x86_64",
+    "notes": "The opening videos play, however there is no sound.\nMain menu appears to be functioning correctly.\nSingle player game launches, audio works properly after video finishes. \nMost of the game screens appear to work, however the dropdown menu used for selecting manufacturing (ships/troops/facilities) and for choosing mission types does not appear when selected. \nWhen a ship battle occurs and I select to manually control the battle, the game gives two error windows:\n[\"Unrecognized error value.\"]\n[D3DRMERR_BADVALUE]\nAfter this the game closes out.\n\nWith these two issues, the game is not currently playable.\n",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1543161782,
+    "title": "STAR WARS\u2122 Rebellion",
+    "source": "protondb"
+  },
+  {
+    "appId": "441550",
+    "title": "STAR WARS\u2122 Rebellion",
+    "timestamp": 1534957917,
+    "rating": "Silver",
+    "notes": "Occasional minor sound stutter",
+    "os": "Linux Mint 18.3 64-bit",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

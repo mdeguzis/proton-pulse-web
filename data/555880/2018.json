@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "555880",
+    "title": "Sairento VR",
+    "timestamp": 1535223499,
+    "rating": "Borked",
+    "notes": "HTC Vive. Missing textures/models",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "555880",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Installed NVIDIA 396.54.09, which has Stream Output enabled. Worked perfectly. This isn't implemented in the latest NVIDIA drivers. Add the NVIDIA dev repository, update your package manager,  and re-install 396.54, it will automatically fetch 396.54.09 (on apt anyway).",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543132520,
+    "title": "Sairento VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "555880",
+    "title": "Sairento VR",
+    "timestamp": 1535209099,
+    "rating": "Borked",
+    "notes": "HTC Vive. Missing textures/models",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

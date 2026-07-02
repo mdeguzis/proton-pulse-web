@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "208600",
+    "title": "Lunar Flight",
+    "timestamp": 1535389299,
+    "rating": "Gold",
+    "notes": "Works out of the Box.",
+    "os": "Fedora 28 (Kernel 4.17.18-200)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3470 / NVIDIA GeForce GTX 650Ti Boost",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "208600",
+    "cpu": "i7-4710HQ CPU @ 2.50GHz",
+    "gpu": "GeForce GTX 970M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.19-1-MANJARO",
+    "notes": "Works perfectly",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-3 Beta",
+    "ram": "24056 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536890207,
+    "title": "Lunar Flight",
+    "source": "protondb"
+  },
+  {
+    "appId": "208600",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-83-generic",
+    "os": "Linux Mint 18.1 Serena (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32191 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539379158,
+    "title": "Lunar Flight",
+    "source": "protondb"
+  },
+  {
+    "appId": "208600",
+    "title": "Lunar Flight",
+    "timestamp": 1535374899,
+    "rating": "Gold",
+    "notes": "Works out of the Box.",
+    "os": "Fedora 28 (Kernel 4.17.18-200)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3470 / NVIDIA GeForce GTX 650Ti Boost",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

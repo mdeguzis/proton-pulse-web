@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "205090",
+    "title": "Bit.Trip Flux",
+    "timestamp": 1534986689,
+    "rating": "Borked",
+    "notes": "Error when game tries to run \"DirectX 9.0 Web setup\" on first-time startup, then complains about vertex shaders. ",
+    "os": "Debian Sid  4.16.0-2-amd64",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": " i5-3570K / GTX950",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "205090",
+    "title": "Bit.Trip Flux",
+    "timestamp": 1534972289,
+    "rating": "Borked",
+    "notes": "Error when game tries to run \"DirectX 9.0 Web setup\" on first-time startup, then complains about vertex shaders. ",
+    "os": "Debian Sid  4.16.0-2-amd64",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": " i5-3570K / GTX950",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

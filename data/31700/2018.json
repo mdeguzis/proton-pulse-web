@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "31700",
+    "title": "Iron Grip: Warlord",
+    "timestamp": 1535117304,
+    "rating": "Silver",
+    "notes": "Requires winetricks verb \"corefonts\" to launch, otherwise solid performance",
+    "os": "Manjaro (4.18.3-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.51-1",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "31700",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Played single player fine. No issues.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542485522,
+    "title": "Iron Grip: Warlord",
+    "source": "protondb"
+  },
+  {
+    "appId": "31700",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Doesnt work. Even after i installed corefonts over winetricks.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543664939,
+    "title": "Iron Grip: Warlord",
+    "source": "protondb"
+  },
+  {
+    "appId": "31700",
+    "title": "Iron Grip: Warlord",
+    "timestamp": 1535102904,
+    "rating": "Silver",
+    "notes": "Requires winetricks verb \"corefonts\" to launch, otherwise solid performance",
+    "os": "Manjaro (4.18.3-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.51-1",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

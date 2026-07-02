@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "620170",
+    "cpu": "i5-6400 CPU @ 2.70GHz",
+    "gpu": "GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Doesn't start (runs under vanilla wine)",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15986 Mb",
+    "rating": "Borked",
+    "timestamp": 1536717289,
+    "title": "Icarus Starship Command Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "620170",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Still doesn't start (runs under vanilla wine)",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541303762,
+    "title": "Icarus Starship Command Simulator",
+    "source": "protondb"
+  }
+]

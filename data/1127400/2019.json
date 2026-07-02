@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "1127400",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-f2bed9b344)",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "Game works native on Linux (OpenGL). On Proton it works out of the box too (OpenGL). Tested on Plasma Wayland.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1569741314,
+    "title": "Mindustry",
+    "source": "protondb"
+  }
+]

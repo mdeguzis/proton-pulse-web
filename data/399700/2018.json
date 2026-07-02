@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "399700",
+    "title": "Desire",
+    "timestamp": 1534975889,
+    "rating": "Platinum",
+    "notes": "The game seems to work without any problems. There was a Linux version in the past but was removed - also the game tested is removed from steam and was re-released under different id.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4690K / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "399700",
+    "title": "Desire",
+    "timestamp": 1534961489,
+    "rating": "Platinum",
+    "notes": "The game seems to work without any problems. There was a Linux version in the past but was removed - also the game tested is removed from steam and was re-released under different id.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4690K / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

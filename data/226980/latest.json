@@ -1,0 +1,98 @@
+[
+  {
+    "appId": "226980",
+    "title": "Pinball FX2",
+    "timestamp": 1534964047,
+    "rating": "Silver",
+    "notes": "Performance: good. Some slight FPS drops sometimes, it seems, but am not 100% sure of that.\nLoading times for pinball tables seem slightly longer than I remembered from Windows, still loads up quite fast (10-15 seconds on my SSD).\n\nError: Slight audio crunch/weirdness when loading a pinball table, this is only for 0,5 seconds or so, and it goes away automatically.\n\nDLC-addons: I've tested some of my Pinball DLC tables: Plants Vs Zombies, Rome, they worked  fine. \n\nPreview tables function: I've also tried the preview function of pinball tables I don't own (for me this was for example: American Dad) and this loaded up just as expected.\n\nThe options menu works as expected, also anti-aliasing functions work.\n\nController support: tested my Xbox360 controller, this worked great. Nudging the table works, the flippers are snappy.",
+    "os": "Fedora 28, 64-bit (Kernel 4.17.14)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i7-4770K / Nvidia GTX 780 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "226980",
+    "title": "Pinball FX2",
+    "timestamp": 1534981453,
+    "rating": "Platinum",
+    "notes": "No issues found",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GFX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "226980",
+    "title": "Pinball FX2",
+    "timestamp": 1535159118,
+    "rating": "Platinum",
+    "notes": "Native experience, including all graphics options",
+    "os": "Antergos Arch (Kernel 4.14.65-1-lts)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "226980",
+    "title": "Pinball FX2",
+    "timestamp": 1535393967,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "SteamOS 2.166",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Core i5-4460 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "226980",
+    "title": "Pinball FX2",
+    "timestamp": 1534949647,
+    "rating": "Silver",
+    "notes": "Performance: good. Some slight FPS drops sometimes, it seems, but am not 100% sure of that.\nLoading times for pinball tables seem slightly longer than I remembered from Windows, still loads up quite fast (10-15 seconds on my SSD).\n\nError: Slight audio crunch/weirdness when loading a pinball table, this is only for 0,5 seconds or so, and it goes away automatically.\n\nDLC-addons: I've tested some of my Pinball DLC tables: Plants Vs Zombies, Rome, they worked  fine. \n\nPreview tables function: I've also tried the preview function of pinball tables I don't own (for me this was for example: American Dad) and this loaded up just as expected.\n\nThe options menu works as expected, also anti-aliasing functions work.\n\nController support: tested my Xbox360 controller, this worked great. Nudging the table works, the flippers are snappy.",
+    "os": "Fedora 28, 64-bit (Kernel 4.17.14)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i7-4770K / Nvidia GTX 780 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "226980",
+    "title": "Pinball FX2",
+    "timestamp": 1534967053,
+    "rating": "Platinum",
+    "notes": "No issues found",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GFX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "226980",
+    "title": "Pinball FX2",
+    "timestamp": 1535144718,
+    "rating": "Platinum",
+    "notes": "Native experience, including all graphics options",
+    "os": "Antergos Arch (Kernel 4.14.65-1-lts)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "226980",
+    "title": "Pinball FX2",
+    "timestamp": 1535379567,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "SteamOS 2.166",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Core i5-4460 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

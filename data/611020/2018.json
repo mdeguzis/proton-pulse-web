@@ -1,0 +1,63 @@
+[
+  {
+    "appId": "611020",
+    "cpu": "AMD Athlon(tm) X4 880K Quad Core Processor",
+    "duration": "severalHours",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.0-12.1-liquorix-amd64, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.0-12.1-liquorix-amd64",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7914 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538867729,
+    "title": "CityBattle | Virtual Earth",
+    "source": "protondb"
+  },
+  {
+    "appId": "611020",
+    "cpu": "Intel Core i3-7100 @ 3.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.18.0-11-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542920488,
+    "title": "CityBattle | Virtual Earth",
+    "source": "protondb"
+  },
+  {
+    "appId": "611020",
+    "cpu": "Intel Core i3-7100 @ 3.90GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.18.0-12-generic",
+    "notes": "DX11 feature level 10.0 is required to run the engine.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544376764,
+    "title": "CityBattle | Virtual Earth",
+    "source": "protondb"
+  },
+  {
+    "appId": "611020",
+    "cpu": "Intel Core i3-7100 @ 3.90GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.18.0-12-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544816562,
+    "title": "CityBattle | Virtual Earth",
+    "source": "protondb"
+  }
+]

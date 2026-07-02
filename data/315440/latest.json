@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "315440",
+    "cpu": "Intel Core i7-4900MQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Quadro K2100M",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "The game doesn't launch. At first it requires xlive.dll which is not available in steam's prefix. After downloading and installing that dll, a tool launches that asks for game's key. After that it crashes, I don't know why.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1544829114,
+    "title": "Disney TRON: Evolution",
+    "source": "protondb"
+  }
+]

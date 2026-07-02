@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "612050",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.14.87-1-lts",
+    "notes": "I'm giving this a silver because contextual evidence suggests that some specific voice commands should do something. However, it does not seem to detect my mic. It is possible that I am doing something wrong. Runs on my HTC Vive without performance problems.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545048137,
+    "title": "VRIQ",
+    "source": "protondb"
+  }
+]

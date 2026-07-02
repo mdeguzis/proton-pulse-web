@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "3960",
+    "cpu": "Intel Xeon E3-1276 v3 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Server",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.1.18",
+    "notes": "It had worked on a previous version of proton (where I played for several hours). Upgrading the prefix from 4.2 to 4.11 had issues, but wiping it and making a fresh prefix fixed them. No tweaks were required. Oddly, this doesn't work on a system that I have that uses Nvidia hardware and 64GB of RAM.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.11-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564600007,
+    "title": "Shattered Union",
+    "source": "protondb"
+  },
+  {
+    "appId": "3960",
+    "cpu": "Intel Xeon E5-1650 v2 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.57-gentoo",
+    "notes": "I had to do `protontricks 3960 videomemorysize=512` to make this stop crashing at launch.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "3.16-4",
+    "ram": "64 GB",
+    "rating": "Gold",
+    "timestamp": 1566641831,
+    "title": "Shattered Union",
+    "source": "protondb"
+  }
+]

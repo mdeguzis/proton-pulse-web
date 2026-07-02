@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "45400",
+    "title": "Fortix",
+    "timestamp": 1534942555,
+    "rating": "Gold",
+    "notes": "",
+    "os": "Ubuntu",
+    "gpuDriver": "Padoka PPA ?",
+    "specs": "Intel i5/Ivy Bridge",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "45400",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-16.2-liquorix-amd64",
+    "notes": "Works out of the box.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541305283,
+    "title": "Fortix",
+    "source": "protondb"
+  },
+  {
+    "appId": "45400",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Tried first level and it works without issue. Can't attest for the rest though",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541891311,
+    "title": "Fortix",
+    "source": "protondb"
+  },
+  {
+    "appId": "45400",
+    "title": "Fortix",
+    "timestamp": 1534928155,
+    "rating": "Gold",
+    "notes": "",
+    "os": "Ubuntu",
+    "gpuDriver": "Padoka PPA ?",
+    "specs": "Intel i5/Ivy Bridge",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

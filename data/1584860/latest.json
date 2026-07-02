@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1584860",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 21.1.5, DRM 3.64, 6.17.9-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.17.9-1-cachyos",
+    "notes": "",
+    "os": "Arch Linux (64bit)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1764434072,
+    "title": "",
+    "source": "protondb"
+  }
+]

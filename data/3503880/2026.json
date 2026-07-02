@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3503880",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.9-arch1-2)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.1",
+    "kernel": "6.18.9-arch1-2",
+    "notes": "game worked out of the box. it has a max resolution of 1920X1200 but is not because of windows vs linux, its just the game's max resolution.",
+    "os": "ALG",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1775603542,
+    "title": "",
+    "source": "protondb"
+  }
+]

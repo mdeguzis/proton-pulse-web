@@ -1,0 +1,93 @@
+[
+  {
+    "appId": "220260",
+    "title": "Farming Simulator 13",
+    "timestamp": 1535053521,
+    "rating": "Gold",
+    "notes": "Runs perfectly, to get around the black screen problem put in the \"set launcher options\" this: \"PROTON_VARIABLE=1 nod3d11\" so the game runs in DirectX 9 Mode and edit the game.xml to set the fullscreen mode to false",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 2600 / RX580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "220260",
+    "title": "Farming Simulator 2013",
+    "timestamp": 1535053744,
+    "rating": "Gold",
+    "notes": "Set the launch options to \"PROTON_VARIABLE=1 nod3d11\" and edit the game.xml file to fullscreen = false",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 2600/RX580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "220260",
+    "title": "Farming Simulator 2013",
+    "timestamp": 1535098186,
+    "rating": "Borked",
+    "notes": "Just a black screen",
+    "os": "Archlinux (Kernel 4.18.3)",
+    "gpuDriver": "Mesa",
+    "specs": "Intel Core i3-2350M/Intel HD3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "220260",
+    "cpu": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs perfectly. Had to use \"PROTON_VARIABLE=1 nod3d11\" as a launch option and set fullscreen to false in the game.xml. Without these two options launches to black screen and freezes up X-window when alt-tabbing.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32104 Mb",
+    "rating": "Gold",
+    "timestamp": 1539090709,
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "title": "Farming Simulator 2013 Titanium Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "220260",
+    "title": "Farming Simulator 13",
+    "timestamp": 1535039121,
+    "rating": "Gold",
+    "notes": "Runs perfectly, to get around the black screen problem put in the \"set launcher options\" this: \"PROTON_VARIABLE=1 nod3d11\" so the game runs in DirectX 9 Mode and edit the game.xml to set the fullscreen mode to false",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 2600 / RX580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "220260",
+    "title": "Farming Simulator 2013",
+    "timestamp": 1535039344,
+    "rating": "Gold",
+    "notes": "Set the launch options to \"PROTON_VARIABLE=1 nod3d11\" and edit the game.xml file to fullscreen = false",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 2600/RX580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "220260",
+    "title": "Farming Simulator 2013",
+    "timestamp": 1535083786,
+    "rating": "Borked",
+    "notes": "Just a black screen",
+    "os": "Archlinux (Kernel 4.18.3)",
+    "gpuDriver": "Mesa",
+    "specs": "Intel Core i3-2350M/Intel HD3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

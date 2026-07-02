@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "215470",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Tested all characters on 2 servers. No issues once in game. During install .net crashes and you need to cancel to pass it. Once .net cancelled game works great",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552705628,
+    "title": "Primal Carnage",
+    "source": "protondb"
+  },
+  {
+    "appId": "215470",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Install process does not complete no way to cancel net install as big picture mode does not show screen ",
+    "os": "SteamOS 2.0",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558202870,
+    "title": "Primal Carnage",
+    "source": "protondb"
+  },
+  {
+    "appId": "215470",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.21-rt16-MANJARO",
+    "notes": "UE3Redist fails to install with message \"File not found\". The game works after cancelling the setup. Creating a server works without any issues and graphics settings also apply after restarting it.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1564072865,
+    "title": "Primal Carnage",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "764050",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "Runs at 30fps tho, some graphics tweaking might help, but matchmaking and all works out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1569059670,
+    "title": "Maelstrom",
+    "source": "protondb"
+  },
+  {
+    "appId": "764050",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-29-generic",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569072574,
+    "title": "Maelstrom",
+    "source": "protondb"
+  },
+  {
+    "appId": "764050",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Flawless Gameplay tested both native and proton couldn't find any difference at all",
+    "os": "Zorin OS 15",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1570397686,
+    "title": "Maelstrom",
+    "source": "protondb"
+  }
+]

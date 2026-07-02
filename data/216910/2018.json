@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "216910",
+    "title": "Of Orcs and Men",
+    "timestamp": 1535154510,
+    "rating": "Silver",
+    "notes": "No audio at all. Controller works just fine (DS3)",
+    "os": "Linux Mint 18.3",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4690K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "216910",
+    "cpu": "Intel(R) Core(TM) i5-2500K CPU @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org AMD JUNIPER (DRM 2.50.0 / 4.18.12-1-default, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.18.12-1-default",
+    "notes": "Played about an hour into the campaign without any issues, never played the game on windows so I can't compare the performance, but I got a steady 30+ FPS with the default settings",
+    "os": "\"openSUSE Tumbleweed\" (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "9973 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539718185,
+    "title": "Of Orcs And Men",
+    "source": "protondb"
+  },
+  {
+    "appId": "216910",
+    "title": "Of Orcs and Men",
+    "timestamp": 1535140110,
+    "rating": "Silver",
+    "notes": "No audio at all. Controller works just fine (DS3)",
+    "os": "Linux Mint 18.3",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4690K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

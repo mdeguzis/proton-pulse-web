@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "934850",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.11-arch1-1-ARCH",
+    "notes": "From my limited testing everything seems to work great",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550840693,
+    "title": "Cyberdrome",
+    "source": "protondb"
+  }
+]

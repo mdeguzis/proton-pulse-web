@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "728540",
+    "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "Anti-Cheat does not start",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7914 Mb",
+    "rating": "Borked",
+    "timestamp": 1537529905,
+    "title": "Islands of Nyne: Battle Royale",
+    "source": "protondb"
+  }
+]

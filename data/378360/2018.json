@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "378360",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.19.0-xanmod1",
+    "notes": "The game runs perfectly on Proton 3.7, however in the Proton 3.16 beta the game crashes on Launch. To play this game downgrade proton if your participating in the beta.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541960011,
+    "title": "Ymir",
+    "source": "protondb"
+  }
+]

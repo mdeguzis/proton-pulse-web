@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "532110",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546768873,
+    "title": "Rusty Lake: Roots",
+    "source": "protondb"
+  },
+  {
+    "appId": "532110",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Everything runs out of the box.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1559648196,
+    "title": "Rusty Lake: Roots",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1363840",
+    "cpu": "13th Gen Intel Core i9-13900KF",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.19.8-200.fc43.x86_64",
+    "notes": "Worked out of the box. It's a pretty bad PC port for other reasons like no keybinds and very limited graphics settings, not linux problems",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1777182143,
+    "title": "",
+    "source": "protondb"
+  }
+]

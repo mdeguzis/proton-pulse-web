@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "289890",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551712604,
+    "title": "7,62 High Calibre",
+    "source": "protondb"
+  },
+  {
+    "appId": "289890",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Game runs platinium with Proton 3.7-8, but has missing textures with Proton 4.2",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "protonVersionManual": "4.2",
+    "ram": "64 GB",
+    "rating": "Gold",
+    "timestamp": 1555899872,
+    "title": "7,62 High Calibre",
+    "source": "protondb"
+  }
+]

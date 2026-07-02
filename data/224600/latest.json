@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "224600",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-15-generic",
+    "notes": "The Game on itself runs actually pretty well. The Performance isn't that good but yeah... it's at least playable and after a while i got used to it anyways.\nYou aren't able to play the Game for over 30 Minutes though, since you get disconnected of the Defiance Game Servers.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1551600911,
+    "title": "Defiance",
+    "source": "protondb"
+  },
+  {
+    "appId": "224600",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-48-generic",
+    "notes": "To fix the connection networking error: cd ~/.steam/steam/steamapps/common/Proton\\ 4.2/dist/lib/ (replace Proton 4.2 with your Proton version!), ln -s /usr/lib32/libgnutls.so.30.14.11 libgnutls.so.26, ~/.steam/steam/steamapps/common/Proton\\ 4.2/dist/lib64/ (replace Proton 4.2 with your Proton version!), ln -s /usr/lib32/libgnutls.so.30.14.11 libgnutls.so.26",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557770349,
+    "title": "Defiance",
+    "source": "protondb"
+  },
+  {
+    "appId": "224600",
+    "cpu": "Intel Core i7-4510U @ 2.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Gets connectivity issues, game unplayable, just creates character",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1558841801,
+    "title": "Defiance",
+    "source": "protondb"
+  }
+]

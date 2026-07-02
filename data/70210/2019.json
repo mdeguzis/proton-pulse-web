@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "70210",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.19-1-lts",
+    "notes": "The game starts and then closes.\n\nLOG \ndevice-mapper: core: GovernorofPoker: sending ioctl 5305 to DM device without required privilege.",
+    "os": "Arch Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1549583268,
+    "title": "Governor of Poker 2 - Premium Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "70210",
+    "cpu": "AMD A8-6410 APU with AMD Radeon R5 Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.19.55-041955-generic",
+    "notes": "runs perfectly out of the box",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.2-9",
+    "ram": "3 GB",
+    "rating": "Platinum",
+    "timestamp": 1562624327,
+    "title": "Governor of Poker 2 - Premium Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "70210",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-60-generic",
+    "notes": "Works.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567974170,
+    "title": "Governor of Poker 2 - Premium Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "266430",
+    "cpu": "Intel Core i3-2310M @ 2.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Game ran correctly after applying right screen resolution with the config menu reachable through putting \"-config\" on the launch options. HOWEVER, the core functionality of the game, loading other games and loading internet shortcuts, both do not work properly, with (steam) games not loading up at all and internet shortcuts only opening AFTER you close the game. Other functionality of the game, such as placing workshop items and other props, works absolutely fine, with seemingly no error. (this is the main reason this game gets a bronze instead of borked)",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1556413478,
+    "title": "Anarchy Arcade",
+    "source": "protondb"
+  }
+]

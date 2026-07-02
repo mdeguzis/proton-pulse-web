@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "58550",
+    "title": "A Game of Thrones - Genesis",
+    "timestamp": 1535126948,
+    "rating": "Bronze",
+    "notes": "You need to push ESC a few times for game to start loading.\nGraphics (and sometimes sound) glitches make it unplayable but otherwise it works well",
+    "os": "Solus (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-5200U / 940M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "58550",
+    "cpu": "i5-5200U CPU @ 2.20GHz",
+    "gpu": "GeForce 940M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-90.current",
+    "notes": "Mash ESC until it loads. Glitched black ground on map, unplayable",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7470 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536940027,
+    "title": "A Game of Thrones - Genesis",
+    "source": "protondb"
+  },
+  {
+    "appId": "58550",
+    "title": "A Game of Thrones - Genesis",
+    "timestamp": 1535112548,
+    "rating": "Bronze",
+    "notes": "You need to push ESC a few times for game to start loading.\nGraphics (and sometimes sound) glitches make it unplayable but otherwise it works well",
+    "os": "Solus (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-5200U / 940M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "578720",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, navi32, LLVM 15.0.7, DRM 3.58, 6.8.0-48-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.8.0-48-generic",
+    "notes": "",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1733456809,
+    "title": "",
+    "source": "protondb"
+  }
+]

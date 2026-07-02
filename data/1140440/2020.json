@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1140440",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.1",
+    "kernel": "5.6.18-lqx1-1-lqx",
+    "notes": "Game runs as well as Windows version.",
+    "os": "Freedesktop.org 19.08.9 (Flatpak runtime)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1592048162,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1056720",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.0-7629-generic",
+    "notes": "The game won't open until you install directx9, you have to use protontricks to do that.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1605654243,
+    "title": "",
+    "source": "protondb"
+  }
+]

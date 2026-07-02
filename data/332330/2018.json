@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "332330",
+    "title": "PixelJunk Shooter Ultimate",
+    "timestamp": 1535438256,
+    "rating": "Platinum",
+    "notes": "Screen tearing - otherwise runs smoothly",
+    "os": "Linux Mint 19 64-bit (4.15.0-20-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "332330",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16034 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537533219,
+    "title": "PixelJunk\u2122 Shooter Ultimate",
+    "source": "protondb"
+  },
+  {
+    "appId": "332330",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "A small window opens, looks like it will work, and then the process shuts down. Maybe it's my unsupported driver version.",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543272741,
+    "title": "PixelJunk\u2122 Shooter Ultimate",
+    "source": "protondb"
+  },
+  {
+    "appId": "332330",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "Runs perfectly out of the box. Xbox 360 Controller working.",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543280803,
+    "title": "PixelJunk\u2122 Shooter Ultimate",
+    "source": "protondb"
+  },
+  {
+    "appId": "332330",
+    "title": "PixelJunk Shooter Ultimate",
+    "timestamp": 1535423856,
+    "rating": "Platinum",
+    "notes": "Screen tearing - otherwise runs smoothly",
+    "os": "Linux Mint 19 64-bit (4.15.0-20-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

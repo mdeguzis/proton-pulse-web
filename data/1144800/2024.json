@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1144800",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.8.12-200.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.0",
+    "kernel": "6.8.12-200.fsync.fc39.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1727095310,
+    "title": "Drop In - VR F2P",
+    "source": "protondb"
+  }
+]

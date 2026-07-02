@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4281270",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 19.1.7, DRM 3.61, 6.13.5-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.0.0-cachyos1.1",
+    "kernel": "6.13.5-zen1-1-zen",
+    "notes": "Geobeast requires WebView2 Runtime so it doenst work",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1772547291,
+    "title": "",
+    "source": "protondb"
+  }
+]

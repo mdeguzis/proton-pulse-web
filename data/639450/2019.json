@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "639450",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.6-arch1-1-ARCH",
+    "notes": "Spawns a black window with blue borders. Sound works fine, but there is no video. Tweaks either do nothing or prevent even the window from spawning.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1549533509,
+    "title": "Don't Tax Me, Bro!",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1074860",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.0-16-generic",
+    "notes": "Ran on second launch, mouse cursor is a small red dot instead of a crosshair, making the game MUCH harder.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560012650,
+    "title": "Click Defense",
+    "source": "protondb"
+  }
+]

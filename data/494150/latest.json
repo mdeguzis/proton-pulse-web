@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "494150",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Does not start at all. Uninstall and reinstalled multiple times. Even tried Proton 3.7. Other VR games work. Starts the loading screen once (displaying Unity ..) then shuts down, and Steam Runtime still showing it as \"running\" ",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "48 GB",
+    "rating": "Borked",
+    "timestamp": 1562540719,
+    "title": "The Thrill of the Fight - VR Boxing",
+    "source": "protondb"
+  },
+  {
+    "appId": "494150",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-7417b43211)",
+    "kernel": "5.1.18-1-ck-haswell",
+    "notes": "I did not try any tweak, but running the game with anything but 3.7 did not even start, and with that old some graphics were missing, like in the tutorial I could not see my opponent only its shadow on the ground.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Bronze",
+    "timestamp": 1563507495,
+    "title": "The Thrill of the Fight - VR Boxing",
+    "source": "protondb"
+  },
+  {
+    "appId": "494150",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.1.21-1-MANJARO",
+    "notes": "It crashes after one second. With Proton Version 3.7 it works but the bodies are invisible and it is unplayable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567019341,
+    "title": "The Thrill of the Fight - VR Boxing",
+    "source": "protondb"
+  }
+]

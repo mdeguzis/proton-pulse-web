@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1218500",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 18.1.8, DRM 3.61, 6.12.17)",
+    "gpuDriver": "4.6 Mesa 24.2.8",
+    "kernel": "6.12.17",
+    "notes": "Doesn't start. Tried normal proton, experimental and GE-Proton9-25.",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-4",
+    "ram": "129 GB",
+    "rating": "borked",
+    "timestamp": 1741463414,
+    "title": "Galactic Mining Corp",
+    "source": "protondb"
+  }
+]

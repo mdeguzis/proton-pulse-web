@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1265800",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.44.0, 5.17.0-2-MANJARO, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.17.0-2-MANJARO",
+    "notes": "Crash at launch",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1646770672,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1265800",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.11-1-default",
+    "notes": "Its worth mentioning that I have a lot of issues with this game in Windows, but usually can play through it.  Its totally unplayable in Linux.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1648457048,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1265800",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.44.0, 5.16.12-246-tkg-bmq, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.12-246-tkg-bmq",
+    "notes": "Opened a bug report for it here: https://github.com/ValveSoftware/Proton/issues/6351 -- will resent a report if it ever becomes playable.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1669873516,
+    "title": "",
+    "source": "protondb"
+  }
+]

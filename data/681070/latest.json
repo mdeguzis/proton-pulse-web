@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "681070",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 8800",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.7-119.current",
+    "notes": "Not working.",
+    "os": "Solus",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1560692440,
+    "title": "The Slug",
+    "source": "protondb"
+  }
+]

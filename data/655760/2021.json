@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "655760",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-44-generic",
+    "notes": "Unity game, works perfectly out of the box with the last version available of proton.",
+    "os": "Ubuntu 20.10 (64\u00a0bits)",
+    "protonVersion": "5.13-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1613907461,
+    "title": "",
+    "source": "protondb"
+  }
+]

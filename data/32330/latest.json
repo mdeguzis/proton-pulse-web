@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "32330",
+    "cpu": "Intel Core i5-4430 @ 3.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Works flawless after some configuration (not out of the box):\n-> no sound: set launch options: PROTON_NO_ESYNC=1 %command%\n-> sticky feet (player fails to jump on some occasions): within game: options, graphic options, vert. synch: ON\n-> X-Box controller: not automatically detected, configure manually (use keyboard to select function to configure)",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1566072691,
+    "title": "LEGO\u00ae Indiana Jones\u2122: The Original Adventures",
+    "source": "protondb"
+  }
+]

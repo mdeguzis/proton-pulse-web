@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "671650",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 17.2.8",
+    "kernel": "4.13.0-46-generic",
+    "notes": "Runs perfectly in windowed mode.",
+    "os": "Ubuntu 17.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542875643,
+    "title": "Mad Age & This Guy",
+    "source": "protondb"
+  }
+]

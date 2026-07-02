@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "465490",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Tried space and land combat, everything works fine.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1550777515,
+    "title": "Stellar Tactics",
+    "source": "protondb"
+  },
+  {
+    "appId": "465490",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-050007-generic",
+    "notes": "Runs great out of the box without any tweak and with good performance",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559168621,
+    "title": "Stellar Tactics",
+    "source": "protondb"
+  }
+]

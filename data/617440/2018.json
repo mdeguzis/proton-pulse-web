@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "617440",
+    "title": "Juanito Arcade Mayhem",
+    "timestamp": 1536221982,
+    "rating": "Borked",
+    "notes": "Boots instantly to a black screen",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54 ",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "617440",
+    "cpu": "i3-3110M CPU @ 2.40GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.18.6-041806-generic",
+    "notes": "Crashes upon starting (haven't checked the error log yet).",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "3799 Mb",
+    "rating": "Borked",
+    "timestamp": "1536313026",
+    "title": "Juanito Arcade Mayhem",
+    "source": "protondb"
+  },
+  {
+    "appId": "617440",
+    "title": "Juanito Arcade Mayhem",
+    "timestamp": 1536207582,
+    "rating": "Borked",
+    "notes": "Boots instantly to a black screen",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54 ",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

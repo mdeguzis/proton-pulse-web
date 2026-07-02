@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2152990",
+    "cpu": "AMD Ryzen 3 1300X Quad-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 510.108.03",
+    "kernel": "5.4.0-146-generic",
+    "notes": "Aside from Steam's built-in Proton versions, I also tried GE-Proton7-31 and GE-Proton7-44.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1681003232,
+    "title": "Dinogen Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "2152990",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.10-arch1-1",
+    "notes": "The game just doesn't display anything upon launch but it stays open in the background.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1681329226,
+    "title": "Dinogen Online",
+    "source": "protondb"
+  }
+]

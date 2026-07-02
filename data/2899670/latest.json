@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2899670",
+    "cpu": "11th Gen Intel Core i7-11700F @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.8-1-cachyos",
+    "notes": "didn't work",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1779278359,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "410380",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.6-1-MANJARO",
+    "notes": "The game runs perfectly after setting \"-force-d3d9\" as argument. Only exception is the intro video, which shows a black screen. You can skip it by pressing Escape.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1545088925,
+    "title": "HEX: Shards of Fate",
+    "source": "protondb"
+  }
+]

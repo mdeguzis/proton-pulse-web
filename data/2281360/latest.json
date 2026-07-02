@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2281360",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 20.1.2, 256 bits)",
+    "gpuDriver": "4.5 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-23-generic",
+    "notes": "Expect slight performance issue",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1777756227,
+    "title": "",
+    "source": "protondb"
+  }
+]

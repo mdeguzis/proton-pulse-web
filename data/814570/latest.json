@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "814570",
+    "title": "The Great Escape",
+    "timestamp": 1535902291,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't initially focus, but Alt-Tab and Enter starts the game fullscreen. After that, it runs perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "814570",
+    "title": "The Great Escape",
+    "timestamp": 1535887891,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't initially focus, but Alt-Tab and Enter starts the game fullscreen. After that, it runs perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

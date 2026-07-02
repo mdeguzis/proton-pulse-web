@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "674750",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Doesn't start at all.",
+    "os": "Zorin OS 12.4",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543520307,
+    "title": "Yet Another Zombie Defense HD",
+    "source": "protondb"
+  }
+]

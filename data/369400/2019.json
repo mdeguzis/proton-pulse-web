@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "369400",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560116107,
+    "title": "Let the Cat in",
+    "source": "protondb"
+  },
+  {
+    "appId": "369400",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-generic",
+    "notes": "First 6 levels played almost perfectly. There was some significant lag during the tutorial parts of level 1 though. Not sure if this is Proton or the game though.",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1561946874,
+    "title": "Let the Cat in",
+    "source": "protondb"
+  }
+]

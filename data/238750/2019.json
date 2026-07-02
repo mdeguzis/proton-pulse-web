@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "238750",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.9-041909-generic",
+    "notes": "Had to fight UPlay (I really considered installing a cracked version, but finally I copied the game's Uplay \"secret\" from Windows install and it works. Why Ubisoft bothers so much paying customers...). The game works flawlessly then, even the problem with glittering of some enemies with current Nvidia drivers is solved. There are some really minor graphics glitches in HDR mode, the same as in Windows. Haven't needed any additional Wine (Proton) tweaks.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1553635911,
+    "title": "Might & Magic X - Legacy",
+    "source": "protondb"
+  },
+  {
+    "appId": "238750",
+    "cpu": "AMD Ryzen Threadripper 2990WX 32-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "Other than having to create a Ubisoft account, installed and runs with no problems at all.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "48 GB",
+    "rating": "Platinum",
+    "timestamp": 1563066290,
+    "title": "Might & Magic X - Legacy",
+    "source": "protondb"
+  }
+]

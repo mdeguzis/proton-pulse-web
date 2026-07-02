@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "923910",
+    "cpu": "Intel Core i7-5960X @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.45-1-MANJARO",
+    "notes": "Game runs, but text is not displayed.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560244015,
+    "title": "Eve of Souls: Static Pod",
+    "source": "protondb"
+  }
+]

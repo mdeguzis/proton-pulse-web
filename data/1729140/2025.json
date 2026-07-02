@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1729140",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 18.1.8, DRM 3.57, 6.10.7-x64v3-xanmod1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel (git-74dafa3c79)",
+    "kernel": "6.10.7-x64v3-xanmod1-1",
+    "notes": "Some amdgpu issues",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1740568868,
+    "title": "",
+    "source": "protondb"
+  }
+]

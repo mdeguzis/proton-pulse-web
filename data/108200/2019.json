@@ -1,0 +1,149 @@
+[
+  {
+    "appId": "108200",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.1-arch1-1-ARCH",
+    "notes": "Forced usage of windows version; Texts are missing, you have to play the linux version first to know what they mean; You can\u2019t see how many cards your opponents have",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1547773543,
+    "title": "Ticket to Ride",
+    "source": "protondb"
+  },
+  {
+    "appId": "108200",
+    "cpu": "AMD E-450 APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD PALM",
+    "gpuDriver": "3.1 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Using force proton in new steam beta as the Linux port of this is badly borked and crashes. Proton runs fine but ALL Fonts are missing so you cannot see any in game tect, which is a nuisance. (its the same if you run it in wine, no fonts)",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1547839619,
+    "title": "Ticket to Ride",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "108200",
+    "cpu": "AMD E-450 APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD PALM",
+    "gpuDriver": "3.1 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Updated report: Using forced proton version, use the launch options,  PROTON_NO_D3D11=1 %command% this fixes the missing fonts, and also fixes some performance issues on certain maps. Using that the game is stable and works but still some minor issues like HOF not displaying properly .",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1547842771,
+    "title": "Ticket to Ride",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "108200",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.5-200.fc29.x86_64",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1549148945,
+    "title": "Ticket to Ride",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "108200",
+    "cpu": "Intel Celeron 847 @ 1.10GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD CAICOS",
+    "gpuDriver": "3.1 Mesa 19.0.0-devel (git-51a44c3 2018-12-23 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-13-generic",
+    "notes": "With 'no d3d11' works better than Windows. ",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1549167690,
+    "title": "Ticket to Ride",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "108200",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.20.5-arch1-1-ARCH",
+    "notes": "Forced usage of windows version; fonts works fine with ` PROTON_NO_D3D11=1 %command%`; played singleplayer matches for 5h",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1549170331,
+    "title": "Ticket to Ride",
+    "source": "protondb"
+  },
+  {
+    "appId": "108200",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "Everything works when ran with PROTON_NO_D3D11=1 %command% -force-d3d9",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554065755,
+    "title": "Ticket to Ride",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "108200",
+    "cpu": "AMD Phenom 9850 Quad-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD RV635",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Ran great with online play after disabling D3d11 using the command PROTON_NO_D3D11=1 %command% -force-d3d9",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Gold",
+    "timestamp": 1560732115,
+    "title": "Ticket to Ride",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

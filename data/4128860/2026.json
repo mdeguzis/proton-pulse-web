@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4128860",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.18.7-76061807-generic",
+    "notes": "",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1777732662,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "922400",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Everything works perfectly, even downloading and playing boards from the Workshop.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1550022135,
+    "title": "DX-Ball 2: 20th Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "922400",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Works perfectly, workshop included.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1550045708,
+    "title": "DX-Ball 2: 20th Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "922400",
+    "cpu": "Intel Core i7-4702MQ @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD OLAND",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.0.7-200.fc29.x86_64",
+    "notes": "Works out-of-the box without any issues at all.",
+    "os": "Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562517809,
+    "title": "DX-Ball 2: 20th Anniversary Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "552920",
+    "title": "Sailaway - The Sailing Simulator",
+    "timestamp": 1535652460,
+    "rating": "Borked",
+    "notes": "Sailaway.exe caused an Access Violation (0xc0000005) ",
+    "os": "Debian 9 Stretch 4.9.0-8-amd64",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-3770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "552920",
+    "title": "Sailaway - The Sailing Simulator",
+    "timestamp": 1535638060,
+    "rating": "Borked",
+    "notes": "Sailaway.exe caused an Access Violation (0xc0000005) ",
+    "os": "Debian 9 Stretch 4.9.0-8-amd64",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-3770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

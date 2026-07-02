@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "20920",
+    "title": "The Witcher 2: Assasins of Kings Enhanced Edition",
+    "timestamp": 1535385914,
+    "rating": "Platinum",
+    "notes": "48fps+, no issues found.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "20920",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 18.2.5",
+    "kernel": "4.19.4-1-MANJARO",
+    "notes": "Low 30+ without issues. Manjaro gnome",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543267128,
+    "title": "The Witcher 2: Assassins of Kings Enhanced Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "20920",
+    "title": "The Witcher 2: Assasins of Kings Enhanced Edition",
+    "timestamp": 1535371514,
+    "rating": "Platinum",
+    "notes": "48fps+, no issues found.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

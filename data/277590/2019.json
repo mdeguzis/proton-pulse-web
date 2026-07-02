@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "277590",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-11-generic",
+    "notes": "black screen even after disabling uplay overlay.",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1555427171,
+    "title": "Assassin's Creed Freedom Cry",
+    "source": "protondb"
+  }
+]

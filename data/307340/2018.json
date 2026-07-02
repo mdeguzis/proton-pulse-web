@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "307340",
+    "title": "Platypus",
+    "timestamp": 1535065826,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 2520m / Intel HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "307340",
+    "cpu": "Intel Core i3-4030U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.14.77-1-MANJARO",
+    "notes": "Displays main menu and plays music, but immediately locks up and goes completely unresponsive. Compatibility settings don't make any difference.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543310524,
+    "title": "Platypus",
+    "source": "protondb"
+  },
+  {
+    "appId": "307340",
+    "title": "Platypus",
+    "timestamp": 1535051426,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 2520m / Intel HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2059670",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.3.2-1-default",
+    "notes": "Both Moss and Moss2 run perfectly out of the box for me on my system. Great perfromance!",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1713150347,
+    "title": "Moss: Book II",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "986220",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-29-generic",
+    "notes": "very bad performance, however this might be because the game is currently in development, I was only able to launch the game after disabling Esync, other tweaks were not tested",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1571666641,
+    "title": "RAN: Lost Islands",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

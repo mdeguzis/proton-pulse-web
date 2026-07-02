@@ -1,0 +1,68 @@
+[
+  {
+    "appId": "922320",
+    "cpu": "Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 460/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.10.0-38-generic",
+    "notes": "running 30fps~ with PROTON_NO_D3D11=1 %command%",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7927 Mb",
+    "rating": "Silver",
+    "timestamp": 1538003466,
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "title": "Sniper 3D Assassin: Free to Play",
+    "source": "protondb"
+  },
+  {
+    "appId": "922320",
+    "cpu": "Intel(R) Core(TM) i5-2500K CPU @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-1-MANJARO",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "11994 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538235591,
+    "title": "Sniper 3D Assassin: Free to Play",
+    "source": "protondb"
+  },
+  {
+    "appId": "922320",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-97.current",
+    "notes": "no issue at all",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542941857,
+    "title": "Sniper 3D Assassin: Free to Play",
+    "source": "protondb"
+  },
+  {
+    "appId": "922320",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-97.current",
+    "notes": "Level bar is missing, everything else is ok",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542960550,
+    "title": "Sniper 3D Assassin: Free to Play",
+    "source": "protondb"
+  }
+]

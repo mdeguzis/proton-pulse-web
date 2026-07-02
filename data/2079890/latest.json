@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2079890",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD DIMGREY_CAVEFISH (LLVM 13.0.1, DRM 3.44, 5.17.5-76051705-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "Game starts up on monitor, but not in VR mode",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1666301078,
+    "title": "",
+    "source": "protondb"
+  }
+]

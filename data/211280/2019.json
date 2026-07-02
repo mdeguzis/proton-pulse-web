@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "211280",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "The game started once. Then I tried to start a co-op game, which crashed it. After that I can't seem to even start the game again.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "protonVersionManual": "3.16-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550428645,
+    "title": "Primal Fears",
+    "source": "protondb"
+  },
+  {
+    "appId": "211280",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Tried using D9VK but getting constant microstuttering which makes it quite unplayable. Maybe could get better results toying around with graphics settings.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1569486786,
+    "title": "Primal Fears",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

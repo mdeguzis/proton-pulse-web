@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "676500",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549722477,
+    "title": "Time Warpers",
+    "source": "protondb"
+  },
+  {
+    "appId": "676500",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558101683,
+    "title": "Time Warpers",
+    "source": "protondb"
+  },
+  {
+    "appId": "676500",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.1-arch1-1-ARCH",
+    "notes": "Seems to run perfectly on Proton. Vsync is syncing to the wrong monitor, but I think this is a vulkan+nvidia problem and is fixed by simply choosing an fps cap equal to your monitors refresh rate. At one point when uncapping the fps, enemies stopped attacking until I reloaded my save, not sure if that's a game bug or not.",
+    "os": "Arch",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563473467,
+    "title": "Time Warpers",
+    "source": "protondb"
+  }
+]

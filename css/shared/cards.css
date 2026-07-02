@@ -1,0 +1,508 @@
+/* ── Unified game card ─────────────────────────────────────────────────────
+   Single source of truth for any card that shows: thumbnail | title + sub | badge.
+   Use renderGameCard() in js/app/lib/card.js to generate the HTML.
+   Mobile: thumbnail shrinks to 60x28, title stays bold, sub truncates.        */
+.game-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--s1);
+  border: 0;
+  box-shadow: 0 0 0 1px var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: box-shadow 0.15s, background 0.15s, transform 0.05s;
+  /* position:relative anchors the .game-card-corner-tag's absolute box to
+     the card itself (not the row or thumbnail), so it can sit at the top
+     right edge of the entire card under the 'art-corner' placement. */
+  position: relative;
+}
+/* Filler placeholder for tile-mode grids. JS in js/lib/tile-pad.js
+   appends these after every render so the last row has the same number
+   of tracks filled as the rows above it -- otherwise the trailing
+   columns are blank and the grid looks ragged. The placeholder is fully
+   transparent and doesn't accept events; it just reserves a grid cell. */
+.tile-filler {
+  visibility: hidden;
+  pointer-events: none;
+  min-height: 1px;
+}
+
+/* Combined corner chip (rating + store) for the 'combo' card layout.
+   Two segments side by side: tier color on the left with the tier label,
+   store color on the right with the store name. Hidden unless
+   data-card-layout="combo" is set on <html>. Rounded only on the inner
+   corner so it tucks into the card's top-right outline. */
+.game-card-combo-tag { display: none; }
+[data-card-layout="combo"] .game-card-combo-tag {
+  display: inline-flex;
+  align-items: stretch;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  border-radius: 0 10px 0 10px;
+  overflow: hidden;
+  box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+[data-card-layout="combo"] .game-card-combo-tag .combo-tier,
+[data-card-layout="combo"] .game-card-combo-tag .combo-store {
+  padding: 4px 9px;
+  display: inline-flex;
+  align-items: center;
+}
+/* Tier color block (default subdued grey for unrated / no-tier rows). */
+[data-card-layout="combo"] .game-card-combo-tag .combo-tier { background: #3a4252; color: #d6dee8; }
+[data-card-layout="combo"] .game-card-combo-tag[data-tier="platinum"] .combo-tier { background: #b4c7dc; color: #0a0c10; }
+[data-card-layout="combo"] .game-card-combo-tag[data-tier="gold"]     .combo-tier { background: #c8a050; color: #111; }
+[data-card-layout="combo"] .game-card-combo-tag[data-tier="silver"]   .combo-tier { background: #8fa0b0; color: #111; }
+[data-card-layout="combo"] .game-card-combo-tag[data-tier="bronze"]   .combo-tier { background: #b07040; color: #fff; }
+[data-card-layout="combo"] .game-card-combo-tag[data-tier="borked"]   .combo-tier { background: #c85050; color: #fff; }
+/* Store color block. */
+[data-card-layout="combo"] .game-card-combo-tag .combo-store { background: #1689d0; color: #fff; }
+[data-card-layout="combo"] .game-card-combo-tag[data-store="gog"]  .combo-store { background: #7a3fcf; }
+[data-card-layout="combo"] .game-card-combo-tag[data-store="epic"] .combo-store { background: #2a2a2a; }
+/* Combo owns the rating + store -- hide the column rating and the
+   bottom strip so they don't compete with the corner chip. */
+[data-card-layout="combo"] .game-card-right { display: none; }
+[data-card-layout="combo"] .game-card-strip { display: none; }
+/* Combo owns the entire rating + store presentation, so suppress every
+   other store placement (artwork overlay tag, dedicated card-corner tag,
+   and any stray inline store pill) so the chip stands alone. */
+[data-card-layout="combo"] .game-card-store-tag,
+[data-card-layout="combo"] .game-card-corner-tag,
+[data-card-layout="combo"] .game-card-store-pill { display: none; }
+
+.game-card-corner-tag { display: none; }
+[data-store-pill-pos="art-corner"] .game-card-corner-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 10px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  /* Top-right matches the card's 10px corner radius so it tucks cleanly
+     into the rounded edge. Bottom-left rounds into the card body. */
+  border-radius: 0 10px 0 10px;
+  box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+.game-card-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px 8px 8px;
+}
+.game-card,
+.game-card *,
+.game-card:hover,
+.game-card:hover *,
+.game-card:focus,
+.game-card:focus *,
+.game-card:focus-visible,
+.game-card:focus-visible *,
+.game-card:active,
+.game-card:active * { text-decoration: none; }
+.game-card:hover { box-shadow: 0 0 0 1px var(--accent); }
+.game-card:active { transform: translateY(1px); }
+.game-card-thumb-wrap {
+  position: relative;
+  flex-shrink: 0;
+  line-height: 0;
+}
+.game-card-thumb {
+  width: 92px;
+  height: 43px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--s2);
+  flex-shrink: 0;
+}
+/* Store tag overlaid on the artwork's bottom-right corner. Frees the right
+   column for the rating pill alone, so titles get more width on mobile. */
+.game-card-store-tag {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 1px 5px;
+  border-radius: 4px;
+  line-height: 1.25;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
+/* Desktop: give the report rows more presence with a bigger boxart and
+   roomier padding. Steam header ratio (~2.14:1) is preserved. */
+@media (min-width: 760px) {
+  /* Padding goes on .game-card-row so the bottom-bar strip (a sibling) can
+     still reach the card's bottom and side edges. See the matching note
+     on the size-modifier rules below. */
+  .game-card-row { gap: 18px; padding: 11px 18px 11px 11px; }
+  .game-card-thumb { width: 138px; height: 64px; border-radius: 8px; }
+  .game-card-title { font-size: 1.04rem; }
+  .game-card-sub { font-size: 0.82rem; }
+  .game-card-store-tag { font-size: 0.64rem; right: 6px; bottom: 6px; padding: 2px 7px; }
+}
+.game-card-thumb--missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.game-card-body { flex: 1; min-width: 0; }
+.game-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--strong);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.game-card-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 2px;
+  font-family: var(--mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.game-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.game-card-badge {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: var(--s2);
+  color: var(--muted);
+}
+/* Not-yet-rated games: muted outlined pill so it reads as "no data" rather than
+   a real tier. */
+.game-card-badge--unrated {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border, #2a3340);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.game-card-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.game-card-store-pill {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: #1689d0;
+  color: #fff;
+}
+.game-card-store-pill--steam { background: #1689d0; color: #fff; }
+.game-card-store-pill--gog   { background: #7a3fcf; color: #fff; }
+.game-card-store-pill--epic  { background: #555; color: #eee; }
+.game-card-store-pill--non-steam { background: #444; color: #ddd; }
+
+/* Round store icon -- the .store-icon span wraps the SVG glyph and gets a
+   tight square footprint. By default it is hidden inside the store pill;
+   the data-store-display="icon" attribute on <html> hides the text instead
+   and shows the icon. */
+.store-icon { display: none; }
+.store-icon svg { width: 18px; height: 18px; display: block; }
+[data-store-display="icon"] .store-text { display: none; }
+[data-store-display="icon"] .store-icon { display: inline-flex; align-items: center; }
+/* The strip-store span also carries .store-icon so it can become a round
+   monogram in icon mode -- but only inside the bar-segment placement. For
+   every other placement the strip-store has no business showing up, so
+   the icon-mode reveal above must not turn it on. The bar-segment rule
+   lower in the file overrides this when needed. */
+[data-store-display="icon"] .game-card-strip-store,
+[data-store-display="icon"] .pg-card-strip-store { display: none; }
+/* Store pill chrome collapses to just the icon when display=icon so we do
+   not paint a colored background around the icon's own circle. */
+[data-store-display="icon"] .game-card-store-pill,
+[data-store-display="icon"] .game-card-store-tag {
+  background: transparent !important;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Bottom-bar strip store segment. Hidden by default; revealed by the
+   bar-segment placement (split bar). The strip-store span carries the
+   .store-icon class so it can render the round monogram in icon mode --
+   the SVG is hidden in text mode so the colored circle doesn't paint
+   behind the store label. */
+.game-card-strip-store { display: none; }
+.game-card-strip-store > svg { display: none; }
+[data-store-display="icon"] .game-card-strip-store > svg { display: block; }
+[data-store-display="icon"] .game-card-strip-store > .store-text { display: none; }
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip {
+  /* Two-tone strip: tier color fills the leading 75%, store color fills
+     the trailing 25%. The store segment's background overrides the strip's
+     own tier background via specificity. gap:0 + align-items:stretch make
+     the cells butt up against each other and fill the strip vertically so
+     there's no visible tier color between them. */
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 0;
+  gap: 0;
+  align-items: stretch;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip-tier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip-store {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  border-bottom-right-radius: 10px;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip[data-store="steam"] .game-card-strip-store { background: #1689d0; }
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip[data-store="gog"] .game-card-strip-store   { background: #7a3fcf; }
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip[data-store="epic"] .game-card-strip-store  { background: #2a2a2a; }
+/* When the icon preference is on inside the segment, hide the text label
+   and let the round icon do the talking. */
+[data-store-display="icon"][data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip-store .store-text { display: none; }
+@media (max-width: 600px) {
+  .game-card-pills { flex-direction: column; align-items: flex-end; gap: 4px; }
+}
+.game-card-source {
+  font-size: 0.65rem;
+  color: var(--muted);
+  white-space: nowrap;
+  opacity: 0.7;
+  padding-right: 10px;
+}
+
+/* Bottom-bar layout (data-card-layout="strip"): hide the right column,
+   show a tier-colored bar spanning the full card width across the bottom,
+   mirroring ProtonDB's card design. Title row gets the full body width.
+   Toggle lives in options.html as "Rating layout". See #111. */
+.game-card-strip { display: none; }
+[data-card-layout="strip"] .game-card-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 0 0 26px;
+  width: 100%;
+  /* margin-top adds breathing space between the row text and the rating
+     strip so the title/sub aren't sandwiched against the bar. */
+  margin-top: 12px;
+  padding: 0 14px;
+  background: var(--s2);
+  color: var(--muted);
+  box-sizing: border-box;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: relative;
+}
+[data-card-layout="strip"] .game-card-strip .game-card-store-pill {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+[data-card-layout="strip"] .game-card-strip[data-tier="platinum"] { background: linear-gradient(90deg, #b4c7dc, #cad8e7); color: #0a0c10; }
+[data-card-layout="strip"] .game-card-strip[data-tier="gold"]     { background: linear-gradient(90deg, #cfb274, #e4cb8f); color: #0a0c10; }
+[data-card-layout="strip"] .game-card-strip[data-tier="silver"]   { background: linear-gradient(90deg, #a8b1bd, #c5cdd7); color: #0a0c10; }
+[data-card-layout="strip"] .game-card-strip[data-tier="bronze"]   { background: linear-gradient(90deg, #b07d4f, #cf9e6f); color: #0a0c10; }
+[data-card-layout="strip"] .game-card-strip[data-tier="borked"]   { background: linear-gradient(90deg, #884444, #b25555); color: #fff; }
+[data-card-layout="strip"] .game-card-strip-tier {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+[data-card-layout="strip"] .game-card-strip .game-card-store-pill {
+  /* Knock the store pill darker so it reads as a chip on top of the
+     tier-colored bar instead of competing with it. */
+  background: rgba(0, 0, 0, 0.22) !important;
+  color: inherit;
+  font-size: 0.62rem;
+  padding: 2px 8px;
+}
+[data-card-layout="strip"] .game-card-right { display: none; }
+/* Hide the inline pill inside the strip whenever the store badge lives
+   somewhere else: on the artwork ('art'), as a card-level corner piece
+   ('art-corner'), inline next to the tier ('bar-inline'), or as the
+   trailing strip segment ('bar-segment'). The default 'right' placement
+   keeps the pill in the strip since the right column is hidden in strip
+   mode and the strip is the only spot left. */
+[data-card-layout="strip"][data-store-pill-pos="art"] .game-card-strip .game-card-store-pill,
+[data-card-layout="strip"][data-store-pill-pos="art-corner"] .game-card-strip .game-card-store-pill,
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip .game-card-store-pill,
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .game-card-strip .game-card-store-pill { display: none; }
+/* bar-inline: store badge sits flush to the right of the tier label.
+   Honors the global store-display pref -- shows the text label by
+   default, the round glyph when display=icon. No shadow, no background,
+   no padding; the tier-color gradient is the backdrop. */
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip {
+  gap: 6px;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip-store {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip-store > svg {
+  width: 16px;
+  height: 16px;
+}
+/* Text mode: the store label gets a brand-colored pill so it stays
+   readable against any tier strip color. */
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip-store > .store-text {
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: #fff;
+  line-height: 1.4;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip[data-store="steam"] .game-card-strip-store > .store-text { background: #1689d0; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip[data-store="gog"]   .game-card-strip-store > .store-text { background: #7a3fcf; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip[data-store="epic"]  .game-card-strip-store > .store-text { background: #2a2a2a; }
+.load-more-btn {
+  display: block;
+  margin: 12px auto 0;
+  padding: 8px 24px;
+  background: var(--s2);
+  color: var(--muted);
+  border: none;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.load-more-btn:hover {
+  background: var(--s3);
+  color: var(--fg);
+}
+@media (max-width: 480px) {
+  .game-card-thumb { width: 60px; height: 28px; }
+  .game-card-title { font-size: 0.88rem; }
+  .game-card-sub   { font-size: 0.72rem; }
+}
+
+/* Floating "Copied" tooltip for clipboard buttons */
+.copy-tooltip {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30,30,46,0.95);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 4px;
+  color: #eee;
+  font-size: 0.72rem;
+  padding: 2px 7px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+  z-index: 10;
+}
+.copy-tooltip--show { opacity: 1; }
+
+/* ---- Toasts (js/lib/toast.js) -------------------------------------------
+   Transient action feedback. Stacks bottom-right, slides in/out, auto-dismiss.
+   Sits above modals/overlays. */
+.pp-toast-container {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: min(360px, calc(100vw - 32px));
+  pointer-events: none;
+}
+.pp-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 12px 11px 14px;
+  border-radius: 8px;
+  background: var(--s2);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--muted);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  font-size: 0.88rem;
+  line-height: 1.4;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.pp-toast--in { opacity: 1; transform: translateY(0); }
+.pp-toast--out { opacity: 0; transform: translateY(8px); }
+.pp-toast--success { border-left-color: var(--green); }
+.pp-toast--error { border-left-color: var(--red); }
+.pp-toast--info { border-left-color: var(--accent); }
+.pp-toast-msg { flex: 1 1 auto; min-width: 0; word-wrap: break-word; }
+.pp-toast-close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+}
+.pp-toast-close:hover { color: var(--fg); }
+@media (max-width: 480px) {
+  .pp-toast-container { right: 10px; left: 10px; bottom: 10px; max-width: none; }
+}

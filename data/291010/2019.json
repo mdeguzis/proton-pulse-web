@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "291010",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Game ran without any issues.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559771133,
+    "title": "The Hat Man: Shadow Ward",
+    "source": "protondb"
+  }
+]

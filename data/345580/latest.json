@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "345580",
+    "title": "Universal Combat CE",
+    "timestamp": 1535400383,
+    "rating": "Gold",
+    "notes": "Needed to run in a window initially (-w launch argument)",
+    "os": "Fedora 28 64-bit (Kernel  4.17.17)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-4300U / iGPU HD 4400",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "345580",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game will hang during 3000AD intro cutscene. After disabling the cutscene with launch parameter /n the game ran fine but loading times are extremely long. Loading a mission/save can take up to 10 minutes and the game freezes for several seconds when accessing the ships computers. Otherwise performance was acceptable.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15993 Mb",
+    "rating": "Silver",
+    "timestamp": 1538432405,
+    "title": "Universal Combat CE",
+    "source": "protondb"
+  },
+  {
+    "appId": "345580",
+    "title": "Universal Combat CE",
+    "timestamp": 1535385983,
+    "rating": "Gold",
+    "notes": "Needed to run in a window initially (-w launch argument)",
+    "os": "Fedora 28 64-bit (Kernel  4.17.17)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-4300U / iGPU HD 4400",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

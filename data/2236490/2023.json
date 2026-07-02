@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2236490",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "no keyboard/button  support but otherwise usable on the steamm deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1697935828,
+    "title": "Lost Abroad Caf\u00e9: A Language Learning Management Sim",
+    "source": "protondb"
+  }
+]

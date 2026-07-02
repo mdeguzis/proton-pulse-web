@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "209730",
+    "title": "RAW - Realms of Ancient War",
+    "timestamp": 1535041260,
+    "rating": "Bronze",
+    "notes": "Launcher settings doesnt show up. Stucks on black screen after start a new campaign. Loading old campaign works fine.",
+    "os": "Manjaro 17.1.12 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 2600K / GTX760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "209730",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Config doesn't start, menu works but can't start new game",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Borked",
+    "timestamp": 1536692810,
+    "title": "R.A.W. Realms of Ancient War",
+    "source": "protondb"
+  },
+  {
+    "appId": "209730",
+    "title": "RAW - Realms of Ancient War",
+    "timestamp": 1535026860,
+    "rating": "Bronze",
+    "notes": "Launcher settings doesnt show up. Stucks on black screen after start a new campaign. Loading old campaign works fine.",
+    "os": "Manjaro 17.1.12 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 2600K / GTX760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

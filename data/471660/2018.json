@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "471660",
+    "title": "Kingspray Graffiti",
+    "timestamp": 1535209768,
+    "rating": "Borked",
+    "notes": "Menu works, after selecting Single or Multiplayer it loads forever",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "471660",
+    "title": "Kingspray Graffiti",
+    "timestamp": 1535213351,
+    "rating": "Silver",
+    "notes": "Works after restarting of Steam / Multiplayer not testet",
+    "os": "Arch (KErnel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "471660",
+    "title": "Kingspray Graffiti",
+    "timestamp": 1535195368,
+    "rating": "Borked",
+    "notes": "Menu works, after selecting Single or Multiplayer it loads forever",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "471660",
+    "title": "Kingspray Graffiti",
+    "timestamp": 1535198951,
+    "rating": "Silver",
+    "notes": "Works after restarting of Steam / Multiplayer not testet",
+    "os": "Arch (KErnel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

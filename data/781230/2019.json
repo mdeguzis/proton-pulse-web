@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "781230",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Works running bubble.exe with W.I.N.E. 4.13; does not work properly using Steam Proton 4.11-3.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1566888656,
+    "title": "Bubble Ghost",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "710030",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Performance is Lower than windows in some scenarios but you can put it down to Unity being Unity. The biggest FPS drops are in the puzzle side quest, main campaign runs fine minus the small dungeon horde levels but its all perfectly playable.",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "4.2.2",
+    "protonVersionManual": "4.2.2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555397884,
+    "title": "Cinderella Escape 2 Revenge",
+    "source": "protondb"
+  },
+  {
+    "appId": "710030",
+    "cpu": "Intel Core i5-3450 @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 550 Ti",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-154-generic",
+    "notes": "Need to set \"PROTON_NO_D3D11=1 %command%\" in launch options or game don't start. \nI have some freezes in cut scene. But generally - it works. Game-pad (logitech) also works.",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1562719850,
+    "title": "Cinderella Escape 2 Revenge",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

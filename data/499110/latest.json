@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "499110",
+    "cpu": "AMD A10-7860K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "3.16.0-38-generic",
+    "notes": "The only thing that prevents this from getting platinum is that the game process had to be manually stopped a couple of times.",
+    "os": "Linux Mint 17.2 Rafaela",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Gold",
+    "timestamp": 1565828647,
+    "title": "Dark Parables: Rise of the Snow Queen Collector's Edition",
+    "source": "protondb"
+  }
+]

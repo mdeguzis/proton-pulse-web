@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3051470",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.5-200.fc43.x86_64",
+    "notes": "Fedora 43 KDE - Runs perfectly out of the box, no hiccups",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1769008555,
+    "title": "Kaya's Prophecy",
+    "source": "protondb"
+  }
+]

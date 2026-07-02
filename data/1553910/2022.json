@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1553910",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.18.16-arch1-1",
+    "notes": "All Proton instance are unable to run it\n\nEven Custom GE",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "7.0-3",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1660172945,
+    "title": "My Friend Stalin",
+    "source": "protondb"
+  }
+]

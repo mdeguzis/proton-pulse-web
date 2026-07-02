@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "807880",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "No Issues",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562452042,
+    "title": "Mermaid Land",
+    "source": "protondb"
+  },
+  {
+    "appId": "807880",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.4.0-151-generic",
+    "notes": "I forgot that it wasn't a native game. It works flawlessly.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1568004327,
+    "title": "Mermaid Land",
+    "source": "protondb"
+  }
+]

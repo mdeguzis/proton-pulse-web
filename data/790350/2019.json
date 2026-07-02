@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "790350",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "Graphics very pixilated / low-resolution at first even though all graphics options were set to High. Fixed the problem by resetting to default graphics settings and/or restarting the game (can't remember which step fixed it). No problems since. Also, I needed to switch from fullscreen to borderless window in order to hide Plasma desktop panels. Now it plays beautifully!",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1555259830,
+    "title": "The Inner Friend",
+    "source": "protondb"
+  }
+]

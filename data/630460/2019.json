@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "630460",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Definitely didn't make it to top of the tower, but played through the first 30 floors without an issue. Also had no issues with screen resizing or toggling fullscreen mode, as well as manipulating other options.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562161496,
+    "title": "Fist's Elimination Tower",
+    "source": "protondb"
+  }
+]

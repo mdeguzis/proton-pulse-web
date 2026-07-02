@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2755990",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.4, DRM 3.64, 6.17.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.5-arch1.2",
+    "kernel": "6.17.5-arch1-1",
+    "notes": "Demo works well except for a small quirk",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1768439678,
+    "title": "Miss Paint",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1394340",
+    "cpu": "Intel Xeon E-2286M @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T2000",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "7.0.1-200.nobara.fc43.x86_64",
+    "notes": "Runs perfectly",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1778956570,
+    "title": "DreamDasher",
+    "source": "protondb"
+  }
+]

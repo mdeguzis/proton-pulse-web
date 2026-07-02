@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "475080",
+    "title": "Cavernus",
+    "timestamp": 1535881250,
+    "rating": "Borked",
+    "notes": "Nothing appears on screen",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "475080",
+    "title": "Cavernus",
+    "timestamp": 1535866850,
+    "rating": "Borked",
+    "notes": "Nothing appears on screen",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

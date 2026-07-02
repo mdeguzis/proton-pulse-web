@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "274350",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "4.2 Mesa 22.2.5",
+    "kernel": "5.19.0-40-generic",
+    "notes": "Game only worked on Proton-6.21-GE-2",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1727256034,
+    "title": "",
+    "source": "protondb"
+  }
+]

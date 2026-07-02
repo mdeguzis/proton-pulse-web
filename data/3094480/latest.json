@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3094480",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.6, DRM 3.61, 6.12.69-1-lts)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.1",
+    "kernel": "6.12.69-1-lts",
+    "notes": "Minor bugs experienced (not sure if game or OS) but overall worked as expected",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1774049352,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "767560",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.2",
+    "kernel": "4.19.13-1-MANJARO",
+    "notes": "Work Perfectly",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1550414845,
+    "title": "War Robots",
+    "source": "protondb"
+  },
+  {
+    "appId": "767560",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "runs flawlessly",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566158767,
+    "title": "War Robots",
+    "source": "protondb"
+  },
+  {
+    "appId": "767560",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "Working out of the box. Just installed and play. Performance is ok and there wasn't any kind of errors or glitches,. I runs perfect.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568416868,
+    "title": "War Robots",
+    "source": "protondb"
+  }
+]

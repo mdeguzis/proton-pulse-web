@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "210550",
+    "cpu": "Intel Core i3-4005U @ 1.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce 820M",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.1.3-arch1-1-ARCH",
+    "notes": "Runs fine. Hangs after change windowed/fullscreen mode.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1558599422,
+    "title": "Angry Birds Space",
+    "source": "protondb"
+  },
+  {
+    "appId": "210550",
+    "cpu": "AMD Athlon 200GE with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-25-generic",
+    "notes": "I played some levels, works perfectly out of the box",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-2",
+    "ram": "13 GB",
+    "rating": "Platinum",
+    "timestamp": 1565913320,
+    "title": "Angry Birds Space",
+    "source": "protondb"
+  }
+]

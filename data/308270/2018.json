@@ -1,0 +1,30 @@
+[
+  {
+    "appId": "308270",
+    "cpu": "i5-3570K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Performance is the same or better than windows. The launcher seems to stick to the mouse on exit but can simply be alt-f4'd.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Buzz Aldrin's Space Program Manager",
+    "source": "protondb"
+  },
+  {
+    "appId": "308270",
+    "cpu": "AMD A4-6210 APU with AMD Radeon R3 Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.18.0-2-amd64",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Default",
+    "ram": "11 GB",
+    "rating": "Platinum",
+    "timestamp": 1542570930,
+    "title": "Buzz Aldrin's Space Program Manager",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "223870",
+    "title": "Ys II",
+    "timestamp": 1534979582,
+    "rating": "Silver",
+    "notes": "cutscene videos do not load but the game appears to run fine.  must turn off fullscreen in configuration to prevent black screen when alt-tabbing",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.65-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-3770 / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "223870",
+    "title": "Ys II",
+    "timestamp": 1534965182,
+    "rating": "Silver",
+    "notes": "cutscene videos do not load but the game appears to run fine.  must turn off fullscreen in configuration to prevent black screen when alt-tabbing",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.65-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-3770 / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

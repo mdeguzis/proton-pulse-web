@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "751730",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-arch1-1-fsync",
+    "notes": "it works ootb",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567851103,
+    "title": "Tennis Arcade VR",
+    "source": "protondb"
+  }
+]

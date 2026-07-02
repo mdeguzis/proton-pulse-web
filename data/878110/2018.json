@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "878110",
+    "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 530 (Skylake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Entire OS froze completely a few second after the initial logo of the game appeared. Couldn't get out of it in anyway other than forcefully shutting down the machine. I'm on a laptop, so I also tried with optirun (GTX 960M; driver 396.54), same thing.",
+    "os": "KDE neon User Edition 5.13 (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15923 Mb",
+    "rating": "Borked",
+    "timestamp": 1537637316,
+    "title": "Fuel Renegades",
+    "source": "protondb"
+  }
+]

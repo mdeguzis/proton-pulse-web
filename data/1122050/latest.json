@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "1122050",
+    "cpu": "Intel Core i3-3220 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.14-arch2-1-ARCH",
+    "notes": "Crashes on launch, doesn't give any error message",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1571065719,
+    "title": "Gensokyo Night Festival",
+    "source": "protondb"
+  },
+  {
+    "appId": "1122050",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-31-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571273429,
+    "title": "Gensokyo Night Festival",
+    "source": "protondb"
+  },
+  {
+    "appId": "1122050",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.6-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1572192659,
+    "title": "Gensokyo Night Festival",
+    "source": "protondb"
+  }
+]

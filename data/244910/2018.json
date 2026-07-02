@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "244910",
+    "title": "Homesick",
+    "timestamp": 1535019165,
+    "rating": "Borked",
+    "notes": "Nothing. It seems to fail when Steam tries to do the initial config",
+    "os": "ArchLinux (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 2600 / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "244910",
+    "cpu": "Intel(R) Core(TM) i5-7440HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.8-ext73-58.8-kabylake",
+    "notes": "does not start",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "7911 Mb",
+    "rating": "Borked",
+    "timestamp": 1537423491,
+    "title": "Homesick",
+    "source": "protondb"
+  },
+  {
+    "appId": "244910",
+    "cpu": "Intel(R) Core(TM) i7-4930K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation TITAN V/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Does not start.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64362 Mb",
+    "rating": "Borked",
+    "timestamp": 1539045769,
+    "title": "Homesick",
+    "source": "protondb"
+  },
+  {
+    "appId": "244910",
+    "title": "Homesick",
+    "timestamp": 1535004765,
+    "rating": "Borked",
+    "notes": "Nothing. It seems to fail when Steam tries to do the initial config",
+    "os": "ArchLinux (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 2600 / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

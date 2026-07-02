@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "516130",
+    "cpu": "AMD A9-9420 RADEON R5, 5 COMPUTE CORES 2C+3G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD STONEY",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-43-generic",
+    "notes": "After enabling WineD3D11, it works fine. There are some missing textures, that I could fix by lowering the texture quality. Controller is supported out of the box. The menus are fine, but actual gameplay lags making it hard to play.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1546709844,
+    "title": "Runner3",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "516130",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.5",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Pressing Alt + Tab while fullscreen will shrink the game and block all keyboard and controller input.",
+    "os": "Linux 4.x",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554690240,
+    "title": "Runner3",
+    "source": "protondb"
+  },
+  {
+    "appId": "516130",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-60-generic",
+    "notes": "Platinum if you run it under a normal linux OS under a normal PC, but if you are using a steamos session, it runs only the first time you download it, and if you have HDMI audio (TV) you will hear nothing.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1567794523,
+    "title": "Runner3",
+    "source": "protondb"
+  }
+]

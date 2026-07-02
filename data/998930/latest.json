@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "998930",
+    "cpu": "Intel Core i5-7260U @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Iris Plus 640 (Kaby Lake GT3e)",
+    "gpuDriver": "3.0 Mesa 19.0.4",
+    "kernel": "5.0.16-300.fc30.x86_64",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558439869,
+    "title": "Seek Girl",
+    "source": "protondb"
+  },
+  {
+    "appId": "998930",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.1.3-arch2-1-ARCH",
+    "notes": "Black title screen, don't know if it's supposed to be like that. Works perfectly otherwise.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558606158,
+    "title": "Seek Girl",
+    "source": "protondb"
+  }
+]

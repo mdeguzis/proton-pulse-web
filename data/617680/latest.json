@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "617680",
+    "cpu": "Intel Core i3-2310M @ 2.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-42-generic",
+    "notes": "The game does not launch at all. It seems that the installation of Microsoft VC Redist Package fails because it runs every time I attempt to start the game.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544085890,
+    "title": "Drunk-Fu: Wasted Masters",
+    "source": "protondb"
+  }
+]

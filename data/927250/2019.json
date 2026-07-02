@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "927250",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "Works perfectly. Controller was recognized with no problem.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554557787,
+    "title": "Bladed Fury",
+    "source": "protondb"
+  },
+  {
+    "appId": "927250",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "The game loads, but I couldn't \"agree\" with the policy (choosing the agree option would make the confirmation sound but nothing would happen, I was obliged to chose the \"back\" option and leave the game).\nI tried to load the game on windows to pass this step. It worked, but the title screen offers me no option (controller buttons give no audible feedback either), so all I'm left with is alt+F4\n\nI tried using proton 4.11, but had the same results.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565469034,
+    "title": "Bladed Fury",
+    "source": "protondb"
+  },
+  {
+    "appId": "927250",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.27.01",
+    "kernel": "5.3.5-10.5-tkg-pds",
+    "notes": "The works with perfect graphics, sound and controls. Already played for 4 hours and there's no problems at all, just pick up and play ! ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571196323,
+    "title": "Bladed Fury",
+    "source": "protondb"
+  }
+]

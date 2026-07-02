@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1418720",
+    "cpu": "13th Gen Intel Core i5-13400F",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.1.0-26-amd64",
+    "notes": "It's rather frustrating having the game slowed to a crawl just from navigating tabs...",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1728603477,
+    "title": "Fleshcult",
+    "source": "protondb"
+  }
+]

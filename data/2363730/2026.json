@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2363730",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 21.1.6, DRM 3.64, 6.17.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.2",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1767830898,
+    "title": "",
+    "source": "protondb"
+  }
+]

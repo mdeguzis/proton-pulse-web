@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "229810",
+    "title": "A Fistful of Gun",
+    "timestamp": 1534960706,
+    "rating": "Bronze",
+    "notes": "Fullscreen doesn't work.",
+    "os": "Antergos 64-Bit (Kernel 4.18.3)",
+    "gpuDriver": "AMDGPU Mesa 18.1.6",
+    "specs": "i5 6500 / R9 380",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "229810",
+    "cpu": "Intel(R) Core(TM) i7-4712HQ CPU @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Full screen doesn't work, but otherwise perfect.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "15956 Mb",
+    "rating": "Silver",
+    "timestamp": 1539649613,
+    "title": "A Fistful of Gun",
+    "source": "protondb"
+  },
+  {
+    "appId": "229810",
+    "title": "A Fistful of Gun",
+    "timestamp": 1534946306,
+    "rating": "Bronze",
+    "notes": "Fullscreen doesn't work.",
+    "os": "Antergos 64-Bit (Kernel 4.18.3)",
+    "gpuDriver": "AMDGPU Mesa 18.1.6",
+    "specs": "i5 6500 / R9 380",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

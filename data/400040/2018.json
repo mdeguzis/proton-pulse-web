@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "400040",
+    "title": "ShareX",
+    "timestamp": 1535316849,
+    "rating": "Borked",
+    "notes": "Won't start with any message. Crash suspected.",
+    "os": "Ubuntu 18.04.1 Bionic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i3-2310M / Nvidia GeForce GT 520m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "400040",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.18-041518-generic",
+    "os": "Ubuntu 18.04.1 LTS (64-bit)",
+    "protonVersion": "3.7",
+    "ram": "7974 Mb",
+    "rating": "Borked",
+    "timestamp": 1537406724,
+    "title": "ShareX",
+    "source": "protondb"
+  },
+  {
+    "appId": "400040",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.18-041518-generic",
+    "notes": "no message if error, not start",
+    "os": "Ubuntu 18.04.1 LTS (64-bit)",
+    "protonVersion": "3.7",
+    "ram": "7974 Mb",
+    "rating": "Borked",
+    "timestamp": 1537406825,
+    "title": "ShareX",
+    "source": "protondb"
+  },
+  {
+    "appId": "400040",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.18-041518-generic",
+    "notes": "don't open ",
+    "os": "Ubuntu 18.04.1 LTS (64-bit)",
+    "protonVersion": "3.7",
+    "ram": "7974 Mb",
+    "rating": "Borked",
+    "timestamp": 1537465626,
+    "title": "ShareX",
+    "source": "protondb"
+  },
+  {
+    "appId": "400040",
+    "title": "ShareX",
+    "timestamp": 1535302449,
+    "rating": "Borked",
+    "notes": "Won't start with any message. Crash suspected.",
+    "os": "Ubuntu 18.04.1 Bionic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i3-2310M / Nvidia GeForce GT 520m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1384620",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 15.0.7, DRM 3.54, 6.5.0-10-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3",
+    "kernel": "6.5.0-10-generic",
+    "notes": "",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1763492177,
+    "title": "Ninja Hanrei",
+    "source": "protondb"
+  }
+]

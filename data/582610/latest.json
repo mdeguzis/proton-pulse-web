@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "582610",
+    "title": "Z-End",
+    "timestamp": 1535420358,
+    "rating": "Borked",
+    "notes": "Crashes on launch (error log: ZEnd.exe caused an Access Violation (0xc0000005) in module ZEnd.exe at 0023:00c17969). Shows as Running until force quit.",
+    "os": "Ubuntu 17.10 64-bit",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "582610",
+    "title": "Z-End",
+    "timestamp": 1535405958,
+    "rating": "Borked",
+    "notes": "Crashes on launch (error log: ZEnd.exe caused an Access Violation (0xc0000005) in module ZEnd.exe at 0023:00c17969). Shows as Running until force quit.",
+    "os": "Ubuntu 17.10 64-bit",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

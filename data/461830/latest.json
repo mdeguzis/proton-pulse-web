@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "461830",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Small windowed game ( same in Windoz too ). Plays fine.  One issue : no sound ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564034320,
+    "title": "Adventure Apes and the Mayan Mystery",
+    "source": "protondb"
+  }
+]

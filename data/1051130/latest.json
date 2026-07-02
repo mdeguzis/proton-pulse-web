@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1051130",
+    "cpu": "Intel Core i7-2640M @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 17.0.7",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Won't start, only \"DX11 feature level 10.0 is required to run the engine\" appears",
+    "os": "Ubuntu 16.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555627436,
+    "title": "Trial of the Towers",
+    "source": "protondb"
+  }
+]

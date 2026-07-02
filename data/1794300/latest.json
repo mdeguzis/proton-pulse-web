@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1794300",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.5-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.5",
+    "kernel": "6.18.5-2-cachyos",
+    "notes": "Works still great OOTB",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768543009,
+    "title": "",
+    "source": "protondb"
+  }
+]

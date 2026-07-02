@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "314150",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.10-050010-lowlatency",
+    "notes": "Error message \"Microsoft Visual C++ Runtime Library\" when launching the game. Need to click ignore a few time to make the game load, the game itself is then playable..",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556617638,
+    "title": "Double Dragon Trilogy",
+    "source": "protondb"
+  },
+  {
+    "appId": "314150",
+    "cpu": "Intel Core i7-4800MQ @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.1",
+    "kernel": "4.19.56_1",
+    "notes": "Couple of error messages on game launch which need to be ignored, otherwise works as expected.",
+    "os": "Void Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1563796610,
+    "title": "Double Dragon Trilogy",
+    "source": "protondb"
+  }
+]

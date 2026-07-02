@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "48210",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "freezes when connecting to uplay",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "3.7.6",
+    "ram": "15981 MB",
+    "rating": "Borked",
+    "timestamp": 1536876410,
+    "title": "The Settlers 7: Paths to a Kingdom: Deluxe Gold Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "48210",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.18.0-3-amd64",
+    "notes": "ubisoftgamelauncher was startet on first run, completed an update and now crashes at start with the following backtrace.\n\nBacktrace:\n=>0 0x006586c2 in ubisoftgamelauncher (+0x2586c2) (0x0ae2e40c)\n    1 0x000032c8 (0xd03362d8)\n",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1545827589,
+    "title": "The Settlers 7: Paths to a Kingdom: Deluxe Gold Edition",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

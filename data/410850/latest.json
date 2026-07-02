@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "410850",
+    "title": "Dragon Quest Heroes",
+    "timestamp": 1534941361,
+    "rating": "Borked",
+    "notes": "Hangs after the splash screen.",
+    "os": "Manjaro",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 1600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "410850",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.19.0-1-MANJARO",
+    "notes": "Disable movies or you'll get a black screen before the title. Runs fine after that.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6-Beta",
+    "ram": "16040 Mb",
+    "rating": "Gold",
+    "timestamp": 1536616617,
+    "title": "DRAGON QUEST HEROES\u2122 Slime Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "410850",
+    "title": "Dragon Quest Heroes",
+    "timestamp": 1534926961,
+    "rating": "Borked",
+    "notes": "Hangs after the splash screen.",
+    "os": "Manjaro",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 1600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

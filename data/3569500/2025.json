@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3569500",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.6-arch1-1",
+    "notes": "Except for the antialiasing, a OOTB experience.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1759836659,
+    "title": "",
+    "source": "protondb"
+  }
+]

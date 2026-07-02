@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1074030",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.2 (git-4d5e73870e)",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "Worked Perfectly w/ 7.0.6, crashed on newer versions",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1683538489,
+    "title": "Melon Journey: Bittersweet Memories",
+    "source": "protondb"
+  }
+]

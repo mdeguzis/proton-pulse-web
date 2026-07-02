@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "292480",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "White window, shuts down.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558864125,
+    "title": "Magical Battle Festa",
+    "source": "protondb"
+  }
+]

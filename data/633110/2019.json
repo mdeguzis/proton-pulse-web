@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "633110",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1554922651,
+    "title": "FAST BEAT LOOP RACER GT | \u74b0\u72c0\u8cfd\u8ecaGT",
+    "source": "protondb"
+  },
+  {
+    "appId": "633110",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game fails to launch. Disabling esync did not help, and disabling D3d11 gave an error message about failing to find compatible Direct3d devices.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558285069,
+    "title": "FAST BEAT LOOP RACER GT | \u74b0\u72c0\u8cfd\u8ecaGT",
+    "source": "protondb"
+  },
+  {
+    "appId": "633110",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Crashes at Startup, Disable Esync/Disable D3d11/Use Wine D3d11 tweaks had no effect. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1562689430,
+    "title": "FAST BEAT LOOP RACER GT | \u74b0\u72c0\u8cfd\u8ecaGT",
+    "source": "protondb"
+  }
+]

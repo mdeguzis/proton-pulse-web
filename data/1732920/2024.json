@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1732920",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "1728093750",
+    "gpuDriver": "Disabled",
+    "kernel": "6.11.2-arch1-1",
+    "notes": "broken. none of the proton versions works (despite using unity)",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "Nvidia GPU 70 HDMI/DP",
+    "rating": "borked",
+    "timestamp": 1728417460,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "591740",
+    "cpu": "AMD A8-7600 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "3.0 Mesa 18.0.4",
+    "kernel": "4.15.0-29deepin-generic",
+    "notes": "El juego pasa de la pantalla de inicio del juego. Y se cierra al instante. la version de Proton es la 4.4.2 luego prob\u00e9 versiones mas antiguas. ",
+    "os": "Deepin 15.9.2",
+    "protonVersion": "4.4.2",
+    "protonVersionManual": "4.4.2",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1554608832,
+    "title": "Sniper Fury",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "591740",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 570",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Using the launch option of PROTON_USE_WINED3D does allow my GTX 570 to launch the game and show the Gameloft logo and the mouse cursor is changed to the in-game one, but after a few seconds the screen goes blank and crashes.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558812958,
+    "title": "Sniper Fury",
+    "source": "protondb"
+  },
+  {
+    "appId": "591740",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "5.1.4-arch1-1-ARCH",
+    "notes": "Shows gameloft logo but crashes after a couple of seconds. Tried both WineD3d11 and no-esync. ",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559210277,
+    "title": "Sniper Fury",
+    "source": "protondb"
+  },
+  {
+    "appId": "591740",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "I see a splash screen but the game doesn't launch and it goes back to desktop..",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568465804,
+    "title": "Sniper Fury",
+    "source": "protondb"
+  }
+]

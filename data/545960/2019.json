@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "545960",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.3.0-19-generic",
+    "notes": "Could not click start button in menu. Crashed on exit and stayed running in memory.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1577600247,
+    "title": "Wild Animals - Animated Jigsaws",
+    "source": "protondb"
+  }
+]

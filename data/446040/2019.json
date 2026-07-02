@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "446040",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Performance was good. Completed the game with most characters.",
+    "os": "SteamOS 2.0",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1562100052,
+    "title": "Blade Arcus from Shining: Battle Arena",
+    "source": "protondb"
+  },
+  {
+    "appId": "446040",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "Controller button mapping is in correct",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566046757,
+    "title": "Blade Arcus from Shining: Battle Arena",
+    "source": "protondb"
+  },
+  {
+    "appId": "446040",
+    "cpu": "Intel Core i7-4702MQ @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.14-200.fc30.x86_64",
+    "notes": "This game detects my HP laptop accelerometer as the first gamepad so actual gamepad is detected as the second gamepad. This gamepad can be used in battle but cannot be used to navigate through menu and continue story mode. \nTo disable the accelerometer run \"sudo rmmod hp_accel\" or add \"blacklist hp_accel\" to \"/etc/modprobe.d/blacklist.conf\" without quotes (requires root privileges and reboot).\nNOTE an accelerometer is used to protect a hard drive against damage so this tweak is potentially DANGEROUS FOR YOUR HARDWARE!",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Bronze",
+    "timestamp": 1568913201,
+    "title": "Blade Arcus from Shining: Battle Arena",
+    "source": "protondb"
+  }
+]

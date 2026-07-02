@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "356130",
+    "cpu": "Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz",
+    "gpu": "NVIDIA Corporation GeForce GT 630/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "message: \"Sorry. could not connect to server. Try again\"",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "5944 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537486424,
+    "title": "Heroes of Scene",
+    "source": "protondb"
+  }
+]

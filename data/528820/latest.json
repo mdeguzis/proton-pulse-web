@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "528820",
+    "title": "Eisenwald: Blood of November",
+    "timestamp": 1535546542,
+    "rating": "Borked",
+    "notes": "Crashes when starting new game",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "528820",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Seems to run fine but I saw a dialog about an EAccessViolation when I quit.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Gold",
+    "timestamp": 1539225530,
+    "title": "Eisenwald: Blood of November",
+    "source": "protondb"
+  },
+  {
+    "appId": "528820",
+    "title": "Eisenwald: Blood of November",
+    "timestamp": 1535532142,
+    "rating": "Borked",
+    "notes": "Crashes when starting new game",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

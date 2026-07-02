@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "411970",
+    "title": "Ty the Tasmanian Tiger 2",
+    "timestamp": 1535769660,
+    "rating": "Silver",
+    "notes": "Wholly playable, some performance drops compared to running on Windows, no working controller support.",
+    "os": "Linux Mint Debian Edition 3 64-bit (Kernel 4.9.0-8)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-4670k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "411970",
+    "cpu": "Intel Core i7-4770K @ 4.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Runs perfectly! PS4 controller works for me when I connect it through USB and disable controller support in steam. The game can stutter a bit at first when loading stuff for the first time as the same with any other proton compatible game.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546156640,
+    "title": "TY the Tasmanian Tiger 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "411970",
+    "title": "Ty the Tasmanian Tiger 2",
+    "timestamp": 1535755260,
+    "rating": "Silver",
+    "notes": "Wholly playable, some performance drops compared to running on Windows, no working controller support.",
+    "os": "Linux Mint Debian Edition 3 64-bit (Kernel 4.9.0-8)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-4670k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

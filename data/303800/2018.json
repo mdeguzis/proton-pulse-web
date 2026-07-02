@@ -1,0 +1,119 @@
+[
+  {
+    "appId": "303800",
+    "title": "The Witcher Adventure Game",
+    "timestamp": 1534910400,
+    "rating": "Silver",
+    "notes": "Requires DX11 disabled...i.e. DX9 only currently",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Intel Mesa 18.3",
+    "specs": "i5-4590s / Intel HD4600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "303800",
+    "title": "The Witcher Adventure Game",
+    "timestamp": 1536259852,
+    "rating": "Platinum",
+    "notes": "No issues, works out of the box. Online play not tested.",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 5 1600X / RX 480",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "303800",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz",
+    "gpu": "GeForce 9700M GTS/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.106",
+    "kernel": "4.15.0-33-generic",
+    "notes": "The game crashes on launching.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7972 Mb",
+    "rating": "Borked",
+    "timestamp": 1536671537,
+    "title": "The Witcher Adventure Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "303800",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Add PROTON_NO_D3D11=1 %command% to the Launch settings. With it, runs flawlessly.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15923 Mb",
+    "rating": "Gold",
+    "timestamp": 1538344099,
+    "title": "The Witcher Adventure Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "303800",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Works perfectly after disabling D3D11",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1541267923,
+    "title": "The Witcher Adventure Game",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "303800",
+    "cpu": "AMD FX-4100 Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 580",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.18.5-041805-generic",
+    "notes": "Online not tested. ",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1543092367,
+    "title": "The Witcher Adventure Game",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "303800",
+    "title": "The Witcher Adventure Game",
+    "timestamp": 1534896000,
+    "rating": "Silver",
+    "notes": "Requires DX11 disabled...i.e. DX9 only currently",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Intel Mesa 18.3",
+    "specs": "i5-4590s / Intel HD4600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "303800",
+    "title": "The Witcher Adventure Game",
+    "timestamp": 1536245452,
+    "rating": "Platinum",
+    "notes": "No issues, works out of the box. Online play not tested.",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 5 1600X / RX 480",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

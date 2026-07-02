@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "263260",
+    "title": "Motor Rock",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Music has glitches during menu/intro, and game crashes before starting race",
+    "os": "Elementary OS 0.5",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900x / RX 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "263260",
+    "title": "Motor Rock",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Music has glitches during menu/intro, and game crashes before starting race",
+    "os": "Elementary OS 0.5",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900x / RX 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

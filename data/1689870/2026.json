@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1689870",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Ryzen 9 9950X3D 16-Core Processor (radeonsi, raphael_mendocino, ACO, DRM 3.64, 6.17.0-22-generic)",
+    "gpuDriver": "4.6 Mesa 26.0.5 - kisak-mesa PPA",
+    "kernel": "6.17.0-22-generic",
+    "notes": "Playable but crucial videos don't play automatically",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "silver",
+    "timestamp": 1777571560,
+    "title": "Meridian 157: Chapter 3",
+    "source": "protondb"
+  }
+]

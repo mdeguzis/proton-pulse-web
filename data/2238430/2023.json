@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2238430",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works fine out of the box",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1695416499,
+    "title": "Mon-Yu: Defeat Monsters And Gain Strong Weapons And Armor. You May Be Defeated, But Don\u2019t Give Up. Become Stronger. I Believe There Will Be A Day When The Heroes Defeat The Devil King.",
+    "source": "protondb"
+  }
+]

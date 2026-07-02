@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1710930",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.42.0, 5.14.0-2-amd64, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.14.0-2-amd64",
+    "notes": "Perfect. Was able to complete this short game with no issues.",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634266243,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "443860",
+    "title": "Riptide GP: Renegade",
+    "timestamp": 1534948724,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "OpenSUSE Leap 15.0",
+    "gpuDriver": "?",
+    "specs": "NVidia 1080 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "443860",
+    "title": "Riptide GP: Renegade",
+    "timestamp": 1535999067,
+    "rating": "Platinum",
+    "notes": "All OK",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i3 1,8ghz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "443860",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "like native",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541147577,
+    "title": "Riptide GP: Renegade",
+    "source": "protondb"
+  },
+  {
+    "appId": "443860",
+    "title": "Riptide GP: Renegade",
+    "timestamp": 1534934324,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "OpenSUSE Leap 15.0",
+    "gpuDriver": "?",
+    "specs": "NVidia 1080 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "443860",
+    "title": "Riptide GP: Renegade",
+    "timestamp": 1535984667,
+    "rating": "Platinum",
+    "notes": "All OK",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i3 1,8ghz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

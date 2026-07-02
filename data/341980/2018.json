@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "341980",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc4-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900rc4-generic",
+    "notes": "Runs like native but the first run in is stuttery (presumably shader cache is being built). The UI does not display correctly on resolutions beyond 1080p, but that is also a problem on windows.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15961 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539467728,
+    "title": "Dispatcher",
+    "source": "protondb"
+  }
+]

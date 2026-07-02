@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "407230",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17-300.fc30.x86_64",
+    "notes": "Upon starting the game you will see a tiny, black, window. To get some form of display you need to enter fullscreen via Alt + Enter, after which the game runs about perfectly. Be careful with hitting F5 though, as this changes the display mode and creates some pretty weird visual glitches on your desktop until you exit the game or get back into fullscreen. Another noteworthy issue is that you have to use your keyboard (tab, space, etc.) to navigate the settings as their popup window isn't focusable with the mouse.",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1559108361,
+    "title": "Legend of Mysteria RPG",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3061920",
+    "cpu": "AMD Ryzen 5 7520U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon 610M (radeonsi, raphael_mendocino, ACO, DRM 3.64, 7.0.8-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.1.0-arch2.1",
+    "kernel": "7.0.8-1-cachyos",
+    "notes": "The game needs a few Protontricks/Winetricks fixes to run properly",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1779041585,
+    "title": "",
+    "source": "protondb"
+  }
+]

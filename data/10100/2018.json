@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "10100",
+    "title": "King's Quest Collection",
+    "timestamp": 1535417112,
+    "rating": "Platinum",
+    "notes": "Completely Stable",
+    "os": "Debian Testing (Kernel 4.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4590 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "10100",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Launcher runs fine, everything else is DOSBox.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536343177",
+    "title": "King's Quest\u2122 Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "10100",
+    "title": "King's Quest Collection",
+    "timestamp": 1535402712,
+    "rating": "Platinum",
+    "notes": "Completely Stable",
+    "os": "Debian Testing (Kernel 4.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4590 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

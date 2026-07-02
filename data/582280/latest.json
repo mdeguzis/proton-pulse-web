@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "582280",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "It randomly crashes i.e. if you click something in menu or in options. But it works good when you play (until you die, then it may crash). 100% achievement are possible.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1565885990,
+    "title": "PIGMENTUM",
+    "source": "protondb"
+  }
+]

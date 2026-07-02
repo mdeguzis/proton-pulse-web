@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3439430",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.0.1",
+    "kernel": "6.2.9-arch1-1",
+    "notes": "Tryed several version of proton",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1767298189,
+    "title": "Gridle",
+    "source": "protondb"
+  }
+]

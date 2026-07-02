@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "331670",
+    "title": "The Jackbox Party Pack",
+    "timestamp": 1535506227,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Xeon E5 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "331670",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel (git-416abe8 2018-10-26 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Doesn't respect screen resolution but runs fine, if you run it then expect to have to mess with the settings after you close it. Or run it in windowed mode",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541193127,
+    "title": "The Jackbox Party Pack",
+    "source": "protondb"
+  },
+  {
+    "appId": "331670",
+    "title": "The Jackbox Party Pack",
+    "timestamp": 1535491827,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Xeon E5 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

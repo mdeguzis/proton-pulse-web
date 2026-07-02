@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "33670",
+    "cpu": "Intel Core i7         950  @ 3.07GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.27_1",
+    "notes": "Tutorial ran fine, no performance issues, game launches without issues.",
+    "os": "Void Linux",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1552343822,
+    "title": "Disciples III - Renaissance Steam Special Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "33670",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Installed the game and ran. Could not identify any issues. In some of the battle sequences the character models disappeared but I can't say if this is a wine issue or game issue.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1563124409,
+    "title": "Disciples III - Renaissance Steam Special Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "33670",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.16-041816-generic",
+    "notes": "The game is very buggy itself. I have compared with how it runs in windows and have not noticed anything new in Linux. Same game bugs. Besides those the game just runs out of the box with no additional issues",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564823563,
+    "title": "Disciples III - Renaissance Steam Special Edition",
+    "source": "protondb"
+  }
+]

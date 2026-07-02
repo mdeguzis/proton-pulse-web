@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "503550",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Geforce 710M",
+    "gpuDriver": "3.0 Mesa 19.2.6",
+    "kernel": "5.3.12-1-MANJARO",
+    "notes": "Unlike the native option, my wireless Xbox 360 controller works with Proton. On the native version, only the keyboard worked.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1575247471,
+    "title": "",
+    "source": "protondb"
+  }
+]

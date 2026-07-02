@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "804850",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.2-arch1-1-ARCH",
+    "notes": "Everything works except for the intro and any videos. Press esc or click anywhere to skip those. Gameplay proceeded in a stable fashion.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563957259,
+    "title": "Pax Nova",
+    "source": "protondb"
+  },
+  {
+    "appId": "804850",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.8-1-MANJARO",
+    "notes": "The two or three intro videos don't work, but clicking a few times bypasses them. After that the game appears to play perfectly. Max settings no frame rate issues or skips.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1566358113,
+    "title": "Pax Nova",
+    "source": "protondb"
+  },
+  {
+    "appId": "804850",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 480",
+    "gpuDriver": "4.6.13564 Compatibility Profile Context 5.0.19.20.7",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Other players noted that it was playable with Proton support. It seems some of the latest patches has broken it. Game runs, but I can't get beyond (failed) intro, which only shows a black screen.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1570317405,
+    "title": "Pax Nova",
+    "source": "protondb"
+  }
+]

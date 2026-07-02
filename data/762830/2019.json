@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "762830",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Only black screen after selecting 'play' on menu.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566587798,
+    "title": "Telling Lies",
+    "source": "protondb"
+  },
+  {
+    "appId": "762830",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.7-arch1-1-ARCH",
+    "notes": "Black screen instead of all gameplay visuals after the main menu.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566791989,
+    "title": "Telling Lies",
+    "source": "protondb"
+  },
+  {
+    "appId": "762830",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-70bb3c0bec)",
+    "kernel": "5.2.10-arch1-1-ARCH",
+    "notes": "Menu sounds work, pressing start game leads to a black screen",
+    "os": "Antergos Linux",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1567372425,
+    "title": "Telling Lies",
+    "source": "protondb"
+  }
+]

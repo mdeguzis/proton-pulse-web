@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1119730",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 19.1.6, DRM 3.59, 6.12.9-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 24.3.3-cachyos1.3",
+    "kernel": "6.12.9-3-cachyos",
+    "notes": "The game itself isn't optimized very good. Even under Windows the performance is only 'okay' compared to newer Games.",
+    "os": "CachyOS",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1737102597,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1119730",
+    "cpu": "AMD Ryzen 5 7535HS with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon 660M (radeonsi, rembrandt, LLVM 20.1.8, DRM 3.61, 6.12.41-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.1.7-arch1.1",
+    "kernel": "6.12.41-1-MANJARO",
+    "notes": "Works really good, just consider is an UE 5 game",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "6 GB",
+    "rating": "platinum",
+    "timestamp": 1757816916,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1119730",
+    "cpu": "AMD Ryzen 5 7535HS with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6500M (radeonsi, navi24, LLVM 21.1.4, DRM 3.64, 6.17.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.6-cachyos1.2",
+    "kernel": "6.17.6-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1762042928,
+    "title": "",
+    "source": "protondb"
+  }
+]

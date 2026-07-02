@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2282890",
+    "cpu": "Intel Xeon           W3680  @ 3.33GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.15.0-52-generic",
+    "notes": "Stuck on \"creating new game...\"",
+    "os": "Zorin OS 16.2",
+    "protonVersion": "8.0-3",
+    "ram": "18 GB",
+    "rating": "borked",
+    "timestamp": 1691776094,
+    "title": "",
+    "source": "protondb"
+  }
+]

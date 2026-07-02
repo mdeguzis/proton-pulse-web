@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2652600",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6500 XT (radeonsi, navi24, LLVM 17.0.6, DRM 3.57, 6.8.8-gentoo-dist)",
+    "gpuDriver": "4.6 Mesa 24.0.6",
+    "kernel": "6.8.8-gentoo-dist",
+    "notes": "Works like a charm",
+    "os": "Gentoo Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771639666,
+    "title": "",
+    "source": "protondb"
+  }
+]

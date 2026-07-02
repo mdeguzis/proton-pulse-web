@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "402210",
+    "cpu": "AMD FX-8370 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Game plays out of the box. Minor annoyance: Game will open (in full screen) in left most screen. I have to manually move it to the other monitor.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "15988 Mb",
+    "rating": "Platinum",
+    "timestamp": 1540014893,
+    "title": "Airport Madness: Time Machine",
+    "source": "protondb"
+  }
+]

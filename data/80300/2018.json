@@ -1,0 +1,47 @@
+[
+  {
+    "appId": "80300",
+    "cpu": "Intel(R) Pentium(R) CPU G3260 @ 3.30GHz",
+    "gpu": "GeForce GT 720/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Runs and plays perfectly fine. The game is forced in 4:3 and seemingly has difficult mouse precision. The former is part of the game (just check its steam screenshots), the latter...I'm not sure. But all in all, it's 100% playable.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "7937 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536612161,
+    "title": "Puzzle Bots",
+    "source": "protondb"
+  },
+  {
+    "appId": "80300",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "No issues",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536615057,
+    "title": "Puzzle Bots",
+    "source": "protondb"
+  },
+  {
+    "appId": "80300",
+    "cpu": "i5-6400 CPU @ 2.70GHz",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.4-steamvr-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-steamvr-generic",
+    "notes": "Runs right out of the box",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15983 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536656108,
+    "title": "Puzzle Bots",
+    "source": "protondb"
+  }
+]

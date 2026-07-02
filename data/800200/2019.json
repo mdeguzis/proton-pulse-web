@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "800200",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Game crashes on launch",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1555235296,
+    "title": "Witching Tower VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "800200",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-25-generic",
+    "notes": "nothing changed",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1566854328,
+    "title": "Witching Tower VR",
+    "source": "protondb"
+  }
+]

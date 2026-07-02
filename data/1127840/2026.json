@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1127840",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.3-arch1-2)",
+    "gpuDriver": "4.6 Mesa 26.0.6-arch1.1",
+    "kernel": "7.0.3-arch1-2",
+    "notes": "Framerate is much too low to play.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1778575015,
+    "title": "",
+    "source": "protondb"
+  }
+]

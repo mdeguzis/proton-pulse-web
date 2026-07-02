@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "493080",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.5.5-zen",
+    "notes": "Runs perfectly.",
+    "os": "Ubuntu 16.04.4 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540919850,
+    "title": "Card Quest",
+    "source": "protondb"
+  },
+  {
+    "appId": "493080",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Desktop",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-13-generic",
+    "notes": "I tried running without tweaks, but it would crash on start. With WIne D3d11, the game ran and I played for around 40 minutes without any problem before I closed it.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1546262292,
+    "title": "Card Quest",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

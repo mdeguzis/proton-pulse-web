@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "457960",
+    "title": "Holopoint",
+    "timestamp": 1535209280,
+    "rating": "Borked",
+    "notes": "Menu-Level loads, no Bow rendered in hands, no way to start or play",
+    "os": "Arch 64-bit (4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "457960",
+    "title": "Holopoint",
+    "timestamp": 1535223770,
+    "rating": "Borked",
+    "notes": "HTC Vive. Missing textures/models",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "457960",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.19.0-steamvr-generic",
+    "notes": "can't feel a difference to the windows version",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543357198,
+    "title": "Holopoint",
+    "source": "protondb"
+  },
+  {
+    "appId": "457960",
+    "title": "Holopoint",
+    "timestamp": 1535194880,
+    "rating": "Borked",
+    "notes": "Menu-Level loads, no Bow rendered in hands, no way to start or play",
+    "os": "Arch 64-bit (4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "457960",
+    "title": "Holopoint",
+    "timestamp": 1535209370,
+    "rating": "Borked",
+    "notes": "HTC Vive. Missing textures/models",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

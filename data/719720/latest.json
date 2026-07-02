@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "719720",
+    "cpu": "Intel Core i7         950  @ 3.07GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Quadro 600",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-46-generic",
+    "notes": "core dump on start",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552708759,
+    "title": "League of Pirates",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "209120",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "Tried disabling Esync, D3d11 and using Wine D3d11. It opens saying \"Installing Games for Windows? - Live setup\" then fails. ",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1555072946,
+    "title": "Street Fighter X Tekken",
+    "source": "protondb"
+  },
+  {
+    "appId": "209120",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "Patch needed to be installed to remove GFWL. I installed it via standard wine https://docs.google.com/uc?id=0B6A_ITzSjsF3RDRPcVljVHVhXzQ and show SFxTK steam installation path.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1555091371,
+    "title": "Street Fighter X Tekken",
+    "source": "protondb"
+  },
+  {
+    "appId": "209120",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-aae07fa208)",
+    "kernel": "5.1.15-1-MANJARO",
+    "notes": "Works perfectly well after installing the Community Mod Patch from: https://steamcommunity.com/sharedfiles/filedetails/?id=649186874\n\nIt should be noted because of the nature of this patch, however, that online play does not work.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562719928,
+    "title": "Street Fighter X Tekken",
+    "source": "protondb"
+  }
+]

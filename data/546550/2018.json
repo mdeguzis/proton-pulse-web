@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "546550",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc6-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900rc6-generic",
+    "notes": "Runs without any issues out of the box, also worked fine with a Switch Pro Controller.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15960 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539193931,
+    "title": "Snowball!",
+    "source": "protondb"
+  }
+]

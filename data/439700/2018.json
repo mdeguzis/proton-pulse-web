@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "439700",
+    "cpu": "i7-6700K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "BattlEye cannot start.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Proton 3.7-3",
+    "ram": "32030 Mb",
+    "rating": "Borked",
+    "timestamp": "1536336828",
+    "title": "H1Z1 Test Server",
+    "source": "protondb"
+  },
+  {
+    "appId": "439700",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.11-arch1-1-ARCH, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-cb863de626)",
+    "kernel": "4.18.11-arch1-1-ARCH",
+    "notes": "Game crashes, tries to enable some BattlEye service and then it fails",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32159 Mb",
+    "rating": "Borked",
+    "timestamp": 1538562952,
+    "title": "H1Z1 Test Server",
+    "source": "protondb"
+  },
+  {
+    "appId": "439700",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-e2ae5f2f0a)",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "BattlEye crap is required, so this game doesn't start at all!",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1546266597,
+    "title": "H1Z1 Test Server",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1402020",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.9-200.fc40.x86_64",
+    "notes": "Can't play",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1721733048,
+    "title": "",
+    "source": "protondb"
+  }
+]

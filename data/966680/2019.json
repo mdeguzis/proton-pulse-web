@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "966680",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.2.11-steamvr-generic",
+    "notes": "Game loads up but freezes before you can do anything.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569547828,
+    "title": "Red Matter",
+    "source": "protondb"
+  }
+]

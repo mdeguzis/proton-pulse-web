@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1265800",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "6.2.1-1-default",
+    "notes": "Still fails to launch under proton. Tried experimental and several Proton-GE versions, no dice.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1695616023,
+    "title": "",
+    "source": "protondb"
+  }
+]

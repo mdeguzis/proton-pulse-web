@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "566990",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.69-1-MANJARO",
+    "notes": "Gets to menu screen, but there is no menu.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "64424 Mb",
+    "rating": "Borked",
+    "timestamp": 1537581298,
+    "title": "Russian Car Driver",
+    "source": "protondb"
+  },
+  {
+    "appId": "566990",
+    "cpu": "AMD Phenom II X4 945",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "\"PROTON_USE_WINED3D=1 %command%\" as launch option. Without a Error Message appeared. Now I know how to start the game but still not how to play the game :)",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1543425295,
+    "title": "Russian Car Driver",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

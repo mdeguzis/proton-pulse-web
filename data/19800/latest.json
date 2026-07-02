@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "19800",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-11e1fa1 2019-04-03 bionic-oibaf-ppa)",
+    "kernel": "4.18.0-17-generic",
+    "notes": "everything works fine out of the box, no issues",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554409197,
+    "title": "Brothers in Arms: Earned in Blood\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "19800",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.9_1",
+    "notes": "Game runs fine and without any issues just like Road to Hill 30, I highly recommend you to increase the FOV to make the game more playable on modern machines. Check for a guide online, user game config is located in steamapps/compatdata/19800/drive_c/users/steamuser/applicationdata/Gearbox software.",
+    "os": "Void Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561057251,
+    "title": "Brothers in Arms: Earned in Blood\u2122",
+    "source": "protondb"
+  }
+]

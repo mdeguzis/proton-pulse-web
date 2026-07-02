@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2551500",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD DIMGREY_CAVEFISH (DRM 3.41.0, 5.13.0-51-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.13.0-51-generic",
+    "notes": "It is playable, but requires tinkering outside Steam and crashes after a couple of battles.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "9.0-1",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1714837437,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2551500",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "\u9700\u8981\u5b89\u88c5Visual C++ Redistributable 2022\nneed install Visual C++ Redistributable 2022",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "28 GB",
+    "rating": "platinum",
+    "timestamp": 1716106828,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2551500",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 18.1.6, DRM 3.54, 6.6.34-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.1",
+    "kernel": "6.6.34-200.fc40.x86_64",
+    "notes": "Perfectly playable , but needs some tinkering .",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1719479459,
+    "title": "",
+    "source": "protondb"
+  }
+]

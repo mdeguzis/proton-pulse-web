@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "537700",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "notes": "It did not run the first time immediately after install, but after that it worked perfectly",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1550433483,
+    "title": "Octave",
+    "source": "protondb"
+  }
+]

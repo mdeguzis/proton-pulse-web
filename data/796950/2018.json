@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "796950",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.19.8-2-MANJARO",
+    "notes": "Won't launch",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544892882,
+    "title": "The Haunting of Billy",
+    "source": "protondb"
+  }
+]

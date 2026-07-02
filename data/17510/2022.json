@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "17510",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (DRM 3.44.0, 5.16.10-artix1-1, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.6",
+    "kernel": "5.16.10-artix1-1",
+    "notes": "Game opens, cutscene loads, and menu apears , but game crashes afterwards when a game is started.",
+    "os": "Artix Linux",
+    "protonVersion": "6.3-8",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1648433768,
+    "title": "Age of Chivalry",
+    "source": "protondb"
+  }
+]

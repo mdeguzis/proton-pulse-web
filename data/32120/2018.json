@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "32120",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-1-MANJARO",
+    "notes": "No issues and it works in my default language (on Windows this require some tricks, so it works better on Linux)",
+    "os": "\"Manjaro Linux\" (64 bits)",
+    "protonVersion": "Default",
+    "ram": "7990 MB",
+    "rating": "Platinum",
+    "timestamp": 1539431260,
+    "title": "Chainz 2: Relinked",
+    "source": "protondb"
+  }
+]

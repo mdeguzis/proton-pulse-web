@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "878150",
+    "cpu": "Intel Xeon           E5640  @ 2.67GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.18.14-artix1-1-ARTIX",
+    "os": "Artix",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550256845,
+    "title": "Core Awaken ~The Yuka~",
+    "source": "protondb"
+  },
+  {
+    "appId": "878150",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.5",
+    "kernel": "5.0.17-300.fc30.x86_64",
+    "notes": "Opens, but it freezes and you're unable to close the game's window.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1561413145,
+    "title": "Core Awaken ~The Yuka~",
+    "source": "protondb"
+  }
+]

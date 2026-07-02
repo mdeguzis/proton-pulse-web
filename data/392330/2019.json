@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "392330",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Minor problems (fonts)",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1556701748,
+    "title": "Take Command - 2nd Manassas",
+    "source": "protondb"
+  }
+]

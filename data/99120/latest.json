@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "99120",
+    "title": "Yar's Revenge",
+    "timestamp": 1534910400,
+    "rating": "Bronze",
+    "notes": "Only works in windowed mode has noticable issues with mouse and some artifacting ",
+    "os": "Linux Mint 18.3",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "99120",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.18.17-200.fc28.x86_64",
+    "notes": "Game automatically runs in windowed mode with no option to change it. Issues with the mouse jumping around, but I think that might be an issue with the game. Runs flawlessly with controllers, no artifacting at all throughout the first level.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1542718357,
+    "title": "Yar's Revenge",
+    "source": "protondb"
+  },
+  {
+    "appId": "99120",
+    "title": "Yar's Revenge",
+    "timestamp": 1534896000,
+    "rating": "Bronze",
+    "notes": "Only works in windowed mode has noticable issues with mouse and some artifacting ",
+    "os": "Linux Mint 18.3",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

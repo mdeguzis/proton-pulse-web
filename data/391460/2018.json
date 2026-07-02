@@ -1,0 +1,45 @@
+[
+  {
+    "appId": "391460",
+    "title": "WARMODE",
+    "timestamp": 1535544015,
+    "rating": "Borked",
+    "notes": "MIssing models",
+    "os": "Linux Mint 18.3 KDE 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6198DU / GT 920 MX",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "391460",
+    "cpu": "Intel Celeron G550 @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Desktop",
+    "gpuDriver": "3.0 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "abre pero se bloquea al darle al boton de jugar",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "2 GB",
+    "rating": "Bronze",
+    "timestamp": 1541430354,
+    "title": "WARMODE",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "391460",
+    "title": "WARMODE",
+    "timestamp": 1535529615,
+    "rating": "Borked",
+    "notes": "MIssing models",
+    "os": "Linux Mint 18.3 KDE 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6198DU / GT 920 MX",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

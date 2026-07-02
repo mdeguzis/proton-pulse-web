@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "845060",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-52-generic",
+    "notes": "only opens a black window. tweaks didn't work too",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562074265,
+    "title": "Simple Golfing",
+    "source": "protondb"
+  }
+]

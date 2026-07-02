@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1170060",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RAVEN (DRM 3.35.0, 5.4.0-58-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1 - kisak-mesa PPA",
+    "kernel": "5.4.0-58-generic",
+    "notes": "The demo ran OOTB with no issues",
+    "os": "KDE neon User Edition 5.20 (64\u00a0bits)",
+    "protonVersion": "6.3-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1620404054,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1170060",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.10-arch1-1",
+    "notes": "Runs perfectly on 6.3-5",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1625807417,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1170060",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.7-arch1-1",
+    "notes": "Runs great on my Arch Linux system.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1627974372,
+    "title": "",
+    "source": "protondb"
+  }
+]

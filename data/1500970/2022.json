@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1500970",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.35.0, 5.4.0-94-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.4.0-94-generic",
+    "notes": "Gameplay is fine, but the animation stutter and audio crackle is hard to ignore.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1641949426,
+    "title": "",
+    "source": "protondb"
+  }
+]

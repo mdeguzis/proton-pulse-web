@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "295850",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Defaults to windowed mode where the fonts are a little hard to read, but once you go into fullscreen, everything is perfectly legible. Sound works great. No other issues.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1541667214,
+    "title": "Vlad the Impaler",
+    "source": "protondb"
+  }
+]

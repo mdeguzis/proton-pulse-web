@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1422380",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.7, DRM 3.49, 6.1.25-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.1.25-1-MANJARO",
+    "notes": "Everything works as expected, I played all the way to the end of the game with no issues",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1682610364,
+    "title": "Witches x Warlocks",
+    "source": "protondb"
+  }
+]

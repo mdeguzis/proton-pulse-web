@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1227400",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.5.16-1-MANJARO",
+    "notes": "Other than having to install a Proton fork, which is easy to do, I was able to play through the game without any further issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1586593954,
+    "title": "Over the Alps",
+    "source": "protondb"
+  }
+]

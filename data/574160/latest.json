@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "574160",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Crash after the early title screens credits when trying to play the video",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1551553624,
+    "title": "Senko no Ronde 2 \u65cb\u5149\u306e\u8f2a\u821e\uff12",
+    "source": "protondb"
+  }
+]

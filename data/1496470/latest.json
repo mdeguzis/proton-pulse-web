@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1496470",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.8.0-59-generic",
+    "notes": "Will not start on Ubuntu 20.04",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1624816947,
+    "title": "",
+    "source": "protondb"
+  }
+]

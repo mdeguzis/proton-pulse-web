@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "321410",
+    "cpu": "Intel Core i5-4300M @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.0.0-25-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1566172551,
+    "title": "Command: Modern Air / Naval Operations WOTY",
+    "source": "protondb"
+  },
+  {
+    "appId": "321410",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660M",
+    "gpuDriver": "NVIDIA 435.17",
+    "kernel": "5.2.8",
+    "notes": "Still doesn't work. An attempt to follow the workaround suggested on winhq (see GitHub for the link) didn't work either.",
+    "os": "CentOS Linux release 7.6.1810 (Core)  (64\u00a0bits)",
+    "protonVersion": "4.11-3",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1567278187,
+    "title": "Command: Modern Air / Naval Operations WOTY",
+    "source": "protondb"
+  }
+]

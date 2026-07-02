@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "428660",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "Runs with 20-30fps on 1440p windowed fullscreen. Something is wrong, though I have no idea what.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1540628484,
+    "title": "Deliver Us The Moon: Fortuna",
+    "source": "protondb"
+  },
+  {
+    "appId": "428660",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.16-zen1-1-zen",
+    "notes": "Faking GPU information to get better performance on nvidia. Into steam launch options:\nDXVK_CONFIG_FILE=\"/path/to/dxvk.conf\" %command%\ncontents of the file:\ndxgi.customDeviceId = E366\ndxgi.customVendorId = 1002\n2560x1440 all Epic, resolution scale 100%, 50-120 fps, mostly around 70 on Earth and around 80 on SpaceStation, haven't reached to the Moon yet. Has some heavy stutters when loading new scenery, sometimes freezes for 1-2 sec",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1540736691,
+    "title": "Deliver Us The Moon: Fortuna",
+    "source": "protondb"
+  }
+]

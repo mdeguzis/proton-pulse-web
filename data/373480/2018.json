@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "373480",
+    "title": "1993 Space Machine",
+    "timestamp": 1534910400,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Arch Linux",
+    "gpuDriver": "?",
+    "specs": "?",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "373480",
+    "title": "1993 Space Machine",
+    "timestamp": 1535735110,
+    "rating": "Silver",
+    "notes": "Controller is not detected, otherwise perfect",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "373480",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "xbox360 controller not found. Everything else works fine.",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16068 MB",
+    "rating": "Silver",
+    "timestamp": 1537453881,
+    "title": "1993 Space Machine",
+    "source": "protondb"
+  },
+  {
+    "appId": "373480",
+    "title": "1993 Space Machine",
+    "timestamp": 1534896000,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Arch Linux",
+    "gpuDriver": "?",
+    "specs": "?",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "373480",
+    "title": "1993 Space Machine",
+    "timestamp": 1535720710,
+    "rating": "Silver",
+    "notes": "Controller is not detected, otherwise perfect",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

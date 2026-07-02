@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "230070",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Works perfectly out of the box. No tweaks needed.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547993834,
+    "title": "The Age of Decadence",
+    "source": "protondb"
+  },
+  {
+    "appId": "230070",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1550114507,
+    "title": "The Age of Decadence",
+    "source": "protondb"
+  },
+  {
+    "appId": "230070",
+    "cpu": "Pentium Dual-Core       E6600  @ 3.06GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.18.0-17-generic",
+    "notes": "\u0417\u0430\u043f\u0443\u0441\u0442\u0438\u043b\u0430\u0441\u044c \u043d\u0430 Xubuntu 18.04.1x64 \u0431\u044b\u043b\u043e \u0432\u0438\u0434\u043d\u043e \u0433\u043b\u0430\u0432\u043d\u043e\u0435 \u043c\u0435\u043d\u044e \u043d\u043e \u043d\u0430 \u044d\u0442\u0430\u043f\u0435 \u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0438 \u0442\u0440\u0435\u043d\u0435\u0440\u043e\u0432\u043e\u0447\u043d\u043e\u0439 \u043c\u0438\u0441\u0441\u0438\u0438 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u0430\u0441\u044c \u0430\u0432\u0430\u0440\u0438\u0439\u043d\u043e. \n\u0417\u0430\u043f\u0443\u0441\u043a\u0430\u043b \u0438 \u043e\u0431\u044b\u0447\u043d\u044b\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u0438 32bit, \u0441 \u0432\u0435\u0440\u0441\u0438\u044f\u043c\u0438 proton:\n3.7-8\n3.16-4\n3.16-8 beta\n\u0422\u0430\u043a \u0436\u0435 \u043f\u0440\u043e\u0431\u043e\u0432\u0430\u043b \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0442\u044c \u043d\u043e\u0432\u0443\u044e \u0438\u0433\u0440\u0443 \u0432\u043c\u0435\u0441\u0442\u043e \u0442\u0440\u0435\u043d\u0435\u0440\u043e\u0432\u043a\u0438 - \u0442\u0430 \u0436\u0435 \u0438\u0441\u0442\u043e\u0440\u0438\u044f.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "4.2-3",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1555664164,
+    "title": "The Age of Decadence",
+    "source": "protondb"
+  }
+]

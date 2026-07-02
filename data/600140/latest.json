@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "600140",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "When switching to Steam Settings the Controllers are no longer shown in game, have to restart. else work fine (didnt play till end)",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "15902 MB",
+    "rating": "Gold",
+    "timestamp": 1536832830,
+    "title": "Belko VR: An Escape Room Experiment",
+    "source": "protondb"
+  },
+  {
+    "appId": "600140",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900-generic",
+    "notes": "Played through till time ran out, everything worked fine",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540843021,
+    "title": "Belko VR: An Escape Room Experiment",
+    "source": "protondb"
+  },
+  {
+    "appId": "600140",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.14.87-1-lts",
+    "notes": "Runs perfectly on my Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545057536,
+    "title": "Belko VR: An Escape Room Experiment",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "312370",
+    "title": "Warhammer 40,000: Armageddon",
+    "timestamp": 1535054724,
+    "rating": "Platinum",
+    "notes": "No problems encountered. Scenario Editor works too",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD Phenom II X4 965 / GeForce GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "312370",
+    "cpu": "i7-4900MQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.6",
+    "notes": "Crashes while Loading, black screens appear.  ",
+    "os": "Solus (64 bit)",
+    "protonVersion": "3.7-6",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "Warhammer 40,000: Armageddon",
+    "source": "protondb"
+  },
+  {
+    "appId": "312370",
+    "cpu": "Intel Core i7-4900MQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "The game seems to freeze with black screen. You have to kill \"intro.exe\" (the movie) in htop or console, then the game starts and runs without any issues. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Silver",
+    "timestamp": 1540567772,
+    "title": "Warhammer 40,000: Armageddon",
+    "source": "protondb"
+  },
+  {
+    "appId": "312370",
+    "cpu": "AMD FX-6100 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Worked perfectly out of the box, with the exception that it sat with black screen on launching.\nI just had to click on the screen and it worked fine after that.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "10 GB",
+    "rating": "Platinum",
+    "timestamp": 1546116721,
+    "title": "Warhammer 40,000: Armageddon",
+    "source": "protondb"
+  },
+  {
+    "appId": "312370",
+    "title": "Warhammer 40,000: Armageddon",
+    "timestamp": 1535040324,
+    "rating": "Platinum",
+    "notes": "No problems encountered. Scenario Editor works too",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD Phenom II X4 965 / GeForce GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

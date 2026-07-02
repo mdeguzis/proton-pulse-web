@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "666220",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 22.0.0",
+    "kernel": "5.15.32-1-MANJARO",
+    "notes": "Works out of the box",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1651916513,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "666220",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Native version doesn't launch on Deck. Proton is required.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1658572471,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "666220",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Working but not native steam. Proton required.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1664029503,
+    "title": "",
+    "source": "protondb"
+  }
+]

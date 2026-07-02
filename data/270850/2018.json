@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "270850",
+    "title": "Car Mechanic Simulator 2014",
+    "timestamp": 1535503986,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "270850",
+    "cpu": "i7-4710MQ CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-ext73-58.4-haswell",
+    "notes": "crashes on start up",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.5 beta",
+    "ram": "7872 Mb",
+    "rating": "Borked",
+    "timestamp": "1536334062",
+    "title": "Car Mechanic Simulator 2014",
+    "source": "protondb"
+  },
+  {
+    "appId": "270850",
+    "cpu": "AMD A6-6400K APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "notes": "No problems are observed.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1540600857,
+    "title": "Car Mechanic Simulator 2014",
+    "source": "protondb"
+  },
+  {
+    "appId": "270850",
+    "cpu": "AMD A10-7860K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Was able to complete 3 Jobs in the Game. Game ran at 30FPS at 1080 Ultra Settings",
+    "os": "Peppermint 9 Nine",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541317217,
+    "title": "Car Mechanic Simulator 2014",
+    "source": "protondb"
+  },
+  {
+    "appId": "270850",
+    "title": "Car Mechanic Simulator 2014",
+    "timestamp": 1535489586,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

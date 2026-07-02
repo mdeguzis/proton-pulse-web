@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "796920",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Unity's multi-monitor selection doesn't work so, to set windowed mode, use launch option of \"-screen-fullscreen 0\"",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1559996095,
+    "title": "Xenoform",
+    "source": "protondb"
+  },
+  {
+    "appId": "796920",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Unity's multi-monitor selection doesn't work so, to set windowed mode, use launch option of \"-screen-fullscreen 0\".  The nice effect this provides is clicking full-size window also makes the borders vanish.\n\nPlayed game right through.  Earlier Proton glitches have gone away.  FPS 50-60 on level 5 (max) graphics.  It's Platinum rating except for the multi-monitor selection not working.\n",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-6",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1559996371,
+    "title": "Xenoform",
+    "source": "protondb"
+  },
+  {
+    "appId": "796920",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Launch option \"-screen-fullscreen 0\" to allow placement on any monitor",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1565962197,
+    "title": "Xenoform",
+    "source": "protondb"
+  }
+]

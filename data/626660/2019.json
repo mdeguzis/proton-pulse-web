@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "626660",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Didn't have the  the issue with the invisible NPC's at all. But game is crashing when when attempting to tab out and every time when quitting. It's filling the screen with a black image, most of the time the only way out of that is switching to another desktop via key combination and opening system monitor there for killing the process. Other than that game controllers going through Steams Controller Configurator aren't being detected at all. While for Xbox controllers there is still the option to disable use of it to make them working, other controllers especially Steam Controller have no way to be be usable.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1549743615,
+    "title": "Flipping Death",
+    "source": "protondb"
+  }
+]

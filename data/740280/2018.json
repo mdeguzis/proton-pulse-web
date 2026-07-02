@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "740280",
+    "cpu": "Intel Celeron J4005 @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 600 (Geminilake 2x6)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.19.0-041900-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541333768,
+    "title": "Preventive Strike",
+    "source": "protondb"
+  },
+  {
+    "appId": "740280",
+    "cpu": "Intel Celeron J4005 @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 600 (Geminilake 2x6)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.19.0-041900-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541336181,
+    "title": "Preventive Strike",
+    "source": "protondb"
+  }
+]

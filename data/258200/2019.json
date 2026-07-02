@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "258200",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Opens window for 1/2 a second then closes",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557979187,
+    "title": "Talisman: Prologue",
+    "source": "protondb"
+  },
+  {
+    "appId": "258200",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.9-towo.2-siduction-amd64",
+    "notes": "would be platinum, except that general background music isn't playing. music plays on the intro screen and during combat etc. works great in ultrawide. may crash if you alt-tab out of full screen mode. also tried unofficial 4.13-2 and 4.14-GE-1, still no music. ",
+    "os": "Siduction (Debian sid)",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.14-GE-1",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1566507503,
+    "title": "Talisman: Prologue",
+    "source": "protondb"
+  },
+  {
+    "appId": "258200",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Works suddenly great with the current Proton version without any tweaks. ",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567883529,
+    "title": "Talisman: Prologue",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "284220",
+    "title": "Diadra Empty",
+    "timestamp": 1535136097,
+    "rating": "Borked",
+    "notes": "Won't start at all",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.0)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3550 / RX480 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "284220",
+    "title": "Diadra Empty",
+    "timestamp": 1535121697,
+    "rating": "Borked",
+    "notes": "Won't start at all",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.0)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3550 / RX480 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

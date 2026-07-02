@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "358460",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555514185,
+    "title": "Talisman: The Horus Heresy",
+    "source": "protondb"
+  },
+  {
+    "appId": "358460",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-51-generic",
+    "notes": "2D Game mode runs fine (animated Menu screen, 2D Battles animations = 60FPS) but when it switches to the 3D Talisman Horus map, the framerate turns from 60FPS to 15FPS, with lots of stuttering and sound clipping due to frame drops. No tweaking worked (Proton options, Protontricks, in-game graphic settings, Windowed/Fullscreen. The same PC hardware (latest drivers) runs CoH2, Total Wars, TR & Co. at 60FPS/1080p). Must be a game-related issue, which uses a modified (out-dated?) Talisman game-engine build. Main game Talisman (not the Horus version) has it's own problems.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1558224773,
+    "title": "Talisman: The Horus Heresy",
+    "source": "protondb"
+  }
+]

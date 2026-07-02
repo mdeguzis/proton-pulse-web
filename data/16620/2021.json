@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "16620",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-44-generic",
+    "notes": "Activation doesn't work.",
+    "os": "KDE neon User Edition 5.21",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1615113174,
+    "title": "Monster Trucks Nitro",
+    "source": "protondb"
+  }
+]

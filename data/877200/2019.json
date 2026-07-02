@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "877200",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Works flawlessly, including multiplayer, only issue is the tutorial level the info screens are whited out. Other levels info screens work perfectly fine. Multiplayer tested. Haven't tried any tweaks. If encountering any launch issues, switch Proton Version, but 4.2-6 works for me.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-6",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1560264372,
+    "title": "Zero Caliber VR",
+    "source": "protondb"
+  }
+]

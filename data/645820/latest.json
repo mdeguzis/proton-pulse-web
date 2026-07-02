@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "645820",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 19.0.0",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It had some graphical issues related to text not displaying correctly and some graphical stuff not displaying at all, but everything works perfectly when you use Wine D3d11 with the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1553688413,
+    "title": "Odysseus Kosmos and his Robot Quest (Episodes 1 - 4)",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1164830",
+    "cpu": "Intel Core i5-10210U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-72-generic",
+    "notes": "Error message in full:\n\nFailed to initialize graphics.\nMake sure you have DizectX 11 installed, have up to date drivers for your graphics card and have not disabled 3D acceleration display settings.\nInitializeEngineGraphics failed.",
+    "os": "Ubuntu 20.04.6 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1691274319,
+    "title": "",
+    "source": "protondb"
+  }
+]

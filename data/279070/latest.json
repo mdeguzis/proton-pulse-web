@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "279070",
+    "cpu": "Intel Pentium B940 @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.15.0-45-generic",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1550141014,
+    "title": "9th Dawn II",
+    "source": "protondb"
+  },
+  {
+    "appId": "279070",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Black screen, but with sound.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556558249,
+    "title": "9th Dawn II",
+    "source": "protondb"
+  }
+]

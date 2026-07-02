@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "387850",
+    "title": "Airport Madness 4",
+    "timestamp": 1535583069,
+    "rating": "Platinum",
+    "notes": "No problems whatsoever",
+    "os": "openSUSE Tumbleweed 64-bit",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "AMD A8-6600K APU / Radeon R7 370",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "387850",
+    "cpu": "Intel(R) Pentium(R) CPU G4560 @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Played several maps. Switching between windowed and fullscreen modes works. No problems at all.",
+    "os": "Linux Mint 18 Sarah (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7948 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539878910,
+    "title": "Airport Madness 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "387850",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "I used to have terrible slow-downs whenever weather effects happened, but Proton 3.16-4 fixed this so now the game runs perfectly.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1544083027,
+    "title": "Airport Madness 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "387850",
+    "title": "Airport Madness 4",
+    "timestamp": 1535568669,
+    "rating": "Platinum",
+    "notes": "No problems whatsoever",
+    "os": "openSUSE Tumbleweed 64-bit",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "AMD A8-6600K APU / Radeon R7 370",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

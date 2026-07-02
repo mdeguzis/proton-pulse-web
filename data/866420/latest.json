@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "866420",
+    "cpu": "Intel Celeron 3855U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 510 (Skylake GT1)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Everything works except when pressing Alt+Tab (for a quick look in into another app) and then coming back to the game - only the BLACK screen awaiting. Basically, if You press ALT+TAB - you must kill the game and launch it anew. Other than that - everything works.",
+    "os": "Zorin OS 12.4",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Silver",
+    "timestamp": 1542134454,
+    "title": "TANKS",
+    "source": "protondb"
+  }
+]

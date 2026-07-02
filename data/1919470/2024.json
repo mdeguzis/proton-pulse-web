@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1919470",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 16.0.6, DRM 3.54, 6.5.3-chos1-chimeraos-1)",
+    "gpuDriver": "23.1.7.chos1-1",
+    "kernel": "6.5.3-chos1-chimeraos-1",
+    "notes": "Works fine",
+    "os": "ChimeraOS",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1731883074,
+    "title": "Atari 50: The Anniversary Celebration",
+    "source": "protondb"
+  },
+  {
+    "appId": "1919470",
+    "cpu": "AMD Ryzen Embedded R1606G with Radeon Vega Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Ryzen Embedded R1606G with Radeon Vega Gfx (raven2, LLVM 15.0.7, DRM 3.42, 5.15.0-126-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-126-generic",
+    "notes": "Runs perfectly with forced Proton Experimental no other changes needed. Did not try multiplayer.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-3",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1733041603,
+    "title": "Atari 50: The Anniversary Celebration",
+    "source": "protondb"
+  }
+]

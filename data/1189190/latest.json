@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1189190",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD NAVY_FLOUNDER (DRM 3.40.0, 5.11.0-7614-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.0",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "Loads program, but never gets past initial loading screen, to main menu.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1635091349,
+    "title": "",
+    "source": "protondb"
+  }
+]

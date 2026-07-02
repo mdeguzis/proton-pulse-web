@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1133060",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.10.23-xanmod1",
+    "notes": "Demo does not launch",
+    "os": "Linux Mint 20.1 (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1615643692,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1133060",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.22-2-MANJARO",
+    "notes": "Works OOB but frequent crashes make the game unplayable",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1623932729,
+    "title": "",
+    "source": "protondb"
+  }
+]

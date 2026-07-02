@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "331440",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "4.20.16-112.current",
+    "notes": "Works straight out of the box.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553546438,
+    "title": "bit Dungeon II",
+    "source": "protondb"
+  },
+  {
+    "appId": "331440",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557492845,
+    "title": "bit Dungeon II",
+    "source": "protondb"
+  },
+  {
+    "appId": "331440",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "os": "SteamOS 2.0",
+    "protonVersion": "4.2-5",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561386379,
+    "title": "bit Dungeon II",
+    "source": "protondb"
+  }
+]

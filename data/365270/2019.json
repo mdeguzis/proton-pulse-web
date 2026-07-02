@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "365270",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "I only see a white screen. I waited about an hour. Nothing happens.",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1552266892,
+    "title": "Shadow Hunter",
+    "source": "protondb"
+  }
+]

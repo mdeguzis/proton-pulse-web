@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "70200",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.9.0-9-amd64",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559542367,
+    "title": "Governor of Poker 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "70200",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-29-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568837224,
+    "title": "Governor of Poker 2",
+    "source": "protondb"
+  }
+]

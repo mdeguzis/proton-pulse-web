@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3891510",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Worked flawlessly! Took a bit longer than expected to start but otherwise everything worked out of the box",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773338611,
+    "title": "",
+    "source": "protondb"
+  }
+]

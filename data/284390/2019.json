@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "284390",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "The native version attempts to install Adobe Air and fails. I ran the Windows version through Proton and it worked flawlessly. Was able to complete the entire game from start to finish.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570376348,
+    "title": "The Last Door - Collector's Edition",
+    "source": "protondb"
+  }
+]

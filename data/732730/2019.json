@@ -1,0 +1,20 @@
+[
+  {
+    "appId": "732730",
+    "cpu": "Intel Pentium G3220T @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Desktop",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.19.28-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1553180094,
+    "title": "Red Crucible\u00ae: Reloaded",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

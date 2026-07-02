@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "266410",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.10-200.fc28.x86_64",
+    "notes": "Once installed just run iRacingSim64DX11.exe to start UI . Does not detect wheel. \n\n** Note:- with wine 3.21 and dxvk 0.94 it detects wheel and runs very well.  Frame rate is on par with windoze .  \nThere is a minor problem with running via UI where you have to delete controls.cfg before starting UI and then re-calibrate your wheel ( this is not a problem if run from Web interface ). Unfortunately you cant play online because anti cheat will kick you after a couple of minutes but if you want to drive around all by yourself in practice then its ok .\n",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1547584387,
+    "title": "iRacing",
+    "source": "protondb"
+  }
+]

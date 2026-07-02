@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "287920",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Silently fails first-time install of .NET framework. Stops booting up, and hitting play again attempts again.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541757374,
+    "title": "Mortal Online",
+    "source": "protondb"
+  }
+]

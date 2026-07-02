@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "567380",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.13.0-rc7",
+    "notes": "Ever since the GameMaker 2.3 update, the game refuses to run on Arch Linux.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1624485124,
+    "title": "Heartbound",
+    "source": "protondb"
+  }
+]

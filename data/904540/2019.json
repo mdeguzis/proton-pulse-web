@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "904540",
+    "cpu": "Intel Core i3-2310M @ 2.10GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "sithCogFunction.c(3211): (pThing->type == SITH_THING_PLAYER) || (pThing->type == SITH_THING_ACTOR)",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1562711448,
+    "title": "Indiana Jones\u00ae and the Infernal Machine\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "904540",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-02c6cd8 2019-06-29 bionic-oibaf-ppa)",
+    "kernel": "5.1.0-050100-generic",
+    "notes": "Surprisingly, this game is finally playable on modern OSes again thanks to Proton. A change in either Vista or XP (don't remember) rendered this game unplayable for a long time, and now it works great with D9VK. This means that the Linux compatibility for this game is better than the Windows compatibility. \n\nUnfortunately, despite the game working pretty good, my memory of this game has been through rose-colored glasses. The controls in this game are wonky at best and it is extremely difficult to simply move around and do basic things. I forgot about that aspect of this game. ",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567050238,
+    "title": "Indiana Jones\u00ae and the Infernal Machine\u2122",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "904540",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-60-generic",
+    "notes": "Still almost unplayable, even with D9VK. The biggest problem: it's stil impossible to open saved games after playing and leaving the game the first time, and that makes finishing the game highly unlikely because of the duration (over 10 hours). Besides, changing the resolution doesn't scale like it should, leaving part of the menu icons on the bottom of the screen \"unseen\"; and most times, the \"settings\" window opens somewhere the mouse can't reach. It's NOT anything higher than a bronze rating.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1567492921,
+    "title": "Indiana Jones\u00ae and the Infernal Machine\u2122",
+    "source": "protondb"
+  }
+]

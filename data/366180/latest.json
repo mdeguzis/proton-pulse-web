@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "366180",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Seems to run okay, but nothing appears for the pause screen, making it impossible to quit, go full screen or change any settings",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556056441,
+    "title": "Disposable Heroes",
+    "source": "protondb"
+  }
+]

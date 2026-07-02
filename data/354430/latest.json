@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "354430",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game runs perfectly. It comes with 2 different versions, the \"Classic\" and the \"collector's CD\", the second one lags badly, but the Classic one runs perfect. Great game, would love to see a more \"native\" version since it runs via DOSBox. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Gold",
+    "timestamp": 1550776937,
+    "title": "STAR WARS\u2122 - X-Wing Special Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "354430",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-78f33620e8)",
+    "kernel": "5.1.6-arch1-1-ARCH",
+    "notes": "Worked fine out of the box.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561283474,
+    "title": "STAR WARS\u2122 - X-Wing Special Edition",
+    "source": "protondb"
+  }
+]

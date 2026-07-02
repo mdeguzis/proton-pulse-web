@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "32660",
+    "title": "Delta Force: Xtreme",
+    "timestamp": 1535246930,
+    "rating": "Platinum",
+    "notes": "Perfect.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "32660",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Great performance",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540310143,
+    "title": "Delta Force: Xtreme",
+    "source": "protondb"
+  },
+  {
+    "appId": "32660",
+    "title": "Delta Force: Xtreme",
+    "timestamp": 1535232530,
+    "rating": "Platinum",
+    "notes": "Perfect.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

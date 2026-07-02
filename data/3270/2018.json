@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "3270",
+    "title": "Painkiller Overdose",
+    "timestamp": 1536097287,
+    "rating": "Platinum",
+    "notes": "Game starts in fullscreen 1024*768, resolution can be changed on the options menu",
+    "os": "KDE Neon testing (Ubuntu 18.04)",
+    "gpuDriver": "Mesa 18.1.7 - padoka PPA",
+    "specs": "AMD Phenom II 955 BE / R7 370 4Gb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "3270",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Great",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537821146,
+    "title": "Painkiller Overdose",
+    "source": "protondb"
+  },
+  {
+    "appId": "3270",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-arch1-1-vfio",
+    "notes": "Widescreen HUD fix works perfectly. Zero performance issues.",
+    "os": "\"Antergos Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15983 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537824630,
+    "title": "Painkiller Overdose",
+    "source": "protondb"
+  },
+  {
+    "appId": "3270",
+    "cpu": "Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10 / DRM 3.23.0 / 4.15.0-36-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Works great",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15983 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539258849,
+    "title": "Painkiller Overdose",
+    "source": "protondb"
+  },
+  {
+    "appId": "3270",
+    "title": "Painkiller Overdose",
+    "timestamp": 1536082887,
+    "rating": "Platinum",
+    "notes": "Game starts in fullscreen 1024*768, resolution can be changed on the options menu",
+    "os": "KDE Neon testing (Ubuntu 18.04)",
+    "gpuDriver": "Mesa 18.1.7 - padoka PPA",
+    "specs": "AMD Phenom II 955 BE / R7 370 4Gb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

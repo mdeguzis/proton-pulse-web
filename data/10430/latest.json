@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "10430",
+    "title": "Universe at War: Earth Assault",
+    "timestamp": 1535327363,
+    "rating": "Borked",
+    "notes": "Crashes on startup: \"Abnormal game exit detected\"",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "10430",
+    "title": "Universe at War: Earth Assault",
+    "timestamp": 1535817459,
+    "rating": "Borked",
+    "notes": "\"Abnornal game exit detected\"",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "Xeon E5440 / GTX 680",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  },
+  {
+    "appId": "10430",
+    "title": "Universe at War: Earth Assault",
+    "timestamp": 1535312963,
+    "rating": "Borked",
+    "notes": "Crashes on startup: \"Abnormal game exit detected\"",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "10430",
+    "title": "Universe at War: Earth Assault",
+    "timestamp": 1535803059,
+    "rating": "Borked",
+    "notes": "\"Abnornal game exit detected\"",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "Xeon E5440 / GTX 680",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  }
+]

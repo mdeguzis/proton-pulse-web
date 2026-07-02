@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "407310",
+    "cpu": "Intel(R) Core(TM) i5-4670K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.13.0-46-generic",
+    "os": "Ubuntu 17.10 (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32119 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539076408,
+    "title": "NEKO-NIN exHeart",
+    "source": "protondb"
+  },
+  {
+    "appId": "407310",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.13-041813-generic",
+    "notes": "There seem to be minor audio skipping issues from what I could hear, but nothing that was unplayable, and I'm not aware of if this is something that happens when running in Windows as well. The only other issue I had was one of the transition videos not loading and showing an error, but the game continued running and didn't have any issues after that. Played in it's entirety.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1544487358,
+    "title": "NEKO-NIN exHeart",
+    "source": "protondb"
+  },
+  {
+    "appId": "407310",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "Works very nicely out of the box. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545843499,
+    "title": "NEKO-NIN exHeart",
+    "source": "protondb"
+  }
+]

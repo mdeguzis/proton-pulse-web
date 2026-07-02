@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "33620",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Controller does not work properly, keyboard and mouse is fine, wheel with FFB works (requires some trial and error to set it how you want) but you won't be able to aim.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1557624764,
+    "title": "Crash Time 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "33620",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Performance is significantly worse than running on windows, Music does not play.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1557627527,
+    "title": "Crash Time 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "33620",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game runs perfectly with Xbox 360 controller and no tweaks needed. I did not have performance issues as others reported and the game ran smoothly for me.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560007477,
+    "title": "Crash Time 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "33620",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "Game went from 30fps to over 100fps using D9VK. Put \"PROTON_USE_D9VK=1 %command%\" in the launch options.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1568471352,
+    "title": "Crash Time 3",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

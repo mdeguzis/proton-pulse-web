@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "738530",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Device",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "First launch after download and installation froze on a black screen.  Second launch started slow but then worked very well.  I was able to complete a mission with no problems.  I shut down and restarted the game and it once again launched successfully and I was able to complete another challenge.  Seems to work fine. ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1562814157,
+    "title": "New Gundam Breaker",
+    "source": "protondb"
+  },
+  {
+    "appId": "738530",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.19.20-1-MANJARO",
+    "notes": "Initial opening of the game breaks then relaunch after the shaders have been started. The games runs at full speed and is stable as far as I am aware. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "proton_4.2-local (unofficial mod) ",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1569160405,
+    "title": "New Gundam Breaker",
+    "tweaks": {
+      "largeAddressAware": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

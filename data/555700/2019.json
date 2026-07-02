@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "555700",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Just shows either a white or black screen with nothing on it. Broken.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1563119600,
+    "title": "Absoloot",
+    "source": "protondb"
+  },
+  {
+    "appId": "555700",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Black screen",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563910515,
+    "title": "Absoloot",
+    "source": "protondb"
+  }
+]

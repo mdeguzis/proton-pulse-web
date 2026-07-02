@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1631330",
+    "cpu": "AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 10 (RAVEN, DRM 3.35.0, 5.4.0-117-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.4.0-117-generic",
+    "notes": "affiche : probleme avec directx11",
+    "os": "Linux Mint 20.3 (64\u00a0bits)",
+    "protonVersion": "8.0-5",
+    "ram": "18 GB",
+    "rating": "borked",
+    "timestamp": 1709375344,
+    "title": "",
+    "source": "protondb"
+  }
+]

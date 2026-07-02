@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "358170",
+    "cpu": "AMD A6-3650 APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 18.2.2",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Doesnt start at all",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1552084005,
+    "title": "Arctic Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "358170",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "DOSBOX starts but leaves you stuck at a command line.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556697791,
+    "title": "Arctic Adventure",
+    "source": "protondb"
+  }
+]

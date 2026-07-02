@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "691450",
+    "title": "Misao: Definitive Edition",
+    "timestamp": 1535005874,
+    "rating": "Borked",
+    "notes": "Error on startup: \n\"Failed to start-up. \nGame.exe may be already running \nIf you cannot find it on your Taskbar\nHit Ctrl+Alt+Del to end process from Task\nManager.\"\nAlso, Configuration start-up, but it can't recognize any letters (Japanese font problem maybe?).",
+    "os": "Ubuntu 18.04.01 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 7 2700X / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "691450",
+    "title": "Misao: Definitive Edition",
+    "timestamp": 1534991474,
+    "rating": "Borked",
+    "notes": "Error on startup: \n\"Failed to start-up. \nGame.exe may be already running \nIf you cannot find it on your Taskbar\nHit Ctrl+Alt+Del to end process from Task\nManager.\"\nAlso, Configuration start-up, but it can't recognize any letters (Japanese font problem maybe?).",
+    "os": "Ubuntu 18.04.01 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 7 2700X / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

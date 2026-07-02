@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2998650",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.4, DRM 3.64, 6.17.4-4-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.5-cachyos1.5",
+    "kernel": "6.17.4-4-cachyos",
+    "notes": "Game loads, but just displays an orange gradient. Tried with Proton Experimental, GE-Proton and Proton CachyOS (SLR).",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1761597330,
+    "title": "",
+    "source": "protondb"
+  }
+]

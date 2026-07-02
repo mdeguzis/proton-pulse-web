@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "630870",
+    "title": "Chuusotsu! 1st Graduation: Time After Time",
+    "timestamp": 1535632725,
+    "rating": "Borked",
+    "notes": "Crashes as soon as you open the game.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "630870",
+    "cpu": "i7-4770 CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Fullscreen crashes the game and opening doesn't work. Everything else works fine.",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "rating": "Silver",
+    "timestamp": "1536364800",
+    "title": "Chuusotsu! 1st Graduation: Time After Time",
+    "source": "protondb"
+  },
+  {
+    "appId": "630870",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.14.79-1-MANJARO",
+    "notes": "Changing the resolution to full screen mode causes the game to show a black screen and freeze. Also, keeping the game in window mode, but clicking the maximize window button will cause the right side of the game to glitch. The whole window will also move up and down and the game becomes very slow like the FPS dropped or something. It's unplayable unless you keep it in window mode and don't maximize the window. Other then that, the game appears to run fine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542351532,
+    "title": "Chuusotsu! 1st Graduation: Time After Time",
+    "source": "protondb"
+  },
+  {
+    "appId": "630870",
+    "title": "Chuusotsu! 1st Graduation: Time After Time",
+    "timestamp": 1535618325,
+    "rating": "Borked",
+    "notes": "Crashes as soon as you open the game.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

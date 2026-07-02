@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "586200",
+    "title": "Street Fighter 30th Anniversary Collection",
+    "timestamp": 1534910400,
+    "rating": "Silver",
+    "notes": "Will not run full screen. If you choose Full the game just stays windowed. There is some double input error when configuring controls, use your keyboard to configure your buttons. When fighting it works perfectly",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i5 3470 / Geforce 1060 3gb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "586200",
+    "title": "Street Fighter 30th Anniversary Collection",
+    "timestamp": 1535368191,
+    "rating": "Platinum",
+    "notes": "Everything works perfectly, including Fullscreen",
+    "os": "Arch Linux Stable 64-Bit (Kernel 4.18.5) - KDE Plasma 5",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700 / GTX 1080",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "586200",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Input is broken, but I figured out a workaround.  Controller inputs register for both Player 1 and Player 2 simultaneously, and there is no way to unmap the controller from P2.  As a result, if you hit start (mapped to the controller Back button by default), the game will start for both P1 and P2 and you will control inputs for both players with the same controller.  When I connect two xinput-compatible controllers, the second controller is simply ignored by the game.\n\nThe workaround is simply this: map the P2 \"start\" button to an unused button, like the left bumper button. \n\nI gave a Silver rating because you cannot unmap P2 controls due to the input weirdness, therefore you cannot play a local versus match.\n\nOther than that, graphics are fine and sound is fine.  I was not willing to attempt an online match because of the input issue and potentially wasting someone's time.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7876 Mb",
+    "rating": "Silver",
+    "timestamp": 1537323285,
+    "title": "Street Fighter 30th Anniversary Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "586200",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Only really playable in single-player. Online multiplayer does not work and local versus is broken due to the double input bug causing both players to be controlled by the same gamepad.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Bronze",
+    "timestamp": 1545812571,
+    "title": "Street Fighter 30th Anniversary Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "586200",
+    "title": "Street Fighter 30th Anniversary Collection",
+    "timestamp": 1534896000,
+    "rating": "Silver",
+    "notes": "Will not run full screen. If you choose Full the game just stays windowed. There is some double input error when configuring controls, use your keyboard to configure your buttons. When fighting it works perfectly",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i5 3470 / Geforce 1060 3gb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "586200",
+    "title": "Street Fighter 30th Anniversary Collection",
+    "timestamp": 1535353791,
+    "rating": "Platinum",
+    "notes": "Everything works perfectly, including Fullscreen",
+    "os": "Arch Linux Stable 64-Bit (Kernel 4.18.5) - KDE Plasma 5",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700 / GTX 1080",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

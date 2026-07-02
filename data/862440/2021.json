@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "862440",
+    "cpu": "AMD FX-6100 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.40.0, 5.10.15-1-MANJARO, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.15-1-MANJARO",
+    "notes": "a VN without proper backgrounds is an issue",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1613456307,
+    "title": "",
+    "source": "protondb"
+  }
+]

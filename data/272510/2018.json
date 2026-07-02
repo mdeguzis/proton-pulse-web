@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "272510",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-96.current",
+    "notes": "This game will not start. No current workarounds. No error messages. The game seems to crash on start.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541253516,
+    "title": "NARUTO SHIPPUDEN: Ultimate Ninja STORM Revolution",
+    "source": "protondb"
+  },
+  {
+    "appId": "272510",
+    "cpu": "Intel Core i3-3217U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Unplayable doesnt run.  ",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1546146075,
+    "title": "NARUTO SHIPPUDEN: Ultimate Ninja STORM Revolution",
+    "source": "protondb"
+  }
+]

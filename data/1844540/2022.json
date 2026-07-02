@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1844540",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.4.0-107-generic",
+    "notes": "Add the argument steam://rungameid/1844540 in Lutris config to start the game directly.",
+    "os": "Ubuntu 18.04.6 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1650202794,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "709700",
+    "cpu": "Intel Pentium G3260 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Gallium 0.4 on AMD BONAIRE (DRM 2.49.0 / 4.9.0-8-amd64, LLVM 3.9.1)",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.9.0-8-amd64",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1550391250,
+    "title": "The Thing: Space X",
+    "source": "protondb"
+  }
+]

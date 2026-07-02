@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "45720",
+    "cpu": "i5-4670K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "DirectX10 mode fails to start, DX9 mode opens a black screen with fatal error: E_INALIDARG: XLiveInitialiez(&xii)  Seems like it fails to install GFWL",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15915 Mb",
+    "rating": "Borked",
+    "timestamp": 1536951270,
+    "title": "Lost Planet: Extreme Condition Colonies Edition",
+    "source": "protondb"
+  }
+]

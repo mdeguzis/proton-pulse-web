@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "954610",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-3c966fd688)",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "Weird issues with windowed mode on i3wm so set game to full screen and you're good to go",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569795684,
+    "title": "Onii-chan Asobo",
+    "source": "protondb"
+  },
+  {
+    "appId": "954610",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-1-MANJARO",
+    "notes": "Has issues running windowed (flashing screen) => press F11 to switch to fullscreen.\nButterly Smooth without any further problems. Didn't test controller compatibility,\nbecause it's basically a visual  novel.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1570301516,
+    "title": "Onii-chan Asobo",
+    "source": "protondb"
+  }
+]

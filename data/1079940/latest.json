@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1079940",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.60, 6.12.15-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.4",
+    "kernel": "6.12.15-200.fc41.x86_64",
+    "notes": "Runs on Linux",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1740228003,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1079940",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 550.40.07",
+    "kernel": "6.14-amd64",
+    "notes": "Affichage des menus, tentative de baisser la musique, au retour dans le menu pr\u00e9c\u00e9dent, plantage du jeu. Ne d\u00e9marre plus.\nProbl\u00e8me de DX11",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1746727881,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1079940",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.14.6-arch1-1",
+    "notes": "Works Great",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1748038649,
+    "title": "",
+    "source": "protondb"
+  }
+]

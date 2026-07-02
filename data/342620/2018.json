@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "342620",
+    "title": "It came from space, and ate our brains",
+    "timestamp": 1535154725,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "342620",
+    "title": "It came from space, and ate our brains",
+    "timestamp": 1535821012,
+    "rating": "Borked",
+    "notes": "Unresponsive window with a black screen, has to be manually killed",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 5 1600X / RX 480",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "342620",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs perfectly on high settings with Xbox 360 controller.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32113 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537687469,
+    "title": "It came from space, and ate our brains",
+    "source": "protondb"
+  },
+  {
+    "appId": "342620",
+    "title": "It came from space, and ate our brains",
+    "timestamp": 1535140325,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "342620",
+    "title": "It came from space, and ate our brains",
+    "timestamp": 1535806612,
+    "rating": "Borked",
+    "notes": "Unresponsive window with a black screen, has to be manually killed",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 5 1600X / RX 480",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

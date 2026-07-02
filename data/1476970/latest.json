@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1476970",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.8, DRM 3.64, 6.18.7-200.nobara.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.4",
+    "kernel": "6.18.7-200.nobara.fc43.x86_64",
+    "notes": "Works great as installed",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1769579171,
+    "title": "IdleOn - The Idle RPG",
+    "source": "protondb"
+  },
+  {
+    "appId": "1476970",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.5-3-cachyos",
+    "notes": "Need a tinkering on Bazzite and CachyOS; on LinuxMint good performance from the box.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772951462,
+    "title": "IdleOn - The Idle RPG",
+    "source": "protondb"
+  },
+  {
+    "appId": "1476970",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.0-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.4-arch2.2",
+    "kernel": "7.0.0-1-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "bronze",
+    "timestamp": 1776298296,
+    "title": "IdleOn - The Idle RPG",
+    "source": "protondb"
+  }
+]

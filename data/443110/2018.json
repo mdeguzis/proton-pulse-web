@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "443110",
+    "title": "Armored Warfare",
+    "timestamp": 1535592599,
+    "rating": "Borked",
+    "notes": "Will open to splash page, and update game to latest patch, but when attempting to play the game, it states Steam must be running (which it is, in the background) and as such, will not actually start. Any further attempts to get AW to run simply fail back to the steam page.",
+    "os": "Ubuntu 14.04.5 LTS (Kernel 3.13.0-157-generic)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "Dual Xeon E5430",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "443110",
+    "title": "Armored Warfare",
+    "timestamp": 1535578199,
+    "rating": "Borked",
+    "notes": "Will open to splash page, and update game to latest patch, but when attempting to play the game, it states Steam must be running (which it is, in the background) and as such, will not actually start. Any further attempts to get AW to run simply fail back to the steam page.",
+    "os": "Ubuntu 14.04.5 LTS (Kernel 3.13.0-157-generic)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "Dual Xeon E5430",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

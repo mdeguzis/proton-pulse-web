@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "250640",
+    "title": "Croixleur Sigma",
+    "timestamp": 1535768383,
+    "rating": "Borked",
+    "notes": "Crashes at the intro video",
+    "os": "Manjaro Stable (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3570K / RX 570",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "250640",
+    "title": "Croixleur Sigma",
+    "timestamp": 1535753983,
+    "rating": "Borked",
+    "notes": "Crashes at the intro video",
+    "os": "Manjaro Stable (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3570K / RX 570",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

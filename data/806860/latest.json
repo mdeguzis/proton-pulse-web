@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "806860",
+    "cpu": "Intel Core i5       S 750  @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "Works very well, with performance in excess of 60 fps.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1569021088,
+    "title": "They Are Hundreds",
+    "source": "protondb"
+  }
+]

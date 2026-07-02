@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "384200",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game loads and runs with no problems or stutters/framerate drops. Full playthrough not yet tested.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549887610,
+    "title": "Raging Justice",
+    "source": "protondb"
+  }
+]

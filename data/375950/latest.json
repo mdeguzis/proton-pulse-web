@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "375950",
+    "cpu": "Intel Core i7-4610M @ 3.00GHz",
+    "duration": "severalHours",
+    "gpu": "AMD HAINAN (radeonsi, , ACO, DRM 2.50, 6.14.0-37-generic)",
+    "gpuDriver": "4.5 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-37-generic",
+    "notes": "Works OOTB.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1768244323,
+    "title": "Viridi",
+    "source": "protondb"
+  }
+]

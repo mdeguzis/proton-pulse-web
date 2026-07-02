@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "629760",
+    "title": "Mordhau",
+    "timestamp": 1535244809,
+    "rating": "Borked",
+    "notes": "https://paste.ubuntu.com/p/Xg96YymZrZ/",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "629760",
+    "title": "Mordhau",
+    "timestamp": 1536098182,
+    "rating": "Bronze",
+    "notes": "Performance:\n* Smooth visual game play, around 60fps with ultra settings and Antialiasing FXAA.\n* initial start takes quite long (~1-3min)\nErrors:\n* Sound is stuttering\n* No Network connection / multiplayer games available\n\n",
+    "os": "Linux Mint 19 (4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "MSI Nvidia GTX 1070 Gaming X",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "629760",
+    "title": "Mordhau",
+    "timestamp": 1535230409,
+    "rating": "Borked",
+    "notes": "https://paste.ubuntu.com/p/Xg96YymZrZ/",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "629760",
+    "title": "Mordhau",
+    "timestamp": 1536083782,
+    "rating": "Bronze",
+    "notes": "Performance:\n* Smooth visual game play, around 60fps with ultra settings and Antialiasing FXAA.\n* initial start takes quite long (~1-3min)\nErrors:\n* Sound is stuttering\n* No Network connection / multiplayer games available\n\n",
+    "os": "Linux Mint 19 (4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "MSI Nvidia GTX 1070 Gaming X",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

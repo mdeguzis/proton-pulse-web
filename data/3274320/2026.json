@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3274320",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, ACO, DRM 3.64, 6.18.9-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.1.0-devel",
+    "kernel": "6.18.9-200.fc43.x86_64",
+    "notes": "Works out of the box with default Proton, completed a full playthrough",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771676306,
+    "title": "",
+    "source": "protondb"
+  }
+]

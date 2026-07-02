@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2658470",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 16.0.6, DRM 3.49, 6.1.0-13-amd64)",
+    "gpuDriver": "4.6 Mesa 23.2.1 (git-49a47f187e)",
+    "kernel": "6.1.0-13-amd64",
+    "notes": "PROTON_USE_WINED3D=1",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1728965613,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2658470",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "runs perfectly and smooth 60fps on sd oled. That experience what I expect from games",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1731879545,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2658470",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.8-200.fsync.fc40.x86_64",
+    "notes": "Works great, no problems!",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1732116910,
+    "title": "",
+    "source": "protondb"
+  }
+]

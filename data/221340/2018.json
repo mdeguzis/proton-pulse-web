@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "221340",
+    "title": "Infected: The Twin Vaccine - Collector's Edition",
+    "timestamp": 1535070997,
+    "rating": "Borked",
+    "notes": "Crash on start",
+    "os": "Fedora 28",
+    "gpuDriver": "Mesa 18.0.5-3",
+    "specs": "i5-4690k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "221340",
+    "title": "Infected: The Twin Vaccine - Collector's Edition",
+    "timestamp": 1535277995,
+    "rating": "Borked",
+    "notes": "Shows Running for a few seconds, then stops without opening.",
+    "os": "Ubuntu 17.10 (64-bit)",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "221340",
+    "title": "Infected: The Twin Vaccine - Collector's Edition",
+    "timestamp": 1535056597,
+    "rating": "Borked",
+    "notes": "Crash on start",
+    "os": "Fedora 28",
+    "gpuDriver": "Mesa 18.0.5-3",
+    "specs": "i5-4690k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "221340",
+    "title": "Infected: The Twin Vaccine - Collector's Edition",
+    "timestamp": 1535263595,
+    "rating": "Borked",
+    "notes": "Shows Running for a few seconds, then stops without opening.",
+    "os": "Ubuntu 17.10 (64-bit)",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

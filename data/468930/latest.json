@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "468930",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.7-1-MANJARO",
+    "notes": "crashes at launch. proton 4.2-3",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556303828,
+    "title": "Phantaruk",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "877330",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.28-1-MANJARO",
+    "notes": "it crashes on all available to protons too",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1591626324,
+    "title": "",
+    "source": "protondb"
+  }
+]

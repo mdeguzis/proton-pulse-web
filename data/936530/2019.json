@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "936530",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.0",
+    "kernel": "5.0.3-arch1-1-ARCH",
+    "notes": "Ran Game, Played all Tutorial Missions",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553181300,
+    "title": "Close Combat: Last Stand Arnhem",
+    "source": "protondb"
+  },
+  {
+    "appId": "936530",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.15.0-54-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563741170,
+    "title": "Close Combat: Last Stand Arnhem",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "1690",
+    "title": "Space Empires V",
+    "timestamp": 1534948870,
+    "rating": "Borked",
+    "notes": "Launcher starts normally but crashes when loading the game",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": " i7-7700HQ / GeForce GTX 1060 Mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "1690",
+    "cpu": "AMD Phenom 9750 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.2-041902-generic",
+    "notes": "Completely unplayable. Launcher works, but the moment you go into the main game, it freezes/crashes depending on which version of Proton/Wine you're using.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542745056,
+    "title": "Space Empires V",
+    "source": "protondb"
+  },
+  {
+    "appId": "1690",
+    "title": "Space Empires V",
+    "timestamp": 1534934470,
+    "rating": "Borked",
+    "notes": "Launcher starts normally but crashes when loading the game",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": " i7-7700HQ / GeForce GTX 1060 Mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

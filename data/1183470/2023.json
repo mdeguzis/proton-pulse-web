@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1183470",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.9-arch1-1",
+    "notes": "Playable, but frustrating because of lack of sound and significant performance issues",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1675541124,
+    "title": "",
+    "source": "protondb"
+  }
+]

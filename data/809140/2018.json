@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "809140",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.14.78-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540995734,
+    "title": "Cliff Empire",
+    "source": "protondb"
+  },
+  {
+    "appId": "809140",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.0-11-generic",
+    "notes": "User Interface disappears for unknown reason after some minutes. The lights, which stay on screen get fixed, when set from 'realistic' to 'fast'.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1543781956,
+    "title": "Cliff Empire",
+    "source": "protondb"
+  }
+]

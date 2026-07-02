@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1311660",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.1, DRM 3.44, 5.17.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.17.3-arch1-1",
+    "notes": "works well with proton forced",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1654205804,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1311660",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.1, DRM 3.44, 5.17.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.17.3-arch1-1",
+    "notes": "works well with proton forced",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1654206038,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1311660",
+    "cpu": "Intel Core i3-10100F @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 13.0.1, DRM 3.46, 5.18.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.2",
+    "kernel": "5.18.5-arch1-1",
+    "notes": "i tried it with native, proton experimental, and proton 7.0-3 game never starts on all 3",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1655778637,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "463050",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000rc3-generic",
+    "notes": "Some minor audio distortion, options menu can't be entered, loading/saving does not work.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1548517913,
+    "title": "The Pit And The Pendulum",
+    "source": "protondb"
+  }
+]

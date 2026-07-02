@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1073840",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Works perfectly in Proton 4.11-2",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566454881,
+    "title": "Nocked! True Tales of Robin Hood",
+    "source": "protondb"
+  },
+  {
+    "appId": "1073840",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-zen1-1-zen",
+    "notes": "Seems to run okay, but the windowing is a bit strange on i3. I suggest setting the game to fullscreen by selecting View > Fullscreen on the top menu.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1566645475,
+    "title": "Nocked! True Tales of Robin Hood",
+    "source": "protondb"
+  }
+]

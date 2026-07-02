@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "340150",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.17.4-arch1-1",
+    "notes": "No issues found",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1651214838,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "340150",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Game runs perfectly fine on SteamDeck.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1651814736,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "340150",
+    "cpu": "Intel Pentium Gold G5400 @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.18.17-200.fc36.x86_64",
+    "notes": "",
+    "os": "Fedora",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1660919100,
+    "title": "",
+    "source": "protondb"
+  }
+]

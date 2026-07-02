@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "382570",
+    "title": "Glass Wing",
+    "timestamp": 1536302588,
+    "rating": "Borked",
+    "notes": "No character animations, falling through things etc",
+    "os": "Arch 64-bit (Kernel 4.18.6)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "382570",
+    "title": "Glass Wing",
+    "timestamp": 1536288188,
+    "rating": "Borked",
+    "notes": "No character animations, falling through things etc",
+    "os": "Arch 64-bit (Kernel 4.18.6)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

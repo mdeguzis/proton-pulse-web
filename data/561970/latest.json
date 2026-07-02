@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "561970",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (sienna_cichlid, LLVM 13.0.1, DRM 3.46, 5.18.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.1",
+    "kernel": "5.18.2-arch1-1",
+    "notes": "Tried it with multiple different version of proton including a few GE 6.x versions but the game refuse to launch. I got the \"initialising game\" window from steam for about a second before it disappeared and nothing happened.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1654727358,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "561970",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (sienna_cichlid, LLVM 13.0.1, DRM 3.46, 5.18.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.1",
+    "kernel": "5.18.2-arch1-1",
+    "notes": "It just works!",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1654728020,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "689340",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Using the \"protontricks 689340 -q dotnet472\" in a terminal window will install the needed .NET dependencies. It will take quite some time to install but afterwards it will work perfectly. Must have attempted to run the game at least once prior before the command will work. This works for all other Logistical (1) modules I have tried thus far, just replace the steamappid in the command for each module.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1556219185,
+    "title": "LOGistICAL: USA - Florida",
+    "source": "protondb"
+  }
+]

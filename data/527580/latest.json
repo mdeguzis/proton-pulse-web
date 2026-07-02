@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "527580",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.4.15",
+    "notes": "Shows black screen and crashes",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1694504243,
+    "title": "PITCH-HIT ARCADE",
+    "source": "protondb"
+  }
+]

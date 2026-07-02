@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3570070",
+    "cpu": "AMD BC-250",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1013, LLVM 19.1.7, DRM 3.61, 6.12.69+deb13-amd64)",
+    "gpuDriver": "4.6 Mesa 25.2.6-1~bpo13+1",
+    "kernel": "6.12.69+deb13-amd64",
+    "notes": "it runs well",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "10 GB",
+    "rating": "gold",
+    "timestamp": 1771756886,
+    "title": "",
+    "source": "protondb"
+  }
+]

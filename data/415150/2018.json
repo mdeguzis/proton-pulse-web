@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "415150",
+    "title": "Pang adventures",
+    "timestamp": 1535379791,
+    "rating": "Gold",
+    "notes": "Had to input resolution manually; it assumes gamepad is connected when it isn't (but plays fine with keyboard)",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "415150",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541114831,
+    "title": "Pang Adventures",
+    "source": "protondb"
+  },
+  {
+    "appId": "415150",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-041901-generic",
+    "notes": "Requires no configuration or tweaks. Works perfectly out of the box. Xbox controllers seem to work perfectly as well.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541563299,
+    "title": "Pang Adventures",
+    "source": "protondb"
+  },
+  {
+    "appId": "415150",
+    "title": "Pang adventures",
+    "timestamp": 1535365391,
+    "rating": "Gold",
+    "notes": "Had to input resolution manually; it assumes gamepad is connected when it isn't (but plays fine with keyboard)",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1482700",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.5-1-default",
+    "notes": "No issues playing",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1725723475,
+    "title": "",
+    "source": "protondb"
+  }
+]

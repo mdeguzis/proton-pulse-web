@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "292410",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Crashes on start",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555777175,
+    "title": "Street Racing Syndicate",
+    "source": "protondb"
+  },
+  {
+    "appId": "292410",
+    "cpu": "AMD A9-9430 RADEON R5, 5 COMPUTE CORES 2C+3G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD STONEY",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Won't start at all, tried D9VK",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.11-1",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1564615605,
+    "title": "Street Racing Syndicate",
+    "source": "protondb"
+  }
+]

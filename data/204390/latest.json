@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "204390",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.19.11-arch1-1-ARCH",
+    "notes": "Couldn't get past the first/tutorial level. Important text (and large portions of the menus) do not display correctly, rendering it unplayable. In game, it works perfectly fine until \"Access Console\" when the render bug kicks in, and you cannot complete the level.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1545580394,
+    "title": "Pineapple Smash Crew ",
+    "source": "protondb"
+  }
+]

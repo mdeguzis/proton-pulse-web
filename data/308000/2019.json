@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "308000",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "4.19.0-sabayon",
+    "os": "Sabayon Linux amd64 19.05",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556915529,
+    "title": "Gold Rush! Classic",
+    "source": "protondb"
+  },
+  {
+    "appId": "308000",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-zen1-2-zen",
+    "notes": "Working perfectly out of the box, use ALT+Enter to get fullscreen.",
+    "os": "Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562088925,
+    "title": "Gold Rush! Classic",
+    "source": "protondb"
+  }
+]

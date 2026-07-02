@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "292380",
+    "title": "Racer 8",
+    "timestamp": 1536008355,
+    "rating": "Platinum",
+    "notes": "works perfectly",
+    "os": "Ubuntu Mate 18.04 64-bit",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4702MQ",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "292380",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537643246,
+    "title": "Racer 8",
+    "source": "protondb"
+  },
+  {
+    "appId": "292380",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 660/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.9.0-8-amd64",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16001 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539698414,
+    "title": "Racer 8",
+    "source": "protondb"
+  },
+  {
+    "appId": "292380",
+    "cpu": "Intel Core i7-4700MQ @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 750M",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542313579,
+    "title": "Racer 8",
+    "source": "protondb"
+  },
+  {
+    "appId": "292380",
+    "title": "Racer 8",
+    "timestamp": 1535993955,
+    "rating": "Platinum",
+    "notes": "works perfectly",
+    "os": "Ubuntu Mate 18.04 64-bit",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4702MQ",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

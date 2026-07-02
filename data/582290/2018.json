@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "582290",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.4 - SteamVR PPA",
+    "kernel": "4.19.1-041901-generic",
+    "notes": "Some audio glitches and volume issues but works fine otherwise.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541528738,
+    "title": "Rest House",
+    "source": "protondb"
+  }
+]

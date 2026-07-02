@@ -1,0 +1,79 @@
+[
+  {
+    "appId": "226580",
+    "title": "F1 2014",
+    "timestamp": 1535114982,
+    "rating": "Borked",
+    "notes": "\"",
+    "os": "ubuntu mate 18.04",
+    "gpuDriver": "NVIDIA GTX 750TI",
+    "specs": "AMD FX 4300",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "226580",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Doesnt start. No Error Messages appear",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16054 MB",
+    "rating": "Borked",
+    "timestamp": 1539200302,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "F1 2014",
+    "source": "protondb"
+  },
+  {
+    "appId": "226580",
+    "cpu": "Intel Core i5-3570K",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7970",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Steam shows the game as running for about a half minute (no windows appears), then nothing.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544738580,
+    "title": "F1 2014",
+    "source": "protondb"
+  },
+  {
+    "appId": "226580",
+    "cpu": "Intel Xeon E3-1230 v5 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Crashes immediately without an error message",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544957780,
+    "title": "F1 2014",
+    "source": "protondb"
+  },
+  {
+    "appId": "226580",
+    "title": "F1 2014",
+    "timestamp": 1535100582,
+    "rating": "Borked",
+    "notes": "\"",
+    "os": "ubuntu mate 18.04",
+    "gpuDriver": "NVIDIA GTX 750TI",
+    "specs": "AMD FX 4300",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

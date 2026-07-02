@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2665020",
+    "cpu": "Intel Core i5-10600K @ 4.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.11.0-21-generic",
+    "notes": "Works out of the box",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1743561116,
+    "title": "",
+    "source": "protondb"
+  }
+]

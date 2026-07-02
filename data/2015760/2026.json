@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2015760",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.5-2-cachyos",
+    "notes": "Until I can get past login its unknown whether the game will play but I think it won't be a problem, atm only available on chinese servers.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1768359605,
+    "title": "",
+    "source": "protondb"
+  }
+]

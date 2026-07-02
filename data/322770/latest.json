@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "322770",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.52.18",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Controller skins disappear after entering the in-game settings, but otherwise it seems to work perfectly with my Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565544890,
+    "title": "Vanishing Realms\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "322770",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.2.5-steamvr-generic",
+    "notes": "The game runs perfectly out of the box.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566161237,
+    "title": "Vanishing Realms\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "322770",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.14-arch2-1-ARCH",
+    "notes": "No problems at all",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568583851,
+    "title": "Vanishing Realms\u2122",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "42980",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Trying to start a campaign,load a save or exiting to menu will randomly cause the game to crash. Otherwise it seams to work well.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1554923872,
+    "title": "Victoria I Complete",
+    "source": "protondb"
+  }
+]

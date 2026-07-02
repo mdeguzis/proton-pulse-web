@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "773670",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with no tweaks.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558308366,
+    "title": "Delete",
+    "source": "protondb"
+  },
+  {
+    "appId": "773670",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.13.0-41-generic",
+    "os": "Linux Mint 18.2 Sonya",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1560224389,
+    "title": "Delete",
+    "source": "protondb"
+  },
+  {
+    "appId": "773670",
+    "cpu": "Intel Xeon           X5355  @ 2.66GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.18.0-25-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1563245797,
+    "title": "Delete",
+    "source": "protondb"
+  }
+]

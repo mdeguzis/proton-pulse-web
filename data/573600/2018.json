@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "573600",
+    "cpu": "i7-7700K CPU @ 4.20GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Xbox 360 Game pad does not work in the menus, but works fine in game. Everything else runs like the Windows version.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "32113 Mb",
+    "rating": "Silver",
+    "timestamp": 1536803448,
+    "title": "Think of the Children",
+    "source": "protondb"
+  },
+  {
+    "appId": "573600",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "When I launch the game without any launch tweaks it gives me an error pop up stating that the game has crashed and telling me it has made a log in a crash report folder. Once I click ok, the dialogue box disappears but the game continues to run, according to both Steam and System Monitor. It never appears to actually launch and I end up either sigkilling it or closing Steam. One time it randomly did launch and seemed to working fairly well from what little testing I could do, but I have not been able to reproduce that launch. I have tried disabling Esync, D3D11 and using Wine D3D11 but all have said that they were running in both Steam and System Monitor without ever launching, the difference being that they all lacked an error pop up.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541670863,
+    "title": "Think of the Children",
+    "source": "protondb"
+  }
+]

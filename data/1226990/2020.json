@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1226990",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.3.0-40-generic",
+    "notes": "Around +3 hours of stable gameplay. Even if the game is fully alpha/beta",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "4.11-13",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1583732748,
+    "title": "Mechanica",
+    "source": "protondb"
+  },
+  {
+    "appId": "1226990",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce 920M",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.3.0-46-generic",
+    "notes": "For me the game runs perfectly without any tinkering",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-5",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1586765648,
+    "title": "Mechanica",
+    "source": "protondb"
+  },
+  {
+    "appId": "1226990",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.12-1-MANJARO",
+    "notes": "It just works",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1590067413,
+    "title": "Mechanica",
+    "source": "protondb"
+  }
+]

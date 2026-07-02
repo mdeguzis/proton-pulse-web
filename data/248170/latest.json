@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "248170",
+    "title": "Clickteam Fusion 2.5",
+    "timestamp": 1534979834,
+    "rating": "Silver",
+    "notes": "Some graphical errors. Welcome screen does not show online stuff. Opened some old projects, seems to work fine. Did not test building nor any exporters.",
+    "os": "Void Linux x86_64 (Kernel 4.9.119)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-2670QM / GT 525M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "248170",
+    "cpu": "i5-7400 CPU @ 3.00GHz",
+    "gpu": "GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Opening, editing and testing applications work normally, as well as installing extensions from the manager. Haven't tested anything else at the moment. No lag or any issues other than some small visual glitches when switching frames which can easily be fixed by changing frame zoom level or moving the view around.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7913 Mb",
+    "rating": "Gold",
+    "timestamp": 1536708053,
+    "title": "Clickteam Fusion 2.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "248170",
+    "cpu": "Intel(R) Core(TM) i7-2600 CPU @ 3.40GHz",
+    "gpu": "X.Org AMD TURKS (DRM 2.50.0 / 4.12.14-lp150.12.16-default, LLVM 5.0.1)",
+    "gpuDriver": "3.0 Mesa 18.0.2",
+    "kernel": "4.12.14-lp150.12.16-default",
+    "notes": "Proton 3.7.6",
+    "os": "\"openSUSE Leap 15.0\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7857 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537571241,
+    "title": "Clickteam Fusion 2.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "248170",
+    "title": "Clickteam Fusion 2.5",
+    "timestamp": 1534965434,
+    "rating": "Silver",
+    "notes": "Some graphical errors. Welcome screen does not show online stuff. Opened some old projects, seems to work fine. Did not test building nor any exporters.",
+    "os": "Void Linux x86_64 (Kernel 4.9.119)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-2670QM / GT 525M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

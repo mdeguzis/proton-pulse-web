@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "2840",
+    "title": "X: Beyond the Frontier",
+    "timestamp": 1535213946,
+    "rating": "Bronze",
+    "notes": "Options might need an alt+tab to get focus (click on it wont work)",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2840",
+    "title": "X: Beyond the Frontier",
+    "timestamp": 1536253058,
+    "rating": "Gold",
+    "notes": "Options Menu sometimes need alt-tab and should run with 4:3 resolution",
+    "os": "Archlinux 640bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Xeon X5670 / GTX 1060",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "2840",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "No voices or music. Problem could not be solved with Proton+Winetricks.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1544541194,
+    "title": "X: Beyond the Frontier",
+    "source": "protondb"
+  },
+  {
+    "appId": "2840",
+    "title": "X: Beyond the Frontier",
+    "timestamp": 1535199546,
+    "rating": "Bronze",
+    "notes": "Options might need an alt+tab to get focus (click on it wont work)",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2840",
+    "title": "X: Beyond the Frontier",
+    "timestamp": 1536238658,
+    "rating": "Gold",
+    "notes": "Options Menu sometimes need alt-tab and should run with 4:3 resolution",
+    "os": "Archlinux 640bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Xeon X5670 / GTX 1060",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "581660",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 550 / 550 (radeonsi, polaris12, LLVM 17.0.6, DRM 3.57, 6.8.0-19-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.5-1ubuntu1",
+    "kernel": "6.8.0-19-generic",
+    "notes": "usei proton ge 8.X.X (n\u00e3o lembro o proton que usei agora)",
+    "os": "Voyager 24.04 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1717766727,
+    "title": "",
+    "source": "protondb"
+  }
+]

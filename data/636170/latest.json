@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "636170",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD VEGA10",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.8-artix1-2-ARTIX",
+    "notes": "I played through the first memory and had the game lock up my system once. Other than that the game seems to play perfectly.",
+    "os": "Artix",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1547174444,
+    "title": "Reaching for Petals",
+    "source": "protondb"
+  },
+  {
+    "appId": "636170",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-31-generic",
+    "notes": "I have no issue's wit this game. I posted a steamcommunity video at https://www.youtube.com/watch?v=QsI49W-61xg&feature=youtu.be",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570552862,
+    "title": "Reaching for Petals",
+    "source": "protondb"
+  }
+]

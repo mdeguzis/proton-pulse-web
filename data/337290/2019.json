@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "337290",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game runs but mouse gets stuck in the middle of the screen. The menus are not navigable by keyboard, so this prevents the player from choosing menu options which is essential to the game.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1559508523,
+    "title": "Still Not Dead",
+    "source": "protondb"
+  },
+  {
+    "appId": "337290",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-050115-generic",
+    "notes": "The game has an issue with the capture of the cursor when it switches from being used as a cursor to being used as the input for aiming. It's something I've seen before in other games running in Wine that's sometimes solved by playing around with a virtual desktop and allowing the program to capture the cursor. In the event that none of the typical adjustments work, alt-tabbing out and back in fixes this. You will have to do this after every exit in the game twice for it to work correctly, unfortunately.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1564527551,
+    "title": "Still Not Dead",
+    "source": "protondb"
+  }
+]

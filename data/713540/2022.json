@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "713540",
+    "cpu": "AMD A6-9225 RADEON R4, 5 COMPUTE CORES 2C+3G",
+    "duration": "underOneHour",
+    "gpu": "AMD STONEY (stoney, LLVM 14.0.6, DRM 3.46, 5.18.0-3-amd64)",
+    "gpuDriver": "4.5 Mesa 22.2.0-rc1",
+    "kernel": "5.18.0-3-amd64",
+    "notes": "Picture stuck at engine splash screen",
+    "os": "Debian GNU/Linux bookworm/sid (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-3",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1659980470,
+    "title": "",
+    "source": "protondb"
+  }
+]

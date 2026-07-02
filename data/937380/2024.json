@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "937380",
+    "cpu": "Intel Core i3-2350M @ 2.30GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel HD 3000 (SNB GT2)",
+    "gpuDriver": "3.3 Mesa 22.3.6",
+    "kernel": "6.1.38",
+    "notes": "if someone can help me to get this to run please",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-5",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1713250781,
+    "title": "Ashen Empires",
+    "source": "protondb"
+  }
+]

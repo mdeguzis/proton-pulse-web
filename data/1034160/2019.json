@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1034160",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Works beautifully out of box...",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567338758,
+    "title": "Extreme Racing on Highway",
+    "source": "protondb"
+  }
+]

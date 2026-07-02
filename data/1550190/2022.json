@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1550190",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.44.0, 5.17.0-gentoo, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.17.0-gentoo",
+    "notes": "Game fails upon launch stating to run it as a user, and not administrator.",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1649605867,
+    "title": "Post-Apo Builder",
+    "source": "protondb"
+  }
+]

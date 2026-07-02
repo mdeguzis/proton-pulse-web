@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "571880",
+    "cpu": "AG",
+    "duration": "allTheTime",
+    "gpu": "kernel",
+    "gpuDriver": "DP-1,",
+    "kernel": "30",
+    "notes": "Base game works natively on Linux.\nto make steam workshop mods work like on windows, you need to run the windows version.",
+    "os": "14.4",
+    "protonVersion": "5.13-6",
+    "ram": "Framework",
+    "rating": "platinum",
+    "timestamp": 1736201525,
+    "title": "Angels with Scaly Wings\u2122 / \u9c57\u7fbd\u306e\u5929\u4f7f",
+    "source": "protondb"
+  }
+]

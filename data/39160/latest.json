@@ -1,0 +1,79 @@
+[
+  {
+    "appId": "39160",
+    "title": "Dungeon Siege III",
+    "timestamp": 1534970611,
+    "rating": "Platinum",
+    "notes": "1080p/60 fps. Wired Xbox 360 controller functioned perfectly.",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "39160",
+    "title": "Dungeon Siege III",
+    "timestamp": 1535287091,
+    "rating": "Platinum",
+    "notes": "Runs perfectly without tweaking and good performance",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "39160",
+    "cpu": "Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-1-MANJARO",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7919 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537332385,
+    "title": "Dungeon Siege III",
+    "source": "protondb"
+  },
+  {
+    "appId": "39160",
+    "cpu": "Intel(R) Core(TM) i3-6100H CPU @ 2.70GHz",
+    "gpu": "NVIDIA Corporation GeForce 940M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Perfectly fine.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "3835 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537546678,
+    "title": "Dungeon Siege III",
+    "source": "protondb"
+  },
+  {
+    "appId": "39160",
+    "title": "Dungeon Siege III",
+    "timestamp": 1534956211,
+    "rating": "Platinum",
+    "notes": "1080p/60 fps. Wired Xbox 360 controller functioned perfectly.",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "39160",
+    "title": "Dungeon Siege III",
+    "timestamp": 1535272691,
+    "rating": "Platinum",
+    "notes": "Runs perfectly without tweaking and good performance",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

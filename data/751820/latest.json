@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "751820",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-2793417ec6)",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "Runs at about 55fps with the default graphics settings.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551835096,
+    "title": "Black Future '88",
+    "source": "protondb"
+  }
+]

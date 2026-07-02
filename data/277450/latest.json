@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "277450",
+    "cpu": "Intel Core i5-3337U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.7-1-MANJARO",
+    "notes": "Everything works perfectly. No issues, and no lag.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556757326,
+    "title": "Imperial Glory",
+    "source": "protondb"
+  },
+  {
+    "appId": "277450",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Game works out of the box with none of the graphical bugs or crashes as seen on Windows 8/10. Historical Battles work perfectly and so does the sandbox mode. FPS was a constant 144 during gameplay",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566752385,
+    "title": "Imperial Glory",
+    "source": "protondb"
+  }
+]

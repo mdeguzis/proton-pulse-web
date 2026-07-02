@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "488920",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.17.0-3-amd64",
+    "notes": "Worked with reasonable perf for linux VR. Some glitch such as invisible gloves prevent a normal play. Note that a manual installation of libva 1.8 is need with the last debian to prevent a warning.",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16057 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536786845,
+    "title": "Knockout League - Arcade VR Boxing",
+    "source": "protondb"
+  }
+]

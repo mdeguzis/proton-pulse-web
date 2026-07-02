@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "98100",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Works perfectly out of the box, tried both fullscreen and windowed.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552327397,
+    "title": "Trauma",
+    "source": "protondb"
+  },
+  {
+    "appId": "98100",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Works perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556482413,
+    "title": "Trauma",
+    "source": "protondb"
+  },
+  {
+    "appId": "98100",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.1.0-050100-lowlatency",
+    "notes": "Game works perfectly out of the box, tried both fullscreen and windowed.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557603754,
+    "title": "Trauma",
+    "source": "protondb"
+  }
+]

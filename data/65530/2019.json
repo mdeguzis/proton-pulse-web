@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "65530",
+    "cpu": "Intel Core I7-8700 @ 3.2Ghz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "4.6.0 nVidia 415.25",
+    "gpuDriver": "4.6",
+    "kernel": "4.15.0-43-grneric",
+    "notes": "Did not start.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "15952 MB (2 x 8GB)",
+    "rating": "Borked",
+    "timestamp": 1546726542,
+    "title": "SpellForce 2: Faith in Destiny",
+    "source": "protondb"
+  }
+]

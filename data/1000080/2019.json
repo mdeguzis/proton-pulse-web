@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1000080",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Runs pretty well so far. Installed and played the first level from start to finish. since the game is dx9c i add PROTON_USE_D9VK=1 %command% ",
+    "os": "Ubuntu 19.04\uff0864 \u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "4.11-1",
+    "ram": "15905Mb",
+    "rating": "Gold",
+    "timestamp": 1564746301,
+    "title": "\u795e\u660e\u5728\u4e0a(Zengeon)",
+    "source": "protondb"
+  }
+]

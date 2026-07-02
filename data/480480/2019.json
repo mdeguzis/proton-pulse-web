@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "480480",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Won't start nothing happens, tried different Proton launch options and disabling Steam overlays.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547323585,
+    "title": "Slash or Die",
+    "source": "protondb"
+  }
+]

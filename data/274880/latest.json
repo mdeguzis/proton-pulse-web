@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "274880",
+    "cpu": "Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 680/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.71-1-MANJARO",
+    "notes": "steam does not even download the game's exe file",
+    "os": "\"Manjaro Linux\" (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "7932 Mo",
+    "rating": "Borked",
+    "timestamp": 1537830628,
+    "title": "Jet Car Stunts",
+    "source": "protondb"
+  }
+]

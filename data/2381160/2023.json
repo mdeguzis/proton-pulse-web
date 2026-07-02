@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2381160",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.1.25-1-MANJARO",
+    "notes": "Completely doesn't work.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1684606951,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2381160",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 15.0.7, DRM 3.42, 5.15.0-60-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.5 - kisak-mesa PPA",
+    "kernel": "5.15.0-60-generic",
+    "notes": "The game doesn't work. I tried the lasted proton, proton ge & proton experimental.\n\nI found this message on the forum from the developers: \"The game uses the library SharpDX to interface with DirectX, and this isn't yet supported by Proton. You can't make it work, I'm sorry :(\"\n\nI search for any fix for the SharpDX library but i found nothing.",
+    "os": "Linux Mint 21",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1691743754,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2381160",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 16.0.6, DRM 3.54, 6.5.6-200.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.8",
+    "kernel": "6.5.6-200.fc38.x86_64",
+    "notes": "Nothing works",
+    "os": "Fedora Linux 38 (Workstation Edition)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1697118422,
+    "title": "",
+    "source": "protondb"
+  }
+]

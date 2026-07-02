@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2288070",
+    "cpu": "Intel Core i7-4712HQ @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 850M",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.10.70-1-MANJARO",
+    "notes": "As I was saying, it just needs those minimal tweaks and it's golden.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1710969159,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2288070",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works perfectly on Steam Deck straight out of box.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1715434056,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2288070",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works great, no issues",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1719546432,
+    "title": "",
+    "source": "protondb"
+  }
+]

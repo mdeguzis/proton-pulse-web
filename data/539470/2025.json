@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "539470",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 19.1.1, DRM 3.57, 6.8.0-58-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-58-generic",
+    "notes": "Works",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1752521894,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "539470",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works very well!",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1761827723,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "539470",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6500 XT (radeonsi, navi24, LLVM 21.1.5, DRM 3.64, 6.17.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.17.8-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1766689799,
+    "title": "",
+    "source": "protondb"
+  }
+]

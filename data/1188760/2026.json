@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1188760",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.9-arch1-1",
+    "notes": "Severe graphical issues.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1774586940,
+    "title": "",
+    "source": "protondb"
+  }
+]

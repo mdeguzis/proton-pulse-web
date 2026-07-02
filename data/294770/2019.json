@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "294770",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Perfect ! Runs like a charm !",
+    "os": "Ubuntu 16.04.5 LTS (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1547301687,
+    "title": "Haegemonia: Legions of Iron",
+    "source": "protondb"
+  },
+  {
+    "appId": "294770",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Perfect ! No problem with this game !",
+    "os": "Ubuntu 16.04.6 LTS (64\u00a0bits)",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2.4",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558049647,
+    "title": "Haegemonia: Legions of Iron",
+    "source": "protondb"
+  },
+  {
+    "appId": "294770",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.16",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558284511,
+    "title": "Haegemonia: Legions of Iron",
+    "source": "protondb"
+  }
+]

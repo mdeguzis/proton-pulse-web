@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "573080",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Frame rate is a little jittery, but otherwise perfectly playable.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1544733770,
+    "title": "Peregrin",
+    "source": "protondb"
+  }
+]

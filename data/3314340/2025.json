@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3314340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works well out of the box, sometimes shows non steam deck control inputs but no graphical changes were needed.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1747715471,
+    "title": "Burgie's cozy kitchen",
+    "source": "protondb"
+  },
+  {
+    "appId": "3314340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "sometimes pc keybinds are shown but aside from that it works right away",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1747834380,
+    "title": "Burgie's cozy kitchen",
+    "source": "protondb"
+  },
+  {
+    "appId": "3314340",
+    "cpu": "AMD Ryzen 7 7730U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.61, 6.12.59-1-lts)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.12.59-1-lts",
+    "notes": "La ejecucion e instalacion del juego ha sido buena, a excepcion del problema del modo IDLE",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1764545455,
+    "title": "Burgie's cozy kitchen",
+    "source": "protondb"
+  }
+]

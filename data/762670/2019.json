@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "762670",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "5.0.4-050004-generic",
+    "notes": "This seems to run okay, but the resolution defaults to 960x540 which looks very blurry on a 1080p monitor. Luckily \"Options\" on the main menu was readable, and changing the resolution made the text readable. Launching a second time again defaulted to 960x540, but for some reason it wasn't blurry this time. Keyboard controls are very unintuitive, there are no instructions or options to remap/rebind keys, and what few button prompts there are are for a controller, whether or not one's plugged in. These appear to be problems with the game itself, rather than with proton, so I've given it a platinum rating.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553736402,
+    "title": "Astro Joust",
+    "source": "protondb"
+  }
+]

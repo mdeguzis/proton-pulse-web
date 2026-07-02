@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "23420",
+    "cpu": "Intel(R) Core(TM) i3-3217U CPU @ 1.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.8",
+    "kernel": "4.14.70-1-MANJARO",
+    "notes": "the game opens and closes soon the game screen appears",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "5860 Mb",
+    "rating": "Borked",
+    "timestamp": 1537366791,
+    "title": "Europa Universalis: Rome - Gold Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "23420",
+    "cpu": "AMD A8-5550M APU with Radeon(tm) HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD ARUBA (DRM 2.50.0 / 4.15.0-34-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "\"Splash\" screen for few seconds and CTD",
+    "os": "KDE neon User Edition 5.13 (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7167 Mb",
+    "rating": "Borked",
+    "timestamp": 1537975759,
+    "title": "Europa Universalis: Rome - Gold Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "395350",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Replayed the whole game to give this report, encountered no problems.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1602436217,
+    "title": "Doors",
+    "source": "protondb"
+  }
+]

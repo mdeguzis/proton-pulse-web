@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1786800",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.7-200.fc38.x86_64",
+    "notes": "I'm not sure if I even want to play this game, but if I start it it takes a long time to show the menu, and uses 100% of the GPU while having about 2 FPS in the main menu.",
+    "os": "Fedora release 38 (Thirty Eight)",
+    "protonVersion": "8.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1686754599,
+    "title": "Call of Senpai: Waifu Warfare",
+    "source": "protondb"
+  }
+]

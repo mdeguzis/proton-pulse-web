@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "951750",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 20.2.0",
+    "kernel": "5.8.14-arch1-1",
+    "notes": "White animations box won't allow the game to progress.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "20 GB",
+    "rating": "borked",
+    "timestamp": 1602372257,
+    "title": "I Am Dead",
+    "source": "protondb"
+  }
+]

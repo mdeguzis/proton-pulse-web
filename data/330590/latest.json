@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "330590",
+    "title": "Independence War Deluxe Edition",
+    "timestamp": 1535318483,
+    "rating": "Platinum",
+    "notes": "I flew around on instant action and first tutorial mission and game runs stable and smooth, no noticeable issues found.",
+    "os": "Linux Mint 19 64-Bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8370/GeForce GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "330590",
+    "title": "Independence War: Defiance",
+    "timestamp": 1535318997,
+    "rating": "Borked",
+    "notes": "Additional campaign on Independence War Deluxe Edition is not working. After clicking on \"Play\", pop-up window will declare: Error: Failed attempt to launch program or document. Action: <\\Defiance\\Intro.exe> Params:<> Specifically: Path not found. Line# --> 002: RunWait,%InstallDir%\\Defiance\\Intro.exe. The current thread will exit.",
+    "os": "Linux Mint 19 64-Bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8370/GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "330590",
+    "title": "Independence War Deluxe Edition",
+    "timestamp": 1535304083,
+    "rating": "Platinum",
+    "notes": "I flew around on instant action and first tutorial mission and game runs stable and smooth, no noticeable issues found.",
+    "os": "Linux Mint 19 64-Bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8370/GeForce GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "330590",
+    "title": "Independence War: Defiance",
+    "timestamp": 1535304597,
+    "rating": "Borked",
+    "notes": "Additional campaign on Independence War Deluxe Edition is not working. After clicking on \"Play\", pop-up window will declare: Error: Failed attempt to launch program or document. Action: <\\Defiance\\Intro.exe> Params:<> Specifically: Path not found. Line# --> 002: RunWait,%InstallDir%\\Defiance\\Intro.exe. The current thread will exit.",
+    "os": "Linux Mint 19 64-Bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8370/GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

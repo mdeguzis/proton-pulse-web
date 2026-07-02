@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "229970",
+    "title": "Armada 2526 Gold Edition",
+    "timestamp": 1535378256,
+    "rating": "Borked",
+    "notes": "Does not launch",
+    "os": "Antergos (4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "229970",
+    "title": "Armada 2526 Gold Edition",
+    "timestamp": 1535363856,
+    "rating": "Borked",
+    "notes": "Does not launch",
+    "os": "Antergos (4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

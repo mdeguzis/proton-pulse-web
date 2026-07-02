@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "319250",
+    "cpu": "AMD FX-4100 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "Seems to run perfectly fine out of the box",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1555532157,
+    "title": "Magicmaker",
+    "source": "protondb"
+  },
+  {
+    "appId": "319250",
+    "cpu": "AMD Phenom II X6 1090T",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.3-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561334410,
+    "title": "Magicmaker",
+    "source": "protondb"
+  }
+]

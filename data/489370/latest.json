@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "489370",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Some performance degradation after about an hour; restarting the game fixes it. On quit, the game process hangs and has to be terminated manually.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1546680300,
+    "title": "Quarantine",
+    "source": "protondb"
+  },
+  {
+    "appId": "489370",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game runs perfectly with no tweaks. Only issue is that it crashes on exit and must be force killed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560120886,
+    "title": "Quarantine",
+    "source": "protondb"
+  }
+]

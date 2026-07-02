@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3156010",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 19.1.1, DRM 3.59, 6.11.0-19-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.10.1",
+    "kernel": "6.11.0-19-generic",
+    "notes": "Works fine out of the box",
+    "os": "Ubuntu 24.10",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1750764256,
+    "title": "",
+    "source": "protondb"
+  }
+]

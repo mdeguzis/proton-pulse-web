@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "921060",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 570",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Using the launch option of PROTON_USE_WINED3D does allow my GTX 570 to launch the game and show the Gameloft logo and the mouse cursor is changed to the in-game one. Afterwards, it changes to the loading screen and shows it at 10% progress and then crashes.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558813993,
+    "title": "Modern Combat 5",
+    "source": "protondb"
+  },
+  {
+    "appId": "921060",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17-300.fc30.x86_64",
+    "notes": "Gameloft logo appears and swiftly progresses to displaying the loading screen, but after that the game gets stuck at around 10% of the progress bar and crashes.",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1558857003,
+    "title": "Modern Combat 5",
+    "source": "protondb"
+  },
+  {
+    "appId": "921060",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "The game launches to loading screen with a progress bar and crashes around 10% loading.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568467303,
+    "title": "Modern Combat 5",
+    "source": "protondb"
+  }
+]

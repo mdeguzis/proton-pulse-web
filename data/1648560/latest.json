@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1648560",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (SIENNA_CICHLID, DRM 3.42.0, 5.15.12-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.15.12-1-MANJARO",
+    "notes": "Game runs perfectly with 18+ patch installed. Did not try it without the patch.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1642868625,
+    "title": "",
+    "source": "protondb"
+  }
+]

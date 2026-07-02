@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "358960",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.5 (git-6570a15662)",
+    "kernel": "6.1.19-1-MANJARO",
+    "notes": "Native version didn't work well. But switching to Proton (Experimental) worked fine! The game had a great performance under Proton.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1711104227,
+    "title": "",
+    "source": "protondb"
+  }
+]

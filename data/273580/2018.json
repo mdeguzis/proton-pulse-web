@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "273580",
+    "cpu": "i7-4790 CPU @ 3.60GHz",
+    "gpu": "GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Black screen after introduction video.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7",
+    "ram": "15973 Mb",
+    "rating": "Borked",
+    "timestamp": 1536940479,
+    "title": "Descent 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "273580",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Black screen after intro video.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542853756,
+    "title": "Descent 2",
+    "source": "protondb"
+  }
+]

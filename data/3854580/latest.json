@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3854580",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.3-2-cachyos",
+    "notes": "Default Proton Works Great",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773265891,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3854580",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "gpuDriver": "NVIDIA 570.124.04",
+    "kernel": "6.13.6-2-cachyos",
+    "notes": "No problem strait out of the box.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1773277327,
+    "title": "",
+    "source": "protondb"
+  }
+]

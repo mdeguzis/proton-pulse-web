@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "21910",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-4fa2fb3 2018-11-13 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Ran with the launch option \"PROTON_NO_D3D11=1 %command%\" Performance is lower than I'd expect on my system. Lowering physics to low helped this somewhat. ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542327578,
+    "title": "World In Conflict",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

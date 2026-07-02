@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "41730",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "You get : Settings menu then \"Press Space to continue\" then crash.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550434373,
+    "title": "Ion Assault",
+    "source": "protondb"
+  },
+  {
+    "appId": "41730",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Crashes after \"Press <Space> to continue\"",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-6",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1559927230,
+    "title": "Ion Assault",
+    "source": "protondb"
+  },
+  {
+    "appId": "41730",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Loads to main menu but crashes when you attempt to start a game.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559956479,
+    "title": "Ion Assault",
+    "source": "protondb"
+  }
+]

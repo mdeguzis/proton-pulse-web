@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "581640",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-54-generic",
+    "notes": "It works fine as far as I can tell.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562441795,
+    "title": "Numberline",
+    "source": "protondb"
+  }
+]

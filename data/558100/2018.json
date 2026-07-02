@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "558100",
+    "title": "Art of War: Red Tides",
+    "timestamp": 1535670241,
+    "rating": "Borked",
+    "notes": "Launcher is fine, after pressing Play proceeds to a black screen where you can only see your cursor.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "AMD FX(tm)-8320 Eight-Core /AMD Radeon (TM) RX 480 Graphics",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "558100",
+    "title": "Art of War:Red Tides",
+    "timestamp": 1535388134,
+    "rating": "Borked",
+    "notes": "does the update and crashes before start",
+    "os": "Opensuse Tumbleweed(Kernel 4.18.01, KDE)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "specs": "Ryzen 5 2400G",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "558100",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel (git-9007c0ed26)",
+    "kernel": "4.18.16-zen1-1-zen",
+    "notes": "After installing corefonts into game prefix, everything seems to work fine. Performance could be better, but I'm unsure how it runs on Windows. Without corefonts no menu items are rendered.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541195317,
+    "title": "Art of War: Red Tides",
+    "source": "protondb"
+  },
+  {
+    "appId": "558100",
+    "title": "Art of War: Red Tides",
+    "timestamp": 1535655841,
+    "rating": "Borked",
+    "notes": "Launcher is fine, after pressing Play proceeds to a black screen where you can only see your cursor.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "AMD FX(tm)-8320 Eight-Core /AMD Radeon (TM) RX 480 Graphics",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "558100",
+    "title": "Art of War:Red Tides",
+    "timestamp": 1535373734,
+    "rating": "Borked",
+    "notes": "does the update and crashes before start",
+    "os": "Opensuse Tumbleweed(Kernel 4.18.01, KDE)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "specs": "Ryzen 5 2400G",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

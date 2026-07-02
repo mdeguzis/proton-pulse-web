@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "437690",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.5-3-MANJARO",
+    "notes": "It's unstable and doesn't work out of the box.",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.0-6",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1587400492,
+    "title": "Venture Kid",
+    "source": "protondb"
+  },
+  {
+    "appId": "437690",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.6 Mesa 20.1.1",
+    "kernel": "5.6.16-300.fc32.x86_64",
+    "notes": "Out of the box with current proton versions from steam, the app does not run. Only a black screen or other non-working menu and inputs.",
+    "os": "Fedora release 32 (Thirty Two)",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1593256379,
+    "title": "Venture Kid",
+    "source": "protondb"
+  }
+]

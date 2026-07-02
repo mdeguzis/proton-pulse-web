@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "725980",
+    "cpu": "AMD FX-8120 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Open the application install directory. Open package.json in a text editor. Insert the following line below the line that reads \"js-flags\": \"--expose-gc\",:\n========================================================================================\n    \"chromium-args\":\"--in-process-gpu\",\n========================================================================================\nGame is now playable. No longer just a black screen with sound.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1564431107,
+    "title": "Path Out",
+    "source": "protondb"
+  }
+]

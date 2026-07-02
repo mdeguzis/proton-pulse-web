@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "588490",
+    "cpu": "Intel Core i5-4200U @ 1.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 20.1.8",
+    "kernel": "4.19.152-1-MANJARO",
+    "notes": "Don't change the default settings in launcher menu. Games runs normally perfectly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-2",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1606633145,
+    "title": "",
+    "source": "protondb"
+  }
+]

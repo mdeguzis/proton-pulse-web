@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1572420",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 18.1.8, DRM 3.57, 6.10.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.1-arch1.1",
+    "kernel": "6.10.7-arch1-1",
+    "notes": "Just hit play",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1728339226,
+    "title": "",
+    "source": "protondb"
+  }
+]

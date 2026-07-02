@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "207170",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.18.0-20-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1562631636,
+    "title": "Legend of Grimrock",
+    "source": "protondb"
+  },
+  {
+    "appId": "207170",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "When forced to run the Windows version under Proton rather than execute the native GNU/Linux binary, Legend of Grimlock runs flawlessly &\u2013if you're an ultrawide user\u2013better than the native version. With the native version, the game can only render 16:9 (or thinner) resolutions, so even though my monitor is an ultrawide 3440\u00d71440 it can only render a maximum resolution of 2560\u00d71440. With the Windows version under Proton, it can render a full 3440\u00d71440 perfectly as it would on real Windows. Thanks Proton!",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568269294,
+    "title": "Legend of Grimrock",
+    "source": "protondb"
+  }
+]

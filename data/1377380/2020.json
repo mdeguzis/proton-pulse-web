@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1377380",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 390.132",
+    "kernel": "4.15.0-99-generic",
+    "notes": "",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1599337263,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1377380",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.1.7",
+    "kernel": "5.8.5-200.fc32.x86_64",
+    "notes": "",
+    "os": "Fedora 32",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1599385630,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1377380",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.4.78-1-lts",
+    "notes": "The typical gamer would enjoy it.\nSome issues with indoor lighting scenes, but on the whole it runs well (bar some optimization)",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "5.13-2",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1606689009,
+    "title": "",
+    "source": "protondb"
+  }
+]

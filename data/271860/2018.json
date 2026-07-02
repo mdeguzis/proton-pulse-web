@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "271860",
+    "cpu": "i7-7700K CPU @ 4.20GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Does not run.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "32113 Mb",
+    "rating": "Borked",
+    "timestamp": 1536970536,
+    "title": "Super Killer Hornet: Resurrection",
+    "source": "protondb"
+  },
+  {
+    "appId": "271860",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Does not launch",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541914208,
+    "title": "Super Killer Hornet: Resurrection",
+    "source": "protondb"
+  }
+]

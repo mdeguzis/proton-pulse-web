@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "33650",
+    "title": "Puzzler World",
+    "timestamp": 1534982929,
+    "rating": "Borked",
+    "notes": "Video won't show (just shows my desktop), but intro sound will play. Then nothing; had to kill process from terminal.",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33650",
+    "title": "Puzzler World",
+    "timestamp": 1535152113,
+    "rating": "Borked",
+    "notes": "Black screen, only sound is working",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.3.0-devel (git-e345247092)",
+    "specs": "i5-4690k / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33650",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-f447a13032)",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Black screen, only sound is working",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544574992,
+    "title": "Puzzler World",
+    "source": "protondb"
+  },
+  {
+    "appId": "33650",
+    "title": "Puzzler World",
+    "timestamp": 1534968529,
+    "rating": "Borked",
+    "notes": "Video won't show (just shows my desktop), but intro sound will play. Then nothing; had to kill process from terminal.",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33650",
+    "title": "Puzzler World",
+    "timestamp": 1535137713,
+    "rating": "Borked",
+    "notes": "Black screen, only sound is working",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.3.0-devel (git-e345247092)",
+    "specs": "i5-4690k / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "238530",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Game window with Adult Swim Games logo appears then promptly crashes. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1559528474,
+    "title": "Super Puzzle Platformer Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "238530",
+    "cpu": "Intel Core i7-5500U @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Plays without any issues.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1572174671,
+    "title": "Super Puzzle Platformer Deluxe",
+    "source": "protondb"
+  }
+]

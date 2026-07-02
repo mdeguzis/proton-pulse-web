@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "880490",
+    "cpu": "Intel Core i5-4460 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 17.0.5, DRM 3.54, 6.6.7-1-default)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.6.7-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1703897002,
+    "title": "",
+    "source": "protondb"
+  }
+]

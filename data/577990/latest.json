@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "577990",
+    "title": "Ignition",
+    "timestamp": 1535231729,
+    "rating": "Platinum",
+    "notes": "N/A - Everything works as expected",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4690K / GTX 1060 6G",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "577990",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.2-1-MANJARO",
+    "notes": "Runs perfectly fine. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543152021,
+    "title": "Ignition",
+    "source": "protondb"
+  },
+  {
+    "appId": "577990",
+    "title": "Ignition",
+    "timestamp": 1535217329,
+    "rating": "Platinum",
+    "notes": "N/A - Everything works as expected",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4690K / GTX 1060 6G",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

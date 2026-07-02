@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1129540",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 13.0.1, DRM 3.47, 5.19.0-76051900-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.19.0-76051900-generic",
+    "notes": "Stable, though resource intensive. Still able to play and view the sex scenes just fine.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1681493514,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1129540",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Runs fine on my Linux Desktop, on Deck it causes SteamOS to hard crashes before you get to your first customer, could fail sooner.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1693006605,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1129540",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.199.02",
+    "kernel": "5.15.0-84-generic",
+    "notes": "",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1697789448,
+    "title": "",
+    "source": "protondb"
+  }
+]

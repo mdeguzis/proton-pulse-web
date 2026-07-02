@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "297620",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Fog is missing, resulting in object popping. Game runs about 30 FPS with some dips. Not that due to old engine the game runs under Windows much faster, unless you are using DgVoodoo2.\nDo not select RGB rendering, there are even more graphic issues.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1557581953,
+    "title": "Rocko's Quest",
+    "source": "protondb"
+  }
+]

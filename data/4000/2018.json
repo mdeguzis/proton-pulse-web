@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "4000",
+    "title": "Garry's Mod",
+    "timestamp": 1534981021,
+    "rating": "Silver",
+    "notes": "Some text input in the menus does not function correctly (backspace doesn't work)",
+    "os": "Arch Linux",
+    "gpuDriver": "Mesa 18.3.xx (git-aa79cc2bc8)",
+    "specs": "Intel Core i7-4770 Quad Core",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "4000",
+    "title": "Garry's Mod",
+    "timestamp": 1534966621,
+    "rating": "Silver",
+    "notes": "Some text input in the menus does not function correctly (backspace doesn't work)",
+    "os": "Arch Linux",
+    "gpuDriver": "Mesa 18.3.xx (git-aa79cc2bc8)",
+    "specs": "Intel Core i7-4770 Quad Core",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

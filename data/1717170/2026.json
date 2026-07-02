@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1717170",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.0-20-generic",
+    "notes": "Switch to Proton 9.0-4",
+    "os": "Ubuntu 24.04.4 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1775155701,
+    "title": "",
+    "source": "protondb"
+  }
+]

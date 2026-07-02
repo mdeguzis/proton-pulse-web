@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "792030",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Many sprites are replaced with white squares. ",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554296287,
+    "title": "Just, Bearly",
+    "source": "protondb"
+  },
+  {
+    "appId": "792030",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "4.15.0-55-generic",
+    "notes": "It freeze my computer on start until I changed all the values to 1 in options.ini ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1565712411,
+    "title": "Just, Bearly",
+    "source": "protondb"
+  }
+]

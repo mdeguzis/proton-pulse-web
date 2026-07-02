@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "311190",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Same story as the others. Can only play in a window, and the setup screen shows some options with black text on a black background. Other than that it is playable. Worked with both keyboard and controller.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1564258772,
+    "title": "Super Panda Adventures",
+    "source": "protondb"
+  },
+  {
+    "appId": "311190",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Game settings launches a separate executable, and that's a little glitchy. Graphics were really glitchy running fullscreen on a 4k monitor, but worked fine in windowed mode or at a lower resolution. Otherwise played the whole thing through without issues.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1569107878,
+    "title": "Super Panda Adventures",
+    "source": "protondb"
+  }
+]

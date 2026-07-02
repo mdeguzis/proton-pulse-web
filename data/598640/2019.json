@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "598640",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 560 SE",
+    "gpuDriver": "NVIDIA 390.129",
+    "kernel": "5.2.9-125.current",
+    "notes": "Crashes on launch",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1568049810,
+    "title": "Wonder Wickets",
+    "source": "protondb"
+  }
+]

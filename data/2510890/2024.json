@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2510890",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "5.15.0-58-generic",
+    "notes": "The game is unable to load a specific font, gives out \"Failed to load fonts/lineSeedSans_W_Rg.woff2\" Haven't found a workaround",
+    "os": "Linux Mint 21",
+    "protonVersion": "9.0-2",
+    "ram": "28 GB",
+    "rating": "borked",
+    "timestamp": 1724724058,
+    "title": "Pricolage -IDOLIZED-",
+    "source": "protondb"
+  }
+]

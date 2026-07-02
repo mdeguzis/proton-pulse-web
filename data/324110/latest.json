@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "324110",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-50-generic",
+    "notes": "First game doesn't run at all. 2 stops after a splash screen. 3 stops responding on the loading screen. 15th anniversary does work but is a mobile port.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559645915,
+    "title": "Moto Racer Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "324110",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Also tested the GOG versions that will give the same results.\nThe Moto Racer 1 and 2 will not run at all, due to the 16-bit color requirements. Use Lutris and set Xephyr to 16bit color to run the game. Xephyr is a nested X server, albeit restricted to software rendering, will run old DX3-7 games that requires obsolete color settings (such as 8 or 16-bit color.)\nTo play Moto Racer 3, install dgVoodoo2 that is to copy the 32-bit wrapper dlls to the game directory. At MR3 configuration select \"skip intro\", and \"no music\" on the appropriate tabs. This will emulate Dx8 over Dx11, where DXVK will catch to Vulkan. With this hacks, MR3 will run without issues.\n The last game runs without hacks.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566609653,
+    "title": "Moto Racer Collection",
+    "source": "protondb"
+  }
+]

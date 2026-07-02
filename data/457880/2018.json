@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "457880",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Doesn't work. \"Fatal Error\" at start.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541861962,
+    "title": "The Vanishing of Ethan Carter VR",
+    "source": "protondb"
+  }
+]

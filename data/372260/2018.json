@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "372260",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.8-1.el7.elrepo.x86_64",
+    "notes": "Game refresh rate is about 0.2 FPS (I'm not joking) including in the main menu, making it completely unplayable.",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "64419 Mb",
+    "rating": "Borked",
+    "timestamp": 1537395960,
+    "title": "Weird Park Trilogy",
+    "source": "protondb"
+  }
+]

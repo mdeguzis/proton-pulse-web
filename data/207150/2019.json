@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "207150",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "It starts in windowed mode. You see you are inside a space dock. You can rotate the scene with right-click and the mouse. I cannot see how to start the game. It might be the game server is actually dead.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550529302,
+    "title": "Stellar Impact",
+    "source": "protondb"
+  }
+]

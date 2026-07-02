@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "650510",
+    "title": "Syberia 3",
+    "timestamp": 1536435658,
+    "rating": "Borked",
+    "notes": "Start with the \"PROTON_USE_WINED3D11=1 %command\" startup option. The sound works, but no display",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "i5-M520 / GT 330M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "650510",
+    "cpu": "AMD Ryzen 5 1600X Six-Core Processor",
+    "gpu": "GeForce GTX TITAN Black/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Will not even install.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "default",
+    "ram": "32159 Mb",
+    "rating": "Borked",
+    "timestamp": 1536820158,
+    "title": "ZONE OF THE ENDERS THE 2nd RUNNER : M\u2200RS / \u30a2\u30cc\u30d3\u30b9 \u30be\u30fc\u30f3\u30fb\u30aa\u30d6\u30fb\u30a8\u30f3\u30c0\u30fc\u30ba : \u30de\u30fc\u30ba",
+    "source": "protondb"
+  },
+  {
+    "appId": "650510",
+    "title": "Syberia 3",
+    "timestamp": 1536421258,
+    "rating": "Borked",
+    "notes": "Start with the \"PROTON_USE_WINED3D11=1 %command\" startup option. The sound works, but no display",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "i5-M520 / GT 330M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3183310",
+    "cpu": "Intel Core i3-2100 @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 2000 (SNB GT1)",
+    "gpuDriver": "3.3 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-63-generic",
+    "notes": "keeps getting stuck on loading during tutorial, forcing a close and wont run from 1-5 onwards",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1755992681,
+    "title": "",
+    "source": "protondb"
+  }
+]

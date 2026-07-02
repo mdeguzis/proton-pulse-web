@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "899960",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.16.3-041603-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1558827002,
+    "title": "The Greater Good",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "251690",
+    "title": "Speedball 2 HD",
+    "timestamp": 1535122340,
+    "rating": "Platinum",
+    "notes": "Work fine!!",
+    "os": "Manjaro testing 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-8350 / HD 7850",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "251690",
+    "cpu": "AMD E-450 APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD PALM",
+    "gpuDriver": "3.1 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.4.0-130-generic",
+    "notes": "Game loads, opening splash displays no video, sound loops and then crashes. Tried all tweaks to fix with no success. ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542656784,
+    "title": "Speedball 2 HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "251690",
+    "title": "Speedball 2 HD",
+    "timestamp": 1535107940,
+    "rating": "Platinum",
+    "notes": "Work fine!!",
+    "os": "Manjaro testing 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-8350 / HD 7850",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

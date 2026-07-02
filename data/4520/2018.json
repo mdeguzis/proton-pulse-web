@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "4520",
+    "title": "Full Spectrum Warrior",
+    "timestamp": 1534824000,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "4520",
+    "title": "Full Spectrum Warrior",
+    "timestamp": 1535135513,
+    "rating": "Platinum",
+    "notes": "Loading or saving games takes some time, but works",
+    "os": "openSuse leap 15 64-bit Kernel default",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "-",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "4520",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.18.0-13-generic",
+    "notes": "The game works very well, though the audio is broken. It stutters a bit. Aswell as making cracking sounds.\nA previous version of Proton had some graphical glitches. But this one has none so far.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1544450105,
+    "title": "Full Spectrum Warrior",
+    "source": "protondb"
+  },
+  {
+    "appId": "4520",
+    "title": "Full Spectrum Warrior",
+    "timestamp": 1534809600,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "4520",
+    "title": "Full Spectrum Warrior",
+    "timestamp": 1535121113,
+    "rating": "Platinum",
+    "notes": "Loading or saving games takes some time, but works",
+    "os": "openSuse leap 15 64-bit Kernel default",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "-",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

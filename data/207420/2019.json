@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "207420",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-0dff1533f2)",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "Doesn't start on Proton.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1554625906,
+    "title": "Wizorb",
+    "source": "protondb"
+  },
+  {
+    "appId": "207420",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-0905189a25)",
+    "kernel": "5.1.9-arch1-1-ARCH",
+    "notes": "Doesn't work on Proton.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1560632343,
+    "title": "Wizorb",
+    "source": "protondb"
+  }
+]

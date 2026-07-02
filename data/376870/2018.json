@@ -1,0 +1,62 @@
+[
+  {
+    "appId": "376870",
+    "cpu": "i3-3217U CPU @ 1.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "notes": "Runs perfectly. (Controller doesn't work but seems that Windows version also sometimes has similar problem.)",
+    "os": "Manjaro Linux (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Minecraft: Story Mode - A Telltale Games Series",
+    "source": "protondb"
+  },
+  {
+    "appId": "376870",
+    "cpu": "Intel(R) Core(TM) i3-3110M CPU @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce 710M/PCIe/SSE2",
+    "gpuDriver": "4.4.0 NVIDIA 340.107",
+    "kernel": "4.18.9-92.current",
+    "notes": "No tweaks at all, run out of the box, I do not tested with a joystick",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7798 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538512256,
+    "title": "Minecraft: Story Mode - A Telltale Games Series",
+    "source": "protondb"
+  },
+  {
+    "appId": "376870",
+    "cpu": "Intel(R) Core(TM) i5-7300HQ CPU @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-zen1-1-zen",
+    "notes": "Can't play with gamepad.",
+    "os": "\"Arch Linux\" (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "7897 Mo",
+    "rating": "Platinum",
+    "timestamp": 1539189895,
+    "title": "Minecraft: Story Mode - A Telltale Games Series",
+    "source": "protondb"
+  },
+  {
+    "appId": "376870",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545832446,
+    "title": "Minecraft: Story Mode - A Telltale Games Series",
+    "source": "protondb"
+  }
+]

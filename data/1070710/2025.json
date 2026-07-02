@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1070710",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.2-arch1-1",
+    "notes": "The game sometimes launches but other times it's just stuck on a blank screen displaying a dark blue background.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1741090358,
+    "title": "Kind Words (lo fi chill beats to write to)",
+    "source": "protondb"
+  }
+]

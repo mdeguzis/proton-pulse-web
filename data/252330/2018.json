@@ -1,0 +1,60 @@
+[
+  {
+    "appId": "252330",
+    "title": "Slender: The Arrival",
+    "timestamp": 1535027867,
+    "rating": "Borked",
+    "notes": "the game get stuck in a black screen.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel Core 2 Quad Q9550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "252330",
+    "title": "Slender: The Arrival",
+    "timestamp": 1535304131,
+    "rating": "Silver",
+    "notes": "Requires Steam launch option \"PROTON_USE_WINED3D11=1 %command%\" to Run. Set the game to Windowed mode on the launcher, in fullscreen the game gets stuck between loading screens (just a black screen as someone else reported, but you can make it continue by alt+tab between desktop and game). In windowed mode the game runs without problems.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "252330",
+    "duration": "aboutAnHour",
+    "notes": "You need to set the game to run on Windowed mode. in full screen he get out of focus everytime",
+    "protonVersion": "Beta (3.16-3)",
+    "rating": "Silver",
+    "timestamp": 1540275390,
+    "title": "Slender: The Arrival",
+    "source": "protondb"
+  },
+  {
+    "appId": "252330",
+    "title": "Slender: The Arrival",
+    "timestamp": 1535013467,
+    "rating": "Borked",
+    "notes": "the game get stuck in a black screen.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel Core 2 Quad Q9550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "252330",
+    "title": "Slender: The Arrival",
+    "timestamp": 1535289731,
+    "rating": "Silver",
+    "notes": "Requires Steam launch option \"PROTON_USE_WINED3D11=1 %command%\" to Run. Set the game to Windowed mode on the launcher, in fullscreen the game gets stuck between loading screens (just a black screen as someone else reported, but you can make it continue by alt+tab between desktop and game). In windowed mode the game runs without problems.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

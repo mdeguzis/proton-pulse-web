@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "755630",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-arch1-1-fsync",
+    "notes": "The launcher does not run at all, when using the main game executable however, the game does launch, but later on closes itself.",
+    "os": "Antergos Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567332170,
+    "title": "Drake of the 99 Dragons",
+    "source": "protondb"
+  }
+]

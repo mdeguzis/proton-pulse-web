@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1037200",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.3",
+    "kernel": "4.19.24-1-MANJARO",
+    "notes": "Both Singleplayer and Multiplayer were tested, works as you would expect from the game if it was on windows",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1551832525,
+    "title": "Offworld Trading Company - Core Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "1037200",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Game itself runs perfectly fine. There is a bug with the launcher (it does not render and therefore can't launch the game), but I'm able to fix that by \"verifying the game cache\" (needs to be done on each restart)",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564333004,
+    "title": "Offworld Trading Company - Core Game",
+    "source": "protondb"
+  }
+]

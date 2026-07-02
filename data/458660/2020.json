@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "458660",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.12-27-tkg-pds",
+    "notes": "Will not launch.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1589297154,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "458660",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.0-51-generic",
+    "notes": "work well",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1589939410,
+    "title": "",
+    "source": "protondb"
+  }
+]

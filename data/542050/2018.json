@@ -1,0 +1,98 @@
+[
+  {
+    "appId": "542050",
+    "title": "Forgotton Anne",
+    "timestamp": 1536081255,
+    "rating": "Borked",
+    "notes": "\"Fail to initialize graphic\"",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "R7 1700/ Rx 560",
+    "protonVersion": "3.75",
+    "source": "protondb"
+  },
+  {
+    "appId": "542050",
+    "title": "Forgotton Anne",
+    "timestamp": 1536128876,
+    "rating": "Silver",
+    "notes": "Performance:\n- Runs at ~25 fps at 1080p (scaled to 4k)\nErrors:\n- Null pointer access at shutdown (with popup and crash dump)\n- Some keys stop working after alt-tab in fullscreen mode (using xfwm4)\nWorkarounds:\n- xact (for audio) and maybe .NET 4.0 + 4.7\n- Launch options: PROTON_USE_WINED3D11=1 PULSE_LATENCY_MSEC=20 %command%\n- Had to recreate ~/.local/share/Steam/steamapps/common/Forgotton Anne/ThroughLine Games/Forgotton Anne after wiping it.",
+    "os": "Fedora Rawhide 30 64-bit (Kernel 4.19.0-0.rc0.git6.1)",
+    "gpuDriver": "Mesa 18.2.0-rc3",
+    "specs": "i7-8550U / iGPU UHD Graphics 620",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "542050",
+    "title": "Forgotton Anne",
+    "timestamp": 1536162623,
+    "rating": "Borked",
+    "notes": "With Nvidia driver 390 game launched in a small window (had to switch to another window in order to restore it to fullscreen) but crashed after the first in-game video. With Nvidia driver 396.54 it will not launch.",
+    "os": "Ubuntu 18.04.1 LTS (Bionic Beaver)",
+    "gpuDriver": "GeForce GTX 760 (192-bit)",
+    "specs": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+    "protonVersion": "3.7.3 and3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "542050",
+    "title": "Forgotton Anne",
+    "timestamp": 1536162868,
+    "rating": "Borked",
+    "notes": "With Nvidia Driver 390 the game started in a very small window (had to switch to another window to restore it to fullscreen) the game crashed after the first in-game video. With the Nvidia Driver 396 the game did not launch at all. ",
+    "os": "Ubuntu 18.04.1 LTS (Bionic Beaver)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GeForce GTX 760 (192-bit)",
+    "protonVersion": "3.7.3 and 3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "542050",
+    "title": "Forgotton Anne",
+    "timestamp": 1536066855,
+    "rating": "Borked",
+    "notes": "\"Fail to initialize graphic\"",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "R7 1700/ Rx 560",
+    "protonVersion": "3.75",
+    "source": "protondb"
+  },
+  {
+    "appId": "542050",
+    "title": "Forgotton Anne",
+    "timestamp": 1536114476,
+    "rating": "Silver",
+    "notes": "Performance:\n- Runs at ~25 fps at 1080p (scaled to 4k)\nErrors:\n- Null pointer access at shutdown (with popup and crash dump)\n- Some keys stop working after alt-tab in fullscreen mode (using xfwm4)\nWorkarounds:\n- xact (for audio) and maybe .NET 4.0 + 4.7\n- Launch options: PROTON_USE_WINED3D11=1 PULSE_LATENCY_MSEC=20 %command%\n- Had to recreate ~/.local/share/Steam/steamapps/common/Forgotton Anne/ThroughLine Games/Forgotton Anne after wiping it.",
+    "os": "Fedora Rawhide 30 64-bit (Kernel 4.19.0-0.rc0.git6.1)",
+    "gpuDriver": "Mesa 18.2.0-rc3",
+    "specs": "i7-8550U / iGPU UHD Graphics 620",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "542050",
+    "title": "Forgotton Anne",
+    "timestamp": 1536148223,
+    "rating": "Borked",
+    "notes": "With Nvidia driver 390 game launched in a small window (had to switch to another window in order to restore it to fullscreen) but crashed after the first in-game video. With Nvidia driver 396.54 it will not launch.",
+    "os": "Ubuntu 18.04.1 LTS (Bionic Beaver)",
+    "gpuDriver": "GeForce GTX 760 (192-bit)",
+    "specs": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+    "protonVersion": "3.7.3 and3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "542050",
+    "title": "Forgotton Anne",
+    "timestamp": 1536148468,
+    "rating": "Borked",
+    "notes": "With Nvidia Driver 390 the game started in a very small window (had to switch to another window to restore it to fullscreen) the game crashed after the first in-game video. With the Nvidia Driver 396 the game did not launch at all. ",
+    "os": "Ubuntu 18.04.1 LTS (Bionic Beaver)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GeForce GTX 760 (192-bit)",
+    "protonVersion": "3.7.3 and 3.7.5",
+    "source": "protondb"
+  }
+]

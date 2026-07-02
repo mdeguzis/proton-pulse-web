@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "805940",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-17-generic",
+    "notes": "Works out of the box with some hiccups and fps drops, unfortunately I didn't test it further because not many people are playing this game.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1561565990,
+    "title": "RUSSIA BATTLEGROUNDS",
+    "source": "protondb"
+  }
+]

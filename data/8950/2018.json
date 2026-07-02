@@ -1,0 +1,98 @@
+[
+  {
+    "appId": "8950",
+    "title": "Borderlands",
+    "timestamp": 1535411299,
+    "rating": "Silver",
+    "notes": "Multiplayer not tested yet.  Cut scenes seem a little choppy, but otherwise the game runs fairly good with some settings cranked around medium to high at 1440p resolution.",
+    "os": "Mint Mate 18.3 Kernel 4.17.11",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "1900X / GTX960 FTW",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "8950",
+    "title": "Borderlands",
+    "timestamp": 1535251756,
+    "rating": "Bronze",
+    "notes": "Littebit choppy but stable on max settings, it needs to run on windowed mode though, in fullscreen there's a \"limit\" on the monitor that doesn't let you turn the camera too much",
+    "os": "Linux Mint 19 Cinnamon",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Ryzen 5 1600 / GTS 450",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "8950",
+    "title": "borderlands",
+    "timestamp": 1536120053,
+    "rating": "Bronze",
+    "notes": "playable but when the game load another stage crashes (pure virtual function being called while application was running(GIsRunning == 1))",
+    "os": "Manjaro 17.1.12",
+    "gpuDriver": "NVIDIA v: 396.54",
+    "specs": "intel Core i5-6500 and GeForce GTX 1060 3GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "8950",
+    "title": "Borderlands",
+    "timestamp": 1536698697,
+    "rating": "Platinum",
+    "notes": "Didn\u00b4t have to do any of the tweaks from the report sheet. Works very well and seems to be stable so far. When the mouse is moving to look the image can be a bit shakey.",
+    "os": "Ubuntu 16.04.5 (4.4.0-134-generic)",
+    "gpuDriver": "AMD CAPE VERDE (DRM 2.43.0 / 4.4.0-134-generic, LLVM 6.0.0)",
+    "specs": "Intel\u00ae Core\u2122 i7-3630QM CPU @ 2.40GHz \u00d7 8 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "8950",
+    "title": "Borderlands",
+    "timestamp": 1535396899,
+    "rating": "Silver",
+    "notes": "Multiplayer not tested yet.  Cut scenes seem a little choppy, but otherwise the game runs fairly good with some settings cranked around medium to high at 1440p resolution.",
+    "os": "Mint Mate 18.3 Kernel 4.17.11",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "1900X / GTX960 FTW",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "8950",
+    "title": "Borderlands",
+    "timestamp": 1535237356,
+    "rating": "Bronze",
+    "notes": "Littebit choppy but stable on max settings, it needs to run on windowed mode though, in fullscreen there's a \"limit\" on the monitor that doesn't let you turn the camera too much",
+    "os": "Linux Mint 19 Cinnamon",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Ryzen 5 1600 / GTS 450",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "8950",
+    "title": "borderlands",
+    "timestamp": 1536105653,
+    "rating": "Bronze",
+    "notes": "playable but when the game load another stage crashes (pure virtual function being called while application was running(GIsRunning == 1))",
+    "os": "Manjaro 17.1.12",
+    "gpuDriver": "NVIDIA v: 396.54",
+    "specs": "intel Core i5-6500 and GeForce GTX 1060 3GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "8950",
+    "title": "Borderlands",
+    "timestamp": 1536684297,
+    "rating": "Platinum",
+    "notes": "Didn\u00b4t have to do any of the tweaks from the report sheet. Works very well and seems to be stable so far. When the mouse is moving to look the image can be a bit shakey.",
+    "os": "Ubuntu 16.04.5 (4.4.0-134-generic)",
+    "gpuDriver": "AMD CAPE VERDE (DRM 2.43.0 / 4.4.0-134-generic, LLVM 6.0.0)",
+    "specs": "Intel\u00ae Core\u2122 i7-3630QM CPU @ 2.40GHz \u00d7 8 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

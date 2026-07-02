@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2382240",
+    "cpu": "Intel Core i5-2320 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 14.0.6, DRM 3.47, 5.19.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.19.2-arch1-1",
+    "notes": "Installation process just creates an empty folder, nothing more.",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1763225167,
+    "title": "",
+    "source": "protondb"
+  }
+]

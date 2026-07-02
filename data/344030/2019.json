@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "344030",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-54-generic",
+    "notes": "The game starts up, but the game feels very slow from the beginning. Sound is stuttering in the cutscenes, but seems ok in the gameplay. Because of the slowness of the game the gameplay is slow and cluncky. With patience the game is somewhat playable.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1562405274,
+    "title": "Ghost Pirates of Vooju Island",
+    "source": "protondb"
+  },
+  {
+    "appId": "344030",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-64-generic",
+    "notes": "It works well, in Set Launch Options add PROTON_USE_D9VK=1 %command%",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1569235016,
+    "title": "Ghost Pirates of Vooju Island",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

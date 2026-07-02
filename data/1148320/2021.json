@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1148320",
+    "cpu": "Intel Core i7-10850H @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.8.11-1-MANJARO",
+    "notes": "works perfectly now with proton 6.3-7",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1633281371,
+    "title": "Masteroid",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "42640",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.7-arch1-1-ARCH",
+    "notes": "Works perfectly out of the box - only minor performance considerations easily solved by turning down the quality settings to medium.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1551476223,
+    "title": "Blur",
+    "source": "protondb"
+  },
+  {
+    "appId": "42640",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Most of the time the game works perfectly. That being said, there are a couple of tracks that crash the game (when they are loaded, not mid-race) or are displayed as a completely black screen.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1557654706,
+    "title": "Blur",
+    "source": "protondb"
+  }
+]

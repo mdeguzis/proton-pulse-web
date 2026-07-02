@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "950740",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.4 - kisak-mesa PPA",
+    "kernel": "5.15.0-47-generic",
+    "notes": "le jeu ne d\u00e9marre pas malgr\u00e9 le changement de proton",
+    "os": "Ubuntu Core 20 (64\u00a0bits)",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1670065698,
+    "title": "China: Mao's legacy",
+    "source": "protondb"
+  }
+]

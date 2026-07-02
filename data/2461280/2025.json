@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2461280",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.15.0-43-generic",
+    "notes": "Runs smoothly out of the box with Proton 10",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "platinum",
+    "timestamp": 1760984971,
+    "title": "Lessaria: Fantasy Kingdom Sim",
+    "source": "protondb"
+  },
+  {
+    "appId": "2461280",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD RX 7900 XTX (radeonsi, raphael_mendocino, LLVM 20.1.2, DRM 3.57, 6.8.0-83-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.8.0-85-generic",
+    "notes": "Works fine",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1761850078,
+    "title": "Lessaria: Fantasy Kingdom Sim",
+    "source": "protondb"
+  },
+  {
+    "appId": "2461280",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Plays nice on steamdeck with minot artifacts which come from proton/linux.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1763877470,
+    "title": "Lessaria: Fantasy Kingdom Sim",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2602030",
+    "cpu": "12th Gen Intel Core i5-1235U",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 24.3.1 (git-c815d651b8)",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "O jogo crasha ao clicar em jogar",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1735929757,
+    "title": "Entropy Survivors",
+    "source": "protondb"
+  }
+]

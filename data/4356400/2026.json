@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4356400",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.8, DRM 3.64, 6.18.8-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.4",
+    "kernel": "6.18.8-200.fc43.x86_64",
+    "notes": "I tried the demo on steam, got an error that edge webview 2 is required and it opened a browser window to download it (for Windows)\nI tried to force  experimental and proton 9 in case that changes things, but didn't.\n\nAs I found some things about webview2 not working well with proton I then gave up. And I fear the full game will still have the problem. But I'll try to remember to update this and see if the dev maybe releases a linux version in the future or smth similar. (Just got added to steam 2 days ago)",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1770490031,
+    "title": "",
+    "source": "protondb"
+  }
+]

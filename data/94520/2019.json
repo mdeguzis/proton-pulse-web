@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "94520",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "Game is playable but has some graphical glitches",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1561492443,
+    "title": "Back to the Future: Ep 4 - Double Visions",
+    "source": "protondb"
+  },
+  {
+    "appId": "94520",
+    "cpu": "Intel Core i7-6700T @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.1",
+    "kernel": "5.3.6-1-MANJARO",
+    "notes": "All the other Episodes worked flawlessly. This one has graphical glitches everywhere..",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1571512320,
+    "title": "Back to the Future: Ep 4 - Double Visions",
+    "source": "protondb"
+  }
+]

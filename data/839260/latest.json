@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "839260",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "5.15.0-60-generic",
+    "notes": "Working just as it does on Windows!",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1688409316,
+    "title": "",
+    "source": "protondb"
+  }
+]

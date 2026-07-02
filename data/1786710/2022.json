@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1786710",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.12-300.fc36.x86_64",
+    "notes": "Tried with forced experimental, Steam reccomended, GE-Proton7-24, and Proton 7.0-4 with same results. =( PLEASE NOTE THIS WAS DONE WITH THE DEMO VERSION OF THE GAME AND DOES NOT REFLECT COMPATABILITY WITH THE FINAL PRODUCT",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1664936574,
+    "title": "SlipDream Resonator",
+    "source": "protondb"
+  }
+]

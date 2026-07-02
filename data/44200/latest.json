@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "44200",
+    "title": "Galcon Fusion",
+    "timestamp": 1534964784,
+    "rating": "Bronze",
+    "notes": "Performance: very good, no FPS drops or lag.\n\nMusic and sound work.\n\nOptions menu works fine, audio/music volume sliders work. Even full-screen/windowed and resolution options work fine.\n\nMultiplayer: error in the server browser (Error message is: \"EOO: invalid method\"). So the multiplayer doesn't work.",
+    "os": "Fedora 28, 64-bit (Kernel 4.17.14)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i7-4770K / Nvidia GTX 780 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "44200",
+    "title": "Galcon Fusion",
+    "timestamp": 1534950384,
+    "rating": "Bronze",
+    "notes": "Performance: very good, no FPS drops or lag.\n\nMusic and sound work.\n\nOptions menu works fine, audio/music volume sliders work. Even full-screen/windowed and resolution options work fine.\n\nMultiplayer: error in the server browser (Error message is: \"EOO: invalid method\"). So the multiplayer doesn't work.",
+    "os": "Fedora 28, 64-bit (Kernel 4.17.14)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i7-4770K / Nvidia GTX 780 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

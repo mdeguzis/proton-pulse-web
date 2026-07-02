@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "456760",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Runs fine but need some corrections about chat box dialog.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565107651,
+    "title": "A dragon girl looks up at the endless sky",
+    "source": "protondb"
+  }
+]

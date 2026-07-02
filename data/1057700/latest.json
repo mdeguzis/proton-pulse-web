@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "1057700",
+    "cpu": "AMD A10-5800K APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R7 200",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.20.10-111.current",
+    "notes": "Game launched in a black screen in the default version( I assume due to the default resolution being the minimum) I changed it to an old beta version of proton and it seemed to work somewhat okay albeit with some glitchyness in the menus and fonts. After changing the resolution to 1080p, I changed back to Proton 4.2-9 and it works flawlessly!",
+    "os": "Solus",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1562251365,
+    "title": "Battle Grounds III",
+    "source": "protondb"
+  },
+  {
+    "appId": "1057700",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.5-15-tkg-pds",
+    "notes": "with proton 4.11-1 crashes after loading\nsame as 4.2-9\nbut 3.16-9 works just fine but you also need this launch option because the screen will become black or half-black if you don't set resolution in launch option\n\"command% -w 1920 -h 1080\"\nchange it to your own resolution",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "protonVersionManual": "4.11-1",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1564632621,
+    "title": "Battle Grounds III",
+    "source": "protondb"
+  },
+  {
+    "appId": "1057700",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.5-15-tkg-pds",
+    "notes": "with proton 4.11-1 crashes after loading same as 4.2-9 but 3.16-9 works just fine but you also need this launch option because the screen will become black or half-black if you don't set resolution in launch option \"%command% -w 1920 -h 1080\" change it to your own resolution",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "protonVersionManual": "4.11-1",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1564632898,
+    "title": "Battle Grounds III",
+    "source": "protondb"
+  }
+]

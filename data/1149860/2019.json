@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "1149860",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.5-arch1-1-ARCH",
+    "notes": "I didn't need to do anything, it just runs perfectly out of the box.",
+    "os": "Antergos Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570902343,
+    "title": "Arsenal Demon",
+    "source": "protondb"
+  },
+  {
+    "appId": "1149860",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-65-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571052918,
+    "title": "Arsenal Demon",
+    "source": "protondb"
+  }
+]

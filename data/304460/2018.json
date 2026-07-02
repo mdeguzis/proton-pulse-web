@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "304460",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Starts and runs out of the bat. It is a very small, short, technically (hardware) non-demanding game. Runs in windowed & fullscreen mode. Takes the monitor frequency, so in my case, it ran in fixed 60FPS. \n\n(Some people have reported crashes after a patch update on MS Windows on startup, even BSOD's. Linux/Wine/Proton aka SteamOS/Play is a fine alternative!)",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1544295557,
+    "title": "Qora",
+    "source": "protondb"
+  }
+]

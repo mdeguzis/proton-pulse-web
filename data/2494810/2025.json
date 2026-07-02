@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2494810",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 18.1.8, DRM 3.59, 6.12.8-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.3.3-arch1.1",
+    "kernel": "6.12.8-zen1-1-zen",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1739202258,
+    "title": "Dark Hunting Ground",
+    "source": "protondb"
+  },
+  {
+    "appId": "2494810",
+    "cpu": "11th Gen Intel Core i5-11300H @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.2-zen1-1-zen",
+    "notes": "The game launches, but only a brown box is shown in almost a 4:3 view. Tried latest proton and experimental too, didn't work",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1739885857,
+    "title": "Dark Hunting Ground",
+    "source": "protondb"
+  }
+]

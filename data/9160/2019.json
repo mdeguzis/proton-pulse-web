@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "9160",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "The Master Levels for Doom II run fine, but unlike on Windows the whole thing endures a blurry interpolated upscale rather than sharp nearest neighbour upscaling. Either way, I always recommend Doom fans opt for Zippy's 'Master Levels Menu Interface' mod via a native & more modern source port like GZDoom.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568286384,
+    "title": "Master Levels for Doom II",
+    "source": "protondb"
+  }
+]

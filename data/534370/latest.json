@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "534370",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.14.52-gentoo",
+    "notes": "If you don't use Wine D3d11, then some items will not be visible, such as the menu headings in the main screen, and the purchasable equipment in the store page.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1553120879,
+    "title": "Pure Farming 2018",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "534370",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.14.52-gentoo",
+    "notes": "As of version 4.2-6 of Proton, the game works correctly out-of-the-box.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560004488,
+    "title": "Pure Farming 2018",
+    "source": "protondb"
+  },
+  {
+    "appId": "534370",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "It runs normally but a little bit slower than on windows. It is perfectly playable though",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570870836,
+    "title": "Pure Farming 2018",
+    "source": "protondb"
+  }
+]

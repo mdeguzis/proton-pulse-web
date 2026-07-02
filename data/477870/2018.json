@@ -1,0 +1,63 @@
+[
+  {
+    "appId": "477870",
+    "cpu": "i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.0-8-generic",
+    "notes": "Game does not start",
+    "os": "Ubuntu Cosmic Cuttlefish (development branch) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "32037 Mb",
+    "rating": "Borked",
+    "timestamp": 1536773752,
+    "title": "Yomawari: Night Alone / \u591c\u5efb",
+    "source": "protondb"
+  },
+  {
+    "appId": "477870",
+    "cpu": "i5-2400S CPU @ 2.50GHz",
+    "gpu": "GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Black window that closes in 2 seconds",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5926 Mb",
+    "rating": "Borked",
+    "timestamp": 1536781028,
+    "title": "Yomawari: Night Alone / \u591c\u5efb",
+    "source": "protondb"
+  },
+  {
+    "appId": "477870",
+    "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+    "gpu": "X.Org Radeon RX 570 Series (POLARIS10 / DRM 3.23.0 / 4.15.0-33-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Shows \"Error Code 887a0004; Process Number 101; Failed to initialize the window\"",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16034 Mb",
+    "rating": "Borked",
+    "timestamp": 1536966033,
+    "title": "Yomawari: Night Alone / \u591c\u5efb",
+    "source": "protondb"
+  },
+  {
+    "appId": "477870",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Game crash on start up.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546197344,
+    "title": "Yomawari: Night Alone / \u591c\u5efb",
+    "source": "protondb"
+  }
+]

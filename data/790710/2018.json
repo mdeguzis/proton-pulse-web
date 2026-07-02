@@ -1,0 +1,47 @@
+[
+  {
+    "appId": "790710",
+    "cpu": "i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Lots of graphical bugs, makes it unplayable, Distorting black rendering etc..",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7874 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536963638,
+    "title": "World of Warplanes",
+    "source": "protondb"
+  },
+  {
+    "appId": "790710",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Black clounds and top and buttom of screen. Runs, but at 30-40fps.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15972 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536966268,
+    "title": "World of Warplanes",
+    "source": "protondb"
+  },
+  {
+    "appId": "790710",
+    "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+    "gpu": "X.Org Radeon RX 570 Series (POLARIS10, DRM 3.26.0, 4.18.8-041808-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.1 Mesa 18.1.7 - padoka PPA",
+    "kernel": "4.18.8-041808-generic",
+    "notes": "Runs out of the box, but large black rendering artifacts prevent the game from being playable.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16036 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537485507,
+    "title": "World of Warplanes",
+    "source": "protondb"
+  }
+]

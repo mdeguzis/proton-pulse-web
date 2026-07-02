@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "778610",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0 AMD 18.30 , 4.15.0-34-generic, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.0-rc4",
+    "kernel": "4.15.0-34-generic",
+    "notes": "works out of the box!",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7941 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537893539,
+    "title": "Foto Flash",
+    "source": "protondb"
+  }
+]

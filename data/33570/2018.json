@@ -1,0 +1,89 @@
+[
+  {
+    "appId": "33570",
+    "title": "Patrician III",
+    "timestamp": 1535077861,
+    "rating": "Borked",
+    "notes": "Asks to run P2Setup.exe first",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33570",
+    "title": "Patrician III",
+    "timestamp": 1535275172,
+    "rating": "Silver",
+    "notes": "if you click ESC when you play and then continue playing the picture is not correct and you can not play. But you can save, get out and then load",
+    "os": "Ubuntu 18.04.1 (4.15.0-33-generic)",
+    "gpuDriver": "Intel\u00ae Haswell Mobile",
+    "specs": "Intel\u00ae Core\u2122 i3-4000M CPU @ 2.40GHz \u00d7 4 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33570",
+    "title": "Patrician III",
+    "timestamp": 1535880264,
+    "rating": "Borked",
+    "notes": "Says it hangs ...force to close.. intro playes ...then crash",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "33570",
+    "cpu": "Intel(R) Core(TM) i5-7440HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.8-ext73-58.8-kabylake",
+    "notes": "takes a while to start but then it works nicely",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "7911 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537443063,
+    "title": "Patrician III",
+    "source": "protondb"
+  },
+  {
+    "appId": "33570",
+    "title": "Patrician III",
+    "timestamp": 1535063461,
+    "rating": "Borked",
+    "notes": "Asks to run P2Setup.exe first",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33570",
+    "title": "Patrician III",
+    "timestamp": 1535260772,
+    "rating": "Silver",
+    "notes": "if you click ESC when you play and then continue playing the picture is not correct and you can not play. But you can save, get out and then load",
+    "os": "Ubuntu 18.04.1 (4.15.0-33-generic)",
+    "gpuDriver": "Intel\u00ae Haswell Mobile",
+    "specs": "Intel\u00ae Core\u2122 i3-4000M CPU @ 2.40GHz \u00d7 4 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33570",
+    "title": "Patrician III",
+    "timestamp": 1535865864,
+    "rating": "Borked",
+    "notes": "Says it hangs ...force to close.. intro playes ...then crash",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

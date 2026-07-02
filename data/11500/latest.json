@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "11500",
+    "cpu": "Intel Core i5-3337U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-39-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1544221938,
+    "title": "ToCA Race Driver 3",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

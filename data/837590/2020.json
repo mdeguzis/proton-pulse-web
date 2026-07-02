@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "837590",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "4.19.0-6-amd64",
+    "notes": "Black screen",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1588866157,
+    "title": "Operation Thunderstorm",
+    "source": "protondb"
+  }
+]

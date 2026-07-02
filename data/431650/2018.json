@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "431650",
+    "title": "Phoning Home",
+    "timestamp": 1534955625,
+    "rating": "Silver",
+    "notes": "Resolutions available not displayed correctly in the configuration menu. (but selectable)",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "NVIDIA GTX 1080 TI",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "431650",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.15.0-38-generic",
+    "notes": "At first run I couldn't click on any main menu options with a controller or keyboard.  Once I shut everything down (thinking that it just didn't work) and came back to it a few hours later, this issue was gone.  The game mostly runs fine.  I had to turn off SSAO to get it to run somewhat smoothly.  Even after that, it suffers from intermittent \"micro\" stutters -- bouncing back and forth between smooth gameplay and slight stuttering.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1540744887,
+    "title": "Phoning Home",
+    "source": "protondb"
+  },
+  {
+    "appId": "431650",
+    "title": "Phoning Home",
+    "timestamp": 1534941225,
+    "rating": "Silver",
+    "notes": "Resolutions available not displayed correctly in the configuration menu. (but selectable)",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "NVIDIA GTX 1080 TI",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

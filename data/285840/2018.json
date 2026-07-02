@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "285840",
+    "title": "Enemy Mind",
+    "timestamp": 1535320262,
+    "rating": "Silver",
+    "notes": "The game starts and runs but it lags randomly. The audio is also slightly screwed up",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "285840",
+    "title": "Enemy Mind",
+    "timestamp": 1536161407,
+    "rating": "Borked",
+    "notes": "Just a black screen",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "285840",
+    "title": "Enemy Mind",
+    "timestamp": 1536170131,
+    "rating": "Silver",
+    "notes": "Noticable performance drop, lower than Windows. Controls get laggy if you press them a bit long, pretty frustrating. Other things are fine.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0-34)",
+    "gpuDriver": "Mesa 18.3.0 devel",
+    "specs": "Intel Pentium N3540 / Intel HD Graphics",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "285840",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "I honestly didn't notice anything out of the ordinary. It immediately ran and showed no lags or (noticeable?) slowdowns whatsoever. Gamepad is also found and applied correctly. Played on proton 3.7.8.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541533420,
+    "title": "Enemy Mind",
+    "source": "protondb"
+  },
+  {
+    "appId": "285840",
+    "title": "Enemy Mind",
+    "timestamp": 1535305862,
+    "rating": "Silver",
+    "notes": "The game starts and runs but it lags randomly. The audio is also slightly screwed up",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "285840",
+    "title": "Enemy Mind",
+    "timestamp": 1536147007,
+    "rating": "Borked",
+    "notes": "Just a black screen",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "285840",
+    "title": "Enemy Mind",
+    "timestamp": 1536155731,
+    "rating": "Silver",
+    "notes": "Noticable performance drop, lower than Windows. Controls get laggy if you press them a bit long, pretty frustrating. Other things are fine.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0-34)",
+    "gpuDriver": "Mesa 18.3.0 devel",
+    "specs": "Intel Pentium N3540 / Intel HD Graphics",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

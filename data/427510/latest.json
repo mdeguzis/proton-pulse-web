@@ -1,0 +1,15 @@
+[
+  {
+    "appId": "427510",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Shows the opening logos, then crashes with 'prMovie::Open - Unable to connect pins.'  This is almost certainly related to WMP codecs in its movie files.  No way to bypass; game also crashes if movie files aren't present.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "rating": "Borked",
+    "timestamp": "1536364800",
+    "title": "Way of the Samurai 3",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "274130",
+    "title": "Rambo The Video Game: Baker Team",
+    "timestamp": 1535293824,
+    "rating": "Gold",
+    "notes": "Game works flawlessly once you get it running. On launch the game does not find language files. To get around it delete GameLauncher.exe and then rename Rambo.exe to GameLauncher.exe. If you want to change the games settings you can do it by manually editing the file /data/config.lua",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "274130",
+    "title": "Rambo The Video Game: Baker Team",
+    "timestamp": 1536104369,
+    "rating": "Platinum",
+    "notes": "Ran out of the box with native like performance, no work around needed.",
+    "os": "Elementary OS 5.0 Beta 1 (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka oibaf",
+    "specs": "TR 1900X / RX Vega 56 Nano",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "274130",
+    "title": "Rambo The Video Game: Baker Team",
+    "timestamp": 1535279424,
+    "rating": "Gold",
+    "notes": "Game works flawlessly once you get it running. On launch the game does not find language files. To get around it delete GameLauncher.exe and then rename Rambo.exe to GameLauncher.exe. If you want to change the games settings you can do it by manually editing the file /data/config.lua",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "274130",
+    "title": "Rambo The Video Game: Baker Team",
+    "timestamp": 1536089969,
+    "rating": "Platinum",
+    "notes": "Ran out of the box with native like performance, no work around needed.",
+    "os": "Elementary OS 5.0 Beta 1 (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka oibaf",
+    "specs": "TR 1900X / RX Vega 56 Nano",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

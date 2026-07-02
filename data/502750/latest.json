@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "502750",
+    "cpu": "Intel Xeon E5-1650 v4 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "In order to have music working, you need to manually edit each dosboxXXXXXX_single.conf file (found inside each game's DOSBOX directory) to load INSTALL.EXE (or INST.EXE for QFG2) and select \"Sound Blaster\" for the Music device, save, then return the .conf file to its original settings.  Otherwise works fine, few sound glitches here and there but is playable.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "64 GB",
+    "rating": "Gold",
+    "timestamp": 1566672907,
+    "title": "Quest for Glory 1-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "502750",
+    "cpu": "Intel Core i5-4200M @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.4",
+    "kernel": "4.19.67-1-lts",
+    "notes": "No workarounds needed runs great out of the box. I only played on the 1st game using option 2 EGA edition, so I can't confirm the rest works just as well, but I have no doubt the rest will work fine.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1566769679,
+    "title": "Quest for Glory 1-5",
+    "source": "protondb"
+  }
+]

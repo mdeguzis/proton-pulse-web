@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1426450",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 470 (POLARIS10, DRM 3.42.0, 5.14.17-301.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.14.17-301.fc35.x86_64",
+    "notes": "Flawless! Did not encounter any bugs yet, everything worked so far.",
+    "os": "Linux 5.x",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1651611990,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1426450",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "I've been playing off and on for 5 hours or so over the last week or two.  Game runs seemingly flawlessly.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1653421577,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1426450",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 (SIENNA_CICHLID, DRM 3.41.0, 5.13.0-30-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.13.0-30-generic",
+    "notes": "Playthrough with all three factions, used factions' full tech trees and abilities, no issues whatsoever.",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1657298272,
+    "title": "",
+    "source": "protondb"
+  }
+]

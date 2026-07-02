@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "295550",
+    "title": "Royal Quest",
+    "timestamp": 1535854309,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Linux Mint 19 64-bit (Kernel 4.14)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-7500U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "295550",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Perfect. No issues.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541576098,
+    "title": "Royal Quest",
+    "source": "protondb"
+  },
+  {
+    "appId": "295550",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "everything working!",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541872101,
+    "title": "Royal Quest",
+    "source": "protondb"
+  },
+  {
+    "appId": "295550",
+    "title": "Royal Quest",
+    "timestamp": 1535839909,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Linux Mint 19 64-bit (Kernel 4.14)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-7500U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

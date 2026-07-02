@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1478220",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.44.0, 5.16.10-artix1-1, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.10-artix1-1",
+    "notes": "Plays fine.",
+    "os": "Artix Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1645985899,
+    "title": "Puzzle Together Multiplayer Jigsaw Puzzles",
+    "source": "protondb"
+  }
+]

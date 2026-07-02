@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "588190",
+    "cpu": "AMD Ryzen 5 4600U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (renoir, LLVM 15.0.3, DRM 3.48, 6.0.7-1-default)",
+    "gpuDriver": "4.6 Mesa 22.2.2",
+    "kernel": "6.0.7-1-default",
+    "notes": "Readbacks and Calls are missing, Which is quite significant part of gameplay",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "7.0-4",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1667930582,
+    "title": "",
+    "source": "protondb"
+  }
+]

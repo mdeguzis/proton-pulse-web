@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "745960",
+    "title": "A Sky Full of Stars",
+    "timestamp": 1534955767,
+    "rating": "Platinum",
+    "notes": "Game seems to work just fine. Didn't try further than a couple of minutes in.",
+    "os": "Antergos",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700HQ / NVIDIA GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "745960",
+    "cpu": "Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11 / DRM 3.23.0 / 4.15.0-20-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Saving (normal, quick & auto) fails. Everything else runs fine",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32077 Mb",
+    "rating": "Bronze",
+    "timestamp": 1538513709,
+    "title": "A Sky Full of Stars",
+    "source": "protondb"
+  },
+  {
+    "appId": "745960",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Works perfectly but the opening / ending movies do not play at all",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1540480589,
+    "title": "A Sky Full of Stars",
+    "source": "protondb"
+  },
+  {
+    "appId": "745960",
+    "title": "A Sky Full of Stars",
+    "timestamp": 1534941367,
+    "rating": "Platinum",
+    "notes": "Game seems to work just fine. Didn't try further than a couple of minutes in.",
+    "os": "Antergos",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700HQ / NVIDIA GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

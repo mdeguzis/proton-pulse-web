@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "411480",
+    "cpu": "i5-7400 CPU @ 3.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Stuck at \"Unreal Engine\" splash screen and animated dots. Looks like a server connection issue - seen in game forum posts.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15980 Mb",
+    "rating": "Borked",
+    "timestamp": 1536948080,
+    "title": "BATTLECREW\u2122 Space Pirates",
+    "source": "protondb"
+  }
+]

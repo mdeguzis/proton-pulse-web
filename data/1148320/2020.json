@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1148320",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.4",
+    "kernel": "4.19.107-1-MANJARO",
+    "notes": "Doesn't launch",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1586540199,
+    "title": "Masteroid",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "397330",
+    "title": "Little Big Adventure",
+    "timestamp": 1535027116,
+    "rating": "Bronze",
+    "notes": "Enhanced edition does not start with an \"Assertion Failed\" error. Original edition runs perfectly.",
+    "os": "Kubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.3.0 Dev",
+    "specs": "i5-4460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "397330",
+    "cpu": "Intel Core i3-4005U @ 1.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Enhanced edition throws two asserts, which can be ignored, but the game will only show a blank screen. Original edition works in dosbox but has very cumbersome controls.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541537588,
+    "title": "Little Big Adventure - Enhanced Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "397330",
+    "title": "Little Big Adventure",
+    "timestamp": 1535012716,
+    "rating": "Bronze",
+    "notes": "Enhanced edition does not start with an \"Assertion Failed\" error. Original edition runs perfectly.",
+    "os": "Kubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.3.0 Dev",
+    "specs": "i5-4460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

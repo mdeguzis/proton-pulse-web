@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1333200",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Game works perfectly using GE-Proton8-25, a few slight stutters but nothing signification.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1704392773,
+    "title": "",
+    "source": "protondb"
+  }
+]

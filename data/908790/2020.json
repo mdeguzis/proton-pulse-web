@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "908790",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-31-generic",
+    "notes": "I get a black screen. Tried the game with a nVidia 1080 GPU, 440 drivers and intelHD 520. Didn't perform further tinkering.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1593292507,
+    "title": "",
+    "source": "protondb"
+  }
+]

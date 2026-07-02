@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "837610",
+    "title": "Mary Skelter: Nightmares",
+    "timestamp": 1535161063,
+    "rating": "Silver",
+    "notes": "Crashes to desktop when playing the opening movie. Fixed by renaming the \"MOVIE\" folder . Game runs perfectly, but without a couple of cutscene videos. No huge loss.",
+    "os": "Ubuntu Budgie 18.04 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7 3770K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "837610",
+    "title": "Mary Skelter: Nightmares",
+    "timestamp": 1535146663,
+    "rating": "Silver",
+    "notes": "Crashes to desktop when playing the opening movie. Fixed by renaming the \"MOVIE\" folder . Game runs perfectly, but without a couple of cutscene videos. No huge loss.",
+    "os": "Ubuntu Budgie 18.04 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7 3770K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

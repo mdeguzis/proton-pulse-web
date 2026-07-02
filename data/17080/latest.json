@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "17080",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-0.bpo.5-amd64",
+    "notes": "You have to set the \"Launch Options\" in the Steam Properties for this Game to \"-hostx=23.239.17.171\" then you can login an play like on Windows ...\nThe Game is not listed in the Steam Search anymore. You can get it through this link: https://store.steampowered.com/app/17080/Tribes_Ascend/\nHopefully there will be more players in the near future again ...",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1563100004,
+    "title": "Tribes: Ascend",
+    "source": "protondb"
+  },
+  {
+    "appId": "17080",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "Works with \"-hostx=23.239.17.171\" in the launch options",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570256744,
+    "title": "Tribes: Ascend",
+    "source": "protondb"
+  }
+]

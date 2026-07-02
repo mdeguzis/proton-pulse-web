@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "65730",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-arch1-1-vfio",
+    "notes": "Game requires the input of a serial number during First Time Setup, but the window to do so never shows up in Proton.",
+    "os": "\"Antergos Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15983 Mb",
+    "rating": "Borked",
+    "timestamp": 1537837251,
+    "title": "Take On Helicopters",
+    "source": "protondb"
+  },
+  {
+    "appId": "65730",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "DRM prevents this game from running",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541913930,
+    "title": "Take On Helicopters",
+    "source": "protondb"
+  }
+]

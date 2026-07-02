@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "499900",
+    "cpu": "Intel Core i7 920 @ 2.67GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.7, DRM 3.54, 6.5.0-26-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1",
+    "kernel": "6.5.0-26-generic",
+    "notes": "Shows logo and then BadImageFormatException and I don't know to continue.",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "9.0-3",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1727434626,
+    "title": "",
+    "source": "protondb"
+  }
+]

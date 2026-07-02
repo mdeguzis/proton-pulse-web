@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "340830",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.20.11-042011-generic",
+    "notes": "Windows version works perfectly forced through Proton, tried both windowed and in fullscreen. Also switching between the game and the desktop works. (Native Linux version crashed the Cinnamon desktop)",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551621425,
+    "title": "Razenroth",
+    "source": "protondb"
+  }
+]

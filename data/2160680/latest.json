@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2160680",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "6.0.0-1010-oem",
+    "notes": "The cutscenes are distorted. I could play the tutorial, but after that I could not continue because I could no longer click on any options.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1676813919,
+    "title": "Last Kids on Earth: Hit the Deck!",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "9000",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.13-200.fc29.x86_64",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1553309878,
+    "title": "Spear of Destiny",
+    "source": "protondb"
+  },
+  {
+    "appId": "9000",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-45-generic",
+    "notes": "I started the game up and it crashed immediately! I restarted the game and it worked perfectly the second time!",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554182633,
+    "title": "Spear of Destiny",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "598440",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.12.14-lp151.27-default",
+    "notes": "\"PROTON_NO_ESYNC=1 %command%\" Disabling esync is necessary other wise the game will crash.",
+    "os": "Linux 4.x",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1558948793,
+    "title": "Roots of Insanity",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "598440",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.12.14-lp151.27-default",
+    "os": "openSUSE Leap 15.1",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1558951256,
+    "title": "Roots of Insanity",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

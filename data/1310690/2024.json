@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1310690",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-22-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1735057044,
+    "title": "",
+    "source": "protondb"
+  }
+]

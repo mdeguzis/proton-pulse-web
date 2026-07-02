@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1100160",
+    "cpu": "Intel Core i5-3317U @ 1.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GT 740M",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Game works perfectly out-of-the-box, you just need to make sure about the window resolution you are using.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-9",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1597078679,
+    "title": "",
+    "source": "protondb"
+  }
+]

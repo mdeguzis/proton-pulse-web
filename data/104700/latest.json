@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "104700",
+    "title": "Super Monday Night Combat",
+    "timestamp": 1534986912,
+    "rating": "Silver",
+    "notes": "Game servers were closed after 2018-05-25. The game launches, but trying to change window size/forcing fullscreen messes the game window and the crowd sound is being played constantly in the background",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.3.0-devel (git-aa79cc2bc8)",
+    "specs": "i5-4690K / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "104700",
+    "title": "Super Monday Night Combat",
+    "timestamp": 1534972512,
+    "rating": "Silver",
+    "notes": "Game servers were closed after 2018-05-25. The game launches, but trying to change window size/forcing fullscreen messes the game window and the crowd sound is being played constantly in the background",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.3.0-devel (git-aa79cc2bc8)",
+    "specs": "i5-4690K / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

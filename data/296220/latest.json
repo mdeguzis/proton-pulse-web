@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "296220",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.16-200.fc29.x86_64",
+    "notes": "Everything seems to work",
+    "os": "Linux 4.x",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554565142,
+    "title": "Farm Frenzy 4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "264540",
+    "cpu": "i5-4210U CPU @ 1.70GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Starting the game quits it immediately (no error log, no message or anything)",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "3872 Mb",
+    "rating": "Borked",
+    "timestamp": 1537081834,
+    "title": "Platformines",
+    "source": "protondb"
+  },
+  {
+    "appId": "264540",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Immediately quits after starting; no error log whatsoever.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541488387,
+    "title": "Platformines",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "259660",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Runs out of the box. Played the tutorial.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1552135079,
+    "title": "Void Destroyer",
+    "source": "protondb"
+  },
+  {
+    "appId": "259660",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Runs out of the box.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2",
+    "protonVersionManual": "4.2",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1557358740,
+    "title": "Void Destroyer",
+    "source": "protondb"
+  },
+  {
+    "appId": "259660",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Works perfectly. No problems found.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558711521,
+    "title": "Void Destroyer",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2717010",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.2-2-cachyos",
+    "notes": "framerate occasionally drops",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1767451441,
+    "title": "KALPA: Cosmic Symphony",
+    "source": "protondb"
+  },
+  {
+    "appId": "2717010",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "I've tried a bunch of different proton versions, both regular and GE. Some older versions just refused to launch alltogether, with everything else I just get a blackscreen and nothing happens, not even audio playing.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1770656228,
+    "title": "KALPA: Cosmic Symphony",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "588120",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Seems to load fine up until spawning when it starts to very quickly use up all available RAM and freeze the computer. Tried several workarounds such as using WineD3D, setting all graphics options to low, and capping FPS to 30. Nothing seems to be able to make it work right now.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553597681,
+    "title": "Capsa",
+    "source": "protondb"
+  }
+]

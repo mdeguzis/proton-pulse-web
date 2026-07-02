@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "478980",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Played through one scenario, no issues at all.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15986 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537116227,
+    "title": "Mansions of Madness",
+    "source": "protondb"
+  },
+  {
+    "appId": "478980",
+    "cpu": "Intel(R) Core(TM) i5 CPU       M 560  @ 2.67GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ironlake Mobile x86/MMX/SSE2",
+    "gpuDriver": "2.1 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Initially got \"d3d11: failed to create D3D11 device (0x80004005)\" error, in \".local/share/Steam/steamapps/common/\" you find a Proton folder and in that folder will be a sample \"user_settings.sample.py\" file that you need to rename to \"user_settings.py\". Edit the file and uncomment \"\"PROTON_USE_WINED3D\": \"1\",\". You may need to restart.\n\nI spent considerable time searching so hope this helps someone.",
+    "os": "KDE neon User Edition 5.14 (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "3743 Mb",
+    "rating": "Gold",
+    "timestamp": 1540233831,
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "title": "Mansions of Madness",
+    "source": "protondb"
+  },
+  {
+    "appId": "478980",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Played through the Astral Alchemy scenario with no issues",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540348544,
+    "title": "Mansions of Madness",
+    "source": "protondb"
+  }
+]

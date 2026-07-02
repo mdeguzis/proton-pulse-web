@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "889600",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.21-rt14-MANJARO",
+    "notes": "start intro then crashes",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2.5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562245812,
+    "title": "The Caligula Effect: Overdose",
+    "source": "protondb"
+  },
+  {
+    "appId": "889600",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.2.13-126.current",
+    "notes": "I had to use the media foundation workaround to get past the cut scenes. https://github.com/z0z0z/mf-install\nOther than that the game worked perfectly.",
+    "os": "Solus",
+    "protonVersion": "4.11-7",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1571932299,
+    "title": "The Caligula Effect: Overdose",
+    "source": "protondb"
+  }
+]

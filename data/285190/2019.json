@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "285190",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "3 fps max regardless of settings, native version run more than 10 times better (40-50 fps). I was going to try the Windows version in Proton because native doesn't support cross-platform multiplayer but only the native version is playable ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1547898508,
+    "title": "Warhammer 40,000: Dawn of War III",
+    "source": "protondb"
+  }
+]

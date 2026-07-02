@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "578330",
+    "title": "LEGO\u00ae City Undercover",
+    "timestamp": 1535357327,
+    "rating": "Platinum",
+    "notes": "The game works fine and the framerate is decent",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3550/GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "578330",
+    "cpu": "Intel(R) Core(TM) i7-3770K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "The game doesn't even start",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7940 Mb",
+    "rating": "Borked",
+    "timestamp": 1537499678,
+    "title": "LEGO City Undercover",
+    "source": "protondb"
+  },
+  {
+    "appId": "578330",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.18.0-sabayon",
+    "notes": "The last update fixed all audio problems and can now be started and played directly without tweaks. @Alexander",
+    "os": "Sabayon Linux amd64 19.01",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545999957,
+    "title": "LEGO City Undercover",
+    "source": "protondb"
+  },
+  {
+    "appId": "578330",
+    "title": "LEGO\u00ae City Undercover",
+    "timestamp": 1535342927,
+    "rating": "Platinum",
+    "notes": "The game works fine and the framerate is decent",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3550/GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

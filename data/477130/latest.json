@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "477130",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.4-1-MANJARO",
+    "notes": "All good.  ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564710798,
+    "title": "Surge",
+    "source": "protondb"
+  },
+  {
+    "appId": "477130",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.3.0-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567473894,
+    "title": "Surge",
+    "source": "protondb"
+  }
+]

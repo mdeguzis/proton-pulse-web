@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "263360",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Native version uses Java 7 and didn't want to install it. No problems with Proton.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1562515957,
+    "title": "3089 -- Futuristic Action RPG",
+    "source": "protondb"
+  }
+]

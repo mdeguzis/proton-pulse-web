@@ -1,0 +1,64 @@
+[
+  {
+    "appId": "209870",
+    "title": "Blacklight: Retribution",
+    "timestamp": 1535073925,
+    "rating": "Borked",
+    "notes": "Stuck on \"Starting BattlEye Service...\", assuming that BattleEye is what preventing this game to run.",
+    "os": "Void Linux 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4670K / GTX 770 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "209870",
+    "title": "Blacklight: Retribution",
+    "timestamp": 1536267870,
+    "rating": "Borked",
+    "notes": "Stuck on battleye",
+    "os": "Arch Linux 64-bit",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "1600x, rx480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "209870",
+    "cpu": "Intel(R) Core(TM) i5 CPU         750  @ 2.67GHz",
+    "gpu": "NVIDIA Corporation GeForce 210/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64-bit)",
+    "protonVersion": "Beta",
+    "ram": "3909 Mb",
+    "rating": "Borked",
+    "timestamp": 1537661612,
+    "title": "Blacklight: Retribution",
+    "source": "protondb"
+  },
+  {
+    "appId": "209870",
+    "title": "Blacklight: Retribution",
+    "timestamp": 1535059525,
+    "rating": "Borked",
+    "notes": "Stuck on \"Starting BattlEye Service...\", assuming that BattleEye is what preventing this game to run.",
+    "os": "Void Linux 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4670K / GTX 770 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "209870",
+    "title": "Blacklight: Retribution",
+    "timestamp": 1536253470,
+    "rating": "Borked",
+    "notes": "Stuck on battleye",
+    "os": "Arch Linux 64-bit",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "1600x, rx480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

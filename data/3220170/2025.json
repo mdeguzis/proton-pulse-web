@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3220170",
+    "cpu": "Intel Core i9-14900KF",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "Runs fine out of the Box",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1765919248,
+    "title": "",
+    "source": "protondb"
+  }
+]

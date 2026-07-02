@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1034860",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.9.186-1-MANJARO",
+    "notes": "launcher.exe will not start.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1571285755,
+    "title": "GRANDIA HD Remaster",
+    "source": "protondb"
+  },
+  {
+    "appId": "1034860",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Fails to launch. No error message.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1571337979,
+    "title": "GRANDIA HD Remaster",
+    "source": "protondb"
+  }
+]

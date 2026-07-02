@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "271760",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.1.0-050100rc2-generic",
+    "notes": "Cartoon shader seems to artifact everything. Otherwise it works fine. The FPS is all over the place but it's the same in windows.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.4-3",
+    "protonVersionManual": "4.4-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1556528211,
+    "title": "Dungeon Lords Steam Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "271760",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.1.2-arch1-1-ARCH",
+    "notes": "Multiplayer requires Directplay. Performance and stability is slightly worse than on Windows, but the game runs terribly and is unstable even on Windows, soooo as intended?",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1558302280,
+    "title": "Dungeon Lords Steam Edition",
+    "source": "protondb"
+  }
+]

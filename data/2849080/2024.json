@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2849080",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 590 (radeonsi, polaris10, LLVM 17.0.6, DRM 3.57, 6.8.0-38-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.1",
+    "kernel": "6.8.0-38-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1721994202,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2849080",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.8.0-39-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.1",
+    "kernel": "6.8.0-39-generic",
+    "notes": "The game is working perfectly if using Proton 9.0+ (earlier versions were working fine, but the achievements were not synchronizing)",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1722213945,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2849080",
+    "cpu": "12th Gen Intel Core i5-1240P",
+    "duration": "allTheTime",
+    "gpu": "Mesa virgl (Mesa Intel (ADL GT2))",
+    "gpuDriver": "4.6 Mesa 24.2.0-devel (git-9bce6f5cc4)",
+    "kernel": "6.1.105-15331-g4101380d9283",
+    "notes": "Works great on linux.",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "9.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1730439632,
+    "title": "",
+    "source": "protondb"
+  }
+]

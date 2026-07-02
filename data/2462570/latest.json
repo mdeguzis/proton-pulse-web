@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2462570",
+    "cpu": "13th Gen Intel Core i9-13900KF",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-36-generic",
+    "notes": "Tried without any tinkering. Every time you start the game it tries to install/uninstall a dependency. Shows brightness settings on first startup but then nothing else. Menu doesn't show but moving my mouse around left bottom corner it gives the sound effects.\n\nCan't get into the game",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1721125405,
+    "title": "Thor's Ascension: Nine Realms",
+    "source": "protondb"
+  }
+]

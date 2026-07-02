@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "11480",
+    "cpu": "Intel Core2          6300  @ 1.86GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD OLAND",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-43-generic",
+    "notes": "first try at this. unsupported platform. i havent tried any of the above tweaks yet, still learning!",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "2 GB",
+    "rating": "Borked",
+    "timestamp": 1547940605,
+    "title": "Soldiers: Heroes of World War II",
+    "source": "protondb"
+  }
+]

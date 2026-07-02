@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "658140",
+    "cpu": "%s1",
+    "duration": "severalHours",
+    "gpu": "VMware, Inc. Gallium 0.4 on llvmpipe (LLVM 3.9, 256 bits)",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.14.74-07727-g7815dfea1ba2",
+    "notes": "Graphics and animation (blinking eyes, moving mouths) work perfectly. The main issue is that there is no audio (soundtrack or voices) when playing. ",
+    "os": "Debian GNU/Linux 9.5 (stretch)",
+    "protonVersion": "Default",
+    "ram": "5 GB",
+    "rating": "Silver",
+    "timestamp": 1544500601,
+    "title": "Sakura Sakura",
+    "source": "protondb"
+  }
+]

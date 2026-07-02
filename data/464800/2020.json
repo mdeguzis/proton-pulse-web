@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "464800",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.3.4",
+    "kernel": "5.3.18-lp152.36-default",
+    "notes": "Crashes on start",
+    "os": "openSUSE Leap 15.2",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1599169189,
+    "title": "",
+    "source": "protondb"
+  }
+]

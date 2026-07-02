@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "603260",
+    "cpu": "Intel Xeon E5-1620 0 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD TURKS",
+    "gpuDriver": "3.1 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Game runs perfectly without tweaks, changes or anything. Simply install and launch. I have experienced no issues with this game while playing it.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1547271603,
+    "title": "The Cat Games",
+    "source": "protondb"
+  },
+  {
+    "appId": "603260",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-d6683e1 2019-06-27 disco-oibaf-ppa)",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Runs well, even on a Steam Link with a wireless USB keyboard and mouse.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562291878,
+    "title": "The Cat Games",
+    "source": "protondb"
+  }
+]

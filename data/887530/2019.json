@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "887530",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "runs perfectly out of the box. The only issue I've had is that the game will not close when I exit the game sometimes, so I have to kill it myself. The installer for the uncensor patch works as well. Just go to the Z: drive on the installer window, there you can find the game folder to install it in.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "Proton-4.6-GE-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560659485,
+    "title": "President Yukino",
+    "source": "protondb"
+  },
+  {
+    "appId": "887530",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.68-1-lts",
+    "notes": "Everything works both with and without 18+ patch.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567002926,
+    "title": "President Yukino",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2067920",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.2, DRM 3.64, 6.17.0-14-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Native runs fine, no Proton needed",
+    "os": "Zorin OS 18",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772530180,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2067920",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.6-arch1-1",
+    "notes": "Game logs indicate potential issue with gbm and nvidia drivers.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1773708346,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2067920",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.6-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1773958475,
+    "title": "",
+    "source": "protondb"
+  }
+]

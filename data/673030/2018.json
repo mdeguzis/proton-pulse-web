@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "673030",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.4.0-138-generic",
+    "notes": "The DEMO works out of the box, but with distorted sound. \nThe solution that worked for me was go to... /compatdata/673030/pfx  and edit the user.cfg file. \nAt the end of the  [Software\\\\Wine\\\\DllOverrides]  section, I  added \"xaudio2_7\"=\"native,builtin\"  and now the sound works fine... \n\nFor to quit the game, I have to die or use alt+F4. \n\n",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1540865618,
+    "title": "Damned Hours Demo",
+    "source": "protondb"
+  }
+]

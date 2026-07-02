@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "57300",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.11-1-MANJARO",
+    "notes": "The game is available natively but, as it's crashing for me when I press \"Start Game\", I decided to try running it with Proton. Fortunately, this way it works perfectly. I haven't noticed any issues nor differences from the native version.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551033991,
+    "title": "Amnesia: The Dark Descent",
+    "source": "protondb"
+  }
+]

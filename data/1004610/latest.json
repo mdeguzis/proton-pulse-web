@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1004610",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Intro video does not play but is skippable and the game runs perfectly when in game. Does not recognise alternate keyboard layout though",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565699503,
+    "title": "Roombo: First Blood",
+    "source": "protondb"
+  },
+  {
+    "appId": "1004610",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.5-200.fc30.x86_64",
+    "notes": "Roombo runs great with proton, but i experienced problems loading the introdution video (was able to skip).",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565897191,
+    "title": "Roombo: First Blood",
+    "source": "protondb"
+  },
+  {
+    "appId": "1004610",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Game works perfectly in terms of gameplay, but the intro video won't play (hit escape to skip or just wait) and the game won't exit cleanly if any level has been started beforehand. Attempted a few fixes but found no solution.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1566028906,
+    "title": "Roombo: First Blood",
+    "source": "protondb"
+  }
+]

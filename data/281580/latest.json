@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "281580",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Installs fine and launcher starts. Options can be changed. Single player and freeflight crash while loading (at aprox 60%). Tried disabling dx11 and setting winecfg to windows XP (since setting winXP compatibility was working in windows for the same problem).",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1542919442,
+    "title": "Wings Over Europe",
+    "source": "protondb"
+  }
+]

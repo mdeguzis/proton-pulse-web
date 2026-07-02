@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "600750",
+    "title": "Star Trek Timelines",
+    "timestamp": 1535731252,
+    "rating": "Silver",
+    "notes": "Audio crackles but is otherwise playable",
+    "os": "Ubuntu 18.04 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": " i7-4720HQ / GTX 960M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "600750",
+    "cpu": "i7-7700 CPU @ 3.60GHz",
+    "gpu": "GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Almost everything (audio, graphics, UI, controls, etc) works perfect. Couldn't get the Facebook button in Settings menu to work though.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.3 and 3.7.5 beta",
+    "ram": "15986 Mb",
+    "rating": "Silver",
+    "timestamp": "1536336187",
+    "title": "Star Trek Timelines",
+    "source": "protondb"
+  },
+  {
+    "appId": "600750",
+    "cpu": "Intel Core2 Quad           @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD CAICOS",
+    "gpuDriver": "3.1 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Game doesn't launch but spawns wine processes.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "3 GB",
+    "rating": "Borked",
+    "timestamp": 1541962654,
+    "title": "Star Trek Timelines",
+    "source": "protondb"
+  },
+  {
+    "appId": "600750",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Facebook login (embedded web-view) didn't work in previous Proton versions. Now this seems to be fixed as of Proton 3.16-5 beta and since no new bugs are introduced, I can give 10/10.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544912343,
+    "title": "Star Trek Timelines",
+    "source": "protondb"
+  },
+  {
+    "appId": "600750",
+    "title": "Star Trek Timelines",
+    "timestamp": 1535716852,
+    "rating": "Silver",
+    "notes": "Audio crackles but is otherwise playable",
+    "os": "Ubuntu 18.04 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": " i7-4720HQ / GTX 960M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

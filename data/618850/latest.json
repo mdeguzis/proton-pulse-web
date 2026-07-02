@@ -1,0 +1,63 @@
+[
+  {
+    "appId": "618850",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "4.19.0-5-amd64",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1566056293,
+    "title": "Pumpkin Days",
+    "source": "protondb"
+  },
+  {
+    "appId": "618850",
+    "cpu": "Intel Core i5-3330 @ 3.00GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-25-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1566222026,
+    "title": "Pumpkin Days",
+    "source": "protondb"
+  },
+  {
+    "appId": "618850",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "4.19.0-5-amd64",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1566249382,
+    "title": "Pumpkin Days",
+    "source": "protondb"
+  },
+  {
+    "appId": "618850",
+    "cpu": "Intel Core i5-3330 @ 3.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-27-generic",
+    "notes": "I played almost 40 hours so far; the game itself is not bug-free yet, but that's due to it still being in early access (with regular patches and updates coming so far) and does not seem to be platform related. \nThe default (graphics) settings are pretty high, it helped me to first lower them until I had visited most of the town (Pumpkinvale) for the first time. Then I put them back up by chance and since then the game runs smoothly even with high graphics settings.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567861593,
+    "title": "Pumpkin Days",
+    "source": "protondb"
+  }
+]

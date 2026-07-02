@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2341410",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 17.0.6, DRM 3.54, 6.6.8-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.1",
+    "kernel": "6.6.8-200.fc39.x86_64",
+    "notes": "After forcing the use of Proton and OpenGL, game seems to run perfectly",
+    "os": "Fedora Linux 39 (Workstation Edition)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1704109726,
+    "title": "",
+    "source": "protondb"
+  }
+]

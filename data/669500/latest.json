@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "669500",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "Crashes on start. Final log entry:\n\n[ERROR] FATAL UNHANDLED EXCEPTION: System.TypeLoadException: Could not load type of field '<Module>:__m2mep@?ToColor@CLRTools@@$$FYM?AVColor@Media@Windows@System@@AEBVFColor@@@Z' (2668) due to: Could not load file or assembly 'PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1558846054,
+    "title": "Himeko Sutori",
+    "source": "protondb"
+  }
+]

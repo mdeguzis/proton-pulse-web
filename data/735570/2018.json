@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "735570",
+    "cpu": "i7-4770K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-200.fc28.x86_64",
+    "notes": "There are no technical issues with running this game at all, but performance is atrocious. It does not play comfortably but occupies only 3% of CPU. No workarounds were tested.",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64-bitowy)",
+    "protonVersion": "3.7-6",
+    "ram": "15980 MB",
+    "rating": "Silver",
+    "timestamp": 1536930235,
+    "title": "Project Rhombus",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2165810",
+    "cpu": "AMD Ryzen 5 7520U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (gfx1036, LLVM 15.0.6, DRM 3.49, 6.1.0-38-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-38-amd64",
+    "notes": "Failed to launch game in default steam config, proton hotfix, proton experimental, and proton 8.0-5",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1761049736,
+    "title": "Streets of Rogue 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "2165810",
+    "cpu": "AMD Ryzen 7 5800X",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "570.153.02",
+    "kernel": "6.17.5-gnu",
+    "notes": "Note that the demo is extremely unstable (dev himself admitted so), it ran like shit on Windows too, and there I had to wait around 15m for the world to finally load. Not blaming Proton in this case at all. Hopefully when they release the full version it won't be as messy as this.",
+    "os": "Guix System",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1764822875,
+    "title": "Streets of Rogue 2",
+    "source": "protondb"
+  }
+]

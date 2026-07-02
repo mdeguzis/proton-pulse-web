@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "209750",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.16-200.fc29.x86_64",
+    "notes": "Just a heads up. This game plays perfectly (Platinum) if you use D9VK v0.13 or higher. If you use the default Wine DX9 drivers the game will run but the colours will be inverted in game.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1562770187,
+    "title": "Cannon Fodder 3",
+    "source": "protondb"
+  }
+]

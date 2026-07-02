@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "558610",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1 - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Game works fine except that it crashes randomly, not sure if this is a bug in the game or Proton.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1547851146,
+    "title": "Mad Hunter",
+    "source": "protondb"
+  }
+]

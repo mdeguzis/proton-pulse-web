@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "625730",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.4.0-137-generic",
+    "notes": "Initially it crashed at the menu screen with the error \"R6025 - pure virtual function call\". I got a bit further by disabling esync, and was able to use the menus and play the first tutorial level. But upon finishing the level it crashed again with the error \"Fatal error in gc - GetThreadContext failed\".",
+    "os": "Ubuntu 16.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541835109,
+    "title": "Cefore",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

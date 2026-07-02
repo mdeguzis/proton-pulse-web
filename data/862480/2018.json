@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "862480",
+    "title": "The Spiral Scouts",
+    "timestamp": 1535600241,
+    "rating": "Borked",
+    "notes": "Memory Access Violation Error is reported on boot",
+    "os": "Kubuntu 14.04.5 LTS (64 bit)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-4690K / GTX 650 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "862480",
+    "title": "The Spiral Scouts",
+    "timestamp": 1535585841,
+    "rating": "Borked",
+    "notes": "Memory Access Violation Error is reported on boot",
+    "os": "Kubuntu 14.04.5 LTS (64 bit)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-4690K / GTX 650 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

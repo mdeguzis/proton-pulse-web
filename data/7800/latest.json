@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "7800",
+    "title": "Stubbs the Zombie in Rebel Without a Pulse",
+    "timestamp": 1535246301,
+    "rating": "Borked",
+    "notes": "Black screen on launch, no cpu usage, no crashes occur",
+    "os": "Arch Linux 64 Bit (4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "7800",
+    "title": "Stubbs the Zombie in Rebel Without a Pulse",
+    "timestamp": 1535231901,
+    "rating": "Borked",
+    "notes": "Black screen on launch, no cpu usage, no crashes occur",
+    "os": "Arch Linux 64 Bit (4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

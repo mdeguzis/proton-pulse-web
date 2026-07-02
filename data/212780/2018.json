@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "212780",
+    "title": "New Star Soccer 5",
+    "timestamp": 1535052963,
+    "rating": "Borked",
+    "notes": "It runs, but you can't play. it can't connect to their servers, not sure it's because of proton or a problem on their end",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Geforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "212780",
+    "title": "New Star Soccer 5",
+    "timestamp": 1535038563,
+    "rating": "Borked",
+    "notes": "It runs, but you can't play. it can't connect to their servers, not sure it's because of proton or a problem on their end",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Geforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

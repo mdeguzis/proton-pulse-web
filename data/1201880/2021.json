@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1201880",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.42.0, 5.15.6, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.15.6",
+    "notes": "",
+    "os": "Devuan GNU/Linux 4 (chimaera)",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1639692555,
+    "title": "",
+    "source": "protondb"
+  }
+]

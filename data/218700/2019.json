@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "218700",
+    "cpu": "Intel Core i7-2630QM @ 2.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.14.83-gentoo",
+    "notes": "Runs perfectly.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546457641,
+    "title": "Angelica Weaver: Catch Me When You Can",
+    "source": "protondb"
+  },
+  {
+    "appId": "218700",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Ran perfectly with no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559966105,
+    "title": "Angelica Weaver: Catch Me When You Can",
+    "source": "protondb"
+  }
+]

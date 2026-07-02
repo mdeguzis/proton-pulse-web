@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3067890",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 19.1.7, DRM 3.61, 6.12.48+deb13-amd64)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.48+deb13-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1761451637,
+    "title": "",
+    "source": "protondb"
+  }
+]

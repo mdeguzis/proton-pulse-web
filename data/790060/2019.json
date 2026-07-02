@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "790060",
+    "cpu": "Intel Core i5-5300U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.7",
+    "kernel": "5.3.4-1-default",
+    "notes": "Crashes on startup with \"Win32 function failed: HRESULT: 0x80004005\nCall: at line 230 in file \\Graphics_DisplayM.cpp\".\n\nTVRUHH works fine if you install Wine 4.x, install Windows steam inside that, and run it from there, so there's no fundamental incompatibility with Wine; it just doesn't play nice with Proton.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1570840713,
+    "title": "The Void Rains Upon Her Heart",
+    "source": "protondb"
+  },
+  {
+    "appId": "790060",
+    "cpu": "Intel Core i5-5300U @ 2.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.7",
+    "kernel": "5.3.4-1-default",
+    "notes": "PROTON_USE_WINED3D was necessary to prevent it from crashing instantly on startup; with that change, it runs fine and without any performance issues.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570934928,
+    "title": "The Void Rains Upon Her Heart",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "263120",
+    "title": "Ludwig",
+    "timestamp": 1535655518,
+    "rating": "Gold",
+    "notes": "Runs alright after 'PROTON_NO_D3D11=1 PROTON_NO_ESYNC=1 %command%' in Steam launch options.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "263120",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Worked great ootb",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Ludwig",
+    "source": "protondb"
+  },
+  {
+    "appId": "263120",
+    "title": "Ludwig",
+    "timestamp": 1535641118,
+    "rating": "Gold",
+    "notes": "Runs alright after 'PROTON_NO_D3D11=1 PROTON_NO_ESYNC=1 %command%' in Steam launch options.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

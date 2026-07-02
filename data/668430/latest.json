@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "668430",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.9.0-7-amd64",
+    "notes": "Works nice out of the box, performance is ok",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562570612,
+    "title": "V-Racer Hoverbike",
+    "source": "protondb"
+  }
+]

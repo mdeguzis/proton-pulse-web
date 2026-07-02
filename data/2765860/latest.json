@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2765860",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.7, DRM 3.59, 6.12.11-gentoo-dist)",
+    "gpuDriver": "4.6 Mesa 24.3.4",
+    "kernel": "6.12.11-gentoo-dist",
+    "notes": "Played with friends, pretty much works like native",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1739145836,
+    "title": "",
+    "source": "protondb"
+  }
+]

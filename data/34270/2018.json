@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "34270",
+    "title": "SEGA Mega Drive & Genesis Classics",
+    "timestamp": 1535171121,
+    "rating": "Silver",
+    "notes": "Games played in \"Fullscreen\" Mode seem to black screen. Just back out so the game displays within the virtual CRT TV.",
+    "os": "Fedora 28 (Kernel 4.17.12)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-3570 / Radeon RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34270",
+    "title": "SEGA Mega Drive & Genesis Classics",
+    "timestamp": 1535403566,
+    "rating": "Bronze",
+    "notes": "Steam controllers don't work; full screen doesn't work; game seems to get random inputs not done by user. ",
+    "os": "Pop!_OS 18.04",
+    "gpuDriver": "3.1 Mesa 18.3.0-devel - padoka PPA",
+    "specs": "AMD Athlon II X4 645/HD 6670",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34270",
+    "title": "SEGA Mega Drive and Genesis Classics",
+    "timestamp": 1536096037,
+    "rating": "Platinum",
+    "notes": "Works fine used USB xbone controller",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 5930k / GeForce GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34270",
+    "title": "SEGA Mega Drive & Genesis Classics",
+    "timestamp": 1535156721,
+    "rating": "Silver",
+    "notes": "Games played in \"Fullscreen\" Mode seem to black screen. Just back out so the game displays within the virtual CRT TV.",
+    "os": "Fedora 28 (Kernel 4.17.12)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-3570 / Radeon RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34270",
+    "title": "SEGA Mega Drive & Genesis Classics",
+    "timestamp": 1535389166,
+    "rating": "Bronze",
+    "notes": "Steam controllers don't work; full screen doesn't work; game seems to get random inputs not done by user. ",
+    "os": "Pop!_OS 18.04",
+    "gpuDriver": "3.1 Mesa 18.3.0-devel - padoka PPA",
+    "specs": "AMD Athlon II X4 645/HD 6670",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34270",
+    "title": "SEGA Mega Drive and Genesis Classics",
+    "timestamp": 1536081637,
+    "rating": "Platinum",
+    "notes": "Works fine used USB xbone controller",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 5930k / GeForce GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

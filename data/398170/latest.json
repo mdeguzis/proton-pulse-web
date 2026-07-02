@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "398170",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-49-generic",
+    "notes": "FYI: Evocron was specifically mentioned in a recent Proton Patch (github). Now, it starts, runs, playable. First start might take a while (shader creation? writing new files?). Later starts are faster.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1557418920,
+    "title": "Evochron Legacy",
+    "source": "protondb"
+  }
+]

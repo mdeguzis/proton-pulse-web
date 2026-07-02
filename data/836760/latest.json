@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "836760",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "The following 2 launch options will prompt the following message:\nSorcery Saga has stopped working. Crash dump has been generated\nWine could not be closed.\nPROTON_USE_WINED3D11=1 %command%\nPROTON_NO_ESYNC=1 %command%\n\nThe following launch option does not launch anything. Nothing appears.\nPROTON_NO_D3D11=1 %command%",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541094493,
+    "title": "Sorcery Saga: Curse of the Great Curry God",
+    "source": "protondb"
+  }
+]

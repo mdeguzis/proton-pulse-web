@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "338800",
+    "title": "Seven Kingdoms 2 HD",
+    "timestamp": 1535896548,
+    "rating": "Borked",
+    "notes": "The game starts, campaign screen is working, but at mission, screen hangs, while music is still playing, manu is accessible.",
+    "os": "LUbuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4700HQ / GTX 850m",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "338800",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Game launches and navigates fine through menus. However, when attempting to play a game there is serious graphical lag and artifacting making the game unplayable",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1546202483,
+    "title": "Seven Kingdoms 2 HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "338800",
+    "title": "Seven Kingdoms 2 HD",
+    "timestamp": 1535882148,
+    "rating": "Borked",
+    "notes": "The game starts, campaign screen is working, but at mission, screen hangs, while music is still playing, manu is accessible.",
+    "os": "LUbuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4700HQ / GTX 850m",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

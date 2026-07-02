@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "390560",
+    "title": "Fantasy Strike",
+    "timestamp": 1535080048,
+    "rating": "Borked",
+    "notes": "When trying to start the game, Steam said the game was running and a pop-up titled \"Fantasy Strike - Unity 2018.2.3f1_1431a7d2ced7\" with a loading bar proceeded to close. ",
+    "os": "Linux Mint 18.3 64-bit (4.10.0-33-generic)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "Intel i3-3250 (4) @ 3.500GHz / NVIDIA GeForce GTX 550 Ti ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "390560",
+    "title": "Fantasy Strike",
+    "timestamp": 1536041895,
+    "rating": "Borked",
+    "notes": "No character models appear in game, just cloaks/weapons",
+    "os": "Debian Stretch (Kernel 4.12.13-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "390560",
+    "title": "Fantasy Strike",
+    "timestamp": 1535065648,
+    "rating": "Borked",
+    "notes": "When trying to start the game, Steam said the game was running and a pop-up titled \"Fantasy Strike - Unity 2018.2.3f1_1431a7d2ced7\" with a loading bar proceeded to close. ",
+    "os": "Linux Mint 18.3 64-bit (4.10.0-33-generic)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "Intel i3-3250 (4) @ 3.500GHz / NVIDIA GeForce GTX 550 Ti ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "390560",
+    "title": "Fantasy Strike",
+    "timestamp": 1536027495,
+    "rating": "Borked",
+    "notes": "No character models appear in game, just cloaks/weapons",
+    "os": "Debian Stretch (Kernel 4.12.13-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

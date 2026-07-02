@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "878750",
+    "title": "Hentai Girl",
+    "timestamp": 1535559817,
+    "rating": "Borked",
+    "notes": "Failed to initialize graphics. Make sure you have DirectX 11 installed, have up to date drivers for your graphics card and have not disabled 3D acceleration in display settings. InitializeEngineGraphics failed",
+    "os": "Solus 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-2320 / iGPU HD 2000",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "878750",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.14.78-1-MANJARO",
+    "notes": "works perfectly",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540826709,
+    "title": "Hentai Girl",
+    "source": "protondb"
+  },
+  {
+    "appId": "878750",
+    "title": "Hentai Girl",
+    "timestamp": 1535545417,
+    "rating": "Borked",
+    "notes": "Failed to initialize graphics. Make sure you have DirectX 11 installed, have up to date drivers for your graphics card and have not disabled 3D acceleration in display settings. InitializeEngineGraphics failed",
+    "os": "Solus 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-2320 / iGPU HD 2000",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "296650",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-30deepin-generic",
+    "notes": "Firts run has brocken layout, then it just works",
+    "os": "Deepin 15.10.1",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1561317487,
+    "title": "The Great Jitters: Pudding Panic",
+    "source": "protondb"
+  }
+]

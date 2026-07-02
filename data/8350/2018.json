@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "8350",
+    "title": "Strong Bad's Cool Game for Attractive People: Episode 2",
+    "timestamp": 1535318117,
+    "rating": "Platinum",
+    "notes": "Works Great",
+    "os": "Fedora 28 Workstation 64-bit (Kernel 4.17.17-200)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3770S / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "8350",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Runs perfect",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541285561,
+    "title": "Strong Bad's Cool Game for Attractive People: Episode 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "8350",
+    "title": "Strong Bad's Cool Game for Attractive People: Episode 2",
+    "timestamp": 1535303717,
+    "rating": "Platinum",
+    "notes": "Works Great",
+    "os": "Fedora 28 Workstation 64-bit (Kernel 4.17.17-200)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3770S / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

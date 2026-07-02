@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "300610",
+    "title": "Pure Pool",
+    "timestamp": 1535224260,
+    "rating": "Borked",
+    "notes": "wine: Call from 0x7b43c45c to unimplemented function mscoree.dll.CorIsLatestSvc",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4710HQ / GTX 850M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "300610",
+    "title": "Pure Pool",
+    "timestamp": 1535209860,
+    "rating": "Borked",
+    "notes": "wine: Call from 0x7b43c45c to unimplemented function mscoree.dll.CorIsLatestSvc",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4710HQ / GTX 850M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

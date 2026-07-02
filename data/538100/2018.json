@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "538100",
+    "title": "Feel The Snow",
+    "timestamp": 1536089893,
+    "rating": "Platinum",
+    "notes": "Natively supported on the beta-branch \"test\"",
+    "os": "18.04.1 LTS (64 Bit)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-8100 / GTX 1060  3gb",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "538100",
+    "title": "Feel The Snow",
+    "timestamp": 1536075493,
+    "rating": "Platinum",
+    "notes": "Natively supported on the beta-branch \"test\"",
+    "os": "18.04.1 LTS (64 Bit)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-8100 / GTX 1060  3gb",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

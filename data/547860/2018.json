@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "547860",
+    "title": "Rend",
+    "timestamp": 1535208723,
+    "rating": "Borked",
+    "notes": "menu and choice character / server works perfect but when you try to enter the game crash",
+    "os": "Linux Mint 19",
+    "gpuDriver": "\"NVIDIA 396.54",
+    "specs": "Ryzen 1700X/GTX650",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "547860",
+    "title": "Rend",
+    "timestamp": 1535648705,
+    "rating": "Silver",
+    "notes": "Only server no EAC",
+    "os": "Solus Unstable (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "GTX 650",
+    "protonVersion": "3.7.4",
+    "source": "protondb"
+  },
+  {
+    "appId": "547860",
+    "title": "Rend",
+    "timestamp": 1535194323,
+    "rating": "Borked",
+    "notes": "menu and choice character / server works perfect but when you try to enter the game crash",
+    "os": "Linux Mint 19",
+    "gpuDriver": "\"NVIDIA 396.54",
+    "specs": "Ryzen 1700X/GTX650",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "547860",
+    "title": "Rend",
+    "timestamp": 1535634305,
+    "rating": "Silver",
+    "notes": "Only server no EAC",
+    "os": "Solus Unstable (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "GTX 650",
+    "protonVersion": "3.7.4",
+    "source": "protondb"
+  }
+]

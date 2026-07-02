@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "58560",
+    "title": "Runaway: A Twist of Fate",
+    "timestamp": 1534977385,
+    "rating": "Silver",
+    "notes": "Text and mouse cursor show inside a black box. Nothing more noticed.",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "58560",
+    "title": "Runaway: A Twist of Fate",
+    "timestamp": 1535480227,
+    "rating": "Silver",
+    "notes": "Use Proton 3.7-4, instead of 3.7-3. To start game, select a character, enter a name and same password 2 times. use enter key to accept name and pass.",
+    "os": "Manjaro Stable 64-bit (kernel 4.16.18-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7-950/RX 470",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "58560",
+    "cpu": "Intel(R) Xeon(R) CPU E5-2630 0 @ 2.30GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Crosshair has black background, else no problems",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15986 Mb",
+    "rating": "Silver",
+    "timestamp": 1537911804,
+    "title": "Runaway: A Twist of Fate",
+    "source": "protondb"
+  },
+  {
+    "appId": "58560",
+    "cpu": "AMD Ryzen 5 1600X Six-Core Processor",
+    "duration": "severalHours",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.10-arch1-1-ARCH, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.18.10-arch1-1-ARCH",
+    "notes": "Mouse cursor and text should have transparent background, but it's black instead. Cannot type in character name when starting a new game. Both of these do not affect gameplay at all and are purely cosmetic in nature. Finished chapter 1, everything is running OK and playable.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16057 Mb",
+    "rating": "Silver",
+    "timestamp": 1538519421,
+    "title": "Runaway: A Twist of Fate",
+    "source": "protondb"
+  },
+  {
+    "appId": "58560",
+    "title": "Runaway: A Twist of Fate",
+    "timestamp": 1534962985,
+    "rating": "Silver",
+    "notes": "Text and mouse cursor show inside a black box. Nothing more noticed.",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "58560",
+    "title": "Runaway: A Twist of Fate",
+    "timestamp": 1535465827,
+    "rating": "Silver",
+    "notes": "Use Proton 3.7-4, instead of 3.7-3. To start game, select a character, enter a name and same password 2 times. use enter key to accept name and pass.",
+    "os": "Manjaro Stable 64-bit (kernel 4.16.18-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7-950/RX 470",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

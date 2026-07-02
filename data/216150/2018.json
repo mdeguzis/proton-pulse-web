@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "216150",
+    "cpu": "AMD Phenom(tm) II X6 1100T Processor",
+    "gpu": "GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Pre-Launcher pops up (which normally starts the anti-hack protection) and the game hangs with the following message in the log.\n5411.432:0083:0084:trace:seh:call_stack_handlers calling handler at 0x7bc805f0 code=c0000005 flags=10\n5411.432:0083:0084:trace:seh:call_stack_handlers handler at 0x7bc805f0 returned 2\nUntil it eventually overflows. Game must be killed via task manager at this point.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16040 Mb",
+    "rating": "Borked",
+    "timestamp": 1536780351,
+    "title": "MapleStory",
+    "source": "protondb"
+  }
+]

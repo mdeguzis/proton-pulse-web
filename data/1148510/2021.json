@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1148510",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD VEGA20",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.9.0-0.bpo.2-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1610030993,
+    "title": "Pretty Angel",
+    "source": "protondb"
+  },
+  {
+    "appId": "1148510",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.4.0-72-generic",
+    "notes": "El juego va perf",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1619532275,
+    "title": "Pretty Angel",
+    "source": "protondb"
+  },
+  {
+    "appId": "1148510",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 560 (polaris11, LLVM 13.0.0, DRM 3.41, 5.13.0-22-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-b05d228 2021-12-15 impish-oibaf-ppa)",
+    "kernel": "5.13.0-22-generic",
+    "notes": "No issues at all",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1639669045,
+    "title": "Pretty Angel",
+    "source": "protondb"
+  }
+]

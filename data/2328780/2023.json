@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2328780",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.14.0-1054-oem",
+    "notes": "Tried with Proton 7.0-1, Proton Experimental and GE-Proton8-25, but it didn't work :(",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1700740208,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3307770",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.1-arch1-1",
+    "notes": "Bloqu\u00e9 sur une fen\u00eatre de recherche de mises \u00e0 jour du launcher atrium. Et si je clique sur \"abord\", il y a une erreur de connexion au jeu.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1759929695,
+    "title": "NCORE",
+    "source": "protondb"
+  }
+]

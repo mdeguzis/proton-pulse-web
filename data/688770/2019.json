@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "688770",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.18.0-17-generic",
+    "notes": "Game didn't run at all",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555356322,
+    "title": "TETRUX: Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "688770",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce MX130",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.18.0-17-generic",
+    "notes": "You only have to install your graphic card official drivers by your manufacturer",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1555359195,
+    "title": "TETRUX: Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "688770",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-48-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1568466746,
+    "title": "TETRUX: Online",
+    "source": "protondb"
+  }
+]

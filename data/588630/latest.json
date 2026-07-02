@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "588630",
+    "cpu": "Intel Celeron N3350 @ 1.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 500 (Broxton 2x6)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-11-generic",
+    "notes": "To get sound + music I ran this: WINEPREFIX=~/Steam/steamapps/compatdata/588630/pfx winetricks directmusic sound=alsa",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1555421164,
+    "title": "Draw Rider 2",
+    "source": "protondb"
+  }
+]

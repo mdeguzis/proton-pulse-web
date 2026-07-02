@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1607400",
+    "cpu": "AMD Athlon Gold 3150U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 3 (radeonsi, raven2, ACO, DRM 3.61, 6.14.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.4-arch1.1",
+    "kernel": "6.14.4-arch1-1",
+    "notes": "working perfectly out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1745777521,
+    "title": "Occupation 2.5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,85 @@
+[
+  {
+    "appId": "720150",
+    "title": "Shikhondo(\u98df\u9b42\u5f92) - Soul Eater",
+    "timestamp": 1535088746,
+    "rating": "Platinum",
+    "notes": "no issues. ",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "720150",
+    "title": "Shikhondo(\u98df\u9b42\u5f92) - Soul Eater",
+    "timestamp": 1535225664,
+    "rating": "Gold",
+    "notes": "Requires Steam launch option \"PROTON_NO_D3D11=1 %command%\", works without any flaws.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "720150",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc4-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900rc4-generic",
+    "notes": "Runs out of the box without any issues, like native performance.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15961 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538323837,
+    "title": "Shikhondo(\u98df\u9b42\u5f92) - Soul Eater",
+    "source": "protondb"
+  },
+  {
+    "appId": "720150",
+    "cpu": "Intel Core i7-2640M @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Had to disable D3D11 to prevent an access violation from occurring. The frame rate is atrocious on this hardware, making the game effectively unplayable.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1546297446,
+    "title": "Shikhondo(\u98df\u9b42\u5f92) - Soul Eater",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "720150",
+    "title": "Shikhondo(\u98df\u9b42\u5f92) - Soul Eater",
+    "timestamp": 1535074346,
+    "rating": "Platinum",
+    "notes": "no issues. ",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "720150",
+    "title": "Shikhondo(\u98df\u9b42\u5f92) - Soul Eater",
+    "timestamp": 1535211264,
+    "rating": "Gold",
+    "notes": "Requires Steam launch option \"PROTON_NO_D3D11=1 %command%\", works without any flaws.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

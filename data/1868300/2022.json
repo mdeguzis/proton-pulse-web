@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1868300",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.13.0-30-generic",
+    "notes": "Works fine out of the box.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1647475391,
+    "title": "",
+    "source": "protondb"
+  }
+]

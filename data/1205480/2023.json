@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1205480",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.4.12-arch1-1",
+    "notes": "Good for solo play, but multiplayer is hit or miss",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1695377967,
+    "title": "",
+    "source": "protondb"
+  }
+]

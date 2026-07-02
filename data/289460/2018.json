@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "289460",
+    "title": "RC Cars",
+    "timestamp": 1535928777,
+    "rating": "Gold",
+    "notes": "Works, to make menu animations bearable requires same thing as for Windows - limit framerate to 60fps in advanced video",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Core i3-6100 / GeForce GTX 1050",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "289460",
+    "title": "RC Cars",
+    "timestamp": 1535914377,
+    "rating": "Gold",
+    "notes": "Works, to make menu animations bearable requires same thing as for Windows - limit framerate to 60fps in advanced video",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Core i3-6100 / GeForce GTX 1050",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

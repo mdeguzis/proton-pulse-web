@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2297010",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.7, DRM 3.56, 6.5.0-42-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1",
+    "kernel": "6.5.0-42-generic",
+    "notes": "You can play, but a bit frustrating giving how many ages of development and price tag",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "bronze",
+    "timestamp": 1735842746,
+    "title": "",
+    "source": "protondb"
+  }
+]

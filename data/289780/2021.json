@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "289780",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.2-2-MANJARO",
+    "notes": "The launcher show but doesn't update",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1638732850,
+    "title": "",
+    "source": "protondb"
+  }
+]

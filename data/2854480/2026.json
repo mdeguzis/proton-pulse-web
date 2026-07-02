@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2854480",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.5-2-cachyos",
+    "notes": "Couldn't make it past the initial log in screen.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "80 GB",
+    "rating": "borked",
+    "timestamp": 1778454423,
+    "title": "Blindfire",
+    "source": "protondb"
+  }
+]

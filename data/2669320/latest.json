@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2669320",
+    "cpu": "Intel Core i7-14650HX",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "6.18.18",
+    "notes": "And logs don't give any information at all",
+    "os": "NixOS 26.05 (Yarara)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1773902944,
+    "title": "EA SPORTS FC 25",
+    "source": "protondb"
+  },
+  {
+    "appId": "2669320",
+    "cpu": "Intel Core i7-14650HX",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "6.18.18",
+    "notes": "To remove the \"Wine is incompatible with this game\" error, remove the wine_get_version function from Wine itself. But that still doesn't make the game run at all.",
+    "os": "NixOS 26.05 (Yarara)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1773927687,
+    "title": "EA SPORTS FC 25",
+    "source": "protondb"
+  }
+]

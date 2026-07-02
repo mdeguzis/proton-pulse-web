@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "2760",
+    "title": "Neverwinter Nights 2: Platinum",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Crashes with message \"Unable to detect video card with hardware 3D acceleration\"",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2760",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.19.5-200.fc28.x86_64",
+    "os": "Fedora release 28 (Twenty Eight)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1544979873,
+    "title": "Neverwinter Nights\u2122 2 Platinum",
+    "source": "protondb"
+  },
+  {
+    "appId": "2760",
+    "title": "Neverwinter Nights 2: Platinum",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Crashes with message \"Unable to detect video card with hardware 3D acceleration\"",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

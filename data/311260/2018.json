@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "311260",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "I was able to start it, but was getting 4 FPS at the main menu. When I launch with PROTON_USE_WINED3D11=1 %command% I get 50 FPS at the main menu, but it makes the ground a water texture. In game I could only get about 10 FPS though, and the ground is still water.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1542402105,
+    "title": "The Guild 3",
+    "source": "protondb"
+  }
+]

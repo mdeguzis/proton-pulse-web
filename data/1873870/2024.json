@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1873870",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.18.2-arch1-1",
+    "notes": "Playable, but degraded.  Game uses many video files, which can stutter.  ProtonGE seems to improve stuttering somewhat, but not completely.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1733172262,
+    "title": "",
+    "source": "protondb"
+  }
+]

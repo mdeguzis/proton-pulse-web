@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "946660",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce 920MX",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-20-generic",
+    "notes": "I played the demo game version",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547307722,
+    "title": "Loria",
+    "source": "protondb"
+  },
+  {
+    "appId": "946660",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-200.fc29.x86_64",
+    "notes": "Tested Loria Demo",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548770716,
+    "title": "Loria",
+    "source": "protondb"
+  }
+]

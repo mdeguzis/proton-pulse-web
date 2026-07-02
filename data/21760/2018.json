@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "21760",
+    "title": "World in Conflict",
+    "timestamp": 1535353588,
+    "rating": "Borked",
+    "notes": "Launcher starts, try to play >> blackscreen",
+    "os": "SparkyLinux 64-bit (Kernel 4.17.0-3-amd64)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "FX-8350",
+    "protonVersion": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "21760",
+    "title": "World in Conflict",
+    "timestamp": 1536645483,
+    "rating": "Borked",
+    "notes": "Crashes at launch with: \"Application load error 5:0000065434\"",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.19.0)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "FX-9370",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "21760",
+    "title": "World in Conflict",
+    "timestamp": 1535339188,
+    "rating": "Borked",
+    "notes": "Launcher starts, try to play >> blackscreen",
+    "os": "SparkyLinux 64-bit (Kernel 4.17.0-3-amd64)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "FX-8350",
+    "protonVersion": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "21760",
+    "title": "World in Conflict",
+    "timestamp": 1536631083,
+    "rating": "Borked",
+    "notes": "Crashes at launch with: \"Application load error 5:0000065434\"",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.19.0)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "FX-9370",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  }
+]

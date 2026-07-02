@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3228180",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1736523561,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3228180",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.3",
+    "kernel": "6.8.0-51-generic",
+    "notes": "it's a gated clicker, incremental. No idle, or offline abilities.",
+    "os": "Linux Mint 22",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1736708366,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3228180",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1737973785,
+    "title": "",
+    "source": "protondb"
+  }
+]

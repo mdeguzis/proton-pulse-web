@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game Stats - Proton Pulse</title>
+<meta name="description" content="Per-game Proton compatibility analysis with confidence breakdown, monthly report trends, working status, version success rates, and proven launch options.">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/base.css?v=45c7e06d">
+<link rel="stylesheet" href="css/shared/topbar.css?v=2d6b5e52">
+<link rel="stylesheet" href="css/shared/site.css?v=e05a0f73">
+<link rel="stylesheet" href="css/shared/cards.css?v=16c748ed">
+<link rel="stylesheet" href="css/app/game-header.css?v=594fa872">
+<link rel="stylesheet" href="css/app/configs.css?v=90d5bed5">
+<link rel="stylesheet" href="css/app/reports.css?v=9ac38baa">
+<link rel="stylesheet" href="css/app/modals.css?v=99a2a3d5">
+<link rel="stylesheet" href="css/app/home.css?v=95acc50a">
+<style>
+h1 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.3em;
+}
+.meta {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.8em;
+}
+.lede {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.65;
+  max-width: 75ch;
+  margin-bottom: 1.2em;
+}
+.lede a { color: var(--accent); }
+
+/* game header strip, similar to confidence.html */
+.gs-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, rgba(27,40,56,0.55), rgba(11,17,22,0.45));
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+}
+.gs-header img {
+  width: 92px; height: 43px;
+  object-fit: cover; border-radius: 3px;
+  background: var(--bg);
+  transition: transform 0.15s;
+}
+.gs-header-info { flex: 1; min-width: 0; }
+.gs-header-info .name { font-family: var(--font-display); font-size: 1.05rem; color: var(--text); }
+.gs-header-info .sub  { font-family: var(--mono); font-size: 0.74rem; color: var(--muted); letter-spacing: 0.04em; margin-top: 2px; }
+
+/* Boxart + name + appid is one big anchor so clicking anywhere on the left
+   side of the header goes back to the game page. Style it to look like a
+   plain block, only adding a subtle hover lift on the image and a faint
+   color shift on the name to telegraph the clickability */
+.gs-header-link {
+  display: flex; align-items: center; gap: 14px;
+  flex: 1; min-width: 0;
+  text-decoration: none; color: inherit;
+}
+.gs-header-link:hover img { transform: translateY(-1px); }
+.gs-header-link:hover .gs-header-info .name { color: var(--accent-hi); }
+
+/* Section pattern, mirrors confidence.html cb-section-head */
+.gs-section-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 12px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--strong);
+}
+.gs-section-head svg {
+  width: 22px; height: 22px;
+  flex-shrink: 0; stroke: var(--accent); stroke-width: 1.8;
+}
+
+/* Status grid: working/confidence/freshness top-line cards */
+.gs-status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 0 0 18px;
+}
+.gs-card {
+  padding: 14px 16px;
+  background: rgba(20, 32, 44, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.gs-card .label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.gs-card .value {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--strong);
+  line-height: 1.1;
+}
+.gs-card .sub {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.gs-card.green .value  { color: #5bd17a; }
+.gs-card.red .value    { color: #ff6b6b; }
+.gs-card.amber .value  { color: #ffb84d; }
+.gs-card.blue .value   { color: var(--accent); }
+
+/* Factor bar rows, reused from inline panel styling */
+.gs-factor-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+  font-size: 0.85rem;
+}
+.gs-factor-row .lbl   { width: 130px; color: var(--muted); }
+.gs-factor-row .bar   { flex: 1; background: var(--bg); border-radius: 2px; height: 6px; overflow: hidden; }
+.gs-factor-row .bar > div { height: 100%; }
+.gs-factor-row .pct   { width: 38px; text-align: right; font-weight: 700; }
+.gs-factor-row .det   { color: var(--muted); font-size: 0.74rem; flex: 2; }
+
+/* Chart wrapper. position:relative so the absolute tooltip can anchor here */
+.gs-chart {
+  background: rgba(20, 32, 44, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 14px;
+  position: relative;
+}
+.gs-chart svg { width: 100%; height: 260px; display: block; }
+.gs-chart-legend {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.gs-chart-legend .dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
+
+/* Interactive chart pieces, shared via app-chart-interactions.js. ci- prefix
+   is short for chart-interactions so callers can spot them at a glance. The
+   targets cover full vertical slabs so hovering anywhere over a month picks
+   up the data point for that column */
+/* pointer-events:all forces SVG rect to capture mousemove even when the
+   fill is "transparent". Without it, browsers default to visiblePainted
+   which can drop events on transparent fills */
+.ci-hover-target  { cursor: pointer; pointer-events: all; }
+.ci-hover-guide   { opacity: 0; stroke: rgba(255,255,255,0.22); stroke-dasharray: 3 3; pointer-events: none; transition: opacity 0.1s; }
+.ci-hover-dot     { opacity: 0; pointer-events: none; transition: opacity 0.1s; }
+.is-hovered .ci-hover-guide,
+.is-hovered .ci-hover-dot { opacity: 1; }
+.ci-tooltip {
+  position: absolute;
+  top: 6px;
+  padding: 6px 10px;
+  background: rgba(8, 14, 22, 0.92);
+  border: 1px solid rgba(110, 180, 240, 0.28);
+  border-radius: 3px;
+  font-size: 0.78rem;
+  color: var(--text);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.08s;
+  white-space: nowrap;
+  font-family: var(--mono);
+}
+.ci-tooltip .ci-tip-month { color: var(--muted); font-size: 0.72rem; letter-spacing: 0.05em; }
+.ci-tooltip .ci-tip-row   { margin-top: 3px; display: flex; gap: 8px; align-items: center; }
+.ci-tooltip .ci-tip-dot   { display: inline-block; width: 8px; height: 8px; border-radius: 2px; }
+.ci-tooltip .ci-tip-val   { margin-left: auto; font-weight: 700; }
+.is-hovered .ci-tooltip   { opacity: 1; }
+
+/* Active filter highlight for chips/rows that drive list filtering */
+.is-active {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* Compatibility trend: side-by-side bars for recent vs older positive ratio */
+.gs-trend {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 4px;
+}
+.gs-trend-summary {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 14px;
+  background: rgba(20, 32, 44, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+.gs-trend-summary .gs-trend-arrow {
+  font-size: 1.2rem; font-weight: 700;
+}
+.gs-trend-summary .gs-trend-dir {
+  font-family: var(--font-display);
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}
+.gs-trend-summary .gs-trend-delta {
+  font-family: var(--mono); font-size: 0.78rem;
+  color: var(--text);
+}
+.gs-trend-summary .gs-trend-meta {
+  margin-left: auto;
+  font-family: var(--mono); font-size: 0.74rem;
+  color: var(--muted);
+}
+.gs-trend-bars {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 0 4px;
+}
+.gs-trend-row {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.85rem;
+}
+.gs-trend-row .gs-trend-lbl { width: 130px; color: var(--muted); }
+.gs-trend-row .gs-trend-bar {
+  flex: 1; background: var(--bg); border-radius: 2px; height: 8px; overflow: hidden;
+}
+.gs-trend-row .gs-trend-bar > div { height: 100%; }
+.gs-trend-row .gs-trend-pct {
+  width: 44px; text-align: right; font-weight: 700; font-family: var(--mono);
+}
+
+/* Version + launch flag lists (two columns on wide, stacked on narrow) */
+.gs-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 720px) {
+  .gs-two-col { grid-template-columns: 1fr; gap: 12px; }
+}
+.gs-row-list { font-size: 0.85rem; }
+.gs-row-list .row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.gs-row-list .row:last-child { border-bottom: 0; }
+.gs-row-list .row .name { flex: 1; font-family: var(--mono); color: var(--text); }
+.gs-row-list .row .count { color: var(--muted); font-size: 0.74rem; }
+.gs-row-list .row .bar { width: 110px; background: var(--bg); border-radius: 2px; height: 6px; overflow: hidden; }
+.gs-row-list .row .bar > div { height: 100%; }
+.gs-row-list .row .pct { width: 36px; text-align: right; font-weight: 700; }
+
+/* Rating distribution chip row */
+.gs-dist {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.gs-dist .chip {
+  flex: 1 1 0;
+  min-width: 70px;
+  text-align: center;
+  padding: 8px;
+  border-radius: 4px;
+}
+.gs-dist .chip .tier { font-weight: 700; font-size: 0.8rem; }
+.gs-dist .chip .n { font-size: 1.1rem; font-weight: 800; margin-top: 4px; }
+
+.gs-back {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.gs-back:hover { color: var(--accent-hi); text-decoration: underline; }
+
+.loading-state, .error-state {
+  padding: 60px 24px;
+  text-align: center;
+  font-family: var(--mono);
+  color: var(--muted);
+}
+</style>
+</head>
+<body>
+<script src="js/lib/topbar.js?v=449040e3"></script>
+<script src="js/lib/toast.js?v=7bb23014"></script>
+
+<div class="main-content"><div class="main-inner">
+
+<h1>Game stats</h1>
+<p class="meta" id="gs-meta">// Live aggregate analysis across ProtonDB + Pulse reports</p>
+
+<p class="lede">
+  Per-game compatibility analysis: confidence with factor breakdown, working
+  status over the last 90 days, monthly report trend, per-Proton-version
+  success rate, and the launch options that show up most in positive reports.
+  Same scoring model as the rest of the site - read more on the
+  <a href="scoring.html">scoring page</a>.
+</p>
+
+<div id="gs-root">
+  <div class="loading-state">Loading game stats...</div>
+</div>
+
+</div></div>
+
+<!-- Same module stack as confidence.html so data shapes line up -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=79bf62c6"></script>
+<script src="js/lib/analytics.js?v=e6dfbad8"></script>
+<script type="module" src="js/game-stats/main.js?v=bd125960"></script>
+
+</body>
+</html>

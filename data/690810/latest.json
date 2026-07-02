@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "690810",
+    "cpu": "Intel Core i7         930  @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "18 GB",
+    "rating": "Borked",
+    "timestamp": 1546924760,
+    "title": "Killing Floor: Incursion",
+    "source": "protondb"
+  }
+]

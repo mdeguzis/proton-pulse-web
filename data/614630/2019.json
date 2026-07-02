@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "614630",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.18.0-17-generic",
+    "notes": "Doesn't start without PROTON_USE_WINED3D=1 but then it works perfectly.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1555091933,
+    "title": "Tiny Rails",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "614630",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Works flawlessly out of the box. Like native.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556950727,
+    "title": "Tiny Rails",
+    "source": "protondb"
+  }
+]

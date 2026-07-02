@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "765890",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-300.fc30.x86_64",
+    "notes": "Use steam-dos 0.4.0 instead of Proton (https://github.com/dreamer/steam-dos). Works perfectly.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1561853366,
+    "title": "Leisure Suit Larry 7 - Love for Sail",
+    "source": "protondb"
+  }
+]

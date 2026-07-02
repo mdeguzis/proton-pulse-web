@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "227560",
+    "title": "Scourge: Outbreak",
+    "timestamp": 1535823299,
+    "rating": "Silver",
+    "notes": "With all option maxed, fps range between 30-50. Single player playable without error. Joining a multiplayer game, the game sometime close itself without error.",
+    "os": "Debian Testing 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "FX6100 / GTX 970",
+    "protonVersion": "3.7-5()",
+    "source": "protondb"
+  },
+  {
+    "appId": "227560",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Runs great. Also the discontinued previous game The Scourge Project also ran well. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541861209,
+    "title": "Scourge: Outbreak",
+    "source": "protondb"
+  },
+  {
+    "appId": "227560",
+    "title": "Scourge: Outbreak",
+    "timestamp": 1535808899,
+    "rating": "Silver",
+    "notes": "With all option maxed, fps range between 30-50. Single player playable without error. Joining a multiplayer game, the game sometime close itself without error.",
+    "os": "Debian Testing 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "FX6100 / GTX 970",
+    "protonVersion": "3.7-5()",
+    "source": "protondb"
+  }
+]

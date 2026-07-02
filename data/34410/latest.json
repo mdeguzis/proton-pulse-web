@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "34410",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "X.Org AMD Radeon (TM) RX 470 Graphics (POLARIS10, DRM 3.26.0, 4.18.6-041806-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.1 Mesa 18.1.7 - padoka PPA",
+    "notes": "Black screens then crashes",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "Death to Spies: Moment of Truth",
+    "source": "protondb"
+  },
+  {
+    "appId": "34410",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Remove intro videos or use the Lutris installer i wrote: https://lutris.net/games/death-to-spies-moment-of-truth/",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541681870,
+    "title": "Death to Spies: Moment of Truth",
+    "source": "protondb"
+  }
+]

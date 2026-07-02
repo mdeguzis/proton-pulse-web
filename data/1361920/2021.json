@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1361920",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.10.0-3-amd64",
+    "notes": "Although the game loads cleanly and graphics and audio appear to be up and running, the game won't work for Linux users.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1625587691,
+    "title": "",
+    "source": "protondb"
+  }
+]

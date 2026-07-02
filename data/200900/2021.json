@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "200900",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.7-arch1-1",
+    "notes": "Use Proton 5.0.10, native version or later versions crash on startup",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634263913,
+    "title": "Cave Story+",
+    "source": "protondb"
+  }
+]

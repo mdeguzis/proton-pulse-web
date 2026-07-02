@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "373630",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Goes through \"Performing first time setup\", but won't ever actually launch. No tweaks work.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553863381,
+    "title": "Game Type",
+    "source": "protondb"
+  }
+]

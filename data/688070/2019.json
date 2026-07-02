@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "688070",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.4.0-128-generic",
+    "notes": "Title loaded briefly after install, then immediately crashed. Further attempts to launch the game give the message \"running\" but the game never actually launches.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556397843,
+    "title": "Legendary Gary",
+    "source": "protondb"
+  }
+]

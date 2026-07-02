@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "389470",
+    "cpu": "Intel(R) Core(TM) i7-4930K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation TITAN V/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs perfectly out of the box.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64362 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539044389,
+    "title": "Call of Cthulhu: Shadow of the Comet",
+    "source": "protondb"
+  }
+]

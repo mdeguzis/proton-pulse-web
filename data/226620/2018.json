@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "226620",
+    "title": "Desktop Dungeons",
+    "timestamp": 1536045093,
+    "rating": "Platinum",
+    "notes": "no problems to report",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "226620",
+    "title": "Desktop Dungeons",
+    "timestamp": 1536049445,
+    "rating": "Platinum",
+    "notes": "native linux port",
+    "os": "Arch Linux Stable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "E3-1230 v2 / GTX 660",
+    "protonVersion": "native",
+    "source": "protondb"
+  },
+  {
+    "appId": "226620",
+    "title": "Desktop Dungeons",
+    "timestamp": 1536030693,
+    "rating": "Platinum",
+    "notes": "no problems to report",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "226620",
+    "title": "Desktop Dungeons",
+    "timestamp": 1536035045,
+    "rating": "Platinum",
+    "notes": "native linux port",
+    "os": "Arch Linux Stable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "E3-1230 v2 / GTX 660",
+    "protonVersion": "native",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "611120",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.11-steamvr-generic",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1568572177,
+    "title": "IKEA VR Pancake Kitchen",
+    "source": "protondb"
+  }
+]

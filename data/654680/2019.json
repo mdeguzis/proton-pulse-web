@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "654680",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "The game doesn't open at all. Crashes as soon as I click on \"Play\" from Steam. It shows running for a second and then stops running.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1549588115,
+    "title": "Ziggurat 3D Chess",
+    "source": "protondb"
+  }
+]

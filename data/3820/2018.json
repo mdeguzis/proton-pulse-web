@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3820",
+    "cpu": "i5-2400S CPU @ 2.50GHz",
+    "gpu": "GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Constant flickering, and part of the video goes out of the window. Unplayable",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5926 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536845026,
+    "title": "BloodRayne 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "3820",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Cinematics don't play.  About 1/3rd of game window is cut off, making it unplayable.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-5)",
+    "protonVersionManual": "Native",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1545259602,
+    "title": "BloodRayne 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "748490",
+    "cpu": "Intel Core i7-8700T @ 2.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.6-042006-generic",
+    "notes": "Followed a workaround by hornerwl ( https://github.com/ValveSoftware/Proton/issues/1048#issuecomment-417875072 )\n\nGame ID for CS2 is 748490, not 538680 (of CS1), so that's the difference.\n\nWithin winecfg settings, I set the system to Windows 10. I am not sure if making it as Windows 7 would make a difference.\n\nDespite the comment in github, configuration tool works at launch, at least in my environment.\n\nThis even worked finte with DualShock 4 via bluetooth.\n\nVery rare freeze (happened once in ten hours+ of play time)\nAuto save does not appear to be working, so save often manually!\n",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1549833688,
+    "title": "The Legend of Heroes: Trails of Cold Steel II",
+    "source": "protondb"
+  },
+  {
+    "appId": "748490",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD HAWAII",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Game launches but the opening video is glitched. You can skip it and enter the game but it runs at a terrible framerate unless playing with v-sync on portable settings.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1557196591,
+    "title": "The Legend of Heroes: Trails of Cold Steel II",
+    "source": "protondb"
+  },
+  {
+    "appId": "748490",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "ATI Technologies Inc. Radeon RX 580",
+    "gpuDriver": "4.5.13536 Compatibility Profile Context 18.30.2.15",
+    "kernel": "4.15.0-54-generic",
+    "notes": "The only tweak necessary is installing lav-filters codecs to your wine prefix to fix the OP song cutscene. You won't be missing anything else if you decide not to. Runs on Max settings out of the box.",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1562015904,
+    "title": "The Legend of Heroes: Trails of Cold Steel II",
+    "source": "protondb"
+  }
+]

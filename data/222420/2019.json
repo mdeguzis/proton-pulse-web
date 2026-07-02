@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "222420",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "aboutAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.18.17-300.fc29.x86_64",
+    "notes": "Only played arcade mode using Steam controller. Everything works great, except for some reason the screen saver turns on (this happens in KDE Plasma and LXQT). Need to disable screen saver.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1551369617,
+    "title": "THE KING OF FIGHTERS '98 ULTIMATE MATCH FINAL EDITION",
+    "source": "protondb"
+  },
+  {
+    "appId": "222420",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.9-arch1-1-ARCH",
+    "notes": "Must set full screen in game, otherwise, no issues. Sound/Graphics/Control Remapping all work fine out of the box!",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1560715889,
+    "title": "THE KING OF FIGHTERS '98 ULTIMATE MATCH FINAL EDITION",
+    "source": "protondb"
+  },
+  {
+    "appId": "222420",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Would give this a Platinum score, if wasnt for the input delay. \nSome of you may ask: Isnt your controllers fault? No, beause i simply dont use any controllers. I run this game both on Windows and here on Ubuntu, but here i have this delay problem. It isnt a big deal because its a few frames only (i would say like, 4 or 5 frames delayed), but we are talking about a fighting game, and every frame matters. But generaly, its playable. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "3.7-8",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1563290306,
+    "title": "THE KING OF FIGHTERS '98 ULTIMATE MATCH FINAL EDITION",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "222420",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-25-generic",
+    "notes": "I have not had any problem, It just works",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1567269415,
+    "title": "THE KING OF FIGHTERS '98 ULTIMATE MATCH FINAL EDITION",
+    "source": "protondb"
+  }
+]

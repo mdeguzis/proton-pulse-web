@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1046020",
+    "cpu": "Intel Pentium G3420 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.4.0-148-generic",
+    "notes": "Everything is ok, except when switching windows (ui frozen) or exiting game (process not exiting).",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1561911795,
+    "title": "Automachef Demo",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "305010",
+    "title": "Toxic Bunny HD",
+    "timestamp": 1535792212,
+    "rating": "Silver",
+    "notes": "Feels a bit choppy and has some other slight issues, but they might be present in the Windows version as well since the game feels awfully unpolished.",
+    "os": "Debian Buster",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-6600K / GTX-970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "305010",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Games works but parts of the menu system is slow",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540619841,
+    "title": "Toxic Bunny HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "305010",
+    "title": "Toxic Bunny HD",
+    "timestamp": 1535777812,
+    "rating": "Silver",
+    "notes": "Feels a bit choppy and has some other slight issues, but they might be present in the Windows version as well since the game feels awfully unpolished.",
+    "os": "Debian Buster",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-6600K / GTX-970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

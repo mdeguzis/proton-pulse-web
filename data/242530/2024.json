@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "242530",
+    "cpu": "12th Gen Intel Core i7-1265U",
+    "duration": "severalHours",
+    "gpu": "Mesa virgl (Mesa Intel (ADL GT2))",
+    "gpuDriver": "4.6 Mesa 24.1.0-devel (git-893780b362)",
+    "kernel": "6.1.78-11696-gd6379960556f",
+    "notes": "Crashes quickly at startup on ChromeOS.",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "9.0-1",
+    "ram": "30 GB",
+    "rating": "borked",
+    "timestamp": 1714702420,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "664650",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Game runs perfectly fine, but the play editor only seems to work in directx 9 mode.  I tested the season mode as well as played a few games without any problems.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1545257237,
+    "title": "Canadian Football 2017",
+    "source": "protondb"
+  }
+]

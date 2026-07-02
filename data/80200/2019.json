@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "80200",
+    "cpu": "Intel Pentium Dual   E2200  @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-142-generic",
+    "notes": "I saw no difference in gameplay between Windows and Proton.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1550107352,
+    "title": "Fate of the World",
+    "source": "protondb"
+  },
+  {
+    "appId": "80200",
+    "cpu": "Intel Pentium Dual   E2200  @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.4.0-142-generic",
+    "notes": "Ran WINEPREFIX=/home/[your folder here]/.steam/steam/steamapps/compatdata/80200/pfx winetricks d3dx9_43 d3dcompiler_43 \n",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "6 GB",
+    "rating": "Gold",
+    "timestamp": 1550365368,
+    "title": "Fate of the World",
+    "source": "protondb"
+  }
+]

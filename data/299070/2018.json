@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "299070",
+    "cpu": "Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "There were some delays with the game loading, and going between the main menu and starting the game, plus a short delay when the game started. After all of the delays/lag it ran perfectly fine.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32115 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537513401,
+    "title": "Warrior Kings: Battles",
+    "source": "protondb"
+  }
+]

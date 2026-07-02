@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "225600",
+    "title": "Blade Symphony",
+    "timestamp": 1535044636,
+    "rating": "Borked",
+    "notes": "Work in menu, but not in-game.",
+    "os": "Gentoo Linux 64-bit (Kernel 4.18.1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6200U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "225600",
+    "title": "Blade Symphony",
+    "timestamp": 1535030236,
+    "rating": "Borked",
+    "notes": "Work in menu, but not in-game.",
+    "os": "Gentoo Linux 64-bit (Kernel 4.18.1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6200U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

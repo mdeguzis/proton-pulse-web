@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "652550",
+    "cpu": "AMD A8-6500 APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Game ran perfectly out of the box with no tweaks needed.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559056134,
+    "title": "Vickinachi",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "283840",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Game launches with a black screen and then exits. Launcher works but displays just empty boxes as characters (this I believe is because of the font Proton uses does not actually include any Japanese characters). No Proton launch options made any difference.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552251108,
+    "title": "ALLTYNEX Second",
+    "source": "protondb"
+  },
+  {
+    "appId": "283840",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.10-050010-lowlatency",
+    "notes": "Game won't launch, configuration tool launches but has just boxes for all characters.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556909613,
+    "title": "ALLTYNEX Second",
+    "source": "protondb"
+  },
+  {
+    "appId": "283840",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Doesn't work game opens black window and then shuts down, config launcher works.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558968503,
+    "title": "ALLTYNEX Second",
+    "source": "protondb"
+  }
+]

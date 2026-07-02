@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1756160",
+    "cpu": "11th Gen Intel Core i9-11900K @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.7, DRM 3.64, 6.18.7)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.18.7",
+    "notes": "semble fonctionner sans souci",
+    "os": "GLF-OS (Phoenix) 25.11",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770231652,
+    "title": "Unsafe Express",
+    "source": "protondb"
+  }
+]

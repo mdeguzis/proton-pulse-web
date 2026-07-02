@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1867520",
+    "cpu": "AMD Ryzen 3 5300G with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.3-1-cachyos",
+    "notes": "Installs and runs as normal.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1778166397,
+    "title": "",
+    "source": "protondb"
+  }
+]

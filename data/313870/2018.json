@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "313870",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.18.14-041814-generic",
+    "notes": "The game process starts (as indicated by Steam: - Running), but appears to get stuck with no window appearing.\nThe process accepts SIGTERM and dies gracefully.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541454809,
+    "title": "A Vampyre Story",
+    "source": "protondb"
+  },
+  {
+    "appId": "313870",
+    "cpu": "AMD Phenom II X3 720",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.12.14-lp150.12.22-default",
+    "notes": "CSMT needs to be disabled, otherwise it runs extremely slow. Set the launch option \"PROTON_DUMP_DEBUG_COMMANDS=1 %command%\", launch and exit the game and run in a terminal: \"/tmp/proton_$USER/run regedit\". Go to \"HKEY_CURRENT_USER/Software/Wine/\", right click, select New->Key and name it \"Direct3D\". Then create a DWord value inside \"Direct3D\" and name it \"csmt\". Exit regedit & play.",
+    "os": "openSUSE Leap 15.0",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1541562770,
+    "title": "A Vampyre Story",
+    "source": "protondb"
+  }
+]

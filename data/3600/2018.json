@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "3600",
+    "title": "Escape Rosecliff Island",
+    "timestamp": 1535943286,
+    "rating": "Silver",
+    "notes": "Minor animation lag, nothing serious",
+    "os": "Ubuntu 18.04 (4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "3600",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs fine, but HUGE cursor lag in fullscreen. Play in windowed mode.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Silver",
+    "timestamp": 1537742450,
+    "title": "Escape Rosecliff Island",
+    "source": "protondb"
+  },
+  {
+    "appId": "3600",
+    "title": "Escape Rosecliff Island",
+    "timestamp": 1535928886,
+    "rating": "Silver",
+    "notes": "Minor animation lag, nothing serious",
+    "os": "Ubuntu 18.04 (4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "844930",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557624449,
+    "title": "Fox Hime Zero",
+    "source": "protondb"
+  },
+  {
+    "appId": "844930",
+    "cpu": "Intel Core i5-3340M @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "4.15.0-64-generic",
+    "notes": "Crashes on start\n",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1569616416,
+    "title": "Fox Hime Zero",
+    "source": "protondb"
+  },
+  {
+    "appId": "844930",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "Slight hiccups in sound every now and again but other than that it runs perfect",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570311411,
+    "title": "Fox Hime Zero",
+    "source": "protondb"
+  }
+]

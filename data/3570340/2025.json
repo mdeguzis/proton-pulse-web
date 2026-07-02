@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3570340",
+    "cpu": "1.20",
+    "duration": "severalHours",
+    "gpu": "640x480",
+    "gpuDriver": "1",
+    "kernel": "800",
+    "notes": "unstable with a lot of crash, have to often restart the game to work",
+    "os": "MST AMCP",
+    "protonVersion": "9.0-4",
+    "ram": "kernel pcie",
+    "rating": "borked",
+    "timestamp": 1760800719,
+    "title": "",
+    "source": "protondb"
+  }
+]

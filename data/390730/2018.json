@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "390730",
+    "cpu": "AMD FX(tm)-6100 Six-Core Processor",
+    "gpu": "GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.51",
+    "kernel": "4.15.0-29-generic",
+    "notes": "No noticeable issues.",
+    "os": "elementary OS 0.4.1 Loki (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5939 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537030793,
+    "title": "Sora",
+    "source": "protondb"
+  },
+  {
+    "appId": "390730",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Everything OK",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544096974,
+    "title": "Sora",
+    "source": "protondb"
+  },
+  {
+    "appId": "390730",
+    "cpu": "Intel Core i7-4710MQ @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.19.8-zen2-1-zen",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544599745,
+    "title": "Sora",
+    "source": "protondb"
+  }
+]

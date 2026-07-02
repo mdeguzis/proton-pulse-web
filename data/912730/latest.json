@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "912730",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.3-arch1-1-ARCH",
+    "notes": "Works without issues",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564234127,
+    "title": "Gamble of Gods",
+    "source": "protondb"
+  }
+]

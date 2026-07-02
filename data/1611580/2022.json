@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1611580",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "Mesa/X.org llvmpipe (LLVM 11.0.1, 256 bits)",
+    "gpuDriver": "3.1 Mesa 20.3.5",
+    "kernel": "5.10.0-15-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1655263643,
+    "title": "Behind Glass: Aquarium Simulator",
+    "source": "protondb"
+  }
+]

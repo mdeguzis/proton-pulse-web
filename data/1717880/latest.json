@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1717880",
+    "cpu": "Intel Core i7-3632QM @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "4.2 Mesa 22.3.6",
+    "kernel": "6.1.9-arch1-1",
+    "notes": "The game starts correctly but, after the initial titles, the screen remains monochrome and it is not possible to play",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1700732384,
+    "title": "",
+    "source": "protondb"
+  }
+]

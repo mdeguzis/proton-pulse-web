@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1013750",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.41.0, 5.13.0-28-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.13.0-28-generic",
+    "notes": "Game runs pretty much the same as in Windows. No issues whatsoever",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "6 GB",
+    "rating": "platinum",
+    "timestamp": 1645342265,
+    "title": "",
+    "source": "protondb"
+  }
+]

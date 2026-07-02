@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "946010",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-1056-oem",
+    "notes": "Occasional slowdowns",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1569766918,
+    "title": "Tasty Planet Forever",
+    "source": "protondb"
+  }
+]

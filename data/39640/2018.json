@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "39640",
+    "title": "AquaNox 2: Revelation",
+    "timestamp": 1535045489,
+    "rating": "Platinum",
+    "notes": "Tested 2 missions of company",
+    "os": "Linux Mint 19",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "i53230M / HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "39640",
+    "cpu": "i7-8700K CPU @ 3.70GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.4-steamvr-generic",
+    "notes": "The game works great.",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15960 MB",
+    "rating": "Platinum",
+    "timestamp": 1537036028,
+    "title": "AquaNox 2: Revelation",
+    "source": "protondb"
+  },
+  {
+    "appId": "39640",
+    "cpu": "Intel(R) Core(TM) i5-4440 CPU @ 3.10GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.8-041808-generic",
+    "notes": "Runs fine!",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "11948 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537415190,
+    "title": "AquaNox 2: Revelation",
+    "source": "protondb"
+  },
+  {
+    "appId": "39640",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-041800-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540372617,
+    "title": "AquaNox 2: Revelation",
+    "source": "protondb"
+  },
+  {
+    "appId": "39640",
+    "title": "AquaNox 2: Revelation",
+    "timestamp": 1535031089,
+    "rating": "Platinum",
+    "notes": "Tested 2 missions of company",
+    "os": "Linux Mint 19",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "i53230M / HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

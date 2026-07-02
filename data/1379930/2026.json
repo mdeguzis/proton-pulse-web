@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1379930",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 (radeonsi, navi22, ACO, DRM 3.64, 7.0.5-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.1.0-arch2.1",
+    "kernel": "7.0.5-1-cachyos",
+    "notes": "Nothing worked!",
+    "os": "CachyOS",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1778615119,
+    "title": "",
+    "source": "protondb"
+  }
+]

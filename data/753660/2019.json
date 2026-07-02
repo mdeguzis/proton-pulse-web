@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "753660",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Runs well with PROTON_USE_WINED3D=1. Otherwise, it suffers from random slowdowns.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1557846102,
+    "title": "AtmaSphere",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

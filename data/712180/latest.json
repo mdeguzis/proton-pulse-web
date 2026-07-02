@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "712180",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-d6683e1 2019-06-27 disco-oibaf-ppa)",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Runs well! Had to fiddle with the Xbox 360 controller mapping and do some manual mappings, but once I figured out which keys do what, I was able to cobble together a pretty decent profile.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562292458,
+    "title": "Mugsters",
+    "source": "protondb"
+  }
+]

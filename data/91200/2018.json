@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "91200",
+    "title": "Anomaly Warzone Earth",
+    "timestamp": 1535233486,
+    "rating": "Bronze",
+    "notes": "I have a multi-monitor setup and it spans across all of them. Game does not respect -sw or -windowed options and cannot change in game. This makes sections of the UI inaccessible",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "91200",
+    "title": "Anomaly Warzone Earth",
+    "timestamp": 1535219086,
+    "rating": "Bronze",
+    "notes": "I have a multi-monitor setup and it spans across all of them. Game does not respect -sw or -windowed options and cannot change in game. This makes sections of the UI inaccessible",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

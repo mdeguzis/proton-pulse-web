@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "952250",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.16",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558233619,
+    "title": "SEPTEMBER 1999",
+    "source": "protondb"
+  },
+  {
+    "appId": "952250",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with no tweaks needed. Played through entire game (it's short).",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562298120,
+    "title": "SEPTEMBER 1999",
+    "source": "protondb"
+  },
+  {
+    "appId": "952250",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD VERDE",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.8-arch1-1-ARCH",
+    "notes": "Would error on startup with \"Failed to initialize player\n\nFailed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed\"\n\nEasily fixed by changing launch command to  \"PROTON_USE_WINED3D=1 %command%\"",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1564334300,
+    "title": "SEPTEMBER 1999",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

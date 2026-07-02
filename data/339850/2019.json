@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "339850",
+    "cpu": "AMD A10-7700K APU with Radeon R7 Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD HAWAII",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Tried disable Esync and Wine D3d11. Game intro runs, until about to start the crashes.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1549932804,
+    "title": "Overclocked: A History of Violence",
+    "source": "protondb"
+  }
+]

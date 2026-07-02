@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "3810",
+    "title": "Bloodrayne",
+    "timestamp": 1534998820,
+    "rating": "Bronze",
+    "notes": "Intro video cut scene errors but appears to play fine afterwards. No native widescreen support.",
+    "os": "Ubuntu Mate 18.04 64-bit (Kernel 4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "NVIDIA 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "3810",
+    "title": "Bloodrayne",
+    "timestamp": 1535203507,
+    "rating": "Bronze",
+    "notes": "Intro video cut scene errors but appears to play fine afterwards. No native widescreen support.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.3-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5 /GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "3810",
+    "cpu": "i5-2400S CPU @ 2.50GHz",
+    "gpu": "GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Issues with cutscenes, but it works",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5926 Mb",
+    "rating": "Silver",
+    "timestamp": 1536844914,
+    "title": "BloodRayne",
+    "source": "protondb"
+  },
+  {
+    "appId": "3810",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Only runs in 800x600 resolution or lower with DX renderer.  OpenGL renderer crashes on launch.  Cutscenes do not work.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-5)",
+    "protonVersionManual": "Native",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1545259946,
+    "title": "BloodRayne",
+    "source": "protondb"
+  },
+  {
+    "appId": "3810",
+    "title": "Bloodrayne",
+    "timestamp": 1534984420,
+    "rating": "Bronze",
+    "notes": "Intro video cut scene errors but appears to play fine afterwards. No native widescreen support.",
+    "os": "Ubuntu Mate 18.04 64-bit (Kernel 4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "NVIDIA 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "3810",
+    "title": "Bloodrayne",
+    "timestamp": 1535189107,
+    "rating": "Bronze",
+    "notes": "Intro video cut scene errors but appears to play fine afterwards. No native widescreen support.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.3-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5 /GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

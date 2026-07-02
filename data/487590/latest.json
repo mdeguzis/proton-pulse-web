@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "487590",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "There don't seem to be any Proton related issues.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555171052,
+    "title": "Pepe Porcupine",
+    "source": "protondb"
+  }
+]

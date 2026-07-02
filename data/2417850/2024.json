@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2417850",
+    "cpu": "Intel Celeron N3060 @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 400 (BSW)",
+    "gpuDriver": "3.0 Mesa 20.3.5",
+    "kernel": "5.10.142-antix.2-amd64-smp",
+    "notes": "Same performance as Windows. Idle mechanics, even when closing the game, work perfectly here too. No glitches or weird issues.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "9.0-3",
+    "ram": "4 GB",
+    "rating": "platinum",
+    "timestamp": 1733352131,
+    "title": "",
+    "source": "protondb"
+  }
+]

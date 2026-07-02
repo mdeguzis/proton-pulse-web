@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1859370",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 20.1.8, DRM 3.64, 6.14.0-1018-oem)",
+    "gpuDriver": "4.6 Mesa 25.3.0-devel",
+    "kernel": "6.14.0-1018-oem",
+    "notes": "Was able to open the game and start from my steam cloud save, no issue at all. No problems thus far either.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1766990707,
+    "title": "",
+    "source": "protondb"
+  }
+]

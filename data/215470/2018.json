@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "215470",
+    "cpu": "i5-4670K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "The game starts and has good FPS (ca 200) but it appears to require .NET Framework 4 to work because it crashes when you click 'Server Browser' and 'Host Match'. The game prompts with a .NET Framework 4 installation but it gets stuck while downloading 'Windows 6.1 KB958488 v6001 etc...'",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7919 Mb",
+    "rating": "Borked",
+    "timestamp": 1537102418,
+    "title": "Primal Carnage",
+    "source": "protondb"
+  },
+  {
+    "appId": "215470",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": ".Net install gets stuck so you need to cancel(kill it) Game Menu starts - change resolution works. No servers listed. Crashes when starting host server. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540929705,
+    "title": "Primal Carnage",
+    "source": "protondb"
+  }
+]

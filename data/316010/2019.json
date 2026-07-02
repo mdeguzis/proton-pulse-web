@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "316010",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Game starts, crashes in main menu. Like others said \"Main menu in false colors, fonts unreadable\".",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563027098,
+    "title": "Magic Duels",
+    "source": "protondb"
+  }
+]

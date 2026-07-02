@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "37260",
+    "title": "Emerald City Confidential",
+    "timestamp": 1535682917,
+    "rating": "Borked",
+    "notes": "Crash with Unhandled exception: page fault on read access to 0x00000000 in 32-bit code (0x00000000). Works fine in vanilla wine.",
+    "os": "Debian Linux Stable (9.5) 64-bit (Kernel 4.9.110-3+deb9u4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i5-3570K @ 3.40GHz / GeForce GTX 660 (GK106)",
+    "protonVersion": "Tried both 3.7-3 and 3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "37260",
+    "title": "Emerald City Confidential",
+    "timestamp": 1535668517,
+    "rating": "Borked",
+    "notes": "Crash with Unhandled exception: page fault on read access to 0x00000000 in 32-bit code (0x00000000). Works fine in vanilla wine.",
+    "os": "Debian Linux Stable (9.5) 64-bit (Kernel 4.9.110-3+deb9u4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i5-3570K @ 3.40GHz / GeForce GTX 660 (GK106)",
+    "protonVersion": "Tried both 3.7-3 and 3.7-5",
+    "source": "protondb"
+  }
+]

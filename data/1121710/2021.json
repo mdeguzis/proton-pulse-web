@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1121710",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.41.0, 5.13.0-22-generic, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.1",
+    "kernel": "5.13.0-22-generic",
+    "notes": "Won't launch, borked",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1640458539,
+    "title": "",
+    "source": "protondb"
+  }
+]

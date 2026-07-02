@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "727220",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.10-arch1-1-ARCH",
+    "notes": "Opens a blank window like most nwjs games",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566930542,
+    "title": "Nightingale Downs",
+    "source": "protondb"
+  }
+]

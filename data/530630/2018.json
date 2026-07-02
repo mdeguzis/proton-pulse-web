@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "530630",
+    "cpu": "Intel(R) Core(TM) i5-7600 CPU @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-20-generic",
+    "os": "Ubuntu 18.04 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7936 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539870681,
+    "title": "Empires Apart",
+    "source": "protondb"
+  },
+  {
+    "appId": "530630",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Has sound problems (echoing music), performance and visuals are fine",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1540731612,
+    "title": "Empires Apart",
+    "source": "protondb"
+  },
+  {
+    "appId": "530630",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Has some minor sound issues.  Runs well otherwise.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545807475,
+    "title": "Empires Apart",
+    "source": "protondb"
+  }
+]

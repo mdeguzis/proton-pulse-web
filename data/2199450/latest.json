@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2199450",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (renoir, LLVM 14.0.0, DRM 3.42, 5.15.0-10056-tuxedo)",
+    "gpuDriver": "4.6 Mesa 22.3.1",
+    "kernel": "5.15.0-10056-tuxedo",
+    "notes": "",
+    "os": "TUXEDO OS 1",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1671450546,
+    "title": "",
+    "source": "protondb"
+  }
+]

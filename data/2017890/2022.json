@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2017890",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon HD 8800 (PITCAIRN, DRM 3.46.0, 5.18.2-1-default, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.8 (git-813ee839be)",
+    "kernel": "5.18.2-1-default",
+    "notes": "the game cant use dxvk you have to launch it through wine with the affromentioned command",
+    "os": "OpenSUSE.MicroOS_Freedesktop.org 21.08.14 (Flatpak runtime)",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1660417667,
+    "title": "",
+    "source": "protondb"
+  }
+]

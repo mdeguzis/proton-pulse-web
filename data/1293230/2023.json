@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1293230",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.1.31-2-MANJARO",
+    "notes": "Ensure you are not using native, native lacks features and has constant slow down",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1689484044,
+    "title": "",
+    "source": "protondb"
+  }
+]

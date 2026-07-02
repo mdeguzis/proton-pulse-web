@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "496730",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD ICELAND",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Out of the box, the game crashes on loading screen. Adding \"PROTON_USE_WINED3D11=1 %command%\" to launch options fixes the error, however you will encounter a font problem where text does not show. To fix this, simply rename SDNXLFonts.dll or delete it, and it will resort to ugly looking fonts. The game is playable and works great, even performance-wise.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1547075485,
+    "title": "Sorcerer King: Rivals",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "496730",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Works out of the box. Able to start a campaign, play a few rounds, save/load, use menus. Everythings functional.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570951505,
+    "title": "Sorcerer King: Rivals",
+    "source": "protondb"
+  }
+]

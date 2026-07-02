@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "377520",
+    "title": "Pike and Shot: Campaings",
+    "timestamp": 1535777343,
+    "rating": "Gold",
+    "notes": "Without workarounds the launcher lauches the game to a black screen.\nTo get it to work properly firstly launch the game and wait for the black screen.\nThen go to\n~/<your steam folder>/steamapps/campatdata/377520/pfx/drive_c/users/steamusuer/My Documents/My Games/PSCAMP/\nIn there create a file named OPTIONS.txt, in it insert the contents of this pastebin: http://pastebin.com/i67SB7jE. Change the resolution to your liking.\n\nAfter that you have to configure wine using this in a terminal:\nWINEPREFIX=\"<your steam folder>/steamapps/compatdata/377520/pfx\"; winecfg\n\nIn the configuration go to the \"Libraries tab\", then add \"dbghelp\" (without quotes) to the overrides list, using the \"edit\" button, set it to wine (builtin).\nClick \"OK\", then launch the game. \n\nEverything should run smoothly.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "396.54",
+    "specs": "Ryzen 5 1600X / GTX970",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "377520",
+    "cpu": "i7-6700K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "I followed the detailed guy of the lad  above and it works perfectly!",
+    "os": "LXLE Eclectica 16.04.4 64-bit (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16009 Mb",
+    "rating": "Gold",
+    "timestamp": 1536831194,
+    "title": "Pike and Shot : Campaigns",
+    "source": "protondb"
+  },
+  {
+    "appId": "377520",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Follow the instructions below, exactly. After that, the game, editor, download scenario functionality runs without issues ...\n\n... BUT (my?) multiplayer (login) does not work. I tried multiple times, with being logged into the Slitherine Server via web, registered game, linked Steam Account, it just does not want to.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "7 GB",
+    "rating": "Gold",
+    "timestamp": 1544299572,
+    "title": "Pike and Shot : Campaigns",
+    "source": "protondb"
+  },
+  {
+    "appId": "377520",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "I tweaked options.txt to match my machine's resolution and it worked well. ",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1545830639,
+    "title": "Pike and Shot : Campaigns",
+    "source": "protondb"
+  },
+  {
+    "appId": "377520",
+    "title": "Pike and Shot: Campaings",
+    "timestamp": 1535762943,
+    "rating": "Gold",
+    "notes": "Without workarounds the launcher lauches the game to a black screen.\nTo get it to work properly firstly launch the game and wait for the black screen.\nThen go to\n~/<your steam folder>/steamapps/campatdata/377520/pfx/drive_c/users/steamusuer/My Documents/My Games/PSCAMP/\nIn there create a file named OPTIONS.txt, in it insert the contents of this pastebin: http://pastebin.com/i67SB7jE. Change the resolution to your liking.\n\nAfter that you have to configure wine using this in a terminal:\nWINEPREFIX=\"<your steam folder>/steamapps/compatdata/377520/pfx\"; winecfg\n\nIn the configuration go to the \"Libraries tab\", then add \"dbghelp\" (without quotes) to the overrides list, using the \"edit\" button, set it to wine (builtin).\nClick \"OK\", then launch the game. \n\nEverything should run smoothly.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "396.54",
+    "specs": "Ryzen 5 1600X / GTX970",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

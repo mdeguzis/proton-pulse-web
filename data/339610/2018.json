@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "339610",
+    "title": "Freestyle 2: Street basketball",
+    "timestamp": 1535021742,
+    "rating": "Borked",
+    "notes": "doesnt open / run from steam, no error message",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Intel i5-7200U / HD Graphics 620 (Kaby Lake GT2)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "339610",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "The launcher starts but ends up with error with mid patching.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544285695,
+    "title": "Freestyle 2: Street Basketball",
+    "source": "protondb"
+  },
+  {
+    "appId": "339610",
+    "title": "Freestyle 2: Street basketball",
+    "timestamp": 1535007342,
+    "rating": "Borked",
+    "notes": "doesnt open / run from steam, no error message",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Intel i5-7200U / HD Graphics 620 (Kaby Lake GT2)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1737100",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.10-arch1-1",
+    "notes": "It works - EndeavourOS/Arch",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1642334384,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1737100",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.14.17-301.fc35.x86_64",
+    "notes": "Fails with newer versions of font config (Fedora 35)",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1644043907,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1737100",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.15.0-41-generic",
+    "notes": "Works Fine",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1659418029,
+    "title": "",
+    "source": "protondb"
+  }
+]

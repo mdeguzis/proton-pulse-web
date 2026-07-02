@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "951180",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.18.20-1-MANJARO",
+    "notes": "Steam launches the game and says it's running, but nothing happens.  An error log printout shows a gameroverlayrenderer.so error, even with the game overlay completely disabled.  It launches using WINE, but then it hangs up after the Unity logo.  That could possibly be because it requires a steam account to play it.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "14 GB",
+    "rating": "Borked",
+    "timestamp": 1544311663,
+    "title": "Russian Roulette: One Life",
+    "source": "protondb"
+  }
+]

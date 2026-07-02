@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "254460",
+    "title": "Obscure",
+    "timestamp": 1536226137,
+    "rating": "Borked",
+    "notes": "It binary runs, but the game window never shows up",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "254460",
+    "title": "Obscure",
+    "timestamp": 1536211737,
+    "rating": "Borked",
+    "notes": "It binary runs, but the game window never shows up",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

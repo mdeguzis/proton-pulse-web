@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "698540",
+    "title": "Dungeon Warfare 2",
+    "timestamp": 1535531110,
+    "rating": "Platinum",
+    "notes": "Everything works out of the box.",
+    "os": "Ubuntu 18.04 64bit",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "698540",
+    "title": "Dungeon Warfare II",
+    "timestamp": 1535530921,
+    "rating": "Platinum",
+    "notes": "Just ran fine out of the box.",
+    "os": "Ubuntu 18.04 64bit",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "698540",
+    "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs flawlessly as long as you don't alt-tab. Alt-tab doesn't crash or anything, but disables keyboard input.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15915 Mb",
+    "rating": "Gold",
+    "timestamp": 1538991011,
+    "title": "Dungeon Warfare 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "698540",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.15-1-MANJARO",
+    "notes": "The game works perfectly, but if you alt-tab out of it the keyboard stops working. To re-enable the keyboard press alt+enter twice to toggle to windowed mode and back to fullscreen. I have played for 12 hours without any issues at all.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541133021,
+    "title": "Dungeon Warfare 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "698540",
+    "title": "Dungeon Warfare 2",
+    "timestamp": 1535516710,
+    "rating": "Platinum",
+    "notes": "Everything works out of the box.",
+    "os": "Ubuntu 18.04 64bit",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "698540",
+    "title": "Dungeon Warfare II",
+    "timestamp": 1535516521,
+    "rating": "Platinum",
+    "notes": "Just ran fine out of the box.",
+    "os": "Ubuntu 18.04 64bit",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

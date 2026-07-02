@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "950660",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.9-3-cachyos",
+    "notes": "Easy Anti Cheat",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1770991336,
+    "title": "WRAITH OPS",
+    "source": "protondb"
+  },
+  {
+    "appId": "950660",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.8, DRM 3.64, 6.18.12-cachyos1.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.3 (git-a9c6420d8c)",
+    "kernel": "6.18.12-cachyos1.fc43.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771932838,
+    "title": "WRAITH OPS",
+    "source": "protondb"
+  },
+  {
+    "appId": "950660",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch2.3",
+    "kernel": "6.19.3-2-cachyos",
+    "notes": "No connection made: Pending connection failure",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1772319439,
+    "title": "WRAITH OPS",
+    "source": "protondb"
+  }
+]

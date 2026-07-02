@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "503770",
+    "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.8-041808-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.8-041808-generic",
+    "notes": "Orcs are invisible",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16050 Mb",
+    "rating": "Borked",
+    "timestamp": 1539518365,
+    "title": "Elven Assassin",
+    "source": "protondb"
+  },
+  {
+    "appId": "503770",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Won't start",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541002840,
+    "title": "Elven Assassin",
+    "source": "protondb"
+  }
+]

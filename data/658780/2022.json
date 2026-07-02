@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "658780",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.10.0-10-amd64",
+    "notes": "Tested full run with gamepad. Runs smooth as butter. Occasional hiccup on 3rd world, but might be my own fault and is not gameplay-impeding.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1642279915,
+    "title": "",
+    "source": "protondb"
+  }
+]

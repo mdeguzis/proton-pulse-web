@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "511490",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc8-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3 - SteamVR PPA",
+    "kernel": "4.19.0-041900rc8-generic",
+    "notes": "Won't start, on launch games splash screen is displayed, followed by a crash with a \"UE4 Fatal Error!\" message.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15960 Mb",
+    "rating": "Borked",
+    "timestamp": 1540225694,
+    "title": "Malavision\u00ae: The Origin",
+    "source": "protondb"
+  }
+]

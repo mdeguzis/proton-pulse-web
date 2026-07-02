@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "564160",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) R7 300 Series (BONAIRE, DRM 3.26.0, 4.18.5-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "Doesn't start. Might work with wine, though.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7993 Mb",
+    "rating": "Borked",
+    "timestamp": 1537403609,
+    "title": "Rosenkreuzstilette Freudenstachel",
+    "source": "protondb"
+  },
+  {
+    "appId": "564160",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) R7 300 Series (BONAIRE, DRM 3.26.0, 4.18.5-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "Working fine with this workaround: execute steam with PROTON_NO_ESYNC=1",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7993 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537413174,
+    "title": "Rosenkreuzstilette Freudenstachel",
+    "source": "protondb"
+  }
+]

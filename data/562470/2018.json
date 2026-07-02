@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "562470",
+    "title": "\u5929\u4f7f\u5e1d\u570b\u56db\u300aEmpire of Angels IV\u300b",
+    "timestamp": 1535487721,
+    "rating": "Gold",
+    "notes": "Requires Steam launch option \"PROTON_NO_D3D11=1 %command%\" to run. ",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "562470",
+    "title": "\u5929\u4f7f\u5e1d\u570b\u56db\u300aEmpire of Angels IV\u300b",
+    "timestamp": 1535473321,
+    "rating": "Gold",
+    "notes": "Requires Steam launch option \"PROTON_NO_D3D11=1 %command%\" to run. ",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "517370",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.8-300.fc29.x86_64",
+    "notes": "Must use at least Proton 3.16-4 to show texts.",
+    "os": "Fedora release 29 (Twenty Nine) (64\u00a0bits)",
+    "protonVersion": "3.16-4",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545737513,
+    "title": "Tavernier",
+    "source": "protondb"
+  }
+]

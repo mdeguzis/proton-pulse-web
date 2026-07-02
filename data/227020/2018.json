@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "227020",
+    "title": "Rice of Venice",
+    "timestamp": 1535405122,
+    "rating": "Borked",
+    "notes": "Crash on Start",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel Core i7-4790",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "227020",
+    "cpu": "Intel(R) Core(TM) i5-7500T CPU @ 2.70GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.2.1",
+    "kernel": "4.18.9-1-MANJARO",
+    "notes": "Just shows a wine error message on startup",
+    "os": "\"Manjaro Linux\" (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "15963 MB",
+    "rating": "Borked",
+    "timestamp": 1537631218,
+    "title": "Rise of Venice",
+    "source": "protondb"
+  },
+  {
+    "appId": "227020",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The game does not start in any way.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540928553,
+    "title": "Rise of Venice",
+    "source": "protondb"
+  },
+  {
+    "appId": "227020",
+    "title": "Rice of Venice",
+    "timestamp": 1535390722,
+    "rating": "Borked",
+    "notes": "Crash on Start",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel Core i7-4790",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

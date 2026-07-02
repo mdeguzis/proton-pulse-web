@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "730310",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "after disabling the cinematics it goes into the main menu where all sounds except for the background music are missing. it freezes upon the end of the loading screen when trying to go ingame both when starting a new game and when trying to continue a savegame",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541355982,
+    "title": "DYNASTY WARRIORS 9 \u771f\u30fb\u4e09\u570b\u7121\u53cc\uff18",
+    "source": "protondb"
+  }
+]

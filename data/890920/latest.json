@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "890920",
+    "cpu": "Intel Celeron  N3060  @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 400 (Braswell)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "3.18.0-19679-gd1d0bbedf35d",
+    "notes": "Doesn't work and sometimes causes reboot. Chromebook Crouton.",
+    "os": "Crouton Ubuntu 16.04",
+    "protonVersion": "4.11-2",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1565374210,
+    "title": "Glitch",
+    "source": "protondb"
+  }
+]

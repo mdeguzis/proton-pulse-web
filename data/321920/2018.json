@@ -1,0 +1,46 @@
+[
+  {
+    "appId": "321920",
+    "cpu": "i3-3110M CPU @ 2.40GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "notes": "Not extensively tested, but everything seems okay. :-)",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Schein",
+    "source": "protondb"
+  },
+  {
+    "appId": "321920",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "getDeviceState() failed pops up constantly and blocks input",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Borked",
+    "timestamp": 1536778062,
+    "title": "Schein",
+    "source": "protondb"
+  },
+  {
+    "appId": "321920",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Both of previous rapports are correct. If you start the game with a gamepad enabled, you'll get the \"getDeviceState()\" message that blocks everything. If you start it without it plugged in (so just play with keyboard), it works perfectly as it should.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1540925979,
+    "title": "Schein",
+    "source": "protondb"
+  }
+]

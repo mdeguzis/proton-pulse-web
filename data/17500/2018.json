@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "17500",
+    "title": "Zombie Panic! Source",
+    "timestamp": 1536081641,
+    "rating": "Borked",
+    "notes": "Runs and goes into menus, when joining a server though it crashes to desktop.",
+    "os": "Mint 18.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "R7 2700/1080ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "17500",
+    "cpu": "i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "wont start, gives error about invalid app config / wont even produce a log..",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7874 Mb",
+    "rating": "Borked",
+    "timestamp": 1537019518,
+    "title": "Zombie Panic! Source",
+    "source": "protondb"
+  },
+  {
+    "appId": "17500",
+    "title": "Zombie Panic! Source",
+    "timestamp": 1536067241,
+    "rating": "Borked",
+    "notes": "Runs and goes into menus, when joining a server though it crashes to desktop.",
+    "os": "Mint 18.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "R7 2700/1080ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

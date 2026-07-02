@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2994600",
+    "cpu": "Intel Core Ultra 5 125U",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (MTL)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.19.8-200.fc43.x86_64",
+    "notes": "I have the Demo for this game. I was able to boot it up once, but now that i go back to it, i get an error on boot that says \"The UE oaisis game engine has crashed and will close\". As of now i cannot find a solution",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1776985356,
+    "title": "",
+    "source": "protondb"
+  }
+]

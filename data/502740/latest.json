@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "502740",
+    "title": "50 years",
+    "timestamp": 1535568316,
+    "rating": "Platinum",
+    "notes": "works",
+    "os": "Debian 9",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "E 8400/GT 8500 512Mb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "502740",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Runs perfectly in any sized window.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541615424,
+    "title": "50 years",
+    "source": "protondb"
+  },
+  {
+    "appId": "502740",
+    "title": "50 years",
+    "timestamp": 1535553916,
+    "rating": "Platinum",
+    "notes": "works",
+    "os": "Debian 9",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "E 8400/GT 8500 512Mb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

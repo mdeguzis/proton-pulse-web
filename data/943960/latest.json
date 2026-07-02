@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "943960",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "I tested everything. It works perfectly. ",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548036445,
+    "title": "3Buttons",
+    "source": "protondb"
+  }
+]

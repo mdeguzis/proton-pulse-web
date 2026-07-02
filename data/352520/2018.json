@@ -1,0 +1,83 @@
+[
+  {
+    "appId": "352520",
+    "title": "The Silent Age",
+    "timestamp": 1535758438,
+    "rating": "Gold",
+    "notes": "Cannot be run directly from Steam client due to empty Linux repository, but Windows version can be installed via steamcmd and then run manually via Proton, see https://forum.warthunder.com/index.php?/topic/423799-proton-or-native-linux-client/",
+    "os": "Ubuntu 18.04 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "352520",
+    "title": "The Silent Age",
+    "timestamp": 1535778807,
+    "rating": "Borked",
+    "notes": "empty linux repository since july 2015",
+    "os": "Archlinux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "E3-1230 V2 / GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "352520",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "empty linux repository",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "native",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541358738,
+    "title": "The Silent Age",
+    "source": "protondb"
+  },
+  {
+    "appId": "352520",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.18.17-200.fc28.x86_64",
+    "notes": "Empty linux repository",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541851128,
+    "title": "The Silent Age",
+    "source": "protondb"
+  },
+  {
+    "appId": "352520",
+    "title": "The Silent Age",
+    "timestamp": 1535744038,
+    "rating": "Gold",
+    "notes": "Cannot be run directly from Steam client due to empty Linux repository, but Windows version can be installed via steamcmd and then run manually via Proton, see https://forum.warthunder.com/index.php?/topic/423799-proton-or-native-linux-client/",
+    "os": "Ubuntu 18.04 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "352520",
+    "title": "The Silent Age",
+    "timestamp": 1535764407,
+    "rating": "Borked",
+    "notes": "empty linux repository since july 2015",
+    "os": "Archlinux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "E3-1230 V2 / GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

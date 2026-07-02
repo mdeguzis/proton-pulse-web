@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "610460",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Runs perfectly",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1551870541,
+    "title": "Rise of Balloons",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "880940",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10 / DRM 3.26.0 / 4.18.10-100.fc27.x86_64, LLVM 5.0.2)",
+    "gpuDriver": "3.0 Mesa 17.3.9",
+    "kernel": "4.18.10-100.fc27.x86_64",
+    "notes": "Game runs perfectly but crashes on exit to desktop, needs to be killed via console afterwards",
+    "os": "\"Fedora release 27 (Twenty Seven)\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15992 Mb",
+    "rating": "Silver",
+    "systemInfoNotes": "GPU: AMD Radeon RX Vega 64",
+    "timestamp": 1539116775,
+    "title": "Pummel Party",
+    "source": "protondb"
+  },
+  {
+    "appId": "880940",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1543699403,
+    "title": "Pummel Party",
+    "source": "protondb"
+  },
+  {
+    "appId": "880940",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Crashed upon quitting. GIFs showing the minigames didn't load for me, just shows white rectangle where the GIF should be. ",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1544931407,
+    "title": "Pummel Party",
+    "source": "protondb"
+  }
+]

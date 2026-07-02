@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1237510",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.5-1-MANJARO",
+    "notes": "Runs well with plain Proton, except for the video cutscenes",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1627577414,
+    "title": "",
+    "source": "protondb"
+  }
+]

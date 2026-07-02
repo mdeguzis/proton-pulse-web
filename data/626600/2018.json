@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "626600",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "None of the launch options work. PROTON_USE_WINED3D11=1 %command% PROTON_NO_D3D11=1 %command% PROTON_NO_ESYNC=1 %command%.\nThe following message appears, ProphetLite.cpp(76):XA2FAIL 0x800401f0",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541514004,
+    "title": "Lost Dimension",
+    "source": "protondb"
+  }
+]

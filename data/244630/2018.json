@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "244630",
+    "title": "NEOTOKYO\u00b0",
+    "timestamp": 1534944618,
+    "rating": "Borked",
+    "notes": "Crashes before even loading up the main menu. Works fine under normal wine 3.XX.",
+    "os": "Void Linux",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4670k / GTX 770 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "244630",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Crashes immediately after loading the main menu screen. No menu options visible only background. Tried disabling steam overlay, using different steam play versions and completely reinstalling steam and games. Borked.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542370594,
+    "title": "NEOTOKYO",
+    "source": "protondb"
+  },
+  {
+    "appId": "244630",
+    "title": "NEOTOKYO\u00b0",
+    "timestamp": 1534930218,
+    "rating": "Borked",
+    "notes": "Crashes before even loading up the main menu. Works fine under normal wine 3.XX.",
+    "os": "Void Linux",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4670k / GTX 770 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "26000",
+    "cpu": "Intel Core i7-4510U @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.4",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Crashes just after a video. Proton log may point to wine not implemented Generation of mipmaps for compressed pixel formats. Using D9vk also did not work.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566425413,
+    "title": "The Maw",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,149 @@
+[
+  {
+    "appId": "287260",
+    "cpu": "Intel Core i7         920  @ 2.67GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-1-MANJARO",
+    "notes": "With \"PROTON_NO_ESYNC=1 %command%\", runs flawlessly. Without disabling Esync, gets stuck at loading screen.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1548713158,
+    "title": "Toybox Turbos",
+    "source": "protondb"
+  },
+  {
+    "appId": "287260",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1552051955,
+    "title": "Toybox Turbos",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "287260",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.2-2-MANJARO",
+    "notes": "After the tweak runs flawless",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1552693329,
+    "title": "Toybox Turbos",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "287260",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "4.20.17-1-MANJARO",
+    "notes": "Works fine with \"PROTON_NO_ESYNC=1 %command%\"",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554546431,
+    "title": "Toybox Turbos",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "287260",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Runs well if you add \"PROTON_NO_ESYNC=1 %command%\" to the game launch options.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1555226436,
+    "title": "Toybox Turbos",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "287260",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "With \"PROTON_NO_ESYNC=1 %command%\" runs great.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "6 GB",
+    "rating": "Gold",
+    "timestamp": 1561273113,
+    "title": "Toybox Turbos",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "287260",
+    "cpu": "Intel Core i7-3632QM @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TURKS",
+    "gpuDriver": "3.1 Mesa 19.0.2",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Game starts as a black window. Disabling Esync doesn't change anything.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564847962,
+    "title": "Toybox Turbos",
+    "source": "protondb"
+  },
+  {
+    "appId": "287260",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.0-0.bpo.2-amd64",
+    "notes": "Runs great.",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1564857733,
+    "title": "Toybox Turbos",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

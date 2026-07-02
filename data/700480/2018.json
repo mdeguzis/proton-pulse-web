@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "700480",
+    "cpu": "i7-3770K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-1-MANJARO",
+    "notes": "It reports that artwork could not be loaded font.mdl",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-5 Beta",
+    "ram": "15983 Mb",
+    "rating": "Borked",
+    "timestamp": "1536317902",
+    "title": "Microsoft Allegiance",
+    "source": "protondb"
+  },
+  {
+    "appId": "700480",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.16-300.fc29.x86_64",
+    "notes": "It took quite long to start, but it worked, without any workarounds. I played through tutorial and everything seemed fine (except text in main menu was a bit hard to read, but that's probably due to scaling and my resolution). Unfortunately I couldn't join any multiplayer game (couldn't connect to lobby).",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "Beta (3.16-4)",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1541342834,
+    "title": "Microsoft Allegiance",
+    "source": "protondb"
+  }
+]

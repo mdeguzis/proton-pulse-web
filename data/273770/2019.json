@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "273770",
+    "cpu": "Intel Core2 Duo     P8700  @ 2.53GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Mobile Intel GM45 Express Chipset",
+    "gpuDriver": "2.1 Mesa 18.2.8",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Won't launch.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1558928666,
+    "title": "Game Tycoon 1.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "273770",
+    "cpu": "Intel Core2 Duo     P8700  @ 2.53GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Mobile Intel GM45 Express Chipset",
+    "gpuDriver": "2.1 Mesa 18.2.8",
+    "kernel": "4.15.0-50-generic",
+    "notes": "My previous 'borked' rating was due to trying to run game off a FAT partition.\nNow it launches on ext4 partition. But i can only give it 'Bronze' because the mouse cursor stutters  making me unable to play. I know i am running a 10 year old craptop but this game is from 2006. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Bronze",
+    "timestamp": 1558973852,
+    "title": "Game Tycoon 1.5",
+    "source": "protondb"
+  }
+]

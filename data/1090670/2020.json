@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1090670",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.4",
+    "kernel": "4.19.107-1-MANJARO",
+    "notes": "Works mostly fine, though the game breaks if you play for a while without reloading.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-13",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1583550847,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "appId": "15930",
+    "cpu": "i5-7400 CPU @ 3.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Good",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537043308,
+    "title": "Luxor 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "15930",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon HD 7900 Series (TAHITI, DRM 3.26.0, 4.18.5-gentoo, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-2c1f249f2b)",
+    "kernel": "4.18.5-gentoo",
+    "notes": "Everything works as expected (steam overlay, gameplay, graphics)",
+    "os": "\"Gentoo Base System release 2.6\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16010 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537513671,
+    "title": "Luxor 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "15930",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16034 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537533513,
+    "title": "Luxor 3",
+    "source": "protondb"
+  }
+]

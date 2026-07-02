@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3613610",
+    "cpu": "AMD Ryzen 7 7840U w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, ACO, DRM 3.64, 6.17.7-ba25.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.0",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Choppy and low framerate",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "26 GB",
+    "rating": "borked",
+    "timestamp": 1771821715,
+    "title": "",
+    "source": "protondb"
+  }
+]

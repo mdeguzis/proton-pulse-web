@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3144190",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-35-generic",
+    "notes": "177 instances will open if you run on proton experimental! Watch out!",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1762416300,
+    "title": "Break Wolf",
+    "source": "protondb"
+  }
+]

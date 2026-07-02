@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1367550",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD RENOIR (LLVM 14.0.6, DRM 3.47, 5.19.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.19.3-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1662606239,
+    "title": "Kingdom Rush Vengeance - Tower Defense",
+    "source": "protondb"
+  },
+  {
+    "appId": "1367550",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.4.0-125-generic",
+    "notes": "Just works",
+    "os": "Ubuntu 20.04.5 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1663046033,
+    "title": "Kingdom Rush Vengeance - Tower Defense",
+    "source": "protondb"
+  },
+  {
+    "appId": "1367550",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Plays great if you're comfortable with the mouse (trackpad).",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1670580742,
+    "title": "Kingdom Rush Vengeance - Tower Defense",
+    "source": "protondb"
+  }
+]

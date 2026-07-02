@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1528810",
+    "cpu": "11th Gen Intel Core i5-11300H @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.14.1-pikaos",
+    "notes": "Problems I think start as the number of towers you place increases - may be better on a higher spec. PC otherwise its a very good game.",
+    "os": "PikaOS 4",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1744404141,
+    "title": "",
+    "source": "protondb"
+  }
+]

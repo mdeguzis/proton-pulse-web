@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "393290",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "4.19.0-6-amd64",
+    "notes": "Requires to use winetricks to install the Microsoft .NET 4.0. Wine-Mono replacement will not work. Once installed .NET use winetricks again to set Windows 7 version, or the game will crash. Once all settled, and clear any rundll32 errors at the first time that will not appear on next runs, the game are playable. Notice this is a Playstation One game running on a fork of PCSXR emulator, with some proprietary tweaks.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570714961,
+    "title": "Motorhead",
+    "source": "protondb"
+  }
+]

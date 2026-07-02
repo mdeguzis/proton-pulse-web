@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "335560",
+    "title": "Light Bound",
+    "timestamp": 1534978661,
+    "rating": "Platinum",
+    "notes": "Native build is not expected to happen.",
+    "os": "Debian stretch (custom kernel, 4.18.3)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600 / RX 470",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "335560",
+    "title": "Light Bound",
+    "timestamp": 1534964261,
+    "rating": "Platinum",
+    "notes": "Native build is not expected to happen.",
+    "os": "Debian stretch (custom kernel, 4.18.3)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600 / RX 470",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

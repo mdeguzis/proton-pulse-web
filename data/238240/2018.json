@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "238240",
+    "title": "Edge of Space",
+    "timestamp": 1535115743,
+    "rating": "Borked",
+    "notes": "Simply refuses to start",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "238240",
+    "title": "Edge of Space",
+    "timestamp": 1535279565,
+    "rating": "Gold",
+    "notes": "Set these links: Launcher.exe -> EdgeOfSpace.exe, Launcher_Data -> EdgeOfSpace_Data/",
+    "os": "Ubuntu 18.04.1 LTS, 64bit",
+    "gpuDriver": "NVIDIA",
+    "specs": "Intel i3",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "238240",
+    "title": "Edge of Space",
+    "timestamp": 1535101343,
+    "rating": "Borked",
+    "notes": "Simply refuses to start",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "238240",
+    "title": "Edge of Space",
+    "timestamp": 1535265165,
+    "rating": "Gold",
+    "notes": "Set these links: Launcher.exe -> EdgeOfSpace.exe, Launcher_Data -> EdgeOfSpace_Data/",
+    "os": "Ubuntu 18.04.1 LTS, 64bit",
+    "gpuDriver": "NVIDIA",
+    "specs": "Intel i3",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

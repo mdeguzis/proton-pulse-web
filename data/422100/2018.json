@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "422100",
+    "cpu": "Intel Core i7         920  @ 2.67GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-2-MANJARO",
+    "notes": "Game runs but to many missing graphical models render game unplayable",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-4",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1545845800,
+    "title": "Heaven Island Life",
+    "source": "protondb"
+  }
+]

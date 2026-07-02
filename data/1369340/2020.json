@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1369340",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.4.75-1-lts",
+    "notes": "Game  works great, haven't tested much.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1605734873,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1369340",
+    "cpu": "Intel Core i7-4720HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-53-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1606165170,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1369340",
+    "cpu": "AMD Ryzen 3 3300X 4-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 5500 XT",
+    "gpuDriver": "4.6 Mesa 20.2.3 (git-8440307a61)",
+    "kernel": "5.9.14-200.fc33.x86_64",
+    "notes": "",
+    "os": "Freedesktop.org 20.08.2 (Flatpak runtime)",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1608291728,
+    "title": "",
+    "source": "protondb"
+  }
+]

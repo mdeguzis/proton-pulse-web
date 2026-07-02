@@ -1,0 +1,16 @@
+[
+  {
+    "appId": "626160",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "gpu": "VMware, Inc. llvmpipe (LLVM 6.0, 256 bits)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-20-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "1993 Mb",
+    "rating": "Borked",
+    "timestamp": 1537494144,
+    "title": "Awesome Machine",
+    "source": "protondb"
+  }
+]

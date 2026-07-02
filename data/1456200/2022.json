@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1456200",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.13.0-37-generic",
+    "notes": "",
+    "os": "Zorin OS 16.1",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1649127728,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1456200",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.1 - kisak-mesa PPA",
+    "kernel": "5.4.0-117-generic",
+    "notes": "Disappointing opitmization but for people with gaming PCs, I guess it won't matter.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1660893620,
+    "title": "",
+    "source": "protondb"
+  }
+]

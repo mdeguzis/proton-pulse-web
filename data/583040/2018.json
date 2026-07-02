@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "583040",
+    "title": "Princess Maker Refine",
+    "timestamp": 1534984097,
+    "rating": "Bronze",
+    "notes": "\"PCM Music\" works, if \"MIDI Music\" is picked then it will throw errors and there will be no sound. Fullscreen does not work correctly - just fills the rest of the screen black.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4690K / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "583040",
+    "title": "Princess Maker Refine",
+    "timestamp": 1534969697,
+    "rating": "Bronze",
+    "notes": "\"PCM Music\" works, if \"MIDI Music\" is picked then it will throw errors and there will be no sound. Fullscreen does not work correctly - just fills the rest of the screen black.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4690K / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

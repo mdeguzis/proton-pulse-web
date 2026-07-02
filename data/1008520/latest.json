@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1008520",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-4ee638cd78)",
+    "kernel": "5.3.0-rc2",
+    "notes": "Uses Unity Engine, works without issues.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564526903,
+    "title": "Mahjong Strip Solitaire: Harem Guild",
+    "source": "protondb"
+  }
+]

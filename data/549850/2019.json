@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "549850",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Intro and fullscreen didn't work. Changing system resolution to game resolution can make fullscreen to work with some cursor issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556714111,
+    "title": "The Shadows of Pygmalion",
+    "source": "protondb"
+  }
+]

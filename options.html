@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site Options | Proton Pulse</title>
+<meta name="description" content="Browser-local display preferences for Proton Pulse, including an animations on/off toggle.">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/base.css?v=45c7e06d">
+<link rel="stylesheet" href="css/shared/topbar.css?v=2d6b5e52">
+<link rel="stylesheet" href="css/shared/site.css?v=e05a0f73">
+<link rel="stylesheet" href="css/shared/cards.css?v=16c748ed">
+<link rel="stylesheet" href="css/options/options.css?v=bb5b3f8f">
+</head>
+<body>
+
+<!-- Shared topbar is injected by topbar.js -->
+
+<div class="main-content">
+  <div class="main-inner">
+
+    <div class="prose">
+      <h1>Site options</h1>
+      <p>
+        Preferences for this browser, saved locally on your device. They are not
+        tied to a Proton Pulse account and do not sync across devices.
+      </p>
+    </div>
+
+    <div class="options-list">
+      <div class="option-row">
+        <div class="option-text">
+          <div class="option-title">Animations</div>
+          <div class="option-desc">
+            Background motion: the atom on the home page, the pulse line, and the
+            header. Turning this off cuts CPU and GPU use, which helps on laptops
+            and older hardware. Defaults to off when your system is set to reduce
+            motion.
+          </div>
+        </div>
+        <label class="option-switch">
+          <input type="checkbox" id="opt-animations">
+          <span class="option-switch-track"></span>
+        </label>
+        <div class="option-default-note">Default: on (off when your system requests reduced motion).</div>
+      </div>
+
+      <div class="option-row option-row--block">
+        <div class="option-text">
+          <div class="option-title">Default layout</div>
+          <div class="option-desc">
+            How browse pages lay games out by default. "List" shows
+            horizontal cards stacked top to bottom. "Grid" shows a
+            Steam-style grid of header thumbnails. Each page also has a
+            List/Grid toggle that overrides this for the rest of the
+            session.
+          </div>
+        </div>
+        <div class="option-radio-group" id="opt-grid-layout">
+          <label class="option-radio">
+            <input type="radio" name="grid-layout" value="list">
+            <span>List</span>
+          </label>
+          <label class="option-radio">
+            <input type="radio" name="grid-layout" value="grid" checked>
+            <span>Grid (tiles) <span class="option-default-tag">(default)</span></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="option-row">
+        <div class="option-text">
+          <div class="option-title">Show adult games</div>
+          <div class="option-desc">
+            Include titles flagged by Steam as containing sexual content
+            or nudity in Popular / Recent lists and search. Off by
+            default; toggle on if you want them visible in browse views.
+          </div>
+        </div>
+        <label class="option-switch">
+          <input type="checkbox" id="opt-show-adult">
+          <span class="option-switch-track"></span>
+        </label>
+        <div class="option-default-note">Default: off.</div>
+      </div>
+
+      <div class="option-row option-row--block">
+        <div class="option-text">
+          <div class="option-title">Store badge position</div>
+          <div class="option-desc">
+            Where to show the store badge (Steam, GOG, Epic) on game cards.
+            "On artwork" overlays the thumbnail corner. "On right" places it
+            alongside the rating pill.
+          </div>
+        </div>
+        <div class="option-radio-group" id="opt-store-pill-pos">
+          <label class="option-radio">
+            <input type="radio" name="store-pill-pos" value="right">
+            <span>On right</span>
+          </label>
+          <label class="option-radio">
+            <input type="radio" name="store-pill-pos" value="art">
+            <span>On artwork</span>
+          </label>
+          <label class="option-radio">
+            <input type="radio" name="store-pill-pos" value="art-corner">
+            <span>Card corner <span class="option-default-tag option-default-tag--desktop">(desktop default)</span></span>
+          </label>
+          <label class="option-radio" data-requires="card-layout=strip">
+            <input type="radio" name="store-pill-pos" value="bar-inline" checked>
+            <span>On bar (next to rating) <span class="option-default-tag option-default-tag--mobile">(mobile default)</span></span>
+          </label>
+          <label class="option-radio" data-requires="card-layout=strip">
+            <input type="radio" name="store-pill-pos" value="bar-segment">
+            <span>On bar (split)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="option-row option-row--block">
+        <div class="option-text">
+          <div class="option-title">Store badge display</div>
+          <div class="option-desc">
+            Show the store as a text pill ("Steam", "GOG", "Epic") or a small
+            round icon. Icons take less space, which helps on narrow screens.
+          </div>
+        </div>
+        <div class="option-radio-group" id="opt-store-display">
+          <label class="option-radio">
+            <input type="radio" name="store-display" value="text" checked>
+            <span>Text <span class="option-default-tag">(default)</span></span>
+          </label>
+          <label class="option-radio">
+            <input type="radio" name="store-display" value="icon">
+            <span>Icon</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="option-row option-row--block">
+        <div class="option-text">
+          <div class="option-title">Rating layout</div>
+          <div class="option-desc">
+            Where to show the rating on game cards. "On right" keeps the
+            rating pill in a column next to the title. "Bottom bar" puts
+            the rating into a tier-colored bar across the full bottom of
+            the card -- easier to read on mobile because the title gets
+            the full card width.
+          </div>
+        </div>
+        <div class="option-radio-group" id="opt-card-layout">
+          <label class="option-radio">
+            <input type="radio" name="card-layout" value="right">
+            <span>On right</span>
+          </label>
+          <label class="option-radio">
+            <input type="radio" name="card-layout" value="strip" checked>
+            <span>Bottom bar <span class="option-default-tag">(default)</span></span>
+          </label>
+          <label class="option-radio">
+            <input type="radio" name="card-layout" value="combo">
+            <span>Combined corner chip</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="option-row option-row--block">
+        <div class="option-text">
+          <div class="option-title">Reports per page</div>
+          <div class="option-desc">
+            How many game cards to preload in each section when browsing reports
+            before the "Load more" button. Higher values show more at once but
+            take a little longer to render.
+          </div>
+        </div>
+        <div class="option-radio-group" id="opt-load-count">
+          <label class="option-radio">
+            <input type="radio" name="load-count" value="50" checked>
+            <span>50 <span class="option-default-tag">(default)</span></span>
+          </label>
+          <label class="option-radio">
+            <input type="radio" name="load-count" value="100">
+            <span>100</span>
+          </label>
+          <label class="option-radio">
+            <input type="radio" name="load-count" value="150">
+            <span>150</span>
+          </label>
+          <label class="option-radio">
+            <input type="radio" name="load-count" value="200">
+            <span>200</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="options-reset">
+        <button type="button" id="opt-reset" class="options-reset-btn">Reset to defaults</button>
+        <span class="options-reset-note">Clears all settings on this device and reloads the page.</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="sitefooter">
+  GPL-3.0 open source - built on <a href="https://www.protondb.com/" target="_blank" rel="noopener">ProtonDB</a> community data |
+  <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener">Data repo</a> |
+  <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener">Decky plugin repo</a> |
+  <a href="privacy.html">Privacy</a> |
+  <a href="terms.html">Terms</a>
+</footer>
+
+<!-- supabase-client must load before topbar.js so the auth indicator can
+     reflect the signed-in state via SupaAuth.onStateChange. -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=79bf62c6"></script>
+<script src="js/lib/analytics.js?v=e6dfbad8"></script>
+<script src="js/lib/topbar.js?v=449040e3"></script>
+<script src="js/lib/toast.js?v=7bb23014"></script>
+<script type="module" src="js/options/main.js?v=428d8388"></script>
+</body>
+</html>

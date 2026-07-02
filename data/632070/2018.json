@@ -1,0 +1,59 @@
+[
+  {
+    "appId": "632070",
+    "title": "The Fidelio Incident",
+    "timestamp": 1535947734,
+    "rating": "Borked",
+    "notes": "Message on launch: DX11 feature level 10.0 is required to run the engine.",
+    "os": " elementary OS 0.4.1 Loki (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD FX 8350",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "632070",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-d63a133 2018-12-09 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Error on start, DX11 being required to run the engine.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544408618,
+    "title": "The Fidelio Incident",
+    "source": "protondb"
+  },
+  {
+    "appId": "632070",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000rc6-generic",
+    "notes": "Game works, but it is finicky with screen resolutions other than 1080p. When the game launches with not the whole screen visible hit Alt+Enter,  change the resolution settings within the game. Alternatively manually edit resolution in the games config file. Mouse pointer glitches out if you try to switch between desktop/game. I believe the guys that submitted previous compatibility reports of this game did not have Vulkan properly installed (based on the error message they got)",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "3.16-6",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545492388,
+    "title": "The Fidelio Incident",
+    "source": "protondb"
+  },
+  {
+    "appId": "632070",
+    "title": "The Fidelio Incident",
+    "timestamp": 1535933334,
+    "rating": "Borked",
+    "notes": "Message on launch: DX11 feature level 10.0 is required to run the engine.",
+    "os": " elementary OS 0.4.1 Loki (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD FX 8350",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

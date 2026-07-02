@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "886960",
+    "cpu": "Intel Core i7-4800MQ @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "nouveau NVE6",
+    "gpuDriver": "4.3 Mesa 19.1.1",
+    "kernel": "4.19.56_1",
+    "notes": "Works and performance is very good even with Wine D3D: solid 1080p60 on a  Quadro K2100M! Online play not tested.",
+    "os": "Void Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1562192175,
+    "title": "Dragon Spear",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "886960",
+    "cpu": "Intel Core i7-4800MQ @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.1",
+    "kernel": "4.19.56_1",
+    "notes": "Online play not tested but everything else works as intended. Haswell gen iGPU needs PROTON_USE_WINED3D=1 in launch options as it lacks proper Vulkan support. ",
+    "os": "Void Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1562196238,
+    "title": "Dragon Spear",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

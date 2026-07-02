@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "203510",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561386569,
+    "title": "Fortune Summoners",
+    "source": "protondb"
+  },
+  {
+    "appId": "203510",
+    "cpu": "AMD Ryzen 7 2700X",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Runs about as well as on Windows. default controller mappings are strange and needed to be set manually, which I recall being an issue on Windows as well.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563083682,
+    "title": "Fortune Summoners",
+    "source": "protondb"
+  }
+]

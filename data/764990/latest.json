@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "764990",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "5.3.13-arch1-1",
+    "notes": "Fails to start",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-9",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1575356637,
+    "title": "",
+    "source": "protondb"
+  }
+]

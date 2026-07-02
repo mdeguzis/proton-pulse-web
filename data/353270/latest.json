@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "353270",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.19.24-1-MANJARO",
+    "notes": "Now runs straight after installation",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551091015,
+    "title": "Hyperdimension Neptunia Re;Birth3 V Generation / \u795e\u6b21\u6b21\u5143\u30b2\u30a4\u30e0 \u30cd\u30d7\u30c6\u30e5\u30fc\u30ccRe;Birth3 V CENTURY / \u795e\u6b21\u6b21\u5143\u904a\u6232 \u6230\u6a5f\u5c11\u5973 \u91cd\u751f3 \uff36\u4e16\u7d00",
+    "source": "protondb"
+  },
+  {
+    "appId": "353270",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.20.17-1-MANJARO",
+    "notes": "This works perfectly after moving the d setup .dll to the main folder but im not sure if thats fixed in steam , because I am almost gonna rate this platinum. But gold it is. \nGreat, another awesome neptunia game that works great in Linux and I will glady complete it there. Tons of fun and nepping.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1556383087,
+    "title": "Hyperdimension Neptunia Re;Birth3 V Generation / \u795e\u6b21\u6b21\u5143\u30b2\u30a4\u30e0 \u30cd\u30d7\u30c6\u30e5\u30fc\u30ccRe;Birth3 V CENTURY / \u795e\u6b21\u6b21\u5143\u904a\u6232 \u6230\u6a5f\u5c11\u5973 \u91cd\u751f3 \uff36\u4e16\u7d00",
+    "source": "protondb"
+  },
+  {
+    "appId": "353270",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Now it runs perfectly and straight after installation, no direct x errors. Game runs as it should. Neptools modding also works when doing a dll override with dinput8 in winecfg of the proton prefix: /steamapps/compatdata/353270/pfx/ . I ran winecfg using protontricks --gui in terminal and selecting Neptunia re;birth 3 , selecting default prefix and run winecfg from there. Then go to libraries, type dinput8 and add. It must say native, built in. You could also do this via winetricks or searching for winecfg in that /pfx prefix with your file manager. Its up to you. \nOne such mod that worked for me was the Neptunia Re;birth 3 reranslation patch: https://steamcommunity.com/sharedfiles/filedetails/?id=727913135 . You will know it worked once the title screen shows it saying retranslation and a different font in menu. Just make sure to extract retranslation zip to steamapps\\common\\Hyperdimension Neptunia Re;Birth3\\ first. \n\n\n",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560640783,
+    "title": "Hyperdimension Neptunia Re;Birth3 V Generation / \u795e\u6b21\u6b21\u5143\u30b2\u30a4\u30e0 \u30cd\u30d7\u30c6\u30e5\u30fc\u30ccRe;Birth3 V CENTURY / \u795e\u6b21\u6b21\u5143\u904a\u6232 \u6230\u6a5f\u5c11\u5973 \u91cd\u751f3 \uff36\u4e16\u7d00",
+    "source": "protondb"
+  }
+]

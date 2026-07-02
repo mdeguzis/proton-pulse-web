@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "317280",
+    "title": "Solstice",
+    "timestamp": 1535737289,
+    "rating": "Platinum",
+    "notes": "Runs fine.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "317280",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537973426,
+    "title": "Solstice",
+    "source": "protondb"
+  },
+  {
+    "appId": "317280",
+    "cpu": "Intel Core i7-3667U @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Fails to launch w/ error, 'Win32 function failed: HRESULT: 0x80004005\nCall: at line 223 in file \\Graphics_DisplayM.cpp'",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1540525069,
+    "title": "Solstice",
+    "source": "protondb"
+  },
+  {
+    "appId": "317280",
+    "title": "Solstice",
+    "timestamp": 1535722889,
+    "rating": "Platinum",
+    "notes": "Runs fine.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

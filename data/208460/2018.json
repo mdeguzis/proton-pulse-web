@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "208460",
+    "title": "Tryst",
+    "timestamp": 1535999975,
+    "rating": "Bronze",
+    "notes": "Game does not close properly",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i3 1.8ghz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "208460",
+    "cpu": "i3-3217U CPU @ 1.80GHz",
+    "gpu": "GeForce GT 740M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game need to be closed by force.",
+    "os": "Ubuntu 18.04.1 LTS (64-bitowy)",
+    "protonVersion": "3.6.3",
+    "ram": "7858 MB",
+    "rating": "Gold",
+    "timestamp": 1536917697,
+    "title": "Tryst",
+    "source": "protondb"
+  },
+  {
+    "appId": "208460",
+    "title": "Tryst",
+    "timestamp": 1535985575,
+    "rating": "Bronze",
+    "notes": "Game does not close properly",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i3 1.8ghz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

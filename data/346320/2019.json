@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "346320",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Haven't noticed any issues.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1556804559,
+    "title": "Streets of Chaos",
+    "source": "protondb"
+  }
+]

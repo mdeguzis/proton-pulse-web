@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3229600",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 580.65.06",
+    "kernel": "6.8.0-84-generic",
+    "notes": "Works, though fullscreen is finicky",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1766112459,
+    "title": "",
+    "source": "protondb"
+  }
+]

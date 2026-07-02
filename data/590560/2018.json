@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "590560",
+    "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.8-041808-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.8-041808-generic",
+    "notes": "Some models don't load, such as weapons and enemies",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16050 Mb",
+    "rating": "Borked",
+    "timestamp": 1537819845,
+    "title": "Filthy, Stinking, Orcs!",
+    "source": "protondb"
+  },
+  {
+    "appId": "590560",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Opens in a window with a black and gray background and nothing else.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541634522,
+    "title": "Filthy, Stinking, Orcs!",
+    "source": "protondb"
+  },
+  {
+    "appId": "590560",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-e2ae5f2f0a)",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "The game starts, but there is only a grey and black box with DXVK.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1546164886,
+    "title": "Filthy, Stinking, Orcs!",
+    "source": "protondb"
+  }
+]

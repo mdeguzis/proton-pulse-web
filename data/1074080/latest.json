@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1074080",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.8-zen1-1-zen",
+    "notes": "Starter a new game and played around. No tweaks needed.",
+    "os": "Arch",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565856075,
+    "title": "SENRAN KAGURA Peach Ball",
+    "source": "protondb"
+  },
+  {
+    "appId": "1074080",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Got into gameplay, gameplay is perfect.  But for some strange reason, all the characters face away from you during story mode.  The actual pinball portion seems to work fine.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1566157394,
+    "title": "SENRAN KAGURA Peach Ball",
+    "source": "protondb"
+  }
+]

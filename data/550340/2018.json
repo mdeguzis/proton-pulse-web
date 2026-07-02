@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "550340",
+    "title": "Umineko: Golden Fantasia",
+    "timestamp": 1535633235,
+    "rating": "Silver",
+    "notes": "Opening does not work and crashes the game, you must rename it to something else. You also have to play in fullscreen mode otherwise the game will crash. And the game doesn't render the font correctly.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "Umineko: Golden Fantasia",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "550340",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "notes": "Crashes on launch unless you rename/delete the opening video (probably missing WMP codecs), crashes if you try to play it windowed. The opening video is also part of the main menu so it will display an error message in japanese asking you to install video codecs instead. The music will often play wrong and distorted.\nThis is barely playable.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "12007 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537801115,
+    "title": "Umineko: Golden Fantasia",
+    "source": "protondb"
+  },
+  {
+    "appId": "550340",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Able to see mangagamer logo, 7th expansion logo, hear 7th expansion and see loading. Finally the following error message appears: Could not render source output pin! hr=0x80040218 Disbale Esync and D3d11, use Wine D3d11 doesn't work. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541512165,
+    "title": "Umineko: Golden Fantasia",
+    "source": "protondb"
+  },
+  {
+    "appId": "550340",
+    "title": "Umineko: Golden Fantasia",
+    "timestamp": 1535618835,
+    "rating": "Silver",
+    "notes": "Opening does not work and crashes the game, you must rename it to something else. You also have to play in fullscreen mode otherwise the game will crash. And the game doesn't render the font correctly.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "Umineko: Golden Fantasia",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

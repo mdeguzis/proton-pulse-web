@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "454950",
+    "cpu": "Intel Core i5-3330 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Before disabling Esync, game crashed after a few minutes of clicking around. After disabling no issues throughout Part 1.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1551719883,
+    "title": "Mainlining",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "454950",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.8.0-53-generic",
+    "os": "Linux Mint 18.2 Sonya",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554838718,
+    "title": "Mainlining",
+    "source": "protondb"
+  },
+  {
+    "appId": "454950",
+    "cpu": "Intel Pentium  N3710  @ 1.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 405 (Braswell)",
+    "gpuDriver": "3.0 Mesa 19.0.4",
+    "kernel": "5.1.2-arch1-1-ARCH",
+    "notes": "Was getting about 40fps (not sure if game is just harder to run than it looks) and disabled Esync runs at a mostly 60fps. No bugs though",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1558434459,
+    "title": "Mainlining",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "454950",
+    "cpu": "AMD FX-6100 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.18.0-25-generic",
+    "os": "Zorin OS 15",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1563251430,
+    "title": "Mainlining",
+    "source": "protondb"
+  },
+  {
+    "appId": "454950",
+    "cpu": "Intel Core i3-3227U @ 1.90GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-55-generic",
+    "notes": "works perfectly with disabled esync and wineD3, crashes every ~20 minutes without, ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1565130104,
+    "title": "Mainlining",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

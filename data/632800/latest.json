@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "632800",
+    "cpu": "AMD Athlon(tm) 64 X2 Dual Core Processor 5000+",
+    "gpu": "NVIDIA Corporation GeForce 8500 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-34-generic",
+    "notes": "In windowed mode, the mouse cursor becomes invisible when moved outside the game window. Otherwise runs perfectly.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3945 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537769810,
+    "title": "Beyond Eden",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "515040",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Need dotnet40. Anyway, after installing dotnet game don't start",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "9 GB",
+    "rating": "Borked",
+    "timestamp": 1551886032,
+    "title": "Make America Great Again: The Trump Presidency",
+    "source": "protondb"
+  },
+  {
+    "appId": "515040",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Does not start",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556086685,
+    "title": "Make America Great Again: The Trump Presidency",
+    "source": "protondb"
+  },
+  {
+    "appId": "515040",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.26",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Game does not start",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1572116181,
+    "title": "Make America Great Again: The Trump Presidency",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "appId": "284240",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Loading makes game hang for a few seconds, otherwise perfect",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5",
+    "rating": "Silver",
+    "timestamp": "1536451200",
+    "title": "Maize",
+    "source": "protondb"
+  },
+  {
+    "appId": "284240",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "Tested ~2 hours of gameplay. Had mouse, stutter and sound crackling issues, setting PROTON_NO_ESYNC=1 fixed it. Perfomance is as bad as on Windows. Sometimes short freezes (but if I remember correctly these also occured on Windows). Menu controls feel unresponsive, changing settings feels glitched sometimes, but all this is also the case on Windows. So \"Gold\" because after the tweak it runs the \"same\" as on Windows for me.",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16068 MB",
+    "rating": "Gold",
+    "timestamp": 1537451595,
+    "title": "Maize",
+    "source": "protondb"
+  },
+  {
+    "appId": "284240",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-54c823ec79)",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "It runs well, just not too many frames",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1540413433,
+    "title": "Maize",
+    "source": "protondb"
+  }
+]

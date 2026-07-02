@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "279500",
+    "cpu": "AMD Ryzen Threadripper 1920X 12-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.20.17-042017-generic",
+    "notes": "It works perfectly. Just make sure to select Latin as spoken language to better appreciate the game :)",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555874460,
+    "title": "Nicolas Eymerich - The Inquisitor - Book 1 : The Plague",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "464920",
+    "cpu": "AMD Ryzen Threadripper 2920X 12-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-21-generic",
+    "notes": "No dramas.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563334551,
+    "title": "Surviving Mars",
+    "source": "protondb"
+  },
+  {
+    "appId": "464920",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-70bb3c0bec)",
+    "kernel": "5.2.6-arch1-1-ARCH",
+    "notes": "Game works native on Linux (OpenGL). On Proton it works out of the box with DXVK (D3D11 to Vulkan translation). Tested with the new Mesa ACO compiler on Plasma Wayland.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565287378,
+    "title": "Surviving Mars",
+    "source": "protondb"
+  }
+]

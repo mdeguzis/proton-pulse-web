@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "417880",
+    "title": "Everybody's Gone to the Rapture",
+    "timestamp": 1536274873,
+    "rating": "Silver",
+    "notes": "Small graphics glitches, after changing tasks: small sound distortions.",
+    "os": "Ubuntu 18.04  64-bit (Kernel 4.15.0-34-generic)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "AMD Ryzen 5 1600 Six-Core",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "417880",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16056 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537566412,
+    "title": "Everybody's Gone to the Rapture",
+    "source": "protondb"
+  },
+  {
+    "appId": "417880",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel (git-9007c0ed26)",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "The game seems to run with no glitches compared to Windows, apart from decreased performance. On Linux the FPS usually hovers around 40-50 FPS, sometimes going as low as 30 FPS depending on the scene, while on Windows the game would stay around the capped frame rate of 60 FPS. The game is a walking simulator, so the lower performance may not be a deal breaker.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543166402,
+    "title": "Everybody's Gone to the Rapture",
+    "source": "protondb"
+  },
+  {
+    "appId": "417880",
+    "title": "Everybody's Gone to the Rapture",
+    "timestamp": 1536260473,
+    "rating": "Silver",
+    "notes": "Small graphics glitches, after changing tasks: small sound distortions.",
+    "os": "Ubuntu 18.04  64-bit (Kernel 4.15.0-34-generic)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "AMD Ryzen 5 1600 Six-Core",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

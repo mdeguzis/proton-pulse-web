@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "431840",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-48-generic",
+    "notes": "WARNING! DO NOT use \"PROTON_USE_WINED3D=1\" or your game will run in 1FPS! On MY system (see specs) running the game with default (latest) Proton version everything runs perfect at 60FPS (fullscreen/windowed - highest graphics) out of the box.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555941191,
+    "title": "3DRPG",
+    "source": "protondb"
+  }
+]

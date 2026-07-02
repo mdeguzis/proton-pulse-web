@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "430300",
+    "cpu": "Intel Core i7-2640M @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Could find no way to make the game run in full screen mode. The only screen settings available are 1x and 1.5x scaling (in a window). The game itself runs too slowly to be playable.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1546295141,
+    "title": "MINUS ZERO",
+    "source": "protondb"
+  }
+]

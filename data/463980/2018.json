@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "463980",
+    "title": "Solitairica",
+    "timestamp": 1535113071,
+    "rating": "Platinum",
+    "notes": "works fine",
+    "os": "Version Linux Mint 19 Tara 64-bit  (Kernel  4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670   GTX 1060 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "463980",
+    "cpu": "Intel(R) Core(TM) i5-4670 CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64\u00a0bits)",
+    "protonVersion": "3.7-6",
+    "ram": "7823 Mo",
+    "rating": "Platinum",
+    "timestamp": 1537444232,
+    "title": "Solitairica",
+    "source": "protondb"
+  },
+  {
+    "appId": "463980",
+    "title": "Solitairica",
+    "timestamp": 1535098671,
+    "rating": "Platinum",
+    "notes": "works fine",
+    "os": "Version Linux Mint 19 Tara 64-bit  (Kernel  4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670   GTX 1060 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "470210",
+    "cpu": "Intel Core i7         950  @ 3.07GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.19.0-3-amd64",
+    "notes": "The game installs and runs perfectly with no issues. ",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "10 GB",
+    "rating": "Platinum",
+    "timestamp": 1563087446,
+    "title": "Rocketbirds 2 Evolution",
+    "source": "protondb"
+  }
+]

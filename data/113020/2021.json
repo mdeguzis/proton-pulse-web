@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "113020",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.10.7-111-tkg-bmq",
+    "notes": "Native version doesn't work, but runs perfectly through Proton 5.13",
+    "os": "Garuda Linux",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1611105916,
+    "title": "Monaco: What's Yours Is Mine",
+    "source": "protondb"
+  },
+  {
+    "appId": "113020",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.11.0-17-lowlatency",
+    "notes": "Native version works on one of my computer (Nvidia graphics), but not on my AMD apu laptop. Proton version works perfectly for both.",
+    "os": "Ubuntu 21.04 (64\u00a0bits)",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1622297837,
+    "title": "Monaco: What's Yours Is Mine",
+    "source": "protondb"
+  }
+]

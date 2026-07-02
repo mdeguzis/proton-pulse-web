@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "33460",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-15-generic",
+    "notes": "uplay patches on first run, second run uplay patches some more with different screens. Nothing happens after a while and ends with a defunct upc.exe",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1549726293,
+    "title": "From Dust",
+    "source": "protondb"
+  },
+  {
+    "appId": "33460",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-16-generic",
+    "notes": "uplay login works, the game crashes when it seems to want to play the intro video",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1552117652,
+    "title": "From Dust",
+    "source": "protondb"
+  },
+  {
+    "appId": "33460",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Even if you disable uplay overlay as you must do to avoid Just Dance 2017 to crush, the game will crash anyway after showing the rated logo",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554001725,
+    "title": "From Dust",
+    "source": "protondb"
+  },
+  {
+    "appId": "33460",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-29-generic",
+    "notes": "I've been playing From Dust for several months. It works great with the latest versions of Proton and D9VK.\n\nThe game may not start correctly the first 2 or 3 times, but if you try several times, it works!",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1570276138,
+    "title": "From Dust",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

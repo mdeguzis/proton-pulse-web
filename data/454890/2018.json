@@ -1,0 +1,68 @@
+[
+  {
+    "appId": "454890",
+    "cpu": "Intel Core i3         540  @ 3.07GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 560",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "the game starts fine, but when i start playing it randomly crashes within 2 minutes",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1541731812,
+    "title": "Project Starship",
+    "source": "protondb"
+  },
+  {
+    "appId": "454890",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541998973,
+    "title": "Project Starship",
+    "source": "protondb"
+  },
+  {
+    "appId": "454890",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 780 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Game closes within 60 seconds of starting a run.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542171162,
+    "title": "Project Starship",
+    "source": "protondb"
+  },
+  {
+    "appId": "454890",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 780 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "\"PROTON_NO_ESYNC\": \"1\" in user_settings.py required to prevent the game from closing after <1 minute. Successfully made it through a run afterwards.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1542501488,
+    "title": "Project Starship",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

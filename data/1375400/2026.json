@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1375400",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "4.2 Mesa 24.0.2 (git-a3df5eab6c)",
+    "kernel": "6.1.0-18-amd64",
+    "notes": "First of all, the videos shown after loading the game and before the main menu don't appear at all using the official Proton versions (I tried most of them up to Proton 10.0-4, plus Experimental). Using Proton GE solves this problem (tested with version 10-28).\n\nAnyway, the main issue is that after starting a new game and selecting the initial stage, the game gets stuck in the \"Now loading\" screen, so it is unplayable.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1771454981,
+    "title": "Ghosts 'n Goblins Resurrection",
+    "source": "protondb"
+  }
+]

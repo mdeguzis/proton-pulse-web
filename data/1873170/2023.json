@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1873170",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "I tried to run this game by default, but it was stuck on the Steam OS boot screen until I pressed B to back out. I tried to force compatibility with a few different versions of Proton. Experimental, 8, 7, 6, Hotfix, and even tried a few versions of GE-Proton 7, then 8, and the TKG bleeding edge. All of them either had me stuck at the boot screen, or it would stay there until my Steam Deck gave up trying to boot it.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1693359429,
+    "title": "",
+    "source": "protondb"
+  }
+]

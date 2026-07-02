@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1761290",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Runs fine",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1663668087,
+    "title": "Japanese Rail Sim: Journey to Kyoto",
+    "source": "protondb"
+  },
+  {
+    "appId": "1761290",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "\u958b\u555f\u904a\u6232\u5f8c\u6703\u4e00\u76f4\u9ed1\u756b\u9762",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1671700785,
+    "title": "Japanese Rail Sim: Journey to Kyoto",
+    "source": "protondb"
+  },
+  {
+    "appId": "1761290",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Works fine with GE Proton",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1671836275,
+    "title": "Japanese Rail Sim: Journey to Kyoto",
+    "source": "protondb"
+  }
+]

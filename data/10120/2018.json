@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "10120",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "No sound and only works with 4:3 resolutions, otherwise seems okay.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541267684,
+    "title": "Aces of the Galaxy\u2122",
+    "source": "protondb"
+  }
+]

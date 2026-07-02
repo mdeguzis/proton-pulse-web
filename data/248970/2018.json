@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "248970",
+    "title": "Vector",
+    "timestamp": 1536043449,
+    "rating": "Platinum",
+    "notes": "no problems so far",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "248970",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Need to run in a window or it will be all black",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Silver",
+    "timestamp": 1537003609,
+    "title": "Vector",
+    "source": "protondb"
+  },
+  {
+    "appId": "248970",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "gpu": "AMD Radeon HD 7970 GHz",
+    "gpuDriver": "3.1 Mesa 18.1.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Choose 'Launch in Window' when prompted",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7923 Mb",
+    "rating": "Gold",
+    "timestamp": 1537783927,
+    "title": "Vector",
+    "source": "protondb"
+  },
+  {
+    "appId": "248970",
+    "title": "Vector",
+    "timestamp": 1536029049,
+    "rating": "Platinum",
+    "notes": "no problems so far",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

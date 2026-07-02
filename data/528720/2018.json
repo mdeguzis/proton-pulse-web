@@ -1,0 +1,79 @@
+[
+  {
+    "appId": "528720",
+    "title": "Shu",
+    "timestamp": 1535013000,
+    "rating": "Borked",
+    "notes": "No sound, language selection functions, intro cutscene flickers rapidly, black screen after intro cutscene ends",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7 5820k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "528720",
+    "cpu": "Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-135-generic",
+    "notes": "Game starts, but the intro flickers horribly and after the intro the screen stays black.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15963 Mb",
+    "rating": "Borked",
+    "timestamp": 1539112954,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Shu",
+    "source": "protondb"
+  },
+  {
+    "appId": "528720",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.15.0-36-generic",
+    "notes": "The game starts (with language selection), and seemingly has sound. However, during opening cutscene, it flickers but is mostly black. After that, the screen just remains black. Haven't tried workarounds.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7933 Mb",
+    "rating": "Borked",
+    "timestamp": 1539149155,
+    "title": "Shu",
+    "source": "protondb"
+  },
+  {
+    "appId": "528720",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Screen is just black after developer titles. I had to log out of my computer to quit this game.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Borked",
+    "timestamp": 1539843402,
+    "title": "Shu",
+    "source": "protondb"
+  },
+  {
+    "appId": "528720",
+    "title": "Shu",
+    "timestamp": 1534998600,
+    "rating": "Borked",
+    "notes": "No sound, language selection functions, intro cutscene flickers rapidly, black screen after intro cutscene ends",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7 5820k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

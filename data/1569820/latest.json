@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1569820",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.16.4-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.7",
+    "kernel": "6.16.4-200.fc42.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1775846136,
+    "title": "Shades of Rayna",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1441230",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.11.16-arch1-1",
+    "notes": "Takes a minute to launch, but works out of the the box perfectly using latest  Proton at the time of this report.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1620755692,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1441230",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.41.0, 5.4.0-77-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.0-devel",
+    "kernel": "5.4.0-77-generic",
+    "notes": "Game does not run at all out of the box",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1625884828,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1441230",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD NAVY_FLOUNDER (DRM 3.41.0, 5.4.0-77-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.4 - kisak-mesa PPA",
+    "kernel": "5.4.0-77-generic",
+    "notes": "",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1625974474,
+    "title": "",
+    "source": "protondb"
+  }
+]

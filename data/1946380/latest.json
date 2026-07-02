@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1946380",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, ACO, DRM 3.64, 7.0.10-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.1.1-arch2.1",
+    "kernel": "7.0.10-2-cachyos",
+    "notes": "I tried various different Protons (I said default as none of them worked). The game has been in development a long time, I'm hoping to see this remedied as soon as they can, can't wait to play this game but I couldn't even get started. Going back in the community comments, Linux users have had trouble the entire time, seems we can't find a common thread yet.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1780179911,
+    "title": "",
+    "source": "protondb"
+  }
+]

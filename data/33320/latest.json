@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "33320",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "UPlay updates and works fine. No issues ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553358503,
+    "title": "Prince of Persia: The Forgotten Sands\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "33320",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "It runs fine after an updated version of Uplay is linked to the game's prefix folder. Performance is almost perfect with a few moments between large area when it has major stutters. The Uplay \"Shift + f2\" prompt will not go away, and the key combo does not work.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1554043576,
+    "title": "Prince of Persia: The Forgotten Sands\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "33320",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-62c6059584)",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "The game works on Proton out of the box, but not at the first run. I had to start it multiple times until the Uplay launcher updated itself, then I had to login and I had to enter the key too. After that the game worked fine. I installed D9VK and it worked even better with this DX9 to Vulkan translation.",
+    "os": "Unknown",
+    "protonVersion": "4.2-8",
+    "protonVersionManual": "4.2-8",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1561666090,
+    "title": "Prince of Persia: The Forgotten Sands\u2122",
+    "source": "protondb"
+  }
+]

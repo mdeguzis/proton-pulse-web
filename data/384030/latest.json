@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "384030",
+    "cpu": "AMD FX(tm)-9370 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Fails to launch. Did not attempt disabling Esync/D3D11/WineD3D11.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15935 Mb",
+    "rating": "Borked",
+    "timestamp": 1539935762,
+    "title": "Florensia",
+    "source": "protondb"
+  }
+]

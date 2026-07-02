@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "433100",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.5-90.current, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.18.5-90.current",
+    "notes": "No glitches or bugs noticed. Frame rate was only 25-30 maxed out but was only 40 FPS on Windows.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16052 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537025236,
+    "title": "The Town of Light",
+    "source": "protondb"
+  },
+  {
+    "appId": "433100",
+    "cpu": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "I had the game maxed out at a stable 25-35 fps but if you check the official system requirements I should be getting 60fps (even with the overhead applied) but the game is not well optimized at all or should I say, Unity games in general or just Proton doesn't like them. \n\nI also had extremely weird performance anomalies. Even though my fps was nowhere near where I should see stuttering, it \"stuttered\" while moving, it didn't matter if I was on the lowest or highest settings and remained the same weird phenomenon. I also had sequences where my fps suddenly tanked into single digits and I had to lower the settings just to get through, the worst offender was the 13th chapter with this. Outside of the \"dream/flashback\" sequences the performance remained consistent enough. Despite this I was able to finish the game nonetheless.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15969 Mb",
+    "rating": "Bronze",
+    "timestamp": 1538247069,
+    "title": "The Town of Light",
+    "source": "protondb"
+  },
+  {
+    "appId": "433100",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Runs flawlessly. On fullscreen, cursor is locked to the correct monitor which is usually not the case with Unity games.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1543754509,
+    "title": "The Town of Light",
+    "source": "protondb"
+  }
+]

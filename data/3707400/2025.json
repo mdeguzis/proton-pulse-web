@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3707400",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.0-4-cachyos",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1760773148,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3707400",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 19.1.7, DRM 3.60, 6.13.4-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.0.0-cachyos1.1",
+    "kernel": "6.13.4-2-cachyos",
+    "notes": "As a game it works perfectly, but as the \"app\"/\"widget\"/\"idle game\" using part of the screen, it doesn't.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1763827411,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3707400",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.10.3-lqx1-1-lqx",
+    "notes": "",
+    "os": "Garuda Linux Bird of Prey",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "silver",
+    "timestamp": 1764408007,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "424030",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "used 415 nvidia driver, cycled through the multiple Steam Play comparability tools with same response. \n\nGame was able to start, 60+fps\n\nonce attempting to join server, screen/system would freeze, sound continued unaffected. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546128464,
+    "title": "War of Rights",
+    "source": "protondb"
+  }
+]

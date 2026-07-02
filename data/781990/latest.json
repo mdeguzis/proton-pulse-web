@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "781990",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Fullscreen didn't work and not sure how to fix it but works perfectly other than that",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557501061,
+    "title": "Wequer",
+    "source": "protondb"
+  },
+  {
+    "appId": "781990",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Fullscreen doesn't work but other than that it works fine with no tweaks.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557501153,
+    "title": "Wequer",
+    "source": "protondb"
+  },
+  {
+    "appId": "781990",
+    "cpu": "Intel Core i3-2348M @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.4",
+    "kernel": "5.0.18-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1560820803,
+    "title": "Wequer",
+    "source": "protondb"
+  }
+]

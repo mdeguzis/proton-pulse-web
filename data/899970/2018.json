@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "899970",
+    "title": "NEKOPARA Extra",
+    "timestamp": 1535727315,
+    "rating": "Platinum",
+    "notes": "Great performance / no error",
+    "os": "Fedora 28 (kernel: 4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "E3-1230v2 / GTX 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "899970",
+    "cpu": "Intel(R) Core(TM) i3-7130U CPU @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "game loads, runss and works as should with one minor exception: text phrase start and end quotes display as blocks.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "11883 Mb",
+    "rating": "Silver",
+    "timestamp": 1539357539,
+    "title": "NEKOPARA Extra",
+    "source": "protondb"
+  },
+  {
+    "appId": "899970",
+    "cpu": "Intel Core i3-3217U @ 1.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Couldn't play in japanese even installing fonts and using fakejapanese with winetricks (this works with Symphonic Rain), otherwise everything runs smoothly",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1543684785,
+    "title": "NEKOPARA Extra",
+    "source": "protondb"
+  },
+  {
+    "appId": "899970",
+    "title": "NEKOPARA Extra",
+    "timestamp": 1535712915,
+    "rating": "Platinum",
+    "notes": "Great performance / no error",
+    "os": "Fedora 28 (kernel: 4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "E3-1230v2 / GTX 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

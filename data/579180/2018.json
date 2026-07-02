@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "579180",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Game started, and ran, but only ran smoothly in fullscreen (except in cutscenes where it ran at 3 fps) and audio is choppy and borked throughout the bits I played.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540511789,
+    "title": "Ys VIII: Lacrimosa of DANA / \u30a4\u30fc\u30b9VIII-Lacrimosa of DANA-",
+    "source": "protondb"
+  },
+  {
+    "appId": "579180",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "It's probably the game issue.\n1. Need to press Q in order to trigger dialog box to save display settings. \n2. Unable to move Adolf regardless of setting the keyboard's wasd, direction keys or numpad.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541523807,
+    "title": "Ys VIII: Lacrimosa of DANA / \u30a4\u30fc\u30b9VIII-Lacrimosa of DANA-",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "224740",
+    "cpu": "Intel i7-6700K",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Vega 64",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "kernel": "4.18.12-300.fc29.x86_64",
+    "notes": "Steam incorrectly downloads a broken Linux version that's unlisted in the store.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32GB",
+    "rating": "Borked",
+    "timestamp": 1540519989,
+    "title": "Clockwork Empires",
+    "source": "protondb"
+  },
+  {
+    "appId": "224740",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "This is a Linux Native build of the game, but the game doesn't support Linux in the Steam Store. It never will support Linux as the developers have abandoned the game.\n\nError Message: An error occured while updating Clockwork Empires (missing executable): ../Steam/steamapps/common/Clockwork Empires/Clockwork Empires.exe",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542294696,
+    "title": "Clockwork Empires",
+    "source": "protondb"
+  }
+]

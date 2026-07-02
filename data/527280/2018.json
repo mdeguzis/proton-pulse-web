@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "527280",
+    "title": "Nights of Azure",
+    "timestamp": 1535518602,
+    "rating": "Borked",
+    "notes": "none",
+    "os": "Manjaro stable 64-bit (kernel 4.14.66-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790k / gtx 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "527280",
+    "title": "Nights of Azure",
+    "timestamp": 1535504202,
+    "rating": "Borked",
+    "notes": "none",
+    "os": "Manjaro stable 64-bit (kernel 4.14.66-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790k / gtx 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

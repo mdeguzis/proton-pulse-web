@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2780",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-5167e94 2019-08-19 bionic-oibaf-ppa)",
+    "kernel": "5.2.6-050206-lowlatency",
+    "notes": "\"Error creating Direct3D 9 Graphical engine\". With D9VK is also not working.",
+    "os": "Linux Mint 19.2 Tina (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1567633335,
+    "title": "ARMA: Combat Operations",
+    "source": "protondb"
+  }
+]

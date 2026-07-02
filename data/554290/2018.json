@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "554290",
+    "title": "Himawari - The Sunflower -",
+    "timestamp": 1535379222,
+    "rating": "Silver",
+    "notes": "Strange display glitch, that looks sort of like tearing but is persistent for a few seconds then goes away (and comes back), and occurs even when there is no motion. Doesn't affect Nvidia cards/drivers. Otherwise perfect.",
+    "os": "Gentoo AMD64 (Kernel 4.18.5)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "554290",
+    "title": "Himawari - The Sunflower -",
+    "timestamp": 1535380808,
+    "rating": "Silver",
+    "notes": "Graphics and voices perfect, but OP FMV results in a black screen but it can be skipped with the enter key. You can just watch it here instead: https://www.youtube.com/watch?v=fTkwNLMVsPI ",
+    "os": "Gentoo AMD64 (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 5 1600 / 980ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "554290",
+    "cpu": "Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-zen1-1-zen",
+    "notes": "Videos do not play.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7916 Mb",
+    "rating": "Silver",
+    "timestamp": 1537420993,
+    "title": "Himawari - The Sunflower -",
+    "source": "protondb"
+  },
+  {
+    "appId": "554290",
+    "title": "Himawari - The Sunflower -",
+    "timestamp": 1535364822,
+    "rating": "Silver",
+    "notes": "Strange display glitch, that looks sort of like tearing but is persistent for a few seconds then goes away (and comes back), and occurs even when there is no motion. Doesn't affect Nvidia cards/drivers. Otherwise perfect.",
+    "os": "Gentoo AMD64 (Kernel 4.18.5)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "554290",
+    "title": "Himawari - The Sunflower -",
+    "timestamp": 1535366408,
+    "rating": "Silver",
+    "notes": "Graphics and voices perfect, but OP FMV results in a black screen but it can be skipped with the enter key. You can just watch it here instead: https://www.youtube.com/watch?v=fTkwNLMVsPI ",
+    "os": "Gentoo AMD64 (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 5 1600 / 980ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

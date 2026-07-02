@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "368710",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "5.3.13",
+    "notes": "audible, but invisible",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1575149429,
+    "title": "Power of Love",
+    "source": "protondb"
+  }
+]

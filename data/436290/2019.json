@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "436290",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-1-default",
+    "notes": "Seems to run perfectly fine, short testing though.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1555451415,
+    "title": "Children of Zodiarcs",
+    "source": "protondb"
+  },
+  {
+    "appId": "436290",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Ran great after using Wine D3d11 - but froze while leaving the game.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1555678569,
+    "title": "Children of Zodiarcs",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

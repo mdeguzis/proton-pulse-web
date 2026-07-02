@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "214630",
+    "title": "Call of Duty: Black Ops - Mac Edition",
+    "timestamp": 1535941772,
+    "rating": "Borked",
+    "notes": "Missing \"BlackOps.app\" executable.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "214630",
+    "title": "Call of Duty: Black Ops - Mac Edition",
+    "timestamp": 1535927372,
+    "rating": "Borked",
+    "notes": "Missing \"BlackOps.app\" executable.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

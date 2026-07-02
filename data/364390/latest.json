@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "364390",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Both the main game Downfall (2016 remake) and the original (2009 version) that is included work just as well as on Windows. Tried both fullscreen and windowed, and also loading and saving games. However note that these games are running on the buggy AGS engine. With both games set them to use maximum size sprite cache or they may be crash. Steam overlay will not work with sofware rendering.  The 2009 version can refuse to run if you use anything but the default 640x480 resolution and no filtering. And both games may sometimes just hang when launching having to kill the process and re-launch the game. Still rating this Proton platinum, because these are all bugs and issues that exist on the windows version.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552329051,
+    "title": "Downfall",
+    "source": "protondb"
+  },
+  {
+    "appId": "364390",
+    "cpu": "Intel Core i7-7600U @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.0.16-300.fc30.x86_64",
+    "notes": "Played for four hours so far.  Zero problems.  Runs perfectly.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560194331,
+    "title": "Downfall",
+    "source": "protondb"
+  }
+]

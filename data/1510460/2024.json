@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1510460",
+    "cpu": "Intel Core i5-3350P @ 3.10GHz",
+    "duration": "allTheTime",
+    "gpu": "Mesa AMD CAICOS (DRM 2.50.0 / 6.9.9-zen1-1-zen, LLVM 18.1.8)",
+    "gpuDriver": "4.5 Mesa 24.1.3-arch1.1",
+    "kernel": "6.9.9-zen1-1-zen",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1721126731,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1510460",
+    "cpu": "Intel Core i3-3240 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 2500 (IVB GT1)",
+    "gpuDriver": "4.2 Mesa 24.2.7-arch1.1",
+    "kernel": "6.11.9-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "4 GB",
+    "rating": "platinum",
+    "timestamp": 1732207623,
+    "title": "",
+    "source": "protondb"
+  }
+]

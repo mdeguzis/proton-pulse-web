@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1671340",
+    "cpu": "Intel Core i7-10875H @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.7-76061807-generic",
+    "notes": "After switching to ProtonGE and tweaking to capture mouse, I had no issues playing the game.",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1773512933,
+    "title": "Fears to Fathom - Home Alone",
+    "source": "protondb"
+  },
+  {
+    "appId": "1671340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Outside of the minor controller binding issues it was great. I used the \"Good\" graphical preset.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1776784733,
+    "title": "Fears to Fathom - Home Alone",
+    "source": "protondb"
+  },
+  {
+    "appId": "1671340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Fonctionne comme pr\u00e9vu",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1778928186,
+    "title": "Fears to Fathom - Home Alone",
+    "source": "protondb"
+  }
+]

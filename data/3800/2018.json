@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "3800",
+    "title": "Advent Rising",
+    "timestamp": 1534961789,
+    "rating": "Bronze",
+    "notes": "First run crash. 2nd Run shows dialog with 2 options. Choosing 1st opt crash, choosing 2nd opt will run the game. Game runs well, sometimes stutter but most of time smooth. Sometimes the game crashes but re-run the game will continue without problem (as is stated in Appdb page of the game)",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.65-1-MANJARO)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GTX 750 TI",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "3800",
+    "title": "Advent Rising",
+    "timestamp": 1534947389,
+    "rating": "Bronze",
+    "notes": "First run crash. 2nd Run shows dialog with 2 options. Choosing 1st opt crash, choosing 2nd opt will run the game. Game runs well, sometimes stutter but most of time smooth. Sometimes the game crashes but re-run the game will continue without problem (as is stated in Appdb page of the game)",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.65-1-MANJARO)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GTX 750 TI",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

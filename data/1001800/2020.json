@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1001800",
+    "cpu": "Intel Core i7-4710MQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.3.3",
+    "kernel": "5.4.11-arch1-1-fsync",
+    "notes": "You need to install mfplat",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "5.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1581252763,
+    "title": "",
+    "source": "protondb"
+  }
+]

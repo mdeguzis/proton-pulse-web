@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "296150",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.3.6-200.fc30.x86_64",
+    "notes": "Seems to work as intended. The controls are horrible and there is no one to play with.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1571567264,
+    "title": "G-Ball",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1115380",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.24.02",
+    "kernel": "5.3.1-6.1-tkg-pds",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1569545235,
+    "title": "BallBoi",
+    "source": "protondb"
+  }
+]

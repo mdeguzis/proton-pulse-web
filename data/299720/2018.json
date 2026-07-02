@@ -1,0 +1,30 @@
+[
+  {
+    "appId": "299720",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Terrorhedron Tower Defense",
+    "source": "protondb"
+  },
+  {
+    "appId": "299720",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "ATI Technologies Inc. AMD Radeon R9 380",
+    "gpuDriver": "4.5.13529 Compatibility Profile Context",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540358054,
+    "title": "Terrorhedron Tower Defense",
+    "source": "protondb"
+  }
+]

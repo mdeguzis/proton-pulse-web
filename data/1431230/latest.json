@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1431230",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.2, DRM 3.59, 6.9.3-76060903-generic)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Tem bugs, mas rende algumas horas de divers\u00e3o",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1740880683,
+    "title": "",
+    "source": "protondb"
+  }
+]

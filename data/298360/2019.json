@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "298360",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Launches out of the box, runs as well as on Windows, further testing needed.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1547896190,
+    "title": "Immortal Defense",
+    "source": "protondb"
+  },
+  {
+    "appId": "298360",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Runs out of the box. Works better for me than it did on Windows.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1547929775,
+    "title": "Immortal Defense",
+    "source": "protondb"
+  }
+]

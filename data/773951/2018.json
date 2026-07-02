@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "773951",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-4fa2fb3 2018-11-13 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The main menu doesn't render properly. Everything past the main menu is just a black screen.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542360624,
+    "title": "Freeman: Guerrilla Warfare",
+    "source": "protondb"
+  },
+  {
+    "appId": "773951",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Nothing's happening.Steam says the game is running and gives trading cards for it, but the game itself doesn't even start anything",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543289882,
+    "title": "Freeman: Guerrilla Warfare",
+    "source": "protondb"
+  }
+]

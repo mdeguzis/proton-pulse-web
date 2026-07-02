@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1005450",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.10-111.current",
+    "notes": "There was a bit of crackling with the sound at the beginning, but it eventually went away. Controller input did not work, but I was still able to use the Steam Controller API to map keys to my controller.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1552631844,
+    "title": "Vision Soft Reset",
+    "source": "protondb"
+  }
+]

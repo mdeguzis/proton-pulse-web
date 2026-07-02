@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "215930",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.0-64-generic",
+    "notes": "Doesn't work as native, works under Proton emulation",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1614027373,
+    "title": "Jagged Alliance 2 - Wildfire",
+    "source": "protondb"
+  },
+  {
+    "appId": "215930",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 590 (POLARIS10, DRM 3.40.0, 5.10.7-3-MANJARO, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.3",
+    "kernel": "5.10.7-3-MANJARO",
+    "notes": "Native version don't works",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1614381675,
+    "title": "Jagged Alliance 2 - Wildfire",
+    "source": "protondb"
+  },
+  {
+    "appId": "215930",
+    "cpu": "Intel Core i5-10600K @ 4.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.12-1-default",
+    "notes": "Launch fails, b/c game asks for a serial number.  On Steam.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1629803686,
+    "title": "Jagged Alliance 2 - Wildfire",
+    "source": "protondb"
+  }
+]

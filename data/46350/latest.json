@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "46350",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-39-generic",
+    "notes": "idk if PROTON_NO_ESYNC=1 has any effect, older games tend to run better with it. Other than the fullscreen issues everything runs Ok.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1680493994,
+    "title": "Real Warfare 1242",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1371690",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.13.0-27-generic",
+    "notes": "",
+    "os": "Zorin OS 16",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1649726731,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1371690",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Proton 6.9-GE-1 is mandatory to launch the game, any other version I tried didnt even launch the game.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1655222546,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1371690",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.5-arch1-1",
+    "notes": "small annoying issues abound, but its not gonna stop you from generally having a good time",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1667225489,
+    "title": "",
+    "source": "protondb"
+  }
+]

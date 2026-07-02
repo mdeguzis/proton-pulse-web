@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1100140",
+    "cpu": "12th Gen Intel Core i5-12400",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (navi23, LLVM 15.0.7, DRM 3.54, 6.5.0-14-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1",
+    "kernel": "6.5.0-14-generic",
+    "notes": "Works out of the box",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1704995764,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1100140",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "\u4e00\u5207\u5b8c\u7f8e\uff0c\u5f00\u7bb1\u5373\u7528\nAll perfect, out of the box experience.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1716111481,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1100140",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.59, 6.12.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.1-arch1.2",
+    "kernel": "6.12.3-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1734853257,
+    "title": "",
+    "source": "protondb"
+  }
+]

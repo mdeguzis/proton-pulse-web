@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "355130",
+    "cpu": "i7-2600 CPU @ 3.40GHz",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.26.0, 4.18.5-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "notes": "game play work correctly but video title not work,I can skip video.",
+    "os": "Manjaro Linux (64 bit)",
+    "protonVersion": "Default",
+    "rating": "Silver",
+    "timestamp": "1536451200",
+    "title": "MotoGP\u212215",
+    "source": "protondb"
+  },
+  {
+    "appId": "355130",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Out the box works, except the videos only have a blank screen. hit enter and the next screen loads.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541233039,
+    "title": "MotoGP\u212215",
+    "source": "protondb"
+  }
+]

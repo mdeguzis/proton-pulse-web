@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "270010",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.20.0-pf1+",
+    "notes": "Ran out of the box. No issues so far with mouse input; didn't try with a controller. No issues with audio of visuals. Downloading and playing replays seems to work fine. ",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548464525,
+    "title": "Time Rifters",
+    "source": "protondb"
+  },
+  {
+    "appId": "270010",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558938644,
+    "title": "Time Rifters",
+    "source": "protondb"
+  }
+]

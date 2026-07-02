@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "322130",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-34-generic",
+    "notes": "To enter the product key, game language needs to get changed to 'English' first. Same issue exists under Windows, too.\nSee https://steamcommunity.com/app/322130/discussions/0/627456359653566382/\n\nAfter one entered the product key, language can be changed again.\nBut, the game does not launch at all using Proton. Wine-4.0 works fine though, I can start it via:\n\nWINEPREFIX=$HOME/.local/share/Steam/steamapps/compatdata/322130/pfx/ wine $HOME/.local/share/Steam/steamapps/common/Disney\\'s\\ Princess\\ Enchanted\\ Journey/play.exe",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "wine-4.0 from winehq",
+    "protonVersionManual": "wine-4.0 from winehq",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1549719267,
+    "title": "Disney Princess: Enchanted Journey",
+    "source": "protondb"
+  }
+]

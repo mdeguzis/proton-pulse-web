@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "205690",
+    "title": "1000 Amps",
+    "timestamp": 1535657098,
+    "rating": "Borked",
+    "notes": "GFX are very garbled, doesn't play well with alt-tab.",
+    "os": "Mint 64bit 19 Kernel 4.15",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6500/Nvidia 1060 6gb",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  },
+  {
+    "appId": "205690",
+    "title": "1000 Amps",
+    "timestamp": 1535585588,
+    "rating": "Silver",
+    "notes": "Works fine, but changing to full screen causes severe graphical glitches that remain until game is restarted.",
+    "os": "Debian Buster",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-6600K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "205690",
+    "title": "1000 Amps",
+    "timestamp": 1535698184,
+    "rating": "Silver",
+    "notes": "Plays perfect in windowed mode. Full-screen causes major graphical glitches",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "205690",
+    "cpu": "Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "On switching to fullscreen, soft locked. However, starting it up again solved this, with it playing fine in fullscreen. No hint of the glitches I saw in previous versions.",
+    "os": "elementary OS 0.4.1 Loki (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15993 Mb",
+    "rating": "Gold",
+    "timestamp": 1538317354,
+    "title": "1000 Amps",
+    "source": "protondb"
+  },
+  {
+    "appId": "205690",
+    "title": "1000 Amps",
+    "timestamp": 1535642698,
+    "rating": "Borked",
+    "notes": "GFX are very garbled, doesn't play well with alt-tab.",
+    "os": "Mint 64bit 19 Kernel 4.15",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6500/Nvidia 1060 6gb",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  },
+  {
+    "appId": "205690",
+    "title": "1000 Amps",
+    "timestamp": 1535571188,
+    "rating": "Silver",
+    "notes": "Works fine, but changing to full screen causes severe graphical glitches that remain until game is restarted.",
+    "os": "Debian Buster",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-6600K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "205690",
+    "title": "1000 Amps",
+    "timestamp": 1535683784,
+    "rating": "Silver",
+    "notes": "Plays perfect in windowed mode. Full-screen causes major graphical glitches",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

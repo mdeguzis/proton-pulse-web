@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "446780",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "4.19.0-8-amd64",
+    "notes": "Unfortunately this game runs on Linux without any issues.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1602268112,
+    "title": "",
+    "source": "protondb"
+  }
+]

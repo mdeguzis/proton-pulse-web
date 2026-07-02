@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "573790",
+    "cpu": "Intel Xeon E5-2640 v4 @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "It's a Dosbox game. No issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "129 GB",
+    "rating": "Platinum",
+    "timestamp": 1555746455,
+    "title": "Imperium Galactica",
+    "source": "protondb"
+  },
+  {
+    "appId": "573790",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Great game. More than halfway through the campaign now. I did change the Imperium Galactica/Dosbox/dosbox_ig.conf settings to get the original 4:3 aspect ratio.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568388337,
+    "title": "Imperium Galactica",
+    "source": "protondb"
+  }
+]

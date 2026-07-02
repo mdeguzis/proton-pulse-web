@@ -1,0 +1,80 @@
+[
+  {
+    "appId": "354140",
+    "title": "Five Nights at Freddy's 3",
+    "timestamp": 1535223412,
+    "rating": "Platinum",
+    "notes": "No issues found",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "354140",
+    "title": "Five Nights at Freddy's 3",
+    "timestamp": 1535821153,
+    "rating": "Platinum",
+    "notes": "Runs perfectly",
+    "os": "Ubuntu 18.04.1 LTS 64bit (4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-5200U / Intel HD Graphics 5500 (rev 09)",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "354140",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537296040,
+    "title": "Five Nights at Freddy's 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "354140",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.19.0, 4.14.65-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.14.65-1-MANJARO",
+    "notes": "Works perfectly",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16058 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537580208,
+    "title": "Five Nights at Freddy's 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "354140",
+    "title": "Five Nights at Freddy's 3",
+    "timestamp": 1535209012,
+    "rating": "Platinum",
+    "notes": "No issues found",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "354140",
+    "title": "Five Nights at Freddy's 3",
+    "timestamp": 1535806753,
+    "rating": "Platinum",
+    "notes": "Runs perfectly",
+    "os": "Ubuntu 18.04.1 LTS 64bit (4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-5200U / Intel HD Graphics 5500 (rev 09)",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

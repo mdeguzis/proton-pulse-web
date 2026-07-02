@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "884660",
+    "title": "Cuisine Royale",
+    "timestamp": 1534957674,
+    "rating": "Borked",
+    "notes": "It \"works\" but not really because:\n- It kinda launches, menu is working, but after finding the game and connecting you get kicked,\n- Probably Anti-Cheat not working correctly through Wine issue.\n- *Also uniinstalling games installed with 'Steam Play' is probably not working, stuck at least.",
+    "os": "Linux Mint 18.3 (Cinnamon)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 960M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "884660",
+    "title": "Cuisine Royale",
+    "timestamp": 1535098253,
+    "rating": "Borked",
+    "notes": "It let me get to main screen and I was trying to connect to server and after queuing, just as it connects it kicks me out and crashes.. Probably EAC blocking access..",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Intel i5-7200U / HD Graphics 620 (Kaby Lake GT2)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "884660",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "The game starts correctly but does not connect to servers, this error makes the game unplayable.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543599916,
+    "title": "Cuisine Royale",
+    "source": "protondb"
+  },
+  {
+    "appId": "884660",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.0",
+    "kernel": "4.20.0-rc5-2595646791c319cadfdbf271563aac97d0843dc7+",
+    "os": "Fedora release 30 (Rawhide)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1544546028,
+    "title": "Cuisine Royale",
+    "source": "protondb"
+  },
+  {
+    "appId": "884660",
+    "title": "Cuisine Royale",
+    "timestamp": 1534943274,
+    "rating": "Borked",
+    "notes": "It \"works\" but not really because:\n- It kinda launches, menu is working, but after finding the game and connecting you get kicked,\n- Probably Anti-Cheat not working correctly through Wine issue.\n- *Also uniinstalling games installed with 'Steam Play' is probably not working, stuck at least.",
+    "os": "Linux Mint 18.3 (Cinnamon)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 960M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "884660",
+    "title": "Cuisine Royale",
+    "timestamp": 1535083853,
+    "rating": "Borked",
+    "notes": "It let me get to main screen and I was trying to connect to server and after queuing, just as it connects it kicks me out and crashes.. Probably EAC blocking access..",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Intel i5-7200U / HD Graphics 620 (Kaby Lake GT2)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

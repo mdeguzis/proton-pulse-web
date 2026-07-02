@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "415850",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561503069,
+    "title": "BAD END",
+    "source": "protondb"
+  },
+  {
+    "appId": "415850",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Game ran, however it would freeze for 15-30 seconds each time the music changed. Disabling Esync fixed this issue for me. Completed the game and all endings.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1571874353,
+    "title": "BAD END",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

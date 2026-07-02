@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "331750",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.19.0-9-generic",
+    "notes": "Played story, works like a charm right out of the box.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546942189,
+    "title": "Disney\u2022Pixar WALL-E",
+    "source": "protondb"
+  },
+  {
+    "appId": "331750",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562693974,
+    "title": "Disney\u2022Pixar WALL-E",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "931310",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.6-1-default",
+    "notes": "Works just as well on Windows. No mods needed.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1691081840,
+    "title": "",
+    "source": "protondb"
+  }
+]

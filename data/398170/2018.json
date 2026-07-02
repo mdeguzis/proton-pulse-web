@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "398170",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Nothing happens; turns into a zombie process that has to be manually killed.  No errors or feedback.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Borked",
+    "timestamp": "1536343517",
+    "title": "Evochron Legacy",
+    "source": "protondb"
+  },
+  {
+    "appId": "398170",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-custom",
+    "notes": "Game runs at a wildly variable framerate from mid 20s to mid 50s. Disabling Esync doesn't help, and using Wined3d makes things even worse. It's playable if you can handle a lower framerate. The HUD causes a bit of lag, especially when using the mouse to steer.\n\nUse winetricks and install dinput8: `WINEPREFIX=/path/to/398170/pfx winetricks -q dinput8`\n\n\nGame will not launch and just hang as a sleeping process requiring killing manually to close. Installing dinput8 fixes this. Unfortunately, no fix for framerate",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1545711195,
+    "title": "Evochron Legacy",
+    "source": "protondb"
+  }
+]

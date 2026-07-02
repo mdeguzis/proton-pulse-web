@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1196470",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1654416551,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1196470",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5600 XT (navi10, LLVM 14.0.6, DRM 3.46, 5.18.11-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 22.1.3",
+    "kernel": "5.18.11-zen1-1-zen",
+    "notes": "Works without problems, but the editor does not work with the standard Proton or Proton Experimental.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1657889704,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1196470",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "5.15.0-52-generic",
+    "notes": "Works out of the box with Proton 7.0 and Proton Experimental",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1667900515,
+    "title": "",
+    "source": "protondb"
+  }
+]

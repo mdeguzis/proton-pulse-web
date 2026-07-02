@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1272680",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 18.1.8, DRM 3.59, 6.12.1-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.12.1-zen1-1-zen",
+    "notes": "It is playable to some extent, but its performance does not meet expectations.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1733330757,
+    "title": "Umihara Kawase Fresh!",
+    "source": "protondb"
+  }
+]

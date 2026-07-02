@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "561080",
+    "title": "The Price of Freedom",
+    "timestamp": 1536028475,
+    "rating": "Bronze",
+    "notes": "Invisible hands and probably other textures.  Playable though up to a point.",
+    "os": "Xubuntu 18.04 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "561080",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.14.87-1-lts",
+    "notes": "Works perfectly on my Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545170454,
+    "title": "The Price of Freedom",
+    "source": "protondb"
+  },
+  {
+    "appId": "561080",
+    "title": "The Price of Freedom",
+    "timestamp": 1536014075,
+    "rating": "Bronze",
+    "notes": "Invisible hands and probably other textures.  Playable though up to a point.",
+    "os": "Xubuntu 18.04 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

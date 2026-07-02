@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "781230",
+    "title": "Bubble Ghost",
+    "timestamp": 1535895604,
+    "rating": "Borked",
+    "notes": "Brings up DOS Box window, which then flickers its logo continuously like it's resetting over and over. Mouse control lost - had to kill manually.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "781230",
+    "title": "Bubble Ghost",
+    "timestamp": 1535898616,
+    "rating": "Borked",
+    "notes": "Updated notes: DOS Box window doesn't focus - needs Alt-Tab, Enter then F1 to start the game fullscreen. Collision detection non-existent making the game unplayable and graphics \"jank\" also present. No game exit option from what I can tell (an original oversight?).",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "781230",
+    "title": "Bubble Ghost",
+    "timestamp": 1535881204,
+    "rating": "Borked",
+    "notes": "Brings up DOS Box window, which then flickers its logo continuously like it's resetting over and over. Mouse control lost - had to kill manually.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "781230",
+    "title": "Bubble Ghost",
+    "timestamp": 1535884216,
+    "rating": "Borked",
+    "notes": "Updated notes: DOS Box window doesn't focus - needs Alt-Tab, Enter then F1 to start the game fullscreen. Collision detection non-existent making the game unplayable and graphics \"jank\" also present. No game exit option from what I can tell (an original oversight?).",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

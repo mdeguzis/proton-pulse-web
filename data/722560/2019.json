@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "722560",
+    "cpu": "Intel Core i3-8350K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.16-1-MANJARO",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-1",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1566568971,
+    "title": "RAD",
+    "source": "protondb"
+  },
+  {
+    "appId": "722560",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Crash when leaving the game and smaller stutters",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1566577214,
+    "title": "RAD",
+    "source": "protondb"
+  },
+  {
+    "appId": "722560",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Had to turn the graphics down to medium to hit 60+ fps. Either my video card is getting outdated or proton has a perfomance hit on this game, as it doesnt seem all that graphically challenging. Anyways, great that everything works flawlessly out of the box. ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566858202,
+    "title": "RAD",
+    "source": "protondb"
+  }
+]

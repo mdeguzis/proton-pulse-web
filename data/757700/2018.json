@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "757700",
+    "title": "Dungeon's Barrage",
+    "timestamp": 1536164852,
+    "rating": "Borked",
+    "notes": "Doesn't even show Unity graphics select menu screen, crashes immediately.",
+    "os": "Ubuntu 18.04.1 LTS (Kernel 4.15.0-34)",
+    "gpuDriver": "Mesa 18.3.0 devel",
+    "specs": "Intel Pentium N3540 / Intel HD Graphics",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "757700",
+    "cpu": "Intel(R) Pentium(R) CPU  N3540  @ 2.16GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.5",
+    "kernel": "4.18.0-7-generic",
+    "notes": "Put \"PROTON_USE_WINED3D11=1 %command%\" in the launch settings of the game. After that, it works perfectly with no noticable performance drops.",
+    "os": "Ubuntu Cosmic Cuttlefish (development branch) (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "3831 Mb",
+    "rating": "Gold",
+    "timestamp": 1536610910,
+    "title": "Dungeon's Barrage",
+    "source": "protondb"
+  },
+  {
+    "appId": "757700",
+    "cpu": "Intel(R) Pentium(R) CPU  N3540  @ 2.16GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.8",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Put \"PROTON_USE_WINED3D11\" if your graphics card doesn't support Vulkan. Bay Trail must use it.",
+    "os": "Arch Linux (installed via Antergos)",
+    "protonVersion": "3.7-6",
+    "ram": "3834 Mb",
+    "rating": "Gold",
+    "timestamp": 1536874555,
+    "title": "Dungeon's Barrage",
+    "source": "protondb"
+  },
+  {
+    "appId": "757700",
+    "title": "Dungeon's Barrage",
+    "timestamp": 1536150452,
+    "rating": "Borked",
+    "notes": "Doesn't even show Unity graphics select menu screen, crashes immediately.",
+    "os": "Ubuntu 18.04.1 LTS (Kernel 4.15.0-34)",
+    "gpuDriver": "Mesa 18.3.0 devel",
+    "specs": "Intel Pentium N3540 / Intel HD Graphics",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

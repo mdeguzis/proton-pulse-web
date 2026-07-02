@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "104020",
+    "cpu": "i5-2400 CPU @ 3.10GHz",
+    "gpu": "GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "If game loses focus it tends to crash. Doesn't go really fullscreen hides behind Plasma bar. Sometimes crashes hitting ESC to go back to the menu.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "11967 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536715360,
+    "title": "Storm in a Teacup",
+    "source": "protondb"
+  }
+]

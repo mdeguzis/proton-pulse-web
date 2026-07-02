@@ -1,0 +1,24 @@
+[
+  {
+    "appId": "287140",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-6926f56 2019-08-30 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Wont boot and crashes instantly. Looked at the crash log and it's a D3D11 error. Tried PROTON_USE_WINED3D and PROTON_USE_WINED3D, Did not fix the issue. ",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567375673,
+    "title": "Selfie : Sisters of the Amniotic Lens",
+    "tweaks": {
+      "disableD3d10": true,
+      "disableD3d11": true,
+      "useWineD3d11": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

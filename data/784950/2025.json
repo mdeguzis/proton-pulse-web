@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "784950",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.1-arch1-1",
+    "notes": "Works fine, a little slow on the loading and the UI scaling isn't great but it runs with no issues",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1739675322,
+    "title": "SUPREMACY: WORLD WAR 3",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "446000",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Works great out of the box.  Experienced one crash is about 10 hours.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545763659,
+    "title": "Stellar Monarch",
+    "source": "protondb"
+  }
+]

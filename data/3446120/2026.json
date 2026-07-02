@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3446120",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 2048SP (radeonsi, polaris10, ACO, DRM 3.64, 7.0.0-7-generic)",
+    "gpuDriver": "4.6 Mesa 26.0.1-2ubuntu1",
+    "kernel": "7.0.0-7-generic",
+    "notes": "\u57fa\u672c\u6e38\u73a9\u65e0\u4efb\u4f55\u95ee\u9898\uff0c\u4f46op\u65e0\u6cd5\u6b63\u5e38\u64ad\u653e\uff0ced\u6b63\u5e38\u64ad\u653e\uff0c\u6682\u65f6\u4e0d\u77e5\u9053\u5982\u4f55\u89e3\u51b3op\u64ad\u653e\u7684\u95ee\u9898",
+    "os": "Ubuntu Resolute Raccoon (development branch)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1774358296,
+    "title": "Kira\u2606Kano",
+    "source": "protondb"
+  }
+]

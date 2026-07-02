@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "831660",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.0-kali8-amd64",
+    "notes": "\u4f1a\u635f\u8017\u8f83\u9ad8cpu\u8d44\u6e90",
+    "os": "Kali GNU/Linux Rolling",
+    "protonVersion": "6.3-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1624500271,
+    "title": "Monobeno-HAPPY END- Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "831660",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.0-kali8-amd64",
+    "notes": "",
+    "os": "Kali GNU/Linux Rolling",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1624874004,
+    "title": "Monobeno-HAPPY END- Deluxe",
+    "source": "protondb"
+  }
+]

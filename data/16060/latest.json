@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "16060",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Crashes at startup",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1554022987,
+    "title": "Samantha Swift and the Golden Touch",
+    "source": "protondb"
+  }
+]

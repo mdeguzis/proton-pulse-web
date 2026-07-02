@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1830620",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.1, DRM 3.44, 5.17.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.0.2",
+    "kernel": "5.17.5-arch1-1",
+    "notes": "Same with Proton Experimental and GE-Proton7-15.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1657103272,
+    "title": "",
+    "source": "protondb"
+  }
+]

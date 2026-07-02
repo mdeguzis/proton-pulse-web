@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "847360",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.3-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555158035,
+    "title": "Super Lucky's Tale",
+    "source": "protondb"
+  },
+  {
+    "appId": "847360",
+    "cpu": "Intel Xeon           X3470  @ 2.93GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-1-ck-nehalem",
+    "notes": "xbox controller is stuttering",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565943336,
+    "title": "Super Lucky's Tale",
+    "source": "protondb"
+  }
+]

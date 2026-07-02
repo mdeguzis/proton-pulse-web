@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "417430",
+    "title": "Moto Racer 4",
+    "timestamp": 1535678249,
+    "rating": "Silver",
+    "notes": "Performance is good (60FPS on High Settings), Mild sound glitches in the main menu (pops and crackling), but otherwise fine in game. Multiplayer untested.  ",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "417430",
+    "cpu": "Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz",
+    "gpu": "NVIDIA Corporation GeForce GT 630/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "message: DX11 el nivel de funci\u00f3n 10.0 es necesario para arrancar el motor",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "5944 Mb",
+    "rating": "Borked",
+    "timestamp": 1537492797,
+    "title": "Moto Racer  4",
+    "source": "protondb"
+  },
+  {
+    "appId": "417430",
+    "title": "Moto Racer 4",
+    "timestamp": 1535663849,
+    "rating": "Silver",
+    "notes": "Performance is good (60FPS on High Settings), Mild sound glitches in the main menu (pops and crackling), but otherwise fine in game. Multiplayer untested.  ",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

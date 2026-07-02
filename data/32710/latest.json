@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "32710",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-1-MANJARO",
+    "notes": "Appears to run pretty well, but be aware that alt-tabbing will cause the game to continue running but no longer display anything. Haven't been able to figure out a way around this. As long as you don't do that, though? Seems fine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1562872650,
+    "title": "Armored Fist 3",
+    "source": "protondb"
+  }
+]

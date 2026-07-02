@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "340580",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Game works perfectly windowed or maximized window, but in fullscreen the graphics did not scale.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1546062469,
+    "title": "Armed with Wings: Rearmed",
+    "source": "protondb"
+  }
+]

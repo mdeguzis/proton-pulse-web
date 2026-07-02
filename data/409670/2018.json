@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "409670",
+    "title": "Pink Hour",
+    "timestamp": 1536268070,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Arch linux 64-bit",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "1600x/rx480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "409670",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Sometimes has sound distortions, otherwise it's fine",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541268512,
+    "title": "Pink Hour",
+    "source": "protondb"
+  },
+  {
+    "appId": "409670",
+    "cpu": "Intel Core i7-4700MQ @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GT 740M",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-96.current",
+    "notes": "Runs fine, but the music is a bit distorted/desynced",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541450965,
+    "title": "Pink Hour",
+    "source": "protondb"
+  },
+  {
+    "appId": "409670",
+    "title": "Pink Hour",
+    "timestamp": 1536253670,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Arch linux 64-bit",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "1600x/rx480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

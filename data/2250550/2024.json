@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2250550",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 16.0.6, DRM 3.56, 6.7.2-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 23.3.4-arch1.2",
+    "kernel": "6.7.2-2-cachyos",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1706699134,
+    "title": "Tornado: Research and Rescue",
+    "source": "protondb"
+  }
+]

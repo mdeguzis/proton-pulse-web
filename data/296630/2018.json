@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "296630",
+    "title": "Kraven Manor",
+    "timestamp": 1535902054,
+    "rating": "Borked",
+    "notes": "Reason Unknown",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "296630",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Does not launch",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5",
+    "rating": "Borked",
+    "timestamp": "1536364800",
+    "title": "Kraven Manor",
+    "source": "protondb"
+  },
+  {
+    "appId": "296630",
+    "title": "Kraven Manor",
+    "timestamp": 1535887654,
+    "rating": "Borked",
+    "notes": "Reason Unknown",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "559620",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.10-1-default",
+    "notes": "resolution not adjustable. Men\u00fc to configure Mouse crashes the game. Videos don't play (only sound). Sound works, but no music.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551638412,
+    "title": "Outlaws + A Handful of Missions",
+    "source": "protondb"
+  },
+  {
+    "appId": "559620",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "No cutscene (Blackscreen), no music. Configuring mouse/joystick crashes the game.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1562833261,
+    "title": "Outlaws + A Handful of Missions",
+    "source": "protondb"
+  }
+]

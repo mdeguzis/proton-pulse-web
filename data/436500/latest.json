@@ -1,0 +1,83 @@
+[
+  {
+    "appId": "436500",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-13-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548965175,
+    "title": "Diaries of a Spaceport Janitor",
+    "source": "protondb"
+  },
+  {
+    "appId": "436500",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "I get a message box saying the game crashed",
+    "os": "Ubuntu 19.04 (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1559149029,
+    "title": "Diaries of a Spaceport Janitor",
+    "source": "protondb"
+  },
+  {
+    "appId": "436500",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.6-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559767509,
+    "title": "Diaries of a Spaceport Janitor",
+    "source": "protondb"
+  },
+  {
+    "appId": "436500",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "I though it was borked but I got it to work with \"PROTON_USE_WINED3D11=1 %command%\" in the launch option, anyway my controller doesn't work, and I can't get it to rebind my key to azerty keyboard, and I have FPS drop when I move the camera too much",
+    "os": "Ubuntu 19.04 (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1560290422,
+    "title": "Diaries of a Spaceport Janitor",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "436500",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.1-arch1-1-ARCH",
+    "notes": "I noticed some texture z-fighting but due to the lo-fi graphics of the game I can't tell if it's a bug or just part of the aesthetic. Also game-pad doesn't work.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564512487,
+    "title": "Diaries of a Spaceport Janitor",
+    "source": "protondb"
+  }
+]

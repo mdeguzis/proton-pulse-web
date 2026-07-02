@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "1070910",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-49-generic",
+    "notes": "Crashes at checking.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1556744054,
+    "title": "Are you ready for Valve Index?",
+    "source": "protondb"
+  },
+  {
+    "appId": "1070910",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Note: while the store page does provide the meager courtesy of informing linux users that the Valve Index VR hardware entirely supports linux (good luck believing that), they do point out that this utility (to tell prospective buysers of the $1,000 rig who use Linux) that this fancy utility does not support Linux. And they are right. ",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1558501243,
+    "title": "Are you ready for Valve Index?",
+    "source": "protondb"
+  },
+  {
+    "appId": "1070910",
+    "cpu": "Intel Xeon E5-1650 v2 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.57-gentoo",
+    "notes": "No workarounds needed, but it reports that I am running Windows 7 and that I have USB 2.0. I have USB 3.0, but Wine's detection is not working here. Windows 7 is the Windows version that Proton targets. However, it unconditionally says that my system might have problems because of these things. I am rating it gold because of that.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "64 GB",
+    "rating": "Gold",
+    "timestamp": 1566876902,
+    "title": "Are you ready for Valve Index?",
+    "source": "protondb"
+  }
+]

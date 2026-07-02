@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1010270",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 515.43.04",
+    "kernel": "5.17.7-arch1-1",
+    "notes": "fredaikis anti-cheat prevents game from loading",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1653489492,
+    "title": "",
+    "source": "protondb"
+  }
+]

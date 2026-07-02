@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "359510",
+    "cpu": "Intel Core i7-7600U @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.8",
+    "kernel": "5.5.5-200.fc31.x86_64",
+    "notes": "It seems to \"just work\" and work very well.",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1585864726,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "359510",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 635M",
+    "gpuDriver": "NVIDIA 390.132",
+    "kernel": "5.3.0-7642-generic",
+    "notes": "I have only played the demo version though, but I was able to finish the demo perfectly, without any issues.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1588187455,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "359510",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.0-devel - padoka PPA",
+    "kernel": "4.19.9-041909-generic",
+    "notes": "Completed. Everything just works.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1593934834,
+    "title": "",
+    "source": "protondb"
+  }
+]

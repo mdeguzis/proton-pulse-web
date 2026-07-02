@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "889770",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Screen turns black sometimes, after disable Steam Overlay this Problem didn't happen again. Text is readable, but have some rectangles at line start.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1558263411,
+    "title": "UnHolY DisAsTeR",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "23300",
+    "title": "Yosumin!",
+    "timestamp": 1535784183,
+    "rating": "Borked",
+    "notes": "Text is replaced by colored boxes",
+    "os": "openSUSE Tumbleweed 64-bit (Kernel 4.18.5-1-default)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 3550 / RX580 4GB",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "23300",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Has text boxes over (almost) all text. The actual game works fine, but it's pretty hard navigating to anything playable. :-\\",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1543748718,
+    "title": "Yosumin!\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "23300",
+    "title": "Yosumin!",
+    "timestamp": 1535769783,
+    "rating": "Borked",
+    "notes": "Text is replaced by colored boxes",
+    "os": "openSUSE Tumbleweed 64-bit (Kernel 4.18.5-1-default)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 3550 / RX580 4GB",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

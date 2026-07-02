@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "465070",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.10-050010-lowlatency",
+    "notes": "With Proton 4.2-3 there is no video unless you use launch option \"PROTON_USE_WINED3D11=1 %command%\". But then the game has much worse performance. Forcing older Proton 3.16-9 the game is flawless out of the box and works without any launch options (it does not even have the music stops playing after resume problem as mentioned previously).",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556560011,
+    "title": "TRIZEAL Remix",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "465070",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel",
+    "kernel": "5.2.8-050208-lowlatency",
+    "notes": "Game works perfectly with \"PROTON_USE_D9VK=1 %command%\". Without D9VK the re is no video, just a black screen.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1566134369,
+    "title": "TRIZEAL Remix",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

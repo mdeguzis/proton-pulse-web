@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "575340",
+    "cpu": "Intel Core i3-3240 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.13-041813-generic",
+    "notes": "Game does not start through Steam Play. There is audio feedback but the screen is black. Seems to currently only be playable on Windows.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542509235,
+    "title": "Chessaria: The Tactical Adventure (Chess)",
+    "source": "protondb"
+  }
+]

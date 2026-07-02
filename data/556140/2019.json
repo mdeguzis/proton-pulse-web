@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "556140",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "ATI Technologies Inc. AMD Radeon",
+    "gpuDriver": "4.6.13572 Compatibility Profile Context",
+    "kernel": "5.3.0-rc8-mainline",
+    "notes": "This needs LAV filters installed. The LAV filters installers doesn't work in proton.\nYou need to download K-lite codec pack 1385 basic.\nInstall by   WINEPREFIX=~/.local/share/Steam/steamapps/compatdata/556140/pfx wine K-Lite_Codec_Pack_1385_Basic.exe\nThen go to LAV splitter settings and enable for every codec and option.\nThen sit back and enjoy preferably in 4k 60fps mode.\nOr go to the planetarium at The National Space Centre in Leicester and watch it there. Both great experiences.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1568925494,
+    "title": "We Are Stars",
+    "source": "protondb"
+  }
+]

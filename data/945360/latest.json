@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "945360",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.2-1-default",
+    "notes": "No Problems",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548700110,
+    "title": "Among Us",
+    "source": "protondb"
+  },
+  {
+    "appId": "945360",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon Vega 8",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Perfect.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "10 GB",
+    "rating": "Platinum",
+    "timestamp": 1562779020,
+    "title": "Among Us",
+    "source": "protondb"
+  },
+  {
+    "appId": "945360",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Runs perfectly, no problems running.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.11-4",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1569024199,
+    "title": "Among Us",
+    "source": "protondb"
+  }
+]

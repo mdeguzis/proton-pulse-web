@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "481600",
+    "cpu": "AMD Ryzen Threadripper 2920X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.9-200.fc34.x86_64",
+    "notes": "The game plays well, didn't have problems.",
+    "os": "Fedora release 34 (Thirty Four)",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1643396148,
+    "title": "",
+    "source": "protondb"
+  }
+]

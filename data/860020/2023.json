@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "860020",
+    "cpu": "AMD FX-8370E Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "6.2.0-34-generic",
+    "notes": "worked great out of the box",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1702666724,
+    "title": "",
+    "source": "protondb"
+  }
+]

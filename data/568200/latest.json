@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "568200",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.0.0-devel (git-8959364 2019-12-16 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-37-generic",
+    "notes": "Se ejecuta perfecto, sin m\u00e1s que decir.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-10",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1576560241,
+    "title": "Duo",
+    "source": "protondb"
+  }
+]

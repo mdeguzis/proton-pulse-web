@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "25850",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.12-300.fc30.x86_64",
+    "notes": "Runs perfectly out of the box. Only issue I noticed was that manipulating the camera by mouse is way too sensitive but that might be a \"feature\" of the game.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562154275,
+    "title": "Elven Legacy",
+    "source": "protondb"
+  }
+]

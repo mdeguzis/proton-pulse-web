@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2796340",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5600 XT (navi10, LLVM 16.0.6, DRM 3.54, 6.6.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.1-arch1-1",
+    "notes": "The game works out of the box!",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "24 GB",
+    "rating": "platinum",
+    "timestamp": 1721616360,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2796340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works great on Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1727316404,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2796340",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "gpuDriver": "4.6",
+    "kernel": "6.8.0-41-generic",
+    "notes": "Works fine out of the box",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1731881883,
+    "title": "",
+    "source": "protondb"
+  }
+]

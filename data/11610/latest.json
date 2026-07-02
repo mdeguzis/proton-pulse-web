@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "11610",
+    "cpu": "Intel Core i3-2100 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Simply launching it has an issue. I dont believe Dragon Nest launcher detects steam through proton, as a message pops up on launch.\n\"This Application Needs To Be Launched From Steam. Please Try To Launch Again From Steam.\"",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546533079,
+    "title": "Dragon Nest",
+    "source": "protondb"
+  },
+  {
+    "appId": "11610",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-4a131a1330)",
+    "kernel": "4.20.1-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547949000,
+    "title": "Dragon Nest",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

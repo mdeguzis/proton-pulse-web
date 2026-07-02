@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "914160",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.19.79",
+    "notes": "The game servers have shut down, but this is no fault of Proton and it seems to be working fine otherwise.",
+    "os": "NixOS 19.09.794.28d2548a03f (Loris)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1572031452,
+    "title": "Zup! Arena",
+    "source": "protondb"
+  }
+]

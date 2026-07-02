@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "306290",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Game runs platinium with Proton 3.7-8, but has missing textures with Proton 4.2",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "protonVersionManual": "4.2",
+    "ram": "64 GB",
+    "rating": "Gold",
+    "timestamp": 1555899902,
+    "title": "7,62 Hard Life",
+    "source": "protondb"
+  },
+  {
+    "appId": "306290",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "ok but missing textures, eg shows black floor.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1563731056,
+    "title": "7,62 Hard Life",
+    "source": "protondb"
+  }
+]

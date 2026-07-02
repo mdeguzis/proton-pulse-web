@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "425410",
+    "cpu": "Intel Core i7-5500U @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "DIdn't test the map maker or legacy mode but no issue in the main game I could find",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1547466977,
+    "title": "Road to Ballhalla",
+    "source": "protondb"
+  },
+  {
+    "appId": "425410",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.22.05",
+    "kernel": "4.20.7-arch1-1-ARCH",
+    "notes": "Didn't work in main mode, but worked in legacy mode. Performance is ok.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1550348847,
+    "title": "Road to Ballhalla",
+    "source": "protondb"
+  },
+  {
+    "appId": "425410",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-64-generic",
+    "notes": "Didn't try legacy or game editor, but the basic game works perfect out of the box, no tweaks, no flaws.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1570397912,
+    "title": "Road to Ballhalla",
+    "source": "protondb"
+  }
+]

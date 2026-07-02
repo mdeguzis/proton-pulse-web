@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1013650",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Played to completion without any tweaks. (very short game)  Used a wired 360 controller also without any configuring.  The only thing that didn't seem to work was grabbing save data from the cloud.  I played it just on my laptop so it wasn't an issue but I received an error message about it every time I launched the game.  ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561764318,
+    "title": "Tiny Dangerous Dungeons",
+    "source": "protondb"
+  }
+]

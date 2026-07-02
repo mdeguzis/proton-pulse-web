@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "492130",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "I set \"PROTON_LOG=1 PROTON_DUMP_DEBUG_COMMANDS=1 %command%\" as launch options and started the game from the script /tmp/proton_<user>/run without modifications.\nRelevant parameters taken directly from the script are:\nWINEDLLOVERRIDES=\"d3d11=n;d3d10=n;d3d10core=n;d3d10_1=n;dxgi=n\"\nWINEESYNC=\"1\"\nThe game slows down a bit when enemies hit you, but I was able to complete it with only one crash.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542151122,
+    "title": "Bye-Bye, Wacky Planet",
+    "source": "protondb"
+  }
+]

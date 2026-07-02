@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1114610",
+    "cpu": "AMD FX-8370 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Worked flawlessly from a normal installation, no tweaks needed.  Steam controller performed great by default. Gameplay was smooth at default graphic settings.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567568504,
+    "title": "Hover Tank Arena",
+    "source": "protondb"
+  }
+]

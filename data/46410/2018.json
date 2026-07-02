@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "46410",
+    "title": "Avencast",
+    "timestamp": 1535403614,
+    "rating": "Bronze",
+    "notes": "Can't play cutscenes encoded in wmv format",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-2620m/intel sandybridge mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "46410",
+    "cpu": "Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz",
+    "gpu": "NVIDIA Corporation GeForce 940M/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.15.0-33-generic",
+    "notes": "video not playing",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "7404 Mb",
+    "rating": "Silver",
+    "timestamp": 1537228573,
+    "title": "Avencast: Rise of the Mage",
+    "source": "protondb"
+  },
+  {
+    "appId": "46410",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Actual gameplay is perfect, but no movies will play (logo movies, and intro movie)",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1542089491,
+    "title": "Avencast: Rise of the Mage",
+    "source": "protondb"
+  },
+  {
+    "appId": "46410",
+    "title": "Avencast",
+    "timestamp": 1535389214,
+    "rating": "Bronze",
+    "notes": "Can't play cutscenes encoded in wmv format",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-2620m/intel sandybridge mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

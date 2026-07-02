@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "362890",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-0905189a25)",
+    "kernel": "5.1.7-arch1-1-ARCH",
+    "notes": "Game works native on Linux. On Proton it worked already, but now it didn't anymore with WineD3D. I installed manually D9VK and it worked perfectly fine with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-6",
+    "protonVersionManual": "3.16-5",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1559987723,
+    "title": "Black Mesa",
+    "source": "protondb"
+  },
+  {
+    "appId": "362890",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Runs natively under Linux. But it kept crashing on me. Using mostly default settings.",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1561553671,
+    "title": "Black Mesa",
+    "source": "protondb"
+  }
+]

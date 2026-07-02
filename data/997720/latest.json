@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "997720",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game says \"Running\" and then quits. None of the tweaks worked. ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554513519,
+    "title": "Let's Learn Japanese! Hiragana",
+    "source": "protondb"
+  }
+]

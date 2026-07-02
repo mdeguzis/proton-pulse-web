@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "247350",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-108.current",
+    "notes": "Multiplayer works as exspected",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549807170,
+    "title": "Artemis Spaceship Bridge Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "247350",
+    "cpu": "Intel Core i7         950  @ 3.07GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.27_1",
+    "notes": "Ran as expected though alt+tabbing did cause it to crash once, I had the same issue once on Windows",
+    "os": "Void Linux",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1552343432,
+    "title": "Artemis Spaceship Bridge Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "247350",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556604190,
+    "title": "Artemis Spaceship Bridge Simulator",
+    "source": "protondb"
+  }
+]

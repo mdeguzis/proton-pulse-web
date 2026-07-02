@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "471330",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.11-arch2-1-ARCH",
+    "notes": "The game loads, the menus start rendering glitchy. There is no clearing on repaints, text overlay each other. When I managed to start a game, only greenish textures were visible with the same overlaying bug. Tried Esync, no change. Tried OpenGL, didn't even load then. ",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "20 GB",
+    "rating": "Borked",
+    "timestamp": 1551027621,
+    "title": "VERSUS SQUAD",
+    "source": "protondb"
+  },
+  {
+    "appId": "471330",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.3-1-MANJARO",
+    "notes": "Install, Run, Play. Works perfectly OOB.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1553801734,
+    "title": "VERSUS SQUAD",
+    "source": "protondb"
+  }
+]

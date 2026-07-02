@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1930350",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.9.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.1-arch1.1",
+    "kernel": "6.9.5-arch1-1",
+    "notes": "Runs flawlessly.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1719335804,
+    "title": "Fallen Worlds",
+    "source": "protondb"
+  }
+]

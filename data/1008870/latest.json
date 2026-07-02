@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1008870",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Huge Lags when player or enemies is attacking.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1562794746,
+    "title": "Excive A-1000",
+    "source": "protondb"
+  }
+]

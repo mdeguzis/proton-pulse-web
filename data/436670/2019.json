@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "436670",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon HD 7770",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "FMVs don't work, and the game softlocked for me at the end of the airship section at the beginning, where an FMV would play. If movie playback is disabled in the configuration program, then the performance is basically perfect.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-7",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1561391947,
+    "title": "The Legend of Heroes: Trails in the Sky the 3rd",
+    "source": "protondb"
+  }
+]

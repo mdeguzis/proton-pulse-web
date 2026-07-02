@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "391300",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "It takes some time to load the game while it displays black screen. After that it works fine, except I couldn't see ingame tutorial videos (got black rectangles where they are supposed to be)",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568740232,
+    "title": "Double Cubes",
+    "source": "protondb"
+  }
+]

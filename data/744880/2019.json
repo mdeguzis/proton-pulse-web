@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "744880",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-19-generic",
+    "notes": "Won't start",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561541039,
+    "title": "Monkeys Ahoy",
+    "source": "protondb"
+  },
+  {
+    "appId": "744880",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-19-generic",
+    "notes": "Works perfectly with proton 3.16-9",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561543071,
+    "title": "Monkeys Ahoy",
+    "source": "protondb"
+  }
+]

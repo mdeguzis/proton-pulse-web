@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "237970",
+    "title": "Memento Mori 2",
+    "timestamp": 1535881480,
+    "rating": "Borked",
+    "notes": "Crashes on startup CPAL3D could not initialiase windows media playback ...please install game again. I did... doesnt work",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "237970",
+    "title": "Memento Mori 2",
+    "timestamp": 1535867080,
+    "rating": "Borked",
+    "notes": "Crashes on startup CPAL3D could not initialiase windows media playback ...please install game again. I did... doesnt work",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

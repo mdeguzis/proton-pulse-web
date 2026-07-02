@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "508980",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 390.67",
+    "kernel": "4.15.0-29deepin-generic",
+    "notes": "Runs perfectly in every mode, after some config edits",
+    "os": "Deepin 15.9.1",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1549802864,
+    "title": "Crashday Redline Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "587450",
+    "cpu": "i7-8700 CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.16.7",
+    "notes": "Loads OK, but when selecting new you don't see the dino models and cannot procced any further.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15943 Mb",
+    "rating": "Borked",
+    "timestamp": 1537073475,
+    "title": "Saurian",
+    "source": "protondb"
+  }
+]

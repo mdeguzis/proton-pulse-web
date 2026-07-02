@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "94000",
+    "cpu": "Intel Core i7         950  @ 3.07GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.27_1",
+    "notes": "Ran at crazy high FPS, wouldn't run in windowed mode at all",
+    "os": "Void Linux",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1552343733,
+    "title": "Dinner Date",
+    "source": "protondb"
+  },
+  {
+    "appId": "94000",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Crashes after selecting a profile.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556472961,
+    "title": "Dinner Date",
+    "source": "protondb"
+  }
+]

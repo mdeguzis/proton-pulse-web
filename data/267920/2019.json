@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "267920",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Gameplay works just fine and feels great, No Music, Mission Briefings have no Voice Acting, Intro Video is Skipped. Soundeffects and Voices during Gameplay are fine.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1546547913,
+    "title": "Gun Metal",
+    "source": "protondb"
+  },
+  {
+    "appId": "267920",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "As before, no music is playing during the missions or on the menu's. \n\nOther than that, gameplay works just fine. ",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1555143039,
+    "title": "Gun Metal",
+    "source": "protondb"
+  },
+  {
+    "appId": "267920",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "No music, but working fine.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1558846431,
+    "title": "Gun Metal",
+    "source": "protondb"
+  }
+]

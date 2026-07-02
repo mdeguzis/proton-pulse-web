@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "457550",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "you have to create an account first. I was able to watch a movie in the public cinema room and walk around a bit in the lobby. looks like it likes to crash when creating an own room though. not yet very usable but better than borked.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551791402,
+    "title": "Bigscreen Beta",
+    "source": "protondb"
+  },
+  {
+    "appId": "457550",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.88",
+    "kernel": "5.2.0-2-amd64",
+    "notes": "Launches, but just black. Have to force kill to get it to close. ",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1567285078,
+    "title": "Bigscreen Beta",
+    "source": "protondb"
+  }
+]

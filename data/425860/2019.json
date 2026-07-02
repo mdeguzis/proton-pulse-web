@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "425860",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Runs out of the box. 60 FPS capped.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1557593443,
+    "title": "Vector Assault",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "611260",
+    "cpu": "Intel Core i5-6600T @ 2.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.7-arch1-1-ARCH",
+    "notes": "Game installs and runs fine, there are just some wonky reflections on the player. Tested the tutorial and Gamemode Mad Pong.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560017330,
+    "title": "MAD MACHINES",
+    "source": "protondb"
+  }
+]

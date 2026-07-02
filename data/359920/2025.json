@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "359920",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 19.1.7, DRM 3.61, 6.14.9-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.1.1-arch1.2",
+    "kernel": "6.14.9-zen1-1-zen",
+    "notes": "Game is playable, after some tweaks.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1748808841,
+    "title": "Highlands",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1295270",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 550.135",
+    "kernel": "6.1.119-1-MANJARO",
+    "notes": "Works just fine. I haven't been able to use fullscreen in this game, but I think it's because it does not support it by design(old game).",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1735466715,
+    "title": "",
+    "source": "protondb"
+  }
+]

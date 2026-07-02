@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "322970",
+    "title": "Subject 13",
+    "timestamp": 1536190294,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Ubuntu Mate 16.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4690 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "322970",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "os": "Linux Mint 19 Tara (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541958969,
+    "title": "Subject 13",
+    "source": "protondb"
+  },
+  {
+    "appId": "322970",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Played 2 chapters, hence 50% of the game without an issue",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542401698,
+    "title": "Subject 13",
+    "source": "protondb"
+  },
+  {
+    "appId": "322970",
+    "title": "Subject 13",
+    "timestamp": 1536175894,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Ubuntu Mate 16.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4690 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

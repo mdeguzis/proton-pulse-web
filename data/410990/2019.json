@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "410990",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-42-generic",
+    "notes": "The game lacks the ability to change the resolution, so to play the game you have to set your computers resolution to 800x600.  This is also an issue on windows and is fixed by forcing a resoltuion of 800x600 in the compatibility settings.  The game could also be played using a virtual desktop, but it appears that virtual desktops only work in regular wine and not proton.  Once the desktop resolution is changed the game plays perfectly fine when using proton.  ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559768348,
+    "title": "Master of Orion 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "410990",
+    "cpu": "AMD Ryzen Threadripper 2950X 16-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Generally plays well. The only issue is that this game only works in 800x600. Game insists to only play in full screen, and in 800x600, but on bigger resolutions, it does some weird rescaling, making part of the screen not accessible. The best option is to change your screen resolution in your desktop environment to 800x600 and then launch the game. It works then PERFECTLY. The resolution issues are also present in the Windows versions, and similarly there is no in game options to change resolution or fullscreen mode, so I would call it close to Platinum.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-2",
+    "ram": "129 GB",
+    "rating": "Gold",
+    "timestamp": 1566528282,
+    "title": "Master of Orion 3",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "appId": "257730",
+    "cpu": "i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "notes": "will not start",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "default",
+    "rating": "Borked",
+    "timestamp": "1536364800",
+    "title": "Infinity Wars: Animated Trading Card Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "257730",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Loads the game screen, and when trying to create and account to log in and play, it won't accept keyboard inputs to proceed, weird...",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7874 Mb",
+    "rating": "Borked",
+    "timestamp": 1537877051,
+    "title": "Infinity Wars: Animated Trading Card Game",
+    "source": "protondb"
+  }
+]

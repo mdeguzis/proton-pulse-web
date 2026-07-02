@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1386890",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.8.0-63-generic",
+    "notes": "Menu was cut off at first and audio crackling occurred, but that went away after a relaunch. Game ran completely smooth after that.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1627435314,
+    "title": "Hyper Dash",
+    "source": "protondb"
+  },
+  {
+    "appId": "1386890",
+    "cpu": "Intel Core i7-10700KF @ 3.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "Dash your way into a room of screaming 10yr olds and shoot them in the face.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1635252373,
+    "title": "Hyper Dash",
+    "source": "protondb"
+  },
+  {
+    "appId": "1386890",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.2-1-rt19-MANJARO",
+    "notes": "Runs good on the Valve Index. FPS not as high as Windows thow.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1639180208,
+    "title": "Hyper Dash",
+    "source": "protondb"
+  }
+]

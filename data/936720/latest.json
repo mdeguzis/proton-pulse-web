@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "936720",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.59-1-MANJARO",
+    "notes": "Absolutely no tweaks or configuration needed, ran full-screen at high settings with performance seemingly equivalent to Windows (by sight and feel, not measured). No graphical, audio or input errors encountered. Note: Did NOT test the VR mode, only tested the regular mode with keyboard and mouse.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563804657,
+    "title": "Wrench",
+    "source": "protondb"
+  }
+]

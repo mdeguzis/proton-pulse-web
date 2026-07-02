@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3086580",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-ba19.fc43.x86_64",
+    "notes": "Runs well with lite issues",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "40 GB",
+    "rating": "silver",
+    "timestamp": 1764846119,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3086580",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "It runs with a black screen for a while, then says it can't start and shuts down.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1765514405,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3086580",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.1.138-1-MANJARO",
+    "notes": "Works fine on desktop",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1765515326,
+    "title": "",
+    "source": "protondb"
+  }
+]

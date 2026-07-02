@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2524850",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.16.4-2-cachyos",
+    "notes": "initially didn't launch so I applied the same stuff I applied to Rabbit & Steel and then it worked perfectly",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771792740,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2524850",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, ACO, DRM 3.64, 6.19.2-200.nobara.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.0",
+    "kernel": "6.19.2-200.nobara.fc43.x86_64",
+    "notes": "Works out of the box!",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772998068,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2524850",
+    "cpu": "12th Gen Intel Core i7-12700",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.19.8-200.fc43.x86_64",
+    "notes": "dxgi_vk_swap_chain_recreate_swapchain_in_present_task: Failed to create swapchain\nTried to fix, but did not succeed.",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1774113722,
+    "title": "",
+    "source": "protondb"
+  }
+]

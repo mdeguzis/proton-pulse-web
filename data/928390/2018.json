@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "928390",
+    "cpu": "Intel Pentium G4620 @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Runs perfectly with the nvidia 396.54.09 drivers. I had tried before with the 415.x and it didn't start (but I didn't try any of the Proton/Wine environment variables).\n\nI have the slight feeling sync is not absolutely perfect (compared to using retroarch) and that there is a very slight input lag but it's absolutely possible it is the way the remake is done -- I would have to compare with an actual Windows PC. Perfectly playable.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543567722,
+    "title": "R-Type Dimensions EX",
+    "source": "protondb"
+  },
+  {
+    "appId": "928390",
+    "cpu": "Intel Core i5-8350U @ 1.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "2D mode works perfectly but not all sprites render in 3D mode (not enough for 3D mode to be playable).",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1543982618,
+    "title": "R-Type Dimensions EX",
+    "source": "protondb"
+  },
+  {
+    "appId": "928390",
+    "cpu": "Intel Core i3-4170 @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Nvidia 415.23 is perfect.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1544742179,
+    "title": "R-Type Dimensions EX",
+    "source": "protondb"
+  }
+]

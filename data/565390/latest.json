@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "565390",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Some small lags, but run without any tweaks",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1552642336,
+    "title": "Hyperun",
+    "source": "protondb"
+  }
+]

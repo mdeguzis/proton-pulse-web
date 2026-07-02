@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "994020",
+    "cpu": "AMD Ryzen 7 2700U with Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.1.0-mainline",
+    "notes": "Everything works properly!",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "7 GB",
+    "rating": "Gold",
+    "timestamp": 1557558685,
+    "title": "Tempest of the Heavens and Earth",
+    "source": "protondb"
+  },
+  {
+    "appId": "994020",
+    "cpu": "AMD Ryzen 7 2700U with Radeon Vega Mobile Gfx",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.1.0-mainline",
+    "notes": "Everything works properly!",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "7 GB",
+    "rating": "Gold",
+    "timestamp": 1557558906,
+    "title": "Tempest of the Heavens and Earth",
+    "source": "protondb"
+  }
+]

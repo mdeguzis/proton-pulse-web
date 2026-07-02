@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "443420",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Everything seems to work as it should.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7933 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539808594,
+    "title": "Artificial Defense",
+    "source": "protondb"
+  }
+]

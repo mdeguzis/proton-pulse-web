@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1301950",
+    "cpu": "12th Gen Intel Core i5-12400",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 550.107.02",
+    "kernel": "6.8.0-45-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.1 LTS (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1740426236,
+    "title": "Time Loader",
+    "source": "protondb"
+  },
+  {
+    "appId": "1301950",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.7, DRM 3.61, 6.13.6-200.nobara.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.1",
+    "kernel": "6.13.6-200.nobara.fc41.x86_64",
+    "notes": "Great OOTB",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1748554167,
+    "title": "Time Loader",
+    "source": "protondb"
+  },
+  {
+    "appId": "1301950",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.5, DRM 3.61, 6.12.60-1-lts)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.12.60-1-lts",
+    "notes": "I've completed the game using Proton 10.0-4 (RC) without major problem (see notes below)",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1766578511,
+    "title": "Time Loader",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "appId": "240160",
+    "title": "Duke Nukem",
+    "timestamp": 1535093178,
+    "rating": "Borked",
+    "notes": "The 1991 game. DOSBox opens into command line mode, but it doesn't start the game.",
+    "os": "Ubuntu 18.04.1 (Kernel 4.17.18)",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "i5-4690K / R9 290X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "240160",
+    "title": "Duke Nukem",
+    "timestamp": 1535178951,
+    "rating": "Gold",
+    "notes": "To launch, use DosBox's Quick Launch under main menu to select executable",
+    "os": "Manjaro (4.18.3-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.51-1",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "240160",
+    "title": "Duke Nukem",
+    "timestamp": 1536479838,
+    "rating": "Gold",
+    "notes": "(Not available in store)\nTo get it to run you need to perform these steps:\n\n1, add this line in the launch option to the game in steam:\n-conf \"/FULL-PATH-TO-STEAMLIBRARY/steamapps/common/Duke Nukem 1/NUKEM1.conf\"\n\n2, open NUKEM1.conf in a text editor, and:\nreplace this \"Mount C: ..\"\nwith this \"mount c /FULL-PATH-TO-STEAMLIBRARY/steamapps/common/Duke Nukem 1\"\n\nafter that the game loads/runs perfectly",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (4.18.6-041806-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "i7-6700 / RX 480",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "240160",
+    "title": "Midas Gold Plus",
+    "timestamp": 1536676035,
+    "rating": "Platinum",
+    "notes": "Slight delay on mouse clicks.",
+    "os": "Archlinux 64-bit (Kernel 4.18.6)",
+    "gpuDriver": "NVIDIA 396.54-3",
+    "specs": "i5-760 / MSI GTX 650 2GB GDDR5",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "240160",
+    "title": "Duke Nukem",
+    "timestamp": 1535078778,
+    "rating": "Borked",
+    "notes": "The 1991 game. DOSBox opens into command line mode, but it doesn't start the game.",
+    "os": "Ubuntu 18.04.1 (Kernel 4.17.18)",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "i5-4690K / R9 290X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "240160",
+    "title": "Duke Nukem",
+    "timestamp": 1535164551,
+    "rating": "Gold",
+    "notes": "To launch, use DosBox's Quick Launch under main menu to select executable",
+    "os": "Manjaro (4.18.3-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.51-1",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "240160",
+    "title": "Duke Nukem",
+    "timestamp": 1536465438,
+    "rating": "Gold",
+    "notes": "(Not available in store)\nTo get it to run you need to perform these steps:\n\n1, add this line in the launch option to the game in steam:\n-conf \"/FULL-PATH-TO-STEAMLIBRARY/steamapps/common/Duke Nukem 1/NUKEM1.conf\"\n\n2, open NUKEM1.conf in a text editor, and:\nreplace this \"Mount C: ..\"\nwith this \"mount c /FULL-PATH-TO-STEAMLIBRARY/steamapps/common/Duke Nukem 1\"\n\nafter that the game loads/runs perfectly",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (4.18.6-041806-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "i7-6700 / RX 480",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "240160",
+    "title": "Midas Gold Plus",
+    "timestamp": 1536661635,
+    "rating": "Platinum",
+    "notes": "Slight delay on mouse clicks.",
+    "os": "Archlinux 64-bit (Kernel 4.18.6)",
+    "gpuDriver": "NVIDIA 396.54-3",
+    "specs": "i5-760 / MSI GTX 650 2GB GDDR5",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  }
+]

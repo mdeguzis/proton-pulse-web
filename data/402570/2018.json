@@ -1,0 +1,89 @@
+[
+  {
+    "appId": "402570",
+    "title": "Atlas Reactor",
+    "timestamp": 1535037006,
+    "rating": "Borked",
+    "notes": "Launcher complains about requiring Vista or higher",
+    "os": "Fedora 28 x86-64 (Kernel 4.17.9)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Pentium G3258@3.8GHz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "402570",
+    "title": "Atlas Reactor",
+    "timestamp": 1535286215,
+    "rating": "Borked",
+    "notes": "After running game asked for newest Vista version",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48    ",
+    "specs": "i7-7800X",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "402570",
+    "title": "Atlas Reactor",
+    "timestamp": 1535325310,
+    "rating": "Borked",
+    "notes": "Launcher works perfectly, but it refuses to launch the game because it \"requires at least Windows Vista to run\".",
+    "os": "Debian SId (Kernel 4.17.0-3)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-8350 / R9 380X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "402570",
+    "cpu": "i5-6400 CPU @ 2.70GHz",
+    "gpu": "GeForce GTX 750/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Runs good but with low fps and rare random crashes after some tweak: you need to find the file \"Library/GlyphLibrary.xml\" inside the game folder and change the 'winvista' field to 'winxp' (you can change every occurrence of 'winvista' actually) , then deny any changes to this file by revoking the write permission for all.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15026 Mb",
+    "rating": "Silver",
+    "timestamp": 1537012563,
+    "title": "Atlas Reactor",
+    "source": "protondb"
+  },
+  {
+    "appId": "402570",
+    "title": "Atlas Reactor",
+    "timestamp": 1535022606,
+    "rating": "Borked",
+    "notes": "Launcher complains about requiring Vista or higher",
+    "os": "Fedora 28 x86-64 (Kernel 4.17.9)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Pentium G3258@3.8GHz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "402570",
+    "title": "Atlas Reactor",
+    "timestamp": 1535271815,
+    "rating": "Borked",
+    "notes": "After running game asked for newest Vista version",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48    ",
+    "specs": "i7-7800X",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "402570",
+    "title": "Atlas Reactor",
+    "timestamp": 1535310910,
+    "rating": "Borked",
+    "notes": "Launcher works perfectly, but it refuses to launch the game because it \"requires at least Windows Vista to run\".",
+    "os": "Debian SId (Kernel 4.17.0-3)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-8350 / R9 380X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

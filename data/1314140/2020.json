@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1314140",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 455.28",
+    "kernel": "5.8.16-300.fc33.x86_64",
+    "notes": "Works with all its current bugs reported for Windows",
+    "os": "Fedora release 33 (Thirty Three)",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1604247614,
+    "title": "",
+    "source": "protondb"
+  }
+]

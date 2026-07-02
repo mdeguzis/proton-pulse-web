@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "693650",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.1-200.nobara.fc42.x86_64",
+    "notes": "Il gioco si avvia, ma la schermata resta bianca",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "%$s1 MB",
+    "rating": "borked",
+    "timestamp": 1760611233,
+    "title": "LOGistICAL: Italy",
+    "source": "protondb"
+  }
+]

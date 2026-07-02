@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "576430",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "ATI Technologies Inc. Radeon RX 570",
+    "gpuDriver": "4.6.14800 Compatibility Profile Context 21.50",
+    "kernel": "5.13.0-39-generic",
+    "notes": "Works out of box, no problems.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1649288318,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1557700",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX550/550 (POLARIS12, DRM 3.40.0, 5.11.0-22-generic, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.0-22-generic",
+    "notes": "Full motion video isn't displayed, hence game can't be properly played",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1626502856,
+    "title": "",
+    "source": "protondb"
+  }
+]

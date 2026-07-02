@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1099640",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.7, DRM 3.61, 6.13.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.1-arch1.2",
+    "kernel": "6.13.7-arch1-1",
+    "notes": "Worked perfect",
+    "os": "Archcraft",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1743447043,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1099640",
+    "cpu": "AMD Ryzen 5 3600XT 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 16.0.6, DRM 3.54, 6.6.10-chos1-chimeraos-2)",
+    "gpuDriver": "4.6 Mesa 23.3.5.chos1-1.1",
+    "kernel": "6.6.10-chos1-chimeraos-2",
+    "notes": "Was working great with the exception of audio that stutter a bit.",
+    "os": "ChimeraOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1756027489,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1099640",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.2 (git-22ded5f256)",
+    "kernel": "6.16.10-200.fc42.x86_64",
+    "notes": "Funcionou sem problemas no Fedora Silverblue 42",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1760574043,
+    "title": "",
+    "source": "protondb"
+  }
+]

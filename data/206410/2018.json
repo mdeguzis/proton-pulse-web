@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "206410",
+    "title": "Crazy Machines Elements",
+    "timestamp": 1534986255,
+    "rating": "Silver",
+    "notes": "The professor's face flickers on the main screen.  No problems with particles or flames.",
+    "os": "Xubuntu 17.10 (Kernel 4.13.0)",
+    "gpuDriver": "?",
+    "specs": "i5-3550S / Radeon HD 6870",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "206410",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 770",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works fairly well with Steam Play.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15991 Mb",
+    "rating": "Gold",
+    "timestamp": 1536792096,
+    "title": "Crazy Machines Elements",
+    "source": "protondb"
+  },
+  {
+    "appId": "206410",
+    "title": "Crazy Machines Elements",
+    "timestamp": 1534971855,
+    "rating": "Silver",
+    "notes": "The professor's face flickers on the main screen.  No problems with particles or flames.",
+    "os": "Xubuntu 17.10 (Kernel 4.13.0)",
+    "gpuDriver": "?",
+    "specs": "i5-3550S / Radeon HD 6870",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

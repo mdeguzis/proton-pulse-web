@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "221810",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Native version gave problems with sprites animations with me.\nWith proton it seems to work everything correctly. Xbox 360 controller works.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554400803,
+    "title": "The Cave",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "758480",
+    "cpu": "Intel Xeon E5-1620 0 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-45-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1549470650,
+    "title": "Ukrainian ball in search of gas",
+    "source": "protondb"
+  },
+  {
+    "appId": "758480",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.1.5-050105-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1568457255,
+    "title": "Ukrainian ball in search of gas",
+    "source": "protondb"
+  }
+]

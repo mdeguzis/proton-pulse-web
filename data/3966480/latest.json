@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3966480",
+    "cpu": "Intel Core i7-14700F",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "7.0.0-14-generic",
+    "notes": "Working right out of the box",
+    "os": "Ubuntu 26.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1778784099,
+    "title": "",
+    "source": "protondb"
+  }
+]

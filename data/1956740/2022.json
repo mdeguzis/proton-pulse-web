@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1956740",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 12.0.0, DRM 3.41, 5.13.0-30-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.0-rc3",
+    "kernel": "5.13.0-30-generic",
+    "notes": "Unplayable",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1651889879,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1956740",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6500 XT (navi24, LLVM 14.0.6, DRM 3.48, 6.0.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.1",
+    "kernel": "6.0.12-arch1-1",
+    "notes": "not working with proton experimental (haven't tried any aditional configuration)",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-5",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1671552177,
+    "title": "",
+    "source": "protondb"
+  }
+]

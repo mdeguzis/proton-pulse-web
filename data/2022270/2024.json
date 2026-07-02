@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2022270",
+    "cpu": "AMD Ryzen 5 4500 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD R9 280",
+    "gpuDriver": "4.5 Mesa 24.1.1 (git-6c377358a5)",
+    "kernel": "6.8.0-76060800daily20240311",
+    "notes": "",
+    "os": "Pop_os 22.04 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1719010399,
+    "title": "Bakso Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "2022270",
+    "cpu": "AMD Ryzen 5 4500 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD R9 280",
+    "gpuDriver": "4.5 Mesa 24.1.1 (git-6c377358a5)",
+    "kernel": "6.8.0-76060800daily20240311",
+    "notes": "",
+    "os": "Pop_os 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1719036857,
+    "title": "Bakso Simulator",
+    "source": "protondb"
+  }
+]

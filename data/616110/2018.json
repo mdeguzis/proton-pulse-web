@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "616110",
+    "title": "SPACEPLAN",
+    "timestamp": 1536021187,
+    "rating": "Platinum",
+    "notes": "Runs perfectly.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "4790k / 980ti",
+    "protonVersion": "3.7-5 ()",
+    "source": "protondb"
+  },
+  {
+    "appId": "616110",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 980M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "Ran through the entire story.  No problems at all.",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541948554,
+    "title": "SPACEPLAN",
+    "source": "protondb"
+  },
+  {
+    "appId": "616110",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.7",
+    "kernel": "4.19.0-1-amd64",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1545697720,
+    "title": "SPACEPLAN",
+    "source": "protondb"
+  },
+  {
+    "appId": "616110",
+    "title": "SPACEPLAN",
+    "timestamp": 1536006787,
+    "rating": "Platinum",
+    "notes": "Runs perfectly.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "4790k / 980ti",
+    "protonVersion": "3.7-5 ()",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "429830",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-f9c9505009)",
+    "kernel": "4.20.5-arch1-1-ARCH",
+    "notes": "wine: Call from 0x7bc56451 to unimplemented function ADVAPI32.dll.EventWriteString, aborting",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1548705418,
+    "title": "Unseen Diplomacy",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "227560",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Crashed immediately after the loading screen",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552504940,
+    "title": "Scourge: Outbreak",
+    "source": "protondb"
+  },
+  {
+    "appId": "227560",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD VEGA20",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "5.1.0-0.rc2.git4.1.fc31.x86_64",
+    "os": "Fedora release 31 (Rawhide)",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1554115700,
+    "title": "Scourge: Outbreak",
+    "source": "protondb"
+  },
+  {
+    "appId": "227560",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Was able to launch the game, configure settings, and play through the first level. No issues.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571936627,
+    "title": "Scourge: Outbreak",
+    "source": "protondb"
+  }
+]

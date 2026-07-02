@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "4800",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "5.1.4-zen1-1-zen",
+    "notes": "Before the game opens, it gives a warning saying that I have 0 MB of video memory. The main menu has visual glitches that render it totally indecipherable. After using Protontricks to set \"videomemorysize=1024\", the main menu was fixed and I could play the game, but none of the cutscenes worked. Curiously, looking at the game's video folder shows that the various bik files are actually text files pointing to their ogv/oga counterparts.",
+    "os": "Antergos",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1558942579,
+    "title": "Heroes of Annihilated Empires",
+    "source": "protondb"
+  },
+  {
+    "appId": "4800",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GT 710",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.7-zen1-1-zen",
+    "notes": "Cutscenes are very important to understand the story, but none of them work (looks like it happens on Windows too). Other than that, the game works fine.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1571668166,
+    "title": "Heroes of Annihilated Empires",
+    "source": "protondb"
+  }
+]

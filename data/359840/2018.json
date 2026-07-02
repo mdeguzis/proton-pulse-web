@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "359840",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "severalHours",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.23.0, 4.15.0-36-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "60fps all the time, online co-op is working, gamepad is working.",
+    "os": "Ubuntu 18.04.1 LTS (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16039 MB",
+    "rating": "Platinum",
+    "timestamp": 1538527061,
+    "title": "Shift Happens",
+    "source": "protondb"
+  }
+]

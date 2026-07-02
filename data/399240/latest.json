@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "399240",
+    "cpu": "Intel Xeon E5-1650 0 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.0-2-MANJARO",
+    "notes": "In the options given when launching the game, only Leve Designer works, tested on Protons Experimental and Proton-GE 7-29",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1660110810,
+    "title": "",
+    "source": "protondb"
+  }
+]

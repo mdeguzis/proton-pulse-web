@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "264120",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Launcher works. Crashes when clicking \"Play\".",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15972 Mb",
+    "rating": "Borked",
+    "timestamp": 1537396662,
+    "title": "Victory: The Age of Racing",
+    "source": "protondb"
+  },
+  {
+    "appId": "264120",
+    "cpu": "Intel Core2 Quad    Q9400  @ 2.66GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Launcher starts but when you click \"Play\", it crashes.",
+    "os": "Ubuntu Gnome 16.04.5",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1542505652,
+    "title": "Victory: The Age of Racing",
+    "source": "protondb"
+  }
+]

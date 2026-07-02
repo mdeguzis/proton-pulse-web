@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2527500",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 770 (ADL-S GT1)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "6.5.10-x64v3-xanmod1",
+    "notes": "Working well and it would be fine for all linux user (not sure for Nvidia)",
+    "os": "KDE neon 5.27",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1698923202,
+    "title": "",
+    "source": "protondb"
+  }
+]

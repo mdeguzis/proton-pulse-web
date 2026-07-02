@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2599690",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.6, DRM 3.57, 6.9.7-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.2",
+    "kernel": "6.9.7-200.fc40.x86_64",
+    "notes": "Plays great out of the box",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1778600790,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2599690",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.5-2-cachyos",
+    "notes": "UE5 slop running without complications under Linux",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1778977707,
+    "title": "",
+    "source": "protondb"
+  }
+]

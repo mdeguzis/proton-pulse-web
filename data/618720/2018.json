@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "618720",
+    "title": "1bitHeart",
+    "timestamp": 1535426955,
+    "rating": "Platinum",
+    "notes": "works fine",
+    "os": "4.18.5-arch1-1-ARCH",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600/gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "618720",
+    "cpu": "i7-4770 CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-zen1-1-zen",
+    "notes": "No problems",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7916 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536822254,
+    "title": "1bitHeart",
+    "source": "protondb"
+  },
+  {
+    "appId": "618720",
+    "title": "1bitHeart",
+    "timestamp": 1535412555,
+    "rating": "Platinum",
+    "notes": "works fine",
+    "os": "4.18.5-arch1-1-ARCH",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600/gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

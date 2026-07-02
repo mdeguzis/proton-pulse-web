@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "343780",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with no tweaks.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558480296,
+    "title": "Cat Goes Fishing",
+    "source": "protondb"
+  },
+  {
+    "appId": "343780",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-58-generic",
+    "notes": "All other proton versions work perfectly -except- that fullscreen pushes the game off the screen. 4.11-3 works in fullscreen as well. I have witnessed zero Linux-specific bugs.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566978484,
+    "title": "Cat Goes Fishing",
+    "source": "protondb"
+  }
+]

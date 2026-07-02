@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "312980",
+    "title": "Graviteam Tactics: Mius-Front",
+    "timestamp": 1535120264,
+    "rating": "Borked",
+    "notes": "Initial menu, sounds, configuration, ok. The game crashes after a few minutes of starting the action. The message is \"001 Program initialization error\". It leaves a error dump in a zip file.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel  4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA GeForce GTX 750",
+    "specs": "i7-4790",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "312980",
+    "title": "The Uncertain: Episode 1 - The Last Quiet Day",
+    "timestamp": 1536482905,
+    "rating": "Borked",
+    "notes": "Start with the \"PROTON_USE_WINED3D11=1\" option. There is sound and the game doesn't crash, but no display. Only color changing screen",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "i5-M520 / GT 330M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "312980",
+    "cpu": "i7-5820K CPU @ 3.30GHz",
+    "gpu": "GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.10.0-38-generic",
+    "notes": "Crashes with \"001 program initialization error\"  after running for a minute or two.  But it seems to run fine if all sound is turned off.  \n  Options, 3rd page, \"Sound: Disabled\".  ",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7.6 Beta",
+    "ram": "32095 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536721719,
+    "title": "Graviteam Tactics: Mius-Front",
+    "source": "protondb"
+  },
+  {
+    "appId": "312980",
+    "title": "Graviteam Tactics: Mius-Front",
+    "timestamp": 1535105864,
+    "rating": "Borked",
+    "notes": "Initial menu, sounds, configuration, ok. The game crashes after a few minutes of starting the action. The message is \"001 Program initialization error\". It leaves a error dump in a zip file.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel  4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA GeForce GTX 750",
+    "specs": "i7-4790",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "312980",
+    "title": "The Uncertain: Episode 1 - The Last Quiet Day",
+    "timestamp": 1536468505,
+    "rating": "Borked",
+    "notes": "Start with the \"PROTON_USE_WINED3D11=1\" option. There is sound and the game doesn't crash, but no display. Only color changing screen",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "i5-M520 / GT 330M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

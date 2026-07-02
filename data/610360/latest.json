@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "610360",
+    "title": "Zup! Zero",
+    "timestamp": 1535808132,
+    "rating": "Gold",
+    "notes": "Fullscreen is fine, windowed is borderless and not resizeable",
+    "os": "Ubuntu 18.04 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "610360",
+    "cpu": "i7-6800K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.19-1-MANJARO",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "32136 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536616911,
+    "title": "Zup! Zero",
+    "source": "protondb"
+  },
+  {
+    "appId": "610360",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Didn't launch at all",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1545520603,
+    "title": "Zup! Zero",
+    "source": "protondb"
+  },
+  {
+    "appId": "610360",
+    "title": "Zup! Zero",
+    "timestamp": 1535793732,
+    "rating": "Gold",
+    "notes": "Fullscreen is fine, windowed is borderless and not resizeable",
+    "os": "Ubuntu 18.04 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

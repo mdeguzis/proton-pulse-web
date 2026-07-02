@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "919220",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.12-artix1-1",
+    "notes": "Crashes after Unity Logo appears (native and proton GE)",
+    "os": "Artix Linux (64\u00a0bits)",
+    "protonVersion": "6.3-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1631115104,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "919220",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.0-10-amd64",
+    "notes": "Native, stuck after the Unity's logo, then crashed.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "6.3-8",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1640902996,
+    "title": "",
+    "source": "protondb"
+  }
+]

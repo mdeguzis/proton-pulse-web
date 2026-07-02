@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "967490",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Main menu and creating a new scene works very well. Valve Index controller support is great. Loading scenes takes a while, go get a coffee. Loading scenes can lead to the application not responding. Exiting the application did only work forcefully.",
+    "os": "Unknown",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1566372581,
+    "title": "Microsoft Maquette",
+    "source": "protondb"
+  }
+]

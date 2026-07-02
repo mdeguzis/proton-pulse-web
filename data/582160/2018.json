@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "582160",
+    "title": "Assassin's Creed Origins",
+    "timestamp": 1535346230,
+    "rating": "Borked",
+    "notes": "uPlay login error (Ubisoft service is unavailable)",
+    "os": "Ubuntu 18.04.1 LTS (Kernel 4.15.0 x86_64)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3930K / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "582160",
+    "title": "Assassin's Creed Origins",
+    "timestamp": 1535331830,
+    "rating": "Borked",
+    "notes": "uPlay login error (Ubisoft service is unavailable)",
+    "os": "Ubuntu 18.04.1 LTS (Kernel 4.15.0 x86_64)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3930K / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

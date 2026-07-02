@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1102260",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Gameplay appears to work fine, but the game hangs on exit and has to be killed (SIGINT is enough).",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1563656322,
+    "title": "RANK RUNNER",
+    "source": "protondb"
+  }
+]

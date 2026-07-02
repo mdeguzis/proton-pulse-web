@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "15400",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-106.current",
+    "notes": "runs fine but in the game there are no sound effects, only in the title screen there is sound",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1548409087,
+    "title": "Harvest: Massive Encounter",
+    "source": "protondb"
+  },
+  {
+    "appId": "15400",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "notes": "It has a native version, yes, but it requires so much tinkering and tweaking and installation of other libraries that it might as well be considered to not be native at all, which is why I am submitting this report anyway.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1564069113,
+    "title": "Harvest: Massive Encounter",
+    "source": "protondb"
+  }
+]

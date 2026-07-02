@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "293600",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "keyboard/mouse and xbox 360 gamepad work",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "native",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541336920,
+    "title": "Arson and Plunder: Unleashed",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "541670",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-d6683e1 2019-06-27 disco-oibaf-ppa)",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Ran it just to see if it would work, and it seemed to. Last time I ran the game was on a Windows 8.1 machine with slower hardware, and was easily able to see a marked improvement in FPS, so I have high hopes that this will run well. Will report back later to update.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562291916,
+    "title": "Disney Infinity 3.0: Gold Edition",
+    "source": "protondb"
+  }
+]

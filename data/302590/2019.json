@@ -1,0 +1,123 @@
+[
+  {
+    "appId": "302590",
+    "cpu": "Intel Core i7         970  @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "Second review. Last time the characters was not visible. I tried all the recommended tweaks. \n\nNow it works perfectly, zero tweaks!  ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1548276143,
+    "title": "Of Guards And Thieves",
+    "source": "protondb"
+  },
+  {
+    "appId": "302590",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Everything appears to be working",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1549588414,
+    "title": "Of Guards And Thieves",
+    "source": "protondb"
+  },
+  {
+    "appId": "302590",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Desktop",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.20.5-200.fc29.x86_64",
+    "notes": "game starts, but fonts are only white rectangle. it's really painfull to starts the tutorial. \ninside the game, fonts and a lot of textures are missing, and after 1-2min I get a hard freeze. (tested twice, with my Ivy bridge Graphic cards, and my Radeon HD7950 both with mesa driver).\nAlso I tested proton 3.7.8 and 3.16.4 (and installing corefonts with winetricks but this has no effect).",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550958312,
+    "title": "Of Guards And Thieves",
+    "source": "protondb"
+  },
+  {
+    "appId": "302590",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "The game was working with previous version of Proton for me, but now it just crashes with an error as soon as I click on \"PLAY\".",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551208073,
+    "title": "Of Guards And Thieves",
+    "source": "protondb"
+  },
+  {
+    "appId": "302590",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game runs smooth and without graphical glitches, but characters are invisible. Put \"PROTON_USE_WINED3D11=1 %command%\" in launch options to fix",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1551704946,
+    "title": "Of Guards And Thieves",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "302590",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It had some graphical issues, but everything works perfectly when you use Wine D3d11 with the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552262339,
+    "title": "Of Guards And Thieves",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "302590",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-17-generic",
+    "notes": "With \"PROTON_USE_WINED3D11=1 %command%\" it works",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1555417907,
+    "title": "Of Guards And Thieves",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

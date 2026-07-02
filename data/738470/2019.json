@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "738470",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.8-200.fc29.x86_64",
+    "notes": "With Proton it crashes right after menu. Works perfectly with steam-dos 0.3.2: https://github.com/dreamer/steam-dos",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560772478,
+    "title": "God Of Thunder",
+    "source": "protondb"
+  }
+]

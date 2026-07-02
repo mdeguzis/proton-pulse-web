@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "673300",
+    "title": "Alien Splatter Redux",
+    "timestamp": 1535785275,
+    "rating": "Platinum",
+    "notes": "Like native",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "673300",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546266652,
+    "title": "Alien Splatter Redux",
+    "source": "protondb"
+  },
+  {
+    "appId": "673300",
+    "title": "Alien Splatter Redux",
+    "timestamp": 1535770875,
+    "rating": "Platinum",
+    "notes": "Like native",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

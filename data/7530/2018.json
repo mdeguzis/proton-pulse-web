@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "7530",
+    "title": "Two Worlds II Castle Defense",
+    "timestamp": 1535068203,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 2520m / Intel HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "7530",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.12.14-lp150.12.16-default",
+    "os": "openSUSE Leap 15.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541078839,
+    "title": "Two Worlds II Castle Defense",
+    "source": "protondb"
+  },
+  {
+    "appId": "7530",
+    "title": "Two Worlds II Castle Defense",
+    "timestamp": 1535053803,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 2520m / Intel HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3339420",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.2-zen1-1-zen",
+    "notes": "Works OOTB with inconveniences",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1739257072,
+    "title": "your wife",
+    "source": "protondb"
+  },
+  {
+    "appId": "3339420",
+    "cpu": "Intel Core i7-9700KF @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.63, 6.15.8-1-default)",
+    "gpuDriver": "4.6 Mesa 25.1.7",
+    "kernel": "6.15.8-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1754524373,
+    "title": "your wife",
+    "source": "protondb"
+  }
+]

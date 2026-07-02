@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "593340",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Runs perfectly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562609349,
+    "title": "Gaben Kingdom",
+    "source": "protondb"
+  }
+]

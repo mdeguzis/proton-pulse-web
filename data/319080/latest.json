@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "319080",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs perfectly using keyboard and mouse. Same issue as under Windows, the Steam language selection does not work, see https://steamcommunity.com/app/319080/discussions/0/485623406944068726/\nOnce I removed the other languages from GAME\\Languages, audio and subtitles were correct.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549717315,
+    "title": "Disney Princess: My Fairytale Adventure",
+    "source": "protondb"
+  }
+]

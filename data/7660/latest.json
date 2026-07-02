@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "7660",
+    "cpu": "AMD Athlon II X4 635",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 8800",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.13-1-MANJARO",
+    "notes": "Runs seemingly stable as long as I don't move my mouse on a clean install. Mouse movement caused game to crash after some time. After setting cpu cycles to 20000 in \"dosbox.conf\" it does not crash anymore, but mouse movement still causes some minor lag. Other than that it seems playable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1547403277,
+    "title": "X-COM: Apocalypse",
+    "source": "protondb"
+  },
+  {
+    "appId": "7660",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.8-200.fc29.x86_64",
+    "notes": "With Proton it crashes on start. Seems to work perfectly with steam-dos 0.3.2 though: https://github.com/dreamer/steam-dos",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560772137,
+    "title": "X-COM: Apocalypse",
+    "source": "protondb"
+  }
+]

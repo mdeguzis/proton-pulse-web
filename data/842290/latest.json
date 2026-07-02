@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "842290",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1556363028,
+    "title": "ArcBall 2",
+    "source": "protondb"
+  }
+]

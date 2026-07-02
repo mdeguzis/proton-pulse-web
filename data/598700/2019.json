@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "598700",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Played the game around 35+ minutes worked right out of the box. NO issues with the controller scrolling was pretty smooth. Would definately recommend this game if you are looking for a metroidvania fix.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548132380,
+    "title": "The Vagrant",
+    "source": "protondb"
+  },
+  {
+    "appId": "598700",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "No issues",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558859079,
+    "title": "The Vagrant",
+    "source": "protondb"
+  },
+  {
+    "appId": "598700",
+    "cpu": "AMD FX-9370 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-1-default",
+    "notes": "In multi-monitor configuration, I needed to deactivate the second monitor or the game would crash to desktop. On single monitor configuration, the game works flawlessly.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567962390,
+    "title": "The Vagrant",
+    "source": "protondb"
+  }
+]

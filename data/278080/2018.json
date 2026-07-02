@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "278080",
+    "title": "DYNASTY WARRIORS 8: Xtreme Legends Complete Edition",
+    "timestamp": 1534969242,
+    "rating": "Silver",
+    "notes": "Cinematics must be disabled in config app",
+    "os": "Xubuntu 18.04 x64",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Core i3 8350K Tri-Core 5.0Ghz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "278080",
+    "cpu": "i5-6500 CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-200.fc28.x86_64",
+    "notes": "\"Play Movie\" must be set to \"off\" in the game configuration utility, otherwise game will not load. When using an Xbox One controller, the camera constantly spins counter-clockwise.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15988 Mb",
+    "rating": "Silver",
+    "timestamp": 1536839650,
+    "title": "DYNASTY WARRIORS 8: Xtreme Legends Complete Edition / \u771f\u30fb\u4e09\u570b\u7121\u53cc\uff17 with \u731b\u5c06\u4f1d",
+    "source": "protondb"
+  },
+  {
+    "appId": "278080",
+    "cpu": "Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "starts after disabling cinematics in the config also controller button layout is switched and can not be fixed and you get spinning camera with a controller otherwise playable with keyboard",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7.6 beta",
+    "ram": "15979 Mb",
+    "rating": "Silver",
+    "timestamp": 1537109023,
+    "title": "DYNASTY WARRIORS 8: Xtreme Legends Complete Edition / \u771f\u30fb\u4e09\u570b\u7121\u53cc\uff17 with \u731b\u5c06\u4f1d",
+    "source": "protondb"
+  },
+  {
+    "appId": "278080",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Failed. Game will not start",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1542231248,
+    "title": "DYNASTY WARRIORS 8: Xtreme Legends Complete Edition / \u771f\u30fb\u4e09\u570b\u7121\u53cc\uff17 with \u731b\u5c06\u4f1d",
+    "source": "protondb"
+  },
+  {
+    "appId": "278080",
+    "title": "DYNASTY WARRIORS 8: Xtreme Legends Complete Edition",
+    "timestamp": 1534954842,
+    "rating": "Silver",
+    "notes": "Cinematics must be disabled in config app",
+    "os": "Xubuntu 18.04 x64",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Core i3 8350K Tri-Core 5.0Ghz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

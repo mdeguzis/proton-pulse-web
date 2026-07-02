@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "579110",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Game starts and runs just fine, but there is no audio at all. You can't really play it without audio as I believe you receive all your instructions over the radio. I don't think it's a problem with wine, a lot of people on windows claim to have this issue and the game hasn't been patched in a long time.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560683048,
+    "title": "Interkosmos",
+    "source": "protondb"
+  }
+]

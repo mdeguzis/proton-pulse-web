@@ -1,0 +1,86 @@
+[
+  {
+    "appId": "926520",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "5.0.8-200.fc29.x86_64",
+    "notes": "Disabled DXVK, because my hardware does not support DX11. Game works perfect in windowed mode. When used in fullscreen game works great, but sometimes has problems with alt-tab (same behaviour as some other Unity games - black window, game comes back after double-clicking on game title). Nature of the game (card game) makes it more convenient to play in a window anyway.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1556127822,
+    "title": "Love Letter",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "926520",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-4ec258a 2019-04-23 bionic-oibaf-ppa)",
+    "kernel": "5.0.9-050009-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Platinum",
+    "timestamp": 1556145959,
+    "title": "Love Letter",
+    "source": "protondb"
+  },
+  {
+    "appId": "926520",
+    "cpu": "Intel Core i7-2700K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-47-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556146371,
+    "title": "Love Letter",
+    "source": "protondb"
+  },
+  {
+    "appId": "926520",
+    "cpu": "Intel Core i7-6600U @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.3",
+    "kernel": "5.0.9",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Gold",
+    "timestamp": 1556425509,
+    "title": "Love Letter",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "926520",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "5.0.0-13-generic",
+    "notes": "With the default Proton Version takes about 30s to load. But then is ok without any Tweak",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1557568470,
+    "title": "Love Letter",
+    "source": "protondb"
+  }
+]

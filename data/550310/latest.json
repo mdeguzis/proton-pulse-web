@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "550310",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc4-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900rc4-generic",
+    "notes": "Plays like native including all the bugs/quirks, the mouse pointer is floaty unless you set it to minimum speed in the game. Also beware that clicking X quits the game (that is counter-intuitive, when reading a note instincts tell you to click X to close the note. But you have to actually wait for an in-game prompt to close the note). Also you can walk through walls at spots. However note that all these problems are present on windows too.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15961 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538505864,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Root Of Evil: The Tailor",
+    "source": "protondb"
+  }
+]

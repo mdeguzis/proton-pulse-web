@@ -1,0 +1,91 @@
+[
+  {
+    "appId": "317940",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.0-5.2-liquorix-amd64",
+    "notes": "Does not start at all.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1549039596,
+    "title": "Karmaflow: The Rock Opera Videogame - Act I & Act II",
+    "source": "protondb"
+  },
+  {
+    "appId": "317940",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Quits immediately with no error",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556130811,
+    "title": "Karmaflow: The Rock Opera Videogame - Act I & Act II",
+    "source": "protondb"
+  },
+  {
+    "appId": "317940",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX470",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.0.0-amd64",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1556659858,
+    "title": "Karmaflow: The Rock Opera Videogame - Act I & Act II",
+    "source": "protondb"
+  },
+  {
+    "appId": "317940",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570067807,
+    "title": "Karmaflow: The Rock Opera Videogame - Act I & Act II",
+    "tweaks": {
+      "largeAddressAware": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "317940",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 435.27.01",
+    "kernel": "5.2.0-0.bpo.3-amd64",
+    "notes": "Needs .NET to run, use \"protontricks 317940 -q --force dotnet472\" after starting the game the first time. After that, and enabling D9VK it runs fine.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-7",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1572119003,
+    "title": "Karmaflow: The Rock Opera Videogame - Act I & Act II",
+    "tweaks": {
+      "largeAddressAware": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

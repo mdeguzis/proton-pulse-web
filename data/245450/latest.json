@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "245450",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Game installs and plays fine with only issue being graphical corruption in small text boxes, but text is still readable.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1548497695,
+    "title": "Wizardry 8",
+    "source": "protondb"
+  },
+  {
+    "appId": "245450",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4",
+    "notes": "Videos are black, gameplay works fine.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1559128816,
+    "title": "Wizardry 8",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "appId": "246700",
+    "cpu": "i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "notes": "does not start at all",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "default",
+    "rating": "Borked",
+    "timestamp": "1536364800",
+    "title": "Strike Vector",
+    "source": "protondb"
+  },
+  {
+    "appId": "246700",
+    "cpu": "i5-6400 CPU @ 2.70GHz",
+    "gpu": "GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Doesn't start",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15986 Mb",
+    "rating": "Borked",
+    "timestamp": 1537065330,
+    "title": "Strike Vector",
+    "source": "protondb"
+  },
+  {
+    "appId": "246700",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.18.0-11-generic",
+    "notes": "will not start",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542375601,
+    "title": "Strike Vector",
+    "source": "protondb"
+  }
+]

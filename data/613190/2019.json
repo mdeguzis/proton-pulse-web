@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "613190",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.2",
+    "kernel": "4.20.3-1-MANJARO",
+    "notes": "Runs very well, though with quite a low FPS.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1549381650,
+    "title": "Unworthy",
+    "source": "protondb"
+  },
+  {
+    "appId": "613190",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Runs extremely poorly, 10-15fps at best. Slows down whole computer.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1559379047,
+    "title": "Unworthy",
+    "source": "protondb"
+  },
+  {
+    "appId": "613190",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Out of the box, the game runs poorly. Unless the graphics settings are lowered to \"Low\" the game can run so poorly that too many inputs too quickly can cause a crash. Tweaking runtime options to disable D3D11 seemed to help just enough to prevent crashing long enough to get to gameplay, but not enough to make the game practically playable. Even with tweaks FPS is low - 10-15 normally, occasionally lower - and crashes are frequent enough that the game can be described, at best, as \"technically\" playable.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1559505767,
+    "title": "Unworthy",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

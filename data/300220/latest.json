@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "300220",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game runs great.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1551185702,
+    "title": "Victim of Xen",
+    "source": "protondb"
+  },
+  {
+    "appId": "300220",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.16-200.fc29.x86_64",
+    "notes": "Seems to work perfectly",
+    "os": "Linux 4.x",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554566798,
+    "title": "Victim of Xen",
+    "source": "protondb"
+  },
+  {
+    "appId": "300220",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.9-2-MANJARO",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557049306,
+    "title": "Victim of Xen",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "670080",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "NOTE: Game requires controller input for menu screen, runs great otherwise.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552200933,
+    "title": "SuperLuminauts",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "283310",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Steam says \"Running\", but nothing ever happens.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1560965067,
+    "title": "Soulbringer",
+    "source": "protondb"
+  },
+  {
+    "appId": "283310",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "4.19.45-1-MANJARO",
+    "notes": "Steam says it's running but nothing happens",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1561261153,
+    "title": "Soulbringer",
+    "source": "protondb"
+  }
+]

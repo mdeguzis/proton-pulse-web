@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "694420",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Generally runs okay, but some commands like \"Credits\" cause a crash to desktop",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1554771708,
+    "title": "Alimardan's Mischief",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1416260",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "4.15.0-112-generic",
+    "notes": "Online multiplayer does not work. You can play a intro scenario, which I suspect, is not very long. Even AI skirmish didn't work for me.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1610402708,
+    "title": "",
+    "source": "protondb"
+  }
+]

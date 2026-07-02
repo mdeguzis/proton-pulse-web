@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "396530",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.4 - SteamVR PPA",
+    "kernel": "4.19.1-041901-generic",
+    "notes": "The game has lots of bugs and glitches in the first place, seemingly no additional issues under Proton.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541525947,
+    "title": "Fireflies",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "889400",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Works out of box.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "20 GB",
+    "rating": "Platinum",
+    "timestamp": 1552681308,
+    "title": "StickyBots",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1252600",
+    "cpu": "AMD Ryzen 7 5800 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "5.15.0-87-generic",
+    "notes": "I tried the Proton steam recommends, experimental and GE9-1. Same result every time.\nI failed to understand the logs, but I didn't see a clear error.\nMost messages that look suspicious are single-step exceptions, however I also found this:\n\n2118.778:0064:0070:warn:seh:dispatch_exception RPC_S_SERVER_UNAVAILABLE exception (code=6ba) raised\n\nAt most I can theorize, that their server might detect that the request for looking for updates or something comes from a machine that doesn't run windows (or a mobile OS), therefore it doesn't even bother to respond.\nI don't have the knowledge to do anything with this, but perhaps someone else might?",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1711485647,
+    "title": "",
+    "source": "protondb"
+  }
+]

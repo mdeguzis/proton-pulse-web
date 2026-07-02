@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "319480",
+    "title": "Odallus: The Dark Call",
+    "timestamp": 1535059992,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Ubuntu 17.10",
+    "gpuDriver": "Mesa DRI intel(R) Sandybridge Desktop",
+    "specs": "Intel(R)celeron(R)CPU 6530@ 2.40GHZ 2400,00 MHZ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "319480",
+    "title": "Odallus: The Dark Call",
+    "timestamp": 1535420442,
+    "rating": "Platinum",
+    "notes": "No apparent issues.",
+    "os": "Ubuntu 17.10 64-bit",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "319480",
+    "cpu": "i7-4900MQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.6",
+    "kernel": "4.17.17-87.current",
+    "notes": "Works great with no issues in full-screen.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15467 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536766222,
+    "title": "Odallus: The Dark Call",
+    "source": "protondb"
+  },
+  {
+    "appId": "319480",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Works perfect!",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540682528,
+    "title": "Odallus: The Dark Call",
+    "source": "protondb"
+  },
+  {
+    "appId": "319480",
+    "title": "Odallus: The Dark Call",
+    "timestamp": 1535045592,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Ubuntu 17.10",
+    "gpuDriver": "Mesa DRI intel(R) Sandybridge Desktop",
+    "specs": "Intel(R)celeron(R)CPU 6530@ 2.40GHZ 2400,00 MHZ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "319480",
+    "title": "Odallus: The Dark Call",
+    "timestamp": 1535406042,
+    "rating": "Platinum",
+    "notes": "No apparent issues.",
+    "os": "Ubuntu 17.10 64-bit",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

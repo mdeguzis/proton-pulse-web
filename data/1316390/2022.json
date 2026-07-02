@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1316390",
+    "cpu": "12th Gen Intel Core i7-12700",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.15.0-48-generic",
+    "notes": "Runs without problem",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1665185701,
+    "title": "",
+    "source": "protondb"
+  }
+]

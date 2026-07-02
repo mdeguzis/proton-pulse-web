@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "570970",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "The game works fine without issues except that the Cinnamon desktop taskbar is visible at the bottom. Game runs in a fullscreen borderless window. There are no settings in the game to adjust resolution, aspect ratio or switch between windowed or fullscreen. I'm rating it silver because can't tell if this is a problem with Proton, Cinnamon desktop or the game. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552227478,
+    "title": "ARENA an Age of Barbarians story",
+    "source": "protondb"
+  }
+]

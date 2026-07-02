@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "377710",
+    "title": "Idol Magical Girl Chiru Chiru Michiru Part 1",
+    "timestamp": 1535873227,
+    "rating": "Silver",
+    "notes": "Everything but the opening works",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "i7-4770 / GTX 770",
+    "source": "protondb"
+  },
+  {
+    "appId": "377710",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "it works perfectly",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "32166 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537007901,
+    "title": "Idol Magical Girl Chiru Chiru Michiru Part 1",
+    "source": "protondb"
+  },
+  {
+    "appId": "377710",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "No tweaks, runs fine",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540647343,
+    "title": "Idol Magical Girl Chiru Chiru Michiru Part 1",
+    "source": "protondb"
+  },
+  {
+    "appId": "377710",
+    "title": "Idol Magical Girl Chiru Chiru Michiru Part 1",
+    "timestamp": 1535858827,
+    "rating": "Silver",
+    "notes": "Everything but the opening works",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "i7-4770 / GTX 770",
+    "source": "protondb"
+  }
+]

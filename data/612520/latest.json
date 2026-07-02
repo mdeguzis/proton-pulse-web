@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "612520",
+    "cpu": "Intel Core i5-7Y54 @ 1.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 615 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Works perfectly",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546784999,
+    "title": "Sudden Strike 2 Gold",
+    "source": "protondb"
+  }
+]

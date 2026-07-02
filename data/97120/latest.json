@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "97120",
+    "cpu": "Intel Core i3-8130U @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-21-generic",
+    "notes": "It just ran.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564279217,
+    "title": "Kohan: Ahriman's Gift",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "343170",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD OLAND",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-16-generic",
+    "notes": "Game don't start",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-6",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1560104584,
+    "title": "Cyberpunk 3776",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]
