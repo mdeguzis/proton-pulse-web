@@ -167,6 +167,15 @@ describe('boxart API contract', () => {
     expect(API).toMatch(/Authorization:\s*`Bearer \$\{session\.access_token\}`/);
   });
 
+  test('_authedFetch reads the session shape SupaAuth.getSession returns', () => {
+    // Regression: initial version wrote `.then(r => r.data?.session)`
+    // expecting the raw supabase-js shape, but SupaAuth.getSession()
+    // already unwraps to session|null. That double-unwrap gave every
+    // admin a "sign in as an admin first" error.
+    expect(API).not.toMatch(/getSession\(\)\.then\(r =>\s*r\.data\?\.session\)/);
+    expect(API).toMatch(/const session = await SupaAuth\.getSession\(\)\.catch/);
+  });
+
   test('upload uses multipart FormData with app_id + source + file', () => {
     expect(API).toContain('new FormData()');
     expect(API).toMatch(/form\.append\('app_id'/);

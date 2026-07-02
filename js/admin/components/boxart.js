@@ -18,7 +18,7 @@ import { escapeHtml } from '../utils.js?v=bd5a67c2';
 import {
   probeSteamHeader, refetchSteamHeader, refetchNonSteamHeader, refetchSgdbHeader,
   setBoxArtOverride, uploadBoxArtOverride, clearBoxArtOverride, listBoxArtOverrides,
-} from '../api/boxart.js?v=d0157b15';
+} from '../api/boxart.js?v=42fb729e';
 
 const PAGE_SIZE = 25;
 const BATCH_SIZE = 10;              // parallel probes per batch when Probe all runs

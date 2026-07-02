@@ -124,7 +124,10 @@ export async function refetchNonSteamHeader(canonicalId, currentUrl) {
 // the caller is an admin with manage_box_art. RLS on box_art_overrides
 // enforces the same rule server-side.
 async function _authedFetch(body, { multipart = false } = {}) {
-  const session = await SupaAuth.getSession().then(r => r.data?.session).catch(() => null);
+  // SupaAuth.getSession() returns the session object directly (or null),
+  // NOT the raw supabase-js { data: { session } } shape -- see
+  // js/lib/supabase-client.js.
+  const session = await SupaAuth.getSession().catch(() => null);
   if (!session?.access_token) return _result(false, { status: 401, error: 'sign in as an admin first' });
   const headers = {
     Authorization: `Bearer ${session.access_token}`,
