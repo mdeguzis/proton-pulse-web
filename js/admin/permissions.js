@@ -29,6 +29,7 @@ export const TAB_PERMISSIONS = {
   admins:    ['manage_admins'],
   phrases:   ['manage_phrases'],
   analytics: ['view_analytics'],
+  boxart:    ['view_analytics'],
 };
 
 // Effective permissions for an admin. super_admin short-circuits to all.

@@ -194,8 +194,9 @@ describe('home page browse -- page size targets full rows', () => {
     // with a row-count target so the grid always shows ~4 complete rows
     // regardless of viewport (mobile drops to the 8-item floor). See
     // pageSizeForFullRows in js/lib/tile-pad.js.
-    expect(homeSrc).toContain('const TARGET_ROWS = 4');
-    expect(homeSrc).toContain('pageSizeForFullRows(cardsEl, TARGET_ROWS)');
+    // Row target is now viewport-aware (5 mobile / 4 desktop) via
+    // targetRowsForViewport() in lib/tile-pad.js.
+    expect(homeSrc).toContain('pageSizeForFullRows(cardsEl, targetRowsForViewport())');
     // Old fixed preload count is no longer wired to paging (kept in
     // localStorage for backwards compat, but not read by the render).
     expect(homeSrc).not.toContain('const PAGE_SIZE = _loadCount();');

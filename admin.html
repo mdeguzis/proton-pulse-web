@@ -9,7 +9,7 @@
 <title>Admin — Proton Pulse</title>
 <meta name="color-scheme" content="dark">
 <link rel="stylesheet" href="css/shared/base.css?v=45c7e06d">
-<link rel="stylesheet" href="css/shared/topbar.css?v=2d6b5e52">
+<link rel="stylesheet" href="css/shared/topbar.css?v=c550d77b">
 <link rel="stylesheet" href="css/shared/site.css?v=e05a0f73">
 <link rel="stylesheet" href="css/shared/cards.css?v=16c748ed">
 <link rel="stylesheet" href="css/admin/admin.css?v=8063dab4">
@@ -38,11 +38,12 @@
         <select id="admin-tab-select" class="admin-select admin-nav-select">
           <option value="users">All Users</option>
           <option value="all-reports">Reports</option>
-          <option value="flagged">Flag Review</option>
+          <option value="flagged">Flagged Reports</option>
           <option value="banned">Banned Users</option>
           <option value="admins">Admins</option>
           <option value="phrases">Banned Phrases</option>
           <option value="analytics">Analytics</option>
+          <option value="boxart">Missing Box Art</option>
         </select>
       </div>
 
@@ -297,6 +298,13 @@
         <div id="cache-status-content"></div>
       </section>
 
+      <!-- Missing Box Art: probe games where the header image URL fails,
+           per-store filters, one-click refetch that hits the store's
+           canonical API and reports the URL or a human-readable error. -->
+      <section id="tab-boxart" class="admin-section" hidden>
+        <div id="boxart-content"></div>
+      </section>
+
     </div><!-- /admin-panel -->
 
     <!-- Ban reason modal -->
@@ -321,8 +329,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script src="js/lib/analytics.js?v=e6dfbad8"></script>
-<script src="js/lib/topbar.js?v=449040e3"></script>
+<script src="js/lib/topbar.js?v=a7958ed7"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/admin/main.js?v=77d7cf1e"></script>
+<script type="module" src="js/admin/main.js?v=81f29c16"></script>
 </body>
 </html>

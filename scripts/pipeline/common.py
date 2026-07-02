@@ -16,10 +16,13 @@ STEAM_TITLE_CACHE_MAX_AGE_SECONDS = 30 * 86400  # 30 days
 DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH = Path(__file__).resolve().parents[2] / ".cache" / "steam-content-descriptors-cache.json"
 STEAM_DESCRIPTORS_CACHE_MAX_AGE_SECONDS = 30 * 86400  # 30 days
 # Steam descriptor IDs that flag a game as adult-only for our purposes.
+# Reference: https://partner.steamgames.com/doc/store/community_engagement/content_descriptors
 # 1 = Some Nudity or Sexual Content
-# 4 = Adult Only Sexual Content
-# 5 = Frequent Nudity or Sexual Content
-ADULT_DESCRIPTOR_IDS = {1, 4, 5}
+# 2 = Frequent Violence or Gore              (NOT filtered -- most action games)
+# 3 = Adult Only Sexual Content              (porn / VN games)
+# 4 = Frequent Nudity or Sexual Content
+# 5 = General Mature Content                 (NOT filtered -- CS2, DBD, Rust, etc.)
+ADULT_DESCRIPTOR_IDS = {1, 3, 4}
 
 # In-memory Steam title cache (loaded once per run)
 _steam_title_cache: dict[str, dict] | None = None

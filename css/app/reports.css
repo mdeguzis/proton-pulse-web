@@ -496,7 +496,7 @@ a.card:active { transform: translateY(1px); }
 .activity-sources { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 5px; }
 .activity-badge { flex-shrink: 0; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; white-space: nowrap; align-self: center; }
 /* card-rating-row now shows confidence pill (left) and rating badge (right)
-   side-by-side in a horizontal row. Matches the plugin's "78% GOLD" layout */
+   side-by-side in a horizontal row. Matches the plugin's "78% GOLD" layout. */
 .card-rating-row { display: flex; flex-direction: row; align-items: center; gap: 6px; margin-top: 4px; flex-wrap: nowrap; justify-content: flex-end; }
 /* Per-report confidence pill - square corners to match the rating badge
    alongside it. Round corners read like a status pill, square reads like a
@@ -510,25 +510,49 @@ a.card:active { transform: translateY(1px); }
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
+/* Rating pill sits next to the confidence pill on every card. Match its
+   size, weight, radius, and letter-spacing so the pair reads as a
+   single group rather than two different-looking chips. Uppercase +
+   sans stays for the label (tier codes read stronger in caps). */
 .card .rating {
-  padding: 3px 8px;
-  font-weight: 800;
-  font-size: 0.66rem;
+  padding: 3px 9px;
+  font-weight: 700;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  white-space: nowrap;
 }
 .card .score { font-size: 0.75rem; font-weight: 700; font-family: var(--mono); }
 /* Vote buttons - bumped to match the confidence pill + rating badge sized
-   to their right. Old 11x11 icon felt undersized next to a 22+px badge */
+   to their right. Shared min-height + inline-flex on all three so the
+   edges line up on the same horizontal row (align-items: center on the
+   parent .right only centers midpoints, which leaves box edges off).
+   Old 11x11 icon felt undersized next to a 22+px badge */
 .vote-btns { display: inline-flex; align-items: center; gap: 5px; }
 .vote-btn {
   display: inline-flex; align-items: center; gap: 5px;
-  background: none; border: 1px solid var(--border2);
+  background: var(--s2); border: 1px solid var(--border2);
+  border-radius: 3px;
   color: var(--muted); font-size: 0.78rem; font-family: var(--mono);
-  padding: 4px 9px; cursor: pointer; line-height: 1;
-  transition: color .1s, border-color .1s;
+  padding: 3px 9px; cursor: pointer; line-height: 1;
+  transition: color .1s, border-color .1s, background .1s;
+  box-sizing: border-box;
 }
-.vote-btn svg { width: 16px; height: 16px; }
+.vote-btn svg { width: 14px; height: 14px; }
+/* Shared height for the pill row (Confidence / rating / vote buttons) so
+   their box edges align on the same horizontal line on every viewport.
+   Explicit height + line-height:1 so the pills' default line-height
+   doesn't stretch them past the vote buttons. */
+.card .confidence-pill,
+.card .rating,
+.card .vote-btn {
+  height: 28px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+}
 .vote-btn:hover { color: var(--text); border-color: var(--accent); }
 .vote-btn.vote-up.active { color: var(--accent); border-color: var(--accent); }
 .vote-btn.vote-dn.active { color: #c85050; border-color: #c85050; }
