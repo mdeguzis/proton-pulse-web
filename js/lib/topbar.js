@@ -702,13 +702,25 @@
       return indexLoading;
     }
 
+    // Adult-content gate. Topbar is a classic <script> and can't ES-import
+    // js/lib/adult-filter.js, so this inlines the same rule. KEEP IN SYNC:
+    // pref key pp:show-adult, adult flag at search-index column 8
+    // (ADULT_COL_SEARCH_INDEX). When the pref is off (default) adult-flagged
+    // games are hidden from the autocomplete, matching the results page.
+    function _showAdultAllowed() {
+      try { return localStorage.getItem('pp:show-adult') === 'on'; } catch (e) { return false; }
+    }
+
     function match(q, limit) {
       if (!q) return [];
       const ql = q.toLowerCase();
       const asAppId = /^\d+$/.test(q);
+      const showAdult = _showAdultAllowed();
       const out = [];
       for (let i = 0; i < index.length && out.length < limit; i++) {
         const row = index[i];
+        // Hide Steam-classified adult games unless the user opted in.
+        if (!showAdult && row[8] === true) continue;
         const id = String(row[0]);
         const title = String(row[1] || '');
         if (asAppId ? id.startsWith(q) : title.toLowerCase().indexOf(ql) !== -1) {
