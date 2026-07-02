@@ -70,6 +70,14 @@ describe('Missing Box Art component contract', () => {
     expect(COMP).toMatch(/app\.html#\/app\//);
   });
 
+  test('store badge hyperlinks to the storefront page for that game', () => {
+    // Steam: direct product page. GOG/Epic: title-search fallback (no
+    // slug in the frontend index).
+    expect(COMP).toContain('store.steampowered.com/app/');
+    expect(COMP).toContain('www.gog.com/en/games?query=');
+    expect(COMP).toContain('store.epicgames.com/en-US/browse?q=');
+  });
+
   test('status column labels are user-facing ("Box art OK" / "Missing")', () => {
     expect(COMP).toContain('Box art OK');
     expect(COMP).toContain('Missing');

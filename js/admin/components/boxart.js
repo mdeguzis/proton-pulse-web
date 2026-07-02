@@ -114,17 +114,38 @@ function _appHref(appId) {
   return `app.html#/app/${encodeURIComponent(appId)}`;
 }
 
+// Direct link to the store page for the game. Steam has the numeric id
+// so we can point straight at the product page; GOG / Epic carry only
+// the canonical id (no slug in the frontend index) so we fall back to
+// a title search on the store which reliably lands on the product.
+function _storeHref(type, appId, title) {
+  if (type === 'steam') {
+    const num = String(appId).replace(/[^0-9]/g, '');
+    return num ? `https://store.steampowered.com/app/${num}/` : null;
+  }
+  const q = encodeURIComponent(title || '');
+  if (!q) return null;
+  if (type === 'gog')  return `https://www.gog.com/en/games?query=${q}`;
+  if (type === 'epic') return `https://store.epicgames.com/en-US/browse?q=${q}&sortBy=relevancy&sortDir=DESC`;
+  return null;
+}
+
 function _renderRow(r) {
   const cachedCell = r.cachedUrl
     ? `<a href="${escapeHtml(r.cachedUrl)}" target="_blank" rel="noopener" class="admin-link" title="${escapeHtml(r.cachedUrl)}">cached</a>`
     : '<span class="admin-muted">(none)</span>';
   const titleHtml = escapeHtml(r.title || '(no title)');
+  const storeHref = _storeHref(r.type, r.appId, r.title);
+  const storeBadge = `<span class="admin-badge admin-badge--info">${r.type}</span>`;
+  const storeCell = storeHref
+    ? `<a href="${escapeHtml(storeHref)}" target="_blank" rel="noopener" class="admin-link" title="Open on ${escapeHtml(r.type)} store">${storeBadge}</a>`
+    : storeBadge;
   return `
     <tr data-appid="${escapeHtml(r.appId)}" data-store="${escapeHtml(r.type)}" data-cached="${escapeHtml(r.cachedUrl || '')}">
       <td class="admin-col-title">
         <a href="${_appHref(r.appId)}" target="_blank" rel="noopener" class="admin-link admin-user-name-link">${titleHtml}</a>
       </td>
-      <td><span class="admin-badge admin-badge--info">${r.type}</span></td>
+      <td>${storeCell}</td>
       <td><code>${escapeHtml(r.appId)}</code></td>
       <td>${cachedCell}</td>
       <td class="boxart-status">-</td>
