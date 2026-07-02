@@ -43,6 +43,7 @@
           <option value="admins">Admins</option>
           <option value="phrases">Banned Phrases</option>
           <option value="analytics">Analytics</option>
+          <option value="boxart">Missing Box Art</option>
         </select>
       </div>
 
@@ -297,6 +298,13 @@
         <div id="cache-status-content"></div>
       </section>
 
+      <!-- Missing Box Art: probe games where the header image URL fails,
+           per-store filters, one-click refetch that hits the store's
+           canonical API and reports the URL or a human-readable error. -->
+      <section id="tab-boxart" class="admin-section" hidden>
+        <div id="boxart-content"></div>
+      </section>
+
     </div><!-- /admin-panel -->
 
     <!-- Ban reason modal -->
@@ -323,6 +331,6 @@
 <script src="js/lib/analytics.js?v=e6dfbad8"></script>
 <script src="js/lib/topbar.js?v=a7958ed7"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/admin/main.js?v=77d7cf1e"></script>
+<script type="module" src="js/admin/main.js?v=81f29c16"></script>
 </body>
 </html>
