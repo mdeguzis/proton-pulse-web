@@ -36,8 +36,16 @@ async function _loadIndexes() {
   return _cache;
 }
 
+// Derive the same status the Status column shows, without probing.
+// Keeping this separate from _initialStatusHtml lets the scope + status
+// filters key off a stable value.
+function _deriveStatus(type, cachedUrl) {
+  if (type === 'steam') return cachedUrl ? 'fallback_cached' : 'default_cdn';
+  return cachedUrl ? 'cached' : 'missing';
+}
+
 // search-index shape: [appId, title, tier, pdb, pulse, appType, releaseYear, delisted, adult]
-function _buildRows({ searchIndex, gameImages, nonSteam }, { store, textFilter, scope }) {
+function _buildRows({ searchIndex, gameImages, nonSteam }, { store, textFilter, scope, status }) {
   const q = String(textFilter || '').trim().toLowerCase();
   const rows = [];
   for (const row of searchIndex) {
@@ -50,10 +58,17 @@ function _buildRows({ searchIndex, gameImages, nonSteam }, { store, textFilter, 
     let cachedUrl = null;
     if (type === 'steam') cachedUrl = gameImages[appId] || null;
     else                   cachedUrl = nonSteam[appId] || null;
-    // scope filter: has = cached URL on file; missing = none.
-    if (scope === 'has'     && !cachedUrl) continue;
-    if (scope === 'missing' &&  cachedUrl) continue;
-    rows.push({ appId, title, type, cachedUrl });
+    const derivedStatus = _deriveStatus(type, cachedUrl);
+    // scope filter: has = row is presumed to display box art
+    // (Steam default CDN OR any cached URL). missing = only rows we
+    // know don't display box art (non-Steam with no cached URL and
+    // no store CDN fallback). Steam default-CDN rows are NOT missing
+    // -- they display the standard header URL unless probed and 404'd.
+    if (scope === 'has'     && derivedStatus === 'missing') continue;
+    if (scope === 'missing' && derivedStatus !== 'missing') continue;
+    // status filter: exact match against derived status label.
+    if (status && status !== 'all' && status !== derivedStatus) continue;
+    rows.push({ appId, title, type, cachedUrl, derivedStatus });
   }
   return rows;
 }
@@ -85,10 +100,17 @@ function _renderShell() {
         <option value="gog">GOG</option>
         <option value="epic">Epic</option>
       </select>
-      <select id="boxart-scope" class="admin-select" title="Filter by cached URL state -- combine with the store dropdown for finer scoping">
+      <select id="boxart-scope" class="admin-select" title="Coarse filter: whether the row is expected to show box art">
         <option value="all">All entries</option>
-        <option value="has">Has box art (cached URL on file)</option>
-        <option value="missing">Missing box art (no cached URL)</option>
+        <option value="has">Has box art (default CDN or cached URL)</option>
+        <option value="missing">Missing box art (no working source)</option>
+      </select>
+      <select id="boxart-status" class="admin-select" title="Fine filter: match the exact status column value">
+        <option value="all">Any status</option>
+        <option value="default_cdn">Default CDN (Steam, no fallback saved)</option>
+        <option value="fallback_cached">Fallback cached (Steam, pipeline saved URL)</option>
+        <option value="cached">Cached (GOG/Epic with catalog URL)</option>
+        <option value="missing">Missing (GOG/Epic with no URL)</option>
       </select>
       <button class="admin-btn" id="boxart-probe-visible-btn" title="Probe every row on the current page">Probe visible page</button>
       <button class="admin-btn admin-btn--primary" id="boxart-probe-all-btn" title="Probe every row that matches the current filters in bounded batches">Probe all (filtered)</button>
@@ -296,7 +318,7 @@ export async function renderBoxartAdmin() {
   }
   document.getElementById('boxart-loading').hidden = true;
 
-  const state = { store: 'all', textFilter: '', scope: 'all', page: 0, rows: [] };
+  const state = { store: 'all', textFilter: '', scope: 'all', status: 'all', page: 0, rows: [] };
   let cancelToken = { cancelled: false };
 
   function refilter() {
@@ -304,6 +326,7 @@ export async function renderBoxartAdmin() {
       store: state.store,
       textFilter: state.textFilter,
       scope: state.scope,
+      status: state.status,
     });
     state.page = 0;
     _renderPage(state.rows, state.page);
@@ -312,6 +335,7 @@ export async function renderBoxartAdmin() {
   const searchEl  = document.getElementById('boxart-search');
   const storeEl   = document.getElementById('boxart-store');
   const scopeEl   = document.getElementById('boxart-scope');
+  const statusEl  = document.getElementById('boxart-status');
   const visBtn    = document.getElementById('boxart-probe-visible-btn');
   const allBtn    = document.getElementById('boxart-probe-all-btn');
   const cancelBtn = document.getElementById('boxart-cancel-btn');
@@ -326,6 +350,7 @@ export async function renderBoxartAdmin() {
   });
   storeEl.addEventListener('change', () => { state.store = storeEl.value; refilter(); });
   scopeEl.addEventListener('change', () => { state.scope = scopeEl.value; refilter(); });
+  statusEl.addEventListener('change', () => { state.status = statusEl.value; refilter(); });
 
   function setBatchRunning(running) {
     visBtn.disabled = running;

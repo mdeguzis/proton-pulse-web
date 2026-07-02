@@ -56,13 +56,33 @@ describe('Missing Box Art component contract', () => {
     expect(COMP).toContain("dataUrl('nonsteam-images.json')");
   });
 
-  test('renders search + store + scope filters and the two batch buttons', () => {
+  test('renders search + store + scope + status filters and the two batch buttons', () => {
     expect(COMP).toContain('id="boxart-search"');
     expect(COMP).toContain('id="boxart-store"');
     expect(COMP).toContain('id="boxart-scope"');
+    expect(COMP).toContain('id="boxart-status"');
     expect(COMP).toContain('id="boxart-probe-visible-btn"');
     expect(COMP).toContain('id="boxart-probe-all-btn"');
     expect(COMP).toContain('id="boxart-cancel-btn"');
+  });
+
+  test('status filter offers the four derived status values', () => {
+    // These match _deriveStatus() output. If a status key is renamed
+    // both the option value AND the filter branch have to move together.
+    expect(COMP).toContain('value="default_cdn"');
+    expect(COMP).toContain('value="fallback_cached"');
+    expect(COMP).toContain('value="cached"');
+    expect(COMP).toMatch(/<option value="missing">Missing/);
+  });
+
+  test('scope="missing" no longer catches Steam default-CDN rows', () => {
+    // Regression: "Missing" was defined as "no cached URL" which
+    // caught ~32k Steam apps that use the standard CDN just fine.
+    // The filter must key off the derived status (missing = only
+    // rows we know have no source) not raw cachedUrl presence.
+    expect(COMP).toMatch(/scope === 'has'\s+&& derivedStatus === 'missing'/);
+    expect(COMP).toMatch(/scope === 'missing' && derivedStatus !== 'missing'/);
+    expect(COMP).toMatch(/function _deriveStatus\(type, cachedUrl\)/);
   });
 
   test('game title hyperlinks to the app page so admins can jump to it', () => {
