@@ -274,6 +274,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    /* Desktop keeps margin-top: 4px for header spacing, but on mobile
+       .right is flex-row so the margin becomes a cross-axis offset that
+       shifts the pills up relative to the vote buttons sitting beside
+       them. Zero it here so all three align on the same baseline. */
+    margin-top: 0;
   }
   .signal-strip { flex-wrap: wrap; }
   .signal-icon { width: 26px; height: 26px; }
