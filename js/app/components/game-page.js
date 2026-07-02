@@ -14,7 +14,7 @@ import { renderCard } from './report-card.js?v=8a17ff46';
 import { loadSearchIndex, searchIndex } from './search.js?v=ff82d0c0';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=df5b5024';
-import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=e7fe3ce0';
+import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=b7640205';
 import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=c7e1268c';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 
