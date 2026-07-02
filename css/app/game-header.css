@@ -776,6 +776,22 @@
   gap: 10px;
   margin-bottom: 8px;
   font-size: 0.78rem;
+  flex-wrap: wrap;
+}
+/* Inline field hint sits to the right of the input on desktop. On mobile
+   the narrow space squeezes each word onto its own line -- flex-basis
+   100% pushes it below the input as a full-width caption. */
+.sf-row-hint {
+  font-size: 0.72rem;
+  color: var(--muted);
+  padding-top: 5px;
+}
+@media (max-width: 560px) {
+  .sf-row-hint {
+    flex-basis: 100%;
+    padding-top: 2px;
+    padding-left: 130px;
+  }
 }
 .sf-row label {
   width: 120px;

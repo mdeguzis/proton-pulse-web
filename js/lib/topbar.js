@@ -789,7 +789,16 @@
                comboHtml +
                '</a>';
       }).join('');
-      dropdown.innerHTML = html;
+      // Footer hint: the dropdown only searches the small primary index
+      // (fast; loaded on page open). The full search results page also
+      // loads the extended Steam catalog (2MB, lazy), which usually
+      // adds many more hits. Prompt the user to press Enter to see
+      // them all so the dropdown/results-page count difference isn't
+      // confusing.
+      const footer = results.length >= 4
+        ? '<div class="sd-footer">Press <kbd>Enter</kbd> for full search (includes extended catalog)</div>'
+        : '';
+      dropdown.innerHTML = html + footer;
       dropdown.hidden = false;
       input.setAttribute('aria-expanded', 'true');
     }

@@ -1,7 +1,7 @@
 // report-card (components) for the app page. Relocated from app.js.
 
 import { estimateScore } from '../../shared/scoring.js?v=0dae1257';
-import { getWebClientId } from '../../shared/submit.js?v=bfb1bfdc';
+import { getWebClientId } from '../../shared/submit.js?v=8c22e9ad';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { renderAuthorBlock } from './author.js?v=2316d334';
 import { buildFormRows } from './config-cards.js?v=c67740f8';
@@ -106,7 +106,7 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
            Show Report Responses (if there are any), All Hardware Details,
            Permalink, JSON. Delete only shows for the report owner. -->
       <div class="card-footer">
-        ${(() => { const fr = buildFormRows(r); return fr ? `<button class="action-btn" onclick="const p=this.closest('.card-summary').querySelector('.fr-panel');p.classList.toggle('open');this.textContent=p.classList.contains('open')?'Hide Report Responses':'Show Report Responses'">Show Report Responses</button>` : ''; })()}
+        ${(() => { const fr = buildFormRows(r); return fr ? `<button class="action-btn" onclick="const p=this.closest('.card-summary').querySelector('.fr-panel');const open=p.classList.toggle('open');this.querySelector('.action-btn-verb').textContent=open?'Hide':'Show'"><span class="action-btn-verb">Show</span> Report Responses</button>` : ''; })()}
         <button class="action-btn" onclick="this.closest('.card-summary').querySelector('.hw-details-panel').classList.toggle('open');this.textContent=this.closest('.card-summary').querySelector('.hw-details-panel').classList.contains('open')?'Hide details':'All details'">All details</button>
         <button class="action-btn action-btn-icon" data-report-json='${JSON.stringify(r).replace(/'/g,"&#39;")}' title="Download as JSON"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-14 9v2h14v-2H5z"/></svg></button>
         <button class="action-btn action-btn-icon flag-report-btn${r.isFlagged ? ' flagged' : ''}" data-report-id="${r.reportId ?? ''}" data-app-id="${r.appId}" data-report-key="${esc(rKey)}" data-source="${esc(r.source || 'unknown')}" title="${r.isFlagged ? 'Flagged for review' : 'Flag this report'}"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg></button>

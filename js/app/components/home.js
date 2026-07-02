@@ -6,7 +6,7 @@ import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '.
 import { daysAgo, latestPerApp } from '../utils.js?v=c7e1268c';
 import { renderGameCard } from '../lib/card.js?v=754da47b';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
-import { padTileRows, watchTileRerender, pageSizeForFullRows } from '../../lib/tile-pad.js?v=de862970';
+import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=82e7d8c9';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
@@ -161,13 +161,11 @@ function _recentCardHtml(r) {
 export async function renderHomePage() {
   const el = document.getElementById('content');
   el.innerHTML = '<div class="state-box">Loading recent reports...</div>';
-  // Initial load + each Load more click aim for roughly TARGET_ROWS full
-  // rows of the current grid. Column count is measured off the container
-  // via pageSizeForFullRows. See lib/tile-pad.js. The old fixed preload
-  // count setting (LOAD_COUNTS) is retained in localStorage for backwards
-  // compat but no longer drives paging.
-  const TARGET_ROWS = 4;
-  console.debug('[browse] preload target rows', { rows: TARGET_ROWS });
+  // Row target is viewport-aware: 4 rows on desktop, 5 on mobile (see
+  // targetRowsForViewport in lib/tile-pad.js). The old fixed preload
+  // count setting (LOAD_COUNTS) is retained in localStorage for
+  // backwards compat but no longer drives paging.
+  console.debug('[browse] preload target rows', { rows: targetRowsForViewport() });
   try {
     const [recentUrl, mostPlayedUrl] = await Promise.all([
       dataUrl('recent-reports.json'),
@@ -349,8 +347,13 @@ export async function renderHomePage() {
         if (loadMoreEl) loadMoreEl.innerHTML = '';
         return;
       }
-      let popularShown = pageSizeForFullRows(cardsEl, TARGET_ROWS);
+      let popularShown = pageSizeForFullRows(cardsEl, targetRowsForViewport());
       const renderPopular = () => {
+        // Recompute the row-target now that the grid layout is applied
+        // (initial value was set when the container wasn't yet display:
+        // grid so cols=1 and the size fell to the floor).
+        const popularTarget = pageSizeForFullRows(cardsEl, targetRowsForViewport());
+        if (popularShown < popularTarget) popularShown = popularTarget;
         const shown = Math.min(popularShown, filtered.length);
         cardsEl.innerHTML = filtered.slice(0, shown).map(_popularItemHtml).join('');
         // hasMore=true trims trailing orphans so the last row stays flush; the
@@ -362,7 +365,7 @@ export async function renderHomePage() {
           if (filtered.length > rendered) {
             loadMoreEl.innerHTML = _loadMoreBtn('popular');
             loadMoreEl.querySelector('button').addEventListener('click', () => {
-              popularShown = rendered + pageSizeForFullRows(cardsEl, TARGET_ROWS);
+              popularShown = rendered + pageSizeForFullRows(cardsEl, targetRowsForViewport());
               renderPopular();
             });
           } else {
@@ -402,8 +405,12 @@ export async function renderHomePage() {
       // Hide the whole recent section when empty so there's no blank state box.
       if (sectionEl) sectionEl.hidden = !filtered.length;
       if (!filtered.length) { if (cardsEl) cardsEl.innerHTML = ''; _updateShownCount('recent-count', cardsEl, 0); return; }
-      let recentShown = pageSizeForFullRows(cardsEl, TARGET_ROWS);
+      let recentShown = pageSizeForFullRows(cardsEl, targetRowsForViewport());
       const renderRecent = () => {
+        // Recompute the row-target now that the grid layout is applied
+        // (initial value can fall to the floor when cols hasn't resolved).
+        const recentTarget = pageSizeForFullRows(cardsEl, targetRowsForViewport());
+        if (recentShown < recentTarget) recentShown = recentTarget;
         const shown = Math.min(recentShown, filtered.length);
         cardsEl.innerHTML = filtered.slice(0, shown).map(_recentCardHtml).join('');
         // hasMore=true trims trailing orphans so the last row stays flush; the
@@ -415,7 +422,7 @@ export async function renderHomePage() {
           if (filtered.length > rendered) {
             loadMoreEl.innerHTML = _loadMoreBtn('recent');
             loadMoreEl.querySelector('button').addEventListener('click', () => {
-              recentShown = rendered + pageSizeForFullRows(cardsEl, TARGET_ROWS);
+              recentShown = rendered + pageSizeForFullRows(cardsEl, targetRowsForViewport());
               renderRecent();
             });
           } else {

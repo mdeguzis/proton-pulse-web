@@ -571,6 +571,15 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
               callbacks: {
                 title: items => _formatTooltipDate(items[0].label),
                 label: ctx => `${ctx.dataset.label}: ${Number(ctx.parsed.y || 0).toLocaleString()}`,
+                // Chart.js defaults the swatch fill to dataset.backgroundColor.
+                // Our fill is nearly transparent (used for the area under the
+                // line), so the swatch on the dark tooltip bg reads as white.
+                // Force it to the solid borderColor so the swatch matches the
+                // line color the user sees on the chart.
+                labelColor: ctx => ({
+                  borderColor: ctx.dataset.borderColor,
+                  backgroundColor: ctx.dataset.borderColor,
+                }),
               },
             },
           },
@@ -653,6 +662,13 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
               callbacks: {
                 title: items => _formatTooltipDate(items[0].label),
                 label: ctx => `${ctx.dataset.label}: ${Number(ctx.parsed.y || 0).toLocaleString()}`,
+                // Solid borderColor swatches so Web / Plugin / Other in
+                // the tooltip match the actual line colors (default
+                // backgroundColor is a faint fill that reads as white).
+                labelColor: ctx => ({
+                  borderColor: ctx.dataset.borderColor,
+                  backgroundColor: ctx.dataset.borderColor,
+                }),
                 footer: items => {
                   const total = items.reduce((s, it) => s + Number(it.parsed.y || 0), 0);
                   return `Total: ${total.toLocaleString()}`;
