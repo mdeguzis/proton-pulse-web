@@ -16,9 +16,16 @@
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { escapeHtml } from '../utils.js?v=bd5a67c2';
 import {
-  probeSteamHeader, refetchSteamHeader, refetchNonSteamHeader, refetchSgdbHeader,
+  probeSteamHeader, refetchSteamHeader, refetchNonSteamHeader, refetchSgdbHeader, searchSgdb,
   setBoxArtOverride, uploadBoxArtOverride, clearBoxArtOverride, listBoxArtOverrides,
-} from '../api/boxart.js?v=42fb729e';
+} from '../api/boxart.js?v=f70d5e9a';
+
+// Strip trademark / registered / service-mark symbols (and collapse the
+// whitespace they leave behind) from a store title so it works as a
+// SteamGridDB search term. "Battlefield(TM) 6" -> "Battlefield 6".
+function _cleanTitle(t) {
+  return String(t || '').replace(/[™®℠]/g, ' ').replace(/\s+/g, ' ').trim();
+}
 
 const PAGE_SIZE = 25;
 const BATCH_SIZE = 10;              // parallel probes per batch when Probe all runs
@@ -569,7 +576,51 @@ function _detailShell() {
       <h2 id="boxart-detail-title" class="admin-section-title" style="margin:0; flex:1"></h2>
     </div>
     <div id="boxart-detail-body"><div class="admin-loading">Loading...</div></div>
+    <div id="boxart-sgdb-panel"></div>
   `;
+}
+
+// SteamGridDB search panel: an editable term (defaulted to the trademark-
+// stripped title) + a results grid the admin picks from. Lives outside
+// #boxart-detail-body so a body refresh does not wipe the search results.
+function _sgdbPanelHtml(row) {
+  const term = _cleanTitle(row.title);
+  const byIdBtn = row.type === 'steam'
+    ? `<button class="admin-btn" data-sgdb="search-id" title="Search by Steam app id instead of the title">By Steam id</button>`
+    : '';
+  return `
+    <div class="admin-card" style="padding:14px 16px; margin-top:16px">
+      <div class="admin-subhead">SteamGridDB artwork</div>
+      <p class="admin-hint" style="margin:6px 0 10px">Search community artwork and set one as the box art override. The term defaults to the title with trademark symbols stripped; edit it to broaden or fix the search.</p>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center">
+        <input id="sgdb-term" class="admin-input" type="text" value="${escapeHtml(term)}" placeholder="Search SteamGridDB by title" style="flex:1 1 260px; min-width:0">
+        <button class="admin-btn admin-btn--primary" data-sgdb="search">Search</button>
+        ${byIdBtn}
+      </div>
+      <p id="sgdb-status" class="admin-hint" style="margin:10px 0 0" hidden></p>
+      <div id="sgdb-results" class="sgdb-results"></div>
+    </div>`;
+}
+
+// Render the results grid (or an error / empty note) from a searchSgdb payload.
+function _sgdbResultsHtml(payload) {
+  if (!payload || !payload.ok) {
+    return `<p class="admin-error" style="margin:12px 0 0">${escapeHtml(payload?.error || 'search failed')}</p>`;
+  }
+  const results = Array.isArray(payload.results) ? payload.results : [];
+  if (!results.length) return `<p class="admin-hint" style="margin:12px 0 0">No grids found.</p>`;
+  const name = payload.game?.name ? ` for <strong>${escapeHtml(payload.game.name)}</strong>` : '';
+  const head = `<p class="admin-hint" style="margin:12px 0 8px">${results.length} grid${results.length !== 1 ? 's' : ''}${name} -- click Set to use one as the box art.</p>`;
+  const cards = results.map((g) => {
+    const dims = `${g.width || '?'}x${g.height || '?'}${g.style ? ' · ' + escapeHtml(g.style) : ''}`;
+    return `
+      <div class="sgdb-card">
+        <img class="sgdb-thumb" src="${escapeHtml(g.thumb || g.url)}" alt="SteamGridDB grid ${escapeHtml(String(g.id || ''))}" loading="lazy" onerror="this.style.opacity=0.25">
+        <div class="sgdb-meta">${dims}</div>
+        <button class="admin-btn admin-btn--primary sgdb-set" data-sgdb-set="${escapeHtml(g.url)}">Set as box art</button>
+      </div>`;
+  }).join('');
+  return head + `<div class="sgdb-grid">${cards}</div>`;
 }
 
 function _detailActionsHtml(hasOverride) {
@@ -733,6 +784,63 @@ export async function renderBoxartAdminDetail(appId) {
     el.textContent = text;
     el.className = 'admin-hint';
     if (isError) el.classList.add('admin-error');
+  }
+
+  // SteamGridDB search-and-pick panel. Persistent (outside the refreshed
+  // body) so results survive a preview refresh. Search returns a grid of
+  // candidates; "Set as box art" writes the override via set_override.
+  const sgdbPanel = document.getElementById('boxart-sgdb-panel');
+  if (sgdbPanel) {
+    sgdbPanel.innerHTML = _sgdbPanelHtml(row);
+    const sgdbStatus = (text, isError) => {
+      const e = document.getElementById('sgdb-status');
+      if (!e) return;
+      e.hidden = false;
+      e.textContent = text;
+      e.className = 'admin-hint' + (isError ? ' admin-error' : '');
+    };
+    sgdbPanel.addEventListener('click', async (ev) => {
+      const searchBtn = ev.target.closest('[data-sgdb]');
+      const setBtn = ev.target.closest('[data-sgdb-set]');
+      if (searchBtn) {
+        const byId = searchBtn.dataset.sgdb === 'search-id';
+        const term = byId ? '' : (document.getElementById('sgdb-term')?.value || '').trim();
+        sgdbStatus('Searching SteamGridDB...');
+        searchBtn.disabled = true;
+        const payload = await searchSgdb(row.appId, term);
+        searchBtn.disabled = false;
+        const resultsEl = document.getElementById('sgdb-results');
+        if (resultsEl) resultsEl.innerHTML = _sgdbResultsHtml(payload);
+        sgdbStatus(
+          payload.ok ? `${(payload.results || []).length} result(s)` : `Search failed: ${payload.error || 'unknown'}`,
+          !payload.ok,
+        );
+        return;
+      }
+      if (setBtn) {
+        const url = setBtn.dataset.sgdbSet;
+        if (!url) return;
+        setBtn.disabled = true;
+        sgdbStatus('Setting box art override...');
+        const res = await setBoxArtOverride(row.appId, url);
+        setBtn.disabled = false;
+        if (res.ok) {
+          row.override = { image_url: url, source: 'manual' };
+          if (indexes.overrideMap) indexes.overrideMap[row.appId] = row.override;
+          sgdbStatus('Box art override set from SteamGridDB.');
+          setStatus('override set from SteamGridDB: ' + url);
+          refreshBody();
+          const prev = document.getElementById('boxart-detail-preview');
+          if (prev) { prev.src = url; prev.style.opacity = 1; }
+        } else {
+          sgdbStatus('Set failed: ' + (res.error || 'unknown'), true);
+        }
+        return;
+      }
+    });
+    document.getElementById('sgdb-term')?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); sgdbPanel.querySelector('[data-sgdb="search"]')?.click(); }
+    });
   }
 
   content.addEventListener('click', async (ev) => {

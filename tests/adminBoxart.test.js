@@ -240,3 +240,46 @@ describe('boxart API contract', () => {
     expect(API).toMatch(/head\.status === 405/);
   });
 });
+
+describe('SteamGridDB search-and-pick', () => {
+  const EDGE = fs.readFileSync(
+    path.join(ROOT, 'supabase', 'functions', 'image-refetch', 'index.ts'),
+    'utf8',
+  );
+
+  test('edge function handles a sgdb_search source that returns a list', () => {
+    expect(EDGE).toContain('source === "sgdb_search"');
+    expect(EDGE).toContain('async function _sgdbSearch(');
+    // title search path (autocomplete) + steam-id fallback
+    expect(EDGE).toContain('/search/autocomplete/');
+    // no dimension filter so non-460x215 games still return grids
+    expect(EDGE).toContain('/grids/game/${gameId}?types=static');
+    expect(EDGE).toContain('results: SgdbGrid[]');
+  });
+
+  test('api exports searchSgdb posting the sgdb_search source + term', () => {
+    expect(API).toMatch(/export async function searchSgdb\(/);
+    expect(API).toContain("source: 'sgdb_search'");
+    expect(API).toContain('term: String(term');
+  });
+
+  test('component strips trademark symbols for the default search term', () => {
+    expect(COMP).toMatch(/function _cleanTitle\(/);
+    expect(COMP).toContain("replace(/[™®℠]/g, ' ')");
+    expect(COMP).toContain('_cleanTitle(row.title)');
+  });
+
+  test('component renders a persistent search panel + results grid', () => {
+    expect(COMP).toContain('id="boxart-sgdb-panel"');
+    expect(COMP).toMatch(/function _sgdbPanelHtml\(/);
+    expect(COMP).toMatch(/function _sgdbResultsHtml\(/);
+    expect(COMP).toContain('data-sgdb="search"');
+    expect(COMP).toContain('class="sgdb-grid"');
+  });
+
+  test('a result "Set as box art" writes the override via setBoxArtOverride', () => {
+    expect(COMP).toContain('data-sgdb-set=');
+    expect(COMP).toContain('await setBoxArtOverride(row.appId, url)');
+    expect(COMP).toContain('searchSgdb');
+  });
+});

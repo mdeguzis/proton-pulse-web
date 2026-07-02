@@ -1059,3 +1059,36 @@ pre.flag-raw-json {
 .cache-status-warn { color: var(--yellow, #e5c07b); font-weight: 600; }
 .cache-status-details summary { font-size: 0.82rem; padding: 4px 0; }
 .cache-status-section { max-width: 860px; }
+
+/* SteamGridDB search-and-pick results (Box Art detail view). The admin
+   searches community artwork and sets one grid as the box art override. */
+.sgdb-results { margin-top: 4px; }
+.sgdb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 4px;
+}
+.sgdb-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid var(--border, #24344a);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.sgdb-thumb {
+  width: 100%;
+  aspect-ratio: 460 / 215;
+  object-fit: cover;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  display: block;
+}
+.sgdb-meta {
+  font-size: 0.72rem;
+  color: var(--muted, #8899aa);
+  font-variant-numeric: tabular-nums;
+}
+.sgdb-set { width: 100%; }

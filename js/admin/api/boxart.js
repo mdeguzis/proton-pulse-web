@@ -110,6 +110,26 @@ export async function refetchSgdbHeader(appId) {
   return _callImageRefetch(appId, 'sgdb');
 }
 
+// Search SteamGridDB and return a LIST of candidate grids for the admin to
+// pick from. `term` searches by title (empty term falls back to the Steam-id
+// lookup). Returns the raw proxy payload: { ok, game, results[] } or
+// { ok:false, error }. Each result has { id, url, thumb, width, height, style }.
+export async function searchSgdb(appId, term = '') {
+  try {
+    const res = await fetch(IMAGE_REFETCH_ENDPOINT(), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ app_id: String(appId), source: 'sgdb_search', term: String(term || '') }),
+      cache: 'no-store',
+    });
+    const body = await res.json().catch(() => null);
+    if (!body) return { ok: false, error: `proxy HTTP ${res.status} (no body)` };
+    return body;
+  } catch (e) {
+    return { ok: false, error: `network: ${e.message || String(e)}` };
+  }
+}
+
 // Non-Steam refetch just re-probes whatever nonsteam-images.json says
 // (there's no public GOG/Epic image-manifest API we can call from the
 // browser). If the URL still 404s the admin knows to update the

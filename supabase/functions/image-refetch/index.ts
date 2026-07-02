@@ -139,6 +139,94 @@ async function _refetchSgdb(appId: string): Promise<RefetchOk | RefetchFail> {
   return { ok: true, source: "sgdb", resolved_via: `sgdb-grid#${lookup.id}`, url: pick.url };
 }
 
+// SteamGridDB search: returns a LIST of candidate grids for the admin to pick
+// from, instead of auto-picking one. Resolves the game either by an editable
+// title term (via /search/autocomplete/<term>, so trademark symbols in the
+// store title can be stripped) or, when no term is given, by the Steam app id.
+// Unlike _refetchSgdb it does NOT constrain dimensions, so games whose only
+// community art is a non-460x215 size still return results.
+type SgdbGrid = {
+  id: number;
+  url: string;
+  thumb: string;
+  width: number | null;
+  height: number | null;
+  style: string;
+  mime: string;
+  author: string;
+};
+type SgdbSearchOk = {
+  ok: true;
+  source: "sgdb_search";
+  resolved_via: string;
+  game: { id: number; name: string };
+  results: SgdbGrid[];
+};
+type SgdbSearchFail = { ok: false; source: "sgdb_search"; error: string; status?: number };
+
+async function _sgdbSearch(appId: string, term: string): Promise<SgdbSearchOk | SgdbSearchFail> {
+  const key = Deno.env.get("SGDB_API_KEY");
+  if (!key) return { ok: false, source: "sgdb_search", error: "SGDB_API_KEY not configured on the server" };
+
+  let gameId: number | null = null;
+  let gameName = "";
+  let via = "";
+  const cleaned = (term || "").trim();
+  if (cleaned) {
+    // Title search. SGDB autocomplete returns games ranked by relevance.
+    try {
+      const r = await fetch(`${SGDB_BASE}/search/autocomplete/${encodeURIComponent(cleaned)}`, {
+        headers: { Authorization: `Bearer ${key}` },
+      });
+      if (!r.ok) return { ok: false, source: "sgdb_search", status: r.status, error: `sgdb search HTTP ${r.status}` };
+      const body = await r.json().catch(() => null);
+      const first = body?.success && Array.isArray(body?.data) ? body.data[0] : null;
+      if (!first?.id) return { ok: false, source: "sgdb_search", error: `no SteamGridDB match for "${cleaned}"` };
+      gameId = first.id;
+      gameName = first.name || cleaned;
+      via = `search:${cleaned}`;
+    } catch (e) {
+      return { ok: false, source: "sgdb_search", error: `sgdb search: ${(e as Error).message}` };
+    }
+  } else {
+    const lookup = await _sgdbGameId(appId, key);
+    if (!lookup.id) return { ok: false, source: "sgdb_search", error: lookup.error || "sgdb no game id" };
+    gameId = lookup.id;
+    via = `steam-id:${appId}`;
+  }
+
+  let gridsRes: Response;
+  try {
+    // No dimensions filter -- return every static grid so the admin sees all
+    // options. types=static excludes animated grids.
+    gridsRes = await fetch(`${SGDB_BASE}/grids/game/${gameId}?types=static`, {
+      headers: { Authorization: `Bearer ${key}` },
+    });
+  } catch (e) {
+    return { ok: false, source: "sgdb_search", error: `sgdb grids fetch: ${(e as Error).message}` };
+  }
+  if (!gridsRes.ok) return { ok: false, source: "sgdb_search", status: gridsRes.status, error: `sgdb grids HTTP ${gridsRes.status}` };
+  const grids = await gridsRes.json().catch(() => null);
+  if (!grids?.success || !Array.isArray(grids?.data)) {
+    return { ok: false, source: "sgdb_search", error: "sgdb grids: bad response shape" };
+  }
+  const results: SgdbGrid[] = grids.data
+    .slice(0, 30)
+    .map((g: Record<string, unknown>) => ({
+      id: Number(g.id) || 0,
+      url: String(g.url || ""),
+      thumb: String(g.thumb || g.url || ""),
+      width: typeof g.width === "number" ? g.width : null,
+      height: typeof g.height === "number" ? g.height : null,
+      style: String(g.style || ""),
+      mime: String(g.mime || ""),
+      author: String((g.author as { name?: string } | undefined)?.name || ""),
+    }))
+    .filter((g: SgdbGrid) => g.url);
+  if (!results.length) return { ok: false, source: "sgdb_search", error: "SteamGridDB returned no static grids for this game" };
+  return { ok: true, source: "sgdb_search", resolved_via: via, game: { id: gameId, name: gameName }, results };
+}
+
 // Admin-only source dispatchers below. Each verifies the caller is an
 // authenticated admin with the manage_box_art permission before touching
 // box_art_overrides or the storage bucket.
@@ -275,6 +363,7 @@ Deno.serve(async (req: Request) => {
   let appId = "";
   let source = "steam";
   let overrideUrl = "";
+  let searchTerm = "";
   if (isMultipart) {
     // Clone so downstream _uploadOverride can re-read the body.
     const clone = req.clone();
@@ -282,11 +371,12 @@ Deno.serve(async (req: Request) => {
     appId = String(form?.get("app_id") ?? "").trim();
     source = String(form?.get("source") ?? "upload_override").trim().toLowerCase();
   } else {
-    let body: { app_id?: string; source?: string; url?: string } | null = null;
+    let body: { app_id?: string; source?: string; url?: string; term?: string } | null = null;
     try { body = await req.json(); } catch { /* fall through */ }
     appId = String(body?.app_id ?? "").trim();
     source = String(body?.source ?? "steam").trim().toLowerCase();
     overrideUrl = String(body?.url ?? "").trim();
+    searchTerm = String(body?.term ?? "").trim();
   }
 
   if (!appId) {
@@ -303,6 +393,11 @@ Deno.serve(async (req: Request) => {
   if (source === "sgdb") {
     const result = await _refetchSgdb(appId);
     console.log(`[image-refetch] source=sgdb app=${appId} ok=${result.ok} ${result.ok ? result.resolved_via : result.error}`);
+    return Response.json(result, { status: 200, headers: corsHeaders });
+  }
+  if (source === "sgdb_search") {
+    const result = await _sgdbSearch(appId, searchTerm);
+    console.log(`[image-refetch] source=sgdb_search app=${appId} term="${searchTerm}" ok=${result.ok} ${result.ok ? `${result.results.length} results via ${result.resolved_via}` : result.error}`);
     return Response.json(result, { status: 200, headers: corsHeaders });
   }
   if (source === "set_override") {
