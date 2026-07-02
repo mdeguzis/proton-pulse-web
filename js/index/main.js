@@ -1,7 +1,7 @@
 // Entry module for index.html (homepage). Migrated from index.js.
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=e7fe3ce0';
 import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
-import { padTileRows, watchTileRerender, pageSizeForFullRows } from '../lib/tile-pad.js?v=de862970';
+import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../lib/tile-pad.js?v=82e7d8c9';
 import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
@@ -209,12 +209,11 @@ import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
     const unratedCountEl = document.getElementById('pg-unrated-count');
     const loadMoreEl = document.getElementById('pg-load-more');
 
-    // Aim for roughly 4 full rows on the initial render and per Load
-    // more click. On desktop (5-6 cols) that's ~20-24 items; on mobile
-    // (2 cols) it drops to the 8-item floor. See pageSizeForFullRows.
-    const TARGET_ROWS = 4;
+    // Row target is viewport-aware: 4 rows on desktop, 5 on mobile so
+    // the tighter grid gives users more to scan before Load more. See
+    // pageSizeForFullRows + targetRowsForViewport in lib/tile-pad.js.
     const state = { rated: true, unrated: false };
-    let shownCount = pageSizeForFullRows(list, TARGET_ROWS);
+    let shownCount = pageSizeForFullRows(list, targetRowsForViewport());
 
     // Build the game list for the selected stores + rating filter state. Store
     // is multi-select: Steam pulls from most_played.json, GOG/Epic pull from the
@@ -298,7 +297,7 @@ import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
           ? `<button class="pg-load-more" id="pg-load-more-btn" type="button">Load more <span class="pg-load-more-count">${remaining}</span></button>`
           : '';
         const moreBtn = document.getElementById('pg-load-more-btn');
-        if (moreBtn) moreBtn.addEventListener('click', () => { shownCount = rendered + pageSizeForFullRows(list, TARGET_ROWS); renderPopular(); });
+        if (moreBtn) moreBtn.addEventListener('click', () => { shownCount = rendered + pageSizeForFullRows(list, targetRowsForViewport()); renderPopular(); });
       }
     }
 
@@ -313,7 +312,7 @@ import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
     function toggleRating(key) {
       state[key] = !state[key];
       syncRatingButtons();
-      shownCount = pageSizeForFullRows(list, TARGET_ROWS);
+      shownCount = pageSizeForFullRows(list, targetRowsForViewport());
       updateFilterBadge();
       renderPopular();
     }
@@ -384,7 +383,7 @@ import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
       }
       updateRatingCounts();
       updateFilterBadge();
-      shownCount = pageSizeForFullRows(list, TARGET_ROWS);
+      shownCount = pageSizeForFullRows(list, targetRowsForViewport());
       renderPopular();
     }
     document.querySelectorAll('.pg-store-btn').forEach(btn => {

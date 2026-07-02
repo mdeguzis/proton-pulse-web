@@ -147,6 +147,24 @@ export function normalizeRam(raw) {
  * @param {string|null} [editReportId=null] - Existing report ID to update, or null for a new submission.
  * @returns {Promise<{ok: true}|{ok: false, error: string}>}
  */
+// Proton runs on Linux only (SteamOS + desktop Linux distros). Reports
+// with a Windows / macOS / BSD / mobile OS are nonsense for this site.
+// Blocklist rather than allowlist so any current or future Linux distro
+// (Alpine, Void, Slackware, Solus, custom rolling releases) passes
+// through. Kept in lockstep with the user_configs.os_must_be_linux DB
+// check constraint (supabase/migrations/*_user_configs_os_must_be_linux.sql).
+const _NON_LINUX_OS_PATTERNS = [
+  /^windows/i, /^win\s/i, /^win\d/i,
+  /^mac\s?os/i, /^os\s?x/i, /^darwin/i,
+  /^freebsd/i, /^openbsd/i, /^netbsd/i, /^dragonfly/i,
+  /^ios(\s|$)/i, /^android/i,
+];
+export function isLinuxOs(os) {
+  const s = String(os || '').trim();
+  if (!s) return true;   // empty/unknown gets through; required-field UI catches it
+  return !_NON_LINUX_OS_PATTERNS.some(re => re.test(s));
+}
+
 export async function submitReport(appId, title, form, editReportId = null) {
   const session = await SupaAuth.getSession();
   if (!session) return { ok: false, error: 'Sign in with Steam to submit a report.' };
@@ -166,6 +184,14 @@ export async function submitReport(appId, title, form, editReportId = null) {
   }
   if (missing.length > 0) {
     return { ok: false, error: `Answer required questions: ${missing.join(', ')}` };
+  }
+
+  // Proton is Linux-only — reject reports flagged as Windows / macOS / BSD /
+  // mobile before the insert. Matches the DB check constraint of the same
+  // name so a crafted request bypassing this frontend check still fails.
+  const composedOs = (form.os?.value || '') + (form.osVersion?.value ? ' ' + form.osVersion.value.trim() : '');
+  if (!isLinuxOs(composedOs)) {
+    return { ok: false, error: `Proton only runs on Linux. Reports for "${composedOs.trim()}" are not accepted.` };
   }
 
   const installFailed = state.canInstall === 'no' || state.canStart === 'no' || state.canPlay === 'no';

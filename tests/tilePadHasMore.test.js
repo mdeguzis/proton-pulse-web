@@ -69,8 +69,8 @@ describe('renderers pass hasMore so incomplete rows never render', () => {
     // to count real tiles.
     expect(INDEX).toContain(":not(.tile-filler)");
     expect(HOME).toContain(":not(.tile-filler)");
-    expect(INDEX).toContain('rendered + pageSizeForFullRows(list, TARGET_ROWS)');
-    expect(HOME).toContain('rendered + pageSizeForFullRows(cardsEl, TARGET_ROWS)');
+    expect(INDEX).toContain('rendered + pageSizeForFullRows(list, targetRowsForViewport())');
+    expect(HOME).toContain('rendered + pageSizeForFullRows(cardsEl, targetRowsForViewport())');
   });
 
   test('resize wires renderPopular/Recent via watchTileRerender (not the old watchTileRows)', () => {
