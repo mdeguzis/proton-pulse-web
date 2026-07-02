@@ -282,4 +282,10 @@ describe('SteamGridDB search-and-pick', () => {
     expect(COMP).toContain('await setBoxArtOverride(row.appId, url)');
     expect(COMP).toContain('searchSgdb');
   });
+
+  test('detail view links to a SteamGridDB grid search for manual inspection', () => {
+    expect(COMP).toContain('steamgriddb.com/search/grids?term=');
+    expect(COMP).toContain('Search on SteamGridDB');
+    expect(COMP).toContain('${sgdbSearchLink}');
+  });
 });

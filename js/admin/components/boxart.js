@@ -656,6 +656,11 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
     ? `<a href="${escapeHtml(storeHref)}" target="_blank" rel="noopener" class="admin-link">Open on ${escapeHtml(type)} store</a>`
     : `<span class="admin-muted">no store link</span>`;
   const gamePageLink = `<a href="${_appHref(appId)}" target="_blank" rel="noopener" class="admin-link">Open game page</a>`;
+  // Direct link to a SteamGridDB grid search for manual inspection -- opens the
+  // same results the sgdb_search panel queries, in the browser. Uses the raw
+  // title (SteamGridDB handles the trademark symbol fine in its own search).
+  const sgdbSearchHref = `https://www.steamgriddb.com/search/grids?term=${encodeURIComponent(title || appId)}`;
+  const sgdbSearchLink = `<a href="${escapeHtml(sgdbSearchHref)}" target="_blank" rel="noopener" class="admin-link">Search on SteamGridDB</a>`;
 
   // Standard Steam URLs (only meaningful for type=steam).
   const akamaiUrl     = type === 'steam' ? `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(appId)}/header.jpg` : null;
@@ -680,7 +685,7 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
         <div class="admin-subhead">Preview</div>
         <img id="boxart-detail-preview" src="${escapeHtml(previewSrc)}" alt="header preview" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05)"
              onerror="this.style.opacity=0.3; this.alt='(preview failed to load)'">
-        <p class="admin-hint" style="margin:8px 0 0">${gamePageLink} &middot; ${storeLink}</p>
+        <p class="admin-hint" style="margin:8px 0 0">${gamePageLink} &middot; ${storeLink} &middot; ${sgdbSearchLink}</p>
       </div>
 
       <div class="admin-card" style="padding:0; overflow:hidden">
