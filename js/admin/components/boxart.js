@@ -37,7 +37,7 @@ async function _loadIndexes() {
 }
 
 // search-index shape: [appId, title, tier, pdb, pulse, appType, releaseYear, delisted, adult]
-function _buildRows({ searchIndex, gameImages, nonSteam }, { store, textFilter, onlyCached, onlyMissing }) {
+function _buildRows({ searchIndex, gameImages, nonSteam }, { store, textFilter, onlyMissing }) {
   const q = String(textFilter || '').trim().toLowerCase();
   const rows = [];
   for (const row of searchIndex) {
@@ -50,11 +50,11 @@ function _buildRows({ searchIndex, gameImages, nonSteam }, { store, textFilter, 
     let cachedUrl = null;
     if (type === 'steam') cachedUrl = gameImages[appId] || null;
     else                   cachedUrl = nonSteam[appId] || null;
-    if (onlyCached && !cachedUrl) continue;
-    // "Missing" = non-Steam with no cached URL. Steam's standard URL usually
-    // resolves without needing a fallback in game-images.json, so we can't
-    // tell missing from just-not-cached-yet at this layer.
-    if (onlyMissing && (type === 'steam' || cachedUrl)) continue;
+    // "Missing" = no cached URL on file. For GOG/Epic that means the
+    // image is genuinely missing (no store CDN fallback exists). For
+    // Steam it usually means the standard CDN worked and no fallback
+    // was needed -- probing the row will confirm which case it is.
+    if (onlyMissing && cachedUrl) continue;
     rows.push({ appId, title, type, cachedUrl });
   }
   return rows;
@@ -70,10 +70,9 @@ function _renderShell() {
         <option value="gog">GOG</option>
         <option value="epic">Epic</option>
       </select>
-      <select id="boxart-scope" class="admin-select">
+      <select id="boxart-scope" class="admin-select" title="Filter by cached URL state -- combine with the store dropdown for finer scoping">
         <option value="all">All entries</option>
-        <option value="cached">Has cached fallback URL</option>
-        <option value="missing">GOG/Epic with no cached URL</option>
+        <option value="missing">Missing box art (no cached URL)</option>
       </select>
       <button class="admin-btn" id="boxart-probe-visible-btn" title="Probe every row on the current page">Probe visible page</button>
       <button class="admin-btn admin-btn--primary" id="boxart-probe-all-btn" title="Probe every row that matches the current filters in bounded batches">Probe all (filtered)</button>
@@ -288,7 +287,6 @@ export async function renderBoxartAdmin() {
     state.rows = _buildRows(indexes, {
       store: state.store,
       textFilter: state.textFilter,
-      onlyCached: state.scope === 'cached',
       onlyMissing: state.scope === 'missing',
     });
     state.page = 0;
