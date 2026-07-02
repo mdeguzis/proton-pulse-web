@@ -157,8 +157,26 @@ function _bumpRoute(route) {
   counts[route] = (counts[route] || 0) + 1;
 }
 
+// Render a visible "box art unavailable" placeholder in place of a broken image
+// slot. Runs for ANY store (Steam / GOG / Epic) once every source in the
+// fallback chain has failed. Previously the slot was just hidden, which left an
+// ambiguous gray gap (e.g. Battlefield 6). Replaces the <img> with a div that
+// keeps the original layout classes so it occupies the same spot and size.
+function _showMissing(el) {
+  if (!el || !el.parentNode) return;
+  const ph = document.createElement('div');
+  ph.className = `${el.className ? el.className + ' ' : ''}boxart-missing`;
+  if (el.dataset.appid) ph.dataset.appid = el.dataset.appid;
+  ph.setAttribute('role', 'img');
+  ph.setAttribute('aria-label', 'Box art unavailable');
+  ph.innerHTML =
+    '<svg class="boxart-missing-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 16l5-5 4 4 3-3 6 6"></path><circle cx="8.5" cy="9" r="1.4"></circle></svg>' +
+    '<span>Box art unavailable</span>';
+  el.replaceWith(ph);
+}
+
 // Called after the primary akamai src fails (onerror).
-// Tries cloudflare, then game-images.json, then hides the slot.
+// Tries cloudflare, then game-images.json, then shows a Missing placeholder.
 export async function loadSteamImg(el, appId) {
   const id = String(appId);
 
@@ -179,7 +197,7 @@ export async function loadSteamImg(el, appId) {
     }
     console.warn(`[steam-img] appId=${id} no non-Steam cover available`);
     _bumpRoute('hidden');
-    el.style.visibility = 'hidden';
+    _showMissing(el);
     return;
   }
 
@@ -205,7 +223,7 @@ export async function loadSteamImg(el, appId) {
 
   console.warn(`[steam-img] appId=${id} all CDN paths exhausted`);
   _bumpRoute('hidden');
-  el.style.visibility = 'hidden';
+  _showMissing(el);
 }
 
 // Global bridge for inline onerror="window.__steamImgLoad(this)".

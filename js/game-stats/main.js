@@ -2,7 +2,7 @@
 import { computeGameStats } from '../lib/scoring/gameStats.js?v=883b9a4c';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner } from '../shared/hardware.js?v=6a1246aa';
 import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange } from '../shared/chart-interactions.js?v=6b608095';
-import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=b7640205';
+import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=bb320d7f';
 import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
 // Per-game stats page (game-stats.html). Reads ?app=APPID from the URL,

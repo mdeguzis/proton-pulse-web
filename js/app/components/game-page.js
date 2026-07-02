@@ -14,8 +14,8 @@ import { renderCard } from './report-card.js?v=8a17ff46';
 import { loadSearchIndex, searchIndex } from './search.js?v=ff82d0c0';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=df5b5024';
-import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=b7640205';
-import { confColor, confTextColor, configKey, daysAgo, downloadJson, esc, fmtMinutes, reportKey } from '../utils.js?v=c7e1268c';
+import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=bb320d7f';
+import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=c7e1268c';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 
 let _steamCatalogCache = null;
@@ -485,7 +485,6 @@ export async function renderGamePage(appId) {
       ? (pulseHasReports ? pulseTier.tier : protonDbTier)
       : 'pending';
     const overallTileColor = hasAnyReports ? (RATING_COLORS[overallTier] || '#3a4a5a') : '#2a5a8c';
-    const overallTileText  = hasAnyReports ? (RATING_TEXT[overallTier]   || '#c8d4e0') : '#d7e9fb';
     // Single summary line - confidence label comes from TOTAL report count,
     // not just Pulse. The old code used pulseTier.confidence which returns
     // 'none' when there are 0 Pulse reports (even if there are 163 ProtonDB
@@ -500,88 +499,79 @@ export async function renderGamePage(appId) {
     const overallConfidencePct = pulseHasReports && pulseTier.confidencePct
       ? pulseTier.confidencePct
       : (protonDbCount > 0 ? Math.min(95, Math.round(30 + Math.log2(Math.max(1, protonDbCount)) * 18)) : 0);
-    // Per-source breakdown - tiny stat strip at the bottom of the tile. Always
-    // shows BOTH Pulse + ProtonDB (even at 0) so users understand both feeds
-    // contribute even when only one has data. Configs only appear if > 0
-    const statBits = [
-      `<span><strong>${nativeReports.length}</strong> Pulse</span>`,
-      `<span><strong>${protonDbCount}</strong> ProtonDB</span>`,
-    ];
-    if (configs.length) statBits.push(`<span><strong>${configs.length}</strong> config${configs.length !== 1 ? 's' : ''}</span>`);
-    const statRow = `<div class="source-summary-stats">${statBits.join('<span class="ss-sep">/</span>')}</div>`;
-
-    // Rating distribution as a grid - shows ALL 5 tiers always with their
-    // count, even at 0. Replaces an earlier horizontal stripe bar that
-    // looked weird when only one tier had data ("just a gold blob"); the
-    // grid format reads at a glance and works the same with 1 report or 100
+    // Rating distribution: one horizontal bar per tier, filled with the tier
+    // color and scaled to the busiest tier so the shape reads at a glance.
+    // Live-only games (ProtonDB summary) have no per-tier breakdown.
     const allReports = [...nativeReports, ...cdn];
     const ratingCounts = { platinum: 0, gold: 0, silver: 0, bronze: 0, borked: 0 };
     for (const r of allReports) {
       if (ratingCounts[r.rating] != null) ratingCounts[r.rating]++;
     }
-    const TIER_LABELS = { platinum: 'Plat', gold: 'Gold', silver: 'Silv', bronze: 'Bron', borked: 'Bork' };
-    // Live-only games have no per-tier breakdown (ProtonDB's summary gives a
-    // single overall tier + total), so show a note instead of an all-zero grid.
-    const ratingDistribution = liveOnly
-      ? '<div class="source-summary-distribution-note">Per-tier breakdown is not available from ProtonDB\'s live summary.</div>'
-      : `
-      <div class="source-summary-distribution" title="Rating distribution across all reports">
-        ${Object.entries(ratingCounts).map(([tier, n]) => `
-          <div class="dist-chip dist-${tier}${n === 0 ? ' dist-empty' : ''}" title="${n} ${tier} report${n !== 1 ? 's' : ''}">
-            <span class="dist-chip-label">${TIER_LABELS[tier]}</span>
-            <span class="dist-chip-count">${n}</span>
-          </div>
-        `).join('')}
+    const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
+    const TIER_FULL = { platinum: 'PLATINUM', gold: 'GOLD', silver: 'SILVER', bronze: 'BRONZE', borked: 'BORKED' };
+    const maxTierCount = Math.max(1, ...TIER_ORDER.map((t) => ratingCounts[t]));
+    const tierBars = liveOnly
+      ? '<div class="grp-bars-note">Per-tier breakdown is not available from ProtonDB\'s live summary.</div>'
+      : `<div class="grp-bars">${TIER_ORDER.map((t) => {
+          const n = ratingCounts[t];
+          const pct = Math.round((n / maxTierCount) * 100);
+          return `<div class="grp-bar grp-bar-${t}" title="${n} ${t} report${n !== 1 ? 's' : ''}">
+              <span class="grp-bar-label">${TIER_FULL[t]}</span>
+              <span class="grp-bar-track"><span class="grp-bar-fill" style="width:${pct}%;background:${RATING_COLORS[t]}"></span></span>
+              <span class="grp-bar-count">${n}</span>
+            </div>`;
+        }).join('')}</div>`;
+
+    // Confidence gauge dial: ring fill = overall confidence %, with the tier
+    // name and a "confidence" caption in the center.
+    const _DIAL_R = 54;
+    const _DIAL_C = 2 * Math.PI * _DIAL_R;
+    const _dialPct = hasAnyReports ? Math.max(0, Math.min(100, Math.round(overallConfidencePct || 0))) : 0;
+    const _dialOffset = _DIAL_C * (1 - _dialPct / 100);
+    const gaugeDial = `<div class="grp-dial" title="Aggregate confidence: ${_dialPct}%">
+        <svg viewBox="0 0 132 132" aria-hidden="true">
+          <circle cx="66" cy="66" r="${_DIAL_R}" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"></circle>
+          <circle cx="66" cy="66" r="${_DIAL_R}" fill="none" stroke="var(--accent, #66c0f4)" stroke-width="12" stroke-linecap="round" stroke-dasharray="${_DIAL_C.toFixed(1)}" stroke-dashoffset="${_dialOffset.toFixed(1)}" transform="rotate(-90 66 66)"></circle>
+        </svg>
+        <div class="grp-dial-ctr">
+          <span class="grp-dial-pct">${hasAnyReports ? _dialPct + '%' : '--'}</span>
+          <span class="grp-dial-tier" style="color:${overallTileColor}">${overallTier}</span>
+          <span class="grp-dial-cap">confidence</span>
+        </div>
       </div>`;
 
-    // Newest-report age - tells visitors at a glance whether the data is
-    // fresh or stale. Uses the existing daysAgo helper for consistency
-    const newestTs = allReports.length
-      ? Math.max(...allReports.map(r => r.timestamp || 0))
-      : 0;
-    const freshnessLine = newestTs ? `
-      <div class="source-summary-freshness">Newest report: <strong>${daysAgo(newestTs)}</strong></div>` : '';
-    // Two-column inner layout so the wide tile actually uses its horizontal
-    // space. Left: kicker + rating + confidence + summary. Right: distribution
-    // bar + freshness + per-source breakdown. Collapses to single column on
-    // narrow screens via the media query in app.css
-    const sourceTiles = `
-      <div class="source-summary-grid">
-        <button class="source-summary-tile source-summary-tile-combined" type="button" data-target="pulse-summary">
-          <div class="ss-primary">
-            <span class="source-summary-tier-row">
-              ${hasAnyReports && overallConfidencePct ? `<a class="source-summary-conf conf-link" href="confidence.html?app=${appId}" onclick="event.stopPropagation()" style="background:${confColor(overallConfidencePct / 10)};color:${confTextColor(overallConfidencePct / 10)}" title="See the factor-by-factor breakdown of this aggregate confidence">Confidence: ${overallConfidencePct}%</a>` : ''}
-              <span class="source-summary-value" style="background:${overallTileColor};color:${overallTileText}">${overallTier}</span>
-            </span>
-            <span class="source-summary-meta">${overallTileSummary}</span>
-          </div>
-          <div class="ss-details">
-            ${ratingDistribution}
-            ${freshnessLine}
-            ${statRow}
-          </div>
-        </button>
+    // Panel footer: confidence summary (+ link to the scoring breakdown), then
+    // App id / newest report / per-source split on one meta line.
+    const newestTs = allReports.length ? Math.max(...allReports.map((r) => r.timestamp || 0)) : 0;
+    const _freshBit = newestTs ? `newest report: <strong>${daysAgo(newestTs)}</strong>` : '';
+    const _srcBit = `<strong>${nativeReports.length}</strong> Pulse / <strong>${protonDbCount}</strong> ProtonDB`;
+    const _metaBits = [`App ${esc(String(appId))}`, _freshBit, _srcBit].filter(Boolean).join(' &middot; ');
+    const _confWhy = hasAnyReports
+      ? ` <a class="grp-why conf-link" href="confidence.html?app=${appId}" title="See the factor-by-factor breakdown of this aggregate confidence">why?</a>`
+      : '';
+    const ratingPanel = `<div class="game-rating-panel">
+        <div class="grp-row">${gaugeDial}${tierBars}</div>
+        <div class="grp-foot">
+          <div class="grp-conf">${overallTileSummary}${_confWhy}</div>
+          <div class="grp-meta">${_metaBits}</div>
+        </div>
       </div>`;
+
+    // Flag button target: the Game Report GitHub issue template, prefilled with
+    // the title, AppID, and a short starter body so the reporter just fills in
+    // the details. Fields map to game_report.yml ids (game_name / app_id / description).
+    const _flagStarter = 'What looks wrong:\n\nWhat I expected:\n\n';
+    const flagUrl = `https://github.com/mdeguzis/proton-pulse-web/issues/new?template=game_report.yml&game_name=${encodeURIComponent(title)}&app_id=${encodeURIComponent(String(appId))}&description=${encodeURIComponent(_flagStarter)}`;
 
     el.innerHTML = `
       <div class="game-header">
-        <div class="game-header-main">
-          <div class="game-header-info">
-            <div class="game-title">${esc(title)}${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}</div>
-            <div class="game-meta">
-              App ${appId}
-              &nbsp;/&nbsp; <strong>${protonDbCount}</strong> ProtonDB report${protonDbCount !== 1 ? 's' : ''}${liveOnly ? ' (live)' : ''}
-              ${nativeReports.length ? `&nbsp;/&nbsp; <strong>${nativeReports.length}</strong> Pulse report${nativeReports.length !== 1 ? 's' : ''}` : ''}
-              &nbsp;/&nbsp; <strong>${configs.length}</strong> Pulse config${configs.length !== 1 ? 's' : ''}
-              ${totalCommunityMinutes > 0 ? `&nbsp;/&nbsp; <strong>${fmtMinutes(totalCommunityMinutes)}</strong> community playtime (${totalSessionCount} session${totalSessionCount !== 1 ? 's' : ''})` : ''}
-            </div>
-          </div>
-          <img src="${STEAM_IMG(appId)}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
-        </div>
-        <div class="game-header-side">
-          ${sourceTiles}
+        <div class="game-title">${esc(title)}${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}</div>
+        <div class="game-header-grid">
+          <img class="game-header-art" src="${STEAM_IMG(appId)}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
+          ${ratingPanel}
           <div class="game-header-actions">
             <a class="info-btn" href="scoring.html" id="rating-info-btn" title="How scoring works (opens the canonical scoring page)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="#3b82f6"/><text x="12" y="17" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="serif">i</text></svg></a>
+            <a class="info-btn info-btn-flag" id="flag-game-btn" href="${flagUrl}" target="_blank" rel="noopener" title="Flag a problem with this game entry (opens the Game Report template)"><svg width="17" height="17" viewBox="0 0 24 24" fill="#e0554f"><path d="M14.4 6l-.4-2H5v17h2v-7h5.6l.4 2h7V6z"/></svg></a>
             <a class="info-btn info-btn-labeled" id="stats-btn" href="game-stats.html?app=${appId}" title="Per-game compatibility stats: confidence factors, trend, Proton version success rates, launch option frequency, and proven launch options"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="18" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="12" width="4" height="9" rx="1"/></svg><span>Stats</span></a>
             ${renderDeckStatusButton(appId)}
             <a class="submit-report-btn" href="submit.html?app=${appId}&title=${encodeURIComponent(title)}">Submit Report</a>
@@ -591,17 +581,16 @@ export async function renderGamePage(appId) {
           <div class="info-tooltip-inner" id="deck-status-content">${renderDeckStatusModalContent(appId)}</div>
         </div>
         <!-- External link footer lives inside the game-header banner so it
-             reads as part of the game's metadata strip instead of a floating
-             group of buttons. Less cluttered, less visual seams between the
-             rating tile and the navigation links -->
+             reads as part of the game's metadata strip. The links flex to fill
+             the row width and wrap responsively (no trailing caret). -->
         <div class="hub-links hub-links-in-banner">
-          <a class="hub-link" href="https://store.steampowered.com/app/${appId}" target="_blank" rel="noopener">Steam ></a>
-          <a class="hub-link" href="https://steamdb.info/app/${appId}/" target="_blank" rel="noopener">SteamDB ></a>
-          <a class="hub-link" href="https://www.protondb.com/app/${appId}" target="_blank" rel="noopener">ProtonDB ></a>
-          <a class="hub-link" href="https://www.pcgamingwiki.com/w/index.php?search=${encodeURIComponent(title)}" target="_blank" rel="noopener">PCGamingWiki ></a>
-          <a class="hub-link" href="https://steamcharts.com/app/${appId}" target="_blank" rel="noopener">Steam Charts ></a>
-          <a class="hub-link" href="https://github.com/ValveSoftware/Proton/issues?q=${encodeURIComponent(title)}" target="_blank" rel="noopener">Proton Issues ></a>
-          <a class="hub-link" href="${dataFilesHref(appId)}" target="_blank" rel="noopener">Data Files ></a>
+          <a class="hub-link" href="https://store.steampowered.com/app/${appId}" target="_blank" rel="noopener">Steam</a>
+          <a class="hub-link" href="https://steamdb.info/app/${appId}/" target="_blank" rel="noopener">SteamDB</a>
+          <a class="hub-link" href="https://www.protondb.com/app/${appId}" target="_blank" rel="noopener">ProtonDB</a>
+          <a class="hub-link" href="https://www.pcgamingwiki.com/w/index.php?search=${encodeURIComponent(title)}" target="_blank" rel="noopener">PCGamingWiki</a>
+          <a class="hub-link" href="https://steamcharts.com/app/${appId}" target="_blank" rel="noopener">Steam Charts</a>
+          <a class="hub-link" href="https://github.com/ValveSoftware/Proton/issues?q=${encodeURIComponent(title)}" target="_blank" rel="noopener">Proton Issues</a>
+          <a class="hub-link" href="${dataFilesHref(appId)}" target="_blank" rel="noopener">Data Files</a>
         </div>
       </div>
 

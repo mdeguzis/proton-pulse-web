@@ -227,70 +227,134 @@
 
 /* game page */
 .game-header {
-  display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.95fr);
-  align-items: stretch;
-  gap: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   padding: 20px;
   background: var(--s1);
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   margin-bottom: 16px;
 }
-.game-header-main {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  min-width: 0;
+/* Box art (row1 col1) and rating panel (row1 col2) share one grid row so they
+   resolve to the same height -- their top and bottom edges align by construction.
+   The action row sits in row2 col2, directly under the panel. */
+.game-header-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 1fr);
+  grid-template-rows: auto auto;
+  align-items: stretch;
+  gap: 12px 22px;
 }
-.game-header img {
-  width: auto;
+.game-header-art {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: stretch;
+  width: 100%;
   max-width: 100%;
-  max-height: 175px;
+  object-fit: cover;
   display: block;
   border: 1px solid var(--border);
+  border-radius: 6px;
+  min-height: 0;
 }
-.game-header-info { width: 100%; min-width: 0; }
-.game-header-side {
+
+/* ---- rating panel: confidence dial + per-tier bars + footer ---- */
+.game-rating-panel {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: stretch;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  padding: 16px;
+  background: var(--s2);
+  border: 1px solid var(--border2);
+  border-radius: 9px;
   min-width: 0;
 }
-.game-header-actions {
+.grp-row { display: flex; align-items: center; gap: 18px; flex: 1 1 auto; }
+.grp-dial { position: relative; flex: 0 0 auto; width: 118px; height: 118px; }
+.grp-dial svg { width: 100%; height: 100%; display: block; }
+.grp-dial-ctr {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+}
+.grp-dial-pct { font-size: 1.45rem; font-weight: 800; color: var(--strong); font-variant-numeric: tabular-nums; line-height: 1; }
+.grp-dial-tier { font-size: 0.55rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.grp-dial-cap { font-size: 0.54rem; color: var(--muted); font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+.grp-bars { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.grp-bar {
+  display: grid;
+  grid-template-columns: 74px 1fr 20px;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color: var(--muted);
+}
+.grp-bar-label { white-space: nowrap; }
+.grp-bar-plat   .grp-bar-label { color: #b4c7dc; }
+.grp-bar-gold   .grp-bar-label { color: #c8a050; }
+.grp-bar-silver .grp-bar-label { color: #8fa0b0; }
+.grp-bar-bronze .grp-bar-label { color: #b07040; }
+.grp-bar-borked .grp-bar-label { color: #c85050; }
+.grp-bar-track { height: 9px; border-radius: 5px; background: rgba(255, 255, 255, 0.05); position: relative; overflow: hidden; }
+.grp-bar-fill { position: absolute; inset: 0 auto 0 0; border-radius: 5px; }
+.grp-bar-count { text-align: right; color: var(--text); font-variant-numeric: tabular-nums; }
+.grp-bars-note { font-size: 0.76rem; color: var(--muted); align-self: center; }
+.grp-foot {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.76rem;
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  line-height: 1.7;
+}
+.grp-foot .grp-meta strong { color: var(--text); font-weight: 600; }
+.grp-why { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font-weight: 700; margin-left: 4px; }
+.grp-why:hover { color: var(--accent-hi); }
+
+/* ---- action row (row2 col2, under the panel). Icon + labeled buttons keep
+   their natural width and never wrap their labels; Submit shrinks first and,
+   when the row runs out of room, wraps whole to its own full-width line. ---- */
+.game-header-actions {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
   gap: 6px;
   align-items: stretch;
   flex-wrap: wrap;
   width: 100%;
 }
-/* Icon-text action buttons grow to fill the row evenly. Without this, they
-   sit on the left at their natural width and leave a gap before the row wraps.
-   min-width: 0 lets them shrink as much as needed to stay on one line; the
-   submit-report-btn wraps to its own row below */
 .game-header-actions .info-btn-labeled,
 .game-header-actions .deck-status-btn {
-  flex: 1 1 0;
-  min-width: 0;
+  flex: 0 0 auto;
+  white-space: nowrap;
   justify-content: center;
 }
-/* Stats has a short label so let it shrink to content width. That frees up
-   horizontal space for the longer "Min. Requirements" label so it doesn't
-   wrap to two lines at the typical hero card width */
-.game-header-actions #stats-btn {
-  flex: 0 0 auto;
-}
-/* Submit Report sits alongside info/Stats/Deck on wide screens and
-   wraps to its own row on narrow ones. 180px flex-basis is the wrap
-   threshold: below that width the row is too tight to fit alongside
-   the icon buttons and the browser wraps this pill down a line.
-   Keeps the CTA visible on mobile without cutting off. */
+.game-header-actions #stats-btn { flex: 0 0 auto; }
 .game-header-actions .submit-report-btn {
-  flex: 1 1 180px;
-  padding: 8px 18px;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 8px 16px;
   text-align: center;
+  border-radius: 6px;
+  box-shadow: none;
+}
+/* red flag: report a problem with this entry (opens the Game Report template) */
+.info-btn-flag {
+  background: rgba(224, 85, 79, 0.12);
+  border-color: rgba(224, 85, 79, 0.45);
+}
+.info-btn-flag:hover {
+  background: rgba(224, 85, 79, 0.22);
+  border-color: rgba(224, 85, 79, 0.7);
 }
 .game-title {
   font-size: 1.4rem;
@@ -561,10 +625,12 @@
   border-left: 1px solid var(--border);
 }
 @media (max-width: 720px) {
-  /* On narrow screens the two columns stack to one - no more vertical border,
-     details flow below primary */
-  .source-summary-tile { grid-template-columns: 1fr; gap: 10px; }
-  .ss-details { padding-left: 0; border-left: none; padding-top: 10px; border-top: 1px solid var(--border); }
+  /* On narrow screens the header grid collapses to one column: box art,
+     then the rating panel, then the action row. */
+  .game-header-grid { grid-template-columns: 1fr; }
+  .game-header-art { grid-column: 1; grid-row: 1; }
+  .game-rating-panel { grid-column: 1; grid-row: 2; }
+  .game-header-actions { grid-column: 1; grid-row: 3; }
 }
 .source-summary-tile:hover {
   border-color: var(--accent);
@@ -984,7 +1050,7 @@
   margin: 18px 0 0;
   padding-top: 14px;
   border-top: 1px solid var(--border);
-  grid-column: 1 / -1;
+  gap: 8px;
 }
 .hub-link {
   display: inline-flex;
@@ -1003,6 +1069,15 @@
   border-color: var(--accent);
   color: var(--accent);
   text-decoration: none;
+}
+/* In-banner variant: the links flex to fill the row width and wrap
+   responsively, each an equal, centered pill. */
+.hub-links-in-banner .hub-link {
+  flex: 1 1 120px;
+  justify-content: center;
+  text-align: center;
+  padding: 9px 12px;
+  border-radius: 6px;
 }
 
 /* trend */

@@ -580,9 +580,14 @@ function _detailActionsHtml(hasOverride) {
 }
 
 function _urlRowHtml(label, url, opts = {}) {
-  const { note = '', highlight = false } = opts;
+  const { note = '', highlight = false, plain = false } = opts;
+  // `plain` rows carry an identifier (App ID, store name), not a URL. Rendering
+  // those through the <a href> branch produced a broken relative link (e.g.
+  // href="2807960") that navigated nowhere instead of to the store.
   const val = url
-    ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener" class="admin-link" title="${escapeHtml(url)}">${escapeHtml(url)}</a>`
+    ? (plain
+        ? escapeHtml(String(url))
+        : `<a href="${escapeHtml(url)}" target="_blank" rel="noopener" class="admin-link" title="${escapeHtml(url)}">${escapeHtml(url)}</a>`)
     : '<span class="admin-muted">(none)</span>';
   const noteHtml = note ? `<span class="admin-muted" style="margin-left:8px">${escapeHtml(note)}</span>` : '';
   const rowStyle = highlight ? 'background: rgba(80, 200, 120, 0.08);' : '';
@@ -633,8 +638,8 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
             <tr><th colspan="2" style="text-align:left; padding:10px 12px">URL sources <span class="admin-muted" style="font-weight:normal">(highlighted row = live source)</span></th></tr>
           </thead>
           <tbody>
-            ${_urlRowHtml('App ID', appId)}
-            ${_urlRowHtml('Store', type)}
+            ${_urlRowHtml('App ID', appId, { plain: true })}
+            ${_urlRowHtml('Store', type, { plain: true })}
             ${_urlRowHtml('Admin override', override?.image_url || null, { highlight: currentSource === 'override', note: currentSource === 'override' ? 'live' : '' })}
             ${type === 'steam' ? _urlRowHtml('Default CDN (akamai)', akamaiUrl, { highlight: currentSource === 'akamai',     note: currentSource === 'akamai'     ? 'live' : '' }) : ''}
             ${type === 'steam' ? _urlRowHtml('Cloudflare CDN',       cloudflareUrl, { highlight: currentSource === 'cloudflare', note: currentSource === 'cloudflare' ? 'live' : '' }) : ''}
