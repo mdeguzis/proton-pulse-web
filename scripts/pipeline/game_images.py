@@ -4,7 +4,13 @@ the standard /header.jpg path is hashed (newer Steam releases).
 Uses a unified cache (game-images-cache.json) tracking status + probe date per app ID:
   - status "ok":      standard CDN URL works, no frontend override needed.
   - status "hashed":  standard URL 404s; real URL stored and written to game-images.json.
-  - status "missing": Steam API returned no header image.
+  - status "sgdb":    Steam APIs gave nothing usable; SteamGridDB has community
+                      artwork instead. URL stored and written to game-images.json.
+  - status "missing": Steam APIs AND SteamGridDB both gave nothing.
+
+SteamGridDB is the last-resort fallback: we only ask it when the standard CDN
+404s AND appdetails has no header (delisted / freshly missing apps). Rate limit
+is 500 req/hour on the free tier; the fallback trigger keeps calls sparse.
 
 Hot games (visible in recent-reports.json + most_played.json) are always probed
 first and re-probed when their cache entry is older than STALE_DAYS. Backlog
@@ -18,12 +24,21 @@ game-images-skip.json entries are migrated into the unified cache automatically.
 """
 
 import json
+import os
 import time
 import urllib.request
 from datetime import date, timedelta
 from pathlib import Path
 
 from .common import log
+
+# SteamGridDB API — free tier public artwork DB. Requires an API key set as
+# the SGDB_API_KEY env var (mirrors the Supabase edge function secret used
+# for the admin refetch button). If unset, we skip the SGDB fallback path
+# entirely and just tag entries "missing" as before.
+SGDB_API_KEY = os.environ.get("SGDB_API_KEY", "").strip()
+SGDB_STEAM_LOOKUP = "https://www.steamgriddb.com/api/v2/games/steam/{appid}"
+SGDB_GRIDS_URL    = "https://www.steamgriddb.com/api/v2/grids/game/{game_id}?dimensions=460x215&types=static"
 
 STEAM_APPDETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={appid}&filters=basic"
 STEAM_STORE_PAGE_URL = "https://store.steampowered.com/app/{appid}/"
@@ -39,6 +54,47 @@ CANARY_APPID = "220"
 
 def _standard_header_url(app_id: str) -> str:
     return f"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{app_id}/header.jpg"
+
+
+def _fetch_sgdb_header(app_id: str, timeout: int = 8) -> str | None:
+    """Ask SteamGridDB for a header-shaped grid for this Steam appId.
+
+    Returns the URL or None on any failure. Called only when Steam's own
+    APIs failed to yield a header (see build_game_images). Silent on
+    error so the outer flow can fall through to status='missing'.
+    """
+    if not SGDB_API_KEY:
+        return None
+    hdrs = {"Authorization": f"Bearer {SGDB_API_KEY}"}
+    # Step 1: Steam appId -> SGDB game id.
+    try:
+        req = urllib.request.Request(SGDB_STEAM_LOOKUP.format(appid=app_id), headers=hdrs)
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            body = json.loads(r.read())
+    except Exception:
+        return None
+    if not body.get("success"):
+        return None
+    game_id = (body.get("data") or {}).get("id")
+    if not game_id:
+        return None
+    # Step 2: pull 460x215 static grids for that game id.
+    try:
+        req = urllib.request.Request(SGDB_GRIDS_URL.format(game_id=game_id), headers=hdrs)
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            body = json.loads(r.read())
+    except Exception:
+        return None
+    if not body.get("success"):
+        return None
+    grids = body.get("data") or []
+    if not grids:
+        return None
+    # Prefer PNG (transparent + lossless). Otherwise SGDB returns top-voted first.
+    for g in grids:
+        if "png" in (g.get("mime") or "") and g.get("url"):
+            return g["url"]
+    return grids[0].get("url")
 
 
 def _url_is_ok(url: str, timeout: int = 8) -> bool:
@@ -332,20 +388,39 @@ def build_game_images(output_dir) -> dict[str, str]:
                 cache[app_id] = {"status": "delisted", "probed_at": today}
                 log(f"[game-images] {app_id}: delisted (appdetails false + store page redirect)")
             else:
-                # _STATUS_LIVE with no header, or _STATUS_UNKNOWN. Treat as
-                # transient -- next run can try again with a fresh canary.
-                cache[app_id] = {"status": "missing", "probed_at": today}
-                log(f"[game-images] {app_id}: no image found (status={status})")
+                # _STATUS_LIVE with no header, or _STATUS_UNKNOWN. Try
+                # SteamGridDB as a last-resort fallback -- community
+                # artwork often exists for delisted / freshly-missing
+                # apps that Steam's own APIs no longer serve. Verified
+                # with _url_is_ok so we don't stamp a URL that itself
+                # 404s. If SGDB has nothing (or the key isn't set),
+                # fall through to status="missing" like before.
+                sgdb_url = _fetch_sgdb_header(app_id)
+                if sgdb_url and _url_is_ok(sgdb_url):
+                    cache[app_id] = {"status": "sgdb", "url": sgdb_url, "probed_at": today}
+                    log(f"[game-images] {app_id}: SGDB fallback -> {sgdb_url}")
+                else:
+                    cache[app_id] = {"status": "missing", "probed_at": today}
+                    log(f"[game-images] {app_id}: no image found (status={status})")
         time.sleep(REQUEST_DELAY)
 
     cache_path.write_text(json.dumps(cache, indent=2) + "\n", encoding="utf-8")
     log(f"[game-images] wrote unified cache ({len(cache)} entries) to {cache_path.name}")
 
-    # Derive frontend game-images.json: hashed entries only, { appId: url }
-    frontend = {aid: e["url"] for aid, e in cache.items() if e.get("status") == "hashed"}
+    # Derive frontend game-images.json: hashed + SGDB entries, { appId: url }.
+    # Both categories represent "the frontend needs a non-standard URL
+    # for this app" -- the fallback chain in steam-img.js reads this
+    # map after the standard CDN 404s.
+    frontend = {
+        aid: e["url"]
+        for aid, e in cache.items()
+        if e.get("status") in ("hashed", "sgdb") and e.get("url")
+    }
     frontend_path = output_dir / "game-images.json"
     frontend_path.write_text(json.dumps(frontend, indent=2) + "\n", encoding="utf-8")
-    log(f"[game-images] wrote {len(frontend)} hashed URL(s) to {frontend_path.name}")
+    hashed_ct = sum(1 for e in cache.values() if e.get("status") == "hashed")
+    sgdb_ct   = sum(1 for e in cache.values() if e.get("status") == "sgdb")
+    log(f"[game-images] wrote {len(frontend)} URL(s) to {frontend_path.name} ({hashed_ct} hashed, {sgdb_ct} sgdb)")
 
     return frontend
 

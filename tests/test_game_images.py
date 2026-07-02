@@ -76,6 +76,56 @@ def test_build_adds_override_when_standard_404s(tmp_path):
     assert result["12345"] == "https://cdn.steam.com/hashed/12345/header_abc.jpg"
 
 
+def test_build_falls_back_to_sgdb_when_steam_apis_yield_nothing(tmp_path):
+    # Steam CDN 404s, appdetails returns no URL, but SteamGridDB has
+    # community artwork. Row is written with status='sgdb' and the
+    # SGDB URL lands in the frontend override map.
+    _make_data_dir(tmp_path, ["55555"])
+    sgdb_url = "https://cdn.steamgriddb.com/grid/abc123.png"
+
+    with patch("scripts.pipeline.game_images._url_is_ok", side_effect=lambda url, timeout=8: url == sgdb_url), \
+         patch("scripts.pipeline.game_images._fetch_steam_header", return_value=(None, "live")), \
+         patch("scripts.pipeline.game_images._fetch_sgdb_header", return_value=sgdb_url):
+        result = build_game_images(tmp_path)
+
+    assert result["55555"] == sgdb_url
+    cache = json.loads((tmp_path / "game-images-cache.json").read_text(encoding="utf-8"))
+    assert cache["55555"]["status"] == "sgdb"
+    assert cache["55555"]["url"] == sgdb_url
+
+
+def test_build_still_missing_when_sgdb_also_returns_nothing(tmp_path):
+    # SGDB fallback fires but has no match either -- row stays "missing"
+    # and does NOT appear in the frontend override map.
+    _make_data_dir(tmp_path, ["66666"])
+
+    with patch("scripts.pipeline.game_images._url_is_ok", return_value=False), \
+         patch("scripts.pipeline.game_images._fetch_steam_header", return_value=(None, "live")), \
+         patch("scripts.pipeline.game_images._fetch_sgdb_header", return_value=None):
+        result = build_game_images(tmp_path)
+
+    assert "66666" not in result
+    cache = json.loads((tmp_path / "game-images-cache.json").read_text(encoding="utf-8"))
+    assert cache["66666"]["status"] == "missing"
+
+
+def test_build_skips_sgdb_when_url_probe_fails(tmp_path):
+    # SGDB returned a URL but it 404s on verification -- treat as
+    # missing rather than stamp a broken URL into the override map.
+    _make_data_dir(tmp_path, ["77777"])
+    bad_url = "https://cdn.steamgriddb.com/grid/dead.png"
+
+    # _url_is_ok returns False for every URL (standard AND sgdb)
+    with patch("scripts.pipeline.game_images._url_is_ok", return_value=False), \
+         patch("scripts.pipeline.game_images._fetch_steam_header", return_value=(None, "live")), \
+         patch("scripts.pipeline.game_images._fetch_sgdb_header", return_value=bad_url):
+        result = build_game_images(tmp_path)
+
+    assert "77777" not in result
+    cache = json.loads((tmp_path / "game-images-cache.json").read_text(encoding="utf-8"))
+    assert cache["77777"]["status"] == "missing"
+
+
 def test_build_adds_to_cache_when_standard_ok(tmp_path):
     _make_data_dir(tmp_path, ["730"])
 

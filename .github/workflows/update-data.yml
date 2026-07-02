@@ -290,6 +290,11 @@ jobs:
             /tmp/protondb-output
 
       - name: Finalize (Indexes + Coverage)
+        env:
+          # game_images.py falls through to SteamGridDB when Steam's
+          # own APIs yield no header URL. Key is optional -- pipeline
+          # tags the row "missing" cleanly if unset.
+          SGDB_API_KEY: ${{ secrets.SGDB_API_KEY }}
         run: |
           uv run python scripts/split_reports.py finalize --skip-probe \
             /tmp/protondb-output
