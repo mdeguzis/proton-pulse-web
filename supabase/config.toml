@@ -24,3 +24,6 @@ verify_jwt = false
 
 [functions.protondb-summary]
 verify_jwt = false
+
+[functions.image-refetch]
+verify_jwt = false

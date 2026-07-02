@@ -15,12 +15,17 @@
 // no-auth endpoints, so their refetch is a plain URL probe of the
 // value we already have in nonsteam-images.json.
 
+import { SUPABASE_URL } from '../config.js?v=ffed3d84';
+
 const STEAM_STANDARD = (appId) =>
   `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(appId)}/header.jpg`;
 const STEAM_CLOUDFLARE = (appId) =>
   `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(appId)}/header.jpg`;
-const STEAM_APPDETAILS = (appId) =>
-  `https://store.steampowered.com/api/appdetails?appids=${encodeURIComponent(appId)}&filters=basic`;
+// Server-side proxy that fetches from Steam appdetails / SteamGridDB
+// with server credentials. Steam's appdetails and SGDB both refuse
+// browser origins, so a proxy is the only way this works from the
+// admin UI. See supabase/functions/image-refetch/index.ts.
+const IMAGE_REFETCH_ENDPOINT = () => `${SUPABASE_URL}/functions/v1/image-refetch`;
 
 // Result shape returned by every probe/refetch function:
 //   { ok: boolean, url: string|null, status: number|null, error: string|null }
@@ -70,31 +75,39 @@ export async function probeSteamHeader(appId, pipelineFallback = null) {
   return last;
 }
 
-// Ask Steam's appdetails API for the current header_image URL and
-// probe it. This is the "authoritative" refetch -- Steam is the source
-// of truth for their own assets. Returns the working URL plus a hint
-// so admins can add it to game-images.json if the pipeline missed it.
-export async function refetchSteamHeader(appId) {
-  const idStr = String(appId).replace(/[^0-9]/g, '');
-  if (!idStr) return _result(false, { error: `invalid Steam appId "${appId}"` });
+// Ask the server-side proxy to fetch the current header_image from
+// the store and verify it. Steam's appdetails / SGDB / etc. all block
+// browser-origin fetches with CORS, so the proxy is the only working
+// path. `source` picks the backend: 'steam' = appdetails, 'sgdb' =
+// SteamGridDB (needs SGDB_API_KEY on the server).
+async function _callImageRefetch(appId, source) {
   try {
-    const res = await fetch(STEAM_APPDETAILS(idStr), { cache: 'no-store' });
-    if (!res.ok) {
-      return _result(false, { status: res.status, error: `appdetails HTTP ${res.status}` });
-    }
-    const body = await res.json();
-    const entry = body?.[idStr];
-    if (!entry || entry.success !== true) {
-      return _result(false, { error: 'appdetails returned unsuccessful (app removed or region-locked)' });
-    }
-    const header = entry?.data?.header_image;
-    if (!header) return _result(false, { error: 'appdetails returned no header_image' });
-    // Probe the URL Steam handed us so we don't claim success if it
-    // still 404s (rare but happens on limbo apps).
-    return probeImageUrl(header);
+    const res = await fetch(IMAGE_REFETCH_ENDPOINT(), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ app_id: String(appId), source }),
+      cache: 'no-store',
+    });
+    const body = await res.json().catch(() => null);
+    if (!body) return _result(false, { status: res.status, error: `proxy HTTP ${res.status} (no body)` });
+    if (body.ok) return _result(true, { url: body.url });
+    return _result(false, { status: body.status, error: body.error || 'unknown' });
   } catch (e) {
     return _result(false, { error: `network: ${e.message || String(e)}` });
   }
+}
+
+export async function refetchSteamHeader(appId) {
+  const idStr = String(appId).replace(/[^0-9]/g, '');
+  if (!idStr) return _result(false, { error: `invalid Steam appId "${appId}"` });
+  return _callImageRefetch(idStr, 'steam');
+}
+
+// Fetch a header from SteamGridDB via the proxy. Works for Steam ids
+// today; non-Steam (gog:/epic:) support depends on a title-search path
+// that phase 3 of issue #175 wires up.
+export async function refetchSgdbHeader(appId) {
+  return _callImageRefetch(appId, 'sgdb');
 }
 
 // Non-Steam refetch just re-probes whatever nonsteam-images.json says

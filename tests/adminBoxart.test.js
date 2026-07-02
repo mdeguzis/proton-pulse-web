@@ -20,9 +20,9 @@ const API    = fs.readFileSync(path.join(ROOT, 'js', 'admin', 'api', 'boxart.js'
 const PERMS  = fs.readFileSync(path.join(ROOT, 'js', 'admin', 'permissions.js'), 'utf8');
 const MANIFEST = fs.readFileSync(path.join(ROOT, 'gh-pages-manifest.txt'), 'utf8').split('\n');
 
-describe('Missing Box Art admin tab wiring', () => {
+describe('Box Art Manager admin tab wiring', () => {
   test('admin.html registers the tab option + section container', () => {
-    expect(HTML).toContain('<option value="boxart">Missing Box Art</option>');
+    expect(HTML).toContain('<option value="boxart">Box Art Manager</option>');
     expect(HTML).toContain('id="tab-boxart"');
     expect(HTML).toContain('id="boxart-content"');
   });
@@ -56,11 +56,39 @@ describe('Missing Box Art component contract', () => {
     expect(COMP).toContain("dataUrl('nonsteam-images.json')");
   });
 
-  test('renders the four required filters + scan button', () => {
+  test('renders search + store + scope filters and the two batch buttons', () => {
     expect(COMP).toContain('id="boxart-search"');
     expect(COMP).toContain('id="boxart-store"');
-    expect(COMP).toContain('id="boxart-only-cached-fallback"');
-    expect(COMP).toContain('id="boxart-scan-btn"');
+    expect(COMP).toContain('id="boxart-scope"');
+    expect(COMP).toContain('id="boxart-probe-visible-btn"');
+    expect(COMP).toContain('id="boxart-probe-all-btn"');
+    expect(COMP).toContain('id="boxart-cancel-btn"');
+  });
+
+  test('game title hyperlinks to the app page so admins can jump to it', () => {
+    expect(COMP).toContain('_appHref(r.appId)');
+    expect(COMP).toMatch(/app\.html#\/app\//);
+  });
+
+  test('store badge hyperlinks to the storefront page for that game', () => {
+    // Steam: direct product page. GOG/Epic: title-search fallback (no
+    // slug in the frontend index).
+    expect(COMP).toContain('store.steampowered.com/app/');
+    expect(COMP).toContain('www.gog.com/en/games?query=');
+    expect(COMP).toContain('store.epicgames.com/en-US/browse?q=');
+  });
+
+  test('status column labels are user-facing ("Box art OK" / "Missing")', () => {
+    expect(COMP).toContain('Box art OK');
+    expect(COMP).toContain('Missing');
+    // No stale FAIL badge left over.
+    expect(COMP).not.toContain('">FAIL<');
+  });
+
+  test('Probe all runs in bounded batches and yields between them', () => {
+    expect(COMP).toMatch(/const BATCH_SIZE = \d+/);
+    expect(COMP).toMatch(/BATCH_YIELD_MS/);
+    expect(COMP).toContain('cancelToken');
   });
 
   test('per-row Probe + Refetch actions are wired via delegated click', () => {
@@ -76,27 +104,28 @@ describe('Missing Box Art component contract', () => {
 });
 
 describe('boxart API contract', () => {
-  test('exports the three probe/refetch entry points', () => {
+  test('exports the four probe/refetch entry points', () => {
     expect(API).toMatch(/export async function probeImageUrl\(/);
     expect(API).toMatch(/export async function probeSteamHeader\(/);
     expect(API).toMatch(/export async function refetchSteamHeader\(/);
     expect(API).toMatch(/export async function refetchNonSteamHeader\(/);
+    expect(API).toMatch(/export async function refetchSgdbHeader\(/);
   });
 
-  test('refetchSteamHeader hits the official appdetails endpoint', () => {
-    expect(API).toContain('store.steampowered.com/api/appdetails');
-    // filters=basic is smaller/faster payload -- keep it.
-    expect(API).toMatch(/filters=basic/);
-    expect(API).toContain('header_image');
+  test('refetch routes through the image-refetch edge function (not browser -> steam)', () => {
+    // Steam appdetails is CORS-blocked from browsers; the server-side
+    // proxy is the only working path. There must be no direct browser
+    // fetch to store.steampowered.com/api/appdetails.
+    expect(API).toContain('/functions/v1/image-refetch');
+    expect(API).not.toMatch(/fetch\([^)]*store\.steampowered\.com\/api\/appdetails/);
+    expect(API).toContain("_callImageRefetch(idStr, 'steam')");
+    expect(API).toContain("_callImageRefetch(appId, 'sgdb')");
   });
 
   test('failures return a { ok:false, error } shape with a human-readable message', () => {
-    // The internal _result(false, { error }) helper wraps every failure
-    // path; grepping for that pattern catches accidental raw throws.
     expect(API).toMatch(/_result\(false,/);
-    // Specific friendly errors we expect the UI to show.
-    expect(API).toMatch(/appdetails returned unsuccessful/);
-    expect(API).toMatch(/appdetails returned no header_image/);
+    // Proxy transport error surfaces distinctly from upstream error.
+    expect(API).toMatch(/proxy HTTP/);
   });
 
   test('probeImageUrl retries on HEAD-not-allowed (405) with an aborted GET', () => {

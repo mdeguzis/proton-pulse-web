@@ -809,9 +809,22 @@ def generate_search_index(
         if stubs:
             log(f"[search-index] Added {stubs:,} Epic catalog stubs (no reports yet)")
 
+    # Adult-suggestive keywords in a stub title trigger a descriptor
+    # check even though the game has no local reports. Full descriptor
+    # scan on every stub would be ~15k appdetails calls per first run
+    # (~4 hours at Steam's rate limit); the hint filter cuts that to
+    # dozens while still catching titles like Naughty Chat / Super
+    # Naughty Maid / hentai VNs. Follow-up: gradual full enrichment.
+    import re as _re
+    _ADULT_TITLE_HINT = _re.compile(
+        r"\b(naughty|hentai|nsfw|adult|erotic|sexy|xxx|nude|nudity|lewd|kinky|18\+|sensual|waifu|ecchi|yuri|yaoi|bimbo)\b",
+        _re.IGNORECASE,
+    )
+
     if steam_catalog and protondb_known_app_ids:
         stubs = 0
         skipped_no_signal = 0
+        adult_hinted = 0
         for app_id, title in sorted(steam_catalog.items(), key=lambda kv: kv[1].lower()):
             if app_id in seen_ids:
                 continue
@@ -820,13 +833,21 @@ def generate_search_index(
             if app_id not in protondb_known_app_ids:
                 skipped_no_signal += 1
                 continue
-            entries.append([str(app_id), title, "", 0, 0, "steam"])
+            # Only hit appdetails for stubs whose title suggests adult content;
+            # skip descriptor lookup for the rest but still write column 8
+            # so the shape is consistent with rated rows.
+            adult = False
+            if _ADULT_TITLE_HINT.search(title):
+                adult = is_adult_app(app_id)
+                adult_hinted += 1
+            entries.append([str(app_id), title, "", 0, 0, "steam", None, None, adult])
             seen_ids.add(str(app_id))
             stubs += 1
         if stubs:
             log(
                 f"[search-index] Added {stubs:,} Steam catalog stubs "
-                f"(ProtonDB-known apps with no local data; {skipped_no_signal:,} skipped without signal)"
+                f"(ProtonDB-known apps with no local data; {skipped_no_signal:,} skipped without signal; "
+                f"{adult_hinted:,} descriptor-checked via adult-title hint)"
             )
 
     # ProtonDB-only fallback: apps that ProtonDB knows about but Steam has
@@ -837,19 +858,25 @@ def generate_search_index(
     if protondb_signal_titles:
         stubs = 0
         skipped_no_title = 0
+        adult_hinted = 0
         for app_id, title in sorted(protondb_signal_titles.items(), key=lambda kv: (kv[1] or "").lower()):
             if app_id in seen_ids:
                 continue
             if not title:
                 skipped_no_title += 1
                 continue
-            entries.append([str(app_id), title, "", 0, 0, "steam"])
+            adult = False
+            if _ADULT_TITLE_HINT.search(title):
+                adult = is_adult_app(app_id)
+                adult_hinted += 1
+            entries.append([str(app_id), title, "", 0, 0, "steam", None, None, adult])
             seen_ids.add(str(app_id))
             stubs += 1
         if stubs:
             log(
                 f"[search-index] Added {stubs:,} ProtonDB-only stubs "
-                f"(known to ProtonDB but absent from Steam catalog; {skipped_no_title:,} skipped without title)"
+                f"(known to ProtonDB but absent from Steam catalog; {skipped_no_title:,} skipped without title; "
+                f"{adult_hinted:,} descriptor-checked via adult-title hint)"
             )
 
     index_file = output_path / "search-index.json"

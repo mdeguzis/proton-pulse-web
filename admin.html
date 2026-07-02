@@ -43,7 +43,7 @@
           <option value="admins">Admins</option>
           <option value="phrases">Banned Phrases</option>
           <option value="analytics">Analytics</option>
-          <option value="boxart">Missing Box Art</option>
+          <option value="boxart">Box Art Manager</option>
         </select>
       </div>
 
@@ -298,9 +298,9 @@
         <div id="cache-status-content"></div>
       </section>
 
-      <!-- Missing Box Art: probe games where the header image URL fails,
-           per-store filters, one-click refetch that hits the store's
-           canonical API and reports the URL or a human-readable error. -->
+      <!-- Box Art Manager: search + filter the merged index, probe or
+           refetch header URLs per row, and batch-probe the visible
+           page. Reports admin filter layout is the reference. -->
       <section id="tab-boxart" class="admin-section" hidden>
         <div id="boxart-content"></div>
       </section>
