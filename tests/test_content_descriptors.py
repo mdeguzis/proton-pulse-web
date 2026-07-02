@@ -2,7 +2,7 @@
 adult-games hide-by-default feature.
 
 The pipeline attaches `adult: true` to a row whenever Steam's appdetails
-response for that app includes any of ADULT_DESCRIPTOR_IDS (1, 3, 4).
+response for that app includes any of ADULT_DESCRIPTOR_IDS (3, 4).
 The frontend hides those rows unless the user opts in via the site
 options "Show adult games" toggle.
 """
@@ -39,11 +39,12 @@ def _reset_descriptor_cache(tmp_path, monkeypatch):
 
 
 def test_adult_descriptor_ids_covers_the_three_relevant_flags():
-    # Steam publishes these IDs for nudity / sexual content descriptors.
-    # 1 = some, 3 = adult only, 4 = frequent. ID 5 is "General Mature
-    # Content" (CS2 / DBD / Rust get it) -- NOT adult, do not include.
-    # ID 2 is violence/gore. Adding a new ID is a conscious edit here.
-    assert ADULT_DESCRIPTOR_IDS == {1, 3, 4}
+    # 3 = Adult Only Sexual Content, 4 = Frequent Nudity or Sexual Content.
+    # ID 1 (Some Nudity or Sexual Content) is too broad -- catches BG3,
+    # Cyberpunk 2077, Rust, GTA V, etc. ID 2 is violence/gore. ID 5 is
+    # "General Mature Content" (CS2 / DBD / Rust). Trust Steam devs to
+    # self-flag genuine adult games with 3 or 4.
+    assert ADULT_DESCRIPTOR_IDS == {3, 4}
 
 
 def test_fetch_returns_empty_list_when_appdetails_is_unsuccessful():
@@ -102,14 +103,30 @@ def test_is_adult_app_false_when_only_mature_content_id_5_present():
 
 
 def test_is_adult_app_false_when_only_non_adult_ids_present():
+    # 2 = violence/gore, 1 = "Some Nudity or Sexual Content" (mainstream
+    # M-rated flag, deliberately not filtered). Neither triggers adult.
     payload = {
         "88888": {
             "success": True,
-            "data": {"content_descriptors": {"ids": [2, 3]}},
+            "data": {"content_descriptors": {"ids": [1, 2]}},
         },
     }
     with patch("scripts.pipeline.common.fetch_json", return_value=payload):
         assert is_adult_app("88888") is False
+
+
+def test_is_adult_app_false_when_only_descriptor_1_present_bg3_case():
+    # Regression: BG3 / Cyberpunk 2077 / Rust / GTA V all set descriptor 1
+    # ("Some Nudity or Sexual Content"). Filtering them under the adult
+    # gate is a broken UX. Only IDs 3 (adult only) and 4 (frequent) count.
+    payload = {
+        "1086940": {  # Baldur's Gate 3
+            "success": True,
+            "data": {"content_descriptors": {"ids": [1, 2]}},
+        },
+    }
+    with patch("scripts.pipeline.common.fetch_json", return_value=payload):
+        assert is_adult_app("1086940") is False
 
 
 def test_is_adult_app_false_when_no_descriptors_at_all():

@@ -17,12 +17,16 @@ DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH = Path(__file__).resolve().parents[2] / ".c
 STEAM_DESCRIPTORS_CACHE_MAX_AGE_SECONDS = 30 * 86400  # 30 days
 # Steam descriptor IDs that flag a game as adult-only for our purposes.
 # Reference: https://partner.steamgames.com/doc/store/community_engagement/content_descriptors
-# 1 = Some Nudity or Sexual Content
+# 1 = Some Nudity or Sexual Content          (NOT filtered -- too broad; catches
+#                                             BG3, Cyberpunk 2077, Rust, GTA V,
+#                                             etc. -- mainstream M-rated games)
 # 2 = Frequent Violence or Gore              (NOT filtered -- most action games)
 # 3 = Adult Only Sexual Content              (porn / VN games)
-# 4 = Frequent Nudity or Sexual Content
+# 4 = Frequent Nudity or Sexual Content      (softcore / hentai)
 # 5 = General Mature Content                 (NOT filtered -- CS2, DBD, Rust, etc.)
-ADULT_DESCRIPTOR_IDS = {1, 3, 4}
+# Trust Steam's developer self-flagging; hide only 3 and 4 which are the
+# adult-only categories. Genuine porn / hentai should carry one of these.
+ADULT_DESCRIPTOR_IDS = {3, 4}
 
 # In-memory Steam title cache (loaded once per run)
 _steam_title_cache: dict[str, dict] | None = None
