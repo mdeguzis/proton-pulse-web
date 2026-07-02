@@ -602,6 +602,27 @@ html[data-motion="off"] .banner-atoms {
   margin-top: 4px;
   font-size: 0.74rem;
 }
+/* Footer strip under the quick-search dropdown. Tells the user that the
+   dropdown only searches the small primary index; pressing Enter loads
+   the extended Steam catalog too (usually many more hits). */
+.search-dropdown .sd-footer {
+  padding: 8px 12px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: center;
+  border-top: 1px solid var(--border);
+  background: var(--s1);
+}
+.search-dropdown .sd-footer kbd {
+  display: inline-block;
+  padding: 1px 5px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text);
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
 
 /* hide the mobile-only toggle on desktop, show on small screens via media query below */
 .topbar-mobile-toggle {
