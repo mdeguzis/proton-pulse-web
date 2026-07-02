@@ -2,7 +2,7 @@
 adult-games hide-by-default feature.
 
 The pipeline attaches `adult: true` to a row whenever Steam's appdetails
-response for that app includes any of ADULT_DESCRIPTOR_IDS (1, 4, 5).
+response for that app includes any of ADULT_DESCRIPTOR_IDS (1, 3, 4).
 The frontend hides those rows unless the user opts in via the site
 options "Show adult games" toggle.
 """
@@ -40,9 +40,10 @@ def _reset_descriptor_cache(tmp_path, monkeypatch):
 
 def test_adult_descriptor_ids_covers_the_three_relevant_flags():
     # Steam publishes these IDs for nudity / sexual content descriptors.
-    # 1 = some, 4 = adult only, 5 = frequent. If Steam adds a new one
-    # (e.g. 6), a conscious edit is needed rather than a silent drift.
-    assert ADULT_DESCRIPTOR_IDS == {1, 4, 5}
+    # 1 = some, 3 = adult only, 4 = frequent. ID 5 is "General Mature
+    # Content" (CS2 / DBD / Rust get it) -- NOT adult, do not include.
+    # ID 2 is violence/gore. Adding a new ID is a conscious edit here.
+    assert ADULT_DESCRIPTOR_IDS == {1, 3, 4}
 
 
 def test_fetch_returns_empty_list_when_appdetails_is_unsuccessful():
@@ -57,13 +58,13 @@ def test_fetch_returns_ids_when_present_and_caches_them(_reset_descriptor_cache)
     payload = {
         "12345": {
             "success": True,
-            "data": {"content_descriptors": {"ids": [1, 5], "notes": "..."}},
+            "data": {"content_descriptors": {"ids": [1, 4], "notes": "..."}},
         },
     }
     with patch("scripts.pipeline.common.fetch_json", return_value=payload) as m:
-        assert fetch_steam_content_descriptors("12345") == [1, 5]
+        assert fetch_steam_content_descriptors("12345") == [1, 4]
         # Second call hits the in-memory cache -- no additional network fetch.
-        assert fetch_steam_content_descriptors("12345") == [1, 5]
+        assert fetch_steam_content_descriptors("12345") == [1, 4]
         assert m.call_count == 1
 
 
@@ -79,12 +80,25 @@ def test_is_adult_app_true_when_any_adult_id_is_present():
     payload = {
         "77777": {
             "success": True,
-            "data": {"content_descriptors": {"ids": [3, 5]}},
+            "data": {"content_descriptors": {"ids": [2, 4]}},
         },
     }
     with patch("scripts.pipeline.common.fetch_json", return_value=payload):
-        # 5 is in ADULT_DESCRIPTOR_IDS -> adult
+        # 4 (frequent nudity) is in ADULT_DESCRIPTOR_IDS -> adult; 2 (violence) is not.
         assert is_adult_app("77777") is True
+
+
+def test_is_adult_app_false_when_only_mature_content_id_5_present():
+    # ID 5 = "General Mature Content" (M-rated games like CS2, Rust, DBD).
+    # NOT filtered -- those are mainstream titles the user wants to see.
+    payload = {
+        "cs2": {
+            "success": True,
+            "data": {"content_descriptors": {"ids": [2, 5]}},
+        },
+    }
+    with patch("scripts.pipeline.common.fetch_json", return_value=payload):
+        assert is_adult_app("cs2") is False
 
 
 def test_is_adult_app_false_when_only_non_adult_ids_present():
