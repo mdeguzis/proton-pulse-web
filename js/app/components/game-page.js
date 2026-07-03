@@ -532,19 +532,17 @@ export async function renderGamePage(appId) {
     // Short labels match the tier bars on the right (PLAT/GOLD/SILV/BRON/BORK).
     // CSS shows the abbreviated form on narrow screens so PLATINUM doesn't
     // spill past the 118px dial diameter.
-    const _TIER_SHORT = { PLATINUM: 'PLAT', GOLD: 'GOLD', SILVER: 'SILV', BRONZE: 'BRON', BORKED: 'BORK' };
-    const gaugeDial = `<div class="grp-dial" title="Aggregate confidence: ${_dialPct}%">
-        <svg viewBox="0 0 132 132" aria-hidden="true">
-          <circle cx="66" cy="66" r="${_DIAL_R}" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"></circle>
-          <circle cx="66" cy="66" r="${_DIAL_R}" fill="none" stroke="${overallTileColor}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${_DIAL_C.toFixed(1)}" stroke-dashoffset="${_dialOffset.toFixed(1)}" transform="rotate(-90 66 66)"></circle>
-        </svg>
-        <div class="grp-dial-ctr">
-          <span class="grp-dial-tier" style="color:${overallTileColor}">
-            <span class="grp-dial-tier-short">${_TIER_SHORT[overallTier] || overallTier}</span>
-            <span class="grp-dial-tier-full">${overallTier}</span>
-          </span>
-          <span class="grp-dial-pct">${hasAnyReports ? _dialPct + '%' : '--'}</span>
-          <span class="grp-dial-cap">confidence</span>
+    const gaugeDial = `<div class="grp-dial-block">
+        <div class="grp-dial-verdict" style="color:${overallTileColor}">${overallTier}</div>
+        <div class="grp-dial" title="Aggregate confidence: ${_dialPct}%">
+          <svg viewBox="0 0 132 132" aria-hidden="true">
+            <circle cx="66" cy="66" r="${_DIAL_R}" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"></circle>
+            <circle cx="66" cy="66" r="${_DIAL_R}" fill="none" stroke="${overallTileColor}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${_DIAL_C.toFixed(1)}" stroke-dashoffset="${_dialOffset.toFixed(1)}" transform="rotate(-90 66 66)"></circle>
+          </svg>
+          <div class="grp-dial-ctr">
+            <span class="grp-dial-pct">${hasAnyReports ? _dialPct + '%' : '--'}</span>
+            <span class="grp-dial-cap">confidence</span>
+          </div>
         </div>
       </div>`;
 
