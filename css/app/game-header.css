@@ -286,8 +286,16 @@
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
 }
 /* Tier is the headline (PLATINUM / GOLD / etc) -- what the game IS.
-   Percent + "confidence" caption drop below as the supporting metric. */
-.grp-dial-tier { font-size: 1.25rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
+   Percent + "confidence" caption drop below as the supporting metric.
+   Two spans: full form for wide screens, short (PLAT/GOLD/SILV/BRON/
+   BORK) for narrow so PLATINUM doesn't spill past the 118px dial. */
+.grp-dial-tier { font-size: 1.1rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1; }
+.grp-dial-tier-full { display: inline; }
+.grp-dial-tier-short { display: none; }
+@media (max-width: 720px) {
+  .grp-dial-tier-full { display: none; }
+  .grp-dial-tier-short { display: inline; }
+}
 .grp-dial-pct { font-size: 0.9rem; font-weight: 700; color: var(--strong); font-variant-numeric: tabular-nums; line-height: 1.1; margin-top: 4px; }
 .grp-dial-cap { font-size: 0.5rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
 .grp-bars { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
