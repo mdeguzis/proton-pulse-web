@@ -286,8 +286,10 @@
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
 }
 .grp-dial-pct { font-size: 1.45rem; font-weight: 800; color: var(--strong); font-variant-numeric: tabular-nums; line-height: 1; }
-.grp-dial-tier { font-size: 0.55rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
-.grp-dial-cap { font-size: 0.54rem; color: var(--muted); font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+/* Tier is the headline paired with the percent ("95% PLATINUM"), so make it
+   prominent; "confidence" drops to a small muted caption underneath (#188). */
+.grp-dial-tier { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.1; margin-top: 1px; }
+.grp-dial-cap { font-size: 0.5rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
 .grp-bars { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
 .grp-bar {
   display: grid;
@@ -348,6 +350,9 @@
   flex: 1 1 auto;
   min-width: 0;
   padding: 8px 16px;
+  /* the button is inline-flex, so center the label with justify-content
+     (text-align does nothing on a flex container) (#188) */
+  justify-content: center;
   text-align: center;
   border-radius: 6px;
   box-shadow: none;
