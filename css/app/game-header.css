@@ -346,6 +346,12 @@
   justify-content: center;
 }
 .game-header-actions #stats-btn { flex: 0 0 auto; }
+/* Steam Deck is the last icon-labeled button in the row. Letting it grow
+   fills the leftover space on mobile once Submit Report wraps to its own
+   line -- otherwise the row ends with awkward empty space to the right
+   of the Deck pill. On wide screens it just shares row space with the
+   Submit pill (both are flex-grow), which stays balanced. */
+.game-header-actions .deck-status-btn { flex: 1 1 auto; }
 .game-header-actions .submit-report-btn {
   flex: 1 1 auto;
   min-width: 0;
