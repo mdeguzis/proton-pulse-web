@@ -8,11 +8,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Admin — Proton Pulse</title>
 <meta name="color-scheme" content="dark">
-<link rel="stylesheet" href="css/shared/base.css?v=45c7e06d">
+<link rel="stylesheet" href="css/shared/base.css?v=5f05e437">
 <link rel="stylesheet" href="css/shared/topbar.css?v=c550d77b">
 <link rel="stylesheet" href="css/shared/site.css?v=e05a0f73">
 <link rel="stylesheet" href="css/shared/cards.css?v=16c748ed">
-<link rel="stylesheet" href="css/admin/admin.css?v=8063dab4">
+<link rel="stylesheet" href="css/admin/admin.css?v=e2d7afa7">
 </head>
 <body>
 
@@ -36,14 +36,16 @@
 
       <div class="admin-nav">
         <select id="admin-tab-select" class="admin-select admin-nav-select">
-          <option value="users">All Users</option>
-          <option value="all-reports">Reports</option>
-          <option value="flagged">Flagged Reports</option>
-          <option value="banned">Banned Users</option>
+          <!-- Options sorted A-Z by visible label so admins can scan quickly. -->
           <option value="admins">Admins</option>
-          <option value="phrases">Banned Phrases</option>
+          <option value="users">All Users</option>
           <option value="analytics">Analytics</option>
+          <option value="phrases">Banned Phrases</option>
+          <option value="banned">Banned Users</option>
           <option value="boxart">Box Art Manager</option>
+          <option value="api-explorer">API Explorer</option>
+          <option value="flagged">Flagged Reports</option>
+          <option value="all-reports">Reports</option>
         </select>
       </div>
 
@@ -305,6 +307,32 @@
         <div id="boxart-content"></div>
       </section>
 
+      <!-- Box Art Detail (navigated to via ?boxart=<appId>) -->
+      <section id="tab-boxart-detail" class="admin-section" hidden>
+        <div id="boxart-detail-content"></div>
+      </section>
+
+      <section id="tab-api-explorer" class="admin-section" hidden>
+        <div id="api-explorer-content"></div>
+      </section>
+
+      <!-- Shared boxart chrome (modal + file picker). Used by both the
+           list view and the detail view so a single instance handles
+           set-url and upload actions from either place. -->
+      <input type="file" id="boxart-upload-input" accept="image/png,image/jpeg,image/webp" style="display:none">
+      <div id="boxart-modal-backdrop" class="admin-modal-backdrop" hidden aria-hidden="true">
+        <div class="admin-modal" style="padding: 20px; min-width: 380px; max-width: 90vw">
+          <h3 class="admin-modal-title">Set custom box art URL</h3>
+          <p class="admin-modal-sub" style="margin:6px 0 12px">Overrides the CDN and pipeline fallbacks. Preserved across pipeline reruns until you Clear it.</p>
+          <input type="url" id="boxart-modal-input" class="admin-input" placeholder="https://example.com/header.jpg" style="width:100%">
+          <div class="admin-modal-actions" style="margin-top:14px">
+            <button class="admin-btn" data-modal-action="cancel">Cancel</button>
+            <button class="admin-btn admin-btn--primary" data-modal-action="save">Save override</button>
+          </div>
+          <p id="boxart-modal-error" class="admin-error" hidden style="margin-top:10px"></p>
+        </div>
+      </div>
+
     </div><!-- /admin-panel -->
 
     <!-- Ban reason modal -->
@@ -329,8 +357,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script src="js/lib/analytics.js?v=e6dfbad8"></script>
-<script src="js/lib/topbar.js?v=48d8ca3b"></script>
+<script src="js/lib/topbar.js?v=e6956ee9"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/admin/main.js?v=81f29c16"></script>
+<script type="module" src="js/admin/main.js?v=0bcda5eb"></script>
 </body>
 </html>

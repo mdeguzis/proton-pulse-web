@@ -15,7 +15,7 @@
 // no-auth endpoints, so their refetch is a plain URL probe of the
 // value we already have in nonsteam-images.json.
 
-import { SUPABASE_URL } from '../config.js?v=ffed3d84';
+import { SUPABASE_URL, SUPABASE_ANON_KEY, SupaAuth } from '../config.js?v=ffed3d84';
 
 const STEAM_STANDARD = (appId) =>
   `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(appId)}/header.jpg`;
@@ -110,6 +110,26 @@ export async function refetchSgdbHeader(appId) {
   return _callImageRefetch(appId, 'sgdb');
 }
 
+// Search SteamGridDB and return a LIST of candidate grids for the admin to
+// pick from. `term` searches by title (empty term falls back to the Steam-id
+// lookup). Returns the raw proxy payload: { ok, game, results[] } or
+// { ok:false, error }. Each result has { id, url, thumb, width, height, style }.
+export async function searchSgdb(appId, term = '', dimensions = '') {
+  try {
+    const res = await fetch(IMAGE_REFETCH_ENDPOINT(), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ app_id: String(appId), source: 'sgdb_search', term: String(term || ''), dimensions: String(dimensions || '') }),
+      cache: 'no-store',
+    });
+    const body = await res.json().catch(() => null);
+    if (!body) return { ok: false, error: `proxy HTTP ${res.status} (no body)` };
+    return body;
+  } catch (e) {
+    return { ok: false, error: `network: ${e.message || String(e)}` };
+  }
+}
+
 // Non-Steam refetch just re-probes whatever nonsteam-images.json says
 // (there's no public GOG/Epic image-manifest API we can call from the
 // browser). If the URL still 404s the admin knows to update the
@@ -117,4 +137,79 @@ export async function refetchSgdbHeader(appId) {
 export async function refetchNonSteamHeader(canonicalId, currentUrl) {
   if (!currentUrl) return _result(false, { error: `no cached URL for ${canonicalId}` });
   return probeImageUrl(currentUrl);
+}
+
+// Admin override write helpers. All three hit image-refetch with an
+// Authorization: Bearer <access_token> so the edge function can verify
+// the caller is an admin with manage_box_art. RLS on box_art_overrides
+// enforces the same rule server-side.
+async function _authedFetch(body, { multipart = false } = {}) {
+  // SupaAuth.getSession() returns the session object directly (or null),
+  // NOT the raw supabase-js { data: { session } } shape -- see
+  // js/lib/supabase-client.js.
+  const session = await SupaAuth.getSession().catch(() => null);
+  if (!session?.access_token) return _result(false, { status: 401, error: 'sign in as an admin first' });
+  const headers = {
+    Authorization: `Bearer ${session.access_token}`,
+    apikey: SUPABASE_ANON_KEY,
+  };
+  const init = { method: 'POST', headers, cache: 'no-store' };
+  if (multipart) {
+    init.body = body; // FormData -- browser sets multipart Content-Type + boundary
+  } else {
+    headers['Content-Type'] = 'application/json';
+    init.body = JSON.stringify(body);
+  }
+  try {
+    const res = await fetch(IMAGE_REFETCH_ENDPOINT(), init);
+    const j = await res.json().catch(() => null);
+    if (!j) return _result(false, { status: res.status, error: `proxy HTTP ${res.status} (no body)` });
+    if (j.ok) return _result(true, { url: j.url });
+    return _result(false, { status: j.status || res.status, error: j.error || 'unknown' });
+  } catch (e) {
+    return _result(false, { error: `network: ${e.message || String(e)}` });
+  }
+}
+
+// Set a manual URL override. The edge function HEAD-probes the URL
+// before saving so we don't stamp a broken URL into the override map.
+export async function setBoxArtOverride(appId, url) {
+  if (!appId) return _result(false, { error: 'appId required' });
+  if (!url || !/^https?:\/\//i.test(url)) return _result(false, { error: 'URL must start with http:// or https://' });
+  return _authedFetch({ app_id: String(appId), source: 'set_override', url: String(url) });
+}
+
+// Upload a File (PNG/JPG/WebP, <= 2 MB) to the boxart bucket and set
+// it as this app's override. The edge function returns the public URL.
+export async function uploadBoxArtOverride(appId, file) {
+  if (!appId) return _result(false, { error: 'appId required' });
+  if (!(file instanceof File)) return _result(false, { error: 'file required' });
+  const form = new FormData();
+  form.append('app_id', String(appId));
+  form.append('source', 'upload_override');
+  form.append('file', file);
+  return _authedFetch(form, { multipart: true });
+}
+
+// Remove any override for this app. Deletes the DB row and any bytes
+// in the storage bucket. Safe to call for apps that have no override.
+export async function clearBoxArtOverride(appId) {
+  if (!appId) return _result(false, { error: 'appId required' });
+  return _authedFetch({ app_id: String(appId), source: 'clear_override' });
+}
+
+// Fetch all current overrides (anon-readable per RLS). Used by the
+// admin UI to render "Override" status without probing every row.
+export async function listBoxArtOverrides() {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/box_art_overrides?select=app_id,image_url,source,updated_at`, {
+      headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}` },
+      cache: 'no-store',
+    });
+    if (!res.ok) return { ok: false, error: `REST HTTP ${res.status}`, rows: [] };
+    const rows = await res.json().catch(() => []);
+    return { ok: true, rows: Array.isArray(rows) ? rows : [] };
+  } catch (e) {
+    return { ok: false, error: `network: ${e.message || String(e)}`, rows: [] };
+  }
 }

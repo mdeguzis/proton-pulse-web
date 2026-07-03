@@ -70,3 +70,16 @@ describe('adult-filter', () => {
     expect(filterAdult(rows)).toEqual(rows);
   });
 });
+
+describe('topbar autocomplete adult gate', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const TOPBAR = fs.readFileSync(path.join(__dirname, '..', 'js', 'lib', 'topbar.js'), 'utf8');
+
+  test('match() skips adult-flagged rows (column 8) unless the pref is on', () => {
+    // Inlined mirror of adult-filter.js since topbar is a classic script.
+    expect(TOPBAR).toContain("localStorage.getItem('pp:show-adult') === 'on'");
+    expect(TOPBAR).toContain('const showAdult = _showAdultAllowed()');
+    expect(TOPBAR).toContain('if (!showAdult && row[8] === true) continue');
+  });
+});

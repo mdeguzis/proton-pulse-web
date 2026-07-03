@@ -371,3 +371,28 @@ code {
   border: 1px solid var(--border);
   padding: 1px 5px;
 }
+
+/* "Box art unavailable" placeholder. Rendered by steam-img.js in place of a
+   broken image slot once every source in the fallback chain has failed, for
+   any store. Keeps the failed element's layout classes so it fills the same
+   slot; this rule supplies the visible missing-state chrome. */
+.boxart-missing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 120px;
+  box-sizing: border-box;
+  padding: 14px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.015) 0 12px, rgba(255, 255, 255, 0.05) 12px 24px);
+  border: 1px dashed var(--border2);
+  border-radius: 6px;
+}
+.boxart-missing-icon { opacity: 0.55; }

@@ -1059,3 +1059,61 @@ pre.flag-raw-json {
 .cache-status-warn { color: var(--yellow, #e5c07b); font-weight: 600; }
 .cache-status-details summary { font-size: 0.82rem; padding: 4px 0; }
 .cache-status-section { max-width: 860px; }
+
+/* SteamGridDB search-and-pick results (Box Art detail view). The admin
+   searches community artwork and sets one grid as the box art override. */
+.sgdb-results { margin-top: 4px; }
+.sgdb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 4px;
+}
+.sgdb-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid var(--border, #24344a);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.sgdb-thumb-link {
+  display: block;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.sgdb-thumb {
+  width: 100%;
+  aspect-ratio: 460 / 215;
+  object-fit: cover;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  display: block;
+  transition: transform 0.12s ease;
+}
+.sgdb-thumb-link:hover .sgdb-thumb { transform: scale(1.03); }
+.sgdb-meta {
+  font-size: 0.72rem;
+  color: var(--muted, #8899aa);
+  font-variant-numeric: tabular-nums;
+}
+.sgdb-set { width: 100%; }
+
+/* API Explorer output: raw JSON dump, scrollable, monospace. */
+.apix-output {
+  margin: 12px 0 0;
+  max-height: 520px;
+  overflow: auto;
+  padding: 12px 14px;
+  background: var(--bg, #0b1116);
+  border: 1px solid var(--border2, #2f4a63);
+  border-radius: 8px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--text, #c7d5e0);
+  white-space: pre;
+  tab-size: 2;
+}

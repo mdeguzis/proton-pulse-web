@@ -1,5 +1,7 @@
 // deck-status (api) for the app page. Relocated from app.js.
 
+import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
+
 export const DECK_CAT_MAP = { 0: 'unknown', 1: 'unsupported', 2: 'playable', 3: 'verified' };
 // display_type in resolved_items: 2=fail, 3=info/caveat, 4=pass
 export const DECK_DISPLAY_MAP = { 4: true, 3: null, 2: false };
@@ -7,38 +9,42 @@ export const DECK_DISPLAY_MAP = { 4: true, 3: null, 2: false };
 // cache fetched deck compat so we dont re-fetch on every render
 export const _deckCache = {};
 
+// Steam's ajaxgetdeckappcompatibilityreport endpoint is NOT CORS-enabled, so a
+// browser fetch always failed and every game fell back to "Unknown ?". The
+// pipeline now fetches it server-side and publishes deck-status.json (task #37,
+// scripts/pipeline/deck_status.py); we read that map here. Loaded once.
+let _deckMap = null;
+let _deckMapLoading = null;
+
+function _loadDeckMap() {
+  if (_deckMap) return Promise.resolve(_deckMap);
+  if (_deckMapLoading) return _deckMapLoading;
+  _deckMapLoading = dataUrl('deck-status.json')
+    .then((name) => fetch(name))
+    .then((r) => (r.ok ? r.json() : {}))
+    .catch(() => ({}))
+    .then((m) => { _deckMap = (m && typeof m === 'object') ? m : {}; return _deckMap; });
+  return _deckMapLoading;
+}
+
 /**
- * Fetch the Steam Deck compatibility status for a game from the Steam store API.
- * Results are cached in `_deckCache` by appId for the page lifetime.
- * Hits `https://store.steampowered.com/saleaction/ajaxgetdeckappcompatibilityreport?nAppID=`.
+ * Steam Deck compatibility status for a game, from the pipeline-published
+ * deck-status.json map. Results are cached in `_deckCache` by appId.
  * @param {string|number} appId - Steam app ID.
  * @returns {Promise<{status: string, criteria: Array<boolean|null>|null}>}
  *   `status` is one of `'unknown'|'unsupported'|'playable'|'verified'`.
- *   `criteria` is an array of 4 pass/fail/info values mapped from `resolved_items`, or null if unavailable.
+ *   `criteria` is an array of 4 pass/fail/info values, or null if unavailable.
  */
 export async function fetchDeckStatusForApp(appId) {
   if (!appId) return { status: 'unknown', criteria: null };
   if (_deckCache[appId]) return _deckCache[appId];
-  try {
-    const r = await fetch(`https://store.steampowered.com/saleaction/ajaxgetdeckappcompatibilityreport?nAppID=${appId}`);
-    if (!r.ok) throw new Error(r.status);
-    const d = await r.json();
-    if (!d.success) throw new Error('no data');
-    const cat = d.results?.resolved_category ?? 0;
-    const status = DECK_CAT_MAP[cat] || 'unknown';
-    // map each resolved_item to a true/false/null criterion result
-    const items = d.results?.resolved_items || [];
-    const criteria = items.length >= 4
-      ? items.slice(0, 4).map(i => DECK_DISPLAY_MAP[i.display_type] ?? null)
-      : null;
-    const ret = { status, criteria };
-    _deckCache[appId] = ret;
-    return ret;
-  } catch {
-    const ret = { status: 'unknown', criteria: null };
-    _deckCache[appId] = ret;
-    return ret;
-  }
+  const map = await _loadDeckMap();
+  const entry = map[String(appId)];
+  const ret = entry && entry.status
+    ? { status: entry.status, criteria: entry.criteria || null }
+    : { status: 'unknown', criteria: null };
+  _deckCache[appId] = ret;
+  return ret;
 }
 
 // synchronous fallback used for initial render before the async fetch returns

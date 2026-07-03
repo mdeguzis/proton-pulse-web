@@ -167,3 +167,56 @@ def test_expired_cache_entry_triggers_a_fresh_fetch(_reset_descriptor_cache):
     with patch("scripts.pipeline.common.fetch_json", return_value=payload) as m:
         assert fetch_steam_content_descriptors("stale") == [1]
         assert m.call_count == 1
+
+
+def test_network_exception_does_not_poison_the_cache(_reset_descriptor_cache):
+    # Regression for #185: a rate-limited / failed fetch must NOT cache an
+    # empty (false-negative) result. The old code cached [] for 30 days,
+    # locking adult games as "not adult" whenever their fetch was throttled.
+    with patch("scripts.pipeline.common.fetch_json", side_effect=RuntimeError("429")) as m1:
+        assert fetch_steam_content_descriptors("bf6") == []
+        assert m1.call_count == 1
+    # Nothing was cached, so the next run re-fetches and can succeed.
+    payload = {"bf6": {"success": True, "data": {"content_descriptors": {"ids": [3, 4]}}}}
+    with patch("scripts.pipeline.common.fetch_json", return_value=payload) as m2:
+        assert fetch_steam_content_descriptors("bf6") == [3, 4]
+        assert m2.call_count == 1
+
+
+def test_legacy_empty_entry_uses_short_ttl_and_self_heals(_reset_descriptor_cache):
+    # The Naughty Chat (3580330) case: a legacy entry (no "ok" flag) with an
+    # empty id list is a suspect false negative. It gets the short negative
+    # TTL, so once it ages past that it re-fetches and picks up the real
+    # descriptors [1, 3, 4, 5] -> flagged adult.
+    stale_ts = int(time.time()) - (common_module.STEAM_DESCRIPTORS_NEGATIVE_TTL_SECONDS + 3600)
+    common_module._load_steam_descriptors_cache()
+    common_module._steam_descriptors_cache["naughty"] = {"ids": [], "ts": stale_ts}
+    payload = {"naughty": {"success": True, "data": {"content_descriptors": {"ids": [1, 3, 4, 5]}}}}
+    with patch("scripts.pipeline.common.fetch_json", return_value=payload) as m:
+        assert fetch_steam_content_descriptors("naughty") == [1, 3, 4, 5]
+        assert m.call_count == 1
+    assert is_adult_app("naughty") is True
+
+
+def test_legacy_nonempty_entry_is_treated_as_confirmed(_reset_descriptor_cache):
+    # A legacy entry WITH descriptors came from a real success:true fetch --
+    # keep the full TTL, don't re-fetch (avoids a rate-limit storm on games
+    # that already have a good result).
+    ts = int(time.time()) - (common_module.STEAM_DESCRIPTORS_NEGATIVE_TTL_SECONDS + 3600)
+    common_module._load_steam_descriptors_cache()
+    common_module._steam_descriptors_cache["confirmed"] = {"ids": [4], "ts": ts}
+    with patch("scripts.pipeline.common.fetch_json", side_effect=AssertionError("should not fetch")) as m:
+        assert fetch_steam_content_descriptors("confirmed") == [4]
+        assert m.call_count == 0
+
+
+def test_success_false_uses_short_negative_ttl(_reset_descriptor_cache):
+    # success:false is stored ok=False and re-fetched after the short TTL, in
+    # case it was a transient rate-limit response rather than a removed app.
+    stale_ts = int(time.time()) - (common_module.STEAM_DESCRIPTORS_NEGATIVE_TTL_SECONDS + 3600)
+    common_module._load_steam_descriptors_cache()
+    common_module._steam_descriptors_cache["x"] = {"ids": [], "ts": stale_ts, "ok": False}
+    payload = {"x": {"success": True, "data": {"content_descriptors": {"ids": [3]}}}}
+    with patch("scripts.pipeline.common.fetch_json", return_value=payload) as m:
+        assert fetch_steam_content_descriptors("x") == [3]
+        assert m.call_count == 1

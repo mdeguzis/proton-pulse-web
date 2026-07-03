@@ -1,6 +1,6 @@
 // deck-status (components) for the app page. Relocated from app.js.
 
-import { getDeckStatusForApp } from '../api/deck-status.js?v=21903124';
+import { getDeckStatusForApp } from '../api/deck-status.js?v=dfac69c8';
 import { esc } from '../utils.js?v=c7e1268c';
 
 export const DECK_STATUS_LABELS = {
@@ -68,7 +68,7 @@ export function renderDeckStatusModalContent(appId) {
     </h3>
     <p style="color:var(--muted);font-size:0.84rem;margin:0 0 12px;line-height:1.5">${summaryByStatus[status] || ''}</p>
     <div class="deck-criteria-list">${rows}</div>
-    <p style="color:var(--muted);font-size:0.7rem;margin:10px 0 0;font-style:italic">Sample data shown - real per-game status will land when the pipeline publishes Steam Deck compatibility (task #37).</p>`;
+    <p style="color:var(--muted);font-size:0.7rem;margin:10px 0 0;font-style:italic">${status === 'unknown' ? 'Valve has not published a Steam Deck verdict for this title yet.' : "Source: Valve's official Steam Deck compatibility report."}</p>`;
 }
 
 // - Author / signals / permalink helpers --------------

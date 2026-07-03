@@ -2,7 +2,11 @@ name: Deploy Supabase Edge Functions
 
 on:
   push:
-    branches: [main]
+    # Both branches deploy: staging is our pre-prod, and edge function
+    # changes must land on the live Supabase project immediately so
+    # staging can exercise them end-to-end. There is only one Supabase
+    # project (no staging clone) -- last push wins.
+    branches: [main, staging]
     paths:
       - 'supabase/functions/**'
       - '.github/workflows/deploy-functions.yml'

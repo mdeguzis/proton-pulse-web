@@ -27,3 +27,6 @@ verify_jwt = false
 
 [functions.image-refetch]
 verify_jwt = false
+
+[functions.steam-explore]
+verify_jwt = false

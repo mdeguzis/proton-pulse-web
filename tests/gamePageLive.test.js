@@ -40,3 +40,54 @@ describe('game page: ProtonDB live-only handling', () => {
     expect(src).not.toContain('submit.html?appId=');
   });
 });
+
+describe('game page: rating panel (dial + per-tier bars + flag)', () => {
+  test('renders a confidence gauge dial driven by the overall confidence %', () => {
+    expect(src).toContain('const _dialPct = hasAnyReports ? Math.max(0, Math.min(100, Math.round(overallConfidencePct || 0))) : 0');
+    expect(src).toContain('const _dialOffset = _DIAL_C * (1 - _dialPct / 100)');
+    expect(src).toContain('class="grp-dial"');
+    expect(src).toContain('class="grp-dial-pct"');
+  });
+
+  test('per-tier bars are built from the real rating counts, scaled to the busiest tier', () => {
+    expect(src).toContain("const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked']");
+    expect(src).toContain('const maxTierCount = Math.max(1, ...TIER_ORDER.map((t) => ratingCounts[t]))');
+    expect(src).toContain('const pct = Math.round((n / maxTierCount) * 100)');
+    expect(src).toContain('class="grp-bar-fill"');
+    expect(src).toContain('background:${RATING_COLORS[t]}');
+  });
+
+  test('live-only games show the no-breakdown note instead of empty bars', () => {
+    expect(src).toContain('class="grp-bars-note"');
+    expect(src).toContain("Per-tier breakdown is not available from ProtonDB");
+  });
+
+  test('confidence summary links to the scoring breakdown via a "why?" link', () => {
+    expect(src).toContain('class="grp-why conf-link"');
+    expect(src).toContain('href="confidence.html?app=${appId}"');
+    expect(src).toContain('>why?</a>');
+  });
+
+  test('flag button opens the Game Report template prefilled with title, appId, and starter body', () => {
+    expect(src).toContain('const _flagStarter =');
+    expect(src).toContain('issues/new?template=game_report.yml');
+    expect(src).toContain('game_name=${encodeURIComponent(title)}');
+    expect(src).toContain('app_id=${encodeURIComponent(String(appId))}');
+    expect(src).toContain('description=${encodeURIComponent(_flagStarter)}');
+    expect(src).toContain('id="flag-game-btn"');
+    expect(src).toContain('class="info-btn info-btn-flag"');
+  });
+
+  test('box art is preserved in the header grid', () => {
+    expect(src).toContain('class="game-header-art"');
+    expect(src).toContain('src="${STEAM_IMG(appId)}"');
+  });
+
+  test('confidence summary buckets off the percent, not the report count (#187)', () => {
+    // Single source of truth: the dial %, the summary label, and confidence.html
+    // must agree. Bucket thresholds match confidence.html (>=80 high, >=50 moderate).
+    expect(src).toContain("overallConfidencePct >= 80 ? 'high' : overallConfidencePct >= 50 ? 'moderate' : 'low'");
+    // The old report-count bucket is gone.
+    expect(src).not.toContain("totalReports >= 20 ? 'high' : totalReports >= 5 ? 'medium'");
+  });
+});

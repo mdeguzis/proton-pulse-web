@@ -9,6 +9,7 @@ from .backfill import run_backfill, run_coverage_backfill, run_probe_backfill
 from .catalog import get_steam_api_key, load_steam_game_catalog
 from .common import clone_repo, log, set_debug
 from .finalize import build_probe_chunk_plan, finalize_output, reindex_apps, update_protondb_probe_cache
+from .deck_status import build_deck_status
 from .game_images import build_game_images
 from .most_played import build_most_played
 from .process import process_reports, seed_official_dump_metadata
@@ -122,6 +123,12 @@ def build_parser():
     )
     add_shared_output_arg(most_played_parser)
 
+    deck_status_parser = subparsers.add_parser(
+        "deck-status",
+        help="Build deck-status.json (Valve's per-game Steam Deck verdict, fetched server-side)",
+    )
+    add_shared_output_arg(deck_status_parser)
+
     run_parser = subparsers.add_parser("run", help="Run process, backfill, and finalize in sequence")
     run_parser.add_argument("input_dir", nargs="?", help="Local directory containing JSON/tar.gz report files")
     run_parser.add_argument("--url", help="Git repo URL to clone as data source (e.g. https://github.com/bdefore/protondb-data)")
@@ -176,6 +183,11 @@ def main():
     if command == "most-played":
         build_most_played(args.output_dir, limit=getattr(args, "limit", 15))
         build_game_images(args.output_dir)
+        build_deck_status(args.output_dir)
+        return
+
+    if command == "deck-status":
+        build_deck_status(args.output_dir)
         return
 
     if command == "probe-plan":

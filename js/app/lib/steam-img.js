@@ -1,8 +1,98 @@
 // Single loader for all Steam header images.
 // All pages and components must route through loadSteamImg / window.__steamImgLoad.
-// Fallback chain: akamai (primary, set as img src) -> cloudflare CDN -> game-images.json hash URL -> hidden placeholder.
+// Fallback chain: admin override -> akamai (primary, set as img src) -> cloudflare CDN -> game-images.json hash URL -> hidden placeholder.
+//
+// Admin overrides come from the box_art_overrides Supabase table. They
+// take precedence over the akamai default URL, so when an admin sets a
+// custom image it takes effect immediately (not after the next pipeline
+// run). Overrides are fetched once per session, cached in sessionStorage,
+// and applied via MutationObserver so dynamically-inserted images also
+// pick them up.
 
 const _CDN2 = id => `https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/header.jpg`;
+
+const _SUPABASE_URL      = window.SUPABASE_URL      || 'https://ilsgdshkaocrmibwdezk.supabase.co';
+const _SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || '';
+const _OVERRIDES_CACHE_KEY = 'boxart_overrides_v1';
+const _OVERRIDES_TTL_MS    = 5 * 60 * 1000;  // 5 min: fresh enough to reflect admin edits, no per-page-view fetch
+
+let _overridesMap = null;    // { appId: image_url }
+let _overridesPromise = null;
+
+function _loadOverrides() {
+  if (_overridesMap) return Promise.resolve(_overridesMap);
+  if (_overridesPromise) return _overridesPromise;
+  // Session cache: subsequent page loads within the same tab reuse the
+  // fetched map without hitting the DB. Skips if stale or missing.
+  try {
+    const raw = sessionStorage.getItem(_OVERRIDES_CACHE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && parsed.ts && (Date.now() - parsed.ts) < _OVERRIDES_TTL_MS && parsed.map) {
+        _overridesMap = parsed.map;
+        return Promise.resolve(_overridesMap);
+      }
+    }
+  } catch (_) { /* corrupt cache -> refetch */ }
+  const url = `${_SUPABASE_URL}/rest/v1/box_art_overrides?select=app_id,image_url`;
+  _overridesPromise = fetch(url, {
+    headers: {
+      apikey: _SUPABASE_ANON_KEY,
+      Authorization: `Bearer ${_SUPABASE_ANON_KEY}`,
+    },
+    cache: 'no-store',
+  })
+    .then(r => r.ok ? r.json() : [])
+    .catch(() => [])
+    .then(rows => {
+      const map = {};
+      for (const row of (rows || [])) {
+        if (row?.app_id && row?.image_url) map[String(row.app_id)] = row.image_url;
+      }
+      _overridesMap = map;
+      try { sessionStorage.setItem(_OVERRIDES_CACHE_KEY, JSON.stringify({ ts: Date.now(), map })); } catch (_) {}
+      return map;
+    });
+  return _overridesPromise;
+}
+
+// Apply overrides to any img[data-appid] currently in the DOM whose
+// current src does not already match the override URL. Idempotent.
+function _applyOverrides(map, root = document) {
+  if (!map || Object.keys(map).length === 0) return;
+  const imgs = root.querySelectorAll('img[data-appid]');
+  for (const img of imgs) {
+    const appId = img.dataset.appid;
+    const overrideUrl = map[appId];
+    if (!overrideUrl) continue;
+    if (img.src !== overrideUrl) {
+      img.src = overrideUrl;
+    }
+  }
+}
+
+// Wire once: initial DOM scan + MutationObserver so cards inserted
+// later (search results, load-more, tab switches) also get overrides
+// applied without every renderer needing to know about them.
+if (typeof document !== 'undefined') {
+  const init = () => {
+    _loadOverrides().then(map => {
+      _applyOverrides(map);
+      const obs = new MutationObserver(mutations => {
+        for (const m of mutations) {
+          for (const node of m.addedNodes) {
+            if (!(node instanceof Element)) continue;
+            if (node.matches?.('img[data-appid]')) _applyOverrides(map, node.parentNode || document);
+            else if (node.querySelector?.('img[data-appid]')) _applyOverrides(map, node);
+          }
+        }
+      });
+      obs.observe(document.body, { childList: true, subtree: true });
+    });
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+  else init();
+}
 
 const _USES_PROD_DATA = ['localhost', '127.0.0.1', '0.0.0.0'].includes(window.location.hostname)
   || (window.location.hostname || '').endsWith('.github.io');
@@ -67,8 +157,26 @@ function _bumpRoute(route) {
   counts[route] = (counts[route] || 0) + 1;
 }
 
+// Render a visible "box art unavailable" placeholder in place of a broken image
+// slot. Runs for ANY store (Steam / GOG / Epic) once every source in the
+// fallback chain has failed. Previously the slot was just hidden, which left an
+// ambiguous gray gap (e.g. Battlefield 6). Replaces the <img> with a div that
+// keeps the original layout classes so it occupies the same spot and size.
+function _showMissing(el) {
+  if (!el || !el.parentNode) return;
+  const ph = document.createElement('div');
+  ph.className = `${el.className ? el.className + ' ' : ''}boxart-missing`;
+  if (el.dataset.appid) ph.dataset.appid = el.dataset.appid;
+  ph.setAttribute('role', 'img');
+  ph.setAttribute('aria-label', 'Box art unavailable');
+  ph.innerHTML =
+    '<svg class="boxart-missing-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 16l5-5 4 4 3-3 6 6"></path><circle cx="8.5" cy="9" r="1.4"></circle></svg>' +
+    '<span>Box art unavailable</span>';
+  el.replaceWith(ph);
+}
+
 // Called after the primary akamai src fails (onerror).
-// Tries cloudflare, then game-images.json, then hides the slot.
+// Tries cloudflare, then game-images.json, then shows a Missing placeholder.
 export async function loadSteamImg(el, appId) {
   const id = String(appId);
 
@@ -89,7 +197,7 @@ export async function loadSteamImg(el, appId) {
     }
     console.warn(`[steam-img] appId=${id} no non-Steam cover available`);
     _bumpRoute('hidden');
-    el.style.visibility = 'hidden';
+    _showMissing(el);
     return;
   }
 
@@ -115,7 +223,7 @@ export async function loadSteamImg(el, appId) {
 
   console.warn(`[steam-img] appId=${id} all CDN paths exhausted`);
   _bumpRoute('hidden');
-  el.style.visibility = 'hidden';
+  _showMissing(el);
 }
 
 // Global bridge for inline onerror="window.__steamImgLoad(this)".
