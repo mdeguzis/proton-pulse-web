@@ -28,8 +28,9 @@ export const TAB_PERMISSIONS = {
   banned:    ['ban_users'],
   admins:    ['manage_admins'],
   phrases:   ['manage_phrases'],
-  analytics: ['view_analytics'],
-  boxart:    ['view_analytics'],
+  analytics:      ['view_analytics'],
+  boxart:         ['view_analytics'],
+  'api-explorer': ['view_analytics'],
 };
 
 // Effective permissions for an admin. super_admin short-circuits to all.

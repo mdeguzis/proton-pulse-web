@@ -1100,3 +1100,20 @@ pre.flag-raw-json {
   font-variant-numeric: tabular-nums;
 }
 .sgdb-set { width: 100%; }
+
+/* API Explorer output: raw JSON dump, scrollable, monospace. */
+.apix-output {
+  margin: 12px 0 0;
+  max-height: 520px;
+  overflow: auto;
+  padding: 12px 14px;
+  background: var(--bg, #0b1116);
+  border: 1px solid var(--border2, #2f4a63);
+  border-radius: 8px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--text, #c7d5e0);
+  white-space: pre;
+  tab-size: 2;
+}

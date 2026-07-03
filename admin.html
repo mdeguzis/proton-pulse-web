@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=c550d77b">
 <link rel="stylesheet" href="css/shared/site.css?v=e05a0f73">
 <link rel="stylesheet" href="css/shared/cards.css?v=16c748ed">
-<link rel="stylesheet" href="css/admin/admin.css?v=cfc4611b">
+<link rel="stylesheet" href="css/admin/admin.css?v=e2d7afa7">
 </head>
 <body>
 
@@ -43,6 +43,7 @@
           <option value="phrases">Banned Phrases</option>
           <option value="banned">Banned Users</option>
           <option value="boxart">Box Art Manager</option>
+          <option value="api-explorer">API Explorer</option>
           <option value="flagged">Flagged Reports</option>
           <option value="all-reports">Reports</option>
         </select>
@@ -311,6 +312,10 @@
         <div id="boxart-detail-content"></div>
       </section>
 
+      <section id="tab-api-explorer" class="admin-section" hidden>
+        <div id="api-explorer-content"></div>
+      </section>
+
       <!-- Shared boxart chrome (modal + file picker). Used by both the
            list view and the detail view so a single instance handles
            set-url and upload actions from either place. -->
@@ -354,6 +359,6 @@
 <script src="js/lib/analytics.js?v=e6dfbad8"></script>
 <script src="js/lib/topbar.js?v=e6956ee9"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/admin/main.js?v=0993bcee"></script>
+<script type="module" src="js/admin/main.js?v=0bcda5eb"></script>
 </body>
 </html>

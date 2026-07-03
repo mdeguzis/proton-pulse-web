@@ -1,6 +1,6 @@
 import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
 import { supabaseHeaders, escapeHtml } from './utils.js?v=bd5a67c2';
-import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=86a766da';
+import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=12b82ef4';
 import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=9359a45e';
 import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=5e2c6b60';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=0d6ec118';
@@ -18,6 +18,7 @@ import { fetchAnalytics } from './api/analytics.js?v=a1c14331';
 import { renderAnalytics } from './components/analytics.js?v=7ee75cfc';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
 import { renderBoxartAdmin, renderBoxartAdminDetail } from './components/boxart.js?v=204640bd';
+import { renderApiExplorer } from './components/api-explorer.js?v=b61d5878';
 import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=c8c8396a';
 import { patchReportFlags, fetchReportById } from './api/allReports.js?v=7e28c862';
 import { approveReport } from './api/pending.js?v=84292a58';
@@ -453,6 +454,7 @@ const TAB_LOADERS = {
   phrases: loadPhrases,
   analytics: loadAnalytics,
   boxart: () => renderBoxartAdmin().catch(e => console.error('[boxart]', e)),
+  'api-explorer': () => renderApiExplorer(),
 };
 
 // Activate a tab, load its data, and reflect it in the URL as ?tab=<name> so a
