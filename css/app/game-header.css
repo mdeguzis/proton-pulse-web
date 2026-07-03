@@ -285,10 +285,19 @@
   position: absolute; inset: 0;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
 }
-/* Tier is the headline (PLAT / GOLD / SILV / BRON / BORK) -- what the
-   game IS. Uses the abbreviated form at every size (matches the tier
-   bars on the right) so it always fits inside the 118px dial. */
+/* Tier is the headline -- what the game IS. Short form (PLAT/GOLD/
+   SILV/BRON/BORK) is the SAFE DEFAULT so even a stale-cache browser
+   doesn't overflow the 118px dial with PLATINUM. Desktop >=1024px
+   opts back into the full form. Ordering the short span first also
+   means it's what any missing-media-query fallback shows. */
 .grp-dial-tier { font-size: 1.35rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; }
+.grp-dial-tier-short { display: inline; }
+.grp-dial-tier-full  { display: none; }
+@media (min-width: 1024px) {
+  .grp-dial-tier-short { display: none; }
+  .grp-dial-tier-full  { display: inline; }
+  .grp-dial-tier       { font-size: 1.1rem; letter-spacing: 0.04em; }
+}
 .grp-dial-pct { font-size: 0.9rem; font-weight: 700; color: var(--strong); font-variant-numeric: tabular-nums; line-height: 1.1; margin-top: 4px; }
 .grp-dial-cap { font-size: 0.5rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
 .grp-bars { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
