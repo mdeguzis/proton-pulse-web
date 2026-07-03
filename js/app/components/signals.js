@@ -1,6 +1,6 @@
 // signals (components) for the app page. Relocated from app.js.
 
-import { isSteamDeckHardware } from './deck-status.js?v=48037483';
+import { isSteamDeckHardware } from './deck-status.js?v=a1a075ee';
 
 export const SIGNAL_ICON_SVG = {
   install: '<path fill="currentColor" d="M5 20h14v-2H5v2zm7-2 5-5h-3V4h-4v9H7l5 5z"/>',

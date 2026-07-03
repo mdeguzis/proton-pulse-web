@@ -25,6 +25,7 @@ DATA_FILES = [
     "search-index-steam-extended.json",
     "recent-reports.json",
     "most_played.json",
+    "deck-status.json",
     "game-images.json",
     "nonsteam-images.json",
     "stats.json",

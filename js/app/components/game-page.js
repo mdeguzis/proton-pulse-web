@@ -3,13 +3,13 @@
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=0dae1257';
 import { getWebClientId } from '../../shared/submit.js?v=8c22e9ad';
-import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.js?v=21903124';
+import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.js?v=dfac69c8';
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=0594677b';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=2316d334';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
-import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=48037483';
+import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=a1a075ee';
 import { renderCard } from './report-card.js?v=8a17ff46';
 import { loadSearchIndex, searchIndex } from './search.js?v=ff82d0c0';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';

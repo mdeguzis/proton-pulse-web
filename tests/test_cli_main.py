@@ -76,19 +76,28 @@ def test_main_most_played(tmp_path):
     with (
         patch("scripts.pipeline.cli.build_most_played") as mock_mp,
         patch("scripts.pipeline.cli.build_game_images") as mock_gi,
+        patch("scripts.pipeline.cli.build_deck_status") as mock_deck,
     ):
         _run_main("most-played", str(tmp_path))
         mock_mp.assert_called_once_with(str(tmp_path), limit=15)
         mock_gi.assert_called_once_with(str(tmp_path))
+        mock_deck.assert_called_once_with(str(tmp_path))
 
 
 def test_main_most_played_with_limit(tmp_path):
     with (
         patch("scripts.pipeline.cli.build_most_played") as mock_mp,
         patch("scripts.pipeline.cli.build_game_images"),
+        patch("scripts.pipeline.cli.build_deck_status"),
     ):
         _run_main("most-played", "--limit", "50", str(tmp_path))
         mock_mp.assert_called_once_with(str(tmp_path), limit=50)
+
+
+def test_main_deck_status(tmp_path):
+    with patch("scripts.pipeline.cli.build_deck_status") as mock_deck:
+        _run_main("deck-status", str(tmp_path))
+        mock_deck.assert_called_once_with(str(tmp_path))
 
 
 def test_main_reindex(tmp_path):

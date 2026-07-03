@@ -36,6 +36,7 @@ from .epic_catalog import load_epic_catalog, load_epic_covers
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
 from .data_versions import write_data_versions_json
 from .game_images import build_game_images, enrich_search_index_with_delisted
+from .deck_status import build_deck_status
 from .most_played import build_most_played
 from .release_years import enrich_search_index_with_release_years
 from .pulse import merge_pulse_into_data_dir
@@ -1609,6 +1610,10 @@ def finalize_output(output_dir, skip_probe: bool = False):
     write_stats_json(data_output_path, output_path)
     generate_recent_reports(data_output_path, output_path)
     build_most_played(output_path)
+    # Valve's per-game Steam Deck verdict, fetched server-side (their endpoint
+    # is not CORS-enabled) and published as deck-status.json (task #37). Runs
+    # after the search index exists so it can scope to games with reports.
+    build_deck_status(output_path)
     overrides = build_game_images(output_path)
     # Game-images probing now knows which Steam IDs returned success=false from
     # appdetails. Flag them in search-index.json column 7 so the frontend can
