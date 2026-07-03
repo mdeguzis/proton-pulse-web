@@ -14,7 +14,13 @@ STEAM_TITLE_CACHE_MAX_AGE_SECONDS = 30 * 86400  # 30 days
 # Steam content descriptor cache -- keeps the { app_id -> descriptor_ids }
 # mapping so we don't re-hit appdetails on every pipeline run.
 DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH = Path(__file__).resolve().parents[2] / ".cache" / "steam-content-descriptors-cache.json"
-STEAM_DESCRIPTORS_CACHE_MAX_AGE_SECONDS = 30 * 86400  # 30 days
+STEAM_DESCRIPTORS_CACHE_MAX_AGE_SECONDS = 30 * 86400  # 30 days -- confirmed (success:true) results
+# Unresolved negatives (success:false) expire far sooner. success:false is
+# ambiguous: it can be a removed/region-locked app OR a transient Steam
+# rate-limit response. A short TTL means a real adult flag isn't locked out
+# for a month just because one fetch was throttled. Network errors / HTTP 429
+# are not cached at all (see fetch_steam_content_descriptors).
+STEAM_DESCRIPTORS_NEGATIVE_TTL_SECONDS = 3 * 86400  # 3 days
 # Steam descriptor IDs that flag a game as adult-only for our purposes.
 # Reference: https://partner.steamgames.com/doc/store/community_engagement/content_descriptors
 # 1 = Some Nudity or Sexual Content          (NOT filtered -- too broad; catches
@@ -245,7 +251,17 @@ def fetch_steam_content_descriptors(app_id: str) -> list[int]:
     cached = cache.get(app_id)
     if cached and isinstance(cached, dict):
         age = now - cached.get("ts", 0)
-        if age < STEAM_DESCRIPTORS_CACHE_MAX_AGE_SECONDS:
+        # Confirmed results (ok=True) live for the full TTL. Unresolved
+        # negatives expire sooner. Legacy entries predate the "ok" flag: a
+        # non-empty id list must have come from a real success:true fetch, so
+        # treat it as confirmed; a legacy EMPTY list is a suspect (it may be a
+        # rate-limit false negative from the old caching), so give it the short
+        # TTL and let it re-fetch and self-heal.
+        ok = cached.get("ok")
+        if ok is None:
+            ok = bool(cached.get("ids"))
+        ttl = STEAM_DESCRIPTORS_CACHE_MAX_AGE_SECONDS if ok else STEAM_DESCRIPTORS_NEGATIVE_TTL_SECONDS
+        if age < ttl:
             ids = cached.get("ids", [])
             return list(ids) if isinstance(ids, list) else []
 
@@ -256,15 +272,21 @@ def fetch_steam_content_descriptors(app_id: str) -> list[int]:
             descriptors = app_data.get("data", {}).get("content_descriptors", {}) or {}
             raw_ids = descriptors.get("ids", []) or []
             ids = [int(i) for i in raw_ids if isinstance(i, (int, float)) and not isinstance(i, bool)]
-            cache[app_id] = {"ids": ids, "ts": now}
+            # Definitive answer -- cache for the full TTL, even when empty
+            # (a genuinely non-adult game legitimately has no descriptors).
+            cache[app_id] = {"ids": ids, "ts": now, "ok": True}
             _steam_descriptors_cache_dirty = True
             return ids
-        cache[app_id] = {"ids": [], "ts": now}
+        # success:false -- ambiguous (removed app OR transient rate-limit).
+        # Short-lived negative so a throttled adult title is retried soon
+        # instead of being locked as "not adult" for the full TTL.
+        cache[app_id] = {"ids": [], "ts": now, "ok": False}
         _steam_descriptors_cache_dirty = True
         return []
     except Exception:
-        cache[app_id] = {"ids": [], "ts": now}
-        _steam_descriptors_cache_dirty = True
+        # Network error / HTTP 429 rate limit. Do NOT write a cache entry:
+        # leaving it unset (or keeping any prior entry) means the next run
+        # retries rather than poisoning the cache with a false negative.
         return []
 
 
