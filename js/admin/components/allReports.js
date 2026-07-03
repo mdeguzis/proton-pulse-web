@@ -1,5 +1,5 @@
 import { escapeHtml, fmtDateTime } from '../utils.js?v=bd5a67c2';
-import { fetchAllReports, fetchStatusCounts } from '../api/allReports.js?v=37ba5e2c';
+import { fetchAllReports, fetchStatusCounts } from '../api/allReports.js?v=bca48cc8';
 
 // Summary strip of exact per-status counts above the table. Each tile is a
 // button that filters the table to that status. Runs its own count queries so
@@ -9,17 +9,17 @@ async function _renderStatusCounts(session) {
   if (!el) return;
   let c;
   try { c = await fetchStatusCounts(session); } catch { return; }
-  const tile = (n, label, cls, filterVal) =>
-    `<button class="admin-stat ${cls}" data-status="${filterVal}" type="button" title="Filter to ${label.toLowerCase()}">
+  const tile = (n, label, cls, filterVal, meaning) =>
+    `<button class="admin-stat ${cls}" data-status="${filterVal}" type="button" title="${escapeHtml(meaning)} Click to filter.">
        <span class="admin-stat-num">${(n || 0).toLocaleString()}</span>
        <span class="admin-stat-label">${label}</span>
      </button>`;
   el.innerHTML =
-    tile(c.pending, 'Pending', 'admin-stat--info', 'pending') +
-    tile(c.flagged, 'Flagged', 'admin-stat--warn', 'flagged') +
-    tile(c.hidden, 'Hidden', 'admin-stat--muted', 'hidden') +
-    tile(c.approved, 'Approved', 'admin-stat--ok', 'clean') +
-    tile(c.total, 'Total', 'admin-stat--total', '');
+    tile(c.pending, 'Pending', 'admin-stat--info', 'pending', 'Waiting on the daily approval pipeline.') +
+    tile(c.flagged, 'Flagged', 'admin-stat--warn', 'flagged', 'Queued for moderator review.') +
+    tile(c.hidden, 'Hidden', 'admin-stat--muted', 'hidden', 'Shadow-banned, not visible to users.') +
+    tile(c.approved, 'Approved', 'admin-stat--ok', 'clean', 'Visible to the public.') +
+    tile(c.total, 'Total', 'admin-stat--total', '', 'All reports.');
   el.hidden = false;
 }
 

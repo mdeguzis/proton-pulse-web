@@ -29,9 +29,9 @@
 .admin-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 
 .admin-label {
@@ -1229,19 +1229,21 @@ pre.flag-raw-json {
 .admin-stat-strip {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 4px 0 14px;
+  gap: 12px;
+  margin: 10px 0 24px;
 }
 .admin-stat {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2px;
-  min-width: 92px;
-  padding: 9px 14px;
+  gap: 3px;
+  min-width: 108px;
+  flex: 1 1 108px;
+  max-width: 190px;
+  padding: 12px 16px;
   border: 1px solid var(--border2, #2f4a63);
   border-left-width: 3px;
-  border-radius: 8px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.02);
   cursor: pointer;
   transition: background 0.12s, border-color 0.12s, transform 0.05s;

@@ -138,23 +138,27 @@ export async function patchReportFlags(session, id, patch) {
 // header as "0-0/<total>"). pending = clean rows minus approved rows -- an
 // approval row means the report was approved at least once; flagged/hidden are
 // rare so this is a close, cheap dashboard figure without a DB function.
-async function _count(session, table, filter) {
+async function _count(session, table, selectCol, filter) {
   const res = await fetch(
-    `${SUPABASE_URL}/rest/v1/${table}?select=id${filter}`,
+    `${SUPABASE_URL}/rest/v1/${table}?select=${selectCol}${filter}`,
     { headers: supabaseHeaders(session, { Prefer: 'count=exact', Range: '0-0' }) },
   );
+  if (!res.ok) return 0;
   const cr = res.headers.get('content-range') || '';
   const total = parseInt(cr.split('/')[1], 10);
   return Number.isFinite(total) ? total : 0;
 }
 
 export async function fetchStatusCounts(session) {
+  // NOTE: report_approvals is keyed by report_id (no `id` column), so the count
+  // must select report_id -- selecting a missing column 400s and returns 0,
+  // which inflated the pending figure (clean - 0).
   const [total, flagged, hidden, clean, approvals] = await Promise.all([
-    _count(session, 'user_configs', ''),
-    _count(session, 'user_configs', '&is_flagged=eq.true'),
-    _count(session, 'user_configs', '&is_hidden=eq.true'),
-    _count(session, 'user_configs', '&is_flagged=eq.false&is_hidden=eq.false'),
-    _count(session, 'report_approvals', ''),
+    _count(session, 'user_configs', 'id', ''),
+    _count(session, 'user_configs', 'id', '&is_flagged=eq.true'),
+    _count(session, 'user_configs', 'id', '&is_hidden=eq.true'),
+    _count(session, 'user_configs', 'id', '&is_flagged=eq.false&is_hidden=eq.false'),
+    _count(session, 'report_approvals', 'report_id', ''),
   ]);
   const pending = Math.max(0, clean - approvals);
   const approved = Math.max(0, clean - pending);

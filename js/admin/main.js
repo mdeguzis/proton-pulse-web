@@ -19,8 +19,8 @@ import { renderAnalytics } from './components/analytics.js?v=7ee75cfc';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
 import { renderBoxartAdmin, renderBoxartAdminDetail } from './components/boxart.js?v=204640bd';
 import { renderApiExplorer } from './components/api-explorer.js?v=c25956a7';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=4b7b887c';
-import { patchReportFlags, fetchReportById } from './api/allReports.js?v=37ba5e2c';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=99d5c1f5';
+import { patchReportFlags, fetchReportById } from './api/allReports.js?v=bca48cc8';
 import { approveReport } from './api/pending.js?v=84292a58';
 
 // ---------------------------------------------------------------------------
