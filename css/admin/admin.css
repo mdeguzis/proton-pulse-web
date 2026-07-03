@@ -1199,3 +1199,28 @@ pre.flag-raw-json {
 }
 .apix-fields-table tr:last-child th,
 .apix-fields-table tr:last-child td { border-bottom: 0; }
+
+/* API Explorer store tabs (Steam / GOG / Epic). */
+.apix-store-tabs {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border, #1f3346);
+  margin-bottom: 4px;
+}
+.apix-store-tab {
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--muted, #8899aa);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-bottom: -1px;
+}
+.apix-store-tab:hover { color: var(--text, #c7d5e0); }
+.apix-store-tab.active {
+  color: var(--accent-hi, #aedcff);
+  border-bottom-color: var(--accent, #66c0f4);
+}
