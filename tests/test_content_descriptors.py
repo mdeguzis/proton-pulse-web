@@ -210,6 +210,19 @@ def test_legacy_nonempty_entry_is_treated_as_confirmed(_reset_descriptor_cache):
         assert m.call_count == 0
 
 
+def test_force_refresh_bypasses_a_fresh_poisoned_entry(_reset_descriptor_cache):
+    # A recent poisoned empty entry (well within TTL) would normally be reused;
+    # force_refresh re-fetches anyway so a hint-titled adult game heals now
+    # instead of waiting for the negative TTL to expire.
+    common_module._load_steam_descriptors_cache()
+    common_module._steam_descriptors_cache["3580330"] = {"ids": [], "ts": int(time.time()), "ok": False}
+    payload = {"3580330": {"success": True, "data": {"content_descriptors": {"ids": [1, 3, 4, 5]}}}}
+    with patch("scripts.pipeline.common.fetch_json", return_value=payload) as m:
+        assert fetch_steam_content_descriptors("3580330", force_refresh=True) == [1, 3, 4, 5]
+        assert m.call_count == 1
+    assert is_adult_app("3580330") is True  # cache now holds the fresh result
+
+
 def test_success_false_uses_short_negative_ttl(_reset_descriptor_cache):
     # success:false is stored ok=False and re-fetched after the short TTL, in
     # case it was a transient rate-limit response rather than a removed app.
