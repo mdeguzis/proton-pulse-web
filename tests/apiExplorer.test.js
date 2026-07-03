@@ -66,12 +66,17 @@ describe('API Explorer client + component', () => {
     expect(COMP).toContain('exploreStore(endpoint, { id: resolved.id, term: resolved.term })');
   });
 
-  test('output has a word-wrap toggle, copy, and download-JSON controls', () => {
+  test('output has a word-wrap toggle, copy, download, and store-link controls', () => {
     expect(COMP).toContain('id="apix-wrap"');
     expect(COMP).toContain("classList.toggle('apix-wrap'");
     expect(COMP).toContain('navigator.clipboard.writeText(lastJson)');
     expect(COMP).toContain("new Blob([lastJson], { type: 'application/json' })");
     expect(COMP).toContain('a.download = `${lastName}.json`');
+    // store-page link, derived per endpoint
+    expect(COMP).toContain('id="apix-store-link"');
+    expect(COMP).toContain('function _storeUrl(');
+    expect(COMP).toContain('store.steampowered.com/app/${id}');
+    expect(COMP).toContain('links.product_card');
   });
 
   test('Field descriptions popup documents fields for each store endpoint', () => {

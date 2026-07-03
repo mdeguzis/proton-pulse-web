@@ -125,6 +125,27 @@ function _showFieldDocs(endpointKey) {
   });
 }
 
+// Best-effort store-page URL for the current result, so the admin can jump to
+// the game on the store. id endpoints build a direct product URL (GOG uses the
+// product response's links.product_card); search endpoints link to the store's
+// search for the term.
+function _storeUrl(endpoint, id, term, payload) {
+  if (endpoint === 'steam_appdetails' || endpoint === 'steam_deck') {
+    return id ? `https://store.steampowered.com/app/${id}` : null;
+  }
+  if (endpoint === 'gog_product') {
+    const card = payload && payload.data && payload.data.links && payload.data.links.product_card;
+    return typeof card === 'string' && card ? card : null;
+  }
+  if (endpoint === 'gog_search') {
+    return term ? `https://www.gog.com/en/games?query=${encodeURIComponent(term)}` : null;
+  }
+  if (endpoint === 'epic_search') {
+    return term ? `https://store.epicgames.com/en-US/browse?q=${encodeURIComponent(term)}&sortBy=relevancy&sortDir=DESC` : null;
+  }
+  return null;
+}
+
 let _index = null;
 async function _loadIndex() {
   if (_index) return _index;
@@ -191,6 +212,7 @@ export function renderApiExplorer() {
         <label class="apix-wrap-toggle"><input type="checkbox" id="apix-wrap"> Word wrap</label>
         <button id="apix-copy" class="admin-btn" type="button">Copy JSON</button>
         <button id="apix-download" class="admin-btn" type="button">Download JSON</button>
+        <a id="apix-store-link" class="admin-btn" target="_blank" rel="noopener" hidden>Open store page &#8599;</a>
       </div>
       <pre id="apix-output" class="apix-output" hidden></pre>
     </div>`;
@@ -232,6 +254,11 @@ export function renderApiExplorer() {
     const out = document.getElementById('apix-output');
     if (out) { out.hidden = false; out.textContent = lastJson; }
     document.getElementById('apix-toolbar').hidden = false;
+    const storeLink = document.getElementById('apix-store-link');
+    if (storeLink) {
+      const u = _storeUrl(endpoint, resolved.id, resolved.term, payload);
+      if (u) { storeLink.href = u; storeLink.hidden = false; } else { storeLink.hidden = true; }
+    }
     setStatus(
       payload.ok ? `HTTP ${payload.status || 200} — ${payload.url || ''}` : `Failed: ${payload.error || 'unknown'}`,
       !payload.ok,
