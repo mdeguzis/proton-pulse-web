@@ -150,9 +150,33 @@ async function _count(session, table, selectCol, filter) {
 }
 
 export async function fetchStatusCounts(session) {
-  // NOTE: report_approvals is keyed by report_id (no `id` column), so the count
-  // must select report_id -- selecting a missing column 400s and returns 0,
-  // which inflated the pending figure (clean - 0).
+  // Exact counts via the DB function -- it does the approval join server-side,
+  // so pending is precise even when a previously-approved report was later
+  // flagged/hidden. Falls back to the cheap count-query approximation if the
+  // RPC is unavailable (e.g. not migrated yet).
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_report_status_counts`, {
+      method: 'POST',
+      headers: supabaseHeaders(session, { 'Content-Type': 'application/json' }),
+      body: '{}',
+    });
+    if (res.ok) {
+      const rows = await res.json();
+      const r = Array.isArray(rows) ? rows[0] : rows;
+      if (r && r.total != null) {
+        return {
+          total: Number(r.total) || 0,
+          flagged: Number(r.flagged) || 0,
+          hidden: Number(r.hidden) || 0,
+          approved: Number(r.approved) || 0,
+          pending: Number(r.pending) || 0,
+        };
+      }
+    }
+  } catch { /* fall through to the approximation */ }
+
+  // Fallback. report_approvals is keyed by report_id (no `id` column), so the
+  // count must select report_id -- a missing column 400s and returns 0.
   const [total, flagged, hidden, clean, approvals] = await Promise.all([
     _count(session, 'user_configs', 'id', ''),
     _count(session, 'user_configs', 'id', '&is_flagged=eq.true'),

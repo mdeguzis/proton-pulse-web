@@ -1,5 +1,5 @@
 import { escapeHtml, fmtDateTime } from '../utils.js?v=bd5a67c2';
-import { fetchAllReports, fetchStatusCounts } from '../api/allReports.js?v=bca48cc8';
+import { fetchAllReports, fetchStatusCounts } from '../api/allReports.js?v=ce9b13c3';
 
 // Summary strip of exact per-status counts above the table. Each tile is a
 // button that filters the table to that status. Runs its own count queries so

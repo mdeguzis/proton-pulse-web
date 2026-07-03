@@ -193,7 +193,22 @@ describe('fetchStatusCounts', () => {
     json: () => Promise.resolve([]),
   });
 
-  test('reads exact counts via count=exact and computes pending', async () => {
+  test('uses the exact RPC when available', async () => {
+    const { ctx } = loadApi((url) => {
+      if (url.includes('/rpc/get_report_status_counts')) {
+        return Promise.resolve({
+          ok: true,
+          headers: { get: () => null },
+          json: () => Promise.resolve([{ total: 7, flagged: 1, hidden: 2, approved: 3, pending: 1 }]),
+        });
+      }
+      throw new Error('count queries must not run when the RPC succeeds');
+    });
+    const c = await ctx.fetchStatusCounts(makeSession());
+    expect(c).toEqual({ total: 7, flagged: 1, hidden: 2, approved: 3, pending: 1 });
+  });
+
+  test('falls back to count=exact queries when the RPC returns no row', async () => {
     const userTotals = (url) => {
       if (url.includes('is_flagged=eq.true')) return 3;
       if (url.includes('is_hidden=eq.true')) return 2;

@@ -45,14 +45,16 @@
 .admin-input {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 6px;
+  border-radius: 7px;
   color: var(--text, #eee);
   font-size: 0.85rem;
-  padding: 5px 10px;
+  padding: 7px 11px;
+  transition: border-color 0.12s, box-shadow 0.12s;
 }
 
 .admin-input:focus {
   border-color: var(--accent, #5c8bd6);
+  box-shadow: 0 0 0 2px rgba(102,192,244,0.18);
   outline: none;
 }
 
@@ -208,11 +210,15 @@
 .admin-select {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 6px;
+  border-radius: 7px;
   color: var(--text, #eee);
   font-size: 0.85rem;
-  padding: 5px 10px;
+  padding: 7px 11px;
+  cursor: pointer;
+  transition: border-color 0.12s;
 }
+.admin-select:hover { border-color: rgba(255,255,255,0.2); }
+.admin-select:focus { border-color: var(--accent, #5c8bd6); outline: none; }
 
 .admin-select--sm {
   font-size: 0.78rem;
@@ -264,12 +270,13 @@
 }
 
 .admin-table th {
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.02);
   color: var(--text-muted, #888);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 6px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 9px 12px;
   text-align: left;
   text-transform: uppercase;
   white-space: nowrap;
@@ -296,8 +303,8 @@
 
 .admin-table td {
   border-bottom: 1px solid rgba(255,255,255,0.05);
-  padding: 10px 10px;
-  vertical-align: top;
+  padding: 11px 12px;
+  vertical-align: middle;
 }
 
 .admin-table tr:last-child td {
@@ -356,16 +363,21 @@
 .admin-btn {
   background: rgba(92,139,214,0.15);
   border: 1px solid rgba(92,139,214,0.35);
-  border-radius: 6px;
+  border-radius: 7px;
   color: #9ecbe8;
   cursor: pointer;
   font-size: 0.85rem;
-  padding: 6px 14px;
-  transition: background 0.15s;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 7px 14px;
+  transition: background 0.15s, border-color 0.15s, transform 0.05s;
   white-space: nowrap;
 }
+.admin-btn:active { transform: translateY(1px); }
+.admin-btn:focus-visible { outline: 2px solid var(--accent, #66c0f4); outline-offset: 2px; }
 
 .admin-btn:hover {
+  border-color: rgba(92,139,214,0.6);
   background: rgba(92,139,214,0.25);
 }
 
