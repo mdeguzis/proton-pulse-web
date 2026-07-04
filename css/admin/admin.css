@@ -179,9 +179,11 @@
 
 .admin-search-wrap--wide {
   min-width: 260px;
+  flex: 1;
 }
 .admin-search-wrap .admin-input {
   padding-right: 26px;
+  width: 100%;
 }
 .admin-search-clear {
   position: absolute;
