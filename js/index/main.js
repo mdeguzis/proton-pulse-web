@@ -3,8 +3,6 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=2578350
 import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../lib/tile-pad.js?v=82e7d8c9';
 import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
-import { renderGameCard } from '../app/lib/card.js?v=754da47b';
-import { storeLabel } from '../app/config.js?v=f9591262';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
 // search dropdown, auth indicator) lives in topbar.js.
@@ -63,14 +61,60 @@ import { storeLabel } from '../app/config.js?v=f9591262';
     return String(n);
   }
 
+  const RATING_LABEL = { platinum: 'Platinum', gold: 'Gold', silver: 'Silver', bronze: 'Bronze', borked: 'Borked' };
   const KNOWN_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked']);
-  // #125: the storeIconHtml / storePill / storeTag / cornerTag /
-  // stripStoreHtml / comboTag / RATING_LABEL / STORE_LABEL /
-  // storeColorClass helpers used to live here to build the homepage's
-  // bespoke pgCardHtml layout. renderGameCard (js/app/lib/card.js) does
-  // all of it now; homepage passes only { href, appId, title, sub,
-  // tier, storePill } and the shared card + config.storeLabel handle
-  // the rest.
+  const STORE_LABEL = { gog: 'GOG', epic: 'Epic', steam: 'Steam' };
+  const STORE_PILL_CLASS = { gog: 'game-card-store-pill--gog', epic: 'game-card-store-pill--epic', steam: 'game-card-store-pill--steam' };
+  function storeColorClass(appType) {
+    const t = appType || 'steam';
+    return STORE_PILL_CLASS[t] || 'game-card-store-pill--steam';
+  }
+  // The store badge renders both a text label and an icon every time. CSS on
+  // <html data-store-display="icon"> hides .store-text and shows .store-icon
+  // so the user pref can swap between the two without re-rendering cards.
+  function storeIconHtml(t, label) {
+    if (t !== 'steam' && t !== 'gog' && t !== 'epic') return '';
+    return `<span class="store-icon store-icon--${t}" title="${label}" aria-label="${label}"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-store-${t}"/></svg></span>`;
+  }
+  function storePill(appType) {
+    const t = appType || 'steam';
+    const label = STORE_LABEL[t] || 'Steam';
+    const cls = storeColorClass(t);
+    return `<span class="game-card-store-pill ${cls}"><span class="store-text">${label}</span>${storeIconHtml(t, label)}</span>`;
+  }
+  function storeTag(appType) {
+    const t = appType || 'steam';
+    const label = STORE_LABEL[t] || 'Steam';
+    const cls = storeColorClass(t);
+    return `<span class="game-card-store-tag ${cls}"><span class="store-text">${label}</span>${storeIconHtml(t, label)}</span>`;
+  }
+  // Card-level corner piece for the 'art-corner' placement. Rendered as a
+  // direct child of <a class="pg-card"> so it anchors to the whole card's
+  // top-right edge instead of the thumbnail.
+  function cornerTag(appType) {
+    const t = appType || 'steam';
+    const label = STORE_LABEL[t] || 'Steam';
+    const cls = storeColorClass(t);
+    return `<span class="pg-card-corner-tag game-card-corner-tag ${cls}"><span class="store-text">${label}</span>${storeIconHtml(t, label)}</span>`;
+  }
+  // Store segment that sits inside the bottom-bar strip. CSS controls
+  // visibility based on data-store-pill-pos (bar-right / bar-segment).
+  function stripStoreHtml(appType) {
+    const t = appType || 'steam';
+    const label = STORE_LABEL[t] || 'Steam';
+    return `<span class="pg-card-strip-store game-card-strip-store store-icon store-icon--${t}"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-store-${t}"/></svg><span class="store-text">${label}</span></span>`;
+  }
+  // Two-tone combined corner chip for the 'combo' card layout. Tier on the
+  // left, store on the right, both colored. CSS hides this unless
+  // data-card-layout="combo" is set on <html>.
+  function comboTag(rating, appType) {
+    const t = appType || 'steam';
+    const storeLabel = STORE_LABEL[t] || 'Steam';
+    const rated = KNOWN_TIERS.has(rating);
+    const tier = rated ? rating : '';
+    const tierLabel = rated ? RATING_LABEL[rating].toUpperCase() : 'NO RATING';
+    return `<span class="pg-card-combo-tag game-card-combo-tag" data-tier="${tier}" data-store="${t}"><span class="combo-tier">${tierLabel}</span><span class="combo-store">${storeLabel}</span></span>`;
+  }
   const SECTION_LABEL = { steam: 'Popular on Steam', gog: 'Popular GOG Games', epic: 'Popular Epic Games' };
   const SECTION_SUB = {
     steam: "Steam's most-played games and how they run on Linux through Proton.",
@@ -96,27 +140,42 @@ import { storeLabel } from '../app/config.js?v=f9591262';
     return searchIndexCache || [];
   }
 
-  // #125: homepage now uses the shared renderGameCard helper. The bespoke
-  // pgCardHtml + all its cornerTag/comboTag/storeTag/storePill/
-  // stripStoreHtml companions used to live here and re-implement work the
-  // shared card already does. Peak players goes into the standard sub
-  // string. The pg-list container class is unchanged; the CARDS inside
-  // now carry .game-card classes so bug fixes only need to touch one CSS
-  // source. Dead .pg-card* CSS in css/index/index.css can be deleted in a
-  // follow-up sweep.
   function pgCardHtml(g) {
+    const img = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(g.appId)}/header.jpg`;
+    const peak = fmtPeak(g.peak);
     const rating = String(g.rating || '').toLowerCase();
     const rated = KNOWN_TIERS.has(rating);
-    const peak = fmtPeak(g.peak);
-    const sub = peak ? `<span class="game-card-sub-count">${peak}</span><span class="game-card-sub-suffix"> peak players</span>` : '';
-    return renderGameCard({
-      href: `app.html#/app/${encodeURIComponent(g.appId)}`,
-      appId: g.appId,
-      title: g.title,
-      sub,
-      tier: rated ? rating : undefined,
-      storePill: storeLabel(g.appType || 'steam'),
-    });
+    const badgeClass = rated ? `pg-${rating}` : 'pg-unrated';
+    const rLabel = rated ? RATING_LABEL[rating] : 'Unrated';
+    // Rating layout = strip: tier-colored bar across the full card bottom.
+    // The pg-card-row wraps thumb/info/right so the strip can sit as a
+    // sibling and span the full card width (including under the thumbnail).
+    const stripTier = rated ? rating : '';
+    const stripLabel = rated ? RATING_LABEL[rating].toUpperCase() : 'NO RATING';
+    return `
+      <a class="pg-card" href="app.html#/app/${encodeURIComponent(g.appId)}">
+        ${cornerTag(g.appType)}
+        ${comboTag(rating, g.appType)}
+        <div class="pg-card-row">
+          <div class="pg-thumb-wrap">
+            <img class="pg-thumb" src="${img}" data-appid="${g.appId}" alt="" loading="lazy" onerror="window.__steamImgLoad(this)">
+            ${storeTag(g.appType)}
+          </div>
+          <div class="pg-info">
+            <div class="pg-title">${esc(g.title)}</div>
+            ${peak ? `<div class="pg-sub"><span class="pg-sub-count">${peak}</span><span class="pg-sub-suffix"> peak players</span></div>` : ''}
+          </div>
+          <div class="pg-right">
+            <span class="pg-badge ${badgeClass}">${rLabel}</span>
+            ${storePill(g.appType)}
+          </div>
+        </div>
+        <div class="pg-card-strip" data-tier="${stripTier}" data-store="${g.appType || 'steam'}">
+          <span class="pg-card-strip-tier">${stripLabel}</span>
+          ${storePill(g.appType)}
+          ${stripStoreHtml(g.appType)}
+        </div>
+      </a>`;
   }
 
   // The previous super-condensed pgListRowHtml is gone -- the two layouts
@@ -235,10 +294,10 @@ import { storeLabel } from '../app/config.js?v=f9591262';
       // the last row so the grid ends flush (the Load more button visually
       // fills the gap). When fully shown, pad the last row with invisible
       // fillers instead so the trailing tiles stay aligned.
-      padTileRows(list, { tileSelector: '.game-card', hasMore });
+      padTileRows(list, { tileSelector: '.pg-card', hasMore });
       if (loadMoreEl) {
         // Recompute remaining after any orphan trim so the count is accurate.
-        const rendered = list.querySelectorAll(':scope .game-card:not(.tile-filler)').length;
+        const rendered = list.querySelectorAll(':scope .pg-card:not(.tile-filler)').length;
         const remaining = all.length - rendered;
         loadMoreEl.innerHTML = remaining > 0
           ? `<button class="pg-load-more" id="pg-load-more-btn" type="button">Load more <span class="pg-load-more-count">${remaining}</span></button>`
