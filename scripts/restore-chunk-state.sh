@@ -8,17 +8,21 @@
 #
 # Args:
 #   $1  JSON array of expected chunk ids (e.g. '["01","02","03"]').
-#       Passed from needs.build.outputs.chunk_matrix.
+#       Passed from needs.build.outputs.expected_matrix (full plan).
+#       Empty string / omitted = finalize_only mode: use whatever's in
+#       the manifest as the expected set. #171 Phase 3.
 #
 # Behavior:
 #   - manifest missing         -> WARN + exit 0 (first run after Phase 1
 #                                 shipped, before any chunks persisted)
+#   - empty expected + manifest -> use manifest's completed chunks as the
+#                                 authoritative set (finalize_only path)
 #   - manifest has all chunks  -> gunzip highest-numbered chunk snapshot
 #                                 into .cache/protondb-summary-probe-cache.json
 #   - manifest has a gap       -> EXIT 1 with clear "chunk NN missing" msg
 set -euo pipefail
 
-EXPECTED_CHUNKS_JSON="${1:?expected chunks JSON array required}"
+EXPECTED_CHUNKS_JSON="${1:-}"
 STATE_ROOT="/tmp/pipeline-state-restore"
 BRANCH="gh-pages"
 CACHE_FILE=".cache/protondb-summary-probe-cache.json"
@@ -42,12 +46,23 @@ fi
 # Verify every expected chunk is marked completed + has its snapshot.
 # python handles the JSON parsing so we don't shell-parse; also emits
 # the highest-numbered chunk id back so we know which snapshot to load.
+# Empty EXPECTED_CHUNKS_JSON = finalize_only mode: use whatever's in
+# the manifest's completed set as the expected list.
 LATEST_CHUNK=$(python3 - "$MANIFEST_PATH" "$EXPECTED_CHUNKS_JSON" "$STATE_ROOT/.pipeline-state/chunks" <<'PY'
 import json, sys, os
 manifest_path, expected_json, chunks_dir = sys.argv[1:]
 manifest = json.load(open(manifest_path))
 chunks = manifest.get("chunks", {})
-expected = json.loads(expected_json)
+
+if not expected_json:
+    # finalize_only: expected set IS whatever manifest says is completed.
+    expected = sorted([c for c, e in chunks.items() if e.get("status") == "completed"])
+    if not expected:
+        print("[restore-chunk-state] finalize_only: manifest has no completed chunks", file=sys.stderr)
+        sys.exit(1)
+    print(f"[restore-chunk-state] finalize_only: manifest completed set = {expected}", file=sys.stderr)
+else:
+    expected = json.loads(expected_json)
 
 missing = []
 for cid in expected:

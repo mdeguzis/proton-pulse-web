@@ -11,7 +11,7 @@ STAGING_VERSION_URL ?= https://mdeguzis.github.io/proton-pulse-web-staging/versi
 FORCE_DEPLOY ?=
 
 .PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker \
-	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
+	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-resume gh-finalize-only gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
 	build serve smoke smoke-live pre-push coverage
 
 build:
@@ -72,6 +72,8 @@ help:
 	@echo "  gh-pages-only       Promote current main to production (requires staging to be in sync)"
 	@echo "  gh-staging          Deploy shell files to staging only (no prod deploy) for preview"
 	@echo "  gh-staging-pipeline Run FULL pipeline against staging + deploy data to staging (#117, ~30 min)"
+	@echo "  gh-resume           Re-run only chunks marked incomplete in the manifest (#171)"
+	@echo "  gh-finalize-only    Skip probing, re-run finalize against current manifest state (#171)"
 	@echo "  gh-backfill-apps    Trigger targeted app backfill"
 	@echo "                      Usage: make gh-backfill-apps BACKFILL_APP_IDS=1145350,2358720"
 	@echo "  gh-coverage-backfill Trigger coverage-based backfill"
@@ -212,6 +214,22 @@ gh-staging-pipeline: gh-check
 	@bash scripts/wait-for-remote.sh
 	gh workflow run $(GITHUB_WORKFLOW) --field staging_with_pipeline=true
 	@echo "Triggered $(GITHUB_WORKFLOW) with staging_with_pipeline=true -- full pipeline against staging, ~30 min. Preview at https://mdeguzis.github.io/proton-pulse-web-staging/"
+
+# Resume a partial run (#171 Phase 3). Reads gh-pages/.pipeline-state/
+# manifest.json, subtracts chunks marked completed, and re-runs only the
+# missing ones. Use after a chunk stalls or times out mid-pipeline. Save
+# vs a fresh dispatch: chunks that already succeeded stay cached, so a
+# 1-chunk rescue takes ~10 min instead of 30+.
+gh-resume: gh-check
+	gh workflow run $(GITHUB_WORKFLOW) --field resume=true
+	@echo "Triggered $(GITHUB_WORKFLOW) with resume=true -- only missing chunks will re-run (#171)"
+
+# Re-run finalize alone (#171 Phase 3). Skips build + probe-chunks entirely;
+# reads chunk state from gh-pages manifest as-is and rebuilds the site
+# outputs. Use after a finalize-side bug fix when the probe cache is fine.
+gh-finalize-only: gh-check
+	gh workflow run $(GITHUB_WORKFLOW) --field finalize_only=true
+	@echo "Triggered $(GITHUB_WORKFLOW) with finalize_only=true -- probes skipped, finalize only (#171)"
 
 gh-backfill-apps: gh-check
 	@if [ -z "$(BACKFILL_APP_IDS)" ]; then \

@@ -38,6 +38,16 @@ on:
         required: false
         default: false
         type: boolean
+      resume:
+        description: "Only re-run chunks marked incomplete in gh-pages/.pipeline-state/manifest.json. Rescue path for a partial run (e.g. chunk 8 stalled while 1-7 + 9-10 completed) -- avoids re-doing the successful work. #171 Phase 3."
+        required: false
+        default: false
+        type: boolean
+      finalize_only:
+        description: "Skip probing entirely and re-run finalize against whatever chunk state is already in gh-pages/.pipeline-state/. Use when a finalize-side bug needs a fix but the probe cache is fine. #171 Phase 3."
+        required: false
+        default: false
+        type: boolean
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -50,11 +60,16 @@ jobs:
 
   # ── Stage 1: process reports, backfill, compute probe plan ─────────
   build:
-    if: inputs.pages_only != true && inputs.staging_only != true && inputs.backfill_app_ids == '' && inputs.coverage_backfill_issue_type == ''
+    # finalize_only skips build entirely -- we're re-running the finalize
+    # stage against gh-pages state as-is, no need to re-shard/re-probe.
+    if: inputs.pages_only != true && inputs.staging_only != true && inputs.backfill_app_ids == '' && inputs.coverage_backfill_issue_type == '' && inputs.finalize_only != true
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read
     outputs:
       chunk_count: ${{ steps.plan.outputs.chunk_count }}
       chunk_matrix: ${{ steps.plan.outputs.chunk_matrix }}
+      expected_matrix: ${{ steps.plan.outputs.expected_matrix }}
     steps:
       - name: Checkout Scripts
         uses: actions/checkout@v4
@@ -113,20 +128,12 @@ jobs:
 
       - name: Build probe chunk plan
         id: plan
+        env:
+          RESUME_MODE: ${{ inputs.resume }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           uv run python scripts/split_reports.py probe-plan /tmp/protondb-output > /tmp/probe-plan.json
-          python - <<'PY'
-          import json
-          import os
-          from pathlib import Path
-
-          plan = json.loads(Path("/tmp/probe-plan.json").read_text())
-          github_output = Path(os.environ["GITHUB_OUTPUT"])
-          with github_output.open("a", encoding="utf-8") as fh:
-              fh.write(f"chunk_count={plan['chunk_count']}\n")
-              fh.write(f"chunk_matrix={json.dumps(plan['chunks'])}\n")
-          print(f"[protondb-probe] chunk_count={plan['chunk_count']}, uncached={plan['uncached_count']}")
-          PY
+          bash scripts/probe-plan-emit.sh /tmp/probe-plan.json
 
       - name: Save pipeline cache
         if: always()
@@ -222,8 +229,9 @@ jobs:
       inputs.pages_only != true &&
       inputs.backfill_app_ids == '' &&
       inputs.coverage_backfill_issue_type == '' &&
-      needs.build.result == 'success' &&
-      (needs.probe-chunks.result == 'success' || needs.probe-chunks.result == 'skipped')
+      (inputs.finalize_only == true ||
+        (needs.build.result == 'success' &&
+         (needs.probe-chunks.result == 'success' || needs.probe-chunks.result == 'skipped')))
     runs-on: ubuntu-24.04
     permissions:
       contents: write
@@ -291,14 +299,16 @@ jobs:
       # Phase 2 of #171: source the probe cache from durable gh-pages state
       # instead of the ephemeral actions cache. Overwrites .cache/protondb-
       # summary-probe-cache.json with the last chunk's snapshot. Aborts loud
-      # if any expected chunk is missing so a runner starvation event surfaces
-      # here instead of silently finalizing on stale data. Skipped if
-      # probe-chunks didn't run this dispatch (chunk_count == 0).
+      # if any chunk in the FULL plan (expected_matrix) is missing so a
+      # runner starvation event surfaces here instead of silently finalizing
+      # on stale data. In finalize_only mode build was skipped so the script
+      # falls back to whatever's in manifest.json (empty arg triggers that
+      # branch). Skipped if the full plan is empty (chunk_count == 0).
       - name: Restore chunk state from gh-pages (#171)
-        if: needs.build.outputs.chunk_count != '0'
+        if: inputs.finalize_only == true || needs.build.outputs.chunk_count != '0'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bash scripts/restore-chunk-state.sh '${{ needs.build.outputs.chunk_matrix }}'
+        run: bash scripts/restore-chunk-state.sh '${{ needs.build.outputs.expected_matrix }}'
 
       # Seed the store catalog caches from gh-pages AFTER restoring the pipeline
       # cache, so the freshly rebuilt catalog (pushed by the dedicated GOG/Epic
