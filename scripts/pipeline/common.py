@@ -304,6 +304,31 @@ def is_adult_app(app_id: str, force_refresh: bool = False) -> bool:
     return bool(set(ids) & ADULT_DESCRIPTOR_IDS)
 
 
+def is_adult_app_cached(app_id: str) -> bool | None:
+    """Read-only variant of is_adult_app: returns None on cache miss.
+
+    Used by #176's gradual enrichment path so the caller can decide per
+    app_id whether to spend its per-run appdetails budget. Confirmed
+    (ok=True) cache entries and legacy non-empty lists are honoured;
+    unresolved negatives past their short TTL are treated as misses so
+    the caller can decide to re-fetch.
+    """
+    cache = _load_steam_descriptors_cache()
+    cached = cache.get(app_id)
+    if not isinstance(cached, dict):
+        return None
+    age = int(time.time()) - cached.get("ts", 0)
+    ok = cached.get("ok")
+    if ok is None:
+        ok = bool(cached.get("ids"))
+    ttl = STEAM_DESCRIPTORS_CACHE_MAX_AGE_SECONDS if ok else STEAM_DESCRIPTORS_NEGATIVE_TTL_SECONDS
+    if age >= ttl:
+        return None
+    ids = cached.get("ids", [])
+    ids = ids if isinstance(ids, list) else []
+    return bool(set(ids) & ADULT_DESCRIPTOR_IDS)
+
+
 def normalize_whitespace(value):
     return value.strip() if isinstance(value, str) else ""
 

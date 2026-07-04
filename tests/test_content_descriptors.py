@@ -18,6 +18,7 @@ from scripts.pipeline.common import (
     ADULT_DESCRIPTOR_IDS,
     fetch_steam_content_descriptors,
     is_adult_app,
+    is_adult_app_cached,
     flush_steam_descriptors_cache,
 )
 
@@ -233,3 +234,35 @@ def test_success_false_uses_short_negative_ttl(_reset_descriptor_cache):
     with patch("scripts.pipeline.common.fetch_json", return_value=payload) as m:
         assert fetch_steam_content_descriptors("x") == [3]
         assert m.call_count == 1
+
+
+# --- is_adult_app_cached (#176) ---
+
+def test_is_adult_app_cached_returns_none_on_cache_miss():
+    """No cache entry = None, so callers can decide whether to spend
+    their per-run appdetails budget. Distinguishes from a cached-false
+    (which is a definitive 'not adult'). #176 gradual enrichment."""
+    common_module._load_steam_descriptors_cache()
+    assert is_adult_app_cached("nonexistent") is None
+
+
+def test_is_adult_app_cached_returns_true_when_cached_with_adult_id():
+    common_module._load_steam_descriptors_cache()
+    common_module._steam_descriptors_cache["777"] = {"ids": [3], "ts": int(time.time()), "ok": True}
+    assert is_adult_app_cached("777") is True
+
+
+def test_is_adult_app_cached_returns_false_when_cached_with_no_adult_ids():
+    common_module._load_steam_descriptors_cache()
+    common_module._steam_descriptors_cache["888"] = {"ids": [1, 5], "ts": int(time.time()), "ok": True}
+    assert is_adult_app_cached("888") is False
+
+
+def test_is_adult_app_cached_treats_stale_negative_as_miss():
+    """An unresolved negative (ok=False) past the short TTL is a miss --
+    lets the caller spend budget to re-fetch rather than leaving a
+    poisoned cache entry as authoritative. #185 self-heal."""
+    old_ts = int(time.time()) - (common_module.STEAM_DESCRIPTORS_NEGATIVE_TTL_SECONDS + 3600)
+    common_module._load_steam_descriptors_cache()
+    common_module._steam_descriptors_cache["999"] = {"ids": [], "ts": old_ts, "ok": False}
+    assert is_adult_app_cached("999") is None
