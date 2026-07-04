@@ -532,7 +532,7 @@ export async function renderGamePage(appId) {
     // Short labels match the tier bars on the right (PLAT/GOLD/SILV/BRON/BORK).
     // CSS shows the abbreviated form on narrow screens so PLATINUM doesn't
     // spill past the 118px dial diameter.
-    const gaugeDial = `<div class="grp-dial-block">
+    const _dialInner = `
         <div class="grp-dial-verdict" style="color:${overallTileColor}">${overallTier}</div>
         <div class="grp-dial" title="Aggregate confidence: ${_dialPct}%">
           <svg viewBox="0 0 132 132" aria-hidden="true">
@@ -543,8 +543,12 @@ export async function renderGamePage(appId) {
             <span class="grp-dial-pct">${hasAnyReports ? _dialPct + '%' : '--'}</span>
             <span class="grp-dial-cap">confidence</span>
           </div>
-        </div>
-      </div>`;
+        </div>`;
+    // The whole dial links to the factor-by-factor breakdown (same target as the
+    // "why?" link) so clicking the hero circle explains how the rating was reached.
+    const gaugeDial = hasAnyReports
+      ? `<a class="grp-dial-block grp-dial-link" href="confidence.html?app=${appId}" title="See the factor-by-factor breakdown of this rating">${_dialInner}</a>`
+      : `<div class="grp-dial-block">${_dialInner}</div>`;
 
     // Panel footer: confidence summary (+ link to the scoring breakdown), then
     // App id / newest report on one meta line. The per-source split

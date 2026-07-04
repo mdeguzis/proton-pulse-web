@@ -1108,3 +1108,8 @@
   border-left: 3px solid var(--border2);
   margin-bottom: 14px;
 }
+
+/* Hero dial links to the confidence breakdown. */
+.grp-dial-link { text-decoration: none; color: inherit; cursor: pointer; border-radius: 12px; transition: transform 0.08s, filter 0.12s; }
+.grp-dial-link:hover { transform: translateY(-1px); filter: brightness(1.08); }
+.grp-dial-link:focus-visible { outline: 2px solid var(--accent, #66c0f4); outline-offset: 4px; }

@@ -548,9 +548,9 @@ h2 small {
   // Anonymous-applicable groups get a small "anon" tag so visitors know which
   // factors affect them when not signed in
   function renderConfidenceGroup(g, weights) {
-    const anonTag = g.appliesToAnonymous
-      ? '<span class="anon-tag" title="Applies to anonymous webui visitors too">anon</span>'
-      : '<span class="signedin-tag" title="Requires signed-in plugin/webui hardware info">signed-in only</span>';
+    // Audience (anonymous vs signed-in) is already conveyed by the two section
+    // headers below, so the per-card tag is redundant and just adds noise.
+    const anonTag = '';
     const rows = (g.weightKeys || []).map(k => {
       const v = weights[k];
       if (v == null) return '';
