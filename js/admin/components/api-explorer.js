@@ -9,7 +9,7 @@
 // CORS-blocked from the browser.
 
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
-import { escapeHtml } from '../utils.js?v=bd5a67c2';
+import { escapeHtml } from '../utils.js?v=2668b2f0';
 import { exploreStore } from '../api/steam-explore.js?v=17281b89';
 
 // Store -> endpoints. `arg` is 'id' (numeric app/product id, name-resolvable)

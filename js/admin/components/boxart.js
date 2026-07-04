@@ -14,7 +14,7 @@
 // filters in bounded batches so the browser stays responsive.
 
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
-import { escapeHtml } from '../utils.js?v=bd5a67c2';
+import { escapeHtml } from '../utils.js?v=2668b2f0';
 import {
   probeSteamHeader, refetchSteamHeader, refetchNonSteamHeader, refetchSgdbHeader, searchSgdb,
   setBoxArtOverride, uploadBoxArtOverride, clearBoxArtOverride, listBoxArtOverrides,

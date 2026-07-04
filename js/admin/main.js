@@ -1,5 +1,5 @@
 import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
-import { supabaseHeaders, escapeHtml } from './utils.js?v=bd5a67c2';
+import { supabaseHeaders, escapeHtml } from './utils.js?v=2668b2f0';
 import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=12b82ef4';
 import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=9359a45e';
 import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=5e2c6b60';

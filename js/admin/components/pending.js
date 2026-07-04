@@ -1,4 +1,4 @@
-import { escapeHtml, fmtDateTime } from '../utils.js?v=bd5a67c2';
+import { escapeHtml, fmtDateTime } from '../utils.js?v=2668b2f0';
 import { fetchPendingReports, approveReport } from '../api/pending.js?v=84292a58';
 
 export async function renderPending(session, { onApproved } = {}) {

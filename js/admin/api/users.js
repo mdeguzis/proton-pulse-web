@@ -1,7 +1,7 @@
 // users (api) for the admin page.
 
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
-import { supabaseHeaders, roleLabel } from '../utils.js?v=bd5a67c2';
+import { supabaseHeaders, roleLabel } from '../utils.js?v=2668b2f0';
 
 export async function fetchAllUsers(session, { search } = {}) {
   async function fetchAllRows(table, select) {

@@ -1,6 +1,6 @@
 // banned (components) for the admin page.
 
-import { escapeHtml, fmtDateTime } from '../utils.js?v=bd5a67c2';
+import { escapeHtml, fmtDateTime } from '../utils.js?v=2668b2f0';
 
 export function renderBanned(rows) {
   const loading = document.getElementById('banned-loading');

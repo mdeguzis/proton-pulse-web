@@ -16,9 +16,14 @@ export function fmtDate(iso) {
   return new Date(iso).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
 }
 
+// Compact local timestamp: YYYY-MM-DD HH:MM in 24-hour local time. Fits a
+// table cell on one line and sorts naturally.
 export function fmtDateTime(iso) {
   if (!iso) return '—';
-  return new Date(iso).toLocaleString(undefined, { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return '—';
+  const p = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
 }
 
 export function friendlyReason(raw) {

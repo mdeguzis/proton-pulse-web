@@ -1,6 +1,6 @@
 // flagged (components) for the admin page.
 
-import { escapeHtml, fmtDateTime, friendlyReason } from '../utils.js?v=bd5a67c2';
+import { escapeHtml, fmtDateTime, friendlyReason } from '../utils.js?v=2668b2f0';
 
 const STATUS_LABELS = { open: 'Open', in_review: 'In Review', complete: 'Complete' };
 
