@@ -1250,8 +1250,8 @@ pre.flag-raw-json {
   align-items: flex-start;
   gap: 3px;
   min-width: 108px;
+  /* grow equally to fill the full row width -- no gap on the right */
   flex: 1 1 108px;
-  max-width: 190px;
   padding: 12px 16px;
   border: 1px solid var(--border2, #2f4a63);
   border-left-width: 3px;
