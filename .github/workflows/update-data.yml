@@ -198,18 +198,29 @@ jobs:
             printf 'STEAM_API_KEY=%s\n' "${{ secrets.STEAM_API_KEY }}" > .env
           fi
 
+      # Phase 4 of #171: idempotent skip. If the current probe cache
+      # hashes to the same input_sha this chunk stored last time, the
+      # state hasn't drifted -- probe would be a no-op. Skip it. Warm
+      # reruns of the same dispatch (accidental double-trigger, resume
+      # of an already-complete plan) become near-instant.
+      - name: Idempotent check (#171 Phase 4)
+        id: idem
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/probe-idempotent-check.sh "${{ matrix.chunk }}"
+
       - name: Probe ProtonDB summary chunk ${{ matrix.chunk }}
+        if: steps.idem.outputs.skip != 'true'
         run: |
           uv run python scripts/split_reports.py probe /tmp/protondb-output
 
       # Phase 1 of #171: durable chunk-state persistence. Snapshot the probe
       # cache + a manifest entry to gh-pages/.pipeline-state/ so a cancelled
       # run (chunk timeout, runner starvation, git-pages incident) doesn't
-      # throw away the successful chunks' work. Zero behavior change to the
-      # existing pipeline yet -- finalize still reads from .cache/ and
-      # artifacts. Phase 2 will cut over.
+      # throw away the successful chunks' work. Skipped when the idempotent
+      # check fired -- nothing changed, nothing to persist.
       - name: Persist chunk state to gh-pages (#171)
-        if: always()
+        if: always() && steps.idem.outputs.skip != 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bash scripts/persist-chunk-state.sh "${{ matrix.chunk }}" "${{ github.run_id }}" "${{ github.run_attempt }}"
