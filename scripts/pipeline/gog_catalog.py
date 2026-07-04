@@ -39,6 +39,10 @@ _gog_catalog_cache: dict[str, str] | None = None
 # catalog. Kept separate so load_gog_catalog stays a {id: title} contract for
 # existing callers (search-index stub generation).
 _gog_covers_cache: dict[str, str] | None = None
+# Parallel map {str(product_id): year_int} for release-year disambiguation
+# (#112). GOG's catalog payload carries releaseDate per product, so we pull
+# it in the same fetch pass instead of a separate per-product API call.
+_gog_years_cache: dict[str, int] | None = None
 
 
 def load_gog_catalog(
@@ -50,9 +54,10 @@ def load_gog_catalog(
 
     Reads from local cache if fresh enough, otherwise fetches from the API.
     Returns empty dict on failure so callers degrade gracefully. Cover image
-    URLs are loaded into a parallel cache; use load_gog_covers() to read them.
+    URLs and release years are loaded into parallel caches; use
+    load_gog_covers() and load_gog_release_years() to read them.
     """
-    global _gog_catalog_cache, _gog_covers_cache
+    global _gog_catalog_cache, _gog_covers_cache, _gog_years_cache
     if _gog_catalog_cache is not None and not force_refresh:
         return _gog_catalog_cache
 
@@ -63,9 +68,13 @@ def load_gog_catalog(
             if age < max_age_seconds:
                 _gog_catalog_cache = cached.get("catalog", {})
                 _gog_covers_cache = cached.get("covers", {})
+                # `years` was added in #112. Older caches without the field
+                # load fine -- the years map stays empty until the cache
+                # expires and the next fetch populates it.
+                _gog_years_cache = cached.get("years", {}) or {}
                 log(
                     f"[gog-catalog] loaded {len(_gog_catalog_cache):,} entries"
-                    f" ({len(_gog_covers_cache):,} covers) from cache (age {age / 3600:.1f}h)"
+                    f" ({len(_gog_covers_cache):,} covers, {len(_gog_years_cache):,} years) from cache (age {age / 3600:.1f}h)"
                 )
                 return _gog_catalog_cache
         except (OSError, json.JSONDecodeError, KeyError):
@@ -73,24 +82,26 @@ def load_gog_catalog(
 
     log("[gog-catalog] fetching full GOG catalog from catalog.gog.com ...")
     try:
-        catalog, covers = _fetch_all_pages()
+        catalog, covers, years = _fetch_all_pages()
     except Exception as exc:
         log(f"[gog-catalog] WARN: catalog fetch failed: {exc}; search index will lack GOG stubs")
         _gog_catalog_cache = {}
         _gog_covers_cache = {}
+        _gog_years_cache = {}
         return _gog_catalog_cache
 
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(
         json.dumps(
-            {"_ts": int(time.time()), "catalog": catalog, "covers": covers},
+            {"_ts": int(time.time()), "catalog": catalog, "covers": covers, "years": years},
             ensure_ascii=False,
         ),
         encoding="utf-8",
     )
-    log(f"[gog-catalog] cached {len(catalog):,} entries ({len(covers):,} covers) to {cache_path}")
+    log(f"[gog-catalog] cached {len(catalog):,} entries ({len(covers):,} covers, {len(years):,} years) to {cache_path}")
     _gog_catalog_cache = catalog
     _gog_covers_cache = covers
+    _gog_years_cache = years
     return catalog
 
 
@@ -108,9 +119,39 @@ def load_gog_covers(
     return _gog_covers_cache or {}
 
 
-def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str]]:
+def load_gog_release_years(
+    cache_path: Path = DEFAULT_GOG_CATALOG_CACHE_PATH,
+    max_age_seconds: int = GOG_CATALOG_CACHE_MAX_AGE_SECONDS,
+) -> dict[str, int]:
+    """Return {str(product_id): year} for GOG games (#112).
+
+    Triggers a catalog load if needed so the years cache is populated.
+    Empty dict if the cached catalog predates #112 -- the next fetch after
+    the 7-day TTL populates it automatically. Callers should treat missing
+    entries as "no year available" (leave column 6 null).
+    """
+    global _gog_years_cache
+    if _gog_years_cache is None:
+        load_gog_catalog(cache_path=cache_path, max_age_seconds=max_age_seconds)
+    return _gog_years_cache or {}
+
+
+def _extract_year(release_date: str | None) -> int | None:
+    """Pull a 19xx/20xx year out of GOG's releaseDate string. Formats vary
+    (ISO, human-readable, `TBA`); a regex on the whole string catches
+    them without a date-parser dependency.
+    """
+    if not release_date:
+        return None
+    import re as _re
+    m = _re.search(r"\b(19\d{2}|20\d{2})\b", str(release_date))
+    return int(m.group(1)) if m else None
+
+
+def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str], dict[str, int]]:
     catalog: dict[str, str] = {}
     covers: dict[str, str] = {}
+    years: dict[str, int] = {}
     page = 1
     total_pages = 1
     skipped_pages = 0
@@ -140,6 +181,9 @@ def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str]]:
                 cover = (product.get("coverHorizontal") or "").strip()
                 if cover:
                     covers[str(pid)] = cover
+                year = _extract_year(product.get("releaseDate"))
+                if year is not None:
+                    years[str(pid)] = year
 
         if page % 100 == 0:
             log(f"[gog-catalog] page {page}/{total_pages} ({len(catalog):,} games so far)")
@@ -147,7 +191,7 @@ def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str]]:
         time.sleep(_INTER_PAGE_DELAY_SECONDS)
 
     log(f"[gog-catalog] complete: {len(catalog):,} GOG games ({skipped_pages} page(s) skipped after retries)")
-    return catalog, covers
+    return catalog, covers, years
 
 
 def _fetch_page(page: int) -> dict:

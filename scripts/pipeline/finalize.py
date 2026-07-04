@@ -43,8 +43,8 @@ from .common import (
     is_adult_app_cached,
     log,
 )
-from .gog_catalog import load_gog_catalog, load_gog_covers
-from .epic_catalog import load_epic_catalog, load_epic_covers
+from .gog_catalog import load_gog_catalog, load_gog_covers, load_gog_release_years
+from .epic_catalog import load_epic_catalog, load_epic_covers, load_epic_release_years
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
 from .data_versions import write_data_versions_json
 from .game_images import build_game_images, enrich_search_index_with_delisted
@@ -810,24 +810,40 @@ def generate_search_index(
         seen_ids.add(app_id)
 
     if gog_catalog:
+        # #112: read release-year map from the same catalog cache. Old
+        # caches (pre-#112) have no `years` field so the map is empty
+        # until the 7-day TTL expires and the next fetch populates it;
+        # rows fall back to `None` in that transition period.
+        gog_years = load_gog_release_years()
         stubs = 0
+        with_year = 0
         for pid, title in sorted(gog_catalog.items(), key=lambda kv: kv[1].lower()):
             canonical_id = f"gog:{pid}"
             if canonical_id not in seen_ids:
-                entries.append([canonical_id, title, "", 0, 0, "gog"])
+                year = gog_years.get(str(pid))
+                # 9-column shape matches Steam stubs: [id, title, tier,
+                # pdb, pulse, appType, releaseYear, delisted, adult].
+                entries.append([canonical_id, title, "", 0, 0, "gog", year, None, False])
                 stubs += 1
+                if year:
+                    with_year += 1
         if stubs:
-            log(f"[search-index] Added {stubs:,} GOG catalog stubs (no reports yet)")
+            log(f"[search-index] Added {stubs:,} GOG catalog stubs ({with_year:,} with release year)")
 
     if epic_catalog:
+        epic_years = load_epic_release_years()
         stubs = 0
+        with_year = 0
         for namespace, title in sorted(epic_catalog.items(), key=lambda kv: kv[1].lower()):
             canonical_id = f"epic:{namespace}"
             if canonical_id not in seen_ids:
-                entries.append([canonical_id, title, "", 0, 0, "epic"])
+                year = epic_years.get(namespace)
+                entries.append([canonical_id, title, "", 0, 0, "epic", year, None, False])
                 stubs += 1
+                if year:
+                    with_year += 1
         if stubs:
-            log(f"[search-index] Added {stubs:,} Epic catalog stubs (no reports yet)")
+            log(f"[search-index] Added {stubs:,} Epic catalog stubs ({with_year:,} with release year)")
 
     # Adult-suggestive keywords in a stub title trigger a descriptor check even
     # though the game has no local reports (a full scan of every stub would be

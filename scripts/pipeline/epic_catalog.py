@@ -40,6 +40,7 @@ _EPIC_QUERY = """
       elements {
         title
         namespace
+        releaseDate
         keyImages {
           type
           url
@@ -65,6 +66,8 @@ _epic_catalog_cache: dict[str, str] | None = None
 # Parallel map {namespace: cover_image_url}, kept separate so load_epic_catalog
 # stays a {namespace: title} contract. Read it via load_epic_covers().
 _epic_covers_cache: dict[str, str] | None = None
+# Parallel map {namespace: year_int} for release-year disambiguation (#112).
+_epic_years_cache: dict[str, int] | None = None
 # keyImages types worth using as a header/box image, best first.
 _EPIC_COVER_TYPES = ("DieselStoreFrontWide", "OfferImageWide", "Featured", "DieselGameBoxWide")
 
@@ -80,7 +83,7 @@ def load_epic_catalog(
     Returns empty dict on failure so callers degrade gracefully. Cover image
     URLs load into a parallel cache; read them via load_epic_covers().
     """
-    global _epic_catalog_cache, _epic_covers_cache
+    global _epic_catalog_cache, _epic_covers_cache, _epic_years_cache
     if _epic_catalog_cache is not None and not force_refresh:
         return _epic_catalog_cache
 
@@ -91,9 +94,13 @@ def load_epic_catalog(
             if age < max_age_seconds:
                 _epic_catalog_cache = cached.get("catalog", {})
                 _epic_covers_cache = cached.get("covers", {})
+                # `years` added in #112 -- older caches without the field
+                # load fine; empty map until the 7-day TTL expires and the
+                # next fetch populates it.
+                _epic_years_cache = cached.get("years", {}) or {}
                 log(
                     f"[epic-catalog] loaded {len(_epic_catalog_cache):,} entries"
-                    f" ({len(_epic_covers_cache):,} covers) from cache (age {age / 3600:.1f}h)"
+                    f" ({len(_epic_covers_cache):,} covers, {len(_epic_years_cache):,} years) from cache (age {age / 3600:.1f}h)"
                 )
                 return _epic_catalog_cache
         except (OSError, json.JSONDecodeError, KeyError):
@@ -101,24 +108,26 @@ def load_epic_catalog(
 
     log("[epic-catalog] fetching full Epic catalog from store.epicgames.com ...")
     try:
-        catalog, covers = _fetch_all_pages()
+        catalog, covers, years = _fetch_all_pages()
     except Exception as exc:
         log(f"[epic-catalog] WARN: catalog fetch failed: {exc}; search index will lack Epic stubs")
         _epic_catalog_cache = {}
         _epic_covers_cache = {}
+        _epic_years_cache = {}
         return _epic_catalog_cache
 
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(
         json.dumps(
-            {"_ts": int(time.time()), "catalog": catalog, "covers": covers},
+            {"_ts": int(time.time()), "catalog": catalog, "covers": covers, "years": years},
             ensure_ascii=False,
         ),
         encoding="utf-8",
     )
-    log(f"[epic-catalog] cached {len(catalog):,} entries ({len(covers):,} covers) to {cache_path}")
+    log(f"[epic-catalog] cached {len(catalog):,} entries ({len(covers):,} covers, {len(years):,} years) to {cache_path}")
     _epic_catalog_cache = catalog
     _epic_covers_cache = covers
+    _epic_years_cache = years
     return catalog
 
 
@@ -131,6 +140,32 @@ def load_epic_covers(
     if _epic_covers_cache is None:
         load_epic_catalog(cache_path=cache_path, max_age_seconds=max_age_seconds)
     return _epic_covers_cache or {}
+
+
+def load_epic_release_years(
+    cache_path: Path = DEFAULT_EPIC_CATALOG_CACHE_PATH,
+    max_age_seconds: int = EPIC_CATALOG_CACHE_MAX_AGE_SECONDS,
+) -> dict[str, int]:
+    """Return {namespace: year} for Epic games (#112).
+
+    Empty dict if the cached catalog predates #112 -- next fetch after
+    the 7-day TTL populates it.
+    """
+    global _epic_years_cache
+    if _epic_years_cache is None:
+        load_epic_catalog(cache_path=cache_path, max_age_seconds=max_age_seconds)
+    return _epic_years_cache or {}
+
+
+def _extract_year(release_date: str | None) -> int | None:
+    """Pull a 19xx/20xx year out of Epic's releaseDate string. Epic
+    returns ISO-8601 (e.g. `2017-05-05T04:00:00.000Z`), possibly null.
+    """
+    if not release_date:
+        return None
+    import re as _re
+    m = _re.search(r"\b(19\d{2}|20\d{2})\b", str(release_date))
+    return int(m.group(1)) if m else None
 
 
 def _pick_cover(key_images: list) -> str:
@@ -146,9 +181,10 @@ def _pick_cover(key_images: list) -> str:
     return ""
 
 
-def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str]]:
+def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str], dict[str, int]]:
     catalog: dict[str, str] = {}
     covers: dict[str, str] = {}
+    years: dict[str, int] = {}
     start = 0
     total = None
 
@@ -175,6 +211,9 @@ def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str]]:
                 cover = _pick_cover(elem.get("keyImages"))
                 if cover:
                     covers[namespace] = cover
+                year = _extract_year(elem.get("releaseDate"))
+                if year is not None:
+                    years[namespace] = year
 
         start += len(elements)
         if not elements or start >= total:
@@ -184,8 +223,8 @@ def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str]]:
             log(f"[epic-catalog] fetched {start}/{total} ({len(catalog):,} unique namespaces so far)")
         time.sleep(_INTER_PAGE_DELAY_SECONDS)
 
-    log(f"[epic-catalog] complete: {len(catalog):,} Epic games ({len(covers):,} covers)")
-    return catalog, covers
+    log(f"[epic-catalog] complete: {len(catalog):,} Epic games ({len(covers):,} covers, {len(years):,} years)")
+    return catalog, covers, years
 
 
 def _fetch_page(start: int) -> dict:
