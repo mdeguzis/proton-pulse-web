@@ -64,7 +64,7 @@ describe('game page: rating panel (dial + per-tier bars + flag)', () => {
 
   test('confidence summary links to the scoring breakdown via a "why?" link', () => {
     expect(src).toContain('class="grp-why conf-link"');
-    expect(src).toContain('href="confidence.html?app=${appId}"');
+    expect(src).toContain('href="confidence.html?app=${appId}&tier=${overallTier}"');
     expect(src).toContain('>why?</a>');
   });
 
