@@ -336,6 +336,13 @@ jobs:
           cp gh-pages-data/gog-catalog-cache.json .cache/ 2>/dev/null || true
           cp gh-pages-data/epic-catalog-cache.json .cache/ 2>/dev/null || true
 
+      # #89: log which caches survived the restore, their sizes + ages,
+      # so the workflow output tells us at a glance whether the two cache
+      # layers are actually doing their job. Prints one line per known
+      # cache file with entries / bytes / age-in-days.
+      - name: Cache-state stats (#89)
+        run: bash scripts/log-cache-stats.sh post-restore
+
       - name: Write local .env from secret
         run: |
           if [ -n "${{ secrets.STEAM_API_KEY }}" ]; then
