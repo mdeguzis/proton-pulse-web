@@ -279,16 +279,18 @@
   min-width: 0;
 }
 .grp-row { display: flex; align-items: center; gap: 18px; flex: 1 1 auto; }
+/* The tier verdict is a full-name label ABOVE the dial (readable at any tier,
+   no clipping inside the 118px circle); the dial itself shows only the
+   confidence % + caption. */
+.grp-dial-block { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.grp-dial-verdict { font-size: 0.82rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; line-height: 1; text-align: center; }
 .grp-dial { position: relative; flex: 0 0 auto; width: 118px; height: 118px; }
 .grp-dial svg { width: 100%; height: 100%; display: block; }
 .grp-dial-ctr {
   position: absolute; inset: 0;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
 }
-.grp-dial-pct { font-size: 1.45rem; font-weight: 800; color: var(--strong); font-variant-numeric: tabular-nums; line-height: 1; }
-/* Tier is the headline paired with the percent ("95% PLATINUM"), so make it
-   prominent; "confidence" drops to a small muted caption underneath (#188). */
-.grp-dial-tier { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.1; margin-top: 1px; }
+.grp-dial-pct { font-size: 1.5rem; font-weight: 800; color: var(--strong); font-variant-numeric: tabular-nums; line-height: 1; }
 .grp-dial-cap { font-size: 0.5rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
 .grp-bars { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
 .grp-bar {
@@ -346,6 +348,12 @@
   justify-content: center;
 }
 .game-header-actions #stats-btn { flex: 0 0 auto; }
+/* Steam Deck is the last icon-labeled button in the row. Letting it grow
+   fills the leftover space on mobile once Submit Report wraps to its own
+   line -- otherwise the row ends with awkward empty space to the right
+   of the Deck pill. On wide screens it just shares row space with the
+   Submit pill (both are flex-grow), which stays balanced. */
+.game-header-actions .deck-status-btn { flex: 1 1 auto; }
 .game-header-actions .submit-report-btn {
   flex: 1 1 auto;
   min-width: 0;

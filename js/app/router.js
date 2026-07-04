@@ -1,6 +1,6 @@
 // router (entry) for the app page. Relocated from app.js.
 
-import { renderGamePage } from './components/game-page.js?v=1ed7ae39';
+import { renderGamePage } from './components/game-page.js?v=3282ce79';
 import { renderHomePage } from './components/home.js?v=ee9b16d7';
 import { renderSearchPage } from './components/search.js?v=ff82d0c0';
 
@@ -23,6 +23,13 @@ export async function route() {
   if (routeSearchInput) {
     routeSearchInput.value = r.page === 'search' ? r.query : '';
   }
+  // Hide the app.html page-header on individual game pages -- the game
+  // hero already carries the title, boxart, and app id, and repeating
+  // "Game Reports / Search a Steam game..." above it just wastes space.
+  // Keep it visible on the landing (home) and search views where the
+  // page context isn't otherwise obvious.
+  const pageHeader = document.querySelector('.main-inner > .page-header');
+  if (pageHeader) pageHeader.hidden = (r.page === 'app');
   if (r.page === 'app') await renderGamePage(r.appId);
   else if (r.page === 'search') await renderSearchPage(r.query);
   else await renderHomePage();

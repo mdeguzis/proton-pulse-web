@@ -529,24 +529,30 @@ export async function renderGamePage(appId) {
     const _DIAL_C = 2 * Math.PI * _DIAL_R;
     const _dialPct = hasAnyReports ? Math.max(0, Math.min(100, Math.round(overallConfidencePct || 0))) : 0;
     const _dialOffset = _DIAL_C * (1 - _dialPct / 100);
-    const gaugeDial = `<div class="grp-dial" title="Aggregate confidence: ${_dialPct}%">
-        <svg viewBox="0 0 132 132" aria-hidden="true">
-          <circle cx="66" cy="66" r="${_DIAL_R}" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"></circle>
-          <circle cx="66" cy="66" r="${_DIAL_R}" fill="none" stroke="var(--accent, #66c0f4)" stroke-width="12" stroke-linecap="round" stroke-dasharray="${_DIAL_C.toFixed(1)}" stroke-dashoffset="${_dialOffset.toFixed(1)}" transform="rotate(-90 66 66)"></circle>
-        </svg>
-        <div class="grp-dial-ctr">
-          <span class="grp-dial-pct">${hasAnyReports ? _dialPct + '%' : '--'}</span>
-          <span class="grp-dial-tier" style="color:${overallTileColor}">${overallTier}</span>
-          <span class="grp-dial-cap">confidence</span>
+    // Short labels match the tier bars on the right (PLAT/GOLD/SILV/BRON/BORK).
+    // CSS shows the abbreviated form on narrow screens so PLATINUM doesn't
+    // spill past the 118px dial diameter.
+    const gaugeDial = `<div class="grp-dial-block">
+        <div class="grp-dial-verdict" style="color:${overallTileColor}">${overallTier}</div>
+        <div class="grp-dial" title="Aggregate confidence: ${_dialPct}%">
+          <svg viewBox="0 0 132 132" aria-hidden="true">
+            <circle cx="66" cy="66" r="${_DIAL_R}" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"></circle>
+            <circle cx="66" cy="66" r="${_DIAL_R}" fill="none" stroke="${overallTileColor}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${_DIAL_C.toFixed(1)}" stroke-dashoffset="${_dialOffset.toFixed(1)}" transform="rotate(-90 66 66)"></circle>
+          </svg>
+          <div class="grp-dial-ctr">
+            <span class="grp-dial-pct">${hasAnyReports ? _dialPct + '%' : '--'}</span>
+            <span class="grp-dial-cap">confidence</span>
+          </div>
         </div>
       </div>`;
 
     // Panel footer: confidence summary (+ link to the scoring breakdown), then
-    // App id / newest report / per-source split on one meta line.
+    // App id / newest report on one meta line. The per-source split
+    // (N Pulse / M ProtonDB) lives on the stats page now -- keeping it
+    // out of the hero cuts the noise on small screens.
     const newestTs = allReports.length ? Math.max(...allReports.map((r) => r.timestamp || 0)) : 0;
     const _freshBit = newestTs ? `newest report: <strong>${daysAgo(newestTs)}</strong>` : '';
-    const _srcBit = `<strong>${nativeReports.length}</strong> Pulse / <strong>${protonDbCount}</strong> ProtonDB`;
-    const _metaBits = [`App ${esc(String(appId))}`, _freshBit, _srcBit].filter(Boolean).join(' &middot; ');
+    const _metaBits = [`App ${esc(String(appId))}`, _freshBit].filter(Boolean).join(' &middot; ');
     const _confWhy = hasAnyReports
       ? ` <a class="grp-why conf-link" href="confidence.html?app=${appId}" title="See the factor-by-factor breakdown of this aggregate confidence">why?</a>`
       : '';

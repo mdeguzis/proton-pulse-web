@@ -185,3 +185,67 @@ describe('patchReportFlags', () => {
     await expect(ctx.patchReportFlags(makeSession(), '1', { is_hidden: true })).rejects.toThrow('403');
   });
 });
+
+describe('fetchStatusCounts', () => {
+  const withCount = (n) => Promise.resolve({
+    ok: true,
+    headers: { get: () => `0-0/${n}` },
+    json: () => Promise.resolve([]),
+  });
+
+  test('uses the exact RPC when available', async () => {
+    const { ctx } = loadApi((url) => {
+      if (url.includes('/rpc/get_report_status_counts')) {
+        return Promise.resolve({
+          ok: true,
+          headers: { get: () => null },
+          json: () => Promise.resolve([{ total: 7, flagged: 1, hidden: 2, approved: 3, pending: 1 }]),
+        });
+      }
+      throw new Error('count queries must not run when the RPC succeeds');
+    });
+    const c = await ctx.fetchStatusCounts(makeSession());
+    expect(c).toEqual({ total: 7, flagged: 1, hidden: 2, approved: 3, pending: 1 });
+  });
+
+  test('falls back to count=exact queries when the RPC returns no row', async () => {
+    const userTotals = (url) => {
+      if (url.includes('is_flagged=eq.true')) return 3;
+      if (url.includes('is_hidden=eq.true')) return 2;
+      if (url.includes('is_flagged=eq.false&is_hidden=eq.false')) return 100; // clean
+      return 105; // total (no status filter)
+    };
+    const { ctx, calls } = loadApi(
+      (url) => withCount(userTotals(url)),
+      { approvalsImpl: () => withCount(90) },
+    );
+
+    const c = await ctx.fetchStatusCounts(makeSession());
+    expect(c.total).toBe(105);
+    expect(c.flagged).toBe(3);
+    expect(c.hidden).toBe(2);
+    expect(c.pending).toBe(10);    // clean 100 - approvals 90
+    expect(c.approved).toBe(90);
+    expect(calls.some((x) => x.opts && x.opts.headers && x.opts.headers.Prefer === 'count=exact')).toBe(true);
+  });
+});
+
+describe('Reports admin wiring', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const HTML = fs.readFileSync(path.join(__dirname, '..', 'admin.html'), 'utf8');
+  const COMP = fs.readFileSync(path.join(__dirname, '..', 'js', 'admin', 'components', 'allReports.js'), 'utf8');
+
+  test('standalone Flagged Reports menu option is removed (covered by Reports filter)', () => {
+    expect(HTML).not.toContain('<option value="flagged">Flagged Reports</option>');
+    // the Reports panel still has a "Flagged" status filter
+    expect(HTML).toContain('<option value="flagged">Flagged</option>');
+  });
+
+  test('Reports panel renders a clickable per-status count strip', () => {
+    expect(HTML).toContain('id="all-reports-status-counts"');
+    expect(COMP).toContain('fetchStatusCounts');
+    expect(COMP).toContain('class="admin-stat');
+    expect(COMP).toContain("statusEl.value = btn.dataset.status");
+  });
+});

@@ -1,6 +1,7 @@
 /**
- * Admin API Explorer (issue #186): inspect raw Steam JSON for a game via the
- * steam-explore edge function proxy (Steam is CORS-blocked from the browser).
+ * Admin API Explorer (issue #186): inspect raw store JSON for a game via the
+ * steam-explore edge function proxy (stores are CORS-blocked from the browser).
+ * Covers Steam / GOG / Epic.
  */
 const fs = require('fs');
 const path = require('path');
@@ -17,13 +18,20 @@ const PERMS = read('js/admin/permissions.js');
 const MANIFEST = read('gh-pages-manifest.txt').split('\n').map((l) => l.trim());
 const CONFIG = read('supabase/config.toml');
 
-describe('API Explorer edge function', () => {
-  test('whitelists appdetails + deck endpoints and requires a numeric app id', () => {
-    expect(EDGE).toContain('appdetails: (id)');
-    expect(EDGE).toContain('deck: (id)');
+describe('API Explorer edge function (multi-store)', () => {
+  test('whitelists steam / gog / epic endpoints', () => {
+    for (const key of ['steam_appdetails', 'steam_deck', 'gog_product', 'gog_search', 'epic_search']) {
+      expect(EDGE).toContain(`${key}:`);
+    }
     expect(EDGE).toContain('ajaxgetdeckappcompatibilityreport?nAppID=');
-    expect(EDGE).toContain('if (!ENDPOINTS[endpoint])');
-    expect(EDGE).toContain('/^\\d+$/.test(appId)');
+    expect(EDGE).toContain('api.gog.com/products/');
+    expect(EDGE).toContain('store.epicgames.com/graphql');
+  });
+
+  test('id endpoints require a numeric id; term endpoints require a term', () => {
+    expect(EDGE).toContain('const def = ENDPOINTS[endpoint]');
+    expect(EDGE).toContain('/^\\d+$/.test(id)');
+    expect(EDGE).toContain('if (!term)');
   });
 
   test('is registered in config.toml with verify_jwt=false', () => {
@@ -32,20 +40,56 @@ describe('API Explorer edge function', () => {
 });
 
 describe('API Explorer client + component', () => {
-  test('api posts endpoint + app_id to the steam-explore function', () => {
-    expect(API).toMatch(/export async function exploreSteam\(/);
+  test('api posts endpoint + id/term to the steam-explore function', () => {
+    expect(API).toMatch(/export async function exploreStore\(/);
     expect(API).toContain('/functions/v1/steam-explore');
     expect(API).toContain('endpoint: String(endpoint)');
-    expect(API).toContain('app_id: String(appId)');
+    expect(API).toContain('id: String(id)');
+    expect(API).toContain('term: String(term)');
   });
 
-  test('component resolves a name to an app id and renders the JSON', () => {
+  test('component has store tabs for Steam / GOG / Epic', () => {
+    expect(COMP).toContain('const STORES = {');
+    expect(COMP).toContain('class="apix-store-tab');
+    expect(COMP).toContain("store = tab.dataset.store");
+    expect(COMP).toMatch(/steam:\s*{/);
+    expect(COMP).toMatch(/gog:\s*{/);
+    expect(COMP).toMatch(/epic:\s*{/);
+  });
+
+  test('resolves an id/name/term and renders the JSON', () => {
     expect(COMP).toMatch(/export function renderApiExplorer\(/);
-    expect(COMP).toContain('async function _resolveAppId(');
+    expect(COMP).toContain('async function _resolveArg(');
     expect(COMP).toContain('/^\\d+$/.test(q)');           // numeric passes through
     expect(COMP).toContain("dataUrl('search-index.json')"); // name resolution source
-    expect(COMP).toContain('JSON.stringify(');            // pretty-print output
-    expect(COMP).toContain('exploreSteam(endpoint, resolved.id)');
+    expect(COMP).toContain("id = id.slice(prefix.length)"); // strips gog:/epic: prefix
+    expect(COMP).toContain('exploreStore(endpoint, { id: resolved.id, term: resolved.term })');
+  });
+
+  test('output has a word-wrap toggle, copy, download, and store-link controls', () => {
+    expect(COMP).toContain('id="apix-wrap"');
+    expect(COMP).toContain("classList.toggle('apix-wrap'");
+    expect(COMP).toContain('navigator.clipboard.writeText(lastJson)');
+    expect(COMP).toContain("new Blob([lastJson], { type: 'application/json' })");
+    expect(COMP).toContain('a.download = `${lastName}.json`');
+    // store-page link, derived per endpoint
+    expect(COMP).toContain('id="apix-store-link"');
+    expect(COMP).toContain('function _storeUrl(');
+    expect(COMP).toContain('store.steampowered.com/app/${id}');
+    expect(COMP).toContain('links.product_card');
+  });
+
+  test('Field descriptions popup documents fields for each store endpoint', () => {
+    expect(COMP).toContain('id="apix-fields"');
+    expect(COMP).toContain('function _showFieldDocs(');
+    expect(COMP).toContain('const FIELD_DOCS = {');
+    expect(COMP).toContain('content_descriptors.ids');
+    expect(COMP).toContain('resolved_category');
+    expect(COMP).toContain('display_type');
+    expect(COMP).toContain('required_age');
+    // gog + epic docs present
+    expect(COMP).toContain('gog_product:');
+    expect(COMP).toContain('epic_search:');
   });
 });
 
@@ -56,7 +100,7 @@ describe('API Explorer admin wiring', () => {
   });
 
   test('main.js maps the tab to renderApiExplorer', () => {
-    expect(MAIN).toContain("import { renderApiExplorer }");
+    expect(MAIN).toContain('import { renderApiExplorer }');
     expect(MAIN).toContain("'api-explorer': () => renderApiExplorer()");
   });
 

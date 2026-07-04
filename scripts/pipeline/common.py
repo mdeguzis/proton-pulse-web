@@ -235,7 +235,7 @@ def flush_steam_descriptors_cache(
     _save_steam_descriptors_cache(cache_path)
 
 
-def fetch_steam_content_descriptors(app_id: str) -> list[int]:
+def fetch_steam_content_descriptors(app_id: str, force_refresh: bool = False) -> list[int]:
     """Return Steam content-descriptor ids for an app, cached on disk.
 
     Descriptor list comes from the same appdetails endpoint the title
@@ -243,12 +243,15 @@ def fetch_steam_content_descriptors(app_id: str) -> list[int]:
     can safely treat "no data" as "no flags". The result is cached for
     STEAM_DESCRIPTORS_CACHE_MAX_AGE_SECONDS (30 days) so pipeline reruns
     only pay the Steam API cost for new / expired entries.
+
+    force_refresh skips the cache READ (the fresh result is still written),
+    used to heal entries a past rate-limited fetch poisoned as empty (#185).
     """
     global _steam_descriptors_cache_dirty
     cache = _load_steam_descriptors_cache()
     now = int(time.time())
 
-    cached = cache.get(app_id)
+    cached = None if force_refresh else cache.get(app_id)
     if cached and isinstance(cached, dict):
         age = now - cached.get("ts", 0)
         # Confirmed results (ok=True) live for the full TTL. Unresolved
@@ -290,9 +293,14 @@ def fetch_steam_content_descriptors(app_id: str) -> list[int]:
         return []
 
 
-def is_adult_app(app_id: str) -> bool:
-    """True when Steam flags the app with any ADULT_DESCRIPTOR_IDS."""
-    ids = fetch_steam_content_descriptors(app_id)
+def is_adult_app(app_id: str, force_refresh: bool = False) -> bool:
+    """True when Steam flags the app with any ADULT_DESCRIPTOR_IDS.
+
+    force_refresh bypasses the cache read (still caches the result). Used to
+    heal descriptor entries that a past rate-limited fetch poisoned as empty
+    (#185); the caller scopes it to suspect titles so it stays cheap.
+    """
+    ids = fetch_steam_content_descriptors(app_id, force_refresh=force_refresh)
     return bool(set(ids) & ADULT_DESCRIPTOR_IDS)
 
 

@@ -1,11 +1,22 @@
 import json
 import math
 import os
+import re
 import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+
+# Adult-suggestive keywords in a title. A match forces a fresh descriptor
+# re-fetch (bypassing a possibly-poisoned empty cache entry, #185) and, for
+# catalog stubs, triggers a descriptor lookup at all. The descriptor check is
+# still authoritative -- a hint title with no descriptor 3/4 (e.g. "The Sexy
+# Brutale") stays unflagged.
+ADULT_TITLE_HINT_RE = re.compile(
+    r"\b(naughty|hentai|nsfw|adult|erotic|sexy|xxx|nude|nudity|lewd|kinky|18\+|sensual|waifu|ecchi|yuri|yaoi|bimbo)\b",
+    re.IGNORECASE,
+)
 
 from .catalog import (
     DEFAULT_PROTONDB_PROBE_CACHE_PATH,
@@ -786,7 +797,14 @@ def generate_search_index(
         # Columns 6 (release_year) + 7 (delisted) get filled in later by
         # enrich_search_index_with_release_years / _with_delisted; pad
         # them with None so column 8 (adult) sits at the expected index.
-        adult = is_adult_app(app_id) if app_type == "steam" else False
+        # Reported game: descriptor-check Steam apps. Force a fresh fetch when
+        # the title hints adult so a poisoned empty cache entry (#185) heals
+        # instead of leaking the game into browse views.
+        adult = (
+            is_adult_app(app_id, force_refresh=bool(ADULT_TITLE_HINT_RE.search(title)))
+            if app_type == "steam"
+            else False
+        )
         entries.append([app_id, title, tier, pdb_count, pulse_count, app_type, None, None, adult])
         seen_ids.add(app_id)
 
@@ -810,18 +828,10 @@ def generate_search_index(
         if stubs:
             log(f"[search-index] Added {stubs:,} Epic catalog stubs (no reports yet)")
 
-    # Adult-suggestive keywords in a stub title trigger a descriptor
-    # check even though the game has no local reports. Full descriptor
-    # scan on every stub would be ~15k appdetails calls per first run
-    # (~4 hours at Steam's rate limit); the hint filter cuts that to
-    # dozens while still catching titles like Naughty Chat / Super
-    # Naughty Maid / hentai VNs. Follow-up: gradual full enrichment.
-    import re as _re
-    _ADULT_TITLE_HINT = _re.compile(
-        r"\b(naughty|hentai|nsfw|adult|erotic|sexy|xxx|nude|nudity|lewd|kinky|18\+|sensual|waifu|ecchi|yuri|yaoi|bimbo)\b",
-        _re.IGNORECASE,
-    )
-
+    # Adult-suggestive keywords in a stub title trigger a descriptor check even
+    # though the game has no local reports (a full scan of every stub would be
+    # ~15k appdetails calls / ~4 hours at Steam's rate limit; the hint filter
+    # cuts that to dozens). Regex is the module-level ADULT_TITLE_HINT_RE.
     if steam_catalog and protondb_known_app_ids:
         stubs = 0
         skipped_no_signal = 0
@@ -838,8 +848,9 @@ def generate_search_index(
             # skip descriptor lookup for the rest but still write column 8
             # so the shape is consistent with rated rows.
             adult = False
-            if _ADULT_TITLE_HINT.search(title):
-                adult = is_adult_app(app_id)
+            if ADULT_TITLE_HINT_RE.search(title):
+                # force_refresh so a poisoned empty cache entry heals (#185)
+                adult = is_adult_app(app_id, force_refresh=True)
                 adult_hinted += 1
             entries.append([str(app_id), title, "", 0, 0, "steam", None, None, adult])
             seen_ids.add(str(app_id))
@@ -867,8 +878,9 @@ def generate_search_index(
                 skipped_no_title += 1
                 continue
             adult = False
-            if _ADULT_TITLE_HINT.search(title):
-                adult = is_adult_app(app_id)
+            if ADULT_TITLE_HINT_RE.search(title):
+                # force_refresh so a poisoned empty cache entry heals (#185)
+                adult = is_adult_app(app_id, force_refresh=True)
                 adult_hinted += 1
             entries.append([str(app_id), title, "", 0, 0, "steam", None, None, adult])
             seen_ids.add(str(app_id))

@@ -75,9 +75,14 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
   // --- header rendering ---
 
-  function renderHeader(appId, title) {
+  function renderHeader(appId, title, { pulseCount = 0, protonDbCount = 0 } = {}) {
     const headerImg = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appId}/header.jpg`;
     const gameUrl = `app.html#/app/${esc(appId)}`;
+    // Per-source split moved here from the game page hero so the numbers
+    // still live SOMEWHERE without cluttering the hero on small screens.
+    const sourceBit = (pulseCount || protonDbCount)
+      ? ` &middot; <strong>${pulseCount}</strong> Pulse / <strong>${protonDbCount}</strong> ProtonDB`
+      : '';
     // Whole left side (image + name + appid) is a single anchor so clicking
     // the boxart or title takes you back to the game page. The dedicated
     // "Back to game page" link stays on the right for keyboard/screen-reader
@@ -88,7 +93,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
           <img src="${headerImg}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
           <div class="gs-header-info">
             <div class="name">${esc(title || `App ${appId}`)}</div>
-            <div class="sub">App ${esc(appId)}</div>
+            <div class="sub">App ${esc(appId)}${sourceBit}</div>
           </div>
         </a>
         <a class="gs-back" href="${gameUrl}">&larr; Back to game page</a>
@@ -409,12 +414,12 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
   // Returns { html, wire }. wire() runs after the html is injected so any
   // chart helpers (hover targets, click-to-filter) can attach to live DOM
-  function renderAll(appId, title, stats) {
+  function renderAll(appId, title, stats, counts = {}) {
     const sectionHead = (icon, title) => `<div class="gs-section-head">${icon}<span>${title}</span></div>`;
     const chart = renderChart(stats.monthly);
 
     const html = `
-      ${renderHeader(appId, title)}
+      ${renderHeader(appId, title, counts)}
       ${sectionHead(ICON.status, 'Current state')}
       ${renderStatusCards(stats)}
 
@@ -494,7 +499,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
     const allReports = [...cdnReports, ...pulseReports];
     if (allReports.length === 0 && configs.length === 0) {
-      root.innerHTML = renderHeader(appId, title) + `
+      root.innerHTML = renderHeader(appId, title, { pulseCount: pulseReports.length, protonDbCount: cdnReports.length }) + `
         <div class="error-state">
           <p>No reports or configs found for this game.</p>
           <p style="font-size:0.78rem;margin-top:8px">
@@ -514,7 +519,10 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     const previewBanner = (myHw && isPreviewHardware(myHw))
       ? renderPreviewHardwareBanner() : '';
 
-    const { html, wire } = renderAll(appId, title, stats);
+    const { html, wire } = renderAll(appId, title, stats, {
+      pulseCount: pulseReports.length,
+      protonDbCount: cdnReports.length,
+    });
     root.innerHTML = previewBanner + html;
     // wire() must run AFTER innerHTML so the hover helper sees real DOM rects.
     // Also surface the filter event for future consumers (a debug log for now)

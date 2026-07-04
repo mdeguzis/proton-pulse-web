@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=c550d77b">
 <link rel="stylesheet" href="css/shared/site.css?v=e05a0f73">
 <link rel="stylesheet" href="css/shared/cards.css?v=16c748ed">
-<link rel="stylesheet" href="css/admin/admin.css?v=e2d7afa7">
+<link rel="stylesheet" href="css/admin/admin.css?v=2e620daf">
 </head>
 <body>
 
@@ -44,7 +44,6 @@
           <option value="banned">Banned Users</option>
           <option value="boxart">Box Art Manager</option>
           <option value="api-explorer">API Explorer</option>
-          <option value="flagged">Flagged Reports</option>
           <option value="all-reports">Reports</option>
         </select>
       </div>
@@ -73,12 +72,7 @@
           <label class="admin-label">To <input type="date" id="all-reports-date-to" class="admin-input admin-input--date"></label>
           <button class="admin-btn" id="all-reports-refresh-btn">Refresh</button>
         </div>
-        <div class="admin-legend">
-          <span class="admin-badge admin-badge--ok">approved</span> visible to the public &nbsp;&middot;&nbsp;
-          <span class="admin-badge admin-badge--info">pending</span> waiting on the daily approval pipeline &nbsp;&middot;&nbsp;
-          <span class="admin-badge admin-badge--warn">flagged</span> queued for mod review &nbsp;&middot;&nbsp;
-          <span class="admin-badge admin-badge--muted">hidden</span> shadow-banned, not visible to users
-        </div>
+        <div id="all-reports-status-counts" class="admin-stat-strip" hidden></div>
         <div id="all-reports-count" class="admin-counts" hidden></div>
         <div id="all-reports-loading" class="admin-loading">Loading reports...</div>
         <div id="all-reports-empty" class="admin-empty" hidden>No reports found.</div>
