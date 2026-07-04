@@ -28,6 +28,10 @@ function stubsForSearch(extraFetch) {
     USES_PROD_DATA: false,
     SITE_ROOT: '',
     STEAM_IMG: () => '',
+    // Config exports the fallback helper that search.js now uses to
+    // fetch pipeline data (routes staging -> local first, prod on 404).
+    // Stub returns whatever fetch is wired in the test.
+    fetchDataWithProdFallback: (name) => extraFetch(name),
     storeLabelFromAppId: () => 'Steam',
     fetchMatchingPulseConfigs: async () => [],
     fetchMatchingPulseReportAppIds: async () => new Set(),

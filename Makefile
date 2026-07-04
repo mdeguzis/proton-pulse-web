@@ -11,7 +11,7 @@ STAGING_VERSION_URL ?= https://mdeguzis.github.io/proton-pulse-web-staging/versi
 FORCE_DEPLOY ?=
 
 .PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker \
-	gh-run gh-pages-only gh-staging gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
+	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
 	build serve smoke smoke-live pre-push coverage
 
 build:
@@ -71,6 +71,7 @@ help:
 	@echo "  gh-run              Trigger the full GitHub Actions update-data workflow via gh"
 	@echo "  gh-pages-only       Promote current main to production (requires staging to be in sync)"
 	@echo "  gh-staging          Deploy shell files to staging only (no prod deploy) for preview"
+	@echo "  gh-staging-pipeline Run FULL pipeline against staging + deploy data to staging (#117, ~30 min)"
 	@echo "  gh-backfill-apps    Trigger targeted app backfill"
 	@echo "                      Usage: make gh-backfill-apps BACKFILL_APP_IDS=1145350,2358720"
 	@echo "  gh-coverage-backfill Trigger coverage-based backfill"
@@ -201,6 +202,16 @@ gh-staging: gh-check
 	@bash scripts/wait-for-remote.sh
 	gh workflow run $(GITHUB_WORKFLOW) --field staging_only=true
 	@echo "Triggered $(GITHUB_WORKFLOW) with staging_only=true -- preview at https://mdeguzis.github.io/proton-pulse-web-staging/"
+
+# Full-pipeline staging deploy (#117). Runs the whole pipeline against the
+# staging branch and deploys the resulting data + shell to the staging repo.
+# Slow (30+ min); only needed when a pipeline-data change needs end-to-end
+# verification before promoting to prod. Regular UI-only changes should
+# keep using `make gh-staging`.
+gh-staging-pipeline: gh-check
+	@bash scripts/wait-for-remote.sh
+	gh workflow run $(GITHUB_WORKFLOW) --field staging_with_pipeline=true
+	@echo "Triggered $(GITHUB_WORKFLOW) with staging_with_pipeline=true -- full pipeline against staging, ~30 min. Preview at https://mdeguzis.github.io/proton-pulse-web-staging/"
 
 gh-backfill-apps: gh-check
 	@if [ -z "$(BACKFILL_APP_IDS)" ]; then \

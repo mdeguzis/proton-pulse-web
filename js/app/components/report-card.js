@@ -6,7 +6,7 @@ import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { renderAuthorBlock } from './author.js?v=2316d334';
 import { buildFormRows } from './config-cards.js?v=c67740f8';
 import { renderSignalStrip } from './signals.js?v=a23da3df';
-import { RATING_COLORS, RATING_TEXT } from '../config.js?v=df5b5024';
+import { RATING_COLORS, RATING_TEXT } from '../config.js?v=f9591262';
 import { confColor, confTextColor, configKey, daysAgo, esc, renderNotes, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js?v=c7e1268c';
 
 export function renderPermalink(r) {
