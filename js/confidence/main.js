@@ -686,6 +686,17 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
       ? `<span class="cb-total" style="background:${tierBg};color:${tierFg};margin-left:8px">${TIER_LBL[overallTier]}</span>`
       : '';
 
+    // Plain-language "why this rating" callout, driven by the report mix so the
+    // user sees the tiers that produced the verdict (#192 follow-up).
+    const _mixParts = TIER_ORDER
+      .filter((t) => (counts[t] || 0) > 0)
+      .map((t) => `<strong style="color:${RATING_COLORS[t] || '#888'}">${counts[t]} ${TIER_LBL[t]}</strong>`);
+    const whyRating = overallTier && n > 0 ? `
+      <div class="cb-why-rating" style="margin:14px 0 4px;padding:12px 16px;background:var(--s1);border:1px solid var(--border);border-left:3px solid ${RATING_COLORS[overallTier] || '#3a4a5a'};border-radius:6px">
+        <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);font-weight:700">Why ${TIER_LBL[overallTier]}?</div>
+        <p style="margin:6px 0 0;font-size:0.9rem;line-height:1.55;color:var(--text)">Rated <strong style="color:${RATING_COLORS[overallTier] || '#888'}">${TIER_LBL[overallTier]}</strong> across ${n} report${n !== 1 ? 's' : ''}: ${_mixParts.join(', ')}. Newer reports count for more, so the rating mix above plus recency set the overall tier.</p>
+      </div>` : '';
+
     const html = `
       <div class="cb-header">
         <div class="cb-header-game">
@@ -697,6 +708,8 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
         </span>
         ${tierBadge}
       </div>
+
+      ${whyRating}
 
       <h3 class="cb-section-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Report history</h3>
       <p style="font-size:0.82rem;color:var(--muted);margin:0 0 10px">Positive (silver+) vs. negative (bronze/borked) reports submitted over time.</p>
