@@ -318,6 +318,98 @@
   padding-right: 10px;
 }
 
+/* ── Shared card grid (list + tile) ──────────────────────────────────────
+   The container that holds a set of .game-card elements. Both the app home
+   page and the index homepage use these classes so the two grids stay in
+   sync (#125). The .cards--<size> variants scale the list-mode card; the
+   .home-cards-tile-mode class re-flows the same cards into Steam-style
+   vertical tiles. Kept here (shared) rather than css/app/home.css so
+   index.html can render identical cards via renderGameCard.
+   NOTE: css/app/home.css and css/app/reports.css still carry duplicate copies
+   of these rules for now; they are being consolidated here and the app-side
+   copies can be dropped once both grids are verified. */
+.cards { display: flex; flex-direction: column; gap: 12px; }
+.cards--sm .game-card-thumb { width: 100px; height: 47px; }
+.cards--md .game-card-thumb { width: 138px; height: 64px; }
+.cards--lg .game-card-thumb { width: 200px; height: 93px; }
+.cards--xl .game-card-thumb { width: 280px; height: 130px; }
+.cards--sm .game-card-row { gap: 12px; padding: 8px 12px 8px 8px; }
+.cards--lg .game-card-row { gap: 20px; padding: 14px 20px 14px 12px; }
+.cards--xl .game-card-row { gap: 24px; padding: 16px 22px 16px 14px; }
+.cards--sm .game-card-title { font-size: 0.92rem; }
+.cards--lg .game-card-title { font-size: 1.12rem; }
+.cards--lg .game-card-sub { font-size: 0.85rem; }
+.cards--xl .game-card-title { font-size: 1.25rem; }
+.cards--xl .game-card-sub { font-size: 0.9rem; }
+@media (max-width: 560px) {
+  .cards--lg .game-card-thumb { width: 150px; height: 70px; }
+}
+@media (min-width: 760px) {
+  .cards--sm .game-card-thumb { width: 140px; height: 65px; }
+  .cards--md .game-card-thumb { width: 200px; height: 93px; }
+  .cards--lg .game-card-thumb { width: 290px; height: 135px; }
+  .cards--xl .game-card-thumb { width: 400px; height: 187px; }
+  .cards--sm .game-card-row { gap: 16px; padding: 12px 16px 12px 10px; }
+  .cards--md .game-card-row { gap: 20px; padding: 14px 20px 14px 12px; }
+  .cards--lg .game-card-row { gap: 26px; padding: 18px 26px 18px 14px; }
+  .cards--xl .game-card-row { gap: 32px; padding: 22px 32px 22px 18px; }
+  .cards--sm .game-card-title { font-size: 1.05rem; }
+  .cards--md .game-card-title { font-size: 1.18rem; }
+  .cards--lg .game-card-title { font-size: 1.35rem; }
+  .cards--xl .game-card-title { font-size: 1.55rem; }
+  .cards--sm .game-card-sub { font-size: 0.82rem; }
+  .cards--md .game-card-sub { font-size: 0.9rem; }
+  .cards--lg .game-card-sub { font-size: 1rem; }
+  .cards--xl .game-card-sub { font-size: 1.1rem; }
+}
+/* Tile (grid) mode: Steam library look. The container becomes a CSS grid of
+   header-aspect thumbnails; each card re-flows into a vertical tile. Size
+   still applies -- it controls the minimum tile width (and via auto-fill, how
+   many columns fit). Must come after the .cards--<size> rules so its
+   full-width thumb wins over the list-mode fixed widths. */
+.home-cards-tile-mode {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+.home-cards-tile-mode.cards--sm { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+.home-cards-tile-mode.cards--md { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+.home-cards-tile-mode.cards--lg { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.home-cards-tile-mode.cards--xl { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+@media (max-width: 560px) {
+  .home-cards-tile-mode.cards--sm { grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); }
+  .home-cards-tile-mode.cards--md { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); }
+  .home-cards-tile-mode.cards--lg { grid-template-columns: 1fr; }
+  .home-cards-tile-mode.cards--xl { grid-template-columns: 1fr; }
+}
+.home-cards-tile-mode .game-card { display: flex; flex-direction: column; min-width: 0; }
+.home-cards-tile-mode .game-card-row {
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  align-items: stretch;
+}
+.home-cards-tile-mode .game-card-thumb-wrap { width: 100%; }
+.home-cards-tile-mode .game-card-thumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 460 / 215;
+  border-radius: 0;
+  display: block;
+}
+.home-cards-tile-mode .game-card-body { padding: 8px 10px; min-width: 0; }
+.home-cards-tile-mode .game-card-title {
+  font-size: 0.95rem;
+  line-height: 1.25;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.home-cards-tile-mode .game-card-sub { font-size: 0.78rem; }
+.home-cards-tile-mode .game-card-right { display: none; }
+
 /* Bottom-bar layout (data-card-layout="strip"): hide the right column,
    show a tier-colored bar spanning the full card width across the bottom,
    mirroring ProtonDB's card design. Title row gets the full body width.

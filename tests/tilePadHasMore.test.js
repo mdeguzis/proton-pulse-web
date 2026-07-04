@@ -52,7 +52,7 @@ describe('renderers pass hasMore so incomplete rows never render', () => {
     // renderPopular in js/index/main.js computes hasMore from all.length
     // vs shown, then hands it to padTileRows.
     expect(INDEX).toMatch(/const hasMore = all\.length > shown/);
-    expect(INDEX).toMatch(/padTileRows\(list, \{ tileSelector: '\.pg-card', hasMore \}\)/);
+    expect(INDEX).toMatch(/padTileRows\(list, \{ tileSelector: '\.game-card', hasMore \}\)/);
   });
 
   test('home page Recent + Popular grids pass hasMore based on filtered vs shown', () => {
