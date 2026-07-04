@@ -148,6 +148,10 @@ jobs:
     needs: build
     if: needs.build.outputs.chunk_count != '0'
     runs-on: ubuntu-24.04
+    permissions:
+      # write access needed to push each chunk's snapshot + manifest entry
+      # to gh-pages/.pipeline-state/ for durable recovery (#171).
+      contents: write
     strategy:
       fail-fast: false
       max-parallel: 1
@@ -190,6 +194,18 @@ jobs:
       - name: Probe ProtonDB summary chunk ${{ matrix.chunk }}
         run: |
           uv run python scripts/split_reports.py probe /tmp/protondb-output
+
+      # Phase 1 of #171: durable chunk-state persistence. Snapshot the probe
+      # cache + a manifest entry to gh-pages/.pipeline-state/ so a cancelled
+      # run (chunk timeout, runner starvation, git-pages incident) doesn't
+      # throw away the successful chunks' work. Zero behavior change to the
+      # existing pipeline yet -- finalize still reads from .cache/ and
+      # artifacts. Phase 2 will cut over.
+      - name: Persist chunk state to gh-pages (#171)
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/persist-chunk-state.sh "${{ matrix.chunk }}" "${{ github.run_id }}" "${{ github.run_attempt }}"
 
       - name: Save pipeline cache
         if: always()
