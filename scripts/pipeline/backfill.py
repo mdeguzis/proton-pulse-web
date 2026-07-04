@@ -714,10 +714,33 @@ def run_probe_backfill(output_dir):
 def run_backfill(
     output_dir, target_app_ids: list[str] | None = None, force: bool = False
 ):
-    """CLI entry point for manifest-driven live backfill runs."""
+    """CLI entry point for manifest-driven live backfill runs.
+
+    Accepts a mixed list of Steam numeric ids and GOG/Epic canonical ids
+    (`gog:<productId>` / `epic:<namespace>`). Steam ids route to the
+    ProtonDB live-detailed-report backfill. GOG/Epic ids are recognised
+    and logged but not yet processed here -- their catalog data refresh
+    lives in `pipeline/gog_catalog.py` and `pipeline/epic_catalog.py`
+    and needs a per-product API path added; tracked with #112. See #114.
+    """
     output_path = Path(output_dir)
     data_output_path = output_path / "data"
     state = read_pipeline_state(output_path)
+    # Split mixed input by store. Only Steam ids reach ProtonDB's backfill;
+    # non-Steam ids get logged as accepted-but-deferred so the workflow
+    # doesn't silently drop them.
+    if target_app_ids:
+        steam_targets = [aid for aid in target_app_ids if aid.isdigit()]
+        nonsteam_targets = [aid for aid in target_app_ids if aid.startswith(("gog:", "epic:"))]
+        unrecognized = [aid for aid in target_app_ids if aid not in steam_targets and aid not in nonsteam_targets]
+        if nonsteam_targets:
+            log(f"[backfill] {len(nonsteam_targets)} GOG/Epic id(s) accepted but deferred: {nonsteam_targets}. Per-product refresh lands with #112.")
+        if unrecognized:
+            log(f"[backfill] Skipped {len(unrecognized)} unrecognized id(s) (expect numeric Steam ids or gog:*/epic:* canonical ids): {unrecognized}")
+        target_app_ids = steam_targets
+        if not target_app_ids:
+            log("[backfill] No Steam ids to process this run; exiting")
+            return
     backfilled_keys, no_data_ids = backfill_missing_apps(
         data_output_path,
         target_app_ids=target_app_ids,

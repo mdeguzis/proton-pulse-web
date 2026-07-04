@@ -307,3 +307,56 @@ def test_write_bucketed_reports_sets_source(tmp_path):
     write_bucketed_reports(data_path, "730", buckets)
     written = json.loads((data_path / "730" / "2023.json").read_text())
     assert written[0]["source"] == "protondb"
+
+
+# ── run_backfill mixed-store input (#114) ─────────────────────────────────────
+
+def test_run_backfill_routes_only_steam_ids_to_protondb(tmp_path, capsys):
+    """#114: workflow input now accepts Steam + GOG/Epic canonical ids in
+    the same comma-list. Steam ids reach the ProtonDB backfill; non-Steam
+    ids are logged as accepted-but-deferred (per-product refresh lands
+    with #112). Unrecognized ids get a warning line.
+    """
+    from scripts.pipeline import backfill as backfill_mod
+    # Stub the inner ProtonDB call so we only verify what target_app_ids
+    # arrive at it. Pipeline state read is best-effort; empty dir works.
+    (tmp_path / "data").mkdir()
+
+    seen = {}
+    def fake_backfill(data_output_path, fetch_json_impl=None, manifest_path=None, target_app_ids=None, force=False):
+        seen["target_app_ids"] = list(target_app_ids or [])
+        return set(), set()
+
+    fake_state = {"index_keys": set(), "backfilled_keys": set(), "parsed_count": 0, "no_data_app_ids": set()}
+    with patch.object(backfill_mod, "backfill_missing_apps", side_effect=fake_backfill), \
+         patch.object(backfill_mod, "read_pipeline_state", return_value=fake_state), \
+         patch.object(backfill_mod, "write_pipeline_state"), \
+         patch.object(backfill_mod, "flush_steam_title_cache"):
+        backfill_mod.run_backfill(
+            tmp_path,
+            target_app_ids=["570", "gog:1207658691", "epic:MyGame", "not-a-real-id"],
+        )
+    # Steam id passed through; GOG/Epic filtered out; unrecognized also filtered.
+    assert seen["target_app_ids"] == ["570"]
+
+
+def test_run_backfill_exits_when_no_steam_ids_after_filter(tmp_path):
+    """All GOG/Epic input = nothing for ProtonDB to do. Should return
+    cleanly without calling into backfill_missing_apps so the workflow
+    step doesn't crash on an empty target list."""
+    from scripts.pipeline import backfill as backfill_mod
+    (tmp_path / "data").mkdir()
+
+    called = {"count": 0}
+    def fake_backfill(**kwargs):
+        called["count"] += 1
+        return set(), set()
+
+    fake_state = {"index_keys": set(), "backfilled_keys": set(), "parsed_count": 0, "no_data_app_ids": set()}
+    with patch.object(backfill_mod, "backfill_missing_apps", side_effect=fake_backfill), \
+         patch.object(backfill_mod, "read_pipeline_state", return_value=fake_state):
+        backfill_mod.run_backfill(
+            tmp_path,
+            target_app_ids=["gog:12345", "epic:SomeGame"],
+        )
+    assert called["count"] == 0

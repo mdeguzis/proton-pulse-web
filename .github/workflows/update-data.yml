@@ -11,7 +11,7 @@ on:
         default: false
         type: boolean
       backfill_app_ids:
-        description: "Comma-separated Steam app IDs to backfill and publish (skips full pipeline)"
+        description: "Comma-separated app IDs to backfill and publish. Accepts Steam numeric ids AND GOG/Epic canonical ids (e.g. 570,gog:1207658691,epic:MyGame). Steam ids reach ProtonDB backfill; non-Steam ids are logged as accepted-but-deferred until per-product refresh lands (#112). Skips the full pipeline. See #114."
         required: false
         default: ""
       coverage_backfill_issue_type:
