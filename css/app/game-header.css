@@ -1110,6 +1110,11 @@
 }
 
 /* Hero dial links to the confidence breakdown. */
-.grp-dial-link { text-decoration: none; color: inherit; cursor: pointer; border-radius: 12px; transition: transform 0.08s, filter 0.12s; }
-.grp-dial-link:hover { transform: translateY(-1px); filter: brightness(1.08); }
+.grp-dial-link { text-decoration: none; color: inherit; cursor: pointer; border-radius: 12px; padding: 4px; transition: transform 0.1s, filter 0.12s, box-shadow 0.15s, background 0.15s; }
+.grp-dial-link:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  background: rgba(102,192,244,0.06);
+  box-shadow: 0 0 0 1px rgba(102,192,244,0.35), 0 6px 22px rgba(102,192,244,0.22);
+}
 .grp-dial-link:focus-visible { outline: 2px solid var(--accent, #66c0f4); outline-offset: 4px; }

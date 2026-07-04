@@ -660,8 +660,14 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     // here as they saw to get here in the first place
     const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
     const TIER_LBL = { platinum: 'Platinum', gold: 'Gold', silver: 'Silver', bronze: 'Bronze', borked: 'Borked' };
-    let overallTier = null;
-    if (n > 0) {
+    // Prefer the authoritative tier the game page passes via ?tier= (#192). The
+    // game page factors in native Pulse reports that this CDN-only page can't
+    // see, so recomputing the tier here can disagree (Gold vs Platinum). Use the
+    // passed verdict so the breakdown always matches the badge the user clicked
+    // in from; fall back to the local mode only on a direct visit with no param.
+    const _tierParam = (new URLSearchParams(location.search).get('tier') || '').toLowerCase();
+    let overallTier = TIER_ORDER.includes(_tierParam) ? _tierParam : null;
+    if (!overallTier && n > 0) {
       const tierCounts = {};
       for (const r of reports) if (counts[r.rating] != null) {
         tierCounts[r.rating] = (tierCounts[r.rating] || 0) + 1;

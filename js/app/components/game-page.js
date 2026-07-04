@@ -547,7 +547,7 @@ export async function renderGamePage(appId) {
     // The whole dial links to the factor-by-factor breakdown (same target as the
     // "why?" link) so clicking the hero circle explains how the rating was reached.
     const gaugeDial = hasAnyReports
-      ? `<a class="grp-dial-block grp-dial-link" href="confidence.html?app=${appId}" title="See the factor-by-factor breakdown of this rating">${_dialInner}</a>`
+      ? `<a class="grp-dial-block grp-dial-link" href="confidence.html?app=${appId}&tier=${overallTier}" title="See how this ${overallTier} rating and its confidence were calculated">${_dialInner}</a>`
       : `<div class="grp-dial-block">${_dialInner}</div>`;
 
     // Panel footer: confidence summary (+ link to the scoring breakdown), then
@@ -558,7 +558,7 @@ export async function renderGamePage(appId) {
     const _freshBit = newestTs ? `newest report: <strong>${daysAgo(newestTs)}</strong>` : '';
     const _metaBits = [`App ${esc(String(appId))}`, _freshBit].filter(Boolean).join(' &middot; ');
     const _confWhy = hasAnyReports
-      ? ` <a class="grp-why conf-link" href="confidence.html?app=${appId}" title="See the factor-by-factor breakdown of this aggregate confidence">why?</a>`
+      ? ` <a class="grp-why conf-link" href="confidence.html?app=${appId}&tier=${overallTier}" title="See the factor-by-factor breakdown of this aggregate confidence">why?</a>`
       : '';
     const ratingPanel = `<div class="game-rating-panel">
         <div class="grp-row">${gaugeDial}${tierBars}</div>
