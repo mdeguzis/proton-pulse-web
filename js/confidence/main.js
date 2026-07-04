@@ -1,5 +1,5 @@
 // Entry module for confidence.html. Migrated from the page's inline script.
-import { estimateScoreBreakdown, loadScoringInfo } from '../shared/scoring.js?v=0dae1257';
+import { estimateScoreBreakdown, loadScoringInfo, ratingMix } from '../shared/scoring.js?v=1b8ae722';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner } from '../shared/hardware.js?v=6a1246aa';
 import { attachChartHover } from '../shared/chart-interactions.js?v=6b608095';
 import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
@@ -688,9 +688,8 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
     // Plain-language "why this rating" callout, driven by the report mix so the
     // user sees the tiers that produced the verdict (#192 follow-up).
-    const _mixParts = TIER_ORDER
-      .filter((t) => (counts[t] || 0) > 0)
-      .map((t) => `<strong style="color:${RATING_COLORS[t] || '#888'}">${counts[t]} ${TIER_LBL[t]}</strong>`);
+    const _mixParts = ratingMix(reports)
+      .map(({ tier, count }) => `<strong style="color:${RATING_COLORS[tier] || '#888'}">${count} ${TIER_LBL[tier]}</strong>`);
     const whyRating = overallTier && n > 0 ? `
       <div class="cb-why-rating" style="margin:14px 0 4px;padding:12px 16px;background:var(--s1);border:1px solid var(--border);border-left:3px solid ${RATING_COLORS[overallTier] || '#3a4a5a'};border-radius:6px">
         <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);font-weight:700">Why ${TIER_LBL[overallTier]}?</div>

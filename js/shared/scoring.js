@@ -170,11 +170,32 @@ export async function populateScoringTooltip(el) {
  * @returns {'platinum'|'gold'|'silver'|'bronze'|'borked'|'pending'}
  */
 export function tierFromReports(reports) {
-  const order = ['platinum','gold','silver','bronze','borked'];
   const counts = {};
   for (const r of reports) counts[r.rating] = (counts[r.rating] || 0) + 1;
-  for (const t of order) if (counts[t]) return t;
+  for (const t of RATING_TIER_ORDER) if (counts[t]) return t;
   return 'pending';
+}
+
+// Canonical tier order, best to worst.
+export const RATING_TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
+
+// --- ratingMix ---
+/**
+ * The non-zero per-tier report counts for a game, in canonical tier order.
+ * Shared by the web confidence breakdown and the plugin so the "why this
+ * rating" mix is derived identically -- each surface renders its own markup
+ * from this data. Returns [{ tier, count }].
+ * @param {Array<{rating: string}>} reports
+ * @returns {Array<{tier: string, count: number}>}
+ */
+export function ratingMix(reports) {
+  const counts = {};
+  for (const r of reports || []) {
+    if (r && r.rating) counts[r.rating] = (counts[r.rating] || 0) + 1;
+  }
+  return RATING_TIER_ORDER
+    .filter((t) => (counts[t] || 0) > 0)
+    .map((t) => ({ tier: t, count: counts[t] }));
 }
 
 // --- pulseTierFromReports ---
