@@ -109,6 +109,7 @@ js/lib/toast.js
 js/lib/data-url.js
 js/lib/tile-pad.js
 js/lib/adult-filter.js
+js/lib/user-prefs.js
 js/lib/store-url-parser.js
 js/lib/gh-gist.js
 js/lib/gh-auth.js

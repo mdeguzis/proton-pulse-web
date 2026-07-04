@@ -2,6 +2,8 @@
 // localStorage (not tied to an account). First option: animations on/off,
 // applied live here and honored site-wide by js/lib/topbar.js on every page.
 
+import { setShowAdult, pullShowAdult, readShowAdultLocal } from '../lib/user-prefs.js?v=7b5675ef';
+
 const MOTION_KEY = 'proton-pulse:motion';
 
 // Current animations state: explicit choice wins; otherwise default to ON
@@ -45,13 +47,16 @@ if (toggle) {
 // Adult games visibility. Off by default; when off, browse views hide
 // any row whose data.adult === true. Value is a simple on/off string so
 // missing/malformed keys default to off (the safer state).
-const SHOW_ADULT_KEY = 'pp:show-adult';
 const adultToggle = document.getElementById('opt-show-adult');
 if (adultToggle) {
-  adultToggle.checked = localStorage.getItem(SHOW_ADULT_KEY) === 'on';
+  // localStorage is the immediate (zero-flash) value; for signed-in users pull
+  // the account-synced value so a change made on another device is reflected.
+  adultToggle.checked = readShowAdultLocal();
+  pullShowAdult().then(({ changed, value }) => { if (changed) adultToggle.checked = value; });
   adultToggle.addEventListener('change', () => {
-    localStorage.setItem(SHOW_ADULT_KEY, adultToggle.checked ? 'on' : 'off');
-    console.log('[options] show-adult:', adultToggle.checked);
+    setShowAdult(adultToggle.checked).then(({ synced }) => {
+      console.log('[options] show-adult:', adultToggle.checked, 'synced-to-account:', synced);
+    });
   });
 }
 
