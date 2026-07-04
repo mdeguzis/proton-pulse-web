@@ -8,6 +8,7 @@ import { renderGameCard } from '../lib/card.js?v=754da47b';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=82e7d8c9';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
+import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
 const LOAD_COUNTS = [50, 100, 150, 200];
@@ -97,36 +98,9 @@ function _filterByText(reports, text) {
   return reports.filter(r => String(r.title || '').toLowerCase().includes(q));
 }
 
-// Read the active (non-all) pill values from a pg-filter-group element.
-function _readPillGroup(groupEl) {
-  const set = new Set();
-  groupEl.querySelectorAll('.pg-filter').forEach(btn => {
-    if (btn.dataset.value !== 'all' && btn.classList.contains('pg-filter--active')) {
-      set.add(btn.dataset.value);
-    }
-  });
-  return set;
-}
-
-// Wire an "All + specific values" pill group. Clicking All deactivates
-// specifics; clicking a specific deactivates All; deactivating the last
-// specific re-activates All. Calls onChange after every click.
-function _wirePillGroup(groupEl, onChange) {
-  const allBtn = groupEl.querySelector('.pg-filter[data-value="all"]');
-  groupEl.querySelectorAll('.pg-filter').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (btn.dataset.value === 'all') {
-        groupEl.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'));
-        btn.classList.add('pg-filter--active');
-      } else {
-        btn.classList.toggle('pg-filter--active');
-        if (allBtn) allBtn.classList.remove('pg-filter--active');
-        if (_readPillGroup(groupEl).size === 0 && allBtn) allBtn.classList.add('pg-filter--active');
-      }
-      onChange(_readPillGroup(groupEl));
-    });
-  });
-}
+// Pill-group helpers (mutual-exclusion Active + a11y) live in
+// js/app/lib/filter-group.js so index/main.js and any future page can
+// reuse them. #96.
 
 function _popularSub(g) {
   const total = (g.protondbCount || 0) + (g.pulseCount || 0);
@@ -539,15 +513,15 @@ export async function renderHomePage() {
     const tierGroup = document.getElementById('home-tier-checks');
     const sourceGroup = document.getElementById('home-source-checks');
     const storeGroup = document.getElementById('home-store-checks');
-    if (tierGroup) _wirePillGroup(tierGroup, sel => {
+    if (tierGroup) _wirePillGroup(tierGroup, { onChange: sel => {
       tierSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
-    });
-    if (sourceGroup) _wirePillGroup(sourceGroup, sel => {
+    }});
+    if (sourceGroup) _wirePillGroup(sourceGroup, { onChange: sel => {
       sourceSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
-    });
-    if (storeGroup) _wirePillGroup(storeGroup, sel => {
+    }});
+    if (storeGroup) _wirePillGroup(storeGroup, { onChange: sel => {
       storeSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
-    });
+    }});
 
     // Clear filters: reset every group back to "All", sort back to Recent.
     document.getElementById('home-filter-clear')?.addEventListener('click', () => {

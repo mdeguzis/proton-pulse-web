@@ -43,10 +43,17 @@ describe('home page browse filters (multi-select)', () => {
   });
 
   test('pill group helper enforces All vs specific mutual exclusion', () => {
-    expect(homeSrc).toContain('function _wirePillGroup(groupEl, onChange)');
-    expect(homeSrc).toContain('function _readPillGroup(groupEl)');
-    expect(homeSrc).toContain("allBtn.classList.remove('pg-filter--active')");
-    expect(homeSrc).toContain("if (_readPillGroup(groupEl).size === 0 && allBtn) allBtn.classList.add('pg-filter--active')");
+    // #96: the wire/read pair moved to js/app/lib/filter-group.js. home.js
+    // imports them; the mutual-exclusion rules live in the shared helper.
+    expect(homeSrc).toMatch(/from '\.\.\/lib\/filter-group\.js/);
+    const filterGroupSrc = require('fs').readFileSync(
+      require('path').join(__dirname, '..', 'js', 'app', 'lib', 'filter-group.js'),
+      'utf8',
+    );
+    expect(filterGroupSrc).toContain('export function wireGroup(');
+    expect(filterGroupSrc).toContain('export function readActive(');
+    expect(filterGroupSrc).toContain("btn.dataset.value === 'all'");
+    expect(filterGroupSrc).toMatch(/if \(readActive\([\s\S]*\)\.size === 0 && allBtn\)/);
   });
 
   test('filters drive both recent and popular lists via Sets', () => {
