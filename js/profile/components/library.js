@@ -37,11 +37,18 @@ export function initLibrary(ctx) {
     }
     try {
       const row = await fetchMyLibraryRow(session);
-      if (!row) {
-        setEmpty('Library not synced yet. Press Refresh to fetch it from Steam.');
+      if (row) {
+        renderRow(row, session);
         return;
       }
-      renderRow(row, session);
+      // First visit after sign-in: auto-sync so users don't have to press
+      // Refresh to see anything (#199).
+      if (libraryEmpty) libraryEmpty.hidden = true;
+      libraryStatus.textContent = 'Fetching your Steam library...';
+      await syncMyLibrary(session);
+      const fresh = await fetchMyLibraryRow(session);
+      if (fresh) renderRow(fresh, session);
+      else setEmpty('Sync completed but no rows returned. Try Refresh.');
     } catch (e) {
       setEmpty(`Failed to load library: ${escapeHtml(e.message || 'error')}`);
     }

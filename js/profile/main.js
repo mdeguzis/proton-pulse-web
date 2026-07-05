@@ -20,7 +20,7 @@ import { setShowAdult, pullShowAdult, readShowAdultLocal } from '../lib/user-pre
 import { initMyHardware } from './components/my-hardware.js?v=34fd810c';
 import { initSystems } from './components/systems.js?v=382fb770';
 import { initMyReports } from './components/my-reports.js?v=59f67107';
-import { initLibrary } from './components/library.js?v=5e59076d';
+import { initLibrary } from './components/library.js?v=da9c491f';
 
 (async function () {
   // ── DOM refs ──────────────────────────────────────────────────────────────
