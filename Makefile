@@ -11,7 +11,7 @@ STAGING_VERSION_URL ?= https://mdeguzis.github.io/proton-pulse-web-staging/versi
 FORCE_DEPLOY ?=
 
 .PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker \
-	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-resume gh-finalize-only gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
+	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-staging-finalize gh-resume gh-finalize-only gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
 	build serve smoke smoke-live pre-push coverage
 
 build:
@@ -72,6 +72,7 @@ help:
 	@echo "  gh-pages-only       Promote current main to production (requires staging to be in sync)"
 	@echo "  gh-staging          Deploy shell files to staging only (no prod deploy) for preview"
 	@echo "  gh-staging-pipeline Run FULL pipeline against staging + deploy data to staging (#117, ~30 min)"
+	@echo "  gh-staging-finalize Skip probe/build, re-run finalize + stats against prod state, deploy to staging (#196, ~5 min)"
 	@echo "  gh-resume           Re-run only chunks marked incomplete in the manifest (#171)"
 	@echo "  gh-finalize-only    Skip probing, re-run finalize against current manifest state (#171)"
 	@echo "  gh-backfill-apps    Trigger targeted app backfill"
@@ -214,6 +215,16 @@ gh-staging-pipeline: gh-check
 	@bash scripts/wait-for-remote.sh
 	gh workflow run $(GITHUB_WORKFLOW) --field staging_with_pipeline=true
 	@echo "Triggered $(GITHUB_WORKFLOW) with staging_with_pipeline=true -- full pipeline against staging, ~30 min. Preview at https://mdeguzis.github.io/proton-pulse-web-staging/"
+
+# Fast staging deploy for finalize-only changes (#196). Skips build + probe
+# entirely; restores prod chunk state from gh-pages, reruns only finalize +
+# stats against it, and deploys to the staging repo. Use for changes that
+# touch finalize.py or search-index shape without needing new probe data --
+# e.g. adding a column to search-index.json. Wall time: ~5 min instead of 30.
+gh-staging-finalize: gh-check
+	@bash scripts/wait-for-remote.sh
+	gh workflow run $(GITHUB_WORKFLOW) --field staging_with_finalize=true
+	@echo "Triggered $(GITHUB_WORKFLOW) with staging_with_finalize=true -- finalize + stats only against prod chunk state, deploy to staging (~5 min). Preview at https://mdeguzis.github.io/proton-pulse-web-staging/"
 
 # Resume a partial run (#171 Phase 3). Reads gh-pages/.pipeline-state/
 # manifest.json, subtracts chunks marked completed, and re-runs only the
