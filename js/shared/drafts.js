@@ -1,13 +1,20 @@
 // Cloud draft helpers for the submit form: read/write/delete rows in
 // public.user_report_drafts (keyed on user_id + app_id). Backs the "Save Draft"
 // button and the restore-on-load prompt on the submit page (#199 follow-up).
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js?v=f6f2c00a';
-
-const REST = `${SUPABASE_URL}/rest/v1/user_report_drafts`;
+//
+// Supabase URL + anon key are attached to window by lib/supabase-client.js
+// (loaded as a classic script before this module). shared/config.js only
+// re-exports SupaAuth, so we read the credentials off window at call time to
+// avoid a "does not provide an export named SUPABASE_URL" ES-module error
+// that would otherwise blow up the whole submit page.
+const _g = typeof window !== 'undefined' ? window : globalThis;
+const SB_URL = () => _g.SUPABASE_URL;
+const SB_KEY = () => _g.SUPABASE_ANON_KEY;
+const REST = () => `${SB_URL()}/rest/v1/user_report_drafts`;
 
 function headers(session, extra) {
   const h = {
-    apikey: SUPABASE_ANON_KEY,
+    apikey: SB_KEY(),
     Authorization: `Bearer ${session.access_token}`,
     'Content-Type': 'application/json',
   };
@@ -16,7 +23,7 @@ function headers(session, extra) {
 
 export async function getDraft(session, appId) {
   if (!session?.access_token || !appId) return null;
-  const url = `${REST}?app_id=eq.${encodeURIComponent(String(appId))}&select=form_data,updated_at&limit=1`;
+  const url = `${REST()}?app_id=eq.${encodeURIComponent(String(appId))}&select=form_data,updated_at&limit=1`;
   const r = await fetch(url, { headers: headers(session) });
   if (!r.ok) {
     console.debug('[drafts] getDraft failed', { appId, status: r.status, source: 'user_report_drafts' });
@@ -38,7 +45,7 @@ export async function upsertDraft(session, appId, formData) {
     form_data: formData || {},
     updated_at: new Date().toISOString(),
   };
-  const r = await fetch(`${REST}?on_conflict=user_id,app_id`, {
+  const r = await fetch(`${REST()}?on_conflict=user_id,app_id`, {
     method: 'POST',
     headers: headers(session, { Prefer: 'resolution=merge-duplicates,return=minimal' }),
     body: JSON.stringify(body),
@@ -53,7 +60,7 @@ export async function upsertDraft(session, appId, formData) {
 
 export async function deleteDraft(session, appId) {
   if (!session?.access_token || !appId) return;
-  const url = `${REST}?app_id=eq.${encodeURIComponent(String(appId))}`;
+  const url = `${REST()}?app_id=eq.${encodeURIComponent(String(appId))}`;
   const r = await fetch(url, { method: 'DELETE', headers: headers(session) });
   if (!r.ok) {
     console.debug('[drafts] deleteDraft failed', { appId, status: r.status, source: 'user_report_drafts' });

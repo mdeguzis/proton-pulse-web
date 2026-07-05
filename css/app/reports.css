@@ -188,10 +188,10 @@
 
 /* Text filter box: sits in the bar to the right of the Filters button (not in
    the dropdown). Wider on desktop, shorter on mobile. */
-.home-filter-left { display: flex; align-items: center; gap: 8px; }
+.home-filter-left { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
 .home-filter-text {
-  width: 240px;
-  max-width: 40vw;
+  flex: 1;
+  min-width: 130px;
   box-sizing: border-box;
   background: var(--bg);
   border: 1px solid var(--border2);
@@ -204,9 +204,6 @@
   transition: border-color .1s;
 }
 .home-filter-text:focus { border-color: var(--accent); }
-@media (max-width: 560px) {
-  .home-filter-text { width: 130px; }
-}
 
 /* Desktop: the narrow row-wrap of groups made the variable-width pills wrap
    raggedly. On wider screens lay the panel out as a single vertical column of
