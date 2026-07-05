@@ -34,36 +34,55 @@ const BATCH_YIELD_MS = 50;          // pause between batches so the UI stays res
 let _cache = null;
 async function _loadIndexes() {
   if (_cache) return _cache;
-  const [siRes, giRes, nsRes, overrides] = await Promise.all([
+  const [siRes, giRes, gcRes, nsRes, overrides] = await Promise.all([
     fetch(await dataUrl('search-index.json')).catch(() => null),
     fetch(await dataUrl('game-images.json')).catch(() => null),
+    fetch(await dataUrl('game-images-cache.json')).catch(() => null),
     fetch(await dataUrl('nonsteam-images.json')).catch(() => null),
     listBoxArtOverrides().catch(() => ({ ok: false, rows: [] })),
   ]);
   const searchIndex = (siRes && siRes.ok) ? await siRes.json().catch(() => []) : [];
   const gameImages  = (giRes && giRes.ok) ? await giRes.json().catch(() => ({})) : {};
   const nonSteam    = (nsRes && nsRes.ok) ? await nsRes.json().catch(() => ({})) : {};
+  const cacheRaw    = (gcRes && gcRes.ok) ? await gcRes.json().catch(() => ({})) : {};
+  // game-images-cache.json is the pipeline's authoritative status per Steam
+  // appid. status "missing" and "delisted" both mean the standard Steam CDN
+  // has nothing usable AND we couldn't find a fallback -- these are the games
+  // the frontend currently shows the literal "Box art missing" text for. Pull
+  // the appids into a Set so _deriveStatus can flip Steam entries from the
+  // optimistic "default_cdn" to "missing" (#199 follow-up).
+  const knownMissingSteam = new Set();
+  for (const [aid, entry] of Object.entries(cacheRaw)) {
+    const status = entry?.status;
+    if (status === 'missing' || status === 'delisted') knownMissingSteam.add(String(aid));
+  }
   // Admin overrides beat all other sources; keyed by app_id for O(1)
   // lookup during row build + status render.
   const overrideMap = {};
   for (const row of (overrides.rows || [])) {
     if (row?.app_id) overrideMap[String(row.app_id)] = row;
   }
-  _cache = { searchIndex, gameImages, nonSteam, overrideMap };
+  _cache = { searchIndex, gameImages, nonSteam, overrideMap, knownMissingSteam };
   return _cache;
 }
 
 // Derive the same status the Status column shows, without probing.
 // Admin override beats everything; otherwise the presence of a cached
 // URL and store type determine the label.
-function _deriveStatus(type, cachedUrl, hasOverride) {
+function _deriveStatus(type, appId, cachedUrl, hasOverride, knownMissingSteam) {
   if (hasOverride) return 'override';
-  if (type === 'steam') return cachedUrl ? 'fallback_cached' : 'default_cdn';
+  if (type === 'steam') {
+    // Pipeline flagged this Steam entry as unfixable (no standard CDN, no
+    // SGDB fallback). Client renders the literal "Box art missing" tile for
+    // these, so admin should surface them under the missing filter (#199).
+    if (knownMissingSteam && knownMissingSteam.has(appId)) return 'missing';
+    return cachedUrl ? 'fallback_cached' : 'default_cdn';
+  }
   return cachedUrl ? 'cached' : 'missing';
 }
 
 // search-index shape: [appId, title, tier, pdb, pulse, appType, releaseYear, delisted, adult]
-function _buildRows({ searchIndex, gameImages, nonSteam, overrideMap }, { store, textFilter, scope, status }) {
+function _buildRows({ searchIndex, gameImages, nonSteam, overrideMap, knownMissingSteam }, { store, textFilter, scope, status }) {
   const q = String(textFilter || '').trim().toLowerCase();
   const rows = [];
   for (const row of searchIndex) {
@@ -77,7 +96,7 @@ function _buildRows({ searchIndex, gameImages, nonSteam, overrideMap }, { store,
     let cachedUrl = null;
     if (type === 'steam') cachedUrl = gameImages[appId] || null;
     else                   cachedUrl = nonSteam[appId] || null;
-    const derivedStatus = _deriveStatus(type, cachedUrl, !!override);
+    const derivedStatus = _deriveStatus(type, appId, cachedUrl, !!override, knownMissingSteam);
     // scope filter: has = row is presumed to display box art
     // (Steam default CDN OR any cached URL OR override). missing =
     // only rows we know don't display box art (non-Steam with no
@@ -499,7 +518,7 @@ export async function renderBoxartAdmin() {
   function _removeOverrideFromRow(tr, appId) {
     if (indexes.overrideMap) delete indexes.overrideMap[appId];
     const r = state.rows.find(x => x.appId === appId);
-    if (r) { r.override = null; r.derivedStatus = _deriveStatus(r.type, r.cachedUrl, false); }
+    if (r) { r.override = null; r.derivedStatus = _deriveStatus(r.type, r.appId, r.cachedUrl, false, indexes.knownMissingSteam); }
     const statusEl = tr.querySelector('.boxart-status');
     if (statusEl && r) statusEl.innerHTML = _initialStatusHtml(r);
     const clearBtn = tr.querySelector('button[data-action="clear"]');
@@ -768,7 +787,7 @@ export async function renderBoxartAdminDetail(appId) {
   const type = searchRow[5] || (String(appId).startsWith('gog:') ? 'gog' : String(appId).startsWith('epic:') ? 'epic' : 'steam');
   const cachedUrl = type === 'steam' ? (indexes.gameImages[appId] || null) : (indexes.nonSteam[appId] || null);
   const override = indexes.overrideMap?.[appId] || null;
-  const row = { appId: String(appId), title: String(searchRow[1] || ''), type, cachedUrl, override, derivedStatus: _deriveStatus(type, cachedUrl, !!override) };
+  const row = { appId: String(appId), title: String(searchRow[1] || ''), type, cachedUrl, override, derivedStatus: _deriveStatus(type, String(appId), cachedUrl, !!override, indexes.knownMissingSteam) };
 
   document.getElementById('boxart-detail-title').textContent = `Box Art: ${row.title || row.appId} (${row.type})`;
 

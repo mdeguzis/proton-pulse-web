@@ -133,7 +133,9 @@ describe('Missing Box Art component contract', () => {
     // rows we know have no source) not raw cachedUrl presence.
     expect(COMP).toMatch(/scope === 'has'\s+&& derivedStatus === 'missing'/);
     expect(COMP).toMatch(/scope === 'missing' && derivedStatus !== 'missing'/);
-    expect(COMP).toMatch(/function _deriveStatus\(type, cachedUrl, hasOverride\)/);
+    // Signature grew to accept appId + knownMissingSteam so Steam entries
+    // flagged missing in game-images-cache.json also count (#199).
+    expect(COMP).toMatch(/function _deriveStatus\(type, appId, cachedUrl, hasOverride, knownMissingSteam\)/);
   });
 
   test('game title hyperlinks to the app page so admins can jump to it', () => {
@@ -303,5 +305,30 @@ describe('SteamGridDB search-and-pick', () => {
     expect(EDGE).toContain('dimensions: string');
     expect(EDGE).toContain('/^[0-9x,]+$/.test(dimensions)');
     expect(EDGE).toContain('&dimensions=${dimSafe}');
+  });
+
+  // #199 follow-up: Steam games flagged as missing/delisted in
+  // game-images-cache.json must surface under the "Missing box art" filter
+  // so admins can override the exact games that render the "Box art missing"
+  // tile on the client. Before this, _deriveStatus optimistically returned
+  // 'default_cdn' for every Steam appid with no cached fallback URL.
+  describe('surfaces known-missing Steam games from game-images-cache.json', () => {
+    test('loader fetches game-images-cache.json', () => {
+      expect(COMP).toContain("dataUrl('game-images-cache.json')");
+    });
+
+    test('loader builds a knownMissingSteam Set from status missing/delisted', () => {
+      expect(COMP).toMatch(/knownMissingSteam\s*=\s*new Set\(\)/);
+      expect(COMP).toMatch(/status\s*===\s*'missing'\s*\|\|\s*status\s*===\s*'delisted'/);
+    });
+
+    test('_deriveStatus flips Steam entries to missing when in knownMissingSteam', () => {
+      expect(COMP).toMatch(/knownMissingSteam\.has\(appId\)\s*\)\s*return\s*'missing'/);
+    });
+
+    test('_buildRows destructures knownMissingSteam and threads it into _deriveStatus', () => {
+      expect(COMP).toMatch(/function _buildRows\([^)]*knownMissingSteam[^)]*\)/);
+      expect(COMP).toMatch(/_deriveStatus\(type,\s*appId,\s*cachedUrl,\s*!!override,\s*knownMissingSteam\)/);
+    });
   });
 });
