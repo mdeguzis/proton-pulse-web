@@ -24,7 +24,7 @@ export function renderAuthorBlock(r) {
   const authorKey = fullId.slice(0, 16);
   const verifiedOwner = r.ownerVerified === true || r.owner_verified === true;
   const verifiedBadge = verifiedOwner
-    ? `<div class="author-verified" title="Reporter's Steam library confirms they own this game"><svg viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm3.7 6.3l-4.5 4.5a.75.75 0 01-1.06 0L4.3 8.94a.75.75 0 111.06-1.06l1.31 1.31 3.97-3.97a.75.75 0 111.06 1.06z"/></svg>Verified owner</div>`
+    ? `<div class="author-verified" title="Verified owner: reporter's Steam library confirms they own this game"><svg viewBox="0 0 16 16" width="10" height="10" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm3.7 6.3l-4.5 4.5a.75.75 0 01-1.06 0L4.3 8.94a.75.75 0 111.06-1.06l1.31 1.31 3.97-3.97a.75.75 0 111.06 1.06z"/></svg>Verified</div>`
     : '';
   return `
     <div class="card-author" data-author-key="${esc(authorKey)}" title="${esc(a.displayName)} ${esc(a.subtitle)}${esc(tooltipExtra)}">

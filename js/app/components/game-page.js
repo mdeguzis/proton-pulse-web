@@ -8,7 +8,7 @@ import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=d76564a6';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
-import { enhanceAuthorBlocks } from './author.js?v=8018b6a6';
+import { enhanceAuthorBlocks } from './author.js?v=212f279c';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=a1a075ee';
 import { renderCard } from './report-card.js?v=a3e68133';
