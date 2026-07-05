@@ -1,6 +1,6 @@
 // votes (api) for the app page. Relocated from app.js.
 
-import { getWebClientId } from '../../shared/submit.js?v=87da37ef';
+import { getWebClientId } from '../../shared/submit.js?v=64f1a52e';
 import { SB_KEY, SB_URL } from '../config.js?v=f9591262';
 
 export async function fetchVotes(appId) {

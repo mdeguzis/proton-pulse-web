@@ -23,6 +23,7 @@ js/app/components/search.js
 js/shared/config.js
 js/shared/scoring.js
 js/shared/submit.js
+js/shared/drafts.js
 js/shared/hardware.js
 js/shared/chart-interactions.js
 js/submit/main.js

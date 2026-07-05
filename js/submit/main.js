@@ -1,6 +1,7 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=1b8ae722';
-import { populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, submitReport } from '../shared/submit.js?v=87da37ef';
+import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, submitReport } from '../shared/submit.js?v=64f1a52e';
+import { deleteDraft, getDraft, snapshotFormData, upsertDraft } from '../shared/drafts.js?v=e713f946';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
@@ -122,6 +123,69 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
   // Show the Verified owner pill at the top of the form when the user's
   // cached Steam library confirms ownership (#199).
   void renderVerifiedOwnerStatus(el, appId);
+
+  // Cloud draft restore + Save Draft button. Only offer for fresh submits
+  // (edits reload from the report itself; fromCloud has its own path).
+  if (!isEdit && !fromCloud && session) {
+    try {
+      const draft = await getDraft(session, appId);
+      if (draft?.form_data) {
+        const restoreEl = el.querySelector('#sf-draft-restore');
+        const formEl = el.querySelector('#submit-report-form');
+        if (restoreEl && formEl) {
+          const ageMs = draft.updated_at ? Date.now() - new Date(draft.updated_at).getTime() : 0;
+          const ageLabel = ageMs > 86400000
+            ? `${Math.round(ageMs / 86400000)} day${Math.round(ageMs / 86400000) === 1 ? '' : 's'} ago`
+            : ageMs > 3600000
+              ? `${Math.round(ageMs / 3600000)} hour${Math.round(ageMs / 3600000) === 1 ? '' : 's'} ago`
+              : ageMs > 60000
+                ? `${Math.round(ageMs / 60000)} minute${Math.round(ageMs / 60000) === 1 ? '' : 's'} ago`
+                : 'just now';
+          restoreEl.hidden = false;
+          restoreEl.innerHTML = `
+            <div class="sf-draft-restore-body">
+              You have a saved draft for this game (from ${ageLabel}).
+              <button type="button" id="draft-restore-btn">Restore draft</button>
+              <button type="button" id="draft-discard-btn">Discard</button>
+            </div>`;
+          restoreEl.querySelector('#draft-restore-btn')?.addEventListener('click', () => {
+            applyDraftSnapshot(formEl, draft.form_data);
+            restoreEl.hidden = true;
+            window.ppToast?.success('Draft restored.');
+          });
+          restoreEl.querySelector('#draft-discard-btn')?.addEventListener('click', async () => {
+            restoreEl.hidden = true;
+            try { await deleteDraft(session, appId); window.ppToast?.success('Draft discarded.'); }
+            catch (e) { console.warn('[submit] discard draft failed', e); }
+          });
+        }
+      }
+    } catch (err) {
+      console.warn('[submit] draft restore lookup failed', err);
+    }
+  }
+
+  const saveDraftBtn = el.querySelector('#save-draft-btn');
+  if (saveDraftBtn && session) {
+    saveDraftBtn.addEventListener('click', async () => {
+      const formEl = el.querySelector('#submit-report-form');
+      if (!formEl) return;
+      const prevLabel = saveDraftBtn.textContent;
+      saveDraftBtn.disabled = true;
+      saveDraftBtn.textContent = 'Saving...';
+      try {
+        await upsertDraft(session, appId, snapshotFormData(formEl));
+        window.ppToast?.success('Draft saved. You can finish it later on any signed-in device.');
+      } catch (err) {
+        window.ppToast?.error(`Failed to save draft: ${err.message || err}`);
+      } finally {
+        saveDraftBtn.disabled = false;
+        saveDraftBtn.textContent = prevLabel;
+      }
+    });
+  } else if (saveDraftBtn) {
+    saveDraftBtn.hidden = true;
+  }
 
   // #153: markdown editor is on site-wide now (no flag). Wrap the Notes
   // textarea with Write / Preview tabs and render the preview via
@@ -429,6 +493,10 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
           // Toast is the single success confirmation now; no duplicate inline text.
           window.ppToast?.success(isEdit ? 'Changes saved.' : 'Report submitted. Thanks!');
           if (typeof window.ppTrack === 'function') window.ppTrack('report_submit', { app_id: String(appId), is_edit: isEdit });
+          // Clean up the cloud draft now that the report is in.
+          if (!isEdit && !fromCloud && session) {
+            void deleteDraft(session, appId).catch(() => {});
+          }
           const dest = returnTo || `app.html#/app/${appId}`;
           setTimeout(() => { window.location.href = dest; }, 900);
         } else {

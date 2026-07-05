@@ -204,6 +204,43 @@ export async function isAppIdInMyLibrary(appId, session) {
  * badge so the user knows their submission will land with owner_verified=true
  * before they press submit (#199).
  */
+/**
+ * Restore form values + progressive-question state from a saved draft
+ * snapshot produced by snapshotFormData (drafts.js). Every field is optional
+ * so partial drafts still populate what they can (#199 follow-up).
+ */
+export function applyDraftSnapshot(form, snapshot) {
+  if (!form || !snapshot) return;
+  const values = snapshot.values || {};
+  for (const [name, val] of Object.entries(values)) {
+    const fields = form.elements[name];
+    if (!fields) continue;
+    if (fields instanceof RadioNodeList) {
+      for (const f of fields) {
+        if (f.type === 'radio') f.checked = f.value === val;
+        else if (f.type === 'checkbox') f.checked = Array.isArray(val) && val.includes(f.value);
+      }
+    } else if (fields.type === 'radio' || fields.type === 'checkbox') {
+      fields.checked = Array.isArray(val) ? val.includes(fields.value) : fields.value === val;
+    } else {
+      fields.value = val;
+    }
+    fields.dispatchEvent?.(new Event('change', { bubbles: true }));
+  }
+  const state = snapshot.state || {};
+  const s = form._formState || (form._formState = {});
+  s.canInstall = state.canInstall || null;
+  s.canStart = state.canStart || null;
+  s.canPlay = state.canPlay || null;
+  s.verdict = state.verdict || null;
+  s.requiresFramegen = state.requiresFramegen || null;
+  s.onlineMultiplayer = state.onlineMultiplayer || null;
+  s.localMultiplayer = state.localMultiplayer || null;
+  s.offlineCompat = state.offlineCompat || null;
+  s.faults = state.faults || {};
+  s.tinkeringMethods = new Set(state.tinkeringMethods || []);
+}
+
 export async function renderVerifiedOwnerStatus(el, appId) {
   const mount = el?.querySelector?.('#sf-verified-owner');
   if (!mount || !appId) return;
@@ -510,6 +547,7 @@ export async function populateSubmitForm(el) {
     </details>
     <form id="submit-report-form" autocomplete="on">
       <div id="sf-verified-owner" hidden></div>
+      <div id="sf-draft-restore" class="sf-draft-restore" hidden></div>
       <div class="sf-section-label">Game</div>
       <div class="sf-row"><label>Game title</label><input name="gameTitle" readonly style="cursor:default;color:var(--muted);border-color:var(--border2);background:var(--s1);" placeholder="Loading..."></div>
 
@@ -635,8 +673,9 @@ export async function populateSubmitForm(el) {
           <option value="web"${getWebSource()==='web'?' selected':''}>Other / Unknown</option>
         </select>
       </div>
-      <div class="sf-row" style="justify-content:flex-end;gap:8px">
+      <div class="sf-row" style="justify-content:flex-end;gap:8px;flex-wrap:wrap">
         <span id="submit-status" style="font-size:0.76rem;color:var(--muted)"></span>
+        <button type="button" id="save-draft-btn" class="submit-report-btn submit-report-btn--secondary" title="Save the current form so you can finish it later on any signed-in device">Save Draft</button>
         <button type="submit" class="submit-report-btn">Submit</button>
       </div>
     </form>`;

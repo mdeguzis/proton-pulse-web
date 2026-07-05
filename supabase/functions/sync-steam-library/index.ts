@@ -52,10 +52,15 @@ Deno.serve(async (req: Request) => {
     );
   }
 
+  // include_played_free_games covers free titles the user has actually
+  // launched; include_free_sub covers free titles always attached to the
+  // account (Steam sub-based free games). Adding both to match ProtonDB's
+  // count (#199 follow-up: user reported N-4 vs ProtonDB).
   const steamUrl =
     `${STEAM_API_BASE}/IPlayerService/GetOwnedGames/v1/` +
     `?key=${steamApiKey}&steamid=${steamId}` +
-    `&include_appinfo=false&include_played_free_games=true&format=json`;
+    `&include_appinfo=false&include_played_free_games=true` +
+    `&include_free_sub=true&skip_unvetted_apps=false&format=json`;
 
   let steamJson: {
     response?: { game_count?: number; games?: Array<{ appid: number }> };
