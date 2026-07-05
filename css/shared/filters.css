@@ -78,6 +78,24 @@
   max-width: 96vw;
 }
 
+/* Mobile: stretch the panel to fill the viewport width so the pill grid
+   isn't cramped in a half-width dropdown. Fixed-position pins it to the
+   screen edges regardless of the toggle button's horizontal offset. */
+@media (max-width: 600px) {
+  .filter-panel.open,
+  .pg-filter-panel.open,
+  .filter-panel--stack.open {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    top: auto;
+    min-width: 0;
+    max-width: none;
+    width: auto;
+    box-sizing: border-box;
+  }
+}
+
 /* ── Responsive ───────────────────────────────────────────────────────── */
 @media (min-width: 601px) {
   .filter-panel:not(.filter-panel--stack),
