@@ -9,6 +9,7 @@ import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=7c022a1e';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
+import { renderHomeLibraryChart } from './home-library-chart.js?v=c7e8a2d8';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
 const LOAD_COUNTS = [50, 100, 150, 200];
@@ -253,6 +254,7 @@ export async function renderHomePage() {
           </div>
         </div>
       </div>
+      <div id="home-library-chart-mount"></div>
       <div id="recent-section">
         <div class="section-label-row" style="margin-bottom:10px">
           <span class="section-label" style="margin:0">Recent Reports</span>
@@ -647,6 +649,9 @@ export async function renderHomePage() {
     _restoreFilters(); // re-apply a saved filter set (if any) before first render
     applyRecentFilters();
     applyPopularFilters();
+
+    // Signed-in library breakdown chart. No-op when signed out (#199).
+    void renderHomeLibraryChart(document.getElementById('home-library-chart-mount'));
   } catch {
     el.innerHTML = '<div class="state-box">Search for a game above or navigate to <code>#/app/{appId}</code></div>';
   }

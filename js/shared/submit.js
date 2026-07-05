@@ -165,6 +165,39 @@ export function isLinuxOs(os) {
   return !_NON_LINUX_OS_PATTERNS.some(re => re.test(s));
 }
 
+/**
+ * Look up the signed-in user's cached Steam library (public.user_steam_library)
+ * and return true iff appId is in their appids list. Used at report submit time
+ * to set owner_verified so a "Verified owner" badge can render on the report
+ * card (#199). Silently returns false on any error so submission still works.
+ */
+export async function isAppIdInMyLibrary(appId, session) {
+  if (!appId || !session?.access_token) return false;
+  try {
+    const r = await fetch(
+      `${window.SB_URL}/user_steam_library?select=appids&limit=1`,
+      {
+        headers: {
+          apikey: window.SB_KEY,
+          Authorization: `Bearer ${session.access_token}`,
+        },
+      },
+    );
+    if (!r.ok) {
+      console.debug('[submit] isAppIdInMyLibrary: query failed', { appId, status: r.status, source: 'user_steam_library' });
+      return false;
+    }
+    const rows = await r.json();
+    const appids = Array.isArray(rows) && rows.length ? rows[0].appids : null;
+    const owned = Array.isArray(appids) && appids.map(Number).includes(Number(appId));
+    console.debug('[submit] isAppIdInMyLibrary', { appId, owned, cachedCount: Array.isArray(appids) ? appids.length : 0, source: 'user_steam_library' });
+    return owned;
+  } catch (e) {
+    console.debug('[submit] isAppIdInMyLibrary threw', { appId, error: e?.message });
+    return false;
+  }
+}
+
 export async function submitReport(appId, title, form, editReportId = null) {
   const session = await SupaAuth.getSession();
   if (!session) return { ok: false, error: 'Sign in with Steam to submit a report.' };
@@ -270,6 +303,7 @@ export async function submitReport(appId, title, form, editReportId = null) {
     source: form.reportSource?.value || getWebSource(),
     vram_mb: form.vramMb.value ? Number(form.vramMb.value) : null,
     game_owned: true,  // authenticated web users own the game by definition
+    owner_verified: await isAppIdInMyLibrary(appId, session),
     form_responses: formResponses,
   };
   const isEdit = !!editReportId;

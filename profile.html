@@ -72,6 +72,19 @@
       </div>
 
       <div class="profile-section">
+        <div class="profile-section-title" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+          <span>Library</span>
+          <button type="button" class="profile-refresh-btn" id="library-refresh-btn">Refresh</button>
+        </div>
+        <div class="profile-field">
+          <div class="profile-field-value" id="library-count" style="font-size:1.05rem"></div>
+          <div class="profile-field-hint" id="library-status" style="margin-top:4px"></div>
+          <div class="profile-field-hint" id="library-empty" style="margin-top:4px" hidden></div>
+          <div class="profile-field-hint" style="margin-top:8px">Fetched from Steam via IPlayerService/GetOwnedGames. Refresh whenever you install or uninstall games.</div>
+        </div>
+      </div>
+
+      <div class="profile-section">
         <div class="profile-section-title">Account details</div>
 
         <div class="profile-field">
@@ -311,6 +324,6 @@
 <script src="js/lib/analytics.js?v=e6dfbad8"></script>
 <script src="js/lib/topbar.js?v=46897460"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/profile/main.js?v=0de32796"></script>
+<script type="module" src="js/profile/main.js?v=7a250dda"></script>
 </body>
 </html>

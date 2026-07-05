@@ -126,6 +126,18 @@ function makeForm(overrides = {}) {
 
 async function flush() { await new Promise(r => setTimeout(r, 0)); }
 
+// submitReport now fires an extra GET against user_steam_library first (to set
+// owner_verified from the cached appids, #199), so the submit itself is no
+// longer guaranteed to be calls[0]. Find the write call by method.
+function findSubmitWriteCall(fetchMock) {
+  const call = fetchMock.mock.calls.find(([, init]) => {
+    const method = (init && init.method) || 'GET';
+    return method === 'POST' || method === 'PATCH';
+  });
+  if (!call) throw new Error('no submit write call recorded');
+  return call;
+}
+
 // ── submitReport auth gating ────────────────────────────────────────
 
 describe('submitReport - auth gating', () => {
@@ -142,7 +154,7 @@ describe('submitReport - auth gating', () => {
     fetchMock.mockClear();
     fetchMock.mockResolvedValue({ ok: true });
     await ctx.submitReport('730', 'HL2', makeForm());
-    const [, init] = fetchMock.mock.calls[0];
+    const [, init] = findSubmitWriteCall(fetchMock);
     expect(init.headers.Authorization).toBe('Bearer tok_abc');
   });
 
@@ -174,7 +186,7 @@ describe('submitReport - auth gating', () => {
     fetchMock.mockClear();
     fetchMock.mockResolvedValue({ ok: true });
     await ctx.submitReport('730', 'HL2', makeForm());
-    const body = JSON.parse(fetchMock.mock.calls[0][1].body);
+    const body = JSON.parse(findSubmitWriteCall(fetchMock)[1].body);
     expect(body.proton_pulse_user_id).toBe('pp-42');
   });
 
@@ -183,7 +195,7 @@ describe('submitReport - auth gating', () => {
     fetchMock.mockClear();
     fetchMock.mockResolvedValue({ ok: true });
     await ctx.submitReport('730', 'HL2', makeForm({ os: 'Arch Linux', osVersion: '6.8' }));
-    const body = JSON.parse(fetchMock.mock.calls[0][1].body);
+    const body = JSON.parse(findSubmitWriteCall(fetchMock)[1].body);
     expect(body.os).toBe('Arch Linux 6.8');
   });
 
@@ -192,7 +204,7 @@ describe('submitReport - auth gating', () => {
     fetchMock.mockClear();
     fetchMock.mockResolvedValue({ ok: true });
     await ctx.submitReport('730', 'HL2', makeForm({ duration: '' }));
-    const body = JSON.parse(fetchMock.mock.calls[0][1].body);
+    const body = JSON.parse(findSubmitWriteCall(fetchMock)[1].body);
     expect(body.duration).toBe('unreported');
   });
 
@@ -201,7 +213,7 @@ describe('submitReport - auth gating', () => {
     fetchMock.mockClear();
     fetchMock.mockResolvedValue({ ok: true });
     await ctx.submitReport('730', 'HL2', makeForm());
-    const body = JSON.parse(fetchMock.mock.calls[0][1].body);
+    const body = JSON.parse(findSubmitWriteCall(fetchMock)[1].body);
     expect(body.game_owned).toBe(true);
   });
 });
@@ -282,7 +294,7 @@ describe('submitReport - rating derivation', () => {
     fetchMock.mockResolvedValue({ ok: true });
     const result = await ctx.submitReport('730', 'HL2', makeForm());
     expect(result.ok).toBe(true);
-    const body = JSON.parse(fetchMock.mock.calls[0][1].body);
+    const body = JSON.parse(findSubmitWriteCall(fetchMock)[1].body);
     expect(body.rating).toBe('platinum');
   });
 
@@ -296,7 +308,7 @@ describe('submitReport - rating derivation', () => {
     form._formState.verdict = null;
     const result = await ctx.submitReport('730', 'HL2', form);
     expect(result.ok).toBe(true);
-    const body = JSON.parse(fetchMock.mock.calls[0][1].body);
+    const body = JSON.parse(findSubmitWriteCall(fetchMock)[1].body);
     expect(body.rating).toBe('borked');
   });
 

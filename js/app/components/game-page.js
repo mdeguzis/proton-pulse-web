@@ -3,12 +3,12 @@
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=1b8ae722';
 import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=8dc92cf7';
-import { getWebClientId } from '../../shared/submit.js?v=8c22e9ad';
+import { getWebClientId } from '../../shared/submit.js?v=5d174c35';
 import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.js?v=dfac69c8';
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
-import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=14086cb6';
+import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=d76564a6';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
-import { enhanceAuthorBlocks } from './author.js?v=2316d334';
+import { enhanceAuthorBlocks } from './author.js?v=8018b6a6';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=a1a075ee';
 import { renderCard } from './report-card.js?v=a7c54753';
