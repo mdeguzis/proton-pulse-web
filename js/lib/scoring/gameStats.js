@@ -52,6 +52,45 @@ export function isNegative(rating) {
 }
 
 /**
+ * Compatibility trend between a recent window and a prior window.
+ *
+ * Based on the SHARE OF PLAYABLE reports (platinum/gold/silver via isPositive),
+ * not a linear tier average. This is deliberate: a shift between two playable
+ * tiers (e.g. platinum -> gold) must NOT read as a decline, because the game
+ * still works fine. Only a real change in how often the game is playable moves
+ * the needle. A minimum sample is required in BOTH windows, so a tiny baseline
+ * (e.g. two old reports) can never drive a red "declining" verdict -- that was
+ * the misleading case this replaces.
+ *
+ * @param {Array<{rating: string}>} recentReps reports in the recent window
+ * @param {Array<{rating: string}>} priorReps reports in the prior window
+ * @param {{minBucket?: number, threshold?: number}} [opts]
+ *   minBucket: reports required in EACH window before a trend is claimed (default 5)
+ *   threshold: playable-share change (0-1) needed to call it (default 0.15 = 15 pts)
+ * @returns {{ dir: 'improving'|'declining'|'stable'|'insufficient', delta: number,
+ *   recentPositiveRatio: number|null, priorPositiveRatio: number|null,
+ *   recentCount: number, priorCount: number }}
+ */
+export function computeCompatTrend(recentReps, priorReps, opts = {}) {
+  const minBucket = opts.minBucket != null ? opts.minBucket : 5;
+  const threshold = opts.threshold != null ? opts.threshold : 0.15;
+  const recentCount = Array.isArray(recentReps) ? recentReps.length : 0;
+  const priorCount = Array.isArray(priorReps) ? priorReps.length : 0;
+  // Not enough data in one (or both) windows to make an honest comparison.
+  if (recentCount < minBucket || priorCount < minBucket) {
+    return { dir: 'insufficient', delta: 0, recentPositiveRatio: null, priorPositiveRatio: null, recentCount, priorCount };
+  }
+  const ratio = arr => arr.filter(r => isPositive(r.rating)).length / arr.length;
+  const recentPositiveRatio = ratio(recentReps);
+  const priorPositiveRatio = ratio(priorReps);
+  const delta = recentPositiveRatio - priorPositiveRatio; // + => more playable recently
+  let dir = 'stable';
+  if (delta >= threshold) dir = 'improving';
+  else if (delta <= -threshold) dir = 'declining';
+  return { dir, delta, recentPositiveRatio, priorPositiveRatio, recentCount, priorCount };
+}
+
+/**
  * Returns the age of a Unix timestamp in whole days relative to now, or null if ts is falsy.
  * @param {number|null} ts - Unix timestamp in seconds.
  * @param {number} now - Current time in seconds.
@@ -258,20 +297,15 @@ export function computeGameStats(allReports, configs) {
   ];
 
   // --- Trend ---
+  // Playable-share based (see computeCompatTrend): a platinum->gold drift is not
+  // a decline, and a trend is only claimed when both windows are well sampled.
   const recentReps = allReports.filter(r => r.timestamp && now - r.timestamp < RECENT_DAYS * 86400);
   const priorReps = allReports.filter(r => r.timestamp && now - r.timestamp >= RECENT_DAYS * 86400 && now - r.timestamp < PRIOR_WINDOW_DAYS * 86400);
-  let trendDir = 'stable', trendDiff = 0;
-  let recentPositiveRatio = null, olderPositiveRatio = null;
-  if (recentReps.length >= 2 && priorReps.length >= 2) {
-    const avg = arr => arr.reduce((s, r) => s + (RATING_VAL[r.rating] || 3), 0) / arr.length;
-    trendDiff = avg(recentReps) - avg(priorReps);
-    if (trendDiff > 0.3) trendDir = 'improving';
-    else if (trendDiff < -0.3) trendDir = 'declining';
-    recentPositiveRatio = recentReps.filter(r => isPositive(r.rating)).length / recentReps.length;
-    olderPositiveRatio = priorReps.filter(r => isPositive(r.rating)).length / priorReps.length;
-  } else if (recentReps.length < 2 && priorReps.length < 2) {
-    trendDir = 'insufficient';
-  }
+  const trend = computeCompatTrend(recentReps, priorReps);
+  const trendDir = trend.dir;
+  const trendDiff = trend.delta;
+  const recentPositiveRatio = trend.recentPositiveRatio;
+  const olderPositiveRatio = trend.priorPositiveRatio;
 
   // --- Per-Proton-version success % ---
   const versionMap = {};
@@ -339,5 +373,6 @@ if (typeof module !== 'undefined' && /* istanbul ignore next */ module.exports) 
     computeSettingsTips,
     isPositive,
     isNegative,
+    computeCompatTrend,
   };
 }

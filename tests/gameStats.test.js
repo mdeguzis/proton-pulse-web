@@ -17,6 +17,7 @@ const {
   computeSettingsTips,
   isPositive,
   isNegative,
+  computeCompatTrend,
 } = loadEsm(['js/lib/scoring/gameStats.js'], { Math, Object, Array, Date, JSON, console });
 
 const NOW = Math.floor(Date.now() / 1000);
@@ -242,6 +243,57 @@ describe('computeGameStats end-to-end', () => {
     ];
     const stats = computeGameStats(reports, []);
     expect(stats.trendDir).toBe('improving');
+  });
+
+  test('trend: platinum -> gold reads as stable, not declining (both playable)', () => {
+    // The misleading case this fixes: a drift between two playable tiers must
+    // not be a decline. The playable share is unchanged, so it is stable.
+    const reports = [
+      ...Array.from({ length: 6 }, (_, i) => rpt('platinum', 100 + i * 10)), // prior
+      ...Array.from({ length: 6 }, (_, i) => rpt('gold', 5 + i * 5)),         // recent
+    ];
+    const stats = computeGameStats(reports, []);
+    expect(stats.trendDir).toBe('stable');
+  });
+
+  test('trend: insufficient when the prior window has too few reports (Stardew case)', () => {
+    // A game with 40+ recent playable reports but only 2 old ones must not
+    // produce any trend verdict -- 2 reports is not a baseline.
+    const reports = [
+      rpt('platinum', 200), rpt('platinum', 210),                     // only 2 in the prior window
+      ...Array.from({ length: 40 }, (_, i) => rpt('gold', 5 + i)),     // 40 recent, playable
+      rpt('borked', 20), rpt('borked', 30),                           // a couple recent borked
+    ];
+    const stats = computeGameStats(reports, []);
+    expect(stats.trendDir).toBe('insufficient');
+    expect(stats.recentPositiveRatio).toBeNull();
+  });
+
+  describe('computeCompatTrend (playable-share based)', () => {
+    const mk = (rating, n) => Array.from({ length: n }, () => ({ rating }));
+    test('insufficient below the minimum bucket size in either window', () => {
+      const t = computeCompatTrend(mk('gold', 4), mk('gold', 10));
+      expect(t.dir).toBe('insufficient');
+      expect(t.recentPositiveRatio).toBeNull();
+    });
+    test('platinum vs gold is stable (playable share unchanged)', () => {
+      const t = computeCompatTrend(mk('gold', 8), mk('platinum', 8));
+      expect(t.dir).toBe('stable');
+      expect(t.delta).toBe(0);
+    });
+    test('declining when the playable share drops past the threshold', () => {
+      const t = computeCompatTrend([...mk('gold', 4), ...mk('borked', 4)], mk('gold', 8));
+      expect(t.dir).toBe('declining');
+    });
+    test('a dip smaller than the threshold stays stable', () => {
+      // 7/8 playable (0.875) vs 8/8 (1.0) => -0.125, under the 0.15 threshold
+      const t = computeCompatTrend([...mk('gold', 7), ...mk('borked', 1)], mk('gold', 8));
+      expect(t.dir).toBe('stable');
+    });
+    test('improving when the playable share rises past the threshold', () => {
+      const t = computeCompatTrend(mk('gold', 8), [...mk('gold', 4), ...mk('borked', 4)]);
+      expect(t.dir).toBe('improving');
+    });
   });
 
   test('unknown rating in ratingCounts is ignored gracefully', () => {

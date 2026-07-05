@@ -2,6 +2,7 @@
 
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=1b8ae722';
+import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=8dc92cf7';
 import { getWebClientId } from '../../shared/submit.js?v=8c22e9ad';
 import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.js?v=dfac69c8';
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
@@ -119,19 +120,23 @@ function _showFlagModal(btn) {
 }
 
 export function trendSummary(reps) {
-  if (reps.length < 2) return '';
-  const ratingVal = { platinum: 5, gold: 4, silver: 3, bronze: 2, borked: 1 };
+  if (!Array.isArray(reps) || reps.length < 2) return '';
   const now = Date.now() / 1000;
-  const recent = reps.filter(r => now - r.timestamp < 180 * 86400);
-  const older  = reps.filter(r => now - r.timestamp >= 180 * 86400);
-  if (!recent.length || !older.length) return '';
-  const avg = arr => arr.reduce((s, r) => s + (ratingVal[r.rating] || 3), 0) / arr.length;
-  const diff = avg(recent) - avg(older);
-  if (Math.abs(diff) < 0.3)
-    return `<div class="trend">Compatibility is <strong>stable</strong> - ${recent.length} recent vs ${older.length} older reports</div>`;
-  if (diff > 0)
-    return `<div class="trend">Compatibility is <strong style="color:var(--green)">improving</strong> - ${recent.length} recent vs ${older.length} older reports</div>`;
-  return `<div class="trend">Compatibility is <strong style="color:var(--red)">declining</strong> - ${recent.length} recent vs ${older.length} older reports</div>`;
+  const recent = reps.filter(r => r.timestamp && now - r.timestamp < RECENT_DAYS * 86400);
+  const prior  = reps.filter(r => r.timestamp && now - r.timestamp >= RECENT_DAYS * 86400 && now - r.timestamp < PRIOR_WINDOW_DAYS * 86400);
+  const t = computeCompatTrend(recent, prior);
+  console.debug('[game-page] trendSummary', { dir: t.dir, delta: t.delta, recentCount: t.recentCount, priorCount: t.priorCount, source: 'computeCompatTrend' });
+  // Insufficient data (e.g. a game with only a couple of old reports) shows
+  // nothing rather than a misleading verdict off a tiny baseline. The trend is
+  // playable-share based, so a platinum->gold drift reads as stable, not a
+  // decline.
+  if (t.dir === 'insufficient') return '';
+  const counts = `${t.recentCount} recent vs ${t.priorCount} prior reports`;
+  if (t.dir === 'improving')
+    return `<div class="trend">Compatibility is <strong style="color:var(--green)">improving</strong> - ${counts}</div>`;
+  if (t.dir === 'declining')
+    return `<div class="trend">Compatibility is <strong style="color:var(--red)">declining</strong> - ${counts}</div>`;
+  return `<div class="trend">Compatibility is <strong>stable</strong> - ${counts}</div>`;
 }
 
 // - Deck Verified status helpers (stub for now) -------

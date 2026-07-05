@@ -1,5 +1,5 @@
 // Entry module for game-stats.html. Migrated from game-stats.js.
-import { computeGameStats } from '../lib/scoring/gameStats.js?v=883b9a4c';
+import { computeGameStats } from '../lib/scoring/gameStats.js?v=8dc92cf7';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner } from '../shared/hardware.js?v=6a1246aa';
 import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange } from '../shared/chart-interactions.js?v=6b608095';
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=25783509';
@@ -287,7 +287,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     if (recent == null || older == null) {
       return `<div style="color:var(--muted);font-size:0.85rem;padding:8px 0">
         Not enough timestamped reports across both windows to compute a trend.
-        Need at least 2 reports in the last 90 days AND 2 in the prior 90-270d window.
+        Need at least 5 reports in the last 90 days AND 5 in the prior 90-270d window.
       </div>`;
     }
     const recentPct = Math.round(recent * 100);
