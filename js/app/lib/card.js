@@ -42,7 +42,12 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const storeTag = storePill
     ? `<span class="game-card-store-tag game-card-store-pill--${storeKey}"><span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
-  const thumbHtml = `<div class="game-card-thumb-wrap">${thumbInner}${storeTag}</div>`;
+  // Demo detection is title-based for now (#199 follow-up). Renders a green
+  // diagonal corner stripe over the thumbnail like Steam Next Fest so demos
+  // are visually distinct from full titles.
+  const isDemo = /\bdemo\b/i.test(String(title || ''));
+  const demoStripe = isDemo ? `<span class="game-card-demo-stripe" aria-label="Demo">DEMO</span>` : '';
+  const thumbHtml = `<div class="game-card-thumb-wrap">${thumbInner}${storeTag}${demoStripe}</div>`;
 
   const label = tier ? tier.toUpperCase() : (badge || 'No Rating');
   const isNoRating = !tier && !badge;

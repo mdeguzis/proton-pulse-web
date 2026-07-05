@@ -615,3 +615,44 @@
 @media (max-width: 480px) {
   .pp-toast-container { right: 10px; left: 10px; bottom: 10px; max-width: none; }
 }
+
+/* Demo corner stripe on game cards (#199 follow-up). Mirrors Steam Next Fest:
+   diagonal green ribbon in the top-left corner of the thumbnail. */
+.game-card-demo-stripe {
+  position: absolute;
+  top: 12px;
+  left: -34px;
+  width: 110px;
+  background: #90ba3c;
+  color: #0a0c10;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding: 3px 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Store label + DEMO pill next to game title on the game page (#199 follow-up) */
+.game-title-store {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 0.7em;
+  margin-left: 6px;
+  letter-spacing: 0.02em;
+}
+.game-title-demo-pill {
+  display: inline-block;
+  background: #90ba3c;
+  color: #0a0c10;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.55em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+  margin-left: 8px;
+}

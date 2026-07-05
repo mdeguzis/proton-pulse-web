@@ -134,8 +134,9 @@ describe('home page browse -- text filter box', () => {
   });
 
   test('both filter pipelines pass results through _filterByText with textFilter', () => {
-    // Recent and Popular sections must both honor the text box.
-    const matches = homeSrc.match(/_filterByText\(_filterByStore\([^]*?, textFilter\)/g) || [];
+    // Recent and Popular sections must both honor the text box. The library
+    // filter now sits between store and text so match _filterByLibrary too.
+    const matches = homeSrc.match(/_filterByText\(_filterByLibrary\(_filterByStore\([^]*?, textFilter\)/g) || [];
     expect(matches.length).toBe(2);
   });
 
@@ -145,7 +146,7 @@ describe('home page browse -- text filter box', () => {
   });
 
   test('text filter counts toward the active-filter badge when non-empty', () => {
-    expect(homeSrc).toContain('storeSel.size + (textFilter.trim() ? 1 : 0)');
+    expect(homeSrc).toContain('storeSel.size + librarySel.size + (textFilter.trim() ? 1 : 0)');
   });
 
   test('clear filters resets the text box value and textFilter state', () => {
