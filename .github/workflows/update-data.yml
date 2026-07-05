@@ -362,10 +362,53 @@ jobs:
             printf 'STEAM_API_KEY=%s\n' "${{ secrets.STEAM_API_KEY }}" > .env
           fi
 
+      # finalize_only + staging_with_finalize skip probing entirely, so there
+      # are no newly-probed discoveries to reconcile. Skip this step in those
+      # modes (it needs pipeline-state.json from the artifact, which isn't
+      # generated on these paths).
       - name: Backfill Probe Discoveries
+        if: inputs.finalize_only != true && inputs.staging_with_finalize != true
         run: |
           uv run python scripts/split_reports.py probe-backfill \
             /tmp/protondb-output
+
+      # Synthesize pipeline-state.json from disk when the artifact is absent
+      # (finalize_only + staging_with_finalize). Walks /tmp/protondb-output/data
+      # for (app_id, year) tuples so finalize's read_pipeline_state has real
+      # index_keys to iterate. Other fields are empty since there's no new
+      # probing on these paths.
+      - name: Synthesize pipeline-state from disk
+        if: inputs.finalize_only == true || inputs.staging_with_finalize == true
+        run: |
+          uv run python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path("/tmp/protondb-output")
+          data = root / "data"
+          keys = []
+          if data.is_dir():
+              for app_dir in data.iterdir():
+                  if not app_dir.is_dir():
+                      continue
+                  name = app_dir.name
+                  # Reverse app_id_to_dir naming: gog_/epic_ prefixes become
+                  # gog:/epic:; bare digits stay as-is.
+                  if name.startswith("gog_"):
+                      app_id = "gog:" + name[4:]
+                  elif name.startswith("epic_"):
+                      app_id = "epic:" + name[5:]
+                  else:
+                      app_id = name
+                  for year_file in app_dir.glob("*.json"):
+                      stem = year_file.stem
+                      if stem in {"latest", "index", "votes", "metadata"}:
+                          continue
+                      keys.append([app_id, stem])
+          state = {"parsed_count": 0, "index_keys": keys, "backfilled_keys": [], "no_data_app_ids": []}
+          out = root / "pipeline-state.json"
+          out.write_text(json.dumps(state, indent=2) + "\n")
+          print(f"[synthesized-state] wrote {len(keys)} index_keys to {out}")
+          PY
 
       - name: Finalize (Indexes + Coverage)
         env:

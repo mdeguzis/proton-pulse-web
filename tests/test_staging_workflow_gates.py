@@ -75,3 +75,23 @@ def test_probe_artifact_download_skipped_when_build_skipped():
     gate = step["if"]
     assert "inputs.finalize_only != true" in gate
     assert "inputs.staging_with_finalize != true" in gate
+
+
+def test_backfill_probe_step_skipped_when_no_new_probes():
+    # Backfill Probe Discoveries reconciles freshly-probed results into the
+    # data tree. finalize_only + staging_with_finalize skip probing, so this
+    # step has nothing to do and would blow up on missing pipeline-state.json.
+    step = _step("finalize", "Backfill Probe Discoveries")
+    gate = step["if"]
+    assert "inputs.finalize_only != true" in gate
+    assert "inputs.staging_with_finalize != true" in gate
+
+
+def test_pipeline_state_synthesized_from_disk_on_finalize_only_paths():
+    # When the artifact is missing, finalize still needs a pipeline-state.json
+    # so read_pipeline_state finds real index_keys. Both finalize-only modes
+    # must trigger the synth step.
+    step = _step("finalize", "Synthesize pipeline-state from disk")
+    gate = step["if"]
+    assert "inputs.finalize_only == true" in gate
+    assert "inputs.staging_with_finalize == true" in gate
