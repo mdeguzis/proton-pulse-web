@@ -314,6 +314,7 @@ jobs:
           cp gh-pages-data/game-images.json /tmp/protondb-output/ 2>/dev/null || true
           cp gh-pages-data/game-images-skip.json /tmp/protondb-output/ 2>/dev/null || true
           cp gh-pages-data/game-images-cache.json /tmp/protondb-output/ 2>/dev/null || true
+          cp gh-pages-data/nonsteam-images-cache.json /tmp/protondb-output/ 2>/dev/null || true
           cp gh-pages-data/release-years-cache.json /tmp/protondb-output/ 2>/dev/null || true
 
       - name: Restore pipeline cache
@@ -465,6 +466,7 @@ jobs:
           cp /tmp/protondb-output/game-images.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-skip.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-cache.json . 2>/dev/null || true
+          cp /tmp/protondb-output/nonsteam-images-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/release-years-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/gog-catalog-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/epic-catalog-cache.json . 2>/dev/null || true
@@ -494,7 +496,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
@@ -535,6 +537,7 @@ jobs:
           cp /tmp/protondb-output/game-images.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-skip.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-cache.json . 2>/dev/null || true
+          cp /tmp/protondb-output/nonsteam-images-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/release-years-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/gog-catalog-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/epic-catalog-cache.json . 2>/dev/null || true
@@ -557,7 +560,7 @@ jobs:
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
@@ -793,6 +796,7 @@ jobs:
           cp /tmp/protondb-output/game-images.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-skip.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-cache.json . 2>/dev/null || true
+          cp /tmp/protondb-output/nonsteam-images-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/release-years-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/gog-catalog-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/epic-catalog-cache.json . 2>/dev/null || true
@@ -822,7 +826,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
@@ -1014,6 +1018,7 @@ jobs:
           cp /tmp/protondb-output/game-images.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-skip.json . 2>/dev/null || true
           cp /tmp/protondb-output/game-images-cache.json . 2>/dev/null || true
+          cp /tmp/protondb-output/nonsteam-images-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/release-years-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/gog-catalog-cache.json . 2>/dev/null || true
           cp /tmp/protondb-output/epic-catalog-cache.json . 2>/dev/null || true
@@ -1043,7 +1048,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
