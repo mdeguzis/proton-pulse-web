@@ -18,7 +18,7 @@ import { escapeHtml } from '../utils.js?v=2668b2f0';
 import {
   probeSteamHeader, refetchSteamHeader, refetchNonSteamHeader, refetchSgdbHeader, searchSgdb,
   setBoxArtOverride, uploadBoxArtOverride, clearBoxArtOverride, listBoxArtOverrides,
-} from '../api/boxart.js?v=c99238ee';
+} from '../api/boxart.js?v=1cf18005';
 
 // Strip trademark / registered / service-mark symbols (and collapse the
 // whitespace they leave behind) from a store title so it works as a
@@ -848,7 +848,26 @@ export async function renderBoxartAdminDetail(appId) {
     el.hidden = false;
     el.textContent = text;
     el.className = 'admin-hint';
+    // pre-line so the multi-line diagnostic from _formatBoxartResult keeps
+    // its structure without needing innerHTML/br injection. (#199)
+    el.style.whiteSpace = 'pre-line';
     if (isError) el.classList.add('admin-error');
+  }
+  // Format a refetch/probe result into a multi-line diagnostic block so
+  // admins see exactly which URL was hit, the status, and any Steam
+  // redirect target (e.g. old appid 5488 -> new appid 45700). (#199)
+  function _formatBoxartResult(action, result) {
+    if (result.ok) {
+      return `${action} ok\nsource: ${result.source || 'unknown'}\nresolved via: ${result.resolved_via || 'unknown'}\nurl: ${result.url}`;
+    }
+    const lines = [`${action} failed`];
+    if (result.source) lines.push(`source: ${result.source}`);
+    if (result.status != null) lines.push(`status: ${result.status}`);
+    lines.push(`error: ${result.error || 'unknown'}`);
+    if (result.attempted_url) lines.push(`attempted url: ${result.attempted_url}`);
+    if (result.final_url) lines.push(`store redirected to: ${result.final_url}`);
+    if (result.upstream_snippet) lines.push(`upstream body: ${result.upstream_snippet}`);
+    return lines.join('\n');
   }
 
   // SteamGridDB search-and-pick panel. Persistent (outside the refreshed
@@ -929,7 +948,7 @@ export async function renderBoxartAdminDetail(appId) {
         } else {
           result = await refetchSgdbHeader(row.appId);
         }
-        setStatus(result.ok ? `${action} ok: ${result.url}` : `${action} failed: ${result.error || 'unknown'}`, !result.ok);
+        setStatus(_formatBoxartResult(action, result), !result.ok);
       } else if (action === 'set-url') {
         ctx = { appId: row.appId };
         modalInput.value = row.override?.image_url || row.cachedUrl || '';
