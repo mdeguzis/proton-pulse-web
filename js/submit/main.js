@@ -37,22 +37,23 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
   backLink.href = `app.html#/app/${appId}`;
 
   let title = titleParam;
+  // Search-index lookup: always run so we can also read column 10
+  // (replaced_by) for the warning banner, not just fall back for missing
+  // titles. Cached to a shared variable so the replaced_by check reuses it.
+  let searchIndex = null;
+  let indexHit = null;
+  try {
+    const searchUrl = /^localhost/.test(location.host)
+      ? 'https://www.proton-pulse.com/search-index.json'
+      : 'search-index.json';
+    const resp = await fetch(searchUrl);
+    if (resp.ok) {
+      searchIndex = await resp.json();
+      indexHit = Array.isArray(searchIndex) && searchIndex.find(row => String(row[0]) === String(appId));
+      if (!title && indexHit) title = indexHit[1] || '';
+    }
+  } catch {}
   if (!title) {
-    // Resolve via search-index.json (single canonical list of [appId, title]
-    // pairs). The previous attempt fetched data/{appId}/ which returns the
-    // directory's auto-generated HTML listing, not JSON -- so title silently
-    // fell through to "App {id}" for every submission.
-    try {
-      const searchUrl = /^localhost/.test(location.host)
-        ? 'https://www.proton-pulse.com/search-index.json'
-        : 'search-index.json';
-      const resp = await fetch(searchUrl);
-      if (resp.ok) {
-        const index = await resp.json();
-        const hit = Array.isArray(index) && index.find(row => String(row[0]) === String(appId));
-        if (hit) title = hit[1] || '';
-      }
-    } catch {}
     if (!title) {
       // Last-ditch: per-app data file. Use latest.json (real path) rather
       // than the directory listing
@@ -101,6 +102,33 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
   if (subtitleEl) {
     subtitleEl.hidden = false;
     subtitleEl.textContent = `${storeGuess} \u00b7 App ${appId}`;
+  }
+
+  // Replaced-by warning banner: if this appid was superseded by a newer one
+  // (search-index column 10, populated by game_images.py), tell the user their
+  // report will land on an old build. Renders above the form so they see it
+  // before answering anything. (#199 follow-up)
+  const replacedBy = indexHit && indexHit[10] ? String(indexHit[10]) : '';
+  if (replacedBy) {
+    const replacedTitle = (searchIndex || []).find(row => String(row[0]) === replacedBy)?.[1] || `App ${replacedBy}`;
+    const holder = document.querySelector('.main-inner');
+    const formHost = document.getElementById('submit-form-content');
+    if (holder && formHost) {
+      const banner = document.createElement('div');
+      banner.className = 'submit-replaced-warning';
+      banner.innerHTML = `
+        <strong>Heads up:</strong> This app was replaced.
+        Steam now sells this title as
+        <a class="submit-replaced-link" href="submit.html?app=${encodeURIComponent(replacedBy)}&title=${encodeURIComponent(replacedTitle)}">${escHtml(replacedTitle)}</a>.
+        Old app id: <code>${escHtml(String(appId))}</code>, new app id: <code>${escHtml(replacedBy)}</code>.
+        Submitting here files a report against the <em>original</em> build. If you're playing the current version,
+        <a class="submit-replaced-link" href="submit.html?app=${encodeURIComponent(replacedBy)}&title=${encodeURIComponent(replacedTitle)}">submit against the new appid</a> instead.
+      `;
+      formHost.parentNode.insertBefore(banner, formHost);
+    }
+  }
+  function escHtml(s) {
+    return String(s == null ? '' : s).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
   }
 
   // auth check. On localhost the Steam OAuth redirect is configured for the

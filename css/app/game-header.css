@@ -1218,3 +1218,23 @@
   align-self: center;
 }
 .submit-report-legacy:hover { color: var(--accent); }
+
+/* Replaced-by warning at the top of the submit form (#199 follow-up) */
+.submit-replaced-warning {
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(232, 172, 41, 0.35);
+  background: rgba(232, 172, 41, 0.10);
+  color: var(--text);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+.submit-replaced-warning code {
+  font-family: var(--mono);
+  font-size: 0.82em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.05);
+}
+.submit-replaced-link { color: var(--accent); font-weight: 600; }
