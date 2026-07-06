@@ -133,9 +133,10 @@ describe('Missing Box Art component contract', () => {
     // rows we know have no source) not raw cachedUrl presence.
     expect(COMP).toMatch(/scope === 'has'\s+&& derivedStatus === 'missing'/);
     expect(COMP).toMatch(/scope === 'missing' && derivedStatus !== 'missing'/);
-    // Signature grew to accept appId + knownMissingSteam so Steam entries
-    // flagged missing in game-images-cache.json also count (#199).
-    expect(COMP).toMatch(/function _deriveStatus\(type, appId, cachedUrl, hasOverride, knownMissingSteam\)/);
+    // Signature grew to accept appId + knownMissingSteam + knownMissingNonSteam
+    // so Steam entries flagged in game-images-cache.json AND non-Steam entries
+    // reported by client onerror also count as missing (#199).
+    expect(COMP).toMatch(/function _deriveStatus\(type, appId, cachedUrl, hasOverride, knownMissingSteam, knownMissingNonSteam\)/);
   });
 
   test('game title hyperlinks to the app page so admins can jump to it', () => {
@@ -327,8 +328,16 @@ describe('SteamGridDB search-and-pick', () => {
     });
 
     test('_buildRows destructures knownMissingSteam and threads it into _deriveStatus', () => {
-      expect(COMP).toMatch(/function _buildRows\([^)]*knownMissingSteam[^)]*\)/);
-      expect(COMP).toMatch(/_deriveStatus\(type,\s*appId,\s*cachedUrl,\s*!!override,\s*knownMissingSteam\)/);
+      expect(COMP).toMatch(/function _buildRows\([^)]*knownMissingSteam[^)]*knownMissingNonSteam[^)]*\)/);
+      expect(COMP).toMatch(/_deriveStatus\(type,\s*appId,\s*cachedUrl,\s*!!override,\s*knownMissingSteam,\s*knownMissingNonSteam\)/);
+    });
+
+    test('client-side image_load_errors are merged into the missing sets', () => {
+      // Loader fetches recent onerror reports from the anon-read table so
+      // admins see 404s happening in the wild for any store (#199 follow-up).
+      expect(COMP).toContain('image_load_errors?select=app_id,store_type');
+      // gog:/epic: ids partition into non-Steam set, everything else into Steam.
+      expect(COMP).toMatch(/aid\.startsWith\('gog:'\)\s*\|\|\s*aid\.startsWith\('epic:'\)/);
     });
   });
 });

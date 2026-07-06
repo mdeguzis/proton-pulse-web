@@ -1,5 +1,5 @@
 // Entry module for index.html (homepage). Migrated from index.js.
-import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=25783509';
+import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=ba0d7848';
 import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport, currentColCount } from '../lib/tile-pad.js?v=7c022a1e';
 import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';

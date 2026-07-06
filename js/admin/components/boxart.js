@@ -34,12 +34,13 @@ const BATCH_YIELD_MS = 50;          // pause between batches so the UI stays res
 let _cache = null;
 async function _loadIndexes() {
   if (_cache) return _cache;
-  const [siRes, giRes, gcRes, nsRes, overrides] = await Promise.all([
+  const [siRes, giRes, gcRes, nsRes, overrides, clientErrors] = await Promise.all([
     fetch(await dataUrl('search-index.json')).catch(() => null),
     fetch(await dataUrl('game-images.json')).catch(() => null),
     fetch(await dataUrl('game-images-cache.json')).catch(() => null),
     fetch(await dataUrl('nonsteam-images.json')).catch(() => null),
     listBoxArtOverrides().catch(() => ({ ok: false, rows: [] })),
+    _fetchClientImageErrors().catch(() => []),
   ]);
   const searchIndex = (siRes && siRes.ok) ? await siRes.json().catch(() => []) : [];
   const gameImages  = (giRes && giRes.ok) ? await giRes.json().catch(() => ({})) : {};
@@ -56,20 +57,45 @@ async function _loadIndexes() {
     const status = entry?.status;
     if (status === 'missing' || status === 'delisted') knownMissingSteam.add(String(aid));
   }
+  // Client-side onerror reports from image_load_errors: covers runtime 404s
+  // for any storefront (Steam CDN drift, GOG/Epic catalog rot). Merged into
+  // both known-missing Sets so admin picks up broken art users are actually
+  // seeing right now. (#199 follow-up)
+  const knownMissingNonSteam = new Set();
+  for (const row of (clientErrors || [])) {
+    const aid = String(row?.app_id || '');
+    if (!aid) continue;
+    if (aid.startsWith('gog:') || aid.startsWith('epic:')) knownMissingNonSteam.add(aid);
+    else knownMissingSteam.add(aid);
+  }
   // Admin overrides beat all other sources; keyed by app_id for O(1)
   // lookup during row build + status render.
   const overrideMap = {};
   for (const row of (overrides.rows || [])) {
     if (row?.app_id) overrideMap[String(row.app_id)] = row;
   }
-  _cache = { searchIndex, gameImages, nonSteam, overrideMap, knownMissingSteam };
+  _cache = { searchIndex, gameImages, nonSteam, overrideMap, knownMissingSteam, knownMissingNonSteam };
   return _cache;
+}
+
+// Pull recent client-side image_load_errors rows via the anon REST endpoint.
+// Public-read RLS is intentional: this is telemetry, not sensitive data, and
+// the admin bundle already runs unauthenticated for other public reads.
+async function _fetchClientImageErrors() {
+  const url = window.SUPABASE_URL || 'https://ilsgdshkaocrmibwdezk.supabase.co';
+  const key = window.SUPABASE_ANON_KEY || '';
+  if (!key) return [];
+  const r = await fetch(`${url}/rest/v1/image_load_errors?select=app_id,store_type,hit_count,last_seen&order=last_seen.desc&limit=2000`, {
+    headers: { apikey: key, Authorization: `Bearer ${key}` },
+  });
+  if (!r.ok) return [];
+  return await r.json().catch(() => []);
 }
 
 // Derive the same status the Status column shows, without probing.
 // Admin override beats everything; otherwise the presence of a cached
 // URL and store type determine the label.
-function _deriveStatus(type, appId, cachedUrl, hasOverride, knownMissingSteam) {
+function _deriveStatus(type, appId, cachedUrl, hasOverride, knownMissingSteam, knownMissingNonSteam) {
   if (hasOverride) return 'override';
   if (type === 'steam') {
     // Pipeline flagged this Steam entry as unfixable (no standard CDN, no
@@ -78,11 +104,15 @@ function _deriveStatus(type, appId, cachedUrl, hasOverride, knownMissingSteam) {
     if (knownMissingSteam && knownMissingSteam.has(appId)) return 'missing';
     return cachedUrl ? 'fallback_cached' : 'default_cdn';
   }
+  // Non-Steam: pipeline records a URL as long as the catalog API returned one,
+  // so cachedUrl presence isn't proof the URL still works. Client-side onerror
+  // reports (image_load_errors) fill that gap for GOG/Epic (#199 follow-up).
+  if (knownMissingNonSteam && knownMissingNonSteam.has(appId)) return 'missing';
   return cachedUrl ? 'cached' : 'missing';
 }
 
 // search-index shape: [appId, title, tier, pdb, pulse, appType, releaseYear, delisted, adult]
-function _buildRows({ searchIndex, gameImages, nonSteam, overrideMap, knownMissingSteam }, { store, textFilter, scope, status }) {
+function _buildRows({ searchIndex, gameImages, nonSteam, overrideMap, knownMissingSteam, knownMissingNonSteam }, { store, textFilter, scope, status }) {
   const q = String(textFilter || '').trim().toLowerCase();
   const rows = [];
   for (const row of searchIndex) {
@@ -96,7 +126,7 @@ function _buildRows({ searchIndex, gameImages, nonSteam, overrideMap, knownMissi
     let cachedUrl = null;
     if (type === 'steam') cachedUrl = gameImages[appId] || null;
     else                   cachedUrl = nonSteam[appId] || null;
-    const derivedStatus = _deriveStatus(type, appId, cachedUrl, !!override, knownMissingSteam);
+    const derivedStatus = _deriveStatus(type, appId, cachedUrl, !!override, knownMissingSteam, knownMissingNonSteam);
     // scope filter: has = row is presumed to display box art
     // (Steam default CDN OR any cached URL OR override). missing =
     // only rows we know don't display box art (non-Steam with no
@@ -518,7 +548,7 @@ export async function renderBoxartAdmin() {
   function _removeOverrideFromRow(tr, appId) {
     if (indexes.overrideMap) delete indexes.overrideMap[appId];
     const r = state.rows.find(x => x.appId === appId);
-    if (r) { r.override = null; r.derivedStatus = _deriveStatus(r.type, r.appId, r.cachedUrl, false, indexes.knownMissingSteam); }
+    if (r) { r.override = null; r.derivedStatus = _deriveStatus(r.type, r.appId, r.cachedUrl, false, indexes.knownMissingSteam, indexes.knownMissingNonSteam); }
     const statusEl = tr.querySelector('.boxart-status');
     if (statusEl && r) statusEl.innerHTML = _initialStatusHtml(r);
     const clearBtn = tr.querySelector('button[data-action="clear"]');
@@ -787,7 +817,7 @@ export async function renderBoxartAdminDetail(appId) {
   const type = searchRow[5] || (String(appId).startsWith('gog:') ? 'gog' : String(appId).startsWith('epic:') ? 'epic' : 'steam');
   const cachedUrl = type === 'steam' ? (indexes.gameImages[appId] || null) : (indexes.nonSteam[appId] || null);
   const override = indexes.overrideMap?.[appId] || null;
-  const row = { appId: String(appId), title: String(searchRow[1] || ''), type, cachedUrl, override, derivedStatus: _deriveStatus(type, String(appId), cachedUrl, !!override, indexes.knownMissingSteam) };
+  const row = { appId: String(appId), title: String(searchRow[1] || ''), type, cachedUrl, override, derivedStatus: _deriveStatus(type, String(appId), cachedUrl, !!override, indexes.knownMissingSteam, indexes.knownMissingNonSteam) };
 
   document.getElementById('boxart-detail-title').textContent = `Box Art: ${row.title || row.appId} (${row.type})`;
 
