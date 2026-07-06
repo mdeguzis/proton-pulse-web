@@ -17,6 +17,7 @@ import {
   CONTROLLER_PATTERNS, ONLINE_NET_PATTERNS,
 } from '../shared/analytics-patterns.js?v=c119f011';
 import { renderPurposeChart, crossTabToCorrelation } from '../shared/purpose-charts.js?v=d383b3bd';
+import { renderLibraryTab } from './library-view.js?v=5881023e';
 
 // #207: purpose-chart instances so we destroy() before re-rendering on
 // filter change. Keyed by canvas id.
@@ -108,7 +109,7 @@ function _renderPatternCatalogHtml() {
   `).join('');
 }
 
-const TABS = ['overall', 'per-store', 'correlations'];
+const TABS = ['overall', 'per-store', 'correlations', 'my-library'];
 function getActiveTab() {
   const hash = window.location.hash || '';
   const m = /tab=([\w-]+)/.exec(hash);
@@ -124,6 +125,7 @@ function setActiveTab(tab) {
   window.location.hash = next;
   _applyTabVisibility();
 }
+let _libraryTabRendered = false;
 function _applyTabVisibility() {
   const active = getActiveTab();
   for (const t of TABS) {
@@ -131,6 +133,14 @@ function _applyTabVisibility() {
     if (el) el.hidden = (t !== active);
     const btn = document.querySelector(`[data-tab-btn="${t}"]`);
     if (btn) btn.classList.toggle('stats-tab-btn--active', t === active);
+  }
+  // Lazy-load the My Library tab the first time it's activated. Every fetch
+  // requires auth + a REST hit; skip it on other tab views to keep the
+  // default overall render fast.
+  if (active === 'my-library' && !_libraryTabRendered) {
+    _libraryTabRendered = true;
+    const host = document.getElementById('library-tab-host');
+    if (host) renderLibraryTab(host);
   }
 }
 // Tab clicks are delegated so the render pass doesn't have to re-bind them.
@@ -216,6 +226,7 @@ function renderAll() {
       <button type="button" class="stats-tab-btn" data-tab-btn="overall">Overall</button>
       <button type="button" class="stats-tab-btn" data-tab-btn="per-store">Per-store</button>
       <button type="button" class="stats-tab-btn" data-tab-btn="correlations">Correlations</button>
+      <button type="button" class="stats-tab-btn" data-tab-btn="my-library">My Library</button>
     </nav>
 
     <section id="tab-overall" data-tab="overall">
@@ -348,8 +359,20 @@ function renderAll() {
         ${_renderPatternCatalogHtml()}
       </div>
     </section>
+
+    <section id="tab-my-library" data-tab="my-library" hidden>
+      <div id="library-tab-host">
+        <div class="chart-card">
+          <h3>For your library</h3>
+          <p class="fg-card-hint">Loading...</p>
+        </div>
+      </div>
+    </section>
   `;
 
+  // Fresh DOM: the library-tab-host we rendered before is gone, so allow the
+  // lazy loader to fire again if the user is on the My Library tab.
+  _libraryTabRendered = false;
   _applyTabVisibility();
 
   // Bind chart contents to data

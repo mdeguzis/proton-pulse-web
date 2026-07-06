@@ -102,6 +102,8 @@ js/stats/main.js
 js/stats/utils.js
 js/stats/filters.js
 js/stats/charts.js
+js/stats/library-view.js
+js/shared/library-correlations.js
 scoring.html
 confidence.html
 game-stats.html

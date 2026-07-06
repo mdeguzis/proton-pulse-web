@@ -712,6 +712,29 @@ h2 {
   color: var(--text);
   font-size: 0.78rem;
 }
+/* Compact recommendations table for the My Library tab (#209). Deliberately
+   sparse; the tab is meant to fit in one screen without scrolling. */
+.library-recs {
+  width: 100%;
+  margin-top: 14px;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.library-recs th,
+.library-recs td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.library-recs th {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.library-recs td a { color: var(--text); text-decoration: none; }
+.library-recs td a:hover { color: var(--accent); text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -733,6 +756,6 @@ h2 {
 </div></div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-<script type="module" src="js/stats/main.js?v=ceadfeb9"></script>
+<script type="module" src="js/stats/main.js?v=6b1960e6"></script>
 </body>
 </html>
