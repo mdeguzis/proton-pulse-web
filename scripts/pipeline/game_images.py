@@ -184,6 +184,37 @@ def _probe_store_page(app_id: str, timeout: int = 10) -> bool | None:
         return None
 
 
+def _extract_replaced_by(app_id: str, timeout: int = 10) -> str | None:
+    """When appdetails says success=false, the store page may redirect to a
+    NEWER appid (e.g. 5488 -> 45700 for Devil May Cry 4, or Hitman 1/2 ->
+    World of Assassination). Follows redirects and returns the new appid if
+    the final URL is /app/{different_id}/, else None.
+
+    Distinct from _probe_store_page which only cares about 200 vs redirect.
+    Called only on the delisted path so cost is bounded.
+    """
+    url = STEAM_STORE_PAGE_URL.format(appid=app_id)
+    req = urllib.request.Request(
+        url, method="GET", headers={"User-Agent": "Mozilla/5.0 (proton-pulse pipeline probe)"},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            final_url = resp.geturl()
+    except Exception as exc:
+        log(f"[game-images] WARN: replaced_by probe failed for {app_id}: {exc}", debug=True)
+        return None
+    # Steam's replacement redirects always land on /app/<newid>/<slug>/.
+    # Anything else (homepage, agecheck, region-block) is not a replacement.
+    import re as _re
+    match = _re.search(r"/app/(\d+)(?:/|$)", final_url)
+    if not match:
+        return None
+    new_id = match.group(1)
+    if new_id == str(app_id):
+        return None
+    return new_id
+
+
 def is_steam_store_up() -> bool:
     """Canary check: probe a known-good app's store page once per run. If the
     canary fails we cannot trust the per-app delisted signal because Steam's
@@ -443,8 +474,19 @@ def build_game_images(output_dir) -> dict[str, str]:
                 # Two-signal confirmation fired: appdetails success=false AND
                 # store page 302's to the homepage. Canary verified Steam was
                 # responsive at run start, so this is a high-confidence flag.
-                cache[app_id] = {"status": "delisted", "probed_at": today}
-                log(f"[game-images] {app_id}: delisted (appdetails false + store page redirect)")
+                # Additionally probe whether Steam redirected to a NEWER appid
+                # (e.g. 5488 -> 45700 for Devil May Cry 4). When replaced, the
+                # entry stays delisted but records replaced_by so the frontend
+                # can show a "now sold as X" banner and fall back to the new
+                # appid's header image.
+                replaced_by = _extract_replaced_by(app_id)
+                entry = {"status": "delisted", "probed_at": today}
+                if replaced_by:
+                    entry["replaced_by"] = replaced_by
+                    log(f"[game-images] {app_id}: delisted, replaced by {replaced_by}")
+                else:
+                    log(f"[game-images] {app_id}: delisted (appdetails false + store page redirect)")
+                cache[app_id] = entry
             else:
                 # _STATUS_LIVE with no header, or _STATUS_UNKNOWN. Try
                 # SteamGridDB as a last-resort fallback -- community
@@ -477,12 +519,26 @@ def build_game_images(output_dir) -> dict[str, str]:
         for aid, e in cache.items()
         if e.get("status") in ("override", "hashed", "sgdb") and e.get("url")
     }
+    # Replaced-by inheritance: an old appid without its own header URL falls
+    # back to the new appid's URL (or standard CDN) so cards keep box art
+    # instead of showing the missing tile. Frontend still shows the "now sold
+    # as X" banner from search-index column 10 so users see the replacement.
+    for aid, e in cache.items():
+        new_aid = e.get("replaced_by") if isinstance(e, dict) else None
+        if not new_aid or aid in frontend:
+            continue
+        new_entry = cache.get(str(new_aid), {})
+        if new_entry.get("url"):
+            frontend[aid] = new_entry["url"]
+        else:
+            frontend[aid] = _standard_header_url(str(new_aid))
     frontend_path = output_dir / "game-images.json"
     frontend_path.write_text(json.dumps(frontend, indent=2) + "\n", encoding="utf-8")
     override_ct = sum(1 for e in cache.values() if e.get("status") == "override")
     hashed_ct   = sum(1 for e in cache.values() if e.get("status") == "hashed")
     sgdb_ct     = sum(1 for e in cache.values() if e.get("status") == "sgdb")
-    log(f"[game-images] wrote {len(frontend)} URL(s) to {frontend_path.name} ({override_ct} override, {hashed_ct} hashed, {sgdb_ct} sgdb)")
+    replaced_ct = sum(1 for e in cache.values() if isinstance(e, dict) and e.get("replaced_by"))
+    log(f"[game-images] wrote {len(frontend)} URL(s) to {frontend_path.name} ({override_ct} override, {hashed_ct} hashed, {sgdb_ct} sgdb, {replaced_ct} replaced-inherit)")
 
     return frontend
 
@@ -510,21 +566,36 @@ def enrich_search_index_with_delisted(output_dir) -> None:
         return
 
     delisted_ids = {aid for aid, e in cache.items() if isinstance(e, dict) and e.get("status") == "delisted"}
-    if not delisted_ids:
-        log("[delisted] no delisted Steam apps in cache, skipping enrich")
+    # Map of oldAppId -> newAppId for Steam entries replaced by a newer appid
+    # (see _extract_replaced_by). Emitted into column 10 of search-index so
+    # the frontend can render a "now sold as X" banner and inherit box art.
+    replaced_by_map: dict[str, str] = {
+        aid: str(e["replaced_by"])
+        for aid, e in cache.items()
+        if isinstance(e, dict) and e.get("replaced_by")
+    }
+    if not delisted_ids and not replaced_by_map:
+        log("[delisted] no delisted or replaced Steam apps in cache, skipping enrich")
         return
 
-    updated = 0
+    updated_delisted = 0
+    updated_replaced = 0
     for row in entries:
         if not isinstance(row, list) or len(row) < 1:
             continue
-        if str(row[0]) in delisted_ids:
-            # Pad to 8 columns: [id, title, tier, pdb, pulse, appType, releaseYear, delisted]
-            while len(row) < 8:
+        aid = str(row[0])
+        # Pad to 11 columns: [id, title, tier, pdb, pulse, appType, releaseYear,
+        # delisted, adult, trend, replaced_by]. Column 10 is new.
+        if aid in delisted_ids or aid in replaced_by_map:
+            while len(row) < 11:
                 row.append(None)
+        if aid in delisted_ids:
             row[7] = True
-            updated += 1
+            updated_delisted += 1
+        if aid in replaced_by_map:
+            row[10] = replaced_by_map[aid]
+            updated_replaced += 1
 
-    if updated:
+    if updated_delisted or updated_replaced:
         index_path.write_text(json.dumps(entries, separators=(",", ":")), encoding="utf-8")
-        log(f"[delisted] flagged {updated} entries as delisted in search-index.json")
+        log(f"[delisted] flagged {updated_delisted} entries as delisted, {updated_replaced} as replaced")
