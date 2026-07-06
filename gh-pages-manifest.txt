@@ -23,6 +23,7 @@ js/app/components/search.js
 js/shared/config.js
 js/shared/analytics-patterns.js
 js/shared/purpose-charts.js
+js/shared/analytics-history.js
 js/shared/scoring.js
 js/shared/submit.js
 js/shared/drafts.js
