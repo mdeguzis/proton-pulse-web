@@ -339,5 +339,14 @@ describe('SteamGridDB search-and-pick', () => {
       // gog:/epic: ids partition into non-Steam set, everything else into Steam.
       expect(COMP).toMatch(/aid\.startsWith\('gog:'\)\s*\|\|\s*aid\.startsWith\('epic:'\)/);
     });
+
+    test('nonsteam-images-cache.json missing entries merge into knownMissingNonSteam (#203)', () => {
+      // Pipeline probe (nonsteam_images_probe.py) HEAD-checks every GOG/Epic
+      // cover URL and records status:missing for 404s. Loader must pull the
+      // cache and add those ids so admin surfaces broken covers even when no
+      // user has hit the card yet.
+      expect(COMP).toContain("dataUrl('nonsteam-images-cache.json')");
+      expect(COMP).toMatch(/entry\?\.status\s*===\s*'missing'.*knownMissingNonSteam\.add/s);
+    });
   });
 });

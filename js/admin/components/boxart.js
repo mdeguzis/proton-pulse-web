@@ -34,11 +34,12 @@ const BATCH_YIELD_MS = 50;          // pause between batches so the UI stays res
 let _cache = null;
 async function _loadIndexes() {
   if (_cache) return _cache;
-  const [siRes, giRes, gcRes, nsRes, overrides, clientErrors] = await Promise.all([
+  const [siRes, giRes, gcRes, nsRes, nscRes, overrides, clientErrors] = await Promise.all([
     fetch(await dataUrl('search-index.json')).catch(() => null),
     fetch(await dataUrl('game-images.json')).catch(() => null),
     fetch(await dataUrl('game-images-cache.json')).catch(() => null),
     fetch(await dataUrl('nonsteam-images.json')).catch(() => null),
+    fetch(await dataUrl('nonsteam-images-cache.json')).catch(() => null),
     listBoxArtOverrides().catch(() => ({ ok: false, rows: [] })),
     _fetchClientImageErrors().catch(() => []),
   ]);
@@ -46,6 +47,7 @@ async function _loadIndexes() {
   const gameImages  = (giRes && giRes.ok) ? await giRes.json().catch(() => ({})) : {};
   const nonSteam    = (nsRes && nsRes.ok) ? await nsRes.json().catch(() => ({})) : {};
   const cacheRaw    = (gcRes && gcRes.ok) ? await gcRes.json().catch(() => ({})) : {};
+  const nsCacheRaw  = (nscRes && nscRes.ok) ? await nscRes.json().catch(() => ({})) : {};
   // game-images-cache.json is the pipeline's authoritative status per Steam
   // appid. status "missing" and "delisted" both mean the standard Steam CDN
   // has nothing usable AND we couldn't find a fallback -- these are the games
@@ -67,6 +69,14 @@ async function _loadIndexes() {
     if (!aid) continue;
     if (aid.startsWith('gog:') || aid.startsWith('epic:')) knownMissingNonSteam.add(aid);
     else knownMissingSteam.add(aid);
+  }
+  // Pipeline probe results for non-Steam covers (#203). nonsteam-images-cache.json
+  // is written by nonsteam_images_probe.py, one entry per GOG/Epic id with
+  // { url, status, probed_at }. Missing status means the URL HEAD-checked as
+  // 404 during the last pipeline run. Merged with the client-error set so
+  // admins see broken non-Steam covers even if no user has hit that card yet.
+  for (const [aid, entry] of Object.entries(nsCacheRaw)) {
+    if (entry?.status === 'missing') knownMissingNonSteam.add(String(aid));
   }
   // Admin overrides beat all other sources; keyed by app_id for O(1)
   // lookup during row build + status render.

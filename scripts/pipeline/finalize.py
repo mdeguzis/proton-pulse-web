@@ -1089,7 +1089,14 @@ def generate_nonsteam_images(output_path: Path) -> None:
     catalog APIs return a cover image per game, so map them by canonical id and
     let the frontend use it as the card thumbnail. Degrades to an empty map if
     the covers are unavailable.
+
+    #203: after the catalog build we run nonsteam_images_probe.probe_nonsteam_images
+    to HEAD-check every URL. Broken URLs are dropped from the frontend map and
+    recorded in nonsteam-images-cache.json so the admin Box Art Manager can
+    surface them the same way it surfaces missing Steam entries.
     """
+    from .nonsteam_images_probe import probe_nonsteam_images
+
     images: dict[str, str] = {}
     try:
         for pid, url in load_gog_covers().items():
@@ -1104,9 +1111,16 @@ def generate_nonsteam_images(output_path: Path) -> None:
     except Exception as exc:
         log(f"[nonsteam-images] WARN: Epic covers unavailable: {exc}")
 
+    # Probe every URL and write nonsteam-images-cache.json. Returns the
+    # filtered map (known-ok + not-yet-probed) that we ship to the frontend.
+    filtered = probe_nonsteam_images(output_path, images)
+
     out_file = output_path / "nonsteam-images.json"
-    out_file.write_text(json.dumps(images, separators=(",", ":")))
-    log(f"[nonsteam-images] Written {len(images):,} cover URLs to {out_file}")
+    out_file.write_text(json.dumps(filtered, separators=(",", ":")))
+    log(
+        f"[nonsteam-images] Written {len(filtered):,} cover URLs to {out_file} "
+        f"(dropped {len(images) - len(filtered)} confirmed-broken)"
+    )
 
 
 def generate_coverage_report(
