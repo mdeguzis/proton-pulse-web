@@ -3,19 +3,19 @@
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=1b8ae722';
 import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=8dc92cf7';
-import { getWebClientId } from '../../shared/submit.js?v=8c22e9ad';
+import { getWebClientId } from '../../shared/submit.js?v=64f1a52e';
 import { fetchDeckStatusForApp, fetchMinRequirements } from '../api/deck-status.js?v=dfac69c8';
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
-import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=0594677b';
+import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=d76564a6';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
-import { enhanceAuthorBlocks } from './author.js?v=2316d334';
+import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=a1a075ee';
-import { renderCard } from './report-card.js?v=8a17ff46';
+import { renderCard } from './report-card.js?v=a3e68133';
 import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=f9591262';
-import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=25783509';
+import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=ba0d7848';
 import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=c7e1268c';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 
@@ -334,6 +334,14 @@ export async function renderGamePage(appId) {
   // family share, backups, or regional accounts) -- we just flag it so the
   // visitor knows there is no Steam page to visit.
   const isDelisted = !!indexHit?.[7];
+  // Column 10 (added by game_images.py + enrich_search_index_with_delisted):
+  // Steam replaced this appid with a newer one (e.g. 5488 -> 45700 for Devil
+  // May Cry 4, Hitman 1/2 -> World of Assassination). Powers a banner + card
+  // badge so users see the current appid and new submits land there instead.
+  const replacedBy = indexHit?.[10] ? String(indexHit[10]) : '';
+  const replacedByTitle = replacedBy
+    ? (searchIndex || []).find(row => String(row[0]) === replacedBy)?.[1] || `App ${replacedBy}`
+    : '';
   // Effective ProtonDB report count: the mirrored count when we have it, else
   // the live aggregate total. Drives the header counts so a live-only game
   // shows the real ProtonDB rating instead of "0 reports / pending".
@@ -586,9 +594,31 @@ export async function renderGamePage(appId) {
     const _flagStarter = 'What looks wrong:\n\nWhat I expected:\n\n';
     const flagUrl = `https://github.com/mdeguzis/proton-pulse-web/issues/new?template=game_report.yml&game_name=${encodeURIComponent(title)}&app_id=${encodeURIComponent(String(appId))}&description=${encodeURIComponent(_flagStarter)}`;
 
+    // Replaced-by banner: this appid was superseded by a newer one. Point new
+    // submits at the new appid so they land where users can find them, but
+    // leave a fallback link for people who still play the exact old version.
+    const replacedBanner = replacedBy
+      ? `<div class="game-replaced-banner">
+          <strong>This app has been replaced.</strong>
+          Steam now sells this title as <a class="game-replaced-link" href="#/app/${esc(replacedBy)}">${esc(replacedByTitle)}</a>.
+          Old app id: <code>${esc(String(appId))}</code>, new app id: <code>${esc(replacedBy)}</code>.
+          New reports go to the new app automatically. Old reports on this page still apply if you're playing the original build.
+        </div>`
+      : '';
+    const submitHref = replacedBy
+      ? `submit.html?app=${esc(replacedBy)}&title=${encodeURIComponent(replacedByTitle || title)}`
+      : `submit.html?app=${appId}&title=${encodeURIComponent(title)}`;
+    const submitBtnTitle = replacedBy
+      ? `Submit a report against the current appid (${replacedBy}) so it lands where users of the new version will find it`
+      : '';
+    const submitOldFallback = replacedBy
+      ? ` <a class="submit-report-legacy" href="submit.html?app=${appId}&title=${encodeURIComponent(title)}" title="Submit a report against the original appid (${appId}) instead of the replacement">Old build?</a>`
+      : '';
+
     el.innerHTML = `
       <div class="game-header">
-        <div class="game-title">${esc(title)}${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}</div>
+        ${replacedBanner}
+        <div class="game-title">${esc(title)} <span class="game-title-store" title="Storefront this entry maps to">(${esc(storeLabelFromAppId(appId) || 'Steam')})</span>${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}${replacedBy ? ` <span class="game-title-replaced-pill" title="Replaced by app ${esc(replacedBy)}: ${esc(replacedByTitle)}">REPLACED</span>` : ''}${/\bdemo\b/i.test(title) ? ' <span class="game-title-demo-pill" title="This entry looks like a demo based on the title. Reports may not reflect the full game.">DEMO</span>' : ''}</div>
         <div class="game-header-grid">
           <img class="game-header-art" src="${STEAM_IMG(appId)}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
           ${ratingPanel}
@@ -597,7 +627,7 @@ export async function renderGamePage(appId) {
             <a class="info-btn info-btn-flag" id="flag-game-btn" href="${flagUrl}" target="_blank" rel="noopener" title="Flag a problem with this game entry (opens the Game Report template)"><svg width="17" height="17" viewBox="0 0 24 24" fill="#e0554f"><path d="M14.4 6l-.4-2H5v17h2v-7h5.6l.4 2h7V6z"/></svg></a>
             <a class="info-btn info-btn-labeled" id="stats-btn" href="game-stats.html?app=${appId}" title="Per-game compatibility stats: confidence factors, trend, Proton version success rates, launch option frequency, and proven launch options"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="18" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="12" width="4" height="9" rx="1"/></svg><span>Stats</span></a>
             ${renderDeckStatusButton(appId)}
-            <a class="submit-report-btn" href="submit.html?app=${appId}&title=${encodeURIComponent(title)}">Submit Report</a>
+            <a class="submit-report-btn" href="${submitHref}" title="${esc(submitBtnTitle)}">Submit Report</a>${submitOldFallback}
           </div>
         </div>
         <div class="info-tooltip" id="deck-status-tip">

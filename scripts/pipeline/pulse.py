@@ -100,6 +100,7 @@ def normalize_pulse_row(row: dict[str, Any]) -> dict[str, Any]:
         "formResponses": row.get("form_responses"),
         "configKey": row.get("config_key"),
         "gameOwned": row.get("game_owned"),
+        "ownerVerified": row.get("owner_verified"),
         "timestamp": _ts_from_created_at(row.get("created_at", "")),
         "pulseId": row.get("id"),
         "appType": row.get("app_type") or "steam",

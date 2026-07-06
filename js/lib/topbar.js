@@ -429,6 +429,14 @@
   if (storeDisplayPref === 'icon') {
     document.documentElement.setAttribute('data-store-display', 'icon');
   }
+  // Trend arrow: on by default, off suppresses the glyph on every card.
+  // Apply here so the attribute is on <html> before the first paint --
+  // otherwise the arrows flash in briefly before the options page toggle
+  // reads and clears them.
+  const trendArrowPref = localStorage.getItem('pp:trend-arrow');
+  if (trendArrowPref === 'off') {
+    document.documentElement.setAttribute('data-trend-arrow', 'off');
+  }
 
   // inject favicon if the page doesn't already have one
   if (!document.querySelector('link[rel="icon"]')) {

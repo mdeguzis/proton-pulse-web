@@ -1283,3 +1283,58 @@ pre.flag-raw-json {
 .admin-stat--muted { border-left-color: #6b7d8f; }
 .admin-stat--ok    { border-left-color: #5ba32b; }
 .admin-stat--total { border-left-color: var(--accent, #66c0f4); }
+
+/* Request/Response sections in the API Explorer (#199 follow-up) */
+.apix-req-section {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.02);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.apix-section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.apix-req-line {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 2px 0;
+}
+.apix-req-key {
+  color: var(--muted);
+  min-width: 96px;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.apix-req-line code {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--text);
+  word-break: break-all;
+}
+#apix-req-url {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+  word-break: break-all;
+}
+
+/* Curl -L -v-style redirect trace in the API Explorer (#199 follow-up).
+   Same look as apix-output but with a green tint so admins recognise the
+   trace block at a glance. */
+.apix-hop-trace {
+  border-left: 3px solid #2ea043;
+  padding-left: 12px;
+  color: var(--text);
+  background: rgba(46, 160, 67, 0.05);
+}

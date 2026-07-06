@@ -4,11 +4,13 @@ import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
 import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=f9591262';
 import { daysAgo, latestPerApp } from '../utils.js?v=c7e1268c';
-import { renderGameCard } from '../lib/card.js?v=754da47b';
+import { renderGameCard } from '../lib/card.js?v=5642a459';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=7c022a1e';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
+import { renderHomeLibraryChart } from './home-library-chart.js?v=c7e8a2d8';
+import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
 const LOAD_COUNTS = [50, 100, 150, 200];
@@ -90,6 +92,15 @@ function _filterByStore(reports, sel) {
   return reports.filter(r => sel.has(r.appType || appTypeFromAppId(r.appId)));
 }
 
+// Library filter (#199 follow-up). When "mine" is selected, only include
+// entries whose appId is in the signed-in user's cached Steam library.
+// libraryAppIds is a Set<number>. Empty / null means no filtering.
+function _filterByLibrary(reports, sel, libraryAppIds) {
+  if (!sel || sel.size === 0 || sel.has('all')) return reports;
+  if (!libraryAppIds || libraryAppIds.size === 0) return [];
+  return reports.filter(r => libraryAppIds.has(Number(r.appId)));
+}
+
 // Text filter: case-insensitive substring match on the game title. Empty/blank
 // text means no filtering. Trims so a stray space does not hide everything.
 function _filterByText(reports, text) {
@@ -117,6 +128,44 @@ function _allShownNote(count) {
   return `<p class="home-results-note">Showing all ${count} result${count === 1 ? '' : 's'}</p>`;
 }
 
+// Trend direction lookup by appId. Populated from search-index column 9
+// after loadSearchIndex resolves. Empty for older payloads that predate the
+// trend column so cards render neutral (no arrow) until the pipeline catches up.
+let _trendByAppId = null;
+function _lookupTrend(appId) {
+  if (!_trendByAppId || appId == null) return '';
+  return _trendByAppId.get(String(appId)) || '';
+}
+function _buildTrendMap() {
+  if (_trendByAppId) return;
+  _trendByAppId = new Map();
+  if (!Array.isArray(searchIndex)) return;
+  for (const row of searchIndex) {
+    if (!Array.isArray(row) || row.length < 10) continue;
+    const t = row[9];
+    if (t === 'improving' || t === 'declining') _trendByAppId.set(String(row[0]), t);
+  }
+}
+
+// Replaced-by lookup by appId. Search-index column 10 (added by
+// enrich_search_index_with_delisted); empty for older payloads or games that
+// were never replaced. Powers the REPLACED badge on cards (#199 follow-up).
+let _replacedByAppId = null;
+function _lookupReplacedBy(appId) {
+  if (!_replacedByAppId || appId == null) return '';
+  return _replacedByAppId.get(String(appId)) || '';
+}
+function _buildReplacedByMap() {
+  if (_replacedByAppId) return;
+  _replacedByAppId = new Map();
+  if (!Array.isArray(searchIndex)) return;
+  for (const row of searchIndex) {
+    if (!Array.isArray(row) || row.length < 11) continue;
+    const rb = row[10];
+    if (rb) _replacedByAppId.set(String(row[0]), String(rb));
+  }
+}
+
 function _recentCardHtml(r) {
   // recent-reports.json carries appType ('gog'|'epic'|'steam') from the pipeline.
   // Fall back to deriving it from the id so non-Steam games are labeled even on
@@ -129,6 +178,8 @@ function _recentCardHtml(r) {
     sub: _popularSub(r),
     tier: _cardTier(r.tier),
     storePill: storeLabel(appType),
+    trend: _lookupTrend(r.appId),
+    replacedBy: _lookupReplacedBy(r.appId),
   });
 }
 
@@ -150,6 +201,14 @@ export async function renderHomePage() {
       fetch(mostPlayedUrl).catch(() => null),
       loadSearchIndex().catch(() => null),
     ]);
+
+    // searchIndex is available now that loadSearchIndex resolved (Promise.all
+     // above). Build the appId -> trend map once so every card renderer below
+     // gets the arrow via a single Map.get instead of re-scanning the array.
+    _trendByAppId = null;
+    _replacedByAppId = null;
+    _buildTrendMap();
+    _buildReplacedByMap();
 
     let allRecentReports = [];
     if (recentResp && recentResp.ok) {
@@ -206,6 +265,11 @@ export async function renderHomePage() {
               <button class="pg-filter" type="button" data-value="protondb">ProtonDB</button>
               <button class="pg-filter" type="button" data-value="pulse">Pulse</button>
             </div>
+            <div class="pg-filter-group" id="home-library-checks">
+              <span class="pg-filter-group-label">Library</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="mine" title="Only games in your Steam library (requires sign-in and a synced library)">My games</button>
+            </div>
             <div class="filter-panel-footer filter-panel-footer--stack">
               <button class="filter-save-btn" id="home-filter-persist" type="button" aria-pressed="false">Save filters</button>
               <button class="filter-clear-btn" id="home-filter-clear" type="button">Clear filters</button>
@@ -227,6 +291,7 @@ export async function renderHomePage() {
           </div>
         </div>
       </div>
+      <div id="home-library-chart-mount"></div>
       <div id="recent-section">
         <div class="section-label-row" style="margin-bottom:10px">
           <span class="section-label" style="margin:0">Recent Reports</span>
@@ -247,6 +312,8 @@ export async function renderHomePage() {
     let tierSel = new Set();   // empty => all tiers
     let sourceSel = new Set(); // empty => all sources
     let storeSel = new Set();  // empty => all stores
+    let librarySel = new Set(); // empty => all; 'mine' => only owned games (#199)
+    let libraryAppIds = null;  // cached Set<number>; lazily loaded on first "mine" use
     let currentLayout = 'grid';
 
     // The previous super-condensed list-row renderer is gone -- the two
@@ -311,7 +378,7 @@ export async function renderHomePage() {
           return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending' };
         });
       }
-      const filtered = filterAdult(_filterByText(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), textFilter));
+      const filtered = filterAdult(_filterByText(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), textFilter));
       const cardsEl = document.getElementById('cards-popular');
       const loadMoreEl = document.getElementById('load-more-popular');
       if (!cardsEl) return;
@@ -359,6 +426,7 @@ export async function renderHomePage() {
         title: g.title,
         sub: g.tier === 'pending' ? 'No reports yet · be the first' : _popularSub(g),
         tier: _cardTier(g.tier), storePill: storeLabel(g.appType || appTypeFromAppId(g.appId)),
+        trend: _lookupTrend(g.appId),
       });
     }
 
@@ -372,7 +440,7 @@ export async function renderHomePage() {
     }
 
     function applyRecentFilters() {
-      const filtered = filterAdult(_filterByText(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), textFilter));
+      const filtered = filterAdult(_filterByText(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), textFilter));
       const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
@@ -456,6 +524,7 @@ export async function renderHomePage() {
         localStorage.setItem(FILTERS_KEY, JSON.stringify({
           sort: currentSort, text: textFilter,
           tier: [...tierSel], source: [...sourceSel], store: [...storeSel],
+          library: [...librarySel],
         }));
       } catch { /* ignore */ }
     }
@@ -486,11 +555,13 @@ export async function renderHomePage() {
       tierSel = new Set(saved.tier || []);
       sourceSel = new Set(saved.source || []);
       storeSel = new Set(saved.store || []);
+      librarySel = new Set(saved.library || []);
       _applyPillSelection(tierGroup, saved.tier);
       _applyPillSelection(sourceGroup, saved.source);
       _applyPillSelection(storeGroup, saved.store);
+      _applyPillSelection(libraryGroup, saved.library);
       updateFilterBadge();
-      console.debug('[browse-filters] restored saved filters', { source: FILTERS_KEY, sort: currentSort, tiers: [...tierSel], sources: [...sourceSel], stores: [...storeSel], text: textFilter });
+      console.debug('[browse-filters] restored saved filters', { source: FILTERS_KEY, sort: currentSort, tiers: [...tierSel], sources: [...sourceSel], stores: [...storeSel], library: [...librarySel], text: textFilter });
       return true;
     }
     document.getElementById('home-filter-persist')?.addEventListener('click', () => {
@@ -502,7 +573,7 @@ export async function renderHomePage() {
 
     // Active-filter badge: count specific tier + source + store selections.
     function updateFilterBadge() {
-      const n = tierSel.size + sourceSel.size + storeSel.size + (textFilter.trim() ? 1 : 0);
+      const n = tierSel.size + sourceSel.size + storeSel.size + librarySel.size + (textFilter.trim() ? 1 : 0);
       filterToggle?.classList.toggle('has-filters', n > 0);
       if (filterBadge) {
         filterBadge.textContent = String(n);
@@ -513,6 +584,7 @@ export async function renderHomePage() {
     const tierGroup = document.getElementById('home-tier-checks');
     const sourceGroup = document.getElementById('home-source-checks');
     const storeGroup = document.getElementById('home-store-checks');
+    const libraryGroup = document.getElementById('home-library-checks');
     if (tierGroup) _wirePillGroup(tierGroup, { onChange: sel => {
       tierSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
@@ -522,10 +594,17 @@ export async function renderHomePage() {
     if (storeGroup) _wirePillGroup(storeGroup, { onChange: sel => {
       storeSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
+    if (libraryGroup) _wirePillGroup(libraryGroup, { onChange: async sel => {
+      librarySel = sel;
+      if (sel.has('mine') && !libraryAppIds) {
+        libraryAppIds = await getMyLibraryAppIds().catch(() => new Set());
+      }
+      updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
+    }});
 
     // Clear filters: reset every group back to "All", sort back to Recent.
     document.getElementById('home-filter-clear')?.addEventListener('click', () => {
-      [tierGroup, sourceGroup, storeGroup].forEach(g => {
+      [tierGroup, sourceGroup, storeGroup, libraryGroup].forEach(g => {
         if (!g) return;
         g.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'));
         const allBtn = g.querySelector('.pg-filter[data-value="all"]');
@@ -540,6 +619,7 @@ export async function renderHomePage() {
       tierSel = new Set();
       sourceSel = new Set();
       storeSel = new Set();
+      librarySel = new Set();
       updateFilterBadge();
       applyRecentFilters();
       applyPopularFilters();
@@ -618,8 +698,23 @@ export async function renderHomePage() {
     applyLayout(_savedLayout()); // restore saved list/grid before first render
 
     _restoreFilters(); // re-apply a saved filter set (if any) before first render
+
+    // #199: honor ?filter=mine so the profile "View my games" button lands
+    // here with the pill pre-activated. Overrides any restored library set
+    // for this visit so the deep-link intent wins.
+    const urlFilter = new URLSearchParams(window.location.search).get('filter');
+    if (urlFilter === 'mine') {
+      librarySel = new Set(['mine']);
+      _applyPillSelection(libraryGroup, ['mine']);
+      libraryAppIds = await getMyLibraryAppIds().catch(() => new Set());
+      updateFilterBadge();
+    }
+
     applyRecentFilters();
     applyPopularFilters();
+
+    // Signed-in library breakdown chart. No-op when signed out (#199).
+    void renderHomeLibraryChart(document.getElementById('home-library-chart-mount'));
   } catch {
     el.innerHTML = '<div class="state-box">Search for a game above or navigate to <code>#/app/{appId}</code></div>';
   }
@@ -632,10 +727,14 @@ export async function renderHomeFallback() {
   ]);
   const popularIds = ['730', '570', '440', '292030', '1245620', '1091500', '1174180', '413150'];
   const titleById = new Map((searchIndex || []).map(([id, title]) => [String(id), title]));
+  _trendByAppId = null;
+  _replacedByAppId = null;
+  _buildTrendMap();
+  _buildReplacedByMap();
   const popularCards = popularIds
     .map((appId) => ({ appId, title: titleById.get(appId) || `App ${appId}` }))
     .filter((row) => row.title)
-    .map((row) => renderGameCard({ href: `#/app/${row.appId}`, appId: row.appId, title: row.title, sub: 'ProtonDB data available' }))
+    .map((row) => renderGameCard({ href: `#/app/${row.appId}`, appId: row.appId, title: row.title, sub: 'ProtonDB data available', trend: _lookupTrend(row.appId) }))
     .join('');
 
   const pulseCards = renderPulseReportCards(pulseReports);
@@ -690,6 +789,7 @@ export function renderActivityCard(kind, row, counts = {}) {
     sub,
     tier: rating || undefined,
     storePill: storePillLabel,
+    trend: _lookupTrend(appId),
   });
 }
 
@@ -703,6 +803,7 @@ export function renderPulseReportCards(rows) {
       title: row.title || `App ${row.app_id}`,
       sub,
       tier: rating || undefined,
+      trend: _lookupTrend(row.app_id),
     });
   }).join('');
 }

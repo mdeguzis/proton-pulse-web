@@ -1,6 +1,7 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=1b8ae722';
-import { populateSubmitForm, prefillSubmitFormFromMyHardware, submitReport } from '../shared/submit.js?v=8c22e9ad';
+import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, submitReport } from '../shared/submit.js?v=64f1a52e';
+import { deleteDraft, getDraft, snapshotFormData, upsertDraft } from '../shared/drafts.js?v=da9caf1e';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
@@ -36,22 +37,23 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
   backLink.href = `app.html#/app/${appId}`;
 
   let title = titleParam;
+  // Search-index lookup: always run so we can also read column 10
+  // (replaced_by) for the warning banner, not just fall back for missing
+  // titles. Cached to a shared variable so the replaced_by check reuses it.
+  let searchIndex = null;
+  let indexHit = null;
+  try {
+    const searchUrl = /^localhost/.test(location.host)
+      ? 'https://www.proton-pulse.com/search-index.json'
+      : 'search-index.json';
+    const resp = await fetch(searchUrl);
+    if (resp.ok) {
+      searchIndex = await resp.json();
+      indexHit = Array.isArray(searchIndex) && searchIndex.find(row => String(row[0]) === String(appId));
+      if (!title && indexHit) title = indexHit[1] || '';
+    }
+  } catch {}
   if (!title) {
-    // Resolve via search-index.json (single canonical list of [appId, title]
-    // pairs). The previous attempt fetched data/{appId}/ which returns the
-    // directory's auto-generated HTML listing, not JSON -- so title silently
-    // fell through to "App {id}" for every submission.
-    try {
-      const searchUrl = /^localhost/.test(location.host)
-        ? 'https://www.proton-pulse.com/search-index.json'
-        : 'search-index.json';
-      const resp = await fetch(searchUrl);
-      if (resp.ok) {
-        const index = await resp.json();
-        const hit = Array.isArray(index) && index.find(row => String(row[0]) === String(appId));
-        if (hit) title = hit[1] || '';
-      }
-    } catch {}
     if (!title) {
       // Last-ditch: per-app data file. Use latest.json (real path) rather
       // than the directory listing
@@ -90,6 +92,44 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
   document.querySelector('.eyebrow').textContent = isEdit
     ? 'Edit a Report'
     : fromCloud ? 'Publish a Report' : 'Submit a Report';
+  // Subtitle under the game name: storefront + app id so a reporter always
+  // knows exactly which entry they're writing against, especially when a
+  // title exists on multiple stores or after a replaced-by redirect (#199).
+  const storeGuess = String(appId).startsWith('gog:')  ? 'GOG'
+                     : String(appId).startsWith('epic:') ? 'Epic'
+                     : 'Steam';
+  const subtitleEl = document.getElementById('game-subtitle');
+  if (subtitleEl) {
+    subtitleEl.hidden = false;
+    subtitleEl.textContent = `${storeGuess} \u00b7 App ${appId}`;
+  }
+
+  // Replaced-by warning banner: if this appid was superseded by a newer one
+  // (search-index column 10, populated by game_images.py), tell the user their
+  // report will land on an old build. Renders above the form so they see it
+  // before answering anything. (#199 follow-up)
+  const replacedBy = indexHit && indexHit[10] ? String(indexHit[10]) : '';
+  if (replacedBy) {
+    const replacedTitle = (searchIndex || []).find(row => String(row[0]) === replacedBy)?.[1] || `App ${replacedBy}`;
+    const holder = document.querySelector('.main-inner');
+    const formHost = document.getElementById('submit-form-content');
+    if (holder && formHost) {
+      const banner = document.createElement('div');
+      banner.className = 'submit-replaced-warning';
+      banner.innerHTML = `
+        <strong>Heads up:</strong> This app was replaced.
+        Steam now sells this title as
+        <a class="submit-replaced-link" href="submit.html?app=${encodeURIComponent(replacedBy)}&title=${encodeURIComponent(replacedTitle)}">${escHtml(replacedTitle)}</a>.
+        Old app id: <code>${escHtml(String(appId))}</code>, new app id: <code>${escHtml(replacedBy)}</code>.
+        Submitting here files a report against the <em>original</em> build. If you're playing the current version,
+        <a class="submit-replaced-link" href="submit.html?app=${encodeURIComponent(replacedBy)}&title=${encodeURIComponent(replacedTitle)}">submit against the new appid</a> instead.
+      `;
+      formHost.parentNode.insertBefore(banner, formHost);
+    }
+  }
+  function escHtml(s) {
+    return String(s == null ? '' : s).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  }
 
   // auth check. On localhost the Steam OAuth redirect is configured for the
   // production domain, so signing in locally just bounces back to prod -- you
@@ -118,6 +158,72 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     document.getElementById('submit-form-content').innerHTML =
       `<div style="padding:24px;color:var(--red)">Failed to load form: ${err.message || err}</div>`;
     return;
+  }
+  // Show the Verified owner pill at the top of the form when the user's
+  // cached Steam library confirms ownership (#199).
+  void renderVerifiedOwnerStatus(el, appId);
+
+  // Cloud draft restore + Save Draft button. Only offer for fresh submits
+  // (edits reload from the report itself; fromCloud has its own path).
+  if (!isEdit && !fromCloud && session) {
+    try {
+      const draft = await getDraft(session, appId);
+      if (draft?.form_data) {
+        const restoreEl = el.querySelector('#sf-draft-restore');
+        const formEl = el.querySelector('#submit-report-form');
+        if (restoreEl && formEl) {
+          const ageMs = draft.updated_at ? Date.now() - new Date(draft.updated_at).getTime() : 0;
+          const ageLabel = ageMs > 86400000
+            ? `${Math.round(ageMs / 86400000)} day${Math.round(ageMs / 86400000) === 1 ? '' : 's'} ago`
+            : ageMs > 3600000
+              ? `${Math.round(ageMs / 3600000)} hour${Math.round(ageMs / 3600000) === 1 ? '' : 's'} ago`
+              : ageMs > 60000
+                ? `${Math.round(ageMs / 60000)} minute${Math.round(ageMs / 60000) === 1 ? '' : 's'} ago`
+                : 'just now';
+          restoreEl.hidden = false;
+          restoreEl.innerHTML = `
+            <div class="sf-draft-restore-body">
+              You have a saved draft for this game (from ${ageLabel}).
+              <button type="button" id="draft-restore-btn">Restore draft</button>
+              <button type="button" id="draft-discard-btn">Discard</button>
+            </div>`;
+          restoreEl.querySelector('#draft-restore-btn')?.addEventListener('click', () => {
+            applyDraftSnapshot(formEl, draft.form_data);
+            restoreEl.hidden = true;
+            window.ppToast?.success('Draft restored.');
+          });
+          restoreEl.querySelector('#draft-discard-btn')?.addEventListener('click', async () => {
+            restoreEl.hidden = true;
+            try { await deleteDraft(session, appId); window.ppToast?.success('Draft discarded.'); }
+            catch (e) { console.warn('[submit] discard draft failed', e); }
+          });
+        }
+      }
+    } catch (err) {
+      console.warn('[submit] draft restore lookup failed', err);
+    }
+  }
+
+  const saveDraftBtn = el.querySelector('#save-draft-btn');
+  if (saveDraftBtn && session) {
+    saveDraftBtn.addEventListener('click', async () => {
+      const formEl = el.querySelector('#submit-report-form');
+      if (!formEl) return;
+      const prevLabel = saveDraftBtn.textContent;
+      saveDraftBtn.disabled = true;
+      saveDraftBtn.textContent = 'Saving...';
+      try {
+        await upsertDraft(session, appId, snapshotFormData(formEl));
+        window.ppToast?.success('Draft saved. You can finish it later on any signed-in device.');
+      } catch (err) {
+        window.ppToast?.error(`Failed to save draft: ${err.message || err}`);
+      } finally {
+        saveDraftBtn.disabled = false;
+        saveDraftBtn.textContent = prevLabel;
+      }
+    });
+  } else if (saveDraftBtn) {
+    saveDraftBtn.hidden = true;
   }
 
   // #153: markdown editor is on site-wide now (no flag). Wrap the Notes
@@ -426,6 +532,10 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
           // Toast is the single success confirmation now; no duplicate inline text.
           window.ppToast?.success(isEdit ? 'Changes saved.' : 'Report submitted. Thanks!');
           if (typeof window.ppTrack === 'function') window.ppTrack('report_submit', { app_id: String(appId), is_edit: isEdit });
+          // Clean up the cloud draft now that the report is in.
+          if (!isEdit && !fromCloud && session) {
+            void deleteDraft(session, appId).catch(() => {});
+          }
           const dest = returnTo || `app.html#/app/${appId}`;
           setTimeout(() => { window.location.href = dest; }, 900);
         } else {

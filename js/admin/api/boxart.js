@@ -90,8 +90,18 @@ async function _callImageRefetch(appId, source) {
     });
     const body = await res.json().catch(() => null);
     if (!body) return _result(false, { status: res.status, error: `proxy HTTP ${res.status} (no body)` });
-    if (body.ok) return _result(true, { url: body.url });
-    return _result(false, { status: body.status, error: body.error || 'unknown' });
+    if (body.ok) return _result(true, { url: body.url, source: body.source, resolved_via: body.resolved_via });
+    // Preserve the diagnostic fields the edge function now returns so the
+    // admin UI can render a full multi-line explanation instead of a
+    // one-liner (#199 follow-up).
+    return _result(false, {
+      status: body.status,
+      error: body.error || 'unknown',
+      source: body.source,
+      attempted_url: body.attempted_url,
+      upstream_snippet: body.upstream_snippet,
+      final_url: body.final_url,
+    });
   } catch (e) {
     return _result(false, { error: `network: ${e.message || String(e)}` });
   }

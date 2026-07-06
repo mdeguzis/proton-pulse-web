@@ -183,7 +183,7 @@ def test_compute_game_summary_platinum(tmp_path):
         {"rating": "platinum", "source": "protondb"},
         {"rating": "platinum", "source": "protondb"},
     ]))
-    tier, pdb, pulse = _compute_game_summary(app_dir)
+    tier, pdb, pulse, _trend = _compute_game_summary(app_dir)
     assert tier == "platinum"
     assert pdb == 2
     assert pulse == 0
@@ -195,20 +195,21 @@ def test_compute_game_summary_mixed_sources(tmp_path):
         {"rating": "gold", "source": "protondb"},
         {"rating": "gold", "source": "pulse"},
     ]))
-    tier, pdb, pulse = _compute_game_summary(app_dir)
+    tier, pdb, pulse, _trend = _compute_game_summary(app_dir)
     assert pdb == 1
     assert pulse == 1
 
 def test_compute_game_summary_no_data(tmp_path):
     app_dir = tmp_path / "missing"
-    tier, pdb, pulse = _compute_game_summary(app_dir)
+    tier, pdb, pulse, trend = _compute_game_summary(app_dir)
     assert tier == "pending"
+    assert trend == ""
 
 def test_compute_game_summary_unrated(tmp_path):
     app_dir = tmp_path / "730"
     app_dir.mkdir()
     (app_dir / "2023.json").write_text(json.dumps([{"rating": "pending", "source": "protondb"}]))
-    tier, pdb, pulse = _compute_game_summary(app_dir)
+    tier, pdb, pulse, _trend = _compute_game_summary(app_dir)
     assert tier == "pending"
 
 def test_compute_game_summary_skips_reserved(tmp_path):
@@ -216,8 +217,87 @@ def test_compute_game_summary_skips_reserved(tmp_path):
     app_dir.mkdir()
     (app_dir / "latest.json").write_text(json.dumps([{"rating": "platinum", "source": "protondb"}]))
     (app_dir / "2023.json").write_text(json.dumps([{"rating": "borked", "source": "protondb"}]))
-    tier, _, _ = _compute_game_summary(app_dir)
+    tier, _, _, _ = _compute_game_summary(app_dir)
     assert tier == "borked"  # latest.json was skipped
+
+
+# ── trend computation ────────────────────────────────────────────────────────
+
+def _reports_at(now_ts, offsets_ratings):
+    """Build a report list where each entry is (days_ago, rating)."""
+    return [
+        {"rating": rating, "source": "protondb", "timestamp": now_ts - days * 86400}
+        for days, rating in offsets_ratings
+    ]
+
+def test_compute_game_summary_trend_improving(tmp_path):
+    # 6 recent reports all platinum vs 6 prior reports mostly borked ->
+    # playable share jumps well past the 15% threshold, so 'improving'.
+    now_ts = 1_700_000_000
+    app_dir = tmp_path / "1"
+    app_dir.mkdir()
+    reports = _reports_at(now_ts, [
+        (10, "platinum"), (20, "platinum"), (30, "platinum"),
+        (40, "platinum"), (50, "platinum"), (60, "gold"),
+        (120, "borked"), (140, "borked"), (160, "borked"),
+        (180, "borked"), (200, "borked"), (220, "gold"),
+    ])
+    (app_dir / "2023.json").write_text(json.dumps(reports))
+    _, _, _, trend = _compute_game_summary(app_dir, now_ts=now_ts)
+    assert trend == "improving"
+
+def test_compute_game_summary_trend_declining(tmp_path):
+    now_ts = 1_700_000_000
+    app_dir = tmp_path / "1"
+    app_dir.mkdir()
+    reports = _reports_at(now_ts, [
+        (10, "borked"), (20, "borked"), (30, "borked"),
+        (40, "borked"), (50, "borked"), (60, "bronze"),
+        (120, "platinum"), (140, "platinum"), (160, "platinum"),
+        (180, "gold"), (200, "gold"), (220, "silver"),
+    ])
+    (app_dir / "2023.json").write_text(json.dumps(reports))
+    _, _, _, trend = _compute_game_summary(app_dir, now_ts=now_ts)
+    assert trend == "declining"
+
+def test_compute_game_summary_trend_stable_returns_empty(tmp_path):
+    # Both windows well-sampled but the ratio barely moves -> stable, no arrow.
+    now_ts = 1_700_000_000
+    app_dir = tmp_path / "1"
+    app_dir.mkdir()
+    reports = _reports_at(now_ts, [
+        (10, "gold"), (20, "gold"), (30, "gold"), (40, "gold"), (50, "gold"),
+        (120, "gold"), (140, "gold"), (160, "gold"), (180, "gold"), (200, "gold"),
+    ])
+    (app_dir / "2023.json").write_text(json.dumps(reports))
+    _, _, _, trend = _compute_game_summary(app_dir, now_ts=now_ts)
+    assert trend == ""
+
+def test_compute_game_summary_trend_insufficient_recent(tmp_path):
+    # Only 3 recent reports (below the min-bucket floor of 5), so no verdict.
+    now_ts = 1_700_000_000
+    app_dir = tmp_path / "1"
+    app_dir.mkdir()
+    reports = _reports_at(now_ts, [
+        (10, "platinum"), (20, "platinum"), (30, "platinum"),
+        (120, "borked"), (140, "borked"), (160, "borked"),
+        (180, "borked"), (200, "borked"), (220, "borked"),
+    ])
+    (app_dir / "2023.json").write_text(json.dumps(reports))
+    _, _, _, trend = _compute_game_summary(app_dir, now_ts=now_ts)
+    assert trend == ""
+
+def test_compute_game_summary_trend_disabled_without_now_ts(tmp_path):
+    # Legacy callers that pass no now_ts still get the same 4-tuple with an
+    # empty trend, so tests that don't care about time don't need to fake it.
+    app_dir = tmp_path / "1"
+    app_dir.mkdir()
+    (app_dir / "2023.json").write_text(json.dumps([
+        {"rating": "platinum", "source": "protondb", "timestamp": 1_700_000_000},
+    ]))
+    tier, _, _, trend = _compute_game_summary(app_dir)
+    assert tier == "platinum"
+    assert trend == ""
 
 
 # ── generate_search_index ─────────────────────────────────────────────────────
@@ -236,6 +316,11 @@ def test_generate_search_index_basic(tmp_path):
     assert index[0][0] == "730"
     assert index[0][1] == "CS2"
     assert index[0][5] == "steam"  # appType
+    # Every row must carry a trend column (index 9) so JS lookups can rely on
+    # row[9] without a length guard on modern payloads. Empty is fine for
+    # under-sampled games; the JS side only draws for improving / declining.
+    assert len(index[0]) >= 10
+    assert index[0][9] == ""
 
 def test_generate_search_index_gog_stub_from_catalog(tmp_path):
     keys = set()

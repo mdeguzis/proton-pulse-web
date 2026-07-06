@@ -11,6 +11,45 @@
 
 const _CDN2 = id => `https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/header.jpg`;
 
+// Session-scoped set so we only POST once per appid per tab; browsers navigating
+// past the same broken card multiple times shouldn't hammer the reporter.
+const _reportedMissing = new Set();
+
+// Fire-and-forget report to image_load_errors so admin surfaces runtime 404s
+// across any storefront. Table's on-conflict does the hit_count bump. Errors
+// are swallowed (this is telemetry, not user-facing behavior) but logged for
+// debugging (#199 follow-up).
+function _reportMissingImage(appId, attemptedUrl) {
+  const id = String(appId || '');
+  if (!id || _reportedMissing.has(id)) return;
+  _reportedMissing.add(id);
+  if (!_SUPABASE_URL || !_SUPABASE_ANON_KEY) {
+    console.debug('[steam-img] report skipped (no supabase env)', { appId: id });
+    return;
+  }
+  const storeType = id.startsWith('gog:') ? 'gog' : id.startsWith('epic:') ? 'epic' : 'steam';
+  const body = {
+    app_id: id,
+    store_type: storeType,
+    attempted_url: attemptedUrl || null,
+    last_seen: new Date().toISOString(),
+  };
+  fetch(`${_SUPABASE_URL}/rest/v1/image_load_errors?on_conflict=app_id`, {
+    method: 'POST',
+    headers: {
+      apikey: _SUPABASE_ANON_KEY,
+      Authorization: `Bearer ${_SUPABASE_ANON_KEY}`,
+      'Content-Type': 'application/json',
+      Prefer: 'resolution=merge-duplicates,return=minimal',
+    },
+    body: JSON.stringify(body),
+  }).then(r => {
+    console.debug('[steam-img] reportMissingImage', { appId: id, storeType, ok: r.ok, status: r.status, source: 'image_load_errors' });
+  }).catch(err => {
+    console.debug('[steam-img] reportMissingImage threw', { appId: id, error: err?.message });
+  });
+}
+
 const _SUPABASE_URL      = window.SUPABASE_URL      || 'https://ilsgdshkaocrmibwdezk.supabase.co';
 const _SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || '';
 const _OVERRIDES_CACHE_KEY = 'boxart_overrides_v1';
@@ -204,6 +243,7 @@ export async function loadSteamImg(el, appId) {
     }
     console.warn(`[steam-img] appId=${id} no non-Steam cover available`);
     _bumpRoute('hidden');
+    _reportMissingImage(id, nsUrl || '');
     _showMissing(el);
     return;
   }
@@ -230,6 +270,7 @@ export async function loadSteamImg(el, appId) {
 
   console.warn(`[steam-img] appId=${id} all CDN paths exhausted`);
   _bumpRoute('hidden');
+  _reportMissingImage(id, map[id] || _CDN2(id));
   _showMissing(el);
 }
 

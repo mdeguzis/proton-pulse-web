@@ -104,3 +104,50 @@ describe('renderGameCard strip layout', () => {
     expect(html).toContain('>NO RATING<');
   });
 });
+
+describe('renderGameCard trend arrow', () => {
+  const renderGameCard = loadCard();
+
+  test('trend "improving" renders the up-arrow span in the pills row', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold', storePill: 'Steam', trend: 'improving' });
+    expect(html).toContain('game-card-trend game-card-trend--improving');
+    expect(html).toContain('Compatibility trending up');
+    const pills = html.slice(html.indexOf('game-card-pills'));
+    expect(pills).toContain('game-card-trend--improving');
+  });
+
+  test('trend "declining" renders the down-arrow span', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'bronze', trend: 'declining' });
+    expect(html).toContain('game-card-trend game-card-trend--declining');
+    expect(html).toContain('Compatibility trending down');
+  });
+
+  test('trend "stable" renders NO arrow (no glyph on unchanged games)', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold', trend: 'stable' });
+    expect(html).not.toContain('game-card-trend');
+  });
+
+  test('trend "insufficient" renders NO arrow', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold', trend: 'insufficient' });
+    expect(html).not.toContain('game-card-trend');
+  });
+
+  test('missing / undefined / empty trend renders NO arrow', () => {
+    const noKey = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold' });
+    const empty = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold', trend: '' });
+    const nully = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold', trend: null });
+    expect(noKey).not.toContain('game-card-trend');
+    expect(empty).not.toContain('game-card-trend');
+    expect(nully).not.toContain('game-card-trend');
+  });
+
+  test('trend arrow lives to the RIGHT of the store pill in pills row order', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold', storePill: 'Steam', trend: 'improving' });
+    const pillsStart = html.indexOf('game-card-pills');
+    const pillsSlice = html.slice(pillsStart);
+    const storeIdx = pillsSlice.indexOf('game-card-store-pill--steam');
+    const trendIdx = pillsSlice.indexOf('game-card-trend');
+    expect(storeIdx).toBeGreaterThan(-1);
+    expect(trendIdx).toBeGreaterThan(storeIdx);
+  });
+});

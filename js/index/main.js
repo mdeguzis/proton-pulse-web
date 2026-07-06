@@ -1,9 +1,9 @@
 // Entry module for index.html (homepage). Migrated from index.js.
-import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=25783509';
+import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=ba0d7848';
 import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport, currentColCount } from '../lib/tile-pad.js?v=7c022a1e';
 import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
-import { renderGameCard } from '../app/lib/card.js?v=754da47b';
+import { renderGameCard } from '../app/lib/card.js?v=5642a459';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
 // search dropdown, auth indicator) lives in topbar.js.
@@ -80,16 +80,40 @@ import { renderGameCard } from '../app/lib/card.js?v=754da47b';
   let storeSel = new Set(['steam']); // multi-select store filter; defaults to Steam
   let searchIndexCache = null;
   let steamPeakByTitle = new Map();
+  // appId -> trend direction ('improving'|'declining'). Built once search-index
+  // is available. Steam-only browse does not need the full index to render its
+  // list, but the trend column lives there, so we lazy-fetch and re-render when
+  // it lands (or, when already cached from a non-Steam filter, it's already in
+  // hand and the arrows show on the first paint).
+  let trendByAppId = new Map();
 
   function normTitle(s) {
     return String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  }
+
+  function _buildTrendMap() {
+    trendByAppId = new Map();
+    if (!Array.isArray(searchIndexCache)) return;
+    for (const row of searchIndexCache) {
+      if (!Array.isArray(row) || row.length < 10) continue;
+      const t = row[9];
+      if (t === 'improving' || t === 'declining') trendByAppId.set(String(row[0]), t);
+    }
+  }
+
+  function _lookupTrend(appId) {
+    if (appId == null) return '';
+    return trendByAppId.get(String(appId)) || '';
   }
 
   async function loadSearchIndex() {
     if (searchIndexCache) return searchIndexCache;
     try {
       const resp = await fetch(await dataUrl('search-index.json'));
-      if (resp.ok) searchIndexCache = await resp.json();
+      if (resp.ok) {
+        searchIndexCache = await resp.json();
+        _buildTrendMap();
+      }
     } catch (_) {}
     return searchIndexCache || [];
   }
@@ -114,6 +138,7 @@ import { renderGameCard } from '../app/lib/card.js?v=754da47b';
       sub,
       tier: rated ? rating : undefined,
       storePill: STORE_LABEL[g.appType] || 'Steam',
+      trend: _lookupTrend(g.appId),
     });
   }
 
@@ -122,7 +147,14 @@ import { renderGameCard } from '../app/lib/card.js?v=754da47b';
   // cards re-flowed into Steam-style vertical tiles by CSS).
 
   try {
-    const resp = await fetch(await dataUrl('most_played.json'));
+    // Kick off search-index in parallel so trend arrows are ready on the very
+    // first paint even when the user stays on Steam-only. loadSearchIndex
+    // itself no-ops when the cache is already populated (e.g. from a
+    // non-Steam filter earlier in the session).
+    const [resp] = await Promise.all([
+      fetch(await dataUrl('most_played.json')),
+      loadSearchIndex(),
+    ]);
     if (!resp.ok) {
       console.debug('[popular-games] most_played.json fetch not ok', { status: resp.status });
       return;

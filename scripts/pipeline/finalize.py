@@ -624,18 +624,51 @@ def _score_to_tier(score_pct: float) -> str:
     return "borked"
 
 
-def _compute_game_summary(app_dir: Path) -> tuple[str, int, int]:
-    """Walk a game's year files and return (overall_tier, protondb_count, pulse_count).
+# Trend windows + threshold mirror js/lib/scoring/gameStats.js:computeCompatTrend.
+# Kept in sync deliberately so browse cards and the game-page trend summary
+# read the same direction for the same game.
+_TREND_RECENT_DAYS = 90
+_TREND_PRIOR_MAX_DAYS = 270
+_TREND_MIN_BUCKET = 5
+_TREND_THRESHOLD = 0.15
+_POSITIVE_RATINGS = {"platinum", "gold", "silver"}
+
+
+def _bucket_trend(recent_pos: int, recent_total: int, prior_pos: int, prior_total: int) -> str:
+    """Return 'improving', 'declining', or '' from bucketed report counts.
+
+    Empty string means stable OR insufficient sample -- both cases render as
+    "no arrow" on cards, so cards don't need to distinguish them.
+    """
+    if recent_total < _TREND_MIN_BUCKET or prior_total < _TREND_MIN_BUCKET:
+        return ""
+    recent_ratio = recent_pos / recent_total
+    prior_ratio = prior_pos / prior_total
+    delta = recent_ratio - prior_ratio
+    if delta >= _TREND_THRESHOLD:
+        return "improving"
+    if delta <= -_TREND_THRESHOLD:
+        return "declining"
+    return ""
+
+
+def _compute_game_summary(app_dir: Path, now_ts: float | None = None) -> tuple[str, int, int, str]:
+    """Walk a game's year files and return (overall_tier, protondb_count, pulse_count, trend).
 
     Tier is the average of per-report rating scores mapped through scoreTiers --
     same algorithm the scoring page documents. Pending if no rated reports.
+    Trend compares the playable share (isPositive tiers) in the recent 90d
+    window against the 90-270d window; empty string when insufficient or stable.
+    Passing now_ts=None disables the trend computation so unit tests that only
+    care about tier + counts can skip constructing a fake clock.
     """
     total_score = 0.0
     rated_count = 0
     protondb_count = 0
     pulse_count = 0
+    recent_total = recent_pos = prior_total = prior_pos = 0
     if not app_dir.is_dir():
-        return ("pending", 0, 0)
+        return ("pending", 0, 0, "")
     for year_file in app_dir.glob("*.json"):
         stem = year_file.stem
         if stem in ("index", "latest", "votes", "metadata"):
@@ -658,10 +691,25 @@ def _compute_game_summary(app_dir: Path) -> tuple[str, int, int]:
             if rating in _RATING_SCORES:
                 total_score += _RATING_SCORES[rating]
                 rated_count += 1
+            if now_ts is not None:
+                ts = r.get("timestamp")
+                if isinstance(ts, (int, float)) and ts > 0:
+                    age_days = (now_ts - ts) / 86400
+                    if 0 <= age_days < _TREND_RECENT_DAYS:
+                        recent_total += 1
+                        if rating in _POSITIVE_RATINGS:
+                            recent_pos += 1
+                    elif _TREND_RECENT_DAYS <= age_days < _TREND_PRIOR_MAX_DAYS:
+                        prior_total += 1
+                        if rating in _POSITIVE_RATINGS:
+                            prior_pos += 1
+    trend = ""
+    if now_ts is not None:
+        trend = _bucket_trend(recent_pos, recent_total, prior_pos, prior_total)
     if rated_count == 0:
-        return ("pending", protondb_count, pulse_count)
+        return ("pending", protondb_count, pulse_count, trend)
     score_pct = (total_score / rated_count) * 100
-    return (_score_to_tier(score_pct), protondb_count, pulse_count)
+    return (_score_to_tier(score_pct), protondb_count, pulse_count, trend)
 
 
 def generate_recent_reports(data_output_path: Path, output_path: Path, limit: int = 100) -> None:
@@ -783,12 +831,13 @@ def generate_search_index(
     entries = []
     seen_ids: set[str] = set()
 
+    now_ts = time.time()
     for app_id in app_ids:
         app_dir = data_output_path / app_id_to_dir(app_id)
         title = _extract_title(app_dir)
         if not title:
             continue
-        tier, pdb_count, pulse_count = _compute_game_summary(app_dir)
+        tier, pdb_count, pulse_count, trend = _compute_game_summary(app_dir, now_ts=now_ts)
         app_type = app_type_from_id(app_id)
         # Adult flag lives at column 8. Steam descriptors are the source
         # of truth; GOG / Epic entries stay unflagged (no equivalent
@@ -806,7 +855,10 @@ def generate_search_index(
             if app_type == "steam"
             else False
         )
-        entries.append([app_id, title, tier, pdb_count, pulse_count, app_type, None, None, adult])
+        # Column 9 is the compatibility trend direction: 'improving',
+        # 'declining', or '' (stable / insufficient sample). Cards read it via
+        # renderGameCard's `trend` option to draw the up/down arrow.
+        entries.append([app_id, title, tier, pdb_count, pulse_count, app_type, None, None, adult, trend])
         seen_ids.add(app_id)
 
     if gog_catalog:
@@ -823,7 +875,7 @@ def generate_search_index(
                 year = gog_years.get(str(pid))
                 # 9-column shape matches Steam stubs: [id, title, tier,
                 # pdb, pulse, appType, releaseYear, delisted, adult].
-                entries.append([canonical_id, title, "", 0, 0, "gog", year, None, False])
+                entries.append([canonical_id, title, "", 0, 0, "gog", year, None, False, ""])
                 stubs += 1
                 if year:
                     with_year += 1
@@ -838,7 +890,7 @@ def generate_search_index(
             canonical_id = f"epic:{namespace}"
             if canonical_id not in seen_ids:
                 year = epic_years.get(namespace)
-                entries.append([canonical_id, title, "", 0, 0, "epic", year, None, False])
+                entries.append([canonical_id, title, "", 0, 0, "epic", year, None, False, ""])
                 stubs += 1
                 if year:
                     with_year += 1
@@ -869,7 +921,7 @@ def generate_search_index(
                 # force_refresh so a poisoned empty cache entry heals (#185)
                 adult = is_adult_app(app_id, force_refresh=True)
                 adult_hinted += 1
-            entries.append([str(app_id), title, "", 0, 0, "steam", None, None, adult])
+            entries.append([str(app_id), title, "", 0, 0, "steam", None, None, adult, ""])
             seen_ids.add(str(app_id))
             stubs += 1
         if stubs:
@@ -899,7 +951,7 @@ def generate_search_index(
                 # force_refresh so a poisoned empty cache entry heals (#185)
                 adult = is_adult_app(app_id, force_refresh=True)
                 adult_hinted += 1
-            entries.append([str(app_id), title, "", 0, 0, "steam", None, None, adult])
+            entries.append([str(app_id), title, "", 0, 0, "steam", None, None, adult, ""])
             seen_ids.add(str(app_id))
             stubs += 1
         if stubs:
@@ -1013,7 +1065,7 @@ def generate_extended_steam_index(
         # 9-column shape matches the primary index: [id, title, tier,
         # pdb, pulse, appType, releaseYear, delisted, adult]. Nulls
         # keep the column indices stable for the frontend renderer.
-        entries.append([str(app_id), title, "", 0, 0, "steam", None, None, adult])
+        entries.append([str(app_id), title, "", 0, 0, "steam", None, None, adult, ""])
 
     ext_file = output_path / "search-index-steam-extended.json"
     ext_file.write_text(json.dumps(entries, separators=(",", ":")))

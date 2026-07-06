@@ -11,8 +11,8 @@
 <meta name="color-scheme" content="dark">
 <link rel="stylesheet" href="css/shared/base.css?v=a93b26ad">
 <link rel="stylesheet" href="css/shared/topbar.css?v=c550d77b">
-<link rel="stylesheet" href="css/shared/site.css?v=e05a0f73">
-<link rel="stylesheet" href="css/shared/cards.css?v=317e26bc">
+<link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
+<link rel="stylesheet" href="css/shared/cards.css?v=0817c80a">
 <link rel="stylesheet" href="css/options/options.css?v=bb5b3f8f">
 </head>
 <body>
@@ -69,6 +69,24 @@
             <span>Grid (tiles) <span class="option-default-tag">(default)</span></span>
           </label>
         </div>
+      </div>
+
+      <div class="option-row">
+        <div class="option-text">
+          <div class="option-title">Show trend arrow</div>
+          <div class="option-desc">
+            Small up or down arrow on game cards showing whether Proton
+            compatibility is trending better or worse over the last 90 days
+            compared with the 90 to 270 day window before that. Stable games
+            show nothing. Only appears when there is enough data on both sides
+            of the window to make a fair comparison.
+          </div>
+        </div>
+        <label class="option-switch">
+          <input type="checkbox" id="opt-trend-arrow">
+          <span class="option-switch-track"></span>
+        </label>
+        <div class="option-default-note">Default: on.</div>
       </div>
 
       <div class="option-row">
@@ -218,8 +236,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script src="js/lib/analytics.js?v=e6dfbad8"></script>
-<script src="js/lib/topbar.js?v=e6956ee9"></script>
+<script src="js/lib/topbar.js?v=46897460"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/options/main.js?v=5c4de36f"></script>
+<script type="module" src="js/options/main.js?v=8350b479"></script>
 </body>
 </html>

@@ -36,6 +36,9 @@ type RefetchFail = {
   error: string;
   status?: number;
   source: "steam" | "sgdb";
+  attempted_url?: string;
+  upstream_snippet?: string;
+  final_url?: string;
 };
 
 async function _refetchSteam(appId: string): Promise<RefetchOk | RefetchFail> {
@@ -44,29 +47,58 @@ async function _refetchSteam(appId: string): Promise<RefetchOk | RefetchFail> {
   try {
     upstream = await fetch(upstreamUrl, { headers: { Accept: "application/json" } });
   } catch (e) {
-    return { ok: false, source: "steam", error: `network: ${(e as Error).message}` };
+    return { ok: false, source: "steam", error: `network: ${(e as Error).message}`, attempted_url: upstreamUrl };
   }
   if (!upstream.ok) {
-    return { ok: false, source: "steam", status: upstream.status, error: `appdetails HTTP ${upstream.status}` };
+    return { ok: false, source: "steam", status: upstream.status, error: `appdetails HTTP ${upstream.status}`, attempted_url: upstreamUrl };
   }
-  const body = await upstream.json().catch(() => null);
-  const entry = body?.[appId];
+  const rawText = await upstream.text().catch(() => "");
+  let body: unknown = null;
+  try { body = JSON.parse(rawText); } catch { /* keep null */ }
+  const entry = (body as Record<string, { success?: boolean; data?: { header_image?: string } }> | null)?.[appId];
   if (!entry || entry.success !== true) {
-    return { ok: false, source: "steam", error: "appdetails returned unsuccessful (app removed or region-locked)" };
+    // Also probe the storefront page so we can surface a delisted-and-replaced
+    // redirect (e.g. old appid 5488 -> new appid 45700 for DMC 4). Helps admins
+    // notice they need to point users at the current appid instead of hunting
+    // for missing box art.
+    let final_url: string | undefined;
+    try {
+      const storeProbe = await fetch(`https://store.steampowered.com/app/${encodeURIComponent(appId)}/`, {
+        method: "GET",
+        redirect: "follow",
+      });
+      if (storeProbe.url && storeProbe.url !== `https://store.steampowered.com/app/${appId}/`) {
+        final_url = storeProbe.url;
+      }
+    } catch { /* non-fatal */ }
+    return {
+      ok: false,
+      source: "steam",
+      error: "appdetails returned success:false (app removed, region-locked, or replaced by a newer appid)",
+      attempted_url: upstreamUrl,
+      upstream_snippet: rawText.slice(0, 300),
+      final_url,
+    };
   }
   const header = entry?.data?.header_image;
   if (!header || typeof header !== "string") {
-    return { ok: false, source: "steam", error: "appdetails returned no header_image" };
+    return {
+      ok: false,
+      source: "steam",
+      error: "appdetails returned no header_image",
+      attempted_url: upstreamUrl,
+      upstream_snippet: rawText.slice(0, 300),
+    };
   }
   // Verify the URL Steam handed us actually resolves. Rare but happens
   // on limbo apps (appdetails reports a URL but the CDN 404s).
   try {
     const probe = await fetch(header, { method: "HEAD" });
     if (!probe.ok) {
-      return { ok: false, source: "steam", status: probe.status, error: `header URL HTTP ${probe.status}` };
+      return { ok: false, source: "steam", status: probe.status, error: `header URL HTTP ${probe.status}`, attempted_url: header };
     }
   } catch (e) {
-    return { ok: false, source: "steam", error: `header URL probe failed: ${(e as Error).message}` };
+    return { ok: false, source: "steam", error: `header URL probe failed: ${(e as Error).message}`, attempted_url: header };
   }
   return { ok: true, source: "steam", resolved_via: "appdetails", url: header };
 }
@@ -82,19 +114,20 @@ const SGDB_BASE = "https://www.steamgriddb.com/api/v2";
 // squished into the card. static excludes animated grids.
 const SGDB_GRID_QUERY = "?dimensions=460x215&types=static";
 
-async function _sgdbGameId(appId: string, key: string): Promise<{ id: number | null; error?: string }> {
+async function _sgdbGameId(appId: string, key: string): Promise<{ id: number | null; error?: string; attempted_url?: string }> {
   const isSteam = /^\d+$/.test(appId);
   if (isSteam) {
+    const url = `${SGDB_BASE}/games/steam/${appId}`;
     try {
-      const r = await fetch(`${SGDB_BASE}/games/steam/${appId}`, {
+      const r = await fetch(url, {
         headers: { Authorization: `Bearer ${key}` },
       });
-      if (!r.ok) return { id: null, error: `sgdb steam lookup HTTP ${r.status}` };
+      if (!r.ok) return { id: null, error: `sgdb steam lookup HTTP ${r.status}`, attempted_url: url };
       const body = await r.json().catch(() => null);
-      if (!body?.success || !body?.data?.id) return { id: null, error: "sgdb no match for Steam id" };
-      return { id: body.data.id };
+      if (!body?.success || !body?.data?.id) return { id: null, error: "sgdb no match for Steam id", attempted_url: url };
+      return { id: body.data.id, attempted_url: url };
     } catch (e) {
-      return { id: null, error: `sgdb steam lookup: ${(e as Error).message}` };
+      return { id: null, error: `sgdb steam lookup: ${(e as Error).message}`, attempted_url: url };
     }
   }
   // Non-Steam (gog:/epic:) don't have a first-class lookup; the caller
@@ -109,21 +142,22 @@ async function _refetchSgdb(appId: string): Promise<RefetchOk | RefetchFail> {
     return { ok: false, source: "sgdb", error: "SGDB_API_KEY not configured on the server" };
   }
   const lookup = await _sgdbGameId(appId, key);
-  if (!lookup.id) return { ok: false, source: "sgdb", error: lookup.error || "sgdb no game id" };
+  if (!lookup.id) return { ok: false, source: "sgdb", error: lookup.error || "sgdb no game id", attempted_url: lookup.attempted_url };
 
   // Fetch grids (Steam's header equivalent is 460x215 static).
+  const gridsUrl = `${SGDB_BASE}/grids/game/${lookup.id}${SGDB_GRID_QUERY}`;
   let gridsRes: Response;
   try {
-    gridsRes = await fetch(`${SGDB_BASE}/grids/game/${lookup.id}${SGDB_GRID_QUERY}`, {
+    gridsRes = await fetch(gridsUrl, {
       headers: { Authorization: `Bearer ${key}` },
     });
   } catch (e) {
-    return { ok: false, source: "sgdb", error: `sgdb grids fetch: ${(e as Error).message}` };
+    return { ok: false, source: "sgdb", error: `sgdb grids fetch: ${(e as Error).message}`, attempted_url: gridsUrl };
   }
-  if (!gridsRes.ok) return { ok: false, source: "sgdb", status: gridsRes.status, error: `sgdb grids HTTP ${gridsRes.status}` };
+  if (!gridsRes.ok) return { ok: false, source: "sgdb", status: gridsRes.status, error: `sgdb grids HTTP ${gridsRes.status}`, attempted_url: gridsUrl };
   const grids = await gridsRes.json().catch(() => null);
-  if (!grids?.success || !Array.isArray(grids?.data)) return { ok: false, source: "sgdb", error: "sgdb grids: bad response shape" };
-  if (!grids.data.length) return { ok: false, source: "sgdb", error: "sgdb has no matching grids for this game" };
+  if (!grids?.success || !Array.isArray(grids?.data)) return { ok: false, source: "sgdb", error: "sgdb grids: bad response shape", attempted_url: gridsUrl };
+  if (!grids.data.length) return { ok: false, source: "sgdb", error: "sgdb has no matching grids for this game", attempted_url: gridsUrl };
   // Prefer PNG over JPG (transparent + no lossy artifacts). Otherwise
   // top-voted, which SGDB returns first-order by default.
   const preferPng = grids.data.find((g: { mime?: string; url?: string }) => (g.mime || "").includes("png") && g.url);

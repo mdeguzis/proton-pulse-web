@@ -237,6 +237,23 @@
 .game-card-store-pill--gog   { background: #7a3fcf; color: #fff; }
 .game-card-store-pill--epic  { background: #555; color: #eee; }
 .game-card-store-pill--non-steam { background: #444; color: #ddd; }
+/* Compatibility trend arrow (rendered only for improving / declining games).
+   Sits to the right of the store pill inside .game-card-pills so the tier
+   pill still reads first. Kept small so it doesn't compete with the badge. */
+.game-card-trend {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.game-card-trend svg { width: 12px; height: 12px; }
+.game-card-trend--improving { color: #3aaa5b; }
+.game-card-trend--declining { color: #d9534f; }
+/* Site preference: hide the arrow entirely when the user turned it off. */
+[data-trend-arrow="off"] .game-card-trend { display: none; }
 
 /* Round store icon -- the .store-icon span wraps the SVG glyph and gets a
    tight square footprint. By default it is hidden inside the store pill;
@@ -597,4 +614,62 @@
 .pp-toast-close:hover { color: var(--fg); }
 @media (max-width: 480px) {
   .pp-toast-container { right: 10px; left: 10px; bottom: 10px; max-width: none; }
+}
+
+/* Demo corner stripe on game cards (#199 follow-up). Mirrors Steam Next Fest:
+   diagonal green ribbon in the top-left corner of the thumbnail. */
+.game-card-demo-stripe {
+  position: absolute;
+  top: 12px;
+  left: -34px;
+  width: 110px;
+  background: #90ba3c;
+  color: #0a0c10;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding: 3px 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Store label + DEMO pill next to game title on the game page (#199 follow-up) */
+.game-title-store {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 0.7em;
+  margin-left: 6px;
+  letter-spacing: 0.02em;
+}
+.game-title-demo-pill {
+  display: inline-block;
+  background: #90ba3c;
+  color: #0a0c10;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.55em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+/* REPLACED tag on game cards (#199 follow-up) */
+.game-card-replaced-tag {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: #e8ac29;
+  color: #0a0c10;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 3px;
+  z-index: 3;
+  pointer-events: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.35);
 }

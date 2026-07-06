@@ -87,7 +87,7 @@ export async function fetchNativeReports(appId) {
   try {
     const [r, approvalRes] = await Promise.all([
       fetch(
-        `${SB_URL}/user_configs?app_id=eq.${appId}&is_flagged=neq.true&select=id,client_id,proton_pulse_user_id,app_id,title,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,os,kernel,proton_version,rating,duration,duration_minutes,notes,vram_mb,form_responses,config_key,game_owned,created_at,updated_at,source,is_flagged&order=created_at.desc`,
+        `${SB_URL}/user_configs?app_id=eq.${appId}&is_flagged=neq.true&select=id,client_id,proton_pulse_user_id,app_id,title,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,os,kernel,proton_version,rating,duration,duration_minutes,notes,vram_mb,form_responses,config_key,game_owned,owner_verified,created_at,updated_at,source,is_flagged,launch_options&order=created_at.desc`,
         { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
       ),
       fetch(
@@ -136,10 +136,12 @@ export async function fetchNativeReports(appId) {
       formResponses:     row.form_responses ?? null,
       configKey:         row.config_key || null,
       gameOwned:         row.game_owned ?? false,
+      ownerVerified:     row.owner_verified ?? false,
       timestamp:         Math.floor(new Date(row.created_at).getTime() / 1000),
       updatedAt:         row.updated_at ? Math.floor(new Date(row.updated_at).getTime() / 1000) : null,
       source:            row.source || 'proton-pulse',
       isFlagged:         row.is_flagged ?? false,
+      launchOptions:     row.launch_options || '',
     }));
   } catch { return []; }
 }

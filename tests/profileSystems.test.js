@@ -25,6 +25,8 @@ const PROFILE_MODULE_FILES = [
   'js/profile/components/my-hardware.js',
   'js/profile/components/systems.js',
   'js/profile/components/my-reports.js',
+  'js/profile/api/steam-library.js',
+  'js/profile/components/library.js',
   'js/profile/main.js',
 ];
 

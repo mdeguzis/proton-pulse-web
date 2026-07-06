@@ -44,6 +44,30 @@ if (toggle) {
   });
 }
 
+// Trend arrow visibility. On by default. Attribute-based swap on <html>
+// (data-trend-arrow="off") so every card view responds without a re-render.
+const TREND_ARROW_KEY = 'pp:trend-arrow';
+function applyTrendArrow(on) {
+  if (on) {
+    document.documentElement.removeAttribute('data-trend-arrow');
+  } else {
+    document.documentElement.setAttribute('data-trend-arrow', 'off');
+  }
+}
+const trendToggle = document.getElementById('opt-trend-arrow');
+if (trendToggle) {
+  const stored = localStorage.getItem(TREND_ARROW_KEY);
+  const initial = stored !== 'off';
+  trendToggle.checked = initial;
+  applyTrendArrow(initial);
+  trendToggle.addEventListener('change', () => {
+    const val = trendToggle.checked ? 'on' : 'off';
+    localStorage.setItem(TREND_ARROW_KEY, val);
+    applyTrendArrow(trendToggle.checked);
+    console.log('[options] trend-arrow:', val);
+  });
+}
+
 // Adult games visibility. Off by default; when off, browse views hide
 // any row whose data.adult === true. Value is a simple on/off string so
 // missing/malformed keys default to off (the safer state).

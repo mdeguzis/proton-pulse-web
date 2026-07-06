@@ -111,3 +111,42 @@ def test_url_is_ok_false_on_non_200():
 def test_url_is_ok_false_on_error():
     with patch("urllib.request.urlopen", side_effect=Exception("boom")):
         assert gi._url_is_ok("https://x") is False
+
+
+# --- _extract_replaced_by (Steam appid replacement detection) --------------
+
+def test_extract_replaced_by_returns_new_appid_on_redirect():
+    """5488 (Devil May Cry 4) -> 45700: the store follows redirects and lands on
+    /app/45700/Devil_May_Cry_4/, which encodes the new appid."""
+    resp = MagicMock()
+    resp.__enter__.return_value.geturl.return_value = (
+        "https://store.steampowered.com/app/45700/Devil_May_Cry_4/"
+    )
+    resp.__exit__.return_value = False
+    with patch("urllib.request.urlopen", return_value=resp):
+        assert gi._extract_replaced_by("5488") == "45700"
+
+
+def test_extract_replaced_by_returns_none_when_same_appid():
+    """Live store pages resolve back to the same /app/N/ URL."""
+    resp = MagicMock()
+    resp.__enter__.return_value.geturl.return_value = (
+        "https://store.steampowered.com/app/730/Counter_Strike_2/"
+    )
+    resp.__exit__.return_value = False
+    with patch("urllib.request.urlopen", return_value=resp):
+        assert gi._extract_replaced_by("730") is None
+
+
+def test_extract_replaced_by_returns_none_when_redirected_to_homepage():
+    """Delisted-without-replacement lands on the store homepage."""
+    resp = MagicMock()
+    resp.__enter__.return_value.geturl.return_value = "https://store.steampowered.com/"
+    resp.__exit__.return_value = False
+    with patch("urllib.request.urlopen", return_value=resp):
+        assert gi._extract_replaced_by("999999") is None
+
+
+def test_extract_replaced_by_returns_none_on_transport_error():
+    with patch("urllib.request.urlopen", side_effect=Exception("boom")):
+        assert gi._extract_replaced_by("5488") is None

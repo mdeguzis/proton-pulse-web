@@ -346,7 +346,8 @@ function renderStatRows(totals) {
   const stats = [
     { label: 'Total events',     value: totals.total_events      ?? 0 },
     { label: 'Sessions',         value: totals.total_sessions    ?? 0 },
-    { label: 'Unique users',     value: totals.authed_users      ?? 0 },
+    { label: 'Unique visitors',  value: totals.unique_visitors   ?? totals.authed_users ?? 0 },
+    { label: 'Logged in users',  value: totals.authed_users      ?? 0 },
     { label: 'New users',        value: totals.new_users         ?? 0 },
     { label: 'Logins',           value: totals.auth_success      ?? 0 },
     { label: 'Login failures',   value: totals.auth_failure      ?? 0 },
@@ -448,13 +449,13 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
       <span class="analytics-section-title">Daily activity</span>
       <span class="analytics-legend">
         <span class="analytics-legend-item"><span class="analytics-legend-swatch" style="background:#5c8bd6"></span>Sessions</span>
-        <span class="analytics-legend-item"><span class="analytics-legend-swatch" style="background:#4caf80"></span>Unique users</span>
+        <span class="analytics-legend-item"><span class="analytics-legend-swatch" style="background:#4caf80"></span>Unique visitors</span>
       </span>
     </div>
     <div class="analytics-chart-wrap">
       <canvas id="analytics-daily-chart"></canvas>
     </div>
-    <p class="chart-caption">Sessions and distinct authenticated users per day across the selected range.</p>
+    <p class="chart-caption">Sessions and distinct visitors per day across the selected range. Each visitor is a unique client id, counting both signed-in users and anonymous sessions.</p>
     <div id="sec-reports" style="margin-top:24px;margin-bottom:6px">
       <span class="analytics-section-title">Report submissions</span>
       <span class="analytics-legend">
@@ -543,8 +544,11 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
               pointRadius: 3,
             },
             {
-              label: 'Unique users',
-              data: daily.map(r => r.unique_users ?? 0),
+              // #197: fall back to unique_users on older API payloads that
+              // predate the coalesce(client_id) migration so the chart still
+              // renders (just with the old logged-in-only line).
+              label: 'Unique visitors',
+              data: daily.map(r => r.unique_visitors ?? r.unique_users ?? 0),
               borderColor: '#4caf80',
               backgroundColor: 'rgba(76,175,128,0.08)',
               fill: true,

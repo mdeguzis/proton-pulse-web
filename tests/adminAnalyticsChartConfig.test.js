@@ -150,7 +150,7 @@ describe('legend swatches are colored blocks, not the &#9644; unicode line', () 
     // Legend swatches inline-style background to the same hex as the
     // dataset borderColor so the visual pairing is one-to-one.
     expect(SRC).toMatch(/analytics-legend-swatch"\s+style="background:#5c8bd6"><\/span>Sessions/);
-    expect(SRC).toMatch(/analytics-legend-swatch"\s+style="background:#4caf80"><\/span>Unique users/);
+    expect(SRC).toMatch(/analytics-legend-swatch"\s+style="background:#4caf80"><\/span>Unique visitors/);
     expect(SRC).toMatch(/analytics-legend-swatch"\s+style="background:#5c8bd6"><\/span>Web/);
     expect(SRC).toMatch(/analytics-legend-swatch"\s+style="background:#4caf80"><\/span>Plugin/);
     expect(SRC).toMatch(/analytics-legend-swatch"\s+style="background:#d4b36a"><\/span>Other/);

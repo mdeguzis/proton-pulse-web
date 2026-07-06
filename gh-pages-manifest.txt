@@ -23,6 +23,7 @@ js/app/components/search.js
 js/shared/config.js
 js/shared/scoring.js
 js/shared/submit.js
+js/shared/drafts.js
 js/shared/hardware.js
 js/shared/chart-interactions.js
 js/submit/main.js
@@ -63,6 +64,8 @@ js/profile/components/edit-modals.js
 js/profile/components/my-hardware.js
 js/profile/components/systems.js
 js/profile/components/my-reports.js
+js/profile/components/library.js
+js/profile/api/steam-library.js
 js/profile/main.js
 css/profile/profile.css
 admin.html
@@ -130,6 +133,8 @@ js/about/version.js
 js/app/lib/card.js
 js/app/lib/filter-group.js
 js/app/lib/steam-img.js
+js/app/lib/user-library.js
+js/app/components/home-library-chart.js
 system-edit.html
 js/profile/system-edit.js
 hardware-suggestions.json

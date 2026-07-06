@@ -21,6 +21,14 @@ const STORES = {
     endpoints: [
       { key: 'steam_appdetails', label: 'appdetails (metadata + content descriptors)', arg: 'id' },
       { key: 'steam_deck', label: 'Steam Deck compatibility', arg: 'id' },
+      { key: 'steam_store_redirect', label: 'store page redirect (detect replaced_by)', arg: 'id' },
+      { key: 'steam_current_players', label: 'current online players', arg: 'id' },
+      { key: 'steam_global_achievements', label: 'global achievement percentages', arg: 'id' },
+      { key: 'steam_news', label: 'news for app (latest 5 posts)', arg: 'id' },
+      { key: 'steam_reviews', label: 'user review summary', arg: 'id' },
+      { key: 'steam_community_search', label: 'community search (autocomplete)', arg: 'term' },
+      { key: 'steam_featured', label: 'store featured (front page)', arg: 'none' },
+      { key: 'steam_featured_categories', label: 'store featured categories', arg: 'none' },
     ],
   },
   gog: {
@@ -61,6 +69,73 @@ const FIELD_DOCS = {
       ['steamos_resolved_category', 'Proton / OS-layer status, tracked separately. Often 2 even when overall Verified.'],
       ['resolved_items[].display_type', '0 = Neutral/info. 1 = Incompatible/blocked (red x). 2 = Minor issue (yellow !). 3 = System pass (internal). 4 = Full pass (green check).'],
       ['resolved_items[].loc_token', 'Criterion identifier, e.g. #SteamDeckVerified_TestResult_InterfaceTextIsLegible.'],
+    ],
+  },
+  steam_store_redirect: {
+    title: 'Steam store page redirect (replaced_by detection)',
+    rows: [
+      ['original_appid', 'The appid we asked about.'],
+      ['original_url', 'store.steampowered.com/app/<originalAppid>/'],
+      ['hops[]', 'Every request-response pair the edge function made, curl -L -v style: { step, method, url, status, status_text, location, content_type }. The green-bordered block above the JSON renders this as a trace.'],
+      ['final_url', 'The URL of the last hop.'],
+      ['final_status / final_content_type', 'HTTP status + Content-Type of the last hop.'],
+      ['final_appid', 'Appid parsed from the final URL, or null if it did not land on /app/<n>/.'],
+      ['replaced_by', 'The new appid if it differs from the original -- Steam has superseded the entry. null when the store page resolved back to the same appid (live game) or to a non-app URL.'],
+      ['note', 'Human-readable summary of what happened.'],
+    ],
+  },
+  steam_current_players: {
+    title: 'Current online players (ISteamUserStats/GetNumberOfCurrentPlayers)',
+    rows: [
+      ['response.player_count', 'Live count of concurrent players. Free games and delisted apps return 1 (Valve) or the endpoint 404s.'],
+      ['response.result', '1 = success. Anything else means the appid is invalid or the endpoint refused it.'],
+    ],
+  },
+  steam_global_achievements: {
+    title: 'Global achievement percentages (ISteamUserStats/GetGlobalAchievementPercentagesForApp)',
+    rows: [
+      ['achievementpercentages.achievements[].name', 'Internal achievement key. Cross-reference with the store page to see the human-readable name.'],
+      ['achievementpercentages.achievements[].percent', 'What fraction of players who own the app have unlocked this achievement. Useful for spotting which achievements are unusually rare or common.'],
+    ],
+  },
+  steam_news: {
+    title: 'News for app (ISteamNews/GetNewsForApp)',
+    rows: [
+      ['appnews.newsitems[].title', 'Post title. Feed includes both official Valve posts and community items.'],
+      ['appnews.newsitems[].contents', 'Body preview (truncated to 300 chars by our call).'],
+      ['appnews.newsitems[].date', 'Unix timestamp of the post.'],
+      ['appnews.newsitems[].feedlabel', "Feed name -- e.g. 'Community Announcements', 'Steam Community Announcements'."],
+    ],
+  },
+  steam_reviews: {
+    title: 'User review summary (store.steampowered.com/appreviews)',
+    rows: [
+      ['query_summary.review_score', 'Steam review-tier score (0-9). Maps to Overwhelmingly Positive down to Overwhelmingly Negative.'],
+      ['query_summary.review_score_desc', 'Human-readable label, e.g. "Very Positive".'],
+      ['query_summary.total_reviews', 'All-time review count.'],
+      ['query_summary.total_positive / total_negative', 'Split of positive vs negative reviews.'],
+    ],
+  },
+  steam_community_search: {
+    title: 'Community search (steamcommunity.com/actions/SearchApps)',
+    rows: [
+      ['[].appid', 'Numeric appid.'],
+      ['[].name', 'Store title. Useful for confirming a title spelling before feeding it back into other calls.'],
+      ['[].icon', 'Small icon URL. Steam only returns entries with an actual store page here, so it filters out most fully-delisted games.'],
+    ],
+  },
+  steam_featured: {
+    title: 'Store featured (store.steampowered.com/api/featured)',
+    rows: [
+      ['featured_win / featured_mac / featured_linux', 'Per-OS featured banners currently on the storefront.'],
+      ['status', "1 = ok. If Steam's storefront is down this endpoint 500s and our proxy still passes the status through."],
+    ],
+  },
+  steam_featured_categories: {
+    title: 'Store featured categories (store.steampowered.com/api/featuredcategories)',
+    rows: [
+      ['specials.items[].id', "Appid within a special/sale category. Cross-reference with appdetails to see if it's genuinely on sale."],
+      ['new_releases / top_sellers / coming_soon', 'Category blocks with their own items[] arrays.'],
     ],
   },
   gog_product: {
@@ -146,6 +221,23 @@ function _storeUrl(endpoint, id, term, payload) {
   return null;
 }
 
+// Format the steam_store_redirect hops as a `curl -L -v`-style trace. Each
+// hop becomes 3-4 lines: request line, status line, optional Location line,
+// and (on the final hop) the Content-Type. Reads left-to-right so admins can
+// see the redirect chain without decoding raw JSON. #199
+function _formatHopTrace(hops) {
+  if (!Array.isArray(hops) || hops.length === 0) return '';
+  const lines = ['# Redirect trace (curl -L -v style)'];
+  for (const h of hops) {
+    lines.push(`> ${h.method || 'GET'} ${h.url}`);
+    lines.push(`< HTTP ${h.status} ${h.status_text || ''}`.trimEnd());
+    if (h.location) lines.push(`< Location: ${h.location}`);
+    if (h.content_type && !h.location) lines.push(`< Content-Type: ${h.content_type}`);
+    lines.push('');
+  }
+  return lines.join('\n').trimEnd();
+}
+
 let _index = null;
 async function _loadIndex() {
   if (_index) return _index;
@@ -164,6 +256,9 @@ async function _loadIndex() {
 // prefixed, so we strip the prefix to get the store-native id).
 async function _resolveArg(store, endpointArg, input) {
   const q = String(input || '').trim();
+  // Argless endpoints (featured / featuredcategories): skip input parsing so
+  // admins can just click Fetch without typing anything.
+  if (endpointArg === 'none') return { id: '', title: '' };
   if (!q) return { error: 'Enter an ID, name, or search term.' };
   if (endpointArg === 'term') return { term: q };
   if (/^\d+$/.test(q)) return { id: q };
@@ -191,6 +286,7 @@ export function renderApiExplorer() {
   let store = 'steam';
   let lastJson = '';
   let lastName = 'store';
+  let lastPayload = null;
 
   const storeTabs = Object.entries(STORES)
     .map(([k, s]) => `<button class="apix-store-tab${k === store ? ' active' : ''}" data-store="${k}" type="button">${escapeHtml(s.label)}</button>`)
@@ -210,11 +306,34 @@ export function renderApiExplorer() {
       <p id="apix-status" class="admin-hint" style="margin:10px 0 0" hidden></p>
       <div id="apix-toolbar" class="apix-toolbar" hidden>
         <label class="apix-wrap-toggle"><input type="checkbox" id="apix-wrap"> Word wrap</label>
+        <label class="apix-wrap-toggle" title="Show the full edge-function envelope (endpoint, arg, url, status, data) instead of just the parsed data field"><input type="checkbox" id="apix-raw"> Full envelope</label>
         <button id="apix-copy" class="admin-btn" type="button">Copy JSON</button>
         <button id="apix-download" class="admin-btn" type="button">Download JSON</button>
         <a id="apix-store-link" class="admin-btn" target="_blank" rel="noopener" hidden>Open store page &#8599;</a>
       </div>
+
+      <!-- REQUEST section: what we actually asked the upstream store for.
+           Always visible after a fetch so admins can see method, URL, and
+           the parameters we sent (like Postman / any real API explorer). -->
+      <div id="apix-req-section" class="apix-req-section" hidden>
+        <div class="apix-section-label">Request</div>
+        <div class="apix-req-line"><span class="apix-req-key">Endpoint:</span> <code id="apix-req-endpoint"></code></div>
+        <div class="apix-req-line"><span class="apix-req-key">Method:</span> <code id="apix-req-method"></code></div>
+        <div class="apix-req-line"><span class="apix-req-key">Upstream URL:</span> <a id="apix-req-url" target="_blank" rel="noopener"></a></div>
+        <div class="apix-req-line"><span class="apix-req-key">Params:</span> <code id="apix-req-params"></code></div>
+      </div>
+
+      <!-- RESPONSE section: status line + the actual body. Raw envelope toggle
+           swaps between the parsed data field and the full edge-function
+           envelope (endpoint, arg, url, status, data). -->
+      <div id="apix-resp-section" class="apix-req-section" hidden>
+        <div class="apix-section-label">Response <span id="apix-resp-status" class="apix-req-key"></span></div>
+      </div>
       <pre id="apix-output" class="apix-output" hidden></pre>
+
+      <div id="apix-followup-header" class="admin-hint" hidden style="margin-top:14px;color:var(--accent);font-weight:600"></div>
+      <pre id="apix-hop-trace" class="apix-output apix-hop-trace" hidden style="margin-top:6px"></pre>
+      <pre id="apix-followup" class="apix-output" hidden style="margin-top:6px;border-left:3px solid var(--accent);padding-left:12px"></pre>
     </div>`;
 
   const endpointSel = el.querySelector('#apix-endpoint');
@@ -243,17 +362,82 @@ export function renderApiExplorer() {
     setStatus('Resolving...');
     const resolved = await _resolveArg(store, arg, inputEl.value);
     if (resolved.error) { setStatus(resolved.error, true); return; }
-    const label = resolved.id ? `app ${resolved.id}${resolved.title ? ` (${resolved.title})` : ''}` : `"${resolved.term}"`;
+    const label = arg === 'none'
+      ? '(no argument)'
+      : resolved.id
+        ? `app ${resolved.id}${resolved.title ? ` (${resolved.title})` : ''}`
+        : `"${resolved.term}"`;
     setStatus(`Fetching ${endpoint} for ${label}...`);
     const btn = document.getElementById('apix-fetch');
     if (btn) btn.disabled = true;
     const payload = await exploreStore(endpoint, { id: resolved.id, term: resolved.term });
     if (btn) btn.disabled = false;
-    lastJson = JSON.stringify(payload && 'data' in payload ? payload.data : payload, null, 2);
+    lastPayload = payload;
+    const rawMode = document.getElementById('apix-raw')?.checked;
+    lastJson = JSON.stringify(rawMode ? payload : (payload && 'data' in payload ? payload.data : payload), null, 2);
     lastName = `${endpoint}-${resolved.id || (resolved.term || '').replace(/\W+/g, '-').slice(0, 40)}`;
     const out = document.getElementById('apix-output');
     if (out) { out.hidden = false; out.textContent = lastJson; }
     document.getElementById('apix-toolbar').hidden = false;
+
+    // Populate the Request + Response sections so admins see the full round
+    // trip: endpoint key, HTTP method, actual upstream URL, params we sent.
+    // Postman-style layout. #199
+    const reqSection = document.getElementById('apix-req-section');
+    const respSection = document.getElementById('apix-resp-section');
+    if (reqSection && respSection) {
+      reqSection.hidden = false;
+      respSection.hidden = false;
+      const setText = (id, val) => { const n = document.getElementById(id); if (n) n.textContent = val; };
+      setText('apix-req-endpoint', endpoint);
+      setText('apix-req-method', payload?.method || 'GET');
+      const upstreamUrl = payload?.url || '(unknown)';
+      const urlEl = document.getElementById('apix-req-url');
+      if (urlEl) { urlEl.textContent = upstreamUrl; urlEl.href = upstreamUrl; }
+      const paramsStr = arg === 'none'
+        ? '(none)'
+        : resolved.id
+          ? `id=${resolved.id}`
+          : `term="${resolved.term}"`;
+      setText('apix-req-params', paramsStr);
+      setText('apix-resp-status', `HTTP ${payload?.status ?? (payload?.ok ? 200 : 'ERR')}`);
+    }
+
+    // Hop-by-hop redirect trace (curl -L -v style). Rendered when the caller
+    // chose steam_store_redirect directly, or when the auto follow-up fires
+    // one below.
+    const hopEl = document.getElementById('apix-hop-trace');
+    if (hopEl) { hopEl.hidden = true; hopEl.textContent = ''; }
+    if (endpoint === 'steam_store_redirect' && Array.isArray(payload?.data?.hops) && hopEl) {
+      hopEl.hidden = false;
+      hopEl.textContent = _formatHopTrace(payload.data.hops);
+    }
+
+    // #199: auto follow-up. If appdetails came back with success:false for
+    // this appid, fire a store-page redirect probe so the admin sees whether
+    // Steam replaced this appid with a newer one without having to switch
+    // endpoints and re-fetch.
+    const followupEl = document.getElementById('apix-followup');
+    const followupHeader = document.getElementById('apix-followup-header');
+    if (followupEl) { followupEl.hidden = true; followupEl.textContent = ''; }
+    if (followupHeader) { followupHeader.hidden = true; followupHeader.textContent = ''; }
+    if (endpoint === 'steam_appdetails' && resolved.id && payload?.data && payload.data[String(resolved.id)]?.success === false && followupEl && followupHeader) {
+      followupHeader.hidden = false;
+      followupHeader.textContent = 'Auto follow-up: steam_store_redirect (Steam said success:false, checking if the appid was replaced)';
+      followupEl.hidden = false;
+      followupEl.textContent = 'Probing store page...';
+      const redirect = await exploreStore('steam_store_redirect', { id: resolved.id });
+      // Show the same hop trace above the JSON so admins see the curl-style
+      // redirect chain immediately after the appdetails call.
+      if (hopEl && Array.isArray(redirect?.data?.hops)) {
+        hopEl.hidden = false;
+        hopEl.textContent = _formatHopTrace(redirect.data.hops);
+      }
+      followupEl.textContent = JSON.stringify(rawMode ? redirect : redirect.data || redirect, null, 2);
+      if (redirect?.data?.replaced_by) {
+        followupHeader.textContent = `Auto follow-up: Steam replaced appid ${resolved.id} -> ${redirect.data.replaced_by}`;
+      }
+    }
     const storeLink = document.getElementById('apix-store-link');
     if (storeLink) {
       const u = _storeUrl(endpoint, resolved.id, resolved.term, payload);
@@ -280,6 +464,18 @@ export function renderApiExplorer() {
   });
   el.querySelector('#apix-wrap')?.addEventListener('change', (e) => {
     document.getElementById('apix-output')?.classList.toggle('apix-wrap', e.target.checked);
+    document.getElementById('apix-followup')?.classList.toggle('apix-wrap', e.target.checked);
+    document.getElementById('apix-hop-trace')?.classList.toggle('apix-wrap', e.target.checked);
+  });
+  // #199: Raw mode swaps between the parsed data field (default) and the
+  // full edge-function envelope (endpoint, arg, url, status, data). Re-serializes
+  // the last fetch so admins can toggle without re-fetching.
+  el.querySelector('#apix-raw')?.addEventListener('change', (e) => {
+    if (!lastPayload) return;
+    const rawMode = e.target.checked;
+    lastJson = JSON.stringify(rawMode ? lastPayload : (lastPayload && 'data' in lastPayload ? lastPayload.data : lastPayload), null, 2);
+    const out = document.getElementById('apix-output');
+    if (out) out.textContent = lastJson;
   });
   el.querySelector('#apix-copy')?.addEventListener('click', async () => {
     if (!lastJson) return;

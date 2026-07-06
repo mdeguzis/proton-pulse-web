@@ -38,6 +38,11 @@ on:
         required: false
         default: false
         type: boolean
+      staging_with_finalize:
+        description: "Skip probe + build, restore prod chunk state from gh-pages, re-run only finalize + stats, push to the staging repo. Fast (~5 min) verification path for changes that only touch finalize.py or search-index shape (#196)."
+        required: false
+        default: false
+        type: boolean
       resume:
         description: "Only re-run chunks marked incomplete in gh-pages/.pipeline-state/manifest.json. Rescue path for a partial run (e.g. chunk 8 stalled while 1-7 + 9-10 completed) -- avoids re-doing the successful work. #171 Phase 3."
         required: false
@@ -62,7 +67,7 @@ jobs:
   build:
     # finalize_only skips build entirely -- we're re-running the finalize
     # stage against gh-pages state as-is, no need to re-shard/re-probe.
-    if: inputs.pages_only != true && inputs.staging_only != true && inputs.backfill_app_ids == '' && inputs.coverage_backfill_issue_type == '' && inputs.finalize_only != true
+    if: inputs.pages_only != true && inputs.staging_only != true && inputs.backfill_app_ids == '' && inputs.coverage_backfill_issue_type == '' && inputs.finalize_only != true && inputs.staging_with_finalize != true
     runs-on: ubuntu-24.04
     permissions:
       contents: read
@@ -238,9 +243,11 @@ jobs:
     if: |
       always() &&
       inputs.pages_only != true &&
+      inputs.staging_only != true &&
       inputs.backfill_app_ids == '' &&
       inputs.coverage_backfill_issue_type == '' &&
       (inputs.finalize_only == true ||
+        inputs.staging_with_finalize == true ||
         (needs.build.result == 'success' &&
          (needs.probe-chunks.result == 'success' || needs.probe-chunks.result == 'skipped')))
     runs-on: ubuntu-24.04
@@ -260,7 +267,13 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      # finalize_only + staging_with_finalize both skip the build stage, so no
+      # fresh artifact exists on this run. Skip the download in those modes and
+      # let the gh-pages merge step below seed /tmp/protondb-output entirely
+      # from the durable prod state -- exactly what we want when we're only
+      # verifying a finalize / search-index shape change.
       - name: Download probe input artifact
+        if: inputs.finalize_only != true && inputs.staging_with_finalize != true
         uses: actions/download-artifact@v4
         with:
           name: probe-input
@@ -320,7 +333,7 @@ jobs:
       # falls back to whatever's in manifest.json (empty arg triggers that
       # branch). Skipped if the full plan is empty (chunk_count == 0).
       - name: Restore chunk state from gh-pages (#171)
-        if: inputs.finalize_only == true || needs.build.outputs.chunk_count != '0'
+        if: inputs.finalize_only == true || inputs.staging_with_finalize == true || needs.build.outputs.chunk_count != '0'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bash scripts/restore-chunk-state.sh '${{ needs.build.outputs.expected_matrix }}'
@@ -349,10 +362,53 @@ jobs:
             printf 'STEAM_API_KEY=%s\n' "${{ secrets.STEAM_API_KEY }}" > .env
           fi
 
+      # finalize_only + staging_with_finalize skip probing entirely, so there
+      # are no newly-probed discoveries to reconcile. Skip this step in those
+      # modes (it needs pipeline-state.json from the artifact, which isn't
+      # generated on these paths).
       - name: Backfill Probe Discoveries
+        if: inputs.finalize_only != true && inputs.staging_with_finalize != true
         run: |
           uv run python scripts/split_reports.py probe-backfill \
             /tmp/protondb-output
+
+      # Synthesize pipeline-state.json from disk when the artifact is absent
+      # (finalize_only + staging_with_finalize). Walks /tmp/protondb-output/data
+      # for (app_id, year) tuples so finalize's read_pipeline_state has real
+      # index_keys to iterate. Other fields are empty since there's no new
+      # probing on these paths.
+      - name: Synthesize pipeline-state from disk
+        if: inputs.finalize_only == true || inputs.staging_with_finalize == true
+        run: |
+          uv run python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path("/tmp/protondb-output")
+          data = root / "data"
+          keys = []
+          if data.is_dir():
+              for app_dir in data.iterdir():
+                  if not app_dir.is_dir():
+                      continue
+                  name = app_dir.name
+                  # Reverse app_id_to_dir naming: gog_/epic_ prefixes become
+                  # gog:/epic:; bare digits stay as-is.
+                  if name.startswith("gog_"):
+                      app_id = "gog:" + name[4:]
+                  elif name.startswith("epic_"):
+                      app_id = "epic:" + name[5:]
+                  else:
+                      app_id = name
+                  for year_file in app_dir.glob("*.json"):
+                      stem = year_file.stem
+                      if stem in {"latest", "index", "votes", "metadata"}:
+                          continue
+                      keys.append([app_id, stem])
+          state = {"parsed_count": 0, "index_keys": keys, "backfilled_keys": [], "no_data_app_ids": []}
+          out = root / "pipeline-state.json"
+          out.write_text(json.dumps(state, indent=2) + "\n")
+          print(f"[synthesized-state] wrote {len(keys)} index_keys to {out}")
+          PY
 
       - name: Finalize (Indexes + Coverage)
         env:
@@ -392,7 +448,7 @@ jobs:
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-final
 
       - name: Deploy to gh-pages (orphan, no history)
-        if: inputs.staging_with_pipeline != true
+        if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
@@ -453,14 +509,16 @@ jobs:
           git commit -m "Deploy: $(date +%F)"
           git push origin gh-pages-new:gh-pages --force
 
-      # Staging-with-pipeline mode (#117): same finalize output as the prod
+      # Staging deploy mode (#117 + #196): same finalize output as the prod
       # deploy step above, but pushed to the staging repo's gh-pages instead
       # of origin/gh-pages. Reads version/SHA from HEAD (staging branch) so
-      # the About page reflects what's actually being tested. The two deploy
-      # steps are mutually exclusive via the `if:` gates -- prod runs on
-      # !staging_with_pipeline, staging runs on staging_with_pipeline.
+      # the About page reflects what's actually being tested. The prod and
+      # staging deploy steps are mutually exclusive via the `if:` gates --
+      # prod runs when neither staging flag is set; this step runs when
+      # either staging_with_pipeline (full pipeline, 30 min) or
+      # staging_with_finalize (finalize + stats only, ~5 min) is on.
       - name: Deploy pipeline output to staging repo
-        if: inputs.staging_with_pipeline == true
+        if: inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"

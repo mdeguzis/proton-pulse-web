@@ -23,7 +23,7 @@ const EPIC_SEARCH_QUERY = `query searchStoreQuery($keywords: String!, $country: 
 
 type EndpointDef = {
   // Whether the endpoint takes a numeric id or a free-text term.
-  arg: "id" | "term";
+  arg: "id" | "term" | "none";
   method: "GET" | "POST";
   url: (arg: string) => string;
   headers?: Record<string, string>;
@@ -41,6 +41,56 @@ const ENDPOINTS: Record<string, EndpointDef> = {
     arg: "id",
     method: "GET",
     url: (id) => `https://store.steampowered.com/saleaction/ajaxgetdeckappcompatibilityreport?nAppID=${id}`,
+  },
+  steam_store_redirect: {
+    // Fetches the storefront page with redirects followed. Useful when
+    // appdetails returns success:false: if the app was replaced by a
+    // newer appid (e.g. 5488 -> 45700 for Devil May Cry 4), the final URL
+    // encodes the new appid in its /app/<newId>/ path. Response.data is
+    // { original_url, final_url, replaced_by }. #199
+    arg: "id",
+    method: "GET",
+    url: (id) => `https://store.steampowered.com/app/${id}/`,
+  },
+  // Common public Steam endpoints -- no API key required. Rate-limited by
+  // Steam but shared across the whole edge function. Documented at
+  // https://steamapi.xpaw.me and https://partner.steamgames.com/doc/webapi
+  steam_current_players: {
+    arg: "id",
+    method: "GET",
+    url: (id) => `https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=${id}`,
+  },
+  steam_global_achievements: {
+    arg: "id",
+    method: "GET",
+    url: (id) => `https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid=${id}`,
+  },
+  steam_news: {
+    arg: "id",
+    method: "GET",
+    url: (id) => `https://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid=${id}&count=5&maxlength=300&format=json`,
+  },
+  steam_reviews: {
+    arg: "id",
+    method: "GET",
+    url: (id) => `https://store.steampowered.com/appreviews/${id}?json=1&language=all&purchase_type=all&filter=summary`,
+  },
+  steam_community_search: {
+    arg: "term",
+    method: "GET",
+    url: (t) => `https://steamcommunity.com/actions/SearchApps/${encodeURIComponent(t)}`,
+  },
+  steam_featured: {
+    // No arg: dumps the currently-featured storefront blocks. Useful for
+    // sanity-checking storefront availability and for spotting deals.
+    arg: "none",
+    method: "GET",
+    url: () => `https://store.steampowered.com/api/featured?cc=us&l=en`,
+  },
+  steam_featured_categories: {
+    arg: "none",
+    method: "GET",
+    url: () => `https://store.steampowered.com/api/featuredcategories?cc=us&l=en`,
   },
   gog_product: {
     arg: "id",
@@ -92,7 +142,11 @@ Deno.serve(async (req: Request) => {
   }
 
   let arg: string;
-  if (def.arg === "id") {
+  if (def.arg === "none") {
+    // Argless endpoints (featured / featuredcategories). We still pass an
+    // empty string to url() so the signature stays uniform.
+    arg = "";
+  } else if (def.arg === "id") {
     if (!/^\d+$/.test(id)) {
       return Response.json({ ok: false, error: "id must be numeric for this endpoint" }, { status: 400, headers: corsHeaders });
     }
@@ -105,6 +159,93 @@ Deno.serve(async (req: Request) => {
   }
 
   const url = def.url(arg);
+
+  // steam_store_redirect: walk the redirect chain by hand (redirect:"manual")
+  // so we can return every hop -- status, url, Location, response headers.
+  // Reads like `curl -L -v` for admins, not just the final URL.
+  if (endpoint === "steam_store_redirect") {
+    const MAX_HOPS = 8;
+    type Hop = {
+      step: number;
+      method: string;
+      url: string;
+      status: number;
+      status_text: string;
+      location: string | null;
+      content_type: string | null;
+    };
+    const hops: Hop[] = [];
+    let currentUrl = url;
+    let lastStatus = 0;
+    let lastCT: string | null = null;
+    for (let step = 1; step <= MAX_HOPS; step++) {
+      let hopRes: Response;
+      try {
+        hopRes = await fetch(currentUrl, {
+          method: "GET",
+          redirect: "manual",
+          headers: { "User-Agent": "Mozilla/5.0 (proton-pulse admin-explorer)" },
+        });
+      } catch (e) {
+        return Response.json(
+          { ok: false, endpoint, arg, url, error: `hop ${step} network: ${(e as Error).message}`, data: { hops } },
+          { status: 200, headers: corsHeaders },
+        );
+      }
+      const loc = hopRes.headers.get("Location");
+      const ct = hopRes.headers.get("Content-Type");
+      hops.push({
+        step,
+        method: "GET",
+        url: currentUrl,
+        status: hopRes.status,
+        status_text: hopRes.statusText,
+        location: loc,
+        content_type: ct,
+      });
+      lastStatus = hopRes.status;
+      lastCT = ct;
+      // Drain the body so the underlying connection can be reused / closed.
+      try { await hopRes.arrayBuffer(); } catch { /* ignore */ }
+      if (hopRes.status >= 300 && hopRes.status < 400 && loc) {
+        // Resolve Location against currentUrl for relative redirects.
+        currentUrl = new URL(loc, currentUrl).toString();
+        continue;
+      }
+      break;
+    }
+    const finalUrl = hops.length ? hops[hops.length - 1].url : url;
+    const match = /\/app\/(\d+)(?:\/|$)/.exec(finalUrl);
+    const finalAppId = match ? match[1] : null;
+    const replacedBy = finalAppId && finalAppId !== arg ? finalAppId : null;
+    console.log(`[steam-explore] endpoint=${endpoint} arg=${arg} hops=${hops.length} final=${finalUrl} replaced_by=${replacedBy}`);
+    return Response.json(
+      {
+        ok: lastStatus > 0 && lastStatus < 400,
+        endpoint,
+        arg,
+        url,
+        status: lastStatus,
+        data: {
+          original_appid: arg,
+          original_url: url,
+          hops,
+          final_url: finalUrl,
+          final_status: lastStatus,
+          final_content_type: lastCT,
+          final_appid: finalAppId,
+          replaced_by: replacedBy,
+          note: replacedBy
+            ? `Steam redirected appid ${arg} to appid ${replacedBy} through ${hops.length} hop${hops.length === 1 ? "" : "s"}. This app has been superseded by a newer entry.`
+            : finalAppId === arg
+              ? `Store page resolved to /app/${arg}/ in ${hops.length} hop${hops.length === 1 ? "" : "s"}: this app is live.`
+              : `Store page redirected to a non-app URL after ${hops.length} hop${hops.length === 1 ? "" : "s"} (delisted, homepage, or region-blocked).`,
+        },
+      },
+      { status: 200, headers: corsHeaders },
+    );
+  }
+
   try {
     const init: RequestInit = { method: def.method, headers: def.headers ?? { Accept: "application/json" } };
     if (def.method === "POST" && def.body) init.body = def.body(arg);

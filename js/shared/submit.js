@@ -165,6 +165,97 @@ export function isLinuxOs(os) {
   return !_NON_LINUX_OS_PATTERNS.some(re => re.test(s));
 }
 
+/**
+ * Look up the signed-in user's cached Steam library (public.user_steam_library)
+ * and return true iff appId is in their appids list. Used at report submit time
+ * to set owner_verified so a "Verified owner" badge can render on the report
+ * card (#199). Silently returns false on any error so submission still works.
+ */
+export async function isAppIdInMyLibrary(appId, session) {
+  if (!appId || !session?.access_token) return false;
+  try {
+    const r = await fetch(
+      `${window.SB_URL}/user_steam_library?select=appids&limit=1`,
+      {
+        headers: {
+          apikey: window.SB_KEY,
+          Authorization: `Bearer ${session.access_token}`,
+        },
+      },
+    );
+    if (!r.ok) {
+      console.debug('[submit] isAppIdInMyLibrary: query failed', { appId, status: r.status, source: 'user_steam_library' });
+      return false;
+    }
+    const rows = await r.json();
+    const appids = Array.isArray(rows) && rows.length ? rows[0].appids : null;
+    const owned = Array.isArray(appids) && appids.map(Number).includes(Number(appId));
+    console.debug('[submit] isAppIdInMyLibrary', { appId, owned, cachedCount: Array.isArray(appids) ? appids.length : 0, source: 'user_steam_library' });
+    return owned;
+  } catch (e) {
+    console.debug('[submit] isAppIdInMyLibrary threw', { appId, error: e?.message });
+    return false;
+  }
+}
+
+/**
+ * Show a "Verified owner" indicator on the submit form when the current appId
+ * is in the signed-in user's cached Steam library. Mirrors the report-card
+ * badge so the user knows their submission will land with owner_verified=true
+ * before they press submit (#199).
+ */
+/**
+ * Restore form values + progressive-question state from a saved draft
+ * snapshot produced by snapshotFormData (drafts.js). Every field is optional
+ * so partial drafts still populate what they can (#199 follow-up).
+ */
+export function applyDraftSnapshot(form, snapshot) {
+  if (!form || !snapshot) return;
+  const values = snapshot.values || {};
+  for (const [name, val] of Object.entries(values)) {
+    const fields = form.elements[name];
+    if (!fields) continue;
+    if (fields instanceof RadioNodeList) {
+      for (const f of fields) {
+        if (f.type === 'radio') f.checked = f.value === val;
+        else if (f.type === 'checkbox') f.checked = Array.isArray(val) && val.includes(f.value);
+      }
+    } else if (fields.type === 'radio' || fields.type === 'checkbox') {
+      fields.checked = Array.isArray(val) ? val.includes(fields.value) : fields.value === val;
+    } else {
+      fields.value = val;
+    }
+    fields.dispatchEvent?.(new Event('change', { bubbles: true }));
+  }
+  const state = snapshot.state || {};
+  const s = form._formState || (form._formState = {});
+  s.canInstall = state.canInstall || null;
+  s.canStart = state.canStart || null;
+  s.canPlay = state.canPlay || null;
+  s.verdict = state.verdict || null;
+  s.requiresFramegen = state.requiresFramegen || null;
+  s.onlineMultiplayer = state.onlineMultiplayer || null;
+  s.localMultiplayer = state.localMultiplayer || null;
+  s.offlineCompat = state.offlineCompat || null;
+  s.faults = state.faults || {};
+  s.tinkeringMethods = new Set(state.tinkeringMethods || []);
+}
+
+export async function renderVerifiedOwnerStatus(el, appId) {
+  const mount = el?.querySelector?.('#sf-verified-owner');
+  if (!mount || !appId) return;
+  const session = await SupaAuth.getSession();
+  if (!session?.user) { mount.hidden = true; return; }
+  const owned = await isAppIdInMyLibrary(appId, session);
+  if (!owned) { mount.hidden = true; return; }
+  mount.hidden = false;
+  mount.innerHTML = `
+    <div class="sf-verified-owner-pill" title="Your Steam library confirms you own this game. This report will be marked as Verified owner.">
+      <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm3.7 6.3l-4.5 4.5a.75.75 0 01-1.06 0L4.3 8.94a.75.75 0 111.06-1.06l1.31 1.31 3.97-3.97a.75.75 0 111.06 1.06z"/></svg>
+      Verified owner - this report will be flagged as owner-verified
+    </div>`;
+}
+
 export async function submitReport(appId, title, form, editReportId = null) {
   const session = await SupaAuth.getSession();
   if (!session) return { ok: false, error: 'Sign in with Steam to submit a report.' };
@@ -270,6 +361,7 @@ export async function submitReport(appId, title, form, editReportId = null) {
     source: form.reportSource?.value || getWebSource(),
     vram_mb: form.vramMb.value ? Number(form.vramMb.value) : null,
     game_owned: true,  // authenticated web users own the game by definition
+    owner_verified: await isAppIdInMyLibrary(appId, session),
     form_responses: formResponses,
   };
   const isEdit = !!editReportId;
@@ -454,6 +546,8 @@ export async function populateSubmitForm(el) {
       </div>
     </details>
     <form id="submit-report-form" autocomplete="on">
+      <div id="sf-verified-owner" hidden></div>
+      <div id="sf-draft-restore" class="sf-draft-restore" hidden></div>
       <div class="sf-section-label">Game</div>
       <div class="sf-row"><label>Game title</label><input name="gameTitle" readonly style="cursor:default;color:var(--muted);border-color:var(--border2);background:var(--s1);" placeholder="Loading..."></div>
 
@@ -476,7 +570,8 @@ export async function populateSubmitForm(el) {
       <div class="sf-row"><label>CPU *</label><input name="cpu" placeholder="e.g. AMD Ryzen 7 5800X3D"></div>
       <div class="sf-row"><label>RAM *</label><input name="ram" placeholder="e.g. 16 GB or 64"></div>
       <div class="sf-row"><label>VRAM (MB)</label><input name="vramMb" type="number" placeholder="e.g. 8192"></div>
-      <div class="sf-row"><label>OS *</label><select name="os"><option value="" disabled selected>-- choose one --</option>${opts(osList,false)}</select><input name="osVersion" placeholder="Version (e.g. 24.04)" style="max-width:120px"></div>
+      <div class="sf-row"><label>OS *</label><select name="os"><option value="" disabled selected>-- choose one --</option>${opts(osList,false)}</select></div>
+      <div class="sf-row"><label>OS Version</label><input name="osVersion" placeholder="e.g. 24.04"></div>
       <div class="sf-row"><label>Kernel</label><input name="kernel" placeholder="e.g. 6.8.0"></div>
       <div class="sf-row"><label>Steam Playtime</label><select name="duration">${durationOpts}</select></div>
       <div class="sf-row"><label>Launch Options</label><input name="launchOptions" placeholder="e.g. PROTON_USE_WINED3D=1 %command%"></div>
@@ -578,8 +673,9 @@ export async function populateSubmitForm(el) {
           <option value="web"${getWebSource()==='web'?' selected':''}>Other / Unknown</option>
         </select>
       </div>
-      <div class="sf-row" style="justify-content:flex-end;gap:8px">
+      <div class="sf-row" style="justify-content:flex-end;gap:8px;flex-wrap:wrap">
         <span id="submit-status" style="font-size:0.76rem;color:var(--muted)"></span>
+        <button type="button" id="save-draft-btn" class="submit-report-btn submit-report-btn--secondary" title="Save the current form so you can finish it later on any signed-in device">Save Draft</button>
         <button type="submit" class="submit-report-btn">Submit</button>
       </div>
     </form>`;
