@@ -16,6 +16,66 @@ import {
   OPTIMIZATION_PATTERNS, FAULT_PATTERNS, TINKERING_PATTERNS,
   CONTROLLER_PATTERNS, ONLINE_NET_PATTERNS,
 } from '../shared/analytics-patterns.js?v=c119f011';
+import { renderPurposeChart, crossTabToCorrelation } from '../shared/purpose-charts.js?v=d383b3bd';
+
+// #207: purpose-chart instances so we destroy() before re-rendering on
+// filter change. Keyed by canvas id.
+const _purposeCharts = new Map();
+function _drawPurposeCharts() {
+  if (!stats) return;
+  const RATING_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
+  const drilldown = ({ category, key }) => {
+    // Click a stacked bar segment: append the corresponding filter to the
+    // URL hash so the whole page follows. Falls back to a noop if the
+    // dimension isn't a known filter.
+    if (!category) return;
+    const url = new URL(window.location.href);
+    const hash = url.hash.startsWith('#') ? url.hash.slice(1) : url.hash;
+    const params = new URLSearchParams(hash);
+    // Two dims we can drill into with the existing filters.js state.
+    // Rating is the datasets key; category is the x-axis (gpu / os / etc).
+    params.set('dim', category);
+    params.set('vals', key || '');
+    window.location.hash = params.toString().replace(/%2C/g, ',');
+  };
+
+  const chartTargets = [
+    { id: 'purpose-chart-rating-x-gpu', purpose: 'correlation', crossTab: stats.by_rating_x_gpu_vendor, series: RATING_ORDER },
+    { id: 'purpose-chart-rating-x-os',  purpose: 'correlation', crossTab: stats.by_rating_x_os_family, series: RATING_ORDER },
+    { id: 'purpose-chart-year-rating',  purpose: 'time-series', yearRating: stats.by_year_rating, series: RATING_ORDER },
+  ];
+  for (const spec of chartTargets) {
+    const canvas = document.getElementById(spec.id);
+    if (!canvas) continue;
+    if (_purposeCharts.has(spec.id)) {
+      _purposeCharts.get(spec.id).destroy();
+      _purposeCharts.delete(spec.id);
+    }
+    let data;
+    if (spec.crossTab) {
+      data = crossTabToCorrelation(spec.crossTab, spec.series);
+    } else if (spec.yearRating) {
+      // by_year_rating: { "2020": { platinum: N, gold: N, ... }, ... }
+      // Reshape into time-series: labels = years sorted, series = one per rating.
+      const labels = Object.keys(spec.yearRating).sort();
+      data = {
+        labels,
+        series: spec.series.map(k => ({
+          key: k,
+          values: labels.map(y => Number((spec.yearRating[y] || {})[k] || 0)),
+        })),
+      };
+    } else {
+      continue;
+    }
+    const inst = renderPurposeChart(canvas, {
+      purpose: spec.purpose,
+      data,
+      options: { onSlice: drilldown },
+    });
+    if (inst) _purposeCharts.set(spec.id, inst);
+  }
+}
 
 // Phase B (#206): stats page is now tabbed. Overall keeps roughly what the
 // page had before; Per-Store and Correlations are stubs that later phases
@@ -261,13 +321,29 @@ function renderAll() {
     </section>
 
     <section id="tab-correlations" data-tab="correlations" hidden>
-      <div class="chart-card">
+      <div class="chart-grid">
+        <div class="chart-card">
+          <h3>Rating x GPU vendor</h3>
+          <p class="fg-card-hint">Stacked share of reports by GPU vendor. Click a segment to filter the whole page.</p>
+          <div class="purpose-chart-wrap"><canvas id="purpose-chart-rating-x-gpu"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Rating x OS family</h3>
+          <p class="fg-card-hint">Which OS families see which tiers.</p>
+          <div class="purpose-chart-wrap"><canvas id="purpose-chart-rating-x-os"></canvas></div>
+        </div>
+        <div class="chart-card" style="grid-column: 1 / -1">
+          <h3>Ratings by year</h3>
+          <p class="fg-card-hint">How the tier mix has moved over time. One line per rating.</p>
+          <div class="purpose-chart-wrap purpose-chart-wrap--tall"><canvas id="purpose-chart-year-rating"></canvas></div>
+        </div>
+      </div>
+
+      <div class="chart-card" style="margin-top: 18px">
         <h3>What we look for</h3>
         <p class="fg-card-hint">
-          Reports get scanned for optimization tools, fault descriptions, tinkering
-          methods, controller mentions, and online / DRM signals. Once report-level
-          data lands on this page (Phase C, #207), each category becomes a real
-          filter and drilldown chart. For now: here is the catalogue.
+          Report notes get scanned for these signals. Each category will grow its own
+          drilldown once report-level text data lands here (#208, #209).
         </p>
         ${_renderPatternCatalogHtml()}
       </div>
@@ -324,6 +400,9 @@ function renderAll() {
     renderTopGames(stats.worth_retesting || [], document.getElementById('retesting'));
   }
   renderRatingsTrend(stats.by_year_rating || {});
+
+  // Correlations tab charts (#207).
+  _drawPurposeCharts();
 
   // Update filter status line
   const status = document.getElementById('filter-status');

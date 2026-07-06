@@ -695,6 +695,14 @@ h2 {
   margin-bottom: 6px;
 }
 .pattern-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+/* Chart.js canvas wrapper -- constrains height so responsive:true doesn't
+   grow forever inside a flex/grid parent. #207 */
+.purpose-chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 240px;
+}
+.purpose-chart-wrap--tall { height: 320px; }
 .pattern-pill {
   display: inline-block;
   padding: 3px 10px;
@@ -724,6 +732,7 @@ h2 {
 
 </div></div>
 
-<script type="module" src="js/stats/main.js?v=6d79f9ab"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script type="module" src="js/stats/main.js?v=ceadfeb9"></script>
 </body>
 </html>
