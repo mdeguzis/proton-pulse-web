@@ -21,6 +21,7 @@ js/app/components/deck-status.js
 js/app/components/author.js
 js/app/components/search.js
 js/shared/config.js
+js/shared/analytics-patterns.js
 js/shared/scoring.js
 js/shared/submit.js
 js/shared/drafts.js
