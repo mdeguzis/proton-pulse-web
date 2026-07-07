@@ -206,6 +206,35 @@ export async function fetchAppMetadata(appId) {
  * still ramping up its coverage; callers should fall back to the
  * SteamDB deep link when found is false.
  */
+/**
+ * Cached fetch of the most recent ISteamNews/GetNewsForApp entries via
+ * the steam-news edge function proxy. Returns { found: bool, newest_ts,
+ * items[] } or null on network error. Called by the Metadata modal as
+ * a fallback when the PICS depot cache is empty for this app -- the
+ * newest news date acts as a "when was this game last updated" signal
+ * with no per-OS granularity but full public-endpoint coverage.
+ */
+const _appNewsCache = {};
+export function fetchAppNews(appId, { count = 3, maxlength = 200 } = {}) {
+  if (!appId) return Promise.resolve(null);
+  const key = `${appId}|${count}|${maxlength}`;
+  if (_appNewsCache[key] !== undefined) return _appNewsCache[key];
+  const p = (async () => {
+    try {
+      const base = (typeof window !== 'undefined' && window.SUPABASE_URL) || '';
+      if (!base) return null;
+      const url = `${base}/functions/v1/steam-news?appId=${encodeURIComponent(appId)}&count=${count}&maxlength=${maxlength}`;
+      const r = await fetch(url);
+      if (!r.ok) return null;
+      return await r.json();
+    } catch {
+      return null;
+    }
+  })();
+  _appNewsCache[key] = p;
+  return p;
+}
+
 const _depotInfoCache = {};
 export function fetchAppDepotInfo(appId) {
   if (!appId) return Promise.resolve(null);

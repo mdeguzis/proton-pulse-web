@@ -4,7 +4,7 @@ import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=1b8ae722';
 import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=8dc92cf7';
 import { getWebClientId } from '../../shared/submit.js?v=339c68ea';
-import { fetchAppDepotInfo, fetchAppMetadata, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=c5df5310';
+import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=09d5c67e';
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=01961c8d';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
@@ -239,11 +239,16 @@ async function _openMetadataModal(appId) {
     if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); }
   });
 
-  const [meta, depotInfo] = await Promise.all([
+  const [meta, depotInfo, newsInfo] = await Promise.all([
     fetchAppMetadata(appId).catch(() => null),
-    // Fire in parallel; #215 pipeline may not have populated this app yet
-    // and that is expected -- the fallback SteamDB link stays in place.
+    // Depot info from the PICS pipeline (#215). Populated nightly; may
+    // not exist for this app yet.
     fetchAppDepotInfo(appId).catch(() => null),
+    // ISteamNews fallback: even when PICS is empty for the app we can
+    // still show a 'last patch note' date via a public HTTP endpoint.
+    // Global (not per-OS) so it degrades gracefully alongside the OS
+    // table.
+    fetchAppNews(appId).catch(() => null),
   ]);
   const body = modal.querySelector('#game-metadata-body');
   if (!body) return;
@@ -303,7 +308,11 @@ async function _openMetadataModal(appId) {
     return `<table class="gm-plat-table">
       <thead><tr><th>OS</th><th>First seen</th><th>Last update</th></tr></thead>
       <tbody>${row('windows','Windows')}${row('mac','macOS')}${row('linux','Linux')}</tbody>
-      <tfoot><tr><td colspan="3" class="gm-plat-foot">Dates from Steam depot manifests (PICS). Community report dates live in the game's report cards, not here.</td></tr></tfoot>
+      <tfoot><tr><td colspan="3" class="gm-plat-foot">Dates from Steam depot manifests (PICS). ${
+        newsInfo?.found && newsInfo.newest_ts
+          ? `App-wide 'Last patch note' below (${esc(new Date(newsInfo.newest_ts * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))}) is the public-API fallback when a specific OS row shows 'pending'.`
+          : ''
+      } Community report dates live in the game's report cards, not here.</td></tr></tfoot>
     </table>`;
   };
   // System requirements: fold into one collapsible block per OS. Text is
@@ -367,6 +376,16 @@ async function _openMetadataModal(appId) {
       ? `<a href="${esc(meta.website)}" target="_blank" rel="noopener">${esc(meta.website)} -&gt;</a>` : ''),
     section('Content notes', meta.contentDescriptors.length
       ? list(meta.contentDescriptors) : ''),
+    section('Last patch note',
+      newsInfo?.found && newsInfo.items?.length
+        ? (() => {
+            const it = newsInfo.items[0];
+            const d = it.date ? new Date(it.date * 1000) : null;
+            const dstr = d ? d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+            return `<span class="gm-depot-date" title="Most recent ISteamNews entry -- a public 'last updated' signal that works even when the PICS depot cache is empty">${esc(dstr)}</span>
+                <div class="gm-mute" style="margin-top:2px">${esc(it.title || '')}</div>${it.url ? ` <a href="${esc(it.url)}" target="_blank" rel="noopener">news post -&gt;</a>` : ''}`;
+          })()
+        : ''),
   ].join('') + `
     <div class="gm-raw-wrap">
       <button type="button" class="gm-raw-toggle" id="gm-raw-toggle" aria-expanded="false">Show raw appdetails JSON</button>

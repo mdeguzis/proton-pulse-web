@@ -13,8 +13,14 @@ from scripts.pipeline import steam_metadata
 
 
 # A trimmed but realistic steamcmd `+app_info_print 367520` payload.
-# Real output is much larger; we keep only the fields the parser cares
-# about so the test text stays readable.
+# Shape mirrors what SteamKit / ValvePython/steam / patchforge parse:
+#   depots.<depotId>.config.oslist          -> which OS the depot ships
+#   depots.<depotId>.manifests.public.gid   -> current manifest id
+#   depots.branches.public.timeupdated      -> app-level last-update ts
+# Individual depots do not carry a per-depot timeupdated in real PICS
+# app_info output; the branch-level value is what SteamDB surfaces on
+# its Depot page's Last Update column. Our first seed run against
+# Hollow Knight taught us this the hard way (parser returned 0 rows).
 SAMPLE_APPINFO = '''\
 Loading Steam API...OK
 Waiting for user info...OK
@@ -40,7 +46,6 @@ AppID : 367520, change number : 12345678
                 "public"
                 {
                     "gid"          "9876543210"
-                    "timeupdated"  "1700000000"
                 }
             }
         }
@@ -56,7 +61,6 @@ AppID : 367520, change number : 12345678
                 "public"
                 {
                     "gid"          "9876543211"
-                    "timeupdated"  "1690000000"
                 }
             }
         }
@@ -72,7 +76,6 @@ AppID : 367520, change number : 12345678
                 "public"
                 {
                     "gid"          "9876543212"
-                    "timeupdated"  "1710000000"
                 }
             }
         }
@@ -84,8 +87,15 @@ AppID : 367520, change number : 12345678
                 "public"
                 {
                     "gid"          "9876543213"
-                    "timeupdated"  "1500000000"
                 }
+            }
+        }
+        "branches"
+        {
+            "public"
+            {
+                "buildid"      "12345678"
+                "timeupdated"  "1710000000"
             }
         }
     }
@@ -153,7 +163,11 @@ class TestExtractDepotRows:
         "10"
         {
             "config" { "oslist" "windows,linux" }
-            "manifests" { "public" { "timeupdated" "1234" } }
+            "manifests" { "public" { "gid" "111" } }
+        }
+        "branches"
+        {
+            "public" { "buildid" "1" "timeupdated" "1234" }
         }
     }
 }
@@ -163,7 +177,10 @@ class TestExtractDepotRows:
         assert sorted(r.os for r in rows) == ["linux", "windows"]
         assert all(r.last_updated_at == 1234 for r in rows)
 
-    def test_skips_depot_with_missing_or_zero_timestamp(self):
+    def test_skips_depot_when_no_branch_timestamp_and_no_manifest_timestamp(self):
+        # Neither the branch (missing) nor the per-depot manifest carry a
+        # timestamp -> nothing to record. Matches the earlier zero-ts
+        # skip but reframed for the new "branch-first" fallback order.
         text = '''
 "1"
 {
@@ -173,11 +190,7 @@ class TestExtractDepotRows:
         "10"
         {
             "config" { "oslist" "linux" }
-            "manifests" { "public" { "timeupdated" "0" } }
-        }
-        "11"
-        {
-            "config" { "oslist" "linux" }
+            "manifests" { "public" { "gid" "abc" } }
         }
     }
 }
@@ -185,6 +198,32 @@ class TestExtractDepotRows:
         parsed = steam_metadata.parse_app_info(text)
         rows = steam_metadata.extract_depot_rows(1, parsed)
         assert rows == []
+
+    def test_per_depot_manifest_timestamp_wins_over_branch(self):
+        # Rare shape: some apps carry a per-depot manifests.public
+        # .timeupdated. When present, we prefer it over the branch value.
+        text = '''
+"1"
+{
+    "common" { "name" "PerDepot" }
+    "depots"
+    {
+        "10"
+        {
+            "config" { "oslist" "linux" }
+            "manifests" { "public" { "gid" "abc" "timeupdated" "5000" } }
+        }
+        "branches"
+        {
+            "public" { "buildid" "1" "timeupdated" "1000" }
+        }
+    }
+}
+'''
+        parsed = steam_metadata.parse_app_info(text)
+        rows = steam_metadata.extract_depot_rows(1, parsed)
+        assert len(rows) == 1
+        assert rows[0].last_updated_at == 5000
 
     def test_unknown_oslist_lands_in_other_bucket(self):
         text = '''
@@ -195,7 +234,11 @@ class TestExtractDepotRows:
         "10"
         {
             "config" { "oslist" "chromeos" }
-            "manifests" { "public" { "timeupdated" "1000" } }
+            "manifests" { "public" { "gid" "abc" } }
+        }
+        "branches"
+        {
+            "public" { "buildid" "1" "timeupdated" "1000" }
         }
     }
 }
@@ -213,6 +256,109 @@ class TestRunnerAvailability:
         import importlib
         importlib.reload(steam_metadata)
         assert steam_metadata.steamcmd_available() is False
+
+
+class TestRunnerCommandShape:
+    """Regression guards on the steamcmd command line. PR #220 added
+    +app_info_request + +delay so a fresh runner actually pulls PICS
+    instead of reading the empty local cache. If any of these tokens
+    go missing the seed silently degrades to 'nothing to parse'."""
+
+    def _captured_cmd(self, monkeypatch, app_id=367520):
+        captured = {}
+        class FakeProc:
+            returncode = 0; stdout = ""; stderr = ""
+        def fake_run(cmd, **kw):
+            captured["cmd"] = cmd
+            captured["kw"] = kw
+            return FakeProc()
+        monkeypatch.setattr(steam_metadata.shutil, "which", lambda name: "/fake/steamcmd")
+        monkeypatch.setattr(steam_metadata.subprocess, "run", fake_run)
+        steam_metadata.run_steamcmd_app_info(app_id)
+        return captured
+
+    def test_uses_anonymous_login(self, monkeypatch):
+        cmd = self._captured_cmd(monkeypatch)["cmd"]
+        assert cmd[cmd.index("+login") + 1] == "anonymous"
+
+    def test_calls_app_info_request_before_print(self, monkeypatch):
+        cmd = self._captured_cmd(monkeypatch)["cmd"]
+        assert "+app_info_request" in cmd
+        assert "+app_info_print"   in cmd
+        assert cmd.index("+app_info_request") < cmd.index("+app_info_print")
+
+    def test_carries_delay_between_request_and_print(self, monkeypatch):
+        cmd = self._captured_cmd(monkeypatch)["cmd"]
+        assert "+delay" in cmd
+        delay = int(cmd[cmd.index("+delay") + 1])
+        assert delay >= 1
+
+    def test_refreshes_app_info_cache(self, monkeypatch):
+        cmd = self._captured_cmd(monkeypatch)["cmd"]
+        assert "+app_info_update" in cmd
+        assert cmd[cmd.index("+app_info_update") + 1] == "1"
+
+    def test_ends_with_quit(self, monkeypatch):
+        cmd = self._captured_cmd(monkeypatch)["cmd"]
+        assert cmd[-1] == "+quit"
+
+    def test_passes_appid_to_both_request_and_print(self, monkeypatch):
+        cmd = self._captured_cmd(monkeypatch, app_id=1234)["cmd"]
+        assert cmd[cmd.index("+app_info_request") + 1] == "1234"
+        assert cmd[cmd.index("+app_info_print")   + 1] == "1234"
+
+    def test_timeout_kwarg_is_passed_to_subprocess(self, monkeypatch):
+        kw = self._captured_cmd(monkeypatch)["kw"]
+        assert "timeout" in kw
+        assert kw["timeout"] > 0
+
+
+class TestNoManifestDiagnostics:
+    """Failed seed runs must land a useful reason in fetch_status.error
+    AND log enough context that we do not need to re-run the workflow
+    to debug the shape of what PICS returned."""
+
+    def _run(self, monkeypatch, fake_stdout):
+        monkeypatch.setattr(steam_metadata, "run_steamcmd_app_info", lambda app_id, **kw: fake_stdout)
+        status_calls, log_calls = [], []
+        monkeypatch.setattr(steam_metadata, "upsert_fetch_status",
+            lambda app_id, status, depot_count, error=None: status_calls.append((app_id, status, depot_count, error)))
+        monkeypatch.setattr(steam_metadata, "upsert_depot_rows", lambda rows: 0)
+        monkeypatch.setattr(steam_metadata, "log", lambda msg: log_calls.append(msg))
+        status, n = steam_metadata.fetch_and_store(367520)
+        return status, n, status_calls, log_calls
+
+    def test_no_appinfo_block_logs_tail_and_reason(self, monkeypatch):
+        status, n, calls, logs = self._run(monkeypatch, "Loading Steam API...OK\n(no appinfo followed)\n")
+        assert (status, n) == ("no_public_manifest", 0)
+        assert calls[0][3] and "appinfo" in calls[0][3].lower()
+        # tail must be logged so a workflow log reader sees the stdout end
+        assert any("tail=" in m for m in logs)
+
+    def test_parsed_but_zero_rows_dumps_first_depot_shape(self, monkeypatch):
+        # Parse succeeds (appinfo block + digit-keyed depot present) but
+        # extract_depot_rows returns []. The dump MUST include the depot
+        # key list AND a JSON shape sample so a future PICS field-name
+        # mismatch is self-diagnosing.
+        text = '''
+"367520"
+{
+    "common" { "name" "Sample" }
+    "depots"
+    {
+        "10"
+        {
+            "MysteryField" "PICS may nest differently than we assume"
+        }
+    }
+}
+'''
+        status, n, calls, logs = self._run(monkeypatch, text)
+        assert (status, n) == ("no_public_manifest", 0)
+        assert calls[0][3] and "no OS-bound depot rows" in calls[0][3]
+        joined = " ".join(logs)
+        assert "sample_depot=10" in joined
+        assert "MysteryField"  in joined
 
 
 class TestFetchAndStoreOffline:
