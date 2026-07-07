@@ -275,19 +275,24 @@ async function _openMetadataModal(appId) {
       if (Number.isNaN(d.getTime())) return null;
       return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
     };
+    // First seen + Last update ONLY come from the steamcmd depot cache
+    // (steam_depot_updates via #215). We deliberately do NOT fall through
+    // to the app-wide release date -- that used to be shown here and
+    // confused viewers into thinking it was per-OS depot data, which it
+    // is not. Release date has its own row above the table.
     const row = (key, label) => {
       const on = !!p[key];
       const cached = dOs[key];
-      const firstCell = on
-        ? (fmtDate(cached?.first_seen) || esc(releaseDate || 'available'))
-        : '<span class="gm-mute">not offered</span>';
-      let lastCell = '-';
-      if (on) {
-        const lastFmt = fmtDate(cached?.last_updated);
-        lastCell = lastFmt
-          ? `<span class="gm-depot-date" title="From Steam PICS (${cached.depots} depot${cached.depots === 1 ? '' : 's'} tracked)">${esc(lastFmt)}</span>`
-          : `<a class="gm-depot-link" href="https://steamdb.info/app/${esc(meta.appId)}/depots/" target="_blank" rel="noopener">SteamDB -&gt;</a>`;
-      }
+      const firstFmt = fmtDate(cached?.first_seen);
+      const lastFmt  = fmtDate(cached?.last_updated);
+      let firstCell;
+      if (!on) firstCell = '<span class="gm-mute">not offered</span>';
+      else if (firstFmt) firstCell = `<span class="gm-depot-date" title="Earliest depot manifest seen in Steam PICS">${esc(firstFmt)}</span>`;
+      else firstCell = '<span class="gm-mute" title="Not cached yet -- pipeline #215 populates this nightly">pending</span>';
+      let lastCell;
+      if (!on) lastCell = '-';
+      else if (lastFmt) lastCell = `<span class="gm-depot-date" title="From Steam PICS (${cached.depots} depot${cached.depots === 1 ? '' : 's'} tracked)">${esc(lastFmt)}</span>`;
+      else lastCell = `<a class="gm-depot-link" href="https://steamdb.info/app/${esc(meta.appId)}/depots/" target="_blank" rel="noopener">SteamDB -&gt;</a>`;
       return `
         <tr>
           <td><span class="gm-plat${on ? ' gm-plat--on' : ''}">${esc(label)}</span></td>
@@ -298,6 +303,7 @@ async function _openMetadataModal(appId) {
     return `<table class="gm-plat-table">
       <thead><tr><th>OS</th><th>First seen</th><th>Last update</th></tr></thead>
       <tbody>${row('windows','Windows')}${row('mac','macOS')}${row('linux','Linux')}</tbody>
+      <tfoot><tr><td colspan="3" class="gm-plat-foot">Dates from Steam depot manifests (PICS). Community report dates live in the game's report cards, not here.</td></tr></tfoot>
     </table>`;
   };
   // System requirements: fold into one collapsible block per OS. Text is
@@ -1264,14 +1270,19 @@ export async function renderGamePage(appId) {
             <path d="M12 2c-1.66 0-3 1.34-3 3v3.5c-1.5 1-3 2.5-3 5.5 0 2.5 1 4.5 2 5.5.5.5 1 1 1 2v.5h6V21c0-1 .5-1.5 1-2 1-1 2-3 2-5.5 0-3-1.5-4.5-3-5.5V5c0-1.66-1.34-3-3-3zm-1.5 5c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zm3 0c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zM12 11l-1.5 2h3L12 11z"/>
           </svg>
           Native Linux runtime available
-          <span class="game-native-linux-more">(runtime history)</span>`;
-        nativeEl.title = 'Steam advertises a native Linux binary for this game. Click to see when each runtime was last reported.';
+          <span class="game-native-linux-more">(metadata)</span>`;
+        // Clicking the hint opens the Metadata modal (where per-OS depot
+        // dates live once the #215 pipeline caches them) instead of the
+        // community-report runtime-history table. The two data sources
+        // measure different things (Steam depots vs Pulse/ProtonDB
+        // reports) and the earlier wiring was mixing them up.
+        nativeEl.title = 'Steam advertises a native Linux binary. Click to see the full metadata (developer, publisher, per-OS depot dates).';
         nativeEl.hidden = false;
         nativeEl.setAttribute('role', 'button');
         nativeEl.tabIndex = 0;
-        nativeEl.addEventListener('click', () => _openRuntimeHistoryModal(appId, combined));
+        nativeEl.addEventListener('click', () => _openMetadataModal(appId));
         nativeEl.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); _openRuntimeHistoryModal(appId, combined); }
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); _openMetadataModal(appId); }
         });
       }
       // update deck status button icon + modal
