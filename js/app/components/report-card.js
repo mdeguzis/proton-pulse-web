@@ -1,7 +1,7 @@
 // report-card (components) for the app page. Relocated from app.js.
 
 import { estimateScore } from '../../shared/scoring.js?v=1b8ae722';
-import { getWebClientId } from '../../shared/submit.js?v=73bcc9f4';
+import { getWebClientId } from '../../shared/submit.js?v=b6800be8';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { renderAuthorBlock } from './author.js?v=3a8cb3c7';
 import { buildFormRows } from './config-cards.js?v=c67740f8';
@@ -62,7 +62,11 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
     <div class="card">
       ${renderAuthorBlock(r)}
       <div class="card-body">
-        <div class="proton">${esc(r.protonVersion || 'Unknown')}</div>
+        <div class="proton">${r.runType === 'native'
+          ? '<span class="run-type-pill run-type-pill--native" title="Native Linux build (no Proton)">Native Linux</span>'
+          : (r.runType === 'proton-lsfg'
+            ? `<span class="run-type-pill run-type-pill--lsfg" title="Proton with Lossless Scaling FrameGen wrapper">Proton + LSFG</span> ${esc(r.protonVersion || 'Unknown')}`
+            : esc(r.protonVersion || 'Unknown'))}</div>
         <div class="hw">${esc([r.gpu, r.os].filter(Boolean).join(' / ') || 'Hardware unavailable')}</div>
         <div class="age">
           ${daysAgo(r.timestamp)}

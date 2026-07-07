@@ -2,6 +2,7 @@
 
 import { SupaAuth } from './config.js?v=f6f2c00a';
 import { FAULT_KEYS_WEB, deriveRatingFromState, inferProtonType } from './scoring.js?v=1b8ae722';
+import { normalizeRunType } from './run-type.js?v=a82370d7';
 import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
 
 // Form submission + populate-submit-form -- factored out of app.js.
@@ -294,11 +295,16 @@ export async function submitReport(appId, title, form, editReportId = null) {
   if (!derivedRating) {
     return { ok: false, error: 'Cannot derive a rating from the answers. Please review the compatibility questions.' };
   }
+  const runTypeVal = normalizeRunType(form.runType?.value) || 'proton';
+  const isNative = runTypeVal === 'native';
   const formResponses = {
     canInstall: state.canInstall || null,
     canStart:   state.canStart   || null,
     canPlay:    state.canPlay    || null,
-    protonType: inferProtonType(form.protonVersion.value),
+    // Proton type is only meaningful for Proton-family runs. Native reports
+    // carry a null so scoring can distinguish "no Proton fields required"
+    // from "Proton was blank due to user error".
+    protonType: isNative ? null : inferProtonType(form.protonVersion.value),
     tinkeringMethods: state.tinkeringMethods ? [...state.tinkeringMethods] : [],
     isTinker: !!(state.tinkeringMethods && state.tinkeringMethods.size > 0),
     ...Object.fromEntries(FAULT_KEYS_WEB.map(k => [k, state.faults?.[k] || null])),
@@ -351,7 +357,9 @@ export async function submitReport(appId, title, form, editReportId = null) {
     ram: normalizeRam(form.ram.value),
     os: (form.os.value + (form.osVersion.value ? ' ' + form.osVersion.value.trim() : '')),
     kernel: form.kernel.value,
-    proton_version: form.protonVersion.value,
+    // Native runs do not use Proton, so store null rather than an empty
+    // string that would break "distinct Proton versions" queries later.
+    proton_version: isNative ? null : form.protonVersion.value,
     duration: form.duration.value || 'unreported',
     rating: derivedRating,
     notes: form.notes.value,
@@ -365,6 +373,9 @@ export async function submitReport(appId, title, form, editReportId = null) {
     fps_min: form.fpsMin?.value ? Number(form.fpsMin.value) : null,
     fps_avg: form.fpsAvg?.value ? Number(form.fpsAvg.value) : null,
     fps_max: form.fpsMax?.value ? Number(form.fpsMax.value) : null,
+    // Normalize whatever the toggle carries into the canonical taxonomy so
+    // a rogue pipeline value or a stale draft cannot land unclassified.
+    run_type: normalizeRunType(form.runType?.value) || null,
     game_owned: true,  // authenticated web users own the game by definition
     owner_verified: await isAppIdInMyLibrary(appId, session),
     form_responses: formResponses,
@@ -555,6 +566,21 @@ export async function populateSubmitForm(el) {
       <div id="sf-draft-restore" class="sf-draft-restore" hidden></div>
       <div class="sf-section-label">Game</div>
       <div class="sf-row"><label>Game title</label><input name="gameTitle" readonly style="cursor:default;color:var(--muted);border-color:var(--border2);background:var(--s1);" placeholder="Loading..."></div>
+      <div class="sf-row sf-row--run-type">
+        <label>Run type *</label>
+        <div class="sf-run-type-group" role="radiogroup" aria-label="Run type">
+          <button type="button" class="sf-run-type-btn sf-run-type-btn--active" data-run-type="proton" aria-pressed="true">
+            <span class="sf-run-type-title">Proton</span>
+            <span class="sf-run-type-sub">Windows build via Proton</span>
+          </button>
+          <button type="button" class="sf-run-type-btn" data-run-type="native" aria-pressed="false">
+            <span class="sf-run-type-title">Native Linux</span>
+            <span class="sf-run-type-sub" id="sf-run-type-native-sub">Linux build (no Proton)</span>
+          </button>
+        </div>
+        <input type="hidden" name="runType" value="proton">
+      </div>
+      <div class="sf-row-hint sf-run-type-hint" id="sf-run-type-hint" hidden></div>
 
       <div class="sf-section-label">Hardware &amp; Setup</div>
       <div class="sf-row"><label>System</label>
@@ -955,6 +981,95 @@ export async function populateSubmitForm(el) {
   // remain useful for anyone submitting from a browser.
   wireFpsInfoButtons(container);
   wireFpsCsvUpload(container);
+  wireRunTypeToggle(container);
+}
+
+// Native vs Proton toggle at the top of the report. When "Native" is
+// selected we disable the Proton-only fields so the form communicates
+// clearly that they do not apply, and the submitted row carries a
+// definitive run_type instead of a stale Proton version guess.
+/**
+ * Adjust the Run Type toggle based on whether the game ships a native
+ * Linux binary per Steam appdetails. When Steam says no, disable the
+ * Native option and surface a short explanation. Called by page scripts
+ * after they know the answer (they run the fetch anyway for other UI).
+ */
+export function setRunTypeNativeAvailable(container, isAvailable) {
+  const nativeBtn = container.querySelector('.sf-run-type-btn[data-run-type="native"]');
+  const sub = container.querySelector('#sf-run-type-native-sub');
+  const hidden = container.querySelector('input[name="runType"]');
+  if (!nativeBtn) return;
+  if (isAvailable) {
+    nativeBtn.disabled = false;
+    nativeBtn.title = '';
+    if (sub) sub.textContent = 'Linux build (no Proton)';
+    return;
+  }
+  nativeBtn.disabled = true;
+  nativeBtn.title = 'Steam does not list a native Linux build for this game.';
+  if (sub) sub.textContent = 'Not offered by Steam for this game';
+  // If the user (or a restored draft) had Native selected, bounce back to
+  // Proton so we do not submit a run_type Steam disagrees with.
+  if (hidden?.value === 'native') {
+    const protonBtn = container.querySelector('.sf-run-type-btn[data-run-type="proton"]');
+    protonBtn?.click();
+  }
+}
+
+function wireRunTypeToggle(container) {
+  const buttons = container.querySelectorAll('.sf-run-type-btn');
+  const hidden = container.querySelector('input[name="runType"]');
+  const protonRow = [...container.querySelectorAll('.sf-row')]
+    .find(row => row.querySelector('input[name="protonVersion"]'));
+  const hintEl = container.querySelector('#sf-run-type-hint');
+  if (!buttons.length || !hidden) return;
+
+  const setActive = (key) => {
+    hidden.value = key;
+    for (const btn of buttons) {
+      const on = btn.dataset.runType === key;
+      btn.classList.toggle('sf-run-type-btn--active', on);
+      btn.setAttribute('aria-pressed', String(on));
+    }
+    if (protonRow) {
+      const isNative = key === 'native';
+      const label = protonRow.querySelector('label');
+      const input = protonRow.querySelector('input[name="protonVersion"]');
+      if (input) {
+        input.disabled = isNative;
+        input.required = !isNative;
+        input.placeholder = isNative
+          ? 'Not applicable for native builds'
+          : 'e.g. Proton 9.0-4 or GE-Proton9-27';
+        if (isNative) input.value = '';
+      }
+      if (label) {
+        // Star ('*') means required; drop it when Proton is not applicable.
+        label.textContent = isNative ? 'Proton Version' : 'Proton Version *';
+      }
+      protonRow.classList.toggle('sf-row--disabled', isNative);
+    }
+    if (hintEl) {
+      if (key === 'native') {
+        hintEl.textContent = 'Proton fields are disabled. FPS + compatibility answers still apply to the native build.';
+        hintEl.hidden = false;
+      } else {
+        hintEl.hidden = true;
+        hintEl.textContent = '';
+      }
+    }
+  };
+
+  for (const btn of buttons) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      setActive(btn.dataset.runType);
+    });
+  }
+
+  // Initialize from the hidden input's initial value (defaults to 'proton'
+  // in the template; restored drafts / edits pass their own value).
+  setActive(hidden.value || 'proton');
 }
 
 function wireFpsCsvUpload(container) {

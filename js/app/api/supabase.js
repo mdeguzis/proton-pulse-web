@@ -87,7 +87,7 @@ export async function fetchNativeReports(appId) {
   try {
     const [r, approvalRes] = await Promise.all([
       fetch(
-        `${SB_URL}/user_configs?app_id=eq.${appId}&is_flagged=neq.true&select=id,client_id,proton_pulse_user_id,app_id,title,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,os,kernel,proton_version,rating,duration,duration_minutes,notes,vram_mb,fps_min,fps_avg,fps_max,form_responses,config_key,game_owned,owner_verified,created_at,updated_at,source,is_flagged,launch_options&order=created_at.desc`,
+        `${SB_URL}/user_configs?app_id=eq.${appId}&is_flagged=neq.true&select=id,client_id,proton_pulse_user_id,app_id,title,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,os,kernel,proton_version,rating,duration,duration_minutes,notes,vram_mb,fps_min,fps_avg,fps_max,run_type,form_responses,config_key,game_owned,owner_verified,created_at,updated_at,source,is_flagged,launch_options&order=created_at.desc`,
         { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } }
       ),
       fetch(
@@ -136,6 +136,7 @@ export async function fetchNativeReports(appId) {
       fpsMin:            row.fps_min ?? null,
       fpsAvg:            row.fps_avg ?? null,
       fpsMax:            row.fps_max ?? null,
+      runType:           row.run_type ?? null,
       formResponses:     row.form_responses ?? null,
       configKey:         row.config_key || null,
       gameOwned:         row.game_owned ?? false,

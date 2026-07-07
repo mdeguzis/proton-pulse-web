@@ -1,6 +1,7 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=1b8ae722';
-import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, submitReport } from '../shared/submit.js?v=73bcc9f4';
+import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=b6800be8';
+import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=fbe031ae';
 import { deleteDraft, getDraft, snapshotFormData, upsertDraft } from '../shared/drafts.js?v=da9caf1e';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
@@ -162,6 +163,17 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
   // Show the Verified owner pill at the top of the form when the user's
   // cached Steam library confirms ownership (#199).
   void renderVerifiedOwnerStatus(el, appId);
+
+  // Cross-check Steam appdetails: if the title has no native Linux build,
+  // disable the "Native Linux" run type so users cannot submit an
+  // impossible run_type. Non-blocking; the toggle stays enabled until
+  // Steam answers so the form renders instantly.
+  void (async () => {
+    try {
+      const hasLinuxNative = await fetchLinuxNativeSupport(appId);
+      setRunTypeNativeAvailable(el, hasLinuxNative);
+    } catch (e) { console.debug('[submit] linux native probe skipped:', e); }
+  })();
 
   // Cloud draft restore + Save Draft button. Only offer for fresh submits
   // (edits reload from the report itself; fromCloud has its own path).

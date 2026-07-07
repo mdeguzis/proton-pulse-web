@@ -3,15 +3,15 @@
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=1b8ae722';
 import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=8dc92cf7';
-import { getWebClientId } from '../../shared/submit.js?v=73bcc9f4';
+import { getWebClientId } from '../../shared/submit.js?v=b6800be8';
 import { fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=fbe031ae';
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
-import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=b2f22b54';
+import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=01961c8d';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=a1a075ee';
-import { renderCard } from './report-card.js?v=df12c82c';
+import { renderCard } from './report-card.js?v=89b4268c';
 import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=f9591262';
@@ -371,6 +371,10 @@ export async function renderGamePage(appId) {
   let filterArch   = persistedFilters.arch   || '';
   let filterOs     = persistedFilters.os     || '';
   let filterRating = persistedFilters.rating || '';
+  // Native vs Proton (or a specific proton wrapper). '' == any. Reports
+  // without a run_type value are treated as unknown so they never
+  // accidentally match a specific selection.
+  let filterRunType = persistedFilters.runType || '';
   // 'deck-lcd' / 'deck-oled' / 'deck-any' / 'desktop' / ''
   let filterDevice = persistedFilters.device || '';
   // Minimum reporter playtime in minutes (0 = any). Useful to skip "launched
@@ -382,7 +386,7 @@ export async function renderGamePage(appId) {
   function saveFiltersIfEnabled() {
     if (!persistFilters) return;
     try {
-      const snapshot = { gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating, device: filterDevice, minPlaytime: filterMinPlaytime, source: filterSource };
+      const snapshot = { gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating, runType: filterRunType, device: filterDevice, minPlaytime: filterMinPlaytime, source: filterSource };
       localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(snapshot));
     } catch { /* quota / disabled - ignore */ }
   }
@@ -434,6 +438,7 @@ export async function renderGamePage(appId) {
     if (filterGpu)    arr = arr.filter(r => gpuVendor(r.gpu) === filterGpu);
     if (filterArch)   arr = arr.filter(r => gpuArch(r) === filterArch);
     if (filterOs)     arr = arr.filter(r => osBase(r.os) === filterOs);
+    if (filterRunType) arr = arr.filter(r => (r.runType || '') === filterRunType);
     if (filterDevice) {
       arr = arr.filter(r => {
         const haystack = `${r.cpu || ''} ${r.gpu || ''}`;
@@ -700,6 +705,19 @@ export async function renderGamePage(appId) {
                 ${availRatings.map(v => `<option value="${v}" ${filterRating===v?'selected':''}>${RATING_LABEL[v]||v}</option>`).join('')}
               </select>
             </div>` : '';
+          // Run-type filter: only show when this game has at least one report
+          // carrying a run_type (legacy reports have null and would otherwise
+          // clutter the modal with an "Any / Proton" toggle that does nothing).
+          const RUN_TYPE_LABEL = { native: 'Native Linux', proton: 'Proton', 'proton-lsfg': 'Proton + LSFG' };
+          const availRunTypes = [...new Set(combined.map(r => r.runType).filter(Boolean))].sort();
+          const runTypeSel = availRunTypes.length > 0 ? `
+            <div class="filter-item">
+              <label for="fRunType">Run type</label>
+              <select id="fRunType">
+                <option value="">Any</option>
+                ${availRunTypes.map(v => `<option value="${esc(v)}" ${filterRunType===v?'selected':''}>${RUN_TYPE_LABEL[v]||v}</option>`).join('')}
+              </select>
+            </div>` : '';
           const srcSel = `
             <div class="filter-item">
               <label for="fSource">Source</label>
@@ -736,7 +754,7 @@ export async function renderGamePage(appId) {
               </select>
             </div>`;
 
-          const activeCount = [filterGpu, filterArch, filterOs, filterRating, filterSource, filterDevice, filterMinPlaytime > 0 ? '1' : ''].filter(Boolean).length;
+          const activeCount = [filterGpu, filterArch, filterOs, filterRating, filterRunType, filterSource, filterDevice, filterMinPlaytime > 0 ? '1' : ''].filter(Boolean).length;
           const anyActive = activeCount > 0;
 
           return `
@@ -747,7 +765,7 @@ export async function renderGamePage(appId) {
             ${anyActive ? `<span class="filter-count">${reps.length} of ${combined.length} shown</span>` : ''}
             <div class="filter-panel" id="filterPanel">
               <div class="filter-panel-grid">
-                ${gpuSel}${archSel}${osSel}${srcSel}${ratingSel}${deviceSel}${playtimeSel}
+                ${gpuSel}${archSel}${osSel}${srcSel}${ratingSel}${runTypeSel}${deviceSel}${playtimeSel}
               </div>
               <div class="filter-panel-footer">
                 <label class="filter-persist" title="Save these filters so they apply next time you visit a game page">
@@ -815,13 +833,14 @@ export async function renderGamePage(appId) {
     el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open'); });
     el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open'); });
     el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open'); });
+    el.querySelector('#fRunType')?.addEventListener('change', e => { filterRunType = e.target.value; saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open'); });
     el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open'); });
     el.querySelector('#filterToggle')?.addEventListener('click', (e) => {
       e.stopPropagation();
       el.querySelector('#filterPanel')?.classList.toggle('open');
     });
     el.querySelector('#filterClear')?.addEventListener('click', () => {
-      filterGpu = ''; filterArch = ''; filterOs = ''; filterRating = '';
+      filterGpu = ''; filterArch = ''; filterOs = ''; filterRating = ''; filterRunType = '';
       filterSource = ''; filterDevice = ''; filterMinPlaytime = 0;
       saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open');
     });

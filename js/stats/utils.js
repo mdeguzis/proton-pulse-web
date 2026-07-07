@@ -9,6 +9,7 @@ export const FILTER_DIMS = [
   { id: 'device', label: 'Device',  statsKey: 'by_device_family',  crossKey: 'by_rating_x_device_family' },
   { id: 'store',  label: 'Store',   statsKey: 'by_store',          crossKey: 'by_rating_x_store' },
   { id: 'source', label: 'Source',  statsKey: 'by_source',         crossKey: 'by_rating_x_source' },
+  { id: 'runType', label: 'Run type', statsKey: 'by_run_type',     crossKey: 'by_rating_x_run_type' },
   { id: 'rating', label: 'Rating',  statsKey: 'by_rating',         crossKey: null },
 ];
 
@@ -26,7 +27,9 @@ const PRETTY = {
   'proton-stable': 'Proton (stable)', 'proton-hotfix': 'Proton Hotfix',
   'proton-tkg': 'Proton-TKG', 'proton-next': 'Proton Next',
   'steam-linux-runtime': 'Steam Linux Runtime',
-  native: 'Native',
+  native: 'Native Linux',
+  proton: 'Proton',
+  'proton-lsfg': 'Proton + LSFG',
   steam: 'Steam', gog: 'GOG', epic: 'Epic',
   protondb: 'ProtonDB', pulse: 'Pulse',
   'steam-deck-lcd': 'Steam Deck LCD',

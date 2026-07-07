@@ -1,6 +1,6 @@
 // Stats page filter state and UI logic.
 
-import { FILTER_DIMS, dimDef, label, fmt, sum } from './utils.js?v=9bcdac4f';
+import { FILTER_DIMS, dimDef, label, fmt, sum } from './utils.js?v=f0ed48a3';
 
 // Active filter. Only one dim active at a time (because the cross-tabs
 // we ship only key off one dim), but multiple values within that dim.

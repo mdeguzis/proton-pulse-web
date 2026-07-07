@@ -1029,6 +1029,79 @@
    line up when only one or two of the three fields have data. */
 .fps-values { font-family: var(--mono); }
 
+/* Run-type toggle at the top of the submit form. Two side-by-side buttons,
+   one carries the (disabled) native option when Steam does not list a
+   native build. Active state matches the pg-filter accent. */
+.sf-run-type-group {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.sf-run-type-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 8px 12px;
+  border: 1px solid var(--border2);
+  background: var(--s1);
+  color: var(--text);
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: border-color 0.15s, background 0.15s;
+}
+.sf-run-type-btn:hover:not(:disabled) { border-color: var(--accent); }
+.sf-run-type-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.sf-run-type-btn--active {
+  border-color: var(--accent);
+  background: rgba(74,159,208,0.08);
+  color: var(--accent);
+}
+.sf-run-type-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.sf-run-type-sub {
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+.sf-run-type-hint {
+  margin: -2px 0 6px;
+  padding-left: 130px;
+  color: var(--accent);
+}
+.sf-row--disabled { opacity: 0.5; }
+.sf-row--disabled input { cursor: not-allowed; }
+
+/* Report-card run-type pill: a small badge in place of / alongside the
+   Proton version so viewers immediately see whether a report is Native. */
+.run-type-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  border: 1px solid var(--border);
+}
+.run-type-pill--native {
+  color: #7ed37a;
+  border-color: rgba(126,211,122,0.5);
+  background: rgba(126,211,122,0.08);
+}
+.run-type-pill--lsfg {
+  color: #f5b041;
+  border-color: rgba(245,176,65,0.5);
+  background: rgba(245,176,65,0.08);
+  margin-right: 4px;
+}
+[data-theme="light"] .run-type-pill--native { color: #256b25; }
+
 /* MangoHud CSV upload row: small button + inline status text. Sits below
    the three FPS inputs but shares the same left gutter as any sf-row for
    visual alignment. */
