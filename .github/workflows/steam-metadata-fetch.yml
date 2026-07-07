@@ -1,4 +1,4 @@
-name: Steam PICS Depot Fetch
+name: Steam Metadata Fetch (depot dates)
 
 # Fetches per-OS depot last-updated timestamps from Steam PICS via
 # steamcmd anonymous, one app at a time with a courteous sleep so we do
@@ -64,4 +64,4 @@ jobs:
 
       - name: Fetch depot dates
         run: |
-          python -m scripts.pipeline.steam_pics $(echo "${{ steps.apps.outputs.list }}" | tr ',' ' ')
+          python -m scripts.pipeline.steam_metadata $(echo "${{ steps.apps.outputs.list }}" | tr ',' ' ')

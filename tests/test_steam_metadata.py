@@ -1,4 +1,4 @@
-"""Tests for scripts/pipeline/steam_pics.py.
+"""Tests for scripts/pipeline/steam_metadata.py.
 
 The KV parser + depot extractor are pure functions, so the tests hit
 them directly with representative steamcmd output snippets. steamcmd
@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import pytest
 
-from scripts.pipeline import steam_pics
+from scripts.pipeline import steam_metadata
 
 
 # A trimmed but realistic steamcmd `+app_info_print 367520` payload.
@@ -95,14 +95,14 @@ AppID : 367520, change number : 12345678
 
 class TestParser:
     def test_parses_realistic_appinfo_block(self):
-        parsed = steam_pics.parse_app_info(SAMPLE_APPINFO)
+        parsed = steam_metadata.parse_app_info(SAMPLE_APPINFO)
         assert parsed is not None
         assert parsed["common"]["name"] == "Hollow Knight"
         assert "367521" in parsed["depots"]
 
     def test_returns_none_when_no_appid_header(self):
         # steamcmd sometimes prints a login banner and nothing else.
-        assert steam_pics.parse_app_info("Loading Steam API...OK\nWaiting for user info...OK\n") is None
+        assert steam_metadata.parse_app_info("Loading Steam API...OK\nWaiting for user info...OK\n") is None
 
     def test_handles_inline_comments(self):
         text = '''
@@ -113,29 +113,29 @@ class TestParser:
     "depots" { }
 }
 '''
-        parsed = steam_pics.parse_app_info(text)
+        parsed = steam_metadata.parse_app_info(text)
         assert parsed is not None
         assert parsed["common"]["name"] == "Test"
 
 
 class TestExtractDepotRows:
     def test_produces_one_row_per_supported_os(self):
-        parsed = steam_pics.parse_app_info(SAMPLE_APPINFO)
-        rows = steam_pics.extract_depot_rows(367520, parsed)
+        parsed = steam_metadata.parse_app_info(SAMPLE_APPINFO)
+        rows = steam_metadata.extract_depot_rows(367520, parsed)
         # Three OS-bound depots -> three rows; the shared-assets depot has
         # no oslist and is skipped.
         oses = sorted(r.os for r in rows)
         assert oses == ["linux", "mac", "windows"]
 
     def test_normalizes_macos_alias_to_mac(self):
-        parsed = steam_pics.parse_app_info(SAMPLE_APPINFO)
-        rows = steam_pics.extract_depot_rows(367520, parsed)
+        parsed = steam_metadata.parse_app_info(SAMPLE_APPINFO)
+        rows = steam_metadata.extract_depot_rows(367520, parsed)
         mac = next(r for r in rows if r.os == "mac")
         assert mac.depot_id == 367522
 
     def test_carries_manifest_id_and_last_updated(self):
-        parsed = steam_pics.parse_app_info(SAMPLE_APPINFO)
-        rows = steam_pics.extract_depot_rows(367520, parsed)
+        parsed = steam_metadata.parse_app_info(SAMPLE_APPINFO)
+        rows = steam_metadata.extract_depot_rows(367520, parsed)
         linux = next(r for r in rows if r.os == "linux")
         assert linux.last_updated_at == 1710000000
         assert linux.manifest_id == "9876543212"
@@ -158,8 +158,8 @@ class TestExtractDepotRows:
     }
 }
 '''
-        parsed = steam_pics.parse_app_info(text)
-        rows = steam_pics.extract_depot_rows(1, parsed)
+        parsed = steam_metadata.parse_app_info(text)
+        rows = steam_metadata.extract_depot_rows(1, parsed)
         assert sorted(r.os for r in rows) == ["linux", "windows"]
         assert all(r.last_updated_at == 1234 for r in rows)
 
@@ -182,8 +182,8 @@ class TestExtractDepotRows:
     }
 }
 '''
-        parsed = steam_pics.parse_app_info(text)
-        rows = steam_pics.extract_depot_rows(1, parsed)
+        parsed = steam_metadata.parse_app_info(text)
+        rows = steam_metadata.extract_depot_rows(1, parsed)
         assert rows == []
 
     def test_unknown_oslist_lands_in_other_bucket(self):
@@ -200,8 +200,8 @@ class TestExtractDepotRows:
     }
 }
 '''
-        parsed = steam_pics.parse_app_info(text)
-        rows = steam_pics.extract_depot_rows(1, parsed)
+        parsed = steam_metadata.parse_app_info(text)
+        rows = steam_metadata.extract_depot_rows(1, parsed)
         assert len(rows) == 1
         assert rows[0].os == "other"
 
@@ -211,8 +211,8 @@ class TestRunnerAvailability:
         monkeypatch.setenv("STEAMCMD_BINARY", "/definitely/not/here/steamcmd")
         # Re-import to pick up the env override.
         import importlib
-        importlib.reload(steam_pics)
-        assert steam_pics.steamcmd_available() is False
+        importlib.reload(steam_metadata)
+        assert steam_metadata.steamcmd_available() is False
 
 
 class TestFetchAndStoreOffline:
@@ -220,12 +220,12 @@ class TestFetchAndStoreOffline:
         """fetch_and_store should mark the app as no_public_manifest when
         steamcmd returned something but parse produced zero rows -- and
         must NOT hit Supabase for depot upsert in that case."""
-        monkeypatch.setattr(steam_pics, "run_steamcmd_app_info", lambda app_id, **kw: "no appinfo here")
+        monkeypatch.setattr(steam_metadata, "run_steamcmd_app_info", lambda app_id, **kw: "no appinfo here")
         upserts = []
         status_calls = []
-        monkeypatch.setattr(steam_pics, "upsert_depot_rows", lambda rows: upserts.append(list(rows)) or 0)
-        monkeypatch.setattr(steam_pics, "upsert_fetch_status", lambda app_id, status, depot_count, error=None: status_calls.append((app_id, status, depot_count, error)))
-        status, n = steam_pics.fetch_and_store(1)
+        monkeypatch.setattr(steam_metadata, "upsert_depot_rows", lambda rows: upserts.append(list(rows)) or 0)
+        monkeypatch.setattr(steam_metadata, "upsert_fetch_status", lambda app_id, status, depot_count, error=None: status_calls.append((app_id, status, depot_count, error)))
+        status, n = steam_metadata.fetch_and_store(1)
         assert status == "no_public_manifest"
         assert n == 0
         assert upserts == []
@@ -234,10 +234,10 @@ class TestFetchAndStoreOffline:
     def test_error_status_when_steamcmd_raises(self, monkeypatch):
         def boom(*a, **kw):
             raise RuntimeError("steamcmd missing")
-        monkeypatch.setattr(steam_pics, "run_steamcmd_app_info", boom)
+        monkeypatch.setattr(steam_metadata, "run_steamcmd_app_info", boom)
         status_calls = []
-        monkeypatch.setattr(steam_pics, "upsert_fetch_status", lambda app_id, status, depot_count, error=None: status_calls.append((app_id, status, error)))
-        status, n = steam_pics.fetch_and_store(1)
+        monkeypatch.setattr(steam_metadata, "upsert_fetch_status", lambda app_id, status, depot_count, error=None: status_calls.append((app_id, status, error)))
+        status, n = steam_metadata.fetch_and_store(1)
         assert status == "error"
         assert n == 0
         assert status_calls[0][0] == 1

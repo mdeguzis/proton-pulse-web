@@ -1,7 +1,7 @@
 // steam-depot-info: per-OS depot last-updated dates for the Metadata modal.
 //
 // Reads from public.steam_depot_updates (populated nightly by the Steam
-// PICS pipeline via steamcmd; see .github/workflows/steam-pics-fetch.yml).
+// PICS pipeline via steamcmd; see .github/workflows/steam-metadata-fetch.yml).
 // Aggregates rows into a compact { windows, mac, linux } shape:
 //
 //   { appId: "367520", found: true, os: {

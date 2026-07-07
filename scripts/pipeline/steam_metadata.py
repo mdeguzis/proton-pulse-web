@@ -1,21 +1,26 @@
-"""Fetch per-depot last-updated timestamps via `steamcmd +app_info_print`.
+"""Fetch Steam per-app metadata that is NOT in the public storefront API.
 
-Steam's storefront /api/appdetails does not include depot manifest metadata,
-so per-OS "when was the Linux build last updated" cannot be answered from
-the browser at all. That info lives in PICS (Steam's internal Product
-Info Client Service). SteamDB scrapes it; the "official" way for us to
-reach it without going through steamdb.info or a paid third party is
-steamcmd's `+app_info_print <appId>` command, which dumps the same
-KeyValues structure the client sees.
+The public store /api/appdetails endpoint covers most of the SteamDB-style
+metadata modal (developer, publisher, release date, categories, ...) --
+we already surface that via the steam-appdetails edge function. What it
+does NOT include is per-depot manifest data: which depot ships which OS
+build, and when each was last updated. That lives in PICS (Steam's
+internal Product Info Client Service), same source SteamDB scrapes. The
+"official" way to reach PICS without a paid third party is steamcmd's
+`+app_info_print <appId>` command, which dumps the KeyValues structure
+the client sees.
 
-Two responsibilities in this module:
+This module owns the steamcmd side of the Steam metadata story so future
+per-app fetchers that also need a runner + parser can extend it rather
+than fork a sibling file. Two responsibilities today:
 
     - parse the KeyValues text steamcmd emits (pure function, tested)
     - drive steamcmd once per app and upsert results into Supabase
 
-The runner is deliberately small and re-usable both from `scripts/pipeline`
-(nightly cron) and from the manual `make steam-pics APP=<id>` target so
-we can spot-check parsing before wiring the full backfill.
+Note: `scripts/pipeline/metadata.py` handles our OWN per-app metadata.json
+output files (site JSON), and `scripts/pipeline/release_years.py` fetches
+a single release-year field via HTTP appdetails; both are unrelated to
+what we do here.
 """
 from __future__ import annotations
 
@@ -252,7 +257,7 @@ def run_steamcmd_app_info(app_id: int, timeout: int = 60) -> str:
         cmd, capture_output=True, text=True, timeout=timeout, check=False,
     )
     if proc.returncode != 0:
-        log(f"steam-pics: steamcmd exit={proc.returncode} app={app_id} stderr={proc.stderr[:200]}")
+        log(f"steam-metadata: steamcmd exit={proc.returncode} app={app_id} stderr={proc.stderr[:200]}")
     return proc.stdout
 
 
@@ -333,7 +338,7 @@ def fetch_and_store(app_id: int, sleep_between: float = 3.0) -> tuple[str, int]:
     try:
         raw = run_steamcmd_app_info(app_id)
     except Exception as e:
-        log(f"steam-pics: app={app_id} steamcmd failed error={e}")
+        log(f"steam-metadata: app={app_id} steamcmd failed error={e}")
         upsert_fetch_status(app_id, "error", 0, str(e)[:500])
         return "error", 0
     parsed = parse_app_info(raw)
@@ -346,7 +351,7 @@ def fetch_and_store(app_id: int, sleep_between: float = 3.0) -> tuple[str, int]:
         return "no_public_manifest", 0
     n = upsert_depot_rows(rows)
     upsert_fetch_status(app_id, "ok", n, None)
-    log(f"steam-pics: app={app_id} rows={n} source=steamcmd-pics")
+    log(f"steam-metadata: app={app_id} rows={n} source=steamcmd-pics")
     return "ok", n
 
 
@@ -363,7 +368,7 @@ def fetch_batch(app_ids: Iterable[int], sleep_between: float = 3.0) -> dict:
         try:
             status, _ = fetch_and_store(int(app_id))
         except Exception as e:
-            log(f"steam-pics: app={app_id} unexpected error={e}")
+            log(f"steam-metadata: app={app_id} unexpected error={e}")
             summary["error"] += 1
             continue
         if status == "ok":
@@ -377,11 +382,11 @@ def fetch_batch(app_ids: Iterable[int], sleep_between: float = 3.0) -> dict:
 
 
 if __name__ == "__main__":
-    # `python -m scripts.pipeline.steam_pics 367520 730 ...`
+    # `python -m scripts.pipeline.steam_metadata 367520 730 ...`
     import sys
     ids = [int(x) for x in sys.argv[1:] if x.isdigit()]
     if not ids:
-        print("usage: python -m scripts.pipeline.steam_pics <appId> [<appId> ...]", file=sys.stderr)
+        print("usage: python -m scripts.pipeline.steam_metadata <appId> [<appId> ...]", file=sys.stderr)
         sys.exit(2)
     summary = fetch_batch(ids)
     print(json.dumps(summary))
