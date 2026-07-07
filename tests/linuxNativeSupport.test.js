@@ -11,6 +11,12 @@
 // hermetic.
 function loadModule() {
   jest.resetModules();
+  // _fetchAppBasic now routes through the steam-appdetails Supabase edge
+  // function proxy (Steam blocks CORS from static origins). Tests stub
+  // SUPABASE_URL so the fetch URL is well-formed; the fake fetch below
+  // doesn't care what the URL is.
+  global.window = global.window || {};
+  global.window.SUPABASE_URL = 'https://test.supabase.co';
   return require('../js/app/api/deck-status.js');
 }
 

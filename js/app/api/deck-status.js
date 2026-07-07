@@ -70,12 +70,15 @@ function _fetchAppBasic(appId) {
   if (_appBasicCache[appId] !== undefined) return _appBasicCache[appId];
   const p = (async () => {
     try {
-      // Full appdetails payload -- filters=basic silently omits platforms,
-      // developers, publishers, categories, genres, and release_date that
-      // fetchLinuxNativeSupport / the Metadata modal all read. Dropping the
-      // filter costs a few KB more per response but gives us one shared
-      // fetch for every metadata reader instead of two overlapping calls.
-      const r = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appId}&l=english`);
+      // Steam's appdetails endpoint does not send Access-Control-Allow-Origin
+      // to github.io / proton-pulse.com, so a direct browser fetch is
+      // silently blocked (empty response -> Native badge never fires,
+      // Metadata modal errors). Route through the steam-appdetails Supabase
+      // edge function which forwards server-side and re-serves with an open
+      // CORS header + 10 min cache.
+      const base = (typeof window !== 'undefined' && window.SUPABASE_URL) || '';
+      if (!base) throw new Error('SUPABASE_URL not set');
+      const r = await fetch(`${base}/functions/v1/steam-appdetails?appId=${encodeURIComponent(appId)}`);
       if (!r.ok) throw new Error(r.status);
       const d = await r.json();
       return d?.[appId]?.data ?? null;
