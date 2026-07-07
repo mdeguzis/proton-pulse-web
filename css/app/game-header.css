@@ -1195,10 +1195,14 @@
    with report count + first / last seen dates. Fluid width mirrors the
    metadata modal so both fit small phones. */
 .runtime-history-modal {
-  width: min(420px, calc(100vw - 24px));
+  width: 100%;
   min-width: 0;
+  max-width: 480px;   /* widen the 420px .flag-modal cap for the table */
   max-height: calc(100vh - 80px);
   overflow-y: auto;
+}
+@media (max-width: 720px) {
+  .runtime-history-modal { max-width: 100%; }
 }
 .rh-hint {
   margin: 0 0 12px;
@@ -1241,14 +1245,23 @@
 }
 
 /* SteamDB-style Metadata modal opened from the hub-links row. Fluid width
-   so the modal fills small phones without spilling off-screen, and the
-   scroll lives on the body so the header + Close row stay pinned. */
+   so the modal fills small phones (with a small border buffer inherited
+   from the overlay's 16px padding) up to a comfortable desktop cap. The
+   scroll lives on the body so the header + Close row stay pinned. Base
+   .flag-modal caps width at 420px; we widen it here without touching the
+   base rule so no other modal changes. */
 .game-metadata-modal {
-  width: min(560px, calc(100vw - 24px));
+  width: 100%;
   min-width: 0;
+  max-width: 640px;   /* overrides the 420px cap from .flag-modal */
   max-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 720px) {
+  /* Phones: fill the overlay -- overlay already has 16px padding on each
+     side which acts as the border buffer, so no extra math needed. */
+  .game-metadata-modal { max-width: 100%; }
 }
 .game-metadata-body {
   display: flex;
