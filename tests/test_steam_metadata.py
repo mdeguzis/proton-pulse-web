@@ -13,8 +13,14 @@ from scripts.pipeline import steam_metadata
 
 
 # A trimmed but realistic steamcmd `+app_info_print 367520` payload.
-# Real output is much larger; we keep only the fields the parser cares
-# about so the test text stays readable.
+# Shape mirrors what SteamKit / ValvePython/steam / patchforge parse:
+#   depots.<depotId>.config.oslist          -> which OS the depot ships
+#   depots.<depotId>.manifests.public.gid   -> current manifest id
+#   depots.branches.public.timeupdated      -> app-level last-update ts
+# Individual depots do not carry a per-depot timeupdated in real PICS
+# app_info output; the branch-level value is what SteamDB surfaces on
+# its Depot page's Last Update column. Our first seed run against
+# Hollow Knight taught us this the hard way (parser returned 0 rows).
 SAMPLE_APPINFO = '''\
 Loading Steam API...OK
 Waiting for user info...OK
@@ -40,7 +46,6 @@ AppID : 367520, change number : 12345678
                 "public"
                 {
                     "gid"          "9876543210"
-                    "timeupdated"  "1700000000"
                 }
             }
         }
@@ -56,7 +61,6 @@ AppID : 367520, change number : 12345678
                 "public"
                 {
                     "gid"          "9876543211"
-                    "timeupdated"  "1690000000"
                 }
             }
         }
@@ -72,7 +76,6 @@ AppID : 367520, change number : 12345678
                 "public"
                 {
                     "gid"          "9876543212"
-                    "timeupdated"  "1710000000"
                 }
             }
         }
@@ -84,8 +87,15 @@ AppID : 367520, change number : 12345678
                 "public"
                 {
                     "gid"          "9876543213"
-                    "timeupdated"  "1500000000"
                 }
+            }
+        }
+        "branches"
+        {
+            "public"
+            {
+                "buildid"      "12345678"
+                "timeupdated"  "1710000000"
             }
         }
     }
@@ -153,7 +163,11 @@ class TestExtractDepotRows:
         "10"
         {
             "config" { "oslist" "windows,linux" }
-            "manifests" { "public" { "timeupdated" "1234" } }
+            "manifests" { "public" { "gid" "111" } }
+        }
+        "branches"
+        {
+            "public" { "buildid" "1" "timeupdated" "1234" }
         }
     }
 }
@@ -163,7 +177,10 @@ class TestExtractDepotRows:
         assert sorted(r.os for r in rows) == ["linux", "windows"]
         assert all(r.last_updated_at == 1234 for r in rows)
 
-    def test_skips_depot_with_missing_or_zero_timestamp(self):
+    def test_skips_depot_when_no_branch_timestamp_and_no_manifest_timestamp(self):
+        # Neither the branch (missing) nor the per-depot manifest carry a
+        # timestamp -> nothing to record. Matches the earlier zero-ts
+        # skip but reframed for the new "branch-first" fallback order.
         text = '''
 "1"
 {
@@ -173,11 +190,7 @@ class TestExtractDepotRows:
         "10"
         {
             "config" { "oslist" "linux" }
-            "manifests" { "public" { "timeupdated" "0" } }
-        }
-        "11"
-        {
-            "config" { "oslist" "linux" }
+            "manifests" { "public" { "gid" "abc" } }
         }
     }
 }
@@ -185,6 +198,32 @@ class TestExtractDepotRows:
         parsed = steam_metadata.parse_app_info(text)
         rows = steam_metadata.extract_depot_rows(1, parsed)
         assert rows == []
+
+    def test_per_depot_manifest_timestamp_wins_over_branch(self):
+        # Rare shape: some apps carry a per-depot manifests.public
+        # .timeupdated. When present, we prefer it over the branch value.
+        text = '''
+"1"
+{
+    "common" { "name" "PerDepot" }
+    "depots"
+    {
+        "10"
+        {
+            "config" { "oslist" "linux" }
+            "manifests" { "public" { "gid" "abc" "timeupdated" "5000" } }
+        }
+        "branches"
+        {
+            "public" { "buildid" "1" "timeupdated" "1000" }
+        }
+    }
+}
+'''
+        parsed = steam_metadata.parse_app_info(text)
+        rows = steam_metadata.extract_depot_rows(1, parsed)
+        assert len(rows) == 1
+        assert rows[0].last_updated_at == 5000
 
     def test_unknown_oslist_lands_in_other_bucket(self):
         text = '''
@@ -195,7 +234,11 @@ class TestExtractDepotRows:
         "10"
         {
             "config" { "oslist" "chromeos" }
-            "manifests" { "public" { "timeupdated" "1000" } }
+            "manifests" { "public" { "gid" "abc" } }
+        }
+        "branches"
+        {
+            "public" { "buildid" "1" "timeupdated" "1000" }
         }
     }
 }

@@ -1,6 +1,6 @@
 // deck-status (components) for the app page. Relocated from app.js.
 
-import { getDeckStatusForApp } from '../api/deck-status.js?v=c5df5310';
+import { getDeckStatusForApp } from '../api/deck-status.js?v=09d5c67e';
 import { esc } from '../utils.js?v=c7e1268c';
 
 export const DECK_STATUS_LABELS = {

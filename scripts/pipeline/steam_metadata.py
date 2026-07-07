@@ -176,16 +176,62 @@ def parse_app_info(text: str) -> dict | None:
     return None
 
 
+def _branch_timeupdated(depots: dict, branch: str = "public") -> int:
+    """Read `depots.branches.<branch>.timeupdated` -- the app-level 'when
+    was this branch last updated' timestamp. PICS puts the branch info
+    at the SAME LEVEL as the depot IDs inside the depots dict; the
+    depot dicts themselves do not carry a per-depot timestamp in
+    app_info_print output (SteamKit / ValvePython/steam / patchforge
+    all read the branch-level timeupdated for the per-app 'last update'
+    signal). Individual depot manifest timestamps live in the depot
+    manifest headers -- fetching those requires a separate PICS call
+    per depot which we skip for now.
+    """
+    if not isinstance(depots, dict):
+        return 0
+    branches = depots.get("branches")
+    if not isinstance(branches, dict):
+        return 0
+    entry = branches.get(branch)
+    if not isinstance(entry, dict):
+        return 0
+    ts = entry.get("timeupdated")
+    try:
+        return int(ts) if ts is not None else 0
+    except (TypeError, ValueError):
+        return 0
+
+
 def extract_depot_rows(app_id: int, parsed: dict) -> list[DepotRow]:
     """Turn a parsed app_info dict into normalized DepotRow entries. One
-    row per (depot_id, os) pair. Depots that carry an oslist we do not
-    recognize get filed under 'other' so we can surface them if useful.
+    row per (depot_id, os) pair.
+
+    Data source shape (matches SteamKit / ValvePython/steam / patchforge):
+        depots.<depotId>.config.oslist         -> which OS this depot ships
+        depots.<depotId>.manifests.public.gid  -> current manifest id
+        depots.branches.public.timeupdated     -> app-level last-updated
+
+    Individual depots do NOT carry a per-depot timestamp in the PICS
+    app_info dump; the branch-level timeupdated is the shared 'this app
+    last got a public update at this time' signal (same value SteamDB
+    displays on the depot page's Last Update column when no per-depot
+    manifest fetch has run).
+
+    Depots that carry an oslist we do not recognize get filed under
+    'other' so we can surface them if useful. Depots with no oslist
+    are language/shared data -- skipped.
     """
     if not isinstance(parsed, dict):
         return []
     depots = parsed.get("depots") or {}
+    if not isinstance(depots, dict):
+        return []
     common = parsed.get("common") or {}
     app_name = common.get("name") if isinstance(common, dict) else None
+    # Public branch timeupdated is the shared last-update timestamp for
+    # every OS-tagged depot; the depot dict itself has no timestamp.
+    branch_ts = _branch_timeupdated(depots, "public")
+
     out: list[DepotRow] = []
     for depot_id, depot in depots.items():
         if not depot_id.isdigit():
@@ -202,21 +248,26 @@ def extract_depot_rows(app_id: int, parsed: dict) -> list[DepotRow]:
             if part.strip()
         }
         if not oses:
-            # A depot with no oslist usually ships common data (localization,
-            # shaders). Skip -- it is not tied to any OS build.
+            # A depot with no oslist usually ships localization / shared
+            # data. Skip -- it is not tied to any OS build.
             continue
-        # Newest manifest wins. PICS carries manifests[<branch>].timeupdated;
-        # public branch is what non-beta users install.
+        # A per-depot manifests.public.timeupdated wins if it exists (rare;
+        # SteamPipe leaves this field off on most published apps), then
+        # fall back to the branch-level timestamp which every OS depot
+        # inherits.
         manifests = depot.get("manifests") if isinstance(depot.get("manifests"), dict) else {}
         public    = manifests.get("public") if isinstance(manifests.get("public"), dict) else {}
-        ts = public.get("timeupdated")
+        depot_ts_raw = public.get("timeupdated") if isinstance(public, dict) else None
         try:
-            ts_int = int(ts) if ts is not None else 0
+            depot_ts = int(depot_ts_raw) if depot_ts_raw is not None else 0
         except (TypeError, ValueError):
-            ts_int = 0
+            depot_ts = 0
+        ts_int = depot_ts if depot_ts > 0 else branch_ts
         if ts_int <= 0:
             continue
-        manifest_id = public.get("gid") or public.get("manifest") or None
+        manifest_id = None
+        if isinstance(public, dict):
+            manifest_id = public.get("gid") or public.get("manifest")
         depot_name = depot.get("name") or app_name
         for os_key in oses:
             out.append(DepotRow(

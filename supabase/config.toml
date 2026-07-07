@@ -31,6 +31,9 @@ verify_jwt = false
 [functions.steam-depot-info]
 verify_jwt = false
 
+[functions.steam-news]
+verify_jwt = false
+
 [functions.image-refetch]
 verify_jwt = false
 
