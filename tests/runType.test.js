@@ -11,8 +11,16 @@ const { RUN_TYPES, RUN_TYPE_KEYS, normalizeRunType, uniqueRunTypes, runTypeLabel
   require('../js/shared/run-type.js');
 
 describe('RUN_TYPES canonical taxonomy', () => {
-  test('exposes the three built-in keys with labels', () => {
-    expect(RUN_TYPE_KEYS).toEqual(['native', 'proton', 'proton-lsfg']);
+  test('exposes the built-in keys with labels', () => {
+    expect(RUN_TYPE_KEYS).toEqual([
+      'native',
+      'proton',
+      'proton-experimental',
+      'proton-ge',
+      'proton-cachyos',
+      'proton-tkg',
+      'proton-lsfg',
+    ]);
     for (const k of RUN_TYPE_KEYS) {
       expect(RUN_TYPES[k].label).toBeTruthy();
       expect(RUN_TYPES[k].subtitle).toBeTruthy();
@@ -56,11 +64,23 @@ describe('normalizeRunType', () => {
     expect(normalizeRunType('linux build')).toBe('native');
   });
 
-  test('recognizes any Proton flavor', () => {
+  test('routes specific Proton flavors to their canonical key', () => {
+    // GE
+    expect(normalizeRunType('GE-Proton9-27')).toBe('proton-ge');
+    expect(normalizeRunType('Proton-GE')).toBe('proton-ge');
+    expect(normalizeRunType('glorious eggroll')).toBe('proton-ge');
+    // Experimental
+    expect(normalizeRunType('Proton Experimental')).toBe('proton-experimental');
+    expect(normalizeRunType('proton-experimental')).toBe('proton-experimental');
+    // CachyOS
+    expect(normalizeRunType('cachyos-proton')).toBe('proton-cachyos');
+    expect(normalizeRunType('CachyProton')).toBe('proton-cachyos');
+    // TKG
+    expect(normalizeRunType('Proton-TKG')).toBe('proton-tkg');
+    expect(normalizeRunType('tkg_proton')).toBe('proton-tkg');
+    // Fallback: any other Proton flavor collapses to the generic key.
     expect(normalizeRunType('Proton 9.0-4')).toBe('proton');
-    expect(normalizeRunType('GE-Proton9-27')).toBe('proton');
-    expect(normalizeRunType('Proton Experimental')).toBe('proton');
-    expect(normalizeRunType('cachyos-proton')).toBe('proton');
+    expect(normalizeRunType('Proton Hotfix')).toBe('proton');
   });
 
   test('passes through clean pipeline-discovered identifiers', () => {
@@ -88,8 +108,10 @@ describe('uniqueRunTypes', () => {
   });
 
   test('dedupes across matcher variants in stable insertion order', () => {
+    // Insertion order (post-normalize): proton-lsfg (LSFG), proton (proton),
+    // native (Native), then Proton Experimental promotes to its own key.
     const raw = ['LSFG', 'proton', 'Native', 'lsfg-vk', 'Proton Experimental', 'linux native'];
-    expect(uniqueRunTypes(raw)).toEqual(['proton-lsfg', 'proton', 'native']);
+    expect(uniqueRunTypes(raw)).toEqual(['proton-lsfg', 'proton', 'native', 'proton-experimental']);
   });
 
   test('drops nulls (unclassified signals) instead of surfacing them', () => {

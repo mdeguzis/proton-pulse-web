@@ -3,7 +3,7 @@
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=1b8ae722';
 import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=8dc92cf7';
-import { getWebClientId } from '../../shared/submit.js?v=b6800be8';
+import { getWebClientId } from '../../shared/submit.js?v=93ece6c4';
 import { fetchAppMetadata, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=8f5849d4';
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=01961c8d';
@@ -11,7 +11,7 @@ import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=a1a075ee';
-import { renderCard } from './report-card.js?v=89b4268c';
+import { renderCard } from './report-card.js?v=faa750d4';
 import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=f9591262';
@@ -143,8 +143,17 @@ function _openRuntimeHistoryModal(appId, combined) {
     if (upd && upd > entry.last) entry.last = upd;
   }
 
-  const LABEL = { native: 'Native Linux', proton: 'Proton', 'proton-lsfg': 'Proton + LSFG', unknown: 'Unclassified' };
-  const CANONICAL_ORDER = ['native', 'proton', 'proton-lsfg'];
+  const LABEL = {
+    native:                'Native Linux',
+    proton:                'Proton',
+    'proton-experimental': 'Proton Experimental',
+    'proton-ge':           'Proton GE',
+    'proton-cachyos':      'CachyOS Proton',
+    'proton-tkg':          'Proton-TKG',
+    'proton-lsfg':         'Proton + LSFG',
+    unknown:               'Unclassified',
+  };
+  const CANONICAL_ORDER = ['native', 'proton', 'proton-experimental', 'proton-ge', 'proton-cachyos', 'proton-tkg', 'proton-lsfg'];
   const ordered = [...byRuntime.entries()].sort(([a], [b]) => {
     const ai = CANONICAL_ORDER.indexOf(a);
     const bi = CANONICAL_ORDER.indexOf(b);
@@ -162,7 +171,7 @@ function _openRuntimeHistoryModal(appId, combined) {
     ? `<tr><td colspan="4" class="rh-empty">No reports on this game carry a runtime yet. New submissions will populate this table.</td></tr>`
     : ordered.map(([key, e]) => `
         <tr>
-          <td><span class="run-type-pill run-type-pill--${key === 'native' ? 'native' : (key === 'proton-lsfg' ? 'lsfg' : 'plain')}">${esc(LABEL[key] || key)}</span></td>
+          <td><span class="run-type-pill run-type-pill--${key === 'native' ? 'native' : (key === 'proton-lsfg' ? 'lsfg' : 'plain')}" title="${esc(key)}">${esc(LABEL[key] || key)}</span></td>
           <td class="rh-num">${e.count}</td>
           <td class="rh-date">${fmtDate(e.first)}</td>
           <td class="rh-date">${fmtDate(e.last)}</td>
@@ -861,7 +870,15 @@ export async function renderGamePage(appId) {
           // Run-type filter: only show when this game has at least one report
           // carrying a run_type (legacy reports have null and would otherwise
           // clutter the modal with an "Any / Proton" toggle that does nothing).
-          const RUN_TYPE_LABEL = { native: 'Native Linux', proton: 'Proton', 'proton-lsfg': 'Proton + LSFG' };
+          const RUN_TYPE_LABEL = {
+            native:                'Native Linux',
+            proton:                'Proton',
+            'proton-experimental': 'Proton Experimental',
+            'proton-ge':           'Proton GE',
+            'proton-cachyos':      'CachyOS Proton',
+            'proton-tkg':          'Proton-TKG',
+            'proton-lsfg':         'Proton + LSFG',
+          };
           const availRunTypes = [...new Set(combined.map(r => r.runType).filter(Boolean))].sort();
           const runTypeSel = availRunTypes.length > 0 ? `
             <div class="filter-item">

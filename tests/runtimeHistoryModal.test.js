@@ -38,7 +38,7 @@ describe('runtime history modal (game-page)', () => {
   });
 
   test('orders canonical runtimes first, unknown last', () => {
-    expect(SRC).toContain("const CANONICAL_ORDER = ['native', 'proton', 'proton-lsfg'];");
+    expect(SRC).toContain("const CANONICAL_ORDER = ['native', 'proton', 'proton-experimental', 'proton-ge', 'proton-cachyos', 'proton-tkg', 'proton-lsfg'];");
     expect(SRC).toContain("if (a === 'unknown') return 1;");
     expect(SRC).toContain("if (b === 'unknown') return -1;");
   });

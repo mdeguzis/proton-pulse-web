@@ -28,12 +28,32 @@ export const RUN_TYPES = Object.freeze({
   proton: {
     key:      'proton',
     label:    'Proton',
-    subtitle: 'Windows build via Proton',
+    subtitle: 'Valve\'s official Proton (stable / hotfix)',
+  },
+  'proton-experimental': {
+    key:      'proton-experimental',
+    label:    'Proton Experimental',
+    subtitle: 'Valve\'s bleeding-edge Proton branch',
+  },
+  'proton-ge': {
+    key:      'proton-ge',
+    label:    'Proton GE',
+    subtitle: 'GloriousEggroll community fork',
+  },
+  'proton-cachyos': {
+    key:      'proton-cachyos',
+    label:    'CachyOS Proton',
+    subtitle: 'CachyOS-tuned Proton',
+  },
+  'proton-tkg': {
+    key:      'proton-tkg',
+    label:    'Proton-TKG',
+    subtitle: 'TKG custom Proton build',
   },
   'proton-lsfg': {
     key:      'proton-lsfg',
     label:    'Proton + LSFG',
-    subtitle: 'Proton with Lossless Scaling FrameGen wrapper',
+    subtitle: 'Any Proton flavor with Lossless Scaling FrameGen wrapper',
   },
 });
 
@@ -64,16 +84,25 @@ export function normalizeRunType(raw) {
   if (RUN_TYPE_KEYS.includes(s)) return s;
 
   // LSFG / Lossless Scaling FrameGen wrapper -- assume Proton underneath
-  // since native LSFG is Windows-only.
+  // since native LSFG is Windows-only. Detection wins over other Proton
+  // matchers because the wrapper is the salient axis for stats.
   if (/\b(lsfg[-_]?vk|lsfg|lossless[-_ ]scaling)\b/.test(s)) return 'proton-lsfg';
 
   // Native Linux binary signals.
   if (/\b(native|linux[-_ ]?native|native[-_ ]linux|linux[-_ ]build|linux[-_ ]only)\b/.test(s)) return 'native';
 
-  // Any Proton flavor (GE-Proton9-27, Proton Experimental, Hotfix,
-  // cachyos-proton, etc.). Substring rather than \bproton\b because the
-  // trailing digit sequences (proton9, proton-9.0-4) break the word
-  // boundary check.
+  // Specific Proton flavors, in most-specific-wins order. Word boundaries
+  // are omitted on the trailing side because MangoHud + ProtonDB text
+  // often carries an appended digit sequence ("GE-Proton9-27",
+  // "proton-tkg9.0") that breaks a `\b` after the flavor name.
+  if (/(ge[-_]proton|proton[-_]ge|glorious[-_ ]?eggroll)/.test(s)) return 'proton-ge';
+  if (/(cachyos[-_]?proton|proton[-_]?cachyos|cachy[-_]?proton)/.test(s)) return 'proton-cachyos';
+  if (/(proton[-_]?tkg|tkg[-_]?proton)/.test(s)) return 'proton-tkg';
+  if (/proton[-_ ]?experimental/.test(s)) return 'proton-experimental';
+
+  // Any other Proton flavor (Proton 9.0-4, Proton Hotfix, etc.). Substring
+  // rather than \bproton\b because trailing digit sequences (proton9,
+  // proton-9.0-4) break the word boundary check.
   if (/proton/.test(s)) return 'proton';
 
   // Unknown but syntactically clean: let it through so pipeline

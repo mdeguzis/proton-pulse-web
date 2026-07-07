@@ -1,7 +1,7 @@
 // report-card (components) for the app page. Relocated from app.js.
 
 import { estimateScore } from '../../shared/scoring.js?v=1b8ae722';
-import { getWebClientId } from '../../shared/submit.js?v=b6800be8';
+import { getWebClientId } from '../../shared/submit.js?v=93ece6c4';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { renderAuthorBlock } from './author.js?v=3a8cb3c7';
 import { buildFormRows } from './config-cards.js?v=c67740f8';
@@ -62,11 +62,22 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
     <div class="card">
       ${renderAuthorBlock(r)}
       <div class="card-body">
-        <div class="proton">${r.runType === 'native'
-          ? '<span class="run-type-pill run-type-pill--native" title="Native Linux build (no Proton)">Native Linux</span>'
-          : (r.runType === 'proton-lsfg'
-            ? `<span class="run-type-pill run-type-pill--lsfg" title="Proton with Lossless Scaling FrameGen wrapper">Proton + LSFG</span> ${esc(r.protonVersion || 'Unknown')}`
-            : esc(r.protonVersion || 'Unknown'))}</div>
+        <div class="proton">${(() => {
+          if (r.runType === 'native') {
+            return '<span class="run-type-pill run-type-pill--native" title="Native Linux build (no Proton)">Native Linux</span>';
+          }
+          const RT_PILL = {
+            'proton-lsfg':         { cls: 'lsfg',  label: 'Proton + LSFG', title: 'Proton with Lossless Scaling FrameGen wrapper' },
+            'proton-ge':           { cls: 'plain', label: 'Proton GE',     title: 'GloriousEggroll community fork' },
+            'proton-experimental': { cls: 'plain', label: 'Proton Experimental', title: 'Valve bleeding-edge Proton branch' },
+            'proton-cachyos':      { cls: 'plain', label: 'CachyOS Proton', title: 'CachyOS-tuned Proton' },
+            'proton-tkg':          { cls: 'plain', label: 'Proton-TKG',    title: 'TKG custom Proton build' },
+          };
+          const pill = RT_PILL[r.runType];
+          return pill
+            ? `<span class="run-type-pill run-type-pill--${pill.cls}" title="${pill.title}">${pill.label}</span> ${esc(r.protonVersion || 'Unknown')}`
+            : esc(r.protonVersion || 'Unknown');
+        })()}</div>
         <div class="hw">${esc([r.gpu, r.os].filter(Boolean).join(' / ') || 'Hardware unavailable')}</div>
         <div class="age">
           ${daysAgo(r.timestamp)}

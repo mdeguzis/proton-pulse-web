@@ -2,7 +2,7 @@
 
 import { SupaAuth } from './config.js?v=f6f2c00a';
 import { FAULT_KEYS_WEB, deriveRatingFromState, inferProtonType } from './scoring.js?v=1b8ae722';
-import { normalizeRunType } from './run-type.js?v=a82370d7';
+import { normalizeRunType } from './run-type.js?v=42155622';
 import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
 
 // Form submission + populate-submit-form -- factored out of app.js.
@@ -329,6 +329,12 @@ export async function submitReport(appId, title, form, editReportId = null) {
     verdictOob: installFailed ? null : (state.verdict === 'yes'
       ? (state.tinkeringMethods && state.tinkeringMethods.size > 0 ? 'no' : 'yes')
       : null),
+    // "Also tested the native Linux build?" follow-up (only when reporting
+    // a non-native run against a game that has a native build available).
+    alsoTestedLinux: isNative ? null : (form.alsoTestedLinux?.value || null),
+    alsoTestedLinuxNotes: (!isNative && form.alsoTestedLinux?.value === 'yes')
+      ? (form.alsoTestedLinuxNotes?.value || '').trim() || null
+      : null,
     // framegen is informational only, never read by scoring (app-scoring.js).
     // When the user answered Yes we also capture which framegen tech they
     // used + free-form notes; stats can break down by type (task #31).
@@ -568,19 +574,33 @@ export async function populateSubmitForm(el) {
       <div class="sf-row"><label>Game title</label><input name="gameTitle" readonly style="cursor:default;color:var(--muted);border-color:var(--border2);background:var(--s1);" placeholder="Loading..."></div>
       <div class="sf-row sf-row--run-type">
         <label>Run type *</label>
-        <div class="sf-run-type-group" role="radiogroup" aria-label="Run type">
-          <button type="button" class="sf-run-type-btn sf-run-type-btn--active" data-run-type="proton" aria-pressed="true">
-            <span class="sf-run-type-title">Proton</span>
-            <span class="sf-run-type-sub">Windows build via Proton</span>
-          </button>
-          <button type="button" class="sf-run-type-btn" data-run-type="native" aria-pressed="false">
-            <span class="sf-run-type-title">Native Linux</span>
-            <span class="sf-run-type-sub" id="sf-run-type-native-sub">Linux build (no Proton)</span>
-          </button>
-        </div>
-        <input type="hidden" name="runType" value="proton">
+        <select name="runType" id="sf-run-type-select">
+          <option value="native">Native Linux -- Linux build, no Proton</option>
+          <option value="proton" selected>Proton -- Valve's official (stable/hotfix)</option>
+          <option value="proton-experimental">Proton Experimental -- Valve's bleeding-edge branch</option>
+          <option value="proton-ge">Proton GE -- GloriousEggroll community fork</option>
+          <option value="proton-cachyos">CachyOS Proton -- CachyOS-tuned</option>
+          <option value="proton-tkg">Proton-TKG -- TKG custom build</option>
+          <option value="proton-lsfg">Proton + LSFG -- with Lossless Scaling FrameGen wrapper</option>
+        </select>
       </div>
       <div class="sf-row-hint sf-run-type-hint" id="sf-run-type-hint" hidden></div>
+      <div class="sf-row sf-row--also-linux" id="sf-also-linux-row" hidden>
+        <label>Also tested Linux?</label>
+        <div class="sf-also-linux-body">
+          <div class="sf-inline-yn" id="sf-also-linux-yn">
+            <button type="button" data-value="yes" aria-pressed="false">Yes</button>
+            <button type="button" data-value="no" aria-pressed="false">No</button>
+          </div>
+          <input type="hidden" name="alsoTestedLinux" value="">
+          <textarea name="alsoTestedLinuxNotes" placeholder="Optional: how did the native Linux build compare (perf, stability)?" rows="2" style="display:none"></textarea>
+          <div class="sf-also-linux-hint">
+            Steam offers a native Linux build for this game. You can also
+            <a href="#" id="sf-submit-native-shortcut">file a separate Native report</a>
+            for a side-by-side comparison.
+          </div>
+        </div>
+      </div>
 
       <div class="sf-section-label">Hardware &amp; Setup</div>
       <div class="sf-row"><label>System</label>
@@ -988,51 +1008,60 @@ export async function populateSubmitForm(el) {
 // selected we disable the Proton-only fields so the form communicates
 // clearly that they do not apply, and the submitted row carries a
 // definitive run_type instead of a stale Proton version guess.
+// Tracks the last Steam answer for the current form so wireRunTypeToggle
+// can show / hide the "Also tested Linux?" follow-up row when the user
+// swaps run types after Steam has replied.
+const _nativeAvailableByContainer = new WeakMap();
+
 /**
- * Adjust the Run Type toggle based on whether the game ships a native
- * Linux binary per Steam appdetails. When Steam says no, disable the
- * Native option and surface a short explanation. Called by page scripts
- * after they know the answer (they run the fetch anyway for other UI).
+ * Adjust the Run Type dropdown based on whether the game ships a native
+ * Linux binary per Steam appdetails. Called by the submit page after
+ * Steam returns.
+ *
+ * When Steam says no: disable the Native option so users cannot submit
+ * an impossible run_type. Restored drafts / edits with a stale
+ * 'native' selection bounce back to Proton.
+ *
+ * When Steam says yes: enable the Native option, and if the current
+ * pick is a non-native Proton flavor, reveal the "Also tested Linux?"
+ * follow-up row so we can capture a paired comparison in one report.
  */
 export function setRunTypeNativeAvailable(container, isAvailable) {
-  const nativeBtn = container.querySelector('.sf-run-type-btn[data-run-type="native"]');
-  const sub = container.querySelector('#sf-run-type-native-sub');
-  const hidden = container.querySelector('input[name="runType"]');
-  if (!nativeBtn) return;
-  if (isAvailable) {
-    nativeBtn.disabled = false;
-    nativeBtn.title = '';
-    if (sub) sub.textContent = 'Linux build (no Proton)';
-    return;
+  _nativeAvailableByContainer.set(container, !!isAvailable);
+  const sel = container.querySelector('#sf-run-type-select');
+  if (!sel) return;
+  const nativeOpt = sel.querySelector('option[value="native"]');
+  if (nativeOpt) {
+    nativeOpt.disabled = !isAvailable;
+    nativeOpt.textContent = isAvailable
+      ? 'Native Linux -- Linux build, no Proton'
+      : 'Native Linux -- not offered by Steam for this game';
   }
-  nativeBtn.disabled = true;
-  nativeBtn.title = 'Steam does not list a native Linux build for this game.';
-  if (sub) sub.textContent = 'Not offered by Steam for this game';
-  // If the user (or a restored draft) had Native selected, bounce back to
-  // Proton so we do not submit a run_type Steam disagrees with.
-  if (hidden?.value === 'native') {
-    const protonBtn = container.querySelector('.sf-run-type-btn[data-run-type="proton"]');
-    protonBtn?.click();
+  if (!isAvailable && sel.value === 'native') {
+    sel.value = 'proton';
+    sel.dispatchEvent(new Event('change'));
+  } else {
+    // Re-run applyRunType so the follow-up row appears / hides now that
+    // we know the answer.
+    sel.dispatchEvent(new Event('change'));
   }
 }
 
 function wireRunTypeToggle(container) {
-  const buttons = container.querySelectorAll('.sf-run-type-btn');
-  const hidden = container.querySelector('input[name="runType"]');
+  const sel = container.querySelector('#sf-run-type-select');
+  const hintEl = container.querySelector('#sf-run-type-hint');
+  const alsoRow = container.querySelector('#sf-also-linux-row');
+  const alsoHidden = container.querySelector('input[name="alsoTestedLinux"]');
+  const alsoNotes = container.querySelector('textarea[name="alsoTestedLinuxNotes"]');
+  const alsoBtns = container.querySelectorAll('#sf-also-linux-yn button');
   const protonRow = [...container.querySelectorAll('.sf-row')]
     .find(row => row.querySelector('input[name="protonVersion"]'));
-  const hintEl = container.querySelector('#sf-run-type-hint');
-  if (!buttons.length || !hidden) return;
+  if (!sel) return;
 
-  const setActive = (key) => {
-    hidden.value = key;
-    for (const btn of buttons) {
-      const on = btn.dataset.runType === key;
-      btn.classList.toggle('sf-run-type-btn--active', on);
-      btn.setAttribute('aria-pressed', String(on));
-    }
+  const applyRunType = () => {
+    const key = sel.value || 'proton';
+    const isNative = key === 'native';
     if (protonRow) {
-      const isNative = key === 'native';
       const label = protonRow.querySelector('label');
       const input = protonRow.querySelector('input[name="protonVersion"]');
       if (input) {
@@ -1043,14 +1072,11 @@ function wireRunTypeToggle(container) {
           : 'e.g. Proton 9.0-4 or GE-Proton9-27';
         if (isNative) input.value = '';
       }
-      if (label) {
-        // Star ('*') means required; drop it when Proton is not applicable.
-        label.textContent = isNative ? 'Proton Version' : 'Proton Version *';
-      }
+      if (label) label.textContent = isNative ? 'Proton Version' : 'Proton Version *';
       protonRow.classList.toggle('sf-row--disabled', isNative);
     }
     if (hintEl) {
-      if (key === 'native') {
+      if (isNative) {
         hintEl.textContent = 'Proton fields are disabled. FPS + compatibility answers still apply to the native build.';
         hintEl.hidden = false;
       } else {
@@ -1058,18 +1084,38 @@ function wireRunTypeToggle(container) {
         hintEl.textContent = '';
       }
     }
+    // Follow-up "Also tested Linux?" row appears only when the user is
+    // reporting a non-native run AND Steam has confirmed native support.
+    if (alsoRow) {
+      const nativeAvailable = _nativeAvailableByContainer.get(container) === true;
+      alsoRow.hidden = isNative || !nativeAvailable;
+    }
   };
 
-  for (const btn of buttons) {
+  sel.addEventListener('change', applyRunType);
+  applyRunType();
+
+  // "Also tested Linux?" Yes/No toggle: Yes reveals the notes textarea.
+  for (const btn of alsoBtns) {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      setActive(btn.dataset.runType);
+      const val = btn.dataset.value;
+      if (alsoHidden) alsoHidden.value = val;
+      for (const b of alsoBtns) b.setAttribute('aria-pressed', String(b === btn));
+      if (alsoNotes) alsoNotes.style.display = (val === 'yes') ? '' : 'none';
     });
   }
 
-  // Initialize from the hidden input's initial value (defaults to 'proton'
-  // in the template; restored drafts / edits pass their own value).
-  setActive(hidden.value || 'proton');
+  // Shortcut link: file a separate Native Linux report against this app.
+  const shortcut = container.querySelector('#sf-submit-native-shortcut');
+  if (shortcut) {
+    shortcut.addEventListener('click', (e) => {
+      e.preventDefault();
+      const params = new URLSearchParams(window.location.search);
+      params.set('runType', 'native');
+      window.location.href = `submit.html?${params.toString()}`;
+    });
+  }
 }
 
 function wireFpsCsvUpload(container) {
