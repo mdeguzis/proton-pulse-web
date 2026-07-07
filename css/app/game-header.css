@@ -382,23 +382,82 @@
   line-height: 1.1;
   margin-bottom: 6px;
 }
-/* Thin "Native Linux version available" hint under the title, populated
-   client-side from Steam appdetails.platforms.linux. Deliberately understated:
-   a green-tinted mono line, not a pill, so it reads as a fact rather than a
-   feature we're promoting. Clicking it opens a per-runtime version-history
-   table below. Light-mode override further down keeps it legible. */
+/* "Native Linux runtime available" hint sits UNDER the box art (inside the
+   .game-header-art-col wrapper) so the header layout stays balanced. A
+   small Tux glyph precedes the copy. Clicking opens the runtime history
+   modal. */
+.game-header-art-col {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  align-self: stretch;
+}
+.game-header-art-col .game-header-art { width: 100%; height: auto; }
 .game-native-linux {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--mono);
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   color: #7ed37a;
-  margin: -2px 0 8px;
   cursor: pointer;
   user-select: none;
+  align-self: flex-start;
 }
+.game-native-linux .tux-icon { flex-shrink: 0; }
 .game-native-linux:hover { text-decoration: underline; }
 .game-native-linux-more { opacity: 0.7; margin-left: 4px; }
+
+/* OS availability strip: top-right of the game-header block. Three
+   chips (Windows / macOS / Linux) lit up green when Steam advertises the
+   platform, dimmed when not. Absolute-positioned so it sits above the
+   header content on desktop; on mobile it becomes a normal top row. */
+.game-os-strip {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+.game-header { position: relative; }
+.game-os-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border: 1px solid var(--border2);
+  background: var(--s1);
+  color: var(--muted);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  opacity: 0.55;
+  transition: opacity 0.15s, color 0.15s, border-color 0.15s;
+}
+.game-os-chip svg { display: block; }
+.game-os-chip--on {
+  opacity: 1;
+  color: #7ed37a;
+  border-color: rgba(126,211,122,0.55);
+  background: rgba(126,211,122,0.08);
+}
+[data-theme="light"] .game-os-chip--on { color: #256b25; }
+@media (max-width: 720px) {
+  /* Below the title area, above the grid, and full-width flex so all three
+     chips are visible without covering the title. */
+  .game-os-strip {
+    position: static;
+    margin-bottom: 6px;
+    justify-content: flex-end;
+  }
+}
 .game-native-linux::before {
   content: '>_ ';
   color: #7ed37a;
@@ -670,7 +729,7 @@
   /* On narrow screens the header grid collapses to one column: box art,
      then the rating panel, then the action row. */
   .game-header-grid { grid-template-columns: 1fr; }
-  .game-header-art { grid-column: 1; grid-row: 1; }
+  .game-header-art-col { grid-column: 1; grid-row: 1; }
   .game-rating-panel { grid-column: 1; grid-row: 2; }
   .game-header-actions { grid-column: 1; grid-row: 3; }
 }
@@ -1133,8 +1192,14 @@
 
 /* Runtime history modal (opened by clicking the Native Linux hint). Reuses
    the flag-modal chrome for consistency. Table lists one row per runtime
-   with report count + first / last seen dates. */
-.runtime-history-modal { min-width: 380px; }
+   with report count + first / last seen dates. Fluid width mirrors the
+   metadata modal so both fit small phones. */
+.runtime-history-modal {
+  width: min(420px, calc(100vw - 24px));
+  min-width: 0;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+}
 .rh-hint {
   margin: 0 0 12px;
   color: var(--muted);
@@ -1175,9 +1240,26 @@
   padding: 18px 10px !important;
 }
 
-/* SteamDB-style Metadata modal opened from the hub-links row. */
-.game-metadata-modal { min-width: 420px; max-width: 560px; }
-.game-metadata-body { display: flex; flex-direction: column; gap: 14px; margin-bottom: 12px; }
+/* SteamDB-style Metadata modal opened from the hub-links row. Fluid width
+   so the modal fills small phones without spilling off-screen, and the
+   scroll lives on the body so the header + Close row stay pinned. */
+.game-metadata-modal {
+  width: min(560px, calc(100vw - 24px));
+  min-width: 0;
+  max-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+}
+.game-metadata-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 12px;
+  overflow-y: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  padding-right: 4px;
+}
 .gm-section { display: flex; flex-direction: column; gap: 6px; }
 .gm-section-title {
   font-family: var(--mono);
