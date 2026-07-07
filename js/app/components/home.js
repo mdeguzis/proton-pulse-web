@@ -10,7 +10,6 @@ import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewp
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
 import { renderHomeLibraryChart } from './home-library-chart.js?v=c7e8a2d8';
-import { renderHomeStatsTeaser } from './home-stats-teaser.js?v=92268fbc';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
@@ -293,7 +292,6 @@ export async function renderHomePage() {
         </div>
       </div>
       <div id="home-library-chart-mount"></div>
-      <div id="home-stats-teaser-mount"></div>
       <div id="recent-section">
         <div class="section-label-row" style="margin-bottom:10px">
           <span class="section-label" style="margin:0">Recent Reports</span>
@@ -717,8 +715,6 @@ export async function renderHomePage() {
 
     // Signed-in library breakdown chart. No-op when signed out (#199).
     void renderHomeLibraryChart(document.getElementById('home-library-chart-mount'));
-    // Compatibility-at-a-glance teaser (#210).
-    void renderHomeStatsTeaser(document.getElementById('home-stats-teaser-mount'));
   } catch {
     el.innerHTML = '<div class="state-box">Search for a game above or navigate to <code>#/app/{appId}</code></div>';
   }
