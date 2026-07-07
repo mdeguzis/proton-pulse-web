@@ -288,31 +288,34 @@ async function _openMetadataModal(appId) {
     const row = (key, label) => {
       const on = !!p[key];
       const cached = dOs[key];
-      const firstFmt = fmtDate(cached?.first_seen);
-      const lastFmt  = fmtDate(cached?.last_updated);
-      let firstCell;
-      if (!on) firstCell = '<span class="gm-mute">not offered</span>';
-      else if (firstFmt) firstCell = `<span class="gm-depot-date" title="Earliest depot manifest seen in Steam PICS">${esc(firstFmt)}</span>`;
-      else firstCell = '<span class="gm-mute" title="Not cached yet -- pipeline #215 populates this nightly">pending</span>';
+      const lastFmt = fmtDate(cached?.last_updated);
+      let depotsCell;
       let lastCell;
-      if (!on) lastCell = '-';
-      else if (lastFmt) lastCell = `<span class="gm-depot-date" title="From Steam PICS (${cached.depots} depot${cached.depots === 1 ? '' : 's'} tracked)">${esc(lastFmt)}</span>`;
-      else lastCell = `<a class="gm-depot-link" href="https://steamdb.info/app/${esc(meta.appId)}/depots/" target="_blank" rel="noopener">SteamDB -&gt;</a>`;
+      if (!on) {
+        depotsCell = '<span class="gm-mute">not offered</span>';
+        lastCell   = '-';
+      } else if (lastFmt) {
+        depotsCell = `<span class="gm-mute">${cached.depots} tracked</span>`;
+        lastCell   = `<span class="gm-depot-date" title="Branch-level timeupdated from PICS -- every OS depot on a shared branch inherits this value. Per-OS 'First seen' requires observation history (#226).">${esc(lastFmt)}</span>`;
+      } else {
+        depotsCell = '<span class="gm-mute" title="Not cached yet -- pipeline #215 populates this nightly">pending</span>';
+        lastCell   = `<a class="gm-depot-link" href="https://steamdb.info/app/${esc(meta.appId)}/depots/" target="_blank" rel="noopener">SteamDB -&gt;</a>`;
+      }
       return `
         <tr>
           <td><span class="gm-plat${on ? ' gm-plat--on' : ''}">${esc(label)}</span></td>
-          <td>${firstCell}</td>
+          <td>${depotsCell}</td>
           <td>${lastCell}</td>
         </tr>`;
     };
     return `<table class="gm-plat-table">
-      <thead><tr><th>OS</th><th>First seen</th><th>Last update</th></tr></thead>
+      <thead><tr><th>OS</th><th>Depots</th><th>Last update</th></tr></thead>
       <tbody>${row('windows','Windows')}${row('mac','macOS')}${row('linux','Linux')}</tbody>
-      <tfoot><tr><td colspan="3" class="gm-plat-foot">Dates from Steam depot manifests (PICS). ${
+      <tfoot><tr><td colspan="3" class="gm-plat-foot">Last update is the branch-level timestamp from PICS -- every OS depot on the same branch shares one value. Per-OS 'first seen' needs observation history (#226). ${
         newsInfo?.found && newsInfo.newest_ts
-          ? `App-wide 'Last patch note' below (${esc(new Date(newsInfo.newest_ts * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))}) is the public-API fallback when a specific OS row shows 'pending'.`
+          ? `App-wide 'Last patch note' (${esc(new Date(newsInfo.newest_ts * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))}) below is the public-API fallback when a specific OS row shows 'pending'.`
           : ''
-      } Community report dates live in the game's report cards, not here.</td></tr></tfoot>
+      }</td></tr></tfoot>
     </table>`;
   };
   // System requirements: fold into one collapsible block per OS. Text is
