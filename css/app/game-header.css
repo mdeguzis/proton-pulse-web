@@ -1155,6 +1155,67 @@
   padding: 18px 10px !important;
 }
 
+/* SteamDB-style Metadata modal opened from the hub-links row. */
+.game-metadata-modal { min-width: 420px; max-width: 560px; }
+.game-metadata-body { display: flex; flex-direction: column; gap: 14px; margin-bottom: 12px; }
+.gm-section { display: flex; flex-direction: column; gap: 6px; }
+.gm-section-title {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.gm-section-body {
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+.gm-section-body code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--bg);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+.gm-section-body a { color: var(--accent); }
+.gm-section-body a:hover { text-decoration: underline; }
+.gm-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.gm-chip {
+  display: inline-block;
+  padding: 3px 8px;
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  font-size: 0.76rem;
+  background: var(--s1);
+}
+.gm-platforms { display: flex; gap: 8px; flex-wrap: wrap; }
+.gm-plat {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border2);
+  background: var(--s1);
+  color: var(--muted);
+  font-size: 0.76rem;
+  opacity: 0.45;
+}
+.gm-plat--on {
+  opacity: 1;
+  color: #7ed37a;
+  border-color: rgba(126,211,122,0.5);
+  background: rgba(126,211,122,0.08);
+}
+
+/* Match hub-link buttons (not just anchors) so the new Metadata pill sits
+   flush with the existing Steam / SteamDB / ProtonDB links. */
+button.hub-link {
+  font-family: inherit;
+  cursor: pointer;
+}
+button.hub-link:disabled { opacity: 0.5; cursor: default; }
+
 /* MangoHud CSV upload row: small button + inline status text. Sits below
    the three FPS inputs but shares the same left gutter as any sf-row for
    visual alignment. */
@@ -1322,8 +1383,11 @@
    it stitches to the banner's bottom border instead of floating below. The
    top border-line visually links it to the rating tile above */
 .hub-links-in-banner {
-  margin: 18px 0 0;
-  padding-top: 14px;
+  /* Parent .game-header has flex gap: 14px, so we don't need extra
+     margin-top on top of that. Keeping the border-top gives the visual
+     separator; padding-top pulls the link row a few px away from it. */
+  margin: 0;
+  padding-top: 12px;
   border-top: 1px solid var(--border);
   gap: 8px;
 }

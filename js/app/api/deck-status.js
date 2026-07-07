@@ -70,7 +70,12 @@ function _fetchAppBasic(appId) {
   if (_appBasicCache[appId] !== undefined) return _appBasicCache[appId];
   const p = (async () => {
     try {
-      const r = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appId}&filters=basic&l=english`);
+      // Full appdetails payload -- filters=basic silently omits platforms,
+      // developers, publishers, categories, genres, and release_date that
+      // fetchLinuxNativeSupport / the Metadata modal all read. Dropping the
+      // filter costs a few KB more per response but gives us one shared
+      // fetch for every metadata reader instead of two overlapping calls.
+      const r = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appId}&l=english`);
       if (!r.ok) throw new Error(r.status);
       const d = await r.json();
       return d?.[appId]?.data ?? null;
@@ -115,6 +120,35 @@ export async function fetchMinRequirements(appId) {
 export async function fetchLinuxNativeSupport(appId) {
   const app = await _fetchAppBasic(appId);
   return !!(app && app.platforms && app.platforms.linux === true);
+}
+
+/**
+ * Compact metadata bundle for the Metadata modal on the game page.
+ * Structured after SteamDB's Metadata tab so the modal is a familiar
+ * side-by-side reference. All fields are optional; callers render only
+ * what came back so a partial Steam response degrades gracefully.
+ */
+export async function fetchAppMetadata(appId) {
+  const app = await _fetchAppBasic(appId);
+  if (!app) return null;
+  return {
+    name:            app.name || null,
+    type:            app.type || null,
+    developers:      Array.isArray(app.developers)      ? app.developers      : [],
+    publishers:      Array.isArray(app.publishers)      ? app.publishers      : [],
+    platforms:       app.platforms || null,
+    releaseDate:     app.release_date?.date || null,
+    comingSoon:      !!app.release_date?.coming_soon,
+    genres:          Array.isArray(app.genres)          ? app.genres.map(g => g.description).filter(Boolean) : [],
+    categories:      Array.isArray(app.categories)      ? app.categories.map(c => c.description).filter(Boolean) : [],
+    metacriticScore: app.metacritic?.score ?? null,
+    metacriticUrl:   app.metacritic?.url   || null,
+    controllerSupport: app.controller_support || null,
+    // Language list is a single HTML-ish string; strip tags for display.
+    supportedLanguages: typeof app.supported_languages === 'string'
+      ? app.supported_languages.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim()
+      : null,
+  };
 }
 
 // Inline SVGs for Deck status icons. All 24x24 viewBox + currentColor so a

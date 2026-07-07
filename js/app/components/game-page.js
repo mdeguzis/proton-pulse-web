@@ -4,7 +4,7 @@ import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=1b8ae722';
 import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=8dc92cf7';
 import { getWebClientId } from '../../shared/submit.js?v=b6800be8';
-import { fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=fbe031ae';
+import { fetchAppMetadata, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=8f5849d4';
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=01961c8d';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
@@ -198,6 +198,77 @@ function _openRuntimeHistoryModal(appId, combined) {
   document.addEventListener('keydown', function onKey(e) {
     if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); }
   });
+}
+
+// Metadata modal opened by the "Metadata" pill in the hub-links row.
+// Formats the Steam appdetails payload the same way SteamDB does: one
+// section per fact block (developer / publisher / systems / release
+// date / genres / metacritic). Fields that Steam did not return simply
+// omit their block so a partial response never looks like a bug.
+async function _openMetadataModal(appId) {
+  const existing = document.getElementById('game-metadata-modal');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'game-metadata-modal';
+  modal.className = 'flag-modal-overlay';
+  modal.innerHTML = `
+    <div class="flag-modal game-metadata-modal">
+      <h3 class="flag-modal-title">Metadata</h3>
+      <div id="game-metadata-body" class="game-metadata-body">
+        <p class="rh-hint">Loading Steam metadata...</p>
+      </div>
+      <div class="flag-modal-actions">
+        <button class="action-btn" id="game-metadata-close">Close</button>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+  const close = () => modal.remove();
+  modal.querySelector('#game-metadata-close')?.addEventListener('click', close);
+  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', function onKey(e) {
+    if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); }
+  });
+
+  const meta = await fetchAppMetadata(appId).catch(() => null);
+  const body = modal.querySelector('#game-metadata-body');
+  if (!body) return;
+  if (!meta) {
+    body.innerHTML = '<p class="rh-hint">Steam did not return metadata for this app (it may be delisted or region-locked).</p>';
+    return;
+  }
+  const section = (title, html) => html
+    ? `<div class="gm-section"><div class="gm-section-title">${esc(title)}</div><div class="gm-section-body">${html}</div></div>`
+    : '';
+  const list = (items) => (items || []).length
+    ? `<div class="gm-chips">${items.map(i => `<span class="gm-chip">${esc(i)}</span>`).join('')}</div>`
+    : '';
+  const platformsIcons = (p) => {
+    if (!p) return '';
+    // Small OS glyphs shaped like SteamDB's row (windows / mac / linux).
+    // Using unicode + colored spans avoids a per-icon SVG payload.
+    const chip = (on, label) => `<span class="gm-plat${on ? ' gm-plat--on' : ''}" title="${esc(label)}${on ? '' : ' (not offered)'}">${esc(label)}</span>`;
+    return `<div class="gm-platforms">
+      ${chip(!!p.windows, 'Windows')}
+      ${chip(!!p.mac,     'macOS')}
+      ${chip(!!p.linux,   'Linux')}
+    </div>`;
+  };
+  body.innerHTML = [
+    section('Type',        meta.type    ? `<code>${esc(meta.type)}</code>` : ''),
+    section('Developer',   list(meta.developers)),
+    section('Publisher',   list(meta.publishers)),
+    section('Release date', meta.releaseDate
+      ? `<span>${esc(meta.releaseDate)}${meta.comingSoon ? ' <em>(coming soon)</em>' : ''}</span>` : ''),
+    section('Supported systems', platformsIcons(meta.platforms)),
+    section('Genres',      list(meta.genres)),
+    section('Categories',  list(meta.categories)),
+    section('Metacritic',  meta.metacriticScore != null
+      ? `<a href="${esc(meta.metacriticUrl || '#')}" target="_blank" rel="noopener">${meta.metacriticScore} / 100 -&gt;</a>`
+      : ''),
+    section('Languages',   meta.supportedLanguages ? `<span>${esc(meta.supportedLanguages)}</span>` : ''),
+    section('Controller support', meta.controllerSupport ? `<code>${esc(meta.controllerSupport)}</code>` : ''),
+  ].join('') || '<p class="rh-hint">No metadata fields returned.</p>';
 }
 
 export function trendSummary(reps, appId) {
@@ -731,6 +802,7 @@ export async function renderGamePage(appId) {
           <a class="hub-link" href="https://steamcharts.com/app/${appId}" target="_blank" rel="noopener">Steam Charts</a>
           <a class="hub-link" href="https://github.com/ValveSoftware/Proton/issues?q=${encodeURIComponent(title)}" target="_blank" rel="noopener">Proton Issues</a>
           <a class="hub-link" href="${dataFilesHref(appId)}" target="_blank" rel="noopener">Data Files</a>
+          <button type="button" class="hub-link" id="hub-metadata-btn" title="Formatted Steam appdetails: developer, publisher, systems, release date, genres">Metadata</button>
         </div>
       </div>
 
@@ -897,6 +969,11 @@ export async function renderGamePage(appId) {
       // Deck status modal mirrors the Steam Store Deck Compatibility popup -
       // status badge + summary sentence + per-criterion checklist
       el.querySelector('#deck-status-tip')?.classList.toggle('open');
+    });
+    // Metadata hub link opens the SteamDB-style metadata modal.
+    el.querySelector('#hub-metadata-btn')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      void _openMetadataModal(appId);
     });
     el.querySelectorAll('.source-summary-tile').forEach((tile) => {
       tile.addEventListener('click', () => {
