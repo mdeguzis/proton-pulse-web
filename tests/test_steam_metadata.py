@@ -229,7 +229,13 @@ class TestFetchAndStoreOffline:
         assert status == "no_public_manifest"
         assert n == 0
         assert upserts == []
-        assert status_calls == [(1, "no_public_manifest", 0, None)]
+        # Error column now carries a short reason string so a workflow log
+        # reader can tell 'no appinfo block' apart from 'parsed but no
+        # OS-bound depots'.
+        assert len(status_calls) == 1
+        app_id, name, count, reason = status_calls[0]
+        assert (app_id, name, count) == (1, "no_public_manifest", 0)
+        assert reason and ("appinfo" in reason.lower() or "depot" in reason.lower())
 
     def test_error_status_when_steamcmd_raises(self, monkeypatch):
         def boom(*a, **kw):

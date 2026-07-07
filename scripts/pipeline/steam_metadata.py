@@ -246,10 +246,19 @@ def run_steamcmd_app_info(app_id: int, timeout: int = 60) -> str:
     """
     if not steamcmd_available():
         raise RuntimeError(f"steamcmd not on PATH ({STEAMCMD_BINARY}); install it first")
+    # `+app_info_request <id>` forces PICS to fetch fresh product info for
+    # this app. `+app_info_print` alone reads the local cache, which is
+    # empty on a fresh runner -- that produced our first-run 'no_manifest'
+    # miss. `+app_info_update 1` refreshes the general changelist.
+    # `+delay 3` gives PICS a moment to answer before print runs. This
+    # combination matches what SteamDB / ArchiSteamFarm docs recommend
+    # for anonymous PICS access.
     cmd = [
         STEAMCMD_BINARY,
         "+login", "anonymous",
         "+app_info_update", "1",
+        "+app_info_request", str(app_id),
+        "+delay", "3",
         "+app_info_print", str(app_id),
         "+quit",
     ]
@@ -343,11 +352,18 @@ def fetch_and_store(app_id: int, sleep_between: float = 3.0) -> tuple[str, int]:
         return "error", 0
     parsed = parse_app_info(raw)
     if parsed is None:
-        upsert_fetch_status(app_id, "no_public_manifest", 0, None)
+        # Log a short tail of the raw steamcmd stdout so a workflow log
+        # reader can tell whether steamcmd hit a login banner, a rate
+        # limit, or actually returned an appid block we then failed to
+        # parse. Truncated to keep GH Actions logs readable.
+        tail = (raw or "").strip().splitlines()[-6:]
+        log(f"steam-metadata: app={app_id} no appinfo block, steamcmd tail={tail}")
+        upsert_fetch_status(app_id, "no_public_manifest", 0, "no appinfo block in steamcmd output")
         return "no_public_manifest", 0
     rows = extract_depot_rows(app_id, parsed)
     if not rows:
-        upsert_fetch_status(app_id, "no_public_manifest", 0, None)
+        log(f"steam-metadata: app={app_id} parsed but no rows -- depots={list((parsed.get('depots') or {}).keys())[:8]}")
+        upsert_fetch_status(app_id, "no_public_manifest", 0, "parsed appinfo but no OS-bound depot rows")
         return "no_public_manifest", 0
     n = upsert_depot_rows(rows)
     upsert_fetch_status(app_id, "ok", n, None)
