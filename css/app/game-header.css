@@ -385,7 +385,8 @@
 /* Thin "Native Linux version available" hint under the title, populated
    client-side from Steam appdetails.platforms.linux. Deliberately understated:
    a green-tinted mono line, not a pill, so it reads as a fact rather than a
-   feature we're promoting. Light-mode override below keeps it legible. */
+   feature we're promoting. Clicking it opens a per-runtime version-history
+   table below. Light-mode override further down keeps it legible. */
 .game-native-linux {
   font-family: var(--mono);
   font-size: 0.78rem;
@@ -393,8 +394,11 @@
   letter-spacing: 0.04em;
   color: #7ed37a;
   margin: -2px 0 8px;
-  cursor: help;
+  cursor: pointer;
+  user-select: none;
 }
+.game-native-linux:hover { text-decoration: underline; }
+.game-native-linux-more { opacity: 0.7; margin-left: 4px; }
 .game-native-linux::before {
   content: '>_ ';
   color: #7ed37a;
@@ -1101,6 +1105,55 @@
   margin-right: 4px;
 }
 [data-theme="light"] .run-type-pill--native { color: #256b25; }
+.run-type-pill--plain {
+  color: var(--muted);
+  border-color: var(--border2);
+  background: transparent;
+}
+
+/* Runtime history modal (opened by clicking the Native Linux hint). Reuses
+   the flag-modal chrome for consistency. Table lists one row per runtime
+   with report count + first / last seen dates. */
+.runtime-history-modal { min-width: 380px; }
+.rh-hint {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.runtime-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+  font-size: 0.82rem;
+}
+.runtime-history-table th,
+.runtime-history-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.runtime-history-table th {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.runtime-history-table .rh-num { text-align: right; font-variant-numeric: tabular-nums; }
+.runtime-history-table .rh-date {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--text);
+  white-space: nowrap;
+}
+.rh-empty {
+  text-align: center !important;
+  color: var(--muted);
+  font-style: italic;
+  padding: 18px 10px !important;
+}
 
 /* MangoHud CSV upload row: small button + inline status text. Sits below
    the three FPS inputs but shares the same left gutter as any sf-row for

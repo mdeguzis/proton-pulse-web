@@ -119,6 +119,87 @@ function _showFlagModal(btn) {
   });
 }
 
+// Per-runtime "when was it last tested" table opened by clicking the
+// Native Linux hint on the game header. Renders a small modal listing
+// every run_type observed for this game (native, proton, proton-lsfg,
+// plus any pipeline-discovered variants), with the number of reports
+// and the first-seen / last-seen dates. Reports without a run_type
+// (legacy rows) get grouped under 'unknown' so viewers can spot the
+// coverage gap.
+function _openRuntimeHistoryModal(appId, combined) {
+  const existing = document.getElementById('runtime-history-modal');
+  if (existing) existing.remove();
+
+  const rows = (combined || []).filter(r => r._kind === 'report' || r._kind === 'config');
+  const byRuntime = new Map();
+  for (const r of rows) {
+    const key = r.runType || 'unknown';
+    const ts = (r.timestamp || 0) * 1000;
+    const upd = (r.updatedAt || r.timestamp || 0) * 1000;
+    let entry = byRuntime.get(key);
+    if (!entry) { entry = { count: 0, first: Infinity, last: 0 }; byRuntime.set(key, entry); }
+    entry.count++;
+    if (ts && ts < entry.first) entry.first = ts;
+    if (upd && upd > entry.last) entry.last = upd;
+  }
+
+  const LABEL = { native: 'Native Linux', proton: 'Proton', 'proton-lsfg': 'Proton + LSFG', unknown: 'Unclassified' };
+  const CANONICAL_ORDER = ['native', 'proton', 'proton-lsfg'];
+  const ordered = [...byRuntime.entries()].sort(([a], [b]) => {
+    const ai = CANONICAL_ORDER.indexOf(a);
+    const bi = CANONICAL_ORDER.indexOf(b);
+    if (ai !== -1 || bi !== -1) return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+    if (a === 'unknown') return 1;
+    if (b === 'unknown') return -1;
+    return a.localeCompare(b);
+  });
+
+  const fmtDate = (ms) => Number.isFinite(ms) && ms > 0
+    ? new Date(ms).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+    : '-';
+
+  const bodyRows = ordered.length === 0
+    ? `<tr><td colspan="4" class="rh-empty">No reports on this game carry a runtime yet. New submissions will populate this table.</td></tr>`
+    : ordered.map(([key, e]) => `
+        <tr>
+          <td><span class="run-type-pill run-type-pill--${key === 'native' ? 'native' : (key === 'proton-lsfg' ? 'lsfg' : 'plain')}">${esc(LABEL[key] || key)}</span></td>
+          <td class="rh-num">${e.count}</td>
+          <td class="rh-date">${fmtDate(e.first)}</td>
+          <td class="rh-date">${fmtDate(e.last)}</td>
+        </tr>`).join('');
+
+  const modal = document.createElement('div');
+  modal.id = 'runtime-history-modal';
+  modal.className = 'flag-modal-overlay';
+  modal.innerHTML = `
+    <div class="flag-modal runtime-history-modal">
+      <h3 class="flag-modal-title">Runtimes tested for this game</h3>
+      <p class="rh-hint">One row per runtime observed across all reports on this app. Dates come from report timestamps.</p>
+      <table class="runtime-history-table">
+        <thead>
+          <tr>
+            <th>Runtime</th>
+            <th class="rh-num">Reports</th>
+            <th class="rh-date">First seen</th>
+            <th class="rh-date">Last updated</th>
+          </tr>
+        </thead>
+        <tbody>${bodyRows}</tbody>
+      </table>
+      <div class="flag-modal-actions">
+        <button class="action-btn" id="runtime-history-close">Close</button>
+      </div>
+    </div>`;
+
+  document.body.appendChild(modal);
+  const close = () => modal.remove();
+  modal.querySelector('#runtime-history-close')?.addEventListener('click', close);
+  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', function onKey(e) {
+    if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); }
+  });
+}
+
 export function trendSummary(reps, appId) {
   if (!Array.isArray(reps) || reps.length < 2) return '';
   const now = Date.now() / 1000;
@@ -938,12 +1019,21 @@ export async function renderGamePage(appId) {
       ]);
       // Reveal the "Native Linux version" hint only when Steam says yes.
       // Absence is treated as "we don't know" and we render nothing so a
-      // Steam API blip doesn't look like a downgrade.
+      // Steam API blip doesn't look like a downgrade. Clicking the hint
+      // opens the per-runtime "when was this last tested" table below so
+      // viewers can jump straight from the native pill to the version
+      // history.
       const nativeEl = el.querySelector('#game-native-linux');
       if (nativeEl && hasLinuxNative) {
-        nativeEl.textContent = 'Native Linux version available';
-        nativeEl.title = 'Steam advertises a native Linux binary for this game (platforms.linux). You can play it without Proton.';
+        nativeEl.innerHTML = 'Native Linux version available <span class="game-native-linux-more">(runtime history)</span>';
+        nativeEl.title = 'Steam advertises a native Linux binary for this game. Click to see when each runtime was last reported.';
         nativeEl.hidden = false;
+        nativeEl.setAttribute('role', 'button');
+        nativeEl.tabIndex = 0;
+        nativeEl.addEventListener('click', () => _openRuntimeHistoryModal(appId, combined));
+        nativeEl.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); _openRuntimeHistoryModal(appId, combined); }
+        });
       }
       // update deck status button icon + modal
       const deckBtn = el.querySelector('#deck-status-btn');
