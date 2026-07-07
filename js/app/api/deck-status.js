@@ -197,6 +197,34 @@ export async function fetchAppMetadata(appId) {
   };
 }
 
+/**
+ * Cached-per-page fetch of the pipeline-populated per-OS depot dates
+ * (issue #215). Returns { found: bool, os: { windows|mac|linux: {
+ * first_seen, last_updated, depots } } } or null on network error.
+ *
+ * A cache miss (found === false) is NOT an error -- the pipeline is
+ * still ramping up its coverage; callers should fall back to the
+ * SteamDB deep link when found is false.
+ */
+const _depotInfoCache = {};
+export function fetchAppDepotInfo(appId) {
+  if (!appId) return Promise.resolve(null);
+  if (_depotInfoCache[appId] !== undefined) return _depotInfoCache[appId];
+  const p = (async () => {
+    try {
+      const base = (typeof window !== 'undefined' && window.SUPABASE_URL) || '';
+      if (!base) return null;
+      const r = await fetch(`${base}/functions/v1/steam-depot-info?appId=${encodeURIComponent(appId)}`);
+      if (!r.ok) return null;
+      return await r.json();
+    } catch {
+      return null;
+    }
+  })();
+  _depotInfoCache[appId] = p;
+  return p;
+}
+
 function _reqPair(reqs) {
   if (!reqs || (typeof reqs === 'object' && !reqs.minimum && !reqs.recommended)) return null;
   const strip = (s) => typeof s === 'string' ? s.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim() : null;

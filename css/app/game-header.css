@@ -1361,6 +1361,9 @@
 .gm-mute { color: var(--muted); }
 .gm-depot-link { color: var(--accent); }
 .gm-depot-link:hover { text-decoration: underline; }
+/* Real depot dates from the #215 PICS cache -- render in mono so they
+   line up under the "Last update" column heading. */
+.gm-depot-date { font-family: var(--mono); color: var(--text); }
 
 /* Per-OS system requirements. One card per OS with min + recommended. */
 .gm-reqs {

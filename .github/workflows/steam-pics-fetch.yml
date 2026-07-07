@@ -1,0 +1,67 @@
+name: Steam PICS Depot Fetch
+
+# Fetches per-OS depot last-updated timestamps from Steam PICS via
+# steamcmd anonymous, one app at a time with a courteous sleep so we do
+# not trip Valve's rate limits. Results land in Supabase
+# steam_depot_updates + steam_depot_fetch_status. Metadata modal (issue
+# #215) reads from that cache and swaps its SteamDB deep-link cell for
+# real dates.
+#
+# Two triggers:
+#   * workflow_dispatch: run against an explicit comma-separated list.
+#     Useful for verifying a single title (e.g. Hollow Knight 367520)
+#     before turning on the nightly.
+#   * schedule: nightly at 09:00 UTC. Reads a rolling set of the site's
+#     top-N tracked apps (currently a static seed list; #215 tracks the
+#     work to source it from search-index.json / pipeline state).
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_ids:
+        description: 'Comma-separated Steam app IDs (leave blank to use the workflow seed set)'
+        required: false
+        default: ''
+      sleep_between:
+        description: 'Seconds to sleep between apps (rate limit courtesy)'
+        required: false
+        default: '3'
+  schedule:
+    - cron: '0 9 * * *'
+
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install steamcmd
+        run: bash scripts/install-steamcmd.sh
+
+      - name: Verify steamcmd binary
+        run: steamcmd +quit
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Resolve app list
+        id: apps
+        run: |
+          if [ -n "${{ github.event.inputs.app_ids }}" ]; then
+            echo "list=${{ github.event.inputs.app_ids }}" >> "$GITHUB_OUTPUT"
+          else
+            # Seed set: a few titles that exercise Windows / macOS / Linux
+            # depots so a nightly run always has real data to write. Grow
+            # this from search-index.json in a follow-up.
+            echo "list=367520,730,570,440,1174180,4000" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Fetch depot dates
+        run: |
+          python -m scripts.pipeline.steam_pics $(echo "${{ steps.apps.outputs.list }}" | tr ',' ' ')

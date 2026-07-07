@@ -28,6 +28,9 @@ verify_jwt = false
 [functions.steam-appdetails]
 verify_jwt = false
 
+[functions.steam-depot-info]
+verify_jwt = false
+
 [functions.image-refetch]
 verify_jwt = false
 

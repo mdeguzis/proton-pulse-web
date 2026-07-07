@@ -4,7 +4,7 @@ import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=1b8ae722';
 import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=8dc92cf7';
 import { getWebClientId } from '../../shared/submit.js?v=339c68ea';
-import { fetchAppMetadata, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=00344372';
+import { fetchAppDepotInfo, fetchAppMetadata, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=c5df5310';
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=01961c8d';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
@@ -239,7 +239,12 @@ async function _openMetadataModal(appId) {
     if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); }
   });
 
-  const meta = await fetchAppMetadata(appId).catch(() => null);
+  const [meta, depotInfo] = await Promise.all([
+    fetchAppMetadata(appId).catch(() => null),
+    // Fire in parallel; #215 pipeline may not have populated this app yet
+    // and that is expected -- the fallback SteamDB link stays in place.
+    fetchAppDepotInfo(appId).catch(() => null),
+  ]);
   const body = modal.querySelector('#game-metadata-body');
   if (!body) return;
   if (!meta) {
@@ -258,19 +263,40 @@ async function _openMetadataModal(appId) {
   // viewers can drill in. Tracked in #214.
   const platformsRows = (p, releaseDate) => {
     if (!p) return '';
+    // depotInfo shape: { found: bool, os: { windows|mac|linux: {
+    //   first_seen, last_updated, depots } } }
+    // Populated by the #215 pipeline (steamcmd nightly). When we have a
+    // real last-updated date for an OS we render it; otherwise we fall
+    // through to the SteamDB deep link.
+    const dOs = depotInfo?.found && depotInfo.os ? depotInfo.os : {};
+    const fmtDate = (iso) => {
+      if (!iso) return null;
+      const d = new Date(iso);
+      if (Number.isNaN(d.getTime())) return null;
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    };
     const row = (key, label) => {
       const on = !!p[key];
+      const cached = dOs[key];
+      const firstCell = on
+        ? (fmtDate(cached?.first_seen) || esc(releaseDate || 'available'))
+        : '<span class="gm-mute">not offered</span>';
+      let lastCell = '-';
+      if (on) {
+        const lastFmt = fmtDate(cached?.last_updated);
+        lastCell = lastFmt
+          ? `<span class="gm-depot-date" title="From Steam PICS (${cached.depots} depot${cached.depots === 1 ? '' : 's'} tracked)">${esc(lastFmt)}</span>`
+          : `<a class="gm-depot-link" href="https://steamdb.info/app/${esc(meta.appId)}/depots/" target="_blank" rel="noopener">SteamDB -&gt;</a>`;
+      }
       return `
         <tr>
           <td><span class="gm-plat${on ? ' gm-plat--on' : ''}">${esc(label)}</span></td>
-          <td>${on ? esc(releaseDate || 'available') : '<span class="gm-mute">not offered</span>'}</td>
-          <td>${on
-            ? `<a class="gm-depot-link" href="https://steamdb.info/app/${esc(meta.appId)}/depots/" target="_blank" rel="noopener">SteamDB depots -&gt;</a>`
-            : '-'}</td>
+          <td>${firstCell}</td>
+          <td>${lastCell}</td>
         </tr>`;
     };
     return `<table class="gm-plat-table">
-      <thead><tr><th>OS</th><th>Available</th><th>Last update</th></tr></thead>
+      <thead><tr><th>OS</th><th>First seen</th><th>Last update</th></tr></thead>
       <tbody>${row('windows','Windows')}${row('mac','macOS')}${row('linux','Linux')}</tbody>
     </table>`;
   };
