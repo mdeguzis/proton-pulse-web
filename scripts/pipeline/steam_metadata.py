@@ -362,7 +362,22 @@ def fetch_and_store(app_id: int, sleep_between: float = 3.0) -> tuple[str, int]:
         return "no_public_manifest", 0
     rows = extract_depot_rows(app_id, parsed)
     if not rows:
-        log(f"steam-metadata: app={app_id} parsed but no rows -- depots={list((parsed.get('depots') or {}).keys())[:8]}")
+        depots = parsed.get("depots") or {}
+        depot_keys = list(depots.keys())[:8]
+        log(f"steam-metadata: app={app_id} parsed but no rows -- depots={depot_keys}")
+        # Dump the shape of the first numerically-keyed depot dict so the
+        # workflow log tells us EXACTLY what fields PICS returned. My
+        # sample data assumed depot.config.oslist + depot.manifests.public
+        # .timeupdated; if real PICS uses different field names or nesting
+        # we will see it here without needing to add steamcmd to Termux.
+        first_num_key = next((k for k in depots.keys() if k.isdigit()), None)
+        if first_num_key:
+            sample = depots.get(first_num_key)
+            try:
+                sample_json = json.dumps(sample, sort_keys=True)[:1500]
+            except (TypeError, ValueError):
+                sample_json = str(sample)[:1500]
+            log(f"steam-metadata: app={app_id} sample_depot={first_num_key} shape={sample_json}")
         upsert_fetch_status(app_id, "no_public_manifest", 0, "parsed appinfo but no OS-bound depot rows")
         return "no_public_manifest", 0
     n = upsert_depot_rows(rows)

@@ -215,6 +215,109 @@ class TestRunnerAvailability:
         assert steam_metadata.steamcmd_available() is False
 
 
+class TestRunnerCommandShape:
+    """Regression guards on the steamcmd command line. PR #220 added
+    +app_info_request + +delay so a fresh runner actually pulls PICS
+    instead of reading the empty local cache. If any of these tokens
+    go missing the seed silently degrades to 'nothing to parse'."""
+
+    def _captured_cmd(self, monkeypatch, app_id=367520):
+        captured = {}
+        class FakeProc:
+            returncode = 0; stdout = ""; stderr = ""
+        def fake_run(cmd, **kw):
+            captured["cmd"] = cmd
+            captured["kw"] = kw
+            return FakeProc()
+        monkeypatch.setattr(steam_metadata.shutil, "which", lambda name: "/fake/steamcmd")
+        monkeypatch.setattr(steam_metadata.subprocess, "run", fake_run)
+        steam_metadata.run_steamcmd_app_info(app_id)
+        return captured
+
+    def test_uses_anonymous_login(self, monkeypatch):
+        cmd = self._captured_cmd(monkeypatch)["cmd"]
+        assert cmd[cmd.index("+login") + 1] == "anonymous"
+
+    def test_calls_app_info_request_before_print(self, monkeypatch):
+        cmd = self._captured_cmd(monkeypatch)["cmd"]
+        assert "+app_info_request" in cmd
+        assert "+app_info_print"   in cmd
+        assert cmd.index("+app_info_request") < cmd.index("+app_info_print")
+
+    def test_carries_delay_between_request_and_print(self, monkeypatch):
+        cmd = self._captured_cmd(monkeypatch)["cmd"]
+        assert "+delay" in cmd
+        delay = int(cmd[cmd.index("+delay") + 1])
+        assert delay >= 1
+
+    def test_refreshes_app_info_cache(self, monkeypatch):
+        cmd = self._captured_cmd(monkeypatch)["cmd"]
+        assert "+app_info_update" in cmd
+        assert cmd[cmd.index("+app_info_update") + 1] == "1"
+
+    def test_ends_with_quit(self, monkeypatch):
+        cmd = self._captured_cmd(monkeypatch)["cmd"]
+        assert cmd[-1] == "+quit"
+
+    def test_passes_appid_to_both_request_and_print(self, monkeypatch):
+        cmd = self._captured_cmd(monkeypatch, app_id=1234)["cmd"]
+        assert cmd[cmd.index("+app_info_request") + 1] == "1234"
+        assert cmd[cmd.index("+app_info_print")   + 1] == "1234"
+
+    def test_timeout_kwarg_is_passed_to_subprocess(self, monkeypatch):
+        kw = self._captured_cmd(monkeypatch)["kw"]
+        assert "timeout" in kw
+        assert kw["timeout"] > 0
+
+
+class TestNoManifestDiagnostics:
+    """Failed seed runs must land a useful reason in fetch_status.error
+    AND log enough context that we do not need to re-run the workflow
+    to debug the shape of what PICS returned."""
+
+    def _run(self, monkeypatch, fake_stdout):
+        monkeypatch.setattr(steam_metadata, "run_steamcmd_app_info", lambda app_id, **kw: fake_stdout)
+        status_calls, log_calls = [], []
+        monkeypatch.setattr(steam_metadata, "upsert_fetch_status",
+            lambda app_id, status, depot_count, error=None: status_calls.append((app_id, status, depot_count, error)))
+        monkeypatch.setattr(steam_metadata, "upsert_depot_rows", lambda rows: 0)
+        monkeypatch.setattr(steam_metadata, "log", lambda msg: log_calls.append(msg))
+        status, n = steam_metadata.fetch_and_store(367520)
+        return status, n, status_calls, log_calls
+
+    def test_no_appinfo_block_logs_tail_and_reason(self, monkeypatch):
+        status, n, calls, logs = self._run(monkeypatch, "Loading Steam API...OK\n(no appinfo followed)\n")
+        assert (status, n) == ("no_public_manifest", 0)
+        assert calls[0][3] and "appinfo" in calls[0][3].lower()
+        # tail must be logged so a workflow log reader sees the stdout end
+        assert any("tail=" in m for m in logs)
+
+    def test_parsed_but_zero_rows_dumps_first_depot_shape(self, monkeypatch):
+        # Parse succeeds (appinfo block + digit-keyed depot present) but
+        # extract_depot_rows returns []. The dump MUST include the depot
+        # key list AND a JSON shape sample so a future PICS field-name
+        # mismatch is self-diagnosing.
+        text = '''
+"367520"
+{
+    "common" { "name" "Sample" }
+    "depots"
+    {
+        "10"
+        {
+            "MysteryField" "PICS may nest differently than we assume"
+        }
+    }
+}
+'''
+        status, n, calls, logs = self._run(monkeypatch, text)
+        assert (status, n) == ("no_public_manifest", 0)
+        assert calls[0][3] and "no OS-bound depot rows" in calls[0][3]
+        joined = " ".join(logs)
+        assert "sample_depot=10" in joined
+        assert "MysteryField"  in joined
+
+
 class TestFetchAndStoreOffline:
     def test_no_manifest_status_when_parse_yields_no_rows(self, monkeypatch):
         """fetch_and_store should mark the app as no_public_manifest when
