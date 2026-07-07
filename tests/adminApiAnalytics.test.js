@@ -23,6 +23,15 @@ function routedFetch(routes) {
   });
 }
 
+// Small helpers so fixture dates track today rather than being frozen in
+// time. fetchReportsByDay pads a window from (today - daysBack) to today
+// inclusive, so any fixture row outside that window silently drops out of
+// the padded output and the test starts failing as the wall clock advances
+// (issue #212).
+function isoDaysAgo(n) {
+  return new Date(Date.now() - n * 86400000).toISOString().slice(0, 10);
+}
+
 describe('fetchAnalytics top-level RPC + side fetches', () => {
   test('POSTs to admin_analytics with days_back and merges side fetches', async () => {
     const rpcPayload = {
@@ -32,14 +41,18 @@ describe('fetchAnalytics top-level RPC + side fetches', () => {
       top_games: [],
       event_types: [],
     };
+    // Pick two days inside the daysBack=7 window so both survive padding
+    // regardless of the current wall-clock date.
+    const dayA = isoDaysAgo(3);
+    const dayB = isoDaysAgo(1);
     const fetchSpy = routedFetch({
       'https://test.supabase.co/rest/v1/rpc/admin_analytics': rpcPayload,
       'https://test.supabase.co/rest/v1/user_configs': [
-        { created_at: '2026-06-29T10:00:00Z', source: 'web-linux' },
-        { created_at: '2026-06-30T09:00:00Z', source: 'plugin-linux' },
+        { created_at: `${dayA}T10:00:00Z`, source: 'web-linux' },
+        { created_at: `${dayB}T09:00:00Z`, source: 'plugin-linux' },
       ],
       'https://test.supabase.co/rest/v1/site_events': [
-        { metadata: { hits: 5, misses: 1 }, created_at: '2026-06-30T01:00:00Z' },
+        { metadata: { hits: 5, misses: 1 }, created_at: `${dayB}T01:00:00Z` },
       ],
     });
     global.fetch = fetchSpy;
@@ -57,8 +70,8 @@ describe('fetchAnalytics top-level RPC + side fetches', () => {
     // the non-zero entries so the test stays stable regardless of the
     // padding window size or wall-clock "today".
     expect(result.reports_by_day.filter(r => r.count > 0)).toEqual([
-      { day: '2026-06-29', count: 1, web: 1, plugin: 0, other: 0 },
-      { day: '2026-06-30', count: 1, web: 0, plugin: 1, other: 0 },
+      { day: dayA, count: 1, web: 1, plugin: 0, other: 0 },
+      { day: dayB, count: 1, web: 0, plugin: 1, other: 0 },
     ]);
     expect(result.sw_cache.hits).toBe(5);
     expect(result.sw_cache.misses).toBe(1);
