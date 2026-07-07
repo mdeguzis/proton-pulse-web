@@ -140,18 +140,35 @@ describe('home page browse -- text filter box', () => {
     expect(matches.length).toBe(2);
   });
 
-  test('typing in the text box updates badge and re-renders both sections', () => {
-    expect(homeSrc).toContain("document.getElementById('home-text-filter')?.addEventListener('input'");
-    expect(homeSrc).toContain('textFilter = e.target.value');
+  test('typing in either the bar input or the mobile-panel input updates state', () => {
+    // Bar input (desktop) and panel input (mobile) share a single onInput
+    // handler; both ids must appear in the wiring array.
+    expect(homeSrc).toContain("['home-text-filter', 'home-text-filter-mobile']");
+    expect(homeSrc).toContain('inp.addEventListener');
+    expect(homeSrc).toContain('textFilter = val');
   });
 
   test('text filter counts toward the active-filter badge when non-empty', () => {
     expect(homeSrc).toContain('storeSel.size + librarySel.size + (textFilter.trim() ? 1 : 0)');
   });
 
-  test('clear filters resets the text box value and textFilter state', () => {
-    expect(homeSrc).toContain("if (textInput) textInput.value = ''");
+  test('clear filters resets BOTH the desktop and mobile inputs', () => {
+    // The clear path must walk both input ids so the panel copy also empties.
+    const clearBlock = homeSrc.slice(homeSrc.indexOf('home-filter-clear'));
+    expect(clearBlock).toContain("['home-text-filter', 'home-text-filter-mobile']");
     expect(homeSrc).toContain("textFilter = ''");
+  });
+
+  test('mobile panel exposes a duplicate text input inside the filter panel', () => {
+    // Regression guard for the mobile filter collision fix: the mobile copy
+    // must live inside the filter panel so it toggles with the FILTERS button
+    // (avoiding the S/M/L layout row overlap seen at ~<720px).
+    const panelStart = homeSrc.indexOf('id="home-filter-panel"');
+    const mobileInputIdx = homeSrc.indexOf('id="home-text-filter-mobile"');
+    const footerIdx = homeSrc.indexOf('filter-panel-footer--stack');
+    expect(mobileInputIdx).toBeGreaterThan(panelStart);
+    expect(mobileInputIdx).toBeLessThan(footerIdx);
+    expect(homeSrc).toContain('filter-item--mobile-only');
   });
 });
 

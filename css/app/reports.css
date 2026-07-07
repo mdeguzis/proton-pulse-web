@@ -205,6 +205,16 @@
 }
 .home-filter-text:focus { border-color: var(--accent); }
 
+/* The mobile copy of the text filter lives inside the FILTERS panel. On
+   narrow screens the bar-mounted input would run into the S/M/L and
+   List/Grid controls; hide it there and reveal the panel copy instead. */
+.filter-item--mobile-only { display: none; }
+.home-filter-text--in-panel { border-radius: 4px; width: 100%; }
+@media (max-width: 720px) {
+  .home-filter-text:not(.home-filter-text--in-panel) { display: none; }
+  .filter-item--mobile-only { display: flex; flex-direction: column; gap: 4px; }
+}
+
 /* Desktop: the narrow row-wrap of groups made the variable-width pills wrap
    raggedly. On wider screens lay the panel out as a single vertical column of
    full-width groups, each group an even pill grid so they align in tidy

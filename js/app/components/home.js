@@ -232,6 +232,10 @@ export async function renderHomePage() {
             Filters<span class="filter-badge" id="home-filter-badge" hidden></span>
           </button>
           <div class="filter-panel filter-panel--stack" id="home-filter-panel">
+            <div class="filter-item filter-item--mobile-only">
+              <label class="home-filter-label" for="home-text-filter-mobile">Filter loaded list</label>
+              <input id="home-text-filter-mobile" class="home-filter-text home-filter-text--in-panel" type="search" placeholder="Type to filter" autocomplete="off" />
+            </div>
             <div class="filter-item">
               <label class="home-filter-label" for="home-sort-select">Sort</label>
               <select id="home-sort-select" class="home-filter-select">
@@ -483,13 +487,22 @@ export async function renderHomePage() {
     });
 
     // Text filter: filters both sections by title substring as the user types.
-    document.getElementById('home-text-filter')?.addEventListener('input', e => {
-      textFilter = e.target.value;
+    // Two inputs share one state -- the bar input is desktop-only, the panel
+    // input is mobile-only (CSS-toggled), so keep them in sync both ways.
+    const _textInputs = ['home-text-filter', 'home-text-filter-mobile']
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+    const _onTextInput = (val) => {
+      textFilter = val;
+      for (const inp of _textInputs) { if (inp.value !== val) inp.value = val; }
       updateFilterBadge();
       applyRecentFilters();
       applyPopularFilters();
       _saveFiltersIfEnabled();
-    });
+    };
+    for (const inp of _textInputs) {
+      inp.addEventListener('input', e => _onTextInput(e.target.value));
+    }
 
     // Filters popover: toggle open, close on outside click.
     const filterWrap = document.getElementById('home-filter-wrap');
@@ -550,8 +563,10 @@ export async function renderHomePage() {
       const sortSel = document.getElementById('home-sort-select');
       if (sortSel) sortSel.value = currentSort;
       textFilter = saved.text || '';
-      const textInput = document.getElementById('home-text-filter');
-      if (textInput) textInput.value = textFilter;
+      for (const id of ['home-text-filter', 'home-text-filter-mobile']) {
+        const inp = document.getElementById(id);
+        if (inp) inp.value = textFilter;
+      }
       tierSel = new Set(saved.tier || []);
       sourceSel = new Set(saved.source || []);
       storeSel = new Set(saved.store || []);
@@ -613,8 +628,10 @@ export async function renderHomePage() {
       const sortSel = document.getElementById('home-sort-select');
       if (sortSel) sortSel.value = 'recent';
       currentSort = 'recent';
-      const textInput = document.getElementById('home-text-filter');
-      if (textInput) textInput.value = '';
+      for (const id of ['home-text-filter', 'home-text-filter-mobile']) {
+        const inp = document.getElementById(id);
+        if (inp) inp.value = '';
+      }
       textFilter = '';
       tierSel = new Set();
       sourceSel = new Set();
