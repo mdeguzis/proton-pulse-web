@@ -126,31 +126,83 @@ export async function fetchLinuxNativeSupport(appId) {
 }
 
 /**
- * Compact metadata bundle for the Metadata modal on the game page.
- * Structured after SteamDB's Metadata tab so the modal is a familiar
- * side-by-side reference. All fields are optional; callers render only
- * what came back so a partial Steam response degrades gracefully.
+ * Full-fat metadata bundle for the Metadata modal on the game page.
+ * Structured after SteamDB's Metadata tab: everything we can pull out of
+ * a single appdetails response, one place, so the modal reads like a
+ * dossier. All fields are optional; callers render only what came back
+ * so a partial Steam response degrades gracefully. The raw payload rides
+ * along so a "View raw JSON" viewer can dump the untouched dict.
  */
 export async function fetchAppMetadata(appId) {
   const app = await _fetchAppBasic(appId);
   if (!app) return null;
+  const asStrings = (arr, key) => Array.isArray(arr)
+    ? arr.map(x => (typeof x === 'string' ? x : x?.[key])).filter(Boolean)
+    : [];
   return {
-    name:            app.name || null,
-    type:            app.type || null,
-    developers:      Array.isArray(app.developers)      ? app.developers      : [],
-    publishers:      Array.isArray(app.publishers)      ? app.publishers      : [],
-    platforms:       app.platforms || null,
-    releaseDate:     app.release_date?.date || null,
-    comingSoon:      !!app.release_date?.coming_soon,
-    genres:          Array.isArray(app.genres)          ? app.genres.map(g => g.description).filter(Boolean) : [],
-    categories:      Array.isArray(app.categories)      ? app.categories.map(c => c.description).filter(Boolean) : [],
-    metacriticScore: app.metacritic?.score ?? null,
-    metacriticUrl:   app.metacritic?.url   || null,
+    // Identity
+    appId:            String(appId),
+    name:             app.name || null,
+    type:             app.type || null,
+    requiredAge:      app.required_age ?? null,
+    isFree:           !!app.is_free,
+    fullgame:         app.fullgame || null,   // set on DLC
+    dlcCount:         Array.isArray(app.dlc) ? app.dlc.length : 0,
+    // Attribution
+    developers:       Array.isArray(app.developers) ? app.developers : [],
+    publishers:       Array.isArray(app.publishers) ? app.publishers : [],
+    // Availability
+    platforms:        app.platforms || null,
+    releaseDate:      app.release_date?.date || null,
+    comingSoon:       !!app.release_date?.coming_soon,
+    // Taxonomy
+    genres:           asStrings(app.genres,     'description'),
+    categories:       asStrings(app.categories, 'description'),
+    // Reviews / scoring
+    metacriticScore:  app.metacritic?.score ?? null,
+    metacriticUrl:    app.metacritic?.url   || null,
+    reviewsSummary:   typeof app.reviews === 'string'
+      ? app.reviews.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().slice(0, 240)
+      : null,
+    // System-level
     controllerSupport: app.controller_support || null,
-    // Language list is a single HTML-ish string; strip tags for display.
     supportedLanguages: typeof app.supported_languages === 'string'
       ? app.supported_languages.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim()
       : null,
+    hasAchievements:  !!app.achievements?.total,
+    achievementCount: app.achievements?.total ?? 0,
+    // Distribution
+    packageIds:       Array.isArray(app.packages) ? app.packages : [],
+    packageGroups:    Array.isArray(app.package_groups)
+      ? app.package_groups.map(g => ({
+          name:  g.name  || null,
+          title: g.title || null,
+          subCount: Array.isArray(g.subs) ? g.subs.length : 0,
+        }))
+      : [],
+    // Support
+    supportInfo:      app.support_info || null,
+    website:          app.website || null,
+    // Per-OS system requirements: normalize to plain-text minimum + rec
+    pcRequirements:    _reqPair(app.pc_requirements),
+    macRequirements:   _reqPair(app.mac_requirements),
+    linuxRequirements: _reqPair(app.linux_requirements),
+    // Compliance
+    contentDescriptors: Array.isArray(app.content_descriptors?.notes)
+      ? app.content_descriptors.notes
+      : (typeof app.content_descriptors?.notes === 'string'
+          ? [app.content_descriptors.notes] : []),
+    // Escape hatch so the modal can offer a "View raw JSON" toggle.
+    raw: app,
+  };
+}
+
+function _reqPair(reqs) {
+  if (!reqs || (typeof reqs === 'object' && !reqs.minimum && !reqs.recommended)) return null;
+  const strip = (s) => typeof s === 'string' ? s.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim() : null;
+  return {
+    minimum:     strip(reqs.minimum),
+    recommended: strip(reqs.recommended),
   };
 }
 

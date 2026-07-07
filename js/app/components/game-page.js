@@ -4,7 +4,7 @@ import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=1b8ae722';
 import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=8dc92cf7';
 import { getWebClientId } from '../../shared/submit.js?v=339c68ea';
-import { fetchAppMetadata, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=9e51f75e';
+import { fetchAppMetadata, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=00344372';
 import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=01961c8d';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
@@ -252,32 +252,110 @@ async function _openMetadataModal(appId) {
   const list = (items) => (items || []).length
     ? `<div class="gm-chips">${items.map(i => `<span class="gm-chip">${esc(i)}</span>`).join('')}</div>`
     : '';
-  const platformsIcons = (p) => {
+  // Per-OS depot row: Steam does not publish per-depot last-updated dates
+  // via appdetails (that lives in PICS / SteamDB). Show the app-wide
+  // release date next to each supported OS + a SteamDB depot link so
+  // viewers can drill in. Tracked in #214.
+  const platformsRows = (p, releaseDate) => {
     if (!p) return '';
-    // Small OS glyphs shaped like SteamDB's row (windows / mac / linux).
-    // Using unicode + colored spans avoids a per-icon SVG payload.
-    const chip = (on, label) => `<span class="gm-plat${on ? ' gm-plat--on' : ''}" title="${esc(label)}${on ? '' : ' (not offered)'}">${esc(label)}</span>`;
-    return `<div class="gm-platforms">
-      ${chip(!!p.windows, 'Windows')}
-      ${chip(!!p.mac,     'macOS')}
-      ${chip(!!p.linux,   'Linux')}
-    </div>`;
+    const row = (key, label) => {
+      const on = !!p[key];
+      return `
+        <tr>
+          <td><span class="gm-plat${on ? ' gm-plat--on' : ''}">${esc(label)}</span></td>
+          <td>${on ? esc(releaseDate || 'available') : '<span class="gm-mute">not offered</span>'}</td>
+          <td>${on
+            ? `<a class="gm-depot-link" href="https://steamdb.info/app/${esc(meta.appId)}/depots/" target="_blank" rel="noopener">SteamDB depots -&gt;</a>`
+            : '-'}</td>
+        </tr>`;
+    };
+    return `<table class="gm-plat-table">
+      <thead><tr><th>OS</th><th>Available</th><th>Last update</th></tr></thead>
+      <tbody>${row('windows','Windows')}${row('mac','macOS')}${row('linux','Linux')}</tbody>
+    </table>`;
+  };
+  // System requirements: fold into one collapsible block per OS. Text is
+  // pre-stripped of Steam's inline HTML so we can safely render it.
+  const reqsBlock = () => {
+    const rows = [];
+    for (const [os, pair] of [['Windows', meta.pcRequirements], ['macOS', meta.macRequirements], ['Linux', meta.linuxRequirements]]) {
+      if (!pair) continue;
+      if (!pair.minimum && !pair.recommended) continue;
+      rows.push(`
+        <div class="gm-reqs">
+          <div class="gm-reqs-os">${esc(os)}</div>
+          ${pair.minimum     ? `<div><strong>Min:</strong> ${esc(pair.minimum)}</div>`     : ''}
+          ${pair.recommended ? `<div><strong>Rec:</strong> ${esc(pair.recommended)}</div>` : ''}
+        </div>`);
+    }
+    return rows.join('');
+  };
+  const packages = () => {
+    const bits = [];
+    if (meta.packageIds.length) {
+      bits.push(`<span>${meta.packageIds.length} package${meta.packageIds.length === 1 ? '' : 's'}: ${meta.packageIds.slice(0, 8).join(', ')}${meta.packageIds.length > 8 ? '...' : ''}</span>`);
+    }
+    if (meta.packageGroups.length) {
+      const g = meta.packageGroups.map(x => `${esc(x.title || x.name || 'group')} (${x.subCount})`).join(', ');
+      bits.push(`<div class="gm-mute" style="margin-top:2px">Groups: ${g}</div>`);
+    }
+    return bits.join('');
+  };
+  const fullgameLink = () => {
+    if (!meta.fullgame?.appid) return '';
+    const t = meta.fullgame.name || `App ${meta.fullgame.appid}`;
+    return `<a href="#/app/${esc(String(meta.fullgame.appid))}">${esc(t)}</a>`;
   };
   body.innerHTML = [
-    section('Type',        meta.type    ? `<code>${esc(meta.type)}</code>` : ''),
-    section('Developer',   list(meta.developers)),
-    section('Publisher',   list(meta.publishers)),
-    section('Release date', meta.releaseDate
+    section('Name',          meta.name ? `<strong>${esc(meta.name)}</strong>` : ''),
+    section('App ID',        `<code>${esc(meta.appId)}</code>`),
+    section('Type',          meta.type ? `<code>${esc(meta.type)}</code>` : ''),
+    section('Parent game',   fullgameLink()),
+    section('Free to play',  meta.isFree ? '<span class="gm-plat gm-plat--on">Free</span>' : ''),
+    section('Age gate',      meta.requiredAge && Number(meta.requiredAge) > 0 ? `<code>${esc(String(meta.requiredAge))}+</code>` : ''),
+    section('Developer',     list(meta.developers)),
+    section('Publisher',     list(meta.publishers)),
+    section('Release date',  meta.releaseDate
       ? `<span>${esc(meta.releaseDate)}${meta.comingSoon ? ' <em>(coming soon)</em>' : ''}</span>` : ''),
-    section('Supported systems', platformsIcons(meta.platforms)),
-    section('Genres',      list(meta.genres)),
-    section('Categories',  list(meta.categories)),
-    section('Metacritic',  meta.metacriticScore != null
+    section('Supported systems', platformsRows(meta.platforms, meta.releaseDate)),
+    section('System requirements', reqsBlock()),
+    section('Genres',        list(meta.genres)),
+    section('Categories',    list(meta.categories)),
+    section('Achievements',  meta.hasAchievements
+      ? `<span>${meta.achievementCount.toLocaleString()} total</span>` : ''),
+    section('DLC',           meta.dlcCount ? `<span>${meta.dlcCount.toLocaleString()} entries</span>` : ''),
+    section('Metacritic',    meta.metacriticScore != null
       ? `<a href="${esc(meta.metacriticUrl || '#')}" target="_blank" rel="noopener">${meta.metacriticScore} / 100 -&gt;</a>`
       : ''),
-    section('Languages',   meta.supportedLanguages ? `<span>${esc(meta.supportedLanguages)}</span>` : ''),
+    section('Review summary', meta.reviewsSummary ? `<span>${esc(meta.reviewsSummary)}</span>` : ''),
+    section('Languages',     meta.supportedLanguages ? `<span>${esc(meta.supportedLanguages)}</span>` : ''),
     section('Controller support', meta.controllerSupport ? `<code>${esc(meta.controllerSupport)}</code>` : ''),
-  ].join('') || '<p class="rh-hint">No metadata fields returned.</p>';
+    section('Packages',      packages()),
+    section('Website',       meta.website
+      ? `<a href="${esc(meta.website)}" target="_blank" rel="noopener">${esc(meta.website)} -&gt;</a>` : ''),
+    section('Content notes', meta.contentDescriptors.length
+      ? list(meta.contentDescriptors) : ''),
+  ].join('') + `
+    <div class="gm-raw-wrap">
+      <button type="button" class="gm-raw-toggle" id="gm-raw-toggle" aria-expanded="false">Show raw appdetails JSON</button>
+      <pre class="gm-raw" id="gm-raw" hidden></pre>
+    </div>`;
+
+  // Wire raw-JSON toggle. Deferred so mobile does not chew memory pretty
+  // printing 40KB of JSON until the user asks for it.
+  const toggle = body.querySelector('#gm-raw-toggle');
+  const raw    = body.querySelector('#gm-raw');
+  toggle?.addEventListener('click', () => {
+    const opening = raw.hidden;
+    if (opening && !raw.dataset.filled) {
+      try { raw.textContent = JSON.stringify(meta.raw, null, 2); }
+      catch { raw.textContent = String(meta.raw); }
+      raw.dataset.filled = '1';
+    }
+    raw.hidden = !opening;
+    toggle.textContent = opening ? 'Hide raw appdetails JSON' : 'Show raw appdetails JSON';
+    toggle.setAttribute('aria-expanded', String(opening));
+  });
 }
 
 export function trendSummary(reps, appId) {

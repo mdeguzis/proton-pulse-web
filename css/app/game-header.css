@@ -1334,6 +1334,84 @@
   border-color: rgba(126,211,122,0.5);
   background: rgba(126,211,122,0.08);
 }
+/* Per-OS availability + depot link table. Each row: OS chip, release
+   date, SteamDB depot link. Steam does not publish per-depot dates via
+   appdetails (#214) so the "last update" cell is intentionally a link
+   rather than a date until we have a real source. */
+.gm-plat-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+.gm-plat-table th,
+.gm-plat-table td {
+  padding: 5px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.gm-plat-table th {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.gm-mute { color: var(--muted); }
+.gm-depot-link { color: var(--accent); }
+.gm-depot-link:hover { text-decoration: underline; }
+
+/* Per-OS system requirements. One card per OS with min + recommended. */
+.gm-reqs {
+  padding: 6px 10px;
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  margin-bottom: 6px;
+  background: rgba(255,255,255,0.02);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.gm-reqs:last-child { margin-bottom: 0; }
+.gm-reqs-os {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.gm-reqs strong { color: var(--text); }
+
+/* Raw appdetails JSON viewer -- collapsed by default so mobile does not
+   render a wall of text before the user asks. */
+.gm-raw-wrap { margin-top: 8px; }
+.gm-raw-toggle {
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--accent);
+  padding: 5px 10px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.gm-raw-toggle:hover { border-color: var(--accent); }
+.gm-raw {
+  margin: 8px 0 0;
+  padding: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text);
+  line-height: 1.4;
+  max-height: 320px;
+  overflow: auto;
+  white-space: pre;
+}
 
 /* Match hub-link buttons (not just anchors) so the new Metadata pill sits
    flush with the existing Steam / SteamDB / ProtonDB links. */
