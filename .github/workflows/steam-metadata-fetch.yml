@@ -26,6 +26,15 @@ on:
         description: 'Seconds to sleep between apps (rate limit courtesy)'
         required: false
         default: '3'
+      # Standardized inputs (#218).
+      issue_id:
+        description: 'GitHub issue to comment run summary back on (leave blank to skip)'
+        required: false
+        default: ''
+      dry_run:
+        description: 'Fetch depot data but skip the Supabase write'
+        type: boolean
+        default: false
   schedule:
     - cron: '0 9 * * *'
 
@@ -33,6 +42,9 @@ jobs:
   fetch:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
+    permissions:
+      contents: read
+      issues: write
     env:
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
@@ -63,5 +75,17 @@ jobs:
           fi
 
       - name: Fetch depot dates
+        env:
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: |
           python -m scripts.pipeline.steam_metadata $(echo "${{ steps.apps.outputs.list }}" | tr ',' ' ')
+
+      - name: Back-comment run summary on issue
+        if: always()
+        uses: ./.github/actions/back-comment-run
+        with:
+          issue_id: ${{ inputs.issue_id }}
+          status: ${{ job.status }}
+          workflow_name: steam-metadata-fetch
+          app_ids: ${{ steps.apps.outputs.list }}
+          dry_run: ${{ inputs.dry_run }}

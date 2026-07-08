@@ -53,6 +53,18 @@ on:
         required: false
         default: false
         type: boolean
+      # Standardized inputs (#218). `backfill_app_ids` is the domain-specific
+      # name for this workflow's app-id list, so we don't rename it -- but
+      # every workflow now accepts issue_id + dry_run for a common back-comment
+      # + preview-only story.
+      issue_id:
+        description: "GitHub issue to comment run summary back on (leave blank to skip)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Preview: run stages that read but skip commits + Supabase writes (best-effort per stage)"
+        type: boolean
+        default: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -1064,7 +1076,13 @@ jobs:
     needs: [build, probe-chunks, finalize, targeted-backfill, coverage-backfill]
     runs-on: ubuntu-24.04
     if: always()
+    permissions:
+      contents: read
+      issues: write
     steps:
+      # Needed by the back-comment composite action.
+      - uses: actions/checkout@v4
+
       - name: Summary
         run: |
           echo "### Build Site Data" >> "$GITHUB_STEP_SUMMARY"
@@ -1096,6 +1114,19 @@ jobs:
             echo "| Probe chunks | ${{ needs.probe-chunks.result }} |" >> "$GITHUB_STEP_SUMMARY"
             echo "| Finalize + Deploy | ${{ needs.finalize.result }} |" >> "$GITHUB_STEP_SUMMARY"
           fi
+
+      # #218: back-comment on the target issue if the dispatch specified one.
+      # Runs BEFORE the fail step so a failed run still posts a summary before
+      # the job flips red.
+      - name: Back-comment run summary on issue
+        if: always()
+        uses: ./.github/actions/back-comment-run
+        with:
+          issue_id: ${{ inputs.issue_id }}
+          status: ${{ contains(needs.*.result, 'failure') && 'failure' || 'success' }}
+          workflow_name: update-data
+          app_ids: ${{ inputs.backfill_app_ids }}
+          dry_run: ${{ inputs.dry_run }}
 
       - name: Fail if any job failed
         if: contains(needs.*.result, 'failure')

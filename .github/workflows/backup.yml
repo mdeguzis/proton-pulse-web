@@ -20,6 +20,15 @@ on:
           - user_configs
           - author_avatars
           - site
+      # Standardized inputs (#218). backup doesn't take app_ids.
+      issue_id:
+        description: "GitHub issue to comment run summary back on (leave blank to skip)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Produce backup artifacts locally but skip the upload to the backup repo"
+        type: boolean
+        default: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -28,6 +37,9 @@ jobs:
   backup:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
+    permissions:
+      contents: read
+      issues: write
     # For workflow_run triggers, only run if the upstream workflow succeeded.
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
 
@@ -75,6 +87,7 @@ jobs:
           fi
 
       - name: Publish release and update backups.jsonl
+        if: inputs.dry_run != true
         env:
           GH_TOKEN: ${{ secrets.BACKUP_REPO_TOKEN }}
           BACKUP_REPO_TOKEN: ${{ secrets.BACKUP_REPO_TOKEN }}
@@ -169,3 +182,12 @@ jobs:
           git add latest/ backups.jsonl
           git commit -m "backup (${TRIGGER}): ${DATE} [${TAG}]"
           git push
+
+      - name: Back-comment run summary on issue
+        if: always()
+        uses: ./.github/actions/back-comment-run
+        with:
+          issue_id: ${{ inputs.issue_id }}
+          status: ${{ job.status }}
+          workflow_name: backup
+          dry_run: ${{ inputs.dry_run }}

@@ -324,6 +324,12 @@ def run_steamcmd_app_info(app_id: int, timeout: int = 60) -> str:
 # --- Supabase upsert -------------------------------------------------------
 
 
+def _dry_run() -> bool:
+    """#218: honor DRY_RUN=true so a dispatched run can preview PICS output
+    without writing to steam_depot_updates / manifest_history / fetch_status."""
+    return os.environ.get("DRY_RUN", "").strip().lower() == "true"
+
+
 def _supabase_headers() -> dict:
     key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
     if not key:
@@ -358,6 +364,9 @@ def upsert_depot_rows(rows: Iterable[DepotRow]) -> int:
     ]
     if not payload:
         return 0
+    if _dry_run():
+        log(f"steam-metadata: dry-run, would upsert {len(payload)} depot rows: sample={payload[0]}")
+        return len(payload)
     url = f"{_supabase_base()}/steam_depot_updates?on_conflict=app_id,depot_id,os"
     req = urllib.request.Request(
         url, data=json.dumps(payload).encode(), method="POST",
@@ -368,13 +377,16 @@ def upsert_depot_rows(rows: Iterable[DepotRow]) -> int:
 
 
 def upsert_fetch_status(app_id: int, status: str, depot_count: int, error: str | None = None) -> None:
-    url = f"{_supabase_base()}/steam_depot_fetch_status?on_conflict=app_id"
     payload = [{
         "app_id":      app_id,
         "app_status":  status,
         "depot_count": depot_count,
         "error":       error,
     }]
+    if _dry_run():
+        log(f"steam-metadata: dry-run, would upsert fetch_status={payload[0]}")
+        return
+    url = f"{_supabase_base()}/steam_depot_fetch_status?on_conflict=app_id"
     req = urllib.request.Request(
         url, data=json.dumps(payload).encode(), method="POST",
         headers=_supabase_headers(),
