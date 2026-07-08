@@ -1369,6 +1369,31 @@
 /* Real depot dates from the #215 PICS cache -- render in mono so they
    line up under the "Last update" column heading. */
 .gm-depot-date { font-family: var(--mono); color: var(--text); }
+/* Steam-style brown package icon that deep-links to the per-game
+   depots.json we publish under /data/{appId}/depots.json (#237).
+   Sits inline in the row so admins / curious viewers can jump straight
+   to the raw file the modal was built from. */
+.gm-depot-file {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-left: 6px;
+  border-radius: 4px;
+  background: rgba(120, 76, 40, 0.14);
+  border: 1px solid rgba(160, 106, 60, 0.35);
+  color: #b07040;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: background 0.12s, border-color 0.12s;
+}
+.gm-depot-file:hover {
+  background: rgba(160, 106, 60, 0.24);
+  border-color: rgba(200, 140, 80, 0.6);
+  text-decoration: none;
+}
+.gm-depot-file svg { width: 14px; height: 14px; }
 .gm-plat-foot {
   padding-top: 6px !important;
   font-size: 0.68rem;

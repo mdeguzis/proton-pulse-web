@@ -376,15 +376,30 @@ def upsert_depot_rows(rows: Iterable[DepotRow]) -> int:
     return len(payload)
 
 
-def upsert_fetch_status(app_id: int, status: str, depot_count: int, error: str | None = None) -> None:
-    payload = [{
+def upsert_fetch_status(
+    app_id: int,
+    status: str,
+    depot_count: int,
+    error: str | None = None,
+    raw_pics: dict | None = None,
+) -> None:
+    """Upsert the per-app fetch status row.
+
+    #237: `raw_pics` is the full parsed depots dict from PICS. Persisting it
+    verbatim lets downstream stages (write_depot_files.py) surface every
+    field steamcmd emitted without a second PICS round-trip.
+    """
+    row: dict = {
         "app_id":      app_id,
         "app_status":  status,
         "depot_count": depot_count,
         "error":       error,
-    }]
+    }
+    if raw_pics is not None:
+        row["raw_pics"] = raw_pics
+    payload = [row]
     if _dry_run():
-        log(f"steam-metadata: dry-run, would upsert fetch_status={payload[0]}")
+        log(f"steam-metadata: dry-run, would upsert fetch_status={row}")
         return
     url = f"{_supabase_base()}/steam_depot_fetch_status?on_conflict=app_id"
     req = urllib.request.Request(
@@ -441,10 +456,16 @@ def fetch_and_store(app_id: int, sleep_between: float = 3.0) -> tuple[str, int]:
             except (TypeError, ValueError):
                 sample_json = str(sample)[:1500]
             log(f"steam-metadata: app={app_id} sample_depot={first_num_key} shape={sample_json}")
-        upsert_fetch_status(app_id, "no_public_manifest", 0, "parsed appinfo but no OS-bound depot rows")
+        # #237: even when we could not extract OS-bound rows, keep the raw
+        # depots dict so we can inspect what PICS returned via the on-disk
+        # depots.json without a re-fetch.
+        upsert_fetch_status(app_id, "no_public_manifest", 0, "parsed appinfo but no OS-bound depot rows", raw_pics=parsed.get("depots"))
         return "no_public_manifest", 0
     n = upsert_depot_rows(rows)
-    upsert_fetch_status(app_id, "ok", n, None)
+    # #237: persist the full parsed depots dict alongside the status. Everything
+    # steamcmd emitted (config.oslist, manifests.public.*, branches, sharedinstall,
+    # dlc_appids, ...) lands as a single JSONB blob for downstream consumers.
+    upsert_fetch_status(app_id, "ok", n, None, raw_pics=parsed.get("depots"))
     log(f"steam-metadata: app={app_id} rows={n} source=steamcmd-pics")
     return "ok", n
 

@@ -1,17 +1,26 @@
-// steam-depot-info: per-OS depot last-updated dates for the Metadata modal.
+// steam-depot-info: per-OS depot last-updated + tracked-since dates for
+// the Metadata modal.
 //
-// Reads from public.steam_depot_updates (populated nightly by the Steam
-// PICS pipeline via steamcmd; see .github/workflows/steam-metadata-fetch.yml).
-// Aggregates rows into a compact { windows, mac, linux } shape:
+// Sources (both populated by the Steam PICS pipeline via steamcmd; see
+// .github/workflows/steam-metadata-fetch.yml):
+//   - public.steam_depot_updates          -> current per-OS depot rollup
+//   - public.steam_depot_manifest_history -> earliest observation per OS
+//                                            (#226 -- honest tracked_since)
 //
+// Response:
 //   { appId: "367520", found: true, os: {
-//       linux:   { first_seen: "...", last_updated: "...", depots: 1 },
+//       linux:   { tracked_since: "...", last_updated: "...", depots: 1 },
 //       ...
 //     }}
 //
 // When no rows exist for the app yet the response is { found: false }
 // so the frontend can fall through to the SteamDB deep-link fallback
 // without treating a cache miss as an error.
+//
+// tracked_since is only reported when we have real manifest history for
+// that OS -- we deliberately do NOT fall back to last_updated_at because
+// that was previously mistaken for a first-seen date. Better to show a
+// dash than to lie. #237.
 //
 // Public (verify_jwt = false). Read-only. #215.
 
@@ -23,11 +32,17 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "GET, OPTIONS",
 };
 
-type Row = {
+type UpdateRow = {
   app_id: number;
   os: string;
   depot_id: number;
   last_updated_at: string;
+};
+type HistoryRow = {
+  app_id: number;
+  os: string;
+  depot_id: number;
+  first_observed_at: string;
 };
 
 Deno.serve(async (req: Request) => {
@@ -51,20 +66,33 @@ Deno.serve(async (req: Request) => {
     );
   }
   const supabase = createClient(supabaseUrl, supabaseKey);
-  const { data, error } = await supabase
-    .from("steam_depot_updates")
-    .select("app_id,os,depot_id,last_updated_at")
-    .eq("app_id", Number(appId));
+  const [updatesRes, historyRes] = await Promise.all([
+    supabase
+      .from("steam_depot_updates")
+      .select("app_id,os,depot_id,last_updated_at")
+      .eq("app_id", Number(appId)),
+    supabase
+      .from("steam_depot_manifest_history")
+      .select("app_id,os,depot_id,first_observed_at")
+      .eq("app_id", Number(appId)),
+  ]);
 
-  if (error) {
-    console.error(`[steam-depot-info] appId=${appId} query error=${error.message}`);
+  if (updatesRes.error) {
+    console.error(`[steam-depot-info] appId=${appId} updates error=${updatesRes.error.message}`);
     return Response.json(
-      { error: error.message, appId },
+      { error: updatesRes.error.message, appId },
       { status: 502, headers: corsHeaders },
     );
   }
-  const rows = (data as Row[]) || [];
-  if (rows.length === 0) {
+  if (historyRes.error) {
+    // History is optional -- log but keep going with just the update rollup.
+    console.warn(`[steam-depot-info] appId=${appId} history query soft-failed error=${historyRes.error.message}`);
+  }
+
+  const updates = (updatesRes.data as UpdateRow[]) || [];
+  const history = (historyRes.data as HistoryRow[]) || [];
+
+  if (updates.length === 0 && history.length === 0) {
     console.log(`[steam-depot-info] appId=${appId} found=false source=cache-miss`);
     return Response.json(
       { appId, found: false, os: {} },
@@ -72,24 +100,36 @@ Deno.serve(async (req: Request) => {
     );
   }
 
-  // Reduce to per-OS min / max timestamps + depot count.
-  type Bucket = { first: number; last: number; depots: Set<number> };
+  // Per-OS aggregate: max last_updated_at from updates, min first_observed_at
+  // from history, union of depot_ids for the count.
+  type Bucket = { last: number; trackedSince: number | null; depots: Set<number> };
   const byOs = new Map<string, Bucket>();
-  for (const row of rows) {
+  const bucket = (os: string): Bucket => {
+    let b = byOs.get(os);
+    if (!b) { b = { last: -Infinity, trackedSince: null, depots: new Set() }; byOs.set(os, b); }
+    return b;
+  };
+  for (const row of updates) {
     const ts = Date.parse(row.last_updated_at);
     if (!Number.isFinite(ts)) continue;
-    let b = byOs.get(row.os);
-    if (!b) { b = { first: ts, last: ts, depots: new Set() }; byOs.set(row.os, b); }
-    if (ts < b.first) b.first = ts;
-    if (ts > b.last)  b.last  = ts;
+    const b = bucket(row.os);
+    if (ts > b.last) b.last = ts;
     b.depots.add(row.depot_id);
   }
-  const os: Record<string, { first_seen: string; last_updated: string; depots: number }> = {};
+  for (const row of history) {
+    const ts = Date.parse(row.first_observed_at);
+    if (!Number.isFinite(ts)) continue;
+    const b = bucket(row.os);
+    if (b.trackedSince === null || ts < b.trackedSince) b.trackedSince = ts;
+    b.depots.add(row.depot_id);
+  }
+
+  const os: Record<string, { tracked_since: string | null; last_updated: string | null; depots: number }> = {};
   for (const [key, b] of byOs.entries()) {
     os[key] = {
-      first_seen:   new Date(b.first).toISOString(),
-      last_updated: new Date(b.last).toISOString(),
-      depots:       b.depots.size,
+      tracked_since: b.trackedSince != null ? new Date(b.trackedSince).toISOString() : null,
+      last_updated:  Number.isFinite(b.last) ? new Date(b.last).toISOString() : null,
+      depots:        b.depots.size,
     };
   }
   console.log(`[steam-depot-info] appId=${appId} found=true osCount=${Object.keys(os).length} source=cache`);

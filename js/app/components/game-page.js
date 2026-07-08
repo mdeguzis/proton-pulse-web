@@ -262,17 +262,16 @@ async function _openMetadataModal(appId) {
   const list = (items) => (items || []).length
     ? `<div class="gm-chips">${items.map(i => `<span class="gm-chip">${esc(i)}</span>`).join('')}</div>`
     : '';
-  // Per-OS depot row: Steam does not publish per-depot last-updated dates
-  // via appdetails (that lives in PICS / SteamDB). Show the app-wide
-  // release date next to each supported OS + a SteamDB depot link so
-  // viewers can drill in. Tracked in #214.
+  // Per-OS depot row. Steam does not publish per-depot last-updated dates
+  // via appdetails (that lives in PICS / SteamDB), so we cache them via
+  // steamcmd nightly (#215) into steam_depot_updates and observation
+  // history into steam_depot_manifest_history. The edge fn returns:
+  //   { found, os: { windows|mac|linux: { tracked_since, last_updated, depots } } }
+  // Values are only populated when we have real observations -- we
+  // deliberately do NOT fall back to app-wide release date or to the
+  // branch timestamp for tracked_since. Better to show a dash than lie.
   const platformsRows = (p, releaseDate) => {
     if (!p) return '';
-    // depotInfo shape: { found: bool, os: { windows|mac|linux: {
-    //   first_seen, last_updated, depots } } }
-    // Populated by the #215 pipeline (steamcmd nightly). When we have a
-    // real last-updated date for an OS we render it; otherwise we fall
-    // through to the SteamDB deep link.
     const dOs = depotInfo?.found && depotInfo.os ? depotInfo.os : {};
     const fmtDate = (iso) => {
       if (!iso) return null;
@@ -280,38 +279,53 @@ async function _openMetadataModal(appId) {
       if (Number.isNaN(d.getTime())) return null;
       return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
     };
-    // First seen + Last update ONLY come from the steamcmd depot cache
-    // (steam_depot_updates via #215). We deliberately do NOT fall through
-    // to the app-wide release date -- that used to be shown here and
-    // confused viewers into thinking it was per-OS depot data, which it
-    // is not. Release date has its own row above the table.
+    // #237: brown package icon that deep-links to the per-game depots.json
+    // we publish alongside latest.json. GitHub blob URL so users see the
+    // raw JSON with syntax highlighting + a "Raw" download button.
+    const DEPOT_FILE_URL = `https://github.com/mdeguzis/proton-pulse-web/blob/gh-pages/data/${esc(String(meta.appId))}/depots.json`;
+    const _packageIcon = (os) => `
+      <a class="gm-depot-file" href="${DEPOT_FILE_URL}#os=${esc(os)}" target="_blank" rel="noopener" title="View the raw depots.json this modal was built from">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path d="M21 8V19a2 2 0 01-2 2H5a2 2 0 01-2-2V8"/>
+          <path d="M1 5h22v3H1z"/>
+          <path d="M10 12h4"/>
+        </svg>
+      </a>`;
     const row = (key, label) => {
       const on = !!p[key];
       const cached = dOs[key];
       const lastFmt = fmtDate(cached?.last_updated);
-      let depotsCell;
-      let lastCell;
+      const trackedFmt = fmtDate(cached?.tracked_since);
+      let depotsCell, trackedCell, lastCell;
       if (!on) {
-        depotsCell = '<span class="gm-mute">not offered</span>';
-        lastCell   = '-';
-      } else if (lastFmt) {
-        depotsCell = `<span class="gm-mute">${cached.depots} tracked</span>`;
-        lastCell   = `<span class="gm-depot-date" title="Branch-level timeupdated from PICS -- every OS depot on a shared branch inherits this value. Per-OS 'First seen' requires observation history (#226).">${esc(lastFmt)}</span>`;
+        depotsCell  = '<span class="gm-mute">not offered</span>';
+        trackedCell = '-';
+        lastCell    = '-';
+      } else if (cached) {
+        depotsCell  = `<span class="gm-mute">${cached.depots} tracked</span>${_packageIcon(key)}`;
+        trackedCell = trackedFmt
+          ? `<span class="gm-depot-date" title="Earliest first_observed_at from steam_depot_manifest_history (#226)">${esc(trackedFmt)}</span>`
+          : '<span class="gm-mute" title="No observation history yet -- once the nightly pipeline observes this depot again with the same manifest, we will record a real tracked-since date">-</span>';
+        lastCell    = lastFmt
+          ? `<span class="gm-depot-date" title="Branch-level timeupdated from PICS -- every OS depot on a shared branch inherits this value">${esc(lastFmt)}</span>`
+          : '-';
       } else {
-        depotsCell = '<span class="gm-mute" title="Not cached yet -- pipeline #215 populates this nightly">pending</span>';
-        lastCell   = `<a class="gm-depot-link" href="https://steamdb.info/app/${esc(meta.appId)}/depots/" target="_blank" rel="noopener">SteamDB -&gt;</a>`;
+        depotsCell  = '<span class="gm-mute" title="Not cached yet -- pipeline #215 populates this nightly">pending</span>';
+        trackedCell = '-';
+        lastCell    = `<a class="gm-depot-link" href="https://steamdb.info/app/${esc(meta.appId)}/depots/" target="_blank" rel="noopener">SteamDB -&gt;</a>`;
       }
       return `
         <tr>
           <td><span class="gm-plat${on ? ' gm-plat--on' : ''}">${esc(label)}</span></td>
           <td>${depotsCell}</td>
+          <td>${trackedCell}</td>
           <td>${lastCell}</td>
         </tr>`;
     };
     return `<table class="gm-plat-table">
-      <thead><tr><th>OS</th><th>Depots</th><th>Last update</th></tr></thead>
+      <thead><tr><th>OS</th><th>Depots</th><th>Tracked since</th><th>Last update</th></tr></thead>
       <tbody>${row('windows','Windows')}${row('mac','macOS')}${row('linux','Linux')}</tbody>
-      <tfoot><tr><td colspan="3" class="gm-plat-foot">Last update is the branch-level timestamp from PICS -- every OS depot on the same branch shares one value. Per-OS 'first seen' needs observation history (#226). ${
+      <tfoot><tr><td colspan="4" class="gm-plat-foot">Tracked-since is the earliest observation we recorded for that OS. Last update is the branch-level PICS timestamp -- every depot on a shared branch inherits it. The brown icon on each row opens the raw <code>depots.json</code> we publish for this game. ${
         newsInfo?.found && newsInfo.newest_ts
           ? `App-wide 'Last patch note' (${esc(new Date(newsInfo.newest_ts * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))}) below is the public-API fallback when a specific OS row shows 'pending'.`
           : ''

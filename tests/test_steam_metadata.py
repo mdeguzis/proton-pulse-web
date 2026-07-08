@@ -322,7 +322,7 @@ class TestNoManifestDiagnostics:
         monkeypatch.setattr(steam_metadata, "run_steamcmd_app_info", lambda app_id, **kw: fake_stdout)
         status_calls, log_calls = [], []
         monkeypatch.setattr(steam_metadata, "upsert_fetch_status",
-            lambda app_id, status, depot_count, error=None: status_calls.append((app_id, status, depot_count, error)))
+            lambda app_id, status, depot_count, error=None, raw_pics=None: status_calls.append((app_id, status, depot_count, error, raw_pics)))
         monkeypatch.setattr(steam_metadata, "upsert_depot_rows", lambda rows: 0)
         monkeypatch.setattr(steam_metadata, "log", lambda msg: log_calls.append(msg))
         status, n = steam_metadata.fetch_and_store(367520)
@@ -370,7 +370,7 @@ class TestFetchAndStoreOffline:
         upserts = []
         status_calls = []
         monkeypatch.setattr(steam_metadata, "upsert_depot_rows", lambda rows: upserts.append(list(rows)) or 0)
-        monkeypatch.setattr(steam_metadata, "upsert_fetch_status", lambda app_id, status, depot_count, error=None: status_calls.append((app_id, status, depot_count, error)))
+        monkeypatch.setattr(steam_metadata, "upsert_fetch_status", lambda app_id, status, depot_count, error=None, raw_pics=None: status_calls.append((app_id, status, depot_count, error)))
         status, n = steam_metadata.fetch_and_store(1)
         assert status == "no_public_manifest"
         assert n == 0
@@ -388,10 +388,42 @@ class TestFetchAndStoreOffline:
             raise RuntimeError("steamcmd missing")
         monkeypatch.setattr(steam_metadata, "run_steamcmd_app_info", boom)
         status_calls = []
-        monkeypatch.setattr(steam_metadata, "upsert_fetch_status", lambda app_id, status, depot_count, error=None: status_calls.append((app_id, status, error)))
+        monkeypatch.setattr(steam_metadata, "upsert_fetch_status", lambda app_id, status, depot_count, error=None, raw_pics=None: status_calls.append((app_id, status, error)))
         status, n = steam_metadata.fetch_and_store(1)
         assert status == "error"
         assert n == 0
         assert status_calls[0][0] == 1
         assert status_calls[0][1] == "error"
         assert "steamcmd missing" in status_calls[0][2]
+
+    def test_ok_run_persists_raw_pics_on_fetch_status(self, monkeypatch):
+        """#237: on a successful fetch, upsert_fetch_status must receive the
+        full parsed depots dict so downstream stages can emit depots.json
+        without a second PICS round-trip."""
+        monkeypatch.setattr(steam_metadata, "run_steamcmd_app_info", lambda app_id, **kw: "ignored -- parse is mocked below")
+        parsed_fixture = {
+            "depots": {
+                "10": {
+                    "config": {"oslist": "linux"},
+                    "manifests": {"public": {"gid": "1", "timeupdated": "1700000000"}},
+                },
+                "branches": {"public": {"buildid": "12", "timeupdated": "1700000000"}},
+            },
+        }
+        monkeypatch.setattr(steam_metadata, "parse_app_info", lambda raw: parsed_fixture)
+        # Return one row so extract_depot_rows short-circuits us into the ok path.
+        monkeypatch.setattr(steam_metadata, "extract_depot_rows",
+                            lambda app_id, parsed: [steam_metadata.DepotRow(
+                                app_id=app_id, depot_id=10, os="linux",
+                                name="linux", manifest_id="1", last_updated_at=1700000000)])
+        monkeypatch.setattr(steam_metadata, "upsert_depot_rows", lambda rows: 1)
+        status_calls = []
+        monkeypatch.setattr(steam_metadata, "upsert_fetch_status",
+                            lambda app_id, status, depot_count, error=None, raw_pics=None:
+                                status_calls.append({"status": status, "raw_pics": raw_pics}))
+        status, n = steam_metadata.fetch_and_store(367520)
+        assert status == "ok" and n == 1
+        assert len(status_calls) == 1
+        # raw_pics is passed as the parsed depots dict verbatim.
+        assert status_calls[0]["raw_pics"] == parsed_fixture["depots"]
+        assert status_calls[0]["raw_pics"]["branches"]["public"]["buildid"] == "12"
