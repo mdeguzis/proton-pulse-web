@@ -847,14 +847,32 @@ export async function renderGamePage(appId) {
     const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
     const TIER_FULL = { platinum: 'PLATINUM', gold: 'GOLD', silver: 'SILVER', bronze: 'BRONZE', borked: 'BORKED' };
     const maxTierCount = Math.max(1, ...TIER_ORDER.map((t) => ratingCounts[t]));
+    const _mirrorTotalCount = TIER_ORDER.reduce((s, t) => s + ratingCounts[t], 0);
+    // When we have a live summary but the mirror sample is empty (or all reports
+    // lack a valid rating), render a single filled "primary tier" bar using the
+    // live summary tier + total. Beats five empty PLATINUM/GOLD/... 0 rows and
+    // still keeps the visual language of the bars section (#219 follow-up).
+    const _liveTierKey = liveSummary ? String(liveSummary.tier || '').toLowerCase() : '';
+    const _liveTierValid = TIER_ORDER.includes(_liveTierKey);
+    const _useLiveBar = !!liveSummary && _liveTierValid && _mirrorTotalCount === 0;
     // Attribution note when ProtonDB's live total exceeds what we have mirrored:
     // the per-tier bars are only from our mirror sample, but the aggregate count
     // and dial confidence are drawn from ProtonDB's real total (#219).
-    const _mirrorSampleNote = (!liveOnly && liveSummary && liveTotal > cdn.length)
-      ? `<div class="grp-bars-note grp-bars-note--sample">Per-tier bars reflect our mirrored sample (${cdn.length}); dial uses ProtonDB's live total (${liveTotal.toLocaleString()}).</div>`
+    const _mirrorSampleNote = (!liveOnly && !_useLiveBar && liveSummary && liveTotal > _mirrorTotalCount)
+      ? `<div class="grp-bars-note grp-bars-note--sample">Per-tier bars reflect our mirrored sample (${_mirrorTotalCount}); dial uses ProtonDB's live total (${liveTotal.toLocaleString()}).</div>`
       : '';
-    const tierBars = liveOnly
-      ? '<div class="grp-bars-note">Per-tier breakdown is not available from ProtonDB\'s live summary.</div>'
+    const _liveBarBlock = _useLiveBar
+      ? `<div class="grp-bars">
+          <div class="grp-bar grp-bar-${_liveTierKey}" title="${liveTotal.toLocaleString()} ${_liveTierKey} report${liveTotal !== 1 ? 's' : ''} (ProtonDB live summary)">
+            <span class="grp-bar-label">${TIER_FULL[_liveTierKey]}</span>
+            <span class="grp-bar-track"><span class="grp-bar-fill" style="width:100%;background:${RATING_COLORS[_liveTierKey]}"></span></span>
+            <span class="grp-bar-count">${liveTotal.toLocaleString()}</span>
+          </div>
+          <div class="grp-bars-note grp-bars-note--sample">Aggregate tier from ProtonDB (${liveTotal.toLocaleString()} report${liveTotal !== 1 ? 's' : ''}). Individual reports aren't mirrored here yet, so we can't show the full breakdown.</div>
+        </div>`
+      : '';
+    const tierBars = _useLiveBar
+      ? _liveBarBlock
       : `<div class="grp-bars">${TIER_ORDER.map((t) => {
           const n = ratingCounts[t];
           const pct = Math.round((n / maxTierCount) * 100);

@@ -43,7 +43,10 @@ describe('game page: ProtonDB live-only handling', () => {
 
   test('live-only shows an explanatory note instead of fake cards', () => {
     expect(src).toContain('class="live-summary-note"');
-    expect(src).toContain('Per-tier breakdown is not available from ProtonDB');
+    // The old "Per-tier breakdown is not available" fallback was replaced by
+    // a synthesized primary-tier bar (#219 follow-up). See the "synthesized
+    // primary-tier bar" test above for the new contract.
+    expect(src).toContain('Aggregate tier from ProtonDB');
   });
 
   test('report_moderation fetch does not double the /rest/v1 prefix', () => {
@@ -74,9 +77,12 @@ describe('game page: rating panel (dial + per-tier bars + flag)', () => {
     expect(src).toContain('background:${RATING_COLORS[t]}');
   });
 
-  test('live-only games show the no-breakdown note instead of empty bars', () => {
-    expect(src).toContain('class="grp-bars-note"');
-    expect(src).toContain("Per-tier breakdown is not available from ProtonDB");
+  test('live-only games show a synthesized primary-tier bar instead of empty rows', () => {
+    // Old behavior showed 5 empty PLATINUM/GOLD/... 0 bars or a plain note.
+    // New behavior (#219 follow-up): render a single filled bar for the tier
+    // ProtonDB's summary reports.
+    expect(src).toContain('class="grp-bars-note grp-bars-note--sample"');
+    expect(src).toContain('Aggregate tier from ProtonDB');
   });
 
   test('confidence summary links to the scoring breakdown via a "why?" link', () => {
@@ -100,13 +106,22 @@ describe('game page: rating panel (dial + per-tier bars + flag)', () => {
     expect(src).toContain('src="${STEAM_IMG(appId)}"');
   });
 
-  test('mirror-sample note appears when live total exceeds mirror count (#219)', () => {
-    // When cdn has, e.g., 3 reports but ProtonDB reports 500 total, the tier
-    // bars are only from our 3-sample slice. Attribution note tells users the
-    // dial confidence uses the live total instead.
+  test('mirror-sample note appears when live total exceeds mirror sample (#219)', () => {
+    // When cdn/native samples exist but ProtonDB reports more total, tier bars
+    // are only from our slice. Attribution note tells users the dial confidence
+    // uses the live total instead.
     expect(src).toContain("grp-bars-note--sample");
-    expect(src).toContain("liveTotal > cdn.length");
+    expect(src).toContain("liveTotal > _mirrorTotalCount");
     expect(src).toContain("Per-tier bars reflect our mirrored sample");
+  });
+
+  test('synthesized primary-tier bar renders when mirror sample is empty (#219)', () => {
+    // When we have no valid mirror ratings but a live summary tier is known,
+    // show a single filled bar for that tier instead of five empty rows.
+    expect(src).toContain("_useLiveBar");
+    expect(src).toContain("_mirrorTotalCount === 0");
+    expect(src).toContain("Aggregate tier from ProtonDB");
+    expect(src).toContain("grp-bar-${_liveTierKey}");
   });
 
   test('summary tags source when count is driven by ProtonDB live (#219)', () => {
