@@ -5,7 +5,7 @@ import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '.
 import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=8dc92cf7';
 import { getWebClientId } from '../../shared/submit.js?v=339c68ea';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=09d5c67e';
-import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
+import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=01961c8d';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
@@ -506,7 +506,7 @@ export async function renderGamePage(appId) {
       return fallback;
     }
   };
-  const [cdnRaw, configs, nativeReports, votes, userVotes, playtimeTotals, suppressedKeys] = await Promise.all([
+  const [cdnRaw, configs, nativeReports, votes, userVotes, playtimeTotals, suppressedKeys, liveFetched] = await Promise.all([
     safeFetch(() => fetchCdn(appId), 'fetchCdn', []),
     safeFetch(() => fetchSupabase(appId), 'fetchSupabase', []),
     safeFetch(() => fetchNativeReports(appId), 'fetchNativeReports', []),
@@ -514,6 +514,11 @@ export async function renderGamePage(appId) {
     safeFetch(() => fetchUserVotes(appId), 'fetchUserVotes', {}),
     safeFetch(() => fetchConfigPlaytimeTotals(appId), 'fetchConfigPlaytimeTotals', []),
     safeFetch(() => _fetchReportModeration(appId), 'reportModeration', new Set()),
+    // Auto-fetch the ProtonDB live summary on every page load so aggregate
+    // stats (tier + total) stay accurate even when our CDN mirror is sparse
+    // or missing entirely (#219). The proxy is cached per-appId per-session
+    // so re-renders don't re-hit the network.
+    safeFetch(() => fetchProtonDbLive(appId), 'fetchProtonDbLive', []),
   ]);
 
   // Drop ProtonDB mirror reports an admin has shadow-banned or deleted. Pulse
@@ -525,17 +530,19 @@ export async function renderGamePage(appId) {
     console.debug('[game-page] filtered suppressed ProtonDB reports', { appId, removed: cdnRaw.length - cdn.length, source: 'report_moderation' });
   }
 
-  // If CDN was empty but the user already clicked "Check ProtonDB Live" this
-  // session, use the cached live result so the page re-renders correctly.
   // ProtonDB's public summaries API only returns an aggregate (tier + total),
   // not individual reports, so the live result is a single `_liveOnly` summary.
   // It must NOT be rendered as a report card (it has no hardware/date and shows
   // up as a broken "Unknown / NAN days ago" row); instead it drives the header
   // tier + ProtonDB count below.
-  const liveCached = !cdn.length ? (_protonDbLiveCache.get(String(appId)) || []) : [];
-  const liveSummary = liveCached.find(r => r._liveOnly) || null;
+  //
+  // We auto-fetch the summary on every load (#219) so aggregate stats reflect
+  // ProtonDB's real numbers even when our CDN mirror only carries a few reports.
+  // `liveSummary` is populated whenever we got data; `liveOnly` means we have
+  // ZERO cdn reports and are relying purely on the summary.
+  const liveSummary = (liveFetched || []).find(r => r._liveOnly) || null;
   const liveOnly = !!liveSummary && !cdn.length;
-  const cdnMiss = !cdn.length && !liveCached.length;
+  const cdnMiss = !cdn.length && !(liveFetched || []).length;
 
   const reports = [
     ...cdn.map(r => ({ ...r, source: 'protondb' })),
@@ -635,11 +642,18 @@ export async function renderGamePage(appId) {
   const replacedByTitle = replacedBy
     ? (searchIndex || []).find(row => String(row[0]) === replacedBy)?.[1] || `App ${replacedBy}`
     : '';
-  // Effective ProtonDB report count: the mirrored count when we have it, else
-  // the live aggregate total. Drives the header counts so a live-only game
-  // shows the real ProtonDB rating instead of "0 reports / pending".
-  const protonDbCount = cdn.length || (liveSummary ? (liveSummary.total || 0) : 0);
-  const protonDbTier = liveOnly ? String(liveSummary.tier || '').toLowerCase() : tierFromReports(cdn);
+  // Effective ProtonDB report count: MAX of mirrored count and live aggregate
+  // (#219). ProtonDB's mirror often lags -- Hollow Knight has thousands of
+  // reports on ProtonDB but only a handful in our CDN. Take the higher number
+  // so the confidence % + "N reports" text reflect ProtonDB's real breadth,
+  // not just what we happen to have cached.
+  const liveTotal = liveSummary ? (liveSummary.total || 0) : 0;
+  const protonDbCount = Math.max(cdn.length, liveTotal);
+  // Tier: prefer the mirrored sample when we have cards to back it up,
+  // otherwise the live summary tier. Both use the same tier vocabulary.
+  const protonDbTier = liveOnly
+    ? String(liveSummary.tier || '').toLowerCase()
+    : (tierFromReports(cdn) || String(liveSummary?.tier || '').toLowerCase());
   const pulseTier = pulseTierFromReports(nativeReports, protonDbCount);
   document.title = `${title} - Proton Pulse`;
   if (typeof window.ppTrack === 'function') window.ppTrack('game_view', { app_id: String(appId), title });
@@ -815,8 +829,12 @@ export async function renderGamePage(appId) {
     // the "why?" page never disagree (#187). The old code bucketed by report
     // COUNT, which said "medium" for a 14-report game the dial showed at 95%.
     const confBucket = !hasAnyReports ? '' : overallConfidencePct >= 80 ? 'high' : overallConfidencePct >= 50 ? 'moderate' : 'low';
+    // "N reports" where N = pulse + protonDbCount (which is MAX(mirror, live)).
+    // When the live total drives the count, tag the source so users understand
+    // the summary is authoritative even when we mirror only a small slice (#219).
+    const _fromLive = !!liveSummary && liveTotal > cdn.length;
     const overallTileSummary = hasAnyReports
-      ? `${confBucket} confidence across ${totalReports} report${totalReports !== 1 ? 's' : ''}${pulseHasConfigs ? ` / ${configs.length} config${configs.length !== 1 ? 's' : ''}` : ''}`
+      ? `${confBucket} confidence across ${totalReports.toLocaleString()} report${totalReports !== 1 ? 's' : ''}${_fromLive ? ' (via ProtonDB live)' : ''}${pulseHasConfigs ? ` / ${configs.length} config${configs.length !== 1 ? 's' : ''}` : ''}`
       : (pulseHasConfigs ? 'Community-submitted configs available' : 'No community data yet');
     // Rating distribution: one horizontal bar per tier, filled with the tier
     // color and scaled to the busiest tier so the shape reads at a glance.
@@ -829,6 +847,12 @@ export async function renderGamePage(appId) {
     const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
     const TIER_FULL = { platinum: 'PLATINUM', gold: 'GOLD', silver: 'SILVER', bronze: 'BRONZE', borked: 'BORKED' };
     const maxTierCount = Math.max(1, ...TIER_ORDER.map((t) => ratingCounts[t]));
+    // Attribution note when ProtonDB's live total exceeds what we have mirrored:
+    // the per-tier bars are only from our mirror sample, but the aggregate count
+    // and dial confidence are drawn from ProtonDB's real total (#219).
+    const _mirrorSampleNote = (!liveOnly && liveSummary && liveTotal > cdn.length)
+      ? `<div class="grp-bars-note grp-bars-note--sample">Per-tier bars reflect our mirrored sample (${cdn.length}); dial uses ProtonDB's live total (${liveTotal.toLocaleString()}).</div>`
+      : '';
     const tierBars = liveOnly
       ? '<div class="grp-bars-note">Per-tier breakdown is not available from ProtonDB\'s live summary.</div>'
       : `<div class="grp-bars">${TIER_ORDER.map((t) => {
@@ -839,7 +863,7 @@ export async function renderGamePage(appId) {
               <span class="grp-bar-track"><span class="grp-bar-fill" style="width:${pct}%;background:${RATING_COLORS[t]}"></span></span>
               <span class="grp-bar-count">${n}</span>
             </div>`;
-        }).join('')}</div>`;
+        }).join('')}${_mirrorSampleNote}</div>`;
 
     // Confidence gauge dial: ring fill = overall confidence %, with the tier
     // name and a "confidence" caption in the center.

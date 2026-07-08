@@ -8,9 +8,10 @@ const src = fs.readFileSync(
 
 describe('game page: ProtonDB live-only handling', () => {
   test('live summary is not merged into the rendered report list', () => {
-    // reports[] must not spread liveCached (that produced the broken stub card)
+    // reports[] must not spread liveFetched (that produced the broken stub card)
+    expect(src).not.toMatch(/\.\.\.liveFetched\.map/);
     expect(src).not.toMatch(/\.\.\.liveCached\.map/);
-    expect(src).toContain('const liveSummary = liveCached.find(r => r._liveOnly) || null');
+    expect(src).toContain("const liveSummary = (liveFetched || []).find(r => r._liveOnly) || null");
     expect(src).toContain('const liveOnly = !!liveSummary && !cdn.length');
   });
 
@@ -18,10 +19,26 @@ describe('game page: ProtonDB live-only handling', () => {
     expect(src).toContain('if (!reports.length && !configs.length && !liveSummary)');
   });
 
-  test('header tier and count come from the live summary when mirror is empty', () => {
-    expect(src).toContain('const protonDbCount = cdn.length || (liveSummary ? (liveSummary.total || 0) : 0)');
-    expect(src).toContain("const protonDbTier = liveOnly ? String(liveSummary.tier || '').toLowerCase() : tierFromReports(cdn)");
+  test('header count uses MAX(mirror, live total) so ProtonDB totals show through (#219)', () => {
+    // #219: even when we have some mirror reports, use the live total when
+    // ProtonDB says there are more (Hollow Knight etc).
+    expect(src).toContain('const protonDbCount = Math.max(cdn.length, liveTotal)');
+    expect(src).toContain('const liveTotal = liveSummary ? (liveSummary.total || 0) : 0');
     expect(src).toContain('const totalReports = nativeReports.length + protonDbCount');
+  });
+
+  test('tier falls back to live summary when mirror is empty (#219)', () => {
+    // liveOnly branch returns the live tier verbatim; the else branch prefers
+    // tierFromReports but falls back to the live summary tier if empty.
+    expect(src).toContain("liveOnly");
+    expect(src).toContain("String(liveSummary.tier || '').toLowerCase()");
+    expect(src).toContain("(tierFromReports(cdn) || String(liveSummary?.tier || '').toLowerCase())");
+  });
+
+  test('ProtonDB live summary is auto-fetched in the parallel Promise.all (#219)', () => {
+    // #219: the live summary must load automatically on every page render
+    // so aggregate stats reflect ProtonDB reality, not just what we mirror.
+    expect(src).toContain("safeFetch(() => fetchProtonDbLive(appId), 'fetchProtonDbLive', [])");
   });
 
   test('live-only shows an explanatory note instead of fake cards', () => {
@@ -81,6 +98,22 @@ describe('game page: rating panel (dial + per-tier bars + flag)', () => {
   test('box art is preserved in the header grid', () => {
     expect(src).toContain('class="game-header-art"');
     expect(src).toContain('src="${STEAM_IMG(appId)}"');
+  });
+
+  test('mirror-sample note appears when live total exceeds mirror count (#219)', () => {
+    // When cdn has, e.g., 3 reports but ProtonDB reports 500 total, the tier
+    // bars are only from our 3-sample slice. Attribution note tells users the
+    // dial confidence uses the live total instead.
+    expect(src).toContain("grp-bars-note--sample");
+    expect(src).toContain("liveTotal > cdn.length");
+    expect(src).toContain("Per-tier bars reflect our mirrored sample");
+  });
+
+  test('summary tags source when count is driven by ProtonDB live (#219)', () => {
+    // Users need to see whether "N reports" came from mirror or live so the
+    // aggregate makes sense even when the tier bars look tiny.
+    expect(src).toContain("_fromLive");
+    expect(src).toContain("(via ProtonDB live)");
   });
 
   test('confidence summary buckets off the percent, not the report count (#187)', () => {
