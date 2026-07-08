@@ -280,38 +280,55 @@ async function _openMetadataModal(appId) {
       if (Number.isNaN(d.getTime())) return null;
       return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
     };
-    // First seen + Last update ONLY come from the steamcmd depot cache
-    // (steam_depot_updates via #215). We deliberately do NOT fall through
-    // to the app-wide release date -- that used to be shown here and
-    // confused viewers into thinking it was per-OS depot data, which it
-    // is not. Release date has its own row above the table.
+    // Two possible sources per OS (see supabase/functions/steam-depot-info):
+    //   source='history'         -> Phase 2 observation table (#226).
+    //     first_seen  = MIN(first_observed_at) over manifest_ids we have
+    //                  ever seen for this (app, os). Real per-OS tracking
+    //                  floor -- 'we started watching this on X'.
+    //     last_updated = MAX(first_observed_at) -- last time a new
+    //                  manifest_id was observed = last shipped build.
+    //   source='branch-fallback' -> only Phase 1 data; first_seen ==
+    //     last_updated because both read from the shared branch-level
+    //     PICS timestamp.
+    // Tooltip on the date cell tells the truth about which source the
+    // number came from so users are not misled by a fallback value.
     const row = (key, label) => {
       const on = !!p[key];
       const cached = dOs[key];
-      const lastFmt = fmtDate(cached?.last_updated);
-      let depotsCell;
-      let lastCell;
+      const firstFmt = fmtDate(cached?.first_seen);
+      const lastFmt  = fmtDate(cached?.last_updated);
+      const isHistory = cached?.source === 'history';
+      let depotsCell, firstCell, lastCell;
       if (!on) {
         depotsCell = '<span class="gm-mute">not offered</span>';
+        firstCell  = '-';
         lastCell   = '-';
-      } else if (lastFmt) {
-        depotsCell = `<span class="gm-mute">${cached.depots} tracked</span>`;
-        lastCell   = `<span class="gm-depot-date" title="Branch-level timeupdated from PICS -- every OS depot on a shared branch inherits this value. Per-OS 'First seen' requires observation history (#226).">${esc(lastFmt)}</span>`;
+      } else if (firstFmt && lastFmt) {
+        const depotCountLbl = `${cached.depots} tracked${isHistory && cached.manifests ? ` &middot; ${cached.manifests} manifest${cached.manifests === 1 ? '' : 's'} in history` : ''}`;
+        depotsCell = `<span class="gm-mute">${depotCountLbl}</span>`;
+        firstCell = isHistory
+          ? `<span class="gm-depot-date" title="Earliest date we observed a manifest for this OS depot. Not necessarily when the depot was created -- our observation window starts July 2026 (#226).">${esc(firstFmt)}</span>`
+          : `<span class="gm-depot-date gm-depot-date--approx" title="Branch-level PICS timestamp -- observation history not yet populated for this app. Once nightly runs record a manifest_id change we can show a real per-OS first_seen.">${esc(firstFmt)}</span>`;
+        lastCell = isHistory
+          ? `<span class="gm-depot-date" title="Most recent manifest_id observation -- proxy for 'this OS build shipped'. From steam_depot_manifest_history (#226).">${esc(lastFmt)}</span>`
+          : `<span class="gm-depot-date gm-depot-date--approx" title="Branch-level PICS timestamp -- same value across all OS depots on this branch until observation history is populated.">${esc(lastFmt)}</span>`;
       } else {
         depotsCell = '<span class="gm-mute" title="Not cached yet -- pipeline #215 populates this nightly">pending</span>';
+        firstCell  = '-';
         lastCell   = `<a class="gm-depot-link" href="https://steamdb.info/app/${esc(meta.appId)}/depots/" target="_blank" rel="noopener">SteamDB -&gt;</a>`;
       }
       return `
         <tr>
           <td><span class="gm-plat${on ? ' gm-plat--on' : ''}">${esc(label)}</span></td>
           <td>${depotsCell}</td>
+          <td>${firstCell}</td>
           <td>${lastCell}</td>
         </tr>`;
     };
     return `<table class="gm-plat-table">
-      <thead><tr><th>OS</th><th>Depots</th><th>Last update</th></tr></thead>
+      <thead><tr><th>OS</th><th>Depots</th><th>First seen</th><th>Last update</th></tr></thead>
       <tbody>${row('windows','Windows')}${row('mac','macOS')}${row('linux','Linux')}</tbody>
-      <tfoot><tr><td colspan="3" class="gm-plat-foot">Last update is the branch-level timestamp from PICS -- every OS depot on the same branch shares one value. Per-OS 'first seen' needs observation history (#226). ${
+      <tfoot><tr><td colspan="4" class="gm-plat-foot">'First seen' and 'Last update' come from our own manifest observation history (#226). Dates in italics are the pre-history branch-level timestamp (same value for both cells) until nightly runs record a manifest change. ${
         newsInfo?.found && newsInfo.newest_ts
           ? `App-wide 'Last patch note' (${esc(new Date(newsInfo.newest_ts * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))}) below is the public-API fallback when a specific OS row shows 'pending'.`
           : ''

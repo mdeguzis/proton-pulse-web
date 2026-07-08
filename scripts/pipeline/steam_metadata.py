@@ -367,6 +367,46 @@ def upsert_depot_rows(rows: Iterable[DepotRow]) -> int:
     return len(payload)
 
 
+def upsert_manifest_history_rows(rows: Iterable[DepotRow]) -> int:
+    """Observation history for issue #226 (Phase 2 of the depot plan).
+
+    For each (app_id, depot_id, os, manifest_id) tuple we've never seen,
+    INSERT with first_observed_at = now(). For tuples we HAVE seen, bump
+    latest_observed_at to now(). When a game ships a build the manifest_id
+    changes for the affected depots -> a fresh row is inserted; the
+    previous row stays forever with its latest_observed_at frozen at the
+    time of the last observation, so we build a durable per-OS timeline.
+
+    Rows without a manifest_id are skipped -- the history is keyed on
+    manifest_id, and depots that PICS returned with no manifest are the
+    exact rows we cannot record change history for.
+    """
+    payload = [
+        {
+            "app_id":             r.app_id,
+            "depot_id":           r.depot_id,
+            "os":                 r.os,
+            "manifest_id":        r.manifest_id,
+            "latest_observed_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        }
+        for r in rows
+        if r.manifest_id  # skip depots that ship without a public manifest gid
+    ]
+    if not payload:
+        return 0
+    # on_conflict specifies our composite PK. Prefer: merge-duplicates means
+    # existing rows keep first_observed_at (never overwritten) and only
+    # latest_observed_at is bumped -- exactly the shape we want. The
+    # default column value 'now()' fires on INSERT only.
+    url = f"{_supabase_base()}/steam_depot_manifest_history?on_conflict=app_id,depot_id,os,manifest_id"
+    req = urllib.request.Request(
+        url, data=json.dumps(payload).encode(), method="POST",
+        headers=_supabase_headers(),
+    )
+    urllib.request.urlopen(req, timeout=30).read()
+    return len(payload)
+
+
 def upsert_fetch_status(app_id: int, status: str, depot_count: int, error: str | None = None) -> None:
     url = f"{_supabase_base()}/steam_depot_fetch_status?on_conflict=app_id"
     payload = [{
@@ -432,6 +472,15 @@ def fetch_and_store(app_id: int, sleep_between: float = 3.0) -> tuple[str, int]:
         upsert_fetch_status(app_id, "no_public_manifest", 0, "parsed appinfo but no OS-bound depot rows")
         return "no_public_manifest", 0
     n = upsert_depot_rows(rows)
+    # Feed the same rows into the manifest observation history so per-OS
+    # First seen / Last update become real dates. Failures here should
+    # NOT flip the status to error -- the primary depot_updates write is
+    # already durable; history is a strict enhancement. Log + continue.
+    try:
+        h = upsert_manifest_history_rows(rows)
+        log(f"steam-metadata: app={app_id} history rows upserted={h} source=depot-history")
+    except Exception as e:
+        log(f"steam-metadata: app={app_id} history upsert failed error={e}")
     upsert_fetch_status(app_id, "ok", n, None)
     log(f"steam-metadata: app={app_id} rows={n} source=steamcmd-pics")
     return "ok", n

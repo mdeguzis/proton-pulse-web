@@ -395,3 +395,131 @@ class TestFetchAndStoreOffline:
         assert status_calls[0][0] == 1
         assert status_calls[0][1] == "error"
         assert "steamcmd missing" in status_calls[0][2]
+
+
+class TestManifestHistoryWriter:
+    """Phase 2 (#226) tests: the same rows that go into steam_depot_updates
+    must also be fed into steam_depot_manifest_history so per-OS First
+    seen / Last update stop being duplicative branch-level values.
+
+    Contract we lock down:
+      * upsert_manifest_history_rows drops depot rows without a manifest_id
+        (history is keyed on manifest_id; a row without it cannot carry
+        change history).
+      * The POST target uses the correct on_conflict PK.
+      * fetch_and_store calls the history writer AFTER upsert_depot_rows.
+      * A failing history write does NOT flip the outcome to 'error'; the
+        primary depot_updates write is durable and history is a strict
+        enhancement (per the module comment).
+    """
+
+    def _mkrow(self, os_key, manifest_id, depot_id=100, ts=1710000000):
+        return steam_metadata.DepotRow(
+            app_id=1, depot_id=depot_id, os=os_key,
+            name=None, manifest_id=manifest_id, last_updated_at=ts,
+        )
+
+    def test_skips_rows_without_manifest_id(self, monkeypatch):
+        captured = {}
+        def fake_urlopen(req, timeout=None):
+            captured["url"] = req.full_url
+            captured["body"] = req.data
+            class _R:
+                def read(self): return b""
+            return _R()
+        monkeypatch.setattr(steam_metadata.urllib.request, "urlopen", fake_urlopen)
+        monkeypatch.setenv("SUPABASE_URL", "https://test.supabase.co")
+        monkeypatch.setenv("SUPABASE_SERVICE_ROLE_KEY", "srv")
+
+        rows = [
+            self._mkrow("linux",  None),                # dropped: no manifest_id
+            self._mkrow("windows", "abc"),
+            self._mkrow("mac",     ""),                 # dropped: empty manifest_id
+        ]
+        n = steam_metadata.upsert_manifest_history_rows(rows)
+        assert n == 1
+        import json as _j
+        body = _j.loads(captured["body"])
+        assert len(body) == 1
+        assert body[0]["os"] == "windows"
+        assert body[0]["manifest_id"] == "abc"
+
+    def test_upsert_url_uses_composite_pk_on_conflict(self, monkeypatch):
+        captured = {}
+        def fake_urlopen(req, timeout=None):
+            captured["url"] = req.full_url
+            class _R:
+                def read(self): return b""
+            return _R()
+        monkeypatch.setattr(steam_metadata.urllib.request, "urlopen", fake_urlopen)
+        monkeypatch.setenv("SUPABASE_URL", "https://test.supabase.co")
+        monkeypatch.setenv("SUPABASE_SERVICE_ROLE_KEY", "srv")
+
+        steam_metadata.upsert_manifest_history_rows([self._mkrow("linux", "abc")])
+        # Composite PK matches the migration; anything else and Postgres
+        # rejects the upsert.
+        assert "steam_depot_manifest_history" in captured["url"]
+        assert "on_conflict=app_id,depot_id,os,manifest_id" in captured["url"]
+
+    def test_returns_zero_and_skips_post_when_all_rows_lack_manifest_id(self, monkeypatch):
+        calls = []
+        def fake_urlopen(req, timeout=None):
+            calls.append(req.full_url)
+            class _R:
+                def read(self): return b""
+            return _R()
+        monkeypatch.setattr(steam_metadata.urllib.request, "urlopen", fake_urlopen)
+        monkeypatch.setenv("SUPABASE_URL", "https://test.supabase.co")
+        monkeypatch.setenv("SUPABASE_SERVICE_ROLE_KEY", "srv")
+
+        n = steam_metadata.upsert_manifest_history_rows([self._mkrow("linux", None)])
+        assert n == 0
+        assert calls == []  # no network call when payload is empty
+
+    def test_fetch_and_store_calls_history_writer_after_depot_upsert(self, monkeypatch):
+        # Verifies the sequencing: depot_updates first (the durable write),
+        # history second (the enhancement).
+        rows = [self._mkrow("linux", "abc", depot_id=42)]
+
+        order = []
+        parsed = {"depots": {"42": {"config": {"oslist": "linux"},
+                                    "manifests": {"public": {"gid": "abc"}}},
+                              "branches": {"public": {"timeupdated": "1710000000"}}}}
+        monkeypatch.setattr(steam_metadata, "run_steamcmd_app_info", lambda app_id, **kw: "dummy")
+        monkeypatch.setattr(steam_metadata, "parse_app_info", lambda text: parsed)
+        monkeypatch.setattr(steam_metadata, "extract_depot_rows", lambda app_id, p: rows)
+        monkeypatch.setattr(steam_metadata, "upsert_depot_rows",
+            lambda r: order.append("depot") or len(list(r)))
+        monkeypatch.setattr(steam_metadata, "upsert_manifest_history_rows",
+            lambda r: order.append("history") or len(list(r)))
+        monkeypatch.setattr(steam_metadata, "upsert_fetch_status",
+            lambda app_id, status, count, error=None: order.append(f"status={status}"))
+        monkeypatch.setattr(steam_metadata, "log", lambda msg: None)
+
+        status, n = steam_metadata.fetch_and_store(1)
+        assert status == "ok"
+        # depot write happens before history; final status flip last
+        assert order == ["depot", "history", "status=ok"]
+
+    def test_history_write_failure_does_not_flip_status_to_error(self, monkeypatch):
+        # Enhancement layer must never mask the durable primary write.
+        rows = [self._mkrow("linux", "abc")]
+        parsed = {"depots": {}}
+        monkeypatch.setattr(steam_metadata, "run_steamcmd_app_info", lambda app_id, **kw: "dummy")
+        monkeypatch.setattr(steam_metadata, "parse_app_info", lambda text: parsed)
+        monkeypatch.setattr(steam_metadata, "extract_depot_rows", lambda app_id, p: rows)
+        monkeypatch.setattr(steam_metadata, "upsert_depot_rows", lambda r: len(list(r)))
+        def boom(_):
+            raise RuntimeError("history table down")
+        monkeypatch.setattr(steam_metadata, "upsert_manifest_history_rows", boom)
+        status_calls = []
+        monkeypatch.setattr(steam_metadata, "upsert_fetch_status",
+            lambda app_id, status, count, error=None: status_calls.append((status, error)))
+        logs = []
+        monkeypatch.setattr(steam_metadata, "log", lambda msg: logs.append(msg))
+
+        status, n = steam_metadata.fetch_and_store(1)
+        assert status == "ok"
+        assert status_calls[-1][0] == "ok"
+        # But the failure must be logged so we can diagnose
+        assert any("history upsert failed" in m for m in logs)

@@ -1357,6 +1357,11 @@
 /* Real depot dates from the #215 PICS cache -- render in mono so they
    line up under the "Last update" column heading. */
 .gm-depot-date { font-family: var(--mono); color: var(--text); }
+/* Italic + dimmer variant means the value fell back to the branch-level
+   PICS timestamp because the observation history (#226) has not recorded
+   a manifest_id change for this app yet. Both First seen and Last update
+   read the same value in that state -- tooltip explains. */
+.gm-depot-date--approx { font-style: italic; color: var(--muted); }
 .gm-plat-foot {
   padding-top: 6px !important;
   font-size: 0.68rem;
