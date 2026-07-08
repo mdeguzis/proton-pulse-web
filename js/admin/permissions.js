@@ -31,6 +31,7 @@ export const TAB_PERMISSIONS = {
   analytics:      ['view_analytics'],
   boxart:         ['view_analytics'],
   'api-explorer': ['view_analytics'],
+  'depot-tracking': ['view_analytics'],
 };
 
 // Effective permissions for an admin. super_admin short-circuits to all.

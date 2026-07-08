@@ -1,7 +1,7 @@
 // admins (components) for the admin page.
 
 import { escapeHtml, fmtDateTime } from '../utils.js?v=2668b2f0';
-import { PERMISSION_LABELS, effectivePermissions, resolveRoleLabel, permissionsToAdd } from '../permissions.js?v=12b82ef4';
+import { PERMISSION_LABELS, effectivePermissions, resolveRoleLabel, permissionsToAdd } from '../permissions.js?v=e2aa69ae';
 
 // Role <select> for a row or the add form. `uuid` is 'new' for the add form.
 function roleSelectHtml(label, uuid) {

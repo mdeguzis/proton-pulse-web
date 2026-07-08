@@ -1,6 +1,6 @@
 import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
 import { supabaseHeaders, escapeHtml } from './utils.js?v=2668b2f0';
-import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=12b82ef4';
+import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=e2aa69ae';
 import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=9359a45e';
 import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=5e2c6b60';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=0d6ec118';
@@ -17,6 +17,7 @@ import { renderUserDetail } from './components/userDetail.js?v=5ff164c0';
 import { fetchAnalytics } from './api/analytics.js?v=a1c14331';
 import { renderAnalytics } from './components/analytics.js?v=e538dd08';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
+import { renderDepotTracking } from './components/depotTracking.js?v=8ce33fc6';
 import { renderBoxartAdmin, renderBoxartAdminDetail } from './components/boxart.js?v=bd0825b6';
 import { renderApiExplorer } from './components/api-explorer.js?v=1d2d1835';
 import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=99d5c1f5';
@@ -455,6 +456,10 @@ const TAB_LOADERS = {
   analytics: loadAnalytics,
   boxart: () => renderBoxartAdmin().catch(e => console.error('[boxart]', e)),
   'api-explorer': () => renderApiExplorer(),
+  'depot-tracking': () => {
+    const host = document.getElementById('depot-tracking-content');
+    if (host) renderDepotTracking(host).catch(e => console.error('[depot-tracking]', e));
+  },
 };
 
 // Activate a tab, load its data, and reflect it in the URL as ?tab=<name> so a
