@@ -18,7 +18,7 @@ import { fetchAnalytics } from './api/analytics.js?v=a1c14331';
 import { renderAnalytics } from './components/analytics.js?v=e538dd08';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
 import { renderBoxartAdmin, renderBoxartAdminDetail } from './components/boxart.js?v=bd0825b6';
-import { renderApiExplorer } from './components/api-explorer.js?v=1d2d1835';
+import { renderApiExplorer } from './components/api-explorer.js?v=73d3d3d5';
 import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=99d5c1f5';
 import { patchReportFlags, fetchReportById } from './api/allReports.js?v=ce9b13c3';
 import { approveReport } from './api/pending.js?v=84292a58';
@@ -454,7 +454,7 @@ const TAB_LOADERS = {
   phrases: loadPhrases,
   analytics: loadAnalytics,
   boxart: () => renderBoxartAdmin().catch(e => console.error('[boxart]', e)),
-  'api-explorer': () => renderApiExplorer(),
+  'api-explorer': () => renderApiExplorer({ canManageAdmins: can('manage_admins') }),
 };
 
 // Activate a tab, load its data, and reflect it in the URL as ?tab=<name> so a

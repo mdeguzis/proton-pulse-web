@@ -90,6 +90,7 @@ js/admin/api/analytics.js
 js/admin/api/boxart.js
 js/admin/components/boxart.js
 js/admin/api/steam-explore.js
+js/admin/api/steam-library-lookup.js
 js/admin/components/api-explorer.js
 js/admin/components/flagged.js
 js/admin/components/banned.js
