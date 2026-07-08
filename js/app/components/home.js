@@ -12,6 +12,7 @@ import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../li
 import { renderHomeLibraryChart } from './home-library-chart.js?v=c7e8a2d8';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=234f51e1';
+import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
 const LOAD_COUNTS = [50, 100, 150, 200];
@@ -230,6 +231,11 @@ export async function renderHomePage() {
     // itself is still activated below in _restoreFilters.
     const _urlFilter = new URLSearchParams(window.location.search).get('filter');
     const _isMyLibrary = _urlFilter === 'mine';
+    // The app.html shell owns a static "Game Reports" page-header. Hide it
+    // in library mode so the only visible title is our own "My Library"
+    // header injected below; otherwise the page shows two competing titles.
+    const _appPageHeader = document.querySelector('.main-inner > .page-header');
+    if (_appPageHeader) _appPageHeader.hidden = _isMyLibrary;
     el.innerHTML = `
       ${_isMyLibrary ? `
         <div class="home-page-header" id="home-page-header">
@@ -296,15 +302,17 @@ export async function renderHomePage() {
         </div>
         <div class="home-view-controls">
           <div class="home-result-count" id="home-result-count" title="Total games matching current filters">--</div>
-          <div class="home-size-toggle" id="home-size-toggle" title="Card size">
-            <button class="home-size-btn" data-size="sm" type="button" title="Small cards">S</button>
-            <button class="home-size-btn" data-size="md" type="button" title="Medium cards">M</button>
-            <button class="home-size-btn" data-size="lg" type="button" title="Large cards">L</button>
-            <button class="home-size-btn home-size-btn--desktop-only" data-size="xl" type="button" title="Extra large cards">XL</button>
-          </div>
-          <div class="home-layout-toggle">
-            <button class="home-layout-btn" data-layout="list" title="List of horizontal cards">List</button>
-            <button class="home-layout-btn active" data-layout="grid" title="Grid of Steam-style tiles (default)">Grid</button>
+          <div class="home-view-controls-row">
+            <div class="home-size-toggle" id="home-size-toggle" title="Card size">
+              <button class="home-size-btn" data-size="sm" type="button" title="Small cards">S</button>
+              <button class="home-size-btn" data-size="md" type="button" title="Medium cards">M</button>
+              <button class="home-size-btn" data-size="lg" type="button" title="Large cards">L</button>
+              <button class="home-size-btn home-size-btn--desktop-only" data-size="xl" type="button" title="Extra large cards">XL</button>
+            </div>
+            <div class="home-layout-toggle">
+              <button class="home-layout-btn" data-layout="list" title="List of horizontal cards">List</button>
+              <button class="home-layout-btn active" data-layout="grid" title="Grid of Steam-style tiles (default)">Grid</button>
+            </div>
           </div>
         </div>
       </div>
@@ -790,30 +798,16 @@ export async function renderHomePage() {
       // index so every owned game shows up -- and hide the Popular section
       // because it would just repeat the same rows.
       if (libraryAppIds && libraryAppIds.size > 0) {
-        const existing = new Set(allRecentReports.map((r) => String(r.appId)));
-        const synthesized = [];
-        for (const row of (searchIndex || [])) {
-          if (!Array.isArray(row) || row.length < 6) continue;
-          const id = String(row[0]);
-          if (!libraryAppIds.has(Number(id))) continue;
-          if (existing.has(id)) continue;
-          synthesized.push({
-            appId:            id,
-            title:            row[1] || `App ${id}`,
-            tier:             row[2] || 'pending',
-            protondbCount:    Number(row[3] || 0),
-            pulseCount:       Number(row[4] || 0),
-            appType:          row[5] || 'steam',
-            lastReportDate:   '',
-          });
-        }
-        // Keep the recent-reports rows first (they carry timestamps + are
-        // the most active), then the synthesized rows so nothing gets lost.
-        allRecentReports = [
-          ...allRecentReports.filter((r) => libraryAppIds.has(Number(r.appId))),
-          ...synthesized,
-        ];
-        console.debug('[my-library] synthesized library dataset', { source: 'search-index', total: allRecentReports.length });
+        const synth = synthesizeMyLibrary(libraryAppIds, allRecentReports, searchIndex);
+        allRecentReports = synth.rows;
+        console.debug('[my-library] synthesized library dataset', {
+          source: 'search-index+stubs',
+          fromRecentReports: synth.fromRecentReports,
+          fromSearchIndex: synth.fromSearchIndex,
+          bareStubs: synth.bareStubs,
+          libraryTotal: libraryAppIds.size,
+          rowTotal: allRecentReports.length,
+        });
         const popularSection = document.getElementById('cards-popular')?.parentElement;
         const popularLabel = document.getElementById('popular-section-label');
         // Hide the entire popular section header + grid so we present one

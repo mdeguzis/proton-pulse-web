@@ -119,8 +119,11 @@
 .home-layout-btn:hover { background: var(--s2); color: var(--text); }
 .home-layout-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
 
-/* View controls row: card-size (S/M/L) + grid/list toggles together. */
-.home-view-controls { display: flex; align-items: center; gap: 10px; }
+/* View controls: count sits above the card-size + grid/list toggle row so
+   the count reads as a header for the section rather than crowding the
+   controls sideways. */
+.home-view-controls { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.home-view-controls-row { display: flex; align-items: center; gap: 10px; }
 .home-size-toggle { display: flex; gap: 4px; }
 .home-size-btn {
   width: 28px;
