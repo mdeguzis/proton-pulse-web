@@ -39,3 +39,9 @@ verify_jwt = false
 
 [functions.steam-explore]
 verify_jwt = false
+
+[functions.steam-library-lookup]
+# JWT is verified inside the function (same pattern as image-refetch): we
+# need to hit current_user_has_permission() after auth.getUser(), which
+# the built-in middleware does not do.
+verify_jwt = false
