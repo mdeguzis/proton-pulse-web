@@ -2,7 +2,7 @@
 
 import { SupaAuth } from './config.js?v=f6f2c00a';
 import { FAULT_KEYS_WEB, deriveRatingFromState, inferProtonType } from './scoring.js?v=1b8ae722';
-import { RUN_TYPES, normalizeRunType, validateRuntimeVersion } from './run-type.js?v=01ec5b4d';
+import { RUN_TYPES, normalizeRunType, validateRuntimeVersion } from './run-type.js?v=b7e95db6';
 import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
 
 // Form submission + populate-submit-form -- factored out of app.js.
@@ -573,7 +573,7 @@ export async function populateSubmitForm(el) {
       <div class="sf-section-label">Game</div>
       <div class="sf-row"><label>Game title</label><input name="gameTitle" readonly style="cursor:default;color:var(--muted);border-color:var(--border2);background:var(--s1);" placeholder="Loading..."></div>
       <div class="sf-row sf-row--run-type">
-        <label>Run type *</label>
+        <label>Runtime Type *</label>
         <select name="runType" id="sf-run-type-select">
           <option value="native">Native Linux -- Linux build, no Proton</option>
           <option value="proton" selected>Proton -- Valve's official (stable/hotfix)</option>
@@ -585,6 +585,13 @@ export async function populateSubmitForm(el) {
         </select>
       </div>
       <div class="sf-row-hint sf-run-type-hint" id="sf-run-type-hint" hidden></div>
+      <div class="sf-row" id="sf-runtime-version-row"><label id="sf-runtime-version-label">Runtime Version *</label>
+        <div class="sf-autocomplete" style="position:relative;flex:1;">
+          <input name="protonVersion" placeholder="e.g. Proton 9.0-4 or GE-Proton9-27" autocomplete="off" style="width:100%">
+          <ul class="sf-suggestions" style="display:none;position:absolute;top:100%;left:0;right:0;z-index:100;background:var(--s2);border:1px solid var(--border);border-top:none;max-height:200px;overflow-y:auto;list-style:none;margin:0;padding:0;"></ul>
+        </div>
+      </div>
+      <div class="sf-row-hint sf-runtime-version-warn" id="sf-runtime-version-warn" hidden></div>
       <div class="sf-row sf-row--also-linux" id="sf-also-linux-row" hidden>
         <label>Also tested Linux?</label>
         <div class="sf-also-linux-body">
@@ -609,13 +616,6 @@ export async function populateSubmitForm(el) {
         </select>
         <span class="sf-row-hint">Pick a saved system to prefill hardware fields</span>
       </div>
-      <div class="sf-row" id="sf-runtime-version-row"><label id="sf-runtime-version-label">Runtime Version *</label>
-        <div class="sf-autocomplete" style="position:relative;flex:1;">
-          <input name="protonVersion" placeholder="e.g. Proton 9.0-4 or GE-Proton9-27" autocomplete="off" style="width:100%">
-          <ul class="sf-suggestions" style="display:none;position:absolute;top:100%;left:0;right:0;z-index:100;background:var(--s2);border:1px solid var(--border);border-top:none;max-height:200px;overflow-y:auto;list-style:none;margin:0;padding:0;"></ul>
-        </div>
-      </div>
-      <div class="sf-row-hint sf-runtime-version-warn" id="sf-runtime-version-warn" hidden></div>
       <div class="sf-row"><label>GPU *</label><input name="gpu" placeholder="e.g. NVIDIA GeForce RTX 4070"></div>
       <div class="sf-row"><label>GPU Vendor *</label><select name="gpuVendor"><option value="" disabled selected>-- choose one --</option>${opts(gpuVendors,true)}</select></div>
       <div class="sf-row"><label>GPU Driver</label><input name="gpuDriver" placeholder="e.g. Mesa 24.1.0 or 555.42.02"></div>
@@ -1096,9 +1096,11 @@ function wireRunTypeToggle(container) {
         if (isNative) input.value = '';
       }
       if (versionLabel) {
+        // "Runtime Version" stays the label; the runtime type is picked in
+        // the field above so we don't need to repeat "(Proton)" here.
         versionLabel.textContent = isNative
           ? 'Runtime Version'
-          : `Runtime Version * (${meta?.label || 'Proton'})`;
+          : 'Runtime Version *';
       }
       protonRow.classList.toggle('sf-row--disabled', isNative);
     }

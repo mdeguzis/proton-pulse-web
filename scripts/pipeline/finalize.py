@@ -52,8 +52,10 @@ from .deck_status import build_deck_status
 from .most_played import build_most_played
 from .release_years import enrich_search_index_with_release_years
 from .pulse import merge_pulse_into_data_dir
+from .write_depot_files import write_depot_files
 from .state import read_pipeline_state
 from .stats import write_stats_json
+from .validate_app_ids import validate_steam_app_ids
 
 
 def log_summary(
@@ -1780,12 +1782,17 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # appdetails. Flag them in search-index.json column 7 so the frontend can
     # render a DELISTED chip without re-fetching anything client-side.
     enrich_search_index_with_delisted(output_path)
+    validate_steam_app_ids(output_dir)
     # Issue #134: emit the extended Steam index AFTER the primary index has
     # been finalized (release-year + delisted enrichment runs first), so the
     # primary id set we read back is the final one.
     generate_extended_steam_index(output_path, steam_catalog=steam_catalog)
     _backfill_most_played_header_images(output_path, overrides)
     write_proton_versions_json(output_path)
+    # #237: emit per-Steam-app depots.json under {data}/{appId}/. Reads the
+    # steam_depot_* tables in Supabase and includes both current per-OS
+    # rollups and the full parsed PICS depots dict.
+    write_depot_files(data_output_path)
     # Hash every emitted data file and write data-versions.json so the
     # frontend can cache-bust each data fetch individually. Must run LAST so
     # the hashes reflect every other generator's final output. See #119.

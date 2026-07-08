@@ -1339,6 +1339,34 @@ pre.flag-raw-json {
   background: rgba(46, 160, 67, 0.05);
 }
 
+/* Game Manager (#234): three stacked cards -- hides, remaps, pipeline
+   suspects. Each has a form + table. Kept minimal because the panel's
+   MVP is intentionally lean. */
+.gm-card { margin-bottom: 20px; }
+.gm-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 8px 0 12px;
+}
+.gm-form .gm-form-id     { flex: 0 1 200px; min-width: 0; }
+.gm-form .gm-form-reason { flex: 1 1 260px; min-width: 0; }
+.gm-table { width: 100%; }
+.gm-table code { font-family: var(--mono); font-size: 0.82em; }
+.gm-suspect-status {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: var(--mono);
+}
+.gm-suspect-status--replaced { background: rgba(217, 179, 92, 0.15);  color: #d9b35c; border: 1px solid rgba(217, 179, 92, 0.3); }
+.gm-suspect-status--dead     { background: rgba(200, 80, 80, 0.15);   color: #c85050; border: 1px solid rgba(200, 80, 80, 0.3); }
+.gm-suspect-status--unknown  { background: rgba(140, 140, 140, 0.15); color: #a0a0a0; border: 1px solid rgba(140, 140, 140, 0.3); }
+
 /* Depot Tracking panel (#230). Aggregate cards + per-app expandable table. */
 .depot-tracking { display: flex; flex-direction: column; gap: 14px; }
 .depot-controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }

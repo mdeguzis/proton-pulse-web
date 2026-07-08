@@ -73,15 +73,43 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     } catch { return []; }
   }
 
+  // ProtonDB live summary via the same edge fn the game page uses. Gives us
+  // an aggregate tier + total count so the stats page can still say something
+  // useful when our CDN mirror has no reports for a game (#219 follow-up).
+  const PROTONDB_LIVE_URL =
+    'https://ilsgdshkaocrmibwdezk.supabase.co/functions/v1/protondb-summary';
+  async function loadProtonDbLive(appId) {
+    try {
+      const r = await fetch(`${PROTONDB_LIVE_URL}?appId=${encodeURIComponent(appId)}`, { headers: { Accept: 'application/json' } });
+      if (!r.ok) {
+        console.debug(`[game-stats] ProtonDB live check not ok | appId=${appId} status=${r.status} source=protondb-summary-proxy`);
+        return null;
+      }
+      const data = await r.json();
+      if (!data || data.found === false || !data.tier) {
+        console.debug(`[game-stats] ProtonDB live check empty | appId=${appId} source=protondb-summary-proxy`);
+        return null;
+      }
+      return { tier: data.tier, total: data.total || 0, score: data.score || 0, confidence: data.confidence || '' };
+    } catch (e) {
+      console.debug(`[game-stats] ProtonDB live check failed | appId=${appId} error=${e.message} source=protondb-summary-proxy`);
+      return null;
+    }
+  }
+
   // --- header rendering ---
 
-  function renderHeader(appId, title, { pulseCount = 0, protonDbCount = 0 } = {}) {
+  function renderHeader(appId, title, { pulseCount = 0, protonDbCount = 0, liveTotal = 0 } = {}) {
     const headerImg = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appId}/header.jpg`;
     const gameUrl = `app.html#/app/${esc(appId)}`;
     // Per-source split moved here from the game page hero so the numbers
     // still live SOMEWHERE without cluttering the hero on small screens.
-    const sourceBit = (pulseCount || protonDbCount)
-      ? ` &middot; <strong>${pulseCount}</strong> Pulse / <strong>${protonDbCount}</strong> ProtonDB`
+    // When ProtonDB's live total exceeds our mirrored count, tag the effective
+    // number so users see the true breadth (#219 follow-up).
+    const effectiveProtonDb = Math.max(protonDbCount, liveTotal);
+    const _liveTag = liveTotal > protonDbCount ? ' (live)' : '';
+    const sourceBit = (pulseCount || effectiveProtonDb)
+      ? ` &middot; <strong>${pulseCount}</strong> Pulse / <strong>${effectiveProtonDb.toLocaleString()}</strong> ProtonDB${_liveTag}`
       : '';
     // Whole left side (image + name + appid) is a single anchor so clicking
     // the boxart or title takes you back to the game page. The dedicated
@@ -494,12 +522,14 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
     metaEl.textContent = `// app id ${appId} · live computation from CDN + Pulse data`;
 
-    // Pull search index in parallel with CDN data so we can show the proper title
-    const [cdnReports, searchIndex, pulseReports, configs] = await Promise.all([
+    // Pull search index in parallel with CDN + Pulse + live summary so the
+    // page can still say something useful when the mirror is empty (#219).
+    const [cdnReports, searchIndex, pulseReports, configs, liveSummary] = await Promise.all([
       loadGame(appId),
       loadSearchIndex(),
       loadPulseReports(appId),
       loadConfigs(appId),
+      loadProtonDbLive(appId),
     ]);
 
     // Find the game's title - search index entries are [appId, title, ...] tuples
@@ -511,12 +541,28 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
     const allReports = [...cdnReports, ...pulseReports];
     if (allReports.length === 0 && configs.length === 0) {
-      root.innerHTML = renderHeader(appId, title, { pulseCount: pulseReports.length, protonDbCount: cdnReports.length }) + `
-        <div class="error-state">
-          <p>No reports or configs found for this game.</p>
-          <p style="font-size:0.78rem;margin-top:8px">
+      // Nothing mirrored -- but ProtonDB may still have an aggregate. Fall
+      // through to a stub view that surfaces the live tier + total instead
+      // of just saying "no data" (#219).
+      const liveBlock = liveSummary
+        ? `<div class="gs-live-summary">
+            <div class="gs-live-summary-head">
+              <span class="gs-live-summary-tier gs-live-summary-tier-${esc(String(liveSummary.tier).toLowerCase())}">${esc(String(liveSummary.tier).toUpperCase())}</span>
+              <span class="gs-live-summary-total"><strong>${liveSummary.total.toLocaleString()}</strong> ProtonDB report${liveSummary.total !== 1 ? 's' : ''}</span>
+              ${liveSummary.confidence ? `<span class="gs-live-summary-conf">${esc(liveSummary.confidence)} confidence</span>` : ''}
+            </div>
+            <p class="gs-live-summary-note">
+              ProtonDB has aggregate data for this game but we haven't mirrored the individual reports yet, so the full per-report stats below are unavailable.
+              <a href="https://www.protondb.com/app/${esc(appId)}" target="_blank" rel="noopener">Read them on ProtonDB &gt;</a>
+            </p>
+          </div>`
+        : `<p style="font-size:0.78rem;margin-top:8px">
             Try <a href="app.html#/app/${esc(appId)}">the game page</a> and submit the first report.
-          </p>
+          </p>`;
+      root.innerHTML = renderHeader(appId, title, { pulseCount: pulseReports.length, protonDbCount: cdnReports.length, liveTotal: liveSummary?.total || 0 }) + `
+        <div class="error-state">
+          <p>${liveSummary ? 'No individual reports mirrored yet for this game.' : 'No reports or configs found for this game.'}</p>
+          ${liveBlock}
         </div>
       `;
       return;
@@ -534,6 +580,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     const { html, wire } = renderAll(appId, title, stats, {
       pulseCount: pulseReports.length,
       protonDbCount: cdnReports.length,
+      liveTotal: liveSummary?.total || 0,
     });
     root.innerHTML = previewBanner + html;
     // wire() must run AFTER innerHTML so the hover helper sees real DOM rects.

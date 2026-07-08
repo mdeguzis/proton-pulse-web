@@ -1,17 +1,26 @@
-// steam-depot-info: per-OS depot last-updated dates for the Metadata modal.
+// steam-depot-info: per-OS depot last-updated + tracked-since dates for
+// the Metadata modal.
 //
-// Reads from public.steam_depot_updates (populated nightly by the Steam
-// PICS pipeline via steamcmd; see .github/workflows/steam-metadata-fetch.yml).
-// Aggregates rows into a compact { windows, mac, linux } shape:
+// Sources (both populated by the Steam PICS pipeline via steamcmd; see
+// .github/workflows/steam-metadata-fetch.yml):
+//   - public.steam_depot_updates          -> current per-OS depot rollup
+//   - public.steam_depot_manifest_history -> earliest observation per OS
+//                                            (#226 -- honest tracked_since)
 //
+// Response:
 //   { appId: "367520", found: true, os: {
-//       linux:   { first_seen: "...", last_updated: "...", depots: 1 },
+//       linux:   { tracked_since: "...", last_updated: "...", depots: 1 },
 //       ...
 //     }}
 //
 // When no rows exist for the app yet the response is { found: false }
 // so the frontend can fall through to the SteamDB deep-link fallback
 // without treating a cache miss as an error.
+//
+// tracked_since is only reported when we have real manifest history for
+// that OS -- we deliberately do NOT fall back to last_updated_at because
+// that was previously mistaken for a first-seen date. Better to show a
+// dash than to lie. #237.
 //
 // Public (verify_jwt = false). Read-only. #215.
 
@@ -23,11 +32,17 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "GET, OPTIONS",
 };
 
-type Row = {
+type UpdateRow = {
   app_id: number;
   os: string;
   depot_id: number;
   last_updated_at: string;
+};
+type HistoryRow = {
+  app_id: number;
+  os: string;
+  depot_id: number;
+  first_observed_at: string;
 };
 
 Deno.serve(async (req: Request) => {
@@ -51,116 +66,73 @@ Deno.serve(async (req: Request) => {
     );
   }
   const supabase = createClient(supabaseUrl, supabaseKey);
-
-  // Two reads in parallel:
-  //   depot_updates   -> current per-depot state (last_updated_at is the
-  //                      branch-level timestamp; same across all OS depots
-  //                      for a given app on the same branch).
-  //   manifest_history -> Phase 2 observation table (#226). Every row is
-  //                      a (app, depot, os, manifest_id) tuple we've ever
-  //                      seen with first_observed_at + latest_observed_at.
-  //                      Per-OS First seen  = MIN(first_observed_at).
-  //                      Per-OS Last update = MAX(first_observed_at)
-  //                      (a fresh manifest_id observation means a build
-  //                      shipped for that OS).
-  const [depotRes, historyRes] = await Promise.all([
+  const [updatesRes, historyRes] = await Promise.all([
     supabase
       .from("steam_depot_updates")
       .select("app_id,os,depot_id,last_updated_at")
       .eq("app_id", Number(appId)),
     supabase
       .from("steam_depot_manifest_history")
-      .select("os,depot_id,manifest_id,first_observed_at,latest_observed_at")
+      .select("app_id,os,depot_id,first_observed_at")
       .eq("app_id", Number(appId)),
   ]);
 
-  if (depotRes.error) {
-    console.error(`[steam-depot-info] appId=${appId} depot query error=${depotRes.error.message}`);
+  if (updatesRes.error) {
+    console.error(`[steam-depot-info] appId=${appId} updates error=${updatesRes.error.message}`);
     return Response.json(
-      { error: depotRes.error.message, appId },
+      { error: updatesRes.error.message, appId },
       { status: 502, headers: corsHeaders },
     );
   }
-  const rows = (depotRes.data as Row[]) || [];
-  if (rows.length === 0) {
+  if (historyRes.error) {
+    // History is optional -- log but keep going with just the update rollup.
+    console.warn(`[steam-depot-info] appId=${appId} history query soft-failed error=${historyRes.error.message}`);
+  }
+
+  const updates = (updatesRes.data as UpdateRow[]) || [];
+  const history = (historyRes.data as HistoryRow[]) || [];
+
+  if (updates.length === 0 && history.length === 0) {
     console.log(`[steam-depot-info] appId=${appId} found=false source=cache-miss`);
     return Response.json(
       { appId, found: false, os: {} },
       { status: 200, headers: { ...corsHeaders, "Cache-Control": "public, max-age=600" } },
     );
   }
-  // History failure is non-fatal -- we can still return branch-level
-  // dates for both first_seen and last_updated as a degraded fallback,
-  // same shape as pre-#226. Log it so we notice.
-  const history = !historyRes.error && Array.isArray(historyRes.data)
-    ? (historyRes.data as {
-        os: string; depot_id: number; manifest_id: string;
-        first_observed_at: string; latest_observed_at: string;
-      }[])
-    : [];
-  if (historyRes.error) {
-    console.error(`[steam-depot-info] appId=${appId} history query error=${historyRes.error.message}`);
-  }
 
-  // Depot counts + branch fallback come from steam_depot_updates.
-  type Bucket = { branchTs: number; depots: Set<number> };
+  // Per-OS aggregate: max last_updated_at from updates, min first_observed_at
+  // from history, union of depot_ids for the count.
+  type Bucket = { last: number; trackedSince: number | null; depots: Set<number> };
   const byOs = new Map<string, Bucket>();
-  for (const row of rows) {
+  const bucket = (os: string): Bucket => {
+    let b = byOs.get(os);
+    if (!b) { b = { last: -Infinity, trackedSince: null, depots: new Set() }; byOs.set(os, b); }
+    return b;
+  };
+  for (const row of updates) {
     const ts = Date.parse(row.last_updated_at);
     if (!Number.isFinite(ts)) continue;
-    let b = byOs.get(row.os);
-    if (!b) { b = { branchTs: ts, depots: new Set() }; byOs.set(row.os, b); }
-    if (ts > b.branchTs) b.branchTs = ts;
+    const b = bucket(row.os);
+    if (ts > b.last) b.last = ts;
     b.depots.add(row.depot_id);
   }
-  // Per-OS min / max of first_observed_at from history. Manifest_id
-  // changes are proxies for build changes; MIN across all rows is the
-  // per-OS 'we first tracked this OS depot' floor, MAX is the last
-  // time a new manifest_id was observed = the last time the OS build
-  // shipped.
-  type HistBucket = { minFirst: number; maxFirst: number; manifests: number };
-  const histByOs = new Map<string, HistBucket>();
-  for (const h of history) {
-    const ts = Date.parse(h.first_observed_at);
+  for (const row of history) {
+    const ts = Date.parse(row.first_observed_at);
     if (!Number.isFinite(ts)) continue;
-    let hb = histByOs.get(h.os);
-    if (!hb) { hb = { minFirst: ts, maxFirst: ts, manifests: 0 }; histByOs.set(h.os, hb); }
-    if (ts < hb.minFirst) hb.minFirst = ts;
-    if (ts > hb.maxFirst) hb.maxFirst = ts;
-    hb.manifests++;
+    const b = bucket(row.os);
+    if (b.trackedSince === null || ts < b.trackedSince) b.trackedSince = ts;
+    b.depots.add(row.depot_id);
   }
-  const os: Record<string, {
-    first_seen:   string;
-    last_updated: string;
-    depots:       number;
-    manifests:    number;   // # of distinct manifest_ids we have observed for this OS
-    source:       "history" | "branch-fallback";
-  }> = {};
+
+  const os: Record<string, { tracked_since: string | null; last_updated: string | null; depots: number }> = {};
   for (const [key, b] of byOs.entries()) {
-    const hb = histByOs.get(key);
-    if (hb) {
-      os[key] = {
-        first_seen:   new Date(hb.minFirst).toISOString(),
-        last_updated: new Date(hb.maxFirst).toISOString(),
-        depots:       b.depots.size,
-        manifests:    hb.manifests,
-        source:       "history",
-      };
-    } else {
-      // No history yet (first observation from Phase 1 runs, or history
-      // upsert failed above). Fall back to the branch timestamp -- same
-      // value for both cells, same as pre-#226 UX.
-      os[key] = {
-        first_seen:   new Date(b.branchTs).toISOString(),
-        last_updated: new Date(b.branchTs).toISOString(),
-        depots:       b.depots.size,
-        manifests:    0,
-        source:       "branch-fallback",
-      };
-    }
+    os[key] = {
+      tracked_since: b.trackedSince != null ? new Date(b.trackedSince).toISOString() : null,
+      last_updated:  Number.isFinite(b.last) ? new Date(b.last).toISOString() : null,
+      depots:        b.depots.size,
+    };
   }
-  const anyHist = [...Object.values(os)].some(v => v.source === "history");
-  console.log(`[steam-depot-info] appId=${appId} found=true osCount=${Object.keys(os).length} historyBacked=${anyHist} source=cache`);
+  console.log(`[steam-depot-info] appId=${appId} found=true osCount=${Object.keys(os).length} source=cache`);
   return Response.json(
     { appId, found: true, os },
     { status: 200, headers: { ...corsHeaders, "Cache-Control": "public, max-age=600" } },

@@ -130,36 +130,53 @@ describe('validateRuntimeVersion', () => {
     expect(validateRuntimeVersion('native', 'anything').ok).toBeNull();
   });
 
-  test('proton accepts stable + hotfix syntax', () => {
+  test('proton accepts stable, hotfix, experimental, and next branches', () => {
     expect(validateRuntimeVersion('proton', 'Proton 9.0-4').ok).toBe(true);
     expect(validateRuntimeVersion('proton', 'Proton 8.0-5c').ok).toBe(true);
     expect(validateRuntimeVersion('proton', 'Proton Hotfix').ok).toBe(true);
+    // Valve ships Experimental and Next under the same "Proton" umbrella
+    // in Steam. The plain "Proton" runType should accept them without
+    // firing a fake "does not look like Proton" warning.
+    expect(validateRuntimeVersion('proton', 'Proton Experimental').ok).toBe(true);
+    expect(validateRuntimeVersion('proton', 'proton experimental').ok).toBe(true);
+    expect(validateRuntimeVersion('proton', 'Proton Next').ok).toBe(true);
     // Rejects unrelated strings
     expect(validateRuntimeVersion('proton', 'GE-Proton9-27').ok).toBe(false);
     expect(validateRuntimeVersion('proton', 'wine 9.0').ok).toBe(false);
   });
 
-  test('proton-ge accepts GE variants only', () => {
+  test('proton-ge accepts GE variants incl. rc/beta suffixes', () => {
     expect(validateRuntimeVersion('proton-ge', 'GE-Proton9-27').ok).toBe(true);
+    expect(validateRuntimeVersion('proton-ge', 'GE-Proton10-15').ok).toBe(true);
     expect(validateRuntimeVersion('proton-ge', 'ge-proton 10-4').ok).toBe(true);
+    // Real GE tags ship rc/beta/letter suffixes; those must not warn.
+    expect(validateRuntimeVersion('proton-ge', 'GE-Proton9-27-rc1').ok).toBe(true);
+    expect(validateRuntimeVersion('proton-ge', 'GE-Proton9-27b').ok).toBe(true);
+    // Still guards obvious mismatches.
     expect(validateRuntimeVersion('proton-ge', 'Proton 9.0-4').ok).toBe(false);
   });
 
-  test('proton-experimental matches experimental / bleeding-edge phrasing', () => {
+  test('proton-experimental matches Proton Experimental, bleeding-edge, or bare Experimental', () => {
     expect(validateRuntimeVersion('proton-experimental', 'Proton Experimental').ok).toBe(true);
     expect(validateRuntimeVersion('proton-experimental', 'bleeding-edge').ok).toBe(true);
+    // Bare "Experimental" is unambiguous once the runtime type is already picked.
+    expect(validateRuntimeVersion('proton-experimental', 'Experimental').ok).toBe(true);
     expect(validateRuntimeVersion('proton-experimental', 'Proton 9.0-4').ok).toBe(false);
   });
 
-  test('proton-cachyos matches CachyOS mentions', () => {
+  test('proton-cachyos matches CachyOS mentions incl. bare CachyOS', () => {
     expect(validateRuntimeVersion('proton-cachyos', 'CachyOS Proton 9.0-4').ok).toBe(true);
     expect(validateRuntimeVersion('proton-cachyos', 'cachy-proton').ok).toBe(true);
+    // Bare "CachyOS" is unambiguous once the runtime type is already picked.
+    expect(validateRuntimeVersion('proton-cachyos', 'CachyOS').ok).toBe(true);
     expect(validateRuntimeVersion('proton-cachyos', 'Proton 9.0-4').ok).toBe(false);
   });
 
-  test('proton-tkg matches TKG mentions', () => {
+  test('proton-tkg matches TKG mentions incl. bare TKG', () => {
     expect(validateRuntimeVersion('proton-tkg', 'Proton-TKG 9.0-4').ok).toBe(true);
     expect(validateRuntimeVersion('proton-tkg', 'tkg proton').ok).toBe(true);
+    // Bare "TKG" is unambiguous once the runtime type is already picked.
+    expect(validateRuntimeVersion('proton-tkg', 'TKG').ok).toBe(true);
     expect(validateRuntimeVersion('proton-tkg', 'Proton 9.0-4').ok).toBe(false);
   });
 

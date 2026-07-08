@@ -3,9 +3,9 @@
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=1b8ae722';
 import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=8dc92cf7';
-import { getWebClientId } from '../../shared/submit.js?v=339c68ea';
+import { getWebClientId } from '../../shared/submit.js?v=bfe659f0';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=09d5c67e';
-import { _protonDbLiveCache, fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=083594fa';
+import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=55a861cb';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=01961c8d';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
@@ -262,17 +262,16 @@ async function _openMetadataModal(appId) {
   const list = (items) => (items || []).length
     ? `<div class="gm-chips">${items.map(i => `<span class="gm-chip">${esc(i)}</span>`).join('')}</div>`
     : '';
-  // Per-OS depot row: Steam does not publish per-depot last-updated dates
-  // via appdetails (that lives in PICS / SteamDB). Show the app-wide
-  // release date next to each supported OS + a SteamDB depot link so
-  // viewers can drill in. Tracked in #214.
+  // Per-OS depot row. Steam does not publish per-depot last-updated dates
+  // via appdetails (that lives in PICS / SteamDB), so we cache them via
+  // steamcmd nightly (#215) into steam_depot_updates and observation
+  // history into steam_depot_manifest_history. The edge fn returns:
+  //   { found, os: { windows|mac|linux: { tracked_since, last_updated, depots } } }
+  // Values are only populated when we have real observations -- we
+  // deliberately do NOT fall back to app-wide release date or to the
+  // branch timestamp for tracked_since. Better to show a dash than lie.
   const platformsRows = (p, releaseDate) => {
     if (!p) return '';
-    // depotInfo shape: { found: bool, os: { windows|mac|linux: {
-    //   first_seen, last_updated, depots } } }
-    // Populated by the #215 pipeline (steamcmd nightly). When we have a
-    // real last-updated date for an OS we render it; otherwise we fall
-    // through to the SteamDB deep link.
     const dOs = depotInfo?.found && depotInfo.os ? depotInfo.os : {};
     const fmtDate = (iso) => {
       if (!iso) return null;
@@ -280,59 +279,64 @@ async function _openMetadataModal(appId) {
       if (Number.isNaN(d.getTime())) return null;
       return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
     };
-    // Two possible sources per OS (see supabase/functions/steam-depot-info):
-    //   source='history'         -> Phase 2 observation table (#226).
-    //     first_seen  = MIN(first_observed_at) over manifest_ids we have
-    //                  ever seen for this (app, os). Real per-OS tracking
-    //                  floor -- 'we started watching this on X'.
-    //     last_updated = MAX(first_observed_at) -- last time a new
-    //                  manifest_id was observed = last shipped build.
-    //   source='branch-fallback' -> only Phase 1 data; first_seen ==
-    //     last_updated because both read from the shared branch-level
-    //     PICS timestamp.
-    // Tooltip on the date cell tells the truth about which source the
-    // number came from so users are not misled by a fallback value.
+    // #237: brown package icon that deep-links to the per-game depots.json
+    // we publish alongside latest.json. GitHub blob URL so users see the
+    // raw JSON with syntax highlighting + a "Raw" download button.
+    const DEPOT_FILE_URL = `https://github.com/mdeguzis/proton-pulse-web/blob/gh-pages/data/${esc(String(meta.appId))}/depots.json`;
     const row = (key, label) => {
       const on = !!p[key];
       const cached = dOs[key];
-      const firstFmt = fmtDate(cached?.first_seen);
-      const lastFmt  = fmtDate(cached?.last_updated);
-      const isHistory = cached?.source === 'history';
-      let depotsCell, firstCell, lastCell;
+      const lastFmt = fmtDate(cached?.last_updated);
+      const trackedFmt = fmtDate(cached?.tracked_since);
+      let trackedCell, lastCell, depotsCell;
       if (!on) {
-        depotsCell = '<span class="gm-mute">not offered</span>';
-        firstCell  = '-';
-        lastCell   = '-';
-      } else if (firstFmt && lastFmt) {
-        const depotCountLbl = `${cached.depots} tracked${isHistory && cached.manifests ? ` &middot; ${cached.manifests} manifest${cached.manifests === 1 ? '' : 's'} in history` : ''}`;
-        depotsCell = `<span class="gm-mute">${depotCountLbl}</span>`;
-        firstCell = isHistory
-          ? `<span class="gm-depot-date" title="Earliest date we observed a manifest for this OS depot. Not necessarily when the depot was created -- our observation window starts July 2026 (#226).">${esc(firstFmt)}</span>`
-          : `<span class="gm-depot-date gm-depot-date--approx" title="Branch-level PICS timestamp -- observation history not yet populated for this app. Once nightly runs record a manifest_id change we can show a real per-OS first_seen.">${esc(firstFmt)}</span>`;
-        lastCell = isHistory
-          ? `<span class="gm-depot-date" title="Most recent manifest_id observation -- proxy for 'this OS build shipped'. From steam_depot_manifest_history (#226).">${esc(lastFmt)}</span>`
-          : `<span class="gm-depot-date gm-depot-date--approx" title="Branch-level PICS timestamp -- same value across all OS depots on this branch until observation history is populated.">${esc(lastFmt)}</span>`;
+        trackedCell = '-';
+        lastCell    = '-';
+        depotsCell  = '<span class="gm-mute" title="No depot on this OS">-</span>';
+      } else if (cached) {
+        // Tracked-since is the honest floor: earliest first_observed_at we
+        // recorded for this (app, os). It is NOT "when the OS build was
+        // added" for existing games -- see the footer note.
+        trackedCell = trackedFmt
+          ? `<span class="gm-depot-date" title="Earliest observation date we recorded for this OS. Retroactive 'added on' isn't derivable from PICS (see footer).">${esc(trackedFmt)}</span>`
+          : '<span class="gm-mute" title="No observation history yet. Once the nightly pipeline observes this depot a second time, we lock in a real tracked-since date.">-</span>';
+        lastCell    = lastFmt
+          ? `<span class="gm-depot-date" title="Branch-level timeupdated from PICS -- every OS depot on a shared branch inherits this value.">${esc(lastFmt)}</span>`
+          : '-';
+        // #237 (v2): depots column now icon-only. Count moves into the icon's
+        // tooltip so we save a column on mobile. The icon links to the raw
+        // depots.json we publish for this app.
+        depotsCell = `<a class="gm-depot-file" href="${DEPOT_FILE_URL}#os=${esc(key)}" target="_blank" rel="noopener" title="${cached.depots} depot${cached.depots !== 1 ? 's' : ''} tracked -- click to open the raw depots.json this modal was built from">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M21 8V19a2 2 0 01-2 2H5a2 2 0 01-2-2V8"/>
+            <path d="M1 5h22v3H1z"/>
+            <path d="M10 12h4"/>
+          </svg>
+        </a>`;
       } else {
-        depotsCell = '<span class="gm-mute" title="Not cached yet -- pipeline #215 populates this nightly">pending</span>';
-        firstCell  = '-';
-        lastCell   = `<a class="gm-depot-link" href="https://steamdb.info/app/${esc(meta.appId)}/depots/" target="_blank" rel="noopener">SteamDB -&gt;</a>`;
+        trackedCell = '-';
+        lastCell    = `<a class="gm-depot-link" href="https://steamdb.info/app/${esc(meta.appId)}/depots/" target="_blank" rel="noopener">SteamDB -&gt;</a>`;
+        depotsCell  = '<span class="gm-mute" title="Not cached yet -- pipeline #215 populates this nightly">-</span>';
       }
       return `
         <tr>
           <td><span class="gm-plat${on ? ' gm-plat--on' : ''}">${esc(label)}</span></td>
-          <td>${depotsCell}</td>
-          <td>${firstCell}</td>
+          <td>${trackedCell}</td>
           <td>${lastCell}</td>
+          <td class="gm-plat-depots">${depotsCell}</td>
         </tr>`;
     };
     return `<table class="gm-plat-table">
-      <thead><tr><th>OS</th><th>Depots</th><th>First seen</th><th>Last update</th></tr></thead>
+      <thead><tr><th>OS</th><th>Tracked since</th><th>Last update</th><th class="gm-plat-depots-th">Depots</th></tr></thead>
       <tbody>${row('windows','Windows')}${row('mac','macOS')}${row('linux','Linux')}</tbody>
-      <tfoot><tr><td colspan="4" class="gm-plat-foot">'First seen' and 'Last update' come from our own manifest observation history (#226). Dates in italics are the pre-history branch-level timestamp (same value for both cells) until nightly runs record a manifest change. ${
-        newsInfo?.found && newsInfo.newest_ts
-          ? `App-wide 'Last patch note' (${esc(new Date(newsInfo.newest_ts * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))}) below is the public-API fallback when a specific OS row shows 'pending'.`
-          : ''
-      }</td></tr></tfoot>
+      <tfoot><tr><td colspan="4" class="gm-plat-foot">
+        <strong>Tracked since</strong> is the earliest observation we recorded for that OS -- not the historical date the OS build was added. Steam doesn't expose depot creation dates via PICS, so for games already shipping all three OSes when we started tracking, this is our observation floor. Newly-added OS builds for games we're already tracking WILL show an accurate add-date going forward.
+        <br><strong>Last update</strong> is the branch-level PICS timestamp -- every depot on a shared branch inherits it.
+        <br>The brown package icon opens the raw <code>depots.json</code> we publish for this game.
+        ${newsInfo?.found && newsInfo.newest_ts
+          ? `<br>App-wide 'Last patch note' (${esc(new Date(newsInfo.newest_ts * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))}) below is the public-API fallback when a specific OS row shows 'pending'.`
+          : ''}
+      </td></tr></tfoot>
     </table>`;
   };
   // System requirements: fold into one collapsible block per OS. Text is
@@ -523,7 +527,7 @@ export async function renderGamePage(appId) {
       return fallback;
     }
   };
-  const [cdnRaw, configs, nativeReports, votes, userVotes, playtimeTotals, suppressedKeys] = await Promise.all([
+  const [cdnRaw, configs, nativeReports, votes, userVotes, playtimeTotals, suppressedKeys, liveFetched] = await Promise.all([
     safeFetch(() => fetchCdn(appId), 'fetchCdn', []),
     safeFetch(() => fetchSupabase(appId), 'fetchSupabase', []),
     safeFetch(() => fetchNativeReports(appId), 'fetchNativeReports', []),
@@ -531,6 +535,11 @@ export async function renderGamePage(appId) {
     safeFetch(() => fetchUserVotes(appId), 'fetchUserVotes', {}),
     safeFetch(() => fetchConfigPlaytimeTotals(appId), 'fetchConfigPlaytimeTotals', []),
     safeFetch(() => _fetchReportModeration(appId), 'reportModeration', new Set()),
+    // Auto-fetch the ProtonDB live summary on every page load so aggregate
+    // stats (tier + total) stay accurate even when our CDN mirror is sparse
+    // or missing entirely (#219). The proxy is cached per-appId per-session
+    // so re-renders don't re-hit the network.
+    safeFetch(() => fetchProtonDbLive(appId), 'fetchProtonDbLive', []),
   ]);
 
   // Drop ProtonDB mirror reports an admin has shadow-banned or deleted. Pulse
@@ -542,17 +551,19 @@ export async function renderGamePage(appId) {
     console.debug('[game-page] filtered suppressed ProtonDB reports', { appId, removed: cdnRaw.length - cdn.length, source: 'report_moderation' });
   }
 
-  // If CDN was empty but the user already clicked "Check ProtonDB Live" this
-  // session, use the cached live result so the page re-renders correctly.
   // ProtonDB's public summaries API only returns an aggregate (tier + total),
   // not individual reports, so the live result is a single `_liveOnly` summary.
   // It must NOT be rendered as a report card (it has no hardware/date and shows
   // up as a broken "Unknown / NAN days ago" row); instead it drives the header
   // tier + ProtonDB count below.
-  const liveCached = !cdn.length ? (_protonDbLiveCache.get(String(appId)) || []) : [];
-  const liveSummary = liveCached.find(r => r._liveOnly) || null;
+  //
+  // We auto-fetch the summary on every load (#219) so aggregate stats reflect
+  // ProtonDB's real numbers even when our CDN mirror only carries a few reports.
+  // `liveSummary` is populated whenever we got data; `liveOnly` means we have
+  // ZERO cdn reports and are relying purely on the summary.
+  const liveSummary = (liveFetched || []).find(r => r._liveOnly) || null;
   const liveOnly = !!liveSummary && !cdn.length;
-  const cdnMiss = !cdn.length && !liveCached.length;
+  const cdnMiss = !cdn.length && !(liveFetched || []).length;
 
   const reports = [
     ...cdn.map(r => ({ ...r, source: 'protondb' })),
@@ -652,11 +663,18 @@ export async function renderGamePage(appId) {
   const replacedByTitle = replacedBy
     ? (searchIndex || []).find(row => String(row[0]) === replacedBy)?.[1] || `App ${replacedBy}`
     : '';
-  // Effective ProtonDB report count: the mirrored count when we have it, else
-  // the live aggregate total. Drives the header counts so a live-only game
-  // shows the real ProtonDB rating instead of "0 reports / pending".
-  const protonDbCount = cdn.length || (liveSummary ? (liveSummary.total || 0) : 0);
-  const protonDbTier = liveOnly ? String(liveSummary.tier || '').toLowerCase() : tierFromReports(cdn);
+  // Effective ProtonDB report count: MAX of mirrored count and live aggregate
+  // (#219). ProtonDB's mirror often lags -- Hollow Knight has thousands of
+  // reports on ProtonDB but only a handful in our CDN. Take the higher number
+  // so the confidence % + "N reports" text reflect ProtonDB's real breadth,
+  // not just what we happen to have cached.
+  const liveTotal = liveSummary ? (liveSummary.total || 0) : 0;
+  const protonDbCount = Math.max(cdn.length, liveTotal);
+  // Tier: prefer the mirrored sample when we have cards to back it up,
+  // otherwise the live summary tier. Both use the same tier vocabulary.
+  const protonDbTier = liveOnly
+    ? String(liveSummary.tier || '').toLowerCase()
+    : (tierFromReports(cdn) || String(liveSummary?.tier || '').toLowerCase());
   const pulseTier = pulseTierFromReports(nativeReports, protonDbCount);
   document.title = `${title} - Proton Pulse`;
   if (typeof window.ppTrack === 'function') window.ppTrack('game_view', { app_id: String(appId), title });
@@ -832,8 +850,12 @@ export async function renderGamePage(appId) {
     // the "why?" page never disagree (#187). The old code bucketed by report
     // COUNT, which said "medium" for a 14-report game the dial showed at 95%.
     const confBucket = !hasAnyReports ? '' : overallConfidencePct >= 80 ? 'high' : overallConfidencePct >= 50 ? 'moderate' : 'low';
+    // "N reports" where N = pulse + protonDbCount (which is MAX(mirror, live)).
+    // When the live total drives the count, tag the source so users understand
+    // the summary is authoritative even when we mirror only a small slice (#219).
+    const _fromLive = !!liveSummary && liveTotal > cdn.length;
     const overallTileSummary = hasAnyReports
-      ? `${confBucket} confidence across ${totalReports} report${totalReports !== 1 ? 's' : ''}${pulseHasConfigs ? ` / ${configs.length} config${configs.length !== 1 ? 's' : ''}` : ''}`
+      ? `${confBucket} confidence across ${totalReports.toLocaleString()} report${totalReports !== 1 ? 's' : ''}${_fromLive ? ' (via ProtonDB live)' : ''}${pulseHasConfigs ? ` / ${configs.length} config${configs.length !== 1 ? 's' : ''}` : ''}`
       : (pulseHasConfigs ? 'Community-submitted configs available' : 'No community data yet');
     // Rating distribution: one horizontal bar per tier, filled with the tier
     // color and scaled to the busiest tier so the shape reads at a glance.
@@ -846,9 +868,18 @@ export async function renderGamePage(appId) {
     const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
     const TIER_FULL = { platinum: 'PLATINUM', gold: 'GOLD', silver: 'SILVER', bronze: 'BRONZE', borked: 'BORKED' };
     const maxTierCount = Math.max(1, ...TIER_ORDER.map((t) => ratingCounts[t]));
-    const tierBars = liveOnly
-      ? '<div class="grp-bars-note">Per-tier breakdown is not available from ProtonDB\'s live summary.</div>'
-      : `<div class="grp-bars">${TIER_ORDER.map((t) => {
+    // ProtonDB's summary API only exposes aggregate fields (no per-tier
+    // counts), so we can never draw the 5-bar breakdown from a live-only
+    // game. Keep the standard 5-bar layout no matter what, and prepend a
+    // one-line note showing the ProtonDB rating + total when we have it so
+    // users see "PLATINUM * 371 reports" alongside the (possibly empty) bars.
+    const _liveTierKey = liveSummary ? String(liveSummary.tier || '').toLowerCase() : '';
+    const _liveNote = liveSummary
+      ? `<div class="grp-bars-note grp-bars-note--live">
+          ProtonDB rating: <strong>${esc(String(liveSummary.tier || '').toUpperCase())}</strong> &middot; <strong>${liveTotal.toLocaleString()}</strong> report${liveTotal !== 1 ? 's' : ''}
+        </div>`
+      : '';
+    const tierBars = `<div class="grp-bars">${_liveNote}${TIER_ORDER.map((t) => {
           const n = ratingCounts[t];
           const pct = Math.round((n / maxTierCount) * 100);
           return `<div class="grp-bar grp-bar-${t}" title="${n} ${t} report${n !== 1 ? 's' : ''}">
@@ -1046,7 +1077,7 @@ export async function renderGamePage(appId) {
           const availRunTypes = [...new Set(combined.map(r => r.runType).filter(Boolean))].sort();
           const runTypeSel = availRunTypes.length > 0 ? `
             <div class="filter-item">
-              <label for="fRunType">Run type</label>
+              <label for="fRunType">Runtime Type</label>
               <select id="fRunType">
                 <option value="">Any</option>
                 ${availRunTypes.map(v => `<option value="${esc(v)}" ${filterRunType===v?'selected':''}>${RUN_TYPE_LABEL[v]||v}</option>`).join('')}

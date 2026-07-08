@@ -9,6 +9,7 @@ export const PERMISSIONS = [
   { key: 'manage_phrases', label: 'Manage banned phrases' },
   { key: 'manage_admins',  label: 'Manage admins' },
   { key: 'view_analytics', label: 'View analytics' },
+  { key: 'manage_games',   label: 'Manage games (hide / remap)' },
 ];
 
 export const ALL_PERMISSION_KEYS = PERMISSIONS.map(p => p.key);
@@ -17,7 +18,7 @@ export const PERMISSION_LABELS = Object.fromEntries(PERMISSIONS.map(p => [p.key,
 
 // Role presets fill a permission group; a super_admin always has everything.
 export const ROLE_PRESETS = {
-  moderator:   ['manage_reports', 'delete_reports', 'ban_users', 'view_analytics'],
+  moderator:   ['manage_reports', 'delete_reports', 'ban_users', 'view_analytics', 'manage_games'],
   super_admin: ALL_PERMISSION_KEYS.slice(),
 };
 
@@ -32,6 +33,7 @@ export const TAB_PERMISSIONS = {
   boxart:         ['view_analytics'],
   'api-explorer': ['view_analytics'],
   'depot-tracking': ['view_analytics'],
+  games:          ['manage_games'],
 };
 
 // Effective permissions for an admin. super_admin short-circuits to all.

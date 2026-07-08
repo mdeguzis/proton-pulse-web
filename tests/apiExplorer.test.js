@@ -99,9 +99,11 @@ describe('API Explorer admin wiring', () => {
     expect(HTML).toContain('id="api-explorer-content"');
   });
 
-  test('main.js maps the tab to renderApiExplorer', () => {
+  test('main.js maps the tab to renderApiExplorer with the admin permission flag', () => {
     expect(MAIN).toContain('import { renderApiExplorer }');
-    expect(MAIN).toContain("'api-explorer': () => renderApiExplorer()");
+    // #221: the admin-gated Steam Web API endpoints (GetOwnedGames etc.)
+    // need the `canManageAdmins` flag to decide whether to surface them.
+    expect(MAIN).toContain("renderApiExplorer({ canManageAdmins: can('manage_admins') })");
   });
 
   test('tab is gated behind view_analytics like the other tools', () => {
