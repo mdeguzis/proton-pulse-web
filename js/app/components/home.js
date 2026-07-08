@@ -6,11 +6,12 @@ import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '.
 import { daysAgo, latestPerApp } from '../utils.js?v=c7e1268c';
 import { renderGameCard } from '../lib/card.js?v=5642a459';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
-import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=7c022a1e';
+import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=e37fc3b7';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
 import { renderHomeLibraryChart } from './home-library-chart.js?v=c7e8a2d8';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
+import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=234f51e1';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
 const LOAD_COUNTS = [50, 100, 150, 200];
@@ -223,8 +224,22 @@ export async function renderHomePage() {
       unratedGames = all.filter(g => ['pending', 'catalog'].includes(String(g.rating || '').toLowerCase()));
     }
 
+    // When the profile "View my games" link deep-links here it lands with
+    // ?filter=mine. Detect that up front so the page can identify itself
+    // as "My Library" instead of the generic browse view. The filter pill
+    // itself is still activated below in _restoreFilters.
+    const _urlFilter = new URLSearchParams(window.location.search).get('filter');
+    const _isMyLibrary = _urlFilter === 'mine';
     el.innerHTML = `
+      ${_isMyLibrary ? `
+        <div class="home-page-header" id="home-page-header">
+          <div class="home-page-eyebrow">Your Steam library</div>
+          <h1 class="home-page-title">My Library</h1>
+        </div>` : ''}
       <div class="home-filter-bar">
+        <div class="home-result-count-strip" id="home-result-count-strip">
+          <span class="home-result-count" id="home-result-count">--</span>
+        </div>
         <div class="home-filter-left">
         <div class="filter-wrap" id="home-filter-wrap">
           <button class="filter-toggle-btn" id="home-filter-toggle" type="button" aria-expanded="false">
@@ -298,16 +313,18 @@ export async function renderHomePage() {
       <div id="home-library-chart-mount"></div>
       <div id="recent-section">
         <div class="section-label-row" style="margin-bottom:10px">
-          <span class="section-label" style="margin:0">Recent Reports</span>
+          <span class="section-label" id="recent-section-label" style="margin:0">${_isMyLibrary ? 'My Library -- Recent Reports' : 'Recent Reports'}</span>
           <span class="section-count" id="recent-count"></span>
         </div>
+        <div class="page-nav" id="page-nav-recent" hidden></div>
         <div class="cards" id="cards-recent"></div>
         <div id="load-more-recent"></div>
       </div>
       <div class="section-label-row" style="margin-top:24px;margin-bottom:10px">
-        <span class="section-label" id="popular-section-label" style="margin:0">Popular on Steam</span>
+        <span class="section-label" id="popular-section-label" style="margin:0">${_isMyLibrary ? 'My Library -- Popular' : 'Popular on Steam'}</span>
         <span class="section-count" id="popular-count"></span>
       </div>
+      <div class="page-nav" id="page-nav-popular" hidden></div>
       <div class="cards" id="cards-popular"></div>
       <div id="load-more-popular"></div>`;
 
@@ -406,6 +423,12 @@ export async function renderHomePage() {
         padTileRows(cardsEl, { tileSelector: '.game-card', hasMore: filtered.length > shown });
         const rendered = cardsEl.querySelectorAll(':scope .game-card:not(.tile-filler)').length;
         _updateShownCount('popular-count', cardsEl, filtered.length);
+        _renderPageNavFor('page-nav-popular', cardsEl, filtered.length, popularTarget, (n) => {
+          popularShown = n * popularTarget;
+          renderPopular();
+          const anchor = document.getElementById('popular-section-label');
+          if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
         if (loadMoreEl) {
           if (filtered.length > rendered) {
             loadMoreEl.innerHTML = _loadMoreBtn('popular');
@@ -437,10 +460,39 @@ export async function renderHomePage() {
     // Show how many cards are currently loaded vs how many match the filters,
     // e.g. "50 of 132". Reads the live card count so it stays right after
     // load-more appends. Hidden when there is nothing to show.
+    // Per-section counts (updated whenever a filter changes) so the top-of-
+    // filter-area total can sum them and never lie about "N games shown".
+    const _sectionCounts = { recent: 0, popular: 0 };
     function _updateShownCount(countId, cardsEl, total) {
       const c = document.getElementById(countId);
-      if (!c) return;
-      c.textContent = total ? `${cardsEl.children.length} of ${total} loaded` : '';
+      if (c) c.textContent = total ? `${cardsEl.children.length} of ${total} loaded` : '';
+      // Feed the top strip. This runs on every re-render so it stays honest.
+      if (countId === 'recent-count') _sectionCounts.recent = total || 0;
+      else if (countId === 'popular-count') _sectionCounts.popular = total || 0;
+      _refreshResultCountStrip();
+    }
+    function _refreshResultCountStrip() {
+      const el = document.getElementById('home-result-count');
+      if (!el) return;
+      const total = _sectionCounts.recent + _sectionCounts.popular;
+      el.textContent = total
+        ? `${total.toLocaleString()} game${total === 1 ? '' : 's'} match your filters`
+        : 'No games match your filters';
+    }
+    function _renderPageNavFor(navId, cardsEl, filteredLength, pageSize, onJump) {
+      const nav = document.getElementById(navId);
+      if (!nav) return;
+      const totalPages = Math.max(1, Math.ceil(filteredLength / Math.max(1, pageSize)));
+      const currentPage = Math.min(
+        totalPages,
+        Math.max(1, Math.ceil((cardsEl?.children.length || pageSize) / Math.max(1, pageSize))),
+      );
+      const html = pageNavHtml(currentPage, totalPages);
+      nav.innerHTML = html;
+      nav.hidden = !html;
+      // Wire is idempotent because addEventListener on an empty innerHTML
+      // replaces the previous DOM anyway; safe to call on every render.
+      wirePageNav(nav, onJump);
     }
 
     function applyRecentFilters() {
@@ -464,6 +516,14 @@ export async function renderHomePage() {
         padTileRows(cardsEl, { tileSelector: '.game-card', hasMore: filtered.length > shown });
         const rendered = cardsEl.querySelectorAll(':scope .game-card:not(.tile-filler)').length;
         _updateShownCount('recent-count', cardsEl, filtered.length);
+        // Numbered page nav (cumulative: page N shows first N pages worth).
+        // Click page N -> set recentShown to N * pageSize and re-render.
+        _renderPageNavFor('page-nav-recent', cardsEl, filtered.length, recentTarget, (n) => {
+          recentShown = n * recentTarget;
+          renderRecent();
+          const anchor = document.getElementById('recent-section');
+          if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
         if (loadMoreEl) {
           if (filtered.length > rendered) {
             loadMoreEl.innerHTML = _loadMoreBtn('recent');

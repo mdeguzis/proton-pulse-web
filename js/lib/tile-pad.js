@@ -40,13 +40,14 @@ export function pageSizeForFullRows(container, rows = 4, minItems = 8) {
   return Math.max(minItems, currentColCount(container) * rows);
 }
 
-// Row target for the initial page and each Load more click: 5 complete rows
-// on every viewport. Because the page size is cols * rows, it is always a whole
-// number of rows, so the grid stays even (5 rows) at every S/M/L/XL size.
-// Callers pass `pageSizeForFullRows(el, targetRowsForViewport())` so the
-// initial page size and each Load more click land the same target.
+// Row target for the initial page and each Load more click.
+// Desktop (>=1024px): 10 rows so a typical 5-col grid ships ~50 tiles per
+// page -- matches other browse sites' feel and cuts Load more clicks in
+// half. Mobile keeps 5 rows so we do not blow past a small viewport's
+// budget on the very first paint.
 export function targetRowsForViewport() {
-  return 5;
+  const w = typeof window !== 'undefined' && window.innerWidth ? window.innerWidth : 0;
+  return w >= 1024 ? 10 : 5;
 }
 
 export function padTileRows(container, { tileSelector = '> *', fillerClass = 'tile-filler', hasMore = false } = {}) {

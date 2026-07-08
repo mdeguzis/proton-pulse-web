@@ -144,6 +144,7 @@ gh-pages-exclude-manifest.txt
 js/about/version.js
 js/app/lib/card.js
 js/app/lib/filter-group.js
+js/app/lib/page-nav.js
 js/app/lib/steam-img.js
 js/app/lib/user-library.js
 js/app/components/home-library-chart.js
