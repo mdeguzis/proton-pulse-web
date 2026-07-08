@@ -54,6 +54,7 @@ from .release_years import enrich_search_index_with_release_years
 from .pulse import merge_pulse_into_data_dir
 from .state import read_pipeline_state
 from .stats import write_stats_json
+from .validate_app_ids import validate_steam_app_ids
 
 
 def log_summary(
@@ -1780,6 +1781,7 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # appdetails. Flag them in search-index.json column 7 so the frontend can
     # render a DELISTED chip without re-fetching anything client-side.
     enrich_search_index_with_delisted(output_path)
+    validate_steam_app_ids(output_dir)
     # Issue #134: emit the extended Steam index AFTER the primary index has
     # been finalized (release-year + delisted enrichment runs first), so the
     # primary id set we read back is the final one.
