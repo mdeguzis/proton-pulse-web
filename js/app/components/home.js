@@ -10,6 +10,7 @@ import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewp
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
 import { renderHomeLibraryChart } from './home-library-chart.js?v=c7e8a2d8';
+import { sortReports as _sortHelper, buildReleaseYearMap as _buildReleaseYearMapPure } from '../lib/home-sort.js?v=fa2c18d9';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
@@ -34,22 +35,10 @@ function _cardTier(t) {
   return KNOWN_TIERS.has(x) ? x : undefined;
 }
 
+// Thin wrapper around the pure sort helper so callers keep the private name.
+// The lookup fn resolves inside home.js so the helper stays test-friendly.
 function _sortReports(reports, sort) {
-  const copy = [...reports];
-  if (sort === 'best') {
-    copy.sort((a, b) =>
-      (TIER_SCORE[b.tier] || 0) - (TIER_SCORE[a.tier] || 0) ||
-      (b.lastReportDate || '').localeCompare(a.lastReportDate || ''));
-  } else if (sort === 'worst') {
-    copy.sort((a, b) =>
-      (TIER_SCORE[a.tier] || 99) - (TIER_SCORE[b.tier] || 99) ||
-      (b.lastReportDate || '').localeCompare(a.lastReportDate || ''));
-  } else if (sort === 'count') {
-    copy.sort((a, b) =>
-      ((b.protondbCount || 0) + (b.pulseCount || 0)) -
-      ((a.protondbCount || 0) + (a.pulseCount || 0)));
-  }
-  return copy;
+  return _sortHelper(reports, sort, _lookupReleaseYear);
 }
 
 // Tier filter is multi-select. `sel` is a Set of chosen values. An empty set or
@@ -147,6 +136,20 @@ function _buildTrendMap() {
   }
 }
 
+// Release-year lookup by appId. Search-index column 6 (set only when the
+// pipeline could resolve a year; disambiguates same-name titles and now
+// backs the "Release Date" sort on the home page.
+let _releaseYearByAppId = null;
+function _lookupReleaseYear(appId) {
+  if (!_releaseYearByAppId || appId == null) return null;
+  const y = _releaseYearByAppId.get(String(appId));
+  return typeof y === 'number' ? y : null;
+}
+function _buildReleaseYearMap() {
+  if (_releaseYearByAppId) return;
+  _releaseYearByAppId = _buildReleaseYearMapPure(searchIndex);
+}
+
 // Replaced-by lookup by appId. Search-index column 10 (added by
 // enrich_search_index_with_delisted); empty for older payloads or games that
 // were never replaced. Powers the REPLACED badge on cards (#199 follow-up).
@@ -207,8 +210,10 @@ export async function renderHomePage() {
      // gets the arrow via a single Map.get instead of re-scanning the array.
     _trendByAppId = null;
     _replacedByAppId = null;
+    _releaseYearByAppId = null;
     _buildTrendMap();
     _buildReplacedByMap();
+    _buildReleaseYearMap();
 
     let allRecentReports = [];
     if (recentResp && recentResp.ok) {
@@ -240,9 +245,12 @@ export async function renderHomePage() {
               <label class="home-filter-label" for="home-sort-select">Sort</label>
               <select id="home-sort-select" class="home-filter-select">
                 <option value="recent">Recent</option>
-                <option value="best">Best Tier</option>
-                <option value="worst">Worst Tier</option>
+                <option value="best">ProtonDB Rating</option>
+                <option value="worst">Most Borked</option>
                 <option value="count">Most Reported</option>
+                <option value="release_desc">Release Date (newest)</option>
+                <option value="release_asc">Release Date (oldest)</option>
+                <option value="alpha">Alphabetical (A-Z)</option>
               </select>
             </div>
             <div class="pg-filter-group" id="home-store-checks">
@@ -746,8 +754,10 @@ export async function renderHomeFallback() {
   const titleById = new Map((searchIndex || []).map(([id, title]) => [String(id), title]));
   _trendByAppId = null;
   _replacedByAppId = null;
+  _releaseYearByAppId = null;
   _buildTrendMap();
   _buildReplacedByMap();
+  _buildReleaseYearMap();
   const popularCards = popularIds
     .map((appId) => ({ appId, title: titleById.get(appId) || `App ${appId}` }))
     .filter((row) => row.title)
