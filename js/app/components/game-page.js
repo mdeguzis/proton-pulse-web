@@ -3,7 +3,7 @@
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=1b8ae722';
 import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=8dc92cf7';
-import { getWebClientId } from '../../shared/submit.js?v=339c68ea';
+import { getWebClientId } from '../../shared/submit.js?v=bfe659f0';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=09d5c67e';
 import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=55a861cb';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=01961c8d';
@@ -1056,7 +1056,7 @@ export async function renderGamePage(appId) {
           const availRunTypes = [...new Set(combined.map(r => r.runType).filter(Boolean))].sort();
           const runTypeSel = availRunTypes.length > 0 ? `
             <div class="filter-item">
-              <label for="fRunType">Run type</label>
+              <label for="fRunType">Runtime Type</label>
               <select id="fRunType">
                 <option value="">Any</option>
                 ${availRunTypes.map(v => `<option value="${esc(v)}" ${filterRunType===v?'selected':''}>${RUN_TYPE_LABEL[v]||v}</option>`).join('')}
