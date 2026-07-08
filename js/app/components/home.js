@@ -237,9 +237,6 @@ export async function renderHomePage() {
           <h1 class="home-page-title">My Library</h1>
         </div>` : ''}
       <div class="home-filter-bar">
-        <div class="home-result-count-strip" id="home-result-count-strip">
-          <span class="home-result-count" id="home-result-count">--</span>
-        </div>
         <div class="home-filter-left">
         <div class="filter-wrap" id="home-filter-wrap">
           <button class="filter-toggle-btn" id="home-filter-toggle" type="button" aria-expanded="false">
@@ -298,6 +295,7 @@ export async function renderHomePage() {
         <input id="home-text-filter" class="home-filter-text" type="search" placeholder="Filter loaded list" autocomplete="off" />
         </div>
         <div class="home-view-controls">
+          <div class="home-result-count" id="home-result-count" title="Total games matching current filters">--</div>
           <div class="home-size-toggle" id="home-size-toggle" title="Card size">
             <button class="home-size-btn" data-size="sm" type="button" title="Small cards">S</button>
             <button class="home-size-btn" data-size="md" type="button" title="Medium cards">M</button>
@@ -460,24 +458,23 @@ export async function renderHomePage() {
     // Show how many cards are currently loaded vs how many match the filters,
     // e.g. "50 of 132". Reads the live card count so it stays right after
     // load-more appends. Hidden when there is nothing to show.
-    // Per-section counts (updated whenever a filter changes) so the top-of-
-    // filter-area total can sum them and never lie about "N games shown".
-    const _sectionCounts = { recent: 0, popular: 0 };
+    // Per-section counts (loaded vs total) so the corner "showing N/N games"
+    // strip stays accurate on every filter + load-more.
+    const _sectionCounts = { recent: { loaded: 0, total: 0 }, popular: { loaded: 0, total: 0 } };
     function _updateShownCount(countId, cardsEl, total) {
       const c = document.getElementById(countId);
-      if (c) c.textContent = total ? `${cardsEl.children.length} of ${total} loaded` : '';
-      // Feed the top strip. This runs on every re-render so it stays honest.
-      if (countId === 'recent-count') _sectionCounts.recent = total || 0;
-      else if (countId === 'popular-count') _sectionCounts.popular = total || 0;
+      const loaded = cardsEl ? cardsEl.children.length : 0;
+      if (c) c.textContent = total ? `${loaded} of ${total} loaded` : '';
+      if (countId === 'recent-count')  _sectionCounts.recent  = { loaded, total: total || 0 };
+      else if (countId === 'popular-count') _sectionCounts.popular = { loaded, total: total || 0 };
       _refreshResultCountStrip();
     }
     function _refreshResultCountStrip() {
       const el = document.getElementById('home-result-count');
       if (!el) return;
-      const total = _sectionCounts.recent + _sectionCounts.popular;
-      el.textContent = total
-        ? `${total.toLocaleString()} game${total === 1 ? '' : 's'} match your filters`
-        : 'No games match your filters';
+      const loaded = _sectionCounts.recent.loaded + _sectionCounts.popular.loaded;
+      const total  = _sectionCounts.recent.total  + _sectionCounts.popular.total;
+      el.textContent = total ? `showing ${loaded}/${total} games` : '';
     }
     function _renderPageNavFor(navId, cardsEl, filteredLength, pageSize, onJump) {
       const nav = document.getElementById(navId);
@@ -785,6 +782,54 @@ export async function renderHomePage() {
       _applyPillSelection(libraryGroup, ['mine']);
       libraryAppIds = await getMyLibraryAppIds().catch(() => new Set());
       updateFilterBadge();
+
+      // The default view is capped to recent-reports.json (~100 rows) and
+      // most_played.json (~50 rows). Intersecting that with a real Steam
+      // library dropped 200+ owned games to a handful. When ?filter=mine
+      // is active, synthesize a comprehensive library dataset from search-
+      // index so every owned game shows up -- and hide the Popular section
+      // because it would just repeat the same rows.
+      if (libraryAppIds && libraryAppIds.size > 0) {
+        const existing = new Set(allRecentReports.map((r) => String(r.appId)));
+        const synthesized = [];
+        for (const row of (searchIndex || [])) {
+          if (!Array.isArray(row) || row.length < 6) continue;
+          const id = String(row[0]);
+          if (!libraryAppIds.has(Number(id))) continue;
+          if (existing.has(id)) continue;
+          synthesized.push({
+            appId:            id,
+            title:            row[1] || `App ${id}`,
+            tier:             row[2] || 'pending',
+            protondbCount:    Number(row[3] || 0),
+            pulseCount:       Number(row[4] || 0),
+            appType:          row[5] || 'steam',
+            lastReportDate:   '',
+          });
+        }
+        // Keep the recent-reports rows first (they carry timestamps + are
+        // the most active), then the synthesized rows so nothing gets lost.
+        allRecentReports = [
+          ...allRecentReports.filter((r) => libraryAppIds.has(Number(r.appId))),
+          ...synthesized,
+        ];
+        console.debug('[my-library] synthesized library dataset', { source: 'search-index', total: allRecentReports.length });
+        const popularSection = document.getElementById('cards-popular')?.parentElement;
+        const popularLabel = document.getElementById('popular-section-label');
+        // Hide the entire popular section header + grid so we present one
+        // unambiguous library list instead of splitting the view.
+        if (popularLabel && popularLabel.parentElement) popularLabel.parentElement.style.display = 'none';
+        const popCards = document.getElementById('cards-popular');
+        if (popCards) popCards.style.display = 'none';
+        const popNav = document.getElementById('page-nav-popular');
+        if (popNav) popNav.hidden = true;
+        const popMore = document.getElementById('load-more-popular');
+        if (popMore) popMore.style.display = 'none';
+        // Rename the visible section header to just "My Library" (no
+        // sub-heading) since it's the only section.
+        const recentLabel = document.getElementById('recent-section-label');
+        if (recentLabel) recentLabel.textContent = 'My Library';
+      }
     }
 
     applyRecentFilters();

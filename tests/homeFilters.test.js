@@ -239,7 +239,9 @@ describe('home page browse -- loaded count display', () => {
 
   test('_updateShownCount shows loaded vs total and refreshes on load-more', () => {
     expect(homeSrc).toContain('function _updateShownCount(countId, cardsEl, total)');
-    expect(homeSrc).toContain('`${cardsEl.children.length} of ${total} loaded`');
+    // Still surfaces a "N of N loaded" string; template shape shifted so
+    // the counter could also feed the corner "showing N/N games" strip.
+    expect(homeSrc).toContain('${loaded} of ${total} loaded');
     // called for both sections on render and on load-more append
     const recent = homeSrc.match(/_updateShownCount\('recent-count'/g) || [];
     const popular = homeSrc.match(/_updateShownCount\('popular-count'/g) || [];

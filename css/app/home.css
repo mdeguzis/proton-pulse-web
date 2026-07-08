@@ -367,15 +367,16 @@
   letter-spacing: -0.01em;
 }
 
-/* Always-visible result count strip. Sits above the filter row so no
-   screen showing games ever leaves the total ambiguous. */
-.home-result-count-strip {
-  padding: 6px 0 4px;
+/* Always-visible result count. Sits inside the view-controls row next
+   to the S/M/L/XL toggle so it stays out of the way of the filter bar
+   while still being unmissable when scanning the top of the page. */
+.home-result-count {
   font-family: var(--mono);
   font-size: 0.78rem;
   color: var(--muted);
+  padding: 4px 8px;
+  white-space: nowrap;
 }
-.home-result-count { color: var(--text); }
 
 /* Numbered page nav. Right-aligned above each cards grid so it doesn't
    push the section label out of the visual top. Ellipsis is muted. */
