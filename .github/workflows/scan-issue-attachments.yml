@@ -1,0 +1,62 @@
+name: Scan issue attachments
+
+# Passive guardrail against malicious attachments in issues + PR comments.
+# Triggered by #228 -- see wiki/Security-Guardrails for the rationale.
+#
+# What it does per event:
+#   1. Extract every user-attachment URL from the body.
+#   2. Extract every suspicious file extension mentioned inline.
+#   3. HEAD each attachment. If the size is under the cap, hash the bytes.
+#   4. Look up the SHA256 in VirusTotal (hash-only, no upload).
+#   5. Apply a policy: hide the comment via minimizeComment + label
+#      `security-review` if VT flags it OR the attachment ends in a known
+#      executable extension AND the author isn't the repo owner.
+#   6. Ping the repo owner on the issue with a summary so they can decide.
+#
+# Non-goals:
+#   - We never download and never execute anything for "analysis".
+#   - We never upload private issue content to VirusTotal -- only the hash.
+#   - The owner's own attachments are always left alone (avoid self-blocks).
+
+on:
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created, edited]
+  pull_request_review_comment:
+    types: [created, edited]
+
+permissions:
+  # Needed to hide comments, add labels, and post an admin ping.
+  issues: write
+  pull-requests: write
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    # Skip bot-authored events and the repo owner's own posts. The owner
+    # audits their own attachments; this workflow is for everyone else.
+    if: >-
+      github.actor != 'dependabot[bot]' &&
+      github.actor != 'github-actions[bot]' &&
+      github.actor != github.repository_owner
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run attachment scanner
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          # VirusTotal free tier: 500 lookups/day. Optional -- when unset the
+          # scanner falls back to extension-only policy (still blocks .exe /
+          # .msi / .scr / .ps1 etc. from non-owners).
+          VT_API_KEY: ${{ secrets.VT_API_KEY }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          REPO_NAME: ${{ github.event.repository.name }}
+        run: node .github/scripts/scan-attachments.mjs
