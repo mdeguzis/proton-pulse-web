@@ -1,0 +1,59 @@
+name: Edge Function Health
+
+# Cron-driven ping of every Supabase edge function this site uses. Writes
+# edge-status.json to gh-pages so the /status.html page and the topbar
+# indicator can render an up-to-date view without hitting the functions
+# themselves from every visitor. See #254.
+
+on:
+  schedule:
+    # Every 15 minutes. Cheap enough (~15 sec per run) that we can afford
+    # the frequency, and freshness matters more here than cost.
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: edge-fn-health
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo (for the script)
+        uses: actions/checkout@v4
+        with:
+          path: repo
+          persist-credentials: false
+
+      - name: Checkout gh-pages (destination)
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+          persist-credentials: true
+
+      - name: Ping every edge function
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          bash repo/scripts/check-edge-fn-health.sh gh-pages/edge-status.json
+          cat gh-pages/edge-status.json
+
+      - name: Commit + push if changed
+        working-directory: gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet edge-status.json; then
+            echo "no change, skipping push"
+            exit 0
+          fi
+          git add edge-status.json
+          git commit -m "chore(status): refresh edge-status.json"
+          git push origin gh-pages
