@@ -2,6 +2,17 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.6.0
+
+- My Library view: deep-linking from the profile "View my games" now lands on a clearly labeled My Library page. Every owned Steam appid appears, not just games that intersect with recent reports (was capped at ~12 to ~65 on real libraries)
+- Numbered pagination on the browse grid with Prev/Next arrows, a "Page X of Y" label, and a bottom-of-grid mirror so long lists do not require scrolling back up to turn a page
+- Sort dropdown gains A-Z and Z-A options with locale-aware base-sensitivity comparison
+- Search input gets a clear (X) button and a placeholder that matches actual behavior (searches all titles, not only visible ones)
+- Card tier strip anchors to the card bottom edge so entries with no reports subtitle line up with rated neighbors
+- About page report-approval copy corrected: a daily pipeline auto-approves clean reports and admins can approve on demand, edits re-enter the same flow
+- Admin analytics "most viewed games" links now work on staging (were hardcoded to the domain root)
+- Fix: click handlers on numbered pagination were stacking on every filter change so a click could fire ten times after enough re-renders
+
 ## v1.5.0
 
 - Card layout: a new bottom-bar tier strip is the site default, with the store badge sitting next to the rating as a brand-colored pill or round logo (Steam, GOG, Epic). Five placement options for the store badge (right, artwork, card corner, on bar next to rating, on bar split) and a separate text-or-icon display toggle
