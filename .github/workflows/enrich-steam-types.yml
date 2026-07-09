@@ -84,4 +84,15 @@ jobs:
             exit 0
           fi
           git commit -m "chore(enrich): refresh Steam type column in search-index.json"
-          git push origin gh-pages
+          # Rebase-then-push handles the edge-fn-health workflow racing us
+          # on edge-status.json. A retry loop covers rare cases where
+          # another push lands between our fetch and our push.
+          for i in 1 2 3; do
+            if git pull --rebase origin gh-pages && git push origin gh-pages; then
+              exit 0
+            fi
+            echo "push race attempt $i, retrying"
+            sleep 3
+          done
+          echo "push retries exhausted"
+          exit 1
