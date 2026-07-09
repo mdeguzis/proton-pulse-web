@@ -304,7 +304,10 @@ export async function renderHomePage() {
             </div>
           </div>
         </div>
-        <input id="home-text-filter" class="home-filter-text" type="search" placeholder="Search all titles" autocomplete="off" />
+        <div class="home-filter-text-wrap">
+          <input id="home-text-filter" class="home-filter-text" type="search" placeholder="Search all titles" autocomplete="off" />
+          <button id="home-text-filter-clear" class="home-filter-text-clear" type="button" aria-label="Clear search" hidden>&times;</button>
+        </div>
         </div>
         <div class="home-view-controls">
           <div class="home-view-controls-row">
@@ -332,14 +335,16 @@ export async function renderHomePage() {
         <div class="page-nav page-nav--bottom" id="page-nav-recent-bottom" hidden></div>
         <div id="load-more-recent"></div>
       </div>
-      <div class="section-label-row" style="margin-top:24px;margin-bottom:10px">
-        <span class="section-label" id="popular-section-label" style="margin:0">${_isMyLibrary ? 'My Library -- Popular' : 'Popular on Steam'}</span>
-        <span class="section-count" id="popular-count"></span>
-      </div>
-      <div class="page-nav" id="page-nav-popular" hidden></div>
-      <div class="cards" id="cards-popular"></div>
-      <div class="page-nav page-nav--bottom" id="page-nav-popular-bottom" hidden></div>
-      <div id="load-more-popular"></div>`;
+      <div id="popular-section">
+        <div class="section-label-row" style="margin-top:24px;margin-bottom:10px">
+          <span class="section-label" id="popular-section-label" style="margin:0">${_isMyLibrary ? 'My Library -- Popular' : 'Popular on Steam'}</span>
+          <span class="section-count" id="popular-count"></span>
+        </div>
+        <div class="page-nav" id="page-nav-popular" hidden></div>
+        <div class="cards" id="cards-popular"></div>
+        <div class="page-nav page-nav--bottom" id="page-nav-popular-bottom" hidden></div>
+        <div id="load-more-popular"></div>
+      </div>`;
 
     let currentSort = 'recent';
     let textFilter = '';       // title substring filter; '' => no text filtering
@@ -559,14 +564,22 @@ export async function renderHomePage() {
     const _textInputs = ['home-text-filter', 'home-text-filter-mobile']
       .map(id => document.getElementById(id))
       .filter(Boolean);
+    const _clearBtn = document.getElementById('home-text-filter-clear');
+    const _syncClearBtn = (val) => {
+      if (_clearBtn) _clearBtn.hidden = !val;
+    };
     const _onTextInput = (val) => {
       textFilter = val;
       for (const inp of _textInputs) { if (inp.value !== val) inp.value = val; }
+      _syncClearBtn(val);
       updateFilterBadge();
       applyRecentFilters();
       applyPopularFilters();
       _saveFiltersIfEnabled();
     };
+    if (_clearBtn) {
+      _clearBtn.addEventListener('click', () => _onTextInput(''));
+    }
     for (const inp of _textInputs) {
       inp.addEventListener('input', e => _onTextInput(e.target.value));
     }
@@ -634,6 +647,8 @@ export async function renderHomePage() {
         const inp = document.getElementById(id);
         if (inp) inp.value = textFilter;
       }
+      const restoredClearBtn = document.getElementById('home-text-filter-clear');
+      if (restoredClearBtn) restoredClearBtn.hidden = !textFilter;
       tierSel = new Set(saved.tier || []);
       sourceSel = new Set(saved.source || []);
       storeSel = new Set(saved.store || []);
@@ -810,17 +825,11 @@ export async function renderHomePage() {
           libraryTotal: libraryAppIds.size,
           rowTotal: allRecentReports.length,
         });
-        const popularSection = document.getElementById('cards-popular')?.parentElement;
-        const popularLabel = document.getElementById('popular-section-label');
-        // Hide the entire popular section header + grid so we present one
-        // unambiguous library list instead of splitting the view.
-        if (popularLabel && popularLabel.parentElement) popularLabel.parentElement.style.display = 'none';
-        const popCards = document.getElementById('cards-popular');
-        if (popCards) popCards.style.display = 'none';
-        const popNav = document.getElementById('page-nav-popular');
-        if (popNav) popNav.hidden = true;
-        const popMore = document.getElementById('load-more-popular');
-        if (popMore) popMore.style.display = 'none';
+        // Hide the whole popular section (single wrapper covers header,
+        // grid, page-nav top/bottom, load-more) so any empty-state text
+        // its render might produce cannot leak into the library view.
+        const popularSectionEl = document.getElementById('popular-section');
+        if (popularSectionEl) popularSectionEl.style.display = 'none';
         // Rename the visible section header to just "My Library" (no
         // sub-heading) since it's the only section.
         const recentLabel = document.getElementById('recent-section-label');

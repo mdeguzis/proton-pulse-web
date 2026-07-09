@@ -239,6 +239,11 @@
   .home-cards-tile-mode.cards--xl { grid-template-columns: 1fr; }
 }
 .home-cards-tile-mode .game-card { display: flex; flex-direction: column; min-width: 0; }
+/* Push the tier strip to the bottom edge even on cards that have less
+   body content (e.g. no reports subtitle). Without this, cards with a
+   shorter body ended up with the strip floating in the middle instead
+   of aligning with neighbors. */
+.home-cards-tile-mode .game-card-strip { margin-top: auto; }
 .home-cards-tile-mode .game-card-row {
   flex-direction: column;
   gap: 0;
