@@ -6,7 +6,7 @@ import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '.
 import { daysAgo, latestPerApp } from '../utils.js?v=c7e1268c';
 import { renderGameCard } from '../lib/card.js?v=5642a459';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
-import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=e37fc3b7';
+import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=ec823ae7';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
 import { renderHomeLibraryChart } from './home-library-chart.js?v=c7e8a2d8';
@@ -448,6 +448,12 @@ export async function renderHomePage() {
         }
       };
       renderPopular();
+      // Same next-frame backstop as the recent section -- see the comment
+      // there for why this second pass is needed for full-row alignment.
+      requestAnimationFrame(() => {
+        const nextTarget = pageSizeForFullRows(cardsEl, targetRowsForViewport());
+        if (popularShown < nextTarget) renderPopular();
+      });
       watchTileRerender(cardsEl, renderPopular);
     }
 
@@ -542,6 +548,15 @@ export async function renderHomePage() {
         }
       };
       renderRecent();
+      // Belt-and-suspenders: if the initial pageSize was computed before
+      // the grid finished laying out, the first render can ship a partial
+      // row (12 tiles with 2 orphans on a 5-col grid). Re-run once on the
+      // next frame so the second read gets the resolved column count and
+      // trims to full rows. No-op when the first render was already flush.
+      requestAnimationFrame(() => {
+        const nextTarget = pageSizeForFullRows(cardsEl, targetRowsForViewport());
+        if (recentShown < nextTarget) renderRecent();
+      });
       watchTileRerender(cardsEl, renderRecent);
     }
 

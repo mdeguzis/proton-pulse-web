@@ -26,6 +26,9 @@ const _RESIZE_KEY = '__tilePadHandlers';
 // which reflect the auto-fill count for the container's actual width.
 export function currentColCount(container) {
   if (!container) return 1;
+  // Force a synchronous layout so auto-fill resolves to the real track
+  // count before we count it -- see the same note in padTileRows below.
+  void container.offsetWidth;
   const cs = getComputedStyle(container);
   if (cs.display !== 'grid') return 1;
   const cols = cs.gridTemplateColumns.split(' ').filter(Boolean).length;
@@ -54,6 +57,14 @@ export function padTileRows(container, { tileSelector = '> *', fillerClass = 'ti
   if (!container) return;
   // Wipe stale fillers from the previous pad pass before counting.
   container.querySelectorAll('.' + fillerClass).forEach(f => f.remove());
+
+  // Force a synchronous layout so grid-template-columns resolves to the
+  // final track list before we count it. Without this, calling padTileRows
+  // right after innerHTML= sometimes reads a stale computed value where
+  // auto-fill hasn't picked up the container width yet -- resulting in
+  // cols=1 and a bail-out that leaves ragged rows on screen. Reading
+  // offsetWidth flushes pending layout without changing anything visible.
+  void container.offsetWidth;
 
   // Only pad when the container is laid out as a grid (tile mode is on).
   // List mode is still a flex column so grid-template-columns will be
