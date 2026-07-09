@@ -370,33 +370,10 @@
   letter-spacing: -0.01em;
 }
 
-/* Always-visible result count. Lives on the left of the page-nav strip
-   so the total sits at the same visual altitude as the numbered pages. */
-.home-result-count {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--muted);
-  padding: 4px 8px;
-  white-space: nowrap;
-}
-
-/* Page-nav strip: count on the left, numbered buttons on the right.
-   Kept in the same row so the total sits at the same visual altitude
-   as "jump to page" affordances (matches paginated list conventions). */
-.page-nav-strip {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-.home-result-count-spacer { flex: 0 0 auto; }
-.page-nav-strip .home-result-count { padding: 0; }
-.page-nav-strip .page-nav { margin-bottom: 0; }
 .page-nav {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 10px;
 }
 .page-nav-inner {
   display: inline-flex;

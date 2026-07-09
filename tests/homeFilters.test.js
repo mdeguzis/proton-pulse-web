@@ -237,23 +237,28 @@ describe('home page browse -- loaded count display', () => {
     expect(homeSrc).toContain('id="popular-count"');
   });
 
-  test('_updateShownCount shows loaded vs total and refreshes on load-more', () => {
+  test('_updateShownCount shows loaded vs total next to the section label', () => {
     expect(homeSrc).toContain('function _updateShownCount(countId, cardsEl, total)');
-    // Still surfaces a "N of N loaded" string; template shape shifted so
-    // the counter could also feed the corner "Showing N/N games" strip.
-    expect(homeSrc).toContain('${loaded} of ${total} loaded');
-    // called for both sections on render and on the empty-guard early return
+    // The single count next to the section label is the only place the
+    // total shows up now -- the extra "Showing N/N games" strip was
+    // dropped because it duplicated the same fact right below it.
+    expect(homeSrc).toContain('`${loaded} of ${total}`');
+    // Reads real tiles (skipping fillers) so the count matches what a
+    // reader can actually see and click.
+    expect(homeSrc).toContain(":not(.tile-filler)");
     const recent = homeSrc.match(/_updateShownCount\('recent-count'/g) || [];
     const popular = homeSrc.match(/_updateShownCount\('popular-count'/g) || [];
     expect(recent.length).toBeGreaterThanOrEqual(2);
     expect(popular.length).toBeGreaterThanOrEqual(2);
   });
 
-  test('home-result-count strip reads "Showing N/N games" (capitalised)', () => {
-    // The corner strip is the single-line summary that pins next to the
-    // page-nav row. Lowercase "showing" was the previous style but reads as
-    // a stray label -- capital S matches typical UI conventions.
-    expect(homeSrc).toContain('`Showing ${loaded}/${total} games`');
+  test('no separate "Showing" strip element or state', () => {
+    // Trying to keep two counters in sync gave contradictory totals
+    // (recent had library-owned rows, popular had different data). The
+    // section-count next to the label is the single source of truth now.
+    expect(homeSrc).not.toContain('home-result-count');
+    expect(homeSrc).not.toContain('_refreshResultCountStrip');
+    expect(homeSrc).not.toContain('_sectionCounts');
   });
 });
 
@@ -275,9 +280,16 @@ describe('home page browse -- windowed pagination (page turner)', () => {
   });
 
   test('page click ignores clicks on the already-active page', () => {
-    // No-op guard so smooth-scroll doesn't fire on the current page.
+    // No-op guard so a click on the current page number is truly a no-op.
     expect(homeSrc).toContain('if (n === recentPage) return;');
     expect(homeSrc).toContain('if (n === popularPage) return;');
+  });
+
+  test('page click does not scroll the viewport', () => {
+    // Page turn should keep the tiles in the same on-screen position -- the
+    // grid replaces in place. scrollIntoView threw the viewport around and
+    // felt like the browser was "jumping back" on every click.
+    expect(homeSrc).not.toContain('scrollIntoView');
   });
 });
 

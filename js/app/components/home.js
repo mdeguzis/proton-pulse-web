@@ -327,10 +327,7 @@ export async function renderHomePage() {
           <span class="section-label" id="recent-section-label" style="margin:0">${_isMyLibrary ? 'My Library -- Recent Reports' : 'Recent Reports'}</span>
           <span class="section-count" id="recent-count"></span>
         </div>
-        <div class="page-nav-strip">
-          <div class="home-result-count" id="home-result-count" title="Total games matching current filters">--</div>
-          <div class="page-nav" id="page-nav-recent" hidden></div>
-        </div>
+        <div class="page-nav" id="page-nav-recent" hidden></div>
         <div class="cards" id="cards-recent"></div>
         <div id="load-more-recent"></div>
       </div>
@@ -338,10 +335,7 @@ export async function renderHomePage() {
         <span class="section-label" id="popular-section-label" style="margin:0">${_isMyLibrary ? 'My Library -- Popular' : 'Popular on Steam'}</span>
         <span class="section-count" id="popular-count"></span>
       </div>
-      <div class="page-nav-strip">
-        <div class="home-result-count-spacer" aria-hidden="true"></div>
-        <div class="page-nav" id="page-nav-popular" hidden></div>
-      </div>
+      <div class="page-nav" id="page-nav-popular" hidden></div>
       <div class="cards" id="cards-popular"></div>
       <div id="load-more-popular"></div>`;
 
@@ -444,8 +438,6 @@ export async function renderHomePage() {
           if (n === popularPage) return;
           popularPage = n;
           renderPopular();
-          const anchor = document.getElementById('popular-section-label');
-          if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
         if (loadMoreEl) loadMoreEl.innerHTML = '';
       };
@@ -469,26 +461,14 @@ export async function renderHomePage() {
       });
     }
 
-    // Show how many cards are currently loaded vs how many match the filters,
-    // e.g. "50 of 132". Reads the live card count so it stays right after
-    // load-more appends. Hidden when there is nothing to show.
-    // Per-section counts (loaded vs total) so the corner "showing N/N games"
-    // strip stays accurate on every filter + load-more.
-    const _sectionCounts = { recent: { loaded: 0, total: 0 }, popular: { loaded: 0, total: 0 } };
+    // Section count next to the label, e.g. "50 of 714". Reads only real
+    // tiles (skipping fillers) so the number lines up with what the user
+    // sees. Hidden when there is nothing to show.
     function _updateShownCount(countId, cardsEl, total) {
       const c = document.getElementById(countId);
-      const loaded = cardsEl ? cardsEl.children.length : 0;
-      if (c) c.textContent = total ? `${loaded} of ${total} loaded` : '';
-      if (countId === 'recent-count')  _sectionCounts.recent  = { loaded, total: total || 0 };
-      else if (countId === 'popular-count') _sectionCounts.popular = { loaded, total: total || 0 };
-      _refreshResultCountStrip();
-    }
-    function _refreshResultCountStrip() {
-      const el = document.getElementById('home-result-count');
-      if (!el) return;
-      const loaded = _sectionCounts.recent.loaded + _sectionCounts.popular.loaded;
-      const total  = _sectionCounts.recent.total  + _sectionCounts.popular.total;
-      el.textContent = total ? `Showing ${loaded}/${total} games` : '';
+      if (!c) return;
+      const loaded = cardsEl ? cardsEl.querySelectorAll(':scope .game-card:not(.tile-filler)').length : 0;
+      c.textContent = total ? `${loaded} of ${total}` : '';
     }
     function _renderPageNavFor(navId, currentPage, totalPages, onJump) {
       const nav = document.getElementById(navId);
@@ -530,8 +510,6 @@ export async function renderHomePage() {
           if (n === recentPage) return;
           recentPage = n;
           renderRecent();
-          const anchor = document.getElementById('recent-section');
-          if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
         if (loadMoreEl) loadMoreEl.innerHTML = '';
       };
