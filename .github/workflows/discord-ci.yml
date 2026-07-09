@@ -26,13 +26,25 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Compute icon prefix
+        id: icon
+        env:
+          WF_NAME: ${{ github.event.workflow_run.name }}
+        run: |
+          case "$WF_NAME" in
+            "Build Site Data"|"Deploy on merge to main")
+              echo "prefix=[PAGE] " >> "$GITHUB_OUTPUT" ;;
+            *)
+              echo "prefix=" >> "$GITHUB_OUTPUT" ;;
+          esac
+
       - name: Notify Discord
         uses: sarisia/actions-status-discord@v1
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK_BUILDS }}
           status: ${{ github.event.workflow_run.conclusion }}
           nofail: true
-          content: "**${{ github.event.workflow_run.name }}** on `${{ github.event.workflow_run.head_branch }}`: ${{ github.event.workflow_run.conclusion }}"
+          content: "${{ steps.icon.outputs.prefix }}**${{ github.event.workflow_run.name }}** on `${{ github.event.workflow_run.head_branch }}`: ${{ github.event.workflow_run.conclusion }}"
           title: "${{ github.event.workflow_run.name }}"
           description: "Branch `${{ github.event.workflow_run.head_branch }}` - [view run](${{ github.event.workflow_run.html_url }})\n_triggered by ${{ github.event.sender.login }}_"
           url: ${{ github.event.workflow_run.html_url }}
