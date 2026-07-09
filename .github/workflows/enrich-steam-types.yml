@@ -1,0 +1,87 @@
+name: Enrich Steam Types
+
+# Standalone runner for scripts/pipeline/steam_type.py against gh-pages.
+# Bypasses the full finalize pipeline (which has been hanging on unrelated
+# enrichers, #258) so the DLC / Mod / Software / Demo filter always has
+# fresh data even when finalize is having a rough day.
+#
+# Runs the type enricher directly against gh-pages/search-index.json,
+# then commits the result back. Each run enriches at most PROBE_CAP
+# (~200) new Steam apps, so the coverage grows a bit per run. Cache is
+# persisted in gh-pages so subsequent runs skip already-typed apps.
+
+on:
+  schedule:
+    # Every 6 hours -- Steam appdetails rate limit resets after ~5 min,
+    # so we could go faster, but 6h keeps churn low and still fills the
+    # long tail over a couple of days.
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: enrich-steam-types
+  cancel-in-progress: false
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repo (for the script)
+        uses: actions/checkout@v4
+        with:
+          path: repo
+          persist-credentials: false
+
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run enricher against gh-pages/search-index.json
+        working-directory: repo
+        run: |
+          # Straight-line invocation of the enricher. The script writes
+          # both search-index.json (with column 11 populated) and the
+          # steam-type-cache.json alongside it.
+          python -c "
+          from pathlib import Path
+          from scripts.pipeline.steam_type import enrich_search_index_with_steam_type
+          enrich_search_index_with_steam_type(Path('${GITHUB_WORKSPACE}/gh-pages'))
+          "
+          echo '--- search-index shape after enrichment ---'
+          python -c "
+          import json
+          rows = json.load(open('${GITHUB_WORKSPACE}/gh-pages/search-index.json'))
+          from collections import Counter
+          c = Counter()
+          for r in rows:
+              t = r[10] if len(r) > 10 else None
+              c[t] += 1
+          print('total rows:', len(rows))
+          for t, n in c.most_common():
+              print(f'  {t!r}: {n}')
+          "
+
+      - name: Commit + push if changed
+        working-directory: gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add search-index.json steam-type-cache.json
+          if git diff --cached --quiet; then
+            echo "no change, skipping push"
+            exit 0
+          fi
+          git commit -m "chore(enrich): refresh Steam type column in search-index.json"
+          git push origin gh-pages
