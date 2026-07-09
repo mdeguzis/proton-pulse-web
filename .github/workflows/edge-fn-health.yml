@@ -50,10 +50,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet edge-status.json; then
+          # Stage first so a brand-new file (untracked) shows up in the diff.
+          # `git diff --quiet` alone silently succeeds for untracked files,
+          # which was skipping the initial write of edge-status.json.
+          git add edge-status.json
+          if git diff --cached --quiet edge-status.json; then
             echo "no change, skipping push"
             exit 0
           fi
-          git add edge-status.json
           git commit -m "chore(status): refresh edge-status.json"
           git push origin gh-pages
