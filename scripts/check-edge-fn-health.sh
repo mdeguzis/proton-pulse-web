@@ -46,11 +46,15 @@ for fn in "${FNS[@]}"; do
   end=$(date +%s%3N)
   latency_ms=$((end - start))
 
+  # 401 / 403 mean the function is reachable and responding fast, it just
+  # does not accept an anonymous OPTIONS preflight -- that's an auth policy
+  # decision, not a downed service. Treat those as operational so the
+  # overall health does not swing red for every locked-down edge fn.
   case "$http_code" in
-    200|204)      status="operational" ;;
-    5[0-9][0-9])  status="down" ;;
-    000)          status="down" ;;
-    *)            status="degraded" ;;
+    200|204|401|403)  status="operational" ;;
+    5[0-9][0-9])      status="down" ;;
+    000)              status="down" ;;
+    *)                status="degraded" ;;
   esac
 
   service=$(jq -n \
