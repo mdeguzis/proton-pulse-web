@@ -17,6 +17,11 @@ on:
     # long tail over a couple of days.
     - cron: "17 */6 * * *"
   workflow_dispatch:
+    inputs:
+      cycles:
+        description: "How many enrichment cycles to run per dispatch (1 cycle ~= 200 apps, ~5 min rate-limit wait between)."
+        required: false
+        default: "1"
 
 permissions:
   contents: write
@@ -28,7 +33,7 @@ concurrency:
 jobs:
   enrich:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 350
     steps:
       - name: Checkout repo (for the script)
         uses: actions/checkout@v4
@@ -50,28 +55,38 @@ jobs:
 
       - name: Run enricher against gh-pages/search-index.json
         working-directory: repo
+        env:
+          CYCLES: ${{ github.event.inputs.cycles || '1' }}
         run: |
-          # Straight-line invocation of the enricher. The script writes
-          # both search-index.json (with column 11 populated) and the
-          # steam-type-cache.json alongside it.
-          python -c "
+          # Loop N enrichment cycles inside one dispatch. Each cycle
+          # enriches up to PROBE_CAP (~200) apps, then we sleep for 5
+          # minutes so Steam's ~200-req/5min soft-throttle resets before
+          # the next cycle. Column indices: row[11] is where the type
+          # lands (steam_type.py writes to index 11 = 12th column).
+          for i in $(seq 1 "$CYCLES"); do
+            echo "=== enrichment cycle $i of $CYCLES ==="
+            python -c "
           from pathlib import Path
           from scripts.pipeline.steam_type import enrich_search_index_with_steam_type
           enrich_search_index_with_steam_type(Path('${GITHUB_WORKSPACE}/gh-pages'))
           "
-          echo '--- search-index shape after enrichment ---'
-          python -c "
+            python -c "
           import json
           rows = json.load(open('${GITHUB_WORKSPACE}/gh-pages/search-index.json'))
           from collections import Counter
           c = Counter()
           for r in rows:
-              t = r[10] if len(r) > 10 else None
+              t = r[11] if len(r) > 11 else None
               c[t] += 1
           print('total rows:', len(rows))
           for t, n in c.most_common():
               print(f'  {t!r}: {n}')
           "
+            if [ "$i" -lt "$CYCLES" ]; then
+              echo "sleeping 300s so Steam rate-limit resets before next cycle..."
+              sleep 300
+            fi
+          done
 
       - name: Commit + push if changed
         working-directory: gh-pages
