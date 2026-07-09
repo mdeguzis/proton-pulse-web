@@ -23,15 +23,15 @@ permissions:
 
 jobs:
   notify:
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Notify Discord on failure
+      - name: Notify Discord
         uses: sarisia/actions-status-discord@v1
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK_BUILDS }}
-          status: failure
+          status: ${{ github.event.workflow_run.conclusion }}
           nofail: true
-          title: "${{ github.event.workflow_run.name }} failed"
+          title: "${{ github.event.workflow_run.name }} ${{ github.event.workflow_run.conclusion }}"
           description: "Branch `${{ github.event.workflow_run.head_branch }}` - [view run](${{ github.event.workflow_run.html_url }})\n_triggered by ${{ github.event.sender.login }}_"
           url: ${{ github.event.workflow_run.html_url }}
