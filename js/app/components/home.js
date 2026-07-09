@@ -481,6 +481,19 @@ export async function renderHomePage() {
 
     function applyRecentFilters() {
       const filtered = filterAdult(_filterByText(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), textFilter));
+      console.debug('[browse] applyRecentFilters filtered', {
+        source: 'applyRecentFilters',
+        allRecentReports: allRecentReports.length,
+        filtered: filtered.length,
+        librarySelSize: librarySel.size,
+        librarySelValues: [...librarySel],
+        libraryAppIdsSize: libraryAppIds ? libraryAppIds.size : null,
+        tierSelSize: tierSel.size,
+        sourceSelSize: sourceSel.size,
+        storeSelSize: storeSel.size,
+        textFilterLen: textFilter.length,
+        currentSort,
+      });
       const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
