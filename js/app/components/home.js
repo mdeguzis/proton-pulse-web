@@ -6,11 +6,13 @@ import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '.
 import { daysAgo, latestPerApp } from '../utils.js?v=c7e1268c';
 import { renderGameCard } from '../lib/card.js?v=5642a459';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
-import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=7c022a1e';
+import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=ec823ae7';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
 import { renderHomeLibraryChart } from './home-library-chart.js?v=c7e8a2d8';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
+import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
+import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';
 
 const LOAD_COUNT_KEY = 'pp:load-count';
 const LOAD_COUNTS = [50, 100, 150, 200];
@@ -48,6 +50,10 @@ function _sortReports(reports, sort) {
     copy.sort((a, b) =>
       ((b.protondbCount || 0) + (b.pulseCount || 0)) -
       ((a.protondbCount || 0) + (a.pulseCount || 0)));
+  } else if (sort === 'alpha') {
+    copy.sort((a, b) => String(a.title || '').localeCompare(String(b.title || ''), undefined, { sensitivity: 'base' }));
+  } else if (sort === 'alpha_desc') {
+    copy.sort((a, b) => String(b.title || '').localeCompare(String(a.title || ''), undefined, { sensitivity: 'base' }));
   }
   return copy;
 }
@@ -223,7 +229,23 @@ export async function renderHomePage() {
       unratedGames = all.filter(g => ['pending', 'catalog'].includes(String(g.rating || '').toLowerCase()));
     }
 
+    // When the profile "View my games" link deep-links here it lands with
+    // ?filter=mine. Detect that up front so the page can identify itself
+    // as "My Library" instead of the generic browse view. The filter pill
+    // itself is still activated below in _restoreFilters.
+    const _urlFilter = new URLSearchParams(window.location.search).get('filter');
+    const _isMyLibrary = _urlFilter === 'mine';
+    // The app.html shell owns a static "Game Reports" page-header. Hide it
+    // in library mode so the only visible title is our own "My Library"
+    // header injected below; otherwise the page shows two competing titles.
+    const _appPageHeader = document.querySelector('.main-inner > .page-header');
+    if (_appPageHeader) _appPageHeader.hidden = _isMyLibrary;
     el.innerHTML = `
+      ${_isMyLibrary ? `
+        <div class="home-page-header" id="home-page-header">
+          <div class="home-page-eyebrow">Your Steam library</div>
+          <h1 class="home-page-title">My Library</h1>
+        </div>` : ''}
       <div class="home-filter-bar">
         <div class="home-filter-left">
         <div class="filter-wrap" id="home-filter-wrap">
@@ -233,8 +255,8 @@ export async function renderHomePage() {
           </button>
           <div class="filter-panel filter-panel--stack" id="home-filter-panel">
             <div class="filter-item filter-item--mobile-only">
-              <label class="home-filter-label" for="home-text-filter-mobile">Filter loaded list</label>
-              <input id="home-text-filter-mobile" class="home-filter-text home-filter-text--in-panel" type="search" placeholder="Type to filter" autocomplete="off" />
+              <label class="home-filter-label" for="home-text-filter-mobile">Search titles</label>
+              <input id="home-text-filter-mobile" class="home-filter-text home-filter-text--in-panel" type="search" placeholder="Search all titles" autocomplete="off" />
             </div>
             <div class="filter-item">
               <label class="home-filter-label" for="home-sort-select">Sort</label>
@@ -243,6 +265,8 @@ export async function renderHomePage() {
                 <option value="best">Best Tier</option>
                 <option value="worst">Worst Tier</option>
                 <option value="count">Most Reported</option>
+                <option value="alpha">A-Z (Title)</option>
+                <option value="alpha_desc">Z-A (Title)</option>
               </select>
             </div>
             <div class="pg-filter-group" id="home-store-checks">
@@ -280,36 +304,47 @@ export async function renderHomePage() {
             </div>
           </div>
         </div>
-        <input id="home-text-filter" class="home-filter-text" type="search" placeholder="Filter loaded list" autocomplete="off" />
+        <div class="home-filter-text-wrap">
+          <input id="home-text-filter" class="home-filter-text" type="search" placeholder="Search all titles" autocomplete="off" />
+          <button id="home-text-filter-clear" class="home-filter-text-clear" type="button" aria-label="Clear search" hidden>&times;</button>
+        </div>
         </div>
         <div class="home-view-controls">
-          <div class="home-size-toggle" id="home-size-toggle" title="Card size">
-            <button class="home-size-btn" data-size="sm" type="button" title="Small cards">S</button>
-            <button class="home-size-btn" data-size="md" type="button" title="Medium cards">M</button>
-            <button class="home-size-btn" data-size="lg" type="button" title="Large cards">L</button>
-            <button class="home-size-btn home-size-btn--desktop-only" data-size="xl" type="button" title="Extra large cards">XL</button>
-          </div>
-          <div class="home-layout-toggle">
-            <button class="home-layout-btn" data-layout="list" title="List of horizontal cards">List</button>
-            <button class="home-layout-btn active" data-layout="grid" title="Grid of Steam-style tiles (default)">Grid</button>
+          <div class="home-view-controls-row">
+            <div class="home-size-toggle" id="home-size-toggle" title="Card size">
+              <button class="home-size-btn" data-size="sm" type="button" title="Small cards">S</button>
+              <button class="home-size-btn" data-size="md" type="button" title="Medium cards">M</button>
+              <button class="home-size-btn" data-size="lg" type="button" title="Large cards">L</button>
+              <button class="home-size-btn home-size-btn--desktop-only" data-size="xl" type="button" title="Extra large cards">XL</button>
+            </div>
+            <div class="home-layout-toggle">
+              <button class="home-layout-btn" data-layout="list" title="List of horizontal cards">List</button>
+              <button class="home-layout-btn active" data-layout="grid" title="Grid of Steam-style tiles (default)">Grid</button>
+            </div>
           </div>
         </div>
       </div>
       <div id="home-library-chart-mount"></div>
       <div id="recent-section">
         <div class="section-label-row" style="margin-bottom:10px">
-          <span class="section-label" style="margin:0">Recent Reports</span>
+          <span class="section-label" id="recent-section-label" style="margin:0">${_isMyLibrary ? 'My Library -- Recent Reports' : 'Recent Reports'}</span>
           <span class="section-count" id="recent-count"></span>
         </div>
+        <div class="page-nav" id="page-nav-recent" hidden></div>
         <div class="cards" id="cards-recent"></div>
+        <div class="page-nav page-nav--bottom" id="page-nav-recent-bottom" hidden></div>
         <div id="load-more-recent"></div>
       </div>
-      <div class="section-label-row" style="margin-top:24px;margin-bottom:10px">
-        <span class="section-label" id="popular-section-label" style="margin:0">Popular on Steam</span>
-        <span class="section-count" id="popular-count"></span>
-      </div>
-      <div class="cards" id="cards-popular"></div>
-      <div id="load-more-popular"></div>`;
+      <div id="popular-section">
+        <div class="section-label-row" style="margin-top:24px;margin-bottom:10px">
+          <span class="section-label" id="popular-section-label" style="margin:0">${_isMyLibrary ? 'My Library -- Popular' : 'Popular on Steam'}</span>
+          <span class="section-count" id="popular-count"></span>
+        </div>
+        <div class="page-nav" id="page-nav-popular" hidden></div>
+        <div class="cards" id="cards-popular"></div>
+        <div class="page-nav page-nav--bottom" id="page-nav-popular-bottom" hidden></div>
+        <div id="load-more-popular"></div>
+      </div>`;
 
     let currentSort = 'recent';
     let textFilter = '';       // title substring filter; '' => no text filtering
@@ -392,33 +427,32 @@ export async function renderHomePage() {
         if (loadMoreEl) loadMoreEl.innerHTML = '';
         return;
       }
-      let popularShown = pageSizeForFullRows(cardsEl, targetRowsForViewport());
+      let popularPage = 1;
+      let popularPageSize = pageSizeForFullRows(cardsEl, targetRowsForViewport());
       const renderPopular = () => {
-        // Recompute the row-target now that the grid layout is applied
-        // (initial value was set when the container wasn't yet display:
-        // grid so cols=1 and the size fell to the floor).
-        const popularTarget = pageSizeForFullRows(cardsEl, targetRowsForViewport());
-        if (popularShown < popularTarget) popularShown = popularTarget;
-        const shown = Math.min(popularShown, filtered.length);
-        cardsEl.innerHTML = filtered.slice(0, shown).map(_popularItemHtml).join('');
-        // hasMore=true trims trailing orphans so the last row stays flush; the
-        // trimmed tiles come back via the Load more click below.
-        padTileRows(cardsEl, { tileSelector: '.game-card', hasMore: filtered.length > shown });
-        const rendered = cardsEl.querySelectorAll(':scope .game-card:not(.tile-filler)').length;
+        popularPageSize = pageSizeForFullRows(cardsEl, targetRowsForViewport());
+        const totalPages = Math.max(1, Math.ceil(filtered.length / Math.max(1, popularPageSize)));
+        if (popularPage > totalPages) popularPage = totalPages;
+        if (popularPage < 1) popularPage = 1;
+        const start = (popularPage - 1) * popularPageSize;
+        const end = start + popularPageSize;
+        const windowRows = filtered.slice(start, end);
+        cardsEl.innerHTML = windowRows.map(_popularItemHtml).join('');
+        const isLastPage = popularPage >= totalPages;
+        padTileRows(cardsEl, { tileSelector: '.game-card', hasMore: !isLastPage });
         _updateShownCount('popular-count', cardsEl, filtered.length);
-        if (loadMoreEl) {
-          if (filtered.length > rendered) {
-            loadMoreEl.innerHTML = _loadMoreBtn('popular');
-            loadMoreEl.querySelector('button').addEventListener('click', () => {
-              popularShown = rendered + pageSizeForFullRows(cardsEl, targetRowsForViewport());
-              renderPopular();
-            });
-          } else {
-            loadMoreEl.innerHTML = _allShownNote(filtered.length);
-          }
-        }
+        _renderPageNavFor(['page-nav-popular', 'page-nav-popular-bottom'], popularPage, totalPages, (n) => {
+          if (n === popularPage) return;
+          popularPage = n;
+          renderPopular();
+        });
+        if (loadMoreEl) loadMoreEl.innerHTML = '';
       };
       renderPopular();
+      requestAnimationFrame(() => {
+        const nextSize = pageSizeForFullRows(cardsEl, targetRowsForViewport());
+        if (nextSize !== popularPageSize) renderPopular();
+      });
       watchTileRerender(cardsEl, renderPopular);
     }
 
@@ -434,49 +468,87 @@ export async function renderHomePage() {
       });
     }
 
-    // Show how many cards are currently loaded vs how many match the filters,
-    // e.g. "50 of 132". Reads the live card count so it stays right after
-    // load-more appends. Hidden when there is nothing to show.
+    // Section count next to the label, e.g. "50 of 714". Reads only real
+    // tiles (skipping fillers) so the number lines up with what the user
+    // sees. Hidden when there is nothing to show.
     function _updateShownCount(countId, cardsEl, total) {
       const c = document.getElementById(countId);
       if (!c) return;
-      c.textContent = total ? `${cardsEl.children.length} of ${total} loaded` : '';
+      const loaded = cardsEl ? cardsEl.querySelectorAll(':scope .game-card:not(.tile-filler)').length : 0;
+      c.textContent = total ? `${loaded} of ${total}` : '';
+    }
+    // Renders the numbered pagination into every id in `navIds`. Long lists
+    // (like a full library) mean users may finish reading tiles at the
+    // bottom of the grid, so we mirror the nav below the cards too --
+    // scrolling back up to hit the next-page arrow is friction.
+    function _renderPageNavFor(navIds, currentPage, totalPages, onJump) {
+      const ids = Array.isArray(navIds) ? navIds : [navIds];
+      const html = pageNavHtml(currentPage, totalPages);
+      for (const id of ids) {
+        const nav = document.getElementById(id);
+        if (!nav) continue;
+        nav.innerHTML = html;
+        nav.hidden = !html;
+        wirePageNav(nav, onJump);
+      }
     }
 
     function applyRecentFilters() {
       const filtered = filterAdult(_filterByText(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), textFilter));
+      console.debug('[browse] applyRecentFilters filtered', {
+        source: 'applyRecentFilters',
+        allRecentReports: allRecentReports.length,
+        filtered: filtered.length,
+        librarySelSize: librarySel.size,
+        librarySelValues: [...librarySel],
+        libraryAppIdsSize: libraryAppIds ? libraryAppIds.size : null,
+        tierSelSize: tierSel.size,
+        sourceSelSize: sourceSel.size,
+        storeSelSize: storeSel.size,
+        textFilterLen: textFilter.length,
+        currentSort,
+      });
       const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
       // Hide the whole recent section when empty so there's no blank state box.
       if (sectionEl) sectionEl.hidden = !filtered.length;
       if (!filtered.length) { if (cardsEl) cardsEl.innerHTML = ''; _updateShownCount('recent-count', cardsEl, 0); return; }
-      let recentShown = pageSizeForFullRows(cardsEl, targetRowsForViewport());
+      // Windowed pagination: page N shows tiles N*pageSize .. (N+1)*pageSize
+      // (traditional page turner -- clicking page N replaces the visible set
+      // instead of cumulatively adding more below). Load More is retired.
+      let recentPage = 1;
+      let recentPageSize = pageSizeForFullRows(cardsEl, targetRowsForViewport());
       const renderRecent = () => {
-        // Recompute the row-target now that the grid layout is applied
-        // (initial value can fall to the floor when cols hasn't resolved).
-        const recentTarget = pageSizeForFullRows(cardsEl, targetRowsForViewport());
-        if (recentShown < recentTarget) recentShown = recentTarget;
-        const shown = Math.min(recentShown, filtered.length);
-        cardsEl.innerHTML = filtered.slice(0, shown).map(_recentCardHtml).join('');
-        // hasMore=true trims trailing orphans so the last row stays flush; the
-        // trimmed tiles come back via the Load more click below.
-        padTileRows(cardsEl, { tileSelector: '.game-card', hasMore: filtered.length > shown });
-        const rendered = cardsEl.querySelectorAll(':scope .game-card:not(.tile-filler)').length;
+        recentPageSize = pageSizeForFullRows(cardsEl, targetRowsForViewport());
+        const totalPages = Math.max(1, Math.ceil(filtered.length / Math.max(1, recentPageSize)));
+        if (recentPage > totalPages) recentPage = totalPages;
+        if (recentPage < 1) recentPage = 1;
+        const start = (recentPage - 1) * recentPageSize;
+        const end = start + recentPageSize;
+        const windowRows = filtered.slice(start, end);
+        cardsEl.innerHTML = windowRows.map(_recentCardHtml).join('');
+        // hasMore=false on the last page (pad with fillers so the row stays
+        // aligned); true elsewhere (trim orphans so the row stays flush).
+        const isLastPage = recentPage >= totalPages;
+        padTileRows(cardsEl, { tileSelector: '.game-card', hasMore: !isLastPage });
         _updateShownCount('recent-count', cardsEl, filtered.length);
-        if (loadMoreEl) {
-          if (filtered.length > rendered) {
-            loadMoreEl.innerHTML = _loadMoreBtn('recent');
-            loadMoreEl.querySelector('button').addEventListener('click', () => {
-              recentShown = rendered + pageSizeForFullRows(cardsEl, targetRowsForViewport());
-              renderRecent();
-            });
-          } else {
-            loadMoreEl.innerHTML = _allShownNote(filtered.length);
-          }
-        }
+        _renderPageNavFor(['page-nav-recent', 'page-nav-recent-bottom'], recentPage, totalPages, (n) => {
+          if (n === recentPage) return;
+          recentPage = n;
+          renderRecent();
+        });
+        if (loadMoreEl) loadMoreEl.innerHTML = '';
       };
       renderRecent();
+      // Belt-and-suspenders: if the initial pageSize was computed before
+      // the grid finished laying out, the first render can ship a partial
+      // row. Re-run once on the next frame so the second read gets the
+      // resolved column count. No-op when the first render was already flush.
+      requestAnimationFrame(() => {
+        const nextSize = pageSizeForFullRows(cardsEl, targetRowsForViewport());
+        if (nextSize !== recentPageSize) renderRecent();
+      });
       watchTileRerender(cardsEl, renderRecent);
     }
 
@@ -492,14 +564,22 @@ export async function renderHomePage() {
     const _textInputs = ['home-text-filter', 'home-text-filter-mobile']
       .map(id => document.getElementById(id))
       .filter(Boolean);
+    const _clearBtn = document.getElementById('home-text-filter-clear');
+    const _syncClearBtn = (val) => {
+      if (_clearBtn) _clearBtn.hidden = !val;
+    };
     const _onTextInput = (val) => {
       textFilter = val;
       for (const inp of _textInputs) { if (inp.value !== val) inp.value = val; }
+      _syncClearBtn(val);
       updateFilterBadge();
       applyRecentFilters();
       applyPopularFilters();
       _saveFiltersIfEnabled();
     };
+    if (_clearBtn) {
+      _clearBtn.addEventListener('click', () => _onTextInput(''));
+    }
     for (const inp of _textInputs) {
       inp.addEventListener('input', e => _onTextInput(e.target.value));
     }
@@ -567,6 +647,8 @@ export async function renderHomePage() {
         const inp = document.getElementById(id);
         if (inp) inp.value = textFilter;
       }
+      const restoredClearBtn = document.getElementById('home-text-filter-clear');
+      if (restoredClearBtn) restoredClearBtn.hidden = !textFilter;
       tierSel = new Set(saved.tier || []);
       sourceSel = new Set(saved.source || []);
       storeSel = new Set(saved.store || []);
@@ -725,6 +807,34 @@ export async function renderHomePage() {
       _applyPillSelection(libraryGroup, ['mine']);
       libraryAppIds = await getMyLibraryAppIds().catch(() => new Set());
       updateFilterBadge();
+
+      // The default view is capped to recent-reports.json (~100 rows) and
+      // most_played.json (~50 rows). Intersecting that with a real Steam
+      // library dropped 200+ owned games to a handful. When ?filter=mine
+      // is active, synthesize a comprehensive library dataset from search-
+      // index so every owned game shows up -- and hide the Popular section
+      // because it would just repeat the same rows.
+      if (libraryAppIds && libraryAppIds.size > 0) {
+        const synth = synthesizeMyLibrary(libraryAppIds, allRecentReports, searchIndex);
+        allRecentReports = synth.rows;
+        console.debug('[my-library] synthesized library dataset', {
+          source: 'search-index+stubs',
+          fromRecentReports: synth.fromRecentReports,
+          fromSearchIndex: synth.fromSearchIndex,
+          bareStubs: synth.bareStubs,
+          libraryTotal: libraryAppIds.size,
+          rowTotal: allRecentReports.length,
+        });
+        // Hide the whole popular section (single wrapper covers header,
+        // grid, page-nav top/bottom, load-more) so any empty-state text
+        // its render might produce cannot leak into the library view.
+        const popularSectionEl = document.getElementById('popular-section');
+        if (popularSectionEl) popularSectionEl.style.display = 'none';
+        // Rename the visible section header to just "My Library" (no
+        // sub-heading) since it's the only section.
+        const recentLabel = document.getElementById('recent-section-label');
+        if (recentLabel) recentLabel.textContent = 'My Library';
+      }
     }
 
     applyRecentFilters();

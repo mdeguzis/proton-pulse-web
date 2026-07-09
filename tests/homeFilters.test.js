@@ -110,10 +110,13 @@ describe('home page popular section -- store-aware label and pool', () => {
 });
 
 describe('home page browse -- text filter box', () => {
-  test('text filter input placeholder makes clear it only filters the loaded list', () => {
+  test('text filter input placeholder makes clear it searches all titles', () => {
+    // Previous placeholder "Filter loaded list" sold the box short --
+    // with windowed pagination every title is in the filterable set, so
+    // typing narrows across every page not just the visible one.
     expect(homeSrc).toContain('id="home-text-filter"');
     expect(homeSrc).toContain('class="home-filter-text"');
-    expect(homeSrc).toContain('placeholder="Filter loaded list"');
+    expect(homeSrc).toContain('placeholder="Search all titles"');
   });
 
   test('text box lives in the bar (home-filter-left), outside the filter panel', () => {
@@ -237,14 +240,97 @@ describe('home page browse -- loaded count display', () => {
     expect(homeSrc).toContain('id="popular-count"');
   });
 
-  test('_updateShownCount shows loaded vs total and refreshes on load-more', () => {
+  test('_updateShownCount shows loaded vs total next to the section label', () => {
     expect(homeSrc).toContain('function _updateShownCount(countId, cardsEl, total)');
-    expect(homeSrc).toContain('`${cardsEl.children.length} of ${total} loaded`');
-    // called for both sections on render and on load-more append
+    // The single count next to the section label is the only place the
+    // total shows up now -- the extra "Showing N/N games" strip was
+    // dropped because it duplicated the same fact right below it.
+    expect(homeSrc).toContain('`${loaded} of ${total}`');
+    // Reads real tiles (skipping fillers) so the count matches what a
+    // reader can actually see and click.
+    expect(homeSrc).toContain(":not(.tile-filler)");
     const recent = homeSrc.match(/_updateShownCount\('recent-count'/g) || [];
     const popular = homeSrc.match(/_updateShownCount\('popular-count'/g) || [];
     expect(recent.length).toBeGreaterThanOrEqual(2);
     expect(popular.length).toBeGreaterThanOrEqual(2);
+  });
+
+  test('no separate "Showing" strip element or state', () => {
+    // Trying to keep two counters in sync gave contradictory totals
+    // (recent had library-owned rows, popular had different data). The
+    // section-count next to the label is the single source of truth now.
+    expect(homeSrc).not.toContain('home-result-count');
+    expect(homeSrc).not.toContain('_refreshResultCountStrip');
+    expect(homeSrc).not.toContain('_sectionCounts');
+  });
+});
+
+describe('home page browse -- windowed pagination (page turner)', () => {
+  test('renderRecent slices by page window, not cumulatively', () => {
+    // Page N shows tiles [(N-1)*size, N*size] -- clicking a page number
+    // REPLACES the visible set instead of appending more below. This is
+    // the "page turner" behaviour a numbered pagination is expected to
+    // deliver; the older cumulative model felt like a hidden Load More.
+    expect(homeSrc).toContain('const start = (recentPage - 1) * recentPageSize;');
+    expect(homeSrc).toContain('filtered.slice(start, end)');
+    // No Load More button on the recent section.
+    expect(homeSrc).not.toContain("_loadMoreBtn('recent')");
+  });
+
+  test('renderPopular slices by page window too', () => {
+    expect(homeSrc).toContain('const start = (popularPage - 1) * popularPageSize;');
+    expect(homeSrc).not.toContain("_loadMoreBtn('popular')");
+  });
+
+  test('page click ignores clicks on the already-active page', () => {
+    // No-op guard so a click on the current page number is truly a no-op.
+    expect(homeSrc).toContain('if (n === recentPage) return;');
+    expect(homeSrc).toContain('if (n === popularPage) return;');
+  });
+
+  test('page click does not scroll the viewport', () => {
+    // Page turn should keep the tiles in the same on-screen position -- the
+    // grid replaces in place. scrollIntoView threw the viewport around and
+    // felt like the browser was "jumping back" on every click.
+    expect(homeSrc).not.toContain('scrollIntoView');
+  });
+
+  test('page nav is mirrored below the grid, centered', () => {
+    // Long lists (a full library) mean the reader lands at the bottom of
+    // the grid before wanting to turn the page. A bottom mirror saves a
+    // scroll-back-up trip.
+    expect(homeSrc).toContain('id="page-nav-recent-bottom"');
+    expect(homeSrc).toContain('id="page-nav-popular-bottom"');
+    expect(homeSrc).toContain("_renderPageNavFor(['page-nav-recent', 'page-nav-recent-bottom']");
+    expect(homeSrc).toContain("_renderPageNavFor(['page-nav-popular', 'page-nav-popular-bottom']");
+  });
+});
+
+describe('home page browse -- text filter searches all titles', () => {
+  test('text filter runs before pagination, not against a page slice', () => {
+    // _filterByText receives the full sorted+filtered array; the caller
+    // then slices for the current page. So typing "cyber" narrows the
+    // 714-row dataset to matching titles across every page, not just the
+    // 50 visible tiles.
+    expect(homeSrc).toContain('_filterByText(_filterByLibrary(');
+    // Placeholder wording matches the actual behavior (previous text
+    // "Filter loaded list" implied only visible items).
+    expect(homeSrc).toContain('placeholder="Search all titles"');
+  });
+});
+
+describe('home page browse -- sort options', () => {
+  test('sort select carries A-Z and Z-A options', () => {
+    expect(homeSrc).toContain('<option value="alpha">A-Z (Title)</option>');
+    expect(homeSrc).toContain('<option value="alpha_desc">Z-A (Title)</option>');
+  });
+
+  test('_sortReports handles alpha and alpha_desc', () => {
+    expect(homeSrc).toContain("sort === 'alpha'");
+    expect(homeSrc).toContain("sort === 'alpha_desc'");
+    // Uses localeCompare with base sensitivity so Á == A and ordering is
+    // predictable across accented characters.
+    expect(homeSrc).toContain("sensitivity: 'base'");
   });
 });
 

@@ -189,14 +189,18 @@
 /* Text filter box: sits in the bar to the right of the Filters button (not in
    the dropdown). Wider on desktop, shorter on mobile. */
 .home-filter-left { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
+/* Text-filter wrap: relative-positioned host for the trailing clear (X)
+   button. Sits to the right of the search input and stays inside the
+   rounded border so the whole thing reads as one control. */
+.home-filter-text-wrap { position: relative; display: flex; flex: 1; min-width: 130px; }
 .home-filter-text {
   flex: 1;
-  min-width: 130px;
+  min-width: 0;
   box-sizing: border-box;
   background: var(--bg);
   border: 1px solid var(--border2);
   color: var(--text);
-  padding: 7px 12px;
+  padding: 7px 34px 7px 12px;
   font-size: 0.85rem;
   font-family: inherit;
   border-radius: 999px;
@@ -204,6 +208,24 @@
   transition: border-color .1s;
 }
 .home-filter-text:focus { border-color: var(--accent); }
+.home-filter-text-clear {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.home-filter-text-clear:hover { background: var(--s2); color: var(--text); }
+.home-filter-text-clear[hidden] { display: none; }
 
 /* The mobile copy of the text filter lives inside the FILTERS panel. On
    narrow screens the bar-mounted input would run into the S/M/L and
