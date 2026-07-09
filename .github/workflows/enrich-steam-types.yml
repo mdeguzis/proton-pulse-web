@@ -53,26 +53,31 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run enricher against gh-pages/search-index.json
+      - name: Run enricher + commit per cycle
         working-directory: repo
         env:
           CYCLES: ${{ github.event.inputs.cycles || '1' }}
+          GH_PAGES: ${{ github.workspace }}/gh-pages
         run: |
           # Loop N enrichment cycles inside one dispatch. Each cycle
-          # enriches up to PROBE_CAP (~200) apps, then we sleep for 5
-          # minutes so Steam's ~200-req/5min soft-throttle resets before
-          # the next cycle. Column indices: row[11] is where the type
-          # lands (steam_type.py writes to index 11 = 12th column).
+          # enriches up to PROBE_CAP (~200) apps, commits the delta to
+          # gh-pages IMMEDIATELY so a cancelled or timed-out run keeps
+          # the work already done, then sleeps 300s so Steam's
+          # ~200-req/5min soft-throttle resets before the next cycle.
+          cd "$GH_PAGES"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cd "$GITHUB_WORKSPACE/repo"
           for i in $(seq 1 "$CYCLES"); do
             echo "=== enrichment cycle $i of $CYCLES ==="
             python -c "
           from pathlib import Path
           from scripts.pipeline.steam_type import enrich_search_index_with_steam_type
-          enrich_search_index_with_steam_type(Path('${GITHUB_WORKSPACE}/gh-pages'))
+          enrich_search_index_with_steam_type(Path('${GH_PAGES}'))
           "
             python -c "
           import json
-          rows = json.load(open('${GITHUB_WORKSPACE}/gh-pages/search-index.json'))
+          rows = json.load(open('${GH_PAGES}/search-index.json'))
           from collections import Counter
           c = Counter()
           for r in rows:
@@ -82,23 +87,41 @@ jobs:
           for t, n in c.most_common():
               print(f'  {t!r}: {n}')
           "
+            # Commit + push this cycle's delta before sleeping.
+            (
+              cd "$GH_PAGES"
+              git add search-index.json steam-type-cache.json
+              if git diff --cached --quiet; then
+                echo "cycle $i: no change"
+              else
+                git commit -m "chore(enrich): cycle $i type-column refresh"
+                for j in 1 2 3; do
+                  if git pull --rebase origin gh-pages && git push origin gh-pages; then
+                    break
+                  fi
+                  echo "push race on cycle $i attempt $j"
+                  sleep 3
+                done
+              fi
+            )
             if [ "$i" -lt "$CYCLES" ]; then
               echo "sleeping 300s so Steam rate-limit resets before next cycle..."
               sleep 300
             fi
           done
 
-      - name: Commit + push if changed
+      - name: Final commit fallback
         working-directory: gh-pages
         run: |
+          # Safety net in case the per-cycle commit failed silently.
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add search-index.json steam-type-cache.json
+          git add search-index.json steam-type-cache.json 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "no change, skipping push"
+            echo "no straggler change, exiting clean"
             exit 0
           fi
-          git commit -m "chore(enrich): refresh Steam type column in search-index.json"
+          git commit -m "chore(enrich): final flush"
           # Rebase-then-push handles the edge-fn-health workflow racing us
           # on edge-status.json. A retry loop covers rare cases where
           # another push lands between our fetch and our push.
