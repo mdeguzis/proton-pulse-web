@@ -78,6 +78,14 @@
 [data-card-layout="combo"] .game-card-store-pill { display: none; }
 
 .game-card-corner-tag { display: none; }
+/* Only one store-badge variant shows at a time. In every position other
+   than the default 'art', hide the bottom-right .game-card-store-tag so
+   we don't paint two STEAM pills at once (was leaving a phantom pill at
+   the artwork's bottom-right corner in art-corner mode). */
+[data-store-pill-pos="art-corner"] .game-card-store-tag,
+[data-store-pill-pos="right"] .game-card-store-tag,
+[data-store-pill-pos="bar-inline"] .game-card-store-tag,
+[data-store-pill-pos="bar-segment"] .game-card-store-tag { display: none; }
 [data-store-pill-pos="art-corner"] .game-card-corner-tag {
   display: inline-flex;
   align-items: center;
@@ -157,29 +165,27 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1px 4px;
-  background: #14181f;
+  padding: 2px 5px;
+  background: #ffffff;
   border-radius: 3px;
-  color: #f0f2f6;
+  color: #14181f;
   line-height: 1;
-  /* Subtle inset highlight along the top edge + soft outer edge shadow
-     mimics the beveled ownership-decal look without going full skeuomorph. */
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.18),
     0 0 0 1px rgba(0, 0, 0, 0.35);
 }
 .game-card-owner-badge + .game-card-owner-badge { margin-left: 2px; }
 .game-card-owner-badge svg {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   display: block;
 }
-/* Gap between the badge cluster and the store text so the dark chips
+/* Gap between the badge cluster and the store text so the light chips
    read as separate decals rather than swallowed by the pill. */
-.game-card-owner-badge:last-of-type { margin-right: 4px; }
+.game-card-owner-badge:last-of-type { margin-right: 5px; }
 @media (min-width: 760px) {
-  .game-card-owner-badge svg { width: 14px; height: 14px; }
-  .game-card-owner-badge { padding: 2px 5px; }
+  .game-card-owner-badge svg { width: 18px; height: 18px; }
+  .game-card-owner-badge { padding: 3px 6px; }
 }
 /* Desktop: give the report rows more presence with a bigger boxart and
    roomier padding. Steam header ratio (~2.14:1) is preserved. */

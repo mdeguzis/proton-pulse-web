@@ -60,24 +60,17 @@
       <circle cx="5" cy="12" r="1.4" fill="currentColor" stroke="none"/>
       <circle cx="5" cy="18" r="1.4" fill="currentColor" stroke="none"/>
     </symbol>
-    <!-- Wishlist corner badge: list rows with a red heart overlaid.
-         Used on browse-card thumbnails when the user has the appid on
-         their Steam wishlist and the corner-owner-badges pref is on. -->
+    <!-- Wishlist corner badge: simple solid heart in Steam-store red on
+         a white chip, so the "wanted" signal reads at a glance. -->
     <symbol id="icon-wishlist-heart" viewBox="0 0 24 24">
-      <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="5" x2="13" y1="7" y2="7"/>
-        <line x1="5" x2="13" y1="12" y2="12"/>
-        <line x1="5" x2="10" y1="17" y2="17"/>
-      </g>
-      <path d="M17 11.3l-.68-.63a2.2 2.2 0 00-2.99 3.22L17 17.6l3.67-3.7a2.2 2.2 0 00-2.99-3.22L17 11.3z"
-            fill="#e0554f" stroke="#e0554f" stroke-width="0.8" stroke-linejoin="round"/>
+      <path d="M12 21s-8-4.9-8-11a5 5 0 019-3 5 5 0 019 3c0 6.1-8 11-8 11z"
+            fill="#e53935" stroke="none"/>
     </symbol>
-    <!-- Library corner badge: an open book. Pairs visually with the
-         wishlist heart-list so a "you own it / you want it" glance is
-         instant. -->
-    <symbol id="icon-book-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 5.5A1.5 1.5 0 014.5 4H10a2 2 0 012 2v13a1 1 0 00-1-1H4.5A1.5 1.5 0 013 16.5v-11z"/>
-      <path d="M21 5.5A1.5 1.5 0 0019.5 4H14a2 2 0 00-2 2v13a1 1 0 011-1h6.5a1.5 1.5 0 001.5-1.5v-11z"/>
+    <!-- Library corner badge: solid filled book, bold outline so it reads
+         from across the room. Solid white fill makes it pop on the dark
+         owner-badge chip. -->
+    <symbol id="icon-book-open" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <path d="M4 4h6a3 3 0 013 3v13a2 2 0 00-2-2H4V4zm16 0h-6a3 3 0 00-3 3v13a2 2 0 012-2h7V4z"/>
     </symbol>
     <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
