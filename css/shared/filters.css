@@ -161,11 +161,14 @@
 }
 .pg-filter-group-label {
   flex-basis: 100%;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--strong);
+  margin-top: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
 }
 .pg-filter {
   display: inline-flex;
@@ -186,11 +189,14 @@
   transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s;
 }
 .pg-filter:hover { border-color: var(--accent); color: var(--strong); }
+/* Active chip is flat -- solid accent fill, no glow. Earlier version had
+   a 12px accent-color halo (box-shadow) that made adjacent chips read as
+   one blurry blob instead of distinct selections. */
 .pg-filter--active {
   border-color: var(--accent);
   color: #0a0c10;
   background: var(--accent);
-  box-shadow: 0 0 0 1px var(--accent), 0 0 12px rgba(190,238,17,0.25);
+  box-shadow: none;
 }
 .pg-filter-count {
   display: inline-flex;
