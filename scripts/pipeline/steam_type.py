@@ -28,18 +28,23 @@ from pathlib import Path
 from .common import log
 
 STEAM_APPDETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={appid}&filters=basic"
-REQUEST_DELAY = 0.3
+# Steam's soft throttle is ~200 requests / 5 minutes -- so at least 1.5s
+# per request. At 0.3s we tripped the rolling-window ban within seconds
+# and every subsequent probe returned 403 until the whole cycle bailed.
+# 2.0s keeps us comfortably under the limit so each cycle finishes with
+# real cache writes instead of a wall of failures.
+REQUEST_DELAY = 2.0
 # Shared budget with the other appdetails-fetching modules (release_years,
-# game_images) -- Steam soft-throttles at ~200 req / 5 min. See the note
-# in release_years.py for the tradeoffs and the token-bucket follow-up
-# if this ever becomes a real problem.
+# game_images). Steam soft-throttles at ~200 req / 5 min. If we ever
+# want faster than the throttle, batched appids (#261) is the fix, not
+# reducing the delay here.
 PROBE_CAP = 200
-# Wall-clock budget for the whole enricher. When Steam is 403-flooding,
-# each request eats its 10-second HTTP timeout, so 200 requests could
-# take 30+ minutes and stall finalize (#258). Bail after this many
-# seconds regardless of how many apps are left, writing whatever cache
-# we have so far so re-runs pick up where we stopped.
-WALL_CLOCK_BUDGET_SEC = 240
+# Wall-clock budget for the whole enricher. At 2s per request, PROBE_CAP
+# = 200 apps takes about 400s of pure I/O, so 600s leaves headroom for
+# network jitter and the mid-cycle cache writes. Cycles that get stuck
+# on real API failures (transport errors, DNS drops) still bail out via
+# CONSECUTIVE_FAILURE_LIMIT below.
+WALL_CLOCK_BUDGET_SEC = 600
 # Give up if this many probes in a row fail. That is our proxy for
 # "Steam is currently rate-limiting or down"; retrying more will not
 # get better data and just burns the budget.
