@@ -86,16 +86,44 @@ describe('getMyWishlistAppIds', () => {
   });
 
   test('handles Supabase returning zero rows without crashing', async () => {
-    const fetchImpl = jest.fn().mockResolvedValue({
-      ok: true,
-      json: () => Promise.resolve([]),
-    });
+    // First read returns empty -> triggers sync -> second read still empty.
+    // We hand out three responses in sequence.
+    const responses = [
+      { ok: true, json: () => Promise.resolve([]) },                  // initial read: empty
+      { ok: true, text: () => Promise.resolve('{"item_count":0}') },  // sync call
+      { ok: true, json: () => Promise.resolve([]) },                  // re-read: still empty
+    ];
+    const fetchImpl = jest.fn().mockImplementation(() => Promise.resolve(responses.shift()));
     const { getMyWishlistAppIds } = loadWishlistModule({
       session: { access_token: 't' },
       fetchImpl,
     });
     const s = await getMyWishlistAppIds();
     expect(s.size).toBe(0);
+  });
+
+  test('triggers sync-steam-wishlist when the cached row is missing, then re-reads', async () => {
+    // Simulate the first-load flow: read empty -> POST sync -> re-read
+    // now returns the appids. Fixes the "click On wishlist and see
+    // nothing" bug: users had never synced before because there was no
+    // trigger anywhere.
+    const responses = [
+      { ok: true, json: () => Promise.resolve([]) },
+      { ok: true, text: () => Promise.resolve('{"ok":true,"item_count":3}') },
+      { ok: true, json: () => Promise.resolve([{ appids: [100, 200, 300] }]) },
+    ];
+    const fetchImpl = jest.fn().mockImplementation(() => Promise.resolve(responses.shift()));
+    const { getMyWishlistAppIds } = loadWishlistModule({
+      session: { access_token: 't' },
+      fetchImpl,
+    });
+    const s = await getMyWishlistAppIds();
+    expect([...s].sort((a, b) => a - b)).toEqual([100, 200, 300]);
+    // Assert the sync call actually happened, at the right URL.
+    const syncCall = fetchImpl.mock.calls[1];
+    expect(syncCall[0]).toContain('/functions/v1/sync-steam-wishlist');
+    expect(syncCall[1].method).toBe('POST');
+    expect(fetchImpl).toHaveBeenCalledTimes(3);
   });
 
   test('invalidateMyWishlistCache forces a re-fetch on the next call', async () => {
