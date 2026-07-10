@@ -252,13 +252,6 @@
   align-self: start;
   width: 100%;
   max-width: 100%;
-  /* Cap so a wide viewport does not scale a 460x215 header past its native
-     resolution (which shows blur / pixelation, especially on admin-uploaded
-     overrides that are exactly 460x215). `contain` keeps the natural aspect
-     without cropping -- the earlier `cover` fix clipped the art top/bottom. */
-  max-height: 240px;
-  object-fit: contain;
-  object-position: center top;
   height: auto;
   display: block;
   border: 1px solid var(--border);

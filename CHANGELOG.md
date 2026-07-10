@@ -2,6 +2,10 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.6.2
+
+- Fix: game page box art fills the full left column width at its native aspect ratio and top-aligns with the rating panel. Rolls back the 240px cap and `object-fit: contain` from v1.6.1, which shrank Steam-standard headers and left extra whitespace next to the panel.
+
 ## v1.6.1
 
 - Fix: game page box art no longer upscales past its native resolution or fills the full rating-panel height. `object-fit: contain` with a 240px cap preserves the aspect ratio without cropping. Follow-up to v1.6.0's aspect fix; the earlier change had left admin-uploaded overrides rendering blurry on wide viewports.
