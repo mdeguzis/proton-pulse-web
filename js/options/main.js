@@ -3,6 +3,7 @@
 // applied live here and honored site-wide by js/lib/topbar.js on every page.
 
 import { setShowAdult, pullShowAdult, readShowAdultLocal } from '../lib/user-prefs.js?v=7b5675ef';
+import { getPageSizePref, setPageSizePref, PAGE_SIZE_KEY } from '../lib/pagination-prefs.js?v=15d0747d';
 
 const MOTION_KEY = 'proton-pulse:motion';
 
@@ -21,7 +22,7 @@ function applyAnimations(on) {
   const svgs = document.querySelectorAll('svg');
   console.log('[options] applyAnimations: on=' + on + ' SVGs found=' + svgs.length + ' data-motion before=' + (document.documentElement.getAttribute('data-motion') || 'unset'));
   if (on) {
-    document.documentElement.removeAttribute('data-motion');
+    document.documentElement.setAttribute('data-motion', 'on');
     svgs.forEach((s) => { try { s.unpauseAnimations && s.unpauseAnimations(); } catch (e) { /* ignore */ } });
   } else {
     document.documentElement.setAttribute('data-motion', 'off');
@@ -252,12 +253,38 @@ if (loadCountGroup) {
   });
 }
 
+// Home library pagination: mobile/desktop tiles-per-page and auto-load.
+// All three fields live under one JSON key so the pref module can read
+// them coherently. Changes take effect on the next home render.
+const pageSizeMobile = document.getElementById('opt-page-size-mobile');
+const pageSizeDesktop = document.getElementById('opt-page-size-desktop');
+const pageSizeAutoLoad = document.getElementById('opt-page-size-auto-load');
+if (pageSizeMobile && pageSizeDesktop && pageSizeAutoLoad) {
+  const cur = getPageSizePref();
+  pageSizeMobile.value = String(cur.mobile);
+  pageSizeDesktop.value = String(cur.desktop);
+  pageSizeAutoLoad.checked = cur.autoLoad;
+  const commitMobile = () => {
+    const n = parseInt(pageSizeMobile.value, 10);
+    if (Number.isFinite(n) && n > 0) setPageSizePref({ mobile: n });
+  };
+  const commitDesktop = () => {
+    const n = parseInt(pageSizeDesktop.value, 10);
+    if (Number.isFinite(n) && n > 0) setPageSizePref({ desktop: n });
+  };
+  pageSizeMobile.addEventListener('change', commitMobile);
+  pageSizeDesktop.addEventListener('change', commitDesktop);
+  pageSizeAutoLoad.addEventListener('change', () => {
+    setPageSizePref({ autoLoad: pageSizeAutoLoad.checked });
+  });
+}
+
 // Reset to defaults: drop every browser-local preference key this page owns
 // then reload, so the controls and the page re-evaluate from system
 // defaults (OS reduced-motion, no card-layout attribute, etc).
 const resetBtn = document.getElementById('opt-reset');
 if (resetBtn) {
-  const RESET_KEYS = [MOTION_KEY, STORE_PILL_POS_KEY, STORE_DISPLAY_KEY, CARD_LAYOUT_KEY, GRID_LAYOUT_KEY, LOAD_COUNT_KEY];
+  const RESET_KEYS = [MOTION_KEY, STORE_PILL_POS_KEY, STORE_DISPLAY_KEY, CARD_LAYOUT_KEY, GRID_LAYOUT_KEY, LOAD_COUNT_KEY, PAGE_SIZE_KEY];
   resetBtn.addEventListener('click', () => {
     if (!confirm('Reset all site preferences on this device to their defaults?')) return;
     RESET_KEYS.forEach(k => localStorage.removeItem(k));

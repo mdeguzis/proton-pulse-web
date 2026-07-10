@@ -324,6 +324,12 @@ def run_steamcmd_app_info(app_id: int, timeout: int = 60) -> str:
 # --- Supabase upsert -------------------------------------------------------
 
 
+def _dry_run() -> bool:
+    """#218: honor DRY_RUN=true so a dispatched run can preview PICS output
+    without writing to steam_depot_updates / manifest_history / fetch_status."""
+    return os.environ.get("DRY_RUN", "").strip().lower() == "true"
+
+
 def _supabase_headers() -> dict:
     key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
     if not key:
@@ -358,6 +364,9 @@ def upsert_depot_rows(rows: Iterable[DepotRow]) -> int:
     ]
     if not payload:
         return 0
+    if _dry_run():
+        log(f"steam-metadata: dry-run, would upsert {len(payload)} depot rows: sample={payload[0]}")
+        return len(payload)
     url = f"{_supabase_base()}/steam_depot_updates?on_conflict=app_id,depot_id,os"
     req = urllib.request.Request(
         url, data=json.dumps(payload).encode(), method="POST",
@@ -394,6 +403,9 @@ def upsert_manifest_history_rows(rows: Iterable[DepotRow]) -> int:
     ]
     if not payload:
         return 0
+    if _dry_run():
+        log(f"steam-metadata: dry-run, would upsert {len(payload)} manifest history rows")
+        return len(payload)
     # on_conflict specifies our composite PK. Prefer: merge-duplicates means
     # existing rows keep first_observed_at (never overwritten) and only
     # latest_observed_at is bumped -- exactly the shape we want. The
@@ -407,14 +419,32 @@ def upsert_manifest_history_rows(rows: Iterable[DepotRow]) -> int:
     return len(payload)
 
 
-def upsert_fetch_status(app_id: int, status: str, depot_count: int, error: str | None = None) -> None:
-    url = f"{_supabase_base()}/steam_depot_fetch_status?on_conflict=app_id"
-    payload = [{
+def upsert_fetch_status(
+    app_id: int,
+    status: str,
+    depot_count: int,
+    error: str | None = None,
+    raw_pics: dict | None = None,
+) -> None:
+    """Upsert the per-app fetch status row.
+
+    #237: `raw_pics` is the full parsed depots dict from PICS. Persisting it
+    verbatim lets downstream stages (write_depot_files.py) surface every
+    field steamcmd emitted without a second PICS round-trip.
+    """
+    row: dict = {
         "app_id":      app_id,
         "app_status":  status,
         "depot_count": depot_count,
         "error":       error,
-    }]
+    }
+    if raw_pics is not None:
+        row["raw_pics"] = raw_pics
+    payload = [row]
+    if _dry_run():
+        log(f"steam-metadata: dry-run, would upsert fetch_status={row}")
+        return
+    url = f"{_supabase_base()}/steam_depot_fetch_status?on_conflict=app_id"
     req = urllib.request.Request(
         url, data=json.dumps(payload).encode(), method="POST",
         headers=_supabase_headers(),
@@ -469,19 +499,25 @@ def fetch_and_store(app_id: int, sleep_between: float = 3.0) -> tuple[str, int]:
             except (TypeError, ValueError):
                 sample_json = str(sample)[:1500]
             log(f"steam-metadata: app={app_id} sample_depot={first_num_key} shape={sample_json}")
-        upsert_fetch_status(app_id, "no_public_manifest", 0, "parsed appinfo but no OS-bound depot rows")
+        # #237: even when we could not extract OS-bound rows, keep the raw
+        # depots dict so we can inspect what PICS returned via the on-disk
+        # depots.json without a re-fetch.
+        upsert_fetch_status(app_id, "no_public_manifest", 0, "parsed appinfo but no OS-bound depot rows", raw_pics=parsed.get("depots"))
         return "no_public_manifest", 0
     n = upsert_depot_rows(rows)
-    # Feed the same rows into the manifest observation history so per-OS
-    # First seen / Last update become real dates. Failures here should
-    # NOT flip the status to error -- the primary depot_updates write is
-    # already durable; history is a strict enhancement. Log + continue.
+    # #226: feed the same rows into the manifest observation history so per-OS
+    # tracked_since / Last update become real dates. Failures here should NOT
+    # flip the status to error -- the primary depot_updates write is already
+    # durable; history is a strict enhancement. Log + continue.
     try:
         h = upsert_manifest_history_rows(rows)
         log(f"steam-metadata: app={app_id} history rows upserted={h} source=depot-history")
     except Exception as e:
         log(f"steam-metadata: app={app_id} history upsert failed error={e}")
-    upsert_fetch_status(app_id, "ok", n, None)
+    # #237: persist the full parsed depots dict alongside the status. Everything
+    # steamcmd emitted (config.oslist, manifests.public.*, branches, sharedinstall,
+    # dlc_appids, ...) lands as a single JSONB blob for downstream consumers.
+    upsert_fetch_status(app_id, "ok", n, None, raw_pics=parsed.get("depots"))
     log(f"steam-metadata: app={app_id} rows={n} source=steamcmd-pics")
     return "ok", n
 

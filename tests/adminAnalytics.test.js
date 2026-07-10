@@ -178,6 +178,18 @@ describe('renderAnalytics', () => {
     // performance is undefined in the vm context -> stats are empty -> empty state shown
     expect(store.html).toContain('No image transfers observed yet this session');
   });
+
+  test('Most viewed games link is relative so it works on the staged subpath', () => {
+    // A leading-slash `/app.html` resolves to the domain root and breaks the
+    // staging preview which lives under /proton-pulse-web-staging/. The
+    // relative form works on both prod and staging.
+    ctx.renderAnalytics({
+      ...sampleData,
+      top_games: [{ app_id: '12345', title: 'Test Game', views: 42 }],
+    }, { daysBack: 30, onChangeDays: noop });
+    expect(store.html).toContain('href="app.html#/app/12345"');
+    expect(store.html).not.toContain('href="/app.html');
+  });
 });
 
 // ── renderUserDetail ─────────────────────────────────────────────────────────

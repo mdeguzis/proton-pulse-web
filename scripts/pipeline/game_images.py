@@ -451,7 +451,20 @@ def build_game_images(output_dir) -> dict[str, str]:
     today = date.today().isoformat()
     backlog_probed = 0
 
+    # Wall-clock budget so a Steam 403-flood does not stall the whole finalize
+    # step (#258). Same defense as steam_type + release_years. game_images
+    # writes its cache and returns partial results instead of hanging.
+    WALL_CLOCK_BUDGET_SEC = 600
+    deadline = time.monotonic() + WALL_CLOCK_BUDGET_SEC
+    # Save cache periodically so a bail (SIGTERM, timeout) does not lose the
+    # probes we already ran. Saves are cheap since the cache is small JSON.
+    CACHE_SAVE_EVERY = 50
+    saved_at = 0
+
     for app_id in hot_to_probe + backlog_to_probe:
+        if time.monotonic() > deadline:
+            log(f"[game-images] wall-clock budget {WALL_CLOCK_BUDGET_SEC}s exhausted, deferring rest")
+            break
         is_backlog = app_id not in hot_set
         if is_backlog:
             if backlog_probed >= PROBE_CAP:
@@ -502,6 +515,10 @@ def build_game_images(output_dir) -> dict[str, str]:
                 else:
                     cache[app_id] = {"status": "missing", "probed_at": today}
                     log(f"[game-images] {app_id}: no image found (status={status})")
+        # Persist mid-run so a bail keeps the work we already did.
+        if len(cache) - saved_at >= CACHE_SAVE_EVERY:
+            cache_path.write_text(json.dumps(cache, indent=2) + "\n", encoding="utf-8")
+            saved_at = len(cache)
         time.sleep(REQUEST_DELAY)
 
     cache_path.write_text(json.dumps(cache, indent=2) + "\n", encoding="utf-8")

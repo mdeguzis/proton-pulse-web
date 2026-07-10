@@ -12,8 +12,8 @@ on:
         description: "Scan rows updated within this many hours (default: 5 for scheduled, 25 for manual)"
         required: false
         default: "5"
-      app_id:
-        description: "Restrict scan to a single Steam app ID (leave blank for all)"
+      app_ids:
+        description: "Restrict scan to a comma-separated list of Steam app IDs (leave blank for all)"
         required: false
         default: ""
       dry_run:
@@ -21,6 +21,11 @@ on:
         required: false
         default: false
         type: boolean
+      # Standardized input (#218): back-comment the run summary on an issue.
+      issue_id:
+        description: "GitHub issue to comment run summary back on (leave blank to skip)"
+        required: false
+        default: ""
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -29,6 +34,9 @@ jobs:
   moderate:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
+    permissions:
+      contents: read
+      issues: write
 
     steps:
       - name: Checkout
@@ -61,6 +69,18 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           LOOKBACK_HOURS: ${{ steps.lookback.outputs.hours }}
-          APP_ID: ${{ inputs.app_id || '' }}
+          # APP_IDS is comma-separated. Legacy scripts read APP_ID (singular);
+          # the moderation script now honors both -- prefer APP_IDS when set.
+          APP_IDS: ${{ inputs.app_ids || '' }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/moderate-content.mjs
+
+      - name: Back-comment run summary on issue
+        if: always()
+        uses: ./.github/actions/back-comment-run
+        with:
+          issue_id: ${{ inputs.issue_id }}
+          status: ${{ job.status }}
+          workflow_name: content-moderation
+          app_ids: ${{ inputs.app_ids }}
+          dry_run: ${{ inputs.dry_run }}

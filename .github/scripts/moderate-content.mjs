@@ -11,7 +11,8 @@
  * Optional env vars:
  *   OPENAI_API_KEY  - enables semantic layer; wordlist-only if absent
  *   LOOKBACK_HOURS  - scan window in hours (default: 5)
- *   APP_ID          - restrict to a single Steam app ID
+ *   APP_IDS         - restrict to a comma-separated list of Steam app IDs (#218 standard)
+ *   APP_ID          - legacy singular alias for APP_IDS; still honored for backcompat
  *   DRY_RUN         - "true" to log without writing to Supabase
  */
 
@@ -19,7 +20,10 @@ const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const OPENAI_KEY   = process.env.OPENAI_API_KEY;
 const LOOKBACK_H   = parseInt(process.env.LOOKBACK_HOURS ?? '5', 10);
-const APP_ID       = process.env.APP_ID ?? '';
+// #218: standard env is APP_IDS (comma-separated). Fall back to the legacy
+// APP_ID (singular) so an old dispatch from a saved link keeps working.
+const APP_IDS      = (process.env.APP_IDS || process.env.APP_ID || '')
+  .split(',').map((s) => s.trim()).filter(Boolean);
 const DRY_RUN      = process.env.DRY_RUN === 'true';
 
 if (!SUPABASE_URL || !SUPABASE_KEY) {
@@ -207,7 +211,9 @@ async function fetchRecentRows() {
     + `&or=(created_at.gte.${since},updated_at.gte.${since})`
     + `&is_hidden=eq.false`
     + `&order=id.asc`
-    + (APP_ID ? `&app_id=eq.${APP_ID}` : '');
+    + (APP_IDS.length === 1 ? `&app_id=eq.${encodeURIComponent(APP_IDS[0])}`
+       : APP_IDS.length > 1 ? `&app_id=in.(${APP_IDS.map(encodeURIComponent).join(',')})`
+       : '');
 
   log(`Supabase fetch request`, { url: url.replace(SUPABASE_URL, '<SUPABASE_URL>'), since });
 
@@ -274,7 +280,7 @@ function extractTextFields(row) {
 async function main() {
   log(`Moderation scan starting`, {
     lookbackHours: LOOKBACK_H,
-    appId: APP_ID || 'all',
+    appIds: APP_IDS.length ? APP_IDS : 'all',
     dryRun: DRY_RUN,
     openai: !!OPENAI_KEY,
   });
@@ -361,7 +367,7 @@ async function main() {
       `| Rows scanned | ${scanned} |`,
       `| Rows flagged | ${flaggedCount} |`,
       `| Lookback | ${LOOKBACK_H}h |`,
-      `| App ID filter | ${APP_ID || 'all'} |`,
+      `| App ID filter | ${APP_IDS.length ? APP_IDS.join(', ') : 'all'} |`,
       `| Dry run | ${DRY_RUN} |`,
       `| Layers | wordlist${OPENAI_KEY ? ' + openai' : ' only'} |`,
     ];

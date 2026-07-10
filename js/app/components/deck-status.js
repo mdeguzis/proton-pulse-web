@@ -90,5 +90,18 @@ export function isSteamDeckHardware(r) {
   return _DECK_LCD_RE.test(haystack) || _DECK_OLED_RE.test(haystack);
 }
 
+// Steam Machine detection (#255 Phase 2). Valve's late-2025 SFF SteamOS box.
+// Hardware signatures are not confirmed until devices are in reviewers' hands
+// so the regex is intentionally empty for now -- Phase 2 will fill it in with
+// the real APU / GPU strings. Keeping the API shape stable so callers do not
+// have to change once detection lights up. The web-source dropdown in the
+// submit form also flags Steam Machine explicitly, and that string surfaces
+// here as a fallback detection channel.
+export const _MACHINE_APU_RE = /\bsteam[\s_-]*machine\b/i;
+export function isSteamMachineHardware(r) {
+  const haystack = `${r.cpu || ''} ${r.gpu || ''} ${r.webSource || ''}`;
+  return _MACHINE_APU_RE.test(haystack);
+}
+
 // SVG path data for each signal icon. Drawn at 24x24 viewBox. Currentcolor
 // fills/strokes so we don't have to define per-icon color.

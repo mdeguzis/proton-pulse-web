@@ -1,6 +1,6 @@
 // signals (components) for the app page. Relocated from app.js.
 
-import { isSteamDeckHardware } from './deck-status.js?v=a1a075ee';
+import { isSteamDeckHardware, isSteamMachineHardware } from './deck-status.js?v=c223a42e';
 
 export const SIGNAL_ICON_SVG = {
   install: '<path fill="currentColor" d="M5 20h14v-2H5v2zm7-2 5-5h-3V4h-4v9H7l5 5z"/>',
@@ -13,6 +13,10 @@ export const SIGNAL_ICON_SVG = {
   // Steam Deck wordmark glyph (the iconic "D" - solid dot + half-arc). Mirrors
   // the official Deck logo, not a generic gamepad
   deck:    '<circle cx="8" cy="12" r="3.6" fill="currentColor"/><path d="M13 5.4 a7.5 7.5 0 0 1 0 13.2" stroke="currentColor" stroke-width="2.8" fill="none" stroke-linecap="round"/>',
+  // Steam Machine cube (Valve's late 2025 small-form-factor SteamOS box).
+  // Traced from the launch photo: a squared body with a thin port-strip
+  // base and a power-dot on the right (#255).
+  machine: '<rect x="4" y="4" width="16" height="12" rx="1.2" fill="currentColor"/><rect x="4" y="17.5" width="13" height="2" rx="1" fill="currentColor"/><circle cx="18.5" cy="18.5" r="1.1" fill="currentColor"/>',
   owns:    '<path fill="currentColor" d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/>',
   framegen:'<path fill="currentColor" d="M7 21h2v-6H7v6zm4 0h2V9h-2v12zm4 0h2v-9h-2v9zM5 3v18h2V5h12V3H5z"/>',
 };
@@ -26,6 +30,7 @@ const SIGNAL_DESC = {
   oob:       'Did the game work without any tweaks or custom launch options?',
   tinker:    'Were launch options or workarounds needed to get it running?',
   deck:      'Was this report submitted from a Steam Deck?',
+  machine:   'Was this report submitted from a Steam Machine?',
   owns:      'Did the reporter confirm they own this game on Steam?',
   framegen:  'Was frame generation required for smooth gameplay?',
 };
@@ -57,6 +62,7 @@ export function renderSignalIcon(iconKey, value, label, opts = {}) {
 export function renderSignalStrip(r) {
   const fr = r.formResponses || {};
   const isDeck = isSteamDeckHardware(r);
+  const isMachine = isSteamMachineHardware(r);
   // For tinker indicator: verdictOob='no' means user said "did not work out
   // of the box without tweaks" - which equates to "tinker required". So we
   // remap the value: 'no' -> "Yes, required" (amber state) and 'yes' -> "No
@@ -68,6 +74,7 @@ export function renderSignalStrip(r) {
   // fields. Synthesize a 'yes'/null value so the same renderer works
   const ownsValue = r.gameOwned ? 'yes' : null;
   const deckValue = isDeck ? 'yes' : null;
+  const machineValue = isMachine ? 'yes' : null;
 
   // Form-response signals get "Responses not available" when null since the
   // question was never asked/answered. Hardware-detected signals (Deck, Owns)
@@ -87,6 +94,8 @@ export function renderSignalStrip(r) {
     renderSignalIcon('tinker',  tinkerValue,   'Tinker required',
       { positiveState: 'warn', negativeState: 'good', neutralLabel: formNeutral }),
     renderSignalIcon('deck',    deckValue,     'Steam Deck',
+      { positiveState: 'info', neutralLabel: 'Not detected' }),
+    renderSignalIcon('machine', machineValue,  'Steam Machine',
       { positiveState: 'info', neutralLabel: 'Not detected' }),
     renderSignalIcon('owns',    ownsValue,     'Reporter owns the game',
       { positiveState: 'info',

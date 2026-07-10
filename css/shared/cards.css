@@ -6,17 +6,14 @@
   display: flex;
   flex-direction: column;
   background: var(--s1);
-  border: 0;
-  box-shadow: 0 0 0 1px var(--border);
+  border: 1px solid var(--border2, #2a3a4a);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
   border-radius: 10px;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   transition: box-shadow 0.15s, background 0.15s, transform 0.05s;
-  /* position:relative anchors the .game-card-corner-tag's absolute box to
-     the card itself (not the row or thumbnail), so it can sit at the top
-     right edge of the entire card under the 'art-corner' placement. */
   position: relative;
 }
 /* Filler placeholder for tile-mode grids. JS in js/lib/tile-pad.js
@@ -115,7 +112,7 @@
 .game-card:focus-visible *,
 .game-card:active,
 .game-card:active * { text-decoration: none; }
-.game-card:hover { box-shadow: 0 0 0 1px var(--accent); }
+.game-card:hover { border-color: var(--accent); box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35); }
 .game-card:active { transform: translateY(1px); }
 .game-card-thumb-wrap {
   position: relative;
@@ -345,7 +342,7 @@
    NOTE: css/app/home.css and css/app/reports.css still carry duplicate copies
    of these rules for now; they are being consolidated here and the app-side
    copies can be dropped once both grids are verified. */
-.cards { display: flex; flex-direction: column; gap: 12px; }
+.cards { display: flex; flex-direction: column; gap: 16px; }
 .cards--sm .game-card-thumb { width: 100px; height: 47px; }
 .cards--md .game-card-thumb { width: 138px; height: 64px; }
 .cards--lg .game-card-thumb { width: 200px; height: 93px; }
@@ -387,7 +384,7 @@
 .home-cards-tile-mode {
   display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 12px;
+  gap: 16px;
   align-items: stretch;
 }
 .home-cards-tile-mode.cards--sm { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
@@ -615,6 +612,38 @@
 @media (max-width: 480px) {
   .pp-toast-container { right: 10px; left: 10px; bottom: 10px; max-width: none; }
 }
+
+/* Type tag on the thumbnail (#251). Small pill in the top-left corner
+   that names the Steam appdetails type (DLC / MOD / SOFTWARE / VIDEO /
+   ...). Only rendered when the type is a non-game category so the vast
+   majority of cards stay uncluttered. data-type drives per-type color
+   so DLC vs mod vs software read differently at a glance. */
+.game-card-type-tag {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #0a0c10;
+  background: #b0b0b0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  pointer-events: none;
+  z-index: 3;
+}
+.game-card-type-tag[data-type="dlc"]      { background: #b479db; color: #0a0c10; }
+.game-card-type-tag[data-type="mod"]      { background: #4ec9b0; color: #0a0c10; }
+.game-card-type-tag[data-type="demo"]     { background: #90ba3c; color: #0a0c10; }
+.game-card-type-tag[data-type="software"] { background: #d1a25d; color: #0a0c10; }
+.game-card-type-tag[data-type="video"],
+.game-card-type-tag[data-type="movie"],
+.game-card-type-tag[data-type="series"],
+.game-card-type-tag[data-type="episode"]  { background: #556577; color: #f0f2f5; }
+.game-card-type-tag[data-type="music"]    { background: #b95bab; color: #0a0c10; }
+.game-card-type-tag[data-type="hardware"] { background: #808891; color: #0a0c10; }
 
 /* Demo corner stripe on game cards (#199 follow-up). Mirrors Steam Next Fest:
    diagonal green ribbon in the top-left corner of the thumbnail. */

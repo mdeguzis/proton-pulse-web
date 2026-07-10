@@ -151,3 +151,58 @@ describe('renderGameCard trend arrow', () => {
     expect(trendIdx).toBeGreaterThan(storeIdx);
   });
 });
+
+describe('renderGameCard Steam type tag (#251)', () => {
+  const renderGameCard = loadCard();
+
+  test('steamType "game" renders no type tag (majority stays uncluttered)', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', steamType: 'game' });
+    expect(html).not.toContain('game-card-type-tag');
+  });
+
+  test('missing steamType renders no type tag', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '' });
+    expect(html).not.toContain('game-card-type-tag');
+  });
+
+  test('dlc type renders DLC tag with data-type="dlc"', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'Some DLC', sub: '', steamType: 'dlc' });
+    expect(html).toContain('game-card-type-tag');
+    expect(html).toContain('data-type="dlc"');
+    expect(html).toContain('>DLC<');
+  });
+
+  test('mod type renders MOD tag with data-type="mod"', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'A Mod', sub: '', steamType: 'mod' });
+    expect(html).toContain('game-card-type-tag');
+    expect(html).toContain('data-type="mod"');
+    expect(html).toContain('>MOD<');
+  });
+
+  test('software type renders SOFTWARE tag', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'Wallpaper Engine', sub: '', steamType: 'software' });
+    expect(html).toContain('data-type="software"');
+    expect(html).toContain('>SOFTWARE<');
+  });
+
+  test('demo type uses the diagonal DEMO stripe, NOT the type-tag pill', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'Some App', sub: '', steamType: 'demo' });
+    expect(html).toContain('game-card-demo-stripe');
+    expect(html).not.toContain('game-card-type-tag');
+  });
+
+  test('title-based demo detection still fires when steamType is absent', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'Portal Demo', sub: '' });
+    expect(html).toContain('game-card-demo-stripe');
+    expect(html).not.toContain('game-card-type-tag');
+  });
+
+  test('type tag lives inside the thumb-wrap so CSS can position it over the artwork', () => {
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'Some DLC', sub: '', steamType: 'dlc' });
+    const wrapStart = html.indexOf('game-card-thumb-wrap');
+    const wrapEnd = html.indexOf('</div>', wrapStart);
+    const tagIdx = html.indexOf('game-card-type-tag');
+    expect(tagIdx).toBeGreaterThan(wrapStart);
+    expect(tagIdx).toBeLessThan(wrapEnd);
+  });
+});

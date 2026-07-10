@@ -221,6 +221,10 @@
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg>
             <span>Reports</span>
           </a>
+          <a href="app.html?filter=mine" data-page="my-library" id="nav-my-library">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg>
+            <span>My Library</span>
+          </a>
           <a href="data-index.html" data-page="data-index">
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg>
             <span>Data</span>
@@ -255,7 +259,7 @@
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg>
             <span>Contact</span>
           </a>
-          <a href="https://discord.gg/4p6e4X7xW" target="_blank" rel="noopener" title="Join the Proton Pulse Discord">
+          <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener" title="Join the Proton Pulse Discord">
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg>
             <span>Discord</span>
           </a>
@@ -264,6 +268,12 @@
       <!-- Admin link: hidden until checkIsAdmin confirms the signed-in user is an admin -->
       <a href="admin.html" id="topbar-admin-link" class="auth-admin-navlink" hidden>
         <span>Admin</span>
+      </a>
+      <!-- Site status: live health of the edge functions the site depends on.
+           Sits just before About so the About link stays the trailing item. -->
+      <a href="status.html" data-page="status" id="topbar-status-link" title="Live health of the Supabase edge functions">
+        <span class="topbar-status-dot" data-state="unknown" aria-hidden="true"></span>
+        <span>Status</span>
       </a>
       <!-- About: kept last in nav order so it sits at the trailing edge
            regardless of whether the admin link is visible. -->
@@ -301,8 +311,9 @@
   <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
   <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> Decky Plugin</a>
   <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-github"/></svg> GitHub</a>
-  <a href="https://discord.gg/4p6e4X7xW" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg> Discord</a>
+  <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg> Discord</a>
   <a href="admin.html" id="mobile-admin-link" data-page="admin" hidden><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Admin</a>
+  <a href="status.html" data-page="status" id="mobile-status-link"><span class="topbar-status-dot" data-state="unknown" aria-hidden="true"></span> Status</a>
   <!-- About kept last so it remains the trailing item whether the
        admin link is visible or not. -->
   <a href="about.html" data-page="about"><svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg> About</a>
@@ -382,7 +393,8 @@
     if (disabled) {
       document.documentElement.setAttribute('data-motion', 'off');
       pauseSmilAnimations();
-      console.log('[topbar] initMotion: set data-motion=off, html attr now:', document.documentElement.getAttribute('data-motion'));
+    } else if (stored === 'on') {
+      document.documentElement.setAttribute('data-motion', 'on');
     }
   }
 
@@ -512,6 +524,44 @@
     wireNavOverflow();
     wireThemeToggle();
     wireDropdowns();
+    wireStatusDot();
+  }
+
+  // ---- Site status dot on the topbar (see #254) ------------------------
+  //
+  // Fetches edge-status.json (published every 15 min by
+  // .github/workflows/edge-fn-health.yml) and colors the small dot inside
+  // the Status nav link so users see at a glance whether anything is
+  // degraded before they click through. Cached in sessionStorage for a
+  // minute so hopping across pages does not re-fetch every time.
+  function wireStatusDot() {
+    var dots = document.querySelectorAll('.topbar-status-dot');
+    if (!dots.length) return;
+    var apply = function (state) {
+      dots.forEach(function (d) { d.setAttribute('data-state', state); });
+    };
+    var cachedRaw = null;
+    try { cachedRaw = sessionStorage.getItem('pp-edge-status'); } catch (e) { /* ignore */ }
+    if (cachedRaw) {
+      try {
+        var cached = JSON.parse(cachedRaw);
+        if (cached && cached.overall && (Date.now() - (cached.ts || 0)) < 60 * 1000) {
+          apply(cached.overall);
+          return;
+        }
+      } catch (e) { /* ignore */ }
+    }
+    fetch('edge-status.json', { cache: 'no-store' })
+      .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+      .then(function (payload) {
+        var overall = payload && payload.overall ? payload.overall : 'unknown';
+        apply(overall);
+        try { sessionStorage.setItem('pp-edge-status', JSON.stringify({ overall: overall, ts: Date.now() })); } catch (e) { /* ignore */ }
+      })
+      .catch(function (err) {
+        console.debug('[topbar] edge-status.json fetch failed', { error: String(err), source: 'wireStatusDot' });
+        apply('unknown');
+      });
   }
 
   // ---- 3. Active link based on current page ----------------------------
@@ -994,6 +1044,7 @@
           if (mobileLink) mobileLink.hidden = !admin;
           if (admin && _reflowOverflow) _reflowOverflow();
         });
+
       } else {
         if (signedOut) signedOut.hidden = false;
         if (signedIn)  signedIn.hidden  = true;
@@ -1013,7 +1064,30 @@
     inject();
   }
 
-  // ---- 8. Service worker (cache-first image cache) --------------------
+  // ---- 8. Auto-hide topbar on scroll (Steam store style) ---------------
+  // After scrolling past 15% of the viewport, the topbar slides up out of
+  // view. Scrolling back up reveals it again.
+  (function initScrollHide() {
+    var lastY = 0;
+    var hidden = false;
+    var threshold = window.innerHeight * 0.15;
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      var topbar = document.querySelector('.topbar');
+      if (!topbar) return;
+      if (y > threshold && y > lastY && !hidden) {
+        topbar.style.transform = 'translateY(-100%)';
+        topbar.style.transition = 'transform 0.3s ease';
+        hidden = true;
+      } else if (y < lastY && hidden) {
+        topbar.style.transform = 'translateY(0)';
+        hidden = false;
+      }
+      lastY = y;
+    }, { passive: true });
+  })();
+
+  // ---- 9. Service worker (cache-first image cache) --------------------
   // Registered from a plain script tag (no build step). sw.js resolves relative
   // to the page, so it works at the prod root and under the /proton-pulse-web*
   // staging subpath alike. Only caches cover images; see sw.js.

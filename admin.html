@@ -9,10 +9,10 @@
 <title>Admin — Proton Pulse</title>
 <meta name="color-scheme" content="dark">
 <link rel="stylesheet" href="css/shared/base.css?v=a93b26ad">
-<link rel="stylesheet" href="css/shared/topbar.css?v=c550d77b">
+<link rel="stylesheet" href="css/shared/topbar.css?v=552d4d2a">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
-<link rel="stylesheet" href="css/shared/cards.css?v=0817c80a">
-<link rel="stylesheet" href="css/admin/admin.css?v=c883b5f7">
+<link rel="stylesheet" href="css/shared/cards.css?v=6afc9146">
+<link rel="stylesheet" href="css/admin/admin.css?v=371d0825">
 </head>
 <body>
 
@@ -44,6 +44,8 @@
           <option value="banned">Banned Users</option>
           <option value="boxart">Box Art Manager</option>
           <option value="api-explorer">API Explorer</option>
+          <option value="depot-tracking">Depot Tracking</option>
+          <option value="games">Game Manager</option>
           <option value="all-reports">Reports</option>
         </select>
       </div>
@@ -197,7 +199,7 @@
               <th>Identity</th>
               <th data-sort-col="2">Role</th>
               <th data-sort-col="3" data-sort-type="number">Reports</th>
-              <th data-sort-col="4" data-sort-type="date">Last active</th>
+              <th data-sort-col="4" data-sort-type="date" data-sort-default="desc">Last active</th>
               <th data-sort-col="5" data-sort-type="date">Last login</th>
               <th>Actions</th>
             </tr>
@@ -310,6 +312,14 @@
         <div id="api-explorer-content"></div>
       </section>
 
+      <section id="tab-depot-tracking" class="admin-section" hidden>
+        <div id="depot-tracking-content"></div>
+      </section>
+
+      <section id="tab-games" class="admin-section" hidden>
+        <div id="game-manager-content"></div>
+      </section>
+
       <!-- Shared boxart chrome (modal + file picker). Used by both the
            list view and the detail view so a single instance handles
            set-url and upload actions from either place. -->
@@ -351,8 +361,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script src="js/lib/analytics.js?v=7855fb4c"></script>
-<script src="js/lib/topbar.js?v=46897460"></script>
+<script src="js/lib/topbar.js?v=6f748790"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/admin/main.js?v=0bcda5eb"></script>
+<script type="module" src="js/admin/main.js?v=1c6c7c2a"></script>
 </body>
 </html>

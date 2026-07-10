@@ -1,6 +1,6 @@
 import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
 import { supabaseHeaders, escapeHtml } from './utils.js?v=2668b2f0';
-import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=12b82ef4';
+import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=36ebad2a';
 import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=9359a45e';
 import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=5e2c6b60';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=0d6ec118';
@@ -15,10 +15,12 @@ import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965
 import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=28cb08af';
 import { renderUserDetail } from './components/userDetail.js?v=5ff164c0';
 import { fetchAnalytics } from './api/analytics.js?v=a1c14331';
-import { renderAnalytics } from './components/analytics.js?v=e538dd08';
+import { renderAnalytics } from './components/analytics.js?v=61349dfd';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
+import { renderDepotTracking } from './components/depotTracking.js?v=8ce33fc6';
 import { renderBoxartAdmin, renderBoxartAdminDetail } from './components/boxart.js?v=bd0825b6';
-import { renderApiExplorer } from './components/api-explorer.js?v=1d2d1835';
+import { renderApiExplorer } from './components/api-explorer.js?v=73d3d3d5';
+import { renderGameManager } from './components/gameManager.js?v=de1dd326';
 import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=99d5c1f5';
 import { patchReportFlags, fetchReportById } from './api/allReports.js?v=ce9b13c3';
 import { approveReport } from './api/pending.js?v=84292a58';
@@ -454,7 +456,12 @@ const TAB_LOADERS = {
   phrases: loadPhrases,
   analytics: loadAnalytics,
   boxart: () => renderBoxartAdmin().catch(e => console.error('[boxart]', e)),
-  'api-explorer': () => renderApiExplorer(),
+  'api-explorer': () => renderApiExplorer({ canManageAdmins: can('manage_admins') }),
+  'depot-tracking': () => {
+    const host = document.getElementById('depot-tracking-content');
+    if (host) renderDepotTracking(host).catch(e => console.error('[depot-tracking]', e));
+  },
+  games: () => renderGameManager().catch(e => console.error('[game-manager]', e)),
 };
 
 // Activate a tab, load its data, and reflect it in the URL as ?tab=<name> so a
@@ -1016,6 +1023,18 @@ function setupTableSort(tableId) {
     indicator.setAttribute('aria-hidden', 'true');
     th.appendChild(indicator);
 
+    // If this column is marked as the default sort in the HTML, paint the
+    // arrow immediately so the user can see which column the list is
+    // sorted by without having to click first. The rows are already in
+    // that order (server-side sort) -- we just render the indicator.
+    const defaultDir = th.dataset.sortDefault;
+    if (defaultDir === 'asc' || defaultDir === 'desc') {
+      th.dataset.sortActive = '1';
+      th.dataset.sortDir    = defaultDir;
+      th.classList.add('admin-th--sorted');
+      indicator.textContent = defaultDir === 'asc' ? ' \u25b2' : ' \u25bc';
+    }
+
     th.addEventListener('click', () => {
       const col  = parseInt(th.dataset.sortCol, 10);
       const type = th.dataset.sortType || 'text';
@@ -1023,7 +1042,11 @@ function setupTableSort(tableId) {
       if (!tbody) return;
 
       const wasActive = th.dataset.sortActive === '1';
-      const nowAsc    = wasActive ? th.dataset.sortDir !== 'asc' : true;
+      // First click on a new column defaults to DESC (down arrow) -- for the
+      // most common admin tables the reader wants "biggest / most recent
+      // first", not "A / oldest first". Subsequent clicks on the already-
+      // active column toggle direction as before.
+      const nowAsc    = wasActive ? th.dataset.sortDir !== 'asc' : false;
 
       ths.forEach(h => {
         h.dataset.sortActive = '';

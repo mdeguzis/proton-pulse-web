@@ -58,7 +58,7 @@ def test_collisions_fetch_and_write_year_column(tmp_path):
     ])
 
     def fake_fetch(app_id):
-        return {"3970": 2006, "480490": 2017}[app_id]
+        return {"3970": (2006, True), "480490": (2017, True)}[app_id]
 
     with patch("scripts.pipeline.release_years._fetch_year", side_effect=fake_fetch), \
          patch("scripts.pipeline.release_years.time.sleep"):

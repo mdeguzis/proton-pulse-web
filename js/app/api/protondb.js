@@ -62,12 +62,17 @@ export async function fetchProtonDbLive(appId) {
     console.log(`[proton-pulse] live check for ${appId} | tier=${data.tier} total=${data.total} source=protondb-summary-proxy`);
     const result = [{
       appId,
-      tier:         data.tier,
-      total:        data.total || 0,
-      trendingTier: data.trendingTier || data.tier,
-      score:        data.score || 0,
-      source:       'protondb-live',
-      _liveOnly:    true,
+      tier:             data.tier,
+      total:            data.total || 0,
+      trendingTier:     data.trendingTier || data.tier,
+      // ProtonDB's summary also exposes bestReportedTier (highest ever) and
+      // confidence ('strong'|'moderate'|'weak'). Surfacing both lets the
+      // aggregate block on the game page show more than just "one tier".
+      bestReportedTier: data.bestReportedTier || data.tier,
+      confidence:       data.confidence || '',
+      score:            data.score || 0,
+      source:           'protondb-live',
+      _liveOnly:        true,
     }];
     _protonDbLiveCache.set(key, result);
     return result;

@@ -511,7 +511,7 @@ export function getMyReportBadges(row) {
 export function flaggedMessageHtml(flaggedReason) {
   if (!flaggedReason) return 'This report was flagged for review. Edit and resubmit to have it restored.';
 
-  const discordLink = `<a href="https://discord.gg/3XskyBRswp" target="_blank" rel="noopener">Discord</a>`;
+  const discordLink = `<a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener">Discord</a>`;
 
   if (flaggedReason.startsWith('wordlist:')) {
     const match = flaggedReason.match(/^wordlist:.+ in (.+)$/);

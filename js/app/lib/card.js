@@ -12,7 +12,7 @@ const TIER_COLORS = {
   borked:   { bg: '#c85050', color: '#fff' },
 };
 
-// opts: { href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy }
+// opts: { href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy, steamType }
 // imgUrl: pre-resolved Steam image URL (bypasses CDN guessing entirely)
 // tier: one of platinum/gold/silver/bronze/borked - auto-colours the badge
 // badge: raw label string - used when tier is not applicable
@@ -25,7 +25,11 @@ const TIER_COLORS = {
 //   pills. 'improving' -> green up, 'declining' -> red down. Any other value
 //   (stable, insufficient, undefined, "") renders nothing so unchanged games
 //   read as neutral without adding a "stable" glyph to every card.
-export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy }) {
+// steamType: Steam appdetails type field (dlc/mod/demo/software/video/...).
+//   Anything other than "game" renders a small corner tag on the thumbnail so
+//   users scanning a library grid can pick out the DLC bundles and mods at a
+//   glance. Empty / "game" render no tag.
+export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy, steamType }) {
   const primarySrc = imgUrl || (appId ? STEAM_IMG(appId) : '');
   const aid = appId != null ? String(appId) : '';
   const thumbInner = primarySrc
@@ -42,17 +46,28 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const storeTag = storePill
     ? `<span class="game-card-store-tag game-card-store-pill--${storeKey}"><span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
-  // Demo detection is title-based for now (#199 follow-up). Renders a green
-  // diagonal corner stripe over the thumbnail like Steam Next Fest so demos
-  // are visually distinct from full titles.
-  const isDemo = /\bdemo\b/i.test(String(title || ''));
+  // Demo detection: use the Steam appdetails type when available (from
+  // enrich_search_index_with_steam_type, #250), fall back to a title
+  // regex for the pre-enrichment path. Steam Next Fest -style diagonal
+  // green ribbon in the top-left corner of the thumbnail.
+  const typeNormLower = String(steamType || '').toLowerCase();
+  const isDemo = typeNormLower === 'demo' || /\bdemo\b/i.test(String(title || ''));
   const demoStripe = isDemo ? `<span class="game-card-demo-stripe" aria-label="Demo">DEMO</span>` : '';
   // Steam-side appid replacement (e.g. 5488 -> 45700). Small tag over the
   // thumbnail so browse lists visually mark the old entry.
   const replacedTag = replacedBy
     ? `<span class="game-card-replaced-tag" title="Replaced by app ${esc(String(replacedBy))}: new reports should target that appid">REPLACED</span>`
     : '';
-  const thumbHtml = `<div class="game-card-thumb-wrap">${thumbInner}${storeTag}${demoStripe}${replacedTag}</div>`;
+  // Non-game Steam appdetails types (#251). CSS-side data-type drives the
+  // color scheme so a reader can tell DLC / mod / software apart at a
+  // glance. "game" and unknown render nothing so the vast majority of
+  // cards stay uncluttered. "demo" is already covered by the diagonal
+  // ribbon above, so skip the pill for it to avoid stacking two markers.
+  const isNonGameType = typeNormLower && typeNormLower !== 'game' && typeNormLower !== 'demo';
+  const typeTag = isNonGameType
+    ? `<span class="game-card-type-tag" data-type="${esc(typeNormLower)}" title="Steam classifies this as ${esc(typeNormLower)}">${esc(typeNormLower.toUpperCase())}</span>`
+    : '';
+  const thumbHtml = `<div class="game-card-thumb-wrap">${thumbInner}${storeTag}${demoStripe}${replacedTag}${typeTag}</div>`;
 
   const label = tier ? tier.toUpperCase() : (badge || 'No Rating');
   const isNoRating = !tier && !badge;

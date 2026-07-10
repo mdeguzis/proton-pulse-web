@@ -1,7 +1,7 @@
 // Library section: shows the cached Steam library game count with a REFRESH
 // button that re-runs the sync-steam-library edge function (#199).
 import { SupaAuth } from '../config.js?v=87cd0f3d';
-import { formatSystemUpdated, escapeHtml } from '../utils.js?v=94e4c20f';
+import { formatSystemUpdated, escapeHtml } from '../utils.js?v=71a515e5';
 import { fetchMyLibraryRow, syncMyLibrary } from '../api/steam-library.js?v=d03f2631';
 
 export function initLibrary(ctx) {

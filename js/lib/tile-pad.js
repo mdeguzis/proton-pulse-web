@@ -26,6 +26,9 @@ const _RESIZE_KEY = '__tilePadHandlers';
 // which reflect the auto-fill count for the container's actual width.
 export function currentColCount(container) {
   if (!container) return 1;
+  // Force a synchronous layout so auto-fill resolves to the real track
+  // count before we count it -- see the same note in padTileRows below.
+  void container.offsetWidth;
   const cs = getComputedStyle(container);
   if (cs.display !== 'grid') return 1;
   const cols = cs.gridTemplateColumns.split(' ').filter(Boolean).length;
@@ -40,19 +43,28 @@ export function pageSizeForFullRows(container, rows = 4, minItems = 8) {
   return Math.max(minItems, currentColCount(container) * rows);
 }
 
-// Row target for the initial page and each Load more click: 5 complete rows
-// on every viewport. Because the page size is cols * rows, it is always a whole
-// number of rows, so the grid stays even (5 rows) at every S/M/L/XL size.
-// Callers pass `pageSizeForFullRows(el, targetRowsForViewport())` so the
-// initial page size and each Load more click land the same target.
+// Row target for the initial page and each Load more click.
+// Desktop (>=1024px): 10 rows so a typical 5-col grid ships ~50 tiles per
+// page. Mobile: 10 rows so a 2-col grid ships ~20 tiles per page, which
+// is enough to feel worth scrolling but not so much that a small viewport
+// takes forever on first paint (#253).
 export function targetRowsForViewport() {
-  return 5;
+  const w = typeof window !== 'undefined' && window.innerWidth ? window.innerWidth : 0;
+  return w >= 1024 ? 10 : 10;
 }
 
 export function padTileRows(container, { tileSelector = '> *', fillerClass = 'tile-filler', hasMore = false } = {}) {
   if (!container) return;
   // Wipe stale fillers from the previous pad pass before counting.
   container.querySelectorAll('.' + fillerClass).forEach(f => f.remove());
+
+  // Force a synchronous layout so grid-template-columns resolves to the
+  // final track list before we count it. Without this, calling padTileRows
+  // right after innerHTML= sometimes reads a stale computed value where
+  // auto-fill hasn't picked up the container width yet -- resulting in
+  // cols=1 and a bail-out that leaves ragged rows on screen. Reading
+  // offsetWidth flushes pending layout without changing anything visible.
+  void container.offsetWidth;
 
   // Only pad when the container is laid out as a grid (tile mode is on).
   // List mode is still a flex column so grid-template-columns will be

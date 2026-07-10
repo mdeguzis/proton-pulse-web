@@ -1,0 +1,70 @@
+name: 'Back-comment run summary on issue'
+description: |
+  When a workflow_dispatch was targeted at a specific GitHub issue, post a
+  short summary comment (run URL + conclusion) back on that issue so bug
+  reports and enrichment requests get a paper trail. No-op if issue_id is
+  empty, so every workflow can call this unconditionally.
+
+  Part of #218: standardize workflow_dispatch inputs so any pipeline
+  workflow can be scoped to a target-app / target-issue with a one-click
+  dispatch.
+
+inputs:
+  issue_id:
+    description: 'GitHub issue number to comment on. Empty = skip.'
+    required: false
+    default: ''
+  status:
+    description: 'success | failure | cancelled | started'
+    required: true
+  workflow_name:
+    description: 'Human-friendly workflow name (e.g. "steam-metadata-fetch")'
+    required: true
+  app_ids:
+    description: 'Optional context: the app_ids the dispatch ran against'
+    required: false
+    default: ''
+  dry_run:
+    description: 'Optional context: whether the run was dry-run'
+    required: false
+    default: 'false'
+  notes:
+    description: 'Optional extra body text (e.g. counts, failures)'
+    required: false
+    default: ''
+  repo:
+    description: 'owner/name of the repo the issue lives in'
+    required: false
+    default: ${{ github.repository }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Post run summary to issue
+      if: inputs.issue_id != ''
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        ISSUE_ID: ${{ inputs.issue_id }}
+        STATUS: ${{ inputs.status }}
+        WORKFLOW: ${{ inputs.workflow_name }}
+        APP_IDS: ${{ inputs.app_ids }}
+        DRY_RUN: ${{ inputs.dry_run }}
+        NOTES: ${{ inputs.notes }}
+        REPO: ${{ inputs.repo }}
+        RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      run: |
+        set -euo pipefail
+        emoji="?"
+        case "$STATUS" in
+          success)   emoji="OK"      ;;
+          failure)   emoji="FAIL"    ;;
+          cancelled) emoji="CANCEL"  ;;
+          started)   emoji="STARTED" ;;
+        esac
+        body="[$emoji] \`$WORKFLOW\` dispatched via #$ISSUE_ID"$'\n\n'
+        body+="Run: $RUN_URL"$'\n'
+        if [ -n "$APP_IDS" ]; then body+="App IDs: \`$APP_IDS\`"$'\n'; fi
+        if [ "$DRY_RUN" = "true" ]; then body+="Dry run: yes (no writes)"$'\n'; fi
+        if [ -n "$NOTES" ]; then body+=$'\n'"$NOTES"$'\n'; fi
+        gh issue comment "$ISSUE_ID" --repo "$REPO" --body "$body"

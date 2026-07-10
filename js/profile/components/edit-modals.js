@@ -4,13 +4,13 @@
 import {
   escapeHtml, formatSystemUpdated, enabledVarsToText, textToEnabledVars,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel,
-} from '../utils.js?v=94e4c20f';
+} from '../utils.js?v=71a515e5';
 import {
   fetchCloudConfig, patchCloudConfig, fetchFullUserConfig,
   fetchReportHistory, patchUserConfig,
 } from '../api/configs.js?v=0c5650ed';
 import { updateSystem } from '../api/systems.js?v=770d14b7';
-import { notesFormattingHelpHtml } from '../../shared/submit.js?v=339c68ea';
+import { notesFormattingHelpHtml } from '../../shared/submit.js?v=75603703';
 
 export let _cloudEditModal = null;
 export function getCloudEditModal() {

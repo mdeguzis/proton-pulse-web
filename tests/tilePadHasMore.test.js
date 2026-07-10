@@ -55,22 +55,20 @@ describe('renderers pass hasMore so incomplete rows never render', () => {
     expect(INDEX).toMatch(/padTileRows\(list, \{ tileSelector: '\.game-card', hasMore \}\)/);
   });
 
-  test('home page Recent + Popular grids pass hasMore based on filtered vs shown', () => {
-    // Both applyPopularFilters and applyRecentFilters compute the same
-    // way and pass to padTileRows so orphans get trimmed identically.
-    const popularPad = HOME.match(/padTileRows\(cardsEl, \{ tileSelector: '\.game-card', hasMore: filtered\.length > shown \}\)/g) || [];
-    expect(popularPad.length).toBe(2);
+  test('home page Recent + Popular grids pass hasMore based on last-page check', () => {
+    // Both sections use windowed pagination: not the last page => hasMore=true
+    // (trim orphans so the row stays flush and the numbered nav takes over);
+    // last page => hasMore=false (pad with fillers so the row is aligned).
+    const homePad = HOME.match(/padTileRows\(cardsEl, \{ tileSelector: '\.game-card', hasMore: !isLastPage \}\)/g) || [];
+    expect(homePad.length).toBe(2);
   });
 
-  test('load-more resets shown to the rendered count + PAGE_SIZE (not stale shownCount)', () => {
-    // Because trim removes DOM nodes, the caller must read the actual
-    // rendered count to know how many "extra" tiles the next click needs
-    // to fetch. Both files use querySelectorAll(':scope ...:not(.tile-filler)')
-    // to count real tiles.
+  test('load-more resets shown to the rendered count + PAGE_SIZE (index page)', () => {
+    // Index/browse page still uses the append-load-more model; the home
+    // page moved to windowed pagination so this assertion applies only to
+    // INDEX.
     expect(INDEX).toContain(":not(.tile-filler)");
-    expect(HOME).toContain(":not(.tile-filler)");
     expect(INDEX).toContain('rendered + pageSizeForFullRows(list, targetRowsForViewport())');
-    expect(HOME).toContain('rendered + pageSizeForFullRows(cardsEl, targetRowsForViewport())');
   });
 
   test('resize wires renderPopular/Recent via watchTileRerender (not the old watchTileRows)', () => {

@@ -30,10 +30,18 @@ REQUEST_DELAY = 0.3
 # same finalize job -- combined cold-start burst can push over the limit
 # for a few minutes. The cache-persistence fix (#109) makes this only bite
 # on the first run ever; subsequent runs only probe new-collision apps, so
-# the per-file caps rarely fire together. If it becomes a problem: a
-# shared token bucket in common.py, or split the fetchers across separate
-# workflow jobs (each gets its own 5-min budget).
+# the per-file caps rarely fire together.
 PROBE_CAP = 200
+# Wall-clock budget so a Steam 403-flood does not stall finalize past
+# this many seconds regardless of how many apps are still in the queue.
+# Mirrors the same defense in steam_type.py (#258).
+WALL_CLOCK_BUDGET_SEC = 240
+# Bail after this many transport failures in a row -- our proxy for
+# "Steam is currently rate-limiting or down".
+CONSECUTIVE_FAILURE_LIMIT = 8
+# Save the cache mid-run so a cancelled or timed-out job does not lose
+# everything it just fetched.
+CACHE_SAVE_EVERY = 20
 CACHE_FILENAME = "release-years-cache.json"
 
 
@@ -57,7 +65,10 @@ def _extract_year(release_date: dict | None) -> int | None:
     return int(match.group(1))
 
 
-def _fetch_year(app_id: str, timeout: int = 10) -> int | None:
+# Fetch outcome: (year_or_None, success_bool). success is False only for
+# transport / API errors (network, 403, 429, 5xx, timeout), NOT for a valid
+# response that lacked a parseable year. Mirrors steam_type._fetch_type.
+def _fetch_year(app_id: str, timeout: int = 6) -> tuple[int | None, bool]:
     url = STEAM_APPDETAILS_URL.format(appid=app_id)
     req = urllib.request.Request(url, headers={"Accept": "application/json"})
     try:
@@ -65,11 +76,11 @@ def _fetch_year(app_id: str, timeout: int = 10) -> int | None:
             data = json.loads(resp.read().decode("utf-8"))
     except Exception as exc:
         log(f"[release-years] WARN: Steam appdetails fetch failed for {app_id}: {exc}")
-        return None
+        return None, False
     app_data = data.get(str(app_id), {})
     if not app_data.get("success"):
-        return None
-    return _extract_year(app_data.get("data", {}).get("release_date"))
+        return None, True  # valid response, app is delisted / TBD
+    return _extract_year(app_data.get("data", {}).get("release_date")), True
 
 
 def _load_cache(path: Path) -> dict[str, int | None]:
@@ -135,13 +146,34 @@ def enrich_search_index_with_release_years(output_dir: Path) -> None:
     )
 
     fetched = 0
+    consecutive_failures = 0
+    deadline = time.monotonic() + WALL_CLOCK_BUDGET_SEC
+    bail_reason = None
     for app_id in needs_fetch[:PROBE_CAP]:
-        year = _fetch_year(app_id)
-        cache[app_id] = year  # may be None; cache the negative result too
+        if time.monotonic() > deadline:
+            bail_reason = f"wall-clock budget {WALL_CLOCK_BUDGET_SEC}s exhausted"
+            break
+        if consecutive_failures >= CONSECUTIVE_FAILURE_LIMIT:
+            bail_reason = (
+                f"{consecutive_failures} consecutive transport failures "
+                "(assuming Steam rate-limit / outage)"
+            )
+            break
+        year, ok = _fetch_year(app_id)
+        if not ok:
+            consecutive_failures += 1
+        else:
+            consecutive_failures = 0
+            cache[app_id] = year  # None here means "delisted / TBD"
         fetched += 1
         if year:
             log(f"[release-years] {app_id} -> {year}")
+        if fetched % CACHE_SAVE_EVERY == 0:
+            cache_path.write_text(json.dumps(cache, indent=2) + "\n", encoding="utf-8")
         time.sleep(REQUEST_DELAY)
+
+    if bail_reason:
+        log(f"[release-years] bailing early: {bail_reason} (probed {fetched} of {min(len(needs_fetch), PROBE_CAP)})")
 
     if fetched:
         cache_path.write_text(json.dumps(cache, indent=2) + "\n", encoding="utf-8")

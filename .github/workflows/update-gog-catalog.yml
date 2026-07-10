@@ -9,12 +9,22 @@ on:
         description: "Force re-fetch even if cache is fresh"
         type: boolean
         default: false
+      # Standardized inputs (#218).
+      issue_id:
+        description: "GitHub issue to comment run summary back on (leave blank to skip)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Skip cache writes; log what would change"
+        type: boolean
+        default: false
 
 jobs:
   update-gog-catalog:
     runs-on: ubuntu-24.04
     permissions:
       contents: write
+      issues: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -46,6 +56,7 @@ jobs:
           FORCE_REFRESH: ${{ inputs.force_refresh }}
 
       - name: Commit catalog cache to gh-pages
+        if: inputs.dry_run != true
         run: |
           cd gh-pages-data
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -55,3 +66,12 @@ jobs:
           git add gog-catalog-cache.json
           git diff --cached --quiet && echo "Cache unchanged, nothing to commit" || git commit -m "chore: refresh GOG catalog cache $(date +%F)"
           git push origin gh-pages
+
+      - name: Back-comment run summary on issue
+        if: always()
+        uses: ./.github/actions/back-comment-run
+        with:
+          issue_id: ${{ inputs.issue_id }}
+          status: ${{ job.status }}
+          workflow_name: update-gog-catalog
+          dry_run: ${{ inputs.dry_run }}

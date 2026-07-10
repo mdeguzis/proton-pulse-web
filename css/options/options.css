@@ -66,6 +66,23 @@
 }
 .option-row--block { align-items: flex-start; flex-direction: column; gap: 12px; }
 .option-radio-group { display: flex; gap: 10px; flex-wrap: wrap; }
+.option-inline-inputs { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; }
+.option-inline-input { display: inline-flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--muted); }
+.option-inline-input input[type="number"] {
+  width: 84px;
+  padding: 6px 10px;
+  background: var(--s1);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+}
+.option-inline-input input[type="number"]:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
 .option-radio {
   display: inline-flex;
   align-items: center;

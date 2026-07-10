@@ -172,6 +172,38 @@
   justify-content: flex-end;
   gap: 8px;
 }
+/* Collapse button sits on the left of the footer while Save + Clear stay
+   on the right (justify-content:flex-end on the row + margin-right:auto on
+   the collapse pushes it to the opposite edge). Uses the same pill shape
+   as the other footer buttons so the row reads as three peer actions. */
+.filter-collapse-btn {
+  margin-right: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--s1);
+  color: var(--muted);
+  cursor: pointer;
+  transition: color .1s, border-color .1s, background .1s;
+}
+.filter-collapse-btn:hover {
+  border-color: var(--accent);
+  color: var(--strong);
+}
+.filter-collapse-caret {
+  font-size: 0.72rem;
+  line-height: 1;
+  display: inline-block;
+  transform: translateY(-1px);
+}
 @media (max-width: 560px) {
   .filter-panel--stack.open { flex-direction: column; gap: 14px; }
 }
@@ -189,14 +221,18 @@
 /* Text filter box: sits in the bar to the right of the Filters button (not in
    the dropdown). Wider on desktop, shorter on mobile. */
 .home-filter-left { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
+/* Text-filter wrap: relative-positioned host for the trailing clear (X)
+   button. Sits to the right of the search input and stays inside the
+   rounded border so the whole thing reads as one control. */
+.home-filter-text-wrap { position: relative; display: flex; flex: 1; min-width: 130px; }
 .home-filter-text {
   flex: 1;
-  min-width: 130px;
+  min-width: 0;
   box-sizing: border-box;
   background: var(--bg);
   border: 1px solid var(--border2);
   color: var(--text);
-  padding: 7px 12px;
+  padding: 7px 34px 7px 12px;
   font-size: 0.85rem;
   font-family: inherit;
   border-radius: 999px;
@@ -204,6 +240,34 @@
   transition: border-color .1s;
 }
 .home-filter-text:focus { border-color: var(--accent); }
+/* Hide the browser's built-in "clear" X on <input type="search">. We
+   render our own #home-text-filter-clear button next to the input, so
+   the native glyph shows up as a duplicate X that isn't wired to our
+   handler. */
+.home-filter-text::-webkit-search-cancel-button,
+.home-filter-text::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.home-filter-text::-ms-clear { display: none; width: 0; height: 0; }
+.home-filter-text-clear {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.home-filter-text-clear:hover { background: var(--s2); color: var(--text); }
+.home-filter-text-clear[hidden] { display: none; }
 
 /* The mobile copy of the text filter lives inside the FILTERS panel. On
    narrow screens the bar-mounted input would run into the S/M/L and
@@ -268,20 +332,27 @@
 }
 
 /* report cards */
-.cards { display: flex; flex-direction: column; gap: 12px; }
+.cards { display: flex; flex-direction: column; gap: 28px; }
 a.card { display: flex; color: inherit; }
 a.card:hover { text-decoration: none; }
+.report-block {
+  border: 2px solid #3d5a73;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.report-block:hover { border-color: var(--accent); box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35); }
 .card {
   display: flex;
   gap: 14px;
   padding: 8px 14px 8px 8px;
-  background: var(--s1);
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  background: var(--s2);
+  border: none;
+  border-radius: 0;
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s, transform 0.05s;
+  transition: background 0.15s;
 }
-.card:hover { border-color: var(--accent); }
 a.card:active { transform: translateY(1px); }
 .card .left { flex: 1; min-width: 0; }
 /* card-body replaces .left for the new layout - middle column with proton +
@@ -647,10 +718,8 @@ a.card:active { transform: translateY(1px); }
 .card-summary {
   padding: 10px 14px;
   background: var(--bg);
-  border: 1px solid var(--border);
-  border-top: none;
-  margin-top: -12px;
-  margin-bottom: 0;
+  border-top: 1px solid var(--border);
+  margin: 0;
   font-size: 0.76rem;
   color: var(--text);
 }

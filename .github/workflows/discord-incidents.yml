@@ -1,0 +1,48 @@
+name: Discord Incidents
+
+# Posts to Discord when an issue labeled "incident" is opened, closed, or
+# labeled. Feeds the same announcements the /status.html page shows, so
+# subscribers hear about outages fast without polling the site. See #254.
+
+on:
+  issues:
+    types: [opened, closed, reopened, labeled, unlabeled]
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    # Fire on the incident label only, either already-attached (opened/closed/
+    # reopened) or freshly added (labeled). Filtering here means the workflow
+    # exits early for every non-incident issue without spending a runner.
+    if: |
+      (contains(github.event.issue.labels.*.name, 'incident') && (github.event.action == 'opened' || github.event.action == 'closed' || github.event.action == 'reopened')) ||
+      (github.event.action == 'labeled' && github.event.label.name == 'incident') ||
+      (github.event.action == 'unlabeled' && github.event.label.name == 'incident')
+    steps:
+      - name: Post to Discord
+        env:
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_ANNOUNCE }}
+          EVENT_ACTION: ${{ github.event.action }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_STATE: ${{ github.event.issue.state }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          SENDER: ${{ github.event.sender.login }}
+        run: |
+          if [ -z "${WEBHOOK_URL:-}" ]; then
+            echo "DISCORD_WEBHOOK_ANNOUNCE secret not configured; skipping"
+            exit 0
+          fi
+          case "$EVENT_ACTION" in
+            opened|labeled)   HEADER="[INCIDENT] New announcement" ;;
+            closed)           HEADER="[INCIDENT] Resolved" ;;
+            reopened)         HEADER="[INCIDENT] Reopened" ;;
+            unlabeled)        HEADER="[INCIDENT] Untagged as incident" ;;
+            *)                HEADER="[INCIDENT] Update" ;;
+          esac
+          MSG=$(printf '**%s: #%s**\n%s\n%s\n_by %s_' "$HEADER" "$ISSUE_NUMBER" "$ISSUE_TITLE" "$ISSUE_URL" "$SENDER")
+          jq -n --arg content "$MSG" '{content: $content}' \
+          | curl -s -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"

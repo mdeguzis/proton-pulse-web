@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site status | Proton Pulse</title>
+<meta name="description" content="Live status of Proton Pulse's Supabase edge functions. Refreshed every 15 minutes.">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/base.css?v=a93b26ad">
+<link rel="stylesheet" href="css/shared/topbar.css?v=552d4d2a">
+<link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
+<link rel="stylesheet" href="css/status/status.css?v=a0c6fafd">
+</head>
+<body>
+
+<!-- Shared topbar is injected by topbar.js -->
+
+<div class="main-content">
+  <div class="main-inner">
+
+    <div class="prose">
+      <h1>Site status</h1>
+      <p>
+        Live health of the Supabase edge functions that Proton Pulse depends on.
+        Checked every 15 minutes by a GitHub Actions job. If something below is
+        red or yellow, the matching feature on the site is probably having a
+        rough time. Curious how this works? See the
+        <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Site-Status-Page" target="_blank" rel="noopener">Site Status Page wiki</a>
+        for the full architecture, edge function list, and HTTP code mapping.
+      </p>
+    </div>
+
+    <div id="status-overall" class="status-overall" data-state="loading">
+      <span class="status-overall-dot"></span>
+      <span class="status-overall-text">Checking...</span>
+      <span class="status-overall-meta" id="status-meta"></span>
+    </div>
+
+    <div id="status-list" class="status-list">
+      <!-- injected by js/status/main.js -->
+    </div>
+
+    <section class="status-announcements" id="status-announcements">
+      <div class="status-announcements-head">
+        <h2>Announcements</h2>
+        <a class="status-announcements-cta"
+           href="https://github.com/mdeguzis/proton-pulse-web/issues/new?labels=incident&amp;title=Incident%3A+"
+           target="_blank" rel="noopener">
+          Report an issue
+        </a>
+      </div>
+      <div id="status-announcements-list" class="status-announcements-list">
+        <div class="state-box">Loading announcements...</div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- Per-service detail modal. Opens when the reader clicks a status card,
+     shows the explainer (401/403 context, etc.) plus the raw payload. -->
+<div id="status-modal-backdrop" class="status-modal-backdrop" hidden aria-hidden="true">
+  <div class="status-modal" role="dialog" aria-modal="true" aria-labelledby="status-modal-body">
+    <button type="button" id="status-modal-close" class="status-modal-close" aria-label="Close">&times;</button>
+    <div id="status-modal-explainer" class="status-modal-explainer"></div>
+    <div id="status-modal-body" class="status-modal-body"></div>
+  </div>
+</div>
+
+<!-- supabase-client must load before topbar.js so the auth indicator can
+     reflect the signed-in state via SupaAuth.onStateChange. -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=79bf62c6"></script>
+<script src="js/lib/analytics.js?v=7855fb4c"></script>
+<script src="js/lib/topbar.js?v=6f748790"></script>
+<script src="js/lib/toast.js?v=7bb23014"></script>
+<script type="module" src="js/status/main.js?v=60141e16"></script>
+
+</body>
+</html>

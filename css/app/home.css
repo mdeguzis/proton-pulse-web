@@ -119,8 +119,11 @@
 .home-layout-btn:hover { background: var(--s2); color: var(--text); }
 .home-layout-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
 
-/* View controls row: card-size (S/M/L) + grid/list toggles together. */
-.home-view-controls { display: flex; align-items: center; gap: 10px; }
+/* View controls: count sits above the card-size + grid/list toggle row so
+   the count reads as a header for the section rather than crowding the
+   controls sideways. */
+.home-view-controls { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.home-view-controls-row { display: flex; align-items: center; gap: 10px; }
 .home-size-toggle { display: flex; gap: 4px; }
 .home-size-btn {
   width: 28px;
@@ -217,7 +220,7 @@
 .home-cards-tile-mode {
   display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 12px;
+  gap: 16px;
   align-items: stretch;
 }
 .home-cards-tile-mode.cards--sm { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
@@ -236,6 +239,11 @@
   .home-cards-tile-mode.cards--xl { grid-template-columns: 1fr; }
 }
 .home-cards-tile-mode .game-card { display: flex; flex-direction: column; min-width: 0; }
+/* Push the tier strip to the bottom edge even on cards that have less
+   body content (e.g. no reports subtitle). Without this, cards with a
+   shorter body ended up with the strip floating in the middle instead
+   of aligning with neighbors. */
+.home-cards-tile-mode .game-card-strip { margin-top: auto; }
 .home-cards-tile-mode .game-card-row {
   flex-direction: column;
   gap: 0;
@@ -345,3 +353,133 @@
   color: var(--muted);
 }
 .home-library-chart--empty .hlc-empty-body a { color: var(--accent); }
+
+/* My Library page header (only rendered when ?filter=mine deep-links here). */
+.home-page-header {
+  padding: 12px 0 8px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+.home-page-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.home-page-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--strong);
+  margin: 4px 0 0;
+  letter-spacing: -0.01em;
+}
+
+.page-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+/* Mirror nav under the grid: centered so it reads as a footer rather
+   than a top-right menu, and given breathing room above so it doesn't
+   crowd the last row of tiles. */
+.page-nav--bottom {
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+.page-nav-inner {
+  display: inline-flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.page-nav-label {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  padding: 4px 8px 4px 0;
+  white-space: nowrap;
+}
+.page-nav-btn--arrow {
+  min-width: 30px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+.page-nav-btn--arrow[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.page-nav-btn {
+  min-width: 30px;
+  padding: 4px 8px;
+  background: var(--s1);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+.page-nav-btn:hover { background: var(--s2); border-color: var(--border2); }
+.page-nav-btn--active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  cursor: default;
+}
+.page-nav-btn--active:hover { background: var(--accent); }
+.page-nav-ellipsis {
+  padding: 4px 4px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  align-self: center;
+}
+
+/* Bottom "Show more" button: appends the next page's tiles below the
+   current view. Wider and taller than the numbered buttons since it's
+   the main call to action when the user reaches the end. */
+.page-nav-show-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  background: var(--s1);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+.page-nav-show-more:hover {
+  background: var(--s2);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Sign-in callout banner */
+.home-signin-callout {
+  margin: 12px 0 16px;
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  color: var(--text);
+  background: var(--s1);
+  border: 1px solid var(--border2);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+}
+.home-signin-callout a {
+  color: var(--accent-hi);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.home-signin-callout a:hover {
+  color: var(--green-hi);
+}

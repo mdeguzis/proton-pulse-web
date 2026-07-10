@@ -380,7 +380,7 @@ function renderGamesTable(rows) {
     <tbody>${rows.map(r => {
       const title = escapeHtml(r.title || r.app_id || '(unknown)');
       const link  = r.app_id
-        ? `<a class="admin-link" href="/app.html#/app/${escapeHtml(String(r.app_id))}" target="_blank">${title}</a>`
+        ? `<a class="admin-link" href="app.html#/app/${escapeHtml(String(r.app_id))}" target="_blank">${title}</a>`
         : title;
       return `<tr><td>${link}</td><td>${escapeHtml(String(r.views))}</td></tr>`;
     }).join('')}</tbody>

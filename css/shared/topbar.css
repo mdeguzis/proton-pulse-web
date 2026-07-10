@@ -14,21 +14,21 @@
     linear-gradient(180deg, rgba(11, 17, 22, 0.94), rgba(19, 28, 38, 0.92));
   backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 1px 0 0 rgba(102, 192, 244, 0.08), 0 8px 24px rgba(0, 0, 0, 0.35);
+  border-bottom: 2px solid #0a0f14;
+  box-shadow: 0 6px 20px 4px rgba(0, 0, 0, 0.85), 0 2px 4px rgba(0, 0, 0, 0.9);
 }
 
-/* hairline cyan->green signal under the whole topbar */
+/* blue accent line under the whole topbar */
 .topbar::after {
   content: '';
   position: absolute;
-  left: 0; right: 0; bottom: -1px;
-  height: 1px;
+  left: 0; right: 0; bottom: -2px;
+  height: 2px;
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(102, 192, 244, 0.55) 25%,
-    rgba(190, 238, 17, 0.55) 55%,
-    rgba(102, 192, 244, 0.45) 75%,
+    rgba(102, 192, 244, 0.6) 20%,
+    rgba(102, 192, 244, 0.75) 50%,
+    rgba(102, 192, 244, 0.6) 80%,
     transparent 100%);
   pointer-events: none;
 }
@@ -58,18 +58,27 @@
 .topbar-banner-bg .banner-pulse {
   stroke-dasharray: 160 1600;
   stroke-dashoffset: 0;
-  animation: banner-pulse-sweep 5.5s linear infinite;
   filter: drop-shadow(0 0 4px var(--green-glow));
+  display: none;
+}
+html[data-motion="on"] .topbar-banner-bg .banner-pulse {
+  display: block;
+  animation: banner-pulse-sweep 5.5s linear infinite;
 }
 
-/* atoms get a gentle drift in opacity so the field feels alive even when
-   you're not looking directly at the electrons */
-.topbar-banner-bg .banner-atoms > g {
+/* topbar atoms + electrons: hidden by default, shown when user opts in */
+.topbar-banner-bg .banner-atoms {
+  display: none;
+}
+html[data-motion="on"] .topbar-banner-bg .banner-atoms {
+  display: block;
+}
+html[data-motion="on"] .topbar-banner-bg .banner-atoms > g {
   animation: atom-breathe 6s ease-in-out infinite;
 }
-.topbar-banner-bg .banner-atoms > g:nth-child(2) { animation-delay: -1.5s; }
-.topbar-banner-bg .banner-atoms > g:nth-child(3) { animation-delay: -3s; }
-.topbar-banner-bg .banner-atoms > g:nth-child(4) { animation-delay: -4.5s; }
+html[data-motion="on"] .topbar-banner-bg .banner-atoms > g:nth-child(2) { animation-delay: -1.5s; }
+html[data-motion="on"] .topbar-banner-bg .banner-atoms > g:nth-child(3) { animation-delay: -3s; }
+html[data-motion="on"] .topbar-banner-bg .banner-atoms > g:nth-child(4) { animation-delay: -4.5s; }
 
 @keyframes banner-pulse-sweep { to { stroke-dashoffset: -1760; } }
 @keyframes atom-breathe {
@@ -841,3 +850,23 @@ html[data-motion="off"] .banner-atoms {
 }
 .sitefooter a { color: var(--muted); }
 .sitefooter a:hover { color: var(--text); text-decoration: underline; }
+
+/* Site status dot in the topbar (see #254). Small circle beside the
+   Status link that reads green/yellow/red at a glance depending on the
+   overall edge-fn health. Colored inline with a data-state attribute set
+   by wireStatusDot() in topbar.js. */
+.topbar-status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  background: var(--muted);
+  vertical-align: middle;
+  flex: 0 0 auto;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.topbar-status-dot[data-state="operational"] { background: #3ecf8e; box-shadow: 0 0 4px rgba(62, 207, 142, 0.6); }
+.topbar-status-dot[data-state="degraded"]    { background: #f7c948; box-shadow: 0 0 4px rgba(247, 201, 72, 0.6); }
+.topbar-status-dot[data-state="down"]        { background: #e04747; box-shadow: 0 0 4px rgba(224, 71, 71, 0.6); }
+.topbar-status-dot[data-state="unknown"]     { background: var(--muted); }

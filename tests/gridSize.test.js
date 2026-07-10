@@ -56,11 +56,15 @@ describe('configurable card size (S/M/L)', () => {
     expect(homeSrc).not.toContain('_listRowHtml');
   });
 
-  test('load more keeps the current view in both sections', () => {
-    // Both sections re-render (rather than splice+append) so the tile-row
-    // orphan trim on the last row stays correct after every click.
-    expect(homeSrc).toContain('filtered.slice(0, shown).map(_popularItemHtml)');
-    expect(homeSrc).toContain('filtered.slice(0, shown).map(_recentCardHtml)');
+  test('page-turner navigation re-renders the whole grid on each click', () => {
+    // The visible-pages model re-renders (rather than splice+append) so
+    // the tile-row orphan trim on the last row stays correct after every
+    // page change. Each visible page is spliced out of `filtered` and
+    // the results are concatenated so top-nav clicks reset to just that
+    // page while Show More extends the set by one contiguous page (#253).
+    expect(homeSrc).toContain('windowRows.map(_recentCardHtml)');
+    expect(homeSrc).toContain('windowRows.map(_popularItemHtml)');
+    expect(homeSrc).toContain('sortedPages.flatMap');
     expect(homeSrc).not.toContain('function _appendCards');
   });
 

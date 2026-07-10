@@ -11,6 +11,7 @@
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import { exploreStore } from '../api/steam-explore.js?v=17281b89';
+import { isLibraryEndpoint, lookupLibrary } from '../api/steam-library-lookup.js?v=748599e3';
 
 // Store -> endpoints. `arg` is 'id' (numeric app/product id, name-resolvable)
 // or 'term' (free-text search). Keys match the edge function's ENDPOINTS.
@@ -29,6 +30,12 @@ const STORES = {
       { key: 'steam_community_search', label: 'community search (autocomplete)', arg: 'term' },
       { key: 'steam_featured', label: 'store featured (front page)', arg: 'none' },
       { key: 'steam_featured_categories', label: 'store featured categories', arg: 'none' },
+      // Keyed Steam Web API endpoints. Filtered out for non-admin users
+      // in populateEndpoints below; the edge fn also verifies manage_admins
+      // so the key never leaves the server for a non-admin caller. #221.
+      { key: 'steam_get_owned_games',     label: 'GetOwnedGames -- library for steamid (admin)',           arg: 'steamid', adminGated: true },
+      { key: 'steam_get_recently_played', label: 'GetRecentlyPlayedGames -- recent for steamid (admin)',   arg: 'steamid', adminGated: true },
+      { key: 'steam_resolve_vanity',      label: 'ResolveVanityURL -- vanity name -> steamid (admin)',     arg: 'vanity',  adminGated: true },
     ],
   },
   gog: {
@@ -169,6 +176,36 @@ const FIELD_DOCS = {
       ['elements[].price.totalPrice', 'discountPrice / originalPrice (in cents).'],
     ],
   },
+  steam_get_owned_games: {
+    title: 'Owned games (IPlayerService/GetOwnedGames)',
+    rows: [
+      ['response.game_count', 'Total games on the account (including F2P titles the user has launched).'],
+      ['response.games[].appid', 'Numeric Steam app ID -- cross-reference with the search index.'],
+      ['response.games[].name', 'Store title (present because we sent include_appinfo=1).'],
+      ['response.games[].playtime_forever', 'Lifetime playtime in minutes across all sessions.'],
+      ['response.games[].playtime_2weeks', 'Recent (last 2 weeks) playtime in minutes. Absent if the user has not played it recently.'],
+      ['response.games[].img_icon_url', 'Icon hash. Combine as https://media.steampowered.com/steamcommunity/public/images/apps/<appid>/<hash>.jpg.'],
+      ['response.games[].rtime_last_played', 'Unix timestamp of the most recent session for that title.'],
+    ],
+  },
+  steam_get_recently_played: {
+    title: 'Recently played (IPlayerService/GetRecentlyPlayedGames)',
+    rows: [
+      ['response.total_count', 'Number of games played in the last two weeks. Steam caps the list at 10-20 apps.'],
+      ['response.games[]', 'One entry per recently-played app.'],
+      ['response.games[].appid / .name / .img_icon_url', 'Same fields as GetOwnedGames -- resolve the icon URL the same way.'],
+      ['response.games[].playtime_forever', 'Lifetime playtime in minutes (mirror of GetOwnedGames).'],
+      ['response.games[].playtime_2weeks', 'Minutes played in the current 2-week window. Drives the "recent" ordering.'],
+    ],
+  },
+  steam_resolve_vanity: {
+    title: 'Resolve vanity URL (ISteamUser/ResolveVanityURL)',
+    rows: [
+      ['response.success', '1 = matched, 42 = no match, other = error. Steam only exposes success=1 with a steamid you can use.'],
+      ['response.steamid', 'Numeric 64-bit steamid you can feed into GetOwnedGames or the other library endpoints.'],
+      ['response.message', 'Human-readable error string when success != 1.'],
+    ],
+  },
 };
 
 function _showFieldDocs(endpointKey) {
@@ -261,6 +298,16 @@ async function _resolveArg(store, endpointArg, input) {
   if (endpointArg === 'none') return { id: '', title: '' };
   if (!q) return { error: 'Enter an ID, name, or search term.' };
   if (endpointArg === 'term') return { term: q };
+  // Keyed Steam Web API endpoints (#221): steamid is a numeric 17-digit id,
+  // vanity is the alphanumeric profile name. Both are passed straight through.
+  if (endpointArg === 'steamid') {
+    if (!/^\d{5,20}$/.test(q)) return { error: 'Steam ID must be a numeric 17-digit value (starts with 7656...).' };
+    return { steamid: q };
+  }
+  if (endpointArg === 'vanity') {
+    if (!/^[A-Za-z0-9_-]{2,64}$/.test(q)) return { error: 'Vanity URL is the profile name (letters, digits, _ or -).' };
+    return { vanityurl: q };
+  }
   if (/^\d+$/.test(q)) return { id: q };
   const idx = await _loadIndex();
   const ql = q.toLowerCase();
@@ -279,7 +326,11 @@ async function _resolveArg(store, endpointArg, input) {
   return { id, title: String(match[1] || '') };
 }
 
-export function renderApiExplorer() {
+// #221: `canManageAdmins` gates the three keyed Steam Web API endpoints
+// (GetOwnedGames / GetRecentlyPlayedGames / ResolveVanityURL). Passed
+// through from main.js so we don't need to duplicate the permission
+// resolution logic here.
+export function renderApiExplorer({ canManageAdmins = false } = {}) {
   const el = document.getElementById('api-explorer-content');
   if (!el) return;
 
@@ -340,10 +391,29 @@ export function renderApiExplorer() {
   const inputEl = el.querySelector('#apix-input');
 
   const populateEndpoints = () => {
-    endpointSel.innerHTML = STORES[store].endpoints
+    // Hide admin-gated endpoints when the current user lacks manage_admins.
+    // The edge fn also refuses to run for non-admins (defense in depth); this
+    // just keeps the dropdown clean so we don't tempt regular signed-in users
+    // with options that would 403. #221.
+    const list = STORES[store].endpoints.filter(
+      (e) => !e.adminGated || canManageAdmins,
+    );
+    endpointSel.innerHTML = list
       .map((e) => `<option value="${e.key}" data-arg="${e.arg}">${escapeHtml(e.label)}</option>`)
       .join('');
-    inputEl.placeholder = STORES[store].placeholder;
+    // Placeholder updates with the currently selected endpoint's arg type so
+    // admins see "Steam ID (17 digits)" instead of a stale "App ID or name"
+    // hint. Rebuilt on populate + on select change below.
+    const updatePlaceholder = () => {
+      const opt = endpointSel.options[endpointSel.selectedIndex];
+      const arg = opt?.dataset.arg || 'id';
+      const hint = arg === 'steamid' ? 'Steam ID (17 digits, e.g. 76561197960287930)'
+        : arg === 'vanity' ? 'Vanity URL profile name (e.g. gaben)'
+        : STORES[store].placeholder;
+      inputEl.placeholder = hint;
+    };
+    updatePlaceholder();
+    endpointSel.onchange = updatePlaceholder;
   };
   populateEndpoints();
 
@@ -364,18 +434,26 @@ export function renderApiExplorer() {
     if (resolved.error) { setStatus(resolved.error, true); return; }
     const label = arg === 'none'
       ? '(no argument)'
-      : resolved.id
-        ? `app ${resolved.id}${resolved.title ? ` (${resolved.title})` : ''}`
-        : `"${resolved.term}"`;
+      : resolved.steamid
+        ? `steamid ${resolved.steamid}`
+        : resolved.vanityurl
+          ? `vanity "${resolved.vanityurl}"`
+          : resolved.id
+            ? `app ${resolved.id}${resolved.title ? ` (${resolved.title})` : ''}`
+            : `"${resolved.term}"`;
     setStatus(`Fetching ${endpoint} for ${label}...`);
     const btn = document.getElementById('apix-fetch');
     if (btn) btn.disabled = true;
-    const payload = await exploreStore(endpoint, { id: resolved.id, term: resolved.term });
+    // #221: keyed endpoints go through the admin-only proxy. Public endpoints
+    // stay on steam-explore. isLibraryEndpoint keeps the routing in one place.
+    const payload = isLibraryEndpoint(endpoint)
+      ? await lookupLibrary(endpoint, { steamid: resolved.steamid, vanityurl: resolved.vanityurl })
+      : await exploreStore(endpoint, { id: resolved.id, term: resolved.term });
     if (btn) btn.disabled = false;
     lastPayload = payload;
     const rawMode = document.getElementById('apix-raw')?.checked;
     lastJson = JSON.stringify(rawMode ? payload : (payload && 'data' in payload ? payload.data : payload), null, 2);
-    lastName = `${endpoint}-${resolved.id || (resolved.term || '').replace(/\W+/g, '-').slice(0, 40)}`;
+    lastName = `${endpoint}-${resolved.id || resolved.steamid || resolved.vanityurl || (resolved.term || '').replace(/\W+/g, '-').slice(0, 40)}`;
     const out = document.getElementById('apix-output');
     if (out) { out.hidden = false; out.textContent = lastJson; }
     document.getElementById('apix-toolbar').hidden = false;
