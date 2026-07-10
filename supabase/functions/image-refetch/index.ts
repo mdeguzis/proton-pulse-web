@@ -370,6 +370,29 @@ async function _uploadOverride(req: Request, appId: string): Promise<WriteOk | W
   return { ok: true, source: "upload_override", resolved_via: "upload", url: publicUrl };
 }
 
+// Persist "admin ran the reprobe and it loaded OK" so the row survives a
+// page refresh (#270). Writes to boxart_confirmed_ok + clears the matching
+// image_load_errors row so client-side telemetry doesn't re-flag it.
+async function _confirmOk(req: Request, appId: string, confirmedUrl: string): Promise<WriteOk | WriteFail> {
+  const auth = await _requireAdmin(req, "confirm_ok");
+  if ("ok" in auth) return auth;
+  const svc = createServiceClient();
+  const { error: upErr } = await svc.from("boxart_confirmed_ok").upsert({
+    app_id: appId,
+    confirmed_url: confirmedUrl || null,
+    confirmed_at: new Date().toISOString(),
+    confirmed_by: auth.userId,
+  }, { onConflict: "app_id" });
+  if (upErr) {
+    return { ok: false, source: "confirm_ok", status: 500, error: `db upsert: ${upErr.message}` };
+  }
+  // Best-effort: drop the client-onerror row so the missing filter stops
+  // re-including this appid via that channel. Non-fatal if it wasn't there.
+  await svc.from("image_load_errors").delete().eq("app_id", appId).catch(() => null);
+  console.log(`[image-refetch] source=confirm_ok app=${appId} user=${auth.userId} url=${confirmedUrl || "(none)"}`);
+  return { ok: true, source: "confirm_ok", resolved_via: "confirmed", url: confirmedUrl };
+}
+
 async function _clearOverride(req: Request, appId: string): Promise<WriteOk | WriteFail> {
   const auth = await _requireAdmin(req, "clear_override");
   if ("ok" in auth) return auth;
@@ -450,6 +473,10 @@ Deno.serve(async (req: Request) => {
   }
   if (source === "clear_override") {
     const result = await _clearOverride(req, appId);
+    return Response.json(result, { status: result.ok ? 200 : (result.status || 400), headers: corsHeaders });
+  }
+  if (source === "confirm_ok") {
+    const result = await _confirmOk(req, appId, overrideUrl);
     return Response.json(result, { status: result.ok ? 200 : (result.status || 400), headers: corsHeaders });
   }
   return Response.json({ error: `unknown source "${source}"` }, { status: 400, headers: corsHeaders });
