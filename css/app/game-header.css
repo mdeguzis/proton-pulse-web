@@ -404,20 +404,33 @@
 }
 .game-header-art-col .game-header-art { width: 100%; height: auto; }
 
-/* OS availability strip: top-right of the game-header block. Three
-   chips (Windows / macOS / Linux) lit up green when Steam advertises the
-   platform, dimmed when not. Absolute-positioned so it sits above the
-   header content on desktop; on mobile it becomes a normal top row. */
-.game-os-strip {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  display: flex;
-  gap: 6px;
-  z-index: 2;
-}
+/* Unified tag row under the artwork (#266 refinement): OS availability
+   chips (Win / macOS / Linux) plus user-context tags (On wishlist / In
+   library) share one .game-tag pill shape so the strip reads as one
+   cohesive band. Left-aligned, wraps on narrow viewports. */
 .game-header { position: relative; }
-.game-os-chip {
+.game-header-art-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+  justify-content: flex-start;
+}
+.game-os-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.game-user-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.game-user-tags:empty { display: none; }
+/* Shared pill shape. Every tag under the artwork uses this; per-variant
+   modifiers add color / opacity. Keeping padding, radius, and font-size
+   identical is what makes the row read as one strip instead of two. */
+.game-tag {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -429,11 +442,15 @@
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.04em;
-  opacity: 0.55;
-  cursor: pointer;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: default;
   transition: opacity 0.15s, color 0.15s, border-color 0.15s, background 0.15s;
 }
-.game-os-chip svg { display: block; }
+.game-tag svg { display: block; }
+/* OS chips: buttons -- clicking opens the metadata modal. Off state is
+   muted; on state lights up green because Steam advertises the platform. */
+.game-os-chip { cursor: pointer; opacity: 0.55; }
 .game-os-chip:hover { border-color: var(--accent); }
 .game-os-chip--on {
   opacity: 1;
@@ -446,16 +463,15 @@
   background: rgba(126,211,122,0.16);
 }
 [data-theme="light"] .game-os-chip--on { color: #256b25; }
-@media (max-width: 720px) {
-  /* Below the title area, above the grid. Left-align so the row starts
-     under the title instead of hugging the right edge -- overflow /
-     wrap looks intentional this way rather than crammed. */
-  .game-os-strip {
-    position: static;
-    margin-bottom: 6px;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
+/* User-context tags (On wishlist / In library): Steam-blue background
+   with white text so they distinguish from the green OS chips at a
+   glance. Slightly faded so they read as ambient info. */
+.game-tag--user {
+  color: #fff;
+  border-color: transparent;
+  opacity: 0.85;
+  font-weight: 500;
+  text-transform: none;
 }
 .game-native-linux::before {
   content: '>_ ';

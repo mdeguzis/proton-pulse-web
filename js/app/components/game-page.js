@@ -18,6 +18,9 @@ import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, 
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=ba0d7848';
 import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=c7e1268c';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
+import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
+import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
+import { computeBadgesForAppId, getCardBadgePrefs } from '../../lib/card-badges.js?v=1f36edf9';
 
 let _steamCatalogCache = null;
 async function _fetchSteamCatalog() {
@@ -965,23 +968,30 @@ export async function renderGamePage(appId) {
       <div class="game-header">
         ${replacedBanner}
         <div class="game-title">${esc(title)} <span class="game-title-store" title="Storefront this entry maps to">(${esc(storeLabelFromAppId(appId) || 'Steam')})</span>${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}${replacedBy ? ` <span class="game-title-replaced-pill" title="Replaced by app ${esc(replacedBy)}: ${esc(replacedByTitle)}">REPLACED</span>` : ''}${/\bdemo\b/i.test(title) ? ' <span class="game-title-demo-pill" title="This entry looks like a demo based on the title. Reports may not reflect the full game.">DEMO</span>' : ''}</div>
-        <div class="game-os-strip" id="game-os-strip" hidden aria-label="Supported operating systems">
-          <button type="button" class="game-os-chip" data-os="windows" title="Windows">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M3 5.5L10 4.5V11H3V5.5zm8-1.2L21 3v8H11V4.3zM3 12h7v6.5L3 17.5V12zm8 0h10v9L11 19.5V12z"/></svg>
-            <span>Win</span>
-          </button>
-          <button type="button" class="game-os-chip" data-os="mac" title="macOS">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M17.5 12.5c0-2.6 2.1-3.9 2.2-4-1.2-1.8-3.1-2-3.8-2.1-1.6-.2-3.1.9-3.9.9-.8 0-2.1-.9-3.4-.9-1.8 0-3.4 1-4.3 2.6-1.8 3.2-.5 7.9 1.3 10.5.9 1.3 2 2.7 3.4 2.6 1.4 0 1.9-.9 3.6-.9 1.7 0 2.1.9 3.5.9 1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.4-2.9 1.4-3-.1 0-2.7-1-2.7-4zM14.5 4.7c.7-.9 1.2-2.1 1-3.3-1.1.1-2.4.8-3.1 1.6-.7.8-1.3 2-1.1 3.2 1.2.1 2.4-.6 3.2-1.5z"/></svg>
-            <span>macOS</span>
-          </button>
-          <button type="button" class="game-os-chip" data-os="linux" title="Linux">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2c-1.66 0-3 1.34-3 3v3.5c-1.5 1-3 2.5-3 5.5 0 2.5 1 4.5 2 5.5.5.5 1 1 1 2v.5h6V21c0-1 .5-1.5 1-2 1-1 2-3 2-5.5 0-3-1.5-4.5-3-5.5V5c0-1.66-1.34-3-3-3zm-1.5 5c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zm3 0c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zM12 11l-1.5 2h3L12 11z"/></svg>
-            <span>Linux</span>
-          </button>
-        </div>
         <div class="game-header-grid">
           <div class="game-header-art-col">
             <img class="game-header-art" src="${STEAM_IMG(appId)}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
+            <!-- Uniform tag row under the artwork: OS chips + user-context
+                 tags (On wishlist / In library) share the same pill shape and
+                 sit left-aligned so they read as one strip. Each group hides
+                 itself until its data resolves. -->
+            <div class="game-header-art-tags" aria-label="Game tags">
+              <div class="game-os-strip" id="game-os-strip" hidden aria-label="Supported operating systems">
+                <button type="button" class="game-tag game-os-chip" data-os="windows" title="Windows">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M3 5.5L10 4.5V11H3V5.5zm8-1.2L21 3v8H11V4.3zM3 12h7v6.5L3 17.5V12zm8 0h10v9L11 19.5V12z"/></svg>
+                  <span>Win</span>
+                </button>
+                <button type="button" class="game-tag game-os-chip" data-os="mac" title="macOS">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M17.5 12.5c0-2.6 2.1-3.9 2.2-4-1.2-1.8-3.1-2-3.8-2.1-1.6-.2-3.1.9-3.9.9-.8 0-2.1-.9-3.4-.9-1.8 0-3.4 1-4.3 2.6-1.8 3.2-.5 7.9 1.3 10.5.9 1.3 2 2.7 3.4 2.6 1.4 0 1.9-.9 3.6-.9 1.7 0 2.1.9 3.5.9 1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.4-2.9 1.4-3-.1 0-2.7-1-2.7-4zM14.5 4.7c.7-.9 1.2-2.1 1-3.3-1.1.1-2.4.8-3.1 1.6-.7.8-1.3 2-1.1 3.2 1.2.1 2.4-.6 3.2-1.5z"/></svg>
+                  <span>macOS</span>
+                </button>
+                <button type="button" class="game-tag game-os-chip" data-os="linux" title="Linux">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2c-1.66 0-3 1.34-3 3v3.5c-1.5 1-3 2.5-3 5.5 0 2.5 1 4.5 2 5.5.5.5 1 1 1 2v.5h6V21c0-1 .5-1.5 1-2 1-1 2-3 2-5.5 0-3-1.5-4.5-3-5.5V5c0-1.66-1.34-3-3-3zm-1.5 5c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zm3 0c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zM12 11l-1.5 2h3L12 11z"/></svg>
+                  <span>Linux</span>
+                </button>
+              </div>
+              <div class="game-user-tags" id="game-user-tags" aria-label="Your Steam context"></div>
+            </div>
           </div>
           ${ratingPanel}
           <div class="game-header-actions">
@@ -1296,6 +1306,35 @@ export async function renderGamePage(appId) {
 
     // async-enhance author blocks with stats + avatars after the DOM is ready
     void enhanceAuthorBlocks(reps.filter(r => r._kind !== 'config'));
+
+    // User-context tags under the artwork (#266 refinement): "On wishlist"
+    // and "In library" light up once we know the user is signed in AND has
+    // the appid in the respective cached Set. Runs independently of the
+    // metadata fetch so a slow Steam appdetails call doesn't delay this.
+    void (async () => {
+      const host = el.querySelector('#game-user-tags');
+      if (!host) return;
+      let signedIn = false;
+      try {
+        const session = await window.SupaAuth?.getSession?.();
+        signedIn = !!(session && session.user);
+      } catch { /* stay signed out */ }
+      const prefs = getCardBadgePrefs();
+      const anyEnabled = Object.values(prefs).some(Boolean);
+      if (!signedIn || !anyEnabled) return;
+      const [libraryAppIds, wishlistAppIds] = await Promise.all([
+        prefs.library  ? getMyLibraryAppIds().catch(() => new Set())  : Promise.resolve(new Set()),
+        prefs.wishlist ? getMyWishlistAppIds().catch(() => new Set()) : Promise.resolve(new Set()),
+      ]);
+      const badges = computeBadgesForAppId(appId, { prefs, libraryAppIds, wishlistAppIds, signedIn: true });
+      if (!badges.length) return;
+      // Render each badge as a .game-tag pill so it matches the OS chips
+      // in size + shape. Steam-blue background + white text keeps them
+      // reading as "yours" without competing with the green OS chips.
+      host.innerHTML = badges.map((b) =>
+        `<span class="game-tag game-tag--user" data-badge="${b.key}" style="background:${b.color}">${b.label}</span>`,
+      ).join('');
+    })();
 
     // fetch real Steam Deck compat + min requirements and patch the UI.
     // Also probe platforms.linux via the same shared appdetails cache so

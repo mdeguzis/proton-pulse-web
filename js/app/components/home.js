@@ -14,7 +14,6 @@ import { renderHomeLibraryChart } from './home-library-chart.js?v=c7e8a2d8';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { loadDeckStatusMap } from '../api/deck-status.js?v=456b6112';
-import { computeBadgesForAppId, getCardBadgePrefs, renderBadgesHtml } from '../../lib/card-badges.js?v=1f36edf9';
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
 import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';
 
@@ -240,39 +239,9 @@ function _buildSteamTypeMap() {
   }
 }
 
-// Shared per-render context populated by renderHomePage() so both
-// _recentCardHtml (module scope) and _popularItemHtml (closure scope) can
-// build the mini-badges row from the same cached appid Sets. Reset every
-// render; empty means no badges (default is: no user data loaded yet).
-let _cardBadgeCtx = { prefs: null, libraryAppIds: null, wishlistAppIds: null, signedIn: false };
-function _badgesFor(appId) {
-  if (!_cardBadgeCtx.prefs) return '';
-  const badges = computeBadgesForAppId(appId, _cardBadgeCtx);
-  return renderBadgesHtml(badges);
-}
-async function _buildCardBadgeContext() {
-  const prefs = getCardBadgePrefs();
-  // Skip data fetches when the user has all badges off -- there's nothing
-  // to show and pinging the wishlist / library REST for a signed-out user
-  // is wasted round-trips.
-  const anyEnabled = Object.values(prefs).some(Boolean);
-  const ctx = { prefs, libraryAppIds: null, wishlistAppIds: null, signedIn: false };
-  if (!anyEnabled) return ctx;
-  try {
-    const session = await window.SupaAuth?.getSession?.();
-    ctx.signedIn = !!(session && session.user);
-  } catch { /* leave signedIn false */ }
-  if (!ctx.signedIn) return ctx;
-  const needsLibrary  = !!prefs.library;
-  const needsWishlist = !!prefs.wishlist;
-  const [lib, wish] = await Promise.all([
-    needsLibrary  ? getMyLibraryAppIds().catch(() => new Set())  : Promise.resolve(new Set()),
-    needsWishlist ? getMyWishlistAppIds().catch(() => new Set()) : Promise.resolve(new Set()),
-  ]);
-  ctx.libraryAppIds  = lib;
-  ctx.wishlistAppIds = wish;
-  return ctx;
-}
+// Browse cards no longer carry mini-badges (#266 refinement); the tag row
+// moved to the game details page under the artwork so users see the
+// wishlist / library context there. Home renders no per-user overlays.
 
 function _recentCardHtml(r) {
   // recent-reports.json carries appType ('gog'|'epic'|'steam') from the pipeline.
@@ -283,11 +252,10 @@ function _recentCardHtml(r) {
     href: `#/app/${r.appId}`,
     appId: r.appId,
     title: r.title,
-    // Report count + latest date live on the game details page. The card
-    // shows only the mini-badges below the title so the browse view stays
-    // scannable at grid size.
+    // Report count + latest date + On wishlist / In library tags all live
+    // on the game details page now (#266 refinement). The browse tile keeps
+    // just the artwork, title, and tier pill so the grid stays scannable.
     sub: '',
-    miniBadges: _badgesFor(r.appId),
     tier: _cardTier(r.tier),
     storePill: storeLabel(appType),
     trend: _lookupTrend(r.appId),
@@ -304,12 +272,6 @@ export async function renderHomePage() {
   // count setting (LOAD_COUNTS) is retained in localStorage for
   // backwards compat but no longer drives paging.
   console.debug('[browse] preload target rows', { rows: targetRowsForViewport() });
-  // Mini-badges context: load once per render and stash for both card
-  // renderers to read. When the user has any auth-gated badge enabled AND
-  // they're signed in with Steam we pre-fetch the library + wishlist appid
-  // Sets so every card can be tagged synchronously as it's built. Users
-  // with all badges disabled skip both fetches entirely.
-  _cardBadgeCtx = await _buildCardBadgeContext();
   try {
     const [recentUrl, mostPlayedUrl] = await Promise.all([
       dataUrl('recent-reports.json'),
@@ -626,10 +588,9 @@ export async function renderHomePage() {
       return renderGameCard({
         href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
         title: g.title,
-        // Report count + latest date moved to the game details page; the
-        // browse tile just shows the tier pill and the mini-badges row.
+        // Report count + latest date + user-context tags moved to the
+        // game details page (#266 refinement). Tile stays scannable.
         sub: '',
-        miniBadges: _badgesFor(g.appId),
         tier: _cardTier(g.tier), storePill: storeLabel(g.appType || appTypeFromAppId(g.appId)),
         trend: _lookupTrend(g.appId),
         steamType: _lookupSteamType(g.appId),

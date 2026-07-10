@@ -175,26 +175,63 @@ const HOME_SRC = fs.readFileSync(
   'utf8',
 );
 
-describe('home.js: uses badges + drops the report-count sub', () => {
-  test('imports the card-badges helpers', () => {
-    expect(HOME_SRC).toMatch(/from '\.\.\/\.\.\/lib\/card-badges\.js/);
-    expect(HOME_SRC).toContain('computeBadgesForAppId');
-    expect(HOME_SRC).toContain('renderBadgesHtml');
-  });
-
-  test('_recentCardHtml passes empty sub and computed miniBadges', () => {
+describe('home.js: drops the report-count sub AND the miniBadges row', () => {
+  // The mini-badges moved to the game details page under the artwork
+  // (#266 refinement). Browse cards render only artwork + title + tier.
+  test('_recentCardHtml passes empty sub and does NOT pass miniBadges', () => {
     expect(HOME_SRC).toMatch(/function _recentCardHtml[\s\S]{0,800}sub: ''/);
-    expect(HOME_SRC).toMatch(/function _recentCardHtml[\s\S]{0,800}miniBadges: _badgesFor\(r\.appId\)/);
+    // No miniBadges key at all -- badge context isn't loaded on browse.
+    const recentBody = HOME_SRC.match(/function _recentCardHtml[\s\S]{0,800}\}/);
+    expect(recentBody[0]).not.toContain('miniBadges');
   });
 
-  test('_popularItemHtml passes empty sub and computed miniBadges', () => {
+  test('_popularItemHtml passes empty sub and does NOT pass miniBadges', () => {
     expect(HOME_SRC).toMatch(/function _popularItemHtml[\s\S]{0,900}sub: ''/);
-    expect(HOME_SRC).toMatch(/function _popularItemHtml[\s\S]{0,900}miniBadges: _badgesFor\(g\.appId\)/);
+    const popularBody = HOME_SRC.match(/function _popularItemHtml[\s\S]{0,900}\}/);
+    expect(popularBody[0]).not.toContain('miniBadges');
   });
 
-  test('renderHomePage populates the badge context before rendering', () => {
-    expect(HOME_SRC).toContain('_cardBadgeCtx = await _buildCardBadgeContext()');
-    expect(HOME_SRC).toContain('function _buildCardBadgeContext()');
+  test('home.js does not import card-badges (that lives on the details page now)', () => {
+    expect(HOME_SRC).not.toMatch(/from '\.\.\/\.\.\/lib\/card-badges\.js/);
+  });
+});
+
+// ---------- Part 3b: game-page.js -- new tag row under the artwork -----
+
+const GAME_PAGE_SRC = fs.readFileSync(
+  path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'),
+  'utf8',
+);
+
+describe('game-page.js: unified tag row under the artwork', () => {
+  test('imports the badge helpers so the tag row can be filled', () => {
+    expect(GAME_PAGE_SRC).toMatch(/from '\.\.\/\.\.\/lib\/card-badges\.js/);
+    expect(GAME_PAGE_SRC).toContain('computeBadgesForAppId');
+    expect(GAME_PAGE_SRC).toContain('getMyLibraryAppIds');
+    expect(GAME_PAGE_SRC).toContain('getMyWishlistAppIds');
+  });
+
+  test('markup wraps the OS strip + user tags in .game-header-art-tags under the img', () => {
+    expect(GAME_PAGE_SRC).toContain('class="game-header-art-tags"');
+    expect(GAME_PAGE_SRC).toContain('id="game-user-tags"');
+    // The OS strip is now a child of the art column, not an absolute-
+    // positioned overlay. Sanity check that the img still comes before it.
+    const artColMatch = GAME_PAGE_SRC.match(/class="game-header-art-col"[\s\S]{0,4000}game-header-art-tags/);
+    expect(artColMatch).not.toBeNull();
+  });
+
+  test('user-context tags get the shared .game-tag class + a --user modifier', () => {
+    expect(GAME_PAGE_SRC).toMatch(/class="game-tag game-tag--user"/);
+  });
+
+  test('OS chips carry the shared .game-tag class alongside .game-os-chip', () => {
+    expect(GAME_PAGE_SRC).toMatch(/class="game-tag game-os-chip"/);
+  });
+
+  test('tag-row filler skips when the user is signed out', () => {
+    // Guard: return early rather than showing nothing (dev noise) or a
+    // sign-in prompt. The badges are ambient -- absence is fine.
+    expect(GAME_PAGE_SRC).toMatch(/if \(!signedIn \|\| !anyEnabled\) return;/);
   });
 });
 
