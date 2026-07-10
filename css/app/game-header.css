@@ -249,19 +249,13 @@
 .game-header-art {
   grid-column: 1;
   grid-row: 1;
-  align-self: stretch;
+  align-self: start;
   width: 100%;
   max-width: 100%;
-  /* Cap the height so a wide viewport can't balloon a 460x215 Steam header
-     into a giant panel. The box art (and the panel that matches its row
-     height) stays compact; object-fit keeps the key art centered. */
-  max-height: 240px;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
   display: block;
   border: 1px solid var(--border);
   border-radius: 6px;
-  min-height: 0;
 }
 
 /* ---- rating panel: confidence dial + per-tier bars + footer ---- */
