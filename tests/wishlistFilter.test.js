@@ -144,16 +144,21 @@ describe('home.js wires the wishlist filter (#266)', () => {
     expect(chainMatches.length).toBeGreaterThanOrEqual(2);
   });
 
-  test('markup has a #home-wishlist-checks group with an "On wishlist" chip', () => {
-    expect(HOME_SRC).toContain('id="home-wishlist-checks"');
+  test('wishlist chip lives inside the Library filter group (merged)', () => {
+    // #266 revision: the wishlist chip was consolidated into the Library
+    // group so users pick ONE of {All, My games, On wishlist} (they never
+    // want an empty intersection of "own it AND still on wishlist").
+    expect(HOME_SRC).toContain('id="home-library-checks"');
     expect(HOME_SRC).toContain('data-value="wishlist"');
     expect(HOME_SRC).toContain('>On wishlist<');
+    // The old separate group is gone.
+    expect(HOME_SRC).not.toContain('id="home-wishlist-checks"');
   });
 
   test('wishlist selection lazy-loads the appid Set on first activation', () => {
-    // Same shape as the library on-change: fetch the cached ids when the
-    // "wishlist" value is first selected.
-    expect(HOME_SRC).toMatch(/wishlistSel = sel;[\s\S]{0,200}sel\.has\('wishlist'\)[\s\S]{0,200}getMyWishlistAppIds/);
+    // Merged handler mirrors the group selection into both librarySel and
+    // wishlistSel; wishlistAppIds fetches lazily when the size becomes > 0.
+    expect(HOME_SRC).toMatch(/wishlistSel[\s\S]{0,200}sel\.has\('wishlist'\)[\s\S]{0,400}getMyWishlistAppIds/);
   });
 
   test('wishlistSel is included in save + restore + clear + badge count', () => {

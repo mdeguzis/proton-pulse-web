@@ -363,15 +363,11 @@ export async function renderHomePage() {
               <button class="pg-filter" type="button" data-value="protondb">ProtonDB</button>
               <button class="pg-filter" type="button" data-value="pulse">Pulse</button>
             </div>
-            <div class="pg-filter-group" id="home-library-checks">
+            <div class="pg-filter-group" id="home-library-checks" title="Filter by whether the game is in your Steam library or on your wishlist (requires sign-in)">
               <span class="pg-filter-group-label">Library</span>
               <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
-              <button class="pg-filter" type="button" data-value="mine" title="Only games in your Steam library (requires sign-in and a synced library)">My games</button>
-            </div>
-            <div class="pg-filter-group" id="home-wishlist-checks" title="Show reports for games in your Steam wishlist (requires sign-in and a synced wishlist)">
-              <span class="pg-filter-group-label">Wishlist</span>
-              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
-              <button class="pg-filter" type="button" data-value="wishlist">On wishlist</button>
+              <button class="pg-filter" type="button" data-value="mine" title="Only games in your Steam library">My games</button>
+              <button class="pg-filter" type="button" data-value="wishlist" title="Only games on your Steam wishlist">On wishlist</button>
             </div>
             <div class="pg-filter-group" id="home-deck-checks" title="Filter by Valve's official Steam Deck compatibility rating">
               <span class="pg-filter-group-label">Deck</span>
@@ -835,8 +831,9 @@ export async function renderHomePage() {
       _applyPillSelection(tierGroup, saved.tier);
       _applyPillSelection(sourceGroup, saved.source);
       _applyPillSelection(storeGroup, saved.store);
-      _applyPillSelection(libraryGroup, saved.library);
-      _applyPillSelection(wishlistGroup, saved.wishlist);
+      // Library group holds BOTH library ('mine') and wishlist ('wishlist')
+      // chips as of #266 consolidation; union them for pill highlighting.
+      _applyPillSelection(libraryGroup, [...(saved.library || []), ...(saved.wishlist || [])]);
       _applyPillSelection(deckGroup, saved.deck);
       _applyPillSelection(kindGroup, saved.kind);
       updateFilterBadge();
@@ -864,7 +861,6 @@ export async function renderHomePage() {
     const sourceGroup = document.getElementById('home-source-checks');
     const storeGroup = document.getElementById('home-store-checks');
     const libraryGroup = document.getElementById('home-library-checks');
-    const wishlistGroup = document.getElementById('home-wishlist-checks');
     const deckGroup = document.getElementById('home-deck-checks');
     const kindGroup = document.getElementById('home-kind-checks');
     if (tierGroup) _wirePillGroup(tierGroup, { onChange: sel => {
@@ -876,16 +872,18 @@ export async function renderHomePage() {
     if (storeGroup) _wirePillGroup(storeGroup, { onChange: sel => {
       storeSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
+    // Library group holds both "My games" and "On wishlist" chips (#266
+    // consolidation). Mutual-exclusion in the group prevents nonsense
+    // intersections like "own it AND still want it"; we mirror the single
+    // group selection back into the two per-source Sets so the two filter
+    // functions (_filterByLibrary, _filterByWishlist) stay independent.
     if (libraryGroup) _wirePillGroup(libraryGroup, { onChange: async sel => {
-      librarySel = sel;
-      if (sel.has('mine') && !libraryAppIds) {
+      librarySel  = sel.has('mine')     ? new Set(['mine'])     : new Set();
+      wishlistSel = sel.has('wishlist') ? new Set(['wishlist']) : new Set();
+      if (librarySel.size && !libraryAppIds) {
         libraryAppIds = await getMyLibraryAppIds().catch(() => new Set());
       }
-      updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
-    }});
-    if (wishlistGroup) _wirePillGroup(wishlistGroup, { onChange: async sel => {
-      wishlistSel = sel;
-      if (sel.has('wishlist') && !wishlistAppIds) {
+      if (wishlistSel.size && !wishlistAppIds) {
         wishlistAppIds = await getMyWishlistAppIds().catch(() => new Set());
       }
       updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
@@ -906,7 +904,7 @@ export async function renderHomePage() {
 
     // Clear filters: reset every group back to "All", sort back to Recent.
     document.getElementById('home-filter-clear')?.addEventListener('click', () => {
-      [tierGroup, sourceGroup, storeGroup, libraryGroup, wishlistGroup, deckGroup, kindGroup].forEach(g => {
+      [tierGroup, sourceGroup, storeGroup, libraryGroup, deckGroup, kindGroup].forEach(g => {
         if (!g) return;
         g.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'));
         const allBtn = g.querySelector('.pg-filter[data-value="all"]');

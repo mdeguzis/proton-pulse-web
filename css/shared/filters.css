@@ -97,10 +97,25 @@
 }
 
 /* ── Responsive ───────────────────────────────────────────────────────── */
+/* Grow the panel with the viewport so pill rows stop wrapping into a tall
+   3-per-row column on wide monitors. Cap only via the earlier 96vw so the
+   panel never hits the screen edge. */
 @media (min-width: 601px) {
   .filter-panel:not(.filter-panel--stack),
   .pg-filter-panel {
     min-width: 480px;
+  }
+}
+@media (min-width: 900px) {
+  .filter-panel:not(.filter-panel--stack),
+  .pg-filter-panel {
+    min-width: 640px;
+  }
+}
+@media (min-width: 1200px) {
+  .filter-panel:not(.filter-panel--stack),
+  .pg-filter-panel {
+    min-width: 820px;
   }
 }
 
