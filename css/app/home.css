@@ -353,6 +353,17 @@
   color: var(--muted);
   margin-bottom: 10px;
 }
+/* Section title above each group of bars so the ProtonDB tier row and
+   the Steam Deck compat row read as two distinct dimensions. */
+.hlc-section-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 12px 0 6px;
+}
+.hlc-section-title:first-of-type { margin-top: 4px; }
 .hlc-bars { display: flex; flex-direction: column; gap: 6px; }
 .hlc-row {
   display: grid;
