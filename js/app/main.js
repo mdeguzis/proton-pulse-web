@@ -3,8 +3,12 @@
 import { route } from './router.js?v=e6357594';
 import { wireSearch } from './components/search.js?v=598aaad1';
 
-window.addEventListener('hashchange', () => route());
-window.addEventListener('popstate', () => route());
+// Reset scroll on every hash navigation so a click on a card from
+// halfway down a long browse list (My Library / My Wishlist) doesn't
+// leave the game details view stranded mid-page. The initial page load
+// runs route() below without this so browser scroll restoration wins.
+window.addEventListener('hashchange', () => { window.scrollTo(0, 0); route(); });
+window.addEventListener('popstate',  () => { window.scrollTo(0, 0); route(); });
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', wireSearch);
