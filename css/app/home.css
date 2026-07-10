@@ -349,10 +349,18 @@
   background: var(--accent);
   color: #0a0c10;
 }
-/* Chip row wraps when the viewport can't fit all three on one line;
-   flex-wrap on the container handles that gracefully. When we add the
-   3-device deck-status layout, each per-device chip will use an icon
-   glyph on mobile via a shared .hlc-chip--icon-only class. */
+/* Deck chip carries the Steam Deck brand mark (D-shield + gradient dot)
+   next to the "Steam Deck" text on desktop. Mobile drops the text so
+   the row stays compact -- the glyph is distinct enough that people
+   who know the Deck recognize it at a glance. Icon bumps to 18px on
+   mobile because it's carrying the full label. */
+.hlc-chip--deck { display: inline-flex; align-items: center; gap: 6px; padding-left: 8px; padding-right: 12px; }
+.hlc-chip-glyph { flex: 0 0 auto; display: block; }
+@media (max-width: 620px) {
+  .hlc-chip--deck { padding: 4px 8px; }
+  .hlc-chip--deck .hlc-chip-text { display: none; }
+  .hlc-chip-glyph { width: 18px; height: 18px; }
+}
 .hlc-subtitle {
   font-size: 0.78rem;
   color: var(--muted);
