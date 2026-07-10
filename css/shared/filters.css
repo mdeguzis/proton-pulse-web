@@ -98,8 +98,11 @@
 
 /* ── Responsive ───────────────────────────────────────────────────────── */
 /* Grow the panel with the viewport so pill rows stop wrapping into a tall
-   3-per-row column on wide monitors. Cap only via the earlier 96vw so the
-   panel never hits the screen edge. */
+   column on wide monitors. Cap only via the earlier 96vw so the panel
+   never hits the screen edge. Steps are chosen to hit common laptop
+   widths: 1440 (14" MacBook Air/Pro) and 1728 (16" MacBook) get the widest
+   variants so the pills fit on one or two rows instead of running long
+   vertically. */
 @media (min-width: 601px) {
   .filter-panel:not(.filter-panel--stack),
   .pg-filter-panel {
@@ -109,13 +112,25 @@
 @media (min-width: 900px) {
   .filter-panel:not(.filter-panel--stack),
   .pg-filter-panel {
-    min-width: 640px;
+    min-width: 680px;
   }
 }
 @media (min-width: 1200px) {
   .filter-panel:not(.filter-panel--stack),
   .pg-filter-panel {
-    min-width: 820px;
+    min-width: 920px;
+  }
+}
+@media (min-width: 1440px) {
+  .filter-panel:not(.filter-panel--stack),
+  .pg-filter-panel {
+    min-width: 1120px;
+  }
+}
+@media (min-width: 1700px) {
+  .filter-panel:not(.filter-panel--stack),
+  .pg-filter-panel {
+    min-width: 1320px;
   }
 }
 

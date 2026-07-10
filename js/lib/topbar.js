@@ -50,6 +50,16 @@
     <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/>
     </symbol>
+    <!-- List icon for the Wishlist nav entry: bulleted list (three dots +
+         three lines) so it reads as "a saved list of things". -->
+    <symbol id="icon-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="9" x2="20" y1="6" y2="6"/>
+      <line x1="9" x2="20" y1="12" y2="12"/>
+      <line x1="9" x2="20" y1="18" y2="18"/>
+      <circle cx="5" cy="6"  r="1.4" fill="currentColor" stroke="none"/>
+      <circle cx="5" cy="12" r="1.4" fill="currentColor" stroke="none"/>
+      <circle cx="5" cy="18" r="1.4" fill="currentColor" stroke="none"/>
+    </symbol>
     <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
     </symbol>
@@ -224,6 +234,10 @@
           <a href="app.html?filter=mine" data-page="my-library" id="nav-my-library">
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg>
             <span>My Library</span>
+          </a>
+          <a href="app.html?filter=wishlist" data-page="my-wishlist" id="nav-my-wishlist">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-list"/></svg>
+            <span>My Wishlist</span>
           </a>
           <a href="data-index.html" data-page="data-index">
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg>

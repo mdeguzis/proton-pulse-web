@@ -312,16 +312,22 @@ export async function renderHomePage() {
     // itself is still activated below in _restoreFilters.
     const _urlFilter = new URLSearchParams(window.location.search).get('filter');
     const _isMyLibrary = _urlFilter === 'mine';
+    const _isMyWishlist = _urlFilter === 'wishlist';
     // The app.html shell owns a static "Game Reports" page-header. Hide it
-    // in library mode so the only visible title is our own "My Library"
-    // header injected below; otherwise the page shows two competing titles.
+    // when we swap in a My Library / My Wishlist header so the page shows
+    // one title instead of two competing ones.
     const _appPageHeader = document.querySelector('.main-inner > .page-header');
-    if (_appPageHeader) _appPageHeader.hidden = _isMyLibrary;
+    if (_appPageHeader) _appPageHeader.hidden = _isMyLibrary || _isMyWishlist;
     el.innerHTML = `
       ${_isMyLibrary ? `
         <div class="home-page-header" id="home-page-header">
           <div class="home-page-eyebrow">Your Steam library</div>
           <h1 class="home-page-title">My Library</h1>
+        </div>` : ''}
+      ${_isMyWishlist ? `
+        <div class="home-page-header" id="home-page-header">
+          <div class="home-page-eyebrow">Your Steam wishlist</div>
+          <h1 class="home-page-title">My Wishlist</h1>
         </div>` : ''}
       <div class="home-filter-bar">
         <div class="home-filter-left">
@@ -1016,39 +1022,50 @@ export async function renderHomePage() {
     // #199: honor ?filter=mine so the profile "View my games" button lands
     // here with the pill pre-activated. Overrides any restored library set
     // for this visit so the deep-link intent wins.
+    // #266: same treatment for ?filter=wishlist so the browse nav "My
+    // Wishlist" entry lands preconfigured.
     const urlFilter = new URLSearchParams(window.location.search).get('filter');
-    if (urlFilter === 'mine') {
-      librarySel = new Set(['mine']);
-      _applyPillSelection(libraryGroup, ['mine']);
-      libraryAppIds = await getMyLibraryAppIds().catch(() => new Set());
+    if (urlFilter === 'mine' || urlFilter === 'wishlist') {
+      const isWishlist = urlFilter === 'wishlist';
+      const selValue = isWishlist ? 'wishlist' : 'mine';
+      if (isWishlist) {
+        wishlistSel = new Set(['wishlist']);
+        librarySel = new Set();
+      } else {
+        librarySel = new Set(['mine']);
+        wishlistSel = new Set();
+      }
+      _applyPillSelection(libraryGroup, [selValue]);
+      const [libIds, wishIds] = await Promise.all([
+        !isWishlist ? getMyLibraryAppIds().catch(() => new Set())  : Promise.resolve(new Set()),
+        isWishlist  ? getMyWishlistAppIds().catch(() => new Set()) : Promise.resolve(new Set()),
+      ]);
+      libraryAppIds  = libIds;
+      wishlistAppIds = wishIds;
       updateFilterBadge();
 
       // The default view is capped to recent-reports.json (~100 rows) and
       // most_played.json (~50 rows). Intersecting that with a real Steam
-      // library dropped 200+ owned games to a handful. When ?filter=mine
-      // is active, synthesize a comprehensive library dataset from search-
-      // index so every owned game shows up -- and hide the Popular section
-      // because it would just repeat the same rows.
-      if (libraryAppIds && libraryAppIds.size > 0) {
-        const synth = synthesizeMyLibrary(libraryAppIds, allRecentReports, searchIndex);
+      // library dropped 200+ owned games to a handful. Same math for
+      // wishlist. Synthesize a comprehensive dataset from search-index so
+      // every appid shows up -- and hide the Popular section because it
+      // would just repeat the same rows.
+      const scopeIds = isWishlist ? wishlistAppIds : libraryAppIds;
+      if (scopeIds && scopeIds.size > 0) {
+        const synth = synthesizeMyLibrary(scopeIds, allRecentReports, searchIndex);
         allRecentReports = synth.rows;
-        console.debug('[my-library] synthesized library dataset', {
+        console.debug(isWishlist ? '[my-wishlist] synthesized dataset' : '[my-library] synthesized library dataset', {
           source: 'search-index+stubs',
           fromRecentReports: synth.fromRecentReports,
           fromSearchIndex: synth.fromSearchIndex,
           bareStubs: synth.bareStubs,
-          libraryTotal: libraryAppIds.size,
+          scopeTotal: scopeIds.size,
           rowTotal: allRecentReports.length,
         });
-        // Hide the whole popular section (single wrapper covers header,
-        // grid, page-nav top/bottom, load-more) so any empty-state text
-        // its render might produce cannot leak into the library view.
         const popularSectionEl = document.getElementById('popular-section');
         if (popularSectionEl) popularSectionEl.style.display = 'none';
-        // Rename the visible section header to just "My Library" (no
-        // sub-heading) since it's the only section.
         const recentLabel = document.getElementById('recent-section-label');
-        if (recentLabel) recentLabel.textContent = 'My Library';
+        if (recentLabel) recentLabel.textContent = isWishlist ? 'My Wishlist' : 'My Library';
       }
     }
 
