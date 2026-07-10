@@ -90,15 +90,15 @@ const VIEW_COPY = {
 };
 
 function _renderChipsHtml(view) {
-  // Third chip drops its "Deck" text on narrow screens (see .hlc-chip-text
-  // in CSS) so the row stays compact. The SVG glyph is always rendered.
+  // Third chip stays plain text for now -- the tiny handheld glyph read
+  // as a smudge at 16px on mobile. When the deck-status backfill covers
+  // Steam Machine + Steam Frame Standalone we'll switch to per-device
+  // logos with an icon-only mobile mode (see follow-up issue).
   return `
     <div class="hlc-chips" role="tablist" aria-label="Chart view">
       <button type="button" class="hlc-chip${view === 'library'  ? ' hlc-chip--active' : ''}" data-view="library"  role="tab" aria-selected="${view === 'library'}">Library</button>
       <button type="button" class="hlc-chip${view === 'wishlist' ? ' hlc-chip--active' : ''}" data-view="wishlist" role="tab" aria-selected="${view === 'wishlist'}">Wishlist</button>
-      <button type="button" class="hlc-chip hlc-chip--deck${view === 'deck' ? ' hlc-chip--active' : ''}" data-view="deck" role="tab" aria-selected="${view === 'deck'}" title="Steam Deck compatibility">
-        <svg class="hlc-chip-glyph" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><use href="#icon-steam-deck"/></svg><span class="hlc-chip-text">Deck</span>
-      </button>
+      <button type="button" class="hlc-chip${view === 'deck' ? ' hlc-chip--active' : ''}" data-view="deck" role="tab" aria-selected="${view === 'deck'}" title="Steam Deck compatibility">Steam Deck</button>
     </div>`;
 }
 
