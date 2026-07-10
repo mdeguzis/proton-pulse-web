@@ -12,7 +12,12 @@ const TIER_COLORS = {
   borked:   { bg: '#c85050', color: '#fff' },
 };
 
-// opts: { href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy, steamType }
+// opts: { href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy, steamType, ownerBadges }
+// ownerBadges: pre-rendered HTML (usually two <span class="game-card-owner-badge">
+//   elements) that clip onto the left side of the store corner tag on the
+//   thumbnail. Currently: "In library" (open book) + "On wishlist" (list + heart).
+//   Opt-in via Site Options; caller passes empty string when the pref is off
+//   or the user isn't signed in.
 // imgUrl: pre-resolved Steam image URL (bypasses CDN guessing entirely)
 // tier: one of platinum/gold/silver/bronze/borked - auto-colours the badge
 // badge: raw label string - used when tier is not applicable
@@ -29,7 +34,7 @@ const TIER_COLORS = {
 //   Anything other than "game" renders a small corner tag on the thumbnail so
 //   users scanning a library grid can pick out the DLC bundles and mods at a
 //   glance. Empty / "game" render no tag.
-export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy, steamType }) {
+export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy, steamType, ownerBadges }) {
   const primarySrc = imgUrl || (appId ? STEAM_IMG(appId) : '');
   const aid = appId != null ? String(appId) : '';
   const thumbInner = primarySrc
@@ -45,6 +50,13 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   // so CSS can pick which the user prefers via data-store-display on <html>.
   const storeTag = storePill
     ? `<span class="game-card-store-tag game-card-store-pill--${storeKey}"><span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
+    : '';
+  // Corner tags container: wraps the owner badges (optional) + the store
+  // tag in one flex row anchored to the thumbnail's bottom-right corner.
+  // Empty (no store + no owner badges) means the wrapper doesn't render.
+  const ownerBadgesHtml = ownerBadges || '';
+  const cornerTagsHtml = (storeTag || ownerBadgesHtml)
+    ? `<div class="game-card-corner-tags">${ownerBadgesHtml}${storeTag}</div>`
     : '';
   // Demo detection: use the Steam appdetails type when available (from
   // enrich_search_index_with_steam_type, #250), fall back to a title
@@ -67,7 +79,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const typeTag = isNonGameType
     ? `<span class="game-card-type-tag" data-type="${esc(typeNormLower)}" title="Steam classifies this as ${esc(typeNormLower)}">${esc(typeNormLower.toUpperCase())}</span>`
     : '';
-  const thumbHtml = `<div class="game-card-thumb-wrap">${thumbInner}${storeTag}${demoStripe}${replacedTag}${typeTag}</div>`;
+  const thumbHtml = `<div class="game-card-thumb-wrap">${thumbInner}${cornerTagsHtml}${demoStripe}${replacedTag}${typeTag}</div>`;
 
   const label = tier ? tier.toUpperCase() : (badge || 'No Rating');
   const isNoRating = !tier && !badge;

@@ -4,7 +4,7 @@ import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
 import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=f9591262';
 import { daysAgo, latestPerApp } from '../utils.js?v=c7e1268c';
-import { renderGameCard } from '../lib/card.js?v=d14cb507';
+import { renderGameCard } from '../lib/card.js?v=b336d677';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=ad4b114d';
 import { getEffectivePageSize, isAutoLoadEnabled } from '../../lib/pagination-prefs.js?v=15d0747d';
@@ -14,6 +14,7 @@ import { renderHomeLibraryChart } from './home-library-chart.js?v=c7e8a2d8';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { loadDeckStatusMap } from '../api/deck-status.js?v=456b6112';
+import { readShowOwnerBadgesLocal, pullShowOwnerBadges } from '../../lib/user-prefs.js?v=be1f1c0a';
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
 import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';
 
@@ -239,9 +240,49 @@ function _buildSteamTypeMap() {
   }
 }
 
-// Browse cards no longer carry mini-badges (#266 refinement); the tag row
-// moved to the game details page under the artwork so users see the
-// wishlist / library context there. Home renders no per-user overlays.
+// Corner ownership badges (#266 refinement): small library / wishlist
+// icons that clip onto the store corner tag on browse-card artwork.
+// Loaded once per render; per-card lookup is a Set.has(). Empty ctx when
+// the pref is off or the user isn't signed in so the badges don't render.
+let _ownerBadgeCtx = { on: false, libraryAppIds: null, wishlistAppIds: null };
+function _ownerBadgesFor(appId) {
+  if (!_ownerBadgeCtx.on) return '';
+  const numericId = Number(appId);
+  const inLib  = _ownerBadgeCtx.libraryAppIds  && _ownerBadgeCtx.libraryAppIds.has(numericId);
+  const inWish = _ownerBadgeCtx.wishlistAppIds && _ownerBadgeCtx.wishlistAppIds.has(numericId);
+  if (!inLib && !inWish) return '';
+  const parts = [];
+  if (inLib) {
+    parts.push('<span class="game-card-owner-badge game-card-owner-badge--library" title="In your Steam library" aria-label="In library"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book-open"/></svg></span>');
+  }
+  if (inWish) {
+    parts.push('<span class="game-card-owner-badge game-card-owner-badge--wishlist" title="On your Steam wishlist" aria-label="On wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-wishlist-heart"/></svg></span>');
+  }
+  return parts.join('');
+}
+async function _buildOwnerBadgeContext() {
+  const ctx = { on: false, libraryAppIds: null, wishlistAppIds: null };
+  // Fast local read wins the first paint; async pull below reconciles
+  // with the server for signed-in users who toggled on another device.
+  let want = readShowOwnerBadgesLocal();
+  try {
+    const { value } = await pullShowOwnerBadges();
+    want = value;
+  } catch { /* keep the local value */ }
+  if (!want) return ctx;
+  try {
+    const session = await window.SupaAuth?.getSession?.();
+    if (!session || !session.user) return ctx;
+  } catch { return ctx; }
+  const [lib, wish] = await Promise.all([
+    getMyLibraryAppIds().catch(() => new Set()),
+    getMyWishlistAppIds().catch(() => new Set()),
+  ]);
+  ctx.on = true;
+  ctx.libraryAppIds  = lib;
+  ctx.wishlistAppIds = wish;
+  return ctx;
+}
 
 function _recentCardHtml(r) {
   // recent-reports.json carries appType ('gog'|'epic'|'steam') from the pipeline.
@@ -252,10 +293,12 @@ function _recentCardHtml(r) {
     href: `#/app/${r.appId}`,
     appId: r.appId,
     title: r.title,
-    // Report count + latest date + On wishlist / In library tags all live
-    // on the game details page now (#266 refinement). The browse tile keeps
-    // just the artwork, title, and tier pill so the grid stays scannable.
+    // Report count + latest date live on the game details page now
+    // (#266 refinement). The tile keeps artwork + title + tier pill;
+    // when the corner-badge pref is on and the appid matches, the
+    // opt-in library / wishlist icons clip onto the store tag.
     sub: '',
+    ownerBadges: _ownerBadgesFor(r.appId),
     tier: _cardTier(r.tier),
     storePill: storeLabel(appType),
     trend: _lookupTrend(r.appId),
@@ -272,6 +315,10 @@ export async function renderHomePage() {
   // count setting (LOAD_COUNTS) is retained in localStorage for
   // backwards compat but no longer drives paging.
   console.debug('[browse] preload target rows', { rows: targetRowsForViewport() });
+  // Corner ownership badges (#266 refinement): load the appid Sets once
+  // if the pref is on + user is signed in, so per-card badge lookup is
+  // synchronous Set.has() inside _recentCardHtml / _popularItemHtml.
+  _ownerBadgeCtx = await _buildOwnerBadgeContext();
   try {
     const [recentUrl, mostPlayedUrl] = await Promise.all([
       dataUrl('recent-reports.json'),
@@ -594,9 +641,10 @@ export async function renderHomePage() {
       return renderGameCard({
         href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
         title: g.title,
-        // Report count + latest date + user-context tags moved to the
-        // game details page (#266 refinement). Tile stays scannable.
+        // Report count + latest date moved to the details page (#266).
+        // Corner ownership badges opt-in via Site Options.
         sub: '',
+        ownerBadges: _ownerBadgesFor(g.appId),
         tier: _cardTier(g.tier), storePill: storeLabel(g.appType || appTypeFromAppId(g.appId)),
         trend: _lookupTrend(g.appId),
         steamType: _lookupSteamType(g.appId),

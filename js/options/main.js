@@ -2,7 +2,10 @@
 // localStorage (not tied to an account). First option: animations on/off,
 // applied live here and honored site-wide by js/lib/topbar.js on every page.
 
-import { setShowAdult, pullShowAdult, readShowAdultLocal } from '../lib/user-prefs.js?v=7b5675ef';
+import {
+  setShowAdult, pullShowAdult, readShowAdultLocal,
+  setShowOwnerBadges, pullShowOwnerBadges, readShowOwnerBadgesLocal,
+} from '../lib/user-prefs.js?v=be1f1c0a';
 import { getPageSizePref, setPageSizePref, PAGE_SIZE_KEY } from '../lib/pagination-prefs.js?v=15d0747d';
 
 const MOTION_KEY = 'proton-pulse:motion';
@@ -81,6 +84,19 @@ if (adultToggle) {
   adultToggle.addEventListener('change', () => {
     setShowAdult(adultToggle.checked).then(({ synced }) => {
       console.log('[options] show-adult:', adultToggle.checked, 'synced-to-account:', synced);
+    });
+  });
+}
+
+// Corner ownership badges on browse-card artwork (#266). Same pattern as
+// show-adult: fast local read, async server pull, on-change server upsert.
+const ownerBadgesToggle = document.getElementById('opt-show-owner-badges');
+if (ownerBadgesToggle) {
+  ownerBadgesToggle.checked = readShowOwnerBadgesLocal();
+  pullShowOwnerBadges().then(({ changed, value }) => { if (changed) ownerBadgesToggle.checked = value; });
+  ownerBadgesToggle.addEventListener('change', () => {
+    setShowOwnerBadges(ownerBadgesToggle.checked).then(({ synced }) => {
+      console.log('[options] show-owner-badges:', ownerBadgesToggle.checked, 'synced-to-account:', synced);
     });
   });
 }
@@ -286,7 +302,7 @@ if (pageSizeMobile && pageSizeDesktop && pageSizeAutoLoad) {
 // so a reset clears it too; the app no longer reads it.
 const resetBtn = document.getElementById('opt-reset');
 if (resetBtn) {
-  const RESET_KEYS = [MOTION_KEY, STORE_PILL_POS_KEY, STORE_DISPLAY_KEY, CARD_LAYOUT_KEY, GRID_LAYOUT_KEY, LOAD_COUNT_KEY, PAGE_SIZE_KEY, 'pp:card-badges'];
+  const RESET_KEYS = [MOTION_KEY, STORE_PILL_POS_KEY, STORE_DISPLAY_KEY, CARD_LAYOUT_KEY, GRID_LAYOUT_KEY, LOAD_COUNT_KEY, PAGE_SIZE_KEY, 'pp:card-badges', 'pp:show-owner-badges'];
   resetBtn.addEventListener('click', () => {
     if (!confirm('Reset all site preferences on this device to their defaults?')) return;
     RESET_KEYS.forEach(k => localStorage.removeItem(k));

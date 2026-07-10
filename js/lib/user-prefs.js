@@ -11,6 +11,10 @@
 // changes. Writes read-modify-write the bag so unrelated keys are preserved.
 
 export const SHOW_ADULT_KEY = 'pp:show-adult';
+// Corner ownership badges (library / wishlist) on browse-card artwork.
+// Opt-in only: default off. Syncs to the same user_preferences bag when
+// signed in so a toggle on one device follows the user to the next.
+export const SHOW_OWNER_BADGES_KEY = 'pp:show-owner-badges';
 
 const SB_URL =
   (typeof window !== 'undefined' && window.SUPABASE_URL) ||
@@ -101,3 +105,69 @@ export async function pullShowAdult() {
     return { changed: false, value: readShowAdultLocal() };
   }
 }
+
+// ---------- Generic boolean pref sync (#266 groundwork) -----------------
+// Everything below reuses the same jsonb bag on user_preferences with a
+// caller-supplied key (e.g. "show-owner-badges"). Local storage caches
+// the value under `pp:<key>` so first paint is zero-flash; the async
+// pull-from-server updates only when the server has a stored value AND
+// it differs from local. Signed-out users stay on localStorage only.
+// Adding a new synced boolean pref: pick a key, define read/write local
+// wrappers if you want typed API, then call setPrefBool / pullPrefBool.
+
+export function readPrefBoolLocal(key, dflt = false) {
+  try {
+    const raw = localStorage.getItem(`pp:${key}`);
+    if (raw === 'on') return true;
+    if (raw === 'off') return false;
+    return dflt;
+  } catch { return dflt; }
+}
+
+export function writePrefBoolLocal(key, on) {
+  try { localStorage.setItem(`pp:${key}`, on ? 'on' : 'off'); } catch { /* private mode */ }
+}
+
+export async function setPrefBool(key, on) {
+  writePrefBoolLocal(key, on);
+  const auth = await _signedIn();
+  if (!auth) return { synced: false };
+  try {
+    const cur = await fetch(
+      `${SB_URL}/rest/v1/user_preferences?user_id=eq.${auth.userId}&select=prefs`,
+      { headers: auth.headers },
+    );
+    const rows = cur.ok ? await cur.json() : [];
+    const prefs = { ...((rows[0] && rows[0].prefs) || {}), [key]: on ? 'on' : 'off' };
+    const res = await fetch(`${SB_URL}/rest/v1/user_preferences?on_conflict=user_id`, {
+      method: 'POST',
+      headers: { ...auth.headers, Prefer: 'resolution=merge-duplicates,return=minimal' },
+      body: JSON.stringify({ user_id: auth.userId, prefs, updated_at: new Date().toISOString() }),
+    });
+    return { synced: res.ok };
+  } catch { return { synced: false }; }
+}
+
+export async function pullPrefBool(key, dflt = false) {
+  const auth = await _signedIn();
+  const localValue = readPrefBoolLocal(key, dflt);
+  if (!auth) return { changed: false, value: localValue };
+  try {
+    const res = await fetch(
+      `${SB_URL}/rest/v1/user_preferences?user_id=eq.${auth.userId}&select=prefs`,
+      { headers: auth.headers },
+    );
+    if (!res.ok) return { changed: false, value: localValue };
+    const rows = await res.json();
+    const serverVal = rows[0] && rows[0].prefs && rows[0].prefs[key];
+    if (serverVal !== 'on' && serverVal !== 'off') return { changed: false, value: localValue };
+    const next = serverVal === 'on';
+    writePrefBoolLocal(key, next);
+    return { changed: next !== localValue, value: next };
+  } catch { return { changed: false, value: localValue }; }
+}
+
+// Named helpers for the corner-badge pref (#266 refinement).
+export function readShowOwnerBadgesLocal() { return readPrefBoolLocal('show-owner-badges', false); }
+export function setShowOwnerBadges(on)     { return setPrefBool('show-owner-badges', on); }
+export function pullShowOwnerBadges()      { return pullPrefBool('show-owner-badges', false); }
