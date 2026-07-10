@@ -161,31 +161,31 @@
    store's brand color reads as the "primary" badge and the owner chips
    read as attached ownership decals. Prepended inside the store pill
    container so vertical alignment is automatic. */
+/* Owner icons sit BARE inside the store pill -- no background chip, no
+   extra padding, so the pill keeps its original height. A soft white
+   drop-shadow gives each glyph a neon halo that lifts it off the
+   Steam-blue / GOG-purple background without adding visual weight. */
 .game-card-owner-badge {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 2px 5px;
-  background: #ffffff;
-  border-radius: 3px;
-  color: #14181f;
+  padding: 0;
+  background: transparent;
+  color: #fff;
   line-height: 1;
-  box-shadow:
-    inset 0 -1px 0 rgba(0, 0, 0, 0.18),
-    0 0 0 1px rgba(0, 0, 0, 0.35);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.9))
+          drop-shadow(0 0 4px rgba(255, 255, 255, 0.35));
 }
-.game-card-owner-badge + .game-card-owner-badge { margin-left: 2px; }
+.game-card-owner-badge + .game-card-owner-badge { margin-left: 3px; }
 .game-card-owner-badge svg {
-  width: 16px;
-  height: 16px;
+  width: 11px;
+  height: 11px;
   display: block;
 }
-/* Gap between the badge cluster and the store text so the light chips
-   read as separate decals rather than swallowed by the pill. */
-.game-card-owner-badge:last-of-type { margin-right: 5px; }
+/* Small gap before the store text so the icons read as attached but
+   distinct decals rather than merging with the "STEAM" label. */
+.game-card-owner-badge:last-of-type { margin-right: 4px; }
 @media (min-width: 760px) {
-  .game-card-owner-badge svg { width: 18px; height: 18px; }
-  .game-card-owner-badge { padding: 3px 6px; }
+  .game-card-owner-badge svg { width: 13px; height: 13px; }
 }
 /* Desktop: give the report rows more presence with a bigger boxart and
    roomier padding. Steam header ratio (~2.14:1) is preserved. */
