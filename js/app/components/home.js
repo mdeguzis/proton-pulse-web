@@ -12,6 +12,8 @@ import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
 import { renderHomeLibraryChart } from './home-library-chart.js?v=c7e8a2d8';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
+import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=89961b79';
+import { loadDeckStatusMap } from '../api/deck-status.js?v=456b6112';
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
 import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';
 
@@ -106,6 +108,33 @@ function _filterByLibrary(reports, sel, libraryAppIds) {
   if (!sel || sel.size === 0 || sel.has('all')) return reports;
   if (!libraryAppIds || libraryAppIds.size === 0) return [];
   return reports.filter(r => libraryAppIds.has(Number(r.appId)));
+}
+
+// Wishlist filter (#266 Phase 1). "Reports for the games I actually want
+// to buy next" -- match if the appid is in the signed-in user's cached
+// Steam wishlist. When the user hasn't synced (empty cache) the filter
+// yields nothing, so the frontend can prompt them to sync.
+function _filterByWishlist(reports, sel, wishlistAppIds) {
+  if (!sel || sel.size === 0 || sel.has('all')) return reports;
+  if (!wishlistAppIds || wishlistAppIds.size === 0) return [];
+  return reports.filter(r => wishlistAppIds.has(Number(r.appId)));
+}
+
+// Deck filter (#266 Phase 2). Match reports against Valve's Steam Deck
+// compatibility rating from the pipeline-published deck-status.json map:
+// 'verified' | 'playable' | 'unsupported' | 'unknown'. Non-Steam ids
+// always pass through -- Valve doesn't rate GOG/Epic entries. The map
+// is a plain object keyed by appId string; a missing entry means Valve
+// hasn't rated it yet, which we surface as 'unknown'.
+function _filterByDeck(reports, sel, deckStatusMap) {
+  if (!sel || sel.size === 0 || sel.has('all')) return reports;
+  return reports.filter(r => {
+    const id = String(r.appId);
+    if (!/^\d+$/.test(id)) return true;
+    const entry = deckStatusMap ? deckStatusMap[id] : null;
+    const status = (entry && entry.status) || 'unknown';
+    return sel.has(status);
+  });
 }
 
 // Kind filter (#250). Reads the Steam appdetails `type` field from
@@ -339,6 +368,19 @@ export async function renderHomePage() {
               <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
               <button class="pg-filter" type="button" data-value="mine" title="Only games in your Steam library (requires sign-in and a synced library)">My games</button>
             </div>
+            <div class="pg-filter-group" id="home-wishlist-checks" title="Show reports for games in your Steam wishlist (requires sign-in and a synced wishlist)">
+              <span class="pg-filter-group-label">Wishlist</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="wishlist">On wishlist</button>
+            </div>
+            <div class="pg-filter-group" id="home-deck-checks" title="Filter by Valve's official Steam Deck compatibility rating">
+              <span class="pg-filter-group-label">Deck</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="verified" title="Fully verified on Steam Deck">Verified</button>
+              <button class="pg-filter" type="button" data-value="playable" title="Playable with some caveats (small text, manual controller config)">Playable</button>
+              <button class="pg-filter" type="button" data-value="unsupported" title="Does not run on Steam Deck">Unsupported</button>
+              <button class="pg-filter" type="button" data-value="unknown" title="Valve has not rated this game yet">Unknown</button>
+            </div>
             <div class="pg-filter-group" id="home-kind-checks" title="Filter by the Steam appdetails type (game / DLC / mod / demo / software)">
               <span class="pg-filter-group-label">Type</span>
               <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
@@ -420,6 +462,10 @@ export async function renderHomePage() {
     let storeSel = new Set();  // empty => all stores
     let librarySel = new Set(); // empty => all; 'mine' => only owned games (#199)
     let libraryAppIds = null;  // cached Set<number>; lazily loaded on first "mine" use
+    let wishlistSel = new Set();  // empty => all; 'wishlist' => only games on the user's Steam wishlist (#266)
+    let wishlistAppIds = null;   // cached Set<number>; lazily loaded on first "wishlist" use
+    let deckSel = new Set();   // empty => all; 'verified'/'playable'/'unsupported'/'unknown' => Valve's Deck rating (#266 Phase 2)
+    let deckStatusMap = null;  // cached map<appIdStr, {status, criteria}>; lazily loaded on first Deck-chip use
     let kindSel = new Set();   // Steam app kind ('game'/'dlc'/'mod'/'demo'/'software'); empty => all (#250)
     let currentLayout = 'grid';
 
@@ -485,7 +531,7 @@ export async function renderHomePage() {
           return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending' };
         });
       }
-      const filtered = filterAdult(_filterByText(_filterByKind(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), kindSel), textFilter));
+      const filtered = filterAdult(_filterByText(_filterByKind(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), kindSel), textFilter));
       const cardsEl = document.getElementById('cards-popular');
       const loadMoreEl = document.getElementById('load-more-popular');
       if (!cardsEl) return;
@@ -618,7 +664,7 @@ export async function renderHomePage() {
     }
 
     function applyRecentFilters() {
-      const filtered = filterAdult(_filterByText(_filterByKind(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), kindSel), textFilter));
+      const filtered = filterAdult(_filterByText(_filterByKind(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), kindSel), textFilter));
       const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
@@ -747,7 +793,7 @@ export async function renderHomePage() {
         localStorage.setItem(FILTERS_KEY, JSON.stringify({
           sort: currentSort, text: textFilter,
           tier: [...tierSel], source: [...sourceSel], store: [...storeSel],
-          library: [...librarySel], kind: [...kindSel],
+          library: [...librarySel], wishlist: [...wishlistSel], deck: [...deckSel], kind: [...kindSel],
         }));
       } catch { /* ignore */ }
     }
@@ -783,14 +829,18 @@ export async function renderHomePage() {
       sourceSel = new Set(saved.source || []);
       storeSel = new Set(saved.store || []);
       librarySel = new Set(saved.library || []);
+      wishlistSel = new Set(saved.wishlist || []);
+      deckSel = new Set(saved.deck || []);
       kindSel = new Set(saved.kind || []);
       _applyPillSelection(tierGroup, saved.tier);
       _applyPillSelection(sourceGroup, saved.source);
       _applyPillSelection(storeGroup, saved.store);
       _applyPillSelection(libraryGroup, saved.library);
+      _applyPillSelection(wishlistGroup, saved.wishlist);
+      _applyPillSelection(deckGroup, saved.deck);
       _applyPillSelection(kindGroup, saved.kind);
       updateFilterBadge();
-      console.debug('[browse-filters] restored saved filters', { source: FILTERS_KEY, sort: currentSort, tiers: [...tierSel], sources: [...sourceSel], stores: [...storeSel], library: [...librarySel], kinds: [...kindSel], text: textFilter });
+      console.debug('[browse-filters] restored saved filters', { source: FILTERS_KEY, sort: currentSort, tiers: [...tierSel], sources: [...sourceSel], stores: [...storeSel], library: [...librarySel], wishlist: [...wishlistSel], deck: [...deckSel], kinds: [...kindSel], text: textFilter });
       return true;
     }
     document.getElementById('home-filter-persist')?.addEventListener('click', () => {
@@ -802,7 +852,7 @@ export async function renderHomePage() {
 
     // Active-filter badge: count specific tier + source + store selections.
     function updateFilterBadge() {
-      const n = tierSel.size + sourceSel.size + storeSel.size + librarySel.size + kindSel.size + (textFilter.trim() ? 1 : 0);
+      const n = tierSel.size + sourceSel.size + storeSel.size + librarySel.size + wishlistSel.size + deckSel.size + kindSel.size + (textFilter.trim() ? 1 : 0);
       filterToggle?.classList.toggle('has-filters', n > 0);
       if (filterBadge) {
         filterBadge.textContent = String(n);
@@ -814,6 +864,8 @@ export async function renderHomePage() {
     const sourceGroup = document.getElementById('home-source-checks');
     const storeGroup = document.getElementById('home-store-checks');
     const libraryGroup = document.getElementById('home-library-checks');
+    const wishlistGroup = document.getElementById('home-wishlist-checks');
+    const deckGroup = document.getElementById('home-deck-checks');
     const kindGroup = document.getElementById('home-kind-checks');
     if (tierGroup) _wirePillGroup(tierGroup, { onChange: sel => {
       tierSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
@@ -831,13 +883,30 @@ export async function renderHomePage() {
       }
       updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
+    if (wishlistGroup) _wirePillGroup(wishlistGroup, { onChange: async sel => {
+      wishlistSel = sel;
+      if (sel.has('wishlist') && !wishlistAppIds) {
+        wishlistAppIds = await getMyWishlistAppIds().catch(() => new Set());
+      }
+      updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
+    }});
+    if (deckGroup) _wirePillGroup(deckGroup, { onChange: async sel => {
+      deckSel = sel;
+      // Lazy-load the deck-status.json map on first non-"all" activation.
+      // Any non-'all' pill needs the map, so trigger on any selection.
+      const needMap = sel && sel.size > 0 && !sel.has('all');
+      if (needMap && !deckStatusMap) {
+        deckStatusMap = await loadDeckStatusMap().catch(() => ({}));
+      }
+      updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
+    }});
     if (kindGroup) _wirePillGroup(kindGroup, { onChange: sel => {
       kindSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
 
     // Clear filters: reset every group back to "All", sort back to Recent.
     document.getElementById('home-filter-clear')?.addEventListener('click', () => {
-      [tierGroup, sourceGroup, storeGroup, libraryGroup, kindGroup].forEach(g => {
+      [tierGroup, sourceGroup, storeGroup, libraryGroup, wishlistGroup, deckGroup, kindGroup].forEach(g => {
         if (!g) return;
         g.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'));
         const allBtn = g.querySelector('.pg-filter[data-value="all"]');
@@ -855,6 +924,8 @@ export async function renderHomePage() {
       sourceSel = new Set();
       storeSel = new Set();
       librarySel = new Set();
+      wishlistSel = new Set();
+      deckSel = new Set();
       kindSel = new Set();
       updateFilterBadge();
       applyRecentFilters();

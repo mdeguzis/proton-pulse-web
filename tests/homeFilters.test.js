@@ -137,9 +137,11 @@ describe('home page browse -- text filter box', () => {
   });
 
   test('both filter pipelines pass results through _filterByText with textFilter', () => {
-    // Recent and Popular sections must both honor the text box. The kind
-    // filter (#250) now sits between library and text so match it too.
-    const matches = homeSrc.match(/_filterByText\(_filterByKind\(_filterByLibrary\(_filterByStore\([^]*?, textFilter\)/g) || [];
+    // Recent and Popular sections must both honor the text box. Both chains
+    // end in `..., textFilter)`. The intermediate filters are exercised in
+    // dedicated deck/wishlist/library tests -- here we just pin the outer
+    // shape (text is outermost, and inside it kind wraps the trio).
+    const matches = homeSrc.match(/_filterByText\(_filterByKind\(_filterByDeck\([^]*?, textFilter\)/g) || [];
     expect(matches.length).toBe(2);
   });
 
@@ -152,7 +154,10 @@ describe('home page browse -- text filter box', () => {
   });
 
   test('text filter counts toward the active-filter badge when non-empty', () => {
-    expect(homeSrc).toContain('librarySel.size + kindSel.size + (textFilter.trim() ? 1 : 0)');
+    // The badge count sums every filter set + a 1 for a non-empty text
+    // query. Wishlist (#266 Phase 1) + Deck (#266 Phase 2) both slot in
+    // ahead of kind. Pin the outer shape rather than the exact chain.
+    expect(homeSrc).toContain('deckSel.size + kindSel.size + (textFilter.trim() ? 1 : 0)');
   });
 
   test('clear filters resets BOTH the desktop and mobile inputs', () => {
@@ -312,7 +317,12 @@ describe('home page browse -- text filter searches all titles', () => {
     // then slices for the current page. So typing "cyber" narrows the
     // 714-row dataset to matching titles across every page, not just the
     // 50 visible tiles.
-    expect(homeSrc).toContain('_filterByText(_filterByKind(_filterByLibrary(');
+    // Chain shape: text is applied AFTER kind, and kind is applied AFTER the
+    // deck/wishlist/library trio -- the exact intermediate filters between
+    // kind and library keep growing (#266 added Wishlist + Deck), so we
+    // pin the two edges instead of the whole chain.
+    expect(homeSrc).toMatch(/_filterByText\(_filterByKind\(_filterByDeck\(/);
+    expect(homeSrc).toMatch(/_filterByWishlist\(_filterByLibrary\(/);
     // Placeholder wording matches the actual behavior (previous text
     // "Filter loaded list" implied only visible items).
     expect(homeSrc).toContain('placeholder="Search all titles"');
@@ -345,7 +355,11 @@ describe('home page browse -- Type filter (#250)', () => {
   });
 
   test('Type filter runs inside both applyRecentFilters and applyPopularFilters', () => {
-    const inRecent  = homeSrc.match(/_filterByKind\(_filterByLibrary/g) || [];
+    // _filterByKind wraps whatever the innermost filter of the chain is.
+    // Both filter chains (recent + popular) call it, so we expect two
+    // occurrences. Pinning to `_filterByKind\(_filterByDeck` since #266
+    // Phase 2 slotted deck between kind and wishlist.
+    const inRecent  = homeSrc.match(/_filterByKind\(_filterByDeck/g) || [];
     expect(inRecent.length).toBeGreaterThanOrEqual(2);
   });
 

@@ -58,6 +58,15 @@ export function getDeckStatusForApp(appId) {
   return _deckCache[appId] || { status: 'unknown', criteria: null };
 }
 
+/**
+ * Full deck-status.json map exposed for callers that need to filter over
+ * every appId at once (browse-page Deck filter chip, #266 Phase 2).
+ * Returns the same Promise every call so we never re-fetch.
+ */
+export function loadDeckStatusMap() {
+  return _loadDeckMap();
+}
+
 // Page-lifetime cache of the raw appdetails `.data` object per appId, so
 // fetchMinRequirements + fetchLinuxNativeSupport (and any future readers
 // of the same payload) share a single network hit. We cache the in-flight
