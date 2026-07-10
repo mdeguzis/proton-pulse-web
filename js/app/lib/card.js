@@ -46,17 +46,16 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const storeIcon = storeKey === 'steam' || storeKey === 'gog' || storeKey === 'epic'
     ? `<span class="store-icon store-icon--${storeKey}" title="${esc(storePill)}" aria-label="${esc(storePill)}"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-store-${storeKey}"/></svg></span>`
     : '';
+  // Owner badges attach to the LEFT of whichever store-badge variant is
+  // active, so the whole strip reads as one extended pill in the user's
+  // configured position (art / art-corner / right / bar-*). Prepended
+  // inside each variant so CSS visibility rules don't need to know about
+  // them separately.
+  const ownerBadgesHtml = ownerBadges || '';
   // Both the text pill (game-card-store-tag) and the round icon are rendered
   // so CSS can pick which the user prefers via data-store-display on <html>.
   const storeTag = storePill
-    ? `<span class="game-card-store-tag game-card-store-pill--${storeKey}"><span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
-    : '';
-  // Corner tags container: wraps the owner badges (optional) + the store
-  // tag in one flex row anchored to the thumbnail's bottom-right corner.
-  // Empty (no store + no owner badges) means the wrapper doesn't render.
-  const ownerBadgesHtml = ownerBadges || '';
-  const cornerTagsHtml = (storeTag || ownerBadgesHtml)
-    ? `<div class="game-card-corner-tags">${ownerBadgesHtml}${storeTag}</div>`
+    ? `<span class="game-card-store-tag game-card-store-pill--${storeKey}">${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
   // Demo detection: use the Steam appdetails type when available (from
   // enrich_search_index_with_steam_type, #250), fall back to a title
@@ -79,7 +78,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const typeTag = isNonGameType
     ? `<span class="game-card-type-tag" data-type="${esc(typeNormLower)}" title="Steam classifies this as ${esc(typeNormLower)}">${esc(typeNormLower.toUpperCase())}</span>`
     : '';
-  const thumbHtml = `<div class="game-card-thumb-wrap">${thumbInner}${cornerTagsHtml}${demoStripe}${replacedTag}${typeTag}</div>`;
+  const thumbHtml = `<div class="game-card-thumb-wrap">${thumbInner}${storeTag}${demoStripe}${replacedTag}${typeTag}</div>`;
 
   const label = tier ? tier.toUpperCase() : (badge || 'No Rating');
   const isNoRating = !tier && !badge;
@@ -136,7 +135,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   // top-right edge (not just the thumbnail). Hidden by default; shown when
   // data-store-pill-pos="art-corner".
   const cornerTagHtml = storePill
-    ? `<span class="game-card-corner-tag game-card-store-pill--${storeKey}"><span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
+    ? `<span class="game-card-corner-tag game-card-store-pill--${storeKey}">${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
   // Combined corner chip for the 'combo' card layout. Two-tone pill at the
   // top-right edge of the card with the tier on the left and the store on

@@ -127,22 +127,12 @@
   background: var(--s2);
   flex-shrink: 0;
 }
-/* Corner tags container: bottom-right of the artwork. Wraps the owner
-   badges (opt-in) and the store tag in one flex row so they "clip" onto
-   each other visually. Same drop-shadow so the whole strip reads as a
-   single decal on the artwork. */
-.game-card-corner-tags {
+/* Store tag overlaid on the artwork's bottom-right corner. Frees the right
+   column for the rating pill alone, so titles get more width on mobile. */
+.game-card-store-tag {
   position: absolute;
   right: 4px;
   bottom: 4px;
-  display: flex;
-  align-items: stretch;
-  gap: 3px;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.55));
-}
-/* Store tag: sits inside the flex container now. Individual box-shadow
-   removed since the container handles the drop-shadow. */
-.game-card-store-tag {
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -150,24 +140,42 @@
   padding: 1px 5px;
   border-radius: 4px;
   line-height: 1.25;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+  /* Owner badges may prepend inside; keep them centered vertically with
+     the store text. */
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
-/* Owner badges: same padding + radius as the store tag so they read as
-   one connected strip. Dark chrome so a colored store tag pops next to
-   them. Icon-only -- the hover title is the affordance. */
+/* Owner badges live INSIDE the active store badge as a prepended icon,
+   sharing its background color so the whole pill reads as one extended
+   bar. Only the SVG paints; no separate background so the parent's
+   Steam-blue / GOG-purple / Epic-grey stays continuous.
+   A hairline right-border gives a subtle boundary between the icon
+   group and the store text without breaking the pill visually. */
 .game-card-owner-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1px 4px;
-  border-radius: 4px;
-  background: rgba(15, 18, 24, 0.85);
-  color: #e6e9ef;
+  padding: 0;
+  color: currentColor;
   line-height: 1;
 }
-.game-card-owner-badge svg { width: 12px; height: 12px; display: block; }
+.game-card-owner-badge svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+/* Give the whole badge group a hairline on the right so the icons
+   visually cluster together, separated from the "STEAM" text. */
+.game-card-owner-badge:last-of-type {
+  padding-right: 5px;
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+  margin-right: 1px;
+}
+/* Larger on desktop so the icons stay legible in the roomier corner tag. */
 @media (min-width: 760px) {
-  .game-card-owner-badge svg { width: 14px; height: 14px; }
-  .game-card-owner-badge { padding: 2px 5px; }
+  .game-card-owner-badge svg { width: 16px; height: 16px; }
 }
 /* Desktop: give the report rows more presence with a bigger boxart and
    roomier padding. Steam header ratio (~2.14:1) is preserved. */
