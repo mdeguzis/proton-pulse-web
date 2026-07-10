@@ -226,5 +226,5 @@ def main() -> None:
     STAGES[args.stage](ctx)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     main()
