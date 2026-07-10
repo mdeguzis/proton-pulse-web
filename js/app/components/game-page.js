@@ -20,7 +20,7 @@ import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
-import { computeBadgesForAppId, getCardBadgePrefs } from '../../lib/card-badges.js?v=1f36edf9';
+import { computeBadgesForAppId } from '../../lib/card-badges.js?v=5b71af11';
 
 let _steamCatalogCache = null;
 async function _fetchSteamCatalog() {
@@ -1308,9 +1308,11 @@ export async function renderGamePage(appId) {
     void enhanceAuthorBlocks(reps.filter(r => r._kind !== 'config'));
 
     // User-context tags under the artwork (#266 refinement): "On wishlist"
-    // and "In library" light up once we know the user is signed in AND has
-    // the appid in the respective cached Set. Runs independently of the
-    // metadata fetch so a slow Steam appdetails call doesn't delay this.
+    // and "In library" light up when the user is signed in AND the appid
+    // is in the corresponding cached Set. No site-pref gate -- signed-out
+    // users see nothing, signed-in users always see the tags that apply.
+    // Runs independently of the metadata fetch so a slow appdetails call
+    // doesn't delay this.
     void (async () => {
       const host = el.querySelector('#game-user-tags');
       if (!host) return;
@@ -1319,14 +1321,12 @@ export async function renderGamePage(appId) {
         const session = await window.SupaAuth?.getSession?.();
         signedIn = !!(session && session.user);
       } catch { /* stay signed out */ }
-      const prefs = getCardBadgePrefs();
-      const anyEnabled = Object.values(prefs).some(Boolean);
-      if (!signedIn || !anyEnabled) return;
+      if (!signedIn) return;
       const [libraryAppIds, wishlistAppIds] = await Promise.all([
-        prefs.library  ? getMyLibraryAppIds().catch(() => new Set())  : Promise.resolve(new Set()),
-        prefs.wishlist ? getMyWishlistAppIds().catch(() => new Set()) : Promise.resolve(new Set()),
+        getMyLibraryAppIds().catch(() => new Set()),
+        getMyWishlistAppIds().catch(() => new Set()),
       ]);
-      const badges = computeBadgesForAppId(appId, { prefs, libraryAppIds, wishlistAppIds, signedIn: true });
+      const badges = computeBadgesForAppId(appId, { libraryAppIds, wishlistAppIds, signedIn: true });
       if (!badges.length) return;
       // Render each badge as a .game-tag pill so it matches the OS chips
       // in size + shape. Steam-blue background + white text keeps them

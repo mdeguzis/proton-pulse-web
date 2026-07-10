@@ -183,28 +183,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* Mini-badges row beneath the title: small Steam-blue tiles like
-   "On wishlist" / "In library". White text on a faded blue background so
-   they read as ambient info rather than a call-out. Hidden entirely when
-   the row is empty (renderGameCard skips the wrapper in that case). */
-.game-card-mini-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-top: 4px;
-}
-.game-card-mini-badge {
-  display: inline-block;
-  padding: 1px 6px;
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: #fff;
-  border-radius: 3px;
-  opacity: 0.78;
-  white-space: nowrap;
-  line-height: 1.5;
-}
 .game-card-right {
   display: flex;
   flex-direction: column;

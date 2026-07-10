@@ -4,7 +4,6 @@
 
 import { setShowAdult, pullShowAdult, readShowAdultLocal } from '../lib/user-prefs.js?v=7b5675ef';
 import { getPageSizePref, setPageSizePref, PAGE_SIZE_KEY } from '../lib/pagination-prefs.js?v=15d0747d';
-import { getCardBadgePrefs, setCardBadgePref, KNOWN_BADGES } from '../lib/card-badges.js?v=1f36edf9';
 
 const MOTION_KEY = 'proton-pulse:motion';
 
@@ -280,31 +279,14 @@ if (pageSizeMobile && pageSizeDesktop && pageSizeAutoLoad) {
   });
 }
 
-// Card mini-badges: independent checkbox group (not radios) so each badge
-// toggles on its own. Restores current values, writes on change. Uses
-// KNOWN_BADGES so a new badge added in card-badges.js gets an input here
-// once the option-checkbox markup gains a matching data-badge-key.
-const cardBadgesGroup = document.getElementById('opt-card-badges');
-const CARD_BADGES_KEY = 'pp:card-badges';
-if (cardBadgesGroup) {
-  const cur = getCardBadgePrefs();
-  cardBadgesGroup.querySelectorAll('input[type="checkbox"][data-badge-key]').forEach((cb) => {
-    const key = cb.dataset.badgeKey;
-    if (!KNOWN_BADGES.some((b) => b.key === key)) return;
-    cb.checked = !!cur[key];
-    cb.addEventListener('change', () => {
-      setCardBadgePref(key, cb.checked);
-      console.log('[options] card-badge', key, cb.checked ? 'on' : 'off');
-    });
-  });
-}
-
 // Reset to defaults: drop every browser-local preference key this page owns
 // then reload, so the controls and the page re-evaluate from system
-// defaults (OS reduced-motion, no card-layout attribute, etc).
+// defaults (OS reduced-motion, no card-layout attribute, etc). The stale
+// pp:card-badges key from the earlier "Game page tags" toggle is included
+// so a reset clears it too; the app no longer reads it.
 const resetBtn = document.getElementById('opt-reset');
 if (resetBtn) {
-  const RESET_KEYS = [MOTION_KEY, STORE_PILL_POS_KEY, STORE_DISPLAY_KEY, CARD_LAYOUT_KEY, GRID_LAYOUT_KEY, LOAD_COUNT_KEY, PAGE_SIZE_KEY, CARD_BADGES_KEY];
+  const RESET_KEYS = [MOTION_KEY, STORE_PILL_POS_KEY, STORE_DISPLAY_KEY, CARD_LAYOUT_KEY, GRID_LAYOUT_KEY, LOAD_COUNT_KEY, PAGE_SIZE_KEY, 'pp:card-badges'];
   resetBtn.addEventListener('click', () => {
     if (!confirm('Reset all site preferences on this device to their defaults?')) return;
     RESET_KEYS.forEach(k => localStorage.removeItem(k));
