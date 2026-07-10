@@ -78,19 +78,33 @@ export function computeLibraryTierCounts(appIdSet, indexRows) {
   return counts;
 }
 
-// Copy per source so the subtitle stays natural for both modes.
-const SOURCE_COPY = {
-  library:  { title: 'Your library at a glance',  noun: 'owned',     empty: 'No Steam library synced yet.',  sync: 'library'  },
+// Copy per view. 'library' + 'wishlist' show a ProtonDB tier breakdown of
+// their respective appid Set. 'deck' shows a Steam Deck compat breakdown
+// of the library (users care about Deck for what they own; a wishlist-
+// scoped deck view can follow later if asked). One view at a time keeps
+// the panel compact instead of showing both bar groups at once.
+const VIEW_COPY = {
+  library:  { title: 'Your library at a glance',  noun: 'owned',      empty: 'No Steam library synced yet.',  sync: 'library'  },
   wishlist: { title: 'Your wishlist at a glance', noun: 'wishlisted', empty: 'No Steam wishlist synced yet.', sync: 'wishlist' },
+  deck:     { title: 'Your Steam Deck at a glance', noun: 'owned',    empty: 'No Steam library synced yet.',  sync: 'library'  },
 };
 
-function _renderChartHtml(source, appIds, deckMap) {
-  const copy = SOURCE_COPY[source] || SOURCE_COPY.library;
-  const chipsHtml = `
-    <div class="hlc-chips" role="tablist" aria-label="Data source">
-      <button type="button" class="hlc-chip${source === 'library'  ? ' hlc-chip--active' : ''}" data-source="library"  role="tab" aria-selected="${source === 'library'}">Library</button>
-      <button type="button" class="hlc-chip${source === 'wishlist' ? ' hlc-chip--active' : ''}" data-source="wishlist" role="tab" aria-selected="${source === 'wishlist'}">Wishlist</button>
+function _renderChipsHtml(view) {
+  // Third chip drops its "Deck" text on narrow screens (see .hlc-chip-text
+  // in CSS) so the row stays compact. The SVG glyph is always rendered.
+  return `
+    <div class="hlc-chips" role="tablist" aria-label="Chart view">
+      <button type="button" class="hlc-chip${view === 'library'  ? ' hlc-chip--active' : ''}" data-view="library"  role="tab" aria-selected="${view === 'library'}">Library</button>
+      <button type="button" class="hlc-chip${view === 'wishlist' ? ' hlc-chip--active' : ''}" data-view="wishlist" role="tab" aria-selected="${view === 'wishlist'}">Wishlist</button>
+      <button type="button" class="hlc-chip hlc-chip--deck${view === 'deck' ? ' hlc-chip--active' : ''}" data-view="deck" role="tab" aria-selected="${view === 'deck'}" title="Steam Deck compatibility">
+        <svg class="hlc-chip-glyph" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><use href="#icon-steam-deck"/></svg><span class="hlc-chip-text">Deck</span>
+      </button>
     </div>`;
+}
+
+function _renderChartHtml(view, appIds, deckMap) {
+  const copy = VIEW_COPY[view] || VIEW_COPY.library;
+  const chipsHtml = _renderChipsHtml(view);
   if (!appIds || appIds.size === 0) {
     return `
       <div class="home-library-chart home-library-chart--empty">
@@ -104,30 +118,15 @@ function _renderChartHtml(source, appIds, deckMap) {
         </div>
       </div>`;
   }
-  const counts = computeLibraryTierCounts(appIds, searchIndex);
-  const rated = TIER_ORDER.reduce((sum, t) => sum + (counts[t] || 0), 0);
   const total = appIds.size;
-  const maxBar = Math.max(1, ...TIER_ORDER.map((t) => counts[t] || 0));
-  const barsHtml = TIER_ORDER.map((tier) => {
-    const n = counts[tier] || 0;
-    const pct = Math.round((n / maxBar) * 100);
-    const bg = RATING_COLORS[tier] || '#3a4a5a';
-    const fg = RATING_TEXT[tier] || '#c8d4e0';
-    return `
-      <div class="hlc-row">
-        <div class="hlc-label" style="color:${fg};background:${bg}">${esc(TIER_LABEL[tier])}</div>
-        <div class="hlc-track"><div class="hlc-fill" style="width:${pct}%;background:${bg}"></div></div>
-        <div class="hlc-count">${n.toLocaleString()}</div>
-      </div>`;
-  }).join('');
-  // Steam Deck breakdown -- the compat section below the ProtonDB tiers.
-  // Muted colors + a header row so the eye reads the two groups as
-  // distinct. deckMap null (still loading) skips this whole block.
-  let deckHtml = '';
-  if (deckMap) {
-    const deckCounts = computeDeckStatusCounts(appIds, deckMap);
+  let barsHtml = '';
+  let subtitle = '';
+  if (view === 'deck') {
+    const deckCounts = computeDeckStatusCounts(appIds, deckMap || {});
     const deckMax = Math.max(1, ...DECK_ORDER.map((k) => deckCounts[k] || 0));
-    const deckRows = DECK_ORDER.map((k) => {
+    const rated = DECK_ORDER.filter((k) => k !== 'unknown').reduce((s, k) => s + (deckCounts[k] || 0), 0);
+    subtitle = `${rated.toLocaleString()} of ${total.toLocaleString()} ${esc(copy.noun)} games have a Steam Deck rating.`;
+    barsHtml = DECK_ORDER.map((k) => {
       const n = deckCounts[k] || 0;
       const pct = Math.round((n / deckMax) * 100);
       const { bg, fg } = DECK_COLORS[k];
@@ -138,9 +137,23 @@ function _renderChartHtml(source, appIds, deckMap) {
           <div class="hlc-count">${n.toLocaleString()}</div>
         </div>`;
     }).join('');
-    deckHtml = `
-      <div class="hlc-section-title">Steam Deck compatibility</div>
-      <div class="hlc-bars">${deckRows}</div>`;
+  } else {
+    const counts = computeLibraryTierCounts(appIds, searchIndex);
+    const rated = TIER_ORDER.reduce((sum, t) => sum + (counts[t] || 0), 0);
+    const maxBar = Math.max(1, ...TIER_ORDER.map((t) => counts[t] || 0));
+    subtitle = `${rated.toLocaleString()} of ${total.toLocaleString()} ${esc(copy.noun)} games have compatibility data.`;
+    barsHtml = TIER_ORDER.map((tier) => {
+      const n = counts[tier] || 0;
+      const pct = Math.round((n / maxBar) * 100);
+      const bg = RATING_COLORS[tier] || '#3a4a5a';
+      const fg = RATING_TEXT[tier] || '#c8d4e0';
+      return `
+        <div class="hlc-row">
+          <div class="hlc-label" style="color:${fg};background:${bg}">${esc(TIER_LABEL[tier])}</div>
+          <div class="hlc-track"><div class="hlc-fill" style="width:${pct}%;background:${bg}"></div></div>
+          <div class="hlc-count">${n.toLocaleString()}</div>
+        </div>`;
+    }).join('');
   }
   return `
     <div class="home-library-chart">
@@ -148,28 +161,28 @@ function _renderChartHtml(source, appIds, deckMap) {
         <div class="hlc-title">${esc(copy.title)}</div>
         ${chipsHtml}
       </div>
-      <div class="hlc-subtitle">
-        ${rated.toLocaleString()} of ${total.toLocaleString()} ${esc(copy.noun)} games have compatibility data.
-      </div>
-      <div class="hlc-section-title">ProtonDB tier</div>
+      <div class="hlc-subtitle">${subtitle}</div>
       <div class="hlc-bars">${barsHtml}</div>
-      ${deckHtml}
     </div>`;
 }
 
-const HLC_SOURCE_KEY = 'pp:hlc-source';
-function _readSource() {
+const HLC_VIEW_KEY = 'pp:hlc-view';
+const VALID_VIEWS = new Set(['library', 'wishlist', 'deck']);
+function _readView() {
   try {
-    const v = localStorage.getItem(HLC_SOURCE_KEY);
-    return v === 'wishlist' ? 'wishlist' : 'library';
+    const v = localStorage.getItem(HLC_VIEW_KEY);
+    return VALID_VIEWS.has(v) ? v : 'library';
   } catch { return 'library'; }
 }
-function _writeSource(v) {
-  try { localStorage.setItem(HLC_SOURCE_KEY, v === 'wishlist' ? 'wishlist' : 'library'); } catch { /* ignore */ }
+function _writeView(v) {
+  try { localStorage.setItem(HLC_VIEW_KEY, VALID_VIEWS.has(v) ? v : 'library'); } catch { /* ignore */ }
 }
 
-async function _fetchAppIds(source) {
-  if (source === 'wishlist') return getMyWishlistAppIds().catch(() => new Set());
+async function _fetchAppIds(view) {
+  // 'deck' scopes to the library because the "how many of my games work
+  // on Steam Deck" question is the common one. Wishlist can extend this
+  // later if users ask.
+  if (view === 'wishlist') return getMyWishlistAppIds().catch(() => new Set());
   return getMyLibraryAppIds().catch(() => new Set());
 }
 
@@ -181,35 +194,26 @@ export async function renderHomeLibraryChart(mountEl, { preferredSource } = {}) 
     return;
   }
   await loadSearchIndex().catch(() => null);
-  // Nav-driven override wins on this render so hitting the "My Wishlist"
-  // link auto-swaps the chart even if the user last picked Library on
-  // the home landing. The chip click below still updates localStorage so
-  // subsequent home visits without a nav hint reflect the latest choice.
-  let source = preferredSource === 'library' || preferredSource === 'wishlist'
+  // Nav-driven override maps the ?filter= hint into the view chip.
+  let view = preferredSource === 'library' || preferredSource === 'wishlist'
     ? preferredSource
-    : _readSource();
-  if (preferredSource) _writeSource(source);
-  // Load appids + deck-status in parallel. Deck map is best-effort: if the
-  // fetch fails we still render the ProtonDB tier bars; the deck section
-  // just doesn't appear.
+    : _readView();
+  if (preferredSource) _writeView(view);
   let [appIds, deckMap] = await Promise.all([
-    _fetchAppIds(source),
+    _fetchAppIds(view),
     loadDeckStatusMap().catch(() => ({})),
   ]);
-  mountEl.innerHTML = _renderChartHtml(source, appIds, deckMap);
-  // Chip click swaps the source. State lives in localStorage so a reload
-  // keeps whichever source the user prefers. Deck map is already cached
-  // by loadDeckStatusMap so the re-render is snappy.
+  mountEl.innerHTML = _renderChartHtml(view, appIds, deckMap);
   mountEl.addEventListener('click', async (e) => {
     const btn = e.target.closest('.hlc-chip');
     if (!btn) return;
-    const next = btn.dataset.source === 'wishlist' ? 'wishlist' : 'library';
-    if (next === source) return;
-    source = next;
-    _writeSource(source);
+    const next = btn.dataset.view;
+    if (!VALID_VIEWS.has(next) || next === view) return;
+    view = next;
+    _writeView(view);
     const busy = mountEl.querySelector('.hlc-bars, .hlc-empty-body');
     if (busy) busy.style.opacity = '0.4';
-    appIds = await _fetchAppIds(source);
-    mountEl.innerHTML = _renderChartHtml(source, appIds, deckMap);
+    appIds = await _fetchAppIds(view);
+    mountEl.innerHTML = _renderChartHtml(view, appIds, deckMap);
   });
 }

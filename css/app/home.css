@@ -348,13 +348,22 @@
   background: var(--accent);
   color: #0a0c10;
 }
+/* Deck chip: SVG glyph is always visible; the "Deck" text hides on
+   narrow screens so the three-way chip row stays on one line. */
+.hlc-chip--deck { display: inline-flex; align-items: center; gap: 4px; padding-left: 8px; padding-right: 10px; }
+.hlc-chip-glyph { flex: 0 0 auto; display: block; }
+@media (max-width: 620px) {
+  .hlc-chip--deck { padding: 4px 8px; }
+  .hlc-chip--deck .hlc-chip-text { display: none; }
+}
 .hlc-subtitle {
   font-size: 0.78rem;
   color: var(--muted);
   margin-bottom: 10px;
 }
-/* Section title above each group of bars so the ProtonDB tier row and
-   the Steam Deck compat row read as two distinct dimensions. */
+/* Legacy: two-bar-group section titles from an earlier chart layout.
+   The chip toggle now shows one group at a time so these no longer
+   render, but the rule stays defensive in case the markup regresses. */
 .hlc-section-title {
   font-size: 0.72rem;
   font-weight: 800;
@@ -363,7 +372,6 @@
   color: var(--muted);
   margin: 12px 0 6px;
 }
-.hlc-section-title:first-of-type { margin-top: 4px; }
 .hlc-bars { display: flex; flex-direction: column; gap: 6px; }
 .hlc-row {
   display: grid;

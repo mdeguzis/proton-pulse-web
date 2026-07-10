@@ -77,6 +77,15 @@
       <path d="M5 10h13a1 1 0 011 1v3H5v-4z"/>
       <path d="M3 15h16a1 1 0 011 1v3a1 1 0 01-1 1H3v-5z"/>
     </symbol>
+    <!-- Steam Deck silhouette: handheld body with two joystick discs and a
+         center screen. Used as the mobile-only glyph on the at-a-glance
+         Deck chip so the chip row stays compact on narrow viewports. -->
+    <symbol id="icon-steam-deck" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M2 9.5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-3.2a3.3 3.3 0 01-2.4-1l-.6-.6a2 2 0 00-1.4-.6h-2.8a2 2 0 00-1.4.6l-.6.6a3.3 3.3 0 01-2.4 1H4a2 2 0 01-2-2v-5z"/>
+      <circle cx="6" cy="12" r="1.6" fill="#111"/>
+      <circle cx="18" cy="12" r="1.6" fill="#111"/>
+      <rect x="10" y="10.6" width="4" height="2.8" rx="0.4" fill="#111"/>
+    </symbol>
     <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
     </symbol>
