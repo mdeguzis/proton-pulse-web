@@ -60,26 +60,17 @@
       <circle cx="5" cy="12" r="1.4" fill="currentColor" stroke="none"/>
       <circle cx="5" cy="18" r="1.4" fill="currentColor" stroke="none"/>
     </symbol>
-    <!-- Wishlist corner badge: red heart with a white plus overlaid,
-         reading as "add to wishlist" the way Steam and most storefronts
-         mark that action. Plus is drawn AFTER the heart so it renders
-         on top. -->
+    <!-- Wishlist corner badge: simple solid heart in Steam-store red on
+         a white chip, so the "wanted" signal reads at a glance. -->
     <symbol id="icon-wishlist-heart" viewBox="0 0 24 24">
       <path d="M12 21s-8-4.9-8-11a5 5 0 019-3 5 5 0 019 3c0 6.1-8 11-8 11z"
             fill="#e53935" stroke="none"/>
-      <path d="M11.25 8.5h1.5v6.5h-1.5z M8.5 11.25h6.5v1.5h-6.5z" fill="#fff"/>
     </symbol>
-    <!-- Library corner badge: stack of three books drawn side-view.
-         Solid horizontal bars stack cleanly at chip size; on desktop
-         the extra pixels resolve enough detail to see the middle book
-         inset. Uses currentColor so the badge's `color` styles it. -->
+    <!-- Library corner badge: solid filled book, bold outline so it reads
+         from across the room. Solid white fill makes it pop on the dark
+         owner-badge chip. -->
     <symbol id="icon-book-open" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-      <!-- Top book: taller with spine on the left -->
-      <path d="M4 4h13a1 1 0 011 1v4H4V4z"/>
-      <!-- Middle book: slimmer, slightly indented left edge -->
-      <path d="M5 10h13a1 1 0 011 1v3H5v-4z"/>
-      <!-- Bottom book: widest base -->
-      <path d="M3 15h16a1 1 0 011 1v3a1 1 0 01-1 1H3v-5z"/>
+      <path d="M4 4h6a3 3 0 013 3v13a2 2 0 00-2-2H4V4zm16 0h-6a3 3 0 00-3 3v13a2 2 0 012-2h7V4z"/>
     </symbol>
     <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
