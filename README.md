@@ -112,6 +112,21 @@ Go to **Actions -> Build Site Data -> Run workflow**.
 make setup
 ```
 
+## Contributing
+
+Contributions welcome. Quick version:
+
+1. Open an issue for anything non-trivial so the work is tracked.
+2. Fork the repo or grab a `feature/<short-name>` branch off `staging`.
+3. Run `make pre-push` before every commit that touches JS or CSS.
+4. Open the PR against **`staging`**, not `main`. `main` is production only.
+5. Run `make gh-staging` to preview at https://mdeguzis.github.io/proton-pulse-web-staging/ and confirm the About page shows your version + short SHA.
+
+The full flow (feature branches, pre-push gate, staging review, promote to prod) lives in the wiki:
+
+- [Developer Guide](https://github.com/mdeguzis/proton-pulse-web/wiki/Developer-Guide) - local setup, pre-push gate, Makefile targets
+- [Web Deploy Workflow](https://github.com/mdeguzis/proton-pulse-web/wiki/Web-Deploy-Workflow) - end-to-end release flow, branching rules, staging preview
+
 ## Documentation
 
 Full docs live in the [wiki](https://github.com/mdeguzis/proton-pulse-web/wiki):
