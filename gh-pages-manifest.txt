@@ -74,6 +74,8 @@ js/profile/components/systems.js
 js/profile/components/my-reports.js
 js/profile/components/library.js
 js/profile/api/steam-library.js
+js/profile/api/steam-wishlist.js
+js/profile/lib/steam-type-breakdown.js
 js/profile/main.js
 css/profile/profile.css
 admin.html
