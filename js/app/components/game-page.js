@@ -971,29 +971,31 @@ export async function renderGamePage(appId) {
         <div class="game-header-grid">
           <div class="game-header-art-col">
             <img class="game-header-art" src="${STEAM_IMG(appId)}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
-            <!-- Uniform tag row under the artwork: OS chips + user-context
-                 tags (On wishlist / In library) share the same pill shape and
-                 sit left-aligned so they read as one strip. Each group hides
-                 itself until its data resolves. -->
-            <div class="game-header-art-tags" aria-label="Game tags">
-              <div class="game-os-strip" id="game-os-strip" hidden aria-label="Supported operating systems">
-                <button type="button" class="game-tag game-os-chip" data-os="windows" title="Windows">
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M3 5.5L10 4.5V11H3V5.5zm8-1.2L21 3v8H11V4.3zM3 12h7v6.5L3 17.5V12zm8 0h10v9L11 19.5V12z"/></svg>
-                  <span>Win</span>
-                </button>
-                <button type="button" class="game-tag game-os-chip" data-os="mac" title="macOS">
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M17.5 12.5c0-2.6 2.1-3.9 2.2-4-1.2-1.8-3.1-2-3.8-2.1-1.6-.2-3.1.9-3.9.9-.8 0-2.1-.9-3.4-.9-1.8 0-3.4 1-4.3 2.6-1.8 3.2-.5 7.9 1.3 10.5.9 1.3 2 2.7 3.4 2.6 1.4 0 1.9-.9 3.6-.9 1.7 0 2.1.9 3.5.9 1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.4-2.9 1.4-3-.1 0-2.7-1-2.7-4zM14.5 4.7c.7-.9 1.2-2.1 1-3.3-1.1.1-2.4.8-3.1 1.6-.7.8-1.3 2-1.1 3.2 1.2.1 2.4-.6 3.2-1.5z"/></svg>
-                  <span>macOS</span>
-                </button>
-                <button type="button" class="game-tag game-os-chip" data-os="linux" title="Linux">
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2c-1.66 0-3 1.34-3 3v3.5c-1.5 1-3 2.5-3 5.5 0 2.5 1 4.5 2 5.5.5.5 1 1 1 2v.5h6V21c0-1 .5-1.5 1-2 1-1 2-3 2-5.5 0-3-1.5-4.5-3-5.5V5c0-1.66-1.34-3-3-3zm-1.5 5c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zm3 0c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zM12 11l-1.5 2h3L12 11z"/></svg>
-                  <span>Linux</span>
-                </button>
-              </div>
-              <div class="game-user-tags" id="game-user-tags" aria-label="Your Steam context"></div>
-            </div>
           </div>
           ${ratingPanel}
+          <!-- Uniform tag row under the artwork: OS chips + user-context
+               tags (On wishlist / In library) share the same rounded-square
+               shape as the Submit Report button. Placed in grid row 2 col 1
+               (the previously empty cell to the left of the action buttons)
+               so it sits snug under the artwork WITHOUT growing the left
+               column height. Each group hides itself until its data resolves. -->
+          <div class="game-header-art-tags" aria-label="Game tags">
+            <div class="game-os-strip" id="game-os-strip" hidden aria-label="Supported operating systems">
+              <button type="button" class="game-tag game-os-chip" data-os="windows" title="Windows">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M3 5.5L10 4.5V11H3V5.5zm8-1.2L21 3v8H11V4.3zM3 12h7v6.5L3 17.5V12zm8 0h10v9L11 19.5V12z"/></svg>
+                <span>Win</span>
+              </button>
+              <button type="button" class="game-tag game-os-chip" data-os="mac" title="macOS">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M17.5 12.5c0-2.6 2.1-3.9 2.2-4-1.2-1.8-3.1-2-3.8-2.1-1.6-.2-3.1.9-3.9.9-.8 0-2.1-.9-3.4-.9-1.8 0-3.4 1-4.3 2.6-1.8 3.2-.5 7.9 1.3 10.5.9 1.3 2 2.7 3.4 2.6 1.4 0 1.9-.9 3.6-.9 1.7 0 2.1.9 3.5.9 1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.4-2.9 1.4-3-.1 0-2.7-1-2.7-4zM14.5 4.7c.7-.9 1.2-2.1 1-3.3-1.1.1-2.4.8-3.1 1.6-.7.8-1.3 2-1.1 3.2 1.2.1 2.4-.6 3.2-1.5z"/></svg>
+                <span>macOS</span>
+              </button>
+              <button type="button" class="game-tag game-os-chip" data-os="linux" title="Linux">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2c-1.66 0-3 1.34-3 3v3.5c-1.5 1-3 2.5-3 5.5 0 2.5 1 4.5 2 5.5.5.5 1 1 1 2v.5h6V21c0-1 .5-1.5 1-2 1-1 2-3 2-5.5 0-3-1.5-4.5-3-5.5V5c0-1.66-1.34-3-3-3zm-1.5 5c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zm3 0c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zM12 11l-1.5 2h3L12 11z"/></svg>
+                <span>Linux</span>
+              </button>
+            </div>
+            <div class="game-user-tags" id="game-user-tags" aria-label="Your Steam context"></div>
+          </div>
           <div class="game-header-actions">
             <a class="info-btn" href="scoring.html" id="rating-info-btn" title="How scoring works (opens the canonical scoring page)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="#3b82f6"/><text x="12" y="17" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="serif">i</text></svg></a>
             <a class="info-btn info-btn-flag" id="flag-game-btn" href="${flagUrl}" target="_blank" rel="noopener" title="Flag a problem with this game entry (opens the Game Report template)"><svg width="17" height="17" viewBox="0 0 24 24" fill="#e0554f"><path d="M14.4 6l-.4-2H5v17h2v-7h5.6l.4 2h7V6z"/></svg></a>

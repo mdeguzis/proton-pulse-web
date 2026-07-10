@@ -406,14 +406,19 @@
 
 /* Unified tag row under the artwork (#266 refinement): OS availability
    chips (Win / macOS / Linux) plus user-context tags (On wishlist / In
-   library) share one .game-tag pill shape so the strip reads as one
-   cohesive band. Left-aligned, wraps on narrow viewports. */
+   library) share one .game-tag rounded-square shape (matches the Submit
+   Report button's border-radius). The row occupies grid row 2 col 1 -- the
+   cell to the left of the action buttons that used to be empty -- so it
+   sits snug under the artwork WITHOUT growing the left column height, and
+   its baseline aligns with the action buttons on the right. */
 .game-header { position: relative; }
 .game-header-art-tags {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: end;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 8px;
   justify-content: flex-start;
 }
 .game-os-strip {
@@ -427,20 +432,22 @@
   gap: 6px;
 }
 .game-user-tags:empty { display: none; }
-/* Shared pill shape. Every tag under the artwork uses this; per-variant
+/* Shared rounded-square shape. Every tag in the row uses this; per-variant
    modifiers add color / opacity. Keeping padding, radius, and font-size
-   identical is what makes the row read as one strip instead of two. */
+   identical is what makes the row read as one cohesive strip. Matches
+   the 6px radius on .submit-report-btn so the eye reads the whole header
+   as one design language. */
 .game-tag {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 3px 8px;
+  padding: 4px 10px;
   border: 1px solid var(--border2);
   background: var(--s1);
   color: var(--muted);
-  border-radius: 999px;
+  border-radius: 6px;
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   letter-spacing: 0.04em;
   line-height: 1.4;
   white-space: nowrap;
