@@ -57,28 +57,17 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const storeTag = storePill
     ? `<span class="game-card-store-tag game-card-store-pill--${storeKey}">${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
-  // Demo detection: use the Steam appdetails type when available (from
-  // enrich_search_index_with_steam_type, #250), fall back to a title
-  // regex for the pre-enrichment path. Steam Next Fest -style diagonal
-  // green ribbon in the top-left corner of the thumbnail.
-  const typeNormLower = String(steamType || '').toLowerCase();
-  const isDemo = typeNormLower === 'demo' || /\bdemo\b/i.test(String(title || ''));
-  const demoStripe = isDemo ? `<span class="game-card-demo-stripe" aria-label="Demo">DEMO</span>` : '';
   // Steam-side appid replacement (e.g. 5488 -> 45700). Small tag over the
   // thumbnail so browse lists visually mark the old entry.
   const replacedTag = replacedBy
     ? `<span class="game-card-replaced-tag" title="Replaced by app ${esc(String(replacedBy))}: new reports should target that appid">REPLACED</span>`
     : '';
-  // Non-game Steam appdetails types (#251). CSS-side data-type drives the
-  // color scheme so a reader can tell DLC / mod / software apart at a
-  // glance. "game" and unknown render nothing so the vast majority of
-  // cards stay uncluttered. "demo" is already covered by the diagonal
-  // ribbon above, so skip the pill for it to avoid stacking two markers.
-  const isNonGameType = typeNormLower && typeNormLower !== 'game' && typeNormLower !== 'demo';
-  const typeTag = isNonGameType
-    ? `<span class="game-card-type-tag" data-type="${esc(typeNormLower)}" title="Steam classifies this as ${esc(typeNormLower)}">${esc(typeNormLower.toUpperCase())}</span>`
-    : '';
-  const thumbHtml = `<div class="game-card-thumb-wrap">${thumbInner}${storeTag}${demoStripe}${replacedTag}${typeTag}</div>`;
+  // App type markers (mod / dlc / demo / software) no longer overlay the tile
+  // (#251 follow-up): Steam's own box art already reads as a mod / DLC, and the
+  // corner ribbon looked noisy. The type is shown under the artwork on the game
+  // detail page instead (see game-page.js #game-type-strip). steamType is kept
+  // in the signature so callers don't need to change.
+  const thumbHtml = `<div class="game-card-thumb-wrap">${thumbInner}${storeTag}${replacedTag}</div>`;
 
   const label = tier ? tier.toUpperCase() : (badge || 'No Rating');
   const isNoRating = !tier && !badge;

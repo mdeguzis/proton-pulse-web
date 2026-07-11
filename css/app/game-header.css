@@ -432,6 +432,34 @@
   gap: 6px;
 }
 .game-user-tags:empty { display: none; }
+.game-type-strip { display: flex; flex-wrap: wrap; gap: 6px; }
+.game-type-strip[hidden] { display: none; }
+/* App type chip (mod / dlc / software) under the artwork. Same rounded-square
+   shape as the other tags, filled with the per-type color so it reads at a
+   glance (#251). Replaces the old corner ribbon that overlaid the tile. */
+.game-type-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  white-space: nowrap;
+  color: #0a0c10;
+  background: #808891;
+}
+.game-type-tag[data-type="dlc"]      { background: #b479db; }
+.game-type-tag[data-type="mod"]      { background: #4ec9b0; }
+.game-type-tag[data-type="software"] { background: #d1a25d; }
+.game-type-tag[data-type="music"]    { background: #b95bab; }
+.game-type-tag[data-type="video"],
+.game-type-tag[data-type="movie"],
+.game-type-tag[data-type="series"],
+.game-type-tag[data-type="episode"]  { background: #556577; color: #f0f2f5; }
+.game-type-tag[data-type="hardware"] { background: #808891; }
 /* Shared rounded-square shape. Every tag in the row uses this; per-variant
    modifiers add color / opacity. Keeping padding, radius, and font-size
    identical is what makes the row read as one cohesive strip. Matches

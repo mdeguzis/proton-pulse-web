@@ -994,6 +994,7 @@ export async function renderGamePage(appId) {
                 <span>Linux</span>
               </button>
             </div>
+            <div class="game-type-strip" id="game-type-strip" hidden aria-label="App type"></div>
             <div class="game-user-tags" id="game-user-tags" aria-label="Your Steam context"></div>
           </div>
           <div class="game-header-actions">
@@ -1375,6 +1376,17 @@ export async function renderGamePage(appId) {
             // of 'tell me more about this OS'.
             chip.addEventListener('click', () => _openMetadataModal(appId));
           }
+        }
+      }
+      // App type chip under the artwork (#251): show mod / dlc / software so
+      // the tile no longer needs a corner ribbon. "game" renders nothing; the
+      // "demo" case is already covered by the DEMO pill next to the title.
+      const rawType = String(appMeta?.type || '').toLowerCase();
+      if (rawType && rawType !== 'game' && rawType !== 'demo') {
+        const typeStrip = el.querySelector('#game-type-strip');
+        if (typeStrip) {
+          typeStrip.hidden = false;
+          typeStrip.innerHTML = `<span class="game-type-tag" data-type="${rawType}" title="Steam classifies this as ${rawType}">${rawType.toUpperCase()}</span>`;
         }
       }
       // update deck status button icon + modal

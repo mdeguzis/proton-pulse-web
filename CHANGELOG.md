@@ -2,6 +2,15 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.7.0
+
+- New icon set across the site: accurate Steam Deck / Controller / Machine / Frame marks, SteamOS and Verified signage, and Steam / GOG / Epic store app-icons. Saved as SVG and PNG assets at multiple sizes under assets/icons with regenerate scripts.
+- At-a-glance chart: the Steam Deck chip uses the real Deck mark, the colored labels stay on one line at a uniform width (no more clipped "Unsupported"), the view chips are larger, and the panel padding is tighter.
+- Browse card ownership badges: library is now a clean 2x2 collection grid and wishlist is a wrapped present, both without the old white halo. A "Store tag icon size" setting in Site Options lets you nudge the corner icon size (10 to 28px).
+- Filter popover: on desktop it stretches to the content width and flows the groups into balanced masonry columns with squircle chips, so it fills evenly and the Save / Clear footer stays above the fold.
+- About page: a new Icons and Signage section (icon left, meaning right) documents every badge and mark, reachable from a quicklinks row that also jumps to Compare and Mission.
+- App type (mod / DLC / software) no longer overlays the browse tile. It now shows as a tag under the artwork on the game detail page.
+
 ## v1.6.2
 
 - Fix: game page box art fills the full left column width at its native aspect ratio and top-aligns with the rating panel. Rolls back the 240px cap and `object-fit: contain` from v1.6.1, which shrank Steam-standard headers and left extra whitespace next to the panel.
