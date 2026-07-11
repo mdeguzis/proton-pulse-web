@@ -156,6 +156,14 @@
   .filter-panel--stack.open > *:not(.filter-panel-mobile-header):not(.filter-panel-footer):not(.filter-panel-footer--stack) {
     margin-inline: 14px;
   }
+  /* Give the first content row (usually "Search titles") a bit of breathing
+     room below the sticky mobile header, otherwise the label sits flush
+     against the header border. */
+  .filter-panel.open .filter-panel-mobile-header + *,
+  .pg-filter-panel.open .filter-panel-mobile-header + *,
+  .filter-panel--stack.open .filter-panel-mobile-header + * {
+    margin-top: 14px;
+  }
   /* Mobile-only header: sticky bar at top with "Filters" title + close X.
      .filter-panel-mobile-header is hidden by default (desktop rule below),
      shown as a sticky header when the panel is open on mobile. width:100%
