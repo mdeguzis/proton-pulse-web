@@ -434,6 +434,21 @@
 .admin-dropdown-item--danger { color: #ff9494; }
 .admin-dropdown-item--danger:hover { background: rgba(255,80,80,0.15); color: #ffbdbd; }
 
+/* Box-art detail page: preview column + URL sources column side by side on
+   wide viewports, stacked on mobile so the SGDB panel below is reachable
+   without scrolling past a tall two-column layout. */
+.boxart-detail-grid {
+  display: grid;
+  gap: 16px;
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) {
+  .boxart-detail-grid {
+    grid-template-columns: minmax(200px, 460px) 1fr;
+  }
+}
+
 /* #148: report detail header lays the subhead title flush left and the
    moderation toolbar flush right so all actions sit above the fold.
    Wraps to a second row on narrow viewports so nothing overflows. */

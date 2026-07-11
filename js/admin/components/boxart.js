@@ -212,6 +212,7 @@ function _renderShell() {
         <div class="admin-dropdown-menu">
           <button class="admin-dropdown-item" id="boxart-probe-visible-btn" title="Probe every row on the current page">Probe visible page</button>
           <button class="admin-dropdown-item" id="boxart-probe-all-btn" title="Probe every row that matches the current filters in bounded batches">Probe all (filtered)</button>
+          <button class="admin-dropdown-item" id="boxart-sgdb-first-all-btn" title="Search SteamGridDB by title for every filtered row and set the first widescreen grid as the override. Skips rows that already have an override.">Set first SGDB result (filtered)</button>
           <button class="admin-dropdown-item admin-dropdown-item--danger" id="boxart-cancel-btn" hidden>Cancel batch</button>
         </div>
       </details>
@@ -481,6 +482,7 @@ export async function renderBoxartAdmin() {
   const statusEl  = document.getElementById('boxart-status');
   const visBtn    = document.getElementById('boxart-probe-visible-btn');
   const allBtn    = document.getElementById('boxart-probe-all-btn');
+  const sgdbAllBtn = document.getElementById('boxart-sgdb-first-all-btn');
   const cancelBtn = document.getElementById('boxart-cancel-btn');
   const actionsDropdown = document.getElementById('boxart-actions');
   // Close the dropdown after any menu-item click so it doesn't stay open
@@ -514,6 +516,7 @@ export async function renderBoxartAdmin() {
   function setBatchRunning(running) {
     visBtn.disabled = running;
     allBtn.disabled = running;
+    if (sgdbAllBtn) sgdbAllBtn.disabled = running;
     cancelBtn.hidden = !running;
     progEl.hidden = !running;
   }
@@ -557,6 +560,53 @@ export async function renderBoxartAdmin() {
     } finally {
       setBatchRunning(false);
       progEl.hidden = false;
+    }
+  });
+
+  // Batch "Set first SGDB result" across every filtered row. Skips rows
+  // that already have an admin override so a re-run does not clobber
+  // manual choices. Runs sequentially with a small yield so the UI stays
+  // responsive and SGDB does not rate-limit us into oblivion.
+  if (sgdbAllBtn) sgdbAllBtn.addEventListener('click', async () => {
+    _closeActions();
+    if (!state.rows.length) return;
+    const total = state.rows.length;
+    if (!confirm(`Search SteamGridDB by title for ${total.toLocaleString()} row${total === 1 ? '' : 's'} and set the first widescreen grid as the override on each?\n\nRows that already have an admin override are skipped. This can take a while.`)) return;
+    setBatchRunning(true);
+    cancelToken = { cancelled: false };
+    let done = 0, ok = 0, skip = 0, fail = 0;
+    try {
+      progEl.textContent = `SGDB first: 0 / ${total}...`;
+      for (const r of state.rows) {
+        if (cancelToken.cancelled) break;
+        done += 1;
+        if (r.override?.image_url) { skip += 1; }
+        else {
+          const term = _cleanTitle(r.title);
+          let sr = await searchSgdb(r.appId, term, '460x215,920x430');
+          if (!sr?.ok || !Array.isArray(sr.results) || sr.results.length === 0) {
+            sr = await searchSgdb(r.appId, term, '');
+          }
+          const pick = (sr?.ok && Array.isArray(sr.results)) ? (sr.results.find((g) => g.url) || sr.results[0]) : null;
+          if (pick?.url) {
+            const applied = await setBoxArtOverride(r.appId, pick.url);
+            if (applied.ok) {
+              r.override = { image_url: pick.url, source: 'manual' };
+              if (indexes.overrideMap) indexes.overrideMap[r.appId] = r.override;
+              ok += 1;
+            } else { fail += 1; }
+          } else { fail += 1; }
+          // 250ms breather between rows to stay well under SGDB's rate limits.
+          await new Promise((res) => setTimeout(res, 250));
+        }
+        progEl.textContent = `SGDB first: ${done} / ${total} \u00b7 ${ok} set / ${skip} skipped / ${fail} failed`;
+      }
+      progEl.textContent = `Done: ${done} scanned \u00b7 ${ok} set / ${skip} skipped / ${fail} failed${cancelToken.cancelled ? ' (cancelled)' : ''}`;
+    } finally {
+      setBatchRunning(false);
+      progEl.hidden = false;
+      // Re-render so the freshly-set overrides show up in the Status column.
+      _renderPage(state.rows, state.page);
     }
   });
 
@@ -830,7 +880,7 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
       <p id="boxart-detail-status" class="admin-hint" style="margin:10px 0 0" hidden></p>
     </div>
 
-    <div style="display:grid; grid-template-columns: minmax(200px, 460px) 1fr; gap: 16px; align-items:start">
+    <div class="boxart-detail-grid">
       <div class="admin-card" style="padding:12px">
         <div class="admin-subhead">Preview</div>
         <img id="boxart-detail-preview" src="${escapeHtml(previewSrc)}" alt="header preview" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05)"
