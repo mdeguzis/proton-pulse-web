@@ -809,11 +809,14 @@
 }
 @media (max-width: 720px) {
   /* On narrow screens the header grid collapses to one column: box art,
-     then the rating panel, then the action row. */
+     rating panel, OS/type/user tags, then the action row. Without an
+     explicit grid-row on the tags, they collide with the rating panel
+     because both default to grid-row: 2. */
   .game-header-grid { grid-template-columns: 1fr; }
   .game-header-art-col { grid-column: 1; grid-row: 1; }
   .game-rating-panel { grid-column: 1; grid-row: 2; }
-  .game-header-actions { grid-column: 1; grid-row: 3; }
+  .game-header-art-tags { grid-column: 1; grid-row: 3; align-self: start; }
+  .game-header-actions { grid-column: 1; grid-row: 4; }
 }
 .source-summary-tile:hover {
   border-color: var(--accent);
