@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=552d4d2a">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
 <link rel="stylesheet" href="css/shared/cards.css?v=6ab0b6d5">
-<link rel="stylesheet" href="css/index/index.css?v=c8fe17a2">
+<link rel="stylesheet" href="css/index/index.css?v=3ad4c29f">
 </head>
 <body>
 
@@ -34,6 +34,10 @@
         rest lives here: what the project is, how it differs from ProtonDB, and how
         the open data pipeline works.
       </p>
+      <a class="about-legend-btn" href="#icons-signage">
+        <svg class="alb-glyph" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.4" cy="12" r="5.2" fill="#1b9fff"/><path d="M9.2 1.2A10.8 10.8 0 0 1 9.2 22.8L9.2 18.9A6.9 6.9 0 0 0 9.2 5.1Z" fill="#fff"/></svg>
+        Icons &amp; Signage
+      </a>
     </div>
 
     <!-- Value props - what makes Proton Pulse its own thing, not a feature list -->
@@ -54,6 +58,37 @@
         <div class="ei-desc">The Decky Loader plugin reads + writes Pulse Reports right from Gaming Mode. Submit configs without leaving the game.</div>
         <div class="ei-tag">Decky</div>
       </a>
+    </div>
+
+    <!-- Icons & Signage legend (#272): every badge and mark, icon left / meaning
+         right. Marks are inlined so they need no external assets; the dark chip
+         behind each keeps the white/blue marks legible in either theme. -->
+    <div class="section-label" id="icons-signage">Icons &amp; Signage</div>
+    <p class="il-intro">A key to every badge and mark you'll see across the site.</p>
+    <div class="icons-legend">
+      <div class="il-col">
+        <div class="il-subhead">Compatibility tiers</div>
+        <div class="il-row"><span class="il-tier il-tier--platinum">Platinum</span><div class="il-text"><b>Platinum</b><span>Runs flawlessly out of the box.</span></div></div>
+        <div class="il-row"><span class="il-tier il-tier--gold">Gold</span><div class="il-text"><b>Gold</b><span>Runs great after a small tweak.</span></div></div>
+        <div class="il-row"><span class="il-tier il-tier--silver">Silver</span><div class="il-text"><b>Silver</b><span>Playable with minor issues.</span></div></div>
+        <div class="il-row"><span class="il-tier il-tier--bronze">Bronze</span><div class="il-text"><b>Bronze</b><span>Runs, but with real problems.</span></div></div>
+        <div class="il-row"><span class="il-tier il-tier--borked">Borked</span><div class="il-text"><b>Borked</b><span>Does not run.</span></div></div>
+      </div>
+      <div class="il-col">
+        <div class="il-subhead">Steam hardware</div>
+        <div class="il-row"><span class="il-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.4" cy="12" r="5.2" fill="#1b9fff"/><path d="M9.2 1.2A10.8 10.8 0 0 1 9.2 22.8L9.2 18.9A6.9 6.9 0 0 0 9.2 5.1Z" fill="#fff"/></svg></span><div class="il-text"><b>Steam Deck</b><span>Valve's handheld. Deck compatibility shows as Verified, Playable, or Unsupported.</span></div></div>
+        <div class="il-row"><span class="il-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="0.6" y="0.6" width="22.8" height="22.8" rx="4.6" fill="#fff"/><circle cx="12" cy="12" r="6.9" fill="#0d151f"/><circle cx="12" cy="12" r="5.2" fill="#1b9fff"/></svg></span><div class="il-text"><b>Steam Machine</b><span>Valve's upcoming SteamOS living-room console.</span></div></div>
+        <div class="il-row"><span class="il-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.2 0.4H21.8A1.8 1.8 0 0 1 23.6 2.2V5.5H6.7A1.2 1.2 0 0 0 5.5 6.7V23.6H2.2A1.8 1.8 0 0 1 0.4 21.8V2.2A1.8 1.8 0 0 1 2.2 0.4Z" fill="#fff"/><path d="M23.6 8.2A15.4 15.4 0 0 0 8.2 23.6L23.6 23.6Z" fill="#1b9fff"/></svg></span><div class="il-text"><b>Steam Frame</b><span>Valve's upcoming standalone SteamOS VR headset.</span></div></div>
+        <div class="il-row"><span class="il-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#0a97fd" d="M12.004 2c-5.25 0-9.556 4.05-9.964 9.197l5.36 2.216c.454-.31 1.002-.492 1.593-.492.053 0 .104.003.157.005l2.384-3.452v-.049c0-2.08 1.69-3.77 3.77-3.77 2.079 0 3.77 1.692 3.77 3.772s-1.692 3.771-3.77 3.771h-.087l-3.397 2.426c0 .043.003.088.003.133 0 1.562-1.262 2.83-2.825 2.83-1.362 0-2.513-.978-2.775-2.273l-3.838-1.589C3.573 18.922 7.427 22 12.005 22c5.522 0 9.998-4.477 9.998-10 0-5.522-4.477-10-9.999-10zM7.078 16.667c.218.452.595.832 1.094 1.041 1.081.45 2.328-.063 2.777-1.145.22-.525.22-1.1.004-1.625-.215-.525-.625-.934-1.147-1.152-.52-.217-1.075-.208-1.565-.025l1.269.525c.797.333 1.174 1.25.84 2.046-.33.797-1.247 1.175-2.044.843l-1.228-.508zm10.74-7.245c0-1.385-1.128-2.512-2.513-2.512-1.387 0-2.512 1.127-2.512 2.512 0 1.388 1.125 2.513 2.512 2.513 1.386 0 2.512-1.125 2.512-2.513zM15.31 7.53c1.04 0 1.888.845 1.888 1.888s-.847 1.888-1.888 1.888c-1.044 0-1.888-.845-1.888-1.888s.845-1.888 1.888-1.888z"/></svg></span><div class="il-text"><b>SteamOS</b><span>The game or device runs SteamOS.</span></div></div>
+        <div class="il-row"><span class="il-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#51ae40"/><path d="M7 12.4l3.3 3.4L17.2 8.5" fill="none" stroke="#12300f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="il-text"><b>Verified</b><span>Verified for standalone play on Deck, Machine, or Frame.</span></div></div>
+      </div>
+      <div class="il-col">
+        <div class="il-subhead">In your account</div>
+        <div class="il-row"><span class="il-chip il-chip--steam"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="#fff" stroke="#000" stroke-width="1.1" stroke-linejoin="round"><rect x="3.4" y="3.4" width="7" height="7" rx="1.5"/><rect x="13.6" y="3.4" width="7" height="7" rx="1.5"/><rect x="3.4" y="13.6" width="7" height="7" rx="1.5"/><rect x="13.6" y="13.6" width="7" height="7" rx="1.5"/></g></svg></span><div class="il-text"><b>In your library</b><span>You own this game on Steam. Shown on the store pill.</span></div></div>
+        <div class="il-row"><span class="il-chip il-chip--steam"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="#fff" stroke="#000" stroke-width="1" stroke-linejoin="round"><path d="M4.6 8.2h14.8v3.4H4.6z"/><path d="M5.6 11.6h12.8v7a1.4 1.4 0 0 1-1.4 1.4H7a1.4 1.4 0 0 1-1.4-1.4z"/><path d="M12 8.2C10.6 8.2 8 7.9 7.5 6.3 7.1 5.1 8.4 4.3 9.5 5 10.6 5.7 11.5 6.8 12 8.2z"/><path d="M12 8.2C13.4 8.2 16 7.9 16.5 6.3 16.9 5.1 15.6 4.3 14.5 5 13.4 5.7 12.5 6.8 12 8.2z"/></g><path d="M12 8.4v11.8" stroke="#000" stroke-width="1"/></svg></span><div class="il-text"><b>On your wishlist</b><span>This game is on your Steam wishlist. Shown on the store pill.</span></div></div>
+        <div class="il-subhead il-subhead--spaced">Store</div>
+        <div class="il-row"><span class="il-store-tag il-store-tag--steam">Steam</span><div class="il-text"><b>Store</b><span>Where the game comes from: Steam, GOG, or Epic.</span></div></div>
+      </div>
     </div>
 
     <!-- Spotlight differentiator: you own your reports -->

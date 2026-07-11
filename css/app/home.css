@@ -380,14 +380,18 @@
 .hlc-bars { display: flex; flex-direction: column; gap: 6px; }
 .hlc-row {
   display: grid;
-  /* Label column sizes to its widest label (e.g. "Deck Verified") so every
-     pill stays on ONE line and long words like "Unsupported" are never cut
-     off. All pills share that width, so they align in a tidy column. */
-  grid-template-columns: max-content 1fr 56px;
+  /* Label column is at least 84px but grows to fit the widest label (e.g.
+     "Deck Verified") so every pill stays on ONE line and long words like
+     "Unsupported" are never clipped. width:100% on the label (below) makes
+     all pills fill that column, so they stay a uniform width and line up in
+     a tidy column like the tier bars do. */
+  grid-template-columns: minmax(84px, max-content) 1fr 56px;
   gap: 10px;
   align-items: center;
 }
 .hlc-label {
+  width: 100%;
+  box-sizing: border-box;
   padding: 2px 8px;
   border-radius: 3px;
   font-size: 0.75rem;
