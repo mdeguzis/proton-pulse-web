@@ -370,3 +370,40 @@
   font-size: 0.78rem;
   color: var(--muted);
 }
+
+/* Latency sparkline under the raw JSON in the per-service modal (#275). */
+.status-graph-wrap {
+  margin-top: 14px;
+}
+.status-graph {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 10px 12px;
+  background: var(--bg);
+}
+.status-graph-head,
+.status-graph-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+.status-graph-head {
+  margin-bottom: 6px;
+}
+.status-graph-foot {
+  margin-top: 4px;
+}
+.status-graph-svg {
+  display: block;
+  width: 100%;
+  height: 64px;
+  color: var(--accent);
+}
+.status-graph-empty {
+  font-size: 0.78rem;
+  color: var(--muted);
+  padding: 8px 0 2px;
+}

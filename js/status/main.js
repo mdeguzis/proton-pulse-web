@@ -230,6 +230,60 @@ async function loadAndRender() {
   renderFromPayload(payload);
 }
 
+// Fetch one function's rolling latency history ([[epochSec, ms], ...]) from
+// the worker for the modal sparkline. Null on any failure so the modal simply
+// omits the graph rather than erroring.
+async function fetchHistory(fn) {
+  if (!EDGE_STATUS_ENDPOINT) return null;
+  try {
+    const res = await fetch(`${EDGE_STATUS_ENDPOINT}?history=${encodeURIComponent(fn)}`, { cache: 'no-store' });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return Array.isArray(data?.[fn]) ? data[fn] : [];
+  } catch (err) {
+    console.debug('[status] history fetch failed', { fn, error: String(err && err.message || err) });
+    return null;
+  }
+}
+
+// Render a small inline-SVG latency sparkline from a [[t,ms],...] series.
+// Time-scaled x so gaps in the history show as gaps in cadence, not evenly
+// spaced points. No external chart lib -- one path plus min/avg/max labels.
+function renderSparkline(series) {
+  const pts = (series || []).filter((p) => Array.isArray(p) && p.length >= 2 && Number.isFinite(p[1]));
+  if (pts.length < 2) {
+    return '<div class="status-graph-empty">Latency history is still collecting. Check back after a few 15-minute cycles.</div>';
+  }
+  const W = 320, H = 64, PAD = 5;
+  const ts = pts.map((p) => p[0]);
+  const ms = pts.map((p) => p[1]);
+  const t0 = ts[0], t1 = ts[ts.length - 1];
+  const tSpan = (t1 - t0) || 1;
+  const minMs = Math.min(...ms), maxMs = Math.max(...ms);
+  const msSpan = (maxMs - minMs) || 1;
+  const x = (t) => PAD + ((t - t0) / tSpan) * (W - 2 * PAD);
+  const y = (m) => PAD + (1 - (m - minMs) / msSpan) * (H - 2 * PAD);
+  const path = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join(' ');
+  const last = ms[ms.length - 1];
+  const avg = Math.round(ms.reduce((a, b) => a + b, 0) / ms.length);
+  const spanDays = Math.max(1, Math.round(tSpan / 86400));
+  return `
+    <div class="status-graph">
+      <div class="status-graph-head">
+        <span>Latency, last ${esc(spanDays)}d (${esc(pts.length)} checks)</span>
+        <span>min ${esc(minMs)} / avg ${esc(avg)} / max ${esc(maxMs)} ms</span>
+      </div>
+      <svg viewBox="0 0 ${W} ${H}" class="status-graph-svg" preserveAspectRatio="none" role="img" aria-label="Latency over the last ${esc(spanDays)} days, latest ${esc(last)} ms">
+        <path d="${path}" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke" />
+      </svg>
+      <div class="status-graph-foot">
+        <span>${esc(new Date(t0 * 1000).toLocaleDateString())}</span>
+        <span>latest ${esc(last)} ms</span>
+        <span>now</span>
+      </div>
+    </div>`;
+}
+
 // Click-to-open modal: shows the full stdout-like blob for one service.
 // The card element carries the raw service JSON on a data-service attribute
 // (set in renderService); we delegate the click on the list so the handler
@@ -264,12 +318,22 @@ function openServiceModal(svc) {
     </dl>
     ${adminControls}
     <pre class="status-modal-raw">${esc(JSON.stringify(svc, null, 2))}</pre>
+    <div id="status-modal-graph" class="status-graph-wrap"></div>
   `;
   const checkBtn = document.getElementById('status-check-now-btn');
   if (checkBtn) {
     checkBtn.addEventListener('click', () => {
       const statusEl = document.getElementById('status-check-now-status');
       checkServiceNow(svc.name, checkBtn, statusEl);
+    });
+  }
+  // Async-fill the latency sparkline so the modal opens instantly.
+  const graphEl = document.getElementById('status-modal-graph');
+  if (graphEl && EDGE_STATUS_ENDPOINT) {
+    graphEl.innerHTML = '<div class="status-graph-empty">Loading latency history...</div>';
+    fetchHistory(svc.name).then((series) => {
+      if (!graphEl.isConnected) return;
+      graphEl.innerHTML = renderSparkline(series);
     });
   }
   backdrop.hidden = false;

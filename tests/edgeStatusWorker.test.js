@@ -13,6 +13,9 @@ import {
   aggregateOverall,
   buildPayload,
   mergeService,
+  appendHistory,
+  HISTORY_WINDOW_SEC,
+  HISTORY_MAX_POINTS,
 } from '../workers/edge-status/index.js';
 
 describe('classifyStatus', () => {
@@ -132,6 +135,46 @@ describe('mergeService (admin "Check now" single-fn re-probe)', () => {
   });
 });
 
+describe('appendHistory (rolling 7-day latency series)', () => {
+  const now = 1_800_000_000;
+
+  test('appends a [t,ms] point per service onto the series', () => {
+    const h = appendHistory({}, [
+      { name: 'steam-news', latency_ms: 42 },
+      { name: 'protondb-summary', latency_ms: 88 },
+    ], now);
+    expect(h['steam-news']).toEqual([[now, 42]]);
+    expect(h['protondb-summary']).toEqual([[now, 88]]);
+  });
+
+  test('keeps prior points and appends the new one', () => {
+    const prior = { 'steam-news': [[now - 900, 30]] };
+    const h = appendHistory(prior, [{ name: 'steam-news', latency_ms: 42 }], now);
+    expect(h['steam-news']).toEqual([[now - 900, 30], [now, 42]]);
+  });
+
+  test('drops points older than the 7-day window', () => {
+    const stale = now - HISTORY_WINDOW_SEC - 10;
+    const prior = { 'steam-news': [[stale, 999], [now - 900, 30]] };
+    const h = appendHistory(prior, [{ name: 'steam-news', latency_ms: 42 }], now);
+    expect(h['steam-news'].some(([t]) => t === stale)).toBe(false);
+    expect(h['steam-news']).toEqual([[now - 900, 30], [now, 42]]);
+  });
+
+  test('caps a series at HISTORY_MAX_POINTS, keeping the newest', () => {
+    const prior = { 'steam-news': [] };
+    // all within window so trimming is by count, not time
+    for (let i = 0; i < HISTORY_MAX_POINTS + 50; i++) prior['steam-news'].push([now - (HISTORY_MAX_POINTS - i), i]);
+    const h = appendHistory(prior, [{ name: 'steam-news', latency_ms: 7 }], now);
+    expect(h['steam-news'].length).toBe(HISTORY_MAX_POINTS);
+    expect(h['steam-news'][h['steam-news'].length - 1]).toEqual([now, 7]);
+  });
+
+  test('tolerates missing/garbage history input', () => {
+    expect(appendHistory(null, [{ name: 'x', latency_ms: 1 }], now)).toEqual({ x: [[now, 1]] });
+  });
+});
+
 describe('worker POST path is super-admin gated', () => {
   const SRC = fs.readFileSync(
     path.join(__dirname, '..', 'workers', 'edge-status', 'index.js'),
@@ -178,6 +221,29 @@ describe('status page reads the worker endpoint with a static fallback', () => {
     expect(MAIN).toMatch(/method:\s*'POST'/);
     expect(MAIN).toContain('Authorization: `Bearer ${session.access_token}`');
     expect(MAIN).toContain("JSON.stringify({ fn: svcName })");
+  });
+
+  test('modal renders a latency sparkline from the worker history endpoint', () => {
+    expect(MAIN).toContain('fetchHistory');
+    expect(MAIN).toContain('?history=');
+    expect(MAIN).toContain('renderSparkline');
+    expect(MAIN).toContain('status-modal-graph');
+    // svg path built from the [t,ms] series, no external chart lib
+    expect(MAIN).toMatch(/<svg[^>]*status-graph-svg/);
+  });
+});
+
+describe('worker exposes a history endpoint', () => {
+  const SRC = fs.readFileSync(
+    path.join(__dirname, '..', 'workers', 'edge-status', 'index.js'),
+    'utf8',
+  );
+  test('GET ?history returns the stored series', () => {
+    expect(SRC).toContain("searchParams.has('history')");
+    expect(SRC).toContain('HISTORY_KEY');
+  });
+  test('every probe path updates history', () => {
+    expect(SRC).toContain('updateHistory');
   });
 });
 

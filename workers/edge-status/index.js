@@ -53,6 +53,11 @@ export const FNS = [
 ];
 
 export const STATUS_KEY = 'edge-status';
+// Rolling per-function latency history for the status-page sparkline (7 days
+// at the 15-min cron cadence ~= 672 points; cap a bit above that for safety).
+export const HISTORY_KEY = 'edge-status-history';
+export const HISTORY_WINDOW_SEC = 7 * 24 * 3600;
+export const HISTORY_MAX_POINTS = 800;
 const PROBE_TIMEOUT_MS = 15000;
 
 const ALLOWED_ORIGINS = ['https://www.proton-pulse.com', 'https://mdeguzis.github.io'];
@@ -192,12 +197,41 @@ async function handleManualCheck(request, env, origin) {
     const base = existing ? JSON.parse(existing) : buildPayload([]);
     payload = mergeService(base, service);
     await env.EDGE_STATUS_KV.put(STATUS_KEY, JSON.stringify(payload));
+    await updateHistory(env, [service]);
     console.info('[edge-status] manual single-fn check', { fn, status: service.status, http_status: service.http_status });
   } else {
     payload = await runProbe(env);
     console.info('[edge-status] manual full sweep', { requested_fn: fn || '(none)' });
   }
   return jsonResponse(payload, 200, origin);
+}
+
+/**
+ * Append the latest probe results onto the rolling history and trim to the
+ * 7-day window (then hard-cap point count). Pure so it's unit-testable.
+ * Each series is an array of [epochSeconds, latencyMs].
+ * @param {object} history - existing { [fn]: [[t,ms],...] } (may be empty)
+ * @param {Array<{name:string, latency_ms:number}>} services
+ * @param {number} nowSec - current epoch seconds
+ */
+export function appendHistory(history, services, nowSec) {
+  const h = (history && typeof history === 'object') ? { ...history } : {};
+  const cutoff = nowSec - HISTORY_WINDOW_SEC;
+  for (const s of services) {
+    const prior = Array.isArray(h[s.name]) ? h[s.name] : [];
+    const next = prior.concat([[nowSec, s.latency_ms]]).filter(([t]) => t >= cutoff);
+    h[s.name] = next.length > HISTORY_MAX_POINTS ? next.slice(next.length - HISTORY_MAX_POINTS) : next;
+  }
+  return h;
+}
+
+// Read history from KV, append the given services, write it back.
+async function updateHistory(env, services) {
+  const nowSec = Math.floor(Date.now() / 1000);
+  const raw = await env.EDGE_STATUS_KV.get(HISTORY_KEY);
+  const history = appendHistory(raw ? JSON.parse(raw) : {}, services, nowSec);
+  await env.EDGE_STATUS_KV.put(HISTORY_KEY, JSON.stringify(history));
+  console.debug('[edge-status] history updated', { functions: services.length, key: HISTORY_KEY });
 }
 
 // Probe one edge function with a CORS OPTIONS preflight and time it.
@@ -242,6 +276,7 @@ export async function runProbe(env) {
   }
   const payload = buildPayload(services);
   await env.EDGE_STATUS_KV.put(STATUS_KEY, JSON.stringify(payload));
+  await updateHistory(env, services);
   console.info('[edge-status] sweep complete', { overall: payload.overall, count: services.length });
   return payload;
 }
@@ -264,6 +299,21 @@ export default {
     }
     if (request.method !== 'GET') {
       return new Response('Method Not Allowed', { status: 405, headers: corsHeaders(origin) });
+    }
+
+    // GET ?history=<fn> returns that function's [ [t,ms], ... ] series for the
+    // status-page sparkline; ?history=1 (or all) returns every series. Kept on
+    // a separate query so the default page load stays a small single snapshot.
+    const url = new URL(request.url);
+    if (url.searchParams.has('history')) {
+      const fn = url.searchParams.get('history');
+      const rawHist = await env.EDGE_STATUS_KV.get(HISTORY_KEY);
+      const history = rawHist ? JSON.parse(rawHist) : {};
+      const out = (fn && fn !== '1' && fn !== 'all') ? { [fn]: history[fn] || [] } : history;
+      return new Response(JSON.stringify(out), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=30', ...corsHeaders(origin) },
+      });
     }
 
     let body = await env.EDGE_STATUS_KV.get(STATUS_KEY);

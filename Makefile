@@ -12,10 +12,14 @@ FORCE_DEPLOY ?=
 
 .PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker \
 	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-staging-finalize gh-resume gh-finalize-only gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
-	build serve smoke smoke-live pre-push coverage
+	build serve smoke smoke-live pre-push coverage deploy-worker
 
 build:
 	@bash scripts/cache-bust.sh
+
+# Deploy a Cloudflare Worker (default: edge-status). Override: make deploy-worker WORKER=<name>
+deploy-worker:
+	@bash scripts/deploy-worker.sh $(WORKER)
 
 # Run Jest unit tests + manifest completeness check
 test-js:
@@ -66,6 +70,7 @@ help:
 	@echo "  fetch-steam-catalog Fetch and cache Steam app IDs using STEAM_API_KEY"
 	@echo "  backup-supabase     Dump Supabase DB via pg_dump (requires SUPABASE_DB_URL)"
 	@echo "  install-docker      Install Docker Engine via the local helper script"
+	@echo "  deploy-worker       Deploy a Cloudflare Worker (default edge-status; WORKER=<name> to override)"
 	@echo "  gh-check            Verify gh is installed and authenticated"
 	@echo "  check-staging-sync  Verify staging SHA matches HEAD before a prod deploy (auto-runs)"
 	@echo "  gh-run              Trigger the full GitHub Actions update-data workflow via gh"
