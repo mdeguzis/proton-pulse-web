@@ -6,7 +6,7 @@ import {
   setShowAdult, pullShowAdult, readShowAdultLocal,
   setShowOwnerBadges, pullShowOwnerBadges, readShowOwnerBadgesLocal,
   readOwnerBadgeSizeLocal, writeOwnerBadgeSizeLocal, OWNER_BADGE_SIZE_DEFAULT,
-} from '../lib/user-prefs.js?v=d663d582';
+} from '../lib/user-prefs.js?v=5d9472de';
 import { getPageSizePref, setPageSizePref, PAGE_SIZE_KEY } from '../lib/pagination-prefs.js?v=15d0747d';
 
 const MOTION_KEY = 'proton-pulse:motion';

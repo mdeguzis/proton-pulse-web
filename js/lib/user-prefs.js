@@ -177,7 +177,7 @@ export function pullShowOwnerBadges()      { return pullPrefBool('show-owner-bad
 // feels right. Stored under pp:owner-badge-size and applied as the
 // --owner-badge-size CSS variable (see topbar.js). Clamped to a sane range.
 export const OWNER_BADGE_SIZE_KEY = 'pp:owner-badge-size';
-export const OWNER_BADGE_SIZE_DEFAULT = 16;
+export const OWNER_BADGE_SIZE_DEFAULT = 18;
 export const OWNER_BADGE_SIZE_MIN = 10;
 export const OWNER_BADGE_SIZE_MAX = 28;
 

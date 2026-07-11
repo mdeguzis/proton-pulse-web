@@ -89,12 +89,15 @@
 [data-store-pill-pos="art-corner"] .game-card-corner-tag {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  /* The whole tag (text + padding + icon) scales off --owner-badge-size, so
+     the "Store tag size" setting visibly resizes the STEAM/GOG/Epic pill even
+     on cards with no library/wishlist decal. Default 18px. */
+  gap: calc(var(--owner-badge-size, 18px) * 0.24);
   position: absolute;
   top: 0;
   right: 0;
-  padding: 2px 7px;
-  font-size: 0.72rem;
+  padding: calc(var(--owner-badge-size, 18px) * 0.12) calc(var(--owner-badge-size, 18px) * 0.42);
+  font-size: calc(var(--owner-badge-size, 18px) * 0.64);
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -178,8 +181,8 @@
    --owner-badge-size CSS variable (applied on documentElement in topbar.js).
    Default 16px if unset. */
 .game-card-owner-badge svg {
-  width: var(--owner-badge-size, 16px);
-  height: var(--owner-badge-size, 16px);
+  width: var(--owner-badge-size, 18px);
+  height: var(--owner-badge-size, 18px);
   display: block;
 }
 /* Small gap before the store text so the icons read as attached but
