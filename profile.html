@@ -9,9 +9,9 @@
 <title>My Account — Proton Pulse</title>
 <meta name="color-scheme" content="dark">
 <link rel="stylesheet" href="css/shared/base.css?v=a93b26ad">
-<link rel="stylesheet" href="css/shared/topbar.css?v=552d4d2a">
+<link rel="stylesheet" href="css/shared/topbar.css?v=39671fc2">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
-<link rel="stylesheet" href="css/shared/cards.css?v=6afc9146">
+<link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
 <link rel="stylesheet" href="css/profile/profile.css?v=12c66ce9">
 </head>
 <body>
@@ -83,7 +83,20 @@
           <div class="profile-field-value" id="library-count" style="font-size:1.05rem"></div>
           <div class="profile-field-hint" id="library-status" style="margin-top:4px"></div>
           <div class="profile-field-hint" id="library-empty" style="margin-top:4px" hidden></div>
+          <div class="profile-field-hint" id="library-types" style="margin-top:6px" hidden></div>
           <div class="profile-field-hint" style="margin-top:8px">Fetched from Steam via IPlayerService/GetOwnedGames. Refresh whenever you install or uninstall games.</div>
+        </div>
+
+        <div class="profile-field" style="margin-top:14px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+            <div class="profile-field-label" style="margin:0">Wishlist</div>
+            <button type="button" class="profile-refresh-btn" id="wishlist-refresh-btn">Refresh</button>
+          </div>
+          <div class="profile-field-value" id="wishlist-count" style="font-size:1.05rem;margin-top:6px"></div>
+          <div class="profile-field-hint" id="wishlist-status" style="margin-top:4px"></div>
+          <div class="profile-field-hint" id="wishlist-empty" style="margin-top:4px" hidden></div>
+          <div class="profile-field-hint" id="wishlist-types" style="margin-top:6px" hidden></div>
+          <div class="profile-field-hint" style="margin-top:8px">Fetched from Steam via IWishlistService/GetWishlist. Powers the "On wishlist" filter on the browse page.</div>
         </div>
       </div>
 
@@ -325,8 +338,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script src="js/lib/analytics.js?v=7855fb4c"></script>
-<script src="js/lib/topbar.js?v=6f748790"></script>
+<script src="js/lib/topbar.js?v=0b5fd43c"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/profile/main.js?v=7a250dda"></script>
+<script type="module" src="js/profile/main.js?v=82344885"></script>
 </body>
 </html>

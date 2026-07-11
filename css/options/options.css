@@ -66,6 +66,24 @@
 }
 .option-row--block { align-items: flex-start; flex-direction: column; gap: 12px; }
 .option-radio-group { display: flex; gap: 10px; flex-wrap: wrap; }
+/* Checkbox group mirrors the radio pill visual so the two look consistent
+   even though the semantics differ (independent toggles, not one-of). */
+.option-checkbox-group { display: flex; gap: 10px; flex-wrap: wrap; }
+.option-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: var(--text);
+  padding: 6px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  transition: border-color 0.12s, color 0.12s;
+}
+.option-checkbox:has(input:checked) { border-color: var(--accent); color: var(--accent); }
+.option-checkbox input { display: none; }
+.option-checkbox:has(input:checked) .option-default-tag { color: var(--accent); opacity: 0.7; }
 .option-inline-inputs { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; }
 .option-inline-input { display: inline-flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--muted); }
 .option-inline-input input[type="number"] {
@@ -129,3 +147,20 @@
   outline: none;
 }
 .options-reset-note { font-size: 0.82rem; color: var(--muted); }
+
+/* Numeric option control (store tag icon size). Native number input keeps its
+   up/down spinner for quick nudging. */
+.option-number { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+.option-number input[type="number"] {
+  width: 66px;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  outline: none;
+}
+.option-number input[type="number"]:focus { border-color: var(--accent); }
+.option-number-unit { color: var(--muted); font-size: 0.82rem; font-family: var(--mono); }

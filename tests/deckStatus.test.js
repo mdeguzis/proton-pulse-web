@@ -36,6 +36,20 @@ describe('deck status: reads published deck-status.json', () => {
     expect(COMP).not.toContain('Sample data shown');
     expect(COMP).not.toContain('task #37');
     // unknown now means Valve simply has not evaluated the title
-    expect(COMP).toContain('Valve has not published a Steam Deck verdict');
+    expect(COMP).toContain('Valve has not evaluated this title yet');
+  });
+
+  test('modal is a three-tab Deck / Machine / SteamOS layout (#273)', () => {
+    // Radio-driven CSS tabs so it needs no JS wiring.
+    expect(COMP).toContain('class="deck-tabs"');
+    expect(COMP).toContain('id="dt-deck"');
+    expect(COMP).toContain('id="dt-machine"');
+    expect(COMP).toContain('id="dt-steamos"');
+    expect(COMP).toContain("'icon-steam-machine'");
+    expect(COMP).toContain("'icon-steamos'");
+    // SteamOS reads its own status field, not the Deck status.
+    expect(COMP).toContain('d.machine');
+    expect(COMP).toContain('d.steamos');
+    expect(COMP).toContain('Compatible');
   });
 });

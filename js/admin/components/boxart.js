@@ -17,8 +17,9 @@ import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import {
   probeSteamHeader, refetchSteamHeader, refetchNonSteamHeader, refetchSgdbHeader, searchSgdb,
+  confirmBoxArtOk, listBoxArtConfirmations,
   setBoxArtOverride, uploadBoxArtOverride, clearBoxArtOverride, listBoxArtOverrides,
-} from '../api/boxart.js?v=1cf18005';
+} from '../api/boxart.js?v=d0ed4be0';
 
 // Strip trademark / registered / service-mark symbols (and collapse the
 // whitespace they leave behind) from a store title so it works as a
@@ -34,7 +35,7 @@ const BATCH_YIELD_MS = 50;          // pause between batches so the UI stays res
 let _cache = null;
 async function _loadIndexes() {
   if (_cache) return _cache;
-  const [siRes, giRes, gcRes, nsRes, nscRes, overrides, clientErrors] = await Promise.all([
+  const [siRes, giRes, gcRes, nsRes, nscRes, overrides, clientErrors, confirmations] = await Promise.all([
     fetch(await dataUrl('search-index.json')).catch(() => null),
     fetch(await dataUrl('game-images.json')).catch(() => null),
     fetch(await dataUrl('game-images-cache.json')).catch(() => null),
@@ -42,6 +43,7 @@ async function _loadIndexes() {
     fetch(await dataUrl('nonsteam-images-cache.json')).catch(() => null),
     listBoxArtOverrides().catch(() => ({ ok: false, rows: [] })),
     _fetchClientImageErrors().catch(() => []),
+    listBoxArtConfirmations().catch(() => ({ ok: false, rows: [] })),
   ]);
   const searchIndex = (siRes && siRes.ok) ? await siRes.json().catch(() => []) : [];
   const gameImages  = (giRes && giRes.ok) ? await giRes.json().catch(() => ({})) : {};
@@ -84,7 +86,18 @@ async function _loadIndexes() {
   for (const row of (overrides.rows || [])) {
     if (row?.app_id) overrideMap[String(row.app_id)] = row;
   }
-  _cache = { searchIndex, gameImages, nonSteam, overrideMap, knownMissingSteam, knownMissingNonSteam };
+  // Admin reprobe confirmations (#270): appids the admin already probed
+  // and got an OK on. Subtract from both known-missing Sets so the row
+  // doesn't come back under the missing filter after a refresh.
+  const confirmedOk = new Set();
+  for (const row of (confirmations.rows || [])) {
+    if (row?.app_id) confirmedOk.add(String(row.app_id));
+  }
+  for (const aid of confirmedOk) {
+    knownMissingSteam.delete(aid);
+    knownMissingNonSteam.delete(aid);
+  }
+  _cache = { searchIndex, gameImages, nonSteam, overrideMap, knownMissingSteam, knownMissingNonSteam, confirmedOk };
   return _cache;
 }
 
@@ -307,6 +320,16 @@ function _renderPager(total, page) {
   pager.hidden = false;
 }
 
+// Persist a successful probe result so the row does not resurface under
+// the missing filter after a refresh (#270). Fire-and-forget: any auth
+// error just leaves the row as-is (same behavior as before this fix).
+function _persistConfirmedOk(appId, result) {
+  if (!result?.ok || !appId) return;
+  confirmBoxArtOk(appId, result.url || '').then((res) => {
+    if (!res?.ok) console.debug('[boxart] confirm_ok failed', { appId, status: res?.status, error: res?.error });
+  }).catch(() => { /* swallow -- best-effort */ });
+}
+
 async function _probeRow(tr, gameImages) {
   const appId = tr.dataset.appid;
   const type  = tr.dataset.store;
@@ -316,6 +339,7 @@ async function _probeRow(tr, gameImages) {
     ? await probeSteamHeader(appId, gameImages[appId] || null)
     : await refetchNonSteamHeader(appId, tr.dataset.cached || null);
   _paintStatus(statusEl, result);
+  _persistConfirmedOk(appId, result);
   return result;
 }
 
@@ -328,6 +352,7 @@ async function _refetchRow(tr) {
     ? await refetchSteamHeader(appId)
     : await refetchNonSteamHeader(appId, tr.dataset.cached || null);
   _paintStatus(statusEl, result);
+  _persistConfirmedOk(appId, result);
   return result;
 }
 
@@ -337,6 +362,7 @@ async function _sgdbRow(tr) {
   statusEl.innerHTML = '<span class="admin-muted">fetching from SteamGridDB...</span>';
   const result = await refetchSgdbHeader(appId);
   _paintStatus(statusEl, result);
+  _persistConfirmedOk(appId, result);
   return result;
 }
 
@@ -372,6 +398,8 @@ async function _probeAllFiltered(rows, gameImages, page, pageSize, cancelToken, 
         : await refetchNonSteamHeader(r.appId, r.cachedUrl || null);
       r._probe = result;
       if (result.ok) okCount.n += 1; else failCount.n += 1;
+      // Persist success across the whole batch too (#270).
+      _persistConfirmedOk(r.appId, result);
       // Paint the visible row's status cell if this row is on-screen.
       if (visibleTbody && absoluteIdx >= start && absoluteIdx < end) {
         const tr = visibleTbody.querySelector(`tr[data-appid="${CSS.escape(r.appId)}"]`);

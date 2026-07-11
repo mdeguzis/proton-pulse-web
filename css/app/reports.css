@@ -284,29 +284,47 @@
    full-width groups, each group an even pill grid so they align in tidy
    columns. Mobile keeps the compact stack from the max-width:560 rule above. */
 @media (min-width: 561px) {
+  /* Desktop: stretch the popover across the content width and flow the groups
+     into balanced masonry columns (CSS multi-column). The tall Tier group no
+     longer leaves empty pockets -- shorter groups pack in beside it so the
+     panel fills evenly and stays short, keeping the Save/Clear footer above
+     the fold. */
   .filter-panel--stack.open {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 14px;
-    min-width: 540px;
+    display: block;
+    columns: 5 200px;
+    column-gap: 26px;
+    width: min(calc(100vw - 2 * var(--content-pad)), calc(var(--content-max) - 2 * var(--content-pad)));
+    min-width: 0;
+    max-width: none;
   }
   .filter-panel--stack .filter-item,
   .filter-panel--stack .pg-filter-group {
-    width: 100%;
+    break-inside: avoid;
+    margin-bottom: 20px;
+    width: auto;
     min-width: 0;
   }
+  .filter-panel--stack .home-filter-select { width: 100%; box-sizing: border-box; }
+  /* Pills wrap at their natural width so long labels ("Unsupported",
+     "Not Rated Yet") never clip. */
   .filter-panel--stack .pg-filter-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 8px;
-    align-items: stretch;
+    align-content: start;
   }
-  .filter-panel--stack .pg-filter-group-label { grid-column: 1 / -1; }
-  .filter-panel--stack .pg-filter {
-    width: 100%;
-    justify-content: center;
+  .filter-panel--stack .pg-filter-group-label { flex-basis: 100%; }
+  /* Footer spans the full width below the columns. */
+  .filter-panel--stack .filter-panel-footer--stack {
+    column-span: all;
+    break-inside: avoid;
+    margin: 4px 0 0;
   }
 }
+
+/* Squircle chips in the browse filter popover (picked over the pill shape).
+   Scoped to the filter panel so other pg-filter pills keep their look. */
+.filter-panel--stack .pg-filter { border-radius: 7px; }
 
 /* .filter-checks / .filter-check removed -- filter groups now use
    .pg-filter-group + .pg-filter pill buttons (css/shared/filters.css) */

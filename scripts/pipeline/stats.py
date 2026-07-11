@@ -121,13 +121,23 @@ _STEAM_DECK_LCD = re.compile(r"\b(amd\s+custom\s+(apu|gpu)\s+0405|vangogh)\b", r
 # codename so VanGogh alone can't distinguish LCD vs OLED - the 0932 string
 # is what nails the OLED specifically
 _STEAM_DECK_OLED = re.compile(r"\b(amd\s+custom\s+(apu|gpu)\s+0932|sephiroth)\b", re.IGNORECASE)
+# Steam Machine (2026): semi-custom AMD Zen 4 6C/12T + RDNA3 28CU, SteamOS 3.
+# The exact APU/GPU revision string it reports (the Deck equivalent of 0405 /
+# 0932) is not public until the device ships and real reports arrive (#273).
+# PROVISIONAL: match an explicit "Steam Machine" mention plus the semi-custom
+# Zen 4 + RDNA 3 signature. Refine with the real APU id once we see hardware.
+_STEAM_MACHINE = re.compile(
+    r"\bsteam\s+machine\b|amd\s+custom\s+(apu|gpu).*rdna\s*3",
+    re.IGNORECASE,
+)
 
 
 def normalize_device_family(report: dict) -> str:
-    """Detect Steam Deck (LCD/OLED) and similar handhelds vs generic desktop.
+    """Detect Steam Deck (LCD/OLED), Steam Machine, and similar devices vs a
+    generic desktop.
 
     Matches against both CPU and GPU strings since either field may carry the
-    Deck-identifying APU/GPU revision. Conservative - only flags devices with
+    device-identifying APU/GPU revision. Conservative - only flags devices with
     unambiguous fingerprints. Everything else is "desktop".
     """
     cpu = report.get("cpu") or ""
@@ -137,6 +147,8 @@ def normalize_device_family(report: dict) -> str:
         return "steam-deck-oled"
     if _STEAM_DECK_LCD.search(haystack):
         return "steam-deck-lcd"
+    if _STEAM_MACHINE.search(haystack):
+        return "steam-machine"
     if not cpu and not gpu:
         return "unknown"
     return "desktop"

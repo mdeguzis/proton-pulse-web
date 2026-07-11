@@ -10,10 +10,10 @@
 <meta name="description" content="Browser-local display preferences for Proton Pulse, including an animations on/off toggle.">
 <meta name="color-scheme" content="dark">
 <link rel="stylesheet" href="css/shared/base.css?v=a93b26ad">
-<link rel="stylesheet" href="css/shared/topbar.css?v=552d4d2a">
+<link rel="stylesheet" href="css/shared/topbar.css?v=39671fc2">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
-<link rel="stylesheet" href="css/shared/cards.css?v=6afc9146">
-<link rel="stylesheet" href="css/options/options.css?v=902832fd">
+<link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
+<link rel="stylesheet" href="css/options/options.css?v=585c31e7">
 </head>
 <body>
 
@@ -87,6 +87,40 @@
           <span class="option-switch-track"></span>
         </label>
         <div class="option-default-note">Default: on.</div>
+      </div>
+
+      <div class="option-row">
+        <div class="option-text">
+          <div class="option-title">Show library / wishlist icons on cards</div>
+          <div class="option-desc">
+            Small book (In library) and heart-list (On wishlist) icons
+            that clip onto the store badge in the corner of each game
+            card's artwork. Requires a signed-in Steam account and a
+            synced library / wishlist. Syncs to your account so it
+            follows you across devices.
+          </div>
+        </div>
+        <label class="option-switch">
+          <input type="checkbox" id="opt-show-owner-badges">
+          <span class="option-switch-track"></span>
+        </label>
+        <div class="option-default-note">Default: off.</div>
+      </div>
+
+      <div class="option-row">
+        <div class="option-text">
+          <div class="option-title">Store tag size</div>
+          <div class="option-desc">
+            Size of the store tag (Steam / GOG / Epic) in the corner of each
+            card, including any library / wishlist icon on it. Nudge it up or
+            down until it looks right. Saved on this device.
+          </div>
+        </div>
+        <div class="option-number">
+          <input type="number" id="opt-owner-badge-size" min="10" max="28" step="1" inputmode="numeric" aria-label="Store tag size in pixels">
+          <span class="option-number-unit">px</span>
+        </div>
+        <div class="option-default-note">Default: 18.</div>
       </div>
 
       <div class="option-row">
@@ -274,8 +308,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script src="js/lib/analytics.js?v=7855fb4c"></script>
-<script src="js/lib/topbar.js?v=6f748790"></script>
+<script src="js/lib/topbar.js?v=0b5fd43c"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/options/main.js?v=a85a5839"></script>
+<script type="module" src="js/options/main.js?v=e313696c"></script>
 </body>
 </html>

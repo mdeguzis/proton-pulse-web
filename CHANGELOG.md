@@ -2,6 +2,24 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.7.0
+
+- New icon set across the site: accurate Steam Deck / Controller / Machine / Frame marks, SteamOS and Verified signage, and Steam / GOG / Epic store app-icons. Saved as SVG and PNG assets at multiple sizes under assets/icons with regenerate scripts.
+- At-a-glance chart: the Steam Deck chip uses the real Deck mark, the colored labels stay on one line at a uniform width (no more clipped "Unsupported"), the view chips are larger, and the panel padding is tighter.
+- Browse card ownership badges: library is now a clean 2x2 collection grid and wishlist is a wrapped present, both without the old white halo. A "Store tag icon size" setting in Site Options lets you nudge the corner icon size (10 to 28px).
+- Filter popover: on desktop it stretches to the content width and flows the groups into balanced masonry columns with squircle chips, so it fills evenly and the Save / Clear footer stays above the fold.
+- About page: a new Icons and Signage section (icon left, meaning right) documents every badge and mark, reachable from a quicklinks row that also jumps to Compare and Mission.
+- App type (mod / DLC / software) no longer overlays the browse tile. It now shows as a tag under the artwork on the game detail page.
+- Steam Machine and SteamOS compatibility (#273): the same Steam endpoint that gives Deck verdicts also returns Machine and SteamOS. The pipeline now stores all three. The at-a-glance chart gains Steam Machine and SteamOS chips, and the browse filters gain Machine and SteamOS groups. The game detail page's compatibility button now opens a three-tab modal (Deck / Machine / SteamOS) like Valve's own. The report device fingerprint recognizes Steam Machine (provisional until real hardware strings land). Populating the new Machine/SteamOS data needs a full pipeline run.
+
+## v1.6.2
+
+- Fix: game page box art fills the full left column width at its native aspect ratio and top-aligns with the rating panel. Rolls back the 240px cap and `object-fit: contain` from v1.6.1, which shrank Steam-standard headers and left extra whitespace next to the panel.
+
+## v1.6.1
+
+- Fix: game page box art no longer upscales past its native resolution or fills the full rating-panel height. `object-fit: contain` with a 240px cap preserves the aspect ratio without cropping. Follow-up to v1.6.0's aspect fix; the earlier change had left admin-uploaded overrides rendering blurry on wide viewports.
+
 ## v1.6.0
 
 - My Library view: deep-linking from the profile "View my games" now lands on a clearly labeled My Library page. Every owned Steam appid appears, not just games that intersect with recent reports (was capped at ~12 to ~65 on real libraries)

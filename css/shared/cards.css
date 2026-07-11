@@ -78,15 +78,26 @@
 [data-card-layout="combo"] .game-card-store-pill { display: none; }
 
 .game-card-corner-tag { display: none; }
+/* Only one store-badge variant shows at a time. In every position other
+   than the default 'art', hide the bottom-right .game-card-store-tag so
+   we don't paint two STEAM pills at once (was leaving a phantom pill at
+   the artwork's bottom-right corner in art-corner mode). */
+[data-store-pill-pos="art-corner"] .game-card-store-tag,
+[data-store-pill-pos="right"] .game-card-store-tag,
+[data-store-pill-pos="bar-inline"] .game-card-store-tag,
+[data-store-pill-pos="bar-segment"] .game-card-store-tag { display: none; }
 [data-store-pill-pos="art-corner"] .game-card-corner-tag {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  /* The whole tag (text + padding + icon) scales off --owner-badge-size, so
+     the "Store tag size" setting visibly resizes the STEAM/GOG/Epic pill even
+     on cards with no library/wishlist decal. Default 18px. */
+  gap: calc(var(--owner-badge-size, 18px) * 0.24);
   position: absolute;
   top: 0;
   right: 0;
-  padding: 4px 10px;
-  font-size: 0.62rem;
+  padding: calc(var(--owner-badge-size, 18px) * 0.12) calc(var(--owner-badge-size, 18px) * 0.42);
+  font-size: calc(var(--owner-badge-size, 18px) * 0.64);
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -141,7 +152,42 @@
   border-radius: 4px;
   line-height: 1.25;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+  /* Owner badges may prepend inside; keep them centered vertically with
+     the store text. */
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
+/* Owner badges (Subaru "Badge of Ownership" style): dark chrome chips
+   attached to the LEFT of the colored store pill. Each chip is its own
+   small rounded rectangle with a white icon on a dark background, so the
+   store's brand color reads as the "primary" badge and the owner chips
+   read as attached ownership decals. Prepended inside the store pill
+   container so vertical alignment is automatic. */
+/* Owner icons sit BARE inside the store pill -- no background chip, no
+   extra padding, so the pill keeps its original height. Legibility comes
+   from each glyph's own black hairline outline (present / collection
+   marks), so no white halo glow is needed. */
+.game-card-owner-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  background: transparent;
+  color: #fff;
+  line-height: 1;
+}
+.game-card-owner-badge + .game-card-owner-badge { margin-left: 3px; }
+/* Size is driven by the Site Options "store tag icon size" setting via the
+   --owner-badge-size CSS variable (applied on documentElement in topbar.js).
+   Default 16px if unset. */
+.game-card-owner-badge svg {
+  width: var(--owner-badge-size, 18px);
+  height: var(--owner-badge-size, 18px);
+  display: block;
+}
+/* Small gap before the store text so the icons read as attached but
+   distinct decals rather than merging with the "STEAM" label. */
+.game-card-owner-badge:last-of-type { margin-right: 3px; }
 /* Desktop: give the report rows more presence with a bigger boxart and
    roomier padding. Steam header ratio (~2.14:1) is preserved. */
 @media (min-width: 760px) {
@@ -359,10 +405,13 @@
   .cards--lg .game-card-thumb { width: 150px; height: 70px; }
 }
 @media (min-width: 760px) {
-  .cards--sm .game-card-thumb { width: 140px; height: 65px; }
-  .cards--md .game-card-thumb { width: 200px; height: 93px; }
-  .cards--lg .game-card-thumb { width: 290px; height: 135px; }
-  .cards--xl .game-card-thumb { width: 400px; height: 187px; }
+  /* Bumped starting widths ~12% on desktop so each size step feels more
+     substantial on a laptop screen (was 140/200/290/400). The Steam
+     header aspect 460:215 (~2.14) is preserved for each. */
+  .cards--sm .game-card-thumb { width: 158px; height: 73px; }
+  .cards--md .game-card-thumb { width: 224px; height: 104px; }
+  .cards--lg .game-card-thumb { width: 324px; height: 151px; }
+  .cards--xl .game-card-thumb { width: 448px; height: 209px; }
   .cards--sm .game-card-row { gap: 16px; padding: 12px 16px 12px 10px; }
   .cards--md .game-card-row { gap: 20px; padding: 14px 20px 14px 12px; }
   .cards--lg .game-card-row { gap: 26px; padding: 18px 26px 18px 14px; }

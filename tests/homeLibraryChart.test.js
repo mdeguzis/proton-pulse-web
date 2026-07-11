@@ -67,3 +67,36 @@ describe('computeLibraryTierCounts', () => {
     expect(counts.pending).toBe(1);
   });
 });
+
+describe('computeDeviceStatusCounts (Machine + SteamOS, #273)', () => {
+  const MAP = {
+    '10': { status: 'verified', machine: 'verified', steamos: 'compatible' },
+    '20': { status: 'playable', machine: 'playable', steamos: 'compatible' },
+    '30': { status: 'unsupported', machine: 'unsupported', steamos: 'unsupported' },
+    '40': { status: 'verified' }, // machine/steamos absent -> unknown
+  };
+
+  test('machine field tallies verified/playable/unsupported, missing -> unknown', () => {
+    const ctx = makeCtx();
+    const c = ctx.computeDeviceStatusCounts(new Set([10, 20, 30, 40]), MAP, 'machine', ['verified', 'playable', 'unsupported', 'unknown']);
+    expect(c).toEqual({ verified: 1, playable: 1, unsupported: 1, unknown: 1 });
+  });
+
+  test('steamos field uses the compatible bucket, missing -> unknown', () => {
+    const ctx = makeCtx();
+    const c = ctx.computeDeviceStatusCounts(new Set([10, 20, 30, 40]), MAP, 'steamos', ['compatible', 'unsupported', 'unknown']);
+    expect(c).toEqual({ compatible: 2, unsupported: 1, unknown: 1 });
+  });
+
+  test('computeDeckStatusCounts still reads the legacy status field', () => {
+    const ctx = makeCtx();
+    const c = ctx.computeDeckStatusCounts(new Set([10, 20, 30, 40]), MAP);
+    expect(c).toEqual({ verified: 2, playable: 1, unsupported: 1, unknown: 0 });
+  });
+
+  test('empty set returns all-zero buckets', () => {
+    const ctx = makeCtx();
+    const c = ctx.computeDeviceStatusCounts(new Set(), MAP, 'machine', ['verified', 'playable', 'unsupported', 'unknown']);
+    expect(c).toEqual({ verified: 0, playable: 0, unsupported: 0, unknown: 0 });
+  });
+});

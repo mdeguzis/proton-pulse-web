@@ -50,6 +50,61 @@
     <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/>
     </symbol>
+    <!-- List icon for the Wishlist nav entry: bulleted list (three dots +
+         three lines) so it reads as "a saved list of things". -->
+    <symbol id="icon-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="9" x2="20" y1="6" y2="6"/>
+      <line x1="9" x2="20" y1="12" y2="12"/>
+      <line x1="9" x2="20" y1="18" y2="18"/>
+      <circle cx="5" cy="6"  r="1.4" fill="currentColor" stroke="none"/>
+      <circle cx="5" cy="12" r="1.4" fill="currentColor" stroke="none"/>
+      <circle cx="5" cy="18" r="1.4" fill="currentColor" stroke="none"/>
+    </symbol>
+    <!-- Wishlist corner badge: a wrapped present (lid + body + bow + ribbon
+         groove). White fills with black hairline outlines so it reads on any
+         store-pill color at 11-13px without the old white halo. Id kept for
+         call-site stability (home.js references #icon-wishlist-heart). -->
+    <symbol id="icon-wishlist-heart" viewBox="0 0 24 24">
+      <g fill="#fff" stroke="#000" stroke-width="1.2" stroke-linejoin="round">
+        <path d="M4.6 8.2h14.8v3.4H4.6z"/>
+        <path d="M5.6 11.6h12.8v7a1.4 1.4 0 0 1-1.4 1.4H7a1.4 1.4 0 0 1-1.4-1.4z"/>
+        <path d="M12 8.2C10.6 8.2 8 7.9 7.5 6.3 7.1 5.1 8.4 4.3 9.5 5 10.6 5.7 11.5 6.8 12 8.2z"/>
+        <path d="M12 8.2C13.4 8.2 16 7.9 16.5 6.3 16.9 5.1 15.6 4.3 14.5 5 13.4 5.7 12.5 6.8 12 8.2z"/>
+      </g>
+      <path d="M12 8.4v11.8" stroke="#000" stroke-width="1.2"/>
+    </symbol>
+    <!-- Library corner badge: a 2x2 collection grid, clean white tiles (no
+         outline) to match the picker mockup. The gaps between tiles read as
+         the store-pill color. Id kept for call-site stability (home.js
+         references #icon-book-open). -->
+    <symbol id="icon-book-open" viewBox="0 0 24 24" fill="#fff">
+      <rect x="3.4" y="3.4" width="7" height="7" rx="1.5"/>
+      <rect x="13.6" y="3.4" width="7" height="7" rx="1.5"/>
+      <rect x="3.4" y="13.6" width="7" height="7" rx="1.5"/>
+      <rect x="13.6" y="13.6" width="7" height="7" rx="1.5"/>
+    </symbol>
+    <!-- Steam Deck brand mark: dot nested in a right-facing crescent, traced
+         from Valve's official mark (SteamGridDB 1920px source). Monochrome
+         currentColor so the chip themes cleanly (white on dark, dark on the
+         active accent chip, dark on light). The ~1.5u gap between dot and
+         crescent keeps it reading as dot-in-crescent even in one color, like
+         the plain mark. The two-tone blue/white version lives in
+         assets/icons/steam/steam-deck.svg for larger contexts. -->
+    <symbol id="icon-steam-deck" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M9.2 1.2A10.8 10.8 0 0 1 9.2 22.8L9.2 18.9A6.9 6.9 0 0 0 9.2 5.1Z"/>
+      <circle cx="9.4" cy="12" r="5.2"/>
+    </symbol>
+    <!-- Steam Machine chip glyph (#273): monochrome square-with-dot so it
+         themes on the at-a-glance chip like the Deck mark. The full two-tone
+         mark lives in assets/icons/steam/steam-machine.svg. -->
+    <symbol id="icon-steam-machine" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="3" y="3" width="18" height="18" rx="4.2"/>
+      <circle cx="12" cy="12" r="3.3" fill="currentColor" stroke="none"/>
+    </symbol>
+    <!-- SteamOS chip glyph (#273): the Steam logo in currentColor. -->
+    <symbol id="icon-steamos" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.004 2c-5.25 0-9.556 4.05-9.964 9.197l5.36 2.216c.454-.31 1.002-.492 1.593-.492.053 0 .104.003.157.005l2.384-3.452v-.049c0-2.08 1.69-3.77 3.77-3.77 2.079 0 3.77 1.692 3.77 3.772s-1.692 3.771-3.77 3.771h-.087l-3.397 2.426c0 .043.003.088.003.133 0 1.562-1.262 2.83-2.825 2.83-1.362 0-2.513-.978-2.775-2.273l-3.838-1.589C3.573 18.922 7.427 22 12.005 22c5.522 0 9.998-4.477 9.998-10 0-5.522-4.477-10-9.999-10zM7.078 16.667c.218.452.595.832 1.094 1.041 1.081.45 2.328-.063 2.777-1.145.22-.525.22-1.1.004-1.625-.215-.525-.625-.934-1.147-1.152-.52-.217-1.075-.208-1.565-.025l1.269.525c.797.333 1.174 1.25.84 2.046-.33.797-1.247 1.175-2.044.843l-1.228-.508zm10.74-7.245c0-1.385-1.128-2.512-2.513-2.512-1.387 0-2.512 1.127-2.512 2.512 0 1.388 1.125 2.513 2.512 2.513 1.386 0 2.512-1.125 2.512-2.513zM15.31 7.53c1.04 0 1.888.845 1.888 1.888s-.847 1.888-1.888 1.888c-1.044 0-1.888-.845-1.888-1.888s.845-1.888 1.888-1.888z"/>
+    </symbol>
     <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
     </symbol>
@@ -225,6 +280,10 @@
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg>
             <span>My Library</span>
           </a>
+          <a href="app.html?filter=wishlist" data-page="my-wishlist" id="nav-my-wishlist">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-list"/></svg>
+            <span>My Wishlist</span>
+          </a>
           <a href="data-index.html" data-page="data-index">
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg>
             <span>Data</span>
@@ -303,15 +362,39 @@
 
 <div class="mobile-nav-drawer" id="mobile-nav-drawer" hidden>
   <a href="index.html" data-page="index"><svg class="nav-icon" aria-hidden="true"><use href="#icon-home"/></svg> Home</a>
-  <a href="app.html" data-page="app"><svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg> Reports</a>
-  <a href="data-index.html" data-page="data-index"><svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg> Data</a>
-  <a href="coverage.html" data-page="coverage"><svg class="nav-icon" aria-hidden="true"><use href="#icon-chart"/></svg> Coverage</a>
-  <a href="stats.html" data-page="stats"><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Stats</a>
-  <a href="scoring.html" data-page="scoring"><svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg> Scoring</a>
-  <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
-  <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> Decky Plugin</a>
-  <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-github"/></svg> GitHub</a>
-  <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg> Discord</a>
+  <!-- Browse group: same items as the desktop Browse dropdown. The parent is a
+       button that expands/collapses its sub-items (accordion), with a caret
+       showing the state. -->
+  <div class="mnav-group">
+    <button class="mnav-parent" type="button" aria-expanded="false" data-group="browse">
+      <svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg>
+      <span>Browse</span>
+      <svg class="mnav-caret" aria-hidden="true" viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    </button>
+    <div class="mnav-sub">
+      <a href="app.html" data-page="app"><svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg> Reports</a>
+      <a href="app.html?filter=mine" data-page="my-library" id="mobile-my-library"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> My Library</a>
+      <a href="app.html?filter=wishlist" data-page="my-wishlist" id="mobile-my-wishlist"><svg class="nav-icon" aria-hidden="true"><use href="#icon-list"/></svg> My Wishlist</a>
+      <a href="data-index.html" data-page="data-index"><svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg> Data</a>
+      <a href="coverage.html" data-page="coverage"><svg class="nav-icon" aria-hidden="true"><use href="#icon-chart"/></svg> Coverage</a>
+      <a href="stats.html" data-page="stats"><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Stats</a>
+    </div>
+  </div>
+  <!-- Resources group: mirrors the desktop Resources dropdown. -->
+  <div class="mnav-group">
+    <button class="mnav-parent" type="button" aria-expanded="false" data-group="resources">
+      <svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg>
+      <span>Resources</span>
+      <svg class="mnav-caret" aria-hidden="true" viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    </button>
+    <div class="mnav-sub">
+      <a href="scoring.html" data-page="scoring"><svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg> Scoring</a>
+      <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> Decky Plugin</a>
+      <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
+      <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg> Discord</a>
+      <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-github"/></svg> GitHub</a>
+    </div>
+  </div>
   <a href="admin.html" id="mobile-admin-link" data-page="admin" hidden><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Admin</a>
   <a href="status.html" data-page="status" id="mobile-status-link"><span class="topbar-status-dot" data-state="unknown" aria-hidden="true"></span> Status</a>
   <!-- About kept last so it remains the trailing item whether the
@@ -448,6 +531,14 @@
   const trendArrowPref = localStorage.getItem('pp:trend-arrow');
   if (trendArrowPref === 'off') {
     document.documentElement.setAttribute('data-trend-arrow', 'off');
+  }
+  // Store tag icon size: apply the saved px as --owner-badge-size before first
+  // paint so the corner decals render at the chosen size with no flash. Read +
+  // clamp inline (topbar loads before the prefs module on every page).
+  const rawBadgeSize = parseInt(localStorage.getItem('pp:owner-badge-size'), 10);
+  if (Number.isFinite(rawBadgeSize)) {
+    const clamped = Math.min(28, Math.max(10, rawBadgeSize));
+    document.documentElement.style.setProperty('--owner-badge-size', clamped + 'px');
   }
 
   // inject favicon if the page doesn't already have one
@@ -725,11 +816,32 @@
     const drawer = document.getElementById('mobile-nav-drawer');
     if (!toggle || !drawer) return;
 
+    function collapseGroups() {
+      drawer.querySelectorAll('.mnav-group').forEach(function (g) { g.classList.remove('mnav-open'); });
+      drawer.querySelectorAll('.mnav-parent').forEach(function (p) { p.setAttribute('aria-expanded', 'false'); });
+    }
     toggle.addEventListener('click', function () {
       const open = drawer.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      if (open) drawer.removeAttribute('hidden');
+      if (open) {
+        drawer.removeAttribute('hidden');
+        // Reset every accordion to collapsed each time the drawer opens, so it
+        // never reopens holding a previously expanded group.
+        collapseGroups();
+      }
     });
+    // Accordion parents (Browse / Resources): toggle their sub-list open;
+    // clicking a parent must NOT close the whole drawer, so it's handled
+    // before the link handler below and stops there.
+    drawer.querySelectorAll('.mnav-parent').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const group = btn.closest('.mnav-group');
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        if (group) group.classList.toggle('mnav-open', !expanded);
+      });
+    });
+    // Real navigation links close the drawer; parents (buttons) don't match.
     drawer.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
         drawer.classList.remove('open');

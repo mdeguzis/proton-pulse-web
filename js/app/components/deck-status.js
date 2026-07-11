@@ -1,6 +1,6 @@
 // deck-status (components) for the app page. Relocated from app.js.
 
-import { getDeckStatusForApp } from '../api/deck-status.js?v=09d5c67e';
+import { getDeckStatusForApp } from '../api/deck-status.js?v=d39add5f';
 import { esc } from '../utils.js?v=c7e1268c';
 
 export const DECK_STATUS_LABELS = {
@@ -21,8 +21,33 @@ export const DECK_CRITERIA_LABELS = [
 export const DECK_STATUS_ICON_SVG = {
   verified:    '<circle cx="12" cy="12" r="10" fill="#5ba32b"/><path d="M8 12.5 11 15.5 16 9.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
   playable:    '<circle cx="12" cy="12" r="10" fill="#d4a72c"/><text x="12" y="17" text-anchor="middle" font-size="14" font-weight="700" fill="#0a0c10" font-family="serif">i</text>',
+  compatible:  '<circle cx="12" cy="12" r="10" fill="#3a7fc8"/><path d="M8 12.5 11 15.5 16 9.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
   unsupported: '<circle cx="12" cy="12" r="10" fill="#c84a4a"/><path d="M8 8 16 16 M16 8 8 16" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>',
   unknown:     '<circle cx="12" cy="12" r="10" fill="rgba(120,120,120,0.45)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><text x="12" y="17" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" font-family="serif">?</text>',
+};
+
+// SteamOS uses Compatible instead of Deck's Verified/Playable scale (#273).
+export const STEAMOS_STATUS_LABELS = {
+  compatible: 'Compatible', unsupported: 'Unsupported', unknown: 'Unknown',
+};
+const _DEVICE_SUMMARY = {
+  deck: {
+    verified:    'This game is <strong>Verified</strong> on Steam Deck. Fully functional with the built-in controls and display.',
+    playable:    'This game is <strong>Playable</strong> on Steam Deck. Functional, but may require extra effort to interact with or configure.',
+    unsupported: 'This game is <strong>not supported</strong> on Steam Deck. Will not run, or critical features are unavailable.',
+    unknown:     'Steam Deck compatibility is <strong>Unknown</strong>. Valve has not evaluated this title yet.',
+  },
+  machine: {
+    verified:    'This game is <strong>Verified</strong> on Steam Machine. Fully functional out of the box.',
+    playable:    'This game is <strong>Playable</strong> on Steam Machine. Functional, but may require some configuration.',
+    unsupported: 'This game is <strong>not supported</strong> on Steam Machine.',
+    unknown:     'Steam Machine compatibility is <strong>Unknown</strong>. Valve has not evaluated this title yet.',
+  },
+  steamos: {
+    compatible:  'This game is <strong>Compatible</strong> with devices running SteamOS, based on Steam Deck verification results. Performance and input may vary by hardware.',
+    unsupported: 'This game is <strong>not supported</strong> on SteamOS.',
+    unknown:     'SteamOS compatibility is <strong>Unknown</strong>. Valve has not evaluated this title yet.',
+  },
 };
 
 export function renderDeckStatusButton(appId) {
@@ -41,34 +66,62 @@ export function renderDeckStatusButton(appId) {
   </button>`;
 }
 
-// Modal body for the Deck-status popup. Mirrors the Steam Store layout:
-// title + summary sentence + per-criterion checklist
-export function renderDeckStatusModalContent(appId) {
-  const { status, criteria } = getDeckStatusForApp(appId);
-  const label = DECK_STATUS_LABELS[status] || 'Unknown';
-  const summaryByStatus = {
-    verified:    `This game is <strong>Verified</strong> on Steam Deck. Fully functional, works great with the built-in controls and display.`,
-    playable:    `This game is <strong>Playable</strong> on Steam Deck. Functional, but may require extra effort to interact with or configure.`,
-    unsupported: `This game is <strong>not supported</strong> on Steam Deck. Will not run, or critical features are unavailable.`,
-    unknown:     `Steam Deck compatibility for this game is <strong>Unknown</strong>. Valve has not yet evaluated it.`,
-  };
-  const rows = criteria
-    ? criteria.map((pass, i) => {
-        const iconKey = pass === true ? 'verified' : pass === false ? 'unsupported' : 'playable';
-        return `<div class="deck-criterion">
-          <span class="deck-criterion-icon"><svg width="18" height="18" viewBox="0 0 24 24">${DECK_STATUS_ICON_SVG[iconKey]}</svg></span>
-          <span>${esc(DECK_CRITERIA_LABELS[i])}</span>
-        </div>`;
-      }).join('')
-    : '<p style="color:var(--muted);font-size:0.84rem;margin:0">No per-criterion data available for this title.</p>';
+function _statusLabel(kind, status) {
+  const labels = kind === 'steamos' ? STEAMOS_STATUS_LABELS : DECK_STATUS_LABELS;
+  return labels[status] || 'Unknown';
+}
+
+function _tabLabel(id, iconId, name, status) {
+  return `<label for="dt-${id}" class="dt-tab" title="${esc(name)}: ${esc(_statusLabel(id, status))}">
+    <svg class="dt-tab-glyph" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#${iconId}"/></svg>
+    <span class="dt-tab-name">${esc(name)}</span>
+    <svg class="dt-tab-badge" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">${DECK_STATUS_ICON_SVG[status] || DECK_STATUS_ICON_SVG.unknown}</svg>
+  </label>`;
+}
+
+// One device panel: heading + verdict badge + summary. Steam Deck also shows
+// its four-point criteria checklist (the only device the pipeline stores
+// per-criterion data for); Machine / SteamOS show the verdict + summary.
+function _devicePanel(kind, name, status, criteria) {
+  const label = _statusLabel(kind, status);
+  const summary = (_DEVICE_SUMMARY[kind] || {})[status] || '';
+  let body;
+  if (kind === 'deck' && criteria) {
+    body = `<div class="deck-criteria-list">${criteria.map((pass, i) => {
+      const iconKey = pass === true ? 'verified' : pass === false ? 'unsupported' : 'playable';
+      return `<div class="deck-criterion"><span class="deck-criterion-icon"><svg width="18" height="18" viewBox="0 0 24 24">${DECK_STATUS_ICON_SVG[iconKey]}</svg></span><span>${esc(DECK_CRITERIA_LABELS[i])}</span></div>`;
+    }).join('')}</div>`;
+  } else {
+    body = `<p class="dt-source">${status === 'unknown' ? 'Valve has not published a verdict for this title yet.' : "Source: Valve's official compatibility report."}</p>`;
+  }
   return `
-    <h3 style="margin:0 0 8px;font-size:0.95rem;color:var(--strong)">
-      Steam Deck Compatibility:
-      <span class="deck-status-badge deck-status-${status}">${label}</span>
-    </h3>
-    <p style="color:var(--muted);font-size:0.84rem;margin:0 0 12px;line-height:1.5">${summaryByStatus[status] || ''}</p>
-    <div class="deck-criteria-list">${rows}</div>
-    <p style="color:var(--muted);font-size:0.7rem;margin:10px 0 0;font-style:italic">${status === 'unknown' ? 'Valve has not published a Steam Deck verdict for this title yet.' : "Source: Valve's official Steam Deck compatibility report."}</p>`;
+    <h3 style="margin:0 0 8px;font-size:0.95rem;color:var(--strong)">${esc(name)} Compatibility: <span class="deck-status-badge deck-status-${status}">${label}</span></h3>
+    <p style="color:var(--muted);font-size:0.84rem;margin:0 0 12px;line-height:1.5">${summary}</p>
+    ${body}`;
+}
+
+// Three-tab compatibility modal (Deck / Machine / SteamOS), like Valve's own
+// (#273). Pure CSS tabs (radio-driven) so it needs no JS wiring and survives
+// the re-render after the async deck fetch resolves.
+export function renderDeckStatusModalContent(appId) {
+  const d = getDeckStatusForApp(appId);
+  const deckStatus = d.status || 'unknown';
+  const machineStatus = d.machine || 'unknown';
+  const osStatus = d.steamos || 'unknown';
+  return `
+    <div class="deck-tabs">
+      <input type="radio" name="devtab" id="dt-deck" class="dt-radio" checked>
+      <input type="radio" name="devtab" id="dt-machine" class="dt-radio">
+      <input type="radio" name="devtab" id="dt-steamos" class="dt-radio">
+      <div class="dt-tabbar" role="tablist">
+        ${_tabLabel('deck', 'icon-steam-deck', 'Steam Deck', deckStatus)}
+        ${_tabLabel('machine', 'icon-steam-machine', 'Steam Machine', machineStatus)}
+        ${_tabLabel('steamos', 'icon-steamos', 'SteamOS', osStatus)}
+      </div>
+      <div class="dt-panel dt-panel-deck">${_devicePanel('deck', 'Steam Deck', deckStatus, d.criteria)}</div>
+      <div class="dt-panel dt-panel-machine">${_devicePanel('machine', 'Steam Machine', machineStatus, null)}</div>
+      <div class="dt-panel dt-panel-steamos">${_devicePanel('steamos', 'SteamOS', osStatus, null)}</div>
+    </div>`;
 }
 
 // - Author / signals / permalink helpers --------------
@@ -85,6 +138,11 @@ export function renderDeckStatusModalContent(appId) {
 
 export const _DECK_LCD_RE  = /\b(amd\s+custom\s+(apu|gpu)\s+0405|vangogh)\b/i;
 export const _DECK_OLED_RE = /\b(amd\s+custom\s+(apu|gpu)\s+0932|sephiroth)\b/i;
+// Steam Machine (#273): provisional fingerprint. The real APU/GPU revision
+// string is unknown until the device ships, so match an explicit "Steam
+// Machine" mention plus the semi-custom Zen 4 + RDNA 3 signature. Mirrors
+// _STEAM_MACHINE in scripts/pipeline/stats.py -- keep in sync.
+export const _STEAM_MACHINE_RE = /\bsteam\s+machine\b|amd\s+custom\s+(apu|gpu).*rdna\s*3/i;
 export function isSteamDeckHardware(r) {
   const haystack = `${r.cpu || ''} ${r.gpu || ''}`;
   return _DECK_LCD_RE.test(haystack) || _DECK_OLED_RE.test(haystack);

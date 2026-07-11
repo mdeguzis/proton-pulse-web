@@ -74,6 +74,8 @@ js/profile/components/systems.js
 js/profile/components/my-reports.js
 js/profile/components/library.js
 js/profile/api/steam-library.js
+js/profile/api/steam-wishlist.js
+js/profile/lib/steam-type-breakdown.js
 js/profile/main.js
 css/profile/profile.css
 admin.html
@@ -129,6 +131,7 @@ js/lib/tile-pad.js
 js/lib/pagination-prefs.js
 js/lib/adult-filter.js
 js/lib/user-prefs.js
+js/lib/card-badges.js
 js/lib/store-url-parser.js
 js/lib/gh-gist.js
 js/lib/gh-auth.js
@@ -152,6 +155,7 @@ js/app/lib/page-nav.js
 js/app/lib/my-library-synth.js
 js/app/lib/steam-img.js
 js/app/lib/user-library.js
+js/app/lib/user-wishlist.js
 js/app/components/home-library-chart.js
 system-edit.html
 js/profile/system-edit.js

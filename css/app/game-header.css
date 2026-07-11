@@ -404,36 +404,88 @@
 }
 .game-header-art-col .game-header-art { width: 100%; height: auto; }
 
-/* OS availability strip: top-right of the game-header block. Three
-   chips (Windows / macOS / Linux) lit up green when Steam advertises the
-   platform, dimmed when not. Absolute-positioned so it sits above the
-   header content on desktop; on mobile it becomes a normal top row. */
-.game-os-strip {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  display: flex;
-  gap: 6px;
-  z-index: 2;
-}
+/* Unified tag row under the artwork (#266 refinement): OS availability
+   chips (Win / macOS / Linux) plus user-context tags (On wishlist / In
+   library) share one .game-tag rounded-square shape (matches the Submit
+   Report button's border-radius). The row occupies grid row 2 col 1 -- the
+   cell to the left of the action buttons that used to be empty -- so it
+   sits snug under the artwork WITHOUT growing the left column height, and
+   its baseline aligns with the action buttons on the right. */
 .game-header { position: relative; }
-.game-os-chip {
+.game-header-art-tags {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-start;
+}
+.game-os-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.game-user-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.game-user-tags:empty { display: none; }
+.game-type-strip { display: flex; flex-wrap: wrap; gap: 6px; }
+.game-type-strip[hidden] { display: none; }
+/* App type chip (mod / dlc / software) under the artwork. Same rounded-square
+   shape as the other tags, filled with the per-type color so it reads at a
+   glance (#251). Replaces the old corner ribbon that overlaid the tile. */
+.game-type-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  white-space: nowrap;
+  color: #0a0c10;
+  background: #808891;
+}
+.game-type-tag[data-type="dlc"]      { background: #b479db; }
+.game-type-tag[data-type="mod"]      { background: #4ec9b0; }
+.game-type-tag[data-type="software"] { background: #d1a25d; }
+.game-type-tag[data-type="music"]    { background: #b95bab; }
+.game-type-tag[data-type="video"],
+.game-type-tag[data-type="movie"],
+.game-type-tag[data-type="series"],
+.game-type-tag[data-type="episode"]  { background: #556577; color: #f0f2f5; }
+.game-type-tag[data-type="hardware"] { background: #808891; }
+/* Shared rounded-square shape. Every tag in the row uses this; per-variant
+   modifiers add color / opacity. Keeping padding, radius, and font-size
+   identical is what makes the row read as one cohesive strip. Matches
+   the 6px radius on .submit-report-btn so the eye reads the whole header
+   as one design language. */
+.game-tag {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 3px 8px;
+  padding: 4px 10px;
   border: 1px solid var(--border2);
   background: var(--s1);
   color: var(--muted);
-  border-radius: 999px;
+  border-radius: 6px;
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   letter-spacing: 0.04em;
-  opacity: 0.55;
-  cursor: pointer;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: default;
   transition: opacity 0.15s, color 0.15s, border-color 0.15s, background 0.15s;
 }
-.game-os-chip svg { display: block; }
+.game-tag svg { display: block; }
+/* OS chips: buttons -- clicking opens the metadata modal. Off state is
+   muted; on state lights up green because Steam advertises the platform. */
+.game-os-chip { cursor: pointer; opacity: 0.55; }
 .game-os-chip:hover { border-color: var(--accent); }
 .game-os-chip--on {
   opacity: 1;
@@ -446,16 +498,18 @@
   background: rgba(126,211,122,0.16);
 }
 [data-theme="light"] .game-os-chip--on { color: #256b25; }
-@media (max-width: 720px) {
-  /* Below the title area, above the grid. Left-align so the row starts
-     under the title instead of hugging the right edge -- overflow /
-     wrap looks intentional this way rather than crammed. */
-  .game-os-strip {
-    position: static;
-    margin-bottom: 6px;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
+/* User-context tags (On wishlist / In library): Steam-blue background
+   with white text so they distinguish from the green OS chips at a
+   glance. Slightly faded so they read as ambient info. */
+.game-tag--user {
+  /* Dark text on the light steam-blue fill -- matches how active filter chips
+     and the gold/silver tier badges treat the accent, and reads far better
+     than the old white-at-85%-opacity which washed out. */
+  color: #0a0c10;
+  border-color: transparent;
+  opacity: 1;
+  font-weight: 700;
+  text-transform: none;
 }
 .game-native-linux::before {
   content: '>_ ';
@@ -513,7 +567,36 @@
 }
 .deck-status-badge.deck-status-verified    { background: #5ba32b; color: #fff; }
 .deck-status-badge.deck-status-playable    { background: #d4a72c; color: #0a0c10; }
+.deck-status-badge.deck-status-compatible  { background: #3a7fc8; color: #fff; }
 .deck-status-badge.deck-status-unsupported { background: #c84a4a; color: #fff; }
+
+/* Three-tab compatibility modal: Deck / Machine / SteamOS (#273). Pure CSS
+   tabs -- radios are visually hidden and the :checked sibling shows its panel
+   and lights its tab, so the modal needs no JS. */
+.deck-tabs .dt-radio { position: absolute; opacity: 0; pointer-events: none; }
+.dt-tabbar { display: flex; gap: 8px; justify-content: center; margin: 0 0 14px; flex-wrap: wrap; }
+.dt-tab {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 12px; border-radius: 999px; cursor: pointer;
+  background: var(--s1); border: 1px solid var(--border2); color: var(--muted);
+  font-size: 0.78rem; font-weight: 700; user-select: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.dt-tab:hover { border-color: var(--accent); color: var(--strong); }
+.dt-tab-glyph { flex: 0 0 auto; }
+.dt-tab-badge { flex: 0 0 auto; }
+.dt-panel { display: none; }
+/* Light the active tab + reveal its panel off the matching checked radio. */
+#dt-deck:checked    ~ .dt-tabbar .dt-tab[for="dt-deck"],
+#dt-machine:checked ~ .dt-tabbar .dt-tab[for="dt-machine"],
+#dt-steamos:checked ~ .dt-tabbar .dt-tab[for="dt-steamos"] {
+  background: var(--strong); color: var(--bg); border-color: var(--strong);
+}
+#dt-deck:checked    ~ .dt-panel-deck,
+#dt-machine:checked ~ .dt-panel-machine,
+#dt-steamos:checked ~ .dt-panel-steamos { display: block; }
+.dt-source { color: var(--muted); font-size: 0.72rem; margin: 0; font-style: italic; }
+@media (max-width: 480px) { .dt-tab-name { display: none; } }
 .deck-status-badge.deck-status-unknown {
   background: rgba(120,120,120,0.35);
   color: var(--muted);

@@ -2,7 +2,11 @@
 // localStorage (not tied to an account). First option: animations on/off,
 // applied live here and honored site-wide by js/lib/topbar.js on every page.
 
-import { setShowAdult, pullShowAdult, readShowAdultLocal } from '../lib/user-prefs.js?v=7b5675ef';
+import {
+  setShowAdult, pullShowAdult, readShowAdultLocal,
+  setShowOwnerBadges, pullShowOwnerBadges, readShowOwnerBadgesLocal,
+  readOwnerBadgeSizeLocal, writeOwnerBadgeSizeLocal, OWNER_BADGE_SIZE_DEFAULT,
+} from '../lib/user-prefs.js?v=5d9472de';
 import { getPageSizePref, setPageSizePref, PAGE_SIZE_KEY } from '../lib/pagination-prefs.js?v=15d0747d';
 
 const MOTION_KEY = 'proton-pulse:motion';
@@ -82,6 +86,35 @@ if (adultToggle) {
     setShowAdult(adultToggle.checked).then(({ synced }) => {
       console.log('[options] show-adult:', adultToggle.checked, 'synced-to-account:', synced);
     });
+  });
+}
+
+// Corner ownership badges on browse-card artwork (#266). Same pattern as
+// show-adult: fast local read, async server pull, on-change server upsert.
+const ownerBadgesToggle = document.getElementById('opt-show-owner-badges');
+if (ownerBadgesToggle) {
+  ownerBadgesToggle.checked = readShowOwnerBadgesLocal();
+  pullShowOwnerBadges().then(({ changed, value }) => { if (changed) ownerBadgesToggle.checked = value; });
+  ownerBadgesToggle.addEventListener('change', () => {
+    setShowOwnerBadges(ownerBadgesToggle.checked).then(({ synced }) => {
+      console.log('[options] show-owner-badges:', ownerBadgesToggle.checked, 'synced-to-account:', synced);
+    });
+  });
+}
+
+// Store tag icon size (px). Local-only tuning setting: writes the clamped value
+// to localStorage and applies it live as --owner-badge-size so the change shows
+// on the next page render without a reload.
+const ownerBadgeSizeInput = document.getElementById('opt-owner-badge-size');
+if (ownerBadgeSizeInput) {
+  const applySize = (px) => document.documentElement.style.setProperty('--owner-badge-size', px + 'px');
+  ownerBadgeSizeInput.value = String(readOwnerBadgeSizeLocal());
+  applySize(readOwnerBadgeSizeLocal());
+  ownerBadgeSizeInput.addEventListener('change', () => {
+    const saved = writeOwnerBadgeSizeLocal(ownerBadgeSizeInput.value);
+    ownerBadgeSizeInput.value = String(saved);
+    applySize(saved);
+    console.log('[options] owner-badge-size:', saved, 'px (default', OWNER_BADGE_SIZE_DEFAULT + ')');
   });
 }
 
@@ -281,10 +314,12 @@ if (pageSizeMobile && pageSizeDesktop && pageSizeAutoLoad) {
 
 // Reset to defaults: drop every browser-local preference key this page owns
 // then reload, so the controls and the page re-evaluate from system
-// defaults (OS reduced-motion, no card-layout attribute, etc).
+// defaults (OS reduced-motion, no card-layout attribute, etc). The stale
+// pp:card-badges key from the earlier "Game page tags" toggle is included
+// so a reset clears it too; the app no longer reads it.
 const resetBtn = document.getElementById('opt-reset');
 if (resetBtn) {
-  const RESET_KEYS = [MOTION_KEY, STORE_PILL_POS_KEY, STORE_DISPLAY_KEY, CARD_LAYOUT_KEY, GRID_LAYOUT_KEY, LOAD_COUNT_KEY, PAGE_SIZE_KEY];
+  const RESET_KEYS = [MOTION_KEY, STORE_PILL_POS_KEY, STORE_DISPLAY_KEY, CARD_LAYOUT_KEY, GRID_LAYOUT_KEY, LOAD_COUNT_KEY, PAGE_SIZE_KEY, 'pp:card-badges', 'pp:show-owner-badges', 'pp:owner-badge-size'];
   resetBtn.addEventListener('click', () => {
     if (!confirm('Reset all site preferences on this device to their defaults?')) return;
     RESET_KEYS.forEach(k => localStorage.removeItem(k));

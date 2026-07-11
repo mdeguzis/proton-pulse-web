@@ -56,7 +56,10 @@ jobs:
       - name: Run enricher + commit per cycle
         working-directory: repo
         env:
-          CYCLES: ${{ github.event.inputs.cycles || '1' }}
+          # Scheduled runs (no inputs) do 8 cycles (~1,600 apps, ~40 min) so the
+          # search-index type backfill actually keeps pace instead of crawling
+          # 1 cycle / 6h. Manual dispatch still honors its explicit cycles input.
+          CYCLES: ${{ github.event.inputs.cycles || '8' }}
           GH_PAGES: ${{ github.workspace }}/gh-pages
         run: |
           # Loop N enrichment cycles inside one dispatch. Each cycle

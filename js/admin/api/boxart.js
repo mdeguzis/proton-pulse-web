@@ -208,6 +208,33 @@ export async function clearBoxArtOverride(appId) {
   return _authedFetch({ app_id: String(appId), source: 'clear_override' });
 }
 
+// Persist "admin probed and it loaded OK" so the row does not come back
+// under the missing filter after a refresh (#270). Fires in the background
+// after a successful probe / refetch / sgdb resolve; failures are swallowed
+// because the ambient behavior stays correct either way (the row just
+// re-appears next visit, same as before).
+export async function confirmBoxArtOk(appId, url) {
+  if (!appId) return _result(false, { error: 'appId required' });
+  return _authedFetch({ app_id: String(appId), source: 'confirm_ok', url: url || '' });
+}
+
+// Fetch every appid the admin has already probed-and-confirmed via the
+// helper above. Anon-readable per RLS. Merged into _loadIndexes so
+// _deriveStatus can skip the "missing" flip on confirmed appids.
+export async function listBoxArtConfirmations() {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/boxart_confirmed_ok?select=app_id,confirmed_at`, {
+      headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}` },
+      cache: 'no-store',
+    });
+    if (!res.ok) return { ok: false, error: `REST HTTP ${res.status}`, rows: [] };
+    const rows = await res.json().catch(() => []);
+    return { ok: true, rows: Array.isArray(rows) ? rows : [] };
+  } catch (e) {
+    return { ok: false, error: `network: ${e.message || String(e)}`, rows: [] };
+  }
+}
+
 // Fetch all current overrides (anon-readable per RLS). Used by the
 // admin UI to render "Override" status without probing every row.
 export async function listBoxArtOverrides() {

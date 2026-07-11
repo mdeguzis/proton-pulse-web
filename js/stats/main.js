@@ -1,7 +1,7 @@
 // Entry module for stats.html. Orchestrates data fetch, filter state, and
 // chart rendering by delegating to utils, filters, and charts modules.
 
-import { FILTER_DIMS, dimDef, label, fmt } from './utils.js?v=2dd62302';
+import { FILTER_DIMS, dimDef, label, fmt } from './utils.js?v=df6f5f18';
 import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
 import {
   applyFilter, getFilter, getOpenDropdown, setOpenDropdown,

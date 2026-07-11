@@ -41,8 +41,8 @@ export async function fetchDeckStatusForApp(appId) {
   const map = await _loadDeckMap();
   const entry = map[String(appId)];
   const ret = entry && entry.status
-    ? { status: entry.status, criteria: entry.criteria || null }
-    : { status: 'unknown', criteria: null };
+    ? { status: entry.status, criteria: entry.criteria || null, machine: entry.machine || 'unknown', steamos: entry.steamos || 'unknown' }
+    : { status: 'unknown', criteria: null, machine: 'unknown', steamos: 'unknown' };
   _deckCache[appId] = ret;
   return ret;
 }
@@ -55,7 +55,16 @@ export async function fetchDeckStatusForApp(appId) {
  * @returns {{status: string, criteria: Array<boolean|null>|null}}
  */
 export function getDeckStatusForApp(appId) {
-  return _deckCache[appId] || { status: 'unknown', criteria: null };
+  return _deckCache[appId] || { status: 'unknown', criteria: null, machine: 'unknown', steamos: 'unknown' };
+}
+
+/**
+ * Full deck-status.json map exposed for callers that need to filter over
+ * every appId at once (browse-page Deck filter chip, #266 Phase 2).
+ * Returns the same Promise every call so we never re-fetch.
+ */
+export function loadDeckStatusMap() {
+  return _loadDeckMap();
 }
 
 // Page-lifetime cache of the raw appdetails `.data` object per appId, so

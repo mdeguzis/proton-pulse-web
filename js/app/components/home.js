@@ -4,14 +4,17 @@ import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
 import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=f9591262';
 import { daysAgo, latestPerApp } from '../utils.js?v=c7e1268c';
-import { renderGameCard } from '../lib/card.js?v=9b3edb74';
+import { renderGameCard } from '../lib/card.js?v=93448301';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=ad4b114d';
 import { getEffectivePageSize, isAutoLoadEnabled } from '../../lib/pagination-prefs.js?v=15d0747d';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
-import { renderHomeLibraryChart } from './home-library-chart.js?v=c7e8a2d8';
+import { renderHomeLibraryChart } from './home-library-chart.js?v=6ea6761b';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
+import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
+import { loadDeckStatusMap } from '../api/deck-status.js?v=d39add5f';
+import { readShowOwnerBadgesLocal, pullShowOwnerBadges } from '../../lib/user-prefs.js?v=5d9472de';
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
 import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';
 
@@ -106,6 +109,53 @@ function _filterByLibrary(reports, sel, libraryAppIds) {
   if (!sel || sel.size === 0 || sel.has('all')) return reports;
   if (!libraryAppIds || libraryAppIds.size === 0) return [];
   return reports.filter(r => libraryAppIds.has(Number(r.appId)));
+}
+
+// Wishlist filter (#266 Phase 1). "Reports for the games I actually want
+// to buy next" -- match if the appid is in the signed-in user's cached
+// Steam wishlist. When the user hasn't synced (empty cache) the filter
+// yields nothing, so the frontend can prompt them to sync.
+function _filterByWishlist(reports, sel, wishlistAppIds) {
+  if (!sel || sel.size === 0 || sel.has('all')) return reports;
+  if (!wishlistAppIds || wishlistAppIds.size === 0) return [];
+  return reports.filter(r => wishlistAppIds.has(Number(r.appId)));
+}
+
+// Deck filter (#266 Phase 2). Match reports against Valve's Steam Deck
+// compatibility rating from the pipeline-published deck-status.json map:
+// 'verified' | 'playable' | 'unsupported' | 'unknown'. Non-Steam ids
+// always pass through -- Valve doesn't rate GOG/Epic entries. The map
+// is a plain object keyed by appId string; a missing entry means Valve
+// hasn't rated it yet, which we surface as 'unknown'.
+function _filterByDeck(reports, sel, deckStatusMap) {
+  if (!sel || sel.size === 0 || sel.has('all')) return reports;
+  return reports.filter(r => {
+    const id = String(r.appId);
+    if (!/^\d+$/.test(id)) return true;
+    const entry = deckStatusMap ? deckStatusMap[id] : null;
+    const status = (entry && entry.status) || 'unknown';
+    return sel.has(status);
+  });
+}
+
+// Steam Machine + SteamOS filters (#273). Same deck-status.json map, different
+// entry field: `machine` (verified/playable/unsupported/unknown, like Deck) and
+// `steamos` (compatible/unsupported/unknown). Non-Steam ids always pass through.
+function _filterByDeviceField(reports, sel, deckStatusMap, field) {
+  if (!sel || sel.size === 0 || sel.has('all')) return reports;
+  return reports.filter(r => {
+    const id = String(r.appId);
+    if (!/^\d+$/.test(id)) return true;
+    const entry = deckStatusMap ? deckStatusMap[id] : null;
+    const status = (entry && entry[field]) || 'unknown';
+    return sel.has(status);
+  });
+}
+function _filterByMachine(reports, sel, deckStatusMap) {
+  return _filterByDeviceField(reports, sel, deckStatusMap, 'machine');
+}
+function _filterBySteamOS(reports, sel, deckStatusMap) {
+  return _filterByDeviceField(reports, sel, deckStatusMap, 'steamos');
 }
 
 // Kind filter (#250). Reads the Steam appdetails `type` field from
@@ -210,6 +260,50 @@ function _buildSteamTypeMap() {
   }
 }
 
+// Corner ownership badges (#266 refinement): small library / wishlist
+// icons that clip onto the store corner tag on browse-card artwork.
+// Loaded once per render; per-card lookup is a Set.has(). Empty ctx when
+// the pref is off or the user isn't signed in so the badges don't render.
+let _ownerBadgeCtx = { on: false, libraryAppIds: null, wishlistAppIds: null };
+function _ownerBadgesFor(appId) {
+  if (!_ownerBadgeCtx.on) return '';
+  const numericId = Number(appId);
+  const inLib  = _ownerBadgeCtx.libraryAppIds  && _ownerBadgeCtx.libraryAppIds.has(numericId);
+  const inWish = _ownerBadgeCtx.wishlistAppIds && _ownerBadgeCtx.wishlistAppIds.has(numericId);
+  if (!inLib && !inWish) return '';
+  const parts = [];
+  if (inLib) {
+    parts.push('<span class="game-card-owner-badge game-card-owner-badge--library" title="In your Steam library" aria-label="In library"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book-open"/></svg></span>');
+  }
+  if (inWish) {
+    parts.push('<span class="game-card-owner-badge game-card-owner-badge--wishlist" title="On your Steam wishlist" aria-label="On wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-wishlist-heart"/></svg></span>');
+  }
+  return parts.join('');
+}
+async function _buildOwnerBadgeContext() {
+  const ctx = { on: false, libraryAppIds: null, wishlistAppIds: null };
+  // Fast local read wins the first paint; async pull below reconciles
+  // with the server for signed-in users who toggled on another device.
+  let want = readShowOwnerBadgesLocal();
+  try {
+    const { value } = await pullShowOwnerBadges();
+    want = value;
+  } catch { /* keep the local value */ }
+  if (!want) return ctx;
+  try {
+    const session = await window.SupaAuth?.getSession?.();
+    if (!session || !session.user) return ctx;
+  } catch { return ctx; }
+  const [lib, wish] = await Promise.all([
+    getMyLibraryAppIds().catch(() => new Set()),
+    getMyWishlistAppIds().catch(() => new Set()),
+  ]);
+  ctx.on = true;
+  ctx.libraryAppIds  = lib;
+  ctx.wishlistAppIds = wish;
+  return ctx;
+}
+
 function _recentCardHtml(r) {
   // recent-reports.json carries appType ('gog'|'epic'|'steam') from the pipeline.
   // Fall back to deriving it from the id so non-Steam games are labeled even on
@@ -219,7 +313,12 @@ function _recentCardHtml(r) {
     href: `#/app/${r.appId}`,
     appId: r.appId,
     title: r.title,
-    sub: _popularSub(r),
+    // Report count + latest date live on the game details page now
+    // (#266 refinement). The tile keeps artwork + title + tier pill;
+    // when the corner-badge pref is on and the appid matches, the
+    // opt-in library / wishlist icons clip onto the store tag.
+    sub: '',
+    ownerBadges: _ownerBadgesFor(r.appId),
     tier: _cardTier(r.tier),
     storePill: storeLabel(appType),
     trend: _lookupTrend(r.appId),
@@ -236,6 +335,10 @@ export async function renderHomePage() {
   // count setting (LOAD_COUNTS) is retained in localStorage for
   // backwards compat but no longer drives paging.
   console.debug('[browse] preload target rows', { rows: targetRowsForViewport() });
+  // Corner ownership badges (#266 refinement): load the appid Sets once
+  // if the pref is on + user is signed in, so per-card badge lookup is
+  // synchronous Set.has() inside _recentCardHtml / _popularItemHtml.
+  _ownerBadgeCtx = await _buildOwnerBadgeContext();
   try {
     const [recentUrl, mostPlayedUrl] = await Promise.all([
       dataUrl('recent-reports.json'),
@@ -276,16 +379,22 @@ export async function renderHomePage() {
     // itself is still activated below in _restoreFilters.
     const _urlFilter = new URLSearchParams(window.location.search).get('filter');
     const _isMyLibrary = _urlFilter === 'mine';
+    const _isMyWishlist = _urlFilter === 'wishlist';
     // The app.html shell owns a static "Game Reports" page-header. Hide it
-    // in library mode so the only visible title is our own "My Library"
-    // header injected below; otherwise the page shows two competing titles.
+    // when we swap in a My Library / My Wishlist header so the page shows
+    // one title instead of two competing ones.
     const _appPageHeader = document.querySelector('.main-inner > .page-header');
-    if (_appPageHeader) _appPageHeader.hidden = _isMyLibrary;
+    if (_appPageHeader) _appPageHeader.hidden = _isMyLibrary || _isMyWishlist;
     el.innerHTML = `
       ${_isMyLibrary ? `
         <div class="home-page-header" id="home-page-header">
           <div class="home-page-eyebrow">Your Steam library</div>
           <h1 class="home-page-title">My Library</h1>
+        </div>` : ''}
+      ${_isMyWishlist ? `
+        <div class="home-page-header" id="home-page-header">
+          <div class="home-page-eyebrow">Your Steam wishlist</div>
+          <h1 class="home-page-title">My Wishlist</h1>
         </div>` : ''}
       <div class="home-filter-bar">
         <div class="home-filter-left">
@@ -334,10 +443,34 @@ export async function renderHomePage() {
               <button class="pg-filter" type="button" data-value="protondb">ProtonDB</button>
               <button class="pg-filter" type="button" data-value="pulse">Pulse</button>
             </div>
-            <div class="pg-filter-group" id="home-library-checks">
+            <div class="pg-filter-group" id="home-library-checks" title="Filter by whether the game is in your Steam library or on your wishlist (requires sign-in)">
               <span class="pg-filter-group-label">Library</span>
               <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
-              <button class="pg-filter" type="button" data-value="mine" title="Only games in your Steam library (requires sign-in and a synced library)">My games</button>
+              <button class="pg-filter" type="button" data-value="mine" title="Only games in your Steam library">My games</button>
+              <button class="pg-filter" type="button" data-value="wishlist" title="Only games on your Steam wishlist">On wishlist</button>
+            </div>
+            <div class="pg-filter-group" id="home-deck-checks" title="Filter by Valve's official Steam Deck compatibility rating">
+              <span class="pg-filter-group-label">Deck</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="verified" title="Fully verified on Steam Deck">Verified</button>
+              <button class="pg-filter" type="button" data-value="playable" title="Playable with some caveats (small text, manual controller config)">Playable</button>
+              <button class="pg-filter" type="button" data-value="unsupported" title="Does not run on Steam Deck">Unsupported</button>
+              <button class="pg-filter" type="button" data-value="unknown" title="Valve has not rated this game yet">Unknown</button>
+            </div>
+            <div class="pg-filter-group" id="home-machine-checks" title="Filter by Valve's official Steam Machine compatibility rating">
+              <span class="pg-filter-group-label">Machine</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="verified" title="Fully verified on Steam Machine">Verified</button>
+              <button class="pg-filter" type="button" data-value="playable" title="Playable with some caveats">Playable</button>
+              <button class="pg-filter" type="button" data-value="unsupported" title="Does not run on Steam Machine">Unsupported</button>
+              <button class="pg-filter" type="button" data-value="unknown" title="Valve has not rated this game yet">Unknown</button>
+            </div>
+            <div class="pg-filter-group" id="home-steamos-checks" title="Filter by Valve's official SteamOS compatibility rating">
+              <span class="pg-filter-group-label">SteamOS</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="compatible" title="Runs on SteamOS">Compatible</button>
+              <button class="pg-filter" type="button" data-value="unsupported" title="Does not run on SteamOS">Unsupported</button>
+              <button class="pg-filter" type="button" data-value="unknown" title="Valve has not rated this game yet">Unknown</button>
             </div>
             <div class="pg-filter-group" id="home-kind-checks" title="Filter by the Steam appdetails type (game / DLC / mod / demo / software)">
               <span class="pg-filter-group-label">Type</span>
@@ -420,6 +553,12 @@ export async function renderHomePage() {
     let storeSel = new Set();  // empty => all stores
     let librarySel = new Set(); // empty => all; 'mine' => only owned games (#199)
     let libraryAppIds = null;  // cached Set<number>; lazily loaded on first "mine" use
+    let wishlistSel = new Set();  // empty => all; 'wishlist' => only games on the user's Steam wishlist (#266)
+    let wishlistAppIds = null;   // cached Set<number>; lazily loaded on first "wishlist" use
+    let deckSel = new Set();   // empty => all; 'verified'/'playable'/'unsupported'/'unknown' => Valve's Deck rating (#266 Phase 2)
+    let machineSel = new Set(); // empty => all; Valve's Steam Machine rating (#273)
+    let steamosSel = new Set(); // empty => all; 'compatible'/'unsupported'/'unknown' => Valve's SteamOS rating (#273)
+    let deckStatusMap = null;  // cached map<appIdStr, {status, criteria, machine, steamos}>; shared by Deck/Machine/SteamOS chips
     let kindSel = new Set();   // Steam app kind ('game'/'dlc'/'mod'/'demo'/'software'); empty => all (#250)
     let currentLayout = 'grid';
 
@@ -485,7 +624,7 @@ export async function renderHomePage() {
           return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending' };
         });
       }
-      const filtered = filterAdult(_filterByText(_filterByKind(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), kindSel), textFilter));
+      const filtered = filterAdult(_filterByText(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), textFilter));
       const cardsEl = document.getElementById('cards-popular');
       const loadMoreEl = document.getElementById('load-more-popular');
       if (!cardsEl) return;
@@ -539,7 +678,10 @@ export async function renderHomePage() {
       return renderGameCard({
         href: `#/app/${g.appId}`, appId: g.appId, imgUrl: g.headerImage || undefined,
         title: g.title,
-        sub: g.tier === 'pending' ? 'No reports yet · be the first' : _popularSub(g),
+        // Report count + latest date moved to the details page (#266).
+        // Corner ownership badges opt-in via Site Options.
+        sub: '',
+        ownerBadges: _ownerBadgesFor(g.appId),
         tier: _cardTier(g.tier), storePill: storeLabel(g.appType || appTypeFromAppId(g.appId)),
         trend: _lookupTrend(g.appId),
         steamType: _lookupSteamType(g.appId),
@@ -618,7 +760,7 @@ export async function renderHomePage() {
     }
 
     function applyRecentFilters() {
-      const filtered = filterAdult(_filterByText(_filterByKind(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), kindSel), textFilter));
+      const filtered = filterAdult(_filterByText(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), textFilter));
       const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
@@ -747,7 +889,8 @@ export async function renderHomePage() {
         localStorage.setItem(FILTERS_KEY, JSON.stringify({
           sort: currentSort, text: textFilter,
           tier: [...tierSel], source: [...sourceSel], store: [...storeSel],
-          library: [...librarySel], kind: [...kindSel],
+          library: [...librarySel], wishlist: [...wishlistSel], deck: [...deckSel],
+          machine: [...machineSel], steamos: [...steamosSel], kind: [...kindSel],
         }));
       } catch { /* ignore */ }
     }
@@ -783,14 +926,23 @@ export async function renderHomePage() {
       sourceSel = new Set(saved.source || []);
       storeSel = new Set(saved.store || []);
       librarySel = new Set(saved.library || []);
+      wishlistSel = new Set(saved.wishlist || []);
+      deckSel = new Set(saved.deck || []);
+      machineSel = new Set(saved.machine || []);
+      steamosSel = new Set(saved.steamos || []);
       kindSel = new Set(saved.kind || []);
       _applyPillSelection(tierGroup, saved.tier);
       _applyPillSelection(sourceGroup, saved.source);
       _applyPillSelection(storeGroup, saved.store);
-      _applyPillSelection(libraryGroup, saved.library);
+      // Library group holds BOTH library ('mine') and wishlist ('wishlist')
+      // chips as of #266 consolidation; union them for pill highlighting.
+      _applyPillSelection(libraryGroup, [...(saved.library || []), ...(saved.wishlist || [])]);
+      _applyPillSelection(deckGroup, saved.deck);
+      _applyPillSelection(machineGroup, saved.machine);
+      _applyPillSelection(steamosGroup, saved.steamos);
       _applyPillSelection(kindGroup, saved.kind);
       updateFilterBadge();
-      console.debug('[browse-filters] restored saved filters', { source: FILTERS_KEY, sort: currentSort, tiers: [...tierSel], sources: [...sourceSel], stores: [...storeSel], library: [...librarySel], kinds: [...kindSel], text: textFilter });
+      console.debug('[browse-filters] restored saved filters', { source: FILTERS_KEY, sort: currentSort, tiers: [...tierSel], sources: [...sourceSel], stores: [...storeSel], library: [...librarySel], wishlist: [...wishlistSel], deck: [...deckSel], kinds: [...kindSel], text: textFilter });
       return true;
     }
     document.getElementById('home-filter-persist')?.addEventListener('click', () => {
@@ -802,7 +954,7 @@ export async function renderHomePage() {
 
     // Active-filter badge: count specific tier + source + store selections.
     function updateFilterBadge() {
-      const n = tierSel.size + sourceSel.size + storeSel.size + librarySel.size + kindSel.size + (textFilter.trim() ? 1 : 0);
+      const n = tierSel.size + sourceSel.size + storeSel.size + librarySel.size + wishlistSel.size + deckSel.size + machineSel.size + steamosSel.size + kindSel.size + (textFilter.trim() ? 1 : 0);
       filterToggle?.classList.toggle('has-filters', n > 0);
       if (filterBadge) {
         filterBadge.textContent = String(n);
@@ -814,6 +966,9 @@ export async function renderHomePage() {
     const sourceGroup = document.getElementById('home-source-checks');
     const storeGroup = document.getElementById('home-store-checks');
     const libraryGroup = document.getElementById('home-library-checks');
+    const deckGroup = document.getElementById('home-deck-checks');
+    const machineGroup = document.getElementById('home-machine-checks');
+    const steamosGroup = document.getElementById('home-steamos-checks');
     const kindGroup = document.getElementById('home-kind-checks');
     if (tierGroup) _wirePillGroup(tierGroup, { onChange: sel => {
       tierSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
@@ -824,20 +979,53 @@ export async function renderHomePage() {
     if (storeGroup) _wirePillGroup(storeGroup, { onChange: sel => {
       storeSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
+    // Library group holds both "My games" and "On wishlist" chips (#266
+    // consolidation). Mutual-exclusion in the group prevents nonsense
+    // intersections like "own it AND still want it"; we mirror the single
+    // group selection back into the two per-source Sets so the two filter
+    // functions (_filterByLibrary, _filterByWishlist) stay independent.
     if (libraryGroup) _wirePillGroup(libraryGroup, { onChange: async sel => {
-      librarySel = sel;
-      if (sel.has('mine') && !libraryAppIds) {
+      librarySel  = sel.has('mine')     ? new Set(['mine'])     : new Set();
+      wishlistSel = sel.has('wishlist') ? new Set(['wishlist']) : new Set();
+      if (librarySel.size && !libraryAppIds) {
         libraryAppIds = await getMyLibraryAppIds().catch(() => new Set());
+      }
+      if (wishlistSel.size && !wishlistAppIds) {
+        wishlistAppIds = await getMyWishlistAppIds().catch(() => new Set());
       }
       updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
+    if (deckGroup) _wirePillGroup(deckGroup, { onChange: async sel => {
+      deckSel = sel;
+      // Lazy-load the deck-status.json map on first non-"all" activation.
+      // Any non-'all' pill needs the map, so trigger on any selection.
+      const needMap = sel && sel.size > 0 && !sel.has('all');
+      if (needMap && !deckStatusMap) {
+        deckStatusMap = await loadDeckStatusMap().catch(() => ({}));
+      }
+      updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
+    }});
+    // Steam Machine + SteamOS chips (#273) share the same deck-status.json map.
+    const _wireDeviceGroup = (group, assignSel) => {
+      if (!group) return;
+      _wirePillGroup(group, { onChange: async sel => {
+        assignSel(sel);
+        const needMap = sel && sel.size > 0 && !sel.has('all');
+        if (needMap && !deckStatusMap) {
+          deckStatusMap = await loadDeckStatusMap().catch(() => ({}));
+        }
+        updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
+      }});
+    };
+    _wireDeviceGroup(machineGroup, sel => { machineSel = sel; });
+    _wireDeviceGroup(steamosGroup, sel => { steamosSel = sel; });
     if (kindGroup) _wirePillGroup(kindGroup, { onChange: sel => {
       kindSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
 
     // Clear filters: reset every group back to "All", sort back to Recent.
     document.getElementById('home-filter-clear')?.addEventListener('click', () => {
-      [tierGroup, sourceGroup, storeGroup, libraryGroup, kindGroup].forEach(g => {
+      [tierGroup, sourceGroup, storeGroup, libraryGroup, deckGroup, machineGroup, steamosGroup, kindGroup].forEach(g => {
         if (!g) return;
         g.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'));
         const allBtn = g.querySelector('.pg-filter[data-value="all"]');
@@ -855,6 +1043,10 @@ export async function renderHomePage() {
       sourceSel = new Set();
       storeSel = new Set();
       librarySel = new Set();
+      wishlistSel = new Set();
+      deckSel = new Set();
+      machineSel = new Set();
+      steamosSel = new Set();
       kindSel = new Set();
       updateFilterBadge();
       applyRecentFilters();
@@ -938,39 +1130,50 @@ export async function renderHomePage() {
     // #199: honor ?filter=mine so the profile "View my games" button lands
     // here with the pill pre-activated. Overrides any restored library set
     // for this visit so the deep-link intent wins.
+    // #266: same treatment for ?filter=wishlist so the browse nav "My
+    // Wishlist" entry lands preconfigured.
     const urlFilter = new URLSearchParams(window.location.search).get('filter');
-    if (urlFilter === 'mine') {
-      librarySel = new Set(['mine']);
-      _applyPillSelection(libraryGroup, ['mine']);
-      libraryAppIds = await getMyLibraryAppIds().catch(() => new Set());
+    if (urlFilter === 'mine' || urlFilter === 'wishlist') {
+      const isWishlist = urlFilter === 'wishlist';
+      const selValue = isWishlist ? 'wishlist' : 'mine';
+      if (isWishlist) {
+        wishlistSel = new Set(['wishlist']);
+        librarySel = new Set();
+      } else {
+        librarySel = new Set(['mine']);
+        wishlistSel = new Set();
+      }
+      _applyPillSelection(libraryGroup, [selValue]);
+      const [libIds, wishIds] = await Promise.all([
+        !isWishlist ? getMyLibraryAppIds().catch(() => new Set())  : Promise.resolve(new Set()),
+        isWishlist  ? getMyWishlistAppIds().catch(() => new Set()) : Promise.resolve(new Set()),
+      ]);
+      libraryAppIds  = libIds;
+      wishlistAppIds = wishIds;
       updateFilterBadge();
 
       // The default view is capped to recent-reports.json (~100 rows) and
       // most_played.json (~50 rows). Intersecting that with a real Steam
-      // library dropped 200+ owned games to a handful. When ?filter=mine
-      // is active, synthesize a comprehensive library dataset from search-
-      // index so every owned game shows up -- and hide the Popular section
-      // because it would just repeat the same rows.
-      if (libraryAppIds && libraryAppIds.size > 0) {
-        const synth = synthesizeMyLibrary(libraryAppIds, allRecentReports, searchIndex);
+      // library dropped 200+ owned games to a handful. Same math for
+      // wishlist. Synthesize a comprehensive dataset from search-index so
+      // every appid shows up -- and hide the Popular section because it
+      // would just repeat the same rows.
+      const scopeIds = isWishlist ? wishlistAppIds : libraryAppIds;
+      if (scopeIds && scopeIds.size > 0) {
+        const synth = synthesizeMyLibrary(scopeIds, allRecentReports, searchIndex);
         allRecentReports = synth.rows;
-        console.debug('[my-library] synthesized library dataset', {
+        console.debug(isWishlist ? '[my-wishlist] synthesized dataset' : '[my-library] synthesized library dataset', {
           source: 'search-index+stubs',
           fromRecentReports: synth.fromRecentReports,
           fromSearchIndex: synth.fromSearchIndex,
           bareStubs: synth.bareStubs,
-          libraryTotal: libraryAppIds.size,
+          scopeTotal: scopeIds.size,
           rowTotal: allRecentReports.length,
         });
-        // Hide the whole popular section (single wrapper covers header,
-        // grid, page-nav top/bottom, load-more) so any empty-state text
-        // its render might produce cannot leak into the library view.
         const popularSectionEl = document.getElementById('popular-section');
         if (popularSectionEl) popularSectionEl.style.display = 'none';
-        // Rename the visible section header to just "My Library" (no
-        // sub-heading) since it's the only section.
         const recentLabel = document.getElementById('recent-section-label');
-        if (recentLabel) recentLabel.textContent = 'My Library';
+        if (recentLabel) recentLabel.textContent = isWishlist ? 'My Wishlist' : 'My Library';
       }
     }
 
@@ -978,7 +1181,16 @@ export async function renderHomePage() {
     applyPopularFilters();
 
     // Signed-in library breakdown chart. No-op when signed out (#199).
-    void renderHomeLibraryChart(document.getElementById('home-library-chart-mount'));
+    // Nav-driven override: when the user came in via ?filter=mine or
+    // ?filter=wishlist, mirror that on the chart's Library/Wishlist chips
+    // so the bars match whatever list they're actually browsing.
+    const _chartPref = _isMyLibrary ? 'library'
+      : _isMyWishlist ? 'wishlist'
+      : undefined;
+    void renderHomeLibraryChart(
+      document.getElementById('home-library-chart-mount'),
+      { preferredSource: _chartPref },
+    );
   } catch {
     el.innerHTML = '<div class="state-box">Search for a game above or navigate to <code>#/app/{appId}</code></div>';
   }

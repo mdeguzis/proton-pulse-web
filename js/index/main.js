@@ -3,7 +3,7 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=ba0d784
 import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport, currentColCount } from '../lib/tile-pad.js?v=ad4b114d';
 import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
-import { renderGameCard } from '../app/lib/card.js?v=9b3edb74';
+import { renderGameCard } from '../app/lib/card.js?v=93448301';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
 // search dropdown, auth indicator) lives in topbar.js.

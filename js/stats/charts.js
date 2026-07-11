@@ -1,6 +1,6 @@
 // Stats page chart renderers.
 
-import { label, fmt, niceCeil, formatAxisLabel, vramLabel, TIER_COLORS } from './utils.js?v=2dd62302';
+import { label, fmt, niceCeil, formatAxisLabel, vramLabel, TIER_COLORS } from './utils.js?v=df6f5f18';
 import { getFilter } from './filters.js?v=f364d0eb';
 
 // Render N horizontal bar rows sorted descending by count.
