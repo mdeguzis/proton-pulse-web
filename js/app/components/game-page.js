@@ -878,8 +878,15 @@ export async function renderGamePage(appId) {
     // When the live total drives the count, tag the source so users understand
     // the summary is authoritative even when we mirror only a small slice (#219).
     const _fromLive = !!liveSummary && liveTotal > cdn.length;
+    // Inline ProtonDB tier chip that rides inside the confidence line instead
+    // of a full extra row underneath, so the panel keeps the same height as
+    // before the #219 live-summary work. The tier badge is small, colored,
+    // and reads "GOLD" / "PLATINUM" etc. next to "via ProtonDB live".
+    const _liveTierChipInline = liveSummary
+      ? ` <span class="grp-live-chip" data-tier="${esc(String(liveSummary.tier || '').toLowerCase())}">${esc(String(liveSummary.tier || '').toUpperCase())}</span>`
+      : '';
     const overallTileSummary = hasAnyReports
-      ? `${confBucket} confidence across ${totalReports.toLocaleString()} report${totalReports !== 1 ? 's' : ''}${_fromLive ? ' (via ProtonDB live)' : ''}${pulseHasConfigs ? ` / ${configs.length} config${configs.length !== 1 ? 's' : ''}` : ''}`
+      ? `${confBucket} confidence across ${totalReports.toLocaleString()} report${totalReports !== 1 ? 's' : ''}${_fromLive ? ` (via ProtonDB live${_liveTierChipInline})` : ''}${pulseHasConfigs ? ` / ${configs.length} config${configs.length !== 1 ? 's' : ''}` : ''}`
       : (pulseHasConfigs ? 'Community-submitted configs available' : 'No community data yet');
     // Rating distribution: one horizontal bar per tier, filled with the tier
     // color and scaled to the busiest tier so the shape reads at a glance.
@@ -946,22 +953,10 @@ export async function renderGamePage(appId) {
     const _confWhy = hasAnyReports
       ? ` <a class="grp-why conf-link" href="confidence.html?app=${appId}&tier=${overallTier}" title="See the factor-by-factor breakdown of this aggregate confidence">why?</a>`
       : '';
-    // Subtle ProtonDB rating line: kept inside the panel footer so it stays
-    // available (especially while Pulse is still pending), but does not
-    // dominate the tier-bar column. Uses the tier color for the label word
-    // only, so the badge reads at a glance without another big banner.
-    const _liveInfoLine = liveSummary
-      ? `<div class="grp-live-info" data-tier="${esc(_liveTierKey)}">
-          <span class="grp-live-label">ProtonDB</span>
-          <span class="grp-live-tier">${esc(String(liveSummary.tier || '').toUpperCase())}</span>
-          <span class="grp-live-count">${liveTotal.toLocaleString()} report${liveTotal !== 1 ? 's' : ''}</span>
-        </div>`
-      : '';
     const ratingPanel = `<div class="game-rating-panel">
         <div class="grp-row">${gaugeDial}${tierBars}</div>
         <div class="grp-foot">
           <div class="grp-conf">${overallTileSummary}${_confWhy}</div>
-          ${_liveInfoLine}
           <div class="grp-meta">${_metaBits}</div>
         </div>
       </div>`;
