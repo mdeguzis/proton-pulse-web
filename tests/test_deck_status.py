@@ -48,7 +48,12 @@ def _verified_payload():
 def test_verified_game_maps_category_and_criteria():
     with patch.object(deck, "_fetch_raw", return_value=_verified_payload()) as m:
         out = fetch_deck_compat("1245620")
-        assert out == {"status": "verified", "criteria": [True, True, True, True]}
+        assert out == {
+            "status": "verified",
+            "criteria": [True, True, True, True],
+            "machine": "unknown",
+            "steamos": "unknown",
+        }
         # second call is served from cache -- no re-fetch
         assert fetch_deck_compat("1245620") == out
         assert m.call_count == 1
@@ -122,3 +127,27 @@ def test_build_writes_only_evaluated_games(tmp_path):
     assert list(on_disk.keys()) == ["1245620"]
     assert on_disk["1245620"]["status"] == "verified"
     assert result == on_disk
+
+
+def test_build_survives_verdict_reassignment_bug(tmp_path):
+    """Regression guard for #273's `out` shadowing bug.
+
+    build_deck_status used to reassign the loop-local `out` variable (originally
+    the output directory Path) to the per-app entry dict. When the loop hit any
+    game with a verdict, `out` became a dict and the trailing `out / "deck-status.json"`
+    path build blew up with `unsupported operand type(s) for /: 'dict' and 'str'`.
+    That crashed every scheduled pipeline run for a day. This test forces at
+    least one verdict through the loop and asserts the file is written to disk.
+    """
+    rows = [
+        ["1", "A", "gold", 5, 0, "steam", None, None, False],
+        ["2", "B", "gold", 5, 0, "steam", None, None, False],
+        ["3", "C", "gold", 5, 0, "steam", None, None, False],
+    ]
+    (tmp_path / "search-index.json").write_text(json.dumps(rows))
+    with patch.object(deck, "_fetch_raw", return_value=_verified_payload()):
+        build_deck_status(tmp_path)
+    written = json.loads((tmp_path / "deck-status.json").read_text())
+    assert set(written.keys()) == {"1", "2", "3"}
+    for entry in written.values():
+        assert entry["status"] == "verified"
