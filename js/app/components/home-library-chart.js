@@ -146,8 +146,24 @@ function _renderChartHtml(view, appIds, deckMap) {
   if (DEVICE[view]) {
     const cfg = DEVICE[view];
     const counts = computeDeviceStatusCounts(appIds, deckMap || {}, cfg.field, cfg.order);
-    const max = Math.max(1, ...cfg.order.map((k) => counts[k] || 0));
     const rated = cfg.order.filter((k) => k !== 'unknown').reduce((s, k) => s + (counts[k] || 0), 0);
+    // No games have a rating -> render an explanatory empty state instead
+    // of a full-width "Not rated" bar that reads as 'all unsupported' at
+    // a glance. Valve hasn't published Steam Machine / SteamOS ratings
+    // for the general catalog yet (#273 backfill still pending).
+    if (rated === 0) {
+      return `
+        <div class="home-library-chart home-library-chart--empty${deviceClass}">
+          <div class="hlc-header">
+            <div class="hlc-title">${esc(copy.title)}</div>
+            ${chipsHtml}
+          </div>
+          <div class="hlc-empty-body">
+            No ${esc(cfg.chip)} ratings published for these games yet. Valve is still rolling out compatibility ratings for ${esc(cfg.chip)}; check back once the pipeline backfill lands.
+          </div>
+        </div>`;
+    }
+    const max = Math.max(1, ...cfg.order.map((k) => counts[k] || 0));
     subtitle = `${rated.toLocaleString()} of ${total.toLocaleString()} ${esc(copy.noun)} games have a ${esc(cfg.chip)} rating.`;
     barsHtml = cfg.order.map((k) => {
       const n = counts[k] || 0;

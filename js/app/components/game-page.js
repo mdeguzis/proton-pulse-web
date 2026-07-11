@@ -14,6 +14,7 @@ import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, 
 import { renderCard } from './report-card.js?v=faa750d4';
 import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
+import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=f9591262';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=ba0d7848';
 import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=c7e1268c';
@@ -474,6 +475,24 @@ export async function renderGamePage(appId) {
   if (window.SupaAuth) {
     try { const s = await window.SupaAuth.getSession(); window._ppMyUserId = s?.user?.id || ''; } catch {}
   }
+
+  // Admin-hidden game gate (#234 bug follow-up). The admin panel writes to
+  // game_hides but nothing on the frontend consumed it, so a hidden game
+  // could still be loaded via a direct #/app/<id> hash. Refuse to render
+  // the page and point the user home instead.
+  try {
+    const hides = await loadGameHides();
+    if (hides && hides.has(String(appId))) {
+      el.innerHTML = `
+        <div class="state-box" style="max-width:520px;margin:40px auto;text-align:center">
+          <h2 style="margin-top:0">Game hidden</h2>
+          <p style="color:var(--muted);margin:14px 0">This game has been removed from Proton Pulse by an admin. If you think this is a mistake, contact the maintainer.</p>
+          <p style="color:var(--muted);font-size:0.85em">App ID: <code>${String(appId).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]))}</code></p>
+          <a href="index.html" class="submit-report-btn" style="display:inline-block;margin-top:12px">Back to home</a>
+        </div>`;
+      return;
+    }
+  } catch { /* if the fetch fails, fall through and render normally */ }
 
   // Adult-content gate: if the search-index flags this appId as adult
   // and the "Show adult games" preference is off, render a block page
