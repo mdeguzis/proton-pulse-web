@@ -1,0 +1,30 @@
+# Cloudflare Worker: pp-edge-status (#275, child of #254)
+#
+# Health-checks every Supabase edge function on a true 15-min Cron Trigger and
+# serves the result as JSON for status.html (prod + staging). Replaces the
+# flaky GitHub Actions `schedule:` cron in .github/workflows/edge-fn-health.yml.
+#
+# One-time setup (see index.js header for the full steps):
+#   wrangler kv namespace create EDGE_STATUS_KV   # paste the id below
+#   wrangler secret put SUPABASE_ANON_KEY --name pp-edge-status
+#   wrangler deploy
+
+name = "pp-edge-status"
+main = "index.js"
+compatibility_date = "2026-07-01"
+
+# SUPABASE_URL is not a secret (it's in the anon client already). The anon key
+# is set as a secret with `wrangler secret put SUPABASE_ANON_KEY`.
+[vars]
+SUPABASE_URL = "https://ilsgdshkaocrmibwdezk.supabase.co"
+
+# True 15-minute heartbeat. Cloudflare Cron Triggers fire on schedule, unlike
+# GitHub Actions scheduled workflows.
+[triggers]
+crons = ["*/15 * * * *"]
+
+# Workers KV holds the single latest status payload. Create the namespace with
+# `wrangler kv namespace create EDGE_STATUS_KV` and paste the returned id here.
+[[kv_namespaces]]
+binding = "EDGE_STATUS_KV"
+id = "4f8ed1c185624ee0ac0eec4ce9478745"
