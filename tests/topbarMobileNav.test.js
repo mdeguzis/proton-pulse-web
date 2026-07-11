@@ -31,4 +31,11 @@ describe('mobile nav drawer accordion', () => {
     expect(SRC).toContain("btn.getAttribute('aria-expanded') === 'true'");
     expect(SRC).toContain("group.classList.toggle('mnav-open', !expanded)");
   });
+
+  test('opening the drawer resets every accordion to collapsed', () => {
+    expect(SRC).toContain('function collapseGroups()');
+    expect(SRC).toContain("g.classList.remove('mnav-open')");
+    // collapseGroups runs inside the open branch of the toggle handler.
+    expect(SRC).toMatch(/if \(open\) \{[\s\S]*collapseGroups\(\);/);
+  });
 });

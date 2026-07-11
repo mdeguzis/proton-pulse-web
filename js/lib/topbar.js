@@ -816,10 +816,19 @@
     const drawer = document.getElementById('mobile-nav-drawer');
     if (!toggle || !drawer) return;
 
+    function collapseGroups() {
+      drawer.querySelectorAll('.mnav-group').forEach(function (g) { g.classList.remove('mnav-open'); });
+      drawer.querySelectorAll('.mnav-parent').forEach(function (p) { p.setAttribute('aria-expanded', 'false'); });
+    }
     toggle.addEventListener('click', function () {
       const open = drawer.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      if (open) drawer.removeAttribute('hidden');
+      if (open) {
+        drawer.removeAttribute('hidden');
+        // Reset every accordion to collapsed each time the drawer opens, so it
+        // never reopens holding a previously expanded group.
+        collapseGroups();
+      }
     });
     // Accordion parents (Browse / Resources): toggle their sub-list open;
     // clicking a parent must NOT close the whole drawer, so it's handled
@@ -832,14 +841,6 @@
         if (group) group.classList.toggle('mnav-open', !expanded);
       });
     });
-    // Auto-expand whichever group holds the current page so the active item is
-    // visible the moment the drawer opens.
-    const activeSub = drawer.querySelector('.mnav-sub a.active, .mnav-sub a[aria-current="page"]');
-    if (activeSub) {
-      const group = activeSub.closest('.mnav-group');
-      const parent = group && group.querySelector('.mnav-parent');
-      if (group && parent) { group.classList.add('mnav-open'); parent.setAttribute('aria-expanded', 'true'); }
-    }
     // Real navigation links close the drawer; parents (buttons) don't match.
     drawer.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
