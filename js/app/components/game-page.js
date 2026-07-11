@@ -894,16 +894,12 @@ export async function renderGamePage(appId) {
     const maxTierCount = Math.max(1, ...TIER_ORDER.map((t) => ratingCounts[t]));
     // ProtonDB's summary API only exposes aggregate fields (no per-tier
     // counts), so we can never draw the 5-bar breakdown from a live-only
-    // game. Keep the standard 5-bar layout no matter what, and prepend a
-    // one-line note showing the ProtonDB rating + total when we have it so
-    // users see "PLATINUM * 371 reports" alongside the (possibly empty) bars.
+    // game. Keep the standard 5-bar layout no matter what. The overall
+    // ProtonDB verdict now lives in a subtle line inside the panel footer
+    // (see _liveInfoLine below) rather than as a big banner over the bars,
+    // so it stays informative without dominating a Pulse-pending page.
     const _liveTierKey = liveSummary ? String(liveSummary.tier || '').toLowerCase() : '';
-    const _liveNote = liveSummary
-      ? `<div class="grp-bars-note grp-bars-note--live">
-          ProtonDB rating: <strong>${esc(String(liveSummary.tier || '').toUpperCase())}</strong> &middot; <strong>${liveTotal.toLocaleString()}</strong> report${liveTotal !== 1 ? 's' : ''}
-        </div>`
-      : '';
-    const tierBars = `<div class="grp-bars">${_liveNote}${TIER_ORDER.map((t) => {
+    const tierBars = `<div class="grp-bars">${TIER_ORDER.map((t) => {
           const n = ratingCounts[t];
           const pct = Math.round((n / maxTierCount) * 100);
           return `<div class="grp-bar grp-bar-${t}" title="${n} ${t} report${n !== 1 ? 's' : ''}">
@@ -950,10 +946,22 @@ export async function renderGamePage(appId) {
     const _confWhy = hasAnyReports
       ? ` <a class="grp-why conf-link" href="confidence.html?app=${appId}&tier=${overallTier}" title="See the factor-by-factor breakdown of this aggregate confidence">why?</a>`
       : '';
+    // Subtle ProtonDB rating line: kept inside the panel footer so it stays
+    // available (especially while Pulse is still pending), but does not
+    // dominate the tier-bar column. Uses the tier color for the label word
+    // only, so the badge reads at a glance without another big banner.
+    const _liveInfoLine = liveSummary
+      ? `<div class="grp-live-info" data-tier="${esc(_liveTierKey)}">
+          <span class="grp-live-label">ProtonDB</span>
+          <span class="grp-live-tier">${esc(String(liveSummary.tier || '').toUpperCase())}</span>
+          <span class="grp-live-count">${liveTotal.toLocaleString()} report${liveTotal !== 1 ? 's' : ''}</span>
+        </div>`
+      : '';
     const ratingPanel = `<div class="game-rating-panel">
         <div class="grp-row">${gaugeDial}${tierBars}</div>
         <div class="grp-foot">
           <div class="grp-conf">${overallTileSummary}${_confWhy}</div>
+          ${_liveInfoLine}
           <div class="grp-meta">${_metaBits}</div>
         </div>
       </div>`;

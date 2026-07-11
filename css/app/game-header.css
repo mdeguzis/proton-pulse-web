@@ -335,6 +335,44 @@
 .grp-why { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font-weight: 700; margin-left: 4px; }
 .grp-why:hover { color: var(--accent-hi); }
 
+/* Subtle ProtonDB verdict line inside the panel footer. Keeps the aggregate
+   available (especially while Pulse is still pending) without a big banner
+   over the tier bars. Tier color is applied to the .grp-live-tier badge
+   only, so the surrounding text reads as informational, not promotional. */
+.grp-live-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.02);
+  width: fit-content;
+}
+.grp-live-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--muted);
+}
+.grp-live-tier {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 1px 6px;
+  border-radius: 3px;
+  color: #0a0c10;
+  background: #808891;
+}
+.grp-live-info[data-tier="platinum"] .grp-live-tier { background: #b4d4f5; }
+.grp-live-info[data-tier="gold"]     .grp-live-tier { background: #f0c674; }
+.grp-live-info[data-tier="silver"]   .grp-live-tier { background: #c8d0d8; }
+.grp-live-info[data-tier="bronze"]   .grp-live-tier { background: #d19b6c; }
+.grp-live-info[data-tier="borked"]   .grp-live-tier { background: #d47a7a; color: #ffffff; }
+.grp-live-count { color: var(--text); font-weight: 600; }
+
 /* ---- action row (row2 col2, under the panel). Icon + labeled buttons keep
    their natural width and never wrap their labels; Submit shrinks first and,
    when the row runs out of room, wraps whole to its own full-width line. ---- */

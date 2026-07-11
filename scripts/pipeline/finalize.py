@@ -655,11 +655,25 @@ def _bucket_trend(recent_pos: int, recent_total: int, prior_pos: int, prior_tota
     return ""
 
 
+# Search-index tier heuristic: when the mirrored ProtonDB sample is small
+# AND every report is stale (median age past this threshold in days), we
+# should NOT confidently publish a tier from what may be a 5+-year-old
+# handful of borked reports. The game page falls back to the live ProtonDB
+# summary in that case, so the search-index / dropdown / card should say
+# "pending" and let the user open the game page for the current verdict.
+_SEARCH_INDEX_STALE_MIN_REPORTS = 20
+_SEARCH_INDEX_STALE_MEDIAN_DAYS = 730  # ~2 years
+
+
 def _compute_game_summary(app_dir: Path, now_ts: float | None = None) -> tuple[str, int, int, str]:
     """Walk a game's year files and return (overall_tier, protondb_count, pulse_count, trend).
 
     Tier is the average of per-report rating scores mapped through scoreTiers --
     same algorithm the scoring page documents. Pending if no rated reports.
+    Also pending when the stored sample is small (< _SEARCH_INDEX_STALE_MIN_REPORTS)
+    AND its median age is past _SEARCH_INDEX_STALE_MEDIAN_DAYS -- the game page
+    prefers the live ProtonDB summary in that case, so the search-index should
+    stay silent instead of showing a stale-borked tier that contradicts the page.
     Trend compares the playable share (isPositive tiers) in the recent 90d
     window against the 90-270d window; empty string when insufficient or stable.
     Passing now_ts=None disables the trend computation so unit tests that only
@@ -670,6 +684,7 @@ def _compute_game_summary(app_dir: Path, now_ts: float | None = None) -> tuple[s
     protondb_count = 0
     pulse_count = 0
     recent_total = recent_pos = prior_total = prior_pos = 0
+    rated_ages_days: list[float] = []
     if not app_dir.is_dir():
         return ("pending", 0, 0, "")
     for year_file in app_dir.glob("*.json"):
@@ -698,6 +713,8 @@ def _compute_game_summary(app_dir: Path, now_ts: float | None = None) -> tuple[s
                 ts = r.get("timestamp")
                 if isinstance(ts, (int, float)) and ts > 0:
                     age_days = (now_ts - ts) / 86400
+                    if rating in _RATING_SCORES:
+                        rated_ages_days.append(age_days)
                     if 0 <= age_days < _TREND_RECENT_DAYS:
                         recent_total += 1
                         if rating in _POSITIVE_RATINGS:
@@ -710,6 +727,12 @@ def _compute_game_summary(app_dir: Path, now_ts: float | None = None) -> tuple[s
     if now_ts is not None:
         trend = _bucket_trend(recent_pos, recent_total, prior_pos, prior_total)
     if rated_count == 0:
+        return ("pending", protondb_count, pulse_count, trend)
+    if (
+        rated_count < _SEARCH_INDEX_STALE_MIN_REPORTS
+        and rated_ages_days
+        and sorted(rated_ages_days)[len(rated_ages_days) // 2] >= _SEARCH_INDEX_STALE_MEDIAN_DAYS
+    ):
         return ("pending", protondb_count, pulse_count, trend)
     score_pct = (total_score / rated_count) * 100
     return (_score_to_tier(score_pct), protondb_count, pulse_count, trend)

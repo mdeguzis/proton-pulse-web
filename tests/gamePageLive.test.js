@@ -76,14 +76,15 @@ describe('game page: rating panel (dial + per-tier bars + flag)', () => {
     expect(src).toContain('background:${RATING_COLORS[t]}');
   });
 
-  test('live-only games still show the 5-bar breakdown, with a ProtonDB rating + count note above', () => {
+  test('live-only games still show the 5-bar breakdown, with the ProtonDB rating surfaced in the panel footer', () => {
     // ProtonDB's summary API has no per-tier counts, so the bars will read
-    // 0/0/0/0/0 for a live-only game. We prepend a one-line note telling
-    // users the aggregate rating + count so the section still communicates
-    // something (#219 follow-up).
+    // 0/0/0/0/0 for a live-only game. The aggregate verdict now lives in a
+    // subtle info-box inside the panel footer (grp-live-info) instead of a
+    // banner above the bars, so a Pulse-pending page stays less "in your
+    // face" while still communicating the ProtonDB rating (#219 follow-up).
     expect(src).toContain('class="grp-bars"');
-    expect(src).toContain('grp-bars-note--live');
-    expect(src).toContain('ProtonDB rating:');
+    expect(src).toContain('grp-live-info');
+    expect(src).toContain('grp-live-tier');
   });
 
   test('confidence summary links to the scoring breakdown via a "why?" link', () => {
@@ -107,13 +108,16 @@ describe('game page: rating panel (dial + per-tier bars + flag)', () => {
     expect(src).toContain('src="${STEAM_IMG(appId)}"');
   });
 
-  test('ProtonDB rating + count note renders above the 5-bar stack when live data exists (#219)', () => {
-    // Kept the classic 5-bar breakdown even when mirror sample is empty; just
-    // prepend a one-line "ProtonDB rating: PLATINUM * 371 reports" note so
-    // users see the aggregate alongside the (possibly empty) bars.
-    expect(src).toContain("grp-bars-note--live");
-    expect(src).toContain("ProtonDB rating:");
+  test('ProtonDB rating + count show in the subtle panel-footer info line (#219)', () => {
+    // Kept the classic 5-bar breakdown even when the mirror sample is empty;
+    // the aggregate ProtonDB verdict is surfaced in a small info-box under the
+    // confidence summary in the panel footer instead of a big banner above the
+    // bars, so a Pulse-pending page reads calm rather than promotional.
+    expect(src).toContain("grp-live-info");
+    expect(src).toContain("grp-live-tier");
+    expect(src).toContain("grp-live-count");
     expect(src).toContain("liveTotal.toLocaleString()");
+    expect(src).toContain("liveSummary.tier");
   });
 
   test('summary tags source when count is driven by ProtonDB live (#219)', () => {
