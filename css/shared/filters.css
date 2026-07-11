@@ -104,12 +104,15 @@
     padding: 0;
     box-shadow: none;
     background: var(--bg-bot);
-    overflow-y: auto;
+    /* Force a scroll container even when content fits in one screen -- gives
+       users a consistent affordance and stops iOS from occasionally
+       collapsing overflow to visible. touch-action: pan-y locks the gesture
+       axis to vertical so accidental horizontal drags don't fight the
+       overflow-x: hidden rule below. */
+    overflow-y: scroll;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
-    /* Padding lives on the header/body/footer children so header + footer can
-       stick to their respective edges without gap. Body gets its own inline
-       padding so the pills don't hug the modal edge. */
+    touch-action: pan-y;
   }
   /* Force the group into a vertical stack on mobile: each label + its pills
      on their own row, pills wrap within the row. The desktop masonry
@@ -122,13 +125,16 @@
   /* .filter-panel--stack (browse page) normally lays groups side-by-side
      via flex-direction: row on desktop. reports.css only overrides that at
      max-width: 560px, so between 561px and 720px the pill groups overflow
-     horizontally inside the modal. Force column direction here so every
-     group gets its own vertical row and the pills wrap within it. */
+     horizontally inside the modal. Force plain block layout in the modal so
+     each group gets its own row, headers stick reliably, and touch-scroll
+     inside overflow:auto behaves like a normal document scroll -- flex
+     containers with overflow behave inconsistently for sticky descendants
+     on iOS Safari + Android WebView. */
   .filter-panel--stack.open {
-    flex-direction: column !important;
-    flex-wrap: nowrap;
-    gap: 14px;
-    align-items: stretch;
+    display: block !important;
+  }
+  .filter-panel--stack.open > * {
+    margin-bottom: 14px;
   }
   /* Guarantee vertical-only scroll: any child that tries to grow horizontally
      (a long pill row that would push past the viewport) gets its own wrap. */
@@ -152,7 +158,10 @@
   }
   /* Mobile-only header: sticky bar at top with "Filters" title + close X.
      .filter-panel-mobile-header is hidden by default (desktop rule below),
-     shown as a sticky header when the panel is open on mobile. */
+     shown as a sticky header when the panel is open on mobile. width:100%
+     is explicit so the header is guaranteed to span edge-to-edge even
+     inside a flex column parent (.filter-panel--stack.open sets flex on
+     the panel; a flex item without width can size to content). */
   .filter-panel.open .filter-panel-mobile-header,
   .pg-filter-panel.open .filter-panel-mobile-header,
   .filter-panel--stack.open .filter-panel-mobile-header {
@@ -166,12 +175,19 @@
     background: var(--s1);
     border-bottom: 1px solid var(--border);
     margin: 0;  /* override the body-inline-padding rule above */
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
   }
   .filter-panel-mobile-title {
     font-size: 1.05rem;
     font-weight: 800;
     letter-spacing: 0.04em;
     color: var(--strong);
+    /* margin-right: auto pushes the X to the far right without depending
+       on justify-content, so even if a stray flex-child slips into the row
+       the X stays glued to the right edge. */
+    margin-right: auto;
   }
   .filter-panel-close {
     display: inline-flex;

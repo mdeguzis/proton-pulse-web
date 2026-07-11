@@ -156,13 +156,17 @@ describe('mobile filter modal (<= 720px) -- full-viewport modal pattern', () => 
     expect(flat).toMatch(/\.filter-panel\.open \.filter-panel-footer[\s\S]*?position: sticky[\s\S]*?bottom: 0/);
   });
 
-  test('inside the mobile modal, .filter-panel--stack forces column direction and blocks horizontal overflow', () => {
+  test('inside the mobile modal, .filter-panel--stack drops flex layout and blocks horizontal overflow', () => {
     // reports.css lays .filter-panel--stack groups side-by-side above 560px.
-    // The modal at <=720px must override that so pill groups stack vertically
-    // (labels + wrapped pills, one per row) instead of overflowing off the
-    // right edge like they did before this fix.
-    expect(flat).toMatch(/\.filter-panel--stack\.open\s*\{\s*flex-direction: column/);
+    // The modal at <=720px forces plain block layout so each group gets its
+    // own row (labels + wrapped pills), sticky header/footer behave reliably
+    // across iOS/Android WebView, and touch scrolling inside overflow: auto
+    // works like a normal document scroll instead of a flex-container scroll.
+    expect(flat).toMatch(/\.filter-panel--stack\.open\s*\{\s*display: block !important/);
     expect(flat).toMatch(/\.filter-panel\.open[\s\S]*?overflow-x: hidden/);
+    // The panel itself is a real scroll container with a persistent scrollbar.
+    expect(flat).toMatch(/\.filter-panel\.open[\s\S]*?overflow-y: scroll/);
+    expect(flat).toMatch(/touch-action: pan-y/);
   });
 
   test('home.js filter panel ships the mobile header markup with a close X', () => {
