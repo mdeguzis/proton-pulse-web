@@ -32,6 +32,12 @@ STEAM_DECK_COMPAT_URL = (
 )
 # Matches DECK_CAT_MAP in js/app/api/deck-status.js -- keep in sync.
 DECK_CAT_MAP = {0: "unknown", 1: "unsupported", 2: "playable", 3: "verified"}
+# Steam Machine uses the same Verified / Playable / Unsupported scale as Deck.
+MACHINE_CAT_MAP = DECK_CAT_MAP
+# SteamOS has a simpler scale: unsupported vs "Compatible" (the store modal only
+# ever shows "Compatible" as the positive verdict). Both 2 and 3 read as
+# compatible. #273 -- keep in sync with STEAMOS_CAT_MAP in deck-status.js.
+STEAMOS_CAT_MAP = {0: "unknown", 1: "unsupported", 2: "compatible", 3: "compatible"}
 # display_type -> per-criterion result. 4 pass, 3 info/caveat, 2 fail.
 DECK_DISPLAY_MAP = {4: True, 3: None, 2: False}
 
@@ -91,12 +97,17 @@ def fetch_deck_compat(app_id):
 
     cached = cache.get(key)
     if isinstance(cached, dict):
+        cval = cached.get("val")
+        # Old-schema positive entries predate #273 and lack machine/steamos --
+        # force a refetch so they get enriched. Negative (None) entries have
+        # nothing to enrich, so honor their TTL as before.
+        stale_schema = isinstance(cval, dict) and "machine" not in cval
         ok = cached.get("ok")
         if ok is None:  # legacy entries: a stored verdict implies a confirmed fetch
-            ok = bool(cached.get("val"))
+            ok = bool(cval)
         ttl = CACHE_MAX_AGE_SECONDS if ok else CACHE_NEGATIVE_TTL_SECONDS
-        if now - cached.get("ts", 0) < ttl:
-            return cached.get("val")
+        if not stale_schema and now - cached.get("ts", 0) < ttl:
+            return cval
 
     try:
         data = _fetch_raw(app_id)
@@ -106,22 +117,30 @@ def fetch_deck_compat(app_id):
         return None
 
     results = (data or {}).get("results") or {}
-    cat = results.get("resolved_category")
-    if not data.get("success") or not cat:
-        # success:false or unknown (0). Short-lived negative so a throttled
-        # response is retried; an evaluated-as-unknown app is simply omitted.
+    deck_cat = int(results.get("resolved_category") or 0)
+    machine_cat = int(results.get("machine_resolved_category") or 0)
+    steamos_cat = int(results.get("steamos_resolved_category") or 0)
+    if not data.get("success") or not (deck_cat or machine_cat or steamos_cat):
+        # success:false or nothing rated on any target. Short-lived negative so
+        # a throttled response is retried; an evaluated-as-unknown app is omitted.
         cache[key] = {"val": None, "ts": now, "ok": False}
         _cache_dirty = True
         return None
 
-    status = DECK_CAT_MAP.get(int(cat), "unknown")
     items = results.get("resolved_items") or []
     criteria = (
         [DECK_DISPLAY_MAP.get(i.get("display_type")) for i in items[:4]]
         if len(items) >= 4
         else None
     )
-    val = {"status": status, "criteria": criteria}
+    # machine/steamos keys are ALWAYS present (even "unknown") so the schema
+    # check above can distinguish a #273-enriched cache entry from an old one.
+    val = {
+        "status": DECK_CAT_MAP.get(deck_cat, "unknown"),
+        "criteria": criteria,
+        "machine": MACHINE_CAT_MAP.get(machine_cat, "unknown"),
+        "steamos": STEAMOS_CAT_MAP.get(steamos_cat, "unknown"),
+    }
     cache[key] = {"val": val, "ts": now, "ok": True}
     _cache_dirty = True
     return val
@@ -159,7 +178,14 @@ def build_deck_status(output_dir, app_ids=None, delay=0.0):
     for app_id in ids:
         val = fetch_deck_compat(app_id)
         if val:
-            result[app_id] = val
+            # Keep the published map lean: only carry machine/steamos when
+            # rated (the UI treats a missing field as "not rated").
+            out = {"status": val["status"], "criteria": val.get("criteria")}
+            if val.get("machine") and val["machine"] != "unknown":
+                out["machine"] = val["machine"]
+            if val.get("steamos") and val["steamos"] != "unknown":
+                out["steamos"] = val["steamos"]
+            result[app_id] = out
         if delay:
             time.sleep(delay)
     flush_deck_compat_cache()

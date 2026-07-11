@@ -21,7 +21,7 @@ const STORES = {
     placeholder: 'App ID or game name',
     endpoints: [
       { key: 'steam_appdetails', label: 'appdetails (metadata + content descriptors)', arg: 'id' },
-      { key: 'steam_deck', label: 'Steam Deck compatibility', arg: 'id' },
+      { key: 'steam_deck', label: 'Deck / Machine / SteamOS compatibility', arg: 'id' },
       { key: 'steam_store_redirect', label: 'store page redirect (detect replaced_by)', arg: 'id' },
       { key: 'steam_current_players', label: 'current online players', arg: 'id' },
       { key: 'steam_global_achievements', label: 'global achievement percentages', arg: 'id' },

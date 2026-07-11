@@ -10,6 +10,7 @@ All notable changes to Proton Pulse (web) should be recorded here.
 - Filter popover: on desktop it stretches to the content width and flows the groups into balanced masonry columns with squircle chips, so it fills evenly and the Save / Clear footer stays above the fold.
 - About page: a new Icons and Signage section (icon left, meaning right) documents every badge and mark, reachable from a quicklinks row that also jumps to Compare and Mission.
 - App type (mod / DLC / software) no longer overlays the browse tile. It now shows as a tag under the artwork on the game detail page.
+- Steam Machine and SteamOS compatibility (#273): the same Steam endpoint that gives Deck verdicts also returns Machine and SteamOS. The pipeline now stores all three. The at-a-glance chart gains Steam Machine and SteamOS chips, and the browse filters gain Machine and SteamOS groups. The report device fingerprint recognizes Steam Machine (provisional until real hardware strings land). Populating the new data needs a full pipeline run.
 
 ## v1.6.2
 

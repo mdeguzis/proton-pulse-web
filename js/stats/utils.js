@@ -38,6 +38,7 @@ const PRETTY = {
   protondb: 'ProtonDB', pulse: 'Pulse',
   'steam-deck-lcd': 'Steam Deck LCD',
   'steam-deck-oled': 'Steam Deck OLED',
+  'steam-machine': 'Steam Machine',
   desktop: 'Desktop / other',
   platinum: 'Platinum', gold: 'Gold', silver: 'Silver',
   bronze: 'Bronze', borked: 'Borked', pending: 'Pending',

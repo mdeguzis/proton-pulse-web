@@ -85,6 +85,11 @@ export function renderDeckStatusModalContent(appId) {
 
 export const _DECK_LCD_RE  = /\b(amd\s+custom\s+(apu|gpu)\s+0405|vangogh)\b/i;
 export const _DECK_OLED_RE = /\b(amd\s+custom\s+(apu|gpu)\s+0932|sephiroth)\b/i;
+// Steam Machine (#273): provisional fingerprint. The real APU/GPU revision
+// string is unknown until the device ships, so match an explicit "Steam
+// Machine" mention plus the semi-custom Zen 4 + RDNA 3 signature. Mirrors
+// _STEAM_MACHINE in scripts/pipeline/stats.py -- keep in sync.
+export const _STEAM_MACHINE_RE = /\bsteam\s+machine\b|amd\s+custom\s+(apu|gpu).*rdna\s*3/i;
 export function isSteamDeckHardware(r) {
   const haystack = `${r.cpu || ''} ${r.gpu || ''}`;
   return _DECK_LCD_RE.test(haystack) || _DECK_OLED_RE.test(haystack);

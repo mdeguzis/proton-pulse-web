@@ -141,7 +141,7 @@ describe('home page browse -- text filter box', () => {
     // end in `..., textFilter)`. The intermediate filters are exercised in
     // dedicated deck/wishlist/library tests -- here we just pin the outer
     // shape (text is outermost, and inside it kind wraps the trio).
-    const matches = homeSrc.match(/_filterByText\(_filterByKind\(_filterByDeck\([^]*?, textFilter\)/g) || [];
+    const matches = homeSrc.match(/_filterByText\(_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\([^]*?, textFilter\)/g) || [];
     expect(matches.length).toBe(2);
   });
 
@@ -157,7 +157,7 @@ describe('home page browse -- text filter box', () => {
     // The badge count sums every filter set + a 1 for a non-empty text
     // query. Wishlist (#266 Phase 1) + Deck (#266 Phase 2) both slot in
     // ahead of kind. Pin the outer shape rather than the exact chain.
-    expect(homeSrc).toContain('deckSel.size + kindSel.size + (textFilter.trim() ? 1 : 0)');
+    expect(homeSrc).toContain('deckSel.size + machineSel.size + steamosSel.size + kindSel.size + (textFilter.trim() ? 1 : 0)');
   });
 
   test('clear filters resets BOTH the desktop and mobile inputs', () => {
@@ -321,7 +321,7 @@ describe('home page browse -- text filter searches all titles', () => {
     // deck/wishlist/library trio -- the exact intermediate filters between
     // kind and library keep growing (#266 added Wishlist + Deck), so we
     // pin the two edges instead of the whole chain.
-    expect(homeSrc).toMatch(/_filterByText\(_filterByKind\(_filterByDeck\(/);
+    expect(homeSrc).toMatch(/_filterByText\(_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\(/);
     expect(homeSrc).toMatch(/_filterByWishlist\(_filterByLibrary\(/);
     // Placeholder wording matches the actual behavior (previous text
     // "Filter loaded list" implied only visible items).
@@ -359,7 +359,7 @@ describe('home page browse -- Type filter (#250)', () => {
     // Both filter chains (recent + popular) call it, so we expect two
     // occurrences. Pinning to `_filterByKind\(_filterByDeck` since #266
     // Phase 2 slotted deck between kind and wishlist.
-    const inRecent  = homeSrc.match(/_filterByKind\(_filterByDeck/g) || [];
+    const inRecent  = homeSrc.match(/_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck/g) || [];
     expect(inRecent.length).toBeGreaterThanOrEqual(2);
   });
 
@@ -397,5 +397,29 @@ describe('home page browse -- unrated cards show "No Rating", never "PENDING"', 
     expect(homeSrc).toContain('tier: _cardTier(r.tier),');
     expect(homeSrc).toContain('tier: _cardTier(g.tier),');
     expect(homeSrc).not.toContain('tier: g.tier || undefined');
+  });
+});
+
+describe('home page browse -- Steam Machine + SteamOS filters (#273)', () => {
+  test('Machine and SteamOS filter groups are rendered', () => {
+    expect(homeSrc).toContain('id="home-machine-checks"');
+    expect(homeSrc).toContain('<span class="pg-filter-group-label">Machine</span>');
+    expect(homeSrc).toContain('id="home-steamos-checks"');
+    expect(homeSrc).toContain('<span class="pg-filter-group-label">SteamOS</span>');
+    expect(homeSrc).toContain('data-value="compatible"');
+  });
+
+  test('_filterByMachine / _filterBySteamOS read the machine/steamos fields', () => {
+    expect(homeSrc).toContain('function _filterByMachine(reports, sel, deckStatusMap)');
+    expect(homeSrc).toContain('function _filterBySteamOS(reports, sel, deckStatusMap)');
+    expect(homeSrc).toContain("_filterByDeviceField(reports, sel, deckStatusMap, 'machine')");
+    expect(homeSrc).toContain("_filterByDeviceField(reports, sel, deckStatusMap, 'steamos')");
+  });
+
+  test('machineSel / steamosSel slot into save, restore, badge, and clear', () => {
+    expect(homeSrc).toContain('machine: [...machineSel], steamos: [...steamosSel]');
+    expect(homeSrc).toContain('machineSel = new Set(saved.machine || [])');
+    expect(homeSrc).toContain('steamosSel = new Set(saved.steamos || [])');
+    expect(homeSrc).toContain('machineSel.size + steamosSel.size');
   });
 });

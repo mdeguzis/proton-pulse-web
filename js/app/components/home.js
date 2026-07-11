@@ -10,7 +10,7 @@ import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewp
 import { getEffectivePageSize, isAutoLoadEnabled } from '../../lib/pagination-prefs.js?v=15d0747d';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
-import { renderHomeLibraryChart } from './home-library-chart.js?v=4ea662dc';
+import { renderHomeLibraryChart } from './home-library-chart.js?v=6ea6761b';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { loadDeckStatusMap } from '../api/deck-status.js?v=456b6112';
@@ -136,6 +136,26 @@ function _filterByDeck(reports, sel, deckStatusMap) {
     const status = (entry && entry.status) || 'unknown';
     return sel.has(status);
   });
+}
+
+// Steam Machine + SteamOS filters (#273). Same deck-status.json map, different
+// entry field: `machine` (verified/playable/unsupported/unknown, like Deck) and
+// `steamos` (compatible/unsupported/unknown). Non-Steam ids always pass through.
+function _filterByDeviceField(reports, sel, deckStatusMap, field) {
+  if (!sel || sel.size === 0 || sel.has('all')) return reports;
+  return reports.filter(r => {
+    const id = String(r.appId);
+    if (!/^\d+$/.test(id)) return true;
+    const entry = deckStatusMap ? deckStatusMap[id] : null;
+    const status = (entry && entry[field]) || 'unknown';
+    return sel.has(status);
+  });
+}
+function _filterByMachine(reports, sel, deckStatusMap) {
+  return _filterByDeviceField(reports, sel, deckStatusMap, 'machine');
+}
+function _filterBySteamOS(reports, sel, deckStatusMap) {
+  return _filterByDeviceField(reports, sel, deckStatusMap, 'steamos');
 }
 
 // Kind filter (#250). Reads the Steam appdetails `type` field from
@@ -437,6 +457,21 @@ export async function renderHomePage() {
               <button class="pg-filter" type="button" data-value="unsupported" title="Does not run on Steam Deck">Unsupported</button>
               <button class="pg-filter" type="button" data-value="unknown" title="Valve has not rated this game yet">Unknown</button>
             </div>
+            <div class="pg-filter-group" id="home-machine-checks" title="Filter by Valve's official Steam Machine compatibility rating">
+              <span class="pg-filter-group-label">Machine</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="verified" title="Fully verified on Steam Machine">Verified</button>
+              <button class="pg-filter" type="button" data-value="playable" title="Playable with some caveats">Playable</button>
+              <button class="pg-filter" type="button" data-value="unsupported" title="Does not run on Steam Machine">Unsupported</button>
+              <button class="pg-filter" type="button" data-value="unknown" title="Valve has not rated this game yet">Unknown</button>
+            </div>
+            <div class="pg-filter-group" id="home-steamos-checks" title="Filter by Valve's official SteamOS compatibility rating">
+              <span class="pg-filter-group-label">SteamOS</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="compatible" title="Runs on SteamOS">Compatible</button>
+              <button class="pg-filter" type="button" data-value="unsupported" title="Does not run on SteamOS">Unsupported</button>
+              <button class="pg-filter" type="button" data-value="unknown" title="Valve has not rated this game yet">Unknown</button>
+            </div>
             <div class="pg-filter-group" id="home-kind-checks" title="Filter by the Steam appdetails type (game / DLC / mod / demo / software)">
               <span class="pg-filter-group-label">Type</span>
               <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
@@ -521,7 +556,9 @@ export async function renderHomePage() {
     let wishlistSel = new Set();  // empty => all; 'wishlist' => only games on the user's Steam wishlist (#266)
     let wishlistAppIds = null;   // cached Set<number>; lazily loaded on first "wishlist" use
     let deckSel = new Set();   // empty => all; 'verified'/'playable'/'unsupported'/'unknown' => Valve's Deck rating (#266 Phase 2)
-    let deckStatusMap = null;  // cached map<appIdStr, {status, criteria}>; lazily loaded on first Deck-chip use
+    let machineSel = new Set(); // empty => all; Valve's Steam Machine rating (#273)
+    let steamosSel = new Set(); // empty => all; 'compatible'/'unsupported'/'unknown' => Valve's SteamOS rating (#273)
+    let deckStatusMap = null;  // cached map<appIdStr, {status, criteria, machine, steamos}>; shared by Deck/Machine/SteamOS chips
     let kindSel = new Set();   // Steam app kind ('game'/'dlc'/'mod'/'demo'/'software'); empty => all (#250)
     let currentLayout = 'grid';
 
@@ -587,7 +624,7 @@ export async function renderHomePage() {
           return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending' };
         });
       }
-      const filtered = filterAdult(_filterByText(_filterByKind(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), kindSel), textFilter));
+      const filtered = filterAdult(_filterByText(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), textFilter));
       const cardsEl = document.getElementById('cards-popular');
       const loadMoreEl = document.getElementById('load-more-popular');
       if (!cardsEl) return;
@@ -723,7 +760,7 @@ export async function renderHomePage() {
     }
 
     function applyRecentFilters() {
-      const filtered = filterAdult(_filterByText(_filterByKind(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), kindSel), textFilter));
+      const filtered = filterAdult(_filterByText(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), textFilter));
       const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
@@ -852,7 +889,8 @@ export async function renderHomePage() {
         localStorage.setItem(FILTERS_KEY, JSON.stringify({
           sort: currentSort, text: textFilter,
           tier: [...tierSel], source: [...sourceSel], store: [...storeSel],
-          library: [...librarySel], wishlist: [...wishlistSel], deck: [...deckSel], kind: [...kindSel],
+          library: [...librarySel], wishlist: [...wishlistSel], deck: [...deckSel],
+          machine: [...machineSel], steamos: [...steamosSel], kind: [...kindSel],
         }));
       } catch { /* ignore */ }
     }
@@ -890,6 +928,8 @@ export async function renderHomePage() {
       librarySel = new Set(saved.library || []);
       wishlistSel = new Set(saved.wishlist || []);
       deckSel = new Set(saved.deck || []);
+      machineSel = new Set(saved.machine || []);
+      steamosSel = new Set(saved.steamos || []);
       kindSel = new Set(saved.kind || []);
       _applyPillSelection(tierGroup, saved.tier);
       _applyPillSelection(sourceGroup, saved.source);
@@ -898,6 +938,8 @@ export async function renderHomePage() {
       // chips as of #266 consolidation; union them for pill highlighting.
       _applyPillSelection(libraryGroup, [...(saved.library || []), ...(saved.wishlist || [])]);
       _applyPillSelection(deckGroup, saved.deck);
+      _applyPillSelection(machineGroup, saved.machine);
+      _applyPillSelection(steamosGroup, saved.steamos);
       _applyPillSelection(kindGroup, saved.kind);
       updateFilterBadge();
       console.debug('[browse-filters] restored saved filters', { source: FILTERS_KEY, sort: currentSort, tiers: [...tierSel], sources: [...sourceSel], stores: [...storeSel], library: [...librarySel], wishlist: [...wishlistSel], deck: [...deckSel], kinds: [...kindSel], text: textFilter });
@@ -912,7 +954,7 @@ export async function renderHomePage() {
 
     // Active-filter badge: count specific tier + source + store selections.
     function updateFilterBadge() {
-      const n = tierSel.size + sourceSel.size + storeSel.size + librarySel.size + wishlistSel.size + deckSel.size + kindSel.size + (textFilter.trim() ? 1 : 0);
+      const n = tierSel.size + sourceSel.size + storeSel.size + librarySel.size + wishlistSel.size + deckSel.size + machineSel.size + steamosSel.size + kindSel.size + (textFilter.trim() ? 1 : 0);
       filterToggle?.classList.toggle('has-filters', n > 0);
       if (filterBadge) {
         filterBadge.textContent = String(n);
@@ -925,6 +967,8 @@ export async function renderHomePage() {
     const storeGroup = document.getElementById('home-store-checks');
     const libraryGroup = document.getElementById('home-library-checks');
     const deckGroup = document.getElementById('home-deck-checks');
+    const machineGroup = document.getElementById('home-machine-checks');
+    const steamosGroup = document.getElementById('home-steamos-checks');
     const kindGroup = document.getElementById('home-kind-checks');
     if (tierGroup) _wirePillGroup(tierGroup, { onChange: sel => {
       tierSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
@@ -961,13 +1005,27 @@ export async function renderHomePage() {
       }
       updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
+    // Steam Machine + SteamOS chips (#273) share the same deck-status.json map.
+    const _wireDeviceGroup = (group, assignSel) => {
+      if (!group) return;
+      _wirePillGroup(group, { onChange: async sel => {
+        assignSel(sel);
+        const needMap = sel && sel.size > 0 && !sel.has('all');
+        if (needMap && !deckStatusMap) {
+          deckStatusMap = await loadDeckStatusMap().catch(() => ({}));
+        }
+        updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
+      }});
+    };
+    _wireDeviceGroup(machineGroup, sel => { machineSel = sel; });
+    _wireDeviceGroup(steamosGroup, sel => { steamosSel = sel; });
     if (kindGroup) _wirePillGroup(kindGroup, { onChange: sel => {
       kindSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
 
     // Clear filters: reset every group back to "All", sort back to Recent.
     document.getElementById('home-filter-clear')?.addEventListener('click', () => {
-      [tierGroup, sourceGroup, storeGroup, libraryGroup, deckGroup, kindGroup].forEach(g => {
+      [tierGroup, sourceGroup, storeGroup, libraryGroup, deckGroup, machineGroup, steamosGroup, kindGroup].forEach(g => {
         if (!g) return;
         g.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'));
         const allBtn = g.querySelector('.pg-filter[data-value="all"]');
@@ -987,6 +1045,8 @@ export async function renderHomePage() {
       librarySel = new Set();
       wishlistSel = new Set();
       deckSel = new Set();
+      machineSel = new Set();
+      steamosSel = new Set();
       kindSel = new Set();
       updateFilterBadge();
       applyRecentFilters();

@@ -10,7 +10,7 @@ import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagRepor
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
-import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=c223a42e';
+import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=ad91f1c7';
 import { renderCard } from './report-card.js?v=faa750d4';
 import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
@@ -775,10 +775,12 @@ export async function renderGamePage(appId) {
         const haystack = `${r.cpu || ''} ${r.gpu || ''}`;
         const isLcd  = _DECK_LCD_RE.test(haystack);
         const isOled = _DECK_OLED_RE.test(haystack);
+        const isMachine = _STEAM_MACHINE_RE.test(haystack);
         if (filterDevice === 'deck-lcd')  return isLcd;
         if (filterDevice === 'deck-oled') return isOled;
         if (filterDevice === 'deck-any')  return isLcd || isOled;
-        if (filterDevice === 'desktop')   return !isLcd && !isOled;
+        if (filterDevice === 'steam-machine') return isMachine;
+        if (filterDevice === 'desktop')   return !isLcd && !isOled && !isMachine;
         return true;
       });
     }
@@ -1117,6 +1119,7 @@ export async function renderGamePage(appId) {
                 <option value="deck-any"  ${filterDevice==='deck-any'?'selected':''}>Steam Deck (any)</option>
                 <option value="deck-lcd"  ${filterDevice==='deck-lcd'?'selected':''}>Steam Deck LCD</option>
                 <option value="deck-oled" ${filterDevice==='deck-oled'?'selected':''}>Steam Deck OLED</option>
+                <option value="steam-machine" ${filterDevice==='steam-machine'?'selected':''}>Steam Machine</option>
                 <option value="desktop"   ${filterDevice==='desktop'?'selected':''}>Desktop / other</option>
               </select>
             </div>` : '';

@@ -354,11 +354,11 @@
    the row stays compact -- the glyph is distinct enough that people
    who know the Deck recognize it at a glance. Icon bumps to 18px on
    mobile because it's carrying the full label. */
-.hlc-chip--deck { display: inline-flex; align-items: center; gap: 6px; padding-left: 8px; padding-right: 12px; }
+.hlc-chip--device { display: inline-flex; align-items: center; gap: 6px; padding-left: 8px; padding-right: 12px; }
 .hlc-chip-glyph { flex: 0 0 auto; display: block; }
 @media (max-width: 620px) {
-  .hlc-chip--deck { padding: 4px 8px; }
-  .hlc-chip--deck .hlc-chip-text { display: none; }
+  .hlc-chip--device { padding: 4px 8px; }
+  .hlc-chip--device .hlc-chip-text { display: none; }
   .hlc-chip-glyph { width: 18px; height: 18px; }
 }
 .hlc-subtitle {
@@ -390,7 +390,7 @@
 }
 /* Deck view labels are longer, so give them a wider uniform column that fits
    "Deck Verified" / "Deck Playable" on one line without clipping. */
-.home-library-chart--deck .hlc-row {
+.home-library-chart--device .hlc-row {
   grid-template-columns: 116px 1fr 56px;
 }
 .hlc-label {
