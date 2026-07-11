@@ -180,6 +180,31 @@ describe('mobile filter modal (<= 720px) -- full-viewport modal pattern', () => 
     expect(topbarSrc).toMatch(/closest\(['"`]\.filter-panel-close/);
     expect(topbarSrc).toMatch(/aria-expanded[^\n]*false/);
   });
+
+  test('topbar.js portals the open panel to <body> on mobile so it escapes .main-content stacking context', () => {
+    // base.css sets .main-content { z-index: 2 } which creates a stacking
+    // context. The topbar sits at z-index: 200 in the root stacking context,
+    // above main-content. Any panel inside main-content can never rise
+    // above the topbar via its own z-index -- it's trapped at stacking
+    // layer 2. The mobile modal must therefore detach and re-append the
+    // panel to <body> on open, and restore it to the original parent on
+    // close so per-page outside-click handlers keep working.
+    const topbarSrc = fs.readFileSync(
+      path.join(__dirname, '..', 'js', 'lib', 'topbar.js'),
+      'utf8'
+    );
+    expect(topbarSrc).toMatch(/document\.body\.appendChild\(panel\)/);
+    expect(topbarSrc).toMatch(/_panelOriginals/);
+    expect(topbarSrc).toMatch(/matchMedia\(MOBILE_MODAL_QUERY\)/);
+  });
+
+  test('home.js outside-click handler allows taps inside the (portaled) panel', () => {
+    // When portaled, filterPanel is no longer a filterWrap descendant, so
+    // filterWrap.contains(e.target) is false for every tap on a filter pill.
+    // Guard: also check filterPanel.contains(e.target) so taps inside the
+    // panel don't trigger the outside-click close.
+    expect(homeSrc).toMatch(/!filterPanel\.contains\(e\.target\)/);
+  });
 });
 
 describe('home (app.html browse) -- XL card size parity with index.html', () => {

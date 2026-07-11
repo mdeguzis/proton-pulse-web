@@ -871,7 +871,14 @@ export async function renderHomePage() {
       filterToggle.setAttribute('aria-expanded', String(open));
     });
     document.addEventListener('click', (e) => {
-      if (filterPanel?.classList.contains('open') && filterWrap && !filterWrap.contains(e.target)) {
+      // On mobile the panel is portaled to <body> and is no longer a child
+      // of filterWrap, so we also allow taps inside the panel itself.
+      if (
+        filterPanel?.classList.contains('open')
+        && filterWrap
+        && !filterWrap.contains(e.target)
+        && !filterPanel.contains(e.target)
+      ) {
         filterPanel.classList.remove('open');
         filterToggle.setAttribute('aria-expanded', 'false');
       }
