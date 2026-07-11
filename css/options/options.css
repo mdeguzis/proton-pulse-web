@@ -147,3 +147,20 @@
   outline: none;
 }
 .options-reset-note { font-size: 0.82rem; color: var(--muted); }
+
+/* Numeric option control (store tag icon size). Native number input keeps its
+   up/down spinner for quick nudging. */
+.option-number { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+.option-number input[type="number"] {
+  width: 66px;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  outline: none;
+}
+.option-number input[type="number"]:focus { border-color: var(--accent); }
+.option-number-unit { color: var(--muted); font-size: 0.82rem; font-family: var(--mono); }

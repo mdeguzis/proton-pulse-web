@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="css/shared/base.css?v=a93b26ad">
 <link rel="stylesheet" href="css/shared/topbar.css?v=552d4d2a">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
-<link rel="stylesheet" href="css/shared/cards.css?v=6ab0b6d5">
-<link rel="stylesheet" href="css/options/options.css?v=19d7ebf3">
+<link rel="stylesheet" href="css/shared/cards.css?v=d81405b0">
+<link rel="stylesheet" href="css/options/options.css?v=585c31e7">
 </head>
 <body>
 
@@ -105,6 +105,22 @@
           <span class="option-switch-track"></span>
         </label>
         <div class="option-default-note">Default: off.</div>
+      </div>
+
+      <div class="option-row">
+        <div class="option-text">
+          <div class="option-title">Store tag icon size</div>
+          <div class="option-desc">
+            Pixel size of the library / wishlist icons that clip onto the store
+            tag on each card. Nudge it up or down until it looks right. Saved on
+            this device.
+          </div>
+        </div>
+        <div class="option-number">
+          <input type="number" id="opt-owner-badge-size" min="10" max="28" step="1" inputmode="numeric" aria-label="Store tag icon size in pixels">
+          <span class="option-number-unit">px</span>
+        </div>
+        <div class="option-default-note">Default: 16.</div>
       </div>
 
       <div class="option-row">
@@ -292,8 +308,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script src="js/lib/analytics.js?v=7855fb4c"></script>
-<script src="js/lib/topbar.js?v=60e4cf6e"></script>
+<script src="js/lib/topbar.js?v=2d4a8174"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/options/main.js?v=61521368"></script>
+<script type="module" src="js/options/main.js?v=e313696c"></script>
 </body>
 </html>

@@ -1089,15 +1089,7 @@
 .il-tier--silver   { background: #8fa0b0; color: #0a0c10; }
 .il-tier--bronze   { background: #b07040; color: #0a0c10; }
 .il-tier--borked   { background: #c85050; color: #fff; }
-.il-store-tag {
-  flex: 0 0 auto;
-  width: 76px;
-  text-align: center;
-  padding: 5px 6px;
-  border-radius: 4px;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.il-store-tag--steam { background: #1689d0; color: #fff; }
+/* Store app-icons (Steam/GOG/Epic) render as their own rounded-square tiles,
+   so no dark chip behind them. */
+.il-storeicon { flex: 0 0 auto; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+.il-storeicon img, .il-storeicon svg { width: 34px; height: 34px; border-radius: 7px; display: block; }

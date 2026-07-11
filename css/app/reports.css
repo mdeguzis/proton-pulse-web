@@ -288,28 +288,26 @@
      groups out side by side (row wrap) so the panel is wide and short. The
      Save / Clear footer then stays visible without scrolling on a laptop. */
   .filter-panel--stack.open {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 16px 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    align-items: start;
+    gap: 18px 24px;
     width: min(calc(100vw - 2 * var(--content-pad)), calc(var(--content-max) - 2 * var(--content-pad)));
     min-width: 0;
     max-width: none;
   }
-  .filter-panel--stack .filter-item { min-width: 160px; }
+  .filter-panel--stack .filter-item { min-width: 0; }
+  /* Pills wrap at their natural width so long labels ("Unsupported",
+     "Not Rated Yet") never clip; equal grid columns keep the groups evenly
+     distributed instead of growing to ragged widths. */
   .filter-panel--stack .pg-filter-group {
-    flex: 1 1 190px;
-    min-width: 170px;
-    align-content: start;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 8px;
+    align-content: start;
   }
-  .filter-panel--stack .pg-filter-group-label { grid-column: 1 / -1; }
-  .filter-panel--stack .pg-filter {
-    width: 100%;
-    justify-content: center;
-  }
+  .filter-panel--stack .pg-filter-group-label { flex-basis: 100%; }
+  .filter-panel-footer--stack { grid-column: 1 / -1; }
 }
 
 /* .filter-checks / .filter-check removed -- filter groups now use

@@ -4,6 +4,8 @@
  */
 const {
   readShowAdultLocal, writeShowAdultLocal, setShowAdult, pullShowAdult,
+  readOwnerBadgeSizeLocal, writeOwnerBadgeSizeLocal,
+  OWNER_BADGE_SIZE_DEFAULT, OWNER_BADGE_SIZE_MIN, OWNER_BADGE_SIZE_MAX,
 } = require('../js/lib/user-prefs.js');
 
 let store;
@@ -102,5 +104,33 @@ describe('pullShowAdult', () => {
     const res = await pullShowAdult();
     expect(res).toEqual({ changed: false, value: true });
     expect(store['pp:show-adult']).toBe('on');
+  });
+});
+
+describe('owner badge size (store tag icon size)', () => {
+  test('defaults when unset', () => {
+    expect(readOwnerBadgeSizeLocal()).toBe(OWNER_BADGE_SIZE_DEFAULT);
+  });
+
+  test('round-trips a valid value', () => {
+    expect(writeOwnerBadgeSizeLocal(20)).toBe(20);
+    expect(store['pp:owner-badge-size']).toBe('20');
+    expect(readOwnerBadgeSizeLocal()).toBe(20);
+  });
+
+  test('clamps below the minimum', () => {
+    expect(writeOwnerBadgeSizeLocal(2)).toBe(OWNER_BADGE_SIZE_MIN);
+    expect(readOwnerBadgeSizeLocal()).toBe(OWNER_BADGE_SIZE_MIN);
+  });
+
+  test('clamps above the maximum', () => {
+    expect(writeOwnerBadgeSizeLocal(999)).toBe(OWNER_BADGE_SIZE_MAX);
+    expect(readOwnerBadgeSizeLocal()).toBe(OWNER_BADGE_SIZE_MAX);
+  });
+
+  test('rounds and reads back non-integer / garbage values', () => {
+    expect(writeOwnerBadgeSizeLocal(16.7)).toBe(17);
+    store['pp:owner-badge-size'] = 'not-a-number';
+    expect(readOwnerBadgeSizeLocal()).toBe(OWNER_BADGE_SIZE_DEFAULT);
   });
 });

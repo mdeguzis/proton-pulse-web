@@ -497,6 +497,14 @@
   if (trendArrowPref === 'off') {
     document.documentElement.setAttribute('data-trend-arrow', 'off');
   }
+  // Store tag icon size: apply the saved px as --owner-badge-size before first
+  // paint so the corner decals render at the chosen size with no flash. Read +
+  // clamp inline (topbar loads before the prefs module on every page).
+  const rawBadgeSize = parseInt(localStorage.getItem('pp:owner-badge-size'), 10);
+  if (Number.isFinite(rawBadgeSize)) {
+    const clamped = Math.min(28, Math.max(10, rawBadgeSize));
+    document.documentElement.style.setProperty('--owner-badge-size', clamped + 'px');
+  }
 
   // inject favicon if the page doesn't already have one
   if (!document.querySelector('link[rel="icon"]')) {

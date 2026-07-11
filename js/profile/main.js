@@ -16,7 +16,7 @@ import {
 import {
   listLinkedPlugins, completePluginLink, removePluginLink,
 } from './api/plugin-links.js?v=05003ae3';
-import { setShowAdult, pullShowAdult, readShowAdultLocal } from '../lib/user-prefs.js?v=be1f1c0a';
+import { setShowAdult, pullShowAdult, readShowAdultLocal } from '../lib/user-prefs.js?v=d663d582';
 import { initMyHardware } from './components/my-hardware.js?v=34fd810c';
 import { initSystems } from './components/systems.js?v=382fb770';
 import { initMyReports } from './components/my-reports.js?v=59f67107';

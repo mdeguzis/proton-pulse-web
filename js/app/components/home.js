@@ -14,7 +14,7 @@ import { renderHomeLibraryChart } from './home-library-chart.js?v=4ea662dc';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { loadDeckStatusMap } from '../api/deck-status.js?v=456b6112';
-import { readShowOwnerBadgesLocal, pullShowOwnerBadges } from '../../lib/user-prefs.js?v=be1f1c0a';
+import { readShowOwnerBadgesLocal, pullShowOwnerBadges } from '../../lib/user-prefs.js?v=d663d582';
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
 import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';
 

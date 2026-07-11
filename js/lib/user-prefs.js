@@ -171,3 +171,32 @@ export async function pullPrefBool(key, dflt = false) {
 export function readShowOwnerBadgesLocal() { return readPrefBoolLocal('show-owner-badges', false); }
 export function setShowOwnerBadges(on)     { return setPrefBool('show-owner-badges', on); }
 export function pullShowOwnerBadges()      { return pullPrefBool('show-owner-badges', false); }
+
+// ---------- Store tag icon size (px, local-only tuning setting) -----------
+// A number the user can nudge in Site Options until the corner store-tag icon
+// feels right. Stored under pp:owner-badge-size and applied as the
+// --owner-badge-size CSS variable (see topbar.js). Clamped to a sane range.
+export const OWNER_BADGE_SIZE_KEY = 'pp:owner-badge-size';
+export const OWNER_BADGE_SIZE_DEFAULT = 16;
+export const OWNER_BADGE_SIZE_MIN = 10;
+export const OWNER_BADGE_SIZE_MAX = 28;
+
+function _clampBadgeSize(n) {
+  const v = Math.round(Number(n));
+  if (!Number.isFinite(v)) return OWNER_BADGE_SIZE_DEFAULT;
+  return Math.min(OWNER_BADGE_SIZE_MAX, Math.max(OWNER_BADGE_SIZE_MIN, v));
+}
+
+export function readOwnerBadgeSizeLocal() {
+  try {
+    const raw = localStorage.getItem(OWNER_BADGE_SIZE_KEY);
+    if (raw === null || raw === '') return OWNER_BADGE_SIZE_DEFAULT;
+    return _clampBadgeSize(raw);
+  } catch { return OWNER_BADGE_SIZE_DEFAULT; }
+}
+
+export function writeOwnerBadgeSizeLocal(px) {
+  const v = _clampBadgeSize(px);
+  try { localStorage.setItem(OWNER_BADGE_SIZE_KEY, String(v)); } catch { /* private mode */ }
+  return v;
+}
