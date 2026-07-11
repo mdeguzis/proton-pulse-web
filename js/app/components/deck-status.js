@@ -54,11 +54,48 @@ export function _criterionLabel(tok) {
 }
 
 // display_type → status key for the round icon: 4=pass, 3=info/caveat, 1/2=fail.
-// Matches DECK_DISPLAY_MAP in the pipeline + api/deck-status.js.
+// Matches DECK_DISPLAY_MAP in the pipeline + api/deck-status.js. Used only as a
+// last-resort fallback now -- see _iconKeyForCriterion for why the token wins.
 export function _iconKeyForDisplayType(dt) {
   if (dt === 4) return 'verified';
   if (dt === 3) return 'playable';
   return 'unsupported';
+}
+
+// Per-criterion outcome by token. Valve's `display_type` is NOT consistent
+// across the Deck / Machine / SteamOS reports: on SteamOS `GameStartupFunctional`
+// comes back display_type=3 but reads as a pass (green check), and the two
+// controller caveats come back display_type=1 but read as info ("i"), not
+// failures. Deck/Machine use 4=pass, 3=info. So the token is the reliable
+// signal for the icon; display_type is only a fallback. Values: pass | info | fail.
+export const CRITERIA_TOKEN_OUTCOME = {
+  DefaultControllerConfigFullyFunctional: 'pass',
+  DefaultControllerConfigNotFullyFunctional: 'info',
+  ControllerGlyphsMatchDevice: 'pass',
+  ControllerGlyphsDoNotMatchDevice: 'info',
+  DefaultConfigurationIsPerformant: 'pass',
+  DefaultConfigurationIsNotPerformant: 'info',
+  ExternalControllersNotSupportedPrimaryPlayer: 'info',
+  GameStartupFunctional: 'pass',
+  GameStartupNotFunctional: 'fail',
+  InterfaceTextIsLegible: 'pass',
+  InterfaceTextIsNotLegible: 'info',
+};
+const _OUTCOME_ICON = { pass: 'verified', info: 'playable', fail: 'unsupported' };
+
+// Pick the round icon for one Machine/SteamOS criterion. Curated token map
+// first (matches Valve's store modals exactly), then a name heuristic so a new
+// token still reads sensibly ("...NotFunctional" fails, other "...Not..." /
+// "DoNot..." caveats show info, anything else passes), then display_type.
+export function _iconKeyForCriterion(displayType, tok) {
+  const outcome = CRITERIA_TOKEN_OUTCOME[tok];
+  if (outcome) return _OUTCOME_ICON[outcome];
+  if (typeof tok === 'string' && tok) {
+    if (/NotFunctional/i.test(tok)) return 'unsupported';
+    if (/(?:^|[a-z])(?:DoNot|Not)[A-Z]/.test(tok) || /Not[A-Z]/.test(tok)) return 'playable';
+    return 'verified';
+  }
+  return _iconKeyForDisplayType(displayType);
 }
 
 // Steam's resolved_category values: 0=unknown, 1=unsupported, 2=playable, 3=verified
@@ -141,7 +178,7 @@ function _devicePanel(kind, name, status, criteria, tokenizedCriteria) {
     }).join('')}</div>`;
   } else if ((kind === 'machine' || kind === 'steamos') && Array.isArray(tokenizedCriteria) && tokenizedCriteria.length) {
     body = `<div class="deck-criteria-list">${tokenizedCriteria.map(([dt, tok]) => {
-      const iconKey = _iconKeyForDisplayType(dt);
+      const iconKey = _iconKeyForCriterion(dt, tok);
       return `<div class="deck-criterion"><span class="deck-criterion-icon"><svg width="18" height="18" viewBox="0 0 24 24">${DECK_STATUS_ICON_SVG[iconKey]}</svg></span><span>${esc(_criterionLabel(tok))}</span></div>`;
     }).join('')}</div>`;
   } else {

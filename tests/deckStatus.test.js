@@ -100,4 +100,35 @@ describe('deck status: reads published deck-status.json', () => {
     // Unknown token: falls back to camelCase-to-prose.
     expect(mod._criterionLabel('SomeBrandNewValveToken')).toBe('Some brand new valve token');
   });
+
+  // Icon comes from the token, not display_type, because Valve's display_type
+  // is inconsistent across the three reports (see _iconKeyForCriterion). This
+  // pins the SteamOS TF2 case (app 440) to Valve's store modal.
+  test('_iconKeyForCriterion maps SteamOS criteria to the icons Valve shows', () => {
+    const { loadEsm } = require('./_esm-vm.js');
+    const mod = loadEsm(['js/app/components/deck-status.js'], { Math, Object, Array, JSON, console });
+    // display_type=3 here but Valve shows a green check (pass).
+    expect(mod._iconKeyForCriterion(3, 'GameStartupFunctional')).toBe('verified');
+    // display_type=1 caveats -> info "i", NOT red-x (the old dt-only bug).
+    expect(mod._iconKeyForCriterion(1, 'DefaultControllerConfigNotFullyFunctional')).toBe('playable');
+    expect(mod._iconKeyForCriterion(1, 'ExternalControllersNotSupportedPrimaryPlayer')).toBe('playable');
+  });
+
+  test('_iconKeyForCriterion keeps Machine passes/caveats correct', () => {
+    const { loadEsm } = require('./_esm-vm.js');
+    const mod = loadEsm(['js/app/components/deck-status.js'], { Math, Object, Array, JSON, console });
+    expect(mod._iconKeyForCriterion(4, 'DefaultConfigurationIsPerformant')).toBe('verified');
+    expect(mod._iconKeyForCriterion(3, 'ControllerGlyphsDoNotMatchDevice')).toBe('playable');
+  });
+
+  test('_iconKeyForCriterion infers unknown tokens by name, then display_type', () => {
+    const { loadEsm } = require('./_esm-vm.js');
+    const mod = loadEsm(['js/app/components/deck-status.js'], { Math, Object, Array, JSON, console });
+    // hard failure token
+    expect(mod._iconKeyForCriterion(2, 'GameStartupNotFunctional')).toBe('unsupported');
+    // unknown caveat token by name
+    expect(mod._iconKeyForCriterion(3, 'SomethingIsNotGreat')).toBe('playable');
+    // unknown positive token by name
+    expect(mod._iconKeyForCriterion(4, 'BrandNewPositiveThing')).toBe('verified');
+  });
 });
