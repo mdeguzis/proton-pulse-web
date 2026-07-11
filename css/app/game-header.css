@@ -502,10 +502,13 @@
    with white text so they distinguish from the green OS chips at a
    glance. Slightly faded so they read as ambient info. */
 .game-tag--user {
-  color: #fff;
+  /* Dark text on the light steam-blue fill -- matches how active filter chips
+     and the gold/silver tier badges treat the accent, and reads far better
+     than the old white-at-85%-opacity which washed out. */
+  color: #0a0c10;
   border-color: transparent;
-  opacity: 0.85;
-  font-weight: 500;
+  opacity: 1;
+  font-weight: 700;
   text-transform: none;
 }
 .game-native-linux::before {
