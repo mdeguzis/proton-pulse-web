@@ -2,6 +2,14 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.7.1
+
+- Fix: game confidence scoring now punishes very old reports properly. Two 8-year-old reports of the same rating used to display as 48% confidence because tier consistency stayed high while freshness only nudged the score. The new freshness curve drops sharply past 1 year, and a staleness cap based on median report age hard-caps the overall confidence when the community data is stale. The confidence breakdown adds a "Staleness cap" row that names the median age in years.
+- Per-report score breakdown now includes negative point tiers at 1yr / 2yr / 3-5yr / 5-8yr / 8yr+ instead of the flat -5 for "old", and each recency detail shows the human-readable age (e.g. "2877 days old (7.9 years, ~5-8yr old)").
+- Box art manager: replaced the three top buttons with an Actions dropdown, added a "Set first SGDB result (filtered)" batch action, added a per-detail "Take first SGDB result" quick action, kept filter state in the URL so back-from-detail and refresh preserve the search, and stacked the SteamGridDB artwork panel above the details on mobile so it is no longer hidden below empty space.
+- Hide-game finally works end-to-end: game_hides now blocks the game detail page (bail early with a "Game hidden" state) and filters hidden appids out of the home Recent and Popular sections.
+- At-a-glance chart: Steam Machine and SteamOS views show an explanatory empty state instead of an all-unsupported bar until the pipeline populates the new Machine/SteamOS keys.
+
 ## v1.7.0
 
 - New icon set across the site: accurate Steam Deck / Controller / Machine / Frame marks, SteamOS and Verified signage, and Steam / GOG / Epic store app-icons. Saved as SVG and PNG assets at multiple sizes under assets/icons with regenerate scripts.

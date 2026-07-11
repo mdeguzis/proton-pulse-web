@@ -216,7 +216,14 @@ export function pulseTierFromReports(nativeReports, protonDbCount = 0) {
   let wSum = 0, wTotal = 0;
   for (const r of nativeReports) {
     const days = (now - (r.timestamp || 0)) / 86400;
-    const recency = days < 30 ? 1.0 : days < 90 ? 0.85 : days < 180 ? 0.65 : days < 365 ? 0.40 : 0.15;
+    const recency = days < 30 ? 1.0
+      : days < 90 ? 0.85
+      : days < 180 ? 0.65
+      : days < 365 ? 0.40
+      : days < 730 ? 0.20
+      : days < 1095 ? 0.10
+      : days < 1825 ? 0.05
+      : 0.02;
     const s = SCORE[r.rating] ?? 0.5;
     wSum += s * recency;
     wTotal += recency;
@@ -259,22 +266,55 @@ export function estimateScore(r) {
  * @param {object} r - Report object with at least .rating and .timestamp.
  * @returns {{ total: number, factors: Array<{label: string, detail: string, value: number}>, meta: object }}
  */
+/**
+ * Formats a days count as a human-readable age string.
+ * Under 30d -> "N days", under 365d -> "N months", otherwise "N.N years".
+ * @param {number} days
+ * @returns {string}
+ */
+export function formatAgeHuman(days) {
+  if (!Number.isFinite(days) || days < 0) return 'unknown';
+  if (days < 30) return `${days} day${days === 1 ? '' : 's'}`;
+  if (days < 365) {
+    const months = Math.round(days / 30);
+    return `${months} month${months === 1 ? '' : 's'}`;
+  }
+  const years = days / 365;
+  return `${years.toFixed(1)} years`;
+}
+
+/**
+ * Recency point tiers. Reports lose confidence as they age; Proton and
+ * game patches move fast enough that an 8-year-old rating tells you almost
+ * nothing about the current state.
+ * @param {number} days
+ * @returns {{ label: string, value: number }}
+ */
+export function recencyTier(days) {
+  if (days < 90)    return { label: 'fresh (<90d)',       value: 15 };
+  if (days < 365)   return { label: 'mid (90-365d)',       value: 5 };
+  if (days < 730)   return { label: '~1yr old',          value: -10 };
+  if (days < 1095)  return { label: '~2yr old',          value: -20 };
+  if (days < 1825)  return { label: '~3-5yr old',        value: -30 };
+  if (days < 2920)  return { label: '~5-8yr old',        value: -40 };
+  return                   { label: '8yr+ (very stale)', value: -50 };
+}
+
 export function estimateScoreBreakdown(r) {
   const RATING_BASE = { platinum: 60, gold: 48, silver: 36, bronze: 24, borked: 0 };
   const base = RATING_BASE[r.rating] ?? 30;
   const days = Math.round((Date.now() / 1000 - (r.timestamp || 0)) / 86400);
-  const recencyLabel = days < 90 ? 'fresh (<90d)' : days < 365 ? 'mid (90-365d)' : 'old (>1yr)';
-  const recencyVal = days < 90 ? 15 : days < 365 ? 5 : -5;
-  const total = Math.max(0, base + recencyVal);
+  const tier = recencyTier(days);
+  const total = Math.max(0, base + tier.value);
   return {
     total,
     factors: [
       { label: 'Rating baseline',  detail: `rating=${r.rating || 'unknown'}`, value: base },
-      { label: 'Recency',          detail: `${days} days old (${recencyLabel})`, value: recencyVal },
+      { label: 'Recency',          detail: `${days} days old (${formatAgeHuman(days)}, ${tier.label})`, value: tier.value },
     ],
     meta: {
-      cappedAtZero: (base + recencyVal) < 0,
-      raw: base + recencyVal,
+      cappedAtZero: (base + tier.value) < 0,
+      raw: base + tier.value,
       days,
     },
   };

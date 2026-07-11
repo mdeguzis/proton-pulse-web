@@ -1,6 +1,6 @@
 // report-card (components) for the app page. Relocated from app.js.
 
-import { estimateScore } from '../../shared/scoring.js?v=1b8ae722';
+import { estimateScore } from '../../shared/scoring.js?v=8051e115';
 import { getWebClientId } from '../../shared/submit.js?v=75603703';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { renderAuthorBlock } from './author.js?v=3a8cb3c7';
