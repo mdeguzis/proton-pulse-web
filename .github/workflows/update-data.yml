@@ -466,6 +466,11 @@ jobs:
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
+          # Copy pipeline-helper scripts out of the workspace BEFORE the
+          # `git rm -rf .` below wipes them. `git rm -rf .` deletes every
+          # tracked file, including scripts/preserve-steam-type-cache.sh
+          # which the deploy step needs to run later. Introduced by #263.
+          cp scripts/preserve-steam-type-cache.sh /tmp/preserve-steam-type-cache.sh
           git checkout --orphan gh-pages-new
           git rm -rf .
           cp -r /tmp/protondb-output/data .
@@ -510,7 +515,7 @@ jobs:
           # (#263). Reads the current origin/gh-pages, copies the cache in,
           # and re-applies its types to the fresh search-index.json before
           # we commit. Silent no-op on first ever deploy.
-          bash "$GITHUB_WORKSPACE/scripts/preserve-steam-type-cache.sh" "$(pwd)"
+          bash /tmp/preserve-steam-type-cache.sh "$(pwd)"
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
@@ -580,7 +585,7 @@ jobs:
           # Preserve steam-type-cache.json + column 11 across the force-push (#263).
           # Staging repo's gh-pages holds its own copy; falls back to the prod
           # cache if staging has none yet.
-          bash "$GITHUB_WORKSPACE/scripts/preserve-steam-type-cache.sh" "$(pwd)" gh-pages || true
+          bash /tmp/preserve-steam-type-cache.sh "$(pwd)" gh-pages || true
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json
           for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json; do
             [ -f "$f" ] && git add "$f"
@@ -805,6 +810,11 @@ jobs:
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
+          # Copy pipeline-helper scripts out of the workspace BEFORE the
+          # `git rm -rf .` below wipes them. `git rm -rf .` deletes every
+          # tracked file, including scripts/preserve-steam-type-cache.sh
+          # which the deploy step needs to run later. Introduced by #263.
+          cp scripts/preserve-steam-type-cache.sh /tmp/preserve-steam-type-cache.sh
           git checkout --orphan gh-pages-new
           git rm -rf .
           cp -r /tmp/protondb-output/data .
@@ -846,7 +856,7 @@ jobs:
             | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['count'])" 2>/dev/null || echo "0")
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
           # Preserve steam-type-cache.json + column 11 across the force-push (#263).
-          bash "$GITHUB_WORKSPACE/scripts/preserve-steam-type-cache.sh" "$(pwd)"
+          bash /tmp/preserve-steam-type-cache.sh "$(pwd)"
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
@@ -1029,6 +1039,11 @@ jobs:
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
+          # Copy pipeline-helper scripts out of the workspace BEFORE the
+          # `git rm -rf .` below wipes them. `git rm -rf .` deletes every
+          # tracked file, including scripts/preserve-steam-type-cache.sh
+          # which the deploy step needs to run later. Introduced by #263.
+          cp scripts/preserve-steam-type-cache.sh /tmp/preserve-steam-type-cache.sh
           git checkout --orphan gh-pages-new
           git rm -rf .
           cp -r /tmp/protondb-output/data .
@@ -1070,7 +1085,7 @@ jobs:
             | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['count'])" 2>/dev/null || echo "0")
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
           # Preserve steam-type-cache.json + column 11 across the force-push (#263).
-          bash "$GITHUB_WORKSPACE/scripts/preserve-steam-type-cache.sh" "$(pwd)"
+          bash /tmp/preserve-steam-type-cache.sh "$(pwd)"
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
