@@ -380,7 +380,10 @@
 .hlc-bars { display: flex; flex-direction: column; gap: 6px; }
 .hlc-row {
   display: grid;
-  grid-template-columns: 84px 1fr 56px;
+  /* Label column sizes to its widest label (e.g. "Deck Verified") so every
+     pill stays on ONE line and long words like "Unsupported" are never cut
+     off. All pills share that width, so they align in a tidy column. */
+  grid-template-columns: max-content 1fr 56px;
   gap: 10px;
   align-items: center;
 }
@@ -390,7 +393,8 @@
   font-size: 0.75rem;
   font-weight: 600;
   text-align: center;
-  line-height: 1.3;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 .hlc-track {
   height: 10px;

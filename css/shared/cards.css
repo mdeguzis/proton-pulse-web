@@ -89,12 +89,12 @@
 [data-store-pill-pos="art-corner"] .game-card-corner-tag {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   position: absolute;
   top: 0;
   right: 0;
-  padding: 4px 10px;
-  font-size: 0.62rem;
+  padding: 3px 8px;
+  font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -175,15 +175,15 @@
 }
 .game-card-owner-badge + .game-card-owner-badge { margin-left: 3px; }
 .game-card-owner-badge svg {
-  width: 11px;
-  height: 11px;
+  width: 15px;
+  height: 15px;
   display: block;
 }
 /* Small gap before the store text so the icons read as attached but
    distinct decals rather than merging with the "STEAM" label. */
 .game-card-owner-badge:last-of-type { margin-right: 4px; }
 @media (min-width: 760px) {
-  .game-card-owner-badge svg { width: 13px; height: 13px; }
+  .game-card-owner-badge svg { width: 17px; height: 17px; }
 }
 /* Desktop: give the report rows more presence with a bigger boxart and
    roomier padding. Steam header ratio (~2.14:1) is preserved. */
