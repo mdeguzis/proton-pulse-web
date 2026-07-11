@@ -207,9 +207,14 @@ function _renderShell() {
         <option value="cached">Cached (GOG/Epic with catalog URL)</option>
         <option value="missing">Missing (GOG/Epic with no URL)</option>
       </select>
-      <button class="admin-btn" id="boxart-probe-visible-btn" title="Probe every row on the current page">Probe visible page</button>
-      <button class="admin-btn admin-btn--primary" id="boxart-probe-all-btn" title="Probe every row that matches the current filters in bounded batches">Probe all (filtered)</button>
-      <button class="admin-btn" id="boxart-cancel-btn" hidden>Cancel</button>
+      <details class="admin-dropdown" id="boxart-actions">
+        <summary class="admin-btn admin-btn--primary">Actions <span class="admin-dropdown-caret">▾</span></summary>
+        <div class="admin-dropdown-menu">
+          <button class="admin-dropdown-item" id="boxart-probe-visible-btn" title="Probe every row on the current page">Probe visible page</button>
+          <button class="admin-dropdown-item" id="boxart-probe-all-btn" title="Probe every row that matches the current filters in bounded batches">Probe all (filtered)</button>
+          <button class="admin-dropdown-item admin-dropdown-item--danger" id="boxart-cancel-btn" hidden>Cancel batch</button>
+        </div>
+      </details>
     </div>
     <p class="admin-hint" style="margin:8px 0 12px">
       Loads search-index.json + game-images.json + nonsteam-images.json + box_art_overrides in this browser.
@@ -427,8 +432,36 @@ export async function renderBoxartAdmin() {
   }
   document.getElementById('boxart-loading').hidden = true;
 
-  const state = { store: 'all', textFilter: '', scope: 'all', status: 'all', page: 0, rows: [] };
+  // Filter state loaded from URL query params so refresh + browser back
+  // both restore whatever was last active (user request: retain filters
+  // across the detail-page round-trip and reloads).
+  const _initialParams = new URLSearchParams(window.location.search);
+  const state = {
+    store:      _initialParams.get('bxs') || 'all',
+    textFilter: _initialParams.get('bxq') || '',
+    scope:      _initialParams.get('bxsc') || 'all',
+    status:     _initialParams.get('bxst') || 'all',
+    page:       Math.max(0, parseInt(_initialParams.get('bxp') || '0', 10) || 0),
+    rows: [],
+  };
   let cancelToken = { cancelled: false };
+
+  // Write current filter state back into the URL (replaceState, no history
+  // spam). Keeps other tab query params intact (e.g. ?tab=boxart).
+  function _syncStateToUrl() {
+    const p = new URLSearchParams(window.location.search);
+    // Boxart-manager-scoped keys are `bx*` so they don't collide with
+    // other admin tabs' params.
+    const set = (k, v, dflt) => (v && v !== dflt) ? p.set(k, v) : p.delete(k);
+    set('bxs',  state.store,      'all');
+    set('bxq',  state.textFilter, '');
+    set('bxsc', state.scope,      'all');
+    set('bxst', state.status,     'all');
+    set('bxp',  state.page > 0 ? String(state.page) : '', '');
+    const qs = p.toString();
+    const url = `${window.location.pathname}${qs ? '?' + qs : ''}${window.location.hash}`;
+    window.history.replaceState(null, '', url);
+  }
 
   function refilter() {
     state.rows = _buildRows(indexes, {
@@ -438,6 +471,7 @@ export async function renderBoxartAdmin() {
       status: state.status,
     });
     state.page = 0;
+    _syncStateToUrl();
     _renderPage(state.rows, state.page);
   }
 
@@ -448,9 +482,25 @@ export async function renderBoxartAdmin() {
   const visBtn    = document.getElementById('boxart-probe-visible-btn');
   const allBtn    = document.getElementById('boxart-probe-all-btn');
   const cancelBtn = document.getElementById('boxart-cancel-btn');
+  const actionsDropdown = document.getElementById('boxart-actions');
+  // Close the dropdown after any menu-item click so it doesn't stay open
+  // while a batch runs. `open` toggles are the source of truth on <details>.
+  const _closeActions = () => { if (actionsDropdown) actionsDropdown.open = false; };
+  // Click outside the dropdown closes it too.
+  document.addEventListener('click', (e) => {
+    if (!actionsDropdown) return;
+    if (!actionsDropdown.contains(e.target)) actionsDropdown.open = false;
+  });
   const progEl    = document.getElementById('boxart-batch-progress');
   const table     = document.getElementById('boxart-table');
   const pager     = document.getElementById('boxart-pager');
+
+  // Restore the input values from state (URL) so the controls match what
+  // was filtered before the round-trip / reload.
+  if (searchEl && state.textFilter) searchEl.value = state.textFilter;
+  if (storeEl)  storeEl.value  = state.store;
+  if (scopeEl)  scopeEl.value  = state.scope;
+  if (statusEl) statusEl.value = state.status;
 
   let debounce = null;
   searchEl.addEventListener('input', () => {
@@ -469,6 +519,7 @@ export async function renderBoxartAdmin() {
   }
 
   visBtn.addEventListener('click', async () => {
+    _closeActions();
     setBatchRunning(true);
     cancelToken = { cancelled: false };
     try {
@@ -489,6 +540,7 @@ export async function renderBoxartAdmin() {
   });
 
   allBtn.addEventListener('click', async () => {
+    _closeActions();
     if (!state.rows.length) return;
     if (state.rows.length > 200 && !confirm(`Probe ${state.rows.length.toLocaleString()} rows? This runs in ${BATCH_SIZE}-row batches and can take a while.`)) return;
     setBatchRunning(true);
@@ -509,6 +561,7 @@ export async function renderBoxartAdmin() {
   });
 
   cancelBtn.addEventListener('click', () => {
+    _closeActions();
     cancelToken.cancelled = true;
     cancelBtn.disabled = true;
     cancelBtn.textContent = 'Cancelling...';
@@ -650,7 +703,8 @@ export async function renderBoxartAdmin() {
 const _DETAIL_ACTIONS = [
   { action: 'probe',   label: 'Probe',   cls: '',                     title: 'HEAD the canonical URL' },
   { action: 'refetch', label: 'Refetch', cls: '',                     title: "Ask the store's API for the current header URL" },
-  { action: 'sgdb',    label: 'SGDB',    cls: '',                     title: 'Fetch from SteamGridDB (community artwork)' },
+  { action: 'sgdb',    label: 'SGDB (by app id)', cls: '',            title: 'Fetch from SteamGridDB via Steam appid lookup. Errors if SGDB has no match for this appid; use the section below to search by title instead.' },
+  { action: 'sgdb-first', label: 'Set first SGDB result', cls: 'admin-btn--primary', title: 'Search SteamGridDB by the cleaned title and apply the first widescreen grid as the override in one click.' },
   { action: 'set-url', label: 'Set URL', cls: 'admin-btn--primary',   title: 'Set a custom URL that survives pipeline reruns' },
   { action: 'upload',  label: 'Upload',  cls: 'admin-btn--primary',   title: 'Upload an image (PNG/JPG/WebP, <= 2 MB)' },
   { action: 'clear',   label: 'Clear override', cls: 'admin-btn--danger', title: 'Remove the admin override', overrideOnly: true },
@@ -985,8 +1039,47 @@ export async function renderBoxartAdminDetail(appId) {
             : await refetchNonSteamHeader(row.appId, row.cachedUrl || null);
         } else {
           result = await refetchSgdbHeader(row.appId);
+          // Common failure: SGDB has no entry for this Steam appid.
+          // The bottom-of-page title search still works so hint at it.
+          if (!result?.ok && /no match|no game id|non-Steam id/i.test(result?.error || '')) {
+            result = {
+              ...result,
+              error: `${result.error} -- try the "Set first SGDB result" button (searches by title) or the SteamGridDB panel below.`,
+            };
+          }
         }
         setStatus(_formatBoxartResult(action, result), !result.ok);
+      } else if (action === 'sgdb-first') {
+        // Search SteamGridDB by cleaned title, apply the first widescreen
+        // grid as the override, no manual click needed. Falls back to any
+        // dimension if widescreen returns zero. Same happy-path shape as
+        // the manual per-tile "Set as box art" button.
+        setStatus('sgdb-first: searching by title...');
+        const term = _cleanTitle(row.title);
+        let sr = await searchSgdb(row.appId, term, '460x215,920x430');
+        if (!sr?.ok || !Array.isArray(sr.results) || sr.results.length === 0) {
+          setStatus('sgdb-first: no widescreen results; retrying without dim filter...');
+          sr = await searchSgdb(row.appId, term, '');
+        }
+        if (!sr?.ok) {
+          setStatus(`sgdb-first failed: ${sr?.error || 'search error'}`, true);
+        } else if (!Array.isArray(sr.results) || sr.results.length === 0) {
+          setStatus(`sgdb-first: no grids found for "${term}". Open the SteamGridDB panel below to search manually.`, true);
+        } else {
+          const pick = sr.results.find((g) => g.url) || sr.results[0];
+          setStatus(`sgdb-first: applying ${pick.width || '?'}x${pick.height || '?'} grid...`);
+          const applied = await setBoxArtOverride(row.appId, pick.url);
+          if (applied.ok) {
+            row.override = { image_url: pick.url, source: 'manual' };
+            if (indexes.overrideMap) indexes.overrideMap[row.appId] = row.override;
+            setStatus(`sgdb-first: box art override set from SteamGridDB (${pick.width || '?'}x${pick.height || '?'}).`);
+            refreshBody();
+            const prev = document.getElementById('boxart-detail-preview');
+            if (prev) { prev.src = pick.url; prev.style.opacity = 1; }
+          } else {
+            setStatus(`sgdb-first apply failed: ${applied.error || 'unknown'}`, true);
+          }
+        }
       } else if (action === 'set-url') {
         ctx = { appId: row.appId };
         modalInput.value = row.override?.image_url || row.cachedUrl || '';

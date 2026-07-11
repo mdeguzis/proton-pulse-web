@@ -388,6 +388,52 @@
   opacity: 0.5;
 }
 
+/* Dropdown menu built off <details><summary>: keyboard/a11y for free.
+   Used by the Box Art Manager toolbar to collapse Probe visible / Probe
+   all / Cancel batch into a single "Actions" button. */
+.admin-dropdown { position: relative; display: inline-block; }
+.admin-dropdown > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.admin-dropdown > summary::-webkit-details-marker { display: none; }
+.admin-dropdown-caret { font-size: 0.7em; opacity: 0.9; }
+.admin-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 220px;
+  background: var(--s1, #1a2233);
+  border: 1px solid rgba(92,139,214,0.35);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+  padding: 4px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.admin-dropdown-item {
+  appearance: none;
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: #cfd8e6;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+}
+.admin-dropdown-item:hover { background: rgba(92,139,214,0.18); color: #fff; }
+.admin-dropdown-item:disabled { opacity: 0.4; cursor: not-allowed; }
+.admin-dropdown-item--danger { color: #ff9494; }
+.admin-dropdown-item--danger:hover { background: rgba(255,80,80,0.15); color: #ffbdbd; }
+
 /* #148: report detail header lays the subhead title flush left and the
    moderation toolbar flush right so all actions sit above the fold.
    Wraps to a second row on narrow viewports so nothing overflows. */
