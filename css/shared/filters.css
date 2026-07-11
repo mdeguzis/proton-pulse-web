@@ -119,6 +119,30 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
+  /* .filter-panel--stack (browse page) normally lays groups side-by-side
+     via flex-direction: row on desktop. reports.css only overrides that at
+     max-width: 560px, so between 561px and 720px the pill groups overflow
+     horizontally inside the modal. Force column direction here so every
+     group gets its own vertical row and the pills wrap within it. */
+  .filter-panel--stack.open {
+    flex-direction: column !important;
+    flex-wrap: nowrap;
+    gap: 14px;
+    align-items: stretch;
+  }
+  /* Guarantee vertical-only scroll: any child that tries to grow horizontally
+     (a long pill row that would push past the viewport) gets its own wrap. */
+  .filter-panel.open,
+  .pg-filter-panel.open,
+  .filter-panel--stack.open {
+    overflow-x: hidden;
+  }
+  .filter-panel .pg-filter-group,
+  .pg-filter-panel .pg-filter-group,
+  .filter-panel--stack .pg-filter-group {
+    max-width: 100%;
+    min-width: 0;
+  }
   /* Body items get inline padding so pills don't sit flush against the edge.
      Header + footer set their own padding so they can stretch full width. */
   .filter-panel.open > *:not(.filter-panel-mobile-header):not(.filter-panel-footer):not(.filter-panel-footer--stack),

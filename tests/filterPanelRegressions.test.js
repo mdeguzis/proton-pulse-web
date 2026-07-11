@@ -156,6 +156,15 @@ describe('mobile filter modal (<= 720px) -- full-viewport modal pattern', () => 
     expect(flat).toMatch(/\.filter-panel\.open \.filter-panel-footer[\s\S]*?position: sticky[\s\S]*?bottom: 0/);
   });
 
+  test('inside the mobile modal, .filter-panel--stack forces column direction and blocks horizontal overflow', () => {
+    // reports.css lays .filter-panel--stack groups side-by-side above 560px.
+    // The modal at <=720px must override that so pill groups stack vertically
+    // (labels + wrapped pills, one per row) instead of overflowing off the
+    // right edge like they did before this fix.
+    expect(flat).toMatch(/\.filter-panel--stack\.open\s*\{\s*flex-direction: column/);
+    expect(flat).toMatch(/\.filter-panel\.open[\s\S]*?overflow-x: hidden/);
+  });
+
   test('home.js filter panel ships the mobile header markup with a close X', () => {
     expect(homeSrc).toContain('filter-panel-mobile-header');
     expect(homeSrc).toContain('class="filter-panel-close"');
