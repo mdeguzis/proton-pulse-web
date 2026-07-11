@@ -362,15 +362,39 @@
 
 <div class="mobile-nav-drawer" id="mobile-nav-drawer" hidden>
   <a href="index.html" data-page="index"><svg class="nav-icon" aria-hidden="true"><use href="#icon-home"/></svg> Home</a>
-  <a href="app.html" data-page="app"><svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg> Reports</a>
-  <a href="data-index.html" data-page="data-index"><svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg> Data</a>
-  <a href="coverage.html" data-page="coverage"><svg class="nav-icon" aria-hidden="true"><use href="#icon-chart"/></svg> Coverage</a>
-  <a href="stats.html" data-page="stats"><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Stats</a>
-  <a href="scoring.html" data-page="scoring"><svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg> Scoring</a>
-  <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
-  <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> Decky Plugin</a>
-  <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-github"/></svg> GitHub</a>
-  <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg> Discord</a>
+  <!-- Browse group: same items as the desktop Browse dropdown. The parent is a
+       button that expands/collapses its sub-items (accordion), with a caret
+       showing the state. -->
+  <div class="mnav-group">
+    <button class="mnav-parent" type="button" aria-expanded="false" data-group="browse">
+      <svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg>
+      <span>Browse</span>
+      <svg class="mnav-caret" aria-hidden="true" viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    </button>
+    <div class="mnav-sub">
+      <a href="app.html" data-page="app"><svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg> Reports</a>
+      <a href="app.html?filter=mine" data-page="my-library" id="mobile-my-library"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> My Library</a>
+      <a href="app.html?filter=wishlist" data-page="my-wishlist" id="mobile-my-wishlist"><svg class="nav-icon" aria-hidden="true"><use href="#icon-list"/></svg> My Wishlist</a>
+      <a href="data-index.html" data-page="data-index"><svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg> Data</a>
+      <a href="coverage.html" data-page="coverage"><svg class="nav-icon" aria-hidden="true"><use href="#icon-chart"/></svg> Coverage</a>
+      <a href="stats.html" data-page="stats"><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Stats</a>
+    </div>
+  </div>
+  <!-- Resources group: mirrors the desktop Resources dropdown. -->
+  <div class="mnav-group">
+    <button class="mnav-parent" type="button" aria-expanded="false" data-group="resources">
+      <svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg>
+      <span>Resources</span>
+      <svg class="mnav-caret" aria-hidden="true" viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    </button>
+    <div class="mnav-sub">
+      <a href="scoring.html" data-page="scoring"><svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg> Scoring</a>
+      <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> Decky Plugin</a>
+      <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
+      <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg> Discord</a>
+      <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-github"/></svg> GitHub</a>
+    </div>
+  </div>
   <a href="admin.html" id="mobile-admin-link" data-page="admin" hidden><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Admin</a>
   <a href="status.html" data-page="status" id="mobile-status-link"><span class="topbar-status-dot" data-state="unknown" aria-hidden="true"></span> Status</a>
   <!-- About kept last so it remains the trailing item whether the
@@ -797,6 +821,26 @@
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       if (open) drawer.removeAttribute('hidden');
     });
+    // Accordion parents (Browse / Resources): toggle their sub-list open;
+    // clicking a parent must NOT close the whole drawer, so it's handled
+    // before the link handler below and stops there.
+    drawer.querySelectorAll('.mnav-parent').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const group = btn.closest('.mnav-group');
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        if (group) group.classList.toggle('mnav-open', !expanded);
+      });
+    });
+    // Auto-expand whichever group holds the current page so the active item is
+    // visible the moment the drawer opens.
+    const activeSub = drawer.querySelector('.mnav-sub a.active, .mnav-sub a[aria-current="page"]');
+    if (activeSub) {
+      const group = activeSub.closest('.mnav-group');
+      const parent = group && group.querySelector('.mnav-parent');
+      if (group && parent) { group.classList.add('mnav-open'); parent.setAttribute('aria-expanded', 'true'); }
+    }
+    // Real navigation links close the drawer; parents (buttons) don't match.
     drawer.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
         drawer.classList.remove('open');

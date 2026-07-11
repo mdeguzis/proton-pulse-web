@@ -93,6 +93,12 @@
     max-width: none;
     width: auto;
     box-sizing: border-box;
+    /* Cap the height and scroll the panel itself; overscroll-behavior:contain
+       stops the touch scroll from chaining to the page behind it. */
+    max-height: 72vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
 }
 

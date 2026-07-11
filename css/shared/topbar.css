@@ -675,6 +675,35 @@ html[data-motion="off"] .banner-atoms {
 .mobile-nav-drawer a:hover { background: rgba(102, 192, 244, 0.06); text-decoration: none; }
 .mobile-nav-drawer a.active { color: var(--accent-hi); background: var(--accent-soft); }
 .mobile-nav-drawer a .nav-icon { width: 18px; height: 18px; color: var(--accent); }
+/* Drawer scrolls itself if the expanded accordions run past the viewport. */
+.mobile-nav-drawer { max-height: calc(100vh - var(--topnav-h)); overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+/* Accordion parent rows (Browse / Resources): styled like the drawer links but
+   they're buttons that expand a sub-list instead of navigating. */
+.mnav-parent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px var(--content-pad);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+.mnav-parent:hover { background: rgba(102, 192, 244, 0.06); }
+.mnav-parent .nav-icon { width: 18px; height: 18px; color: var(--accent); }
+.mnav-caret { margin-left: auto; color: var(--muted); transition: transform 0.18s ease; }
+.mnav-parent[aria-expanded="true"] .mnav-caret { transform: rotate(180deg); }
+/* Sub-items: collapsed by default, revealed when the group is open. Indented
+   and on a slightly inset background so they read as children. */
+.mnav-sub { display: none; background: rgba(0, 0, 0, 0.18); }
+.mnav-group.mnav-open .mnav-sub { display: block; }
+.mnav-sub a { padding-left: calc(var(--content-pad) + 30px); font-size: 0.86rem; }
 
 /* legacy classes - kept for pages still using the old single-row topbar styles */
 .topbar-toggle, .hamburger, .topbar-spacer, .topbar-link, .topbar-link--button { display: none !important; }
