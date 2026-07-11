@@ -76,14 +76,15 @@ describe('game page: rating panel (dial + per-tier bars + flag)', () => {
     expect(src).toContain('background:${RATING_COLORS[t]}');
   });
 
-  test('live-only games still show the 5-bar breakdown, with a ProtonDB rating + count note above', () => {
+  test('live-only games still show the 5-bar breakdown, with the ProtonDB tier chip inline in the confidence line', () => {
     // ProtonDB's summary API has no per-tier counts, so the bars will read
-    // 0/0/0/0/0 for a live-only game. We prepend a one-line note telling
-    // users the aggregate rating + count so the section still communicates
-    // something (#219 follow-up).
+    // 0/0/0/0/0 for a live-only game. The aggregate verdict is a small inline
+    // chip inside the confidence line (grp-live-chip) instead of a separate
+    // row so the panel keeps the same height as before the #219 live-summary
+    // work landed (#219 follow-up).
     expect(src).toContain('class="grp-bars"');
-    expect(src).toContain('grp-bars-note--live');
-    expect(src).toContain('ProtonDB rating:');
+    expect(src).toContain('grp-live-chip');
+    expect(src).toContain('via ProtonDB live');
   });
 
   test('confidence summary links to the scoring breakdown via a "why?" link', () => {
@@ -107,20 +108,21 @@ describe('game page: rating panel (dial + per-tier bars + flag)', () => {
     expect(src).toContain('src="${STEAM_IMG(appId)}"');
   });
 
-  test('ProtonDB rating + count note renders above the 5-bar stack when live data exists (#219)', () => {
-    // Kept the classic 5-bar breakdown even when mirror sample is empty; just
-    // prepend a one-line "ProtonDB rating: PLATINUM * 371 reports" note so
-    // users see the aggregate alongside the (possibly empty) bars.
-    expect(src).toContain("grp-bars-note--live");
-    expect(src).toContain("ProtonDB rating:");
-    expect(src).toContain("liveTotal.toLocaleString()");
+  test('ProtonDB tier appears as an inline chip inside the confidence line (#219)', () => {
+    // The aggregate ProtonDB verdict rides inline in the confidence line as
+    // a small color-coded chip instead of a separate info-box row, so the
+    // panel keeps the same height as before while still surfacing the tier.
+    expect(src).toContain("grp-live-chip");
+    expect(src).toContain("data-tier=");
+    expect(src).toContain("liveSummary.tier");
+    expect(src).toContain("via ProtonDB live");
   });
 
   test('summary tags source when count is driven by ProtonDB live (#219)', () => {
     // Users need to see whether "N reports" came from mirror or live so the
     // aggregate makes sense even when the tier bars look tiny.
     expect(src).toContain("_fromLive");
-    expect(src).toContain("(via ProtonDB live)");
+    expect(src).toContain("via ProtonDB live");
   });
 
   test('confidence summary buckets off the percent, not the report count (#187)', () => {

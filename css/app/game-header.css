@@ -335,6 +335,28 @@
 .grp-why { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font-weight: 700; margin-left: 4px; }
 .grp-why:hover { color: var(--accent-hi); }
 
+/* Small inline ProtonDB tier chip that rides inside the confidence line so
+   the panel keeps its original height. Tier color is applied to the chip
+   background, monospaced text so PLATINUM / BORKED don't jump around. */
+.grp-live-chip {
+  display: inline-block;
+  padding: 0 5px;
+  margin-left: 2px;
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  vertical-align: 1px;
+  color: #0a0c10;
+  background: #808891;
+}
+.grp-live-chip[data-tier="platinum"] { background: #b4d4f5; }
+.grp-live-chip[data-tier="gold"]     { background: #f0c674; }
+.grp-live-chip[data-tier="silver"]   { background: #c8d0d8; }
+.grp-live-chip[data-tier="bronze"]   { background: #d19b6c; }
+.grp-live-chip[data-tier="borked"]   { background: #d47a7a; color: #ffffff; }
+
 /* ---- action row (row2 col2, under the panel). Icon + labeled buttons keep
    their natural width and never wrap their labels; Submit shrinks first and,
    when the row runs out of room, wraps whole to its own full-width line. ---- */
@@ -809,11 +831,14 @@
 }
 @media (max-width: 720px) {
   /* On narrow screens the header grid collapses to one column: box art,
-     then the rating panel, then the action row. */
+     rating panel, OS/type/user tags, then the action row. Without an
+     explicit grid-row on the tags, they collide with the rating panel
+     because both default to grid-row: 2. */
   .game-header-grid { grid-template-columns: 1fr; }
   .game-header-art-col { grid-column: 1; grid-row: 1; }
   .game-rating-panel { grid-column: 1; grid-row: 2; }
-  .game-header-actions { grid-column: 1; grid-row: 3; }
+  .game-header-art-tags { grid-column: 1; grid-row: 3; align-self: start; }
+  .game-header-actions { grid-column: 1; grid-row: 4; }
 }
 .source-summary-tile:hover {
   border-color: var(--accent);

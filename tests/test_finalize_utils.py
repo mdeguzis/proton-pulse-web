@@ -221,6 +221,59 @@ def test_compute_game_summary_skips_reserved(tmp_path):
     assert tier == "borked"  # latest.json was skipped
 
 
+def test_compute_game_summary_small_stale_sample_returns_pending(tmp_path):
+    # MK11-style case (issue: search-index said borked while game page said gold).
+    # Small stored sample (< 20) with median age well past 2 years should defer
+    # to the live ProtonDB summary via a "pending" tier instead of committing
+    # to a stale-borked verdict.
+    now_ts = 1_752_000_000.0
+    stale_ts = now_ts - (2800 * 86400)  # ~7.7 years old
+    app_dir = tmp_path / "976310"
+    app_dir.mkdir()
+    (app_dir / "2018.json").write_text(json.dumps(
+        [{"rating": "borked", "source": "protondb", "timestamp": stale_ts}] * 11
+    ))
+    tier, pdb, pulse, _ = _compute_game_summary(app_dir, now_ts=now_ts)
+    assert tier == "pending"
+    assert pdb == 11
+    assert pulse == 0
+
+
+def test_compute_game_summary_small_recent_sample_keeps_tier(tmp_path):
+    # A small sample from within the last 2 years should still commit to a
+    # tier -- the staleness guard is specifically for old handfuls.
+    now_ts = 1_752_000_000.0
+    recent_ts = now_ts - (60 * 86400)
+    app_dir = tmp_path / "12345"
+    app_dir.mkdir()
+    (app_dir / "2026.json").write_text(json.dumps(
+        [{"rating": "silver", "source": "protondb", "timestamp": recent_ts}] * 5
+    ))
+    tier, _, _, _ = _compute_game_summary(app_dir, now_ts=now_ts)
+    # silver's score is exactly 60, which hits the "gold" threshold in
+    # _score_to_tier. The key assertion is that the staleness guard did NOT
+    # kick in and mark this recent sample as pending.
+    assert tier != "pending"
+    assert tier == "gold"
+
+
+def test_compute_game_summary_large_stale_sample_keeps_tier(tmp_path):
+    # A well-sampled stale game (>= 20 rated reports) can still claim its
+    # tier -- the guard is only about *thin* stale samples.
+    now_ts = 1_752_000_000.0
+    stale_ts = now_ts - (2000 * 86400)
+    app_dir = tmp_path / "99999"
+    app_dir.mkdir()
+    (app_dir / "2020.json").write_text(json.dumps(
+        [{"rating": "silver", "source": "protondb", "timestamp": stale_ts}] * 30
+    ))
+    tier, _, _, _ = _compute_game_summary(app_dir, now_ts=now_ts)
+    # 30 silver reports -> 60% score -> gold. Key check: the staleness guard
+    # did NOT downgrade this to pending because the sample is well above the
+    # 20-report threshold.
+    assert tier == "gold"
+
+
 # ── trend computation ────────────────────────────────────────────────────────
 
 def _reports_at(now_ts, offsets_ratings):

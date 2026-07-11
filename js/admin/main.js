@@ -18,7 +18,7 @@ import { fetchAnalytics } from './api/analytics.js?v=a1c14331';
 import { renderAnalytics } from './components/analytics.js?v=61349dfd';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
 import { renderDepotTracking } from './components/depotTracking.js?v=8ce33fc6';
-import { renderBoxartAdmin, renderBoxartAdminDetail } from './components/boxart.js?v=1078ee29';
+import { renderBoxartAdmin, renderBoxartAdminDetail } from './components/boxart.js?v=8a79371e';
 import { renderApiExplorer } from './components/api-explorer.js?v=f5a66871';
 import { renderGameManager } from './components/gameManager.js?v=de1dd326';
 import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=99d5c1f5';
@@ -422,7 +422,17 @@ function closeBanModal() {
 
 function switchTab(tabName) {
   const sel = document.getElementById('admin-tab-select');
-  if (sel.value !== tabName) sel.value = tabName;
+  if (sel) {
+    // Some browsers refuse to select a value pointing at an <option hidden>
+    // (applyTabVisibility hides options the current admin can't see). If the
+    // caller is switching to a legitimately-visible tab (activateTab already
+    // gated on canSeeTab) make sure the option isn't hidden before assigning,
+    // otherwise the dropdown silently reverts to blank / first-visible and
+    // stops mirroring the actual page state until the next full refresh.
+    const opt = Array.from(sel.options).find(o => o.value === tabName);
+    if (opt && opt.hidden) opt.hidden = false;
+    if (sel.value !== tabName) sel.value = tabName;
+  }
   document.querySelectorAll('.admin-section').forEach(sec => {
     sec.hidden = sec.id !== `tab-${tabName}`;
   });
@@ -828,11 +838,24 @@ function wireEvents() {
     if (e.target === e.currentTarget) closeBanModal();
   });
 
-  // Browser back button / swipe back from detail screens.
+  // Browser back button / swipe back from detail screens. Also handles the
+  // boxart detail view that clears the tab select on entry -- without this,
+  // popping back would leave the panel showing boxart-list content while the
+  // dropdown stayed blank.
   window.addEventListener('popstate', e => {
     if (!document.getElementById('tab-user-detail').hidden) activateTab(userDetailReturnTab);
     else if (!document.getElementById('tab-flag-detail').hidden) activateTab('flagged');
     else if (!document.getElementById('tab-report-detail').hidden) activateTab('all-reports');
+    else if (!document.getElementById('tab-boxart-detail').hidden) activateTab('boxart');
+    else {
+      // Fallback: URL changed and we're already on a list tab. Re-sync the
+      // dropdown to whatever ?tab= says so it never drifts out of step with
+      // the visible section (the reported "dropdown reflects wrong tab until
+      // refresh" bug).
+      const params = new URLSearchParams(window.location.search);
+      const t = params.get('tab');
+      if (t && TAB_LOADERS[t]) activateTab(t, { updateUrl: false });
+    }
   });
 
   // Add admin form

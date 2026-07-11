@@ -305,4 +305,31 @@ describe('computeGameStats end-to-end', () => {
     expect(stats.ratingCounts.gold).toBe(1);
     expect(stats.totalReports).toBe(2);
   });
+
+  describe('staleness cap', () => {
+    test('two very old reports get a low confidence and expose the cap', () => {
+      // 2 reports ~2877 days old (~7.9 years) with the same rating.
+      // Before: 48% -- consistency was masking the staleness.
+      // After: cap kicks in at 40% multiplier for median >= 5-8yr window.
+      const reports = [rpt('gold', 2877), rpt('gold', 2877)];
+      const stats = computeGameStats(reports, []);
+      expect(stats.confidencePct).toBeLessThan(25);
+      const stalenessRow = stats.confFactors.find(f => f.label === 'Staleness cap');
+      expect(stalenessRow).toBeDefined();
+      expect(stalenessRow.detail).toMatch(/years/);
+    });
+
+    test('fresh reports do not add a staleness cap row', () => {
+      const reports = [rpt('gold', 10), rpt('gold', 20), rpt('platinum', 5)];
+      const stats = computeGameStats(reports, []);
+      const stalenessRow = stats.confFactors.find(f => f.label === 'Staleness cap');
+      expect(stalenessRow).toBeUndefined();
+    });
+
+    test('an 8yr+ report scores far worse than a 1yr report of the same rating', () => {
+      const fresh = computeGameStats([rpt('gold', 300)], []);
+      const ancient = computeGameStats([rpt('gold', 3000)], []);
+      expect(ancient.confidencePct).toBeLessThan(fresh.confidencePct);
+    });
+  });
 });

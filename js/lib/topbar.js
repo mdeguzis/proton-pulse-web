@@ -616,6 +616,124 @@
     wireThemeToggle();
     wireDropdowns();
     wireStatusDot();
+    wireFilterPanelClose();
+  }
+
+  // ---- Mobile filter modal close button (delegated) --------------------
+  //
+  // On mobile (<= 720px) the .filter-panel opens as a full-viewport modal
+  // with a header row containing a .filter-panel-close X button. Every
+  // filter panel across the site (home, index, game-page) ships that
+  // markup, so a single delegated click handler in topbar.js -- which
+  // loads on every page -- covers all of them. Clicking the X closes the
+  // nearest .filter-panel / .pg-filter-panel and resets its toggle's
+  // aria-expanded state so screen readers stay in sync.
+  //
+  // Portal-on-open: base.css sets .main-content { z-index: 2 } to sit above
+  // the body::before scanline overlay. That creates a stacking context, so
+  // any filter-panel inside main-content is trapped at stacking-layer 2 --
+  // below the fixed topbar at stacking-layer 200 -- no matter how high its
+  // own z-index is. To rise above the topbar on mobile, we detach the panel
+  // and re-append it to <body> when it opens (only on mobile widths). When
+  // it closes we move it back to its original DOM location so page-level
+  // event wiring (outside-click handlers, sibling toggle button lookup)
+  // still works. MutationObserver watches every panel across the site so
+  // no per-page changes are required.
+  const MOBILE_MODAL_QUERY = '(max-width: 720px)';
+  const _panelOriginals = new WeakMap();  // panel -> { parent, next }
+  function _portalPanelToBody(panel) {
+    if (_panelOriginals.has(panel)) return;
+    _panelOriginals.set(panel, { parent: panel.parentNode, next: panel.nextSibling });
+    document.body.appendChild(panel);
+  }
+  function _restorePanel(panel) {
+    const rec = _panelOriginals.get(panel);
+    if (!rec || !rec.parent) return;
+    if (rec.next && rec.next.parentNode === rec.parent) rec.parent.insertBefore(panel, rec.next);
+    else rec.parent.appendChild(panel);
+    _panelOriginals.delete(panel);
+  }
+  function _handleOpenState(panel) {
+    const isOpen = panel.classList.contains('open');
+    const isMobile = window.matchMedia(MOBILE_MODAL_QUERY).matches;
+    if (isOpen && isMobile) _portalPanelToBody(panel);
+    else _restorePanel(panel);
+  }
+  function wireFilterPanelClose() {
+    // Portal each panel when its .open class flips on/off. game-page.js
+    // renders its filter panel long after DOMContentLoaded, so we can't just
+    // scope the observer to panels present at inject() time -- watch the
+    // document subtree for attribute + childList changes and portal any
+    // qualifying panel we find. attributeFilter keeps the callback cheap.
+    function _observePanel(panel) {
+      if (panel.__ppFilterObs) return;
+      panel.__ppFilterObs = true;
+      const obs = new MutationObserver(function (records) {
+        for (const rec of records) {
+          if (rec.attributeName === 'class') _handleOpenState(rec.target);
+        }
+      });
+      obs.observe(panel, { attributes: true, attributeFilter: ['class'] });
+      _handleOpenState(panel);
+    }
+    document.querySelectorAll('.filter-panel, .pg-filter-panel').forEach(_observePanel);
+    // Catch panels that get rendered later (e.g. game-page filter panel
+    // injected after report data loads).
+    const treeObs = new MutationObserver(function (records) {
+      for (const rec of records) {
+        rec.addedNodes && rec.addedNodes.forEach(function (n) {
+          if (n.nodeType !== 1) return;
+          if (n.matches && n.matches('.filter-panel, .pg-filter-panel')) _observePanel(n);
+          if (n.querySelectorAll) n.querySelectorAll('.filter-panel, .pg-filter-panel').forEach(_observePanel);
+        });
+      }
+    });
+    treeObs.observe(document.body, { childList: true, subtree: true });
+    // Viewport crosses the 720px boundary (rotation, window resize on
+    // Chromebook): close and restore every open panel so we never leave a
+    // portal in a busted intermediate state. Users can re-open in the new
+    // layout mode; this is safer than trying to reflow mid-flight.
+    if (window.matchMedia) {
+      const mq = window.matchMedia(MOBILE_MODAL_QUERY);
+      const onMqChange = function () {
+        document.querySelectorAll('.filter-panel.open, .pg-filter-panel.open').forEach(function (p) {
+          p.classList.remove('open');
+        });
+      };
+      if (mq.addEventListener) mq.addEventListener('change', onMqChange);
+      else if (mq.addListener) mq.addListener(onMqChange);
+    }
+    // Delegated close on the X button. Lives on document so it survives the
+    // panel being portaled to body (event bubbles up either way).
+    document.addEventListener('click', function (e) {
+      const btn = e.target && e.target.closest && e.target.closest('.filter-panel-close');
+      if (!btn) return;
+      e.stopPropagation();
+      const panel = btn.closest('.filter-panel, .pg-filter-panel');
+      if (!panel) return;
+      panel.classList.remove('open');
+      // Reset the associated toggle's aria-expanded. When the panel has been
+      // portaled to <body>, the toggle no longer lives as a sibling ancestor,
+      // so read the original wrap from _panelOriginals to find it.
+      const rec = _panelOriginals.get(panel);
+      const wrap = (rec && rec.parent) || panel.parentElement;
+      if (wrap) {
+        const toggle = wrap.querySelector('[aria-expanded="true"]');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      }
+      void logFrontendEvent('DEBUG', 'filter panel closed via mobile modal X', {
+        panelId: panel.id || null,
+        portaled: _panelOriginals.has(panel),
+        source: 'wireFilterPanelClose',
+      });
+    });
+  }
+  // Debug-log helper: filter-modal close is a good candidate to spot the
+  // "close does nothing" class of bug across pages. Reuses the topbar's
+  // existing logging pattern (no-op when window.ppTrack isn't available).
+  function logFrontendEvent(level, msg, ctx) {
+    try { if (typeof window.ppTrack === 'function') window.ppTrack('log', { level: level, msg: msg, ctx: ctx || {} }); } catch (_) {}
+    return Promise.resolve();
   }
 
   // ---- Site status dot on the topbar (see #254) ------------------------

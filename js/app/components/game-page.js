@@ -1,8 +1,8 @@
 // game-page (components) for the app page. Relocated from app.js.
 
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
-import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=1b8ae722';
-import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=8dc92cf7';
+import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=8051e115';
+import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=1c1b7f9d';
 import { getWebClientId } from '../../shared/submit.js?v=75603703';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=d39add5f';
 import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=55a861cb';
@@ -14,6 +14,7 @@ import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, 
 import { renderCard } from './report-card.js?v=faa750d4';
 import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
+import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=f9591262';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=ba0d7848';
 import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=c7e1268c';
@@ -475,6 +476,24 @@ export async function renderGamePage(appId) {
     try { const s = await window.SupaAuth.getSession(); window._ppMyUserId = s?.user?.id || ''; } catch {}
   }
 
+  // Admin-hidden game gate (#234 bug follow-up). The admin panel writes to
+  // game_hides but nothing on the frontend consumed it, so a hidden game
+  // could still be loaded via a direct #/app/<id> hash. Refuse to render
+  // the page and point the user home instead.
+  try {
+    const hides = await loadGameHides();
+    if (hides && hides.has(String(appId))) {
+      el.innerHTML = `
+        <div class="state-box" style="max-width:520px;margin:40px auto;text-align:center">
+          <h2 style="margin-top:0">Game hidden</h2>
+          <p style="color:var(--muted);margin:14px 0">This game has been removed from Proton Pulse by an admin. If you think this is a mistake, contact the maintainer.</p>
+          <p style="color:var(--muted);font-size:0.85em">App ID: <code>${String(appId).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]))}</code></p>
+          <a href="index.html" class="submit-report-btn" style="display:inline-block;margin-top:12px">Back to home</a>
+        </div>`;
+      return;
+    }
+  } catch { /* if the fetch fails, fall through and render normally */ }
+
   // Adult-content gate: if the search-index flags this appId as adult
   // and the "Show adult games" preference is off, render a block page
   // instead of loading reports. The block page offers a one-click
@@ -859,8 +878,15 @@ export async function renderGamePage(appId) {
     // When the live total drives the count, tag the source so users understand
     // the summary is authoritative even when we mirror only a small slice (#219).
     const _fromLive = !!liveSummary && liveTotal > cdn.length;
+    // Inline ProtonDB tier chip that rides inside the confidence line instead
+    // of a full extra row underneath, so the panel keeps the same height as
+    // before the #219 live-summary work. The tier badge is small, colored,
+    // and reads "GOLD" / "PLATINUM" etc. next to "via ProtonDB live".
+    const _liveTierChipInline = liveSummary
+      ? ` <span class="grp-live-chip" data-tier="${esc(String(liveSummary.tier || '').toLowerCase())}">${esc(String(liveSummary.tier || '').toUpperCase())}</span>`
+      : '';
     const overallTileSummary = hasAnyReports
-      ? `${confBucket} confidence across ${totalReports.toLocaleString()} report${totalReports !== 1 ? 's' : ''}${_fromLive ? ' (via ProtonDB live)' : ''}${pulseHasConfigs ? ` / ${configs.length} config${configs.length !== 1 ? 's' : ''}` : ''}`
+      ? `${confBucket} confidence across ${totalReports.toLocaleString()} report${totalReports !== 1 ? 's' : ''}${_fromLive ? ` (via ProtonDB live${_liveTierChipInline})` : ''}${pulseHasConfigs ? ` / ${configs.length} config${configs.length !== 1 ? 's' : ''}` : ''}`
       : (pulseHasConfigs ? 'Community-submitted configs available' : 'No community data yet');
     // Rating distribution: one horizontal bar per tier, filled with the tier
     // color and scaled to the busiest tier so the shape reads at a glance.
@@ -875,16 +901,12 @@ export async function renderGamePage(appId) {
     const maxTierCount = Math.max(1, ...TIER_ORDER.map((t) => ratingCounts[t]));
     // ProtonDB's summary API only exposes aggregate fields (no per-tier
     // counts), so we can never draw the 5-bar breakdown from a live-only
-    // game. Keep the standard 5-bar layout no matter what, and prepend a
-    // one-line note showing the ProtonDB rating + total when we have it so
-    // users see "PLATINUM * 371 reports" alongside the (possibly empty) bars.
+    // game. Keep the standard 5-bar layout no matter what. The overall
+    // ProtonDB verdict now lives in a subtle line inside the panel footer
+    // (see _liveInfoLine below) rather than as a big banner over the bars,
+    // so it stays informative without dominating a Pulse-pending page.
     const _liveTierKey = liveSummary ? String(liveSummary.tier || '').toLowerCase() : '';
-    const _liveNote = liveSummary
-      ? `<div class="grp-bars-note grp-bars-note--live">
-          ProtonDB rating: <strong>${esc(String(liveSummary.tier || '').toUpperCase())}</strong> &middot; <strong>${liveTotal.toLocaleString()}</strong> report${liveTotal !== 1 ? 's' : ''}
-        </div>`
-      : '';
-    const tierBars = `<div class="grp-bars">${_liveNote}${TIER_ORDER.map((t) => {
+    const tierBars = `<div class="grp-bars">${TIER_ORDER.map((t) => {
           const n = ratingCounts[t];
           const pct = Math.round((n / maxTierCount) * 100);
           return `<div class="grp-bar grp-bar-${t}" title="${n} ${t} report${n !== 1 ? 's' : ''}">
@@ -1145,6 +1167,10 @@ export async function renderGamePage(appId) {
             </button>
             ${anyActive ? `<span class="filter-count">${reps.length} of ${combined.length} shown</span>` : ''}
             <div class="filter-panel" id="filterPanel">
+              <div class="filter-panel-mobile-header">
+                <span class="filter-panel-mobile-title">Filters</span>
+                <button type="button" class="filter-panel-close" aria-label="Close filters">&times;</button>
+              </div>
               <div class="filter-panel-grid">
                 ${gpuSel}${archSel}${osSel}${srcSel}${ratingSel}${runTypeSel}${deviceSel}${playtimeSel}
               </div>

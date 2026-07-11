@@ -146,8 +146,8 @@ function _renderChartHtml(view, appIds, deckMap) {
   if (DEVICE[view]) {
     const cfg = DEVICE[view];
     const counts = computeDeviceStatusCounts(appIds, deckMap || {}, cfg.field, cfg.order);
-    const max = Math.max(1, ...cfg.order.map((k) => counts[k] || 0));
     const rated = cfg.order.filter((k) => k !== 'unknown').reduce((s, k) => s + (counts[k] || 0), 0);
+    const max = Math.max(1, ...cfg.order.map((k) => counts[k] || 0));
     subtitle = `${rated.toLocaleString()} of ${total.toLocaleString()} ${esc(copy.noun)} games have a ${esc(cfg.chip)} rating.`;
     barsHtml = cfg.order.map((k) => {
       const n = counts[k] || 0;

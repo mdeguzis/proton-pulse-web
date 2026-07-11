@@ -172,24 +172,24 @@ def build_deck_status(output_dir, app_ids=None, delay=0.0):
 
     Returns the ``{app_id: {status, criteria}}`` map that was written.
     """
-    out = Path(output_dir)
-    ids = app_ids if app_ids is not None else steam_app_ids_with_reports(out)
+    out_dir = Path(output_dir)
+    ids = app_ids if app_ids is not None else steam_app_ids_with_reports(out_dir)
     result = {}
     for app_id in ids:
         val = fetch_deck_compat(app_id)
         if val:
             # Keep the published map lean: only carry machine/steamos when
             # rated (the UI treats a missing field as "not rated").
-            out = {"status": val["status"], "criteria": val.get("criteria")}
+            entry = {"status": val["status"], "criteria": val.get("criteria")}
             if val.get("machine") and val["machine"] != "unknown":
-                out["machine"] = val["machine"]
+                entry["machine"] = val["machine"]
             if val.get("steamos") and val["steamos"] != "unknown":
-                out["steamos"] = val["steamos"]
-            result[app_id] = out
+                entry["steamos"] = val["steamos"]
+            result[app_id] = entry
         if delay:
             time.sleep(delay)
     flush_deck_compat_cache()
-    path = out / "deck-status.json"
+    path = out_dir / "deck-status.json"
     path.write_text(json.dumps(result, separators=(",", ":")), encoding="utf-8")
     log(f"[deck-status] Wrote {len(result)} Deck verdicts for {len(ids)} Steam apps to {path}")
     return result

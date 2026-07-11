@@ -325,7 +325,14 @@ import { renderGameCard } from '../app/lib/card.js?v=93448301';
         filterToggle.setAttribute('aria-expanded', String(open));
       });
       document.addEventListener('click', (e) => {
-        if (filterWrap && !filterWrap.contains(e.target)) {
+        // Panel gets portaled to <body> on mobile so it can rise above the
+        // topbar's stacking context; allow taps inside the panel itself,
+        // not just inside filterWrap, before treating this as outside-click.
+        if (
+          filterWrap
+          && !filterWrap.contains(e.target)
+          && !filterPanel.contains(e.target)
+        ) {
           filterPanel.classList.remove('open');
           filterToggle.setAttribute('aria-expanded', 'false');
         }

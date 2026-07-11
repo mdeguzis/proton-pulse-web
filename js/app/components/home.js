@@ -1,6 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
+import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=f9591262';
 import { daysAgo, latestPerApp } from '../utils.js?v=c7e1268c';
@@ -10,7 +11,7 @@ import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewp
 import { getEffectivePageSize, isAutoLoadEnabled } from '../../lib/pagination-prefs.js?v=15d0747d';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
-import { renderHomeLibraryChart } from './home-library-chart.js?v=6ea6761b';
+import { renderHomeLibraryChart } from './home-library-chart.js?v=28834ae2';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { loadDeckStatusMap } from '../api/deck-status.js?v=d39add5f';
@@ -365,10 +366,19 @@ export async function renderHomePage() {
       allRecentReports = await recentResp.json().catch(() => []);
     }
 
+    // Drop admin-hidden games from every browse array (#234 bug follow-up).
+    // Pipeline snapshots may lag behind the live game_hides table, so filter
+    // client-side too. Best-effort: fetch failure returns an empty Set.
+    const _hideSet = await loadGameHides().catch(() => new Set());
+    if (_hideSet && _hideSet.size > 0) {
+      allRecentReports = allRecentReports.filter(r => !_hideSet.has(String(r.appId)));
+    }
+
     const seenIds = new Set(allRecentReports.map(r => String(r.appId)));
     let ratedGames = [], unratedGames = [];
     if (mostPlayedResp && mostPlayedResp.ok) {
-      const all = (await mostPlayedResp.json().catch(() => [])).filter(g => !seenIds.has(String(g.appId)));
+      const all = (await mostPlayedResp.json().catch(() => []))
+        .filter(g => !seenIds.has(String(g.appId)) && !_hideSet.has(String(g.appId)));
       ratedGames = all.filter(g => KNOWN_TIERS.has(String(g.rating || '').toLowerCase()));
       unratedGames = all.filter(g => ['pending', 'catalog'].includes(String(g.rating || '').toLowerCase()));
     }
@@ -404,6 +414,10 @@ export async function renderHomePage() {
             Filters<span class="filter-badge" id="home-filter-badge" hidden></span>
           </button>
           <div class="filter-panel filter-panel--stack" id="home-filter-panel">
+            <div class="filter-panel-mobile-header">
+              <span class="filter-panel-mobile-title">Filters</span>
+              <button type="button" class="filter-panel-close" aria-label="Close filters">&times;</button>
+            </div>
             <div class="filter-item filter-item--mobile-only">
               <label class="home-filter-label" for="home-text-filter-mobile">Search titles</label>
               <input id="home-text-filter-mobile" class="home-filter-text home-filter-text--in-panel" type="search" placeholder="Search all titles" autocomplete="off" />
@@ -857,7 +871,14 @@ export async function renderHomePage() {
       filterToggle.setAttribute('aria-expanded', String(open));
     });
     document.addEventListener('click', (e) => {
-      if (filterPanel?.classList.contains('open') && filterWrap && !filterWrap.contains(e.target)) {
+      // On mobile the panel is portaled to <body> and is no longer a child
+      // of filterWrap, so we also allow taps inside the panel itself.
+      if (
+        filterPanel?.classList.contains('open')
+        && filterWrap
+        && !filterWrap.contains(e.target)
+        && !filterPanel.contains(e.target)
+      ) {
         filterPanel.classList.remove('open');
         filterToggle.setAttribute('aria-expanded', 'false');
       }

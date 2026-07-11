@@ -281,20 +281,48 @@ export function computeGameStats(allReports, configs) {
     consistencyFactor = Math.max(0, 1 - stdDev / 2);
   }
   let freshnessSum = 0, freshnessTotal = 0;
+  const ageDaysList = [];
   for (const r of allReports) {
     const days = (now - (r.timestamp || 0)) / 86400;
-    const w = days < 90 ? 1.0 : days < 365 ? 0.6 : 0.2;
+    ageDaysList.push(days);
+    const w = days < 90 ? 1.0
+      : days < 365 ? 0.60
+      : days < 730 ? 0.30
+      : days < 1095 ? 0.15
+      : days < 1825 ? 0.05
+      : 0.0;
     freshnessSum += w;
     freshnessTotal++;
   }
   const freshnessFactor = freshnessTotal > 0 ? freshnessSum / freshnessTotal : 0;
+  // Staleness cap: when the median report is very old, hard-cap the overall
+  // confidence. A tight cluster of ratings still "reads" consistent but tells
+  // us little about a Proton stack from 5+ years ago.
+  const sortedAges = [...ageDaysList].sort((a, b) => a - b);
+  const medianDays = sortedAges.length > 0 ? sortedAges[Math.floor(sortedAges.length / 2)] : 0;
+  const stalenessCap = medianDays < 365 ? 1.0
+    : medianDays < 730 ? 0.85
+    : medianDays < 1095 ? 0.70
+    : medianDays < 1825 ? 0.55
+    : medianDays < 2920 ? 0.40
+    : 0.25;
   const rawConf = n > 0 ? (sampleFactor * 0.45 + consistencyFactor * 0.35 + freshnessFactor * 0.20) : 0;
-  const confidencePct = Math.min(95, Math.round(rawConf * 100));
+  const confidencePct = Math.min(95, Math.round(rawConf * 100 * stalenessCap));
+  const medianHuman = medianDays < 30 ? `${Math.round(medianDays)} days`
+    : medianDays < 365 ? `${Math.round(medianDays / 30)} months`
+    : `${(medianDays / 365).toFixed(1)} years`;
   const confFactors = [
     { label: 'Sample size', value: Math.round(sampleFactor * 100), detail: `${n} report${n !== 1 ? 's' : ''} (log curve, 45% weight)` },
     { label: 'Tier consistency', value: Math.round(consistencyFactor * 100), detail: 'How tightly clustered ratings are (35% weight)' },
     { label: 'Data freshness', value: Math.round(freshnessFactor * 100), detail: 'Recency-weighted freshness (20% weight)' },
   ];
+  if (n > 0 && stalenessCap < 1.0) {
+    confFactors.push({
+      label: 'Staleness cap',
+      value: Math.round(stalenessCap * 100),
+      detail: `median report is ${medianHuman} old; overall confidence capped at ${Math.round(stalenessCap * 100)}%`,
+    });
+  }
 
   // --- Trend ---
   // Playable-share based (see computeCompatTrend): a platinum->gold drift is not

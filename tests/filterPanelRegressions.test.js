@@ -130,6 +130,87 @@ describe('home (app.html browse) -- pill button filter group structure', () => {
   });
 });
 
+describe('mobile filter modal (<= 720px) -- full-viewport modal pattern', () => {
+  // Bug: on mobile the anchored dropdown collided with the fixed topbar,
+  // overflowed off-screen, and could not scroll. Fix: at <= 720px the panel
+  // is a full-viewport modal with sticky header (title + X) and sticky
+  // footer for the action buttons. This test guards the CSS + markup shape
+  // so a future refactor doesn't quietly regress it back to a dropdown.
+  const flat = flatten(filtersCss);
+
+  test('mobile media query at 720px pins the open panel to inset:0 at z-index above topbar', () => {
+    expect(flat).toMatch(/@media \(max-width: 720px\)/);
+    expect(flat).toMatch(/\.filter-panel\.open[\s\S]*?position: fixed[\s\S]*?inset: 0/);
+    // Topbar sits at z-index: 200; modal must sit above that.
+    expect(flat).toMatch(/\.filter-panel\.open[\s\S]*?z-index: 300/);
+  });
+
+  test('mobile-only header is hidden on desktop and sticky at top when the panel is open on mobile', () => {
+    // Hidden by default at any viewport size (desktop rule).
+    expect(flat).toMatch(/\.filter-panel-mobile-header\s*\{\s*display: none/);
+    // Shown as sticky inside the mobile modal.
+    expect(flat).toMatch(/\.filter-panel\.open \.filter-panel-mobile-header[\s\S]*?position: sticky[\s\S]*?top: 0/);
+  });
+
+  test('mobile footer sticks to the bottom so Save / Clear stay in reach', () => {
+    expect(flat).toMatch(/\.filter-panel\.open \.filter-panel-footer[\s\S]*?position: sticky[\s\S]*?bottom: 0/);
+  });
+
+  test('inside the mobile modal, .filter-panel--stack drops flex layout and blocks horizontal overflow', () => {
+    // reports.css lays .filter-panel--stack groups side-by-side above 560px.
+    // The modal at <=720px forces plain block layout so each group gets its
+    // own row (labels + wrapped pills), sticky header/footer behave reliably
+    // across iOS/Android WebView, and touch scrolling inside overflow: auto
+    // works like a normal document scroll instead of a flex-container scroll.
+    expect(flat).toMatch(/\.filter-panel--stack\.open\s*\{\s*display: block !important/);
+    expect(flat).toMatch(/\.filter-panel\.open[\s\S]*?overflow-x: hidden/);
+    // The panel itself is a real scroll container with a persistent scrollbar.
+    expect(flat).toMatch(/\.filter-panel\.open[\s\S]*?overflow-y: scroll/);
+    expect(flat).toMatch(/touch-action: pan-y/);
+  });
+
+  test('home.js filter panel ships the mobile header markup with a close X', () => {
+    expect(homeSrc).toContain('filter-panel-mobile-header');
+    expect(homeSrc).toContain('class="filter-panel-close"');
+    expect(homeSrc).toContain('aria-label="Close filters"');
+  });
+
+  test('topbar.js wires a delegated close handler that resets aria-expanded', () => {
+    const topbarSrc = fs.readFileSync(
+      path.join(__dirname, '..', 'js', 'lib', 'topbar.js'),
+      'utf8'
+    );
+    expect(topbarSrc).toContain('wireFilterPanelClose');
+    expect(topbarSrc).toMatch(/closest\(['"`]\.filter-panel-close/);
+    expect(topbarSrc).toMatch(/aria-expanded[^\n]*false/);
+  });
+
+  test('topbar.js portals the open panel to <body> on mobile so it escapes .main-content stacking context', () => {
+    // base.css sets .main-content { z-index: 2 } which creates a stacking
+    // context. The topbar sits at z-index: 200 in the root stacking context,
+    // above main-content. Any panel inside main-content can never rise
+    // above the topbar via its own z-index -- it's trapped at stacking
+    // layer 2. The mobile modal must therefore detach and re-append the
+    // panel to <body> on open, and restore it to the original parent on
+    // close so per-page outside-click handlers keep working.
+    const topbarSrc = fs.readFileSync(
+      path.join(__dirname, '..', 'js', 'lib', 'topbar.js'),
+      'utf8'
+    );
+    expect(topbarSrc).toMatch(/document\.body\.appendChild\(panel\)/);
+    expect(topbarSrc).toMatch(/_panelOriginals/);
+    expect(topbarSrc).toMatch(/matchMedia\(MOBILE_MODAL_QUERY\)/);
+  });
+
+  test('home.js outside-click handler allows taps inside the (portaled) panel', () => {
+    // When portaled, filterPanel is no longer a filterWrap descendant, so
+    // filterWrap.contains(e.target) is false for every tap on a filter pill.
+    // Guard: also check filterPanel.contains(e.target) so taps inside the
+    // panel don't trigger the outside-click close.
+    expect(homeSrc).toMatch(/!filterPanel\.contains\(e\.target\)/);
+  });
+});
+
 describe('home (app.html browse) -- XL card size parity with index.html', () => {
   // Bug: XL only existed on index.html. Browse view should match.
   test('SIZES array includes xl alongside sm/md/lg', () => {
