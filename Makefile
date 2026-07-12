@@ -183,7 +183,7 @@ check-staging-sync:
 		staging_sha=$$(curl -sf '$(STAGING_VERSION_URL)' \
 			| python3 -c 'import json,sys; print(json.load(sys.stdin).get("sha","")[:7])' 2>/dev/null || true); \
 		git fetch origin staging --quiet 2>/dev/null || true; \
-		branch_sha=$$(git rev-parse --short=7 origin/staging 2>/dev/null || git rev-parse --short=7 HEAD); \
+		branch_sha=$$(git rev-parse origin/staging 2>/dev/null | cut -c1-7 || git rev-parse HEAD | cut -c1-7); \
 		if [ -z "$$staging_sha" ]; then \
 			echo "error: could not read $(STAGING_VERSION_URL)" >&2; \
 			echo "Run 'make gh-staging' from the staging branch and verify before promoting to prod." >&2; \

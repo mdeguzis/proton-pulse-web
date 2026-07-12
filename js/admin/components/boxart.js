@@ -65,12 +65,27 @@ async function _loadIndexes() {
   // for any storefront (Steam CDN drift, GOG/Epic catalog rot). Merged into
   // both known-missing Sets so admin picks up broken art users are actually
   // seeing right now. (#199 follow-up)
+  //
+  // For Steam entries the pipeline probes the standard CDN directly and writes
+  // game-images-cache.json, so a single stray onerror from a browser extension
+  // or a flaky mobile connection should NOT override the pipeline's verdict on
+  // a popular game (#279: TF2 / DayZ / Hearts of Iron IV surfaced under the
+  // "no working source" filter despite their box art loading fine). Require a
+  // persistent signal -- MIN_STEAM_CLIENT_HITS distinct hits from at least a
+  // few users -- before believing the client report over the pipeline. For
+  // GOG / Epic there is no cheap pipeline probe yet, so any client error is
+  // still worth surfacing.
+  const MIN_STEAM_CLIENT_HITS = 3;
   const knownMissingNonSteam = new Set();
   for (const row of (clientErrors || [])) {
     const aid = String(row?.app_id || '');
     if (!aid) continue;
-    if (aid.startsWith('gog:') || aid.startsWith('epic:')) knownMissingNonSteam.add(aid);
-    else knownMissingSteam.add(aid);
+    if (aid.startsWith('gog:') || aid.startsWith('epic:')) {
+      knownMissingNonSteam.add(aid);
+    } else {
+      const hits = Number(row?.hit_count || 0);
+      if (hits >= MIN_STEAM_CLIENT_HITS) knownMissingSteam.add(aid);
+    }
   }
   // Pipeline probe results for non-Steam covers (#203). nonsteam-images-cache.json
   // is written by nonsteam_images_probe.py, one entry per GOG/Epic id with

@@ -118,6 +118,24 @@ const ENDPOINTS: Record<string, EndpointDef> = {
         variables: { keywords: t, country: "US", locale: "en-US" },
       }),
   },
+  // ProtonDB public data endpoints (#280). Same shape as the store endpoints
+  // so the admin explorer can debug per-app tier / confidence data without
+  // spinning up a separate proxy. The dedicated protondb-summary edge fn
+  // exists for the game page's live-check button; this duplicates the
+  // upstream URL so the API explorer can hit it uniformly through
+  // steam-explore. Documented at protondb.com and in the pipeline scripts.
+  protondb_summary: {
+    arg: "id",
+    method: "GET",
+    url: (id) => `https://www.protondb.com/api/v1/reports/summaries/${id}.json`,
+  },
+  protondb_counts: {
+    // Global counts.json: total games / reports / users on ProtonDB. Handy
+    // sanity check that the upstream is up and returning JSON at all.
+    arg: "none",
+    method: "GET",
+    url: () => `https://www.protondb.com/data/counts.json`,
+  },
 };
 
 Deno.serve(async (req: Request) => {

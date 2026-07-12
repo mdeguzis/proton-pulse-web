@@ -340,6 +340,20 @@ describe('SteamGridDB search-and-pick', () => {
       expect(COMP).toMatch(/aid\.startsWith\('gog:'\)\s*\|\|\s*aid\.startsWith\('epic:'\)/);
     });
 
+    test('Steam entries need a persistent hit_count before they count as missing (#279)', () => {
+      // Regression: a single onerror from a browser extension or a flaky
+      // connection surfaced popular Steam games (TF2 440, DayZ 221100,
+      // HoI4 394360) under "Missing box art (no working source)" even
+      // though their box art loads fine. The Steam CDN is already probed
+      // by the pipeline, so client onerror should only override the
+      // pipeline verdict when several users report the same 404.
+      expect(COMP).toContain('MIN_STEAM_CLIENT_HITS');
+      expect(COMP).toMatch(/MIN_STEAM_CLIENT_HITS\s*=\s*3/);
+      // hit_count is read from the image_load_errors row and compared.
+      expect(COMP).toMatch(/Number\(row\?\.hit_count \|\| 0\)/);
+      expect(COMP).toMatch(/hits >= MIN_STEAM_CLIENT_HITS/);
+    });
+
     test('nonsteam-images-cache.json missing entries merge into knownMissingNonSteam (#203)', () => {
       // Pipeline probe (nonsteam_images_probe.py) HEAD-checks every GOG/Epic
       // cover URL and records status:missing for 404s. Loader must pull the

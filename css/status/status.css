@@ -55,6 +55,17 @@
   gap: 12px;
 }
 
+/* Subhead above each status-list block. Same visual weight as the
+   announcements h2 so vendor vs. edge-fn groupings read as peers. */
+.status-section-heading {
+  font-size: 1.05rem;
+  margin: 20px 0 10px;
+  color: var(--text);
+}
+.status-section-heading:first-of-type {
+  margin-top: 8px;
+}
+
 .status-card {
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -92,6 +103,149 @@
   border-radius: 50%;
   background: var(--muted);
   flex: 0 0 auto;
+}
+
+/* Vendor rows (#278) open a component breakdown modal on click. Keep the
+   button visually identical to a Supabase card so the two sections feel
+   like peers, not like different widgets. */
+.status-card--vendor {
+  cursor: pointer;
+}
+
+/* Vendor modal: reuses the shared #status-modal-* backdrop but renders a
+   components list instead of a per-service dl. The critical section is
+   fully colored; other-degraded is muted so a wider incident stays visible
+   without competing for attention with the services we depend on. */
+.vendor-modal-subhead {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 12px 0 6px;
+}
+.vendor-modal-hint {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+.vendor-modal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.vendor-modal-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--s2);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+.vendor-modal-item[data-state="operational"] { border-left: 3px solid #3ecf8e; }
+.vendor-modal-item[data-state="degraded"]    { border-left: 3px solid #f7c948; }
+.vendor-modal-item[data-state="down"]        { border-left: 3px solid #e04747; }
+.vendor-modal-item[data-state="unknown"]     { border-left: 3px solid var(--muted); }
+.vendor-modal-item--other {
+  opacity: 0.75;
+}
+.vendor-modal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex: 0 0 auto;
+}
+.vendor-modal-item[data-state="operational"] .vendor-modal-dot { background: #3ecf8e; }
+.vendor-modal-item[data-state="degraded"]    .vendor-modal-dot { background: #f7c948; }
+.vendor-modal-item[data-state="down"]        .vendor-modal-dot { background: #e04747; }
+.vendor-modal-name {
+  flex: 1 1 auto;
+  color: var(--text);
+}
+.vendor-modal-state {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.vendor-modal-item[data-state="operational"] .vendor-modal-state { color: #3ecf8e; }
+.vendor-modal-item[data-state="degraded"]    .vendor-modal-state { color: #f7c948; }
+.vendor-modal-item[data-state="down"]        .vendor-modal-state { color: #e04747; }
+.vendor-modal-empty {
+  padding: 8px 10px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.vendor-modal-foot {
+  margin: 8px 0 0;
+  font-size: 0.82rem;
+}
+.vendor-modal-foot a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.vendor-modal-foot a:hover {
+  text-decoration: underline;
+}
+
+/* Jump-to-announcements pill at the top of the page; floating back-to-top
+   pill in the bottom-right corner (#278 follow-up). Both are subtle so they
+   don't compete with the primary status content. */
+.status-jump-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 8px 0 12px;
+}
+.status-jump-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--s1);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-family: var(--mono);
+  text-decoration: none;
+  transition: border-color 0.12s, color 0.12s;
+}
+.status-jump-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.status-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--s1);
+  color: var(--muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 800;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, border-color 0.12s, color 0.12s;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+.status-back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.status-back-to-top:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .status-card[data-state="operational"] .status-card-dot { background: #3ecf8e; }
@@ -401,6 +555,23 @@
   width: 100%;
   height: 64px;
   color: var(--accent);
+}
+.status-graph-body {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 6px;
+  align-items: stretch;
+}
+.status-graph-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  text-align: right;
+  padding: 2px 4px 2px 0;
+  border-right: 1px dashed var(--border);
 }
 .status-graph-empty {
   font-size: 0.78rem;

@@ -10,7 +10,7 @@ import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagRepor
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
-import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=9e984f11';
+import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=830efdfb';
 import { renderCard } from './report-card.js?v=faa750d4';
 import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';

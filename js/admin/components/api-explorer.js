@@ -53,6 +53,17 @@ const STORES = {
       { key: 'epic_search', label: 'store search (by term)', arg: 'term' },
     ],
   },
+  // ProtonDB tab (#280). Public data endpoints for debugging tier /
+  // confidence / total per app, and the global counts sanity check.
+  // Routed through the same steam-explore edge fn as the store endpoints.
+  protondb: {
+    label: 'ProtonDB',
+    placeholder: 'Steam App ID or game name',
+    endpoints: [
+      { key: 'protondb_summary', label: 'summary (tier + confidence + best/worst per app)', arg: 'id' },
+      { key: 'protondb_counts', label: 'global counts (sanity check)', arg: 'none' },
+    ],
+  },
 };
 
 // Reference docs per endpoint, shown in the Field descriptions popup. Keep in
@@ -206,6 +217,27 @@ const FIELD_DOCS = {
       ['response.message', 'Human-readable error string when success != 1.'],
     ],
   },
+  protondb_summary: {
+    title: 'ProtonDB summary (protondb.com/api/v1/reports/summaries/<appId>.json)',
+    rows: [
+      ['tier', "Aggregated tier the ProtonDB frontend renders: platinum / gold / silver / bronze / borked. Missing means ProtonDB has no data yet (found:false)."],
+      ['confidence', "How confident the aggregation is in the tier -- low, moderate, good, strong. Drives the pill styling on the game page."],
+      ['total', 'Number of user reports counted toward the tier. Under ~5 reports and confidence usually reads as low.'],
+      ['trendingTier', 'Tier computed from the most recent reports only. When this diverges from tier, the game has recently gotten better or worse under Proton.'],
+      ['bestReportedTier / worstReportedTier', 'Optimistic / pessimistic tier ever recorded. Wide spread means user experience varies a lot (hardware, Proton version, distro).'],
+      ['score', "Numeric backing for tier. Higher = better. Used for sort ordering server-side; the pipeline doesn't rely on this directly."],
+      ['found (added by our proxy)', 'true if ProtonDB returned data, false if the upstream 404d. Distinguishes "no reports yet" from an error.'],
+    ],
+  },
+  protondb_counts: {
+    title: 'ProtonDB global counts (protondb.com/data/counts.json)',
+    rows: [
+      ['games', 'Total number of games with at least one ProtonDB report.'],
+      ['reports', 'Total number of individual reports across all games and all versions of Proton.'],
+      ['users', 'Total number of distinct reporting users on ProtonDB.'],
+      ['lastUpdated / date / timestamp', 'When ProtonDB last refreshed the counts (field name varies -- check what the raw JSON returns).'],
+    ],
+  },
 };
 
 function _showFieldDocs(endpointKey) {
@@ -254,6 +286,12 @@ function _storeUrl(endpoint, id, term, payload) {
   }
   if (endpoint === 'epic_search') {
     return term ? `https://store.epicgames.com/en-US/browse?q=${encodeURIComponent(term)}&sortBy=relevancy&sortDir=DESC` : null;
+  }
+  if (endpoint === 'protondb_summary') {
+    return id ? `https://www.protondb.com/app/${id}` : null;
+  }
+  if (endpoint === 'protondb_counts') {
+    return 'https://www.protondb.com/explore';
   }
   return null;
 }
@@ -315,7 +353,9 @@ async function _resolveArg(store, endpointArg, input) {
   const inStore = (r) => {
     if (!Array.isArray(r)) return false;
     const sid = String(r[0]);
-    if (store === 'steam') return r[5] === 'steam' || /^\d+$/.test(sid);
+    // ProtonDB is keyed by Steam appid upstream, so the search index lookup
+    // matches Steam entries -- same code path (#280).
+    if (store === 'steam' || store === 'protondb') return r[5] === 'steam' || /^\d+$/.test(sid);
     return sid.startsWith(prefix);
   };
   const exact = idx.find((r) => inStore(r) && String(r[1] || '').toLowerCase() === ql);

@@ -2,6 +2,14 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.8.0
+
+- Site status page (#278): a Cloudflare Worker cron now drives the 15-minute health check instead of the flaky GitHub Actions schedule, and the intro prose says so. The page gained an "Upstream infrastructure" section above the Supabase edge-fn list with two rows: GitHub and Cloudflare. Each row reads only the components Proton Pulse actually depends on (GitHub Pages + Actions; Cloudflare Workers, Workers KV, CDN/Cache, Authoritative DNS), so a Cloudflare Dashboard degradation no longer flips the tile yellow. Clicking a row opens a modal that lists the tracked services with per-component pill state, plus a muted "Other services with issues" tail so a wider vendor incident stays visible without competing for attention.
+- Site status polish: jump-to-announcements pill under the overall banner, floating back-to-top button that appears after roughly one viewport of scroll, and Y-axis min/max plus start/mid/now time ticks on the per-service latency sparkline so the graph reads without hovering.
+- Admin API Explorer (#280): new ProtonDB tab next to Steam / GOG / Epic. Endpoints are protondb_summary (per-app tier / confidence / total / trending / best and worst reported) and protondb_counts (global sanity). Name lookup reuses the Steam appid index. Field descriptions popup documents both response shapes.
+- Fix (#279): the admin "Missing box art (no working source)" filter no longer flags popular Steam games (Team Fortress 2, DayZ, Hearts of Iron IV, and similar) based on a single stray client onerror. Steam entries now require at least three persistent hit reports before the client-side signal overrides the pipeline's CDN probe. GOG and Epic entries still surface on any client error because there is no pipeline probe for those catalogs yet.
+- Fix: the vendor tile modal now opens for Cloudflare, not just GitHub. The tile embeds its payload in a single-quoted data-vendor attribute, and Cloudflare ships a component named "Developer's Site" whose apostrophe terminated the attribute early and made JSON.parse fail silently. The HTML escape now handles apostrophes too, and the parse-fail log is a console warning with a payload preview so a future silent break is loud.
+
 ## v1.7.1
 
 - Fix: game confidence scoring now punishes very old reports properly. Two 8-year-old reports of the same rating used to display as 48% confidence because tier consistency stayed high while freshness only nudged the score. The new freshness curve drops sharply past 1 year, and a staleness cap based on median report age hard-caps the overall confidence when the community data is stale. The confidence breakdown adds a "Staleness cap" row that names the median age in years.

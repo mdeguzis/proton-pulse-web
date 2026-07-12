@@ -5,6 +5,7 @@
 // live if the reader leaves it open.
 
 import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
+import { fetchVendorStatuses, VENDOR_REFRESH_MS } from './vendor-status.js?v=f161798f';
 
 const REFRESH_MS = 60 * 1000;
 
@@ -109,8 +110,18 @@ async function fetchStatusPayload() {
   return await res.json();
 }
 
+// esc() must escape both quote flavors because vendor cards embed a JSON blob
+// in a single-quoted `data-vendor='...'` attribute (#278 review). Cloudflare
+// ships a component named "Developer's Site" -- the apostrophe would terminate
+// the attribute early and JSON.parse fails silently, so nothing pops up. The
+// old escape only handled &, <, >, ".
 function esc(s) {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
 function formatRelative(iso) {
@@ -267,21 +278,127 @@ function renderSparkline(series) {
   const last = ms[ms.length - 1];
   const avg = Math.round(ms.reduce((a, b) => a + b, 0) / ms.length);
   const spanDays = Math.max(1, Math.round(tSpan / 86400));
+  const tMid = new Date(((t0 + t1) / 2) * 1000);
+  const tStart = new Date(t0 * 1000);
+  const midLabel = spanDays > 1
+    ? tMid.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
+    : tMid.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+  const startLabel = spanDays > 1
+    ? tStart.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
+    : tStart.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
   return `
     <div class="status-graph">
       <div class="status-graph-head">
         <span>Latency, last ${esc(spanDays)}d (${esc(pts.length)} checks)</span>
         <span>min ${esc(minMs)} / avg ${esc(avg)} / max ${esc(maxMs)} ms</span>
       </div>
-      <svg viewBox="0 0 ${W} ${H}" class="status-graph-svg" preserveAspectRatio="none" role="img" aria-label="Latency over the last ${esc(spanDays)} days, latest ${esc(last)} ms">
-        <path d="${path}" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke" />
-      </svg>
+      <div class="status-graph-body">
+        <div class="status-graph-y" aria-hidden="true">
+          <span>${esc(maxMs)} ms</span>
+          <span>${esc(minMs)} ms</span>
+        </div>
+        <svg viewBox="0 0 ${W} ${H}" class="status-graph-svg" preserveAspectRatio="none" role="img" aria-label="Latency over the last ${esc(spanDays)} days, ranging ${esc(minMs)} to ${esc(maxMs)} ms, latest ${esc(last)} ms">
+          <path d="${path}" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke" />
+        </svg>
+      </div>
       <div class="status-graph-foot">
-        <span>${esc(new Date(t0 * 1000).toLocaleDateString())}</span>
-        <span>latest ${esc(last)} ms</span>
+        <span>${esc(startLabel)}</span>
+        <span>${esc(midLabel)}</span>
         <span>now</span>
       </div>
     </div>`;
+}
+
+// Render one vendor row (GitHub / Cloudflare). Same visual shape as the
+// Supabase cards; clicking opens the vendor modal (openVendorModal) which
+// breaks down which Proton-Pulse-critical components are up, and lists other
+// degraded services non-critically so a broader outage stays visible without
+// falsely flipping our tile.
+function renderVendorCard(svc) {
+  const state = svc.status || 'unknown';
+  const criticalCount = Array.isArray(svc.critical) ? svc.critical.length : 0;
+  const degradedCritical = Array.isArray(svc.critical)
+    ? svc.critical.filter((c) => c.state !== 'operational').length
+    : 0;
+  const summary = svc.error
+    ? 'feed unreachable'
+    : criticalCount === 0
+      ? 'no services tracked'
+      : degradedCritical === 0
+        ? `${criticalCount} tracked services OK`
+        : `${degradedCritical} of ${criticalCount} tracked services affected`;
+  const svcData = esc(JSON.stringify(svc));
+  return `
+    <button type="button" class="status-card status-card--vendor" data-state="${esc(state)}" data-vendor='${svcData}' aria-label="Details for ${esc(svc.name)} infrastructure">
+      <div class="status-card-head">
+        <span class="status-card-dot"></span>
+        <span class="status-card-name">${esc(svc.name)}</span>
+        <span class="status-card-state">${statusLabel(state)}</span>
+      </div>
+      <div class="status-card-meta">
+        <span>${esc(summary)}</span>
+        <span title="${esc(svc.checked_at || '')}">checked ${formatRelative(svc.checked_at)}</span>
+      </div>
+    </button>
+  `;
+}
+
+async function loadAndRenderVendor() {
+  const listEl = document.getElementById('status-vendor-list');
+  if (!listEl) return;
+  let cards;
+  try {
+    cards = await fetchVendorStatuses();
+  } catch (err) {
+    console.warn('[status] vendor list load failed', { error: String(err && err.message || err) });
+    listEl.innerHTML = '<div class="state-box">Vendor status feeds unreachable.</div>';
+    return;
+  }
+  listEl.innerHTML = cards.map(renderVendorCard).join('') ||
+    '<div class="state-box">No vendor rows.</div>';
+}
+
+// Vendor modal: reuses the shared #status-modal-* backdrop but swaps in a
+// components view instead of the per-service dl. The critical section always
+// renders first with the pill state for every component we depend on. The
+// "other degraded" section only renders when the vendor has issues elsewhere,
+// so a wider outage is still discoverable without polluting the primary view.
+function openVendorModal(svc) {
+  const backdrop = document.getElementById('status-modal-backdrop');
+  const body     = document.getElementById('status-modal-body');
+  const expl     = document.getElementById('status-modal-explainer');
+  if (!backdrop || !body) return;
+  const criticalRows = (svc.critical || []).map((c) => `
+    <li class="vendor-modal-item vendor-modal-item--critical" data-state="${esc(c.state)}">
+      <span class="vendor-modal-dot"></span>
+      <span class="vendor-modal-name">${esc(c.name)}</span>
+      <span class="vendor-modal-state">${statusLabel(c.state)}</span>
+    </li>`).join('');
+  const otherRows = (svc.other_degraded || []).map((c) => `
+    <li class="vendor-modal-item vendor-modal-item--other" data-state="${esc(c.state)}">
+      <span class="vendor-modal-dot"></span>
+      <span class="vendor-modal-name">${esc(c.name)}</span>
+      <span class="vendor-modal-state">${statusLabel(c.state)}</span>
+    </li>`).join('');
+  const otherSection = otherRows
+    ? `<h4 class="vendor-modal-subhead">Other ${esc(svc.name)} services with issues</h4>
+       <p class="vendor-modal-hint">Not tracked as critical for Proton Pulse but shown here so a wider ${esc(svc.name)} incident stays visible.</p>
+       <ul class="vendor-modal-list vendor-modal-list--other">${otherRows}</ul>`
+    : '';
+  expl.innerHTML = svc.error
+    ? `The ${esc(svc.name)} status feed did not respond (${esc(svc.error)}). Check the vendor status page directly.`
+    : `Overall tile status reflects only the ${esc(svc.name)} components Proton Pulse depends on. A ${esc(svc.name)} incident that does not touch any of these (for example, an admin dashboard outage) stays green here even if the vendor's overall banner is yellow.`;
+  body.innerHTML = `
+    <h3>${esc(svc.name)}</h3>
+    <h4 class="vendor-modal-subhead">Services Proton Pulse depends on</h4>
+    <ul class="vendor-modal-list vendor-modal-list--critical">${criticalRows || '<li class="vendor-modal-empty">No critical services configured.</li>'}</ul>
+    ${otherSection}
+    <p class="vendor-modal-foot">
+      <a href="${esc(svc.vendor_status_url || '#')}" target="_blank" rel="noopener">Open the full ${esc(svc.name)} status page &rarr;</a>
+    </p>
+  `;
+  backdrop.hidden = false;
+  document.body.style.overflow = 'hidden';
 }
 
 // Click-to-open modal: shows the full stdout-like blob for one service.
@@ -355,6 +472,21 @@ document.getElementById('status-list')?.addEventListener('click', (e) => {
     console.debug('[status] failed to parse service payload', err);
   }
 });
+document.getElementById('status-vendor-list')?.addEventListener('click', (e) => {
+  const card = e.target.closest('.status-card--vendor');
+  if (!card) return;
+  try {
+    const svc = JSON.parse(card.dataset.vendor || '{}');
+    if (svc && svc.name) openVendorModal(svc);
+  } catch (err) {
+    // Warn (not debug) so a silent failure like the "Developer's Site"
+    // apostrophe bug (#278 review) surfaces in the console next time.
+    console.warn('[status] failed to parse vendor payload', {
+      error: String(err && err.message || err),
+      preview: String(card.dataset.vendor || '').slice(0, 200),
+    });
+  }
+});
 document.getElementById('status-modal-close')?.addEventListener('click', closeServiceModal);
 document.getElementById('status-modal-backdrop')?.addEventListener('click', (e) => {
   if (e.target?.id === 'status-modal-backdrop') closeServiceModal();
@@ -367,6 +499,27 @@ document.addEventListener('keydown', (e) => {
 // opens a tile right away already sees the "Check now" control.
 detectSuperAdmin().finally(() => loadAndRender());
 setInterval(loadAndRender, REFRESH_MS);
+
+// Vendor rows (#278): GitHub Pages + Cloudflare overall. Refreshes on a
+// separate cadence because the upstream feeds themselves update on the
+// order of minutes and there is no reason to hammer them every 60 s.
+loadAndRenderVendor();
+setInterval(loadAndRenderVendor, VENDOR_REFRESH_MS);
+
+// Back-to-top pill: reveals once the reader has scrolled past ~one viewport
+// so it does not compete with the header. Click smooth-scrolls to top.
+const backToTopBtn = document.getElementById('status-back-to-top');
+if (backToTopBtn) {
+  const toggleVisible = () => {
+    if (window.scrollY > window.innerHeight * 0.6) backToTopBtn.classList.add('is-visible');
+    else backToTopBtn.classList.remove('is-visible');
+  };
+  window.addEventListener('scroll', toggleVisible, { passive: true });
+  toggleVisible();
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 // Announcements: pulled directly from the public GitHub issues API for the
 // proton-pulse-web repo, filtered to the "incident" label. Open incidents

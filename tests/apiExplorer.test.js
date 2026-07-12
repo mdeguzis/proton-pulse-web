@@ -28,6 +28,16 @@ describe('API Explorer edge function (multi-store)', () => {
     expect(EDGE).toContain('store.epicgames.com/graphql');
   });
 
+  test('whitelists ProtonDB endpoints (#280)', () => {
+    // Summary is the per-app data check the admin panel actually cares
+    // about; counts is a global sanity endpoint. Both live upstream at
+    // protondb.com; pin the URLs so a rename gets a failing test.
+    expect(EDGE).toContain('protondb_summary:');
+    expect(EDGE).toContain('protondb_counts:');
+    expect(EDGE).toContain('protondb.com/api/v1/reports/summaries/');
+    expect(EDGE).toContain('protondb.com/data/counts.json');
+  });
+
   test('id endpoints require a numeric id; term endpoints require a term', () => {
     expect(EDGE).toContain('const def = ENDPOINTS[endpoint]');
     expect(EDGE).toContain('/^\\d+$/.test(id)');
@@ -48,13 +58,35 @@ describe('API Explorer client + component', () => {
     expect(API).toContain('term: String(term)');
   });
 
-  test('component has store tabs for Steam / GOG / Epic', () => {
+  test('component has store tabs for Steam / GOG / Epic + ProtonDB', () => {
     expect(COMP).toContain('const STORES = {');
     expect(COMP).toContain('class="apix-store-tab');
     expect(COMP).toContain("store = tab.dataset.store");
     expect(COMP).toMatch(/steam:\s*{/);
     expect(COMP).toMatch(/gog:\s*{/);
     expect(COMP).toMatch(/epic:\s*{/);
+    expect(COMP).toMatch(/protondb:\s*{/);
+    // ProtonDB tab lists both endpoints so the admin can pick which one
+    // to hit -- summary (per app) or counts (global sanity).
+    expect(COMP).toContain("key: 'protondb_summary'");
+    expect(COMP).toContain("key: 'protondb_counts'");
+  });
+
+  test('ProtonDB name lookup reuses the Steam appid index (#280)', () => {
+    // ProtonDB is keyed by Steam appid upstream, so typing a game name in
+    // the ProtonDB tab must resolve against the same rows as the Steam
+    // tab. Regression: initial version only matched "store === 'steam'"
+    // and left ProtonDB name lookups returning "no match".
+    expect(COMP).toMatch(/store === 'steam' \|\| store === 'protondb'/);
+  });
+
+  test('ProtonDB fields are documented so the "Field descriptions" popup works', () => {
+    // FIELD_DOCS entries are what the popup renders. Missing the key
+    // makes the popup fall back to steam_appdetails, which is wrong.
+    expect(COMP).toContain('protondb_summary: {');
+    expect(COMP).toContain('protondb_counts: {');
+    expect(COMP).toContain("trendingTier");
+    expect(COMP).toContain("bestReportedTier");
   });
 
   test('resolves an id/name/term and renders the JSON', () => {
