@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/shared/base.css?v=a93b26ad">
 <link rel="stylesheet" href="css/shared/topbar.css?v=39671fc2">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
-<link rel="stylesheet" href="css/status/status.css?v=7d61f404">
+<link rel="stylesheet" href="css/status/status.css?v=b744f288">
 </head>
 <body>
 
@@ -41,6 +41,10 @@
       <span class="status-overall-meta" id="status-meta"></span>
     </div>
 
+    <nav class="status-jump-bar" aria-label="Jump to section">
+      <a class="status-jump-btn" href="#status-announcements">Jump to announcements &darr;</a>
+    </nav>
+
     <h2 class="status-section-heading">Upstream infrastructure</h2>
     <div id="status-vendor-list" class="status-list">
       <!-- GitHub Pages + Cloudflare vendor rows injected by js/status/main.js -->
@@ -68,6 +72,8 @@
   </div>
 </div>
 
+<button type="button" id="status-back-to-top" class="status-back-to-top" aria-label="Back to top" title="Back to top">&uarr;</button>
+
 <!-- Per-service detail modal. Opens when the reader clicks a status card,
      shows the explainer (401/403 context, etc.) plus the raw payload. -->
 <div id="status-modal-backdrop" class="status-modal-backdrop" hidden aria-hidden="true">
@@ -85,7 +91,7 @@
 <script src="js/lib/analytics.js?v=7855fb4c"></script>
 <script src="js/lib/topbar.js?v=8050bed6"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/status/main.js?v=83c7b5f9"></script>
+<script type="module" src="js/status/main.js?v=e22a906d"></script>
 
 </body>
 </html>

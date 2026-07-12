@@ -64,13 +64,24 @@ describe('status.html vendor infrastructure wiring', () => {
     expect(MAIN).toMatch(/setInterval\(loadAndRenderVendor, VENDOR_REFRESH_MS\)/);
   });
 
-  test('vendor cards render as anchors to the vendor status page', () => {
-    // A modal on a vendor row would just show the JSON blob; sending the
-    // reader to the vendor status page is more useful, so vendor cards
-    // are anchors with a new-tab target.
+  test('vendor cards render as buttons that open a component-breakdown modal', () => {
+    // Sending the reader straight to the vendor status page loses the
+    // critical vs. non-critical distinction Proton Pulse cares about, so
+    // vendor cards are buttons that open a modal showing which of OUR
+    // services are affected. The modal still links out to the vendor
+    // status page for people who want the full picture.
     expect(MAIN).toMatch(/status-card--vendor/);
-    expect(MAIN).toMatch(/target="_blank"/);
-    expect(MAIN).toMatch(/svc\.vendor_status_url/);
+    expect(MAIN).toMatch(/data-vendor='/);
+    expect(MAIN).toMatch(/openVendorModal/);
+    expect(MAIN).toMatch(/Services Proton Pulse depends on/);
+  });
+
+  test('status page has a jump-to-announcements + back-to-top control', () => {
+    expect(HTML).toContain('id="status-announcements"');
+    expect(HTML).toMatch(/href="#status-announcements"/);
+    expect(HTML).toContain('id="status-back-to-top"');
+    expect(MAIN).toMatch(/status-back-to-top/);
+    expect(MAIN).toMatch(/window\.scrollTo\(\s*\{\s*top:\s*0/);
   });
 
   test('gh-pages-manifest.txt lists the new vendor-status module', () => {
@@ -90,38 +101,62 @@ describe('vendor-status pure mappers', () => {
     expect(componentStatusToState(undefined)).toBe('unknown');
   });
 
-  test('overallIndicatorToState maps every documented indicator', () => {
-    const { overallIndicatorToState } = loadVendor();
-    expect(overallIndicatorToState('none')).toBe('operational');
-    expect(overallIndicatorToState('minor')).toBe('degraded');
-    expect(overallIndicatorToState('maintenance')).toBe('degraded');
-    expect(overallIndicatorToState('major')).toBe('down');
-    expect(overallIndicatorToState('critical')).toBe('down');
-    expect(overallIndicatorToState('bogus')).toBe('unknown');
+  test('worstOfStates picks the most severe state from a list', () => {
+    const { worstOfStates } = loadVendor();
+    expect(worstOfStates([])).toBe('unknown');
+    expect(worstOfStates(['operational', 'operational'])).toBe('operational');
+    expect(worstOfStates(['operational', 'degraded'])).toBe('degraded');
+    expect(worstOfStates(['degraded', 'down', 'operational'])).toBe('down');
+    expect(worstOfStates(['unknown', 'operational'])).toBe('unknown');
   });
 
-  test('GitHub Pages component id is pinned to the well-known Statuspage.io id', () => {
-    // The id vg70hn9s2tyj is the public GitHub Pages component; if it
-    // ever gets rotated the row silently reads as "unknown", so pin it
-    // here so the change is deliberate.
-    expect(VENDOR).toContain("'vg70hn9s2tyj'");
+  test('critical component ids are pinned per vendor', () => {
+    // Rotating these on Statuspage.io side would silently degrade our
+    // matching to "unknown"; pin them so any drift is intentional.
+    expect(VENDOR).toContain("'vg70hn9s2tyj'");   // GitHub Pages
+    expect(VENDOR).toContain("'br0l2tvcx85d'");   // GitHub Actions
+    expect(VENDOR).toContain("'57srcl8zcn7c'");   // Cloudflare Workers
+    expect(VENDOR).toContain("'tmh50tx2nprs'");   // Cloudflare Workers KV
+    expect(VENDOR).toContain("'5wnz34mhfhrk'");   // Cloudflare CDN/Cache
+    expect(VENDOR).toContain("'dp8ppfycqxcs'");   // Cloudflare Authoritative DNS
   });
 });
 
 describe('vendor-status fetch integration', () => {
-  const OK_GH_COMPONENTS = {
+  const GH_COMPONENTS_OK = {
     components: [
-      { id: 'other', name: 'Actions', status: 'operational' },
-      { id: 'vg70hn9s2tyj', name: 'Pages', status: 'operational', updated_at: '2026-07-11T20:00:00Z' },
+      { id: 'vg70hn9s2tyj', name: 'Pages',   status: 'operational' },
+      { id: 'br0l2tvcx85d', name: 'Actions', status: 'operational' },
+      { id: 'x',            name: 'Copilot', status: 'operational' },
     ],
   };
-  const DEGRADED_GH_COMPONENTS = {
+  const CF_COMPONENTS_OK = {
     components: [
-      { id: 'vg70hn9s2tyj', name: 'Pages', status: 'degraded_performance', updated_at: '2026-07-11T20:00:00Z' },
+      { id: '57srcl8zcn7c', name: 'Workers',           status: 'operational' },
+      { id: 'tmh50tx2nprs', name: 'Workers KV',        status: 'operational' },
+      { id: '5wnz34mhfhrk', name: 'CDN/Cache',         status: 'operational' },
+      { id: 'dp8ppfycqxcs', name: 'Authoritative DNS', status: 'operational' },
+      { id: 'dash',         name: 'Dashboard',         status: 'operational' },
     ],
   };
-  const OK_CF_STATUS = { status: { indicator: 'none', description: 'All Systems Operational' } };
-  const MAJOR_CF_STATUS = { status: { indicator: 'major', description: 'Cloudflare CDN degraded' } };
+  const CF_COMPONENTS_DASHBOARD_DEGRADED = {
+    components: [
+      { id: '57srcl8zcn7c', name: 'Workers',           status: 'operational' },
+      { id: 'tmh50tx2nprs', name: 'Workers KV',        status: 'operational' },
+      { id: '5wnz34mhfhrk', name: 'CDN/Cache',         status: 'operational' },
+      { id: 'dp8ppfycqxcs', name: 'Authoritative DNS', status: 'operational' },
+      { id: 'dash',         name: 'Dashboard',         status: 'degraded_performance' },
+    ],
+  };
+  const CF_COMPONENTS_WORKERS_DOWN = {
+    components: [
+      { id: '57srcl8zcn7c', name: 'Workers',           status: 'major_outage' },
+      { id: 'tmh50tx2nprs', name: 'Workers KV',        status: 'operational' },
+      { id: '5wnz34mhfhrk', name: 'CDN/Cache',         status: 'operational' },
+      { id: 'dp8ppfycqxcs', name: 'Authoritative DNS', status: 'operational' },
+      { id: 'dash',         name: 'Dashboard',         status: 'operational' },
+    ],
+  };
 
   function stubFetch(routes) {
     return jest.fn((url) => {
@@ -138,34 +173,48 @@ describe('vendor-status fetch integration', () => {
     });
   }
 
-  test('both feeds operational returns two cards with status "operational"', async () => {
+  test('all critical components operational returns two green cards', async () => {
     const { fetchVendorStatuses } = loadVendor({ fetch: stubFetch([
-      ['githubstatus.com', { body: OK_GH_COMPONENTS }],
-      ['cloudflarestatus.com', { body: OK_CF_STATUS }],
-    ]) });
-    const cards = await fetchVendorStatuses();
-    expect(cards).toHaveLength(2);
-    expect(cards[0]).toMatchObject({ name: 'GitHub Pages', status: 'operational', http_status: 200 });
-    expect(cards[1]).toMatchObject({ name: 'Cloudflare (overall)', status: 'operational', http_status: 200 });
-  });
-
-  test('degraded GitHub Pages + major Cloudflare surface in the mapped states', async () => {
-    const { fetchVendorStatuses } = loadVendor({ fetch: stubFetch([
-      ['githubstatus.com', { body: DEGRADED_GH_COMPONENTS }],
-      ['cloudflarestatus.com', { body: MAJOR_CF_STATUS }],
+      ['githubstatus.com', { body: GH_COMPONENTS_OK }],
+      ['cloudflarestatus.com', { body: CF_COMPONENTS_OK }],
     ]) });
     const [gh, cf] = await fetchVendorStatuses();
-    expect(gh.status).toBe('degraded');
-    expect(gh.raw_state).toBe('degraded_performance');
+    expect(gh.status).toBe('operational');
+    expect(cf.status).toBe('operational');
+    expect(gh.critical.map((c) => c.name)).toEqual(['Pages', 'Actions']);
+    expect(cf.critical.map((c) => c.name)).toEqual(['Workers', 'Workers KV', 'CDN/Cache', 'Authoritative DNS']);
+    expect(cf.other_degraded).toEqual([]);
+  });
+
+  test('Cloudflare Dashboard degradation does NOT flip the tile yellow (#278 follow-up)', async () => {
+    // This is the exact scenario the user flagged: Cloudflare's Dashboard
+    // is Degraded Performance, but Proton Pulse does not touch the
+    // Dashboard, so the tile must stay green. The Dashboard row still
+    // shows up under other_degraded so a wider incident stays visible.
+    const { fetchVendorStatuses } = loadVendor({ fetch: stubFetch([
+      ['githubstatus.com', { body: GH_COMPONENTS_OK }],
+      ['cloudflarestatus.com', { body: CF_COMPONENTS_DASHBOARD_DEGRADED }],
+    ]) });
+    const [, cf] = await fetchVendorStatuses();
+    expect(cf.status).toBe('operational');
+    expect(cf.other_degraded.map((c) => c.name)).toContain('Dashboard');
+  });
+
+  test('a Cloudflare Workers outage DOES flip the tile down, since we depend on Workers', async () => {
+    const { fetchVendorStatuses } = loadVendor({ fetch: stubFetch([
+      ['githubstatus.com', { body: GH_COMPONENTS_OK }],
+      ['cloudflarestatus.com', { body: CF_COMPONENTS_WORKERS_DOWN }],
+    ]) });
+    const [, cf] = await fetchVendorStatuses();
     expect(cf.status).toBe('down');
-    expect(cf.raw_state).toBe('major');
-    expect(cf.description).toBe('Cloudflare CDN degraded');
+    const workers = cf.critical.find((c) => c.id === '57srcl8zcn7c');
+    expect(workers.state).toBe('down');
   });
 
   test('a failed feed produces an "unknown" card with an error string, no throw', async () => {
     const { fetchVendorStatuses } = loadVendor({ fetch: stubFetch([
       ['githubstatus.com', { ok: false, status: 503, body: {} }],
-      ['cloudflarestatus.com', { body: OK_CF_STATUS }],
+      ['cloudflarestatus.com', { body: CF_COMPONENTS_OK }],
     ]) });
     const [gh, cf] = await fetchVendorStatuses();
     expect(gh.status).toBe('unknown');
@@ -173,13 +222,14 @@ describe('vendor-status fetch integration', () => {
     expect(cf.status).toBe('operational');
   });
 
-  test('GitHub Pages component missing from the feed also degrades to "unknown"', async () => {
+  test('critical component missing from the feed is surfaced as unknown (not silently dropped)', async () => {
     const { fetchVendorStatuses } = loadVendor({ fetch: stubFetch([
-      ['githubstatus.com', { body: { components: [{ id: 'other', name: 'Actions', status: 'operational' }] } }],
-      ['cloudflarestatus.com', { body: OK_CF_STATUS }],
+      ['githubstatus.com', { body: { components: [{ id: 'x', name: 'Copilot', status: 'operational' }] } }],
+      ['cloudflarestatus.com', { body: CF_COMPONENTS_OK }],
     ]) });
     const [gh] = await fetchVendorStatuses();
     expect(gh.status).toBe('unknown');
-    expect(gh.error).toMatch(/component/i);
+    expect(gh.critical).toHaveLength(2);
+    expect(gh.critical.every((c) => c.state === 'unknown')).toBe(true);
   });
 });
