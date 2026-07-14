@@ -1,8 +1,10 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=8051e115';
-import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=75603703';
+import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=49306cae';
 import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=a8d355d8';
-import { deleteDraft, getDraft, snapshotFormData, upsertDraft } from '../shared/drafts.js?v=da9caf1e';
+import {
+  deleteDraft, deleteLocalDraft, snapshotFormData, saveDraft, loadBestDraft, makeAutoSaver,
+} from '../shared/drafts.js?v=d7011aa5';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
@@ -175,15 +177,29 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     } catch (e) { console.debug('[submit] linux native probe skipped:', e); }
   })();
 
-  // Cloud draft restore + Save Draft button. Only offer for fresh submits
-  // (edits reload from the report itself; fromCloud has its own path).
-  if (!isEdit && !fromCloud && session) {
+  // Cloud draft restore: auto-apply on load so the user gets their in-progress
+  // work back without clicking anything -- "clicking Save should just work"
+  // (#285). Only applies when the draft carries real user work (answered
+  // compat questions, verdict, fault answers, tinkering methods, or free-text
+  // notes); prefill-only drafts get skipped so the fresh form is not overwritten
+  // with the same hardware fields it would populate anyway. The old restore
+  // banner container stays in the DOM (hidden) for backwards compatibility with
+  // any deep-linked docs but is no longer used.
+  const restoreEl = el.querySelector('#sf-draft-restore');
+  const hideRestoreBanner = () => { if (restoreEl) restoreEl.hidden = true; };
+  let _draftAutoApplied = null; // { ageLabel, sourceLabel } for the status render
+  // Draft load: any stored draft is treated as the user's in-progress work
+  // and auto-applied. The savedVia distinction (manual vs auto) is no
+  // longer surfaced -- autosave is the primary persistence path, and the
+  // Save button is just an explicit trigger for the same behaviour. The
+  // legacy #sf-draft-restore container stays in the DOM (hidden) for
+  // backwards compatibility with any deep links (#285 review).
+  if (!isEdit && session) {
     try {
-      const draft = await getDraft(session, appId);
+      const draft = await loadBestDraft(session, appId);
       if (draft?.form_data) {
-        const restoreEl = el.querySelector('#sf-draft-restore');
         const formEl = el.querySelector('#submit-report-form');
-        if (restoreEl && formEl) {
+        if (formEl) {
           const ageMs = draft.updated_at ? Date.now() - new Date(draft.updated_at).getTime() : 0;
           const ageLabel = ageMs > 86400000
             ? `${Math.round(ageMs / 86400000)} day${Math.round(ageMs / 86400000) === 1 ? '' : 's'} ago`
@@ -192,50 +208,139 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
               : ageMs > 60000
                 ? `${Math.round(ageMs / 60000)} minute${Math.round(ageMs / 60000) === 1 ? '' : 's'} ago`
                 : 'just now';
-          restoreEl.hidden = false;
-          restoreEl.innerHTML = `
-            <div class="sf-draft-restore-body">
-              You have a saved draft for this game (from ${ageLabel}).
-              <button type="button" id="draft-restore-btn">Restore draft</button>
-              <button type="button" id="draft-discard-btn">Discard</button>
-            </div>`;
-          restoreEl.querySelector('#draft-restore-btn')?.addEventListener('click', () => {
-            applyDraftSnapshot(formEl, draft.form_data);
-            restoreEl.hidden = true;
-            window.ppToast?.success('Draft restored.');
-          });
-          restoreEl.querySelector('#draft-discard-btn')?.addEventListener('click', async () => {
-            restoreEl.hidden = true;
-            try { await deleteDraft(session, appId); window.ppToast?.success('Draft discarded.'); }
-            catch (e) { console.warn('[submit] discard draft failed', e); }
-          });
+          const sourceLabel = draft.source === 'local' ? ' (from local backup)' : '';
+          applyDraftSnapshot(formEl, draft.form_data);
+          _draftAutoApplied = { ageLabel, sourceLabel };
+          console.debug('[submit] auto-applied draft', { appId, ageLabel, source: draft.source });
         }
       }
+      hideRestoreBanner();
     } catch (err) {
-      console.warn('[submit] draft restore lookup failed', err);
+      console.warn('[submit] draft load failed', err);
     }
   }
 
+  // Save Draft is the "not published" save: shown for fresh submits and the
+  // fromCloud publish flow, hidden when editing an already-published report
+  // (that uses "Save Changes" instead -- never both).
   const saveDraftBtn = el.querySelector('#save-draft-btn');
-  if (saveDraftBtn && session) {
+  const saveDraftStatus = el.querySelector('#save-draft-status');
+  const renderDraftStatus = (info) => {
+    if (!saveDraftStatus) return;
+    if (!info) { saveDraftStatus.textContent = ''; saveDraftStatus.hidden = true; return; }
+    saveDraftStatus.hidden = false;
+    if (info.state === 'saving') saveDraftStatus.textContent = 'Saving...';
+    else if (info.state === 'saved' && info.where === 'cloud') saveDraftStatus.textContent = 'Saved to your account.';
+    else if (info.state === 'saved' && info.where === 'local') saveDraftStatus.textContent = 'Auto-saved to this browser.';
+    else if (info.state === 'error') saveDraftStatus.textContent = `Auto-save failed: ${info.error || 'unknown'}`;
+    else saveDraftStatus.textContent = '';
+  };
+  // Inline "restored your draft" status with a Discard action. Shows once
+  // right after the auto-apply so the user knows the form was repopulated
+  // and can throw it away in one click if they wanted a fresh form instead.
+  if (_draftAutoApplied && saveDraftStatus && session) {
+    saveDraftStatus.hidden = false;
+    saveDraftStatus.innerHTML = `Restored your saved draft (from ${_draftAutoApplied.ageLabel}${_draftAutoApplied.sourceLabel}). <a href="#" id="draft-discard-inline" style="color:var(--accent)">Discard</a>`;
+    saveDraftStatus.querySelector('#draft-discard-inline')?.addEventListener('click', async (e) => {
+      e.preventDefault();
+      try {
+        await deleteDraft(session, appId);
+        deleteLocalDraft(session?.user?.id, appId);
+        window.ppToast?.success('Draft discarded. Reloading with a fresh form...');
+      } finally {
+        setTimeout(() => window.location.reload(), 400);
+      }
+    });
+  }
+  if (saveDraftBtn && session && !isEdit) {
+    const formEl = el.querySelector('#submit-report-form');
+    const snapshot = () => {
+      const snap = formEl ? snapshotFormData(formEl) : {};
+      // Debug: what actually got captured. Small footprint, useful when a
+      // user reports "my draft came back with X missing".
+      console.debug('[submit] draft snapshot', {
+        appId,
+        valueKeys: Object.keys(snap.values || {}),
+        canInstall: snap.state?.canInstall, canStart: snap.state?.canStart, canPlay: snap.state?.canPlay,
+        source: 'snapshotFormData',
+      });
+      return snap;
+    };
+    // Manual save button: still available, feeds through the same cloud+local
+    // save path so the manual click enjoys the same fallback behaviour. Also
+    // hides any leftover restore banner -- if the user is actively saving,
+    // they clearly aren't going to click "Restore draft" for the same data.
     saveDraftBtn.addEventListener('click', async () => {
-      const formEl = el.querySelector('#submit-report-form');
       if (!formEl) return;
       const prevLabel = saveDraftBtn.textContent;
       saveDraftBtn.disabled = true;
       saveDraftBtn.textContent = 'Saving...';
       try {
-        await upsertDraft(session, appId, snapshotFormData(formEl));
-        window.ppToast?.success('Draft saved. You can finish it later on any signed-in device.');
-      } catch (err) {
-        window.ppToast?.error(`Failed to save draft: ${err.message || err}`);
+        // Manual Save is the explicit trigger for the same persistence path
+        // autosave uses. Save + close: navigate back to the source page so
+        // the user is not stuck on the form after they intended to commit.
+        const res = await saveDraft(session, appId, snapshot());
+        if (res.where === 'cloud') window.ppToast?.success('Draft saved.');
+        else if (res.where === 'local') window.ppToast?.info('Saved locally. Cloud sync failed; will retry on next auto-save.');
+        else window.ppToast?.error(`Failed to save draft: ${res.error || 'unknown'}`);
+        renderDraftStatus({ state: res.where ? 'saved' : 'error', where: res.where, error: res.error });
+        if (res.where) {
+          hideRestoreBanner();
+          const dest = returnTo || `app.html#/app/${appId}`;
+          setTimeout(() => { window.location.href = dest; }, 400);
+        }
       } finally {
         saveDraftBtn.disabled = false;
         saveDraftBtn.textContent = prevLabel;
       }
     });
+    // Auto-save: 2.5s of quiet input triggers a save. Listens on 'input' for
+    // typing and 'change' for select / checkbox / radio commits. Skipped on
+    // the file input for the FPS CSV since browsers do not let us restore
+    // file selections anyway. event.isTrusted gate keeps the prefill's
+    // synthetic change events (My Hardware, fromCloud, isEdit restore) from
+    // firing an autosave the user did not ask for -- otherwise we would save
+    // the prefilled hardware fields as a draft the moment the page loads,
+    // and the restore banner would appear even though nothing user-authored
+    // exists yet (#285).
+    if (formEl) {
+      // First-load toast so the reporter learns their work is being saved
+      // (a laptop can die and the draft survives). Suppressed on repeat
+      // fires so 20 pauses per session do not generate 20 toasts. Errors
+      // always toast because a broken autosave the user does not see is
+      // worse than a chatty one.
+      let _firstAutosaveShown = false;
+      const autosaver = makeAutoSaver({
+        session, appId, snapshot,
+        delayMs: 2500,
+        onStatus: (info) => {
+          renderDraftStatus(info);
+          if (info?.state === 'saved' && info.where) {
+            hideRestoreBanner();
+            if (!_firstAutosaveShown) {
+              _firstAutosaveShown = true;
+              window.ppToast?.info('Auto-saving your draft to this browser. Tap Save to sync it to your account.');
+            }
+          }
+          if (info?.state === 'error') {
+            window.ppToast?.error(`Auto-save failed: ${info.error || 'unknown'}`);
+          }
+        },
+      });
+      const trigger = (e) => {
+        if (!e.isTrusted) return;
+        if (e.target && e.target.type === 'file') return;
+        autosaver.schedule();
+      };
+      formEl.addEventListener('input', trigger);
+      formEl.addEventListener('change', trigger);
+      // Flush pending edits before leaving the page so the user does not lose
+      // work by navigating too fast for the debounce.
+      window.addEventListener('beforeunload', () => { autosaver.cancel(); });
+    }
   } else if (saveDraftBtn) {
     saveDraftBtn.hidden = true;
+    if (saveDraftStatus) saveDraftStatus.hidden = true;
   }
 
   // #153: markdown editor is on site-wide now (no flag). Wrap the Notes
@@ -429,13 +534,16 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     const submitBtn = el.querySelector('button[type="submit"]');
     if (submitBtn) submitBtn.textContent = 'Publish';
 
-    // Save button: patches the cloud draft without requiring the full question flow
+    // Cloud-config Save: patches only the reusable cloud config (proton version,
+    // launch options, hardware), NOT the report answers. In the publish flow the
+    // report is not published yet, so per the button rule we show "Save Draft"
+    // (which captures the full form state) and Publish, and keep this cloud Save
+    // out of the DOM to avoid the "my answers did not save" confusion.
     const saveBtn = document.createElement('button');
     saveBtn.type = 'button';
     saveBtn.textContent = 'Save';
-    saveBtn.className = 'submit-report-btn';
+    saveBtn.className = 'submit-report-btn submit-report-btn--save';
     saveBtn.style.cssText = 'background:var(--s2);color:var(--text);border:1px solid var(--border);';
-    if (submitBtn) submitBtn.insertAdjacentElement('beforebegin', saveBtn);
     saveBtn.addEventListener('click', async () => {
       const form = el.querySelector('#submit-report-form');
       const get = name => form?.elements[name]?.value?.trim() || '';
@@ -544,8 +652,9 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
           // Toast is the single success confirmation now; no duplicate inline text.
           window.ppToast?.success(isEdit ? 'Changes saved.' : 'Report submitted. Thanks!');
           if (typeof window.ppTrack === 'function') window.ppTrack('report_submit', { app_id: String(appId), is_edit: isEdit });
-          // Clean up the cloud draft now that the report is in.
-          if (!isEdit && !fromCloud && session) {
+          // Clean up the saved draft now that the report is in. Applies to the
+          // fromCloud publish flow too, since it now saves/restores drafts.
+          if (!isEdit && session) {
             void deleteDraft(session, appId).catch(() => {});
           }
           const dest = returnTo || `app.html#/app/${appId}`;

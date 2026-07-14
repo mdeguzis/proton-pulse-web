@@ -8,8 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sign In With Steam — Proton Pulse</title>
 <meta name="color-scheme" content="dark">
-<link rel="stylesheet" href="css/shared/base.css?v=a93b26ad">
-<link rel="stylesheet" href="css/shared/topbar.css?v=39671fc2">
+<link rel="stylesheet" href="css/shared/base.css?v=daf1bfe9">
+<link rel="stylesheet" href="css/shared/topbar.css?v=d13d8b13">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
 <link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
 <link rel="stylesheet" href="css/auth/auth.css?v=ca512b85">
@@ -55,6 +55,7 @@
       <p>Check that the next page URL starts with <code>https://steamcommunity.com/</code> before entering anything.</p>
       <p>It is normal for that Steam page to mention <code>ilsgdshkaocrmibwdezk.supabase.co</code> in the text because that is the service finishing Proton Pulse authentication.</p>
       <p>If you are already signed into Steam in this browser, you may only need to click <strong>Sign In</strong>.</p>
+      <p>Want the ground truth instead of taking our word for it? Read the code that handles sign-in: the <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/supabase/functions/steam-callback/index.ts" target="_blank" rel="noopener">steam-callback edge function</a>. It re-verifies Steam's assertion with Steam before trusting it, and it never sees your password.</p>
     </section>
 
     <div class="auth-actions">

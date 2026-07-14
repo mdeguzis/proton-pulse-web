@@ -9,7 +9,7 @@ import {
   getProtonPulseUserIdFromSession, getShowUsername, setShowUsername,
   escapeHtml, formatSystemUpdated, getWebClientIdProfile,
   getPluginLinkCodeFromLocation, getSteamIdFromSession,
-} from './utils.js?v=71a515e5';
+} from './utils.js?v=78ac95ab';
 import {
   deleteAllMyData, fetchAllMyData, checkMyDataExists,
 } from './api/configs.js?v=0c5650ed';
@@ -19,7 +19,7 @@ import {
 import { setShowAdult, pullShowAdult, readShowAdultLocal } from '../lib/user-prefs.js?v=5d9472de';
 import { initMyHardware } from './components/my-hardware.js?v=34fd810c';
 import { initSystems } from './components/systems.js?v=382fb770';
-import { initMyReports } from './components/my-reports.js?v=59f67107';
+import { initMyReports } from './components/my-reports.js?v=18b605b2';
 import { initLibrary } from './components/library.js?v=fedd0b3a';
 
 (async function () {
@@ -113,6 +113,35 @@ import { initLibrary } from './components/library.js?v=fedd0b3a';
     myConfigsRefresh: document.getElementById('my-configs-refresh-btn'),
     myConfigsSearch:  document.getElementById('my-configs-search'),
   });
+
+  // Jump-to-section dropdown (#285 review). Scrolls the picked section into
+  // view. Also honours a #section-* hash on load so the Save-report return
+  // path (submit.html?...&return=profile.html%23section-my-reports) lands on
+  // the right section instead of the top of the page. Resets the select to
+  // the "Section..." placeholder after each jump so the label reads as an
+  // action, not a state.
+  const jumpSelect = document.getElementById('profile-jump-select');
+  const jumpTo = (id) => {
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  if (jumpSelect) {
+    jumpSelect.addEventListener('change', () => {
+      const id = jumpSelect.value;
+      jumpTo(id);
+      // Reset the select so it always reads as "Section..." after a jump.
+      jumpSelect.value = '';
+    });
+  }
+  if (window.location.hash?.startsWith('#section-') || window.location.hash === '#plugin-link-entry' || window.location.hash === '#linked-plugins-section') {
+    // Retry a few times because async section loads (my-reports, systems,
+    // library) push earlier sections down after the initial scroll, so a
+    // single scrollIntoView at t=50ms leaves the target near the bottom of
+    // the viewport once the content above finishes loading (#285 review).
+    const id = window.location.hash.slice(1);
+    [50, 500, 1200].forEach((delay) => setTimeout(() => jumpTo(id), delay));
+  }
 
   // ── Session display helpers ───────────────────────────────────────────────
 

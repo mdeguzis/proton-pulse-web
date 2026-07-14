@@ -192,6 +192,34 @@
   padding: 5px 10px;
   min-width: 180px;
 }
+
+/* Jump-to-section nav strip at the top of the signed-in profile page
+   (#285 review). Sits in normal flow like the Admin panel's tab select;
+   scrolls with the page so it doesn't float over content. scroll-margin-top
+   keeps an anchor jump from tucking the section title under the topbar. */
+.profile-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+.profile-nav-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.profile-nav .profile-select {
+  flex: 1;
+  min-width: 0;
+  max-width: 320px;
+  font-weight: 600;
+  padding: 7px 12px;
+}
+.profile-section {
+  scroll-margin-top: calc(var(--topnav-h, 60px) + 12px);
+}
 .profile-select:focus { outline: none; border-color: var(--accent); }
 
 .profile-textarea {
@@ -352,6 +380,24 @@
   letter-spacing: 0;
 }
 .profile-refresh-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Public-profile requirement note above the Library / Wishlist fields. Steam
+   only returns library or wishlist data if the user's profile visibility is
+   Public; call that out plainly so an empty section is explainable at a glance. */
+.profile-note {
+  margin: 8px 0 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  background: var(--s2);
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.profile-note strong { color: var(--text); }
+.profile-note a { color: var(--accent); text-decoration: none; }
+.profile-note a:hover { text-decoration: underline; }
 
 /* #152: page-number row for the My Reports table. Lives in the section
    title's right-aligned slot so the table itself stays uncluttered. */
@@ -572,7 +618,13 @@
    actions column and wrapping the View/Publish/Edit/Delete buttons onto two
    rows. A narrow Rating column gives the actions room to stay on one line. */
 .profile-configs-table th:nth-child(2),
-.profile-configs-table td:nth-child(2) { width: 92px; }
+.profile-configs-table td:nth-child(2) { width: 200px; }
+.profile-configs-rating-cell { text-transform: capitalize; }
+.profile-configs-updated {
+  color: var(--muted);
+  font-size: 0.86em;
+  white-space: nowrap;
+}
 .profile-configs-table td.col-action,
 .profile-configs-table th.col-action {
   text-align: right;
@@ -747,6 +799,11 @@
   outline: none;
   border-color: #4a9fd0;
 }
+.edit-report-hint {
+  font-size: 0.78em;
+  color: #7a8699;
+  line-height: 1.4;
+}
 .edit-report-status {
   min-height: 1.2em;
   margin: 12px 0 0;
@@ -858,13 +915,24 @@
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
+    gap: 6px;
   }
+  /* Every action button (View / Publish / Edit / Delete) shares the row
+     equally on mobile so the strip reads as a balanced control cluster
+     instead of hugging its content and looking ragged (#285 review).
+     min-width:0 lets the labels shrink when the row is narrow. */
   .profile-configs-view-link,
   .profile-configs-action {
+    flex: 1 1 0;
+    min-width: 0;
     text-align: center;
-    padding: 5px 4px;
-    font-size: 0.65rem;
+    padding: 7px 4px;
+    font-size: 0.7rem;
   }
+  /* Override the desktop min-width so Publish / Unpublish do not force the
+     row wider than the others on narrow viewports. */
+  .profile-configs-publish-btn,
+  .profile-configs-unpublish-btn { min-width: 0; }
 }
 
 /* system-edit: page header row keeps the title block left and the
@@ -905,9 +973,8 @@
   margin-top: 14px;
 }
 
-/* "Parse from Steam info" stands out from the outlined Save/Cancel buttons:
-   a filled, rounded accent pill with a soft glow. Uses the theme accent vars
-   so it tracks light/dark automatically. */
+/* "Parse from Steam info": a clean cool/light Steam-blue pill, no glow. Uses
+   the theme accent vars so it tracks light/dark automatically. */
 #steam-parse-open {
   border-radius: 999px;
   border: 1px solid var(--accent);
@@ -916,11 +983,10 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   padding: 7px 18px;
-  box-shadow: 0 0 12px var(--accent-glow);
-  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: none;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 #steam-parse-open:hover {
-  background: var(--accent);
-  color: #08131f;
-  box-shadow: 0 0 18px var(--accent-glow);
+  background: rgba(102, 192, 244, 0.18);
+  color: var(--accent-hi);
 }

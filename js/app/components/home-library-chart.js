@@ -114,13 +114,41 @@ function _renderChipsHtml(view) {
     </div>`;
 }
 
-function _bar(labelText, bg, fg, pct, n) {
+function _bar(labelText, bg, fg, pct, n, href) {
+  // A single row -- rendered as <a> when we can deep-link to the browse view
+  // filtered to this bucket (#290), and a plain <div> otherwise (e.g. empty
+  // rows or scopes with no reachable filter). The filter itself is applied by
+  // home.js reading the URL params on load.
+  const attrs = href ? `href="${esc(href)}" class="hlc-row hlc-row--link"` : `class="hlc-row"`;
+  const tag = href ? 'a' : 'div';
   return `
-        <div class="hlc-row">
+        <${tag} ${attrs}>
           <div class="hlc-label" style="color:${fg};background:${bg}">${esc(labelText)}</div>
           <div class="hlc-track"><div class="hlc-fill" style="width:${pct}%;background:${bg}"></div></div>
           <div class="hlc-count">${n.toLocaleString()}</div>
-        </div>`;
+        </${tag}>`;
+}
+
+// Which base scope (?filter=) the row's link should carry. Library, Wishlist,
+// and the three device views all narrow to the user's owned games except for
+// wishlist, which uses its own list.
+function _scopeParam(view) {
+  return view === 'wishlist' ? 'wishlist' : 'mine';
+}
+
+// Map a chart row to an app.html URL that lands with the matching pill
+// pre-selected. Returns null when the row cannot be represented as a filter
+// (e.g. Unknown status has no picker equivalent yet). The `view` param
+// travels along so the home page chart chip stays on the same tab (Deck /
+// Machine / SteamOS / Wishlist) when the user comes back -- otherwise
+// home.js's preferredSource override would reset it to Library.
+function _rowHref(view, bucket) {
+  const scope = _scopeParam(view);
+  if (DEVICE[view]) {
+    if (bucket === 'unknown') return null;
+    return `app.html?filter=${scope}&${view}=${encodeURIComponent(bucket)}&view=${view}`;
+  }
+  return `app.html?filter=${scope}&tier=${encodeURIComponent(bucket)}&view=${view}`;
 }
 
 function _renderChartHtml(view, appIds, deckMap) {
@@ -153,7 +181,7 @@ function _renderChartHtml(view, appIds, deckMap) {
       const n = counts[k] || 0;
       const pct = Math.round((n / max) * 100);
       const { bg, fg } = STATUS_COLORS[k] || STATUS_COLORS.unknown;
-      return _bar(cfg.label[k], bg, fg, pct, n);
+      return _bar(cfg.label[k], bg, fg, pct, n, n > 0 ? _rowHref(view, k) : null);
     }).join('');
   } else {
     const counts = computeLibraryTierCounts(appIds, searchIndex);
@@ -165,7 +193,7 @@ function _renderChartHtml(view, appIds, deckMap) {
       const pct = Math.round((n / maxBar) * 100);
       const bg = RATING_COLORS[tier] || '#3a4a5a';
       const fg = RATING_TEXT[tier] || '#c8d4e0';
-      return _bar(TIER_LABEL[tier], bg, fg, pct, n);
+      return _bar(TIER_LABEL[tier], bg, fg, pct, n, n > 0 ? _rowHref(view, tier) : null);
     }).join('');
   }
   return `

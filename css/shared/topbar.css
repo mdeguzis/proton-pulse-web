@@ -374,10 +374,10 @@ html[data-motion="off"] .banner-atoms {
 [data-theme="light"] .nav-dropdown:hover .nav-dropdown-toggle,
 [data-theme="light"] .nav-dropdown:focus-within .nav-dropdown-toggle { color: #e8f4ff; background: rgba(102,192,244,0.08); }
 [data-theme="light"] .nav-dropdown.has-active .nav-dropdown-toggle { color: #aedcff; }
-[data-theme="light"] .nav-dropdown-panel { background: #1b2838; border-color: #66c0f4; }
-[data-theme="light"] .nav-dropdown-panel > a { color: #8fa8c4; }
-[data-theme="light"] .nav-dropdown-panel > a:hover { color: #e8f4ff; background: rgba(102,192,244,0.08); }
-[data-theme="light"] .nav-dropdown-panel > a.active { color: #aedcff; }
+[data-theme="light"] .nav-dropdown-panel { background: #1b2838; border-color: rgba(102, 192, 244, 0.4); }
+[data-theme="light"] .nav-dropdown-panel > a { color: #e8f4ff; }
+[data-theme="light"] .nav-dropdown-panel > a:hover { color: #ffffff; background: rgba(102,192,244,0.14); }
+[data-theme="light"] .nav-dropdown-panel > a.active { color: #ffffff; }
 
 /* Overflow "More" menu - shown by JS when nav items don't fit */
 .nav-overflow {

@@ -120,22 +120,21 @@
   cursor: pointer;
   transition: color .1s, border-color .1s, background .1s;
 }
+/* Save + Clear are solid accent-filled pills so they read as normal action
+   buttons. Collapse stays orange as the standout; these two are the neutral
+   "do the thing" pair. */
+.filter-save-btn,
 .filter-clear-btn {
-  background: rgba(220, 70, 70, 0.12);
-  border-color: rgba(220, 70, 70, 0.45);
-  color: #ff9b9b;
-}
-.filter-clear-btn:hover { background: rgba(220, 70, 70, 0.22); border-color: #ff6b6b; color: #ffc1c1; }
-.filter-save-btn {
-  background: var(--s1);
-  border-color: var(--border);
-  color: var(--muted);
-}
-.filter-save-btn:hover { border-color: var(--accent); color: var(--strong); }
-.filter-save-btn.is-active {
-  background: var(--accent-soft);
+  background: var(--accent);
   border-color: var(--accent);
-  color: var(--accent-hi);
+  color: #0a0c10;
+}
+.filter-save-btn:hover,
+.filter-clear-btn:hover { filter: brightness(1.08); }
+.filter-save-btn.is-active {
+  background: var(--accent-hi);
+  border-color: var(--accent-hi);
+  color: #0a0c10;
 }
 .filter-count { font-size: 0.72rem; color: var(--muted); }
 .filter-persist {
@@ -188,15 +187,16 @@
   letter-spacing: 0.04em;
   padding: 6px 14px;
   border-radius: 999px;
-  border: 1.5px solid var(--border);
-  background: var(--s1);
-  color: var(--muted);
+  /* Steam warm-orange fill so Collapse reads as the primary "shrink this
+     back down" action, distinct from Save and Clear which are neutral. */
+  border: 1.5px solid #d97706;
+  background: #d97706;
+  color: #0a0c10;
   cursor: pointer;
-  transition: color .1s, border-color .1s, background .1s;
+  transition: color .1s, border-color .1s, background .1s, filter .1s;
 }
 .filter-collapse-btn:hover {
-  border-color: var(--accent);
-  color: var(--strong);
+  filter: brightness(1.08);
 }
 .filter-collapse-caret {
   font-size: 0.72rem;

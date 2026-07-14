@@ -388,6 +388,23 @@
   gap: 10px;
   align-items: center;
 }
+/* Clickable rows (#290): each row links to app.html with the matching filter
+   pre-applied. Kill the default link chrome and add a light hover so users
+   see the affordance without adding a separate button. */
+a.hlc-row--link {
+  text-decoration: none;
+  color: inherit;
+  padding: 2px 4px;
+  margin: -2px -4px;
+  border-radius: 4px;
+  transition: background-color 120ms ease;
+}
+a.hlc-row--link:hover,
+a.hlc-row--link:focus-visible {
+  background: rgba(255, 255, 255, 0.05);
+  outline: none;
+}
+a.hlc-row--link:focus-visible { box-shadow: 0 0 0 2px var(--accent); }
 /* Deck view labels are longer, so give them a wider uniform column that fits
    "Deck Verified" / "Deck Playable" on one line without clipping. */
 .home-library-chart--device .hlc-row {

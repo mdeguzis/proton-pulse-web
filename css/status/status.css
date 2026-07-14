@@ -399,7 +399,53 @@
   font-size: 0.72rem;
   color: var(--muted);
   font-family: var(--mono);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
 }
+
+/* Other labels on the issue (bug, incident, ...) shown as small tags. The
+   driving "announcement" label is implied and not repeated. */
+.announcement-tag {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  text-transform: lowercase;
+  color: var(--muted);
+  background: var(--s2, rgba(255, 255, 255, 0.06));
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+
+/* Rendered markdown body of the announcement issue. */
+.announcement-body {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text, #d7dee6);
+}
+.announcement-body > *:first-child { margin-top: 0; }
+.announcement-body > *:last-child { margin-bottom: 0; }
+.announcement-body p { margin: 0 0 0.6em; }
+.announcement-body ul, .announcement-body ol { margin: 0 0 0.6em; padding-left: 1.3em; }
+.announcement-body a { color: var(--accent, #66ccff); }
+.announcement-body code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  padding: 1px 5px;
+  background: var(--s2, rgba(255, 255, 255, 0.06));
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+  border-radius: 3px;
+}
+.announcement-body pre {
+  background: var(--s2, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+  border-radius: 4px;
+  padding: 10px 12px;
+  overflow-x: auto;
+}
+.announcement-body pre code { border: 0; padding: 0; background: none; }
 
 /* Per-service detail modal. Opens when the reader clicks a status card.
    Full-screen backdrop with a centered panel; explainer at the top

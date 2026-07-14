@@ -522,14 +522,33 @@ if (backToTopBtn) {
 }
 
 // Announcements: pulled directly from the public GitHub issues API for the
-// proton-pulse-web repo, filtered to the "incident" label. Open incidents
-// sort first, resolved ones follow (muted). If GitHub rate-limits the
-// anonymous fetch we fall back to a friendly message so the page never
-// looks broken. The Report an issue link in the section head deep-links
-// to a pre-labeled new issue so users skip the label picker.
+// proton-pulse-web repo, filtered to the "announcement" label. Any issue with
+// that label shows here, so a bug or incident tagged announcement shows too and
+// its other labels render as tags. We only surface announcements authored by a
+// maintainer (OWNER / MEMBER / COLLABORATOR): the announcement issue template
+// applies the label for anyone, so the author check keeps the status page from
+// being a public post box. Open ones sort first, resolved follow (muted). The
+// issue body is markdown, rendered with markdown-it. If GitHub rate-limits the
+// anonymous fetch we fall back to a friendly message so the page never looks
+// broken.
 
 const ANNOUNCE_REPO = 'mdeguzis/proton-pulse-web';
-const ANNOUNCE_URL  = `https://api.github.com/repos/${ANNOUNCE_REPO}/issues?labels=incident&state=all&per_page=10&sort=created&direction=desc`;
+const ANNOUNCE_URL  = `https://api.github.com/repos/${ANNOUNCE_REPO}/issues?labels=announcement&state=all&per_page=10&sort=created&direction=desc`;
+const ANNOUNCE_TRUSTED_AUTHORS = new Set(['OWNER', 'MEMBER', 'COLLABORATOR']);
+
+const _announceMd = (typeof window !== 'undefined' && typeof window.markdownit === 'function')
+  ? window.markdownit({ html: false, linkify: true, breaks: true })
+  : null;
+
+// Render a GitHub issue body (markdown) to safe HTML. markdown-it runs with
+// html:false so raw HTML in the body is escaped, not injected. Falls back to
+// escaped plain text if the CDN script did not load.
+function renderAnnouncementBody(body) {
+  const text = (body || '').trim();
+  if (!text) return '';
+  const inner = _announceMd ? _announceMd.render(text) : esc(text).replace(/\n/g, '<br>');
+  return `<div class="announcement-body">${inner}</div>`;
+}
 
 function renderAnnouncement(issue) {
   const isOpen = issue.state === 'open';
@@ -537,6 +556,13 @@ function renderAnnouncement(issue) {
   const rel = formatRelative(issue.created_at);
   const dateAttr = Number.isNaN(created.getTime()) ? '' : created.toISOString();
   const num = issue.number;
+  // Other labels (bug, incident, enhancement...) render as tags. The driving
+  // "announcement" label is implied by being in this list, so it is dropped.
+  const tags = (issue.labels || [])
+    .map(l => (typeof l === 'string' ? l : (l && l.name)))
+    .filter(name => name && name.toLowerCase() !== 'announcement')
+    .map(name => `<span class="announcement-tag">${esc(name)}</span>`)
+    .join('');
   return `
     <article class="announcement" data-state="${isOpen ? 'open' : 'closed'}">
       <div class="announcement-head">
@@ -546,7 +572,9 @@ function renderAnnouncement(issue) {
       </div>
       <div class="announcement-meta">
         <time datetime="${esc(dateAttr)}">opened ${esc(rel)}</time>
+        ${tags}
       </div>
+      ${renderAnnouncementBody(issue.body)}
     </article>
   `;
 }
@@ -561,7 +589,9 @@ async function loadAnnouncements() {
     const issues = await res.json();
     // Pull requests come back in the same feed -- drop them so the list is
     // only real issues.
-    const rows = (Array.isArray(issues) ? issues : []).filter(r => !r.pull_request);
+    const rows = (Array.isArray(issues) ? issues : [])
+      .filter(r => !r.pull_request)
+      .filter(r => ANNOUNCE_TRUSTED_AUTHORS.has(r.author_association));
     if (!rows.length) {
       listEl.innerHTML = '<div class="state-box">No announcements. All quiet.</div>';
       return;
@@ -572,7 +602,7 @@ async function loadAnnouncements() {
     });
     listEl.innerHTML = rows.map(renderAnnouncement).join('');
   } catch (err) {
-    listEl.innerHTML = `<div class="state-box">Could not load announcements (${esc(err.message || err)}). Check the <a href="https://github.com/${esc(ANNOUNCE_REPO)}/issues?q=is%3Aissue+label%3Aincident" target="_blank" rel="noopener">incident issue list</a> directly.</div>`;
+    listEl.innerHTML = `<div class="state-box">Could not load announcements (${esc(err.message || err)}). Check the <a href="https://github.com/${esc(ANNOUNCE_REPO)}/issues?q=is%3Aissue+label%3Aannouncement" target="_blank" rel="noopener">announcement issue list</a> directly.</div>`;
   }
 }
 

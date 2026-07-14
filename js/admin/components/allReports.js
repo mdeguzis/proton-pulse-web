@@ -1,5 +1,5 @@
 import { escapeHtml, fmtDateTime } from '../utils.js?v=2668b2f0';
-import { fetchAllReports, fetchStatusCounts } from '../api/allReports.js?v=ce9b13c3';
+import { fetchAllReports, fetchStatusCounts } from '../api/allReports.js?v=f6b28b0d';
 
 // Summary strip of exact per-status counts above the table. Each tile is a
 // button that filters the table to that status. Runs its own count queries so
@@ -164,6 +164,13 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
   const val = v => (v != null && v !== '') ? escapeHtml(String(v)) : '(not set)';
   const fields = [
     ['Report ID',       `#${report.id}`],
+    // Reporter identity, admin-only, right under the Report ID. Public report
+    // views anonymize the author; moderators need the real Steam username + ids
+    // to review and act on a report.
+    ['Steam Username',  report.steam_username ? escapeHtml(report.steam_username) : '(anonymous / no linked Steam profile)'],
+    ['Steam ID',        report.steam_id ? `<a href="https://steamcommunity.com/profiles/${encodeURIComponent(report.steam_id)}" target="_blank" rel="noopener">${escapeHtml(String(report.steam_id))}</a>` : '(none)'],
+    ['Client ID',       val(report.client_id)],
+    ['User ID',         val(report.proton_pulse_user_id)],
     ['App ID',          val(report.app_id)],
     ['Title',           val(report.title)],
     ['Source',          val(report.source)],
@@ -184,7 +191,6 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
     ['Game Owned',      val(report.game_owned)],
     ['Config Key',      val(report.config_key)],
     ['Notes',           val(report.notes)],
-    ['Author',          val(report.proton_pulse_user_id || report.client_id || 'anonymous')],
     ['Flagged Reason',  val(report.flagged_reason)],
     ['Flagged At',      report.flagged_at ? new Date(report.flagged_at).toLocaleString() : '(not flagged)'],
     ['Submitted',       report.created_at ? new Date(report.created_at).toLocaleString() : '?'],

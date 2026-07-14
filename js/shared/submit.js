@@ -2,7 +2,7 @@
 
 import { SupaAuth } from './config.js?v=f6f2c00a';
 import { FAULT_KEYS_WEB, deriveRatingFromState, inferProtonType } from './scoring.js?v=8051e115';
-import { RUN_TYPES, normalizeRunType, validateRuntimeVersion } from './run-type.js?v=b7e95db6';
+import { RUN_TYPES, normalizeRunType, validateRuntimeVersion } from './run-type.js?v=8611f824';
 import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
 
 // Form submission + populate-submit-form -- factored out of app.js.
@@ -94,11 +94,22 @@ export function getProtonPulseUserIdFromSession(session) {
 
 /**
  * Detect the platform the user is submitting from based on the browser user agent.
- * @returns {'web-steamdeck'|'web-linux'|'web-windows'|'web-macos'|'web'} Platform identifier string.
+ * Android must be checked BEFORE Linux because Android UAs contain "Linux;
+ * Android" and would otherwise mis-detect as desktop Linux. iPadOS Safari
+ * masquerades as macOS -- distinguish it by the touch-first navigator.
+ * When nothing matches we return the generic 'web' fallback instead of
+ * force-picking one of the specific options -- there is no need to over-narrow
+ * a submitter's platform beyond what the UA actually tells us (#285).
+ * @returns {'web-steamdeck'|'web-linux'|'web-android'|'web-ios'|'web-windows'|'web-macos'|'web'}
  */
 export function getWebSource() {
   const ua = navigator.userAgent || '';
   if (/SteamGamepad|SteamDeck/.test(ua) || (/Linux/.test(ua) && /Valve/.test(ua))) return 'web-steamdeck';
+  if (/Android/.test(ua)) return 'web-android';
+  if (/iPhone|iPod/.test(ua)) return 'web-ios';
+  // iPadOS Safari drops "iPad" from the UA on modern releases and reports
+  // itself as Macintosh with touch. Distinguish by maxTouchPoints > 1.
+  if (/iPad/.test(ua) || (/Macintosh/.test(ua) && (navigator.maxTouchPoints || 0) > 1)) return 'web-ios';
   if (/Linux/.test(ua)) return 'web-linux';
   if (/Windows/.test(ua)) return 'web-windows';
   if (/Mac/.test(ua)) return 'web-macos';
@@ -217,16 +228,29 @@ export function applyDraftSnapshot(form, snapshot) {
     const fields = form.elements[name];
     if (!fields) continue;
     if (fields instanceof RadioNodeList) {
-      for (const f of fields) {
+      const controls = [...fields];
+      for (const f of controls) {
         if (f.type === 'radio') f.checked = f.value === val;
         else if (f.type === 'checkbox') f.checked = Array.isArray(val) && val.includes(f.value);
       }
+      // A RadioNodeList has no dispatchEvent, so firing change on it silently
+      // no-ops -- which is why restored yes/no answers (canInstall, canStart...)
+      // never ran their handler or revealed the follow-up questions. Fire on the
+      // real controls: for radios only the checked one (the handler assigns
+      // state[name] = radio.value unconditionally), for checkboxes each one (its
+      // handler reads .checked).
+      if (controls.some(f => f.type === 'checkbox')) {
+        for (const f of controls) f.dispatchEvent(new Event('change', { bubbles: true }));
+      } else {
+        controls.find(f => f.checked)?.dispatchEvent(new Event('change', { bubbles: true }));
+      }
     } else if (fields.type === 'radio' || fields.type === 'checkbox') {
       fields.checked = Array.isArray(val) ? val.includes(fields.value) : fields.value === val;
+      fields.dispatchEvent(new Event('change', { bubbles: true }));
     } else {
       fields.value = val;
+      fields.dispatchEvent(new Event('change', { bubbles: true }));
     }
-    fields.dispatchEvent?.(new Event('change', { bubbles: true }));
   }
   const state = snapshot.state || {};
   const s = form._formState || (form._formState = {});
@@ -643,16 +667,13 @@ export async function populateSubmitForm(el) {
           </div>
         </div>
       </div>
-      <div class="sf-row sf-row--fps-upload">
-        <label></label>
-        <div class="sf-fps-upload">
-          <label class="sf-fps-upload-btn" for="fpsCsvInput">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-14 9v2h14v-2H5z" style="transform:rotate(180deg);transform-origin:center"/></svg>
-            Upload MangoHud CSV
-          </label>
-          <input id="fpsCsvInput" name="fpsCsv" type="file" accept=".csv,text/csv" hidden>
-          <span class="sf-fps-upload-status" id="fpsCsvStatus"></span>
-        </div>
+      <div class="sf-row--fps-upload">
+        <label class="sf-fps-upload-btn" for="fpsCsvInput">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-14 9v2h14v-2H5z" style="transform:rotate(180deg);transform-origin:center"/></svg>
+          <span>Upload MangoHud CSV</span>
+        </label>
+        <input id="fpsCsvInput" name="fpsCsv" type="file" accept=".csv,text/csv" hidden>
+        <span class="sf-fps-upload-status" id="fpsCsvStatus"></span>
       </div>
       <div class="sf-row"><label>Launch Options</label><input name="launchOptions" placeholder="e.g. PROTON_USE_WINED3D=1 %command%"></div>
 
@@ -742,22 +763,22 @@ export async function populateSubmitForm(el) {
 
       <div class="sf-section-label" style="margin-top:16px">Notes ${notesFormattingHelpHtml()}</div>
       <div class="sf-row"><textarea name="notes" rows="3" placeholder="How did it run? Any issues or tweaks?"></textarea></div>
+      <div class="sf-row-hint"><strong>Public and permanent.</strong> Notes stay on the report even if you delete your account. Do not put personal information in this field.</div>
 
-      <div class="sf-row">
-        <label>Submitted from</label>
-        <select name="reportSource">
-          <option value="web-linux"${getWebSource()==='web-linux'?' selected':''}>Linux</option>
-          <option value="web-windows"${getWebSource()==='web-windows'?' selected':''}>Windows</option>
-          <option value="web-macos"${getWebSource()==='web-macos'?' selected':''}>macOS</option>
-          <option value="web-steamdeck"${getWebSource()==='web-steamdeck'?' selected':''}>Steam Deck</option>
-          <option value="web-steammachine"${getWebSource()==='web-steammachine'?' selected':''}>Steam Machine</option>
-          <option value="web"${getWebSource()==='web'?' selected':''}>Other / Unknown</option>
-        </select>
-      </div>
-      <div class="sf-row" style="justify-content:flex-end;gap:8px;flex-wrap:wrap">
+      <!-- Submitted-from platform: detected from navigator.userAgent + touch
+           signals in getWebSource() and stamped on the submission behind
+           the scenes. Kept invisible to the reporter (they never asked for
+           this attribution and rarely want to fiddle with it) but still
+           recorded on the row so the pipeline can bucket web submissions
+           by source platform (#285 review). -->
+      <input type="hidden" name="reportSource" value="${getWebSource()}">
+      <div class="sf-row sf-form-actions">
         <span id="submit-status" style="font-size:0.76rem;color:var(--muted)"></span>
-        <button type="button" id="save-draft-btn" class="submit-report-btn submit-report-btn--secondary" title="Save the current form so you can finish it later on any signed-in device">Save Draft</button>
+        <button type="button" id="save-draft-btn" class="submit-report-btn submit-report-btn--secondary" title="Save the current form so you can finish it later on any signed-in device. Auto-saves every few seconds after you stop typing.">Save</button>
         <button type="submit" class="submit-report-btn">Submit</button>
+      </div>
+      <div class="sf-form-actions-status">
+        <span id="save-draft-status" style="font-size:0.76rem;color:var(--muted)" hidden></span>
       </div>
     </form>`;
   container.dataset.loaded = '1';
@@ -912,7 +933,11 @@ export async function populateSubmitForm(el) {
         .then(rels => { for (const rel of rels) { const l = tagToLabel(rel.tag_name); if (l) protonVersions.push(l); } }),
       fetch(pvUrl).then(r => r.ok ? r.json() : []).then(vs => { if (Array.isArray(vs)) for (const v of vs) if (v) protonVersions.push(v); }).catch(() => {}),
     ]).then(() => {
-      protonVersions = [...new Set(protonVersions)];
+      // Collapse the "Proton - Experimental" / "Proton-Experimental" variants
+      // (the pipeline emits both) into one canonical label so the datalist does
+      // not show two near-identical Experimental entries.
+      const canon = v => (/^proton[\s-]+experimental$/i.test(String(v).trim()) ? 'Proton Experimental' : v);
+      protonVersions = [...new Set(protonVersions.map(canon))];
       try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), versions: protonVersions })); } catch {}
     });
 
@@ -947,7 +972,11 @@ export async function populateSubmitForm(el) {
         if (!s?.user) return;
         const uid = s.user.id;
         const url = `${SUPABASE_URL}/rest/v1/user_systems?proton_pulse_user_id=eq.${uid}&order=updated_at.desc`;
-        const resp = await fetch(url, { headers: { apikey: SUPABASE_ANON_KEY } });
+        // user_systems is owner-only RLS (proton_pulse_user_id = auth.uid()), so
+        // the request must carry the user's token, not just the anon apikey.
+        const resp = await fetch(url, {
+          headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${s.access_token}` },
+        });
         if (!resp.ok) return;
         const systems = await resp.json();
         if (!systems.length) return;
@@ -1130,16 +1159,25 @@ function wireRunTypeToggle(container) {
   }
   applyRunType();
 
-  // "Also tested Linux?" Yes/No toggle: Yes reveals the notes textarea.
+  // "Also tested Linux?" Yes/No toggle: Yes reveals the notes textarea. The
+  // sync helper is shared between click and programmatic-restore paths so a
+  // draft restore that writes alsoHidden.value directly (no click) still
+  // repaints the button pressed-state and reveals the notes textarea.
+  const syncAlsoLinuxUi = (val) => {
+    for (const b of alsoBtns) b.setAttribute('aria-pressed', String(!!val && b.dataset.value === val));
+    if (alsoNotes) alsoNotes.style.display = (val === 'yes') ? '' : 'none';
+  };
   for (const btn of alsoBtns) {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const val = btn.dataset.value;
       if (alsoHidden) alsoHidden.value = val;
-      for (const b of alsoBtns) b.setAttribute('aria-pressed', String(b === btn));
-      if (alsoNotes) alsoNotes.style.display = (val === 'yes') ? '' : 'none';
+      syncAlsoLinuxUi(val);
     });
   }
+  // Draft restore fires a 'change' event on the hidden input (applyDraftSnapshot
+  // dispatches for every restored field); catch it so the UI stays in step.
+  if (alsoHidden) alsoHidden.addEventListener('change', () => syncAlsoLinuxUi(alsoHidden.value));
 
   // Shortcut link: file a separate Native Linux report against this app.
   const shortcut = container.querySelector('#sf-submit-native-shortcut');

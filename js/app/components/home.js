@@ -11,7 +11,7 @@ import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewp
 import { getEffectivePageSize, isAutoLoadEnabled } from '../../lib/pagination-prefs.js?v=15d0747d';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
-import { renderHomeLibraryChart } from './home-library-chart.js?v=2ec30912';
+import { renderHomeLibraryChart } from './home-library-chart.js?v=7ba60b85';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { loadDeckStatusMap } from '../api/deck-status.js?v=a8d355d8';
@@ -1198,14 +1198,64 @@ export async function renderHomePage() {
       }
     }
 
+    // #290: chart rows on the home page deep-link into the browse view with
+    // ?tier=/&deck=/&machine=/&steamos= to pre-apply the corresponding pill.
+    // Only accept known values so a hand-rolled URL cannot inject arbitrary
+    // strings into the Sets. The filter count badge next to FILTERS ticks up
+    // per active filter, so no extra prefilter banner is needed.
+    const _urlParams = new URLSearchParams(window.location.search);
+    const VALID_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked', 'unrated']);
+    const VALID_DECK = new Set(['verified', 'playable', 'unsupported', 'unknown']);
+    const VALID_MACHINE = new Set(['verified', 'playable', 'unsupported', 'unknown']);
+    const VALID_STEAMOS = new Set(['compatible', 'unsupported', 'unknown']);
+    const _urlTier = _urlParams.get('tier');
+    const _urlDeck = _urlParams.get('deck');
+    const _urlMachine = _urlParams.get('machine');
+    const _urlSteamos = _urlParams.get('steamos');
+    if (_urlTier && VALID_TIERS.has(_urlTier)) {
+      tierSel = new Set([_urlTier]);
+      _applyPillSelection(tierGroup, [_urlTier]);
+    }
+    if (_urlDeck && VALID_DECK.has(_urlDeck)) {
+      deckSel = new Set([_urlDeck]);
+      _applyPillSelection(deckGroup, [_urlDeck]);
+    }
+    if (_urlMachine && VALID_MACHINE.has(_urlMachine)) {
+      machineSel = new Set([_urlMachine]);
+      _applyPillSelection(machineGroup, [_urlMachine]);
+    }
+    if (_urlSteamos && VALID_STEAMOS.has(_urlSteamos)) {
+      steamosSel = new Set([_urlSteamos]);
+      _applyPillSelection(steamosGroup, [_urlSteamos]);
+    }
+    // deckStatusMap is lazy-loaded on the first pill click. When a device
+    // filter is seeded from the URL we have to load it up front, otherwise
+    // every appId reads as 'unknown' and the filter matches nothing.
+    if ((_urlDeck || _urlMachine || _urlSteamos) && !deckStatusMap) {
+      deckStatusMap = await loadDeckStatusMap().catch(() => ({}));
+    }
+    if (_urlTier || _urlDeck || _urlMachine || _urlSteamos) {
+      updateFilterBadge();
+      _saveFiltersIfEnabled();
+    }
+
     applyRecentFilters();
     applyPopularFilters();
 
     // Signed-in library breakdown chart. No-op when signed out (#199).
     // Nav-driven override: when the user came in via ?filter=mine or
-    // ?filter=wishlist, mirror that on the chart's Library/Wishlist chips
-    // so the bars match whatever list they're actually browsing.
-    const _chartPref = _isMyLibrary ? 'library'
+    // ?filter=wishlist, mirror that on the chart's chip so the bars match
+    // whatever list they're actually browsing.
+    //
+    // #290 followup: clickable chart rows carry a &view= param so the chip
+    // stays on Deck / Machine / SteamOS / Wishlist when the user comes back
+    // from the browse view. Without it, ?filter=mine would always force the
+    // chart chip back to Library.
+    const _urlView = _urlParams.get('view');
+    const VALID_CHART_VIEWS = new Set(['library', 'wishlist', 'deck', 'machine', 'steamos']);
+    const _chartPref = _urlView && VALID_CHART_VIEWS.has(_urlView)
+      ? _urlView
+      : _isMyLibrary ? 'library'
       : _isMyWishlist ? 'wishlist'
       : undefined;
     void renderHomeLibraryChart(

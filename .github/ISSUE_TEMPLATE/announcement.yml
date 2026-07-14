@@ -1,0 +1,16 @@
+name: Announcement
+description: Post an announcement to the status page (proton-pulse.com/status). Add a bug or incident label too if it applies.
+title: "Announcement: "
+labels: ["announcement"]
+body:
+  - type: markdown
+    attributes:
+      value: Anything filed here shows up in the Announcements section on the status page. Markdown in the body is rendered there.
+  - type: textarea
+    id: body
+    attributes:
+      label: Announcement
+      description: What do you want people to know? Markdown is supported (headings, lists, links, code).
+      placeholder: "Heads up: the report submission API will be down for ~30 minutes tonight for maintenance."
+    validations:
+      required: true

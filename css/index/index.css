@@ -207,6 +207,13 @@
   flex-wrap: nowrap;
   margin-bottom: 16px;
 }
+/* CTAs adopt a calm Steam blue palette so they read the same in dark and
+   light mode (was blue -> dark blue on secondary and blue -> green on
+   primary, which fluoresced in light mode). Colors:
+     #316783   Steam navy button
+     #417a9b   Steam steel blue button
+     #4c8ab0   Steam blue hover
+   White text works on all three. */
 .cta-btn {
   display: inline-flex;
   align-items: center;
@@ -218,26 +225,30 @@
   border-radius: 8px;
   font-size: 0.82rem;
   font-weight: 600;
-  color: #0b1622;
+  color: #ffffff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  background: linear-gradient(90deg, var(--accent), var(--accent-hi) 92%);
+  background: #417a9b;
   text-decoration: none;
-  transition: filter 0.15s, transform 0.05s, box-shadow 0.15s;
+  transition: background 0.15s, transform 0.05s, box-shadow 0.15s;
   text-align: center;
 }
 .cta-btn:hover {
-  filter: brightness(1.08);
-  box-shadow: 0 0 16px var(--accent-glow);
+  background: #4c8ab0;
+  box-shadow: 0 4px 14px rgba(65, 122, 155, 0.35);
   text-decoration: none; /* override global a:hover underline */
+  color: #ffffff;
 }
 .cta-btn:active { transform: translateY(1px); }
+/* .cta-primary was a darker Steam navy earlier; the two CTAs read better as
+   equal-weight peers (both #417a9b), so keep the class for HTML consistency
+   but inherit the exact same fill as .cta-btn. */
 .cta-primary {
-  background: linear-gradient(90deg, var(--accent-hi), var(--green-hi) 80%);
-  box-shadow: 0 0 20px var(--accent-glow);
+  background: #417a9b;
+  box-shadow: 0 4px 14px rgba(65, 122, 155, 0.35);
 }
-.cta-primary:hover { filter: brightness(1.06); }
+.cta-primary:hover { background: #4c8ab0; box-shadow: 0 6px 18px rgba(65, 122, 155, 0.45); }
 /* On desktop the flex:1 buttons stretch the full container and read as huge
    banners. Cap the row to half width so the two CTAs stay a sensible size.
    Mobile keeps the full-width row for tap targets. */
@@ -1030,6 +1041,43 @@
 }
 .about-legend-btn:hover { border-color: var(--accent); color: var(--strong); background: var(--s2); }
 .about-legend-btn .alb-glyph { width: 18px; height: 18px; flex: 0 0 auto; }
+
+/* Your Data & Privacy section on About: three cards laid out on a responsive
+   grid. Cards adopt the same neutral surface as .explore-item so the section
+   feels of a piece with the rest of the page. */
+.your-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin: 8px 0 32px;
+}
+.your-data-card {
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--s1);
+}
+.your-data-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--text);
+}
+.your-data-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0 0 8px;
+}
+.your-data-card p:last-child { margin-bottom: 0; }
+.your-data-card ul {
+  color: var(--muted);
+  font-size: 0.88rem;
+  padding-left: 1.2rem;
+  margin: 4px 0 0;
+}
+.your-data-card ul li { margin-bottom: 3px; }
+.your-data-card a { color: var(--accent); text-decoration: none; }
+.your-data-card a:hover { text-decoration: underline; }
 
 .il-intro { color: var(--muted); font-size: 0.9rem; margin: 4px 0 16px; }
 .icons-legend {

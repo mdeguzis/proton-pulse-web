@@ -1027,15 +1027,60 @@
   font-family: inherit;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 0 0 1px var(--accent-soft, rgba(102, 192, 244, 0.16)), 0 4px 18px var(--accent-glow, rgba(102, 192, 244, 0.35));
-  transition: background 0.12s ease, transform 0.06s ease, box-shadow 0.12s ease;
+  box-shadow: none;
+  transition: background 0.12s ease, transform 0.06s ease;
 }
 .submit-report-btn:hover {
   background: var(--accent-hi, #aedcff);
   text-decoration: none;
-  box-shadow: 0 0 0 1px var(--accent-soft, rgba(102, 192, 244, 0.32)), 0 4px 22px var(--accent-glow, rgba(102, 192, 244, 0.45));
+}
+
+/* Save = Steam green, Save Draft = orange, Publish keeps the accent blue.
+   Flat fills, no glow. */
+.submit-report-btn--save {
+  background: var(--green, #5ba32b);
+  color: #08140a;
+}
+.submit-report-btn--save:hover { background: #6fbf3a; }
+
+#save-draft-btn.submit-report-btn--secondary {
+  background: #e08a1e;
+  color: #1a1206;
+  border: 0;
+}
+#save-draft-btn.submit-report-btn--secondary:hover:not(:disabled) {
+  background: #f0982a;
 }
 .submit-report-btn:active { transform: translateY(1px); }
+
+/* Form action row: Save + Submit sit right-aligned on desktop; on mobile
+   the buttons stretch to share the row equally so a lone right-aligned pair
+   does not look unbalanced (#285 review). Status line sits below the
+   buttons on its own row. */
+.sf-form-actions {
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.sf-form-actions-status {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4px;
+}
+@media (max-width: 560px) {
+  .sf-form-actions {
+    justify-content: stretch;
+  }
+  .sf-form-actions .submit-report-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    padding: 11px 12px;
+  }
+  #submit-status { flex-basis: 100%; text-align: center; }
+  .sf-form-actions-status { justify-content: center; padding-top: 6px; }
+}
 .submit-report-btn:disabled {
   background: var(--s3, #2a475e);
   color: var(--muted, #67788c);
@@ -1201,8 +1246,11 @@
 
 /* Run-type dropdown at the top of the submit form. The native option gets
    disabled + relabeled when Steam does not offer a Linux build. Rest is
-   inherited from the base .sf-row select style. */
-.sf-row--run-type select { flex: 1; }
+   inherited from the base .sf-row select style. min-width: 0 stops the
+   select from demanding its widest-option intrinsic width on narrow mobile
+   viewports and wrapping the row -- Game title / Runtime Version already
+   sit inline with their labels; run-type used to be the odd one out (#285). */
+.sf-row--run-type select { flex: 1; min-width: 0; }
 .sf-run-type-hint {
   margin: -2px 0 6px;
   padding-left: 130px;
@@ -1571,34 +1619,38 @@ button.hub-link {
 }
 button.hub-link:disabled { opacity: 0.5; cursor: default; }
 
-/* MangoHud CSV upload row: small button + inline status text. Sits below
-   the three FPS inputs but shares the same left gutter as any sf-row for
-   visual alignment. */
-.sf-row--fps-upload { margin-top: -2px; }
-.sf-fps-upload {
-  flex: 1;
+/* MangoHud CSV upload row. Not an sf-row -- lives on its own line under the
+   FPS inputs, no label indent, so the Steam-blue action spans the full form
+   width like a proper button rather than tucking into the input column
+   (#285 screenshot). Status caption wraps onto its own line under the button. */
+.sf-row--fps-upload {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
+  margin: 4px 0 8px;
 }
 .sf-fps-upload-btn {
+  flex: 1 1 auto;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border: 1px solid var(--border2);
-  background: var(--s1);
-  color: var(--accent);
-  font-size: 0.72rem;
-  font-family: var(--mono);
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 0;
+  background: #417a9b;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-family: inherit;
+  font-weight: 600;
   letter-spacing: 0.04em;
   cursor: pointer;
-  border-radius: 4px;
-  transition: border-color 0.15s, background 0.15s;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: background 0.15s ease;
 }
-.sf-fps-upload-btn:hover { border-color: var(--accent); background: var(--s2); }
-.sf-fps-upload-status { font-size: 0.72rem; color: var(--muted); }
+.sf-fps-upload-btn:hover { background: #4c8ab0; }
+.sf-fps-upload-status { font-size: 0.72rem; color: var(--muted); flex-basis: 100%; }
 .sf-fps-upload-status--err { color: var(--red, #ff5566); }
 .sf-row input:focus, .sf-row select:focus, .sf-row textarea:focus { border-color: var(--accent); }
 .sf-row textarea { resize: vertical; }

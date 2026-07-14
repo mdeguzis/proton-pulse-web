@@ -121,6 +121,11 @@
   .pg-filter-panel .pg-filter-group {
     flex-direction: row;
     flex-wrap: wrap;
+    /* Pills distribute across the row width so short groups (STORE 4-up)
+       don't cluster on the left with a big empty gap on the right. Short
+       trailing rows (e.g. BORKED alone after the tier wrap) stay
+       left-aligned since space-between only spreads within a filled row. */
+    justify-content: space-between;
   }
   /* .filter-panel--stack (browse page) normally lays groups side-by-side
      via flex-direction: row on desktop. reports.css only overrides that at

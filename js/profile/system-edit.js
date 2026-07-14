@@ -2,7 +2,8 @@ import { SUPABASE_URL, SUPABASE_ANON_KEY, SupaAuth } from './config.js?v=87cd0f3
 import {
   getProtonPulseUserIdFromSession, parseSteamSystemInfo, inferGpuVendor, inferCpuVendor,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel, escapeHtml,
-} from './utils.js?v=71a515e5';
+  validateSysinfoText, validateDeviceId,
+} from './utils.js?v=78ac95ab';
 import { supabaseHeaders } from './api/supabase.js?v=4889c5e6';
 import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/systems.js?v=770d14b7';
 
@@ -176,6 +177,15 @@ function parseRamToMb(raw) {
     if (os) lines.push(`OS Version: ${os}`);
     if (kernel) lines.push(`Kernel Version: ${kernel}`);
 
+    const sysinfoText = lines.join('\n');
+    const sysFieldError = validateSysinfoText(sysinfoText) || (isAdd ? null : validateDeviceId(deviceId));
+    if (sysFieldError) {
+      statusEl.textContent = sysFieldError;
+      statusEl.style.color = 'var(--red)';
+      console.warn('[profile] system-edit: field validation failed', { isAdd, error: sysFieldError });
+      return;
+    }
+
     saveBtn.disabled = true;
     saveBtn.textContent = 'Saving...';
     statusEl.textContent = '';
@@ -192,7 +202,7 @@ function parseRamToMb(raw) {
             proton_pulse_user_id: protonPulseUserId,
             device_id: newDeviceId,
             label,
-            sysinfo_text: lines.join('\n'),
+            sysinfo_text: sysinfoText,
             is_default: isFirst,
             updated_at: new Date().toISOString(),
           }),
@@ -201,7 +211,7 @@ function parseRamToMb(raw) {
       } else {
         await updateSystem(protonPulseUserId, deviceId, {
           label,
-          sysinfo_text: lines.join('\n'),
+          sysinfo_text: sysinfoText,
         }, session);
       }
       window.location.href = 'profile.html';

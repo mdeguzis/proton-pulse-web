@@ -215,6 +215,34 @@ describe('fetchReportById', () => {
     expect(r.is_pending).toBe(false);
   });
 
+  test('resolves steam_username and steam_id from author_avatars for a signed-in reporter', async () => {
+    global.fetch = makeFetchStub({
+      'https://test.supabase.co/rest/v1/user_configs': [
+        { id: 42, app_id: '730', title: 'Hl2', proton_pulse_user_id: 'user-uuid-1', client_id: 'cid-9' },
+      ],
+      'https://test.supabase.co/rest/v1/report_approvals': [],
+      'https://test.supabase.co/rest/v1/author_avatars': [
+        { display_name: 'ProfessorKaos64', steam_id: '76561198000000000' },
+      ],
+    });
+    const r = await fetchReportById(makeSession(), 42);
+    expect(r.steam_username).toBe('ProfessorKaos64');
+    expect(r.steam_id).toBe('76561198000000000');
+  });
+
+  test('leaves steam_username unset and skips the avatar lookup for an anonymous report', async () => {
+    const fetchSpy = makeFetchStub({
+      'https://test.supabase.co/rest/v1/user_configs': [
+        { id: 43, app_id: '730', title: 'Hl2', proton_pulse_user_id: null, client_id: 'cid-anon' },
+      ],
+      'https://test.supabase.co/rest/v1/report_approvals': [],
+    });
+    global.fetch = fetchSpy;
+    const r = await fetchReportById(makeSession(), 43);
+    expect(r.steam_username).toBeUndefined();
+    expect(fetchSpy.mock.calls.some(([url]) => url.includes('author_avatars'))).toBe(false);
+  });
+
   test('throws when the row does not exist', async () => {
     global.fetch = makeFetchStub({
       'https://test.supabase.co/rest/v1/user_configs': [],

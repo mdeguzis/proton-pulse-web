@@ -139,6 +139,16 @@
       <text x="12" y="14" text-anchor="middle" font-family="Inter, -apple-system, system-ui, sans-serif" font-weight="900" font-size="6.5" fill="#fff" letter-spacing="0.3">EPIC</text>
       <path d="M9 16 L15 16 L12 19 Z" fill="#fff"/>
     </symbol>
+    <!-- Support links: heart for Patreon, coffee cup for Ko-Fi. Stroke style
+         matches the rest of the nav sprite so they theme with currentColor. -->
+    <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/>
+    </symbol>
+    <symbol id="icon-kofi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 8h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/>
+      <path d="M16 9h2.5a2.5 2.5 0 0 1 0 5H16"/>
+      <path d="M7 3.5v2M10 3.5v2M13 3.5v2"/>
+    </symbol>
   </defs>
 </svg>`;
 
@@ -306,6 +316,10 @@
           <svg class="nav-caret" aria-hidden="true" viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
         </button>
         <div class="nav-dropdown-panel">
+          <a href="status.html#status-announcements" title="Latest announcements on the status page">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg>
+            <span>Announcements</span>
+          </a>
           <a href="scoring.html" data-page="scoring" title="How compatibility scores are calculated">
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg>
             <span>Scoring</span>
@@ -321,6 +335,10 @@
           <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener" title="Join the Proton Pulse Discord">
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg>
             <span>Discord</span>
+          </a>
+          <a href="https://ko-fi.com/mikeyd64" target="_blank" rel="noopener" title="Support Proton Pulse on Ko-Fi">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-kofi"/></svg>
+            <span>Ko-Fi</span>
           </a>
         </div>
       </div>
@@ -388,10 +406,12 @@
       <svg class="mnav-caret" aria-hidden="true" viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
     </button>
     <div class="mnav-sub">
+      <a href="status.html#status-announcements"><svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg> Announcements</a>
       <a href="scoring.html" data-page="scoring"><svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg> Scoring</a>
       <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> Decky Plugin</a>
       <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
       <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg> Discord</a>
+      <a href="https://ko-fi.com/mikeyd64" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-kofi"/></svg> Ko-Fi</a>
       <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-github"/></svg> GitHub</a>
     </div>
   </div>

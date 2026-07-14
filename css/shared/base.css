@@ -291,13 +291,66 @@
 [data-theme="light"] .feature-cards > div p {
   color: var(--muted);
 }
-/* Mobile drawer stays dark */
+/* Mobile drawer stays dark (matches the topbar so the drawer feels like a
+   continuation of the header). Text at #e8f4ff (near-white) on the deep navy
+   surface reads as calm high-contrast; icons at #66c0f4 stay consistent
+   across every row (direct links AND accordion parents) so the eye stops
+   picking up subtle icon-color mismatches. */
 [data-theme="light"] .mobile-nav-drawer {
   background: #1b2838;
 }
-[data-theme="light"] .mobile-nav-drawer a { color: #8fa8c4; }
-[data-theme="light"] .mobile-nav-drawer a:hover { color: #e8f4ff; }
-[data-theme="light"] .mobile-nav-drawer a.active { color: #aedcff; }
+[data-theme="light"] .mobile-nav-drawer a { color: #e8f4ff; }
+[data-theme="light"] .mobile-nav-drawer a:hover { color: #ffffff; }
+[data-theme="light"] .mobile-nav-drawer a.active { color: #ffffff; background: rgba(102, 192, 244, 0.16); }
+[data-theme="light"] .mobile-nav-drawer a .nav-icon,
+[data-theme="light"] .mnav-parent .nav-icon { color: #66c0f4; }
+/* Accordion parent rows (Browse / Resources) inherit var(--text) which flips
+   to #2c3e50 in light mode -- invisible on the dark drawer. Same near-white
+   contrast as the direct drawer links so parent + child rows read as peers. */
+[data-theme="light"] .mnav-parent { color: #e8f4ff; }
+[data-theme="light"] .mnav-caret { color: #66c0f4; }
+[data-theme="light"] .mnav-sub { background: rgba(0, 0, 0, 0.28); }
+
+/* Hamburger toggle button in the topbar inherits var(--text) which flips to
+   near-black in light mode. Force the same #c7d5e0 the rest of the topbar
+   uses so the 3 lines stay visible on the dark navy header. */
+[data-theme="light"] .topbar-mobile-toggle { color: #c7d5e0; }
+[data-theme="light"] .topbar-mobile-toggle:hover { color: #66c0f4; }
+
+/* Topbar lockup: .topbar-brand + .topbar-brand-text pull from var(--strong)
+   which flips to near-black in light mode; on the dark topbar that reads as
+   invisible. Force Steam body-text color and rework the "PULSE" gradient to
+   a sky-blue -> green stop that reads on the dark navy topbar. */
+[data-theme="light"] .topbar-brand,
+[data-theme="light"] .topbar-brand:hover,
+[data-theme="light"] .topbar-brand-text {
+  color: #c7d5e0;
+}
+[data-theme="light"] .topbar-brand-text .brand-accent {
+  background: linear-gradient(90deg, #66c0f4, #7fdaa2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="light"] .topbar-brand-tag {
+  color: #8fa8c4;
+  border-left-color: rgba(102, 192, 244, 0.3);
+}
+
+/* Search dropdown drops down from the dark topbar; keep the dark surface for
+   continuity but force the text colors to the same Steam-body palette so
+   results are readable in light mode (var(--text) flipped to dark blue and
+   went invisible on the dark card). */
+[data-theme="light"] .search-dropdown {
+  background: linear-gradient(180deg, rgba(30, 41, 55, 0.98), rgba(19, 28, 38, 0.98));
+  border-color: rgba(102, 192, 244, 0.35);
+}
+[data-theme="light"] .search-dropdown a { color: #e8f4ff; border-bottom-color: rgba(102, 192, 244, 0.12); }
+[data-theme="light"] .search-dropdown a:hover,
+[data-theme="light"] .search-dropdown a.is-focused { color: #ffffff; background: rgba(102, 192, 244, 0.16); }
+[data-theme="light"] .search-dropdown .sd-title { color: #ffffff; }
+[data-theme="light"] .search-dropdown .sd-appid,
+[data-theme="light"] .search-dropdown .sd-meta { color: #a8c1dd; }
 
 /* Confidence breakdown page */
 [data-theme="light"] .cb-header {

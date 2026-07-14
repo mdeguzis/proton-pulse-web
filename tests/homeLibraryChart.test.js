@@ -100,3 +100,32 @@ describe('computeDeviceStatusCounts (Machine + SteamOS, #273)', () => {
     expect(c).toEqual({ verified: 0, playable: 0, unsupported: 0, unknown: 0 });
   });
 });
+
+describe('_rowHref -- deep-link URLs for clickable chart rows (#290)', () => {
+  test('library tier rows link to app.html with filter=mine, tier, and view', () => {
+    const ctx = makeCtx();
+    expect(ctx._rowHref('library', 'gold')).toBe('app.html?filter=mine&tier=gold&view=library');
+    expect(ctx._rowHref('library', 'platinum')).toBe('app.html?filter=mine&tier=platinum&view=library');
+    expect(ctx._rowHref('library', 'borked')).toBe('app.html?filter=mine&tier=borked&view=library');
+  });
+
+  test('wishlist tier rows switch the scope and view to wishlist', () => {
+    const ctx = makeCtx();
+    expect(ctx._rowHref('wishlist', 'gold')).toBe('app.html?filter=wishlist&tier=gold&view=wishlist');
+    expect(ctx._rowHref('wishlist', 'silver')).toBe('app.html?filter=wishlist&tier=silver&view=wishlist');
+  });
+
+  test('device views encode status as deck/machine/steamos param and carry view=<device>', () => {
+    const ctx = makeCtx();
+    expect(ctx._rowHref('deck', 'verified')).toBe('app.html?filter=mine&deck=verified&view=deck');
+    expect(ctx._rowHref('machine', 'playable')).toBe('app.html?filter=mine&machine=playable&view=machine');
+    expect(ctx._rowHref('steamos', 'compatible')).toBe('app.html?filter=mine&steamos=compatible&view=steamos');
+  });
+
+  test('unknown device bucket returns null so the row is not clickable', () => {
+    const ctx = makeCtx();
+    expect(ctx._rowHref('deck', 'unknown')).toBeNull();
+    expect(ctx._rowHref('machine', 'unknown')).toBeNull();
+    expect(ctx._rowHref('steamos', 'unknown')).toBeNull();
+  });
+});

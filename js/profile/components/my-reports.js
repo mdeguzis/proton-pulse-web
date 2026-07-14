@@ -5,13 +5,13 @@ import {
   getProtonPulseUserIdFromSession, escapeHtml, formatSystemUpdated,
   getWebClientIdProfile, getMyReportBadges, flaggedMessageHtml,
   mergeMyReportRows,
-} from '../utils.js?v=71a515e5';
+} from '../utils.js?v=78ac95ab';
 import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
   unpublishReport,
 } from '../api/configs.js?v=0c5650ed';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
-import { showEditCloudConfigModal, showEditReportModal } from './edit-modals.js?v=a7c857d1';
+import { showEditCloudConfigModal, showEditReportModal } from './edit-modals.js?v=79558c3c';
 
 /**
  * Initialise the My Reports pane. Call once after DOM is ready.
@@ -111,15 +111,15 @@ export function initMyReports(ctx) {
           ? `<a class="profile-configs-view-link" href="${escapeHtml(viewHref)}">View</a>`
           : `<span class="profile-configs-view-link profile-configs-view-disabled" title="Not published yet">View</span>`,
         row.cloud && row.unpublished
-          ? `<a class="profile-configs-action profile-configs-publish-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1&return=profile.html" target="_blank" rel="noopener">Publish</a>`
+          ? `<a class="profile-configs-action profile-configs-publish-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1&return=profile.html%23section-my-reports">Publish</a>`
           : '',
         row.published_id
           ? `<button type="button" class="profile-configs-action profile-configs-unpublish-btn" data-published-id="${escapeHtml(String(row.published_id))}">${row.pending ? 'Cancel' : 'Unpublish'}</button>`
           : '',
         row.published_id
-          ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&edit=${escapeHtml(String(row.published_id))}&return=profile.html" target="_blank" rel="noopener">Edit</a>`
+          ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&edit=${escapeHtml(String(row.published_id))}&return=profile.html%23section-my-reports">Edit</a>`
           : row.cloud
-            ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1&return=profile.html" target="_blank" rel="noopener">Edit</a>`
+            ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1&return=profile.html%23section-my-reports">Edit</a>`
             : '',
         `<button type="button" class="profile-configs-action profile-configs-delete-btn" data-app-id="${escapeHtml(String(row.app_id))}">Delete</button>`,
       ].filter(Boolean).join('');
@@ -129,9 +129,8 @@ export function initMyReports(ctx) {
             <a href="${escapeHtml(appLink)}" class="profile-configs-game-link">${escapeHtml(name)}</a>
             <div class="profile-configs-appid">App ${escapeHtml(String(row.app_id))}${row.published_id ? ` · Report #${row.published_id}` : ''}</div>
           </td>
-          <td>${escapeHtml(row.rating || '—')}</td>
+          <td class="profile-configs-rating-cell">${escapeHtml(row.rating || '—')} <span class="profile-configs-updated">${escapeHtml(formatSystemUpdated(row.updated_at))}</span></td>
           <td><div class="profile-configs-status">${badges}</div>${flaggedNote}</td>
-          <td>${escapeHtml(formatSystemUpdated(row.updated_at))}</td>
           <td class="col-action"><div class="profile-configs-actions">${actions}</div></td>
         </tr>`;
     }).join('');

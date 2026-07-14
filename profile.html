@@ -8,11 +8,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My Account — Proton Pulse</title>
 <meta name="color-scheme" content="dark">
-<link rel="stylesheet" href="css/shared/base.css?v=a93b26ad">
-<link rel="stylesheet" href="css/shared/topbar.css?v=39671fc2">
+<link rel="stylesheet" href="css/shared/base.css?v=daf1bfe9">
+<link rel="stylesheet" href="css/shared/topbar.css?v=d13d8b13">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
 <link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
-<link rel="stylesheet" href="css/profile/profile.css?v=12c66ce9">
+<link rel="stylesheet" href="css/profile/profile.css?v=6bbbfb90">
 </head>
 <body>
 
@@ -55,6 +55,26 @@
         <button class="profile-signout-btn profile-signout-topright" id="profile-signout-btn">Sign out</button>
       </div>
 
+      <!-- Jump-to-section dropdown (#285 review). Same shape as the Admin
+           panel's tab select, but here every section is visible on one long
+           page, so this is a scroll-to-anchor rather than a tab switcher. -->
+      <div class="profile-nav">
+        <label for="profile-jump-select" class="profile-nav-label">Jump to:</label>
+        <select id="profile-jump-select" class="profile-select">
+          <option value="" selected>Section...</option>
+          <option value="plugin-link-entry">Decky Plugin Link</option>
+          <option value="section-library">Library &amp; Wishlist</option>
+          <option value="section-account">Account details</option>
+          <option value="linked-plugins-section">Linked plugins</option>
+          <option value="section-submissions">Report submissions</option>
+          <option value="section-preferences">Site preferences</option>
+          <option value="section-filter-prefs">Report filter preferences</option>
+          <option value="section-hardware">My hardware</option>
+          <option value="section-my-reports">My Reports</option>
+          <option value="section-danger">Danger Zone</option>
+        </select>
+      </div>
+
       <div class="profile-section profile-link-entry" id="plugin-link-entry" hidden>
         <div class="profile-section-title">Decky Plugin Link</div>
         <div class="profile-field">
@@ -71,13 +91,18 @@
         </div>
       </div>
 
-      <div class="profile-section">
+      <div class="profile-section" id="section-library">
         <div class="profile-section-title" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
           <span>Library</span>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             <a href="app.html?filter=mine" class="profile-refresh-btn" style="text-decoration:none;color:var(--accent);border-color:var(--accent)">View my games</a>
             <button type="button" class="profile-refresh-btn" id="library-refresh-btn">Refresh</button>
           </div>
+        </div>
+        <div class="profile-note">
+          Library and wishlist matching only works when your Steam profile visibility is set to <strong>Public</strong> on
+          <a href="https://steamcommunity.com/my/edit/settings" target="_blank" rel="noopener">steamcommunity.com/my/edit/settings</a>.
+          If it is Friends only or Private, Steam returns nothing and this section stays empty.
         </div>
         <div class="profile-field">
           <div class="profile-field-value" id="library-count" style="font-size:1.05rem"></div>
@@ -100,7 +125,7 @@
         </div>
       </div>
 
-      <div class="profile-section">
+      <div class="profile-section" id="section-account">
         <div class="profile-section-title">Account details</div>
 
         <div class="profile-field">
@@ -168,7 +193,7 @@
         </div>
       </div>
 
-      <div class="profile-section">
+      <div class="profile-section" id="section-submissions">
         <div class="profile-section-title">Report submissions</div>
 
         <div class="profile-field">
@@ -192,7 +217,7 @@
         </div>
       </div>
 
-      <div class="profile-section">
+      <div class="profile-section" id="section-preferences">
         <div class="profile-section-title">Site preferences</div>
 
         <div class="profile-field">
@@ -208,7 +233,7 @@
         </div>
       </div>
 
-      <div class="profile-section">
+      <div class="profile-section" id="section-filter-prefs">
         <div class="profile-section-title">Report filter preferences</div>
         <div class="profile-field">
           <div class="profile-field-label">GPU vendor</div>
@@ -243,7 +268,7 @@
         </div>
       </div>
 
-      <div class="profile-section">
+      <div class="profile-section" id="section-hardware">
         <div class="profile-section-title" style="display:flex;justify-content:space-between;align-items:center">
           <span>My hardware</span>
         </div>
@@ -277,7 +302,7 @@
       </div>
 
       <!-- Owned report/config rows from public Pulse reports plus cloud-synced plugin configs -->
-      <div class="profile-section">
+      <div class="profile-section" id="section-my-reports">
         <div class="profile-section-title" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
           <span>My Reports</span>
           <div style="display:flex;align-items:center;gap:8px">
@@ -298,9 +323,8 @@
             <thead>
               <tr>
                 <th>Game</th>
-                <th>Rating</th>
+                <th>Rating &middot; Updated</th>
                 <th>Status</th>
-                <th>Updated</th>
                 <th class="col-action"></th>
               </tr>
             </thead>
@@ -310,7 +334,7 @@
         </div>
       </div>
 
-      <div class="profile-section profile-section-danger">
+      <div class="profile-section profile-section-danger" id="section-danger">
         <div class="profile-section-title">Danger Zone</div>
         <p class="profile-danger-note" style="margin-top:12px">Download a copy of all your data across every table.</p>
         <button class="profile-signout-btn" id="profile-download-data-btn">Download my data</button>
@@ -338,8 +362,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script src="js/lib/analytics.js?v=7855fb4c"></script>
-<script src="js/lib/topbar.js?v=8050bed6"></script>
+<script src="js/lib/topbar.js?v=48b596f6"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/profile/main.js?v=82344885"></script>
+<script type="module" src="js/profile/main.js?v=b17d13b1"></script>
 </body>
 </html>

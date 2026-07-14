@@ -423,3 +423,44 @@ describe('home page browse -- Steam Machine + SteamOS filters (#273)', () => {
     expect(homeSrc).toContain('machineSel.size + steamosSel.size');
   });
 });
+
+describe('#290 clickable chart rows: URL-param prefilter', () => {
+  test('reads tier / deck / machine / steamos from URL params', () => {
+    expect(homeSrc).toContain("_urlParams.get('tier')");
+    expect(homeSrc).toContain("_urlParams.get('deck')");
+    expect(homeSrc).toContain("_urlParams.get('machine')");
+    expect(homeSrc).toContain("_urlParams.get('steamos')");
+  });
+
+  test('validates each param against a known-value set so a URL cannot inject junk', () => {
+    expect(homeSrc).toMatch(/VALID_TIERS\s*=\s*new Set\(\[[^\]]*'gold'/);
+    expect(homeSrc).toMatch(/VALID_DECK\s*=\s*new Set\(\[[^\]]*'verified'/);
+    expect(homeSrc).toMatch(/VALID_MACHINE\s*=\s*new Set\(\[[^\]]*'playable'/);
+    expect(homeSrc).toMatch(/VALID_STEAMOS\s*=\s*new Set\(\[[^\]]*'compatible'/);
+  });
+
+  test('valid params seed the matching Sel and pre-select the pill', () => {
+    expect(homeSrc).toContain('tierSel = new Set([_urlTier]);');
+    expect(homeSrc).toContain('_applyPillSelection(tierGroup, [_urlTier])');
+    expect(homeSrc).toContain('deckSel = new Set([_urlDeck]);');
+    expect(homeSrc).toContain('_applyPillSelection(deckGroup, [_urlDeck])');
+    expect(homeSrc).toContain('machineSel = new Set([_urlMachine]);');
+    expect(homeSrc).toContain('_applyPillSelection(machineGroup, [_urlMachine])');
+    expect(homeSrc).toContain('steamosSel = new Set([_urlSteamos]);');
+    expect(homeSrc).toContain('_applyPillSelection(steamosGroup, [_urlSteamos])');
+  });
+
+  test('refreshes the filter badge and persists once a URL param seeds a filter', () => {
+    expect(homeSrc).toMatch(/if \(_urlTier \|\| _urlDeck \|\| _urlMachine \|\| _urlSteamos\)/);
+  });
+
+  test('device URL params trigger deckStatusMap load up front (otherwise every appId is "unknown" and the filter matches nothing)', () => {
+    expect(homeSrc).toMatch(/if \(\(_urlDeck \|\| _urlMachine \|\| _urlSteamos\) && !deckStatusMap\)\s*\{\s*deckStatusMap = await loadDeckStatusMap/);
+  });
+
+  test('respects ?view= when picking the chart chip so Deck/Machine/SteamOS/Wishlist do not reset to Library', () => {
+    expect(homeSrc).toContain("_urlParams.get('view')");
+    expect(homeSrc).toMatch(/VALID_CHART_VIEWS\s*=\s*new Set\(\['library', 'wishlist', 'deck', 'machine', 'steamos'\]\)/);
+    expect(homeSrc).toContain('_urlView && VALID_CHART_VIEWS.has(_urlView)');
+  });
+});
