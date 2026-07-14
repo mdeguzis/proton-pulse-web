@@ -20,6 +20,30 @@ import { readShowOwnerBadgesLocal, pullShowOwnerBadges } from '../../lib/user-pr
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
 import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';
 
+// #323 followup helpers: every place that used to call
+// getMyLibraryAppIds / getMyWishlistAppIds directly now goes through these
+// two functions so a signed-out visitor with a saved public-profile
+// lookup gets the same functionality (library filter pill, owner badges,
+// chart, nav) as a signed-in user, minus report submission. Signed-in
+// session always wins.
+async function _libraryAppIdsForScope() {
+  try {
+    const session = await window.SupaAuth?.getSession?.();
+    if (session?.user) return await getMyLibraryAppIds().catch(() => new Set());
+  } catch { /* fall through to saved lookup */ }
+  if (hasSavedLookup()) return await getSavedLookupLibraryAppIds().catch(() => new Set());
+  return new Set();
+}
+
+async function _wishlistAppIdsForScope() {
+  try {
+    const session = await window.SupaAuth?.getSession?.();
+    if (session?.user) return await getMyWishlistAppIds().catch(() => new Set());
+  } catch { /* fall through to saved lookup */ }
+  if (hasSavedLookup()) return await getSavedLookupWishlistAppIds().catch(() => new Set());
+  return new Set();
+}
+
 const LOAD_COUNT_KEY = 'pp:load-count';
 const LOAD_COUNTS = [50, 100, 150, 200];
 // How many report cards to preload per section before "Load more". Set on the
@@ -292,13 +316,18 @@ async function _buildOwnerBadgeContext() {
     want = value;
   } catch { /* keep the local value */ }
   if (!want) return ctx;
+  // #323 followup: signed-out visitors with a saved lookup should still
+  // see owner badges. Otherwise the badge preference reads as "signed-in
+  // only" which contradicts the rest of the saved-lookup UX.
+  let hasScope = false;
   try {
     const session = await window.SupaAuth?.getSession?.();
-    if (!session || !session.user) return ctx;
-  } catch { return ctx; }
+    hasScope = !!(session && session.user);
+  } catch { /* not signed in */ }
+  if (!hasScope && !hasSavedLookup()) return ctx;
   const [lib, wish] = await Promise.all([
-    getMyLibraryAppIds().catch(() => new Set()),
-    getMyWishlistAppIds().catch(() => new Set()),
+    _libraryAppIdsForScope(),
+    _wishlistAppIdsForScope(),
   ]);
   ctx.on = true;
   ctx.libraryAppIds  = lib;
@@ -1018,11 +1047,14 @@ export async function renderHomePage() {
     if (libraryGroup) _wirePillGroup(libraryGroup, { onChange: async sel => {
       librarySel  = sel.has('mine')     ? new Set(['mine'])     : new Set();
       wishlistSel = sel.has('wishlist') ? new Set(['wishlist']) : new Set();
+      // #323 followup: route through the scope helper so signed-out
+      // visitors with a saved lookup can still toggle My Games / On
+      // Wishlist filters and see their public profile's games.
       if (librarySel.size && !libraryAppIds) {
-        libraryAppIds = await getMyLibraryAppIds().catch(() => new Set());
+        libraryAppIds = await _libraryAppIdsForScope();
       }
       if (wishlistSel.size && !wishlistAppIds) {
-        wishlistAppIds = await getMyWishlistAppIds().catch(() => new Set());
+        wishlistAppIds = await _wishlistAppIdsForScope();
       }
       updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
@@ -1175,34 +1207,16 @@ export async function renderHomePage() {
         wishlistSel = new Set();
       }
       _applyPillSelection(libraryGroup, [selValue]);
+      // #323 followup: route through the shared scope helper so signed-out
+      // visitors with a saved lookup + URL-driven ?filter=mine / ?filter=wishlist
+      // get their public profile's library / wishlist. Signed-in call still
+      // wins because _libraryAppIdsForScope checks session first.
       const [libIds, wishIds] = await Promise.all([
-        !isWishlist ? getMyLibraryAppIds().catch(() => new Set())  : Promise.resolve(new Set()),
-        isWishlist  ? getMyWishlistAppIds().catch(() => new Set()) : Promise.resolve(new Set()),
+        !isWishlist ? _libraryAppIdsForScope()  : Promise.resolve(new Set()),
+        isWishlist  ? _wishlistAppIdsForScope() : Promise.resolve(new Set()),
       ]);
       libraryAppIds  = libIds;
       wishlistAppIds = wishIds;
-      // #323: signed-out visitors with a saved public-profile lookup get their
-      // library/wishlist from the anonymous lookup instead of the sign-in
-      // prompt. Signed-in call above still wins; this only fires when it
-      // returned an empty set.
-      if (isWishlist ? wishlistAppIds.size === 0 : libraryAppIds.size === 0) {
-        if (hasSavedLookup()) {
-          try {
-            if (isWishlist) {
-              wishlistAppIds = await getSavedLookupWishlistAppIds();
-            } else {
-              libraryAppIds = await getSavedLookupLibraryAppIds();
-            }
-            console.debug('[my-library-fallback] using saved public-profile lookup', {
-              isWishlist,
-              size: (isWishlist ? wishlistAppIds : libraryAppIds).size,
-              source: 'localStorage:pp:lookup-profile-input',
-            });
-          } catch (err) {
-            console.warn('[my-library-fallback] saved lookup failed', err);
-          }
-        }
-      }
       updateFilterBadge();
 
       // The default view is capped to recent-reports.json (~100 rows) and

@@ -240,12 +240,32 @@ describe('#323 localStorage persistence + Save button + nav fallback', () => {
     expect(SAVED_LOOKUP).not.toMatch(/localStorage\.setItem/);
   });
 
-  test('home.js falls back to saved public lookup when getMyLibraryAppIds returns empty', () => {
-    expect(HOME_JS).toContain('getSavedLookupLibraryAppIds');
-    expect(HOME_JS).toContain('getSavedLookupWishlistAppIds');
-    expect(HOME_JS).toContain('hasSavedLookup');
-    // Fallback fires only when signed-in call returned empty AND a saved lookup exists.
-    expect(HOME_JS).toMatch(/if \(isWishlist \? wishlistAppIds\.size === 0 : libraryAppIds\.size === 0\)[\s\S]{0,100}hasSavedLookup\(\)/);
+  test('home.js exposes scope helpers that pick signed-in > saved-lookup > empty', () => {
+    // All three call sites (owner badges, URL-driven filter, filter pill
+    // onChange) MUST use the shared helpers so the fallback stays
+    // consistent. Regressions that call getMyLibraryAppIds directly
+    // silently break the saved-lookup path.
+    expect(HOME_JS).toMatch(/async function _libraryAppIdsForScope\(\)/);
+    expect(HOME_JS).toMatch(/async function _wishlistAppIdsForScope\(\)/);
+    // Each helper checks the session first, then falls back to the saved
+    // lookup if hasSavedLookup, then returns empty.
+    expect(HOME_JS).toMatch(/if \(session\?\.user\) return await getMyLibraryAppIds/);
+    expect(HOME_JS).toMatch(/if \(hasSavedLookup\(\)\) return await getSavedLookupLibraryAppIds/);
+    expect(HOME_JS).toMatch(/if \(session\?\.user\) return await getMyWishlistAppIds/);
+    expect(HOME_JS).toMatch(/if \(hasSavedLookup\(\)\) return await getSavedLookupWishlistAppIds/);
+  });
+
+  test('home.js call sites route through the scope helpers (no direct getMy* calls in filter / badge / URL paths)', () => {
+    // The URL-driven ?filter=mine branch, the filter pill onChange, and
+    // the _buildOwnerBadgeContext all call the shared helpers now. The
+    // ONLY remaining direct getMyLibraryAppIds / getMyWishlistAppIds
+    // calls live INSIDE the scope helpers themselves. Locking this in
+    // ensures a new call site cannot silently regress the fallback.
+    const directLibraryCalls = (HOME_JS.match(/getMyLibraryAppIds\(\)/g) || []).length;
+    const directWishlistCalls = (HOME_JS.match(/getMyWishlistAppIds\(\)/g) || []).length;
+    // One direct call each remains inside the helper itself.
+    expect(directLibraryCalls).toBe(1);
+    expect(directWishlistCalls).toBe(1);
   });
 
   test('home.js hides the sign-in callout when a saved lookup exists (no nag)', () => {
