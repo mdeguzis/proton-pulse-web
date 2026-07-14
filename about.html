@@ -30,14 +30,24 @@
       <p id="site-version" style="font-size:0.78rem;color:var(--muted);margin-bottom:4px;font-family:var(--mono)">loading version...</p>
       <h1>About Proton Pulse</h1>
       <p>
-        Proton Pulse is an open-source compatibility database for Steam on Linux.
-        The main pages stay focused on finding a game and reading its reports. The
-        rest lives here: what the project is, how it differs from ProtonDB, and how
-        the open data pipeline works.
+        Proton Pulse is a compatibility platform for playing Windows games on
+        Linux and Steam Deck. It runs its own report submission, moderation,
+        and audit pipeline; scores every report against your hardware; syncs
+        configs across devices; and ships a Steam Deck plugin that writes
+        launch options directly from Gaming Mode. ProtonDB reports are one of
+        several inputs that feed the site, alongside Steam Web API data,
+        native Pulse Reports, and Deck / Machine / SteamOS verification
+        metadata. Everything on top of that is Proton Pulse.
+      </p>
+      <p>
+        The main pages stay focused on finding a game and reading its
+        reports. This page covers what the project is, where its data comes
+        from, and how it compares to ProtonDB.
       </p>
     </div>
 
     <div class="about-quicklinks">
+      <a class="about-legend-btn" href="#data-sources">Where the data comes from</a>
       <a class="about-legend-btn" href="#your-data">Your Data &amp; Privacy</a>
       <a class="about-legend-btn" href="#safety">Safety &amp; Security</a>
       <a class="about-legend-btn" href="#icons-signage">
@@ -65,6 +75,48 @@
         <div class="ei-title">Steam Deck native</div>
         <div class="ei-desc">The Decky Loader plugin reads + writes Pulse Reports right from Gaming Mode. Submit configs without leaving the game.</div>
         <div class="ei-tag">Decky</div>
+      </a>
+    </div>
+
+    <!-- Data sources: named list of every ingest so the "it is just a
+         ProtonDB frontend" reading of the site does not survive a scroll. -->
+    <div class="section-label" id="data-sources">Where the data comes from</div>
+    <p style="color:var(--muted);max-width:78ch;line-height:1.6">
+      Proton Pulse consumes several public datasets and layers its own
+      scoring, submission, and moderation on top. Each ingest runs on its
+      own schedule via the
+      <a href="https://github.com/mdeguzis/proton-pulse-web/tree/main/scripts/pipeline" target="_blank" rel="noopener">open data pipeline</a>.
+    </p>
+    <div class="explore-grid">
+      <a class="explore-item" href="https://www.protondb.com" target="_blank" rel="noopener">
+        <div class="ei-title">ProtonDB reports</div>
+        <div class="ei-desc">Community reports pulled nightly and normalized into a hardware-aware schema. One of several inputs, not the whole site.</div>
+        <div class="ei-tag">Ingest</div>
+      </a>
+      <a class="explore-item" href="app.html">
+        <div class="ei-title">Pulse Reports</div>
+        <div class="ei-desc">Native submissions carrying full hardware capture, Proton version, launch options, and outcome. Editable and deletable by the reporter.</div>
+        <div class="ei-tag">Ingest</div>
+      </a>
+      <a class="explore-item" href="https://partner.steamgames.com/doc/webapi" target="_blank" rel="noopener">
+        <div class="ei-title">Steam Web API</div>
+        <div class="ei-desc">Owned games, wishlists, and app metadata via Valve's official API. Powers My Library, My Wishlist, and the public profile lookup.</div>
+        <div class="ei-tag">Ingest</div>
+      </a>
+      <a class="explore-item" href="app.html">
+        <div class="ei-title">Deck / Machine / SteamOS verification</div>
+        <div class="ei-desc">Valve's Verified / Playable / Compatible ratings pulled per-app so filters can layer official Steam device compatibility on top of Proton scores.</div>
+        <div class="ei-tag">Ingest</div>
+      </a>
+      <a class="explore-item" href="https://heroicgameslauncher.com" target="_blank" rel="noopener">
+        <div class="ei-title">GOG + Epic (Heroic, Junk Store)</div>
+        <div class="ei-desc">Non-Steam launchers are first-class: the plugin detects Heroic / Junk Store shortcuts and surfaces the underlying store in reports.</div>
+        <div class="ei-tag">Ingest</div>
+      </a>
+      <a class="explore-item" href="scoring.html">
+        <div class="ei-title">Hardware-weighted scoring</div>
+        <div class="ei-desc">Every incoming report is re-scored against your GPU / driver / CPU so search results reflect what runs on YOUR rig, not the average.</div>
+        <div class="ei-tag">Layer</div>
       </a>
     </div>
 
