@@ -6,7 +6,7 @@ import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=f9591262';
-import { esc } from '../utils.js?v=c7e1268c';
+import { esc } from '../utils.js?v=2cbe4072';
 import { loadDeckStatusMap } from '../api/deck-status.js?v=a8d355d8';
 
 const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];

@@ -39,6 +39,7 @@
 
     <div class="about-quicklinks">
       <a class="about-legend-btn" href="#your-data">Your Data &amp; Privacy</a>
+      <a class="about-legend-btn" href="#safety">Safety &amp; Security</a>
       <a class="about-legend-btn" href="#icons-signage">
         <svg class="alb-glyph" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="9.4" cy="12" r="5.2" fill="#1b9fff"/><path d="M9.2 1.2A10.8 10.8 0 0 1 9.2 22.8L9.2 18.9A6.9 6.9 0 0 0 9.2 5.1Z" fill="#fff"/></svg>
         Icons &amp; Signage
@@ -116,6 +117,45 @@
           <li>Erase flow: <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/supabase/migrations/20260712140000_admin_erase_user_anonymize.sql">admin_erase_user migration</a></li>
           <li>Full policy: <a href="privacy.html">privacy.html</a></li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Safety & Security -->
+    <div class="section-label" id="safety">Safety &amp; Security</div>
+    <div class="your-data-grid">
+      <div class="your-data-card">
+        <h3>Automated scanning</h3>
+        <p>
+          Every push and pull request runs through
+          <a href="https://codeql.github.com/" target="_blank" rel="noopener">CodeQL</a> static analysis (XSS, injection, auth bypass),
+          <a href="https://docs.github.com/en/code-security/dependabot" target="_blank" rel="noopener">Dependabot</a> for known dependency CVEs, and
+          <code>npm audit</code> gating on high/critical vulnerabilities.
+          Issue attachments are hash-checked against
+          <a href="https://www.virustotal.com/" target="_blank" rel="noopener">VirusTotal</a>.
+        </p>
+      </div>
+      <div class="your-data-card">
+        <h3>Security hardening</h3>
+        <p>
+          The site ships a
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" target="_blank" rel="noopener">Content Security Policy</a>
+          restricting script and connection sources. All edge functions enforce per-IP rate limiting.
+          Database access uses
+          <a href="https://supabase.com/docs/guides/database/postgres/row-level-security" target="_blank" rel="noopener">Row-Level Security</a>
+          so users can only modify their own data. Passwords are derived via HMAC-SHA256.
+        </p>
+      </div>
+      <div class="your-data-card">
+        <h3>Pen testing and standards</h3>
+        <p>
+          Manual security audits are conducted against
+          <a href="https://owasp.org/Top10/" target="_blank" rel="noopener">OWASP Top 10</a> and
+          <a href="https://cwe.mitre.org/top25/" target="_blank" rel="noopener">CWE Top 25</a>.
+          Full findings, CWE references, and fix verification are documented on the
+          <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Safety-and-Security" target="_blank" rel="noopener">Safety wiki</a>.
+          Report vulnerabilities via
+          <a href="https://github.com/mdeguzis/proton-pulse-web/security/advisories" target="_blank" rel="noopener">GitHub Security Advisories</a>.
+        </p>
       </div>
     </div>
 
