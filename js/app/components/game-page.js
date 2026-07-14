@@ -1310,9 +1310,11 @@ export async function renderGamePage(appId) {
         e.stopPropagation();
         if (!confirm('Delete your report for this game?')) return;
         const clientId = getWebClientId();
-        const r = await fetch(`${SB_URL}/user_configs?client_id=eq.${clientId}&app_id=eq.${appId}`, {
+        const hdrs = window.SupaAuth ? await window.SupaAuth.authHeaders() : { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
+        hdrs['x-client-id'] = clientId;
+        const r = await fetch(`${SB_URL}/rest/v1/user_configs?client_id=eq.${clientId}&app_id=eq.${appId}`, {
           method: 'DELETE',
-          headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'x-client-id': clientId },
+          headers: hdrs,
         });
         if (r.ok) { b.textContent = 'Deleted'; setTimeout(render, 1000); }
         else { b.textContent = 'Failed'; }
@@ -1326,9 +1328,11 @@ export async function renderGamePage(appId) {
         if (!confirm('Delete your Proton config for this game?')) return;
         const voterId  = b.dataset.voterId;
         const cfgAppId = b.dataset.appId;
+        const cfgHdrs = window.SupaAuth ? await window.SupaAuth.authHeaders() : { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
+        cfgHdrs['x-client-id'] = voterId;
         const r = await fetch(
-          `${SB_URL}/user_proton_configs?voter_id=eq.${voterId}&app_id=eq.${cfgAppId}`,
-          { method: 'DELETE', headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'x-client-id': voterId } }
+          `${SB_URL}/rest/v1/user_proton_configs?voter_id=eq.${voterId}&app_id=eq.${cfgAppId}`,
+          { method: 'DELETE', headers: cfgHdrs }
         );
         console.log('[delete-cfg]', r.status, voterId, cfgAppId);
         if (r.ok) { b.textContent = 'Deleted'; setTimeout(render, 1000); }
