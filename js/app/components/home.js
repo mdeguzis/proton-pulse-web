@@ -11,7 +11,7 @@ import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewp
 import { getEffectivePageSize, isAutoLoadEnabled } from '../../lib/pagination-prefs.js?v=15d0747d';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
-import { renderHomeLibraryChart } from './home-library-chart.js?v=7ba60b85';
+import { renderHomeLibraryChart } from './home-library-chart.js?v=9b244db9';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { getSavedLookupLibraryAppIds, getSavedLookupWishlistAppIds, hasSavedLookup } from '../lib/saved-lookup.js?v=7c45ae8b';
@@ -551,14 +551,23 @@ export async function renderHomePage() {
         <div id="load-more-popular"></div>
       </div>`;
 
-    // Show the sign-in callout if the user is not authenticated
+    // Show the sign-in callout if the user is not authenticated AND has no
+    // saved public-profile lookup. A saved lookup means "the user has an
+    // alternative path in use" -- prompting them to sign in on top of that
+    // reads as nagging (#323 followup).
     const _callout = document.getElementById('home-signin-callout');
-    if (_callout && window.SupaAuth) {
-      window.SupaAuth.getSession().then(function (s) {
-        if (!s || !s.user) _callout.hidden = false;
-      }).catch(function () { _callout.hidden = false; });
-    } else if (_callout) {
-      _callout.hidden = false;
+    if (_callout) {
+      const _decideCallout = (signedIn) => {
+        if (signedIn) { _callout.hidden = true; return; }
+        _callout.hidden = hasSavedLookup();
+      };
+      if (window.SupaAuth) {
+        window.SupaAuth.getSession()
+          .then((s) => _decideCallout(!!(s && s.user)))
+          .catch(() => _decideCallout(false));
+      } else {
+        _decideCallout(false);
+      }
     }
 
     let currentSort = 'recent';
