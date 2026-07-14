@@ -64,6 +64,7 @@ js/plugin-link/main.js
 css/plugin-link/plugin-link.css
 lookup.html
 js/lookup/main.js
+js/app/lib/saved-lookup.js
 css/lookup/lookup.css
 profile.html
 js/profile/config.js

@@ -135,7 +135,12 @@ describe('lookup.html + js/lookup/main.js wiring', () => {
 
 describe('deploy plumbing', () => {
   test('lookup files are on the gh-pages manifest', () => {
-    for (const f of ['lookup.html', 'js/lookup/main.js', 'css/lookup/lookup.css']) {
+    for (const f of [
+      'lookup.html',
+      'js/lookup/main.js',
+      'js/app/lib/saved-lookup.js',
+      'css/lookup/lookup.css',
+    ]) {
       expect(MANIFEST).toContain(f);
     }
   });
@@ -160,5 +165,75 @@ describe('sign-in hint spread across the site', () => {
   test('submit.html auth-gate hint offers the lookup path', () => {
     const SUBMIT = read('submit.html');
     expect(SUBMIT).toMatch(/auth-gate[\s\S]*href="lookup\.html"/);
+  });
+});
+
+describe('#323 localStorage persistence + Save button + nav fallback', () => {
+  const LOOKUP_HTML_STR = read('lookup.html');
+  const LOOKUP_MAIN_STR = read('js/lookup/main.js');
+  const SAVED_LOOKUP = read('js/app/lib/saved-lookup.js');
+  const HOME_JS = read('js/app/components/home.js');
+
+  test('lookup page has separate Look up + Save buttons, plus Clear', () => {
+    expect(LOOKUP_HTML_STR).toContain('id="lookup-lookup"');
+    expect(LOOKUP_HTML_STR).toContain('id="lookup-save"');
+    expect(LOOKUP_HTML_STR).toContain('id="lookup-clear"');
+    expect(LOOKUP_HTML_STR).toContain('id="lookup-saved-hint"');
+  });
+
+  test('lookup page ships an Examples bullet list matching ProtonDB layout', () => {
+    expect(LOOKUP_HTML_STR).toMatch(/<ul class="lookup-examples">/);
+    expect(LOOKUP_HTML_STR).toContain('steamcommunity.com/id/NAME-IN-URL');
+    expect(LOOKUP_HTML_STR).toMatch(/76561198#+/);
+  });
+
+  test('lookup page keeps the Steam help doc link prominent', () => {
+    expect(LOOKUP_HTML_STR).toContain('help.steampowered.com/en/faqs/view/2816-BE67-5B69-0FEC');
+  });
+
+  test('lookup main defines the localStorage keys we share with the nav fallback', () => {
+    expect(LOOKUP_MAIN_STR).toMatch(/LS_INPUT_KEY\s*=\s*'pp:lookup-profile-input'/);
+    expect(LOOKUP_MAIN_STR).toMatch(/LS_STEAMID_KEY\s*=\s*'pp:lookup-profile-steamid'/);
+  });
+
+  test('lookup main persists only when the Save button is clicked (Look up is transient)', () => {
+    // runLookup takes { persist } and only writes on persist=true.
+    expect(LOOKUP_MAIN_STR).toMatch(/async function runLookup\(input, \{ persist = false \} = \{\}\)/);
+    expect(LOOKUP_MAIN_STR).toMatch(/if \(persist\)\s*\{\s*writeSaved/);
+    // Save button wires persist:true; Look up wires persist:false.
+    expect(LOOKUP_MAIN_STR).toMatch(/saveBtn[\s\S]{0,200}submit\(\{ persist: true \}\)/);
+    expect(LOOKUP_MAIN_STR).toMatch(/lookupBtn[\s\S]{0,200}submit\(\{ persist: false \}\)/);
+  });
+
+  test('lookup main autofills + auto-runs from localStorage on load, with URL param taking priority', () => {
+    expect(LOOKUP_MAIN_STR).toContain('readSaved()');
+    // URL preset wins; storage fills in when URL is empty.
+    expect(LOOKUP_MAIN_STR).toMatch(/const preset = urlPreset \|\| saved\.input/);
+  });
+
+  test('lookup main Clear button wipes both localStorage keys and empties the input', () => {
+    expect(LOOKUP_MAIN_STR).toMatch(/clearBtn\.addEventListener\('click'/);
+    expect(LOOKUP_MAIN_STR).toMatch(/clearSaved\(\)/);
+    expect(LOOKUP_MAIN_STR).toMatch(/removeItem\(LS_INPUT_KEY\)/);
+    expect(LOOKUP_MAIN_STR).toMatch(/removeItem\(LS_STEAMID_KEY\)/);
+  });
+
+  test('saved-lookup helper caches the edge-fn response so library + wishlist share one round-trip', () => {
+    expect(SAVED_LOOKUP).toContain('getSavedLookupLibraryAppIds');
+    expect(SAVED_LOOKUP).toContain('getSavedLookupWishlistAppIds');
+    expect(SAVED_LOOKUP).toContain('hasSavedLookup');
+    expect(SAVED_LOOKUP).toMatch(/let _cache = null/);
+    // Same localStorage key as /lookup writes.
+    expect(SAVED_LOOKUP).toMatch(/LS_INPUT_KEY\s*=\s*'pp:lookup-profile-input'/);
+    // Reads only -- never writes to localStorage.
+    expect(SAVED_LOOKUP).not.toMatch(/localStorage\.setItem/);
+  });
+
+  test('home.js falls back to saved public lookup when getMyLibraryAppIds returns empty', () => {
+    expect(HOME_JS).toContain('getSavedLookupLibraryAppIds');
+    expect(HOME_JS).toContain('getSavedLookupWishlistAppIds');
+    expect(HOME_JS).toContain('hasSavedLookup');
+    // Fallback fires only when signed-in call returned empty AND a saved lookup exists.
+    expect(HOME_JS).toMatch(/if \(isWishlist \? wishlistAppIds\.size === 0 : libraryAppIds\.size === 0\)[\s\S]{0,100}hasSavedLookup\(\)/);
   });
 });
