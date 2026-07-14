@@ -241,11 +241,14 @@
   color: #ffffff;
 }
 .cta-btn:active { transform: translateY(1px); }
+/* .cta-primary was a darker Steam navy earlier; the two CTAs read better as
+   equal-weight peers (both #417a9b), so keep the class for HTML consistency
+   but inherit the exact same fill as .cta-btn. */
 .cta-primary {
-  background: #316783;
-  box-shadow: 0 4px 14px rgba(49, 103, 131, 0.35);
+  background: #417a9b;
+  box-shadow: 0 4px 14px rgba(65, 122, 155, 0.35);
 }
-.cta-primary:hover { background: #3d7a99; box-shadow: 0 6px 18px rgba(49, 103, 131, 0.45); }
+.cta-primary:hover { background: #4c8ab0; box-shadow: 0 6px 18px rgba(65, 122, 155, 0.45); }
 /* On desktop the flex:1 buttons stretch the full container and read as huge
    banners. Cap the row to half width so the two CTAs stay a sensible size.
    Mobile keeps the full-width row for tap targets. */

@@ -41,7 +41,9 @@ export const RUN_TYPES = Object.freeze({
     // umbrella in the Steam client (Experimental, Next, Hotfix) so the user
     // doesn't get a fake "does not look like Proton" warning when they pick
     // plain Proton but paste one of those variant strings.
-    versionPattern: /^proton[\s-]?(\d+(?:\.\d+)*(?:[-_]\w+)?|hotfix|experimental|next)$/i,
+    // [\s-]* (not [\s-]?) so a spaced separator like "Proton - Experimental"
+    // still validates, matching the datalist labels we suggest.
+    versionPattern: /^proton[\s-]*(\d+(?:\.\d+)*(?:[-_]\w+)?|hotfix|experimental|next)$/i,
     versionExample: 'e.g. Proton 9.0-4, Proton Hotfix, or Proton Experimental',
   },
   'proton-experimental': {
@@ -50,7 +52,7 @@ export const RUN_TYPES = Object.freeze({
     subtitle: 'Valve\'s bleeding-edge Proton branch',
     // Also accepts bare "Experimental" -- when the user already picked the
     // proton-experimental runtime, "Experimental" is unambiguous.
-    versionPattern: /(proton[\s-]?experimental|bleeding[-\s]?edge|^\s*experimental\s*$)/i,
+    versionPattern: /(proton[\s-]*experimental|bleeding[-\s]*edge|^\s*experimental\s*$)/i,
     versionExample: 'e.g. Proton Experimental',
   },
   'proton-ge': {

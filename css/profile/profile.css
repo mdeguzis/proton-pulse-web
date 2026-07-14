@@ -928,9 +928,8 @@
   margin-top: 14px;
 }
 
-/* "Parse from Steam info" stands out from the outlined Save/Cancel buttons:
-   a filled, rounded accent pill with a soft glow. Uses the theme accent vars
-   so it tracks light/dark automatically. */
+/* "Parse from Steam info": a clean cool/light Steam-blue pill, no glow. Uses
+   the theme accent vars so it tracks light/dark automatically. */
 #steam-parse-open {
   border-radius: 999px;
   border: 1px solid var(--accent);
@@ -939,11 +938,10 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   padding: 7px 18px;
-  box-shadow: 0 0 12px var(--accent-glow);
-  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: none;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 #steam-parse-open:hover {
-  background: var(--accent);
-  color: #08131f;
-  box-shadow: 0 0 18px var(--accent-glow);
+  background: rgba(102, 192, 244, 0.18);
+  color: var(--accent-hi);
 }

@@ -3,7 +3,7 @@
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, tierFromReports } from '../../shared/scoring.js?v=8051e115';
 import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=1c1b7f9d';
-import { getWebClientId } from '../../shared/submit.js?v=df2ab562';
+import { getWebClientId } from '../../shared/submit.js?v=4961f463';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=a8d355d8';
 import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=55a861cb';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=01961c8d';

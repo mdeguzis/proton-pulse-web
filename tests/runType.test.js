@@ -139,6 +139,8 @@ describe('validateRuntimeVersion', () => {
     // firing a fake "does not look like Proton" warning.
     expect(validateRuntimeVersion('proton', 'Proton Experimental').ok).toBe(true);
     expect(validateRuntimeVersion('proton', 'proton experimental').ok).toBe(true);
+    // Spaced separator, as the datalist and pipeline sometimes emit it.
+    expect(validateRuntimeVersion('proton', 'Proton - Experimental').ok).toBe(true);
     expect(validateRuntimeVersion('proton', 'Proton Next').ok).toBe(true);
     // Rejects unrelated strings
     expect(validateRuntimeVersion('proton', 'GE-Proton9-27').ok).toBe(false);
@@ -158,6 +160,9 @@ describe('validateRuntimeVersion', () => {
 
   test('proton-experimental matches Proton Experimental, bleeding-edge, or bare Experimental', () => {
     expect(validateRuntimeVersion('proton-experimental', 'Proton Experimental').ok).toBe(true);
+    // Spaced separator variant (the datalist offers "Proton - Experimental").
+    expect(validateRuntimeVersion('proton-experimental', 'Proton - Experimental').ok).toBe(true);
+    expect(validateRuntimeVersion('proton-experimental', 'Proton-Experimental').ok).toBe(true);
     expect(validateRuntimeVersion('proton-experimental', 'bleeding-edge').ok).toBe(true);
     // Bare "Experimental" is unambiguous once the runtime type is already picked.
     expect(validateRuntimeVersion('proton-experimental', 'Experimental').ok).toBe(true);

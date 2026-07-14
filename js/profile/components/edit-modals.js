@@ -11,7 +11,7 @@ import {
   fetchReportHistory, patchUserConfig,
 } from '../api/configs.js?v=0c5650ed';
 import { updateSystem } from '../api/systems.js?v=770d14b7';
-import { notesFormattingHelpHtml } from '../../shared/submit.js?v=df2ab562';
+import { notesFormattingHelpHtml } from '../../shared/submit.js?v=4961f463';
 
 export let _cloudEditModal = null;
 export function getCloudEditModal() {
