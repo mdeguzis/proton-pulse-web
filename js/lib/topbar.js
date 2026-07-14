@@ -332,10 +332,6 @@
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg>
             <span>Discord</span>
           </a>
-          <a href="https://patreon.com/steamos_tools" target="_blank" rel="noopener" title="Support Proton Pulse on Patreon">
-            <svg class="nav-icon" aria-hidden="true"><use href="#icon-heart"/></svg>
-            <span>Patreon</span>
-          </a>
           <a href="https://ko-fi.com/mikeyd64" target="_blank" rel="noopener" title="Support Proton Pulse on Ko-Fi">
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-kofi"/></svg>
             <span>Ko-Fi</span>
@@ -410,7 +406,6 @@
       <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> Decky Plugin</a>
       <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
       <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg> Discord</a>
-      <a href="https://patreon.com/steamos_tools" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-heart"/></svg> Patreon</a>
       <a href="https://ko-fi.com/mikeyd64" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-kofi"/></svg> Ko-Fi</a>
       <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-github"/></svg> GitHub</a>
     </div>

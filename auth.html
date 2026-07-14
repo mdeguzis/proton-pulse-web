@@ -55,6 +55,7 @@
       <p>Check that the next page URL starts with <code>https://steamcommunity.com/</code> before entering anything.</p>
       <p>It is normal for that Steam page to mention <code>ilsgdshkaocrmibwdezk.supabase.co</code> in the text because that is the service finishing Proton Pulse authentication.</p>
       <p>If you are already signed into Steam in this browser, you may only need to click <strong>Sign In</strong>.</p>
+      <p>Want the ground truth instead of taking our word for it? Read the code that handles sign-in: the <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/supabase/functions/steam-callback/index.ts" target="_blank" rel="noopener">steam-callback edge function</a>. It re-verifies Steam's assertion with Steam before trusting it, and it never sees your password.</p>
     </section>
 
     <div class="auth-actions">

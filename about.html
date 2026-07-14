@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=d13d8b13">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
 <link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
-<link rel="stylesheet" href="css/index/index.css?v=4e9b7788">
+<link rel="stylesheet" href="css/index/index.css?v=458dc787">
 </head>
 <body>
 
@@ -37,6 +37,7 @@
     </div>
 
     <div class="about-quicklinks">
+      <a class="about-legend-btn" href="#your-data">Your Data &amp; Privacy</a>
       <a class="about-legend-btn" href="#icons-signage">
         <svg class="alb-glyph" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.4" cy="12" r="5.2" fill="#1b9fff"/><path d="M9.2 1.2A10.8 10.8 0 0 1 9.2 22.8L9.2 18.9A6.9 6.9 0 0 0 9.2 5.1Z" fill="#fff"/></svg>
         Icons &amp; Signage
@@ -63,6 +64,51 @@
         <div class="ei-desc">The Decky Loader plugin reads + writes Pulse Reports right from Gaming Mode. Submit configs without leaving the game.</div>
         <div class="ei-tag">Decky</div>
       </a>
+    </div>
+
+    <!-- Your Data & Privacy: prominent explanation of Steam sign-in scope,
+         what we collect, how self-delete works, and links to the actual code
+         so the claim is verifiable. Full policy lives at /privacy.html. -->
+    <div class="section-label" id="your-data">Your Data &amp; Privacy</div>
+    <div class="your-data-grid">
+      <div class="your-data-card">
+        <h3>Steam sign-in, not OAuth</h3>
+        <p>
+          We use <a href="https://steamcommunity.com/dev" target="_blank" rel="noopener">Steam OpenID 2.0</a>.
+          Steam sends back three pieces of profile data: your 64-bit Steam ID, public display name,
+          and avatar URL. Nothing about your library, friends, purchases, or email.
+        </p>
+        <p>
+          Sign-in exists so reports can be tied to a real Steam account. That makes tier scores
+          honest (no throwaway votes) and lets you edit or withdraw your own reports later.
+        </p>
+      </div>
+      <div class="your-data-card">
+        <h3>Delete anytime, reports go anonymous</h3>
+        <p>
+          Delete your account from the <a href="profile.html">profile page</a> at any time.
+          It runs immediately, no email step. Everything that identifies you is removed:
+          avatar, Steam ID, auth record, and saved system profiles. The compatibility reports
+          you left behind are anonymized instead of destroyed, so tier scores stay
+          accurate for everyone else. This is the GDPR right to erasure.
+        </p>
+        <p>
+          One caveat: a report's free-form notes are kept as part of that anonymized record,
+          so do not put personal information in the notes field.
+        </p>
+      </div>
+      <div class="your-data-card">
+        <h3>Read the code</h3>
+        <p>
+          Every claim on this page is auditable. The two files that actually implement
+          sign-in and erasure:
+        </p>
+        <ul>
+          <li>Sign-in flow: <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/supabase/functions/steam-callback/index.ts">steam-callback edge function</a></li>
+          <li>Erase flow: <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/supabase/migrations/20260712140000_admin_erase_user_anonymize.sql">admin_erase_user migration</a></li>
+          <li>Full policy: <a href="privacy.html">privacy.html</a></li>
+        </ul>
+      </div>
     </div>
 
     <!-- Icons & Signage legend (#272): every badge and mark, icon left / meaning
@@ -262,7 +308,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script src="js/lib/analytics.js?v=7855fb4c"></script>
-<script src="js/lib/topbar.js?v=030d065d"></script>
+<script src="js/lib/topbar.js?v=75fbd3f4"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
 <script src="js/about/version.js?v=dd0d91d0"></script>
 </body>

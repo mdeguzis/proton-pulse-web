@@ -4,13 +4,14 @@
 import {
   escapeHtml, formatSystemUpdated, enabledVarsToText, textToEnabledVars,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel,
-} from '../utils.js?v=71a515e5';
+  validateSysinfoText, validateDeviceId,
+} from '../utils.js?v=78ac95ab';
 import {
   fetchCloudConfig, patchCloudConfig, fetchFullUserConfig,
   fetchReportHistory, patchUserConfig,
 } from '../api/configs.js?v=0c5650ed';
 import { updateSystem } from '../api/systems.js?v=770d14b7';
-import { notesFormattingHelpHtml } from '../../shared/submit.js?v=75603703';
+import { notesFormattingHelpHtml } from '../../shared/submit.js?v=df2ab562';
 
 export let _cloudEditModal = null;
 export function getCloudEditModal() {
@@ -115,6 +116,7 @@ export function getEditModal() {
       </label>
       <label class="edit-report-label">Notes ${notesFormattingHelpHtml()}
         <textarea class="edit-report-input" name="notes" rows="4" placeholder="Optional notes about your experience"></textarea>
+        <span class="edit-report-hint">Public and permanent. Notes stay on the report even if you delete your account. Do not put personal information here.</span>
       </label>
       <label class="edit-report-label">Launch Options
         <input class="edit-report-input" type="text" name="config_key" placeholder="e.g. DXVK_HUD=1 %command%">
@@ -323,6 +325,14 @@ export async function showAddSystemModal(protonPulseUserId, session, { supabaseU
     const deviceId = 'web-' + crypto.randomUUID().slice(0, 12);
     const isFirst = (systemsCache || []).length === 0;
 
+    const sysinfoText = lines.join('\n');
+    const fieldError = validateSysinfoText(sysinfoText) || validateDeviceId(deviceId);
+    if (fieldError) {
+      status.textContent = fieldError;
+      console.warn('[profile] showAddSystemModal: field validation failed', { deviceId, error: fieldError });
+      return;
+    }
+
     try {
       const resp = await fetch(supabaseUserSystemsUrl(), {
         method: 'POST',
@@ -331,7 +341,7 @@ export async function showAddSystemModal(protonPulseUserId, session, { supabaseU
           proton_pulse_user_id: protonPulseUserId,
           device_id: deviceId,
           label,
-          sysinfo_text: lines.join('\n'),
+          sysinfo_text: sysinfoText,
           is_default: isFirst,
           updated_at: new Date().toISOString(),
         }),

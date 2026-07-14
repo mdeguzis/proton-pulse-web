@@ -628,3 +628,39 @@ export function getPluginLinkCodeFromLocation(loc = window.location) {
   const hashQuery = hash.slice(hashQueryIndex + 1);
   return new URLSearchParams(hashQuery).get('pluginLinkCode');
 }
+
+// Field validation for user_systems writes. Mirrors the DB CHECK constraints in
+// 20260712170000_user_systems_field_validation.sql so the web app fails fast
+// with a readable message instead of a raw Postgres constraint error. The DB is
+// still the authoritative gate; this is the friendly first line.
+export const SYSINFO_MAX_LEN = 16384;
+export const DEVICE_ID_MAX_LEN = 128;
+const DEVICE_ID_RE = /^[A-Za-z0-9._:-]+$/;
+// Control chars other than tab (09), newline (0A), carriage return (0D).
+// eslint-disable-next-line no-control-regex
+const SYSINFO_CONTROL_RE = /[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/;
+
+/**
+ * Validates a sysinfo_text value against the user_systems field rules.
+ * @param {unknown} text
+ * @returns {string|null} An error message, or null when valid.
+ */
+export function validateSysinfoText(text) {
+  const s = typeof text === 'string' ? text : '';
+  if (s.length === 0) return 'System info is empty.';
+  if (s.length > SYSINFO_MAX_LEN) return `System info is too long (max ${SYSINFO_MAX_LEN} characters).`;
+  if (SYSINFO_CONTROL_RE.test(s)) return 'System info contains invalid control characters.';
+  return null;
+}
+
+/**
+ * Validates a device_id value against the user_systems field rules.
+ * @param {unknown} id
+ * @returns {string|null} An error message, or null when valid.
+ */
+export function validateDeviceId(id) {
+  const s = typeof id === 'string' ? id : '';
+  if (s.length === 0 || s.length > DEVICE_ID_MAX_LEN) return 'Device id has an invalid length.';
+  if (!DEVICE_ID_RE.test(s)) return 'Device id has invalid characters.';
+  return null;
+}

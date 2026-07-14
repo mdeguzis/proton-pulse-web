@@ -12,15 +12,34 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=d13d8b13">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
 <link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
-<link rel="stylesheet" href="css/index/index.css?v=4e9b7788">
+<link rel="stylesheet" href="css/index/index.css?v=458dc787">
 <style>
-  .prose { max-width: 720px; margin: 2rem auto; line-height: 1.7; }
-  .prose h1 { font-size: 1.6rem; margin-bottom: 0.5rem; }
-  .prose h2 { font-size: 1.15rem; margin-top: 2rem; color: var(--accent, #66ccff); }
-  .prose p, .prose ul { color: var(--muted, #aaa); }
-  .prose ul { padding-left: 1.4rem; }
+  .prose { max-width: 760px; margin: 2rem auto; line-height: 1.7; padding: 0 16px; }
+  .prose h1 { font-size: 1.7rem; margin-bottom: 0.35rem; }
+  .prose h2 { font-size: 1.2rem; margin-top: 2rem; color: var(--accent, #66ccff); }
+  .prose h3 { font-size: 1rem; margin-top: 1.4rem; }
+  .prose p, .prose ul, .prose ol { color: var(--muted, #aaa); }
+  .prose ul, .prose ol { padding-left: 1.4rem; }
+  .prose li { margin-bottom: 0.35rem; }
   .prose a { color: var(--accent, #66ccff); }
-  .updated { font-size: 0.8rem; color: var(--muted, #888); }
+  .prose code {
+    font-family: var(--mono, ui-monospace);
+    font-size: 0.85em;
+    padding: 1px 5px;
+    background: var(--s2, rgba(255,255,255,0.06));
+    border: 1px solid var(--border, rgba(255,255,255,0.08));
+    border-radius: 3px;
+  }
+  .updated { font-size: 0.8rem; color: var(--muted, #888); margin-bottom: 1.5rem; }
+  .callout {
+    margin: 1rem 0;
+    padding: 12px 16px;
+    background: var(--s2, rgba(102, 192, 244, 0.06));
+    border-left: 3px solid var(--accent, #66ccff);
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+  .callout strong { color: var(--text, #fff); }
 </style>
 </head>
 <body>
@@ -32,55 +51,110 @@
 <div class="prose">
 
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: April 15, 2026</p>
+<p class="updated">Last updated: 2026-07-12</p>
 
-<h2>What data we collect</h2>
 <p>
-  When you sign in with Steam, we receive your Steam ID, display name, and
-  avatar URL from Steam's public profile API. This info is stored in our
-  authentication provider (Supabase) so we can identify your account.
+  Short version. We only collect what we need to identify you across sessions and prove your reports came from a real Steam account. You can delete your data at any time from the profile page. When you do, we strip the account link off any reports you left behind so the community keeps the compatibility data without keeping you.
 </p>
 <p>
-  If you submit Proton compatibility configs or vote on reports, that activity
-  is tied to your account so you can manage it later.
+  The rest of this page explains the specifics. Every claim below is backed by open-source code you can read: the <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/supabase/functions/steam-callback/index.ts">Steam sign-in edge function</a> and the <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/supabase/migrations/20260712140000_admin_erase_user_anonymize.sql">GDPR erase function</a>.
 </p>
 
-<h2>What we don't collect</h2>
+<h2>How Steam sign-in works, and why we use it</h2>
+
+<p>
+  Signing in with Steam uses <a href="https://steamcommunity.com/dev" target="_blank" rel="noopener">Steam OpenID 2.0</a>, not OAuth. The flow is deliberately narrow. Here is what actually happens on the wire:
+</p>
+
+<ol>
+  <li>You click <em>Sign in with Steam</em>. Your browser goes to <code>steamcommunity.com/openid/login</code> with our return URL attached.</li>
+  <li>You approve the sign-in on Steam. Steam bounces you back to our <code>steam-callback</code> edge function with an OpenID assertion.</li>
+  <li>The edge function re-sends the assertion to Steam and asks Steam to verify it is authentic. If Steam does not reply <code>is_valid:true</code>, sign-in fails and nothing is written.</li>
+  <li>Once verified, we know your Steam ID. We fetch your public Steam profile (display name and avatar URL) from <code>api.steampowered.com/ISteamUser/GetPlayerSummaries</code>.</li>
+  <li>We create or update a Supabase user for you and redirect you back to the site with a session cookie.</li>
+</ol>
+
+<h3>Why Steam sign-in, and not email or a password</h3>
 <ul>
-  <li>We don't track you with analytics or ad pixels</li>
-  <li>We don't sell or share your data with third parties</li>
-  <li>We don't access your Steam account beyond public profile info (no games, no friends, no purchase history)</li>
+  <li><strong>Report legitimacy.</strong> A report that says "Cyberpunk runs great on Steam Deck" is more useful when we can tell the reporter actually owns the game on a real Steam account, and when we can rate-limit reports per Steam ID to keep the tier scores honest.</li>
+  <li><strong>No password to steal.</strong> Steam handles the credentials. We never see your password, and there is no forgot-password flow on our side to abuse.</li>
+  <li><strong>Removes fake accounts.</strong> Creating throwaway Steam accounts to game the ranking has a real cost. That is more friction than email verification and it keeps the tier data harder to manipulate.</li>
 </ul>
 
-<h2>Where data is stored</h2>
+<div class="callout">
+  <strong>What Steam gives us, verbatim.</strong> Steam sends back exactly three pieces of profile data: your 64-bit Steam ID, your public display name, and your avatar URL. Not your friends list, not your library, not your purchase history, not your email address. If we ever ask you to authorize more scope, that request will be explicit and separate from sign-in.
+</div>
+
+<h2>What we collect, in plain terms</h2>
+
+<h3>From Steam sign-in</h3>
+<ul>
+  <li><strong>Steam ID</strong> (64-bit). Used as your identity across sessions and as the reporter identity on any reports you submit.</li>
+  <li><strong>Steam display name</strong>. Shown next to your reports so other users can see who reported what.</li>
+  <li><strong>Avatar URL</strong>. Pointer to the image Steam already hosts. We do not download or re-host the image.</li>
+</ul>
+
+<h3>From your activity on the site</h3>
+<ul>
+  <li><strong>Reports you submit</strong> (game tier, Proton version, hardware fingerprint, notes). Tied to your account so you can edit or withdraw them.</li>
+  <li><strong>Votes you cast</strong> on other reports.</li>
+  <li><strong>Optional library / wishlist sync</strong> if you enable it in the Decky plugin. Stored so we can highlight games you actually own on your library view.</li>
+  <li><strong>Anonymous browser telemetry</strong> (page views, timing) written to <code>site_events</code>. No third-party analytics, no ad pixels, no cross-site tracking.</li>
+</ul>
+
+<h3>Where it lives</h3>
 <p>
-  Authentication is handled by <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>
-  (hosted on AWS). User-submitted configs and votes are stored in a Supabase
-  Postgres database. The static site itself is hosted on GitHub Pages.
+  Everything above lives in a single Supabase project (Postgres + auth), hosted on AWS. The static site itself is served from GitHub Pages behind Cloudflare. Nothing is shared with third parties. There are no ads on the site.
 </p>
 
-<h2>Data retention</h2>
+<h2>Deleting your data (GDPR right to erasure)</h2>
+
 <p>
-  You can delete your account and all associated data from the
-  <a href="profile.html">account management page</a> at any time. If you sign
-  out and never return, your profile data stays in Supabase until you request
-  deletion.
+  Every signed-in account has a <a href="profile.html">Delete my account</a> action on the profile page. There is no "email us and wait a week" step. It runs immediately.
 </p>
 
-<h2>Open source</h2>
+<h3>What happens when you delete</h3>
 <p>
-  This project is fully open source. You can audit exactly what data we collect
-  and how we handle it by reading the code:
+  Everything that identifies you is removed for good: your avatar row, Steam ID, plugin-link records, browser telemetry, your saved system profiles, and the Supabase auth record itself.
+</p>
+<p>
+  The compatibility reports you left behind stay, but the thread back to you is cut. We null the account id and installation id, swap the reporter handle for a one-time random token that points at nothing, and mark the row anonymized. Your name comes off it and nothing links it to your account. A five-year-old Deck result should not vanish just because you closed your account, so the report keeps counting toward the tier. Votes are deleted, since a vote only means something tied to a voter and the score is already tallied on the report.
+</p>
+<p>
+  Worth knowing: a report's free-form <strong>notes</strong> are part of that preserved record. They remain after your account is gone. Do not put personal information in the notes field.
+</p>
+<p>
+  This runs the moment you confirm on the profile page. The exact SQL is <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/supabase/migrations/20260712140000_admin_erase_user_anonymize.sql"><code>admin_erase_user</code></a>.
+</p>
+
+<h2>Cookies and sessions</h2>
+<p>
+  One session cookie set by Supabase auth so we know you are signed in. No tracking cookies. No third-party cookies. Signing out or clearing the cookie ends the session.
+</p>
+
+<h2>What we do not do</h2>
+<ul>
+  <li>No third-party analytics (no Google Analytics, no Meta Pixel, none).</li>
+  <li>No selling or sharing your data.</li>
+  <li>No access to your Steam account beyond the three public profile fields above.</li>
+  <li>No email marketing. We do not collect your email.</li>
+</ul>
+
+<h2>Open source, so you can verify everything on this page</h2>
+<p>
+  Read the code that runs Steam sign-in, the erase function, the schema, and every edge function:
 </p>
 <ul>
-  <li><a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener">Data site repo</a></li>
-  <li><a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener">Decky plugin repo</a></li>
+  <li><a href="https://github.com/mdeguzis/proton-pulse-web">proton-pulse-web</a> (site + edge functions + migrations)</li>
+  <li><a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/supabase/functions/steam-callback/index.ts">steam-callback edge function</a> (Steam sign-in flow)</li>
+  <li><a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/supabase/migrations/20260712140000_admin_erase_user_anonymize.sql">admin_erase_user migration</a> (anonymize + erase pipeline)</li>
+  <li><a href="https://github.com/mdeguzis/decky-proton-pulse">decky-proton-pulse plugin</a> (client side)</li>
 </ul>
 
 <h2>Contact</h2>
 <p>
-  Questions? Open an issue on
-  <a href="https://github.com/mdeguzis/proton-pulse-web/issues" target="_blank" rel="noopener">GitHub</a>
+  Questions or a specific data request: open an issue at
+  <a href="https://github.com/mdeguzis/proton-pulse-web/issues" target="_blank" rel="noopener">github.com/mdeguzis/proton-pulse-web/issues</a>
   or email <a href="mailto:mdeguzis@gmail.com">mdeguzis@gmail.com</a>.
 </p>
 
@@ -90,7 +164,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script src="js/lib/analytics.js?v=7855fb4c"></script>
-<script src="js/lib/topbar.js?v=030d065d"></script>
+<script src="js/lib/topbar.js?v=75fbd3f4"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
 </body>
 </html>

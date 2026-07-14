@@ -14,9 +14,38 @@ async function hashInstallationSecret(secret: string) {
     .join("");
 }
 
+// Thrown for any bad input so the handler can map it to HTTP 400 instead of 500.
+class ValidationError extends Error {}
+
 function requireString(value: unknown, name: string): string {
-  if (!value || typeof value !== "string") throw new Error(`${name} is required`);
+  if (!value || typeof value !== "string") throw new ValidationError(`${name} is required`);
   return value;
+}
+
+// Field validation mirrors the user_systems CHECK constraints
+// (20260712170000_user_systems_field_validation.sql). The DB is the
+// authoritative gate; this just returns a clearer 400 to the plugin.
+const DEVICE_ID_RE = /^[A-Za-z0-9._:-]+$/;
+// Control chars other than tab (09), newline (0A), carriage return (0D).
+const CONTROL_CHARS_RE = /[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/;
+const MAX_SYSINFO_LEN = 16384;
+const MAX_DEVICE_ID_LEN = 128;
+
+function validateDeviceId(deviceId: string): string {
+  if (deviceId.length > MAX_DEVICE_ID_LEN || !DEVICE_ID_RE.test(deviceId)) {
+    throw new ValidationError("deviceId is invalid");
+  }
+  return deviceId;
+}
+
+function validateSysinfoText(sysinfoText: string): string {
+  if (sysinfoText.length > MAX_SYSINFO_LEN) {
+    throw new ValidationError("sysinfoText is too long");
+  }
+  if (CONTROL_CHARS_RE.test(sysinfoText)) {
+    throw new ValidationError("sysinfoText contains invalid control characters");
+  }
+  return sysinfoText;
 }
 
 function formatUnknownError(error: unknown): string {
@@ -48,8 +77,8 @@ Deno.serve(async (req: Request) => {
     const body = await req.json();
     const installationId = requireString(body.installationId, "installationId");
     const installationSecret = requireString(body.installationSecret, "installationSecret");
-    const deviceId = requireString(body.deviceId, "deviceId");
-    const sysinfoText = requireString(body.sysinfoText, "sysinfoText");
+    const deviceId = validateDeviceId(requireString(body.deviceId, "deviceId"));
+    const sysinfoText = validateSysinfoText(requireString(body.sysinfoText, "sysinfoText"));
     const label = typeof body.label === "string" && body.label.trim()
       ? body.label.trim().slice(0, 160)
       : "Uploaded system";
@@ -109,7 +138,7 @@ Deno.serve(async (req: Request) => {
     return Response.json({ ok: true, inserted, isDefault }, { headers: corsHeaders });
   } catch (error) {
     const message = formatUnknownError(error);
-    const status = message.endsWith(" is required") ? 400 : 500;
+    const status = error instanceof ValidationError ? 400 : 500;
     return Response.json({ error: message }, { status, headers: corsHeaders });
   }
 });

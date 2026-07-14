@@ -1039,6 +1039,43 @@
 .about-legend-btn:hover { border-color: var(--accent); color: var(--strong); background: var(--s2); }
 .about-legend-btn .alb-glyph { width: 18px; height: 18px; flex: 0 0 auto; }
 
+/* Your Data & Privacy section on About: three cards laid out on a responsive
+   grid. Cards adopt the same neutral surface as .explore-item so the section
+   feels of a piece with the rest of the page. */
+.your-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin: 8px 0 32px;
+}
+.your-data-card {
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--s1);
+}
+.your-data-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--text);
+}
+.your-data-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0 0 8px;
+}
+.your-data-card p:last-child { margin-bottom: 0; }
+.your-data-card ul {
+  color: var(--muted);
+  font-size: 0.88rem;
+  padding-left: 1.2rem;
+  margin: 4px 0 0;
+}
+.your-data-card ul li { margin-bottom: 3px; }
+.your-data-card a { color: var(--accent); text-decoration: none; }
+.your-data-card a:hover { text-decoration: underline; }
+
 .il-intro { color: var(--muted); font-size: 0.9rem; margin: 4px 0 16px; }
 .icons-legend {
   display: grid;

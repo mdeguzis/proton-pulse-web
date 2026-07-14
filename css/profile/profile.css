@@ -747,6 +747,11 @@
   outline: none;
   border-color: #4a9fd0;
 }
+.edit-report-hint {
+  font-size: 0.78em;
+  color: #7a8699;
+  line-height: 1.4;
+}
 .edit-report-status {
   min-height: 1.2em;
   margin: 12px 0 0;
