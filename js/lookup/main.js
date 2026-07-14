@@ -35,7 +35,8 @@ const els = {
   steamid:   () => document.getElementById('lookup-steamid'),
   steamlink: () => document.getElementById('lookup-steamlink'),
   privateEl: () => document.getElementById('lookup-private'),
-  chartMount:() => document.getElementById('lookup-chart-mount'),
+  chartMount:    () => document.getElementById('lookup-chart-mount'),
+  wishlistMount: () => document.getElementById('lookup-wishlist-mount'),
 };
 
 function showError(msg) {
@@ -57,14 +58,12 @@ function setLoading(on) {
   if (s) s.disabled = !!on;
 }
 
-// Render the shared "at a glance" tier chart for a raw appId set. Uses the
-// exported computeLibraryTierCounts helper from the home page so the math
-// stays in one place -- the lookup and the signed-in library agree by
-// construction. Only the tier view is rendered here; the home page's chart
-// chip (Library / Wishlist / Deck / ...) has no meaning for a public
-// lookup so it is intentionally omitted.
-function renderTierChart(appIds, total) {
-  const mount = els.chartMount();
+// Render one "at a glance" tier chart for a raw appId set. Uses the exported
+// computeLibraryTierCounts helper so the lookup and the signed-in library
+// agree by construction. Only the tier view is rendered here; the home
+// page's chart chip (Library / Wishlist / Deck / ...) has no meaning for a
+// public lookup so it is intentionally omitted.
+function renderTierChart(mount, appIds, total, { title, noun }) {
   if (!mount) return;
   if (!appIds || appIds.size === 0) {
     mount.innerHTML = '';
@@ -85,13 +84,13 @@ function renderTierChart(appIds, total) {
         <div class="hlc-count">${n.toLocaleString()}</div>
       </div>`;
   }).join('');
-  const subtitle = `${rated.toLocaleString()} of ${total.toLocaleString()} owned games have compatibility data.`;
+  const subtitle = `${rated.toLocaleString()} of ${total.toLocaleString()} ${esc(noun)} games have compatibility data.`;
   mount.innerHTML = `
     <div class="home-library-chart">
       <div class="hlc-header">
-        <div class="hlc-title">Library at a glance</div>
+        <div class="hlc-title">${esc(title)}</div>
       </div>
-      <div class="hlc-subtitle">${esc(subtitle)}</div>
+      <div class="hlc-subtitle">${subtitle}</div>
       <div class="hlc-bars">${bars}</div>
     </div>`;
 }
@@ -149,7 +148,11 @@ async function runLookup(input) {
       showError(payload.error || 'Lookup failed. Try again in a moment.');
       return;
     }
-    const { steamId, profile, games = [], gameCount = 0 } = payload;
+    const {
+      steamId, profile,
+      games = [], gameCount = 0,
+      wishlist = [], wishlistCount = 0,
+    } = payload;
     renderProfileCard(profile || {}, steamId);
     els.result().hidden = false;
 
@@ -160,13 +163,24 @@ async function runLookup(input) {
     nextUrl.searchParams.delete('input');
     window.history.replaceState(null, '', nextUrl.toString());
 
+    // Library visibility drives the private-profile notice. Wishlist is a
+    // separate Steam privacy toggle, so we treat them independently: a
+    // private library still shows the wishlist chart if the wishlist is
+    // public, and vice versa.
     if (!profile?.isPublic || gameCount === 0) {
       els.privateEl().hidden = false;
-      renderTierChart(new Set(), 0);
-      return;
+      renderTierChart(els.chartMount(), new Set(), 0, { title: 'Library at a glance', noun: 'owned' });
+    } else {
+      const appIds = new Set(games.map((g) => Number(g.appid)).filter(Number.isFinite));
+      renderTierChart(els.chartMount(), appIds, gameCount, { title: 'Library at a glance', noun: 'owned' });
     }
-    const appIds = new Set(games.map((g) => Number(g.appid)).filter(Number.isFinite));
-    renderTierChart(appIds, gameCount);
+    if (wishlistCount > 0 && Array.isArray(wishlist)) {
+      const wishAppIds = new Set(wishlist.map((w) => Number(w.appid)).filter(Number.isFinite));
+      renderTierChart(els.wishlistMount(), wishAppIds, wishlistCount, { title: 'Wishlist at a glance', noun: 'wishlisted' });
+    } else {
+      const wm = els.wishlistMount();
+      if (wm) wm.innerHTML = '';
+    }
   } catch (err) {
     console.error('[lookup] runLookup failed', err);
     showError(`Network error: ${err instanceof Error ? err.message : String(err)}`);

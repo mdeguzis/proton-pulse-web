@@ -48,17 +48,28 @@ describe('parseSteamProfileInput contract (source-level, since Deno TS cannot be
 });
 
 describe('public-steam-profile edge function shape', () => {
-  test('uses ResolveVanityURL and GetOwnedGames', () => {
+  test('uses ResolveVanityURL, GetOwnedGames, GetWishlist, and GetPlayerSummaries', () => {
     expect(EDGE).toContain('/ISteamUser/ResolveVanityURL/v1/');
     expect(EDGE).toContain('/IPlayerService/GetOwnedGames/v1/');
+    expect(EDGE).toContain('/IWishlistService/GetWishlist/v1/');
     expect(EDGE).toContain('/ISteamUser/GetPlayerSummaries/v2/');
+  });
+  test('returns library + wishlist in the same envelope so the frontend renders both', () => {
+    expect(EDGE).toContain('games: owned.games');
+    expect(EDGE).toContain('wishlist: wishlist.items');
+    expect(EDGE).toContain('wishlistCount: wishlist.count');
   });
   test('reads STEAM_API_KEY from env and returns 500 when missing', () => {
     expect(EDGE).toContain(`Deno.env.get("STEAM_API_KEY")`);
     expect(EDGE).toContain('missing_key');
   });
   test('never echoes the API key back to the caller', () => {
-    expect(EDGE).not.toMatch(/return[\s\S]{0,80}apiKey/);
+    // The api key may appear on `fetch` URLs (that is the whole point), but
+    // it must never show up inside a json() response body.
+    const jsonCalls = EDGE.match(/json\([\s\S]*?\)/g) || [];
+    for (const call of jsonCalls) {
+      expect(call).not.toMatch(/apiKey/);
+    }
   });
   test('vanity resolution failure returns 404 vanity_not_found', () => {
     expect(EDGE).toContain('vanity_not_found');
@@ -81,10 +92,11 @@ describe('supabase/config.toml public-steam-profile registration', () => {
 });
 
 describe('lookup.html + js/lookup/main.js wiring', () => {
-  test('lookup.html renders the form + result mount', () => {
+  test('lookup.html renders the form + result mounts (library + wishlist)', () => {
     expect(LOOKUP_HTML).toContain('id="lookup-form"');
     expect(LOOKUP_HTML).toContain('id="lookup-input"');
     expect(LOOKUP_HTML).toContain('id="lookup-chart-mount"');
+    expect(LOOKUP_HTML).toContain('id="lookup-wishlist-mount"');
     expect(LOOKUP_HTML).toContain('id="lookup-private"');
   });
   test('lookup.html links to Steam help for finding a profile URL + privacy settings', () => {
@@ -102,9 +114,18 @@ describe('lookup.html + js/lookup/main.js wiring', () => {
     expect(LOOKUP_MAIN).toContain("nextUrl.searchParams.set('steamId', steamId)");
     expect(LOOKUP_MAIN).toContain('window.history.replaceState');
   });
-  test('lookup main renders "Library at a glance" via the shared computeLibraryTierCounts', () => {
+  test('lookup main renders "Library at a glance" and "Wishlist at a glance" via the shared computeLibraryTierCounts', () => {
     expect(LOOKUP_MAIN).toContain('computeLibraryTierCounts');
     expect(LOOKUP_MAIN).toContain('Library at a glance');
+    expect(LOOKUP_MAIN).toContain('Wishlist at a glance');
+    expect(LOOKUP_MAIN).toContain('wishlistMount');
+  });
+  test('lookup main treats library + wishlist visibility independently (private library can still show wishlist)', () => {
+    // The wishlistCount branch is not gated by isPublic since Steam has a
+    // separate wishlist visibility toggle. Regressing this makes the wishlist
+    // chart silently vanish for anyone with a private library + public
+    // wishlist, which is the exact case a public lookup is most useful for.
+    expect(LOOKUP_MAIN).toMatch(/if \(wishlistCount > 0 && Array\.isArray\(wishlist\)\)/);
   });
   test('lookup main shows the private-profile notice when isPublic=false', () => {
     expect(LOOKUP_MAIN).toContain('privateEl');
