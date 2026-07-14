@@ -1,0 +1,23 @@
+name: Announce to Discord
+
+# Fires when an issue gets the "announcement" label (from the announcement
+# template at creation, from the admin composer, or added by hand). Issue
+# events run the workflow from the DEFAULT branch, so this only takes effect
+# once it is on main.
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  announce:
+    if: github.event.label.name == 'announcement'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Post announcement to Discord
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_ANNOUNCE_WEBHOOK }}
+          TITLE: ${{ github.event.issue.title }}
+          BODY: ${{ github.event.issue.body }}
+          URL: ${{ github.event.issue.html_url }}
+        run: bash scripts/discord-announce.sh

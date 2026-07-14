@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Post to Discord
         env:
-          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_ANNOUNCE }}
+          WEBHOOK_URL: ${{ secrets.DISCORD_ANNOUNCE_WEBHOOK }}
           EVENT_ACTION: ${{ github.event.action }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
@@ -33,7 +33,7 @@ jobs:
           SENDER: ${{ github.event.sender.login }}
         run: |
           if [ -z "${WEBHOOK_URL:-}" ]; then
-            echo "DISCORD_WEBHOOK_ANNOUNCE secret not configured; skipping"
+            echo "DISCORD_ANNOUNCE_WEBHOOK secret not configured; skipping"
             exit 0
           fi
           case "$EVENT_ACTION" in

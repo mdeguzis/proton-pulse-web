@@ -316,6 +316,10 @@
           <svg class="nav-caret" aria-hidden="true" viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
         </button>
         <div class="nav-dropdown-panel">
+          <a href="status.html#status-announcements" title="Latest announcements on the status page">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg>
+            <span>Announcements</span>
+          </a>
           <a href="scoring.html" data-page="scoring" title="How compatibility scores are calculated">
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg>
             <span>Scoring</span>
@@ -402,6 +406,7 @@
       <svg class="mnav-caret" aria-hidden="true" viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
     </button>
     <div class="mnav-sub">
+      <a href="status.html#status-announcements"><svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg> Announcements</a>
       <a href="scoring.html" data-page="scoring"><svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg> Scoring</a>
       <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> Decky Plugin</a>
       <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
