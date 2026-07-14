@@ -38,7 +38,7 @@ jobs:
           SUPABASE_TOKEN: ${{ secrets.SUPABASE_TOKEN }}
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v7
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
