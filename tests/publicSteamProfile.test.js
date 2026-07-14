@@ -247,6 +247,32 @@ describe('#323 localStorage persistence + Save button + nav fallback', () => {
     // Fallback fires only when signed-in call returned empty AND a saved lookup exists.
     expect(HOME_JS).toMatch(/if \(isWishlist \? wishlistAppIds\.size === 0 : libraryAppIds\.size === 0\)[\s\S]{0,100}hasSavedLookup\(\)/);
   });
+
+  test('home.js hides the sign-in callout when a saved lookup exists (no nag)', () => {
+    // The "Sign in to get started" callout is a nag if the user already has
+    // a saved lookup providing the same value. Regressing this makes the
+    // callout appear alongside a fully populated library chart.
+    expect(HOME_JS).toMatch(/_callout\.hidden = hasSavedLookup\(\)/);
+  });
+
+  test('home-library-chart renders for signed-out visitors when a saved lookup exists', () => {
+    // The chart used to bail with `mountEl.innerHTML = ''` for any
+    // signed-out visitor. It must now check hasSavedLookup and swap the
+    // signed-in fetch for the saved-lookup helper instead of returning
+    // blank -- otherwise the "at a glance" chart never appears on the
+    // browse view for anonymous visitors with a saved profile.
+    const CHART = fs.readFileSync(
+      path.join(__dirname, '..', 'js', 'app', 'components', 'home-library-chart.js'),
+      'utf8',
+    );
+    expect(CHART).toContain('hasSavedLookup');
+    expect(CHART).toContain('getSavedLookupLibraryAppIds');
+    expect(CHART).toContain('getSavedLookupWishlistAppIds');
+    expect(CHART).toMatch(/useSavedLookup\s*=\s*true/);
+    // The old "signed-out -> blank" early return is gated on
+    // !hasSavedLookup so it only fires when there is truly nothing to show.
+    expect(CHART).toMatch(/if \(!savedMod\.hasSavedLookup\(\)\)[\s\S]{0,80}mountEl\.innerHTML = ''/);
+  });
 });
 
 describe('#323 followup: inline Library panel under Login button', () => {
