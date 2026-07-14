@@ -37,6 +37,16 @@
   min-height: 54px;
   padding: 8px 18px 8px 10px;
 }
+/* #299 hint under the sign-in CTA: offer the anonymous lookup path. */
+.profile-unsigned-hint {
+  margin: 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.profile-unsigned-hint a { color: var(--accent); font-weight: 600; }
 
 /* avatar card */
 .profile-card {

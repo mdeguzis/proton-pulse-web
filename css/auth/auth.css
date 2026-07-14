@@ -176,6 +176,17 @@
   color: var(--text);
 }
 
+/* #299 secondary hint under Login: "look up a public profile instead". */
+.auth-no-signin-hint {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+.auth-no-signin-hint a { color: var(--accent); font-weight: 600; }
+
 @media (max-width: 640px) {
   .auth-shell {
     padding: 18px 12px;

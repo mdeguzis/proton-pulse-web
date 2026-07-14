@@ -294,6 +294,10 @@
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-list"/></svg>
             <span>My Wishlist</span>
           </a>
+          <a href="lookup.html" data-page="lookup" id="nav-lookup">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-user"/></svg>
+            <span>Look up a Profile</span>
+          </a>
           <a href="data-index.html" data-page="data-index">
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg>
             <span>Data</span>
@@ -393,6 +397,7 @@
       <a href="app.html" data-page="app"><svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg> Reports</a>
       <a href="app.html?filter=mine" data-page="my-library" id="mobile-my-library"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> My Library</a>
       <a href="app.html?filter=wishlist" data-page="my-wishlist" id="mobile-my-wishlist"><svg class="nav-icon" aria-hidden="true"><use href="#icon-list"/></svg> My Wishlist</a>
+      <a href="lookup.html" data-page="lookup" id="mobile-lookup"><svg class="nav-icon" aria-hidden="true"><use href="#icon-user"/></svg> Look up a Profile</a>
       <a href="data-index.html" data-page="data-index"><svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg> Data</a>
       <a href="coverage.html" data-page="coverage"><svg class="nav-icon" aria-hidden="true"><use href="#icon-chart"/></svg> Coverage</a>
       <a href="stats.html" data-page="stats"><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Stats</a>

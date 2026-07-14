@@ -24,7 +24,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script src="js/lib/analytics.js?v=7855fb4c"></script>
-<script src="js/lib/topbar.js?v=48b596f6"></script>
+<script src="js/lib/topbar.js?v=593ecfed"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
 <!-- Markdown editor spike (?md=1). Loaded eagerly but only wired when the
      flag is on -- window.markdownit stays unused otherwise. -->
@@ -52,6 +52,11 @@
           <span class="gh-login-btn__badge"><img class="gh-login-btn__icon" src="assets/steam-logo-glyph.png" alt=""></span>
           <span class="gh-login-btn__label">Login with Steam</span>
         </button>
+        <p style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);font-size:0.85rem;color:var(--muted)">
+          Not ready to sign in? You can still
+          <a href="lookup.html" style="color:var(--accent);font-weight:600">look up any public Steam profile</a>
+          and see its Proton compatibility.
+        </p>
       </div>
     </div>
 
