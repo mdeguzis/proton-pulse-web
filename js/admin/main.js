@@ -21,8 +21,8 @@ import { renderDepotTracking } from './components/depotTracking.js?v=8ce33fc6';
 import { renderBoxartAdmin, renderBoxartAdminDetail } from './components/boxart.js?v=88e02435';
 import { renderApiExplorer } from './components/api-explorer.js?v=dafbc22e';
 import { renderGameManager } from './components/gameManager.js?v=de1dd326';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=99d5c1f5';
-import { patchReportFlags, fetchReportById } from './api/allReports.js?v=ce9b13c3';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=7679588a';
+import { patchReportFlags, fetchReportById } from './api/allReports.js?v=f6b28b0d';
 import { approveReport } from './api/pending.js?v=84292a58';
 
 // ---------------------------------------------------------------------------

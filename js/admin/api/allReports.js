@@ -24,6 +24,29 @@ export async function fetchReportById(session, id) {
   rows[0].is_pending = approvals.length === 0;
   // #147: same fallback-title resolution the list view runs.
   await resolveFallbackTitles(rows);
+  // Reporter identity for the admin detail view. Public reports show the author
+  // as anonymous, but moderators need the real Steam profile to review. Resolve
+  // it from author_avatars by proton_pulse_user_id (admins can read that table).
+  const uid = rows[0].proton_pulse_user_id;
+  if (uid) {
+    try {
+      const avRes = await fetch(
+        `${SUPABASE_URL}/rest/v1/author_avatars?proton_pulse_user_id=eq.${encodeURIComponent(uid)}&select=display_name,steam_id&limit=1`,
+        { headers: supabaseHeaders(session) },
+      );
+      if (avRes.ok) {
+        const av = await avRes.json();
+        if (av.length) {
+          rows[0].steam_username = av[0].display_name || null;
+          rows[0].steam_id = av[0].steam_id || null;
+        }
+      } else {
+        console.warn('fetchReportById: author_avatars lookup failed', { uid, status: avRes.status });
+      }
+    } catch (e) {
+      console.warn('fetchReportById: author_avatars lookup threw', { uid, error: String(e) });
+    }
+  }
   return rows[0];
 }
 
