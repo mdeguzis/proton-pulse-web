@@ -92,7 +92,13 @@
   border-radius: 4px;
 }
 .pli-hint {
-  margin-top: 10px;
+  /* Extra top margin + top border so the "Not sure where to find yours?"
+     hint reads as its own block rather than melting into the Examples
+     list above it. Same treatment as .lookup-hint on the full-page
+     lookup so both surfaces feel identical. */
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
   font-size: 0.75rem;
   color: var(--muted);
   line-height: 1.5;

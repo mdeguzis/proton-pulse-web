@@ -114,7 +114,12 @@
 }
 .lookup-clear:hover { color: var(--accent-hi); }
 .lookup-hint {
-  margin-top: 10px;
+  /* Extra top margin + top border so the "Not sure where to find yours?"
+     hint has visual breathing room from the Examples list above. Without
+     it the two blocks read as one wall of muted text. */
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
   font-size: 0.78rem;
   color: var(--muted);
   line-height: 1.5;
