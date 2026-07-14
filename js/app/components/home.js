@@ -14,6 +14,7 @@ import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../li
 import { renderHomeLibraryChart } from './home-library-chart.js?v=7ba60b85';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
+import { getSavedLookupLibraryAppIds, getSavedLookupWishlistAppIds, hasSavedLookup } from '../lib/saved-lookup.js?v=dfbf2fe7';
 import { loadDeckStatusMap } from '../api/deck-status.js?v=a8d355d8';
 import { readShowOwnerBadgesLocal, pullShowOwnerBadges } from '../../lib/user-prefs.js?v=5d9472de';
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
@@ -1171,6 +1172,28 @@ export async function renderHomePage() {
       ]);
       libraryAppIds  = libIds;
       wishlistAppIds = wishIds;
+      // #323: signed-out visitors with a saved public-profile lookup get their
+      // library/wishlist from the anonymous lookup instead of the sign-in
+      // prompt. Signed-in call above still wins; this only fires when it
+      // returned an empty set.
+      if (isWishlist ? wishlistAppIds.size === 0 : libraryAppIds.size === 0) {
+        if (hasSavedLookup()) {
+          try {
+            if (isWishlist) {
+              wishlistAppIds = await getSavedLookupWishlistAppIds();
+            } else {
+              libraryAppIds = await getSavedLookupLibraryAppIds();
+            }
+            console.debug('[my-library-fallback] using saved public-profile lookup', {
+              isWishlist,
+              size: (isWishlist ? wishlistAppIds : libraryAppIds).size,
+              source: 'localStorage:pp:lookup-profile-input',
+            });
+          } catch (err) {
+            console.warn('[my-library-fallback] saved lookup failed', err);
+          }
+        }
+      }
       updateFilterBadge();
 
       // The default view is capped to recent-reports.json (~100 rows) and

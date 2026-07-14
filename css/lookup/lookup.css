@@ -51,6 +51,68 @@
 }
 .lookup-submit:hover:not(:disabled) { filter: brightness(1.08); }
 .lookup-submit:disabled { opacity: 0.55; cursor: default; }
+/* Secondary "Look up" button next to Save. Same shape, muted outline so the
+   Save primary reads as the default action. Mirrors ProtonDB's USE button
+   style while keeping Save distinguishable at a glance. */
+.lookup-submit--secondary {
+  background: transparent;
+  color: var(--strong);
+  border-color: var(--border);
+}
+.lookup-submit--secondary:hover:not(:disabled) {
+  filter: none;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Examples list under the input, matching ProtonDB's bullet layout. */
+.lookup-examples {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.lookup-examples li { list-style: disc; }
+.lookup-examples li:first-child {
+  list-style: none;
+  margin-left: -20px;
+  color: var(--strong);
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+.lookup-examples code {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--text);
+  background: var(--s1);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* Saved indicator + inline Clear link. Shown only when localStorage has a
+   value; hidden by default so first-time visitors see the plain form. */
+.lookup-saved-hint {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: rgba(102, 192, 244, 0.08);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.lookup-clear {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0 0 0 6px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.lookup-clear:hover { color: var(--accent-hi); }
 .lookup-hint {
   margin-top: 10px;
   font-size: 0.78rem;
