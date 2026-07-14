@@ -102,15 +102,34 @@ Deno.serve(async (req: Request) => {
   // Use a deterministic fake email so the same Steam account always maps to
   // the same Supabase user without requiring a real email address.
   const fakeEmail = `steam_${steamId}@steam.protonpulse.local`;
-  const password = `steam_${steamId}_${Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!.slice(0, 8)}`;
+  // HMAC the Steam ID with the full service role key for a cryptographically
+  // strong password. Falls back to legacy derivation for existing users who
+  // were created before the HMAC migration.
+  const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+  const encoder = new TextEncoder();
+  const keyData = await crypto.subtle.importKey(
+    'raw', encoder.encode(serviceKey), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
+  );
+  const sig = await crypto.subtle.sign('HMAC', keyData, encoder.encode(`steam_user_password:${steamId}`));
+  const password = `pp_${Array.from(new Uint8Array(sig)).map(b => b.toString(16).padStart(2, '0')).join('')}`;
+  const legacyPassword = `steam_${steamId}_${serviceKey.slice(0, 8)}`;
 
-  // Try to sign in first (fast path for returning users)
-  const { data: signInData, error: signInError } =
-    await supabase.auth.signInWithPassword({ email: fakeEmail, password });
+  // Try to sign in (new HMAC password first, then legacy for migration)
+  let session = null as any;
+  const { data: signInData } = await supabase.auth.signInWithPassword({ email: fakeEmail, password });
+  session = signInData?.session ?? null;
 
-  let session = signInData?.session;
+  if (!session) {
+    // Try legacy password (users created before HMAC migration)
+    const { data: legacyResult } = await supabase.auth.signInWithPassword({ email: fakeEmail, password: legacyPassword });
+    if (legacyResult?.session) {
+      session = legacyResult.session;
+      // Migrate: update password to the new HMAC-derived one
+      await supabase.auth.admin.updateUserById(session.user.id, { password });
+    }
+  }
 
-  if (signInError || !session) {
+  if (!session) {
     // New user — create account then sign in
     const { error: createError } = await supabase.auth.admin.createUser({
       email: fakeEmail,

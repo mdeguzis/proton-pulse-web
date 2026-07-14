@@ -608,3 +608,78 @@ async function loadAnnouncements() {
 
 loadAnnouncements();
 setInterval(loadAnnouncements, 5 * 60 * 1000);
+
+// ── Security issues ────────────────────────────────────────────────────────
+// Fetches open + recently closed issues with the "security" label from the
+// repo. Shows current known security items and their fix status.
+
+const SECURITY_URL = `https://api.github.com/repos/${ANNOUNCE_REPO}/issues?labels=security&state=all&per_page=20&sort=created&direction=desc`;
+
+function renderSecurityIssue(issue) {
+  const isOpen = issue.state === 'open';
+  const created = new Date(issue.created_at);
+  const rel = formatRelative(issue.created_at);
+  const dateAttr = Number.isNaN(created.getTime()) ? '' : created.toISOString();
+  const severity = (issue.labels || [])
+    .map(l => typeof l === 'string' ? l : (l && l.name))
+    .filter(name => name && name.toLowerCase() !== 'security')
+    .map(name => `<span class="announcement-tag">${esc(name)}</span>`)
+    .join('');
+  return `
+    <article class="announcement" data-state="${isOpen ? 'open' : 'closed'}">
+      <div class="announcement-head">
+        <a class="announcement-pill" href="${esc(issue.html_url)}" target="_blank" rel="noopener">#${esc(String(issue.number))}</a>
+        <a class="announcement-title" href="${esc(issue.html_url)}" target="_blank" rel="noopener">${esc(issue.title)}</a>
+        <span class="announcement-state">${isOpen ? 'Open' : 'Fixed'}</span>
+      </div>
+      <div class="announcement-meta">
+        <time datetime="${esc(dateAttr)}">${esc(rel)}</time>
+        ${severity}
+      </div>
+    </article>
+  `;
+}
+
+async function loadSecurityIssues() {
+  const listEl = document.getElementById('status-security-list');
+  if (!listEl) return;
+  try {
+    const res = await fetch(SECURITY_URL, { headers: { 'Accept': 'application/vnd.github+json' } });
+    if (res.status === 403) throw new Error('GitHub API rate limit reached');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const issues = await res.json();
+    const rows = (Array.isArray(issues) ? issues : []).filter(r => !r.pull_request);
+    const openCount = rows.filter(r => r.state === 'open').length;
+    const checksHtml = `<div class="status-security-checks" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:16px">
+      <div class="state-box" style="border-left:3px solid #3aaa5b;padding:8px 12px;font-size:0.78rem"><strong style="color:#3aaa5b">CodeQL</strong> - static analysis active</div>
+      <div class="state-box" style="border-left:3px solid #3aaa5b;padding:8px 12px;font-size:0.78rem"><strong style="color:#3aaa5b">Dependabot</strong> - dependency scanning</div>
+      <div class="state-box" style="border-left:3px solid #3aaa5b;padding:8px 12px;font-size:0.78rem"><strong style="color:#3aaa5b">npm audit</strong> - CVE gating on PRs</div>
+      <div class="state-box" style="border-left:3px solid #3aaa5b;padding:8px 12px;font-size:0.78rem"><strong style="color:#3aaa5b">Rate limiting</strong> - all edge functions</div>
+      <div class="state-box" style="border-left:3px solid #3aaa5b;padding:8px 12px;font-size:0.78rem"><strong style="color:#3aaa5b">CSP</strong> - Content Security Policy</div>
+      <div class="state-box" style="border-left:3px solid #3aaa5b;padding:8px 12px;font-size:0.78rem"><strong style="color:#3aaa5b">RLS</strong> - Row-Level Security</div>
+    </div>`;
+    if (!rows.length) {
+      listEl.innerHTML = checksHtml + '<div class="state-box" style="border-left:3px solid #3aaa5b">No known security issues. All clear.</div>';
+      return;
+    }
+    rows.sort((a, b) => {
+      if (a.state !== b.state) return a.state === 'open' ? -1 : 1;
+      return String(b.created_at).localeCompare(String(a.created_at));
+    });
+    const summary = openCount > 0
+      ? `<div class="state-box" style="border-left:3px solid #e5534b;margin-bottom:12px">${openCount} open security issue${openCount > 1 ? 's' : ''} being tracked. See <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Safety-and-Security" target="_blank" rel="noopener">Safety wiki</a> for full details.</div>`
+      : `<div class="state-box" style="border-left:3px solid #3aaa5b;margin-bottom:12px">All known security issues resolved. See <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Pentest-2026-07-14" target="_blank" rel="noopener">latest pentest report</a>.</div>`;
+    const scannerLinks = `<div class="status-scanner-links" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;font-size:0.78rem">
+      <a href="https://github.com/mdeguzis/proton-pulse-web/actions/workflows/codeql.yml" target="_blank" rel="noopener" style="color:var(--accent)">CodeQL runs</a>
+      <a href="https://github.com/mdeguzis/proton-pulse-web/actions/workflows/security-scan.yml" target="_blank" rel="noopener" style="color:var(--accent)">npm audit runs</a>
+      <a href="https://github.com/mdeguzis/proton-pulse-web/security/dependabot" target="_blank" rel="noopener" style="color:var(--accent)">Dependabot alerts</a>
+      <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Safety-and-Security" target="_blank" rel="noopener" style="color:var(--accent)">Safety wiki</a>
+    </div>`;
+    listEl.innerHTML = checksHtml + summary + scannerLinks + rows.map(renderSecurityIssue).join('');
+  } catch (err) {
+    listEl.innerHTML = `<div class="state-box">Could not load security status (${esc(err.message || err)}). Check <a href="https://github.com/${esc(ANNOUNCE_REPO)}/issues?q=is%3Aissue+label%3Asecurity" target="_blank" rel="noopener">security issues</a> directly.</div>`;
+  }
+}
+
+loadSecurityIssues();
+setInterval(loadSecurityIssues, 5 * 60 * 1000);

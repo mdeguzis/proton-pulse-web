@@ -1,3 +1,4 @@
+import { isRateLimited, getClientIp, rateLimitResponse } from "../_shared/rateLimit.ts";
 // protondb-summary: CORS proxy for the ProtonDB public summaries API.
 //
 // The browser cannot call protondb.com directly. Their summaries endpoint
@@ -17,6 +18,7 @@ const corsHeaders = {
 
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
+  if (isRateLimited("protondb-summary", getClientIp(req))) return rateLimitResponse(corsHeaders);
 
   const url = new URL(req.url);
   const appId = (url.searchParams.get("appId") || "").trim();

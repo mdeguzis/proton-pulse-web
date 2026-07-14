@@ -45,3 +45,9 @@ verify_jwt = false
 # need to hit current_user_has_permission() after auth.getUser(), which
 # the built-in middleware does not do.
 verify_jwt = false
+
+[functions.public-steam-profile]
+# Anonymous Steam profile lookup for /lookup (#299) -- no sign-in required
+# since the whole point is to check a public profile without an account.
+# Only reads Steam data; never writes to our DB.
+verify_jwt = false

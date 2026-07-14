@@ -1,3 +1,4 @@
+import { isRateLimited, getClientIp, rateLimitResponse } from "../_shared/rateLimit.ts";
 // steam-explore: admin API Explorer proxy (issue #186).
 //
 // The stores' public endpoints are not CORS-enabled, so the admin panel cannot
@@ -140,6 +141,7 @@ const ENDPOINTS: Record<string, EndpointDef> = {
 
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
+  if (isRateLimited("steam-explore", getClientIp(req))) return rateLimitResponse(corsHeaders);
   if (req.method !== "POST") {
     return Response.json({ ok: false, error: "POST only" }, { status: 405, headers: corsHeaders });
   }

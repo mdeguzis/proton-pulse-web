@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.steamstatic.com https://avatars.steamstatic.com https://cdn.cloudflare.steamstatic.com https://media.steampowered.com data:; connect-src 'self' https://ilsgdshkaocrmibwdezk.supabase.co https://pp-edge-status.mdeguzis.workers.dev; font-src 'self'; frame-src 'none'; object-src 'none';">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -12,7 +13,7 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=d13d8b13">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
 <link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
-<link rel="stylesheet" href="css/auth/auth.css?v=ca512b85">
+<link rel="stylesheet" href="css/auth/auth.css?v=9c392b8b">
 </head>
 <body>
 <div class="auth-shell">
@@ -67,6 +68,12 @@
       </button>
       <a class="auth-secondary-link" href="index.html" id="auth-back-link">Go back</a>
     </div>
+
+    <!-- #299: not everyone wants to sign in just to peek at their own library's
+         compatibility. Offer the anonymous lookup as a secondary path. -->
+    <p class="auth-no-signin-hint">
+      Just want to check a public profile? <a href="lookup.html">Look one up without signing in</a>.
+    </p>
   </main>
 </div>
 

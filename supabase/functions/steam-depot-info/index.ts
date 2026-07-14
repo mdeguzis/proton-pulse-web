@@ -1,3 +1,4 @@
+import { isRateLimited, getClientIp, rateLimitResponse } from "../_shared/rateLimit.ts";
 // steam-depot-info: per-OS depot last-updated + tracked-since dates for
 // the Metadata modal.
 //
@@ -47,6 +48,7 @@ type HistoryRow = {
 
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
+  if (isRateLimited("steam-depot-info", getClientIp(req))) return rateLimitResponse(corsHeaders);
 
   const url = new URL(req.url);
   const appId = (url.searchParams.get("appId") || "").trim();

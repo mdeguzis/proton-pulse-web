@@ -7,16 +7,16 @@ import { renderAuthorBlock } from './author.js?v=3a8cb3c7';
 import { buildFormRows } from './config-cards.js?v=c67740f8';
 import { renderSignalStrip } from './signals.js?v=ff2ad4c9';
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=f9591262';
-import { confColor, confTextColor, configKey, daysAgo, esc, renderNotes, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js?v=c7e1268c';
+import { confColor, confTextColor, configKey, daysAgo, esc, renderNotes, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js?v=9a39c726';
 
 export function renderPermalink(r) {
   let id = r.reportId != null ? `r${r.reportId}` : (r.clientId ? `c${r.clientId.slice(0, 8)}` : '');
   if (!id && r.timestamp) id = hashReportKey(reportKey(r));
   if (!id || !r.appId) return '';
   const anchor = `report-${id}`;
-  // Inline JS avoids needing a separate event delegate hook for now. Replace
-  // with delegated handler when this lands in production
-  const fn = `(function(b){const u=location.origin+location.pathname+'#/app/${r.appId}#${anchor}';navigator.clipboard?.writeText(u);b.classList.add('copied');setTimeout(()=>b.classList.remove('copied'),900);return false;})(this)`;
+  const safeAppId = String(r.appId).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+  const safeAnchor = anchor.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+  const fn = `(function(b){const u=location.origin+location.pathname+'#/app/${safeAppId}#${safeAnchor}';navigator.clipboard?.writeText(u);b.classList.add('copied');setTimeout(()=>b.classList.remove('copied'),900);return false;})(this)`;
   return `<button class="permalink-btn" type="button" title="Copy permalink to this report" onclick="${fn}">
     <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M3.9 12c0-1.7 1.4-3.1 3.1-3.1h4V7H7c-2.8 0-5 2.2-5 5s2.2 5 5 5h4v-1.9H7c-1.7 0-3.1-1.4-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.7 0 3.1 1.4 3.1 3.1s-1.4 3.1-3.1 3.1h-4V17h4c2.8 0 5-2.2 5-5s-2.2-5-5-5z"/></svg>
   </button>`;

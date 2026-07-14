@@ -11,13 +11,13 @@ import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=830efdfb';
-import { renderCard } from './report-card.js?v=faa750d4';
+import { renderCard } from './report-card.js?v=1ee75a46';
 import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=f9591262';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=ba0d7848';
-import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=c7e1268c';
+import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=9a39c726';
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
@@ -1310,9 +1310,11 @@ export async function renderGamePage(appId) {
         e.stopPropagation();
         if (!confirm('Delete your report for this game?')) return;
         const clientId = getWebClientId();
-        const r = await fetch(`${SB_URL}/user_configs?client_id=eq.${clientId}&app_id=eq.${appId}`, {
+        const hdrs = window.SupaAuth ? await window.SupaAuth.authHeaders() : { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
+        hdrs['x-client-id'] = clientId;
+        const r = await fetch(`${SB_URL}/rest/v1/user_configs?client_id=eq.${clientId}&app_id=eq.${appId}`, {
           method: 'DELETE',
-          headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'x-client-id': clientId },
+          headers: hdrs,
         });
         if (r.ok) { b.textContent = 'Deleted'; setTimeout(render, 1000); }
         else { b.textContent = 'Failed'; }
@@ -1326,9 +1328,11 @@ export async function renderGamePage(appId) {
         if (!confirm('Delete your Proton config for this game?')) return;
         const voterId  = b.dataset.voterId;
         const cfgAppId = b.dataset.appId;
+        const cfgHdrs = window.SupaAuth ? await window.SupaAuth.authHeaders() : { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
+        cfgHdrs['x-client-id'] = voterId;
         const r = await fetch(
-          `${SB_URL}/user_proton_configs?voter_id=eq.${voterId}&app_id=eq.${cfgAppId}`,
-          { method: 'DELETE', headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'x-client-id': voterId } }
+          `${SB_URL}/rest/v1/user_proton_configs?voter_id=eq.${voterId}&app_id=eq.${cfgAppId}`,
+          { method: 'DELETE', headers: cfgHdrs }
         );
         console.log('[delete-cfg]', r.status, voterId, cfgAppId);
         if (r.ok) { b.textContent = 'Deleted'; setTimeout(render, 1000); }

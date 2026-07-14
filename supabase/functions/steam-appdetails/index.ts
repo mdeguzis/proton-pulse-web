@@ -12,6 +12,8 @@
 // 10 minutes so a game page that renders 6 reports does not hammer
 // Steam.
 
+import { isRateLimited, getClientIp, rateLimitResponse } from "../_shared/rateLimit.ts";
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
@@ -20,6 +22,7 @@ const corsHeaders = {
 
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
+  if (isRateLimited("steam-appdetails", getClientIp(req))) return rateLimitResponse(corsHeaders);
 
   const url = new URL(req.url);
   const appId = (url.searchParams.get("appId") || "").trim();

@@ -1,5 +1,21 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
+// Per-isolate rate limiter: 10 requests per IP per 60 seconds
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT = 10;
+const RATE_WINDOW_MS = 60_000;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+  entry.count++;
+  return entry.count > RATE_LIMIT;
+}
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
@@ -23,6 +39,11 @@ function makeLinkCode() {
 
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
+
+  const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  if (isRateLimited(clientIp)) {
+    return Response.json({ error: "Too many requests" }, { status: 429, headers: corsHeaders });
+  }
 
   const supabase = createClient(
     Deno.env.get("SUPABASE_URL")!,

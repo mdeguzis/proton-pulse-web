@@ -1,0 +1,27 @@
+name: Security Monitor
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # every hour
+  workflow_dispatch: {}
+
+jobs:
+  monitor:
+    name: Check Supabase security metrics
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run security monitor
+        env:
+          SUPABASE_TOKEN: ${{ secrets.SUPABASE_TOKEN }}
+          SUPABASE_PROJECT_REF: ilsgdshkaocrmibwdezk
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: node .github/scripts/security-monitor.mjs
