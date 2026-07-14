@@ -15,7 +15,7 @@
 import { computeLibraryTierCounts } from '../app/components/home-library-chart.js?v=7ba60b85';
 import { loadSearchIndex, searchIndex } from '../app/components/search.js?v=598aaad1';
 import { RATING_COLORS, RATING_TEXT } from '../app/config.js?v=f9591262';
-import { esc } from '../app/utils.js?v=2cbe4072';
+import { esc } from '../app/utils.js?v=9a39c726';
 
 const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
 const TIER_LABEL = {
