@@ -16,6 +16,6 @@
     "jest-environment-jsdom": "^30.3.0",
     "js-yaml": "^4.3.0",
     "supabase": "^2.109.0",
-    "vite": "^5.4.10"
+    "vite": "^6.4.3"
   }
 }
