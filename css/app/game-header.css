@@ -1631,27 +1631,33 @@ button.hub-link:disabled { opacity: 0.5; cursor: default; }
   flex-wrap: wrap;
 }
 .sf-fps-upload-btn {
-  /* Full-width single-line button so 'Upload MangoHud CSV' does not stack
-     onto three lines on mobile the way an inline-flex fit-to-content button
-     did (#285 screenshot). Status text below wraps naturally on wrap. */
+  /* Full-width single-line Steam-blue action so 'Upload MangoHud CSV' does
+     not stack onto multiple lines and reads as a proper button, not a
+     dashed outline. Matches the CTAs on the index page (#285 screenshot). */
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  gap: 6px;
-  padding: 6px 12px;
-  border: 1px solid var(--border2);
-  background: var(--s1);
-  color: var(--accent);
-  font-size: 0.72rem;
-  font-family: var(--mono);
+  gap: 8px;
+  padding: 9px 14px;
+  border: 0;
+  background: #417a9b;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-family: inherit;
+  font-weight: 600;
   letter-spacing: 0.04em;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 6px;
   white-space: nowrap;
-  transition: border-color 0.15s, background 0.15s;
+  transition: background 0.15s ease;
 }
-.sf-fps-upload-btn:hover { border-color: var(--accent); background: var(--s2); }
+.sf-fps-upload-btn:hover { background: #4c8ab0; }
+/* Empty label spacer stops taking up the row on mobile so the button uses
+   the full width rather than a narrow flex remainder. */
+@media (max-width: 560px) {
+  .sf-row--fps-upload > label:empty { display: none; }
+}
 .sf-fps-upload-status { font-size: 0.72rem; color: var(--muted); }
 .sf-fps-upload-status--err { color: var(--red, #ff5566); }
 .sf-row input:focus, .sf-row select:focus, .sf-row textarea:focus { border-color: var(--accent); }

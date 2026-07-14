@@ -192,6 +192,34 @@
   padding: 5px 10px;
   min-width: 180px;
 }
+
+/* Jump-to-section nav strip at the top of the signed-in profile page
+   (#285 review). Sits in normal flow like the Admin panel's tab select;
+   scrolls with the page so it doesn't float over content. scroll-margin-top
+   keeps an anchor jump from tucking the section title under the topbar. */
+.profile-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+.profile-nav-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.profile-nav .profile-select {
+  flex: 1;
+  min-width: 0;
+  max-width: 320px;
+  font-weight: 600;
+  padding: 7px 12px;
+}
+.profile-section {
+  scroll-margin-top: calc(var(--topnav-h, 60px) + 12px);
+}
 .profile-select:focus { outline: none; border-color: var(--accent); }
 
 .profile-textarea {
@@ -590,7 +618,13 @@
    actions column and wrapping the View/Publish/Edit/Delete buttons onto two
    rows. A narrow Rating column gives the actions room to stay on one line. */
 .profile-configs-table th:nth-child(2),
-.profile-configs-table td:nth-child(2) { width: 92px; }
+.profile-configs-table td:nth-child(2) { width: 200px; }
+.profile-configs-rating-cell { text-transform: capitalize; }
+.profile-configs-updated {
+  color: var(--muted);
+  font-size: 0.86em;
+  white-space: nowrap;
+}
 .profile-configs-table td.col-action,
 .profile-configs-table th.col-action {
   text-align: right;
@@ -881,13 +915,24 @@
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
+    gap: 6px;
   }
+  /* Every action button (View / Publish / Edit / Delete) shares the row
+     equally on mobile so the strip reads as a balanced control cluster
+     instead of hugging its content and looking ragged (#285 review).
+     min-width:0 lets the labels shrink when the row is narrow. */
   .profile-configs-view-link,
   .profile-configs-action {
+    flex: 1 1 0;
+    min-width: 0;
     text-align: center;
-    padding: 5px 4px;
-    font-size: 0.65rem;
+    padding: 7px 4px;
+    font-size: 0.7rem;
   }
+  /* Override the desktop min-width so Publish / Unpublish do not force the
+     row wider than the others on narrow viewports. */
+  .profile-configs-publish-btn,
+  .profile-configs-unpublish-btn { min-width: 0; }
 }
 
 /* system-edit: page header row keeps the title block left and the
