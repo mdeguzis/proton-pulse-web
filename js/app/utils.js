@@ -263,6 +263,12 @@ function _getMdRenderer() {
       breaks: true,
       typographer: false,
     });
+    const defaultRender = _mdInstance.renderer.rules.link_open || function (tokens, idx, options, _env, self) { return self.renderToken(tokens, idx, options); };
+    _mdInstance.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+      tokens[idx].attrSet('target', '_blank');
+      tokens[idx].attrSet('rel', 'noopener noreferrer');
+      return defaultRender(tokens, idx, options, env, self);
+    };
   }
   return _mdInstance;
 }
