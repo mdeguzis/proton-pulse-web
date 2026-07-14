@@ -155,10 +155,12 @@ describe('deploy plumbing', () => {
 });
 
 describe('sign-in hint spread across the site', () => {
-  test('auth.html points to lookup as the no-signin alternative', () => {
+  test('auth.html offers the no-signin path via the inline mount (replaces the old hint link)', () => {
+    // Post-#323 followup: the auth-no-signin-hint <p> link is gone;
+    // the inline Library panel mounts as a peer of the auth-card and
+    // renders its own "View full library breakdown" link back to /lookup.
     const AUTH = read('auth.html');
-    expect(AUTH).toContain('auth-no-signin-hint');
-    expect(AUTH).toContain('href="lookup.html"');
+    expect(AUTH).toContain('id="profile-lookup-inline-mount"');
   });
   test('profile.html signed-out state offers the lookup path', () => {
     // Post-#323 followup: the inline "Library" panel mounts under the
@@ -169,9 +171,12 @@ describe('sign-in hint spread across the site', () => {
     const PROFILE = read('profile.html');
     expect(PROFILE).toContain('id="profile-lookup-inline-mount"');
   });
-  test('submit.html auth-gate hint offers the lookup path', () => {
+  test('submit.html auth-gate offers the no-signin path via the inline mount (replaces the old hint link)', () => {
+    // Post-#323 followup: same as auth.html -- the outbound link inside
+    // the auth-gate is replaced with the inline Library panel mounted
+    // as a peer of the login card.
     const SUBMIT = read('submit.html');
-    expect(SUBMIT).toMatch(/auth-gate[\s\S]*href="lookup\.html"/);
+    expect(SUBMIT).toMatch(/id="auth-gate"[\s\S]*id="profile-lookup-inline-mount"/);
   });
 });
 
@@ -251,16 +256,19 @@ describe('#323 followup: inline Library panel under Login button', () => {
   const STORAGE = read('js/shared/lookup-storage.js');
   const INLINE_CSS = read('css/shared/lookup-inline.css');
 
-  test('profile.html signed-out block has a mount container directly under the Login button', () => {
-    // Mount container id must appear inside the signed-out div AFTER the
-    // Login button so ProtonDB-style ordering (sign-in first, alternative
-    // identifier below) is preserved.
-    const signedOut = PROFILE_HTML.match(/id="profile-signed-out"[\s\S]*?<\/div>\s*<\/div>/);
-    expect(signedOut).toBeTruthy();
-    expect(signedOut[0]).toContain('id="profile-login-btn"');
+  test('profile.html mount is a peer of the login card, not nested inside it', () => {
+    // The mount container must sit as a SIBLING of .profile-unsigned, not
+    // as a child. Two cards on the page read as two distinct alternatives;
+    // nesting the panel inside the login card makes it look like "part of
+    // the login flow".
+    const unsignedBlock = PROFILE_HTML.match(/<div class="profile-unsigned">[\s\S]*?<\/div>/);
+    expect(unsignedBlock).toBeTruthy();
+    expect(unsignedBlock[0]).not.toContain('profile-lookup-inline-mount');
+    // But the mount container IS still inside the outer signed-out wrapper.
+    const signedOut = PROFILE_HTML.match(/id="profile-signed-out"[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/);
     expect(signedOut[0]).toContain('id="profile-lookup-inline-mount"');
-    // Mount container appears AFTER the Login button in DOM order.
-    const btnPos = signedOut[0].indexOf('id="profile-login-btn"');
+    // Order: login card first, then the mount below it.
+    const btnPos = signedOut[0].indexOf('class="profile-unsigned"');
     const mountPos = signedOut[0].indexOf('id="profile-lookup-inline-mount"');
     expect(mountPos).toBeGreaterThan(btnPos);
   });
@@ -311,5 +319,37 @@ describe('#323 followup: inline Library panel under Login button', () => {
     for (const cls of ['.profile-lookup-inline', '.pli-title', '.pli-copy', '.pli-input', '.pli-save', '.pli-examples', '.pli-hint', '.pli-status', '.pli-actions', '.pli-clear']) {
       expect(INLINE_CSS).toContain(cls);
     }
+  });
+
+  test('auth.html mounts the inline panel as a peer of the auth-card', () => {
+    const AUTH = read('auth.html');
+    // Mount container sits OUTSIDE the <main class="auth-card">, not inside.
+    expect(AUTH).toMatch(/<\/main>\s*[\s\S]{0,200}<div id="profile-lookup-inline-mount"/);
+    // Stylesheet is included so the panel actually renders.
+    expect(AUTH).toMatch(/href="css\/shared\/lookup-inline\.css/);
+    // Bootstrap script imports the mount fn.
+    expect(AUTH).toMatch(/import \{ mountInlineProfileLookup \} from ['"]\.\/js\/shared\/profile-lookup-inline\.js/);
+  });
+
+  test('auth.css sizes the mount to match the auth-card width so they stack cleanly', () => {
+    const AUTH_CSS = read('css/auth/auth.css');
+    expect(AUTH_CSS).toContain('.auth-lookup-mount');
+    expect(AUTH_CSS).toMatch(/width:\s*min\(100%,\s*760px\)/);
+  });
+
+  test('submit.html auth-gate mounts the inline panel as a peer of the login card', () => {
+    const SUBMIT = read('submit.html');
+    // auth-gate wraps two peer divs: the login card + the mount container.
+    const gate = SUBMIT.match(/id="auth-gate"[\s\S]*?<\/div>\s*<\/div>/);
+    expect(gate).toBeTruthy();
+    expect(gate[0]).toContain('id="profile-lookup-inline-mount"');
+    // Stylesheet is included.
+    expect(SUBMIT).toMatch(/href="css\/shared\/lookup-inline\.css/);
+  });
+
+  test('submit main mounts the inline panel when the auth-gate becomes visible', () => {
+    const SUBMIT_MAIN = read('js/submit/main.js');
+    expect(SUBMIT_MAIN).toContain("mountInlineProfileLookup('profile-lookup-inline-mount')");
+    expect(SUBMIT_MAIN).toMatch(/import\(.*profile-lookup-inline\.js/);
   });
 });

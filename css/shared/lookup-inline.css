@@ -3,10 +3,14 @@
    auth.html, submit.html auth-gate). Mirrors ProtonDB's submit-page
    pattern -- sign-in above, alternative identifier input below. */
 
+/* Sits as its own peer card (not nested inside the login card) so the
+   two paths -- sign in with Steam OR provide a public identifier --
+   read as distinct alternatives. `margin-top` gives visual separation
+   from whatever login/auth card sits above it. */
 .profile-lookup-inline {
   width: 100%;
-  margin-top: 14px;
-  padding: 16px;
+  margin-top: 20px;
+  padding: 18px 20px;
   background: var(--s1);
   border: 1px solid var(--border);
   border-radius: 8px;

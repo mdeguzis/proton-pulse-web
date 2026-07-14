@@ -147,6 +147,14 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     document.getElementById('login-btn')?.addEventListener('click', () => {
       window.location.href = SupaAuth.buildLoginPageUrl(window.location.href);
     });
+    // #323 followup: mount the inline Library panel as a peer of the
+    // auth-gate card so signed-out visitors have an alternative path.
+    try {
+      const mod = await import('../shared/profile-lookup-inline.js?v=00000001');
+      mod.mountInlineProfileLookup('profile-lookup-inline-mount');
+    } catch (err) {
+      console.warn('[submit] inline lookup mount failed', err);
+    }
     return;
   }
   if (isLocalDev && !session?.user) {

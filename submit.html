@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=d13d8b13">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
 <link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
+<link rel="stylesheet" href="css/shared/lookup-inline.css?v=9c886588">
 <link rel="stylesheet" href="css/app/game-header.css?v=1ae5af52">
 <link rel="stylesheet" href="css/app/configs.css?v=90d5bed5">
 <link rel="stylesheet" href="css/app/reports.css?v=a1cd2459">
@@ -52,12 +53,11 @@
           <span class="gh-login-btn__badge"><img class="gh-login-btn__icon" src="assets/steam-logo-glyph.png" alt=""></span>
           <span class="gh-login-btn__label">Login with Steam</span>
         </button>
-        <p style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);font-size:0.85rem;color:var(--muted)">
-          Not ready to sign in? You can still
-          <a href="lookup.html" style="color:var(--accent);font-weight:600">look up any public Steam profile</a>
-          and see its Proton compatibility.
-        </p>
       </div>
+      <!-- Inline Library panel (#323 followup): peer of the auth-gate card,
+           not nested inside it, so the anonymous alternative reads as a
+           distinct path rather than "part of the sign-in prompt". -->
+      <div id="profile-lookup-inline-mount"></div>
     </div>
 
     <div id="submit-form-content">Loading form...</div>
@@ -65,6 +65,6 @@
   </div>
 </div>
 
-<script type="module" src="js/submit/main.js?v=63e44bd8"></script>
+<script type="module" src="js/submit/main.js?v=657f501b"></script>
 </body>
 </html>

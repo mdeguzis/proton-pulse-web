@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=d13d8b13">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
 <link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
-<link rel="stylesheet" href="css/shared/lookup-inline.css?v=cf2bfa65">
+<link rel="stylesheet" href="css/shared/lookup-inline.css?v=9c886588">
 <link rel="stylesheet" href="css/profile/profile.css?v=e9fe4860">
 </head>
 <body>
@@ -42,10 +42,11 @@
           </span>
           <span class="gh-login-btn__label">Login with Steam</span>
         </button>
-        <!-- Inline Library panel (issue #323 followup) mounts here below the
-             Login button, mirroring ProtonDB's submit-page pattern. -->
-        <div id="profile-lookup-inline-mount"></div>
       </div>
+      <!-- Inline Library panel (issue #323 followup) is a peer of the login
+           card, not nested inside it, so the two alternatives read as
+           distinct paths rather than "part of the login flow". -->
+      <div id="profile-lookup-inline-mount"></div>
     </div>
 
     <!-- Signed in -->
