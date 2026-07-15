@@ -5,6 +5,7 @@
  *   - the panel mount container
  *   - the variant list
  *   - the CDN base URL
+ *   - on-demand fetch button (no auto-render of 9 images per open)
  *   - the set-as-override handler
  */
 const fs = require('fs');
@@ -46,21 +47,41 @@ describe('boxart admin detail: Steam CDN image panel (#345)', () => {
     expect(BOXART_SRC).toMatch(/if \(row\.type !== 'steam'\) return ''/);
   });
 
-  test('per-card <img> uses onerror to hide missing variants (no probe pass needed)', () => {
-    expect(BOXART_SRC).toContain("this.closest('.steam-cdn-card').style.display='none'");
+  test('panel starts empty with a Fetch button (on-demand, no auto-render)', () => {
+    expect(BOXART_SRC).toContain('data-steamcdn="fetch"');
+    expect(BOXART_SRC).toContain('id="steamcdn-results"');
+    // Panel HTML must NOT pre-render the cards -- the results div is
+    // populated by the fetch click handler after each variant is probed.
+    const panelFn = BOXART_SRC.match(/function _steamCdnPanelHtml[\s\S]{0,1200}?\n\}/);
+    expect(panelFn).toBeTruthy();
+    expect(panelFn[0]).not.toContain('STEAM_CDN_VARIANTS.map');
+  });
+
+  test('fetch handler probes every variant via probeImageUrl before rendering', () => {
+    expect(BOXART_SRC).toMatch(
+      /data-steamcdn="fetch"[\s\S]{0,1500}STEAM_CDN_VARIANTS\.map[\s\S]{0,400}probeImageUrl\(url\)/,
+    );
+  });
+
+  test('empty-results branch tells the admin the app is delisted or region-locked', () => {
+    expect(BOXART_SRC).toContain('No Steam CDN variants returned 200');
   });
 
   test('click handler routes Set through setBoxArtOverride (same path as SGDB)', () => {
-    expect(BOXART_SRC).toMatch(
-      /steamCdnPanel[\s\S]{0,400}data-steamcdn-set[\s\S]{0,400}setBoxArtOverride\(row\.appId, url\)/,
-    );
+    // The setBtn branch inside the steamCdnPanel handler reads
+    // data-steamcdn-set, then calls setBoxArtOverride. Pin that the
+    // AFTER-declaration slice contains the override call.
+    const setBtnIdx = BOXART_SRC.indexOf("ev.target.closest('[data-steamcdn-set]')");
+    expect(setBtnIdx).toBeGreaterThan(-1);
+    const after = BOXART_SRC.slice(setBtnIdx);
+    expect(after).toContain('setBoxArtOverride(row.appId, url)');
   });
 
   test('successful set updates the preview + refreshes the body', () => {
     // Same post-set treatment SGDB does: mutate row.override, refreshBody(),
     // swap the #boxart-detail-preview image so admins see it immediately.
     expect(BOXART_SRC).toMatch(
-      /Steam CDN[\s\S]{0,1200}row\.override\s*=\s*\{[\s\S]{0,80}'manual'[\s\S]{0,200}refreshBody\(\)/,
+      /Steam CDN[\s\S]{0,4000}row\.override\s*=\s*\{[\s\S]{0,80}'manual'[\s\S]{0,300}refreshBody\(\)/,
     );
   });
 });
