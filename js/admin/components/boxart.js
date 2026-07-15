@@ -229,6 +229,7 @@ function _renderShell() {
           <button class="admin-dropdown-item" id="boxart-probe-visible-btn" title="Probe every row on the current page">Probe visible page</button>
           <button class="admin-dropdown-item" id="boxart-probe-all-btn" title="Probe every row that matches the current filters in bounded batches">Probe all (filtered)</button>
           <button class="admin-dropdown-item" id="boxart-sgdb-first-all-btn" title="Search SteamGridDB by title for every filtered row and set the first widescreen grid as the override. Skips rows that already have an override.">Set first SGDB result (filtered)</button>
+          <button class="admin-dropdown-item" id="boxart-steamcdn-header-all-btn" title="For every filtered Steam row, probe the Steam CDN header.jpg and set it as the override if it loads. Skips non-Steam rows and rows that already have an override.">Set Steam CDN header (filtered)</button>
           <button class="admin-dropdown-item admin-dropdown-item--danger" id="boxart-cancel-btn" hidden>Cancel batch</button>
         </div>
       </details>
@@ -499,6 +500,7 @@ export async function renderBoxartAdmin() {
   const visBtn    = document.getElementById('boxart-probe-visible-btn');
   const allBtn    = document.getElementById('boxart-probe-all-btn');
   const sgdbAllBtn = document.getElementById('boxart-sgdb-first-all-btn');
+  const steamCdnAllBtn = document.getElementById('boxart-steamcdn-header-all-btn');
   const cancelBtn = document.getElementById('boxart-cancel-btn');
   const actionsDropdown = document.getElementById('boxart-actions');
   // Close the dropdown after any menu-item click so it doesn't stay open
@@ -533,6 +535,7 @@ export async function renderBoxartAdmin() {
     visBtn.disabled = running;
     allBtn.disabled = running;
     if (sgdbAllBtn) sgdbAllBtn.disabled = running;
+    if (steamCdnAllBtn) steamCdnAllBtn.disabled = running;
     cancelBtn.hidden = !running;
     progEl.hidden = !running;
   }
@@ -622,6 +625,60 @@ export async function renderBoxartAdmin() {
       setBatchRunning(false);
       progEl.hidden = false;
       // Re-render so the freshly-set overrides show up in the Status column.
+      _renderPage(state.rows, state.page);
+    }
+  });
+
+  // Batch "Set Steam CDN header (filtered)": mirror of the SGDB widescreen
+  // batch but sources from the Steam CDN header.jpg URL. Cheap check --
+  // just an <img> load per row, no third-party API in the loop. Skips
+  // non-Steam rows and any row that already has an override.
+  if (steamCdnAllBtn) steamCdnAllBtn.addEventListener('click', async () => {
+    _closeActions();
+    if (!state.rows.length) return;
+    const steamRows = state.rows.filter((r) => r.type === 'steam');
+    const total = steamRows.length;
+    if (!total) return;
+    if (!confirm(`Probe the Steam CDN header for ${total.toLocaleString()} Steam row${total === 1 ? '' : 's'} and set it as the override when it loads?\n\nNon-Steam rows and rows that already have an admin override are skipped.`)) return;
+    setBatchRunning(true);
+    cancelToken = { cancelled: false };
+    let done = 0, ok = 0, skip = 0, fail = 0;
+    try {
+      progEl.textContent = `Steam CDN header: 0 / ${total}...`;
+      for (const r of steamRows) {
+        if (cancelToken.cancelled) break;
+        done += 1;
+        if (r.override?.image_url) { skip += 1; }
+        else {
+          const url = `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(r.appId)}/header.jpg`;
+          // <img>-load existence check: browsers render Steam CDN pixels
+          // without CORS whereas fetch() gets blocked. Race a 5s timeout
+          // so a stuck request cannot hang the whole batch.
+          const loaded = await new Promise((resolve) => {
+            const img = new Image();
+            const t = setTimeout(() => { img.src = ''; resolve(false); }, 5000);
+            img.onload = () => { clearTimeout(t); resolve(true); };
+            img.onerror = () => { clearTimeout(t); resolve(false); };
+            img.src = url;
+          });
+          if (loaded) {
+            const applied = await setBoxArtOverride(r.appId, url);
+            if (applied.ok) {
+              r.override = { image_url: url, source: 'manual' };
+              if (indexes.overrideMap) indexes.overrideMap[r.appId] = r.override;
+              ok += 1;
+            } else { fail += 1; }
+          } else { fail += 1; }
+          // Modest breather between rows so the browser stays responsive
+          // on very large filter sets (thousands of Steam rows).
+          await new Promise((res) => setTimeout(res, 50));
+        }
+        progEl.textContent = `Steam CDN header: ${done} / ${total} \u00b7 ${ok} set / ${skip} skipped / ${fail} failed`;
+      }
+      progEl.textContent = `Done: ${done} scanned \u00b7 ${ok} set / ${skip} skipped / ${fail} failed${cancelToken.cancelled ? ' (cancelled)' : ''}`;
+    } finally {
+      setBatchRunning(false);
+      progEl.hidden = false;
       _renderPage(state.rows, state.page);
     }
   });

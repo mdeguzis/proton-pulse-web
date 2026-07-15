@@ -88,3 +88,44 @@ describe('boxart admin detail: Steam CDN image panel (#345)', () => {
     );
   });
 });
+
+describe('boxart admin batch: Set Steam CDN header (filtered)', () => {
+  test('menu item is present in the Actions dropdown', () => {
+    expect(BOXART_SRC).toContain('id="boxart-steamcdn-header-all-btn"');
+    expect(BOXART_SRC).toContain('Set Steam CDN header (filtered)');
+  });
+
+  test('batch handler skips non-Steam rows before iterating', () => {
+    expect(BOXART_SRC).toMatch(
+      /steamCdnAllBtn[\s\S]{0,400}state\.rows\.filter\(\(r\) => r\.type === 'steam'\)/,
+    );
+  });
+
+  test('batch handler skips rows that already have an override', () => {
+    expect(BOXART_SRC).toMatch(
+      /steamCdnAllBtn[\s\S]{0,1500}r\.override\?\.image_url[\s\S]{0,100}skip \+= 1/,
+    );
+  });
+
+  test('batch handler probes each row via Image() load, not fetch', () => {
+    expect(BOXART_SRC).toMatch(
+      /steamCdnAllBtn[\s\S]{0,2500}new Image\(\)[\s\S]{0,400}img\.onload/,
+    );
+  });
+
+  test('batch handler races a timeout so a stuck request cannot hang the run', () => {
+    expect(BOXART_SRC).toMatch(
+      /steamCdnAllBtn[\s\S]{0,2500}setTimeout\([^,]+,\s*5000\)/,
+    );
+  });
+
+  test('batch handler applies via setBoxArtOverride (same path as everything else)', () => {
+    expect(BOXART_SRC).toMatch(
+      /steamCdnAllBtn[\s\S]{0,3000}setBoxArtOverride\(r\.appId, url\)/,
+    );
+  });
+
+  test('setBatchRunning disables the new batch button too', () => {
+    expect(BOXART_SRC).toMatch(/setBatchRunning[\s\S]{0,300}steamCdnAllBtn\.disabled\s*=\s*running/);
+  });
+});
