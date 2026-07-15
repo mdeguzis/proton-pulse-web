@@ -57,14 +57,17 @@ describe('boxart admin detail: Steam CDN image panel (#345)', () => {
     expect(panelFn[0]).not.toContain('STEAM_CDN_VARIANTS.map');
   });
 
-  test('fetch handler probes every variant via probeImageUrl before rendering', () => {
+  test('fetch handler probes every variant via Image() onload before rendering', () => {
+    // Use <img> load detection, not fetch(). Steam CDN behaves inconsistently
+    // for browser fetch() (CORS on some paths, redirects on others), but the
+    // Image element always renders the pixels + fires onload/onerror.
     expect(BOXART_SRC).toMatch(
-      /data-steamcdn="fetch"[\s\S]{0,1500}STEAM_CDN_VARIANTS\.map[\s\S]{0,400}probeImageUrl\(url\)/,
+      /data-steamcdn="fetch"[\s\S]{0,1500}STEAM_CDN_VARIANTS\.map[\s\S]{0,400}new Image\(\)[\s\S]{0,200}img\.onload/,
     );
   });
 
   test('empty-results branch tells the admin the app is delisted or region-locked', () => {
-    expect(BOXART_SRC).toContain('No Steam CDN variants returned 200');
+    expect(BOXART_SRC).toContain('No Steam CDN variants loaded');
   });
 
   test('click handler routes Set through setBoxArtOverride (same path as SGDB)', () => {

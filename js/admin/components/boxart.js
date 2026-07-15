@@ -1159,19 +1159,27 @@ export async function renderBoxartAdminDetail(appId) {
           return;
         }
         fetchBtn.disabled = true;
-        steamCdnStatus('Probing Steam CDN variants...');
+        steamCdnStatus('Loading Steam CDN variants...');
         const base = `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(row.appId)}`;
-        const results = await Promise.all(STEAM_CDN_VARIANTS.map(async (v) => {
+        // Use <img> load detection instead of fetch(). Steam CDN sends CORS
+        // headers on files it serves, but browser fetch() still fails on
+        // many of them (some variants get redirected through hashed URLs,
+        // some 403 the OPTIONS pre-check). The <img> element ignores CORS
+        // for pure display, so onload/onerror is the reliable existence
+        // signal. Same trick SteamDB + OMGDuke's protondb-decky use.
+        const results = await Promise.all(STEAM_CDN_VARIANTS.map((v) => new Promise((resolve) => {
           const url = `${base}/${v.file}`;
-          const r = await probeImageUrl(url);
-          return r.ok ? { v, url } : null;
-        }));
+          const img = new Image();
+          img.onload = () => resolve({ v, url });
+          img.onerror = () => resolve(null);
+          img.src = url;
+        })));
         const hits = results.filter(Boolean);
         const resultsEl = document.getElementById('steamcdn-results');
         if (resultsEl) {
           resultsEl.innerHTML = hits.length
             ? `<div class="sgdb-grid">${hits.map(({v, url}) => _steamCdnCardHtml(v, url)).join('')}</div>`
-            : `<p class="admin-hint" style="margin:12px 0 0">No Steam CDN variants returned 200 for app id ${escapeHtml(row.appId)}. This app may be delisted or region-locked.</p>`;
+            : `<p class="admin-hint" style="margin:12px 0 0">No Steam CDN variants loaded for app id ${escapeHtml(row.appId)}. This app may be delisted or region-locked.</p>`;
         }
         steamCdnStatus(`Steam CDN: ${hits.length} of ${STEAM_CDN_VARIANTS.length} variants available.`);
         fetchBtn.disabled = false;
