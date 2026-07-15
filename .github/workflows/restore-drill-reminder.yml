@@ -1,0 +1,73 @@
+name: Quarterly restore drill reminder
+
+# Backup that has never been restored is hope, not recovery. Every 90
+# days, open a fresh drill-checklist issue so the runbook stays proven.
+# Closing the issue records the drill outcome on the log.
+#
+# The runbook itself lives at
+# https://github.com/mdeguzis/proton-pulse-web/wiki/Restore-Runbook
+#
+# Issue: #322
+
+on:
+  schedule:
+    - cron: "0 15 1 1,4,7,10 *"  # 1st of Jan/Apr/Jul/Oct at 15:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  open-drill-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create drill-checklist issue
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const now = new Date();
+            const quarter = Math.floor(now.getUTCMonth() / 3) + 1;
+            const year = now.getUTCFullYear();
+            const title = `Restore drill Q${quarter} ${year}`;
+
+            // Skip if an open drill issue for this quarter already exists.
+            // Manual workflow_dispatch runs still hit this; the label +
+            // title match makes it idempotent.
+            const existing = await github.rest.search.issuesAndPullRequests({
+              q: `repo:${context.repo.owner}/${context.repo.repo} is:issue is:open label:restore-drill "${title}" in:title`,
+            });
+            if (existing.data.total_count > 0) {
+              core.info(`Drill issue already open: ${existing.data.items[0].html_url}`);
+              return;
+            }
+
+            const body = [
+              `Quarterly restore drill for Q${quarter} ${year}. Untested backups are hope, not recovery -- run this against a scratch Supabase project and confirm every step in Restore-Runbook.md still works.`,
+              ``,
+              `Full runbook: https://github.com/${context.repo.owner}/${context.repo.repo}/wiki/Restore-Runbook`,
+              ``,
+              `Checklist:`,
+              ``,
+              `- [ ] Pull the latest backup tarball from \`mdeguzis/proton-pulse-data-backup\``,
+              `- [ ] Verify HMAC signature against \`BACKUP_HMAC_SECRET\``,
+              `- [ ] Spin a scratch Supabase project (free tier is fine)`,
+              `- [ ] Restore schema + data per Restore-Runbook.md Phase 2`,
+              `- [ ] Deploy every edge function per Phase 2`,
+              `- [ ] Run \`tests/rls/*\` (once #318 lands) against the scratch project`,
+              `- [ ] Confirm \`/status.html\` on a scratch site shows every edge function green`,
+              `- [ ] Note any step that failed or was undocumented; open a follow-up to fix Restore-Runbook.md`,
+              `- [ ] Tear down the scratch project`,
+              ``,
+              `On close: comment with the drill outcome (pass / follow-ups filed / total time).`,
+            ].join('\n');
+
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['restore-drill', 'security'],
+            });
+            core.info(`Opened drill issue: ${issue.data.html_url}`);

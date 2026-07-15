@@ -1,0 +1,48 @@
+name: Semgrep SAST
+
+# Semgrep static analysis with a curated rulepack covering TypeScript,
+# OWASP Top 10, and general security-audit rules. Complements CodeQL:
+# CodeQL only fully analyzes our JS, so Semgrep is the SAST coverage for
+# the Deno TypeScript inside supabase/functions/.
+#
+# Runs on every push + PR against staging/main and on a weekly schedule
+# so upstream rulepack updates catch newly-published patterns even when
+# no code changes.
+#
+# Docs: https://semgrep.dev/docs/semgrep-ci/sample-ci-configs/
+# Issue: #316
+
+on:
+  push:
+    branches: [main, staging]
+  pull_request:
+    branches: [main, staging]
+  schedule:
+    - cron: "0 6 * * 1"  # Monday 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  semgrep:
+    name: semgrep/ci
+    runs-on: ubuntu-latest
+    container:
+      image: semgrep/semgrep
+    if: (github.actor != 'dependabot[bot]')
+    steps:
+      - uses: actions/checkout@v4
+      # p/typescript catches TS-specific issues (unsafe any casts, unhandled
+      # rejects, tainted-flow through the Steam Web API proxies).
+      # p/owasp-top-ten covers XSS sinks, SQLi patterns, SSRF, auth bypass,
+      # cookie flag misuse.
+      # p/security-audit is the catch-all for hardcoded credentials + weak
+      # crypto usage.
+      # New ERROR-severity finding = merge blocked. Add a scoped ignore
+      # comment (`# nosemgrep: rule-id`) with a written justification if a
+      # finding is a false positive.
+      - run: semgrep ci --config p/typescript --config p/owasp-top-ten --config p/security-audit
+        env:
+          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}

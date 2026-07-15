@@ -180,6 +180,8 @@
         <p>
           Every push and pull request runs through
           <a href="https://codeql.github.com/" target="_blank" rel="noopener">CodeQL</a> static analysis (XSS, injection, auth bypass),
+          <a href="https://semgrep.dev/" target="_blank" rel="noopener">Semgrep</a> with OWASP + TypeScript rulepacks (SAST coverage for the Deno edge functions),
+          <a href="https://github.com/anchore/syft" target="_blank" rel="noopener">Syft</a>-generated SBOMs scanned by <a href="https://github.com/anchore/grype" target="_blank" rel="noopener">Grype</a> against NVD for supply-chain coverage,
           <a href="https://docs.github.com/en/code-security/dependabot" target="_blank" rel="noopener">Dependabot</a> for known dependency CVEs, and
           <code>npm audit</code> gating on high/critical vulnerabilities.
           Issue attachments are hash-checked against
@@ -218,6 +220,16 @@
           safe-harbor language for good-faith research. The same policy
           mirrors to the
           <a href="https://github.com/mdeguzis/decky-proton-pulse/blob/main/SECURITY.md" target="_blank" rel="noopener">Decky plugin repo</a>.
+        </p>
+      </div>
+      <div class="your-data-card">
+        <h3>Backup restore drill</h3>
+        <p>
+          Backups are HMAC-signed and pushed to a private mirror on every
+          schema change. Every 90 days a scheduled workflow files a drill
+          issue against the runbook so the restore path is exercised
+          against a scratch Supabase project. A backup that has never
+          been restored is not a backup.
         </p>
       </div>
     </div>
