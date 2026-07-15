@@ -16,6 +16,7 @@
 import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import {
+  probeImageUrl,
   probeSteamHeader, refetchSteamHeader, refetchNonSteamHeader, refetchSgdbHeader, searchSgdb,
   confirmBoxArtOk, listBoxArtConfirmations,
   setBoxArtOverride, uploadBoxArtOverride, clearBoxArtOverride, listBoxArtOverrides,
@@ -228,6 +229,7 @@ function _renderShell() {
           <button class="admin-dropdown-item" id="boxart-probe-visible-btn" title="Probe every row on the current page">Probe visible page</button>
           <button class="admin-dropdown-item" id="boxart-probe-all-btn" title="Probe every row that matches the current filters in bounded batches">Probe all (filtered)</button>
           <button class="admin-dropdown-item" id="boxart-sgdb-first-all-btn" title="Search SteamGridDB by title for every filtered row and set the first widescreen grid as the override. Skips rows that already have an override.">Set first SGDB result (filtered)</button>
+          <button class="admin-dropdown-item" id="boxart-steamcdn-header-all-btn" title="For every filtered Steam row, probe the Steam CDN wide-aspect variants (header, capsule sizes, library_hero) and set the first one that loads as the override. Skips non-Steam rows and rows that already have an override.">Set first Steam CDN wide image (filtered)</button>
           <button class="admin-dropdown-item admin-dropdown-item--danger" id="boxart-cancel-btn" hidden>Cancel batch</button>
         </div>
       </details>
@@ -498,11 +500,35 @@ export async function renderBoxartAdmin() {
   const visBtn    = document.getElementById('boxart-probe-visible-btn');
   const allBtn    = document.getElementById('boxart-probe-all-btn');
   const sgdbAllBtn = document.getElementById('boxart-sgdb-first-all-btn');
+  const steamCdnAllBtn = document.getElementById('boxart-steamcdn-header-all-btn');
   const cancelBtn = document.getElementById('boxart-cancel-btn');
   const actionsDropdown = document.getElementById('boxart-actions');
   // Close the dropdown after any menu-item click so it doesn't stay open
   // while a batch runs. `open` toggles are the source of truth on <details>.
   const _closeActions = () => { if (actionsDropdown) actionsDropdown.open = false; };
+  // Viewport-aware alignment: when the summary button sits close enough to
+  // the right edge that the 220px-min menu would overflow the viewport,
+  // flip to right-anchor via data-align. On narrow mobile screens the
+  // filter row wraps and the button lands on the LEFT, so we keep the
+  // default left-anchor there. Recomputed on every open so viewport
+  // resize + orientation flip stay correct.
+  const _alignActions = () => {
+    if (!actionsDropdown || !actionsDropdown.open) return;
+    const summary = actionsDropdown.querySelector('summary');
+    if (!summary) return;
+    const r = summary.getBoundingClientRect();
+    const menuWidth = 240; // min-width 220 + padding
+    const viewport = window.innerWidth;
+    // If the menu (if left-anchored to the button's left edge) would
+    // extend past the right edge with a 12px gutter, use right-anchor.
+    // Otherwise left-anchor.
+    const overflowsRight = r.left + menuWidth > viewport - 12;
+    actionsDropdown.dataset.align = overflowsRight ? 'right' : 'left';
+  };
+  if (actionsDropdown) {
+    actionsDropdown.addEventListener('toggle', _alignActions);
+    window.addEventListener('resize', _alignActions);
+  }
   // Click outside the dropdown closes it too.
   document.addEventListener('click', (e) => {
     if (!actionsDropdown) return;
@@ -532,6 +558,7 @@ export async function renderBoxartAdmin() {
     visBtn.disabled = running;
     allBtn.disabled = running;
     if (sgdbAllBtn) sgdbAllBtn.disabled = running;
+    if (steamCdnAllBtn) steamCdnAllBtn.disabled = running;
     cancelBtn.hidden = !running;
     progEl.hidden = !running;
   }
@@ -621,6 +648,74 @@ export async function renderBoxartAdmin() {
       setBatchRunning(false);
       progEl.hidden = false;
       // Re-render so the freshly-set overrides show up in the Status column.
+      _renderPage(state.rows, state.page);
+    }
+  });
+
+  // Batch "Set Steam CDN wide image (filtered)": for every filtered Steam
+  // row, probe the wide-aspect Steam CDN variants in preference order and
+  // use the first one that loads. Falls back to any wide variant when
+  // header.jpg is missing so games without the standard header (rare, but
+  // does happen with older or region-limited apps) still get an override.
+  // Cheap: just <img> loads, no third-party API in the loop. Skips
+  // non-Steam rows and any row that already has an override.
+  const STEAM_CDN_WIDE_PREF = [
+    'header.jpg',
+    'capsule_616x353.jpg',
+    'capsule_467x181.jpg',
+    'capsule_231x87.jpg',
+    'library_hero.jpg',
+  ];
+  const _imgLoads = (url, timeoutMs = 5000) => new Promise((resolve) => {
+    const img = new Image();
+    const t = setTimeout(() => { img.src = ''; resolve(false); }, timeoutMs);
+    img.onload = () => { clearTimeout(t); resolve(true); };
+    img.onerror = () => { clearTimeout(t); resolve(false); };
+    img.src = url;
+  });
+  if (steamCdnAllBtn) steamCdnAllBtn.addEventListener('click', async () => {
+    _closeActions();
+    if (!state.rows.length) return;
+    const steamRows = state.rows.filter((r) => r.type === 'steam');
+    const total = steamRows.length;
+    if (!total) return;
+    if (!confirm(`Probe the Steam CDN wide-aspect variants for ${total.toLocaleString()} Steam row${total === 1 ? '' : 's'} and set the first one that loads as the override?\n\nOrder: header, capsule_616x353, capsule_467x181, capsule_231x87, library_hero. Non-Steam rows and rows that already have an admin override are skipped.`)) return;
+    setBatchRunning(true);
+    cancelToken = { cancelled: false };
+    let done = 0, ok = 0, skip = 0, fail = 0;
+    try {
+      progEl.textContent = `Steam CDN wide: 0 / ${total}...`;
+      for (const r of steamRows) {
+        if (cancelToken.cancelled) break;
+        done += 1;
+        if (r.override?.image_url) { skip += 1; }
+        else {
+          const base = `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(r.appId)}`;
+          // Try each wide variant in preference order; stop at the first hit.
+          let picked = null;
+          for (const file of STEAM_CDN_WIDE_PREF) {
+            if (cancelToken.cancelled) break;
+            const url = `${base}/${file}`;
+            if (await _imgLoads(url)) { picked = url; break; }
+          }
+          if (picked) {
+            const applied = await setBoxArtOverride(r.appId, picked);
+            if (applied.ok) {
+              r.override = { image_url: picked, source: 'manual' };
+              if (indexes.overrideMap) indexes.overrideMap[r.appId] = r.override;
+              ok += 1;
+            } else { fail += 1; }
+          } else { fail += 1; }
+          // Modest breather between rows so the browser stays responsive
+          // on very large filter sets (thousands of Steam rows).
+          await new Promise((res) => setTimeout(res, 50));
+        }
+        progEl.textContent = `Steam CDN wide: ${done} / ${total} \u00b7 ${ok} set / ${skip} skipped / ${fail} failed`;
+      }
+      progEl.textContent = `Done: ${done} scanned \u00b7 ${ok} set / ${skip} skipped / ${fail} failed${cancelToken.cancelled ? ' (cancelled)' : ''}`;
+    } finally {
+      setBatchRunning(false);
+      progEl.hidden = false;
       _renderPage(state.rows, state.page);
     }
   });
@@ -783,7 +878,57 @@ function _detailShell() {
     </div>
     <div id="boxart-detail-body"><div class="admin-loading">Loading...</div></div>
     <div id="boxart-sgdb-panel"></div>
+    <div id="boxart-steam-cdn-panel"></div>
   `;
+}
+
+// Standard Steam CDN image variants per app. Each has a stable URL under
+// /steam/apps/<appid>/<file>. Ordered biggest-first so the visually useful
+// variants (library, hero, capsule) surface above the small marketing crops.
+const STEAM_CDN_VARIANTS = [
+  { file: 'library_600x900.jpg',    label: 'Library capsule (600x900)',  aspect: '600 / 900' },
+  { file: 'library_600x900_2x.jpg', label: 'Library capsule retina',     aspect: '600 / 900' },
+  { file: 'library_hero.jpg',       label: 'Library hero (1920x620)',    aspect: '1920 / 620' },
+  { file: 'header.jpg',             label: 'Header (460x215)',           aspect: '460 / 215' },
+  { file: 'capsule_616x353.jpg',    label: 'Capsule (616x353)',          aspect: '616 / 353' },
+  { file: 'capsule_467x181.jpg',    label: 'Capsule (467x181)',          aspect: '467 / 181' },
+  { file: 'capsule_231x87.jpg',     label: 'Capsule (231x87)',           aspect: '231 / 87' },
+  { file: 'logo.png',               label: 'Logo (transparent)',         aspect: 'auto' },
+  { file: 'page_bg_raw.jpg',        label: 'Page background (raw)',      aspect: '1438 / 810' },
+];
+
+// Steam CDN image panel shell: on-demand, mirrors the SGDB search UX.
+// The admin clicks Fetch; the click handler probes every variant, then
+// renders only the ones that returned ok. Empty until requested so the
+// panel does not eat 9 image-load requests per detail-page open.
+function _steamCdnPanelHtml(row) {
+  if (row.type !== 'steam') return '';
+  return `
+    <div class="admin-card" style="padding:14px 16px; margin-top:16px">
+      <div class="admin-subhead">Steam CDN images</div>
+      <p class="admin-hint" style="margin:6px 0 10px">On-demand fetch of every image Steam hosts for this app. Click Fetch to probe each variant; only ones that return 200 render below.</p>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center">
+        <button class="admin-btn admin-btn--primary" data-steamcdn="fetch">Fetch Steam CDN images</button>
+      </div>
+      <p id="steamcdn-status" class="admin-hint" style="margin:10px 0 0" hidden></p>
+      <div id="steamcdn-results" class="sgdb-results"></div>
+    </div>`;
+}
+
+// Render one Steam CDN result card. Matches the SGDB card layout so the
+// two panels sit visually flush and the Set-as-override button uses the
+// same class the SGDB handler already listens on.
+function _steamCdnCardHtml(variant, url) {
+  return `
+    <div class="sgdb-card steam-cdn-card">
+      <a class="sgdb-thumb-link" href="${escapeHtml(url)}" target="_blank" rel="noopener" title="Open the full-size image in a new tab">
+        <img class="sgdb-thumb steam-cdn-thumb" src="${escapeHtml(url)}" alt="Steam ${escapeHtml(variant.label)}" loading="lazy"
+             style="aspect-ratio:${variant.aspect}; object-fit:contain; background:rgba(255,255,255,0.03)"
+             onerror="this.closest('.steam-cdn-card').style.display='none'">
+      </a>
+      <div class="sgdb-meta">${escapeHtml(variant.label)}</div>
+      <button class="admin-btn admin-btn--primary sgdb-set" data-steamcdn-set="${escapeHtml(url)}">Set as box art</button>
+    </div>`;
 }
 
 // SteamGridDB search panel: an editable term (defaulted to the trademark-
@@ -876,6 +1021,11 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
     ? `<a href="${escapeHtml(storeHref)}" target="_blank" rel="noopener" class="admin-link">Open on ${escapeHtml(type)} store</a>`
     : `<span class="admin-muted">no store link</span>`;
   const gamePageLink = `<a href="${_appHref(appId)}" target="_blank" rel="noopener" class="admin-link">Open game page</a>`;
+  // Link to the Game Manager admin tab so a moderator triaging box art
+  // can jump straight into hide / remap actions for this app. Game
+  // Manager does not deep-link to an app id yet -- it opens the tab
+  // with the form pre-populated via the appid= param.
+  const gameManagerLink = `<a href="admin.html?tab=games&amp;appid=${encodeURIComponent(appId)}" class="admin-link">Open in Game Manager</a>`;
 
   // Standard Steam URLs (only meaningful for type=steam).
   const akamaiUrl     = type === 'steam' ? `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(appId)}/header.jpg` : null;
@@ -900,7 +1050,7 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
         <div class="admin-subhead">Preview</div>
         <img id="boxart-detail-preview" src="${escapeHtml(previewSrc)}" alt="header preview" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05)"
              onerror="this.style.opacity=0.3; this.alt='(preview failed to load)'">
-        <p class="admin-hint" style="margin:8px 0 0">${gamePageLink} &middot; ${storeLink}</p>
+        <p class="admin-hint" style="margin:8px 0 0">${gamePageLink} &middot; ${storeLink} &middot; ${gameManagerLink}</p>
       </div>
 
       <div class="admin-card" style="padding:0; overflow:hidden">
@@ -915,8 +1065,9 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
             ${type === 'steam' ? _urlRowHtml('Default CDN (akamai)', akamaiUrl, { highlight: currentSource === 'akamai',     note: currentSource === 'akamai'     ? 'live' : '' }) : ''}
             ${type === 'steam' ? _urlRowHtml('Cloudflare CDN',       cloudflareUrl, { highlight: currentSource === 'cloudflare', note: currentSource === 'cloudflare' ? 'live' : '' }) : ''}
             ${_urlRowHtml(type === 'steam' ? 'Pipeline fallback (game-images.json)' : 'Pipeline URL (nonsteam-images.json)', cachedUrl, { highlight: currentSource === 'pipeline', note: currentSource === 'pipeline' ? 'live' : '' })}
+            <tr aria-hidden="true"><td colspan="2" style="height:14px; border:none; padding:0"></td></tr>
             ${_urlRowHtml('Override metadata', null)}
-            <tr><td colspan="2" style="padding:0 12px 12px">${overrideMeta}</td></tr>
+            <tr><td colspan="2" style="padding:6px 12px 12px">${overrideMeta}</td></tr>
           </tbody>
         </table>
       </div>
@@ -1053,10 +1204,16 @@ export async function renderBoxartAdminDetail(appId) {
         searchBtn.disabled = false;
         const resultsEl = document.getElementById('sgdb-results');
         if (resultsEl) resultsEl.innerHTML = _sgdbResultsHtml(payload);
-        sgdbStatus(
-          payload.ok ? `${(payload.results || []).length} result(s)` : `Search failed: ${payload.error || 'unknown'}`,
-          !payload.ok,
-        );
+        // On failure the results panel already shows the SteamGridDB
+        // error verbatim; the status line was duplicating it. Keep the
+        // status short for successes and hide it on failure so there's
+        // only one error message visible.
+        if (payload.ok) {
+          sgdbStatus(`${(payload.results || []).length} result(s)`);
+        } else {
+          const statusEl = document.getElementById('sgdb-status');
+          if (statusEl) statusEl.hidden = true;
+        }
         return;
       }
       if (setBtn) {
@@ -1082,6 +1239,77 @@ export async function renderBoxartAdminDetail(appId) {
     });
     document.getElementById('sgdb-term')?.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') { e.preventDefault(); sgdbPanel.querySelector('[data-sgdb="search"]')?.click(); }
+    });
+  }
+
+  // Steam CDN image panel (#345). On-demand fetch: Fetch button probes
+  // every variant, then renders only the ones that returned ok. Set-as-
+  // override reuses the SGDB setBoxArtOverride path so the plumbing after
+  // "set" is identical.
+  const steamCdnPanel = document.getElementById('boxart-steam-cdn-panel');
+  if (steamCdnPanel) {
+    steamCdnPanel.innerHTML = _steamCdnPanelHtml(row);
+    const steamCdnStatus = (text, isError) => {
+      const el = document.getElementById('steamcdn-status');
+      if (!el) return;
+      el.hidden = false;
+      el.textContent = text;
+      el.className = 'admin-hint' + (isError ? ' admin-error' : '');
+    };
+    steamCdnPanel.addEventListener('click', async (ev) => {
+      const fetchBtn = ev.target.closest('[data-steamcdn="fetch"]');
+      const setBtn = ev.target.closest('[data-steamcdn-set]');
+      if (fetchBtn) {
+        if (row.type !== 'steam') {
+          steamCdnStatus('Steam CDN images are only available for Steam apps.', true);
+          return;
+        }
+        fetchBtn.disabled = true;
+        steamCdnStatus('Loading Steam CDN variants...');
+        const base = `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(row.appId)}`;
+        // Use <img> load detection instead of fetch(). Steam CDN sends CORS
+        // headers on files it serves, but browser fetch() still fails on
+        // many of them (some variants get redirected through hashed URLs,
+        // some 403 the OPTIONS pre-check). The <img> element ignores CORS
+        // for pure display, so onload/onerror is the reliable existence
+        // signal. Same trick SteamDB + OMGDuke's protondb-decky use.
+        const results = await Promise.all(STEAM_CDN_VARIANTS.map((v) => new Promise((resolve) => {
+          const url = `${base}/${v.file}`;
+          const img = new Image();
+          img.onload = () => resolve({ v, url });
+          img.onerror = () => resolve(null);
+          img.src = url;
+        })));
+        const hits = results.filter(Boolean);
+        const resultsEl = document.getElementById('steamcdn-results');
+        if (resultsEl) {
+          resultsEl.innerHTML = hits.length
+            ? `<div class="sgdb-grid">${hits.map(({v, url}) => _steamCdnCardHtml(v, url)).join('')}</div>`
+            : `<p class="admin-hint" style="margin:12px 0 0">No Steam CDN variants loaded for app id ${escapeHtml(row.appId)}. The images might not exist for this app, or the CDN did not serve them at request time -- try again in a moment.</p>`;
+        }
+        steamCdnStatus(`Steam CDN: ${hits.length} of ${STEAM_CDN_VARIANTS.length} variants available.`);
+        fetchBtn.disabled = false;
+        return;
+      }
+      if (setBtn) {
+        const url = setBtn.dataset.steamcdnSet;
+        if (!url) return;
+        setBtn.disabled = true;
+        steamCdnStatus('Setting box art override from Steam CDN...');
+        const res = await setBoxArtOverride(row.appId, url);
+        setBtn.disabled = false;
+        if (res.ok) {
+          row.override = { image_url: url, source: 'manual' };
+          if (indexes.overrideMap) indexes.overrideMap[row.appId] = row.override;
+          steamCdnStatus('Box art override set from Steam CDN.');
+          setStatus('override set from Steam CDN: ' + url);
+          refreshBody();
+          const prev = document.getElementById('boxart-detail-preview');
+          if (prev) { prev.src = url; prev.style.opacity = 1; }
+        } else {
+          steamCdnStatus('Set failed: ' + (res.error || 'unknown'), true);
+        }
+      }
     });
   }
 

@@ -117,6 +117,20 @@ export async function renderGameManager() {
   _renderRemaps(el, remaps, titleMap);
   _renderSuspects(el, suspects, titleMap);
   _wireForms(el, titleMap);
+
+  // Deep-link support: ?tab=games&appid=<id> pre-fills both the Hide
+  // form and the From-remap form + focuses the hide reason input so an
+  // admin who jumped here from the Box Art detail can act in one click.
+  const params = new URLSearchParams(window.location.search);
+  const preAppId = params.get('appid');
+  if (preAppId) {
+    const hideId = el.querySelector('#gm-hide-form input[name="app_id"]');
+    const hideReason = el.querySelector('#gm-hide-form input[name="reason"]');
+    const remapFrom = el.querySelector('#gm-remap-form input[name="from_app_id"]');
+    if (hideId) hideId.value = preAppId;
+    if (remapFrom) remapFrom.value = preAppId;
+    if (hideReason) setTimeout(() => hideReason.focus(), 0);
+  }
 }
 
 // ── Section renderers ─────────────────────────────────────────────────
