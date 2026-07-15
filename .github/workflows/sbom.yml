@@ -36,14 +36,11 @@ jobs:
 
       # Install deps so Syft sees the full dependency tree, not just the
       # root package.json declarations. Without this the SBOM misses
-      # transitive packages we actually ship.
+      # transitive packages we actually ship. Repo uses npm, not pnpm.
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
-      - run: pnpm install --frozen-lockfile
+      - run: npm ci
 
       # Syft emits CycloneDX JSON so both Grype and GitHub's dependency
       # graph can consume it. Package the whole checkout so bundled

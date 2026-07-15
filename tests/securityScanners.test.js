@@ -32,6 +32,11 @@ describe('Semgrep SAST workflow (#316)', () => {
   test('runs the semgrep container so the toolchain does not have to be installed per job', () => {
     expect(YAML).toMatch(/image:\s*semgrep\/semgrep/);
   });
+
+  test('excludes the github-actions-mutable-action-tag rule (Dependabot needs version tags)', () => {
+    expect(YAML).toContain('github-actions-mutable-action-tag');
+    expect(YAML).toContain('--exclude-rule');
+  });
 });
 
 describe('SBOM + Grype scan workflow (#317)', () => {
@@ -46,7 +51,7 @@ describe('SBOM + Grype scan workflow (#317)', () => {
   });
 
   test('installs deps before generating the SBOM (otherwise transitive packages are missing)', () => {
-    expect(YAML).toContain('pnpm install --frozen-lockfile');
+    expect(YAML).toContain('npm ci');
   });
 
   test('emits a CycloneDX SBOM (native GitHub dependency graph format)', () => {

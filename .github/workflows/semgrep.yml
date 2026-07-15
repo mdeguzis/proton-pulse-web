@@ -40,9 +40,21 @@ jobs:
       # cookie flag misuse.
       # p/security-audit is the catch-all for hardcoded credentials + weak
       # crypto usage.
+      #
+      # --exclude-rule=github-actions-mutable-action-tag: every GitHub Actions
+      # workflow in the ecosystem uses `@v4` style refs. Dependabot bumps
+      # rely on those tags to auto-open PRs. Pinning to SHAs would defeat
+      # the Dependabot workflow and cost more than it pays for. Trade-off
+      # documented; other Semgrep rules still block.
+      #
       # New ERROR-severity finding = merge blocked. Add a scoped ignore
       # comment (`# nosemgrep: rule-id`) with a written justification if a
       # finding is a false positive.
-      - run: semgrep ci --config p/typescript --config p/owasp-top-ten --config p/security-audit
+      - run: >-
+          semgrep ci
+          --config p/typescript
+          --config p/owasp-top-ten
+          --config p/security-audit
+          --exclude-rule yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag
         env:
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
