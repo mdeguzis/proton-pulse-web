@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
 <link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
 <link rel="stylesheet" href="css/shared/lookup-inline.css?v=71ca0f75">
-<link rel="stylesheet" href="css/auth/auth.css?v=f1e72018">
+<link rel="stylesheet" href="css/auth/auth.css?v=985910e4">
 </head>
 <body>
 <div class="auth-shell">
@@ -71,11 +71,6 @@
     </div>
 
   </main>
-
-  <!-- Inline Library panel (#323 followup): peer of the auth card, not
-       nested inside it, so the anonymous alternative reads as a distinct
-       path rather than "part of signing in". -->
-  <div id="profile-lookup-inline-mount" class="auth-lookup-mount"></div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
@@ -83,10 +78,5 @@
 <script src="js/lib/analytics.js?v=7855fb4c"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
 <script type="module" src="js/auth/main.js?v=6b11e1bb"></script>
-<script type="module">
-  // #323 followup: inline "Library" panel as a peer of the auth card.
-  import { mountInlineProfileLookup } from './js/shared/profile-lookup-inline.js?v=00000001';
-  mountInlineProfileLookup('profile-lookup-inline-mount');
-</script>
 </body>
 </html>

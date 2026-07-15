@@ -155,12 +155,14 @@ describe('deploy plumbing', () => {
 });
 
 describe('sign-in hint spread across the site', () => {
-  test('auth.html offers the no-signin path via the inline mount (replaces the old hint link)', () => {
-    // Post-#323 followup: the auth-no-signin-hint <p> link is gone;
-    // the inline Library panel mounts as a peer of the auth-card and
-    // renders its own "View full library breakdown" link back to /lookup.
+  test('auth.html does NOT offer the no-signin path -- the user came here to sign in', () => {
+    // The inline lookup was later removed from auth.html because the user
+    // clicked "Login with Steam" to reach this page, so offering the
+    // anonymous alt-path here competes with that intent. The alt-path
+    // still lives on profile.html + submit.html and on the dedicated
+    // lookup.html page.
     const AUTH = read('auth.html');
-    expect(AUTH).toContain('id="profile-lookup-inline-mount"');
+    expect(AUTH).not.toContain('profile-lookup-inline-mount');
   });
   test('profile.html signed-out state offers the lookup path', () => {
     // Post-#323 followup: the inline "Library" panel mounts under the
@@ -367,20 +369,12 @@ describe('#323 followup: inline Library panel under Login button', () => {
     }
   });
 
-  test('auth.html mounts the inline panel as a peer of the auth-card', () => {
+  test('auth.html does NOT mount the inline panel: the sign-in page is committed to sign-in', () => {
+    // The user landed here to sign in with Steam. Offering the anonymous
+    // alt-path on the same page competes with that intent and is confusing.
     const AUTH = read('auth.html');
-    // Mount container sits OUTSIDE the <main class="auth-card">, not inside.
-    expect(AUTH).toMatch(/<\/main>\s*[\s\S]{0,200}<div id="profile-lookup-inline-mount"/);
-    // Stylesheet is included so the panel actually renders.
-    expect(AUTH).toMatch(/href="css\/shared\/lookup-inline\.css/);
-    // Bootstrap script imports the mount fn.
-    expect(AUTH).toMatch(/import \{ mountInlineProfileLookup \} from ['"]\.\/js\/shared\/profile-lookup-inline\.js/);
-  });
-
-  test('auth.css sizes the mount to match the auth-card width so they stack cleanly', () => {
-    const AUTH_CSS = read('css/auth/auth.css');
-    expect(AUTH_CSS).toContain('.auth-lookup-mount');
-    expect(AUTH_CSS).toMatch(/width:\s*min\(100%,\s*760px\)/);
+    expect(AUTH).not.toContain('profile-lookup-inline-mount');
+    expect(AUTH).not.toContain('mountInlineProfileLookup');
   });
 
   test('submit.html auth-gate mounts the inline panel as a peer of the login card', () => {
