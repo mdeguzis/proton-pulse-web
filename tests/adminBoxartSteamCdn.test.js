@@ -129,3 +129,21 @@ describe('boxart admin batch: Set Steam CDN header (filtered)', () => {
     expect(BOXART_SRC).toMatch(/setBatchRunning[\s\S]{0,300}steamCdnAllBtn\.disabled\s*=\s*running/);
   });
 });
+
+describe('boxart admin detail: SGDB auto-set + spacing', () => {
+  test('single wide-ratio SGDB result auto-applies the override', () => {
+    // Saves the Set-click for the common case where the widescreen filter
+    // returns exactly one hit. Wide-ratio = w/h > 1.5 so we accept slightly
+    // off aspects too.
+    expect(BOXART_SRC).toMatch(/payload\.results\.length === 1/);
+    expect(BOXART_SRC).toMatch(/\(w \/ h\) > 1\.5/);
+    expect(BOXART_SRC).toMatch(/One wide-ratio result -- applying automatically/);
+  });
+
+  test('URL sources table has a spacer row above the override metadata block', () => {
+    // Visual separator between the URL list and the ADMIN OVERRIDE badge.
+    expect(BOXART_SRC).toMatch(
+      /aria-hidden="true"[\s\S]{0,120}height:14px[\s\S]{0,80}\$\{_urlRowHtml\('Override metadata'/,
+    );
+  });
+});

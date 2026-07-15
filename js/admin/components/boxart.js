@@ -1046,8 +1046,9 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
             ${type === 'steam' ? _urlRowHtml('Default CDN (akamai)', akamaiUrl, { highlight: currentSource === 'akamai',     note: currentSource === 'akamai'     ? 'live' : '' }) : ''}
             ${type === 'steam' ? _urlRowHtml('Cloudflare CDN',       cloudflareUrl, { highlight: currentSource === 'cloudflare', note: currentSource === 'cloudflare' ? 'live' : '' }) : ''}
             ${_urlRowHtml(type === 'steam' ? 'Pipeline fallback (game-images.json)' : 'Pipeline URL (nonsteam-images.json)', cachedUrl, { highlight: currentSource === 'pipeline', note: currentSource === 'pipeline' ? 'live' : '' })}
+            <tr aria-hidden="true"><td colspan="2" style="height:14px; border:none; padding:0"></td></tr>
             ${_urlRowHtml('Override metadata', null)}
-            <tr><td colspan="2" style="padding:0 12px 12px">${overrideMeta}</td></tr>
+            <tr><td colspan="2" style="padding:6px 12px 12px">${overrideMeta}</td></tr>
           </tbody>
         </table>
       </div>
@@ -1188,6 +1189,32 @@ export async function renderBoxartAdminDetail(appId) {
           payload.ok ? `${(payload.results || []).length} result(s)` : `Search failed: ${payload.error || 'unknown'}`,
           !payload.ok,
         );
+        // Auto-set when there's exactly one wide-ratio result. Saves the
+        // extra Set-as-box-art click for the (very common) case where the
+        // widescreen filter returns a single hit. Wide-ratio = w/h > 1.5
+        // so we accept slightly-off aspect ratios like 500x300 too, not
+        // just the exact 460x215 the filter asked for.
+        if (payload.ok && Array.isArray(payload.results) && payload.results.length === 1) {
+          const only = payload.results[0];
+          const w = Number(only.width) || 0;
+          const h = Number(only.height) || 0;
+          const isWide = w > 0 && h > 0 && (w / h) > 1.5;
+          if (isWide && only.url) {
+            sgdbStatus('One wide-ratio result -- applying automatically...');
+            const res = await setBoxArtOverride(row.appId, only.url);
+            if (res.ok) {
+              row.override = { image_url: only.url, source: 'manual' };
+              if (indexes.overrideMap) indexes.overrideMap[row.appId] = row.override;
+              sgdbStatus('Box art override set from SteamGridDB (auto).');
+              setStatus('override set from SteamGridDB: ' + only.url);
+              refreshBody();
+              const prev = document.getElementById('boxart-detail-preview');
+              if (prev) { prev.src = only.url; prev.style.opacity = 1; }
+            } else {
+              sgdbStatus('Auto-set failed: ' + (res.error || 'unknown'), true);
+            }
+          }
+        }
         return;
       }
       if (setBtn) {
