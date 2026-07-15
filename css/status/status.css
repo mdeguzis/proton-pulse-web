@@ -288,9 +288,10 @@
   font-family: var(--mono);
 }
 
-/* Announcements block: below the per-service grid. Pulled live from the
-   repo's incident-labeled issues so an ongoing event is visible from the
-   status page. */
+/* Security + Announcements blocks: below the per-service grid. Same top
+   spacing treatment so they read as their own sections instead of
+   crowding the last edge-function card. */
+.status-security,
 .status-announcements {
   margin-top: 32px;
   padding-top: 16px;
