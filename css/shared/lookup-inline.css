@@ -1,0 +1,146 @@
+/* Inline "Library" panel (issue #323 followup): sits directly under the
+   Login-with-Steam button on any sign-in surface (profile signed-out,
+   auth.html, submit.html auth-gate). Mirrors ProtonDB's submit-page
+   pattern -- sign-in above, alternative identifier input below. */
+
+/* Sits as its own peer card (not nested inside the login card) so the
+   two paths -- sign in with Steam OR provide a public identifier --
+   read as distinct alternatives. `margin-top` gives visual separation
+   from whatever login/auth card sits above it. */
+.profile-lookup-inline {
+  width: 100%;
+  margin-top: 20px;
+  padding: 18px 20px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  box-sizing: border-box;
+}
+.pli-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--strong);
+  margin-bottom: 6px;
+}
+.pli-copy {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.pli-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--strong);
+  margin-bottom: 6px;
+}
+.pli-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pli-input {
+  flex: 1 1 240px;
+  min-width: 0;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 9px 11px;
+  color: var(--strong);
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: border-color .15s;
+}
+.pli-input:focus { border-color: var(--accent); outline: none; }
+.pli-save {
+  background: var(--accent);
+  border: 1.5px solid var(--accent);
+  color: #0a0c10;
+  padding: 9px 20px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter .1s;
+}
+.pli-save:hover:not(:disabled) { filter: brightness(1.08); }
+.pli-save:disabled { opacity: 0.55; cursor: default; }
+.pli-examples {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.pli-examples li { list-style: disc; }
+.pli-examples li:first-child {
+  list-style: none;
+  margin-left: -18px;
+  color: var(--strong);
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+}
+.pli-examples code {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text);
+  background: var(--card);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.pli-hint {
+  /* Extra top margin + top border so the "Not sure where to find yours?"
+     hint reads as its own block rather than melting into the Examples
+     list above it. Same treatment as .lookup-hint on the full-page
+     lookup so both surfaces feel identical. */
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.pli-hint a { color: var(--accent); }
+.pli-status {
+  margin-top: 10px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+}
+.pli-status--ok {
+  background: rgba(102, 192, 244, 0.08);
+  border-left: 3px solid var(--accent);
+  color: var(--text);
+}
+.pli-status--error {
+  background: rgba(220, 70, 70, 0.10);
+  border-left: 3px solid #ff6b6b;
+  color: #ffb0b0;
+}
+.pli-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.pli-detail-link {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+.pli-clear {
+  background: none;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.pli-clear:hover { border-color: var(--accent); color: var(--accent); }

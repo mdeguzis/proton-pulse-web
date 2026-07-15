@@ -1,0 +1,23 @@
+# Grype ignore rules for the SBOM + vulnerability scan (#317).
+#
+# We ship JavaScript, not Go. The Go-module findings that Grype reports
+# come from binaries vendored inside our devDependencies -- primarily
+# the `supabase` npm package which distributes the Supabase CLI as a Go
+# binary. That CLI is a local developer tool. It never reaches an end
+# user, never runs on the site, and its transitive Go CVEs cannot affect
+# our production surface.
+#
+# Rather than pin every individual GHSA, drop the whole go-module + the
+# github-action ecosystems from the gate. If we ever ship Go code, remove
+# these entries so the scanner starts blocking real findings again.
+
+ignore:
+  # Every Go-module finding lives inside a vendored dev-tool binary.
+  - package:
+      type: go-module
+
+  # actions/download-artifact-style findings apply to the CI pipeline,
+  # not the shipped site. Dependabot already tracks GitHub Actions bumps
+  # in its own PR stream, so we don't need Grype to block on them too.
+  - package:
+      type: github-action

@@ -10,10 +10,10 @@
 <meta name="description" content="See any public Steam profile's library compatibility with Proton on Linux without signing in. Paste a Steam URL or Steam ID.">
 <meta name="color-scheme" content="dark">
 <link rel="stylesheet" href="css/shared/base.css?v=daf1bfe9">
-<link rel="stylesheet" href="css/shared/topbar.css?v=d13d8b13">
+<link rel="stylesheet" href="css/shared/topbar.css?v=e911094d">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
 <link rel="stylesheet" href="css/app/home.css?v=3b655a71">
-<link rel="stylesheet" href="css/lookup/lookup.css?v=8ab0a235">
+<link rel="stylesheet" href="css/lookup/lookup.css?v=56d36454">
 </head>
 <body>
 
@@ -24,16 +24,18 @@
 
     <div class="page-header">
       <div class="eyebrow">Public Profile Lookup</div>
-      <div class="page-title">Look up a Steam profile</div>
+      <div class="page-title">Library</div>
       <p class="page-lede">
-        Paste a Steam profile URL, vanity name, or 17-digit Steam ID to see that
-        library's compatibility with Proton on Linux. No sign-in required.
+        Alternatively to signing in with Steam, you may provide an identifier
+        for a Steam account so you can explore its library and wishlist
+        compatibility. <b>Save</b> keeps the identifier in this browser so My
+        Library and My Wishlist load without another sign-in prompt.
       </p>
     </div>
 
     <!-- Lookup form -->
     <form class="lookup-form" id="lookup-form" novalidate>
-      <label class="lookup-label" for="lookup-input">Steam profile URL or Steam ID</label>
+      <label class="lookup-label" for="lookup-input">Steam ID or Profile URL</label>
       <div class="lookup-row">
         <input
           class="lookup-input"
@@ -41,17 +43,27 @@
           type="text"
           autocomplete="off"
           spellcheck="false"
-          placeholder="https://steamcommunity.com/id/example or 76561198012345678"
+          placeholder="Steam ID or Profile URL"
           required
         >
-        <button class="lookup-submit" id="lookup-submit" type="submit">Look up</button>
+        <button class="lookup-submit lookup-submit--secondary" id="lookup-lookup" type="submit">Look up</button>
+        <button class="lookup-submit" id="lookup-save" type="button">Save</button>
       </div>
+      <ul class="lookup-examples">
+        <li><b>Examples:</b></li>
+        <li><code>https://steamcommunity.com/id/NAME-IN-URL</code></li>
+        <li><code>76561198#########</code></li>
+      </ul>
       <div class="lookup-hint">
         Not sure where to find yours? See Steam's guide to
         <a href="https://help.steampowered.com/en/faqs/view/2816-BE67-5B69-0FEC" target="_blank" rel="noopener">finding your Steam ID</a>.
-        Your library must be set to <b>Public</b> under
+        Library and wishlist visibility must be set to <b>Public</b> under
         <a href="https://steamcommunity.com/my/edit/settings" target="_blank" rel="noopener">Privacy Settings</a>
-        for it to appear here.
+        for them to appear here.
+      </div>
+      <div class="lookup-saved-hint" id="lookup-saved-hint" hidden>
+        Saved for this browser.
+        <button type="button" class="lookup-clear" id="lookup-clear">Clear</button>
       </div>
       <div class="lookup-error" id="lookup-error" hidden></div>
     </form>
@@ -88,6 +100,12 @@
            that powers the home page chart, so a public lookup and your
            own signed-in library share the exact same math. -->
       <div class="lookup-chart-mount" id="lookup-chart-mount"></div>
+
+      <!-- Wishlist at a glance chart. Rendered by the same helper against
+           IWishlistService/GetWishlist output. Wishlist visibility is a
+           separate Steam privacy toggle, so it can appear even when the
+           library is private, or vice versa. -->
+      <div class="lookup-chart-mount" id="lookup-wishlist-mount"></div>
     </section>
 
   </div>
@@ -103,8 +121,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script src="js/lib/analytics.js?v=7855fb4c"></script>
-<script src="js/lib/topbar.js?v=593ecfed"></script>
+<script src="js/lib/topbar.js?v=21a7ccea"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/lookup/main.js?v=28844ac2"></script>
+<script type="module" src="js/lookup/main.js?v=08d48cc1"></script>
 </body>
 </html>

@@ -33,8 +33,6 @@
   pointer-events: none;
 }
 
-/* ---- Tier 1: identity banner with animated orbital + pulse backdrop ---- */
-
 .topbar-banner {
   position: relative;
   height: var(--banner-h);
@@ -45,71 +43,15 @@
   overflow: hidden;
 }
 
-.topbar-banner-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.55;
-  z-index: 0;
-}
-
-.topbar-banner-bg .banner-pulse {
-  stroke-dasharray: 160 1600;
-  stroke-dashoffset: 0;
-  filter: drop-shadow(0 0 4px var(--green-glow));
-  display: none;
-}
-html[data-motion="on"] .topbar-banner-bg .banner-pulse {
-  display: block;
-  animation: banner-pulse-sweep 5.5s linear infinite;
-}
-
-/* topbar atoms + electrons: hidden by default, shown when user opts in */
-.topbar-banner-bg .banner-atoms {
-  display: none;
-}
-html[data-motion="on"] .topbar-banner-bg .banner-atoms {
-  display: block;
-}
-html[data-motion="on"] .topbar-banner-bg .banner-atoms > g {
-  animation: atom-breathe 6s ease-in-out infinite;
-}
-html[data-motion="on"] .topbar-banner-bg .banner-atoms > g:nth-child(2) { animation-delay: -1.5s; }
-html[data-motion="on"] .topbar-banner-bg .banner-atoms > g:nth-child(3) { animation-delay: -3s; }
-html[data-motion="on"] .topbar-banner-bg .banner-atoms > g:nth-child(4) { animation-delay: -4.5s; }
-
-@keyframes banner-pulse-sweep { to { stroke-dashoffset: -1760; } }
-@keyframes atom-breathe {
-  0%, 100% { opacity: 0.55; }
-  50%      { opacity: 0.85; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .topbar-banner-bg .banner-pulse,
-  .topbar-banner-bg .banner-atoms > g { animation: none; }
-  /* SMIL animations on <animateMotion> respect this via the global media
-     query in user agents that honor it; on those that don't, the motion
-     will continue but rings stop. acceptable trade-off */
-}
-
 /* Site option: animations off (set on <html> by topbar.js from the user's
-   choice on options.html, defaulting to prefers-reduced-motion). Kills all CSS
-   animations + transitions site-wide; topbar.js also pauses SMIL motion. This
-   is the main lever for the CPU/GPU cost of the hero atom + banner on low-power
-   hardware. */
+   choice on options.html, defaulting to prefers-reduced-motion). Kills all
+   CSS animations + transitions site-wide; the hero atom SVG on index.html
+   is the remaining consumer. */
 html[data-motion="off"] *,
 html[data-motion="off"] *::before,
 html[data-motion="off"] *::after {
   animation: none !important;
   transition: none !important;
-}
-/* SMIL <animateMotion> is not a CSS animation so animation:none won't stop it.
-   Hiding the particle group via CSS is the only reliable way to suppress it on
-   page load before JS has a chance to call pauseAnimations(). */
-html[data-motion="off"] .banner-atoms {
-  display: none;
 }
 
 .topbar-brand {

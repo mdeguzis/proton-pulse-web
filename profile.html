@@ -10,10 +10,11 @@
 <title>My Account — Proton Pulse</title>
 <meta name="color-scheme" content="dark">
 <link rel="stylesheet" href="css/shared/base.css?v=daf1bfe9">
-<link rel="stylesheet" href="css/shared/topbar.css?v=d13d8b13">
+<link rel="stylesheet" href="css/shared/topbar.css?v=e911094d">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
 <link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
-<link rel="stylesheet" href="css/profile/profile.css?v=c45ec766">
+<link rel="stylesheet" href="css/shared/lookup-inline.css?v=71ca0f75">
+<link rel="stylesheet" href="css/profile/profile.css?v=e9fe4860">
 </head>
 <body>
 
@@ -41,11 +42,11 @@
           </span>
           <span class="gh-login-btn__label">Login with Steam</span>
         </button>
-        <p class="profile-unsigned-hint">
-          Just want to see a public profile's Proton compatibility?
-          <a href="lookup.html">Look one up without signing in</a>.
-        </p>
       </div>
+      <!-- Inline Library panel (issue #323 followup) is a peer of the login
+           card, not nested inside it, so the two alternatives read as
+           distinct paths rather than "part of the login flow". -->
+      <div id="profile-lookup-inline-mount"></div>
     </div>
 
     <!-- Signed in -->
@@ -367,8 +368,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script src="js/lib/analytics.js?v=7855fb4c"></script>
-<script src="js/lib/topbar.js?v=593ecfed"></script>
+<script src="js/lib/topbar.js?v=21a7ccea"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/profile/main.js?v=b17d13b1"></script>
+<script type="module" src="js/profile/main.js?v=997804d8"></script>
 </body>
 </html>

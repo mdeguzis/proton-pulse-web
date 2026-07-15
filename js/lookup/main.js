@@ -12,10 +12,14 @@
 // lookup immediately, so results are shareable and the plugin can
 // deep-link into a profile.
 
-import { computeLibraryTierCounts } from '../app/components/home-library-chart.js?v=7ba60b85';
+import { computeLibraryTierCounts } from '../app/components/home-library-chart.js?v=9b244db9';
 import { loadSearchIndex, searchIndex } from '../app/components/search.js?v=598aaad1';
 import { RATING_COLORS, RATING_TEXT } from '../app/config.js?v=f9591262';
 import { esc } from '../app/utils.js?v=9a39c726';
+// localStorage keys the /lookup page reads + writes are defined in the
+// shared module so the inline "Library" panel + the nav fallback + this
+// page never drift on the key name.
+import { LS_INPUT_KEY, LS_STEAMID_KEY } from '../shared/lookup-storage.js?v=7b8989d7';
 
 const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
 const TIER_LABEL = {
@@ -25,7 +29,8 @@ const TIER_LABEL = {
 const els = {
   form:      () => document.getElementById('lookup-form'),
   input:     () => document.getElementById('lookup-input'),
-  submit:    () => document.getElementById('lookup-submit'),
+  lookupBtn: () => document.getElementById('lookup-lookup'),
+  saveBtn:   () => document.getElementById('lookup-save'),
   error:     () => document.getElementById('lookup-error'),
   loading:   () => document.getElementById('lookup-loading'),
   result:    () => document.getElementById('lookup-result'),
@@ -35,8 +40,45 @@ const els = {
   steamid:   () => document.getElementById('lookup-steamid'),
   steamlink: () => document.getElementById('lookup-steamlink'),
   privateEl: () => document.getElementById('lookup-private'),
-  chartMount:() => document.getElementById('lookup-chart-mount'),
+  chartMount:    () => document.getElementById('lookup-chart-mount'),
+  wishlistMount: () => document.getElementById('lookup-wishlist-mount'),
+  savedHint: () => document.getElementById('lookup-saved-hint'),
+  clearBtn:  () => document.getElementById('lookup-clear'),
 };
+
+function readSaved() {
+  try {
+    return {
+      input: localStorage.getItem(LS_INPUT_KEY) || '',
+      steamId: localStorage.getItem(LS_STEAMID_KEY) || '',
+    };
+  } catch {
+    return { input: '', steamId: '' };
+  }
+}
+
+function writeSaved(input, steamId) {
+  try {
+    localStorage.setItem(LS_INPUT_KEY, input);
+    if (steamId) localStorage.setItem(LS_STEAMID_KEY, steamId);
+  } catch {
+    // storage disabled (private tab, quota) -- fall back to session-only
+  }
+}
+
+function clearSaved() {
+  try {
+    localStorage.removeItem(LS_INPUT_KEY);
+    localStorage.removeItem(LS_STEAMID_KEY);
+  } catch { /* ignore */ }
+}
+
+function updateSavedHint() {
+  const hint = els.savedHint();
+  if (!hint) return;
+  const saved = readSaved();
+  hint.hidden = !saved.input;
+}
 
 function showError(msg) {
   const e = els.error();
@@ -52,19 +94,19 @@ function clearError() {
 
 function setLoading(on) {
   const l = els.loading();
-  const s = els.submit();
+  const lk = els.lookupBtn();
+  const sv = els.saveBtn();
   if (l) l.hidden = !on;
-  if (s) s.disabled = !!on;
+  if (lk) lk.disabled = !!on;
+  if (sv) sv.disabled = !!on;
 }
 
-// Render the shared "at a glance" tier chart for a raw appId set. Uses the
-// exported computeLibraryTierCounts helper from the home page so the math
-// stays in one place -- the lookup and the signed-in library agree by
-// construction. Only the tier view is rendered here; the home page's chart
-// chip (Library / Wishlist / Deck / ...) has no meaning for a public
-// lookup so it is intentionally omitted.
-function renderTierChart(appIds, total) {
-  const mount = els.chartMount();
+// Render one "at a glance" tier chart for a raw appId set. Uses the exported
+// computeLibraryTierCounts helper so the lookup and the signed-in library
+// agree by construction. Only the tier view is rendered here; the home
+// page's chart chip (Library / Wishlist / Deck / ...) has no meaning for a
+// public lookup so it is intentionally omitted.
+function renderTierChart(mount, appIds, total, { title, noun }) {
   if (!mount) return;
   if (!appIds || appIds.size === 0) {
     mount.innerHTML = '';
@@ -85,13 +127,13 @@ function renderTierChart(appIds, total) {
         <div class="hlc-count">${n.toLocaleString()}</div>
       </div>`;
   }).join('');
-  const subtitle = `${rated.toLocaleString()} of ${total.toLocaleString()} owned games have compatibility data.`;
+  const subtitle = `${rated.toLocaleString()} of ${total.toLocaleString()} ${esc(noun)} games have compatibility data.`;
   mount.innerHTML = `
     <div class="home-library-chart">
       <div class="hlc-header">
-        <div class="hlc-title">Library at a glance</div>
+        <div class="hlc-title">${esc(title)}</div>
       </div>
-      <div class="hlc-subtitle">${esc(subtitle)}</div>
+      <div class="hlc-subtitle">${subtitle}</div>
       <div class="hlc-bars">${bars}</div>
     </div>`;
 }
@@ -132,7 +174,7 @@ async function fetchLookup(input) {
   return { httpOk: res.ok, ...body };
 }
 
-async function runLookup(input) {
+async function runLookup(input, { persist = false } = {}) {
   clearError();
   setLoading(true);
   els.result().hidden = true;
@@ -149,9 +191,22 @@ async function runLookup(input) {
       showError(payload.error || 'Lookup failed. Try again in a moment.');
       return;
     }
-    const { steamId, profile, games = [], gameCount = 0 } = payload;
+    const {
+      steamId, profile,
+      games = [], gameCount = 0,
+      wishlist = [], wishlistCount = 0,
+    } = payload;
     renderProfileCard(profile || {}, steamId);
     els.result().hidden = false;
+
+    // Save to localStorage only when the caller asked for persistence
+    // (Save button, not the transient Look up button). The saved value
+    // survives across visits and lets My Library / My Wishlist nav skip
+    // the sign-in prompt (issue #323).
+    if (persist) {
+      writeSaved(input, steamId);
+      updateSavedHint();
+    }
 
     // Persist the resolved steamId in the URL so a reload / share re-runs
     // the same lookup without another form submission.
@@ -160,13 +215,24 @@ async function runLookup(input) {
     nextUrl.searchParams.delete('input');
     window.history.replaceState(null, '', nextUrl.toString());
 
+    // Library visibility drives the private-profile notice. Wishlist is a
+    // separate Steam privacy toggle, so we treat them independently: a
+    // private library still shows the wishlist chart if the wishlist is
+    // public, and vice versa.
     if (!profile?.isPublic || gameCount === 0) {
       els.privateEl().hidden = false;
-      renderTierChart(new Set(), 0);
-      return;
+      renderTierChart(els.chartMount(), new Set(), 0, { title: 'Library at a glance', noun: 'owned' });
+    } else {
+      const appIds = new Set(games.map((g) => Number(g.appid)).filter(Number.isFinite));
+      renderTierChart(els.chartMount(), appIds, gameCount, { title: 'Library at a glance', noun: 'owned' });
     }
-    const appIds = new Set(games.map((g) => Number(g.appid)).filter(Number.isFinite));
-    renderTierChart(appIds, gameCount);
+    if (wishlistCount > 0 && Array.isArray(wishlist)) {
+      const wishAppIds = new Set(wishlist.map((w) => Number(w.appid)).filter(Number.isFinite));
+      renderTierChart(els.wishlistMount(), wishAppIds, wishlistCount, { title: 'Wishlist at a glance', noun: 'wishlisted' });
+    } else {
+      const wm = els.wishlistMount();
+      if (wm) wm.innerHTML = '';
+    }
   } catch (err) {
     console.error('[lookup] runLookup failed', err);
     showError(`Network error: ${err instanceof Error ? err.message : String(err)}`);
@@ -175,26 +241,73 @@ async function runLookup(input) {
   }
 }
 
-// Boot. If the URL already carries a steamId or input, run the lookup
-// immediately (skips the form). Otherwise wire the form for the user.
+// Boot. Priority:
+//   1. ?steamId= URL param -- direct-link support wins over browser storage.
+//   2. localStorage saved value -- returning visitor sees their library
+//      without retyping.
+//   3. Empty form for first-time visitors.
 (function init() {
   const form = els.form();
   const input = els.input();
+  const lookupBtn = els.lookupBtn();
+  const saveBtn = els.saveBtn();
+  const clearBtn = els.clearBtn();
+
+  function submit({ persist }) {
+    const value = input?.value?.trim() || '';
+    if (!value) {
+      showError('Enter a Steam profile URL, vanity name, or 17-digit Steam ID.');
+      return;
+    }
+    void runLookup(value, { persist });
+  }
+
+  // Form submit + Look up button = transient lookup, no storage write.
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const value = input?.value?.trim() || '';
-      if (!value) {
-        showError('Enter a Steam profile URL, vanity name, or 17-digit Steam ID.');
-        return;
-      }
-      void runLookup(value);
+      submit({ persist: false });
     });
   }
+  if (lookupBtn) {
+    lookupBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      submit({ persist: false });
+    });
+  }
+  // Save button = persist to localStorage + run lookup. This is what makes
+  // My Library / My Wishlist nav work without a sign-in on later visits.
+  if (saveBtn) {
+    saveBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      submit({ persist: true });
+    });
+  }
+  // Clear wipes both keys and empties the input. Nav on other pages falls
+  // back to the sign-in prompt after this.
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      clearSaved();
+      if (input) input.value = '';
+      updateSavedHint();
+      els.result().hidden = true;
+      els.privateEl().hidden = true;
+      const cm = els.chartMount(); if (cm) cm.innerHTML = '';
+      const wm = els.wishlistMount(); if (wm) wm.innerHTML = '';
+    });
+  }
+
+  updateSavedHint();
+
+  // Load-time priority as documented above.
   const params = new URLSearchParams(window.location.search);
-  const preset = params.get('steamId') || params.get('input');
+  const urlPreset = params.get('steamId') || params.get('input');
+  const saved = readSaved();
+  const preset = urlPreset || saved.input;
   if (preset) {
     if (input) input.value = preset;
-    void runLookup(preset);
+    // If the value came from storage, preserve persistence. If from URL,
+    // do not clobber the storage state.
+    void runLookup(preset, { persist: !urlPreset && !!saved.input });
   }
 })();

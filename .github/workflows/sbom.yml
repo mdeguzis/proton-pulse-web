@@ -1,0 +1,97 @@
+name: SBOM + Vulnerability Scan
+
+# Generates a Software Bill of Materials per push using Syft, then scans
+# it against NVD + GitHub Security Advisories via Grype. Complements
+# npm audit (which only covers the npm advisory DB) by adding coverage
+# for bundled / transitive / CDN-loaded dependencies.
+#
+# The SBOM is uploaded as a workflow artifact so any tagged release can
+# attach it. GitHub also consumes CycloneDX SBOMs natively via the
+# dependency graph, so this feeds Dependabot with richer signal.
+#
+# Docs:
+#   Syft: https://github.com/anchore/syft
+#   Grype: https://github.com/anchore/grype
+# Issue: #317
+
+on:
+  push:
+    branches: [main, staging]
+  pull_request:
+    branches: [main, staging]
+  schedule:
+    - cron: "0 5 * * 1"  # Monday 05:00 UTC so weekly runs catch new CVEs
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sbom:
+    name: sbom + grype
+    runs-on: ubuntu-latest
+    if: (github.actor != 'dependabot[bot]')
+    steps:
+      - uses: actions/checkout@v4
+
+      # Install deps so Syft sees the full dependency tree, not just the
+      # root package.json declarations. Without this the SBOM misses
+      # transitive packages we actually ship. Repo uses npm, not pnpm.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+
+      # Syft emits CycloneDX JSON so both Grype and GitHub's dependency
+      # graph can consume it. Package the whole checkout so bundled
+      # assets + workflow files land in the SBOM too.
+      - name: Generate SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          format: cyclonedx-json
+          output-file: sbom.cyclonedx.json
+          artifact-name: sbom.cyclonedx.json
+
+      # Grype fails the job on any high or critical finding. `fail-build`
+      # + `severity-cutoff` mirrors how npm audit already gates the CI
+      # pipeline so drift between the two scanners stays visible.
+      #
+      # anchore/scan-action pinned to @v6: earlier v3 series shipped a
+      # grype 0.74.x binary whose vulnerability DB is stale (>5 days old
+      # is a hard failure) and whose SBOM parser cannot read the current
+      # sbom-action output format. v6 tracks a current grype.
+      - name: Scan SBOM with Grype
+        id: grype-scan
+        uses: anchore/scan-action@v6
+        with:
+          sbom: sbom.cyclonedx.json
+          fail-build: true
+          severity-cutoff: high
+
+      # Re-run scan-action in table mode so a reviewer can see WHICH
+      # CVEs failed the gate directly in the workflow log. scan-action's
+      # SARIF output alone is not readable in the log. fail-build: false
+      # ensures this step never masks the real gate above.
+      - name: Print grype findings (table)
+        if: always()
+        uses: anchore/scan-action@v6
+        with:
+          sbom: sbom.cyclonedx.json
+          fail-build: false
+          output-format: table
+
+      # Persist the SBOM alongside the workflow run so a tagged release
+      # can attach it. Kept 90 days per default retention -- long enough
+      # for a post-hoc "what did we ship?" audit.
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sbom-cyclonedx
+          path: sbom.cyclonedx.json
+
+      # Also upload the SARIF so grype output can be reviewed offline.
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: grype-sarif
+          path: ${{ steps.grype-scan.outputs.sarif }}

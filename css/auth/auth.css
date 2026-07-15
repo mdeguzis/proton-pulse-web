@@ -7,7 +7,6 @@
     radial-gradient(circle at top, rgba(86, 170, 216, 0.12), transparent 32%),
     linear-gradient(180deg, #18202a 0%, #151a20 100%);
 }
-
 .auth-card {
   width: min(100%, 760px);
   max-width: calc(100vw - 32px);
