@@ -229,7 +229,7 @@ function _renderShell() {
           <button class="admin-dropdown-item" id="boxart-probe-visible-btn" title="Probe every row on the current page">Probe visible page</button>
           <button class="admin-dropdown-item" id="boxart-probe-all-btn" title="Probe every row that matches the current filters in bounded batches">Probe all (filtered)</button>
           <button class="admin-dropdown-item" id="boxart-sgdb-first-all-btn" title="Search SteamGridDB by title for every filtered row and set the first widescreen grid as the override. Skips rows that already have an override.">Set first SGDB result (filtered)</button>
-          <button class="admin-dropdown-item" id="boxart-steamcdn-header-all-btn" title="For every filtered Steam row, probe the Steam CDN header.jpg and set it as the override if it loads. Skips non-Steam rows and rows that already have an override.">Set Steam CDN header (filtered)</button>
+          <button class="admin-dropdown-item" id="boxart-steamcdn-header-all-btn" title="For every filtered Steam row, probe the Steam CDN wide-aspect variants (header, capsule sizes, library_hero) and set the first one that loads as the override. Skips non-Steam rows and rows that already have an override.">Set first Steam CDN wide image (filtered)</button>
           <button class="admin-dropdown-item admin-dropdown-item--danger" id="boxart-cancel-btn" hidden>Cancel batch</button>
         </div>
       </details>
@@ -652,42 +652,56 @@ export async function renderBoxartAdmin() {
     }
   });
 
-  // Batch "Set Steam CDN header (filtered)": mirror of the SGDB widescreen
-  // batch but sources from the Steam CDN header.jpg URL. Cheap check --
-  // just an <img> load per row, no third-party API in the loop. Skips
+  // Batch "Set Steam CDN wide image (filtered)": for every filtered Steam
+  // row, probe the wide-aspect Steam CDN variants in preference order and
+  // use the first one that loads. Falls back to any wide variant when
+  // header.jpg is missing so games without the standard header (rare, but
+  // does happen with older or region-limited apps) still get an override.
+  // Cheap: just <img> loads, no third-party API in the loop. Skips
   // non-Steam rows and any row that already has an override.
+  const STEAM_CDN_WIDE_PREF = [
+    'header.jpg',
+    'capsule_616x353.jpg',
+    'capsule_467x181.jpg',
+    'capsule_231x87.jpg',
+    'library_hero.jpg',
+  ];
+  const _imgLoads = (url, timeoutMs = 5000) => new Promise((resolve) => {
+    const img = new Image();
+    const t = setTimeout(() => { img.src = ''; resolve(false); }, timeoutMs);
+    img.onload = () => { clearTimeout(t); resolve(true); };
+    img.onerror = () => { clearTimeout(t); resolve(false); };
+    img.src = url;
+  });
   if (steamCdnAllBtn) steamCdnAllBtn.addEventListener('click', async () => {
     _closeActions();
     if (!state.rows.length) return;
     const steamRows = state.rows.filter((r) => r.type === 'steam');
     const total = steamRows.length;
     if (!total) return;
-    if (!confirm(`Probe the Steam CDN header for ${total.toLocaleString()} Steam row${total === 1 ? '' : 's'} and set it as the override when it loads?\n\nNon-Steam rows and rows that already have an admin override are skipped.`)) return;
+    if (!confirm(`Probe the Steam CDN wide-aspect variants for ${total.toLocaleString()} Steam row${total === 1 ? '' : 's'} and set the first one that loads as the override?\n\nOrder: header, capsule_616x353, capsule_467x181, capsule_231x87, library_hero. Non-Steam rows and rows that already have an admin override are skipped.`)) return;
     setBatchRunning(true);
     cancelToken = { cancelled: false };
     let done = 0, ok = 0, skip = 0, fail = 0;
     try {
-      progEl.textContent = `Steam CDN header: 0 / ${total}...`;
+      progEl.textContent = `Steam CDN wide: 0 / ${total}...`;
       for (const r of steamRows) {
         if (cancelToken.cancelled) break;
         done += 1;
         if (r.override?.image_url) { skip += 1; }
         else {
-          const url = `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(r.appId)}/header.jpg`;
-          // <img>-load existence check: browsers render Steam CDN pixels
-          // without CORS whereas fetch() gets blocked. Race a 5s timeout
-          // so a stuck request cannot hang the whole batch.
-          const loaded = await new Promise((resolve) => {
-            const img = new Image();
-            const t = setTimeout(() => { img.src = ''; resolve(false); }, 5000);
-            img.onload = () => { clearTimeout(t); resolve(true); };
-            img.onerror = () => { clearTimeout(t); resolve(false); };
-            img.src = url;
-          });
-          if (loaded) {
-            const applied = await setBoxArtOverride(r.appId, url);
+          const base = `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(r.appId)}`;
+          // Try each wide variant in preference order; stop at the first hit.
+          let picked = null;
+          for (const file of STEAM_CDN_WIDE_PREF) {
+            if (cancelToken.cancelled) break;
+            const url = `${base}/${file}`;
+            if (await _imgLoads(url)) { picked = url; break; }
+          }
+          if (picked) {
+            const applied = await setBoxArtOverride(r.appId, picked);
             if (applied.ok) {
-              r.override = { image_url: url, source: 'manual' };
+              r.override = { image_url: picked, source: 'manual' };
               if (indexes.overrideMap) indexes.overrideMap[r.appId] = r.override;
               ok += 1;
             } else { fail += 1; }
@@ -696,7 +710,7 @@ export async function renderBoxartAdmin() {
           // on very large filter sets (thousands of Steam rows).
           await new Promise((res) => setTimeout(res, 50));
         }
-        progEl.textContent = `Steam CDN header: ${done} / ${total} \u00b7 ${ok} set / ${skip} skipped / ${fail} failed`;
+        progEl.textContent = `Steam CDN wide: ${done} / ${total} \u00b7 ${ok} set / ${skip} skipped / ${fail} failed`;
       }
       progEl.textContent = `Done: ${done} scanned \u00b7 ${ok} set / ${skip} skipped / ${fail} failed${cancelToken.cancelled ? ' (cancelled)' : ''}`;
     } finally {
@@ -1007,6 +1021,11 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
     ? `<a href="${escapeHtml(storeHref)}" target="_blank" rel="noopener" class="admin-link">Open on ${escapeHtml(type)} store</a>`
     : `<span class="admin-muted">no store link</span>`;
   const gamePageLink = `<a href="${_appHref(appId)}" target="_blank" rel="noopener" class="admin-link">Open game page</a>`;
+  // Link to the Game Manager admin tab so a moderator triaging box art
+  // can jump straight into hide / remap actions for this app. Game
+  // Manager does not deep-link to an app id yet -- it opens the tab
+  // with the form pre-populated via the appid= param.
+  const gameManagerLink = `<a href="admin.html?tab=games&amp;appid=${encodeURIComponent(appId)}" class="admin-link">Open in Game Manager</a>`;
 
   // Standard Steam URLs (only meaningful for type=steam).
   const akamaiUrl     = type === 'steam' ? `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(appId)}/header.jpg` : null;
@@ -1031,7 +1050,7 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
         <div class="admin-subhead">Preview</div>
         <img id="boxart-detail-preview" src="${escapeHtml(previewSrc)}" alt="header preview" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05)"
              onerror="this.style.opacity=0.3; this.alt='(preview failed to load)'">
-        <p class="admin-hint" style="margin:8px 0 0">${gamePageLink} &middot; ${storeLink}</p>
+        <p class="admin-hint" style="margin:8px 0 0">${gamePageLink} &middot; ${storeLink} &middot; ${gameManagerLink}</p>
       </div>
 
       <div class="admin-card" style="padding:0; overflow:hidden">
@@ -1185,35 +1204,15 @@ export async function renderBoxartAdminDetail(appId) {
         searchBtn.disabled = false;
         const resultsEl = document.getElementById('sgdb-results');
         if (resultsEl) resultsEl.innerHTML = _sgdbResultsHtml(payload);
-        sgdbStatus(
-          payload.ok ? `${(payload.results || []).length} result(s)` : `Search failed: ${payload.error || 'unknown'}`,
-          !payload.ok,
-        );
-        // Auto-set when there's exactly one wide-ratio result. Saves the
-        // extra Set-as-box-art click for the (very common) case where the
-        // widescreen filter returns a single hit. Wide-ratio = w/h > 1.5
-        // so we accept slightly-off aspect ratios like 500x300 too, not
-        // just the exact 460x215 the filter asked for.
-        if (payload.ok && Array.isArray(payload.results) && payload.results.length === 1) {
-          const only = payload.results[0];
-          const w = Number(only.width) || 0;
-          const h = Number(only.height) || 0;
-          const isWide = w > 0 && h > 0 && (w / h) > 1.5;
-          if (isWide && only.url) {
-            sgdbStatus('One wide-ratio result -- applying automatically...');
-            const res = await setBoxArtOverride(row.appId, only.url);
-            if (res.ok) {
-              row.override = { image_url: only.url, source: 'manual' };
-              if (indexes.overrideMap) indexes.overrideMap[row.appId] = row.override;
-              sgdbStatus('Box art override set from SteamGridDB (auto).');
-              setStatus('override set from SteamGridDB: ' + only.url);
-              refreshBody();
-              const prev = document.getElementById('boxart-detail-preview');
-              if (prev) { prev.src = only.url; prev.style.opacity = 1; }
-            } else {
-              sgdbStatus('Auto-set failed: ' + (res.error || 'unknown'), true);
-            }
-          }
+        // On failure the results panel already shows the SteamGridDB
+        // error verbatim; the status line was duplicating it. Keep the
+        // status short for successes and hide it on failure so there's
+        // only one error message visible.
+        if (payload.ok) {
+          sgdbStatus(`${(payload.results || []).length} result(s)`);
+        } else {
+          const statusEl = document.getElementById('sgdb-status');
+          if (statusEl) statusEl.hidden = true;
         }
         return;
       }
@@ -1286,7 +1285,7 @@ export async function renderBoxartAdminDetail(appId) {
         if (resultsEl) {
           resultsEl.innerHTML = hits.length
             ? `<div class="sgdb-grid">${hits.map(({v, url}) => _steamCdnCardHtml(v, url)).join('')}</div>`
-            : `<p class="admin-hint" style="margin:12px 0 0">No Steam CDN variants loaded for app id ${escapeHtml(row.appId)}. This app may be delisted or region-locked.</p>`;
+            : `<p class="admin-hint" style="margin:12px 0 0">No Steam CDN variants loaded for app id ${escapeHtml(row.appId)}. The images might not exist for this app, or the CDN did not serve them at request time -- try again in a moment.</p>`;
         }
         steamCdnStatus(`Steam CDN: ${hits.length} of ${STEAM_CDN_VARIANTS.length} variants available.`);
         fetchBtn.disabled = false;

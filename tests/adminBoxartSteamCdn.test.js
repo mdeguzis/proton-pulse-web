@@ -66,8 +66,12 @@ describe('boxart admin detail: Steam CDN image panel (#345)', () => {
     );
   });
 
-  test('empty-results branch tells the admin the app is delisted or region-locked', () => {
+  test('empty-results branch tells the admin no variants loaded (does not falsely claim delisted)', () => {
+    // Original copy claimed the app was "delisted or region-locked" but
+    // we do not actually check either -- 0 hits just means "the CDN
+    // did not serve any variant right now". Say that instead.
     expect(BOXART_SRC).toContain('No Steam CDN variants loaded');
+    expect(BOXART_SRC).not.toContain('delisted or region-locked');
   });
 
   test('click handler routes Set through setBoxArtOverride (same path as SGDB)', () => {
@@ -89,10 +93,10 @@ describe('boxart admin detail: Steam CDN image panel (#345)', () => {
   });
 });
 
-describe('boxart admin batch: Set Steam CDN header (filtered)', () => {
+describe('boxart admin batch: Set first Steam CDN wide image (filtered)', () => {
   test('menu item is present in the Actions dropdown', () => {
     expect(BOXART_SRC).toContain('id="boxart-steamcdn-header-all-btn"');
-    expect(BOXART_SRC).toContain('Set Steam CDN header (filtered)');
+    expect(BOXART_SRC).toContain('Set first Steam CDN wide image (filtered)');
   });
 
   test('batch handler skips non-Steam rows before iterating', () => {
@@ -101,45 +105,38 @@ describe('boxart admin batch: Set Steam CDN header (filtered)', () => {
     );
   });
 
-  test('batch handler skips rows that already have an override', () => {
+  test('batch tries wide-aspect variants in preference order', () => {
+    // header first (canonical site format), then capsule sizes, then hero.
+    // Skips vertical variants (library_600x900) and non-image ones (logo).
+    expect(BOXART_SRC).toContain('STEAM_CDN_WIDE_PREF');
+    for (const f of ['header.jpg', 'capsule_616x353.jpg', 'capsule_467x181.jpg', 'capsule_231x87.jpg', 'library_hero.jpg']) {
+      expect(BOXART_SRC).toContain(f);
+    }
+    // Verify no vertical variants leak into the preference list. The
+    // portrait library_600x900 is not a widescreen shape and should not
+    // be considered by the batch.
+    const prefBlock = BOXART_SRC.match(/STEAM_CDN_WIDE_PREF = \[[\s\S]{0,300}?\]/);
+    expect(prefBlock).toBeTruthy();
+    expect(prefBlock[0]).not.toContain('library_600x900');
+  });
+
+  test('batch handler uses shared _imgLoads (Image + timeout) helper', () => {
+    expect(BOXART_SRC).toContain('_imgLoads');
+    expect(BOXART_SRC).toMatch(/setTimeout\([^,]+,\s*timeoutMs/);
+  });
+
+  test('batch handler applies the first hit via setBoxArtOverride', () => {
     expect(BOXART_SRC).toMatch(
-      /steamCdnAllBtn[\s\S]{0,1500}r\.override\?\.image_url[\s\S]{0,100}skip \+= 1/,
+      /steamCdnAllBtn[\s\S]{0,3000}setBoxArtOverride\(r\.appId, picked\)/,
     );
   });
 
-  test('batch handler probes each row via Image() load, not fetch', () => {
-    expect(BOXART_SRC).toMatch(
-      /steamCdnAllBtn[\s\S]{0,2500}new Image\(\)[\s\S]{0,400}img\.onload/,
-    );
-  });
-
-  test('batch handler races a timeout so a stuck request cannot hang the run', () => {
-    expect(BOXART_SRC).toMatch(
-      /steamCdnAllBtn[\s\S]{0,2500}setTimeout\([^,]+,\s*5000\)/,
-    );
-  });
-
-  test('batch handler applies via setBoxArtOverride (same path as everything else)', () => {
-    expect(BOXART_SRC).toMatch(
-      /steamCdnAllBtn[\s\S]{0,3000}setBoxArtOverride\(r\.appId, url\)/,
-    );
-  });
-
-  test('setBatchRunning disables the new batch button too', () => {
+  test('setBatchRunning disables the batch button too', () => {
     expect(BOXART_SRC).toMatch(/setBatchRunning[\s\S]{0,300}steamCdnAllBtn\.disabled\s*=\s*running/);
   });
 });
 
-describe('boxart admin detail: SGDB auto-set + spacing', () => {
-  test('single wide-ratio SGDB result auto-applies the override', () => {
-    // Saves the Set-click for the common case where the widescreen filter
-    // returns exactly one hit. Wide-ratio = w/h > 1.5 so we accept slightly
-    // off aspects too.
-    expect(BOXART_SRC).toMatch(/payload\.results\.length === 1/);
-    expect(BOXART_SRC).toMatch(/\(w \/ h\) > 1\.5/);
-    expect(BOXART_SRC).toMatch(/One wide-ratio result -- applying automatically/);
-  });
-
+describe('boxart admin detail: override-metadata spacing', () => {
   test('URL sources table has a spacer row above the override metadata block', () => {
     // Visual separator between the URL list and the ADMIN OVERRIDE badge.
     expect(BOXART_SRC).toMatch(
