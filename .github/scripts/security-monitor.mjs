@@ -121,7 +121,7 @@ async function checkRlsViolations() {
   }
 }
 
-// Check 4: Rate limit hits (429s)
+// Check 4: Rate limit hits (429s) -- aggregate across the site.
 async function checkRateLimitHits() {
   const logs = await sbFetch(`/analytics/endpoints/logs?iso_timestamp_start=${ONE_HOUR_AGO}`);
   if (!logs || !Array.isArray(logs)) {
@@ -138,6 +138,40 @@ async function checkRateLimitHits() {
   }
 }
 
+// Check 5 (#320): Per-IP rate-limit abuse. The aggregate check catches
+// site-wide storms but misses one persistent attacker who trips the
+// limit repeatedly. Group last-hour 429s by client IP and alert when
+// any single IP crosses the abuse threshold. Repeated trips from one
+// origin are what warrants a targeted response (add to WAF block list,
+// contact hosting provider, etc.).
+const RATE_LIMIT_ABUSE_THRESHOLD = 50;
+
+async function checkRateLimitAbusePerIp() {
+  const logs = await sbFetch(`/analytics/endpoints/logs?iso_timestamp_start=${ONE_HOUR_AGO}`);
+  if (!logs || !Array.isArray(logs)) {
+    console.log('Per-IP rate limit logs: no data, skipping');
+    return;
+  }
+  const trips = logs.filter(l => l.status_code === 429);
+  const byIp = new Map();
+  for (const t of trips) {
+    const ip = t.remote_addr || t.client_ip || t.x_forwarded_for || 'unknown';
+    byIp.set(ip, (byIp.get(ip) || 0) + 1);
+  }
+  const offenders = [...byIp.entries()]
+    .filter(([, count]) => count >= RATE_LIMIT_ABUSE_THRESHOLD)
+    .sort((a, b) => b[1] - a[1]);
+  console.log(`Per-IP 429s: ${trips.length} total across ${byIp.size} IPs, ${offenders.length} over threshold ${RATE_LIMIT_ABUSE_THRESHOLD}`);
+  if (offenders.length === 0) return;
+  const detail = offenders.slice(0, 10)
+    .map(([ip, count]) => `- ${ip}: ${count} trips`)
+    .join('\n');
+  await createAlert(
+    '[Alert] Rate-limit abuse from single IP',
+    `${offenders.length} IP${offenders.length === 1 ? '' : 's'} tripped the rate limit ≥ ${RATE_LIMIT_ABUSE_THRESHOLD} times in the last hour.\n\nTop offenders:\n${detail}\n\nThis indicates a targeted attacker rather than incidental traffic. Consider blocking at Cloudflare or your DNS provider. The rate limiter itself is doing its job (all requests returned 429).\n\nTriggered at: ${new Date().toISOString()}`
+  );
+}
+
 async function main() {
   console.log(`Security monitor running at ${new Date().toISOString()}`);
   console.log(`Project: ${PROJECT_REF}, Lookback: ${ONE_HOUR_AGO}`);
@@ -145,6 +179,7 @@ async function main() {
   await checkEdgeFunctionErrors();
   await checkRlsViolations();
   await checkRateLimitHits();
+  await checkRateLimitAbusePerIp();
   console.log('Security monitor complete.');
 }
 
