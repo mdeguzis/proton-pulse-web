@@ -1,8 +1,25 @@
 #!/usr/bin/env node
 /**
- * Two-layer content moderation for user_configs:
- *   1. Wordlist (naughty-words) - offline, multilingual, fast primary filter
- *   2. OpenAI Moderation API    - semantic fallback for anything the wordlist misses
+ * Two-layer content moderation for user-submitted text.
+ *
+ * Primary scan (with auto-remediation):
+ *   - user_configs.notes / title / launch_options / form_responses
+ *     Hits are auto-flagged: is_flagged=true, is_hidden=true, flagged_reason set.
+ *
+ * Aux scans (alert-only, no auto-remediation):
+ *   - user_proton_configs.app_name    (#331)
+ *   - user_systems.label              (#332)
+ *   - user_systems.sysinfo_text       (MEDIUM followup)
+ *   - flagged_reports.reason_text     (MEDIUM followup)
+ *   These tables have no moderation columns, so a hit opens a GitHub
+ *   issue labeled `content-moderation-review` for manual admin follow-up
+ *   rather than mutating the row. Issue creation is rate-limited to
+ *   MAX_NEW_ISSUES_PER_RUN so a spammer cannot flood the tracker.
+ *
+ * Layers used per row:
+ *   0. Banned phrases (admin-managed, Supabase)
+ *   1. Wordlist (naughty-words, offline)
+ *   2. OpenAI Moderation API (semantic fallback, opt-in via key)
  *
  * Required env vars:
  *   SUPABASE_URL              - e.g. https://ilsgdshkaocrmibwdezk.supabase.co
@@ -14,11 +31,15 @@
  *   APP_IDS         - restrict to a comma-separated list of Steam app IDs (#218 standard)
  *   APP_ID          - legacy singular alias for APP_IDS; still honored for backcompat
  *   DRY_RUN         - "true" to log without writing to Supabase
+ *   GH_TOKEN + REPO - required for aux-scan issue alerts; scans still run without,
+ *                     they just log the hits and skip issue creation
  */
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const OPENAI_KEY   = process.env.OPENAI_API_KEY;
+const GH_TOKEN     = process.env.GH_TOKEN;
+const GH_REPO      = process.env.REPO || process.env.GITHUB_REPOSITORY;
 const LOOKBACK_H   = parseInt(process.env.LOOKBACK_HOURS ?? '5', 10);
 // #218: standard env is APP_IDS (comma-separated). Fall back to the legacy
 // APP_ID (singular) so an old dispatch from a saved link keeps working.
@@ -274,6 +295,160 @@ function extractTextFields(row) {
 }
 
 // ---------------------------------------------------------------------------
+// Aux-table scans (#331, #332): user_proton_configs.app_name +
+// user_systems.label. These tables have no is_flagged / is_hidden
+// columns, so hits do not auto-remediate. Instead we open a GitHub issue
+// labeled content-moderation-review + security so an admin can triage
+// via Supabase directly.
+// ---------------------------------------------------------------------------
+
+async function ghIssueExists(title) {
+  if (!GH_TOKEN || !GH_REPO) return false;
+  const q = encodeURIComponent(`repo:${GH_REPO} is:issue is:open in:title "${title}"`);
+  const res = await fetch(`https://api.github.com/search/issues?q=${q}`, {
+    headers: { Authorization: `Bearer ${GH_TOKEN}`, Accept: 'application/vnd.github+json' },
+  });
+  if (!res.ok) return false;
+  const data = await res.json();
+  return (data.total_count || 0) > 0;
+}
+
+// Cap the number of new issues per run so a spammer who submits N bad
+// rows in one lookback window cannot force us to file N GitHub issues.
+// De-dupe on existing-title still applies first; this only counts NEW
+// issues we would otherwise create.
+const MAX_NEW_ISSUES_PER_RUN = 10;
+let _newIssuesThisRun = 0;
+let _issuesSkippedByRateLimit = 0;
+
+async function createModerationIssue(title, body) {
+  if (!GH_TOKEN || !GH_REPO) {
+    warn('Aux-scan hit but GH_TOKEN/REPO unset -- skipping issue creation', { title });
+    return;
+  }
+  if (await ghIssueExists(title)) {
+    log(`Moderation review issue already open`, { title });
+    return;
+  }
+  if (DRY_RUN) {
+    log(`[DRY RUN] would open GH issue`, { title, body });
+    return;
+  }
+  if (_newIssuesThisRun >= MAX_NEW_ISSUES_PER_RUN) {
+    _issuesSkippedByRateLimit++;
+    warn(`Skipping issue creation -- hit MAX_NEW_ISSUES_PER_RUN cap`, {
+      cap: MAX_NEW_ISSUES_PER_RUN,
+      title,
+    });
+    return;
+  }
+  const res = await fetch(`https://api.github.com/repos/${GH_REPO}/issues`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${GH_TOKEN}`,
+      Accept: 'application/vnd.github+json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      title,
+      body,
+      labels: ['content-moderation-review', 'security'],
+    }),
+  });
+  if (res.ok) {
+    _newIssuesThisRun++;
+    const issue = await res.json();
+    log(`Opened moderation review issue`, { url: issue.html_url });
+  } else {
+    err(`Failed to open moderation issue`, { status: res.status, body: await res.text() });
+  }
+}
+
+async function checkTextAgainstAllLayers(text, rowLabel) {
+  const banHit = bannedPhrasesFilter.check(text);
+  if (banHit.flagged) return { layer: 'banned_phrase', term: banHit.term };
+  const wordHit = wordlistFilter.check(text);
+  if (wordHit.flagged) return { layer: 'wordlist', term: wordHit.term };
+  if (OPENAI_KEY) {
+    try {
+      const result = await moderateWithOpenAI(text, rowLabel);
+      if (result.flagged) return { layer: 'openai', term: result.categories.join(',') };
+      // Same rate-limit spacing as the user_configs loop.
+      await new Promise(r => setTimeout(r, 1050));
+    } catch (e) {
+      err(`OpenAI call failed for aux row ${rowLabel}`, { message: e.message });
+    }
+  }
+  return null;
+}
+
+/**
+ * Scan a single aux table (proton-configs OR systems).
+ *
+ * @param {object} config
+ * @param {string} config.table      Postgres table name (e.g. 'user_proton_configs').
+ * @param {string} config.selectCols Comma-separated column list for the REST SELECT.
+ * @param {string} config.timeCol    Timestamp column to filter recent rows by.
+ * @param {string} config.textCol    Column whose value is scanned.
+ * @param {(row: object) => string} config.rowLabel  Human-readable row identifier for logs + issue title.
+ * @returns {Promise<{scanned: number, hits: number, hitIds: string[]}>}
+ */
+async function scanAuxTable({ table, selectCols, timeCol, textCol, rowLabel }) {
+  const since = new Date(Date.now() - LOOKBACK_H * 3600 * 1000).toISOString();
+  const url = `${SUPABASE_URL}/rest/v1/${table}`
+    + `?select=${selectCols}`
+    + `&${timeCol}=gte.${since}`
+    + `&order=${timeCol}.asc`;
+  log(`Aux scan fetch`, { table, url: url.replace(SUPABASE_URL, '<SUPABASE_URL>'), since });
+
+  const res = await fetch(url, { headers: SUPABASE_HEADERS });
+  if (!res.ok) {
+    err(`Aux fetch failed for ${table}`, { status: res.status, body: await res.text() });
+    return { scanned: 0, hits: 0, hitIds: [] };
+  }
+  const rows = await res.json();
+  log(`Aux rows returned`, { table, count: rows.length });
+
+  let hits = 0;
+  const hitIds = [];
+  for (const row of rows) {
+    const text = row[textCol];
+    if (!text || typeof text !== 'string' || !text.trim()) continue;
+    const label = rowLabel(row);
+    const hit = await checkTextAgainstAllLayers(text, `${table}:${label}`);
+    if (!hit) {
+      log(`Aux row clean`, { table, label });
+      continue;
+    }
+    hits++;
+    hitIds.push(label);
+    warn(`Aux row FLAGGED`, { table, label, textCol, layer: hit.layer, term: hit.term, snippet: text.slice(0, 80) });
+
+    // De-dupe issues per (table, row) so re-scans of the same row don't
+    // spam. Title includes the row identifier so distinct rows get
+    // distinct issues.
+    const title = `[Moderation review] ${table} row ${label} matched ${hit.layer}`;
+    const body = [
+      `Content moderation scanner flagged **${table}.${textCol}** for row \`${label}\`.`,
+      ``,
+      `- Layer: **${hit.layer}**`,
+      `- Match: \`${hit.term}\``,
+      `- Text (first 200 chars):`,
+      '```',
+      text.slice(0, 200),
+      '```',
+      ``,
+      `This table has no moderation columns, so the scanner did not modify the row.`,
+      `Review the row in Supabase and remove or rename the value if the flag is genuine.`,
+      ``,
+      `Triggered at ${new Date().toISOString()} by \`.github/scripts/moderate-content.mjs\`.`,
+    ].join('\n');
+    await createModerationIssue(title, body);
+  }
+  return { scanned: rows.length, hits, hitIds };
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -358,20 +533,63 @@ async function main() {
 
   log(`Scan complete`, { scanned, flagged: flaggedCount, flaggedIds });
 
+  // Aux scans (#331, #332 + MEDIUM followups). Same layer stack + lookback
+  // as the primary scan; hits open a GH issue rather than mutate the row.
+  const auxResults = {};
+  auxResults.user_proton_configs = await scanAuxTable({
+    table: 'user_proton_configs',
+    selectCols: 'voter_id,app_id,app_name,updated_at',
+    timeCol: 'updated_at',
+    textCol: 'app_name',
+    rowLabel: (r) => `${r.voter_id}:${r.app_id}`,
+  });
+  auxResults.user_systems_label = await scanAuxTable({
+    table: 'user_systems',
+    selectCols: 'proton_pulse_user_id,device_id,label,updated_at',
+    timeCol: 'updated_at',
+    textCol: 'label',
+    rowLabel: (r) => `${r.proton_pulse_user_id || 'anon'}:${r.device_id}`,
+  });
+  // MEDIUM: sysinfo_text is not rendered raw but persists verbatim and
+  // is admin-visible. Slur or CSAM buried in a sysinfo paste still
+  // warrants a review.
+  auxResults.user_systems_sysinfo = await scanAuxTable({
+    table: 'user_systems',
+    selectCols: 'proton_pulse_user_id,device_id,sysinfo_text,updated_at',
+    timeCol: 'updated_at',
+    textCol: 'sysinfo_text',
+    rowLabel: (r) => `${r.proton_pulse_user_id || 'anon'}:${r.device_id}:sysinfo`,
+  });
+  // MEDIUM: reason_text is the user-typed reason when flagging a report.
+  // Admin-visible only, but persists and is an easy vector to abuse the
+  // review UI.
+  auxResults.flagged_reports_reason = await scanAuxTable({
+    table: 'flagged_reports',
+    selectCols: 'id,reason_text,flagged_at',
+    timeCol: 'flagged_at',
+    textCol: 'reason_text',
+    rowLabel: (r) => `${r.id}`,
+  });
+
   const summary = process.env.GITHUB_STEP_SUMMARY;
   if (summary) {
     const lines = [
       `## Content moderation summary`,
-      `| | |`,
-      `|---|---|`,
-      `| Rows scanned | ${scanned} |`,
-      `| Rows flagged | ${flaggedCount} |`,
-      `| Lookback | ${LOOKBACK_H}h |`,
-      `| App ID filter | ${APP_IDS.length ? APP_IDS.join(', ') : 'all'} |`,
-      `| Dry run | ${DRY_RUN} |`,
-      `| Layers | wordlist${OPENAI_KEY ? ' + openai' : ' only'} |`,
+      `| Table.column | Scanned | Flagged |`,
+      `|---|---|---|`,
+      `| user_configs (auto-remediated) | ${scanned} | ${flaggedCount} |`,
+      `| user_proton_configs.app_name | ${auxResults.user_proton_configs.scanned} | ${auxResults.user_proton_configs.hits} |`,
+      `| user_systems.label | ${auxResults.user_systems_label.scanned} | ${auxResults.user_systems_label.hits} |`,
+      `| user_systems.sysinfo_text | ${auxResults.user_systems_sysinfo.scanned} | ${auxResults.user_systems_sysinfo.hits} |`,
+      `| flagged_reports.reason_text | ${auxResults.flagged_reports_reason.scanned} | ${auxResults.flagged_reports_reason.hits} |`,
+      ``,
+      `Lookback: ${LOOKBACK_H}h - App ID filter: ${APP_IDS.length ? APP_IDS.join(', ') : 'all'} - Dry run: ${DRY_RUN} - Layers: wordlist${OPENAI_KEY ? ' + openai' : ' only'}`,
+      `Issue cap: ${MAX_NEW_ISSUES_PER_RUN}/run - New issues opened: ${_newIssuesThisRun} - Skipped by rate limit: ${_issuesSkippedByRateLimit}`,
     ];
-    if (flaggedIds.length) lines.push(`\nFlagged row IDs: ${flaggedIds.join(', ')}`);
+    if (flaggedIds.length) lines.push(`\nAuto-flagged user_configs IDs: ${flaggedIds.join(', ')}`);
+    for (const [key, r] of Object.entries(auxResults)) {
+      if (r.hitIds.length) lines.push(`Aux hits (${key}): ${r.hitIds.join(', ')}`);
+    }
     const fs = await import('fs');
     fs.appendFileSync(summary, lines.join('\n') + '\n');
   }

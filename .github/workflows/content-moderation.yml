@@ -73,6 +73,10 @@ jobs:
           # the moderation script now honors both -- prefer APP_IDS when set.
           APP_IDS: ${{ inputs.app_ids || '' }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          # Aux-table hits (#331, #332) open issues here for admin triage.
+          # Falls back to GITHUB_REPOSITORY if REPO is unset.
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: node .github/scripts/moderate-content.mjs
 
       - name: Back-comment run summary on issue
