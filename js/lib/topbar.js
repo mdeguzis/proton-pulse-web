@@ -155,73 +155,6 @@
   const BANNER_AND_NAV = `
 <header class="topbar">
   <div class="topbar-banner">
-    <svg class="topbar-banner-bg" viewBox="0 0 1600 46" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <defs>
-        <linearGradient id="bannerPulseGrad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%"   stop-color="#beee11" stop-opacity="0"/>
-          <stop offset="50%"  stop-color="#beee11" stop-opacity="0.9"/>
-          <stop offset="100%" stop-color="#beee11" stop-opacity="0"/>
-        </linearGradient>
-        <radialGradient id="electronGlow">
-          <stop offset="0%"   stop-color="#aedcff" stop-opacity="1"/>
-          <stop offset="60%"  stop-color="#66c0f4" stop-opacity="0.7"/>
-          <stop offset="100%" stop-color="#66c0f4" stop-opacity="0"/>
-        </radialGradient>
-        <radialGradient id="electronGlowGreen">
-          <stop offset="0%"   stop-color="#dffb56" stop-opacity="1"/>
-          <stop offset="60%"  stop-color="#beee11" stop-opacity="0.6"/>
-          <stop offset="100%" stop-color="#beee11" stop-opacity="0"/>
-        </radialGradient>
-        <symbol id="atomBeacon" viewBox="-30 -16 60 32">
-          <ellipse cx="0" cy="0" rx="26" ry="9" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.45"/>
-          <ellipse cx="0" cy="0" rx="26" ry="9" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.45" transform="rotate(60)"/>
-          <ellipse cx="0" cy="0" rx="26" ry="9" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.45" transform="rotate(-60)"/>
-          <circle cx="0" cy="0" r="1.6" fill="currentColor"/>
-        </symbol>
-      </defs>
-      <path class="banner-pulse"
-            d="M 0 23 L 280 23 L 296 12 L 312 34 L 328 16 L 344 30 L 360 23 L 720 23 L 736 18 L 752 30 L 768 23 L 1160 23 L 1176 14 L 1192 32 L 1208 18 L 1224 23 L 1600 23"
-            fill="none" stroke="url(#bannerPulseGrad)" stroke-width="1.4" stroke-linejoin="round"/>
-      <g class="banner-atoms">
-        <g transform="translate(560 23)" color="#66c0f4" opacity="0.75">
-          <use href="#atomBeacon"/>
-          <circle r="1.8" fill="url(#electronGlow)">
-            <animateMotion dur="4.2s" repeatCount="indefinite" rotate="0"
-                           path="M 26 0 A 26 9 0 1 1 -26 0 A 26 9 0 1 1 26 0"/>
-          </circle>
-        </g>
-        <g transform="translate(880 23)" color="#beee11" opacity="0.7">
-          <use href="#atomBeacon"/>
-          <circle r="1.6" fill="url(#electronGlowGreen)">
-            <animateMotion dur="3.4s" repeatCount="indefinite" rotate="0"
-                           path="M 22 0 A 22 8 30 1 1 -22 0 A 22 8 30 1 1 22 0"/>
-          </circle>
-          <circle r="1.2" fill="url(#electronGlowGreen)" opacity="0.7">
-            <animateMotion dur="5.1s" begin="-1.7s" repeatCount="indefinite" rotate="0"
-                           path="M 22 0 A 22 8 -30 1 0 -22 0 A 22 8 -30 1 0 22 0"/>
-          </circle>
-        </g>
-        <g transform="translate(1180 23)" color="#66c0f4" opacity="0.75">
-          <use href="#atomBeacon"/>
-          <circle r="1.8" fill="url(#electronGlow)">
-            <animateMotion dur="3.8s" begin="-0.9s" repeatCount="indefinite" rotate="0"
-                           path="M 24 0 A 24 8.5 0 1 1 -24 0 A 24 8.5 0 1 1 24 0"/>
-          </circle>
-          <circle r="1.4" fill="url(#electronGlow)" opacity="0.8">
-            <animateMotion dur="2.6s" begin="-0.3s" repeatCount="indefinite" rotate="0"
-                           path="M 24 0 A 24 8.5 60 1 0 -24 0 A 24 8.5 60 1 0 24 0"/>
-          </circle>
-        </g>
-        <g transform="translate(1440 23)" color="#ff3aa5" opacity="0.6">
-          <use href="#atomBeacon"/>
-          <circle r="1.6" fill="#ff3aa5">
-            <animateMotion dur="4.6s" begin="-2.1s" repeatCount="indefinite" rotate="0"
-                           path="M 22 0 A 22 7.5 0 1 1 -22 0 A 22 7.5 0 1 1 22 0"/>
-          </circle>
-        </g>
-      </g>
-    </svg>
-
     <a class="topbar-brand" href="index.html">
       <span class="topbar-brand-mark" aria-hidden="true">
         <svg viewBox="0 0 36 36" fill="none">
@@ -624,14 +557,7 @@
     // sprite first so the <use href="#..."> refs in the banner resolve immediately
     document.body.insertAdjacentHTML('afterbegin', SPRITE + BANNER_AND_NAV);
     const disabled = motionDisabled();
-    const htmlMotion = document.documentElement.getAttribute('data-motion');
-    const atoms = document.querySelector('.banner-atoms');
-    console.log('[topbar] inject: motionDisabled=' + disabled + ' data-motion=' + htmlMotion + ' .banner-atoms found=' + !!atoms);
-    if (atoms) {
-      const computed = getComputedStyle(atoms).display;
-      console.log('[topbar] inject: .banner-atoms computed display=' + computed);
-    }
-    // pauseSmilAnimations() in initMotion() runs before the SVG exists; re-apply now
+    // pauseSmilAnimations() in initMotion() runs before other SVGs exist; re-apply now
     if (disabled) pauseSmilAnimations();
     markActive();
     wireMobileDrawer();
