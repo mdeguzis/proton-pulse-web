@@ -68,15 +68,17 @@ jobs:
           fail-build: true
           severity-cutoff: high
 
-      # Print human-readable findings even when the gate above trips.
-      # scan-action only prints SARIF (impossible to read in the log).
-      # A follow-up grype invocation in table format lets a reviewer
-      # see WHICH CVEs failed the gate without downloading artifacts.
+      # Re-run scan-action in table mode so a reviewer can see WHICH
+      # CVEs failed the gate directly in the workflow log. scan-action's
+      # SARIF output alone is not readable in the log. fail-build: false
+      # ensures this step never masks the real gate above.
       - name: Print grype findings (table)
         if: always()
-        run: |
-          curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /tmp/grype-bin
-          /tmp/grype-bin/grype sbom:sbom.cyclonedx.json -o table --fail-on high || true
+        uses: anchore/scan-action@v6
+        with:
+          sbom: sbom.cyclonedx.json
+          fail-build: false
+          output-format: table
 
       # Persist the SBOM alongside the workflow run so a tagged release
       # can attach it. Kept 90 days per default retention -- long enough
