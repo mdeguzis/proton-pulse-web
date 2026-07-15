@@ -55,8 +55,13 @@ jobs:
       # Grype fails the job on any high or critical finding. `fail-build`
       # + `severity-cutoff` mirrors how npm audit already gates the CI
       # pipeline so drift between the two scanners stays visible.
+      #
+      # anchore/scan-action pinned to @v6: earlier v3 series shipped a
+      # grype 0.74.x binary whose vulnerability DB is stale (>5 days old
+      # is a hard failure) and whose SBOM parser cannot read the current
+      # sbom-action output format. v6 tracks a current grype.
       - name: Scan SBOM with Grype
-        uses: anchore/scan-action@v3
+        uses: anchore/scan-action@v6
         with:
           sbom: sbom.cyclonedx.json
           fail-build: true

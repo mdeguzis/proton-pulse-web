@@ -59,7 +59,7 @@ describe('SBOM + Grype scan workflow (#317)', () => {
   });
 
   test('Grype fails the build on high or critical (matches npm audit gating)', () => {
-    expect(YAML).toContain('anchore/scan-action@v3');
+    expect(YAML).toMatch(/anchore\/scan-action@v[4-9]/);
     expect(YAML).toMatch(/fail-build:\s*true/);
     expect(YAML).toMatch(/severity-cutoff:\s*high/);
   });
