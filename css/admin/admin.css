@@ -401,11 +401,17 @@
 }
 .admin-dropdown > summary::-webkit-details-marker { display: none; }
 .admin-dropdown-caret { font-size: 0.7em; opacity: 0.9; }
+/* Anchor to the RIGHT edge of the button so the menu grows leftward and
+   stays inside the viewport when the button sits near the right end of
+   its row -- Actions on the box art manager used to overflow to the
+   right and force a horizontal scroll. Same principle the topbar
+   search-dropdown uses. */
 .admin-dropdown-menu {
   position: absolute;
   top: calc(100% + 4px);
-  left: 0;
+  right: 0;
   min-width: 220px;
+  max-width: calc(100vw - 24px);
   background: var(--s1, #1a2233);
   border: 1px solid rgba(92,139,214,0.35);
   border-radius: 8px;
