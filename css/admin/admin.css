@@ -401,15 +401,16 @@
 }
 .admin-dropdown > summary::-webkit-details-marker { display: none; }
 .admin-dropdown-caret { font-size: 0.7em; opacity: 0.9; }
-/* Anchor to the RIGHT edge of the button so the menu grows leftward and
-   stays inside the viewport when the button sits near the right end of
-   its row -- Actions on the box art manager used to overflow to the
-   right and force a horizontal scroll. Same principle the topbar
-   search-dropdown uses. */
+/* Default: anchor to the LEFT edge of the button so the menu grows
+   rightward -- correct when the button sits near the left half of
+   the viewport (mobile filter row wraps Actions to the left). JS in
+   the boxart controller flips this to right: 0 via [data-align="right"]
+   when the button sits near the right edge, so the menu never overflows
+   either side. */
 .admin-dropdown-menu {
   position: absolute;
   top: calc(100% + 4px);
-  right: 0;
+  left: 0;
   min-width: 220px;
   max-width: calc(100vw - 24px);
   background: var(--s1, #1a2233);
@@ -421,6 +422,10 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+}
+.admin-dropdown[data-align="right"] .admin-dropdown-menu {
+  left: auto;
+  right: 0;
 }
 .admin-dropdown-item {
   appearance: none;

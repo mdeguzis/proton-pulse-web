@@ -506,6 +506,29 @@ export async function renderBoxartAdmin() {
   // Close the dropdown after any menu-item click so it doesn't stay open
   // while a batch runs. `open` toggles are the source of truth on <details>.
   const _closeActions = () => { if (actionsDropdown) actionsDropdown.open = false; };
+  // Viewport-aware alignment: when the summary button sits close enough to
+  // the right edge that the 220px-min menu would overflow the viewport,
+  // flip to right-anchor via data-align. On narrow mobile screens the
+  // filter row wraps and the button lands on the LEFT, so we keep the
+  // default left-anchor there. Recomputed on every open so viewport
+  // resize + orientation flip stay correct.
+  const _alignActions = () => {
+    if (!actionsDropdown || !actionsDropdown.open) return;
+    const summary = actionsDropdown.querySelector('summary');
+    if (!summary) return;
+    const r = summary.getBoundingClientRect();
+    const menuWidth = 240; // min-width 220 + padding
+    const viewport = window.innerWidth;
+    // If the menu (if left-anchored to the button's left edge) would
+    // extend past the right edge with a 12px gutter, use right-anchor.
+    // Otherwise left-anchor.
+    const overflowsRight = r.left + menuWidth > viewport - 12;
+    actionsDropdown.dataset.align = overflowsRight ? 'right' : 'left';
+  };
+  if (actionsDropdown) {
+    actionsDropdown.addEventListener('toggle', _alignActions);
+    window.addEventListener('resize', _alignActions);
+  }
   // Click outside the dropdown closes it too.
   document.addEventListener('click', (e) => {
     if (!actionsDropdown) return;
