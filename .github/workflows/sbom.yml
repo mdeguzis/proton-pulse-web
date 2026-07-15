@@ -61,11 +61,22 @@ jobs:
       # is a hard failure) and whose SBOM parser cannot read the current
       # sbom-action output format. v6 tracks a current grype.
       - name: Scan SBOM with Grype
+        id: grype-scan
         uses: anchore/scan-action@v6
         with:
           sbom: sbom.cyclonedx.json
           fail-build: true
           severity-cutoff: high
+
+      # Print human-readable findings even when the gate above trips.
+      # scan-action only prints SARIF (impossible to read in the log).
+      # A follow-up grype invocation in table format lets a reviewer
+      # see WHICH CVEs failed the gate without downloading artifacts.
+      - name: Print grype findings (table)
+        if: always()
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /tmp/grype-bin
+          /tmp/grype-bin/grype sbom:sbom.cyclonedx.json -o table --fail-on high || true
 
       # Persist the SBOM alongside the workflow run so a tagged release
       # can attach it. Kept 90 days per default retention -- long enough
@@ -75,3 +86,10 @@ jobs:
         with:
           name: sbom-cyclonedx
           path: sbom.cyclonedx.json
+
+      # Also upload the SARIF so grype output can be reviewed offline.
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: grype-sarif
+          path: ${{ steps.grype-scan.outputs.sarif }}
