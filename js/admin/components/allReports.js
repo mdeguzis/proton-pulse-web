@@ -235,11 +235,19 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
       <div id="ar-detail-status" style="margin:10px 0">${statusBadges(isF, isH, isP, report.flagged_reason)}</div>
       <table class="admin-table" style="margin-bottom:16px">
         <tbody>
-          ${fields.map(([label, value]) => `
+          ${fields.map(([label, value]) => {
+            // Group break: put a small spacer row above Duration so the
+            // hardware block and the playtime block are visually distinct
+            // instead of a solid wall of rows.
+            const spacer = label === 'Duration'
+              ? `<tr aria-hidden="true"><td colspan="2" style="height:14px;border:none;padding:0"></td></tr>`
+              : '';
+            return spacer + `
             <tr>
               <td style="font-weight:600;color:var(--muted);width:160px">${escapeHtml(label)}</td>
               <td>${value}</td>
-            </tr>`).join('')}
+            </tr>`;
+          }).join('')}
           ${formResponsesHtml}
         </tbody>
       </table>

@@ -111,7 +111,13 @@ function showReviewDetail(report, session, onApproved) {
     const wrapStyle = opts && opts.wrap
       ? 'font-family:var(--mono);word-break:break-all;white-space:normal'
       : '';
-    return `
+    // Group break: put a small spacer row above Duration so the hardware
+    // block and the playtime block are visually distinct instead of a
+    // solid wall of rows.
+    const spacer = label === 'Duration'
+      ? `<tr aria-hidden="true"><td colspan="2" style="height:14px;border:none;padding:0"></td></tr>`
+      : '';
+    return spacer + `
       <tr>
         <td style="font-weight:600;color:var(--muted);width:140px">${escapeHtml(label)}</td>
         <td${wrapStyle ? ` style="${wrapStyle}"` : ''}>${escapeHtml(value)}</td>

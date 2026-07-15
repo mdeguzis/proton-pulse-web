@@ -478,7 +478,10 @@ a.card:active { transform: translateY(1px); }
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  margin-top: 8px;
+  /* Extra top margin so the row of green answer tiles has breathing
+     room from the "TODAY . N HOURS PLAYED" line above it. 8px pressed
+     them right against the label. */
+  margin-top: 16px;
 }
 .signal-icon {
   width: 30px;
