@@ -39,6 +39,11 @@ interface PlayerSummary {
   profilestate?: number;
 }
 
+interface WishlistItem {
+  appid: number;
+  priority?: number;
+}
+
 interface Envelope {
   ok: boolean;
   steamId?: string;
@@ -52,6 +57,8 @@ interface Envelope {
   };
   games?: OwnedGame[];
   gameCount?: number;
+  wishlist?: WishlistItem[];
+  wishlistCount?: number;
   error?: string;
   errorCode?:
     | "invalid_input"
@@ -159,6 +166,32 @@ async function getOwnedGames(steamId: string, apiKey: string): Promise<{ games?:
   }
 }
 
+async function getWishlist(steamId: string, apiKey: string): Promise<{ items?: WishlistItem[]; count?: number }> {
+  // IWishlistService/GetWishlist respects the profile's wishlist visibility.
+  // Private wishlist -> empty items[]. We keep it best-effort: any failure
+  // here just skips the wishlist section without breaking the library view.
+  const url =
+    `https://api.steampowered.com/IWishlistService/GetWishlist/v1/` +
+    `?key=${encodeURIComponent(apiKey)}` +
+    `&steamid=${encodeURIComponent(steamId)}`;
+  try {
+    const res = await fetch(url, { headers: { Accept: "application/json" } });
+    if (!res.ok) return {};
+    const body = await res.json();
+    const items: WishlistItem[] = Array.isArray(body?.response?.items)
+      ? body.response.items
+          .map((i: { appid?: number; priority?: number }) => ({
+            appid: Number(i.appid),
+            priority: typeof i.priority === "number" ? i.priority : undefined,
+          }))
+          .filter((i: WishlistItem) => Number.isFinite(i.appid))
+      : [];
+    return { items, count: items.length };
+  } catch {
+    return {};
+  }
+}
+
 async function getPlayerSummary(steamId: string, apiKey: string): Promise<PlayerSummary | null> {
   const url =
     `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/` +
@@ -215,8 +248,9 @@ Deno.serve(async (req: Request) => {
     steamId = r.steamId;
   }
 
-  const [owned, summary] = await Promise.all([
+  const [owned, wishlist, summary] = await Promise.all([
     getOwnedGames(steamId, apiKey),
+    getWishlist(steamId, apiKey),
     getPlayerSummary(steamId, apiKey),
   ]);
   if (owned.error) {
@@ -225,7 +259,7 @@ Deno.serve(async (req: Request) => {
 
   const isPublic = (summary?.communityvisibilitystate ?? 0) === 3;
   console.log(
-    `[public-steam-profile] steamId=${steamId} resolved=${resolvedFrom} isPublic=${isPublic} gameCount=${owned.count ?? 0}`,
+    `[public-steam-profile] steamId=${steamId} resolved=${resolvedFrom} isPublic=${isPublic} gameCount=${owned.count ?? 0} wishlistCount=${wishlist.count ?? 0}`,
   );
 
   return json({
@@ -240,5 +274,7 @@ Deno.serve(async (req: Request) => {
     },
     games: owned.games,
     gameCount: owned.count,
+    wishlist: wishlist.items,
+    wishlistCount: wishlist.count,
   });
 });

@@ -48,6 +48,7 @@
 }
 .profile-unsigned-hint a { color: var(--accent); font-weight: 600; }
 
+
 /* avatar card */
 .profile-card {
   display: flex;

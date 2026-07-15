@@ -186,7 +186,10 @@ describe('home.js wires the wishlist filter (#266)', () => {
   test('wishlist selection lazy-loads the appid Set on first activation', () => {
     // Merged handler mirrors the group selection into both librarySel and
     // wishlistSel; wishlistAppIds fetches lazily when the size becomes > 0.
-    expect(HOME_SRC).toMatch(/wishlistSel[\s\S]{0,200}sel\.has\('wishlist'\)[\s\S]{0,400}getMyWishlistAppIds/);
+    // The direct getMyWishlistAppIds call now goes through the shared
+    // _wishlistAppIdsForScope helper (#323 followup) so signed-out
+    // visitors with a saved lookup can still filter by wishlist.
+    expect(HOME_SRC).toMatch(/wishlistSel\s*=\s*sel\.has\('wishlist'\)[\s\S]{0,500}_wishlistAppIdsForScope\(\)/);
   });
 
   test('wishlistSel is included in save + restore + clear + badge count', () => {

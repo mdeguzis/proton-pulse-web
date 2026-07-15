@@ -238,6 +238,19 @@ import { initLibrary } from './components/library.js?v=fedd0b3a';
   function showSignedOut() {
     signedIn.hidden  = true;
     signedOut.hidden = false;
+    // Mount the inline "Library" panel below the Login button on first
+    // reveal. Idempotent -- mount function replaces the container's HTML,
+    // so re-calling on a subsequent sign-out cycle is harmless.
+    void _mountInlineLookup();
+  }
+
+  async function _mountInlineLookup() {
+    try {
+      const mod = await import('../shared/profile-lookup-inline.js?v=00000001');
+      mod.mountInlineProfileLookup('profile-lookup-inline-mount');
+    } catch (err) {
+      console.warn('[profile] inline lookup mount failed', err);
+    }
   }
 
   // ── Plugin linking helpers ────────────────────────────────────────────────

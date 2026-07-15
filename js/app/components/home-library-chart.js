@@ -219,8 +219,17 @@ function _writeView(v) {
   try { localStorage.setItem(HLC_VIEW_KEY, VALID_VIEWS.has(v) ? v : 'library'); } catch { /* ignore */ }
 }
 
-async function _fetchAppIds(view) {
+async function _fetchAppIds(view, { useSavedLookup = false } = {}) {
   // Device views + library scope to owned games; wishlist to the wishlist.
+  // When useSavedLookup is on, the caller is a signed-out visitor with a
+  // saved public profile -- swap the signed-in Supabase calls for the
+  // public-steam-profile edge fn (via saved-lookup.js) so the chart still
+  // renders their library / wishlist tier breakdown.
+  if (useSavedLookup) {
+    const mod = await import('../lib/saved-lookup.js?v=dfbf2fe7');
+    if (view === 'wishlist') return mod.getSavedLookupWishlistAppIds().catch(() => new Set());
+    return mod.getSavedLookupLibraryAppIds().catch(() => new Set());
+  }
   if (view === 'wishlist') return getMyWishlistAppIds().catch(() => new Set());
   return getMyLibraryAppIds().catch(() => new Set());
 }
@@ -228,9 +237,18 @@ async function _fetchAppIds(view) {
 export async function renderHomeLibraryChart(mountEl, { preferredSource } = {}) {
   if (!mountEl) return;
   const session = await window.SupaAuth?.getSession?.();
+  // #323 followup: signed-out visitors with a saved public-profile lookup
+  // get the chart populated from that profile instead of a blank block.
+  // Fall back to the empty state only if there is neither a session nor a
+  // saved lookup.
+  let useSavedLookup = false;
   if (!session?.user) {
-    mountEl.innerHTML = '';
-    return;
+    const savedMod = await import('../lib/saved-lookup.js?v=dfbf2fe7');
+    if (!savedMod.hasSavedLookup()) {
+      mountEl.innerHTML = '';
+      return;
+    }
+    useSavedLookup = true;
   }
   await loadSearchIndex().catch(() => null);
   // Nav-driven override maps the ?filter= hint into the view chip.
@@ -239,7 +257,7 @@ export async function renderHomeLibraryChart(mountEl, { preferredSource } = {}) 
     : _readView();
   if (preferredSource) _writeView(view);
   let [appIds, deckMap] = await Promise.all([
-    _fetchAppIds(view),
+    _fetchAppIds(view, { useSavedLookup }),
     loadDeckStatusMap().catch(() => ({})),
   ]);
   mountEl.innerHTML = _renderChartHtml(view, appIds, deckMap);
@@ -252,7 +270,7 @@ export async function renderHomeLibraryChart(mountEl, { preferredSource } = {}) 
     _writeView(view);
     const busy = mountEl.querySelector('.hlc-bars, .hlc-empty-body');
     if (busy) busy.style.opacity = '0.4';
-    appIds = await _fetchAppIds(view);
+    appIds = await _fetchAppIds(view, { useSavedLookup });
     mountEl.innerHTML = _renderChartHtml(view, appIds, deckMap);
   });
 }
