@@ -334,6 +334,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
         <div class="cb-factor"><div><div class="cb-factor-label">Notes</div><div class="cb-factor-detail">${hasNotes ? (report.notes.length > 80 ? esc(report.notes.slice(0, 80)) + '...' : esc(report.notes)) : 'None provided'}</div></div><div class="cb-factor-value ${hasNotes ? 'cb-positive' : 'cb-neutral'}">${hasNotes ? report.notes.length + ' chars' : 'absent'}</div></div>
       </div>
 
+      <p style="margin:12px 0 0;font-size:0.7rem;color:var(--muted)">Source: <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/js/shared/scoring.js" target="_blank" rel="noopener" style="color:var(--accent)">js/shared/scoring.js</a> &rarr; <code style="font-size:0.68rem">estimateScoreBreakdown()</code> · <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Scoring-Algorithm#confidence-computation" target="_blank" rel="noopener" style="color:var(--accent)">wiki</a></p>
       <a class="cb-back" href="confidence.html?app=${esc(appId)}">&larr; Back to aggregate stats</a>
     `;
   }
@@ -759,6 +760,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
           <div style="margin-bottom:8px"><div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:4px">Recency weights</div>${recencyChips}</div>
           ${srcLine}
           <p style="margin:10px 0 0;font-size:0.76rem;line-height:1.5;color:var(--muted)">Each report contributes <code style="color:var(--accent);font-size:0.74rem">score &times; recency_weight</code>. The weighted average (${wSum.toFixed(2)} / ${wTotal.toFixed(2)} = <strong style="color:var(--text)">${avg.toFixed(3)}</strong>) is compared against thresholds to produce the tier. All sources weighted identically.</p>
+          <p style="margin:6px 0 0;font-size:0.7rem;color:var(--muted)">Source: <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/js/shared/scoring.js" target="_blank" rel="noopener" style="color:var(--accent)">js/shared/scoring.js</a> &rarr; <code style="font-size:0.68rem">pulseTierFromReports()</code> · <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Scoring-Algorithm#per-game-aggregation-web" target="_blank" rel="noopener" style="color:var(--accent)">wiki</a></p>
         </div>`;
     })() : '';
 
@@ -788,6 +790,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
           ? `<span style="color:var(--muted);font-size:0.78rem">${trend.recentCount} report${trend.recentCount !== 1 ? 's' : ''} last 90d vs ${trend.priorCount} in prior 90-270d window</span>`
           : `<span style="color:var(--muted);font-size:0.78rem">Need at least 2 reports in each window for trend analysis.</span>`}
       </div>
+      <p style="margin:6px 0 0;font-size:0.7rem;color:var(--muted)">Source: <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/js/lib/scoring/gameStats.js" target="_blank" rel="noopener" style="color:var(--accent)">js/lib/scoring/gameStats.js</a> &rarr; <code style="font-size:0.68rem">computeCompatTrend()</code> · <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Scoring-Algorithm#compatibility-trend" target="_blank" rel="noopener" style="color:var(--accent)">wiki</a></p>
 
       <h3 class="cb-section-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></svg>Rating distribution</h3>
       <p style="font-size:0.82rem;color:var(--muted);margin:0 0 10px">How the ${n} reports break down by tier.</p>
@@ -822,6 +825,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
         Data pool is ${displayed >= 80 ? 'strong' : displayed >= 50 ? 'moderate' : 'thin'}.
         ${freshnessAdjust < 0 ? `Freshness penalty: -${Math.abs(freshnessAdjust)} points.` : ''}
       </div>
+      <p style="margin:6px 0 0;font-size:0.7rem;color:var(--muted)">Source: <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/js/shared/scoring.js" target="_blank" rel="noopener" style="color:var(--accent)">js/shared/scoring.js</a> &rarr; <code style="font-size:0.68rem">estimateScoreBreakdown()</code> · <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Scoring-Algorithm#confidence-computation" target="_blank" rel="noopener" style="color:var(--accent)">wiki</a></p>
 
       <h3 class="cb-section-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/></svg>Per-Proton-version success</h3>
       <p style="font-size:0.82rem;color:var(--muted);margin:0 0 10px">% of reports rated silver or better per Proton version (sorted by report count).</p>
