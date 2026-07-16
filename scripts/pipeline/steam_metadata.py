@@ -294,9 +294,16 @@ def run_steamcmd_app_info(app_id: int, timeout: int = 60) -> str:
 
     Rate limit: steamcmd caches locally, but hammering PICS still risks a
     Steam client ban. Callers should sleep 2-5s between apps in a batch.
+
+    Input validation: the app_id parameter is typed as int but Python does
+    not enforce the annotation at runtime. Coerce via int() so anything
+    non-numeric raises rather than reaching the subprocess argv. This also
+    satisfies Semgrep's dangerous-subprocess-use-tainted-env-args rule --
+    the argv is now provably digits-only for the app-id-bearing entries.
     """
     if not steamcmd_available():
         raise RuntimeError(f"steamcmd not on PATH ({STEAMCMD_BINARY}); install it first")
+    safe_app_id = str(int(app_id))
     # `+app_info_request <id>` forces PICS to fetch fresh product info for
     # this app. `+app_info_print` alone reads the local cache, which is
     # empty on a fresh runner -- that produced our first-run 'no_manifest'
@@ -308,12 +315,12 @@ def run_steamcmd_app_info(app_id: int, timeout: int = 60) -> str:
         STEAMCMD_BINARY,
         "+login", "anonymous",
         "+app_info_update", "1",
-        "+app_info_request", str(app_id),
+        "+app_info_request", safe_app_id,
         "+delay", "3",
-        "+app_info_print", str(app_id),
+        "+app_info_print", safe_app_id,
         "+quit",
     ]
-    proc = subprocess.run(
+    proc = subprocess.run(  # nosec B603  # nosemgrep: python.lang.security.audit.dangerous-subprocess-use-tainted-env-args.dangerous-subprocess-use-tainted-env-args - argv is a fixed list of literals; the only interpolated slot is safe_app_id which is coerced to str(int(...)) above
         cmd, capture_output=True, text=True, timeout=timeout, check=False,
     )
     if proc.returncode != 0:

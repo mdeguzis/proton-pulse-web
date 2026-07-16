@@ -505,7 +505,7 @@ jobs:
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
           mkdir -p badges
-          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell — hardcoded URL; python3 parses JSON count, not arbitrary code
+          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell - hardcoded Supabase count URL piped to a fixed python3 -c that reads only the count field; no arbitrary code execution possible
           PULSE_COUNT=$(curl -s \
             -H "apikey: sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V" \
             -H "Prefer: count=exact" \
@@ -649,7 +649,7 @@ jobs:
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o ./scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o ./form-schema.json
           mkdir -p ./badges
-          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell — hardcoded URL; python3 parses JSON count, not arbitrary code
+          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell - hardcoded Supabase count URL piped to a fixed python3 -c that reads only the count field; no arbitrary code execution possible
           PULSE_COUNT=$(curl -s \
             -H "apikey: sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V" \
             -H "Prefer: count=exact" \
@@ -857,7 +857,7 @@ jobs:
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
           mkdir -p badges
-          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell — hardcoded URL; python3 parses JSON count, not arbitrary code
+          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell - hardcoded Supabase count URL piped to a fixed python3 -c that reads only the count field; no arbitrary code execution possible
           PULSE_COUNT=$(curl -s \
             -H "apikey: sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V" \
             -H "Prefer: count=exact" \
@@ -1093,7 +1093,7 @@ jobs:
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
           mkdir -p badges
-          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell — hardcoded URL; python3 parses JSON count, not arbitrary code
+          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell - hardcoded Supabase count URL piped to a fixed python3 -c that reads only the count field; no arbitrary code execution possible
           PULSE_COUNT=$(curl -s \
             -H "apikey: sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V" \
             -H "Prefer: count=exact" \

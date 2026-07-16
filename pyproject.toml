@@ -18,8 +18,16 @@ dev = [
 ]
 
 [tool.uv]
-# nosemgrep: generic.ci.security.uv-missing-dependency-cooldown — cooldown configured in .github/dependabot.yml (uv ecosystem entry)
+# Dependency cooldown: 7 days for both major/minor and patch releases so a
+# just-published malicious package cannot land in a `uv sync` run before
+# supply-chain scanners flag it. Same lever Semgrep's
+# uv-missing-dependency-cooldown rule looks for.
 default-groups = ["dev"]
+
+[tool.uv.dependency-cooldown]
+major = "7d"
+minor = "7d"
+patch = "7d"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

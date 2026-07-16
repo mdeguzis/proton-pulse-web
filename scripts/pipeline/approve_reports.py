@@ -20,7 +20,16 @@ SUPABASE_KEY = os.environ.get('SUPABASE_SERVICE_KEY', '')
 
 
 def compute_approval_hash(report):
-    """Generate md5 hash from key report fields."""
+    """Generate an md5 fingerprint from key report fields.
+
+    Used as a content-change detector, not a cryptographic hash: if any of
+    these fields change after approval, the fingerprint changes and the
+    pipeline knows to re-run approval on the report. Collision resistance
+    is irrelevant here (an attacker with write access to user_configs can
+    already do worse things than forging a hash). Passing
+    usedforsecurity=False tells Bandit / Semgrep the MD5 choice is
+    intentional for a non-security use.
+    """
     parts = [
         str(report.get('app_id', '')),
         str(report.get('client_id', '')),
@@ -31,7 +40,7 @@ def compute_approval_hash(report):
         str(report.get('created_at', '')),
     ]
     raw = '|'.join(parts)
-    return hashlib.md5(raw.encode('utf-8')).hexdigest()
+    return hashlib.md5(raw.encode('utf-8'), usedforsecurity=False).hexdigest()  # nosemgrep: python.lang.security.insecure-hash-algorithms-md5.insecure-hash-algorithm-md5 - non-security fingerprint; see docstring
 
 
 def fetch_pending_reports():
