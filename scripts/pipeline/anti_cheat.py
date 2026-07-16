@@ -56,7 +56,14 @@ _APPDETAILS_VENDOR_PATTERNS: dict[str, tuple[str, ...]] = {
 # depth pattern release_years.py uses so a Steam 403-flood cannot stall
 # finalize. The scan queues at most PROBE_CAP fresh appids per run, then
 # stops -- the cache persists so subsequent runs pick up the tail.
-APPDETAILS_PROBE_CAP = 200
+#
+# Set to 0 by default so a first roll-out ships with just the AreWeAntiCheatYet
+# base + title-match backfill, both zero-network passes. Raise once we've
+# confirmed finalize wall-clock is healthy on staging. Also settable via
+# ANTI_CHEAT_APPDETAILS_PROBE_CAP env var so a manual dispatch can turn it
+# on without touching code.
+import os as _os
+APPDETAILS_PROBE_CAP = int(_os.environ.get("ANTI_CHEAT_APPDETAILS_PROBE_CAP", "0"))
 APPDETAILS_WALL_CLOCK_BUDGET_SEC = 240
 APPDETAILS_CONSECUTIVE_FAILURE_LIMIT = 8
 
