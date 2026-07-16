@@ -146,3 +146,35 @@ describe('boxart admin detail: override-metadata spacing', () => {
     );
   });
 });
+
+describe('boxart admin detail: refetch verifies preview in-browser (#351)', () => {
+  test('module-scope _imgLoadsBrowser helper uses Image() with a timeout', () => {
+    expect(BOXART_SRC).toMatch(
+      /function _imgLoadsBrowser\([\s\S]{0,400}new Image\(\)[\s\S]{0,300}img\.onerror/,
+    );
+  });
+
+  test('refetch fallback list covers akamai, fastly, and cloudflare', () => {
+    const fn = BOXART_SRC.match(/function _steamRefetchFallbacks[\s\S]{0,1500}?\n\}/);
+    expect(fn).toBeTruthy();
+    expect(fn[0]).toContain('shared.akamai.steamstatic.com');
+    expect(fn[0]).toContain('shared.fastly.steamstatic.com');
+    expect(fn[0]).toContain('cdn.cloudflare.steamstatic.com');
+  });
+
+  test('refetch handler verifies the returned URL in browser and walks fallbacks', () => {
+    // The refetch branch must call _imgLoadsBrowser on the returned URL
+    // and, if it fails, iterate through _steamRefetchFallbacks. Otherwise
+    // the preview stays broken when appdetails returns a hashed URL that
+    // is 200 at the edge but does not render in-browser.
+    expect(BOXART_SRC).toMatch(
+      /action === 'refetch'[\s\S]{0,2000}refetchSteamHeader[\s\S]{0,1500}_imgLoadsBrowser\(originalUrl\)[\s\S]{0,400}_steamRefetchFallbacks/,
+    );
+  });
+
+  test('successful refetch updates the preview <img> to the winning URL', () => {
+    expect(BOXART_SRC).toMatch(
+      /action === 'refetch'[\s\S]{0,3000}getElementById\('boxart-detail-preview'\)[\s\S]{0,200}prev\.src\s*=\s*result\.url/,
+    );
+  });
+});
