@@ -1,7 +1,7 @@
 // Entry module for game-stats.html. Migrated from game-stats.js.
 import { computeGameStats } from '../lib/scoring/gameStats.js?v=1c1b7f9d';
 import { pulseTierFromReports } from '../shared/scoring.js?v=8051e115';
-import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner } from '../shared/hardware.js?v=6a1246aa';
+import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhanceHardwareBanner } from '../shared/hardware.js?v=6a1246aa';
 import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange } from '../shared/chart-interactions.js?v=6b608095';
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=ba0d7848';
 import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
@@ -741,8 +741,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     // page can both surface the banner and feed personalised match scoring
     // into future sections (#74 will lean on this)
     const myHw = typeof loadMyHardware === 'function' ? loadMyHardware() : null;
-    const previewBanner = (myHw && isPreviewHardware(myHw))
-      ? renderPreviewHardwareBanner() : '';
+    const previewBanner = renderPreviewHardwareBanner();
 
     const { html, wire } = renderAll(appId, title, stats, {
       pulseCount: pulseReports.length,
@@ -753,6 +752,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     // wire() must run AFTER innerHTML so the hover helper sees real DOM rects.
     // Also surface the filter event for future consumers (a debug log for now)
     wire();
+    void enhanceHardwareBanner();
     // Deep links from other pages (e.g. the game page trend line -> #trend)
     // land after this async render, so the browser has already given up on the
     // hash. Scroll the target section into view ourselves once it exists.
