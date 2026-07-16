@@ -57,11 +57,10 @@ _APPDETAILS_VENDOR_PATTERNS: dict[str, tuple[str, ...]] = {
 # finalize. The scan queues at most PROBE_CAP fresh appids per run, then
 # stops -- the cache persists so subsequent runs pick up the tail.
 #
-# Set to 0 by default so a first roll-out ships with just the AreWeAntiCheatYet
-# base + title-match backfill, both zero-network passes. Raise once we've
-# confirmed finalize wall-clock is healthy on staging. Also settable via
-# ANTI_CHEAT_APPDETAILS_PROBE_CAP env var so a manual dispatch can turn it
-# on without touching code.
+# Default 0 for the initial rollout so first prod run ships with just the
+# zero-network passes (AreWeAntiCheatYet + title-match backfill). Raise
+# once staging finalize wall-clock is healthy. Overridable via env var
+# so a manual dispatch can flip it on without a code change.
 import os as _os
 APPDETAILS_PROBE_CAP = int(_os.environ.get("ANTI_CHEAT_APPDETAILS_PROBE_CAP", "0"))
 APPDETAILS_WALL_CLOCK_BUDGET_SEC = 240
