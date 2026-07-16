@@ -22,6 +22,44 @@ import {
   setBoxArtOverride, uploadBoxArtOverride, clearBoxArtOverride, listBoxArtOverrides,
 } from '../api/boxart.js?v=d0ed4be0';
 
+// Verify a URL actually loads in the browser via <img>. Refetch (#351)
+// uses this to catch the case where Steam appdetails returns a URL that
+// server-side HEAD says is 200 but the browser's <img> element fails to
+// render (redirect chain that ends in 404, region-locked CDN edge, etc).
+// Same shape as the batch-probe helper defined inside renderBoxartAdmin,
+// hoisted to module scope so the detail view can reuse it.
+function _imgLoadsBrowser(url, timeoutMs = 5000) {
+  return new Promise((resolve) => {
+    if (!url) { resolve(false); return; }
+    const img = new Image();
+    const t = setTimeout(() => { img.src = ''; resolve(false); }, timeoutMs);
+    img.onload = () => { clearTimeout(t); resolve(true); };
+    img.onerror = () => { clearTimeout(t); resolve(false); };
+    img.src = url;
+  });
+}
+
+// Build the Steam-CDN fallback ladder for a refetch URL that didn't
+// load in-browser. Order matches _resolveCurrentLive's server-side
+// probe (Akamai -> Fastly -> Cloudflare) with a host-swap of the
+// original URL prepended so a hashed appdetails path gets tried on
+// both Akamai and Fastly before we drop to the plain header.jpg paths.
+function _steamRefetchFallbacks(originalUrl, appId) {
+  const enc = encodeURIComponent(appId);
+  const list = [];
+  if (originalUrl && originalUrl.includes('shared.akamai.steamstatic.com')) {
+    list.push(originalUrl.replace('shared.akamai.steamstatic.com', 'shared.fastly.steamstatic.com'));
+  } else if (originalUrl && originalUrl.includes('shared.fastly.steamstatic.com')) {
+    list.push(originalUrl.replace('shared.fastly.steamstatic.com', 'shared.akamai.steamstatic.com'));
+  }
+  list.push(
+    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${enc}/header.jpg`,
+    `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${enc}/header.jpg`,
+    `https://cdn.cloudflare.steamstatic.com/steam/apps/${enc}/header.jpg`,
+  );
+  return list.filter((u) => u && u !== originalUrl);
+}
+
 // Strip trademark / registered / service-mark symbols (and collapse the
 // whitespace they leave behind) from a store title so it works as a
 // SteamGridDB search term. "Battlefield(TM) 6" -> "Battlefield 6".
@@ -1368,6 +1406,32 @@ export async function renderBoxartAdminDetail(appId) {
           result = row.type === 'steam'
             ? await refetchSteamHeader(row.appId)
             : await refetchNonSteamHeader(row.appId, row.cachedUrl || null);
+          // #351: refetch's returned URL is only guaranteed to be HEAD-200
+          // server-side. The browser's <img> element occasionally sees a
+          // different result (redirect chain 404, region-locked CDN edge,
+          // CORS shadowing on the actual GET). When the returned URL will
+          // not render in-browser, walk the Akamai / Fastly / Cloudflare
+          // fallback ladder and surface the first one that does load. If
+          // any candidate wins, update the preview <img> so the admin
+          // sees the working image immediately.
+          if (result?.ok && result.url && row.type === 'steam') {
+            const originalUrl = result.url;
+            if (!(await _imgLoadsBrowser(originalUrl))) {
+              let winner = null;
+              for (const candidate of _steamRefetchFallbacks(originalUrl, row.appId)) {
+                if (await _imgLoadsBrowser(candidate)) { winner = candidate; break; }
+              }
+              if (winner) {
+                result = { ...result, url: winner, resolved_via: `${result.resolved_via || 'appdetails'} (browser fallback)` };
+              } else {
+                result = { ok: false, url: originalUrl, error: 'refetch returned a URL but no candidate loaded in browser (tried Akamai, Fastly, Cloudflare)' };
+              }
+            }
+          }
+          if (result?.ok && result.url) {
+            const prev = document.getElementById('boxart-detail-preview');
+            if (prev) { prev.src = result.url; prev.style.opacity = 1; prev.alt = 'header preview'; }
+          }
         } else {
           result = await refetchSgdbHeader(row.appId);
           // Common failure: SGDB has no entry for this Steam appid.
