@@ -1132,6 +1132,11 @@ pre.flag-raw-json {
   text-transform: uppercase;
   background: rgba(255,255,255,0.08);
   color: var(--text-muted, #888);
+  /* Keep multi-word labels like "DEFAULT CDN" on one line. Narrow
+     mobile viewports (the box art manager on the Steam Deck browser)
+     used to wrap the badge into two rows which pushed the row height
+     up and confused the "one-glance" status column. */
+  white-space: nowrap;
 }
 .admin-badge--warn  { background: rgba(212,168,67,0.18);  color: #d4a843; }
 .admin-badge--muted { background: rgba(255,255,255,0.07); color: var(--text-muted, #888); }

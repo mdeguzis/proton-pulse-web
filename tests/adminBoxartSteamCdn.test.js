@@ -61,8 +61,10 @@ describe('boxart admin detail: Steam CDN image panel (#345)', () => {
     // Use <img> load detection, not fetch(). Steam CDN behaves inconsistently
     // for browser fetch() (CORS on some paths, redirects on others), but the
     // Image element always renders the pixels + fires onload/onerror.
+    // Post-#348: probe crosses both Cloudflare + Fastly bases so the map is
+    // now a flatMap over bases; match either shape.
     expect(BOXART_SRC).toMatch(
-      /data-steamcdn="fetch"[\s\S]{0,1500}STEAM_CDN_VARIANTS\.map[\s\S]{0,400}new Image\(\)[\s\S]{0,200}img\.onload/,
+      /data-steamcdn="fetch"[\s\S]{0,1500}STEAM_CDN_VARIANTS\.(?:map|flatMap)[\s\S]{0,500}new Image\(\)[\s\S]{0,200}img\.onload/,
     );
   });
 

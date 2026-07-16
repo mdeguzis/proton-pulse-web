@@ -690,13 +690,23 @@ export async function renderBoxartAdmin() {
         done += 1;
         if (r.override?.image_url) { skip += 1; }
         else {
-          const base = `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(r.appId)}`;
-          // Try each wide variant in preference order; stop at the first hit.
+          // #348: try the Fastly-fronted store_item_assets mirror before
+          // the legacy Cloudflare CDN. Some games 404 on Cloudflare but
+          // 200 on Fastly. Order: cloudflare (widest historical coverage)
+          // then fastly (newer mirror).
+          const bases = [
+            `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(r.appId)}`,
+            `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(r.appId)}`,
+          ];
+          // Try each wide variant in preference order across every base;
+          // stop at the first hit.
           let picked = null;
-          for (const file of STEAM_CDN_WIDE_PREF) {
-            if (cancelToken.cancelled) break;
-            const url = `${base}/${file}`;
-            if (await _imgLoads(url)) { picked = url; break; }
+          outer: for (const file of STEAM_CDN_WIDE_PREF) {
+            for (const base of bases) {
+              if (cancelToken.cancelled) break outer;
+              const url = `${base}/${file}`;
+              if (await _imgLoads(url)) { picked = url; break outer; }
+            }
           }
           if (picked) {
             const applied = await setBoxArtOverride(r.appId, picked);
@@ -1029,6 +1039,10 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
 
   // Standard Steam URLs (only meaningful for type=steam).
   const akamaiUrl     = type === 'steam' ? `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(appId)}/header.jpg` : null;
+  // #348: Steam's newer Fastly-fronted mirror. Same store_item_assets path
+  // Akamai serves but on a different CDN. Some games 404 on Akamai but 200
+  // on Fastly (or vice-versa), so surfacing it here lets admins verify.
+  const fastlyUrl     = type === 'steam' ? `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(appId)}/header.jpg` : null;
   const cloudflareUrl = type === 'steam' ? `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(appId)}/header.jpg` : null;
 
   const previewSrc = currentLiveUrl || override?.image_url || cachedUrl || akamaiUrl || '';
@@ -1063,6 +1077,7 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
             ${_urlRowHtml('Store', type, { plain: true })}
             ${_urlRowHtml('Admin override', override?.image_url || null, { highlight: currentSource === 'override', note: currentSource === 'override' ? 'live' : '' })}
             ${type === 'steam' ? _urlRowHtml('Default CDN (akamai)', akamaiUrl, { highlight: currentSource === 'akamai',     note: currentSource === 'akamai'     ? 'live' : '' }) : ''}
+            ${type === 'steam' ? _urlRowHtml('Fastly CDN',           fastlyUrl,     { highlight: currentSource === 'fastly',     note: currentSource === 'fastly'     ? 'live' : '' }) : ''}
             ${type === 'steam' ? _urlRowHtml('Cloudflare CDN',       cloudflareUrl, { highlight: currentSource === 'cloudflare', note: currentSource === 'cloudflare' ? 'live' : '' }) : ''}
             ${_urlRowHtml(type === 'steam' ? 'Pipeline fallback (game-images.json)' : 'Pipeline URL (nonsteam-images.json)', cachedUrl, { highlight: currentSource === 'pipeline', note: currentSource === 'pipeline' ? 'live' : '' })}
             <tr aria-hidden="true"><td colspan="2" style="height:14px; border:none; padding:0"></td></tr>
@@ -1082,9 +1097,17 @@ async function _resolveCurrentLive(row) {
   if (row.override?.image_url) return { url: row.override.image_url, source: 'override' };
   if (row.type === 'steam') {
     const akamai = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(row.appId)}/header.jpg`;
+    // #348: Steam started rolling out a Fastly-fronted mirror at
+    // shared.fastly.steamstatic.com/store_item_assets/steam/apps/<id>/header.jpg
+    // which returns 200 for some games where the Akamai / Cloudflare paths
+    // 404 without the content-hash segment. Probe it before falling back to
+    // the pipeline cache.
+    const fastly = `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(row.appId)}/header.jpg`;
     const cloudflare = `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(row.appId)}/header.jpg`;
     let r = await probeImageUrl(akamai);
     if (r.ok) return { url: akamai, source: 'akamai' };
+    r = await probeImageUrl(fastly);
+    if (r.ok) return { url: fastly, source: 'fastly' };
     r = await probeImageUrl(cloudflare);
     if (r.ok) return { url: cloudflare, source: 'cloudflare' };
     if (row.cachedUrl) {
@@ -1266,21 +1289,36 @@ export async function renderBoxartAdminDetail(appId) {
         }
         fetchBtn.disabled = true;
         steamCdnStatus('Loading Steam CDN variants...');
-        const base = `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(row.appId)}`;
+        // #348: Try Cloudflare first (broadest historical coverage) then
+        // Fastly (newer store_item_assets mirror). Some games only serve
+        // via one of the two -- surfacing both catches everything.
+        const bases = [
+          `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(row.appId)}`,
+          `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(row.appId)}`,
+        ];
         // Use <img> load detection instead of fetch(). Steam CDN sends CORS
         // headers on files it serves, but browser fetch() still fails on
         // many of them (some variants get redirected through hashed URLs,
         // some 403 the OPTIONS pre-check). The <img> element ignores CORS
         // for pure display, so onload/onerror is the reliable existence
         // signal. Same trick SteamDB + OMGDuke's protondb-decky use.
-        const results = await Promise.all(STEAM_CDN_VARIANTS.map((v) => new Promise((resolve) => {
+        const results = await Promise.all(STEAM_CDN_VARIANTS.flatMap((v) => bases.map((base) => new Promise((resolve) => {
           const url = `${base}/${v.file}`;
           const img = new Image();
           img.onload = () => resolve({ v, url });
           img.onerror = () => resolve(null);
           img.src = url;
-        })));
-        const hits = results.filter(Boolean);
+        }))));
+        // Dedupe by variant.file so a game that loads on both Cloudflare
+        // and Fastly renders as one card (preferring the first hit, which
+        // per the bases order is Cloudflare).
+        const seen = new Set();
+        const hits = [];
+        for (const r of results) {
+          if (!r || seen.has(r.v.file)) continue;
+          seen.add(r.v.file);
+          hits.push(r);
+        }
         const resultsEl = document.getElementById('steamcdn-results');
         if (resultsEl) {
           resultsEl.innerHTML = hits.length

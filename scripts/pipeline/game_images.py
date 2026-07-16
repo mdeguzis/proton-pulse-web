@@ -63,6 +63,14 @@ def _standard_header_url(app_id: str) -> str:
     return f"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{app_id}/header.jpg"
 
 
+def _fastly_header_url(app_id: str) -> str:
+    # #348: Fastly-fronted mirror of the same store_item_assets namespace.
+    # Some games 404 on Akamai but 200 on Fastly (or vice-versa) -- probe
+    # this before falling back to appdetails so the pipeline can cheaply
+    # keep those in the fast-path.
+    return f"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/{app_id}/header.jpg"
+
+
 def _fetch_admin_overrides(timeout: int = 10) -> dict[str, dict]:
     """Fetch all rows from Supabase box_art_overrides via the anon REST API.
 
@@ -476,8 +484,14 @@ def build_game_images(output_dir) -> dict[str, str]:
         if _url_is_ok(standard_url):
             log(f"[game-images] {app_id}: standard URL ok", debug=True)
             cache[app_id] = {"status": "ok", "probed_at": today}
+        elif _url_is_ok(_fastly_header_url(app_id)):
+            # #348: same store_item_assets path, different CDN. When Akamai
+            # 404s but Fastly 200s, cache it as ok so the frontend picks
+            # up the fastly URL via its own probe order.
+            log(f"[game-images] {app_id}: fastly URL ok (akamai 404)")
+            cache[app_id] = {"status": "ok", "probed_at": today}
         else:
-            log(f"[game-images] {app_id}: standard URL 404, fetching from Steam API")
+            log(f"[game-images] {app_id}: standard + fastly URLs 404, fetching from Steam API")
             real_url, status = _fetch_steam_header(app_id, store_up=store_up)
             if real_url:
                 url_clean = real_url.split("?")[0]
