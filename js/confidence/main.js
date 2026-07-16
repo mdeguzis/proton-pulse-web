@@ -12,11 +12,12 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
   // on localhost dev preview without local data
   const SITE_BASE = (() => {
     const parts = location.pathname.split('/').filter(Boolean);
-    return parts[0] === 'proton-pulse-web' ? '/proton-pulse-web' : '';
+    if (parts[0] === 'proton-pulse-web-staging') return '/proton-pulse-web-staging';
+    if (parts[0] === 'proton-pulse-web') return '/proton-pulse-web';
+    return '';
   })();
   const IS_LOCAL_DEV = ['localhost', '127.0.0.1', '0.0.0.0'].includes(location.hostname);
-  const _usesProdData = IS_LOCAL_DEV || (location.hostname || '').endsWith('.github.io');
-  const CDN_BASE = _usesProdData
+  const CDN_BASE = IS_LOCAL_DEV
     ? 'https://www.proton-pulse.com/data'
     : `${location.origin}${SITE_BASE}/data`;
 
