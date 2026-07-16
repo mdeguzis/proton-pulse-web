@@ -687,15 +687,78 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
       ? `<span class="cb-total" style="background:${tierBg};color:${tierFg};margin-left:8px">${TIER_LBL[overallTier]}</span>`
       : '';
 
-    // Plain-language "why this rating" callout, driven by the report mix so the
-    // user sees the tiers that produced the verdict (#192 follow-up).
-    const _mixParts = ratingMix(reports)
-      .map(({ tier, count }) => `<strong style="color:${RATING_COLORS[tier] || '#888'}">${count} ${TIER_LBL[tier]}</strong>`);
-    const whyRating = overallTier && n > 0 ? `
-      <div class="cb-why-rating" style="margin:14px 0 4px;padding:12px 16px;background:var(--s1);border:1px solid var(--border);border-left:3px solid ${RATING_COLORS[overallTier] || '#3a4a5a'};border-radius:6px">
-        <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);font-weight:700">Why ${TIER_LBL[overallTier]}?</div>
-        <p style="margin:6px 0 0;font-size:0.9rem;line-height:1.55;color:var(--text)">Rated <strong style="color:${RATING_COLORS[overallTier] || '#888'}">${TIER_LBL[overallTier]}</strong> across ${n} report${n !== 1 ? 's' : ''}: ${_mixParts.join(', ')}. Newer reports count for more, so the rating mix above plus recency set the overall tier.</p>
-      </div>` : '';
+    // Full "why this tier" breakdown with the recency-weighted derivation table
+    const whyRating = overallTier && n > 0 ? (() => {
+      const SCORE_MAP = { platinum: 1.0, gold: 0.8, silver: 0.6, bronze: 0.4, borked: 0.0 };
+      const THRESHOLDS = [
+        { tier: 'platinum', min: 0.85 }, { tier: 'gold', min: 0.65 },
+        { tier: 'silver', min: 0.40 }, { tier: 'bronze', min: 0.15 }, { tier: 'borked', min: 0.00 },
+      ];
+      const RECENCY = [
+        { max: 30, weight: 1.0, label: '<30d' }, { max: 90, weight: 0.85, label: '30-90d' },
+        { max: 180, weight: 0.65, label: '90-180d' }, { max: 365, weight: 0.40, label: '180d-1y' },
+        { max: 730, weight: 0.20, label: '1-2y' }, { max: 1095, weight: 0.10, label: '2-3y' },
+        { max: 1825, weight: 0.05, label: '3-5y' }, { max: Infinity, weight: 0.02, label: '5y+' },
+      ];
+      const nowSec = Date.now() / 1000;
+      let wSum = 0, wTotal = 0;
+      const perRep = [];
+      for (const r of reports) {
+        const days = Math.round((nowSec - (r.timestamp || 0)) / 86400);
+        const bucket = RECENCY.find(b => days < b.max) || RECENCY[RECENCY.length - 1];
+        const sc = SCORE_MAP[r.rating] ?? 0.5;
+        const w = sc * bucket.weight;
+        wSum += w; wTotal += bucket.weight;
+        perRep.push({ rating: r.rating, days, recencyWeight: bucket.weight, score: sc, weighted: w, recencyLabel: bucket.label });
+      }
+      const avg = wTotal > 0 ? wSum / wTotal : 0;
+      const tiers = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
+      const tierRows = tiers.map(t => {
+        const reps = perRep.filter(r => r.rating === t);
+        if (!reps.length) return '';
+        const tWSum = reps.reduce((s, r) => s + r.weighted, 0);
+        const tWTotal = reps.reduce((s, r) => s + r.recencyWeight, 0);
+        return `<tr><td><strong style="color:${RATING_COLORS[t]}">${t.toUpperCase()}</strong></td><td style="text-align:right">${reps.length}</td><td style="text-align:right">${SCORE_MAP[t].toFixed(1)}</td><td style="text-align:right">${tWTotal.toFixed(2)}</td><td style="text-align:right">${tWSum.toFixed(2)}</td></tr>`;
+      }).filter(Boolean).join('');
+      const threshChips = THRESHOLDS.map(t => {
+        const active = overallTier === t.tier;
+        return `<span style="display:inline-block;padding:3px 8px;margin:2px 4px 2px 0;border-radius:4px;border:1px solid ${RATING_COLORS[t.tier]};font-size:0.76rem;font-family:var(--mono);${active ? 'background:rgba(255,255,255,0.08);color:var(--text)' : 'color:var(--muted)'}"><strong>${t.tier}</strong> &ge; ${t.min}</span>`;
+      }).join('');
+      const recencyChips = RECENCY.map(b => {
+        const cnt = perRep.filter(r => r.recencyLabel === b.label).length;
+        if (!cnt) return '';
+        return `<span style="font-family:var(--mono);font-size:0.76rem;color:var(--muted)">${b.label}: <strong style="color:var(--text)">${b.weight}x</strong> (${cnt})</span>`;
+      }).filter(Boolean).join(' ');
+      const mixParts = tiers.filter(t => perRep.some(r => r.rating === t))
+        .map(t => `<strong style="color:${RATING_COLORS[t]}">${perRep.filter(r => r.rating === t).length}</strong> ${TIER_LBL[t]}`);
+      // Per-source
+      const pdb = perRep.filter((_, i) => (reports[i].source || '').toLowerCase() === 'protondb');
+      const pulse = perRep.filter((_, i) => (reports[i].source || '').toLowerCase() !== 'protondb');
+      const srcBits = [];
+      if (pdb.length) srcBits.push(`ProtonDB: <strong>${pdb.length}</strong> reports`);
+      if (pulse.length) srcBits.push(`Pulse: <strong>${pulse.length}</strong> reports`);
+      const srcLine = srcBits.length > 1 ? `<div style="margin-top:8px;font-size:0.78rem;color:var(--muted)">Sources: ${srcBits.join(' · ')}</div>` : '';
+      return `
+        <div class="cb-why-rating" style="margin:14px 0 4px;padding:16px 18px;background:var(--s1);border:1px solid var(--border);border-left:3px solid ${RATING_COLORS[overallTier] || '#3a4a5a'};border-radius:6px">
+          <div style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--strong);margin-bottom:4px">Why ${TIER_LBL[overallTier]}?</div>
+          <div style="font-family:var(--mono);font-size:0.82rem;color:var(--muted);margin-bottom:12px">${mixParts.join(', ')} across ${n} reports</div>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px;font-family:var(--mono);font-size:0.88rem">
+            <span style="color:var(--muted)">Weighted average:</span>
+            <strong style="font-size:1.1rem;color:${RATING_COLORS[overallTier] || '#7a9bb5'}">${avg.toFixed(3)}</strong>
+            <span style="color:var(--muted)">&rarr;</span>
+            <strong style="color:${RATING_COLORS[overallTier] || '#7a9bb5'};text-transform:uppercase;letter-spacing:0.04em">${TIER_LBL[overallTier]}</strong>
+          </div>
+          <table style="width:100%;border-collapse:collapse;font-family:var(--mono);font-size:0.8rem;margin-bottom:12px">
+            <thead><tr style="border-bottom:1px solid var(--border)"><th style="text-align:left;padding:4px 6px;color:var(--muted);font-size:0.7rem;text-transform:uppercase">Tier</th><th style="text-align:right;padding:4px 6px;color:var(--muted);font-size:0.7rem">Reports</th><th style="text-align:right;padding:4px 6px;color:var(--muted);font-size:0.7rem">Score</th><th style="text-align:right;padding:4px 6px;color:var(--muted);font-size:0.7rem">&Sigma; Weight</th><th style="text-align:right;padding:4px 6px;color:var(--muted);font-size:0.7rem">&Sigma; Weighted</th></tr></thead>
+            <tbody>${tierRows}</tbody>
+            <tfoot><tr style="border-top:1px solid var(--border)"><td colspan="3" style="padding:4px 6px"><strong>Total</strong></td><td style="text-align:right;padding:4px 6px"><strong>${wTotal.toFixed(2)}</strong></td><td style="text-align:right;padding:4px 6px"><strong>${wSum.toFixed(2)}</strong></td></tr></tfoot>
+          </table>
+          <div style="margin-bottom:8px"><div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:4px">Tier thresholds</div>${threshChips}</div>
+          <div style="margin-bottom:8px"><div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:4px">Recency weights</div>${recencyChips}</div>
+          ${srcLine}
+          <p style="margin:10px 0 0;font-size:0.76rem;line-height:1.5;color:var(--muted)">Each report contributes <code style="color:var(--accent);font-size:0.74rem">score &times; recency_weight</code>. The weighted average (${wSum.toFixed(2)} / ${wTotal.toFixed(2)} = <strong style="color:var(--text)">${avg.toFixed(3)}</strong>) is compared against thresholds to produce the tier. All sources weighted identically.</p>
+        </div>`;
+    })() : '';
 
     const html = `
       <div class="cb-header">
