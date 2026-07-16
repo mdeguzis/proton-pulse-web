@@ -796,36 +796,71 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
       <p style="font-size:0.82rem;color:var(--muted);margin:0 0 10px">How the ${n} reports break down by tier.</p>
       <div style="margin-bottom:16px">${distChips}</div>
 
-      <h3 class="cb-section-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Confidence factors</h3>
-      <p style="font-size:0.82rem;color:var(--muted);margin:0 0 10px">Confidence is driven by sample size, rating consistency, and data freshness.</p>
-      <div class="cb-factors">
-        ${renderFactor(
-          'Sample size',
-          `${n} report${n !== 1 ? 's' : ''} on a log-scaled curve`,
-          displayed,
-          `1 report=30%, 5=60%, 20=85%, 50+=~95%. This game has ${n} report${n !== 1 ? 's' : ''} -- baseline sits at ${displayed}%.`
-        )}
-        ${renderFactor(
-          'Mean per-report confidence',
-          `Average of all ${n} individual report confidence scores`,
-          meanConf,
-          `Range: lowest ${lowestConf}% to highest ${highestConf}%. Higher-rated, more recent reports score higher individually.`
-        )}
-        ${renderFactor(
-          'Freshness',
-          `Newest report was ${daysAgo(newestTs)} (${daysSinceNewest === Infinity ? 'unknown' : daysSinceNewest + 'd'})`,
-          freshnessAdjust,
-          daysSinceNewest < 180 ? 'Data is fresh (under 6 months) -- no penalty.'
-            : `Data pool is aging. Newest report is ${daysSinceNewest} days old.`
-        )}
-      </div>
+      <h3 class="cb-section-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Confidence breakdown</h3>
+      <p style="font-size:0.82rem;color:var(--muted);margin:0 0 12px">Here's exactly how ${displayed}% confidence was calculated for this game.</p>
 
-      <div class="cb-formula">
-        Confidence <strong>${displayed}%</strong> with ${n} report${n !== 1 ? 's' : ''}, newest from ${daysAgo(newestTs)}.
-        Data pool is ${displayed >= 80 ? 'strong' : displayed >= 50 ? 'moderate' : 'thin'}.
-        ${freshnessAdjust < 0 ? `Freshness penalty: -${Math.abs(freshnessAdjust)} points.` : ''}
-      </div>
-      <p style="margin:6px 0 0;font-size:0.7rem;color:var(--muted)">Source: <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/js/shared/scoring.js" target="_blank" rel="noopener" style="color:var(--accent)">js/shared/scoring.js</a> &rarr; <code style="font-size:0.68rem">estimateScoreBreakdown()</code> · <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Scoring-Algorithm#confidence-computation" target="_blank" rel="noopener" style="color:var(--accent)">wiki</a></p>
+      ${(() => {
+        // Compute age buckets for the explanation
+        const nowSec = Date.now() / 1000;
+        const ageBuckets = [
+          { label: 'Under 6 months', max: 180, count: 0 },
+          { label: '6 months – 1 year', max: 365, count: 0 },
+          { label: '1 – 2 years', max: 730, count: 0 },
+          { label: '2 – 3 years', max: 1095, count: 0 },
+          { label: 'Over 3 years', max: Infinity, count: 0 },
+        ];
+        for (const r of reports) {
+          const days = Math.round((nowSec - (r.timestamp || 0)) / 86400);
+          const bucket = ageBuckets.find(b => days < b.max);
+          if (bucket) bucket.count++;
+        }
+        const oldPct = n > 0 ? Math.round((ageBuckets.filter(b => b.max > 365).reduce((s, b) => s + b.count, 0) / n) * 100) : 0;
+        const freshPct = n > 0 ? Math.round((ageBuckets[0].count / n) * 100) : 0;
+
+        // Verdict bullets explaining what's driving the number
+        const bullets = [];
+        if (n < 5) bullets.push(`<li><strong style="color:#ffb84d">Low sample:</strong> Only ${n} report${n !== 1 ? 's' : ''}. Need at least 5 for moderate confidence, 20+ for high. Each new report moves the needle significantly.</li>`);
+        else if (n < 20) bullets.push(`<li><strong style="color:var(--text)">Moderate sample:</strong> ${n} reports puts the baseline at ${displayed}%. More reports would push confidence higher (log curve — diminishing returns past ~50).</li>`);
+        else bullets.push(`<li><strong style="color:#5bd17a">Strong sample:</strong> ${n} reports gives a solid ${displayed}% baseline. Additional reports have diminishing impact at this scale.</li>`);
+
+        if (oldPct > 50) bullets.push(`<li><strong style="color:#ff6b6b">Stale data:</strong> ${oldPct}% of reports are over 1 year old. Proton and game patches may have changed compatibility since these were submitted.</li>`);
+        else if (oldPct > 20) bullets.push(`<li><strong style="color:#ffb84d">Some aging data:</strong> ${oldPct}% of reports are over 1 year old. The newer reports carry more weight in tier calculation.</li>`);
+        else if (n > 0) bullets.push(`<li><strong style="color:#5bd17a">Fresh data:</strong> ${freshPct}% of reports are under 6 months old. The data pool reflects current Proton/game state well.</li>`);
+
+        if (freshnessAdjust < 0) bullets.push(`<li><strong style="color:#ff6b6b">Freshness penalty:</strong> −${Math.abs(freshnessAdjust)} pts because the newest report is ${daysSinceNewest} days old. Submitting a new report would remove this penalty entirely.</li>`);
+
+        if (meanConf < 30) bullets.push(`<li><strong style="color:#ff6b6b">Low per-report scores:</strong> Average individual report confidence is ${meanConf}%. Most reports are old or have borked ratings (base score 0), dragging the mean down.</li>`);
+        else if (meanConf < 50) bullets.push(`<li><strong style="color:#ffb84d">Moderate per-report scores:</strong> Average individual report confidence is ${meanConf}% (range: ${lowestConf}% – ${highestConf}%). Mix of fresh/stale and good/bad ratings.</li>`);
+        else bullets.push(`<li><strong style="color:#5bd17a">Strong per-report scores:</strong> Average individual report confidence is ${meanConf}% (range: ${lowestConf}% – ${highestConf}%). Reports are generally recent and well-rated.</li>`);
+
+        const ageBars = ageBuckets.filter(b => b.count > 0).map(b => {
+          const pct = Math.round((b.count / n) * 100);
+          const color = b.max <= 180 ? '#5bd17a' : b.max <= 365 ? '#4a90b8' : b.max <= 730 ? '#ffb84d' : '#ff6b6b';
+          return `<div style="display:flex;align-items:center;gap:8px;margin:3px 0">
+            <span style="min-width:140px;font-size:0.74rem;color:var(--muted)">${b.label}</span>
+            <div style="flex:1;background:var(--bg);border-radius:2px;height:6px;overflow:hidden"><div style="width:${pct}%;height:100%;background:${color};border-radius:2px"></div></div>
+            <span style="width:50px;text-align:right;font-size:0.74rem;color:var(--muted)">${b.count} (${pct}%)</span>
+          </div>`;
+        }).join('');
+
+        return `
+          <div style="padding:12px 16px;background:var(--s1);border:1px solid var(--border);border-radius:6px;margin-bottom:12px">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+              <span style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:${confColorAt(displayed)}">${displayed}%</span>
+              <span style="font-size:0.85rem;color:var(--text)">${displayed >= 80 ? 'High confidence' : displayed >= 50 ? 'Moderate confidence' : 'Low confidence'}</span>
+            </div>
+            <ul style="margin:0;padding:0 0 0 18px;font-size:0.82rem;line-height:1.65;color:var(--text)">${bullets.join('')}</ul>
+          </div>
+          <div style="margin-bottom:12px">
+            <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:6px">Report age distribution</div>
+            ${ageBars}
+          </div>
+          <div style="padding:10px 14px;background:rgba(20,32,44,0.4);border:1px solid var(--border);border-radius:4px;font-family:var(--mono);font-size:0.76rem;color:var(--muted);line-height:1.6">
+            <strong style="color:var(--text)">Formula:</strong> confidence = min(95, 30 + log₂(${n}) × 18)${freshnessAdjust < 0 ? ` − ${Math.abs(freshnessAdjust)} freshness penalty` : ''} = <strong style="color:var(--text)">${displayed}%</strong><br>
+            <span style="font-size:0.7rem">Sample size drives the baseline (log curve). Freshness penalises stale pools. Cap is 95% — no game reaches 100%.</span>
+          </div>`;
+      })()}
+      <p style="margin:8px 0 0;font-size:0.7rem;color:var(--muted)">Source: <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/js/shared/scoring.js" target="_blank" rel="noopener" style="color:var(--accent)">js/shared/scoring.js</a> &rarr; <code style="font-size:0.68rem">estimateScoreBreakdown()</code> · <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Scoring-Algorithm#confidence-computation" target="_blank" rel="noopener" style="color:var(--accent)">wiki</a></p>
 
       <h3 class="cb-section-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/></svg>Per-Proton-version success</h3>
       <p style="font-size:0.82rem;color:var(--muted);margin:0 0 10px">% of reports rated silver or better per Proton version (sorted by report count).</p>
