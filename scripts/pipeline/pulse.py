@@ -40,7 +40,8 @@ def fetch_pulse_rows(limit: int = 10000) -> list[dict[str, Any]]:
     url = f"{base}/user_configs?select=*&order=created_at.desc&limit={limit}"
     req = urllib.request.Request(url, headers={"apikey": key, "Accept": "application/json"})
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        # URL from hardcoded Supabase base + static REST path
+        with urllib.request.urlopen(req, timeout=30) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
             payload = json.loads(resp.read().decode("utf-8"))
     except (urllib.error.URLError, urllib.error.HTTPError, json.JSONDecodeError, OSError) as exc:
         log(f"[pulse] Failed to fetch user_configs from Supabase: {exc}")

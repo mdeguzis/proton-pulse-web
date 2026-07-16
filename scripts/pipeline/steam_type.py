@@ -69,7 +69,8 @@ def _fetch_type(app_id: str, timeout: int = 6) -> tuple[str | None, bool]:
     url = STEAM_APPDETAILS_URL.format(appid=app_id)
     req = urllib.request.Request(url, headers={"Accept": "application/json"})
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
+        # URL from hardcoded STEAM_APPDETAILS_URL + validated app_id
+        with urllib.request.urlopen(req, timeout=timeout) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
             data = json.loads(resp.read().decode("utf-8"))
     except Exception as exc:
         log(f"[steam-type] WARN: Steam appdetails fetch failed for {app_id}: {exc}")

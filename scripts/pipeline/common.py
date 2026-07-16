@@ -79,7 +79,8 @@ def clone_repo(url, target_dir):
 def fetch_json(url: str, retries: int = 3):
     for attempt in range(retries):
         try:
-            with request.urlopen(url) as response:
+            # URL from hardcoded Steam API / ProtonDB constants
+            with request.urlopen(url) as response:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
                 data = response.read()
                 return json.loads(data)
         except Exception:
@@ -101,7 +102,8 @@ def _scrape_steam_store_title(app_id: str) -> str:
             STEAM_STORE_PAGE_URL.format(app_id=app_id),
             headers={"Cookie": "birthtime=0; wants_mature_content=1"},
         )
-        with request.urlopen(req, timeout=10) as resp:
+        # URL from hardcoded STEAM_STORE_PAGE_URL + validated app_id
+        with request.urlopen(req, timeout=10) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
             html = resp.read().decode("utf-8", errors="replace")
         match = re.search(r'class="apphub_AppName"[^>]*>([^<]+)<', html)
         if match:

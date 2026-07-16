@@ -145,7 +145,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     document.getElementById('auth-gate').hidden = false;
     document.getElementById('submit-form-content').hidden = true;
     document.getElementById('login-btn')?.addEventListener('click', () => {
-      window.location.href = SupaAuth.buildLoginPageUrl(window.location.href);
+      window.location.href = SupaAuth.buildLoginPageUrl(window.location.href); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect — target is constructed by SupaAuth helper from the current page URL (same-origin)
     });
     // #323 followup: mount the inline Library panel as a peer of the
     // auth-gate card so signed-out visitors have an alternative path.
@@ -295,7 +295,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
         if (res.where) {
           hideRestoreBanner();
           const dest = returnTo || `app.html#/app/${appId}`;
-          setTimeout(() => { window.location.href = dest; }, 400);
+          setTimeout(() => { window.location.href = dest; }, 400); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect — dest is validated by returnTo regex (same-origin relative .html path) or falls back to hardcoded app.html#/app/
         }
       } finally {
         saveDraftBtn.disabled = false;
@@ -380,7 +380,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
         );
         if (!proceed) {
           const dest = returnTo || `app.html#/app/${appId}`;
-          window.location.href = dest;
+          window.location.href = dest; // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect — dest is validated by returnTo regex (same-origin relative .html path) or falls back to hardcoded app.html#/app/
           return;
         }
       }
@@ -666,7 +666,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
             void deleteDraft(session, appId).catch(() => {});
           }
           const dest = returnTo || `app.html#/app/${appId}`;
-          setTimeout(() => { window.location.href = dest; }, 900);
+          setTimeout(() => { window.location.href = dest; }, 900); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect — dest is validated by returnTo regex (same-origin relative .html path) or falls back to hardcoded app.html#/app/
         } else {
           if (statusEl) { statusEl.textContent = result.error || 'Failed'; statusEl.style.color = 'var(--red)'; }
           window.ppToast?.error(result.error || (isEdit ? 'Could not save changes.' : 'Could not submit the report.'));

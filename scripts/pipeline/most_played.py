@@ -37,7 +37,8 @@ def fetch_most_played(timeout: int = 30) -> list[dict]:
         STEAM_MOST_PLAYED_URL, headers={"Accept": "application/json"}
     )
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
+        # URL from hardcoded STEAM_MOST_PLAYED_URL constant
+        with urllib.request.urlopen(req, timeout=timeout) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
             payload = json.load(resp)
     except (urllib.error.URLError, urllib.error.HTTPError, json.JSONDecodeError, OSError) as exc:
         log(f"[most-played] WARN: Steam most-played fetch failed: {exc}")

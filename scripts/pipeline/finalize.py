@@ -1660,7 +1660,8 @@ def write_proton_versions_json(output_path: Path) -> None:
         headers={"apikey": key, "Accept": "application/json", "Range": "0-4999"},
     )
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        # URL from hardcoded Supabase base + static REST path
+        with urllib.request.urlopen(req, timeout=30) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
             payload = json.loads(resp.read().decode("utf-8"))
     except (urllib.error.URLError, urllib.error.HTTPError, json.JSONDecodeError, OSError) as exc:
         log(f"[proton-versions] WARNING: failed to fetch proton_version values: {exc}")

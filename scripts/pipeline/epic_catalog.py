@@ -240,7 +240,8 @@ def _fetch_page(start: int) -> dict:
     for attempt in range(1, _MAX_PAGE_ATTEMPTS + 1):
         req = request.Request(EPIC_GRAPHQL_URL, data=body, headers=_HEADERS, method="POST")
         try:
-            with request.urlopen(req, timeout=30) as resp:
+            # URL from hardcoded EPIC_GRAPHQL_URL constant (store.epicgames.com)
+            with request.urlopen(req, timeout=30) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
                 return json.loads(resp.read().decode("utf-8"))
         except error.HTTPError as exc:
             if exc.code not in _RETRY_STATUSES or attempt == _MAX_PAGE_ATTEMPTS:

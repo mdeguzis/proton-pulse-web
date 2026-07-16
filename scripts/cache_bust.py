@@ -43,7 +43,8 @@ def _stripped_bytes(path: Path) -> bytes:
 
 
 def digest(path: Path) -> str:
-    return hashlib.md5(_stripped_bytes(path)).hexdigest()[:8]
+    # MD5 for content cache-busting, not cryptographic security
+    return hashlib.md5(_stripped_bytes(path)).hexdigest()[:8]  # nosemgrep: python.lang.security.insecure-hash-algorithms-md5.insecure-hash-algorithm-md5
 
 
 def _rewrite_js(js_path: Path, root: Path) -> bool:

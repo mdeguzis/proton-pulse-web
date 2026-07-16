@@ -575,6 +575,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
         : `<p style="font-size:0.78rem;margin-top:8px">
             Try <a href="app.html#/app/${esc(appId)}">the game page</a> and submit the first report.
           </p>`;
+      // nosemgrep: javascript.browser.security.raw-html-concat.raw-html-concat — all user-derived values inside renderHeader() and liveBlock are wrapped in esc()
       root.innerHTML = renderHeader(appId, title, { pulseCount: pulseReports.length, protonDbCount: cdnReports.length, liveTotal: liveSummary?.total || 0 }) + `
         <div class="error-state">
           <p>${liveSummary ? 'No individual reports mirrored yet for this game.' : 'No reports or configs found for this game.'}</p>
@@ -612,6 +613,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
       protonDbCount: cdnReports.length,
       liveTotal: liveSummary?.total || 0,
     }, allReports);
+    // nosemgrep: javascript.browser.security.raw-html-concat.raw-html-concat — all user-derived values are escaped via esc() inside renderAll() and renderPreviewHardwareBanner()
     root.innerHTML = previewBanner + html;
     // wire() must run AFTER innerHTML so the hover helper sees real DOM rects.
     // Also surface the filter event for future consumers (a debug log for now)
@@ -638,6 +640,6 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
   run().catch(err => {
     console.error('[game-stats] failed', err);
-    root.innerHTML = `<div class="error-state">Stats failed to load: ${esc(err && err.message || err)}</div>`;
+    root.innerHTML = `<div class="error-state">Stats failed to load: ${esc(err && err.message || err)}</div>`; // nosemgrep: javascript.browser.security.raw-html-concat.raw-html-concat — error message is wrapped in esc()
   });
 })();

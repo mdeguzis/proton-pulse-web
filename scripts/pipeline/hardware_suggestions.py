@@ -172,7 +172,8 @@ CURATED_CPUS = [
 def fetch_pci_ids():
     print(f'[hardware_suggestions] Downloading {PCI_IDS_URL}')
     req = urllib.request.Request(PCI_IDS_URL, headers={'User-Agent': 'proton-pulse-pipeline/1.0'})
-    with urllib.request.urlopen(req, timeout=30) as resp:
+    # URL from hardcoded PCI_IDS_URL constant (pci-ids.ucw.cz)
+    with urllib.request.urlopen(req, timeout=30) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
         return resp.read().decode('utf-8', errors='replace')
 
 

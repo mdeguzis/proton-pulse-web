@@ -52,11 +52,14 @@ jobs:
 
       - name: Resolve lookback hours
         id: lookback
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_LOOKBACK: ${{ inputs.lookback_hours || '5' }}
         run: |
           # Manual dispatch: use the input value.
           # Scheduled: daily run (02:00 UTC) uses 25h; every-4h runs use 5h.
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "hours=${{ inputs.lookback_hours || '5' }}" >> "$GITHUB_OUTPUT"
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "hours=$INPUT_LOOKBACK" >> "$GITHUB_OUTPUT"
           elif [ "$(date -u +%H)" = "02" ]; then
             echo "hours=25" >> "$GITHUB_OUTPUT"
           else

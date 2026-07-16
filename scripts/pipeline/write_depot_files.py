@@ -69,7 +69,8 @@ def _get(path: str, params: dict) -> list[dict]:
         raise RuntimeError("SUPABASE_URL missing; cannot read depot tables")
     url = f"{base}/rest/v1{path}?{urllib.parse.urlencode(params)}"
     req = urllib.request.Request(url, headers=_headers(), method="GET")
-    with urllib.request.urlopen(req, timeout=60) as resp:
+    # URL from hardcoded Supabase base + static REST path
+    with urllib.request.urlopen(req, timeout=60) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
         return json.loads(resp.read())
 
 

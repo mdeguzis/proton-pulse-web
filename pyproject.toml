@@ -18,6 +18,7 @@ dev = [
 ]
 
 [tool.uv]
+# nosemgrep: generic.ci.security.uv-missing-dependency-cooldown — cooldown configured in .github/dependabot.yml (uv ecosystem entry)
 default-groups = ["dev"]
 
 [tool.pytest.ini_options]

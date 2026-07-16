@@ -123,7 +123,8 @@ def stage_supabase(ctx: Ctx) -> None:
             headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
             method="POST",
         )
-        with urllib.request.urlopen(req) as resp:
+        # URL from hardcoded Supabase management API base + trusted project ref
+        with urllib.request.urlopen(req) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
             resp_body = resp.read().decode("utf-8")
         if resp_body.strip() not in ("[]", "[ ]"):
             print(f"  response: {resp_body[:200]}")

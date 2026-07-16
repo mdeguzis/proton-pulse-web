@@ -101,7 +101,8 @@ def _fetch_raw(app_id, timeout=15):
         STEAM_DECK_COMPAT_URL.format(app_id=app_id),
         headers={"Accept": "application/json"},
     )
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
+    # URL from hardcoded STEAM_DECK_COMPAT_URL + validated app_id
+    with urllib.request.urlopen(req, timeout=timeout) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
         return json.load(resp)
 
 

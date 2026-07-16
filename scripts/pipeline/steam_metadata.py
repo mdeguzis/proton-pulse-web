@@ -372,7 +372,8 @@ def upsert_depot_rows(rows: Iterable[DepotRow]) -> int:
         url, data=json.dumps(payload).encode(), method="POST",
         headers=_supabase_headers(),
     )
-    urllib.request.urlopen(req, timeout=30).read()
+    # URL from hardcoded Supabase base + static REST path
+    urllib.request.urlopen(req, timeout=30).read()  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
     return len(payload)
 
 
@@ -415,7 +416,8 @@ def upsert_manifest_history_rows(rows: Iterable[DepotRow]) -> int:
         url, data=json.dumps(payload).encode(), method="POST",
         headers=_supabase_headers(),
     )
-    urllib.request.urlopen(req, timeout=30).read()
+    # URL from hardcoded Supabase base + static REST path
+    urllib.request.urlopen(req, timeout=30).read()  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
     return len(payload)
 
 
@@ -449,7 +451,8 @@ def upsert_fetch_status(
         url, data=json.dumps(payload).encode(), method="POST",
         headers=_supabase_headers(),
     )
-    urllib.request.urlopen(req, timeout=30).read()
+    # URL from hardcoded Supabase base + static REST path
+    urllib.request.urlopen(req, timeout=30).read()  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
 
 
 def _iso_from_epoch(ts: int) -> str:

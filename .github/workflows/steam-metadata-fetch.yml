@@ -64,9 +64,11 @@ jobs:
 
       - name: Resolve app list
         id: apps
+        env:
+          INPUT_APP_IDS: ${{ github.event.inputs.app_ids }}
         run: |
-          if [ -n "${{ github.event.inputs.app_ids }}" ]; then
-            echo "list=${{ github.event.inputs.app_ids }}" >> "$GITHUB_OUTPUT"
+          if [ -n "$INPUT_APP_IDS" ]; then
+            echo "list=$INPUT_APP_IDS" >> "$GITHUB_OUTPUT"
           else
             # Seed set: a few titles that exercise Windows / macOS / Linux
             # depots so a nightly run always has real data to write. Grow
@@ -77,8 +79,9 @@ jobs:
       - name: Fetch depot dates
         env:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          APP_LIST: ${{ steps.apps.outputs.list }}
         run: |
-          python -m scripts.pipeline.steam_metadata $(echo "${{ steps.apps.outputs.list }}" | tr ',' ' ')
+          python -m scripts.pipeline.steam_metadata $(echo "$APP_LIST" | tr ',' ' ')
 
       - name: Back-comment run summary on issue
         if: always()

@@ -206,7 +206,8 @@ def _fetch_page(page: int) -> dict:
     delay = 1.0
     for attempt in range(1, _MAX_PAGE_ATTEMPTS + 1):
         try:
-            with request.urlopen(req, timeout=20) as resp:
+            # URL from hardcoded GOG_CATALOG_URL + page number
+            with request.urlopen(req, timeout=20) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
                 return json.loads(resp.read().decode("utf-8"))
         except error.HTTPError as exc:
             if exc.code not in _RETRY_STATUSES or attempt == _MAX_PAGE_ATTEMPTS:

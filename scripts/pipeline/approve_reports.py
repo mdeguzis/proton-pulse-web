@@ -47,7 +47,8 @@ def fetch_pending_reports():
         'apikey': SUPABASE_KEY,
         'Authorization': f'Bearer {SUPABASE_KEY}',
     })
-    with urllib.request.urlopen(req, timeout=30) as resp:
+    # URL constructed from hardcoded Supabase base + static REST path
+    with urllib.request.urlopen(req, timeout=30) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
         reports = json.loads(resp.read())
 
     # Fetch existing approvals
@@ -56,7 +57,8 @@ def fetch_pending_reports():
         'apikey': SUPABASE_KEY,
         'Authorization': f'Bearer {SUPABASE_KEY}',
     })
-    with urllib.request.urlopen(req2, timeout=30) as resp:
+    # URL constructed from hardcoded Supabase base + static REST path
+    with urllib.request.urlopen(req2, timeout=30) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
         approvals = json.loads(resp.read())
 
     existing = {a['report_id']: a['approval_hash'] for a in approvals}
@@ -95,7 +97,8 @@ def approve_reports(pending):
         'Content-Type': 'application/json',
         'Prefer': 'resolution=merge-duplicates,return=minimal',
     })
-    with urllib.request.urlopen(req, timeout=30) as resp:
+    # URL constructed from hardcoded Supabase base + static REST path
+    with urllib.request.urlopen(req, timeout=30) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
         pass
 
     print(f'[approve_reports] Approved {len(rows)} reports')

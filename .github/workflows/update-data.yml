@@ -505,6 +505,7 @@ jobs:
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
           mkdir -p badges
+          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell — hardcoded URL; python3 parses JSON count, not arbitrary code
           PULSE_COUNT=$(curl -s \
             -H "apikey: sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V" \
             -H "Prefer: count=exact" \
@@ -648,6 +649,7 @@ jobs:
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o ./scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o ./form-schema.json
           mkdir -p ./badges
+          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell — hardcoded URL; python3 parses JSON count, not arbitrary code
           PULSE_COUNT=$(curl -s \
             -H "apikey: sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V" \
             -H "Prefer: count=exact" \
@@ -774,17 +776,21 @@ jobs:
 
       - name: Backfill targeted app IDs
         working-directory: repo
+        env:
+          BACKFILL_APP_IDS: ${{ inputs.backfill_app_ids }}
         run: |
-          echo "[targeted-backfill] App IDs: ${{ inputs.backfill_app_ids }}"
+          echo "[targeted-backfill] App IDs: $BACKFILL_APP_IDS"
           uv run python scripts/split_reports.py backfill \
-            --app-ids "${{ inputs.backfill_app_ids }}" \
+            --app-ids "$BACKFILL_APP_IDS" \
             /tmp/protondb-output
 
       - name: Reindex targeted apps
         working-directory: repo
+        env:
+          BACKFILL_APP_IDS: ${{ inputs.backfill_app_ids }}
         run: |
           uv run python scripts/split_reports.py reindex \
-            --app-ids "${{ inputs.backfill_app_ids }}" \
+            --app-ids "$BACKFILL_APP_IDS" \
             /tmp/protondb-output
 
       - name: Regenerate indexes and coverage report
@@ -807,6 +813,8 @@ jobs:
 
       - name: Deploy to gh-pages (orphan, no history)
         working-directory: repo
+        env:
+          BACKFILL_APP_IDS: ${{ inputs.backfill_app_ids }}
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
@@ -849,6 +857,7 @@ jobs:
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
           mkdir -p badges
+          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell — hardcoded URL; python3 parses JSON count, not arbitrary code
           PULSE_COUNT=$(curl -s \
             -H "apikey: sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V" \
             -H "Prefer: count=exact" \
@@ -868,7 +877,7 @@ jobs:
             case "$path" in \#*) continue ;; esac
             git add "$path"
           done < gh-pages-manifest.txt
-          git commit -m "Targeted backfill: ${{ inputs.backfill_app_ids }}"
+          git commit -m "Targeted backfill: ${BACKFILL_APP_IDS}"
           git push origin gh-pages-new:gh-pages --force
 
   # ── Coverage-based backfill: fix missing titles, no-data apps, etc ──
@@ -977,20 +986,24 @@ jobs:
 
       - name: Run coverage backfill
         working-directory: repo
+        env:
+          COVERAGE_ISSUE_TYPE: ${{ inputs.coverage_backfill_issue_type }}
+          COVERAGE_LIMIT: ${{ inputs.coverage_backfill_limit }}
+          COVERAGE_ALLOW_UNBOUNDED: ${{ inputs.coverage_backfill_allow_unbounded }}
         run: |
-          echo "[coverage-backfill] Issue type: ${{ inputs.coverage_backfill_issue_type }}"
-          echo "[coverage-backfill] Limit: ${{ inputs.coverage_backfill_limit }}"
-          echo "[coverage-backfill] Allow unbounded: ${{ inputs.coverage_backfill_allow_unbounded }}"
+          echo "[coverage-backfill] Issue type: $COVERAGE_ISSUE_TYPE"
+          echo "[coverage-backfill] Limit: $COVERAGE_LIMIT"
+          echo "[coverage-backfill] Allow unbounded: $COVERAGE_ALLOW_UNBOUNDED"
           LIMIT_ARG=""
-          if [ "${{ inputs.coverage_backfill_limit }}" != "0" ]; then
-            LIMIT_ARG="--limit ${{ inputs.coverage_backfill_limit }}"
+          if [ "$COVERAGE_LIMIT" != "0" ]; then
+            LIMIT_ARG="--limit $COVERAGE_LIMIT"
           fi
           ALLOW_UNBOUNDED_ARG=""
-          if [ "${{ inputs.coverage_backfill_allow_unbounded }}" = "true" ]; then
+          if [ "$COVERAGE_ALLOW_UNBOUNDED" = "true" ]; then
             ALLOW_UNBOUNDED_ARG="--allow-unbounded"
           fi
           uv run python scripts/split_reports.py coverage-backfill \
-            --issue-type "${{ inputs.coverage_backfill_issue_type }}" \
+            --issue-type "$COVERAGE_ISSUE_TYPE" \
             $LIMIT_ARG \
             $ALLOW_UNBOUNDED_ARG \
             /tmp/protondb-output
@@ -1036,6 +1049,8 @@ jobs:
 
       - name: Deploy to gh-pages (orphan, no history)
         working-directory: repo
+        env:
+          COVERAGE_ISSUE_TYPE: ${{ inputs.coverage_backfill_issue_type }}
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
@@ -1078,6 +1093,7 @@ jobs:
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
           mkdir -p badges
+          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell — hardcoded URL; python3 parses JSON count, not arbitrary code
           PULSE_COUNT=$(curl -s \
             -H "apikey: sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V" \
             -H "Prefer: count=exact" \
@@ -1097,7 +1113,7 @@ jobs:
             case "$path" in \#*) continue ;; esac
             git add "$path"
           done < gh-pages-manifest.txt
-          git commit -m "Coverage backfill: ${{ inputs.coverage_backfill_issue_type }}"
+          git commit -m "Coverage backfill: ${COVERAGE_ISSUE_TYPE}"
           git push origin gh-pages-new:gh-pages --force
 
   # ── Status report (runs even on failure) ───────────────────────────
@@ -1113,35 +1129,45 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Summary
+        env:
+          COVERAGE_ISSUE_TYPE: ${{ inputs.coverage_backfill_issue_type }}
+          COVERAGE_LIMIT: ${{ inputs.coverage_backfill_limit }}
+          COVERAGE_ALLOW_UNBOUNDED: ${{ inputs.coverage_backfill_allow_unbounded }}
+          BACKFILL_APP_IDS: ${{ inputs.backfill_app_ids }}
+          RESULT_BUILD: ${{ needs.build.result }}
+          RESULT_PROBE: ${{ needs.probe-chunks.result }}
+          RESULT_FINALIZE: ${{ needs.finalize.result }}
+          RESULT_TARGETED: ${{ needs.targeted-backfill.result }}
+          RESULT_COVERAGE: ${{ needs.coverage-backfill.result }}
         run: |
           echo "### Build Site Data" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          if [ -n "${{ inputs.coverage_backfill_issue_type }}" ]; then
+          if [ -n "$COVERAGE_ISSUE_TYPE" ]; then
             echo "**Mode:** Coverage backfill" >> "$GITHUB_STEP_SUMMARY"
-            echo "**Issue type:** ${{ inputs.coverage_backfill_issue_type }}" >> "$GITHUB_STEP_SUMMARY"
-            if [ "${{ inputs.coverage_backfill_limit }}" = "0" ]; then
+            echo "**Issue type:** $COVERAGE_ISSUE_TYPE" >> "$GITHUB_STEP_SUMMARY"
+            if [ "$COVERAGE_LIMIT" = "0" ]; then
               echo "**Limit:** unbounded" >> "$GITHUB_STEP_SUMMARY"
             else
-              echo "**Limit:** ${{ inputs.coverage_backfill_limit }}" >> "$GITHUB_STEP_SUMMARY"
+              echo "**Limit:** $COVERAGE_LIMIT" >> "$GITHUB_STEP_SUMMARY"
             fi
-            echo "**Allow unbounded:** ${{ inputs.coverage_backfill_allow_unbounded }}" >> "$GITHUB_STEP_SUMMARY"
+            echo "**Allow unbounded:** $COVERAGE_ALLOW_UNBOUNDED" >> "$GITHUB_STEP_SUMMARY"
             echo "" >> "$GITHUB_STEP_SUMMARY"
             echo "| Job | Status |" >> "$GITHUB_STEP_SUMMARY"
             echo "|-----|--------|" >> "$GITHUB_STEP_SUMMARY"
-            echo "| Coverage backfill | ${{ needs.coverage-backfill.result }} |" >> "$GITHUB_STEP_SUMMARY"
-          elif [ -n "${{ inputs.backfill_app_ids }}" ]; then
+            echo "| Coverage backfill | $RESULT_COVERAGE |" >> "$GITHUB_STEP_SUMMARY"
+          elif [ -n "$BACKFILL_APP_IDS" ]; then
             echo "**Mode:** Targeted backfill" >> "$GITHUB_STEP_SUMMARY"
-            echo "**App IDs:** ${{ inputs.backfill_app_ids }}" >> "$GITHUB_STEP_SUMMARY"
+            echo "**App IDs:** $BACKFILL_APP_IDS" >> "$GITHUB_STEP_SUMMARY"
             echo "" >> "$GITHUB_STEP_SUMMARY"
             echo "| Job | Status |" >> "$GITHUB_STEP_SUMMARY"
             echo "|-----|--------|" >> "$GITHUB_STEP_SUMMARY"
-            echo "| Targeted backfill | ${{ needs.targeted-backfill.result }} |" >> "$GITHUB_STEP_SUMMARY"
+            echo "| Targeted backfill | $RESULT_TARGETED |" >> "$GITHUB_STEP_SUMMARY"
           else
             echo "| Job | Status |" >> "$GITHUB_STEP_SUMMARY"
             echo "|-----|--------|" >> "$GITHUB_STEP_SUMMARY"
-            echo "| Build | ${{ needs.build.result }} |" >> "$GITHUB_STEP_SUMMARY"
-            echo "| Probe chunks | ${{ needs.probe-chunks.result }} |" >> "$GITHUB_STEP_SUMMARY"
-            echo "| Finalize + Deploy | ${{ needs.finalize.result }} |" >> "$GITHUB_STEP_SUMMARY"
+            echo "| Build | $RESULT_BUILD |" >> "$GITHUB_STEP_SUMMARY"
+            echo "| Probe chunks | $RESULT_PROBE |" >> "$GITHUB_STEP_SUMMARY"
+            echo "| Finalize + Deploy | $RESULT_FINALIZE |" >> "$GITHUB_STEP_SUMMARY"
           fi
 
       # #218: back-comment on the target issue if the dispatch specified one.
