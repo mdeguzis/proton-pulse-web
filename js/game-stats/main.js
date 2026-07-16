@@ -298,8 +298,17 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
         <div class="gs-tb-recency-row">${sourceRows.join('')}</div>
       </div>` : '';
 
+    // Build the mix summary line: "1 Platinum, 6 Gold, 4 Borked"
+    const mixParts = tiers
+      .filter(t => perReport.some(r => r.rating === t))
+      .map(t => `<strong style="color:${TIER_COLORS[t]}">${perReport.filter(r => r.rating === t).length}</strong> ${t[0].toUpperCase() + t.slice(1)}`);
+
     return `
       <div class="gs-tier-breakdown">
+        <div class="gs-tb-header">
+          <span class="gs-tb-header-q">Why ${(stats.overallTier || 'pending')[0].toUpperCase() + (stats.overallTier || 'pending').slice(1)}?</span>
+          <span class="gs-tb-header-mix">${mixParts.join(', ')} across ${allReports.length} reports</span>
+        </div>
         <div class="gs-tb-result">
           <span class="gs-tb-result-label">Weighted average:</span>
           <span class="gs-tb-result-value" style="color:${TIER_COLORS[stats.overallTier] || '#7a9bb5'}">${avg.toFixed(3)}</span>
