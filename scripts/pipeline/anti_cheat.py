@@ -105,9 +105,16 @@ def _save_cache(cache_path: Path, cache: dict) -> None:
 
 def _fetch_upstream(timeout: int = 20) -> list | None:
     """Download the AreWeAntiCheatYet games.json. Returns None on failure."""
+    # urllib.request.urlopen supports file:// / ftp:// / etc, so Semgrep flags
+    # any dynamic value going into urlopen. Enforce https:// on the fixed
+    # UPSTREAM_URL constant as a belt-and-braces guard against a future edit
+    # that could swap the constant for a caller-supplied value.
+    if not UPSTREAM_URL.startswith("https://"):
+        log(f"[anti-cheat] WARN: UPSTREAM_URL scheme is not https:// -- refusing to fetch")
+        return None
     req = urllib.request.Request(UPSTREAM_URL, headers={"Accept": "application/json"})
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:  # nosec B310  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected - URL is the hardcoded UPSTREAM_URL constant and is scheme-checked above
             body = resp.read().decode("utf-8")
     except Exception as exc:
         log(f"[anti-cheat] WARN: upstream fetch failed: {exc}")
@@ -267,10 +274,20 @@ def _fetch_appdetails_snippets(app_id: str) -> tuple[str, str] | None:
     failure. Uses the public storefront endpoint -- Steam sends CORS headers so
     a curl works the same as fetch().
     """
-    url = STEAM_APPDETAILS_URL.format(appid=app_id)
+    # Enforce two guards before urlopen():
+    #  1. app_id must be digits-only (Steam ids are unsigned ints).
+    #     Anything else could smuggle URL-format characters through the
+    #     .format() call below.
+    #  2. The final URL must start with https:// so a future change to
+    #     STEAM_APPDETAILS_URL cannot silently allow file:// or ftp://.
+    if not str(app_id).isdigit():
+        return None
+    url = STEAM_APPDETAILS_URL.format(appid=str(app_id))
+    if not url.startswith("https://store.steampowered.com/"):
+        return None
     req = urllib.request.Request(url, headers={"Accept": "application/json"})
     try:
-        with urllib.request.urlopen(req, timeout=_APPDETAILS_TIMEOUT) as resp:
+        with urllib.request.urlopen(req, timeout=_APPDETAILS_TIMEOUT) as resp:  # nosec B310  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected - URL is validated digits-only appid interpolated into the fixed steampowered.com endpoint
             data = json.loads(resp.read().decode("utf-8"))
     except Exception:
         return None

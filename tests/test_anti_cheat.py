@@ -12,6 +12,7 @@ from scripts.pipeline.anti_cheat import (
     CACHE_FILENAME,
     _backfill_from_search_index_titles,
     _detect_vendors_from_text,
+    _fetch_appdetails_snippets,
     _index_by_appid,
     _normalize_title,
     enrich_search_index_with_anti_cheat,
@@ -214,3 +215,17 @@ def test_detect_vendors_handles_empty_and_none_inputs():
     assert _detect_vendors_from_text() == []
     assert _detect_vendors_from_text("") == []
     assert _detect_vendors_from_text("", None) == []
+
+
+# ---- _fetch_appdetails_snippets input validation (Semgrep guard) -----------
+
+
+def test_fetch_appdetails_rejects_non_digit_appid():
+    """Anything that is not a Steam app id (digits) must short-circuit before
+    urlopen(). Guards against a caller smuggling URL-format characters through
+    the .format() call and against Semgrep's dynamic-urllib finding."""
+    assert _fetch_appdetails_snippets("abc") is None
+    assert _fetch_appdetails_snippets("123 456") is None
+    assert _fetch_appdetails_snippets("../etc/passwd") is None
+    assert _fetch_appdetails_snippets("file://local") is None
+    assert _fetch_appdetails_snippets("") is None
