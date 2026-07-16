@@ -135,6 +135,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
   const ICON = {
     status: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg>',
+    tier: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>',
     chart: '<svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V9l4 6 4-10 4 7 3-4v13"/></svg>',
     factors: '<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>',
     dist: '<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="3" height="9"/><rect x="9" y="7" width="3" height="13"/><rect x="15" y="3" width="3" height="17"/></svg>',
@@ -203,6 +204,107 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
           <div class="value">${esc(lastPositive)}</div>
           <div class="sub">Across all data sources</div>
         </div>
+      </div>
+    `;
+  }
+
+  // --- tier derivation breakdown ("why this tier") ---
+
+  function renderTierBreakdown(allReports, stats) {
+    if (!allReports.length) return '';
+    const SCORE = { platinum: 1.0, gold: 0.8, silver: 0.6, bronze: 0.4, borked: 0.0 };
+    const TIER_COLORS = { platinum: '#b4c7dc', gold: '#c8a050', silver: '#8fa0b0', bronze: '#b07040', borked: '#c85050' };
+    const TIER_THRESHOLDS = [
+      { tier: 'platinum', min: 0.85 },
+      { tier: 'gold', min: 0.65 },
+      { tier: 'silver', min: 0.40 },
+      { tier: 'bronze', min: 0.15 },
+      { tier: 'borked', min: 0.00 },
+    ];
+    const RECENCY_LABELS = [
+      { max: 30, weight: 1.0, label: '<30d' },
+      { max: 90, weight: 0.85, label: '30-90d' },
+      { max: 180, weight: 0.65, label: '90-180d' },
+      { max: 365, weight: 0.40, label: '180d-1y' },
+      { max: 730, weight: 0.20, label: '1-2y' },
+      { max: 1095, weight: 0.10, label: '2-3y' },
+      { max: 1825, weight: 0.05, label: '3-5y' },
+      { max: Infinity, weight: 0.02, label: '5y+' },
+    ];
+
+    const now = Date.now() / 1000;
+    let wSum = 0, wTotal = 0;
+    const perReport = [];
+    for (const r of allReports) {
+      const days = Math.round((now - (r.timestamp || 0)) / 86400);
+      const recencyBucket = RECENCY_LABELS.find(b => days < b.max) || RECENCY_LABELS[RECENCY_LABELS.length - 1];
+      const score = SCORE[r.rating] ?? 0.5;
+      const weighted = score * recencyBucket.weight;
+      wSum += weighted;
+      wTotal += recencyBucket.weight;
+      perReport.push({ rating: r.rating, days, recencyWeight: recencyBucket.weight, score, weighted, recencyLabel: recencyBucket.label });
+    }
+    const avg = wTotal > 0 ? wSum / wTotal : 0;
+
+    // Per-tier contribution summary
+    const tiers = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
+    const tierRows = tiers.map(t => {
+      const reports = perReport.filter(r => r.rating === t);
+      if (!reports.length) return '';
+      const tierWeightedSum = reports.reduce((s, r) => s + r.weighted, 0);
+      const tierWeightTotal = reports.reduce((s, r) => s + r.recencyWeight, 0);
+      return `
+        <tr>
+          <td><span class="gs-tb-tier" style="color:${TIER_COLORS[t]}">${t.toUpperCase()}</span></td>
+          <td class="gs-tb-num">${reports.length}</td>
+          <td class="gs-tb-num">${SCORE[t].toFixed(1)}</td>
+          <td class="gs-tb-num">${tierWeightTotal.toFixed(2)}</td>
+          <td class="gs-tb-num">${tierWeightedSum.toFixed(2)}</td>
+        </tr>`;
+    }).filter(Boolean).join('');
+
+    // Threshold marker
+    const thresholdRows = TIER_THRESHOLDS.map(t => {
+      const active = stats.overallTier === t.tier;
+      return `<span class="gs-tb-thresh${active ? ' gs-tb-thresh--active' : ''}" style="border-color:${TIER_COLORS[t.tier]}">
+        <strong>${t.tier}</strong> &ge; ${t.min}
+      </span>`;
+    }).join('');
+
+    // Recency weight legend
+    const recencyRows = RECENCY_LABELS.map(b => {
+      const count = perReport.filter(r => r.recencyLabel === b.label).length;
+      if (!count) return '';
+      return `<span class="gs-tb-recency">${b.label}: <strong>${b.weight}x</strong> (${count})</span>`;
+    }).filter(Boolean).join('');
+
+    return `
+      <div class="gs-tier-breakdown">
+        <div class="gs-tb-result">
+          <span class="gs-tb-result-label">Weighted average:</span>
+          <span class="gs-tb-result-value" style="color:${TIER_COLORS[stats.overallTier] || '#7a9bb5'}">${avg.toFixed(3)}</span>
+          <span class="gs-tb-result-arrow">&rarr;</span>
+          <span class="gs-tb-result-tier" style="color:${TIER_COLORS[stats.overallTier] || '#7a9bb5'}">${(stats.overallTier || 'pending').toUpperCase()}</span>
+        </div>
+        <table class="gs-tb-table">
+          <thead><tr><th>Tier</th><th>Reports</th><th>Score</th><th>&Sigma; Weight</th><th>&Sigma; Weighted</th></tr></thead>
+          <tbody>${tierRows}</tbody>
+          <tfoot><tr><td colspan="3"><strong>Total</strong></td><td class="gs-tb-num"><strong>${wTotal.toFixed(2)}</strong></td><td class="gs-tb-num"><strong>${wSum.toFixed(2)}</strong></td></tr></tfoot>
+        </table>
+        <div class="gs-tb-section">
+          <div class="gs-tb-section-title">Tier thresholds</div>
+          <div class="gs-tb-thresholds">${thresholdRows}</div>
+        </div>
+        <div class="gs-tb-section">
+          <div class="gs-tb-section-title">Recency weights applied</div>
+          <div class="gs-tb-recency-row">${recencyRows}</div>
+        </div>
+        <p class="gs-tb-explain">
+          Each report contributes <code>score &times; recency_weight</code> to the sum.
+          The weighted average (<code>&Sigma;weighted / &Sigma;weight</code> = ${wSum.toFixed(2)} / ${wTotal.toFixed(2)} = <strong>${avg.toFixed(3)}</strong>)
+          is compared against the tier thresholds above to produce the final rating.
+          Recent reports count more; very old reports fade toward zero influence.
+        </p>
       </div>
     `;
   }
@@ -467,7 +569,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
   // Returns { html, wire }. wire() runs after the html is injected so any
   // chart helpers (hover targets, click-to-filter) can attach to live DOM
-  function renderAll(appId, title, stats, counts = {}) {
+  function renderAll(appId, title, stats, counts = {}, allReports = []) {
     // Each section carries an id so it can be deep-linked (e.g. the game page
     // trend line links to #trend). Anchor offset handled by scroll-margin-top
     // in CSS so the sticky-ish header does not cover the section title.
@@ -478,6 +580,9 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
       ${renderHeader(appId, title, counts)}
       ${sectionHead(ICON.status, 'Current state', 'current-state')}
       ${renderStatusCards(stats)}
+
+      ${sectionHead(ICON.tier, 'Why this tier', 'tier-breakdown')}
+      ${renderTierBreakdown(allReports, stats)}
 
       ${sectionHead(ICON.chart, 'Monthly reports (last 5 years)', 'monthly')}
       ${chart.html}
@@ -612,7 +717,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
       pulseCount: pulseReports.length,
       protonDbCount: cdnReports.length,
       liveTotal: liveSummary?.total || 0,
-    });
+    }, allReports);
     root.innerHTML = previewBanner + html;
     // wire() must run AFTER innerHTML so the hover helper sees real DOM rects.
     // Also surface the filter event for future consumers (a debug log for now)

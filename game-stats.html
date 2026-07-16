@@ -367,6 +367,54 @@ h1 {
 }
 .gs-live-summary-note a { color: var(--accent); }
 .gs-live-summary-note a:hover { color: var(--accent-hi); text-decoration: underline; }
+
+/* Tier breakdown ("why this tier") section */
+.gs-tier-breakdown {
+  background: rgba(20, 32, 44, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px 18px;
+}
+.gs-tb-result {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 14px;
+  font-family: var(--mono); font-size: 0.9rem;
+}
+.gs-tb-result-label { color: var(--muted); }
+.gs-tb-result-value { font-size: 1.2rem; font-weight: 700; }
+.gs-tb-result-arrow { color: var(--muted); }
+.gs-tb-result-tier { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+.gs-tb-table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--mono); font-size: 0.82rem;
+  margin-bottom: 14px;
+}
+.gs-tb-table th {
+  text-align: left; padding: 5px 8px;
+  color: var(--muted); font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+}
+.gs-tb-table td { padding: 5px 8px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.gs-tb-table tfoot td { border-top: 1px solid var(--border); border-bottom: 0; }
+.gs-tb-num { text-align: right; }
+.gs-tb-tier { font-weight: 700; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.04em; }
+.gs-tb-section { margin-bottom: 10px; }
+.gs-tb-section-title { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+.gs-tb-thresholds { display: flex; gap: 8px; flex-wrap: wrap; }
+.gs-tb-thresh {
+  padding: 4px 10px; border-radius: 4px; font-family: var(--mono); font-size: 0.78rem;
+  border: 1px solid; color: var(--muted); background: rgba(255,255,255,0.02);
+}
+.gs-tb-thresh--active { background: rgba(255,255,255,0.08); color: var(--text); }
+.gs-tb-recency-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.gs-tb-recency { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); }
+.gs-tb-recency strong { color: var(--text); }
+.gs-tb-explain {
+  margin: 12px 0 0; font-size: 0.78rem; line-height: 1.55; color: var(--muted);
+}
+.gs-tb-explain strong { color: var(--text); }
+.gs-tb-explain code { color: var(--accent); font-size: 0.76rem; }
 </style>
 </head>
 <body>
