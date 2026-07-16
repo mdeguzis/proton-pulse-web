@@ -1,6 +1,6 @@
 // Entry module for confidence.html. Migrated from the page's inline script.
 import { estimateScoreBreakdown, loadScoringInfo, ratingMix } from '../shared/scoring.js?v=8051e115';
-import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner } from '../shared/hardware.js?v=6a1246aa';
+import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhanceHardwareBanner } from '../shared/hardware.js?v=6a1246aa';
 import { attachChartHover } from '../shared/chart-interactions.js?v=6b608095';
 import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
@@ -844,7 +844,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
       : (myHw.gpuVendor || myHw.gpu || 'unknown GPU');
     metaEl.textContent = `// Computed from ${reports.length} report${reports.length === 1 ? '' : 's'} on ${appId} -- hardware match active (${hwLabel})`;
 
-    const previewBanner = isPreviewHardware(myHw) ? renderPreviewHardwareBanner() : '';
+    const previewBanner = renderPreviewHardwareBanner();
 
     if (wantsPerReport) {
       const target = reportId
@@ -858,12 +858,14 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
         return;
       }
       root.innerHTML = previewBanner + renderReportBreakdown(target, gameTitle, appId, myHw, scoringData);
+      void enhanceHardwareBanner();
     } else {
       const out = renderGameBreakdown(reports, gameTitle, appId);
       root.innerHTML = previewBanner + out.html;
       // wire chart hover handlers AFTER innerHTML lands so the helper can
       // measure live SVG nodes (otherwise hover targets stay inert)
       if (typeof out.wire === 'function') out.wire();
+      void enhanceHardwareBanner();
     }
   }
 
