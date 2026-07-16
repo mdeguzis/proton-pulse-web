@@ -44,13 +44,22 @@ function _imgLoadsBrowser(url, timeoutMs = 5000) {
 // probe (Akamai -> Fastly -> Cloudflare) with a host-swap of the
 // original URL prepended so a hashed appdetails path gets tried on
 // both Akamai and Fastly before we drop to the plain header.jpg paths.
+//
+// Host comparisons parse the URL and check `.hostname` exactly rather
+// than doing a substring `includes()` -- substring matching would fire
+// on `https://evil.example/?redirect=shared.akamai.steamstatic.com/...`
+// which is the CodeQL "incomplete URL substring sanitization" pattern.
 function _steamRefetchFallbacks(originalUrl, appId) {
   const enc = encodeURIComponent(appId);
   const list = [];
-  if (originalUrl && originalUrl.includes('shared.akamai.steamstatic.com')) {
-    list.push(originalUrl.replace('shared.akamai.steamstatic.com', 'shared.fastly.steamstatic.com'));
-  } else if (originalUrl && originalUrl.includes('shared.fastly.steamstatic.com')) {
-    list.push(originalUrl.replace('shared.fastly.steamstatic.com', 'shared.akamai.steamstatic.com'));
+  let parsed = null;
+  try { parsed = originalUrl ? new URL(originalUrl) : null; } catch { parsed = null; }
+  if (parsed && parsed.hostname === 'shared.akamai.steamstatic.com') {
+    parsed.hostname = 'shared.fastly.steamstatic.com';
+    list.push(parsed.toString());
+  } else if (parsed && parsed.hostname === 'shared.fastly.steamstatic.com') {
+    parsed.hostname = 'shared.akamai.steamstatic.com';
+    list.push(parsed.toString());
   }
   list.push(
     `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${enc}/header.jpg`,

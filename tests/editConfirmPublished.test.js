@@ -39,9 +39,11 @@ describe('submit.html ?edit= flow: confirm before editing a published report', (
   test('bounces to returnTo or game page when user cancels', () => {
     // The cancel path must redirect somewhere safe (the same destination
     // a successful save would use), not just return into the prefill code.
+    // Widened from 200 to 400 chars to accommodate the nosemgrep suppression
+    // comment that lives on the same line as the location.href assignment.
     const cancelBlock = SRC.slice(
       SRC.indexOf('if (!proceed)'),
-      SRC.indexOf('if (!proceed)') + 200
+      SRC.indexOf('if (!proceed)') + 400
     );
     expect(cancelBlock).toContain('returnTo || `app.html#/app/${appId}`');
     expect(cancelBlock).toContain('window.location.href = dest');

@@ -14,9 +14,13 @@ const SUBMIT_MAIN = fs.readFileSync(path.join(ROOT, 'js', 'submit', 'main.js'), 
 const MODALS_CSS  = fs.readFileSync(path.join(ROOT, 'css', 'app', 'modals.css'), 'utf8');
 
 describe('submit edit banner collapsible (#147 + #149)', () => {
-  test('renders the full approval_hash, never a slice', () => {
+  test('renders the full approval_hash escaped, never a slice', () => {
+    // Never slice the hash -- users need the full md5 to verify against
+    // a stored value. Escape it via esc() before templating into innerHTML
+    // so a malicious admin cannot smuggle HTML through a server-provided
+    // string.
     expect(SUBMIT_MAIN).not.toContain('approval.approval_hash.slice');
-    expect(SUBMIT_MAIN).toContain('<code>${approval.approval_hash}</code>');
+    expect(SUBMIT_MAIN).toContain('<code>${esc(approval.approval_hash)}</code>');
   });
 
   test('uses a native <details>/<summary> so collapse works without JS', () => {
@@ -30,7 +34,10 @@ describe('submit edit banner collapsible (#147 + #149)', () => {
       SUBMIT_MAIN.indexOf('</summary>')
     );
     expect(summary).toContain('submit-approval-badge--approved');
-    expect(summary).toContain('Report #${editReportId}');
+    // editReportId is escaped via esc() before templating (see the top-of-file
+    // digits-only validator that stops any non-numeric string from getting in
+    // the first place, plus a belt-and-braces esc() at the render site).
+    expect(summary).toContain('Report #${esc(editReportId)}');
     expect(summary).toContain('See all details');
     // Date / By / Hash must NOT be in the summary -- those collapse away.
     expect(summary).not.toContain('Approved: ');

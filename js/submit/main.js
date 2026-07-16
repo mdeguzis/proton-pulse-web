@@ -7,11 +7,16 @@ import {
 } from '../shared/drafts.js?v=d7011aa5';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
+import { esc } from '../app/utils.js?v=9a39c726';
 
 (async function() {
   const params = new URLSearchParams(window.location.search);
   const appId = params.get('app');
-  const editReportId = params.get('edit') || null;
+  // report ids are bigints (see migration 20260621010000_report_approvals.sql).
+  // Reject anything that is not a positive integer so it cannot be reflected
+  // into innerHTML as an XSS payload (banner renders `Report #${editReportId}`).
+  const editRaw = params.get('edit');
+  const editReportId = (editRaw && /^[0-9]+$/.test(editRaw)) ? editRaw : null;
   const titleParam = params.get('title') || '';
   const isEdit = !!editReportId;
   // fromCloud=1 -> user is publishing a cloud-saved config that doesnt
@@ -24,10 +29,24 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
   // Where to go after a successful save. Defaults to the game page, but the
   // profile page passes return=profile.html so an edit returns to where the
-  // user came from. Sanitized to a same-origin relative .html path to avoid an
-  // open-redirect: no protocol, no //, must end in .html.
+  // user came from. Sanitized to prevent open-redirect / XSS by resolving
+  // the caller-supplied value as a URL against the current page, requiring
+  // the resolved origin to match, and restricting the final path component
+  // to a small whitelist of pages that actually link back here. This shape
+  // (URL parse + origin equality + filename allowlist) is what CodeQL
+  // recognizes as a safe sanitizer for `location.href = <userInput>` sinks.
+  const ALLOWED_RETURN_PAGES = new Set(['profile.html', 'app.html', 'index.html', '']);
   const returnRaw = params.get('return') || '';
-  const returnTo = /^[a-z0-9._-]+\.html(?:[?#].*)?$/i.test(returnRaw) ? returnRaw : null;
+  let returnTo = null;
+  if (returnRaw) {
+    try {
+      const parsed = new URL(returnRaw, window.location.href);
+      const filename = parsed.pathname.split('/').pop() || '';
+      if (parsed.origin === window.location.origin && ALLOWED_RETURN_PAGES.has(filename)) {
+        returnTo = parsed.href;
+      }
+    } catch { /* invalid URL -> keep returnTo null so we fall back to the game page */ }
+  }
 
   if (!appId) {
     document.getElementById('game-title').textContent = 'No app ID provided';
@@ -145,7 +164,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     document.getElementById('auth-gate').hidden = false;
     document.getElementById('submit-form-content').hidden = true;
     document.getElementById('login-btn')?.addEventListener('click', () => {
-      window.location.href = SupaAuth.buildLoginPageUrl(window.location.href); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect — target is constructed by SupaAuth helper from the current page URL (same-origin)
+      window.location.href = SupaAuth.buildLoginPageUrl(window.location.href); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect - target is constructed by SupaAuth helper from the current page URL (same-origin)
     });
     // #323 followup: mount the inline Library panel as a peer of the
     // auth-gate card so signed-out visitors have an alternative path.
@@ -295,7 +314,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
         if (res.where) {
           hideRestoreBanner();
           const dest = returnTo || `app.html#/app/${appId}`;
-          setTimeout(() => { window.location.href = dest; }, 400); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect — dest is validated by returnTo regex (same-origin relative .html path) or falls back to hardcoded app.html#/app/
+          setTimeout(() => { window.location.href = dest; }, 400); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect - dest is validated by URL-parse + origin equality + filename allowlist (see returnTo sanitizer) or falls back to hardcoded app.html#/app/
         }
       } finally {
         saveDraftBtn.disabled = false;
@@ -380,7 +399,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
         );
         if (!proceed) {
           const dest = returnTo || `app.html#/app/${appId}`;
-          window.location.href = dest; // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect — dest is validated by returnTo regex (same-origin relative .html path) or falls back to hardcoded app.html#/app/
+          window.location.href = dest; // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect - dest is validated by URL-parse + origin equality + filename allowlist (see returnTo sanitizer) or falls back to hardcoded app.html#/app/
           return;
         }
       }
@@ -472,19 +491,24 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
             // report number; everything else lives behind a native
             // <details>/<summary> expander, one field per row so a long
             // md5 hash never has to fit on the same line as a date.
+            // editReportId is already validated to be digits-only at parse time
+            // (see the top-of-file sanitizer), but approval.* values come from
+            // Supabase and a malicious admin could in theory push HTML into
+            // approved_by. Escape every server-provided value before templating
+            // into innerHTML.
             banner.innerHTML = `
               <details class="submit-approval-banner-details">
                 <summary class="submit-approval-banner-summary">
                   <span class="submit-approval-badge submit-approval-badge--approved">Approved</span>
-                  <span class="submit-approval-banner-report">Report #${editReportId}</span>
+                  <span class="submit-approval-banner-report">Report #${esc(editReportId)}</span>
                   <span class="submit-approval-banner-toggle">See all details</span>
                 </summary>
-                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">Approved</span> ${new Date(approval.approved_at).toLocaleDateString()}</div>
-                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">By</span> ${approval.approved_by || 'Auto-Moderator'}</div>
-                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">Hash</span> <code>${approval.approval_hash}</code></div>
+                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">Approved</span> ${esc(new Date(approval.approved_at).toLocaleDateString())}</div>
+                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">By</span> ${esc(approval.approved_by || 'Auto-Moderator')}</div>
+                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">Hash</span> <code>${esc(approval.approval_hash)}</code></div>
               </details>`;
           } else {
-            banner.innerHTML = `<span class="submit-approval-badge submit-approval-badge--pending">Pending Approval</span> Report #${editReportId} | This report is awaiting review. It will not appear publicly until approved. Reference this ID if you need to request a manual review.`;
+            banner.innerHTML = `<span class="submit-approval-badge submit-approval-badge--pending">Pending Approval</span> Report #${esc(editReportId)} | This report is awaiting review. It will not appear publicly until approved. Reference this ID if you need to request a manual review.`;
           }
           const formContent = document.getElementById('submit-form-content');
           formContent?.insertBefore(banner, formContent.firstChild);
@@ -666,7 +690,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
             void deleteDraft(session, appId).catch(() => {});
           }
           const dest = returnTo || `app.html#/app/${appId}`;
-          setTimeout(() => { window.location.href = dest; }, 900); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect — dest is validated by returnTo regex (same-origin relative .html path) or falls back to hardcoded app.html#/app/
+          setTimeout(() => { window.location.href = dest; }, 900); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect - dest is validated by URL-parse + origin equality + filename allowlist (see returnTo sanitizer) or falls back to hardcoded app.html#/app/
         } else {
           if (statusEl) { statusEl.textContent = result.error || 'Failed'; statusEl.style.color = 'var(--red)'; }
           window.ppToast?.error(result.error || (isEdit ? 'Could not save changes.' : 'Could not submit the report.'));
