@@ -505,12 +505,15 @@ jobs:
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
           mkdir -p badges
-          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell - hardcoded Supabase count URL piped to a fixed python3 -c that reads only the count field; no arbitrary code execution possible
-          PULSE_COUNT=$(curl -s \
+          # Fetch Pulse count from Supabase (hardcoded URL + fixed field read).
+          # Download to a temp file first, then parse -- avoids the curl|python3
+          # pipe pattern that Semgrep's gha-curl-pipe-shell rule flags.
+          curl -sf \
             -H "apikey: sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V" \
             -H "Prefer: count=exact" \
             "https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1/user_configs?select=count" \
-            | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['count'])" 2>/dev/null || echo "0")
+            > /tmp/pulse-count.json 2>/dev/null || echo '[{"count":0}]' > /tmp/pulse-count.json
+          PULSE_COUNT=$(python3 -c "import json; print(json.load(open('/tmp/pulse-count.json'))[0]['count'])" 2>/dev/null || echo "0")
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
           # Preserve steam-type-cache.json + column 11 across the force-push
           # (#263). Reads the current origin/gh-pages, copies the cache in,
@@ -649,12 +652,15 @@ jobs:
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o ./scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o ./form-schema.json
           mkdir -p ./badges
-          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell - hardcoded Supabase count URL piped to a fixed python3 -c that reads only the count field; no arbitrary code execution possible
-          PULSE_COUNT=$(curl -s \
+          # Fetch Pulse count from Supabase (hardcoded URL + fixed field read).
+          # Download to a temp file first, then parse -- avoids the curl|python3
+          # pipe pattern that Semgrep's gha-curl-pipe-shell rule flags.
+          curl -sf \
             -H "apikey: sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V" \
             -H "Prefer: count=exact" \
             "https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1/user_configs?select=count" \
-            | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['count'])" 2>/dev/null || echo "0")
+            > /tmp/pulse-count.json 2>/dev/null || echo '[{"count":0}]' > /tmp/pulse-count.json
+          PULSE_COUNT=$(python3 -c "import json; print(json.load(open('/tmp/pulse-count.json'))[0]['count'])" 2>/dev/null || echo "0")
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > ./badges/pulse-reports.json
           VERSION=$(cat ../repo/package.json | python3 -c "import json,sys; print(json.load(sys.stdin).get('version','0.0.0'))")
           SHA=$(cd ../repo && git rev-parse --short HEAD)
@@ -857,12 +863,15 @@ jobs:
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
           mkdir -p badges
-          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell - hardcoded Supabase count URL piped to a fixed python3 -c that reads only the count field; no arbitrary code execution possible
-          PULSE_COUNT=$(curl -s \
+          # Fetch Pulse count from Supabase (hardcoded URL + fixed field read).
+          # Download to a temp file first, then parse -- avoids the curl|python3
+          # pipe pattern that Semgrep's gha-curl-pipe-shell rule flags.
+          curl -sf \
             -H "apikey: sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V" \
             -H "Prefer: count=exact" \
             "https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1/user_configs?select=count" \
-            | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['count'])" 2>/dev/null || echo "0")
+            > /tmp/pulse-count.json 2>/dev/null || echo '[{"count":0}]' > /tmp/pulse-count.json
+          PULSE_COUNT=$(python3 -c "import json; print(json.load(open('/tmp/pulse-count.json'))[0]['count'])" 2>/dev/null || echo "0")
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
           # Preserve steam-type-cache.json + column 11 across the force-push (#263).
           bash /tmp/preserve-steam-type-cache.sh "$(pwd)"
@@ -1093,12 +1102,15 @@ jobs:
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
           curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
           mkdir -p badges
-          # nosemgrep: yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell - hardcoded Supabase count URL piped to a fixed python3 -c that reads only the count field; no arbitrary code execution possible
-          PULSE_COUNT=$(curl -s \
+          # Fetch Pulse count from Supabase (hardcoded URL + fixed field read).
+          # Download to a temp file first, then parse -- avoids the curl|python3
+          # pipe pattern that Semgrep's gha-curl-pipe-shell rule flags.
+          curl -sf \
             -H "apikey: sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V" \
             -H "Prefer: count=exact" \
             "https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1/user_configs?select=count" \
-            | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['count'])" 2>/dev/null || echo "0")
+            > /tmp/pulse-count.json 2>/dev/null || echo '[{"count":0}]' > /tmp/pulse-count.json
+          PULSE_COUNT=$(python3 -c "import json; print(json.load(open('/tmp/pulse-count.json'))[0]['count'])" 2>/dev/null || echo "0")
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
           # Preserve steam-type-cache.json + column 11 across the force-push (#263).
           bash /tmp/preserve-steam-type-cache.sh "$(pwd)"

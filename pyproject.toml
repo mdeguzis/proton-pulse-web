@@ -18,16 +18,12 @@ dev = [
 ]
 
 [tool.uv]
-# Dependency cooldown: 7 days for both major/minor and patch releases so a
-# just-published malicious package cannot land in a `uv sync` run before
-# supply-chain scanners flag it. Same lever Semgrep's
-# uv-missing-dependency-cooldown rule looks for.
+# Dependency cooldown: refuse to resolve any package version published in
+# the last 7 days so a just-published malicious release cannot land in a
+# fresh `uv sync` before supply-chain scanners flag it. Exact key Semgrep's
+# uv-missing-dependency-cooldown rule looks for. Requires uv >= 0.9.17.
+exclude-newer = "7 days"
 default-groups = ["dev"]
-
-[tool.uv.dependency-cooldown]
-major = "7d"
-minor = "7d"
-patch = "7d"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -320,7 +320,8 @@ def run_steamcmd_app_info(app_id: int, timeout: int = 60) -> str:
         "+app_info_print", safe_app_id,
         "+quit",
     ]
-    proc = subprocess.run(  # nosec B603  # nosemgrep: python.lang.security.audit.dangerous-subprocess-use-tainted-env-args.dangerous-subprocess-use-tainted-env-args - argv is a fixed list of literals; the only interpolated slot is safe_app_id which is coerced to str(int(...)) above
+    # nosemgrep: python.lang.security.audit.dangerous-subprocess-use-tainted-env-args.dangerous-subprocess-use-tainted-env-args - argv is a fixed list of literals; the only interpolated slot is safe_app_id which is coerced to str(int(...)) above
+    proc = subprocess.run(  # nosec B603
         cmd, capture_output=True, text=True, timeout=timeout, check=False,
     )
     if proc.returncode != 0:
