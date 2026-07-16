@@ -153,6 +153,15 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
                 + (ws.recently_broken ? ' · Recently broken' : '');
 
     const confTone = stats.confidencePct >= 70 ? 'green' : stats.confidencePct >= 40 ? 'amber' : 'red';
+    const confBucket = stats.confidenceBucket || '';
+    const confSub = confBucket
+      ? `${confBucket} confidence across ${stats.totalReports.toLocaleString()} report${stats.totalReports !== 1 ? 's' : ''}`
+      : `Across ${stats.totalReports.toLocaleString()} report${stats.totalReports !== 1 ? 's' : ''}`;
+
+    // Overall tier card mirrors the game page dial
+    const TIER_COLORS = { platinum: '#b4c7dc', gold: '#c8a050', silver: '#8fa0b0', bronze: '#b07040', borked: '#c85050', pending: '#3a4a5a' };
+    const tierColor = TIER_COLORS[stats.overallTier] || TIER_COLORS.pending;
+    const tierLabel = stats.overallTier === 'pending' ? 'Pending' : stats.overallTier.toUpperCase();
 
     const fresh = stats.freshness;
     const freshTone = fresh.is_stale ? 'red' : fresh.latest_report_age < 90 ? 'green' : 'amber';
@@ -167,6 +176,11 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 
     return `
       <div class="gs-status-grid">
+        <div class="gs-card" style="border-left:3px solid ${tierColor}">
+          <div class="label">Overall tier</div>
+          <div class="value" style="color:${tierColor}">${tierLabel}</div>
+          <div class="sub">${esc(wsLabel)} · ${ws.confidence} certainty</div>
+        </div>
         <div class="gs-card ${wsTone}">
           <div class="label">Working status</div>
           <div class="value">${wsLabel}</div>
@@ -175,7 +189,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
         <div class="gs-card ${confTone}">
           <div class="label">Confidence</div>
           <div class="value">${stats.confidencePct}%</div>
-          <div class="sub">Across ${stats.totalReports} report${stats.totalReports !== 1 ? 's' : ''}</div>
+          <div class="sub">${esc(confSub)}</div>
         </div>
         <div class="gs-card ${freshTone}">
           <div class="label">Freshness</div>
@@ -569,6 +583,36 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     }
 
     const stats = computeGameStats(allReports, configs);
+
+    // Align confidence + tier with the game page by incorporating the live
+    // total. The game page uses MAX(mirrored, live) as the effective ProtonDB
+    // count so the stats page must do the same (#339 follow-up).
+    const liveTotal = liveSummary?.total || 0;
+    const effectiveProtonDbCount = Math.max(cdnReports.length, liveTotal);
+    const totalReportsAligned = pulseReports.length + effectiveProtonDbCount;
+    // Same log-curve formula the game page uses when Pulse reports are absent
+    // or the live total dominates. When Pulse reports exist, use the heavier
+    // multi-factor formula but over the total evidence pool.
+    if (totalReportsAligned > allReports.length) {
+      const totalForPct = allReports.length + Math.round(effectiveProtonDbCount * 0.4);
+      stats.confidencePct = Math.min(95, Math.round(30 + Math.log2(Math.max(1, totalForPct)) * 18));
+    }
+    stats.totalReports = totalReportsAligned;
+    // Overall tier: same logic as game-page.js -- highest tier present in
+    // mirrored reports, or the live summary tier when we have no mirror.
+    const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
+    let overallTier = 'pending';
+    if (allReports.length > 0) {
+      for (const t of TIER_ORDER) {
+        if (allReports.some(r => r.rating === t)) { overallTier = t; break; }
+      }
+    } else if (liveSummary?.tier) {
+      overallTier = String(liveSummary.tier).toLowerCase();
+    }
+    stats.overallTier = overallTier;
+    // Confidence bucket label aligned with the game page thresholds
+    stats.confidenceBucket = stats.confidencePct >= 80 ? 'high'
+      : stats.confidencePct >= 50 ? 'moderate' : 'low';
 
     // Pull viewer hardware (real or Steam Deck preview fallback) so the
     // page can both surface the banner and feed personalised match scoring
