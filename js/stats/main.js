@@ -514,7 +514,7 @@ Promise.all([
   })
   .catch(err => {
     root.innerHTML = `<div class="error-state">
-      <p>Stats not available (${err}).</p>
+      <p>Stats not available (${_escHtml(err)}).</p>
       <p style="margin-top:8px;font-size:0.74rem">stats.json is built by the data pipeline. If you're in local dev,
       the next deployment will populate it.</p>
     </div>`;

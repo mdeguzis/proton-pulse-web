@@ -5,9 +5,7 @@
   function getSessionId() {
     var sid = sessionStorage.getItem('pp_sid');
     if (!sid) {
-      sid = (typeof crypto !== 'undefined' && crypto.randomUUID)
-        ? crypto.randomUUID()
-        : Math.random().toString(36).slice(2) + Date.now().toString(36);
+      sid = crypto.randomUUID();
       sessionStorage.setItem('pp_sid', sid);
     }
     return sid;
@@ -25,9 +23,7 @@
       var key = 'proton-pulse:web-client-id';
       var id = localStorage.getItem(key);
       if (!id) {
-        id = (typeof crypto !== 'undefined' && crypto.randomUUID)
-          ? crypto.randomUUID()
-          : Math.random().toString(36).slice(2) + Date.now().toString(36);
+        id = crypto.randomUUID();
         localStorage.setItem(key, id);
       }
       return id;

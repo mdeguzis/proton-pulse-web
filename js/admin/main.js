@@ -220,7 +220,7 @@ async function loadReportDetail(id) {
       },
     });
   } catch (err) {
-    content.innerHTML = `<div class="admin-error">${err.message}</div>
+    content.innerHTML = `<div class="admin-error">${escapeHtml(err.message)}</div>
       <button class="admin-btn admin-btn--ghost admin-btn--sm" data-action="ar-back" style="margin-top:10px">&#8592; Back to reports</button>`;
     content.querySelector('[data-action="ar-back"]')?.addEventListener('click', () => activateTab('all-reports'));
   }

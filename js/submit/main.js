@@ -683,7 +683,13 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
 })().catch(err => {
   console.error('[submit] page init failed:', err);
   const fc = document.getElementById('submit-form-content');
-  if (fc) fc.innerHTML = `<div style="padding:24px;color:var(--red)">Page error: ${err.message || err}</div>`;
+  if (fc) {
+    const div = document.createElement('div');
+    div.style.cssText = 'padding:24px;color:var(--red)';
+    div.textContent = `Page error: ${err.message || err}`;
+    fc.innerHTML = '';
+    fc.appendChild(div);
+  }
 });
 
 // #153 spike: wraps the Notes textarea (name="notes") with a Write /
