@@ -278,6 +278,26 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
       return `<span class="gs-tb-recency">${b.label}: <strong>${b.weight}x</strong> (${count})</span>`;
     }).filter(Boolean).join('');
 
+    // Per-source contribution
+    const pdbReports = perReport.filter((_, i) => (allReports[i].source || '').toLowerCase() === 'protondb');
+    const pulseReports = perReport.filter((_, i) => (allReports[i].source || '').toLowerCase() !== 'protondb');
+    const sourceRows = [];
+    if (pdbReports.length) {
+      const pdbWSum = pdbReports.reduce((s, r) => s + r.weighted, 0);
+      const pdbWTotal = pdbReports.reduce((s, r) => s + r.recencyWeight, 0);
+      sourceRows.push(`<span class="gs-tb-source">ProtonDB: <strong>${pdbReports.length}</strong> reports, &Sigma;weighted=${pdbWSum.toFixed(2)}</span>`);
+    }
+    if (pulseReports.length) {
+      const pulseWSum = pulseReports.reduce((s, r) => s + r.weighted, 0);
+      const pulseWTotal = pulseReports.reduce((s, r) => s + r.recencyWeight, 0);
+      sourceRows.push(`<span class="gs-tb-source">Pulse: <strong>${pulseReports.length}</strong> reports, &Sigma;weighted=${pulseWSum.toFixed(2)}</span>`);
+    }
+    const sourceSection = sourceRows.length > 1 ? `
+      <div class="gs-tb-section">
+        <div class="gs-tb-section-title">Per-source contribution</div>
+        <div class="gs-tb-recency-row">${sourceRows.join('')}</div>
+      </div>` : '';
+
     return `
       <div class="gs-tier-breakdown">
         <div class="gs-tb-result">
@@ -291,6 +311,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
           <tbody>${tierRows}</tbody>
           <tfoot><tr><td colspan="3"><strong>Total</strong></td><td class="gs-tb-num"><strong>${wTotal.toFixed(2)}</strong></td><td class="gs-tb-num"><strong>${wSum.toFixed(2)}</strong></td></tr></tfoot>
         </table>
+        ${sourceSection}
         <div class="gs-tb-section">
           <div class="gs-tb-section-title">Tier thresholds</div>
           <div class="gs-tb-thresholds">${thresholdRows}</div>
@@ -304,6 +325,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
           The weighted average (<code>&Sigma;weighted / &Sigma;weight</code> = ${wSum.toFixed(2)} / ${wTotal.toFixed(2)} = <strong>${avg.toFixed(3)}</strong>)
           is compared against the tier thresholds above to produce the final rating.
           Recent reports count more; very old reports fade toward zero influence.
+          All sources (ProtonDB + Pulse) are weighted identically — source does not affect scoring.
         </p>
       </div>
     `;
