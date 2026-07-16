@@ -52,6 +52,7 @@ from .deck_status import build_deck_status
 from .most_played import build_most_played
 from .release_years import enrich_search_index_with_release_years
 from .steam_type import enrich_search_index_with_steam_type
+from .anti_cheat import enrich_search_index_with_anti_cheat
 from .pulse import merge_pulse_into_data_dir
 from .write_depot_files import write_depot_files
 from .state import read_pipeline_state
@@ -1821,6 +1822,10 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # appdetails. Flag them in search-index.json column 7 so the frontend can
     # render a DELISTED chip without re-fetching anything client-side.
     enrich_search_index_with_delisted(output_path)
+    # #242: merge AreWeAntiCheatYet status + vendors into columns 10 + 11
+    # so the frontend can drive an anti-cheat filter chip + report badges
+    # without a separate fetch per game.
+    enrich_search_index_with_anti_cheat(output_path)
     validate_steam_app_ids(output_dir)
     # Issue #134: emit the extended Steam index AFTER the primary index has
     # been finalized (release-year + delisted enrichment runs first), so the

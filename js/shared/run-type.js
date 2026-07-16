@@ -60,9 +60,11 @@ export const RUN_TYPES = Object.freeze({
     label:    'Proton GE',
     subtitle: 'GloriousEggroll community fork',
     // Accepts alphanumeric suffixes (rc1, beta, "9-27b") since GE tags
-    // ship those variants. \w in the trailing segments covers letters +
-    // digits without breaking anchored matching.
-    versionPattern: /^(ge[-_ ]?proton|proton[-_ ]?ge)[-_ ]?\d+([-_.]\w+)*$/i,
+    // ship those variants. Trailing segments use [a-zA-Z0-9] rather than
+    // \w so the segment content cannot overlap with the [-_.] delimiter
+    // (\w includes '_'), which is what triggered the CodeQL ReDoS finding
+    // on inputs like 'GE-Proton9-a_a_a_...'.
+    versionPattern: /^(ge[-_ ]?proton|proton[-_ ]?ge)[-_ ]?\d+(?:[-_.][a-zA-Z0-9]+)*$/i,
     versionExample: 'e.g. GE-Proton9-27',
   },
   'proton-cachyos': {

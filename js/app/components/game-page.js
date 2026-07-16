@@ -22,6 +22,7 @@ import { dataUrl } from '../../lib/data-url.js?v=3c2e7ac9';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { computeBadgesForAppId } from '../../lib/card-badges.js?v=5b71af11';
+import { getAntiCheatForApp, bucketAntiCheatStatus, humanAntiCheatStatus } from '../lib/anti-cheat.js?v=34f8a0a7';
 
 let _steamCatalogCache = null;
 async function _fetchSteamCatalog() {
@@ -243,7 +244,7 @@ async function _openMetadataModal(appId) {
     if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); }
   });
 
-  const [meta, depotInfo, newsInfo] = await Promise.all([
+  const [meta, depotInfo, newsInfo, antiCheat] = await Promise.all([
     fetchAppMetadata(appId).catch(() => null),
     // Depot info from the PICS pipeline (#215). Populated nightly; may
     // not exist for this app yet.
@@ -253,6 +254,9 @@ async function _openMetadataModal(appId) {
     // Global (not per-OS) so it degrades gracefully alongside the OS
     // table.
     fetchAppNews(appId).catch(() => null),
+    // Anti-cheat data from AreWeAntiCheatYet (#242). Returns null when
+    // the game has no upstream entry.
+    getAntiCheatForApp(appId).catch(() => null),
   ]);
   const body = modal.querySelector('#game-metadata-body');
   if (!body) return;
@@ -375,8 +379,37 @@ async function _openMetadataModal(appId) {
     const t = meta.fullgame.name || `App ${meta.fullgame.appid}`;
     return `<a href="#/app/${esc(String(meta.fullgame.appid))}">${esc(t)}</a>`;
   };
+  // Anti-cheat block (#242): shown near the top because it is the single
+  // biggest deal-breaker for Proton play. Only rendered when we have an
+  // upstream entry -- absence is NOT "no anti-cheat", it is "no data".
+  const antiCheatBlock = () => {
+    if (!antiCheat) return '';
+    const status = antiCheat.status || null;
+    const vendors = Array.isArray(antiCheat.vendors) && antiCheat.vendors.length
+      ? antiCheat.vendors : [];
+    if (!status && !vendors.length) return '';
+    const vendorChips = vendors.length
+      ? `<div class="gm-chips" style="margin-top:6px">${vendors.map(v => `<span class="gm-chip">${esc(v)}</span>`).join('')}</div>`
+      : '';
+    if (!status) {
+      // Vendor-only path: detected from the Steam appdetails scan (#242
+      // followup). No Linux verdict yet, so just say what vendor(s) the
+      // store page mentions.
+      const src = '<div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Detected from Steam store page. No Linux compatibility verdict yet.</div>';
+      return `<span class="gm-plat">Uses anti-cheat</span>${vendorChips}${src}`;
+    }
+    const bucket = bucketAntiCheatStatus(status);
+    const label = humanAntiCheatStatus(status);
+    const badgeCls = bucket === 'works' ? 'gm-plat gm-plat--on'
+                    : bucket === 'broken' ? 'gm-plat gm-plat--off'
+                    : 'gm-plat';
+    const src = '<div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Source: <a href="https://areweanticheatyet.com/" target="_blank" rel="noopener">AreWeAntiCheatYet</a></div>';
+    return `<span class="${badgeCls}">${esc(label)}</span>${vendorChips}${src}`;
+  };
+
   body.innerHTML = [
     section('Name',          meta.name ? `<strong>${esc(meta.name)}</strong>` : ''),
+    section('Anti-cheat',    antiCheatBlock()),
     section('App ID',        `<code>${esc(meta.appId)}</code>`),
     section('Type',          meta.type ? `<code>${esc(meta.type)}</code>` : ''),
     section('Parent game',   fullgameLink()),

@@ -153,6 +153,16 @@ def stage_secrets(ctx: Ctx) -> None:
     print()
     print("If setting via gh CLI:")
     print("  gh secret set NAME --body 'VALUE' --repo mdeguzis/proton-pulse-web")
+    print()
+    print("Sibling repo (mdeguzis/proton-pulse-data) also needs a subset for")
+    print("the content moderation workflow. Copy these into it:")
+    for n in ("SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "OPENAI_API_KEY"):
+        print(f"  [ ] {n:32}  (same value as proton-pulse-web)")
+    print()
+    print("Also recreate the moderation-review issue label in proton-pulse-web:")
+    print("  gh label create content-moderation-review --repo mdeguzis/proton-pulse-web \\")
+    print("    --color d73a4a \\")
+    print("    --description \"Aux moderation scan flagged a row -- admin triage needed\"")
 
 
 # --- Stage: import ------------------------------------------------------
@@ -186,6 +196,10 @@ def stage_verify(ctx: Ctx) -> None:
         "Filing an incident-labeled issue posts a Discord announcement",
         "/status.html loads and every edge function reads green",
         "Submit a dummy report through the plugin or /submit.html and approve it in admin",
+        "Any PR shows CI green for both semgrep/ci and sbom + grype",
+        "The sbom + grype job attaches sbom-cyclonedx + grype-sarif artifacts",
+        "Content moderation run in proton-pulse-data shows a summary table with all four aux tables scanned",
+        "gh label list --repo mdeguzis/proton-pulse-web contains content-moderation-review",
     ]
     for i, c in enumerate(checks, 1):
         print(f"  {i}. [ ] {c}")
