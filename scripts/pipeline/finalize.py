@@ -1822,9 +1822,10 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # appdetails. Flag them in search-index.json column 7 so the frontend can
     # render a DELISTED chip without re-fetching anything client-side.
     enrich_search_index_with_delisted(output_path)
-    # #242: merge AreWeAntiCheatYet status + vendors into columns 10 + 11
+    # #242: merge AreWeAntiCheatYet status + vendors into columns 12 + 13
     # so the frontend can drive an anti-cheat filter chip + report badges
-    # without a separate fetch per game.
+    # without a separate fetch per game. #354 fixed the original 10/11
+    # placement that was overwriting replaced_by + steam_type.
     enrich_search_index_with_anti_cheat(output_path)
     validate_steam_app_ids(output_dir)
     # Issue #134: emit the extended Steam index AFTER the primary index has
