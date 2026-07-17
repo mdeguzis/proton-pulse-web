@@ -13,6 +13,14 @@ const STATUS_MAIN = fs.readFileSync(
   path.join(__dirname, '..', 'js', 'status', 'main.js'),
   'utf8',
 );
+const STATUS_HTML = fs.readFileSync(
+  path.join(__dirname, '..', 'status.html'),
+  'utf8',
+);
+const SECURITY_TEMPLATE = fs.readFileSync(
+  path.join(__dirname, '..', '.github', 'ISSUE_TEMPLATE', 'security_report.yml'),
+  'utf8',
+);
 
 describe('status page Security section', () => {
   test('renders the six scanner-status tiles', () => {
@@ -38,5 +46,25 @@ describe('status page Security section', () => {
     // Announcements still have a setInterval; security should not.
     const securityBlock = STATUS_MAIN.slice(STATUS_MAIN.indexOf('Security scanner posture'));
     expect(securityBlock).not.toMatch(/setInterval\([\s\S]{0,60}Security/);
+  });
+
+  test('Report link points to the public issue template, not the private advisories page', () => {
+    // The private advisories path requires a GitHub account AND is meant for
+    // confidential exploit disclosure -- most user-visible concerns should
+    // go to the plain issue template so a normal visitor can file one.
+    // Private disclosure is still linked from inside the template body.
+    expect(STATUS_HTML).toContain('issues/new?template=security_report.yml');
+    expect(STATUS_HTML).toContain('Report a security concern');
+    expect(STATUS_HTML).not.toMatch(/href="https:\/\/github\.com\/[^"]+\/security\/advisories"/);
+  });
+
+  test('security issue template exists and links to the private advisories path for real exploits', () => {
+    // The template body must tell reporters to use the private path if what
+    // they found is an actual working exploit; posting one on a public
+    // issue is a gift to attackers until the fix ships.
+    expect(SECURITY_TEMPLATE).toContain('name: Security Concern');
+    expect(SECURITY_TEMPLATE).toContain('security/advisories/new');
+    // Category dropdown is required so triage does not have to guess.
+    expect(SECURITY_TEMPLATE).toContain('label: What kind of concern');
   });
 });
