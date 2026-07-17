@@ -10,8 +10,9 @@ const vm = require('vm');
 const { stripModuleSyntax } = require('./_esm-vm.js');
 
 const ROOT = path.join(__dirname, '..');
-const API_SRC = fs.readFileSync(path.join(ROOT, 'js', 'admin', 'api', 'analytics.js'), 'utf8');
-const CMP_SRC = fs.readFileSync(path.join(ROOT, 'js', 'admin', 'components', 'analytics.js'), 'utf8');
+const API_SRC    = fs.readFileSync(path.join(ROOT, 'js', 'admin', 'api', 'analytics.js'), 'utf8');
+const CMP_SRC    = fs.readFileSync(path.join(ROOT, 'js', 'admin', 'components', 'analytics.js'), 'utf8');
+const RSRC_SRC   = fs.readFileSync(path.join(ROOT, 'js', 'admin', 'lib', 'reportSource.js'), 'utf8');
 
 function loadApi(rowsByUrl, urlSpy = []) {
   const ctx = {
@@ -28,13 +29,20 @@ function loadApi(rowsByUrl, urlSpy = []) {
   };
   vm.createContext(ctx);
   // Strip ES module syntax so we can load + call exported functions.
+  // reportSource.js is the shared classifier module; load it first so
+  // analytics.js's stripped `import { classifyReportSource }` line
+  // resolves against a real definition in the vm context.
+  vm.runInContext(stripModuleSyntax(RSRC_SRC), ctx);
   vm.runInContext(stripModuleSyntax(API_SRC), ctx);
   return ctx;
 }
 
 describe('fetchReportsByDay source breakdown (#76)', () => {
-  test('selects source column from user_configs', () => {
-    expect(API_SRC).toContain('select=created_at,source&');
+  test('selects source + installation_id columns from user_configs', () => {
+    // installation_id is the Deck-plugin signature required by
+    // classifyReportSource. Without it the chart could not tell a real
+    // plugin submission from a mislabeled 'user' row.
+    expect(API_SRC).toContain('select=created_at,source,installation_id&');
   });
 
   test('classifyReportSource buckets web-* into web', () => {
@@ -53,24 +61,22 @@ describe('fetchReportsByDay source breakdown (#76)', () => {
     expect(ctx.classifyReportSource('plugin')).toBe('plugin');
   });
 
-  test('classifyReportSource routes the actual plugin values into plugin', () => {
-    // The decky-proton-pulse plugin's submit path sends source =
-    // 'user' | 'protondb' | 'protondb-local' (see plugin's
-    // src/lib/userConfigs.ts). Before this fix those all fell to 'other',
-    // which is what showed up as the misclassified yellow spike on the
-    // Report Submissions chart.
+  test('classifyReportSource treats installation_id as the plugin signature', () => {
     const ctx = loadApi({});
-    expect(ctx.classifyReportSource('user')).toBe('plugin');
-    expect(ctx.classifyReportSource('protondb')).toBe('plugin');
-    expect(ctx.classifyReportSource('protondb-local')).toBe('plugin');
+    // Row with installation_id => plugin regardless of source string.
+    expect(ctx.classifyReportSource({ source: 'user',     installation_id: 'iid' })).toBe('plugin');
+    expect(ctx.classifyReportSource({ source: 'protondb', installation_id: 'iid' })).toBe('plugin');
+    expect(ctx.classifyReportSource({ source: '',         installation_id: 'iid' })).toBe('plugin');
   });
 
-  test('classifyReportSource falls back to other for everything else', () => {
+  test('classifyReportSource falls to other when a "plugin-ish" source has no installation_id', () => {
+    // Half-Life 4: Gabe's Revenge regression guard: source=user but no
+    // signature MUST NOT be labelled plugin.
     const ctx = loadApi({});
-    expect(ctx.classifyReportSource('protondb-live')).toBe('other');
-    expect(ctx.classifyReportSource('')).toBe('other');
-    expect(ctx.classifyReportSource(null)).toBe('other');
-    expect(ctx.classifyReportSource(undefined)).toBe('other');
+    expect(ctx.classifyReportSource({ source: 'user' })).toBe('other');
+    expect(ctx.classifyReportSource({ source: 'protondb' })).toBe('other');
+    expect(ctx.classifyReportSource({ source: 'protondb-local' })).toBe('other');
+    expect(ctx.classifyReportSource({ source: '' })).toBe('other');
   });
 
   test('classifyReportSource is case-insensitive', () => {
@@ -183,15 +189,15 @@ describe('Report Submissions chart source shape (#76)', () => {
     expect(block).toContain('#d4b36a'); // Other gold
   });
 
-  test('caption explains the source breakdown', () => {
+  test('caption explains the signature-based plugin detection', () => {
+    // Caption must call out installation_id as the plugin signature so an
+    // admin reading the chart understands why a source=user row without
+    // the signature does NOT count as Plugin.
     expect(CMP_SRC).toContain('stacked by source');
-    // Caption spells out the actual plugin sources (user, protondb,
-    // protondb-local) so admins can tell why a bar is where it is.
     expect(CMP_SRC).toContain('Web = browser submissions');
-    expect(CMP_SRC).toContain('Plugin = Steam Deck plugin');
-    expect(CMP_SRC).toContain('"user"');
-    expect(CMP_SRC).toContain('"protondb"');
-    expect(CMP_SRC).toContain('"protondb-local"');
+    expect(CMP_SRC).toContain('installation_id');
+    // The old caption (source-string trust) must not creep back.
+    expect(CMP_SRC).not.toContain('source is "user", "protondb", "protondb-local", or starts with "plugin"');
   });
 
   test('chart has 3 datasets with matching stack key', () => {

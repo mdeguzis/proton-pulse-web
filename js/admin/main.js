@@ -14,15 +14,15 @@ import { renderPhrases } from './components/phrases.js?v=5fb05dc2';
 import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965';
 import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=28cb08af';
 import { renderUserDetail } from './components/userDetail.js?v=5ff164c0';
-import { fetchAnalytics } from './api/analytics.js?v=59c5d20e';
-import { renderAnalytics } from './components/analytics.js?v=e4821807';
+import { fetchAnalytics } from './api/analytics.js?v=2f32672f';
+import { renderAnalytics } from './components/analytics.js?v=41cda1fe';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
 import { renderDepotTracking } from './components/depotTracking.js?v=8ce33fc6';
 import { renderBoxartAdmin, renderBoxartAdminDetail } from './components/boxart.js?v=3847ca76';
 import { renderApiExplorer } from './components/api-explorer.js?v=dafbc22e';
 import { renderGameManager } from './components/gameManager.js?v=b1d1211c';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=377d9321';
-import { patchReportFlags, fetchReportById } from './api/allReports.js?v=f6b28b0d';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=3a48e0ad';
+import { patchReportFlags, fetchReportById } from './api/allReports.js?v=0f587828';
 import { approveReport } from './api/pending.js?v=84292a58';
 
 // ---------------------------------------------------------------------------

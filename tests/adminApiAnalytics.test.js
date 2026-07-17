@@ -128,21 +128,36 @@ describe('fetchReportsByDay source bucketing (via fetchAnalytics)', () => {
     ]);
   });
 
-  test('plugin submissions (source = "user" | "protondb" | "protondb-local") bucket into "plugin"', async () => {
-    // Plugin's src/lib/userConfigs.ts sends these three string values on
-    // real submissions. Regression guard for the misclassification bug
-    // where each of these landed in the "other" bucket on the chart.
+  test('plugin submissions require installation_id, not just a source string', async () => {
+    // Plugin's src/lib/userConfigs.ts always sets installation_id. A row
+    // whose source string happens to be 'user' but has no installation_id
+    // is NOT from the plugin (regression guard for the Half-Life 4:
+    // Gabe's Revenge mislabel).
     global.fetch = routedFetch({
       'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
       'https://test.supabase.co/rest/v1/user_configs': [
-        { created_at: '2026-06-30T01:00:00Z', source: 'user' },
-        { created_at: '2026-06-30T02:00:00Z', source: 'protondb' },
-        { created_at: '2026-06-30T03:00:00Z', source: 'protondb-local' },
+        { created_at: '2026-06-30T01:00:00Z', source: 'user',           installation_id: 'iid-a' },
+        { created_at: '2026-06-30T02:00:00Z', source: 'protondb',       installation_id: 'iid-b' },
+        { created_at: '2026-06-30T03:00:00Z', source: 'protondb-local', installation_id: 'iid-c' },
       ],
     });
     const result = await fetchAnalytics(makeSession());
     expect(result.reports_by_day.filter(r => r.count > 0)).toEqual([
       { day: '2026-06-30', count: 3, web: 0, plugin: 3, other: 0 },
+    ]);
+  });
+
+  test('source=user WITHOUT installation_id falls to other (Half-Life 4 case)', async () => {
+    global.fetch = routedFetch({
+      'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
+      'https://test.supabase.co/rest/v1/user_configs': [
+        { created_at: '2026-06-30T01:00:00Z', source: 'user' },
+        { created_at: '2026-06-30T02:00:00Z', source: 'protondb' },
+      ],
+    });
+    const result = await fetchAnalytics(makeSession());
+    expect(result.reports_by_day.filter(r => r.count > 0)).toEqual([
+      { day: '2026-06-30', count: 2, web: 0, plugin: 0, other: 2 },
     ]);
   });
 

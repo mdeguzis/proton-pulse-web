@@ -1,5 +1,6 @@
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
 import { supabaseHeaders } from '../utils.js?v=2668b2f0';
+import { classifyReportSource } from '../lib/reportSource.js?v=c366fc24';
 
 export async function fetchAnalytics(session, { daysBack = 30 } = {}) {
   const url = `${SUPABASE_URL}/rest/v1/rpc/admin_analytics`;
@@ -59,24 +60,15 @@ async function fetchSwCacheStats(session, daysBack) {
 }
 
 // #76: broken down by source so the chart can show web vs plugin vs other.
-// The decky-proton-pulse plugin's submit path (src/lib/userConfigs.ts) sends
-// source = 'user' | 'protondb' | 'protondb-local' -- none of those start
-// with the 'plugin' prefix, so every plugin submission was silently landing
-// in the "other" bucket. Recognize the three plugin-produced values here
-// and reserve 'plugin*' as a forward-looking prefix for a future plugin
-// release that may adopt it. Web submissions still use 'web-<platform>'.
-const PLUGIN_SOURCES = new Set(['user', 'protondb', 'protondb-local']);
-function classifyReportSource(src) {
-  const s = (src || '').toLowerCase();
-  if (s.startsWith('web')) return 'web';
-  if (s.startsWith('plugin')) return 'plugin';
-  if (PLUGIN_SOURCES.has(s)) return 'plugin';
-  return 'other';
-}
+// classifyReportSource lives in lib/reportSource.js so the admin all-reports
+// table can share the same "user -> plugin" translation the chart uses.
 
 async function fetchReportsByDay(session, daysBack) {
   const since = new Date(Date.now() - daysBack * 86400000).toISOString().slice(0, 10);
-  const url = `${SUPABASE_URL}/rest/v1/user_configs?select=created_at,source&created_at=gte.${since}T00:00:00&order=created_at.asc`;
+  // installation_id is the Deck-plugin signature -- classifyReportSource
+  // requires it to bucket a row into 'plugin' since 'source' is client-
+  // controlled and cannot be trusted on its own.
+  const url = `${SUPABASE_URL}/rest/v1/user_configs?select=created_at,source,installation_id&created_at=gte.${since}T00:00:00&order=created_at.asc`;
   const res = await fetch(url, { headers: supabaseHeaders(session) });
   if (!res.ok) return [];
   const rows = await res.json();
@@ -86,7 +78,7 @@ async function fetchReportsByDay(session, daysBack) {
     const day = r.created_at?.slice(0, 10);
     if (!day) continue;
     if (!buckets[day]) buckets[day] = { web: 0, plugin: 0, other: 0, count: 0 };
-    const bucket = classifyReportSource(r.source);
+    const bucket = classifyReportSource(r);
     buckets[day][bucket] += 1;
     buckets[day].count += 1;
   }

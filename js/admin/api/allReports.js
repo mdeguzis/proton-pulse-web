@@ -3,8 +3,12 @@ import { supabaseHeaders } from '../utils.js?v=2668b2f0';
 
 // #48: flagged_reason on rows so the All Reports table can surface why a
 // row was flagged. flagged_at on detail to show when the flag landed.
-const COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,source,app_type,is_flagged,is_hidden,flagged_reason,created_at';
-const DETAIL_COLS = 'id,app_id,title,client_id,proton_pulse_user_id,rating,proton_version,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,vram_mb,os,kernel,duration,duration_minutes,notes,form_responses,config_key,game_owned,source,app_type,is_flagged,is_hidden,flagged_reason,flagged_at,created_at,updated_at';
+// installation_id is the Deck-plugin signature -- the web submit path never
+// sets it -- so classifyReportSource can distinguish a real plugin
+// submission from a web (or imported) row whose source string happens to be
+// 'user' / 'protondb' / etc.
+const COLS = 'id,app_id,title,client_id,proton_pulse_user_id,installation_id,rating,source,app_type,is_flagged,is_hidden,flagged_reason,created_at';
+const DETAIL_COLS = 'id,app_id,title,client_id,proton_pulse_user_id,installation_id,rating,proton_version,cpu,gpu,gpu_driver,gpu_vendor,gpu_architecture,ram,vram_mb,os,kernel,duration,duration_minutes,notes,form_responses,config_key,game_owned,source,app_type,is_flagged,is_hidden,flagged_reason,flagged_at,created_at,updated_at';
 
 export async function fetchReportById(session, id) {
   const [res, approvalRes] = await Promise.all([
