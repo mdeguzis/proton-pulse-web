@@ -467,7 +467,7 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     <div class="analytics-chart-wrap">
       <canvas id="analytics-reports-chart"></canvas>
     </div>
-    <p class="chart-caption">Pulse Reports landed per day, stacked by source. Web = browser submissions, Plugin = Steam Deck plugin, Other = anything that does not match those prefixes.</p>
+    <p class="chart-caption">Pulse Reports landed per day, stacked by source. Web = browser submissions (source starts with "web-"). Plugin = Steam Deck plugin (row carries an installation_id, which the plugin submit path always sets and the web never does; a bare source="user" without the signature does NOT count as Plugin). Other = anything else.</p>
     <div id="sec-pages" class="analytics-two-col" style="margin-top:20px">
       <div>
         <div class="analytics-section-title">Top pages</div>

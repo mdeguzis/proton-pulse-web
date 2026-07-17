@@ -9,11 +9,16 @@ publishes one row per game with:
 We fetch nightly, index by Steam appid, and cache to disk. The enricher
 maps each cache hit into two columns on search-index rows:
 
-    col 10 (index 10): ac_status -- one of the enum values above, lowercased.
-    col 11 (index 11): ac_vendors -- list of anti-cheat vendor strings.
+    col 12 (index 12): ac_status -- one of the enum values above, lowercased.
+    col 13 (index 13): ac_vendors -- list of anti-cheat vendor strings.
 
 Both default to None for apps not in the cache. Older frontend consumers
 that only read columns 0..9 keep working (JS destructuring ignores extras).
+
+History: originally at cols 10 + 11 (#242). That stomped col 10 (replaced_by,
+set by game_images.py) and col 11 (steam_type, set by steam_type.py) since
+anti_cheat runs last in finalize. Moved to cols 12 + 13 in #354 so the
+three enrichers land at non-overlapping indices.
 
 License: AreWeAntiCheatYet ships CC-BY. Attribution lives in
 proton-pulse-web-wiki/Data-Pipeline.md.
@@ -365,12 +370,18 @@ def _scan_appdetails_for_vendors(
 
 
 def enrich_search_index_with_anti_cheat(output_dir: Path) -> None:
-    """Merge anti-cheat status + vendors into search-index columns 10 + 11.
+    """Merge anti-cheat status + vendors into search-index columns 12 + 13.
 
     Pads shorter rows with None so both columns land at the expected index
     regardless of what upstream enrichers wrote. Rows without a cache hit
     get None in both slots so the frontend can distinguish "no anti-cheat
     data" from "no anti-cheat".
+
+    #354: cols 12 + 13, not 10 + 11. Col 10 belongs to game_images.py's
+    replaced_by (game-was-superseded redirect). Col 11 belongs to
+    steam_type.py's Steam appdetails type (game / dlc / mod / ...).
+    Anti-cheat runs last in finalize, so writing at 10/11 was silently
+    overwriting both of those columns for every game with AC data.
     """
     output_dir = Path(output_dir)
     index_path = output_dir / "search-index.json"
@@ -415,22 +426,21 @@ def enrich_search_index_with_anti_cheat(output_dir: Path) -> None:
     for row in entries:
         if not isinstance(row, list) or not row:
             continue
-        # Pad to at least 12 columns so col 10 + 11 land at the right index.
-        while len(row) < 12:
+        # Pad to at least 14 columns so col 12 + 13 land at the right index
+        # without disturbing col 10 (replaced_by, set by game_images.py) or
+        # col 11 (steam_type, set by steam_type.py). Pad with None so the
+        # frontend can distinguish "not enriched yet" from a real value.
+        while len(row) < 14:
             row.append(None)
         app_id = str(row[0])
         info = by_appid.get(app_id)
         if info:
-            row[10] = info["status"]
-            row[11] = info["vendors"] or None
+            row[12] = info["status"]
+            row[13] = info["vendors"] or None
             hits += 1
-        else:
-            # Keep any previous value if a prior enricher already wrote here
-            # (defensive: no other enricher owns these columns today).
-            if row[10] is None:
-                row[10] = None
-            if row[11] is None:
-                row[11] = None
+        # No else-branch: leave any existing value from an earlier enricher
+        # alone. If some future column-owner writes 12/13 before us this
+        # will need to change, but today no one else does.
 
     index_path.write_text(json.dumps(entries, separators=(",", ":")), encoding="utf-8")
     log(f"[anti-cheat] enriched {hits}/{len(entries)} search-index rows")

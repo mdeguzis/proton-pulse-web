@@ -1,0 +1,55 @@
+name: Security Concern
+description: Report a security issue on proton-pulse.com or a suspicious behavior you noticed
+labels: ["security"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to flag this.
+
+        **Before filing:** if what you found is a real exploit that would let someone read another user's data, take over an account, or bypass moderation, please use the private disclosure path instead: [Report a vulnerability privately](https://github.com/mdeguzis/proton-pulse-web/security/advisories/new). Public issues are visible to everyone, so a working exploit posted here is a gift to attackers until it is fixed.
+
+        Everything else (suspicious warnings, weak-looking behavior, "I'm not sure but this looks wrong") is fine to post here.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of concern?
+      options:
+        - Suspicious warning or error message
+        - Behavior that looks like it might leak data
+        - Rate limit or abuse-prevention gap
+        - Broken login / session behavior
+        - Content moderation missed something harmful
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page URL (if applicable)
+      placeholder: https://www.proton-pulse.com/...
+  - type: textarea
+    id: description
+    attributes:
+      label: What did you see?
+      description: Describe what happened in plain language. Do NOT paste secrets, tokens, or a working exploit.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce (if you can)
+      placeholder: |
+        1. Open https://www.proton-pulse.com/...
+        2. Click X
+        3. Notice Y
+  - type: input
+    id: browser
+    attributes:
+      label: Browser / device
+      placeholder: Firefox 134 on Steam Deck, Chrome 132 on desktop
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot (optional)
+      description: Drag and drop an image. Redact any personal info first.

@@ -105,21 +105,30 @@ def test_refresh_cache_persists_new_upstream_data(tmp_path):
 # ---- enrich_search_index_with_anti_cheat ------------------------------------
 
 
-def test_enricher_writes_columns_10_and_11(tmp_path):
+def test_enricher_writes_columns_12_and_13(tmp_path):
+    # Regression guard for #354: cols 10 (replaced_by) and 11 (steam_type)
+    # are owned by other enrichers. Anti-cheat lands at 12 (ac_status) and
+    # 13 (ac_vendors), so we seed rows with prior values at 10 + 11 and
+    # assert the enricher leaves them alone.
     _write_index(tmp_path, [
-        ["100", "Foo", "gold", 5, 2, "steam", 2021, None, False, ""],
-        ["200", "Bar", "borked", 1, 1, "steam", None, None, False, ""],
+        ["100", "Foo", "gold",   5, 2, "steam", 2021, None, False, "", "300", "game"],
+        ["200", "Bar", "borked", 1, 1, "steam", None, None, False, "", None,  None],
     ])
     upstream = [{"storeIds": {"steam": "100"}, "status": "Broken", "anticheats": ["EAC"]}]
     with patch("scripts.pipeline.anti_cheat._fetch_upstream", return_value=upstream):
         enrich_search_index_with_anti_cheat(tmp_path)
     written = json.loads((tmp_path / "search-index.json").read_text())
-    # Row 0 got a hit
-    assert written[0][10] == "broken"
-    assert written[0][11] == ["EAC"]
-    # Row 1 has no upstream entry -> None in both slots
+    # Row 0: replaced_by + steam_type preserved, AC written to cols 12/13.
+    assert written[0][10] == "300"
+    assert written[0][11] == "game"
+    assert written[0][12] == "broken"
+    assert written[0][13] == ["EAC"]
+    # Row 1: no upstream entry, both AC slots stay None; earlier None slots
+    # stay None too.
     assert written[1][10] is None
     assert written[1][11] is None
+    assert written[1][12] is None
+    assert written[1][13] is None
 
 
 def test_enricher_publishes_data_anti_cheat_json(tmp_path):
@@ -132,17 +141,22 @@ def test_enricher_publishes_data_anti_cheat_json(tmp_path):
 
 
 def test_enricher_pads_short_rows_before_writing_columns(tmp_path):
-    # 6-column row from an older pipeline run: enricher must pad to 12.
+    # 6-column row from an older pipeline run: enricher must pad to 14 so
+    # both new AC columns (12, 13) land at the right index -- and the
+    # in-between slots (10 = replaced_by, 11 = steam_type) get None,
+    # matching what the other enrichers would produce on a fresh row.
     _write_index(tmp_path, [["100", "Foo", "gold", 5, 2, "steam"]])
     upstream = [{"storeIds": {"steam": "100"}, "status": "Supported", "anticheats": []}]
     with patch("scripts.pipeline.anti_cheat._fetch_upstream", return_value=upstream):
         enrich_search_index_with_anti_cheat(tmp_path)
     written = json.loads((tmp_path / "search-index.json").read_text())
-    assert len(written[0]) == 12
-    assert written[0][10] == "supported"
+    assert len(written[0]) == 14
+    assert written[0][10] is None
+    assert written[0][11] is None
+    assert written[0][12] == "supported"
     # Empty vendors list normalized to None so the frontend can check `if
     # vendors` cheaply.
-    assert written[0][11] is None
+    assert written[0][13] is None
 
 
 def test_enricher_no_op_when_index_missing(tmp_path):
@@ -229,3 +243,38 @@ def test_fetch_appdetails_rejects_non_digit_appid():
     assert _fetch_appdetails_snippets("../etc/passwd") is None
     assert _fetch_appdetails_snippets("file://local") is None
     assert _fetch_appdetails_snippets("") is None
+
+
+# ---- cross-enricher column ownership (#354) ---------------------------------
+
+
+def test_anti_cheat_does_not_overwrite_replaced_by_or_steam_type(tmp_path):
+    """#354 regression guard: cols 10 (replaced_by) and 11 (steam_type)
+    are owned by other pipeline modules. anti_cheat runs LAST in finalize
+    so it must not stomp values already written at those slots. Only cols
+    12 (ac_status) and 13 (ac_vendors) belong to the AC enricher."""
+    # 14-column rows carrying pre-populated replaced_by + steam_type slots
+    # like a real finalize pass would produce.
+    _write_index(tmp_path, [
+        # replaced_by=REPLACED-BY-500, steam_type=game, ac slots still empty.
+        ["400", "Half-Life", "gold", 10, 3, "steam", 1998, None, False, "", "REPLACED-BY-500", "game", None, None],
+        # No replaced_by (None), steam_type=dlc, ac slots still empty.
+        ["500", "HL2:E1",   "gold",  5, 1, "steam", 2006, None, False, "", None, "dlc", None, None],
+    ])
+    upstream = [
+        {"storeIds": {"steam": "400"}, "status": "Supported", "anticheats": ["VAC"]},
+        {"storeIds": {"steam": "500"}, "status": "Broken",    "anticheats": ["EAC"]},
+    ]
+    with patch("scripts.pipeline.anti_cheat._fetch_upstream", return_value=upstream):
+        enrich_search_index_with_anti_cheat(tmp_path)
+    written = json.loads((tmp_path / "search-index.json").read_text())
+    # Both rows keep their replaced_by + steam_type across the AC pass.
+    assert written[0][10] == "REPLACED-BY-500"
+    assert written[0][11] == "game"
+    assert written[1][10] is None
+    assert written[1][11] == "dlc"
+    # AC data lands where it belongs (cols 12 + 13).
+    assert written[0][12] == "supported"
+    assert written[0][13] == ["VAC"]
+    assert written[1][12] == "broken"
+    assert written[1][13] == ["EAC"]

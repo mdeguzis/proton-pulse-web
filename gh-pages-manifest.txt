@@ -101,6 +101,7 @@ js/admin/api/admins.js
 js/admin/api/phrases.js
 js/admin/api/userDetail.js
 js/admin/api/analytics.js
+js/admin/lib/reportSource.js
 js/admin/api/boxart.js
 js/admin/components/boxart.js
 js/admin/api/steam-explore.js

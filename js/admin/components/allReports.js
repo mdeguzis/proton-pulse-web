@@ -1,5 +1,6 @@
 import { escapeHtml, fmtDateTime } from '../utils.js?v=2668b2f0';
-import { fetchAllReports, fetchStatusCounts } from '../api/allReports.js?v=f6b28b0d';
+import { fetchAllReports, fetchStatusCounts } from '../api/allReports.js?v=0f587828';
+import { formatReportSourceLabel } from '../lib/reportSource.js?v=c366fc24';
 
 // Summary strip of exact per-status counts above the table. Each tile is a
 // button that filters the table to that status. Runs its own count queries so
@@ -103,7 +104,12 @@ export async function renderAllReports(session) {
         : 'Unknown';
       const rid    = escapeHtml(String(r.id));
       const title  = escapeHtml(r.title || '');
-      const source  = escapeHtml(r.source || '');
+      // Structural signature detection: a row is only labelled 'plugin' if
+      // installation_id is set (the Deck-plugin submit path populates it;
+      // the web submit path never does). Rows with source='user' but no
+      // installation_id -- e.g. imported ProtonDB mirror rows -- keep
+      // their raw source string so admins can spot the actual origin.
+      const source  = escapeHtml(formatReportSourceLabel(r));
       const appType = escapeHtml(r.app_type || 'steam');
       const date    = escapeHtml(fmtDateTime(r.created_at));
       const uid    = r.proton_pulse_user_id || null;
@@ -173,7 +179,7 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
     ['User ID',         val(report.proton_pulse_user_id)],
     ['App ID',          val(report.app_id)],
     ['Title',           val(report.title)],
-    ['Source',          val(report.source)],
+    ['Source',          report.source || report.installation_id ? escapeHtml(formatReportSourceLabel(report)) : val(report.source)],
     ['App Type',        val(report.app_type)],
     ['Rating',          val(report.rating)],
     ['Proton Version',  val(report.proton_version)],

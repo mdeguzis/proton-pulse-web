@@ -111,10 +111,13 @@ describe('fetchAnalytics top-level RPC + side fetches', () => {
 
 describe('fetchReportsByDay source bucketing (via fetchAnalytics)', () => {
   test('rows with unknown source bucket into "other"', async () => {
+    // 'protondb' is now a recognized plugin source (see classifier). Use
+    // a genuinely unknown string here so the 'other' bucket still gets
+    // exercised end-to-end.
     global.fetch = routedFetch({
       'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
       'https://test.supabase.co/rest/v1/user_configs': [
-        { created_at: '2026-06-30T01:00:00Z', source: 'protondb' },
+        { created_at: '2026-06-30T01:00:00Z', source: 'cli-import' },
         { created_at: '2026-06-30T02:00:00Z', source: '' },
         { created_at: '2026-06-30T03:00:00Z', source: null },
       ],
@@ -122,6 +125,39 @@ describe('fetchReportsByDay source bucketing (via fetchAnalytics)', () => {
     const result = await fetchAnalytics(makeSession());
     expect(result.reports_by_day.filter(r => r.count > 0)).toEqual([
       { day: '2026-06-30', count: 3, web: 0, plugin: 0, other: 3 },
+    ]);
+  });
+
+  test('plugin submissions require installation_id, not just a source string', async () => {
+    // Plugin's src/lib/userConfigs.ts always sets installation_id. A row
+    // whose source string happens to be 'user' but has no installation_id
+    // is NOT from the plugin (regression guard for the Half-Life 4:
+    // Gabe's Revenge mislabel).
+    global.fetch = routedFetch({
+      'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
+      'https://test.supabase.co/rest/v1/user_configs': [
+        { created_at: '2026-06-30T01:00:00Z', source: 'user',           installation_id: 'iid-a' },
+        { created_at: '2026-06-30T02:00:00Z', source: 'protondb',       installation_id: 'iid-b' },
+        { created_at: '2026-06-30T03:00:00Z', source: 'protondb-local', installation_id: 'iid-c' },
+      ],
+    });
+    const result = await fetchAnalytics(makeSession());
+    expect(result.reports_by_day.filter(r => r.count > 0)).toEqual([
+      { day: '2026-06-30', count: 3, web: 0, plugin: 3, other: 0 },
+    ]);
+  });
+
+  test('source=user WITHOUT installation_id falls to other (Half-Life 4 case)', async () => {
+    global.fetch = routedFetch({
+      'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
+      'https://test.supabase.co/rest/v1/user_configs': [
+        { created_at: '2026-06-30T01:00:00Z', source: 'user' },
+        { created_at: '2026-06-30T02:00:00Z', source: 'protondb' },
+      ],
+    });
+    const result = await fetchAnalytics(makeSession());
+    expect(result.reports_by_day.filter(r => r.count > 0)).toEqual([
+      { day: '2026-06-30', count: 2, web: 0, plugin: 0, other: 2 },
     ]);
   });
 
