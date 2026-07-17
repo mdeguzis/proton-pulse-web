@@ -53,9 +53,20 @@ describe('fetchReportsByDay source breakdown (#76)', () => {
     expect(ctx.classifyReportSource('plugin')).toBe('plugin');
   });
 
+  test('classifyReportSource routes the actual plugin values into plugin', () => {
+    // The decky-proton-pulse plugin's submit path sends source =
+    // 'user' | 'protondb' | 'protondb-local' (see plugin's
+    // src/lib/userConfigs.ts). Before this fix those all fell to 'other',
+    // which is what showed up as the misclassified yellow spike on the
+    // Report Submissions chart.
+    const ctx = loadApi({});
+    expect(ctx.classifyReportSource('user')).toBe('plugin');
+    expect(ctx.classifyReportSource('protondb')).toBe('plugin');
+    expect(ctx.classifyReportSource('protondb-local')).toBe('plugin');
+  });
+
   test('classifyReportSource falls back to other for everything else', () => {
     const ctx = loadApi({});
-    expect(ctx.classifyReportSource('protondb')).toBe('other');
     expect(ctx.classifyReportSource('protondb-live')).toBe('other');
     expect(ctx.classifyReportSource('')).toBe('other');
     expect(ctx.classifyReportSource(null)).toBe('other');
@@ -79,12 +90,15 @@ describe('fetchReportsByDay source breakdown (#76)', () => {
 
   test('fetchReportsByDay groups by day + source and includes web/plugin/other counts', async () => {
     // 2d window ending 2026-06-30: covers 06-28 (empty), 06-29, 06-30.
+    // 'protondb' is now recognized as a plugin source (see classifier),
+    // so include a genuinely unknown source ('cli-import') to still
+    // exercise the 'other' bucket.
     const ctx = loadApi({
       '*': [
         { created_at: '2026-06-29T10:00:00Z', source: 'web-linux' },
         { created_at: '2026-06-29T12:00:00Z', source: 'web-windows' },
         { created_at: '2026-06-29T13:00:00Z', source: 'plugin-linux' },
-        { created_at: '2026-06-29T14:00:00Z', source: 'protondb' },
+        { created_at: '2026-06-29T14:00:00Z', source: 'cli-import' },
         { created_at: '2026-06-30T09:00:00Z', source: 'plugin-windows' },
       ],
     });
@@ -171,7 +185,13 @@ describe('Report Submissions chart source shape (#76)', () => {
 
   test('caption explains the source breakdown', () => {
     expect(CMP_SRC).toContain('stacked by source');
-    expect(CMP_SRC).toMatch(/Web = browser submissions, Plugin = Steam Deck plugin, Other/);
+    // Caption spells out the actual plugin sources (user, protondb,
+    // protondb-local) so admins can tell why a bar is where it is.
+    expect(CMP_SRC).toContain('Web = browser submissions');
+    expect(CMP_SRC).toContain('Plugin = Steam Deck plugin');
+    expect(CMP_SRC).toContain('"user"');
+    expect(CMP_SRC).toContain('"protondb"');
+    expect(CMP_SRC).toContain('"protondb-local"');
   });
 
   test('chart has 3 datasets with matching stack key', () => {

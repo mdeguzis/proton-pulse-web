@@ -59,13 +59,18 @@ async function fetchSwCacheStats(session, daysBack) {
 }
 
 // #76: broken down by source so the chart can show web vs plugin vs other.
-// Source values cluster into 'web-*' (web submissions), 'plugin-*' (Deck plugin),
-// and a long tail of other tags. Anything that does not match those prefixes
-// falls into 'other' so admins can spot weird traffic.
+// The decky-proton-pulse plugin's submit path (src/lib/userConfigs.ts) sends
+// source = 'user' | 'protondb' | 'protondb-local' -- none of those start
+// with the 'plugin' prefix, so every plugin submission was silently landing
+// in the "other" bucket. Recognize the three plugin-produced values here
+// and reserve 'plugin*' as a forward-looking prefix for a future plugin
+// release that may adopt it. Web submissions still use 'web-<platform>'.
+const PLUGIN_SOURCES = new Set(['user', 'protondb', 'protondb-local']);
 function classifyReportSource(src) {
   const s = (src || '').toLowerCase();
   if (s.startsWith('web')) return 'web';
   if (s.startsWith('plugin')) return 'plugin';
+  if (PLUGIN_SOURCES.has(s)) return 'plugin';
   return 'other';
 }
 
