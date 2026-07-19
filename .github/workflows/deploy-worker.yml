@@ -1,0 +1,84 @@
+name: Deploy Cloudflare Workers
+
+on:
+  # Deploy on any push to main OR staging that touches worker source. Both
+  # branches deploy to the same worker (no staging clone) -- there is only
+  # one pp-edge-status.<subdomain>.workers.dev endpoint, and staging + prod
+  # both hit it. Last push wins, same shape as deploy-functions.yml.
+  push:
+    branches: [main, staging]
+    paths:
+      - 'workers/**'
+      - '.github/workflows/deploy-worker.yml'
+  workflow_dispatch:
+    inputs:
+      worker:
+        description: 'Worker directory under workers/ (default: edge-status)'
+        required: false
+        default: 'edge-status'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Detect which workers changed on this push and iterate. On manual
+      # dispatch, use the input override (default: edge-status). Keeps the
+      # workflow open to future workers under workers/<name>/ without
+      # rewriting the deploy step per worker.
+      - name: Resolve worker list
+        id: workers
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            printf 'names=%s\n' "${{ inputs.worker }}" >> "$GITHUB_OUTPUT"
+            echo "count=1" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Push event: use the git diff against the previous commit to find
+          # which workers changed. Fallback: deploy everything under workers/
+          # so a first-run / force-push does not skip.
+          before='${{ github.event.before }}'
+          if [ -z "${before}" ] || [ "${before}" = "0000000000000000000000000000000000000000" ]; then
+            mapfile -t all < <(find workers -maxdepth 2 -name wrangler.toml -printf '%h\n' | sed 's#^workers/##')
+          else
+            mapfile -t all < <(git diff --name-only "${before}" ${{ github.sha }} \
+              | grep -E '^workers/[^/]+/' \
+              | awk -F/ '{print $2}' \
+              | sort -u)
+          fi
+          if [ ${#all[@]} -eq 0 ]; then
+            echo "No worker changes detected; nothing to deploy."
+            echo "count=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          printf 'names=%s\n' "$(IFS=','; echo "${all[*]}")" >> "$GITHUB_OUTPUT"
+          printf 'count=%s\n' "${#all[@]}" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy each changed worker via wrangler
+        if: steps.workers.outputs.count != '0'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          IFS=',' read -ra WORKERS <<< '${{ steps.workers.outputs.names }}'
+          for w in "${WORKERS[@]}"; do
+            echo "::group::Deploying workers/$w"
+            if [ ! -f "workers/$w/wrangler.toml" ]; then
+              echo "workers/$w has no wrangler.toml -- skipping"
+              echo "::endgroup::"
+              continue
+            fi
+            cd "workers/$w"
+            npx --yes wrangler@latest deploy
+            cd "$GITHUB_WORKSPACE"
+            echo "::endgroup::"
+          done
