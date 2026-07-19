@@ -254,9 +254,25 @@ function siteReasonLabel(reason) {
 }
 
 // One-line summary of the cert's expiry: "12 days remaining (expires 2026-08-01)".
-// Falls back to just the state when no expiry date is available.
+// Falls back to just the state when no expiry date is available. When the
+// worker could not talk to the GitHub API (rate_limited etc), reports the
+// specific fetch_error + whether the call was authed so the operator sees
+// why the row is otherwise blank -- most common cause is Cloudflare's
+// shared outbound IP burning the anon 60/hr GitHub API limit, which a
+// GITHUB_TOKEN secret on the worker resolves.
 function certSummary(cert) {
   if (!cert) return '';
+  if (cert.fetch_error) {
+    const authed = cert.fetch_error_authed ? 'authed' : 'anon';
+    if (cert.fetch_error === 'rate_limited') {
+      return `no cert data - GitHub API rate limit (${authed}). Set GITHUB_TOKEN on the worker.`;
+    }
+    if (cert.fetch_error === 'not_found') return `no cert data - GitHub API 404 (${authed})`;
+    if (cert.fetch_error === 'timeout') return `no cert data - GitHub API timeout (${authed})`;
+    if (cert.fetch_error === 'network') return `no cert data - network error (${authed})`;
+    if (cert.fetch_error === 'no_https_certificate_field') return `no cert data - GH Pages HTTPS not enforced yet (${authed})`;
+    return `no cert data - ${cert.fetch_error} (${authed})`;
+  }
   const parts = [];
   if (typeof cert.days_remaining === 'number') {
     parts.push(`${cert.days_remaining} day${cert.days_remaining === 1 ? '' : 's'} remaining`);

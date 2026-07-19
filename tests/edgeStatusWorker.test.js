@@ -307,6 +307,18 @@ describe('applyCertToSiteResult (proactive cert-expiry check)', () => {
     expect(out.cert).toBe(cert);
   });
 
+  test('cert stub with fetch_error does NOT downgrade the tile (missing data is not a warning)', () => {
+    // Regression guard for the debug-field commit: when the worker
+    // could not talk to GitHub (rate_limited etc), we do not want the
+    // absence of expiry data to flip the site tile to degraded / down.
+    // The frontend surfaces cert.fetch_error separately so the operator
+    // knows why the row is blank.
+    const cert = { state: null, days_remaining: null, fetch_error: 'rate_limited', fetch_error_authed: false };
+    const out = applyCertToSiteResult(OK, cert);
+    expect(out.status).toBe('operational');
+    expect(out.cert.fetch_error).toBe('rate_limited');
+  });
+
   test('cert within warn window (<= 14 days) degrades a healthy tile to yellow', () => {
     const cert = { state: 'approved', days_remaining: EXPIRY_WARN_DAYS, expires_at: '2026-07-30' };
     const out = applyCertToSiteResult(OK, cert);
@@ -395,9 +407,16 @@ describe('fetchGithubPagesCert', () => {
     expect(await fetchGithubPagesCert({}, null)).toBeNull();
   });
 
-  test('returns null when GitHub returns non-ok', async () => {
-    global.fetch = async () => ({ ok: false, status: 404 });
-    expect(await fetchGithubPagesCert({}, 'mdeguzis/proton-pulse-web')).toBeNull();
+  test('returns a debug stub (not null) when GitHub returns non-ok', async () => {
+    // Prior behavior returned null on any non-ok, which silently blanked
+    // the cert row on the status card and made rate-limiting invisible.
+    // Stub-with-fetch_error surfaces the reason.
+    global.fetch = async () => ({ ok: false, status: 404, headers: { get: () => null } });
+    const out = await fetchGithubPagesCert({}, 'mdeguzis/proton-pulse-web');
+    expect(out).not.toBeNull();
+    expect(out.fetch_error).toBe('not_found');
+    expect(out.expires_at).toBeNull();
+    expect(out.state).toBeNull();
   });
 
   test('parses expires_at + days_remaining from the pages API response', async () => {
@@ -418,6 +437,60 @@ describe('fetchGithubPagesCert', () => {
     expect(out.expires_at).toBe(cert.expires_at);
     expect(out.state).toBe('approved');
     expect(out.days_remaining).toBe(14);
+  });
+
+  test('returns a stub with fetch_error=rate_limited when GH returns 403 + remaining=0', async () => {
+    // The exact shape the worker will hit in production once
+    // Cloudflare's shared outbound IP burns the anon 60/hr GH limit.
+    // The stub lets the frontend show "no cert data (rate_limited)"
+    // instead of a blank cert row.
+    global.fetch = async () => ({
+      ok: false,
+      status: 403,
+      headers: { get: (k) => (k.toLowerCase() === 'x-ratelimit-remaining' ? '0' : null) },
+    });
+    const out = await fetchGithubPagesCert({}, 'mdeguzis/proton-pulse-web');
+    expect(out).not.toBeNull();
+    expect(out.fetch_error).toBe('rate_limited');
+    expect(out.fetch_error_status).toBe(403);
+    expect(out.fetch_error_authed).toBe(false);
+    expect(out.state).toBeNull();
+    expect(out.days_remaining).toBeNull();
+  });
+
+  test('records fetch_error_authed=true when GITHUB_TOKEN was in play', async () => {
+    global.fetch = async () => ({
+      ok: false,
+      status: 500,
+      headers: { get: () => null },
+    });
+    const out = await fetchGithubPagesCert({ GITHUB_TOKEN: 'ghp_x' }, 'mdeguzis/proton-pulse-web');
+    expect(out.fetch_error).toBe('http_500');
+    expect(out.fetch_error_authed).toBe(true);
+  });
+
+  test('records fetch_error=timeout when the request aborts', async () => {
+    global.fetch = async () => {
+      throw new Error('The operation was aborted');
+    };
+    const out = await fetchGithubPagesCert({}, 'mdeguzis/proton-pulse-web');
+    expect(out.fetch_error).toBe('timeout');
+  });
+
+  test('records fetch_error=network for other exceptions', async () => {
+    global.fetch = async () => {
+      throw new Error('ECONNREFUSED');
+    };
+    const out = await fetchGithubPagesCert({}, 'mdeguzis/proton-pulse-web');
+    expect(out.fetch_error).toBe('network');
+  });
+
+  test('records fetch_error=no_https_certificate_field when the response omits the cert block', async () => {
+    // GH sometimes returns 200 with no cert data (Pages HTTPS not yet
+    // enforced / brand-new domain). Do not silently drop -- log why.
+    global.fetch = async () => ({ ok: true, status: 200, json: async () => ({ url: 'x' }) });
+    const out = await fetchGithubPagesCert({}, 'mdeguzis/proton-pulse-web');
+    expect(out.fetch_error).toBe('no_https_certificate_field');
   });
 
   test('passes GITHUB_TOKEN via Authorization header when available', async () => {

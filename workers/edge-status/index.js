@@ -333,15 +333,19 @@ export function classifySiteStatus(httpCode) {
 }
 
 // Fetch the current https_certificate state for a GH Pages repo. Returns
-// { expires_at, days_remaining, state, description } or null if the repo
-// has no certificate metadata (e.g. HTTPS not enforced yet, or a wildcard
-// domain). Uses the public GITHUB_TOKEN env var if present -- unauthed
-// requests fall under a smaller rate limit but still work for the low
-// call volume this worker generates.
+// { expires_at, days_remaining, state, description, fetch_error? } or
+// null if the repo has no certificate metadata (e.g. HTTPS not enforced
+// yet, or a wildcard domain). Uses the public GITHUB_TOKEN env var if
+// present -- unauthed requests fall under GitHub's 60/hr shared-IP anon
+// limit and are the first thing to fail when Cloudflare Workers coincides
+// on a hot outbound IP. When any of that happens we return a stub
+// { fetch_error, fetch_error_status? } so the payload shows *why* cert
+// info is missing rather than silently blanking the row on the tile.
 export async function fetchGithubPagesCert(env, repo, nowMs = Date.now()) {
   if (!repo) return null;
   const headers = { 'Accept': 'application/vnd.github+json', 'User-Agent': 'pp-edge-status-worker' };
-  if (env && env.GITHUB_TOKEN) headers.Authorization = `Bearer ${env.GITHUB_TOKEN}`;
+  const authed = Boolean(env && env.GITHUB_TOKEN);
+  if (authed) headers.Authorization = `Bearer ${env.GITHUB_TOKEN}`;
   let json = null;
   try {
     const res = await fetch(`https://api.github.com/repos/${repo}/pages`, {
@@ -350,16 +354,53 @@ export async function fetchGithubPagesCert(env, repo, nowMs = Date.now()) {
       signal: AbortSignal.timeout(PROBE_TIMEOUT_MS),
     });
     if (!res.ok) {
-      console.debug('[edge-status] GH pages fetch non-ok', { repo, status: res.status });
-      return null;
+      // Surface WHY the fetch failed on the payload so the status card
+      // can show "no cert data (rate_limited)" instead of blanking the
+      // row. rate_limited is by far the most common cause when the
+      // worker runs unauthed on a busy Cloudflare edge IP.
+      const remaining = res.headers.get('x-ratelimit-remaining');
+      const isRateLimited = res.status === 403 && (remaining === '0' || remaining === null);
+      const err = isRateLimited
+        ? 'rate_limited'
+        : res.status === 404
+          ? 'not_found'
+          : `http_${res.status}`;
+      console.debug('[edge-status] GH pages fetch non-ok', { repo, status: res.status, remaining, authed, err });
+      return {
+        expires_at: null,
+        days_remaining: null,
+        state: null,
+        description: '',
+        fetch_error: err,
+        fetch_error_status: res.status,
+        fetch_error_authed: authed,
+      };
     }
     json = await res.json();
-  } catch (err) {
-    console.debug('[edge-status] GH pages fetch failed', { repo, error: String(err && err.message || err) });
-    return null;
+  } catch (e) {
+    const msg = String(e && e.message || e);
+    const err = /aborted|timeout/i.test(msg) ? 'timeout' : 'network';
+    console.debug('[edge-status] GH pages fetch failed', { repo, error: msg, err, authed });
+    return {
+      expires_at: null,
+      days_remaining: null,
+      state: null,
+      description: '',
+      fetch_error: err,
+      fetch_error_authed: authed,
+    };
   }
   const cert = json && json.https_certificate;
-  if (!cert) return null;
+  if (!cert) {
+    return {
+      expires_at: null,
+      days_remaining: null,
+      state: null,
+      description: '',
+      fetch_error: 'no_https_certificate_field',
+      fetch_error_authed: authed,
+    };
+  }
   const expiresAt = cert.expires_at || null;
   let daysRemaining = null;
   if (expiresAt) {
@@ -382,6 +423,11 @@ export async function fetchGithubPagesCert(env, repo, nowMs = Date.now()) {
 export function applyCertToSiteResult(siteResult, cert) {
   if (!cert) return siteResult;
   const merged = { ...siteResult, cert };
+  // Cert stub with a fetch_error means we could not talk to GitHub at
+  // all (rate limit / timeout / etc). Do not fabricate a warn/crit state
+  // from missing data -- the payload's cert.fetch_error is enough for
+  // the operator to see what happened.
+  if (cert.fetch_error) return merged;
   const days = cert.days_remaining;
   const state = cert.state;
   // Critical expiry ALWAYS wins over cert state so a bad_authz-plus-
