@@ -12,10 +12,6 @@ import {
   STATUS_KEY,
   classifyStatus,
   classifySiteStatus,
-  applyCertToSiteResult,
-  fetchGithubPagesCert,
-  EXPIRY_WARN_DAYS,
-  EXPIRY_CRIT_DAYS,
   aggregateOverall,
   buildPayload,
   mergeService,
@@ -292,77 +288,6 @@ describe('classifySiteStatus', () => {
   });
 });
 
-describe('applyCertToSiteResult (proactive cert-expiry check)', () => {
-  const OK = { status: 'operational', reason: null };
-
-  test('returns the site result unchanged when no cert data is provided', () => {
-    expect(applyCertToSiteResult(OK, null)).toEqual(OK);
-    expect(applyCertToSiteResult(OK, undefined)).toEqual(OK);
-  });
-
-  test('healthy cert far from expiry does not change the tile state', () => {
-    const cert = { state: 'approved', days_remaining: 60, expires_at: '2026-09-01' };
-    const out = applyCertToSiteResult(OK, cert);
-    expect(out.status).toBe('operational');
-    expect(out.cert).toBe(cert);
-  });
-
-  test('cert stub with fetch_error does NOT downgrade the tile (missing data is not a warning)', () => {
-    // Regression guard for the debug-field commit: when the worker
-    // could not talk to GitHub (rate_limited etc), we do not want the
-    // absence of expiry data to flip the site tile to degraded / down.
-    // The frontend surfaces cert.fetch_error separately so the operator
-    // knows why the row is blank.
-    const cert = { state: null, days_remaining: null, fetch_error: 'rate_limited', fetch_error_authed: false };
-    const out = applyCertToSiteResult(OK, cert);
-    expect(out.status).toBe('operational');
-    expect(out.cert.fetch_error).toBe('rate_limited');
-  });
-
-  test('cert within warn window (<= 14 days) degrades a healthy tile to yellow', () => {
-    const cert = { state: 'approved', days_remaining: EXPIRY_WARN_DAYS, expires_at: '2026-07-30' };
-    const out = applyCertToSiteResult(OK, cert);
-    expect(out.status).toBe('degraded');
-    expect(out.reason).toBe(`cert_expiring_${EXPIRY_WARN_DAYS}_days`);
-  });
-
-  test('cert within crit window (<= 3 days) hard-flips the tile to down', () => {
-    const cert = { state: 'approved', days_remaining: EXPIRY_CRIT_DAYS, expires_at: '2026-07-19' };
-    const out = applyCertToSiteResult(OK, cert);
-    expect(out.status).toBe('down');
-    expect(out.reason).toBe(`cert_expiring_${EXPIRY_CRIT_DAYS}_days`);
-  });
-
-  test('an already-down tile stays down when cert is fine (down > cert-warn)', () => {
-    const down = { status: 'down', reason: 'origin_ssl_cert_invalid' };
-    const cert = { state: 'approved', days_remaining: 60 };
-    const out = applyCertToSiteResult(down, cert);
-    expect(out.status).toBe('down');
-    // Existing reason wins so we do not lose the actionable label.
-    expect(out.reason).toBe('origin_ssl_cert_invalid');
-  });
-
-  test('ACME state != "approved" degrades the tile even when expiry is far off', () => {
-    // The specific state that caused the outage this whole feature is
-    // about: bad_authz for weeks while the cert quietly expired.
-    const cert = { state: 'bad_authz', days_remaining: 40 };
-    const out = applyCertToSiteResult(OK, cert);
-    expect(out.status).toBe('degraded');
-    expect(out.reason).toBe('cert_state_bad_authz');
-  });
-
-  test('critical expiry beats non-approved state (bad_authz + <=3 days -> down + cert_expiring)', () => {
-    // Regression guard for Codex review comment #1 on PR #356. The
-    // combination that produced the July outage is EXACTLY this:
-    // bad_authz with an imminent expiry. If cert_state ran first the
-    // tile would go merely yellow while the cert expires the same day.
-    const cert = { state: 'bad_authz', days_remaining: 1 };
-    const out = applyCertToSiteResult(OK, cert);
-    expect(out.status).toBe('down');
-    expect(out.reason).toBe('cert_expiring_1_days');
-  });
-});
-
 describe('mergeService preserves site probes across a super-admin single-fn check', () => {
   test('the "Check now" path for one fn does not wipe payload.sites', () => {
     // Regression guard for Codex review comment #3 on PR #356. The
@@ -397,113 +322,6 @@ describe('mergeService preserves site probes across a super-admin single-fn chec
   });
 });
 
-describe('fetchGithubPagesCert', () => {
-  const orig = global.fetch;
-  afterEach(() => { global.fetch = orig; });
-
-  test('returns null when repo is null (staging-style wildcard cert)', async () => {
-    // No fetch should even be attempted.
-    global.fetch = () => { throw new Error('fetch should not be called'); };
-    expect(await fetchGithubPagesCert({}, null)).toBeNull();
-  });
-
-  test('returns a debug stub (not null) when GitHub returns non-ok', async () => {
-    // Prior behavior returned null on any non-ok, which silently blanked
-    // the cert row on the status card and made rate-limiting invisible.
-    // Stub-with-fetch_error surfaces the reason.
-    global.fetch = async () => ({ ok: false, status: 404, headers: { get: () => null } });
-    const out = await fetchGithubPagesCert({}, 'mdeguzis/proton-pulse-web');
-    expect(out).not.toBeNull();
-    expect(out.fetch_error).toBe('not_found');
-    expect(out.expires_at).toBeNull();
-    expect(out.state).toBeNull();
-  });
-
-  test('parses expires_at + days_remaining from the pages API response', async () => {
-    const now = new Date('2026-07-18T00:00:00Z').getTime();
-    const cert = {
-      state: 'approved',
-      description: 'certificate is approved',
-      expires_at: '2026-08-01T00:00:00Z',  // 14 days out from `now`
-      domains: ['www.proton-pulse.com'],
-    };
-    global.fetch = async () => ({
-      ok: true,
-      status: 200,
-      json: async () => ({ https_certificate: cert }),
-    });
-    const out = await fetchGithubPagesCert({}, 'mdeguzis/proton-pulse-web', now);
-    expect(out).not.toBeNull();
-    expect(out.expires_at).toBe(cert.expires_at);
-    expect(out.state).toBe('approved');
-    expect(out.days_remaining).toBe(14);
-  });
-
-  test('returns a stub with fetch_error=rate_limited when GH returns 403 + remaining=0', async () => {
-    // The exact shape the worker will hit in production once
-    // Cloudflare's shared outbound IP burns the anon 60/hr GH limit.
-    // The stub lets the frontend show "no cert data (rate_limited)"
-    // instead of a blank cert row.
-    global.fetch = async () => ({
-      ok: false,
-      status: 403,
-      headers: { get: (k) => (k.toLowerCase() === 'x-ratelimit-remaining' ? '0' : null) },
-    });
-    const out = await fetchGithubPagesCert({}, 'mdeguzis/proton-pulse-web');
-    expect(out).not.toBeNull();
-    expect(out.fetch_error).toBe('rate_limited');
-    expect(out.fetch_error_status).toBe(403);
-    expect(out.fetch_error_authed).toBe(false);
-    expect(out.state).toBeNull();
-    expect(out.days_remaining).toBeNull();
-  });
-
-  test('records fetch_error_authed=true when GITHUB_TOKEN was in play', async () => {
-    global.fetch = async () => ({
-      ok: false,
-      status: 500,
-      headers: { get: () => null },
-    });
-    const out = await fetchGithubPagesCert({ GITHUB_TOKEN: 'ghp_x' }, 'mdeguzis/proton-pulse-web');
-    expect(out.fetch_error).toBe('http_500');
-    expect(out.fetch_error_authed).toBe(true);
-  });
-
-  test('records fetch_error=timeout when the request aborts', async () => {
-    global.fetch = async () => {
-      throw new Error('The operation was aborted');
-    };
-    const out = await fetchGithubPagesCert({}, 'mdeguzis/proton-pulse-web');
-    expect(out.fetch_error).toBe('timeout');
-  });
-
-  test('records fetch_error=network for other exceptions', async () => {
-    global.fetch = async () => {
-      throw new Error('ECONNREFUSED');
-    };
-    const out = await fetchGithubPagesCert({}, 'mdeguzis/proton-pulse-web');
-    expect(out.fetch_error).toBe('network');
-  });
-
-  test('records fetch_error=no_https_certificate_field when the response omits the cert block', async () => {
-    // GH sometimes returns 200 with no cert data (Pages HTTPS not yet
-    // enforced / brand-new domain). Do not silently drop -- log why.
-    global.fetch = async () => ({ ok: true, status: 200, json: async () => ({ url: 'x' }) });
-    const out = await fetchGithubPagesCert({}, 'mdeguzis/proton-pulse-web');
-    expect(out.fetch_error).toBe('no_https_certificate_field');
-  });
-
-  test('passes GITHUB_TOKEN via Authorization header when available', async () => {
-    let seenAuth = null;
-    global.fetch = async (url, opts) => {
-      seenAuth = opts?.headers?.Authorization ?? null;
-      return { ok: true, status: 200, json: async () => ({ https_certificate: { state: 'approved', expires_at: '2026-08-01T00:00:00Z' } }) };
-    };
-    await fetchGithubPagesCert({ GITHUB_TOKEN: 'ghp_test' }, 'mdeguzis/proton-pulse-web', Date.now());
-    expect(seenAuth).toBe('Bearer ghp_test');
-  });
-});
-
 describe('SITES list covers prod and staging', () => {
   test('SITES contains both prod and staging entries', () => {
     const names = SITES.map((s) => s.name);
@@ -524,6 +342,19 @@ describe('SITES list covers prod and staging', () => {
     // full origin-to-CDN path without hitting a heavy asset.
     for (const site of SITES) {
       expect(site.url).toContain('/version.json');
+    }
+  });
+
+  test('site entries deliberately carry no gh_pages_repo (no GH API auth path)', () => {
+    // Regression guard: an earlier version reached into the GitHub Pages
+    // REST API for cert expiry / ACME state. That needed a PAT on the
+    // worker, which is one more secret to rotate and one more blast
+    // radius on leak. The current design relies on the fetch probe alone:
+    // Cloudflare 525/526 or an http_status=0 already flags a broken TLS
+    // path, and the wiki renewal walkthrough covers the fix. If a future
+    // edit re-adds this field, this test forces a discussion.
+    for (const site of SITES) {
+      expect(site).not.toHaveProperty('gh_pages_repo');
     }
   });
 });

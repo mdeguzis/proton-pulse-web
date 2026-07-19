@@ -108,4 +108,17 @@ describe('deploy job wires wrangler correctly', () => {
     expect(RAW).toContain('CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}');
     expect(RAW).toContain('CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}');
   });
+
+  test('workflow does not sync any worker-side auth secrets from CI', () => {
+    // Regression guard: an earlier design pushed a GitHub PAT into the
+    // worker via `wrangler secret put GITHUB_TOKEN` so the cert probe
+    // could read the GitHub Pages REST API. That whole path is gone --
+    // the worker relies on the fetch probe alone (Cloudflare 525/526
+    // catches broken TLS) so no PAT is needed. If a future edit re-adds
+    // a secret-sync step, this test forces a discussion about whether a
+    // new secret is really required and what its blast radius is on leak.
+    expect(RAW).not.toContain('wrangler@latest secret put');
+    expect(RAW).not.toContain('wrangler secret put');
+    expect(RAW).not.toContain('WORKER_GH_TOKEN');
+  });
 });

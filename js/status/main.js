@@ -238,50 +238,17 @@ function renderFromPayload(payload) {
 
 // Human-readable label for the specific site-probe reason strings the
 // worker emits. Keeps operator-facing copy tight and points at the fix
-// rather than the mechanic.
+// rather than the mechanic. The wiki page linked from 525/526 covers the
+// full recovery walkthrough so operators are not guessing at midnight.
+const CERT_RENEWAL_WIKI = 'https://github.com/mdeguzis/proton-pulse-web/wiki/GitHub-Pages-Cert-Renewal';
 function siteReasonLabel(reason) {
   if (!reason) return '';
-  if (reason === 'origin_ssl_cert_invalid') return 'Origin SSL certificate invalid (Cloudflare 526). Renew the Let\'s Encrypt cert on the origin.';
-  if (reason === 'origin_ssl_handshake_failed') return 'Origin SSL handshake failed (Cloudflare 525).';
+  if (reason === 'origin_ssl_cert_invalid') return 'Origin SSL certificate invalid (Cloudflare 526). See renewal walkthrough.';
+  if (reason === 'origin_ssl_handshake_failed') return 'Origin SSL handshake failed (Cloudflare 525). See renewal walkthrough.';
   if (reason === 'unreachable') return 'No response within timeout.';
-  const daysMatch = reason.match(/^cert_expiring_(\d+)_days$/);
-  if (daysMatch) return `Origin certificate expires in ${daysMatch[1]} day(s). Run \`make renew-certificate\` well before then.`;
-  const stateMatch = reason.match(/^cert_state_(.+)$/);
-  if (stateMatch) return `GitHub Pages cert state is "${stateMatch[1]}" (not approved). ACME renewal likely blocked -- run \`make renew-certificate\`.`;
   const m = reason.match(/^http_(\d+)$/);
   if (m) return `HTTP ${m[1]}`;
   return reason;
-}
-
-// One-line summary of the cert's expiry: "12 days remaining (expires 2026-08-01)".
-// Falls back to just the state when no expiry date is available. When the
-// worker could not talk to the GitHub API (rate_limited etc), reports the
-// specific fetch_error + whether the call was authed so the operator sees
-// why the row is otherwise blank -- most common cause is Cloudflare's
-// shared outbound IP burning the anon 60/hr GitHub API limit, which a
-// GITHUB_TOKEN secret on the worker resolves.
-function certSummary(cert) {
-  if (!cert) return '';
-  if (cert.fetch_error) {
-    const authed = cert.fetch_error_authed ? 'authed' : 'anon';
-    if (cert.fetch_error === 'rate_limited') {
-      return `no cert data - GitHub API rate limit (${authed}). Set GITHUB_TOKEN on the worker.`;
-    }
-    if (cert.fetch_error === 'not_found') return `no cert data - GitHub API 404 (${authed})`;
-    if (cert.fetch_error === 'timeout') return `no cert data - GitHub API timeout (${authed})`;
-    if (cert.fetch_error === 'network') return `no cert data - network error (${authed})`;
-    if (cert.fetch_error === 'no_https_certificate_field') return `no cert data - GH Pages HTTPS not enforced yet (${authed})`;
-    return `no cert data - ${cert.fetch_error} (${authed})`;
-  }
-  const parts = [];
-  if (typeof cert.days_remaining === 'number') {
-    parts.push(`${cert.days_remaining} day${cert.days_remaining === 1 ? '' : 's'} remaining`);
-  }
-  if (cert.expires_at) {
-    parts.push(`expires ${cert.expires_at.slice(0, 10)}`);
-  }
-  if (parts.length === 0 && cert.state) parts.push(`state: ${cert.state}`);
-  return parts.join(' \u00b7 ');
 }
 
 function renderSiteCard(site) {
@@ -293,7 +260,7 @@ function renderSiteCard(site) {
   const hint = site.origin_hint
     ? `origin: ${site.origin_hint}`
     : '';
-  const certLine = certSummary(site.cert);
+  const isCertReason = site.reason === 'origin_ssl_cert_invalid' || site.reason === 'origin_ssl_handshake_failed';
   return `
     <div class="status-card status-card--site" data-state="${esc(state)}">
       <div class="status-card-head">
@@ -305,7 +272,7 @@ function renderSiteCard(site) {
         <span>${esc(primary)}</span>
         <span title="${esc(site.checked_at || '')}">checked ${formatRelative(site.checked_at)}</span>
       </div>
-      ${certLine ? `<div class="status-card-meta status-card-meta--muted"><span>cert: ${esc(certLine)}</span></div>` : ''}
+      ${isCertReason ? `<div class="status-card-meta status-card-meta--muted"><span>Renewal steps: <a href="${esc(CERT_RENEWAL_WIKI)}" target="_blank" rel="noopener">wiki</a></span></div>` : ''}
       ${hint ? `<div class="status-card-meta status-card-meta--muted"><span>${esc(hint)}</span></div>` : ''}
     </div>
   `;

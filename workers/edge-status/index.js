@@ -57,6 +57,15 @@ export const FNS = [
 // catches edge-function outages. Each entry probes /version.json because it
 // is small, deployed on every build, and matches an existing per-site file
 // so the worker does not have to know the hosting layout. Add new sites here.
+//
+// Design note: we deliberately do NOT try to read cert expiry / ACME state
+// out-of-band (via the GitHub Pages REST API or a cert-transparency log).
+// That would require a token, which is one more secret to rotate and one
+// more blast radius on leak. Fetching the URL from a Worker already tells
+// us everything actionable -- Cloudflare 525/526 fire the moment the
+// origin cert breaks, and a broken TLS handshake surfaces as http_status=0.
+// If the tile ever goes red, the operator follows the wiki renewal
+// walkthrough. See proton-pulse-web-wiki/GitHub-Pages-Cert-Renewal.md.
 export const SITES = [
   {
     name: 'prod (www.proton-pulse.com)',
@@ -65,29 +74,13 @@ export const SITES = [
     // status card so a 526 links to a specific thing the operator can look
     // up (GitHub Pages Let's Encrypt cert on the CNAME target).
     origin_hint: 'GitHub Pages Let\'s Encrypt cert on the CNAME target',
-    // Repo whose GitHub Pages cert covers this URL. Worker uses this to
-    // fetch https_certificate.expires_at from the GH API so the status
-    // card can go yellow 14 days before expiry instead of red on the
-    // day-of. Null for URLs that use a static / vendor-managed cert.
-    gh_pages_repo: 'mdeguzis/proton-pulse-web',
   },
   {
     name: 'staging (mdeguzis.github.io)',
     url: 'https://mdeguzis.github.io/proton-pulse-web-staging/version.json',
     origin_hint: 'GitHub Pages default certificate',
-    // Staging uses GitHub's *.github.io wildcard cert which GitHub itself
-    // rotates without our involvement -- nothing to check upstream.
-    gh_pages_repo: null,
   },
 ];
-
-// Cert-expiry thresholds. Yellow tile at <= EXPIRY_WARN_DAYS out, red tile
-// at <= EXPIRY_CRIT_DAYS out. Sized to give the ACME retry loop a comfortable
-// window: Let's Encrypt certs are 90 days, GH tries to renew ~30 days out,
-// 14 days is one week AFTER GH would normally try -- enough to be a real
-// signal something is broken (like a Cloudflare proxy eating the challenge).
-export const EXPIRY_WARN_DAYS = 14;
-export const EXPIRY_CRIT_DAYS = 3;
 
 export const STATUS_KEY = 'edge-status';
 // Rolling per-function latency history for the status-page sparkline (7 days
@@ -332,131 +325,6 @@ export function classifySiteStatus(httpCode) {
   return { status: 'unknown', reason: `http_${httpCode}` };
 }
 
-// Fetch the current https_certificate state for a GH Pages repo. Returns
-// { expires_at, days_remaining, state, description, fetch_error? } or
-// null if the repo has no certificate metadata (e.g. HTTPS not enforced
-// yet, or a wildcard domain). Uses the public GITHUB_TOKEN env var if
-// present -- unauthed requests fall under GitHub's 60/hr shared-IP anon
-// limit and are the first thing to fail when Cloudflare Workers coincides
-// on a hot outbound IP. When any of that happens we return a stub
-// { fetch_error, fetch_error_status? } so the payload shows *why* cert
-// info is missing rather than silently blanking the row on the tile.
-export async function fetchGithubPagesCert(env, repo, nowMs = Date.now()) {
-  if (!repo) return null;
-  const headers = { 'Accept': 'application/vnd.github+json', 'User-Agent': 'pp-edge-status-worker' };
-  const authed = Boolean(env && env.GITHUB_TOKEN);
-  if (authed) headers.Authorization = `Bearer ${env.GITHUB_TOKEN}`;
-  let json = null;
-  try {
-    const res = await fetch(`https://api.github.com/repos/${repo}/pages`, {
-      method: 'GET',
-      headers,
-      signal: AbortSignal.timeout(PROBE_TIMEOUT_MS),
-    });
-    if (!res.ok) {
-      // Surface WHY the fetch failed on the payload so the status card
-      // can show "no cert data (rate_limited)" instead of blanking the
-      // row. rate_limited is by far the most common cause when the
-      // worker runs unauthed on a busy Cloudflare edge IP.
-      const remaining = res.headers.get('x-ratelimit-remaining');
-      const isRateLimited = res.status === 403 && (remaining === '0' || remaining === null);
-      const err = isRateLimited
-        ? 'rate_limited'
-        : res.status === 404
-          ? 'not_found'
-          : `http_${res.status}`;
-      console.debug('[edge-status] GH pages fetch non-ok', { repo, status: res.status, remaining, authed, err });
-      return {
-        expires_at: null,
-        days_remaining: null,
-        state: null,
-        description: '',
-        fetch_error: err,
-        fetch_error_status: res.status,
-        fetch_error_authed: authed,
-      };
-    }
-    json = await res.json();
-  } catch (e) {
-    const msg = String(e && e.message || e);
-    const err = /aborted|timeout/i.test(msg) ? 'timeout' : 'network';
-    console.debug('[edge-status] GH pages fetch failed', { repo, error: msg, err, authed });
-    return {
-      expires_at: null,
-      days_remaining: null,
-      state: null,
-      description: '',
-      fetch_error: err,
-      fetch_error_authed: authed,
-    };
-  }
-  const cert = json && json.https_certificate;
-  if (!cert) {
-    return {
-      expires_at: null,
-      days_remaining: null,
-      state: null,
-      description: '',
-      fetch_error: 'no_https_certificate_field',
-      fetch_error_authed: authed,
-    };
-  }
-  const expiresAt = cert.expires_at || null;
-  let daysRemaining = null;
-  if (expiresAt) {
-    const ms = new Date(expiresAt).getTime() - nowMs;
-    if (Number.isFinite(ms)) daysRemaining = Math.floor(ms / 86400000);
-  }
-  return {
-    expires_at: expiresAt,
-    days_remaining: daysRemaining,
-    state: cert.state || 'unknown',
-    description: cert.description || '',
-  };
-}
-
-// Blend the cert-expiry data into a site probe result. If the site itself
-// is already down, cert info is informational; if it is up but the cert
-// is within warn/crit windows, degrade / down the tile so the operator
-// notices weeks before it becomes a live outage. Pure so it is easy to
-// test.
-export function applyCertToSiteResult(siteResult, cert) {
-  if (!cert) return siteResult;
-  const merged = { ...siteResult, cert };
-  // Cert stub with a fetch_error means we could not talk to GitHub at
-  // all (rate limit / timeout / etc). Do not fabricate a warn/crit state
-  // from missing data -- the payload's cert.fetch_error is enough for
-  // the operator to see what happened.
-  if (cert.fetch_error) return merged;
-  const days = cert.days_remaining;
-  const state = cert.state;
-  // Critical expiry ALWAYS wins over cert state so a bad_authz-plus-
-  // days_remaining<=3 case still flips the tile red (down + the actionable
-  // cert_expiring_* reason). Otherwise a stuck ACME state below would
-  // short-circuit before we ever check the countdown -- exactly the
-  // combination that produced the July outage. Only takes effect when
-  // days_remaining is a real number; nulls fall through to the state check.
-  if (typeof days === 'number' && days <= EXPIRY_CRIT_DAYS) {
-    merged.status = 'down';
-    merged.reason = merged.reason || `cert_expiring_${days}_days`;
-    return merged;
-  }
-  // ACME still in a broken state? Surface it explicitly so an operator
-  // sees the fix path even when the current cert has not expired yet.
-  if (state && state !== 'approved') {
-    merged.status = merged.status === 'down' ? merged.status : 'degraded';
-    merged.reason = merged.reason || `cert_state_${state}`;
-    return merged;
-  }
-  if (typeof days !== 'number') return merged;
-  // Critical case handled above; this branch is the warn-window fall-through.
-  if (days <= EXPIRY_WARN_DAYS) {
-    merged.status = merged.status === 'operational' ? 'degraded' : merged.status;
-    merged.reason = merged.reason || `cert_expiring_${days}_days`;
-  }
-  return merged;
-}
-
 // Probe one public site URL. Uses GET (not HEAD) because Cloudflare's cache
 // sometimes ignores HEAD, so a 526 stays hidden. Small resource + short
 // timeout keeps the sweep cheap.
@@ -499,14 +367,7 @@ export async function runProbe(env) {
   }
   const sites = [];
   for (const site of SITES) {
-    const result = await probeSite(site);
-    // Enrich the result with GH Pages cert-expiry info so the status
-    // card can go yellow 14 days before expiry instead of red on the
-    // day-of. Skipped for sites without a repo (e.g. static wildcard
-    // certs). GitHub API call is best-effort; on failure the tile
-    // reflects only the live probe result.
-    const cert = await fetchGithubPagesCert(env, site.gh_pages_repo).catch(() => null);
-    sites.push(applyCertToSiteResult(result, cert));
+    sites.push(await probeSite(site));
   }
   const payload = buildPayload(services);
   // Site probes ride alongside Supabase-fn probes but do NOT roll into the

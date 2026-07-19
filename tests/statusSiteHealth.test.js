@@ -66,21 +66,29 @@ describe('js/status/main.js renders site cards from payload.sites', () => {
     expect(STATUS_MAIN).toMatch(/origin_ssl_handshake_failed[\s\S]{0,200}Cloudflare 525/);
   });
 
-  test('cert-expiring reason includes the days_remaining count + fix command', () => {
-    // Proactive: instead of "cert broke, everything's on fire", the
-    // 14-day-out warning must point the operator at the fix command
-    // BEFORE the outage happens.
-    expect(STATUS_MAIN).toMatch(/cert_expiring_[\s\S]{0,80}_days/);
-    expect(STATUS_MAIN).toContain('make renew-certificate');
+  test('SSL-error tiles link to the wiki renewal walkthrough', () => {
+    // We do not try to proactively read cert expiry (would require a
+    // GitHub PAT on the worker, one more secret to rotate). Instead: when
+    // Cloudflare 525/526 fires on the fetch probe, the tile shows a
+    // "Renewal steps: wiki" link pointing at
+    // https://github.com/mdeguzis/proton-pulse-web/wiki/GitHub-Pages-Cert-Renewal
+    // so the operator sees the fix without hunting.
+    expect(STATUS_MAIN).toContain('GitHub-Pages-Cert-Renewal');
+    // Only wire the renewal link on cert-shaped reasons (525/526), not
+    // every non-200 response.
+    expect(STATUS_MAIN).toMatch(/origin_ssl_cert_invalid[\s\S]{0,200}origin_ssl_handshake_failed/);
   });
 
-  test('renderSiteCard shows the cert expiry summary when payload.sites[i].cert is present', () => {
-    // "12 days remaining . expires 2026-08-01" style line under the
-    // primary meta row so an operator can eyeball how close to expiry
-    // the cert is without opening any dashboards.
-    expect(STATUS_MAIN).toContain('function certSummary(cert)');
-    expect(STATUS_MAIN).toContain('days remaining');
-    expect(STATUS_MAIN).toContain('cert.expires_at');
-    expect(STATUS_MAIN).toContain('certLine');
+  test('renderSiteCard does NOT depend on cert.* fields (no GH API auth path)', () => {
+    // Regression guard: an earlier design fetched cert expiry from the
+    // GitHub Pages REST API and dropped it onto payload.sites[i].cert.
+    // That is intentionally gone -- the fetch probe alone is enough. If a
+    // future refactor re-adds cert.expires_at / cert.days_remaining
+    // rendering this test forces a discussion about the secret rotation
+    // burden that comes with the GH PAT.
+    expect(STATUS_MAIN).not.toMatch(/cert\.expires_at/);
+    expect(STATUS_MAIN).not.toMatch(/cert\.days_remaining/);
+    expect(STATUS_MAIN).not.toMatch(/cert\.fetch_error/);
+    expect(STATUS_MAIN).not.toContain('certSummary');
   });
 });
