@@ -1,0 +1,66 @@
+name: Cert Monitor
+
+# Reads the TLS certificate actually served on the live site
+# (www.proton-pulse.com) every 6 hours and writes cert-status.json +
+# cert-history.json to gh-pages (#359). This is the cert a browser validates --
+# for us the Cloudflare edge cert -- so it is the honest answer to "is the
+# site's certificate valid, and when does it expire?". It complements the
+# reactive site probe by warning ahead of an expiry rather than after an outage.
+#
+# No secret: the cert is read with a plain public openssl handshake, and the
+# commit uses the built-in GITHUB_TOKEN. There is no PAT to store or rotate.
+
+on:
+  schedule:
+    # Every 6 hours. The cert only changes on renewal (~every 60-90 days), so a
+    # tight cadence buys nothing; 4x/day keeps days-remaining fresh and the
+    # burndown graph smooth without churning gh-pages.
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  # Read the repo's own GitHub Pages cert state (state + description, e.g.
+  # bad_authz) so the status page can explain WHY the origin cert is stale.
+  pages: read
+
+concurrency:
+  group: cert-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo (for the script)
+        uses: actions/checkout@v4
+        with:
+          path: repo
+          persist-credentials: false
+
+      - name: Checkout gh-pages (destination)
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+          persist-credentials: true
+
+      - name: Read certs (edge + origin) and GitHub Pages state
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          bash repo/scripts/cert-monitor.sh gh-pages/cert-status.json gh-pages/cert-history.json
+          cat gh-pages/cert-status.json
+
+      - name: Commit + push if changed
+        working-directory: gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add cert-status.json cert-history.json
+          if git diff --cached --quiet; then
+            echo "no change, skipping push"
+            exit 0
+          fi
+          git commit -m "chore(status): refresh cert-status.json + cert-history.json"
+          git push origin gh-pages

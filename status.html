@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/shared/base.css?v=daf1bfe9">
 <link rel="stylesheet" href="css/shared/topbar.css?v=e911094d">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
-<link rel="stylesheet" href="css/status/status.css?v=f541420f">
+<link rel="stylesheet" href="css/status/status.css?v=b59d9909">
 </head>
 <body>
 
@@ -55,6 +55,11 @@
     <h2 class="status-section-heading">Site health</h2>
     <div id="status-site-list" class="status-list">
       <!-- prod + staging site probes injected by js/status/main.js -->
+    </div>
+
+    <h2 class="status-section-heading">TLS certificate</h2>
+    <div id="status-cert-list" class="status-list">
+      <!-- origin cert health dot injected by js/status/main.js (#359) -->
     </div>
 
     <h2 class="status-section-heading">Supabase edge functions</h2>
@@ -113,7 +118,7 @@
 <script src="js/lib/analytics.js?v=ad8d89f5"></script>
 <script src="js/lib/topbar.js?v=21a7ccea"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/status/main.js?v=af557f2e"></script>
+<script type="module" src="js/status/main.js?v=8fff19eb"></script>
 
 </body>
 </html>

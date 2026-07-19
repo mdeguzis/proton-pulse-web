@@ -79,16 +79,21 @@ describe('js/status/main.js renders site cards from payload.sites', () => {
     expect(STATUS_MAIN).toMatch(/origin_ssl_cert_invalid[\s\S]{0,200}origin_ssl_handshake_failed/);
   });
 
-  test('renderSiteCard does NOT depend on cert.* fields (no GH API auth path)', () => {
+  test('site cards do NOT embed cert fields, and cert data uses the secret-free openssl file (#359)', () => {
     // Regression guard: an earlier design fetched cert expiry from the
-    // GitHub Pages REST API and dropped it onto payload.sites[i].cert.
-    // That is intentionally gone -- the fetch probe alone is enough. If a
-    // future refactor re-adds cert.expires_at / cert.days_remaining
-    // rendering this test forces a discussion about the secret rotation
-    // burden that comes with the GH PAT.
+    // GitHub Pages REST API with a PAT and dropped it onto payload.sites[i].cert
+    // (cert.expires_at / cert.days_remaining / cert.fetch_error). That PAT path
+    // is intentionally gone. Cert monitoring is now a separate card fed by
+    // cert-status.json, written by the openssl-based cert-monitor cron -- no PAT,
+    // no per-visitor GitHub API call. This test forces any return to the old
+    // sites[i].cert PAT shape to be a deliberate discussion.
+    expect(STATUS_MAIN).not.toMatch(/sites\[[^\]]*\]\.cert/);
     expect(STATUS_MAIN).not.toMatch(/cert\.expires_at/);
     expect(STATUS_MAIN).not.toMatch(/cert\.days_remaining/);
     expect(STATUS_MAIN).not.toMatch(/cert\.fetch_error/);
-    expect(STATUS_MAIN).not.toContain('certSummary');
+    // The cert card must source from the static openssl file, not a live GitHub
+    // API call from the browser.
+    expect(STATUS_MAIN).toContain('cert-status.json');
+    expect(STATUS_MAIN).not.toMatch(/api\.github\.com[^'"`]*\/pages/);
   });
 });

@@ -10,7 +10,7 @@ WATCH_ALL_WORKFLOWS ?= true
 STAGING_VERSION_URL ?= https://mdeguzis.github.io/proton-pulse-web-staging/version.json
 FORCE_DEPLOY ?=
 
-.PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker \
+.PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker check-cert \
 	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-staging-finalize gh-resume gh-finalize-only gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
 	build serve smoke smoke-live pre-push coverage deploy-worker renew-certificate
 
@@ -46,6 +46,12 @@ pre-push: build coverage smoke
 # changes to renderGamePage / renderCard / renderConfigCard / search wiring.
 smoke:
 	@bash scripts/smoke.sh
+
+# Print the live site's TLS certificate state: edge cert (what browsers see),
+# origin cert (GitHub Pages backend), and GitHub's Pages ACME state (e.g.
+# bad_authz). Read-only -- does not touch gh-pages. See the Certificates wiki.
+check-cert:
+	@bash scripts/check-cert.sh
 
 # Same harness pointed at the production site -- skips the local staging
 # step (so no error-catcher injection; DOM-state assertions only) and

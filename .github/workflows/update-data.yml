@@ -471,6 +471,10 @@ jobs:
           # tracked file, including scripts/preserve-steam-type-cache.sh
           # which the deploy step needs to run later. Introduced by #263.
           cp scripts/preserve-steam-type-cache.sh /tmp/preserve-steam-type-cache.sh
+          # Same reason: the cert monitor (#359) commits cert-status.json +
+          # cert-history.json to gh-pages between pipeline runs. The orphan
+          # rebuild would wipe them, losing the append-only burndown history.
+          cp scripts/preserve-cert-monitor.sh /tmp/preserve-cert-monitor.sh
           git checkout --orphan gh-pages-new
           git rm -rf .
           cp -r /tmp/protondb-output/data .
@@ -520,6 +524,11 @@ jobs:
           # and re-applies its types to the fresh search-index.json before
           # we commit. Silent no-op on first ever deploy.
           bash /tmp/preserve-steam-type-cache.sh "$(pwd)"
+          # Carry the cert monitor's files (#359) over from the old gh-pages so
+          # the orphan force-push does not drop the burndown history.
+          bash /tmp/preserve-cert-monitor.sh "$(pwd)"
+          [ -f cert-status.json ] && git add cert-status.json || true
+          [ -f cert-history.json ] && git add cert-history.json || true
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
@@ -829,6 +838,10 @@ jobs:
           # tracked file, including scripts/preserve-steam-type-cache.sh
           # which the deploy step needs to run later. Introduced by #263.
           cp scripts/preserve-steam-type-cache.sh /tmp/preserve-steam-type-cache.sh
+          # Same reason: the cert monitor (#359) commits cert-status.json +
+          # cert-history.json to gh-pages between pipeline runs. The orphan
+          # rebuild would wipe them, losing the append-only burndown history.
+          cp scripts/preserve-cert-monitor.sh /tmp/preserve-cert-monitor.sh
           git checkout --orphan gh-pages-new
           git rm -rf .
           cp -r /tmp/protondb-output/data .
@@ -875,6 +888,11 @@ jobs:
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
           # Preserve steam-type-cache.json + column 11 across the force-push (#263).
           bash /tmp/preserve-steam-type-cache.sh "$(pwd)"
+          # Carry the cert monitor's files (#359) over from the old gh-pages so
+          # the orphan force-push does not drop the burndown history.
+          bash /tmp/preserve-cert-monitor.sh "$(pwd)"
+          [ -f cert-status.json ] && git add cert-status.json || true
+          [ -f cert-history.json ] && git add cert-history.json || true
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
@@ -1068,6 +1086,10 @@ jobs:
           # tracked file, including scripts/preserve-steam-type-cache.sh
           # which the deploy step needs to run later. Introduced by #263.
           cp scripts/preserve-steam-type-cache.sh /tmp/preserve-steam-type-cache.sh
+          # Same reason: the cert monitor (#359) commits cert-status.json +
+          # cert-history.json to gh-pages between pipeline runs. The orphan
+          # rebuild would wipe them, losing the append-only burndown history.
+          cp scripts/preserve-cert-monitor.sh /tmp/preserve-cert-monitor.sh
           git checkout --orphan gh-pages-new
           git rm -rf .
           cp -r /tmp/protondb-output/data .
@@ -1114,6 +1136,11 @@ jobs:
           printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
           # Preserve steam-type-cache.json + column 11 across the force-push (#263).
           bash /tmp/preserve-steam-type-cache.sh "$(pwd)"
+          # Carry the cert monitor's files (#359) over from the old gh-pages so
+          # the orphan force-push does not drop the burndown history.
+          bash /tmp/preserve-cert-monitor.sh "$(pwd)"
+          [ -f cert-status.json ] && git add cert-status.json || true
+          [ -f cert-history.json ] && git add cert-history.json || true
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)

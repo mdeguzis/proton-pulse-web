@@ -55,6 +55,14 @@
   gap: 12px;
 }
 
+/* The TLS cert list holds a single card. Let it span two columns so the domain
+   and state label sit on one comfortable line instead of being squeezed into
+   one 280px column and truncated (#359). On a one-column (mobile) grid this
+   clamps to full width. */
+.status-card--cert {
+  grid-column: span 2;
+}
+
 /* Subhead above each status-list block. Same visual weight as the
    announcements h2 so vendor vs. edge-fn groupings read as peers. */
 .status-section-heading {
