@@ -223,6 +223,55 @@ function renderFromPayload(payload) {
   const svcs = Array.isArray(payload.services) ? payload.services : [];
   listEl.innerHTML = svcs.map(renderService).join('') ||
     '<div class="state-box">No services reported.</div>';
+
+  // Site-health cards for prod + staging (added by pp-edge-status worker).
+  // Backward compatible: if the payload predates the site probes, the
+  // section stays empty rather than erroring.
+  const siteListEl = document.getElementById('status-site-list');
+  if (siteListEl) {
+    const sites = Array.isArray(payload.sites) ? payload.sites : [];
+    siteListEl.innerHTML = sites.length
+      ? sites.map(renderSiteCard).join('')
+      : '<div class="state-box">Site probes have not run yet (first-deploy cache warm-up). Check back in ~15 min.</div>';
+  }
+}
+
+// Human-readable label for the specific site-probe reason strings the
+// worker emits. Keeps operator-facing copy tight and points at the fix
+// rather than the mechanic.
+function siteReasonLabel(reason) {
+  if (!reason) return '';
+  if (reason === 'origin_ssl_cert_invalid') return 'Origin SSL certificate invalid (Cloudflare 526). Renew the Let\'s Encrypt cert on the origin.';
+  if (reason === 'origin_ssl_handshake_failed') return 'Origin SSL handshake failed (Cloudflare 525).';
+  if (reason === 'unreachable') return 'No response within timeout.';
+  const m = reason.match(/^http_(\d+)$/);
+  if (m) return `HTTP ${m[1]}`;
+  return reason;
+}
+
+function renderSiteCard(site) {
+  const state = site.status || 'unknown';
+  const reasonText = siteReasonLabel(site.reason);
+  const primary = state === 'operational'
+    ? `${site.http_status || 200} in ${Math.round(site.latency_ms ?? 0)} ms`
+    : reasonText || 'unknown';
+  const hint = site.origin_hint
+    ? `origin: ${site.origin_hint}`
+    : '';
+  return `
+    <div class="status-card status-card--site" data-state="${esc(state)}">
+      <div class="status-card-head">
+        <span class="status-card-dot"></span>
+        <span class="status-card-name">${esc(site.name)}</span>
+        <span class="status-card-state">${statusLabel(state)}</span>
+      </div>
+      <div class="status-card-meta">
+        <span>${esc(primary)}</span>
+        <span title="${esc(site.checked_at || '')}">checked ${formatRelative(site.checked_at)}</span>
+      </div>
+      ${hint ? `<div class="status-card-meta status-card-meta--muted"><span>${esc(hint)}</span></div>` : ''}
+    </div>
+  `;
 }
 
 async function loadAndRender() {

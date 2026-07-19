@@ -8,8 +8,10 @@ import fs from 'fs';
 import path from 'path';
 import {
   FNS,
+  SITES,
   STATUS_KEY,
   classifyStatus,
+  classifySiteStatus,
   aggregateOverall,
   buildPayload,
   mergeService,
@@ -244,6 +246,69 @@ describe('worker exposes a history endpoint', () => {
   });
   test('every probe path updates history', () => {
     expect(SRC).toContain('updateHistory');
+  });
+});
+
+describe('classifySiteStatus', () => {
+  test('2xx is operational with no reason', () => {
+    expect(classifySiteStatus(200)).toEqual({ status: 'operational', reason: null });
+    expect(classifySiteStatus(204)).toEqual({ status: 'operational', reason: null });
+  });
+
+  test('Cloudflare 525 -> origin_ssl_handshake_failed', () => {
+    // Cloudflare 525 = SSL handshake with origin failed. Called out
+    // separately so support can point at the specific fix rather than
+    // treat it as a generic 5xx.
+    expect(classifySiteStatus(525)).toEqual({ status: 'down', reason: 'origin_ssl_handshake_failed' });
+  });
+
+  test('Cloudflare 526 -> origin_ssl_cert_invalid (the outage that motivated this)', () => {
+    // The whole reason this classifier exists: GH Pages Let's Encrypt cert
+    // expiring silently produced a 526 that the vendor-status page could
+    // not attribute. Explicit reason makes it obvious.
+    expect(classifySiteStatus(526)).toEqual({ status: 'down', reason: 'origin_ssl_cert_invalid' });
+  });
+
+  test('other 5xx are down with the raw http code preserved', () => {
+    expect(classifySiteStatus(500)).toEqual({ status: 'down', reason: 'http_500' });
+    expect(classifySiteStatus(502)).toEqual({ status: 'down', reason: 'http_502' });
+    expect(classifySiteStatus(503)).toEqual({ status: 'down', reason: 'http_503' });
+  });
+
+  test('4xx is degraded (site is reachable but wrong response)', () => {
+    // Unlike the edge-function classifier, a 401/403 on the SITE probe
+    // does not mean healthy -- version.json is public. So 4xx means the
+    // site is degraded, not OK.
+    expect(classifySiteStatus(404)).toEqual({ status: 'degraded', reason: 'http_404' });
+    expect(classifySiteStatus(403)).toEqual({ status: 'degraded', reason: 'http_403' });
+  });
+
+  test('0 = timeout / connection failure', () => {
+    expect(classifySiteStatus(0)).toEqual({ status: 'down', reason: 'unreachable' });
+  });
+});
+
+describe('SITES list covers prod and staging', () => {
+  test('SITES contains both prod and staging entries', () => {
+    const names = SITES.map((s) => s.name);
+    expect(names.some((n) => n.includes('prod'))).toBe(true);
+    expect(names.some((n) => n.includes('staging'))).toBe(true);
+  });
+
+  test('each site has a real https URL + origin_hint for the status card', () => {
+    for (const site of SITES) {
+      expect(site.url).toMatch(/^https:\/\//);
+      expect(typeof site.origin_hint).toBe('string');
+      expect(site.origin_hint.length).toBeGreaterThan(0);
+    }
+  });
+
+  test('the URL each site probes is small + known-deployed (version.json)', () => {
+    // version.json is written on every deploy so probing it exercises the
+    // full origin-to-CDN path without hitting a heavy asset.
+    for (const site of SITES) {
+      expect(site.url).toContain('/version.json');
+    }
   });
 });
 

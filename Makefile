@@ -12,7 +12,7 @@ FORCE_DEPLOY ?=
 
 .PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker \
 	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-staging-finalize gh-resume gh-finalize-only gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
-	build serve smoke smoke-live pre-push coverage deploy-worker
+	build serve smoke smoke-live pre-push coverage deploy-worker renew-certificate
 
 build:
 	@bash scripts/cache-bust.sh
@@ -20,6 +20,13 @@ build:
 # Deploy a Cloudflare Worker (default: edge-status). Override: make deploy-worker WORKER=<name>
 deploy-worker:
 	@bash scripts/deploy-worker.sh $(WORKER)
+
+# Renew the GH Pages Let's Encrypt cert (walks the operator through the
+# Cloudflare grey-cloud step, then polls the GitHub Pages API + flips
+# https_enforced=true once the cert is provisioned). See #<TODO> if you
+# want to know why it needs a human touch.
+renew-certificate:
+	@bash scripts/renew-github-pages-cert.sh
 
 # Run Jest unit tests + manifest completeness check
 test-js:

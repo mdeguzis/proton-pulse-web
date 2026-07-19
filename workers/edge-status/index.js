@@ -52,6 +52,27 @@ export const FNS = [
   'user-system-upload',
 ];
 
+// Public URLs the worker also probes so the status page catches origin-cert /
+// CDN issues (e.g. Cloudflare 526 "Invalid SSL Certificate") the same way it
+// catches edge-function outages. Each entry probes /version.json because it
+// is small, deployed on every build, and matches an existing per-site file
+// so the worker does not have to know the hosting layout. Add new sites here.
+export const SITES = [
+  {
+    name: 'prod (www.proton-pulse.com)',
+    url: 'https://www.proton-pulse.com/version.json',
+    // The origin cert path Cloudflare authorizes against. Displayed on the
+    // status card so a 526 links to a specific thing the operator can look
+    // up (GitHub Pages Let's Encrypt cert on the CNAME target).
+    origin_hint: 'GitHub Pages Let\'s Encrypt cert on the CNAME target',
+  },
+  {
+    name: 'staging (mdeguzis.github.io)',
+    url: 'https://mdeguzis.github.io/proton-pulse-web-staging/version.json',
+    origin_hint: 'GitHub Pages default certificate',
+  },
+];
+
 export const STATUS_KEY = 'edge-status';
 // Rolling per-function latency history for the status-page sparkline (7 days
 // at the 15-min cron cadence ~= 672 points; cap a bit above that for safety).
@@ -268,16 +289,78 @@ async function probeFunction(env, fn) {
   };
 }
 
+// Classify a public-site probe response into a status + human-readable
+// reason. Special-cases Cloudflare origin-cert errors (525/526) so a
+// broken cert stops looking like a generic 5xx and instead lands on the
+// specific fix ("origin lacks a valid TLS cert" -> renew Let's Encrypt).
+export function classifySiteStatus(httpCode) {
+  if (httpCode === 0) return { status: 'down', reason: 'unreachable' };
+  if (httpCode >= 200 && httpCode < 300) return { status: 'operational', reason: null };
+  // Cloudflare origin-side SSL errors. See https://developers.cloudflare.com/
+  // support/troubleshooting/http-status-codes/cloudflare-5xx-errors/
+  //   525 = SSL handshake with origin failed
+  //   526 = Cloudflare could not validate origin certificate
+  if (httpCode === 525) return { status: 'down', reason: 'origin_ssl_handshake_failed' };
+  if (httpCode === 526) return { status: 'down', reason: 'origin_ssl_cert_invalid' };
+  if (httpCode >= 500) return { status: 'down', reason: `http_${httpCode}` };
+  if (httpCode >= 400) return { status: 'degraded', reason: `http_${httpCode}` };
+  return { status: 'unknown', reason: `http_${httpCode}` };
+}
+
+// Probe one public site URL. Uses GET (not HEAD) because Cloudflare's cache
+// sometimes ignores HEAD, so a 526 stays hidden. Small resource + short
+// timeout keeps the sweep cheap.
+async function probeSite(site) {
+  const start = Date.now();
+  let httpCode = 0;
+  try {
+    const res = await fetch(site.url, {
+      method: 'GET',
+      // Bypass any intermediate cache so a stale 200 does not mask a live
+      // origin outage.
+      cache: 'no-store',
+      signal: AbortSignal.timeout(PROBE_TIMEOUT_MS),
+    });
+    httpCode = res.status;
+  } catch (err) {
+    console.debug('[edge-status] site probe failed', { site: site.name, url: site.url, error: String(err && err.message || err) });
+    httpCode = 0;
+  }
+  const latencyMs = Date.now() - start;
+  const { status, reason } = classifySiteStatus(httpCode);
+  console.debug('[edge-status] site probed', { site: site.name, http_status: httpCode, status, reason });
+  return {
+    name: site.name,
+    url: site.url,
+    origin_hint: site.origin_hint,
+    status,
+    reason,
+    http_status: httpCode,
+    latency_ms: latencyMs,
+    checked_at: new Date().toISOString(),
+  };
+}
+
 // Run the full probe sweep and persist to KV. Returns the payload written.
 export async function runProbe(env) {
   const services = [];
   for (const fn of FNS) {
     services.push(await probeFunction(env, fn));
   }
+  const sites = [];
+  for (const site of SITES) {
+    sites.push(await probeSite(site));
+  }
   const payload = buildPayload(services);
+  // Site probes ride alongside Supabase-fn probes but do NOT roll into the
+  // overall "everything green" indicator today -- the wiki + prod deploy
+  // still recover cleanly even when Cloudflare is misconfigured, so having
+  // them mask a green sweep would over-page. Cards render their own state
+  // per-tile.
+  payload.sites = sites;
   await env.EDGE_STATUS_KV.put(STATUS_KEY, JSON.stringify(payload));
   await updateHistory(env, services);
-  console.info('[edge-status] sweep complete', { overall: payload.overall, count: services.length });
+  console.info('[edge-status] sweep complete', { overall: payload.overall, count: services.length, sites: sites.length });
   return payload;
 }
 
