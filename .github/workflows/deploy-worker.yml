@@ -35,7 +35,11 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          # Wrangler 4.x requires Node >= 22 (older Node 20 hit
+          # 'Wrangler requires at least Node.js v22.0.0' at deploy time
+          # and exit 1). Pin the runner ahead of the pinning wrangler
+          # will keep doing on every minor bump.
+          node-version: '22'
 
       # Detect which workers changed on this push and iterate. On manual
       # dispatch, use the input override (default: edge-status). Keeps the
