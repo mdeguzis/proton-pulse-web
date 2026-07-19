@@ -24,6 +24,14 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Need enough history so `git diff $BEFORE_SHA $AFTER_SHA` in the
+          # Resolve step can actually see both refs. Default is fetch-depth
+          # 1 (tip only) which makes the diff silently return empty and
+          # skips the deploy on every real push. Full history is cheap on
+          # this repo; if it ever gets slow, switch to a shallow deepen
+          # against $BEFORE_SHA specifically.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:

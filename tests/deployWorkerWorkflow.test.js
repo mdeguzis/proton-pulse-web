@@ -61,6 +61,18 @@ describe('deploy job wires wrangler correctly', () => {
     expect(steps.some((s) => s.startsWith('actions/setup-node'))).toBe(true);
   });
 
+  test('checkout fetches full history so git diff against event.before can resolve', () => {
+    // Regression guard: default fetch-depth is 1 (tip only), which makes
+    // `git diff $BEFORE_SHA $AFTER_SHA` in the Resolve step silently return
+    // empty on every real push and skip the deploy. Full history is cheap
+    // on this repo. If a future edit drops back to depth 1 this test
+    // catches it.
+    const checkout = DOC.jobs.deploy.steps.find((s) => (s.uses || '').startsWith('actions/checkout'));
+    expect(checkout).toBeTruthy();
+    expect(checkout.with).toBeTruthy();
+    expect(checkout.with['fetch-depth']).toBe(0);
+  });
+
   test('resolves the worker list from the git diff, not by deploying everything', () => {
     // Regression guard: a "diff-since-event.before" step must exist so the
     // job is a no-op when a push does not actually touch workers/**. This
