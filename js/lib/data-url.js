@@ -13,6 +13,20 @@
 // bare filename -- older deploys and one-off files still work.
 
 let _manifestPromise = null;
+let _dataConfigPromise = null;
+
+// Runtime deploy config (#362). The publish step writes data-config.json for the
+// selected target: on Cloudflare it carries { dataBase: 'https://data.proton-pulse.com' }
+// so the 75k per-game data/ buckets are served from R2; on GitHub Pages it is
+// absent/empty and data/ stays same-origin. This is the switch that keeps the
+// deploy target pluggable and reversible without any frontend code change.
+function _loadDataConfig() {
+  if (_dataConfigPromise) return _dataConfigPromise;
+  _dataConfigPromise = fetch('data-config.json', { cache: 'no-store' })
+    .then(r => (r.ok ? r.json() : {}))
+    .catch(() => ({}));
+  return _dataConfigPromise;
+}
 
 function _isStagingOrLocal() {
   const host = (typeof window !== 'undefined' && window.location && window.location.hostname) || '';
@@ -42,9 +56,17 @@ function _loadManifest() {
  *   has a hash for it, otherwise the bare name.
  */
 export async function dataUrl(name) {
-  const manifest = await _loadManifest();
+  const [manifest, config] = await Promise.all([_loadManifest(), _loadDataConfig()]);
   const hash = manifest[name];
-  return hash ? `${name}?v=${hash}` : name;
+  const versioned = hash ? `${name}?v=${hash}` : name;
+  // Per-game data/ buckets can live on a separate host (R2) depending on the
+  // deploy target. Only data/ paths reroute; small top-level files ship with the
+  // shell and stay same-origin. Empty dataBase (GitHub Pages) is a no-op.
+  const dataBase = config && config.dataBase;
+  if (dataBase && name.startsWith('data/')) {
+    return `${dataBase.replace(/\/$/, '')}/${versioned}`;
+  }
+  return versioned;
 }
 
 /**

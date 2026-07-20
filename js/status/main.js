@@ -4,7 +4,7 @@
 // last-checked timestamp. Auto-refreshes every 60 s so the page stays
 // live if the reader leaves it open.
 
-import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
+import { dataUrl } from '../lib/data-url.js?v=97f09986';
 import { fetchVendorStatuses, VENDOR_REFRESH_MS } from './vendor-status.js?v=f161798f';
 import {
   certStateForCert, certStateLabel, certStateDot,

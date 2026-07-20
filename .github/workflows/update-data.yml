@@ -65,6 +65,14 @@ on:
         description: "Preview: run stages that read but skip commits + Supabase writes (best-effort per stage)"
         type: boolean
         default: false
+      deploy_target:
+        description: "Where to publish the built site. 'ghpages' (default) uses the existing gh-pages orphan deploy. 'cloudflare' syncs data/ to R2 and deploys the shell to Cloudflare Pages (#362). Pluggable + reversible."
+        required: false
+        default: "ghpages"
+        type: choice
+        options:
+          - ghpages
+          - cloudflare
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -461,8 +469,24 @@ jobs:
           path: .cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-final
 
+      # Cloudflare target (#362): sync data/ to R2 + deploy the shell to Pages.
+      # Runs instead of the gh-pages orphan deploy when deploy_target=cloudflare.
+      # Must come BEFORE the orphan step, which wipes the working tree. Staging
+      # runs target the staging Pages project; everything else targets prod.
+      - name: Deploy to Cloudflare (R2 + Pages)
+        if: inputs.deploy_target == 'cloudflare'
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          PAGES_PROJECT: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'proton-pulse-web-staging' || 'proton-pulse-web' }}
+          PAGES_BRANCH: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'staging' || 'main' }}
+        run: |
+          bash scripts/publish-cloudflare.sh /tmp/protondb-output "$GITHUB_WORKSPACE"
+
       - name: Deploy to gh-pages (orphan, no history)
-        if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true
+        if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true && inputs.deploy_target != 'cloudflare'
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
@@ -556,7 +580,7 @@ jobs:
       # either staging_with_pipeline (full pipeline, 30 min) or
       # staging_with_finalize (finalize + stats only, ~5 min) is on.
       - name: Deploy pipeline output to staging repo
-        if: inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true
+        if: (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && inputs.deploy_target != 'cloudflare'
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"

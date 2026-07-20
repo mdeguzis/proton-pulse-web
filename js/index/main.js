@@ -1,6 +1,6 @@
 // Entry module for index.html (homepage). Migrated from index.js.
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=ba0d7848';
-import { dataUrl } from '../lib/data-url.js?v=3c2e7ac9';
+import { dataUrl } from '../lib/data-url.js?v=97f09986';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport, currentColCount } from '../lib/tile-pad.js?v=ad4b114d';
 import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
 import { renderGameCard } from '../app/lib/card.js?v=93448301';
