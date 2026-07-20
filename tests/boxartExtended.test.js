@@ -22,6 +22,15 @@ describe('Box Art Manager surfaces extended-index games on search (#363)', () =>
     expect(SRC).toMatch(/_cache = \{[^}]*extendedIndex/);
   });
 
+  test('the detail view (?boxart=<appId>) falls back to the extended index', () => {
+    const start = SRC.indexOf('export async function renderBoxartAdminDetail');
+    const end = SRC.indexOf('not found in the search index', start);
+    const fn = SRC.slice(start, end);
+    expect(start).toBeGreaterThan(-1);
+    // searchRow tries the main index, then the extended index.
+    expect(fn).toMatch(/indexes\.searchIndex[\s\S]*indexes\.extendedIndex/);
+  });
+
   test('_buildRows folds in the extended index only when a query is present, deduped', () => {
     const start = SRC.indexOf('function _buildRows');
     const end = SRC.indexOf('\n}', start);

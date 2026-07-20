@@ -1201,8 +1201,12 @@ export async function renderBoxartAdminDetail(appId) {
     return;
   }
 
-  // Locate the row for this appId in the index.
-  const searchRow = (indexes.searchIndex || []).find(r => Array.isArray(r) && String(r[0]) === String(appId));
+  // Locate the row for this appId. Check the main index first, then the extended
+  // Steam catalog (#363) so a long-tail title like Cat Chess (4163030) opens its
+  // detail view instead of the not-found error below.
+  const searchRow =
+    (indexes.searchIndex || []).find(r => Array.isArray(r) && String(r[0]) === String(appId)) ||
+    (indexes.extendedIndex || []).find(r => Array.isArray(r) && String(r[0]) === String(appId));
   if (!searchRow) {
     content.innerHTML = `<p class="admin-error">App id <code>${escapeHtml(appId)}</code> not found in the search index.</p>`;
     return;
