@@ -753,21 +753,38 @@ export async function renderGamePage(appId) {
     } catch { return {}; }
   })();
 
-  let filterGpu    = persistedFilters.gpu    || '';
-  let filterArch   = persistedFilters.arch   || '';
-  let filterOs     = persistedFilters.os     || '';
-  let filterRating = persistedFilters.rating || '';
+  // Scalar-per-filter state. Backward compat: older builds also wrote scalars,
+  // and a slightly newer (never-shipped) build wrote arrays -- accept both by
+  // pulling the first value out of an array when the persisted state is one.
+  function _restoreScalar(v) {
+    if (Array.isArray(v)) return v.filter(Boolean)[0] || '';
+    return v || '';
+  }
+  let filterGpu    = _restoreScalar(persistedFilters.gpu);
+  let filterArch   = _restoreScalar(persistedFilters.arch);
+  let filterOs     = _restoreScalar(persistedFilters.os);
+  let filterRating = _restoreScalar(persistedFilters.rating);
   // Native vs Proton (or a specific proton wrapper). '' == any. Reports
   // without a run_type value are treated as unknown so they never
   // accidentally match a specific selection.
-  let filterRunType = persistedFilters.runType || '';
+  let filterRunType = _restoreScalar(persistedFilters.runType);
   // 'deck-lcd' / 'deck-oled' / 'deck-any' / 'desktop' / ''
-  let filterDevice = persistedFilters.device || '';
+  let filterDevice = _restoreScalar(persistedFilters.device);
   // Minimum reporter playtime in minutes (0 = any). Useful to skip "launched
   // it once" reports that don't reflect real-use compatibility
   let filterMinPlaytime = persistedFilters.minPlaytime || 0;
   let filterMine = false;
   let persistFilters = localStorage.getItem(FILTER_PERSIST_KEY) === '1';
+
+  // Unified source filter across configs + reports: 'pulse-config', 'pulse-report',
+  // 'protondb', or '' for any.
+  let filterSource = (() => {
+    const rawArr = Array.isArray(persistedFilters.source) ? persistedFilters.source[0] : null;
+    const raw = rawArr || persistedFilters.source || localStorage.getItem('proton-pulse:config-type') || '';
+    if (raw === 'pulse-config' || raw === 'pulse-report') return 'pulse';
+    if (raw === 'protondb-edited') return 'protondb';
+    return raw;
+  })();
 
   function saveFiltersIfEnabled() {
     if (!persistFilters) return;
@@ -776,14 +793,6 @@ export async function renderGamePage(appId) {
       localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(snapshot));
     } catch { /* quota / disabled - ignore */ }
   }
-  // Unified source filter across configs + reports: 'pulse-config', 'pulse-report',
-  // 'protondb', or '' for any
-  let filterSource = (() => {
-    const raw = persistedFilters.source || localStorage.getItem('proton-pulse:config-type') || '';
-    if (raw === 'pulse-config' || raw === 'pulse-report') return 'pulse';
-    if (raw === 'protondb-edited') return 'protondb';
-    return raw;
-  })();
 
   const gpuVendor = g => {
     if (!g) return '';
@@ -1098,6 +1107,14 @@ export async function renderGamePage(appId) {
       <div class="reports-controls-row">
         <div class="filter-wrap">
         ${(() => {
+          // #360: game-page keeps its dropdown filters (single-select
+          // <select>) but adopts the browse-page modal framework -- same
+          // .filter-panel--stack modifier for consistent mobile behavior,
+          // same three-button footer (Collapse / Save filters / Clear
+          // filters), same aria-pressed toggle for persist. Only the
+          // control style differs from browse (selects here vs pill
+          // groups on browse) because dropdowns fit these single-value
+          // fields better than a pill grid would.
           const GPU_LABEL = { nvidia: 'NVIDIA', amd: 'AMD', intel: 'Intel' };
           const RATING_LABEL = { platinum: 'Platinum', gold: 'Gold', silver: 'Silver', bronze: 'Bronze', borked: 'Borked' };
           const RATING_ORDER = ['platinum','gold','silver','bronze','borked'];
@@ -1109,32 +1126,32 @@ export async function renderGamePage(appId) {
 
           const gpuSel = availGpus.length > 0 ? `
             <div class="filter-item">
-              <label for="fGpu">GPU</label>
-              <select id="fGpu">
+              <label class="home-filter-label" for="fGpu">GPU</label>
+              <select id="fGpu" class="home-filter-select">
                 <option value="">Any</option>
                 ${availGpus.map(v => `<option value="${v}" ${filterGpu===v?'selected':''}>${GPU_LABEL[v]||v}</option>`).join('')}
               </select>
             </div>` : '';
           const archSel = availArchs.length > 1 ? `
             <div class="filter-item">
-              <label for="fArch">Architecture</label>
-              <select id="fArch">
+              <label class="home-filter-label" for="fArch">Architecture</label>
+              <select id="fArch" class="home-filter-select">
                 <option value="">Any</option>
                 ${availArchs.map(v => `<option value="${esc(v)}" ${filterArch===v?'selected':''}>${esc(v)}</option>`).join('')}
               </select>
             </div>` : '';
           const osSel = availOs.length > 0 ? `
             <div class="filter-item">
-              <label for="fOs">OS</label>
-              <select id="fOs">
+              <label class="home-filter-label" for="fOs">OS</label>
+              <select id="fOs" class="home-filter-select">
                 <option value="">Any</option>
                 ${availOs.map(v => `<option value="${esc(v)}" ${filterOs===v?'selected':''}>${esc(v)}</option>`).join('')}
               </select>
             </div>` : '';
           const ratingSel = availRatings.length > 0 ? `
             <div class="filter-item">
-              <label for="fRating">Rating</label>
-              <select id="fRating">
+              <label class="home-filter-label" for="fRating">Rating</label>
+              <select id="fRating" class="home-filter-select">
                 <option value="">Any</option>
                 ${availRatings.map(v => `<option value="${v}" ${filterRating===v?'selected':''}>${RATING_LABEL[v]||v}</option>`).join('')}
               </select>
@@ -1154,16 +1171,16 @@ export async function renderGamePage(appId) {
           const availRunTypes = [...new Set(combined.map(r => r.runType).filter(Boolean))].sort();
           const runTypeSel = availRunTypes.length > 0 ? `
             <div class="filter-item">
-              <label for="fRunType">Runtime Type</label>
-              <select id="fRunType">
+              <label class="home-filter-label" for="fRunType">Runtime Type</label>
+              <select id="fRunType" class="home-filter-select">
                 <option value="">Any</option>
                 ${availRunTypes.map(v => `<option value="${esc(v)}" ${filterRunType===v?'selected':''}>${RUN_TYPE_LABEL[v]||v}</option>`).join('')}
               </select>
             </div>` : '';
           const srcSel = `
             <div class="filter-item">
-              <label for="fSource">Source</label>
-              <select id="fSource">
+              <label class="home-filter-label" for="fSource">Source</label>
+              <select id="fSource" class="home-filter-select">
                 <option value="">All</option>
                 <option value="protondb" ${filterSource==='protondb'?'selected':''}>ProtonDB</option>
                 <option value="pulse" ${filterSource==='pulse'?'selected':''}>Pulse</option>
@@ -1175,8 +1192,8 @@ export async function renderGamePage(appId) {
           });
           const deviceSel = hasDeck ? `
             <div class="filter-item">
-              <label for="fDevice">Device</label>
-              <select id="fDevice">
+              <label class="home-filter-label" for="fDevice">Device</label>
+              <select id="fDevice" class="home-filter-select">
                 <option value="">Any</option>
                 <option value="deck-any"  ${filterDevice==='deck-any'?'selected':''}>Steam Deck (any)</option>
                 <option value="deck-lcd"  ${filterDevice==='deck-lcd'?'selected':''}>Steam Deck LCD</option>
@@ -1187,8 +1204,8 @@ export async function renderGamePage(appId) {
             </div>` : '';
           const playtimeSel = `
             <div class="filter-item">
-              <label for="fPlaytime">Min playtime</label>
-              <select id="fPlaytime">
+              <label class="home-filter-label" for="fPlaytime">Min playtime</label>
+              <select id="fPlaytime" class="home-filter-select">
                 <option value="0"   ${filterMinPlaytime===0?'selected':''}>Any</option>
                 <option value="60"  ${filterMinPlaytime===60?'selected':''}>1h+</option>
                 <option value="120" ${filterMinPlaytime===120?'selected':''}>2h+</option>
@@ -1201,25 +1218,24 @@ export async function renderGamePage(appId) {
           const anyActive = activeCount > 0;
 
           return `
-            <button class="filter-toggle-btn${activeCount > 0 ? ' has-filters' : ''}" id="filterToggle">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M4.25 5.61C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39C20.25 4.95 19.8 4 18.95 4H5.04C4.2 4 3.74 4.95 4.25 5.61z"/></svg>
+            <button class="filter-toggle-btn${activeCount > 0 ? ' has-filters' : ''}" id="filterToggle" type="button" aria-expanded="false">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M4.25 5.61C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39C20.25 4.95 19.8 4 18.95 4H5.04C4.2 4 3.74 4.95 4.25 5.61z"/></svg>
               Filters${activeCount > 0 ? ` <span class="filter-badge">${activeCount}</span>` : ''}
             </button>
             ${anyActive ? `<span class="filter-count">${reps.length} of ${combined.length} shown</span>` : ''}
-            <div class="filter-panel" id="filterPanel">
+            <div class="filter-panel filter-panel--stack" id="filterPanel">
               <div class="filter-panel-mobile-header">
                 <span class="filter-panel-mobile-title">Filters</span>
                 <button type="button" class="filter-panel-close" aria-label="Close filters">&times;</button>
               </div>
-              <div class="filter-panel-grid">
-                ${gpuSel}${archSel}${osSel}${srcSel}${ratingSel}${runTypeSel}${deviceSel}${playtimeSel}
-              </div>
-              <div class="filter-panel-footer">
-                <label class="filter-persist" title="Save these filters so they apply next time you visit a game page">
-                  <input type="checkbox" id="fPersist" ${persistFilters ? 'checked' : ''}>
-                  <span>Save filters</span>
-                </label>
-                ${anyActive ? '<button class="filter-clear-btn" id="filterClear">Clear all</button>' : ''}
+              ${srcSel}${gpuSel}${archSel}${osSel}${ratingSel}${runTypeSel}${deviceSel}${playtimeSel}
+              <div class="filter-panel-footer filter-panel-footer--stack">
+                <button class="filter-collapse-btn" id="gp-filter-collapse" type="button" aria-label="Collapse filters">
+                  <span class="filter-collapse-caret" aria-hidden="true">&#x25B2;</span>
+                  <span class="filter-collapse-text">Collapse</span>
+                </button>
+                <button class="filter-save-btn${persistFilters?' is-active':''}" id="gp-filter-persist" type="button" aria-pressed="${persistFilters ? 'true' : 'false'}" title="Save these filters so they apply next time you visit a game page">Save filters</button>
+                <button class="filter-clear-btn" id="gp-filter-clear" type="button">Clear filters</button>
               </div>
             </div>
           `;
@@ -1246,12 +1262,19 @@ export async function renderGamePage(appId) {
       </div>
     `;
 
+    // Sort mode + Mine toggle used to call render() -- full innerHTML rebuild.
+    // Now they route through refreshReports() (defined further down) so only
+    // the .cards subtree changes. The filter panel + its portal state stay
+    // exactly as they are, which fixes the mobile "modal disappears after
+    // dropdown pick" bug. refreshReports itself also re-syncs sort-bar
+    // active state so tapping between Recent / Top Voted / Mine reflects
+    // the new mode visually.
     el.querySelectorAll('.sort-bar button[data-sort]').forEach(b =>
-      b.onclick = () => { sortMode = b.dataset.sort; render(); }
+      b.onclick = () => { sortMode = b.dataset.sort; refreshReports(); }
     );
     el.querySelector('.sort-mine-btn')?.addEventListener('click', () => {
       filterMine = !filterMine;
-      render();
+      refreshReports();
     });
 
     // rating-info-btn is now a plain <a href> to scoring.html - no JS needed.
@@ -1281,30 +1304,236 @@ export async function renderGamePage(appId) {
       tip?.classList.toggle('open');
       if (tip?.classList.contains('open')) await populateScoringTooltip(el);
     });
-    el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open'); });
-    el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open'); });
-    el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open'); });
-    el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open'); });
-    el.querySelector('#fRunType')?.addEventListener('change', e => { filterRunType = e.target.value; saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open'); });
-    el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open'); });
+    // Once the mobile-modal observer portals #filterPanel to <body>, an
+    // `el.querySelector('#filterPanel')` lookup returns null -- the panel is
+    // no longer inside el. Use document-scoped lookups so every handler can
+    // reach the panel regardless of whether it is still in el or has been
+    // moved to body. Same reasoning for the toggle button (which stays in el
+    // but treat it uniformly for safety).
+    const panelEl  = () => document.getElementById('filterPanel');
+    const toggleEl = () => document.getElementById('filterToggle');
+
+    // Partial re-render helper (#358 / #360). A filter or sort change used to
+    // call render(), which does el.innerHTML = ... and destroys the whole
+    // subtree -- including the filter panel currently portalled to <body> on
+    // mobile. That race is what makes the modal appear to close after a
+    // dropdown pick: the OS picker dismisses, render() tears down the panel,
+    // and the shared observer's re-portal of the fresh #filterPanel happens
+    // in a microtask AFTER the browser has already painted a "no modal"
+    // frame. Depending on device timing that half-second gap reads as "the
+    // modal is gone and my pick did nothing."
+    //
+    // Fix: only replace the .cards content on filter/sort/mine changes.
+    // Every filter-panel node stays exactly where it is (portalled or not),
+    // so no re-portal, no visible flicker, and dropdown state stays intact.
+    // Filter badge count + "N of M shown" counter also refresh inline.
+    function refreshReports() {
+      const reps = sorted();
+      const cardsHost = el.querySelector('.cards');
+      if (cardsHost) {
+        cardsHost.innerHTML = liveOnly && !reps.length
+          ? `<div class="live-summary-note">
+              ProtonDB rates this <strong>${esc(String(liveSummary.tier || '').toUpperCase())}</strong> from <strong>${protonDbCount.toLocaleString()}</strong> report${protonDbCount !== 1 ? 's' : ''} (checked live). Individual reports are not mirrored here yet, so there are no cards to show. <a href="https://www.protondb.com/app/${appId}" target="_blank" rel="noopener">View them on ProtonDB &gt;</a> or submit the first Proton Pulse report below.
+             </div>`
+          : (reps.length
+              ? reps.map((r, i) => r._kind === 'config'
+                  ? renderConfigCard(r, i, votes, userVotes)
+                  : renderCard(r, votes, userVotes, playtimeTotals)
+                ).join('')
+              : '<div class="state-box" style="border:none">No configs or reports match filters</div>');
+      }
+      // Rebind card-level handlers (votes, delete, JSON download, author
+      // enhancers) since we just replaced the .cards subtree. The panel and
+      // its own handlers are untouched so we do not rebind them. Same shape
+      // as the block below inside render(); keep them in sync if either
+      // changes.
+      const myClientId = getWebClientId();
+      const myPpid = window._ppMyUserId || '';
+      el.querySelectorAll('.cfg-dl-btn, .action-btn[data-report-json], .action-btn[data-cfg-json]').forEach(b => {
+        b.addEventListener('click', ev => {
+          ev.stopPropagation();
+          if (b.dataset.cfgJson) downloadJson(JSON.parse(b.dataset.cfgJson), 'pulse-config');
+          else if (b.dataset.reportJson) downloadJson(JSON.parse(b.dataset.reportJson), 'report');
+        });
+      });
+      el.querySelectorAll('.vote-btns').forEach(btns => {
+        const authorId = btns.dataset.authorId;
+        const authorPpid = btns.dataset.authorPpid;
+        const isOwn = (authorId && authorId === myClientId)
+          || (myPpid && authorPpid && authorPpid === myPpid);
+        if (isOwn) {
+          btns.querySelectorAll('.vote-btn').forEach(b => {
+            b.disabled = true;
+            b.title = 'You cannot vote on your own report';
+          });
+        }
+      });
+      el.querySelectorAll('.vote-btn').forEach(btn => {
+        btn.addEventListener('click', ev => {
+          ev.stopPropagation();
+          if (btn.disabled) return;
+          const vote  = parseInt(btn.dataset.vote);
+          const rKey  = btn.dataset.rkey;
+          const aId   = btn.dataset.appid;
+          const btnGroup  = btn.closest('.vote-btns');
+          castVote(aId, rKey, vote, btnGroup.querySelector('.vote-up'), btnGroup.querySelector('.vote-dn'));
+        });
+      });
+      el.querySelectorAll('.delete-report-btn').forEach(b => {
+        b.addEventListener('click', async ev => {
+          ev.stopPropagation();
+          if (!confirm('Delete your report for this game?')) return;
+          const clientId = getWebClientId();
+          const hdrs = window.SupaAuth ? await window.SupaAuth.authHeaders() : { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
+          hdrs['x-client-id'] = clientId;
+          const r = await fetch(`${SB_URL}/rest/v1/user_configs?client_id=eq.${clientId}&app_id=eq.${appId}`, {
+            method: 'DELETE',
+            headers: hdrs,
+          });
+          if (r.ok) { b.textContent = 'Deleted'; setTimeout(render, 1000); }
+          else { b.textContent = 'Failed'; }
+        });
+      });
+      el.querySelectorAll('.delete-cfg-btn').forEach(b => {
+        b.addEventListener('click', async ev => {
+          ev.stopPropagation();
+          if (!confirm('Delete your Proton config for this game?')) return;
+          const voterId  = b.dataset.voterId;
+          const cfgAppId = b.dataset.appId;
+          const cfgHdrs = window.SupaAuth ? await window.SupaAuth.authHeaders() : { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
+          cfgHdrs['x-client-id'] = voterId;
+          const r = await fetch(
+            `${SB_URL}/rest/v1/user_proton_configs?voter_id=eq.${voterId}&app_id=eq.${cfgAppId}`,
+            { method: 'DELETE', headers: cfgHdrs }
+          );
+          if (r.ok) { b.textContent = 'Deleted'; setTimeout(render, 1000); }
+          else { b.textContent = 'Failed'; }
+        });
+      });
+      void enhanceAuthorBlocks(reps.filter(r => r._kind !== 'config'));
+
+      // Filter chrome: active count on the toggle button + optional
+      // "N of M shown" counter. Both live outside .cards so we update them
+      // directly rather than re-rendering the reports-controls-row.
+      const activeCount = [filterGpu, filterArch, filterOs, filterRating, filterRunType, filterSource, filterDevice, filterMinPlaytime > 0 ? '1' : ''].filter(Boolean).length;
+      const tb = document.getElementById('filterToggle');
+      if (tb) {
+        tb.classList.toggle('has-filters', activeCount > 0);
+        let badge = tb.querySelector('.filter-badge');
+        if (activeCount > 0) {
+          if (!badge) {
+            badge = document.createElement('span');
+            badge.className = 'filter-badge';
+            tb.appendChild(document.createTextNode(' '));
+            tb.appendChild(badge);
+          }
+          badge.textContent = String(activeCount);
+        } else if (badge) {
+          badge.remove();
+        }
+      }
+      const filterWrap = el.querySelector('.filter-wrap');
+      const countEl = filterWrap?.querySelector('.filter-count');
+      if (activeCount > 0) {
+        const txt = `${reps.length} of ${combined.length} shown`;
+        if (countEl) countEl.textContent = txt;
+        else if (filterWrap && tb) {
+          const span = document.createElement('span');
+          span.className = 'filter-count';
+          span.textContent = txt;
+          tb.insertAdjacentElement('afterend', span);
+        }
+      } else if (countEl) {
+        countEl.remove();
+      }
+      // Sort-bar active state (sort mode change).
+      el.querySelectorAll('.sort-bar button[data-sort]').forEach(b => {
+        b.classList.toggle('active', b.dataset.sort === sortMode);
+      });
+      const mineBtn = el.querySelector('.sort-mine-btn');
+      if (mineBtn) mineBtn.classList.toggle('active', !!filterMine);
+    }
+
+    // Filter panel toggle. stopPropagation stops the click from bubbling to
+    // the document (avoids collisions with any outside-click close wired
+    // elsewhere on the page). Before this fix, tapping the toggle to CLOSE
+    // an already-open (portalled) panel did nothing because `el.querySelector`
+    // could not find the panel any more.
     el.querySelector('#filterToggle')?.addEventListener('click', (e) => {
       e.stopPropagation();
-      el.querySelector('#filterPanel')?.classList.toggle('open');
+      const panel = panelEl();
+      if (!panel) return;
+      const open = panel.classList.toggle('open');
+      toggleEl()?.setAttribute('aria-expanded', String(open));
     });
-    el.querySelector('#filterClear')?.addEventListener('click', () => {
-      filterGpu = ''; filterArch = ''; filterOs = ''; filterRating = ''; filterRunType = '';
-      filterSource = ''; filterDevice = ''; filterMinPlaytime = 0;
-      saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open');
+
+    // Dropdown filter change handlers. Each writes the picked value into the
+    // corresponding scalar filter var, saves state if persistence is on, and
+    // triggers a PARTIAL re-render (refreshReports) that only replaces
+    // .cards + filter chrome. Nothing touches the panel, so its portalled
+    // state on mobile stays intact and the modal remains visible after the
+    // OS-native picker dismisses. Prior version called render() which does
+    // el.innerHTML = ... on the whole subtree -- that tore down the
+    // portalled panel and made it appear the modal closed on pick.
+    el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fRunType')?.addEventListener('change', e => { filterRunType = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fDevice')?.addEventListener('change', e => { filterDevice = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fPlaytime')?.addEventListener('change', e => { filterMinPlaytime = parseInt(e.target.value, 10) || 0; saveFiltersIfEnabled(); refreshReports(); });
+
+    // Collapse: close the modal so the user sees the filtered reports. Uses
+    // panelEl() so it finds the panel whether it is still in el or portalled
+    // to body -- prior version did el.querySelector and did nothing on mobile.
+    document.getElementById('gp-filter-collapse')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      panelEl()?.classList.remove('open');
+      toggleEl()?.setAttribute('aria-expanded', 'false');
     });
-    el.querySelector('#fDevice')?.addEventListener('change', e => { filterDevice = e.target.value; saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open'); });
-    el.querySelector('#fPlaytime')?.addEventListener('change', e => { filterMinPlaytime = parseInt(e.target.value, 10) || 0; saveFiltersIfEnabled(); render(); el.querySelector('#filterPanel')?.classList.add('open'); });
-    el.querySelector('#fPersist')?.addEventListener('change', e => {
-      persistFilters = e.target.checked;
+
+    // Save filters: aria-pressed toggle button, matches browse. Persist
+    // key + snapshot format stays the same so existing users do not lose
+    // their saved state. The button lives inside the panel so it moves with
+    // the portal -- use document.getElementById to find it either way.
+    document.getElementById('gp-filter-persist')?.addEventListener('click', () => {
+      persistFilters = !persistFilters;
+      const btn = document.getElementById('gp-filter-persist');
+      if (btn) {
+        btn.setAttribute('aria-pressed', String(persistFilters));
+        btn.classList.toggle('is-active', persistFilters);
+      }
       try {
         localStorage.setItem(FILTER_PERSIST_KEY, persistFilters ? '1' : '0');
         if (persistFilters) saveFiltersIfEnabled();
         else localStorage.removeItem(FILTER_STORAGE_KEY);
       } catch { /* quota - ignore */ }
+    });
+
+    // Clear filters: reset every scalar + playtime, then partial re-render
+    // (same reason as the dropdown handlers -- keep the panel node intact
+    // so the modal does not flicker). Persist the cleared state too so a
+    // saved snapshot does not come back on reload. Also reset the visible
+    // <select> values so the panel reflects the cleared state without a
+    // full DOM rebuild.
+    document.getElementById('gp-filter-clear')?.addEventListener('click', () => {
+      filterGpu = '';
+      filterArch = '';
+      filterOs = '';
+      filterRating = '';
+      filterRunType = '';
+      filterSource = '';
+      filterDevice = '';
+      filterMinPlaytime = 0;
+      for (const id of ['fGpu', 'fArch', 'fOs', 'fRating', 'fRunType', 'fSource', 'fDevice']) {
+        const s = document.getElementById(id);
+        if (s) s.value = '';
+      }
+      const p = document.getElementById('fPlaytime');
+      if (p) p.value = '0';
+      saveFiltersIfEnabled();
+      refreshReports();
     });
     // Match both the legacy .cfg-dl-btn (Pulse config cards) and the new
     // unified .action-btn (report cards) so the JSON download click works

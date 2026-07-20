@@ -211,6 +211,97 @@ describe('mobile filter modal (<= 720px) -- full-viewport modal pattern', () => 
   });
 });
 
+describe('game-page filter panel adopts the browse modal framework (#360)', () => {
+  // Game-page keeps its dropdown filters (single-value <select>) but
+  // adopts the same modal chrome as browse: .filter-panel--stack for
+  // consistent mobile layout, and a three-button footer (Collapse /
+  // Save filters / Clear filters) that matches home.js. Only the control
+  // style differs (selects here vs pill groups on browse). This block
+  // guards the framework wins so they cannot be reverted separately.
+  const gamePageSrc = fs.readFileSync(
+    path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'),
+    'utf8'
+  );
+
+  test('panel uses .filter-panel--stack modifier for consistent mobile layout', () => {
+    // Without --stack the mobile modal falls back to the .filter-panel-grid
+    // rules and looks different from browse. Regression guard.
+    expect(gamePageSrc).toMatch(/class="filter-panel filter-panel--stack"\s+id="filterPanel"/);
+  });
+
+  test('footer carries Collapse + Save filters + Clear filters buttons', () => {
+    // Same three-button footer as browse. filter-persist as a checkbox is
+    // gone -- it is now an aria-pressed toggle button so it matches the
+    // browse UX (and is easier to hit on mobile).
+    expect(gamePageSrc).toContain('id="gp-filter-collapse"');
+    expect(gamePageSrc).toContain('id="gp-filter-persist"');
+    expect(gamePageSrc).toContain('id="gp-filter-clear"');
+    expect(gamePageSrc).toMatch(/class="filter-collapse-btn"/);
+    expect(gamePageSrc).toMatch(/class="filter-save-btn/);
+    expect(gamePageSrc).toMatch(/class="filter-clear-btn"/);
+    // Old <input type="checkbox" id="fPersist"> checkbox markup is gone.
+    expect(gamePageSrc).not.toContain('id="fPersist"');
+  });
+
+  test('filter panel keeps its <select> dropdowns for enumerable filters', () => {
+    // Intentional design choice: the game-details filters are single-value
+    // per report (a report has one GPU vendor, one OS, one rating). A pill
+    // grid would be visually heavier without a UX benefit. Regression
+    // guard: if a future refactor swaps in pill markup this test catches
+    // it so the decision gets reconsidered explicitly.
+    expect(gamePageSrc).toMatch(/<select id="fGpu"/);
+    expect(gamePageSrc).toMatch(/<select id="fRating"/);
+    expect(gamePageSrc).toMatch(/<select id="fSource"/);
+    expect(gamePageSrc).toMatch(/<select id="fPlaytime"/);
+  });
+
+  test('selects reuse the .home-filter-select class for consistent styling', () => {
+    // Sharing the same class as browse's controls means one CSS rule set
+    // styles every dropdown site-wide. If a select is added without this
+    // class it will look off inside the modal (native browser default
+    // instead of the site theme).
+    for (const sel of ['fGpu', 'fArch', 'fOs', 'fRating', 'fRunType', 'fSource', 'fDevice', 'fPlaytime']) {
+      const re = new RegExp(`<select id="${sel}"[^>]*class="home-filter-select"`);
+      expect(gamePageSrc).toMatch(re);
+    }
+  });
+
+  test('Save filters button is an aria-pressed toggle, not a checkbox', () => {
+    // Browse uses <button aria-pressed> for the persist toggle -- easier
+    // hit target on mobile and matches the button-based footer.
+    expect(gamePageSrc).toMatch(/id="gp-filter-persist"[^>]*aria-pressed="/);
+    expect(gamePageSrc).not.toMatch(/type="checkbox"[^>]*id="fPersist"/);
+  });
+
+  test('panel lookups after render use document-scoped queries, not el.querySelector', () => {
+    // Regression guard: on mobile the shared modal observer portals
+    // #filterPanel to <body> once .open is added. Any handler that then
+    // does el.querySelector('#filterPanel') returns null (the panel is
+    // no longer in el) -- Collapse silently does nothing, tapping the
+    // filter toggle to close an open panel silently does nothing, and
+    // the .add('open') restore after a dropdown change silently misses.
+    // The fix routes every post-render lookup through document.getElementById
+    // so the panel is reachable in either location.
+
+    // Collapse handler must find the panel via document, not el.
+    const collapseSection = gamePageSrc.match(/gp-filter-collapse['"]\)[\s\S]{0,400}?remove\(['"]open['"]/);
+    expect(collapseSection).not.toBeNull();
+    expect(collapseSection[0]).not.toMatch(/el\.querySelector\(['"]#filterPanel['"]/);
+
+    // Filter-toggle click handler (the open/close toggle) must not rely on
+    // el.querySelector for the panel either -- else tapping toggle to close
+    // an already-open (portalled) panel is a no-op.
+    const toggleSection = gamePageSrc.match(/#filterToggle['"]\)\?\.addEventListener\(['"]click['"][\s\S]{0,500}?\}\);/);
+    expect(toggleSection).not.toBeNull();
+    expect(toggleSection[0]).not.toMatch(/el\.querySelector\(['"]#filterPanel['"]/);
+
+    // Dropdown change handlers finish with .add('open') to keep the modal
+    // on-screen after a pick. That lookup must also be document-scoped so
+    // it succeeds even after the panel has been portalled.
+    expect(gamePageSrc).not.toMatch(/render\(\);\s*el\.querySelector\(['"]#filterPanel['"]\)\?\.classList\.add\(['"]open['"]\)/);
+  });
+});
+
 describe('game-page render() cleans up portalled panel before re-rendering (#358)', () => {
   // Bug: game-page.js render() sets el.innerHTML = ... on every filter change.
   // The shared mobile-modal observer in js/lib/topbar.js portals an open
