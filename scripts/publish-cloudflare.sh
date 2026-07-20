@@ -56,6 +56,12 @@ elif [ -d "$OUTPUT_DIR/data" ]; then
   : "${R2_SECRET_ACCESS_KEY:?R2_SECRET_ACCESS_KEY required for R2 sync}"
   local_count=$(find "$OUTPUT_DIR/data" -type f | wc -l)
   log "syncing $local_count files from $OUTPUT_DIR/data to r2://$R2_BUCKET/data ..."
+  sync_start=$(date +%s)
+  # Verbose progress: aws prints one "upload:/delete:" line per changed object.
+  # The first migration uploads ~187k objects, so we summarize every 2000 lines
+  # (plus a final total) instead of the quiet --only-show-errors, so the log
+  # shows the sync steadily advancing. stdbuf keeps awk line-buffered for
+  # real-time output; pipefail (set at top) still propagates an aws failure.
   AWS_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID" \
   AWS_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY" \
   AWS_DEFAULT_REGION="auto" \
@@ -63,8 +69,14 @@ elif [ -d "$OUTPUT_DIR/data" ]; then
     --endpoint-url "https://${CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com" \
     --content-type application/json \
     --exclude "*.html" \
-    --no-progress --only-show-errors
-  log "R2 sync complete"
+    --no-progress \
+    | stdbuf -oL awk -v total="$local_count" '
+        { c++ }
+        c % 2000 == 0 { printf "[publish-cloudflare]   synced %d objects (~%d%% of %d)...\n", c, (total>0 ? c*100/total : 0), total }
+        END { printf "[publish-cloudflare]   done: %d objects changed (uploaded/deleted)\n", c }
+      '
+  sync_end=$(date +%s)
+  log "R2 sync complete in $((sync_end - sync_start))s"
 else
   log "WARNING: $OUTPUT_DIR/data not found -- skipping R2 sync"
 fi
