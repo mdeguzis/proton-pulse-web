@@ -12,7 +12,7 @@ FORCE_DEPLOY ?=
 
 .PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker check-cert \
 	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-staging-finalize gh-resume gh-finalize-only gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
-	build serve smoke smoke-live pre-push coverage deploy-worker renew-certificate
+	build serve smoke smoke-live pre-push coverage deploy-worker
 
 build:
 	@bash scripts/cache-bust.sh
@@ -20,13 +20,6 @@ build:
 # Deploy a Cloudflare Worker (default: edge-status). Override: make deploy-worker WORKER=<name>
 deploy-worker:
 	@bash scripts/deploy-worker.sh $(WORKER)
-
-# Renew the GH Pages Let's Encrypt cert (walks the operator through the
-# Cloudflare grey-cloud step, then polls the GitHub Pages API + flips
-# https_enforced=true once the cert is provisioned). See #<TODO> if you
-# want to know why it needs a human touch.
-renew-certificate:
-	@bash scripts/renew-github-pages-cert.sh
 
 # Run Jest unit tests + manifest completeness check
 test-js:
@@ -47,9 +40,8 @@ pre-push: build coverage smoke
 smoke:
 	@bash scripts/smoke.sh
 
-# Print the live site's TLS certificate state: edge cert (what browsers see),
-# origin cert (GitHub Pages backend), and GitHub's Pages ACME state (e.g.
-# bad_authz). Read-only -- does not touch gh-pages. See the Certificates wiki.
+# Print the live site's TLS certificate state (post-#362: single Cloudflare
+# Pages cert, no more origin cert / GitHub Pages ACME state). Read-only.
 check-cert:
 	@bash scripts/check-cert.sh
 

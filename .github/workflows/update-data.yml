@@ -66,13 +66,13 @@ on:
         type: boolean
         default: false
       deploy_target:
-        description: "Where to publish the built site. 'ghpages' (default) uses the existing gh-pages orphan deploy. 'cloudflare' syncs data/ to R2 and deploys the shell to Cloudflare Pages (#362). Pluggable + reversible."
+        description: "Where to publish the built site. 'cloudflare' (default) syncs data/ to R2 and deploys the shell to Cloudflare Pages. 'ghpages' is retained as a rollback path only -- the origin cert saga and 20k-file Pages cap made it obsolete (#362)."
         required: false
-        default: "ghpages"
+        default: "cloudflare"
         type: choice
         options:
-          - ghpages
           - cloudflare
+          - ghpages
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true

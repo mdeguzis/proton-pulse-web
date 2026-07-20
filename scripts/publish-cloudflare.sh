@@ -107,6 +107,18 @@ done
 # scoring-info + form-schema come from the plugin repo in the gh-pages deploy;
 # copy them if the pipeline placed them in the output dir (already covered above).
 
+# 2b.i. Preserve cert-monitor output across the CF Pages deploy. cert-monitor.yml
+# writes cert-status.json + cert-history.json to gh-pages every 6h. Those files
+# are read same-origin by the status page, so on CF Pages they need to ride the
+# shell deploy. Copy the latest from origin/gh-pages (best-effort: if the fetch
+# fails or the files do not exist yet, the status page shows the "not run yet"
+# empty state instead of erroring). Same preserve pattern gh-pages uses via
+# scripts/preserve-cert-monitor.sh.
+if [ -x "$REPO_DIR/scripts/preserve-cert-monitor.sh" ]; then
+  bash "$REPO_DIR/scripts/preserve-cert-monitor.sh" "$DEPLOY" || \
+    log "cert-monitor preserve step warned; continuing"
+fi
+
 # 2c. The dual-target routing config: data/ served from R2 on Cloudflare.
 printf '{"dataBase":"%s","target":"cloudflare"}\n' "$DATA_BASE" > "$DEPLOY/data-config.json"
 

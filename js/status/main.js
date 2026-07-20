@@ -361,16 +361,14 @@ function certSummaryLine(cert) {
   return [issuer ? `Issued by ${issuer}` : 'TLS certificate', daysText].filter(Boolean).join(' · ');
 }
 
-// Public cert card, two-cert model (#359). The EDGE cert (what browsers actually
-// validate, auto-renewed by Cloudflare) drives the headline state. The ORIGIN
-// cert (GitHub Pages backend, behind Cloudflare) is shown as a muted operator
-// line -- with GitHub's own ACME state (e.g. bad_authz) when present -- because
-// while Cloudflare SSL is non-strict an expired origin cert does not reach
-// visitors. Burndown tracks the edge cert. Full-width card (.status-card--cert).
+// Public cert card, single-cert model (post-#362 Cloudflare Pages migration).
+// The site is served directly from Cloudflare Pages so there is only ONE cert:
+// the one browsers validate, auto-renewed by Cloudflare. No separate origin
+// cert to worry about (no GH-Pages-behind-Cloudflare hop), no ACME state to
+// explain, no renewal runbook. Burndown tracks the same edge cert. Full-width
+// card (.status-card--cert).
 function renderCertCard(status, history) {
   const edge = status && status.edge;
-  const origin = status && status.origin;
-  const gh = status && status.github_pages;
   const state = certStateForCert(edge);
   const dot = certStateDot(state);
   const label = certStateLabel(state);
@@ -379,17 +377,6 @@ function renderCertCard(status, history) {
   const window = (edge && edge.not_before && edge.not_after)
     ? `Valid ${certDate(edge.not_before)} → ${certDate(edge.not_after)}${total !== null ? ` (${total}-day window)` : ''}`
     : '';
-
-  // Origin line: muted context, never the headline. Fold in GitHub's ACME state.
-  const originState = certStateForCert(origin);
-  const originExpiry = origin && origin.not_after ? certDate(origin.not_after) : '';
-  const ghNote = gh && gh.state && gh.state !== 'approved'
-    ? ` · GitHub: ${gh.state}` : '';
-  const originText = originState === 'unreachable'
-    ? 'GitHub Pages origin: not reachable'
-    : originState === 'valid'
-      ? `GitHub Pages origin: valid → ${originExpiry} (renews via GitHub)`
-      : `GitHub Pages origin: ${certStateLabel(originState).toLowerCase()}${originExpiry ? ` ${originExpiry}` : ''}${ghNote} — not visitor-facing while Cloudflare SSL is non-strict`;
 
   return `
     <div class="status-card status-card--site status-card--cert" data-state="${esc(dot)}">
@@ -401,8 +388,7 @@ function renderCertCard(status, history) {
       <div class="status-card-meta status-card-meta--muted">
         <span>Served to visitors: ${esc(certSummaryLine(edge))}</span>
         ${window ? `<span>${esc(window)}</span>` : ''}
-        <span>${esc(originText)}</span>
-        <span>How this works: <a href="${esc(CERT_RENEWAL_WIKI)}" target="_blank" rel="noopener">wiki</a></span>
+        <span>Served directly from Cloudflare Pages (auto-renewed).</span>
       </div>
       ${renderCertBurndown(history, 'edge_not_after')}
     </div>
@@ -421,10 +407,8 @@ async function loadAndRenderCert() {
     const status = await statusRes.json();
     const history = historyRes && historyRes.ok ? await historyRes.json().catch(() => []) : [];
     console.debug('[status] cert health loaded', {
-      source: 'gh-pages', file: 'cert-status.json',
+      source: 'cert-status.json',
       edgeState: certStateForCert(status && status.edge),
-      originState: certStateForCert(status && status.origin),
-      githubPages: status && status.github_pages && status.github_pages.state,
       historyPoints: Array.isArray(history) ? history.length : 0,
     });
     listEl.innerHTML = renderCertCard(status, history);
