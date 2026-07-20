@@ -83,7 +83,7 @@ const BATCH_YIELD_MS = 50;          // pause between batches so the UI stays res
 let _cache = null;
 async function _loadIndexes() {
   if (_cache) return _cache;
-  const [siRes, giRes, gcRes, nsRes, nscRes, overrides, clientErrors, confirmations] = await Promise.all([
+  const [siRes, giRes, gcRes, nsRes, nscRes, overrides, clientErrors, confirmations, extRes] = await Promise.all([
     fetch(await dataUrl('search-index.json')).catch(() => null),
     fetch(await dataUrl('game-images.json')).catch(() => null),
     fetch(await dataUrl('game-images-cache.json')).catch(() => null),
@@ -92,8 +92,13 @@ async function _loadIndexes() {
     listBoxArtOverrides().catch(() => ({ ok: false, rows: [] })),
     _fetchClientImageErrors().catch(() => []),
     listBoxArtConfirmations().catch(() => ({ ok: false, rows: [] })),
+    // #363: the long-tail Steam catalog. Games like Cat Chess (4163030) are only
+    // here, not in the main search-index, so without it an admin cannot find them
+    // to fix their box art. Same [appId, title, "", 0, 0, "steam"] row shape.
+    fetch(await dataUrl('search-index-steam-extended.json')).catch(() => null),
   ]);
   const searchIndex = (siRes && siRes.ok) ? await siRes.json().catch(() => []) : [];
+  const extendedIndex = (extRes && extRes.ok) ? await extRes.json().catch(() => []) : [];
   const gameImages  = (giRes && giRes.ok) ? await giRes.json().catch(() => ({})) : {};
   const nonSteam    = (nsRes && nsRes.ok) ? await nsRes.json().catch(() => ({})) : {};
   const cacheRaw    = (gcRes && gcRes.ok) ? await gcRes.json().catch(() => ({})) : {};
@@ -160,7 +165,7 @@ async function _loadIndexes() {
     knownMissingSteam.delete(aid);
     knownMissingNonSteam.delete(aid);
   }
-  _cache = { searchIndex, gameImages, nonSteam, overrideMap, knownMissingSteam, knownMissingNonSteam, confirmedOk };
+  _cache = { searchIndex, extendedIndex, gameImages, nonSteam, overrideMap, knownMissingSteam, knownMissingNonSteam, confirmedOk };
   return _cache;
 }
 
@@ -198,16 +203,18 @@ function _deriveStatus(type, appId, cachedUrl, hasOverride, knownMissingSteam, k
 }
 
 // search-index shape: [appId, title, tier, pdb, pulse, appType, releaseYear, delisted, adult]
-function _buildRows({ searchIndex, gameImages, nonSteam, overrideMap, knownMissingSteam, knownMissingNonSteam }, { store, textFilter, scope, status }) {
+function _buildRows({ searchIndex, extendedIndex, gameImages, nonSteam, overrideMap, knownMissingSteam, knownMissingNonSteam }, { store, textFilter, scope, status }) {
   const q = String(textFilter || '').trim().toLowerCase();
   const rows = [];
-  for (const row of searchIndex) {
-    if (!Array.isArray(row) || row.length < 6) continue;
+  const seen = new Set();
+  const pushRow = (row) => {
+    if (!Array.isArray(row) || row.length < 6) return;
     const appId = String(row[0]);
+    if (seen.has(appId)) return;
     const title = String(row[1] || '');
     const type  = row[5] || (appId.startsWith('gog:') ? 'gog' : appId.startsWith('epic:') ? 'epic' : 'steam');
-    if (store && store !== 'all' && store !== type) continue;
-    if (q && !title.toLowerCase().includes(q) && !appId.startsWith(q)) continue;
+    if (store && store !== 'all' && store !== type) return;
+    if (q && !title.toLowerCase().includes(q) && !appId.startsWith(q)) return;
     const override = overrideMap ? overrideMap[appId] : null;
     let cachedUrl = null;
     if (type === 'steam') cachedUrl = gameImages[appId] || null;
@@ -217,11 +224,19 @@ function _buildRows({ searchIndex, gameImages, nonSteam, overrideMap, knownMissi
     // (Steam default CDN OR any cached URL OR override). missing =
     // only rows we know don't display box art (non-Steam with no
     // cached URL, no override, and no store CDN fallback).
-    if (scope === 'has'     && derivedStatus === 'missing') continue;
-    if (scope === 'missing' && derivedStatus !== 'missing') continue;
+    if (scope === 'has'     && derivedStatus === 'missing') return;
+    if (scope === 'missing' && derivedStatus !== 'missing') return;
     // status filter: exact match against derived status label.
-    if (status && status !== 'all' && status !== derivedStatus) continue;
+    if (status && status !== 'all' && status !== derivedStatus) return;
+    seen.add(appId);
     rows.push({ appId, title, type, cachedUrl, derivedStatus, override });
+  };
+  for (const row of searchIndex) pushRow(row);
+  // #363: only when the admin is actually searching, fold in matching long-tail
+  // Steam games from the extended index (deduped against the main index). Skipped
+  // when browsing so we never render all 144k rows.
+  if (q && Array.isArray(extendedIndex)) {
+    for (const row of extendedIndex) pushRow(row);
   }
   return rows;
 }
