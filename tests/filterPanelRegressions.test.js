@@ -211,6 +211,44 @@ describe('mobile filter modal (<= 720px) -- full-viewport modal pattern', () => 
   });
 });
 
+describe('game-page render() cleans up portalled panel before re-rendering (#358)', () => {
+  // Bug: game-page.js render() sets el.innerHTML = ... on every filter change.
+  // The shared mobile-modal observer in js/lib/topbar.js portals an open
+  // .filter-panel to <body> so it can rise above the topbar stacking context.
+  // Without the cleanup below, render() creates a fresh #filterPanel inside el,
+  // the observer sees the new node and portals THAT too, and the OLD portalled
+  // panel is left orphaned in body. Result on mobile: two overlapping modals,
+  // and users read "filter chip did not apply" because the visible modal is
+  // stale while the reports beneath actually did re-render.
+  const gamePageSrc = fs.readFileSync(
+    path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'),
+    'utf8'
+  );
+
+  test('render() removes any portalled #filterPanel from <body> before writing el.innerHTML', () => {
+    // The remove() must fire INSIDE render() and BEFORE the innerHTML write --
+    // any later and el.innerHTML has already replaced the container while the
+    // portalled panel still sits in body.
+    const renderStart = gamePageSrc.indexOf('function render()');
+    expect(renderStart).toBeGreaterThan(-1);
+    // Find the first el.innerHTML = ... in render(). Grab body between them.
+    const innerHtmlAt = gamePageSrc.indexOf('el.innerHTML = `', renderStart);
+    expect(innerHtmlAt).toBeGreaterThan(renderStart);
+    const preRenderBlock = gamePageSrc.slice(renderStart, innerHtmlAt);
+    expect(preRenderBlock).toMatch(/document\.body\.querySelector\(['"]#filterPanel['"]\)\?\.remove\(\)/);
+  });
+
+  test('the cleanup targets #filterPanel specifically, not every .filter-panel', () => {
+    // The browse page uses .pg-filter-panel with its own ID; only game-page
+    // ships id="filterPanel". Blanket-removing every .filter-panel from body
+    // would nuke another page's open modal on any pagechange re-render.
+    const renderStart = gamePageSrc.indexOf('function render()');
+    const renderEnd = gamePageSrc.indexOf('el.innerHTML = `', renderStart);
+    const block = gamePageSrc.slice(renderStart, renderEnd);
+    expect(block).not.toMatch(/document\.body\.querySelectorAll\(['"]\.filter-panel['"]\)/);
+  });
+});
+
 describe('home (app.html browse) -- XL card size parity with index.html', () => {
   // Bug: XL only existed on index.html. Browse view should match.
   test('SIZES array includes xl alongside sm/md/lg', () => {

@@ -878,6 +878,15 @@ export async function renderGamePage(appId) {
   };
 
   function render() {
+    // #358: yank any portalled #filterPanel from <body> BEFORE el.innerHTML
+    // wipes el. The shared mobile-modal observer in js/lib/topbar.js moves
+    // an open .filter-panel to <body> so it can rise above the topbar
+    // stacking context. When render() then replaces el's innerHTML the
+    // observer sees a fresh #filterPanel and portals THAT too, leaving the
+    // old one orphaned in body. Result: two overlapping modals and users
+    // report "filter chips do not apply" because the visible modal is a
+    // ghost while the reports beneath actually did re-render.
+    document.body.querySelector('#filterPanel')?.remove();
     const reps = sorted();
     const protonDbBadgeColor = RATING_COLORS[protonDbTier] || '#3a4a5a';
     const protonDbBadgeText = RATING_TEXT[protonDbTier] || '#c8d4e0';
