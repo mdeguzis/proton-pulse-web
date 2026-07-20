@@ -119,6 +119,7 @@ js/admin/components/phrases.js
 js/admin/components/userDetail.js
 js/admin/components/analytics.js
 js/admin/components/cache-status.js
+js/admin/components/logging.js
 stats.html
 js/stats/main.js
 js/stats/utils.js
@@ -134,6 +135,7 @@ js/lib/app-id.js
 js/lib/gpu-arch-detector.js
 js/lib/supabase-client.js
 js/lib/analytics.js
+js/lib/log-buffer.js
 js/lib/topbar.js
 js/lib/toast.js
 js/lib/data-url.js

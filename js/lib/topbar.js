@@ -680,10 +680,15 @@
     });
   }
   // Debug-log helper: filter-modal close is a good candidate to spot the
-  // "close does nothing" class of bug across pages. Reuses the topbar's
-  // existing logging pattern (no-op when window.ppTrack isn't available).
+  // "close does nothing" class of bug across pages. Fires the server-side
+  // hook (ppTrack -> site_events) AND the in-memory ring buffer (#366) so
+  // admins can see logs live in the Logging tab without waiting for a
+  // Supabase round-trip. window.ppLogBuffer is set by the ES module in
+  // js/lib/log-buffer.js (loaded as a plain <script> at page start on
+  // admin.html; other pages get the ring lazily via ppTrack call below).
   function logFrontendEvent(level, msg, ctx) {
     try { if (typeof window.ppTrack === 'function') window.ppTrack('log', { level: level, msg: msg, ctx: ctx || {} }); } catch (_) {}
+    try { if (window.ppLogBuffer && typeof window.ppLogBuffer.pushLog === 'function') window.ppLogBuffer.pushLog(level, msg, ctx || {}); } catch (_) {}
     return Promise.resolve();
   }
 

@@ -34,6 +34,9 @@ export const TAB_PERMISSIONS = {
   'api-explorer': ['view_analytics'],
   'depot-tracking': ['view_analytics'],
   games:          ['manage_games'],
+  // Logging tab (#366) reuses view_analytics -- same "diagnostic /
+  // observability" audience -- rather than inventing a new permission.
+  logging:        ['view_analytics'],
 };
 
 // Effective permissions for an admin. super_admin short-circuits to all.

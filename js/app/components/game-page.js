@@ -1327,8 +1327,75 @@ export async function renderGamePage(appId) {
     // Every filter-panel node stays exactly where it is (portalled or not),
     // so no re-portal, no visible flicker, and dropdown state stays intact.
     // Filter badge count + "N of M shown" counter also refresh inline.
+
+    // Opt-in on-screen debug: append ?debug=filters to the URL and a small
+    // status bar renders inside the filter panel showing the last change
+    // event + current filter state + reps.length after each refresh. Lets us
+    // diagnose "picker did nothing" reports on mobile without needing a
+    // desktop DevTools session. No-op when the flag is absent.
+    const _debugFilters = (() => {
+      try {
+        return new URLSearchParams(window.location.search).get('debug') === 'filters';
+      } catch { return false; }
+    })();
+    function _writeDebugBar(msg) {
+      if (!_debugFilters) return;
+      const host = document.getElementById('filterPanel');
+      if (!host) return;
+      let bar = host.querySelector('.gp-filter-debug');
+      if (!bar) {
+        bar = document.createElement('div');
+        bar.className = 'gp-filter-debug';
+        bar.style.cssText = 'position:sticky;top:0;z-index:5;background:#000;color:#0f0;font:11px/1.3 monospace;padding:6px 10px;border-bottom:1px solid #0f0;white-space:pre-wrap;word-break:break-word';
+        host.insertBefore(bar, host.firstChild);
+      }
+      const now = new Date().toISOString().slice(11, 19);
+      bar.textContent = `[${now}] ${msg}`;
+    }
+    function _debugSnapshot(label, extra) {
+      const active = { gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating, runType: filterRunType, source: filterSource, device: filterDevice, minPlaytime: filterMinPlaytime };
+      const nonBlank = Object.fromEntries(Object.entries(active).filter(([, v]) => v !== '' && v !== 0));
+      const parts = [label, `filters=${JSON.stringify(nonBlank)}`];
+      if (extra) parts.push(extra);
+      const line = parts.join(' · ');
+      // On-screen debug bar is behind the URL flag; the persistent log
+      // push happens unconditionally so the admin Logging tab captures
+      // every filter interaction without the user having to enable a
+      // flag first. That is the whole point of the ring buffer.
+      _writeDebugBar(line);
+      try {
+        if (window.ppLogBuffer && typeof window.ppLogBuffer.pushLog === 'function') {
+          // INFO (not DEBUG) so entries land in the ring at the default
+          // capture level. Filter interactions are the primary thing users
+          // will want to see in the Logging tab when triaging a bug; DEBUG
+          // would silently drop them unless someone remembered to open
+          // with ?loglevel=debug first.
+          window.ppLogBuffer.pushLog('INFO', label, { source: 'game-page:filter', filters: nonBlank, extra: extra || null, appId: String(appId) });
+        }
+      } catch (_) { /* buffer failure must never break filtering */ }
+    }
+
+    // When ?debug=filters is set, watch #filterPanel's class attribute for any
+    // change and log it. Catches the "something stripped .open right after the
+    // OS picker came up" case that the mq listener in js/lib/topbar.js can
+    // trigger on some Android viewports.
+    if (_debugFilters) {
+      const p0 = document.getElementById('filterPanel');
+      if (p0 && !p0.__gpDebugAttr) {
+        p0.__gpDebugAttr = true;
+        new MutationObserver((records) => {
+          for (const r of records) {
+            if (r.attributeName === 'class') {
+              _writeDebugBar('#filterPanel class -> ' + p0.className + ' (was ' + r.oldValue + ')');
+            }
+          }
+        }).observe(p0, { attributes: true, attributeFilter: ['class'], attributeOldValue: true });
+      }
+    }
+
     function refreshReports() {
       const reps = sorted();
+      _debugSnapshot('refreshReports', `reps=${reps.length}/${combined.length} panelInBody=${document.body.contains(document.getElementById('filterPanel')) && document.getElementById('filterPanel')?.parentElement === document.body} .open=${document.getElementById('filterPanel')?.classList.contains('open')}`);
       const cardsHost = el.querySelector('.cards');
       if (cardsHost) {
         cardsHost.innerHTML = liveOnly && !reps.length
@@ -1475,14 +1542,14 @@ export async function renderGamePage(appId) {
     // OS-native picker dismisses. Prior version called render() which does
     // el.innerHTML = ... on the whole subtree -- that tore down the
     // portalled panel and made it appear the modal closed on pick.
-    el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fRunType')?.addEventListener('change', e => { filterRunType = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fDevice')?.addEventListener('change', e => { filterDevice = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fPlaytime')?.addEventListener('change', e => { filterMinPlaytime = parseInt(e.target.value, 10) || 0; saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; _debugSnapshot('change fGpu -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; _debugSnapshot('change fArch -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; _debugSnapshot('change fOs -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; _debugSnapshot('change fRating -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fRunType')?.addEventListener('change', e => { filterRunType = e.target.value; _debugSnapshot('change fRunType -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; _debugSnapshot('change fSource -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fDevice')?.addEventListener('change', e => { filterDevice = e.target.value; _debugSnapshot('change fDevice -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fPlaytime')?.addEventListener('change', e => { filterMinPlaytime = parseInt(e.target.value, 10) || 0; _debugSnapshot('change fPlaytime -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
 
     // Collapse: close the modal so the user sees the filtered reports. Uses
     // panelEl() so it finds the panel whether it is still in el or portalled

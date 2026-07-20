@@ -1552,3 +1552,74 @@ pre.flag-raw-json {
 }
 .depot-mono { font-family: var(--mono); font-size: 0.72rem; }
 .admin-loading, .admin-empty { text-align: center; color: var(--muted); padding: 18px 0; }
+
+/* -- Logging tab (#366) ----------------------------------------------
+   Compact table + toolbar for the in-memory ring buffer. Kept small
+   because logs can accumulate quickly and the table needs to feel
+   scannable, not chatty. */
+.admin-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.admin-toolbar .admin-input { flex: 1 1 200px; min-width: 160px; }
+.admin-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+.admin-checkbox input { margin: 0; }
+.admin-log-scroller {
+  max-height: 70vh;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--s1);
+}
+.admin-log-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  table-layout: fixed;
+}
+.admin-log-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--s1);
+  z-index: 1;
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.admin-log-table tbody td {
+  padding: 5px 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  vertical-align: top;
+  word-wrap: break-word;
+}
+.admin-log-time { width: 90px; color: var(--muted); }
+.admin-log-level { width: 60px; font-weight: 600; }
+.admin-log-module { width: 140px; color: var(--muted); }
+.admin-log-msg { }
+.admin-log-ctx {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  white-space: pre-wrap;
+}
+.admin-log-meta {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
