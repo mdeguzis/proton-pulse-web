@@ -53,6 +53,7 @@ from .most_played import build_most_played
 from .release_years import enrich_search_index_with_release_years
 from .steam_type import enrich_search_index_with_steam_type
 from .anti_cheat import enrich_search_index_with_anti_cheat
+from .pcgamingwiki import enrich_search_index_with_pcgamingwiki
 from .pulse import merge_pulse_into_data_dir
 from .write_depot_files import write_depot_files
 from .state import read_pipeline_state
@@ -1827,6 +1828,11 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # without a separate fetch per game. #354 fixed the original 10/11
     # placement that was overwriting replaced_by + steam_type.
     enrich_search_index_with_anti_cheat(output_path)
+    # #377 slice 1: merge PCGamingWiki OS support + engine into cols 14 + 15
+    # so the frontend can drive a "not Windows-only" filter and show engine
+    # metadata without a per-game fetch. Cached weekly, falls back to disk
+    # cache on API failure.
+    enrich_search_index_with_pcgamingwiki(output_path)
     validate_steam_app_ids(output_dir)
     # Issue #134: emit the extended Steam index AFTER the primary index has
     # been finalized (release-year + delisted enrichment runs first), so the
