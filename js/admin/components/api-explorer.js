@@ -12,6 +12,7 @@ import { dataUrl } from '../../lib/data-url.js?v=97f09986';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import { exploreStore } from '../api/steam-explore.js?v=17281b89';
 import { isLibraryEndpoint, lookupLibrary } from '../api/steam-library-lookup.js?v=748599e3';
+import { exploreCargoPCGamingWiki } from '../api/pcgamingwiki-explore.js?v=dcd746aa';
 
 // Store -> endpoints. `arg` is 'id' (numeric app/product id, name-resolvable)
 // or 'term' (free-text search). Keys match the edge function's ENDPOINTS.
@@ -62,6 +63,18 @@ const STORES = {
     endpoints: [
       { key: 'protondb_summary', label: 'summary (tier + confidence + best/worst per app)', arg: 'id' },
       { key: 'protondb_counts', label: 'global counts (sanity check)', arg: 'none' },
+    ],
+  },
+  // PCGamingWiki tab (#377). Client-side Cargo API fetch -- PGWiki is
+  // CORS-enabled + public. Lets admins inspect what the pipeline enricher
+  // will see for any given game before shipping data-driven UI on it.
+  pcgamingwiki: {
+    label: 'PCGamingWiki',
+    placeholder: 'Steam App ID, game title, or Cargo table name',
+    endpoints: [
+      { key: 'pcgw_by_appid', label: 'Infobox_game by Steam App ID (Cargo HOLDS query)', arg: 'id' },
+      { key: 'pcgw_by_title', label: 'Infobox_game by title substring (Cargo LIKE)', arg: 'term' },
+      { key: 'pcgw_table_fields', label: 'cargofields -- schema of a Cargo table (default: Infobox_game)', arg: 'term' },
     ],
   },
 };
@@ -238,6 +251,37 @@ const FIELD_DOCS = {
       ['lastUpdated / date / timestamp', 'When ProtonDB last refreshed the counts (field name varies -- check what the raw JSON returns).'],
     ],
   },
+  pcgw_by_appid: {
+    title: 'PCGamingWiki Infobox_game by Steam App ID (Cargo)',
+    rows: [
+      ['cargoquery[].title.page', 'PCGW wiki page name for the match. Same page can bundle multiple appids (e.g. Half-Life 2 -> "220,219,323140,466270,290930").'],
+      ['cargoquery[].title.appId', 'Full comma-list of Steam App IDs on this PCGW page.'],
+      ['cargoquery[].title.gogId', 'GOG product ID if the page tracks it. Empty when the game is not on GOG.'],
+      ['cargoquery[].title.engines', 'Comma-list with the wiki namespace prefix ("Engine:Source,Engine:Unity"). The enricher strips "Engine:" on read.'],
+      ['cargoquery[].title.available', 'Native platforms as comma-list: Windows, OS X, Linux, DOS. Drives the pgw_os column (14) on search-index.'],
+      ['cargoquery[].title.relWin / relLin / relMac / relDos', 'Per-OS release date. Presence + value both signal native support on that OS. relDos = null is common.'],
+      ['cargoquery[].title.developers / publishers', 'Comma-list of dev + publisher pages. Aliased so Cargo does not reject the underscore prefix.'],
+      ['error.info', 'MWException message when the query is malformed (bad field, wrong operator, blocked alias). The API returns HTTP 200 with this envelope -- watch for it.'],
+    ],
+  },
+  pcgw_by_title: {
+    title: 'PCGamingWiki Infobox_game by title (Cargo LIKE)',
+    rows: [
+      ['(same shape as pcgw_by_appid)', 'Rows are ordered by _pageName so results are stable across runs.'],
+      ['cargoquery[].title.page', 'The wiki page that matched. Case-insensitive substring on _pageName -- e.g. "half-life" matches Half-Life, Half-Life 2, Half-Life: Alyx.'],
+      ['(limit 20)', 'Client-side cap to keep the payload readable. Increase LIMIT in the fetcher if the tail is meaningful.'],
+    ],
+  },
+  pcgw_table_fields: {
+    title: 'PCGamingWiki cargofields (schema introspection)',
+    rows: [
+      ['cargofields.<FieldName>.type', 'Cargo data type: String / Text / Integer / Date / Page / File / URL / etc.'],
+      ['cargofields.<FieldName>.isList', 'Empty string ("") when this is a virtual list field. Bulk WHERE clauses on virtual lists need the __full companion.'],
+      ['cargofields.<FieldName>.delimiter', 'Delimiter for list fields (usually ",").'],
+      ['(use case)', 'Handy when porting a new field into the pipeline enricher: check the real type before adding a query.'],
+      ['(default table)', 'Empty term defaults to Infobox_game. Try Engine, Availability, Company, Series, or any name from action=cargotables.'],
+    ],
+  },
 };
 
 function _showFieldDocs(endpointKey) {
@@ -292,6 +336,15 @@ function _storeUrl(endpoint, id, term, payload) {
   }
   if (endpoint === 'protondb_counts') {
     return 'https://www.protondb.com/explore';
+  }
+  if (endpoint === 'pcgw_by_appid') {
+    // PCGW ships an appid-to-page redirect endpoint that lands on the
+    // canonical wiki entry for the game. Handy to compare our parsed data
+    // against the rendered infobox.
+    return id ? `https://www.pcgamingwiki.com/api/appid.php?appid=${encodeURIComponent(id)}` : null;
+  }
+  if (endpoint === 'pcgw_by_title' || endpoint === 'pcgw_table_fields') {
+    return term ? `https://www.pcgamingwiki.com/w/index.php?search=${encodeURIComponent(term)}` : null;
   }
   return null;
 }
@@ -353,9 +406,11 @@ async function _resolveArg(store, endpointArg, input) {
   const inStore = (r) => {
     if (!Array.isArray(r)) return false;
     const sid = String(r[0]);
-    // ProtonDB is keyed by Steam appid upstream, so the search index lookup
-    // matches Steam entries -- same code path (#280).
-    if (store === 'steam' || store === 'protondb') return r[5] === 'steam' || /^\d+$/.test(sid);
+    // ProtonDB (#280) + PCGamingWiki (#377) are both keyed by Steam appid,
+    // so a name-to-id resolve for those tabs walks the Steam entries.
+    if (store === 'steam' || store === 'protondb' || store === 'pcgamingwiki') {
+      return r[5] === 'steam' || /^\d+$/.test(sid);
+    }
     return sid.startsWith(prefix);
   };
   const exact = idx.find((r) => inStore(r) && String(r[1] || '').toLowerCase() === ql);
@@ -486,9 +541,17 @@ export function renderApiExplorer({ canManageAdmins = false } = {}) {
     if (btn) btn.disabled = true;
     // #221: keyed endpoints go through the admin-only proxy. Public endpoints
     // stay on steam-explore. isLibraryEndpoint keeps the routing in one place.
-    const payload = isLibraryEndpoint(endpoint)
-      ? await lookupLibrary(endpoint, { steamid: resolved.steamid, vanityurl: resolved.vanityurl })
-      : await exploreStore(endpoint, { id: resolved.id, term: resolved.term });
+    // #377: PCGamingWiki bypasses the edge fn entirely because PGWiki is
+    // CORS-enabled + public. Client-side fetch returns the same envelope
+    // shape so the rest of this function does not need to branch.
+    let payload;
+    if (store === 'pcgamingwiki') {
+      payload = await exploreCargoPCGamingWiki(endpoint, { id: resolved.id, term: resolved.term });
+    } else if (isLibraryEndpoint(endpoint)) {
+      payload = await lookupLibrary(endpoint, { steamid: resolved.steamid, vanityurl: resolved.vanityurl });
+    } else {
+      payload = await exploreStore(endpoint, { id: resolved.id, term: resolved.term });
+    }
     if (btn) btn.disabled = false;
     lastPayload = payload;
     const rawMode = document.getElementById('apix-raw')?.checked;

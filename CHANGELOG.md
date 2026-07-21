@@ -5,6 +5,7 @@ All notable changes to Proton Pulse (web) should be recorded here.
 ## v1.10.0
 
 - Metadata modal on the game page has a new PCGamingWiki section under Anti-cheat. It shows native OS support (Windows, macOS, Linux, DOS) as chips and the game engine on its own line. Data comes from the PCGamingWiki Cargo API and is refreshed weekly by the pipeline. Games with no PGWiki entry just skip the section. Attribution links back to a PCGamingWiki search for the title (content is CC BY-NC-SA 3.0). Sets up follow-up filter chips and a PGWiki-only store tag under #377.
+- Admin API Explorer picked up a PCGamingWiki tab so admins can inspect the raw Cargo response before it lands in the pipeline. Three endpoints: by Steam App ID, by title substring, and cargofields schema introspection for any Cargo table. The tab fetches directly from pcgamingwiki.com (they run CORS open on the API) and skips the edge function.
 
 ## v1.9.0
 

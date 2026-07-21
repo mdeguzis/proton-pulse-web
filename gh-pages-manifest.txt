@@ -107,6 +107,7 @@ js/admin/api/boxart.js
 js/admin/components/boxart.js
 js/admin/api/steam-explore.js
 js/admin/api/steam-library-lookup.js
+js/admin/api/pcgamingwiki-explore.js
 js/admin/api/gameManager.js
 js/admin/components/api-explorer.js
 js/admin/api/depotTracking.js
