@@ -475,6 +475,12 @@ export function renderApiExplorer({ canManageAdmins = false } = {}) {
       <div id="apix-resp-section" class="apix-req-section" hidden>
         <div class="apix-section-label">Response <span id="apix-resp-status" class="apix-req-key"></span></div>
       </div>
+      <!-- Results index: rendered for endpoints that come back with a list
+           (e.g. PCGamingWiki title search). Each row is a clickable button
+           that refills the input with the exact page name and refetches so
+           an admin can drill into one specific match without scrolling
+           through a 20-row JSON blob. -->
+      <div id="apix-results-index" class="apix-results-index" hidden></div>
       <pre id="apix-output" class="apix-output" hidden></pre>
 
       <div id="apix-followup-header" class="admin-hint" hidden style="margin-top:14px;color:var(--accent);font-weight:600"></div>
@@ -591,6 +597,37 @@ export function renderApiExplorer({ canManageAdmins = false } = {}) {
           : `term="${resolved.term}"`;
       setText('apix-req-params', paramsStr);
       setText('apix-resp-status', `HTTP ${payload?.status ?? (payload?.ok ? 200 : 'ERR')}`);
+    }
+
+    // Results index (#377): when pcgw_by_title comes back with a Cargo
+    // rowset, render each row as a clickable button so an admin can drill
+    // into one specific match without scrolling the raw JSON. Click refills
+    // the input with the EXACT page name and refetches, which narrows the
+    // LIKE match to a single row.
+    const resultsEl = document.getElementById('apix-results-index');
+    if (resultsEl) { resultsEl.hidden = true; resultsEl.innerHTML = ''; }
+    if (endpoint === 'pcgw_by_title' && resultsEl && Array.isArray(payload?.data?.cargoquery)) {
+      const rows = payload.data.cargoquery
+        .map((r) => (r && typeof r === 'object' ? r.title : null))
+        .filter((t) => t && typeof t === 'object' && t.page);
+      if (rows.length > 1) {
+        // Show the picker only when it actually narrows -- a single-row
+        // response already IS the drilled-in view.
+        const items = rows.map((row) => {
+          const page = String(row.page);
+          const appId = String(row.appId || '').split(',')[0].trim();
+          const meta = appId ? ` -- Steam appid ${escapeHtml(appId)}` : ' -- no Steam ID';
+          return `<button type="button" class="apix-result-item" data-page="${escapeHtml(page)}">${escapeHtml(page)}<span class="apix-result-meta">${meta}</span></button>`;
+        }).join('');
+        resultsEl.hidden = false;
+        resultsEl.innerHTML = `<div class="apix-results-head">${rows.length} matches -- click to drill in:</div>${items}`;
+        resultsEl.querySelectorAll('.apix-result-item').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            inputEl.value = btn.dataset.page || '';
+            doFetch();
+          });
+        });
+      }
     }
 
     // Hop-by-hop redirect trace (curl -L -v style). Rendered when the caller

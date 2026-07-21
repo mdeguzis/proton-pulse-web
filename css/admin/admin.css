@@ -1230,6 +1230,49 @@ pre.flag-raw-json {
 /* Word-wrap variant: wrap long lines instead of scrolling horizontally. */
 .apix-output.apix-wrap { white-space: pre-wrap; word-break: break-word; }
 
+/* API Explorer -- results index (#377). Rendered above the raw JSON for
+   list endpoints (e.g. PCGamingWiki title search). One clickable button per
+   row so an admin can drill into a specific match. */
+.apix-results-index {
+  margin: 10px 0;
+  padding: 10px 12px;
+  background: var(--panel-2, #0f1620);
+  border: 1px solid var(--border, #1e2735);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.apix-results-head {
+  color: var(--accent, #3b82f6);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+.apix-result-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 6px 10px;
+  background: transparent;
+  color: var(--strong, #fff);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.88rem;
+}
+.apix-result-item:hover, .apix-result-item:focus {
+  background: var(--panel-3, #182130);
+  border-color: var(--border, #1e2735);
+  outline: none;
+}
+.apix-result-meta {
+  color: var(--muted, #8899aa);
+  font-size: 0.8rem;
+  margin-left: 8px;
+}
+
 /* API Explorer -- Field descriptions popup. */
 .apix-modal-overlay {
   position: fixed;
