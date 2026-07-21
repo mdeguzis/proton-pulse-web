@@ -117,7 +117,7 @@ jobs:
         run: uv sync
 
       - name: Restore pipeline cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: .cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-build
@@ -162,7 +162,7 @@ jobs:
 
       - name: Save pipeline cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: .cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-build
@@ -210,7 +210,7 @@ jobs:
           path: /tmp/protondb-output
 
       - name: Restore pipeline cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: .cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-chunk-${{ matrix.chunk }}
@@ -252,7 +252,7 @@ jobs:
 
       - name: Save pipeline cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: .cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-chunk-${{ matrix.chunk }}
@@ -339,7 +339,7 @@ jobs:
           cp gh-pages-data/app-id-validation-cache.json /tmp/protondb-output/ 2>/dev/null || true
 
       - name: Restore pipeline cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: .cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-final
@@ -464,7 +464,7 @@ jobs:
 
       - name: Save pipeline cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: .cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-final
@@ -756,7 +756,7 @@ jobs:
           fi
 
       - name: Restore pipeline cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: repo/.cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-targeted
@@ -845,7 +845,7 @@ jobs:
 
       - name: Save pipeline cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: repo/.cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-targeted
@@ -968,7 +968,7 @@ jobs:
         run: uv sync
 
       - name: Restore pipeline cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: repo/.cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-coverage
@@ -1093,7 +1093,7 @@ jobs:
 
       - name: Save pipeline cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: repo/.cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-coverage
