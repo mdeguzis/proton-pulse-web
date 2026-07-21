@@ -2,7 +2,7 @@
 
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports } from '../../shared/scoring.js?v=8051e115';
-import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=1c1b7f9d';
+import { computeCompatTrend, computeGameStats, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=1c1b7f9d';
 import { getWebClientId } from '../../shared/submit.js?v=49306cae';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=a8d355d8';
 import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=55a861cb';
@@ -936,11 +936,18 @@ export async function renderGamePage(appId) {
     const hasAnyReports = totalReports > 0;
     const overallTier = hasAnyReports ? combinedTier.tier : 'pending';
     const overallTileColor = hasAnyReports ? (RATING_COLORS[overallTier] || '#3a4a5a') : '#2a5a8c';
-    // Confidence percent from the combined-source calculation. The recency-
-    // weighted algorithm already factors in the ProtonDB live total so there
-    // is one canonical confidence value regardless of source mix.
-    const overallConfidencePct = hasAnyReports && combinedTier.confidencePct
-      ? combinedTier.confidencePct
+    // Confidence percent. #376: use the same multi-factor helper the
+    // breakdown page (confidence.html) reads so the game-page headline
+    // agrees with what "why?" opens. Previously the headline read
+    // combinedTier.confidencePct (a simple log of report count from
+    // pulseTierFromReports) while the breakdown page ran
+    // computeGameStats with a staleness cap -- e.g. app 9860 read 92%
+    // vs 39%. When native reports exist route through computeGameStats;
+    // fall back to the old log only for ProtonDB-mirror-only games
+    // where computeGameStats would return 0.
+    const gameStats = allReportsForTier.length ? computeGameStats(allReportsForTier, configs) : null;
+    const overallConfidencePct = hasAnyReports && gameStats?.confidencePct
+      ? gameStats.confidencePct
       : (protonDbCount > 0 ? Math.min(95, Math.round(30 + Math.log2(Math.max(1, protonDbCount)) * 18)) : 0);
     // Bucket the summary label off the SAME percent thresholds confidence.html
     // uses (>=80 high, >=50 moderate, else low) so the dial %, this line, and
