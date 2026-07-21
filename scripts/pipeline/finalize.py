@@ -124,6 +124,16 @@ def generate_app_indexes(index_keys: set, data_output_path: Path) -> None:
     for (app_id, year) in index_keys:
         app_years.setdefault(app_id, []).append(year)
 
+    # ~47k apps means one log line per app buries every downstream step
+    # under scroll noise and makes the pipeline look hung on the CI UI.
+    # Emit a per-app line only under DEBUG; otherwise print a heartbeat
+    # every PROGRESS_EVERY apps + a final total. See #memoryref:
+    # feedback_never_obscure -- we still surface work-in-progress, just at
+    # a legible cadence.
+    PROGRESS_EVERY = 5000
+    total = len(app_years)
+    log(f"[app-index] writing {total} index.json files")
+    processed = 0
     for app_id, years in app_years.items():
         sorted_years = sorted(years, key=lambda y: (0, int(y)) if y.isdigit() else (1, y))
         app_dir = data_output_path / app_id_to_dir(app_id)
@@ -154,7 +164,11 @@ def generate_app_indexes(index_keys: set, data_output_path: Path) -> None:
         )
         (app_dir / "index.html").write_text(html)
 
-        log(f"[app-index] {app_id}/index.json -> {sorted_years}")
+        log(f"[app-index] {app_id}/index.json -> {sorted_years}", debug=True)
+        processed += 1
+        if processed % PROGRESS_EVERY == 0:
+            log(f"[app-index] progress: {processed}/{total}")
+    log(f"[app-index] done: wrote {processed} index.json files")
 
 
 def generate_index_html(index_keys: set, output_path: Path) -> None:
