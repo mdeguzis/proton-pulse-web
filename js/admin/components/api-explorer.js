@@ -12,7 +12,7 @@ import { dataUrl } from '../../lib/data-url.js?v=97f09986';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import { exploreStore } from '../api/steam-explore.js?v=17281b89';
 import { isLibraryEndpoint, lookupLibrary } from '../api/steam-library-lookup.js?v=748599e3';
-import { exploreCargoPCGamingWiki } from '../api/pcgamingwiki-explore.js?v=2cdce0a9';
+import { exploreCargoPCGamingWiki } from '../api/pcgamingwiki-explore.js?v=49d016c5';
 
 // Store -> endpoints. `arg` is 'id' (numeric app/product id, name-resolvable)
 // or 'term' (free-text search). Keys match the edge function's ENDPOINTS.
@@ -73,8 +73,8 @@ const STORES = {
     placeholder: 'Steam App ID, game title, or Cargo table name',
     endpoints: [
       { key: 'pcgw_by_appid', label: 'Infobox_game by Steam App ID (Cargo HOLDS query)', arg: 'id' },
-      { key: 'pcgw_by_title', label: 'Infobox_game by title substring (Cargo LIKE)', arg: 'term' },
-      { key: 'pcgw_table_fields', label: 'cargofields -- schema of a Cargo table (default: Infobox_game)', arg: 'term' },
+      { key: 'pcgw_by_title', label: 'Infobox_game by title substring (Cargo LIKE)', arg: 'term', placeholder: 'Title fragment (e.g. half-life)' },
+      { key: 'pcgw_table_fields', label: 'cargofields -- schema of a Cargo table (default: Infobox_game)', arg: 'term', placeholder: 'Cargo table name (leave empty for Infobox_game)' },
     ],
   },
 };
@@ -494,18 +494,27 @@ export function renderApiExplorer({ canManageAdmins = false } = {}) {
       (e) => !e.adminGated || canManageAdmins,
     );
     endpointSel.innerHTML = list
-      .map((e) => `<option value="${e.key}" data-arg="${e.arg}">${escapeHtml(e.label)}</option>`)
+      .map((e) => `<option value="${e.key}" data-arg="${e.arg}"${e.placeholder ? ` data-placeholder="${escapeHtml(e.placeholder)}"` : ''}>${escapeHtml(e.label)}</option>`)
       .join('');
-    // Placeholder updates with the currently selected endpoint's arg type so
-    // admins see "Steam ID (17 digits)" instead of a stale "App ID or name"
-    // hint. Rebuilt on populate + on select change below.
+    // Placeholder updates with the currently selected endpoint. An endpoint's
+    // own `placeholder` beats the arg-type default beats the store default,
+    // so switching from a numeric-appid endpoint to a table-name endpoint
+    // shows "Cargo table name" instead of a stale "App ID or name" hint.
     const updatePlaceholder = () => {
       const opt = endpointSel.options[endpointSel.selectedIndex];
       const arg = opt?.dataset.arg || 'id';
-      const hint = arg === 'steamid' ? 'Steam ID (17 digits, e.g. 76561197960287930)'
-        : arg === 'vanity' ? 'Vanity URL profile name (e.g. gaben)'
-        : STORES[store].placeholder;
+      const perEndpoint = opt?.dataset.placeholder;
+      const hint = perEndpoint
+        || (arg === 'steamid' ? 'Steam ID (17 digits, e.g. 76561197960287930)'
+          : arg === 'vanity' ? 'Vanity URL profile name (e.g. gaben)'
+          : STORES[store].placeholder);
       inputEl.placeholder = hint;
+      // Clear a stale numeric appid when the user switches to the Cargo table
+      // name endpoint. Without this the input still says "220" from the
+      // previous pcgw_by_appid call and gets rejected as "not a table name".
+      if (opt?.value === 'pcgw_table_fields' && /^\d+$/.test(inputEl.value.trim())) {
+        inputEl.value = '';
+      }
     };
     updatePlaceholder();
     endpointSel.onchange = updatePlaceholder;

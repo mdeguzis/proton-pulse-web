@@ -118,10 +118,13 @@ function _buildQuery(endpoint, { id, term }) {
   }
   if (endpoint === 'pcgw_table_fields') {
     const table = String(term || '').trim() || 'Infobox_game';
-    // Table names on PCGW are conservative identifiers; still validate to keep
-    // the URL clean and reject anything obviously wrong.
-    if (!/^[A-Za-z0-9_]+$/.test(table)) {
-      return { error: 'Cargo table name must match [A-Za-z0-9_]+.' };
+    // PCGW table identifiers always start with a letter (Infobox_game,
+    // Availability, Engine, Series, ...). Rejecting a leading digit catches
+    // the common case where the input still has a Steam appid from the
+    // previous endpoint and blocks the confusing "Table 220 not found"
+    // upstream error before we hit the network.
+    if (!/^[A-Za-z][A-Za-z0-9_]*$/.test(table)) {
+      return { error: 'Cargo table name must start with a letter (e.g. Infobox_game, Availability, Engine).' };
     }
     return {
       params: {

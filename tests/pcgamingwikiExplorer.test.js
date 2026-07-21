@@ -108,7 +108,13 @@ describe('exploreCargoPCGamingWiki: query shape', () => {
     expect(url).toContain('table=Infobox_game');
     const rBad = await fn('pcgw_table_fields', { term: 'nope; drop table' });
     expect(rBad.ok).toBe(false);
-    expect(rBad.error).toMatch(/\[A-Za-z0-9_\]/);
+    expect(rBad.error).toMatch(/start with a letter/);
+    // Regression guard: a leftover Steam appid in the input must not fall
+    // through as a table lookup (upstream returns a confusing "Table 220
+    // not found" error).
+    const rNumeric = await fn('pcgw_table_fields', { term: '220' });
+    expect(rNumeric.ok).toBe(false);
+    expect(rNumeric.error).toMatch(/start with a letter/);
   });
 
   test('unknown endpoint returns an envelope with error, no fetch', async () => {
