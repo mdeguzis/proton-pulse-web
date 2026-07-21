@@ -2,6 +2,10 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.11.0
+
+- PCGamingWiki-only games (Windows classics and abandonware with no Steam or GOG entry) now get stub pages in Proton Pulse so users can submit compat reports against them. The pipeline pulls every PCGW game that ships a Windows build and has no store ID, then merges them into the search index with a canonical id of `pgwiki:<slug>`. Cards mark the source as PCGWiki. The Chronicles of Riddick: Escape from Butcher Bay is one such entry. DOS-only games are excluded (Proton does not play them).
+
 ## v1.10.0
 
 - Metadata modal on the game page has a new PCGamingWiki section under Anti-cheat. It shows native OS support (Windows, macOS, Linux, DOS) as chips and the game engine on its own line. Data comes from the PCGamingWiki Cargo API and is refreshed weekly by the pipeline. Games with no PGWiki entry just skip the section. Attribution links back to a PCGamingWiki search for the title (content is CC BY-NC-SA 3.0). Sets up follow-up filter chips and a PGWiki-only store tag under #377.

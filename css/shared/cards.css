@@ -279,6 +279,7 @@
 .game-card-store-pill--steam { background: #1689d0; color: #fff; }
 .game-card-store-pill--gog   { background: #7a3fcf; color: #fff; }
 .game-card-store-pill--epic  { background: #555; color: #eee; }
+.game-card-store-pill--pgwiki { background: #2f6f9f; color: #fff; }
 .game-card-store-pill--non-steam { background: #444; color: #ddd; }
 /* Compatibility trend arrow (rendered only for improving / declining games).
    Sits to the right of the store pill inside .game-card-pills so the tier

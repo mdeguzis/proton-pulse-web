@@ -42,7 +42,7 @@ SMALL_DATA=(
   recent-reports.json stats.json coverage-summary.json data-versions.json
   game-images.json game-images-skip.json deck-status.json proton-versions.json
   steam-catalog.json hardware-suggestions.json scoring-info.json form-schema.json
-  app-id-redirects.json pcgamingwiki.json
+  app-id-redirects.json pcgamingwiki.json pcgwiki-catalog.json
 )
 
 log() { echo "[publish-cloudflare] $*"; }

@@ -65,17 +65,19 @@ export async function fetchDataWithProdFallback(bustedName) {
 // Any ID above 10 million is treated as a non-Steam shortcut.
 export const isNonSteamAppId = id => Number(id) > 10_000_000;
 
-// Catalog (non-Steam) games carry a prefixed canonical id: gog:<productId>
-// or epic:<namespace>. Steam ids are bare digits. Keep this in lockstep with
-// the pipeline helper app_type_from_id in scripts/pipeline/common.py.
+// Catalog (non-Steam) games carry a prefixed canonical id: gog:<productId>,
+// epic:<namespace>, or pgwiki:<slug>. Steam ids are bare digits. Keep this
+// in lockstep with the pipeline helper app_type_from_id in
+// scripts/pipeline/common.py.
 export const appTypeFromAppId = id => {
   const s = String(id);
   if (s.startsWith('gog:')) return 'gog';
   if (s.startsWith('epic:')) return 'epic';
+  if (s.startsWith('pgwiki:')) return 'pgwiki';
   return 'steam';
 };
 // Human-readable store label for the row source line on cards.
-export const STORE_LABELS = { gog: 'GOG', epic: 'Epic', steam: 'Steam' };
+export const STORE_LABELS = { gog: 'GOG', epic: 'Epic', steam: 'Steam', pgwiki: 'PCGWiki' };
 export const storeLabel = appType => STORE_LABELS[appType] || 'Steam';
 // Label resolved straight from a canonical app id, for callers that only have
 // the id (search index stubs, cards built from a bare id).

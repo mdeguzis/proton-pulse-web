@@ -1,6 +1,6 @@
 // protondb (api) for the app page. Relocated from app.js.
 
-import { CDN } from '../config.js?v=f9591262';
+import { CDN } from '../config.js?v=979b9bbc';
 import { appIdToDir } from '../../lib/app-id.js?v=18a73fb7';
 
 /**

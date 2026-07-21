@@ -119,6 +119,7 @@ import { esc } from '../app/utils.js?v=9a39c726';
   // title exists on multiple stores or after a replaced-by redirect (#199).
   const storeGuess = String(appId).startsWith('gog:')  ? 'GOG'
                      : String(appId).startsWith('epic:') ? 'Epic'
+                     : String(appId).startsWith('pgwiki:') ? 'PCGWiki'
                      : 'Steam';
   const subtitleEl = document.getElementById('game-subtitle');
   if (subtitleEl) {
