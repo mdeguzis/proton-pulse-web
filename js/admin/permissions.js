@@ -37,6 +37,8 @@ export const TAB_PERMISSIONS = {
   // Logging tab (#366) reuses view_analytics -- same "diagnostic /
   // observability" audience -- rather than inventing a new permission.
   logging:        ['view_analytics'],
+  // Deployments tab (#367) same rationale.
+  deployments:    ['view_analytics'],
 };
 
 // Effective permissions for an admin. super_admin short-circuits to all.
