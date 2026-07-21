@@ -42,7 +42,13 @@ export async function exploreCargoPCGamingWiki(endpoint, { id, term } = {}) {
   if (built.error) {
     return { ok: false, status: 0, url: '', method: 'GET', data: null, error: built.error };
   }
-  const url = `${CARGO_URL}?${new URLSearchParams(built.params).toString()}`;
+  // MediaWiki requires `origin=*` in the query string to send CORS headers on
+  // anonymous cross-origin requests. Without it a browser fetch fails with a
+  // NetworkError before it can read the body. Server-side curl works either way,
+  // but the Explorer runs client-side. See:
+  // https://www.mediawiki.org/wiki/API:Cross-site_requests
+  const params = { ...built.params, origin: '*' };
+  const url = `${CARGO_URL}?${new URLSearchParams(params).toString()}`;
   try {
     // globalThis.fetch (not bare `fetch`) so a test can `jest.spyOn(globalThis, 'fetch')`
     // and intercept calls without the module needing an injectable dep.

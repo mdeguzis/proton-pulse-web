@@ -12,7 +12,7 @@ import { dataUrl } from '../../lib/data-url.js?v=97f09986';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import { exploreStore } from '../api/steam-explore.js?v=17281b89';
 import { isLibraryEndpoint, lookupLibrary } from '../api/steam-library-lookup.js?v=748599e3';
-import { exploreCargoPCGamingWiki } from '../api/pcgamingwiki-explore.js?v=dcd746aa';
+import { exploreCargoPCGamingWiki } from '../api/pcgamingwiki-explore.js?v=2cdce0a9';
 
 // Store -> endpoints. `arg` is 'id' (numeric app/product id, name-resolvable)
 // or 'term' (free-text search). Keys match the edge function's ENDPOINTS.

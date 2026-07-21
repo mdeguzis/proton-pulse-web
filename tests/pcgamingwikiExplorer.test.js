@@ -65,6 +65,10 @@ describe('exploreCargoPCGamingWiki: query shape', () => {
     expect(decodedUrl).toContain('_pageName=page');
     expect(decodedUrl).toContain('Engines=engines');
     expect(decodedUrl).toContain('Available_on=available');
+    // MediaWiki cross-site convention: browsers only get CORS headers on the
+    // response when the query carries origin=*. Regression guard for the CORS
+    // NetworkError we hit on first mobile test.
+    expect(decodedUrl).toContain('origin=*');
   });
 
   test('pcgw_by_appid rejects non-numeric input without hitting the network', async () => {
