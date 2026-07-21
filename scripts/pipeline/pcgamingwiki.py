@@ -1,16 +1,25 @@
 """Enrich search-index.json with PCGamingWiki metadata (#377 slice 1).
 
-Data source: PCGamingWiki Cargo API. Two paginated queries build one
-mapping keyed by Steam appid:
+Data source: PCGamingWiki Cargo API. One paginated query against the
+`Infobox_game` cargo table gives us everything we need per game:
 
     Steam_AppID  -> {os: ["windows", "linux", ...], engine: "Unreal Engine 4"}
 
-The `Infobox_game` cargo table hands us `_pageName`, `Steam_AppID`, and
-`Engines_used`. The `OS` cargo table hands us `_pageName` and a per-row
-`OS` string (one row per supported OS). Merging on `_pageName` produces
-the OS list per game. Cached to `pcgamingwiki-cache.json` on disk with a
-weekly TTL; a network / API failure falls back to the on-disk cache so a
-broken PCGW day never wipes the enrichment.
+Real Cargo field names (verified against the live schema, not the
+public docs which drift):
+  - `Steam_AppID` is a virtual list field. Bulk-filter with the
+    reified `Steam_AppID__full` scalar; per-row payloads still contain
+    the comma-separated list.
+  - `Available_on` is a scalar comma-list of OS names ("Windows,OS X,Linux,DOS").
+  - `Engines` is a scalar comma-list prefixed with the wiki namespace
+    ("Engine:Source,Engine:Unity"). We strip the "Engine:" prefix on
+    read and keep the first entry.
+  - `_pageName` cannot be projected under its raw name -- Cargo rejects
+    field aliases that start with underscore -- so we alias every field.
+
+Cached to `pcgamingwiki-cache.json` on disk with a weekly TTL; a
+network / API failure falls back to the on-disk cache so a broken
+PCGW day never wipes the enrichment.
 
 Columns written to search-index rows:
     col 14: pgw_os     -- lowercased list of natively-supported OS names
@@ -64,11 +73,20 @@ MAX_PAGES = 200
 # when the on-disk cache is still within its TTL.
 FORCE_REFRESH = _os.environ.get("PCGAMINGWIKI_FORCE_REFRESH", "").lower() in ("1", "true", "yes")
 
-# Whitelist of OS strings we accept. PCGW's `OS` cargo table normalizes
-# to these labels; anything else gets dropped so an unexpected value
-# (e.g. "web" experimentation) does not surface in the frontend without
-# a schema review.
+# Whitelist of OS strings we accept from PCGW's `Available_on` field.
+# Anything else gets dropped so an unexpected value ("Web" experimentation,
+# console ports) does not surface in the frontend without a schema review.
 _VALID_OS = {"windows", "os x", "linux", "dos"}
+
+# Field alias map used in every Cargo query. Aliases MUST NOT start with
+# underscore -- Cargo's `cargoquery-invalidfieldalias` error blocks that.
+_CARGO_FIELDS = "_pageName=page,Steam_AppID=appId,Engines=engines,Available_on=available"
+
+# Bulk WHERE clause: virtual list fields need the reified `__full` suffix.
+_CARGO_WHERE_BULK = "Steam_AppID__full IS NOT NULL AND Steam_AppID__full != ''"
+
+# Namespace prefix stripped from every engine value ("Engine:Unity" -> "Unity").
+_ENGINE_NAMESPACE_PREFIX = "Engine:"
 
 
 def _load_cache(cache_path: Path) -> dict:
@@ -157,7 +175,7 @@ def _paginate_cargo(tables: str, fields: str, where: str) -> list[dict]:
 def _fetch_infobox_rows() -> list[dict] | None:
     """Fetch every Infobox_game row that has a Steam_AppID.
 
-    Fields returned per row: `_pageName`, `Steam_AppID`, `Engines_used`.
+    Returns unwrapped title dicts with keys: page, appId, engines, available.
     Returns None if the very first page fails so refresh_cache can fall
     back to the on-disk cache without partial merging.
     """
@@ -165,8 +183,8 @@ def _fetch_infobox_rows() -> list[dict] | None:
         "action": "cargoquery",
         "format": "json",
         "tables": "Infobox_game",
-        "fields": "_pageName,Steam_AppID,Engines_used",
-        "where": "Steam_AppID IS NOT NULL AND Steam_AppID != ''",
+        "fields": _CARGO_FIELDS,
+        "where": _CARGO_WHERE_BULK,
         "limit": CARGO_LIMIT,
         "offset": 0,
     })
@@ -184,91 +202,97 @@ def _fetch_infobox_rows() -> list[dict] | None:
     # Continue paginating past the first page.
     tail = _paginate_cargo(
         tables="Infobox_game",
-        fields="_pageName,Steam_AppID,Engines_used",
-        where="Steam_AppID IS NOT NULL AND Steam_AppID != ''",
+        fields=_CARGO_FIELDS,
+        where=_CARGO_WHERE_BULK,
     )
     # `_paginate_cargo` restarts at page 0. Skip the first page's worth of
     # rows to avoid double-counting.
     return rows + tail[CARGO_LIMIT:]
 
 
-def _fetch_os_rows() -> list[dict]:
-    """Fetch every OS row. Empty list on failure -- OS is enrichment on top
-    of the primary Steam_AppID mapping, so a partial or missing OS fetch is
-    survivable (games just end up without an OS list).
+def _index_by_appid(infobox_rows: list[dict]) -> dict[str, dict]:
+    """Build `{steam_appid: {os, engine}}` from the Cargo title rows.
+
+    Bundles (multiple appids per PCGW page) fan out: every listed appid
+    inherits the page's OS + engine so a wishlist search by any of them
+    lands on the enrichment. Rows carrying neither OS nor engine are
+    dropped so the cache does not bloat with dead entries.
     """
-    return _paginate_cargo(
-        tables="OS",
-        fields="_pageName,OS",
-        where="OS IS NOT NULL AND OS != ''",
-    )
-
-
-def _index_by_appid(infobox_rows: list[dict], os_rows: list[dict]) -> dict[str, dict]:
-    """Merge the two Cargo tables into `{steam_appid: {os, engine}}`.
-
-    Skips rows without a numeric-looking Steam_AppID. When multiple appids
-    are comma-separated (PCGW format for bundles), first entry wins so we
-    have exactly one row per appid.
-    """
-    # Build _pageName -> set of OS strings first, so we can attach to games
-    # even when they have several OS rows in the OS table.
-    os_by_page: dict[str, set[str]] = {}
-    for row in os_rows:
-        if not isinstance(row, dict):
-            continue
-        page = str(row.get("_pageName") or "").strip()
-        os_name = str(row.get("OS") or "").strip().lower()
-        if not page or os_name not in _VALID_OS:
-            continue
-        os_by_page.setdefault(page, set()).add(os_name)
-
     out: dict[str, dict] = {}
     for row in infobox_rows:
         if not isinstance(row, dict):
             continue
-        page = str(row.get("_pageName") or "").strip()
-        steam_field = str(row.get("Steam_AppID") or "").strip()
+        page = str(row.get("page") or "").strip()
+        steam_field = str(row.get("appId") or "").strip()
         if not page or not steam_field:
             continue
-        # PCGW encodes multi-appid bundles as "123, 456". Take the first
-        # numeric token as canonical -- the frontend already dedupes per
-        # appid, and we do not currently model bundle-of-appids.
-        appid = _first_numeric(steam_field)
-        if not appid:
-            continue
-        engine = _first_engine(row.get("Engines_used"))
-        os_names = sorted(os_by_page.get(page) or [])
-        # Only keep entries that give us at least one usable field, so the
-        # cache does not get bloated with rows that carry no new info.
+        engine = _first_engine(row.get("engines"))
+        os_names = _parse_available_on(row.get("available"))
         if not os_names and not engine:
             continue
-        out[appid] = {"os": os_names, "engine": engine}
+        entry = {"os": os_names, "engine": engine}
+        for appid in _all_numeric(steam_field):
+            # First-writer-wins so a duplicate appid across pages does not
+            # thrash. In practice bundles overlap rarely.
+            out.setdefault(appid, entry)
     return out
+
+
+def _parse_available_on(field) -> list[str]:
+    """Parse `Available_on` ("Windows,OS X,Linux") into a sorted lowercase list.
+
+    Filters to `_VALID_OS` so an unexpected value ("Web") does not surface
+    without a schema review.
+    """
+    if not field:
+        return []
+    seen: set[str] = set()
+    for token in str(field).split(","):
+        name = token.strip().lower()
+        if name in _VALID_OS:
+            seen.add(name)
+    return sorted(seen)
 
 
 def _first_numeric(field: str) -> str | None:
     """Extract the first digits-only token from a comma / whitespace list."""
-    if not field:
-        return None
-    for token in str(field).replace(";", ",").split(","):
-        stripped = token.strip()
-        if stripped.isdigit():
-            return stripped
+    for token in _all_numeric(field):
+        return token
     return None
 
 
+def _all_numeric(field: str) -> list[str]:
+    """Extract every digits-only token from a comma / semicolon list. Used
+    for PCGW pages with multiple Steam_AppIDs -- each numeric token maps
+    back to a real appid we want to enrich.
+    """
+    if not field:
+        return []
+    out: list[str] = []
+    for token in str(field).replace(";", ",").split(","):
+        stripped = token.strip()
+        if stripped.isdigit() and stripped not in out:
+            out.append(stripped)
+    return out
+
+
 def _first_engine(field) -> str | None:
-    """PCGW ships engines as a comma-list ("Unreal Engine 4, PhysX"). Keep
-    the first entry, trimmed. Empty / non-string values -> None.
+    """PCGW ships engines as `Engine:Source,Engine:Unity`. Strip the wiki
+    namespace prefix and keep the first non-empty entry. Empty / non-string
+    values -> None.
     """
     if not field:
         return None
     text = str(field).strip()
     if not text:
         return None
-    first = text.split(",")[0].strip()
-    return first or None
+    for token in text.split(","):
+        name = token.strip()
+        if name.startswith(_ENGINE_NAMESPACE_PREFIX):
+            name = name[len(_ENGINE_NAMESPACE_PREFIX):].strip()
+        if name:
+            return name
+    return None
 
 
 def refresh_cache(output_dir: Path, force: bool = False) -> dict[str, dict]:
@@ -299,8 +323,7 @@ def refresh_cache(output_dir: Path, force: bool = False) -> dict[str, dict]:
         log(f"[pcgamingwiki] cargo unreachable; using {len(cache['by_appid'])} cached rows")
         return cache["by_appid"]
 
-    os_rows = _fetch_os_rows()
-    by_appid = _index_by_appid(infobox, os_rows)
+    by_appid = _index_by_appid(infobox)
     cache = {
         "fetched_at": now,
         "by_appid": by_appid,
