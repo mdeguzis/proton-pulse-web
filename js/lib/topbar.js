@@ -689,11 +689,21 @@
 
   // ---- Site status dot on the topbar (see #254) ------------------------
   //
-  // Fetches edge-status.json (published every 15 min by
-  // .github/workflows/edge-fn-health.yml) and colors the small dot inside
+  // Fetches the health payload from the pp-edge-status Cloudflare Worker
+  // (same source js/status/main.js uses) and colors the small dot inside
   // the Status nav link so users see at a glance whether anything is
   // degraded before they click through. Cached in sessionStorage for a
   // minute so hopping across pages does not re-fetch every time.
+  //
+  // Post-CF migration the static edge-status.json is no longer part of the
+  // CF Pages shell, so the static fallback would 404 -> SPA HTML -> the
+  // dot went "unknown" on every page load. Route straight at the worker
+  // now; if the worker is unreachable, dot stays "unknown" which is the
+  // same graceful degradation as before.
+  //
+  // Worker URL is kept in sync with js/status/main.js -> EDGE_STATUS_ENDPOINT.
+  var EDGE_STATUS_ENDPOINT = 'https://pp-edge-status.mdeguzis.workers.dev';
+
   function wireStatusDot() {
     var dots = document.querySelectorAll('.topbar-status-dot');
     if (!dots.length) return;
@@ -711,7 +721,7 @@
         }
       } catch (e) { /* ignore */ }
     }
-    fetch('edge-status.json', { cache: 'no-store' })
+    fetch(EDGE_STATUS_ENDPOINT, { cache: 'no-store' })
       .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
       .then(function (payload) {
         var overall = payload && payload.overall ? payload.overall : 'unknown';
@@ -719,7 +729,7 @@
         try { sessionStorage.setItem('pp-edge-status', JSON.stringify({ overall: overall, ts: Date.now() })); } catch (e) { /* ignore */ }
       })
       .catch(function (err) {
-        console.debug('[topbar] edge-status.json fetch failed', { error: String(err), source: 'wireStatusDot' });
+        console.debug('[topbar] pp-edge-status worker fetch failed', { error: String(err), source: 'wireStatusDot', endpoint: EDGE_STATUS_ENDPOINT });
         apply('unknown');
       });
   }
