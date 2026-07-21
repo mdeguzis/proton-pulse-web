@@ -9,6 +9,8 @@
 // and applied via MutationObserver so dynamically-inserted images also
 // pick them up.
 
+import { normalizeSearchable } from './search-match.js?v=dd1b70b2';
+
 const _CDN2 = id => `https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/header.jpg`;
 
 // Session-scoped set so we only POST once per appid per tab; browsers navigating
@@ -174,6 +176,117 @@ function _loadNonsteamImages() {
   return _nonsteamImagesPromise;
 }
 
+// Cache the search index so repeated title-match probes don't re-fetch it.
+// The gog/epic fallback path can run many times per page (a full library
+// grid can be hundreds of cards), so memoize the promise the same way we
+// do for game-images / nonsteam-images.
+let _searchIndexPromise = null;
+function _loadSearchIndex() {
+  if (!_searchIndexPromise) _searchIndexPromise = _fetchWithFallback('search-index.json');
+  return _searchIndexPromise;
+}
+
+// Same-title Steam CDN fallback for non-Steam entries (#375). Many
+// multi-store titles (Cyberpunk, Divinity: Original Sin, Cities: Skylines,
+// etc.) ship on both Steam and GOG/Epic. If this non-Steam entry has a
+// Steam counterpart with the same normalized title, the frontend can reuse
+// the Steam CDN header URL and paint a real box art instead of the "box
+// art unavailable" placeholder.
+//
+// Returns the numeric Steam appid, or null when no match is found.
+// Normalization matches search-match.js (lowercase + non-alphanumeric -> space)
+// so titles that differ only in punctuation ("Divinity: Original Sin" vs
+// "Divinity Original Sin") still match.
+async function _findSteamAppIdByMatchingTitle(nonSteamId) {
+  const idx = await _loadSearchIndex();
+  if (!Array.isArray(idx)) return null;
+  const source = idx.find(r => Array.isArray(r) && String(r[0]) === nonSteamId);
+  if (!source) return null;
+  const targetNorm = normalizeSearchable(String(source[1] || ''));
+  if (!targetNorm) return null;
+  const steamMatch = idx.find(r => {
+    if (!Array.isArray(r)) return false;
+    const rid = String(r[0]);
+    if (!/^\d+$/.test(rid)) return false; // steam ids are bare digits
+    return normalizeSearchable(String(r[1] || '')) === targetNorm;
+  });
+  return steamMatch ? String(steamMatch[0]) : null;
+}
+
+// Return the entry title from the search index for a given canonical id.
+// Used by the SGDB final fallback so we can pass the game title to the
+// image-refetch edge function's sgdb_search action.
+async function _titleForAppId(appId) {
+  const idx = await _loadSearchIndex();
+  if (!Array.isArray(idx)) return '';
+  const row = idx.find(r => Array.isArray(r) && String(r[0]) === appId);
+  return row && row[1] ? String(row[1]) : '';
+}
+
+// SGDB final fallback (#375). When both the pipeline's nonsteam-images.json
+// and the same-title Steam CDN match miss, ask the image-refetch edge fn
+// to look up the title on SteamGridDB and return one widescreen grid URL.
+// Cached per-session in sessionStorage so a browse grid of dozens of
+// GOG/Epic covers only pays the round-trip once per unique appid.
+const _SGDB_CACHE_KEY = 'pp:steam-img:sgdb-lookup:v1';
+function _sgdbCacheRead(appId) {
+  try {
+    const raw = sessionStorage.getItem(_SGDB_CACHE_KEY);
+    if (!raw) return undefined;
+    const map = JSON.parse(raw);
+    return map && Object.prototype.hasOwnProperty.call(map, appId) ? map[appId] : undefined;
+  } catch { return undefined; }
+}
+function _sgdbCacheWrite(appId, urlOrNull) {
+  try {
+    const raw = sessionStorage.getItem(_SGDB_CACHE_KEY);
+    const map = raw ? JSON.parse(raw) : {};
+    map[appId] = urlOrNull;
+    sessionStorage.setItem(_SGDB_CACHE_KEY, JSON.stringify(map));
+  } catch { /* private mode / quota -- fine, just skip cache */ }
+}
+
+async function _lookupSgdbUrlByTitle(appId, title) {
+  const cached = _sgdbCacheRead(appId);
+  if (cached !== undefined) return cached; // may be null (known miss)
+  if (!_SUPABASE_URL || !_SUPABASE_ANON_KEY) return null;
+  if (!title) { _sgdbCacheWrite(appId, null); return null; }
+  const url = `${_SUPABASE_URL}/functions/v1/image-refetch`;
+  // Preferred SGDB grid shapes for a widescreen hero-style card. The upstream
+  // filter is a comma allowlist so any of these dimensions wins.
+  const dimensions = '920x430,600x900,460x215';
+  let res;
+  try {
+    res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${_SUPABASE_ANON_KEY}`,
+        'apikey': _SUPABASE_ANON_KEY,
+      },
+      body: JSON.stringify({
+        app_id: appId,
+        source: 'sgdb_search',
+        term: title,
+        dimensions,
+      }),
+    });
+  } catch (e) {
+    console.warn('[steam-img] sgdb lookup network failure', { appId, err: String(e) });
+    // Don't cache the miss on network errors -- transient. Next card gets a retry.
+    return null;
+  }
+  if (!res.ok) {
+    _sgdbCacheWrite(appId, null);
+    return null;
+  }
+  const body = await res.json().catch(() => null);
+  const first = body?.ok && Array.isArray(body?.results) && body.results.length ? body.results[0] : null;
+  const picked = first?.url ? String(first.url) : null;
+  _sgdbCacheWrite(appId, picked);
+  return picked;
+}
+
 function _tryUrl(url) {
   return new Promise(resolve => {
     const img = new Image();
@@ -198,6 +311,8 @@ function _bumpRoute(route) {
     cloudflare: 0,
     'game-images-json': 0,
     'nonsteam-images-json': 0,
+    'steam-title-match': 0,
+    'sgdb-title-match': 0,
     hidden: 0,
   });
   counts[route] = (counts[route] || 0) + 1;
@@ -229,7 +344,7 @@ export async function loadSteamImg(el, appId) {
   // Non-Steam (GOG/Epic) games have no Steam CDN image. Resolve their cover
   // straight from the pipeline's nonsteam-images.json instead of walking the
   // Steam CDN chain (which would always 404 for a prefixed id).
-  if (id.startsWith('gog:') || id.startsWith('epic:')) {
+  if (id.startsWith('gog:') || id.startsWith('epic:') || id.startsWith('pgwiki:')) {
     const nsMap = await _loadNonsteamImages();
     const nsUrl = nsMap[id];
     if (nsUrl) {
@@ -241,9 +356,39 @@ export async function loadSteamImg(el, appId) {
         return;
       }
     }
-    console.warn(`[steam-img] appId=${id} no non-Steam cover available`);
+    // #375 Path 1: same-title Steam CDN fallback. Multi-store releases
+    // (Cyberpunk on both Steam + GOG, etc.) share a title, and Steam has
+    // the highest-quality header art. Cheap lookup: normalize the source
+    // title, match against a bare-digits Steam id in the search index.
+    const steamAppId = await _findSteamAppIdByMatchingTitle(id);
+    if (steamAppId) {
+      const url = _CDN2(steamAppId);
+      const loaded = await _tryUrl(url);
+      if (loaded) {
+        console.log(`[steam-img] appId=${id} route=steam-title-match steamAppId=${steamAppId}`);
+        _bumpRoute('steam-title-match');
+        _swap(el, loaded);
+        return;
+      }
+    }
+    // #375 final fallback: SteamGridDB via the anonymous image-refetch
+    // edge fn. Only fires when the previous tiers all missed. Cached per
+    // session so a browse grid of many non-Steam cards only pays the
+    // round-trip once per unique appid.
+    const title = await _titleForAppId(id);
+    const sgdbUrl = await _lookupSgdbUrlByTitle(id, title);
+    if (sgdbUrl) {
+      const loaded = await _tryUrl(sgdbUrl);
+      if (loaded) {
+        console.log(`[steam-img] appId=${id} route=sgdb-title-match`);
+        _bumpRoute('sgdb-title-match');
+        _swap(el, loaded);
+        return;
+      }
+    }
+    console.warn(`[steam-img] appId=${id} no non-Steam cover available (exhausted nonsteam-json, steam-title-match, sgdb)`);
     _bumpRoute('hidden');
-    _reportMissingImage(id, nsUrl || '');
+    _reportMissingImage(id, nsUrl || sgdbUrl || '');
     _showMissing(el);
     return;
   }
