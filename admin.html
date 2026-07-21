@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.steamstatic.com https://avatars.steamstatic.com https://cdn.cloudflare.steamstatic.com https://media.steampowered.com data:; connect-src 'self' https://data.proton-pulse.com https://ilsgdshkaocrmibwdezk.supabase.co https://pp-edge-status.mdeguzis.workers.dev; font-src 'self'; frame-src 'none'; object-src 'none';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.steamstatic.com https://avatars.steamstatic.com https://cdn.cloudflare.steamstatic.com https://media.steampowered.com data:; connect-src 'self' https://data.proton-pulse.com https://ilsgdshkaocrmibwdezk.supabase.co https://pp-edge-status.mdeguzis.workers.dev https://api.github.com; font-src 'self'; frame-src 'none'; object-src 'none';">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -46,6 +46,7 @@
           <option value="boxart">Box Art Manager</option>
           <option value="api-explorer">API Explorer</option>
           <option value="depot-tracking">Depot Tracking</option>
+          <option value="deployments">Deployments</option>
           <option value="games">Game Manager</option>
           <option value="logging">Logging</option>
           <option value="all-reports">Reports</option>
@@ -327,6 +328,11 @@
            js/admin/components/logging.js populates on activation. -->
       <section id="tab-logging" class="admin-section" hidden></section>
 
+      <!-- Deployments tab (#367): last N GH Actions runs across every
+           deploy workflow (publish-shell, deploy-worker, build-site-data,
+           deploy-functions). renderDeploymentsTab() populates. -->
+      <section id="tab-deployments" class="admin-section" hidden></section>
+
       <!-- Shared boxart chrome (modal + file picker). Used by both the
            list view and the detail view so a single instance handles
            set-url and upload actions from either place. -->
@@ -369,8 +375,8 @@
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script type="module" src="js/lib/log-buffer.js?v=6d7ce577"></script>
 <script src="js/lib/analytics.js?v=ee2cbf3e"></script>
-<script src="js/lib/topbar.js?v=4b66627c"></script>
+<script src="js/lib/topbar.js?v=1e8af6e6"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/admin/main.js?v=218d45cf"></script>
+<script type="module" src="js/admin/main.js?v=71d22fe9"></script>
 </body>
 </html>

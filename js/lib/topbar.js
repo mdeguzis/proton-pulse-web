@@ -607,6 +607,21 @@
   function _handleOpenState(panel) {
     const isOpen = panel.classList.contains('open');
     const isMobile = window.matchMedia(MOBILE_MODAL_QUERY).matches;
+    // Diagnostic breadcrumb so the admin Logging tab shows the decision
+    // point on every class change. If a mobile user's filter modal
+    // never portals -> isMobile is false, which means matchMedia does
+    // not match `${MOBILE_MODAL_QUERY}` -- typically because the
+    // viewport reports > 720px (Chrome "request desktop site" toggle,
+    // unusual pixel-density scaling, etc.).
+    logFrontendEvent('DEBUG', '_handleOpenState decided', {
+      panelId: panel.id || null,
+      isOpen: isOpen,
+      isMobile: isMobile,
+      viewportWidth: window.innerWidth,
+      mqQuery: MOBILE_MODAL_QUERY,
+      action: (isOpen && isMobile) ? 'portalToBody' : 'restoreOrNoop',
+      source: '_handleOpenState',
+    });
     if (isOpen && isMobile) _portalPanelToBody(panel);
     else _restorePanel(panel);
   }

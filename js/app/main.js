@@ -53,8 +53,23 @@ window.__hideSignalTooltip = function () {
 };
 
 // Dismiss filter panel when clicking outside it.
+//
+// On mobile (<= 720px) the shared modal observer in js/lib/topbar.js
+// portals #filterPanel to <body> so it can rise above the topbar stacking
+// context. Once portalled, the panel is no longer inside .filter-wrap --
+// so a tap on the panel's own X button (or ANY of its selects, pills, or
+// buttons) technically clicks "outside" .filter-wrap and this handler
+// would strip .open BEFORE the X's own click handler in topbar.js could
+// run. The X handler then saw portaled=false because the observer had
+// already restored the panel back to el (#358 follow-up).
+//
+// Same fix pattern as home.js: also allow the click when it lands inside
+// the panel itself. Now the panel only closes on a truly-outside click
+// (tapping the report cards, the topbar, empty space, etc.).
 document.addEventListener('click', function (e) {
-  if (!e.target.closest('.filter-wrap')) {
-    document.getElementById('filterPanel')?.classList.remove('open');
-  }
+  const panel = document.getElementById('filterPanel');
+  if (!panel || !panel.classList.contains('open')) return;
+  if (e.target.closest('.filter-wrap')) return;
+  if (panel.contains(e.target)) return;
+  panel.classList.remove('open');
 });
