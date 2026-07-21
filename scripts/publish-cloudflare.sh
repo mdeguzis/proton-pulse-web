@@ -57,6 +57,15 @@ elif [ -d "$OUTPUT_DIR/data" ]; then
   local_count=$(find "$OUTPUT_DIR/data" -type f | wc -l)
   log "syncing $local_count files from $OUTPUT_DIR/data to r2://$R2_BUCKET/data ..."
   sync_start=$(date +%s)
+  # Throttle concurrency + use adaptive retry so an R2 per-object
+  # ServiceUnavailable does not fail the whole run (#379). Default aws
+  # s3 sync fires 10 concurrent PUTs and retries with a tight backoff;
+  # R2's per-object write limit is roughly 1/sec, so aws's default
+  # retry loop can trip the limit on a single retried object even
+  # though the overall upload rate is fine. `adaptive` retry mode
+  # backs off exponentially with jitter and inspects response
+  # metadata for throttling signals.
+  aws configure set default.s3.max_concurrent_requests 4
   # Verbose progress: aws prints one "upload:/delete:" line per changed object.
   # The first migration uploads ~187k objects, so we summarize every 2000 lines
   # (plus a final total) instead of the quiet --only-show-errors, so the log
@@ -65,6 +74,8 @@ elif [ -d "$OUTPUT_DIR/data" ]; then
   AWS_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID" \
   AWS_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY" \
   AWS_DEFAULT_REGION="auto" \
+  AWS_MAX_ATTEMPTS=6 \
+  AWS_RETRY_MODE=adaptive \
   aws s3 sync "$OUTPUT_DIR/data" "s3://$R2_BUCKET/data" \
     --endpoint-url "https://${CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com" \
     --content-type application/json \
