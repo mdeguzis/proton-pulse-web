@@ -62,7 +62,7 @@ jobs:
       # sbom-action output format. v6 tracks a current grype.
       - name: Scan SBOM with Grype
         id: grype-scan
-        uses: anchore/scan-action@v6
+        uses: anchore/scan-action@v7
         with:
           sbom: sbom.cyclonedx.json
           fail-build: true
@@ -74,7 +74,7 @@ jobs:
       # ensures this step never masks the real gate above.
       - name: Print grype findings (table)
         if: always()
-        uses: anchore/scan-action@v6
+        uses: anchore/scan-action@v7
         with:
           sbom: sbom.cyclonedx.json
           fail-build: false
