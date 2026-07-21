@@ -23,6 +23,7 @@ import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { computeBadgesForAppId } from '../../lib/card-badges.js?v=5b71af11';
 import { getAntiCheatForApp, bucketAntiCheatStatus, humanAntiCheatStatus } from '../lib/anti-cheat.js?v=34f8a0a7';
+import { getPCGamingWikiForApp, humanPCGamingWikiOs, pcgamingwikiSearchUrl } from '../lib/pcgamingwiki.js?v=50ac9a1a';
 
 let _steamCatalogCache = null;
 async function _fetchSteamCatalog() {
@@ -244,7 +245,7 @@ async function _openMetadataModal(appId) {
     if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); }
   });
 
-  const [meta, depotInfo, newsInfo, antiCheat] = await Promise.all([
+  const [meta, depotInfo, newsInfo, antiCheat, pgw] = await Promise.all([
     fetchAppMetadata(appId).catch(() => null),
     // Depot info from the PICS pipeline (#215). Populated nightly; may
     // not exist for this app yet.
@@ -257,6 +258,10 @@ async function _openMetadataModal(appId) {
     // Anti-cheat data from AreWeAntiCheatYet (#242). Returns null when
     // the game has no upstream entry.
     getAntiCheatForApp(appId).catch(() => null),
+    // PCGamingWiki metadata: OS support + engine (#377 slice 2). Returns
+    // null when the game has no PGWiki entry. Attribution + source link
+    // rendered inline; CC BY-NC-SA 3.0 requires it.
+    getPCGamingWikiForApp(appId).catch(() => null),
   ]);
   const body = modal.querySelector('#game-metadata-body');
   if (!body) return;
@@ -406,10 +411,29 @@ async function _openMetadataModal(appId) {
     const src = '<div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Source: <a href="https://areweanticheatyet.com/" target="_blank" rel="noopener">AreWeAntiCheatYet</a></div>';
     return `<span class="${badgeCls}">${esc(label)}</span>${vendorChips}${src}`;
   };
+  // PCGamingWiki block (#377 slice 2). Only rendered when we have an entry
+  // -- absence is NOT "no OS support / no engine", it is "no PGWiki data".
+  // The OS chips answer the "not-just-Windows" question at a glance; the
+  // engine name helps triage Proton compat when Steam appdetails is thin.
+  const pcgamingwikiBlock = () => {
+    if (!pgw) return '';
+    const osList = Array.isArray(pgw.os) ? pgw.os.filter(Boolean) : [];
+    const engine = pgw.engine ? String(pgw.engine) : '';
+    if (!osList.length && !engine) return '';
+    const osChips = osList.length
+      ? `<div class="gm-chips">${osList.map(o => `<span class="gm-chip">${esc(humanPCGamingWikiOs(o))}</span>`).join('')}</div>`
+      : '';
+    const engineLine = engine
+      ? `<div style="margin-top:6px"><strong>Engine:</strong> <span>${esc(engine)}</span></div>`
+      : '';
+    const src = `<div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Source: <a href="${esc(pcgamingwikiSearchUrl(meta.name || ''))}" target="_blank" rel="noopener">PCGamingWiki</a> (CC BY-NC-SA 3.0)</div>`;
+    return `${osChips}${engineLine}${src}`;
+  };
 
   body.innerHTML = [
     section('Name',          meta.name ? `<strong>${esc(meta.name)}</strong>` : ''),
     section('Anti-cheat',    antiCheatBlock()),
+    section('PCGamingWiki',  pcgamingwikiBlock()),
     section('App ID',        `<code>${esc(meta.appId)}</code>`),
     section('Type',          meta.type ? `<code>${esc(meta.type)}</code>` : ''),
     section('Parent game',   fullgameLink()),

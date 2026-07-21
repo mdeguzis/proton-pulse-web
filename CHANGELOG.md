@@ -2,6 +2,10 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.10.0
+
+- Metadata modal on the game page has a new PCGamingWiki section under Anti-cheat. It shows native OS support (Windows, macOS, Linux, DOS) as chips and the game engine on its own line. Data comes from the PCGamingWiki Cargo API and is refreshed weekly by the pipeline. Games with no PGWiki entry just skip the section. Attribution links back to a PCGamingWiki search for the title (content is CC BY-NC-SA 3.0). Sets up follow-up filter chips and a PGWiki-only store tag under #377.
+
 ## v1.9.0
 
 - Submit form drafts got a full UX rework. Autosave now writes only to browser localStorage every 2.5 seconds of pause, so no network chatter while you're typing. The Save button is the explicit trigger for a cloud upload plus commit-and-close: the form saves your work to your account and navigates back to where you came from, matching every other commit-and-close web flow. If cloud is unreachable the manual save falls back to local so the draft survives a network blip. On next visit the load path picks whichever of local or cloud is newer and applies it silently. Runtime Type dropdown now stays inline with its label on mobile.
