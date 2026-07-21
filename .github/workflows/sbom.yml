@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     if: (github.actor != 'dependabot[bot]')
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # Install deps so Syft sees the full dependency tree, not just the
       # root package.json declarations. Without this the SBOM misses

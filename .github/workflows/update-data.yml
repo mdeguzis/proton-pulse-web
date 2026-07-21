@@ -97,12 +97,12 @@ jobs:
       expected_matrix: ${{ steps.plan.outputs.expected_matrix }}
     steps:
       - name: Checkout Scripts
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
       - name: Checkout Official ProtonDB Data
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: bdefore/protondb-data
           path: official-data
@@ -191,7 +191,7 @@ jobs:
         chunk: ${{ fromJson(needs.build.outputs.chunk_matrix) }}
     steps:
       - name: Checkout Scripts
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
@@ -275,7 +275,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
@@ -306,7 +306,7 @@ jobs:
       # every single time (4+ hour stall). See wiki Data-Pipeline.md
       # "Known Issue" for full background.
       - name: Checkout current gh-pages for data merge
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
           path: gh-pages-data
@@ -655,13 +655,13 @@ jobs:
       contents: write
     steps:
       - name: Checkout current gh-pages
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
           path: gh-pages-data
 
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: repo
 
@@ -720,21 +720,21 @@ jobs:
       contents: write
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
           ref: gh-pages
           path: gh-pages-data
 
       - name: Checkout Official ProtonDB Data
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: bdefore/protondb-data
           path: official-data
           fetch-depth: 1
 
       - name: Checkout scripts
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
           path: repo
@@ -939,21 +939,21 @@ jobs:
       contents: write
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
           ref: gh-pages
           path: gh-pages-data
 
       - name: Checkout Official ProtonDB Data
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: bdefore/protondb-data
           path: official-data
           fetch-depth: 1
 
       - name: Checkout scripts
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
           path: repo
@@ -1189,7 +1189,7 @@ jobs:
       issues: write
     steps:
       # Needed by the back-comment composite action.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Summary
         env:
@@ -1258,14 +1258,14 @@ jobs:
       contents: read
     steps:
       - name: Checkout current gh-pages
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
           path: gh-pages-data
           persist-credentials: false
 
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: staging
           path: repo

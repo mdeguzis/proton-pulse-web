@@ -23,7 +23,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # Need enough history so `git diff $BEFORE_SHA $AFTER_SHA` in the
           # Resolve step can actually see both refs. Default is fetch-depth
