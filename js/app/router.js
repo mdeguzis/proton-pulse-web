@@ -2,7 +2,7 @@
 
 import { renderGamePage } from './components/game-page.js?v=b11be7c0';
 import { renderHomePage } from './components/home.js?v=baf5a088';
-import { renderSearchPage } from './components/search.js?v=598aaad1';
+import { renderSearchPage } from './components/search.js?v=7ec2be23';
 
 export function getRoute() {
   const h = location.hash.replace(/^#\/?/, '');

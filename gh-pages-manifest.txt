@@ -121,6 +121,7 @@ js/admin/components/analytics.js
 js/admin/components/cache-status.js
 js/admin/components/logging.js
 js/admin/components/deployments.js
+js/app/lib/search-match.js
 stats.html
 js/stats/main.js
 js/stats/utils.js

@@ -45,6 +45,10 @@ function stubsForSearch(extraFetch) {
     // exercise the raw match logic without needing localStorage.
     filterAdultEntries: (rows) => rows,
     isAdultEntry: () => false,
+    // Pure fuzzy-match helper factored out of search.js so it can be
+    // unit-tested independently -- wire the real impl in so this suite
+    // exercises the same logic search.js does at runtime.
+    matchEntries: require('../js/app/lib/search-match.js').matchEntries,
     document: {
       getElementById: () => ({ innerHTML: '', set innerHTML(_v) {}, classList: { add() {}, remove() {}, contains() { return false; } }, getBoundingClientRect: () => ({ top:0, left:0, right:0, bottom:0, width:0 }), addEventListener() {}, querySelectorAll: () => [], contains: () => false }),
       addEventListener: () => {},
