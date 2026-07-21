@@ -33,13 +33,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo (for the script)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: repo
           persist-credentials: false
 
       - name: Checkout gh-pages (destination)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
           path: gh-pages

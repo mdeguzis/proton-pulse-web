@@ -33,7 +33,7 @@ jobs:
       image: semgrep/semgrep
     if: (github.actor != 'dependabot[bot]')
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       # p/typescript catches TS-specific issues (unsafe any casts, unhandled
       # rejects, tainted-flow through the Steam Web API proxies).
       # p/owasp-top-ten covers XSS sinks, SQLi patterns, SSRF, auth bypass,
