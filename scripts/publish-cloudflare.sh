@@ -130,6 +130,55 @@ printf '{"version":"%s","sha":"%s","deployed_at":"%s","repo":"mdeguzis/proton-pu
 
 log "assembled $(find "$DEPLOY" -type f | wc -l) files for Pages (v$VERSION - $SHA)"
 
+# --- 2e. Refuse to deploy an older commit on top of a newer one ---------------
+# Two workflows can deploy to the same CF Pages project: this script (called
+# from publish-shell.yml on every push) and update-data.yml's finalize job
+# (called from `make gh-run` / cron / gh-staging-*). They share a concurrency
+# group so they cannot run in parallel, but a slow pipeline that STARTED
+# with an old checkout can still finish after a fresh shell push has already
+# landed -- and would happily overwrite it. This guard is the second safety
+# net: compare our git commit time to the deployed_at on the live target,
+# and skip the wrangler deploy if we would move the site BACKWARDS.
+#
+# The check is best-effort. Failures to reach the live version.json (first
+# deploy, DNS blip, curl not present) fall through and let the deploy run
+# -- we would rather ship than deadlock.
+LIVE_DOMAIN=""
+case "$PAGES_PROJECT" in
+  proton-pulse-web-staging) LIVE_DOMAIN="staging.proton-pulse.com" ;;
+  proton-pulse-web)         LIVE_DOMAIN="www.proton-pulse.com" ;;
+esac
+if [ -n "$LIVE_DOMAIN" ] && command -v curl >/dev/null 2>&1; then
+  live_json="$(curl -sf --max-time 10 "https://$LIVE_DOMAIN/version.json" 2>/dev/null || echo '')"
+  if [ -n "$live_json" ]; then
+    live_deployed_at="$(printf '%s' "$live_json" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("deployed_at",""))' 2>/dev/null || echo '')"
+    live_sha="$(printf '%s' "$live_json" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("sha",""))' 2>/dev/null || echo '')"
+    # Our commit's ISO timestamp (committer date). git log emits it with the
+    # committer's local offset -- e.g. 2026-07-20T21:30:54-04:00 for a commit
+    # made in EDT -- so we MUST normalize to actual UTC before comparing,
+    # otherwise a lexicographic string compare says "2026-07-20..." <
+    # "2026-07-21..." even though the first is really a later moment. Bug
+    # note: an earlier version of this check did a naive sed on '+00:00' -> Z
+    # which only handled commits already in UTC; that dropped every deploy
+    # made from a non-UTC dev box.
+    our_commit_iso="$(git -C "$REPO_DIR" log -1 --format=%cI HEAD 2>/dev/null || echo '')"
+    if [ -n "$live_deployed_at" ] && [ -n "$our_commit_iso" ]; then
+      # date -d "..." -u prints UTC regardless of the input offset. GNU date
+      # (Ubuntu runners) accepts full ISO 8601 with offset here. Output
+      # format matches deployed_at exactly (Z suffix, no fractional sec).
+      our_ts="$(date -d "$our_commit_iso" -u +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || echo '')"
+      if [ -z "$our_ts" ]; then
+        log "version guard skipped: could not normalize commit ts '$our_commit_iso' to UTC -- proceeding with deploy"
+      elif [ "$our_ts" \< "$live_deployed_at" ]; then
+        log "SKIP: current live deploy (sha=$live_sha, deployed_at=$live_deployed_at) is NEWER than our commit ($SHA, $our_ts). Refusing to move the site backwards."
+        exit 0
+      else
+        log "version guard OK: live deployed_at=$live_deployed_at, our commit=$our_ts -- proceeding"
+      fi
+    fi
+  fi
+fi
+
 # --- 3. Deploy the shell to Cloudflare Pages ----------------------------------
 # In CI, CLOUDFLARE_API_TOKEN authenticates wrangler. Locally, wrangler falls
 # back to the ambient OAuth login, so a missing token here is only a warning.

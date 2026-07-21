@@ -1,0 +1,125 @@
+name: Publish Shell to Cloudflare Pages
+
+# Fast shell-only deploy to Cloudflare Pages (#362 follow-up). Fires on every
+# push to staging or main that touches user-facing files (HTML/CSS/JS/manifest)
+# so the CF Pages site is ALWAYS current without waiting on the full pipeline
+# in update-data.yml. Data (per-game buckets under data/) is untouched -- that
+# still lives in R2 and is refreshed by the pipeline on its own cadence.
+#
+# Deploy target selection:
+#   staging branch -> Cloudflare Pages project "proton-pulse-web-staging"
+#                     (custom domain: staging.proton-pulse.com)
+#   main    branch -> Cloudflare Pages project "proton-pulse-web"
+#                     (custom domain: www.proton-pulse.com)
+#
+# Path filter: only trigger when the shell actually changes. Skips pipeline-
+# only edits (scripts/, supabase/, workflow YAML for other jobs) so we do not
+# burn a build minute on a change that has no user-visible effect. Manual
+# dispatch is always available.
+
+on:
+  push:
+    branches: [staging, main]
+    paths:
+      - '*.html'
+      - 'css/**'
+      - 'js/**'
+      - 'gh-pages-manifest.txt'
+      - 'scripts/publish-cloudflare.sh'
+      - 'scripts/preserve-cert-monitor.sh'
+      - '.github/workflows/publish-shell.yml'
+  workflow_dispatch: {}
+
+concurrency:
+  # Shared group with update-data.yml's finalize job so shell publish and
+  # full pipeline can never both deploy to the SAME CF Pages project at the
+  # same time. Group keys on the destination project (not github.ref_name)
+  # because a manual dispatch of the pipeline on main with
+  # staging_with_finalize=true still deploys to the staging project -- we
+  # want that to serialize with a push to staging too.
+  #
+  # cancel-in-progress: false = queue rather than kill. If a long pipeline
+  # is running, a shell push waits behind it (~ minutes to ~ hour) rather
+  # than losing the pipeline work. The version-check inside
+  # publish-cloudflare.sh is the second safety net: it refuses to deploy
+  # an older commit on top of a newer one, so even if a stale pipeline
+  # finishes last it will not overwrite a fresh shell push.
+  group: cf-pages-${{ github.ref_name == 'staging' && 'proton-pulse-web-staging' || 'proton-pulse-web' }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          # Full history so publish-cloudflare.sh can compute VERSION + SHA
+          # and preserve-cert-monitor.sh can git-show from origin/gh-pages.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          # Wrangler 4.x requires >=22 -- match .github/workflows/deploy-worker.yml.
+          node-version: '22'
+
+      - name: Resolve deploy target
+        id: target
+        env:
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          # staging.proton-pulse.com is served by the "-staging" CF project;
+          # www.proton-pulse.com by the plain one. PAGES_BRANCH mirrors so the
+          # deploy shows up under the right named preview environment in the
+          # CF Pages dashboard.
+          if [ "$REF_NAME" = "staging" ]; then
+            echo "project=proton-pulse-web-staging" >> "$GITHUB_OUTPUT"
+            echo "branch=staging" >> "$GITHUB_OUTPUT"
+          else
+            echo "project=proton-pulse-web" >> "$GITHUB_OUTPUT"
+            echo "branch=main" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Pull top-level data + cert monitor files from gh-pages
+        # publish-cloudflare.sh's SMALL_DATA list expects search-index.json,
+        # most_played.json, etc. to exist in OUTPUT_DIR. On a shell-only push
+        # there is no fresh pipeline output, so pull the latest versions from
+        # the gh-pages branch (still the source of truth for those files --
+        # the pipeline writes to gh-pages, the CF deploy copies them into the
+        # Pages bundle). Any file missing on gh-pages is skipped silently so
+        # a brand-new file does not break the deploy.
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/shell-out
+          FILES=(
+            search-index.json search-index-steam-extended.json most_played.json
+            recent-reports.json stats.json coverage-summary.json data-versions.json
+            game-images.json game-images-skip.json deck-status.json proton-versions.json
+            steam-catalog.json hardware-suggestions.json scoring-info.json form-schema.json
+            app-id-redirects.json
+          )
+          for f in "${FILES[@]}"; do
+            if git show "origin/gh-pages:$f" > "/tmp/shell-out/$f" 2>/dev/null && [ -s "/tmp/shell-out/$f" ]; then
+              echo "pulled $f from origin/gh-pages"
+            else
+              rm -f "/tmp/shell-out/$f"
+              echo "skipping $f (not on gh-pages)"
+            fi
+          done
+
+      - name: Deploy shell to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # SKIP_R2_SYNC=1 is the "shell only" mode -- the per-game data/
+          # buckets are already in R2 from the last pipeline run and do not
+          # need re-syncing on every code push. Wall time drops from ~30 min
+          # (with R2 sync) to ~1-2 min.
+          SKIP_R2_SYNC: '1'
+          PAGES_PROJECT: ${{ steps.target.outputs.project }}
+          PAGES_BRANCH: ${{ steps.target.outputs.branch }}
+        run: |
+          bash scripts/publish-cloudflare.sh /tmp/shell-out "$GITHUB_WORKSPACE"

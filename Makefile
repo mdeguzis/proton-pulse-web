@@ -12,6 +12,7 @@ FORCE_DEPLOY ?=
 
 .PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker check-cert \
 	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-staging-finalize gh-resume gh-finalize-only gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
+	cf-staging cf-prod \
 	build serve smoke smoke-live pre-push coverage deploy-worker
 
 build:
@@ -83,6 +84,8 @@ help:
 	@echo "  gh-staging          Deploy shell files to staging only (no prod deploy) for preview"
 	@echo "  gh-staging-pipeline Run FULL pipeline against staging + deploy data to staging (#117, ~30 min)"
 	@echo "  gh-staging-finalize Skip probe/build, re-run finalize + stats against prod state, deploy to staging (#196, ~5 min)"
+	@echo "  cf-staging          Force a shell-only CF Pages staging deploy (~1-2 min). Every push to staging auto-triggers this via publish-shell.yml."
+	@echo "  cf-prod             Force a shell-only CF Pages production deploy (~1-2 min). Every push to main auto-triggers this via publish-shell.yml."
 	@echo "  gh-resume           Re-run only chunks marked incomplete in the manifest (#171)"
 	@echo "  gh-finalize-only    Skip probing, re-run finalize against current manifest state (#171)"
 	@echo "  gh-backfill-apps    Trigger targeted app backfill"
@@ -210,11 +213,32 @@ gh-run: gh-check check-staging-sync
 gh-pages-only: gh-check check-staging-sync
 	gh workflow run $(GITHUB_WORKFLOW) --field pages_only=true
 	@echo "Triggered $(GITHUB_WORKFLOW) with pages_only=true"
+	@echo "NOTE: this promotes shell files to the OLD gh-pages branch (rollback path only per #362). For prod CF Pages (www.proton-pulse.com) use \`make cf-prod\` -- but ideally you do not need to, since publish-shell.yml auto-deploys on every push to main."
 
 gh-staging: gh-check
 	@bash scripts/wait-for-remote.sh
 	gh workflow run $(GITHUB_WORKFLOW) --ref staging --field staging_only=true
 	@echo "Triggered $(GITHUB_WORKFLOW) with staging_only=true -- preview at https://mdeguzis.github.io/proton-pulse-web-staging/"
+	@echo "NOTE: this deploys to the OLD gh-pages staging repo (kept as rollback per #362). For the live CF Pages staging site (staging.proton-pulse.com) use \`make cf-staging\`."
+
+# ── Cloudflare Pages shell deploys (#362 follow-up) ────────────────────
+#
+# Fast (~1-2 min) shell-only push to CF Pages. Every push to staging or main
+# that touches user-facing files ALREADY triggers .github/workflows/publish-
+# shell.yml automatically -- these targets are just the manual dispatch path
+# for the same workflow (e.g. to force a re-deploy after fixing something
+# out-of-band). SKIP_R2_SYNC=1 keeps the per-game data buckets in R2 as they
+# are; the pipeline in update-data.yml refreshes those on its own cadence.
+
+cf-staging: gh-check
+	@bash scripts/wait-for-remote.sh
+	gh workflow run publish-shell.yml --ref staging
+	@echo "Triggered publish-shell.yml against staging -- deploys to CF Pages 'proton-pulse-web-staging' (staging.proton-pulse.com). ~1-2 min."
+
+cf-prod: gh-check
+	@bash scripts/wait-for-remote.sh
+	gh workflow run publish-shell.yml --ref main
+	@echo "Triggered publish-shell.yml against main -- deploys to CF Pages 'proton-pulse-web' (www.proton-pulse.com). ~1-2 min."
 
 # Full-pipeline staging deploy (#117). Runs the whole pipeline against the
 # staging branch and deploys the resulting data + shell to the staging repo.

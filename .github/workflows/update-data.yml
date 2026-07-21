@@ -270,6 +270,17 @@ jobs:
         inputs.staging_with_finalize == true ||
         (needs.build.result == 'success' &&
          (needs.probe-chunks.result == 'success' || needs.probe-chunks.result == 'skipped')))
+    # Shared with .github/workflows/publish-shell.yml so a slow finalize can
+    # never deploy concurrently with (or on top of) a fast shell push. Group
+    # keys on the CF Pages project the finalize will actually target, which
+    # depends on the staging_with_* inputs -- NOT on github.ref_name -- so a
+    # main-dispatched pipeline with staging_with_finalize=true still shares
+    # the staging group. cancel-in-progress: false = queue behind whatever is
+    # running; the version-check inside publish-cloudflare.sh is the second
+    # safety net if the pipeline's checkout is stale.
+    concurrency:
+      group: cf-pages-${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'proton-pulse-web-staging' || 'proton-pulse-web' }}
+      cancel-in-progress: false
     runs-on: ubuntu-24.04
     permissions:
       contents: write
