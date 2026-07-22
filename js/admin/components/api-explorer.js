@@ -8,7 +8,7 @@
 // goes through the steam-explore edge function because the stores are
 // CORS-blocked from the browser.
 
-import { dataUrl } from '../../lib/data-url.js?v=97f09986';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import { exploreStore } from '../api/steam-explore.js?v=17281b89';
 import { isLibraryEndpoint, lookupLibrary } from '../api/steam-library-lookup.js?v=748599e3';

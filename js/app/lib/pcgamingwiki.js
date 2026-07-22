@@ -9,7 +9,7 @@
 // -- the metadata modal renders a "Source: PCGamingWiki" line for this
 // reason. This lib stays tiny on purpose: memoized fetch + null-safe getter.
 
-import { dataUrl } from '../../lib/data-url.js?v=97f09986';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 
 let _cache = null;
 let _pending = null;

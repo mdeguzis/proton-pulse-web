@@ -13,7 +13,7 @@
 // "Probe all (filtered)" walks every row that matches the current
 // filters in bounded batches so the browser stays responsive.
 
-import { dataUrl } from '../../lib/data-url.js?v=97f09986';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import {
   probeImageUrl,

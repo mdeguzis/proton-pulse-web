@@ -9,7 +9,7 @@
 // bucket helper so filter chips and badges do not each hard-code the
 // upstream vocabulary.
 
-import { dataUrl } from '../../lib/data-url.js?v=97f09986';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 
 let _cache = null;
 let _pending = null;

@@ -493,6 +493,13 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           PAGES_PROJECT: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'proton-pulse-web-staging' || 'proton-pulse-web' }}
           PAGES_BRANCH: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'staging' || 'main' }}
+          # #380: staging + prod get separate R2 buckets so a staging sync
+          # cannot overwrite prod data mid-flight. Staging bucket is bound
+          # to staging-data.proton-pulse.com; prod bucket stays on
+          # data.proton-pulse.com. publish-cloudflare.sh already reads
+          # R2_BUCKET + DATA_BASE env vars.
+          R2_BUCKET: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'proton-pulse-data-staging' || 'proton-pulse-data' }}
+          DATA_BASE: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'https://staging-data.proton-pulse.com' || 'https://data.proton-pulse.com' }}
         run: |
           bash scripts/publish-cloudflare.sh /tmp/protondb-output "$GITHUB_WORKSPACE"
 

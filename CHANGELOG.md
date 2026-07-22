@@ -2,6 +2,10 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.13.0
+
+- Staging and production now read from separate data buckets so a staging pipeline can no longer overwrite prod mid-flight. Prod stays on `data.proton-pulse.com`; staging reads from `staging-data.proton-pulse.com`. Frontend picks the host based on origin, and the pipeline sets the R2 target per environment.
+
 ## v1.12.0
 
 - Boxart for PCGamingWiki-only stub entries now falls back to the wiki's own cover image when Steam-title match and SteamGridDB both come up empty. This picks up abandonware and classics that have a PGWiki cover but no equivalent art on Steam or SGDB. Ordering is unchanged for Steam / GOG / Epic entries: PGWiki cover only kicks in for `pgwiki:` ids as the final tier before the placeholder.

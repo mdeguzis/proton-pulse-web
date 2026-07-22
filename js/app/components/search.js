@@ -6,7 +6,7 @@ import { renderGamePage } from './game-page.js?v=d4e41130';
 import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId, fetchDataWithProdFallback } from '../config.js?v=979b9bbc';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=9a39c726';
 import { renderGameCard } from '../lib/card.js?v=93448301';
-import { dataUrl } from '../../lib/data-url.js?v=97f09986';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { filterAdultEntries, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { matchEntries } from '../lib/search-match.js?v=dd1b70b2';
 

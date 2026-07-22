@@ -10,7 +10,7 @@ import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
   unpublishReport,
 } from '../api/configs.js?v=0c5650ed';
-import { dataUrl } from '../../lib/data-url.js?v=97f09986';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { showEditCloudConfigModal, showEditReportModal } from './edit-modals.js?v=79558c3c';
 
 /**

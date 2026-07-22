@@ -6,7 +6,7 @@
 // The cache is a plain object: { "<appId>": "<type>" }. Missing appids
 // bucket into "unknown" so a partial cache degrades gracefully -- the
 // enricher is still filling in ~35k apps as of writing (#258 / #261).
-import { dataUrl } from '../../lib/data-url.js?v=97f09986';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 
 const KNOWN_TYPES = ['game', 'dlc', 'demo', 'mod', 'software', 'advertising', 'video'];
 
