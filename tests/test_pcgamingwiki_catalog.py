@@ -14,6 +14,7 @@ from scripts.pipeline.pcgamingwiki_catalog import (
     OUTPUT_FILENAME,
     _CARGO_WHERE,
     _build_entries,
+    _clean_cover_url,
     _slugify_page_name,
     _split_company_list,
     _year_from_iso,
@@ -23,7 +24,7 @@ from scripts.pipeline.pcgamingwiki_catalog import (
 
 
 def _row(page, appid=None, gogid=None, engines=None, available="Windows",
-         relWin=None, developers=None, publishers=None):
+         relWin=None, developers=None, publishers=None, coverUrl=None):
     return {
         "page": page,
         "appId": appid,
@@ -33,6 +34,7 @@ def _row(page, appid=None, gogid=None, engines=None, available="Windows",
         "relWin": relWin,
         "developers": developers,
         "publishers": publishers,
+        "coverUrl": coverUrl,
     }
 
 
@@ -250,6 +252,42 @@ def test_merge_no_op_on_unreadable_index(tmp_path):
 
 
 # ---- app_type_from_id lockstep (regression) --------------------------------
+
+
+def test_clean_cover_url_accepts_pcgamingwiki_https():
+    ok = "https://images.pcgamingwiki.com/9/96/foo.jpg"
+    assert _clean_cover_url(ok) == ok
+    # Trims whitespace.
+    assert _clean_cover_url("  " + ok + "  ") == ok
+
+
+def test_clean_cover_url_rejects_wrong_scheme_or_host():
+    # Belt-and-braces: only the PGWiki CDN, only https.
+    assert _clean_cover_url("http://images.pcgamingwiki.com/x.jpg") is None
+    assert _clean_cover_url("https://evil.example.com/x.jpg") is None
+    assert _clean_cover_url("data:image/png;base64,AAAA") is None
+    assert _clean_cover_url("javascript:alert(1)") is None
+    assert _clean_cover_url("") is None
+    assert _clean_cover_url(None) is None
+
+
+def test_build_entries_captures_cover_url_when_present():
+    riddick = _row(
+        "The Chronicles of Riddick: Escape from Butcher Bay",
+        available="Windows",
+        coverUrl="https://images.pcgamingwiki.com/9/96/The_Chronicles_of_Riddick_Escape_from_Butcher_Bay_cover.jpg",
+    )
+    out = _build_entries([riddick])
+    entry = out["pgwiki:The_Chronicles_of_Riddick:_Escape_from_Butcher_Bay"]
+    assert entry["cover_url"] == "https://images.pcgamingwiki.com/9/96/The_Chronicles_of_Riddick_Escape_from_Butcher_Bay_cover.jpg"
+
+
+def test_build_entries_leaves_cover_url_none_when_missing_or_off_cdn():
+    a = _row("NoCover", available="Windows", coverUrl=None)
+    b = _row("BadCover", available="Windows", coverUrl="http://evil/x.jpg")
+    out = _build_entries([a, b])
+    assert out["pgwiki:NoCover"]["cover_url"] is None
+    assert out["pgwiki:BadCover"]["cover_url"] is None
 
 
 def test_common_recognizes_pgwiki_prefix():

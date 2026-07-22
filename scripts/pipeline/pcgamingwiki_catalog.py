@@ -72,6 +72,9 @@ OUTPUT_FILENAME = "pcgwiki-catalog.json"
 FRESH_TTL_SEC = 7 * 24 * 3600
 
 # Query shape. Field aliases must NOT start with underscore (Cargo blocks it).
+# `Cover_URL` is PGWiki's pre-resolved image URL -- no follow-up File: lookup
+# needed. Kept as a final-resort boxart source (#375 tier 4) since covers
+# are typically portrait product-shots, not widescreen hero art.
 _CARGO_FIELDS = ",".join([
     "_pageName=page",
     "Steam_AppID=appId",
@@ -81,6 +84,7 @@ _CARGO_FIELDS = ",".join([
     "Released_Windows=relWin",
     "Developers=developers",
     "Publishers=publishers",
+    "Cover_URL=coverUrl",
 ])
 
 # Virtual list fields need the reified `__full` companion for bulk WHERE.
@@ -242,6 +246,11 @@ def _build_entries(rows: list[dict]) -> dict[str, dict]:
             continue
         engine = _first_engine(row.get("engines"))
         release_year = _year_from_iso(row.get("relWin"))
+        # Cover_URL is pre-resolved by PGWiki to its images.pcgamingwiki.com
+        # CDN. Nullable -- older wiki pages sometimes lack it. Frontend uses
+        # this as the final-resort boxart tier (after SGDB) so PGWiki-only
+        # entries at least get their wiki cover instead of the placeholder.
+        cover_url = _clean_cover_url(row.get("coverUrl"))
         entry = {
             "name": page,
             "engine": engine,
@@ -250,9 +259,24 @@ def _build_entries(rows: list[dict]) -> dict[str, dict]:
             "release_year": release_year,
             "os": os_list,
             "wiki_url": f"https://www.pcgamingwiki.com/wiki/{urllib.parse.quote(_slugify_page_name(page))}",
+            "cover_url": cover_url,
         }
         out[canonical_id] = entry
     return out
+
+
+def _clean_cover_url(value) -> str | None:
+    """PGWiki ships `Cover_URL` as a pre-resolved HTTPS URL. Belt-and-braces:
+    require https:// on the images.pcgamingwiki.com host and reject anything
+    else so a schema drift cannot smuggle a data: / javascript: / http: URL
+    into the frontend.
+    """
+    if not value:
+        return None
+    text = str(value).strip()
+    if not text.startswith("https://images.pcgamingwiki.com/"):
+        return None
+    return text
 
 
 def refresh_catalog(output_dir: Path, force: bool = False) -> dict[str, dict]:

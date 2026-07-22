@@ -176,6 +176,15 @@ function _loadNonsteamImages() {
   return _nonsteamImagesPromise;
 }
 
+// Cache the PGWiki catalog so tier-4 (`pgwiki:` cover lookup) does not
+// re-fetch it per card. Only referenced for `pgwiki:` ids -- Steam / GOG /
+// Epic paths never touch this promise.
+let _pgwikiCatalogPromise = null;
+function _loadPgwikiCatalog() {
+  if (!_pgwikiCatalogPromise) _pgwikiCatalogPromise = _fetchWithFallback('pcgwiki-catalog.json');
+  return _pgwikiCatalogPromise;
+}
+
 // Cache the search index so repeated title-match probes don't re-fetch it.
 // The gog/epic fallback path can run many times per page (a full library
 // grid can be hundreds of cards), so memoize the promise the same way we
@@ -313,6 +322,7 @@ function _bumpRoute(route) {
     'nonsteam-images-json': 0,
     'steam-title-match': 0,
     'sgdb-title-match': 0,
+    'pgwiki-cover': 0,
     hidden: 0,
   });
   counts[route] = (counts[route] || 0) + 1;
@@ -386,9 +396,29 @@ export async function loadSteamImg(el, appId) {
         return;
       }
     }
-    console.warn(`[steam-img] appId=${id} no non-Steam cover available (exhausted nonsteam-json, steam-title-match, sgdb)`);
+    // #375 tier 4 (final resort). PGWiki-only entries carry a `cover_url`
+    // in pcgwiki-catalog.json (pipeline slice 3.5). Portrait product-shot
+    // rather than widescreen hero art, so we only reach for it when the
+    // better sources all missed. Only fires for `pgwiki:` ids -- GOG / Epic
+    // never had a PGWiki cover to begin with.
+    let pgwikiCoverUrl = null;
+    if (id.startsWith('pgwiki:')) {
+      const catalog = await _loadPgwikiCatalog();
+      const cover = catalog && catalog[id] && catalog[id].cover_url;
+      if (cover && String(cover).startsWith('https://images.pcgamingwiki.com/')) {
+        pgwikiCoverUrl = String(cover);
+        const loaded = await _tryUrl(pgwikiCoverUrl);
+        if (loaded) {
+          console.log(`[steam-img] appId=${id} route=pgwiki-cover`);
+          _bumpRoute('pgwiki-cover');
+          _swap(el, loaded);
+          return;
+        }
+      }
+    }
+    console.warn(`[steam-img] appId=${id} no non-Steam cover available (exhausted nonsteam-json, steam-title-match, sgdb, pgwiki-cover)`);
     _bumpRoute('hidden');
-    _reportMissingImage(id, nsUrl || sgdbUrl || '');
+    _reportMissingImage(id, nsUrl || sgdbUrl || pgwikiCoverUrl || '');
     _showMissing(el);
     return;
   }

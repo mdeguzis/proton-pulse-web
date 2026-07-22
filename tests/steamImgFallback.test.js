@@ -38,12 +38,30 @@ describe('non-Steam fallback chain', () => {
     expect(SRC).toMatch(/_findSteamAppIdByMatchingTitle[\s\S]{0,900}_lookupSgdbUrlByTitle/);
   });
 
-  test('sgdb lookup runs before the hidden placeholder', () => {
-    expect(SRC).toMatch(/_lookupSgdbUrlByTitle[\s\S]{0,600}_showMissing/);
+  test('sgdb lookup runs before PGWiki cover (SGDB has better art)', () => {
+    expect(SRC).toMatch(/_lookupSgdbUrlByTitle[\s\S]{0,900}_loadPgwikiCatalog/);
+  });
+
+  test('PGWiki cover runs before the hidden placeholder', () => {
+    expect(SRC).toMatch(/_loadPgwikiCatalog[\s\S]{0,700}_showMissing/);
+  });
+
+  test('PGWiki cover only fires for pgwiki: ids (never for gog:/epic:)', () => {
+    // Regression guard: gating to pgwiki: keeps GOG/Epic entries out of the
+    // catalog-fetch code path -- those never have a PGWiki cover so hitting
+    // this branch would just waste a fetch.
+    expect(SRC).toMatch(/id\.startsWith\('pgwiki:'\)[\s\S]{0,200}_loadPgwikiCatalog/);
+  });
+
+  test('PGWiki cover URL is validated against images.pcgamingwiki.com', () => {
+    // Defense in depth: the pipeline already whitelists the host in
+    // _clean_cover_url; the frontend re-checks so a schema drift or CDN
+    // change cannot smuggle a data: / http: URL into an img src.
+    expect(SRC).toMatch(/startsWith\('https:\/\/images\.pcgamingwiki\.com\/'\)/);
   });
 
   test('every successful tier bumps a distinct route counter', () => {
-    for (const route of ['nonsteam-images-json', 'steam-title-match', 'sgdb-title-match', 'hidden']) {
+    for (const route of ['nonsteam-images-json', 'steam-title-match', 'sgdb-title-match', 'pgwiki-cover', 'hidden']) {
       expect(SRC).toContain(`_bumpRoute('${route}')`);
     }
   });
@@ -51,7 +69,7 @@ describe('non-Steam fallback chain', () => {
   test('route counters are pre-declared so a first-hit does not crash', () => {
     // The admin analytics panel reads window.__imgRouteCounts. A missing key
     // used to break the read (undefined + 1 = NaN) -- easier to pre-init.
-    for (const route of ['nonsteam-images-json', 'steam-title-match', 'sgdb-title-match']) {
+    for (const route of ['nonsteam-images-json', 'steam-title-match', 'sgdb-title-match', 'pgwiki-cover']) {
       expect(SRC).toContain(`'${route}': 0`);
     }
   });
@@ -111,4 +129,23 @@ describe('manifest', () => {
     // is the load-bearing gate here.
     expect(MANIFEST).toContain('js/app/lib/search-match.js');
   });
+});
+
+describe('CSP img-src covers PGWiki cover host (#375 tier 4)', () => {
+  // steam-img.js sets src to https://images.pcgamingwiki.com/<...>.jpg on
+  // pgwiki-cover hits. Every page that can render a card must whitelist
+  // that host or the img gets blocked with a CSP error even though the URL
+  // itself is fine. Regression guard for any future new HTML page.
+  const pagesRenderingCards = [
+    'index.html', 'app.html', 'admin.html', 'profile.html', 'lookup.html',
+  ];
+  for (const page of pagesRenderingCards) {
+    test(`${page} allows images.pcgamingwiki.com in img-src`, () => {
+      const html = fs.readFileSync(path.join(__dirname, '..', page), 'utf8');
+      const cspMatch = html.match(/Content-Security-Policy[^>]+content="([^"]+)"/);
+      // Some pages might not have inline CSP (lookup.html check-safe if it exists)
+      if (!cspMatch) return;
+      expect(cspMatch[1]).toContain('https://images.pcgamingwiki.com');
+    });
+  }
 });

@@ -2,6 +2,10 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.12.0
+
+- Boxart for PCGamingWiki-only stub entries now falls back to the wiki's own cover image when Steam-title match and SteamGridDB both come up empty. This picks up abandonware and classics that have a PGWiki cover but no equivalent art on Steam or SGDB. Ordering is unchanged for Steam / GOG / Epic entries: PGWiki cover only kicks in for `pgwiki:` ids as the final tier before the placeholder.
+
 ## v1.11.0
 
 - PCGamingWiki-only games (Windows classics and abandonware with no Steam or GOG entry) now get stub pages in Proton Pulse so users can submit compat reports against them. The pipeline pulls every PCGW game that ships a Windows build and has no store ID, then merges them into the search index with a canonical id of `pgwiki:<slug>`. Cards mark the source as PCGWiki. The Chronicles of Riddick: Escape from Butcher Bay is one such entry. DOS-only games are excluded (Proton does not play them).
