@@ -17,9 +17,18 @@ set -uo pipefail
 # Args: bucket names to test (default: the three known buckets).
 # Exit: 0 = every bucket healthy; 1 = one or more failed.
 
-: "${CLOUDFLARE_ACCOUNT_ID:?CLOUDFLARE_ACCOUNT_ID required}"
-: "${R2_ACCESS_KEY_ID:?R2_ACCESS_KEY_ID required}"
-: "${R2_SECRET_ACCESS_KEY:?R2_SECRET_ACCESS_KEY required}"
+# For local runs, load creds from ~/.cloudflare if present (a KEY=VALUE file,
+# like ~/.supabase / ~/.buffer-social). `set -a` auto-exports whatever it sets,
+# so entries do NOT need an explicit `export`. Env vars already set (e.g. CI
+# secrets) win -- we only source to fill the gaps.
+if [ -f "$HOME/.cloudflare" ] && { [ -z "${CLOUDFLARE_ACCOUNT_ID:-}" ] || [ -z "${R2_ACCESS_KEY_ID:-}" ] || [ -z "${R2_SECRET_ACCESS_KEY:-}" ]; }; then
+  # shellcheck disable=SC1091
+  set -a; . "$HOME/.cloudflare"; set +a
+fi
+
+: "${CLOUDFLARE_ACCOUNT_ID:?CLOUDFLARE_ACCOUNT_ID required (env or ~/.cloudflare)}"
+: "${R2_ACCESS_KEY_ID:?R2_ACCESS_KEY_ID required (env or ~/.cloudflare)}"
+: "${R2_SECRET_ACCESS_KEY:?R2_SECRET_ACCESS_KEY required (env or ~/.cloudflare)}"
 
 BUCKETS=("$@")
 [ "${#BUCKETS[@]}" -gt 0 ] || BUCKETS=(proton-pulse-data proton-pulse-data-staging proton-pulse-data-backups)
