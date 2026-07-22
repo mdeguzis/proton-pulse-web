@@ -66,28 +66,56 @@ elif [ -d "$OUTPUT_DIR/data" ]; then
   # backs off exponentially with jitter and inspects response
   # metadata for throttling signals.
   aws configure set default.s3.max_concurrent_requests 4
-  # Verbose progress: aws prints one "upload:/delete:" line per changed object.
-  # The first migration uploads ~187k objects, so we summarize every 2000 lines
-  # (plus a final total) instead of the quiet --only-show-errors, so the log
-  # shows the sync steadily advancing. stdbuf keeps awk line-buffered for
-  # real-time output; pipefail (set at top) still propagates an aws failure.
-  AWS_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID" \
-  AWS_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY" \
-  AWS_DEFAULT_REGION="auto" \
-  AWS_MAX_ATTEMPTS=6 \
-  AWS_RETRY_MODE=adaptive \
-  aws s3 sync "$OUTPUT_DIR/data" "s3://$R2_BUCKET/data" \
-    --endpoint-url "https://${CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com" \
-    --content-type application/json \
-    --exclude "*.html" \
-    --no-progress \
-    | stdbuf -oL awk -v total="$local_count" '
-        { c++ }
-        c % 2000 == 0 { printf "[publish-cloudflare]   synced %d objects (~%d%% of %d)...\n", c, (total>0 ? c*100/total : 0), total }
-        END { printf "[publish-cloudflare]   done: %d objects changed (uploaded/deleted)\n", c }
-      '
+
+  # One `aws s3 sync` pass. Verbose progress: aws prints one line per changed
+  # object; awk summarizes every 2000 (stdbuf keeps it line-buffered for
+  # real-time output). pipefail (set at top) propagates an aws failure through
+  # the awk pipe, so the `if` in the loop below sees it.
+  sync_pass() {
+    local pass="$1"
+    AWS_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID" \
+    AWS_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY" \
+    AWS_DEFAULT_REGION="auto" \
+    AWS_MAX_ATTEMPTS=10 \
+    AWS_RETRY_MODE=adaptive \
+    aws s3 sync "$OUTPUT_DIR/data" "s3://$R2_BUCKET/data" \
+      --endpoint-url "https://${CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com" \
+      --content-type application/json \
+      --exclude "*.html" \
+      --no-progress \
+      | stdbuf -oL awk -v total="$local_count" -v pass="$pass" '
+          { c++ }
+          c % 2000 == 0 { printf "[publish-cloudflare]   pass %d: synced %d objects (~%d%% of %d)...\n", pass, c, (total>0 ? c*100/total : 0), total }
+          END { printf "[publish-cloudflare]   pass %d: %d objects changed this pass\n", pass, c }
+        '
+  }
+
+  # aws s3 sync is incremental, so re-running after a transient failure RESUMES
+  # (already-uploaded objects are skipped). A single ~187k-object sync against
+  # R2 occasionally trips a transient error that exhausts even adaptive retry and
+  # fails the whole pass at a random point (43%, 82%, ...). Wrap it in an outer
+  # retry loop: each pass uploads fewer objects until one completes cleanly, so
+  # a mid-sync R2 hiccup self-heals instead of failing the deploy. NOTE: this
+  # does NOT paper over a real permission error (e.g. AccessDenied on the bucket)
+  # -- that fails every pass instantly and the loop still exits non-zero.
+  MAX_SYNC_PASSES="${MAX_SYNC_PASSES:-8}"
+  sync_ok=0
+  for pass in $(seq 1 "$MAX_SYNC_PASSES"); do
+    log "R2 sync pass $pass/$MAX_SYNC_PASSES to r2://$R2_BUCKET/data ..."
+    if sync_pass "$pass"; then
+      sync_ok=1
+      break
+    fi
+    log "R2 sync pass $pass failed (likely transient); re-running to resume from where it stopped"
+    sleep $((pass * 15))
+  done
   sync_end=$(date +%s)
-  log "R2 sync complete in $((sync_end - sync_start))s"
+  if [ "$sync_ok" = 1 ]; then
+    log "R2 sync complete in $((sync_end - sync_start))s ($pass pass(es))"
+  else
+    log "ERROR: R2 sync to r2://$R2_BUCKET/data failed after $MAX_SYNC_PASSES passes (check bucket perms if it failed instantly with 0 objects)"
+    exit 1
+  fi
 else
   log "WARNING: $OUTPUT_DIR/data not found -- skipping R2 sync"
 fi
