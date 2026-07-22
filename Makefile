@@ -10,7 +10,7 @@ WATCH_ALL_WORKFLOWS ?= true
 STAGING_VERSION_URL ?= https://mdeguzis.github.io/proton-pulse-web-staging/version.json
 FORCE_DEPLOY ?=
 
-.PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker check-cert \
+.PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker check-cert r2-canary \
 	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-staging-finalize gh-resume gh-finalize-only gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
 	cf-staging cf-prod \
 	build serve smoke smoke-live pre-push coverage deploy-worker
@@ -45,6 +45,12 @@ smoke:
 # Pages cert, no more origin cert / GitHub Pages ACME state). Read-only.
 check-cert:
 	@bash scripts/check-cert.sh
+
+# R2 canary: prove each R2 bucket is writable/listable/readable/deletable with
+# the current S3 creds (catches AccessDenied-type regressions fast). Needs
+# CLOUDFLARE_ACCOUNT_ID + R2_ACCESS_KEY_ID + R2_SECRET_ACCESS_KEY in the env.
+r2-canary:
+	@bash scripts/r2-canary.sh
 
 # Same harness pointed at the production site -- skips the local staging
 # step (so no error-catcher injection; DOM-state assertions only) and

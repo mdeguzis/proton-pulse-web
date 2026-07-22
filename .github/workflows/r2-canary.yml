@@ -1,0 +1,42 @@
+name: R2 Canary
+
+# Fast integration test that every R2 bucket is writable/listable/readable/
+# deletable with the current S3 credentials. Runs daily and on demand so a
+# broken bucket token (e.g. AccessDenied on ListObjectsV2 after a key roll or a
+# bucket split) surfaces in seconds -- not ~40 min into a real data sync.
+# A failure is surfaced to #builds via Discord CI Status (this workflow's name
+# is listed there).
+
+on:
+  schedule:
+    # Daily, offset from the data pipeline (which runs at 00:00) so the canary
+    # verifies the buckets before the next nightly sync would rely on them.
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: r2-canary
+  cancel-in-progress: false
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (for the script)
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Canary every R2 bucket (put / list / get / delete)
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          bash scripts/r2-canary.sh \
+            proton-pulse-data \
+            proton-pulse-data-staging \
+            proton-pulse-data-backups
