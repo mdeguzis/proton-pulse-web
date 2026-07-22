@@ -1,0 +1,38 @@
+name: R2 Snapshot Backup
+
+# Nightly tarball of proton-pulse-data (prod R2 bucket) into
+# proton-pulse-data-backups (#381). Enables fast restore + fast staging seed.
+
+on:
+  schedule:
+    # Daily at 05:00 UTC -- after the pipeline typically finishes its
+    # nightly runs so the snapshot captures the freshest state.
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+    inputs:
+      source_bucket:
+        description: "R2 bucket to snapshot"
+        required: false
+        default: "proton-pulse-data"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Take snapshot + upload
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          SOURCE_BUCKET: ${{ inputs.source_bucket || 'proton-pulse-data' }}
+          BACKUPS_BUCKET: proton-pulse-data-backups
+        run: |
+          bash scripts/backup-r2-snapshot.sh
