@@ -1,0 +1,37 @@
+name: Supabase Canary
+
+# Fast integration test that the Supabase credentials the site + pipeline depend
+# on actually work. Supabase is the only canonical data store, so a broken key
+# here is the scariest secret failure we have. Runs daily and on demand so a
+# rotated/invalid anon or service-role key surfaces in seconds rather than when a
+# real login or pipeline write fails. A failure is surfaced to #builds via
+# Discord CI Status (this workflow's name is listed there). Part of #383.
+
+on:
+  schedule:
+    # Daily at 08:00, offset from R2 Canary (07:00) and the pipeline (00:00).
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: supabase-canary
+  cancel-in-progress: false
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (for the script + shipped anon key fallback)
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Canary Supabase (anon read + enforcement + RPC + service-role RLS bypass)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: bash scripts/supabase-canary.sh
