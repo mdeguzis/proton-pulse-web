@@ -39,9 +39,18 @@ export const PROD_ROOT = 'https://www.proton-pulse.com';
 export const CDN = USES_PROD_DATA
   ? 'https://www.proton-pulse.com/data'
   : `${window.location.origin}${STAGING_SITE_BASE}/data`;
-export const dataFilesHref = appId => USES_PROD_DATA
-  ? `https://www.proton-pulse.com/data/${appId}/`
-  : `${STAGING_SITE_BASE}/data/${appId}/`;
+// Per-env data host lookup (post-CF Pages migration). Same hostname-based
+// routing dataUrl() uses; kept synchronous here so it can build an <a href>
+// without an await. The R2 buckets do not serve a directory index for the
+// bare /data/<id>/ path, so we link straight at latest.json which is the
+// concrete file every game has -- users can navigate to sibling files
+// (year buckets, votes.json) from there.
+function _dataHost() {
+  const host = (typeof window !== 'undefined' && window.location && window.location.hostname) || '';
+  if (host === 'staging.proton-pulse.com') return 'https://staging-data.proton-pulse.com';
+  return 'https://data.proton-pulse.com';
+}
+export const dataFilesHref = appId => `${_dataHost()}/data/${appId}/latest.json`;
 
 // Fetch a pipeline data path from the current origin first; if it 404s,
 // retry once against production so a staging build that hasn't run the
