@@ -1,17 +1,23 @@
 // protondb (api) for the app page. Relocated from app.js.
 
-import { CDN } from '../config.js?v=979b9bbc';
 import { appIdToDir } from '../../lib/app-id.js?v=18a73fb7';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 
 /**
  * Fetch the latest CDN report bundle for a game.
- * Hits `${CDN}/${appIdToDir(appId)}/latest.json` (static JSON hosted on CDN).
+ * Routes through dataUrl() so the per-env data host is honored:
+ *   www.proton-pulse.com     -> data.proton-pulse.com/data/...
+ *   staging.proton-pulse.com -> staging-data.proton-pulse.com/data/...
+ * The old CDN constant in config.js is path-based (from the pre-CF-Pages
+ * GH Pages layout) and produced 404s on the CF Pages hostnames because the
+ * per-app data lives on R2, not on the Pages shell.
  * @param {string|number} appId - Canonical app ID ('730', 'gog:123', 'epic:abc').
  * @returns {Promise<Array<object>>} Array of report objects, or empty array on failure.
  */
 export async function fetchCdn(appId) {
   try {
-    const r = await fetch(`${CDN}/${appIdToDir(appId)}/latest.json`);
+    const url = await dataUrl(`data/${appIdToDir(appId)}/latest.json`);
+    const r = await fetch(url);
     if (!r.ok) return [];
     return await r.json();
   } catch { return []; }
