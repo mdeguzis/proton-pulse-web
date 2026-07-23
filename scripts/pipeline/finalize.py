@@ -62,6 +62,19 @@ from .stats import write_stats_json
 from .validate_app_ids import validate_steam_app_ids
 
 
+def _log_progress(tag: str, processed: int, total: int | None = None, every: int = 10000) -> None:
+    """Heartbeat for a long finalize loop: emit one line every `every` items so
+    the CI log visibly ticks along, without a line per game. Matches the
+    app-index cadence (see feedback_never_obscure -- still surface work, just at
+    a legible rate). log() is flush-safe, so these stream into the Actions log
+    live instead of buffering until the phase ends."""
+    if processed and processed % every == 0:
+        if total:
+            log(f"[{tag}] progress: {processed:,}/{total:,}")
+        else:
+            log(f"[{tag}] progress: {processed:,} processed")
+
+
 def log_summary(
     parsed_count: int,
     data_output_path: Path,
@@ -86,8 +99,12 @@ def log_summary(
 
 
 def generate_latest_files(data_output_path: Path) -> None:
+    log("[latest] START: writing latest.json per app dir")
     count = 0
+    scanned = 0
     for app_dir in data_output_path.iterdir():
+        scanned += 1
+        _log_progress("latest", scanned, every=25000)
         if not app_dir.is_dir():
             continue
         year_files = sorted(app_dir.glob("*.json"), key=lambda p: p.stem)
@@ -98,7 +115,7 @@ def generate_latest_files(data_output_path: Path) -> None:
         latest_dst = app_dir / "latest.json"
         latest_dst.write_bytes(latest_src.read_bytes())
         count += 1
-    log(f"[latest] Generated {count} latest.json files", debug=True)
+    log(f"[latest] done: generated {count:,} latest.json files ({scanned:,} dirs scanned)")
 
 
 def reindex_apps(output_dir: str, app_ids: list[str]) -> None:
@@ -172,6 +189,7 @@ def generate_app_indexes(index_keys: set, data_output_path: Path) -> None:
 
 
 def generate_index_html(index_keys: set, output_path: Path) -> None:
+    log("[data-index] START: building data-index.html")
     app_years: dict[str, list[str]] = {}
     for (app_id, year) in index_keys:
         app_years.setdefault(app_id, []).append(year)
@@ -771,8 +789,12 @@ def generate_recent_reports(data_output_path: Path, output_path: Path, limit: in
             if isinstance(row, list) and len(row) >= 3:
                 index[str(row[0])] = row
 
+    log("[recent-reports] START: scanning app dirs for latest report timestamps")
     results = []
+    scanned = 0
     for app_dir in data_output_path.iterdir():
+        scanned += 1
+        _log_progress("recent-reports", scanned, every=25000)
         if not app_dir.is_dir():
             continue
         app_id = dir_to_app_id(app_dir.name)
@@ -875,7 +897,9 @@ def generate_search_index(
     seen_ids: set[str] = set()
 
     now_ts = time.time()
-    for app_id in app_ids:
+    log(f"[search-index] START: summarizing {len(app_ids):,} games with report data")
+    for _si_i, app_id in enumerate(app_ids, 1):
+        _log_progress("search-index", _si_i, total=len(app_ids))
         app_dir = data_output_path / app_id_to_dir(app_id)
         title = _extract_title(app_dir)
         if not title:
@@ -1075,10 +1099,14 @@ def generate_extended_steam_index(
     budget_probed = 0
     budget_adult = 0
     budget_left = budget
+    log(f"[search-index-ext] START: scanning {len(steam_catalog):,} Steam catalog entries")
+    _ext_i = 0
     # Stable order (numeric app_id) for the budget pass so uncached apps
     # get covered in a deterministic sequence across runs -- means every
     # ~30 runs the whole catalog cycles even if the catalog grows.
     for app_id, title in sorted(steam_catalog.items(), key=lambda kv: int(kv[0]) if str(kv[0]).isdigit() else 10**12):
+        _ext_i += 1
+        _log_progress("search-index-ext", _ext_i, total=len(steam_catalog), every=20000)
         if str(app_id) in seen_ids:
             skipped_already_primary += 1
             continue
@@ -1196,7 +1224,11 @@ def generate_coverage_report(
     log(f"[coverage] Final coverage universe   : {len(all_app_ids):,}")
 
     rows = []
+    log(f"[coverage] START: building coverage rows for {len(all_app_ids):,} apps")
+    _cov_i = 0
     for app_id in sorted(all_app_ids, key=lambda a: (0, int(a)) if a.isdigit() else (1, a)):
+        _cov_i += 1
+        _log_progress("coverage", _cov_i, total=len(all_app_ids), every=20000)
         metadata = read_app_metadata(data_output_path, app_id)
         official = metadata.get("official_dump", False)
         protondb_live = metadata.get("protondb_live", False) or app_id in state_backfill_app_ids
