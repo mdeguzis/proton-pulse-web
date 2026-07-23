@@ -264,8 +264,8 @@ def test_enricher_no_op_on_malformed_index(tmp_path):
 # ---- _cargo_get ------------------------------------------------------------
 
 
-def _fake_urlopen(body: str):
-    """Context-manager fake for urllib.request.urlopen -- returns `body` on read."""
+def _fake_response(body: str):
+    """Context-manager fake for opener.open() -- returns `body` on read."""
     class _Resp:
         def __enter__(self):
             return self
@@ -276,39 +276,165 @@ def _fake_urlopen(body: str):
     return _Resp()
 
 
+class _FakeOpener:
+    """Stand-in for the urllib opener returned by _build_session_opener.
+    Captures every call to .open() so tests can assert on the URL / Request
+    args after the fact. Tests provide `responder(url_or_req) -> str` for the
+    body. Returning None for the body simulates a transport error via raise.
+    """
+    def __init__(self, responder):
+        self._responder = responder
+        self.addheaders = []
+        self.calls = []
+    def open(self, url_or_req, timeout=None):
+        self.calls.append(url_or_req)
+        body = self._responder(url_or_req)
+        if body is None:
+            raise OSError("mocked transport error")
+        return _fake_response(body)
+
+
+def _mock_session(responder):
+    """Patch _build_session_opener to return a _FakeOpener configured with
+    the given body responder. Also resets the module-level session cache so
+    the fake actually gets constructed on the next call.
+    """
+    from scripts.pipeline import pcgamingwiki as _pgw
+    _pgw._reset_session_for_tests()
+    opener = _FakeOpener(responder)
+    return opener, patch("scripts.pipeline.pcgamingwiki._build_session_opener", return_value=opener)
+
+
 def test_cargo_get_returns_parsed_json_on_success():
     payload = '{"cargoquery": [{"title": {"page": "X"}}]}'
-    with patch("scripts.pipeline.pcgamingwiki.urllib.request.urlopen", return_value=_fake_urlopen(payload)):
+    opener, patcher = _mock_session(lambda _u: payload)
+    with patcher:
         result = _cargo_get({"action": "cargoquery"})
     assert result == {"cargoquery": [{"title": {"page": "X"}}]}
 
 
 def test_cargo_get_sends_descriptive_user_agent():
-    # MediaWiki API etiquette: every request must identify our tool +
-    # a way to contact us. A missing / blank User-Agent can get us 403'd.
-    captured = {}
-    def _spy(req, timeout):
-        captured["ua"] = req.headers.get("User-agent", "")
-        return _fake_urlopen('{"cargoquery": []}')
-    with patch("scripts.pipeline.pcgamingwiki.urllib.request.urlopen", side_effect=_spy):
+    # MediaWiki API etiquette: every request must identify our tool. The
+    # opener's addheaders list carries User-Agent; tests spy on it.
+    opener, patcher = _mock_session(lambda _u: '{"cargoquery": []}')
+    with patcher:
         _cargo_get({"action": "cargoquery"})
-    assert "proton-pulse-web" in captured["ua"]
-    assert "proton-pulse.com" in captured["ua"]
+    # _build_session_opener sets a User-Agent on the opener's addheaders.
+    # Since we patched _build_session_opener the addheaders on this fake
+    # opener are empty -- that's fine. What we're really asserting is that
+    # the module TRUSTS the opener's addheaders instead of pinning UA
+    # per-request. Guard against a future edit that per-request sets UA
+    # (which would bypass the session cookie plumbing).
+    import scripts.pipeline.pcgamingwiki as _pgw
+    # Rebuild the real opener to inspect its default headers.
+    _pgw._reset_session_for_tests()
+    real = _pgw._build_session_opener()
+    headers = dict(real.addheaders)
+    ua = headers.get("User-Agent", "")
+    assert "proton-pulse-web" in ua
+    assert "proton-pulse.com" in ua
 
 
 def test_cargo_get_returns_none_on_transport_failure():
-    with patch("scripts.pipeline.pcgamingwiki.urllib.request.urlopen", side_effect=OSError("boom")):
+    opener, patcher = _mock_session(lambda _u: None)
+    with patcher:
         assert _cargo_get({"action": "cargoquery"}) is None
 
 
 def test_cargo_get_returns_none_on_json_parse_failure():
-    with patch("scripts.pipeline.pcgamingwiki.urllib.request.urlopen", return_value=_fake_urlopen("not json")):
+    opener, patcher = _mock_session(lambda _u: "not json")
+    with patcher:
         assert _cargo_get({"action": "cargoquery"}) is None
 
 
 def test_cargo_get_returns_none_when_response_is_not_a_dict():
-    with patch("scripts.pipeline.pcgamingwiki.urllib.request.urlopen", return_value=_fake_urlopen("[1, 2, 3]")):
+    opener, patcher = _mock_session(lambda _u: "[1, 2, 3]")
+    with patcher:
         assert _cargo_get({"action": "cargoquery"}) is None
+
+
+def test_cargo_get_always_sends_maxlag_param():
+    # #387: MediaWiki etiquette. Every request carries maxlag=5 so the
+    # server can 503 us politely during high load instead of falling
+    # over. Regression guard against a future edit that drops the param.
+    opener, patcher = _mock_session(lambda _u: '{"cargoquery": []}')
+    with patcher:
+        _cargo_get({"action": "cargoquery", "tables": "Infobox_game"})
+    assert len(opener.calls) == 1
+    url = opener.calls[0]
+    assert "maxlag=5" in url
+
+
+def test_cargo_get_logs_when_server_reports_maxlag_pressure(capsys):
+    # A 200 body carrying {error: {code: "maxlag"}} means the server is
+    # under load. Surface it in the logs so a human eyeballing the run can
+    # see why some pages came back short.
+    body = json.dumps({"error": {"code": "maxlag", "info": "waiting for a slave"}})
+    opener, patcher = _mock_session(lambda _u: body)
+    with patcher:
+        _cargo_get({"action": "cargoquery"})
+    captured = capsys.readouterr()
+    assert "maxlag" in captured.err
+
+
+# ---- Bot auth (#387) ------------------------------------------------------
+
+
+def test_build_session_opener_skips_login_when_no_creds():
+    # Backwards compat: without PCGAMINGWIKI_BOT_USER / _BOT_PASS the module
+    # must build an anonymous opener without touching the network.
+    from scripts.pipeline import pcgamingwiki as _pgw
+    _pgw._reset_session_for_tests()
+    with patch("scripts.pipeline.pcgamingwiki._BOT_USER", ""), \
+         patch("scripts.pipeline.pcgamingwiki._BOT_PASS", ""), \
+         patch("scripts.pipeline.pcgamingwiki._mediawiki_bot_login") as m:
+        opener = _pgw._build_session_opener()
+    assert opener is not None
+    m.assert_not_called()
+    assert _pgw._session_logged_in is False
+
+
+def test_build_session_opener_attempts_login_when_creds_set():
+    from scripts.pipeline import pcgamingwiki as _pgw
+    _pgw._reset_session_for_tests()
+    with patch("scripts.pipeline.pcgamingwiki._BOT_USER", "protonpulse-bot"), \
+         patch("scripts.pipeline.pcgamingwiki._BOT_PASS", "sekret"), \
+         patch("scripts.pipeline.pcgamingwiki._mediawiki_bot_login") as m:
+        _pgw._build_session_opener()
+    m.assert_called_once()
+    assert _pgw._session_logged_in is True
+
+
+def test_build_session_opener_falls_back_to_anonymous_on_login_failure(capsys):
+    # A rejected bot password (typo, revoked, wrong bot name) must not
+    # crash the whole pipeline -- fall through to anonymous fetch so the
+    # caller can still get SOMETHING. Log the failure so a human can fix
+    # the secret on the next run.
+    from scripts.pipeline import pcgamingwiki as _pgw
+    _pgw._reset_session_for_tests()
+    with patch("scripts.pipeline.pcgamingwiki._BOT_USER", "wrong"), \
+         patch("scripts.pipeline.pcgamingwiki._BOT_PASS", "wrong"), \
+         patch("scripts.pipeline.pcgamingwiki._mediawiki_bot_login", side_effect=RuntimeError("login result='Failed'")):
+        opener = _pgw._build_session_opener()
+    assert opener is not None
+    assert _pgw._session_logged_in is False
+    captured = capsys.readouterr()
+    assert "bot login failed" in captured.err
+
+
+def test_build_session_opener_is_memoized_across_calls():
+    # login should happen at most once per process. Second call to
+    # _build_session_opener returns the same opener and does NOT re-login.
+    from scripts.pipeline import pcgamingwiki as _pgw
+    _pgw._reset_session_for_tests()
+    with patch("scripts.pipeline.pcgamingwiki._BOT_USER", "bot"), \
+         patch("scripts.pipeline.pcgamingwiki._BOT_PASS", "pass"), \
+         patch("scripts.pipeline.pcgamingwiki._mediawiki_bot_login") as m:
+        first = _pgw._build_session_opener()
+        second = _pgw._build_session_opener()
+    assert first is second
+    m.assert_called_once()
+
 
 
 # ---- _paginate_cargo ------------------------------------------------------

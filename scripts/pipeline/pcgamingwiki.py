@@ -37,6 +37,7 @@ Attribution boilerplate lives in `proton-pulse-web-wiki/Data-Pipeline.md`.
 """
 from __future__ import annotations
 
+import http.cookiejar
 import json
 import os as _os
 import time
@@ -73,6 +74,21 @@ MAX_PAGES = 200
 # when the on-disk cache is still within its TTL.
 FORCE_REFRESH = _os.environ.get("PCGAMINGWIKI_FORCE_REFRESH", "").lower() in ("1", "true", "yes")
 
+# MediaWiki bot credentials (#387). When both are set, the pipeline
+# performs a one-time login before the Cargo pagination and reuses the
+# resulting session cookie -- authenticated calls sit in a much higher
+# rate bucket than anonymous. When either is missing, requests fall
+# through as anonymous (backwards compat with the pre-#387 behavior).
+# Create the bot password at Special:BotPasswords on pcgamingwiki.com;
+# restrict to read-only actions (cargoquery / cargofields / query / parse).
+_BOT_USER = _os.environ.get("PCGAMINGWIKI_BOT_USER", "").strip()
+_BOT_PASS = _os.environ.get("PCGAMINGWIKI_BOT_PASS", "").strip()
+
+# maxlag politely tells the MediaWiki server "if you are busy, 503 me
+# instead of hurting". Value in seconds; 5 is the standard bot value per
+# https://www.mediawiki.org/wiki/Manual:Maxlag_parameter
+MAXLAG_SEC = 5
+
 # Whitelist of OS strings we accept from PCGW's `Available_on` field.
 # Anything else gets dropped so an unexpected value ("Web" experimentation,
 # console ports) does not surface in the frontend without a schema review.
@@ -108,23 +124,104 @@ def _save_cache(cache_path: Path, cache: dict) -> None:
     cache_path.write_text(json.dumps(cache, sort_keys=True), encoding="utf-8")
 
 
+# Shared urllib opener with a cookie jar so a one-time bot login carries a
+# session cookie through the entire pagination. Constructed lazily on first
+# call to _cargo_get and reused for the rest of the process. Anonymous
+# fallback: same opener without the login step.
+_session_opener: urllib.request.OpenerDirector | None = None
+_session_logged_in: bool = False
+
+
+def _reset_session_for_tests() -> None:
+    """Reset the memoized opener + login flag. Only for unit tests -- the
+    module is process-scoped in production and we do not want to re-login on
+    every Cargo call.
+    """
+    global _session_opener, _session_logged_in
+    _session_opener = None
+    _session_logged_in = False
+
+
+def _build_session_opener() -> urllib.request.OpenerDirector:
+    """Return an opener with a CookieJar attached + default headers. Attempts
+    a MediaWiki bot login when PCGAMINGWIKI_BOT_USER + PCGAMINGWIKI_BOT_PASS
+    are set; falls back to anonymous when they are missing or login fails.
+    Memoized -- login only happens once per process.
+    """
+    global _session_opener, _session_logged_in
+    if _session_opener is not None:
+        return _session_opener
+    jar = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
+    # addheaders applies to every request the opener makes so we do not need
+    # to set User-Agent on each Request object below.
+    opener.addheaders = [
+        ("User-Agent", USER_AGENT),
+        ("Accept", "application/json"),
+    ]
+    if _BOT_USER and _BOT_PASS:
+        try:
+            _mediawiki_bot_login(opener)
+            _session_logged_in = True
+            log(f"[pcgamingwiki] authenticated as bot user {_BOT_USER}")
+        except Exception as exc:
+            log(f"[pcgamingwiki] WARN: bot login failed ({exc}); proceeding anonymously")
+    _session_opener = opener
+    return opener
+
+
+def _mediawiki_bot_login(opener: urllib.request.OpenerDirector) -> None:
+    """Two-step MediaWiki login. Raises on any failure so the caller can
+    decide whether to fall back to anonymous.
+
+    Step 1: `action=query&meta=tokens&type=login` -> logintoken
+    Step 2: `action=login&lgname=...&lgpassword=...&lgtoken=...` -> Success
+
+    Cookies from step 2 land in the opener's CookieJar and get sent on every
+    subsequent request.
+    """
+    if not CARGO_URL.startswith("https://"):
+        raise RuntimeError("CARGO_URL scheme is not https:// -- refusing to log in")
+    # Step 1: fetch a login token.
+    token_url = f"{CARGO_URL}?{urllib.parse.urlencode({'action': 'query', 'meta': 'tokens', 'type': 'login', 'format': 'json'})}"
+    with opener.open(token_url, timeout=CARGO_TIMEOUT) as resp:  # nosec B310  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected - URL is the CARGO_URL constant with a fixed action=query
+        body = json.loads(resp.read().decode("utf-8"))
+    logintoken = body.get("query", {}).get("tokens", {}).get("logintoken")
+    if not logintoken:
+        raise RuntimeError(f"no logintoken in response: {body!r}")
+    # Step 2: POST the login. Note: `action=login` on MediaWiki MUST be POST.
+    data = urllib.parse.urlencode({
+        "action": "login",
+        "lgname": _BOT_USER,
+        "lgpassword": _BOT_PASS,
+        "lgtoken": logintoken,
+        "format": "json",
+    }).encode("utf-8")
+    req = urllib.request.Request(CARGO_URL, data=data, method="POST")
+    with opener.open(req, timeout=CARGO_TIMEOUT) as resp:  # nosec B310  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected - CARGO_URL is the fixed constant
+        result = json.loads(resp.read().decode("utf-8"))
+    outcome = result.get("login", {}).get("result", "")
+    if outcome != "Success":
+        raise RuntimeError(f"login result={outcome!r}: {result!r}")
+
+
 def _cargo_get(params: dict) -> dict | None:
     """One-shot Cargo API GET. Returns the parsed JSON dict on success, None
     on any transport / parse failure. Enforces https:// on the endpoint so a
     future edit that swaps CARGO_URL for a caller-supplied value cannot smuggle
-    a file:// URL through urlopen.
+    a file:// URL through urlopen. Every request carries maxlag=5 so the
+    MediaWiki server can 503 us politely during high load rather than tipping
+    over.
     """
     if not CARGO_URL.startswith("https://"):
         log("[pcgamingwiki] WARN: CARGO_URL scheme is not https:// -- refusing to fetch")
         return None
+    params = {**params, "maxlag": MAXLAG_SEC}
     qs = urllib.parse.urlencode(params)
     url = f"{CARGO_URL}?{qs}"
-    req = urllib.request.Request(url, headers={
-        "Accept": "application/json",
-        "User-Agent": USER_AGENT,
-    })
+    opener = _build_session_opener()
     try:
-        with urllib.request.urlopen(req, timeout=CARGO_TIMEOUT) as resp:  # nosec B310  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected - URL is the fixed CARGO_URL constant with querystring params interpolated
+        with opener.open(url, timeout=CARGO_TIMEOUT) as resp:  # nosec B310  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected - URL is the fixed CARGO_URL constant with querystring params interpolated
             body = resp.read().decode("utf-8")
     except Exception as exc:
         log(f"[pcgamingwiki] WARN: cargo fetch failed: {exc}")
@@ -136,6 +233,12 @@ def _cargo_get(params: dict) -> dict | None:
         return None
     if not isinstance(data, dict):
         return None
+    # MediaWiki signals lag pressure via `error: {code: "maxlag", ...}` with a
+    # 200 HTTP status. Surface it clearly instead of failing silently -- the
+    # caller's retry loop can back off.
+    err = data.get("error")
+    if isinstance(err, dict) and err.get("code") == "maxlag":
+        log(f"[pcgamingwiki] WARN: server maxlag pressure -- {err.get('info', '')}")
     return data
 
 

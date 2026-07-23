@@ -61,6 +61,7 @@ from .pcgamingwiki import (
     CARGO_URL,
     MAX_PAGES,
     USER_AGENT,
+    _cargo_get,
     _first_engine,
     _parse_available_on,
 )
@@ -116,33 +117,6 @@ def _load_cache(cache_path: Path) -> dict:
 
 def _save_cache(cache_path: Path, cache: dict) -> None:
     cache_path.write_text(json.dumps(cache, sort_keys=True), encoding="utf-8")
-
-
-def _cargo_get(params: dict) -> dict | None:
-    """One-shot Cargo GET. Returns parsed JSON dict or None on any failure."""
-    if not CARGO_URL.startswith("https://"):
-        log("[pcgwiki-catalog] WARN: CARGO_URL scheme is not https://; refusing to fetch")
-        return None
-    qs = urllib.parse.urlencode(params)
-    url = f"{CARGO_URL}?{qs}"
-    req = urllib.request.Request(url, headers={
-        "Accept": "application/json",
-        "User-Agent": USER_AGENT,
-    })
-    try:
-        with urllib.request.urlopen(req, timeout=CARGO_TIMEOUT) as resp:  # nosec B310  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected - URL is the fixed CARGO_URL constant with querystring params interpolated
-            body = resp.read().decode("utf-8")
-    except Exception as exc:
-        log(f"[pcgwiki-catalog] WARN: cargo fetch failed: {exc}")
-        return None
-    try:
-        data = json.loads(body)
-    except Exception as exc:
-        log(f"[pcgwiki-catalog] WARN: cargo JSON parse failed: {exc}")
-        return None
-    if not isinstance(data, dict):
-        return None
-    return data
 
 
 def _fetch_all_pages() -> list[dict] | None:
