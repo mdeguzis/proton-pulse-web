@@ -57,15 +57,17 @@ elif [ -d "$OUTPUT_DIR/data" ]; then
   local_count=$(find "$OUTPUT_DIR/data" -type f | wc -l)
   log "syncing $local_count files from $OUTPUT_DIR/data to r2://$R2_BUCKET/data ..."
   sync_start=$(date +%s)
-  # Throttle concurrency + use adaptive retry so an R2 per-object
-  # ServiceUnavailable does not fail the whole run (#379). Default aws
-  # s3 sync fires 10 concurrent PUTs and retries with a tight backoff;
-  # R2's per-object write limit is roughly 1/sec, so aws's default
-  # retry loop can trip the limit on a single retried object even
-  # though the overall upload rate is fine. `adaptive` retry mode
-  # backs off exponentially with jitter and inspects response
-  # metadata for throttling signals.
-  aws configure set default.s3.max_concurrent_requests 4
+  # Concurrency + adaptive retry so an R2 per-object ServiceUnavailable does not
+  # fail the whole run (#379). Key point: R2's ~1/sec write limit is PER OBJECT
+  # KEY (the same file written repeatedly), NOT a cap across distinct keys. We
+  # write ~187k DISTINCT keys, so that limit does not apply to fan-out -- higher
+  # concurrency is safe. This was pinned to 4 as an over-correction to the #379
+  # transient errors, made before the outer retry loop below existed to catch
+  # them. With that loop + `adaptive` backoff (exponential + jitter, inspects
+  # throttling metadata) as backstops, run wide: 4 concurrent PUTs made a full
+  # ~187k sync crawl for ~40 min. Tunable via R2_SYNC_CONCURRENCY (workflow env)
+  # without a code change, so we can dial back instantly if R2 pushes back.
+  aws configure set default.s3.max_concurrent_requests "${R2_SYNC_CONCURRENCY:-32}"
 
   # One `aws s3 sync` pass. Verbose progress: aws prints one line per changed
   # object; awk summarizes every 2000 (stdbuf keeps it line-buffered for
