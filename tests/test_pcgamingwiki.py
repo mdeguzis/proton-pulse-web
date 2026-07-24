@@ -377,12 +377,25 @@ def test_cargo_get_logs_when_server_reports_maxlag_pressure(capsys):
     assert "maxlag" in captured.err
 
 
-# ---- Bot auth (#387) ------------------------------------------------------
+# ---- Session opener (#387: bot login with anonymous fallback) --------------
+
+
+def test_build_session_opener_has_contact_ua():
+    # PCGW requires a descriptive User-Agent WITH contact info -- generic
+    # UAs get 403 banned. Applies to authed and anonymous sessions alike.
+    from scripts.pipeline import pcgamingwiki as _pgw
+    _pgw._reset_session_for_tests()
+    with patch("scripts.pipeline.pcgamingwiki._BOT_USER", ""), \
+         patch("scripts.pipeline.pcgamingwiki._BOT_PASS", ""):
+        opener = _pgw._build_session_opener()
+    headers = dict(opener.addheaders)
+    assert "proton-pulse-web" in headers["User-Agent"]
+    assert "mdeguzis@gmail.com" in headers["User-Agent"]  # contact info required per PCGW API rules
 
 
 def test_build_session_opener_skips_login_when_no_creds():
-    # Backwards compat: without PCGAMINGWIKI_BOT_USER / _BOT_PASS the module
-    # must build an anonymous opener without touching the network.
+    # Anonymous reads are allowed by PCGW; without creds the opener must
+    # build without touching the network.
     from scripts.pipeline import pcgamingwiki as _pgw
     _pgw._reset_session_for_tests()
     with patch("scripts.pipeline.pcgamingwiki._BOT_USER", ""), \
@@ -397,7 +410,7 @@ def test_build_session_opener_skips_login_when_no_creds():
 def test_build_session_opener_attempts_login_when_creds_set():
     from scripts.pipeline import pcgamingwiki as _pgw
     _pgw._reset_session_for_tests()
-    with patch("scripts.pipeline.pcgamingwiki._BOT_USER", "protonpulse-bot"), \
+    with patch("scripts.pipeline.pcgamingwiki._BOT_USER", "ProfessorKaos64@proton-pulse"), \
          patch("scripts.pipeline.pcgamingwiki._BOT_PASS", "sekret"), \
          patch("scripts.pipeline.pcgamingwiki._mediawiki_bot_login") as m:
         _pgw._build_session_opener()
@@ -406,10 +419,8 @@ def test_build_session_opener_attempts_login_when_creds_set():
 
 
 def test_build_session_opener_falls_back_to_anonymous_on_login_failure(capsys):
-    # A rejected bot password (typo, revoked, wrong bot name) must not
-    # crash the whole pipeline -- fall through to anonymous fetch so the
-    # caller can still get SOMETHING. Log the failure so a human can fix
-    # the secret on the next run.
+    # A rejected bot password (typo, revoked, wrong bot name) must not crash
+    # the pipeline -- anonymous reads are allowed, so fall through and log.
     from scripts.pipeline import pcgamingwiki as _pgw
     _pgw._reset_session_for_tests()
     with patch("scripts.pipeline.pcgamingwiki._BOT_USER", "wrong"), \
@@ -418,13 +429,12 @@ def test_build_session_opener_falls_back_to_anonymous_on_login_failure(capsys):
         opener = _pgw._build_session_opener()
     assert opener is not None
     assert _pgw._session_logged_in is False
-    captured = capsys.readouterr()
-    assert "bot login failed" in captured.err
+    assert "bot login failed" in capsys.readouterr().err
 
 
 def test_build_session_opener_is_memoized_across_calls():
-    # login should happen at most once per process. Second call to
-    # _build_session_opener returns the same opener and does NOT re-login.
+    # Login must happen at most once per process; the second call returns
+    # the same opener without re-logging-in.
     from scripts.pipeline import pcgamingwiki as _pgw
     _pgw._reset_session_for_tests()
     with patch("scripts.pipeline.pcgamingwiki._BOT_USER", "bot"), \
@@ -434,6 +444,45 @@ def test_build_session_opener_is_memoized_across_calls():
         second = _pgw._build_session_opener()
     assert first is second
     m.assert_called_once()
+
+
+def test_cargo_delay_respects_pcgw_rate_limit():
+    # PCGW enforces 30 req/min per IP (429 + 60s block past it). The
+    # inter-request delay must keep us at or under that: >= 2.0 seconds.
+    from scripts.pipeline import pcgamingwiki as _pgw
+    assert _pgw.CARGO_DELAY_SEC >= 2.0
+
+
+def test_cargo_get_retries_once_after_429(capsys):
+    # First response 429 (rate limited), retry succeeds after cooldown.
+    import urllib.error as _uerr
+    from scripts.pipeline import pcgamingwiki as _pgw
+    _pgw._reset_session_for_tests()
+    good = json.dumps({"cargoquery": []})
+    calls = {"n": 0}
+
+    class _Resp:
+        def read(self):
+            return good.encode("utf-8")
+        def __enter__(self):
+            return self
+        def __exit__(self, *a):
+            return False
+
+    def fake_open(url, timeout=None):
+        calls["n"] += 1
+        if calls["n"] == 1:
+            raise _uerr.HTTPError(url, 429, "Too Many Requests", None, None)
+        return _Resp()
+
+    opener = _pgw._build_session_opener()
+    with patch.object(opener, "open", side_effect=fake_open), \
+         patch("scripts.pipeline.pcgamingwiki.time.sleep") as slept:
+        result = _pgw._cargo_get({"action": "cargoquery"})
+    assert result == {"cargoquery": []}
+    assert calls["n"] == 2
+    slept.assert_called_once_with(_pgw.RATE_LIMIT_COOLDOWN_SEC)
+    assert "429" in capsys.readouterr().err
 
 
 

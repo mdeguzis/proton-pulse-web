@@ -41,17 +41,22 @@ import http.cookiejar
 import json
 import os as _os
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
 
 from .common import log
 
-# Cargo endpoint. Every request must carry a descriptive User-Agent per
-# MediaWiki API etiquette or PCGW may 403. See:
-# https://www.pcgamingwiki.com/wiki/PCGamingWiki:API
+# Cargo endpoint. Every request must carry a descriptive User-Agent WITH
+# contact information per https://www.pcgamingwiki.com/wiki/PCGamingWiki:API
+# ("clientname/version (contact information) framework/version") -- generic
+# UA strings get 403 banned.
 CARGO_URL = "https://www.pcgamingwiki.com/w/api.php"
-USER_AGENT = "proton-pulse-web/pipeline (+https://www.proton-pulse.com)"
+USER_AGENT = (
+    "proton-pulse-web/pipeline "
+    "(https://www.proton-pulse.com; mdeguzis@gmail.com) python-urllib"
+)
 
 CACHE_FILENAME = "pcgamingwiki-cache.json"
 
@@ -59,11 +64,18 @@ CACHE_FILENAME = "pcgamingwiki-cache.json"
 # that a daily fetch wastes their capacity for zero benefit.
 FRESH_TTL_SEC = 7 * 24 * 3600
 
-# Cargo pagination. 500 is the documented max per call. Sleep between
-# pages keeps us well under any per-IP throttle.
+# Cargo pagination. 500 is the documented max per call. PCGW enforces a
+# hard 30 requests/minute per IP (429 + 60s IP block past it -- see
+# PCGamingWiki:API), so the inter-request delay must stay >= 2.0s; 2.1
+# leaves margin for request latency jitter. ~100 pages for the full
+# catalog means a weekly refresh costs ~3.5 min, which is fine.
 CARGO_LIMIT = 500
-CARGO_DELAY_SEC = 0.4
+CARGO_DELAY_SEC = 2.1
 CARGO_TIMEOUT = 20
+
+# On HTTP 429 PCGW blocks the IP for 60 seconds; retrying sooner just
+# resets the clock. Wait the documented block window plus margin.
+RATE_LIMIT_COOLDOWN_SEC = 65
 
 # Safety cap: if pagination ever loops or PCGW returns unbounded rows,
 # stop rather than burn the CI budget. ~50k games with Steam IDs is
@@ -74,13 +86,14 @@ MAX_PAGES = 200
 # when the on-disk cache is still within its TTL.
 FORCE_REFRESH = _os.environ.get("PCGAMINGWIKI_FORCE_REFRESH", "").lower() in ("1", "true", "yes")
 
-# MediaWiki bot credentials (#387). When both are set, the pipeline
-# performs a one-time login before the Cargo pagination and reuses the
-# resulting session cookie -- authenticated calls sit in a much higher
-# rate bucket than anonymous. When either is missing, requests fall
-# through as anonymous (backwards compat with the pre-#387 behavior).
-# Create the bot password at Special:BotPasswords on pcgamingwiki.com;
-# restrict to read-only actions (cargoquery / cargofields / query / parse).
+# MediaWiki bot-password credentials (#387). PCGW staff confirmed (Discord,
+# 2026-07-24) that bot passwords created under a personal SSO account via
+# Special:BotPasswords are the supported way to authenticate API reads
+# (action=login, the older login method). Anonymous reads remain allowed and
+# are the fallback when either var is unset or login fails. The bot password
+# needs Basic rights ONLY -- cargoquery reads are covered; grant nothing
+# else. Auth does NOT lift the 30 req/min per-IP limit, so the pacing and
+# 429 cooldown below stay regardless of login state.
 _BOT_USER = _os.environ.get("PCGAMINGWIKI_BOT_USER", "").strip()
 _BOT_PASS = _os.environ.get("PCGAMINGWIKI_BOT_PASS", "").strip()
 
@@ -124,10 +137,10 @@ def _save_cache(cache_path: Path, cache: dict) -> None:
     cache_path.write_text(json.dumps(cache, sort_keys=True), encoding="utf-8")
 
 
-# Shared urllib opener with a cookie jar so a one-time bot login carries a
-# session cookie through the entire pagination. Constructed lazily on first
-# call to _cargo_get and reused for the rest of the process. Anonymous
-# fallback: same opener without the login step.
+# Shared urllib opener with a cookie jar so the one-time bot login carries
+# its session cookie through the entire pagination. Constructed lazily on
+# first call to _cargo_get and reused for the rest of the process.
+# Anonymous fallback: same opener without the login step.
 _session_opener: urllib.request.OpenerDirector | None = None
 _session_logged_in: bool = False
 
@@ -143,18 +156,19 @@ def _reset_session_for_tests() -> None:
 
 
 def _build_session_opener() -> urllib.request.OpenerDirector:
-    """Return an opener with a CookieJar attached + default headers. Attempts
-    a MediaWiki bot login when PCGAMINGWIKI_BOT_USER + PCGAMINGWIKI_BOT_PASS
-    are set; falls back to anonymous when they are missing or login fails.
-    Memoized -- login only happens once per process.
+    """Return a memoized opener with the contact-info User-Agent attached.
+
+    Attempts a MediaWiki bot login when PCGAMINGWIKI_BOT_USER +
+    PCGAMINGWIKI_BOT_PASS are set; falls back to anonymous (allowed for
+    reads) when they are missing or login fails. addheaders applies to
+    every request the opener makes so we do not need to set User-Agent
+    per Request. Login or not, the 30 req/min per-IP pacing applies.
     """
     global _session_opener, _session_logged_in
     if _session_opener is not None:
         return _session_opener
     jar = http.cookiejar.CookieJar()
     opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
-    # addheaders applies to every request the opener makes so we do not need
-    # to set User-Agent on each Request object below.
     opener.addheaders = [
         ("User-Agent", USER_AGENT),
         ("Accept", "application/json"),
@@ -171,8 +185,9 @@ def _build_session_opener() -> urllib.request.OpenerDirector:
 
 
 def _mediawiki_bot_login(opener: urllib.request.OpenerDirector) -> None:
-    """Two-step MediaWiki login. Raises on any failure so the caller can
-    decide whether to fall back to anonymous.
+    """Two-step MediaWiki login (https://www.mediawiki.org/wiki/API:Login,
+    action=login with a bot password). Raises on any failure so the caller
+    can decide whether to fall back to anonymous.
 
     Step 1: `action=query&meta=tokens&type=login` -> logintoken
     Step 2: `action=login&lgname=...&lgpassword=...&lgtoken=...` -> Success
@@ -223,6 +238,23 @@ def _cargo_get(params: dict) -> dict | None:
     try:
         with opener.open(url, timeout=CARGO_TIMEOUT) as resp:  # nosec B310  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected - URL is the fixed CARGO_URL constant with querystring params interpolated
             body = resp.read().decode("utf-8")
+    except urllib.error.HTTPError as exc:
+        # 429 = we tripped the 30 req/min limit and the IP is blocked for
+        # 60s. Retrying sooner just resets the block, so wait it out once
+        # and retry the same request. A second 429 means pacing is broken
+        # somewhere -- give up and let the caller fall back to disk cache.
+        if exc.code == 429:
+            log(f"[pcgamingwiki] WARN: HTTP 429 rate limited -- cooling down {RATE_LIMIT_COOLDOWN_SEC}s before one retry")
+            time.sleep(RATE_LIMIT_COOLDOWN_SEC)
+            try:
+                with opener.open(url, timeout=CARGO_TIMEOUT) as resp:  # nosec B310  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected - same fixed CARGO_URL retry
+                    body = resp.read().decode("utf-8")
+            except Exception as retry_exc:
+                log(f"[pcgamingwiki] WARN: retry after 429 failed: {retry_exc}")
+                return None
+        else:
+            log(f"[pcgamingwiki] WARN: cargo fetch failed: HTTP {exc.code} {exc.reason}")
+            return None
     except Exception as exc:
         log(f"[pcgamingwiki] WARN: cargo fetch failed: {exc}")
         return None
