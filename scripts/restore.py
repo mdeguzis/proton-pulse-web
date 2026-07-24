@@ -57,8 +57,6 @@ REQUIRED_SECRETS = [
     ("R2_ACCESS_KEY_ID", "Cloudflare dashboard -> R2 -> Manage R2 API Tokens"),
     ("R2_SECRET_ACCESS_KEY", "Cloudflare dashboard -> R2 -> Manage R2 API Tokens"),
     ("DISCORD_ANNOUNCE_WEBHOOK", "Discord server integrations"),
-    ("PCGAMINGWIKI_BOT_USER", "pcgamingwiki.com -> Special:BotPasswords"),
-    ("PCGAMINGWIKI_BOT_PASS", "pcgamingwiki.com -> Special:BotPasswords"),
     ("SEMGREP_APP_TOKEN", "semgrep.dev -> Settings -> Tokens"),
 ]
 
