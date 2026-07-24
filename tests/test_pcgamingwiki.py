@@ -377,26 +377,73 @@ def test_cargo_get_logs_when_server_reports_maxlag_pressure(capsys):
     assert "maxlag" in captured.err
 
 
-# ---- Session opener (anonymous by design; PCGamingWiki:API contract) ------
+# ---- Session opener (#387: bot login with anonymous fallback) --------------
 
 
-def test_build_session_opener_is_anonymous_with_contact_ua():
-    # PCGW's API contract: anonymous access, descriptive User-Agent WITH
-    # contact info. No credentials, no cookies, no login round-trip.
+def test_build_session_opener_has_contact_ua():
+    # PCGW requires a descriptive User-Agent WITH contact info -- generic
+    # UAs get 403 banned. Applies to authed and anonymous sessions alike.
     from scripts.pipeline import pcgamingwiki as _pgw
     _pgw._reset_session_for_tests()
-    opener = _pgw._build_session_opener()
+    with patch("scripts.pipeline.pcgamingwiki._BOT_USER", ""), \
+         patch("scripts.pipeline.pcgamingwiki._BOT_PASS", ""):
+        opener = _pgw._build_session_opener()
     headers = dict(opener.addheaders)
     assert "proton-pulse-web" in headers["User-Agent"]
     assert "mdeguzis@gmail.com" in headers["User-Agent"]  # contact info required per PCGW API rules
 
 
-def test_build_session_opener_is_memoized_across_calls():
+def test_build_session_opener_skips_login_when_no_creds():
+    # Anonymous reads are allowed by PCGW; without creds the opener must
+    # build without touching the network.
     from scripts.pipeline import pcgamingwiki as _pgw
     _pgw._reset_session_for_tests()
-    first = _pgw._build_session_opener()
-    second = _pgw._build_session_opener()
+    with patch("scripts.pipeline.pcgamingwiki._BOT_USER", ""), \
+         patch("scripts.pipeline.pcgamingwiki._BOT_PASS", ""), \
+         patch("scripts.pipeline.pcgamingwiki._mediawiki_bot_login") as m:
+        opener = _pgw._build_session_opener()
+    assert opener is not None
+    m.assert_not_called()
+    assert _pgw._session_logged_in is False
+
+
+def test_build_session_opener_attempts_login_when_creds_set():
+    from scripts.pipeline import pcgamingwiki as _pgw
+    _pgw._reset_session_for_tests()
+    with patch("scripts.pipeline.pcgamingwiki._BOT_USER", "ProfessorKaos64@proton-pulse"), \
+         patch("scripts.pipeline.pcgamingwiki._BOT_PASS", "sekret"), \
+         patch("scripts.pipeline.pcgamingwiki._mediawiki_bot_login") as m:
+        _pgw._build_session_opener()
+    m.assert_called_once()
+    assert _pgw._session_logged_in is True
+
+
+def test_build_session_opener_falls_back_to_anonymous_on_login_failure(capsys):
+    # A rejected bot password (typo, revoked, wrong bot name) must not crash
+    # the pipeline -- anonymous reads are allowed, so fall through and log.
+    from scripts.pipeline import pcgamingwiki as _pgw
+    _pgw._reset_session_for_tests()
+    with patch("scripts.pipeline.pcgamingwiki._BOT_USER", "wrong"), \
+         patch("scripts.pipeline.pcgamingwiki._BOT_PASS", "wrong"), \
+         patch("scripts.pipeline.pcgamingwiki._mediawiki_bot_login", side_effect=RuntimeError("login result='Failed'")):
+        opener = _pgw._build_session_opener()
+    assert opener is not None
+    assert _pgw._session_logged_in is False
+    assert "bot login failed" in capsys.readouterr().err
+
+
+def test_build_session_opener_is_memoized_across_calls():
+    # Login must happen at most once per process; the second call returns
+    # the same opener without re-logging-in.
+    from scripts.pipeline import pcgamingwiki as _pgw
+    _pgw._reset_session_for_tests()
+    with patch("scripts.pipeline.pcgamingwiki._BOT_USER", "bot"), \
+         patch("scripts.pipeline.pcgamingwiki._BOT_PASS", "pass"), \
+         patch("scripts.pipeline.pcgamingwiki._mediawiki_bot_login") as m:
+        first = _pgw._build_session_opener()
+        second = _pgw._build_session_opener()
     assert first is second
+    m.assert_called_once()
 
 
 def test_cargo_delay_respects_pcgw_rate_limit():

@@ -455,6 +455,13 @@ jobs:
           # without seeding overrides.
           SUPABASE_URL:      ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          # #387: PCGamingWiki bot password (Special:BotPasswords under the
+          # owner's SSO account, Basic rights only -- PCGW staff confirmed
+          # this is the supported API auth). Either unset = anonymous reads,
+          # which PCGW also allows. Auth does not change the 30 req/min
+          # per-IP limit; pcgamingwiki.py paces for that regardless.
+          PCGAMINGWIKI_BOT_USER: ${{ secrets.PCGAMINGWIKI_BOT_USER }}
+          PCGAMINGWIKI_BOT_PASS: ${{ secrets.PCGAMINGWIKI_BOT_PASS }}
         run: |
           uv run python scripts/split_reports.py finalize --skip-probe \
             /tmp/protondb-output

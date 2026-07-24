@@ -37,6 +37,7 @@ Attribution boilerplate lives in `proton-pulse-web-wiki/Data-Pipeline.md`.
 """
 from __future__ import annotations
 
+import http.cookiejar
 import json
 import os as _os
 import time
@@ -85,12 +86,16 @@ MAX_PAGES = 200
 # when the on-disk cache is still within its TTL.
 FORCE_REFRESH = _os.environ.get("PCGAMINGWIKI_FORCE_REFRESH", "").lower() in ("1", "true", "yes")
 
-# NOTE on auth: #387 originally added a MediaWiki bot-password login here
-# on the assumption that authenticated calls get a higher rate bucket.
-# PCGamingWiki:API documents no such thing -- the public contract is
-# anonymous access, 30 req/min per IP, a descriptive User-Agent with
-# contact info, and aggressive client-side caching. The login was removed;
-# do not reintroduce credentials for this API.
+# MediaWiki bot-password credentials (#387). PCGW staff confirmed (Discord,
+# 2026-07-24) that bot passwords created under a personal SSO account via
+# Special:BotPasswords are the supported way to authenticate API reads
+# (action=login, the older login method). Anonymous reads remain allowed and
+# are the fallback when either var is unset or login fails. The bot password
+# needs Basic rights ONLY -- cargoquery reads are covered; grant nothing
+# else. Auth does NOT lift the 30 req/min per-IP limit, so the pacing and
+# 429 cooldown below stay regardless of login state.
+_BOT_USER = _os.environ.get("PCGAMINGWIKI_BOT_USER", "").strip()
+_BOT_PASS = _os.environ.get("PCGAMINGWIKI_BOT_PASS", "").strip()
 
 # maxlag politely tells the MediaWiki server "if you are busy, 503 me
 # instead of hurting". Value in seconds; 5 is the standard bot value per
@@ -132,37 +137,87 @@ def _save_cache(cache_path: Path, cache: dict) -> None:
     cache_path.write_text(json.dumps(cache, sort_keys=True), encoding="utf-8")
 
 
-# Shared urllib opener so every request carries the same descriptive
-# User-Agent. Constructed lazily on first call to _cargo_get and reused for
-# the rest of the process.
+# Shared urllib opener with a cookie jar so the one-time bot login carries
+# its session cookie through the entire pagination. Constructed lazily on
+# first call to _cargo_get and reused for the rest of the process.
+# Anonymous fallback: same opener without the login step.
 _session_opener: urllib.request.OpenerDirector | None = None
+_session_logged_in: bool = False
 
 
 def _reset_session_for_tests() -> None:
-    """Reset the memoized opener. Only for unit tests -- the module is
-    process-scoped in production.
+    """Reset the memoized opener + login flag. Only for unit tests -- the
+    module is process-scoped in production and we do not want to re-login on
+    every Cargo call.
     """
-    global _session_opener
+    global _session_opener, _session_logged_in
     _session_opener = None
+    _session_logged_in = False
 
 
 def _build_session_opener() -> urllib.request.OpenerDirector:
     """Return a memoized opener with the contact-info User-Agent attached.
 
-    Anonymous by design: PCGamingWiki:API's public contract is anonymous
-    access within 30 req/min. addheaders applies to every request the
-    opener makes so we do not need to set User-Agent per Request.
+    Attempts a MediaWiki bot login when PCGAMINGWIKI_BOT_USER +
+    PCGAMINGWIKI_BOT_PASS are set; falls back to anonymous (allowed for
+    reads) when they are missing or login fails. addheaders applies to
+    every request the opener makes so we do not need to set User-Agent
+    per Request. Login or not, the 30 req/min per-IP pacing applies.
     """
-    global _session_opener
+    global _session_opener, _session_logged_in
     if _session_opener is not None:
         return _session_opener
-    opener = urllib.request.build_opener()
+    jar = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
     opener.addheaders = [
         ("User-Agent", USER_AGENT),
         ("Accept", "application/json"),
     ]
+    if _BOT_USER and _BOT_PASS:
+        try:
+            _mediawiki_bot_login(opener)
+            _session_logged_in = True
+            log(f"[pcgamingwiki] authenticated as bot user {_BOT_USER}")
+        except Exception as exc:
+            log(f"[pcgamingwiki] WARN: bot login failed ({exc}); proceeding anonymously")
     _session_opener = opener
     return opener
+
+
+def _mediawiki_bot_login(opener: urllib.request.OpenerDirector) -> None:
+    """Two-step MediaWiki login (https://www.mediawiki.org/wiki/API:Login,
+    action=login with a bot password). Raises on any failure so the caller
+    can decide whether to fall back to anonymous.
+
+    Step 1: `action=query&meta=tokens&type=login` -> logintoken
+    Step 2: `action=login&lgname=...&lgpassword=...&lgtoken=...` -> Success
+
+    Cookies from step 2 land in the opener's CookieJar and get sent on every
+    subsequent request.
+    """
+    if not CARGO_URL.startswith("https://"):
+        raise RuntimeError("CARGO_URL scheme is not https:// -- refusing to log in")
+    # Step 1: fetch a login token.
+    token_url = f"{CARGO_URL}?{urllib.parse.urlencode({'action': 'query', 'meta': 'tokens', 'type': 'login', 'format': 'json'})}"
+    with opener.open(token_url, timeout=CARGO_TIMEOUT) as resp:  # nosec B310  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected - URL is the CARGO_URL constant with a fixed action=query
+        body = json.loads(resp.read().decode("utf-8"))
+    logintoken = body.get("query", {}).get("tokens", {}).get("logintoken")
+    if not logintoken:
+        raise RuntimeError(f"no logintoken in response: {body!r}")
+    # Step 2: POST the login. Note: `action=login` on MediaWiki MUST be POST.
+    data = urllib.parse.urlencode({
+        "action": "login",
+        "lgname": _BOT_USER,
+        "lgpassword": _BOT_PASS,
+        "lgtoken": logintoken,
+        "format": "json",
+    }).encode("utf-8")
+    req = urllib.request.Request(CARGO_URL, data=data, method="POST")
+    with opener.open(req, timeout=CARGO_TIMEOUT) as resp:  # nosec B310  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected - CARGO_URL is the fixed constant
+        result = json.loads(resp.read().decode("utf-8"))
+    outcome = result.get("login", {}).get("result", "")
+    if outcome != "Success":
+        raise RuntimeError(f"login result={outcome!r}: {result!r}")
 
 
 def _cargo_get(params: dict) -> dict | None:
