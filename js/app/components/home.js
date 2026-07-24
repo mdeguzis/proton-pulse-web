@@ -469,6 +469,7 @@ export async function renderHomePage() {
               <button class="pg-filter" type="button" data-value="steam">Steam</button>
               <button class="pg-filter" type="button" data-value="gog">GOG</button>
               <button class="pg-filter" type="button" data-value="epic">Epic</button>
+              <button class="pg-filter" type="button" data-value="pgwiki" title="Windows games catalogued only on PCGamingWiki (no Steam/GOG/Epic store page)">PCGW</button>
             </div>
             <div class="pg-filter-group" id="home-tier-checks">
               <span class="pg-filter-group-label">Tier</span>
@@ -624,6 +625,7 @@ export async function renderHomePage() {
       if (!sel || sel.size === 0 || sel.has('all') || sel.has('steam')) return 'Popular on Steam';
       if (sel.size === 1 && sel.has('gog')) return 'Popular GOG Games';
       if (sel.size === 1 && sel.has('epic')) return 'Popular Epic Games';
+      if (sel.size === 1 && sel.has('pgwiki')) return 'PCGamingWiki Catalog';
       return 'Popular Games';
     }
 

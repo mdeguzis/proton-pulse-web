@@ -83,30 +83,42 @@ jobs:
             echo "branch=main" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Pull top-level data + cert monitor files from gh-pages
+      - name: Preserve top-level data files from the live target site
         # publish-cloudflare.sh's SMALL_DATA list expects search-index.json,
         # most_played.json, etc. to exist in OUTPUT_DIR. On a shell-only push
-        # there is no fresh pipeline output, so pull the latest versions from
-        # the gh-pages branch (still the source of truth for those files --
-        # the pipeline writes to gh-pages, the CF deploy copies them into the
-        # Pages bundle). Any file missing on gh-pages is skipped silently so
-        # a brand-new file does not break the deploy.
+        # there is no fresh pipeline output, so re-download whatever the LIVE
+        # TARGET currently serves and redeploy it unchanged.
+        #
+        # It must be the live target, NOT gh-pages: gh-pages holds PROD's
+        # last pipeline output. Pulling it while deploying the STAGING shell
+        # silently regressed staging's data to prod state on every push --
+        # staging's pipeline had merged 4,524 pgwiki: search-index rows and
+        # one shell push wiped them. Env-specific data stays env-specific.
+        #
+        # A file the live site lacks (or serves as the SPA HTML fallback --
+        # CF Pages returns 200 text/html for unknown paths) is skipped, and
+        # publish-cloudflare.sh's optional-copy loop tolerates the gap.
+        env:
+          LIVE_BASE: ${{ steps.target.outputs.project == 'proton-pulse-web-staging' && 'https://staging.proton-pulse.com' || 'https://www.proton-pulse.com' }}
         run: |
           set -euo pipefail
           mkdir -p /tmp/shell-out
           FILES=(
             search-index.json search-index-steam-extended.json most_played.json
             recent-reports.json stats.json coverage-summary.json data-versions.json
-            game-images.json game-images-skip.json deck-status.json proton-versions.json
-            steam-catalog.json hardware-suggestions.json scoring-info.json form-schema.json
-            app-id-redirects.json
+            game-images.json game-images-skip.json nonsteam-images.json
+            deck-status.json proton-versions.json steam-catalog.json
+            hardware-suggestions.json scoring-info.json form-schema.json
+            app-id-redirects.json pcgamingwiki.json pcgwiki-catalog.json
           )
           for f in "${FILES[@]}"; do
-            if git show "origin/gh-pages:$f" > "/tmp/shell-out/$f" 2>/dev/null && [ -s "/tmp/shell-out/$f" ]; then
-              echo "pulled $f from origin/gh-pages"
+            if curl -sfL --max-time 30 "$LIVE_BASE/$f" -o "/tmp/shell-out/$f" \
+               && [ -s "/tmp/shell-out/$f" ] \
+               && head -c 1 "/tmp/shell-out/$f" | grep -qv '<'; then
+              echo "preserved $f from $LIVE_BASE"
             else
               rm -f "/tmp/shell-out/$f"
-              echo "skipping $f (not on gh-pages)"
+              echo "skipping $f (absent on live site or HTML fallback)"
             fi
           done
 

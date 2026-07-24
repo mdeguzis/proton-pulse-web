@@ -120,15 +120,25 @@ describe('publish job wires the deploy correctly', () => {
     expect(RAW).toContain('project=proton-pulse-web');
   });
 
-  test('pulls SMALL_DATA files from origin/gh-pages so the deploy is complete', () => {
+  test('preserves SMALL_DATA files from the LIVE TARGET so the deploy is complete and env-correct', () => {
     // Without this step the deployed shell is missing search-index.json,
     // most_played.json, data-versions.json, etc. and same-origin fetches
-    // from the browser fail with the "JSON.parse: unexpected character"
-    // error that motivated this workflow. Regression guard on the loop
-    // shape + a representative file name.
-    expect(RAW).toContain('git show "origin/gh-pages:$f"');
+    // fail. Crucially the source must be the live target site, NOT
+    // origin/gh-pages: gh-pages holds PROD's last pipeline output, and
+    // pulling it during a STAGING shell push regressed staging's data to
+    // prod state (wiped 4,524 pgwiki: search-index rows). Guard the
+    // env-specific base URL wiring + the HTML-fallback sniff (CF Pages
+    // serves 200 text/html for unknown paths).
+    expect(RAW).toContain('LIVE_BASE:');
+    expect(RAW).toContain('https://staging.proton-pulse.com');
+    expect(RAW).toMatch(/curl -sfL --max-time \d+ "\$LIVE_BASE\/\$f"/);
+    expect(RAW).not.toContain('git show "origin/gh-pages:$f"');
     expect(RAW).toContain('search-index.json');
     expect(RAW).toContain('data-versions.json');
+    expect(RAW).toContain('pcgwiki-catalog.json');
+    expect(RAW).toContain('nonsteam-images.json');
+    // HTML-fallback sniff: first byte '<' means CF served the SPA shell.
+    expect(RAW).toMatch(/head -c 1 .*grep -qv '<'/);
   });
 
   test('cert-status.json + cert-history.json are handled via publish-cloudflare.sh', () => {
