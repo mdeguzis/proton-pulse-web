@@ -16,7 +16,7 @@ import { loadSearchIndex, searchIndex, loadExtendedSteamIndex, extendedSteamInde
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=cd6114a7';
-import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=07446bf5';
+import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=e6503ae7';
 import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=9a39c726';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';

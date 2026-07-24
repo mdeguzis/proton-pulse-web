@@ -32,6 +32,9 @@ function _imgLoadsBrowser(url, timeoutMs = 5000) {
   return new Promise((resolve) => {
     if (!url) { resolve(false); return; }
     const img = new Image();
+    // no-referrer: images.pcgamingwiki.com allows referrer-less requests but
+    // 1011s embeds that send our origin. Matches steam-img.js's loader.
+    img.referrerPolicy = 'no-referrer';
     const t = setTimeout(() => { img.src = ''; resolve(false); }, timeoutMs);
     img.onload = () => { clearTimeout(t); resolve(true); };
     img.onerror = () => { clearTimeout(t); resolve(false); };
@@ -108,6 +111,12 @@ async function _loadIndexes() {
   // Fold PGWiki cover_urls into the non-Steam URL map under their pgwiki:
   // ids so _deriveStatus and the details preview see them like any other
   // non-Steam cached URL. nonsteam-images.json entries (if any) win.
+  // RENDER CAVEAT: images.pcgamingwiki.com hotlink-blocks by Referer
+  // (Cloudflare 1011: direct open works, embeds sending our origin fail),
+  // so every image loader ships referrerpolicy="no-referrer". Server-side
+  // probes (curl, edge fn HEAD) are separately bot-fingerprint-blocked and
+  // always 403 -- browser <img> loads are the only trustworthy signal for
+  // this host.
   const pgwCatalog = (pgwRes && pgwRes.ok) ? await pgwRes.json().catch(() => ({})) : {};
   for (const [aid, entry] of Object.entries(pgwCatalog)) {
     if (!nonSteam[aid] && entry && typeof entry === 'object' && entry.cover_url) {
@@ -146,7 +155,11 @@ async function _loadIndexes() {
   for (const row of (clientErrors || [])) {
     const aid = String(row?.app_id || '');
     if (!aid) continue;
-    if (aid.startsWith('gog:') || aid.startsWith('epic:')) {
+    if (aid.startsWith('gog:') || aid.startsWith('epic:') || aid.startsWith('pgwiki:')) {
+      // Any client-side load error marks non-Steam rows missing -- there is
+      // no cheap pipeline probe for these stores, so real-browser failures
+      // are the best signal. (pgwiki covers load with no-referrer; errors
+      // reported before that fix age out as clients re-render.)
       knownMissingNonSteam.add(aid);
     } else {
       const hits = Number(row?.hit_count || 0);
@@ -178,7 +191,7 @@ async function _loadIndexes() {
     knownMissingSteam.delete(aid);
     knownMissingNonSteam.delete(aid);
   }
-  _cache = { searchIndex, extendedIndex, gameImages, nonSteam, overrideMap, knownMissingSteam, knownMissingNonSteam, confirmedOk };
+  _cache = { searchIndex, extendedIndex, gameImages, nonSteam, pgwCatalog, overrideMap, knownMissingSteam, knownMissingNonSteam, confirmedOk };
   return _cache;
 }
 
@@ -225,7 +238,7 @@ function _buildRows({ searchIndex, extendedIndex, gameImages, nonSteam, override
     const appId = String(row[0]);
     if (seen.has(appId)) return;
     const title = String(row[1] || '');
-    const type  = row[5] || (appId.startsWith('gog:') ? 'gog' : appId.startsWith('epic:') ? 'epic' : 'steam');
+    const type  = row[5] || (appId.startsWith('gog:') ? 'gog' : appId.startsWith('epic:') ? 'epic' : appId.startsWith('pgwiki:') ? 'pgwiki' : 'steam');
     if (store && store !== 'all' && store !== type) return;
     if (q && !title.toLowerCase().includes(q) && !appId.startsWith(q)) return;
     const override = overrideMap ? overrideMap[appId] : null;
@@ -268,8 +281,16 @@ function _initialStatusHtml(r) {
     return `<span class="admin-badge admin-badge--ok" title="Admin override (${escapeHtml(src)}) -- pipeline preserves this on every run">Admin override</span>`;
   }
   if (r.type === 'steam') {
+    // Render from derivedStatus so the cell always agrees with the scope /
+    // status filters (both read _deriveStatus). The old cell re-derived
+    // from cachedUrl alone, so a pipeline-flagged entry filtered under
+    // "Missing box art" still showed a CACHED badge -- confusing.
+    if (r.derivedStatus === 'missing') return '<span class="admin-badge admin-badge--warn" title="Pipeline probe found no working source (standard CDN 404, no fallback)">Missing</span>';
     if (r.cachedUrl) return '<span class="admin-badge admin-badge--info" title="Pipeline stored a hashed fallback URL (standard CDN 404\'d at build time)">Fallback cached</span>';
     return '<span class="admin-badge admin-badge--muted" title="No fallback needed; standard Steam CDN presumed working. Click Probe to verify.">Default CDN</span>';
+  }
+  if (r.derivedStatus === 'missing' && r.cachedUrl) {
+    return '<span class="admin-badge admin-badge--warn" title="Catalog URL exists but the pipeline probe (or repeated client errors) found it dead -- use Refetch or Set URL">Broken URL</span>';
   }
   if (r.cachedUrl) return '<span class="admin-badge admin-badge--info" title="Cached URL from the store\'s catalog">Cached</span>';
   return '<span class="admin-badge admin-badge--warn" title="No cached URL and no standard CDN pattern for this store">Missing</span>';
@@ -284,6 +305,7 @@ function _renderShell() {
         <option value="steam">Steam</option>
         <option value="gog">GOG</option>
         <option value="epic">Epic</option>
+        <option value="pgwiki">PCGWiki</option>
       </select>
       <select id="boxart-scope" class="admin-select" title="Coarse filter: whether the row is expected to show box art">
         <option value="all">All entries</option>
@@ -353,6 +375,12 @@ function _storeHref(type, appId, title) {
   if (type === 'steam') {
     const num = String(appId).replace(/[^0-9]/g, '');
     return num ? `https://store.steampowered.com/app/${num}/` : null;
+  }
+  // PGWiki ids carry the wiki page slug directly after the prefix, so we
+  // can deep-link to the exact article rather than a search.
+  if (type === 'pgwiki') {
+    const slug = String(appId).replace(/^pgwiki:/, '');
+    return slug ? `https://www.pcgamingwiki.com/wiki/${encodeURIComponent(slug)}` : null;
   }
   const q = encodeURIComponent(title || '');
   if (!q) return null;
@@ -743,6 +771,7 @@ export async function renderBoxartAdmin() {
   ];
   const _imgLoads = (url, timeoutMs = 5000) => new Promise((resolve) => {
     const img = new Image();
+    img.referrerPolicy = 'no-referrer';
     const t = setTimeout(() => { img.src = ''; resolve(false); }, timeoutMs);
     img.onload = () => { clearTimeout(t); resolve(true); };
     img.onerror = () => { clearTimeout(t); resolve(false); };
@@ -839,6 +868,18 @@ export async function renderBoxartAdmin() {
       const url = modalInput.value.trim();
       btn.disabled = true;
       modalErr.hidden = true;
+      // In-browser load check first: the ONLY trustworthy probe for hosts
+      // like images.pcgamingwiki.com whose bot protection 403s every
+      // server-side request while browser <img> (no-referrer) works. The
+      // edge fn skips its server probe for those exempt hosts and trusts
+      // this check.
+      const loads = await _imgLoadsBrowser(url);
+      if (!loads) {
+        btn.disabled = false;
+        modalErr.hidden = false;
+        modalErr.textContent = 'URL did not load as an image in this browser';
+        return;
+      }
       const result = await setBoxArtOverride(modalContext.appId, url);
       btn.disabled = false;
       if (!result.ok) {
@@ -1064,7 +1105,7 @@ function _sgdbResultsHtml(payload) {
     return `
       <div class="sgdb-card">
         <a class="sgdb-thumb-link" href="${escapeHtml(g.url)}" target="_blank" rel="noopener" title="Open the full-size image in a new tab">
-          <img class="sgdb-thumb" src="${escapeHtml(g.thumb || g.url)}" alt="SteamGridDB grid ${escapeHtml(String(g.id || ''))}" loading="lazy" onerror="this.style.opacity=0.25">
+          <img class="sgdb-thumb" referrerpolicy="no-referrer" src="${escapeHtml(g.thumb || g.url)}" alt="SteamGridDB grid ${escapeHtml(String(g.id || ''))}" loading="lazy" onerror="this.style.opacity=0.25">
         </a>
         <div class="sgdb-meta">${dims}</div>
         <button class="admin-btn admin-btn--primary sgdb-set" data-sgdb-set="${escapeHtml(g.url)}">Set as box art</button>
@@ -1100,7 +1141,7 @@ function _urlRowHtml(label, url, opts = {}) {
 }
 
 function _detailBodyHtml(row, currentLiveUrl, currentSource) {
-  const { appId, type, title, cachedUrl, override } = row;
+  const { appId, type, title, cachedUrl, override, pgwikiCoverUrl } = row;
   const storeHref = _storeHref(type, appId, title);
   const storeLink = storeHref
     ? `<a href="${escapeHtml(storeHref)}" target="_blank" rel="noopener" class="admin-link">Open on ${escapeHtml(type)} store</a>`
@@ -1137,7 +1178,7 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
     <div class="boxart-detail-grid">
       <div class="admin-card" style="padding:12px">
         <div class="admin-subhead">Preview</div>
-        <img id="boxart-detail-preview" src="${escapeHtml(previewSrc)}" alt="header preview" data-appid="${escapeHtml(appId)}" data-type="${escapeHtml(type)}" data-auto-refetch-tried="0" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05)">
+        <img id="boxart-detail-preview" referrerpolicy="no-referrer" src="${escapeHtml(previewSrc)}" alt="header preview" data-appid="${escapeHtml(appId)}" data-type="${escapeHtml(type)}" data-auto-refetch-tried="0" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05)">
         <p class="admin-hint" style="margin:8px 0 0">${gamePageLink} &middot; ${storeLink} &middot; ${gameManagerLink}</p>
       </div>
 
@@ -1154,6 +1195,7 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
             ${type === 'steam' ? _urlRowHtml('Fastly CDN',           fastlyUrl,     { highlight: currentSource === 'fastly',     note: currentSource === 'fastly'     ? 'live' : '' }) : ''}
             ${type === 'steam' ? _urlRowHtml('Cloudflare CDN',       cloudflareUrl, { highlight: currentSource === 'cloudflare', note: currentSource === 'cloudflare' ? 'live' : '' }) : ''}
             ${_urlRowHtml(type === 'steam' ? 'Pipeline fallback (game-images.json)' : 'Pipeline URL (nonsteam-images.json)', cachedUrl, { highlight: currentSource === 'pipeline', note: currentSource === 'pipeline' ? 'live' : '' })}
+            ${type === 'pgwiki' ? _urlRowHtml('PGWiki catalog cover', pgwikiCoverUrl, { note: pgwikiCoverUrl ? 'renders with no-referrer only; server probes always 403' : '' }) : ''}
             <tr aria-hidden="true"><td colspan="2" style="height:14px; border:none; padding:0"></td></tr>
             ${_urlRowHtml('Override metadata', null)}
             <tr><td colspan="2" style="padding:6px 12px 12px">${overrideMeta}</td></tr>
@@ -1254,10 +1296,13 @@ export async function renderBoxartAdminDetail(appId) {
     content.innerHTML = `<p class="admin-error">App id <code>${escapeHtml(appId)}</code> not found in the search index.</p>`;
     return;
   }
-  const type = searchRow[5] || (String(appId).startsWith('gog:') ? 'gog' : String(appId).startsWith('epic:') ? 'epic' : 'steam');
+  const type = searchRow[5] || (String(appId).startsWith('gog:') ? 'gog' : String(appId).startsWith('epic:') ? 'epic' : String(appId).startsWith('pgwiki:') ? 'pgwiki' : 'steam');
   const cachedUrl = type === 'steam' ? (indexes.gameImages[appId] || null) : (indexes.nonSteam[appId] || null);
   const override = indexes.overrideMap?.[appId] || null;
-  const row = { appId: String(appId), title: String(searchRow[1] || ''), type, cachedUrl, override, derivedStatus: _deriveStatus(type, String(appId), cachedUrl, !!override, indexes.knownMissingSteam, indexes.knownMissingNonSteam) };
+  // PGWiki catalog cover for the details panel only -- hotlink-blocked on
+  // our origin (Cloudflare 1011), so it is informational, never a source.
+  const pgwikiCoverUrl = type === 'pgwiki' ? (indexes.pgwCatalog?.[appId]?.cover_url || null) : null;
+  const row = { appId: String(appId), title: String(searchRow[1] || ''), type, cachedUrl, override, pgwikiCoverUrl, derivedStatus: _deriveStatus(type, String(appId), cachedUrl, !!override, indexes.knownMissingSteam, indexes.knownMissingNonSteam) };
 
   // Header carries the store label + app id so admins can copy the id or eyeball
   // which storefront they're editing without scrolling to the meta rows. (#199)
@@ -1423,6 +1468,7 @@ export async function renderBoxartAdminDetail(appId) {
         const results = await Promise.all(STEAM_CDN_VARIANTS.flatMap((v) => bases.map((base) => new Promise((resolve) => {
           const url = `${base}/${v.file}`;
           const img = new Image();
+          img.referrerPolicy = 'no-referrer';
           img.onload = () => resolve({ v, url });
           img.onerror = () => resolve(null);
           img.src = url;

@@ -191,3 +191,37 @@ describe('widescreen preference + portrait handling', () => {
     expect(css).toMatch(/img\.boxart-portrait\s*\{[\s\S]{0,200}object-fit:\s*contain/);
   });
 });
+
+describe('CSP covers all cover-art CDNs (img-src) + admin probe hosts (connect-src)', () => {
+  // nonsteam-images.json URLs live on gog-statics, cdn1.epicgames.com, and
+  // cdn2.unrealengine.com. A missing img-src host silently blanks covers on
+  // that store; a missing connect-src host breaks the admin probe with a
+  // CSP violation (user-reported: every Epic probe failed).
+  const cardPages = ['index.html', 'app.html', 'admin.html', 'profile.html', 'game-stats.html'];
+  const IMG_HOSTS = [
+    'https://cdn1.epicgames.com',
+    'https://cdn2.unrealengine.com',
+    'https://*.gog-statics.com',
+    'https://images.pcgamingwiki.com',
+  ];
+  for (const page of cardPages) {
+    test(`${page} img-src allows every cover CDN`, () => {
+      const html = fs.readFileSync(path.join(__dirname, '..', page), 'utf8');
+      const csp = (html.match(/Content-Security-Policy[^>]+content="([^"]+)"/) || [])[1] || '';
+      const imgSrc = (csp.match(/img-src[^;]*/) || [''])[0];
+      for (const host of IMG_HOSTS) expect(imgSrc).toContain(host);
+    });
+  }
+
+  test('admin.html connect-src allows the probe hosts', () => {
+    const html = fs.readFileSync(path.join(__dirname, '..', 'admin.html'), 'utf8');
+    const csp = (html.match(/Content-Security-Policy[^>]+content="([^"]+)"/) || [])[1] || '';
+    const connectSrc = (csp.match(/connect-src[^;]*/) || [''])[0];
+    for (const host of [
+      'https://shared.akamai.steamstatic.com',
+      'https://images.gog-statics.com',
+      'https://cdn1.epicgames.com',
+      'https://cdn.steamgriddb.com',
+    ]) expect(connectSrc).toContain(host);
+  });
+});

@@ -2,7 +2,7 @@
 // thumbnail | title + sub | badge card layout used everywhere.
 import { STEAM_IMG } from '../config.js?v=cd6114a7';
 import { esc } from '../utils.js?v=9a39c726';
-import { loadSteamImg as _loadSteamImg } from './steam-img.js?v=07446bf5';
+import { loadSteamImg as _loadSteamImg } from './steam-img.js?v=e6503ae7';
 
 const TIER_COLORS = {
   platinum: { bg: '#b4c7dc', color: '#0a0c10' },

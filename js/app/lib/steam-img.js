@@ -29,7 +29,7 @@ function _reportMissingImage(appId, attemptedUrl) {
     console.debug('[steam-img] report skipped (no supabase env)', { appId: id });
     return;
   }
-  const storeType = id.startsWith('gog:') ? 'gog' : id.startsWith('epic:') ? 'epic' : 'steam';
+  const storeType = id.startsWith('gog:') ? 'gog' : id.startsWith('epic:') ? 'epic' : id.startsWith('pgwiki:') ? 'pgwiki' : 'steam';
   const body = {
     app_id: id,
     store_type: storeType,
@@ -341,6 +341,12 @@ async function _lookupSteamRefetch(appId) {
 function _tryUrl(url) {
   return new Promise(resolve => {
     const img = new Image();
+    // no-referrer: images.pcgamingwiki.com hotlink-blocks by Referer
+    // (Cloudflare 1011) but allows referrer-less requests -- the same URL
+    // opens fine in the address bar. Suppressing the referrer makes our
+    // embed look like direct navigation. Harmless for every other CDN and
+    // slightly privacy-friendlier. The swapped-in element keeps the policy.
+    img.referrerPolicy = 'no-referrer';
     img.onload = () => resolve(img);
     img.onerror = () => resolve(null);
     img.src = url;

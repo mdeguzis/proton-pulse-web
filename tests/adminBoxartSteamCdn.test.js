@@ -150,7 +150,7 @@ describe('boxart admin detail: override-metadata spacing', () => {
 describe('boxart admin detail: refetch verifies preview in-browser (#351)', () => {
   test('module-scope _imgLoadsBrowser helper uses Image() with a timeout', () => {
     expect(BOXART_SRC).toMatch(
-      /function _imgLoadsBrowser\([\s\S]{0,400}new Image\(\)[\s\S]{0,300}img\.onerror/,
+      /function _imgLoadsBrowser\([\s\S]{0,400}new Image\(\)[\s\S]{0,600}img\.onerror/,
     );
   });
 
