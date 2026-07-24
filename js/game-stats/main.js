@@ -1,5 +1,5 @@
 // Entry module for game-stats.html. Migrated from game-stats.js.
-import { computeGameStats } from '../lib/scoring/gameStats.js?v=1c1b7f9d';
+import { computeGameStats } from '../lib/scoring/gameStats.js?v=ac350c7f';
 import { pulseTierFromReports } from '../shared/scoring.js?v=8051e115';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhanceHardwareBanner } from '../shared/hardware.js?v=f7bfd747';
 import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange } from '../shared/chart-interactions.js?v=6b608095';
@@ -585,19 +585,18 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
       return;
     }
 
-    const stats = computeGameStats(allReports, configs);
-
-    // Align tier + confidence with the game page: recency-weighted algorithm
-    // across ALL reports regardless of source. The live total fills in evidence
-    // for reports we haven't mirrored so confidence scales with ProtonDB's real
-    // breadth, but the tier itself is always derived from actual report ratings.
+    // #361/#376: liveExcess (unmirrored ProtonDB reports) feeds
+    // computeGameStats -> computeConfidence, the SAME canonical calc the
+    // game page headline and confidence.html read. The tier stays derived
+    // from actual report ratings via the recency-weighted algorithm.
     const liveTotal = liveSummary?.total || 0;
     const liveExcess = liveTotal > cdnReports.length ? liveTotal - cdnReports.length : 0;
+    const stats = computeGameStats(allReports, configs, liveExcess);
+
     const combinedTier = pulseTierFromReports(allReports, liveExcess);
     stats.overallTier = allReports.length > 0
       ? combinedTier.tier
       : (liveSummary?.tier ? String(liveSummary.tier).toLowerCase() : 'pending');
-    stats.confidencePct = combinedTier.confidencePct || stats.confidencePct;
     stats.totalReports = allReports.length + Math.max(0, liveTotal - cdnReports.length);
     stats.confidenceBucket = stats.confidencePct >= 80 ? 'high'
       : stats.confidencePct >= 50 ? 'moderate' : 'low';

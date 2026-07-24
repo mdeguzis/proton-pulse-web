@@ -3,6 +3,14 @@ import { estimateScoreBreakdown, loadScoringInfo, ratingMix } from '../shared/sc
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhanceHardwareBanner } from '../shared/hardware.js?v=f7bfd747';
 import { attachChartHover } from '../shared/chart-interactions.js?v=6b608095';
 import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
+// #361/#376: the aggregate view must read the SAME inputs and the SAME
+// canonical confidence calc as the game-page headline. computeConfidence is
+// the single source; fetchNativeReports + fetchProtonDbLive mirror the game
+// page's data loading so the two surfaces can never diverge again.
+import { computeConfidence } from '../lib/scoring/gameStats.js?v=ac350c7f';
+import { dataUrl } from '../lib/data-url.js?v=0de73aed';
+import { fetchProtonDbLive } from '../app/api/protondb.js?v=003a9b4d';
+import { fetchNativeReports } from '../app/api/supabase.js?v=01961c8d';
 
 (function () {
   const root = document.getElementById('cb-root');
@@ -569,16 +577,17 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
   }
 
   // Aggregate breakdown for a whole game. Shows the rating distribution,
-  // how sample size curves into confidence, and what the freshness of the
+  // the canonical multi-factor confidence, and what the freshness of the
   // data pool means for trust.
-  function renderGameBreakdown(reports, gameTitle, appId) {
+  function renderGameBreakdown(reports, gameTitle, appId, liveTotal = 0) {
     const n = reports.length;
-    const displayed = Math.min(95, Math.round(30 + Math.log2(Math.max(1, n)) * 18));
+    // #361/#376: THE canonical calc -- same helper, same inputs as the
+    // game-page headline. Never compute a second formula on this page.
+    const cdnHeld = reports.filter(r => r.source !== 'pulse' && !r.client_id).length;
+    const liveExcess = liveTotal > cdnHeld ? liveTotal - cdnHeld : 0;
+    const { confidencePct: displayed, confFactors } = computeConfidence(reports, liveExcess);
     const newestTs = n ? Math.max(...reports.map(r => r.timestamp || 0)) : 0;
     const daysSinceNewest = newestTs ? Math.round((Date.now() / 1000 - newestTs) / 86400) : Infinity;
-    const freshnessAdjust = daysSinceNewest < 180 ? 0
-      : daysSinceNewest > 365 * 3 ? -15
-      : Math.round(-15 * ((daysSinceNewest - 180) / (365 * 3 - 180)));
 
     const totalBg = confColorAt(displayed);
     const totalFg = confTextAt(displayed);
@@ -827,7 +836,10 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
         else if (oldPct > 20) bullets.push(`<li><strong style="color:#ffb84d">Some aging data:</strong> ${oldPct}% of reports are over 1 year old. The newer reports carry more weight in tier calculation.</li>`);
         else if (n > 0) bullets.push(`<li><strong style="color:#5bd17a">Fresh data:</strong> ${freshPct}% of reports are under 6 months old. The data pool reflects current Proton/game state well.</li>`);
 
-        if (freshnessAdjust < 0) bullets.push(`<li><strong style="color:#ff6b6b">Freshness penalty:</strong> −${Math.abs(freshnessAdjust)} pts because the newest report is ${daysSinceNewest} days old. Submitting a new report would remove this penalty entirely.</li>`);
+        const stalenessFactor = confFactors.find(f => f.label === 'Staleness cap');
+        if (stalenessFactor) bullets.push(`<li><strong style="color:#ff6b6b">Staleness cap:</strong> ${esc(stalenessFactor.detail)}. Submitting a new report lifts the cap.</li>`);
+        const summaryOnlyFactor = confFactors.find(f => f.label === 'ProtonDB aggregate only');
+        if (summaryOnlyFactor) bullets.push(`<li><strong style="color:#ffb84d">ProtonDB aggregate only:</strong> ${esc(summaryOnlyFactor.detail)}.</li>`);
 
         if (meanConf < 30) bullets.push(`<li><strong style="color:#ff6b6b">Low per-report scores:</strong> Average individual report confidence is ${meanConf}%. Most reports are old or have borked ratings (base score 0), dragging the mean down.</li>`);
         else if (meanConf < 50) bullets.push(`<li><strong style="color:#ffb84d">Moderate per-report scores:</strong> Average individual report confidence is ${meanConf}% (range: ${lowestConf}% – ${highestConf}%). Mix of fresh/stale and good/bad ratings.</li>`);
@@ -855,12 +867,21 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
             <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:6px">Report age distribution</div>
             ${ageBars}
           </div>
+          <div style="margin-bottom:12px">
+            <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:6px">Confidence factors</div>
+            ${confFactors.map(f => `<div style="display:flex;align-items:center;gap:8px;margin:3px 0">
+              <span style="min-width:140px;font-size:0.74rem;color:var(--muted)">${esc(f.label)}</span>
+              <div style="flex:1;background:var(--bg);border-radius:2px;height:6px;overflow:hidden"><div style="width:${f.value}%;height:100%;background:${confColorAt(f.value)};border-radius:2px"></div></div>
+              <span style="width:38px;text-align:right;font-size:0.74rem;font-weight:700;color:${confColorAt(f.value)}">${f.value}%</span>
+            </div>
+            <div style="margin:0 0 6px 148px;font-size:0.68rem;color:var(--muted)">${esc(f.detail)}</div>`).join('')}
+          </div>
           <div style="padding:10px 14px;background:rgba(20,32,44,0.4);border:1px solid var(--border);border-radius:4px;font-family:var(--mono);font-size:0.76rem;color:var(--muted);line-height:1.6">
-            <strong style="color:var(--text)">Formula:</strong> confidence = min(95, 30 + log₂(${n}) × 18)${freshnessAdjust < 0 ? ` − ${Math.abs(freshnessAdjust)} freshness penalty` : ''} = <strong style="color:var(--text)">${displayed}%</strong><br>
-            <span style="font-size:0.7rem">Sample size drives the baseline (log curve). Freshness penalises stale pools. Cap is 95% — no game reaches 100%.</span>
+            <strong style="color:var(--text)">Formula:</strong> confidence = min(95, (sample × 0.45 + consistency × 0.35 + freshness × 0.20) × staleness_cap) = <strong style="color:var(--text)">${displayed}%</strong><br>
+            <span style="font-size:0.7rem">Sample size drives the baseline (log curve, unmirrored ProtonDB reports count at 0.4x). Consistency rewards agreement between reports. Freshness and the staleness cap penalise old pools. Cap is 95% — no game reaches 100%.</span>
           </div>`;
       })()}
-      <p style="margin:8px 0 0;font-size:0.7rem;color:var(--muted)">Source: <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/js/shared/scoring.js" target="_blank" rel="noopener" style="color:var(--accent)">js/shared/scoring.js</a> &rarr; <code style="font-size:0.68rem">estimateScoreBreakdown()</code> · <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Scoring-Algorithm#confidence-computation" target="_blank" rel="noopener" style="color:var(--accent)">wiki</a></p>
+      <p style="margin:8px 0 0;font-size:0.7rem;color:var(--muted)">Source: <a href="https://github.com/mdeguzis/proton-pulse-web/blob/main/js/lib/scoring/gameStats.js" target="_blank" rel="noopener" style="color:var(--accent)">js/lib/scoring/gameStats.js</a> &rarr; <code style="font-size:0.68rem">computeConfidence()</code> · <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Scoring-Algorithm#confidence-computation" target="_blank" rel="noopener" style="color:var(--accent)">wiki</a></p>
 
       <h3 class="cb-section-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/></svg>Per-Proton-version success</h3>
       <p style="font-size:0.82rem;color:var(--muted);margin:0 0 10px">% of reports rated silver or better per Proton version (sorted by report count).</p>
@@ -893,7 +914,11 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
       : ['latest.json'];
     for (const file of files) {
       try {
-        const r = await fetch(`${CDN_BASE}/${appIdToDir(appId)}/${file}`);
+        // Route through dataUrl() so the per-env data host (R2) is honored,
+        // same as the game page's fetchCdn (#380/#361). The old CDN_BASE
+        // origin-relative path 404s on the CF Pages hostnames.
+        const url = await dataUrl(`data/${appIdToDir(appId)}/${file}`);
+        const r = await fetch(url);
         if (!r.ok) continue;
         const data = await r.json();
         if (Array.isArray(data) && data.length) return data;
@@ -934,11 +959,23 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
     }
 
     const myHw = loadMyHardware();
-    const [reports, searchIndex, scoringData] = await Promise.all([
+    // Load the SAME inputs the game page loads (#361/#376): mirrored CDN
+    // reports, native Pulse reports, and the live ProtonDB aggregate. The
+    // aggregate view previously computed from CDN reports alone, which is
+    // why it disagreed with the game-page headline. Native + live loads are
+    // best-effort: on failure the breakdown still renders from CDN data.
+    const [cdnReports, nativeReports, liveFetched, searchIndex, scoringData] = await Promise.all([
       loadGame(appId, reportYear),
+      wantsPerReport ? Promise.resolve([]) : fetchNativeReports(appId).catch(() => []),
+      wantsPerReport ? Promise.resolve([]) : fetchProtonDbLive(appId).catch(() => []),
       loadSearchIndexLocal(),
       wantsPerReport ? loadScoringInfo() : Promise.resolve(null),
     ]);
+    const liveSummary = (liveFetched || []).find(r => r._liveOnly) || null;
+    const liveTotal = liveSummary ? (liveSummary.total || 0) : 0;
+    const reports = wantsPerReport
+      ? cdnReports
+      : [...cdnReports.map(r => ({ ...r, source: r.source || 'protondb' })), ...(nativeReports || [])];
     const indexHit = (searchIndex || []).find(row => String(row[0]) === String(appId));
     const gameTitle = reports[0]?.title || indexHit?.[1] || `App ${appId}`;
 
@@ -964,7 +1001,7 @@ import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
       root.innerHTML = previewBanner + renderReportBreakdown(target, gameTitle, appId, myHw, scoringData);
       void enhanceHardwareBanner();
     } else {
-      const out = renderGameBreakdown(reports, gameTitle, appId);
+      const out = renderGameBreakdown(reports, gameTitle, appId, liveTotal);
       root.innerHTML = previewBanner + out.html;
       // wire chart hover handlers AFTER innerHTML lands so the helper can
       // measure live SVG nodes (otherwise hover targets stay inert)

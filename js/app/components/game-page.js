@@ -2,7 +2,7 @@
 
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports } from '../../shared/scoring.js?v=8051e115';
-import { computeCompatTrend, computeGameStats, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=1c1b7f9d';
+import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=ac350c7f';
 import { getWebClientId } from '../../shared/submit.js?v=49306cae';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=a8d355d8';
 import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=003a9b4d';
@@ -936,19 +936,17 @@ export async function renderGamePage(appId) {
     const hasAnyReports = totalReports > 0;
     const overallTier = hasAnyReports ? combinedTier.tier : 'pending';
     const overallTileColor = hasAnyReports ? (RATING_COLORS[overallTier] || '#3a4a5a') : '#2a5a8c';
-    // Confidence percent. #376: use the same multi-factor helper the
-    // breakdown page (confidence.html) reads so the game-page headline
-    // agrees with what "why?" opens. Previously the headline read
-    // combinedTier.confidencePct (a simple log of report count from
-    // pulseTierFromReports) while the breakdown page ran
-    // computeGameStats with a staleness cap -- e.g. app 9860 read 92%
-    // vs 39%. When native reports exist route through computeGameStats;
-    // fall back to the old log only for ProtonDB-mirror-only games
-    // where computeGameStats would return 0.
-    const gameStats = allReportsForTier.length ? computeGameStats(allReportsForTier, configs) : null;
-    const overallConfidencePct = hasAnyReports && gameStats?.confidencePct
-      ? gameStats.confidencePct
-      : (protonDbCount > 0 ? Math.min(95, Math.round(30 + Math.log2(Math.max(1, protonDbCount)) * 18)) : 0);
+    // Confidence percent. #361/#376: computeConfidence is THE single
+    // source -- the same call confidence.html and game-stats.html make,
+    // with the same inputs: every report we hold (mirrored ProtonDB +
+    // native Pulse) plus the unmirrored live excess as sample-only
+    // evidence. Summary-only games (zero held reports) are capped by
+    // neutral consistency/freshness factors inside the helper, so a
+    // ProtonDB aggregate alone can never read "high confidence". No
+    // fallback formula here -- a second formula is how the pages
+    // diverged in the first place.
+    const _liveExcess = liveTotal > cdn.length ? liveTotal - cdn.length : 0;
+    const overallConfidencePct = computeConfidence(allReportsForTier, _liveExcess).confidencePct;
     // Bucket the summary label off the SAME percent thresholds confidence.html
     // uses (>=80 high, >=50 moderate, else low) so the dial %, this line, and
     // the "why?" page never disagree (#187). The old code bucketed by report
