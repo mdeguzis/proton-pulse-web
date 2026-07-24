@@ -25,6 +25,11 @@ set -euo pipefail
 #   R2_BUCKET       default: proton-pulse-data
 #   DATA_BASE       default: https://data.proton-pulse.com
 #   SKIP_R2_SYNC    set to 1 to deploy the shell only (Pages half; for testing)
+#   R2_DELTA_SYNC   set to 1 to content-diff against the previous deploy's
+#                   manifest and upload only changed files (#392). Default 0
+#                   during rollout. Falls back to the full sync when no
+#                   previous manifest exists (bootstrap) or on any delta
+#                   tooling failure -- full sync is always the safe recovery.
 
 OUTPUT_DIR="${1:?output_dir required (pipeline output with data/ + *.json)}"
 REPO_DIR="${2:?repo_dir required (repo checkout with the manifest)}"
@@ -47,6 +52,23 @@ SMALL_DATA=(
 
 log() { echo "[publish-cloudflare] $*"; }
 
+# The bucket-state manifest lives OUTSIDE data/ so the data sync never touches
+# it and the frontend host never serves it by accident. Dated copies keep an
+# audit trail of what each deploy shipped (#392).
+MANIFEST_KEY="_meta/data-manifest.json"
+
+# aws CLI wrapper: R2 credentials + endpoint + the adaptive-retry settings from
+# #379 (R2's per-object write limit is roughly 1/sec; adaptive retry backs off
+# with jitter instead of hammering a throttled object).
+r2aws() {
+  AWS_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID" \
+  AWS_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY" \
+  AWS_DEFAULT_REGION="auto" \
+  AWS_MAX_ATTEMPTS=10 \
+  AWS_RETRY_MODE=adaptive \
+  aws "$@" --endpoint-url "https://${CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com"
+}
+
 # --- 1. Sync data/ to R2 (S3 API; only changed objects are uploaded) ----------
 if [ "${SKIP_R2_SYNC:-0}" = "1" ]; then
   log "SKIP_R2_SYNC=1 -- skipping data/ sync to R2"
@@ -54,18 +76,64 @@ elif [ -d "$OUTPUT_DIR/data" ]; then
   : "${CLOUDFLARE_ACCOUNT_ID:?CLOUDFLARE_ACCOUNT_ID required for R2 sync}"
   : "${R2_ACCESS_KEY_ID:?R2_ACCESS_KEY_ID required for R2 sync}"
   : "${R2_SECRET_ACCESS_KEY:?R2_SECRET_ACCESS_KEY required for R2 sync}"
-  local_count=$(find "$OUTPUT_DIR/data" -type f | wc -l)
-  log "syncing $local_count files from $OUTPUT_DIR/data to r2://$R2_BUCKET/data ..."
-  sync_start=$(date +%s)
-  # Throttle concurrency + use adaptive retry so an R2 per-object
-  # ServiceUnavailable does not fail the whole run (#379). Default aws
-  # s3 sync fires 10 concurrent PUTs and retries with a tight backoff;
-  # R2's per-object write limit is roughly 1/sec, so aws's default
-  # retry loop can trip the limit on a single retried object even
-  # though the overall upload rate is fine. `adaptive` retry mode
-  # backs off exponentially with jitter and inspects response
-  # metadata for throttling signals.
+
+  # Throttle concurrency so parallel PUTs do not trip R2's per-object write
+  # limit (#379); pairs with the adaptive retry mode set in r2aws().
   aws configure set default.s3.max_concurrent_requests 4
+
+  # Cleaned up by the shared EXIT trap set in section 2 (a second `trap EXIT`
+  # would replace this one, so both temp dirs share a single trap).
+  WORK="$(mktemp -d)"
+
+  # Content-delta mode (#392): diff this run's data-manifest.json against the
+  # manifest the PREVIOUS deploy left in the bucket, and sync only the files
+  # whose sha256 actually changed. aws s3 sync compares mtime, and the
+  # pipeline rewrites every file each run, so without this it re-uploads
+  # 50-80k byte-identical objects (30-120 min). The delta is typically 1-5k.
+  SYNC_SRC="$OUTPUT_DIR/data"
+  delta_mode=0
+  if [ "${R2_DELTA_SYNC:-0}" = "1" ] && [ -f "$OUTPUT_DIR/data-manifest.json" ]; then
+    log "R2_DELTA_SYNC=1 -- pulling previous manifest from r2://$R2_BUCKET/$MANIFEST_KEY"
+    r2aws s3 cp "s3://$R2_BUCKET/$MANIFEST_KEY" "$WORK/old-manifest.json" --no-progress \
+      || log "no previous manifest in bucket (bootstrap or first delta run)"
+    set +e
+    (cd "$REPO_DIR" && python3 -m scripts.pipeline.manifest_delta \
+      --old-manifest "$WORK/old-manifest.json" \
+      --new-manifest "$OUTPUT_DIR/data-manifest.json" \
+      --data-dir "$OUTPUT_DIR/data" \
+      --stage-dir "$WORK/stage" \
+      --sample-out "$WORK/verify-sample.txt" | tee "$WORK/delta-summary.txt")
+    delta_rc=$?
+    set -e
+    if [ "$delta_rc" = 0 ]; then
+      delta_mode=1
+      SYNC_SRC="$WORK/stage"
+      mkdir -p "$SYNC_SRC"  # zero-change runs stage nothing; sync of an empty dir is a no-op
+      log "delta summary: $(grep -o 'total=.*' "$WORK/delta-summary.txt" || echo 'unavailable')"
+      # Determinism tripwire: if most of the tree "changed", some generator
+      # started embedding run-specific bytes (timestamps etc.) and the delta
+      # benefit silently evaporated. Deploy proceeds; the log flags it.
+      python3 - "$WORK/delta-summary.txt" <<'PYEOF'
+import re, sys
+text = open(sys.argv[1]).read()
+m = {k: int(v) for k, v in re.findall(r"(\w+)=(\d+)", text)}
+total, moved = m.get("total", 0), m.get("added", 0) + m.get("changed", 0)
+if total and moved * 2 > total:
+    print(f"[publish-cloudflare] WARNING: {moved}/{total} files changed (>50%) -- "
+          "check pipeline output for non-deterministic content (#392)")
+PYEOF
+    elif [ "$delta_rc" = 3 ]; then
+      log "bootstrap: no usable previous manifest -- falling back to full sync"
+    else
+      log "WARNING: manifest_delta failed (rc=$delta_rc) -- falling back to full sync"
+    fi
+  elif [ "${R2_DELTA_SYNC:-0}" = "1" ]; then
+    log "WARNING: R2_DELTA_SYNC=1 but $OUTPUT_DIR/data-manifest.json missing -- full sync"
+  fi
+
+  local_count=$(find "$SYNC_SRC" -type f | wc -l)
+  log "syncing $local_count files from $SYNC_SRC to r2://$R2_BUCKET/data (delta_mode=$delta_mode) ..."
+  sync_start=$(date +%s)
 
   # One `aws s3 sync` pass. Verbose progress: aws prints one line per changed
   # object; awk summarizes every 2000 (stdbuf keeps it line-buffered for
@@ -73,13 +141,7 @@ elif [ -d "$OUTPUT_DIR/data" ]; then
   # the awk pipe, so the `if` in the loop below sees it.
   sync_pass() {
     local pass="$1"
-    AWS_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID" \
-    AWS_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY" \
-    AWS_DEFAULT_REGION="auto" \
-    AWS_MAX_ATTEMPTS=10 \
-    AWS_RETRY_MODE=adaptive \
-    aws s3 sync "$OUTPUT_DIR/data" "s3://$R2_BUCKET/data" \
-      --endpoint-url "https://${CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com" \
+    r2aws s3 sync "$SYNC_SRC" "s3://$R2_BUCKET/data" \
       --content-type application/json \
       --exclude "*.html" \
       --no-progress \
@@ -116,13 +178,55 @@ elif [ -d "$OUTPUT_DIR/data" ]; then
     log "ERROR: R2 sync to r2://$R2_BUCKET/data failed after $MAX_SYNC_PASSES passes (check bucket perms if it failed instantly with 0 objects)"
     exit 1
   fi
+
+  # Post-deploy integrity check (delta mode only): GET a sample of objects back
+  # from R2 and compare sha256 to the manifest. Sample covers every uploaded
+  # key (capped at 100) plus 100 unchanged keys. Any mismatch fails the deploy
+  # BEFORE the manifest upload below, so the next run re-diffs those keys as
+  # changed and re-uploads them -- the manifest-last ordering is what makes a
+  # partial failure self-healing instead of silently corrupt.
+  if [ "$delta_mode" = 1 ] && [ -s "$WORK/verify-sample.txt" ]; then
+    verify_start=$(date +%s)
+    verify_total=0
+    verify_bad=0
+    while IFS=$'\t' read -r key want; do
+      [ -z "$key" ] && continue
+      verify_total=$((verify_total + 1))
+      got=$(r2aws s3 cp "s3://$R2_BUCKET/data/$key" - --no-progress 2>/dev/null | sha256sum | awk '{print $1}')
+      if [ "$got" != "$want" ]; then
+        verify_bad=$((verify_bad + 1))
+        log "VERIFY MISMATCH: data/$key expected=$want got=$got"
+      fi
+    done < "$WORK/verify-sample.txt"
+    log "integrity verify: $verify_total objects sampled, $verify_bad mismatches ($(( $(date +%s) - verify_start ))s)"
+    if [ "$verify_bad" != 0 ]; then
+      log "ERROR: integrity verify failed -- NOT uploading new manifest; next run will re-upload the affected keys"
+      exit 1
+    fi
+  fi
+
+  # Publish the manifest LAST (after a verified sync) so the bucket's manifest
+  # always describes objects that are actually there. Dated copy first for the
+  # audit trail; the current pointer overwrite is the atomic "commit".
+  if [ -f "$OUTPUT_DIR/data-manifest.json" ]; then
+    dated_key="_meta/manifests/data-manifest-$(date -u +%Y-%m-%d).json"
+    r2aws s3 cp "$OUTPUT_DIR/data-manifest.json" "s3://$R2_BUCKET/$dated_key" \
+      --content-type application/json --no-progress
+    r2aws s3 cp "$OUTPUT_DIR/data-manifest.json" "s3://$R2_BUCKET/$MANIFEST_KEY" \
+      --content-type application/json --no-progress
+    log "manifest published: $MANIFEST_KEY (+ dated copy $dated_key)"
+  else
+    log "no data-manifest.json in output -- manifest not updated (next delta run will re-diff)"
+  fi
 else
   log "WARNING: $OUTPUT_DIR/data not found -- skipping R2 sync"
 fi
 
 # --- 2. Assemble the Pages deploy directory -----------------------------------
 DEPLOY="$(mktemp -d)"
-trap 'rm -rf "$DEPLOY"' EXIT
+# Single EXIT trap for both temp dirs: WORK is only set when the R2 sync
+# branch ran, hence the :- default.
+trap 'rm -rf "$DEPLOY" "${WORK:-}"' EXIT
 
 # 2a. Shell: every source file listed in the manifest.
 manifest="$REPO_DIR/gh-pages-manifest.txt"

@@ -507,6 +507,12 @@ jobs:
           # R2_BUCKET + DATA_BASE env vars.
           R2_BUCKET: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'proton-pulse-data-staging' || 'proton-pulse-data' }}
           DATA_BASE: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'https://staging-data.proton-pulse.com' || 'https://data.proton-pulse.com' }}
+          # #392: content-hash delta sync. Driven by the R2_DELTA_SYNC repo
+          # variable so rollout/rollback is a settings flip, not a commit.
+          # Unset variable = '0' = full sync (the pre-#392 behavior). Each
+          # bucket (staging/prod, split in #380) keeps its own manifest, so
+          # the two targets delta independently.
+          R2_DELTA_SYNC: ${{ vars.R2_DELTA_SYNC || '0' }}
         run: |
           bash scripts/publish-cloudflare.sh /tmp/protondb-output "$GITHUB_WORKSPACE"
 

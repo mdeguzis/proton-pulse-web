@@ -46,6 +46,7 @@ from .common import (
 from .gog_catalog import load_gog_catalog, load_gog_covers, load_gog_release_years
 from .epic_catalog import load_epic_catalog, load_epic_covers, load_epic_release_years
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
+from .data_manifest import write_data_manifest
 from .data_versions import write_data_versions_json
 from .game_images import build_game_images, enrich_search_index_with_delisted
 from .deck_status import build_deck_status
@@ -1868,6 +1869,12 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # frontend can cache-bust each data fetch individually. Must run LAST so
     # the hashes reflect every other generator's final output. See #119.
     write_data_versions_json(output_path)
+    # Hash every per-game file under data/ into data-manifest.json so the R2
+    # deploy can content-diff against the previous run and upload only real
+    # changes instead of mtime-churned identical files. Same must-run-last
+    # invariant as data-versions above. Consumed by publish-cloudflare.sh
+    # via scripts/pipeline/manifest_delta.py. See #392.
+    write_data_manifest(output_path)
     log_summary(state["parsed_count"], data_output_path, output_path, pipeline_start, state["backfilled_keys"])
     flush_steam_title_cache()
     flush_steam_descriptors_cache()
